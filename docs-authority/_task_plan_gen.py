@@ -90,6 +90,12 @@ for _l in open('docs-authority/LINE_LIST.md'):
 # units whose duty section 3 still reads "Selection pending" (the machines and pot cells; the
 # same set the AQS-END-002 EOL matrix holds) stay open.
 _UM=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'inventory','UNIT_MATERIALS.json'))) if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)),'inventory','UNIT_MATERIALS.json')) else {}
+# task-14 evidence: the seat rows of INSTALL_SEQUENCE.md (position by level, structural/hoist supports,
+# connections named per edge). Row shape: | seq | UNIT | mass | lift | method | same-level | cross-level |
+_ISEQ={}
+for _ln in open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'INSTALL_SEQUENCE.md')):
+    _m=re.match(r'\| (\d+) \| ([A-Z][A-Z0-9_]+) \|', _ln)
+    if _m: _ISEQ.setdefault(_m.group(2), int(_m.group(1)))
 # 2026-10-21 AQS-DSN-INT-001 internals register (unit task 06 sweep): a unit closes -06 where
 # the register disposes it - 'defined' (issued internals document, keyword-verified) or 'none'
 # (keyword-guarded class rule); units under the task 09 section 3 hold and units whose
@@ -137,6 +143,7 @@ def status(n,k):
             return f'`models/mfg/{u}/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes)'
     if k=='12' and ex(f'models/mfg/{u}/bom.csv'): return f'`models/mfg/{u}/bom.csv`'
     if k=='13' and ex(f'docs-authority/fab/{u}.md'): return f'`docs-authority/fab/{u}.md` (study route)'
+    if k=='14' and u in _ISEQ: return f'`docs-authority/INSTALL_SEQUENCE.md` (seat row {_ISEQ[u]}: level position, structural/hoist supports, connections named per edge)'
     return None
 def note(n,k):
     u=n['unit_id']

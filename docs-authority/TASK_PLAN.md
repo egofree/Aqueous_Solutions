@@ -59,26 +59,26 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 13 |
 | X-TOOL | Modeling tooling | 4 | 4 |
-| FOUNDRY | Process (Mass transform) | 405 | 351 |
-| DIGESTER | Process (Mass transform) | 360 | 312 |
-| FAB | Process (Mass transform) | 240 | 208 |
-| FARM | Life support / habitat | 240 | 208 |
-| CRYO | Utility / header | 210 | 182 |
-| OIL | Process (Mass transform) | 195 | 169 |
-| HEAT | Utility / header | 180 | 156 |
-| POLYMERS | Process (Mass transform) | 165 | 143 |
-| GAS | Process (Mass transform) | 150 | 130 |
-| WTR | Utility / header | 136 | 118 |
-| MFG | Process (Mass transform) | 150 | 130 |
-| ELEC | Utility / header | 135 | 115 |
-| HAB | Life support / habitat | 135 | 117 |
-| MEOH | Energy Storage System (Electrochemical) | 90 | 78 |
-| GLASS | Process (Mass transform) | 75 | 65 |
-| GEO | Utility / header | 45 | 39 |
+| FOUNDRY | Process (Mass transform) | 405 | 378 |
+| DIGESTER | Process (Mass transform) | 360 | 336 |
+| FAB | Process (Mass transform) | 240 | 224 |
+| FARM | Life support / habitat | 240 | 224 |
+| CRYO | Utility / header | 210 | 196 |
+| OIL | Process (Mass transform) | 195 | 182 |
+| HEAT | Utility / header | 180 | 168 |
+| POLYMERS | Process (Mass transform) | 165 | 154 |
+| GAS | Process (Mass transform) | 150 | 140 |
+| WTR | Utility / header | 136 | 127 |
+| MFG | Process (Mass transform) | 150 | 140 |
+| ELEC | Utility / header | 135 | 124 |
+| HAB | Life support / habitat | 135 | 126 |
+| MEOH | Energy Storage System (Electrochemical) | 90 | 84 |
+| GLASS | Process (Mass transform) | 75 | 70 |
+| GEO | Utility / header | 45 | 42 |
 | DOCK | Export / dock | 2 | 2 |
-| PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 13 |
-| NUT | Process (Mass transform) | 15 | 13 |
-| | **Total** | **3252** | **2848** |
+| PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 14 |
+| NUT | Process (Mass transform) | 15 | 14 |
+| | **Total** | **3252** | **3044** |
 
 ## 3. Triage of open tasks
 
@@ -104,7 +104,6 @@ Table 3.1. Open tasks by triage tag
 | --- | --- |
 | desk P2 | 2 |
 | desk P4 | 2 |
-| desk P5 | 196 |
 | hardware | 204 |
 
 ## 4. Unit task template
@@ -566,7 +565,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-AL_POT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-AL_POT-10, X-DWG-01. Evidence: `models/mfg/AL_POT/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-AL_POT-12 BOM. Done when: models/mfg/AL_POT/bom.csv. Depends: FOUNDRY-AL_POT-10. Evidence: `models/mfg/AL_POT/bom.csv`.
   - [x] FOUNDRY-AL_POT-13 Fabrication route. Done when: docs-authority/fab/AL_POT.md. Depends: FOUNDRY-AL_POT-10, FOUNDRY-AL_POT-12. Evidence: `docs-authority/fab/AL_POT.md` (study route).
-  - [ ] FOUNDRY-AL_POT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-AL_POT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-AL_POT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-AL_POT-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 106: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-AL_POT-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-AL_POT-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-CAST_LINE** (caster, sector FOUNDRY)
   - [x] FOUNDRY-CAST_LINE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CAST_LINE.md` §1; mass in = out 3 kg/d, 0.0000 kW.
@@ -582,7 +581,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-CAST_LINE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-CAST_LINE-10, X-DWG-01. Evidence: `models/mfg/CAST_LINE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-CAST_LINE-12 BOM. Done when: models/mfg/CAST_LINE/bom.csv. Depends: FOUNDRY-CAST_LINE-10. Evidence: `models/mfg/CAST_LINE/bom.csv`.
   - [x] FOUNDRY-CAST_LINE-13 Fabrication route. Done when: docs-authority/fab/CAST_LINE.md. Depends: FOUNDRY-CAST_LINE-10, FOUNDRY-CAST_LINE-12. Evidence: `docs-authority/fab/CAST_LINE.md` (study route).
-  - [ ] FOUNDRY-CAST_LINE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-CAST_LINE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-CAST_LINE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-CAST_LINE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 57: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-CAST_LINE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-CAST_LINE-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-CA_POT** (cell, sector FOUNDRY)
   - [x] FOUNDRY-CA_POT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CA_POT.md` §1; mass in = out 0.1525 kg/d, 0.1221 kW.
@@ -598,7 +597,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-CA_POT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-CA_POT-10, X-DWG-01. Evidence: `models/mfg/CA_POT/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-CA_POT-12 BOM. Done when: models/mfg/CA_POT/bom.csv. Depends: FOUNDRY-CA_POT-10. Evidence: `models/mfg/CA_POT/bom.csv`.
   - [x] FOUNDRY-CA_POT-13 Fabrication route. Done when: docs-authority/fab/CA_POT.md. Depends: FOUNDRY-CA_POT-10, FOUNDRY-CA_POT-12. Evidence: `docs-authority/fab/CA_POT.md` (study route).
-  - [ ] FOUNDRY-CA_POT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-CA_POT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-CA_POT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-CA_POT-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 107: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-CA_POT-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-CA_POT-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-COMB_HEAT** (furnace, sector FOUNDRY)
   - [x] FOUNDRY-COMB_HEAT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/COMB_HEAT.md` §1; mass in = out 0 kg/d, 0.0500 kW.
@@ -614,7 +613,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-COMB_HEAT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-COMB_HEAT-10, X-DWG-01. Evidence: `models/mfg/COMB_HEAT/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-COMB_HEAT-12 BOM. Done when: models/mfg/COMB_HEAT/bom.csv. Depends: FOUNDRY-COMB_HEAT-10. Evidence: `models/mfg/COMB_HEAT/bom.csv`.
   - [x] FOUNDRY-COMB_HEAT-13 Fabrication route. Done when: docs-authority/fab/COMB_HEAT.md. Depends: FOUNDRY-COMB_HEAT-10, FOUNDRY-COMB_HEAT-12. Evidence: `docs-authority/fab/COMB_HEAT.md` (study route).
-  - [ ] FOUNDRY-COMB_HEAT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-COMB_HEAT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-COMB_HEAT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-COMB_HEAT-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 69: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-COMB_HEAT-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-COMB_HEAT-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-CONT_CAST** (caster, sector FOUNDRY)
   - [x] FOUNDRY-CONT_CAST-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CONT_CAST.md` §1; mass in = out 31.71 kg/d, 0.0000 kW.
@@ -630,7 +629,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-CONT_CAST-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-CONT_CAST-10, X-DWG-01. Evidence: `models/mfg/CONT_CAST/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-CONT_CAST-12 BOM. Done when: models/mfg/CONT_CAST/bom.csv. Depends: FOUNDRY-CONT_CAST-10. Evidence: `models/mfg/CONT_CAST/bom.csv`.
   - [x] FOUNDRY-CONT_CAST-13 Fabrication route. Done when: docs-authority/fab/CONT_CAST.md. Depends: FOUNDRY-CONT_CAST-10, FOUNDRY-CONT_CAST-12. Evidence: `docs-authority/fab/CONT_CAST.md` (study route).
-  - [ ] FOUNDRY-CONT_CAST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-CONT_CAST-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-CONT_CAST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-CONT_CAST-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 58: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-CONT_CAST-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-CONT_CAST-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-CR_CELL** (cell, sector FOUNDRY)
   - [x] FOUNDRY-CR_CELL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CR_CELL.md` §1; mass in = out 0.452 kg/d, 0.1600 kW.
@@ -646,7 +645,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-CR_CELL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-CR_CELL-10, X-DWG-01. Evidence: `models/mfg/CR_CELL/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-CR_CELL-12 BOM. Done when: models/mfg/CR_CELL/bom.csv. Depends: FOUNDRY-CR_CELL-10. Evidence: `models/mfg/CR_CELL/bom.csv`.
   - [x] FOUNDRY-CR_CELL-13 Fabrication route. Done when: docs-authority/fab/CR_CELL.md. Depends: FOUNDRY-CR_CELL-10, FOUNDRY-CR_CELL-12. Evidence: `docs-authority/fab/CR_CELL.md` (study route).
-  - [ ] FOUNDRY-CR_CELL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-CR_CELL-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-CR_CELL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-CR_CELL-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 116: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-CR_CELL-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-CR_CELL-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-DRAW** (mill, sector FOUNDRY)
   - [x] FOUNDRY-DRAW-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/DRAW.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -662,7 +661,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-DRAW-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-DRAW-10, X-DWG-01. Evidence: `models/mfg/DRAW/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-DRAW-12 BOM. Done when: models/mfg/DRAW/bom.csv. Depends: FOUNDRY-DRAW-10. Evidence: `models/mfg/DRAW/bom.csv`.
   - [x] FOUNDRY-DRAW-13 Fabrication route. Done when: docs-authority/fab/DRAW.md. Depends: FOUNDRY-DRAW-10, FOUNDRY-DRAW-12. Evidence: `docs-authority/fab/DRAW.md` (study route).
-  - [ ] FOUNDRY-DRAW-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-DRAW-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-DRAW-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-DRAW-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 61: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-DRAW-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-DRAW-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-EXTRUDE** (press, sector FOUNDRY)
   - [x] FOUNDRY-EXTRUDE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EXTRUDE.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -678,7 +677,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-EXTRUDE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-EXTRUDE-10, X-DWG-01. Evidence: `models/mfg/EXTRUDE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-EXTRUDE-12 BOM. Done when: models/mfg/EXTRUDE/bom.csv. Depends: FOUNDRY-EXTRUDE-10. Evidence: `models/mfg/EXTRUDE/bom.csv`.
   - [x] FOUNDRY-EXTRUDE-13 Fabrication route. Done when: docs-authority/fab/EXTRUDE.md. Depends: FOUNDRY-EXTRUDE-10, FOUNDRY-EXTRUDE-12. Evidence: `docs-authority/fab/EXTRUDE.md` (study route).
-  - [ ] FOUNDRY-EXTRUDE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-EXTRUDE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-EXTRUDE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-EXTRUDE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 82: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-EXTRUDE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-EXTRUDE-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-FLUX_PREP** (prep, sector FOUNDRY)
   - [x] FOUNDRY-FLUX_PREP-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/FLUX_PREP.md` §1; mass in = out 0.03978 kg/d, 0.1000 kW.
@@ -694,7 +693,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-FLUX_PREP-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-FLUX_PREP-10, X-DWG-01. Evidence: `models/mfg/FLUX_PREP/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-FLUX_PREP-12 BOM. Done when: models/mfg/FLUX_PREP/bom.csv. Depends: FOUNDRY-FLUX_PREP-10. Evidence: `models/mfg/FLUX_PREP/bom.csv`.
   - [x] FOUNDRY-FLUX_PREP-13 Fabrication route. Done when: docs-authority/fab/FLUX_PREP.md. Depends: FOUNDRY-FLUX_PREP-10, FOUNDRY-FLUX_PREP-12. Evidence: `docs-authority/fab/FLUX_PREP.md` (study route).
-  - [ ] FOUNDRY-FLUX_PREP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-FLUX_PREP-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-FLUX_PREP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-FLUX_PREP-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 117: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-FLUX_PREP-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-FLUX_PREP-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-FORGE** (press, sector FOUNDRY)
   - [x] FOUNDRY-FORGE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/FORGE.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -710,7 +709,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-FORGE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-FORGE-10, X-DWG-01. Evidence: `models/mfg/FORGE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-FORGE-12 BOM. Done when: models/mfg/FORGE/bom.csv. Depends: FOUNDRY-FORGE-10. Evidence: `models/mfg/FORGE/bom.csv`.
   - [x] FOUNDRY-FORGE-13 Fabrication route. Done when: docs-authority/fab/FORGE.md. Depends: FOUNDRY-FORGE-10, FOUNDRY-FORGE-12. Evidence: `docs-authority/fab/FORGE.md` (study route).
-  - [ ] FOUNDRY-FORGE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-FORGE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-FORGE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-FORGE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 60: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-FORGE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-FORGE-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-IND_MELT** (furnace, sector FOUNDRY)
   - [x] FOUNDRY-IND_MELT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/IND_MELT.md` §1; mass in = out 37.07 kg/d, 0.8854 kW.
@@ -726,7 +725,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-IND_MELT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-IND_MELT-10, X-DWG-01. Evidence: `models/mfg/IND_MELT/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-IND_MELT-12 BOM. Done when: models/mfg/IND_MELT/bom.csv. Depends: FOUNDRY-IND_MELT-10. Evidence: `models/mfg/IND_MELT/bom.csv`.
   - [x] FOUNDRY-IND_MELT-13 Fabrication route. Done when: docs-authority/fab/IND_MELT.md. Depends: FOUNDRY-IND_MELT-10, FOUNDRY-IND_MELT-12. Evidence: `docs-authority/fab/IND_MELT.md` (study route).
-  - [ ] FOUNDRY-IND_MELT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-IND_MELT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-IND_MELT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-IND_MELT-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 128: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-IND_MELT-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-IND_MELT-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-INV_CAST** (caster, sector FOUNDRY)
   - [x] FOUNDRY-INV_CAST-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/INV_CAST.md` §1; mass in = out 10 kg/d, 0.1500 kW.
@@ -742,7 +741,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-INV_CAST-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-INV_CAST-10, X-DWG-01. Evidence: `models/mfg/INV_CAST/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-INV_CAST-12 BOM. Done when: models/mfg/INV_CAST/bom.csv. Depends: FOUNDRY-INV_CAST-10. Evidence: `models/mfg/INV_CAST/bom.csv`.
   - [x] FOUNDRY-INV_CAST-13 Fabrication route. Done when: docs-authority/fab/INV_CAST.md. Depends: FOUNDRY-INV_CAST-10, FOUNDRY-INV_CAST-12. Evidence: `docs-authority/fab/INV_CAST.md` (study route).
-  - [ ] FOUNDRY-INV_CAST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-INV_CAST-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-INV_CAST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-INV_CAST-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 121: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-INV_CAST-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-INV_CAST-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-METAL_STORE** (store, sector FOUNDRY)
   - [x] FOUNDRY-METAL_STORE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/METAL_STORE.md` §1; mass in = out 36.71 kg/d, 0.0000 kW.
@@ -758,7 +757,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-METAL_STORE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-METAL_STORE-10, X-DWG-01. Evidence: `models/mfg/METAL_STORE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-METAL_STORE-12 BOM. Done when: models/mfg/METAL_STORE/bom.csv. Depends: FOUNDRY-METAL_STORE-10. Evidence: `models/mfg/METAL_STORE/bom.csv`.
   - [x] FOUNDRY-METAL_STORE-13 Fabrication route. Done when: docs-authority/fab/METAL_STORE.md. Depends: FOUNDRY-METAL_STORE-10, FOUNDRY-METAL_STORE-12. Evidence: `docs-authority/fab/METAL_STORE.md` (study route).
-  - [ ] FOUNDRY-METAL_STORE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-METAL_STORE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-METAL_STORE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-METAL_STORE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 72: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-METAL_STORE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-METAL_STORE-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-MG_POT** (cell, sector FOUNDRY)
   - [x] FOUNDRY-MG_POT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MG_POT.md` §1; mass in = out 1.989 kg/d, 0.3375 kW.
@@ -774,7 +773,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-MG_POT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-MG_POT-10, X-DWG-01. Evidence: `models/mfg/MG_POT/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-MG_POT-12 BOM. Done when: models/mfg/MG_POT/bom.csv. Depends: FOUNDRY-MG_POT-10. Evidence: `models/mfg/MG_POT/bom.csv`.
   - [x] FOUNDRY-MG_POT-13 Fabrication route. Done when: docs-authority/fab/MG_POT.md. Depends: FOUNDRY-MG_POT-10, FOUNDRY-MG_POT-12. Evidence: `docs-authority/fab/MG_POT.md` (study route).
-  - [ ] FOUNDRY-MG_POT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-MG_POT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-MG_POT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-MG_POT-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 114: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-MG_POT-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-MG_POT-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-MO_CELL** (cell, sector FOUNDRY)
   - [x] FOUNDRY-MO_CELL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MO_CELL.md` §1; mass in = out 0.1055 kg/d, 0.1141 kW.
@@ -790,7 +789,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-MO_CELL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-MO_CELL-10, X-DWG-01. Evidence: `models/mfg/MO_CELL/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-MO_CELL-12 BOM. Done when: models/mfg/MO_CELL/bom.csv. Depends: FOUNDRY-MO_CELL-10. Evidence: `models/mfg/MO_CELL/bom.csv`.
   - [x] FOUNDRY-MO_CELL-13 Fabrication route. Done when: docs-authority/fab/MO_CELL.md. Depends: FOUNDRY-MO_CELL-10, FOUNDRY-MO_CELL-12. Evidence: `docs-authority/fab/MO_CELL.md` (study route).
-  - [ ] FOUNDRY-MO_CELL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-MO_CELL-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-MO_CELL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-MO_CELL-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 115: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-MO_CELL-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-MO_CELL-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-RES_HEAT** (furnace, sector FOUNDRY)
   - [x] FOUNDRY-RES_HEAT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/RES_HEAT.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -806,7 +805,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-RES_HEAT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-RES_HEAT-10, X-DWG-01. Evidence: `models/mfg/RES_HEAT/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-RES_HEAT-12 BOM. Done when: models/mfg/RES_HEAT/bom.csv. Depends: FOUNDRY-RES_HEAT-10. Evidence: `models/mfg/RES_HEAT/bom.csv`.
   - [x] FOUNDRY-RES_HEAT-13 Fabrication route. Done when: docs-authority/fab/RES_HEAT.md. Depends: FOUNDRY-RES_HEAT-10, FOUNDRY-RES_HEAT-12. Evidence: `docs-authority/fab/RES_HEAT.md` (study route).
-  - [ ] FOUNDRY-RES_HEAT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-RES_HEAT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-RES_HEAT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-RES_HEAT-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 67: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-RES_HEAT-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-RES_HEAT-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-RF_HEAT** (furnace, sector FOUNDRY)
   - [x] FOUNDRY-RF_HEAT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/RF_HEAT.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -822,7 +821,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-RF_HEAT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-RF_HEAT-10, X-DWG-01. Evidence: `models/mfg/RF_HEAT/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-RF_HEAT-12 BOM. Done when: models/mfg/RF_HEAT/bom.csv. Depends: FOUNDRY-RF_HEAT-10. Evidence: `models/mfg/RF_HEAT/bom.csv`.
   - [x] FOUNDRY-RF_HEAT-13 Fabrication route. Done when: docs-authority/fab/RF_HEAT.md. Depends: FOUNDRY-RF_HEAT-10, FOUNDRY-RF_HEAT-12. Evidence: `docs-authority/fab/RF_HEAT.md` (study route).
-  - [ ] FOUNDRY-RF_HEAT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-RF_HEAT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-RF_HEAT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-RF_HEAT-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 66: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-RF_HEAT-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-RF_HEAT-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-ROLL** (mill, sector FOUNDRY)
   - [x] FOUNDRY-ROLL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ROLL.md` §1; mass in = out 13 kg/d, 0.0000 kW.
@@ -838,7 +837,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-ROLL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-ROLL-10, X-DWG-01. Evidence: `models/mfg/ROLL/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-ROLL-12 BOM. Done when: models/mfg/ROLL/bom.csv. Depends: FOUNDRY-ROLL-10. Evidence: `models/mfg/ROLL/bom.csv`.
   - [x] FOUNDRY-ROLL-13 Fabrication route. Done when: docs-authority/fab/ROLL.md. Depends: FOUNDRY-ROLL-10, FOUNDRY-ROLL-12. Evidence: `docs-authority/fab/ROLL.md` (study route).
-  - [ ] FOUNDRY-ROLL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-ROLL-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-ROLL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-ROLL-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 59: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-ROLL-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-ROLL-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-SHELL_BREAK** (separator, sector FOUNDRY)
   - [x] FOUNDRY-SHELL_BREAK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/SHELL_BREAK.md` §1; mass in = out 10 kg/d, 0.4000 kW.
@@ -854,7 +853,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-SHELL_BREAK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-SHELL_BREAK-10, X-DWG-01. Evidence: `models/mfg/SHELL_BREAK/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-SHELL_BREAK-12 BOM. Done when: models/mfg/SHELL_BREAK/bom.csv. Depends: FOUNDRY-SHELL_BREAK-10. Evidence: `models/mfg/SHELL_BREAK/bom.csv`.
   - [x] FOUNDRY-SHELL_BREAK-13 Fabrication route. Done when: docs-authority/fab/SHELL_BREAK.md. Depends: FOUNDRY-SHELL_BREAK-10, FOUNDRY-SHELL_BREAK-12. Evidence: `docs-authority/fab/SHELL_BREAK.md` (study route).
-  - [ ] FOUNDRY-SHELL_BREAK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-SHELL_BREAK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-SHELL_BREAK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-SHELL_BREAK-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 96: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-SHELL_BREAK-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-SHELL_BREAK-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-SHELL_BUILD** (coater, sector FOUNDRY)
   - [x] FOUNDRY-SHELL_BUILD-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/SHELL_BUILD.md` §1; mass in = out 10 kg/d, 0.3000 kW.
@@ -870,7 +869,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-SHELL_BUILD-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-SHELL_BUILD-10, X-DWG-01. Evidence: `models/mfg/SHELL_BUILD/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-SHELL_BUILD-12 BOM. Done when: models/mfg/SHELL_BUILD/bom.csv. Depends: FOUNDRY-SHELL_BUILD-10. Evidence: `models/mfg/SHELL_BUILD/bom.csv`.
   - [x] FOUNDRY-SHELL_BUILD-13 Fabrication route. Done when: docs-authority/fab/SHELL_BUILD.md. Depends: FOUNDRY-SHELL_BUILD-10, FOUNDRY-SHELL_BUILD-12. Evidence: `docs-authority/fab/SHELL_BUILD.md` (study route).
-  - [ ] FOUNDRY-SHELL_BUILD-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-SHELL_BUILD-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-SHELL_BUILD-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-SHELL_BUILD-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 120: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-SHELL_BUILD-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-SHELL_BUILD-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-SHELL_BURNOUT** (furnace, sector FOUNDRY)
   - [x] FOUNDRY-SHELL_BURNOUT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/SHELL_BURNOUT.md` §1; mass in = out 10 kg/d, 0.2500 kW.
@@ -886,7 +885,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-SHELL_BURNOUT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-SHELL_BURNOUT-10, X-DWG-01. Evidence: `models/mfg/SHELL_BURNOUT/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-SHELL_BURNOUT-12 BOM. Done when: models/mfg/SHELL_BURNOUT/bom.csv. Depends: FOUNDRY-SHELL_BURNOUT-10. Evidence: `models/mfg/SHELL_BURNOUT/bom.csv`.
   - [x] FOUNDRY-SHELL_BURNOUT-13 Fabrication route. Done when: docs-authority/fab/SHELL_BURNOUT.md. Depends: FOUNDRY-SHELL_BURNOUT-10, FOUNDRY-SHELL_BURNOUT-12. Evidence: `docs-authority/fab/SHELL_BURNOUT.md` (study route).
-  - [ ] FOUNDRY-SHELL_BURNOUT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-SHELL_BURNOUT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-SHELL_BURNOUT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-SHELL_BURNOUT-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 105: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-SHELL_BURNOUT-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-SHELL_BURNOUT-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-SINTER** (furnace, sector FOUNDRY)
   - [x] FOUNDRY-SINTER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/SINTER.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -902,7 +901,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-SINTER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-SINTER-10, X-DWG-01. Evidence: `models/mfg/SINTER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-SINTER-12 BOM. Done when: models/mfg/SINTER/bom.csv. Depends: FOUNDRY-SINTER-10. Evidence: `models/mfg/SINTER/bom.csv`.
   - [x] FOUNDRY-SINTER-13 Fabrication route. Done when: docs-authority/fab/SINTER.md. Depends: FOUNDRY-SINTER-10, FOUNDRY-SINTER-12. Evidence: `docs-authority/fab/SINTER.md` (study route).
-  - [ ] FOUNDRY-SINTER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-SINTER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-SINTER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-SINTER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 68: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-SINTER-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-SINTER-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-STOCK_OUT** (store, sector FOUNDRY)
   - [x] FOUNDRY-STOCK_OUT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/STOCK_OUT.md` §1; mass in = out 36.71 kg/d, 0.0000 kW.
@@ -918,7 +917,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-STOCK_OUT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-STOCK_OUT-10, X-DWG-01. Evidence: `models/mfg/STOCK_OUT/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-STOCK_OUT-12 BOM. Done when: models/mfg/STOCK_OUT/bom.csv. Depends: FOUNDRY-STOCK_OUT-10. Evidence: `models/mfg/STOCK_OUT/bom.csv`.
   - [x] FOUNDRY-STOCK_OUT-13 Fabrication route. Done when: docs-authority/fab/STOCK_OUT.md. Depends: FOUNDRY-STOCK_OUT-10, FOUNDRY-STOCK_OUT-12. Evidence: `docs-authority/fab/STOCK_OUT.md` (study route).
-  - [ ] FOUNDRY-STOCK_OUT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-STOCK_OUT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-STOCK_OUT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-STOCK_OUT-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 113: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-STOCK_OUT-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-STOCK_OUT-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-TI_CELL** (cell, sector FOUNDRY)
   - [x] FOUNDRY-TI_CELL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/TI_CELL.md` §1; mass in = out 3.074 kg/d, 0.5000 kW.
@@ -934,7 +933,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-TI_CELL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-TI_CELL-10, X-DWG-01. Evidence: `models/mfg/TI_CELL/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-TI_CELL-12 BOM. Done when: models/mfg/TI_CELL/bom.csv. Depends: FOUNDRY-TI_CELL-10. Evidence: `models/mfg/TI_CELL/bom.csv`.
   - [x] FOUNDRY-TI_CELL-13 Fabrication route. Done when: docs-authority/fab/TI_CELL.md. Depends: FOUNDRY-TI_CELL-10, FOUNDRY-TI_CELL-12. Evidence: `docs-authority/fab/TI_CELL.md` (study route).
-  - [ ] FOUNDRY-TI_CELL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-TI_CELL-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-TI_CELL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-TI_CELL-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 125: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-TI_CELL-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-TI_CELL-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-VAC_CAST** (caster, sector FOUNDRY)
   - [x] FOUNDRY-VAC_CAST-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/VAC_CAST.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -950,7 +949,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-VAC_CAST-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-VAC_CAST-10, X-DWG-01. Evidence: `models/mfg/VAC_CAST/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-VAC_CAST-12 BOM. Done when: models/mfg/VAC_CAST/bom.csv. Depends: FOUNDRY-VAC_CAST-10. Evidence: `models/mfg/VAC_CAST/bom.csv`.
   - [x] FOUNDRY-VAC_CAST-13 Fabrication route. Done when: docs-authority/fab/VAC_CAST.md. Depends: FOUNDRY-VAC_CAST-10, FOUNDRY-VAC_CAST-12. Evidence: `docs-authority/fab/VAC_CAST.md` (study route).
-  - [ ] FOUNDRY-VAC_CAST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-VAC_CAST-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-VAC_CAST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-VAC_CAST-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 95: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-VAC_CAST-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-VAC_CAST-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-VAC_IND** (furnace, sector FOUNDRY)
   - [x] FOUNDRY-VAC_IND-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/VAC_IND.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -966,7 +965,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-VAC_IND-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-VAC_IND-10, X-DWG-01. Evidence: `models/mfg/VAC_IND/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-VAC_IND-12 BOM. Done when: models/mfg/VAC_IND/bom.csv. Depends: FOUNDRY-VAC_IND-10. Evidence: `models/mfg/VAC_IND/bom.csv`.
   - [x] FOUNDRY-VAC_IND-13 Fabrication route. Done when: docs-authority/fab/VAC_IND.md. Depends: FOUNDRY-VAC_IND-10, FOUNDRY-VAC_IND-12. Evidence: `docs-authority/fab/VAC_IND.md` (study route).
-  - [ ] FOUNDRY-VAC_IND-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-VAC_IND-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-VAC_IND-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-VAC_IND-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 104: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-VAC_IND-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-VAC_IND-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-WAX_PATTERN** (prep, sector FOUNDRY)
   - [x] FOUNDRY-WAX_PATTERN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WAX_PATTERN.md` §1; mass in = out 2 kg/d, 0.5000 kW.
@@ -982,7 +981,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-WAX_PATTERN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-WAX_PATTERN-10, X-DWG-01. Evidence: `models/mfg/WAX_PATTERN/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FOUNDRY-WAX_PATTERN-12 BOM. Done when: models/mfg/WAX_PATTERN/bom.csv. Depends: FOUNDRY-WAX_PATTERN-10. Evidence: `models/mfg/WAX_PATTERN/bom.csv`.
   - [x] FOUNDRY-WAX_PATTERN-13 Fabrication route. Done when: docs-authority/fab/WAX_PATTERN.md. Depends: FOUNDRY-WAX_PATTERN-10, FOUNDRY-WAX_PATTERN-12. Evidence: `docs-authority/fab/WAX_PATTERN.md` (study route).
-  - [ ] FOUNDRY-WAX_PATTERN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-WAX_PATTERN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FOUNDRY-WAX_PATTERN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-WAX_PATTERN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 118: level position, structural/hoist supports, connections named per edge).
   - [ ] FOUNDRY-WAX_PATTERN-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-WAX_PATTERN-14, X-COM-01. Triage: hardware.
 
 ### DIGESTER. Process (Mass transform)
@@ -1001,7 +1000,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-BMED_ACID-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-BMED_ACID-10, X-DWG-01. Evidence: `models/mfg/BMED_ACID/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-BMED_ACID-12 BOM. Done when: models/mfg/BMED_ACID/bom.csv. Depends: DIGESTER-BMED_ACID-10. Evidence: `models/mfg/BMED_ACID/bom.csv`.
   - [x] DIGESTER-BMED_ACID-13 Fabrication route. Done when: docs-authority/fab/BMED_ACID.md. Depends: DIGESTER-BMED_ACID-10, DIGESTER-BMED_ACID-12. Evidence: `docs-authority/fab/BMED_ACID.md` (study route).
-  - [ ] DIGESTER-BMED_ACID-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-BMED_ACID-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-BMED_ACID-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-BMED_ACID-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 35: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-BMED_ACID-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-BMED_ACID-14, X-COM-01. Triage: hardware.
 - **DIGESTER-BMED_BASE** (bmed, sector DIGESTER)
   - [x] DIGESTER-BMED_BASE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BMED_BASE.md` §1; mass in = out 1302 kg/d, 0.0000 kW.
@@ -1017,7 +1016,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-BMED_BASE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-BMED_BASE-10, X-DWG-01. Evidence: `models/mfg/BMED_BASE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-BMED_BASE-12 BOM. Done when: models/mfg/BMED_BASE/bom.csv. Depends: DIGESTER-BMED_BASE-10. Evidence: `models/mfg/BMED_BASE/bom.csv`.
   - [x] DIGESTER-BMED_BASE-13 Fabrication route. Done when: docs-authority/fab/BMED_BASE.md. Depends: DIGESTER-BMED_BASE-10, DIGESTER-BMED_BASE-12. Evidence: `docs-authority/fab/BMED_BASE.md` (study route).
-  - [ ] DIGESTER-BMED_BASE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-BMED_BASE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-BMED_BASE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-BMED_BASE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 15: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-BMED_BASE-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-BMED_BASE-14, X-COM-01. Triage: hardware.
 - **DIGESTER-CONTINUOUS_RECYCLE** (recycle_pipe, sector DIGESTER)
   - [x] DIGESTER-CONTINUOUS_RECYCLE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CONTINUOUS_RECYCLE.md` §1; mass in = out 3303 kg/d, 0.0000 kW.
@@ -1033,7 +1032,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-CONTINUOUS_RECYCLE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-CONTINUOUS_RECYCLE-10, X-DWG-01. Evidence: `models/mfg/CONTINUOUS_RECYCLE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-CONTINUOUS_RECYCLE-12 BOM. Done when: models/mfg/CONTINUOUS_RECYCLE/bom.csv. Depends: DIGESTER-CONTINUOUS_RECYCLE-10. Evidence: `models/mfg/CONTINUOUS_RECYCLE/bom.csv`.
   - [x] DIGESTER-CONTINUOUS_RECYCLE-13 Fabrication route. Done when: docs-authority/fab/CONTINUOUS_RECYCLE.md. Depends: DIGESTER-CONTINUOUS_RECYCLE-10, DIGESTER-CONTINUOUS_RECYCLE-12. Evidence: `docs-authority/fab/CONTINUOUS_RECYCLE.md` (study route).
-  - [ ] DIGESTER-CONTINUOUS_RECYCLE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-CONTINUOUS_RECYCLE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-CONTINUOUS_RECYCLE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-CONTINUOUS_RECYCLE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 26: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-CONTINUOUS_RECYCLE-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-CONTINUOUS_RECYCLE-14, X-COM-01. Triage: hardware.
 - **DIGESTER-CRU** (cru, sector DIGESTER)
   - [x] DIGESTER-CRU-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRU.md` §1; mass in = out 28.13 kg/d, 0.0000 kW.
@@ -1049,7 +1048,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-CRU-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-CRU-10, X-DWG-01. Evidence: `models/mfg/CRU/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-CRU-12 BOM. Done when: models/mfg/CRU/bom.csv. Depends: DIGESTER-CRU-10. Evidence: `models/mfg/CRU/bom.csv`.
   - [x] DIGESTER-CRU-13 Fabrication route. Done when: docs-authority/fab/CRU.md. Depends: DIGESTER-CRU-10, DIGESTER-CRU-12. Evidence: `docs-authority/fab/CRU.md` (study route).
-  - [ ] DIGESTER-CRU-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-CRU-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-CRU-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-CRU-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 126: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-CRU-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-CRU-14, X-COM-01. Triage: hardware.
 - **DIGESTER-EVAP_ACID** (evaporator, sector DIGESTER)
   - [x] DIGESTER-EVAP_ACID-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EVAP_ACID.md` §1; mass in = out 1305 kg/d, 1.4980 kW.
@@ -1065,7 +1064,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-EVAP_ACID-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-EVAP_ACID-10, X-DWG-01. Evidence: `models/mfg/EVAP_ACID/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-EVAP_ACID-12 BOM. Done when: models/mfg/EVAP_ACID/bom.csv. Depends: DIGESTER-EVAP_ACID-10. Evidence: `models/mfg/EVAP_ACID/bom.csv`.
   - [x] DIGESTER-EVAP_ACID-13 Fabrication route. Done when: docs-authority/fab/EVAP_ACID.md. Depends: DIGESTER-EVAP_ACID-10, DIGESTER-EVAP_ACID-12. Evidence: `docs-authority/fab/EVAP_ACID.md` (study route).
-  - [ ] DIGESTER-EVAP_ACID-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EVAP_ACID-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-EVAP_ACID-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EVAP_ACID-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 1: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-EVAP_ACID-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-EVAP_ACID-14, X-COM-01. Triage: hardware.
 - **DIGESTER-EVAP_ACID_VS** (scrubber, sector DIGESTER)
   - [x] DIGESTER-EVAP_ACID_VS-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EVAP_ACID_VS.md` §1; mass in = out 0.0298 kg/d, 0.0238 kW.
@@ -1081,7 +1080,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-EVAP_ACID_VS-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-EVAP_ACID_VS-10, X-DWG-01. Evidence: `models/mfg/EVAP_ACID_VS/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-EVAP_ACID_VS-12 BOM. Done when: models/mfg/EVAP_ACID_VS/bom.csv. Depends: DIGESTER-EVAP_ACID_VS-10. Evidence: `models/mfg/EVAP_ACID_VS/bom.csv`.
   - [x] DIGESTER-EVAP_ACID_VS-13 Fabrication route. Done when: docs-authority/fab/EVAP_ACID_VS.md. Depends: DIGESTER-EVAP_ACID_VS-10, DIGESTER-EVAP_ACID_VS-12. Evidence: `docs-authority/fab/EVAP_ACID_VS.md` (study route).
-  - [ ] DIGESTER-EVAP_ACID_VS-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EVAP_ACID_VS-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-EVAP_ACID_VS-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EVAP_ACID_VS-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 34: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-EVAP_ACID_VS-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-EVAP_ACID_VS-14, X-COM-01. Triage: hardware.
 - **DIGESTER-EVAP_BASE** (evaporator, sector DIGESTER)
   - [x] DIGESTER-EVAP_BASE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EVAP_BASE.md` §1; mass in = out 1306 kg/d, 1.3280 kW.
@@ -1097,7 +1096,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-EVAP_BASE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-EVAP_BASE-10, X-DWG-01. Evidence: `models/mfg/EVAP_BASE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-EVAP_BASE-12 BOM. Done when: models/mfg/EVAP_BASE/bom.csv. Depends: DIGESTER-EVAP_BASE-10. Evidence: `models/mfg/EVAP_BASE/bom.csv`.
   - [x] DIGESTER-EVAP_BASE-13 Fabrication route. Done when: docs-authority/fab/EVAP_BASE.md. Depends: DIGESTER-EVAP_BASE-10, DIGESTER-EVAP_BASE-12. Evidence: `docs-authority/fab/EVAP_BASE.md` (study route).
-  - [ ] DIGESTER-EVAP_BASE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EVAP_BASE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-EVAP_BASE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EVAP_BASE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 5: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-EVAP_BASE-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-EVAP_BASE-14, X-COM-01. Triage: hardware.
 - **DIGESTER-EW_1** (ew_cell, sector DIGESTER)
   - [x] DIGESTER-EW_1-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EW_1.md` §1; mass in = out 4288 kg/d, 5.2483 kW.
@@ -1113,7 +1112,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-EW_1-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-EW_1-10, X-DWG-01. Evidence: `models/mfg/EW_1/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-EW_1-12 BOM. Done when: models/mfg/EW_1/bom.csv. Depends: DIGESTER-EW_1-10. Evidence: `models/mfg/EW_1/bom.csv`.
   - [x] DIGESTER-EW_1-13 Fabrication route. Done when: docs-authority/fab/EW_1.md. Depends: DIGESTER-EW_1-10, DIGESTER-EW_1-12. Evidence: `docs-authority/fab/EW_1.md` (study route).
-  - [ ] DIGESTER-EW_1-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_1-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-EW_1-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_1-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 54: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-EW_1-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-EW_1-14, X-COM-01. Triage: hardware.
 - **DIGESTER-EW_2** (ew_cell, sector DIGESTER)
   - [x] DIGESTER-EW_2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EW_2.md` §1; mass in = out 4139 kg/d, 0.0000 kW.
@@ -1129,7 +1128,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-EW_2-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-EW_2-10, X-DWG-01. Evidence: `models/mfg/EW_2/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-EW_2-12 BOM. Done when: models/mfg/EW_2/bom.csv. Depends: DIGESTER-EW_2-10. Evidence: `models/mfg/EW_2/bom.csv`.
   - [x] DIGESTER-EW_2-13 Fabrication route. Done when: docs-authority/fab/EW_2.md. Depends: DIGESTER-EW_2-10, DIGESTER-EW_2-12. Evidence: `docs-authority/fab/EW_2.md` (study route).
-  - [ ] DIGESTER-EW_2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-EW_2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 49: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-EW_2-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-EW_2-14, X-COM-01. Triage: hardware.
 - **DIGESTER-EW_3** (ew_cell, sector DIGESTER)
   - [x] DIGESTER-EW_3-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EW_3.md` §1; mass in = out 3991 kg/d, 0.0000 kW.
@@ -1145,7 +1144,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-EW_3-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-EW_3-10, X-DWG-01. Evidence: `models/mfg/EW_3/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-EW_3-12 BOM. Done when: models/mfg/EW_3/bom.csv. Depends: DIGESTER-EW_3-10. Evidence: `models/mfg/EW_3/bom.csv`.
   - [x] DIGESTER-EW_3-13 Fabrication route. Done when: docs-authority/fab/EW_3.md. Depends: DIGESTER-EW_3-10, DIGESTER-EW_3-12. Evidence: `docs-authority/fab/EW_3.md` (study route).
-  - [ ] DIGESTER-EW_3-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_3-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-EW_3-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_3-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 50: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-EW_3-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-EW_3-14, X-COM-01. Triage: hardware.
 - **DIGESTER-EW_4** (ew_cell, sector DIGESTER)
   - [x] DIGESTER-EW_4-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EW_4.md` §1; mass in = out 3935 kg/d, 0.0000 kW.
@@ -1161,7 +1160,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-EW_4-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-EW_4-10, X-DWG-01. Evidence: `models/mfg/EW_4/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-EW_4-12 BOM. Done when: models/mfg/EW_4/bom.csv. Depends: DIGESTER-EW_4-10. Evidence: `models/mfg/EW_4/bom.csv`.
   - [x] DIGESTER-EW_4-13 Fabrication route. Done when: docs-authority/fab/EW_4.md. Depends: DIGESTER-EW_4-10, DIGESTER-EW_4-12. Evidence: `docs-authority/fab/EW_4.md` (study route).
-  - [ ] DIGESTER-EW_4-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_4-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-EW_4-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_4-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 51: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-EW_4-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-EW_4-14, X-COM-01. Triage: hardware.
 - **DIGESTER-EW_5** (ew_cell, sector DIGESTER)
   - [x] DIGESTER-EW_5-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EW_5.md` §1; mass in = out 3922 kg/d, 0.0000 kW.
@@ -1177,7 +1176,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-EW_5-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-EW_5-10, X-DWG-01. Evidence: `models/mfg/EW_5/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-EW_5-12 BOM. Done when: models/mfg/EW_5/bom.csv. Depends: DIGESTER-EW_5-10. Evidence: `models/mfg/EW_5/bom.csv`.
   - [x] DIGESTER-EW_5-13 Fabrication route. Done when: docs-authority/fab/EW_5.md. Depends: DIGESTER-EW_5-10, DIGESTER-EW_5-12. Evidence: `docs-authority/fab/EW_5.md` (study route).
-  - [ ] DIGESTER-EW_5-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_5-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-EW_5-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_5-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 52: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-EW_5-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-EW_5-14, X-COM-01. Triage: hardware.
 - **DIGESTER-EW_6** (ew_cell, sector DIGESTER)
   - [x] DIGESTER-EW_6-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EW_6.md` §1; mass in = out 3910 kg/d, 0.0000 kW.
@@ -1193,7 +1192,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-EW_6-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-EW_6-10, X-DWG-01. Evidence: `models/mfg/EW_6/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-EW_6-12 BOM. Done when: models/mfg/EW_6/bom.csv. Depends: DIGESTER-EW_6-10. Evidence: `models/mfg/EW_6/bom.csv`.
   - [x] DIGESTER-EW_6-13 Fabrication route. Done when: docs-authority/fab/EW_6.md. Depends: DIGESTER-EW_6-10, DIGESTER-EW_6-12. Evidence: `docs-authority/fab/EW_6.md` (study route).
-  - [ ] DIGESTER-EW_6-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_6-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-EW_6-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_6-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 53: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-EW_6-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-EW_6-14, X-COM-01. Triage: hardware.
 - **DIGESTER-EW_7** (ew_cell, sector DIGESTER)
   - [x] DIGESTER-EW_7-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EW_7.md` §1; mass in = out 3896 kg/d, 0.0000 kW.
@@ -1209,7 +1208,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-EW_7-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-EW_7-10, X-DWG-01. Evidence: `models/mfg/EW_7/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-EW_7-12 BOM. Done when: models/mfg/EW_7/bom.csv. Depends: DIGESTER-EW_7-10. Evidence: `models/mfg/EW_7/bom.csv`.
   - [x] DIGESTER-EW_7-13 Fabrication route. Done when: docs-authority/fab/EW_7.md. Depends: DIGESTER-EW_7-10, DIGESTER-EW_7-12. Evidence: `docs-authority/fab/EW_7.md` (study route).
-  - [ ] DIGESTER-EW_7-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_7-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-EW_7-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_7-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 47: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-EW_7-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-EW_7-14, X-COM-01. Triage: hardware.
 - **DIGESTER-EW_8** (ew_cell, sector DIGESTER)
   - [x] DIGESTER-EW_8-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EW_8.md` §1; mass in = out 3720 kg/d, 0.0000 kW.
@@ -1225,7 +1224,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-EW_8-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-EW_8-10, X-DWG-01. Evidence: `models/mfg/EW_8/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-EW_8-12 BOM. Done when: models/mfg/EW_8/bom.csv. Depends: DIGESTER-EW_8-10. Evidence: `models/mfg/EW_8/bom.csv`.
   - [x] DIGESTER-EW_8-13 Fabrication route. Done when: docs-authority/fab/EW_8.md. Depends: DIGESTER-EW_8-10, DIGESTER-EW_8-12. Evidence: `docs-authority/fab/EW_8.md` (study route).
-  - [ ] DIGESTER-EW_8-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_8-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-EW_8-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_8-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 48: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-EW_8-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-EW_8-14, X-COM-01. Triage: hardware.
 - **DIGESTER-EW_9** (ew_cell, sector DIGESTER)
   - [x] DIGESTER-EW_9-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EW_9.md` §1; mass in = out 3707 kg/d, 0.0000 kW.
@@ -1241,7 +1240,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-EW_9-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-EW_9-10, X-DWG-01. Evidence: `models/mfg/EW_9/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-EW_9-12 BOM. Done when: models/mfg/EW_9/bom.csv. Depends: DIGESTER-EW_9-10. Evidence: `models/mfg/EW_9/bom.csv`.
   - [x] DIGESTER-EW_9-13 Fabrication route. Done when: docs-authority/fab/EW_9.md. Depends: DIGESTER-EW_9-10, DIGESTER-EW_9-12. Evidence: `docs-authority/fab/EW_9.md` (study route).
-  - [ ] DIGESTER-EW_9-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_9-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-EW_9-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-EW_9-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 46: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-EW_9-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-EW_9-14, X-COM-01. Triage: hardware.
 - **DIGESTER-FLOAT_SINK** (separator, sector DIGESTER)
   - [x] DIGESTER-FLOAT_SINK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/FLOAT_SINK.md` §1; mass in = out 376.1 kg/d, 0.0000 kW.
@@ -1257,7 +1256,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-FLOAT_SINK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-FLOAT_SINK-10, X-DWG-01. Evidence: `models/mfg/FLOAT_SINK/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-FLOAT_SINK-12 BOM. Done when: models/mfg/FLOAT_SINK/bom.csv. Depends: DIGESTER-FLOAT_SINK-10. Evidence: `models/mfg/FLOAT_SINK/bom.csv`.
   - [x] DIGESTER-FLOAT_SINK-13 Fabrication route. Done when: docs-authority/fab/FLOAT_SINK.md. Depends: DIGESTER-FLOAT_SINK-10, DIGESTER-FLOAT_SINK-12. Evidence: `docs-authority/fab/FLOAT_SINK.md` (study route).
-  - [ ] DIGESTER-FLOAT_SINK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-FLOAT_SINK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-FLOAT_SINK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-FLOAT_SINK-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 16: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-FLOAT_SINK-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-FLOAT_SINK-14, X-COM-01. Triage: hardware.
 - **DIGESTER-F_RECOVER** (separator, sector DIGESTER)
   - [x] DIGESTER-F_RECOVER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/F_RECOVER.md` §1; mass in = out 1.52 kg/d, 0.0000 kW.
@@ -1273,7 +1272,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-F_RECOVER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-F_RECOVER-10, X-DWG-01. Evidence: `models/mfg/F_RECOVER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-F_RECOVER-12 BOM. Done when: models/mfg/F_RECOVER/bom.csv. Depends: DIGESTER-F_RECOVER-10. Evidence: `models/mfg/F_RECOVER/bom.csv`.
   - [x] DIGESTER-F_RECOVER-13 Fabrication route. Done when: docs-authority/fab/F_RECOVER.md. Depends: DIGESTER-F_RECOVER-10, DIGESTER-F_RECOVER-12. Evidence: `docs-authority/fab/F_RECOVER.md` (study route).
-  - [ ] DIGESTER-F_RECOVER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-F_RECOVER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-F_RECOVER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-F_RECOVER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 56: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-F_RECOVER-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-F_RECOVER-14, X-COM-01. Triage: hardware.
 - **DIGESTER-HX8** (hx, sector DIGESTER)
   - [x] DIGESTER-HX8-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HX8.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -1289,7 +1288,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-HX8-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-HX8-10, X-DWG-01. Evidence: `models/mfg/HX8/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-HX8-12 BOM. Done when: models/mfg/HX8/bom.csv. Depends: DIGESTER-HX8-10. Evidence: `models/mfg/HX8/bom.csv`.
   - [x] DIGESTER-HX8-13 Fabrication route. Done when: docs-authority/fab/HX8.md. Depends: DIGESTER-HX8-10, DIGESTER-HX8-12. Evidence: `docs-authority/fab/HX8.md` (study route).
-  - [ ] DIGESTER-HX8-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-HX8-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-HX8-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-HX8-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 55: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-HX8-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-HX8-14, X-COM-01. Triage: hardware.
 - **DIGESTER-LEACH_CSTR_1** (vessel, sector DIGESTER)
   - [x] DIGESTER-LEACH_CSTR_1-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/LEACH_CSTR_1.md` §1; mass in = out 6412 kg/d, 0.7500 kW.
@@ -1305,7 +1304,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-LEACH_CSTR_1-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-LEACH_CSTR_1-10, X-DWG-01. Evidence: `models/mfg/LEACH_CSTR_1/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-LEACH_CSTR_1-12 BOM. Done when: models/mfg/LEACH_CSTR_1/bom.csv. Depends: DIGESTER-LEACH_CSTR_1-10. Evidence: `models/mfg/LEACH_CSTR_1/bom.csv`.
   - [x] DIGESTER-LEACH_CSTR_1-13 Fabrication route. Done when: docs-authority/fab/LEACH_CSTR_1.md. Depends: DIGESTER-LEACH_CSTR_1-10, DIGESTER-LEACH_CSTR_1-12. Evidence: `docs-authority/fab/LEACH_CSTR_1.md` (study route).
-  - [ ] DIGESTER-LEACH_CSTR_1-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-LEACH_CSTR_1-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-LEACH_CSTR_1-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-LEACH_CSTR_1-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 64: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-LEACH_CSTR_1-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-LEACH_CSTR_1-14, X-COM-01. Triage: hardware.
 - **DIGESTER-LI_RECOVER** (separator, sector DIGESTER)
   - [x] DIGESTER-LI_RECOVER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/LI_RECOVER.md` §1; mass in = out 0 kg/d, 0.0500 kW.
@@ -1321,7 +1320,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-LI_RECOVER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-LI_RECOVER-10, X-DWG-01. Evidence: `models/mfg/LI_RECOVER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-LI_RECOVER-12 BOM. Done when: models/mfg/LI_RECOVER/bom.csv. Depends: DIGESTER-LI_RECOVER-10. Evidence: `models/mfg/LI_RECOVER/bom.csv`.
   - [x] DIGESTER-LI_RECOVER-13 Fabrication route. Done when: docs-authority/fab/LI_RECOVER.md. Depends: DIGESTER-LI_RECOVER-10, DIGESTER-LI_RECOVER-12. Evidence: `docs-authority/fab/LI_RECOVER.md` (study route).
-  - [ ] DIGESTER-LI_RECOVER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-LI_RECOVER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-LI_RECOVER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-LI_RECOVER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 53: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-LI_RECOVER-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-LI_RECOVER-14, X-COM-01. Triage: hardware.
 - **DIGESTER-POLISH_BANK** (polish, sector DIGESTER)
   - [x] DIGESTER-POLISH_BANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/POLISH_BANK.md` §1; mass in = out 3520 kg/d, 0.0000 kW.
@@ -1337,7 +1336,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-POLISH_BANK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-POLISH_BANK-10, X-DWG-01. Evidence: `models/mfg/POLISH_BANK/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-POLISH_BANK-12 BOM. Done when: models/mfg/POLISH_BANK/bom.csv. Depends: DIGESTER-POLISH_BANK-10. Evidence: `models/mfg/POLISH_BANK/bom.csv`.
   - [x] DIGESTER-POLISH_BANK-13 Fabrication route. Done when: docs-authority/fab/POLISH_BANK.md. Depends: DIGESTER-POLISH_BANK-10, DIGESTER-POLISH_BANK-12. Evidence: `docs-authority/fab/POLISH_BANK.md` (study route).
-  - [ ] DIGESTER-POLISH_BANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-POLISH_BANK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-POLISH_BANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-POLISH_BANK-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 52: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-POLISH_BANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-POLISH_BANK-14, X-COM-01. Triage: hardware.
 - **DIGESTER-P_CA** (precip, sector DIGESTER)
   - [x] DIGESTER-P_CA-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/P_CA.md` §1; mass in = out 0 kg/d, 0.0500 kW.
@@ -1353,7 +1352,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-P_CA-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-P_CA-10, X-DWG-01. Evidence: `models/mfg/P_CA/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-P_CA-12 BOM. Done when: models/mfg/P_CA/bom.csv. Depends: DIGESTER-P_CA-10. Evidence: `models/mfg/P_CA/bom.csv`.
   - [x] DIGESTER-P_CA-13 Fabrication route. Done when: docs-authority/fab/P_CA.md. Depends: DIGESTER-P_CA-10, DIGESTER-P_CA-12. Evidence: `docs-authority/fab/P_CA.md` (study route).
-  - [ ] DIGESTER-P_CA-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-P_CA-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-P_CA-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-P_CA-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 43: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-P_CA-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-P_CA-14, X-COM-01. Triage: hardware.
 - **DIGESTER-SALT_FEED** (feed, sector DIGESTER)
   - [x] DIGESTER-SALT_FEED-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/SALT_FEED.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -1369,7 +1368,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-SALT_FEED-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: DIGESTER-SALT_FEED-10, X-DWG-01. Evidence: `models/mfg/SALT_FEED/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] DIGESTER-SALT_FEED-12 BOM. Done when: models/mfg/SALT_FEED/bom.csv. Depends: DIGESTER-SALT_FEED-10. Evidence: `models/mfg/SALT_FEED/bom.csv`.
   - [x] DIGESTER-SALT_FEED-13 Fabrication route. Done when: docs-authority/fab/SALT_FEED.md. Depends: DIGESTER-SALT_FEED-10, DIGESTER-SALT_FEED-12. Evidence: `docs-authority/fab/SALT_FEED.md` (study route).
-  - [ ] DIGESTER-SALT_FEED-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-SALT_FEED-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] DIGESTER-SALT_FEED-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-SALT_FEED-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 21: level position, structural/hoist supports, connections named per edge).
   - [ ] DIGESTER-SALT_FEED-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-SALT_FEED-14, X-COM-01. Triage: hardware.
 
 ### FAB. Process (Mass transform)
@@ -1388,7 +1387,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-FAB_UPW_TANK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-FAB_UPW_TANK-10, X-DWG-01. Evidence: `models/mfg/FAB_UPW_TANK/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-FAB_UPW_TANK-12 BOM. Done when: models/mfg/FAB_UPW_TANK/bom.csv. Depends: FAB-FAB_UPW_TANK-10. Evidence: `models/mfg/FAB_UPW_TANK/bom.csv`.
   - [x] FAB-FAB_UPW_TANK-13 Fabrication route. Done when: docs-authority/fab/FAB_UPW_TANK.md. Depends: FAB-FAB_UPW_TANK-10, FAB-FAB_UPW_TANK-12. Evidence: `docs-authority/fab/FAB_UPW_TANK.md` (study route).
-  - [ ] FAB-FAB_UPW_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-FAB_UPW_TANK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-FAB_UPW_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-FAB_UPW_TANK-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 42: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-FAB_UPW_TANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-FAB_UPW_TANK-14, X-COM-01. Triage: hardware.
 - **FAB-LITHO_ALIGN** (aligner, sector FAB)
   - [x] FAB-LITHO_ALIGN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/LITHO_ALIGN.md` §1; mass in = out 0 kg/d, 0.0040 kW.
@@ -1404,7 +1403,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-LITHO_ALIGN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-LITHO_ALIGN-10, X-DWG-01. Evidence: `models/mfg/LITHO_ALIGN/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-LITHO_ALIGN-12 BOM. Done when: models/mfg/LITHO_ALIGN/bom.csv. Depends: FAB-LITHO_ALIGN-10. Evidence: `models/mfg/LITHO_ALIGN/bom.csv`.
   - [x] FAB-LITHO_ALIGN-13 Fabrication route. Done when: docs-authority/fab/LITHO_ALIGN.md. Depends: FAB-LITHO_ALIGN-10, FAB-LITHO_ALIGN-12. Evidence: `docs-authority/fab/LITHO_ALIGN.md` (study route).
-  - [ ] FAB-LITHO_ALIGN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-LITHO_ALIGN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-LITHO_ALIGN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-LITHO_ALIGN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 74: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-LITHO_ALIGN-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-LITHO_ALIGN-14, X-COM-01. Triage: hardware.
 - **FAB-LITHO_COAT** (coater, sector FAB)
   - [x] FAB-LITHO_COAT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/LITHO_COAT.md` §1; mass in = out 0.9875 kg/d, 0.0254 kW.
@@ -1420,7 +1419,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-LITHO_COAT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-LITHO_COAT-10, X-DWG-01. Evidence: `models/mfg/LITHO_COAT/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-LITHO_COAT-12 BOM. Done when: models/mfg/LITHO_COAT/bom.csv. Depends: FAB-LITHO_COAT-10. Evidence: `models/mfg/LITHO_COAT/bom.csv`.
   - [x] FAB-LITHO_COAT-13 Fabrication route. Done when: docs-authority/fab/LITHO_COAT.md. Depends: FAB-LITHO_COAT-10, FAB-LITHO_COAT-12. Evidence: `docs-authority/fab/LITHO_COAT.md` (study route).
-  - [ ] FAB-LITHO_COAT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-LITHO_COAT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-LITHO_COAT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-LITHO_COAT-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 102: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-LITHO_COAT-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-LITHO_COAT-14, X-COM-01. Triage: hardware.
 - **FAB-LITHO_DEV** (wet_bench, sector FAB)
   - [x] FAB-LITHO_DEV-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/LITHO_DEV.md` §1; mass in = out 0.9875 kg/d, 0.0080 kW.
@@ -1436,7 +1435,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-LITHO_DEV-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-LITHO_DEV-10, X-DWG-01. Evidence: `models/mfg/LITHO_DEV/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-LITHO_DEV-12 BOM. Done when: models/mfg/LITHO_DEV/bom.csv. Depends: FAB-LITHO_DEV-10. Evidence: `models/mfg/LITHO_DEV/bom.csv`.
   - [x] FAB-LITHO_DEV-13 Fabrication route. Done when: docs-authority/fab/LITHO_DEV.md. Depends: FAB-LITHO_DEV-10, FAB-LITHO_DEV-12. Evidence: `docs-authority/fab/LITHO_DEV.md` (study route).
-  - [ ] FAB-LITHO_DEV-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-LITHO_DEV-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-LITHO_DEV-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-LITHO_DEV-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 103: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-LITHO_DEV-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-LITHO_DEV-14, X-COM-01. Triage: hardware.
 - **FAB-SOLAR_PV_CELL** (tool, sector FAB)
   - [x] FAB-SOLAR_PV_CELL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/SOLAR_PV_CELL.md` §1; mass in = out 0.01 kg/d, 0.3917 kW.
@@ -1452,7 +1451,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-SOLAR_PV_CELL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-SOLAR_PV_CELL-10, X-DWG-01. Evidence: `models/mfg/SOLAR_PV_CELL/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-SOLAR_PV_CELL-12 BOM. Done when: models/mfg/SOLAR_PV_CELL/bom.csv. Depends: FAB-SOLAR_PV_CELL-10. Evidence: `models/mfg/SOLAR_PV_CELL/bom.csv`.
   - [x] FAB-SOLAR_PV_CELL-13 Fabrication route. Done when: docs-authority/fab/SOLAR_PV_CELL.md. Depends: FAB-SOLAR_PV_CELL-10, FAB-SOLAR_PV_CELL-12. Evidence: `docs-authority/fab/SOLAR_PV_CELL.md` (study route).
-  - [ ] FAB-SOLAR_PV_CELL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-SOLAR_PV_CELL-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-SOLAR_PV_CELL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-SOLAR_PV_CELL-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 76: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-SOLAR_PV_CELL-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-SOLAR_PV_CELL-14, X-COM-01. Triage: hardware.
 - **FAB-WAFER_FAB** (fab, sector FAB)
   - [x] FAB-WAFER_FAB-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WAFER_FAB.md` §1; mass in = out 71.31 kg/d, 0.4417 kW.
@@ -1468,7 +1467,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-WAFER_FAB-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-WAFER_FAB-10, X-DWG-01. Evidence: `models/mfg/WAFER_FAB/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-WAFER_FAB-12 BOM. Done when: models/mfg/WAFER_FAB/bom.csv. Depends: FAB-WAFER_FAB-10. Evidence: `models/mfg/WAFER_FAB/bom.csv`.
   - [x] FAB-WAFER_FAB-13 Fabrication route. Done when: docs-authority/fab/WAFER_FAB.md. Depends: FAB-WAFER_FAB-10, FAB-WAFER_FAB-12. Evidence: `docs-authority/fab/WAFER_FAB.md` (study route).
-  - [ ] FAB-WAFER_FAB-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WAFER_FAB-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-WAFER_FAB-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WAFER_FAB-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 101: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-WAFER_FAB-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-WAFER_FAB-14, X-COM-01. Triage: hardware.
 - **FAB-WET_BENCH** (wet_bench, sector FAB)
   - [x] FAB-WET_BENCH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WET_BENCH.md` §1; mass in = out 79.12 kg/d, 0.2066 kW.
@@ -1484,7 +1483,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-WET_BENCH-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-WET_BENCH-10, X-DWG-01. Evidence: `models/mfg/WET_BENCH/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-WET_BENCH-12 BOM. Done when: models/mfg/WET_BENCH/bom.csv. Depends: FAB-WET_BENCH-10. Evidence: `models/mfg/WET_BENCH/bom.csv`.
   - [x] FAB-WET_BENCH-13 Fabrication route. Done when: docs-authority/fab/WET_BENCH.md. Depends: FAB-WET_BENCH-10, FAB-WET_BENCH-12. Evidence: `docs-authority/fab/WET_BENCH.md` (study route).
-  - [ ] FAB-WET_BENCH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WET_BENCH-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-WET_BENCH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WET_BENCH-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 87: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-WET_BENCH-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-WET_BENCH-14, X-COM-01. Triage: hardware.
 - **FAB-WS_AMMONIA** (reagent, sector FAB)
   - [x] FAB-WS_AMMONIA-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WS_AMMONIA.md` §1; mass in = out 3.009 kg/d, 0.0000 kW.
@@ -1500,7 +1499,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-WS_AMMONIA-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-WS_AMMONIA-10, X-DWG-01. Evidence: `models/mfg/WS_AMMONIA/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-WS_AMMONIA-12 BOM. Done when: models/mfg/WS_AMMONIA/bom.csv. Depends: FAB-WS_AMMONIA-10. Evidence: `models/mfg/WS_AMMONIA/bom.csv`.
   - [x] FAB-WS_AMMONIA-13 Fabrication route. Done when: docs-authority/fab/WS_AMMONIA.md. Depends: FAB-WS_AMMONIA-10, FAB-WS_AMMONIA-12. Evidence: `docs-authority/fab/WS_AMMONIA.md` (study route).
-  - [ ] FAB-WS_AMMONIA-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_AMMONIA-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-WS_AMMONIA-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_AMMONIA-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 26: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-WS_AMMONIA-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-WS_AMMONIA-14, X-COM-01. Triage: hardware.
 - **FAB-WS_DOPE** (reagent, sector FAB)
   - [x] FAB-WS_DOPE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WS_DOPE.md` §1; mass in = out 0.01 kg/d, 0.0000 kW.
@@ -1516,7 +1515,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-WS_DOPE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-WS_DOPE-10, X-DWG-01. Evidence: `models/mfg/WS_DOPE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-WS_DOPE-12 BOM. Done when: models/mfg/WS_DOPE/bom.csv. Depends: FAB-WS_DOPE-10. Evidence: `models/mfg/WS_DOPE/bom.csv`.
   - [x] FAB-WS_DOPE-13 Fabrication route. Done when: docs-authority/fab/WS_DOPE.md. Depends: FAB-WS_DOPE-10, FAB-WS_DOPE-12. Evidence: `docs-authority/fab/WS_DOPE.md` (study route).
-  - [ ] FAB-WS_DOPE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_DOPE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-WS_DOPE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_DOPE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 30: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-WS_DOPE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-WS_DOPE-14, X-COM-01. Triage: hardware.
 - **FAB-WS_HF_ED** (reagent, sector FAB)
   - [x] FAB-WS_HF_ED-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WS_HF_ED.md` §1; mass in = out 1.5 kg/d, 0.0000 kW.
@@ -1532,7 +1531,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-WS_HF_ED-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-WS_HF_ED-10, X-DWG-01. Evidence: `models/mfg/WS_HF_ED/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-WS_HF_ED-12 BOM. Done when: models/mfg/WS_HF_ED/bom.csv. Depends: FAB-WS_HF_ED-10. Evidence: `models/mfg/WS_HF_ED/bom.csv`.
   - [x] FAB-WS_HF_ED-13 Fabrication route. Done when: docs-authority/fab/WS_HF_ED.md. Depends: FAB-WS_HF_ED-10, FAB-WS_HF_ED-12. Evidence: `docs-authority/fab/WS_HF_ED.md` (study route).
-  - [ ] FAB-WS_HF_ED-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_HF_ED-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-WS_HF_ED-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_HF_ED-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 71: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-WS_HF_ED-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-WS_HF_ED-14, X-COM-01. Triage: hardware.
 - **FAB-WS_KOH** (reagent, sector FAB)
   - [x] FAB-WS_KOH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WS_KOH.md` §1; mass in = out 0.2701 kg/d, 0.0000 kW.
@@ -1548,7 +1547,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-WS_KOH-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-WS_KOH-10, X-DWG-01. Evidence: `models/mfg/WS_KOH/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-WS_KOH-12 BOM. Done when: models/mfg/WS_KOH/bom.csv. Depends: FAB-WS_KOH-10. Evidence: `models/mfg/WS_KOH/bom.csv`.
   - [x] FAB-WS_KOH-13 Fabrication route. Done when: docs-authority/fab/WS_KOH.md. Depends: FAB-WS_KOH-10, FAB-WS_KOH-12. Evidence: `docs-authority/fab/WS_KOH.md` (study route).
-  - [ ] FAB-WS_KOH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_KOH-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-WS_KOH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_KOH-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 29: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-WS_KOH-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-WS_KOH-14, X-COM-01. Triage: hardware.
 - **FAB-WS_NITRIC** (reagent, sector FAB)
   - [x] FAB-WS_NITRIC-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WS_NITRIC.md` §1; mass in = out 1.246 kg/d, 0.0000 kW.
@@ -1564,7 +1563,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-WS_NITRIC-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-WS_NITRIC-10, X-DWG-01. Evidence: `models/mfg/WS_NITRIC/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-WS_NITRIC-12 BOM. Done when: models/mfg/WS_NITRIC/bom.csv. Depends: FAB-WS_NITRIC-10. Evidence: `models/mfg/WS_NITRIC/bom.csv`.
   - [x] FAB-WS_NITRIC-13 Fabrication route. Done when: docs-authority/fab/WS_NITRIC.md. Depends: FAB-WS_NITRIC-10, FAB-WS_NITRIC-12. Evidence: `docs-authority/fab/WS_NITRIC.md` (study route).
-  - [ ] FAB-WS_NITRIC-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_NITRIC-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-WS_NITRIC-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_NITRIC-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 36: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-WS_NITRIC-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-WS_NITRIC-14, X-COM-01. Triage: hardware.
 - **FAB-WS_PEROX** (reagent, sector FAB)
   - [x] FAB-WS_PEROX-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WS_PEROX.md` §1; mass in = out 3 kg/d, 0.0308 kW.
@@ -1580,7 +1579,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-WS_PEROX-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-WS_PEROX-10, X-DWG-01. Evidence: `models/mfg/WS_PEROX/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-WS_PEROX-12 BOM. Done when: models/mfg/WS_PEROX/bom.csv. Depends: FAB-WS_PEROX-10. Evidence: `models/mfg/WS_PEROX/bom.csv`.
   - [x] FAB-WS_PEROX-13 Fabrication route. Done when: docs-authority/fab/WS_PEROX.md. Depends: FAB-WS_PEROX-10, FAB-WS_PEROX-12. Evidence: `docs-authority/fab/WS_PEROX.md` (study route).
-  - [ ] FAB-WS_PEROX-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_PEROX-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-WS_PEROX-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_PEROX-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 86: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-WS_PEROX-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-WS_PEROX-14, X-COM-01. Triage: hardware.
 - **FAB-WS_PHOS** (reagent, sector FAB)
   - [x] FAB-WS_PHOS-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WS_PHOS.md` §1; mass in = out 0.62 kg/d, 0.0000 kW.
@@ -1596,7 +1595,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-WS_PHOS-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-WS_PHOS-10, X-DWG-01. Evidence: `models/mfg/WS_PHOS/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-WS_PHOS-12 BOM. Done when: models/mfg/WS_PHOS/bom.csv. Depends: FAB-WS_PHOS-10. Evidence: `models/mfg/WS_PHOS/bom.csv`.
   - [x] FAB-WS_PHOS-13 Fabrication route. Done when: docs-authority/fab/WS_PHOS.md. Depends: FAB-WS_PHOS-10, FAB-WS_PHOS-12. Evidence: `docs-authority/fab/WS_PHOS.md` (study route).
-  - [ ] FAB-WS_PHOS-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_PHOS-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-WS_PHOS-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_PHOS-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 28: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-WS_PHOS-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-WS_PHOS-14, X-COM-01. Triage: hardware.
 - **FAB-WS_SLURRY** (reagent, sector FAB)
   - [x] FAB-WS_SLURRY-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WS_SLURRY.md` §1; mass in = out 3.3 kg/d, 0.0000 kW.
@@ -1612,7 +1611,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-WS_SLURRY-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-WS_SLURRY-10, X-DWG-01. Evidence: `models/mfg/WS_SLURRY/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-WS_SLURRY-12 BOM. Done when: models/mfg/WS_SLURRY/bom.csv. Depends: FAB-WS_SLURRY-10. Evidence: `models/mfg/WS_SLURRY/bom.csv`.
   - [x] FAB-WS_SLURRY-13 Fabrication route. Done when: docs-authority/fab/WS_SLURRY.md. Depends: FAB-WS_SLURRY-10, FAB-WS_SLURRY-12. Evidence: `docs-authority/fab/WS_SLURRY.md` (study route).
-  - [ ] FAB-WS_SLURRY-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_SLURRY-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-WS_SLURRY-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_SLURRY-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 27: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-WS_SLURRY-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-WS_SLURRY-14, X-COM-01. Triage: hardware.
 - **FAB-WS_SOLV** (reagent, sector FAB)
   - [x] FAB-WS_SOLV-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WS_SOLV.md` §1; mass in = out 0.21 kg/d, 0.0000 kW.
@@ -1628,7 +1627,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-WS_SOLV-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FAB-WS_SOLV-10, X-DWG-01. Evidence: `models/mfg/WS_SOLV/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FAB-WS_SOLV-12 BOM. Done when: models/mfg/WS_SOLV/bom.csv. Depends: FAB-WS_SOLV-10. Evidence: `models/mfg/WS_SOLV/bom.csv`.
   - [x] FAB-WS_SOLV-13 Fabrication route. Done when: docs-authority/fab/WS_SOLV.md. Depends: FAB-WS_SOLV-10, FAB-WS_SOLV-12. Evidence: `docs-authority/fab/WS_SOLV.md` (study route).
-  - [ ] FAB-WS_SOLV-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_SOLV-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FAB-WS_SOLV-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_SOLV-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 70: level position, structural/hoist supports, connections named per edge).
   - [ ] FAB-WS_SOLV-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-WS_SOLV-14, X-COM-01. Triage: hardware.
 
 ### FARM. Life support / habitat
@@ -1647,7 +1646,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-AQUA_TANK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-AQUA_TANK-10, X-DWG-01. Evidence: `models/mfg/AQUA_TANK/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-AQUA_TANK-12 BOM. Done when: models/mfg/AQUA_TANK/bom.csv. Depends: FARM-AQUA_TANK-10. Evidence: `models/mfg/AQUA_TANK/bom.csv`.
   - [x] FARM-AQUA_TANK-13 Fabrication route. Done when: docs-authority/fab/AQUA_TANK.md. Depends: FARM-AQUA_TANK-10, FARM-AQUA_TANK-12. Evidence: `docs-authority/fab/AQUA_TANK.md` (study route).
-  - [ ] FARM-AQUA_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-AQUA_TANK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-AQUA_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-AQUA_TANK-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 26: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-AQUA_TANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-AQUA_TANK-14, X-COM-01. Triage: hardware.
 - **FARM-AQUA_UV** (uv_sanitizer, sector FARM)
   - [x] FARM-AQUA_UV-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/AQUA_UV.md` §1; mass in = out 0 kg/d, 0.0400 kW.
@@ -1663,7 +1662,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-AQUA_UV-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-AQUA_UV-10, X-DWG-01. Evidence: `models/mfg/AQUA_UV/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-AQUA_UV-12 BOM. Done when: models/mfg/AQUA_UV/bom.csv. Depends: FARM-AQUA_UV-10. Evidence: `models/mfg/AQUA_UV/bom.csv`.
   - [x] FARM-AQUA_UV-13 Fabrication route. Done when: docs-authority/fab/AQUA_UV.md. Depends: FARM-AQUA_UV-10, FARM-AQUA_UV-12. Evidence: `docs-authority/fab/AQUA_UV.md` (study route).
-  - [ ] FARM-AQUA_UV-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-AQUA_UV-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-AQUA_UV-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-AQUA_UV-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 55: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-AQUA_UV-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-AQUA_UV-14, X-COM-01. Triage: hardware.
 - **FARM-BEE_HIVE** (hive, sector FARM)
   - [x] FARM-BEE_HIVE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BEE_HIVE.md` §1; mass in = out 0.2 kg/d, 0.0000 kW.
@@ -1679,7 +1678,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-BEE_HIVE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-BEE_HIVE-10, X-DWG-01. Evidence: `models/mfg/BEE_HIVE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-BEE_HIVE-12 BOM. Done when: models/mfg/BEE_HIVE/bom.csv. Depends: FARM-BEE_HIVE-10. Evidence: `models/mfg/BEE_HIVE/bom.csv`.
   - [x] FARM-BEE_HIVE-13 Fabrication route. Done when: docs-authority/fab/BEE_HIVE.md. Depends: FARM-BEE_HIVE-10, FARM-BEE_HIVE-12. Evidence: `docs-authority/fab/BEE_HIVE.md` (study route).
-  - [ ] FARM-BEE_HIVE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BEE_HIVE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-BEE_HIVE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BEE_HIVE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 62: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-BEE_HIVE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-BEE_HIVE-14, X-COM-01. Triage: hardware.
 - **FARM-BIOFILTER** (biofilter, sector FARM)
   - [x] FARM-BIOFILTER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BIOFILTER.md` §1; mass in = out 200 kg/d, 0.0000 kW.
@@ -1695,7 +1694,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-BIOFILTER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-BIOFILTER-10, X-DWG-01. Evidence: `models/mfg/BIOFILTER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-BIOFILTER-12 BOM. Done when: models/mfg/BIOFILTER/bom.csv. Depends: FARM-BIOFILTER-10. Evidence: `models/mfg/BIOFILTER/bom.csv`.
   - [x] FARM-BIOFILTER-13 Fabrication route. Done when: docs-authority/fab/BIOFILTER.md. Depends: FARM-BIOFILTER-10, FARM-BIOFILTER-12. Evidence: `docs-authority/fab/BIOFILTER.md` (study route).
-  - [ ] FARM-BIOFILTER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BIOFILTER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-BIOFILTER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BIOFILTER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 27: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-BIOFILTER-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-BIOFILTER-14, X-COM-01. Triage: hardware.
 - **FARM-BSFL_BIN** (bsfl_bin, sector FARM)
   - [x] FARM-BSFL_BIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BSFL_BIN.md` §1; mass in = out 8.215 kg/d, 0.0000 kW.
@@ -1711,7 +1710,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-BSFL_BIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-BSFL_BIN-10, X-DWG-01. Evidence: `models/mfg/BSFL_BIN/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-BSFL_BIN-12 BOM. Done when: models/mfg/BSFL_BIN/bom.csv. Depends: FARM-BSFL_BIN-10. Evidence: `models/mfg/BSFL_BIN/bom.csv`.
   - [x] FARM-BSFL_BIN-13 Fabrication route. Done when: docs-authority/fab/BSFL_BIN.md. Depends: FARM-BSFL_BIN-10, FARM-BSFL_BIN-12. Evidence: `docs-authority/fab/BSFL_BIN.md` (study route).
-  - [ ] FARM-BSFL_BIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BSFL_BIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-BSFL_BIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BSFL_BIN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 41: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-BSFL_BIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-BSFL_BIN-14, X-COM-01. Triage: hardware.
 - **FARM-CHICKEN_COOP** (coop, sector FARM)
   - [x] FARM-CHICKEN_COOP-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CHICKEN_COOP.md` §1; mass in = out 4.528 kg/d, 0.0000 kW.
@@ -1727,7 +1726,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-CHICKEN_COOP-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-CHICKEN_COOP-10, X-DWG-01. Evidence: `models/mfg/CHICKEN_COOP/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-CHICKEN_COOP-12 BOM. Done when: models/mfg/CHICKEN_COOP/bom.csv. Depends: FARM-CHICKEN_COOP-10. Evidence: `models/mfg/CHICKEN_COOP/bom.csv`.
   - [x] FARM-CHICKEN_COOP-13 Fabrication route. Done when: docs-authority/fab/CHICKEN_COOP.md. Depends: FARM-CHICKEN_COOP-10, FARM-CHICKEN_COOP-12. Evidence: `docs-authority/fab/CHICKEN_COOP.md` (study route).
-  - [ ] FARM-CHICKEN_COOP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-CHICKEN_COOP-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-CHICKEN_COOP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-CHICKEN_COOP-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 31: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-CHICKEN_COOP-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-CHICKEN_COOP-14, X-COM-01. Triage: hardware.
 - **FARM-DUCKWEED** (duckweed, sector FARM)
   - [x] FARM-DUCKWEED-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/DUCKWEED.md` §1; mass in = out 226.2 kg/d, 0.0000 kW.
@@ -1743,7 +1742,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-DUCKWEED-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-DUCKWEED-10, X-DWG-01. Evidence: `models/mfg/DUCKWEED/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-DUCKWEED-12 BOM. Done when: models/mfg/DUCKWEED/bom.csv. Depends: FARM-DUCKWEED-10. Evidence: `models/mfg/DUCKWEED/bom.csv`.
   - [x] FARM-DUCKWEED-13 Fabrication route. Done when: docs-authority/fab/DUCKWEED.md. Depends: FARM-DUCKWEED-10, FARM-DUCKWEED-12. Evidence: `docs-authority/fab/DUCKWEED.md` (study route).
-  - [ ] FARM-DUCKWEED-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-DUCKWEED-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-DUCKWEED-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-DUCKWEED-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 44: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-DUCKWEED-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-DUCKWEED-14, X-COM-01. Triage: hardware.
 - **FARM-DUCK_PEN** (pen, sector FARM)
   - [x] FARM-DUCK_PEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/DUCK_PEN.md` §1; mass in = out 8.313 kg/d, 0.0000 kW.
@@ -1759,7 +1758,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-DUCK_PEN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-DUCK_PEN-10, X-DWG-01. Evidence: `models/mfg/DUCK_PEN/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-DUCK_PEN-12 BOM. Done when: models/mfg/DUCK_PEN/bom.csv. Depends: FARM-DUCK_PEN-10. Evidence: `models/mfg/DUCK_PEN/bom.csv`.
   - [x] FARM-DUCK_PEN-13 Fabrication route. Done when: docs-authority/fab/DUCK_PEN.md. Depends: FARM-DUCK_PEN-10, FARM-DUCK_PEN-12. Evidence: `docs-authority/fab/DUCK_PEN.md` (study route).
-  - [ ] FARM-DUCK_PEN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-DUCK_PEN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-DUCK_PEN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-DUCK_PEN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 23: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-DUCK_PEN-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-DUCK_PEN-14, X-COM-01. Triage: hardware.
 - **FARM-FEED_PREP** (feed_prep, sector FARM)
   - [x] FARM-FEED_PREP-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/FEED_PREP.md` §1; mass in = out 43.92 kg/d, 0.6000 kW.
@@ -1775,7 +1774,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-FEED_PREP-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-FEED_PREP-10, X-DWG-01. Evidence: `models/mfg/FEED_PREP/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-FEED_PREP-12 BOM. Done when: models/mfg/FEED_PREP/bom.csv. Depends: FARM-FEED_PREP-10. Evidence: `models/mfg/FEED_PREP/bom.csv`.
   - [x] FARM-FEED_PREP-13 Fabrication route. Done when: docs-authority/fab/FEED_PREP.md. Depends: FARM-FEED_PREP-10, FARM-FEED_PREP-12. Evidence: `docs-authority/fab/FEED_PREP.md` (study route).
-  - [ ] FARM-FEED_PREP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-FEED_PREP-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-FEED_PREP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-FEED_PREP-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 30: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-FEED_PREP-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-FEED_PREP-14, X-COM-01. Triage: hardware.
 - **FARM-FOOD_STORE** (store, sector FARM)
   - [x] FARM-FOOD_STORE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/FOOD_STORE.md` §1; mass in = out 10.66 kg/d, 0.0000 kW.
@@ -1791,7 +1790,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-FOOD_STORE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-FOOD_STORE-10, X-DWG-01. Evidence: `models/mfg/FOOD_STORE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-FOOD_STORE-12 BOM. Done when: models/mfg/FOOD_STORE/bom.csv. Depends: FARM-FOOD_STORE-10. Evidence: `models/mfg/FOOD_STORE/bom.csv`.
   - [x] FARM-FOOD_STORE-13 Fabrication route. Done when: docs-authority/fab/FOOD_STORE.md. Depends: FARM-FOOD_STORE-10, FARM-FOOD_STORE-12. Evidence: `docs-authority/fab/FOOD_STORE.md` (study route).
-  - [ ] FARM-FOOD_STORE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-FOOD_STORE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-FOOD_STORE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-FOOD_STORE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 67: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-FOOD_STORE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-FOOD_STORE-14, X-COM-01. Triage: hardware.
 - **FARM-GROWBED_A** (growbed, sector FARM)
   - [x] FARM-GROWBED_A-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GROWBED_A.md` §1; mass in = out 202.8 kg/d, 0.0000 kW.
@@ -1807,7 +1806,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-GROWBED_A-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-GROWBED_A-10, X-DWG-01. Evidence: `models/mfg/GROWBED_A/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-GROWBED_A-12 BOM. Done when: models/mfg/GROWBED_A/bom.csv. Depends: FARM-GROWBED_A-10. Evidence: `models/mfg/GROWBED_A/bom.csv`.
   - [x] FARM-GROWBED_A-13 Fabrication route. Done when: docs-authority/fab/GROWBED_A.md. Depends: FARM-GROWBED_A-10, FARM-GROWBED_A-12. Evidence: `docs-authority/fab/GROWBED_A.md` (study route).
-  - [ ] FARM-GROWBED_A-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-GROWBED_A-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-GROWBED_A-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-GROWBED_A-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 65: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-GROWBED_A-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-GROWBED_A-14, X-COM-01. Triage: hardware.
 - **FARM-GROWBED_B** (growbed, sector FARM)
   - [x] FARM-GROWBED_B-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GROWBED_B.md` §1; mass in = out 229.7 kg/d, 0.0000 kW.
@@ -1823,7 +1822,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-GROWBED_B-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-GROWBED_B-10, X-DWG-01. Evidence: `models/mfg/GROWBED_B/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-GROWBED_B-12 BOM. Done when: models/mfg/GROWBED_B/bom.csv. Depends: FARM-GROWBED_B-10. Evidence: `models/mfg/GROWBED_B/bom.csv`.
   - [x] FARM-GROWBED_B-13 Fabrication route. Done when: docs-authority/fab/GROWBED_B.md. Depends: FARM-GROWBED_B-10, FARM-GROWBED_B-12. Evidence: `docs-authority/fab/GROWBED_B.md` (study route).
-  - [ ] FARM-GROWBED_B-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-GROWBED_B-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-GROWBED_B-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-GROWBED_B-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 66: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-GROWBED_B-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-GROWBED_B-14, X-COM-01. Triage: hardware.
 - **FARM-GROW_BED** (farm, sector FARM)
   - [x] FARM-GROW_BED-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GROW_BED.md` §1; mass in = out 78.58 kg/d, 2.0463 kW.
@@ -1839,7 +1838,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-GROW_BED-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-GROW_BED-10, X-DWG-01. Evidence: `models/mfg/GROW_BED/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-GROW_BED-12 BOM. Done when: models/mfg/GROW_BED/bom.csv. Depends: FARM-GROW_BED-10. Evidence: `models/mfg/GROW_BED/bom.csv`.
   - [x] FARM-GROW_BED-13 Fabrication route. Done when: docs-authority/fab/GROW_BED.md. Depends: FARM-GROW_BED-10, FARM-GROW_BED-12. Evidence: `docs-authority/fab/GROW_BED.md` (study route).
-  - [ ] FARM-GROW_BED-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-GROW_BED-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-GROW_BED-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-GROW_BED-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 63: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-GROW_BED-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-GROW_BED-14, X-COM-01. Triage: hardware.
 - **FARM-QUAIL_CAGE** (cage, sector FARM)
   - [x] FARM-QUAIL_CAGE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/QUAIL_CAGE.md` §1; mass in = out 1.902 kg/d, 0.0000 kW.
@@ -1855,7 +1854,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-QUAIL_CAGE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-QUAIL_CAGE-10, X-DWG-01. Evidence: `models/mfg/QUAIL_CAGE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-QUAIL_CAGE-12 BOM. Done when: models/mfg/QUAIL_CAGE/bom.csv. Depends: FARM-QUAIL_CAGE-10. Evidence: `models/mfg/QUAIL_CAGE/bom.csv`.
   - [x] FARM-QUAIL_CAGE-13 Fabrication route. Done when: docs-authority/fab/QUAIL_CAGE.md. Depends: FARM-QUAIL_CAGE-10, FARM-QUAIL_CAGE-12. Evidence: `docs-authority/fab/QUAIL_CAGE.md` (study route).
-  - [ ] FARM-QUAIL_CAGE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-QUAIL_CAGE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-QUAIL_CAGE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-QUAIL_CAGE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 42: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-QUAIL_CAGE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-QUAIL_CAGE-14, X-COM-01. Triage: hardware.
 - **FARM-RABBIT_HUTCH** (hutch, sector FARM)
   - [x] FARM-RABBIT_HUTCH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/RABBIT_HUTCH.md` §1; mass in = out 0.5 kg/d, 0.0000 kW.
@@ -1871,7 +1870,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-RABBIT_HUTCH-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-RABBIT_HUTCH-10, X-DWG-01. Evidence: `models/mfg/RABBIT_HUTCH/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-RABBIT_HUTCH-12 BOM. Done when: models/mfg/RABBIT_HUTCH/bom.csv. Depends: FARM-RABBIT_HUTCH-10. Evidence: `models/mfg/RABBIT_HUTCH/bom.csv`.
   - [x] FARM-RABBIT_HUTCH-13 Fabrication route. Done when: docs-authority/fab/RABBIT_HUTCH.md. Depends: FARM-RABBIT_HUTCH-10, FARM-RABBIT_HUTCH-12. Evidence: `docs-authority/fab/RABBIT_HUTCH.md` (study route).
-  - [ ] FARM-RABBIT_HUTCH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-RABBIT_HUTCH-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-RABBIT_HUTCH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-RABBIT_HUTCH-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 61: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-RABBIT_HUTCH-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-RABBIT_HUTCH-14, X-COM-01. Triage: hardware.
 - **FARM-VERMI_BIN** (worm_bin, sector FARM)
   - [x] FARM-VERMI_BIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/VERMI_BIN.md` §1; mass in = out 2.75 kg/d, 0.0000 kW.
@@ -1887,7 +1886,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-VERMI_BIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-VERMI_BIN-10, X-DWG-01. Evidence: `models/mfg/VERMI_BIN/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] FARM-VERMI_BIN-12 BOM. Done when: models/mfg/VERMI_BIN/bom.csv. Depends: FARM-VERMI_BIN-10. Evidence: `models/mfg/VERMI_BIN/bom.csv`.
   - [x] FARM-VERMI_BIN-13 Fabrication route. Done when: docs-authority/fab/VERMI_BIN.md. Depends: FARM-VERMI_BIN-10, FARM-VERMI_BIN-12. Evidence: `docs-authority/fab/VERMI_BIN.md` (study route).
-  - [ ] FARM-VERMI_BIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-VERMI_BIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] FARM-VERMI_BIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-VERMI_BIN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 64: level position, structural/hoist supports, connections named per edge).
   - [ ] FARM-VERMI_BIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-VERMI_BIN-14, X-COM-01. Triage: hardware.
 
 ### CRYO. Utility / header
@@ -1906,7 +1905,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-AIR_RECEIVER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: CRYO-AIR_RECEIVER-10, X-DWG-01. Evidence: `models/mfg/AIR_RECEIVER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] CRYO-AIR_RECEIVER-12 BOM. Done when: models/mfg/AIR_RECEIVER/bom.csv. Depends: CRYO-AIR_RECEIVER-10. Evidence: `models/mfg/AIR_RECEIVER/bom.csv`.
   - [x] CRYO-AIR_RECEIVER-13 Fabrication route. Done when: docs-authority/fab/AIR_RECEIVER.md. Depends: CRYO-AIR_RECEIVER-10, CRYO-AIR_RECEIVER-12. Evidence: `docs-authority/fab/AIR_RECEIVER.md` (study route).
-  - [ ] CRYO-AIR_RECEIVER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-AIR_RECEIVER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] CRYO-AIR_RECEIVER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-AIR_RECEIVER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 45: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-AIR_RECEIVER-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-AIR_RECEIVER-14, X-COM-01. Triage: hardware.
 - **CRYO-CRYO_AHU** (ahu, sector CRYO)
   - [x] CRYO-CRYO_AHU-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_AHU.md` §1; mass in = out 170.1 kg/d, 0.6472 kW.
@@ -1922,7 +1921,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-CRYO_AHU-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: CRYO-CRYO_AHU-10, X-DWG-01. Evidence: `models/mfg/CRYO_AHU/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] CRYO-CRYO_AHU-12 BOM. Done when: models/mfg/CRYO_AHU/bom.csv. Depends: CRYO-CRYO_AHU-10. Evidence: `models/mfg/CRYO_AHU/bom.csv`.
   - [x] CRYO-CRYO_AHU-13 Fabrication route. Done when: docs-authority/fab/CRYO_AHU.md. Depends: CRYO-CRYO_AHU-10, CRYO-CRYO_AHU-12. Evidence: `docs-authority/fab/CRYO_AHU.md` (study route).
-  - [ ] CRYO-CRYO_AHU-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_AHU-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] CRYO-CRYO_AHU-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_AHU-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 41: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-CRYO_AHU-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-CRYO_AHU-14, X-COM-01. Triage: hardware.
 - **CRYO-CRYO_AHU_COND_CONDENSABLE** (None, sector CRYO)
   - [x] CRYO-CRYO_AHU_COND_CONDENSABLE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_AHU_COND_CONDENSABLE.md` §1; mass in = out 0.0521 kg/d, 0.0000 kW.
@@ -1938,7 +1937,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-CRYO_AHU_COND_CONDENSABLE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: CRYO-CRYO_AHU_COND_CONDENSABLE-10, X-DWG-01. Evidence: `models/mfg/CRYO_AHU_COND_CONDENSABLE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] CRYO-CRYO_AHU_COND_CONDENSABLE-12 BOM. Done when: models/mfg/CRYO_AHU_COND_CONDENSABLE/bom.csv. Depends: CRYO-CRYO_AHU_COND_CONDENSABLE-10. Evidence: `models/mfg/CRYO_AHU_COND_CONDENSABLE/bom.csv`.
   - [x] CRYO-CRYO_AHU_COND_CONDENSABLE-13 Fabrication route. Done when: docs-authority/fab/CRYO_AHU_COND_CONDENSABLE.md. Depends: CRYO-CRYO_AHU_COND_CONDENSABLE-10, CRYO-CRYO_AHU_COND_CONDENSABLE-12. Evidence: `docs-authority/fab/CRYO_AHU_COND_CONDENSABLE.md` (study route).
-  - [ ] CRYO-CRYO_AHU_COND_CONDENSABLE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_AHU_COND_CONDENSABLE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] CRYO-CRYO_AHU_COND_CONDENSABLE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_AHU_COND_CONDENSABLE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 43: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-CRYO_AHU_COND_CONDENSABLE-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-CRYO_AHU_COND_CONDENSABLE-14, X-COM-01. Triage: hardware.
 - **CRYO-CRYO_ASU** (cold_box, sector CRYO)
   - [x] CRYO-CRYO_ASU-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_ASU.md` §1; mass in = out 218.2 kg/d, 1.6572 kW.
@@ -1954,7 +1953,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-CRYO_ASU-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: CRYO-CRYO_ASU-10, X-DWG-01. Evidence: `models/mfg/CRYO_ASU/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] CRYO-CRYO_ASU-12 BOM. Done when: models/mfg/CRYO_ASU/bom.csv. Depends: CRYO-CRYO_ASU-10. Evidence: `models/mfg/CRYO_ASU/bom.csv`.
   - [x] CRYO-CRYO_ASU-13 Fabrication route. Done when: docs-authority/fab/CRYO_ASU.md. Depends: CRYO-CRYO_ASU-10, CRYO-CRYO_ASU-12. Evidence: `docs-authority/fab/CRYO_ASU.md` (study route).
-  - [ ] CRYO-CRYO_ASU-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_ASU-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] CRYO-CRYO_ASU-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_ASU-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 67: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-CRYO_ASU-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-CRYO_ASU-14, X-COM-01. Triage: hardware.
 - **CRYO-CRYO_CO2** (cold_box, sector CRYO)
   - [x] CRYO-CRYO_CO2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_CO2.md` §1; mass in = out 44.26 kg/d, 0.0000 kW.
@@ -1970,7 +1969,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-CRYO_CO2-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: CRYO-CRYO_CO2-10, X-DWG-01. Evidence: `models/mfg/CRYO_CO2/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] CRYO-CRYO_CO2-12 BOM. Done when: models/mfg/CRYO_CO2/bom.csv. Depends: CRYO-CRYO_CO2-10. Evidence: `models/mfg/CRYO_CO2/bom.csv`.
   - [x] CRYO-CRYO_CO2-13 Fabrication route. Done when: docs-authority/fab/CRYO_CO2.md. Depends: CRYO-CRYO_CO2-10, CRYO-CRYO_CO2-12. Evidence: `docs-authority/fab/CRYO_CO2.md` (study route).
-  - [ ] CRYO-CRYO_CO2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_CO2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] CRYO-CRYO_CO2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_CO2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 68: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-CRYO_CO2-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-CRYO_CO2-14, X-COM-01. Triage: hardware.
 - **CRYO-CRYO_DED_COOL** (cool, sector CRYO)
   - [x] CRYO-CRYO_DED_COOL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_DED_COOL.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -1986,7 +1985,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-CRYO_DED_COOL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: CRYO-CRYO_DED_COOL-10, X-DWG-01. Evidence: `models/mfg/CRYO_DED_COOL/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] CRYO-CRYO_DED_COOL-12 BOM. Done when: models/mfg/CRYO_DED_COOL/bom.csv. Depends: CRYO-CRYO_DED_COOL-10. Evidence: `models/mfg/CRYO_DED_COOL/bom.csv`.
   - [x] CRYO-CRYO_DED_COOL-13 Fabrication route. Done when: docs-authority/fab/CRYO_DED_COOL.md. Depends: CRYO-CRYO_DED_COOL-10, CRYO-CRYO_DED_COOL-12. Evidence: `docs-authority/fab/CRYO_DED_COOL.md` (study route).
-  - [ ] CRYO-CRYO_DED_COOL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_DED_COOL-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] CRYO-CRYO_DED_COOL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_DED_COOL-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 40: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-CRYO_DED_COOL-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-CRYO_DED_COOL-14, X-COM-01. Triage: hardware.
 - **CRYO-CRYO_H2** (cold_box, sector CRYO)
   - [x] CRYO-CRYO_H2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_H2.md` §1; mass in = out 11.33 kg/d, 0.9325 kW.
@@ -2002,7 +2001,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-CRYO_H2-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: CRYO-CRYO_H2-10, X-DWG-01. Evidence: `models/mfg/CRYO_H2/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] CRYO-CRYO_H2-12 BOM. Done when: models/mfg/CRYO_H2/bom.csv. Depends: CRYO-CRYO_H2-10. Evidence: `models/mfg/CRYO_H2/bom.csv`.
   - [x] CRYO-CRYO_H2-13 Fabrication route. Done when: docs-authority/fab/CRYO_H2.md. Depends: CRYO-CRYO_H2-10, CRYO-CRYO_H2-12. Evidence: `docs-authority/fab/CRYO_H2.md` (study route).
-  - [ ] CRYO-CRYO_H2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_H2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] CRYO-CRYO_H2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_H2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 7: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-CRYO_H2-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-CRYO_H2-14, X-COM-01. Triage: hardware.
 - **CRYO-CRYO_HX_Q4** (hx, sector CRYO)
   - [x] CRYO-CRYO_HX_Q4-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_HX_Q4.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -2018,7 +2017,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-CRYO_HX_Q4-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: CRYO-CRYO_HX_Q4-10, X-DWG-01. Evidence: `models/mfg/CRYO_HX_Q4/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] CRYO-CRYO_HX_Q4-12 BOM. Done when: models/mfg/CRYO_HX_Q4/bom.csv. Depends: CRYO-CRYO_HX_Q4-10. Evidence: `models/mfg/CRYO_HX_Q4/bom.csv`.
   - [x] CRYO-CRYO_HX_Q4-13 Fabrication route. Done when: docs-authority/fab/CRYO_HX_Q4.md. Depends: CRYO-CRYO_HX_Q4-10, CRYO-CRYO_HX_Q4-12. Evidence: `docs-authority/fab/CRYO_HX_Q4.md` (study route).
-  - [ ] CRYO-CRYO_HX_Q4-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_HX_Q4-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] CRYO-CRYO_HX_Q4-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_HX_Q4-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 24: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-CRYO_HX_Q4-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-CRYO_HX_Q4-14, X-COM-01. Triage: hardware.
 - **CRYO-CRYO_N2** (cold_box, sector CRYO)
   - [x] CRYO-CRYO_N2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_N2.md` §1; mass in = out 196.6 kg/d, 0.0000 kW.
@@ -2034,7 +2033,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-CRYO_N2-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: CRYO-CRYO_N2-10, X-DWG-01. Evidence: `models/mfg/CRYO_N2/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] CRYO-CRYO_N2-12 BOM. Done when: models/mfg/CRYO_N2/bom.csv. Depends: CRYO-CRYO_N2-10. Evidence: `models/mfg/CRYO_N2/bom.csv`.
   - [x] CRYO-CRYO_N2-13 Fabrication route. Done when: docs-authority/fab/CRYO_N2.md. Depends: CRYO-CRYO_N2-10, CRYO-CRYO_N2-12. Evidence: `docs-authority/fab/CRYO_N2.md` (study route).
-  - [ ] CRYO-CRYO_N2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_N2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] CRYO-CRYO_N2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_N2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 44: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-CRYO_N2-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-CRYO_N2-14, X-COM-01. Triage: hardware.
 - **CRYO-CRYO_O2** (cold_box, sector CRYO)
   - [x] CRYO-CRYO_O2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_O2.md` §1; mass in = out 74.97 kg/d, 0.0000 kW.
@@ -2050,7 +2049,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-CRYO_O2-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: CRYO-CRYO_O2-10, X-DWG-01. Evidence: `models/mfg/CRYO_O2/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] CRYO-CRYO_O2-12 BOM. Done when: models/mfg/CRYO_O2/bom.csv. Depends: CRYO-CRYO_O2-10. Evidence: `models/mfg/CRYO_O2/bom.csv`.
   - [x] CRYO-CRYO_O2-13 Fabrication route. Done when: docs-authority/fab/CRYO_O2.md. Depends: CRYO-CRYO_O2-10, CRYO-CRYO_O2-12. Evidence: `docs-authority/fab/CRYO_O2.md` (study route).
-  - [ ] CRYO-CRYO_O2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_O2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] CRYO-CRYO_O2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_O2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 66: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-CRYO_O2-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-CRYO_O2-14, X-COM-01. Triage: hardware.
 - **CRYO-H2O_ELYZ** (pem_electrolyser, sector CRYO)
   - [x] CRYO-H2O_ELYZ-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/H2O_ELYZ.md` §1; mass in = out 83.62 kg/d, 21.4447 kW.
@@ -2066,7 +2065,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-H2O_ELYZ-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: CRYO-H2O_ELYZ-10, X-DWG-01. Evidence: `models/mfg/H2O_ELYZ/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] CRYO-H2O_ELYZ-12 BOM. Done when: models/mfg/H2O_ELYZ/bom.csv. Depends: CRYO-H2O_ELYZ-10. Evidence: `models/mfg/H2O_ELYZ/bom.csv`.
   - [x] CRYO-H2O_ELYZ-13 Fabrication route. Done when: docs-authority/fab/H2O_ELYZ.md. Depends: CRYO-H2O_ELYZ-10, CRYO-H2O_ELYZ-12. Evidence: `docs-authority/fab/H2O_ELYZ.md` (study route).
-  - [ ] CRYO-H2O_ELYZ-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-H2O_ELYZ-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] CRYO-H2O_ELYZ-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-H2O_ELYZ-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 6: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-H2O_ELYZ-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-H2O_ELYZ-14, X-COM-01. Triage: hardware.
 - **CRYO-PROD_MEOH** (product, sector CRYO)
   - [x] CRYO-PROD_MEOH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PROD_MEOH.md` §1; mass in = out 28.03 kg/d, 0.0000 kW.
@@ -2082,7 +2081,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-PROD_MEOH-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: CRYO-PROD_MEOH-10, X-DWG-01. Evidence: `models/mfg/PROD_MEOH/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] CRYO-PROD_MEOH-12 BOM. Done when: models/mfg/PROD_MEOH/bom.csv. Depends: CRYO-PROD_MEOH-10. Evidence: `models/mfg/PROD_MEOH/bom.csv`.
   - [x] CRYO-PROD_MEOH-13 Fabrication route. Done when: docs-authority/fab/PROD_MEOH.md. Depends: CRYO-PROD_MEOH-10, CRYO-PROD_MEOH-12. Evidence: `docs-authority/fab/PROD_MEOH.md` (study route).
-  - [ ] CRYO-PROD_MEOH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-PROD_MEOH-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] CRYO-PROD_MEOH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-PROD_MEOH-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 8: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-PROD_MEOH-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-PROD_MEOH-14, X-COM-01. Triage: hardware.
 - **CRYO-PROD_O2** (product, sector CRYO)
   - [x] CRYO-PROD_O2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PROD_O2.md` §1; mass in = out 22.88 kg/d, 0.0000 kW.
@@ -2098,7 +2097,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-PROD_O2-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: CRYO-PROD_O2-10, X-DWG-01. Evidence: `models/mfg/PROD_O2/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] CRYO-PROD_O2-12 BOM. Done when: models/mfg/PROD_O2/bom.csv. Depends: CRYO-PROD_O2-10. Evidence: `models/mfg/PROD_O2/bom.csv`.
   - [x] CRYO-PROD_O2-13 Fabrication route. Done when: docs-authority/fab/PROD_O2.md. Depends: CRYO-PROD_O2-10, CRYO-PROD_O2-12. Evidence: `docs-authority/fab/PROD_O2.md` (study route).
-  - [ ] CRYO-PROD_O2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-PROD_O2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] CRYO-PROD_O2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-PROD_O2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 4: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-PROD_O2-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-PROD_O2-14, X-COM-01. Triage: hardware.
 - **CRYO-RELIEF_CRYO** (relief, sector CRYO)
   - [x] CRYO-RELIEF_CRYO-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/RELIEF_CRYO.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -2114,7 +2113,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-RELIEF_CRYO-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: CRYO-RELIEF_CRYO-10, X-DWG-01. Evidence: `models/mfg/RELIEF_CRYO/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] CRYO-RELIEF_CRYO-12 BOM. Done when: models/mfg/RELIEF_CRYO/bom.csv. Depends: CRYO-RELIEF_CRYO-10. Evidence: `models/mfg/RELIEF_CRYO/bom.csv`.
   - [x] CRYO-RELIEF_CRYO-13 Fabrication route. Done when: docs-authority/fab/RELIEF_CRYO.md. Depends: CRYO-RELIEF_CRYO-10, CRYO-RELIEF_CRYO-12. Evidence: `docs-authority/fab/RELIEF_CRYO.md` (study route).
-  - [ ] CRYO-RELIEF_CRYO-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-RELIEF_CRYO-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] CRYO-RELIEF_CRYO-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-RELIEF_CRYO-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 42: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-RELIEF_CRYO-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-RELIEF_CRYO-14, X-COM-01. Triage: hardware.
 
 ### OIL. Process (Mass transform)
@@ -2133,7 +2132,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-AFTERBURNER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: OIL-AFTERBURNER-10, X-DWG-01. Evidence: `models/mfg/AFTERBURNER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] OIL-AFTERBURNER-12 BOM. Done when: models/mfg/AFTERBURNER/bom.csv. Depends: OIL-AFTERBURNER-10. Evidence: `models/mfg/AFTERBURNER/bom.csv`.
   - [x] OIL-AFTERBURNER-13 Fabrication route. Done when: docs-authority/fab/AFTERBURNER.md. Depends: OIL-AFTERBURNER-10, OIL-AFTERBURNER-12. Evidence: `docs-authority/fab/AFTERBURNER.md` (study route).
-  - [ ] OIL-AFTERBURNER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-AFTERBURNER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] OIL-AFTERBURNER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-AFTERBURNER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 39: level position, structural/hoist supports, connections named per edge).
   - [ ] OIL-AFTERBURNER-15 Test and commission. Done when: test procedure and acceptance record. Depends: OIL-AFTERBURNER-14, X-COM-01. Triage: hardware.
 - **OIL-C29_RECYCLE** (recycle_pipe, sector OIL)
   - [x] OIL-C29_RECYCLE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/C29_RECYCLE.md` §1; mass in = out 5.873 kg/d, 0.0000 kW.
@@ -2149,7 +2148,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-C29_RECYCLE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: OIL-C29_RECYCLE-10, X-DWG-01. Evidence: `models/mfg/C29_RECYCLE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] OIL-C29_RECYCLE-12 BOM. Done when: models/mfg/C29_RECYCLE/bom.csv. Depends: OIL-C29_RECYCLE-10. Evidence: `models/mfg/C29_RECYCLE/bom.csv`.
   - [x] OIL-C29_RECYCLE-13 Fabrication route. Done when: docs-authority/fab/C29_RECYCLE.md. Depends: OIL-C29_RECYCLE-10, OIL-C29_RECYCLE-12. Evidence: `docs-authority/fab/C29_RECYCLE.md` (study route).
-  - [ ] OIL-C29_RECYCLE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-C29_RECYCLE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] OIL-C29_RECYCLE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-C29_RECYCLE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 35: level position, structural/hoist supports, connections named per edge).
   - [ ] OIL-C29_RECYCLE-15 Test and commission. Done when: test procedure and acceptance record. Depends: OIL-C29_RECYCLE-14, X-COM-01. Triage: hardware.
 - **OIL-GREASE_CA** (kettle, sector OIL)
   - [x] OIL-GREASE_CA-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GREASE_CA.md` §1; mass in = out 0 kg/d, 0.2000 kW.
@@ -2165,7 +2164,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-GREASE_CA-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: OIL-GREASE_CA-10, X-DWG-01. Evidence: `models/mfg/GREASE_CA/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] OIL-GREASE_CA-12 BOM. Done when: models/mfg/GREASE_CA/bom.csv. Depends: OIL-GREASE_CA-10. Evidence: `models/mfg/GREASE_CA/bom.csv`.
   - [x] OIL-GREASE_CA-13 Fabrication route. Done when: docs-authority/fab/GREASE_CA.md. Depends: OIL-GREASE_CA-10, OIL-GREASE_CA-12. Evidence: `docs-authority/fab/GREASE_CA.md` (study route).
-  - [ ] OIL-GREASE_CA-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-GREASE_CA-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] OIL-GREASE_CA-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-GREASE_CA-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 32: level position, structural/hoist supports, connections named per edge).
   - [ ] OIL-GREASE_CA-15 Test and commission. Done when: test procedure and acceptance record. Depends: OIL-GREASE_CA-14, X-COM-01. Triage: hardware.
 - **OIL-GREASE_LI** (kettle, sector OIL)
   - [x] OIL-GREASE_LI-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GREASE_LI.md` §1; mass in = out 0 kg/d, 0.2000 kW.
@@ -2181,7 +2180,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-GREASE_LI-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: OIL-GREASE_LI-10, X-DWG-01. Evidence: `models/mfg/GREASE_LI/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] OIL-GREASE_LI-12 BOM. Done when: models/mfg/GREASE_LI/bom.csv. Depends: OIL-GREASE_LI-10. Evidence: `models/mfg/GREASE_LI/bom.csv`.
   - [x] OIL-GREASE_LI-13 Fabrication route. Done when: docs-authority/fab/GREASE_LI.md. Depends: OIL-GREASE_LI-10, OIL-GREASE_LI-12. Evidence: `docs-authority/fab/GREASE_LI.md` (study route).
-  - [ ] OIL-GREASE_LI-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-GREASE_LI-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] OIL-GREASE_LI-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-GREASE_LI-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 33: level position, structural/hoist supports, connections named per edge).
   - [ ] OIL-GREASE_LI-15 Test and commission. Done when: test procedure and acceptance record. Depends: OIL-GREASE_LI-14, X-COM-01. Triage: hardware.
 - **OIL-HOPPER** (hopper, sector OIL)
   - [x] OIL-HOPPER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HOPPER.md` §1; mass in = out 633.9 kg/d, 0.0000 kW.
@@ -2197,7 +2196,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-HOPPER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: OIL-HOPPER-10, X-DWG-01. Evidence: `models/mfg/HOPPER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] OIL-HOPPER-12 BOM. Done when: models/mfg/HOPPER/bom.csv. Depends: OIL-HOPPER-10. Evidence: `models/mfg/HOPPER/bom.csv`.
   - [x] OIL-HOPPER-13 Fabrication route. Done when: docs-authority/fab/HOPPER.md. Depends: OIL-HOPPER-10, OIL-HOPPER-12. Evidence: `docs-authority/fab/HOPPER.md` (study route).
-  - [ ] OIL-HOPPER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-HOPPER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] OIL-HOPPER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-HOPPER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 63: level position, structural/hoist supports, connections named per edge).
   - [ ] OIL-HOPPER-15 Test and commission. Done when: test procedure and acceptance record. Depends: OIL-HOPPER-14, X-COM-01. Triage: hardware.
 - **OIL-NCG_HEADER** (header, sector OIL)
   - [x] OIL-NCG_HEADER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/NCG_HEADER.md` §1; mass in = out 5 kg/d, 0.0000 kW.
@@ -2213,7 +2212,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-NCG_HEADER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: OIL-NCG_HEADER-10, X-DWG-01. Evidence: `models/mfg/NCG_HEADER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] OIL-NCG_HEADER-12 BOM. Done when: models/mfg/NCG_HEADER/bom.csv. Depends: OIL-NCG_HEADER-10. Evidence: `models/mfg/NCG_HEADER/bom.csv`.
   - [x] OIL-NCG_HEADER-13 Fabrication route. Done when: docs-authority/fab/NCG_HEADER.md. Depends: OIL-NCG_HEADER-10, OIL-NCG_HEADER-12. Evidence: `docs-authority/fab/NCG_HEADER.md` (study route).
-  - [ ] OIL-NCG_HEADER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-NCG_HEADER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] OIL-NCG_HEADER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-NCG_HEADER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 38: level position, structural/hoist supports, connections named per edge).
   - [ ] OIL-NCG_HEADER-15 Test and commission. Done when: test procedure and acceptance record. Depends: OIL-NCG_HEADER-14, X-COM-01. Triage: hardware.
 - **OIL-OIL_DRYER** (dryer, sector OIL)
   - [x] OIL-OIL_DRYER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/OIL_DRYER.md` §1; mass in = out 33 kg/d, 0.0000 kW.
@@ -2229,7 +2228,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-OIL_DRYER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: OIL-OIL_DRYER-10, X-DWG-01. Evidence: `models/mfg/OIL_DRYER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] OIL-OIL_DRYER-12 BOM. Done when: models/mfg/OIL_DRYER/bom.csv. Depends: OIL-OIL_DRYER-10. Evidence: `models/mfg/OIL_DRYER/bom.csv`.
   - [x] OIL-OIL_DRYER-13 Fabrication route. Done when: docs-authority/fab/OIL_DRYER.md. Depends: OIL-OIL_DRYER-10, OIL-OIL_DRYER-12. Evidence: `docs-authority/fab/OIL_DRYER.md` (study route).
-  - [ ] OIL-OIL_DRYER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-OIL_DRYER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] OIL-OIL_DRYER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-OIL_DRYER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 15: level position, structural/hoist supports, connections named per edge).
   - [ ] OIL-OIL_DRYER-15 Test and commission. Done when: test procedure and acceptance record. Depends: OIL-OIL_DRYER-14, X-COM-01. Triage: hardware.
 - **OIL-OIL_FRAC** (frac, sector OIL)
   - [x] OIL-OIL_FRAC-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/OIL_FRAC.md` §1; mass in = out 34.38 kg/d, 0.0000 kW.
@@ -2245,7 +2244,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-OIL_FRAC-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: OIL-OIL_FRAC-10, X-DWG-01. Evidence: `models/mfg/OIL_FRAC/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] OIL-OIL_FRAC-12 BOM. Done when: models/mfg/OIL_FRAC/bom.csv. Depends: OIL-OIL_FRAC-10. Evidence: `models/mfg/OIL_FRAC/bom.csv`.
   - [x] OIL-OIL_FRAC-13 Fabrication route. Done when: docs-authority/fab/OIL_FRAC.md. Depends: OIL-OIL_FRAC-10, OIL-OIL_FRAC-12. Evidence: `docs-authority/fab/OIL_FRAC.md` (study route).
-  - [ ] OIL-OIL_FRAC-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-OIL_FRAC-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] OIL-OIL_FRAC-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-OIL_FRAC-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 28: level position, structural/hoist supports, connections named per edge).
   - [ ] OIL-OIL_FRAC-15 Test and commission. Done when: test procedure and acceptance record. Depends: OIL-OIL_FRAC-14, X-COM-01. Triage: hardware.
 - **OIL-OIL_PYRO** (pyro, sector OIL)
   - [x] OIL-OIL_PYRO-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/OIL_PYRO.md` §1; mass in = out 38.87 kg/d, 1.6640 kW.
@@ -2261,7 +2260,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-OIL_PYRO-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: OIL-OIL_PYRO-10, X-DWG-01. Evidence: `models/mfg/OIL_PYRO/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] OIL-OIL_PYRO-12 BOM. Done when: models/mfg/OIL_PYRO/bom.csv. Depends: OIL-OIL_PYRO-10. Evidence: `models/mfg/OIL_PYRO/bom.csv`.
   - [x] OIL-OIL_PYRO-13 Fabrication route. Done when: docs-authority/fab/OIL_PYRO.md. Depends: OIL-OIL_PYRO-10, OIL-OIL_PYRO-12. Evidence: `docs-authority/fab/OIL_PYRO.md` (study route).
-  - [ ] OIL-OIL_PYRO-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-OIL_PYRO-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] OIL-OIL_PYRO-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-OIL_PYRO-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 36: level position, structural/hoist supports, connections named per edge).
   - [ ] OIL-OIL_PYRO-15 Test and commission. Done when: test procedure and acceptance record. Depends: OIL-OIL_PYRO-14, X-COM-01. Triage: hardware.
 - **OIL-PROD_C11_C18** (cut_tank, sector OIL)
   - [x] OIL-PROD_C11_C18-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PROD_C11_C18.md` §1; mass in = out 9.919 kg/d, 0.0000 kW.
@@ -2277,7 +2276,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-PROD_C11_C18-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: OIL-PROD_C11_C18-10, X-DWG-01. Evidence: `models/mfg/PROD_C11_C18/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] OIL-PROD_C11_C18-12 BOM. Done when: models/mfg/PROD_C11_C18/bom.csv. Depends: OIL-PROD_C11_C18-10. Evidence: `models/mfg/PROD_C11_C18/bom.csv`.
   - [x] OIL-PROD_C11_C18-13 Fabrication route. Done when: docs-authority/fab/PROD_C11_C18.md. Depends: OIL-PROD_C11_C18-10, OIL-PROD_C11_C18-12. Evidence: `docs-authority/fab/PROD_C11_C18.md` (study route).
-  - [ ] OIL-PROD_C11_C18-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-PROD_C11_C18-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] OIL-PROD_C11_C18-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-PROD_C11_C18-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 30: level position, structural/hoist supports, connections named per edge).
   - [ ] OIL-PROD_C11_C18-15 Test and commission. Done when: test procedure and acceptance record. Depends: OIL-PROD_C11_C18-14, X-COM-01. Triage: hardware.
 - **OIL-PROD_C19_C28** (cut_tank, sector OIL)
   - [x] OIL-PROD_C19_C28-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PROD_C19_C28.md` §1; mass in = out 6.166 kg/d, 0.0000 kW.
@@ -2293,7 +2292,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-PROD_C19_C28-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: OIL-PROD_C19_C28-10, X-DWG-01. Evidence: `models/mfg/PROD_C19_C28/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] OIL-PROD_C19_C28-12 BOM. Done when: models/mfg/PROD_C19_C28/bom.csv. Depends: OIL-PROD_C19_C28-10. Evidence: `models/mfg/PROD_C19_C28/bom.csv`.
   - [x] OIL-PROD_C19_C28-13 Fabrication route. Done when: docs-authority/fab/PROD_C19_C28.md. Depends: OIL-PROD_C19_C28-10, OIL-PROD_C19_C28-12. Evidence: `docs-authority/fab/PROD_C19_C28.md` (study route).
-  - [ ] OIL-PROD_C19_C28-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-PROD_C19_C28-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] OIL-PROD_C19_C28-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-PROD_C19_C28-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 31: level position, structural/hoist supports, connections named per edge).
   - [ ] OIL-PROD_C19_C28-15 Test and commission. Done when: test procedure and acceptance record. Depends: OIL-PROD_C19_C28-14, X-COM-01. Triage: hardware.
 - **OIL-PROD_C29** (cut_tank, sector OIL)
   - [x] OIL-PROD_C29-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PROD_C29.md` §1; mass in = out 5.873 kg/d, 0.0000 kW.
@@ -2309,7 +2308,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-PROD_C29-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: OIL-PROD_C29-10, X-DWG-01. Evidence: `models/mfg/PROD_C29/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] OIL-PROD_C29-12 BOM. Done when: models/mfg/PROD_C29/bom.csv. Depends: OIL-PROD_C29-10. Evidence: `models/mfg/PROD_C29/bom.csv`.
   - [x] OIL-PROD_C29-13 Fabrication route. Done when: docs-authority/fab/PROD_C29.md. Depends: OIL-PROD_C29-10, OIL-PROD_C29-12. Evidence: `docs-authority/fab/PROD_C29.md` (study route).
-  - [ ] OIL-PROD_C29-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-PROD_C29-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] OIL-PROD_C29-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-PROD_C29-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 34: level position, structural/hoist supports, connections named per edge).
   - [ ] OIL-PROD_C29-15 Test and commission. Done when: test procedure and acceptance record. Depends: OIL-PROD_C29-14, X-COM-01. Triage: hardware.
 - **OIL-PROD_C5_C10** (cut_tank, sector OIL)
   - [x] OIL-PROD_C5_C10-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PROD_C5_C10.md` §1; mass in = out 7.425 kg/d, 0.0000 kW.
@@ -2325,7 +2324,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-PROD_C5_C10-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: OIL-PROD_C5_C10-10, X-DWG-01. Evidence: `models/mfg/PROD_C5_C10/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] OIL-PROD_C5_C10-12 BOM. Done when: models/mfg/PROD_C5_C10/bom.csv. Depends: OIL-PROD_C5_C10-10. Evidence: `models/mfg/PROD_C5_C10/bom.csv`.
   - [x] OIL-PROD_C5_C10-13 Fabrication route. Done when: docs-authority/fab/PROD_C5_C10.md. Depends: OIL-PROD_C5_C10-10, OIL-PROD_C5_C10-12. Evidence: `docs-authority/fab/PROD_C5_C10.md` (study route).
-  - [ ] OIL-PROD_C5_C10-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-PROD_C5_C10-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] OIL-PROD_C5_C10-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-PROD_C5_C10-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 29: level position, structural/hoist supports, connections named per edge).
   - [ ] OIL-PROD_C5_C10-15 Test and commission. Done when: test procedure and acceptance record. Depends: OIL-PROD_C5_C10-14, X-COM-01. Triage: hardware.
 
 ### HEAT. Utility / header
@@ -2344,7 +2343,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HEAT-ADS_CHILL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HEAT-ADS_CHILL-10, X-DWG-01. Evidence: `models/mfg/ADS_CHILL/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HEAT-ADS_CHILL-12 BOM. Done when: models/mfg/ADS_CHILL/bom.csv. Depends: HEAT-ADS_CHILL-10. Evidence: `models/mfg/ADS_CHILL/bom.csv`.
   - [x] HEAT-ADS_CHILL-13 Fabrication route. Done when: docs-authority/fab/ADS_CHILL.md. Depends: HEAT-ADS_CHILL-10, HEAT-ADS_CHILL-12. Evidence: `docs-authority/fab/ADS_CHILL.md` (study route).
-  - [ ] HEAT-ADS_CHILL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-ADS_CHILL-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HEAT-ADS_CHILL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-ADS_CHILL-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 1: level position, structural/hoist supports, connections named per edge).
   - [ ] HEAT-ADS_CHILL-15 Test and commission. Done when: test procedure and acceptance record. Depends: HEAT-ADS_CHILL-14, X-COM-01. Triage: hardware.
 - **HEAT-DRY_COOLER** (dry_cooler, sector HEAT)
   - [x] HEAT-DRY_COOLER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/DRY_COOLER.md` §1; mass in = out 0 kg/d, 0.1500 kW.
@@ -2360,7 +2359,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HEAT-DRY_COOLER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HEAT-DRY_COOLER-10, X-DWG-01. Evidence: `models/mfg/DRY_COOLER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HEAT-DRY_COOLER-12 BOM. Done when: models/mfg/DRY_COOLER/bom.csv. Depends: HEAT-DRY_COOLER-10. Evidence: `models/mfg/DRY_COOLER/bom.csv`.
   - [x] HEAT-DRY_COOLER-13 Fabrication route. Done when: docs-authority/fab/DRY_COOLER.md. Depends: HEAT-DRY_COOLER-10, HEAT-DRY_COOLER-12. Evidence: `docs-authority/fab/DRY_COOLER.md` (study route).
-  - [ ] HEAT-DRY_COOLER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-DRY_COOLER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HEAT-DRY_COOLER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-DRY_COOLER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 2: level position, structural/hoist supports, connections named per edge).
   - [ ] HEAT-DRY_COOLER-15 Test and commission. Done when: test procedure and acceptance record. Depends: HEAT-DRY_COOLER-14, X-COM-01. Triage: hardware.
 - **HEAT-MAU_HX** (hx, sector HEAT)
   - [x] HEAT-MAU_HX-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MAU_HX.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -2376,7 +2375,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HEAT-MAU_HX-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HEAT-MAU_HX-10, X-DWG-01. Evidence: `models/mfg/MAU_HX/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HEAT-MAU_HX-12 BOM. Done when: models/mfg/MAU_HX/bom.csv. Depends: HEAT-MAU_HX-10. Evidence: `models/mfg/MAU_HX/bom.csv`.
   - [x] HEAT-MAU_HX-13 Fabrication route. Done when: docs-authority/fab/MAU_HX.md. Depends: HEAT-MAU_HX-10, HEAT-MAU_HX-12. Evidence: `docs-authority/fab/MAU_HX.md` (study route).
-  - [ ] HEAT-MAU_HX-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-MAU_HX-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HEAT-MAU_HX-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-MAU_HX-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 3: level position, structural/hoist supports, connections named per edge).
   - [ ] HEAT-MAU_HX-15 Test and commission. Done when: test procedure and acceptance record. Depends: HEAT-MAU_HX-14, X-COM-01. Triage: hardware.
 - **HEAT-Q1_A** (heat_battery, sector HEAT)
   - [x] HEAT-Q1_A-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/Q1_A.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -2392,7 +2391,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HEAT-Q1_A-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HEAT-Q1_A-10, X-DWG-01. Evidence: `models/mfg/Q1_A/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HEAT-Q1_A-12 BOM. Done when: models/mfg/Q1_A/bom.csv. Depends: HEAT-Q1_A-10. Evidence: `models/mfg/Q1_A/bom.csv`.
   - [x] HEAT-Q1_A-13 Fabrication route. Done when: docs-authority/fab/Q1_A.md. Depends: HEAT-Q1_A-10, HEAT-Q1_A-12. Evidence: `docs-authority/fab/Q1_A.md` (study route).
-  - [ ] HEAT-Q1_A-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q1_A-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HEAT-Q1_A-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q1_A-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 9: level position, structural/hoist supports, connections named per edge).
   - [ ] HEAT-Q1_A-15 Test and commission. Done when: test procedure and acceptance record. Depends: HEAT-Q1_A-14, X-COM-01. Triage: hardware.
 - **HEAT-Q1_B** (heat_battery, sector HEAT)
   - [x] HEAT-Q1_B-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/Q1_B.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -2408,7 +2407,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HEAT-Q1_B-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HEAT-Q1_B-10, X-DWG-01. Evidence: `models/mfg/Q1_B/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HEAT-Q1_B-12 BOM. Done when: models/mfg/Q1_B/bom.csv. Depends: HEAT-Q1_B-10. Evidence: `models/mfg/Q1_B/bom.csv`.
   - [x] HEAT-Q1_B-13 Fabrication route. Done when: docs-authority/fab/Q1_B.md. Depends: HEAT-Q1_B-10, HEAT-Q1_B-12. Evidence: `docs-authority/fab/Q1_B.md` (study route).
-  - [ ] HEAT-Q1_B-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q1_B-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HEAT-Q1_B-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q1_B-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 12: level position, structural/hoist supports, connections named per edge).
   - [ ] HEAT-Q1_B-15 Test and commission. Done when: test procedure and acceptance record. Depends: HEAT-Q1_B-14, X-COM-01. Triage: hardware.
 - **HEAT-Q2_A** (heat_battery, sector HEAT)
   - [x] HEAT-Q2_A-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/Q2_A.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -2424,7 +2423,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HEAT-Q2_A-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HEAT-Q2_A-10, X-DWG-01. Evidence: `models/mfg/Q2_A/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HEAT-Q2_A-12 BOM. Done when: models/mfg/Q2_A/bom.csv. Depends: HEAT-Q2_A-10. Evidence: `models/mfg/Q2_A/bom.csv`.
   - [x] HEAT-Q2_A-13 Fabrication route. Done when: docs-authority/fab/Q2_A.md. Depends: HEAT-Q2_A-10, HEAT-Q2_A-12. Evidence: `docs-authority/fab/Q2_A.md` (study route).
-  - [ ] HEAT-Q2_A-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q2_A-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HEAT-Q2_A-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q2_A-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 10: level position, structural/hoist supports, connections named per edge).
   - [ ] HEAT-Q2_A-15 Test and commission. Done when: test procedure and acceptance record. Depends: HEAT-Q2_A-14, X-COM-01. Triage: hardware.
 - **HEAT-Q2_B** (heat_battery, sector HEAT)
   - [x] HEAT-Q2_B-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/Q2_B.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -2440,7 +2439,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HEAT-Q2_B-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HEAT-Q2_B-10, X-DWG-01. Evidence: `models/mfg/Q2_B/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HEAT-Q2_B-12 BOM. Done when: models/mfg/Q2_B/bom.csv. Depends: HEAT-Q2_B-10. Evidence: `models/mfg/Q2_B/bom.csv`.
   - [x] HEAT-Q2_B-13 Fabrication route. Done when: docs-authority/fab/Q2_B.md. Depends: HEAT-Q2_B-10, HEAT-Q2_B-12. Evidence: `docs-authority/fab/Q2_B.md` (study route).
-  - [ ] HEAT-Q2_B-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q2_B-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HEAT-Q2_B-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q2_B-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 13: level position, structural/hoist supports, connections named per edge).
   - [ ] HEAT-Q2_B-15 Test and commission. Done when: test procedure and acceptance record. Depends: HEAT-Q2_B-14, X-COM-01. Triage: hardware.
 - **HEAT-Q3_A** (heat_battery, sector HEAT)
   - [x] HEAT-Q3_A-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/Q3_A.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -2456,7 +2455,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HEAT-Q3_A-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HEAT-Q3_A-10, X-DWG-01. Evidence: `models/mfg/Q3_A/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HEAT-Q3_A-12 BOM. Done when: models/mfg/Q3_A/bom.csv. Depends: HEAT-Q3_A-10. Evidence: `models/mfg/Q3_A/bom.csv`.
   - [x] HEAT-Q3_A-13 Fabrication route. Done when: docs-authority/fab/Q3_A.md. Depends: HEAT-Q3_A-10, HEAT-Q3_A-12. Evidence: `docs-authority/fab/Q3_A.md` (study route).
-  - [ ] HEAT-Q3_A-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q3_A-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HEAT-Q3_A-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q3_A-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 11: level position, structural/hoist supports, connections named per edge).
   - [ ] HEAT-Q3_A-15 Test and commission. Done when: test procedure and acceptance record. Depends: HEAT-Q3_A-14, X-COM-01. Triage: hardware.
 - **HEAT-Q3_B** (heat_battery, sector HEAT)
   - [x] HEAT-Q3_B-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/Q3_B.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -2472,7 +2471,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HEAT-Q3_B-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HEAT-Q3_B-10, X-DWG-01. Evidence: `models/mfg/Q3_B/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HEAT-Q3_B-12 BOM. Done when: models/mfg/Q3_B/bom.csv. Depends: HEAT-Q3_B-10. Evidence: `models/mfg/Q3_B/bom.csv`.
   - [x] HEAT-Q3_B-13 Fabrication route. Done when: docs-authority/fab/Q3_B.md. Depends: HEAT-Q3_B-10, HEAT-Q3_B-12. Evidence: `docs-authority/fab/Q3_B.md` (study route).
-  - [ ] HEAT-Q3_B-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q3_B-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HEAT-Q3_B-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q3_B-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 14: level position, structural/hoist supports, connections named per edge).
   - [ ] HEAT-Q3_B-15 Test and commission. Done when: test procedure and acceptance record. Depends: HEAT-Q3_B-14, X-COM-01. Triage: hardware.
 - **HEAT-Q4_A** (heat_battery, sector HEAT)
   - [x] HEAT-Q4_A-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/Q4_A.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -2488,7 +2487,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HEAT-Q4_A-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HEAT-Q4_A-10, X-DWG-01. Evidence: `models/mfg/Q4_A/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HEAT-Q4_A-12 BOM. Done when: models/mfg/Q4_A/bom.csv. Depends: HEAT-Q4_A-10. Evidence: `models/mfg/Q4_A/bom.csv`.
   - [x] HEAT-Q4_A-13 Fabrication route. Done when: docs-authority/fab/Q4_A.md. Depends: HEAT-Q4_A-10, HEAT-Q4_A-12. Evidence: `docs-authority/fab/Q4_A.md` (study route).
-  - [ ] HEAT-Q4_A-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q4_A-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HEAT-Q4_A-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q4_A-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 56: level position, structural/hoist supports, connections named per edge).
   - [ ] HEAT-Q4_A-15 Test and commission. Done when: test procedure and acceptance record. Depends: HEAT-Q4_A-14, X-COM-01. Triage: hardware.
 - **HEAT-Q4_B** (heat_battery, sector HEAT)
   - [x] HEAT-Q4_B-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/Q4_B.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -2504,7 +2503,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HEAT-Q4_B-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HEAT-Q4_B-10, X-DWG-01. Evidence: `models/mfg/Q4_B/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HEAT-Q4_B-12 BOM. Done when: models/mfg/Q4_B/bom.csv. Depends: HEAT-Q4_B-10. Evidence: `models/mfg/Q4_B/bom.csv`.
   - [x] HEAT-Q4_B-13 Fabrication route. Done when: docs-authority/fab/Q4_B.md. Depends: HEAT-Q4_B-10, HEAT-Q4_B-12. Evidence: `docs-authority/fab/Q4_B.md` (study route).
-  - [ ] HEAT-Q4_B-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q4_B-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HEAT-Q4_B-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q4_B-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 57: level position, structural/hoist supports, connections named per edge).
   - [ ] HEAT-Q4_B-15 Test and commission. Done when: test procedure and acceptance record. Depends: HEAT-Q4_B-14, X-COM-01. Triage: hardware.
 - **HEAT-Q4_BUS** (header, sector HEAT)
   - [x] HEAT-Q4_BUS-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/Q4_BUS.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -2520,7 +2519,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HEAT-Q4_BUS-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HEAT-Q4_BUS-10, X-DWG-01. Evidence: `models/mfg/Q4_BUS/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HEAT-Q4_BUS-12 BOM. Done when: models/mfg/Q4_BUS/bom.csv. Depends: HEAT-Q4_BUS-10. Evidence: `models/mfg/Q4_BUS/bom.csv`.
   - [x] HEAT-Q4_BUS-13 Fabrication route. Done when: docs-authority/fab/Q4_BUS.md. Depends: HEAT-Q4_BUS-10, HEAT-Q4_BUS-12. Evidence: `docs-authority/fab/Q4_BUS.md` (study route).
-  - [ ] HEAT-Q4_BUS-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q4_BUS-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HEAT-Q4_BUS-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HEAT-Q4_BUS-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 109: level position, structural/hoist supports, connections named per edge).
   - [ ] HEAT-Q4_BUS-15 Test and commission. Done when: test procedure and acceptance record. Depends: HEAT-Q4_BUS-14, X-COM-01. Triage: hardware.
 
 ### POLYMERS. Process (Mass transform)
@@ -2539,7 +2538,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] POLYMERS-FILM_CAST-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: POLYMERS-FILM_CAST-10, X-DWG-01. Evidence: `models/mfg/FILM_CAST/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] POLYMERS-FILM_CAST-12 BOM. Done when: models/mfg/FILM_CAST/bom.csv. Depends: POLYMERS-FILM_CAST-10. Evidence: `models/mfg/FILM_CAST/bom.csv`.
   - [x] POLYMERS-FILM_CAST-13 Fabrication route. Done when: docs-authority/fab/FILM_CAST.md. Depends: POLYMERS-FILM_CAST-10, POLYMERS-FILM_CAST-12. Evidence: `docs-authority/fab/FILM_CAST.md` (study route).
-  - [ ] POLYMERS-FILM_CAST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-FILM_CAST-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] POLYMERS-FILM_CAST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-FILM_CAST-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 99: level position, structural/hoist supports, connections named per edge).
   - [ ] POLYMERS-FILM_CAST-15 Test and commission. Done when: test procedure and acceptance record. Depends: POLYMERS-FILM_CAST-14, X-COM-01. Triage: hardware.
 - **POLYMERS-HF_GEN** (reactor, sector POLYMERS)
   - [x] POLYMERS-HF_GEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HF_GEN.md` §1; mass in = out 2.249 kg/d, 0.3083 kW.
@@ -2555,7 +2554,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] POLYMERS-HF_GEN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: POLYMERS-HF_GEN-10, X-DWG-01. Evidence: `models/mfg/HF_GEN/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] POLYMERS-HF_GEN-12 BOM. Done when: models/mfg/HF_GEN/bom.csv. Depends: POLYMERS-HF_GEN-10. Evidence: `models/mfg/HF_GEN/bom.csv`.
   - [x] POLYMERS-HF_GEN-13 Fabrication route. Done when: docs-authority/fab/HF_GEN.md. Depends: POLYMERS-HF_GEN-10, POLYMERS-HF_GEN-12. Evidence: `docs-authority/fab/HF_GEN.md` (study route).
-  - [ ] POLYMERS-HF_GEN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-HF_GEN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] POLYMERS-HF_GEN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-HF_GEN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 122: level position, structural/hoist supports, connections named per edge).
   - [ ] POLYMERS-HF_GEN-15 Test and commission. Done when: test procedure and acceptance record. Depends: POLYMERS-HF_GEN-14, X-COM-01. Triage: hardware.
 - **POLYMERS-PELLET** (former, sector POLYMERS)
   - [x] POLYMERS-PELLET-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PELLET.md` §1; mass in = out 0.3846 kg/d, 0.0000 kW.
@@ -2571,7 +2570,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] POLYMERS-PELLET-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: POLYMERS-PELLET-10, X-DWG-01. Evidence: `models/mfg/PELLET/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] POLYMERS-PELLET-12 BOM. Done when: models/mfg/PELLET/bom.csv. Depends: POLYMERS-PELLET-10. Evidence: `models/mfg/PELLET/bom.csv`.
   - [x] POLYMERS-PELLET-13 Fabrication route. Done when: docs-authority/fab/PELLET.md. Depends: POLYMERS-PELLET-10, POLYMERS-PELLET-12. Evidence: `docs-authority/fab/PELLET.md` (study route).
-  - [ ] POLYMERS-PELLET-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-PELLET-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] POLYMERS-PELLET-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-PELLET-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 97: level position, structural/hoist supports, connections named per edge).
   - [ ] POLYMERS-PELLET-15 Test and commission. Done when: test procedure and acceptance record. Depends: POLYMERS-PELLET-14, X-COM-01. Triage: hardware.
 - **POLYMERS-POLY_COND** (reactor, sector POLYMERS)
   - [x] POLYMERS-POLY_COND-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/POLY_COND.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -2587,7 +2586,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] POLYMERS-POLY_COND-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: POLYMERS-POLY_COND-10, X-DWG-01. Evidence: `models/mfg/POLY_COND/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] POLYMERS-POLY_COND-12 BOM. Done when: models/mfg/POLY_COND/bom.csv. Depends: POLYMERS-POLY_COND-10. Evidence: `models/mfg/POLY_COND/bom.csv`.
   - [x] POLYMERS-POLY_COND-13 Fabrication route. Done when: docs-authority/fab/POLY_COND.md. Depends: POLYMERS-POLY_COND-10, POLYMERS-POLY_COND-12. Evidence: `docs-authority/fab/POLY_COND.md` (study route).
-  - [ ] POLYMERS-POLY_COND-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-POLY_COND-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] POLYMERS-POLY_COND-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-POLY_COND-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 32: level position, structural/hoist supports, connections named per edge).
   - [ ] POLYMERS-POLY_COND-15 Test and commission. Done when: test procedure and acceptance record. Depends: POLYMERS-POLY_COND-14, X-COM-01. Triage: hardware.
 - **POLYMERS-POLY_F** (reactor, sector POLYMERS)
   - [x] POLYMERS-POLY_F-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/POLY_F.md` §1; mass in = out 0.25 kg/d, 0.0449 kW.
@@ -2603,7 +2602,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] POLYMERS-POLY_F-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: POLYMERS-POLY_F-10, X-DWG-01. Evidence: `models/mfg/POLY_F/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] POLYMERS-POLY_F-12 BOM. Done when: models/mfg/POLY_F/bom.csv. Depends: POLYMERS-POLY_F-10. Evidence: `models/mfg/POLY_F/bom.csv`.
   - [x] POLYMERS-POLY_F-13 Fabrication route. Done when: docs-authority/fab/POLY_F.md. Depends: POLYMERS-POLY_F-10, POLYMERS-POLY_F-12. Evidence: `docs-authority/fab/POLY_F.md` (study route).
-  - [ ] POLYMERS-POLY_F-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-POLY_F-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] POLYMERS-POLY_F-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-POLY_F-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 119: level position, structural/hoist supports, connections named per edge).
   - [ ] POLYMERS-POLY_F-15 Test and commission. Done when: test procedure and acceptance record. Depends: POLYMERS-POLY_F-14, X-COM-01. Triage: hardware.
 - **POLYMERS-POLY_FIBER** (melt_spin, sector POLYMERS)
   - [x] POLYMERS-POLY_FIBER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/POLY_FIBER.md` §1; mass in = out 0.09219 kg/d, 0.3000 kW.
@@ -2619,7 +2618,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] POLYMERS-POLY_FIBER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: POLYMERS-POLY_FIBER-10, X-DWG-01. Evidence: `models/mfg/POLY_FIBER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] POLYMERS-POLY_FIBER-12 BOM. Done when: models/mfg/POLY_FIBER/bom.csv. Depends: POLYMERS-POLY_FIBER-10. Evidence: `models/mfg/POLY_FIBER/bom.csv`.
   - [x] POLYMERS-POLY_FIBER-13 Fabrication route. Done when: docs-authority/fab/POLY_FIBER.md. Depends: POLYMERS-POLY_FIBER-10, POLYMERS-POLY_FIBER-12. Evidence: `docs-authority/fab/POLY_FIBER.md` (study route).
-  - [ ] POLYMERS-POLY_FIBER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-POLY_FIBER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] POLYMERS-POLY_FIBER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-POLY_FIBER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 110: level position, structural/hoist supports, connections named per edge).
   - [ ] POLYMERS-POLY_FIBER-15 Test and commission. Done when: test procedure and acceptance record. Depends: POLYMERS-POLY_FIBER-14, X-COM-01. Triage: hardware.
 - **POLYMERS-POLY_OLEFIN** (reactor, sector POLYMERS)
   - [x] POLYMERS-POLY_OLEFIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/POLY_OLEFIN.md` §1; mass in = out 0.3846 kg/d, 0.0000 kW.
@@ -2635,7 +2634,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] POLYMERS-POLY_OLEFIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: POLYMERS-POLY_OLEFIN-10, X-DWG-01. Evidence: `models/mfg/POLY_OLEFIN/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] POLYMERS-POLY_OLEFIN-12 BOM. Done when: models/mfg/POLY_OLEFIN/bom.csv. Depends: POLYMERS-POLY_OLEFIN-10. Evidence: `models/mfg/POLY_OLEFIN/bom.csv`.
   - [x] POLYMERS-POLY_OLEFIN-13 Fabrication route. Done when: docs-authority/fab/POLY_OLEFIN.md. Depends: POLYMERS-POLY_OLEFIN-10, POLYMERS-POLY_OLEFIN-12. Evidence: `docs-authority/fab/POLY_OLEFIN.md` (study route).
-  - [ ] POLYMERS-POLY_OLEFIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-POLY_OLEFIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] POLYMERS-POLY_OLEFIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-POLY_OLEFIN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 46: level position, structural/hoist supports, connections named per edge).
   - [ ] POLYMERS-POLY_OLEFIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: POLYMERS-POLY_OLEFIN-14, X-COM-01. Triage: hardware.
 - **POLYMERS-POLY_STOCK** (store, sector POLYMERS)
   - [x] POLYMERS-POLY_STOCK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/POLY_STOCK.md` §1; mass in = out 0.6146 kg/d, 0.0000 kW.
@@ -2651,7 +2650,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] POLYMERS-POLY_STOCK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: POLYMERS-POLY_STOCK-10, X-DWG-01. Evidence: `models/mfg/POLY_STOCK/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] POLYMERS-POLY_STOCK-12 BOM. Done when: models/mfg/POLY_STOCK/bom.csv. Depends: POLYMERS-POLY_STOCK-10. Evidence: `models/mfg/POLY_STOCK/bom.csv`.
   - [x] POLYMERS-POLY_STOCK-13 Fabrication route. Done when: docs-authority/fab/POLY_STOCK.md. Depends: POLYMERS-POLY_STOCK-10, POLYMERS-POLY_STOCK-12. Evidence: `docs-authority/fab/POLY_STOCK.md` (study route).
-  - [ ] POLYMERS-POLY_STOCK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-POLY_STOCK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] POLYMERS-POLY_STOCK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-POLY_STOCK-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 100: level position, structural/hoist supports, connections named per edge).
   - [ ] POLYMERS-POLY_STOCK-15 Test and commission. Done when: test procedure and acceptance record. Depends: POLYMERS-POLY_STOCK-14, X-COM-01. Triage: hardware.
 - **POLYMERS-POWDER_RESIN** (former, sector POLYMERS)
   - [x] POLYMERS-POWDER_RESIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/POWDER_RESIN.md` §1; mass in = out 0.09 kg/d, 0.0152 kW.
@@ -2667,7 +2666,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] POLYMERS-POWDER_RESIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: POLYMERS-POWDER_RESIN-10, X-DWG-01. Evidence: `models/mfg/POWDER_RESIN/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] POLYMERS-POWDER_RESIN-12 BOM. Done when: models/mfg/POWDER_RESIN/bom.csv. Depends: POLYMERS-POWDER_RESIN-10. Evidence: `models/mfg/POWDER_RESIN/bom.csv`.
   - [x] POLYMERS-POWDER_RESIN-13 Fabrication route. Done when: docs-authority/fab/POWDER_RESIN.md. Depends: POLYMERS-POWDER_RESIN-10, POLYMERS-POWDER_RESIN-12. Evidence: `docs-authority/fab/POWDER_RESIN.md` (study route).
-  - [ ] POLYMERS-POWDER_RESIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-POWDER_RESIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] POLYMERS-POWDER_RESIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-POWDER_RESIN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 98: level position, structural/hoist supports, connections named per edge).
   - [ ] POLYMERS-POWDER_RESIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: POLYMERS-POWDER_RESIN-14, X-COM-01. Triage: hardware.
 - **POLYMERS-TFE_SYN** (reactor, sector POLYMERS)
   - [x] POLYMERS-TFE_SYN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/TFE_SYN.md` §1; mass in = out 0.4277 kg/d, 0.3989 kW.
@@ -2683,7 +2682,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] POLYMERS-TFE_SYN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: POLYMERS-TFE_SYN-10, X-DWG-01. Evidence: `models/mfg/TFE_SYN/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] POLYMERS-TFE_SYN-12 BOM. Done when: models/mfg/TFE_SYN/bom.csv. Depends: POLYMERS-TFE_SYN-10. Evidence: `models/mfg/TFE_SYN/bom.csv`.
   - [x] POLYMERS-TFE_SYN-13 Fabrication route. Done when: docs-authority/fab/TFE_SYN.md. Depends: POLYMERS-TFE_SYN-10, POLYMERS-TFE_SYN-12. Evidence: `docs-authority/fab/TFE_SYN.md` (study route).
-  - [ ] POLYMERS-TFE_SYN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-TFE_SYN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] POLYMERS-TFE_SYN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-TFE_SYN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 124: level position, structural/hoist supports, connections named per edge).
   - [ ] POLYMERS-TFE_SYN-15 Test and commission. Done when: test procedure and acceptance record. Depends: POLYMERS-TFE_SYN-14, X-COM-01. Triage: hardware.
 - **POLYMERS-VDF_SYN** (reactor, sector POLYMERS)
   - [x] POLYMERS-VDF_SYN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/VDF_SYN.md` §1; mass in = out 0.5761 kg/d, 0.5128 kW.
@@ -2699,7 +2698,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] POLYMERS-VDF_SYN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: POLYMERS-VDF_SYN-10, X-DWG-01. Evidence: `models/mfg/VDF_SYN/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] POLYMERS-VDF_SYN-12 BOM. Done when: models/mfg/VDF_SYN/bom.csv. Depends: POLYMERS-VDF_SYN-10. Evidence: `models/mfg/VDF_SYN/bom.csv`.
   - [x] POLYMERS-VDF_SYN-13 Fabrication route. Done when: docs-authority/fab/VDF_SYN.md. Depends: POLYMERS-VDF_SYN-10, POLYMERS-VDF_SYN-12. Evidence: `docs-authority/fab/VDF_SYN.md` (study route).
-  - [ ] POLYMERS-VDF_SYN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-VDF_SYN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] POLYMERS-VDF_SYN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-VDF_SYN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 123: level position, structural/hoist supports, connections named per edge).
   - [ ] POLYMERS-VDF_SYN-15 Test and commission. Done when: test procedure and acceptance record. Depends: POLYMERS-VDF_SYN-14, X-COM-01. Triage: hardware.
 
 ### GAS. Process (Mass transform)
@@ -2718,7 +2717,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-ACID_POLISH_SCRUB-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GAS-ACID_POLISH_SCRUB-10, X-DWG-01. Evidence: `models/mfg/ACID_POLISH_SCRUB/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GAS-ACID_POLISH_SCRUB-12 BOM. Done when: models/mfg/ACID_POLISH_SCRUB/bom.csv. Depends: GAS-ACID_POLISH_SCRUB-10. Evidence: `models/mfg/ACID_POLISH_SCRUB/bom.csv`.
   - [x] GAS-ACID_POLISH_SCRUB-13 Fabrication route. Done when: docs-authority/fab/ACID_POLISH_SCRUB.md. Depends: GAS-ACID_POLISH_SCRUB-10, GAS-ACID_POLISH_SCRUB-12. Evidence: `docs-authority/fab/ACID_POLISH_SCRUB.md` (study route).
-  - [ ] GAS-ACID_POLISH_SCRUB-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-ACID_POLISH_SCRUB-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GAS-ACID_POLISH_SCRUB-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-ACID_POLISH_SCRUB-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 77: level position, structural/hoist supports, connections named per edge).
   - [ ] GAS-ACID_POLISH_SCRUB-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-ACID_POLISH_SCRUB-14, X-COM-01. Triage: hardware.
 - **GAS-AFTERBURNER_FLUE** (flue_junction, sector GAS)
   - [x] GAS-AFTERBURNER_FLUE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/AFTERBURNER_FLUE.md` §1; mass in = out 117.4 kg/d, 0.0000 kW.
@@ -2734,7 +2733,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-AFTERBURNER_FLUE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GAS-AFTERBURNER_FLUE-10, X-DWG-01. Evidence: `models/mfg/AFTERBURNER_FLUE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GAS-AFTERBURNER_FLUE-12 BOM. Done when: models/mfg/AFTERBURNER_FLUE/bom.csv. Depends: GAS-AFTERBURNER_FLUE-10. Evidence: `models/mfg/AFTERBURNER_FLUE/bom.csv`.
   - [x] GAS-AFTERBURNER_FLUE-13 Fabrication route. Done when: docs-authority/fab/AFTERBURNER_FLUE.md. Depends: GAS-AFTERBURNER_FLUE-10, GAS-AFTERBURNER_FLUE-12. Evidence: `docs-authority/fab/AFTERBURNER_FLUE.md` (study route).
-  - [ ] GAS-AFTERBURNER_FLUE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-AFTERBURNER_FLUE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GAS-AFTERBURNER_FLUE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-AFTERBURNER_FLUE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 13: level position, structural/hoist supports, connections named per edge).
   - [ ] GAS-AFTERBURNER_FLUE-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-AFTERBURNER_FLUE-14, X-COM-01. Triage: hardware.
 - **GAS-ALK_SCRUBBER** (scrubber, sector GAS)
   - [x] GAS-ALK_SCRUBBER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ALK_SCRUBBER.md` §1; mass in = out 3.751e+04 kg/d, 1.1122 kW.
@@ -2750,7 +2749,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-ALK_SCRUBBER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GAS-ALK_SCRUBBER-10, X-DWG-01. Evidence: `models/mfg/ALK_SCRUBBER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GAS-ALK_SCRUBBER-12 BOM. Done when: models/mfg/ALK_SCRUBBER/bom.csv. Depends: GAS-ALK_SCRUBBER-10. Evidence: `models/mfg/ALK_SCRUBBER/bom.csv`.
   - [x] GAS-ALK_SCRUBBER-13 Fabrication route. Done when: docs-authority/fab/ALK_SCRUBBER.md. Depends: GAS-ALK_SCRUBBER-10, GAS-ALK_SCRUBBER-12. Evidence: `docs-authority/fab/ALK_SCRUBBER.md` (study route).
-  - [ ] GAS-ALK_SCRUBBER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-ALK_SCRUBBER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GAS-ALK_SCRUBBER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-ALK_SCRUBBER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 80: level position, structural/hoist supports, connections named per edge).
   - [ ] GAS-ALK_SCRUBBER-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-ALK_SCRUBBER-14, X-COM-01. Triage: hardware.
 - **GAS-BAGHOUSE** (baghouse, sector GAS)
   - [x] GAS-BAGHOUSE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BAGHOUSE.md` §1; mass in = out 7.77 kg/d, 0.0000 kW.
@@ -2766,7 +2765,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-BAGHOUSE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GAS-BAGHOUSE-10, X-DWG-01. Evidence: `models/mfg/BAGHOUSE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GAS-BAGHOUSE-12 BOM. Done when: models/mfg/BAGHOUSE/bom.csv. Depends: GAS-BAGHOUSE-10. Evidence: `models/mfg/BAGHOUSE/bom.csv`.
   - [x] GAS-BAGHOUSE-13 Fabrication route. Done when: docs-authority/fab/BAGHOUSE.md. Depends: GAS-BAGHOUSE-10, GAS-BAGHOUSE-12. Evidence: `docs-authority/fab/BAGHOUSE.md` (study route).
-  - [ ] GAS-BAGHOUSE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-BAGHOUSE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GAS-BAGHOUSE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-BAGHOUSE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 90: level position, structural/hoist supports, connections named per edge).
   - [ ] GAS-BAGHOUSE-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-BAGHOUSE-14, X-COM-01. Triage: hardware.
 - **GAS-FLUE_KO** (separator, sector GAS)
   - [x] GAS-FLUE_KO-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/FLUE_KO.md` §1; mass in = out 277.7 kg/d, 0.0000 kW.
@@ -2782,7 +2781,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-FLUE_KO-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GAS-FLUE_KO-10, X-DWG-01. Evidence: `models/mfg/FLUE_KO/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GAS-FLUE_KO-12 BOM. Done when: models/mfg/FLUE_KO/bom.csv. Depends: GAS-FLUE_KO-10. Evidence: `models/mfg/FLUE_KO/bom.csv`.
   - [x] GAS-FLUE_KO-13 Fabrication route. Done when: docs-authority/fab/FLUE_KO.md. Depends: GAS-FLUE_KO-10, GAS-FLUE_KO-12. Evidence: `docs-authority/fab/FLUE_KO.md` (study route).
-  - [ ] GAS-FLUE_KO-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-FLUE_KO-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GAS-FLUE_KO-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-FLUE_KO-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 65: level position, structural/hoist supports, connections named per edge).
   - [ ] GAS-FLUE_KO-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-FLUE_KO-14, X-COM-01. Triage: hardware.
 - **GAS-H2_DRYER** (dryer, sector GAS)
   - [x] GAS-H2_DRYER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/H2_DRYER.md` §1; mass in = out 1.975 kg/d, 0.0205 kW.
@@ -2798,7 +2797,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-H2_DRYER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GAS-H2_DRYER-10, X-DWG-01. Evidence: `models/mfg/H2_DRYER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GAS-H2_DRYER-12 BOM. Done when: models/mfg/H2_DRYER/bom.csv. Depends: GAS-H2_DRYER-10. Evidence: `models/mfg/H2_DRYER/bom.csv`.
   - [x] GAS-H2_DRYER-13 Fabrication route. Done when: docs-authority/fab/H2_DRYER.md. Depends: GAS-H2_DRYER-10, GAS-H2_DRYER-12. Evidence: `docs-authority/fab/H2_DRYER.md` (study route).
-  - [ ] GAS-H2_DRYER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-H2_DRYER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GAS-H2_DRYER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-H2_DRYER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 88: level position, structural/hoist supports, connections named per edge).
   - [ ] GAS-H2_DRYER-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-H2_DRYER-14, X-COM-01. Triage: hardware.
 - **GAS-HDR_H2** (header, sector GAS)
   - [x] GAS-HDR_H2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_H2.md` §1; mass in = out 1.975 kg/d, 0.0000 kW.
@@ -2814,7 +2813,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-HDR_H2-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GAS-HDR_H2-10, X-DWG-01. Evidence: `models/mfg/HDR_H2/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GAS-HDR_H2-12 BOM. Done when: models/mfg/HDR_H2/bom.csv. Depends: GAS-HDR_H2-10. Evidence: `models/mfg/HDR_H2/bom.csv`.
   - [x] GAS-HDR_H2-13 Fabrication route. Done when: docs-authority/fab/HDR_H2.md. Depends: GAS-HDR_H2-10, GAS-HDR_H2-12. Evidence: `docs-authority/fab/HDR_H2.md` (study route).
-  - [ ] GAS-HDR_H2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-HDR_H2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GAS-HDR_H2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-HDR_H2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 54: level position, structural/hoist supports, connections named per edge).
   - [ ] GAS-HDR_H2-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-HDR_H2-14, X-COM-01. Triage: hardware.
 - **GAS-HDR_O2** (header, sector GAS)
   - [x] GAS-HDR_O2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_O2.md` §1; mass in = out 33.17 kg/d, 0.0000 kW.
@@ -2830,7 +2829,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-HDR_O2-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GAS-HDR_O2-10, X-DWG-01. Evidence: `models/mfg/HDR_O2/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GAS-HDR_O2-12 BOM. Done when: models/mfg/HDR_O2/bom.csv. Depends: GAS-HDR_O2-10. Evidence: `models/mfg/HDR_O2/bom.csv`.
   - [x] GAS-HDR_O2-13 Fabrication route. Done when: docs-authority/fab/HDR_O2.md. Depends: GAS-HDR_O2-10, GAS-HDR_O2-12. Evidence: `docs-authority/fab/HDR_O2.md` (study route).
-  - [ ] GAS-HDR_O2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-HDR_O2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GAS-HDR_O2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-HDR_O2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 17: level position, structural/hoist supports, connections named per edge).
   - [ ] GAS-HDR_O2-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-HDR_O2-14, X-COM-01. Triage: hardware.
 - **GAS-NOX_SCRUB** (scrubber, sector GAS)
   - [x] GAS-NOX_SCRUB-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/NOX_SCRUB.md` §1; mass in = out 459.9 kg/d, 0.0385 kW.
@@ -2846,7 +2845,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-NOX_SCRUB-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GAS-NOX_SCRUB-10, X-DWG-01. Evidence: `models/mfg/NOX_SCRUB/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GAS-NOX_SCRUB-12 BOM. Done when: models/mfg/NOX_SCRUB/bom.csv. Depends: GAS-NOX_SCRUB-10. Evidence: `models/mfg/NOX_SCRUB/bom.csv`.
   - [x] GAS-NOX_SCRUB-13 Fabrication route. Done when: docs-authority/fab/NOX_SCRUB.md. Depends: GAS-NOX_SCRUB-10, GAS-NOX_SCRUB-12. Evidence: `docs-authority/fab/NOX_SCRUB.md` (study route).
-  - [ ] GAS-NOX_SCRUB-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-NOX_SCRUB-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GAS-NOX_SCRUB-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-NOX_SCRUB-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 84: level position, structural/hoist supports, connections named per edge).
   - [ ] GAS-NOX_SCRUB-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-NOX_SCRUB-14, X-COM-01. Triage: hardware.
 - **GAS-RELIEF_H2** (relief, sector GAS)
   - [x] GAS-RELIEF_H2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/RELIEF_H2.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -2862,7 +2861,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-RELIEF_H2-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GAS-RELIEF_H2-10, X-DWG-01. Evidence: `models/mfg/RELIEF_H2/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GAS-RELIEF_H2-12 BOM. Done when: models/mfg/RELIEF_H2/bom.csv. Depends: GAS-RELIEF_H2-10. Evidence: `models/mfg/RELIEF_H2/bom.csv`.
   - [x] GAS-RELIEF_H2-13 Fabrication route. Done when: docs-authority/fab/RELIEF_H2.md. Depends: GAS-RELIEF_H2-10, GAS-RELIEF_H2-12. Evidence: `docs-authority/fab/RELIEF_H2.md` (study route).
-  - [ ] GAS-RELIEF_H2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-RELIEF_H2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GAS-RELIEF_H2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-RELIEF_H2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 22: level position, structural/hoist supports, connections named per edge).
   - [ ] GAS-RELIEF_H2-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-RELIEF_H2-14, X-COM-01. Triage: hardware.
 
 ### WTR. Utility / header
@@ -2883,7 +2882,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] WTR-BLACK_DIGEST-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-BLACK_DIGEST-10, X-DWG-01. Evidence: `models/mfg/BLACK_DIGEST/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] WTR-BLACK_DIGEST-12 BOM. Done when: models/mfg/BLACK_DIGEST/bom.csv. Depends: WTR-BLACK_DIGEST-10. Evidence: `models/mfg/BLACK_DIGEST/bom.csv`.
   - [x] WTR-BLACK_DIGEST-13 Fabrication route. Done when: docs-authority/fab/BLACK_DIGEST.md. Depends: WTR-BLACK_DIGEST-10, WTR-BLACK_DIGEST-12. Evidence: `docs-authority/fab/BLACK_DIGEST.md` (study route).
-  - [ ] WTR-BLACK_DIGEST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-BLACK_DIGEST-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] WTR-BLACK_DIGEST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-BLACK_DIGEST-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 69: level position, structural/hoist supports, connections named per edge).
   - [ ] WTR-BLACK_DIGEST-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-BLACK_DIGEST-14, X-COM-01. Triage: hardware.
 - **WTR-BMED_UPW_POLISH** (skid, sector WTR)
   - [x] WTR-BMED_UPW_POLISH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BMED_UPW_POLISH.md` §1; mass in = out 340.1 kg/d, 0.0180 kW.
@@ -2899,7 +2898,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] WTR-BMED_UPW_POLISH-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-BMED_UPW_POLISH-10, X-DWG-01. Evidence: `models/mfg/BMED_UPW_POLISH/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] WTR-BMED_UPW_POLISH-12 BOM. Done when: models/mfg/BMED_UPW_POLISH/bom.csv. Depends: WTR-BMED_UPW_POLISH-10. Evidence: `models/mfg/BMED_UPW_POLISH/bom.csv`.
   - [x] WTR-BMED_UPW_POLISH-13 Fabrication route. Done when: docs-authority/fab/BMED_UPW_POLISH.md. Depends: WTR-BMED_UPW_POLISH-10, WTR-BMED_UPW_POLISH-12. Evidence: `docs-authority/fab/BMED_UPW_POLISH.md` (study route).
-  - [ ] WTR-BMED_UPW_POLISH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-BMED_UPW_POLISH-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] WTR-BMED_UPW_POLISH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-BMED_UPW_POLISH-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 27: level position, structural/hoist supports, connections named per edge).
   - [ ] WTR-BMED_UPW_POLISH-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-BMED_UPW_POLISH-14, X-COM-01. Triage: hardware.
 - **WTR-CATCH_TANK** (tank, sector WTR)
   - [x] WTR-CATCH_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CATCH_TANK.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -2915,7 +2914,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] WTR-CATCH_TANK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-CATCH_TANK-10, X-DWG-01. Evidence: `models/mfg/CATCH_TANK/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] WTR-CATCH_TANK-12 BOM. Done when: models/mfg/CATCH_TANK/bom.csv. Depends: WTR-CATCH_TANK-10. Evidence: `models/mfg/CATCH_TANK/bom.csv`.
   - [x] WTR-CATCH_TANK-13 Fabrication route. Done when: docs-authority/fab/CATCH_TANK.md. Depends: WTR-CATCH_TANK-10, WTR-CATCH_TANK-12. Evidence: `docs-authority/fab/CATCH_TANK.md` (study route).
-  - [ ] WTR-CATCH_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-CATCH_TANK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] WTR-CATCH_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-CATCH_TANK-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 1: level position, structural/hoist supports, connections named per edge).
   - [ ] WTR-CATCH_TANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-CATCH_TANK-14, X-COM-01. Triage: hardware.
 - **WTR-GREY_TREAT** (treat, sector WTR)
   - [x] WTR-GREY_TREAT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GREY_TREAT.md` §1; mass in = out 363.3 kg/d, 0.0000 kW.
@@ -2931,7 +2930,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] WTR-GREY_TREAT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-GREY_TREAT-10, X-DWG-01. Evidence: `models/mfg/GREY_TREAT/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] WTR-GREY_TREAT-12 BOM. Done when: models/mfg/GREY_TREAT/bom.csv. Depends: WTR-GREY_TREAT-10. Evidence: `models/mfg/GREY_TREAT/bom.csv`.
   - [x] WTR-GREY_TREAT-13 Fabrication route. Done when: docs-authority/fab/GREY_TREAT.md. Depends: WTR-GREY_TREAT-10, WTR-GREY_TREAT-12. Evidence: `docs-authority/fab/GREY_TREAT.md` (study route).
-  - [ ] WTR-GREY_TREAT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-GREY_TREAT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] WTR-GREY_TREAT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-GREY_TREAT-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 70: level position, structural/hoist supports, connections named per edge).
   - [ ] WTR-GREY_TREAT-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-GREY_TREAT-14, X-COM-01. Triage: hardware.
 - **WTR-GW_INTAKE** (intake, sector WTR)
   - [x] WTR-GW_INTAKE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GW_INTAKE.md` §1; mass in = out 0 kg/d, 0.3700 kW.
@@ -2947,7 +2946,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] WTR-GW_INTAKE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-GW_INTAKE-10, X-DWG-01. Evidence: `models/mfg/GW_INTAKE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] WTR-GW_INTAKE-12 BOM. Done when: models/mfg/GW_INTAKE/bom.csv. Depends: WTR-GW_INTAKE-10. Evidence: `models/mfg/GW_INTAKE/bom.csv`.
   - [x] WTR-GW_INTAKE-13 Fabrication route. Done when: docs-authority/fab/GW_INTAKE.md. Depends: WTR-GW_INTAKE-10, WTR-GW_INTAKE-12. Evidence: `docs-authority/fab/GW_INTAKE.md` (study route).
-  - [ ] WTR-GW_INTAKE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-GW_INTAKE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] WTR-GW_INTAKE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-GW_INTAKE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 33: level position, structural/hoist supports, connections named per edge).
   - [ ] WTR-GW_INTAKE-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-GW_INTAKE-14, X-COM-01. Triage: hardware.
 - **WTR-HDR_UPW** (header, sector WTR)
   - [x] WTR-HDR_UPW-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_UPW.md` §1; mass in = out 67.3 kg/d, 0.0000 kW.
@@ -2963,7 +2962,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] WTR-HDR_UPW-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-HDR_UPW-10, X-DWG-01. Evidence: `models/mfg/HDR_UPW/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] WTR-HDR_UPW-12 BOM. Done when: models/mfg/HDR_UPW/bom.csv. Depends: WTR-HDR_UPW-10. Evidence: `models/mfg/HDR_UPW/bom.csv`.
   - [x] WTR-HDR_UPW-13 Fabrication route. Done when: docs-authority/fab/HDR_UPW.md. Depends: WTR-HDR_UPW-10, WTR-HDR_UPW-12. Evidence: `docs-authority/fab/HDR_UPW.md` (study route).
-  - [ ] WTR-HDR_UPW-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-HDR_UPW-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] WTR-HDR_UPW-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-HDR_UPW-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 19: level position, structural/hoist supports, connections named per edge).
   - [ ] WTR-HDR_UPW-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-HDR_UPW-14, X-COM-01. Triage: hardware.
 - **WTR-REMIN** (dose, sector WTR)
   - [x] WTR-REMIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/REMIN.md` §1; mass in = out 206.8 kg/d, 0.0460 kW.
@@ -2979,7 +2978,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] WTR-REMIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-REMIN-10, X-DWG-01. Evidence: `models/mfg/REMIN/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] WTR-REMIN-12 BOM. Done when: models/mfg/REMIN/bom.csv. Depends: WTR-REMIN-10. Evidence: `models/mfg/REMIN/bom.csv`.
   - [x] WTR-REMIN-13 Fabrication route. Done when: docs-authority/fab/REMIN.md. Depends: WTR-REMIN-10, WTR-REMIN-12. Evidence: `docs-authority/fab/REMIN.md` (study route).
-  - [ ] WTR-REMIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-REMIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] WTR-REMIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-REMIN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 50: level position, structural/hoist supports, connections named per edge).
   - [ ] WTR-REMIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-REMIN-14, X-COM-01. Triage: hardware.
 - **WTR-ROOF_TANK** (tank, sector WTR)
   - [x] WTR-ROOF_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ROOF_TANK.md` §1; mass in = out 512.4 kg/d, 0.0000 kW.
@@ -2995,7 +2994,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] WTR-ROOF_TANK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-ROOF_TANK-10, X-DWG-01. Evidence: `models/mfg/ROOF_TANK/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] WTR-ROOF_TANK-12 BOM. Done when: models/mfg/ROOF_TANK/bom.csv. Depends: WTR-ROOF_TANK-10. Evidence: `models/mfg/ROOF_TANK/bom.csv`.
   - [x] WTR-ROOF_TANK-13 Fabrication route. Done when: docs-authority/fab/ROOF_TANK.md. Depends: WTR-ROOF_TANK-10, WTR-ROOF_TANK-12. Evidence: `docs-authority/fab/ROOF_TANK.md` (study route).
-  - [ ] WTR-ROOF_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-ROOF_TANK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] WTR-ROOF_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-ROOF_TANK-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 85: level position, structural/hoist supports, connections named per edge).
   - [ ] WTR-ROOF_TANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-ROOF_TANK-14, X-COM-01. Triage: hardware.
 - **WTR-VCD_TRAIN** (evaporator, sector WTR)
   - [x] WTR-VCD_TRAIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/VCD_TRAIN.md` §1; mass in = out 364.7 kg/d, 0.2583 kW.
@@ -3011,7 +3010,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] WTR-VCD_TRAIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-VCD_TRAIN-10, X-DWG-01. Evidence: `models/mfg/VCD_TRAIN/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] WTR-VCD_TRAIN-12 BOM. Done when: models/mfg/VCD_TRAIN/bom.csv. Depends: WTR-VCD_TRAIN-10. Evidence: `models/mfg/VCD_TRAIN/bom.csv`.
   - [x] WTR-VCD_TRAIN-13 Fabrication route. Done when: docs-authority/fab/VCD_TRAIN.md. Depends: WTR-VCD_TRAIN-10, WTR-VCD_TRAIN-12. Evidence: `docs-authority/fab/VCD_TRAIN.md` (study route).
-  - [ ] WTR-VCD_TRAIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-VCD_TRAIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] WTR-VCD_TRAIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-VCD_TRAIN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 58: level position, structural/hoist supports, connections named per edge).
   - [ ] WTR-VCD_TRAIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-VCD_TRAIN-14, X-COM-01. Triage: hardware.
 
 ### MFG. Process (Mass transform)
@@ -3030,7 +3029,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MFG-BLOW_MOLD-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MFG-BLOW_MOLD-10, X-DWG-01. Evidence: `models/mfg/BLOW_MOLD/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MFG-BLOW_MOLD-12 BOM. Done when: models/mfg/BLOW_MOLD/bom.csv. Depends: MFG-BLOW_MOLD-10. Evidence: `models/mfg/BLOW_MOLD/bom.csv`.
   - [x] MFG-BLOW_MOLD-13 Fabrication route. Done when: docs-authority/fab/BLOW_MOLD.md. Depends: MFG-BLOW_MOLD-10, MFG-BLOW_MOLD-12. Evidence: `docs-authority/fab/BLOW_MOLD.md` (study route).
-  - [ ] MFG-BLOW_MOLD-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-BLOW_MOLD-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MFG-BLOW_MOLD-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-BLOW_MOLD-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 65: level position, structural/hoist supports, connections named per edge).
   - [ ] MFG-BLOW_MOLD-15 Test and commission. Done when: test procedure and acceptance record. Depends: MFG-BLOW_MOLD-14, X-COM-01. Triage: hardware.
 - **MFG-COLD_MILL** (forming, sector MFG)
   - [x] MFG-COLD_MILL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/COLD_MILL.md` §1; mass in = out 3.95 kg/d, 0.0191 kW.
@@ -3046,7 +3045,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MFG-COLD_MILL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MFG-COLD_MILL-10, X-DWG-01. Evidence: `models/mfg/COLD_MILL/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MFG-COLD_MILL-12 BOM. Done when: models/mfg/COLD_MILL/bom.csv. Depends: MFG-COLD_MILL-10. Evidence: `models/mfg/COLD_MILL/bom.csv`.
   - [x] MFG-COLD_MILL-13 Fabrication route. Done when: docs-authority/fab/COLD_MILL.md. Depends: MFG-COLD_MILL-10, MFG-COLD_MILL-12. Evidence: `docs-authority/fab/COLD_MILL.md` (study route).
-  - [ ] MFG-COLD_MILL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-COLD_MILL-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MFG-COLD_MILL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-COLD_MILL-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 91: level position, structural/hoist supports, connections named per edge).
   - [ ] MFG-COLD_MILL-15 Test and commission. Done when: test procedure and acceptance record. Depends: MFG-COLD_MILL-14, X-COM-01. Triage: hardware.
 - **MFG-ELECTRODE_COAT** (coater, sector MFG)
   - [x] MFG-ELECTRODE_COAT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ELECTRODE_COAT.md` §1; mass in = out 0.02 kg/d, 0.0792 kW.
@@ -3062,7 +3061,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MFG-ELECTRODE_COAT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MFG-ELECTRODE_COAT-10, X-DWG-01. Evidence: `models/mfg/ELECTRODE_COAT/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MFG-ELECTRODE_COAT-12 BOM. Done when: models/mfg/ELECTRODE_COAT/bom.csv. Depends: MFG-ELECTRODE_COAT-10. Evidence: `models/mfg/ELECTRODE_COAT/bom.csv`.
   - [x] MFG-ELECTRODE_COAT-13 Fabrication route. Done when: docs-authority/fab/ELECTRODE_COAT.md. Depends: MFG-ELECTRODE_COAT-10, MFG-ELECTRODE_COAT-12. Evidence: `docs-authority/fab/ELECTRODE_COAT.md` (study route).
-  - [ ] MFG-ELECTRODE_COAT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-ELECTRODE_COAT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MFG-ELECTRODE_COAT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-ELECTRODE_COAT-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 64: level position, structural/hoist supports, connections named per edge).
   - [ ] MFG-ELECTRODE_COAT-15 Test and commission. Done when: test procedure and acceptance record. Depends: MFG-ELECTRODE_COAT-14, X-COM-01. Triage: hardware.
 - **MFG-GAS_ATOMIZER** (forming, sector MFG)
   - [x] MFG-GAS_ATOMIZER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GAS_ATOMIZER.md` §1; mass in = out 3.556 kg/d, 0.0781 kW.
@@ -3078,7 +3077,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MFG-GAS_ATOMIZER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MFG-GAS_ATOMIZER-10, X-DWG-01. Evidence: `models/mfg/GAS_ATOMIZER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MFG-GAS_ATOMIZER-12 BOM. Done when: models/mfg/GAS_ATOMIZER/bom.csv. Depends: MFG-GAS_ATOMIZER-10. Evidence: `models/mfg/GAS_ATOMIZER/bom.csv`.
   - [x] MFG-GAS_ATOMIZER-13 Fabrication route. Done when: docs-authority/fab/GAS_ATOMIZER.md. Depends: MFG-GAS_ATOMIZER-10, MFG-GAS_ATOMIZER-12. Evidence: `docs-authority/fab/GAS_ATOMIZER.md` (study route).
-  - [ ] MFG-GAS_ATOMIZER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-GAS_ATOMIZER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MFG-GAS_ATOMIZER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-GAS_ATOMIZER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 111: level position, structural/hoist supports, connections named per edge).
   - [ ] MFG-GAS_ATOMIZER-15 Test and commission. Done when: test procedure and acceptance record. Depends: MFG-GAS_ATOMIZER-14, X-COM-01. Triage: hardware.
 - **MFG-MET_AHU** (ahu, sector MFG)
   - [x] MFG-MET_AHU-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MET_AHU.md` §1; mass in = out 7.16e+04 kg/d, 0.0000 kW.
@@ -3094,7 +3093,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MFG-MET_AHU-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MFG-MET_AHU-10, X-DWG-01. Evidence: `models/mfg/MET_AHU/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MFG-MET_AHU-12 BOM. Done when: models/mfg/MET_AHU/bom.csv. Depends: MFG-MET_AHU-10. Evidence: `models/mfg/MET_AHU/bom.csv`.
   - [x] MFG-MET_AHU-13 Fabrication route. Done when: docs-authority/fab/MET_AHU.md. Depends: MFG-MET_AHU-10, MFG-MET_AHU-12. Evidence: `docs-authority/fab/MET_AHU.md` (study route).
-  - [ ] MFG-MET_AHU-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-MET_AHU-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MFG-MET_AHU-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-MET_AHU-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 63: level position, structural/hoist supports, connections named per edge).
   - [ ] MFG-MET_AHU-15 Test and commission. Done when: test procedure and acceptance record. Depends: MFG-MET_AHU-14, X-COM-01. Triage: hardware.
 - **MFG-MET_HX_Q4** (hx, sector MFG)
   - [x] MFG-MET_HX_Q4-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MET_HX_Q4.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -3110,7 +3109,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MFG-MET_HX_Q4-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MFG-MET_HX_Q4-10, X-DWG-01. Evidence: `models/mfg/MET_HX_Q4/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MFG-MET_HX_Q4-12 BOM. Done when: models/mfg/MET_HX_Q4/bom.csv. Depends: MFG-MET_HX_Q4-10. Evidence: `models/mfg/MET_HX_Q4/bom.csv`.
   - [x] MFG-MET_HX_Q4-13 Fabrication route. Done when: docs-authority/fab/MET_HX_Q4.md. Depends: MFG-MET_HX_Q4-10, MFG-MET_HX_Q4-12. Evidence: `docs-authority/fab/MET_HX_Q4.md` (study route).
-  - [ ] MFG-MET_HX_Q4-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-MET_HX_Q4-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MFG-MET_HX_Q4-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-MET_HX_Q4-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 108: level position, structural/hoist supports, connections named per edge).
   - [ ] MFG-MET_HX_Q4-15 Test and commission. Done when: test procedure and acceptance record. Depends: MFG-MET_HX_Q4-14, X-COM-01. Triage: hardware.
 - **MFG-MET_MELT** (melt, sector MFG)
   - [x] MFG-MET_MELT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MET_MELT.md` §1; mass in = out 14.34 kg/d, 0.2369 kW.
@@ -3126,7 +3125,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MFG-MET_MELT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MFG-MET_MELT-10, X-DWG-01. Evidence: `models/mfg/MET_MELT/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MFG-MET_MELT-12 BOM. Done when: models/mfg/MET_MELT/bom.csv. Depends: MFG-MET_MELT-10. Evidence: `models/mfg/MET_MELT/bom.csv`.
   - [x] MFG-MET_MELT-13 Fabrication route. Done when: docs-authority/fab/MET_MELT.md. Depends: MFG-MET_MELT-10, MFG-MET_MELT-12. Evidence: `docs-authority/fab/MET_MELT.md` (study route).
-  - [ ] MFG-MET_MELT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-MET_MELT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MFG-MET_MELT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-MET_MELT-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 92: level position, structural/hoist supports, connections named per edge).
   - [ ] MFG-MET_MELT-15 Test and commission. Done when: test procedure and acceptance record. Depends: MFG-MET_MELT-14, X-COM-01. Triage: hardware.
 - **MFG-MET_SCRUB** (scrubber, sector MFG)
   - [x] MFG-MET_SCRUB-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MET_SCRUB.md` §1; mass in = out 7.161e+04 kg/d, 2.1232 kW.
@@ -3142,7 +3141,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MFG-MET_SCRUB-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MFG-MET_SCRUB-10, X-DWG-01. Evidence: `models/mfg/MET_SCRUB/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MFG-MET_SCRUB-12 BOM. Done when: models/mfg/MET_SCRUB/bom.csv. Depends: MFG-MET_SCRUB-10. Evidence: `models/mfg/MET_SCRUB/bom.csv`.
   - [x] MFG-MET_SCRUB-13 Fabrication route. Done when: docs-authority/fab/MET_SCRUB.md. Depends: MFG-MET_SCRUB-10, MFG-MET_SCRUB-12. Evidence: `docs-authority/fab/MET_SCRUB.md` (study route).
-  - [ ] MFG-MET_SCRUB-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-MET_SCRUB-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MFG-MET_SCRUB-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-MET_SCRUB-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 94: level position, structural/hoist supports, connections named per edge).
   - [ ] MFG-MET_SCRUB-15 Test and commission. Done when: test procedure and acceptance record. Depends: MFG-MET_SCRUB-14, X-COM-01. Triage: hardware.
 - **MFG-MFG_SHOP** (shop, sector MFG)
   - [x] MFG-MFG_SHOP-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MFG_SHOP.md` §1; mass in = out 636.6 kg/d, 2.5500 kW.
@@ -3158,7 +3157,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MFG-MFG_SHOP-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MFG-MFG_SHOP-10, X-DWG-01. Evidence: `models/mfg/MFG_SHOP/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MFG-MFG_SHOP-12 BOM. Done when: models/mfg/MFG_SHOP/bom.csv. Depends: MFG-MFG_SHOP-10. Evidence: `models/mfg/MFG_SHOP/bom.csv`.
   - [x] MFG-MFG_SHOP-13 Fabrication route. Done when: docs-authority/fab/MFG_SHOP.md. Depends: MFG-MFG_SHOP-10, MFG-MFG_SHOP-12. Evidence: `docs-authority/fab/MFG_SHOP.md` (study route).
-  - [ ] MFG-MFG_SHOP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-MFG_SHOP-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MFG-MFG_SHOP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-MFG_SHOP-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 112: level position, structural/hoist supports, connections named per edge).
   - [ ] MFG-MFG_SHOP-15 Test and commission. Done when: test procedure and acceptance record. Depends: MFG-MFG_SHOP-14, X-COM-01. Triage: hardware.
 - **MFG-WIRE_DRAW** (forming, sector MFG)
   - [x] MFG-WIRE_DRAW-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WIRE_DRAW.md` §1; mass in = out 6.839 kg/d, 0.0189 kW.
@@ -3174,7 +3173,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MFG-WIRE_DRAW-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MFG-WIRE_DRAW-10, X-DWG-01. Evidence: `models/mfg/WIRE_DRAW/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MFG-WIRE_DRAW-12 BOM. Done when: models/mfg/WIRE_DRAW/bom.csv. Depends: MFG-WIRE_DRAW-10. Evidence: `models/mfg/WIRE_DRAW/bom.csv`.
   - [x] MFG-WIRE_DRAW-13 Fabrication route. Done when: docs-authority/fab/WIRE_DRAW.md. Depends: MFG-WIRE_DRAW-10, MFG-WIRE_DRAW-12. Evidence: `docs-authority/fab/WIRE_DRAW.md` (study route).
-  - [ ] MFG-WIRE_DRAW-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-WIRE_DRAW-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MFG-WIRE_DRAW-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-WIRE_DRAW-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 93: level position, structural/hoist supports, connections named per edge).
   - [ ] MFG-WIRE_DRAW-15 Test and commission. Done when: test procedure and acceptance record. Depends: MFG-WIRE_DRAW-14, X-COM-01. Triage: hardware.
 
 ### ELEC. Utility / header
@@ -3193,7 +3192,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] ELEC-BACKUP_GEN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: ELEC-BACKUP_GEN-10, X-DWG-01. Evidence: `models/mfg/BACKUP_GEN/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] ELEC-BACKUP_GEN-12 BOM. Done when: models/mfg/BACKUP_GEN/bom.csv. Depends: ELEC-BACKUP_GEN-10. Evidence: `models/mfg/BACKUP_GEN/bom.csv`.
   - [x] ELEC-BACKUP_GEN-13 Fabrication route. Done when: docs-authority/fab/BACKUP_GEN.md. Depends: ELEC-BACKUP_GEN-10, ELEC-BACKUP_GEN-12. Evidence: `docs-authority/fab/BACKUP_GEN.md` (study route).
-  - [ ] ELEC-BACKUP_GEN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-BACKUP_GEN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] ELEC-BACKUP_GEN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-BACKUP_GEN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 18: level position, structural/hoist supports, connections named per edge).
   - [ ] ELEC-BACKUP_GEN-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-BACKUP_GEN-14, X-COM-01. Triage: hardware.
 - **ELEC-EXT_HALL** (building, sector ELEC)
   - [x] ELEC-EXT_HALL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EXT_HALL.md` §1; mass in = out 0 kg/d, 99.1801 kW.
@@ -3209,7 +3208,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] ELEC-EXT_HALL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: ELEC-EXT_HALL-10, X-DWG-01. Triage: desk P4.
   - [x] ELEC-EXT_HALL-12 BOM. Done when: models/mfg/EXT_HALL/bom.csv. Depends: ELEC-EXT_HALL-10. Evidence: `models/mfg/EXT_HALL/bom.csv`.
   - [x] ELEC-EXT_HALL-13 Fabrication route. Done when: docs-authority/fab/EXT_HALL.md. Depends: ELEC-EXT_HALL-10, ELEC-EXT_HALL-12. Evidence: `docs-authority/fab/EXT_HALL.md` (study route).
-  - [ ] ELEC-EXT_HALL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-EXT_HALL-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] ELEC-EXT_HALL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-EXT_HALL-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 55: level position, structural/hoist supports, connections named per edge).
   - [ ] ELEC-EXT_HALL-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-EXT_HALL-14, X-COM-01. Triage: hardware.
 - **ELEC-FUEL_CELL** (pem_fc, sector ELEC)
   - [x] ELEC-FUEL_CELL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/FUEL_CELL.md` §1; mass in = out 43.2 kg/d, 4.0000 kW.
@@ -3225,7 +3224,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] ELEC-FUEL_CELL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: ELEC-FUEL_CELL-10, X-DWG-01. Evidence: `models/mfg/FUEL_CELL/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] ELEC-FUEL_CELL-12 BOM. Done when: models/mfg/FUEL_CELL/bom.csv. Depends: ELEC-FUEL_CELL-10. Evidence: `models/mfg/FUEL_CELL/bom.csv`.
   - [x] ELEC-FUEL_CELL-13 Fabrication route. Done when: docs-authority/fab/FUEL_CELL.md. Depends: ELEC-FUEL_CELL-10, ELEC-FUEL_CELL-12. Evidence: `docs-authority/fab/FUEL_CELL.md` (study route).
-  - [ ] ELEC-FUEL_CELL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-FUEL_CELL-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] ELEC-FUEL_CELL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-FUEL_CELL-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 12: level position, structural/hoist supports, connections named per edge).
   - [ ] ELEC-FUEL_CELL-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-FUEL_CELL-14, X-COM-01. Triage: hardware.
 - **ELEC-LOAD_AGG** (load_agg, sector ELEC)
   - [x] ELEC-LOAD_AGG-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/LOAD_AGG.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -3241,7 +3240,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] ELEC-LOAD_AGG-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: ELEC-LOAD_AGG-10, X-DWG-01. Evidence: `models/mfg/LOAD_AGG/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] ELEC-LOAD_AGG-12 BOM. Done when: models/mfg/LOAD_AGG/bom.csv. Depends: ELEC-LOAD_AGG-10. Evidence: `models/mfg/LOAD_AGG/bom.csv`.
   - [x] ELEC-LOAD_AGG-13 Fabrication route. Done when: docs-authority/fab/LOAD_AGG.md. Depends: ELEC-LOAD_AGG-10, ELEC-LOAD_AGG-12. Evidence: `docs-authority/fab/LOAD_AGG.md` (study route).
-  - [ ] ELEC-LOAD_AGG-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-LOAD_AGG-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] ELEC-LOAD_AGG-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-LOAD_AGG-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 31: level position, structural/hoist supports, connections named per edge).
   - [ ] ELEC-LOAD_AGG-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-LOAD_AGG-14, X-COM-01. Triage: hardware.
 - **ELEC-PV_ARRAY** (pv, sector ELEC)
   - [x] ELEC-PV_ARRAY-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PV_ARRAY.md` §1; mass in = out 0 kg/d, 368.9871 kW.
@@ -3257,7 +3256,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] ELEC-PV_ARRAY-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: ELEC-PV_ARRAY-10, X-DWG-01. Evidence: `models/mfg/PV_ARRAY/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] ELEC-PV_ARRAY-12 BOM. Done when: models/mfg/PV_ARRAY/bom.csv. Depends: ELEC-PV_ARRAY-10. Evidence: `models/mfg/PV_ARRAY/bom.csv`.
   - [x] ELEC-PV_ARRAY-13 Fabrication route. Done when: docs-authority/fab/PV_ARRAY.md. Depends: ELEC-PV_ARRAY-10, ELEC-PV_ARRAY-12. Evidence: `docs-authority/fab/PV_ARRAY.md` (study route).
-  - [ ] ELEC-PV_ARRAY-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-PV_ARRAY-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] ELEC-PV_ARRAY-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-PV_ARRAY-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 1: level position, structural/hoist supports, connections named per edge).
   - [ ] ELEC-PV_ARRAY-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-PV_ARRAY-14, X-COM-01. Triage: hardware.
 - **ELEC-RECTIFIER** (rectifier, sector ELEC)
   - [x] ELEC-RECTIFIER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/RECTIFIER.md` §1; mass in = out 0 kg/d, 12.0000 kW.
@@ -3273,7 +3272,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] ELEC-RECTIFIER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: ELEC-RECTIFIER-10, X-DWG-01. Evidence: `models/mfg/RECTIFIER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] ELEC-RECTIFIER-12 BOM. Done when: models/mfg/RECTIFIER/bom.csv. Depends: ELEC-RECTIFIER-10. Evidence: `models/mfg/RECTIFIER/bom.csv`.
   - [x] ELEC-RECTIFIER-13 Fabrication route. Done when: docs-authority/fab/RECTIFIER.md. Depends: ELEC-RECTIFIER-10, ELEC-RECTIFIER-12. Evidence: `docs-authority/fab/RECTIFIER.md` (study route).
-  - [ ] ELEC-RECTIFIER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-RECTIFIER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] ELEC-RECTIFIER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-RECTIFIER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 51: level position, structural/hoist supports, connections named per edge).
   - [ ] ELEC-RECTIFIER-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-RECTIFIER-14, X-COM-01. Triage: hardware.
 - **ELEC-SOL_ARK_60K** (inverter, sector ELEC)
   - [x] ELEC-SOL_ARK_60K-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/SOL_ARK_60K.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -3289,7 +3288,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] ELEC-SOL_ARK_60K-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: ELEC-SOL_ARK_60K-10, X-DWG-01. Evidence: `models/mfg/SOL_ARK_60K/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] ELEC-SOL_ARK_60K-12 BOM. Done when: models/mfg/SOL_ARK_60K/bom.csv. Depends: ELEC-SOL_ARK_60K-10. Evidence: `models/mfg/SOL_ARK_60K/bom.csv`.
   - [x] ELEC-SOL_ARK_60K-13 Fabrication route. Done when: docs-authority/fab/SOL_ARK_60K.md. Depends: ELEC-SOL_ARK_60K-10, ELEC-SOL_ARK_60K-12. Evidence: `docs-authority/fab/SOL_ARK_60K.md` (study route).
-  - [ ] ELEC-SOL_ARK_60K-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-SOL_ARK_60K-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] ELEC-SOL_ARK_60K-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-SOL_ARK_60K-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 79: level position, structural/hoist supports, connections named per edge).
   - [ ] ELEC-SOL_ARK_60K-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-SOL_ARK_60K-14, X-COM-01. Triage: hardware.
 - **ELEC-ZNBR2** (flow_battery, sector ELEC)
   - [x] ELEC-ZNBR2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2.md` §1; mass in = out 924.3 kg/d, 217.9501 kW.
@@ -3305,7 +3304,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] ELEC-ZNBR2-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: ELEC-ZNBR2-10, X-DWG-01. Evidence: `models/mfg/ZNBR2/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] ELEC-ZNBR2-12 BOM. Done when: models/mfg/ZNBR2/bom.csv. Depends: ELEC-ZNBR2-10. Evidence: `models/mfg/ZNBR2/bom.csv`.
   - [x] ELEC-ZNBR2-13 Fabrication route. Done when: docs-authority/fab/ZNBR2.md. Depends: ELEC-ZNBR2-10, ELEC-ZNBR2-12. Evidence: `docs-authority/fab/ZNBR2.md` (study route).
-  - [ ] ELEC-ZNBR2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-ZNBR2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] ELEC-ZNBR2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-ZNBR2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 78: level position, structural/hoist supports, connections named per edge).
   - [ ] ELEC-ZNBR2-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-ZNBR2-14, X-COM-01. Triage: hardware.
 - **ELEC-ZNBR2_BR2_REGEN** (scrubber, sector ELEC)
   - [x] ELEC-ZNBR2_BR2_REGEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2_BR2_REGEN.md` §1; mass in = out 915.9 kg/d, 0.0000 kW.
@@ -3321,7 +3320,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] ELEC-ZNBR2_BR2_REGEN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: ELEC-ZNBR2_BR2_REGEN-10, X-DWG-01. Evidence: `models/mfg/ZNBR2_BR2_REGEN/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] ELEC-ZNBR2_BR2_REGEN-12 BOM. Done when: models/mfg/ZNBR2_BR2_REGEN/bom.csv. Depends: ELEC-ZNBR2_BR2_REGEN-10. Evidence: `models/mfg/ZNBR2_BR2_REGEN/bom.csv`.
   - [x] ELEC-ZNBR2_BR2_REGEN-13 Fabrication route. Done when: docs-authority/fab/ZNBR2_BR2_REGEN.md. Depends: ELEC-ZNBR2_BR2_REGEN-10, ELEC-ZNBR2_BR2_REGEN-12. Evidence: `docs-authority/fab/ZNBR2_BR2_REGEN.md` (study route).
-  - [ ] ELEC-ZNBR2_BR2_REGEN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-ZNBR2_BR2_REGEN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] ELEC-ZNBR2_BR2_REGEN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-ZNBR2_BR2_REGEN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 73: level position, structural/hoist supports, connections named per edge).
   - [ ] ELEC-ZNBR2_BR2_REGEN-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-ZNBR2_BR2_REGEN-14, X-COM-01. Triage: hardware.
 
 ### HAB. Life support / habitat
@@ -3340,7 +3339,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-COMMON_AREA-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HAB-COMMON_AREA-10, X-DWG-01. Evidence: `models/mfg/COMMON_AREA/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HAB-COMMON_AREA-12 BOM. Done when: models/mfg/COMMON_AREA/bom.csv. Depends: HAB-COMMON_AREA-10. Evidence: `models/mfg/COMMON_AREA/bom.csv`.
   - [x] HAB-COMMON_AREA-13 Fabrication route. Done when: docs-authority/fab/COMMON_AREA.md. Depends: HAB-COMMON_AREA-10, HAB-COMMON_AREA-12. Evidence: `docs-authority/fab/COMMON_AREA.md` (study route).
-  - [ ] HAB-COMMON_AREA-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-COMMON_AREA-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HAB-COMMON_AREA-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-COMMON_AREA-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 6: level position, structural/hoist supports, connections named per edge).
   - [ ] HAB-COMMON_AREA-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-COMMON_AREA-14, X-COM-01. Triage: hardware.
 - **HAB-GALLEY** (galley, sector HAB)
   - [x] HAB-GALLEY-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GALLEY.md` §1; mass in = out 6.4 kg/d, 0.0000 kW.
@@ -3356,7 +3355,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-GALLEY-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HAB-GALLEY-10, X-DWG-01. Evidence: `models/mfg/GALLEY/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HAB-GALLEY-12 BOM. Done when: models/mfg/GALLEY/bom.csv. Depends: HAB-GALLEY-10. Evidence: `models/mfg/GALLEY/bom.csv`.
   - [x] HAB-GALLEY-13 Fabrication route. Done when: docs-authority/fab/GALLEY.md. Depends: HAB-GALLEY-10, HAB-GALLEY-12. Evidence: `docs-authority/fab/GALLEY.md` (study route).
-  - [ ] HAB-GALLEY-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-GALLEY-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HAB-GALLEY-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-GALLEY-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 5: level position, structural/hoist supports, connections named per edge).
   - [ ] HAB-GALLEY-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-GALLEY-14, X-COM-01. Triage: hardware.
 - **HAB-HABITATION** (hab, sector HAB)
   - [x] HAB-HABITATION-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HABITATION.md` §1; mass in = out 950.6 kg/d, 1.1570 kW.
@@ -3372,7 +3371,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-HABITATION-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HAB-HABITATION-10, X-DWG-01. Evidence: `models/mfg/HABITATION/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HAB-HABITATION-12 BOM. Done when: models/mfg/HABITATION/bom.csv. Depends: HAB-HABITATION-10. Evidence: `models/mfg/HABITATION/bom.csv`.
   - [x] HAB-HABITATION-13 Fabrication route. Done when: docs-authority/fab/HABITATION.md. Depends: HAB-HABITATION-10, HAB-HABITATION-12. Evidence: `docs-authority/fab/HABITATION.md` (study route).
-  - [ ] HAB-HABITATION-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-HABITATION-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HAB-HABITATION-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-HABITATION-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 68: level position, structural/hoist supports, connections named per edge).
   - [ ] HAB-HABITATION-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-HABITATION-14, X-COM-01. Triage: hardware.
 - **HAB-HDR_CO2** (header, sector HAB)
   - [x] HAB-HDR_CO2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_CO2.md` §1; mass in = out 4.021 kg/d, 0.0000 kW.
@@ -3388,7 +3387,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-HDR_CO2-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HAB-HDR_CO2-10, X-DWG-01. Evidence: `models/mfg/HDR_CO2/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HAB-HDR_CO2-12 BOM. Done when: models/mfg/HDR_CO2/bom.csv. Depends: HAB-HDR_CO2-10. Evidence: `models/mfg/HDR_CO2/bom.csv`.
   - [x] HAB-HDR_CO2-13 Fabrication route. Done when: docs-authority/fab/HDR_CO2.md. Depends: HAB-HDR_CO2-10, HAB-HDR_CO2-12. Evidence: `docs-authority/fab/HDR_CO2.md` (study route).
-  - [ ] HAB-HDR_CO2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-HDR_CO2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HAB-HDR_CO2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-HDR_CO2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 71: level position, structural/hoist supports, connections named per edge).
   - [ ] HAB-HDR_CO2-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-HDR_CO2-14, X-COM-01. Triage: hardware.
 - **HAB-HDR_N2** (header, sector HAB)
   - [x] HAB-HDR_N2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_N2.md` §1; mass in = out 192.4 kg/d, 0.0000 kW.
@@ -3404,7 +3403,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-HDR_N2-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HAB-HDR_N2-10, X-DWG-01. Evidence: `models/mfg/HDR_N2/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HAB-HDR_N2-12 BOM. Done when: models/mfg/HDR_N2/bom.csv. Depends: HAB-HDR_N2-10. Evidence: `models/mfg/HDR_N2/bom.csv`.
   - [x] HAB-HDR_N2-13 Fabrication route. Done when: docs-authority/fab/HDR_N2.md. Depends: HAB-HDR_N2-10, HAB-HDR_N2-12. Evidence: `docs-authority/fab/HDR_N2.md` (study route).
-  - [ ] HAB-HDR_N2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-HDR_N2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HAB-HDR_N2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-HDR_N2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 28: level position, structural/hoist supports, connections named per edge).
   - [ ] HAB-HDR_N2-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-HDR_N2-14, X-COM-01. Triage: hardware.
 - **HAB-MEDICAL** (medical, sector HAB)
   - [x] HAB-MEDICAL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MEDICAL.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -3420,7 +3419,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-MEDICAL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HAB-MEDICAL-10, X-DWG-01. Evidence: `models/mfg/MEDICAL/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HAB-MEDICAL-12 BOM. Done when: models/mfg/MEDICAL/bom.csv. Depends: HAB-MEDICAL-10. Evidence: `models/mfg/MEDICAL/bom.csv`.
   - [x] HAB-MEDICAL-13 Fabrication route. Done when: docs-authority/fab/MEDICAL.md. Depends: HAB-MEDICAL-10, HAB-MEDICAL-12. Evidence: `docs-authority/fab/MEDICAL.md` (study route).
-  - [ ] HAB-MEDICAL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-MEDICAL-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HAB-MEDICAL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-MEDICAL-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 12: level position, structural/hoist supports, connections named per edge).
   - [ ] HAB-MEDICAL-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-MEDICAL-14, X-COM-01. Triage: hardware.
 - **HAB-REC_DAYROOM** (dayroom, sector HAB)
   - [x] HAB-REC_DAYROOM-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/REC_DAYROOM.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -3436,7 +3435,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-REC_DAYROOM-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HAB-REC_DAYROOM-10, X-DWG-01. Evidence: `models/mfg/REC_DAYROOM/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HAB-REC_DAYROOM-12 BOM. Done when: models/mfg/REC_DAYROOM/bom.csv. Depends: HAB-REC_DAYROOM-10. Evidence: `models/mfg/REC_DAYROOM/bom.csv`.
   - [x] HAB-REC_DAYROOM-13 Fabrication route. Done when: docs-authority/fab/REC_DAYROOM.md. Depends: HAB-REC_DAYROOM-10, HAB-REC_DAYROOM-12. Evidence: `docs-authority/fab/REC_DAYROOM.md` (study route).
-  - [ ] HAB-REC_DAYROOM-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-REC_DAYROOM-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HAB-REC_DAYROOM-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-REC_DAYROOM-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 2: level position, structural/hoist supports, connections named per edge).
   - [ ] HAB-REC_DAYROOM-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-REC_DAYROOM-14, X-COM-01. Triage: hardware.
 - **HAB-SLEEP_QUARTERS** (quarters, sector HAB)
   - [x] HAB-SLEEP_QUARTERS-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/SLEEP_QUARTERS.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -3452,7 +3451,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-SLEEP_QUARTERS-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HAB-SLEEP_QUARTERS-10, X-DWG-01. Evidence: `models/mfg/SLEEP_QUARTERS/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HAB-SLEEP_QUARTERS-12 BOM. Done when: models/mfg/SLEEP_QUARTERS/bom.csv. Depends: HAB-SLEEP_QUARTERS-10. Evidence: `models/mfg/SLEEP_QUARTERS/bom.csv`.
   - [x] HAB-SLEEP_QUARTERS-13 Fabrication route. Done when: docs-authority/fab/SLEEP_QUARTERS.md. Depends: HAB-SLEEP_QUARTERS-10, HAB-SLEEP_QUARTERS-12. Evidence: `docs-authority/fab/SLEEP_QUARTERS.md` (study route).
-  - [ ] HAB-SLEEP_QUARTERS-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-SLEEP_QUARTERS-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HAB-SLEEP_QUARTERS-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-SLEEP_QUARTERS-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 3: level position, structural/hoist supports, connections named per edge).
   - [ ] HAB-SLEEP_QUARTERS-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-SLEEP_QUARTERS-14, X-COM-01. Triage: hardware.
 - **HAB-WASHROOM** (washroom, sector HAB)
   - [x] HAB-WASHROOM-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WASHROOM.md` §1; mass in = out 0 kg/d, 0.0000 kW.
@@ -3468,7 +3467,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-WASHROOM-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HAB-WASHROOM-10, X-DWG-01. Evidence: `models/mfg/WASHROOM/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] HAB-WASHROOM-12 BOM. Done when: models/mfg/WASHROOM/bom.csv. Depends: HAB-WASHROOM-10. Evidence: `models/mfg/WASHROOM/bom.csv`.
   - [x] HAB-WASHROOM-13 Fabrication route. Done when: docs-authority/fab/WASHROOM.md. Depends: HAB-WASHROOM-10, HAB-WASHROOM-12. Evidence: `docs-authority/fab/WASHROOM.md` (study route).
-  - [ ] HAB-WASHROOM-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-WASHROOM-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] HAB-WASHROOM-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-WASHROOM-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 11: level position, structural/hoist supports, connections named per edge).
   - [ ] HAB-WASHROOM-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-WASHROOM-14, X-COM-01. Triage: hardware.
 
 ### MEOH. Energy Storage System (Electrochemical)
@@ -3487,7 +3486,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MEOH-MEOH_COND-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MEOH-MEOH_COND-10, X-DWG-01. Evidence: `models/mfg/MEOH_COND/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MEOH-MEOH_COND-12 BOM. Done when: models/mfg/MEOH_COND/bom.csv. Depends: MEOH-MEOH_COND-10. Evidence: `models/mfg/MEOH_COND/bom.csv`.
   - [x] MEOH-MEOH_COND-13 Fabrication route. Done when: docs-authority/fab/MEOH_COND.md. Depends: MEOH-MEOH_COND-10, MEOH-MEOH_COND-12. Evidence: `docs-authority/fab/MEOH_COND.md` (study route).
-  - [ ] MEOH-MEOH_COND-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MEOH-MEOH_COND-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MEOH-MEOH_COND-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MEOH-MEOH_COND-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 50: level position, structural/hoist supports, connections named per edge).
   - [ ] MEOH-MEOH_COND-15 Test and commission. Done when: test procedure and acceptance record. Depends: MEOH-MEOH_COND-14, X-COM-01. Triage: hardware.
 - **MEOH-MEOH_FC** (iem_fc, sector MEOH)
   - [x] MEOH-MEOH_FC-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MEOH_FC.md` §1; mass in = out 15.88 kg/d, 1.0000 kW.
@@ -3503,7 +3502,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MEOH-MEOH_FC-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MEOH-MEOH_FC-10, X-DWG-01. Evidence: `models/mfg/MEOH_FC/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MEOH-MEOH_FC-12 BOM. Done when: models/mfg/MEOH_FC/bom.csv. Depends: MEOH-MEOH_FC-10. Evidence: `models/mfg/MEOH_FC/bom.csv`.
   - [x] MEOH-MEOH_FC-13 Fabrication route. Done when: docs-authority/fab/MEOH_FC.md. Depends: MEOH-MEOH_FC-10, MEOH-MEOH_FC-12. Evidence: `docs-authority/fab/MEOH_FC.md` (study route).
-  - [ ] MEOH-MEOH_FC-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MEOH-MEOH_FC-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MEOH-MEOH_FC-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MEOH-MEOH_FC-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 49: level position, structural/hoist supports, connections named per edge).
   - [ ] MEOH-MEOH_FC-15 Test and commission. Done when: test procedure and acceptance record. Depends: MEOH-MEOH_FC-14, X-COM-01. Triage: hardware.
 - **MEOH-MEOH_FERM** (ferment, sector MEOH)
   - [x] MEOH-MEOH_FERM-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MEOH_FERM.md` §1; mass in = out 0.36 kg/d, 0.0207 kW.
@@ -3519,7 +3518,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MEOH-MEOH_FERM-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MEOH-MEOH_FERM-10, X-DWG-01. Evidence: `models/mfg/MEOH_FERM/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MEOH-MEOH_FERM-12 BOM. Done when: models/mfg/MEOH_FERM/bom.csv. Depends: MEOH-MEOH_FERM-10. Evidence: `models/mfg/MEOH_FERM/bom.csv`.
   - [x] MEOH-MEOH_FERM-13 Fabrication route. Done when: docs-authority/fab/MEOH_FERM.md. Depends: MEOH-MEOH_FERM-10, MEOH-MEOH_FERM-12. Evidence: `docs-authority/fab/MEOH_FERM.md` (study route).
-  - [ ] MEOH-MEOH_FERM-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MEOH-MEOH_FERM-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MEOH-MEOH_FERM-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MEOH-MEOH_FERM-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 47: level position, structural/hoist supports, connections named per edge).
   - [ ] MEOH-MEOH_FERM-15 Test and commission. Done when: test procedure and acceptance record. Depends: MEOH-MEOH_FERM-14, X-COM-01. Triage: hardware.
 - **MEOH-MEOH_SYNTH** (reactor, sector MEOH)
   - [x] MEOH-MEOH_SYNTH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MEOH_SYNTH.md` §1; mass in = out 53.91 kg/d, 0.8180 kW.
@@ -3535,7 +3534,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MEOH-MEOH_SYNTH-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MEOH-MEOH_SYNTH-10, X-DWG-01. Evidence: `models/mfg/MEOH_SYNTH/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MEOH-MEOH_SYNTH-12 BOM. Done when: models/mfg/MEOH_SYNTH/bom.csv. Depends: MEOH-MEOH_SYNTH-10. Evidence: `models/mfg/MEOH_SYNTH/bom.csv`.
   - [x] MEOH-MEOH_SYNTH-13 Fabrication route. Done when: docs-authority/fab/MEOH_SYNTH.md. Depends: MEOH-MEOH_SYNTH-10, MEOH-MEOH_SYNTH-12. Evidence: `docs-authority/fab/MEOH_SYNTH.md` (study route).
-  - [ ] MEOH-MEOH_SYNTH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MEOH-MEOH_SYNTH-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MEOH-MEOH_SYNTH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MEOH-MEOH_SYNTH-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 45: level position, structural/hoist supports, connections named per edge).
   - [ ] MEOH-MEOH_SYNTH-15 Test and commission. Done when: test procedure and acceptance record. Depends: MEOH-MEOH_SYNTH-14, X-COM-01. Triage: hardware.
 - **MEOH-MEOH_TANK** (tank, sector MEOH)
   - [x] MEOH-MEOH_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MEOH_TANK.md` §1; mass in = out 34.52 kg/d, 0.0000 kW.
@@ -3551,7 +3550,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MEOH-MEOH_TANK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MEOH-MEOH_TANK-10, X-DWG-01. Evidence: `models/mfg/MEOH_TANK/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MEOH-MEOH_TANK-12 BOM. Done when: models/mfg/MEOH_TANK/bom.csv. Depends: MEOH-MEOH_TANK-10. Evidence: `models/mfg/MEOH_TANK/bom.csv`.
   - [x] MEOH-MEOH_TANK-13 Fabrication route. Done when: docs-authority/fab/MEOH_TANK.md. Depends: MEOH-MEOH_TANK-10, MEOH-MEOH_TANK-12. Evidence: `docs-authority/fab/MEOH_TANK.md` (study route).
-  - [ ] MEOH-MEOH_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MEOH-MEOH_TANK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MEOH-MEOH_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MEOH-MEOH_TANK-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 48: level position, structural/hoist supports, connections named per edge).
   - [ ] MEOH-MEOH_TANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: MEOH-MEOH_TANK-14, X-COM-01. Triage: hardware.
 - **MEOH-MET_SYN** (chemical_synthesis, sector MEOH)
   - [x] MEOH-MET_SYN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MET_SYN.md` §1; mass in = out 0 kg/d, 0.2000 kW.
@@ -3567,7 +3566,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MEOH-MET_SYN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MEOH-MET_SYN-10, X-DWG-01. Evidence: `models/mfg/MET_SYN/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] MEOH-MET_SYN-12 BOM. Done when: models/mfg/MET_SYN/bom.csv. Depends: MEOH-MET_SYN-10. Evidence: `models/mfg/MET_SYN/bom.csv`.
   - [x] MEOH-MET_SYN-13 Fabrication route. Done when: docs-authority/fab/MET_SYN.md. Depends: MEOH-MET_SYN-10, MEOH-MET_SYN-12. Evidence: `docs-authority/fab/MET_SYN.md` (study route).
-  - [ ] MEOH-MET_SYN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MEOH-MET_SYN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] MEOH-MET_SYN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MEOH-MET_SYN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 81: level position, structural/hoist supports, connections named per edge).
   - [ ] MEOH-MET_SYN-15 Test and commission. Done when: test procedure and acceptance record. Depends: MEOH-MET_SYN-14, X-COM-01. Triage: hardware.
 
 ### GLASS. Process (Mass transform)
@@ -3586,7 +3585,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GLASS-GLASS_BURNOUT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GLASS-GLASS_BURNOUT-10, X-DWG-01. Evidence: `models/mfg/GLASS_BURNOUT/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GLASS-GLASS_BURNOUT-12 BOM. Done when: models/mfg/GLASS_BURNOUT/bom.csv. Depends: GLASS-GLASS_BURNOUT-10. Evidence: `models/mfg/GLASS_BURNOUT/bom.csv`.
   - [x] GLASS-GLASS_BURNOUT-13 Fabrication route. Done when: docs-authority/fab/GLASS_BURNOUT.md. Depends: GLASS-GLASS_BURNOUT-10, GLASS-GLASS_BURNOUT-12. Evidence: `docs-authority/fab/GLASS_BURNOUT.md` (study route).
-  - [ ] GLASS-GLASS_BURNOUT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GLASS-GLASS_BURNOUT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GLASS-GLASS_BURNOUT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GLASS-GLASS_BURNOUT-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 59: level position, structural/hoist supports, connections named per edge).
   - [ ] GLASS-GLASS_BURNOUT-15 Test and commission. Done when: test procedure and acceptance record. Depends: GLASS-GLASS_BURNOUT-14, X-COM-01. Triage: hardware.
 - **GLASS-GLASS_DIGEST** (digest, sector GLASS)
   - [x] GLASS-GLASS_DIGEST-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GLASS_DIGEST.md` §1; mass in = out 51.97 kg/d, 0.0900 kW.
@@ -3602,7 +3601,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GLASS-GLASS_DIGEST-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GLASS-GLASS_DIGEST-10, X-DWG-01. Evidence: `models/mfg/GLASS_DIGEST/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GLASS-GLASS_DIGEST-12 BOM. Done when: models/mfg/GLASS_DIGEST/bom.csv. Depends: GLASS-GLASS_DIGEST-10. Evidence: `models/mfg/GLASS_DIGEST/bom.csv`.
   - [x] GLASS-GLASS_DIGEST-13 Fabrication route. Done when: docs-authority/fab/GLASS_DIGEST.md. Depends: GLASS-GLASS_DIGEST-10, GLASS-GLASS_DIGEST-12. Evidence: `docs-authority/fab/GLASS_DIGEST.md` (study route).
-  - [ ] GLASS-GLASS_DIGEST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GLASS-GLASS_DIGEST-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GLASS-GLASS_DIGEST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GLASS-GLASS_DIGEST-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 62: level position, structural/hoist supports, connections named per edge).
   - [ ] GLASS-GLASS_DIGEST-15 Test and commission. Done when: test procedure and acceptance record. Depends: GLASS-GLASS_DIGEST-14, X-COM-01. Triage: hardware.
 - **GLASS-GLASS_MILL** (intra, sector GLASS)
   - [x] GLASS-GLASS_MILL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GLASS_MILL.md` §1; mass in = out 36.82 kg/d, 0.0000 kW.
@@ -3618,7 +3617,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GLASS-GLASS_MILL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GLASS-GLASS_MILL-10, X-DWG-01. Evidence: `models/mfg/GLASS_MILL/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GLASS-GLASS_MILL-12 BOM. Done when: models/mfg/GLASS_MILL/bom.csv. Depends: GLASS-GLASS_MILL-10. Evidence: `models/mfg/GLASS_MILL/bom.csv`.
   - [x] GLASS-GLASS_MILL-13 Fabrication route. Done when: docs-authority/fab/GLASS_MILL.md. Depends: GLASS-GLASS_MILL-10, GLASS-GLASS_MILL-12. Evidence: `docs-authority/fab/GLASS_MILL.md` (study route).
-  - [ ] GLASS-GLASS_MILL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GLASS-GLASS_MILL-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GLASS-GLASS_MILL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GLASS-GLASS_MILL-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 61: level position, structural/hoist supports, connections named per edge).
   - [ ] GLASS-GLASS_MILL-15 Test and commission. Done when: test procedure and acceptance record. Depends: GLASS-GLASS_MILL-14, X-COM-01. Triage: hardware.
 - **GLASS-GLASS_RINSE** (intra, sector GLASS)
   - [x] GLASS-GLASS_RINSE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GLASS_RINSE.md` §1; mass in = out 36.82 kg/d, 0.0000 kW.
@@ -3634,7 +3633,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GLASS-GLASS_RINSE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GLASS-GLASS_RINSE-10, X-DWG-01. Evidence: `models/mfg/GLASS_RINSE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GLASS-GLASS_RINSE-12 BOM. Done when: models/mfg/GLASS_RINSE/bom.csv. Depends: GLASS-GLASS_RINSE-10. Evidence: `models/mfg/GLASS_RINSE/bom.csv`.
   - [x] GLASS-GLASS_RINSE-13 Fabrication route. Done when: docs-authority/fab/GLASS_RINSE.md. Depends: GLASS-GLASS_RINSE-10, GLASS-GLASS_RINSE-12. Evidence: `docs-authority/fab/GLASS_RINSE.md` (study route).
-  - [ ] GLASS-GLASS_RINSE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GLASS-GLASS_RINSE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GLASS-GLASS_RINSE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GLASS-GLASS_RINSE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 60: level position, structural/hoist supports, connections named per edge).
   - [ ] GLASS-GLASS_RINSE-15 Test and commission. Done when: test procedure and acceptance record. Depends: GLASS-GLASS_RINSE-14, X-COM-01. Triage: hardware.
 - **GLASS-SI_REDUCE** (furnace, sector GLASS)
   - [x] GLASS-SI_REDUCE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/SI_REDUCE.md` §1; mass in = out 0 kg/d, 5.0000 kW.
@@ -3650,7 +3649,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GLASS-SI_REDUCE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GLASS-SI_REDUCE-10, X-DWG-01. Evidence: `models/mfg/SI_REDUCE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GLASS-SI_REDUCE-12 BOM. Done when: models/mfg/SI_REDUCE/bom.csv. Depends: GLASS-SI_REDUCE-10. Evidence: `models/mfg/SI_REDUCE/bom.csv`.
   - [x] GLASS-SI_REDUCE-13 Fabrication route. Done when: docs-authority/fab/SI_REDUCE.md. Depends: GLASS-SI_REDUCE-10, GLASS-SI_REDUCE-12. Evidence: `docs-authority/fab/SI_REDUCE.md` (study route).
-  - [ ] GLASS-SI_REDUCE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GLASS-SI_REDUCE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GLASS-SI_REDUCE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GLASS-SI_REDUCE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 37: level position, structural/hoist supports, connections named per edge).
   - [ ] GLASS-SI_REDUCE-15 Test and commission. Done when: test procedure and acceptance record. Depends: GLASS-SI_REDUCE-14, X-COM-01. Triage: hardware.
 
 ### GEO. Utility / header
@@ -3669,7 +3668,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GEO-GEO_GHEX-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GEO-GEO_GHEX-10, X-DWG-01. Evidence: `models/mfg/GEO_GHEX/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GEO-GEO_GHEX-12 BOM. Done when: models/mfg/GEO_GHEX/bom.csv. Depends: GEO-GEO_GHEX-10. Evidence: `models/mfg/GEO_GHEX/bom.csv`.
   - [x] GEO-GEO_GHEX-13 Fabrication route. Done when: docs-authority/fab/GEO_GHEX.md. Depends: GEO-GEO_GHEX-10, GEO-GEO_GHEX-12. Evidence: `docs-authority/fab/GEO_GHEX.md` (study route).
-  - [ ] GEO-GEO_GHEX-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GEO-GEO_GHEX-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GEO-GEO_GHEX-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GEO-GEO_GHEX-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 25: level position, structural/hoist supports, connections named per edge).
   - [ ] GEO-GEO_GHEX-15 Test and commission. Done when: test procedure and acceptance record. Depends: GEO-GEO_GHEX-14, X-COM-01. Triage: hardware.
 - **GEO-GEO_HP** (heat_pump, sector GEO)
   - [x] GEO-GEO_HP-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GEO_HP.md` §1; mass in = out 0 kg/d, 0.6866 kW.
@@ -3685,7 +3684,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GEO-GEO_HP-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GEO-GEO_HP-10, X-DWG-01. Evidence: `models/mfg/GEO_HP/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GEO-GEO_HP-12 BOM. Done when: models/mfg/GEO_HP/bom.csv. Depends: GEO-GEO_HP-10. Evidence: `models/mfg/GEO_HP/bom.csv`.
   - [x] GEO-GEO_HP-13 Fabrication route. Done when: docs-authority/fab/GEO_HP.md. Depends: GEO-GEO_HP-10, GEO-GEO_HP-12. Evidence: `docs-authority/fab/GEO_HP.md` (study route).
-  - [ ] GEO-GEO_HP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GEO-GEO_HP-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GEO-GEO_HP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GEO-GEO_HP-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 62: level position, structural/hoist supports, connections named per edge).
   - [ ] GEO-GEO_HP-15 Test and commission. Done when: test procedure and acceptance record. Depends: GEO-GEO_HP-14, X-COM-01. Triage: hardware.
 - **GEO-GEO_HP_CLOSED_LOOP** (None, sector GEO)
   - [x] GEO-GEO_HP_CLOSED_LOOP-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GEO_HP_CLOSED_LOOP.md` §1; mass in = out 0 kg/d, 0.1257 kW.
@@ -3701,7 +3700,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GEO-GEO_HP_CLOSED_LOOP-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: GEO-GEO_HP_CLOSED_LOOP-10, X-DWG-01. Evidence: `models/mfg/GEO_HP_CLOSED_LOOP/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] GEO-GEO_HP_CLOSED_LOOP-12 BOM. Done when: models/mfg/GEO_HP_CLOSED_LOOP/bom.csv. Depends: GEO-GEO_HP_CLOSED_LOOP-10. Evidence: `models/mfg/GEO_HP_CLOSED_LOOP/bom.csv`.
   - [x] GEO-GEO_HP_CLOSED_LOOP-13 Fabrication route. Done when: docs-authority/fab/GEO_HP_CLOSED_LOOP.md. Depends: GEO-GEO_HP_CLOSED_LOOP-10, GEO-GEO_HP_CLOSED_LOOP-12. Evidence: `docs-authority/fab/GEO_HP_CLOSED_LOOP.md` (study route).
-  - [ ] GEO-GEO_HP_CLOSED_LOOP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GEO-GEO_HP_CLOSED_LOOP-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] GEO-GEO_HP_CLOSED_LOOP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GEO-GEO_HP_CLOSED_LOOP-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 83: level position, structural/hoist supports, connections named per edge).
   - [ ] GEO-GEO_HP_CLOSED_LOOP-15 Test and commission. Done when: test procedure and acceptance record. Depends: GEO-GEO_HP_CLOSED_LOOP-14, X-COM-01. Triage: hardware.
 
 ### DOCK. Export / dock
@@ -3727,7 +3726,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] PUMPED_HYDRO-HYDRO_SET-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: PUMPED_HYDRO-HYDRO_SET-10, X-DWG-01. Evidence: `models/mfg/HYDRO_SET/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] PUMPED_HYDRO-HYDRO_SET-12 BOM. Done when: models/mfg/HYDRO_SET/bom.csv. Depends: PUMPED_HYDRO-HYDRO_SET-10. Evidence: `models/mfg/HYDRO_SET/bom.csv`.
   - [x] PUMPED_HYDRO-HYDRO_SET-13 Fabrication route. Done when: docs-authority/fab/HYDRO_SET.md. Depends: PUMPED_HYDRO-HYDRO_SET-10, PUMPED_HYDRO-HYDRO_SET-12. Evidence: `docs-authority/fab/HYDRO_SET.md` (study route).
-  - [ ] PUMPED_HYDRO-HYDRO_SET-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: PUMPED_HYDRO-HYDRO_SET-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] PUMPED_HYDRO-HYDRO_SET-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: PUMPED_HYDRO-HYDRO_SET-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 20: level position, structural/hoist supports, connections named per edge).
   - [ ] PUMPED_HYDRO-HYDRO_SET-15 Test and commission. Done when: test procedure and acceptance record. Depends: PUMPED_HYDRO-HYDRO_SET-14, X-COM-01. Triage: hardware.
 
 ### NUT. Process (Mass transform)
@@ -3746,7 +3745,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] NUT-NUTRIENT_DOSE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: NUT-NUTRIENT_DOSE-10, X-DWG-01. Evidence: `models/mfg/NUTRIENT_DOSE/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] NUT-NUTRIENT_DOSE-12 BOM. Done when: models/mfg/NUTRIENT_DOSE/bom.csv. Depends: NUT-NUTRIENT_DOSE-10. Evidence: `models/mfg/NUTRIENT_DOSE/bom.csv`.
   - [x] NUT-NUTRIENT_DOSE-13 Fabrication route. Done when: docs-authority/fab/NUTRIENT_DOSE.md. Depends: NUT-NUTRIENT_DOSE-10, NUT-NUTRIENT_DOSE-12. Evidence: `docs-authority/fab/NUTRIENT_DOSE.md` (study route).
-  - [ ] NUT-NUTRIENT_DOSE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: NUT-NUTRIENT_DOSE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [x] NUT-NUTRIENT_DOSE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: NUT-NUTRIENT_DOSE-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 89: level position, structural/hoist supports, connections named per edge).
   - [ ] NUT-NUTRIENT_DOSE-15 Test and commission. Done when: test procedure and acceptance record. Depends: NUT-NUTRIENT_DOSE-14, X-COM-01. Triage: hardware.
 
 ## Appendix A. Hand-kept task list and progress record
