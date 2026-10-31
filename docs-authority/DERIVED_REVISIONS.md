@@ -16,7 +16,7 @@ This page ties every derived file to the graph commit it was last made from, so 
 
 The count line below is generated with the page. `python3 -m flow_graph.param.regen` refreshes the stamps; `--check` fails on any stale file.
 
-1569 derived files, 976 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+1568 derived files, 976 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Made from graph commit | Status |
 |---|---|---|
@@ -24,27 +24,27 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `design_tool/aqs_design_tool/data/scale_down.json` | 48bc545 | stale |
 | `docs-authority/ACCESS_CHECK.md` | 48bc545 | stale |
 | `docs-authority/ASME_CODE_INTENT.md` | 48bc545 | stale |
-| `docs-authority/ASSUMPTIONS_REGISTER.md` | working tree | current |
+| `docs-authority/ASSUMPTIONS_REGISTER.md` | 3be5b7b | current |
 | `docs-authority/BALANCE_RECONCILIATION.md` | 48bc545 | stale |
-| `docs-authority/BLOCK_FAMILY_PLANS.md` | working tree | current |
-| `docs-authority/BOUGHT_SPECS.md` | working tree | current |
+| `docs-authority/BLOCK_FAMILY_PLANS.md` | 3be5b7b | current |
+| `docs-authority/BOUGHT_SPECS.md` | 3be5b7b | current |
 | `docs-authority/BUSBAR.json` | 3be5b7b | current |
 | `docs-authority/BUSBAR.md` | 91d33f4 | stale |
-| `docs-authority/CABLE_SCHEDULE.md` | working tree | current |
+| `docs-authority/CABLE_SCHEDULE.md` | 3be5b7b | current |
 | `docs-authority/CAUSE_EFFECT.md` | 66d9b85 | stale |
 | `docs-authority/CODE_BASIS.md` | 4f4f69d | stale |
 | `docs-authority/COLLECTION_BUS.md` | e286326 | stale |
 | `docs-authority/COMMISSIONING.md` | 48bc545 | stale |
 | `docs-authority/COMPLIANCE_MATRIX.md` | 4f4f69d | stale |
-| `docs-authority/CONTROL_ARCH.md` | working tree | current |
-| `docs-authority/CONTROL_SOFTWARE.md` | working tree | current |
+| `docs-authority/CONTROL_ARCH.md` | 3be5b7b | current |
+| `docs-authority/CONTROL_SOFTWARE.md` | 3be5b7b | current |
 | `docs-authority/DECOMMISSIONING.md` | 48bc545 | stale |
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
 | `docs-authority/DESIGN_CHECK.md` | 3cb82be | stale |
 | `docs-authority/DOC_REGISTER.md` | 3cb82be | stale |
-| `docs-authority/DRAWING_REGISTER.md` | working tree | current |
+| `docs-authority/DRAWING_REGISTER.md` | 3be5b7b | current |
 | `docs-authority/ENCLOSURE_EGRESS.md` | 0d58fe8 | stale |
-| `docs-authority/EOL_RETURN.md` | working tree | current |
+| `docs-authority/EOL_RETURN.md` | 3be5b7b | current |
 | `docs-authority/FARM_DESIGN.md` | 0a262ae | stale |
 | `docs-authority/FIRE_PROTECTION.md` | 93594c7 | stale |
 | `docs-authority/FOUNDATION.md` | 48bc545 | stale |
@@ -56,21 +56,21 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/HALL_EGRESS.md` | e286326 | stale |
 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | 48bc545 | stale |
 | `docs-authority/HAZMAT_SEPARATION.md` | 0d58fe8 | stale |
-| `docs-authority/HAZOP.md` | working tree | current |
+| `docs-authority/HAZOP.md` | 3be5b7b | current |
 | `docs-authority/HAZOP_ACTION_REGISTER.md` | 66d9b85 | stale |
 | `docs-authority/HAZ_AREA.md` | 3be5b7b | current |
 | `docs-authority/HULL_DESIGN.md` | e286326 | stale |
 | `docs-authority/HVAC.md` | e286326 | stale |
 | `docs-authority/HYDRO_SITING.md` | 0d58fe8 | stale |
 | `docs-authority/INSTALL_SEQUENCE.md` | 48bc545 | stale |
-| `docs-authority/INSTRUMENT_INDEX.md` | working tree | current |
+| `docs-authority/INSTRUMENT_INDEX.md` | 3be5b7b | current |
 | `docs-authority/INSULATION_SCHEDULE.md` | 97033c5 | stale |
 | `docs-authority/INTERNALS.md` | 3be5b7b | current |
 | `docs-authority/ISO_ROUTES.json` | 3be5b7b | current |
 | `docs-authority/ISO_ROUTES.md` | 97033c5 | stale |
 | `docs-authority/ISO_SHEETS.md` | 97033c5 | stale |
 | `docs-authority/ITP.md` | 66d9b85 | stale |
-| `docs-authority/JELLYBEAN.md` | working tree | current |
+| `docs-authority/JELLYBEAN.md` | 3be5b7b | current |
 | `docs-authority/LIFTING.md` | 48bc545 | stale |
 | `docs-authority/LINE_LIST.md` | 97033c5 | stale |
 | `docs-authority/LOAD_LIST.json` | 3be5b7b | current |
@@ -78,7 +78,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/MAINT_PLAN.md` | 48bc545 | stale |
 | `docs-authority/MFG_TOOLS.md` | 0d58fe8 | stale |
 | `docs-authority/MODEL_WORKBOOK.xlsx` | 3be5b7b | current |
-| `docs-authority/MOTOR_FIRST_ARTICLE.md` | working tree | current |
+| `docs-authority/MOTOR_FIRST_ARTICLE.md` | 3be5b7b | current |
 | `docs-authority/O2_SOURCE.md` | d50ba80 | stale |
 | `docs-authority/O2_SOURCE_AUDIT.md` | 91d33f4 | stale |
 | `docs-authority/ONE_LINE.json` | 3be5b7b | current |
@@ -87,30 +87,30 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/PARAMETRIC_MODEL.md` | 3cb82be | stale |
 | `docs-authority/PERF_TEST.md` | e286326 | stale |
 | `docs-authority/PIPE_SPECS.md` | 97033c5 | stale |
-| `docs-authority/PLANT_BOM.md` | working tree | current |
+| `docs-authority/PLANT_BOM.md` | 3be5b7b | current |
 | `docs-authority/POWER_SIZING.md` | 4f4f69d | stale |
 | `docs-authority/PROTECTION.md` | 4f4f69d | stale |
 | `docs-authority/RELIEF_REGISTER.md` | d50ba80 | stale |
 | `docs-authority/RIGGING_PLANS.md` | 48bc545 | stale |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | 48bc545 | stale |
 | `docs-authority/SECTOR_DEFINITIONS.md` | 48bc545 | stale |
-| `docs-authority/SELF_COPY_BOM.md` | working tree | current |
+| `docs-authority/SELF_COPY_BOM.md` | 3be5b7b | current |
 | `docs-authority/SITE_ACCESS_CHECK.md` | 48bc545 | stale |
 | `docs-authority/SITE_COMPARISON.md` | f378951 | stale |
 | `docs-authority/SITE_POWER.md` | e286326 | stale |
 | `docs-authority/SITE_SCALING.md` | 6e92030 | stale |
 | `docs-authority/SITE_UNITS.md` | e286326 | stale |
-| `docs-authority/SPARES.md` | working tree | current |
-| `docs-authority/STANDARDS_LIST.md` | working tree | current |
+| `docs-authority/SPARES.md` | 3be5b7b | current |
+| `docs-authority/STANDARDS_LIST.md` | 3be5b7b | current |
 | `docs-authority/STARTUP.md` | e286326 | stale |
 | `docs-authority/STRUCT_LOADS.md` | 48bc545 | stale |
 | `docs-authority/SUPPORTS.md` | 97033c5 | stale |
-| `docs-authority/TASK_PLAN.md` | working tree | current |
+| `docs-authority/TASK_PLAN.md` | 3be5b7b | current |
 | `docs-authority/TEST_PLAN.md` | 3cb82be | stale |
 | `docs-authority/TEST_RIGS.md` | 91d33f4 | stale |
 | `docs-authority/UNIT_MATERIALS.md` | 48bc545 | stale |
 | `docs-authority/WATER_TOWER.md` | 66d9b85 | stale |
-| `docs-authority/WIRE_SPECS.md` | working tree | current |
+| `docs-authority/WIRE_SPECS.md` | 3be5b7b | current |
 | `docs-authority/WPS_REGISTER.md` | 97033c5 | stale |
 | `docs-authority/ZNBR2_STACK_TEST.md` | 3b7a776 | stale |
 | `docs-authority/drawings/motor_fa/MF-04.svg` | 91d33f4 | stale |
@@ -491,49 +491,49 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/inventory/COMMISSIONING.csv` | e286326 | stale |
 | `docs-authority/inventory/DECOMMISSIONING.csv` | 48bc545 | stale |
 | `docs-authority/inventory/DESIGN_CHECK.csv` | 48bc545 | stale |
-| `docs-authority/inventory/EOL_RETURN.csv` | working tree | current |
+| `docs-authority/inventory/EOL_RETURN.csv` | 3be5b7b | current |
 | `docs-authority/inventory/FRAME_CHECK.json` | 48bc545 | stale |
 | `docs-authority/inventory/GAS_DETECTORS.csv` | d50ba80 | stale |
 | `docs-authority/inventory/HVAC_ROOMS.csv` | e286326 | stale |
-| `docs-authority/inventory/INSTRUMENT_INDEX.csv` | working tree | current |
+| `docs-authority/inventory/INSTRUMENT_INDEX.csv` | 3be5b7b | current |
 | `docs-authority/inventory/INTERNALS.json` | 3be5b7b | current |
-| `docs-authority/inventory/MAGNET_COMPARISON.csv` | working tree | current |
-| `docs-authority/inventory/MOTOR_DESIGNS.csv` | working tree | current |
-| `docs-authority/inventory/MOTOR_DESIGNS.md` | working tree | current |
-| `docs-authority/inventory/MOTOR_FA.json` | working tree | current |
-| `docs-authority/inventory/MOTOR_FAMILIES.csv` | working tree | current |
-| `docs-authority/inventory/MOTOR_INVENTORY.csv` | working tree | current |
-| `docs-authority/inventory/MOTOR_INVENTORY.md` | working tree | current |
-| `docs-authority/inventory/OTHER_FAMILIES.csv` | working tree | current |
-| `docs-authority/inventory/OTHER_INVENTORY.csv` | working tree | current |
-| `docs-authority/inventory/OTHER_INVENTORY.md` | working tree | current |
+| `docs-authority/inventory/MAGNET_COMPARISON.csv` | 3be5b7b | current |
+| `docs-authority/inventory/MOTOR_DESIGNS.csv` | 3be5b7b | current |
+| `docs-authority/inventory/MOTOR_DESIGNS.md` | 3be5b7b | current |
+| `docs-authority/inventory/MOTOR_FA.json` | 3be5b7b | current |
+| `docs-authority/inventory/MOTOR_FAMILIES.csv` | 3be5b7b | current |
+| `docs-authority/inventory/MOTOR_INVENTORY.csv` | 3be5b7b | current |
+| `docs-authority/inventory/MOTOR_INVENTORY.md` | 3be5b7b | current |
+| `docs-authority/inventory/OTHER_FAMILIES.csv` | 3be5b7b | current |
+| `docs-authority/inventory/OTHER_INVENTORY.csv` | 3be5b7b | current |
+| `docs-authority/inventory/OTHER_INVENTORY.md` | 3be5b7b | current |
 | `docs-authority/inventory/PIPE_FAMILIES.csv` | 97033c5 | stale |
 | `docs-authority/inventory/PIPE_INVENTORY.csv` | 97033c5 | stale |
 | `docs-authority/inventory/PIPE_INVENTORY.md` | 97033c5 | stale |
-| `docs-authority/inventory/PLANT_BOM.csv` | working tree | current |
-| `docs-authority/inventory/SELF_COPY_RECON.csv` | working tree | current |
+| `docs-authority/inventory/PLANT_BOM.csv` | 3be5b7b | current |
+| `docs-authority/inventory/SELF_COPY_RECON.csv` | 3be5b7b | current |
 | `docs-authority/inventory/SITE_ACCESS.json` | 48bc545 | stale |
 | `docs-authority/inventory/SIZING_COVERAGE.json` | 48bc545 | stale |
 | `docs-authority/inventory/STORAGE_HOLDUP.json` | d50ba80 | stale |
 | `docs-authority/inventory/STRUCT_ROWS.json` | 48bc545 | stale |
 | `docs-authority/inventory/TEST_RIGS.json` | 91d33f4 | stale |
 | `docs-authority/inventory/UNIT_MATERIALS.json` | 48bc545 | stale |
-| `docs-authority/inventory/WIRE_FAMILIES.csv` | working tree | current |
-| `docs-authority/inventory/WIRE_INVENTORY.csv` | working tree | current |
-| `docs-authority/inventory/WIRE_INVENTORY.md` | working tree | current |
-| `docs-authority/inventory/WIRE_SPECS.json` | working tree | current |
+| `docs-authority/inventory/WIRE_FAMILIES.csv` | 3be5b7b | current |
+| `docs-authority/inventory/WIRE_INVENTORY.csv` | 3be5b7b | current |
+| `docs-authority/inventory/WIRE_INVENTORY.md` | 3be5b7b | current |
+| `docs-authority/inventory/WIRE_SPECS.json` | 3be5b7b | current |
 | `docs-authority/inventory/motor_families/MF-01.md` | 3be5b7b | current |
-| `docs-authority/inventory/motor_families/MF-02.md` | working tree | current |
-| `docs-authority/inventory/motor_families/MF-03.md` | working tree | current |
+| `docs-authority/inventory/motor_families/MF-02.md` | 3be5b7b | current |
+| `docs-authority/inventory/motor_families/MF-03.md` | 3be5b7b | current |
 | `docs-authority/inventory/motor_families/MF-04.md` | 4f4f69d | stale |
 | `docs-authority/inventory/motor_families/MF-05.md` | 4f4f69d | stale |
 | `docs-authority/inventory/motor_families/MF-06.md` | 3be5b7b | current |
-| `docs-authority/inventory/motor_families/MF-07.md` | working tree | current |
+| `docs-authority/inventory/motor_families/MF-07.md` | 3be5b7b | current |
 | `docs-authority/inventory/motor_families/MF-08.md` | 0d58fe8 | stale |
-| `docs-authority/inventory/motor_families/MF-09.md` | working tree | current |
+| `docs-authority/inventory/motor_families/MF-09.md` | 3be5b7b | current |
 | `docs-authority/inventory/motor_families/MF-10.md` | 3be5b7b | current |
 | `docs-authority/inventory/motor_families/MF-11.md` | 3be5b7b | current |
-| `docs-authority/inventory/motor_families/MF-12.md` | working tree | current |
+| `docs-authority/inventory/motor_families/MF-12.md` | 3be5b7b | current |
 | `docs-authority/inventory/motor_families/MF-13.md` | 3be5b7b | current |
 | `docs-authority/inventory/motor_families/MF-14.md` | 0d58fe8 | stale |
 | `docs-authority/inventory/motor_families/MF-15.md` | 0d58fe8 | stale |
@@ -1021,8 +1021,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/pid/_register.csv` | e286326 | stale |
 | `docs-authority/plc/PLC-CRYO.st` | 3be5b7b | current |
 | `docs-authority/plc/PLC-DIGESTER.st` | 3be5b7b | current |
-| `docs-authority/plc/PLC-DOCK.st` | working tree | current |
-| `docs-authority/plc/PLC-ELEC.st` | working tree | current |
+| `docs-authority/plc/PLC-ELEC.st` | 3be5b7b | current |
 | `docs-authority/plc/PLC-FAB.st` | 3be5b7b | current |
 | `docs-authority/plc/PLC-FARM.st` | 3be5b7b | current |
 | `docs-authority/plc/PLC-FOUNDRY.st` | 48bc545 | stale |
@@ -1032,7 +1031,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/plc/PLC-HAB.st` | 85b98af | stale |
 | `docs-authority/plc/PLC-HEAT.st` | 6e92030 | stale |
 | `docs-authority/plc/PLC-MEOH.st` | 3be5b7b | current |
-| `docs-authority/plc/PLC-MFG.st` | working tree | current |
+| `docs-authority/plc/PLC-MFG.st` | 3be5b7b | current |
 | `docs-authority/plc/PLC-NUT.st` | 3be5b7b | current |
 | `docs-authority/plc/PLC-OIL.st` | 3be5b7b | current |
 | `docs-authority/plc/PLC-POLYMERS.st` | 48bc545 | stale |
@@ -1208,12 +1207,12 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/derived/MASS_FLOW_DERIVED.md` | e286326 | stale |
 | `flow_graph/derived/STREAM_REGISTER_DERIVED.md` | e286326 | stale |
 | `flow_graph/derived/SYNC_POINTER.md` | cd250ea | stale |
-| `flow_graph/derived/_regen_receipt.json` | working tree | current |
+| `flow_graph/derived/_regen_receipt.json` | - | by design: manifest mechanism itself (U3 regen provenance receipt) |
 | `flow_graph/fire_rooms.json` | 48bc545 | stale |
 | `flow_graph/inventory/motor_family_ids.json` | ab2c5a3 | stale |
 | `flow_graph/inventory/other_family_ids.json` | 85b98af | stale |
 | `flow_graph/inventory/pipe_family_ids.json` | 93594c7 | stale |
-| `flow_graph/inventory/wire_family_ids.json` | working tree | current |
+| `flow_graph/inventory/wire_family_ids.json` | 3be5b7b | current |
 | `flow_graph/placement_seed.json` | e286326 | stale |
 | `flow_graph/plant_flow_graph.json` | 3be5b7b | current |
 | `flow_graph/views/efd-elec.dot` | 3be5b7b (regenerated, no change) | current |
