@@ -70,6 +70,8 @@ def solid_for(u):
     if step:
         shape_cache[u + ':src'] = f'build export `{step[0]}`'
         return cq.importers.importStep(step[0])
+    if not (N[u].get('params') or {}).get('size_mm'):
+        raise SystemExit(f'{u}: no export and no params.size_mm; size the unit first (duty sheet section 2)')
     shape_cache[u + ':src'] = 'envelope box from the graph `params.size_mm` (envelope-class unit; no build export yet)'
     e = N[u]['params']['size_mm']
     return cq.Workplane('XY').box(e[0], e[1], e[2], centered=(False, False, False))
@@ -83,10 +85,12 @@ def build_log(u):
     check = ('inside the envelope with margin' if env and all(a <= b + 1 for a, b in zip(dims, env))
              else 'no graph envelope; dims recorded' if not env else 'OVER ENVELOPE - open item')
     src = glob.glob(f'models/mfg/{u}/*.py') + glob.glob(f'models/mfg/{u}/export/*.step')
+    sz_doc = f'docs-authority/sizing/{u}.md'
+    sz_ref = (f'sizing `{sz_doc}`' if os.path.exists(sz_doc) else 'sizing per the duty sheet section 2')
     txt = (f'# Build log - {u}\n\n'
            f'Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).\n'
            f'Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/{u}.md`; '
-           f'sizing `docs-authority/sizing/{u}.md`).\n\n'
+           f'{sz_ref}).\n\n'
            f'## Tool versions\n\n'
            f'- CadQuery {cq.__version__} (CADQUERY_PYTHON)\n'
            f'- Python {sys.version.split()[0]}; build run headless via `models/mfg/build_all.py`\n\n'

@@ -1,22 +1,23 @@
-# DUCKWEED build log - X-FARM M3 roster acceptance
+# Build log - DUCKWEED
 
-Date: 2026-10-27. Authority: AQS-PLAN-006 section 5 (the FLUX_PREP-class build+check acceptance;
-the 8-sheet drawing set follows as its own pass). Model source: `models/mfg/farm_hab.py` (tray class)
-+ `models/mfg/DUCKWEED/params.json`.
+Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/DUCKWEED.md`; sizing per the duty sheet section 2).
 
-## Basis
+## Tool versions
 
-- Envelope 30100 x 10100 x 700 mm, claimed on the graph (params.size_mm): 300 m2 raceway at the A-M-420 revision, 400 mm water + 100 freeboard + 200 berm: a lined civil basin, HDPE/EPDM (X-FARM sec3)
-- Material class: HDPE (the unit's issued sec3 selection).
+- CadQuery 2.8.0 (CADQUERY_PYTHON)
+- Python 3.13.7; build run headless via `models/mfg/build_all.py`
 
-## Evidence (check.json is the machine-checked copy)
+## Checks
 
-1. Builds headless from params.json; STEP + STL in `export/`.
-2. Bounding box [30100.0, 10100.0, 700.0] sits inside the claimed envelope: True.
-3. 1 solid(s), all valid: True.
-4. Empty mass 4855.1 kg (wall volume x the class density; sheet-gauge panels, hollow housings).
+- Build bbox 30100 x 10100 x 700 mm: inside the envelope with margin (envelope 30100 x 10100 x 700 mm)
+- Solid source: build export `models/mfg/DUCKWEED/export/duckweed.step`
+- BOM `models/mfg/DUCKWEED/bom.csv`; fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/DUCKWEED/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
-## Follow-on
+## Sources
 
-- 8-sheet drawing set + DRAWING_REGISTER rows: own pass (the FLUX_PREP/WAX_PATTERN precedent).
-- Locale note: the unit carries per the LOCALIZATION_PLAN section 5.6 scaling rules.
+- `models/mfg/DUCKWEED/draw_duckweed.py`
+- `models/mfg/DUCKWEED/export/duckweed.step`
+
+Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

@@ -1,22 +1,23 @@
-# SLEEP_QUARTERS build log - X-FARM M3 roster acceptance
+# Build log - SLEEP_QUARTERS
 
-Date: 2026-10-27. Authority: AQS-PLAN-006 section 5 (the FLUX_PREP-class build+check acceptance;
-the 8-sheet drawing set follows as its own pass). Model source: `models/mfg/farm_hab.py` (room class)
-+ `models/mfg/SLEEP_QUARTERS/params.json`.
+Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/SLEEP_QUARTERS.md`; sizing per the duty sheet section 2).
 
-## Basis
+## Tool versions
 
-- Envelope 4000 x 4000 x 2400 mm, claimed on the graph (params.size_mm): 4 x 4 m2 private quarters block fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)
-- Material class: aluminium (the unit's issued sec3 selection).
+- CadQuery 2.8.0 (CADQUERY_PYTHON)
+- Python 3.13.7; build run headless via `models/mfg/build_all.py`
 
-## Evidence (check.json is the machine-checked copy)
+## Checks
 
-1. Builds headless from params.json; STEP + STL in `export/`.
-2. Bounding box [4000.0, 4000.0, 2380.0] sits inside the claimed envelope: True.
-3. 1 solid(s), all valid: True.
-4. Empty mass 2098.2 kg (wall volume x the class density; sheet-gauge panels, hollow housings).
+- Build bbox 4000 x 4000 x 2380 mm: inside the envelope with margin (envelope 4000 x 4000 x 2400 mm)
+- Solid source: build export `models/mfg/SLEEP_QUARTERS/export/sleep_quarters.step`
+- BOM `models/mfg/SLEEP_QUARTERS/bom.csv`; fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/SLEEP_QUARTERS/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
-## Follow-on
+## Sources
 
-- 8-sheet drawing set + DRAWING_REGISTER rows: own pass (the FLUX_PREP/WAX_PATTERN precedent).
-- Locale note: the unit carries per the LOCALIZATION_PLAN section 5.6 scaling rules.
+- `models/mfg/SLEEP_QUARTERS/draw_sleep_quarters.py`
+- `models/mfg/SLEEP_QUARTERS/export/sleep_quarters.step`
+
+Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

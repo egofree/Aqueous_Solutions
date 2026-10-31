@@ -11,8 +11,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/BLA
 ## Checks
 
 - Build bbox 910 x 910 x 771 mm: inside the envelope with margin (envelope 1100 x 1100 x 1260 mm)
-- Solids exported: `models/mfg/BLACK_DIGEST/export/` (STEP + STL); STL manifold-checked by the exporter
-- Envelope STL `cad/stl/BLACK_DIGEST.stl` replaced from the build (X-PAR-04 registry form)
+- Solid source: build export `models/mfg/BLACK_DIGEST/export/black_digest.step`
 - BOM `models/mfg/BLACK_DIGEST/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/BLACK_DIGEST/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 

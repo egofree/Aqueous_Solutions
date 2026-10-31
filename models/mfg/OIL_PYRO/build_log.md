@@ -11,8 +11,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/OIL
 ## Checks
 
 - Build bbox 320 x 320 x 491 mm: inside the envelope with margin (envelope 500 x 500 x 670 mm)
-- Solids exported: `models/mfg/OIL_PYRO/export/` (STEP + STL); STL manifold-checked by the exporter
-- Envelope STL `cad/stl/OIL_PYRO.stl` replaced from the build (X-PAR-04 registry form)
+- Solid source: build export `models/mfg/OIL_PYRO/export/oil_pyro.step`
 - BOM `models/mfg/OIL_PYRO/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/OIL_PYRO/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 

@@ -11,8 +11,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/SIN
 ## Checks
 
 - Build bbox 1000 x 1000 x 1500 mm: no graph envelope; dims recorded
-- Solids exported: `models/mfg/SINTER/export/` (STEP + STL); STL manifold-checked by the exporter
-- Envelope STL `cad/stl/SINTER.stl` replaced from the build (X-PAR-04 registry form)
+- Solid source: build export `models/mfg/SINTER/export/sinter.step`
 - BOM `models/mfg/SINTER/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/SINTER/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 

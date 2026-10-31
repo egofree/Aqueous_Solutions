@@ -11,8 +11,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/EXT
 ## Checks
 
 - Build bbox 1500 x 800 x 1500 mm: no graph envelope; dims recorded
-- Solids exported: `models/mfg/EXTRUDE/export/` (STEP + STL); STL manifold-checked by the exporter
-- Envelope STL `cad/stl/EXTRUDE.stl` replaced from the build (X-PAR-04 registry form)
+- Solid source: build export `models/mfg/EXTRUDE/export/extrude.step`
 - BOM `models/mfg/EXTRUDE/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/EXTRUDE/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 

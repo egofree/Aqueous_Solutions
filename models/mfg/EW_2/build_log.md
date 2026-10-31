@@ -1,7 +1,7 @@
 # Build log - EW_2
 
 Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
-Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/EW_2.md`; sizing `docs-authority/sizing/EW_2.md`).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/EW_2.md`; sizing per the duty sheet section 2).
 
 ## Tool versions
 

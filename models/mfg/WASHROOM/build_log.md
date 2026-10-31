@@ -1,22 +1,23 @@
-# WASHROOM build log - X-FARM M3 roster acceptance
+# Build log - WASHROOM
 
-Date: 2026-10-27. Authority: AQS-PLAN-006 section 5 (the FLUX_PREP-class build+check acceptance;
-the 8-sheet drawing set follows as its own pass). Model source: `models/mfg/farm_hab.py` (room class)
-+ `models/mfg/WASHROOM/params.json`.
+Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/WASHROOM.md`; sizing per the duty sheet section 2).
 
-## Basis
+## Tool versions
 
-- Envelope 3000 x 2000 x 2400 mm, claimed on the graph (params.size_mm): 8 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)
-- Material class: FRP (the unit's issued sec3 selection).
+- CadQuery 2.8.0 (CADQUERY_PYTHON)
+- Python 3.13.7; build run headless via `models/mfg/build_all.py`
 
-## Evidence (check.json is the machine-checked copy)
+## Checks
 
-1. Builds headless from params.json; STEP + STL in `export/`.
-2. Bounding box [3000.0, 2000.0, 2380.0] sits inside the claimed envelope: True.
-3. 1 solid(s), all valid: True.
-4. Empty mass 745.8 kg (wall volume x the class density; sheet-gauge panels, hollow housings).
+- Build bbox 3000 x 2000 x 2380 mm: inside the envelope with margin (envelope 3000 x 2000 x 2400 mm)
+- Solid source: build export `models/mfg/WASHROOM/export/washroom.step`
+- BOM `models/mfg/WASHROOM/bom.csv`; fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/WASHROOM/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
-## Follow-on
+## Sources
 
-- 8-sheet drawing set + DRAWING_REGISTER rows: own pass (the FLUX_PREP/WAX_PATTERN precedent).
-- Locale note: the unit carries per the LOCALIZATION_PLAN section 5.6 scaling rules.
+- `models/mfg/WASHROOM/draw_washroom.py`
+- `models/mfg/WASHROOM/export/washroom.step`
+
+Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

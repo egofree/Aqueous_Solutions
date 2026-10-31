@@ -1,7 +1,7 @@
 # Build log - WS_HF_ED
 
 Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
-Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/WS_HF_ED.md`; sizing `docs-authority/sizing/WS_HF_ED.md`).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/WS_HF_ED.md`; sizing per the duty sheet section 2).
 
 ## Tool versions
 

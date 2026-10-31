@@ -11,8 +11,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/POL
 ## Checks
 
 - Build bbox 600 x 600 x 1200 mm: no graph envelope; dims recorded
-- Solids exported: `models/mfg/POLY_COND/export/` (STEP + STL); STL manifold-checked by the exporter
-- Envelope STL `cad/stl/POLY_COND.stl` replaced from the build (X-PAR-04 registry form)
+- Solid source: build export `models/mfg/POLY_COND/export/poly_cond.step`
 - BOM `models/mfg/POLY_COND/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/POLY_COND/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 

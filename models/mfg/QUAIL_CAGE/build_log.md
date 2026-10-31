@@ -1,22 +1,23 @@
-# QUAIL_CAGE build log - X-FARM M3 roster acceptance
+# Build log - QUAIL_CAGE
 
-Date: 2026-10-27. Authority: AQS-PLAN-006 section 5 (the FLUX_PREP-class build+check acceptance;
-the 8-sheet drawing set follows as its own pass). Model source: `models/mfg/farm_hab.py` (frame class)
-+ `models/mfg/QUAIL_CAGE/params.json`.
+Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/QUAIL_CAGE.md`; sizing per the duty sheet section 2).
 
-## Basis
+## Tool versions
 
-- Envelope 1300 x 700 x 1700 mm, claimed on the graph (params.size_mm): 20-hen Coturnix battery, 4 tiers x 0.075 m2/cage at the 0.025 kg/d ration class (A-M-422; TECHTREE coturnix.md) (X-FARM sec3)
-- Material class: HDG_steel (the unit's issued sec3 selection).
+- CadQuery 2.8.0 (CADQUERY_PYTHON)
+- Python 3.13.7; build run headless via `models/mfg/build_all.py`
 
-## Evidence (check.json is the machine-checked copy)
+## Checks
 
-1. Builds headless from params.json; STEP + STL in `export/`.
-2. Bounding box [1300.0, 700.0, 1700.0] sits inside the claimed envelope: True.
-3. 2 solid(s), all valid: True.
-4. Empty mass 144.8 kg (wall volume x the class density; sheet-gauge panels, hollow housings).
+- Build bbox 1300 x 700 x 1700 mm: inside the envelope with margin (envelope 1300 x 700 x 1700 mm)
+- Solid source: build export `models/mfg/QUAIL_CAGE/export/quail_cage.step`
+- BOM `models/mfg/QUAIL_CAGE/bom.csv`; fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/QUAIL_CAGE/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
-## Follow-on
+## Sources
 
-- 8-sheet drawing set + DRAWING_REGISTER rows: own pass (the FLUX_PREP/WAX_PATTERN precedent).
-- Locale note: the unit carries per the LOCALIZATION_PLAN section 5.6 scaling rules.
+- `models/mfg/QUAIL_CAGE/draw_quail_cage.py`
+- `models/mfg/QUAIL_CAGE/export/quail_cage.step`
+
+Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

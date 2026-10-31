@@ -11,8 +11,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/COM
 ## Checks
 
 - Build bbox 1000 x 1000 x 1500 mm: no graph envelope; dims recorded
-- Solids exported: `models/mfg/COMB_HEAT/export/` (STEP + STL); STL manifold-checked by the exporter
-- Envelope STL `cad/stl/COMB_HEAT.stl` replaced from the build (X-PAR-04 registry form)
+- Solid source: build export `models/mfg/COMB_HEAT/export/comb_heat.step`
 - BOM `models/mfg/COMB_HEAT/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/COMB_HEAT/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 

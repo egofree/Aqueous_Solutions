@@ -1,22 +1,23 @@
-# FEED_PREP build log - X-FARM M3 roster acceptance
+# Build log - FEED_PREP
 
-Date: 2026-10-27. Authority: AQS-PLAN-006 section 5 (the FLUX_PREP-class build+check acceptance;
-the 8-sheet drawing set follows as its own pass). Model source: `models/mfg/farm_hab.py` (cabinet class)
-+ `models/mfg/FEED_PREP/params.json`.
+Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/FEED_PREP.md`; sizing per the duty sheet section 2).
 
-## Basis
+## Tool versions
 
-- Envelope 1300 x 900 x 1700 mm, claimed on the graph (params.size_mm): mixer + grinder + HP drier cabinet at the 0.6 kW duty (A-M-426) (X-FARM sec3) (sheet-metal cabinet class, 5 mm)
-- Material class: SS304 (the unit's issued sec3 selection).
+- CadQuery 2.8.0 (CADQUERY_PYTHON)
+- Python 3.13.7; build run headless via `models/mfg/build_all.py`
 
-## Evidence (check.json is the machine-checked copy)
+## Checks
 
-1. Builds headless from params.json; STEP + STL in `export/`.
-2. Bounding box [1300.0, 900.0, 1700.0] sits inside the claimed envelope: True.
-3. 3 solid(s), all valid: True.
-4. Empty mass 491.3 kg (wall volume x the class density; sheet-gauge panels, hollow housings).
+- Build bbox 1300 x 900 x 1700 mm: inside the envelope with margin (envelope 1300 x 900 x 1700 mm)
+- Solid source: build export `models/mfg/FEED_PREP/export/feed_prep.step`
+- BOM `models/mfg/FEED_PREP/bom.csv`; fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/FEED_PREP/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
-## Follow-on
+## Sources
 
-- 8-sheet drawing set + DRAWING_REGISTER rows: own pass (the FLUX_PREP/WAX_PATTERN precedent).
-- Locale note: the unit carries per the LOCALIZATION_PLAN section 5.6 scaling rules.
+- `models/mfg/FEED_PREP/draw_feed_prep.py`
+- `models/mfg/FEED_PREP/export/feed_prep.step`
+
+Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

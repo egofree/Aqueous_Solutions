@@ -11,8 +11,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/MEO
 ## Checks
 
 - Build bbox 222 x 234 x 420 mm: inside the envelope with margin (envelope 425 x 425 x 600 mm)
-- Solids exported: `models/mfg/MEOH_FERM/export/` (STEP + STL); STL manifold-checked by the exporter
-- Envelope STL `cad/stl/MEOH_FERM.stl` replaced from the build (X-PAR-04 registry form)
+- Solid source: build export `models/mfg/MEOH_FERM/export/meoh_ferm.step`
 - BOM `models/mfg/MEOH_FERM/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/MEOH_FERM/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 

@@ -11,8 +11,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/GLA
 ## Checks
 
 - Build bbox 485 x 495 x 870 mm: inside the envelope with margin (envelope 700 x 700 x 900 mm)
-- Solids exported: `models/mfg/GLASS_DIGEST/export/` (STEP + STL); STL manifold-checked by the exporter
-- Envelope STL `cad/stl/GLASS_DIGEST.stl` replaced from the build (X-PAR-04 registry form)
+- Solid source: build export `models/mfg/GLASS_DIGEST/export/glass_digest.step`
 - BOM `models/mfg/GLASS_DIGEST/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/GLASS_DIGEST/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 

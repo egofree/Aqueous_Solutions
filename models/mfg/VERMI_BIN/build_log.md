@@ -1,22 +1,23 @@
-# VERMI_BIN build log - X-FARM M3 roster acceptance
+# Build log - VERMI_BIN
 
-Date: 2026-10-27. Authority: AQS-PLAN-006 section 5 (the FLUX_PREP-class build+check acceptance;
-the 8-sheet drawing set follows as its own pass). Model source: `models/mfg/farm_hab.py` (tray class)
-+ `models/mfg/VERMI_BIN/params.json`.
+Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/VERMI_BIN.md`; sizing per the duty sheet section 2).
 
-## Basis
+## Tool versions
 
-- Envelope 2100 x 1100 x 600 mm, claimed on the graph (params.size_mm): 2 m2 bin at 300 mm bedding depth (A-M-425) (X-FARM sec3)
-- Material class: HDPE (the unit's issued sec3 selection).
+- CadQuery 2.8.0 (CADQUERY_PYTHON)
+- Python 3.13.7; build run headless via `models/mfg/build_all.py`
 
-## Evidence (check.json is the machine-checked copy)
+## Checks
 
-1. Builds headless from params.json; STEP + STL in `export/`.
-2. Bounding box [2100.0, 1100.0, 600.0] sits inside the claimed envelope: True.
-3. 1 solid(s), all valid: True.
-4. Empty mass 57.6 kg (wall volume x the class density; sheet-gauge panels, hollow housings).
+- Build bbox 2100 x 1100 x 600 mm: inside the envelope with margin (envelope 2100 x 1100 x 600 mm)
+- Solid source: build export `models/mfg/VERMI_BIN/export/vermi_bin.step`
+- BOM `models/mfg/VERMI_BIN/bom.csv`; fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/VERMI_BIN/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
-## Follow-on
+## Sources
 
-- 8-sheet drawing set + DRAWING_REGISTER rows: own pass (the FLUX_PREP/WAX_PATTERN precedent).
-- Locale note: the unit carries per the LOCALIZATION_PLAN section 5.6 scaling rules.
+- `models/mfg/VERMI_BIN/draw_vermi_bin.py`
+- `models/mfg/VERMI_BIN/export/vermi_bin.step`
+
+Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

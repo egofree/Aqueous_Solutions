@@ -11,8 +11,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/LEA
 ## Checks
 
 - Build bbox 2000 x 1199 x 1400 mm: no graph envelope; dims recorded
-- Solids exported: `models/mfg/LEACH_CSTR_1/export/` (STEP + STL); STL manifold-checked by the exporter
-- Envelope STL `cad/stl/LEACH_CSTR_1.stl` replaced from the build (X-PAR-04 registry form)
+- Solid source: build export `models/mfg/LEACH_CSTR_1/export/leach_cstr_1.step`
 - BOM `models/mfg/LEACH_CSTR_1/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/LEACH_CSTR_1/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 

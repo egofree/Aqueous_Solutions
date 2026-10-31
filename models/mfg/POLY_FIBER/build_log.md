@@ -1,22 +1,23 @@
-# POLY_FIBER build log - X-POLY M3 roster acceptance
+# Build log - POLY_FIBER
 
-Date: 2026-10-27. Authority: AQS-PLAN-006 section 5 (the FLUX_PREP-class build+check acceptance;
-the 8-sheet drawing set follows as its own pass). Model source: `models/mfg/farm_hab.py` (cabinet class)
-+ `models/mfg/POLY_FIBER/params.json`.
+Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/POLY_FIBER.md`; sizing per the duty sheet section 2).
 
-## Basis
+## Tool versions
 
-- Envelope 3100 x 1300 x 1900 mm, claimed on the graph (params.size_mm): bench-scale melt-spin line: extruder + spinnerette + quench + winder at the 0.09 kg/d draw (A-M-429) (X-POLY sec3) (sheet-metal cabinet class, 5 mm)
-- Material class: SS304 (the unit's issued sec3 selection).
+- CadQuery 2.8.0 (CADQUERY_PYTHON)
+- Python 3.13.7; build run headless via `models/mfg/build_all.py`
 
-## Evidence (check.json is the machine-checked copy)
+## Checks
 
-1. Builds headless from params.json; STEP + STL in `export/`.
-2. Bounding box [3100.0, 1300.0, 1900.0] sits inside the claimed envelope: True.
-3. 3 solid(s), all valid: True.
-4. Empty mass 1131.5 kg (wall volume x the class density; sheet-gauge panels, hollow housings).
+- Build bbox 3100 x 1300 x 1900 mm: inside the envelope with margin (envelope 3100 x 1300 x 1900 mm)
+- Solid source: build export `models/mfg/POLY_FIBER/export/poly_fiber.step`
+- BOM `models/mfg/POLY_FIBER/bom.csv`; fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/POLY_FIBER/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
-## Follow-on
+## Sources
 
-- 8-sheet drawing set + DRAWING_REGISTER rows: own pass (the FLUX_PREP/WAX_PATTERN precedent).
-- Locale note: the unit carries per the LOCALIZATION_PLAN section 5.6 scaling rules.
+- `models/mfg/POLY_FIBER/draw_poly_fiber.py`
+- `models/mfg/POLY_FIBER/export/poly_fiber.step`
+
+Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

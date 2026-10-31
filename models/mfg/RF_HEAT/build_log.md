@@ -11,8 +11,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/RF_
 ## Checks
 
 - Build bbox 1000 x 1000 x 1500 mm: no graph envelope; dims recorded
-- Solids exported: `models/mfg/RF_HEAT/export/` (STEP + STL); STL manifold-checked by the exporter
-- Envelope STL `cad/stl/RF_HEAT.stl` replaced from the build (X-PAR-04 registry form)
+- Solid source: build export `models/mfg/RF_HEAT/export/rf_heat.step`
 - BOM `models/mfg/RF_HEAT/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/RF_HEAT/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 

@@ -11,8 +11,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/HF_
 ## Checks
 
 - Build bbox 1199 x 630 x 1400 mm: no graph envelope; dims recorded
-- Solids exported: `models/mfg/HF_GEN/export/` (STEP + STL); STL manifold-checked by the exporter
-- Envelope STL `cad/stl/HF_GEN.stl` replaced from the build (X-PAR-04 registry form)
+- Solid source: build export `models/mfg/HF_GEN/export/hf_gen.step`
 - BOM `models/mfg/HF_GEN/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/HF_GEN/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 

@@ -11,8 +11,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/FOR
 ## Checks
 
 - Build bbox 1500 x 800 x 1500 mm: no graph envelope; dims recorded
-- Solids exported: `models/mfg/FORGE/export/` (STEP + STL); STL manifold-checked by the exporter
-- Envelope STL `cad/stl/FORGE.stl` replaced from the build (X-PAR-04 registry form)
+- Solid source: build export `models/mfg/FORGE/export/forge.step`
 - BOM `models/mfg/FORGE/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/FORGE/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 

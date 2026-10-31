@@ -11,8 +11,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/VDF
 ## Checks
 
 - Build bbox 600 x 600 x 1200 mm: no graph envelope; dims recorded
-- Solids exported: `models/mfg/VDF_SYN/export/` (STEP + STL); STL manifold-checked by the exporter
-- Envelope STL `cad/stl/VDF_SYN.stl` replaced from the build (X-PAR-04 registry form)
+- Solid source: build export `models/mfg/VDF_SYN/export/vdf_syn.step`
 - BOM `models/mfg/VDF_SYN/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/VDF_SYN/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 

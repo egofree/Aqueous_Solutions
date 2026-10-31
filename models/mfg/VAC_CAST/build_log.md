@@ -11,8 +11,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/VAC
 ## Checks
 
 - Build bbox 1500 x 800 x 1500 mm: no graph envelope; dims recorded
-- Solids exported: `models/mfg/VAC_CAST/export/` (STEP + STL); STL manifold-checked by the exporter
-- Envelope STL `cad/stl/VAC_CAST.stl` replaced from the build (X-PAR-04 registry form)
+- Solid source: build export `models/mfg/VAC_CAST/export/vac_cast.step`
 - BOM `models/mfg/VAC_CAST/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/VAC_CAST/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 

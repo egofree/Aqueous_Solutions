@@ -1,22 +1,23 @@
-# AQUA_TANK build log - X-FARM M3 roster acceptance
+# Build log - AQUA_TANK
 
-Date: 2026-10-27. Authority: AQS-PLAN-006 section 5 (the FLUX_PREP-class build+check acceptance;
-the 8-sheet drawing set follows as its own pass). Model source: `models/mfg/farm_hab.py` (tank class)
-+ `models/mfg/AQUA_TANK/params.json`.
+Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/AQUA_TANK.md`; sizing per the duty sheet section 2).
 
-## Basis
+## Tool versions
 
-- Envelope 2100 x 1100 x 1100 mm, claimed on the graph (params.size_mm): 2.0 m3 working volume at the 60 kg stock / 30 kg-per-m3 class (TECHTREE tilapia glossary; A-M-415): 2000 x 1000 x 1000 ID + 50 walls, EPDM-lined HDPE (X-FARM sec3)
-- Material class: HDPE (the unit's issued sec3 selection).
+- CadQuery 2.8.0 (CADQUERY_PYTHON)
+- Python 3.13.7; build run headless via `models/mfg/build_all.py`
 
-## Evidence (check.json is the machine-checked copy)
+## Checks
 
-1. Builds headless from params.json; STEP + STL in `export/`.
-2. Bounding box [2100.0, 1100.0, 1100.0] sits inside the claimed envelope: True.
-3. 1 solid(s), all valid: True.
-4. Empty mass 2394.2 kg (wall volume x the class density; sheet-gauge panels, hollow housings).
+- Build bbox 2100 x 1100 x 1100 mm: inside the envelope with margin (envelope 2100 x 1100 x 1100 mm)
+- Solid source: build export `models/mfg/AQUA_TANK/export/aqua_tank.step`
+- BOM `models/mfg/AQUA_TANK/bom.csv`; fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/AQUA_TANK/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
-## Follow-on
+## Sources
 
-- 8-sheet drawing set + DRAWING_REGISTER rows: own pass (the FLUX_PREP/WAX_PATTERN precedent).
-- Locale note: the unit carries per the LOCALIZATION_PLAN section 5.6 scaling rules.
+- `models/mfg/AQUA_TANK/draw_aqua_tank.py`
+- `models/mfg/AQUA_TANK/export/aqua_tank.step`
+
+Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

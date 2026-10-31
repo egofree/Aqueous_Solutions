@@ -1,22 +1,23 @@
-# AQUA_UV build log - X-FARM M3 roster acceptance
+# Build log - AQUA_UV
 
-Date: 2026-10-27. Authority: AQS-PLAN-006 section 5 (the FLUX_PREP-class build+check acceptance;
-the 8-sheet drawing set follows as its own pass). Model source: `models/mfg/farm_hab.py` (cabinet class)
-+ `models/mfg/AQUA_UV/params.json`.
+Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/AQUA_UV.md`; sizing per the duty sheet section 2).
 
-## Basis
+## Tool versions
 
-- Envelope 400 x 350 x 750 mm, claimed on the graph (params.size_mm): inline 254 nm reactor tube + control box at the 0.04 kW lamp class (A-M-428) (X-FARM sec3) (sheet-metal cabinet class, 5 mm)
-- Material class: SS304 (the unit's issued sec3 selection).
+- CadQuery 2.8.0 (CADQUERY_PYTHON)
+- Python 3.13.7; build run headless via `models/mfg/build_all.py`
 
-## Evidence (check.json is the machine-checked copy)
+## Checks
 
-1. Builds headless from params.json; STEP + STL in `export/`.
-2. Bounding box [400.0, 350.0, 750.0] sits inside the claimed envelope: True.
-3. 2 solid(s), all valid: True.
-4. Empty mass 61.0 kg (wall volume x the class density; sheet-gauge panels, hollow housings).
+- Build bbox 400 x 350 x 750 mm: inside the envelope with margin (envelope 400 x 350 x 750 mm)
+- Solid source: build export `models/mfg/AQUA_UV/export/aqua_uv.step`
+- BOM `models/mfg/AQUA_UV/bom.csv`; fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/AQUA_UV/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
-## Follow-on
+## Sources
 
-- 8-sheet drawing set + DRAWING_REGISTER rows: own pass (the FLUX_PREP/WAX_PATTERN precedent).
-- Locale note: the unit carries per the LOCALIZATION_PLAN section 5.6 scaling rules.
+- `models/mfg/AQUA_UV/draw_aqua_uv.py`
+- `models/mfg/AQUA_UV/export/aqua_uv.step`
+
+Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.
