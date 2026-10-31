@@ -50,7 +50,7 @@ Table 2.1. Tasks by group
 | X-SAF | Safety, relief, fire | 23 | 23 |
 | X-MAT | Materials selection (AQS-STD-002) | 22 | 21 |
 | X-COD | Codes and permits | 3 | 3 |
-| X-PRO | Procurement, BOM, cost | 4 | 3 |
+| X-PRO | Procurement, BOM, cost | 4 | 4 |
 | X-DWG | Drawings package | 3 | 3 |
 | X-ASM | Assembly and installation sequence | 2 | 2 |
 | X-COM | Commissioning and startup | 3 | 3 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 14 |
 | NUT | Process (Mass transform) | 15 | 14 |
-| | **Total** | **3252** | **3044** |
+| | **Total** | **3252** | **3045** |
 
 ## 3. Triage of open tasks
 
@@ -102,7 +102,7 @@ Table 3.1. Open tasks by triage tag
 
 | Triage | Open tasks |
 | --- | --- |
-| desk P2 | 2 |
+| desk P2 | 1 |
 | desk P4 | 2 |
 | hardware | 204 |
 
@@ -155,7 +155,6 @@ Table 6.1. Next cross-cutting desk tasks
 | Task | Title | Triage |
 | --- | --- | --- |
 | X-END-02 | End-of-life material return | desk P2 |
-| X-PRO-03 | Cost estimate | desk P2 |
 
 Table 6.2 lists the open cross-cutting tasks that wait on a decision by the project owner.
 
@@ -487,7 +486,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 
 - [x] **X-PRO-01** Plant BOM. Done when: roll-up of every unit bom.csv plus bulk materials. Depends: unit task 12. Evidence: `docs-authority/PLANT_BOM.md`.
 - [x] **X-PRO-02** Bought-item specifications. Done when: datasheet per bought item. Depends: unit task 12. Evidence: `docs-authority/BOUGHT_SPECS.md`.
-- [ ] **X-PRO-03** Cost estimate. Done when: priced BOM with source per price (mass x published commodity price x fabrication factor, AQS-PRO-003). Depends: X-PRO-01. Start from `docs-authority/COST_ESTIMATE_BOM.md` (partial). Triage: desk P2.
+- [x] **X-PRO-03** Cost estimate. Done when: priced BOM with source per price (mass x published commodity price x fabrication factor, AQS-PRO-003). Depends: X-PRO-01. Evidence: `docs-authority/COST_ESTIMATE_BOM.md`.
 - [x] **X-PRO-04** Self-copy BOM. Done when: AQS-BOM-SC-001 reconciled with unit BOMs. Depends: X-PRO-01. Evidence: `docs-authority/SELF_COPY_BOM.md`.
 
 ### X-DWG. Drawings package
