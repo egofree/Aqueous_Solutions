@@ -322,7 +322,7 @@ X=[
 ('PRO','Procurement, BOM, cost',[
 ('X-PRO-01','Plant BOM','roll-up of every unit bom.csv plus bulk materials','unit task 12',None),
 ('X-PRO-02','Bought-item specifications','datasheet per bought item','unit task 12',None),
-('X-PRO-03','Cost estimate','priced BOM with source per price (mass x published commodity price x fabrication factor, AQS-PRO-003)','X-PRO-01','docs-authority/COST_ESTIMATE.md'),
+('X-PRO-03','Cost estimate','priced BOM with source per price (mass x published commodity price x fabrication factor, AQS-PRO-003)','X-PRO-01','docs-authority/COST_ESTIMATE_BOM.md'),
 ('X-PRO-04','Self-copy BOM','AQS-BOM-SC-001 reconciled with unit BOMs','X-PRO-01',None)]),
 ('DWG','Drawings package',[
 ('X-DWG-01','Drawing standard and title block','numbering, sheet sizes, revision blocks','X-GOV-04',None),

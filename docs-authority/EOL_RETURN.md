@@ -18,20 +18,19 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 2009 | 58 % |
+| metal_plateable | 2084 | 60 % |
 | organic | 1088 | 31 % |
 | silicate_oxide | 170 | 5 % |
 | metal_reactive | 123 | 4 % |
-| unassigned | 98 | 3 % |
+| unassigned | 23 | 1 % |
 
-Unassigned: 98 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
+Unassigned: 23 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
 
 ## Held lines (no route in the present plant, or material pending)
 
 | Reason | Lines |
 |---|---|
-| held - material not identified on the line | 74 |
-| held - material not stated on the line | 14 |
+| held - material not stated on the line | 13 |
 | held - standby machine, envelope-only placeholder; material issues at its unit task 10/12 design (owner programme gate) | 9 |
 | Nd/Dy recovery has no unit: held in cake | 5 |
 | held - pointer line: these parts are classed line by line in their unit BOMs (AQS-INV-004 roll-up) | 1 |
@@ -42,23 +41,23 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 
 | Unit | metal_plateable | organic | silicate_oxide | metal_reactive | unassigned |
 |---|---|---|---|---|---|
-| ACID_POLISH_SCRUB | 12 | 15 | 1 | 0 | 1 |
+| ACID_POLISH_SCRUB | 13 | 15 | 1 | 0 | 0 |
 | ADS_CHILL | 0 | 2 | 0 | 0 | 0 |
 | AFTERBURNER | 20 | 2 | 2 | 0 | 0 |
 | AFTERBURNER_FLUE | 7 | 2 | 3 | 0 | 0 |
 | AIR_RECEIVER | 6 | 2 | 2 | 0 | 0 |
-| ALK_SCRUBBER | 7 | 9 | 1 | 0 | 1 |
+| ALK_SCRUBBER | 8 | 9 | 1 | 0 | 0 |
 | AL_POT | 6 | 6 | 4 | 0 | 0 |
 | AQUA_TANK | 0 | 3 | 0 | 0 | 0 |
 | AQUA_UV | 3 | 0 | 0 | 0 | 0 |
-| BACKUP_GEN | 14 | 3 | 2 | 0 | 4 |
-| BAGHOUSE | 18 | 4 | 1 | 0 | 1 |
+| BACKUP_GEN | 16 | 3 | 2 | 0 | 2 |
+| BAGHOUSE | 19 | 4 | 1 | 0 | 0 |
 | BEE_HIVE | 0 | 5 | 0 | 0 | 0 |
 | BIOFILTER | 0 | 4 | 0 | 0 | 0 |
 | BLACK_DIGEST | 1 | 5 | 0 | 0 | 0 |
 | BLOW_MOLD | 5 | 0 | 1 | 0 | 0 |
-| BMED_ACID | 21 | 18 | 1 | 0 | 1 |
-| BMED_BASE | 21 | 18 | 1 | 0 | 1 |
+| BMED_ACID | 22 | 18 | 1 | 0 | 0 |
+| BMED_BASE | 22 | 18 | 1 | 0 | 0 |
 | BMED_UPW_POLISH | 22 | 17 | 1 | 0 | 0 |
 | BSFL_BIN | 0 | 1 | 0 | 0 | 0 |
 | C29_RECYCLE | 9 | 1 | 1 | 0 | 0 |
@@ -66,7 +65,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | CATCH_TANK | 4 | 9 | 1 | 0 | 0 |
 | CA_POT | 8 | 6 | 2 | 0 | 0 |
 | CHICKEN_COOP | 6 | 0 | 0 | 0 | 0 |
-| COLD_MILL | 9 | 0 | 1 | 0 | 1 |
+| COLD_MILL | 10 | 0 | 1 | 0 | 0 |
 | COMB_HEAT | 0 | 0 | 0 | 0 | 1 |
 | COMMON_AREA | 0 | 0 | 0 | 5 | 0 |
 | CONTINUOUS_RECYCLE | 3 | 7 | 1 | 0 | 0 |
@@ -74,10 +73,10 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | CRU | 13 | 13 | 2 | 0 | 0 |
 | CRYO_AHU | 27 | 10 | 1 | 0 | 0 |
 | CRYO_AHU_COND_CONDENSABLE | 10 | 4 | 1 | 0 | 0 |
-| CRYO_ASU | 24 | 0 | 3 | 0 | 2 |
+| CRYO_ASU | 26 | 0 | 3 | 0 | 0 |
 | CRYO_CO2 | 18 | 0 | 1 | 0 | 0 |
 | CRYO_DED_COOL | 6 | 2 | 1 | 0 | 0 |
-| CRYO_H2 | 22 | 0 | 0 | 0 | 1 |
+| CRYO_H2 | 23 | 0 | 0 | 0 | 0 |
 | CRYO_HX_Q4 | 3 | 0 | 1 | 0 | 0 |
 | CRYO_N2 | 20 | 2 | 2 | 0 | 0 |
 | CRYO_O2 | 21 | 2 | 1 | 0 | 0 |
@@ -90,18 +89,18 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | EVAP_ACID | 1 | 9 | 0 | 1 | 0 |
 | EVAP_ACID_VS | 0 | 8 | 0 | 0 | 0 |
 | EVAP_BASE | 5 | 3 | 0 | 1 | 0 |
-| EW_1 | 21 | 22 | 2 | 6 | 1 |
-| EW_2 | 20 | 18 | 2 | 6 | 1 |
+| EW_1 | 22 | 22 | 2 | 6 | 0 |
+| EW_2 | 21 | 18 | 2 | 6 | 0 |
 | EW_3 | 15 | 14 | 2 | 4 | 0 |
 | EW_4 | 15 | 18 | 2 | 6 | 0 |
 | EW_5 | 15 | 14 | 2 | 4 | 0 |
 | EW_6 | 15 | 14 | 2 | 4 | 0 |
-| EW_7 | 19 | 14 | 2 | 4 | 1 |
+| EW_7 | 20 | 14 | 2 | 4 | 0 |
 | EW_8 | 15 | 14 | 2 | 4 | 0 |
-| EW_9 | 20 | 18 | 2 | 4 | 1 |
+| EW_9 | 21 | 18 | 2 | 4 | 0 |
 | EXTRUDE | 0 | 0 | 0 | 0 | 1 |
-| EXT_HALL | 18 | 0 | 0 | 0 | 5 |
-| FAB_UPW_TANK | 9 | 9 | 1 | 0 | 1 |
+| EXT_HALL | 23 | 0 | 0 | 0 | 0 |
+| FAB_UPW_TANK | 10 | 9 | 1 | 0 | 0 |
 | FEED_PREP | 4 | 0 | 0 | 0 | 0 |
 | FILM_CAST | 8 | 1 | 0 | 0 | 0 |
 | FLOAT_SINK | 12 | 15 | 1 | 0 | 0 |
@@ -109,12 +108,12 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | FLUX_PREP | 6 | 0 | 0 | 0 | 0 |
 | FOOD_STORE | 4 | 10 | 1 | 0 | 0 |
 | FORGE | 0 | 0 | 0 | 0 | 1 |
-| FUEL_CELL | 24 | 12 | 2 | 0 | 4 |
+| FUEL_CELL | 25 | 12 | 2 | 0 | 3 |
 | F_RECOVER | 7 | 9 | 1 | 0 | 0 |
 | GALLEY | 0 | 0 | 0 | 5 | 0 |
 | GAS_ATOMIZER | 10 | 0 | 1 | 0 | 0 |
 | GEO_GHEX | 2 | 6 | 1 | 0 | 0 |
-| GEO_HP | 11 | 0 | 1 | 0 | 1 |
+| GEO_HP | 12 | 0 | 1 | 0 | 0 |
 | GEO_HP_CLOSED_LOOP | 1 | 4 | 1 | 0 | 0 |
 | GLASS_BURNOUT | 11 | 0 | 1 | 0 | 0 |
 | GLASS_DIGEST | 0 | 6 | 0 | 0 | 0 |
@@ -136,9 +135,9 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | HDR_O2 | 1 | 0 | 0 | 0 | 0 |
 | HDR_UPW | 0 | 1 | 0 | 0 | 0 |
 | HF_GEN | 4 | 2 | 1 | 0 | 0 |
-| HOPPER | 18 | 4 | 1 | 0 | 2 |
+| HOPPER | 20 | 4 | 1 | 0 | 0 |
 | HX8 | 13 | 2 | 1 | 0 | 0 |
-| HYDRO_SET | 7 | 1 | 1 | 0 | 1 |
+| HYDRO_SET | 8 | 1 | 1 | 0 | 0 |
 | IND_MELT | 6 | 3 | 3 | 0 | 0 |
 | INV_CAST | 7 | 0 | 1 | 0 | 0 |
 | LEACH_CSTR_1 | 1 | 15 | 1 | 0 | 0 |
@@ -153,12 +152,12 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MEOH_FC | 25 | 7 | 1 | 0 | 2 |
 | MEOH_FERM | 0 | 6 | 0 | 0 | 0 |
 | MEOH_SYNTH | 7 | 1 | 1 | 0 | 0 |
-| MEOH_TANK | 55 | 9 | 1 | 0 | 5 |
+| MEOH_TANK | 60 | 9 | 1 | 0 | 0 |
 | METAL_STORE | 1 | 4 | 1 | 0 | 0 |
-| MET_AHU | 15 | 4 | 1 | 0 | 1 |
+| MET_AHU | 16 | 4 | 1 | 0 | 0 |
 | MET_HX_Q4 | 3 | 0 | 1 | 0 | 0 |
 | MET_MELT | 14 | 9 | 1 | 0 | 0 |
-| MET_SCRUB | 17 | 21 | 1 | 0 | 1 |
+| MET_SCRUB | 18 | 21 | 1 | 0 | 0 |
 | MET_SYN | 2 | 6 | 1 | 0 | 0 |
 | MF-01 x 14 | 3 | 1 | 0 | 2 | 0 |
 | MF-02 x 55 | 3 | 1 | 0 | 2 | 0 |
@@ -183,13 +182,13 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MF-21 x 0 | 3 | 0 | 0 | 0 | 0 |
 | MF-22 x 0 | 4 | 0 | 0 | 2 | 0 |
 | MF-23 x 0 | 4 | 0 | 0 | 2 | 0 |
-| MFG_SHOP | 42 | 6 | 1 | 0 | 9 |
+| MFG_SHOP | 51 | 6 | 1 | 0 | 0 |
 | MG_POT | 9 | 7 | 2 | 0 | 0 |
 | MO_CELL | 8 | 6 | 3 | 0 | 0 |
 | NCG_HEADER | 1 | 0 | 0 | 0 | 0 |
 | NORTH_DOCK | 3 | 0 | 0 | 0 | 0 |
 | NOX_SCRUB | 26 | 23 | 2 | 0 | 0 |
-| NUTRIENT_DOSE | 38 | 31 | 1 | 0 | 5 |
+| NUTRIENT_DOSE | 43 | 31 | 1 | 0 | 0 |
 | OF-01 | 1 | 0 | 0 | 0 | 0 |
 | OF-02 | 1 | 0 | 0 | 0 | 0 |
 | OF-03 | 1 | 0 | 0 | 0 | 0 |
@@ -290,7 +289,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | PF-19 | 0 | 2 | 0 | 0 | 0 |
 | PF-20 | 1 | 1 | 0 | 0 | 0 |
 | PF-21 | 0 | 2 | 0 | 0 | 0 |
-| POLISH_BANK | 13 | 17 | 1 | 0 | 1 |
+| POLISH_BANK | 14 | 17 | 1 | 0 | 0 |
 | POLY_COND | 3 | 4 | 0 | 0 | 0 |
 | POLY_F | 6 | 3 | 0 | 0 | 0 |
 | POLY_FIBER | 4 | 0 | 0 | 0 | 0 |
@@ -299,11 +298,11 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | POWDER_RESIN | 8 | 0 | 0 | 0 | 0 |
 | PROD_C11_C18 | 9 | 1 | 1 | 0 | 0 |
 | PROD_C19_C28 | 29 | 5 | 1 | 0 | 0 |
-| PROD_C29 | 16 | 2 | 1 | 0 | 1 |
-| PROD_C5_C10 | 24 | 4 | 1 | 0 | 1 |
-| PROD_MEOH | 0 | 0 | 0 | 0 | 1 |
-| PROD_O2 | 0 | 0 | 0 | 0 | 1 |
-| PV_ARRAY | 0 | 0 | 0 | 0 | 1 |
+| PROD_C29 | 17 | 2 | 1 | 0 | 0 |
+| PROD_C5_C10 | 25 | 4 | 1 | 0 | 0 |
+| PROD_MEOH | 1 | 0 | 0 | 0 | 0 |
+| PROD_O2 | 1 | 0 | 0 | 0 | 0 |
+| PV_ARRAY | 1 | 0 | 0 | 0 | 0 |
 | P_CA | 1 | 4 | 1 | 0 | 0 |
 | Q1_A | 8 | 4 | 1 | 0 | 0 |
 | Q1_B | 8 | 4 | 1 | 0 | 0 |
@@ -320,19 +319,19 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | REC_DAYROOM | 0 | 0 | 0 | 5 | 0 |
 | RELIEF_CRYO | 4 | 0 | 0 | 0 | 0 |
 | RELIEF_H2 | 4 | 0 | 0 | 0 | 0 |
-| REMIN | 16 | 13 | 1 | 0 | 2 |
+| REMIN | 18 | 13 | 1 | 0 | 0 |
 | RES_HEAT | 0 | 0 | 0 | 0 | 1 |
 | RF_HEAT | 0 | 0 | 0 | 0 | 1 |
 | ROLL | 7 | 0 | 0 | 0 | 0 |
-| ROOF_TANK | 52 | 61 | 1 | 0 | 6 |
-| SALT_FEED | 5 | 4 | 1 | 0 | 1 |
+| ROOF_TANK | 58 | 61 | 1 | 0 | 0 |
+| SALT_FEED | 6 | 4 | 1 | 0 | 0 |
 | SHELL_BREAK | 6 | 0 | 1 | 0 | 0 |
 | SHELL_BUILD | 8 | 0 | 1 | 0 | 0 |
 | SHELL_BURNOUT | 9 | 0 | 1 | 0 | 0 |
 | SINTER | 0 | 0 | 0 | 0 | 1 |
 | SI_REDUCE | 0 | 4 | 0 | 0 | 0 |
 | SLEEP_QUARTERS | 0 | 0 | 0 | 5 | 0 |
-| SOLAR_PV_CELL | 9 | 0 | 1 | 0 | 1 |
+| SOLAR_PV_CELL | 10 | 0 | 1 | 0 | 0 |
 | SOL_ARK_60K | 6 | 0 | 1 | 0 | 1 |
 | STOCK_OUT | 6 | 0 | 0 | 0 | 0 |
 | TFE_SYN | 3 | 4 | 0 | 0 | 0 |
@@ -344,7 +343,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | VERMI_BIN | 0 | 1 | 0 | 0 | 0 |
 | WAFER_FAB | 31 | 11 | 2 | 0 | 0 |
 | WASHROOM | 0 | 5 | 0 | 0 | 0 |
-| WAX_PATTERN | 7 | 0 | 0 | 0 | 1 |
+| WAX_PATTERN | 8 | 0 | 0 | 0 | 0 |
 | WET_BENCH | 21 | 14 | 1 | 0 | 0 |
 | WF-01 | 1 | 0 | 0 | 0 | 0 |
 | WF-02 | 1 | 0 | 0 | 0 | 0 |
@@ -368,15 +367,15 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | WF-31 | 1 | 0 | 0 | 0 | 0 |
 | WF-32 | 1 | 0 | 0 | 0 | 0 |
 | WF-33 | 1 | 0 | 0 | 0 | 0 |
-| WIRE_DRAW | 9 | 0 | 1 | 0 | 1 |
-| WS_AMMONIA | 10 | 13 | 1 | 0 | 1 |
+| WIRE_DRAW | 10 | 0 | 1 | 0 | 0 |
+| WS_AMMONIA | 11 | 13 | 1 | 0 | 0 |
 | WS_DOPE | 4 | 6 | 1 | 0 | 0 |
-| WS_HF_ED | 9 | 9 | 1 | 0 | 1 |
-| WS_KOH | 9 | 9 | 1 | 0 | 1 |
-| WS_NITRIC | 10 | 13 | 1 | 0 | 1 |
-| WS_PEROX | 9 | 9 | 1 | 0 | 1 |
-| WS_PHOS | 16 | 13 | 1 | 0 | 2 |
-| WS_SLURRY | 9 | 9 | 1 | 0 | 1 |
-| WS_SOLV | 13 | 5 | 1 | 0 | 1 |
-| ZNBR2 | 16 | 14 | 1 | 0 | 4 |
+| WS_HF_ED | 10 | 9 | 1 | 0 | 0 |
+| WS_KOH | 10 | 9 | 1 | 0 | 0 |
+| WS_NITRIC | 11 | 13 | 1 | 0 | 0 |
+| WS_PEROX | 10 | 9 | 1 | 0 | 0 |
+| WS_PHOS | 18 | 13 | 1 | 0 | 0 |
+| WS_SLURRY | 10 | 9 | 1 | 0 | 0 |
+| WS_SOLV | 14 | 5 | 1 | 0 | 0 |
+| ZNBR2 | 17 | 14 | 1 | 0 | 3 |
 | ZNBR2_BR2_REGEN | 11 | 9 | 1 | 0 | 0 |

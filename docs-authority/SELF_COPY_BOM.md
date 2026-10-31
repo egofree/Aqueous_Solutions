@@ -196,10 +196,10 @@ Table 8.1. Bill of materials lines by flag
 
 | Flag | BOM lines |
 |---|---|
-| Closed | 324 |
+| Closed | 327 |
 | Partial | 573 |
-| Missing | 1041 |
-| Unstated | 1550 |
+| Missing | 1043 |
+| Unstated | 1545 |
 
 Table 8.2 gives the reason for each line that is not Closed.
 
@@ -232,10 +232,9 @@ Table 8.2. Reasons for lines that are not Closed
 | Unstated | not classed: alarm 25 ppm, trip 50 ppm, breathing hei | 4 |
 | Unstated | not classed: alarm 23.5 vol %, trip 25 vol %, breathi | 4 |
 | Unstated | not classed: alarm 0.2 ppm NO2, trip 0.4 ppm NO2, bre | 3 |
-| Unstated | not classed: 1 | 3 |
-| Unstated | not classed: per AQS-STD-002 | 3 |
 | Unstated | not classed: alumina (90 % class) | 1 |
-| Missing | needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train | 737 |
+| Unstated | not classed: 1 | 1 |
+| Missing | needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train | 739 |
 | Missing | no fluorine source on site; end of life Q-011 | 255 |
 | Missing | Ti not recovered (ilmenite route not in the graph) | 42 |
 | Missing | reason not stated by the classification rule | 4 |

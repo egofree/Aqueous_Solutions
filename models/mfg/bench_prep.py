@@ -166,9 +166,11 @@ def build_and_export(unit):
         "part_mass_kg": mass,
         "cadquery": "2.8.0",
     }
-    (HERE / unit / "bom.csv").write_text(
-        "item,description,qty,material,mass_kg,make_or_buy,basis\n" +
-        "".join(",".join(str(c) for c in r[:4]) + f",{r[4]},{r[5]},\"{r[6]}\"\n" for r in bom))
+    import csv as _csv
+    with open(HERE / unit / "bom.csv", "w", newline="") as _bf:
+        _bw = _csv.writer(_bf)
+        _bw.writerow(("item", "description", "qty", "material", "mass_kg", "make_or_buy", "basis"))
+        _bw.writerows(bom)
     (HERE / unit / "fasteners.csv").write_text(
         'item,size,grade,qty,location,basis\n'
         '1,M10 anchor,ISO 898-1 8.8,4,bench to slab,study\n')

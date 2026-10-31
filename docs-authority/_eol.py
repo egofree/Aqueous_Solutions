@@ -25,6 +25,7 @@ RULES = [  # (keywords, class, entry, hold or None) first match wins
  (('hastelloy', 'c-276', 'monel'), 'metal_plateable', 'LEACH_CSTR_1, EW_1..9 (Ni, Cr, Mo); Fe reports to the cake', None),
  (('316', '304', 'stainless', 'sa-182', 'sa-240', 'a312', 'a106', 'carbon steel', 'steel', 'c45', 'lamination', 'm270', 'm400', 'iron', 'cs ', 'nickel', 'incoloy', 'inconel', 'nicr', '310s', '430f', 'sa-105', 'sa-106', 'fastener', 'stud', 'compressor shell', 'frame', 'flange', 'gearmotor'), 'metal_plateable', 'LEACH_CSTR_1, EW_1..9 (Fe, Ni); Cr and Mo report to the cake', None),
  (('cu', 'copper', 'magnet wire', 'class h wire', 'bobbin', 'bronze', 'brass', 'busbar', 'cable'), 'metal_plateable', 'LEACH_CSTR_1, EW (Cu, Sn, Zn)', None),
+ (('motor', 'induction', 'ie3', 'solenoid'), 'metal_plateable', 'LEACH_CSTR_1, EW (Cu stator windings; lamination and frame steel); Al die-cast and rotor parts report to the cake', None),
  (('thyristor', 'rectifier', 'power supply', 'ip54 cabinet'), 'metal_plateable', 'WEEE route: OIL_PYRO strips the board polymer, then LEACH_CSTR_1 and EW (Cu, Sn, Ag, Au)', None),
  (('electronics', 'connector', 'terminal box', 'plc', 'driver', 'instrument', 'detector'), 'metal_plateable', 'WEEE route: OIL_PYRO strips the board polymer, then LEACH_CSTR_1 and EW (Cu, Sn, Ag, Au)', None),
  (('bearing',), 'metal_plateable', 'LEACH_CSTR_1, EW (52100 steel)', None),

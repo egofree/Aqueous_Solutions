@@ -2160,9 +2160,9 @@ PROD_C5_C10,valve: check valve DN15,1,"CS A216 WCB swing/ball check valve, ASME 
 PROD_C5_C10,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",Closed,Fe EW -> MET_MELT -> mill/draw,
 PROD_C5_C10,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",Closed,Fe EW -> MET_MELT -> mill/draw,
 PROD_C5_C10,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",Closed,Fe EW -> MET_MELT -> mill/draw,
-PROD_MEOH,Body / envelope 1150 x 1150 x 1450 mm,1,per AQS-STD-002,Unstated,-,not classed: per AQS-STD-002
-PROD_O2,Body / envelope 1400 x 1400 x 1750 mm,1,per AQS-STD-002,Unstated,-,not classed: per AQS-STD-002
-PV_ARRAY,Body / envelope per duty sheet section 2,1,per AQS-STD-002,Unstated,-,not classed: per AQS-STD-002
+PROD_MEOH,Body / envelope 1150 x 1150 x 1450 mm,1,"SA-240 304L, welded (graph node material)",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+PROD_O2,Body / envelope 1400 x 1400 x 1750 mm,1,"SA-240 304L, welded (graph node material)",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+PV_ARRAY,Body / envelope per duty sheet section 2,1,No wetted alloy. Conductors are copper (duty sheet section 3),Closed,Cu EW -> WIRE_DRAW,
 P_CA,Body / envelope 300 x 300 x 400 mm,1,PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housin,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 P_CA,Process nozzle DN15,1,PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housin,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 P_CA,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",Unstated,-,"not classed: ceramic diaphragm, IEC 61298"
@@ -2631,13 +2631,13 @@ WASHROOM,wall_end_door,1,FRP,Partial,GLASS fibre + resin,glass fibre from GLASS;
 WASHROOM,wall_end_solid,1,FRP,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
 WASHROOM,wall_long_a,1,FRP,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
 WASHROOM,wall_long_b,1,FRP,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
-WAX_PATTERN,Bench frame 800 x 600,work top z 850..900,1,Unstated,-,not classed: 1
+WAX_PATTERN,"Bench frame 800 x 600, work top z 850..900",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 WAX_PATTERN,Extraction hood with the N5 vent stub,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 WAX_PATTERN,Wax pot 10 L with the 0.5 kW injector head,1,CS + heater class,Closed,Fe EW -> MET_MELT -> mill/draw,
 WAX_PATTERN,Pattern table 220 x 300 x 40,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 WAX_PATTERN,N1 pattern discharge chute +X z 600,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 WAX_PATTERN,N2 condensate-reclaim trap -X z 160,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
-WAX_PATTERN,N3 make-up hopper -X z 160 (petro-wax class import,A-M-284),1,Unstated,-,not classed: 1
+WAX_PATTERN,"N3 make-up hopper -X z 160 (petro-wax class import, A-M-284)",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 WAX_PATTERN,N4 drain well,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 WET_BENCH,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 WET_BENCH,Process nozzle DN15,11,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units

@@ -3392,6 +3392,22 @@
    "quick": false,
    "note": "LAST: X-GOV-06 derived-revision board incl. the regen receipt vouch and the gated set (U3 expansion).",
    "index": true
+  },
+  {
+   "name": "cost_estimate",
+   "argv": [
+    "python3",
+    "docs-authority/_cost_estimate.py"
+   ],
+   "depends_on": [
+    "doc_register"
+   ],
+   "outputs": [
+    "docs-authority/COST_ESTIMATE_BOM.md",
+    "docs-authority/inventory/COST_ESTIMATE_BOM.csv"
+   ],
+   "writes_graph": false,
+   "quick": false
   }
  ],
  "not_stages": [

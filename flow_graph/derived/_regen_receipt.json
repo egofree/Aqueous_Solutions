@@ -535,6 +535,10 @@
   {
    "name": "rev_stamp",
    "status": "ok"
+  },
+  {
+   "name": "cost_estimate",
+   "status": "ok"
   }
  ],
  "failed": [],
@@ -557,6 +561,7 @@
   "docs-authority/COMPLIANCE_MATRIX.md",
   "docs-authority/CONTROL_ARCH.md",
   "docs-authority/CONTROL_SOFTWARE.md",
+  "docs-authority/COST_ESTIMATE_BOM.md",
   "docs-authority/DECOMMISSIONING.md",
   "docs-authority/DERIVED_REVISIONS.md",
   "docs-authority/DESIGN_CHECK.md",
@@ -711,6 +716,7 @@
   "docs-authority/hazop_actions.csv",
   "docs-authority/insulation_schedule.csv",
   "docs-authority/inventory/COMMISSIONING.csv",
+  "docs-authority/inventory/COST_ESTIMATE_BOM.csv",
   "docs-authority/inventory/DECOMMISSIONING.csv",
   "docs-authority/inventory/DESIGN_CHECK.csv",
   "docs-authority/inventory/EOL_RETURN.csv",

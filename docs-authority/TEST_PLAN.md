@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 60 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 486 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 488 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 37 | Commissioning record |
 
-Total 685 items: 305 drivers, 380 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 687 items: 305 drivers, 382 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -696,6 +696,8 @@ Total 685 items: 305 drivers, 380 register entries. Classification rule: first m
 | A-M-427 | 0.12 kg/d DM-equivalent fresh duckweed to the galley as huma kg/d (dry-equivalent) | Greens path microbiology check (X-FARM-11) | X-FARM-11 |
 | A-M-428 | AQUA_UV optional loop sanitizer between the biofilter and th - (design provision) | Sanitizer dose validation (X-FARM-12) | X-FARM-12 |
 | A-M-430 | mineral nitrate solution 6.5 kg/d (raceway 5.5 + media beds  kg/d (mineral solution, not feed) | Raceway N-uptake measurement at the X-FARM-04 trial | X-FARM-04 |
+| A-M-431 | commodity price table of the AQS-PRO-003 estimate (Cu 9.26,  $/kg (2024 US published averages) | verify each transcribed figure against its source table at the first X-PRO-03 QC pass (USGS_MCS_2025 PDF; TOWLER_SINNOTT ch.7) | X-PRO-03 |
+| A-M-432 | fabrication factors of the AQS-PRO-003 estimate: plate and w dimensionless multiplier on material cost | verify each transcribed figure against its source table at the first X-PRO-03 QC pass (USGS_MCS_2025 PDF; TOWLER_SINNOTT ch.7) | X-PRO-03 |
 
 ## 7. T6 Commissioning measurements
 

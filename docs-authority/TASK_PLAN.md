@@ -487,7 +487,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 
 - [x] **X-PRO-01** Plant BOM. Done when: roll-up of every unit bom.csv plus bulk materials. Depends: unit task 12. Evidence: `docs-authority/PLANT_BOM.md`.
 - [x] **X-PRO-02** Bought-item specifications. Done when: datasheet per bought item. Depends: unit task 12. Evidence: `docs-authority/BOUGHT_SPECS.md`.
-- [ ] **X-PRO-03** Cost estimate. Done when: priced BOM with source per price (mass x published commodity price x fabrication factor, AQS-PRO-003). Depends: X-PRO-01. Start from `docs-authority/COST_ESTIMATE.md` (partial). Triage: desk P2.
+- [ ] **X-PRO-03** Cost estimate. Done when: priced BOM with source per price (mass x published commodity price x fabrication factor, AQS-PRO-003). Depends: X-PRO-01. Start from `docs-authority/COST_ESTIMATE_BOM.md` (partial). Triage: desk P2.
 - [x] **X-PRO-04** Self-copy BOM. Done when: AQS-BOM-SC-001 reconciled with unit BOMs. Depends: X-PRO-01. Evidence: `docs-authority/SELF_COPY_BOM.md`.
 
 ### X-DWG. Drawings package

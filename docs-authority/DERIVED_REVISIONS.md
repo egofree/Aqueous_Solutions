@@ -24,7 +24,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `design_tool/aqs_design_tool/data/scale_down.json` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/ACCESS_CHECK.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/ASME_CODE_INTENT.md` | e7abac2 (regenerated, no change) | current |
-| `docs-authority/ASSUMPTIONS_REGISTER.md` | e7abac2 (regenerated, no change) | current |
+| `docs-authority/ASSUMPTIONS_REGISTER.md` | working tree | current |
 | `docs-authority/BALANCE_RECONCILIATION.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/BLOCK_FAMILY_PLANS.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/BOUGHT_SPECS.md` | e7abac2 (regenerated, no change) | current |
@@ -40,11 +40,11 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/CONTROL_SOFTWARE.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/DECOMMISSIONING.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
-| `docs-authority/DESIGN_CHECK.md` | e7abac2 (regenerated, no change) | current |
+| `docs-authority/DESIGN_CHECK.md` | working tree | current |
 | `docs-authority/DOC_REGISTER.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/DRAWING_REGISTER.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/ENCLOSURE_EGRESS.md` | e7abac2 (regenerated, no change) | current |
-| `docs-authority/EOL_RETURN.md` | e7abac2 (regenerated, no change) | current |
+| `docs-authority/EOL_RETURN.md` | working tree | current |
 | `docs-authority/FARM_DESIGN.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/FIRE_PROTECTION.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/FOUNDATION.md` | e7abac2 (regenerated, no change) | current |
@@ -84,7 +84,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/ONE_LINE.json` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/ONE_LINE.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/OPERATING_PROCEDURES.md` | e7abac2 (regenerated, no change) | current |
-| `docs-authority/PARAMETRIC_MODEL.md` | e7abac2 (regenerated, no change) | current |
+| `docs-authority/PARAMETRIC_MODEL.md` | working tree | current |
 | `docs-authority/PERF_TEST.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/PIPE_SPECS.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/PLANT_BOM.md` | e7abac2 (regenerated, no change) | current |
@@ -94,7 +94,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/RIGGING_PLANS.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/SECTOR_DEFINITIONS.md` | e7abac2 (regenerated, no change) | current |
-| `docs-authority/SELF_COPY_BOM.md` | e7abac2 (regenerated, no change) | current |
+| `docs-authority/SELF_COPY_BOM.md` | working tree | current |
 | `docs-authority/SITE_ACCESS_CHECK.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/SITE_COMPARISON.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/SITE_POWER.md` | e7abac2 (regenerated, no change) | current |
@@ -105,8 +105,8 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/STARTUP.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/STRUCT_LOADS.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/SUPPORTS.md` | e7abac2 (regenerated, no change) | current |
-| `docs-authority/TASK_PLAN.md` | e7abac2 (regenerated, no change) | current |
-| `docs-authority/TEST_PLAN.md` | e7abac2 (regenerated, no change) | current |
+| `docs-authority/TASK_PLAN.md` | working tree | current |
+| `docs-authority/TEST_PLAN.md` | working tree | current |
 | `docs-authority/TEST_RIGS.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/UNIT_MATERIALS.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/WATER_TOWER.md` | e7abac2 (regenerated, no change) | current |
@@ -490,8 +490,8 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/insulation_schedule.csv` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/inventory/COMMISSIONING.csv` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/inventory/DECOMMISSIONING.csv` | e7abac2 (regenerated, no change) | current |
-| `docs-authority/inventory/DESIGN_CHECK.csv` | e7abac2 (regenerated, no change) | current |
-| `docs-authority/inventory/EOL_RETURN.csv` | e7abac2 (regenerated, no change) | current |
+| `docs-authority/inventory/DESIGN_CHECK.csv` | working tree | current |
+| `docs-authority/inventory/EOL_RETURN.csv` | working tree | current |
 | `docs-authority/inventory/FRAME_CHECK.json` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/inventory/GAS_DETECTORS.csv` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/inventory/HVAC_ROOMS.csv` | e7abac2 (regenerated, no change) | current |
@@ -510,8 +510,8 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/inventory/PIPE_FAMILIES.csv` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/inventory/PIPE_INVENTORY.csv` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/inventory/PIPE_INVENTORY.md` | e7abac2 (regenerated, no change) | current |
-| `docs-authority/inventory/PLANT_BOM.csv` | e7abac2 (regenerated, no change) | current |
-| `docs-authority/inventory/SELF_COPY_RECON.csv` | e7abac2 (regenerated, no change) | current |
+| `docs-authority/inventory/PLANT_BOM.csv` | working tree | current |
+| `docs-authority/inventory/SELF_COPY_RECON.csv` | working tree | current |
 | `docs-authority/inventory/SITE_ACCESS.json` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/inventory/SIZING_COVERAGE.json` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/inventory/STORAGE_HOLDUP.json` | e7abac2 (regenerated, no change) | current |
@@ -1207,7 +1207,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/derived/MASS_FLOW_DERIVED.md` | e7abac2 (regenerated, no change) | current |
 | `flow_graph/derived/STREAM_REGISTER_DERIVED.md` | e7abac2 (regenerated, no change) | current |
 | `flow_graph/derived/SYNC_POINTER.md` | e7abac2 (regenerated, no change) | current |
-| `flow_graph/derived/_regen_receipt.json` | - | by design: manifest mechanism itself (U3 regen provenance receipt) |
+| `flow_graph/derived/_regen_receipt.json` | working tree | current |
 | `flow_graph/fire_rooms.json` | e7abac2 (regenerated, no change) | current |
 | `flow_graph/inventory/motor_family_ids.json` | e7abac2 (regenerated, no change) | current |
 | `flow_graph/inventory/other_family_ids.json` | e7abac2 (regenerated, no change) | current |

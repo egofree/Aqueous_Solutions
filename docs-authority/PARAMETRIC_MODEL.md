@@ -2001,3 +2001,5 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-428 | AQUA_UV optional loop sanitizer between the biofilter and th - (design provision) | Sanitizer dose validation (X-FARM-12) |
 | A-M-429 | Textiles: wool/sheep eliminated at the 4-crew class; FR-fini - (roster decision) | Textile-line commissioning (X-POLY-01) |
 | A-M-430 | mineral nitrate solution 6.5 kg/d (raceway 5.5 + media beds  kg/d (mineral solution, not feed) | Raceway N-uptake measurement at the X-FARM-04 trial |
+| A-M-431 | commodity price table of the AQS-PRO-003 estimate (Cu 9.26,  $/kg (2024 US published averages) | verify each transcribed figure against its source table at the first X-PRO-03 QC pass (USGS_MCS_2025 PDF; TOWLER_SINNOTT ch.7) |
+| A-M-432 | fabrication factors of the AQS-PRO-003 estimate: plate and w dimensionless multiplier on material cost | verify each transcribed figure against its source table at the first X-PRO-03 QC pass (USGS_MCS_2025 PDF; TOWLER_SINNOTT ch.7) |

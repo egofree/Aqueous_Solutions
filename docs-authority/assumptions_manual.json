@@ -7372,5 +7372,29 @@
   "task": "X-FARM-04",
   "sensitivity": "the dose scales 1:1 with the raceway area (A-M-420) and the measured duckweed N class",
   "replaced_by": "Raceway N-uptake measurement at the X-FARM-04 trial"
+ },
+ {
+  "id": "A-M-431",
+  "value": "commodity price table of the AQS-PRO-003 estimate (Cu 9.26, Al 2.60, Ni-alloys 18-22, stainless 3.40-3.80, Ti 12.00, carbon steel 0.82 $/kg; polymer and graphite classes as priced in _cost_estimate.py PRICE)",
+  "units": "$/kg (2024 US published averages)",
+  "where": "docs-authority/_cost_estimate.py PRICE; docs-authority/COST_ESTIMATE_BOM.md per-line Price column",
+  "basis": "USGS_MCS_2025 metal prices converted at 2,204.62 lb/t; steel and stainless are 2024 US mill-product averages (USGS MCS tracks iron/steel raw materials); polymers are 2024 US resin/compound averages. Verified-against-source flag: transcribed 2026-10-31, verify each figure against the source table at first X-PRO-03 QC.",
+  "needs_verification": true,
+  "verification_test": "verify each transcribed figure against its source table at the first X-PRO-03 QC pass (USGS_MCS_2025 PDF; TOWLER_SINNOTT ch.7)",
+  "sensitivity": "medium: the fabricated subtotal scales linearly with each price and factor",
+  "replaced_by": null,
+  "task": "X-PRO-03"
+ },
+ {
+  "id": "A-M-432",
+  "value": "fabrication factors of the AQS-PRO-003 estimate: plate and weld 2.0, cast 1.8, machined 3.0, vessel plate and weld 2.4 (per-part class keyword in _cost_estimate.py FACTOR; plate default)",
+  "units": "dimensionless multiplier on material cost",
+  "where": "docs-authority/_cost_estimate.py FACTOR; docs-authority/COST_ESTIMATE_BOM.md per-line Factor column",
+  "basis": "TOWLER_SINNOTT ch.7 factored-estimating practice: fabrication multipliers on material cost by part class. Bounding study values; refine per part class as the machine designs detail.",
+  "needs_verification": true,
+  "verification_test": "verify each transcribed figure against its source table at the first X-PRO-03 QC pass (USGS_MCS_2025 PDF; TOWLER_SINNOTT ch.7)",
+  "sensitivity": "medium: the fabricated subtotal scales linearly with each price and factor",
+  "replaced_by": null,
+  "task": "X-PRO-03"
  }
 ]
