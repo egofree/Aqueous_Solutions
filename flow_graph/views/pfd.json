@@ -1009,7 +1009,13 @@
             1600
           ],
           "basis": "the PEM stack skid: stack + power electronics + water loop at the 21.445 kW duty"
-        }
+        },
+        "size_mm": [
+          1800,
+          800,
+          1600
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       }
     },
     {
@@ -4389,7 +4395,13 @@
           "alt": "PTFE/PFA internals where the install layout needs a moulded part instead of sheet-fabricated PVDF",
           "note": "static hold tank: the drain is the only wetted moving face; no corrosion allowance claimed - fluoropolymer compatibility substitutes for measured rate.",
           "task": "X-MAT-22"
-        }
+        },
+        "size_mm": [
+          800,
+          600,
+          1200
+        ],
+        "size_note": "F_RECOVER absorber column: 0.8 m diameter x 1.2 m packed section (A-M-077 acid-service class)"
       },
       "continuous_kw": null
     },
@@ -6677,7 +6689,13 @@
             800
           ],
           "basis": "the carbonation contactor at the 0.5 kg/d slipstream"
-        }
+        },
+        "size_mm": [
+          200,
+          200,
+          800
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "continuous_kw": {
         "value": 0.05,
@@ -6722,7 +6740,13 @@
             600
           ],
           "basis": "the 0.2 kg/d batch kettle: heated soap-precipitation class"
-        }
+        },
+        "size_mm": [
+          500,
+          400,
+          600
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "continuous_kw": {
         "value": 0.2,
@@ -6766,7 +6790,13 @@
             600
           ],
           "basis": "the 0.1 kg/d batch kettle (emulsification class)"
-        }
+        },
+        "size_mm": [
+          500,
+          400,
+          600
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "continuous_kw": {
         "value": 0.2,
@@ -6810,7 +6840,13 @@
             400
           ],
           "basis": "the calcium-soap precipitation vessel at the 0.025 kg/d thickener draw"
-        }
+        },
+        "size_mm": [
+          300,
+          300,
+          400
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "continuous_kw": {
         "value": 0.05,
@@ -6856,7 +6892,13 @@
             1600
           ],
           "basis": "graphite hot-face furnace (the issued sec3 selection) at the batch class"
-        }
+        },
+        "size_mm": [
+          1200,
+          1000,
+          1600
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "continuous_kw": {
         "value": 5.0,
@@ -7102,7 +7144,13 @@
             1200
           ],
           "basis": "the 2.25 kW-class silica gel-water adsorption chiller: drive 65 C, chilled 12 C, thermal COP ~0.45 (A-M-239/240; WANG2006_ADS); 304L shells per the issued sec3"
-        }
+        },
+        "size_mm": [
+          700,
+          500,
+          1200
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "continuous_kw": null,
       "class": "adsorption_chiller"
@@ -7143,7 +7191,13 @@
             400
           ],
           "basis": "the 12 kW water-to-air coil at the MAU duty (Q4 -> hab make-up air)"
-        }
+        },
+        "size_mm": [
+          600,
+          400,
+          400
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "continuous_kw": null,
       "class": "hx"
@@ -7203,7 +7257,13 @@
             1200
           ],
           "basis": "the dry coil + fan at the 7.25 kW rejection duty"
-        }
+        },
+        "size_mm": [
+          1200,
+          600,
+          1200
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "continuous_kw": {
         "value": 0.15,

@@ -1,5 +1,5 @@
 item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family.",docs-authority/duties/H2O_ELYZ.md
+1,Body / envelope 1800 x 800 x 1600 mm,1,"PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family.",docs-authority/duties/H2O_ELYZ.md
 2,Process nozzle DN15,3,"PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family.",one per mass edge; DN from AQS-INV-003
 3,"Relief valve, 3.3 mm bore, DN15 body",1,316L,AQS-SAF-004
 4,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004

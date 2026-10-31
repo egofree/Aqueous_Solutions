@@ -177,6 +177,14 @@ def write():
     put('FEED_PREP', sizing={'load_basis': v['feed_prep_kw'][1]}, kw=v['feed_prep_kw'][0], kw_note=v['feed_prep_kw'][1] + ' (X-SPEC calculated)')
     put('POLY_FIBER', sizing={'load_basis': v['poly_fiber_kw'][1]}, kw=v['poly_fiber_kw'][0], kw_note=v['poly_fiber_kw'][1] + ' (X-SPEC calculated)')
     put('AQUA_UV', sizing={'load_basis': v['aqua_uv_kw'][1]}, kw=v['aqua_uv_kw'][0], kw_note=v['aqua_uv_kw'][1] + ' (X-SPEC calculated)')
+    for uid, sz in (
+        ('ADS_CHILL', [700, 500, 1200]), ('DRY_COOLER', [1200, 600, 1200]),
+        ('GREASE_CA', [500, 400, 600]), ('GREASE_LI', [500, 400, 600]),
+        ('H2O_ELYZ', [1800, 800, 1600]), ('LI_RECOVER', [200, 200, 800]),
+        ('MAU_HX', [600, 400, 400]), ('P_CA', [300, 300, 400]),
+        ('SI_REDUCE', [1200, 1000, 1600]),
+    ):
+        put(uid, size_mm=sz, size_note='envelope from the placement seed (AQS-PLACE-SEED-001); sized by need')
     put('MET_SYN', size_mm=[1500, 1000, 1800],
         size_note=('bench fume-hood train: glass-lined reactor column (2 L working volume), '
                    'reagent feed tanks, Hastelloy C crystalliser; the 9 g/d DL-Met duty sets '

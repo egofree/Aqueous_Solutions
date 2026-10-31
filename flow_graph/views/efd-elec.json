@@ -563,7 +563,13 @@
             1600
           ],
           "basis": "the PEM stack skid: stack + power electronics + water loop at the 21.445 kW duty"
-        }
+        },
+        "size_mm": [
+          1800,
+          800,
+          1600
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       }
     },
     {

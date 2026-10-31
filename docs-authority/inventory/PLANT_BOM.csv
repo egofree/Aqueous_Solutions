@@ -433,7 +433,7 @@ unit,WAX_PATTERN,N4 drain well,1,carbon steel,task-04 schedule N4
 unit envelope BOM,ACID_POLISH_SCRUB,Body D600 x 3803 mm,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/ACID_POLISH_SCRUB.md
 unit envelope BOM,ACID_POLISH_SCRUB,Process nozzle DN15,3,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,ACID_POLISH_SCRUB,Process nozzle DN250,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
-unit envelope BOM,ADS_CHILL,Body / envelope per duty sheet section 2 (not yet dimensioned),1,304L adsorber shells with silica-gel adsorbent beds and 316L chilled-water coils and headers; PP-H water legs on the P5 house water family; steel frame.,docs-authority/duties/ADS_CHILL.md
+unit envelope BOM,ADS_CHILL,Body / envelope 700 x 500 x 1200 mm,1,304L adsorber shells with silica-gel adsorbent beds and 316L chilled-water coils and headers; PP-H water legs on the P5 house water family; steel frame.,docs-authority/duties/ADS_CHILL.md
 unit envelope BOM,AFTERBURNER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,docs-authority/duties/AFTERBURNER.md
 unit envelope BOM,AFTERBURNER,Process nozzle DN15,7,Carbon steel.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,AFTERBURNER_FLUE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"316L pipe, dry flue at 300 °C, insulated to hold the wall above the acid dew point (M7; dew point held).",docs-authority/duties/AFTERBURNER_FLUE.md
@@ -489,7 +489,7 @@ unit envelope BOM,CRYO_O2,Body D114 x 600 mm,1,316L.,docs-authority/duties/CRYO_
 unit envelope BOM,CRYO_O2,Process nozzle DN15,6,316L.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,CRYO_O2,Process nozzle DN50,1,316L.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,CRYO_O2,"Relief valve, 9.0 mm bore, DN15 body",2,316L,"AQS-SAF-005 (one per bank half, fire case)"
-unit envelope BOM,DRY_COOLER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Copper-tube, aluminium-fin air coil with galvanized-steel casing; epoxy-coated headers; the rejection loop is the house HDPE-class closed water loop.",docs-authority/duties/DRY_COOLER.md
+unit envelope BOM,DRY_COOLER,Body / envelope 1200 x 600 x 1200 mm,1,"Copper-tube, aluminium-fin air coil with galvanized-steel casing; epoxy-coated headers; the rejection loop is the house HDPE-class closed water loop.",docs-authority/duties/DRY_COOLER.md
 unit envelope BOM,DRY_COOLER,Process nozzle DN15,2,"Copper-tube, aluminium-fin air coil with galvanized-steel casing; epoxy-coated headers; the rejection loop is the house HDPE-class closed water loop.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,ELECTRODE_COAT,Body / envelope 1200 x 800 x 1800 mm,1,316L where the stream is wet.,docs-authority/duties/ELECTRODE_COAT.md
 unit envelope BOM,ELECTRODE_COAT,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
@@ -528,7 +528,7 @@ unit envelope BOM,FOOD_STORE,Process nozzle DN15,13,PE (rotomoulded / fabricated
 unit envelope BOM,FUEL_CELL,Body / envelope 1800 x 800 x 1600 mm,1,No wetted alloy.,docs-authority/duties/FUEL_CELL.md
 unit envelope BOM,FUEL_CELL,Process nozzle DN15,4,No wetted alloy.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,FUEL_CELL,Process nozzle DN50,1,No wetted alloy.,one per mass edge; DN from AQS-INV-003
-unit envelope BOM,F_RECOVER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) legs to the hot HF make-up; PE pump and PP-H frame attachments.,docs-authority/duties/F_RECOVER.md
+unit envelope BOM,F_RECOVER,Body / envelope 800 x 600 x 1200 mm,1,PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) legs to the hot HF make-up; PE pump and PP-H frame attachments.,docs-authority/duties/F_RECOVER.md
 unit envelope BOM,F_RECOVER,Process nozzle DN15,3,PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) legs to the hot HF make-up; PE pump and PP-H frame attachments.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,GAS_ATOMIZER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/GAS_ATOMIZER.md
 unit envelope BOM,GAS_ATOMIZER,Process nozzle DN15,5,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
@@ -543,9 +543,9 @@ unit envelope BOM,GLASS_MILL,Body / envelope 800 x 600 x 800 mm,1,316L where the
 unit envelope BOM,GLASS_MILL,Process nozzle DN15,5,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,GLASS_RINSE,Body / envelope 1200 x 600 x 800 mm,1,316L where the stream is wet.,docs-authority/duties/GLASS_RINSE.md
 unit envelope BOM,GLASS_RINSE,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
-unit envelope BOM,GREASE_CA,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L jacketed soap kettle + 316L agitator; steel frame and insulation stays dry; steam - hot-water heads keep the jacket wetted side on the issued Q3/Q4 M1 water family.,docs-authority/duties/GREASE_CA.md
+unit envelope BOM,GREASE_CA,Body / envelope 500 x 400 x 600 mm,1,316L jacketed soap kettle + 316L agitator; steel frame and insulation stays dry; steam - hot-water heads keep the jacket wetted side on the issued Q3/Q4 M1 water family.,docs-authority/duties/GREASE_CA.md
 unit envelope BOM,GREASE_CA,Process nozzle DN15,3,316L jacketed soap kettle + 316L agitator; steel frame and insulation stays dry; steam - hot-water heads keep the jacket wetted side on the issued Q3/Q4 M1 water family.,one per mass edge; DN from AQS-INV-003
-unit envelope BOM,GREASE_LI,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L jacketed soap kettle + 316L agitator (same kettle class as GREASE_CA) for the lithium soap.,docs-authority/duties/GREASE_LI.md
+unit envelope BOM,GREASE_LI,Body / envelope 500 x 400 x 600 mm,1,316L jacketed soap kettle + 316L agitator (same kettle class as GREASE_CA) for the lithium soap.,docs-authority/duties/GREASE_LI.md
 unit envelope BOM,GREASE_LI,Process nozzle DN15,3,316L jacketed soap kettle + 316L agitator (same kettle class as GREASE_CA) for the lithium soap.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,GREY_TREAT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/GREY_TREAT.md
 unit envelope BOM,GREY_TREAT,Process nozzle DN15,9,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
@@ -554,7 +554,7 @@ unit envelope BOM,GROW_BED,Body / envelope per duty sheet section 2 (not yet dim
 unit envelope BOM,GROW_BED,Process nozzle DN15,18,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,GW_INTAKE,Body / envelope 900 x 700 x 1800 mm,1,"SS304 wellhead plate and discharge head, HDPE potable discharge line, submersible pump SS304/stainless stages.",docs-authority/duties/GW_INTAKE.md
 unit envelope BOM,GW_INTAKE,Process nozzle DN15,1,"SS304 wellhead plate and discharge head, HDPE potable discharge line, submersible pump SS304/stainless stages.",one per mass edge; DN from AQS-INV-003
-unit envelope BOM,H2O_ELYZ,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family.",docs-authority/duties/H2O_ELYZ.md
+unit envelope BOM,H2O_ELYZ,Body / envelope 1800 x 800 x 1600 mm,1,"PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family.",docs-authority/duties/H2O_ELYZ.md
 unit envelope BOM,H2O_ELYZ,Process nozzle DN15,3,"PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,H2O_ELYZ,"Relief valve, 3.3 mm bore, DN15 body",1,316L,AQS-SAF-004
 unit envelope BOM,H2_DRYER,Body D60 x 628 mm,1,Inlet knock-out PVC-U (wet).,docs-authority/duties/H2_DRYER.md
@@ -571,10 +571,10 @@ unit envelope BOM,LITHO_COAT,Body / envelope 1200 x 800 x 1400 mm,1,316L where t
 unit envelope BOM,LITHO_COAT,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,LITHO_DEV,Body / envelope 1200 x 600 x 900 mm,1,316L where the stream is wet.,docs-authority/duties/LITHO_DEV.md
 unit envelope BOM,LITHO_DEV,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
-unit envelope BOM,LI_RECOVER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the wetted zone.,docs-authority/duties/LI_RECOVER.md
+unit envelope BOM,LI_RECOVER,Body / envelope 200 x 200 x 800 mm,1,PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the wetted zone.,docs-authority/duties/LI_RECOVER.md
 unit envelope BOM,LI_RECOVER,Process nozzle DN15,2,PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the wetted zone.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,LOAD_AGG,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,docs-authority/duties/LOAD_AGG.md
-unit envelope BOM,MAU_HX,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Aluminium-fin, copper-tube make-up-air heating coil (air side dry and above the dew point in heating), 316L headers; PP condensate tray where any defrost condensate can form; water side on the issued Q3/Q4 M1 316L loop family.",docs-authority/duties/MAU_HX.md
+unit envelope BOM,MAU_HX,Body / envelope 600 x 400 x 400 mm,1,"Aluminium-fin, copper-tube make-up-air heating coil (air side dry and above the dew point in heating), 316L headers; PP condensate tray where any defrost condensate can form; water side on the issued Q3/Q4 M1 316L loop family.",docs-authority/duties/MAU_HX.md
 unit envelope BOM,MEOH_COND,Body D400 x 600 mm,1,316L shell and coil (methanol/water traces) (graph node material).,docs-authority/duties/MEOH_COND.md
 unit envelope BOM,MEOH_COND,Process nozzle DN15,3,316L shell and coil (methanol/water traces) (graph node material).,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,MEOH_FC,Body / envelope 1800 x 800 x 1600 mm,1,No wetted alloy.,docs-authority/duties/MEOH_FC.md
@@ -623,7 +623,7 @@ unit envelope BOM,PROD_C29,Body / envelope 600 x 600 x 600 mm,1,Carbon steel.,do
 unit envelope BOM,PROD_C29,Process nozzle DN15,2,Carbon steel.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,PROD_C5_C10,Body / envelope 600 x 600 x 600 mm,1,Carbon steel.,docs-authority/duties/PROD_C5_C10.md
 unit envelope BOM,PROD_C5_C10,Process nozzle DN15,4,Carbon steel.,one per mass edge; DN from AQS-INV-003
-unit envelope BOM,P_CA,Body / envelope per duty sheet section 2 (not yet dimensioned),1,PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside the wetted headspace.,docs-authority/duties/P_CA.md
+unit envelope BOM,P_CA,Body / envelope 300 x 300 x 400 mm,1,PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside the wetted headspace.,docs-authority/duties/P_CA.md
 unit envelope BOM,P_CA,Process nozzle DN15,1,PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside the wetted headspace.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,Q1_A,Body D650 x 950 mm,1,"Carbon steel, ASTM A106 Gr B, welded, spiral-wound 304/graphite gaskets; synthetic thermal oil, no water (AQS-STD-002 section 4.",docs-authority/duties/Q1_A.md
 unit envelope BOM,Q1_B,Body D650 x 950 mm,1,"Carbon steel, ASTM A106 Gr B, welded, spiral-wound 304/graphite gaskets; synthetic thermal oil, no water (AQS-STD-002 section 4.",docs-authority/duties/Q1_B.md
@@ -644,7 +644,7 @@ unit envelope BOM,ROOF_TANK,Body / envelope per duty sheet section 2 (not yet di
 unit envelope BOM,ROOF_TANK,Process nozzle DN15,20,"PVC-U or HDPE, per AQS-STD-002 rule M1.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,SALT_FEED,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/SALT_FEED.md
 unit envelope BOM,SALT_FEED,Process nozzle DN15,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
-unit envelope BOM,SI_REDUCE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel casing; dry char and silica-class feed handling; the hot face stays dry (M7).,docs-authority/duties/SI_REDUCE.md
+unit envelope BOM,SI_REDUCE,Body / envelope 1200 x 1000 x 1600 mm,1,Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel casing; dry char and silica-class feed handling; the hot face stays dry (M7).,docs-authority/duties/SI_REDUCE.md
 unit envelope BOM,SI_REDUCE,Process nozzle DN15,1,Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel casing; dry char and silica-class feed handling; the hot face stays dry (M7).,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,SOLAR_PV_CELL,Body / envelope 2400 x 1200 x 1600 mm,1,316L where the stream is wet.,docs-authority/duties/SOLAR_PV_CELL.md
 unit envelope BOM,SOLAR_PV_CELL,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
