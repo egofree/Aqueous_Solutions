@@ -14,14 +14,30 @@ import json
 import subprocess
 import sys
 from datetime import datetime, timezone
+from typing import Optional
+import importlib
+import os
 
+SP = importlib.import_module("aqs_design_tool.site_profiles")
+SC = importlib.import_module("flow_graph.param.scaling")
+SITE_PROF = importlib.import_module("flow_graph.param.site")
+PIPE = importlib.import_module("aqs_design_tool.solver.pipeline")
+
+from pydantic import BaseModel, ConfigDict
 from fastapi import FastAPI, HTTPException
+
+SP = importlib.import_module("aqs_design_tool.site_profiles")
+SC = importlib.import_module("flow_graph.param.scaling")
+SITE_PROF = importlib.import_module("flow_graph.param.site")
+PIPE = importlib.import_module("aqs_design_tool.solver.pipeline")
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from .. import SCHEMA_VERSION, __version__
 from ..export.pack import export_pack
+from ..paths import EXPORTS_DIR
 from ..models import (
+    ResidualItem, GapModel, SandboxOverrides, SolveResponse, SolveRequest,
     ExportRequest,
     ExportResponse,
     FlagsResponse,
@@ -202,6 +218,144 @@ def get_flow_graph_view(view_name: str) -> JSONResponse:
 
 
 @app.post("/api/v1/sandbox")
+@app.get("/api/v1/sites")
+def list_sites() -> dict:
+    """The locale scaling profiles a site sandbox can start from (X-UI-002 Phase 1)."""
+    out = []
+    for sid in SP.available_sites():
+        try:
+            prof = SITE_PROF.load_profile(sid)
+            acts = SC.actions(prof)
+            out.append({'site_id': sid, 'actions': len(acts),
+                        'eliminations': sum(1 for a in acts if a.get('action') == 'eliminate')})
+        except Exception as exc:  # a broken profile is listed with its error, not hidden
+            out.append({'site_id': sid, 'error': str(exc)[:120]})
+    return {'sites': out}
+
+
+class SiteSandboxRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    site_id: str
+    label: Optional[str] = None
+
+
+SiteSandboxRequest.model_rebuild()
+
+
+SR3 = importlib.import_module("flow_graph.param.site_3d")
+
+
+@app.get("/api/v1/sites/{site_id}/3d")
+def get_site_3d_manifest(site_id: str) -> dict:
+    """The site's 3D model manifest: coverage, per-unit state, level plans (built on demand)."""
+    if site_id not in [x['site_id'] for x in list_sites()['sites']] and site_id != 'baseline':
+        raise HTTPException(status_code=404, detail=f'unknown site {site_id}')
+    out = os.path.join(str(EXPORTS_DIR), f'{site_id}_3d')
+    man = os.path.join(out, 'MODEL_MANIFEST.json')
+    if not os.path.exists(man):
+        m = SR3.build(site_id, out)
+    else:
+        m = json.load(open(man))
+    return m
+
+
+_3D_FILES = ('SITE_AXO.svg', 'site_model.glb', 'MODEL_MANIFEST.json')
+
+
+@app.get("/api/v1/sites/{site_id}/3d/file/{fname}")
+def get_site_3d_file(site_id: str, fname: str):
+    """Serve a 3D artifact by whitelisted name (axo sheet, level plan, GLB)."""
+    from fastapi.responses import FileResponse
+    if site_id not in [x['site_id'] for x in list_sites()['sites']] and site_id != 'baseline':
+        raise HTTPException(status_code=404, detail=f'unknown site {site_id}')
+    if fname != 'MODEL_MANIFEST.json' and not (fname.startswith('LEVEL_') and fname.endswith('.svg')) \
+            and fname not in _3D_FILES:
+        raise HTTPException(status_code=400, detail=f'unknown 3d artifact {fname}')
+    if '/' in fname or '\\' in fname or '..' in fname:
+        raise HTTPException(status_code=400, detail='bad artifact name')
+    out = os.path.join(str(EXPORTS_DIR), f'{site_id}_3d')
+    man = os.path.join(out, 'MODEL_MANIFEST.json')
+    if not os.path.exists(man):
+        SR3.build(site_id, out)
+    path = os.path.join(out, fname)
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404, detail=f'{fname} not built for {site_id}')
+    media = ('image/svg+xml' if fname.endswith('.svg')
+             else 'model/gltf-binary' if fname.endswith('.glb') else 'application/json')
+    return FileResponse(path, media_type=media,
+                        filename=f'{site_id}_{fname}' if fname.endswith('.glb') else None)
+
+
+@app.post("/api/v1/sandbox/from-site")
+def create_sandbox_from_site(body: SiteSandboxRequest) -> dict:
+    """A scaling profile becomes a sandbox: the engine's own resolved plan as overrides,
+    the profile's replacement placements stamped with their site sizing."""
+    try:
+        sp = SP.site_overrides(body.site_id)
+        place_units = SP.site_placement_units(body.site_id)
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=f"site profile {body.site_id}: {exc}") from exc
+    if sp['errors']:
+        raise HTTPException(status_code=422, detail={'site_id': body.site_id, 'errors': sp['errors']})
+    overrides = SandboxOverrides(**sp['overrides'])
+    base = load_mvs_from_graph()
+    # fold in the placement units (sizing + provenance from the placement model);
+    # units already carried by the graph get their site sizing stamped instead
+    by_id = {u.unit_id: u for u in base.units}
+    for pu in place_units:
+        if pu['unit_id'] in by_id:
+            u = by_id[pu['unit_id']]
+            u.params = {**(u.params or {}), **pu['params']}
+        else:
+            base.units.append(UnitModel(**pu))
+    rec = STORE.create(overrides=overrides, label=body.label or f"site:{body.site_id}",
+                       base=base, site_profile=body.site_id)
+    return {
+        "sandbox_id": rec.sandbox_id,
+        "label": rec.label,
+        "site_id": body.site_id,
+        "applied": sp['applied'],
+        "unapplied": sp['unapplied'],
+        "replacement_of": sp['replacement_of'],
+        "placement_units": [p['unit_id'] for p in place_units],
+        "parent_mvs_revision": rec.parent_mvs_revision,
+        "model": rec.model.model_dump(by_alias=True, mode="json"),
+    }
+
+
+@app.post("/api/v1/sandbox/{sandbox_id}/solve-pipeline", response_model=SolveResponse)
+def solve_sandbox_pipeline(sandbox_id: str) -> SolveResponse:
+    """The REAL X-PAR-02 balance on the sandbox fold: true residuals, never smoothed."""
+    try:
+        rec = STORE.get(sandbox_id)
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail=f"Unknown sandbox {sandbox_id}") from exc
+    units = [u.model_dump(by_alias=True) for u in rec.model.units]
+    res = PIPE.solve_mass(units, sandbox_id=sandbox_id)
+    elec, egaps = {}, []
+    if rec.site_profile:
+        try:
+            er = PIPE.solve_electrical(rec.model.electrical.model_dump(by_alias=True),
+                                       units, rec.site_profile,
+                                       disabled={u['unit_id'] for u in units
+                                                 if not u.get('enabled', True)})
+            elec = er['electrical_match']
+            egaps = [GapModel(sector_definition='site electrical', reason=gap) for gap in er['gaps']]
+        except Exception as exc:  # a broken profile section is a named error, not a silent one
+            egaps = [GapModel(sector_definition='site electrical',
+                              reason=f'electrical match failed: {exc}')]
+    result = SolveResponse(
+        status=res['status'],
+        sandbox_id=sandbox_id,
+        residuals={'mass': [ResidualItem(**r) for r in res['residuals']['mass']]},
+        electrical_match=elec,
+        gaps=[GapModel(sector_definition='pipeline solve', reason=res['note'])] + egaps,
+    )
+    STORE.set_solve(sandbox_id, result)
+    return result
+
+
 def create_sandbox(body: SandboxCreateRequest | None = None) -> dict:
     body = body or SandboxCreateRequest()
     rec = STORE.create(overrides=body.overrides, label=body.label)

@@ -1,10 +1,10 @@
 # LI_RECOVER fabrication
 
 Class: separator; sector DIGESTER. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
-service line: see the duty sheet section 1 basis
+Envelope: Envelope 200×200×800 mm;
+service line: duty carbonate the POLISH_BANK LiOH slipstream -> the lithium thickener (feeds GREASE_LI); slipstream_kgd 0.5.
 
-Internals: duty sheet: "3. Material. PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the wet" [docs-authority/duties/LI_RECOVER.md]
+Internals: issued mfg model BOM (2 internals part row): "x 200 x 800 mm,1,PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the" [models/mfg/LI_RECOVER/bom.csv]
 Material: PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the wetted zone. (continues on the duty sheet)
 
 Nozzles: 2 process connections per docs-authority/nozzles/LI_RECOVER.csv

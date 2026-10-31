@@ -16,7 +16,7 @@ The foundation carries the weight of the building, its equipment and its stored 
 
 ## 2. Basis
 
-The foundation is a single concrete mat (raft) under the whole 24 x 18 m plate, at 18.2 m below grade, which is the floor level of CATCH_TANK (AQS-BLD-014). The soil properties are those assumed in AQS-SITE-002: an expansive clay with a presumptive allowable bearing pressure of 72 kPa (IBC 1806.2) and a unit weight of 18 kN/m3. The bearing pressure is an assumption until a geotechnical investigation is made to IBC 1803. The groundwater is taken at 0.0 m, the worst case.
+The foundation is a single concrete mat (raft) under the whole 24 x 18 m plate, at 18.1 m below grade, which is the floor level of CATCH_TANK (AQS-BLD-014). The soil properties are those assumed in AQS-SITE-002: an expansive clay with a presumptive allowable bearing pressure of 72 kPa (IBC 1806.2) and a unit weight of 18 kN/m3. The bearing pressure is an assumption until a geotechnical investigation is made to IBC 1803. The groundwater is taken at 0.0 m, the worst case.
 
 ## 3. Checks
 
@@ -26,16 +26,16 @@ Table 3.1. Foundation checks
 
 | Check | Demand | Capacity | Result |
 |---|---|---|---|
-| Service weight D + F + L | 149,907 kN (equipment and water 65,425, slabs 24,883, raft 29,030, walls 19,919, columns 911) | - | - |
+| Service weight D + F + L | 150,087 kN (equipment and water 66,642, slabs 24,883, raft 27,994, walls 19,919, columns 911) | - | - |
 | Gross bearing | 347 kPa | - | - |
-| Net bearing (gross - 327 kPa excavated overburden) | 20 kPa | 216 kPa (72 x depth increase, IBC 1806.3.1) | pass |
-| Seismic overturning, M = 72,687 kNm, e = 0.48 m (B/6 = 3.00) | net toe 76 kPa | 216 kPa | pass |
-| Uplift, plant empty and reservoirs drained, groundwater at 0.0 m | 76,967 kN | 84,677 kN, FS 1.10 (need 1.10) | pass |
-| Raft two-way shear at the interior column (Pu 8252 kN, column 470 mm) | 8252 kN | phiVc 8610 kN at t = 1.10 m | pass |
-| Raft thickness adopted | shear 1.10 m + uplift ballast 1.70 m | 2.80 m | - |
+| Net bearing (gross - 325 kPa excavated overburden) | 22 kPa | 216 kPa (72 x depth increase, IBC 1806.3.1) | pass |
+| Seismic overturning, M = 72,522 kNm, e = 0.48 m (B/6 = 3.00) | net toe 78 kPa | 216 kPa | pass |
+| Uplift, plant empty and reservoirs drained, groundwater at 0.0 m | 76,544 kN | 84,462 kN, FS 1.10 (need 1.10) | pass |
+| Raft two-way shear at the interior column (Pu 8324 kN, column 470 mm) | 8324 kN | phiVc 8610 kN at t = 1.10 m | pass |
+| Raft thickness adopted | shear 1.10 m + uplift ballast 1.60 m | 2.70 m | - |
 
 ## 4. Discussion
 
-The basement is a compensated foundation: the soil removed for it weighs about as much as the building, so the net bearing pressure on the clay is low. Uplift governs the thickness of the raft. With groundwater at grade, the empty structure would be lifted by the water, so the raft is thickened by 1.70 m to act as ballast. A permanently drained basement, with an underdrain to the CATCH_TANK sump, or tension piles would remove the need for this ballast; the choice waits on a measurement of the groundwater level.
+The basement is a compensated foundation: the soil removed for it weighs about as much as the building, so the net bearing pressure on the clay is low. Uplift governs the thickness of the raft. With groundwater at grade, the empty structure would be lifted by the water, so the raft is thickened by 1.60 m to act as ballast. A permanently drained basement, with an underdrain to the CATCH_TANK sump, or tension piles would remove the need for this ballast; the choice waits on a measurement of the groundwater level.
 
 Expansive clay swells and shrinks with its moisture content (IBC 1808.6). At this depth the raft bears below the active zone in which that movement occurs, and the slab-on-grade around the building is separated from the structure.

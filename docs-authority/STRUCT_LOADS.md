@@ -9,10 +9,11 @@ Empty = design steel where known, else envelope x 150 kg/m3; operating adds liqu
 
 | Level | Units | Footprint m2 | Empty kN | Operating kN | Test kN | Operating kPa on footprint | 1.2 D + 1.6 L kN (ops) |
 |---|---|---|---|---|---|---|---|
-| L-1 | 64 | 77.0 | 195 | 364 | 464 | 4.7 | 503 |
-| L-2 | 2 | 368.2 | 1394 | 23153 | 36209 | 62.9 | 36488 |
-| L0 | 59 | 142.3 | 179 | 445 | 604 | 3.1 | 640 |
-| L1 | 50 | 280.9 | 395 | 678 | 849 | 2.4 | 928 |
+| L-1 | 69 | 90.2 | 217 | 454 | 596 | 5.0 | 639 |
+| L-2 | 1 | 367.2 | 1393 | 23152 | 36207 | 63.0 | 36486 |
+| L0 | 128 | 217.8 | 360 | 927 | 1268 | 4.3 | 1340 |
+| L1 | 73 | 693.4 | 1012 | 1322 | 1508 | 1.9 | 1710 |
+| L2 | 3 | 1.3 | 2 | 2 | 2 | 1.5 | 2 |
 | R1 | 1 | 367.2 | 864 | 11869 | 11869 | 32.3 | 18644 |
 | R2 | 1 | 367.2 | 864 | 11869 | 11869 | 32.3 | 18644 |
 | R3 | 1 | 367.2 | 864 | 11869 | 11869 | 32.3 | 18644 |
@@ -27,6 +28,8 @@ Empty = design steel where known, else envelope x 150 kg/m3; operating adds liqu
 | HYDRO_RES_R2 | R2 | 864.2 | 11868.7 | 11868.7 |
 | HYDRO_RES_R3 | R3 | 864.2 | 11868.7 | 11868.7 |
 | PV_ARRAY | ROOF | 5178.2 | 5178.2 | 5178.2 |
+| DUCKWEED | L1 | 313.0 | 313.0 | 313.0 |
+| EVAP_ACID | L0 | 12.0 | 61.9 | 91.9 |
 | EVAP_ACID | L-1 | 12.0 | 61.9 | 91.9 |
 | GROW_BED/R1 | L1 | 10.7 | 55.3 | 82.0 |
 | GROW_BED/R2 | L1 | 10.7 | 55.3 | 82.0 |
@@ -35,27 +38,12 @@ Empty = design steel where known, else envelope x 150 kg/m3; operating adds liqu
 | GROW_BED/R5 | L1 | 10.7 | 55.3 | 82.0 |
 | GROW_BED/R6 | L1 | 10.7 | 55.3 | 82.0 |
 | GROW_BED/R7 | L0 | 10.7 | 55.3 | 82.0 |
-| GROW_BED/R8 | L0 | 10.7 | 55.3 | 82.0 |
-| GROW_BED/R9 | L0 | 10.7 | 55.3 | 82.0 |
 
 ## Need-based envelopes (A-M-199)
 
 | Unit | L x W x H mm | Basis |
 |---|---|---|
-| AFTERBURNER | 600 x 600 x 1200 | A-M-199 thermal: chamber ID 200 x 600 mm plus refractory and burner; hold-up 0.00 m3 |
-| BAGHOUSE | 800 x 800 x 2000 | A-M-199 baghouse: filter bags 2 m long, hopper below; hold-up 0.00 m3 |
-| COLD_MILL | 1500 x 800 x 1500 | A-M-199 forming: bench forming machine with guards; hold-up 0.00 m3 |
-| CRYO_AHU | 1500 x 900 x 1200 | A-M-199 ahu: fan, coil and filter bank in series at the duty air flow; hold-up 0.00 m3 |
-| CRYO_DED_COOL | 800 x 600 x 1200 | A-M-199 cool: dedicated chiller module; hold-up 0.00 m3 |
-| CRYO_N2 | 800 x 800 x 2500 | A-M-199 cold_box: packed column in a vacuum jacket; hold-up 0.00 m3 |
-| FLOAT_SINK | 1200 x 800 x 1500 | A-M-199 separator: float-sink bath, 1 h hold-up, two dewatering screens; hold-up 0.01 m3 |
-| GAS_ATOMIZER | 1500 x 800 x 1500 | A-M-199 forming: bench forming machine with guards; hold-up 0.00 m3 |
-| HYDRO_SET | 1200 x 800 x 1200 | A-M-199 hydro: pump-turbine, generator and inlet valve on one bedplate; hold-up 0.00 m3 |
-| MET_MELT | 1000 x 1000 x 1500 | A-M-199 melt: induction crucible and pouring frame; hold-up 0.00 m3 |
-| OIL_DRYER | 800 x 600 x 1200 | A-M-199 dryer: 1 h hold-up, heated chamber; hold-up 0.00 m3 |
-| SALT_FEED | 800 x 600 x 1200 | A-M-199 feed: one week of salt make-up; hold-up 0.00 m3 |
-| WIRE_DRAW | 1500 x 800 x 1500 | A-M-199 forming: bench forming machine with guards; hold-up 0.00 m3 |
 
-Units placed only by a block-sized report move are loaded at their graph size_mm (21 rows); with no graph size they are not loaded and listed here: AFTERBURNER_FLUE, BMED_ACID, BMED_BASE, CRU, GLASS_DIGEST, MFG_SHOP, OIL_FRAC, OIL_PYRO, POLISH_BANK, ROOF_TANK, WAFER_FAB, WET_BENCH. HABITATION is a room and is carried as floor live load (ASCE 7 Table 4.3-1), not as equipment.
+Units placed only by a block-sized report move are loaded at their graph size_mm (0 rows); with no graph size they are not loaded and listed here: none. HABITATION is a room and is carried as floor live load (ASCE 7 Table 4.3-1), not as equipment.
 
 The point loads feed X-BLD-01 (frame members) and X-BLD-03 (foundations). The ASCE7_22 Table 4.3-1 flat-roof and floor live loads are added there, not here.

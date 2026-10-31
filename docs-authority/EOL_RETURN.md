@@ -12,238 +12,183 @@ Classes are the seven of AQS-ASSAY-001 section 1; material names follow the AQS-
 | B | Honesty pass: no silently unassigned line. Envelope lines classed from the unit duty sheet section 3 where it exists; instruments, coils and the bought gearmotor classed by keyword; PFA added to the fluoropolymer hold; every remaining unassigned line held with the pending unit task named. | 2026-10-19 |
 | C | Duty-sheet sweep (the 2026-10-19/20 duty-sheet issue wave): the 44 units that waited on a duty sheet are swept; unassigned 89 -> 73 and every residual line carries a named hold: 70 lines wait on the section-3 material selection at unit task 09 (across the AQS-ASSAY-001 Rev C bounding cases, AQS-STD-002), 2 lines wait on the HCL_BURNER duty sheet (unit task 01), 1 pointer row. 159 held total. Not closed: no material selection is invented for lines whose duty sheet says pending. | 2026-10-21 |
 | D | X-MAT-22 (AQS-STD-006/MATERIALS_SEC3.md): the 38 held units have issued duty section 3 material selections, so the 70 duty-sheet-pending lines class from the section 3 keyword text (graphite, alumina/refractory, steels, PVDF/PTFE/PE/PP/UHMW). Unassigned 73 -> 3 (2 lines wait on the HCL_BURNER duty sheet at unit task 01, 1 pointer row); held total 159 -> 101 (fluoropolymer 67, Ti 25 + Nd/Dy 5, Pt-Rh 1, unassigned 3). Material-proxy classing by section 3 keyword, not by measured mass; unit masses still pending. | 2026-10-21 |
+| E | Retired-unit close-out and roster correction: the HCL_BURNER placeholder stubs left with the retired unit (A-M-255); the superseded unit envelope BOMs (units whose CAD BOM now lives in models/mfg) and the envelope BOMs of units no longer in the graph (the M2 roster the Rev AC re-solve retired) are removed with them - the unit envelope BOM belongs only to a present unit without a CAD BOM (_unit_boms contract). The plant BOM rosters from the graph (present units): the machine models of retired units stay on disk as artifacts, and retired units leave the bill of materials. Source-data defects fixed: three BOM rows had unquoted commas that shifted their material column (WAX_PATTERN, FLUX_PREP). Every remaining unassigned line is a named hold, not a gap: the standby machines awaiting their unit task 10/12 designs (owner programme gate), the AQS-INV-004 fabricated-part pointer row, and the composition holds (fluoropolymer, Ti, Nd/Dy, Pt-Rh recovery units). The live tally is in the class table above and `docs-authority/inventory/EOL_RETURN.csv`. | 2026-10-29 |
 
 At end of life each part goes back into the plant as feed of its class, through the same dock and assay as any other lot. Classing is by BOM line (count), not mass; the mass split waits for unit weights.
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 557 | 45 % |
-| organic | 498 | 40 % |
-| metal_reactive | 81 | 7 % |
-| silicate_oxide | 52 | 4 % |
-| unassigned | 47 | 4 % |
+| metal_plateable | 2084 | 60 % |
+| organic | 1088 | 31 % |
+| silicate_oxide | 170 | 5 % |
+| metal_reactive | 123 | 4 % |
+| unassigned | 23 | 1 % |
 
-Unassigned: 47 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
+Unassigned: 23 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
 
 ## Held lines (no route in the present plant, or material pending)
 
 | Reason | Lines |
 |---|---|
-| fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for | 85 |
-| held - material not identified on the line | 43 |
-| Ti is not leached at the plant acid strength: held, re-used as cathode blanks | 25 |
+| held - material not stated on the line | 13 |
+| held - standby machine, envelope-only placeholder; material issues at its unit task 10/12 design (owner programme gate) | 9 |
 | Nd/Dy recovery has no unit: held in cake | 5 |
-| held - material pending: no duty sheet yet; assigned at unit task 09 under AQS-STD-002 | 2 |
-| Pt-Rh is not in the plateable set and has no recovery unit: gauze kept and re-drawn in house | 1 |
-| held - material not stated on the line | 1 |
 | held - pointer line: these parts are classed line by line in their unit BOMs (AQS-INV-004 roll-up) | 1 |
 
 Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) cannot go to OIL_PYRO because the HF is outside the scrubber design basis; options are mechanical re-use as regrind for non-pressure parts, or an HF-rated scrubber stage. NdFeB magnets sit in the precipitate cake with no recovery unit; the ferrite motor variant (AQS-INV-005) removes this hold. Titanium cathode blanks are re-used directly.
 
 ## Per unit (lines by class)
 
-| Unit | metal_plateable | organic | metal_reactive | silicate_oxide | unassigned |
+| Unit | metal_plateable | organic | silicate_oxide | metal_reactive | unassigned |
 |---|---|---|---|---|---|
-| ABE | 0 | 6 | 0 | 0 | 0 |
-| ACETOX | 0 | 6 | 0 | 0 | 0 |
-| ACEX | 0 | 6 | 0 | 0 | 0 |
-| ACID_POLISH_SCRUB | 0 | 3 | 0 | 0 | 0 |
-| ADS_CHILL | 0 | 1 | 0 | 0 | 0 |
-| AFTERBURNER | 2 | 0 | 0 | 0 | 0 |
-| AFTERBURNER_FLUE | 2 | 0 | 0 | 0 | 0 |
-| AIR_RECEIVER | 2 | 0 | 0 | 0 | 0 |
-| ALD | 3 | 1 | 0 | 3 | 0 |
-| ALK_SCRUBBER | 0 | 3 | 0 | 0 | 0 |
-| AL_POT | 4 | 6 | 0 | 4 | 4 |
-| AMF | 0 | 3 | 0 | 0 | 0 |
-| ANIMAL_PEN | 0 | 4 | 0 | 0 | 0 |
-| ASH | 0 | 3 | 0 | 0 | 0 |
-| AZOLLA | 0 | 3 | 0 | 0 | 0 |
-| AZOLLA_BED | 0 | 3 | 0 | 0 | 0 |
-| BACKUP_GEN | 2 | 0 | 0 | 0 | 0 |
-| BAGHOUSE | 3 | 0 | 0 | 0 | 0 |
-| BEES | 0 | 3 | 0 | 0 | 0 |
-| BIOFILTER | 0 | 5 | 0 | 0 | 0 |
-| BLACK_ALK_HOLD | 0 | 5 | 0 | 0 | 0 |
-| BLACK_DEWATER | 2 | 2 | 0 | 0 | 0 |
+| ACID_POLISH_SCRUB | 13 | 15 | 1 | 0 | 0 |
+| ADS_CHILL | 0 | 2 | 0 | 0 | 0 |
+| AFTERBURNER | 20 | 2 | 2 | 0 | 0 |
+| AFTERBURNER_FLUE | 7 | 2 | 3 | 0 | 0 |
+| AIR_RECEIVER | 6 | 2 | 2 | 0 | 0 |
+| ALK_SCRUBBER | 8 | 9 | 1 | 0 | 0 |
+| AL_POT | 6 | 6 | 4 | 0 | 0 |
+| AQUA_TANK | 0 | 3 | 0 | 0 | 0 |
+| AQUA_UV | 3 | 0 | 0 | 0 | 0 |
+| BACKUP_GEN | 16 | 3 | 2 | 0 | 2 |
+| BAGHOUSE | 19 | 4 | 1 | 0 | 0 |
+| BEE_HIVE | 0 | 5 | 0 | 0 | 0 |
+| BIOFILTER | 0 | 4 | 0 | 0 | 0 |
 | BLACK_DIGEST | 1 | 5 | 0 | 0 | 0 |
-| BLACK_PASTEUR | 3 | 1 | 0 | 1 | 0 |
-| BLOW_MOLD | 2 | 0 | 0 | 0 | 0 |
-| BMED_ACID | 0 | 2 | 0 | 0 | 0 |
-| BMED_BASE | 0 | 2 | 0 | 0 | 0 |
-| BMED_UPW_POLISH | 2 | 0 | 0 | 0 | 0 |
-| BOARD_MILL | 4 | 0 | 0 | 0 | 0 |
-| BSFL | 0 | 4 | 0 | 0 | 0 |
-| BUCL | 0 | 2 | 0 | 5 | 0 |
-| BUOH_STILL | 0 | 0 | 0 | 3 | 0 |
-| C29_RECYCLE | 2 | 0 | 0 | 0 | 0 |
-| CAST_LINE | 12 | 4 | 0 | 1 | 0 |
-| CATCH_TANK | 0 | 2 | 0 | 0 | 0 |
-| CA_POT | 3 | 3 | 0 | 2 | 1 |
-| CHICKENS | 0 | 3 | 0 | 0 | 0 |
-| CLARIFIER | 0 | 4 | 0 | 0 | 0 |
-| CLOVER | 0 | 3 | 0 | 0 | 0 |
-| COLD_MILL | 2 | 0 | 0 | 0 | 0 |
-| COMB_HEAT | 0 | 0 | 0 | 2 | 1 |
-| COMPOST | 0 | 4 | 0 | 0 | 0 |
-| COMPOST_MYC | 0 | 3 | 0 | 0 | 0 |
-| COMPOST_TOILET | 0 | 3 | 0 | 0 | 0 |
-| CONTINUOUS_RECYCLE | 0 | 2 | 0 | 0 | 0 |
-| CONT_CAST | 5 | 2 | 0 | 0 | 0 |
-| CRAYFISH | 0 | 4 | 0 | 0 | 0 |
-| CROP_ALLIUM | 0 | 3 | 0 | 0 | 0 |
-| CROP_BASIL | 0 | 3 | 0 | 0 | 0 |
-| CROP_CUCUMBER | 0 | 3 | 0 | 0 | 0 |
-| CROP_KALE | 0 | 3 | 0 | 0 | 0 |
-| CROP_LETTUCE | 0 | 3 | 0 | 0 | 0 |
-| CROP_PEPPER | 0 | 3 | 0 | 0 | 0 |
-| CROP_ROSEMARY | 0 | 3 | 0 | 0 | 0 |
-| CROP_SPINACH | 0 | 3 | 0 | 0 | 0 |
-| CROP_TOMATO | 0 | 3 | 0 | 0 | 0 |
-| CRU | 0 | 2 | 0 | 0 | 0 |
-| CRYO_AHU | 2 | 0 | 0 | 0 | 0 |
-| CRYO_AHU_COND_CONDENSABLE | 2 | 0 | 0 | 0 | 0 |
-| CRYO_AR | 3 | 0 | 0 | 0 | 0 |
-| CRYO_ASU | 3 | 0 | 0 | 0 | 0 |
-| CRYO_CO2 | 3 | 0 | 0 | 0 | 0 |
-| CRYO_DED_COOL | 2 | 0 | 0 | 0 | 0 |
-| CRYO_H2 | 3 | 0 | 0 | 0 | 0 |
-| CRYO_HE | 3 | 0 | 0 | 0 | 0 |
-| CRYO_HX_Q4 | 1 | 0 | 0 | 0 | 0 |
-| CRYO_KR | 3 | 0 | 0 | 0 | 0 |
-| CRYO_N2 | 3 | 0 | 0 | 0 | 0 |
-| CRYO_NE | 3 | 0 | 0 | 0 | 0 |
-| CRYO_O2 | 4 | 0 | 0 | 0 | 0 |
-| CRYO_XE | 3 | 0 | 0 | 0 | 0 |
-| CR_CELL | 3 | 3 | 0 | 2 | 1 |
-| CURTAIL | 2 | 0 | 0 | 0 | 0 |
-| DIGESTER | 0 | 6 | 0 | 0 | 0 |
-| DRAW | 2 | 0 | 0 | 0 | 1 |
-| DRY_COOLER | 0 | 0 | 2 | 0 | 0 |
-| DUAL_ROOT | 0 | 3 | 0 | 0 | 0 |
-| DUCKWEED | 0 | 3 | 0 | 0 | 0 |
-| ELECTRODE_COAT | 2 | 0 | 0 | 0 | 0 |
-| EMETH | 0 | 4 | 0 | 0 | 0 |
-| ETOH_STILL | 0 | 0 | 0 | 3 | 0 |
-| EVAP_ACID | 1 | 9 | 1 | 0 | 0 |
+| BLOW_MOLD | 5 | 0 | 1 | 0 | 0 |
+| BMED_ACID | 22 | 18 | 1 | 0 | 0 |
+| BMED_BASE | 22 | 18 | 1 | 0 | 0 |
+| BMED_UPW_POLISH | 22 | 17 | 1 | 0 | 0 |
+| BSFL_BIN | 0 | 1 | 0 | 0 | 0 |
+| C29_RECYCLE | 9 | 1 | 1 | 0 | 0 |
+| CAST_LINE | 12 | 2 | 1 | 0 | 0 |
+| CATCH_TANK | 4 | 9 | 1 | 0 | 0 |
+| CA_POT | 8 | 6 | 2 | 0 | 0 |
+| CHICKEN_COOP | 6 | 0 | 0 | 0 | 0 |
+| COLD_MILL | 10 | 0 | 1 | 0 | 0 |
+| COMB_HEAT | 0 | 0 | 0 | 0 | 1 |
+| COMMON_AREA | 0 | 0 | 0 | 5 | 0 |
+| CONTINUOUS_RECYCLE | 3 | 7 | 1 | 0 | 0 |
+| CONT_CAST | 9 | 0 | 0 | 0 | 0 |
+| CRU | 13 | 13 | 2 | 0 | 0 |
+| CRYO_AHU | 27 | 10 | 1 | 0 | 0 |
+| CRYO_AHU_COND_CONDENSABLE | 10 | 4 | 1 | 0 | 0 |
+| CRYO_ASU | 26 | 0 | 3 | 0 | 0 |
+| CRYO_CO2 | 18 | 0 | 1 | 0 | 0 |
+| CRYO_DED_COOL | 6 | 2 | 1 | 0 | 0 |
+| CRYO_H2 | 23 | 0 | 0 | 0 | 0 |
+| CRYO_HX_Q4 | 3 | 0 | 1 | 0 | 0 |
+| CRYO_N2 | 20 | 2 | 2 | 0 | 0 |
+| CRYO_O2 | 21 | 2 | 1 | 0 | 0 |
+| CR_CELL | 7 | 6 | 3 | 0 | 0 |
+| DRAW | 0 | 0 | 0 | 0 | 1 |
+| DRY_COOLER | 2 | 2 | 1 | 4 | 0 |
+| DUCKWEED | 0 | 2 | 0 | 0 | 0 |
+| DUCK_PEN | 5 | 0 | 0 | 0 | 0 |
+| ELECTRODE_COAT | 5 | 0 | 1 | 0 | 0 |
+| EVAP_ACID | 1 | 9 | 0 | 1 | 0 |
 | EVAP_ACID_VS | 0 | 8 | 0 | 0 | 0 |
-| EVAP_BASE | 5 | 3 | 1 | 0 | 0 |
-| EW_1 | 0 | 0 | 3 | 0 | 0 |
-| EW_2 | 0 | 0 | 3 | 0 | 0 |
-| EW_3 | 0 | 0 | 2 | 0 | 0 |
-| EW_4 | 0 | 0 | 3 | 0 | 0 |
-| EW_5 | 0 | 0 | 2 | 0 | 0 |
-| EW_6 | 0 | 0 | 2 | 0 | 0 |
-| EW_7 | 0 | 0 | 2 | 0 | 0 |
-| EW_8 | 0 | 0 | 2 | 0 | 0 |
-| EW_9 | 0 | 0 | 2 | 0 | 0 |
-| EXPANDER | 13 | 0 | 0 | 0 | 0 |
-| EXTRUDE | 2 | 0 | 0 | 0 | 1 |
-| EXT_HALL | 1 | 0 | 0 | 0 | 0 |
-| FAB_UPW_TANK | 0 | 0 | 0 | 0 | 2 |
-| FILM_CAST | 7 | 0 | 0 | 0 | 1 |
-| FISH | 0 | 5 | 0 | 0 | 0 |
-| FISH_SUMP | 0 | 4 | 0 | 0 | 0 |
-| FLOAT_SINK | 0 | 3 | 0 | 0 | 0 |
-| FLUE_KO | 0 | 3 | 0 | 0 | 0 |
-| FLUX_PREP | 2 | 4 | 0 | 0 | 0 |
-| FOOD_STORE | 0 | 0 | 0 | 0 | 2 |
-| FORGE | 1 | 0 | 0 | 0 | 1 |
-| FORM | 4 | 1 | 0 | 3 | 0 |
-| FRUIT_GUTTER | 0 | 3 | 0 | 0 | 0 |
-| FUEL_CELL | 3 | 0 | 0 | 0 | 0 |
-| F_RECOVER | 0 | 2 | 0 | 0 | 0 |
-| GAS_ATOMIZER | 2 | 0 | 0 | 0 | 0 |
-| GEO_GHEX | 0 | 2 | 0 | 0 | 0 |
-| GEO_HP | 1 | 0 | 0 | 0 | 0 |
-| GEO_HP_CLOSED_LOOP | 0 | 2 | 0 | 0 | 0 |
-| GEO_ORC | 2 | 0 | 0 | 0 | 0 |
-| GLASS_BURNOUT | 2 | 0 | 0 | 0 | 0 |
+| EVAP_BASE | 5 | 3 | 0 | 1 | 0 |
+| EW_1 | 22 | 22 | 2 | 6 | 0 |
+| EW_2 | 21 | 18 | 2 | 6 | 0 |
+| EW_3 | 15 | 14 | 2 | 4 | 0 |
+| EW_4 | 15 | 18 | 2 | 6 | 0 |
+| EW_5 | 15 | 14 | 2 | 4 | 0 |
+| EW_6 | 15 | 14 | 2 | 4 | 0 |
+| EW_7 | 20 | 14 | 2 | 4 | 0 |
+| EW_8 | 15 | 14 | 2 | 4 | 0 |
+| EW_9 | 21 | 18 | 2 | 4 | 0 |
+| EXTRUDE | 0 | 0 | 0 | 0 | 1 |
+| EXT_HALL | 23 | 0 | 0 | 0 | 0 |
+| FAB_UPW_TANK | 10 | 9 | 1 | 0 | 0 |
+| FEED_PREP | 4 | 0 | 0 | 0 | 0 |
+| FILM_CAST | 8 | 1 | 0 | 0 | 0 |
+| FLOAT_SINK | 12 | 15 | 1 | 0 | 0 |
+| FLUE_KO | 6 | 9 | 3 | 0 | 0 |
+| FLUX_PREP | 6 | 0 | 0 | 0 | 0 |
+| FOOD_STORE | 4 | 10 | 1 | 0 | 0 |
+| FORGE | 0 | 0 | 0 | 0 | 1 |
+| FUEL_CELL | 25 | 12 | 2 | 0 | 3 |
+| F_RECOVER | 7 | 9 | 1 | 0 | 0 |
+| GALLEY | 0 | 0 | 0 | 5 | 0 |
+| GAS_ATOMIZER | 10 | 0 | 1 | 0 | 0 |
+| GEO_GHEX | 2 | 6 | 1 | 0 | 0 |
+| GEO_HP | 12 | 0 | 1 | 0 | 0 |
+| GEO_HP_CLOSED_LOOP | 1 | 4 | 1 | 0 | 0 |
+| GLASS_BURNOUT | 11 | 0 | 1 | 0 | 0 |
 | GLASS_DIGEST | 0 | 6 | 0 | 0 | 0 |
-| GLASS_MILL | 2 | 0 | 0 | 0 | 0 |
-| GLASS_RINSE | 2 | 0 | 0 | 0 | 0 |
-| GLYOXAL | 3 | 2 | 0 | 1 | 0 |
-| GOATS | 0 | 3 | 0 | 0 | 0 |
-| GREASE_CA | 2 | 0 | 0 | 0 | 0 |
-| GREASE_LI | 2 | 0 | 0 | 0 | 0 |
-| GREY_TREAT | 0 | 3 | 0 | 0 | 0 |
-| GROW_BED | 0 | 2 | 0 | 0 | 0 |
-| GW_INTAKE | 0 | 0 | 0 | 0 | 2 |
-| H2O_ELYZ | 1 | 2 | 0 | 0 | 0 |
-| H2_DRYER | 0 | 2 | 0 | 0 | 0 |
-| H2_PURIFIER | 3 | 0 | 0 | 0 | 0 |
-| HABITATION | 3 | 0 | 0 | 0 | 0 |
-| HAB_GALLEY | 0 | 3 | 0 | 0 | 0 |
-| HAB_MED | 0 | 3 | 0 | 0 | 0 |
-| HAB_SLEEP | 0 | 3 | 0 | 0 | 0 |
-| HAB_WASH | 0 | 3 | 0 | 0 | 0 |
-| HCL_BURNER | 1 | 0 | 0 | 0 | 2 |
-| HEAT_SINK | 2 | 0 | 0 | 0 | 0 |
-| HF_GEN | 4 | 2 | 0 | 1 | 2 |
-| HNO3 | 6 | 1 | 0 | 0 | 0 |
-| HOPPER | 2 | 0 | 0 | 0 | 0 |
-| HTC | 4 | 1 | 0 | 2 | 0 |
-| HX8 | 0 | 1 | 0 | 0 | 0 |
-| HYDRO_SET | 1 | 0 | 0 | 0 | 0 |
-| IMID | 3 | 2 | 0 | 1 | 0 |
-| IND_MELT | 6 | 2 | 0 | 1 | 0 |
-| INV_CAST | 3 | 2 | 0 | 1 | 1 |
-| IODIDE | 0 | 3 | 0 | 0 | 0 |
-| LEACH_CSTR_1 | 1 | 15 | 0 | 1 | 0 |
-| LIGNO_PRE | 0 | 4 | 0 | 0 | 0 |
-| LITHO_ALIGN | 1 | 0 | 0 | 0 | 0 |
-| LITHO_COAT | 2 | 0 | 0 | 0 | 0 |
-| LITHO_DEV | 2 | 0 | 0 | 0 | 0 |
-| LITHO_STUB | 2 | 0 | 0 | 0 | 0 |
-| LI_RECOVER | 0 | 2 | 0 | 0 | 0 |
-| LOAD_AGG | 1 | 0 | 0 | 0 | 0 |
-| MAU_HX | 0 | 0 | 1 | 0 | 0 |
-| MEAM | 4 | 1 | 0 | 3 | 0 |
-| MEOH_COND | 2 | 0 | 0 | 0 | 0 |
-| MEOH_FC | 2 | 0 | 0 | 0 | 0 |
+| GLASS_MILL | 5 | 0 | 1 | 0 | 0 |
+| GLASS_RINSE | 5 | 0 | 1 | 0 | 0 |
+| GREASE_CA | 6 | 1 | 1 | 0 | 0 |
+| GREASE_LI | 6 | 1 | 1 | 0 | 0 |
+| GREY_TREAT | 13 | 19 | 1 | 0 | 0 |
+| GROWBED_A | 0 | 2 | 0 | 0 | 0 |
+| GROWBED_B | 0 | 2 | 0 | 0 | 0 |
+| GROW_BED | 20 | 31 | 1 | 0 | 0 |
+| GW_INTAKE | 2 | 6 | 1 | 0 | 0 |
+| H2O_ELYZ | 11 | 5 | 2 | 0 | 0 |
+| H2_DRYER | 16 | 9 | 1 | 0 | 0 |
+| HABITATION | 19 | 17 | 2 | 0 | 0 |
+| HDR_CO2 | 1 | 0 | 0 | 0 | 0 |
+| HDR_H2 | 0 | 1 | 0 | 0 | 0 |
+| HDR_N2 | 1 | 0 | 0 | 0 | 0 |
+| HDR_O2 | 1 | 0 | 0 | 0 | 0 |
+| HDR_UPW | 0 | 1 | 0 | 0 | 0 |
+| HF_GEN | 4 | 2 | 1 | 0 | 0 |
+| HOPPER | 20 | 4 | 1 | 0 | 0 |
+| HX8 | 13 | 2 | 1 | 0 | 0 |
+| HYDRO_SET | 8 | 1 | 1 | 0 | 0 |
+| IND_MELT | 6 | 3 | 3 | 0 | 0 |
+| INV_CAST | 7 | 0 | 1 | 0 | 0 |
+| LEACH_CSTR_1 | 1 | 15 | 1 | 0 | 0 |
+| LITHO_ALIGN | 3 | 0 | 1 | 0 | 0 |
+| LITHO_COAT | 5 | 0 | 1 | 0 | 0 |
+| LITHO_DEV | 14 | 1 | 1 | 0 | 0 |
+| LI_RECOVER | 2 | 5 | 1 | 0 | 0 |
+| LOAD_AGG | 2 | 0 | 1 | 0 | 1 |
+| MAU_HX | 0 | 0 | 0 | 2 | 0 |
+| MEDICAL | 5 | 0 | 0 | 0 | 0 |
+| MEOH_COND | 6 | 1 | 1 | 0 | 0 |
+| MEOH_FC | 25 | 7 | 1 | 0 | 2 |
 | MEOH_FERM | 0 | 6 | 0 | 0 | 0 |
-| MEOH_SYNTH | 7 | 1 | 0 | 1 | 0 |
-| MEOH_TANK | 3 | 0 | 0 | 0 | 0 |
-| METAL_STORE | 0 | 0 | 0 | 0 | 2 |
-| MET_AHU | 4 | 0 | 0 | 0 | 0 |
-| MET_HX_Q4 | 1 | 0 | 0 | 0 | 0 |
-| MET_MELT | 0 | 3 | 0 | 0 | 0 |
-| MET_SCRUB | 0 | 4 | 0 | 0 | 0 |
-| MF-01 x 106 | 3 | 1 | 2 | 0 | 0 |
-| MF-02 x 58 | 3 | 1 | 2 | 0 | 0 |
-| MF-03 x 27 | 5 | 1 | 2 | 0 | 0 |
-| MF-04 x 0 | 5 | 0 | 1 | 0 | 0 |
-| MF-05 x 0 | 5 | 0 | 1 | 0 | 0 |
-| MF-06 x 104 | 5 | 0 | 1 | 0 | 0 |
-| MF-07 x 23 | 5 | 0 | 1 | 0 | 0 |
-| MF-08 x 3 | 7 | 0 | 3 | 0 | 0 |
-| MF-09 x 21 | 7 | 0 | 3 | 0 | 0 |
-| MF-10 x 10 | 7 | 0 | 3 | 0 | 0 |
-| MF-11 x 6 | 7 | 0 | 3 | 0 | 0 |
-| MF-12 x 4 | 7 | 0 | 3 | 0 | 0 |
-| MF-13 x 3 | 7 | 0 | 3 | 0 | 0 |
-| MF-14 x 3 | 7 | 0 | 3 | 0 | 0 |
-| MF-15 x 1 | 7 | 0 | 3 | 0 | 0 |
-| MF-16 x 1 | 7 | 0 | 3 | 0 | 0 |
-| MF-17 x 36 | 7 | 0 | 3 | 0 | 0 |
-| MF-18 x 0 | 7 | 0 | 3 | 0 | 0 |
-| MF-19 x 3 | 7 | 0 | 3 | 0 | 0 |
-| MF-20 x 0 | 7 | 0 | 3 | 0 | 0 |
+| MEOH_SYNTH | 7 | 1 | 1 | 0 | 0 |
+| MEOH_TANK | 60 | 9 | 1 | 0 | 0 |
+| METAL_STORE | 1 | 4 | 1 | 0 | 0 |
+| MET_AHU | 16 | 4 | 1 | 0 | 0 |
+| MET_HX_Q4 | 3 | 0 | 1 | 0 | 0 |
+| MET_MELT | 14 | 9 | 1 | 0 | 0 |
+| MET_SCRUB | 18 | 21 | 1 | 0 | 0 |
+| MET_SYN | 2 | 6 | 1 | 0 | 0 |
+| MF-01 x 14 | 3 | 1 | 0 | 2 | 0 |
+| MF-02 x 55 | 3 | 1 | 0 | 2 | 0 |
+| MF-03 x 0 | 5 | 1 | 0 | 2 | 0 |
+| MF-04 x 0 | 5 | 0 | 0 | 1 | 0 |
+| MF-05 x 0 | 5 | 0 | 0 | 1 | 0 |
+| MF-06 x 2 | 5 | 0 | 0 | 1 | 0 |
+| MF-07 x 3 | 5 | 0 | 0 | 1 | 0 |
+| MF-08 x 3 | 7 | 0 | 0 | 3 | 0 |
+| MF-09 x 242 | 7 | 0 | 0 | 3 | 0 |
+| MF-10 x 3 | 7 | 0 | 0 | 3 | 0 |
+| MF-11 x 4 | 7 | 0 | 0 | 3 | 0 |
+| MF-12 x 2 | 7 | 0 | 0 | 3 | 0 |
+| MF-13 x 1 | 7 | 0 | 0 | 3 | 0 |
+| MF-14 x 3 | 7 | 0 | 0 | 3 | 0 |
+| MF-15 x 1 | 7 | 0 | 0 | 3 | 0 |
+| MF-16 x 1 | 7 | 0 | 0 | 3 | 0 |
+| MF-17 x 0 | 7 | 0 | 0 | 3 | 0 |
+| MF-18 x 0 | 7 | 0 | 0 | 3 | 0 |
+| MF-19 x 3 | 7 | 0 | 0 | 3 | 0 |
+| MF-20 x 0 | 7 | 0 | 0 | 3 | 0 |
 | MF-21 x 0 | 3 | 0 | 0 | 0 | 0 |
-| MF-22 x 0 | 4 | 0 | 2 | 0 | 0 |
-| MF-23 x 0 | 4 | 0 | 2 | 0 | 0 |
-| MFG_SHOP | 2 | 0 | 0 | 0 | 0 |
-| MG_POT | 3 | 3 | 0 | 2 | 1 |
-| MISTER | 0 | 3 | 0 | 0 | 0 |
-| MO_CELL | 3 | 3 | 0 | 2 | 1 |
-| MUSHROOM | 0 | 3 | 0 | 0 | 0 |
-| MUSH_BLOCK | 0 | 3 | 0 | 0 | 0 |
-| MUSH_STRAW | 0 | 3 | 0 | 0 | 0 |
-| NFIX_BED | 0 | 3 | 0 | 0 | 0 |
-| NFT | 0 | 3 | 0 | 0 | 0 |
+| MF-22 x 0 | 4 | 0 | 0 | 2 | 0 |
+| MF-23 x 0 | 4 | 0 | 0 | 2 | 0 |
+| MFG_SHOP | 51 | 6 | 1 | 0 | 0 |
+| MG_POT | 9 | 7 | 2 | 0 | 0 |
+| MO_CELL | 8 | 6 | 3 | 0 | 0 |
+| NCG_HEADER | 1 | 0 | 0 | 0 | 0 |
 | NORTH_DOCK | 3 | 0 | 0 | 0 | 0 |
-| NOX_SCRUB | 0 | 3 | 0 | 0 | 0 |
-| NUTRIENT_DOSE | 0 | 0 | 0 | 0 | 3 |
+| NOX_SCRUB | 26 | 23 | 2 | 0 | 0 |
+| NUTRIENT_DOSE | 43 | 31 | 1 | 0 | 0 |
 | OF-01 | 1 | 0 | 0 | 0 | 0 |
 | OF-02 | 1 | 0 | 0 | 0 | 0 |
 | OF-03 | 1 | 0 | 0 | 0 | 0 |
@@ -252,7 +197,6 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-06 | 1 | 0 | 0 | 0 | 0 |
 | OF-07 | 1 | 0 | 0 | 0 | 0 |
 | OF-08 | 1 | 0 | 0 | 0 | 0 |
-| OF-09 | 1 | 0 | 0 | 0 | 0 |
 | OF-10 | 1 | 0 | 0 | 0 | 0 |
 | OF-11 | 1 | 0 | 0 | 0 | 0 |
 | OF-12 | 1 | 0 | 0 | 0 | 0 |
@@ -264,21 +208,16 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-18 | 0 | 1 | 0 | 0 | 0 |
 | OF-19 | 1 | 0 | 0 | 0 | 0 |
 | OF-20 | 1 | 0 | 0 | 0 | 0 |
-| OF-21 | 1 | 0 | 0 | 0 | 0 |
 | OF-22 | 1 | 0 | 0 | 0 | 0 |
 | OF-23 | 1 | 0 | 0 | 0 | 0 |
-| OF-24 | 1 | 0 | 0 | 0 | 0 |
-| OF-25 | 1 | 0 | 0 | 0 | 0 |
 | OF-26 | 1 | 0 | 0 | 0 | 0 |
-| OF-27 | 1 | 0 | 0 | 0 | 0 |
-| OF-28 | 1 | 0 | 0 | 0 | 0 |
 | OF-29 | 0 | 1 | 0 | 0 | 0 |
 | OF-30 | 0 | 1 | 0 | 0 | 0 |
 | OF-31 | 1 | 0 | 0 | 0 | 0 |
 | OF-32 | 0 | 1 | 0 | 0 | 0 |
 | OF-33 | 0 | 1 | 0 | 0 | 0 |
 | OF-34 | 0 | 1 | 0 | 0 | 0 |
-| OF-35 | 0 | 0 | 0 | 1 | 0 |
+| OF-35 | 0 | 0 | 1 | 0 | 0 |
 | OF-36 | 1 | 0 | 0 | 0 | 0 |
 | OF-37 | 1 | 0 | 0 | 0 | 0 |
 | OF-38 | 0 | 1 | 0 | 0 | 0 |
@@ -316,19 +255,19 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-70 | 1 | 0 | 0 | 0 | 0 |
 | OF-71 | 1 | 0 | 0 | 0 | 0 |
 | OF-72 | 1 | 0 | 0 | 0 | 0 |
-| OF-73 | 1 | 0 | 0 | 0 | 0 |
 | OF-74 | 1 | 0 | 0 | 0 | 0 |
 | OF-75 | 1 | 0 | 0 | 0 | 0 |
 | OF-76 | 1 | 0 | 0 | 0 | 0 |
 | OF-77 | 1 | 0 | 0 | 0 | 0 |
 | OF-78 | 1 | 0 | 0 | 0 | 0 |
-| OF-79 | 1 | 0 | 0 | 0 | 0 |
-| OF-80 | 1 | 0 | 0 | 0 | 0 |
-| OIL_DRYER | 2 | 0 | 0 | 0 | 0 |
-| OIL_FRAC | 2 | 0 | 0 | 0 | 0 |
-| OIL_PYRO | 4 | 1 | 0 | 2 | 0 |
-| PEANUT | 0 | 3 | 0 | 0 | 0 |
-| PELLET | 6 | 2 | 0 | 0 | 0 |
+| OF-81 | 1 | 0 | 0 | 0 | 0 |
+| OF-82 | 1 | 0 | 0 | 0 | 0 |
+| OF-83 | 1 | 0 | 0 | 0 | 0 |
+| OF-84 | 1 | 0 | 0 | 0 | 0 |
+| OIL_DRYER | 11 | 1 | 2 | 0 | 0 |
+| OIL_FRAC | 43 | 10 | 2 | 0 | 0 |
+| OIL_PYRO | 4 | 1 | 2 | 0 | 0 |
+| PELLET | 6 | 0 | 0 | 0 | 0 |
 | PF-01 | 0 | 2 | 0 | 0 | 0 |
 | PF-02 | 1 | 1 | 0 | 0 | 0 |
 | PF-03 | 0 | 2 | 0 | 0 | 0 |
@@ -350,59 +289,62 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | PF-19 | 0 | 2 | 0 | 0 | 0 |
 | PF-20 | 1 | 1 | 0 | 0 | 0 |
 | PF-21 | 0 | 2 | 0 | 0 | 0 |
-| POLISH_BANK | 0 | 2 | 0 | 0 | 0 |
-| POLY_COND | 2 | 0 | 0 | 0 | 1 |
-| POLY_F | 2 | 7 | 0 | 0 | 0 |
-| POLY_OLEFIN | 5 | 4 | 0 | 0 | 0 |
-| POLY_STOCK | 0 | 5 | 0 | 0 | 0 |
-| POWDER_RESIN | 9 | 0 | 0 | 0 | 0 |
-| PROD_C11_C18 | 2 | 0 | 0 | 0 | 0 |
-| PROD_C19_C28 | 2 | 0 | 0 | 0 | 0 |
-| PROD_C29 | 2 | 0 | 0 | 0 | 0 |
-| PROD_C5_C10 | 2 | 0 | 0 | 0 | 0 |
-| P_CA | 0 | 2 | 0 | 0 | 0 |
-| Q1_A | 0 | 1 | 0 | 0 | 0 |
-| Q1_B | 0 | 1 | 0 | 0 | 0 |
-| Q2_A | 0 | 1 | 0 | 0 | 0 |
-| Q2_B | 0 | 1 | 0 | 0 | 0 |
-| Q3_A | 0 | 1 | 0 | 0 | 0 |
-| Q3_B | 0 | 1 | 0 | 0 | 0 |
-| Q4_A | 0 | 1 | 0 | 0 | 0 |
-| Q4_B | 0 | 1 | 0 | 0 | 0 |
-| QUAT | 0 | 3 | 0 | 0 | 0 |
-| RECTIFIER | 1 | 0 | 0 | 0 | 0 |
-| RECT_EW | 1 | 0 | 0 | 0 | 0 |
-| RELIEF_CRYO | 2 | 0 | 0 | 0 | 0 |
-| RELIEF_H2 | 2 | 0 | 0 | 0 | 0 |
-| REMIN | 0 | 2 | 0 | 0 | 0 |
-| RES_HEAT | 0 | 0 | 0 | 1 | 1 |
-| RF_HEAT | 0 | 1 | 0 | 0 | 1 |
-| ROLL | 6 | 0 | 0 | 0 | 0 |
-| ROOF_TANK | 0 | 2 | 0 | 0 | 0 |
-| S13_CLASS_TREAT | 0 | 2 | 0 | 0 | 0 |
-| SALT_FEED | 0 | 2 | 0 | 0 | 0 |
-| SEED_BANK | 0 | 3 | 0 | 0 | 0 |
-| SHELL_BREAK | 3 | 2 | 0 | 0 | 2 |
-| SHELL_BUILD | 5 | 2 | 0 | 0 | 0 |
-| SHELL_BURNOUT | 3 | 0 | 0 | 3 | 1 |
-| SIC_FURNACE | 0 | 3 | 0 | 0 | 0 |
-| SINTER | 0 | 2 | 0 | 0 | 1 |
-| SI_REDUCE | 0 | 2 | 0 | 0 | 0 |
-| SOLAR_PV_CELL | 2 | 0 | 0 | 0 | 0 |
-| SOL_ARK_60K | 1 | 0 | 0 | 0 | 0 |
-| STOCK_OUT | 3 | 2 | 0 | 0 | 0 |
-| STRUVITE | 0 | 3 | 0 | 0 | 0 |
-| SUNFLOWER | 0 | 3 | 0 | 0 | 0 |
-| TFE_SYN | 3 | 6 | 0 | 0 | 0 |
-| TI_CELL | 3 | 0 | 2 | 0 | 4 |
-| VAC_CAST | 0 | 2 | 0 | 0 | 1 |
-| VAC_IND | 0 | 2 | 0 | 0 | 1 |
-| VCD_TRAIN | 2 | 0 | 0 | 0 | 0 |
-| VDF_SYN | 3 | 6 | 0 | 0 | 0 |
-| VEG_BED | 0 | 3 | 0 | 0 | 0 |
-| WAFER_FAB | 3 | 0 | 0 | 0 | 0 |
-| WAX_PATTERN | 4 | 2 | 0 | 0 | 0 |
-| WET_BENCH | 0 | 2 | 0 | 0 | 0 |
+| POLISH_BANK | 14 | 17 | 1 | 0 | 0 |
+| POLY_COND | 3 | 4 | 0 | 0 | 0 |
+| POLY_F | 6 | 3 | 0 | 0 | 0 |
+| POLY_FIBER | 4 | 0 | 0 | 0 | 0 |
+| POLY_OLEFIN | 3 | 4 | 0 | 0 | 0 |
+| POLY_STOCK | 0 | 3 | 0 | 0 | 0 |
+| POWDER_RESIN | 8 | 0 | 0 | 0 | 0 |
+| PROD_C11_C18 | 9 | 1 | 1 | 0 | 0 |
+| PROD_C19_C28 | 29 | 5 | 1 | 0 | 0 |
+| PROD_C29 | 17 | 2 | 1 | 0 | 0 |
+| PROD_C5_C10 | 25 | 4 | 1 | 0 | 0 |
+| PROD_MEOH | 1 | 0 | 0 | 0 | 0 |
+| PROD_O2 | 1 | 0 | 0 | 0 | 0 |
+| PV_ARRAY | 1 | 0 | 0 | 0 | 0 |
+| P_CA | 1 | 4 | 1 | 0 | 0 |
+| Q1_A | 8 | 4 | 1 | 0 | 0 |
+| Q1_B | 8 | 4 | 1 | 0 | 0 |
+| Q2_A | 8 | 4 | 1 | 0 | 0 |
+| Q2_B | 8 | 4 | 1 | 0 | 0 |
+| Q3_A | 16 | 2 | 1 | 0 | 0 |
+| Q3_B | 16 | 2 | 1 | 0 | 0 |
+| Q4_A | 7 | 2 | 1 | 0 | 0 |
+| Q4_B | 7 | 2 | 1 | 0 | 0 |
+| Q4_BUS | 0 | 1 | 0 | 0 | 0 |
+| QUAIL_CAGE | 5 | 0 | 0 | 0 | 0 |
+| RABBIT_HUTCH | 5 | 0 | 0 | 0 | 0 |
+| RECTIFIER | 6 | 0 | 1 | 0 | 1 |
+| REC_DAYROOM | 0 | 0 | 0 | 5 | 0 |
+| RELIEF_CRYO | 4 | 0 | 0 | 0 | 0 |
+| RELIEF_H2 | 4 | 0 | 0 | 0 | 0 |
+| REMIN | 18 | 13 | 1 | 0 | 0 |
+| RES_HEAT | 0 | 0 | 0 | 0 | 1 |
+| RF_HEAT | 0 | 0 | 0 | 0 | 1 |
+| ROLL | 7 | 0 | 0 | 0 | 0 |
+| ROOF_TANK | 58 | 61 | 1 | 0 | 0 |
+| SALT_FEED | 6 | 4 | 1 | 0 | 0 |
+| SHELL_BREAK | 6 | 0 | 1 | 0 | 0 |
+| SHELL_BUILD | 8 | 0 | 1 | 0 | 0 |
+| SHELL_BURNOUT | 9 | 0 | 1 | 0 | 0 |
+| SINTER | 0 | 0 | 0 | 0 | 1 |
+| SI_REDUCE | 0 | 4 | 0 | 0 | 0 |
+| SLEEP_QUARTERS | 0 | 0 | 0 | 5 | 0 |
+| SOLAR_PV_CELL | 10 | 0 | 1 | 0 | 0 |
+| SOL_ARK_60K | 6 | 0 | 1 | 0 | 1 |
+| STOCK_OUT | 6 | 0 | 0 | 0 | 0 |
+| TFE_SYN | 3 | 4 | 0 | 0 | 0 |
+| TI_CELL | 15 | 0 | 2 | 0 | 0 |
+| VAC_CAST | 0 | 0 | 0 | 0 | 1 |
+| VAC_IND | 0 | 0 | 0 | 0 | 1 |
+| VCD_TRAIN | 21 | 13 | 1 | 0 | 0 |
+| VDF_SYN | 3 | 4 | 0 | 0 | 0 |
+| VERMI_BIN | 0 | 1 | 0 | 0 | 0 |
+| WAFER_FAB | 31 | 11 | 2 | 0 | 0 |
+| WASHROOM | 0 | 5 | 0 | 0 | 0 |
+| WAX_PATTERN | 8 | 0 | 0 | 0 | 0 |
+| WET_BENCH | 21 | 14 | 1 | 0 | 0 |
 | WF-01 | 1 | 0 | 0 | 0 | 0 |
 | WF-02 | 1 | 0 | 0 | 0 | 0 |
 | WF-03 | 1 | 0 | 0 | 0 | 0 |
@@ -413,33 +355,27 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | WF-08 | 1 | 0 | 0 | 0 | 0 |
 | WF-09 | 1 | 0 | 0 | 0 | 0 |
 | WF-10 | 1 | 0 | 0 | 0 | 0 |
-| WF-11 | 1 | 0 | 0 | 0 | 0 |
 | WF-12 | 1 | 0 | 0 | 0 | 0 |
-| WF-13 | 1 | 0 | 0 | 0 | 0 |
 | WF-14 | 1 | 0 | 0 | 0 | 0 |
 | WF-15 | 1 | 0 | 0 | 0 | 0 |
 | WF-16 | 1 | 0 | 0 | 0 | 0 |
-| WF-17 | 1 | 0 | 0 | 0 | 0 |
-| WF-18 | 1 | 0 | 0 | 0 | 0 |
 | WF-19 | 1 | 0 | 0 | 0 | 0 |
-| WF-20 | 1 | 0 | 0 | 0 | 0 |
 | WF-21 | 1 | 0 | 0 | 0 | 0 |
+| WF-22 | 1 | 0 | 0 | 0 | 0 |
 | WF-24 | 1 | 0 | 0 | 0 | 0 |
 | WF-25 | 1 | 0 | 0 | 0 | 0 |
-| WF-27 | 1 | 0 | 0 | 0 | 0 |
-| WF-28 | 1 | 0 | 0 | 0 | 0 |
-| WF-29 | 1 | 0 | 0 | 0 | 0 |
-| WIRE_DRAW | 2 | 0 | 0 | 0 | 0 |
-| WORMS | 0 | 4 | 0 | 0 | 0 |
-| WS_AMMONIA | 0 | 2 | 0 | 0 | 0 |
-| WS_DOPE | 0 | 0 | 0 | 0 | 2 |
-| WS_HF_ED | 0 | 2 | 0 | 0 | 0 |
-| WS_KOH | 0 | 2 | 0 | 0 | 0 |
-| WS_NITRIC | 0 | 2 | 0 | 0 | 0 |
-| WS_PEROX | 0 | 2 | 0 | 0 | 0 |
-| WS_PHOS | 0 | 2 | 0 | 0 | 0 |
-| WS_SLURRY | 0 | 0 | 0 | 0 | 2 |
-| WS_SOLV | 2 | 0 | 0 | 0 | 0 |
-| YEAST | 0 | 6 | 0 | 0 | 0 |
-| ZNBR2 | 3 | 0 | 0 | 0 | 0 |
-| ZNBR2_BR2_REGEN | 0 | 2 | 0 | 0 | 0 |
+| WF-31 | 1 | 0 | 0 | 0 | 0 |
+| WF-32 | 1 | 0 | 0 | 0 | 0 |
+| WF-33 | 1 | 0 | 0 | 0 | 0 |
+| WIRE_DRAW | 10 | 0 | 1 | 0 | 0 |
+| WS_AMMONIA | 11 | 13 | 1 | 0 | 0 |
+| WS_DOPE | 4 | 6 | 1 | 0 | 0 |
+| WS_HF_ED | 10 | 9 | 1 | 0 | 0 |
+| WS_KOH | 10 | 9 | 1 | 0 | 0 |
+| WS_NITRIC | 11 | 13 | 1 | 0 | 0 |
+| WS_PEROX | 10 | 9 | 1 | 0 | 0 |
+| WS_PHOS | 18 | 13 | 1 | 0 | 0 |
+| WS_SLURRY | 10 | 9 | 1 | 0 | 0 |
+| WS_SOLV | 14 | 5 | 1 | 0 | 0 |
+| ZNBR2 | 17 | 14 | 1 | 0 | 3 |
+| ZNBR2_BR2_REGEN | 11 | 9 | 1 | 0 | 0 |

@@ -403,6 +403,40 @@
    "note": "X-MAT-22 (AQS-STD-006): duty section 3 material selections for the 38 units that held unit task 09 on the Selection pending template; writes params.sec3_material (mat/basis/alt/note/task) per node; rendered into the sheets by _duty_basis.py."
   },
   {
+   "name": "farm_balance",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.farm_balance"
+   ],
+   "outputs": [
+    "flow_graph/plant_flow_graph.json"
+   ],
+   "depends_on": [
+    "sizing_materials3"
+   ],
+   "writes_graph": true,
+   "quick": true,
+   "note": "X-FARM wet-basis balance (AQS-FARM-001, A-M-415..430): computes every FARM edge rate in real mass from the driver parameters by fixed-point iteration (the larvae meal <-> layer ration <-> manure loop); the X-PAR-02 solver then reconciles the free water edges around the held rates."
+  },
+  {
+   "name": "specialty_sizing",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.specialty_sizing"
+   ],
+   "outputs": [
+    "flow_graph/plant_flow_graph.json"
+   ],
+   "depends_on": [
+    "farm_balance"
+   ],
+   "writes_graph": true,
+   "quick": true,
+   "note": "X-LOC-SPEC: unit task 02 close-out for the ten last unsized units - the grease/lithium specialty chain (GREASE_CA/GREASE_LI kettles, P_CA precipitation, LI_RECOVER carbonation), SI_REDUCE (the PV cell line silicon), ADS_CHILL, DRY_COOLER, GW_INTAKE, MAU_HX and the FEED_PREP/POLY_FIBER/AQUA_UV load bases - rates, design parameters and envelopes, every value with a cited basis."
+  },
+  {
    "name": "storage_sizing",
    "argv": [
     "python3",
@@ -713,10 +747,6 @@
    ],
    "outputs": [
     "flow_graph/views/*",
-    "media/pfd/*",
-    "media/D*.png",
-    "media/F0_campus.png",
-    "media/plant_phase_d.mp4",
     "media/_generated.json"
    ],
    "depends_on": [
@@ -724,7 +754,7 @@
    ],
    "writes_graph": false,
    "quick": false,
-   "note": "Layer views + 7 matplotlib PFDs + FreeCAD frames + ffmpeg mp4 + media/_generated.json graph-sha manifest. Slowest stage (FreeCAD + ffmpeg).",
+   "note": "layer views + the generated-media manifest (the matplotlib PFD renders, the FreeCAD phase frames and the mp4 were retired from the pipeline 2026-10-27; the exporters remain on-demand tools)",
    "invokes": [
     "flow_graph/render_layer_views.py",
     "models/freecad/render_frames.py",
@@ -1358,6 +1388,7 @@
     "docs-authority/duties/_origins.json"
    ],
    "depends_on": [
+    "farm_balance",
     "write_graph_power"
    ],
    "writes_graph": false,
@@ -1366,6 +1397,23 @@
    "feeds_back_from": [
     "doc_instr_index"
    ]
+  },
+  {
+   "name": "farm_hab_design",
+   "argv": [
+    "python3",
+    "docs-authority/_farm_hab.py",
+    "--write"
+   ],
+   "outputs": [
+    "docs-authority/FARM_DESIGN.md",
+    "docs-authority/HAB_DESIGN.md"
+   ],
+   "depends_on": [
+    "write_graph_power"
+   ],
+   "quick": true,
+   "note": "X-FARM/X-HAB (AQS-FARM-001, AQS-HAB-002): the FARM and HAB sector design studies - unit rosters, drivers arithmetic, sizing basis and the X-FARM/X-HAB material selections (A-M-415..425)."
   },
   {
    "name": "unit_sizing_sweep",
@@ -1404,6 +1452,61 @@
    "note": "AQS-PIP-004; unit centres from duties/_origins.json."
   },
   {
+   "name": "placement_refine",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.placement_refine"
+   ],
+   "outputs": [
+    "flow_graph/placement_seed.json"
+   ],
+   "depends_on": [
+    "line_list"
+   ],
+   "writes_graph": false,
+   "quick": true,
+   "note": "X-PIP-03 Rev O: the Rev N grid placements re-seated by process adjacency - the Rev N blocks seated by weighted mass-edge adjacency around the pinned constellation, then each unit greedily seated nearest its already-seated graph neighbours (BFS from the block sources sets priority). Designed placements untouched. Idempotent via the source stamps. Must run before placement_routes so the routed lengths reflect the refined positions."
+  },
+  {
+   "name": "placement_routes",
+   "argv": [
+    "python3",
+    "docs-authority/_placement_routes.py"
+   ],
+   "outputs": [
+    "docs-authority/ISO_ROUTES.md",
+    "docs-authority/ISO_ROUTES.json",
+    "docs-authority/iso/ISO_SHEETS.csv",
+    "docs-authority/ISO_SHEETS.md"
+   ],
+   "depends_on": [
+    "line_list",
+    "placement_refine"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "X-PIP-03: routed lengths from the placement model (placement_seed Rev M) by the A-M-074 rack rule - re-activates SUPPORTS (X-PIP-05), the insulation schedule and the pipe inventory over the placed subset; unplaced ends stay a named gap per line."
+  },
+  {
+   "name": "site_3d",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.site_3d"
+   ],
+   "outputs": [
+    "media/3d/*"
+   ],
+   "depends_on": [
+    "placement_routes",
+    "line_list"
+   ],
+   "writes_graph": false,
+   "quick": true,
+   "note": "X-3D-SITE: the per-site 3D plant model from the placement model - placement-model massing at sourced centres, the scaling eliminations as a labelled ghost layer, the site's replacement placements at their stamped sizing; GLB + labelled axonometric + per-level plans + coverage manifest. Locale runs build the site model; the baseline run builds the reference model."
+  },
+  {
    "name": "nozzle_sched",
    "argv": [
     "python3",
@@ -1421,44 +1524,6 @@
    "quick": false
   },
   {
-   "name": "iso_routes",
-   "argv": [
-    "python3",
-    "docs-authority/_iso_routes.py"
-   ],
-   "outputs": [
-    "docs-authority/ISO_ROUTES.md",
-    "docs-authority/ISO_ROUTES.json"
-   ],
-   "depends_on": [
-    "doc_egress_hall",
-    "doc_water_tower",
-    "line_list"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "AQS-ISO-001 + U2a JSON sidecar read by _supports."
-  },
-  {
-   "name": "iso_sheets",
-   "argv": [
-    "python3",
-    "docs-authority/_iso_sheets.py"
-   ],
-   "outputs": [
-    "docs-authority/iso/*",
-    "docs-authority/ISO_SHEETS.md"
-   ],
-   "depends_on": [
-    "doc_egress_hall",
-    "doc_water_tower",
-    "iso_routes"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "AQS-ISO-002: docs-authority/iso/<LINE>.svg per routed line + docs-authority/iso/ISO_SHEETS.csv (also the by-design orphan list source for _rev_stamp) + ISO_SHEETS.md."
-  },
-  {
    "name": "supports",
    "argv": [
     "python3",
@@ -1468,11 +1533,11 @@
     "docs-authority/SUPPORTS.md"
    ],
    "depends_on": [
-    "iso_routes"
+    "placement_routes"
    ],
    "writes_graph": false,
    "quick": false,
-   "note": "AQS-PIP-005; reads ISO_ROUTES.json."
+   "note": "AQS-PIP-005; pending the placement model - writes the named gap when ISO_ROUTES.json is absent."
   },
   {
    "name": "insulation",
@@ -1485,11 +1550,11 @@
     "docs-authority/insulation_schedule.csv"
    ],
    "depends_on": [
-    "iso_sheets"
+    "placement_routes"
    ],
    "writes_graph": false,
    "quick": false,
-   "note": "X-THM-03; reads docs-authority/iso/ISO_SHEETS.csv (no --graph: the T_C stamps are not rewritten)."
+   "note": "X-THM-03; the iso-sheet T_C read retired with the route model (2026-10-27) - equipment T_C comes from the graph."
   },
   {
    "name": "doc_test_rigs",
@@ -1618,8 +1683,7 @@
    ],
    "depends_on": [
     "doc_egress_hall",
-    "doc_water_tower",
-    "iso_sheets"
+    "doc_water_tower"
    ],
    "outputs": [
     "docs-authority/inventory/PIPE_FAMILIES.csv",
@@ -1845,7 +1909,6 @@
     "docs-authority/_drawings.py"
    ],
    "depends_on": [
-    "iso_sheets",
     "pid_sheets",
     "regen_derived"
    ],
@@ -2084,7 +2147,6 @@
     "doc_water_tower",
     "inventory_motors",
     "inventory_wire",
-    "iso_sheets",
     "supports"
    ],
    "outputs": [
@@ -2566,6 +2628,7 @@
     "duty_basis",
     "ew_busbar",
     "ew_sizing_doc",
+    "farm_hab_design",
     "foam_ew_cut_list",
     "foundry_sizing_doc",
     "gas_species",
@@ -2576,8 +2639,6 @@
     "inventory_other",
     "inventory_pipe",
     "inventory_wire",
-    "iso_routes",
-    "iso_sheets",
     "leach_sizing_doc",
     "line_list",
     "load_list",
@@ -2750,8 +2811,6 @@
     "inventory_other",
     "inventory_pipe",
     "inventory_wire",
-    "iso_routes",
-    "iso_sheets",
     "leach_sizing_doc",
     "line_list",
     "load_list",
@@ -2859,8 +2918,6 @@
     "inventory_other",
     "inventory_pipe",
     "inventory_wire",
-    "iso_routes",
-    "iso_sheets",
     "leach_sizing_doc",
     "line_list",
     "load_list",
@@ -2969,8 +3026,6 @@
     "inventory_other",
     "inventory_pipe",
     "inventory_wire",
-    "iso_routes",
-    "iso_sheets",
     "leach_sizing_doc",
     "line_list",
     "load_list",
@@ -3086,8 +3141,6 @@
     "inventory_other",
     "inventory_pipe",
     "inventory_wire",
-    "iso_routes",
-    "iso_sheets",
     "leach_sizing_doc",
     "line_list",
     "load_list",
@@ -3194,8 +3247,6 @@
     "inventory_other",
     "inventory_pipe",
     "inventory_wire",
-    "iso_routes",
-    "iso_sheets",
     "leach_sizing_doc",
     "line_list",
     "load_list",
@@ -3313,8 +3364,6 @@
     "inventory_other",
     "inventory_pipe",
     "inventory_wire",
-    "iso_routes",
-    "iso_sheets",
     "leach_sizing_doc",
     "line_list",
     "load_list",
@@ -3343,6 +3392,22 @@
    "quick": false,
    "note": "LAST: X-GOV-06 derived-revision board incl. the regen receipt vouch and the gated set (U3 expansion).",
    "index": true
+  },
+  {
+   "name": "cost_estimate",
+   "argv": [
+    "python3",
+    "docs-authority/_cost_estimate.py"
+   ],
+   "depends_on": [
+    "doc_register"
+   ],
+   "outputs": [
+    "docs-authority/COST_ESTIMATE_BOM.md",
+    "docs-authority/inventory/COST_ESTIMATE_BOM.csv"
+   ],
+   "writes_graph": false,
+   "quick": false
   }
  ],
  "not_stages": [
@@ -3379,7 +3444,7 @@
    "scripts": [
     "flow_graph/exporters/matplotlib/*.py"
    ],
-   "reason": "Writes an untracked preview PNG beside the script. The sheets published in media/pfd are run by stage regen_derived."
+   "reason": "Writes an untracked preview PNG beside the script. The media/pfd renders were retired from the pipeline 2026-10-27; the exporters run on demand."
   },
   {
    "role": "study",

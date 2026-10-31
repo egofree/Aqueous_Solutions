@@ -11,3 +11,4 @@ N9,solids,Class 150,dewatered digestate cake to incineration (barrier 2),outlet,
 N10,DN15,Class 150,released digest-liquor nutrient split,outlet,600
 N11,DN15,Class 150,released digest liquor to grey treatment,outlet,600
 N12,solids,Class 150,fermenter digestate (water + spent solids),inlet,160
+N13,DN15,Class 150,H2S feed to the methyl-mercaptan synthesis (trace),outlet,600

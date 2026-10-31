@@ -186,6 +186,18 @@
    ],
    "when": "2026-10-25 documentation triage",
    "note": "nitrogen-fixation study of the retired fish/clover/azolla model; number AQS-DUTY-044 withdrawn"
+  },
+  {
+   "old": "models/mfg/EXPANDER",
+   "now": [],
+   "when": "2026-10-30 retired-unit cleanup",
+   "note": "the unit left the graph; the model directory was removed with it"
+  },
+  {
+   "old": "models/mfg/YEAST",
+   "now": [],
+   "when": "2026-10-30 retired-unit cleanup",
+   "note": "the unit left the graph; the model directory was removed with it"
   }
  ],
  "reissued_numbers": [

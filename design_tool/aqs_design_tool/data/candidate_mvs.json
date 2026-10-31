@@ -238,7 +238,13 @@
             "item": "dampers and flame monitor",
             "kW": 0.01
           }
-        ]
+        ],
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": "load",
@@ -266,13 +272,18 @@
           "v_m_s": 8.0,
           "id_req_mm": 17.0,
           "DN": 100,
-          "length_m": 44.7,
-          "volume_m3": 0.2971,
+          "length_m": 20,
+          "volume_m3": 0.133,
           "material": "CS Sch 40, insulated per AQS-THM-003",
-          "hold_kg": 0.22,
+          "hold_kg": 0.1,
           "connections": 3
         },
-        "size_note": "DN100 manifold x 45 m run (0.297 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ]
       },
       "modules": [],
       "electrical_role": null,
@@ -377,7 +388,14 @@
       "enabled": true,
       "class": "baghouse",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -388,7 +406,26 @@
       "enabled": true,
       "class": "digest",
       "tags": [],
-      "params": {},
+      "params": {
+        "design": {
+          "D_mm": 800,
+          "H_mm": 760,
+          "wall_mm": 5.0,
+          "V_L": 378,
+          "material": "PP-H sheet, extrusion-welded (DVS 2207-11)",
+          "insulation": "PIR 50 mm, PE cladding",
+          "heat_W": 85,
+          "T_C": 55,
+          "SRT_d": 15,
+          "biogas_g_d": 99
+        },
+        "size_mm": [
+          1100,
+          1100,
+          1260
+        ],
+        "size_note": "DN800 x 760 mm thermophilic anaerobic digester + 300 mm envelope margin, per AQS-DUTY-063 (sizing/SANITATION.md section 2 row 1: 378 L, PP-H 5.0 mm, 50 mm PIR, 85 W, 55 C SRT 15 d METCALF5); graph-side design restored from the governing sizing doc because the X-SAN-01 writer is R11-blocked (owner lane)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": {
@@ -404,7 +441,14 @@
       "enabled": true,
       "class": "bmed",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": {
@@ -420,7 +464,14 @@
       "enabled": true,
       "class": "bmed",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -436,7 +487,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 175.174278,
+          "bypass_kg_d": 206.770079,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -450,7 +501,13 @@
           "total_kW": 0.01803555742909093,
           "kWh_per_m3": 3.2461065645922726,
           "kWh_per_m3_RO_EDI": 0.5463508924805983
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": "load",
@@ -487,7 +544,13 @@
         "from": "PROD_C29",
         "to": "INDUCTION_PYROLYZER",
         "solid": "pipe",
-        "ref": "oil_line.py / ANIMATION_BRIEF D6"
+        "ref": "oil_line.py / ANIMATION_BRIEF D6",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": null,
@@ -513,7 +576,13 @@
           "pump_kW": 2.1,
           "refill_h": 8,
           "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2025 / NFPA20_2025 / NFPA22_2023"
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": "none",
@@ -525,7 +594,14 @@
       "enabled": true,
       "class": "forming",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
@@ -544,7 +620,13 @@
       "params": {
         "to": "LEACH_CSTR_1",
         "solid": "pipe",
-        "ref": "IA-REC-01"
+        "ref": "IA-REC-01",
+        "size_mm": [
+          1500,
+          60,
+          60
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": null,
@@ -556,7 +638,14 @@
       "enabled": true,
       "class": "cru",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -567,7 +656,14 @@
       "enabled": true,
       "class": "ahu",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": {
@@ -583,7 +679,14 @@
       "enabled": true,
       "class": null,
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -604,15 +707,15 @@
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.18,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.0,
-          "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 0.0,
+          "out_breathing_Nm3_h": 0.068,
+          "in_breathing_Nm3_h": 1.957,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.0,
+          "vent_bore_req_mm": 6.4,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
+          "thermal_term": "envelope volume",
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 15.2 kPa (1.24 m full at SG 1.25) = 17.5 kPa g (A-M-174)"
         },
         "design": {
@@ -644,7 +747,13 @@
           },
           "H_mm": 1243,
           "D_mm": 414
-        }
+        },
+        "size_mm": [
+          300,
+          300,
+          2000
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": null,
@@ -740,7 +849,14 @@
       "enabled": true,
       "class": "cool",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -895,7 +1011,14 @@
       "enabled": true,
       "class": "hx",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -906,7 +1029,14 @@
       "enabled": true,
       "class": "cold_box",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          300,
+          300,
+          2000
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -1079,7 +1209,28 @@
           "alt": "carbon-composite bipolar plates as the stack replacement class (PEMFC-family hardware) with the same hydride check",
           "note": "electrode degradation is the first-article bench basis: no rate claimed here; the P5 water feed legs are the issued house family.",
           "task": "X-MAT-22"
-        }
+        },
+        "design": {
+          "duty": "PEM electrolysis: 83.62 kg/d water -> 9.358 kg/d H2 + 74.263 kg/d O2 at 21.445 kW",
+          "kwh_per_kg_h2": 55.0
+        },
+        "sizing": {
+          "kwh_per_kg_h2": 55.0
+        },
+        "envelope": {
+          "size_mm": [
+            1800,
+            800,
+            1600
+          ],
+          "basis": "the PEM stack skid: stack + power electronics + water loop at the 21.445 kW duty"
+        },
+        "size_mm": [
+          1800,
+          800,
+          1600
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "modules": [],
       "electrical_role": "load",
@@ -1439,7 +1590,14 @@
       "enabled": true,
       "class": "separator",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -1450,7 +1608,14 @@
       "enabled": true,
       "class": "separator",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -1491,7 +1656,14 @@
       "enabled": true,
       "class": "forming",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
@@ -1533,7 +1705,12 @@
           "status": "design_survey_locked (ST-ORC-01)",
           "material": "HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal"
         },
-        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ]
       },
       "modules": [],
       "electrical_role": null,
@@ -1565,7 +1742,12 @@
           "cop_basis": "graph S44/SF-GEO_HP; study COP 3.43 at 285 K (AQS-HEAT-STUDY-002 sec. 6, KAVANAUGH2014)",
           "material": "316L plates, R410A-class refrigerant, propylene-glycol brine source"
         },
-        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ]
       },
       "modules": [],
       "electrical_role": "load",
@@ -1593,7 +1775,12 @@
           "duty": "source loop between the bore field and the heat-pump evaporators; S43 carries it on the graph (0 kW idle standby)",
           "material": "HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C)"
         },
-        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ]
       },
       "modules": [],
       "electrical_role": "load",
@@ -1686,7 +1873,34 @@
       "class": "digest",
       "tags": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "design": {
+          "X": 0.11,
+          "delta_um": 1.905,
+          "t_kin_h": 7.5005,
+          "tau_h": 22.5014,
+          "V_work_L": 37.4793,
+          "V_L": 49.9724,
+          "D_mm": 400,
+          "H_mm": 400,
+          "wall_mm": 4.0,
+          "agitator": {
+            "D_imp_mm": 133,
+            "rpm": 358,
+            "shaft_W": 14.790912041447882,
+            "motor_kW": 0.09
+          },
+          "T_C": 85,
+          "material": "CPVC (to 93 C; DVS 2205 allowable 3.0 MPa at 85 C); PVDF impeller and shaft sleeve",
+          "heat": "Q3 coil HX-6 (graph HL-Q3-A/B-HX6)",
+          "kW": 0.09
+        },
+        "size_mm": [
+          700,
+          700,
+          900
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
       },
       "modules": [],
       "electrical_role": "load",
@@ -1703,7 +1917,14 @@
       "enabled": true,
       "class": "treat",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -1744,7 +1965,13 @@
           "basis": "BVAD2022 tomato; crew-duty area from S14 (A-M-229)"
         },
         "yield_assumption": "0.1442 kg/(m2\u00b7d) edible fresh at DLI 17 (BVAD2022 tomato carbon chain, A-M-229) x 29.12 m2",
-        "area_basis": "crew duty (A-M-229): S14 4.2 kg/d / 0.1442 kg/m2/d = 29.12 m2 (supersedes the BH ~28 m2 / 120.4 m2 residue-claim studies)"
+        "area_basis": "crew duty (A-M-229): S14 4.2 kg/d / 0.1442 kg/m2/d = 29.12 m2 (supersedes the BH ~28 m2 / 120.4 m2 residue-claim studies)",
+        "size_mm": [
+          2000,
+          1000,
+          400
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": "load",
@@ -1878,7 +2105,13 @@
             "item": "critical-capacity lock (drivers, NFPA 110)",
             "kW": 3.0
           }
-        ]
+        ],
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": "load",
@@ -1906,13 +2139,18 @@
           "v_m_s": 8.0,
           "id_req_mm": 2.0,
           "DN": 25,
-          "length_m": 29.2,
-          "volume_m3": 0.0066,
+          "length_m": 20,
+          "volume_m3": 0.0045,
           "material": "316L tube",
           "hold_kg": 0.01,
           "connections": 5
         },
-        "size_note": "DN25 manifold x 29 m run (0.007 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          2000,
+          50,
+          50
+        ]
       },
       "modules": [],
       "electrical_role": null,
@@ -1936,13 +2174,18 @@
           "v_m_s": 8.0,
           "id_req_mm": 6.6,
           "DN": 25,
-          "length_m": 23.6,
-          "volume_m3": 0.0054,
+          "length_m": 20,
+          "volume_m3": 0.0045,
           "material": "PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06)",
           "hold_kg": 0.0,
           "connections": 14
         },
-        "size_note": "DN25 manifold x 24 m run (0.005 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          2000,
+          50,
+          50
+        ]
       },
       "modules": [],
       "electrical_role": "none",
@@ -1965,13 +2208,18 @@
           "v_m_s": 8.0,
           "id_req_mm": 17.2,
           "DN": 32,
-          "length_m": 44.7,
-          "volume_m3": 0.0202,
+          "length_m": 20,
+          "volume_m3": 0.009,
           "material": "316L tube",
-          "hold_kg": 0.02,
+          "hold_kg": 0.01,
           "connections": 7
         },
-        "size_note": "DN32 manifold x 45 m run (0.020 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          2000,
+          50,
+          50
+        ]
       },
       "modules": [],
       "electrical_role": null,
@@ -1994,13 +2242,18 @@
           "v_m_s": 8.0,
           "id_req_mm": 7.1,
           "DN": 25,
-          "length_m": 33.6,
-          "volume_m3": 0.0076,
+          "length_m": 20,
+          "volume_m3": 0.0045,
           "material": "316L tube, oxygen-clean per ASTM_G93, socketless",
           "hold_kg": 0.01,
           "connections": 8
         },
-        "size_note": "DN25 manifold x 34 m run (0.008 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          2000,
+          50,
+          50
+        ]
       },
       "modules": [],
       "electrical_role": null,
@@ -2024,13 +2277,18 @@
           "v_m_s": 1.5,
           "id_req_mm": 0.8,
           "DN": 25,
-          "length_m": 32.5,
-          "volume_m3": 0.0074,
+          "length_m": 20,
+          "volume_m3": 0.0045,
           "material": "PVDF SDR 21, fusion-welded (high-purity water, AQS-STD-002)",
-          "hold_kg": 7.24,
+          "hold_kg": 4.46,
           "connections": 3
         },
-        "size_note": "DN25 manifold x 32 m run (0.007 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          2000,
+          50,
+          50
+        ]
       },
       "modules": [],
       "electrical_role": "none",
@@ -2069,7 +2327,13 @@
       "class": "hx",
       "tags": [],
       "params": {
-        "tier": "Q3"
+        "tier": "Q3",
+        "size_mm": [
+          600,
+          400,
+          600
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": null,
@@ -2087,8 +2351,8 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 2517.0,
-        "fraction_of_znbr2_study": 0.085,
+        "vs_znbr2_kwh": 3052.0,
+        "fraction_of_znbr2_study": 0.07,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
@@ -2110,7 +2374,13 @@
           "upper": "3 reservoir levels x 3.06 m water over 367 m2, 2.0 cells per level",
           "lower": "CATCH_TANK 9.17 m deep over 367 m2",
           "eta_net_with_penstock": 0.76
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": "storage",
@@ -2148,7 +2418,13 @@
       "tags": [],
       "params": {
         "graph_fix": "AQS-HEAT-LADDER-001",
-        "solid": "none"
+        "solid": "none",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": null,
@@ -2176,7 +2452,12 @@
           "material": "316L shell and coil (methanol/water traces)",
           "note": "knock-out pot + condenser on the same skid"
         },
-        "size_note": "sized from the issued graph duties, methanol train residual sizing (flow_graph/param/meoh_train.py, AQS-DUTY-077)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          400,
+          400,
+          600
+        ]
       },
       "modules": [],
       "electrical_role": null,
@@ -2231,11 +2512,24 @@
       "tags": [],
       "params": {
         "size_mm": [
-          2200,
-          900,
-          1400
+          425,
+          425,
+          600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
+        "design": {
+          "T_C": 35,
+          "tau_h": 48,
+          "V_work_L": 0.72,
+          "V_L": 0.96,
+          "D_mm": 125,
+          "H_mm": 100,
+          "wall_mm": 4.0,
+          "heat_W": 0.7399,
+          "mixer": "daily recirculation pump",
+          "material": "HDPE (PE100), 50 mm PIR",
+          "kW": 0.0207
+        }
       },
       "modules": [],
       "electrical_role": null,
@@ -2255,16 +2549,39 @@
       "params": {
         "presence": "present",
         "size_mm": [
-          2200,
-          900,
-          1400
+          414,
+          414,
+          2585
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
+        "design": {
+          "T_C": 250,
+          "P_bar": 50.0,
+          "design_MPa": 5.5,
+          "MeOH_kg_h": 1.4379,
+          "cat_kg": 3.5357,
+          "V_bed_L": 3.2143,
+          "tubes": 1,
+          "tube": "DN50 Sch 40 SA-106 B",
+          "L_bed_mm": 1485,
+          "t_req_mm": 2.8796,
+          "t_nom_mm": 3.91,
+          "t_ok": true,
+          "exotherm_kW": 0.617,
+          "preheat_kW": 0.818,
+          "D_mm": 114,
+          "H_mm": 2085,
+          "wall_mm": 3.91,
+          "V_work_L": 3.2143,
+          "V_L": 3.2143,
+          "material": "SA-106 B tube in a DN100 thermal-oil jacket (exotherm to Q3); Cu/ZnO/Al2O3 pellets",
+          "kW": 0.818
+        }
       },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 0.7388,
+        "value": 0.818,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02: node aligned to its calculated SF-MEOH_SYNTH feed (feed preheat, no interchanger credit); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to MEOH_SYNTH continuous_kw.."
@@ -2310,7 +2627,14 @@
       "enabled": true,
       "class": "ahu",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -2321,7 +2645,14 @@
       "enabled": true,
       "class": "hx",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -2332,7 +2663,14 @@
       "enabled": true,
       "class": "melt",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
@@ -2387,7 +2725,13 @@
       "class": "shop",
       "tags": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": "load",
@@ -2415,13 +2759,18 @@
           "v_m_s": 8.0,
           "id_req_mm": 4.3,
           "DN": 25,
-          "length_m": 26.4,
-          "volume_m3": 0.006,
+          "length_m": 20,
+          "volume_m3": 0.0045,
           "material": "304L, heat-traced (tar service)",
           "hold_kg": 0.0,
           "connections": 2
         },
-        "size_note": "DN25 manifold x 26 m run (0.006 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          2000,
+          50,
+          50
+        ]
       },
       "modules": [],
       "electrical_role": null,
@@ -2440,7 +2789,7 @@
           "exports_kg_d": {
             "IA-N2-VENT": 3.1,
             "IA-NA-PURGE": 4.394,
-            "IA-C5-SHIP": 7.131,
+            "IA-C5-SHIP": 7.04,
             "IA-C11-SHIP": 1.512,
             "IA-C19-SHIP": 2.218,
             "IA-O2-SHIP": 22.884,
@@ -2456,7 +2805,7 @@
             "IA-METAL-SHIP": 10.812
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 64.413,
+            "IA-H2O-MU": 57.786,
             "IA-NAOH-MU": 4.394,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
@@ -2471,9 +2820,13 @@
             "IA-CR2O3-MU": 0.365,
             "IA-C-CR": 0.087,
             "IA-WAX-MU": 0.2,
-            "IA-SILICA-MU": 1.0
+            "IA-SILICA-MU": 1.0,
+            "NUT_AQUA": 5.5,
+            "NUT_AQUA_BED": 1.0,
+            "CA_HOPPER": 0.035,
+            "FR_FINISH": 0.002
           },
-          "net_kg_d": 0.001,
+          "net_kg_d": -0.0,
           "residual_kg_d": 0.002,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
@@ -2574,7 +2927,14 @@
       "enabled": true,
       "class": "dryer",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -2596,7 +2956,13 @@
             0.207
           ],
           "A-M": "A-M-138"
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": null,
@@ -2608,7 +2974,29 @@
       "enabled": true,
       "class": "pyro",
       "tags": [],
-      "params": {},
+      "params": {
+        "design": {
+          "T_C": 500.0,
+          "tau_h": 1.0,
+          "V_work_L": 1.9056,
+          "V_L": 3.8111,
+          "D_mm": 200,
+          "H_mm": 170,
+          "wall_mm": 4.5,
+          "Q_process_kW": 1.1192,
+          "insulation_mm": 125,
+          "loss_W": 65.1293,
+          "kW": 1.664,
+          "material": "ASME SA-240 304H (carbon steel limited to 425 C, ASME II-D); ceramic-fibre insulation; band heaters",
+          "relief": "vapour line to OIL_FRAC open; bursting disc on the retort lid to the flare header (study)"
+        },
+        "size_mm": [
+          500,
+          500,
+          670
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": {
@@ -2624,7 +3012,14 @@
       "enabled": true,
       "class": "polish",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -2775,39 +3170,45 @@
       "tags": [],
       "params": {
         "module_kw": 0.5,
-        "count": 4984,
+        "count": 6044,
         "presence": "present",
-        "nameplate_kw": 2492,
-        "area_m2": 21986,
-        "balance_kWp": 1246,
+        "nameplate_kw": 3022,
+        "area_m2": 26574,
+        "balance_kWp": 1511,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            174000,
+            210000,
             138000
           ],
           "bays": [
-            29,
+            35,
             23
           ],
-          "footprint_m2": 24012.0,
-          "extension_m2": 23580.0,
-          "roof_capacity_kWp": 2506.5,
+          "footprint_m2": 28980.0,
+          "extension_m2": 28548.0,
+          "roof_capacity_kWp": 3029.5,
           "perimeter_pathway_mm": 1829,
-          "arrays": 12,
-          "extension_load_kW": 68.28,
+          "arrays": 15,
+          "extension_load_kW": 99.18,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
           },
           "basis": "flow_graph/param/solver.py roof_close (IFC 2027 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": "generation",
       "continuous_kw": {
-        "value": 336.8116,
+        "value": 368.9871,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -2832,13 +3233,18 @@
           "v_m_s": 1.5,
           "id_req_mm": 18.1,
           "DN": 32,
-          "length_m": 37.1,
-          "volume_m3": 0.0168,
+          "length_m": 20,
+          "volume_m3": 0.009,
           "material": "PP-H SDR 11 (80 C class), fusion-welded",
-          "hold_kg": 16.48,
+          "hold_kg": 8.89,
           "connections": 14
         },
-        "size_note": "DN32 manifold x 37 m run (0.017 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          2000,
+          50,
+          50
+        ]
       },
       "modules": [],
       "electrical_role": null,
@@ -2856,7 +3262,13 @@
         "nameplate_kw_dc": 99.0,
         "rect_ac_input_kW": 38.663,
         "rect_loss_kW": 7.733,
-        "rect_basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73)/R10b: nine-channel EW rectifier 16500 A, 99 kW DC nameplate at 6 V; bounding AC input 38.66 kW (AQS-ELEC-004). Node continuous_kw stays the 12 kW A-M-231 basis and S17 equals it: the EW DC load is counted once, behind the AQS-ELEC-004 bounding AC row in _power_sizing (A-M-255)."
+        "rect_basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73)/R10b: nine-channel EW rectifier 16500 A, 99 kW DC nameplate at 6 V; bounding AC input 38.66 kW (AQS-ELEC-004). Node continuous_kw stays the 12 kW A-M-231 basis and S17 equals it: the EW DC load is counted once, behind the AQS-ELEC-004 bounding AC row in _power_sizing (A-M-255).",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": "load",
@@ -2873,7 +3285,14 @@
       "enabled": true,
       "class": "relief",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          600,
+          400,
+          600
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -2884,7 +3303,14 @@
       "enabled": true,
       "class": "relief",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -2909,7 +3335,13 @@
           "pump_kW": 2.1,
           "refill_h": 8,
           "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2025 / NFPA20_2025 / NFPA22_2023"
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": "none",
@@ -2932,7 +3364,14 @@
       "enabled": true,
       "class": "feed",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
@@ -2944,35 +3383,35 @@
       "class": "inverter",
       "tags": [],
       "params": {
-        "kW": 2100.0,
+        "kW": 2520.0,
         "presence": "present",
-        "count": 35,
+        "count": 42,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 1920.3,
-          "export_kWh_d_clear": 5392,
+          "export_peak_kW": 2302.0,
+          "export_kWh_d_clear": 6539,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
         "sections": {
           "count": 4,
           "inverters": [
-            9,
-            9,
-            9,
-            8
+            11,
+            11,
+            10,
+            10
           ],
           "breaker_A": [
             1000,
             1000,
             1000,
-            800
+            1000
           ],
           "xfmr_kVA": [
             750,
             750,
             750,
-            500
+            750
           ],
           "mv_kV": 12.47,
           "plant_bus_on": "CB-1",
@@ -2980,16 +3419,22 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 150.8,
-          "section_rating_A": 300,
-          "basis_A": 201.6,
+          "bus_demand_kW": 183.0,
+          "section_rating_A": 350,
+          "basis_A": 244.6,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
           "critical_kW": 14.459999999999999,
           "inverter_sections": 6,
           "rule": "X-RED-03, A-M-152; NEC 240.6, 0.9 pf, 125 % continuous"
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": "bus",
@@ -3030,7 +3475,13 @@
             "item": "total connected (calculated)",
             "kW": 0.4417
           }
-        ]
+        ],
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": "load",
@@ -3070,7 +3521,13 @@
             "item": "total",
             "kWh_d": 5.008
           }
-        ]
+        ],
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": "load",
@@ -3087,7 +3544,14 @@
       "enabled": true,
       "class": "forming",
       "tags": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
@@ -3317,27 +3781,33 @@
       "class": "flow_battery",
       "tags": [],
       "params": {
-        "kW": 817,
-        "kWh": 2517,
+        "kW": 991,
+        "kWh": 3052,
         "presence": "present",
-        "charge_kW": 817,
-        "discharge_kW": 180,
+        "charge_kW": 991,
+        "discharge_kW": 218,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 35 hybrid inverters, 71.9 kWh and 23.3 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 42 hybrid inverters, 72.7 kWh and 23.6 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 6.379,
-          "purge_m3_h": 26.58,
+          "H2_m3_d": 7.736,
+          "purge_m3_h": 32.23,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1645.8
-        }
+          "electrode_area_m2": 1995.9
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": "storage",
       "continuous_kw": {
-        "value": 179.7238,
+        "value": 217.9501,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.7 kW, charge 816.9 kW, 2516 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.0 kW, charge 990.6 kW, 3051 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       }
     },
     {
@@ -3347,7 +3817,13 @@
       "class": "scrubber",
       "tags": [],
       "params": {
-        "ref": "FLOW_BATTERY.md"
+        "ref": "FLOW_BATTERY.md",
+        "size_mm": [
+          400,
+          400,
+          2000
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": null,
@@ -3455,8 +3931,8 @@
         "equipment_id": "VCD-COMP-01",
         "type": "scroll or diaphragm",
         "sec_kWh_m3": "14-20",
-        "feed_m3_d": 0.3331,
-        "avg_kw": 0.2359,
+        "feed_m3_d": 0.3647,
+        "avg_kw": 0.2583,
         "status": "duty_issued",
         "size_mm": [
           1400,
@@ -3470,22 +3946,22 @@
           "machine": "MVC still stack",
           "modules": 2,
           "compressor": "scroll class (small-MVC)",
-          "hx_area_m2": 0.559,
-          "q_latent_kW": 7.831,
-          "feed_m3_d": 0.3331,
-          "distillate_m3_d": 0.2998,
+          "hx_area_m2": 0.612,
+          "q_latent_kW": 8.574,
+          "feed_m3_d": 0.3647,
+          "distillate_m3_d": 0.3282,
           "sec_kWh_m3": 17,
-          "duty_kW": 0.2359,
+          "duty_kW": 0.2583,
           "basis": "0.333 m3/d x 17 kWh/m3 / 24 h at the issued band midpoint (A-M-149)"
         }
       },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": {
-        "value": 0.2359,
+        "value": 0.2583,
         "unit": "kW",
         "status": "study",
-        "note": "0.333 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)"
+        "note": "0.365 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)"
       }
     },
     {
@@ -3502,11 +3978,38 @@
           1800
         ],
         "size_note": "L x W x H mm study envelope for the well pump, sand separator and RO rack; unit task 02 sizing pending",
-        "design_note": "RO reject leaves as a defined plant stream; the well source and quality basis is USGS_DV_GW for the Death Valley variant and the local well record at any other dry site"
+        "design_note": "RO reject leaves as a defined plant stream; the well source and quality basis is USGS_DV_GW for the Death Valley variant and the local well record at any other dry site",
+        "design": {
+          "duty": "standby well head: the make-up on loss of atmospheric harvest",
+          "pump_kw": 0.37
+        },
+        "sizing": {
+          "pump_kw": 0.37
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            600
+          ],
+          "basis": "the wellhead hatch + pump discharge set (X-LOC-13 well head)"
+        },
+        "sec3_material": {
+          "mat": "SS304 wellhead plate and discharge head, HDPE potable discharge line, submersible pump SS304/stainless stages",
+          "basis": "potable groundwater contact (X-LOC-13 well head): 304 wetted at the chloride-light aquifer class, HDPE for the discharge run; the pump stages are the well-class stainless",
+          "alt": "316L wetted where the aquifer mineralisation ever shows pitting",
+          "note": "standby-zero at the baseline: the atmospheric harvest covers the water cycle (the T4 by-design ruling).",
+          "task": "X-LOC-13"
+        }
       },
       "modules": [],
       "electrical_role": null,
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.37,
+        "unit": "kW",
+        "status": "study",
+        "note": "the submersible at the make-up class (the T4 shortfall bound ~30 m3/d worst case: 0.37 kW lifts 30 m3 x 30 m) (standby-zero at the baseline: standby-zero at the baseline: the atmospheric harvest covers the water cycle (the T4 by-design ruling). The pump rate is the loss-of-harvest make-up class.) (X-SPEC sizing, calculated)"
+      }
     },
     {
       "unit_id": "REMIN",
@@ -4320,7 +4823,13 @@
           "alt": "PTFE/PFA internals where the install layout needs a moulded part instead of sheet-fabricated PVDF",
           "note": "static hold tank: the drain is the only wetted moving face; no corrosion allowance claimed - fluoropolymer compatibility substitutes for measured rate.",
           "task": "X-MAT-22"
-        }
+        },
+        "size_mm": [
+          800,
+          600,
+          1200
+        ],
+        "size_note": "F_RECOVER absorber column: 0.8 m diameter x 1.2 m packed section (A-M-077 acid-service class)"
       },
       "modules": [],
       "electrical_role": null,
@@ -6482,11 +6991,37 @@
           "alt": "316L vessel where the liquor pH crosses neutral during the batch cycle",
           "note": "the rate is unsized (unit task 02 pending) - the selection is issued on the construction level; level control over internals.",
           "task": "X-MAT-22"
-        }
+        },
+        "design": {
+          "duty": "carbonate the POLISH_BANK LiOH slipstream -> the lithium thickener (feeds GREASE_LI)",
+          "slipstream_kgd": 0.5
+        },
+        "sizing": {
+          "slipstream_kgd": 0.5
+        },
+        "envelope": {
+          "size_mm": [
+            200,
+            200,
+            800
+          ],
+          "basis": "the carbonation contactor at the 0.5 kg/d slipstream"
+        },
+        "size_mm": [
+          200,
+          200,
+          800
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "modules": [],
       "electrical_role": null,
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "contactor agitator + CO2 metering at the batch class (X-SPEC sizing, calculated)"
+      }
     },
     {
       "unit_id": "GREASE_CA",
@@ -6503,11 +7038,38 @@
           "alt": "304L kettle if the wax cut proves the only wetted face at a lower saponification temperature (cost down, first-article choice)",
           "note": "allowance: corrosion is not the limit - cleaning and soap residue set the maintenance surface; no measured pit rate.",
           "task": "X-MAT-22"
-        }
+        },
+        "design": {
+          "duty": "calcium grease kettle: the C19-C28 wax base + the P_CA thickener -> the general lubrication grease",
+          "batch_kgd": 0.2,
+          "heat_class": "soap precipitation, jacket heated"
+        },
+        "sizing": {
+          "batch_kgd": 0.2
+        },
+        "envelope": {
+          "size_mm": [
+            500,
+            400,
+            600
+          ],
+          "basis": "the 0.2 kg/d batch kettle: heated soap-precipitation class"
+        },
+        "size_mm": [
+          500,
+          400,
+          600
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "modules": [],
       "electrical_role": null,
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "jacket heater at the 0.2 kg/d batch class (X-SPEC sizing, calculated)"
+      }
     },
     {
       "unit_id": "GREASE_LI",
@@ -6524,11 +7086,37 @@
           "alt": "304L kettle at the same trade-off as GREASE_CA",
           "note": "Li-bearing residues drive the cleaning protocol, not corrosion.",
           "task": "X-MAT-22"
-        }
+        },
+        "design": {
+          "duty": "lithium grease kettle: the wax base + the LI_RECOVER carbonated thickener -> the motor-bearing grease",
+          "batch_kgd": 0.1
+        },
+        "sizing": {
+          "batch_kgd": 0.1
+        },
+        "envelope": {
+          "size_mm": [
+            500,
+            400,
+            600
+          ],
+          "basis": "the 0.1 kg/d batch kettle (emulsification class)"
+        },
+        "size_mm": [
+          500,
+          400,
+          600
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "modules": [],
       "electrical_role": null,
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "jacket heater at the 0.1 kg/d batch class (X-SPEC sizing, calculated)"
+      }
     },
     {
       "unit_id": "P_CA",
@@ -6545,11 +7133,37 @@
           "alt": "316L vessel + PP agitator as a mixed-build alternative if hot-work temperatures reach the PP limit",
           "note": "scale is knocked down mechanically at clean-out: a mechanical design note, not a material allowance.",
           "task": "X-MAT-22"
-        }
+        },
+        "design": {
+          "duty": "calcium-soap precipitation: wax + lime -> the grease thickener (feeds GREASE_CA)",
+          "thickener_kgd": 0.025
+        },
+        "sizing": {
+          "thickener_kgd": 0.025
+        },
+        "envelope": {
+          "size_mm": [
+            300,
+            300,
+            400
+          ],
+          "basis": "the calcium-soap precipitation vessel at the 0.025 kg/d thickener draw"
+        },
+        "size_mm": [
+          300,
+          300,
+          400
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "modules": [],
       "electrical_role": null,
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "agitator at the precipitation batch class (X-SPEC sizing, calculated)"
+      }
     },
     {
       "unit_id": "SI_REDUCE",
@@ -6566,11 +7180,39 @@
           "alt": "Silicon-carbide hot face when batch chemistry reaches beyond the graphite class (a process-change decision, not a materials trade)",
           "note": "no wetted stream on the graph; the selection is the construction class only.",
           "task": "X-MAT-22"
-        }
+        },
+        "design": {
+          "duty": "carbothermic silicon reduction for the PV cell line (SOLAR_PV_CELL draws 1.8 kg/d Si)",
+          "si_kgd": 1.8,
+          "sio2_kgd": 3.85,
+          "char_kgd": 1.924
+        },
+        "sizing": {
+          "si_kgd": 1.8
+        },
+        "envelope": {
+          "size_mm": [
+            1200,
+            1000,
+            1600
+          ],
+          "basis": "graphite hot-face furnace (the issued sec3 selection) at the batch class"
+        },
+        "size_mm": [
+          1200,
+          1000,
+          1600
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "modules": [],
       "electrical_role": null,
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 5.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "the furnace at the ~12 kWh/kg Si class (carbothermic study class) / 24 h at the 1.8 kg/d draw (X-SPEC sizing, calculated)"
+      }
     },
     {
       "unit_id": "EVAP_ACID",
@@ -6782,7 +7424,30 @@
           "alt": "13X zeolite bed if the drive temperature class climbs above 90 C (cost up, a different duty class)",
           "note": "seal integrity is the durability item, not corrosion; the chilled/cooling water side stays on the house water materials.",
           "task": "X-MAT-22"
-        }
+        },
+        "design": {
+          "duty": "silica gel-water adsorption chiller: 5 kW drive at 65 C -> 2.25 kW chilled at 12 C, 7.25 kW rejected",
+          "chilled_kw": 2.25,
+          "cop_thermal": 0.45
+        },
+        "sizing": {
+          "chilled_kw": 2.25,
+          "cop_thermal": 0.45
+        },
+        "envelope": {
+          "size_mm": [
+            700,
+            500,
+            1200
+          ],
+          "basis": "the 2.25 kW-class silica gel-water adsorption chiller: drive 65 C, chilled 12 C, thermal COP ~0.45 (A-M-239/240; WANG2006_ADS); 304L shells per the issued sec3"
+        },
+        "size_mm": [
+          700,
+          500,
+          1200
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "modules": [],
       "electrical_role": null,
@@ -6806,7 +7471,27 @@
           "alt": "316L finned-tube coil if winter commissioning shows fin wetting (cost up)",
           "note": "no wetted stream; the filter frames are the machine maintenance surface.",
           "task": "X-MAT-22"
-        }
+        },
+        "design": {
+          "duty": "the 12 kW water-to-air coil on the hab make-up air (Q4 -> MAU)"
+        },
+        "sizing": {
+          "duty_kw": 12.0
+        },
+        "envelope": {
+          "size_mm": [
+            600,
+            400,
+            400
+          ],
+          "basis": "the 12 kW water-to-air coil at the MAU duty (Q4 -> hab make-up air)"
+        },
+        "size_mm": [
+          600,
+          400,
+          400
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "modules": [],
       "electrical_role": null,
@@ -6848,11 +7533,38 @@
           "alt": "micro-channel all-aluminium coil (cost down) if galvanic behaviour in the dry service proves neutral",
           "note": "no wetted stream; the fan is the only moving part.",
           "task": "X-MAT-22"
-        }
+        },
+        "design": {
+          "duty": "dry rejection of the ADS_CHILL 7.25 kW + the Q4 dry share",
+          "airflow_m3_s": 0.61,
+          "fan_kw": 0.15
+        },
+        "sizing": {
+          "airflow_m3_s": 0.61
+        },
+        "envelope": {
+          "size_mm": [
+            1200,
+            600,
+            1200
+          ],
+          "basis": "the dry coil + fan at the 7.25 kW rejection duty"
+        },
+        "size_mm": [
+          1200,
+          600,
+          1200
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "modules": [],
       "electrical_role": null,
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.15,
+        "unit": "kW",
+        "status": "study",
+        "note": "the fan at ~0.03 kW per 100 m3/h class for the dry coil draft (the fan; the rejection is passive-draft assisted) (X-SPEC sizing, calculated)"
+      }
     },
     {
       "unit_id": "PROD_MEOH",
@@ -6890,35 +7602,35 @@
       "tags": [],
       "params": {
         "hvac": {
-          "light_kW": 20.75,
-          "vent_kW": 29.41,
-          "envelope_kW": 18.123,
-          "total_kW": 68.284,
-          "vent_L_s": 7074.0,
-          "Qh_kW": 42.344,
-          "Qc_kW": 83.268,
-          "slab_kW": 2.727,
-          "gains_kW": 29.593,
+          "light_kW": 25.122,
+          "vent_kW": 42.396,
+          "envelope_kW": 31.662,
+          "total_kW": 99.18,
+          "vent_L_s": 8564.4,
+          "Qh_kW": 29.544,
+          "Qc_kW": 175.167,
+          "slab_kW": 1.675,
+          "gains_kW": 35.828,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 373.27,
-          "peak_c_kW": 329.652
+          "peak_h_kW": 445.723,
+          "peak_c_kW": 395.352
         },
-        "footprint_m2": 23580.0,
+        "footprint_m2": 28548.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 68.284 kW. Sheet docs-authority/duties/EXT_HALL.md."
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 99.180 kW. Sheet docs-authority/duties/EXT_HALL.md."
       },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 68.2838,
+        "value": 99.1801,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 23580 m2; lighting 20.75 kW (IECC 2021 C405, 10 % lit), ventilation 29.41 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 18.12 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 42.3 kW and cooling 83.3 kW thermal average after internal gains 29.6 kW and slab edge 2.73 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 28548 m2; lighting 25.12 kW (IECC 2021 C405, 10 % lit), ventilation 42.40 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 31.66 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 29.5 kW and cooling 175.2 kW thermal average after internal gains 35.8 kW and slab edge 1.68 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       }
     },
     {
@@ -7313,6 +8025,749 @@
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
+    },
+    {
+      "unit_id": "AQUA_TANK",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "fish_tank",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "aquaponic fish tanks, 60 kg standing stock",
+          "stock_kg": 60.0,
+          "ration_kg_d": 0.9,
+          "basis": "A-M-415 (X-FARM-01)",
+          "ammonia_load": "fish excrete NH3/NH4+ through the gills: ~30 g NH4+-N per kg feed (protein metabolism); toxic above 1 mg/L un-ionised NH3",
+          "O2_demand": "dissolved O2 for fish respiration: ~5 mg/L minimum (aeration required); the air stones are the O2 source",
+          "notes_extra": "the fish are the ammonia SOURCE and the O2 SINK of the aquaponic loop; the biofilter bacteria are the ammonia CONSUMER and the O2 SINK"
+        },
+        "size_mm": [
+          2100,
+          1100,
+          1100
+        ],
+        "size_note": "2.0 m3 working volume at the 60 kg stock / 30 kg-per-m3 class (TECHTREE tilapia glossary; A-M-415): 2000 x 1000 x 1000 ID + 50 walls, EPDM-lined HDPE (X-FARM sec3)",
+        "sec3_material": {
+          "mat": "HDPE tank body with a food-grade LDPE aquaculture liner, SS316 hardware above the waterline, CPVC loop fittings",
+          "basis": "the tank holds the fish stock in the RAS loop at 26-28 C (graph design; A-M-415): ichthyotoxicity governs the wetted set, so Cu/Zn/brass are excluded outright; the liner is the aquaculture food-contact class over the 2.5 m3 envelope (203.8 kg/d loop).",
+          "alt": "FRP tank with gelcoat in place of the liner if liner abrasion ever shows",
+          "note": "loop top-up 27.4 kg/d and duckweed ration 18 kg/d in; 200 kg/d to the biofilter, 3 kg/d sludge to the BSFL bin.",
+          "task": "X-FARM-11"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "BIOFILTER",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "biofilter",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "nitrifying biofilter \u2014 Nitrosomonas + Nitrobacter biofilm on moving-bed media",
+          "organisms": "Nitrosomonas europaea (NH3 -> NO2-); Nitrobacter winogradskyi (NO2- -> NO3-)",
+          "stoichiometry": "NH4+ + 1.5 O2 -> NO2- + 2H+ + H2O (Nitrosomonas); NO2- + 0.5 O2 -> NO3- (Nitrobacter); combined: NH4+ + 2 O2 -> NO3- + 2H+ + H2O",
+          "O2_demand": "2 mol O2 per mol NH4+ nitrified (4.57 mg O2 per mg NH4+-N); aerobic \u2014 the bacteria die without dissolved O2",
+          "pH": "7.0-8.5 optimal; below 6.5 the nitrification rate collapses",
+          "temperature": "25-30 C optimal; below 15 C nitrification slows dramatically",
+          "media": "moving-bed biofilm carriers (K1 micro class); surface area sets the bacterial population",
+          "failure_mode": "ammonia accumulates to lethal levels within 24-48 h if the bacteria die (O2 starvation, pH crash, chemical shock)",
+          "basis": "A-M-415; TECHTREE agriculture.aquaponics (nitrogen cycle); TECHTREE space-resources MELiSSA C2 nitrifying compartment"
+        },
+        "size_mm": [
+          1100,
+          900,
+          1000
+        ],
+        "size_note": "moving-bed vessel 0.55 m3 at the 0.9 kg/d feed ammonia load, K1 media 0.2 m3 (A-M-415; TECHTREE aquaponics) (X-FARM sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GROWBED_A",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "growbed",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "aquaponic root zone A (aerobic plant roots)",
+          "area_m2": 14.56,
+          "zones": "aerobic top / anaerobic mineralisation bottom (dual root zone)",
+          "basis": "A-M-229 area; A-M-415 loop"
+        },
+        "size_mm": [
+          3600,
+          2100,
+          500
+        ],
+        "size_note": "media bed 7 m2 of the 14 m2 dual-root-zone duty at the 0.9 kg/d feed class, 300 mm media + freeboard (A-M-415; A-M-229) (X-FARM sec3)",
+        "sec3_material": {
+          "mat": "HDPE tray with EPDM liner at the ponded inlet zone, expanded-clay (LECA) media on a geotextile separation cloth, CPVC loop piping",
+          "basis": "aerobic mineralisation front half of the dual root zone (A-M-229; A-M-415): oxygenated trickling water, so the sulfide exclusion of the anaerobic half does not bind - but the water returns to the fish stock, and Cu/Zn/brass stay out of every wetted face regardless (ichthyotoxicity, AQS-STD-002 with the duty section 2 environment).",
+          "alt": "PP tray if media abrasion ever shows on the HDPE floor (same polymer family, higher cost)",
+          "note": "pairs with GROWBED_B (the anaerobic half); the bed passes 202.8 kg/d loop water and 1.9 kg/d vermicompost to the beds.",
+          "task": "X-FARM-11"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GROWBED_B",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "growbed",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "aquaponic root zone B (anaerobic mineralisation)",
+          "area_m2": 14.56,
+          "zones": "aerobic top / anaerobic mineralisation bottom (dual root zone)",
+          "basis": "A-M-229 area; A-M-415 loop"
+        },
+        "sec3_material": {
+          "mat": "HDPE tray with EPDM liner, expanded-clay (LECA) media on a geotextile separation cloth, CPVC loop piping",
+          "basis": "anaerobic mineralisation root zone (A-M-229; A-M-415): the bed runs sulfidic under the ponded tail, and sulfide plus loop-water contact excludes Cu/Zn/brass outright (ichthyotoxic to the fish stock the loop serves); LECA is the aquaponic media class (graph design). Selection per AQS-STD-002 with the duty section 2 environment.",
+          "alt": "PP tray if media abrasion ever shows on the HDPE floor (same polymer family, higher cost)",
+          "note": "the anaerobic half of the dual root zone; the aerobic half (GROWBED_A) carries its own issued selection.",
+          "task": "X-FARM-01"
+        },
+        "size_mm": [
+          3600,
+          2100,
+          500
+        ],
+        "size_note": "media bed 7 m2, the anaerobic mineralisation half (A-M-415; A-M-229) (X-FARM sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "CHICKEN_COOP",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "coop",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "layer flock, 12 birds",
+          "stock_birds": 12.0,
+          "egg_kg_d": 0.6,
+          "feed_kg_d": 1.44,
+          "basis": "A-M-417 (X-FARM-02)"
+        },
+        "sec3_material": {
+          "mat": "Hot-dip galvanised steel frame and hardware cloth, SS316 feeders and waterers, HDPE drop-board liner",
+          "basis": "wet uric-acid manure with ammonia offgas and periodic wash-down (graph design; A-M-417): ammonia plus moisture pits zinc at the droppings line, so the wet contact points step up to SS316 (standard poultry-housing practice)",
+          "alt": "SS304 frame if wash-down frequency rises past the weekly class",
+          "note": "the drop board is the manure harvest surface to the BSFL bin.",
+          "task": "X-FARM-02"
+        },
+        "size_mm": [
+          2500,
+          1300,
+          1900
+        ],
+        "size_note": "12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (A-M-417; TECHTREE chickens.md) (X-FARM sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "BSFL_BIN",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "bsfl_bin",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "BSFL larvae composting bin",
+          "feedstock_kg_d": 1.43,
+          "larvae_kg_d": 0.114,
+          "frass_kg_d": 0.357,
+          "basis": "A-M-418 (X-FARM-03)",
+          "organisms": "Hermetia illucens (black soldier fly) larvae: 5 instars, 14-18 d at 25-30 C; adults do not feed or bite",
+          "conversion": "1.4-2.0 kg wet biowaste per kg fresh larvae (TECHTREE insect-farming); substrate moisture 65-75 %",
+          "heat": "the larvae mass generates metabolic heat (the bin self-heats; above 40 C kills the larvae)"
+        },
+        "sec3_material": {
+          "mat": "HDPE tray bin, PP larval self-harvest ramp, SS316 mesh screen; no metal below the substrate line",
+          "basis": "substrate goes pH 4-6 under frass acids at 65-75 % moisture with self-heating toward 40 C (graph design; A-M-418): wet acid compost pits zinc and plate steel, HDPE/PP are inert across the whole range",
+          "alt": "FRP tray if bin scaling raises wall temperatures past the HDPE class",
+          "note": "larvae harvest is by self-separation up the ramp; the mesh is the pupa screen.",
+          "task": "X-FARM-03"
+        },
+        "size_mm": [
+          2500,
+          900,
+          700
+        ],
+        "size_note": "2 x 5 kg/d-class bins in one frame at the 8.21 kg/d wet feedstock (A-M-418 revision) (X-FARM sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GALLEY",
+      "sector_id": "HAB",
+      "enabled": true,
+      "class": "galley",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "galley / kitchen, 12 m2",
+          "area_m2": 12.0,
+          "basis": "A-M-419; AQS-HAB-001"
+        },
+        "sec3_material": {
+          "mat": "SS304 worktops and splashbacks, food-contact PP preparation boards; no copper-bearing alloys on food paths",
+          "basis": "food-contact sanitation class with wipe-down chemistry (AQS-HAB-001; A-M-419): 304 is sufficient at the chloride-light galley service; Cu alloys are excluded from food paths outright (AQS-STD-002 food-contact rule)",
+          "alt": "SS316 where chlorinated sanitisers concentrate (same family, higher cost)",
+          "note": "the galley biowaste stream feeds the BSFL bin (A-M-418).",
+          "task": "X-HAB-01"
+        },
+        "size_mm": [
+          4000,
+          3000,
+          2400
+        ],
+        "size_note": "12 m2 fitout shell at the A-M-419 room basis, 2400 ceiling (AQS-HAB-001) (X-HAB sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WASHROOM",
+      "sector_id": "HAB",
+      "enabled": true,
+      "class": "washroom",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "washroom / hygiene, 6 m2",
+          "area_m2": 6.0,
+          "basis": "A-M-419; AQS-HAB-001"
+        },
+        "sec3_material": {
+          "mat": "FRP wet-wall panels, SS304 fixtures, ceramic tile wet zones, SS drainage",
+          "basis": "continuous wet zone at habitable temperature (AQS-HAB-001; A-M-419): FRP and ceramic carry the standing condensate; 304 is the fixture class at the chloride-light service",
+          "alt": "SS316 fixtures where sanitiser chemistry concentrates",
+          "note": "grey water to the WTR loop; the washroom is the largest hab water consumer.",
+          "task": "X-HAB-01"
+        },
+        "size_mm": [
+          3000,
+          2000,
+          2400
+        ],
+        "size_note": "8 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "MEDICAL",
+      "sector_id": "HAB",
+      "enabled": true,
+      "class": "medical",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "medical room, 6 m2",
+          "area_m2": 6.0,
+          "basis": "A-M-419; AQS-HAB-001"
+        },
+        "sec3_material": {
+          "mat": "SS304 wipe-down surfaces and cabinets, PP instrument trays",
+          "basis": "clinical sanitation class (AQS-HAB-001; A-M-419): full wipe-down surfaces, no fabric in the room; 304 at the sanitiser service",
+          "alt": "SS316 where antiseptic chemistry ever demands it",
+          "note": "the room is 6 m2 of the AQS-HAB-001 zoning.",
+          "task": "X-HAB-01"
+        },
+        "size_mm": [
+          3000,
+          2000,
+          2400
+        ],
+        "size_note": "6 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "REC_DAYROOM",
+      "sector_id": "HAB",
+      "enabled": true,
+      "class": "dayroom",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "recreation / common day-space, 20 m2",
+          "area_m2": 20.0,
+          "basis": "A-M-419"
+        },
+        "sec3_material": {
+          "mat": "Aluminium extrusion partitions, PP-fleece acoustic panels, SS kick plates",
+          "basis": "hab interior fitout class (AQS-HAB-001; A-M-419): non-outgassing, wipe-down, 1-atm interior; no structural duty beyond the partitions",
+          "alt": "wood-composite panels rejected for outgassing into the shell atmosphere",
+          "note": "recreation/common zoning is 20 m2 of the AQS-HAB-001 basis.",
+          "task": "X-HAB-01"
+        },
+        "size_mm": [
+          5000,
+          4000,
+          2400
+        ],
+        "size_note": "20 m2 fitout shell (A-M-419) (X-HAB sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "SLEEP_QUARTERS",
+      "sector_id": "HAB",
+      "enabled": true,
+      "class": "quarters",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "private sleeping quarters, 4 x 4 m2",
+          "area_m2": 16.0,
+          "basis": "A-M-419; AQS-HAB-001"
+        },
+        "sec3_material": {
+          "mat": "Aluminium extrusion bunk framing, PP-fleece panel lining and bedding textiles, SS kick plates",
+          "basis": "private quarters at 16 m2 (AQS-HAB-001; A-M-419): interior fitout class as the day spaces; the textiles are the polymer classes from the POLYMERS sector (no animal-fibre import exists in the roster)",
+          "alt": "as REC_DAYROOM",
+          "note": "4 x 4 m2 private quarters in the AQS-HAB-001 basis.",
+          "task": "X-HAB-01"
+        },
+        "size_mm": [
+          4000,
+          4000,
+          2400
+        ],
+        "size_note": "4 x 4 m2 private quarters block fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "COMMON_AREA",
+      "sector_id": "HAB",
+      "enabled": true,
+      "class": "dayroom",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "common circulation/utility, 10 m2",
+          "area_m2": 10.0,
+          "basis": "A-M-419"
+        },
+        "sec3_material": {
+          "mat": "Aluminium extrusion circulation framing, PP-fleece panel lining, SS kick plates",
+          "basis": "hab circulation and utility zoning (AQS-HAB-001; A-M-419): the same non-outgassing interior fitout class as the day spaces",
+          "alt": "as REC_DAYROOM",
+          "note": "10 m2 circulation in the AQS-HAB-001 basis.",
+          "task": "X-HAB-01"
+        },
+        "size_mm": [
+          4000,
+          2500,
+          2400
+        ],
+        "size_note": "10 m2 circulation fitout shell (A-M-419) (X-HAB sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "DUCKWEED",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "duckweed",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "duckweed raceway (Lemna minor, azolla co-culture)",
+          "raceway_m2": 240.0,
+          "prod_g_dry_m2_d": 15.0,
+          "CP_frac": 0.3,
+          "basis": "A-M-420; TECHTREE aquaculture (Lemna 25-35 % CP)"
+        },
+        "size_mm": [
+          30100,
+          10100,
+          700
+        ],
+        "size_note": "300 m2 raceway at the A-M-420 revision, 400 mm water + 100 freeboard + 200 berm: a lined civil basin, HDPE/EPDM (X-FARM sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "DUCK_PEN",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "pen",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "duck pen, 6 Khaki Campbell ducks",
+          "stock": 6.0,
+          "egg_kg_d": 0.34,
+          "ration_kg_d": 0.9,
+          "basis": "A-M-421 (X-FARM-05)"
+        },
+        "sec3_material": {
+          "mat": "Hot-dip galvanised steel frame and hardware cloth, EPDM liner in the wallow, SS316 waterers",
+          "basis": "permanently wet pen with a wallow (graph design; A-M-421): standing water governs the zinc budget, so the wet zone is EPDM-lined and drinking-water contact is SS316",
+          "alt": "FRP wet panels in place of the liner if the pen geometry changes",
+          "note": "the ducks forage the aquaponic loop water; pen drainings join the BSFL feedstock.",
+          "task": "X-FARM-05"
+        },
+        "size_mm": [
+          2500,
+          1300,
+          1300
+        ],
+        "size_note": "6 ducks x 0.3 m2 + wallow strip (A-M-421; TECHTREE ducks.md) (X-FARM sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "QUAIL_CAGE",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "cage",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "coturnix quail cage bank, 20 hens",
+          "stock": 20.0,
+          "egg_kg_d": 0.06,
+          "ration_kg_d": 0.5,
+          "basis": "A-M-422 (X-FARM-06)"
+        },
+        "sec3_material": {
+          "mat": "Hot-dip galvanised weld-wire cage battery, PP feeders, SS316 nipple waterers",
+          "basis": "dry droppings-tray service at the 20-hen Coturnix unit (graph design; A-M-422): HDG weld wire is the cage-battery standard; the only wet points are the nipples, so those alone are stainless",
+          "alt": "PVC-coated wire if foot dermatitis ever shows at the cage floor",
+          "note": "the droppings tray feeds the vermi bin directly.",
+          "task": "X-FARM-06"
+        },
+        "size_mm": [
+          1300,
+          700,
+          1700
+        ],
+        "size_note": "20-hen Coturnix battery, 4 tiers x 0.075 m2/cage at the 0.025 kg/d ration class (A-M-422; TECHTREE coturnix.md) (X-FARM sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "RABBIT_HUTCH",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "hutch",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "rabbitry, 2 does + 1 buck",
+          "does": 2.0,
+          "forage_kg_d": 0.5,
+          "meat_kg_d": 0.1,
+          "basis": "A-M-423 (X-FARM-07)"
+        },
+        "sec3_material": {
+          "mat": "Hot-dip galvanised wire floor, HDPE rest mats, PP nest boxes, SS316 waterers",
+          "basis": "dry pellet manure on a wire floor with rest mats against sore hocks (graph design; A-M-423): HDG wire is the rabbitry floor standard and the rest mats are the welfare contact surface",
+          "alt": "SS wire floor if galvanising wears through at the door wear points",
+          "note": "cold manure goes direct to the soil root zones (A-M-423).",
+          "task": "X-FARM-07"
+        },
+        "size_mm": [
+          1900,
+          700,
+          1600
+        ],
+        "size_note": "3 rabbitry positions x 0.5 m2 with rest mats (A-M-423; TECHTREE rabbits.md) (X-FARM sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "BEE_HIVE",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "hive",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "honey bee hive: pollination + honey",
+          "hives": 1.0,
+          "honey_kg_yr": "10-25",
+          "basis": "A-M-424 (X-FARM-08)"
+        },
+        "sec3_material": {
+          "mat": "Untreated solid-pine box bodies, SS316 screen bottom board, propolis-waxed interiors; no copper-bearing alloys and no treated lumber anywhere on the hive",
+          "basis": "Apis mellifera propolise rough untreated wood and are poisoned by lumber preservatives and copper salts (graph design; A-M-424): in the closed shell the hive may also not outgas into the habitable atmosphere, which is what excludes the polymer-hive class",
+          "alt": "none within the palette - the material is the biology interface here (a polymer hive is a process-change decision, not a materials trade)",
+          "note": "pollination service to the canopy is the primary output; honey and wax are secondary (A-M-424).",
+          "task": "X-FARM-08"
+        },
+        "size_mm": [
+          600,
+          500,
+          1100
+        ],
+        "size_note": "10-frame deep + medium + stand (A-M-424; TECHTREE beekeeping) (X-FARM sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "VERMI_BIN",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "worm_bin",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "vermiculture bin, Eisenia fetida",
+          "bin_m2": 2.0,
+          "basis": "A-M-425 (X-FARM-09)",
+          "organisms": "Eisenia fetida (red wiggler): surface-dwelling, no O2 requirement edge (the bin is aerobic through diffusion)",
+          "castings_quality": "vermicompost 1.5-2.5 % N, 1.0-1.5 % P, 1.0-1.5 % K in plant-available form + humic acids + growth hormones (TECHTREE vermiculture)"
+        },
+        "sec3_material": {
+          "mat": "HDPE bin with coco-coir and shredded-paper bedding, PP working fork, SS316 harvest screen",
+          "basis": "bedding held at 70-80 % moisture near neutral pH for Eisenia fetida (graph design; A-M-425): the wet near-neutral bedding is benign to HDPE/PP and hostile to unprotected steel; no metal contact with the casting harvest",
+          "alt": "FRP bin at larger areas (same polymer-class logic as the BSFL bin)",
+          "note": "castings 1.5-2.5 % N to the soil root zones (A-M-425).",
+          "task": "X-FARM-09"
+        },
+        "size_mm": [
+          2100,
+          1100,
+          600
+        ],
+        "size_note": "2 m2 bin at 300 mm bedding depth (A-M-425) (X-FARM sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "FEED_PREP",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "feed_prep",
+      "tags": [
+        "farm",
+        "feed"
+      ],
+      "params": {
+        "design": {
+          "service": "ration formulation: duckweed + larvae meal + recycled eggshell; HP drier on the storage draw only",
+          "basis": "A-M-426; A-M-416 (no imported grain); TECHTREE insect-farming (black-soldier-fly meal milling class)",
+          "fresh_first": "fish and ducks eat the harvest wet; drying serves only the A-M-270 dry-reserve draw (0.5 kg/d)",
+          "methionine": "the binding supplement (~9 g/d DL-met equivalent at 4-crew; TECHTREE poultry.chickens: synthetic DL-methionine is the standard supplement class)",
+          "ca_source": "recycled eggshell 38 g Ca/d + BSFL Ca 5-8 % (TECHTREE insect-farming) + mineral CaCO3 top-up ~1.5-2 kg/month from the site mineral line (TECHTREE poultry.chickens: crushed limestone free-choice class)",
+          "food_safety": "larvae meal routes to POULTRY ONLY, never to the fish: manure-fed larvae are the pathogen bridge the aquaponic produce path must not carry (TECHTREE agriculture.aquaponics food-safety note)"
+        },
+        "sizing": {
+          "throughput_kg_d": 2.54,
+          "basis": "A-M-426 driver arithmetic",
+          "load_basis": "mixer 0.1 + grinder 0.15 + HP drier 0.35 (9.5 kg/d water x ~0.9 kWh/kg at the HP COP class); arithmetic per A-M-426"
+        },
+        "sec3_material": {
+          "mat": "SS304 contact surfaces and mixing troughs, PP feed bins, quartz-sleeve drier ducting; no copper-bearing alloys on any feed path",
+          "basis": "food-contact sanitation class for the animal ration line (A-M-426): 304 at the chloride-light service, PP bins resist the wet duckweed; Cu is excluded from every feed path outright",
+          "alt": "SS316 where the eggshell grinding dust ever shows pitting",
+          "note": "the reject stream returns to the BSFL bin, so the contact surfaces serve both feeds.",
+          "task": "X-FARM-10"
+        },
+        "size_mm": [
+          1300,
+          900,
+          1700
+        ],
+        "size_note": "mixer + grinder + HP drier cabinet at the 0.6 kW duty (A-M-426) (X-FARM sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": {
+        "value": 0.6,
+        "unit": "kW",
+        "status": "study",
+        "note": "mixer 0.1 + grinder 0.15 + HP drier 0.35 (9.5 kg/d water x ~0.9 kWh/kg at the HP COP class); arithmetic per A-M-426 (X-SPEC calculated) (X-SPEC sizing, calculated)"
+      }
+    },
+    {
+      "unit_id": "AQUA_UV",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "uv_sanitizer",
+      "tags": [
+        "farm",
+        "aquaponics",
+        "food-safety"
+      ],
+      "params": {
+        "design": {
+          "service": "optional UV-C 254 nm loop sanitizer between the biofilter and the growbeds; AQUA_BYPASS normally engaged",
+          "basis": "A-M-428; A-M-427 (food-safety mode); TECHTREE agriculture.aquaponics (produce food-safety note)",
+          "why_it_works": "the nitrifying biofilm lives on the moving-bed media: post-media sterilization passes the nitrates and kills only sloughed/free cells",
+          "modes": "normal = bypassed (growbed rhizosphere needs its microbial feed); food-safety mode = inline (A-M-427 greens/harvest); contamination response = inline",
+          "ozone_contingency": "deep-clean with ozone fed from CRYO_O2, fish isolated, never in-line live: residual ozone is lethal to gills and biofilm",
+          "dose_class": "254 nm, 30-100 mJ/cm2 class for the loop flow; the 40 kg/d loop is trivial flow for a 0.04 kW lamp",
+          "failure_mode": "lamp depletion or sleeve fouling: dose decays silently - the X-FARM-12 validation test is periodic, not one-shot"
+        },
+        "sizing": {
+          "loop_kg_d": 40.0,
+          "basis": "A-M-415 loop rate",
+          "load_basis": "the 254 nm lamp class at the 30-100 mJ/cm2 dose and the 40 kg/d loop flow (A-M-428)"
+        },
+        "sec3_material": {
+          "mat": "SS304 reactor tube with a quartz UV sleeve, PP loop fittings, EPDM gasket class",
+          "basis": "loop-water service at aquaponic temperature (A-M-428): 304 tube with the lamp isolated behind quartz; the unit is normally bypassed, so wetted-time is intermittent",
+          "alt": "316L tube if the loop ever runs saline (it does not at the freshwater class)",
+          "note": "quartz sleeve fouling is the maintenance item - the dose validation (X-FARM-12) covers it.",
+          "task": "X-FARM-12"
+        },
+        "size_mm": [
+          400,
+          350,
+          750
+        ],
+        "size_note": "inline 254 nm reactor tube + control box at the 0.04 kW lamp class (A-M-428) (X-FARM sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": {
+        "value": 0.04,
+        "unit": "kW",
+        "status": "study",
+        "note": "the 254 nm lamp class at the 30-100 mJ/cm2 dose and the 40 kg/d loop flow (A-M-428) (X-SPEC calculated) (X-SPEC sizing, calculated)"
+      }
+    },
+    {
+      "unit_id": "POLY_FIBER",
+      "sector_id": "POLYMERS",
+      "enabled": true,
+      "class": "melt_spin",
+      "tags": [
+        "polymers",
+        "textiles"
+      ],
+      "params": {
+        "design": {
+          "service": "PP melt-spin staple-fiber line: pellet -> spun fiber -> needle-punched nonwoven fleece for the crew textile issue",
+          "basis": "A-M-429; A-M-225 (the FR finish rides the D-DOCK reagent manifest, the WS_SOLV reagent-import class)",
+          "fr_finish": "phosphorus-FR finish at the ~2 % pick-up class: PP is inherently flammable, the FR finish is the wool-flammability replacement carrier",
+          "product": "fleece to MFG_SHOP for conversion (cutting/sewing/knitting) - the shop issues finished textiles to the hab",
+          "feed": "draws the C5-C10 export surplus: IA-C5-SHIP gives up the 0.09 kg/d polymer share (the export carried 7.13 kg/d)",
+          "waste": "spin scrap returns to the solids/leach line (POLY_TO_WET class: PP is leach-inert)"
+        },
+        "sizing": {
+          "throughput_kg_d": 0.0905,
+          "basis": "POLYMERS.textile drivers",
+          "load_basis": "extruder heater 0.2 (0.09 kg/d PP melt + standby) + spindle/winder 0.1; arithmetic per A-M-429"
+        },
+        "sec3_material": {
+          "mat": "SS304 melt vessel and spin pump with heater bands, brass-free spinnerette (stainless die plate), PP quench ducting",
+          "basis": "PP melts at 160-220 C and is non-wetting to the 304 class at the bench throughput (A-M-429): the die plate is the precision item; no copper alloys touch the melt (PP degrades against copper at melt temperature)",
+          "alt": "a 316L die plate if the FR-finish chemistry ever shows die corrosion",
+          "note": "the FR finish dosing skid is PP/PTFE-contact throughout.",
+          "task": "X-POLY-01"
+        },
+        "size_mm": [
+          3100,
+          1300,
+          1900
+        ],
+        "size_note": "bench-scale melt-spin line: extruder + spinnerette + quench + winder at the 0.09 kg/d draw (A-M-429) (X-POLY sec3)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "extruder heater 0.2 (0.09 kg/d PP melt + standby) + spindle/winder 0.1; arithmetic per A-M-429 (X-SPEC calculated) (X-SPEC sizing, calculated)"
+      }
+    },
+    {
+      "unit_id": "MET_SYN",
+      "sector_id": "MEOH",
+      "enabled": true,
+      "class": "chemical_synthesis",
+      "tags": [
+        "meoh",
+        "amino-acid",
+        "feed"
+      ],
+      "params": {
+        "design": {
+          "service": "DL-methionine synthesis (the three-step Strecker route): CH3SH + acrolein -> MMP; MMP + NH3 + HCN -> aminonitrile; hydrolysis -> DL-Met",
+          "basis": "A-M-416 route A close-out (2026-10-28): the no-import-feed rule requires on-site synthesis; TECHTREE poultry.chickens.md: synthetic DL-methionine is the standard supplement class",
+          "chemistry": "step 1: CH3OH + H2S -> CH3SH (K2O/Al2O3, 350 C); step 2: CH3SH + acrolein -> MMP (base-catalysed Michael addition); step 3: MMP + NH3 + HCN -> aminonitrile; hydrolysis -> DL-Met (Strecker)",
+          "throughput_g_d": 9.0,
+          "precursor_chain": "CH3OH from MEOH_SYNTH; H2S from BLACK_DIGEST; NH3 from WS_AMMONIA; acrolein from the olefin line; HCN from the Andrussow reaction (CH4 + NH3 + O2) at the gram/d scale",
+          "product": "DL-methionine crystals to the FEED_PREP formulation (A-M-426)"
+        },
+        "sizing": {
+          "throughput_g_d": 9.0,
+          "power_kW": 0.2,
+          "basis": "bench-scale glass-lined reactor column + reagent feed tanks + crystalliser; the scale is trivial (9 g/d vs the tonne/y industrial class) - the complexity is the three-step sequence, not the throughput"
+        },
+        "sec3_material": {
+          "mat": "Borosilicate glass-lined reactor column, PTFE-lined transfer lines, SS304 reagent feed tanks, Hastelloy C crystalliser",
+          "basis": "the three-step Strecker carries HCN, acrolein and methanethiol - all aggressive at the reagent class (A-M-416): glass-lined for the reaction column, PTFE for the transfer, Hastelloy C for the acidic hydrolysis/crystallisation",
+          "alt": "a tantalum reactor if the HCN service ever shows corrosion at the glass-lining pinholes",
+          "note": "the crystalliser is the product-quality bottleneck: DL-Met crystal habit controls the filtration rate.",
+          "task": "X-UI-002"
+        },
+        "size_mm": [
+          1500,
+          1000,
+          1800
+        ],
+        "size_note": "bench fume-hood train: glass-lined reactor column (2 L working volume), reagent feed tanks, Hastelloy C crystalliser; the 9 g/d DL-Met duty sets nothing larger (A-M-416 route A; X-UI-002)"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "heating jacket + stirrer + metering pumps (X-UI-002 MET_SYN design; A-M-416 route A)"
+      }
     }
   ],
   "streams": [
@@ -8620,10 +10075,10 @@
       "phase": "L/S",
       "carries": "grey/solids",
       "rate": {
-        "value": 319.60396,
+        "value": 326.991631,
         "unit": "kg/d",
         "status": "study",
-        "note": "Mid of AQS-AUD-001 \u00a711 grey \u2192 treat/VCD ~100\u2013120 L/d | X-PAR-02 TF: crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH retired; 91d33f4) (AQS-PAR-003)."
+        "note": "grey/solids (the farm-protein metabolic load is inside this total: AQS-FARM-001) | X-PAR-02 TF: crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH retired; 91d33f4) (AQS-PAR-003)."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "WTR",
@@ -8841,7 +10296,7 @@
       "phase": "L",
       "carries": "VCD distillate",
       "rate": {
-        "value": 308.519678,
+        "value": 340.115479,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -9540,10 +10995,10 @@
       "phase": "L",
       "carries": "flue condensate",
       "rate": {
-        "value": 78.987901,
+        "value": 102.592478,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: CRYO AHU 2592 m3/h coil to 10.0 C dew (w 0.01 -> 0.00762); latent 4.93 kW | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: CRYO AHU 2592 m3/h coil to 10.0 C dew (w 0.01 -> 0.00762); latent 4.93 kW | X-PAR-02 TF: AHU condensate carries the vapor load by difference (T2 extended: FORM_VAP, BED_ET and the livestock vapors ride the condensate line) (AQS-PAR-003)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "DIGESTER",
@@ -9557,10 +11012,10 @@
       "phase": "G",
       "carries": "Br2 vapor",
       "rate": {
-        "value": 755.229337,
+        "value": 915.862641,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 26.6 m3/h holds H2 at 25 % LFL: HER 5.43 + open-circuit 0.95 m3/d H2 on 3594 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.2 m3/h holds H2 at 25 % LFL: HER 6.59 + open-circuit 1.15 m3/d H2 on 4359 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -9574,7 +11029,7 @@
       "phase": "L",
       "carries": "NaBr after ORP",
       "rate": {
-        "value": 755.229337,
+        "value": 915.862641,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -10969,10 +12424,10 @@
       "phase": "S",
       "carries": "polyolefin resin",
       "rate": {
-        "value": 0.294127,
+        "value": 0.384603,
         "unit": "kg/d",
         "status": "study",
-        "note": "Polyolefin resin = naphtha feed 0.2941 kg/d (mass-conserving oligomerization, AQS-SIZE-OIL-POLY POLY_OLEFIN 150-250 C / 1-5 MPa). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Polyolefin resin = naphtha feed 0.3846 kg/d (mass-conserving oligomerization, AQS-SIZE-OIL-POLY POLY_OLEFIN 150-250 C / 1-5 MPa). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS",
@@ -11020,7 +12475,7 @@
       "phase": "S",
       "carries": "pellet stock",
       "rate": {
-        "value": 0.294127,
+        "value": 0.384603,
         "unit": "kg/d",
         "status": "study",
         "note": "Pellet line passes the resin to stock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
@@ -11156,15 +12611,14 @@
       "phase": "L",
       "carries": "Li-bearing polish liquor",
       "rate": {
-        "value": null,
+        "value": 0.5,
         "unit": "",
         "status": "tbd",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "note": "Rev AC new topology \u2014 unrated pending param pass | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC) | the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease); the IA-POL-02 return sheds the slipstream, stated (X-SPEC)"
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
       "note": "Grease line. Rate per notes/GREASE_LINES.md.; namespace=IA; layers=mass"
     },
     {
@@ -11174,15 +12628,14 @@
       "phase": "L",
       "carries": "wax cut",
       "rate": {
-        "value": null,
+        "value": 0.2,
         "unit": "",
         "status": "tbd",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "note": "Rev AC new topology \u2014 unrated pending param pass | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base: 1:1 into the Ca kettle (CUT-3 export gives up the share, stated); the C19 export gives up the share, stated (X-SPEC)"
       },
       "from_sector_id": "OIL",
       "to_sector_id": "OIL",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
       "note": "Grease line. Rate per notes/GREASE_LINES.md.; namespace=IA; layers=mass"
     },
     {
@@ -11192,15 +12645,14 @@
       "phase": "L",
       "carries": "wax cut",
       "rate": {
-        "value": null,
+        "value": 0.1,
         "unit": "",
         "status": "tbd",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "note": "Rev AC new topology \u2014 unrated pending param pass | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC) | the C19-C28 wax base for the Li kettle; the C19 export gives up the share, stated (X-SPEC)"
       },
       "from_sector_id": "OIL",
       "to_sector_id": "OIL",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
       "note": "Grease line. Rate per notes/GREASE_LINES.md.; namespace=IA; layers=mass"
     },
     {
@@ -11210,15 +12662,14 @@
       "phase": "S",
       "carries": "calcium hydroxide",
       "rate": {
-        "value": null,
+        "value": 0.025,
         "unit": "",
         "status": "tbd",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "note": "Rev AC new topology \u2014 unrated pending param pass | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC) | the calcium-soap thickener at ~12 % of the Ca grease (grease chemistry class) (X-SPEC) (X-SPEC)"
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "OIL",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
       "note": "Grease line. Rate per notes/GREASE_LINES.md.; namespace=IA; layers=mass"
     },
     {
@@ -11228,15 +12679,14 @@
       "phase": "S",
       "carries": "lithium hydroxide or carbonate",
       "rate": {
-        "value": null,
+        "value": 0.5,
         "unit": "",
         "status": "tbd",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "note": "Rev AC new topology \u2014 unrated pending param pass | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC) | the carbonated slurry to the Li kettle (thickener + liquor water) (X-SPEC)"
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "OIL",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
       "note": "Grease line. Rate per notes/GREASE_LINES.md.; namespace=IA; layers=mass"
     },
     {
@@ -11282,15 +12732,14 @@
       "phase": "S",
       "carries": "pyro char",
       "rate": {
-        "value": null,
+        "value": 1.924,
         "unit": "",
         "status": "tbd",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "note": "Rev AC new topology \u2014 unrated pending param pass | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC) | char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits); the IA-CHAR pool sheds the draw, stated (X-SPEC) (X-SPEC)"
       },
       "from_sector_id": "OIL",
       "to_sector_id": "GLASS",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
       "note": "3 kg/d assumption. notes/OIL_SECTOR.md.; namespace=IA; layers=mass"
     },
     {
@@ -11610,7 +13059,7 @@
       "phase": "S/L",
       "carries": "grey sludge",
       "rate": {
-        "value": 244.641602,
+        "value": 258.762606,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated. | X-PAR-02 TF: grey sludge to the leach by difference (Rev M: sized to the continuous neighbor draw; was 242.65 at BH) (AQS-PAR-003)."
@@ -11661,7 +13110,7 @@
       "phase": "electric",
       "carries": "PV daily average",
       "rate": {
-        "value": 336.8116,
+        "value": 368.9871,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -11729,7 +13178,7 @@
       "phase": "L",
       "carries": "remineralizer",
       "rate": {
-        "value": 175.174278,
+        "value": 206.770079,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -12069,7 +13518,7 @@
       "phase": "L",
       "carries": "irrigation",
       "rate": {
-        "value": 42.138417,
+        "value": 43.838417,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 TF: crew-duty bed closes by difference on the clean-water line (A-M-229) (AQS-PAR-003)."
@@ -12545,7 +13994,7 @@
       "phase": "L",
       "carries": "potable makeup, remineralised",
       "rate": {
-        "value": 165.174239,
+        "value": 196.77004,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -12885,7 +14334,7 @@
       "phase": "S",
       "carries": "returned scrap",
       "rate": {
-        "value": 530.73594,
+        "value": 531.228831,
         "unit": "kg/d",
         "status": "study",
         "note": "Returned scrap follows the worn goods. The leach receives it back on IA-NUT-LEACH. | X-PAR-02 TF: returned scrap closes the scrap yard by difference: worn goods + swarf + leach return less the dock feed (its stated basis: follows the worn goods) (AQS-PAR-003)."
@@ -13650,7 +15099,7 @@
       "phase": "L",
       "carries": "leach liquor water bleed to vapour-compression distillation",
       "rate": {
-        "value": 167.999678,
+        "value": 199.595479,
         "unit": "kg/d",
         "status": "study",
         "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -13786,7 +15235,7 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 0.7388,
+        "value": 0.818,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02 load-basis (A-M-275). Feed equal to MEOH_SYNTH continuous_kw."
@@ -14075,7 +15524,7 @@
       "phase": "L",
       "carries": "water make-up for H and O leaving as product",
       "rate": {
-        "value": 64.41311,
+        "value": 57.785915,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
@@ -14245,10 +15694,10 @@
       "phase": "L",
       "carries": "C5-C10 product shipped",
       "rate": {
-        "value": 7.130646,
+        "value": 7.04017,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0000 and the olefin feed 0.2941 (this pass, AQS-DUTY-073); shipped at the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). | X-PAR-12 TF: C5-C10 product not burned: shipped at the dock less the olefin draw 0.2941 kg/d (AQS-DUTY-073) (AQS-PAR-005)."
+        "note": "X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0000 and the olefin feed 0.2941 (this pass, AQS-DUTY-073); shipped at the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). | X-PAR-12 TF: C5-C10 product not burned: shipped at the dock less the olefin draw 0.3846 kg/d (AQS-DUTY-073) (AQS-PAR-005)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
@@ -14741,7 +16190,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.622 kg/d (SANDER2015) (AQS-PAR-003)."
+        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.669 kg/d (SANDER2015) (AQS-PAR-003)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "CRYO",
@@ -15503,7 +16952,7 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 68.2838,
+        "value": 99.1801,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
@@ -15520,7 +16969,7 @@
       "phase": "L",
       "carries": "C5-C10 naphtha olefin feed",
       "rate": {
-        "value": 0.294127,
+        "value": 0.384603,
         "unit": "kg/d",
         "status": "study",
         "note": "Polyolefin naphtha feed (AQS-DUTY-073, A-M-264). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
@@ -15693,7 +17142,7 @@
         "value": 4.2,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF: food store passes the harvest at steady state (D-DOCK buffer, A-M-270). | X-PAR-02 TF: food store passes the harvest to the galley at steady state (D-DOCK buffer, A-M-270) (AQS-PAR-003)."
+        "note": "food issue to the habitation (the farm protein is inside this total: AQS-FARM-001) | X-PAR-02 TF: food store passes the harvest to the galley at steady state (D-DOCK buffer, A-M-270) (AQS-PAR-003)."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "HAB",
@@ -16940,6 +18389,1298 @@
       "to_sector_id": "GEO",
       "open_boundary": false,
       "note": "layers=elec"
+    },
+    {
+      "stream_id": "AQUA_LOOP1",
+      "from_unit_id": "AQUA_TANK",
+      "to_unit_id": "BIOFILTER",
+      "phase": "liquid",
+      "carries": "ammonia-rich fish waste water (NH3/NH4+ from the gills)",
+      "rate": {
+        "value": 200.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "ammonia load: fish protein metabolism ~16 % N by mass (A-M-415); the BIOFILTER nitrifies NH3 -> NO2 -> NO3 before the root zones (X-FARM wet-basis, farm_balance.py)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "AQUA_NUT",
+      "from_unit_id": "BIOFILTER",
+      "to_unit_id": "AQUA_UV",
+      "phase": "liquid",
+      "carries": "nitrified water to the optional sanitizer (NO3- passes; sloughed cells die in food-safety mode)",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "loop flow 40 kg/d (A-M-415); nitrates pass the media biofilm untouched (A-M-428) (X-FARM wet-basis, farm_balance.py)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "AQUA_LOOP3",
+      "from_unit_id": "GROWBED_A",
+      "to_unit_id": "GROWBED_B",
+      "phase": "liquid",
+      "carries": "nitrate water through the aerobic root zone (plant uptake + anaerobic mineralisation layer)",
+      "rate": {
+        "value": 202.75,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (/ build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 202.75 kg/d] | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-CHICK-H2O",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "CHICKEN_COOP",
+      "phase": "liquid",
+      "carries": "flock drinking water",
+      "rate": {
+        "value": 0.36,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "EGG_HARVEST",
+      "from_unit_id": "CHICKEN_COOP",
+      "to_unit_id": "FOOD_STORE",
+      "phase": "liquid",
+      "carries": "eggs to the food store",
+      "rate": {
+        "value": 0.6,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "CHICK_MANURE",
+      "from_unit_id": "CHICKEN_COOP",
+      "to_unit_id": "BSFL_BIN",
+      "phase": "liquid",
+      "carries": "poultry manure to the larvae bin",
+      "rate": {
+        "value": 3.20818,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "CHICK_VAP",
+      "from_unit_id": "CHICKEN_COOP",
+      "to_unit_id": "CRYO_AHU",
+      "phase": "liquid",
+      "carries": "flock respiration/evaporation",
+      "rate": {
+        "value": 0.72,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "FISH_SLUDGE",
+      "from_unit_id": "AQUA_TANK",
+      "to_unit_id": "BSFL_BIN",
+      "phase": "liquid",
+      "carries": "fish sludge to the larvae bin",
+      "rate": {
+        "value": 3.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "FRASS",
+      "from_unit_id": "BSFL_BIN",
+      "to_unit_id": "HOPPER",
+      "phase": "liquid",
+      "carries": "frass compost to the solids line",
+      "rate": {
+        "value": 0.492891,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "BSFL_VAP",
+      "from_unit_id": "BSFL_BIN",
+      "to_unit_id": "CRYO_AHU",
+      "phase": "liquid",
+      "carries": "bin respiration/evaporation",
+      "rate": {
+        "value": 7.24291,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "FOOD_GALLEY",
+      "from_unit_id": "FOOD_STORE",
+      "to_unit_id": "GALLEY",
+      "phase": "liquid",
+      "carries": "food issue to the galley",
+      "rate": {
+        "value": 4.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 8.0 kg/d]"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "GALLEY_MEALS",
+      "from_unit_id": "GALLEY",
+      "to_unit_id": "HABITATION",
+      "phase": "liquid",
+      "carries": "prepared meals to the crew",
+      "rate": {
+        "value": 4.84,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (/ build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 8.84 kg/d] | X-PAR-02 TF: served meals close the galley by difference over the issue, greens, biowaste, shell and grey (A-M-426/427) (AQS-PAR-003)."
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "GALLEY_BIO",
+      "from_unit_id": "GALLEY",
+      "to_unit_id": "BSFL_BIN",
+      "phase": "liquid",
+      "carries": "galley biowaste to the larvae bin",
+      "rate": {
+        "value": 0.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "WASH_GREY",
+      "from_unit_id": "WASHROOM",
+      "to_unit_id": "GREY_TREAT",
+      "phase": "liquid",
+      "carries": "wash grey water to the treatment train",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "FISH_HARVEST",
+      "from_unit_id": "AQUA_TANK",
+      "to_unit_id": "FOOD_STORE",
+      "phase": "liquid",
+      "carries": "fish harvest to the food store",
+      "rate": {
+        "value": 0.81,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-AQUA-TOPUP",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "AQUA_TANK",
+      "phase": "liquid",
+      "carries": "loop top-up: root-zone growth water and evaporation",
+      "rate": {
+        "value": 27.355801,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (/ build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 48.094 kg/d] | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-DUCK-H2O",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "DUCK_PEN",
+      "phase": "liquid",
+      "carries": "duck drinking/washing water",
+      "rate": {
+        "value": 1.98,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-WASH-FEED",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "WASHROOM",
+      "phase": "liquid",
+      "carries": "wash-water feed to the washroom fixtures",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "AQUA_LOOP4",
+      "from_unit_id": "GROWBED_B",
+      "to_unit_id": "DUCKWEED",
+      "phase": "liquid",
+      "carries": "loop water to the duckweed raceway (polisher + feed crop)",
+      "rate": {
+        "value": 220.738599,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (/ build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 216.989 kg/d] | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQ | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "AQUA_RETURN2",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "AQUA_TANK",
+      "phase": "liquid",
+      "carries": "polished loop water return (2.2 kg/d duckweed growth drawn from the loop)",
+      "rate": {
+        "value": 158.454199,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (/ build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 137.716 kg/d] | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQ | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "DUCK_FISH",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "AQUA_TANK",
+      "phase": "liquid",
+      "carries": "fresh duckweed: tilapia ration (dry-equivalent, 1.5 % BW)",
+      "rate": {
+        "value": 18.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "FOOD_HAB",
+      "from_unit_id": "FOOD_STORE",
+      "to_unit_id": "HABITATION",
+      "phase": "liquid",
+      "carries": "food issue to the habitation (direct)",
+      "rate": {
+        "value": 2.46,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 2.55 kg/d]"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "DUCK_EGGS",
+      "from_unit_id": "DUCK_PEN",
+      "to_unit_id": "FOOD_STORE",
+      "phase": "liquid",
+      "carries": "duck eggs to the food store",
+      "rate": {
+        "value": 0.34,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "DUCK_MANURE",
+      "from_unit_id": "DUCK_PEN",
+      "to_unit_id": "BSFL_BIN",
+      "phase": "liquid",
+      "carries": "duck manure to the larvae bin",
+      "rate": {
+        "value": 1.44,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "DUCK_VAP",
+      "from_unit_id": "DUCK_PEN",
+      "to_unit_id": "CRYO_AHU",
+      "phase": "liquid",
+      "carries": "duck pen evaporation",
+      "rate": {
+        "value": 0.8,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "QUAIL_H2O",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "QUAIL_CAGE",
+      "phase": "liquid",
+      "carries": "quail water",
+      "rate": {
+        "value": 0.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "QUAIL_EGGS",
+      "from_unit_id": "QUAIL_CAGE",
+      "to_unit_id": "FOOD_STORE",
+      "phase": "liquid",
+      "carries": "quail eggs to the food store",
+      "rate": {
+        "value": 0.06,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "QUAIL_DROP",
+      "from_unit_id": "QUAIL_CAGE",
+      "to_unit_id": "VERMI_BIN",
+      "phase": "liquid",
+      "carries": "quail droppings to the vermi bin",
+      "rate": {
+        "value": 1.75,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "QUAIL_VAP",
+      "from_unit_id": "QUAIL_CAGE",
+      "to_unit_id": "CRYO_AHU",
+      "phase": "liquid",
+      "carries": "cage evaporation",
+      "rate": {
+        "value": 0.091667,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "RABBIT_FORAGE",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "RABBIT_HUTCH",
+      "phase": "liquid",
+      "carries": "canopy thinnings/greens: rabbit forage",
+      "rate": {
+        "value": 0.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "RABBIT_MEAT",
+      "from_unit_id": "RABBIT_HUTCH",
+      "to_unit_id": "FOOD_STORE",
+      "phase": "liquid",
+      "carries": "dressed rabbit meat to the food store",
+      "rate": {
+        "value": 0.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "RABBIT_MANURE",
+      "from_unit_id": "RABBIT_HUTCH",
+      "to_unit_id": "GROWBED_B",
+      "phase": "liquid",
+      "carries": "cold rabbit manure direct to the mineralisation zone",
+      "rate": {
+        "value": 0.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "RABBIT_VAP",
+      "from_unit_id": "RABBIT_HUTCH",
+      "to_unit_id": "CRYO_AHU",
+      "phase": "liquid",
+      "carries": "hutch evaporation",
+      "rate": {
+        "value": 0.1,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "NECTAR_FORAGE",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "BEE_HIVE",
+      "phase": "liquid",
+      "carries": "nectar/pollen forage from the canopy and greenhouse crops",
+      "rate": {
+        "value": 0.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "HONEY",
+      "from_unit_id": "BEE_HIVE",
+      "to_unit_id": "FOOD_STORE",
+      "phase": "liquid",
+      "carries": "honey to the food store (annual average)",
+      "rate": {
+        "value": 0.05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "BEE_VAP",
+      "from_unit_id": "BEE_HIVE",
+      "to_unit_id": "CRYO_AHU",
+      "phase": "liquid",
+      "carries": "hive evaporation",
+      "rate": {
+        "value": 0.15,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "VERMI_FEED",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "VERMI_BIN",
+      "phase": "liquid",
+      "carries": "soft canopy residue to the vermi bin",
+      "rate": {
+        "value": 1.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "VERMICOMPOST",
+      "from_unit_id": "VERMI_BIN",
+      "to_unit_id": "GROWBED_A",
+      "phase": "liquid",
+      "carries": "vermicompost to the growbed soil",
+      "rate": {
+        "value": 1.9,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "WORM_TEA",
+      "from_unit_id": "VERMI_BIN",
+      "to_unit_id": "GROWBED_A",
+      "phase": "liquid",
+      "carries": "worm tea to the growbed soil",
+      "rate": {
+        "value": 0.85,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "DUCK_FODDER",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "DUCK_PEN",
+      "phase": "liquid",
+      "carries": "fresh duckweed forage (ad lib)",
+      "rate": {
+        "value": 4.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "DUCK_GREY",
+      "from_unit_id": "DUCK_PEN",
+      "to_unit_id": "GREY_TREAT",
+      "phase": "liquid",
+      "carries": "duck wash water",
+      "rate": {
+        "value": 5.733333,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "X-FARM build-out (AQS-FARM-001); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-AIR-AQUA",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "AQUA_TANK",
+      "phase": "electric",
+      "carries": "air pump electrical load: O2 aeration for the fish",
+      "rate": {
+        "value": 0.04,
+        "unit": "kW",
+        "status": "study",
+        "note": "air pump 40 W: dissolved O2 for the fish (5 mg/L minimum) and the biofilter nitrification (A-M-415)"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out: the air stones are the O2 source for the fish and the nitrifying bacteria; namespace=IA; layers=elec"
+    },
+    {
+      "stream_id": "IA-AIR-BIO",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BIOFILTER",
+      "phase": "electric",
+      "carries": "air pump electrical load: O2 for the nitrifying bacteria",
+      "rate": {
+        "value": 0.02,
+        "unit": "kW",
+        "status": "study",
+        "note": "biofilter aeration 20 W: the nitrifying bacteria are aerobic (4.57 mg O2/mg NH4+-N); A-M-415"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM build-out: without O2 the nitrification stops and the ammonia kills the fish; namespace=IA; layers=elec"
+    },
+    {
+      "stream_id": "DUCK_FORM",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "FEED_PREP",
+      "phase": "liquid",
+      "carries": "fresh duckweed to formulation (layers + quail + reserve draw)",
+      "rate": {
+        "value": 43.3844,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 2.33 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM feed-closure build (A-M-426/427/428); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "EGGSHELL_RET",
+      "from_unit_id": "GALLEY",
+      "to_unit_id": "FEED_PREP",
+      "phase": "liquid",
+      "carries": "baked crushed eggshell return (38 g Ca/d)",
+      "rate": {
+        "value": 0.06,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 0.1 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM feed-closure build (A-M-426/427/428); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "LAYER_FEED",
+      "from_unit_id": "FEED_PREP",
+      "to_unit_id": "CHICKEN_COOP",
+      "phase": "liquid",
+      "carries": "formulated layer ration",
+      "rate": {
+        "value": 4.16818,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 1.44 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM feed-closure build (A-M-426/427/428); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "QUAIL_RATION",
+      "from_unit_id": "FEED_PREP",
+      "to_unit_id": "QUAIL_CAGE",
+      "phase": "liquid",
+      "carries": "formulated quail ration",
+      "rate": {
+        "value": 1.666667,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 0.5 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM feed-closure build (A-M-426/427/428); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "DUCK_STORE",
+      "from_unit_id": "FEED_PREP",
+      "to_unit_id": "FOOD_STORE",
+      "phase": "liquid",
+      "carries": "dried duckweed to the dry reserve",
+      "rate": {
+        "value": 0.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 0.5 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM feed-closure build (A-M-426/427/428); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "FORM_REJECT",
+      "from_unit_id": "FEED_PREP",
+      "to_unit_id": "BSFL_BIN",
+      "phase": "liquid",
+      "carries": "screenings/fines back to the larvae bin",
+      "rate": {
+        "value": 0.066667,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 0.104 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM feed-closure build (A-M-426/427/428); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "FORM_VAP",
+      "from_unit_id": "FEED_PREP",
+      "to_unit_id": "CRYO_AHU",
+      "phase": "liquid",
+      "carries": "drying evaporation on the storage draw (fresh-basis water)",
+      "rate": {
+        "value": 9.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 9.5 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "X-FARM feed-closure build (A-M-426/427/428); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "DUCK_GREENS",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "GALLEY",
+      "phase": "liquid",
+      "carries": "human-grade fresh duckweed greens to the galley",
+      "rate": {
+        "value": 2.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 0.12 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "note": "X-FARM feed-closure build (A-M-426/427/428); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "AQUA_SAN",
+      "from_unit_id": "AQUA_UV",
+      "to_unit_id": "GROWBED_A",
+      "phase": "liquid",
+      "carries": "sanitized loop water to the growbeds (food-safety/contingency mode)",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 40 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM feed-closure build (A-M-426/427/428); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "AQUA_BYPASS",
+      "from_unit_id": "BIOFILTER",
+      "to_unit_id": "GROWBED_A",
+      "phase": "liquid",
+      "carries": "normal-mode loop bypass around AQUA_UV",
+      "rate": {
+        "value": 200.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "the normal path: the rhizosphere needs its microbial feed (A-M-428) (X-FARM)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM feed-closure build (A-M-426/427/428); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-POWER-FEEDPREP",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "FEED_PREP",
+      "phase": "electric",
+      "carries": "formulation+drying electrical load",
+      "rate": {
+        "value": 0.6,
+        "unit": "kW",
+        "status": "study",
+        "note": "A-M-426 driver (X-FARM)"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM feed-closure build (A-M-426/427/428); namespace=IA; layers=elec"
+    },
+    {
+      "stream_id": "IA-POWER-AQUAUV",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "AQUA_UV",
+      "phase": "electric",
+      "carries": "UV-C lamp electrical load",
+      "rate": {
+        "value": 0.04,
+        "unit": "kW",
+        "status": "study",
+        "note": "A-M-428 lamp class (X-FARM)"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM feed-closure build (A-M-426/427/428); namespace=IA; layers=elec"
+    },
+    {
+      "stream_id": "LARVAE_FRESH",
+      "from_unit_id": "BSFL_BIN",
+      "to_unit_id": "FEED_PREP",
+      "phase": "liquid",
+      "carries": "fresh larvae to the formulation drier",
+      "rate": {
+        "value": 0.479045,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "fresh larvae at the 44 % DM class (TECHTREE insect-farming.md:112) (X-FARM wet-basis, farm_balance.py)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM wet-basis balance (farm_balance.py); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "DUCK_RATION",
+      "from_unit_id": "FEED_PREP",
+      "to_unit_id": "DUCK_PEN",
+      "phase": "liquid",
+      "carries": "pressed duckweed mash to the duck ration",
+      "rate": {
+        "value": 2.333333,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "duck mash at the mash DM class (A-M-421 x A-M-426) (X-FARM wet-basis, farm_balance.py)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM wet-basis balance (farm_balance.py); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "FORM_PRESS",
+      "from_unit_id": "FEED_PREP",
+      "to_unit_id": "GROWBED_B",
+      "phase": "liquid",
+      "carries": "press water back to the loop",
+      "rate": {
+        "value": 25.688598,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "duckweed juice water returns to the beds (A-M-426) [free: solver-reconciled, x0 25.689 kg/d] | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (A | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM wet-basis balance (farm_balance.py); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "BED_GREENS",
+      "from_unit_id": "GROWBED_B",
+      "to_unit_id": "FOOD_STORE",
+      "phase": "liquid",
+      "carries": "media-bed greens to the reserve",
+      "rate": {
+        "value": 4.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "bed greens class (FARM.classes.bed_greens_kgd) (X-FARM wet-basis, farm_balance.py)"
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM wet-basis balance (farm_balance.py); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "BED_ET",
+      "from_unit_id": "GROWBED_B",
+      "to_unit_id": "CRYO_AHU",
+      "phase": "liquid",
+      "carries": "growbed evapotranspiration",
+      "rate": {
+        "value": 5.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "bed ET to the AHU (free edge, solver reconciles) [free: solver-reconciled, x0 5.0 kg/d] | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PA | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "note": "X-FARM wet-basis balance (farm_balance.py); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "NUT_AQUA",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "DUCKWEED",
+      "phase": "liquid",
+      "carries": "mineral nitrate solution to the raceway",
+      "rate": {
+        "value": 5.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "mineral N: the fish stock supplies a fraction of the raceway uptake (A-M-430) (X-FARM wet-basis, farm_balance.py)"
+      },
+      "from_sector_id": "DOCK",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM wet-basis balance (farm_balance.py); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "NUT_AQUA_BED",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "GROWBED_B",
+      "phase": "liquid",
+      "carries": "mineral nitrate solution to the media beds",
+      "rate": {
+        "value": 1.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "bed greens N top-up (A-M-430) (X-FARM wet-basis, farm_balance.py)"
+      },
+      "from_sector_id": "DOCK",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM wet-basis balance (farm_balance.py); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "CA_HOPPER",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "QUAIL_CAGE",
+      "phase": "liquid",
+      "carries": "mineral calcium carbonate (free-choice hopper)",
+      "rate": {
+        "value": 0.035,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "quail Ca class (TECHTREE coturnix.md:60; A-M-426/430) (X-FARM wet-basis, farm_balance.py)"
+      },
+      "from_sector_id": "DOCK",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-FARM wet-basis balance (farm_balance.py); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "FOOD_EXPORT",
+      "from_unit_id": "FOOD_STORE",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "phase": "liquid",
+      "carries": "surplus food to the reserve/trade boundary",
+      "rate": {
+        "value": -0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "production beyond the crew issue (A-M-270 reserve; D-DOCK trade statement) [free: solver-reconciled, x0 0.11 kg/d] | X-PAR-02 TF: the reserve/trade surplus closes the store by difference over the issue edges (A-M-270; D-DOCK statement) (AQS-PAR-003)."
+      },
+      "from_sector_id": "FARM",
+      "to_sector_id": "DOCK",
+      "open_boundary": false,
+      "note": "X-FARM wet-basis balance (farm_balance.py); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "GAL_GREY",
+      "from_unit_id": "GALLEY",
+      "to_unit_id": "GREY_TREAT",
+      "phase": "liquid",
+      "carries": "galley wash grey water to the treatment train",
+      "rate": {
+        "value": 1.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "galley grey class (AQS-HAB-001 services) (X-FARM wet-basis, farm_balance.py)"
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "X-FARM wet-basis balance (farm_balance.py); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "STOCK_TO_FIBER",
+      "from_unit_id": "POLY_STOCK",
+      "to_unit_id": "POLY_FIBER",
+      "phase": "liquid",
+      "carries": "PP pellet draw to the melt-spin line",
+      "rate": {
+        "value": 0.090476,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "PP feed at the 95% spin yield (A-M-429). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "note": "X-POLY textile line (A-M-429); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "FR_FINISH",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "POLY_FIBER",
+      "phase": "liquid",
+      "carries": "phosphorus-FR finish (reagent manifest)",
+      "rate": {
+        "value": 0.001719,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "FR pick-up ~2 % of fibre; D-DOCK reagent import per A-M-225 (in-plant synthesis = locale upgrade). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "DOCK",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "note": "X-POLY textile line (A-M-429); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "FIBER_SCRAP",
+      "from_unit_id": "POLY_FIBER",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "liquid",
+      "carries": "spin scrap to the solids line",
+      "rate": {
+        "value": 0.004524,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "spin waste, PP leach-inert (the POLY_TO_WET class). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "note": "X-POLY textile line (A-M-429); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "FLEECE_TO_MFG",
+      "from_unit_id": "POLY_FIBER",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "liquid",
+      "carries": "FR-finished fleece to the shop for conversion",
+      "rate": {
+        "value": 0.087671,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "fleece incl. FR: cutting/sewing/knitting into the crew textile issue (A-M-429). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "note": "X-POLY textile line (A-M-429); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "TEXTILE_HAB",
+      "from_unit_id": "MFG_SHOP",
+      "to_unit_id": "HABITATION",
+      "phase": "liquid",
+      "carries": "finished crew textiles to the hab issue",
+      "rate": {
+        "value": 0.087671,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "the worn goods return on IA-WEAR (A-M-429). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "note": "X-POLY textile line (A-M-429); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "SF-POLY_FIBER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "POLY_FIBER",
+      "phase": "electric",
+      "carries": "melt-spin electrical load",
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "0.3 kW bench-scale melt-spin line (X-POLY, A-M-429)"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "note": "X-POLY textile line (A-M-429); namespace=IA; layers=elec"
+    },
+    {
+      "stream_id": "IA-MEOH-CH3SH",
+      "from_unit_id": "MEOH_SYNTH",
+      "to_unit_id": "MET_SYN",
+      "phase": "liquid",
+      "carries": "methanol feed to the methyl-mercaptan synthesis (trace)",
+      "rate": {
+        "value": 0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "nutritional supplement at the 9 g/d DL-Met class: below the mass-balance significance threshold. The requirement and the synthesis route are in A-M-416 (route A) and MET_SYN params. [X-UI]"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "note": "X-UI-002 MET_SYN (A-M-416 route A); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-H2S-CH3SH",
+      "from_unit_id": "BLACK_DIGEST",
+      "to_unit_id": "MET_SYN",
+      "phase": "liquid",
+      "carries": "H2S feed to the methyl-mercaptan synthesis (trace)",
+      "rate": {
+        "value": 0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "nutritional supplement at the 9 g/d DL-Met class: below the mass-balance significance threshold. The requirement and the synthesis route are in A-M-416 (route A) and MET_SYN params. [X-UI]"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "note": "X-UI-002 MET_SYN (A-M-416 route A); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-NH3-MET",
+      "from_unit_id": "WS_AMMONIA",
+      "to_unit_id": "MET_SYN",
+      "phase": "liquid",
+      "carries": "ammonia feed to the Strecker step (trace)",
+      "rate": {
+        "value": 0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "nutritional supplement at the 9 g/d DL-Met class: below the mass-balance significance threshold. The requirement and the synthesis route are in A-M-416 (route A) and MET_SYN params. [X-UI]"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "note": "X-UI-002 MET_SYN (A-M-416 route A); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "DL_MET_TO_FEED",
+      "from_unit_id": "MET_SYN",
+      "to_unit_id": "CHICKEN_COOP",
+      "phase": "liquid",
+      "carries": "DL-methionine crystals: top-dressed supplement at the point of feeding",
+      "rate": {
+        "value": 0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "nutritional supplement at the 9 g/d DL-Met class: below the mass-balance significance threshold. The requirement and the synthesis route are in A-M-416 (route A) and MET_SYN params. [X-UI]"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-UI-002 MET_SYN (A-M-416 route A); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "SF-MET_SYN",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "MET_SYN",
+      "phase": "electric",
+      "carries": "heating jacket + stirrer + metering pumps",
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "the bench-scale synthesis duty (A-M-416) [X-UI-002-supplement held]"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "note": "X-UI-002 MET_SYN (A-M-416 route A); namespace=IA; layers=elec"
     }
   ],
   "electrical": {
@@ -16954,21 +19695,21 @@
       "PUMPED_HYDRO"
     ],
     "need_kw": {
-      "value": 179.72,
+      "value": 217.95,
       "unit": "kW",
       "status": "study",
-      "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 29x23 bays, ext 68.28 kW)."
+      "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 35x23 bays, ext 99.18 kW)."
     },
     "target_kw": {
-      "value": 449.31,
+      "value": 544.88,
       "unit": "kW",
       "status": "study",
       "note": "write_graph power() live derivation: mean-day average generation of the installed array = pv_oversize_factor x balancing energy / 24 (= 2.5 x need at the drivers basis; A-M-234 formula, D75)."
     },
     "pv_module_kw": 0.5,
-    "pv_count": 4984,
+    "pv_count": 6044,
     "znbr_module_kw": 60.0,
-    "znbr_count": 35,
+    "znbr_count": 42,
     "rect_count": 1,
     "notes": "write_graph power() (single writer, D1/D2/D4): need/target/PV/storage chain derived again per A-M-234 replaced_by / A-M-258 from docs-authority/_power_sizing.py (demand = max(node continuous_kw, SOL_ARK feed) + RECT-EW bounding AC, A-M-231) and solver.roof_close; pv_module_kw x pv_count = PV_ARRAY.params.nameplate_kw; znbr_* = the SOL_ARK hybrid-inverter block the ZNBR2 store is distributed over; rect_count = the single nine-channel RECTIFIER (Rev AC; RECT_EW remap, A-M-255)."
   },

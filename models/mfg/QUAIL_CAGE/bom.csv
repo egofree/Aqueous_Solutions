@@ -1,0 +1,6 @@
+item,part,qty,material,mass_kg,make_buy,note
+1,drop_board,1,HDG_steel,21.4,make,"frame class; 20-hen Coturnix battery, 4 tiers x 0.075 m2/cage at the 0.025 kg/d ration class "
+2,floor_wire,1,HDG_steel,5.9,make,"frame class; 20-hen Coturnix battery, 4 tiers x 0.075 m2/cage at the 0.025 kg/d ration class "
+3,frame_legs,1,HDG_steel,80.4,make,"frame class; 20-hen Coturnix battery, 4 tiers x 0.075 m2/cage at the 0.025 kg/d ration class "
+4,roof,1,HDG_steel,21.4,make,"frame class; 20-hen Coturnix battery, 4 tiers x 0.075 m2/cage at the 0.025 kg/d ration class "
+5,wire_panels,1,HDG_steel,15.7,make,"frame class; 20-hen Coturnix battery, 4 tiers x 0.075 m2/cage at the 0.025 kg/d ration class "

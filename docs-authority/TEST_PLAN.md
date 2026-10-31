@@ -15,14 +15,14 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 
 | Phase | Scope | Items | Closes with |
 | --- | --- | --- | --- |
-| T1 | Owner and site data | 50 | Owner decision or site investigation report |
+| T1 | Owner and site data | 48 | Owner decision or site investigation report |
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 60 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 464 | Calculation or drawing issued under the named task |
-| T6 | Commissioning measurements | 32 | Commissioning record |
+| T5 | Design calculations and drawings | 488 | Calculation or drawing issued under the named task |
+| T6 | Commissioning measurements | 37 | Commissioning record |
 
-Total 660 items: 296 drivers, 364 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 687 items: 305 drivers, 382 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -39,7 +39,6 @@ Total 660 items: 296 drivers, 364 register entries. Classification rule: first m
 | driver ifc_perim_small_mm | 1219 mm | AHJ fire-code review | X-PAR |
 | driver mv_kV | 12.47 kV collection and point of common coupling | Utility interconnection study (owner input A-M-113): service voltage | X-PAR |
 | driver pv_oversize_factor | 2.0 PV nameplate / PV needed to close the daily balance | NREL NSRDB TMY hourly run (PVWatts v8) for the site: fraction of days with yield below 1/factor of the mean; export tariff from the serving utility | X-PAR |
-| driver roof_snow_kPa | 0.24 kPa flat-roof snow | ASCE 7 Hazard Tool ground snow load at the site | X-PAR |
 | driver san_compost_fraction | 0.25 share of excreta to compost toilets (daily average; each path sized for 100 %) | Owner HAB fit-out (number of each toilet type) and use log | X-PAR |
 | driver san_crew | 4 persons, HAB design occupancy (HABITATION params.crew_study) | Owner occupancy schedule | X-PAR |
 | driver san_farm_sep_m | 7.62 m minimum edge distance, sanitation units to any FARM unit, in addition to the HAB/FARM wall and separate ventilation | Owner and AHJ review; air-pressure cascade test FARM > HAB corridor > sanitation room | X-PAR |
@@ -47,8 +46,8 @@ Total 660 items: 296 drivers, 364 register entries. Classification rule: first m
 | driver soil_unit_weight_kN_m3 | 18.0 kN/m3 moist soil | Geotechnical report unit weight | X-PAR |
 | driver wt_Ie | 1.5 - importance factor, Risk Category IV (life-support energy) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | driver wt_R | 3.0 - response modification, elevated-mass structure (conservative) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
-| driver wt_SD1 | 0.08 g design 1 s spectral acceleration = 2/3 Fv S1 | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) | X-PAR |
-| driver wt_SDS | 0.107 g design short-period spectral acceleration = 2/3 Fa Ss | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) | X-PAR |
+| driver wt_SD1 | 0.08 g design 1 s spectral acceleration = 2/3 Fv S1 | ASCE 7 Hazard Tool at the chosen location; the foundation re-solves | X-PAR |
+| driver wt_SDS | 0.107 g design short-period spectral acceleration = 2/3 Fa Ss | ASCE 7 Hazard Tool at the chosen location; the foundation re-solves | X-PAR |
 | driver wt_TL_s | 8.0 s long-period transition | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | driver wt_cell_len_m | 12.0 m max reservoir cell length (sloshing; min 2 cells per level) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | driver wt_core_frac | 0.15 - plate fraction kept for stair, lift and penstock cores | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
@@ -56,7 +55,6 @@ Total 660 items: 296 drivers, 364 register entries. Classification rule: first m
 | driver wt_level_clear_mm | 6000 mm reservoir storey floor-to-floor | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | driver wt_penstock_loss_frac | 0.05 - penstock friction as fraction of head | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | driver wt_water_max_m | 4.5 m max water depth per reservoir level (slab load 44 kPa) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
-| driver wt_wind_ms | 50.0 m/s basic wind speed | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | A-M-013 | 115 mph 3 s gust | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-014 | Ss 0.10, S1 0.05 g | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-015 | D site class | Geotechnical report | X-BAS-03 |
@@ -224,6 +222,11 @@ Total 660 items: 296 drivers, 364 register entries. Classification rule: first m
 | driver DIGESTER.metals-leach-train.htc_header_T_K | 473.15 K | steam heater temperature vs duty sheet | X-PAR |
 | driver ELEC.storage-train.ZNBR2.purge_air_T_C | 25.0 C purge air temperature | Compare with the HVAC design room and line temperatures | X-PAR |
 | driver FAB.litho-train.starts_per_d | 5 wafer starts/d | lock the wafer starts rate at the fab product-basis task | X-PAR |
+| driver FARM.aquaponics.feed_larvae_frac | 0.114 kg/d larvae meal to the layer ration (7.9 % of the ration, computed) | Larvae-meal ration trial (X-FARM-01) | X-PAR |
+| driver FARM.bsfl.process_kg_d | 1.43 kg/d feedstock (study duty; bin capacity class 5 kg/d) | Bin trial (X-FARM-03) | X-PAR |
+| driver FARM.ducks.stock | 6.0 ducks (Khaki Campbell class) | Flock trial (X-FARM-05) | X-PAR |
+| driver FARM.quail.stock | 20.0 coturnix hens (indoor cage bank) | Cage-bank trial (X-FARM-06) | X-PAR |
+| driver FARM.rabbit.does | 2.0 does + 1 buck | Rabbitry trial (X-FARM-07) | X-PAR |
 | driver GAS.headers.meam_header_P_bar | 20.7 bar a | MeAM loop design pressure vs duty sheet | X-PAR |
 | driver GAS.headers.meam_header_T_K | 673.15 K | MeAM loop temperature vs duty sheet | X-PAR |
 | driver GAS.headers.methanol_synth_loop_P_bar | 50.0 bar a | loop reactor design pressure vs MEOH_SYNTH duty sheet | X-PAR |
@@ -299,9 +302,9 @@ Total 660 items: 296 drivers, 364 register entries. Classification rule: first m
 | driver ext_U_wall | 0.534 W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3 | Wall assembly design | X-PAR |
 | driver ext_conditioned | 1.0 1 conditioned, 0 unconditioned hall | Bin-hour load calculation on TMY3 for the hall programme | X-PAR |
 | driver ext_cop | 3.2 heat pump COP | Selected heat-pump rating | X-PAR |
-| driver ext_dT_mean_K | 7.9 K mean /T_in - T_out/: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals) | NOAA 1991-2020 normals for the final site; TMY3 bin-hour calculation | X-PAR |
-| driver ext_dTc_K | 4.381 K mean cooling dT = CDD65 2878 F-d x 5/9 / 365 | TMY3 bin-hour calculation | X-PAR |
-| driver ext_dTh_K | 3.458 K mean heating dT = HDD65 2272 F-d x 5/9 / 365 | TMY3 bin-hour calculation | X-PAR |
+| driver ext_dT_mean_K | 9.916 K mean /T_in - T_out/: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals) | NOAA 1991-2020 normals for the final site; TMY3 bin-hour calculation | X-PAR |
+| driver ext_dTc_K | 8.012 K mean cooling dT = CDD65 2878 F-d x 5/9 / 365 | TMY3 bin-hour calculation | X-PAR |
+| driver ext_dTh_K | 1.904 K mean heating dT = HDD65 2272 F-d x 5/9 / 365 | TMY3 bin-hour calculation | X-PAR |
 | driver ext_lpd_W_m2 | 8.8 W/m2 | Lighting design of the extension | X-PAR |
 | driver ext_sfp_W_per_L_s | 1.25 W per L/s | Fan selection | X-PAR |
 | driver ext_wall_h_mm | 6000 mm eave height of the extension (EXT_HALL block height) | Hall section drawing | X-PAR |
@@ -373,6 +376,7 @@ Total 660 items: 296 drivers, 364 register entries. Classification rule: first m
 | driver rcv_tube_len_m | 6.096 m, one random length per tube (as AQS-INV-003) | rack layout check against the CRYO bay | X-PAR |
 | driver roof_live_kPa | 0.96 kPa | Structural review | X-PAR |
 | driver roof_pv_dead_kPa | 0.15 kPa PV modules and ballasted racking | Racking design weight per m2 | X-PAR |
+| driver roof_snow_kPa | 0.24 kPa flat-roof snow | the site design tool run for the chosen location replaces the bounding value | X-PAR |
 | driver rx_ald_whsv_h | 1.0 1/h on ethanol (3.16 h-1 published / about 3) | see A-M-157 | X-PAR |
 | driver rx_cat_bulk_kg_L | 1.0 kg/L | see A-M-157 | X-PAR |
 | driver rx_hno3_absorber_tau_h | 2 h | NO absorption test of the HNO3 column at plant rate: outlet NOx | X-PAR |
@@ -387,6 +391,7 @@ Total 660 items: 296 drivers, 364 register entries. Classification rule: first m
 | driver san_past_batches_d | 4 batches per day | Pasteuriser cycle log | X-PAR |
 | driver san_vs_destruction | 0.5 fraction of VS destroyed, thermophilic anaerobic | VS reduction across BLACK_DIGEST (Standard Methods 2540 G) | X-PAR |
 | driver san_vs_fraction | 0.85 VS / TS of faeces | TS/VS (Standard Methods 2540 G) on the digester feed | X-PAR |
+| driver site_design_dry_bulb_C | 47.4 C | the site design tool run for the chosen location replaces the bounding value | X-PAR |
 | driver storage.default_no_heat_input_T_C | 40.0 C | 0.4% site dry bulb 37.8 C (AQS-SITE-002) rounded up - confirm as the default | X-PAR |
 | driver struct_equip_density_kg_m3 | 150.0 kg/m3 empty equipment weight per envelope volume | Replace with CAD weights per unit as models are built | X-PAR |
 | driver struct_tank_kg_m3 | 40.0 kg/m3 empty storage tank weight per envelope volume (thin shell) | CAD weight per tank | X-PAR |
@@ -397,6 +402,7 @@ Total 660 items: 296 drivers, 364 register entries. Classification rule: first m
 | driver vs_margin | 1.5 packed height margin | as vs_htu_m | X-PAR |
 | driver vs_naoh_excess | 2.0 mol NaOH fed / mol HCl absorbed | Sump pH above 12 at the bleed rate | X-PAR |
 | driver vs_y_out_ppm | 1.0 ppmv HCl at the scrubber outlet (half the ACGIH TLV-C 2 ppm) | Outlet HCl by NIOSH 7903 sampling | X-PAR |
+| driver wt_wind_ms | 70.0 m/s basic wind speed | the site design tool run for the chosen location replaces the bounding value | X-PAR |
 | driver znbr_charge_h | 6.0 h/d | see A-M-135 | X-PAR |
 | A-M-005 | 300 / 1000 W/m2K | Agitator selection and coil test | X-MAT-11 |
 | A-M-006 | 1500 W/m2K | Exchanger maker rating | X-MAT-12 |
@@ -455,101 +461,101 @@ Total 660 items: 296 drivers, 364 register entries. Classification rule: first m
 | A-M-126 | Design coefficients inside published ranges: B_delta 0.75 T, T, kA/m, A/mm2 | IEC 60034-2-1 efficiency and IEC 60034-1 temperature-rise test on one first article per family; efficiency >= IE3, class F rise <= 105 K | X-INV-02 |
 | A-M-130 | Magnet comparison: NdFeB N42 Br 1.30 T, 3 mm; bonded anisotr T, mm, % | Build one NdFeB and one ferrite rotor of MF-02; measure back-EMF constant, torque at rated current and efficiency (IEC 60034-2-1 method adapted to BLDC); compare with the table within 10 % | X-INV-02D |
 | A-M-131 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-132 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-133 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-134 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-135 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-136 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-137 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-138 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-139 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-140 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-141 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-142 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-143 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-144 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-145 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-146 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-147 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-148 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-149 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-150 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-151 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-152 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-153 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-154 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-155 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-156 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-157 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-158 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-159 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-160 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-161 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-162 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-163 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-164 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-165 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-166 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-167 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-168 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-169 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-170 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-171 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-172 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-173 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-174 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-175 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-176 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-177 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-178 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-179 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-180 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-181 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-182 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-183 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-184 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-185 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-186 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-187 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-188 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-189 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-190 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-191 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-192 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-193 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-194 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-195 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-196 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-197 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-198 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-199 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-200 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-201 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-202 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-203 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-204 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-205 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-206 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-207 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-208 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-209 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-210 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-211 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-212 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-213 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-214 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-215 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-216 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-217 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-218 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-219 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-220 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-221 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-222 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-223 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-224 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-225 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
-| A-M-226 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-132 | Grow-bed O2 is light-limited: net canopy quantum yield 0.045 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-133 | EW cathode CE 0.85 (AQS-DUTY-051), anode 2 % O2 (O_BRIEN2005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-134 | BACKUP_GEN 40 kW exercised monthly 30 min at 30 % load (NFPA mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-135 | ZnBr2 H2: 0.66 % of charge current plus 3.2e-3 mL/h/cm2 open mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-136 | Mister supply = chamber area x 6 nozzles/m2 x 0.057 L/min (0 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-137 | DUAL_ROOT ET per m2 equals the grow bed (same LED, same room mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-138 | OIL_FRAC per-pass oil = 50/50 PE/PP thermal bands 34/31.5/34 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-139 | IA-MELT-ATOM = S60/(1 - 0.10 off-spec, A_RL_SWARF); off-spec mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-140 | Bed and dual-root ET = BVAD2022 tomato 2.77 kg/m2/d per 36.2 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-141 | Bed DM = fixed CO2 x 12/44 / 0.43 C; HI 45 %, edible 94 % wa mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-142 | VEG_BED crop harvests are the study need; per-crop area = ha mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-143 | FRUIT_GUTTER (strawberry), PEANUT (peanut) and NFIX_BED (dry mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-144 | Each BVAD-sized crop unit carries sole-source LED at DLI 17  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-145 | HYDRO_SET is a diverse N+1 backup of ZNBR2 (owner redundancy mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-146 | Crew O2 reserve held in a separate cylinder bank that FUEL_C mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-147 | HABITATION CO2 removal: two-bed 5A zeolite swing assembly at mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-148 | Dry food reserve in HAB_GALLEY covers a total bed-crop loss  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-149 | VCD_TRAIN and COMPOST_TOILET installed 2 x 100 %; VCD feed d mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-150 | HEAT_SINK split into 3 x 50 % plate-pack modules on the summ mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-151 | GROW_BED area = residue-line claim 12.73 kg/d fresh / BVAD t mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-152 | 480 V bus split main-tie-main, each section rated 125 % of t mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-153 | CRYO_AHU latent = condensate x 2.454 MJ/kg (NIST_WEBBOOK, 20 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-154 | Crop beds are laid out from their sized area (GROW_BED param mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-155 | API 2000 normal venting: each atmospheric node moves its dai mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-156 | MEOH_SYNTH, CRYO_H2 and CRYO_O2 are pressure equipment (50,  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-157 | ALD WHSV 1.0 h-1 (published 3.16 h-1 at 85 % conversion, CUS mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-158 | Outer combined surface coefficient 10 W/(m2 K); hot lines an mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-159 | FORM feed made up to about 10 mol% MeOH, 10 mol% O2, 80 mol% mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-160 | GLYOXAL re-routed to the industrial liquid-phase oxidation o mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-161 | GLYOXAL 6 h at 40 C (HOTANAHALLI1972 temperature, residence  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-162 | ACEX converts [Bmim]Cl to [Bmim]OAc over an OH-form strong-b mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-163 | MEOH_FERM sized as an insulated HDPE tank at 35 C and 48 h o mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-164 | ALK_SCRUBBER, ACID_POLISH_SCRUB, NOX_SCRUB and MET_SCRUB siz mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-165 | Insulated heat-ladder line losses from AQS-THM-003 carried o mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-166 | Each Q store re-closed on graph rates after the line losses: mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-167 | CRYO_H2 and CRYO_O2 stores built as banks of SA-312 TP316L D mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-168 | Deoxo Pd/Al2O3 at GHSV 5000 1/h on 1000 ppm v O2; chloride g mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-169 | Two-stage in-house diaphragm compressor 10 to 200 bar a, equ mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-170 | In-house BMED stack: 0.04 m2 cells, at most 100 triplets per mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-171 | Triplet voltage = bipolar membrane 1.0 V + 2 x 3 ohm cm2 mon mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-172 | Stage count is the fewest equal-ratio stages with predicted  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-173 | EW bars sized so I2R heat is shed by free convection and rad mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-174 | Atmospheric design pressure = 4 x open-vent dP (vent dP held mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-175 | No air intake: CO2 removed from the scrubbed flue by 3 x 13X mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-176 | S25 is VCD distillate at about 20 mg/L; potable share bypass mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-177 | Induction melt eta 0.55, 10 kg charge, 0.5 h melt, 100 K sup mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-178 | One batch of 3 cells/d; texture 10 L at 80 C; diffusion 20 k mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-179 | ASR 5 ohm cm2, crossover and self-discharge 5 % of charge, a mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-180 | Every compressor stage discharge carries a PSV set at 1.10 x mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-181 | CRYO_CO2 holds 2 d of its inflow as liquid at 20 bar, -20 C  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-182 | Atmospheric units with liquid inflow but no sized height tak mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-183 | Every present unit without a CAD BOM gets an envelope BOM fr mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-184 | Empty weight from design steel where known, else envelope x  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-185 | Spares by fraction of installed with a minimum: bearings 10  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-186 | Reverse-Brayton N2 loop backs up the CO2 condenser chiller:  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-187 | Upper reservoir on the top floors, lower in CATCH_TANK, both mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-188 | NFPA 13 hazard classes by level: L-1 OH2, L0 EH1 (pyrolysis, mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-189 | Code maxima where a code applies (API 510/570/576, NFPA 25/7 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-190 | Route from the BOM body material (8 routes); B31.3 / VIII-1  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-191 | BOM line classed by keyword in its material (or item) text t mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-192 | Heaviest lift = largest empty weight per level from AQS-BLD- mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-193 | Flow range 2 x normal at edge density or 1000 kg/m3; pressur mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-194 | One PLC per sector; 16-channel modules with 20 % spare; redu mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-195 | One node per unit with inflow; guide words No/Less, More, Hi mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-196 | H2O_ELYZ H2 side at 9 bar g (compressor suction 10 bar a), b mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-197 | Consequence class sets SIL: fire or explosion with people =  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-198 | Sources = units on present gas edges carrying the species pl mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-199 | 15 units with no graph size are given envelope = max(hold-up mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-200 | Systems = graph sectors, utilities first; per unit the ITP p mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-201 | ZnBr2 charge to 80 % at charge_kW; heat batteries warmed fro mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-202 | Class A feed at design rate; 72 h steady run; product, EW me mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-203 | Per system from AQS-COM-001; start permissive = upstream sys mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-204 | Reverse commissioning order, utilities last; drain = operati mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-205 | Closed-form recomputation by a different route (mass balance mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-206 | Each AQS-PRO-001 line is classed by its stated material agai mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-207 | Welded A992 plate sections sized from need on the 6 m grid;  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-208 | Mat under the plate at the CATCH_TANK floor; IBC 1806.2 clay mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-209 | AQS-HSE-001 S1 oxidizer gas to H2/organic and S2 ignition to mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-210 | IEC 60079-10-1 medium ventilation, good availability; Zone 0 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-211 | Room = sector on a level; area = footprint / 0.35, capped at mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-212 | AASHTO WB-67 design vehicle; apron depth 1.5 x 22.4 m, apron mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-213 | IBC 1004.5 factors (industrial 9.3, residential 18.6, storag mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-214 | Units placed only as a shared block box are packed in rows i mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-215 | CRYO room 8.7 m wide with a 1 h H2 partition; BACKUP_GEN to  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-216 | Bounding cases A, B and MSW are carried downstream from thei mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-217 | Drawing at 20 % area reduction per pass from 8 mm rod; class mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-218 | Slot fill 0.40 with 15 % enamel, tooth 1.6 T, yoke 1.5 T, st mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-219 | Rigs sized from the plant cell designs: BMED 10 triplets at  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-220 | The smaller unit of each overlapping pair moves to the neare mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-221 | PV Wire 2 kV 10 AWG insulation 1.91 mm (75 mil, UL 4703 1000 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-222 | Line centres in _line_list.py take the GA rev C relocation ( mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-223 | models/freecad/regroup.py moves L-1 units with flow-graph st mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-224 | Every open task in AQS-PLAN-007 rev B is tagged desk P1..P5, mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-225 | Hold times per service (30 d reagent resupply, 14 d product  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-226 | models/freecad/graph_dims.py rebuilds every unit with params mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
 | A-M-227 | CRYO_ASU restored BH-verbatim: in 193.730075 kg/d N2 + 21.62 kg/d; kW | python3 -m flow_graph.param.balance runs physics+reconcile to completion with CRYO_ASU present (today it asserts at IA-EW4-N2); NOX_SCRUB/CRYO_N2/HDR_O2 residuals close (diagnostic 2026-10-18: -193.58/+217.30/+86.04 -> +5.04/0.00/0.00 kg/d) | R10 |
 | A-M-228 | -2.71 kg/d at the HDR_O2 header (0.684 supply vs 3.393 draws kg/d O2 | o2_close.close_o2 src >= draw (the 'O2 short' assert passes) and two independent O2 sources exist (P19); CRYO_O2 residual >= -1e-4 | R10 |
 | A-M-229 | GROW_BED crew duty: 29.12 m2 tomato-proxy bed (area = 4.2 kg m2; kg/d; kW | python3 -c "import json,sys; sys.path.insert(0,'.'); from flow_graph.param import balance as B; g=json.load(open(B.GP)); B.physics(g); R=B.reconcile(g)" runs to completion with no assert; GROW_BED residual 0.000 kg/d; TERRACE_IRRIG absent; python3 flow_graph/check_authority_contract.py exit 0 | R10 |
@@ -676,12 +682,31 @@ Total 660 items: 296 drivers, 364 register entries. Classification rule: first m
 | A-M-412 | 180 x 60 x 12 m pontoon; lightweight 6500 t at KG 5.5 m; 5 m m; t; m | Hull general arrangement and structural design (X-LOC-11) | X-LOC-11 |
 | A-M-413 | 200 kg/m3 of packaged plant volume | Unit massing study (X-LOC-11) | X-LOC-11 |
 | A-M-414 | GM 1.0 m minimum; freeboard 2.0 m minimum; roll radius 0.35  m; m; - | Class stability and freeboard review (Q-030) | X-LOC-11 |
+| A-M-415 | 60 kg standing tilapia stock; 1.5 %/d ration (below the 2-3  kg; - | Stocking and ration trial (X-FARM-01) | X-FARM-01 |
+| A-M-416 | 0.2108 kg/d larvae meal DM (14.6 % of the layer ration DM),  - (larvae-meal mass fraction of feed) | Larvae-meal ration trial (X-FARM-01) | X-FARM-01 |
+| A-M-417 | 12 birds; 0.12 kg feed/bird/d; 0.05 kg egg/bird/d birds; kg/d | Flock trial (X-FARM-02) | X-FARM-02 |
+| A-M-418 | 8.21 kg/d wet bin feedstock (galley 0.5 + layer manure 3.21  kg/d; - | Bin trial (X-FARM-03) | X-FARM-03 |
+| A-M-419 | galley 12; washroom 6; medical 6; sleep 16 (AQS-HAB-001 room m2 | Habitability design review (X-HAB-01) | X-HAB-01 |
+| A-M-420 | 300 m2 raceway at 15 g dry/m2/d (4.5 kg DM/d), 30 % crude pr m2; g/m2/d; - | Raceway yield trial (X-FARM-04) | X-FARM-04 |
+| A-M-421 | 6 ducks (Khaki Campbell class); 0.9 kg/d ration; 0.34 kg/d d birds; kg/d | Flock trial (X-FARM-05) | X-FARM-05 |
+| A-M-422 | 20 coturnix hens; 0.5 kg/d ration; 0.06 kg/d quail eggs birds; kg/d | Cage-bank trial (X-FARM-06) | X-FARM-06 |
+| A-M-423 | 2 does + 1 buck; 0.5 kg/d forage (canopy thinnings); 0.1 kg/ does; kg/d | Rabbitry trial (X-FARM-07) | X-FARM-07 |
+| A-M-424 | 1 hive; 10-25 kg honey/yr; pollination raises canopy yield 2 hive; kg/yr; - | Hive establishment and overwintering trial (X-FARM-08) | X-FARM-08 |
+| A-M-425 | 2 m2 bin; 1 kg Eisenia fetida stock per 0.5 m2 m2; kg | Vermi-bin trial (X-FARM-09) | X-FARM-09 |
+| A-M-427 | 0.12 kg/d DM-equivalent fresh duckweed to the galley as huma kg/d (dry-equivalent) | Greens path microbiology check (X-FARM-11) | X-FARM-11 |
+| A-M-428 | AQUA_UV optional loop sanitizer between the biofilter and th - (design provision) | Sanitizer dose validation (X-FARM-12) | X-FARM-12 |
+| A-M-430 | mineral nitrate solution 6.5 kg/d (raceway 5.5 + media beds  kg/d (mineral solution, not feed) | Raceway N-uptake measurement at the X-FARM-04 trial | X-FARM-04 |
+| A-M-431 | commodity price table of the AQS-PRO-003 estimate (Cu 9.26,  $/kg (2024 US published averages) | verify each transcribed figure against its source table at the first X-PRO-03 QC pass (USGS_MCS_2025 PDF; TOWLER_SINNOTT ch.7) | X-PRO-03 |
+| A-M-432 | fabrication factors of the AQS-PRO-003 estimate: plate and w dimensionless multiplier on material cost | verify each transcribed figure against its source table at the first X-PRO-03 QC pass (USGS_MCS_2025 PDF; TOWLER_SINNOTT ch.7) | X-PRO-03 |
 
 ## 7. T6 Commissioning measurements
 
 | Item | Value | Test | Task |
 | --- | --- | --- | --- |
 | driver FAB.wafer-line-train.campaign_d | 7.0 d | logged campaign schedule at the fab commissioning task | X-PAR |
+| driver FARM.aquaponics.fish_stock_kg | 60.0 kg standing fish stock (tilapia class) | Stocking trial at the aquaponics commissioning (X-FARM-01) | X-PAR |
+| driver FARM.chicken.stock_birds | 12.0 birds (dual-purpose layer class) | Flock trial at the coop commissioning (X-FARM-02) | X-PAR |
+| driver FARM.duckweed.raceway_m2 | 300.0 m2 raceway (Lemna minor, azolla co-culture) | Raceway yield trial at the loop commissioning (X-FARM-04) | X-PAR |
 | driver U_free_convection_W_m2K | 7.0 W/(m2 K) | Coil outlet temperature on the installed air cooler | X-PAR |
 | driver bus_power_factor | 0.9 - | Measured power factor on the 480 V bus | X-PAR |
 | driver ew_bus_drop_V | 0.3 V | Measure bus-bar and contact drop on the installed DC bus at rated current | X-PAR |
@@ -713,3 +738,5 @@ Total 660 items: 296 drivers, 364 register entries. Classification rule: first m
 | A-M-129 | O2 species ledger: C5-C10 cut as C7.5H17 (3.51 kg O2/kg), or kg/d | Commissioning O2 inventory test T-PAR-04: header pressure and cold-box O2 product logged over 7 days with the combustion units running; O2 make-up equal to the ledger deficit within 10 % | X-PAR-11 |
 | A-M-317 | 0.1258 kW continuous demand on the design-day bounding winter case | vendor pump curve check at the installed loop (AQS-DUTY-076 Open: none at the survey-locked basis; survey confirmation is the registered replacing test) | X-ELS-02 load list Rev C, 2026-10-21 |
 | A-M-325 | ADS_CHILL 304L adsorber shells + silica-gel beds + 316L wate selection class | season-commissioning trial: seal leak-down on the adsorbers, coil condition at the dry cooler and make-up-air coil | X-MAT-22 |
+| A-M-426 | FEED_PREP formulation: layers 1.44, quail 0.50, dry-reserve  kg/d (dry-equivalent feed) | Ration trial at the FEED_PREP commissioning (X-FARM-10) | X-FARM-10 |
+| A-M-429 | Textiles: wool/sheep eliminated at the 4-crew class; FR-fini - (roster decision) | Textile-line commissioning (X-POLY-01) | X-POLY-01 |

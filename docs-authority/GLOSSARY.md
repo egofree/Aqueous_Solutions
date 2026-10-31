@@ -561,6 +561,11 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {PE -- Professional Engineer. Stamp/permit role; architecture docs state Compliant-intent or study until PE confirmation.}
 
+{NEM -- NEMA Premium efficiency: the motor efficiency class per NEMA MG-1 Table 12-12 (IE3 equivalent).}
+{MCS -- Mineral Commodity Summaries: the U.S. Geological Survey annual commodity data series (USGS_MCS_2025).}
+{HRC -- hot-rolled coil: the baseline carbon-steel mill product form used for the steel price basis.}
+{HC -- hot-rolled carbon steel: sheet and plate from the HRC mill route.}
+{SHS -- square hollow section: structural steel tube.}
 {NFPA -- National Fire Protection Association. Fire/H₂/ESS/oxidizer themes (e.g. NFPA 2, 13, 30, 55, 400, 855).}
 
 {CGP -- Construction General Permit, the TPDES general permit for stormwater from construction sites.}
@@ -1383,3 +1388,22 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {GM -- Metacentric height. The distance from the centre of gravity to the metacentre; the first-order measure of initial stability (HULL_DESIGN).}
 {BM -- Metacentric radius. The waterplane inertia divided by the volume of displacement; how far the metacentre sits above the centre of buoyancy.}
 {KB -- Height of the centre of buoyancy above the keel. Half the draft for a box hull.}
+{FAO -- Food and Agriculture Organization of the United Nations. The aquaculture and livestock ration-standard source class (A-M-415).}
+{LECA -- Lightweight expanded clay aggregate. The expanded-clay aquaponic grow-bed media (GROWBED_A, GROWBED_B).}
+{BW -- Body weight. The animal-science basis for per-animal feed rations, % BW per day (DUCK_FISH, FARM animal units).}
+{FR -- Flame-retardant finish. The phosphorus-FR treatment carrying the flammability duty that PP lacks (POLY_FIBER; A-M-429).}
+{TIR -- Temperature instrumentation recorder. The thermocouple-well melt-temperature loop on the spin line (POLY_FIBER).}
+{CP -- Crude protein. The feed-science protein measure, % of dry matter (FARM ration tables; A-M-420/426).}
+{UVT -- Ultraviolet intensity transmitter. The 254 nm dose watchdog on the loop sanitizer: lamp depletion or sleeve fouling decays its signal (AQUA_UV; A-M-428).}
+{HCN -- Hydrogen cyanide. The Strecker-step reagent for the DL-methionine synthesis (MET_SYN; A-M-416).}
+{MMP -- 3-(Methylthio)propanal. The Strecker-step aldehyde precursor: CH3SH + acrolein (MET_SYN; A-M-416).}
+{WRCC -- Western Regional Climate Center. It publishes the NOAA cooperative station normals for the western United States, including the Furnace Creek record (AQS-SITE-002).}
+{FL -- Florida, United States: the state of the cocoa_fl example site.}
+{KMLB -- Melbourne International Airport, Florida (WMO 747945): the nearest published NOAA normals station to the cocoa_fl example site.}
+{CUS -- Copper-silica: the Cu/SiO2 catalyst class of the ALD reactor charge (from CUSIO2_ALD2023).}
+{CUSIO2_ALD2023 -- Cu/SiO2 catalyst for methanol synthesis from CO2 and H2 (the ALD reactor charge): the published WHSV and conversion class for the ALD sizing (A-M-157).}
+{BAY -- The structural bay grid: one 6.0 
+{USGS -- United States Geological Survey. Its Mineral Commodity Summaries (annual) is the commodity price source for the cost estimate (AQS-PRO-003).}
+{CEPCI -- Chemical Engineering Plant Cost Index, published monthly in Chemical Engineering magazine; the escalation index of the cost estimate (AQS-PRO-003).}
+{RAS -- Recirculating aquaculture system. The fish-tank water loop: AQUA_TANK, BIOFILTER, the grow beds and DUCKWEED (A-M-415).}
+{HDG -- Hot-dip galvanised steel. The zinc-coated structural class for livestock housing frames, wire floors and hardware cloth (CHICKEN_COOP, DUCK_PEN, QUAIL_CAGE, RABBIT_HUTCH).}

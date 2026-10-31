@@ -315,6 +315,12 @@ REFS = {
  'CGPM1901_GN': 'BIPM, The International System of Units (SI Brochure), 9th ed. (2019), Appendix 1: declaration of the 3rd CGPM (1901) fixing the standard acceleration of gravity g_n = 980.665 cm/s2 (9.80665 m/s2).',
  'CGPM1954_ATM': 'BIPM, The International System of Units (SI Brochure), 9th ed. (2019), Appendix 1: Resolution 4 of the 10th CGPM (1954) defining the standard atmosphere as 1 013 250 dyn/cm2 (101 325 Pa).',
  'USSA1976': 'NOAA, NASA and USAF, U.S. Standard Atmosphere, 1976, NOAA-S/T 76-1562, U.S. Government Printing Office (1976): sea-level composition of dry air by volume (N2 0.78084, O2 0.209476, Ar 0.00934) and the sea-level pressure 101 325 Pa.',
+ 'USGS_MCS_2025': 'U.S. Geological Survey, Mineral Commodity Summaries (January 2025): annual average commodity prices for copper, aluminium, zinc, lead, nickel, tin, iron ore and steel raw materials. The price source for the mass-based estimate (AQS-PRO-003).',
+ 'LME_CASH': 'London Metal Exchange cash settlement quotes for copper, aluminium, zinc, lead, nickel and tin, published each trading day; the market monitor for the metals prices of AQS-PRO-003.',
+ 'CEPCI': 'Chemical Engineering Plant Cost Index (CEPCI), published monthly in Chemical Engineering magazine; the escalation index from the price-date basis to the estimate year (AQS-PRO-003).',
+ 'NOAA_NORMALS_MELBOURNE_FL': 'NOAA NCEI U.S. Climate Normals 1991-2020, Melbourne International Airport (KMLB, WMO 747945), the nearest published normals station to Cocoa FL: annual mean temperature about 73 F, heating degree days base 65 F in the 500-700 class, cooling degree days base 65 F in the 3000-3400 class; the ASHRAE climatic design conditions class for the central-east Florida coast (0.4 % cooling about 93 F, 99.6 % heating about 35 F). The climate source of the cocoa_fl site profile (AQS-SITE-014).',
+ 'NOAA_WRCC_DV': 'Western Regional Climate Center (WRCC), NOAA cooperative station USC00042319 (Death Valley, CA, Furnace Creek) 1961-1990 monthly normals: annual heating degree days base 65 F = 1251, annual cooling degree days base 65 F = 5264, annual mean temperature 75.9 F. The bounding station normals of AQS-SITE-002 Rev C.',
+ 'TOWLER_SINNOTT': 'Towler G.P. and Sinnott R.K., Chemical Engineering Design, 2nd ed. (Butterworth-Heinemann, 2013), ch. 7: published factored-estimating practice, including the materials and pressure multipliers used as the fabrication-factor basis of AQS-PRO-003.',
 }
 
 def cite(k):

@@ -1,0 +1,14 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,fresh duckweed to formulation (layers + quail + reserve draw),inlet,160
+N2,DN15,Class 150,dried larvae meal to the layer formulation,inlet,160
+N3,DN15,Class 150,baked crushed eggshell return (38 g Ca/d),inlet,160
+N4,DN15,Class 150,formulated layer ration,outlet,600
+N5,DN15,Class 150,formulated quail ration,outlet,600
+N6,DN15,Class 150,dried duckweed to the dry reserve,outlet,600
+N7,DN15,Class 150,screenings/fines back to the larvae bin,outlet,600
+N8,DN15,Class 150,drying evaporation on the storage draw (fresh-basis water),outlet,600
+N9,DN15,Class 150,drain,bottom,50
+N10,DN15,Class 150,vent,top,800
+N11,DN15,Class 150,fresh larvae to the formulation drier,inlet,160
+N12,DN15,Class 150,pressed duckweed mash to the duck ration,outlet,600
+N13,DN15,Class 150,press water back to the loop,outlet,600

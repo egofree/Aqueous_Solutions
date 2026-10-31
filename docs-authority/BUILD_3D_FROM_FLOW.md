@@ -70,7 +70,7 @@ detail parts (OpenSCAD) → STL              models/openscad/ → models/export/
         ↓
 import meshes, hide massing                import_mfg / import_details
         ↓
-(optional) shop / animation                media/, iso/
+(optional) shop renders                      media/  (the auto isometric sheets were retired 2026-10-27; the 3D presentation bias is this FreeCAD model)
 ```
 
 Table 4.1 says which stages are connected.

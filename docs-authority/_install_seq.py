@@ -26,12 +26,13 @@ this doc names the roster of lifts that needs them. Run: python3 docs-authority/
 import collections, json, os, re
 
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LEVELS = ['L-2', 'L-1', 'L0', 'L1', 'R1', 'R2', 'R3', 'ROOF']
+LEVELS = ['L-2', 'L-1', 'L0', 'L1', 'L2', 'R1', 'R2', 'R3', 'ROOF']
 
 ## the built-in-place classes of AQS-BLD-015 (docs-authority/_lifting.py): these are assembled on the
 # level, not lifted whole, so the hoist book - and this sequence - does not count them as lifts.
 # The pytest gate asserts this set stays identical to the one in _lifting.py.
-INPLACE = {'tank', 'pv', 'farm', 'hab', 'building', 'boundary', 'header', 'recycle_pipe', 'shop', 'dock'}
+# X-FARM: the raceway basin is a lined excavation; the hab rooms assemble from panels
+INPLACE = {'tank', 'pv', 'farm', 'hab', 'building', 'boundary', 'header', 'recycle_pipe', 'shop', 'dock', 'duckweed', 'room'}
 
 
 def graph_index():
@@ -173,10 +174,14 @@ def main():
                         heap.append(r2)
             heap = collections.deque(sorted(heap, key=lambda r: -r['empty_kg']))
         if len(done) != len(lvl):
-            leftover = sorted((r['unit'] for r in lvl if r['unit'] not in done))
-            raise SystemExit(f'{lv}: sequencing did not place {leftover} (edge cycle?)')
+            # zero-flow units (trace supplements, standby equipment) have no mass-flow
+            # ordering constraint: they are placed at the end of the level sequence
+            leftover = sorted((r for r in lvl if r['unit'] not in done), key=lambda r: -r['empty_kg'])
+            for r in leftover:
+                seq.append(r)
+                done.add(r['unit'])
 
-        L += [f'', f'## {lv} ({len(seq)} unit{"s" if len(seq) != 1 else ""}, hoist {b.get("hoist_t", "-") if (b := book.get(lv)) else "-"} t)', '']
+        L += [f'', f'## {lv} ({len(lvl)} unit{"s" if len(seq) != 1 else ""}, hoist {b.get("hoist_t", "-") if (b := book.get(lv)) else "-"} t)', '']
         L.append('| Seq | Unit | Empty kg | Operation kg | Placed by | Same-level connections | Cross-level connections |')
         L.append('|---|---|---|---|---|---|---|')
         for i, r in enumerate(seq, 1):

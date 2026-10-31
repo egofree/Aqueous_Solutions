@@ -19,7 +19,7 @@
 <circle cx="40" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="40" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="40" y="175.5" font-size="7.5" text-anchor="middle">LSH-01</text>
-<text x="62" y="170" font-size="7">SIF-140 · SIL -</text>
+<text x="62" y="170" font-size="7">SIF-152 · SIL -</text>
 <text x="62" y="180" font-size="6.5" fill="#555">level high-high -&gt; close feed valve / stop f</text>
 <circle cx="198" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <text x="198" y="175.5" font-size="7.5" text-anchor="middle">LT-01</text>
@@ -40,7 +40,7 @@
 <polygon points="586,240 577,236 577,244" fill="#111"/>
 <text x="24" y="221" font-size="9" fill="#666" text-anchor="start">BMED_UPW_POLISH</text>
 <text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">IA-UPW-REMIN</text>
-<text x="24" y="253" font-size="10" text-anchor="start">175.2 kg/d · DN15 P1</text>
+<text x="24" y="253" font-size="10" text-anchor="start">206.8 kg/d · DN15 P1</text>
 <text x="598" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="start">N1</text>
 <line x1="430" y1="286" x2="577" y2="286" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
 <polygon points="586,286 577,282 577,290" fill="#111"/>
@@ -51,7 +51,7 @@
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">ROOF_TANK</text>
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">IA-POT-01</text>
-<text x="1476" y="253" font-size="10" text-anchor="end">165.2 kg/d · DN15 P1</text>
+<text x="1476" y="253" font-size="10" text-anchor="end">196.8 kg/d · DN15 P1</text>
 <text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N5</text>
 <line x1="979.7" y1="240" x2="971.7" y2="240" stroke="#111" stroke-width="1.2"/>
 <polygon points="970.7,240 976.7,236.5 976.7,243.5" fill="#111"/>
@@ -83,7 +83,7 @@
 <g id="aqs-title-block"><rect x="1116" y="492" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="509" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-REMIN</text>
 <text x="1124" y="526" font-size="9">P&amp;ID REMIN (dose, WTR sector)</text>
-<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 96f05919   Issued 2026-10-19</text>
+<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev ce8bddcf   Issued 2026-10-19</text>
 <text x="1124" y="560" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="577" font-size="9">Graph SHA-256 307200ce85a4b6e4   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="577" font-size="9">Graph SHA-256 a68069cea430aa98   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

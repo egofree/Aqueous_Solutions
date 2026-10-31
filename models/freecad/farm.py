@@ -10,6 +10,66 @@ import FreeCAD as App
 OUT = Path(__file__).resolve().parent
 
 
+def _gsize(uid, fallback=(1500, 1000, 1500)):
+    """Unit envelope L x W x H from the graph params (flat size_mm or envelope.size_mm).
+
+    CAD dims are read, never re-typed: the graph is the sizing authority
+    (AQS-PAR-001), and a resize on the graph moves the GA on the next rebuild.
+    """
+    try:
+        import json
+        g = json.load(open(OUT.parents[1] / "flow_graph" / "plant_flow_graph.json"))
+        n = {u["unit_id"]: u for u in g["nodes"]}[uid]
+        p = n.get("params") or {}
+        sz = (p.get("envelope") or {}).get("size_mm") or p.get("size_mm")
+        return [float(v) for v in sz]
+    except Exception as exc:
+        print("  farm: %s size unreadable (%s) - fallback box" % (uid, exc))
+        return list(fallback)
+
+
+def _animals(doc, z, n, _lab):
+    """Animal chain + feed prep + RAS UV loop (A-M-415..429; X-FARM build-out).
+
+    Dims from the graph; positions hand-laid in the free west/south floor of the
+    farm plate (the grow bed owns x >= 6100 down to y 9400, the MEOH_FERM stub
+    owns the north strip). Every unit gets the story suffix via n().
+    """
+    x, y = P.FARM_X, P.FARM_Y
+
+    def put(uid, ox, oy, note_ref):
+        w, d, h = _gsize(uid)
+        add(doc, n(uid), box_at(x + ox, y + oy, z, w, d, h))
+        _lab(doc, n(uid), x + ox, y + oy - 160, z=z + min(h, 1600))
+        return w, d
+
+    # RAS loop: optional UV sanitizer between BIOFILTER (ends x+5900) and the grow
+    # beds (start x+6100), normally bypassed; ozone deep-clean is a contingency
+    put("AQUA_UV", 4700, 3000, "A-M-424")
+    # Feed formulation row, west column south of FARM_SUMP (ends y+4800)
+    put("FEED_PREP", 200, 5600, "A-M-426")
+    # Animal row 1 (layer + quail; A-M-417/418)
+    put("CHICKEN_COOP", 200, 6800, "A-M-417")
+    put("QUAIL_CAGE", 2900, 6800, "A-M-418")
+    # Animal row 2 (rabbit + hive; A-M-421/422)
+    put("RABBIT_HUTCH", 200, 8300, "A-M-421")
+    put("BEE_HIVE", 2300, 8300, "A-M-422")
+    # Waste row: manure drops to the BSFL bin (A-M-419), vermicompost beside it
+    put("BSFL_BIN", 200, 9700, "A-M-419")
+    put("VERMI_BIN", 2900, 9700, "A-M-423")
+    # Waterfowl south of the grow bed (ends y+9400)
+    put("DUCK_PEN", 5200, 9700, "A-M-420")
+    # Duckweed raceway (A-M-420): 30.1 x 10.1 m ground basin - fits only once the
+    # plate is ~3x the M1 baseline; the guard keeps the GA honest at any scale
+    rw = _gsize("DUCKWEED")
+    if P.FARM_L >= rw[0] + 400 and P.FARM_W >= 11400 + rw[1]:
+        add(doc, n("DUCKWEED"), box_at(x + 200, y + 11400, z, rw[0], rw[1], rw[2]))
+        _lab(doc, n("DUCKWEED"), x + 200, y + 11240, z=z + min(rw[2], 1600))
+    else:
+        print("  farm: DUCKWEED raceway %gx%g mm does not fit the %gx%g mm plate "
+              "- appears at the scale that fits it" % (rw[0], rw[1], P.FARM_L, P.FARM_W))
+
+
 def _story(doc, story, z, suffix):
     x, y = P.FARM_X, P.FARM_Y
     def n(base):
@@ -40,6 +100,7 @@ def _story(doc, story, z, suffix):
         add(doc, tname, box_at(tx, y + 400, z + 200, tw, 4600, 400))
         if ti == 0:
             label_plate(doc, tname, tx, y + 40, z=z + 800)
+    _animals(doc, z, n, label_plate)
 
 
 def attach(doc):

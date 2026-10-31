@@ -1,0 +1,33 @@
+{
+  "unit": "FEED_PREP",
+  "form": "cabinet",
+  "size_mm": [
+    1300,
+    900,
+    1700
+  ],
+  "size_note": "mixer + grinder + HP drier cabinet at the 0.6 kW duty (A-M-426) (X-FARM sec3) (sheet-metal cabinet class, 5 mm)",
+  "material_class": "SS304",
+  "wall_mm": 5,
+  "liner_mm": null,
+  "extras_mm": [
+    [
+      100,
+      100,
+      100,
+      400,
+      400,
+      500,
+      "mixer_housing"
+    ],
+    [
+      700,
+      100,
+      100,
+      400,
+      400,
+      900,
+      "drier_stack"
+    ]
+  ]
+}

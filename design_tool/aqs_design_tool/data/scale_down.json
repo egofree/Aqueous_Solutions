@@ -4,6 +4,15 @@
   "DIGESTER": {
    "no_sink": [
     {
+     "stream_id": "FIBER_SCRAP",
+     "from": "POLY_FIBER",
+     "to": "LEACH_CSTR_1",
+     "other_sector": "POLYMERS",
+     "rate": 0.004524,
+     "unit": "kg/d",
+     "carries": "spin scrap to the solids line"
+    },
+    {
      "stream_id": "FOUNDRY_SLAG_TO_LEACH",
      "from": "IND_MELT",
      "to": "LEACH_CSTR_1",
@@ -89,7 +98,7 @@
      "from": "GREY_TREAT",
      "to": "LEACH_CSTR_1",
      "other_sector": "WTR",
-     "rate": 244.641602,
+     "rate": 258.762606,
      "unit": "kg/d",
      "carries": "grey sludge"
     },
@@ -98,7 +107,7 @@
      "from": "HOPPER",
      "to": "LEACH_CSTR_1",
      "other_sector": "OIL",
-     "rate": 530.73594,
+     "rate": 531.228831,
      "unit": "kg/d",
      "carries": "returned scrap"
     },
@@ -215,7 +224,7 @@
      "from": "CRYO_AHU",
      "to": "LEACH_CSTR_1",
      "other_sector": "CRYO",
-     "rate": 78.987901,
+     "rate": 102.592478,
      "unit": "kg/d",
      "carries": "flue condensate"
     },
@@ -613,7 +622,7 @@
      "from": "LEACH_CSTR_1",
      "to": "VCD_TRAIN",
      "other_sector": "WTR",
-     "rate": 167.999678,
+     "rate": 199.595479,
      "unit": "kg/d",
      "carries": "leach liquor water bleed to vapour-compression distillation"
     },
@@ -685,7 +694,7 @@
      "from": "LI_RECOVER",
      "to": "GREASE_LI",
      "other_sector": "OIL",
-     "rate": null,
+     "rate": 0.5,
      "unit": null,
      "carries": "lithium hydroxide or carbonate"
     },
@@ -694,7 +703,7 @@
      "from": "P_CA",
      "to": "GREASE_CA",
      "other_sector": "OIL",
-     "rate": null,
+     "rate": 0.025,
      "unit": null,
      "carries": "calcium hydroxide"
     },
@@ -831,7 +840,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DOCK",
-     "rate": 64.41311,
+     "rate": 57.785915,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -1049,6 +1058,15 @@
   "OIL": {
    "no_sink": [
     {
+     "stream_id": "FRASS",
+     "from": "BSFL_BIN",
+     "to": "HOPPER",
+     "other_sector": "FARM",
+     "rate": 0.492891,
+     "unit": "kg/d",
+     "carries": "frass compost to the solids line"
+    },
+    {
      "stream_id": "HL-Q3-A-HX4",
      "from": "Q3_A",
      "to": "OIL_DRYER",
@@ -1134,7 +1152,7 @@
      "from": "LI_RECOVER",
      "to": "GREASE_LI",
      "other_sector": "DIGESTER",
-     "rate": null,
+     "rate": 0.5,
      "unit": null,
      "carries": "lithium hydroxide or carbonate"
     },
@@ -1143,7 +1161,7 @@
      "from": "P_CA",
      "to": "GREASE_CA",
      "other_sector": "DIGESTER",
-     "rate": null,
+     "rate": 0.025,
      "unit": null,
      "carries": "calcium hydroxide"
     },
@@ -1190,7 +1208,7 @@
      "from": "OIL_PYRO",
      "to": "SI_REDUCE",
      "other_sector": "GLASS",
-     "rate": null,
+     "rate": 1.924,
      "unit": null,
      "carries": "pyro char"
     },
@@ -1262,7 +1280,7 @@
      "from": "PROD_C5_C10",
      "to": "POLY_OLEFIN",
      "other_sector": "POLYMERS",
-     "rate": 0.294127,
+     "rate": 0.384603,
      "unit": "kg/d",
      "carries": "C5-C10 naphtha olefin feed"
     },
@@ -1289,7 +1307,7 @@
      "from": "HOPPER",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 530.73594,
+     "rate": 531.228831,
      "unit": "kg/d",
      "carries": "returned scrap"
     }
@@ -1318,7 +1336,7 @@
      "from": "PROD_C5_C10",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 7.130646,
+     "rate": 7.04017,
      "unit": "kg/d",
      "carries": "C5-C10 product shipped"
     },
@@ -1387,7 +1405,7 @@
      "from": "OIL_PYRO",
      "to": "SI_REDUCE",
      "other_sector": "OIL",
-     "rate": null,
+     "rate": 1.924,
      "unit": null,
      "carries": "pyro char"
     },
@@ -1559,7 +1577,7 @@
      "from": "PROD_C5_C10",
      "to": "POLY_OLEFIN",
      "other_sector": "OIL",
-     "rate": 0.294127,
+     "rate": 0.384603,
      "unit": "kg/d",
      "carries": "C5-C10 naphtha olefin feed"
     },
@@ -1583,6 +1601,24 @@
     }
    ],
    "no_source": [
+    {
+     "stream_id": "FIBER_SCRAP",
+     "from": "POLY_FIBER",
+     "to": "LEACH_CSTR_1",
+     "other_sector": "DIGESTER",
+     "rate": 0.004524,
+     "unit": "kg/d",
+     "carries": "spin scrap to the solids line"
+    },
+    {
+     "stream_id": "FLEECE_TO_MFG",
+     "from": "POLY_FIBER",
+     "to": "MFG_SHOP",
+     "other_sector": "MFG",
+     "rate": 0.087671,
+     "unit": "kg/d",
+     "carries": "FR-finished fleece to the shop for conversion"
+    },
     {
      "stream_id": "FLUORO_TO_MFG",
      "from": "POLY_STOCK",
@@ -1649,6 +1685,15 @@
    ],
    "stops": [
     {
+     "stream_id": "FR_FINISH",
+     "from": "NORTH_DOCK",
+     "to": "POLY_FIBER",
+     "other_sector": "DOCK",
+     "rate": 0.001719,
+     "unit": "kg/d",
+     "carries": "phosphorus-FR finish (reagent manifest)"
+    },
+    {
      "stream_id": "IA-CAF2-MU",
      "from": "NORTH_DOCK",
      "to": "HF_GEN",
@@ -1701,6 +1746,15 @@
      "rate": 0.0449,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
+    },
+    {
+     "stream_id": "SF-POLY_FIBER",
+     "from": "SOL_ARK_60K",
+     "to": "POLY_FIBER",
+     "other_sector": "ELEC",
+     "rate": 0.3,
+     "unit": "kW",
+     "carries": "melt-spin electrical load"
     },
     {
      "stream_id": "SF-POWDER_RESIN",
@@ -2481,6 +2535,15 @@
    ],
    "inactive": [
     {
+     "stream_id": "IA-NH3-MET",
+     "from": "WS_AMMONIA",
+     "to": "MET_SYN",
+     "other_sector": "MEOH",
+     "rate": 0,
+     "unit": "kg/d",
+     "carries": "ammonia feed to the Strecker step (trace)"
+    },
+    {
      "stream_id": "IA-NIT-VENT",
      "from": "WS_NITRIC",
      "to": "NOX_SCRUB",
@@ -2537,6 +2600,15 @@
      "rate": 3.947559,
      "unit": "kg/d",
      "carries": "C19-C28 from the tank"
+    },
+    {
+     "stream_id": "FLEECE_TO_MFG",
+     "from": "POLY_FIBER",
+     "to": "MFG_SHOP",
+     "other_sector": "POLYMERS",
+     "rate": 0.087671,
+     "unit": "kg/d",
+     "carries": "FR-finished fleece to the shop for conversion"
     },
     {
      "stream_id": "FLUORO_TO_MFG",
@@ -2827,6 +2899,15 @@
      "rate": 0.0158,
      "unit": "kg/d",
      "carries": "organic mist"
+    },
+    {
+     "stream_id": "TEXTILE_HAB",
+     "from": "MFG_SHOP",
+     "to": "HABITATION",
+     "other_sector": "HAB",
+     "rate": 0.087671,
+     "unit": "kg/d",
+     "carries": "finished crew textiles to the hab issue"
     }
    ],
    "stops": [
@@ -3631,13 +3712,58 @@
   "FARM": {
    "no_sink": [
     {
+     "stream_id": "EGGSHELL_RET",
+     "from": "GALLEY",
+     "to": "FEED_PREP",
+     "other_sector": "HAB",
+     "rate": 0.06,
+     "unit": "kg/d",
+     "carries": "baked crushed eggshell return (38 g Ca/d)"
+    },
+    {
+     "stream_id": "GALLEY_BIO",
+     "from": "GALLEY",
+     "to": "BSFL_BIN",
+     "other_sector": "HAB",
+     "rate": 0.5,
+     "unit": "kg/d",
+     "carries": "galley biowaste to the larvae bin"
+    },
+    {
+     "stream_id": "IA-AQUA-TOPUP",
+     "from": "ROOF_TANK",
+     "to": "AQUA_TANK",
+     "other_sector": "WTR",
+     "rate": 27.355801,
+     "unit": "kg/d",
+     "carries": "loop top-up: root-zone growth water and evaporation"
+    },
+    {
      "stream_id": "IA-BED-H2O",
      "from": "ROOF_TANK",
      "to": "GROW_BED",
      "other_sector": "WTR",
-     "rate": 42.138417,
+     "rate": 43.838417,
      "unit": "kg/d",
      "carries": "irrigation"
+    },
+    {
+     "stream_id": "IA-CHICK-H2O",
+     "from": "ROOF_TANK",
+     "to": "CHICKEN_COOP",
+     "other_sector": "WTR",
+     "rate": 0.36,
+     "unit": "kg/d",
+     "carries": "flock drinking water"
+    },
+    {
+     "stream_id": "IA-DUCK-H2O",
+     "from": "ROOF_TANK",
+     "to": "DUCK_PEN",
+     "other_sector": "WTR",
+     "rate": 1.98,
+     "unit": "kg/d",
+     "carries": "duck drinking/washing water"
     },
     {
      "stream_id": "IA-NUT-BED",
@@ -3647,6 +3773,15 @@
      "rate": 31.363502,
      "unit": "kg/d",
      "carries": "nitrate and bleed salts"
+    },
+    {
+     "stream_id": "QUAIL_H2O",
+     "from": "ROOF_TANK",
+     "to": "QUAIL_CAGE",
+     "other_sector": "WTR",
+     "rate": 0.2,
+     "unit": "kg/d",
+     "carries": "quail water"
     },
     {
      "stream_id": "S07",
@@ -3669,6 +3804,105 @@
    ],
    "no_source": [
     {
+     "stream_id": "BED_ET",
+     "from": "GROWBED_B",
+     "to": "CRYO_AHU",
+     "other_sector": "CRYO",
+     "rate": 5.0,
+     "unit": "kg/d",
+     "carries": "growbed evapotranspiration"
+    },
+    {
+     "stream_id": "BEE_VAP",
+     "from": "BEE_HIVE",
+     "to": "CRYO_AHU",
+     "other_sector": "CRYO",
+     "rate": 0.15,
+     "unit": "kg/d",
+     "carries": "hive evaporation"
+    },
+    {
+     "stream_id": "BSFL_VAP",
+     "from": "BSFL_BIN",
+     "to": "CRYO_AHU",
+     "other_sector": "CRYO",
+     "rate": 7.24291,
+     "unit": "kg/d",
+     "carries": "bin respiration/evaporation"
+    },
+    {
+     "stream_id": "CHICK_VAP",
+     "from": "CHICKEN_COOP",
+     "to": "CRYO_AHU",
+     "other_sector": "CRYO",
+     "rate": 0.72,
+     "unit": "kg/d",
+     "carries": "flock respiration/evaporation"
+    },
+    {
+     "stream_id": "DUCK_GREENS",
+     "from": "DUCKWEED",
+     "to": "GALLEY",
+     "other_sector": "HAB",
+     "rate": 2.4,
+     "unit": "kg/d",
+     "carries": "human-grade fresh duckweed greens to the galley"
+    },
+    {
+     "stream_id": "DUCK_GREY",
+     "from": "DUCK_PEN",
+     "to": "GREY_TREAT",
+     "other_sector": "WTR",
+     "rate": 5.733333,
+     "unit": "kg/d",
+     "carries": "duck wash water"
+    },
+    {
+     "stream_id": "DUCK_VAP",
+     "from": "DUCK_PEN",
+     "to": "CRYO_AHU",
+     "other_sector": "CRYO",
+     "rate": 0.8,
+     "unit": "kg/d",
+     "carries": "duck pen evaporation"
+    },
+    {
+     "stream_id": "FOOD_GALLEY",
+     "from": "FOOD_STORE",
+     "to": "GALLEY",
+     "other_sector": "HAB",
+     "rate": 4.0,
+     "unit": "kg/d",
+     "carries": "food issue to the galley"
+    },
+    {
+     "stream_id": "FOOD_HAB",
+     "from": "FOOD_STORE",
+     "to": "HABITATION",
+     "other_sector": "HAB",
+     "rate": 2.46,
+     "unit": "kg/d",
+     "carries": "food issue to the habitation (direct)"
+    },
+    {
+     "stream_id": "FORM_VAP",
+     "from": "FEED_PREP",
+     "to": "CRYO_AHU",
+     "other_sector": "CRYO",
+     "rate": 9.5,
+     "unit": "kg/d",
+     "carries": "drying evaporation on the storage draw (fresh-basis water)"
+    },
+    {
+     "stream_id": "FRASS",
+     "from": "BSFL_BIN",
+     "to": "HOPPER",
+     "other_sector": "OIL",
+     "rate": 0.492891,
+     "unit": "kg/d",
+     "carries": "frass compost to the solids line"
+    },
+    {
      "stream_id": "IA-BED-VAP",
      "from": "GROW_BED",
      "to": "CRYO_AHU",
@@ -3676,6 +3910,24 @@
      "rate": 67.443215,
      "unit": "kg/d",
      "carries": "bed transpiration"
+    },
+    {
+     "stream_id": "QUAIL_VAP",
+     "from": "QUAIL_CAGE",
+     "to": "CRYO_AHU",
+     "other_sector": "CRYO",
+     "rate": 0.091667,
+     "unit": "kg/d",
+     "carries": "cage evaporation"
+    },
+    {
+     "stream_id": "RABBIT_VAP",
+     "from": "RABBIT_HUTCH",
+     "to": "CRYO_AHU",
+     "other_sector": "CRYO",
+     "rate": 0.1,
+     "unit": "kg/d",
+     "carries": "hutch evaporation"
     },
     {
      "stream_id": "S11",
@@ -3716,6 +3968,69 @@
    ],
    "stops": [
     {
+     "stream_id": "CA_HOPPER",
+     "from": "NORTH_DOCK",
+     "to": "QUAIL_CAGE",
+     "other_sector": "DOCK",
+     "rate": 0.035,
+     "unit": "kg/d",
+     "carries": "mineral calcium carbonate (free-choice hopper)"
+    },
+    {
+     "stream_id": "IA-AIR-AQUA",
+     "from": "SOL_ARK_60K",
+     "to": "AQUA_TANK",
+     "other_sector": "ELEC",
+     "rate": 0.04,
+     "unit": "kW",
+     "carries": "air pump electrical load: O2 aeration for the fish"
+    },
+    {
+     "stream_id": "IA-AIR-BIO",
+     "from": "SOL_ARK_60K",
+     "to": "BIOFILTER",
+     "other_sector": "ELEC",
+     "rate": 0.02,
+     "unit": "kW",
+     "carries": "air pump electrical load: O2 for the nitrifying bacteria"
+    },
+    {
+     "stream_id": "IA-POWER-AQUAUV",
+     "from": "SOL_ARK_60K",
+     "to": "AQUA_UV",
+     "other_sector": "ELEC",
+     "rate": 0.04,
+     "unit": "kW",
+     "carries": "UV-C lamp electrical load"
+    },
+    {
+     "stream_id": "IA-POWER-FEEDPREP",
+     "from": "SOL_ARK_60K",
+     "to": "FEED_PREP",
+     "other_sector": "ELEC",
+     "rate": 0.6,
+     "unit": "kW",
+     "carries": "formulation+drying electrical load"
+    },
+    {
+     "stream_id": "NUT_AQUA",
+     "from": "NORTH_DOCK",
+     "to": "DUCKWEED",
+     "other_sector": "DOCK",
+     "rate": 5.5,
+     "unit": "kg/d",
+     "carries": "mineral nitrate solution to the raceway"
+    },
+    {
+     "stream_id": "NUT_AQUA_BED",
+     "from": "NORTH_DOCK",
+     "to": "GROWBED_B",
+     "other_sector": "DOCK",
+     "rate": 1.0,
+     "unit": "kg/d",
+     "carries": "mineral nitrate solution to the media beds"
+    },
+    {
      "stream_id": "S20",
      "from": "SOL_ARK_60K",
      "to": "GROW_BED",
@@ -3736,6 +4051,15 @@
      "carries": "CO2 enrichment"
     },
     {
+     "stream_id": "DL_MET_TO_FEED",
+     "from": "MET_SYN",
+     "to": "CHICKEN_COOP",
+     "other_sector": "MEOH",
+     "rate": 0,
+     "unit": "kg/d",
+     "carries": "DL-methionine crystals: top-dressed supplement at the point of feeding"
+    },
+    {
      "stream_id": "FARM_O2_TO_HAB",
      "from": "GROW_BED",
      "to": "HABITATION",
@@ -3743,6 +4067,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "farm O2"
+    },
+    {
+     "stream_id": "FOOD_EXPORT",
+     "from": "FOOD_STORE",
+     "to": "BOUNDARY_EXPORT",
+     "other_sector": "DOCK",
+     "rate": -0.0,
+     "unit": "kg/d",
+     "carries": "surplus food to the reserve/trade boundary"
     },
     {
      "stream_id": "NUT_TO_BED",
@@ -3784,6 +4117,33 @@
   },
   "HAB": {
    "no_sink": [
+    {
+     "stream_id": "DUCK_GREENS",
+     "from": "DUCKWEED",
+     "to": "GALLEY",
+     "other_sector": "FARM",
+     "rate": 2.4,
+     "unit": "kg/d",
+     "carries": "human-grade fresh duckweed greens to the galley"
+    },
+    {
+     "stream_id": "FOOD_GALLEY",
+     "from": "FOOD_STORE",
+     "to": "GALLEY",
+     "other_sector": "FARM",
+     "rate": 4.0,
+     "unit": "kg/d",
+     "carries": "food issue to the galley"
+    },
+    {
+     "stream_id": "FOOD_HAB",
+     "from": "FOOD_STORE",
+     "to": "HABITATION",
+     "other_sector": "FARM",
+     "rate": 2.46,
+     "unit": "kg/d",
+     "carries": "food issue to the habitation (direct)"
+    },
     {
      "stream_id": "IA-ADS-CHW",
      "from": "ADS_CHILL",
@@ -3891,9 +4251,45 @@
      "rate": 10.0,
      "unit": "kg/d",
      "carries": "potable"
+    },
+    {
+     "stream_id": "TEXTILE_HAB",
+     "from": "MFG_SHOP",
+     "to": "HABITATION",
+     "other_sector": "MFG",
+     "rate": 0.087671,
+     "unit": "kg/d",
+     "carries": "finished crew textiles to the hab issue"
     }
    ],
    "no_source": [
+    {
+     "stream_id": "EGGSHELL_RET",
+     "from": "GALLEY",
+     "to": "FEED_PREP",
+     "other_sector": "FARM",
+     "rate": 0.06,
+     "unit": "kg/d",
+     "carries": "baked crushed eggshell return (38 g Ca/d)"
+    },
+    {
+     "stream_id": "GALLEY_BIO",
+     "from": "GALLEY",
+     "to": "BSFL_BIN",
+     "other_sector": "FARM",
+     "rate": 0.5,
+     "unit": "kg/d",
+     "carries": "galley biowaste to the larvae bin"
+    },
+    {
+     "stream_id": "GAL_GREY",
+     "from": "GALLEY",
+     "to": "GREY_TREAT",
+     "other_sector": "WTR",
+     "rate": 1.0,
+     "unit": "kg/d",
+     "carries": "galley wash grey water to the treatment train"
+    },
     {
      "stream_id": "HAB_BLACK",
      "from": "HABITATION",
@@ -4007,7 +4403,7 @@
      "from": "HABITATION",
      "to": "GREY_TREAT",
      "other_sector": "WTR",
-     "rate": 319.60396,
+     "rate": 326.991631,
      "unit": "kg/d",
      "carries": "grey/solids"
     },
@@ -4069,6 +4465,15 @@
      "carries": "nitrogen return"
     },
     {
+     "stream_id": "IA-WASH-FEED",
+     "from": "ROOF_TANK",
+     "to": "WASHROOM",
+     "other_sector": "WTR",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "wash-water feed to the washroom fixtures"
+    },
+    {
      "stream_id": "S15",
      "from": "GROW_BED",
      "to": "HABITATION",
@@ -4085,11 +4490,74 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "CO2 product after FLUE_KO"
+    },
+    {
+     "stream_id": "WASH_GREY",
+     "from": "WASHROOM",
+     "to": "GREY_TREAT",
+     "other_sector": "WTR",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "wash grey water to the treatment train"
     }
    ]
   },
   "CRYO": {
    "no_sink": [
+    {
+     "stream_id": "BED_ET",
+     "from": "GROWBED_B",
+     "to": "CRYO_AHU",
+     "other_sector": "FARM",
+     "rate": 5.0,
+     "unit": "kg/d",
+     "carries": "growbed evapotranspiration"
+    },
+    {
+     "stream_id": "BEE_VAP",
+     "from": "BEE_HIVE",
+     "to": "CRYO_AHU",
+     "other_sector": "FARM",
+     "rate": 0.15,
+     "unit": "kg/d",
+     "carries": "hive evaporation"
+    },
+    {
+     "stream_id": "BSFL_VAP",
+     "from": "BSFL_BIN",
+     "to": "CRYO_AHU",
+     "other_sector": "FARM",
+     "rate": 7.24291,
+     "unit": "kg/d",
+     "carries": "bin respiration/evaporation"
+    },
+    {
+     "stream_id": "CHICK_VAP",
+     "from": "CHICKEN_COOP",
+     "to": "CRYO_AHU",
+     "other_sector": "FARM",
+     "rate": 0.72,
+     "unit": "kg/d",
+     "carries": "flock respiration/evaporation"
+    },
+    {
+     "stream_id": "DUCK_VAP",
+     "from": "DUCK_PEN",
+     "to": "CRYO_AHU",
+     "other_sector": "FARM",
+     "rate": 0.8,
+     "unit": "kg/d",
+     "carries": "duck pen evaporation"
+    },
+    {
+     "stream_id": "FORM_VAP",
+     "from": "FEED_PREP",
+     "to": "CRYO_AHU",
+     "other_sector": "FARM",
+     "rate": 9.5,
+     "unit": "kg/d",
+     "carries": "drying evaporation on the storage draw (fresh-basis water)"
+    },
     {
      "stream_id": "IA-AHU-AIR",
      "from": "HDR_N2",
@@ -4152,6 +4620,24 @@
      "rate": 22.884294,
      "unit": "kg/d",
      "carries": "surplus O2 to product cylinders"
+    },
+    {
+     "stream_id": "QUAIL_VAP",
+     "from": "QUAIL_CAGE",
+     "to": "CRYO_AHU",
+     "other_sector": "FARM",
+     "rate": 0.091667,
+     "unit": "kg/d",
+     "carries": "cage evaporation"
+    },
+    {
+     "stream_id": "RABBIT_VAP",
+     "from": "RABBIT_HUTCH",
+     "to": "CRYO_AHU",
+     "other_sector": "FARM",
+     "rate": 0.1,
+     "unit": "kg/d",
+     "carries": "hutch evaporation"
     },
     {
      "stream_id": "S64",
@@ -4268,7 +4754,7 @@
      "from": "CRYO_AHU",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 78.987901,
+     "rate": 102.592478,
      "unit": "kg/d",
      "carries": "flue condensate"
     },
@@ -4488,6 +4974,24 @@
   "WTR": {
    "no_sink": [
     {
+     "stream_id": "DUCK_GREY",
+     "from": "DUCK_PEN",
+     "to": "GREY_TREAT",
+     "other_sector": "FARM",
+     "rate": 5.733333,
+     "unit": "kg/d",
+     "carries": "duck wash water"
+    },
+    {
+     "stream_id": "GAL_GREY",
+     "from": "GALLEY",
+     "to": "GREY_TREAT",
+     "other_sector": "HAB",
+     "rate": 1.0,
+     "unit": "kg/d",
+     "carries": "galley wash grey water to the treatment train"
+    },
+    {
      "stream_id": "HAB_BLACK",
      "from": "HABITATION",
      "to": "BLACK_DIGEST",
@@ -4555,7 +5059,7 @@
      "from": "LEACH_CSTR_1",
      "to": "VCD_TRAIN",
      "other_sector": "DIGESTER",
-     "rate": 167.999678,
+     "rate": 199.595479,
      "unit": "kg/d",
      "carries": "leach liquor water bleed to vapour-compression distillation"
     },
@@ -4618,7 +5122,7 @@
      "from": "HABITATION",
      "to": "GREY_TREAT",
      "other_sector": "HAB",
-     "rate": 319.60396,
+     "rate": 326.991631,
      "unit": "kg/d",
      "carries": "grey/solids"
     },
@@ -4643,11 +5147,20 @@
    ],
    "no_source": [
     {
+     "stream_id": "IA-AQUA-TOPUP",
+     "from": "ROOF_TANK",
+     "to": "AQUA_TANK",
+     "other_sector": "FARM",
+     "rate": 27.355801,
+     "unit": "kg/d",
+     "carries": "loop top-up: root-zone growth water and evaporation"
+    },
+    {
      "stream_id": "IA-BED-H2O",
      "from": "ROOF_TANK",
      "to": "GROW_BED",
      "other_sector": "FARM",
-     "rate": 42.138417,
+     "rate": 43.838417,
      "unit": "kg/d",
      "carries": "irrigation"
     },
@@ -4679,6 +5192,24 @@
      "carries": "released digest-liquor nutrient split"
     },
     {
+     "stream_id": "IA-CHICK-H2O",
+     "from": "ROOF_TANK",
+     "to": "CHICKEN_COOP",
+     "other_sector": "FARM",
+     "rate": 0.36,
+     "unit": "kg/d",
+     "carries": "flock drinking water"
+    },
+    {
+     "stream_id": "IA-DUCK-H2O",
+     "from": "ROOF_TANK",
+     "to": "DUCK_PEN",
+     "other_sector": "FARM",
+     "rate": 1.98,
+     "unit": "kg/d",
+     "carries": "duck drinking/washing water"
+    },
+    {
      "stream_id": "IA-ELY-H2O",
      "from": "ROOF_TANK",
      "to": "H2O_ELYZ",
@@ -4701,7 +5232,7 @@
      "from": "GREY_TREAT",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 244.641602,
+     "rate": 258.762606,
      "unit": "kg/d",
      "carries": "grey sludge"
     },
@@ -4767,6 +5298,15 @@
      "rate": 6.709424,
      "unit": "kg/d",
      "carries": "still bottoms"
+    },
+    {
+     "stream_id": "QUAIL_H2O",
+     "from": "ROOF_TANK",
+     "to": "QUAIL_CAGE",
+     "other_sector": "FARM",
+     "rate": 0.2,
+     "unit": "kg/d",
+     "carries": "quail water"
     },
     {
      "stream_id": "S21",
@@ -4879,6 +5419,33 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "TSA regeneration condensate"
+    },
+    {
+     "stream_id": "IA-H2S-CH3SH",
+     "from": "BLACK_DIGEST",
+     "to": "MET_SYN",
+     "other_sector": "MEOH",
+     "rate": 0,
+     "unit": "kg/d",
+     "carries": "H2S feed to the methyl-mercaptan synthesis (trace)"
+    },
+    {
+     "stream_id": "IA-WASH-FEED",
+     "from": "ROOF_TANK",
+     "to": "WASHROOM",
+     "other_sector": "HAB",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "wash-water feed to the washroom fixtures"
+    },
+    {
+     "stream_id": "WASH_GREY",
+     "from": "WASHROOM",
+     "to": "GREY_TREAT",
+     "other_sector": "HAB",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "wash grey water to the treatment train"
     }
    ]
   },
@@ -4968,6 +5535,24 @@
    ],
    "no_source": [
     {
+     "stream_id": "IA-AIR-AQUA",
+     "from": "SOL_ARK_60K",
+     "to": "AQUA_TANK",
+     "other_sector": "FARM",
+     "rate": 0.04,
+     "unit": "kW",
+     "carries": "air pump electrical load: O2 aeration for the fish"
+    },
+    {
+     "stream_id": "IA-AIR-BIO",
+     "from": "SOL_ARK_60K",
+     "to": "BIOFILTER",
+     "other_sector": "FARM",
+     "rate": 0.02,
+     "unit": "kW",
+     "carries": "air pump electrical load: O2 for the nitrifying bacteria"
+    },
+    {
      "stream_id": "IA-DC-EW_1",
      "from": "RECTIFIER",
      "to": "EW_1",
@@ -5056,6 +5641,24 @@
      "rate": 0.323377,
      "unit": "kg/d",
      "carries": "cell water"
+    },
+    {
+     "stream_id": "IA-POWER-AQUAUV",
+     "from": "SOL_ARK_60K",
+     "to": "AQUA_UV",
+     "other_sector": "FARM",
+     "rate": 0.04,
+     "unit": "kW",
+     "carries": "UV-C lamp electrical load"
+    },
+    {
+     "stream_id": "IA-POWER-FEEDPREP",
+     "from": "SOL_ARK_60K",
+     "to": "FEED_PREP",
+     "other_sector": "FARM",
+     "rate": 0.6,
+     "unit": "kW",
+     "carries": "formulation+drying electrical load"
     },
     {
      "stream_id": "IA-Q4A-TRIM",
@@ -5467,7 +6070,7 @@
      "from": "SOL_ARK_60K",
      "to": "MEOH_SYNTH",
      "other_sector": "MEOH",
-     "rate": 0.7388,
+     "rate": 0.818,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -5488,6 +6091,15 @@
      "rate": 2.1232,
      "unit": "kW",
      "carries": "480 V AC"
+    },
+    {
+     "stream_id": "SF-MET_SYN",
+     "from": "SOL_ARK_60K",
+     "to": "MET_SYN",
+     "other_sector": "MEOH",
+     "rate": 0.2,
+     "unit": "kW",
+     "carries": "heating jacket + stirrer + metering pumps"
     },
     {
      "stream_id": "SF-MFG_SHOP",
@@ -5551,6 +6163,15 @@
      "rate": 0.0449,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
+    },
+    {
+     "stream_id": "SF-POLY_FIBER",
+     "from": "SOL_ARK_60K",
+     "to": "POLY_FIBER",
+     "other_sector": "POLYMERS",
+     "rate": 0.3,
+     "unit": "kW",
+     "carries": "melt-spin electrical load"
     },
     {
      "stream_id": "SF-POWDER_RESIN",
@@ -6281,12 +6902,30 @@
      "from": "SOL_ARK_60K",
      "to": "MEOH_SYNTH",
      "other_sector": "ELEC",
-     "rate": 0.7388,
+     "rate": 0.818,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
+    },
+    {
+     "stream_id": "SF-MET_SYN",
+     "from": "SOL_ARK_60K",
+     "to": "MET_SYN",
+     "other_sector": "ELEC",
+     "rate": 0.2,
+     "unit": "kW",
+     "carries": "heating jacket + stirrer + metering pumps"
     }
    ],
    "inactive": [
+    {
+     "stream_id": "DL_MET_TO_FEED",
+     "from": "MET_SYN",
+     "to": "CHICKEN_COOP",
+     "other_sector": "FARM",
+     "rate": 0,
+     "unit": "kg/d",
+     "carries": "DL-methionine crystals: top-dressed supplement at the point of feeding"
+    },
     {
      "stream_id": "IA-FC-EXH",
      "from": "MEOH_FC",
@@ -6295,6 +6934,24 @@
      "rate": 0,
      "unit": "kg/d",
      "carries": "cell exhaust"
+    },
+    {
+     "stream_id": "IA-H2S-CH3SH",
+     "from": "BLACK_DIGEST",
+     "to": "MET_SYN",
+     "other_sector": "WTR",
+     "rate": 0,
+     "unit": "kg/d",
+     "carries": "H2S feed to the methyl-mercaptan synthesis (trace)"
+    },
+    {
+     "stream_id": "IA-NH3-MET",
+     "from": "WS_AMMONIA",
+     "to": "MET_SYN",
+     "other_sector": "FAB",
+     "rate": 0,
+     "unit": "kg/d",
+     "carries": "ammonia feed to the Strecker step (trace)"
     },
     {
      "stream_id": "MEOH_TO_OLEFIN",
@@ -6447,7 +7104,7 @@
      "from": "PROD_C5_C10",
      "to": "NORTH_DOCK",
      "other_sector": "OIL",
-     "rate": 7.130646,
+     "rate": 7.04017,
      "unit": "kg/d",
      "carries": "C5-C10 product shipped"
     },
@@ -6598,6 +7255,24 @@
    ],
    "no_source": [
     {
+     "stream_id": "CA_HOPPER",
+     "from": "NORTH_DOCK",
+     "to": "QUAIL_CAGE",
+     "other_sector": "FARM",
+     "rate": 0.035,
+     "unit": "kg/d",
+     "carries": "mineral calcium carbonate (free-choice hopper)"
+    },
+    {
+     "stream_id": "FR_FINISH",
+     "from": "NORTH_DOCK",
+     "to": "POLY_FIBER",
+     "other_sector": "POLYMERS",
+     "rate": 0.001719,
+     "unit": "kg/d",
+     "carries": "phosphorus-FR finish (reagent manifest)"
+    },
+    {
      "stream_id": "IA-ALCL3-MU",
      "from": "NORTH_DOCK",
      "to": "AL_POT",
@@ -6665,7 +7340,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 64.41311,
+     "rate": 57.785915,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -6740,6 +7415,24 @@
      "rate": 0.2,
      "unit": "kg/d",
      "carries": "pattern wax make-up (petro-wax class import)"
+    },
+    {
+     "stream_id": "NUT_AQUA",
+     "from": "NORTH_DOCK",
+     "to": "DUCKWEED",
+     "other_sector": "FARM",
+     "rate": 5.5,
+     "unit": "kg/d",
+     "carries": "mineral nitrate solution to the raceway"
+    },
+    {
+     "stream_id": "NUT_AQUA_BED",
+     "from": "NORTH_DOCK",
+     "to": "GROWBED_B",
+     "other_sector": "FARM",
+     "rate": 1.0,
+     "unit": "kg/d",
+     "carries": "mineral nitrate solution to the media beds"
     }
    ],
    "stops": [
@@ -6763,6 +7456,15 @@
     }
    ],
    "inactive": [
+    {
+     "stream_id": "FOOD_EXPORT",
+     "from": "FOOD_STORE",
+     "to": "BOUNDARY_EXPORT",
+     "other_sector": "FARM",
+     "rate": -0.0,
+     "unit": "kg/d",
+     "carries": "surplus food to the reserve/trade boundary"
+    },
     {
      "stream_id": "IA-AIR-IN",
      "from": "NORTH_DOCK",
@@ -7050,7 +7752,7 @@
       },
       {
        "stream_id": "IA-C5-POLY",
-       "kg_per_campaign": 0.98
+       "kg_per_campaign": 1.28
       },
       {
        "stream_id": "MEOH_TO_VDF",

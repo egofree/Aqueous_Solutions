@@ -20,6 +20,14 @@ def scripts():
 
 
 if __name__ == '__main__':
+    # Top-level train scripts that take per-unit argv are expanded once per unit;
+    # everything else runs argless (foundry/polymers default to their own UNITS).
+    # PYTHONPATH carries the repo root so unit draw_*.py scripts can import models.*.
+    env = dict(os.environ, PYTHONPATH=ROOT + os.pathsep + os.environ.get('PYTHONPATH', ''))
+    PER_UNIT = {'evap_mvr.py': ['EVAP_ACID', 'EVAP_BASE']}
     for f in scripts():
-        print('build', os.path.relpath(f, ROOT), flush=True)
-        subprocess.run([sys.executable, f], cwd=ROOT, check=True)
+        base = os.path.basename(f)
+        calls = [[f, u] for u in PER_UNIT[base]] if base in PER_UNIT else [[f]]
+        for call in calls:
+            print('build', os.path.relpath(call[0], ROOT), *call[1:], flush=True)
+            subprocess.run([sys.executable, *call], cwd=ROOT, check=True, env=env)

@@ -1,0 +1,26 @@
+{
+  "shell_bbox_mm": [
+    4000.0,
+    2500.0,
+    2380.0
+  ],
+  "envelope_mm": [
+    4000,
+    2500,
+    2400
+  ],
+  "inside_size_mm_shell": true,
+  "solids": 1,
+  "all_parts_valid": true,
+  "material_class": "aluminium",
+  "form": "room",
+  "mass_kg": {
+    "floor": 405.0,
+    "wall_long_a": 383.1,
+    "wall_long_b": 383.1,
+    "wall_end_solid": 236.6,
+    "wall_end_door": 160.0
+  },
+  "empty_kg": 1567.8,
+  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+}

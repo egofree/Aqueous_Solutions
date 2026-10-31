@@ -1,5 +1,5 @@
 """X-INV-04 pipe inventory (AQS-INV-003). Every line by sector > sub-system > unit (the line's source unit): DN, class, material, length,
-fittings and joints, taken from the isometric sheet quantities (AQS-ISO-002, docs-authority/iso/ISO_SHEETS.csv). Stock lengths are
+fittings and joints, taken from the isometric sheet quantities (AQS-ISO-002; that sidecar retired 2026-10-27 with the rejected auto-router - the inventory is pending the placement model). Stock lengths are
 packed first-fit decreasing from the iso cut lists into 6.096 m (20 ft) random lengths with a 3 mm kerf (A-M-124). Fitting standards by
 class: metallic ASME B16.9 elbows, B16.5 Class 150 flanges, B16.20 spiral-wound gaskets, ASTM A193 B7 / A194 2H studs; PVC-U / CPVC
 socket fittings ASTM D2467 / F439; HDPE butt-fusion fittings ASTM D3261; PVDF / PP-H ISO 10931 / ISO 15494 fittings; FRP to ASTM D5421.
@@ -29,7 +29,8 @@ def rows():
     blk = {u: b['block_id'] for b in seed['blocks'] for u in b.get('unit_ids', [])}
     for r in st['units']: blk.setdefault(r['unit_id'], r.get('block_id'))
     R = []
-    for s in csv.DictReader(open(os.path.join(ROOT, 'docs-authority/iso/ISO_SHEETS.csv'))):
+    iso_p = os.path.join(ROOT, 'docs-authority', 'iso', 'ISO_SHEETS.csv')
+    for s in (csv.DictReader(open(iso_p)) if os.path.exists(iso_p) else []):
         u = s['frm'] if s['frm'] in N else s['to']; n = N.get(u, {})
         cuts = [int(c) for c in s['cut_list_mm'].split()] if s['cut_list_mm'].strip() else []
         el, fl, gk, sb = fit(s['cls'])
@@ -40,7 +41,10 @@ def rows():
     return R
 def write(R):
     D = os.path.join(ROOT, 'docs-authority/inventory'); R.sort(key=lambda r: (r['sector'], str(r['subsystem']), r['unit'], r['line']))
-    keys = [k for k in R[0] if k != 'cuts']
+    keys = ([k for k in R[0] if k != 'cuts'] if R else
+            ['sector', 'subsystem', 'unit', 'line', 'DN', 'cls', 'material', 'pipe_m', 'pieces', 'elbows_90',
+             'elbow_std', 'flanges', 'flange_std', 'gaskets', 'gasket_std', 'stud_bolts', 'stud_size',
+             'stud_std', 'joints', 'joint_type'])   # pending the placement model (the auto-router was rejected, AQS-3D-BUILD-001 Rev G)
     with open(os.path.join(D, 'PIPE_INVENTORY.csv'), 'w', newline='') as f:
         w = csv.DictWriter(f, keys, extrasaction='ignore'); w.writeheader(); w.writerows(R)
     F = collections.defaultdict(lambda: dict(m=0.0, lines=0, cuts=[], el=0, fl=0, gk=0, sb=0, jt=0, jtype=set(), studs=set()))
@@ -59,7 +63,13 @@ def write(R):
         out.append(dict(family=ids[(c, mat, dn)], cls=c, material=mat, DN=dn, pipe_m=round(f['m'], 1), lines=f['lines'], stock_lengths_6m=ns, offcut_m=round(waste/1000, 1),
                         elbows_90=f['el'], elbow_std=el, flanges=f['fl'], flange_std=fl, gaskets=f['gk'], stud_bolts=f['sb'], stud_size='/'.join(sorted(f['studs'])), joints=f['jt'], joint_type='/'.join(sorted(f['jtype']))))
     with open(os.path.join(D, 'PIPE_FAMILIES.csv'), 'w', newline='') as fh:
-        w = csv.DictWriter(fh, list(out[0].keys())); w.writeheader(); w.writerows(out)
+        if out:
+            w = csv.DictWriter(fh, list(out[0].keys())); w.writeheader(); w.writerows(out)
+        else:   # pending the placement model: no routed lengths, no cut lists (AQS-3D-BUILD-001 Rev G)
+            w = csv.DictWriter(fh, ['family', 'cls', 'material', 'DN', 'pipe_m', 'lines', 'stock_lengths_6m',
+                                    'offcut_m', 'elbows_90', 'elbow_std', 'flanges', 'flange_std', 'gaskets',
+                                    'gasket_std', 'stud_bolts', 'stud_size', 'stud_std', 'joints', 'joint_type'])
+            w.writeheader()
     M = collections.defaultdict(float)
     for r in R: M[r['material']] += r['pipe_m']
     tot = sum(r['pipe_m'] for r in R)

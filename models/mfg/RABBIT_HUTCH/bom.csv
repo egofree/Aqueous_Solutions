@@ -1,0 +1,6 @@
+item,part,qty,material,mass_kg,make_buy,note
+1,drop_board,1,HDG_steel,31.3,make,frame class; 3 rabbitry positions x 0.5 m2 with rest mats (A-M-423; TECHTREE rabbits.md) (X-F
+2,floor_wire,1,HDG_steel,8.9,make,frame class; 3 rabbitry positions x 0.5 m2 with rest mats (A-M-423; TECHTREE rabbits.md) (X-F
+3,frame_legs,1,HDG_steel,75.4,make,frame class; 3 rabbitry positions x 0.5 m2 with rest mats (A-M-423; TECHTREE rabbits.md) (X-F
+4,roof,1,HDG_steel,31.3,make,frame class; 3 rabbitry positions x 0.5 m2 with rest mats (A-M-423; TECHTREE rabbits.md) (X-F
+5,wire_panels,1,HDG_steel,20.4,make,frame class; 3 rabbitry positions x 0.5 m2 with rest mats (A-M-423; TECHTREE rabbits.md) (X-F

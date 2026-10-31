@@ -3,8 +3,8 @@
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 87,
-  "edge_count": 91,
+  "node_count": 93,
+  "edge_count": 97,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -158,7 +158,26 @@
       "notes": "Black digest (S30)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "design": {
+          "D_mm": 800,
+          "H_mm": 760,
+          "wall_mm": 5.0,
+          "V_L": 378,
+          "material": "PP-H sheet, extrusion-welded (DVS 2207-11)",
+          "insulation": "PIR 50 mm, PE cladding",
+          "heat_W": 85,
+          "T_C": 55,
+          "SRT_d": 15,
+          "biogas_g_d": 99
+        },
+        "size_mm": [
+          1100,
+          1100,
+          1260
+        ],
+        "size_note": "DN800 x 760 mm thermophilic anaerobic digester + 300 mm envelope margin, per AQS-DUTY-063 (sizing/SANITATION.md section 2 row 1: 378 L, PP-H 5.0 mm, 50 mm PIR, 85 W, 55 C SRT 15 d METCALF5); graph-side design restored from the governing sizing doc because the X-SAN-01 writer is R11-blocked (owner lane)"
+      },
       "continuous_kw": {
         "value": 0.1052,
         "unit": "kW",
@@ -177,7 +196,14 @@
       "notes": "BMED acid loop node",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 5.6267,
         "unit": "kW",
@@ -207,7 +233,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 175.174278,
+          "bypass_kg_d": 206.770079,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -221,7 +247,13 @@
           "total_kW": 0.01803555742909093,
           "kWh_per_m3": 3.2461065645922726,
           "kWh_per_m3_RO_EDI": 0.5463508924805983
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -254,7 +286,14 @@
       "notes": "Cold mill (S59)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 0.0191,
         "unit": "kW",
@@ -273,7 +312,14 @@
       "notes": "CRYO AHU (S56/S70)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 0.6472,
         "unit": "kW",
@@ -302,15 +348,15 @@
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.18,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.0,
-          "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 0.0,
+          "out_breathing_Nm3_h": 0.068,
+          "in_breathing_Nm3_h": 1.957,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.0,
+          "vent_bore_req_mm": 6.4,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
+          "thermal_term": "envelope volume",
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 15.2 kPa (1.24 m full at SG 1.25) = 17.5 kPa g (A-M-174)"
         },
         "design": {
@@ -342,7 +388,13 @@
           },
           "H_mm": 1243,
           "D_mm": 414
-        }
+        },
+        "size_mm": [
+          300,
+          300,
+          2000
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "continuous_kw": {
         "value": 1.6572,
@@ -548,7 +600,28 @@
           "alt": "carbon-composite bipolar plates as the stack replacement class (PEMFC-family hardware) with the same hydride check",
           "note": "electrode degradation is the first-article bench basis: no rate claimed here; the P5 water feed legs are the issued house family.",
           "task": "X-MAT-22"
-        }
+        },
+        "design": {
+          "duty": "PEM electrolysis: 83.62 kg/d water -> 9.358 kg/d H2 + 74.263 kg/d O2 at 21.445 kW",
+          "kwh_per_kg_h2": 55.0
+        },
+        "sizing": {
+          "kwh_per_kg_h2": 55.0
+        },
+        "envelope": {
+          "size_mm": [
+            1800,
+            800,
+            1600
+          ],
+          "basis": "the PEM stack skid: stack + power electronics + water loop at the 21.445 kW duty"
+        },
+        "size_mm": [
+          1800,
+          800,
+          1600
+        ],
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       }
     },
     {
@@ -915,7 +988,14 @@
       "notes": "Powder production. Fed from FOUNDRY melt when powder stock required. Not baseline.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 0.0781,
         "unit": "kW",
@@ -960,7 +1040,12 @@
           "cop_basis": "graph S44/SF-GEO_HP; study COP 3.43 at 285 K (AQS-HEAT-STUDY-002 sec. 6, KAVANAUGH2014)",
           "material": "316L plates, R410A-class refrigerant, propylene-glycol brine source"
         },
-        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ]
       }
     },
     {
@@ -985,7 +1070,12 @@
           "duty": "source loop between the bore field and the heat-pump evaporators; S43 carries it on the graph (0 kW idle standby)",
           "material": "HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C)"
         },
-        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ]
       },
       "continuous_kw": {
         "value": 0.1257,
@@ -1090,7 +1180,34 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "design": {
+          "X": 0.11,
+          "delta_um": 1.905,
+          "t_kin_h": 7.5005,
+          "tau_h": 22.5014,
+          "V_work_L": 37.4793,
+          "V_L": 49.9724,
+          "D_mm": 400,
+          "H_mm": 400,
+          "wall_mm": 4.0,
+          "agitator": {
+            "D_imp_mm": 133,
+            "rpm": 358,
+            "shaft_W": 14.790912041447882,
+            "motor_kW": 0.09
+          },
+          "T_C": 85,
+          "material": "CPVC (to 93 C; DVS 2205 allowable 3.0 MPa at 85 C); PVDF impeller and shaft sleeve",
+          "heat": "Q3 coil HX-6 (graph HL-Q3-A/B-HX6)",
+          "kW": 0.09
+        },
+        "size_mm": [
+          700,
+          700,
+          900
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
       }
     },
     {
@@ -1140,7 +1257,13 @@
           "basis": "BVAD2022 tomato; crew-duty area from S14 (A-M-229)"
         },
         "yield_assumption": "0.1442 kg/(m2\u00b7d) edible fresh at DLI 17 (BVAD2022 tomato carbon chain, A-M-229) x 29.12 m2",
-        "area_basis": "crew duty (A-M-229): S14 4.2 kg/d / 0.1442 kg/m2/d = 29.12 m2 (supersedes the BH ~28 m2 / 120.4 m2 residue-claim studies)"
+        "area_basis": "crew duty (A-M-229): S14 4.2 kg/d / 0.1442 kg/m2/d = 29.12 m2 (supersedes the BH ~28 m2 / 120.4 m2 residue-claim studies)",
+        "size_mm": [
+          2000,
+          1000,
+          400
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1229,8 +1352,8 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 2517.0,
-        "fraction_of_znbr2_study": 0.085,
+        "vs_znbr2_kwh": 3052.0,
+        "fraction_of_znbr2_study": 0.07,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
@@ -1252,7 +1375,13 @@
           "upper": "3 reservoir levels x 3.06 m water over 367 m2, 2.0 cells per level",
           "lower": "CATCH_TANK 9.17 m deep over 367 m2",
           "eta_net_with_penstock": 0.76
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1334,11 +1463,24 @@
       "modules": [],
       "params": {
         "size_mm": [
-          2200,
-          900,
-          1400
+          425,
+          425,
+          600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
+        "design": {
+          "T_C": 35,
+          "tau_h": 48,
+          "V_work_L": 0.72,
+          "V_L": 0.96,
+          "D_mm": 125,
+          "H_mm": 100,
+          "wall_mm": 4.0,
+          "heat_W": 0.7399,
+          "mixer": "daily recirculation pump",
+          "material": "HDPE (PE100), 50 mm PIR",
+          "kW": 0.0207
+        }
       },
       "continuous_kw": {
         "value": 0.0207,
@@ -1358,7 +1500,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.7388,
+        "value": 0.818,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02: node aligned to its calculated SF-MEOH_SYNTH feed (feed preheat, no interchanger credit); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to MEOH_SYNTH continuous_kw.."
@@ -1367,11 +1509,34 @@
       "params": {
         "presence": "present",
         "size_mm": [
-          2200,
-          900,
-          1400
+          414,
+          414,
+          2585
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
+        "design": {
+          "T_C": 250,
+          "P_bar": 50.0,
+          "design_MPa": 5.5,
+          "MeOH_kg_h": 1.4379,
+          "cat_kg": 3.5357,
+          "V_bed_L": 3.2143,
+          "tubes": 1,
+          "tube": "DN50 Sch 40 SA-106 B",
+          "L_bed_mm": 1485,
+          "t_req_mm": 2.8796,
+          "t_nom_mm": 3.91,
+          "t_ok": true,
+          "exotherm_kW": 0.617,
+          "preheat_kW": 0.818,
+          "D_mm": 114,
+          "H_mm": 2085,
+          "wall_mm": 3.91,
+          "V_work_L": 3.2143,
+          "V_L": 3.2143,
+          "material": "SA-106 B tube in a DN100 thermal-oil jacket (exotherm to Q3); Cu/ZnO/Al2O3 pellets",
+          "kW": 0.818
+        }
       }
     },
     {
@@ -1385,7 +1550,14 @@
       "notes": "Superseded for bulk melt by FOUNDRY IND_MELT. Retained as MFG hold/transfer only. Do not size as primary melt.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 0.2369,
         "unit": "kW",
@@ -1452,7 +1624,13 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1554,7 +1732,29 @@
       "notes": "Oil pyro (intra) Design: notes/OIL_SECTOR.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "design": {
+          "T_C": 500.0,
+          "tau_h": 1.0,
+          "V_work_L": 1.9056,
+          "V_L": 3.8111,
+          "D_mm": 200,
+          "H_mm": 170,
+          "wall_mm": 4.5,
+          "Q_process_kW": 1.1192,
+          "insulation_mm": 125,
+          "loss_W": 65.1293,
+          "kW": 1.664,
+          "material": "ASME SA-240 304H (carbon steel limited to 425 C, ASME II-D); ceramic-fibre insulation; band heaters",
+          "relief": "vapour line to OIL_FRAC open; bursting disc on the retort lid to the flare header (study)"
+        },
+        "size_mm": [
+          500,
+          500,
+          670
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
+      },
       "continuous_kw": {
         "value": 1.664,
         "unit": "kW",
@@ -1573,7 +1773,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 336.8116,
+        "value": 368.9871,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -1581,34 +1781,40 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 4984,
+        "count": 6044,
         "presence": "present",
-        "nameplate_kw": 2492,
-        "area_m2": 21986,
-        "balance_kWp": 1246,
+        "nameplate_kw": 3022,
+        "area_m2": 26574,
+        "balance_kWp": 1511,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            174000,
+            210000,
             138000
           ],
           "bays": [
-            29,
+            35,
             23
           ],
-          "footprint_m2": 24012.0,
-          "extension_m2": 23580.0,
-          "roof_capacity_kWp": 2506.5,
+          "footprint_m2": 28980.0,
+          "extension_m2": 28548.0,
+          "roof_capacity_kWp": 3029.5,
           "perimeter_pathway_mm": 1829,
-          "arrays": 12,
-          "extension_load_kW": 68.28,
+          "arrays": 15,
+          "extension_load_kW": 99.18,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
           },
           "basis": "flow_graph/param/solver.py roof_close (IFC 2027 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1634,7 +1840,13 @@
         "nameplate_kw_dc": 99.0,
         "rect_ac_input_kW": 38.663,
         "rect_loss_kW": 7.733,
-        "rect_basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73)/R10b: nine-channel EW rectifier 16500 A, 99 kW DC nameplate at 6 V; bounding AC input 38.66 kW (AQS-ELEC-004). Node continuous_kw stays the 12 kW A-M-231 basis and S17 equals it: the EW DC load is counted once, behind the AQS-ELEC-004 bounding AC row in _power_sizing (A-M-255)."
+        "rect_basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73)/R10b: nine-channel EW rectifier 16500 A, 99 kW DC nameplate at 6 V; bounding AC input 38.66 kW (AQS-ELEC-004). Node continuous_kw stays the 12 kW A-M-231 basis and S17 equals it: the EW DC load is counted once, behind the AQS-ELEC-004 bounding AC row in _power_sizing (A-M-255).",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1650,35 +1862,35 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 2100.0,
+        "kW": 2520.0,
         "presence": "present",
-        "count": 35,
+        "count": 42,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 1920.3,
-          "export_kWh_d_clear": 5392,
+          "export_peak_kW": 2302.0,
+          "export_kWh_d_clear": 6539,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
         "sections": {
           "count": 4,
           "inverters": [
-            9,
-            9,
-            9,
-            8
+            11,
+            11,
+            10,
+            10
           ],
           "breaker_A": [
             1000,
             1000,
             1000,
-            800
+            1000
           ],
           "xfmr_kVA": [
             750,
             750,
             750,
-            500
+            750
           ],
           "mv_kV": 12.47,
           "plant_bus_on": "CB-1",
@@ -1686,16 +1898,22 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 150.8,
-          "section_rating_A": 300,
-          "basis_A": 201.6,
+          "bus_demand_kW": 183.0,
+          "section_rating_A": 350,
+          "basis_A": 244.6,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
           "critical_kW": 14.459999999999999,
           "inverter_sections": 6,
           "rule": "X-RED-03, A-M-152; NEC 240.6, 0.9 pf, 125 % continuous"
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1744,7 +1962,13 @@
             "item": "total connected (calculated)",
             "kW": 0.4417
           }
-        ]
+        ],
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1787,7 +2011,13 @@
             "item": "total",
             "kWh_d": 5.008
           }
-        ]
+        ],
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1801,7 +2031,14 @@
       "notes": "Final wire sizing in MFG. Takes rod/wire stock from FOUNDRY DRAW via STOCK_OUT. Not the primary draw.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 0.0189,
         "unit": "kW",
@@ -1820,26 +2057,32 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 179.7238,
+        "value": 217.9501,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.7 kW, charge 816.9 kW, 2516 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.0 kW, charge 990.6 kW, 3051 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 817,
-        "kWh": 2517,
+        "kW": 991,
+        "kWh": 3052,
         "presence": "present",
-        "charge_kW": 817,
-        "discharge_kW": 180,
+        "charge_kW": 991,
+        "discharge_kW": 218,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 35 hybrid inverters, 71.9 kWh and 23.3 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 42 hybrid inverters, 72.7 kWh and 23.6 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 6.379,
-          "purge_m3_h": 26.58,
+          "H2_m3_d": 7.736,
+          "purge_m3_h": 32.23,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1645.8
-        }
+          "electrode_area_m2": 1995.9
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -4222,33 +4465,33 @@
       "modules": [],
       "params": {
         "hvac": {
-          "light_kW": 20.75,
-          "vent_kW": 29.41,
-          "envelope_kW": 18.123,
-          "total_kW": 68.284,
-          "vent_L_s": 7074.0,
-          "Qh_kW": 42.344,
-          "Qc_kW": 83.268,
-          "slab_kW": 2.727,
-          "gains_kW": 29.593,
+          "light_kW": 25.122,
+          "vent_kW": 42.396,
+          "envelope_kW": 31.662,
+          "total_kW": 99.18,
+          "vent_L_s": 8564.4,
+          "Qh_kW": 29.544,
+          "Qc_kW": 175.167,
+          "slab_kW": 1.675,
+          "gains_kW": 35.828,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 373.27,
-          "peak_c_kW": 329.652
+          "peak_h_kW": 445.723,
+          "peak_c_kW": 395.352
         },
-        "footprint_m2": 23580.0,
+        "footprint_m2": 28548.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 68.284 kW. Sheet docs-authority/duties/EXT_HALL.md."
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 99.180 kW. Sheet docs-authority/duties/EXT_HALL.md."
       },
       "continuous_kw": {
-        "value": 68.2838,
+        "value": 99.1801,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 23580 m2; lighting 20.75 kW (IECC 2021 C405, 10 % lit), ventilation 29.41 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 18.12 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 42.3 kW and cooling 83.3 kW thermal average after internal gains 29.6 kW and slab edge 2.73 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 28548 m2; lighting 25.12 kW (IECC 2021 C405, 10 % lit), ventilation 42.40 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 31.66 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 29.5 kW and cooling 175.2 kW thermal average after internal gains 35.8 kW and slab edge 1.68 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       },
       "class": "building"
     },
@@ -4287,6 +4530,260 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Sump recirculation pump 350 L/h at the minimum wetting rate (PERRY9_ABS), 10 m head, 40 % efficiency (study)."
       }
+    },
+    {
+      "unit_id": "AQUA_TANK",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "fish_tank",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "aquaponic fish tanks, 60 kg standing stock",
+          "stock_kg": 60.0,
+          "ration_kg_d": 0.9,
+          "basis": "A-M-415 (X-FARM-01)",
+          "ammonia_load": "fish excrete NH3/NH4+ through the gills: ~30 g NH4+-N per kg feed (protein metabolism); toxic above 1 mg/L un-ionised NH3",
+          "O2_demand": "dissolved O2 for fish respiration: ~5 mg/L minimum (aeration required); the air stones are the O2 source",
+          "notes_extra": "the fish are the ammonia SOURCE and the O2 SINK of the aquaponic loop; the biofilter bacteria are the ammonia CONSUMER and the O2 SINK"
+        },
+        "size_mm": [
+          2100,
+          1100,
+          1100
+        ],
+        "size_note": "2.0 m3 working volume at the 60 kg stock / 30 kg-per-m3 class (TECHTREE tilapia glossary; A-M-415): 2000 x 1000 x 1000 ID + 50 walls, EPDM-lined HDPE (X-FARM sec3)",
+        "sec3_material": {
+          "mat": "HDPE tank body with a food-grade LDPE aquaculture liner, SS316 hardware above the waterline, CPVC loop fittings",
+          "basis": "the tank holds the fish stock in the RAS loop at 26-28 C (graph design; A-M-415): ichthyotoxicity governs the wetted set, so Cu/Zn/brass are excluded outright; the liner is the aquaculture food-contact class over the 2.5 m3 envelope (203.8 kg/d loop).",
+          "alt": "FRP tank with gelcoat in place of the liner if liner abrasion ever shows",
+          "note": "loop top-up 27.4 kg/d and duckweed ration 18 kg/d in; 200 kg/d to the biofilter, 3 kg/d sludge to the BSFL bin.",
+          "task": "X-FARM-11"
+        }
+      },
+      "notes": "Aquaponic fish tanks (tilapia class, A-M-415): 60 kg standing stock on the D-DOCK grain supplement; waste circulates through BIOFILTER to the dual root-zone growbeds. Study."
+    },
+    {
+      "unit_id": "BIOFILTER",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "biofilter",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "nitrifying biofilter \u2014 Nitrosomonas + Nitrobacter biofilm on moving-bed media",
+          "organisms": "Nitrosomonas europaea (NH3 -> NO2-); Nitrobacter winogradskyi (NO2- -> NO3-)",
+          "stoichiometry": "NH4+ + 1.5 O2 -> NO2- + 2H+ + H2O (Nitrosomonas); NO2- + 0.5 O2 -> NO3- (Nitrobacter); combined: NH4+ + 2 O2 -> NO3- + 2H+ + H2O",
+          "O2_demand": "2 mol O2 per mol NH4+ nitrified (4.57 mg O2 per mg NH4+-N); aerobic \u2014 the bacteria die without dissolved O2",
+          "pH": "7.0-8.5 optimal; below 6.5 the nitrification rate collapses",
+          "temperature": "25-30 C optimal; below 15 C nitrification slows dramatically",
+          "media": "moving-bed biofilm carriers (K1 micro class); surface area sets the bacterial population",
+          "failure_mode": "ammonia accumulates to lethal levels within 24-48 h if the bacteria die (O2 starvation, pH crash, chemical shock)",
+          "basis": "A-M-415; TECHTREE agriculture.aquaponics (nitrogen cycle); TECHTREE space-resources MELiSSA C2 nitrifying compartment"
+        },
+        "size_mm": [
+          1100,
+          900,
+          1000
+        ],
+        "size_note": "moving-bed vessel 0.55 m3 at the 0.9 kg/d feed ammonia load, K1 media 0.2 m3 (A-M-415; TECHTREE aquaponics) (X-FARM sec3)"
+      },
+      "notes": "Nitrifying biofilter \u2014 the keystone biological unit of the aquaponic loop. Nitrosomonas oxidises ammonia to nitrite; Nitrobacter oxidises nitrite to nitrate. Aerobic: the bacteria consume 4.57 mg O2 per mg NH4+-N. Without dissolved O2, nitrification stops and the ammonia kills the fish within 24-48 h. The nitrate is the nitrogen source for the dual root-zone growbeds. The biofilm is the bacterial population \u2014 the moving-bed media is its habitat. Study."
+    },
+    {
+      "unit_id": "FEED_PREP",
+      "sector_id": "FARM",
+      "class": "feed_prep",
+      "presence": "present",
+      "enabled": true,
+      "tags": [
+        "farm",
+        "feed"
+      ],
+      "params": {
+        "design": {
+          "service": "ration formulation: duckweed + larvae meal + recycled eggshell; HP drier on the storage draw only",
+          "basis": "A-M-426; A-M-416 (no imported grain); TECHTREE insect-farming (black-soldier-fly meal milling class)",
+          "fresh_first": "fish and ducks eat the harvest wet; drying serves only the A-M-270 dry-reserve draw (0.5 kg/d)",
+          "methionine": "the binding supplement (~9 g/d DL-met equivalent at 4-crew; TECHTREE poultry.chickens: synthetic DL-methionine is the standard supplement class)",
+          "ca_source": "recycled eggshell 38 g Ca/d + BSFL Ca 5-8 % (TECHTREE insect-farming) + mineral CaCO3 top-up ~1.5-2 kg/month from the site mineral line (TECHTREE poultry.chickens: crushed limestone free-choice class)",
+          "food_safety": "larvae meal routes to POULTRY ONLY, never to the fish: manure-fed larvae are the pathogen bridge the aquaponic produce path must not carry (TECHTREE agriculture.aquaponics food-safety note)"
+        },
+        "sizing": {
+          "throughput_kg_d": 2.54,
+          "basis": "A-M-426 driver arithmetic",
+          "load_basis": "mixer 0.1 + grinder 0.15 + HP drier 0.35 (9.5 kg/d water x ~0.9 kWh/kg at the HP COP class); arithmetic per A-M-426"
+        },
+        "sec3_material": {
+          "mat": "SS304 contact surfaces and mixing troughs, PP feed bins, quartz-sleeve drier ducting; no copper-bearing alloys on any feed path",
+          "basis": "food-contact sanitation class for the animal ration line (A-M-426): 304 at the chloride-light service, PP bins resist the wet duckweed; Cu is excluded from every feed path outright",
+          "alt": "SS316 where the eggshell grinding dust ever shows pitting",
+          "note": "the reject stream returns to the BSFL bin, so the contact surfaces serve both feeds.",
+          "task": "X-FARM-10"
+        },
+        "size_mm": [
+          1300,
+          900,
+          1700
+        ],
+        "size_note": "mixer + grinder + HP drier cabinet at the 0.6 kW duty (A-M-426) (X-FARM sec3)"
+      },
+      "continuous_kw": {
+        "value": 0.6,
+        "unit": "kW",
+        "status": "study",
+        "note": "mixer 0.1 + grinder 0.15 + HP drier 0.35 (9.5 kg/d water x ~0.9 kWh/kg at the HP COP class); arithmetic per A-M-426 (X-SPEC calculated) (X-SPEC sizing, calculated)"
+      },
+      "notes": "Ration formulation for the layer and quail rations and the dry reserve; fresh-first feeding keeps the fish and duck rations drying-free. Study."
+    },
+    {
+      "unit_id": "AQUA_UV",
+      "sector_id": "FARM",
+      "class": "uv_sanitizer",
+      "presence": "present",
+      "enabled": true,
+      "tags": [
+        "farm",
+        "aquaponics",
+        "food-safety"
+      ],
+      "params": {
+        "design": {
+          "service": "optional UV-C 254 nm loop sanitizer between the biofilter and the growbeds; AQUA_BYPASS normally engaged",
+          "basis": "A-M-428; A-M-427 (food-safety mode); TECHTREE agriculture.aquaponics (produce food-safety note)",
+          "why_it_works": "the nitrifying biofilm lives on the moving-bed media: post-media sterilization passes the nitrates and kills only sloughed/free cells",
+          "modes": "normal = bypassed (growbed rhizosphere needs its microbial feed); food-safety mode = inline (A-M-427 greens/harvest); contamination response = inline",
+          "ozone_contingency": "deep-clean with ozone fed from CRYO_O2, fish isolated, never in-line live: residual ozone is lethal to gills and biofilm",
+          "dose_class": "254 nm, 30-100 mJ/cm2 class for the loop flow; the 40 kg/d loop is trivial flow for a 0.04 kW lamp",
+          "failure_mode": "lamp depletion or sleeve fouling: dose decays silently - the X-FARM-12 validation test is periodic, not one-shot"
+        },
+        "sizing": {
+          "loop_kg_d": 40.0,
+          "basis": "A-M-415 loop rate",
+          "load_basis": "the 254 nm lamp class at the 30-100 mJ/cm2 dose and the 40 kg/d loop flow (A-M-428)"
+        },
+        "sec3_material": {
+          "mat": "SS304 reactor tube with a quartz UV sleeve, PP loop fittings, EPDM gasket class",
+          "basis": "loop-water service at aquaponic temperature (A-M-428): 304 tube with the lamp isolated behind quartz; the unit is normally bypassed, so wetted-time is intermittent",
+          "alt": "316L tube if the loop ever runs saline (it does not at the freshwater class)",
+          "note": "quartz sleeve fouling is the maintenance item - the dose validation (X-FARM-12) covers it.",
+          "task": "X-FARM-12"
+        },
+        "size_mm": [
+          400,
+          350,
+          750
+        ],
+        "size_note": "inline 254 nm reactor tube + control box at the 0.04 kW lamp class (A-M-428) (X-FARM sec3)"
+      },
+      "continuous_kw": {
+        "value": 0.04,
+        "unit": "kW",
+        "status": "study",
+        "note": "the 254 nm lamp class at the 30-100 mJ/cm2 dose and the 40 kg/d loop flow (A-M-428) (X-SPEC calculated) (X-SPEC sizing, calculated)"
+      },
+      "notes": "Optional pathogen barrier for the produce path and contamination response. Study."
+    },
+    {
+      "unit_id": "POLY_FIBER",
+      "sector_id": "POLYMERS",
+      "class": "melt_spin",
+      "presence": "present",
+      "enabled": true,
+      "tags": [
+        "polymers",
+        "textiles"
+      ],
+      "params": {
+        "design": {
+          "service": "PP melt-spin staple-fiber line: pellet -> spun fiber -> needle-punched nonwoven fleece for the crew textile issue",
+          "basis": "A-M-429; A-M-225 (the FR finish rides the D-DOCK reagent manifest, the WS_SOLV reagent-import class)",
+          "fr_finish": "phosphorus-FR finish at the ~2 % pick-up class: PP is inherently flammable, the FR finish is the wool-flammability replacement carrier",
+          "product": "fleece to MFG_SHOP for conversion (cutting/sewing/knitting) - the shop issues finished textiles to the hab",
+          "feed": "draws the C5-C10 export surplus: IA-C5-SHIP gives up the 0.09 kg/d polymer share (the export carried 7.13 kg/d)",
+          "waste": "spin scrap returns to the solids/leach line (POLY_TO_WET class: PP is leach-inert)"
+        },
+        "sizing": {
+          "throughput_kg_d": 0.0905,
+          "basis": "POLYMERS.textile drivers",
+          "load_basis": "extruder heater 0.2 (0.09 kg/d PP melt + standby) + spindle/winder 0.1; arithmetic per A-M-429"
+        },
+        "sec3_material": {
+          "mat": "SS304 melt vessel and spin pump with heater bands, brass-free spinnerette (stainless die plate), PP quench ducting",
+          "basis": "PP melts at 160-220 C and is non-wetting to the 304 class at the bench throughput (A-M-429): the die plate is the precision item; no copper alloys touch the melt (PP degrades against copper at melt temperature)",
+          "alt": "a 316L die plate if the FR-finish chemistry ever shows die corrosion",
+          "note": "the FR finish dosing skid is PP/PTFE-contact throughout.",
+          "task": "X-POLY-01"
+        },
+        "size_mm": [
+          3100,
+          1300,
+          1900
+        ],
+        "size_note": "bench-scale melt-spin line: extruder + spinnerette + quench + winder at the 0.09 kg/d draw (A-M-429) (X-POLY sec3)"
+      },
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "extruder heater 0.2 (0.09 kg/d PP melt + standby) + spindle/winder 0.1; arithmetic per A-M-429 (X-SPEC calculated) (X-SPEC sizing, calculated)"
+      },
+      "notes": "The crew textile line: the designed replacement for wool (A-M-429). Study."
+    },
+    {
+      "unit_id": "MET_SYN",
+      "sector_id": "MEOH",
+      "class": "chemical_synthesis",
+      "presence": "present",
+      "enabled": true,
+      "tags": [
+        "meoh",
+        "amino-acid",
+        "feed"
+      ],
+      "params": {
+        "design": {
+          "service": "DL-methionine synthesis (the three-step Strecker route): CH3SH + acrolein -> MMP; MMP + NH3 + HCN -> aminonitrile; hydrolysis -> DL-Met",
+          "basis": "A-M-416 route A close-out (2026-10-28): the no-import-feed rule requires on-site synthesis; TECHTREE poultry.chickens.md: synthetic DL-methionine is the standard supplement class",
+          "chemistry": "step 1: CH3OH + H2S -> CH3SH (K2O/Al2O3, 350 C); step 2: CH3SH + acrolein -> MMP (base-catalysed Michael addition); step 3: MMP + NH3 + HCN -> aminonitrile; hydrolysis -> DL-Met (Strecker)",
+          "throughput_g_d": 9.0,
+          "precursor_chain": "CH3OH from MEOH_SYNTH; H2S from BLACK_DIGEST; NH3 from WS_AMMONIA; acrolein from the olefin line; HCN from the Andrussow reaction (CH4 + NH3 + O2) at the gram/d scale",
+          "product": "DL-methionine crystals to the FEED_PREP formulation (A-M-426)"
+        },
+        "sizing": {
+          "throughput_g_d": 9.0,
+          "power_kW": 0.2,
+          "basis": "bench-scale glass-lined reactor column + reagent feed tanks + crystalliser; the scale is trivial (9 g/d vs the tonne/y industrial class) - the complexity is the three-step sequence, not the throughput"
+        },
+        "sec3_material": {
+          "mat": "Borosilicate glass-lined reactor column, PTFE-lined transfer lines, SS304 reagent feed tanks, Hastelloy C crystalliser",
+          "basis": "the three-step Strecker carries HCN, acrolein and methanethiol - all aggressive at the reagent class (A-M-416): glass-lined for the reaction column, PTFE for the transfer, Hastelloy C for the acidic hydrolysis/crystallisation",
+          "alt": "a tantalum reactor if the HCN service ever shows corrosion at the glass-lining pinholes",
+          "note": "the crystalliser is the product-quality bottleneck: DL-Met crystal habit controls the filtration rate.",
+          "task": "X-UI-002"
+        },
+        "size_mm": [
+          1500,
+          1000,
+          1800
+        ],
+        "size_note": "bench fume-hood train: glass-lined reactor column (2 L working volume), reagent feed tanks, Hastelloy C crystalliser; the 9 g/d DL-Met duty sets nothing larger (A-M-416 route A; X-UI-002)"
+      },
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "heating jacket + stirrer + metering pumps (X-UI-002 MET_SYN design; A-M-416 route A)"
+      },
+      "notes": "DL-methionine synthesis closes the animal-loop methionine supplement (A-M-416). Study."
     }
   ],
   "edges": [
@@ -4581,7 +5078,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 336.8116,
+        "value": 368.9871,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -4868,7 +5365,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.7388,
+        "value": 0.818,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02 load-basis (A-M-275). Feed equal to MEOH_SYNTH continuous_kw."
@@ -5783,7 +6280,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 68.2838,
+        "value": 99.1801,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
@@ -6679,6 +7176,138 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": null
+    },
+    {
+      "stream_id": "IA-AIR-AQUA",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "AQUA_TANK",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "carries": "air pump electrical load: O2 aeration for the fish",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.04,
+        "unit": "kW",
+        "status": "study",
+        "note": "air pump 40 W: dissolved O2 for the fish (5 mg/L minimum) and the biofilter nitrification (A-M-415)"
+      },
+      "notes": "X-FARM build-out: the air stones are the O2 source for the fish and the nitrifying bacteria",
+      "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "IA-AIR-BIO",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BIOFILTER",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "carries": "air pump electrical load: O2 for the nitrifying bacteria",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.02,
+        "unit": "kW",
+        "status": "study",
+        "note": "biofilter aeration 20 W: the nitrifying bacteria are aerobic (4.57 mg O2/mg NH4+-N); A-M-415"
+      },
+      "notes": "X-FARM build-out: without O2 the nitrification stops and the ammonia kills the fish",
+      "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "IA-POWER-FEEDPREP",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "FEED_PREP",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "carries": "formulation+drying electrical load",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.6,
+        "unit": "kW",
+        "status": "study",
+        "note": "A-M-426 driver (X-FARM)"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
+      "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "IA-POWER-AQUAUV",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "AQUA_UV",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "carries": "UV-C lamp electrical load",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.04,
+        "unit": "kW",
+        "status": "study",
+        "note": "A-M-428 lamp class (X-FARM)"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
+      "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "SF-POLY_FIBER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "POLY_FIBER",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "POLYMERS",
+      "carries": "melt-spin electrical load",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "0.3 kW bench-scale melt-spin line (X-POLY, A-M-429)"
+      },
+      "notes": "X-POLY textile line (A-M-429)",
+      "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "SF-MET_SYN",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "MET_SYN",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "MEOH",
+      "carries": "heating jacket + stirrer + metering pumps",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "the bench-scale synthesis duty (A-M-416) [X-UI-002-supplement held]"
+      },
+      "notes": "X-UI-002 MET_SYN (A-M-416 route A)",
+      "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

@@ -1,584 +1,608 @@
 {
-  "site_id": "mars",
-  "site_code": "MR",
-  "groups": {
-    "identity": {
-      "entries": {
-        "name": {
-          "value": "Mars variant (mid-latitude, Arcadia Planitia; Q-022)",
-          "units": "-",
-          "register": "AQS-SITE-009"
-        },
-        "body": {
-          "value": "earth_surface",
-          "units": "-",
-          "register": "AQS-SITE-002"
-        },
-        "latitude_deg": {
-          "value": 40.0,
-          "units": "deg N",
-          "ref": "NASA_MARS_ICE"
-        },
-        "longitude_deg": {
-          "value": -150.0,
-          "units": "deg E",
-          "ref": "NASA_MARS_ICE"
-        },
-        "elevation_m": {
-          "value": 0.0,
-          "units": "m (mean radius datum)",
-          "ref": "NASA_MARS_FACT"
-        },
-        "site_basis": {
-          "value": "AQS-SITE-009",
-          "units": "document number",
-          "register": "AQS-SITE-009"
-        }
-      }
+ "site_id": "mars",
+ "site_code": "MR",
+ "groups": {
+  "identity": {
+   "entries": {
+    "name": {
+     "value": "Mars variant (mid-latitude, Arcadia Planitia; Q-022)",
+     "units": "-",
+     "register": "AQS-SITE-009"
     },
-    "gravity": {
-      "entries": {
-        "g_m_s2": {
-          "value": 3.71,
-          "units": "m/s2",
-          "ref": "NASA_MARS_FACT",
-          "note": "partial gravity: settling, flotation and packed columns work but more slowly"
-        }
-      }
+    "body": {
+     "value": "earth_surface",
+     "units": "-",
+     "register": "AQS-SITE-002"
     },
-    "atmosphere": {
-      "entries": {
-        "pressure_Pa": {
-          "value": 636.0,
-          "units": "Pa absolute",
-          "ref": "NASA_MARS_FACT",
-          "needs_verification": true,
-          "verification_test": "In-situ pressure measurement at the landing site"
-        },
-        "composition_mole_fraction": {
-          "value": {
-            "CO2": 0.951,
-            "N2": 0.0259,
-            "Ar": 0.0194,
-            "O2": 0.00161,
-            "CO": 0.00058
-          },
-          "units": "mole fraction",
-          "ref": "NASA_MARS_ATMOS"
-        },
-        "breathable": {
-          "value": false,
-          "units": "-",
-          "ref": "NASA_MARS_ATMOS",
-          "note": "CO2 atmosphere with trace O2; pressurised shells required"
-        },
-        "vent_sink": {
-          "value": false,
-          "units": "-",
-          "note": "nothing vents to an atmosphere that cannot take it; vents go to recovery",
-          "register": "AQS-PLAN-011 section 8.2"
-        },
-        "oxidant": {
-          "value": false,
-          "units": "-",
-          "ref": "NASA_MARS_ATMOS",
-          "note": "no usable oxygen; combustion requires plant oxygen"
-        },
-        "molar_mass_kg_kmol": {
-          "value": 43.34,
-          "units": "kg/kmol",
-          "ref": "NASA_MARS_ATMOS"
-        },
-        "shell_pressure_kPa": {
-          "value": 101.325,
-          "units": "kPa absolute (shell interior)",
-          "ref": "NASA_STD_3001",
-          "register": "A-M-401",
-          "note": "pressurised shells hold a sea-level-equivalent interior; process and relief physics see this space, not the external atmosphere"
-        },
-        "shell_composition_mole_fraction": {
-          "value": {
-            "N2": 0.7808,
-            "O2": 0.2095,
-            "Ar": 0.0093,
-            "CO2": 0.0004
-          },
-          "units": "mole fraction (shell interior)",
-          "ref": "NASA_STD_3001",
-          "register": "A-M-401",
-          "note": "sea-level-equivalent air inside the shells"
-        }
-      }
+    "latitude_deg": {
+     "value": 40.0,
+     "units": "deg N",
+     "ref": "NASA_MARS_ICE"
     },
-    "thermal": {
-      "entries": {
-        "cooling_dry_bulb_C": {
-          "value": -31.0,
-          "units": "C",
-          "ref": "NASA_MARS_FACT",
-          "note": "daily maximum converted from 242 K (A-M-395)",
-          "binds": "site_design_dry_bulb_C"
-        },
-        "heating_dry_bulb_C": {
-          "value": -89.0,
-          "units": "C",
-          "ref": "NASA_MARS_FACT",
-          "needs_verification": true,
-          "verification_test": "In-situ temperature record (A-M-395)"
-        },
-        "insulation_ambient_C": {
-          "value": -63.0,
-          "units": "C",
-          "ref": "NASA_MARS_FACT",
-          "note": "210 K mean surface temperature (A-M-395)"
-        }
-      }
+    "longitude_deg": {
+     "value": -150.0,
+     "units": "deg E",
+     "ref": "NASA_MARS_ICE"
     },
-    "solar": {
-      "entries": {
-        "pv_yield_kWh_kWp_d": {
-          "value": 2.5,
-          "units": "kWh/kWp/d before losses",
-          "ref": "NASA_MARS_FACT",
-          "needs_verification": true,
-          "verification_test": "Solar geometry with optical-depth and dust-settling losses",
-          "binds": "pv_yield_kWh_kWp_d",
-          "note": "Mars mean 586.2 W/m2 before dust-settling losses (NASA_MARS_FACT)"
-        },
-        "night_hours": {
-          "value": 12.33,
-          "units": "h/d served from storage",
-          "ref": "NASA_MARS_FACT",
-          "note": "Mars sol 24.66 h; night approximately half the sol (NASA_MARS_FACT)",
-          "binds": "night_hours"
-        }
-      }
+    "elevation_m": {
+     "value": 0.0,
+     "units": "m (mean radius datum)",
+     "ref": "NASA_MARS_FACT"
     },
-    "wind": {
-      "entries": {
-        "basic_wind_speed_m_s": {
-          "value": 20.0,
-          "units": "m/s basic wind speed",
-          "ref": "NASA_MARS_FACT",
-          "needs_verification": true,
-          "verification_test": "Metocean model at the landing site",
-          "binds": "wt_wind_ms"
-        }
-      }
+    "site_basis": {
+     "value": "AQS-SITE-009",
+     "units": "document number",
+     "register": "AQS-SITE-009"
     },
-    "snow": {
-      "not_applicable": "No snow; the atmosphere is too thin for precipitation"
+    "site_class": {
+     "value": "mid-latitude with shallow ground ice (Arcadia Planitia class)",
+     "units": "class",
+     "basis": "Q-022: profile input; equatorial (more sunlight, less accessible ice) is the alternative value.",
+     "owner": "OPEN_QUESTIONS.md Q-034/Q-021/Q-022/Q-023/Q-025/Q-026/Q-027/Q-030/Q-031/Q-033 closures (2026-10-30)"
     },
-    "seismic": {
-      "entries": {
-        "SDS_g": {
-          "value": 0.02,
-          "units": "g (marsquakes recorded by InSight are small)",
-          "ref": "NASA_MARS_FACT",
-          "needs_verification": true,
-          "verification_test": "Extended InSight data"
-        },
-        "SD1_g": {
-          "value": 0.01,
-          "units": "g",
-          "ref": "NASA_MARS_FACT",
-          "needs_verification": true,
-          "verification_test": "Extended InSight data"
-        },
-        "TL_s": {
-          "value": 8.0,
-          "units": "s long-period transition",
-          "ref": "NASA_MARS_FACT"
-        }
-      }
+    "surplus_outlets": {
+     "value": "in-situ store and production down-rate; no export boundary",
+     "units": "policy",
+     "basis": "Q-026: where export is impractical, the surplus stores in-situ or production down-rates; the locale profile states the outlet set.",
+     "owner": "OPEN_QUESTIONS.md Q-034/Q-021/Q-022/Q-023/Q-025/Q-026/Q-027/Q-030/Q-031/Q-033 closures (2026-10-30)"
     },
-    "ground": {
-      "entries": {
-        "allowable_bearing_kPa": {
-          "value": 100.0,
-          "units": "kPa presumptive basaltic regolith",
-          "ref": "NASA_MARS_ICE",
-          "needs_verification": true,
-          "verification_test": "Regolith bearing study"
-        },
-        "unit_weight_kN_m3": {
-          "value": 15.0,
-          "units": "kN/m3 basaltic regolith",
-          "ref": "NASA_MARS_ICE",
-          "needs_verification": true,
-          "verification_test": "Regolith density measurement"
-        },
-        "resistivity_ohm_m": {
-          "value": 10000.0,
-          "units": "ohm m dry regolith",
-          "register": "AQS-SITE-009",
-          "needs_verification": true,
-          "verification_test": "Regolith resistivity measurement"
-        },
-        "ghex_capacity_W_m": {
-          "value": 10.0,
-          "units": "W/m regolith heat exchange",
-          "register": "AQS-SITE-009",
-          "needs_verification": true,
-          "verification_test": "Regolith thermal conductivity study"
-        },
-        "frost_depth_m": {
-          "value": 0.0,
-          "units": "m (permafrost permanently frozen)",
-          "ref": "NASA_MARS_ICE"
-        }
-      }
+    "planetary_protection": {
+     "value": "sited outside COSPAR special regions; the parcel check is a site design step",
+     "units": "constraint",
+     "basis": "Q-027: ground ice may lie in a special region under the COSPAR policy.",
+     "owner": "OPEN_QUESTIONS.md Q-034/Q-021/Q-022/Q-023/Q-025/Q-026/Q-027/Q-030/Q-031/Q-033 closures (2026-10-30)"
     },
-    "radiation": {
-      "entries": {
-        "dose_rate_mSv_d": {
-          "value": 0.64,
-          "units": "mSv/d dose equivalent at Gale crater",
-          "ref": "NASA_MARS_RAD",
-          "note": "regolith cover and water shielding reduce the habitable-space dose"
-        }
-      }
-    },
-    "water_sources": {
-      "entries": {
-        "sources": {
-          "value": [
-            {
-              "name": "ground_ice",
-              "kind": "ice",
-              "unit": "WTR",
-              "temperature_C": -60.0,
-              "treatment": "extraction and melting (a new unit); perchlorate removal (0.4-0.6 percent by mass, NASA_MARS_PERCHLORATE)",
-              "ref": "NASA_MARS_ICE"
-            }
-          ],
-          "units": "-",
-          "register": "AQS-PLAN-011 section 8.2"
-        }
-      }
-    },
-    "local_feedstocks": {
-      "entries": {
-        "feed_cases": {
-          "value": [
-            {
-              "name": "ground ice",
-              "classes": {
-                "water": 1.0
-              },
-              "register": "AQS-ASSAY-001 class water; NASA_MARS_ICE; A-M-406 (in-situ fraction to be assayed)"
-            },
-            {
-              "name": "regolith",
-              "classes": {
-                "silicate_oxide": 0.97,
-                "other_inorganic": 0.03
-              },
-              "register": "AQS-ASSAY-001 class silicate_oxide; AQS-SITE-009 section 5 (in-situ assay to be taken)"
-            },
-            {
-              "name": "perchlorate salts",
-              "classes": {
-                "other_inorganic": 1.0
-              },
-              "register": "AQS-ASSAY-001 class other_inorganic; NASA_MARS_PERCHLORATE; A-M-407"
-            }
-          ],
-          "units": "-",
-          "register": "AQS-PLAN-011 section 8.2 and AQS-SITE-009 section 5; each case maps to an AQS-ASSAY-001 class and is verified by the in-situ assay"
-        }
-      }
-    },
-    "logistics": {
-      "entries": {
-        "arrival_mode": {
-          "value": "landing pad (the dock is replaced); resupply follows the synodic transfer windows",
-          "units": "-",
-          "ref": "NASA_MARS_FACT"
-        },
-        "resupply_interval_d": {
-          "value": 779.94,
-          "units": "d (synodic period)",
-          "ref": "NASA_MARS_FACT"
-        }
-      }
-    },
-    "electrical": {
-      "entries": {
-        "ac_frequency_Hz": {
-          "value": 60,
-          "units": "Hz line frequency (IEC 60034-30-1 60 Hz IE3 basis, AQS-INV-005)",
-          "register": "A-M-218 (X-INV-02B)",
-          "binds": "MFG.tools-metal-forming-train.mfa_line_hz"
-        },
-        "earthing_method": {
-          "value": "floating electrical system with insulation monitoring (dry regolith gives no earth electrode)",
-          "units": "-",
-          "register": "AQS-PLAN-011 section 8.2"
-        }
-      }
-    },
-    "jurisdiction": {
-      "entries": {
-        "code_families": {
-          "value": [
-            "space"
-          ],
-          "units": "-",
-          "register": "AQS-PLAN-011 section 8.2 (Outer Space Treaty, COSPAR policy, NASA-STD-3001)"
-        }
-      }
-    },
-    "motion": {
-      "not_applicable": "land-based on the Martian surface"
-    },
-    "power_portfolio": {
-      "entries": {
-        "sources": {
-          "value": [
-            {
-              "id": "pv",
-              "kind": "pv",
-              "unit": "PV_ARRAY",
-              "role": "primary",
-              "share": 1.0,
-              "stretch_output_frac": 0.3,
-              "resource": "solar.pv_yield_kWh_kWp_d",
-              "register": "AQS-DUTY-012; Q-024; dust settling 0.28 percent loss per sol"
-            },
-            {
-              "id": "fuel_cell",
-              "kind": "fuel_cell",
-              "unit": "FUEL_CELL",
-              "role": "backup",
-              "register": "AQS-FC-001"
-            }
-          ],
-          "units": "-",
-          "register": "AQS-PLAN-011 section 8.2"
-        },
-        "storage": {
-          "value": [
-            {
-              "kind": "electrochemical",
-              "unit": "ZNBR2",
-              "energy_param": "kWh"
-            }
-          ],
-          "units": "-",
-          "register": "AQS-PLAN-011 section 5.5"
-        },
-        "worst_stretch": {
-          "value": {
-            "kind": "night_and_dust",
-            "note": "the worst stretch is the sol night plus a dust storm",
-            "hours_entry": "solar.night_hours"
-          },
-          "units": "-",
-          "register": "AQS-PLAN-011 section 8.2"
-        },
-        "oversize_factor": {
-          "value": 2.0,
-          "units": "PV nameplate / PV needed to close the daily balance",
-          "needs_verification": true,
-          "verification_test": "Solar geometry with dust-storm and soiling losses",
-          "binds": "pv_oversize_factor",
-          "register": "A-M-109"
-        }
-      }
-    },
-    "scaling": {
-      "entries": {
-        "actions": {
-          "value": [
-            {
-              "action": "eliminate",
-              "target": "HYDRO_SET",
-              "replacement": "ZNBR2",
-              "register": "AQS-SITE-009 section 3: no open water body at surface pressure; the zinc-bromine battery carries storage (X-RED basis on ZNBR2)"
-            },
-            {
-              "action": "eliminate",
-              "target": "BACKUP_GEN",
-              "replacement": "FUEL_CELL",
-              "register": "AQS-SITE-009 section 3: no atmospheric oxidant; the fuel cell is the diverse second power source (AQS-FC-001)"
-            },
-            {
-              "action": "eliminate",
-              "target": "CATCH_TANK",
-              "replacement": "TANK_BLD",
-              "register": "AQS-SITE-009 section 3: pressure at the triple point of water; the pumped fire supply and treated-water buffer sit in closed bladder tanks (A-M-400)"
-            },
-            {
-              "action": "eliminate",
-              "target": "ROOF_TANK",
-              "replacement": "TANK_BLD",
-              "register": "AQS-SITE-009 section 3: no open water and no gravity reserve outside the shell; the reserve re-pumps from bladder tanks (A-M-400)"
-            },
-            {
-              "action": "eliminate",
-              "target": "FAB_UPW_TANK",
-              "import_path": "closed pressurised UPW tank inside the shell (process unit, imported hardware)",
-              "register": "AQS-SITE-009 section 3: no ambient-pressure liquid water; UPW storage is closed and pressurised"
-            },
-            {
-              "action": "eliminate",
-              "target": "MEOH_TANK",
-              "import_path": "closed pressurised methanol tank inside the shell (process unit, imported hardware)",
-              "register": "AQS-SITE-009 section 3: no ambient-pressure liquid water; methanol storage is closed and pressurised"
-            },
-            {
-              "action": "eliminate",
-              "target": "AFTERBURNER",
-              "replacement": "CAT_OX",
-              "register": "AQS-SITE-009 section 3: no atmospheric oxidant; waste CO and organics oxidise on a plant-oxygen bleed in the catalytic bed (A-M-399)"
-            },
-            {
-              "action": "eliminate",
-              "target": "AFTERBURNER_FLUE",
-              "replacement": "REC_HDR",
-              "register": "AQS-SITE-009 section 3: nothing discharges to the atmosphere; the oxidiser exit returns through the recovery header (A-M-398)"
-            },
-            {
-              "action": "eliminate",
-              "target": "COMB_HEAT",
-              "replacement": "E_HEAT",
-              "register": "AQS-SITE-009 section 3: no atmospheric oxidant; the N+1 melt trim heat is electric resistance at the A-M-283 30 kW connected duty"
-            },
-            {
-              "action": "eliminate",
-              "target": "DRY_COOLER",
-              "replacement": "RAD_PANEL",
-              "register": "AQS-SITE-009 section 3: thin atmosphere gives no convective sink; the low-grade loop rejects radiatively to the sky (A-M-396, A-M-397)"
-            },
-            {
-              "action": "eliminate",
-              "target": "RELIEF_CRYO",
-              "replacement": "REC_HDR",
-              "register": "AQS-SITE-009 section 3: nothing vents to the atmosphere; relief discharges return through the recovery header (A-M-398)"
-            },
-            {
-              "action": "eliminate",
-              "target": "RELIEF_H2",
-              "replacement": "REC_HDR",
-              "register": "AQS-SITE-009 section 3: nothing vents to the atmosphere; relief discharges return through the recovery header (A-M-398)"
-            },
-            {
-              "action": "eliminate",
-              "target": "ACID_POLISH_SCRUB",
-              "replacement": "REC_HDR",
-              "register": "AQS-SITE-009 section 3: no atmospheric discharge, so no vent stream to scrub; the offgas returns through the recovery header for reprocessing (A-M-398)"
-            },
-            {
-              "action": "eliminate",
-              "target": "ALK_SCRUBBER",
-              "replacement": "REC_HDR",
-              "register": "AQS-SITE-009 section 3: no atmospheric discharge, so no vent stream to scrub; the offgas returns through the recovery header (A-M-398)"
-            },
-            {
-              "action": "eliminate",
-              "target": "MET_SCRUB",
-              "replacement": "REC_HDR",
-              "register": "AQS-SITE-009 section 3: no atmospheric discharge, so no vent stream to scrub; the offgas returns through the recovery header (A-M-398)"
-            },
-            {
-              "action": "eliminate",
-              "target": "NOX_SCRUB",
-              "replacement": "REC_HDR",
-              "register": "AQS-SITE-009 section 3: no atmospheric discharge, so no vent stream to scrub; the offgas returns through the recovery header (A-M-398)"
-            },
-            {
-              "action": "eliminate",
-              "target": "EVAP_ACID_VS",
-              "replacement": "REC_HDR",
-              "register": "AQS-SITE-009 section 3: no atmospheric discharge, so no vent stream to scrub; the offgas returns through the recovery header (A-M-398)"
-            }
-          ],
-          "units": "-",
-          "register": "AQS-PLAN-011 section 8.2 and AQS-SITE-009 section 3 (X-LOC-09 design pass: every unit the site capabilities cannot carry is eliminated with a designed different-technology replacement; the ground loop stays - regolith is ground contact)"
-        }
-      }
-    },
-    "capabilities": {
-      "entries": {
-        "buoyant_separation": {
-          "value": true,
-          "units": "-",
-          "register": "AQS-SITE-009; gravity 3.71 m/s2"
-        },
-        "free_surface": {
-          "value": true,
-          "units": "-",
-          "register": "AQS-SITE-009; gravity above zero"
-        },
-        "air_heat_sink": {
-          "value": false,
-          "units": "-",
-          "register": "AQS-SITE-009; thin atmosphere gives weak convective cooling"
-        },
-        "air_oxidant": {
-          "value": false,
-          "units": "-",
-          "ref": "NASA_MARS_ATMOS",
-          "note": "no usable oxygen in the atmosphere"
-        },
-        "vent_sink": {
-          "value": false,
-          "units": "-",
-          "note": "vents go to recovery",
-          "register": "AQS-PLAN-011 section 8.2"
-        },
-        "ground_contact": {
-          "value": true,
-          "units": "-",
-          "register": "AQS-SITE-009; regolith heat exchange"
-        },
-        "liquid_water_at_ambient": {
-          "value": false,
-          "units": "-",
-          "ref": "NASA_MARS_FACT",
-          "note": "mean surface pressure is close to the triple point of water; open liquid water cannot be kept"
-        }
-      }
-    },
-    "heat_rejection": {
-      "entries": {
-        "levels": {
-          "value": [
-            {
-              "level": "low-grade water loop",
-              "unit": "RAD_PANEL",
-              "mode": "radiative",
-              "duty_param": "rated_kW",
-              "radiator_K": 328.0,
-              "register": "A-M-396 (sky sink 180 K), A-M-397 (emissivity 0.90); loop mean 328 K carried from the DRY_COOLER design (AQS-THM-002)"
-            },
-            {
-              "level": "ground loop",
-              "unit": "GEO_GHEX",
-              "mode": "ground",
-              "duty_param": "Q_GHEX_avail_kW_th",
-              "register": "AQS-SITE-009 section 3: regolith heat exchange (ground.ghex_capacity_W_m)"
-            }
-          ],
-          "units": "-",
-          "register": "AQS-PLAN-011 section 5.5 (X-LOC-09: radiative and regolith rejection)"
-        },
-        "radiator_emissivity": {
-          "value": 0.9,
-          "units": "-",
-          "register": "A-M-397",
-          "needs_verification": true,
-          "verification_test": "Coating coupon exposure test at the landing site"
-        },
-        "radiative_sink_K": {
-          "value": 180.0,
-          "units": "K",
-          "register": "A-M-396",
-          "needs_verification": true,
-          "verification_test": "In-situ radiometric measurement of the sky sink at the landing site"
-        }
-      }
+    "crew": {
+     "value": 4,
+     "units": "persons",
+     "basis": "Q-029: crew size is a profile entry derived from the locale habitable volume and food production; 4 is the issued HAB design occupancy. A locale profile may set its own.",
+     "owner": "OPEN_QUESTIONS.md Q-029 closure (2026-10-30)"
     }
+   }
+  },
+  "gravity": {
+   "entries": {
+    "g_m_s2": {
+     "value": 3.71,
+     "units": "m/s2",
+     "ref": "NASA_MARS_FACT",
+     "note": "partial gravity: settling, flotation and packed columns work but more slowly"
+    }
+   }
+  },
+  "atmosphere": {
+   "entries": {
+    "pressure_Pa": {
+     "value": 636.0,
+     "units": "Pa absolute",
+     "ref": "NASA_MARS_FACT",
+     "needs_verification": true,
+     "verification_test": "In-situ pressure measurement at the landing site"
+    },
+    "composition_mole_fraction": {
+     "value": {
+      "CO2": 0.951,
+      "N2": 0.0259,
+      "Ar": 0.0194,
+      "O2": 0.00161,
+      "CO": 0.00058
+     },
+     "units": "mole fraction",
+     "ref": "NASA_MARS_ATMOS"
+    },
+    "breathable": {
+     "value": false,
+     "units": "-",
+     "ref": "NASA_MARS_ATMOS",
+     "note": "CO2 atmosphere with trace O2; pressurised shells required"
+    },
+    "vent_sink": {
+     "value": false,
+     "units": "-",
+     "note": "nothing vents to an atmosphere that cannot take it; vents go to recovery",
+     "register": "AQS-PLAN-011 section 8.2"
+    },
+    "oxidant": {
+     "value": false,
+     "units": "-",
+     "ref": "NASA_MARS_ATMOS",
+     "note": "no usable oxygen; combustion requires plant oxygen"
+    },
+    "molar_mass_kg_kmol": {
+     "value": 43.34,
+     "units": "kg/kmol",
+     "ref": "NASA_MARS_ATMOS"
+    },
+    "shell_pressure_kPa": {
+     "value": 101.325,
+     "units": "kPa absolute (shell interior)",
+     "ref": "NASA_STD_3001",
+     "register": "A-M-401",
+     "note": "pressurised shells hold a sea-level-equivalent interior; process and relief physics see this space, not the external atmosphere"
+    },
+    "shell_composition_mole_fraction": {
+     "value": {
+      "N2": 0.7808,
+      "O2": 0.2095,
+      "Ar": 0.0093,
+      "CO2": 0.0004
+     },
+     "units": "mole fraction (shell interior)",
+     "ref": "NASA_STD_3001",
+     "register": "A-M-401",
+     "note": "sea-level-equivalent air inside the shells"
+    }
+   }
+  },
+  "thermal": {
+   "entries": {
+    "cooling_dry_bulb_C": {
+     "value": -31.0,
+     "units": "C",
+     "ref": "NASA_MARS_FACT",
+     "note": "daily maximum converted from 242 K (A-M-395)",
+     "binds": "site_design_dry_bulb_C"
+    },
+    "heating_dry_bulb_C": {
+     "value": -89.0,
+     "units": "C",
+     "ref": "NASA_MARS_FACT",
+     "needs_verification": true,
+     "verification_test": "In-situ temperature record (A-M-395)"
+    },
+    "insulation_ambient_C": {
+     "value": -63.0,
+     "units": "C",
+     "ref": "NASA_MARS_FACT",
+     "note": "210 K mean surface temperature (A-M-395)"
+    }
+   }
+  },
+  "solar": {
+   "entries": {
+    "pv_yield_kWh_kWp_d": {
+     "value": 2.5,
+     "units": "kWh/kWp/d before losses",
+     "ref": "NASA_MARS_FACT",
+     "needs_verification": true,
+     "verification_test": "Solar geometry with optical-depth and dust-settling losses",
+     "binds": "pv_yield_kWh_kWp_d",
+     "note": "Mars mean 586.2 W/m2 before dust-settling losses (NASA_MARS_FACT)"
+    },
+    "night_hours": {
+     "value": 12.33,
+     "units": "h/d served from storage",
+     "ref": "NASA_MARS_FACT",
+     "note": "Mars sol 24.66 h; night approximately half the sol (NASA_MARS_FACT)",
+     "binds": "night_hours"
+    }
+   }
+  },
+  "wind": {
+   "entries": {
+    "basic_wind_speed_m_s": {
+     "value": 20.0,
+     "units": "m/s basic wind speed",
+     "ref": "NASA_MARS_FACT",
+     "needs_verification": true,
+     "verification_test": "Metocean model at the landing site",
+     "binds": "wt_wind_ms"
+    }
+   }
+  },
+  "snow": {
+   "not_applicable": "No snow; the atmosphere is too thin for precipitation"
+  },
+  "seismic": {
+   "entries": {
+    "SDS_g": {
+     "value": 0.02,
+     "units": "g (marsquakes recorded by InSight are small)",
+     "ref": "NASA_MARS_FACT",
+     "needs_verification": true,
+     "verification_test": "Extended InSight data"
+    },
+    "SD1_g": {
+     "value": 0.01,
+     "units": "g",
+     "ref": "NASA_MARS_FACT",
+     "needs_verification": true,
+     "verification_test": "Extended InSight data"
+    },
+    "TL_s": {
+     "value": 8.0,
+     "units": "s long-period transition",
+     "ref": "NASA_MARS_FACT"
+    }
+   }
+  },
+  "ground": {
+   "entries": {
+    "allowable_bearing_kPa": {
+     "value": 100.0,
+     "units": "kPa presumptive basaltic regolith",
+     "ref": "NASA_MARS_ICE",
+     "needs_verification": true,
+     "verification_test": "Regolith bearing study"
+    },
+    "unit_weight_kN_m3": {
+     "value": 15.0,
+     "units": "kN/m3 basaltic regolith",
+     "ref": "NASA_MARS_ICE",
+     "needs_verification": true,
+     "verification_test": "Regolith density measurement"
+    },
+    "resistivity_ohm_m": {
+     "value": 10000.0,
+     "units": "ohm m dry regolith",
+     "register": "AQS-SITE-009",
+     "needs_verification": true,
+     "verification_test": "Regolith resistivity measurement"
+    },
+    "ghex_capacity_W_m": {
+     "value": 10.0,
+     "units": "W/m regolith heat exchange",
+     "register": "AQS-SITE-009",
+     "needs_verification": true,
+     "verification_test": "Regolith thermal conductivity study"
+    },
+    "frost_depth_m": {
+     "value": 0.0,
+     "units": "m (permafrost permanently frozen)",
+     "ref": "NASA_MARS_ICE"
+    }
+   }
+  },
+  "radiation": {
+   "entries": {
+    "dose_rate_mSv_d": {
+     "value": 0.64,
+     "units": "mSv/d dose equivalent at Gale crater",
+     "ref": "NASA_MARS_RAD",
+     "note": "regolith cover and water shielding reduce the habitable-space dose"
+    }
+   }
+  },
+  "water_sources": {
+   "entries": {
+    "sources": {
+     "value": [
+      {
+       "name": "ground_ice",
+       "kind": "ice",
+       "unit": "WTR",
+       "temperature_C": -60.0,
+       "treatment": "extraction and melting (a new unit); perchlorate removal (0.4-0.6 percent by mass, NASA_MARS_PERCHLORATE)",
+       "ref": "NASA_MARS_ICE"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 8.2"
+    }
+   }
+  },
+  "local_feedstocks": {
+   "entries": {
+    "feed_cases": {
+     "value": [
+      {
+       "name": "ground ice",
+       "classes": {
+        "water": 1.0
+       },
+       "register": "AQS-ASSAY-001 class water; NASA_MARS_ICE; A-M-406 (in-situ fraction to be assayed)"
+      },
+      {
+       "name": "regolith",
+       "classes": {
+        "silicate_oxide": 0.97,
+        "other_inorganic": 0.03
+       },
+       "register": "AQS-ASSAY-001 class silicate_oxide; AQS-SITE-009 section 5 (in-situ assay to be taken)"
+      },
+      {
+       "name": "perchlorate salts",
+       "classes": {
+        "other_inorganic": 1.0
+       },
+       "register": "AQS-ASSAY-001 class other_inorganic; NASA_MARS_PERCHLORATE; A-M-407"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 8.2 and AQS-SITE-009 section 5; each case maps to an AQS-ASSAY-001 class and is verified by the in-situ assay"
+    }
+   }
+  },
+  "logistics": {
+   "entries": {
+    "arrival_mode": {
+     "value": "landing pad (the dock is replaced); resupply follows the synodic transfer windows",
+     "units": "-",
+     "ref": "NASA_MARS_FACT"
+    },
+    "resupply_interval_d": {
+     "value": 779.94,
+     "units": "d (synodic period)",
+     "ref": "NASA_MARS_FACT"
+    }
+   }
+  },
+  "electrical": {
+   "entries": {
+    "ac_frequency_Hz": {
+     "value": 60,
+     "units": "Hz line frequency (IEC 60034-30-1 60 Hz IE3 basis, AQS-INV-005)",
+     "register": "A-M-218 (X-INV-02B)",
+     "binds": "MFG.tools-metal-forming-train.mfa_line_hz"
+    },
+    "earthing_method": {
+     "value": "floating electrical system with insulation monitoring (dry regolith gives no earth electrode)",
+     "units": "-",
+     "register": "AQS-PLAN-011 section 8.2"
+    }
+   }
+  },
+  "jurisdiction": {
+   "entries": {
+    "code_families": {
+     "value": [
+      "space"
+     ],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 8.2 (Outer Space Treaty, COSPAR policy, NASA-STD-3001)"
+    }
+   }
+  },
+  "motion": {
+   "not_applicable": "land-based on the Martian surface"
+  },
+  "power_portfolio": {
+   "entries": {
+    "sources": {
+     "value": [
+      {
+       "id": "pv",
+       "kind": "pv",
+       "unit": "PV_ARRAY",
+       "role": "primary",
+       "share": 1.0,
+       "stretch_output_frac": 0.3,
+       "resource": "solar.pv_yield_kWh_kWp_d",
+       "register": "AQS-DUTY-012; Q-024; dust settling 0.28 percent loss per sol"
+      },
+      {
+       "id": "fuel_cell",
+       "kind": "fuel_cell",
+       "unit": "FUEL_CELL",
+       "role": "backup",
+       "register": "AQS-FC-001"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 8.2"
+    },
+    "storage": {
+     "value": [
+      {
+       "kind": "electrochemical",
+       "unit": "ZNBR2",
+       "energy_param": "kWh"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 5.5"
+    },
+    "worst_stretch": {
+     "value": {
+      "kind": "night_and_dust",
+      "note": "the worst stretch is the sol night plus a dust storm",
+      "hours_entry": "solar.night_hours"
+     },
+     "units": "-",
+     "register": "AQS-PLAN-011 section 8.2"
+    },
+    "oversize_factor": {
+     "value": 2.0,
+     "units": "PV nameplate / PV needed to close the daily balance",
+     "needs_verification": true,
+     "verification_test": "Solar geometry with dust-storm and soiling losses",
+     "binds": "pv_oversize_factor",
+     "register": "A-M-109"
+    }
+   }
+  },
+  "scaling": {
+   "entries": {
+    "actions": {
+     "value": [
+      {
+       "action": "eliminate",
+       "target": "HYDRO_SET",
+       "replacement": "ZNBR2",
+       "register": "AQS-SITE-009 section 3: no open water body at surface pressure; the zinc-bromine battery carries storage (X-RED basis on ZNBR2)"
+      },
+      {
+       "action": "eliminate",
+       "target": "BACKUP_GEN",
+       "replacement": "FUEL_CELL",
+       "register": "AQS-SITE-009 section 3: no atmospheric oxidant; the fuel cell is the diverse second power source (AQS-FC-001)"
+      },
+      {
+       "action": "eliminate",
+       "target": "CATCH_TANK",
+       "replacement": "TANK_BLD",
+       "register": "AQS-SITE-009 section 3: pressure at the triple point of water; the pumped fire supply and treated-water buffer sit in closed bladder tanks (A-M-400)"
+      },
+      {
+       "action": "eliminate",
+       "target": "ROOF_TANK",
+       "replacement": "TANK_BLD",
+       "register": "AQS-SITE-009 section 3: no open water and no gravity reserve outside the shell; the reserve re-pumps from bladder tanks (A-M-400)"
+      },
+      {
+       "action": "eliminate",
+       "target": "FAB_UPW_TANK",
+       "import_path": "closed pressurised UPW tank inside the shell (process unit, imported hardware)",
+       "register": "AQS-SITE-009 section 3: no ambient-pressure liquid water; UPW storage is closed and pressurised"
+      },
+      {
+       "action": "eliminate",
+       "target": "MEOH_TANK",
+       "import_path": "closed pressurised methanol tank inside the shell (process unit, imported hardware)",
+       "register": "AQS-SITE-009 section 3: no ambient-pressure liquid water; methanol storage is closed and pressurised"
+      },
+      {
+       "action": "eliminate",
+       "target": "AFTERBURNER",
+       "replacement": "CAT_OX",
+       "register": "AQS-SITE-009 section 3: no atmospheric oxidant; waste CO and organics oxidise on a plant-oxygen bleed in the catalytic bed (A-M-399)"
+      },
+      {
+       "action": "eliminate",
+       "target": "AFTERBURNER_FLUE",
+       "replacement": "REC_HDR",
+       "register": "AQS-SITE-009 section 3: nothing discharges to the atmosphere; the oxidiser exit returns through the recovery header (A-M-398)"
+      },
+      {
+       "action": "eliminate",
+       "target": "COMB_HEAT",
+       "replacement": "E_HEAT",
+       "register": "AQS-SITE-009 section 3: no atmospheric oxidant; the N+1 melt trim heat is electric resistance at the A-M-283 30 kW connected duty"
+      },
+      {
+       "action": "eliminate",
+       "target": "DRY_COOLER",
+       "replacement": "RAD_PANEL",
+       "register": "AQS-SITE-009 section 3: thin atmosphere gives no convective sink; the low-grade loop rejects radiatively to the sky (A-M-396, A-M-397)"
+      },
+      {
+       "action": "eliminate",
+       "target": "RELIEF_CRYO",
+       "replacement": "REC_HDR",
+       "register": "AQS-SITE-009 section 3: nothing vents to the atmosphere; relief discharges return through the recovery header (A-M-398)"
+      },
+      {
+       "action": "eliminate",
+       "target": "RELIEF_H2",
+       "replacement": "REC_HDR",
+       "register": "AQS-SITE-009 section 3: nothing vents to the atmosphere; relief discharges return through the recovery header (A-M-398)"
+      },
+      {
+       "action": "eliminate",
+       "target": "ACID_POLISH_SCRUB",
+       "replacement": "REC_HDR",
+       "register": "AQS-SITE-009 section 3: no atmospheric discharge, so no vent stream to scrub; the offgas returns through the recovery header for reprocessing (A-M-398)"
+      },
+      {
+       "action": "eliminate",
+       "target": "ALK_SCRUBBER",
+       "replacement": "REC_HDR",
+       "register": "AQS-SITE-009 section 3: no atmospheric discharge, so no vent stream to scrub; the offgas returns through the recovery header (A-M-398)"
+      },
+      {
+       "action": "eliminate",
+       "target": "MET_SCRUB",
+       "replacement": "REC_HDR",
+       "register": "AQS-SITE-009 section 3: no atmospheric discharge, so no vent stream to scrub; the offgas returns through the recovery header (A-M-398)"
+      },
+      {
+       "action": "eliminate",
+       "target": "NOX_SCRUB",
+       "replacement": "REC_HDR",
+       "register": "AQS-SITE-009 section 3: no atmospheric discharge, so no vent stream to scrub; the offgas returns through the recovery header (A-M-398)"
+      },
+      {
+       "action": "eliminate",
+       "target": "EVAP_ACID_VS",
+       "replacement": "REC_HDR",
+       "register": "AQS-SITE-009 section 3: no atmospheric discharge, so no vent stream to scrub; the offgas returns through the recovery header (A-M-398)"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 8.2 and AQS-SITE-009 section 3 (X-LOC-09 design pass: every unit the site capabilities cannot carry is eliminated with a designed different-technology replacement; the ground loop stays - regolith is ground contact)"
+    }
+   }
+  },
+  "capabilities": {
+   "entries": {
+    "buoyant_separation": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-009; gravity 3.71 m/s2"
+    },
+    "free_surface": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-009; gravity above zero"
+    },
+    "air_heat_sink": {
+     "value": false,
+     "units": "-",
+     "register": "AQS-SITE-009; thin atmosphere gives weak convective cooling"
+    },
+    "air_oxidant": {
+     "value": false,
+     "units": "-",
+     "ref": "NASA_MARS_ATMOS",
+     "note": "no usable oxygen in the atmosphere"
+    },
+    "vent_sink": {
+     "value": false,
+     "units": "-",
+     "note": "vents go to recovery",
+     "register": "AQS-PLAN-011 section 8.2"
+    },
+    "ground_contact": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-009; regolith heat exchange"
+    },
+    "liquid_water_at_ambient": {
+     "value": false,
+     "units": "-",
+     "ref": "NASA_MARS_FACT",
+     "note": "mean surface pressure is close to the triple point of water; open liquid water cannot be kept"
+    }
+   }
+  },
+  "heat_rejection": {
+   "entries": {
+    "levels": {
+     "value": [
+      {
+       "level": "low-grade water loop",
+       "unit": "RAD_PANEL",
+       "mode": "radiative",
+       "duty_param": "rated_kW",
+       "radiator_K": 328.0,
+       "register": "A-M-396 (sky sink 180 K), A-M-397 (emissivity 0.90); loop mean 328 K carried from the DRY_COOLER design (AQS-THM-002)"
+      },
+      {
+       "level": "ground loop",
+       "unit": "GEO_GHEX",
+       "mode": "ground",
+       "duty_param": "Q_GHEX_avail_kW_th",
+       "register": "AQS-SITE-009 section 3: regolith heat exchange (ground.ghex_capacity_W_m)"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 5.5 (X-LOC-09: radiative and regolith rejection)"
+    },
+    "radiator_emissivity": {
+     "value": 0.9,
+     "units": "-",
+     "register": "A-M-397",
+     "needs_verification": true,
+     "verification_test": "Coating coupon exposure test at the landing site"
+    },
+    "radiative_sink_K": {
+     "value": 180.0,
+     "units": "K",
+     "register": "A-M-396",
+     "needs_verification": true,
+     "verification_test": "In-situ radiometric measurement of the sky sink at the landing site"
+    }
+   }
   }
+ }
 }

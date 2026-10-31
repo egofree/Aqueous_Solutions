@@ -170,6 +170,7 @@ Table 3.1. Document numbers in use
 | AQS-ESS-001 | `docs-authority/ESS_DUTY_MATRIX.md` | B | 2026-10-01 | ESS duty matrix — ZnBr₂ / MeOH / pumped hydro (study) | current |
 | AQS-ESS-002 | `docs-authority/FLOW_BATTERY.md` | — | — | ZnBr2 flow battery | current |
 | AQS-EW-MOD-001 | `docs-authority/EW_MODULE.md` | D | 2026-10-15 | Electrowinning module | current |
+| AQS-FARM-001 | `docs-authority/FARM_DESIGN.md` | A | 2026-10-26 | Farm design: aquaponics, dual root-zone growbeds, poultry, larvae composting | current |
 | AQS-FC-001 | `docs-authority/FUEL_CELL.md` | B | 2026-10-01 | PEM fuel cell — plant H₂ / O₂ on Sol-Ark DC bus | current |
 | AQS-FLOW-GRAPH-001 | `flow_graph/README.md` | — | 2026-10-01 | Plant flow graph — sole typed authority | current |
 | AQS-FOAM-001 | `models/openscad/foam_ew/CUT_LIST.md` | A | 2026-09-27 | Foam EW cascade — cut list | current |
@@ -179,6 +180,7 @@ Table 3.1. Document numbers in use
 | AQS-GLO-001 | `docs-authority/GLOSSARY.md` | B | 2026-10-25 | Glossary | current |
 | AQS-GOV-006 | `docs-authority/DERIVED_REVISIONS.md` | B | — | Derived file revisions | current |
 | AQS-HAB-001 | `docs-authority/HAB_FIXTURES.md` | B | 2026-10-12 | Habitation fixtures | current |
+| AQS-HAB-002 | `docs-authority/HAB_DESIGN.md` | A | 2026-10-26 | Hab interior design: zoning | current |
 | AQS-HEAT-LADDER-001 | `docs-authority/HEAT_LADDER.md` | A | 2026-10-25 | Dual heat ladder | current |
 | AQS-HEAT-STUDY-002 | `notes/heat_sink_study_2026-10-18.md` | A | 2026-10-18 | HL-Q4-REJ heat-sink study — resolving D-GEO_ORC | current |
 | AQS-HSE-001 | `docs-authority/HAZARD_SEPARATION.md` | H | 2026-10-24 | Hazard separation and containment | current |
@@ -196,9 +198,8 @@ Table 3.1. Document numbers in use
 | AQS-INV-008 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | B | 2026-10-25 | Motor first articles: drawings, traveller and type-test rig | current |
 | AQS-INV-009 | `docs-authority/BLOCK_FAMILY_PLANS.md` | A | 2026-10-21 | Building-block family production plans | current |
 | AQS-IO-FOUNDRY | `notes/FOUNDRY_IO.md` | A | 2026-10-16 | FOUNDRY sector — inputs and outputs | current |
-| AQS-ISO-000 | `docs-authority/ISO_DRAWING_INDEX.md` | A | 2026-09-27 | Isometric fabrication set | current |
-| AQS-ISO-001 | `docs-authority/ISO_ROUTES.md` | A | 2026-10-15 | Isometric route data | current |
-| AQS-ISO-002 | `docs-authority/ISO_SHEETS.md` | A | 2026-10-15 | Isometric sheets | current |
+| AQS-ISO-001 | `docs-authority/ISO_ROUTES.md` | B | 2026-10-28 | Placement routes | current |
+| AQS-ISO-002 | `docs-authority/ISO_SHEETS.md` | — | — | Isometric sheet data (no SVG: the isometric presentation retired 2026-10-27) | current |
 | AQS-LIFE-001 | `docs-authority/LIFE_FITOUT_PLAN.md` | B | 2026-10-01 | Habitation and farm fit-out plan | current |
 | AQS-LIT-ASSAY | `notes/LIT_ASSAY.md` | A | 2026-10-16 | Literature compositions for missing assays | current |
 | AQS-LITH-001 | `docs-authority/ALIGNER.md` | C | 2026-10-11 | Contact aligner | current |
@@ -250,6 +251,8 @@ Table 3.1. Document numbers in use
 | AQS-PLAN-011 | `docs-authority/LOCALIZATION_PLAN.md` | J | 2026-10-25 | Localization plan: site profiles and locale variants | current |
 | AQS-PRO-001 | `docs-authority/PLANT_BOM.md` | A | 2026-10-16 | Plant BOM roll-up | current |
 | AQS-PRO-002 | `docs-authority/BOUGHT_SPECS.md` | B | 2026-10-25 | Bought-item specification sheets | current |
+| AQS-PRO-003 | `docs-authority/COST_ESTIMATE.md` | A | 2026-10-29 | Cost estimate method | current |
+| AQS-PRO-003-BOM | `docs-authority/COST_ESTIMATE_BOM.md` | A | 2026-10-31 | Priced bill of materials (AQS-PRO-003) | current |
 | AQS-PV-001 | `docs-authority/PV_CELL_MOD.md` | C | 2026-10-11 | Photovoltaic cell | current |
 | AQS-PWR-001 | `docs-authority/POWER.md` | A | 2026-10-17 | Power | current |
 | AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | B | 2026-09-28 | Geothermal loop and backup generator | current |
@@ -286,7 +289,7 @@ Table 3.1. Document numbers in use
 | AQS-SIDE-003 | `docs-authority/SIDE_CRYO.md` | C | 2026-10-12 | Cold box module | current |
 | AQS-SIGN-001 | `docs-authority/SIGN_SCHEDULE.md` | A | 2026-09-26 | Sign and label schedule | current |
 | AQS-SITE-001 | `docs-authority/SITE_ACCESS.md` | E | 2026-10-24 | Site access: orientation, north dock, service entrance and egress | current |
-| AQS-SITE-002 | `docs-authority/SITE_BASIS.md` | B | 2026-10-24 | Site basis | current |
+| AQS-SITE-002 | `docs-authority/SITE_BASIS.md` | C | 2026-10-29 | Site basis | current |
 | AQS-SITE-003 | `docs-authority/SITE_ACCESS_CHECK.md` | A | 2026-10-16 | Site access and dock check | current |
 | AQS-SITE-004 | `docs-authority/SITE_SCALING.md` | A | 2026-10-25 | Site scaling | current |
 | AQS-SITE-005 | `docs-authority/SITE_POWER.md` | A | 2026-10-25 | Site power portfolio and redundancy | current |
@@ -298,6 +301,7 @@ Table 3.1. Document numbers in use
 | AQS-SITE-011 | `docs-authority/SITE_COMPARISON.md` | A | 2026-10-26 | Site comparison | current |
 | AQS-SITE-012 | `docs-authority/HULL_DESIGN.md` | A | 2026-10-26 | Floating island hull design | current |
 | AQS-SITE-013 | `docs-authority/SITE_UNITS.md` | A | 2026-10-26 | Site unit placements | current |
+| AQS-SITE-014 | `docs-authority/PARCEL_INTERFACE.md` | A | 2026-10-30 | Parcel selection interface | current |
 | AQS-SIZE-ACID_POLISH_SCRUB | `docs-authority/sizing/ACID_POLISH_SCRUB.md` | A | 2026-10-20 | Sizing calculation - ACID_POLISH_SCRUB | current |
 | AQS-SIZE-ADS_CHILL | `docs-authority/sizing/ADS_CHILL.md` | A | 2026-10-20 | Sizing calculation - ADS_CHILL | current |
 | AQS-SIZE-AFTERBURNER | `docs-authority/sizing/AFTERBURNER.md` | A | 2026-10-20 | Sizing calculation - AFTERBURNER | current |
@@ -467,6 +471,8 @@ Table 3.1. Document numbers in use
 | AQS-TST-003 | `docs-authority/TEST_RIGS.md` | A | 2026-10-16 | In-house test rigs: build packages | current |
 | AQS-TST-004 | `docs-authority/BENCH_TEST_UPW_POLISH.md` | B | 2026-10-24 | UPW polish module bench test (RO permeance, rejection, EDI resistivity) | current |
 | AQS-TST-005 | `docs-authority/BENCH_TEST_H2_COMPRESSOR.md` | B | 2026-10-24 | Hydrogen compressor first-article bench run | current |
+| AQS-TST-006 | `docs-authority/BENCH_TEST_BMED_STACK.md` | A | 2026-10-30 | Bench test - BMED stack polarisation | current |
+| AQS-TST-007 | `docs-authority/BENCH_TEST_ZNBR2_FLOW_CELL.md` | A | 2026-10-30 | Bench test - ZNBR2 flow-cell round trip | current |
 | AQS-UI-001 | `docs-authority/DESIGN_TOOL_ARCHITECTURE.md` | H | 2026-10-24 | Design-tool architecture | current |
 | AQS-VENT-001 | `docs-authority/VENT_CLOSURE.md` | C | 2026-10-01 | Vent and stack closure — scrub / regen or CRYO | current |
 | AQS-WLD-001 | `docs-authority/WELD_MAP.md` | A | 2026-09-27 | Weld and joint map | current |
@@ -530,6 +536,7 @@ Table 5.1. Parts of numbered documents
 | AQS-INV-005 | sheet MF-25 | `docs-authority/inventory/motor_families/MF-25.md` |
 | AQS-INV-005 | sheet MF-26 | `docs-authority/inventory/motor_families/MF-26.md` |
 | AQS-INV-005 | sheet MF-27 | `docs-authority/inventory/motor_families/MF-27.md` |
+| AQS-INV-005 | sheet MF-28 | `docs-authority/inventory/motor_families/MF-28.md` |
 | AQS-PLAN-007 | note (no new AQS number; working record) | `docs-authority/notes/2026-10-19-closure-lane.md` |
 | AQS-PLAN-007 | note (no new AQS number; this is a working record) | `docs-authority/notes/2026-10-19-evidence-pass.md` |
 | AQS-PLAN-007 | note (working record; no new AQS number) | `docs-authority/notes/2026-10-20-duties-nozzles.md` |

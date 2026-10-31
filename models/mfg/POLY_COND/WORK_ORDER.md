@@ -1,6 +1,9 @@
 # Work order POLY_COND
 
-Authority: AQS-DUTY-073 (foundry_poly.py stamps). STANDBY UNIT - DO NOT FABRICATE.
+Authority: AQS-DUTY-073 fluoro train (Q-013 reopened; A-M-289). Live unit: its feed stream is connected.
 
-Envelope-only placeholder (600 x 600 x 1200 mm). recipe waits on the digester organic assay (AQS-DES-POLY).
-This model exists so the unit is presence-consistent on the layout and the plant BOM; the machine is designed at its unit task when the feed lands. Inspect against models/mfg/POLY_COND/export/poly_cond.step for the reserved volume only.
+1. Fabricate the D360 jacketed shell; line the heads in PTFE (fluorocarbon service).
+2. Fit the heater circuit, dip leg and the HCl-return pump skid module.
+3. Wire interlocks: high-T, high-P, low circulation flow.
+4. Test: inert pressure hold, then the route trial per AQS-DUTY-073.
+5. Inspect against models/mfg/POLY_COND/export/poly_cond.step.

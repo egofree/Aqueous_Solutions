@@ -1,0 +1,26 @@
+{
+  "shell_bbox_mm": [
+    1900.0,
+    700.0,
+    1600.0
+  ],
+  "envelope_mm": [
+    1900,
+    700,
+    1600
+  ],
+  "inside_size_mm_shell": true,
+  "solids": 2,
+  "all_parts_valid": true,
+  "material_class": "HDG_steel",
+  "form": "frame",
+  "mass_kg": {
+    "frame_legs": 75.4,
+    "drop_board": 31.3,
+    "floor_wire": 8.9,
+    "roof": 31.3,
+    "wire_panels": 20.4
+  },
+  "empty_kg": 167.3,
+  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+}

@@ -1,6 +1,6 @@
 # Work order HF_GEN
 
-Authority: AQS-DUTY-073 fluoro train (A-M-283). Live unit: the acid-grade fluorspar import from the dock is connected.
+Authority: AQS-DUTY-073 fluoro train (A-M-289). Live unit: the acid-grade fluorspar import from the dock is connected.
 
 1. Set the trunnion pedestals and drive; roll and load the D200 tube at 2 deg (4 rpm).
 2. Build the indirect furnace chamber around the tube; cure the lining.

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 146.5 kg/d. Mass out 146.5 kg/d. Electrical duty 0.6472 kW. In: IA-BED-VAP 67.44 kg/d (bed transpiration); IA-HAB-VAP 0 kg/d (respired and evaporated water); IA-AHU-AIR 79.04 kg/d (outdoor air moisture); IA-AHU-FIX 1e-06 kg/d (handler makeup). Out: S56 0 kg/d (non-condensable residual after KO); S68 78.99 kg/d (flue condensate); S86 0 kg/d (cryo residual contingency); IA-HVAC-COND 67.44 kg/d (AHU condensate to the water cycle); 1 more.
+1. Basis. Mass in 170.1 kg/d. Mass out 170.1 kg/d. Electrical duty 0.6472 kW. In: IA-BED-VAP 67.44 kg/d (bed transpiration); IA-HAB-VAP 0 kg/d (respired and evaporated water); IA-AHU-AIR 79.04 kg/d (outdoor air moisture); IA-AHU-FIX 1e-06 kg/d (handler makeup); 8 more. Out: S56 0 kg/d (non-condensable residual after KO); S68 102.6 kg/d (flue condensate); S86 0 kg/d (cryo residual contingency); IA-HVAC-COND 67.44 kg/d (AHU condensate to the water cycle); 1 more.
 
 2. Size.
 - Duct at 10 m/s. Gas 4.71 m³/h. Bore 13 mm, DN15. Not a packed tower.

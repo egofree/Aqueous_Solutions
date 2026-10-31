@@ -1,0 +1,6 @@
+item,part,qty,material,mass_kg,make_buy,note
+1,drop_board,1,HDG_steel,76.5,make,frame class; 6 ducks x 0.3 m2 + wallow strip (A-M-421; TECHTREE ducks.md) (X-FARM sec3)
+2,floor_wire,1,HDG_steel,23.2,make,frame class; 6 ducks x 0.3 m2 + wallow strip (A-M-421; TECHTREE ducks.md) (X-FARM sec3)
+3,frame_legs,1,HDG_steel,60.3,make,frame class; 6 ducks x 0.3 m2 + wallow strip (A-M-421; TECHTREE ducks.md) (X-FARM sec3)
+4,roof,1,HDG_steel,76.5,make,frame class; 6 ducks x 0.3 m2 + wallow strip (A-M-421; TECHTREE ducks.md) (X-FARM sec3)
+5,wire_panels,1,HDG_steel,29.8,make,frame class; 6 ducks x 0.3 m2 + wallow strip (A-M-421; TECHTREE ducks.md) (X-FARM sec3)

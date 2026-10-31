@@ -7,3 +7,6 @@ N5,DN15,Class 150,drain,bottom,50
 N6,DN15,Class 150,vent,top,800
 N7,DN15,Class 150,treated grey to the water cycle,outlet,600
 N8,DN15,Class 150,released digest liquor to grey treatment,inlet,160
+N9,DN15,Class 150,wash grey water to the treatment train,inlet,160
+N10,DN15,Class 150,duck wash water,inlet,160
+N11,DN15,Class 150,galley wash grey water to the treatment train,inlet,160

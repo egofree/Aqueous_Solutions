@@ -1,0 +1,13 @@
+{
+  "unit": "GALLEY",
+  "form": "room",
+  "size_mm": [
+    4000,
+    3000,
+    2400
+  ],
+  "size_note": "12 m2 fitout shell at the A-M-419 room basis, 2400 ceiling (AQS-HAB-001) (X-HAB sec3)",
+  "material_class": "aluminium",
+  "wall_mm": 30,
+  "liner_mm": null
+}

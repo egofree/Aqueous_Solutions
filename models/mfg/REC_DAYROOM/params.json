@@ -1,0 +1,13 @@
+{
+  "unit": "REC_DAYROOM",
+  "form": "room",
+  "size_mm": [
+    5000,
+    4000,
+    2400
+  ],
+  "size_note": "20 m2 fitout shell (A-M-419) (X-HAB sec3)",
+  "material_class": "aluminium",
+  "wall_mm": 30,
+  "liner_mm": null
+}

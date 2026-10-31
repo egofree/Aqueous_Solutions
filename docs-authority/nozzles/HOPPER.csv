@@ -8,3 +8,4 @@ N6,DN15,Class 150,hopper fines to the pretreat,outlet,600
 N7,DN15,Class 150,drain,bottom,50
 N8,DN15,Class 150,vent,top,800
 N9,DN15,Class 150,"plant feedstock, any class",outlet,600
+N10,DN15,Class 150,frass compost to the solids line,inlet,160

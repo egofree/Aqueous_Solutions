@@ -40,7 +40,7 @@ Schematic frames (plan token, not a GUI capture):
 python3 models/freecad/render_frames.py
 ```
 
-Output: `media/D0_overview.png`, `D1.png`…`D6.png`, `F0_campus.png`.
+Output: the D0–D6 and F0 frame renders (retired from `media/` 2026-10-27 with the animation; `render_frames.py` remains the on-demand renderer).
 Document AQS-ANM-001.
 
 12 fps PNG from `/usr/bin/freecad` on `plant.FCStd` is still an

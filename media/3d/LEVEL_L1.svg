@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42140" height="18486" font-family="DejaVu Sans,sans-serif" font-size="12">
+<rect x="0" y="0" width="42140" height="18486" fill="white"/>
+<text x="16" y="26" font-size="15" font-weight="bold">Baseline site - level L1 plan (mm, +X right, +Y up)</text>
+<text x="16" y="44" font-size="11" fill="#555">datum Z 6000 mm. Dashed = eliminated by the scaling plan.</text>
+<rect x="11880" y="10180" width="2100" height="1100" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="11886" y="10196" fontSize="11">AQUA_TANK</text>
+<rect x="15880" y="12380" width="400" height="350" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="15886" y="12396" fontSize="11">AQUA_UV</text>
+<rect x="24980" y="12380" width="600" height="500" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="24986" y="12396" fontSize="11">BEE_HIVE</text>
+<rect x="16480" y="12480" width="3000" height="5000" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="16486" y="12496" fontSize="11">BIOFILTER</text>
+<rect x="80" y="9080" width="1100" height="1100" fill="#2471a333" stroke="#2471a3" stroke-width="2"/>
+<text x="86" y="9096" fontSize="11">BLACK_DIGEST</text>
+<rect x="11880" y="12380" width="2500" height="900" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="11886" y="12396" fontSize="11">BSFL_BIN</text>
+<rect x="16380" y="12380" width="2500" height="1300" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="16386" y="12396" fontSize="11">CHICKEN_COOP</text>
+<rect x="80" y="7580" width="4000" height="2500" fill="#c0392b33" stroke="#c0392b" stroke-width="2"/>
+<text x="86" y="7596" fontSize="11">COMMON_AREA</text>
+<rect x="11880" y="80" width="30100" height="10100" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="11886" y="96" fontSize="11">DUCKWEED</text>
+<rect x="18980" y="12380" width="2500" height="1300" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="18986" y="12396" fontSize="11">DUCK_PEN</text>
+<rect x="14480" y="12380" width="1300" height="900" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="14486" y="12396" fontSize="11">FEED_PREP</text>
+<rect x="12480" y="680" width="650" height="650" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="12486" y="696" fontSize="11">FOOD_STORE</text>
+<rect x="80" y="280" width="4000" height="3000" fill="#c0392b33" stroke="#c0392b" stroke-width="2"/>
+<text x="86" y="296" fontSize="11">GALLEY</text>
+<rect x="2080" y="280" width="800" height="800" fill="#2471a333" stroke="#2471a3" stroke-width="2"/>
+<text x="2086" y="296" fontSize="11">GREY_TREAT</text>
+<rect x="15280" y="10180" width="3600" height="2100" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="15286" y="10196" fontSize="11">GROWBED_A</text>
+<rect x="18980" y="10180" width="3600" height="2100" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="18986" y="10196" fontSize="11">GROWBED_B</text>
+<rect x="12380" y="1980" width="1500" height="1000" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="12386" y="1996" fontSize="11">GROW_BED</text>
+<rect x="380" y="580" width="1500" height="1000" fill="#c0392b33" stroke="#c0392b" stroke-width="2"/>
+<text x="386" y="596" fontSize="11">HABITATION</text>
+<rect x="2680" y="680" width="1500" height="1000" fill="#c0392b33" stroke="#c0392b" stroke-width="2"/>
+<text x="2686" y="696" fontSize="11">HDR_CO2</text>
+<rect x="4880" y="680" width="1500" height="1000" fill="#c0392b33" stroke="#c0392b" stroke-width="2"/>
+<text x="4886" y="696" fontSize="11">HDR_N2</text>
+<rect x="80" y="5480" width="3000" height="2000" fill="#c0392b33" stroke="#c0392b" stroke-width="2"/>
+<text x="86" y="5496" fontSize="11">MEDICAL</text>
+<rect x="21580" y="12380" width="1300" height="700" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="21586" y="12396" fontSize="11">QUAIL_CAGE</text>
+<rect x="22980" y="12380" width="1900" height="700" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="22986" y="12396" fontSize="11">RABBIT_HUTCH</text>
+<rect x="80" y="14280" width="5000" height="4000" fill="#c0392b33" stroke="#c0392b" stroke-width="2"/>
+<text x="86" y="14296" fontSize="11">REC_DAYROOM</text>
+<rect x="4880" y="2880" width="600" height="400" fill="#2471a333" stroke="#2471a3" stroke-width="2"/>
+<text x="4886" y="2896" fontSize="11">REMIN</text>
+<rect x="80" y="10180" width="4000" height="4000" fill="#c0392b33" stroke="#c0392b" stroke-width="2"/>
+<text x="86" y="10196" fontSize="11">SLEEP_QUARTERS</text>
+<rect x="25680" y="12380" width="2100" height="1100" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="25686" y="12396" fontSize="11">VERMI_BIN</text>
+<rect x="80" y="3380" width="3000" height="2000" fill="#c0392b33" stroke="#c0392b" stroke-width="2"/>
+<text x="86" y="3396" fontSize="11">WASHROOM</text>
+</svg>

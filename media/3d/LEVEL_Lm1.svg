@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21740" height="26686" font-family="DejaVu Sans,sans-serif" font-size="12">
+<rect x="0" y="0" width="21740" height="26686" fill="white"/>
+<text x="16" y="26" font-size="15" font-weight="bold">Baseline site - level L-1 plan (mm, +X right, +Y up)</text>
+<text x="16" y="44" font-size="11" fill="#555">datum Z -6000 mm. Dashed = eliminated by the scaling plan.</text>
+<rect x="580" y="21780" width="1500" height="1000" fill="#7b241c33" stroke="#7b241c" stroke-width="2"/>
+<text x="586" y="21796" fontSize="11">AFTERBURNER</text>
+<rect x="15680" y="15880" width="1000" height="1000" fill="#5499c733" stroke="#5499c7" stroke-width="2"/>
+<text x="15686" y="15896" fontSize="11">AIR_RECEIVER</text>
+<rect x="14080" y="13480" width="2200" height="900" fill="#2471a333" stroke="#2471a3" stroke-width="2"/>
+<text x="14086" y="13496" fontSize="11">BMED_UPW_POLISH</text>
+<rect x="2080" y="22800" width="2000" height="60" fill="#7b241c33" stroke="#7b241c" stroke-width="2"/>
+<text x="2086" y="22816" fontSize="11">C29_RECYCLE</text>
+<rect x="5080" y="13880" width="1500" height="60" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="5086" y="13896" fontSize="11">CONTINUOUS_RECYCLE</text>
+<rect x="12580" y="8780" width="1500" height="1000" fill="#5499c733" stroke="#5499c7" stroke-width="2"/>
+<text x="12586" y="8796" fontSize="11">CRYO_AHU</text>
+<rect x="15280" y="15680" width="600" height="400" fill="#5499c733" stroke="#5499c7" stroke-width="2"/>
+<text x="15286" y="15696" fontSize="11">CRYO_AHU_COND_CONDENSABLE</text>
+<rect x="20080" y="15880" width="1500" height="1000" fill="#5499c733" stroke="#5499c7" stroke-width="2"/>
+<text x="20086" y="15896" fontSize="11">CRYO_ASU</text>
+<rect x="12580" y="80" width="6696" height="1500" fill="#5499c733" stroke="#5499c7" stroke-width="2"/>
+<text x="12586" y="96" fontSize="11">CRYO_CO2</text>
+<rect x="14880" y="6980" width="1500" height="1000" fill="#5499c733" stroke="#5499c7" stroke-width="2"/>
+<text x="14886" y="6996" fontSize="11">CRYO_DED_COOL</text>
+<rect x="12580" y="2380" width="6696" height="1500" fill="#5499c733" stroke="#5499c7" stroke-width="2"/>
+<text x="12586" y="2396" fontSize="11">CRYO_H2</text>
+<rect x="16480" y="15680" width="600" height="400" fill="#5499c733" stroke="#5499c7" stroke-width="2"/>
+<text x="16486" y="15696" fontSize="11">CRYO_HX_Q4</text>
+<rect x="12580" y="6980" width="1500" height="1000" fill="#5499c733" stroke="#5499c7" stroke-width="2"/>
+<text x="12586" y="6996" fontSize="11">CRYO_N2</text>
+<rect x="12580" y="4680" width="6696" height="1500" fill="#5499c733" stroke="#5499c7" stroke-width="2"/>
+<text x="12586" y="4696" fontSize="11">CRYO_O2</text>
+<rect x="7380" y="14980" width="2670" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="7386" y="14996" fontSize="11">EW_1</text>
+<rect x="80" y="16680" width="2670" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="86" y="16696" fontSize="11">EW_2</text>
+<rect x="3280" y="13280" width="1170" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="3286" y="13296" fontSize="11">EW_3</text>
+<rect x="6480" y="16680" width="370" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="6486" y="16696" fontSize="11">EW_4</text>
+<rect x="10980" y="14980" width="470" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="10986" y="14996" fontSize="11">EW_5</text>
+<rect x="3680" y="16680" width="470" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="3686" y="16696" fontSize="11">EW_6</text>
+<rect x="3280" y="14980" width="3170" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="3286" y="14996" fontSize="11">EW_7</text>
+<rect x="5080" y="16680" width="470" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="5086" y="16696" fontSize="11">EW_8</text>
+<rect x="7180" y="13280" width="3270" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="7186" y="13296" fontSize="11">EW_9</text>
+<rect x="18880" y="16480" width="600" height="700" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
+<text x="18886" y="16496" fontSize="11">FLUE_KO</text>
+<rect x="680" y="21480" width="800" height="600" fill="#a0400033" stroke="#a04000" stroke-width="2"/>
+<text x="686" y="21496" fontSize="11">GLASS_BURNOUT</text>
+<rect x="580" y="23580" width="1500" height="1000" fill="#a0400033" stroke="#a04000" stroke-width="2"/>
+<text x="586" y="23596" fontSize="11">GLASS_DIGEST</text>
+<rect x="3080" y="22880" width="800" height="600" fill="#a0400033" stroke="#a04000" stroke-width="2"/>
+<text x="3086" y="22896" fontSize="11">GLASS_MILL</text>
+<rect x="2080" y="21480" width="1200" height="600" fill="#a0400033" stroke="#a04000" stroke-width="2"/>
+<text x="2086" y="21496" fontSize="11">GLASS_RINSE</text>
+<rect x="5080" y="21880" width="500" height="400" fill="#7b241c33" stroke="#7b241c" stroke-width="2"/>
+<text x="5086" y="21896" fontSize="11">GREASE_CA</text>
+<rect x="7280" y="21880" width="500" height="400" fill="#7b241c33" stroke="#7b241c" stroke-width="2"/>
+<text x="7286" y="21896" fontSize="11">GREASE_LI</text>
+<rect x="15680" y="19480" width="1800" height="800" fill="#5499c733" stroke="#5499c7" stroke-width="2"/>
+<text x="15686" y="19496" fontSize="11">H2O_ELYZ</text>
+<rect x="580" y="18200" width="600" height="600" fill="#7b241c33" stroke="#7b241c" stroke-width="2"/>
+<text x="586" y="18216" fontSize="11">HOPPER</text>
+<rect x="5280" y="11180" width="600" height="400" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="5286" y="11196" fontSize="11">HX8</text>
+<rect x="680" y="14580" width="2000" height="1200" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="686" y="14596" fontSize="11">LEACH_CSTR_1</text>
+<rect x="5280" y="21480" width="80" height="80" fill="#7b241c33" stroke="#7b241c" stroke-width="2"/>
+<text x="5286" y="21496" fontSize="11">NCG_HEADER</text>
+<rect x="2880" y="23580" width="1500" height="1000" fill="#7b241c33" stroke="#7b241c" stroke-width="2"/>
+<text x="2886" y="23596" fontSize="11">OIL_DRYER</text>
+<rect x="7480" y="23580" width="1500" height="1000" fill="#7b241c33" stroke="#7b241c" stroke-width="2"/>
+<text x="7486" y="23596" fontSize="11">OIL_FRAC</text>
+<rect x="5180" y="23580" width="1500" height="1000" fill="#7b241c33" stroke="#7b241c" stroke-width="2"/>
+<text x="5186" y="23596" fontSize="11">OIL_PYRO</text>
+<rect x="4480" y="21380" width="600" height="300" fill="#7b241c33" stroke="#7b241c" stroke-width="2"/>
+<text x="4486" y="21396" fontSize="11">PROD_C11_C18</text>
+<rect x="4480" y="24480" width="600" height="300" fill="#7b241c33" stroke="#7b241c" stroke-width="2"/>
+<text x="4486" y="24496" fontSize="11">PROD_C19_C28</text>
+<rect x="4480" y="22680" width="600" height="300" fill="#7b241c33" stroke="#7b241c" stroke-width="2"/>
+<text x="4486" y="22696" fontSize="11">PROD_C29</text>
+<rect x="4480" y="23580" width="600" height="300" fill="#7b241c33" stroke="#7b241c" stroke-width="2"/>
+<text x="4486" y="23596" fontSize="11">PROD_C5_C10</text>
+<rect x="17880" y="19480" width="1150" height="1150" fill="#5499c733" stroke="#5499c7" stroke-width="2"/>
+<text x="17886" y="19496" fontSize="11">PROD_MEOH</text>
+<rect x="20080" y="19480" width="1400" height="1400" fill="#5499c733" stroke="#5499c7" stroke-width="2"/>
+<text x="20086" y="19496" fontSize="11">PROD_O2</text>
+<rect x="1280" y="18280" width="800" height="800" fill="#d6891033" stroke="#d68910" stroke-width="2"/>
+<text x="1286" y="18296" fontSize="11">Q1_A</text>
+<rect x="15080" y="24280" width="800" height="800" fill="#d6891033" stroke="#d68910" stroke-width="2"/>
+<text x="15086" y="24296" fontSize="11">Q1_B</text>
+<rect x="2780" y="18280" width="800" height="800" fill="#d6891033" stroke="#d68910" stroke-width="2"/>
+<text x="2786" y="18296" fontSize="11">Q2_A</text>
+<rect x="16580" y="24280" width="800" height="800" fill="#d6891033" stroke="#d68910" stroke-width="2"/>
+<text x="16586" y="24296" fontSize="11">Q2_B</text>
+<rect x="4280" y="18280" width="800" height="800" fill="#d6891033" stroke="#d68910" stroke-width="2"/>
+<text x="4286" y="18296" fontSize="11">Q3_A</text>
+<rect x="18080" y="24280" width="800" height="800" fill="#d6891033" stroke="#d68910" stroke-width="2"/>
+<text x="18086" y="24296" fontSize="11">Q3_B</text>
+<rect x="5780" y="18280" width="800" height="800" fill="#d6891033" stroke="#d68910" stroke-width="2"/>
+<text x="5786" y="18296" fontSize="11">Q4_A</text>
+<rect x="19580" y="24280" width="800" height="800" fill="#d6891033" stroke="#d68910" stroke-width="2"/>
+<text x="19586" y="24296" fontSize="11">Q4_B</text>
+<rect x="18380" y="18780" width="600" height="400" fill="#5499c733" stroke="#5499c7" stroke-width="2"/>
+<text x="18386" y="18796" fontSize="11">RELIEF_CRYO</text>
+<rect x="13005" y="13205" width="250" height="250" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
+<text x="13011" y="13221" fontSize="11">RELIEF_H2</text>
+<rect x="680" y="25480" width="1200" height="1000" fill="#a0400033" stroke="#a04000" stroke-width="2"/>
+<text x="686" y="25496" fontSize="11">SI_REDUCE</text>
+<rect x="12880" y="9980" width="1400" height="600" fill="#2471a333" stroke="#2471a3" stroke-width="2"/>
+<text x="12886" y="9996" fontSize="11">VCD_TRAIN</text>
+</svg>

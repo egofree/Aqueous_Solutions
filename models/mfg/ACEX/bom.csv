@@ -1,7 +1,0 @@
-item,description,qty,material,basis
-1,Shell DN60 x 1205 mm x 3.91 mm wall with flat bottom,1,"PP-H pipe Sch 40, socket-fused (DVS 2207-11)",AQS-DUTY-062 section 1
-2,Bolted flat lid with gasket,1,"PP-H pipe Sch 40, socket-fused (DVS 2207-11)",AQS-DUTY-062
-3,Nozzles DN25: [Bmim]Cl in; eluate to neutraliser; NaOH regenerant in; spent regenerant out; drain,5,"PP-H pipe Sch 40, socket-fused (DVS 2207-11)",AQS-DUTY-062
-4,Legs 40x40 x 300 mm,3,"PP-H pipe Sch 40, socket-fused (DVS 2207-11)",study
-5,"Strong-base type I anion resin, OH form, 1.96 L per column; second identical column (lead/regenerate)",2,polystyrene-DVB gel,PERRY9_IX
-6,Acetic acid neutraliser vessel 0.5 L with pH probe,1,PP-H,AQS-DUTY-062

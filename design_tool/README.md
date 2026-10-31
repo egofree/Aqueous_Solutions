@@ -6,6 +6,7 @@ Architecture: `docs-authority/DESIGN_TOOL_ARCHITECTURE.md` (AQS-UI-001). Licence
 
 ## 1. What it does
 
+- **Starts from a site.** `POST /api/v1/sandbox/from-site` applies a locale scaling profile (the same engine the regeneration pipeline uses): the eliminations, replacements and sizing of `flow_graph/param/sites/<site_id>.json` become the sandbox's starting state. `POST /api/v1/sandbox/{id}/solve-pipeline` then runs the real balance reconciliation on the fold and reports the true residuals - a closed subset is never called equivalent to the baseline.
 - **Reads the design.** The minimum viable system (MVS) model is built from `flow_graph/plant_flow_graph.json` every time it is requested. The graph is the only source; `aqs_design_tool/data/candidate_mvs.json` is a generated projection of it, written by the regeneration pipeline, and must not be edited by hand.
 - **Works on copies.** A sandbox is a working copy of the model with your overrides (sectors or units switched off, a scale factor, parameter changes). The design itself is never changed through the tool.
 - **Solves a copy.** The solver reports residuals, gaps, streams left unclosed, surplus and the electrical match. It does not claim that a loop closes when it does not: a result can be `partial`.

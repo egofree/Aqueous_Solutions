@@ -33,6 +33,8 @@ D1B_UNITS = (
     "MEOH_FERM",
     "MEOH_SYNTH",
     "MEOH_TANK",
+    "MET_SYN",
+    "GW_INTAKE",
     "BLACK_DIGEST",
     "BMED_UPW_POLISH",
     "GREY_TREAT",
@@ -73,6 +75,11 @@ def _meoh_yard(doc):
          P.D1B_TBD_SKID_L, P.D1B_TBD_SKID_W, P.D1B_TBD_SKID_H)
     _box(doc, "MEOH_TANK", mx + 2 * (P.D1B_TBD_SKID_L + 200), my, z,
          P.D1B_TBD_TANK_L, P.D1B_TBD_TANK_W, P.D1B_TBD_TANK_H)
+    # MET_SYN (A-M-416 route A): the DL-methionine bench train closes the feed
+    # supplement loop; dims from the graph (X-SPEC bench envelope), east of the tank
+    _box(doc, "MET_SYN",
+         mx + 2 * (P.D1B_TBD_SKID_L + 200) + P.D1B_TBD_TANK_L + 200, my, z,
+         *_store_size("MET_SYN"))
     # Ferment near farm organics intent — still yard/life edge stub (TBD XY)
     _box(doc, "MEOH_FERM",
          P.FARM_X + 200, P.FARM_Y + P.FARM_W - P.D1B_TBD_DIGEST_W - 400,
@@ -145,13 +152,16 @@ def _geo_loop(doc):
 
 
 def _store_size(name):
-    """Graph params.size_mm for a D-DOCK store (AQS-DUTY-064); tote-class fallback
+    """Graph params for a D-DOCK store / late unit: envelope.size_mm first, then the
+    flat size_mm the placement pass wrote (AQS-DUTY-064 / Rev N); tote-class fallback
     only if the graph is unreadable, so a sizing regression shows in the GA."""
     try:
         import json
         g = json.load(open(OUT.parents[1] / "flow_graph" / "plant_flow_graph.json"))
         n = {u["unit_id"]: u for u in g["nodes"]}[name]
-        return [float(v) for v in n["params"]["size_mm"]]
+        p = n.get("params") or {}
+        sz = (p.get("envelope") or {}).get("size_mm") or p.get("size_mm")
+        return [float(v) for v in sz]
     except Exception as exc:
         print("  d1b_massing: %s size_mm unreadable (%s) - TOTE fallback" % (name, exc))
         return [P.D1B_TBD_TOTE_L, P.D1B_TBD_TOTE_W, P.D1B_TBD_TOTE_H]
@@ -171,6 +181,16 @@ def _d_dock_stores(doc):
         x += dx + 200             # 200 mm staging gap between buffers
 
 
+def _gw_intake(doc):
+    """GW_INTAKE wellhead hatch + pump discharge set (X-LOC-13) - a ground pad on
+    the L0 yard, south of the MEOH ESS row. Dims from the graph envelope."""
+    x0, y0, z = electrical_yard.origin()
+    my = y0 + P.RECT_COUNT * (P.RECT_W + 400) + P.ZNBR_W + 4500
+    mx = min(x0 - 2000, -int(P.YARD_WALL_CLEAR) - P.D1B_TBD_SKID_L)
+    dx, dy, dz = _store_size("GW_INTAKE")
+    _box(doc, "GW_INTAKE", mx, my + P.D1B_TBD_SKID_W + 800, z, dx, dy, dz)
+
+
 def attach(doc):
     """Emit all 21 D1B massing Features (idempotent replace if re-run)."""
     for name in D1B_UNITS:
@@ -183,6 +203,7 @@ def attach(doc):
     _fab_reagents(doc)
     _geo_loop(doc)
     _d_dock_stores(doc)
+    _gw_intake(doc)
     print("d1b_massing: attached %d TBD Part::Feature units (SCALE_M=%s)"
           % (len(D1B_UNITS), P.SCALE_M))
 

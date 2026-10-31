@@ -1,0 +1,13 @@
+{
+  "unit": "GROWBED_A",
+  "form": "tray",
+  "size_mm": [
+    3600,
+    2100,
+    500
+  ],
+  "size_note": "media bed 7 m2 of the 14 m2 dual-root-zone duty at the 0.9 kg/d feed class, 300 mm media + freeboard (A-M-415; A-M-229) (X-FARM sec3)",
+  "material_class": "HDPE",
+  "wall_mm": 10,
+  "liner_mm": 5
+}

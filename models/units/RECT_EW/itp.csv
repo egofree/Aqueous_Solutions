@@ -1,6 +1,0 @@
-step,activity,basis,point
-1,dimensional check against the unit drawing,ASME Y14.5,W
-2,bolting torque record,A-M-190,R
-3,function test,A-M-190,H
-4,"motors: routine test (winding resistance, insulation resistance, no-load run)",IEC 60034,W
-5,loop check of every instrument,A-M-190,W

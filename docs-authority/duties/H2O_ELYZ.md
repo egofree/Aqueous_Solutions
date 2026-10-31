@@ -5,9 +5,12 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 1. Basis. Mass in 83.62 kg/d. Mass out 83.62 kg/d. Electrical duty 21.4447 kW. In: IA-ELY-H2O 83.62 kg/d (electrolyser feed water). Out: IA-ELY-H2 9.358 kg/d (electrolyser H2); IA-ELY-O2 74.26 kg/d (electrolyser O2).
 
 2. Size.
+- Envelope 1800×800×1600 mm, 2.304 m³. That box over this flow would be 661.3 h if it were full. It is not a residence time.
+- Envelope basis (graph node): the PEM stack skid: stack + power electronics + water loop at the 21.445 kW duty.
+- Sizing study pending (study): kwh_per_kg_h2 55.
+- Graph design (AQS-PAR-001 sizing): duty PEM electrolysis: 83.62 kg/d water -> 9.358 kg/d H2 + 74.263 kg/d O2 at 21.445 kW; kwh_per_kg_h2 55.
 - Node note: X-PAR-12: PEM water electrolyser; H2 and O2 leave on separate lines (NFPA 2, ISO 22734).
 - Internals (graph node): PEM stack, H2 and O2 gas-liquid separators, deoxo on H2, dryer.
-- Sizing calculation pending (unit task 02). The graph node carries no design and no envelope.
 
 3. Material. PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family. Basis: PEM water electrolysis (X-PAR-12 note; relief basis A-M-19 blocked-outlet class): cell hardware is metal-as-electrode per M6 with the hydride/reverse-current guards of the house rule; Ir dissolution is the electrode basis at the anode (BERNT2018); construction follows the electrolyser standards (IEC62282_3_100, ISO22734_2019). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: carbon-composite bipolar plates as the stack replacement class (PEMFC-family hardware) with the same hydride check. electrode degradation is the first-article bench basis: no rate claimed here; the P5 water feed legs are the issued house family. (X-MAT-22)
 
@@ -19,4 +22,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 7. Code. Shop, not stamped (AQS-STD-001 section 7 shop rule). No CAD envelope issued yet.
 
-8. Open items. Sizing calculation pending (unit task 02). Material selection pending (unit task 09). Nozzle elevations are schedule placeholders, not designed elevations (unit tasks 02/06).
+8. Open items. Material selection pending (unit task 09). Nozzle elevations are schedule placeholders, not designed elevations (unit tasks 02/06).

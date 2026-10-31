@@ -1,7 +1,6 @@
 family,type,rating,Dg_mm,L_mm,Dout_mm,turns,current_A,conductor,steel_kg,copper_kg,fits
-MF-01,BLDC,42 mm (NEMA 17 flange),7.3,7.3,42,-,0.0,-,-,-,True
-MF-02,BLDC,57 mm (NEMA 23 flange),20.1,20.1,57,-,0.002,-,-,-,True
-MF-03,BLDC actuator,ISO 5211 F03 mount,-,-,-,-,-,-,-,-,-
+MF-01,BLDC,42 mm (NEMA 17 flange),7.1,7.1,42,-,0.0,-,-,-,True
+MF-02,BLDC,57 mm (NEMA 23 flange),20.1,20.1,57,-,0.003,-,-,-,True
 MF-06,induction IE3,IEC 71 / 0.37 kW,66,46,121,929,0.71,21 AWG (0.184 mm2),2.7,0.77,True
 MF-07,induction IE3,IEC 90S / 1.1 kW,84,52,153,657,1.91,19 AWG (0.394 mm2),4.8,1.77,True
 MF-08,induction IE3,IEC 90L / 1.5 kW,84,72,153,472,2.61,18 AWG (0.597 mm2),6.7,2.0,True
@@ -13,9 +12,5 @@ MF-13,induction IE3,IEC 71 / 0.25 kW,64,36,117,541,1.18,20 AWG (0.266 mm2),1.9,0
 MF-14,induction IE3,IEC 132M / 7.5 kW,123,147,224,157,11.71,15 AWG (2.400 mm2),29.3,5.23,True
 MF-15,induction IE3,IEC 112M / 4 kW,105,111,190,245,6.37,16 AWG (1.474 mm2),15.9,3.53,True
 MF-16,induction IE3,IEC 80 / 0.75 kW,75,69,136,551,1.35,19 AWG (0.394 mm2),5.1,1.12,True
-MF-17,solenoid,"ISO 15218 coil, 22 mm",-,-,22,-,0.37,-,-,-,-
 MF-19,stepper,NEMA 34 (86 mm),-,-,86,-,-,-,-,-,-
-MF-24,hermetic induction (scroll),15 kW hermetic,129,139,259,79,23.6,13 AWG (6.835 mm2),37.0,7.73,-
 MF-25,hermetic induction (scroll),1.1 kW hermetic,62,110,124,209,1.97,18 AWG (0.597 mm2),6.8,1.01,-
-MF-26,hermetic induction (scroll),0.75 kW hermetic,64,64,129,346,1.46,19 AWG (0.394 mm2),4.2,1.01,-
-MF-27,"EC (electronically commutated, permanent-magnet) fan motor","1.1 kW EC fan, integrated drive",-,-,-,-,-,-,-,-,-

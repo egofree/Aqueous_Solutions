@@ -63,7 +63,7 @@ The plant standard is stricter than the H-3 requirement: a 3 h assembly between 
 
 ## 4. Levels
 
-The structural bay is 6.0 × 6.0 m. The module plate is 24 × 24 m (4 × 4 bays), or 576 m². The earlier 24 × 18 m plate of 432 m² is retired (AQS-PLAN-001 Rev B). Clear heights are measured to the underside of the slab above. Table 4.1 lists the levels.
+The structural bay is 6.0 × 6.0 m (`bay_mm`, AQS-MOD-002). The module plate is **sized by need, not fixed**: `flow_graph/param/solver.py` grows the plate from the seed bays (`base_bays_x`, `base_bays_y` in `flow_graph/param/drivers.json`) until the roof carries the photovoltaic need and the loads close; the solved configuration lives in the graph (the EXT_HALL extension carries the added bays) and drives the CAD and the layout. No document carries a fixed plate size; where an older revision of this page or a study names one (24 × 24 m, 24 × 18 m), it quotes a superseded solve. Clear heights are measured to the underside of the slab above. Table 4.1 lists the levels.
 
 Table 4.1. Levels of one module
 

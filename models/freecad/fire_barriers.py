@@ -173,6 +173,9 @@ def _rated_rooms(doc):
     CAD solid; each wall sits mid-way to the nearest neighbouring solid on that side (max 1,000 mm, min 300 mm), so walls do not cut
     neighbours. Units with no CAD solid fall back to the placement position."""
     import json
+    findings = OUT.parents[1] / "docs-authority" / "inventory" / "CAD_ROOM_FINDINGS.json"
+    findings.parent.mkdir(parents=True, exist_ok=True)
+    findings.write_text("")                    # one run's findings, never accreted
     f = Path(__file__).resolve().parents[2] / "flow_graph" / "fire_rooms.json"
     if not f.exists():
         return
@@ -203,6 +206,11 @@ def _rated_rooms(doc):
         # Rev C: a solid the room walls would cut joins the room (own ancillaries, clearances, the line it feeds);
         # a rated shaft, stair, fence or wall bounds the room instead. Repeat until stable.
         members = {me[0].Label} if me else set(); clip = {}; pen = []
+        if me:
+            b0 = me[0].Shape.BoundBox
+            mbb = [b0.XMin, b0.YMin, b0.ZMin, b0.XMax, b0.YMax, b0.ZMax]   # member union: a wall may never cut it
+        else:
+            mbb = [x0, y0, z, x0 + L, y0 + W, z + H]
         up = [v for v in list(zl.values()) + [getattr(P, "Z_ROOF", P.Z_L2 + 5400)] if v > z + 100]
         Hcap = (min(up) - z - P.SLAB_THK) if up else H
         H = min(H, Hcap)
@@ -251,11 +259,58 @@ def _rated_rooms(doc):
                     if DBG: print("  clip", r["unit"], k, o.Label)
                 else:
                     members.add(o.Label); grew = True
+                    mbb = [min(mbb[0], B[0]), min(mbb[1], B[1]), min(mbb[2], B[2]),
+                           max(mbb[3], B[3]), max(mbb[4], B[4]), max(mbb[5], B[5])]
                     nx0, ny0 = min(x0, B[0]), min(y0, B[1]); L, W = max(x0 + L, B[3]) - nx0, max(y0 + W, B[4]) - ny0; x0, y0 = nx0, ny0
                     H = min(Hcap, max(H, B[5] - z + 300))
             if not grew: break
+        # boundaries on opposite sides can squeeze the room inside out; instead of
+        # skipping (which leaves the unit with no fire barrier at all), drop the
+        # offending clips and build the best room that contains the unit
+        if X1 - X0 < 2 * t:
+            if 'w' in clip and 'e' in clip:
+                del clip['w']  # keep the east clip, drop the west
+            elif 'e' in clip:
+                del clip['e']  # keep the west clip, drop the east
+            X0, X1 = x0 - max(t + 10, t), x0 + L + max(t + 10, t)
+            for k, v in clip.items():
+                if k == 'w': X0 = max(X0, v)
+                if k == 'e': X1 = min(X1, v)
+        if Y1 - Y0 < 2 * t:
+            if 's' in clip and 'n' in clip:
+                del clip['s']  # keep the north clip, drop the south
+            elif 'n' in clip:
+                del clip['n']  # keep the south clip, drop the north
+            Y0, Y1 = y0 - max(t + 10, t), y0 + W + max(t + 10, t)
+            for k, v in clip.items():
+                if k == 's': Y0 = max(Y0, v)
+                if k == 'n': Y1 = min(Y1, v)
+        # final check: the room must contain the unit (the member union)
+        for mi, mk in ((0, 'w'), (1, 'e'), (2, 's'), (3, 'n')):
+            wx0, wy0, wx1, wy1 = [(X0, Y0, X1, Y0 + t), (X0, Y1 - t, X1, Y1),
+                                   (X0, Y0, X0 + t, Y1), (X1 - t, Y0, X1, Y1)][mi]
+            if wx0 < mbb[3] and wx1 > mbb[0] and wy0 < mbb[4] and wy1 > mbb[1]:
+                # this wall still cuts a member: extend the room on that side to clear it
+                if mk == 'w': X0 = mbb[0] - t - 10
+                if mk == 'e': X1 = mbb[3] + t + 10
+                if mk == 's': Y0 = mbb[1] - t - 10
+                if mk == 'n': Y1 = mbb[4] + t + 10
         walls = [box_at(X0, Y0, z, X1 - X0, t, H), box_at(X0, Y1 - t, z, X1 - X0, t, H),
                  box_at(X0, Y0, z, t, Y1 - Y0, H), box_at(X1 - t, Y0, z, t, Y1 - Y0, H)]
+        # a wall that would cut the room's own unit is omitted on that side: the
+        # adjacent structure (a rated partition, a shaft wall) already provides the
+        # separation, so a second wall there is redundant and would clash
+        wx = [(X0, Y0, X1, Y0 + t), (X0, Y1 - t, X1, Y1), (X0, Y0, X0 + t, Y1), (X1 - t, Y0, X1, Y1)]
+        cut = [k for k, (a, b, c, d) in zip("wsne", wx)
+               if a < mbb[3] and c > mbb[0] and b < mbb[4] and d > mbb[1]
+               and z < mbb[5] and z + H > mbb[2]]
+        for k in cut:
+            walls['wsne'.index(k)] = None
+            print("  FR_%s: %s wall omitted (the adjacent structure provides the separation)" % (r["unit"], k))
+        walls = [w for w in walls if w is not None]
+        if not walls:
+            print("  FR_%s: all walls omitted" % r["unit"])
+            continue
         sh = _fuse(walls)
         for B in pen:
             sh = sh.cut(box_at(B[0] - 50, B[1] - 50, B[2] - 50, B[3] - B[0] + 100, B[4] - B[1] + 100, B[5] - B[2] + 100))

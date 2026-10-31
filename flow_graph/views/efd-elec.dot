@@ -59,6 +59,10 @@ digraph G {
     label="FARM";
     style=rounded; color="#94a3b8";
     "GROW_BED" [fillcolor="#ffffff", label="GROW_BED"];
+    "AQUA_TANK" [fillcolor="#ffffff", label="AQUA_TANK"];
+    "BIOFILTER" [fillcolor="#ffffff", label="BIOFILTER"];
+    "FEED_PREP" [fillcolor="#ffffff", label="FEED_PREP"];
+    "AQUA_UV" [fillcolor="#ffffff", label="AQUA_UV"];
   }
   subgraph "cluster_FOUNDRY" {
     label="FOUNDRY";
@@ -112,6 +116,7 @@ digraph G {
     "MEOH_FC" [fillcolor="#ffffff", label="MEOH_FC"];
     "MEOH_FERM" [fillcolor="#ffffff", label="MEOH_FERM"];
     "MEOH_SYNTH" [fillcolor="#ffffff", label="MEOH_SYNTH"];
+    "MET_SYN" [fillcolor="#ffffff", label="MET_SYN"];
   }
   subgraph "cluster_MFG" {
     label="MFG";
@@ -144,6 +149,7 @@ digraph G {
     "POLY_F" [fillcolor="#ffffff", label="POLY_F"];
     "POWDER_RESIN" [fillcolor="#ffffff", label="POWDER_RESIN"];
     "FILM_CAST" [fillcolor="#ffffff", label="FILM_CAST"];
+    "POLY_FIBER" [fillcolor="#ffffff", label="POLY_FIBER"];
   }
   subgraph "cluster_PUMPED_HYDRO" {
     label="PUMPED_HYDRO";
@@ -167,7 +173,7 @@ digraph G {
   "GEO_ORC" -> "SOL_ARK_60K" [label="S48", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "FUEL_CELL" -> "SOL_ARK_60K" [label="S51\\n4.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "MEOH_FC" -> "SOL_ARK_60K" [label="S79\\n1.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
-  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n336.8116 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n368.9871 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BOUNDARY_EXPORT" [label="IA-PV-CURTAIL\\n4.645 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ZNBR2" -> "BOUNDARY_EXPORT" [label="IA-ZNBR-LOSS\\n1.67 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BMED_ACID" [label="S17-BMED\\n5.6267 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -178,7 +184,7 @@ digraph G {
   "SOL_ARK_60K" -> "GLASS_DIGEST" [label="SF-GLASS_DIGEST\\n0.09 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "H2_DRYER" [label="SF-H2_DRYER\\n0.0205 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "LEACH_CSTR_1" [label="SF-LEACH_CSTR_1\\n0.75 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "MEOH_SYNTH" [label="SF-MEOH_SYNTH\\n0.7388 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "MEOH_SYNTH" [label="SF-MEOH_SYNTH\\n0.818 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "MFG_SHOP" [label="SF-MFG_SHOP\\n2.55 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "NUTRIENT_DOSE" [label="SF-NUTRIENT_DOSE\\n0.0245 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "WAFER_FAB" [label="SF-WAFER_FAB\\n0.4417 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -213,7 +219,7 @@ digraph G {
   "RECTIFIER" -> "EW_7" [label="IA-DC-EW_7\\n7.1187 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "RECTIFIER" -> "EW_8" [label="IA-DC-EW_8\\n0.5054 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "RECTIFIER" -> "EW_9" [label="IA-DC-EW_9\\n7.538 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "EXT_HALL" [label="SF-EXT_HALL\\n68.2838 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "EXT_HALL" [label="SF-EXT_HALL\\n99.1801 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "EVAP_ACID_VS" [label="SF-EVAP_ACID_VS\\n0.0238 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "VDF_SYN" [label="SF-VDF_SYN\\n0.5128 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "TFE_SYN" [label="SF-TFE_SYN\\n0.3989 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -248,4 +254,10 @@ digraph G {
   "SOL_ARK_60K" -> "COLD_MILL" [label="SF-COLD_MILL\\n0.0191 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "WIRE_DRAW" [label="SF-WIRE_DRAW\\n0.0189 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "GEO_HP_CLOSED_LOOP" [label="SF-GEO_HP_CLOSED_LOOP\\n0.1257 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "AQUA_TANK" [label="IA-AIR-AQUA\\n0.04 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BIOFILTER" [label="IA-AIR-BIO\\n0.02 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "FEED_PREP" [label="IA-POWER-FEEDPREP\\n0.6 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "AQUA_UV" [label="IA-POWER-AQUAUV\\n0.04 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "POLY_FIBER" [label="SF-POLY_FIBER\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "MET_SYN" [label="SF-MET_SYN\\n0.2 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
 }

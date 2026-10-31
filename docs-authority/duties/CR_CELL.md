@@ -18,6 +18,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 6. Relief. Vent edge IA-CR-VENT on the graph (to NORTH_DOCK). Atmospheric operation is not claimed beyond this edge. Not to the room.
 
-7. Code. Shop, not stamped (AQS-STD-001 section 7 shop rule). The envelope is `cad/stl/CR_CELL.stl`.
+7. Code. Shop, not stamped (AQS-STD-001 section 7 shop rule). The envelope is `cad/stl/CR_CELL.stl`. Manufacturing model `models/mfg/CR_CELL/cr_cell.py` (AQS-PLAN-006).
 
 8. Open items. Material selection pending (unit task 09). No instrument loop yet (unit task 08). Nozzle elevations are schedule placeholders, not designed elevations (unit tasks 02/06).

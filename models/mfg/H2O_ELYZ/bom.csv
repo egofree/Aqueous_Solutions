@@ -1,0 +1,16 @@
+item,description,qty,material,basis
+1,Body / envelope 1800 x 800 x 1600 mm,1,"PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family.",docs-authority/duties/H2O_ELYZ.md
+2,Process nozzle DN15,3,"PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family.",one per mass edge; DN from AQS-INV-003
+3,"Relief valve, 3.3 mm bore, DN15 body",1,316L,AQS-SAF-004
+4,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+5,fastener: anchor bolt M10,18,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+6,"instrument: gas detector, H2 catalytic bead + IR backup",3,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",AQS-INV-004
+7,"instrument: gas detector, O2 enrichment electrochemical O2",3,"alarm 23.5 vol %, trip 25 vol %, breathing height",AQS-INV-004
+8,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+9,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+10,instrument: pressure transmitter 0-16 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+11,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+12,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+13,support: U-bolt with guide DN15,9,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+14,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+15,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004

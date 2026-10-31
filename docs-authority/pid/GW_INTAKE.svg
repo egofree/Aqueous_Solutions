@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="610" font-family="sans-serif">
 <rect x="4" y="4" width="1492" height="602" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit GW_INTAKE · intake · sector WTR · present</text>
-<text x="24" y="54" font-size="10.5">no design params on the graph node</text>
-<text x="24" y="72" font-size="10.5">Edges 0 in + 1 out · valves 0 placed / 0 unplaced · instruments 4 (0 SIF) · nozzles 3</text>
+<text x="24" y="54" font-size="10.5">0.37 kW continuous</text>
+<text x="24" y="72" font-size="10.5">Edges 0 in + 1 out · valves 2 placed / 0 unplaced · instruments 4 (0 SIF) · nozzles 3</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -41,6 +41,8 @@
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">IA-GW-MAKEUP</text>
 <text x="1476" y="253" font-size="10" text-anchor="end">0.0 kg/d · DN15 P1</text>
 <text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N1</text>
+<path d="M 1023.6,234 L 1031.6,240 L 1023.6,246 Z M 1041.6,234 L 1033.6,240 L 1041.6,246 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="229.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <text x="24" y="400" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="410" font-size="9">Every incident graph edge is drawn: 0 in, 1 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="425" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/GW_INTAKE.csv.</text>
@@ -49,7 +51,7 @@
 <g id="aqs-title-block"><rect x="1116" y="492" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="509" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-GW_INTAKE</text>
 <text x="1124" y="526" font-size="9">P&amp;ID GW_INTAKE (intake, WTR sector)</text>
-<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 2e1ae252   Issued 2026-10-19</text>
+<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 0728355d   Issued 2026-10-19</text>
 <text x="1124" y="560" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="577" font-size="9">Graph SHA-256 307200ce85a4b6e4   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="577" font-size="9">Graph SHA-256 a68069cea430aa98   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

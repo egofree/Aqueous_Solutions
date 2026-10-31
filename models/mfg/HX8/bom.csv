@@ -1,0 +1,16 @@
+item,description,qty,material,basis
+1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVDF tubes and tube sheets on the liquor side, PVC-U shell on the Q4 water side.",docs-authority/duties/HX8.md
+2,fastener: anchor bolt M10,18,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+3,fastener: anchor bolt M10,42,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+4,fastener: anchor bolt M10,14,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+5,fastener: anchor bolt M10,32,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+6,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+7,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+8,support: U-bolt with guide DN15,9,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+9,support: U-bolt with guide DN15,21,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+10,support: U-bolt with guide DN25,7,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+11,support: U-bolt with guide DN25,16,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+12,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+13,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+14,valve: isolation valve DN25,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+15,valve: isolation valve DN25,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004

@@ -1,0 +1,25 @@
+{
+  "shell_bbox_mm": [
+    1300.0,
+    900.0,
+    1700.0
+  ],
+  "envelope_mm": [
+    1300,
+    900,
+    1700
+  ],
+  "inside_size_mm_shell": true,
+  "solids": 3,
+  "all_parts_valid": true,
+  "material_class": "SS304",
+  "form": "cabinet",
+  "mass_kg": {
+    "cabinet_shell": 343.8,
+    "top": 46.8,
+    "mixer_housing": 37.7,
+    "drier_stack": 63.0
+  },
+  "empty_kg": 491.3,
+  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+}

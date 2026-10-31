@@ -67,17 +67,19 @@ def main():
     counters = collections.Counter(lv for lv, *_ in lifts)
     for n, (lv, u, kg, suffix) in enumerate(lifts, 1):
         b = book.get(lv, {})
-        design = kg * (1 + RIG)
+        kg_pub = round(kg)                                   # the mass the doc publishes
+        design = kg_pub * (1 + RIG)                          # derived from the published number
         rated = b.get('hoist_t')
         assert rated and rated * 1000.0 >= design, f'{u}: booked hoist {rated} t under design load {design:.0f} kg'
-        L.append(f'| {n} | {lv} | {u}{suffix} | {kg:.0f} | {design:.0f} | {rated} | {b.get("test_t")} |')
+        L.append(f'| {n} | {lv} | {u}{suffix} | {kg_pub:.0f} | {design:.0f} | {rated} | {b.get("test_t")} |')
 
     L += ['', '## 3. Plans', '']
     for n, (lv, u, kg, suffix) in enumerate(lifts, 1):
         b = book.get(lv, {})
-        design = kg * (1 + RIG)
+        kg_pub = round(kg)
+        design = kg_pub * (1 + RIG)
         L += [f'### Plan {n}: {u}{suffix} to {lv}', '',
-              f'- **Mass per lift**: {kg:.0f} kg (AQS-BLD-013 booked empty mass{", one bank half" if suffix else ""}).',
+              f'- **Mass per lift**: {kg_pub:.0f} kg (AQS-BLD-013 booked empty mass{", one bank half" if suffix else ""}).',
               f'- **Design load**: {kg:.0f} x 1.10 = {design:.0f} kg.',
               f'- **Hoist**: the {lv} booked hoist, rated {b.get("hoist_t")} t, load-tested to {b.get("test_t")} t '
               f'(125 % of rated, ASME B30.2) - covers the design load with margin '

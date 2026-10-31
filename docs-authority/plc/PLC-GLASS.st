@@ -6,7 +6,7 @@ VAR
   (* 100 ms cyclic task per AQS-CTL-002 *)
   GLASS_DIGESTLT-01_PV : REAL ;  (* A-M-182 liquid height )
   GLASS_DIGESTPT-01_PV : REAL ;  (* no design pressure on the graph )
-  GLASS_DIGESTTE-01_PV : REAL ;  (* band by service )
+  GLASS_DIGESTTE-01_PV : REAL ;  (* design T 85 C )
   GLASS_BURNOUTPT-01_PV : REAL ;  (* no design pressure on the graph )
   GLASS_BURNOUTTE-01_PV : REAL ;  (* band by service )
   GLASS_MILLPT-01_PV : REAL ;  (* no design pressure on the graph )
@@ -24,9 +24,11 @@ END_VAR
   FB_AI_GLASS_DIGESTPT-01( PV := GLASS_DIGESTPT-01_PV );
   GLASS_DIGESTPT-01_ALARM_HI := 9.0 ;  (* 90 % of span, registered LSH convention )
 
-  (* TEMPERATURE monitoring block - indication, no set-point invented )
-  FB_AI_GLASS_DIGESTTE-01( PV := GLASS_DIGESTTE-01_PV );
-  GLASS_DIGESTTE-01_ALARM_HI := 540.0 ;  (* 90 % of span, registered LSH convention )
+  (* TEMPERATURE control loop - set-point from the graph basis *)
+  GLASS_DIGESTTE-01_SP := 85.0 ;  (* graph basis: design T 85 C )
+  FB_PI_GLASS_DIGESTTE-01( PV := GLASS_DIGESTTE-01_PV, SP := GLASS_DIGESTTE-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
+  GLASS_DIGESTTE-01_ALARM_HI := 93.50000000000001 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  GLASS_DIGESTTE-01_ALARM_LO := 76.5 ;
 
   (* PRESSURE monitoring block - indication, no set-point invented )
   FB_AI_GLASS_BURNOUTPT-01( PV := GLASS_BURNOUTPT-01_PV );

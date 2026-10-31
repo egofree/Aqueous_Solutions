@@ -34,6 +34,16 @@
   "docnum": "AQS-DUTY-072",
   "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
  },
+ "AQUA_TANK": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
+ },
+ "AQUA_UV": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
+ },
  "BACKUP_GEN": {
   "doc": "docs-authority/POWER_SIZING.md",
   "docnum": "AQS-ELEC-007",
@@ -43,6 +53,16 @@
   "doc": "docs-authority/sizing/BAGHOUSE.md",
   "docnum": "AQS-SIZE-BAGHOUSE",
   "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "BEE_HIVE": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
+ },
+ "BIOFILTER": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
  },
  "BLACK_DIGEST": {
   "doc": "docs-authority/sizing/SANITATION.md",
@@ -69,6 +89,11 @@
   "docnum": "AQS-DUTY-070",
   "family": "UPW polish RO/EDI (flow_graph/param/upw_polish.py)"
  },
+ "BSFL_BIN": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
+ },
  "C29_RECYCLE": {
   "doc": "docs-authority/sizing/C29_RECYCLE.md",
   "docnum": "AQS-SIZE-C29_RECYCLE",
@@ -89,6 +114,11 @@
   "docnum": "AQS-DUTY-072",
   "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
  },
+ "CHICKEN_COOP": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
+ },
  "COLD_MILL": {
   "doc": "docs-authority/MFG_TOOLS.md",
   "docnum": "AQS-MFG-010",
@@ -98,6 +128,11 @@
   "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
   "docnum": "AQS-DUTY-072",
   "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "COMMON_AREA": {
+  "doc": "docs-authority/HAB_DESIGN.md",
+  "docnum": "AQS-HAB-002",
+  "family": "Hab interior zoning (docs-authority/_farm_hab.py; A-M-419)"
  },
  "CONTINUOUS_RECYCLE": {
   "doc": "docs-authority/sizing/CONTINUOUS_RECYCLE.md",
@@ -173,6 +208,16 @@
   "doc": "docs-authority/sizing/DRY_COOLER.md",
   "docnum": "AQS-SIZE-DRY_COOLER",
   "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "DUCKWEED": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
+ },
+ "DUCK_PEN": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
  },
  "ELECTRODE_COAT": {
   "doc": "docs-authority/sizing/ELECTRODE_COAT.md",
@@ -254,6 +299,11 @@
   "docnum": "AQS-DUTY-064",
   "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
  },
+ "FEED_PREP": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
+ },
  "FILM_CAST": {
   "doc": "docs-authority/sizing/POLYMERS_LINE.md",
   "docnum": "AQS-DUTY-073",
@@ -293,6 +343,11 @@
   "doc": "docs-authority/sizing/F_RECOVER.md",
   "docnum": "AQS-SIZE-F_RECOVER",
   "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "GALLEY": {
+  "doc": "docs-authority/HAB_DESIGN.md",
+  "docnum": "AQS-HAB-002",
+  "family": "Hab interior zoning (docs-authority/_farm_hab.py; A-M-419)"
  },
  "GAS_ATOMIZER": {
   "doc": "docs-authority/MFG_TOOLS.md",
@@ -348,6 +403,16 @@
   "doc": "docs-authority/sizing/GREY_TREAT.md",
   "docnum": "AQS-SIZE-GREY_TREAT",
   "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "GROWBED_A": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
+ },
+ "GROWBED_B": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
  },
  "GROW_BED": {
   "doc": "docs-authority/sizing/GROW_BED.md",
@@ -464,6 +529,11 @@
   "docnum": "AQS-SIZE-MAU_HX",
   "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
+ "MEDICAL": {
+  "doc": "docs-authority/HAB_DESIGN.md",
+  "docnum": "AQS-HAB-002",
+  "family": "Hab interior zoning (docs-authority/_farm_hab.py; A-M-419)"
+ },
  "MEOH_COND": {
   "doc": "docs-authority/sizing/MEOH_TRAIN.md",
   "docnum": "AQS-DUTY-077",
@@ -513,6 +583,11 @@
   "doc": "docs-authority/sizing/HOUSE_SCRUBBERS.md",
   "docnum": "AQS-DUTY-079",
   "family": "House scrubbers (flow_graph/param/house_scrubbers.py)"
+ },
+ "MET_SYN": {
+  "doc": "docs-authority/sizing/REACTOR_DESIGN.md",
+  "docnum": "AQS-DUTY-062",
+  "family": "In-house reactors (flow_graph/param/reactor_design.py)"
  },
  "MFG_SHOP": {
   "doc": "docs-authority/sizing/MFG_SHOP.md",
@@ -575,6 +650,11 @@
   "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
  },
  "POLY_F": {
+  "doc": "docs-authority/sizing/POLYMERS_LINE.md",
+  "docnum": "AQS-DUTY-073",
+  "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
+ },
+ "POLY_FIBER": {
   "doc": "docs-authority/sizing/POLYMERS_LINE.md",
   "docnum": "AQS-DUTY-073",
   "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
@@ -679,10 +759,25 @@
   "docnum": "AQS-DUTY-075",
   "family": "Headers and the Q4 bus (flow_graph/param/headers.py)"
  },
+ "QUAIL_CAGE": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
+ },
+ "RABBIT_HUTCH": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
+ },
  "RECTIFIER": {
   "doc": "docs-authority/sizing/RECTIFIER.md",
   "docnum": "AQS-SIZE-RECTIFIER",
   "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "REC_DAYROOM": {
+  "doc": "docs-authority/HAB_DESIGN.md",
+  "docnum": "AQS-HAB-002",
+  "family": "Hab interior zoning (docs-authority/_farm_hab.py; A-M-419)"
  },
  "RELIEF_CRYO": {
   "doc": "docs-authority/sizing/RELIEF_CRYO.md",
@@ -749,6 +844,11 @@
   "docnum": "AQS-SIZE-SI_REDUCE",
   "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
+ "SLEEP_QUARTERS": {
+  "doc": "docs-authority/HAB_DESIGN.md",
+  "docnum": "AQS-HAB-002",
+  "family": "Hab interior zoning (docs-authority/_farm_hab.py; A-M-419)"
+ },
  "SOLAR_PV_CELL": {
   "doc": "docs-authority/sizing/PV_CELL_LINE.md",
   "docnum": "AQS-DUTY-071",
@@ -794,10 +894,20 @@
   "docnum": "AQS-DUTY-073",
   "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
  },
+ "VERMI_BIN": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
+ },
  "WAFER_FAB": {
   "doc": "docs-authority/sizing/WAFER_FAB.md",
   "docnum": "AQS-SIZE-WAFER_FAB",
   "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "WASHROOM": {
+  "doc": "docs-authority/HAB_DESIGN.md",
+  "docnum": "AQS-HAB-002",
+  "family": "Hab interior zoning (docs-authority/_farm_hab.py; A-M-419)"
  },
  "WAX_PATTERN": {
   "doc": "docs-authority/sizing/FOUNDRY_LINE.md",

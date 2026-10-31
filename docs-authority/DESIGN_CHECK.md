@@ -22,21 +22,21 @@ Table 2.1. Closed-form checks
 
 | Check | Module | Item | Model | Independent | Tol | Result |
 |---|---|---|---|---|---|---|
-| QC-01 | `flow_graph/param/balance.py` | mass balance, 106 units (in = out) | 106 | 106 | 1 % per unit | pass |
+| QC-01 | `flow_graph/param/balance.py` | mass balance, 121 units (in = out) | 121 | 121 | 1 % per unit | pass |
 | QC-02 | `flow_graph/param/water_tower.py` | hydro ideal energy kWh = rho g V h | 266.3 | 266.3241 | 1 % | pass |
 | QC-03 | `flow_graph/param/receivers.py` | CRYO_H2 pressure-design wall mm | 10.1559 | 10.1559 | 2 % | pass |
 | QC-03 | `flow_graph/param/receivers.py` | CRYO_O2 pressure-design wall mm | 10.1559 | 10.1559 | 2 % | pass |
 | QC-03 | `flow_graph/param/receivers.py` | CRYO_CO2 pressure-design wall mm | 1.085 | 1.085 | 2 % | pass |
 | QC-04 | `docs-authority/HEAT_LADDER.md` | Q4_A stored kWh over 30 K (basis 20 kWh_th Q4 hold) | 20 | 20.9 | 10 % | pass |
 | QC-04 | `docs-authority/HEAT_LADDER.md` | Q4_B stored kWh over 30 K (basis 20 kWh_th Q4 hold) | 20 | 20.9 | 10 % | pass |
-| QC-05 | `flow_graph/param/write_graph.py` | kW of the 65 feeder-supplied units: node continuous kW vs SF- feeder edges | 119.8357 | 119.8357 | 1 % | pass |
-| QC-06 | `docs-authority/_struct_loads.py` | equipment rows with test >= operating >= empty | 179 | 179 | 0 % | pass |
+| QC-05 | `flow_graph/param/write_graph.py` | kW of the 67 feeder-supplied units: node continuous kW vs SF- feeder edges | 151.3112 | 151.3112 | 1 % | pass |
+| QC-06 | `docs-authority/_struct_loads.py` | equipment rows with test >= operating >= empty | 278 | 278 | 0 % | pass |
 | QC-07 | `flow_graph/param/write_graph.py` | stream compositions sum to 1 and match their note (156 streams) | 156 | 156 | 2 % | pass |
 | QC-09 | `flow_graph/param/receivers.py` | H2 bank kg at 200 bar vs the sized store (AQS-ELEC-007 / X-PAR-12 basis in the graph) | 17 | 17.406 | 5 % | pass |
 | QC-12 | `docs-authority/HEAT_LADDER.md` | Q1_A oil kWh over 80 K (basis 10 kWh) | 10.0 | 12.4667 | 30 % | pass |
 | QC-16 | `flow_graph/param/water_tower.py` | hydro head m, upper to lower water centroid | 36.2119 | 35.9119 | 3 % | pass |
-| QC-17 | `docs-authority/_struct_loads.py` | plant operating kN: level table vs row sum | 65425.0 | 65423.9858 | 1 % | pass |
-| QC-18 | `docs-authority/_foundation.py` | uplift FS = W/U | 1.1 | 1.1002 | 1 % | pass |
+| QC-17 | `docs-authority/_struct_loads.py` | plant operating kN: level table vs row sum | 66642.0 | 66640.7086 | 1 % | pass |
+| QC-18 | `docs-authority/_foundation.py` | uplift FS = W/U | 1.1 | 1.1034 | 1 % | pass |
 | QC-19 | `docs-authority/_wire_specs.py` | 14 AWG R20 ohm/km vs NEC Ch. 9 Table 8 | 8.4708 | 8.451 | 3 % | pass |
 | QC-19 | `docs-authority/_wire_specs.py` | 10 AWG R20 ohm/km vs NEC Ch. 9 Table 8 | 3.3451 | 3.3426 | 3 % | pass |
 | QC-19 | `docs-authority/_wire_specs.py` | 6 AWG R20 ohm/km vs NEC Ch. 9 Table 8 | 1.3246 | 1.3221 | 3 % | pass |
@@ -44,13 +44,13 @@ Table 2.1. Closed-form checks
 | QC-19 | `docs-authority/_wire_specs.py` | 400 kcmil R20 ohm/km vs NEC Ch. 9 Table 8 | 0.0866 | 0.0876 | 3 % | pass |
 | QC-20 | `flow_graph/inventory/motor_designs.py` | MF-08 (1.5 kW IE3) line current A | 2.61 | 2.6073 | 2 % | pass |
 | QC-22 | `docs-authority/_test_rigs.py` | BMED bench NaOH g/h (10 triplets, 8 A, CE 0.80) | 95.5174 | 95.5103 | 1 % | pass |
-| QC-24 | `models/freecad/clash_check.py` | CAD clashes, 27 new elements vs 246 solids | 0 | 0 | 0 | pass |
+| QC-24 | `models/freecad/clash_check.py` | CAD clashes, 27 new elements vs 213 solids | 0 | 0 | 0 | pass |
 | QC-25 | `docs-authority/_wire_specs.py` | WF-01 core OD mm = stranded OD + 2 x 1.905 mm | 6.7447 | 6.7547 | 1 % | pass |
 | QC-26 | `docs-authority/_wire_specs.py` | WF-05 4/c 14 AWG TC-ER OD mm vs published 10.4 mm | 10.4 | 10.4047 | 5 % | pass |
-| QC-27 | `models/freecad/clash_equip.py` | equipment overlaps and corridor intrusions (180 solids) | 0 | 0 | 0 | pass |
+| QC-27 | `models/freecad/clash_equip.py` | equipment overlaps and corridor intrusions (149 solids) | 0 | 0 | 0 | pass |
 | QC-28 | `flow_graph/inventory/motor_designs.py` | induction slot + yoke fit the sheet OD (AQS-INV-008 re-derivation) | 0 | 0 | 0 | pass |
 | QC-29 | `flow_graph/param/water_tower.py` | catch tank top below L-1 FFL - slab (mm) | -6500 | -6300 | <= | pass |
-| QC-30 | `models/freecad/regroup.py` | L-1 flow adjacency m (18 units, 18 moves) | 142.4 | 320.7 | <= | pass |
+| QC-30 | `models/freecad/regroup.py` | L-1 flow adjacency m (18 units, 19 moves) | 178.4 | 375.4 | <= | pass |
 
 No check fails.
 
@@ -64,4 +64,4 @@ The checks have found and led to the correction of the following errors.
 
 ## 4. Review status of the calculation modules
 
-The record covers 163 calculation modules. Of these, 8 are checked automatically by the checks of Table 2.1, and 155 still need a review by a second person; for those, the checker field is blank. The record for each module is in `docs-authority/inventory/DESIGN_CHECK.csv`.
+The record covers 169 calculation modules. Of these, 8 are checked automatically by the checks of Table 2.1, and 161 still need a review by a second person; for those, the checker field is blank. The record for each module is in `docs-authority/inventory/DESIGN_CHECK.csv`.

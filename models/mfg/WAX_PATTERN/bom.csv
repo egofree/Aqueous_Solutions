@@ -1,9 +1,9 @@
 item,description,qty,material,mass_kg,make_or_buy,basis
-1,Bench frame 800 x 600, work top z 850..900,1,carbon steel,255.1,make,"WORK_ORDER step 1; AQS-DUTY-072 bench_prep class"
-2,Extraction hood with the N5 vent stub,1,carbon steel,223.4,make,"task-04 schedule N5"
+1,"Bench frame 800 x 600, work top z 850..900",1,carbon steel,255.1,make,WORK_ORDER step 1; AQS-DUTY-072 bench_prep class
+2,Extraction hood with the N5 vent stub,1,carbon steel,223.4,make,task-04 schedule N5
 3,Wax pot 10 L with the 0.5 kW injector head,1,CS + heater class,26.5,make,"design pot 10 L, injector 0.5 kW; 2.0 kg/d wax"
-4,Pattern table 220 x 300 x 40,1,carbon steel,20.723999999999997,make,"WO step 3"
+4,Pattern table 220 x 300 x 40,1,carbon steel,20.723999999999997,make,WO step 3
 5,N1 pattern discharge chute +X z 600,1,carbon steel,18.84,make,"task-04 schedule N1 (solids, bore not calculated)"
-6,N2 condensate-reclaim trap -X z 160,1,carbon steel,2.2607999999999997,make,"task-04 schedule N2"
-7,N3 make-up hopper -X z 160 (petro-wax class import, A-M-284),1,carbon steel,2.2607999999999997,make,"task-04 schedule N3"
-8,N4 drain well,1,carbon steel,1.0072096647506712,make,"task-04 schedule N4"
+6,N2 condensate-reclaim trap -X z 160,1,carbon steel,2.2607999999999997,make,task-04 schedule N2
+7,"N3 make-up hopper -X z 160 (petro-wax class import, A-M-284)",1,carbon steel,2.2607999999999997,make,task-04 schedule N3
+8,N4 drain well,1,carbon steel,1.0072096647506712,make,task-04 schedule N4

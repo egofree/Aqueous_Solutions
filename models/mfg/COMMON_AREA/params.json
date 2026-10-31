@@ -1,0 +1,13 @@
+{
+  "unit": "COMMON_AREA",
+  "form": "room",
+  "size_mm": [
+    4000,
+    2500,
+    2400
+  ],
+  "size_note": "10 m2 circulation fitout shell (A-M-419) (X-HAB sec3)",
+  "material_class": "aluminium",
+  "wall_mm": 30,
+  "liner_mm": null
+}

@@ -1,0 +1,26 @@
+{
+  "shell_bbox_mm": [
+    650.0,
+    550.0,
+    1150.0
+  ],
+  "envelope_mm": [
+    600,
+    500,
+    1100
+  ],
+  "inside_size_mm_shell": false,
+  "solids": 3,
+  "all_parts_valid": true,
+  "material_class": "pine",
+  "form": "hive",
+  "mass_kg": {
+    "stand": 26.8,
+    "box_deep": 71.3,
+    "box_medium": 71.3,
+    "lid": 5.2,
+    "screen_floor": 1.5
+  },
+  "empty_kg": 176.1,
+  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+}

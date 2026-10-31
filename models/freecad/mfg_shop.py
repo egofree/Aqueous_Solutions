@@ -60,6 +60,32 @@ def _metal_forming(doc, x, y, z, suffix):
     label_plate(doc, "MET_HX_Q4%s" % suffix, x + 7200, y + 3000, z=z + 1100)
 
 
+def _textiles(doc, x, y, z, suffix):
+    """POLY_FIBER crew textile line (A-M-429) - keep-out envelope on the MFG floor.
+
+    FR-finished PP-fleece train: extruder + melt-blown lay + FR finish bath + winder.
+    Dims from the graph params (X-SPEC); the CadQuery machine model follows at its
+    unit task when a cadquery interpreter is available (see unit_freecad_map).
+    """
+    dx, dy, dz = _gsize("POLY_FIBER")
+    add(doc, "POLY_FIBER%s" % suffix, box_at(x + 200, y + 5600, z, dx, dy, dz))
+    label_plate(doc, "POLY_FIBER%s" % suffix, x + 200, y + 5400, z=z + min(dz, 1600))
+
+
+def _gsize(uid, fallback=(1500, 1000, 1500)):
+    """Unit envelope from the graph params (flat size_mm or envelope.size_mm)."""
+    try:
+        import json
+        g = json.load(open(OUT.parents[1] / "flow_graph" / "plant_flow_graph.json"))
+        n = {u["unit_id"]: u for u in g["nodes"]}[uid]
+        p = n.get("params") or {}
+        sz = (p.get("envelope") or {}).get("size_mm") or p.get("size_mm")
+        return [float(v) for v in sz]
+    except Exception as exc:
+        print("  mfg_shop: %s size unreadable (%s) - fallback box" % (uid, exc))
+        return list(fallback)
+
+
 def attach(doc):
     x, y, z = P.MFG_X, P.MFG_Y, P.MFG_Z
     add(doc, "MFG_SHOP", box_at(x, y, z, P.MFG_L, P.MFG_W, P.MFG_H))
@@ -75,9 +101,10 @@ def attach(doc):
             box_at(cx + 2000, y + 200, z, 3600, 3600, 800))
         label_plate(doc, "MFG_FLOOR%s" % suffix, cx + 2000, y + 40,
                     z=P.Z_L0 + 1600)
-        # Metal-forming stubs on first cassette only (M1 massing)
+        # Metal-forming + textile stubs on first cassette only (M1 massing)
         if c == 0:
             _metal_forming(doc, x, y, z, suffix)
+            _textiles(doc, x, y, z, suffix)
 
 
 def build():

@@ -1,7 +1,8 @@
 {
  "_generated_from": {
-  "graph_sha256": "307200ce85a4b6e4ac802b198b2b61760112d5af88cc7956debf461181d0cd08",
-  "generator": "docs-authority/_iso_routes.py"
+  "graph_sha256": "a68069cea430aa988f392ed5983c64b1e0fc779ac1b46b8bff45f81929bf5159",
+  "generator": "docs-authority/_placement_routes.py",
+  "placement_seed_revision": "O"
  },
  "rows": [
   {
@@ -883,10 +884,10 @@
    "legs_mm": [
     11900,
     -1500,
-    -4000,
+    -6000,
     -300
    ],
-   "length_m": 17.7,
+   "length_m": 19.7,
    "elbows": 3
   },
   {
@@ -897,11 +898,11 @@
    "to": "WAFER_FAB",
    "legs_mm": [
     6300,
-    12000,
-    2500,
+    9500,
+    2000,
     -300
    ],
-   "length_m": 21.1,
+   "length_m": 18.1,
    "elbows": 3
   },
   {
@@ -1378,10 +1379,10 @@
    "legs_mm": [
     5100,
     -11400,
-    3800,
+    1800,
     -300
    ],
-   "length_m": 20.6,
+   "length_m": 18.6,
    "elbows": 3
   },
   {
@@ -1422,11 +1423,11 @@
    "to": "RELIEF_CRYO",
    "legs_mm": [
     1200,
-    10600,
-    700,
+    3600,
+    4700,
     -2900
    ],
-   "length_m": 15.4,
+   "length_m": 12.4,
    "elbows": 3
   },
   {
@@ -1542,11 +1543,11 @@
    "to": "LEACH_CSTR_1",
    "legs_mm": [
     1200,
-    -6400,
-    -3100,
+    -13400,
+    900,
     -2500
    ],
-   "length_m": 13.2,
+   "length_m": 18.0,
    "elbows": 3
   },
   {
@@ -1768,10 +1769,25 @@
    "legs_mm": [
     10300,
     4500,
-    -12300,
+    -14300,
     -300
    ],
-   "length_m": 27.4,
+   "length_m": 29.4,
+   "elbows": 3
+  },
+  {
+   "line": "S84",
+   "dn": 15,
+   "class": "M1",
+   "from": "CRYO_N2",
+   "to": "AIR_RECEIVER",
+   "legs_mm": [
+    1200,
+    7600,
+    -3900,
+    -2600
+   ],
+   "length_m": 15.3,
    "elbows": 3
   },
   {
@@ -1797,11 +1813,11 @@
    "to": "RELIEF_CRYO",
    "legs_mm": [
     1200,
-    10600,
-    700,
+    3600,
+    4700,
     -2900
    ],
-   "length_m": 15.4,
+   "length_m": 12.4,
    "elbows": 3
   },
   {
@@ -1813,10 +1829,10 @@
    "legs_mm": [
     950,
     -10500,
-    4000,
+    6000,
     -13200
    ],
-   "length_m": 28.6,
+   "length_m": 30.6,
    "elbows": 3
   },
   {
@@ -1827,11 +1843,11 @@
    "to": "GROW_BED",
    "legs_mm": [
     12550,
-    12000,
-    -1500,
+    9500,
+    -2000,
     -300
    ],
-   "length_m": 26.4,
+   "length_m": 24.4,
    "elbows": 3
   },
   {
@@ -1863,6 +1879,426 @@
    ],
    "length_m": 8.4,
    "elbows": 2
+  },
+  {
+   "line": "F_RECOVER_TO_HF_GEN",
+   "dn": 15,
+   "class": "P3",
+   "from": "F_RECOVER",
+   "to": "HF_GEN",
+   "legs_mm": [
+    2450,
+    6550,
+    15050,
+    -2450
+   ],
+   "length_m": 26.5,
+   "elbows": 3
+  },
+  {
+   "line": "HF_GEN_TO_VDF",
+   "dn": 15,
+   "class": "P3",
+   "from": "HF_GEN",
+   "to": "VDF_SYN",
+   "legs_mm": [
+    2450,
+    1100,
+    1450,
+    -2600
+   ],
+   "length_m": 7.6,
+   "elbows": 3
+  },
+  {
+   "line": "HF_GEN_TO_TFE",
+   "dn": 15,
+   "class": "P3",
+   "from": "HF_GEN",
+   "to": "TFE_SYN",
+   "legs_mm": [
+    2450,
+    1700,
+    -50,
+    -2600
+   ],
+   "length_m": 6.8,
+   "elbows": 3
+  },
+  {
+   "line": "VDF_TO_POLY_F",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "VDF_SYN",
+   "to": "POLY_F",
+   "legs_mm": [
+    2600,
+    0,
+    1400,
+    -2600
+   ],
+   "length_m": 6.6,
+   "elbows": 2
+  },
+  {
+   "line": "TFE_TO_POLY_F",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "TFE_SYN",
+   "to": "POLY_F",
+   "legs_mm": [
+    2600,
+    -600,
+    2900,
+    -2600
+   ],
+   "length_m": 8.7,
+   "elbows": 3
+  },
+  {
+   "line": "MO_CELL_RAFFINATE",
+   "dn": 15,
+   "class": "P1",
+   "from": "MO_CELL",
+   "to": "POLISH_BANK",
+   "legs_mm": [
+    2400,
+    32900,
+    -2900,
+    -1450
+   ],
+   "length_m": 39.6,
+   "elbows": 3
+  },
+  {
+   "line": "EW9_LIQUOR_TO_MO",
+   "dn": 15,
+   "class": "P1",
+   "from": "EW_9",
+   "to": "MO_CELL",
+   "legs_mm": [
+    2820,
+    -25435,
+    5540,
+    -2400
+   ],
+   "length_m": 36.2,
+   "elbows": 3
+  },
+  {
+   "line": "TI_CELL_CL2_TO_CRU",
+   "dn": 15,
+   "class": "P3",
+   "from": "TI_CELL",
+   "to": "CRU",
+   "legs_mm": [
+    2400,
+    31200,
+    -1100,
+    -1450
+   ],
+   "length_m": 36.1,
+   "elbows": 3
+  },
+  {
+   "line": "MO_CELL_ANODE_GAS_TO_CRU",
+   "dn": 15,
+   "class": "P3",
+   "from": "MO_CELL",
+   "to": "CRU",
+   "legs_mm": [
+    2400,
+    32900,
+    -2900,
+    -1450
+   ],
+   "length_m": 39.6,
+   "elbows": 3
+  },
+  {
+   "line": "IND_MELT_TO_CAST",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "IND_MELT",
+   "to": "CAST_LINE",
+   "legs_mm": [
+    2450,
+    -3550,
+    -1900,
+    -2450
+   ],
+   "length_m": 10.3,
+   "elbows": 3
+  },
+  {
+   "line": "VAC_IND_TO_VAC_CAST",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "VAC_IND",
+   "to": "VAC_CAST",
+   "legs_mm": [
+    2450,
+    -2550,
+    -1700,
+    -2450
+   ],
+   "length_m": 9.2,
+   "elbows": 3
+  },
+  {
+   "line": "IND_TO_CONT",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "IND_MELT",
+   "to": "CONT_CAST",
+   "legs_mm": [
+    2450,
+    -7250,
+    -3500,
+    -2450
+   ],
+   "length_m": 15.7,
+   "elbows": 3
+  },
+  {
+   "line": "AL_POT_CL2",
+   "dn": 15,
+   "class": "P3",
+   "from": "AL_POT",
+   "to": "CRU",
+   "legs_mm": [
+    2400,
+    37700,
+    -2900,
+    -1450
+   ],
+   "length_m": 44.5,
+   "elbows": 3
+  },
+  {
+   "line": "MG_POT_CL2",
+   "dn": 15,
+   "class": "P3",
+   "from": "MG_POT",
+   "to": "CRU",
+   "legs_mm": [
+    2400,
+    32800,
+    -1100,
+    -1450
+   ],
+   "length_m": 37.8,
+   "elbows": 3
+  },
+  {
+   "line": "COMB_OFFGAS",
+   "dn": 15,
+   "class": "F1",
+   "from": "COMB_HEAT",
+   "to": "MET_SCRUB",
+   "legs_mm": [
+    6550,
+    41000,
+    -5500,
+    -300
+   ],
+   "length_m": 53.4,
+   "elbows": 3
+  },
+  {
+   "line": "IND_TO_ATOM",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "IND_MELT",
+   "to": "GAS_ATOMIZER",
+   "legs_mm": [
+    8050,
+    33200,
+    -6000,
+    -300
+   ],
+   "length_m": 47.5,
+   "elbows": 3
+  },
+  {
+   "line": "IND_TO_INV",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "IND_MELT",
+   "to": "INV_CAST",
+   "legs_mm": [
+    2450,
+    -4950,
+    -3500,
+    -2450
+   ],
+   "length_m": 13.3,
+   "elbows": 3
+  },
+  {
+   "line": "VAC_TO_INV",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "VAC_IND",
+   "to": "INV_CAST",
+   "legs_mm": [
+    2450,
+    -6650,
+    -1700,
+    -2450
+   ],
+   "length_m": 13.2,
+   "elbows": 3
+  },
+  {
+   "line": "WAX_RECLAIM_TO_PATTERN",
+   "dn": 15,
+   "class": "M2",
+   "from": "SHELL_BURNOUT",
+   "to": "WAX_PATTERN",
+   "legs_mm": [
+    2450,
+    1700,
+    -200,
+    -2600
+   ],
+   "length_m": 7.0,
+   "elbows": 3
+  },
+  {
+   "line": "WAX_TO_OIL",
+   "dn": 15,
+   "class": "M2",
+   "from": "SHELL_BURNOUT",
+   "to": "OIL_FRAC",
+   "legs_mm": [
+    2450,
+    23100,
+    10000,
+    -950
+   ],
+   "length_m": 36.5,
+   "elbows": 3
+  },
+  {
+   "line": "OIL_TO_OLEFIN",
+   "dn": 15,
+   "class": "M2",
+   "from": "OIL_FRAC",
+   "to": "POLY_OLEFIN",
+   "legs_mm": [
+    950,
+    -4200,
+    9700,
+    -2600
+   ],
+   "length_m": 17.4,
+   "elbows": 3
+  },
+  {
+   "line": "MEOH_TO_OLEFIN",
+   "dn": 15,
+   "class": "M1",
+   "from": "MEOH_SYNTH",
+   "to": "POLY_OLEFIN",
+   "legs_mm": [
+    2500,
+    4548,
+    22650,
+    -8600
+   ],
+   "length_m": 38.3,
+   "elbows": 3
+  },
+  {
+   "line": "DIGEST_TO_POLY",
+   "dn": 15,
+   "class": "P1",
+   "from": "BLACK_DIGEST",
+   "to": "POLY_COND",
+   "legs_mm": [
+    2400,
+    -1500,
+    22650,
+    -14600
+   ],
+   "length_m": 41.1,
+   "elbows": 3
+  },
+  {
+   "line": "CRU_TO_VDF",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "CRU",
+   "to": "VDF_SYN",
+   "legs_mm": [
+    1450,
+    -13800,
+    16300,
+    -2600
+   ],
+   "length_m": 34.1,
+   "elbows": 3
+  },
+  {
+   "line": "CRU_TO_TFE",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "CRU",
+   "to": "TFE_SYN",
+   "legs_mm": [
+    1450,
+    -13200,
+    14800,
+    -2600
+   ],
+   "length_m": 32.0,
+   "elbows": 3
+  },
+  {
+   "line": "POLISH_TO_LI",
+   "dn": 15,
+   "class": "P1",
+   "from": "POLISH_BANK",
+   "to": "LI_RECOVER",
+   "legs_mm": [
+    1450,
+    -24400,
+    3000,
+    -2800
+   ],
+   "length_m": 31.6,
+   "elbows": 3
+  },
+  {
+   "line": "WAX_TO_GREASE_CA",
+   "dn": 15,
+   "class": "M2",
+   "from": "PROD_C19_C28",
+   "to": "GREASE_CA",
+   "legs_mm": [
+    2850,
+    550,
+    -350,
+    -2900
+   ],
+   "length_m": 6.7,
+   "elbows": 3
+  },
+  {
+   "line": "WAX_TO_GREASE_LI",
+   "dn": 15,
+   "class": "M2",
+   "from": "PROD_C19_C28",
+   "to": "GREASE_LI",
+   "legs_mm": [
+    2850,
+    2750,
+    -350,
+    -2900
+   ],
+   "length_m": 8.8,
+   "elbows": 3
   },
   {
    "line": "CO2_TO_FARM",
@@ -2147,6 +2583,21 @@
     -2500
    ],
    "length_m": 19.4,
+   "elbows": 3
+  },
+  {
+   "line": "HL-Q4-REJ",
+   "dn": 15,
+   "class": "M1",
+   "from": "Q4_BUS",
+   "to": "DRY_COOLER",
+   "legs_mm": [
+    11660,
+    -9600,
+    3860,
+    -300
+   ],
+   "length_m": 25.4,
    "elbows": 3
   },
   {
@@ -2487,12 +2938,12 @@
    "to": "CRYO_AHU",
    "legs_mm": [
     950,
-    -10000,
-    0,
+    -3000,
+    -4000,
     -13200
    ],
-   "length_m": 24.1,
-   "elbows": 2
+   "length_m": 21.1,
+   "elbows": 3
   },
   {
    "line": "IA-HAB-VAP",
@@ -2502,12 +2953,12 @@
    "to": "CRYO_AHU",
    "legs_mm": [
     1600,
-    2000,
-    0,
+    9000,
+    -4000,
     -13200
    ],
-   "length_m": 16.8,
-   "elbows": 2
+   "length_m": 27.8,
+   "elbows": 3
   },
   {
    "line": "IA-HVAC-COND",
@@ -2517,12 +2968,12 @@
    "to": "ROOF_TANK",
    "legs_mm": [
     18600,
+    -3000,
     4000,
-    0,
     -300
    ],
-   "length_m": 22.9,
-   "elbows": 2
+   "length_m": 25.9,
+   "elbows": 3
   },
   {
    "line": "IA-AHU-AIR",
@@ -2532,11 +2983,11 @@
    "to": "CRYO_AHU",
    "legs_mm": [
     3050,
-    2900,
-    7050,
+    9900,
+    3050,
     -13200
    ],
-   "length_m": 26.2,
+   "length_m": 29.2,
    "elbows": 3
   },
   {
@@ -2582,6 +3033,51 @@
     -2500
    ],
    "length_m": 9.9,
+   "elbows": 3
+  },
+  {
+   "line": "IA-DC-EVAP",
+   "dn": 15,
+   "class": "P1",
+   "from": "DRY_COOLER",
+   "to": "ATMOS",
+   "legs_mm": [
+    2600,
+    5950,
+    -2800,
+    -13250
+   ],
+   "length_m": 24.6,
+   "elbows": 3
+  },
+  {
+   "line": "IA-DC-SPRAY",
+   "dn": 15,
+   "class": "P1",
+   "from": "ROOF_TANK",
+   "to": "DRY_COOLER",
+   "legs_mm": [
+    300,
+    -4600,
+    -5100,
+    -3200
+   ],
+   "length_m": 13.2,
+   "elbows": 3
+  },
+  {
+   "line": "IA-GW-MAKEUP",
+   "dn": 15,
+   "class": "P1",
+   "from": "GW_INTAKE",
+   "to": "ROOF_TANK",
+   "legs_mm": [
+    14300,
+    -1000,
+    6200,
+    -300
+   ],
+   "length_m": 21.8,
    "elbows": 3
   },
   {
@@ -2735,6 +3231,21 @@
    "elbows": 3
   },
   {
+   "line": "IA-HF-SRC",
+   "dn": 50,
+   "class": "P3",
+   "from": "LEACH_CSTR_1",
+   "to": "F_RECOVER",
+   "legs_mm": [
+    2500,
+    -7050,
+    900,
+    -2450
+   ],
+   "length_m": 12.9,
+   "elbows": 3
+  },
+  {
    "line": "IA-NH3-SRC",
    "dn": 50,
    "class": "P1",
@@ -2862,12 +3373,12 @@
    "to": "NORTH_DOCK",
    "legs_mm": [
     4300,
-    0,
-    3500,
+    -2500,
+    3000,
     -300
    ],
-   "length_m": 8.1,
-   "elbows": 2
+   "length_m": 10.1,
+   "elbows": 3
   },
   {
    "line": "IA-LEACH-NOX",
@@ -2983,10 +3494,10 @@
    "legs_mm": [
     10300,
     4500,
-    -12300,
+    -14300,
     -300
    ],
-   "length_m": 27.4,
+   "length_m": 29.4,
    "elbows": 3
   },
   {
@@ -3012,11 +3523,11 @@
    "to": "CRYO_AHU",
    "legs_mm": [
     1200,
-    2000,
-    -1500,
+    6500,
+    -6000,
     -1200
    ],
-   "length_m": 5.9,
+   "length_m": 14.9,
    "elbows": 3
   },
   {
@@ -3643,10 +4154,10 @@
    "legs_mm": [
     3200,
     4600,
-    -7250,
+    -2750,
     -7900
    ],
-   "length_m": 22.9,
+   "length_m": 18.4,
    "elbows": 3
   },
   {
@@ -3658,10 +4169,10 @@
    "legs_mm": [
     2600,
     13800,
-    750,
+    5250,
     -7900
    ],
-   "length_m": 25.1,
+   "length_m": 29.6,
    "elbows": 3
   },
   {
@@ -3673,10 +4184,10 @@
    "legs_mm": [
     2600,
     13800,
-    750,
+    5250,
     -7900
    ],
-   "length_m": 25.1,
+   "length_m": 29.6,
    "elbows": 3
   },
   {
@@ -3687,11 +4198,11 @@
    "to": "CRYO_N2",
    "legs_mm": [
     1900,
-    -4600,
-    3750,
+    -2100,
+    -250,
     -1200
    ],
-   "length_m": 11.4,
+   "length_m": 5.5,
    "elbows": 3
   },
   {
@@ -3703,10 +4214,10 @@
    "legs_mm": [
     1900,
     -3100,
-    6250,
+    3750,
     -1200
    ],
-   "length_m": 12.4,
+   "length_m": 9.9,
    "elbows": 3
   },
   {
@@ -3718,10 +4229,10 @@
    "legs_mm": [
     1900,
     -10600,
-    9750,
+    5250,
     -1200
    ],
-   "length_m": 23.4,
+   "length_m": 18.9,
    "elbows": 3
   },
   {
@@ -3733,10 +4244,10 @@
    "legs_mm": [
     700,
     -10400,
-    -8250,
+    -3750,
     -1900
    ],
-   "length_m": 21.2,
+   "length_m": 16.8,
    "elbows": 3
   },
   {
@@ -3748,10 +4259,85 @@
    "legs_mm": [
     2500,
     9000,
-    850,
+    5350,
     -1900
    ],
-   "length_m": 14.2,
+   "length_m": 18.8,
+   "elbows": 3
+  },
+  {
+   "line": "IA-ELY-H2O",
+   "dn": 15,
+   "class": "P1",
+   "from": "ROOF_TANK",
+   "to": "H2O_ELYZ",
+   "legs_mm": [
+    300,
+    -10500,
+    8100,
+    -19800
+   ],
+   "length_m": 38.7,
+   "elbows": 3
+  },
+  {
+   "line": "IA-ELY-H2",
+   "dn": 15,
+   "class": "M1",
+   "from": "H2O_ELYZ",
+   "to": "CRYO_H2",
+   "legs_mm": [
+    2400,
+    -1500,
+    1400,
+    -1200
+   ],
+   "length_m": 6.5,
+   "elbows": 3
+  },
+  {
+   "line": "IA-ELY-O2",
+   "dn": 15,
+   "class": "M1",
+   "from": "H2O_ELYZ",
+   "to": "CRYO_O2",
+   "legs_mm": [
+    2400,
+    6000,
+    -2100,
+    -1200
+   ],
+   "length_m": 11.7,
+   "elbows": 3
+  },
+  {
+   "line": "IA-O2-PROD",
+   "dn": 15,
+   "class": "M1",
+   "from": "HDR_O2",
+   "to": "PROD_O2",
+   "legs_mm": [
+    3200,
+    8700,
+    10200,
+    -14325
+   ],
+   "length_m": 36.4,
+   "elbows": 3
+  },
+  {
+   "line": "IA-O2-SHIP",
+   "dn": 15,
+   "class": "M1",
+   "from": "PROD_O2",
+   "to": "NORTH_DOCK",
+   "legs_mm": [
+    5425,
+    -14700,
+    3100,
+    -300
+   ],
+   "length_m": 23.5,
    "elbows": 3
   },
   {
@@ -3797,6 +4383,36 @@
     -2650
    ],
    "length_m": 5.2,
+   "elbows": 3
+  },
+  {
+   "line": "IA-MEOH-PROD",
+   "dn": 15,
+   "class": "M1",
+   "from": "MEOH_TANK",
+   "to": "PROD_MEOH",
+   "legs_mm": [
+    2650,
+    20023,
+    8775,
+    -8475
+   ],
+   "length_m": 39.9,
+   "elbows": 3
+  },
+  {
+   "line": "IA-MEOH-SHIP",
+   "dn": 15,
+   "class": "M1",
+   "from": "PROD_MEOH",
+   "to": "NORTH_DOCK",
+   "legs_mm": [
+    5575,
+    -12375,
+    3225,
+    -300
+   ],
+   "length_m": 21.5,
    "elbows": 3
   },
   {
@@ -3875,6 +4491,21 @@
    "elbows": 3
   },
   {
+   "line": "IA-C5-POLY",
+   "dn": 15,
+   "class": "M2",
+   "from": "PROD_C5_C10",
+   "to": "POLY_OLEFIN",
+   "legs_mm": [
+    2850,
+    11100,
+    350,
+    -2600
+   ],
+   "length_m": 16.9,
+   "elbows": 3
+  },
+  {
    "line": "IA-EVAP_ACID-VENT",
    "dn": 15,
    "class": "P3",
@@ -3882,12 +4513,12 @@
    "to": "EVAP_ACID_VS",
    "legs_mm": [
     1300,
-    0,
-    650,
-    -1300
+    -21325,
+    3650,
+    -2500
    ],
-   "length_m": 3.2,
-   "elbows": 2
+   "length_m": 28.8,
+   "elbows": 3
   },
   {
    "line": "IA-VS-NAOH",
@@ -3897,11 +4528,11 @@
    "to": "EVAP_ACID_VS",
    "legs_mm": [
     1450,
-    1625,
-    -1700,
-    -1300
+    -19700,
+    1300,
+    -2500
    ],
-   "length_m": 6.1,
+   "length_m": 24.9,
    "elbows": 3
   },
   {
@@ -3911,12 +4542,12 @@
    "from": "EVAP_ACID_VS",
    "to": "BMED_ACID",
    "legs_mm": [
-    1300,
-    -1625,
-    1700,
+    2500,
+    19700,
+    -1300,
     -1450
    ],
-   "length_m": 6.1,
+   "length_m": 24.9,
    "elbows": 3
   },
   {
@@ -3926,12 +4557,12 @@
    "from": "EVAP_ACID_VS",
    "to": "ALK_SCRUBBER",
    "legs_mm": [
-    1300,
-    3375,
-    9700,
+    2500,
+    24700,
+    6700,
     -700
    ],
-   "length_m": 15.1,
+   "length_m": 34.6,
    "elbows": 3
   },
   {
@@ -3950,6 +4581,21 @@
    "elbows": 3
   },
   {
+   "line": "IA-AIR-RX-OUT",
+   "dn": 15,
+   "class": "P3",
+   "from": "AIR_RECEIVER",
+   "to": "HDR_N2",
+   "legs_mm": [
+    11850,
+    -11000,
+    -5150,
+    -300
+   ],
+   "length_m": 28.3,
+   "elbows": 3
+  },
+  {
    "line": "IA-SOLV-MU",
    "dn": 15,
    "class": "M1",
@@ -3963,11 +4609,1346 @@
    ],
    "length_m": 14.8,
    "elbows": 3
+  },
+  {
+   "line": "POLYF_TO_FILM",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "POLY_F",
+   "to": "FILM_CAST",
+   "legs_mm": [
+    2600,
+    2750,
+    1500,
+    -2450
+   ],
+   "length_m": 9.3,
+   "elbows": 3
+  },
+  {
+   "line": "IA-H2SO4-MU",
+   "dn": 15,
+   "class": "M2",
+   "from": "NORTH_DOCK",
+   "to": "HF_GEN",
+   "legs_mm": [
+    3200,
+    -4900,
+    7850,
+    -8450
+   ],
+   "length_m": 24.4,
+   "elbows": 3
+  },
+  {
+   "line": "IA-HF-PROD",
+   "dn": 15,
+   "class": "P3",
+   "from": "HF_GEN",
+   "to": "WS_HF_ED",
+   "legs_mm": [
+    6100,
+    11500,
+    -13250,
+    -300
+   ],
+   "length_m": 31.1,
+   "elbows": 3
+  },
+  {
+   "line": "MEOH_TO_VDF",
+   "dn": 15,
+   "class": "M1",
+   "from": "MEOH_TANK",
+   "to": "VDF_SYN",
+   "legs_mm": [
+    2650,
+    3848,
+    21300,
+    -8600
+   ],
+   "length_m": 36.4,
+   "elbows": 3
+  },
+  {
+   "line": "MEOH_TO_TFE",
+   "dn": 15,
+   "class": "M1",
+   "from": "MEOH_TANK",
+   "to": "TFE_SYN",
+   "legs_mm": [
+    2650,
+    4448,
+    19800,
+    -8600
+   ],
+   "length_m": 35.5,
+   "elbows": 3
+  },
+  {
+   "line": "VDF_HCL_TO_CRU",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "VDF_SYN",
+   "to": "CRU",
+   "legs_mm": [
+    2600,
+    13800,
+    -16300,
+    -1450
+   ],
+   "length_m": 34.1,
+   "elbows": 3
+  },
+  {
+   "line": "TFE_HCL_TO_CRU",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "TFE_SYN",
+   "to": "CRU",
+   "legs_mm": [
+    2600,
+    13200,
+    -14800,
+    -1450
+   ],
+   "length_m": 32.0,
+   "elbows": 3
+  },
+  {
+   "line": "POLYF_RECLAIM",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "POLY_F",
+   "to": "F_RECOVER",
+   "legs_mm": [
+    2600,
+    -7650,
+    -17900,
+    -2450
+   ],
+   "length_m": 30.6,
+   "elbows": 3
+  },
+  {
+   "line": "FLUORO_TO_MFG",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "POLY_STOCK",
+   "to": "MFG_SHOP",
+   "legs_mm": [
+    8400,
+    14900,
+    -22000,
+    -300
+   ],
+   "length_m": 45.6,
+   "elbows": 3
+  },
+  {
+   "line": "IA-CL2-SHIP",
+   "dn": 15,
+   "class": "P3",
+   "from": "AL_POT",
+   "to": "NORTH_DOCK",
+   "legs_mm": [
+    5500,
+    27700,
+    4100,
+    -300
+   ],
+   "length_m": 37.6,
+   "elbows": 3
+  },
+  {
+   "line": "IA-MGCL2-KROLL",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "TI_CELL",
+   "to": "MG_POT",
+   "legs_mm": [
+    2400,
+    -1600,
+    0,
+    -2400
+   ],
+   "length_m": 6.4,
+   "elbows": 2
+  },
+  {
+   "line": "IA-MGCL2-MU",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "NORTH_DOCK",
+   "to": "MG_POT",
+   "legs_mm": [
+    3200,
+    -22800,
+    -5900,
+    -8400
+   ],
+   "length_m": 40.3,
+   "elbows": 3
+  },
+  {
+   "line": "IA-CL2-MG-TI",
+   "dn": 15,
+   "class": "P3",
+   "from": "MG_POT",
+   "to": "TI_CELL",
+   "legs_mm": [
+    2400,
+    1600,
+    0,
+    -2400
+   ],
+   "length_m": 6.4,
+   "elbows": 2
+  },
+  {
+   "line": "IA-CACL2-MU",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "NORTH_DOCK",
+   "to": "CA_POT",
+   "legs_mm": [
+    3200,
+    -26100,
+    -4100,
+    -8400
+   ],
+   "length_m": 41.8,
+   "elbows": 3
+  },
+  {
+   "line": "IA-CA-CL2-SHIP",
+   "dn": 15,
+   "class": "P3",
+   "from": "CA_POT",
+   "to": "NORTH_DOCK",
+   "legs_mm": [
+    5500,
+    26100,
+    4100,
+    -300
+   ],
+   "length_m": 36.0,
+   "elbows": 3
+  },
+  {
+   "line": "IA-KROLL-CO",
+   "dn": 15,
+   "class": "P3",
+   "from": "TI_CELL",
+   "to": "NORTH_DOCK",
+   "legs_mm": [
+    5500,
+    21200,
+    5900,
+    -300
+   ],
+   "length_m": 32.9,
+   "elbows": 3
+  },
+  {
+   "line": "IA-MO-VENT",
+   "dn": 15,
+   "class": "P3",
+   "from": "MO_CELL",
+   "to": "NORTH_DOCK",
+   "legs_mm": [
+    5500,
+    22900,
+    4100,
+    -300
+   ],
+   "length_m": 32.8,
+   "elbows": 3
+  },
+  {
+   "line": "IA-CR-VENT",
+   "dn": 15,
+   "class": "P3",
+   "from": "CR_CELL",
+   "to": "NORTH_DOCK",
+   "legs_mm": [
+    5500,
+    24500,
+    4100,
+    -300
+   ],
+   "length_m": 34.4,
+   "elbows": 3
+  },
+  {
+   "line": "IA-BURNOUT-VENT",
+   "dn": 15,
+   "class": "P3",
+   "from": "SHELL_BURNOUT",
+   "to": "NORTH_DOCK",
+   "legs_mm": [
+    5550,
+    24100,
+    9000,
+    -300
+   ],
+   "length_m": 39.0,
+   "elbows": 3
+  },
+  {
+   "line": "AQUA_LOOP1",
+   "dn": 15,
+   "class": "P1",
+   "from": "AQUA_TANK",
+   "to": "BIOFILTER",
+   "legs_mm": [
+    6350,
+    6050,
+    -8150,
+    -300
+   ],
+   "length_m": 20.9,
+   "elbows": 3
+  },
+  {
+   "line": "AQUA_NUT",
+   "dn": 15,
+   "class": "P1",
+   "from": "BIOFILTER",
+   "to": "AQUA_UV",
+   "legs_mm": [
+    2600,
+    -2900,
+    9975,
+    -8825
+   ],
+   "length_m": 24.3,
+   "elbows": 3
+  },
+  {
+   "line": "AQUA_LOOP3",
+   "dn": 15,
+   "class": "P1",
+   "from": "GROWBED_A",
+   "to": "GROWBED_B",
+   "legs_mm": [
+    2950,
+    3700,
+    0,
+    -2950
+   ],
+   "length_m": 9.6,
+   "elbows": 2
+  },
+  {
+   "line": "IA-CHICK-H2O",
+   "dn": 15,
+   "class": "P1",
+   "from": "ROOF_TANK",
+   "to": "CHICKEN_COOP",
+   "legs_mm": [
+    300,
+    5750,
+    1550,
+    -13650
+   ],
+   "length_m": 21.2,
+   "elbows": 3
+  },
+  {
+   "line": "EGG_HARVEST",
+   "dn": 15,
+   "class": "P1",
+   "from": "CHICKEN_COOP",
+   "to": "FOOD_STORE",
+   "legs_mm": [
+    5725,
+    -4825,
+    -9625,
+    -300
+   ],
+   "length_m": 20.5,
+   "elbows": 3
+  },
+  {
+   "line": "CHICK_MANURE",
+   "dn": 15,
+   "class": "P1",
+   "from": "CHICKEN_COOP",
+   "to": "BSFL_BIN",
+   "legs_mm": [
+    2250,
+    -4500,
+    4800,
+    -2850
+   ],
+   "length_m": 14.4,
+   "elbows": 3
+  },
+  {
+   "line": "CHICK_VAP",
+   "dn": 15,
+   "class": "P1",
+   "from": "CHICKEN_COOP",
+   "to": "CRYO_AHU",
+   "legs_mm": [
+    2250,
+    -2750,
+    -5550,
+    -7200
+   ],
+   "length_m": 17.8,
+   "elbows": 3
+  },
+  {
+   "line": "FISH_SLUDGE",
+   "dn": 15,
+   "class": "P1",
+   "from": "AQUA_TANK",
+   "to": "BSFL_BIN",
+   "legs_mm": [
+    2650,
+    200,
+    4700,
+    -2850
+   ],
+   "length_m": 10.4,
+   "elbows": 3
+  },
+  {
+   "line": "FRASS",
+   "dn": 15,
+   "class": "P1",
+   "from": "BSFL_BIN",
+   "to": "HOPPER",
+   "legs_mm": [
+    2850,
+    -7250,
+    -7350,
+    -6950
+   ],
+   "length_m": 24.4,
+   "elbows": 3
+  },
+  {
+   "line": "BSFL_VAP",
+   "dn": 15,
+   "class": "P1",
+   "from": "BSFL_BIN",
+   "to": "CRYO_AHU",
+   "legs_mm": [
+    2850,
+    1750,
+    -10350,
+    -7200
+   ],
+   "length_m": 22.1,
+   "elbows": 3
+  },
+  {
+   "line": "FOOD_GALLEY",
+   "dn": 15,
+   "class": "P1",
+   "from": "FOOD_STORE",
+   "to": "GALLEY",
+   "legs_mm": [
+    2825,
+    -10725,
+    775,
+    -8000
+   ],
+   "length_m": 22.3,
+   "elbows": 3
+  },
+  {
+   "line": "GALLEY_MEALS",
+   "dn": 15,
+   "class": "P5",
+   "from": "GALLEY",
+   "to": "HABITATION",
+   "legs_mm": [
+    6700,
+    3800,
+    7300,
+    -300
+   ],
+   "length_m": 18.1,
+   "elbows": 3
+  },
+  {
+   "line": "GALLEY_BIO",
+   "dn": 15,
+   "class": "P1",
+   "from": "GALLEY",
+   "to": "BSFL_BIN",
+   "legs_mm": [
+    2000,
+    11050,
+    13650,
+    -2850
+   ],
+   "length_m": 29.6,
+   "elbows": 3
+  },
+  {
+   "line": "WASH_GREY",
+   "dn": 15,
+   "class": "P1",
+   "from": "WASHROOM",
+   "to": "GREY_TREAT",
+   "legs_mm": [
+    5650,
+    500,
+    -3700,
+    -300
+   ],
+   "length_m": 10.2,
+   "elbows": 3
+  },
+  {
+   "line": "FISH_HARVEST",
+   "dn": 15,
+   "class": "P1",
+   "from": "AQUA_TANK",
+   "to": "FOOD_STORE",
+   "legs_mm": [
+    6125,
+    -125,
+    -9725,
+    -300
+   ],
+   "length_m": 16.3,
+   "elbows": 3
+  },
+  {
+   "line": "IA-AQUA-TOPUP",
+   "dn": 15,
+   "class": "P1",
+   "from": "ROOF_TANK",
+   "to": "AQUA_TANK",
+   "legs_mm": [
+    300,
+    1050,
+    1650,
+    -14050
+   ],
+   "length_m": 17.1,
+   "elbows": 3
+  },
+  {
+   "line": "IA-DUCK-H2O",
+   "dn": 15,
+   "class": "P1",
+   "from": "ROOF_TANK",
+   "to": "DUCK_PEN",
+   "legs_mm": [
+    300,
+    8350,
+    3950,
+    -13950
+   ],
+   "length_m": 26.6,
+   "elbows": 3
+  },
+  {
+   "line": "IA-WASH-FEED",
+   "dn": 15,
+   "class": "P1",
+   "from": "ROOF_TANK",
+   "to": "WASHROOM",
+   "legs_mm": [
+    300,
+    -10300,
+    -4700,
+    -13400
+   ],
+   "length_m": 28.7,
+   "elbows": 3
+  },
+  {
+   "line": "AQUA_LOOP4",
+   "dn": 15,
+   "class": "P1",
+   "from": "GROWBED_B",
+   "to": "DUCKWEED",
+   "legs_mm": [
+    2950,
+    17600,
+    -10550,
+    -2900
+   ],
+   "length_m": 34.0,
+   "elbows": 3
+  },
+  {
+   "line": "AQUA_RETURN2",
+   "dn": 15,
+   "class": "P1",
+   "from": "DUCKWEED",
+   "to": "AQUA_TANK",
+   "legs_mm": [
+    2900,
+    -25450,
+    10050,
+    -2650
+   ],
+   "length_m": 41.0,
+   "elbows": 3
+  },
+  {
+   "line": "DUCK_FISH",
+   "dn": 15,
+   "class": "P1",
+   "from": "DUCKWEED",
+   "to": "AQUA_TANK",
+   "legs_mm": [
+    2900,
+    -25450,
+    10050,
+    -2650
+   ],
+   "length_m": 41.0,
+   "elbows": 3
+  },
+  {
+   "line": "FOOD_HAB",
+   "dn": 15,
+   "class": "P5",
+   "from": "FOOD_STORE",
+   "to": "HABITATION",
+   "legs_mm": [
+    2825,
+    -6925,
+    8075,
+    -1600
+   ],
+   "length_m": 19.4,
+   "elbows": 3
+  },
+  {
+   "line": "DUCK_EGGS",
+   "dn": 15,
+   "class": "P1",
+   "from": "DUCK_PEN",
+   "to": "FOOD_STORE",
+   "legs_mm": [
+    6025,
+    -7425,
+    -12025,
+    -300
+   ],
+   "length_m": 25.8,
+   "elbows": 3
+  },
+  {
+   "line": "DUCK_MANURE",
+   "dn": 15,
+   "class": "P1",
+   "from": "DUCK_PEN",
+   "to": "BSFL_BIN",
+   "legs_mm": [
+    2550,
+    -7100,
+    2400,
+    -2850
+   ],
+   "length_m": 14.9,
+   "elbows": 3
+  },
+  {
+   "line": "DUCK_VAP",
+   "dn": 15,
+   "class": "P1",
+   "from": "DUCK_PEN",
+   "to": "CRYO_AHU",
+   "legs_mm": [
+    2550,
+    -5350,
+    -7950,
+    -7200
+   ],
+   "length_m": 23.1,
+   "elbows": 3
+  },
+  {
+   "line": "QUAIL_H2O",
+   "dn": 15,
+   "class": "P1",
+   "from": "ROOF_TANK",
+   "to": "QUAIL_CAGE",
+   "legs_mm": [
+    300,
+    10350,
+    1850,
+    -13750
+   ],
+   "length_m": 26.2,
+   "elbows": 3
+  },
+  {
+   "line": "QUAIL_EGGS",
+   "dn": 15,
+   "class": "P1",
+   "from": "QUAIL_CAGE",
+   "to": "FOOD_STORE",
+   "legs_mm": [
+    5825,
+    -9425,
+    -9925,
+    -300
+   ],
+   "length_m": 25.5,
+   "elbows": 3
+  },
+  {
+   "line": "QUAIL_DROP",
+   "dn": 15,
+   "class": "P1",
+   "from": "QUAIL_CAGE",
+   "to": "VERMI_BIN",
+   "legs_mm": [
+    2350,
+    4500,
+    2000,
+    -2900
+   ],
+   "length_m": 11.8,
+   "elbows": 3
+  },
+  {
+   "line": "QUAIL_VAP",
+   "dn": 15,
+   "class": "P1",
+   "from": "QUAIL_CAGE",
+   "to": "CRYO_AHU",
+   "legs_mm": [
+    2350,
+    -7350,
+    -5850,
+    -7200
+   ],
+   "length_m": 22.8,
+   "elbows": 3
+  },
+  {
+   "line": "RABBIT_FORAGE",
+   "dn": 15,
+   "class": "P5",
+   "from": "GROW_BED",
+   "to": "RABBIT_HUTCH",
+   "legs_mm": [
+    950,
+    6050,
+    -1050,
+    -8400
+   ],
+   "length_m": 16.4,
+   "elbows": 3
+  },
+  {
+   "line": "RABBIT_MEAT",
+   "dn": 15,
+   "class": "P1",
+   "from": "RABBIT_HUTCH",
+   "to": "FOOD_STORE",
+   "legs_mm": [
+    5875,
+    -11125,
+    -7025,
+    -300
+   ],
+   "length_m": 24.3,
+   "elbows": 3
+  },
+  {
+   "line": "RABBIT_MANURE",
+   "dn": 15,
+   "class": "P1",
+   "from": "RABBIT_HUTCH",
+   "to": "GROWBED_B",
+   "legs_mm": [
+    2400,
+    -3150,
+    3200,
+    -2950
+   ],
+   "length_m": 11.7,
+   "elbows": 3
+  },
+  {
+   "line": "RABBIT_VAP",
+   "dn": 15,
+   "class": "P1",
+   "from": "RABBIT_HUTCH",
+   "to": "CRYO_AHU",
+   "legs_mm": [
+    2400,
+    -9050,
+    -2950,
+    -7200
+   ],
+   "length_m": 21.6,
+   "elbows": 3
+  },
+  {
+   "line": "NECTAR_FORAGE",
+   "dn": 15,
+   "class": "P5",
+   "from": "GROW_BED",
+   "to": "BEE_HIVE",
+   "legs_mm": [
+    950,
+    7400,
+    -950,
+    -8650
+   ],
+   "length_m": 17.9,
+   "elbows": 3
+  },
+  {
+   "line": "HONEY",
+   "dn": 15,
+   "class": "P1",
+   "from": "BEE_HIVE",
+   "to": "FOOD_STORE",
+   "legs_mm": [
+    6125,
+    -12475,
+    -7125,
+    -300
+   ],
+   "length_m": 26.0,
+   "elbows": 3
+  },
+  {
+   "line": "BEE_VAP",
+   "dn": 15,
+   "class": "P1",
+   "from": "BEE_HIVE",
+   "to": "CRYO_AHU",
+   "legs_mm": [
+    2650,
+    -10400,
+    -3050,
+    -7200
+   ],
+   "length_m": 23.3,
+   "elbows": 3
+  },
+  {
+   "line": "VERMI_FEED",
+   "dn": 15,
+   "class": "P5",
+   "from": "GROW_BED",
+   "to": "VERMI_BIN",
+   "legs_mm": [
+    950,
+    8850,
+    3850,
+    -8900
+   ],
+   "length_m": 22.6,
+   "elbows": 3
+  },
+  {
+   "line": "VERMICOMPOST",
+   "dn": 15,
+   "class": "M1",
+   "from": "VERMI_BIN",
+   "to": "GROWBED_A",
+   "legs_mm": [
+    2900,
+    -9650,
+    -1700,
+    -2950
+   ],
+   "length_m": 17.2,
+   "elbows": 3
+  },
+  {
+   "line": "WORM_TEA",
+   "dn": 15,
+   "class": "M1",
+   "from": "VERMI_BIN",
+   "to": "GROWBED_A",
+   "legs_mm": [
+    2900,
+    -9650,
+    -1700,
+    -2950
+   ],
+   "length_m": 17.2,
+   "elbows": 3
+  },
+  {
+   "line": "DUCK_FODDER",
+   "dn": 15,
+   "class": "P1",
+   "from": "DUCKWEED",
+   "to": "DUCK_PEN",
+   "legs_mm": [
+    2900,
+    -18150,
+    12350,
+    -2550
+   ],
+   "length_m": 36.0,
+   "elbows": 3
+  },
+  {
+   "line": "DUCK_GREY",
+   "dn": 15,
+   "class": "P1",
+   "from": "DUCK_PEN",
+   "to": "GREY_TREAT",
+   "legs_mm": [
+    6200,
+    -18150,
+    -12350,
+    -300
+   ],
+   "length_m": 37.0,
+   "elbows": 3
+  },
+  {
+   "line": "DUCK_FORM",
+   "dn": 15,
+   "class": "P1",
+   "from": "DUCKWEED",
+   "to": "FEED_PREP",
+   "legs_mm": [
+    2900,
+    -23250,
+    11350,
+    -2350
+   ],
+   "length_m": 39.9,
+   "elbows": 3
+  },
+  {
+   "line": "EGGSHELL_RET",
+   "dn": 15,
+   "class": "P1",
+   "from": "GALLEY",
+   "to": "FEED_PREP",
+   "legs_mm": [
+    2000,
+    13050,
+    10250,
+    -2350
+   ],
+   "length_m": 27.6,
+   "elbows": 3
+  },
+  {
+   "line": "LAYER_FEED",
+   "dn": 15,
+   "class": "P1",
+   "from": "FEED_PREP",
+   "to": "CHICKEN_COOP",
+   "legs_mm": [
+    2350,
+    2500,
+    -1400,
+    -2250
+   ],
+   "length_m": 8.5,
+   "elbows": 3
+  },
+  {
+   "line": "QUAIL_RATION",
+   "dn": 15,
+   "class": "P1",
+   "from": "FEED_PREP",
+   "to": "QUAIL_CAGE",
+   "legs_mm": [
+    2350,
+    7100,
+    -1100,
+    -2350
+   ],
+   "length_m": 12.9,
+   "elbows": 3
+  },
+  {
+   "line": "DUCK_STORE",
+   "dn": 15,
+   "class": "P1",
+   "from": "FEED_PREP",
+   "to": "FOOD_STORE",
+   "legs_mm": [
+    5825,
+    -2325,
+    -11025,
+    -300
+   ],
+   "length_m": 19.5,
+   "elbows": 3
+  },
+  {
+   "line": "FORM_REJECT",
+   "dn": 15,
+   "class": "P1",
+   "from": "FEED_PREP",
+   "to": "BSFL_BIN",
+   "legs_mm": [
+    2350,
+    -2000,
+    3400,
+    -2850
+   ],
+   "length_m": 10.6,
+   "elbows": 3
+  },
+  {
+   "line": "FORM_VAP",
+   "dn": 15,
+   "class": "P1",
+   "from": "FEED_PREP",
+   "to": "CRYO_AHU",
+   "legs_mm": [
+    2350,
+    -250,
+    -6950,
+    -7200
+   ],
+   "length_m": 16.8,
+   "elbows": 3
+  },
+  {
+   "line": "DUCK_GREENS",
+   "dn": 15,
+   "class": "P1",
+   "from": "DUCKWEED",
+   "to": "GALLEY",
+   "legs_mm": [
+    2900,
+    -36300,
+    1100,
+    -2000
+   ],
+   "length_m": 42.3,
+   "elbows": 3
+  },
+  {
+   "line": "AQUA_SAN",
+   "dn": 15,
+   "class": "P1",
+   "from": "AQUA_UV",
+   "to": "GROWBED_A",
+   "legs_mm": [
+    2825,
+    1000,
+    -1325,
+    -2950
+   ],
+   "length_m": 8.1,
+   "elbows": 3
+  },
+  {
+   "line": "AQUA_BYPASS",
+   "dn": 15,
+   "class": "P1",
+   "from": "BIOFILTER",
+   "to": "GROWBED_A",
+   "legs_mm": [
+    2600,
+    -1900,
+    8650,
+    -8950
+   ],
+   "length_m": 22.1,
+   "elbows": 3
+  },
+  {
+   "line": "LARVAE_FRESH",
+   "dn": 15,
+   "class": "P1",
+   "from": "BSFL_BIN",
+   "to": "FEED_PREP",
+   "legs_mm": [
+    2850,
+    2000,
+    -3400,
+    -2350
+   ],
+   "length_m": 10.6,
+   "elbows": 3
+  },
+  {
+   "line": "DUCK_RATION",
+   "dn": 15,
+   "class": "P1",
+   "from": "FEED_PREP",
+   "to": "DUCK_PEN",
+   "legs_mm": [
+    2350,
+    5100,
+    1000,
+    -2550
+   ],
+   "length_m": 11.0,
+   "elbows": 3
+  },
+  {
+   "line": "FORM_PRESS",
+   "dn": 15,
+   "class": "P1",
+   "from": "FEED_PREP",
+   "to": "GROWBED_B",
+   "legs_mm": [
+    2350,
+    5650,
+    -800,
+    -2950
+   ],
+   "length_m": 11.8,
+   "elbows": 3
+  },
+  {
+   "line": "BED_GREENS",
+   "dn": 15,
+   "class": "P1",
+   "from": "GROWBED_B",
+   "to": "FOOD_STORE",
+   "legs_mm": [
+    6425,
+    -7975,
+    -10225,
+    -300
+   ],
+   "length_m": 24.9,
+   "elbows": 3
+  },
+  {
+   "line": "BED_ET",
+   "dn": 15,
+   "class": "P1",
+   "from": "GROWBED_B",
+   "to": "CRYO_AHU",
+   "legs_mm": [
+    2950,
+    -5900,
+    -6150,
+    -7200
+   ],
+   "length_m": 22.2,
+   "elbows": 3
+  },
+  {
+   "line": "NUT_AQUA",
+   "dn": 15,
+   "class": "P1",
+   "from": "NORTH_DOCK",
+   "to": "DUCKWEED",
+   "legs_mm": [
+    3200,
+    32500,
+    -13400,
+    -2900
+   ],
+   "length_m": 52.0,
+   "elbows": 3
+  },
+  {
+   "line": "NUT_AQUA_BED",
+   "dn": 15,
+   "class": "P1",
+   "from": "NORTH_DOCK",
+   "to": "GROWBED_B",
+   "legs_mm": [
+    3200,
+    14900,
+    -2850,
+    -2950
+   ],
+   "length_m": 23.9,
+   "elbows": 3
+  },
+  {
+   "line": "CA_HOPPER",
+   "dn": 15,
+   "class": "P1",
+   "from": "NORTH_DOCK",
+   "to": "QUAIL_CAGE",
+   "legs_mm": [
+    3200,
+    16350,
+    -3150,
+    -2350
+   ],
+   "length_m": 25.1,
+   "elbows": 3
+  },
+  {
+   "line": "FOOD_EXPORT",
+   "dn": 15,
+   "class": "P1",
+   "from": "FOOD_STORE",
+   "to": "BOUNDARY_EXPORT",
+   "legs_mm": [
+    2825,
+    -11125,
+    9475,
+    -7800
+   ],
+   "length_m": 31.2,
+   "elbows": 3
+  },
+  {
+   "line": "GAL_GREY",
+   "dn": 15,
+   "class": "P1",
+   "from": "GALLEY",
+   "to": "GREY_TREAT",
+   "legs_mm": [
+    5650,
+    0,
+    -1100,
+    -300
+   ],
+   "length_m": 7.0,
+   "elbows": 2
+  },
+  {
+   "line": "STOCK_TO_FIBER",
+   "dn": 15,
+   "class": "\u2014",
+   "from": "POLY_STOCK",
+   "to": "POLY_FIBER",
+   "legs_mm": [
+    6850,
+    10650,
+    -25750,
+    -300
+   ],
+   "length_m": 43.5,
+   "elbows": 3
+  },
+  {
+   "line": "FR_FINISH",
+   "dn": 15,
+   "class": "P1",
+   "from": "NORTH_DOCK",
+   "to": "POLY_FIBER",
+   "legs_mm": [
+    3200,
+    7750,
+    -13750,
+    -2250
+   ],
+   "length_m": 26.9,
+   "elbows": 3
+  },
+  {
+   "line": "FIBER_SCRAP",
+   "dn": 15,
+   "class": "P2",
+   "from": "POLY_FIBER",
+   "to": "LEACH_CSTR_1",
+   "legs_mm": [
+    2250,
+    -12150,
+    5650,
+    -8500
+   ],
+   "length_m": 28.6,
+   "elbows": 3
+  },
+  {
+   "line": "FLEECE_TO_MFG",
+   "dn": 15,
+   "class": "P1",
+   "from": "POLY_FIBER",
+   "to": "MFG_SHOP",
+   "legs_mm": [
+    2250,
+    4250,
+    3750,
+    -700
+   ],
+   "length_m": 10.9,
+   "elbows": 3
+  },
+  {
+   "line": "TEXTILE_HAB",
+   "dn": 15,
+   "class": "P5",
+   "from": "MFG_SHOP",
+   "to": "HABITATION",
+   "legs_mm": [
+    5400,
+    -12000,
+    5000,
+    -300
+   ],
+   "length_m": 22.7,
+   "elbows": 3
+  },
+  {
+   "line": "IA-MEOH-CH3SH",
+   "dn": 15,
+   "class": "M1",
+   "from": "MEOH_SYNTH",
+   "to": "MET_SYN",
+   "legs_mm": [
+    2500,
+    16398,
+    2650,
+    -2450
+   ],
+   "length_m": 24.0,
+   "elbows": 3
+  },
+  {
+   "line": "IA-H2S-CH3SH",
+   "dn": 15,
+   "class": "P1",
+   "from": "BLACK_DIGEST",
+   "to": "MET_SYN",
+   "legs_mm": [
+    2400,
+    10350,
+    4050,
+    -8450
+   ],
+   "length_m": 25.2,
+   "elbows": 3
+  },
+  {
+   "line": "IA-NH3-MET",
+   "dn": 15,
+   "class": "P1",
+   "from": "WS_AMMONIA",
+   "to": "MET_SYN",
+   "legs_mm": [
+    2650,
+    -2950,
+    -5100,
+    -2450
+   ],
+   "length_m": 13.2,
+   "elbows": 3
+  },
+  {
+   "line": "DL_MET_TO_FEED",
+   "dn": 15,
+   "class": "P1",
+   "from": "MET_SYN",
+   "to": "CHICKEN_COOP",
+   "legs_mm": [
+    2450,
+    5100,
+    5850,
+    -2250
+   ],
+   "length_m": 15.7,
+   "elbows": 3
   }
  ],
  "summary": {
-  "routed": 264,
-  "missing_position": 62,
-  "total_m": 4596
+  "routed": 396,
+  "missing_position": 0,
+  "total_m": 7874
  }
 }

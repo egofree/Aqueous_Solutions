@@ -26,7 +26,8 @@ def rows():
         R.append(dict(sector=sector or n.get('sector_id') or 'MFG', subsystem=sub or blk.get(u) or n.get('class') or '-', unit=u, category=cat, item=item, size=size, spec=spec, qty=qty, basis=basis))
     mot = list(csv.DictReader(open(os.path.join(ROOT, 'docs-authority/inventory/MOTOR_INVENTORY.csv'))))
     pumped = {m['unit'] for m in mot if 'pump' in m['device'].lower()}
-    iso = list(csv.DictReader(open(os.path.join(ROOT, 'docs-authority/iso/ISO_SHEETS.csv'))))
+    iso_p = os.path.join(ROOT, 'docs-authority', 'iso', 'ISO_SHEETS.csv')
+    iso = list(csv.DictReader(open(iso_p))) if os.path.exists(iso_p) else []
     sup = {l.split('|')[1].strip(): int(l.split('|')[6]) for l in open(os.path.join(ROOT, 'docs-authority/SUPPORTS.md')) if l.startswith('| ') and l.split('|')[6].strip().isdigit()}
     for s in iso:
         u = s['frm'] if s['frm'] in N else s['to']; dn = f"DN{s['DN']}"; c = s['cls']

@@ -1,456 +1,468 @@
 {
-  "site_id": "death_valley",
-  "site_code": "DV",
-  "groups": {
-    "identity": {
-      "entries": {
-        "name": {
-          "value": "Death Valley variant (parcel outside the national park; Q-033)",
-          "units": "-",
-          "register": "AQS-SITE-002/DV"
-        },
-        "body": {
-          "value": "earth_surface",
-          "units": "-",
-          "register": "AQS-SITE-002"
-        },
-        "latitude_deg": {
-          "value": 36.46,
-          "units": "deg N",
-          "ref": "NOAA_NORMALS_DV"
-        },
-        "longitude_deg": {
-          "value": -116.87,
-          "units": "deg E",
-          "ref": "NOAA_NORMALS_DV"
-        },
-        "elevation_m": {
-          "value": -59.0,
-          "units": "m",
-          "ref": "NOAA_NORMALS_DV"
-        },
-        "site_basis": {
-          "value": "AQS-SITE-006",
-          "units": "document number",
-          "register": "AQS-SITE-006"
-        }
-      }
+ "site_id": "death_valley",
+ "site_code": "DV",
+ "groups": {
+  "identity": {
+   "entries": {
+    "name": {
+     "value": "Death Valley variant (parcel outside the national park; Q-033)",
+     "units": "-",
+     "register": "AQS-SITE-002/DV"
     },
-    "gravity": {
-      "entries": {
-        "g_m_s2": {
-          "value": 9.80665,
-          "units": "m/s2",
-          "ref": "CGPM1901_GN",
-          "note": "standard gravity; local gravity at the study site differs by about 0.1 %"
-        }
-      }
+    "body": {
+     "value": "earth_surface",
+     "units": "-",
+     "register": "AQS-SITE-002"
     },
-    "atmosphere": {
-      "entries": {
-        "pressure_Pa": {
-          "value": 102035,
-          "units": "Pa absolute",
-          "ref": "CGPM1954_ATM",
-          "needs_verification": true,
-          "verification_test": "Station pressure for -59 m from the ASHRAE climatic design conditions or the on-site barometric record; the study uses the standard atmosphere at the station elevation"
-        },
-        "composition_mole_fraction": {
-          "value": {
-            "N2": 0.7808,
-            "O2": 0.2095
-          },
-          "units": "mole fraction, dry air, rounded to four places",
-          "ref": "USSA1976"
-        },
-        "breathable": {
-          "value": true,
-          "units": "-",
-          "ref": "USSA1976"
-        },
-        "vent_sink": {
-          "value": true,
-          "units": "-",
-          "register": "AQS-SITE-002 (open site; vents and stacks discharge to outside air)"
-        },
-        "oxidant": {
-          "value": true,
-          "units": "-",
-          "ref": "USSA1976",
-          "note": "air carries O2 at the composition above"
-        },
-        "molar_mass_kg_kmol": {
-          "value": 28.9644,
-          "units": "kg/kmol, dry air",
-          "ref": "USSA1976"
-        }
-      }
+    "latitude_deg": {
+     "value": 36.46,
+     "units": "deg N",
+     "ref": "NOAA_NORMALS_DV"
     },
-    "thermal": {
-      "entries": {
-        "cooling_dry_bulb_C": {
-          "value": 47.4,
-          "units": "C",
-          "ref": "NOAA_NORMALS_DV",
-          "needs_verification": true,
-          "verification_test": "ASHRAE 0.4 % cooling dry bulb for the nearest listed station (ASHRAE_FUND_2021 ch. 14) or the NSRDB hourly record at the parcel; the July mean daily maximum understates the design value (A-M-385)",
-          "binds": "site_design_dry_bulb_C"
-        },
-        "heating_dry_bulb_C": {
-          "value": -9.4,
-          "units": "C",
-          "ref": "NCEI_DV_EXTREMES",
-          "needs_verification": true,
-          "verification_test": "ASHRAE 99.6 % heating dry bulb for the nearest listed station; the station record low is the interim bounding value"
-        },
-        "insulation_ambient_C": {
-          "value": 25.0,
-          "units": "C",
-          "ref": "NOAA_NORMALS_DV",
-          "needs_verification": true,
-          "verification_test": "Station annual mean temperature from the 1991-2020 normals"
-        }
-      }
+    "longitude_deg": {
+     "value": -116.87,
+     "units": "deg E",
+     "ref": "NOAA_NORMALS_DV"
     },
-    "solar": {
-      "entries": {
-        "pv_yield_kWh_kWp_d": {
-          "value": 6.3,
-          "units": "kWh/kWp/d before losses",
-          "ref": "NREL_PVWATTS",
-          "needs_verification": true,
-          "verification_test": "PVWatts (or pvlib NSRDB hourly) run at the parcel with the site temperature for cell-temperature and soiling losses",
-          "binds": "pv_yield_kWh_kWp_d"
-        },
-        "night_hours": {
-          "value": 14.0,
-          "units": "h/d served from storage",
-          "register": "A-M-060",
-          "needs_verification": true,
-          "verification_test": "Hourly load and irradiance profile",
-          "binds": "night_hours"
-        }
-      }
+    "elevation_m": {
+     "value": -59.0,
+     "units": "m",
+     "ref": "NOAA_NORMALS_DV"
     },
-    "wind": {
-      "entries": {
-        "basic_wind_speed_m_s": {
-          "value": 50.0,
-          "units": "m/s basic wind speed",
-          "register": "A-M-187",
-          "needs_verification": true,
-          "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study",
-          "binds": "wt_wind_ms"
-        }
-      }
+    "site_basis": {
+     "value": "AQS-SITE-006",
+     "units": "document number",
+     "register": "AQS-SITE-006"
     },
-    "snow": {
-      "entries": {
-        "roof_snow_kPa": {
-          "value": 0.0,
-          "units": "kPa flat-roof snow",
-          "ref": "NOAA_NORMALS_DV",
-          "needs_verification": true,
-          "verification_test": "ASCE 7 Hazard Tool ground snow load at the parcel (56 mm/yr mean precipitation; snow negligible)",
-          "binds": "roof_snow_kPa"
-        }
-      }
+    "parcel_policy": {
+     "value": "Furnace Creek climate record (USC00042319) as the bounding hot-desert climate; a parcel outside the park is named only when a desert site design is commissioned, through the parcel-selection interface",
+     "units": "policy",
+     "basis": "Q-033: the location-neutral principle governs; the parcel is a site design input.",
+     "owner": "OPEN_QUESTIONS.md Q-034/Q-021/Q-022/Q-023/Q-025/Q-026/Q-027/Q-030/Q-031/Q-033 closures (2026-10-30)"
     },
-    "seismic": {
-      "entries": {
-        "SDS_g": {
-          "value": 0.5,
-          "units": "g design short-period spectral acceleration = 2/3 Fa Ss",
-          "ref": "ASCE7_22",
-          "needs_verification": true,
-          "verification_test": "ASCE Hazard Tool lookup at the parcel and site class from the geotechnical report",
-          "binds": "wt_SDS"
-        },
-        "SD1_g": {
-          "value": 0.27,
-          "units": "g design 1 s spectral acceleration = 2/3 Fv S1",
-          "ref": "ASCE7_22",
-          "needs_verification": true,
-          "verification_test": "ASCE Hazard Tool lookup at the parcel and site class from the geotechnical report",
-          "binds": "wt_SD1"
-        },
-        "TL_s": {
-          "value": 8.0,
-          "units": "s long-period transition",
-          "ref": "ASCE7_22",
-          "needs_verification": true,
-          "verification_test": "ASCE 7-22 Table 22-12 at the parcel site class"
-        }
-      }
-    },
-    "ground": {
-      "entries": {
-        "allowable_bearing_kPa": {
-          "value": 144.0,
-          "units": "kPa allowable bearing, presumptive",
-          "ref": "IBC2027_1806",
-          "needs_verification": true,
-          "verification_test": "Geotechnical investigation per IBC 1803 at the parcel: borings, allowable bearing and modulus (A-M-387)",
-          "binds": "soil_allow_kPa"
-        },
-        "unit_weight_kN_m3": {
-          "value": 19.0,
-          "units": "kN/m3 moist soil",
-          "register": "A-M-387",
-          "needs_verification": true,
-          "verification_test": "Geotechnical report unit weight",
-          "binds": "soil_unit_weight_kN_m3"
-        },
-        "resistivity_ohm_m": {
-          "value": 500.0,
-          "units": "ohm m dry alluvial-fan soil",
-          "register": "AQS-SITE-002/DV",
-          "needs_verification": true,
-          "verification_test": "Four-pin resistivity survey at the parcel; the earthing grid study reruns at this resistivity"
-        },
-        "ghex_capacity_W_m": {
-          "value": 20.0,
-          "units": "W/m sustained per-metre bore capacity, low end of the band for warm ground",
-          "ref": "KAVANAUGH2014",
-          "register": "A-M-387",
-          "needs_verification": true,
-          "verification_test": "Thermal response test on the first bore at the parcel"
-        },
-        "frost_depth_m": {
-          "value": 0.0,
-          "units": "m",
-          "ref": "NOAA_NORMALS_DV"
-        }
-      }
-    },
-    "radiation": {
-      "not_applicable": "Earth surface under the atmosphere: natural background only, no shielding design case"
-    },
-    "water_sources": {
-      "entries": {
-        "sources": {
-          "value": [
-            {
-              "name": "groundwater_well",
-              "kind": "well",
-              "unit": "WTR",
-              "temperature_C": 30.0,
-              "treatment": "sand separator and reverse osmosis for silica, fluoride and arsenic; the reject is a plant stream with a defined outlet",
-              "ref": "USGS_DV_GW"
-            },
-            {
-              "name": "precipitation",
-              "kind": "rain",
-              "note": "56 mm/yr mean annual precipitation: negligible as a make-up source; the rain-capture units keep their duties and the balance shows the shortfall",
-              "ref": "NOAA_NORMALS_DV"
-            }
-          ],
-          "units": "-",
-          "register": "AQS-PLAN-011 section 6.2"
-        }
-      }
-    },
-    "local_feedstocks": {
-      "entries": {
-        "feed_cases": {
-          "value": [],
-          "units": "-",
-          "register": "AQS-PLAN-011 section 6 (candidates: evaporite borates, halite, gypsum and mining-district scrap; each enters only after mapping to an assay case)"
-        }
-      }
-    },
-    "logistics": {
-      "pending": "X-LOC-04"
-    },
-    "electrical": {
-      "entries": {
-        "ac_frequency_Hz": {
-          "value": 60,
-          "units": "Hz line frequency (IEC 60034-30-1 60 Hz IE3 basis, AQS-INV-005)",
-          "register": "A-M-218 (X-INV-02B)",
-          "binds": "MFG.tools-metal-forming-train.mfa_line_hz"
-        },
-        "earthing_method": {
-          "value": "earth electrode grid",
-          "units": "-",
-          "register": "AQS-SITE-002 soil assumption; docs-authority/_grounding_study.py"
-        }
-      }
-    },
-    "jurisdiction": {
-      "entries": {
-        "code_families": {
-          "value": [
-            "us_land_building"
-          ],
-          "units": "-",
-          "register": "AQS-STD-007 (United States family; state and county codes at the parcel)"
-        },
-        "heat_illness_rules": {
-          "value": true,
-          "units": "-",
-          "ref": "CA_TITLE8_3395",
-          "note": "outdoor work follows the state heat illness rules; binds operations, not sizing"
-        }
-      }
-    },
-    "motion": {
-      "not_applicable": "fixed foundation on land"
-    },
-    "power_portfolio": {
-      "entries": {
-        "sources": {
-          "value": [
-            {
-              "id": "pv",
-              "kind": "pv",
-              "unit": "PV_ARRAY",
-              "role": "primary",
-              "share": 1.0,
-              "stretch_output_frac": 0.0,
-              "resource": "solar.pv_yield_kWh_kWp_d",
-              "register": "AQS-DUTY-012; Q-024 (sources chosen per site)"
-            },
-            {
-              "id": "backup_gen",
-              "kind": "engine",
-              "unit": "BACKUP_GEN",
-              "role": "backup",
-              "register": "AQS-ELEC-007; A-M-383 (hydrogen first)"
-            },
-            {
-              "id": "fuel_cell",
-              "kind": "fuel_cell",
-              "unit": "FUEL_CELL",
-              "role": "backup",
-              "register": "AQS-ELEC-007"
-            },
-            {
-              "id": "methanol_fuel_cell",
-              "kind": "fuel_cell",
-              "unit": "MEOH_FC",
-              "role": "backup",
-              "register": "AQS-ELEC-007"
-            },
-            {
-              "id": "geothermal_orc",
-              "kind": "geothermal",
-              "unit": "GEO_ORC",
-              "role": "option",
-              "flagged_option": true,
-              "register": "owner ruling D-GEO_ORC (installed standby at 0 kW electric)"
-            }
-          ],
-          "units": "-",
-          "register": "AQS-PLAN-011 section 5.5"
-        },
-        "storage": {
-          "value": [
-            {
-              "kind": "electrochemical",
-              "unit": "ZNBR2",
-              "energy_param": "kWh"
-            },
-            {
-              "kind": "pumped_hydro",
-              "unit": "HYDRO_SET",
-              "energy_param": "energy_kwh_recoverable_study"
-            }
-          ],
-          "units": "-",
-          "register": "AQS-PLAN-011 section 5.5; AQS-ELEC-007; Q-009"
-        },
-        "worst_stretch": {
-          "value": {
-            "kind": "night",
-            "hours_entry": "solar.night_hours"
-          },
-          "units": "-",
-          "register": "AQS-PLAN-011 section 5.5 (the baseline worst stretch is the night)"
-        },
-        "oversize_factor": {
-          "value": 2.0,
-          "units": "PV nameplate / PV needed to close the daily balance",
-          "register": "A-M-109",
-          "needs_verification": true,
-          "verification_test": "NREL NSRDB TMY hourly run (PVWatts v8) for the site: fraction of days with yield below 1/factor of the mean; export tariff from the serving utility",
-          "published": "Owner decision, Mike Matthews 2026-10-15 (D75): 200 % of plant requirement; storage still charges on a day at half the mean yield, surplus exported",
-          "binds": "pv_oversize_factor"
-        }
-      }
-    },
-    "scaling": {
-      "entries": {
-        "actions": {
-          "value": [],
-          "units": "-",
-          "register": "AQS-PLAN-011 section 6.2 (no manual factor: the profile bindings drive the sizing; the water-intake unit joins the graph in its own task)"
-        }
-      }
-    },
-    "capabilities": {
-      "entries": {
-        "buoyant_separation": {
-          "value": true,
-          "units": "-",
-          "register": "AQS-SITE-002; gravity.g_m_s2 above zero, steady in direction (fixed foundation)"
-        },
-        "free_surface": {
-          "value": true,
-          "units": "-",
-          "register": "AQS-SITE-002; gravity.g_m_s2 above zero"
-        },
-        "air_heat_sink": {
-          "value": true,
-          "units": "-",
-          "register": "AQS-SITE-002; open site; cooling design dry bulb AQS-SITE-002"
-        },
-        "air_oxidant": {
-          "value": true,
-          "units": "-",
-          "register": "AQS-SITE-002; atmosphere.oxidant"
-        },
-        "vent_sink": {
-          "value": true,
-          "units": "-",
-          "register": "AQS-SITE-002; atmosphere.vent_sink"
-        },
-        "ground_contact": {
-          "value": true,
-          "units": "-",
-          "register": "AQS-SITE-002; land site, soil per AQS-SITE-002"
-        },
-        "liquid_water_at_ambient": {
-          "value": true,
-          "units": "-",
-          "register": "AQS-SITE-002; atmosphere.pressure_Pa above the triple point of water",
-          "note": "groundwater wells at about 30 C (USGS_DV_GW); every evaporative reject litre is charged against the water balance"
-        }
-      }
-    },
-    "heat_rejection": {
-      "entries": {
-        "levels": {
-          "value": [
-            {
-              "level": "low-grade water loop",
-              "unit": "DRY_COOLER",
-              "mode": "evaporative",
-              "duty_param": "rated_kW",
-              "register": "AQS-PLAN-011 section 6.2 (outside air is above the low-grade return for much of the summer; evaporative reject is charged against the water balance)"
-            },
-            {
-              "level": "ground loop",
-              "unit": "GEO_GHEX",
-              "mode": "ground",
-              "duty_param": "Q_GHEX_avail_kW_th",
-              "register": "AQS-DUTY-076"
-            }
-          ],
-          "units": "-",
-          "register": "AQS-PLAN-011 section 6.2"
-        }
-      }
+    "crew": {
+     "value": 4,
+     "units": "persons",
+     "basis": "Q-029: crew size is a profile entry derived from the locale habitable volume and food production; 4 is the issued HAB design occupancy. A locale profile may set its own.",
+     "owner": "OPEN_QUESTIONS.md Q-029 closure (2026-10-30)"
     }
+   }
+  },
+  "gravity": {
+   "entries": {
+    "g_m_s2": {
+     "value": 9.80665,
+     "units": "m/s2",
+     "ref": "CGPM1901_GN",
+     "note": "standard gravity; local gravity at the study site differs by about 0.1 %"
+    }
+   }
+  },
+  "atmosphere": {
+   "entries": {
+    "pressure_Pa": {
+     "value": 102035,
+     "units": "Pa absolute",
+     "ref": "CGPM1954_ATM",
+     "needs_verification": true,
+     "verification_test": "Station pressure for -59 m from the ASHRAE climatic design conditions or the on-site barometric record; the study uses the standard atmosphere at the station elevation"
+    },
+    "composition_mole_fraction": {
+     "value": {
+      "N2": 0.7808,
+      "O2": 0.2095
+     },
+     "units": "mole fraction, dry air, rounded to four places",
+     "ref": "USSA1976"
+    },
+    "breathable": {
+     "value": true,
+     "units": "-",
+     "ref": "USSA1976"
+    },
+    "vent_sink": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002 (open site; vents and stacks discharge to outside air)"
+    },
+    "oxidant": {
+     "value": true,
+     "units": "-",
+     "ref": "USSA1976",
+     "note": "air carries O2 at the composition above"
+    },
+    "molar_mass_kg_kmol": {
+     "value": 28.9644,
+     "units": "kg/kmol, dry air",
+     "ref": "USSA1976"
+    }
+   }
+  },
+  "thermal": {
+   "entries": {
+    "cooling_dry_bulb_C": {
+     "value": 47.4,
+     "units": "C",
+     "ref": "NOAA_NORMALS_DV",
+     "needs_verification": true,
+     "verification_test": "ASHRAE 0.4 % cooling dry bulb for the nearest listed station (ASHRAE_FUND_2021 ch. 14) or the NSRDB hourly record at the parcel; the July mean daily maximum understates the design value (A-M-385)",
+     "binds": "site_design_dry_bulb_C"
+    },
+    "heating_dry_bulb_C": {
+     "value": -9.4,
+     "units": "C",
+     "ref": "NCEI_DV_EXTREMES",
+     "needs_verification": true,
+     "verification_test": "ASHRAE 99.6 % heating dry bulb for the nearest listed station; the station record low is the interim bounding value"
+    },
+    "insulation_ambient_C": {
+     "value": 25.0,
+     "units": "C",
+     "ref": "NOAA_NORMALS_DV",
+     "needs_verification": true,
+     "verification_test": "Station annual mean temperature from the 1991-2020 normals"
+    }
+   }
+  },
+  "solar": {
+   "entries": {
+    "pv_yield_kWh_kWp_d": {
+     "value": 6.3,
+     "units": "kWh/kWp/d before losses",
+     "ref": "NREL_PVWATTS",
+     "needs_verification": true,
+     "verification_test": "PVWatts (or pvlib NSRDB hourly) run at the parcel with the site temperature for cell-temperature and soiling losses",
+     "binds": "pv_yield_kWh_kWp_d"
+    },
+    "night_hours": {
+     "value": 14.0,
+     "units": "h/d served from storage",
+     "register": "A-M-060",
+     "needs_verification": true,
+     "verification_test": "Hourly load and irradiance profile",
+     "binds": "night_hours"
+    }
+   }
+  },
+  "wind": {
+   "entries": {
+    "basic_wind_speed_m_s": {
+     "value": 50.0,
+     "units": "m/s basic wind speed",
+     "register": "A-M-187",
+     "needs_verification": true,
+     "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study",
+     "binds": "wt_wind_ms"
+    }
+   }
+  },
+  "snow": {
+   "entries": {
+    "roof_snow_kPa": {
+     "value": 0.0,
+     "units": "kPa flat-roof snow",
+     "ref": "NOAA_NORMALS_DV",
+     "needs_verification": true,
+     "verification_test": "ASCE 7 Hazard Tool ground snow load at the parcel (56 mm/yr mean precipitation; snow negligible)",
+     "binds": "roof_snow_kPa"
+    }
+   }
+  },
+  "seismic": {
+   "entries": {
+    "SDS_g": {
+     "value": 0.5,
+     "units": "g design short-period spectral acceleration = 2/3 Fa Ss",
+     "ref": "ASCE7_22",
+     "needs_verification": true,
+     "verification_test": "ASCE Hazard Tool lookup at the parcel and site class from the geotechnical report",
+     "binds": "wt_SDS"
+    },
+    "SD1_g": {
+     "value": 0.27,
+     "units": "g design 1 s spectral acceleration = 2/3 Fv S1",
+     "ref": "ASCE7_22",
+     "needs_verification": true,
+     "verification_test": "ASCE Hazard Tool lookup at the parcel and site class from the geotechnical report",
+     "binds": "wt_SD1"
+    },
+    "TL_s": {
+     "value": 8.0,
+     "units": "s long-period transition",
+     "ref": "ASCE7_22",
+     "needs_verification": true,
+     "verification_test": "ASCE 7-22 Table 22-12 at the parcel site class"
+    }
+   }
+  },
+  "ground": {
+   "entries": {
+    "allowable_bearing_kPa": {
+     "value": 144.0,
+     "units": "kPa allowable bearing, presumptive",
+     "ref": "IBC2027_1806",
+     "needs_verification": true,
+     "verification_test": "Geotechnical investigation per IBC 1803 at the parcel: borings, allowable bearing and modulus (A-M-387)",
+     "binds": "soil_allow_kPa"
+    },
+    "unit_weight_kN_m3": {
+     "value": 19.0,
+     "units": "kN/m3 moist soil",
+     "register": "A-M-387",
+     "needs_verification": true,
+     "verification_test": "Geotechnical report unit weight",
+     "binds": "soil_unit_weight_kN_m3"
+    },
+    "resistivity_ohm_m": {
+     "value": 500.0,
+     "units": "ohm m dry alluvial-fan soil",
+     "register": "AQS-SITE-002/DV",
+     "needs_verification": true,
+     "verification_test": "Four-pin resistivity survey at the parcel; the earthing grid study reruns at this resistivity"
+    },
+    "ghex_capacity_W_m": {
+     "value": 20.0,
+     "units": "W/m sustained per-metre bore capacity, low end of the band for warm ground",
+     "ref": "KAVANAUGH2014",
+     "register": "A-M-387",
+     "needs_verification": true,
+     "verification_test": "Thermal response test on the first bore at the parcel"
+    },
+    "frost_depth_m": {
+     "value": 0.0,
+     "units": "m",
+     "ref": "NOAA_NORMALS_DV"
+    }
+   }
+  },
+  "radiation": {
+   "not_applicable": "Earth surface under the atmosphere: natural background only, no shielding design case"
+  },
+  "water_sources": {
+   "entries": {
+    "sources": {
+     "value": [
+      {
+       "name": "groundwater_well",
+       "kind": "well",
+       "unit": "WTR",
+       "temperature_C": 30.0,
+       "treatment": "sand separator and reverse osmosis for silica, fluoride and arsenic; the reject is a plant stream with a defined outlet",
+       "ref": "USGS_DV_GW"
+      },
+      {
+       "name": "precipitation",
+       "kind": "rain",
+       "note": "56 mm/yr mean annual precipitation: negligible as a make-up source; the rain-capture units keep their duties and the balance shows the shortfall",
+       "ref": "NOAA_NORMALS_DV"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 6.2"
+    }
+   }
+  },
+  "local_feedstocks": {
+   "entries": {
+    "feed_cases": {
+     "value": [],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 6 (candidates: evaporite borates, halite, gypsum and mining-district scrap; each enters only after mapping to an assay case)"
+    }
+   }
+  },
+  "logistics": {
+   "pending": "X-LOC-04"
+  },
+  "electrical": {
+   "entries": {
+    "ac_frequency_Hz": {
+     "value": 60,
+     "units": "Hz line frequency (IEC 60034-30-1 60 Hz IE3 basis, AQS-INV-005)",
+     "register": "A-M-218 (X-INV-02B)",
+     "binds": "MFG.tools-metal-forming-train.mfa_line_hz"
+    },
+    "earthing_method": {
+     "value": "earth electrode grid",
+     "units": "-",
+     "register": "AQS-SITE-002 soil assumption; docs-authority/_grounding_study.py"
+    }
+   }
+  },
+  "jurisdiction": {
+   "entries": {
+    "code_families": {
+     "value": [
+      "us_land_building"
+     ],
+     "units": "-",
+     "register": "AQS-STD-007 (United States family; state and county codes at the parcel)"
+    },
+    "heat_illness_rules": {
+     "value": true,
+     "units": "-",
+     "ref": "CA_TITLE8_3395",
+     "note": "outdoor work follows the state heat illness rules; binds operations, not sizing"
+    }
+   }
+  },
+  "motion": {
+   "not_applicable": "fixed foundation on land"
+  },
+  "power_portfolio": {
+   "entries": {
+    "sources": {
+     "value": [
+      {
+       "id": "pv",
+       "kind": "pv",
+       "unit": "PV_ARRAY",
+       "role": "primary",
+       "share": 1.0,
+       "stretch_output_frac": 0.0,
+       "resource": "solar.pv_yield_kWh_kWp_d",
+       "register": "AQS-DUTY-012; Q-024 (sources chosen per site)"
+      },
+      {
+       "id": "backup_gen",
+       "kind": "engine",
+       "unit": "BACKUP_GEN",
+       "role": "backup",
+       "register": "AQS-ELEC-007; A-M-383 (hydrogen first)"
+      },
+      {
+       "id": "fuel_cell",
+       "kind": "fuel_cell",
+       "unit": "FUEL_CELL",
+       "role": "backup",
+       "register": "AQS-ELEC-007"
+      },
+      {
+       "id": "methanol_fuel_cell",
+       "kind": "fuel_cell",
+       "unit": "MEOH_FC",
+       "role": "backup",
+       "register": "AQS-ELEC-007"
+      },
+      {
+       "id": "geothermal_orc",
+       "kind": "geothermal",
+       "unit": "GEO_ORC",
+       "role": "option",
+       "flagged_option": true,
+       "register": "owner ruling D-GEO_ORC (installed standby at 0 kW electric)"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 5.5"
+    },
+    "storage": {
+     "value": [
+      {
+       "kind": "electrochemical",
+       "unit": "ZNBR2",
+       "energy_param": "kWh"
+      },
+      {
+       "kind": "pumped_hydro",
+       "unit": "HYDRO_SET",
+       "energy_param": "energy_kwh_recoverable_study"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 5.5; AQS-ELEC-007; Q-009"
+    },
+    "worst_stretch": {
+     "value": {
+      "kind": "night",
+      "hours_entry": "solar.night_hours"
+     },
+     "units": "-",
+     "register": "AQS-PLAN-011 section 5.5 (the baseline worst stretch is the night)"
+    },
+    "oversize_factor": {
+     "value": 2.0,
+     "units": "PV nameplate / PV needed to close the daily balance",
+     "register": "A-M-109",
+     "needs_verification": true,
+     "verification_test": "NREL NSRDB TMY hourly run (PVWatts v8) for the site: fraction of days with yield below 1/factor of the mean; export tariff from the serving utility",
+     "published": "Owner decision, Mike Matthews 2026-10-15 (D75): 200 % of plant requirement; storage still charges on a day at half the mean yield, surplus exported",
+     "binds": "pv_oversize_factor"
+    }
+   }
+  },
+  "scaling": {
+   "entries": {
+    "actions": {
+     "value": [],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 6.2 (no manual factor: the profile bindings drive the sizing; the water-intake unit joins the graph in its own task)"
+    }
+   }
+  },
+  "capabilities": {
+   "entries": {
+    "buoyant_separation": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; gravity.g_m_s2 above zero, steady in direction (fixed foundation)"
+    },
+    "free_surface": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; gravity.g_m_s2 above zero"
+    },
+    "air_heat_sink": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; open site; cooling design dry bulb AQS-SITE-002"
+    },
+    "air_oxidant": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; atmosphere.oxidant"
+    },
+    "vent_sink": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; atmosphere.vent_sink"
+    },
+    "ground_contact": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; land site, soil per AQS-SITE-002"
+    },
+    "liquid_water_at_ambient": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; atmosphere.pressure_Pa above the triple point of water",
+     "note": "groundwater wells at about 30 C (USGS_DV_GW); every evaporative reject litre is charged against the water balance"
+    }
+   }
+  },
+  "heat_rejection": {
+   "entries": {
+    "levels": {
+     "value": [
+      {
+       "level": "low-grade water loop",
+       "unit": "DRY_COOLER",
+       "mode": "evaporative",
+       "duty_param": "rated_kW",
+       "register": "AQS-PLAN-011 section 6.2 (outside air is above the low-grade return for much of the summer; evaporative reject is charged against the water balance)"
+      },
+      {
+       "level": "ground loop",
+       "unit": "GEO_GHEX",
+       "mode": "ground",
+       "duty_param": "Q_GHEX_avail_kW_th",
+       "register": "AQS-DUTY-076"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 6.2"
+    }
+   }
   }
+ }
 }

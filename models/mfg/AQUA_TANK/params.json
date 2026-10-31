@@ -1,0 +1,13 @@
+{
+  "unit": "AQUA_TANK",
+  "form": "tank",
+  "size_mm": [
+    2100,
+    1100,
+    1100
+  ],
+  "size_note": "2.0 m3 working volume at the 60 kg stock / 30 kg-per-m3 class (TECHTREE tilapia glossary; A-M-415): 2000 x 1000 x 1000 ID + 50 walls, EPDM-lined HDPE (X-FARM sec3)",
+  "material_class": "HDPE",
+  "wall_mm": 15,
+  "liner_mm": 5
+}

@@ -30,3 +30,5 @@ N28,solids,Class 150,char reductant,inlet,160
 N29,solids,Class 150,blown parts,inlet,160
 N30,DN15,Class 150,C19-C28 from the tank,inlet,160
 N31,DN15,Class 150,fluoropolymer stock issue to the shop,inlet,160
+N32,DN15,Class 150,FR-finished fleece to the shop for conversion,inlet,160
+N33,DN15,Class 150,finished crew textiles to the hab issue,outlet,600

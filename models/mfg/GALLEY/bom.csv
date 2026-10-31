@@ -1,0 +1,6 @@
+item,part,qty,material,mass_kg,make_buy,note
+1,floor,1,aluminium,486.0,make,"room class; 12 m2 fitout shell at the A-M-419 room basis, 2400 ceiling (AQS-HAB-001) (X-HAB "
+2,wall_end_door,1,aluminium,207.9,make,"room class; 12 m2 fitout shell at the A-M-419 room basis, 2400 ceiling (AQS-HAB-001) (X-HAB "
+3,wall_end_solid,1,aluminium,284.5,make,"room class; 12 m2 fitout shell at the A-M-419 room basis, 2400 ceiling (AQS-HAB-001) (X-HAB "
+4,wall_long_a,1,aluminium,383.1,make,"room class; 12 m2 fitout shell at the A-M-419 room basis, 2400 ceiling (AQS-HAB-001) (X-HAB "
+5,wall_long_b,1,aluminium,383.1,make,"room class; 12 m2 fitout shell at the A-M-419 room basis, 2400 ceiling (AQS-HAB-001) (X-HAB "

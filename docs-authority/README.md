@@ -91,6 +91,7 @@ The documents that explain how the design is organised and where its numbers com
 | [SITE_SCALING.md](SITE_SCALING.md) | AQS-SITE-004 | Site scaling: capabilities, scaling actions and unit needs for the selected site (generated) |
 | [SITE_COMPARISON.md](SITE_COMPARISON.md) | AQS-SITE-011 |
 | [SITE_UNITS.md](SITE_UNITS.md) | AQS-SITE-013 | Site unit placements: per-locale sizing of the placeholder replacement units (generated) | Cross-locale comparison: scaling actions, power portfolios and unit sizes across every profile (generated) |
+| [HAB_DESIGN.md](HAB_DESIGN.md) | AQS-HAB-002 | Hab interior zoning: room areas and fitout basis (A-M-419) |
 | [HULL_DESIGN.md](HULL_DESIGN.md) | AQS-SITE-012 | Floating-island hull design: operating mass, hydrostatics, stability and freeboard (generated) |
 | [FEED_ASSAY.md](FEED_ASSAY.md) | AQS-ASSAY-001 | Feed assay |
 | [ASSAY.md](ASSAY.md) | AQS-ASSAY-002 | Assay |
@@ -180,6 +181,7 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 
 | Document | Number | Title |
 |---|---|---|
+| [FARM_DESIGN.md](FARM_DESIGN.md) | AQS-FARM-001 | Farm sector design: aquaponics loop, smallstock roster, larvae composting (A-M-415..418) |
 | [FARM_EQUIPMENT.md](FARM_EQUIPMENT.md) | AQS-EQP-FRM-001 | Farm equipment / process list |
 | [NUTRIENT_DOSE.md](NUTRIENT_DOSE.md) | AQS-EQP-NUT-001 | Nutrient dose / N-P process list |
 | [GREENHOUSE_ENVELOPE.md](GREENHOUSE_ENVELOPE.md) | AQS-TRR-GH-001 | Enclosed greenhouse envelope — schedule stub (optional FreeCAD) |
@@ -310,6 +312,8 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [WIRE_SPECS.md](WIRE_SPECS.md) | AQS-INV-007 | Wire family specifications and production plans |
 | [MOTOR_FIRST_ARTICLE.md](MOTOR_FIRST_ARTICLE.md) | AQS-INV-008 | Motor first articles: drawings, traveller and type-test rig |
 | [BOUGHT_SPECS.md](BOUGHT_SPECS.md) | AQS-PRO-002 | Bought-item specification sheets |
+| [COST_ESTIMATE.md](COST_ESTIMATE.md) | AQS-PRO-003 | Cost estimate method |
+| [COST_ESTIMATE_BOM.md](COST_ESTIMATE_BOM.md) | AQS-PRO-003-BOM | Priced bill of materials (AQS-PRO-003) |
 | [PLANT_BOM.md](PLANT_BOM.md) | AQS-PRO-001 | Plant BOM roll-up |
 | [SPARES.md](SPARES.md) | AQS-OPS-003 | Critical spares list |
 | [EOL_RETURN.md](EOL_RETURN.md) | AQS-END-002 | End-of-life material return |
@@ -318,6 +322,9 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [TEST_RIGS.md](TEST_RIGS.md) | AQS-TST-003 | In-house test rigs: build packages |
 | [BENCH_TEST_H2_COMPRESSOR.md](BENCH_TEST_H2_COMPRESSOR.md) | AQS-TST-005 | Hydrogen compressor first-article bench run |
 | [BENCH_TEST_UPW_POLISH.md](BENCH_TEST_UPW_POLISH.md) | AQS-TST-004 | UPW polish module bench test (RO permeance, rejection, EDI resistivity |
+| [BENCH_TEST_BMED_STACK.md](BENCH_TEST_BMED_STACK.md) | AQS-TST-006 | BMED stack polarisation bench (X-MFG-35) |
+| [BENCH_TEST_ZNBR2_FLOW_CELL.md](BENCH_TEST_ZNBR2_FLOW_CELL.md) | AQS-TST-007 | ZNBR2 flow-cell round-trip bench (X-MFG-41) |
+| [PARCEL_INTERFACE.md](PARCEL_INTERFACE.md) | AQS-SITE-014 | Parcel selection interface: the contract a parcel-selection application satisfies to feed the site design tool |
 
 ## CAD, drawings and the design tool
 

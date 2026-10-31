@@ -4,7 +4,7 @@ afterburner flue junction. Bore from the concurrent design flow at a velocity li
 sec. 6: d = sqrt(4 Q / (pi v)), gas 8 m/s, water 1.5 m/s), not below the service minimum
 (gas DN25 to seat take-off valves and instruments, water DN25, flue DN100 for draft and
 condensate drainage - registered assumptions); manifold length = the longest routed run among
-the header's present lines (docs-authority/iso/ISO_SHEETS.csv route_m, committed data), volume
+the header's present lines (route refinements retired with the auto-router 2026-10-27), volume
 and holdup from bore x length; material per service under AQS-STD-002 (O2 header oxygen-clean
 per ASTM_G93). Q4_BUS flow follows the ladder rule: the winter concurrent case (life + HX-9 +
 HX-10 + GHEX recharge + MAU_HX coil) on the 10 K loop swing (drivers heat_loop_dT_K); summer
@@ -63,8 +63,8 @@ def air_rho(d):
 def design(d, g):
     v = lambda k: DR.val(d, k)
     iso = {}
-    p = os.path.join(ROOT, 'docs-authority/iso/ISO_SHEETS.csv')
-    if os.path.exists(p):
+    p = os.path.join(ROOT, 'docs-authority/iso', 'ISO_SHEETS.csv')   # retired: absent since the auto-router rejection
+    if False and os.path.exists(p):
         for r in csv.DictReader(open(p)):
             try: iso[r['line']] = max(iso.get(r['line'], 0.0), float(r['route_m'] or 0))
             except ValueError: pass

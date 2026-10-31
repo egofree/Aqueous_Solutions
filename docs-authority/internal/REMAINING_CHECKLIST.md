@@ -63,7 +63,7 @@ overlays locally.
 - [x] 7.1 Routed pipe racks — `mfg_pipe_rack.scad`, `freecad/pipe_services.py`
 - [x] 7.2 Weld / joint register — `docs-authority/WELD_MAP.md` (AQS-WLD-001)
 - [x] 7.3 Animation frames — schematic D0–D6 + F0 in `models/freecad/animation/`. Generator `freecad/render_frames.py`. GUI 12 fps overlay remains operator-box.
-- [x] 7.4 Farm, wafer fab, habitation, cryo — envelopes. `PHASE_F_ENVELOPES.md`, `campus.py`, `media/F0_campus.png`. Internals out of this model set.
+- [x] 7.4 Farm, wafer fab, habitation, cryo — envelopes. `PHASE_F_ENVELOPES.md`, `campus.py`, the F0 campus render (retired from `media/` 2026-10-27; `campus.py` remains the on-demand renderer). Internals out of this model set.
 
 ## 8. Data
 

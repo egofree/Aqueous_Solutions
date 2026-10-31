@@ -22,6 +22,7 @@ import { ParamsPanel } from './components/ParamsPanel'
 import { RegenStatusBadge } from './components/RegenStatusBadge'
 import { SchematicCanvas } from './components/SchematicCanvas'
 import { SectorToggles } from './components/SectorToggles'
+import { SitePanel } from './components/SitePanel'
 import { SiteInputs } from './components/SiteInputs'
 import { TreeTogglePanel } from './components/TreeTogglePanel'
 import type { TreeNodeDto, ParamsResponse, SystemTreeResponse } from './types/design'
@@ -273,6 +274,13 @@ export default function App() {
               sectors={model.sectors}
               busy={busy}
               onToggle={onToggleSector}
+            />
+            <SitePanel
+              onSandbox={(id, model) => {
+                setSandboxId(id)
+                setModel(model as MvsModel)
+                setSolve(null)
+              }}
             />
             <TreeTogglePanel
               tree={systemTree}

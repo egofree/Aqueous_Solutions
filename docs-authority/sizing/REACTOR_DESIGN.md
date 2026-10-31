@@ -55,3 +55,7 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
 
 | Unit | T, C | Catalyst, g | Bed, mL | Tube | Bed length, mm | Heater, W | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- |
+
+## 8. MET_SYN: DL-methionine synthesis (A-M-416 route A)
+
+The three-step Strecker at 9 g/d DL-Met: CH3SH synth, Michael addition, Strecker + hydrolysis. Glass-lined column at 120 C, 2.0 L working volume, 8 h residence. borosilicate glass-lined, PTFE transfer, Hastelloy C crystalliser. Heater 200 W.

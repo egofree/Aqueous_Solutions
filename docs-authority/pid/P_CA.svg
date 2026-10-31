@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="610" font-family="sans-serif">
 <rect x="4" y="4" width="1492" height="602" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit P_CA · precip · sector DIGESTER · present</text>
-<text x="24" y="54" font-size="10.5">no design params on the graph node</text>
+<text x="24" y="54" font-size="10.5">0.05 kW continuous</text>
 <text x="24" y="72" font-size="10.5">Edges 0 in + 1 out · valves 0 placed / 0 unplaced · instruments 3 (0 SIF) · nozzles 2</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
@@ -35,7 +35,7 @@
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">GREASE_CA</text>
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">PCA_TO_GREASE</text>
-<text x="1476" y="253" font-size="10" text-anchor="end">rate null (study) · solids transfer</text>
+<text x="1476" y="253" font-size="10" text-anchor="end">0.025 · solids transfer</text>
 <text x="24" y="400" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="410" font-size="9">Every incident graph edge is drawn: 0 in, 1 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="425" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/P_CA.csv.</text>
@@ -44,7 +44,7 @@
 <g id="aqs-title-block"><rect x="1116" y="492" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="509" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-P_CA</text>
 <text x="1124" y="526" font-size="9">P&amp;ID P_CA (precip, DIGESTER sector)</text>
-<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 30b49e2a   Issued 2026-10-19</text>
+<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev a51417aa   Issued 2026-10-19</text>
 <text x="1124" y="560" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="577" font-size="9">Graph SHA-256 307200ce85a4b6e4   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="577" font-size="9">Graph SHA-256 a68069cea430aa98   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

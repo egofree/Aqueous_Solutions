@@ -1,11 +1,16 @@
 item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) legs to the hot HF make-up; PE pump and PP-H frame attachments.,docs-authority/duties/F_RECOVER.md
+1,Body / envelope 800 x 600 x 1200 mm,1,PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) legs to the hot HF make-up; PE pump and PP-H frame attachments.,docs-authority/duties/F_RECOVER.md
 2,Process nozzle DN15,3,PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) legs to the hot HF make-up; PE pump and PP-H frame attachments.,one per mass edge; DN from AQS-INV-003
 3,"Motor: transfer pump F_RECOVER_TO_HF_GEN to HF_GEN (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 4,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
 5,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
 6,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-7,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-8,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-9,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-10,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+7,fastener: anchor bolt M10,48,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+8,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
+9,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+10,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+11,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+12,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+13,support: pipe clamp DN15,24,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+14,valve: check valve DN15,1,"PVDF swing/ball check valve, ISO 16137, PTFE seats",AQS-INV-004
+15,valve: isolation valve DN15,2,"PVDF ball valve, ISO 16135, PTFE seats",AQS-INV-004

@@ -1,10 +1,10 @@
 # SI_REDUCE fabrication
 
 Class: furnace; sector GLASS. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
-service line: see the duty sheet section 1 basis
+Envelope: Envelope 1200×1000×1600 mm;
+service line: duty carbothermic silicon reduction for the PV cell line (SOLAR_PV_CELL draws 1.8 kg/d Si); si_kgd 1.8; sio2_kgd 3.85; char_kgd 1.924.
 
-Internals: open: no issued internals basis for a furnace unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
+Internals: reduction furnace internals per the sizing masses: the carbothermic charge sequence (3.85 kg/d quartz + 1.924 kg/d char -> 1.8 kg/d Si) in the retort with the hot-face liner per duty section 3 [docs-authority/sizing/SI_REDUCE.md]
 Material: Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel casing; dry char and silica-class feed handling; the hot face stays dry (M7). Basis: GLASS-sector furnace unit with solids-only edges (CHAR_TO_SI on the graph design day at zero): the construction material is issued here at the lining level (SCHACHT2004 ch. (continues on the duty sheet)
 
 Nozzles: none scheduled yet (unit task 04); route carries the connections once scheduled

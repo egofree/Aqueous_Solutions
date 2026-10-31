@@ -12,7 +12,7 @@ Basis: NEC 2026 110.26(A)(1)-(2); NFPA 101 (2027) 7.3.4.1.1 and IBC 2027 1018.5 
 | RECT_EW | L-1 | S N E | S N E | pass |
 | SOL_ARK_60K | L0 | S N W E | N W E | pass |
 | LOAD_AGG | L0 | S W E | S W E | pass |
-| BOUNDARY_EXPORT | L0 | S N W E | S N W E | pass |
+| BOUNDARY_EXPORT | L0 | S W E | S W E | pass |
 | BACKUP_GEN | L0 | S N W E | S N W E | pass |
 | FUEL_CELL | L0 | S N W E | S N W E | pass |
 | ZNBR2 | L0 | S N W E | S N E | pass |
@@ -22,23 +22,22 @@ Basis: NEC 2026 110.26(A)(1)-(2); NFPA 101 (2027) 7.3.4.1.1 and IBC 2027 1018.5 
 
 | Row | Level | Faces with 914 mm clear |
 |---|---|---|
-| GROW_BED/R8 | L0 | none |
-| GROW_BED/R9 | L0 | none |
-| GROW_BED/R10 | L0 | none |
-| PEANUT/R1 | L0 | none |
-| PEANUT/R2 | L0 | none |
-| PEANUT/R3 | L0 | none |
-| CLOVER | L0 | none |
-| SUNFLOWER | L0 | none |
-| ACEX | L0 | none |
-| BUCL | L0 | none |
-| ALD | L0 | none |
-| FORM | L0 | none |
-| MEAM | L0 | none |
+| MET_SCRUB | L0 | none |
+| PROD_C5_C10 | L-1 | none |
+| COLD_MILL | L0 | none |
+| CONT_CAST | L0 | none |
+| FOOD_STORE | L1 | none |
+| F_RECOVER | L0 | none |
+| GAS_ATOMIZER | L0 | none |
+| GROW_BED | L1 | none |
+| GW_INTAKE | L0 | none |
+| MFG_SHOP | L0 | none |
+| SALT_FEED | L0 | none |
+| STOCK_OUT | L0 | none |
 
-Rows checked for access: 153; rows without a 914 mm face: 13.
+Rows checked for access: 266; rows without a 914 mm face: 12.
 
-Failing items: 13.
+Failing items: 12.
 
 ## Code basis (X-STD-01)
 

@@ -20,7 +20,7 @@ This page records how the plant mass balance is reconciled. The method is minimu
 
 X-SAF-10 corrected the peroxide cell feed from 3.0 kg/d O2 to 0.176 kg/d O2 (Faraday) plus 2.824 kg/d make-up water from ROOF_TANK, and took that water off S40. It did not propagate: TERRACE_IRRIG still transpired 40 kg/d on 37.176 kg/d irrigation, and the cold box still made 2.824 kg/d O2 that nothing drew. Revision A reconciled the two by least squares (IA-TERR-VAP -2.824, IA-O2-RET +2.824) and smeared small moves over 361 edges. Hypothesis tested: missing photosynthetic O2 from the terrace. Rejected for this cut: the terrace has no CO2 supply and no harvest edge, so net CO2 + H2O -> CH2O + O2 fixation there is zero (TAIZ2015), and the sign is wrong (the terrace was short water, the header long O2). Fix: Revision A moves withdrawn; T1-T5 in balance.physics. X-PAR-11 (T6): GROW_BED fixes the 19.0 kg/d CO2 dosed to it (S04 + S89); its photosynthetic O2, 32/44 x CO2 at PQ 1.0, leaves on S87 to CRYO_O2 instead of the trim lump; the trim, compost and nutrient surplus pass the difference; the cold box extracts that much less O2 and the leach dissolved-gas edge falls with it, now asserted under the Henry-law bound (SANDER2015). CO2 edges carry CO2 composition. Verification: T-PAR-02 (A-M-123).
 
-Mass edges 391; held by a transfer function or stoichiometry 362; reconciled 29. Units 138.
+Mass edges 461; held by a transfer function or stoichiometry 432; reconciled 29. Units 156.
 Before: 4 units out of balance (sum of residuals 0.002 kg/d). After: max unit residual 7.18e-04 kg/d. Negative rates after reconciliation: 0.
 
 ## 3. Units out of balance before reconciliation
@@ -45,7 +45,7 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | export | IA-BURNOUT-VENT | dewax/burnout off-gas (burned wax + stea | 0.2 |
 | export | IA-C11-SHIP | C11-C18 surplus shipped | 1.512 |
 | export | IA-C19-SHIP | C19-C28 surplus shipped | 2.218 |
-| export | IA-C5-SHIP | C5-C10 product shipped | 7.131 |
+| export | IA-C5-SHIP | C5-C10 product shipped | 7.04 |
 | export | IA-CA-CL2-SHIP | chlorine byproduct export (water-treatme | 0.097 |
 | export | IA-CL2-SHIP | chlorine byproduct export (water-treatme | 39.419 |
 | export | IA-CR-VENT | chlorinator CO (fuel-gas class export) | 0.202 |
@@ -58,6 +58,8 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | export | IA-NA-PURGE | sodium salt purge equal to the make-up m | 4.394 |
 | export | IA-O2-SHIP | O2 cylinders shipped at the dock | 22.884 |
 | export | IA-SHELL-EXPORT | spent foundry silica (solids return clas | 1.0 |
+| import | CA_HOPPER | mineral calcium carbonate (free-choice h | 0.035 |
+| import | FR_FINISH | phosphorus-FR finish (reagent manifest) | 0.002 |
 | import | IA-ALCL3-MU | anhydrous AlCl3 feed (mining-waste chlor | 49.419 |
 | import | IA-C-CR | carbon reductant (petcoke/char class) | 0.087 |
 | import | IA-C-MO | carbon reductant (petcoke/char class) | 0.012 |
@@ -65,7 +67,7 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | import | IA-CACL2-MU | CaCl2 brine concentrate (mining-waste cl | 0.152 |
 | import | IA-CAF2-MU | fluorspar make-up, acid-spar class >= 97 | 0.326 |
 | import | IA-CR2O3-MU | Cr2O3-equivalent chromite concentrate (d | 0.365 |
-| import | IA-H2O-MU | water make-up for H and O leaving as pro | 64.413 |
+| import | IA-H2O-MU | water make-up for H and O leaving as pro | 57.786 |
 | import | IA-H2SO4-MU | 98 wt% sulfuric acid make-up | 0.404 |
 | import | IA-MGCL2-MU | CaCl2-MgCl2 brine concentrate (mining-wa | 0.04 |
 | import | IA-MOO3-MU | MoO3-equivalent concentrate (dock import | 0.094 |
@@ -74,8 +76,10 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | import | IA-SOLV-MU | solvent resupply (ethanol and acetone) | 0.21 |
 | import | IA-TIO2-MU | TiO2-equivalent rutile concentrate (dock | 0.834 |
 | import | IA-WAX-MU | pattern wax make-up (petro-wax class imp | 0.2 |
+| import | NUT_AQUA | mineral nitrate solution to the raceway | 5.5 |
+| import | NUT_AQUA_BED | mineral nitrate solution to the media be | 1.0 |
 
-**Net trade: +0.001 kg/d** (exports 122.202 - imports 122.201); dock ledger residual +0.002 kg/d (reported, exempt per D-DOCK).
+**Net trade: -0.000 kg/d** (exports 122.111 - imports 122.111); dock ledger residual +0.002 kg/d (reported, exempt per D-DOCK).
 
 ## 4. Moves outside measurement tolerance (2 % of the rate, 1 g/d floor); must be empty
 

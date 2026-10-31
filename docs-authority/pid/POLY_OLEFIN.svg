@@ -19,7 +19,7 @@
 <circle cx="40" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="40" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="40" y="175.5" font-size="7.5" text-anchor="middle">LSH-01</text>
-<text x="62" y="170" font-size="7">SIF-134 · SIL -</text>
+<text x="62" y="170" font-size="7">SIF-146 · SIL -</text>
 <text x="62" y="180" font-size="6.5" fill="#555">level high-high -&gt; close feed valve / stop f</text>
 <circle cx="198" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <text x="198" y="175.5" font-size="7.5" text-anchor="middle">LT-01</text>
@@ -36,7 +36,7 @@
 <circle cx="672" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="672" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="672" y="175.5" font-size="7.5" text-anchor="middle">TE-90</text>
-<text x="694" y="170" font-size="7">SIF-066 · SIL 1</text>
+<text x="694" y="170" font-size="7">SIF-059 · SIL 1</text>
 <text x="694" y="180" font-size="6.5" fill="#555">temperature high-high -&gt; heater supply off</text>
 <rect x="590" y="210" width="320" height="168" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
 <text x="750.0" y="236" font-size="15" font-weight="700" text-anchor="middle">POLY_OLEFIN</text>
@@ -45,7 +45,7 @@
 <polygon points="586,240 577,236 577,244" fill="#111"/>
 <text x="24" y="221" font-size="9" fill="#666" text-anchor="start">PROD_C5_C10</text>
 <text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">IA-C5-POLY</text>
-<text x="24" y="253" font-size="10" text-anchor="start">0.3 kg/d · DN15 M2</text>
+<text x="24" y="253" font-size="10" text-anchor="start">0.4 kg/d · DN15 M2</text>
 <text x="598" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="start">N4</text>
 <line x1="430" y1="286" x2="577" y2="286" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,286 577,282 577,290" fill="#111"/>
@@ -63,7 +63,7 @@
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">PELLET</text>
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">OLEFIN_TO_PELLET</text>
-<text x="1476" y="253" font-size="10" text-anchor="end">0.3 kg/d · solids transfer</text>
+<text x="1476" y="253" font-size="10" text-anchor="end">0.4 kg/d · solids transfer</text>
 <text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N3</text>
 <text x="24" y="428" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="438" font-size="9">Every incident graph edge is drawn: 3 in, 1 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
@@ -73,7 +73,7 @@
 <g id="aqs-title-block"><rect x="1116" y="520" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="537" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-POLY_OLEFIN</text>
 <text x="1124" y="554" font-size="9">P&amp;ID POLY_OLEFIN (reactor, POLYMERS sector)</text>
-<text x="1124" y="571" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev e5df6745   Issued 2026-10-19</text>
+<text x="1124" y="571" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 4fd9f9a3   Issued 2026-10-19</text>
 <text x="1124" y="588" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="605" font-size="9">Graph SHA-256 307200ce85a4b6e4   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="605" font-size="9">Graph SHA-256 a68069cea430aa98   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

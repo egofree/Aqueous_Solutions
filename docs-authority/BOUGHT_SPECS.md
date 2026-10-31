@@ -17,14 +17,14 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 9168 |
-| support | 4097 |
-| electronics | 2147 |
-| instrument | 754 |
-| bearing | 746 |
-| valve | 677 |
-| protection | 205 |
-| seal | 125 |
+| fastener | 15283 |
+| support | 7355 |
+| electronics | 1953 |
+| valve | 988 |
+| instrument | 842 |
+| bearing | 674 |
+| protection | 266 |
+| seal | 222 |
 
 ## 2a. What a datasheet is here
 
@@ -45,35 +45,34 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x388 | 388 | 69 | AHU damper actuator (assumed size); Biogas recirculation blower, diaphragm, about 1 L/min (assumed size); Biogas recirculation diaphragm blower about  |  |
-| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6202-2Z x214; 6205-2Z x52; 6201-2Z x50; 6204-2Z x22; 6206-2Z x12; 6308-2Z x6; 6306-2Z x2 | 358 | 49 | AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size); AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed si |  |
+| OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x144 | 144 | 16 | Biogas recirculation diaphragm blower about 2 L/min (assumed size); CNC vertical mill: axis drive (assumed size); Motor: cathode air blower (BLDC, 57  |  |
+| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6201-2Z x488; 6205-2Z x12; 6206-2Z x8; 6204-2Z x8; 6202-2Z x6; 6308-2Z x6; 6306-2Z x2 | 530 | 75 | Acid day tank D160 x 300 mm with metering pump: drive and non-drive end, IEC 600; Band saw: main drive: drive and non-drive end, IEC 60072 frame 90L ( |  |
 ## 4. Electronics datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x870 | 870 | 96 | AHU damper actuator: run and fault (assumed); AHU exhaust fan: run and fault (assumed); AHU supply fan: run and fault (assumed) |  |
-| OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x754 | 754 | 1 | one per instrument |  |
-| OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x191 | 191 | 68 | AHU damper actuator; Biogas recirculation blower, diaphragm, about 1 L/min; Biogas recirculation diaphragm blower about 2 L/min |  |
-| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.37 kW x104; 0.18 kW x21; 1.1 kW x18; 0.55 kW x10; 0.12 kW x4; 0.25 kW x3; 0.75 kW x1 | 161 | 39 | AHU exhaust fan (assumed VFD at >= 0.75 kW); AHU supply fan (assumed VFD at >= 0.75 kW); Acid day tank D160 x 300 mm with metering pump (assumed VFD a |  |
-| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x102 | 102 | 1 | 1624 points / 16 |  |
-| OF-08 | variable-frequency drive | IEC 61800-5-1 | 2.2 kW x6; 1.1 kW x5; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 18 | 15 | Band saw: main drive (assumed VFD at >= 0.75 kW); Blower, single-stage centrifugal, ratio 1.616, 1.185 kW shaf (assumed VFD at >= ; Blower, single-sta |  |
-| OF-09 | solenoid driver channel | IEC 61131-2 DO | 24 V DC x36 | 36 | 18 | NaOH dosing pump, solenoid diaphragm; on/off valve C29_RECYCLE; on/off valve CUT-3-OUT |  |
-| OF-10 | compressor contactor + overload | IEC 60947-4-1 | 15 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1 | 10 | 3 | air-source heat pump compressor; cryocooler compressor; heat pump compressor |  |
+| OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x676 | 676 | 89 | Acid day tank D160 x 300 mm with metering pump: run and fault (assumed); Band saw: main drive: run and fault (assumed); Biogas recirculation diaphragm |  |
+| OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x842 | 842 | 1 | one per instrument |  |
+| OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x69 | 69 | 15 | Biogas recirculation diaphragm blower about 2 L/min; Motor: cathode air blower (BLDC, 57 mm (NEMA 23 flange)); Motor: cathode air blower (induction IE |  |
+| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.18 kW x242; 0.55 kW x3; 0.12 kW x2; 0.37 kW x2; 0.25 kW x1; 1.1 kW x1; 0.75 kW x1 | 252 | 70 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Body / envelope 600 x 600 x 600 mm (assumed VFD at >= 0.75 kW); Body / env |  |
+| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x95 | 95 | 1 | 1518 points / 16 |  |
+| OF-08 | variable-frequency drive | IEC 61800-5-1 | 2.2 kW x4; 1.5 kW x3; 7.5 kW x3; 1.1 kW x2; 4 kW x1 | 13 | 10 | Band saw: main drive (assumed VFD at >= 0.75 kW); Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf (assumed VFD at >= ; Blower, single-sta |  |
+| OF-10 | compressor contactor + overload | IEC 60947-4-1 | 1.1 kW hermetic x1 | 1 | 1 | cryocooler compressor |  |
 | OF-11 | stepper driver | IEC 61800-5-1 | 24/48 V DC x3 | 3 | 1 | CNC vertical mill: axis drive |  |
-| OF-12 | safety PLC (SIL 2 capable), CPU and I/O rack | IEC 61508 / IEC 61511 | - x2 | 2 | 1 | AQS-CTL-003: 163 SIFs, redundant pair |  |
+| OF-12 | safety PLC (SIL 2 capable), CPU and I/O rack | IEC 61508 / IEC 61511 | - x2 | 2 | 1 | AQS-CTL-003: 175 SIFs, redundant pair |  |
 ## 5. Instrument datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-34 | flow transmitter | electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456 | DN15 x119; DN50 x17; DN32 x1; DN250 x1; DN300 x1 | 139 | 54 | C29_RECYCLE: pumped line (assumed); CUT-1-OUT: pumped line (assumed); CUT-1: pumped line (assumed) | spec per tag on AQS-CTL-001 |
-| OF-35 | pressure transmitter | ceramic diaphragm, IEC 61298 | 0-10 bar x157; 0-16 bar x1 | 158 | 158 | duty item 5 (one per unit); range >= 1.25 x design pressure | spec per tag on AQS-CTL-001 |
-| OF-36 | temperature element | IEC 60751, 316L thermowell | Pt100 class A x161 | 161 | 161 | duty item 5 (assumed one per unit) | spec per tag on AQS-CTL-001 |
-| OF-37 | high-level switch | IEC 60947-5, 316L | vibrating fork x80 | 80 | 80 | duty item 5: high level trips the inlet | spec per tag on AQS-CTL-001 |
-| OF-38 | level transmitter | IEC 62828, PTFE lens | radar 80 GHz x80 | 80 | 80 | duty item 5: liquid holdup | spec per tag on AQS-CTL-001 |
+| OF-34 | flow transmitter | electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456 | DN15 x166; DN50 x17; DN32 x1; DN250 x1; DN300 x1 | 186 | 64 | C29_RECYCLE: pumped line (assumed); CRU_TO_TFE: pumped line (assumed); CRU_TO_VDF: pumped line (assumed) | spec per tag on AQS-CTL-001 |
+| OF-35 | pressure transmitter | ceramic diaphragm, IEC 61298 | 0-10 bar x175; 0-16 bar x1 | 176 | 176 | duty item 5 (one per unit); range >= 1.25 x design pressure | spec per tag on AQS-CTL-001 |
+| OF-36 | temperature element | IEC 60751, 316L thermowell | Pt100 class A x179 | 179 | 179 | duty item 5 (assumed one per unit) | spec per tag on AQS-CTL-001 |
+| OF-37 | high-level switch | IEC 60947-5, 316L | vibrating fork x82 | 82 | 82 | duty item 5: high level trips the inlet | spec per tag on AQS-CTL-001 |
+| OF-38 | level transmitter | IEC 62828, PTFE lens | radar 80 GHz x82 | 82 | 82 | duty item 5: liquid holdup | spec per tag on AQS-CTL-001 |
 | OF-39 | gas detector, H2 | alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling | catalytic bead + IR backup x30 | 30 | 14 | AQS-SAF-006 2oo3 to SIF (AQS-CTL-003); AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-40 | gas detector, O2 deficiency | alarm 19.5 vol %, trip 18.0 vol %, low (dense gases) | electrochemical O2 x20 | 20 | 10 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-41 | gas detector, Cl2 / HCl | alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low | electrochemical Cl2 and HCl x38 | 38 | 19 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
-| OF-42 | temperature element (SIF, independent) | IEC 60751, own thermowell | Pt100 class A x13 | 13 | 13 | SIF-002 SIL 2; SIF-004 SIL 2; SIF-020 SIL 1 | spec per tag on AQS-CTL-001 |
+| OF-42 | temperature element (SIF, independent) | IEC 60751, own thermowell | Pt100 class A x14 | 14 | 14 | SIF-002 SIL 2; SIF-004 SIL 2; SIF-020 SIL 1 | spec per tag on AQS-CTL-001 |
 | OF-43 | gas detector, O2 enrichment | alarm 23.5 vol %, trip 25 vol %, breathing height | electrochemical O2 x12 | 12 | 5 | AQS-SAF-006 2oo3 to SIF (AQS-CTL-003); AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-44 | gas detector, CO | alarm 25 ppm, trip 50 ppm, breathing height | electrochemical CO x14 | 14 | 7 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-45 | gas detector, NOx | alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height | electrochemical NO2 x6 | 6 | 3 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
@@ -82,79 +81,75 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x193; 70 A x8; 30 A x3; 60 A x1 | 205 | 50 | NEC 430.52, from AQS-INV-002 |  |
+| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x262; 30 A x3; 60 A x1 | 266 | 76 | NEC 430.52, from AQS-INV-002 |  |
 ## 7. Seal datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-47 | mechanical seal, single | SiC/SiC faces, FKM | EN 12756 x125 | 125 | 26 | Acid day tank D160 x 300 mm with metering pump: induction-driven pump assumed se; Dilute-HCl return pump and transfer line to CRU: induction-driven pu |  |
+| OF-47 | mechanical seal, single | SiC/SiC faces, FKM | EN 12756 x222 | 222 | 60 | Acid day tank D160 x 300 mm with metering pump: induction-driven pump assumed se; Dilute-HCl return pump and transfer line to CRU: induction-driven pu |  |
 ## 8. Support datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-48 | pipe clamp | PP clamp with EPDM liner, MSS SP-58 Type 7 | DN15 x2386; DN50 x516; DN20 x17; DN250 x7; DN32 x6; DN300 x4; DN200 x3 | 2939 | 78 | FARM_O2_TO_HAB: AQS-PIP-005 span count; HAB_BLACK: AQS-PIP-005 span count; HAB_CO2_TO_HDR: AQS-PIP-005 span count |  |
-| OF-49 | U-bolt with guide | 316 U-bolt, MSS SP-58 Type 24 | DN15 x1103; DN20 x25; DN25 x23; DN50 x7 | 1158 | 39 | C29_RECYCLE: AQS-PIP-005 span count; C29_TO_PYRO: AQS-PIP-005 span count; CO2_TO_FARM: AQS-PIP-005 span count |  |
+| OF-48 | pipe clamp | PP clamp with EPDM liner, MSS SP-58 Type 7 | DN15 x5289; DN50 x537; DN20 x17; DN250 x7; DN32 x6; DN300 x4; DN200 x3 | 5863 | 116 | AL_POT_CL2: AQS-PIP-005 span count; AQUA_BYPASS: AQS-PIP-005 span count; AQUA_LOOP1: AQS-PIP-005 span count |  |
+| OF-49 | U-bolt with guide | 316 U-bolt, MSS SP-58 Type 24 | DN15 x1437; DN20 x25; DN25 x23; DN50 x7 | 1492 | 44 | C29_RECYCLE: AQS-PIP-005 span count; C29_TO_PYRO: AQS-PIP-005 span count; CO2_TO_FARM: AQS-PIP-005 span count |  |
 ## 9. Valve datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-50 | isolation valve | PVC-U true-union ball valve, MSS SP-122, EPDM seals | DN15 x124; DN50 x22 | 146 | 42 | HAB_BLACK: one at each end nozzle (assumed); HAB_GREY: one at each end nozzle (assumed); IA-AHU-FIX: one at each end nozzle (assumed) |  |
-| OF-51 | isolation valve | PP ball valve with HDPE stub ends, ISO 16135 | DN15 x20; DN50 x10 | 30 | 10 | IA-AIR-IN: one at each end nozzle (assumed); IA-FLUE-QUENCH: one at each end nozzle (assumed); IA-H2P-H2O: one at each end nozzle (assumed) |  |
-| OF-52 | isolation valve | 316L ball valve, ASME B16.34 Cl 150, RF flanged | DN15 x110; DN50 x4; DN25 x4; DN20 x4 | 122 | 28 | CO2_TO_FARM: one at each end nozzle (assumed); HL-HX8-Q3-A: one at each end nozzle (assumed); HL-HX8-Q3-B: one at each end nozzle (assumed) |  |
-| OF-53 | isolation valve | CPVC true-union ball valve, MSS SP-122, FKM seals | DN15 x54; DN50 x34 | 88 | 23 | IA-ACID-01: one at each end nozzle (assumed); IA-BAG-01: one at each end nozzle (assumed); IA-BASE-PPT: one at each end nozzle (assumed) |  |
-| OF-54 | check valve | PP swing/ball check valve with HDPE stub ends, ISO 16137 | DN15 x7; DN50 x2 | 9 | 6 | IA-FLUE-QUENCH: pump discharge (assumed); IA-MEOH-H2O: pump discharge (assumed); IA-MEOH-REST: pump discharge (assumed) |  |
-| OF-55 | check valve | PVC-U true-union swing/ball check valve, EPDM seals | DN15 x47; DN50 x4 | 51 | 29 | IA-BED-H2O: pump discharge (assumed); IA-ESS-HYDRO-DIS: pump discharge (assumed); IA-EVAP_ACID-COND: pump discharge (assumed) |  |
-| OF-56 | isolation valve | PVDF ball valve, ISO 16135, PTFE seats | DN15 x50; DN32 x2; DN50 x2; DN300 x2 | 56 | 24 | FARM_O2_TO_HAB: one at each end nozzle (assumed); HAB_CO2_TO_HDR: one at each end nozzle (assumed); IA-BLK-GAS: one at each end nozzle (assumed) |  |
+| OF-50 | isolation valve | PVC-U true-union ball valve, MSS SP-122, EPDM seals | DN15 x258; DN50 x22 | 280 | 64 | AQUA_BYPASS: one at each end nozzle (assumed); AQUA_LOOP1: one at each end nozzle (assumed); AQUA_LOOP3: one at each end nozzle (assumed) |  |
+| OF-51 | isolation valve | PP ball valve with HDPE stub ends, ISO 16135 | DN15 x32; DN50 x10 | 42 | 13 | FOOD_HAB: one at each end nozzle (assumed); GALLEY_MEALS: one at each end nozzle (assumed); IA-AIR-IN: one at each end nozzle (assumed) |  |
+| OF-52 | isolation valve | 316L ball valve, ASME B16.34 Cl 150, RF flanged | DN15 x176; DN50 x4; DN25 x4; DN20 x4 | 188 | 40 | CO2_TO_FARM: one at each end nozzle (assumed); CRU_TO_TFE: one at each end nozzle (assumed); CRU_TO_VDF: one at each end nozzle (assumed) |  |
+| OF-53 | isolation valve | CPVC true-union ball valve, MSS SP-122, FKM seals | DN15 x56; DN50 x34 | 90 | 24 | FIBER_SCRAP: one at each end nozzle (assumed); IA-ACID-01: one at each end nozzle (assumed); IA-BAG-01: one at each end nozzle (assumed) |  |
+| OF-54 | check valve | PP swing/ball check valve with HDPE stub ends, ISO 16137 | DN15 x11; DN50 x2 | 13 | 7 | IA-FLUE-QUENCH: pump discharge (assumed); IA-MEOH-H2O: pump discharge (assumed); IA-MEOH-REST: pump discharge (assumed) |  |
+| OF-55 | check valve | PVC-U true-union swing/ball check valve, EPDM seals | DN15 x57; DN50 x4 | 61 | 29 | EW9_LIQUOR_TO_MO: pump discharge (assumed); IA-AQUA-TOPUP: pump discharge (assumed); IA-BED-H2O: pump discharge (assumed) |  |
+| OF-56 | isolation valve | PVDF ball valve, ISO 16135, PTFE seats | DN15 x82; DN50 x4; DN32 x2; DN300 x2 | 90 | 35 | AL_POT_CL2: one at each end nozzle (assumed); FARM_O2_TO_HAB: one at each end nozzle (assumed); F_RECOVER_TO_HF_GEN: one at each end nozzle (assumed) |  |
 | OF-57 | check valve | CPVC true-union swing/ball check valve, FKM seals | DN15 x16; DN50 x9 | 25 | 18 | IA-ACID-01: pump discharge (assumed); IA-BAG-01: pump discharge (assumed); IA-BASE-PPT: pump discharge (assumed) |  |
-| OF-58 | check valve | PVDF swing/ball check valve, ISO 16137, PTFE seats | DN15 x20; DN32 x1; DN300 x1 | 22 | 19 | FARM_O2_TO_HAB: pump discharge (assumed); IA-BMED-01: pump discharge (assumed); IA-EVAP_ACID-VENT: pump discharge (assumed) |  |
-| OF-59 | isolation valve | CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged | DN15 x50 | 50 | 14 | C29_RECYCLE: one at each end nozzle (assumed); C29_TO_PYRO: one at each end nozzle (assumed); CUT-1-OUT: one at each end nozzle (assumed) |  |
-| OF-60 | isolation valve | PVC-lined ball valve in FRP service, ISO 16135 | DN15 x8; DN250 x6; DN20 x2; DN200 x2 | 18 | 8 | IA-AB-FLUE: one at each end nozzle (assumed); IA-ACID-AIR-RET: one at each end nozzle (assumed); IA-FC-EXH: one at each end nozzle (assumed) |  |
-| OF-61 | check valve | 316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged | DN15 x9; DN50 x1 | 10 | 6 | IA-BED-VAP: pump discharge (assumed); IA-ESS-MEOH-CHG: pump discharge (assumed); S56: pump discharge (assumed) |  |
+| OF-58 | check valve | PVDF swing/ball check valve, ISO 16137, PTFE seats | DN15 x27; DN32 x1; DN300 x1 | 29 | 23 | FARM_O2_TO_HAB: pump discharge (assumed); F_RECOVER_TO_HF_GEN: pump discharge (assumed); HF_GEN_TO_TFE: pump discharge (assumed) |  |
+| OF-59 | isolation valve | CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged | DN15 x64 | 64 | 16 | C29_RECYCLE: one at each end nozzle (assumed); C29_TO_PYRO: one at each end nozzle (assumed); CUT-1-OUT: one at each end nozzle (assumed) |  |
+| OF-60 | isolation valve | PVC-lined ball valve in FRP service, ISO 16135 | DN15 x10; DN250 x6; DN20 x2; DN200 x2 | 20 | 9 | COMB_OFFGAS: one at each end nozzle (assumed); IA-AB-FLUE: one at each end nozzle (assumed); IA-ACID-AIR-RET: one at each end nozzle (assumed) |  |
+| OF-61 | check valve | 316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged | DN15 x29; DN50 x1 | 30 | 13 | CRU_TO_TFE: pump discharge (assumed); CRU_TO_VDF: pump discharge (assumed); FLUORO_TO_MFG: pump discharge (assumed) |  |
 | OF-62 | isolation valve | PP-H ball valve, ISO 16135, EPDM seals | DN15 x14; DN50 x4 | 18 | 7 | IA-BASE-01: one at each end nozzle (assumed); IA-BMED-02: one at each end nozzle (assumed); IA-EVAP_BASE-FEED: one at each end nozzle (assumed) |  |
 | OF-63 | ESD valve, spring-return actuator | 316L, fail-safe, IEC 61511 | DN15 x10 | 10 | 4 | SIF-009 one per bank half; SIF-011 one per bank half; SIF-013 one per bank half | fail-safe per IEC 61511, settled with AQS-CTL-003 |
 | OF-64 | check valve | PP-H swing/ball check valve, ISO 16137, EPDM seals | DN15 x7; DN50 x1 | 8 | 6 | IA-BASE-01: pump discharge (assumed); IA-BMED-02: pump discharge (assumed); IA-EVAP_BASE-FEED: pump discharge (assumed) |  |
 | OF-65 | check valve | PVC-lined swing/ball check valve in FRP service, ISO 16137 | DN15 x2; DN250 x1 | 3 | 3 | IA-ACID-AIR-RET: pump discharge (assumed); IA-FC-EXH: pump discharge (assumed); IA-VS-OFF: pump discharge (assumed) |  |
-| OF-78 | check valve | CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged | DN15 x11 | 11 | 6 | C29_RECYCLE: pump discharge (assumed); CUT-1-OUT: pump discharge (assumed); CUT-1: pump discharge (assumed) |  |
+| OF-78 | check valve | CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged | DN15 x17 | 17 | 7 | C29_RECYCLE: pump discharge (assumed); CUT-1-OUT: pump discharge (assumed); CUT-1: pump discharge (assumed) |  |
 ## 10. Fastener datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-14 | anchor bolt | ISO 3506 A4-70 wedge anchor | M10 x8194 | 8194 | 96 | C29_RECYCLE: 2 per support (assumed); C29_TO_PYRO: 2 per support (assumed); CO2_TO_FARM: 2 per support (assumed) |  |
-| OF-15 | M10 x 40 lid bolt | ISO 3506 A4-70 | M10 x 40 lid bolt with nut and washers x100 | 100 | 11 | models/mfg/ABE/fasteners.csv; models/mfg/ACETOX/fasteners.csv; models/mfg/ACEX/fasteners.csv |  |
-| OF-16 | M8 x 30 lid bolt | ISO 3506 A4-70 | M8 x 30 lid bolt with nut and washers x48 | 48 | 4 | models/mfg/BLACK_ALK_HOLD/fasteners.csv; models/mfg/BLACK_DEWATER/fasteners.csv; models/mfg/BLACK_DIGEST/fasteners.csv |  |
-| OF-17 | M12 anchor | ISO 3506 A4-70 | M12 anchor x37 | 37 | 12 | models/mfg/ABE/fasteners.csv; models/mfg/ACETOX/fasteners.csv; models/mfg/ACEX/fasteners.csv |  |
+| OF-14 | anchor bolt | ISO 3506 A4-70 wedge anchor | M10 x14710 | 14710 | 138 | AL_POT_CL2: 2 per support (assumed); AQUA_BYPASS: 2 per support (assumed); AQUA_LOOP1: 2 per support (assumed) |  |
+| OF-15 | M10 x 40 lid bolt | ISO 3506 A4-70 | M10 x 40 lid bolt with nut and washers x20 | 20 | 2 | models/mfg/GLASS_DIGEST/fasteners.csv; models/mfg/MEOH_FERM/fasteners.csv |  |
+| OF-16 | M8 x 30 lid bolt | ISO 3506 A4-70 | M8 x 30 lid bolt with nut and washers x12 | 12 | 1 | models/mfg/BLACK_DIGEST/fasteners.csv |  |
+| OF-17 | M12 anchor | ISO 3506 A4-70 | M12 anchor x10 | 10 | 3 | models/mfg/GLASS_DIGEST/fasteners.csv; models/mfg/MEOH_FERM/fasteners.csv; models/mfg/OIL_PYRO/fasteners.csv |  |
 | OF-18 | M12x40 hex bolt + nut + 2 washers | PVDF | M12x40 hex bolt + nut + 2 washers x36 | 36 | 1 | models/mfg/LEACH_CSTR_1/fasteners.csv |  |
 | OF-19 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) | ISO 3506 A4-70 outside the wetted zone | M16 stud + 2 nuts (ISO 4014 / ISO 4032) x24 | 24 | 1 | models/mfg/EVAP_ACID/fasteners.csv |  |
 | OF-20 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) | ISO 898-1 8.8 zinc | M16 stud + 2 nuts (ISO 4014 / ISO 4032) x24 | 24 | 1 | models/mfg/EVAP_BASE/fasteners.csv |  |
-| OF-21 | 1/2 in stud bolt | ASTM A193 B8M / A194 8M | 1/2 in stud bolt with 2 heavy hex nuts x24 | 24 | 3 | models/mfg/ALD/fasteners.csv; models/mfg/FORM/fasteners.csv; models/mfg/MEAM/fasteners.csv |  |
 | OF-22 | 5/8 in stud bolt | ASTM A193 B7 / A194 2H | 5/8 in stud bolt with 2 heavy hex nuts x16 | 16 | 1 | models/mfg/MEOH_SYNTH/fasteners.csv |  |
-| OF-23 | M10 anchor | ISO 3506 A4-70 | M10 anchor x16 | 16 | 4 | models/mfg/BLACK_ALK_HOLD/fasteners.csv; models/mfg/BLACK_DEWATER/fasteners.csv; models/mfg/BLACK_DIGEST/fasteners.csv |  |
-| OF-24 | 3/4 in stud bolt | ASTM A193 B8M / A194 8M | 3/4 in stud bolt with 2 heavy hex nuts x16 | 16 | 1 | models/mfg/HTC/fasteners.csv |  |
-| OF-25 | M10 | A4-70 | M10 x8 | 8 | 1 | models/mfg/EXPANDER/fasteners.csv |  |
+| OF-23 | M10 anchor | ISO 3506 A4-70 | M10 anchor x4 | 4 | 1 | models/mfg/BLACK_DIGEST/fasteners.csv |  |
 | OF-26 | M10 x 40 lid bolt | ASTM A193 B8 | M10 x 40 lid bolt with nut and washers x8 | 8 | 1 | models/mfg/OIL_PYRO/fasteners.csv |  |
-| OF-27 | M12 | A4-70 | M12 x4 | 4 | 1 | models/mfg/EXPANDER/fasteners.csv |  |
-| OF-28 | M8 | A4-70 | M8 x4 | 4 | 1 | models/mfg/EXPANDER/fasteners.csv |  |
 | OF-29 | Flange gasket | PTFE envelope | Flange gasket x2 | 2 | 1 | models/mfg/EVAP_ACID/fasteners.csv |  |
 | OF-30 | Flange gasket | graphite sheet | Flange gasket x2 | 2 | 1 | models/mfg/EVAP_BASE/fasteners.csv |  |
 | OF-31 | M10 U-bolt for DN150 | ISO 3506 A4-70 | M10 U-bolt for DN150 x2 | 2 | 1 | models/mfg/EVAP_ACID_VS/fasteners.csv |  |
 | OF-32 | Lid gasket 40 mm wide | FKM | Lid gasket 40 mm wide x1 | 1 | 1 | models/mfg/LEACH_CSTR_1/fasteners.csv |  |
 | OF-33 | Solvent cement | PVC-U per ASTM D2564 | Solvent cement x1 | 1 | 1 | models/mfg/EVAP_ACID_VS/fasteners.csv |  |
-| OF-66 | M12 anchor | ISO 898-1 8.8 | M12 anchor x160 | 160 | 33 | models/mfg/AL_POT/fasteners.csv; models/mfg/CAST_LINE/fasteners.csv; models/mfg/CA_POT/fasteners.csv |  |
-| OF-67 | M10 x 30 hood bolts | ISO 898-1 8.8 | M10 x 30 hood bolts x80 | 80 | 5 | models/mfg/AL_POT/fasteners.csv; models/mfg/CA_POT/fasteners.csv; models/mfg/CR_CELL/fasteners.csv |  |
-| OF-68 | M16 T-bolt + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M16 T-bolt + nut (ISO 4014 / ISO 4032) x72 | 72 | 6 | models/mfg/CAST_LINE/fasteners.csv; models/mfg/CONT_CAST/fasteners.csv; models/mfg/INV_CAST/fasteners.csv |  |
-| OF-69 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) x64 | 64 | 4 | models/mfg/HF_GEN/fasteners.csv; models/mfg/IND_MELT/fasteners.csv; models/mfg/SHELL_BURNOUT/fasteners.csv |  |
-| OF-70 | M12 stud + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M12 stud + nut (ISO 4014 / ISO 4032) x50 | 50 | 5 | models/mfg/AL_POT/fasteners.csv; models/mfg/CA_POT/fasteners.csv; models/mfg/CR_CELL/fasteners.csv |  |
-| OF-71 | M10 x 30 guard screws | ISO 3506 A4-70 | M10 x 30 guard screws x44 | 44 | 3 | models/mfg/FILM_CAST/fasteners.csv; models/mfg/PELLET/fasteners.csv; models/mfg/POWDER_RESIN/fasteners.csv |  |
-| OF-72 | M10 x 30 jacket screws | ISO 3506 A4-70 | M10 x 30 jacket screws x32 | 32 | 2 | models/mfg/TFE_SYN/fasteners.csv; models/mfg/VDF_SYN/fasteners.csv |  |
-| OF-73 | M10 x 30 bench bolts | ISO 898-1 8.8 | M10 x 30 bench bolts x24 | 24 | 2 | models/mfg/FLUX_PREP/fasteners.csv; models/mfg/WAX_PATTERN/fasteners.csv |  |
-| OF-74 | M10 x 40 lid bolt | ISO 3506 A4-80 | M10 x 40 lid bolt with nut and washers x20 | 20 | 2 | models/mfg/POLY_F/fasteners.csv; models/mfg/POLY_OLEFIN/fasteners.csv |  |
-| OF-75 | M10 clamp | ISO 3506 A4-70 | M10 clamp x12 | 12 | 2 | models/mfg/POLY_F/fasteners.csv; models/mfg/POLY_STOCK/fasteners.csv |  |
-| OF-76 | M12 anchor | ISO 3506 A4-80 | M12 anchor x7 | 7 | 2 | models/mfg/POLY_F/fasteners.csv; models/mfg/POLY_OLEFIN/fasteners.csv |  |
-| OF-79 | M12 hex socket head cap screw (ISO 4762) | ISO 898-1 8.8 | M12 hex socket head cap screw (ISO 4762) x28 | 28 | 1 | models/mfg/CAST_LINE/fasteners.csv |  |
-| OF-80 | M8 hex socket head cap screw (ISO 4762) | ISO 898-1 8.8 | M8 hex socket head cap screw (ISO 4762) x8 | 8 | 1 | models/mfg/CAST_LINE/fasteners.csv |  |
+| OF-66 | M12 anchor | ISO 898-1 8.8 | M12 anchor x104 | 104 | 23 | models/mfg/AL_POT/fasteners.csv; models/mfg/CAST_LINE/fasteners.csv; models/mfg/COMB_HEAT/fasteners.csv |  |
+| OF-67 | M10 x 30 hood bolts | ISO 898-1 8.8 | M10 x 30 hood bolts x16 | 16 | 1 | models/mfg/AL_POT/fasteners.csv |  |
+| OF-68 | M16 T-bolt + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M16 T-bolt + nut (ISO 4014 / ISO 4032) x12 | 12 | 1 | models/mfg/CAST_LINE/fasteners.csv |  |
+| OF-69 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) x12 | 12 | 1 | models/mfg/HF_GEN/fasteners.csv |  |
+| OF-70 | M12 stud + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M12 stud + nut (ISO 4014 / ISO 4032) x26 | 26 | 3 | models/mfg/AL_POT/fasteners.csv; models/mfg/INV_CAST/fasteners.csv; models/mfg/ROLL/fasteners.csv |  |
+| OF-71 | M10 x 30 guard screws | ISO 3506 A4-70 | M10 x 30 guard screws x16 | 16 | 1 | models/mfg/PELLET/fasteners.csv |  |
+| OF-72 | M10 x 30 jacket screws | ISO 3506 A4-70 | M10 x 30 jacket screws x48 | 48 | 3 | models/mfg/POLY_COND/fasteners.csv; models/mfg/TFE_SYN/fasteners.csv; models/mfg/VDF_SYN/fasteners.csv |  |
+| OF-74 | M10 x 40 lid bolt | ISO 3506 A4-80 | M10 x 40 lid bolt with nut and washers x8 | 8 | 1 | models/mfg/POLY_OLEFIN/fasteners.csv |  |
+| OF-75 | M10 clamp | ISO 3506 A4-70 | M10 clamp x4 | 4 | 1 | models/mfg/POLY_STOCK/fasteners.csv |  |
+| OF-76 | M12 anchor | ISO 3506 A4-80 | M12 anchor x3 | 3 | 1 | models/mfg/POLY_OLEFIN/fasteners.csv |  |
+| OF-81 | M10 stud + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M10 stud + nut (ISO 4014 / ISO 4032) x66 | 66 | 9 | models/mfg/CA_POT/fasteners.csv; models/mfg/CONT_CAST/fasteners.csv; models/mfg/CR_CELL/fasteners.csv |  |
+| OF-82 | M8 x 25 hood bolts | ISO 898-1 8.8 | M8 x 25 hood bolts x48 | 48 | 4 | models/mfg/CA_POT/fasteners.csv; models/mfg/CR_CELL/fasteners.csv; models/mfg/MG_POT/fasteners.csv |  |
+| OF-83 | M10 anchor | ISO 898-1 8.8 | M10 anchor x40 | 40 | 10 | models/mfg/CA_POT/fasteners.csv; models/mfg/CR_CELL/fasteners.csv; models/mfg/FILM_CAST/fasteners.csv |  |
+| OF-84 | M8 x 25 hopper bolts | ISO 898-1 8.8 | M8 x 25 hopper bolts x8 | 8 | 1 | models/mfg/TI_CELL/fasteners.csv |  |
 
 ## 11. Coverage gate
 
-- Bought families covered: 79 of 80 (the excluded one is OF-13, the fabricated-part set:
+- Bought families covered: 74 of 75 (the excluded one is OF-13, the fabricated-part set:
   sheets like those are `models/mfg/*/bom.csv` + `WORK_ORDER.md`, in-house work).
 - Items rest on the A-M-125 counting rule where the roll-up assumed; the count is the basis, not a measurement.

@@ -1,10 +1,6 @@
 {
- "graph_sha256": "307200ce85a4b6e4ac802b198b2b61760112d5af88cc7956debf461181d0cd08",
+ "graph_sha256": "a68069cea430aa988f392ed5983c64b1e0fc779ac1b46b8bff45f81929bf5159",
  "patterns": [
-  "flow_graph/views/*",
-  "media/pfd/*",
-  "media/D*.png",
-  "media/F0_campus.png",
-  "media/plant_phase_d.mp4"
+  "flow_graph/views/*"
  ]
 }

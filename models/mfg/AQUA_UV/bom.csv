@@ -1,0 +1,4 @@
+item,part,qty,material,mass_kg,make_buy,note
+1,cabinet_shell,1,SS304,49.7,make,cabinet class; inline 254 nm reactor tube + control box at the 0.04 kW lamp class (A-M-428) (X-
+2,reactor_tube,1,SS304,5.7,make,cabinet class; inline 254 nm reactor tube + control box at the 0.04 kW lamp class (A-M-428) (X-
+3,top,1,SS304,5.6,make,cabinet class; inline 254 nm reactor tube + control box at the 0.04 kW lamp class (A-M-428) (X-

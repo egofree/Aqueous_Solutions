@@ -1,0 +1,24 @@
+{
+  "shell_bbox_mm": [
+    2100.0,
+    1100.0,
+    1100.0
+  ],
+  "envelope_mm": [
+    2100,
+    1100,
+    1100
+  ],
+  "inside_size_mm_shell": true,
+  "solids": 1,
+  "all_parts_valid": true,
+  "material_class": "HDPE",
+  "form": "tank",
+  "mass_kg": {
+    "vessel_shell": 130.9,
+    "lid": 32.9,
+    "liner": 2230.4
+  },
+  "empty_kg": 2394.2,
+  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+}

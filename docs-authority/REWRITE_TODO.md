@@ -127,7 +127,7 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | |
 | `docs-authority/INSTRUMENT_INDEX.md` | |
 | `docs-authority/INSTRUMENT_LOOPS.md` | |
-| `docs-authority/ISO_SHEETS.md` | |
+| `docs-authority/ISO_SHEETS.md` | Retired with the auto-isometric experiment (2026-10-27): the auto-router was rejected at AQS-3D-BUILD-001 Rev G and the sheets were unreadable at the generated font size. The stage, the 267 SVGs and the index are gone; the 3D presentation bias is the FreeCAD model. |
 | `docs-authority/ITP.md` | |
 | `docs-authority/JELLYBEAN.md` | |
 | `docs-authority/LIFE_FITOUT_PLAN.md` | |

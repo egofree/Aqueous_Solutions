@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: CERN-OHL-S-2.0
 // Copyright 2026 Mike Matthews.
+import { useState } from 'react'
 import type { FlowGraphView } from '../types/graph'
 import type { MvsModel, Sector, Stream, Unit } from '../types/mvs'
 import {
@@ -14,6 +15,8 @@ interface Props {
   activeCycle: string | null
   /** When set, canvas shows only nodes/edges from this graph layer view. */
   layerView: FlowGraphView | null
+  /** Site-sandbox view: hide units the profile disabled, not just dim them. */
+  showDisabled?: boolean
 }
 
 function sectorEnabled(sectors: Sector[], sid: string): boolean {
@@ -33,8 +36,12 @@ function isPlaceholder(
 /**
  * Graph-layer SVG schematic. Topology from sandbox model (graph-backed);
  * optional layer view filters to PFD/MFD/EFD-* without inventing rates.
+ * Unit-level eliminations (a site sandbox) hide units and their streams
+ * by default - the site as designed, not the site as excused.
  */
-export function SchematicCanvas({ model, activeCycle, layerView }: Props) {
+export function SchematicCanvas({ model, activeCycle, layerView, showDisabled }: Props) {
+  const [localShowDisabled, setLocalShowDisabled] = useState(false)
+  const disabledShown = showDisabled ?? localShowDisabled
   const presenceByUnit = new Map<string, string>()
   const gapByUnit = new Map<string, string | null>()
   let units: Unit[] = model.units
@@ -83,8 +90,22 @@ export function SchematicCanvas({ model, activeCycle, layerView }: Props) {
     }
   }
 
+  // unit-level sandbox eliminations: hidden by default, not silently - the count
+  // is stated in the legend so a hidden set is never silent
+  const unitOff = new Set(
+    units.filter((u) => u.enabled === false).map((u) => u.unit_id),
+  )
+  const visibleUnits = disabledShown
+    ? units
+    : units.filter((u) => !unitOff.has(u.unit_id))
+  const visibleIds = new Set(visibleUnits.map((u) => u.unit_id))
+  const visibleStreams = streams.filter(
+    (s) => visibleIds.has(s.from_unit_id) && visibleIds.has(s.to_unit_id),
+  )
+  const hiddenCount = units.length - visibleUnits.length
+
   const { unitPos, sectorBands, width, height } = layoutBySector(
-    units,
+    visibleUnits,
     model.sectors,
   )
   const sectorMap = new Map(model.sectors.map((s) => [s.sector_id, s]))
@@ -94,6 +115,14 @@ export function SchematicCanvas({ model, activeCycle, layerView }: Props) {
 
   return (
     <div className="schematic-wrap">
+      <label className="schematic-toggle">
+        <input
+          type="checkbox"
+          checked={disabledShown}
+          onChange={(e) => setLocalShowDisabled(e.target.checked)}
+        />{' '}
+        show disabled units ({unitOff.size})
+      </label>
       <svg
         className="schematic"
         viewBox={`0 0 ${width} ${height}`}
@@ -111,6 +140,8 @@ export function SchematicCanvas({ model, activeCycle, layerView }: Props) {
             x={b.x}
             y={24}
             className="sector-label"
+            fontSize={13}
+            fontWeight={600}
             fill={
               sectorMap.get(b.sector_id)?.enabled === false ? '#999' : '#334'
             }
@@ -122,7 +153,7 @@ export function SchematicCanvas({ model, activeCycle, layerView }: Props) {
           </text>
         ))}
 
-        {streams.map((st) => {
+        {visibleStreams.map((st) => {
           const a = unitPos[st.from_unit_id]
           const b = unitPos[st.to_unit_id]
           if (!a || !b) return null
@@ -133,35 +164,39 @@ export function SchematicCanvas({ model, activeCycle, layerView }: Props) {
           )
           const toOff = !sectorEnabled(model.sectors, st.to_sector_id ?? '')
           const muted = activeCycle ? !onCycle : fromOff || toOff
-          const x1 = a.x + BOX_W / 2
+          // attach at the facing box edges, not the centres: fewer crossings
+          const forward = b.x >= a.x
+          const x1 = forward ? a.x + BOX_W : a.x
+          const x2 = forward ? b.x : b.x + BOX_W
           const y1 = a.y + BOX_H / 2
-          const x2 = b.x + BOX_W / 2
           const y2 = b.y + BOX_H / 2
+          const dx = Math.abs(x2 - x1)
+          const c = Math.max(30, dx * 0.4)
+          const d = `M ${x1} ${y1} C ${x1 + (forward ? c : -c)} ${y1}, ${x2 + (forward ? -c : c)} ${y2}, ${x2} ${y2}`
           const rateTxt =
             st.rate == null || st.rate.value == null
               ? 'rate=null'
               : `${st.rate.value} ${st.rate.unit}`
           return (
-            <g key={st.stream_id}>
-              <line
-                x1={x1}
-                y1={y1}
-                x2={x2}
-                y2={y2}
+            <g key={st.stream_id} className="stream">
+              <path
+                d={d}
+                fill="none"
                 stroke={muted ? '#c8c8c8' : '#1a5f9e'}
                 strokeWidth={muted ? 1 : activeCycle && onCycle ? 3.5 : 1.8}
-                opacity={muted ? 0.45 : 0.9}
+                opacity={muted ? 0.4 : 0.85}
               />
               <title>{`${st.stream_id}: ${st.carries ?? ''} (${st.from_unit_id} → ${st.to_unit_id}); ${rateTxt}`}</title>
             </g>
           )
         })}
 
-        {units.map((u) => {
+        {visibleUnits.map((u) => {
           const p = unitPos[u.unit_id]
           if (!p) return null
           const sec = sectorMap.get(u.sector_id)
-          const off = sec ? !sec.enabled : false
+          const off = (sec ? !sec.enabled : false) || u.enabled === false
+          const unitDisabled = u.enabled === false
           const required = sec?.required_for_mvs_closure ?? false
           const ph = isPlaceholder(
             presenceByUnit.get(u.unit_id),
@@ -192,15 +227,20 @@ export function SchematicCanvas({ model, activeCycle, layerView }: Props) {
                 x={BOX_W / 2}
                 y={BOX_H / 2 + 4}
                 textAnchor="middle"
-                fontSize={9}
+                fontSize={11}
                 fill={ph ? '#7a5a12' : off ? '#888' : '#222'}
               >
-                {u.unit_id.length > 14
-                  ? u.unit_id.slice(0, 13) + '…'
+                {u.unit_id.length > 16
+                  ? u.unit_id.slice(0, 15) + '…'
                   : u.unit_id}
               </text>
+              {unitDisabled && (
+                <text x={BOX_W - 4} y={11} textAnchor="end" fontSize={8} fill='#c0392b' fontWeight={700}>
+                  OFF
+                </text>
+              )}
               <title>
-                {`${u.unit_id} [${u.sector_id}]${required ? ' required' : ''}${off ? ' DISABLED' : ''}${ph ? ' PLACEHOLDER' : ''}`}
+                {`${u.unit_id} [${u.sector_id}]${required ? ' required' : ''}${unitDisabled ? ' DISABLED (site sandbox)' : ''}${ph ? ' PLACEHOLDER' : ''}`}
               </title>
             </g>
           )
@@ -209,9 +249,16 @@ export function SchematicCanvas({ model, activeCycle, layerView }: Props) {
       <p className="schematic-hint">
         Layer: <strong>{viewLabel}</strong>. * = required_for_mvs_closure.
         Disabled required sectors stay visible (gap, not silent). Amber dashed
-        = placeholder (present_plus_placeholders). Streams from graph only —
-        rates shown as recorded (null stays null). Layout is deterministic grid
-        by sector.
+        = placeholder (present_plus_placeholders).{" "}
+        {hiddenCount > 0 && (
+          <>
+            <strong>{hiddenCount}</strong> unit(s) hidden: disabled by the site
+            sandbox (toggle "show disabled").{" "}
+          </>
+        )}
+        Streams from graph only — rates shown as recorded (null stays null).
+        Layout is a deterministic reading grid by sector: schematic positions
+        carry no dimension.
       </p>
     </div>
   )

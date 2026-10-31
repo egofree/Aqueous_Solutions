@@ -17,7 +17,10 @@ SPEC = {'GLASS_DIGEST': dict(mat='CPVC sheet, rolled and extrusion-welded (DVS 2
         'ACEX': dict(mat='PP-H pipe Sch 40, socket-fused (DVS 2207-11)', noz=('[Bmim]Cl in', 'eluate to neutraliser', 'NaOH regenerant in', 'spent regenerant out', 'drain'), coil=False, agit=False, legs=3),
         'OIL_PYRO': dict(mat='SA-240 304H plate, rolled, GTAW (ASME IX)', noz=('oil feed in', 'vapour out to OIL_FRAC', 'char out', 'thermowell', 'bursting disc'), coil=False, agit=False, legs=3)}
 for U, s in SPEC.items():
-    d = N[U]['params']['design']; D = d['D_mm']; H = d['H_mm']; t = d['wall_mm']
+    n = N.get(U)
+    if not n or n.get('presence') != 'present':
+        continue   # unit left the graph (DIGESTER, batch-2 fermenters); reactor_design.py only writes design for present units
+    d = n['params']['design']; D = d['D_mm']; H = d['H_mm']; t = d['wall_mm']
     body = cq.Workplane('XY').circle(D/2).circle(D/2 - t).extrude(H).union(cq.Workplane('XY').circle(D/2).extrude(t))
     lid = cq.Workplane('XY').workplane(offset=H).circle(D/2 + 30).circle(D/2 - t).extrude(t + 6).union(cq.Workplane('XY').workplane(offset=H + t + 6).circle(D/2 + 30).extrude(t + 6))
     m = body.union(lid)
@@ -65,7 +68,10 @@ Authority: AQS-DUTY-062 (X-MFG-31). In-house fabrication; no bought vessel.
     print(U, D, H, t)
 
 # MEOH_SYNTH (A-M-156): jacketed fixed-bed tube, pressure part to ASME VIII-1; flanges ASME B16.5 Class 600 (Group 1.1 rating at 260 C above 55 bar g)
-U = 'MEOH_SYNTH'; d = N[U]['params']['design']; L = d['L_bed_mm'] + 400; OD = 60.3; t = d['t_nom_mm']
+U = 'MEOH_SYNTH'
+_n = N.get(U)
+if _n and _n.get('presence') == 'present' and 'design' in (_n.get('params') or {}):
+    d = _n['params']['design']; L = d['L_bed_mm'] + 400; OD = 60.3; t = d['t_nom_mm']
 tube = cq.Workplane('XY').circle(OD/2).circle(OD/2 - t).extrude(L)
 fl = lambda z: cq.Workplane('XY').workplane(offset=z).circle(165/2).circle(OD/2 - t).extrude(32)      # DN50 Class 600 WN flange OD 165, thk 32 (B16.5)
 jk = cq.Workplane('XY').workplane(offset=150).circle(114.3/2).circle(114.3/2 - 6.02).extrude(L - 300)   # DN100 Sch 40 jacket
@@ -97,59 +103,3 @@ Authority: AQS-DUTY-062 section 4 (X-MFG-31, A-M-156). In-house fabrication to A
 """)
 print(U, L)
 
-# HTC (X-MFG-31 batch 2): flanged autoclave spool, DN100 Sch 10S SA-312 TP316L, ASME B16.5 Class 300 (316L rating at 200 C above the design)
-U = 'HTC'; d = N[U]['params']['design']; L = max(d['H_mm'], 200); OD = 114.3; t = 3.05
-m = cq.Workplane('XY').circle(OD/2).circle(OD/2 - t).extrude(L)
-for z in (-28.4, L): m = m.union(cq.Workplane('XY').workplane(offset=z).circle(254/2).extrude(28.4))      # DN100 Class 300 blind/WN, OD 254 (B16.5)
-m = m.union(cq.Workplane('XY').workplane(offset=30).circle(OD/2 + 50).circle(OD/2).extrude(L - 60))      # heater band + mineral wool envelope
-o = f'models/mfg/{U}/export'; os.makedirs(o, exist_ok=True)
-cq.exporters.export(m, f'{o}/{U.lower()}.step'); cq.exporters.export(m, f'{o}/{U.lower()}.stl')
-rows = [('1', f'Autoclave spool DN100 Sch 10S, {L} mm', 1, 'SA-312 TP316L', f"AQS-DUTY-062 section 5; UG-27 t_req {d['t_req_mm']:.2f} mm vs 2.67 mm min"),
-        ('2', 'Weld-neck flange DN100 Class 300 RF', 1, 'SA-182 F316L', 'ASME B16.5'), ('3', 'Blind flange DN100 Class 300 with DN15 feed/discharge and thermowell', 2, 'SA-182 F316L', 'ASME B16.5'),
-        ('4', 'Spiral-wound gasket DN100 Class 300', 2, '316L / flexible graphite', 'ASME B16.20'),
-        ('5', f"Band heater {max(50, round(d['heat_W']*2))} W with PID and high-limit", 1, 'mica', 'AQS-DUTY-062 section 5'),
-        ('6', 'Mineral wool 50 mm with SS cladding', 1, 'mineral wool', 'ASTM C547'), ('7', 'Safety valve DN15, set at design pressure', 1, '316L', 'API 520 (graph relief_basis)')]
-__import__('csv').writer(open(f'models/mfg/{U}/bom.csv', 'w', newline='')).writerows([('item', 'description', 'qty', 'material', 'basis')] + [tuple(r) for r in rows])   # quoted: materials carry commas
-open(f'models/mfg/{U}/fasteners.csv', 'w').write('item,size,grade,qty,location,basis\n1,3/4 in stud bolt with 2 heavy hex nuts,ASTM A193 B8M / A194 8M,16,two DN100 Class 300 joints (8 each),ASME B16.5\n')
-open(f'models/mfg/{U}/WORK_ORDER.md', 'w').write(f"""# Work order {U}
-
-Authority: AQS-DUTY-062 section 5 (X-MFG-31). In-house fabrication to ASME VIII-1; welders and procedure qualified to ASME IX.
-
-1. Cut DN100 Sch 10S 316L pipe to {L} mm; bevel; butt-weld the Class 300 weld-neck flange (GTAW, back-purged).
-2. Drill and weld the DN15 nozzles and thermowell into the blind flanges.
-3. Hydrostatic test at 1.3 x {d['design_MPa']:.2f} MPa (UG-99).
-4. Fit the band heater, high-limit, insulation and safety valve.
-5. Inspect against models/mfg/{U}/export/{U.lower()}.step; record on the traveller.
-""")
-print(U, L)
-
-# Catalytic tube reactors ALD, FORM, MEAM (X-MFG-31 batch 3, A-M-157): SA-312 TP316L tube, flanged ends (B16.5), band heater and insulation
-for U, cls, flod, flt in (('ALD', 150, 88.9, 11.2), ('FORM', 150, 88.9, 11.2), ('MEAM', 300, 95.2, 14.2)):
-    d = N[U]['params']['design']; L = d['L_bed_mm'] + 300; OD = d['OD_mm']; t = d['t_nom_mm']
-    m = cq.Workplane('XY').circle(OD/2).circle(OD/2 - t).extrude(L)
-    for z in (-flt, L): m = m.union(cq.Workplane('XY').workplane(offset=z).circle(flod/2).extrude(flt))
-    m = m.union(cq.Workplane('XY').workplane(offset=50).circle(OD/2 + 40).circle(OD/2).extrude(L - 100))
-    o = f'models/mfg/{U}/export'; os.makedirs(o, exist_ok=True)
-    cq.exporters.export(m, f'{o}/{U.lower()}.step'); cq.exporters.export(m, f'{o}/{U.lower()}.stl')
-    rows = [('1', f"Reactor tube {d['tube']}, {L} mm", 1, 'SA-312 TP316L', 'AQS-DUTY-062 section 6'),
-            ('2', f"Weld-neck flange DN15 Class {cls} RF", 2, 'SA-182 F316L', 'ASME B16.5'), ('3', f"Blind flange DN15 Class {cls} with DN8 port and thermowell", 2, 'SA-182 F316L', 'ASME B16.5'),
-            ('4', f"Spiral-wound gasket DN15 Class {cls}", 2, '316L / flexible graphite', 'ASME B16.20'),
-            ('5', f"Catalyst {d['cat_kg']*1000:.1f} g ({d['basis'].split(',')[0]}) with inert alumina balls and 316L mesh retainers", 1, 'see basis', 'AQS-DUTY-062 section 6'),
-            ('6', f"Band heater {max(25, round(d['heat_W']*2))} W with PID and high-limit; feed vaporiser coil", 1, 'mica / 316L', 'AQS-DUTY-062 section 6'),
-            ('7', 'Mineral wool 40 mm with SS cladding', 1, 'mineral wool', 'ASTM C547')]
-    if U == 'MEAM': rows.append(('8', 'Safety valve DN8, set at design pressure', 1, '316L', 'API 520 (graph relief_basis)'))
-    if U == 'FORM': rows.append(('8', 'N2 diluent mixing tee and O2/MeOH ratio interlock (feed below LOC)', 1, '316L', 'FORMOX_REVIEW2021; X-SAF-02'))
-    __import__('csv').writer(open(f'models/mfg/{U}/bom.csv', 'w', newline='')).writerows([('item', 'description', 'qty', 'material', 'basis')] + [tuple(r) for r in rows])   # quoted: materials carry commas
-    open(f'models/mfg/{U}/fasteners.csv', 'w').write(f"item,size,grade,qty,location,basis\n1,1/2 in stud bolt with 2 heavy hex nuts,ASTM A193 B8M / A194 8M,8,two DN15 Class {cls} joints (4 each),ASME B16.5\n")
-    open(f'models/mfg/{U}/WORK_ORDER.md', 'w').write(f"""# Work order {U}
-
-Authority: AQS-DUTY-062 section 6 (X-MFG-31, A-M-157). In-house fabrication; welders and procedure qualified to ASME IX.
-
-1. Cut {d['tube']} 316L to {L} mm; butt-weld the DN15 Class {cls} weld-neck flanges (GTAW, back-purged).
-2. Drill the blind flanges for the feed/product ports and thermowell.
-3. Hydrostatic test at 1.3 x {'%.2f MPa' % d['design_MPa'] if 'design_MPa' in d else 'the Class ' + str(cls) + ' rating at temperature'} (UG-99).
-4. Load inert balls, {d['cat_kg']*1000:.1f} g catalyst, inert balls between mesh retainers; close with spiral-wound gaskets.
-5. Fit the band heater, vaporiser coil, insulation{' and safety valve' if U == 'MEAM' else ''}{' and the N2 dilution/interlock' if U == 'FORM' else ''}.
-6. Inspect against models/mfg/{U}/export/{U.lower()}.step; record on the traveller.
-""")
-    print(U, L)

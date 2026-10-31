@@ -31,7 +31,7 @@
 <polygon points="586,240 577,236 577,244" fill="#111"/>
 <text x="24" y="221" font-size="9" fill="#666" text-anchor="start">POLY_OLEFIN</text>
 <text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">OLEFIN_TO_PELLET</text>
-<text x="24" y="253" font-size="10" text-anchor="start">0.3 kg/d · solids transfer</text>
+<text x="24" y="253" font-size="10" text-anchor="start">0.4 kg/d · solids transfer</text>
 <text x="598" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="start">N1</text>
 <line x1="430" y1="286" x2="577" y2="286" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,286 577,282 577,290" fill="#111"/>
@@ -43,7 +43,7 @@
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">POLY_STOCK</text>
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">PELLET_TO_STOCK</text>
-<text x="1476" y="253" font-size="10" text-anchor="end">0.3 kg/d · solids transfer</text>
+<text x="1476" y="253" font-size="10" text-anchor="end">0.4 kg/d · solids transfer</text>
 <text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N3</text>
 <text x="24" y="400" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="410" font-size="9">Every incident graph edge is drawn: 2 in, 1 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
@@ -53,7 +53,7 @@
 <g id="aqs-title-block"><rect x="1116" y="492" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="509" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-PELLET</text>
 <text x="1124" y="526" font-size="9">P&amp;ID PELLET (former, POLYMERS sector)</text>
-<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 7be2477e   Issued 2026-10-19</text>
+<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 3ba95afd   Issued 2026-10-19</text>
 <text x="1124" y="560" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="577" font-size="9">Graph SHA-256 307200ce85a4b6e4   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="577" font-size="9">Graph SHA-256 a68069cea430aa98   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

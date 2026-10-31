@@ -1,32 +1,24 @@
-CONT_CAST build log - FOUNDRY-CONT_CAST-10 / FOUNDRY-CONT_CAST-11 acceptance
+# Build log - CONT_CAST
 
-Date: 2026-10-26. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
-Model source: `models/mfg/CONT_CAST/cont_cast.py` + `params.json`; drawing set `models/mfg/CONT_CAST/drawings/`;
-build script chain run headless:
+Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/CONT_CAST.md`; sizing `docs-authority/sizing/CONT_CAST.md`).
 
-    $CADQUERY_PYTHON cont_cast.py         # build + checks + bom.csv + fasteners.csv + WORK_ORDER + STEP/STL
-    $CADQUERY_PYTHON draw_cont_cast.py    # 8 SVG sheet sources (notes bands, no title block yet)
-    python3 docs-authority/_drawings.py      # AQS-DWG-001 title blocks + DRAWING_REGISTER.md rows
-    $CADQUERY_PYTHON draw_cont_cast.py    # PDF pass from the stamped SVGs
+## Tool versions
 
-## Tool versions (recorded per AQS-PLAN-006 5.1)
+- CadQuery 2.8.0 (CADQUERY_PYTHON)
+- Python 3.13.7; build run headless via `models/mfg/build_all.py`
 
-- CadQuery 2.8.0 (dedicated virtual environment; the plan's 2.8.0 pick holds), python 3.13.
-- trimesh 5.1.1 for the STL solid check; cairosvg for the SVG -> PDF pass.
+## Checks
 
-## A-core evidence (check.json is the machine-checked copy)
+- Build bbox 1540 x 806 x 1500 mm: no graph envelope; dims recorded
+- Solid source: build export `models/mfg/CONT_CAST/export/cont_cast.step`
+- BOM `models/mfg/CONT_CAST/bom.csv`; fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/CONT_CAST/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
-1. Builds headless from params.json with no manual step; check.json written by the build.
-2. The in-envelope build solid spans the full 1500 x 800 x 1500 frame (gantry legs and
-   hoist beam carry the mould change-out); the melt inlet and billet stop overhang
-   within the 50 mm allowance.
-3. All parts valid; the export STL is watertight (3 closed bodies); the cad/stl
-   registry copy passes the X-PAR-04 gate (flow_graph/param/test_envelopes.py).
-4. Drawings name graph revision AC; 8 sheets stamped by AQS-DWG-002, SVG + PDF.
+## Sources
 
-## Deviations from the M2 export
+- `models/mfg/CONT_CAST/cont_cast.py`
+- `models/mfg/CONT_CAST/draw_cont_cast.py`
+- `models/mfg/CONT_CAST/export/cont_cast.step`
 
-- The M2 foundry.py export stays superseded: the M3 build regenerates bom.csv and
-  fasteners.csv from the model and replaces export/cont_cast.step/.stl.
-- The withdrawal rolls and vent overlap the deck by 2-5 mm and the gantry is new
-  design content (mould change-out hoisting); nothing resized.
+Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

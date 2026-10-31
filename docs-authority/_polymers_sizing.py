@@ -20,7 +20,7 @@ def v(k):
     return float(r['value'] or 0) if r.get('unit') == 'kg/d' else 0.0
 
 
-UNITS = ['HF_GEN', 'VDF_SYN', 'TFE_SYN', 'POLY_F', 'POLY_OLEFIN', 'POLY_COND', 'PELLET', 'POWDER_RESIN', 'FILM_CAST', 'POLY_STOCK']
+UNITS = ['HF_GEN', 'VDF_SYN', 'TFE_SYN', 'POLY_F', 'POLY_OLEFIN', 'POLY_COND', 'PELLET', 'POWDER_RESIN', 'FILM_CAST', 'POLY_STOCK', 'POLY_FIBER']
 rows = []
 for u in UNITS:
     tin = sum(v(e['stream_id']) for e in g['edges'] if e['to_unit_id'] == u and (e['rate'] or {}).get('unit') == 'kg/d')
@@ -62,6 +62,10 @@ A(f'| POLY_OLEFIN | {v("IA-C5-POLY"):.6f} naphtha (IA-C5-POLY from PROD_C5_C10) 
   f'150-250 C, 1-5 MPa (AQS-SIZE-OIL-POLY); feed heating {heat_W:.4f} W (25->200 C at 2.1 kJ/kg K), oligomerization '
   f'exotherm neglected at this rate (study) |')
 A(f'| PELLET | {v("OLEFIN_TO_PELLET"):.6f} | {v("PELLET_TO_STOCK"):.6f} | 2-4 mm pellets (AQS-DES-POLY) |')
+A(f'| POLY_FIBER | {v("STOCK_TO_FIBER"):.6f} + {v("FR_FINISH"):.6f} FR | {v("FLEECE_TO_MFG"):.6f} fleece + {v("FIBER_SCRAP"):.6f} scrap | '
+  'PP melt-spin staple fibre -> needle-punched fleece: the crew textile line (A-M-429; spin yield at the '
+  'POLYMERS.textile.spin_yield driver class; FR finish on the D-DOCK reagent manifest per A-M-225; conversion '
+  '(cutting/sewing/knitting) runs in MFG_SHOP, the issue rides TEXTILE_HAB and the worn goods return on IA-WEAR) |')
 A(f'| POLY_STOCK | {v("PELLET_TO_STOCK"):.6f} | {v("POLY_TO_MFG"):.6f} to MFG + {v("POLY_TO_WET"):.6f} to wet + '
   f'{v("POLY_TO_FAB"):.1f} to fab | staged polymer feedstock |')
 A('')

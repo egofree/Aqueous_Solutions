@@ -1,2 +1,5 @@
 task,basis,interval_y
-external visual,A-M-189,1
+lubrication,A-M-189,0.5
+vibration and temperature check,A-M-189,0.25
+bearing replacement,A-M-189,5
+seal replacement,A-M-189,3

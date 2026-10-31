@@ -1,0 +1,5 @@
+item,part,qty,material,mass_kg,make_buy,note
+1,lid,1,HDPE,14.1,make,"tank class; moving-bed vessel 0.55 m3 at the 0.9 kg/d feed ammonia load, K1 media 0.2 m3 (A-"
+2,stub_1,1,HDPE,0.2,make,"tank class; moving-bed vessel 0.55 m3 at the 0.9 kg/d feed ammonia load, K1 media 0.2 m3 (A-"
+3,stub_2,1,HDPE,0.4,make,"tank class; moving-bed vessel 0.55 m3 at the 0.9 kg/d feed ammonia load, K1 media 0.2 m3 (A-"
+4,vessel_shell,1,HDPE,69.4,make,"tank class; moving-bed vessel 0.55 m3 at the 0.9 kg/d feed ammonia load, K1 media 0.2 m3 (A-"

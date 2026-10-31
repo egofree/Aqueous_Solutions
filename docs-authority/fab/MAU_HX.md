@@ -1,10 +1,10 @@
 # MAU_HX fabrication
 
 Class: hx; sector HEAT. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
-service line: see the duty sheet section 1 basis
+Envelope: Envelope 600×400×400 mm;
+service line: duty the 12 kW water-to-air coil on the hab make-up air (Q4 -> MAU).
 
-Internals: duty sheet: "Material. Aluminium-fin, copper-tube make-up-air heating coil (air side dry and above the dew point in heating" [docs-authority/duties/MAU_HX.md]
+Internals: issued mfg model BOM (1 internals part row): "400 mm,1,"Aluminium-fin, copper-tube make-up-air heating coil (air side dry and above the dew point in heating" [models/mfg/MAU_HX/bom.csv]
 Material: Aluminium-fin, copper-tube make-up-air heating coil (air side dry and above the dew point in heating), 316L headers; PP condensate tray where any defrost condensate can form; water side on the issued Q3/Q4 M1 316L loop family. (continues on the duty sheet)
 
 Nozzles: none scheduled yet (unit task 04); route carries the connections once scheduled

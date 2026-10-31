@@ -281,6 +281,9 @@ nodes:
   - id: POLYMERS.forming-train.PELLET
     parent: POLYMERS.forming-train
     unit_id: PELLET
+  - id: POLYMERS.forming-train.POLY_FIBER
+    parent: POLYMERS.forming-train
+    unit_id: POLY_FIBER
   - id: POLYMERS.forming-train.POWDER_RESIN
     parent: POLYMERS.forming-train
     unit_id: POWDER_RESIN
@@ -816,6 +819,29 @@ nodes:
     parent: HAB
     description: >-
       Habitation module with the CO2 and N2 headers.
+  - id: HAB.rooms-train
+    parent: HAB
+    description: >-
+      Hab interior rooms: galley (kitchen), washroom (hygiene), medical, recreation/common
+      day-space and the private sleeping quarters.
+  - id: HAB.rooms-train.GALLEY
+    parent: HAB.rooms-train
+    unit_id: GALLEY
+  - id: HAB.rooms-train.WASHROOM
+    parent: HAB.rooms-train
+    unit_id: WASHROOM
+  - id: HAB.rooms-train.MEDICAL
+    parent: HAB.rooms-train
+    unit_id: MEDICAL
+  - id: HAB.rooms-train.REC_DAYROOM
+    parent: HAB.rooms-train
+    unit_id: REC_DAYROOM
+  - id: HAB.rooms-train.SLEEP_QUARTERS
+    parent: HAB.rooms-train
+    unit_id: SLEEP_QUARTERS
+  - id: HAB.rooms-train.COMMON_AREA
+    parent: HAB.rooms-train
+    unit_id: COMMON_AREA
   - id: HAB.life-support-train.HABITATION
     parent: HAB.life-support-train
     unit_id: HABITATION
@@ -828,6 +854,58 @@ nodes:
   - id: FARM
     description: >-
       Life support / habitat — grow beds; food surplus.
+  - id: FARM.aquaponics-train
+    parent: FARM
+    description: >-
+      Aquaponic loop: fish tanks, biofilter, the dual root-zone growbeds and the duckweed
+      raceway (feed crop and loop polisher).
+  - id: FARM.aquaponics-train.AQUA_TANK
+    parent: FARM.aquaponics-train
+    unit_id: AQUA_TANK
+  - id: FARM.aquaponics-train.BIOFILTER
+    parent: FARM.aquaponics-train
+    unit_id: BIOFILTER
+  - id: FARM.aquaponics-train.GROWBED_A
+    parent: FARM.aquaponics-train
+    unit_id: GROWBED_A
+  - id: FARM.aquaponics-train.GROWBED_B
+    parent: FARM.aquaponics-train
+    unit_id: GROWBED_B
+  - id: FARM.aquaponics-train.DUCKWEED
+    parent: FARM.aquaponics-train
+    unit_id: DUCKWEED
+  - id: FARM.aquaponics-train.FEED_PREP
+    parent: FARM.aquaponics-train
+    unit_id: FEED_PREP
+  - id: FARM.aquaponics-train.AQUA_UV
+    parent: FARM.aquaponics-train
+    unit_id: AQUA_UV
+  - id: FARM.animal-train
+    parent: FARM
+    description: >-
+      Smallstock and decomposers: layer flock, coturnix cage bank, rabbitry, honey bee hive,
+      black-soldier-fly larvae bin and the vermi bin.
+  - id: FARM.animal-train.CHICKEN_COOP
+    parent: FARM.animal-train
+    unit_id: CHICKEN_COOP
+  - id: FARM.animal-train.DUCK_PEN
+    parent: FARM.animal-train
+    unit_id: DUCK_PEN
+  - id: FARM.animal-train.QUAIL_CAGE
+    parent: FARM.animal-train
+    unit_id: QUAIL_CAGE
+  - id: FARM.animal-train.RABBIT_HUTCH
+    parent: FARM.animal-train
+    unit_id: RABBIT_HUTCH
+  - id: FARM.animal-train.BEE_HIVE
+    parent: FARM.animal-train
+    unit_id: BEE_HIVE
+  - id: FARM.animal-train.BSFL_BIN
+    parent: FARM.animal-train
+    unit_id: BSFL_BIN
+  - id: FARM.animal-train.VERMI_BIN
+    parent: FARM.animal-train
+    unit_id: VERMI_BIN
   - id: FARM.grow-bed-train
     parent: FARM
     description: >-
@@ -853,6 +931,9 @@ nodes:
   - id: MEOH.synthesis-train.MEOH_SYNTH
     parent: MEOH.synthesis-train
     unit_id: MEOH_SYNTH
+  - id: MEOH.synthesis-train.MET_SYN
+    parent: MEOH.synthesis-train
+    unit_id: MET_SYN
   - id: MEOH.synthesis-train.MEOH_FERM
     parent: MEOH.synthesis-train
     unit_id: MEOH_FERM

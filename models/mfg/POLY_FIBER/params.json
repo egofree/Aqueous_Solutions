@@ -1,0 +1,33 @@
+{
+  "unit": "POLY_FIBER",
+  "form": "cabinet",
+  "size_mm": [
+    3100,
+    1300,
+    1900
+  ],
+  "size_note": "bench-scale melt-spin line: extruder + spinnerette + quench + winder at the 0.09 kg/d draw (A-M-429) (X-POLY sec3) (sheet-metal cabinet class, 5 mm)",
+  "material_class": "SS304",
+  "wall_mm": 5,
+  "liner_mm": null,
+  "extras_mm": [
+    [
+      100,
+      150,
+      100,
+      800,
+      400,
+      500,
+      "extruder"
+    ],
+    [
+      1100,
+      150,
+      100,
+      1500,
+      400,
+      400,
+      "quench_winder"
+    ]
+  ]
+}

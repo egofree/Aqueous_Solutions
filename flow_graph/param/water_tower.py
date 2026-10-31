@@ -6,7 +6,6 @@ wall load per ACI 350); each level is split in at least two cells (redundancy: o
 sloshing). The lower reservoir deepens CATCH_TANK below the lowest basement. Head and volume depend on each other, so iterate."""
 import json, math, os
 from . import site as SITE   # apparent gravity from the site profile
-_D = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'drivers.json')
 def _drivers():
     from . import drivers as _DR
     return _DR.load()

@@ -10,19 +10,17 @@ The graph sha is computed at check time: a manifest row matching the current gra
 GATED file is stale. --check-only evaluates and prints the summary without writing the file.
 U3 gated expansion (2026-10-18): GATED is no longer a 3-file list — every DERIVED file is gated unless it is classified. CLASS keeps the
 by-design artwork/superseded/manual-capture files, BY_DESIGN keeps the documented one-shots and blocked generators (frozen studies, sheets
-of deleted edges pending retirement, the manifest mechanisms themselves), and the iso-sheet orphan rule keys off the regenerated
-iso/ISO_SHEETS.csv. Anything else that is stale fails the gate: run python3 -m flow_graph.param.regen."""
+of deleted edges pending retirement, the manifest mechanisms themselves), Anything else that is stale fails the gate: run python3 -m flow_graph.param.regen."""
 import json, os, subprocess, sys, fnmatch
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); GP = 'flow_graph/plant_flow_graph.json'
-DERIVED = ['docs-authority/iso/*', 'iso/*', 'media/*', 'media/pfd/*', 'flow_graph/views/*', 'flow_graph/derived/*', 'docs-authority/duties/*.md',
+DERIVED = ['media/*', 'flow_graph/views/*', 'flow_graph/derived/*', 'docs-authority/duties/*.md',
            'docs-authority/sizing/*.md', 'docs-authority/pid/*', 'docs-authority/LOAD_LIST.md', 'docs-authority/ONE_LINE.md', 'docs-authority/BALANCE_RECONCILIATION.md',
            'docs-authority/O2_SOURCE.md', 'docs-authority/ASSUMPTIONS_REGISTER.md', 'docs-authority/MODEL_WORKBOOK.xlsx', 'design_tool/aqs_design_tool/data/candidate_mvs.json']
 # Every file a default-run pipeline stage writes or amends is derived too, read from the manifest so a new stage is gated
 # without editing this list. The "cad" group is left out: it runs only with regen --cad on a machine with the CAD toolchains.
 _MAN = json.load(open(os.path.join(ROOT, 'flow_graph/param/regen_manifest.json')))
 DERIVED = sorted(set(DERIVED) | {g for st in _MAN['stages'] if st.get('group') != 'cad' for g in st.get('outputs', []) + st.get('amends', [])})
-CLASS = {'iso/*': 'superseded by docs-authority/iso/*.svg (AQS-ISO-002, _iso_sheets.py); generator pfd_scripts/iso_fab.py retired',
-         'media/logo3.png': 'artwork, not derived', 'media/verify_view*.png': 'manual capture in GUI FreeCAD (models/freecad/verify_view_png.py)'}
+CLASS = {'media/logo3.png': 'artwork, not derived', 'media/verify_view*.png': 'manual capture in GUI FreeCAD (models/freecad/verify_view_png.py)'}
 # documented one-shots and blocked generators: derived files the U3 orchestrator does not regenerate, with the reason (U3 gated expansion)
 BY_DESIGN = {
     'docs-authority/sizing/SANITATION.md': 'X-SAN-01 graph-writer module (flow_graph/param/sanitation.py); owner-lane port pending (R11 close-out)',
@@ -66,7 +64,6 @@ def compute():
                     s = json.load(open(sc)).get('_generated_from', {}).get('graph_sha256')
                     if isinstance(s, str): vouched.setdefault(f, s)
                 except ValueError: pass
-    orphans = iso_orphans()   # sheets of deleted/rerouted edges: present as svg, absent from the regenerated route table
     for f in sorted(files):
         c = last.get(f)
         if f == 'docs-authority/DERIVED_REVISIONS.md': rows.append((f, '-', 'this register (its own row would change with each write)')); continue
@@ -75,7 +72,6 @@ def compute():
         if cl: rows.append((f, '-', cl)); continue
         bd = next((v for k, v in BY_DESIGN.items() if fnmatch.fnmatch(f, k)), None)
         if bd: rows.append((f, '-', 'by design: ' + bd)); continue
-        if f in orphans: rows.append((f, '-', 'by design: sheet of a deleted/rerouted edge (not in regenerated iso/ISO_SHEETS.csv); retirement pending the graph lane')); continue
         if any(fnmatch.fnmatch(f, k) for k in checked) or vouched.get(f) == gsha: rows.append((f, head_g[0][:7] + ' (regenerated, no change)', 'current')); continue
         made = next((g for g in graph if g[1] <= c[1]), None)
         st = 'current' if made and made[0] == head_g[0] else 'stale'
@@ -83,19 +79,6 @@ def compute():
         if st == 'stale': bad.append(f)   # U3 gated expansion: every unclassified DERIVED file gates
     n = sum(r[2] == 'stale' for r in rows)
     return rows, n, bad, rev, head_g
-
-def iso_orphans():
-    """iso/*.svg files with no row in the regenerated docs-authority/iso/ISO_SHEETS.csv (edges deleted from the graph)."""
-    p = os.path.join(ROOT, 'docs-authority/iso/ISO_SHEETS.csv')
-    if not os.path.exists(p): return set()
-    import csv
-    have = {os.path.basename(f) for f in glob_iso()}
-    listed = {r.get('line', '') + '.svg' for r in csv.DictReader(open(p))}
-    return {f'docs-authority/iso/{b}' for b in have - listed}
-
-def glob_iso():
-    import glob as _g
-    return sorted(_g.glob(os.path.join(ROOT, 'docs-authority/iso', '*.svg')))
 
 def main():
     rows, n, bad, rev, head_g = compute()

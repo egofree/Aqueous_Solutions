@@ -20,3 +20,8 @@ N18,solids,Class 150,methanol condensate,inlet,160
 N19,DN15,Class 150,electrolyser feed water,outlet,600
 N20,DN15,Class 150,"groundwater make-up, reverse-osmosis treated",inlet,160
 N21,DN15,Class 150,evaporative spray make-up,outlet,600
+N22,DN15,Class 150,flock drinking water,outlet,600
+N23,DN15,Class 150,loop top-up: root-zone growth water and evaporation,outlet,600
+N24,DN15,Class 150,duck drinking/washing water,outlet,600
+N25,DN15,Class 150,wash-water feed to the washroom fixtures,outlet,600
+N26,DN15,Class 150,quail water,outlet,600

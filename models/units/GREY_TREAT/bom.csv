@@ -1,6 +1,6 @@
 item,description,qty,material,basis
 1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/GREY_TREAT.md
-2,Process nozzle DN15,6,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,9,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 3,Process nozzle DN50,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 4,"Motor: transfer pump IA-GREY-01 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 5,"Motor: transfer pump S29 to VCD_TRAIN (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005

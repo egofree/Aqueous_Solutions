@@ -7,3 +7,7 @@ N5,DN50,Class 150,nitrate water,outlet,900
 N6,DN15,Class 150,biofilter bleed to the nutrient tank,outlet,900
 N7,DN15,Class 150,drain,bottom,50
 N8,DN15,Class 150,vent,top,1200
+N9,DN15,Class 150,ammonia-rich fish waste water (NH3/NH4+ from the gills),inlet,160
+N10,DN15,Class 150,"nitrified water (NO3- nitrate, plant-available nitrogen)",outlet,600
+N11,DN15,Class 150,nitrified water to the optional sanitizer (NO3- passes; sloughed cells die in food-safety mode),outlet,600
+N12,DN15,Class 150,normal-mode loop bypass around AQUA_UV,outlet,600

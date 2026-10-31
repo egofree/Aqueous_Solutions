@@ -1,31 +1,24 @@
-POWDER_RESIN build log - FOUNDRY-POWDER_RESIN-10 / FOUNDRY-POWDER_RESIN-11 acceptance
+# Build log - POWDER_RESIN
 
-Date: 2026-10-26. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
-Model source: `models/mfg/POWDER_RESIN/powder_resin.py` + `params.json`; drawing set
-`models/mfg/POWDER_RESIN/drawings/`; build script chain run headless:
+Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/POWDER_RESIN.md`; sizing `docs-authority/sizing/POWDER_RESIN.md`).
 
-    $CADQUERY_PYTHON powder_resin.py         # build + checks + bom.csv + WORK_ORDER + STEP/STL
-    $CADQUERY_PYTHON draw_powder_resin.py    # 8 SVG sheet sources (notes bands, no title block yet)
-    python3 docs-authority/_drawings.py      # AQS-DWG-001 title blocks + DRAWING_REGISTER.md rows
-    $CADQUERY_PYTHON draw_powder_resin.py    # PDF pass from the stamped SVGs
+## Tool versions
 
-## Tool versions (recorded per AQS-PLAN-006 5.1)
+- CadQuery 2.8.0 (CADQUERY_PYTHON)
+- Python 3.13.7; build run headless via `models/mfg/build_all.py`
 
-- CadQuery 2.8.0 (dedicated virtual environment; the plan's 2.8.0 pick holds), python 3.13.
-- trimesh 5.1.1 for the STL solid check; cairosvg for the SVG -> PDF pass.
+## Checks
 
-## A-core evidence (check.json is the machine-checked copy)
+- Build bbox 1530 x 800 x 1500 mm: no graph envelope; dims recorded
+- Solid source: build export `models/mfg/POWDER_RESIN/export/powder_resin.step`
+- BOM `models/mfg/POWDER_RESIN/bom.csv`; fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/POWDER_RESIN/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
-1. Builds headless from params.json with no manual step; check.json written by the build.
-2. The in-envelope build solid spans the full 1500 x 800 x 1500 frame (posts to the z 1480
-   datum with the top rail); nothing overhangs the envelope faces.
-3. All parts valid; the export STL is watertight (6 closed bodies); the cad/stl registry
-   copy passes the X-PAR-04 gate (flow_graph/param/test_envelopes.py).
-4. Drawings name graph revision AC; 8 sheets stamped by AQS-DWG-002, SVG + PDF.
+## Sources
 
-## Deviations from the M2 export
+- `models/mfg/POWDER_RESIN/powder_resin.py`
+- `models/mfg/POWDER_RESIN/draw_powder_resin.py`
+- `models/mfg/POWDER_RESIN/export/powder_resin.step`
 
-- The M2 legacy multi-body compound is superseded (one of the five legacy non-watertight
-  models): the M3 build regenerates bom.csv from the model and replaces
-  export/powder_resin.step/.stl.
-- The posts-to-rail frame is new design content (the cyclone and collector mount to it).
+Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

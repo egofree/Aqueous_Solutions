@@ -1,0 +1,24 @@
+{
+  "unit": "AQUA_UV",
+  "form": "cabinet",
+  "size_mm": [
+    400,
+    350,
+    750
+  ],
+  "size_note": "inline 254 nm reactor tube + control box at the 0.04 kW lamp class (A-M-428) (X-FARM sec3) (sheet-metal cabinet class, 5 mm)",
+  "material_class": "SS304",
+  "wall_mm": 5,
+  "liner_mm": null,
+  "extras_mm": [
+    [
+      50,
+      87,
+      200,
+      300,
+      176,
+      100,
+      "reactor_tube"
+    ]
+  ]
+}

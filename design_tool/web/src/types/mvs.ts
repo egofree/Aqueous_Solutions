@@ -114,7 +114,10 @@ export interface SolveResponse {
   electrical_match?: ElectricalMatch
   notes: string[]
   solved_at?: string
-}
+
+  residuals?: {
+    mass?: { id: string; kind: string; residual?: number; unit?: string; status: string; detail?: string }[]
+  }}
 
 export interface FlagsResponse {
   sandbox_id: string

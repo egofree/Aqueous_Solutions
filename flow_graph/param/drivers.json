@@ -85,9 +85,12 @@
   "basis": "V = E_spec M CE / (z F) with E_spec 2.1 kWh/kg (cupric), CE 0.85, z 2: 2.12 V"
  },
  "site_design_dry_bulb_C": {
-  "value": 37.8,
+  "value": 47.4,
   "units": "C",
-  "register": "AQS-SITE-002"
+  "register": "AQS-SITE-002",
+  "basis": "location-neutral bounding (AQS-SITE-002 Rev C): the strictest value across the daily-cycle localization set, carried from the governing site profile. A site design replaces it with its own published value. Governing site: death_valley (0.4 % cooling, NOAA_NORMALS_DV).",
+  "needs_verification": true,
+  "verification_test": "the site design tool run for the chosen location replaces the bounding value"
  },
  "continuous_load_factor": {
   "value": 1.25,
@@ -379,11 +382,12 @@
   "verification_test": "Occupancy classification of the extension"
  },
  "ext_dT_mean_K": {
-  "value": 7.9,
+  "value": 9.916,
   "units": "K mean |T_in - T_out|: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals)",
   "needs_verification": true,
   "verification_test": "NOAA 1991-2020 normals for the final site; TMY3 bin-hour calculation",
-  "ref": "NOAA_NORMALS_DFW"
+  "ref": "NOAA_WRCC_DV",
+  "basis": "location-neutral bounding (AQS-SITE-002 Rev C): the strictest station normals across the daily-cycle localization set, carried from the governing site death_valley (Furnace Creek, USC00042319). A site design replaces it with its own station normals. (HDD65 1251 F-d + CDD65 5264 F-d) x 5/9 / 365."
  },
  "ext_cop": {
   "value": 3.2,
@@ -425,7 +429,8 @@
   "units": "kPa flat-roof snow",
   "register": "A-M-105",
   "needs_verification": true,
-  "verification_test": "ASCE 7 Hazard Tool ground snow load at the site"
+  "verification_test": "the site design tool run for the chosen location replaces the bounding value",
+  "basis": "location-neutral bounding (AQS-SITE-002 Rev C): the strictest value across the daily-cycle localization set, carried from the governing site profile. A site design replaces it with its own published value. The bounding value is the baseline run own 0.24 kPa (A-M-105): the other daily-cycle sites carry less."
  },
  "ext_conditioned": {
   "value": 1.0,
@@ -439,7 +444,8 @@
   "units": "W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3",
   "ref": "IECC2021_C402",
   "needs_verification": true,
-  "verification_test": "Wall assembly design"
+  "verification_test": "Wall assembly design",
+  "basis": "IECC 2021 C402.1.4 metal building wall, climate zone 3 - already the strictest prescriptive value across the localization set (the hotter sites sit in zones 1-2, whose requirements are lower). Location-neutral per AQS-SITE-002 Rev C."
  },
  "ext_wall_h_mm": {
   "value": 6000,
@@ -704,25 +710,28 @@
   "verification_test": "Condensate titration during start-up before the column profile forms"
  },
  "ext_dTh_K": {
-  "value": 3.458,
+  "value": 1.904,
   "units": "K mean heating dT = HDD65 2272 F-d x 5/9 / 365",
-  "ref": "NOAA_NORMALS_DFW",
+  "ref": "NOAA_WRCC_DV",
   "needs_verification": true,
-  "verification_test": "TMY3 bin-hour calculation"
+  "verification_test": "TMY3 bin-hour calculation",
+  "basis": "location-neutral bounding (AQS-SITE-002 Rev C): the strictest station normals across the daily-cycle localization set, carried from the governing site death_valley (Furnace Creek, USC00042319). A site design replaces it with its own station normals."
  },
  "ext_dTc_K": {
-  "value": 4.381,
+  "value": 8.012,
   "units": "K mean cooling dT = CDD65 2878 F-d x 5/9 / 365",
-  "ref": "NOAA_NORMALS_DFW",
+  "ref": "NOAA_WRCC_DV",
   "needs_verification": true,
-  "verification_test": "TMY3 bin-hour calculation"
+  "verification_test": "TMY3 bin-hour calculation",
+  "basis": "location-neutral bounding (AQS-SITE-002 Rev C): the strictest station normals across the daily-cycle localization set, carried from the governing site death_valley (Furnace Creek, USC00042319). A site design replaces it with its own station normals."
  },
  "ext_F_slab": {
   "value": 1.264,
   "units": "W/(m K), unheated slab F-0.73 Btu/(h ft F), climate zone 3",
   "ref": "IECC2021_C402",
   "needs_verification": true,
-  "verification_test": "Slab edge detail"
+  "verification_test": "Slab edge detail",
+  "basis": "IECC 2021 C402 climate zone 3 slab F-factor - already the strictest across the localization set. Location-neutral per AQS-SITE-002 Rev C."
  },
  "ext_hvac": {
   "value": "air",
@@ -2454,15 +2463,19 @@
   "value": 0.107,
   "units": "g design short-period spectral acceleration = 2/3 Fa Ss",
   "needs_verification": true,
-  "verification_test": "ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held)",
-  "ref": "ASCE7_22"
+  "verification_test": "ASCE 7 Hazard Tool at the chosen location; the foundation re-solves",
+  "ref": "ASCE7_22",
+  "register": "AQS-SITE-002",
+  "basis": "per-site input (AQS-SITE-002 Rev C): the seismic spectral shape changes the foundation method (presumptive bearing vs engineered), so the baseline carries its study-site value; a site design replaces it with the site spectral values and the foundation re-solves."
  },
  "wt_SD1": {
   "value": 0.08,
   "units": "g design 1 s spectral acceleration = 2/3 Fv S1",
   "needs_verification": true,
-  "verification_test": "ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held)",
-  "ref": "ASCE7_22"
+  "verification_test": "ASCE 7 Hazard Tool at the chosen location; the foundation re-solves",
+  "ref": "ASCE7_22",
+  "register": "AQS-SITE-002",
+  "basis": "per-site input (AQS-SITE-002 Rev C): the seismic spectral shape changes the foundation method (presumptive bearing vs engineered), so the baseline carries its study-site value; a site design replaces it with the site spectral values and the foundation re-solves."
  },
  "wt_TL_s": {
   "value": 8.0,
@@ -2486,11 +2499,13 @@
   "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
  },
  "wt_wind_ms": {
-  "value": 50.0,
+  "value": 70.0,
   "units": "m/s basic wind speed",
-  "register": "A-M-187",
+  "register": "AQS-SITE-002",
   "needs_verification": true,
-  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+  "verification_test": "the site design tool run for the chosen location replaces the bounding value",
+  "ref": "SAFFIR_CAT5",
+  "basis": "location-neutral bounding (AQS-SITE-002 Rev C): the strictest value across the daily-cycle localization set, carried from the governing site profile. A site design replaces it with its own published value. Governing site: floating_island (Saffir-Simpson category 5)."
  },
  "wt_life_per_shop": {
   "value": 2,
@@ -5218,5 +5233,451 @@
   "units": "m",
   "register": "A-M-412",
   "note": "study deck stack behind the level heights in hull.py"
+ },
+ "FARM.aquaponics.fish_stock_kg": {
+  "value": 60.0,
+  "units": "kg standing fish stock (tilapia class)",
+  "register": "A-M-415",
+  "needs_verification": true,
+  "verification_test": "Stocking trial at the aquaponics commissioning (X-FARM-01)"
+ },
+ "FARM.aquaponics.fish_feed_kg_kg": {
+  "value": 0.015,
+  "units": "kg feed per kg fish per day (1.5 % body weight)",
+  "register": "A-M-415",
+  "basis": "Tilapia-class ration at grow-out stocking (FAO_AQUACONTENT class)"
+ },
+ "FARM.aquaponics.feed_larvae_frac": {
+  "value": 0.114,
+  "units": "kg/d larvae meal to the layer ration (7.9 % of the ration, computed)",
+  "register": "A-M-416",
+  "needs_verification": true,
+  "verification_test": "Larvae-meal ration trial (X-FARM-01)"
+ },
+ "FARM.aquaponics.waste_to_bed_frac": {
+  "value": 1.0,
+  "units": "- (fish waste circulates through the biofilter to the root zones)",
+  "register": "A-M-415"
+ },
+ "FARM.chicken.stock_birds": {
+  "value": 12.0,
+  "units": "birds (dual-purpose layer class)",
+  "register": "A-M-417",
+  "needs_verification": true,
+  "verification_test": "Flock trial at the coop commissioning (X-FARM-02)"
+ },
+ "FARM.chicken.feed_kg_bird_d": {
+  "value": 0.12,
+  "units": "kg feed per bird per day",
+  "register": "A-M-417",
+  "basis": "Layer-class ration"
+ },
+ "FARM.chicken.egg_kg_bird_d": {
+  "value": 0.05,
+  "units": "kg egg per bird per day",
+  "register": "A-M-417",
+  "basis": "Layer-class production"
+ },
+ "FARM.bsfl.process_kg_d": {
+  "value": 1.43,
+  "units": "kg/d feedstock (study duty; bin capacity class 5 kg/d)",
+  "register": "A-M-418",
+  "needs_verification": true,
+  "verification_test": "Bin trial (X-FARM-03)"
+ },
+ "FARM.bsfl.larvae_frac": {
+  "value": 0.15,
+  "units": "- (fresh larvae per feedstock mass)",
+  "register": "A-M-418",
+  "basis": "TECHTREE insect-farming: 1.4-2.0 kg wet biowaste per kg fresh larvae (DIENER2009 class)"
+ },
+ "FARM.bsfl.frass_frac": {
+  "value": 0.25,
+  "units": "- (frass per feedstock mass)",
+  "register": "A-M-418",
+  "basis": "BSFL residue class (DIENER2009)"
+ },
+ "HAB.rooms.galley_m2": {
+  "value": 12.0,
+  "units": "m2 galley floor area",
+  "register": "A-M-419",
+  "basis": "NASA_STD_3001 habitable-volume class per function; 4 crew"
+ },
+ "HAB.rooms.washroom_m2": {
+  "value": 8.0,
+  "units": "m2 washroom/hygiene floor area",
+  "register": "A-M-419",
+  "basis": "NASA_STD_3001 hygiene-volume class; 4 crew"
+ },
+ "HAB.rooms.rec_m2": {
+  "value": 20.0,
+  "units": "m2 recreation/common day-space",
+  "register": "A-M-419",
+  "basis": "NASA_STD_3001 common-area class; 4 crew"
+ },
+ "HAB.rooms.sleep_quarters_m2": {
+  "value": 16.0,
+  "units": "m2 private sleeping quarters (4 x 4 m2)",
+  "register": "A-M-419",
+  "basis": "NASA_STD_3001 private-crew-quarter class; 4 crew x 4 m2"
+ },
+ "HAB.rooms.common_m2": {
+  "value": 10.0,
+  "units": "m2 common circulation/utility area",
+  "register": "A-M-419",
+  "basis": "NASA_STD_3001 circulation class"
+ },
+ "FARM.duckweed.raceway_m2": {
+  "value": 300.0,
+  "units": "m2 raceway (Lemna minor, azolla co-culture)",
+  "register": "A-M-420 (revised 2026-10-26: 240 -> 300 m2 to carry the storage and galley-greens fractions)",
+  "needs_verification": true,
+  "verification_test": "Raceway yield trial at the loop commissioning (X-FARM-04)"
+ },
+ "FARM.duckweed.prod_g_dry_m2_d": {
+  "value": 15.0,
+  "units": "g dry matter per m2 per day",
+  "register": "A-M-420",
+  "basis": "Lemna-class yield at aquaponic-strength water (TECHTREE aquaculture: duckweed 25-35 % CP)"
+ },
+ "FARM.duckweed.CP_frac": {
+  "value": 0.3,
+  "units": "- (crude protein, dry)",
+  "register": "A-M-420",
+  "basis": "Lemna spp. 25-35 % CP class (TECHTREE aquaculture)"
+ },
+ "FARM.ducks.stock": {
+  "value": 6.0,
+  "units": "ducks (Khaki Campbell class)",
+  "register": "A-M-421",
+  "needs_verification": true,
+  "verification_test": "Flock trial (X-FARM-05)",
+  "basis": "TECHTREE poultry.ducks: Khaki Campbell 250-340 eggs/yr, feed 120-150 g/d"
+ },
+ "FARM.ducks.feed_kg_d": {
+  "value": 0.9,
+  "units": "kg/d ration (dry-equivalent, duckweed-base)",
+  "register": "A-M-421"
+ },
+ "FARM.ducks.egg_kg_d": {
+  "value": 0.34,
+  "units": "kg/d duck eggs",
+  "register": "A-M-421",
+  "basis": "6 ducks x ~0.8 eggs/d x 70 g (TECHTREE Khaki Campbell 250-340 eggs/yr)"
+ },
+ "FARM.ducks.manure_kg_d": {
+  "value": 0.36,
+  "units": "kg/d manure to the BSFL bin",
+  "register": "A-M-421"
+ },
+ "FARM.quail.stock": {
+  "value": 20.0,
+  "units": "coturnix hens (indoor cage bank)",
+  "register": "A-M-422",
+  "needs_verification": true,
+  "verification_test": "Cage-bank trial (X-FARM-06)",
+  "basis": "TECHTREE poultry.coturnix: 20-hen unit, feed 150-190 kg/yr"
+ },
+ "FARM.quail.feed_kg_d": {
+  "value": 0.5,
+  "units": "kg/d ration (dry)",
+  "register": "A-M-422"
+ },
+ "FARM.quail.egg_kg_d": {
+  "value": 0.06,
+  "units": "kg/d quail eggs",
+  "register": "A-M-422"
+ },
+ "FARM.rabbit.does": {
+  "value": 2.0,
+  "units": "does + 1 buck",
+  "register": "A-M-423",
+  "needs_verification": true,
+  "verification_test": "Rabbitry trial (X-FARM-07)",
+  "basis": "TECHTREE rabbits: 0.5-0.8 m2 per doe, cold manure direct to crops"
+ },
+ "FARM.rabbit.feed_kg_d": {
+  "value": 0.5,
+  "units": "kg/d forage + greens (canopy thinnings)",
+  "register": "A-M-423"
+ },
+ "FARM.rabbit.meat_kg_d": {
+  "value": 0.1,
+  "units": "kg/d dressed meat (study average)",
+  "register": "A-M-423"
+ },
+ "FARM.bee.hives": {
+  "value": 1.0,
+  "units": "hive (Apis mellifera)",
+  "register": "A-M-424",
+  "basis": "TECHTREE beekeeping: 10-25 kg honey/yr; pollination raises crop yields 20-30 %"
+ },
+ "FARM.bee.honey_kg_d": {
+  "value": 0.05,
+  "units": "kg/d honey (annual average)",
+  "register": "A-M-424"
+ },
+ "FARM.worms.bin_m2": {
+  "value": 2.0,
+  "units": "m2 bin (Eisenia fetida, 1 kg stock per 0.5 m2)",
+  "register": "A-M-425",
+  "basis": "TECHTREE soil-management.vermiculture: castings 1.5-2.5 % N, no turning"
+ },
+ "HAB.rooms.medical_m2": {
+  "value": 6.0,
+  "units": "m2 medical room",
+  "register": "A-M-419",
+  "basis": "AQS-HAB-001 room basis (medical 6 m2)"
+ },
+ "FARM.duckweed.prod_kg_d": {
+  "value": 4.5,
+  "units": "kg/d dry matter (300 m2 x 15 g/m2/d)",
+  "register": "A-M-420"
+ },
+ "FARM.feed_prep.layer_kg_d": {
+  "value": 1.44,
+  "units": "kg/d formulated layer ration (1.33 duckweed + 0.114 larvae meal)",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.quail_kg_d": {
+  "value": 0.5,
+  "units": "kg/d formulated quail ration",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.store_kg_d": {
+  "value": 0.5,
+  "units": "kg/d dried reserve draw (extends the A-M-270 dry matter)",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.greens_kg_d": {
+  "value": 0.12,
+  "units": "kg/d fresh galley greens",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.shell_kg_d": {
+  "value": 0.1,
+  "units": "kg/d recycled eggshell (38 g Ca/d)",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.reject_kg_d": {
+  "value": 0.104,
+  "units": "kg/d screenings/fines back to the BSFL bin",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.power_kW": {
+  "value": 0.6,
+  "units": "kW (mixer, grinder, HP drier on the storage draw)",
+  "register": "A-M-426"
+ },
+ "FARM.duckweed.fodder_dm": {
+  "value": 0.2,
+  "units": "kg/d DM the ducks take as fresh forage (rest of the duck ration is mash)",
+  "register": "A-M-426"
+ },
+ "FARM.duckweed.greens_dm": {
+  "value": 0.12,
+  "units": "kg/d DM fresh galley greens (A-M-427)",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.store_dm": {
+  "value": 0.5,
+  "units": "kg/d DM dried to the A-M-270 reserve",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.reject_dm": {
+  "value": 0.02,
+  "units": "kg/d DM screenings/fines back to the bin",
+  "register": "A-M-426"
+ },
+ "FARM.quail.feed_kg_bird_d": {
+  "value": 0.025,
+  "units": "kg feed per quail per day (A-M-422)",
+  "register": "A-M-426"
+ },
+ "FARM.bsfl.galley_bio_dm": {
+  "value": 0.1,
+  "units": "kg/d DM galley biowaste to the bin",
+  "register": "A-M-426"
+ },
+ "FARM.bsfl.galley_bio_wet": {
+  "value": 0.5,
+  "units": "kg/d wet galley biowaste to the bin",
+  "register": "A-M-426"
+ },
+ "FARM.classes.duckweed_dm_frac": {
+  "value": 0.05,
+  "units": "- fresh duckweed dry-matter fraction",
+  "basis": "TECHTREE aquaculture.md:101 harvest class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.mash_dm_frac": {
+  "value": 0.3,
+  "units": "- pressed mash DM (drained duckweed feed class)",
+  "basis": "TECHTREE insect-farming.md substrate-moisture class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.larva_dm_frac": {
+  "value": 0.44,
+  "units": "- prepupae DM",
+  "basis": "TECHTREE insect-farming.md:112",
+  "register": "A-M-426"
+ },
+ "FARM.classes.manure_dm_frac_of_feed": {
+  "value": 0.33,
+  "units": "- layer manure DM per feed DM",
+  "basis": "TECHTREE poultry manure class, chickens.md",
+  "register": "A-M-426"
+ },
+ "FARM.classes.layer_manure_moisture": {
+  "value": 0.87,
+  "units": "- mash-fed cage manure moisture",
+  "basis": "TECHTREE poultry droppings class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.quail_droppings_moisture": {
+  "value": 0.92,
+  "units": "- mash-fed cage droppings moisture",
+  "basis": "TECHTREE coturnix cage class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.duck_manure_moisture": {
+  "value": 0.75,
+  "units": "- duck manure moisture",
+  "basis": "TECHTREE waterfowl class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.sludge_moisture": {
+  "value": 0.85,
+  "units": "- settled fish sludge moisture",
+  "basis": "TECHTREE aquaculture sludge class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.eggshell_frac": {
+  "value": 0.1,
+  "units": "- shell mass fraction of the egg",
+  "basis": "TECHTREE chickens.md:99 shell formation",
+  "register": "A-M-426"
+ },
+ "FARM.classes.frass_wet_frac_of_feedstock": {
+  "value": 0.06,
+  "units": "- frass wet mass per wet feedstock",
+  "basis": "TECHTREE insect-farming.md:17 (15-20 % protein recovery class)",
+  "register": "A-M-426"
+ },
+ "FARM.classes.aqua_loop_kgd": {
+  "value": 200.0,
+  "units": "kg/d loop circulation through the biofilter and beds",
+  "basis": "TECHTREE study class: media-bed pass-through at the nitrate delivery duty",
+  "register": "A-M-426"
+ },
+ "FARM.classes.nut_dose_kgd": {
+  "value": 5.5,
+  "units": "kg/d mineral nitrate solution to the raceway",
+  "basis": "TECHTREE A-M-430 mineral N dose",
+  "register": "A-M-426"
+ },
+ "FARM.classes.chicken_water_kg_bird_d": {
+  "value": 0.03,
+  "units": "kg drinking water per hen per day",
+  "basis": "TECHTREE chickens.md husbandry class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.chicken_resp_kg_bird_d": {
+  "value": 0.06,
+  "units": "kg respiration/evaporation per hen per day",
+  "basis": "TECHTREE flock vapor class (A-M-417)",
+  "register": "A-M-426"
+ },
+ "FARM.classes.quail_water_kg_bird_d": {
+  "value": 0.01,
+  "units": "kg drinking water per quail per day",
+  "basis": "TECHTREE coturnix husbandry class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.ca_hopper_kgd": {
+  "value": 0.035,
+  "units": "kg/d mineral CaCO3 free-choice hopper (quail bank)",
+  "basis": "TECHTREE coturnix.md:60 Ca class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.duck_water_kg_bird_d": {
+  "value": 0.33,
+  "units": "kg drinking/wash water per duck per day",
+  "basis": "TECHTREE ducks.md husbandry class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.duck_resp_kg_d": {
+  "value": 0.8,
+  "units": "kg/d duck pen evaporation (flock)",
+  "basis": "TECHTREE A-M-421 vapor class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.rabbit_resp_kg_d": {
+  "value": 0.1,
+  "units": "kg/d hutch evaporation",
+  "basis": "TECHTREE rabbitry class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.vermi_feed_kgd": {
+  "value": 1.0,
+  "units": "kg/d soft canopy residue to the vermi bin",
+  "basis": "TECHTREE A-M-425 feed class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.vermicompost_kgd": {
+  "value": 1.9,
+  "units": "kg/d vermicompost out",
+  "basis": "TECHTREE A-M-425 castings class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.bed_greens_kgd": {
+  "value": 4.0,
+  "units": "kg/d media-bed greens to the reserve",
+  "basis": "TECHTREE aquaponics.md media-bed crop class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.bed_et_kgd": {
+  "value": 5.0,
+  "units": "kg/d growbed evapotranspiration (initial)",
+  "basis": "TECHTREE free edge; solver reconciles",
+  "register": "A-M-426"
+ },
+ "FARM.classes.galley_food_issue_kgd": {
+  "value": 8.0,
+  "units": "kg/d food issue to the galley (crop+products)",
+  "basis": "TECHTREE FOOD_STORE issue split (hab anchor side)",
+  "register": "A-M-426"
+ },
+ "FARM.classes.galley_grey_kgd": {
+  "value": 1.0,
+  "units": "kg/d galley wash grey",
+  "basis": "TECHTREE grey class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.food_hab_issue_kgd": {
+  "value": 2.55,
+  "units": "kg/d food issue to the habitation rooms",
+  "basis": "TECHTREE FOOD_STORE issue split",
+  "register": "A-M-426"
+ },
+ "POLYMERS.textile.textile_kg_person_yr": {
+  "value": 8.0,
+  "units": "kg finished textiles per person per year (clothing 4 + bedding 2 + wipes/other 2; A-M-429 study class)",
+  "register": "A-M-429"
+ },
+ "POLYMERS.textile.fr_pickup_frac": {
+  "value": 0.02,
+  "units": "- phosphorus-FR finish pick-up, % of fiber mass",
+  "register": "A-M-429"
+ },
+ "POLYMERS.textile.spin_yield": {
+  "value": 0.95,
+  "units": "- melt-spin first-pass yield; scrap to the solids line",
+  "register": "A-M-429"
+ },
+ "POLYMERS.textile.power_kW": {
+  "value": 0.3,
+  "units": "kW melt-spin heater + spindle + winder",
+  "register": "A-M-429"
  }
 }

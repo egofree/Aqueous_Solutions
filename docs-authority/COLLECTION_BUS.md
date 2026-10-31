@@ -34,20 +34,20 @@ Table 2.1. Collection bus sections
 
 | Section | Inverters | kW | 480 V A | Breaker A | Transformer kVA | MV A | MV fuse A | Storage kWh | Charge kW |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| CB-1 | 9 | 540 | 650 | 1000 | 750 | 34.7 | 65 | 647 | 210 |
-| CB-2 | 9 | 540 | 650 | 1000 | 750 | 34.7 | 65 | 647 | 210 |
-| CB-3 | 9 | 540 | 650 | 1000 | 750 | 34.7 | 65 | 647 | 210 |
-| CB-4 | 8 | 480 | 577 | 800 | 500 | 23.1 | 40 | 575 | 187 |
+| CB-1 | 11 | 660 | 794 | 1000 | 750 | 34.7 | 65 | 799 | 260 |
+| CB-2 | 11 | 660 | 794 | 1000 | 750 | 34.7 | 65 | 799 | 260 |
+| CB-3 | 10 | 600 | 722 | 1000 | 750 | 34.7 | 65 | 727 | 236 |
+| CB-4 | 10 | 600 | 722 | 1000 | 750 | 34.7 | 65 | 727 | 236 |
 
-MV collection bus: 97 A at 12.47 kV for 2100 kW.
+MV collection bus: 117 A at 12.47 kV for 2520 kW.
 
 ## 3. Plant loads and islanding
 
-The plant bus (MCC-1, PP-1, RECT-EW and the process feeders, 150.8 kW on the graph) is fed from CB-1 at 480 V. On loss of the utility (NEC 705.40, IEEE 1547-2018 unintentional islanding within 2 s) the PCC breaker opens; the sections stay tied on the MV bus and carry the plant as an intentional island on storage, under a microgrid controller (IEEE 2030.7). Export resumes after the utility returns and the 5 min reconnection delay of IEEE 1547-2018 4.10.
+The plant bus (MCC-1, PP-1, RECT-EW and the process feeders, 183.0 kW on the graph) is fed from CB-1 at 480 V. On loss of the utility (NEC 705.40, IEEE 1547-2018 unintentional islanding within 2 s) the PCC breaker opens; the sections stay tied on the MV bus and carry the plant as an intentional island on storage, under a microgrid controller (IEEE 2030.7). Export resumes after the utility returns and the 5 min reconnection delay of IEEE 1547-2018 4.10.
 
 ## 4. Fault level
 
-Every 480 V section sees its own inverters plus the others through two transformers; bounded by all inverters at 2 x rated, 5052 A (AQS-ELEC-006). Section breakers are rated for that with margin (65 kA interrupting class). Utility contribution at the MV bus is held (A-M-113).
+Every 480 V section sees its own inverters plus the others through two transformers; bounded by all inverters at 2 x rated, 6062 A (AQS-ELEC-006). Section breakers are rated for that with margin (65 kA interrupting class). Utility contribution at the MV bus is held (A-M-113).
 
 ## Code basis (X-STD-01)
 

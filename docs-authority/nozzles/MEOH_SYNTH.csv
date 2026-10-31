@@ -7,3 +7,4 @@ N5,DN15,Class 150,vent,top,800
 N6,DN15,Class 150,methanol co-feed,outlet,600
 N7,DN15,Class 150,synthesis water,outlet,600
 N8,DN15,Class 150,CO2 not taken by the bed,inlet,160
+N9,DN15,Class 150,methanol feed to the methyl-mercaptan synthesis (trace),outlet,600

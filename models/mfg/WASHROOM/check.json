@@ -1,0 +1,26 @@
+{
+  "shell_bbox_mm": [
+    3000.0,
+    2000.0,
+    2380.0
+  ],
+  "envelope_mm": [
+    3000,
+    2000,
+    2400
+  ],
+  "inside_size_mm_shell": true,
+  "solids": 1,
+  "all_parts_valid": true,
+  "material_class": "FRP",
+  "form": "room",
+  "mass_kg": {
+    "floor": 162.0,
+    "wall_long_a": 191.6,
+    "wall_long_b": 191.6,
+    "wall_end_solid": 125.8,
+    "wall_end_door": 74.8
+  },
+  "empty_kg": 745.8,
+  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+}

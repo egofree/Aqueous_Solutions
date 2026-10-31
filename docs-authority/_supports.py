@@ -11,14 +11,20 @@ SMT={15:1.5,20:1.8,25:2.1,32:2.4,40:2.7,50:3.0,65:3.4,80:3.7,100:4.3,125:4.8,150
 C={'P1':(SPV,0.7,54e-6,2900,6.9,60),'P2':(SPV,0.75,63e-6,2500,6.9,93),'P3':(SPV,0.85,120e-6,1700,8.0,120),'P4':(SPV,0.8,150e-6,1300,5.0,80),
    'P5':(SPV,0.6,200e-6,900,4.0,60),'M1':(SMT,1.0,16.5e-6,193000,115,400),'M2':(SMT,1.0,12e-6,200000,138,400),'F1':(SPV,1.3,20e-6,11000,20,100)}
 try:
-    lines=json.load(open('docs-authority/ISO_ROUTES.json'))['rows']
+    lines=json.load(open('docs-authority/ISO_ROUTES.json (to be created)'.replace(' (to be created)', '')))['rows']  # the FreeCAD placement model re-issues this sidecar (X-PIP-03)
 except FileNotFoundError:
-    # DEPRECATED markdown fallback (U2a, 2026-10-18): runs ONLY when ISO_ROUTES.json is absent.
-    # Regenerate the sidecar with: python3 docs-authority/_iso_routes.py — do not build on this path.
-    lines=[{'line':c[0].strip(),'dn':int(c[1].strip()[2:]),'class':c[2].strip(),
-            'legs_mm':[int(float(x)) for x in c[5:9]],'length_m':float(c[9])}
-           for c in (l.split('|')[1:-1] for l in open('docs-authority/ISO_ROUTES.md')
-                     if l.startswith('| ') and not l.startswith('| Line') and not l.startswith('| ---'))]
+    # the auto-router was rejected (AQS-3D-BUILD-001 Rev G) and the route sidecar retired
+    # (2026-10-27): hanger spans derive from routed pipe lengths, which no model provides
+    # until the FreeCAD placement issues one. The schedule is an explicit named gap.
+    hdr=['# Pipe supports and thermal flexibility (AQS-PIP-005)', '',
+         'Document number: AQS-PIP-005', 'Revision: B (pending state)', '',
+         'PENDING THE PLACEMENT MODEL. Hanger spans derive from routed pipe lengths; the auto-router',
+         'was rejected (AQS-3D-BUILD-001 Rev G, no invented mm) and its route sidecar retired, so no',
+         'length basis exists. The stage returns to duty when the FreeCAD placement model issues',
+         'ISO_ROUTES.json again. Span tables (PVC Sch 80 / ASME B31.1) and the per-class factors',
+         'below remain the issued basis.']
+    open('docs-authority/SUPPORTS.md','w').write('\n'.join(hdr)+'\n')
+    raise SystemExit(0)
 out=[];nsup=0;flags=0
 for r in lines:
     sid,dn,cl=r['line'],r['dn'],r['class']

@@ -1,10 +1,10 @@
 # GREASE_CA fabrication
 
 Class: kettle; sector OIL. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
-service line: see the duty sheet section 1 basis
+Envelope: Envelope 500×400×600 mm;
+service line: duty calcium grease kettle: the C19-C28 wax base + the P_CA thickener -> the general lubrication grease; batch_kgd 0.2; heat_class soap prec
 
-Internals: duty sheet: "envelope. 3. Material. 316L jacketed soap kettle + 316L agitator; steel frame and insulation stays dry; steam " [docs-authority/duties/GREASE_CA.md]
+Internals: issued mfg model BOM (2 internals part row): "500 x 400 x 600 mm,1,316L jacketed soap kettle + 316L agitator; steel frame and insulation stays dry; steam - " [models/mfg/GREASE_CA/bom.csv]
 Material: 316L jacketed soap kettle + 316L agitator; steel frame and insulation stays dry; steam - hot-water heads keep the jacket wetted side on the issued Q3/Q4 M1 water family. Basis: calcium soap saponification at the 95-120 C kettle class, wax cut + Ca(OH)2 (graph edges/duty AQS-DUTY-GREASE 0.1 kg/d Ca(OH)2): grease manufacture practice selects 304/316L hot-soap contact (MANG2007 ch. (continues on the duty sheet)
 
 Nozzles: 2 process connections per docs-authority/nozzles/GREASE_CA.csv
