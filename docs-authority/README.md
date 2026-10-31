@@ -313,6 +313,7 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [MOTOR_FIRST_ARTICLE.md](MOTOR_FIRST_ARTICLE.md) | AQS-INV-008 | Motor first articles: drawings, traveller and type-test rig |
 | [BOUGHT_SPECS.md](BOUGHT_SPECS.md) | AQS-PRO-002 | Bought-item specification sheets |
 | [COST_ESTIMATE.md](COST_ESTIMATE.md) | AQS-PRO-003 | Cost estimate method |
+| [COST_ESTIMATE_BOM.md](COST_ESTIMATE_BOM.md) | AQS-PRO-003-BOM | Priced bill of materials (AQS-PRO-003) |
 | [PLANT_BOM.md](PLANT_BOM.md) | AQS-PRO-001 | Plant BOM roll-up |
 | [SPARES.md](SPARES.md) | AQS-OPS-003 | Critical spares list |
 | [EOL_RETURN.md](EOL_RETURN.md) | AQS-END-002 | End-of-life material return |

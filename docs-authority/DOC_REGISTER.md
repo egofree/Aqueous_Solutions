@@ -252,6 +252,7 @@ Table 3.1. Document numbers in use
 | AQS-PRO-001 | `docs-authority/PLANT_BOM.md` | A | 2026-10-16 | Plant BOM roll-up | current |
 | AQS-PRO-002 | `docs-authority/BOUGHT_SPECS.md` | B | 2026-10-25 | Bought-item specification sheets | current |
 | AQS-PRO-003 | `docs-authority/COST_ESTIMATE.md` | A | 2026-10-29 | Cost estimate method | current |
+| AQS-PRO-003-BOM | `docs-authority/COST_ESTIMATE_BOM.md` | A | 2026-10-31 | Priced bill of materials (AQS-PRO-003) | current |
 | AQS-PV-001 | `docs-authority/PV_CELL_MOD.md` | C | 2026-10-11 | Photovoltaic cell | current |
 | AQS-PWR-001 | `docs-authority/POWER.md` | A | 2026-10-17 | Power | current |
 | AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | B | 2026-09-28 | Geothermal loop and backup generator | current |
