@@ -1,0 +1,5 @@
+item,description,qty,material,basis
+1,Body / envelope 300 x 300 x 400 mm,1,PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside the wetted headspace.,docs-authority/duties/P_CA.md
+2,Process nozzle DN15,1,PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside the wetted headspace.,one per mass edge; DN from AQS-INV-003
+3,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+4,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004

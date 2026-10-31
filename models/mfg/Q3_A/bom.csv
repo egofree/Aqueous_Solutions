@@ -1,0 +1,19 @@
+item,description,qty,material,basis
+1,Body D750 x 950 mm,1,"SA-240 304L, welded (100 C tier is above the PP-H class of 80 C) (graph node material).",docs-authority/duties/Q3_A.md
+2,fastener: anchor bolt M10,6,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+3,fastener: anchor bolt M10,32,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+4,fastener: anchor bolt M10,14,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+5,fastener: anchor bolt M10,14,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+6,fastener: anchor bolt M10,14,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+7,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+8,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+9,support: U-bolt with guide DN15,3,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+10,support: U-bolt with guide DN15,16,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+11,support: U-bolt with guide DN15,7,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+12,support: U-bolt with guide DN20,7,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+13,support: U-bolt with guide DN15,7,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+14,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+15,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+16,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+17,valve: isolation valve DN20,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+18,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004

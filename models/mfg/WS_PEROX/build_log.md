@@ -1,0 +1,16 @@
+# Build log - WS_PEROX
+
+Document number: AQS-SIZE-WS_PEROX
+Class: reagent
+Envelope: 600 x 600 x 600 mm
+Material: per AQS-STD-002
+Graph: AQS-FLOW-GRAPH-001
+
+## Acceptance
+
+Envelope model: `cad/stl/WS_PEROX.stl`
+BOM: `models/mfg/WS_PEROX/bom.csv`
+Placement: `flow_graph/param/sites/baseline.json`
+Duty sheet: `docs-authority/duties/WS_PEROX.md`
+Material selection: AQS-STD-005 (per duty sheet section 3)
+Status: envelope-class build; the detailed design follows at the unit task 10-12 fabrication model

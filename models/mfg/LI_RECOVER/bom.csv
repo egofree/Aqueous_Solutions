@@ -1,0 +1,7 @@
+item,description,qty,material,basis
+1,Body / envelope 200 x 200 x 800 mm,1,PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the wetted zone.,docs-authority/duties/LI_RECOVER.md
+2,Process nozzle DN15,2,PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the wetted zone.,one per mass edge; DN from AQS-INV-003
+3,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+4,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+5,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+6,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004

@@ -52,25 +52,26 @@ Table 4.1. I/O and modules by PLC
 
 | Sector PLC | AI | AO | DI | DO | Fieldbus drives | Modules AI/AO/DI/DO | CPU | 24 V load W |
 |---|---|---|---|---|---|---|---|---|
-| PLC-CRYO | 34 | 1 | 17 | 2 | 4 | 3/1/2/1 | redundant pair | 38 |
-| PLC-DIGESTER | 132 | 3 | 115 | 24 | 20 | 10/1/9/2 | single | 56 |
-| PLC-ELEC | 28 | 17 | 445 | 106 | 82 | 3/2/34/8 | redundant pair | 118 |
-| PLC-FAB | 63 | 3 | 74 | 11 | 17 | 5/1/6/1 | single | 38 |
-| PLC-FARM | 48 | 0 | 3 | 0 | 1 | 4/0/1/0 | redundant pair | 34 |
+| PLC-CRYO | 34 | 1 | 15 | 5 | 0 | 3/1/2/1 | redundant pair | 38 |
+| PLC-DIGESTER | 132 | 3 | 101 | 37 | 0 | 10/1/8/3 | single | 56 |
+| PLC-DOCK | 10 | 0 | 4 | 2 | 0 | 1/0/1/1 | single | 18 |
+| PLC-ELEC | 28 | 1 | 363 | 126 | 53 | 3/1/28/10 | redundant pair | 108 |
+| PLC-FAB | 63 | 0 | 56 | 22 | 0 | 5/0/5/2 | single | 36 |
+| PLC-FARM | 48 | 0 | 3 | 1 | 0 | 4/0/1/1 | redundant pair | 36 |
 | PLC-FOUNDRY | 87 | 0 | 17 | 0 | 5 | 7/0/2/0 | single | 30 |
-| PLC-GAS | 32 | 0 | 36 | 6 | 9 | 3/0/3/1 | redundant pair | 38 |
-| PLC-GEO | 8 | 0 | 4 | 2 | 0 | 1/0/1/1 | redundant pair | 30 |
+| PLC-GAS | 32 | 0 | 22 | 7 | 1 | 3/0/2/1 | redundant pair | 36 |
+| PLC-GEO | 8 | 0 | 2 | 1 | 0 | 1/0/1/1 | redundant pair | 30 |
 | PLC-GLASS | 10 | 0 | 3 | 1 | 0 | 1/0/1/1 | single | 18 |
 | PLC-HAB | 13 | 0 | 1 | 0 | 0 | 1/0/1/0 | redundant pair | 28 |
 | PLC-HEAT | 24 | 0 | 0 | 0 | 0 | 2/0/0/0 | single | 16 |
-| PLC-MEOH | 30 | 0 | 35 | 6 | 10 | 3/0/3/1 | single | 26 |
-| PLC-MFG | 28 | 9 | 62 | 11 | 10 | 3/1/5/1 | single | 32 |
-| PLC-NUT | 9 | 0 | 21 | 5 | 5 | 1/0/2/1 | redundant pair | 32 |
-| PLC-OIL | 55 | 0 | 42 | 5 | 11 | 5/0/4/1 | single | 32 |
+| PLC-MEOH | 30 | 0 | 25 | 8 | 3 | 3/0/2/1 | single | 24 |
+| PLC-MFG | 28 | 8 | 62 | 15 | 7 | 3/1/5/2 | single | 34 |
+| PLC-NUT | 9 | 0 | 11 | 5 | 0 | 1/0/1/1 | redundant pair | 30 |
+| PLC-OIL | 55 | 0 | 32 | 8 | 3 | 5/0/3/1 | single | 30 |
 | PLC-POLYMERS | 48 | 0 | 18 | 3 | 3 | 4/0/2/1 | single | 26 |
-| PLC-PUMPED_HYDRO | 2 | 1 | 2 | 0 | 0 | 1/1/1/0 | redundant pair | 30 |
-| PLC-WTR | 61 | 0 | 57 | 8 | 17 | 5/0/5/1 | redundant pair | 46 |
-| Total | 712 | 34 | 952 | 190 | 194 | 172 modules | 9 redundant of 18 | 668 |
+| PLC-PUMPED_HYDRO | 2 | 0 | 2 | 1 | 0 | 1/0/1/1 | redundant pair | 30 |
+| PLC-WTR | 61 | 0 | 45 | 18 | 1 | 5/0/4/2 | redundant pair | 46 |
+| Total | 722 | 13 | 782 | 260 | 76 | 167 modules | 9 redundant of 19 | 670 |
 
 The control system draws about 0.67 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
 

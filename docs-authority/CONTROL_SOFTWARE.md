@@ -16,7 +16,7 @@ This page records the control program source that the model issues and the scan 
 
 ## 2. Program source in the repository
 
-One IEC 61131_3 structured-text program per sector PLC under `docs-authority/plc/` (18 programs, one per row of the AQS-CTL-002 PLC table).
+One IEC 61131_3 structured-text program per sector PLC under `docs-authority/plc/` (19 programs, one per row of the AQS-CTL-002 PLC table).
 Each program carries: the 100 ms cyclic task per AQS-CTL-002, the I/O declarations grouped per the module table, per-loop monitor and
 PI blocks with set-point literals taken from the graph basis column of AQS-CTL-001, the SIF watch inputs routed to the safety CPU pair
 (they are never acted on in the basic programs; AQS-CTL-002), and the redundant-CPU pair declaration where the architecture names one.
@@ -25,7 +25,7 @@ PI blocks with set-point literals taken from the graph basis column of AQS-CTL-0
 
 | Class | Loops | Rule |
 |---|---|---|
-| CONTROL | 209 | graph basis carries a numeric set-point (edge normal rate, unit design temperature, design pressure, cell current); PI with the +10/-10 % registered alarm margin (X-SAF-05 margin class, A-M-188); an expected-zero set-point (standby line) alarms on any positive PV and has no low alarm |
+| CONTROL | 219 | graph basis carries a numeric set-point (edge normal rate, unit design temperature, design pressure, cell current); PI with the +10/-10 % registered alarm margin (X-SAF-05 margin class, A-M-188); an expected-zero set-point (standby line) alarms on any positive PV and has no low alarm |
 | INDICATION | 572 | no numeric set-point in the basis ('band by service', 'no design pressure on the graph', A-M-182 hold-up heights); monitor with the 90 % high alarm (registered high-level-switch convention, AQS-INV-004); no set-point invented |
 | SIF | 15 | independent safety elements of AQS-CTL-003; declared as watch inputs to the safety CPU pair, no action in the basic program |
 
@@ -33,24 +33,25 @@ PI blocks with set-point literals taken from the graph basis column of AQS-CTL-0
 
 | PLC | AI instruments (incl. SIF) | of which SIF | Table AI | Diff | Table AO/DI/DO | CPU |
 |---|---|---|---|---|---|---|
-| PLC-CRYO | 34 | 0 | 34 | 0 | 1/17/2 | redundant pair |
-| PLC-DIGESTER | 132 | 3 | 132 | 0 | 3/115/24 | single |
-| PLC-ELEC | 28 | 0 | 28 | 0 | 17/445/106 | redundant pair |
-| PLC-FAB | 63 | 0 | 63 | 0 | 3/74/11 | single |
-| PLC-FARM | 48 | 0 | 48 | 0 | 0/3/0 | redundant pair |
+| PLC-CRYO | 34 | 0 | 34 | 0 | 1/15/5 | redundant pair |
+| PLC-DIGESTER | 132 | 3 | 132 | 0 | 3/101/37 | single |
+| PLC-DOCK | 10 | 0 | 10 | 0 | 0/4/2 | single |
+| PLC-ELEC | 28 | 0 | 28 | 0 | 1/363/126 | redundant pair |
+| PLC-FAB | 63 | 0 | 63 | 0 | 0/56/22 | single |
+| PLC-FARM | 48 | 0 | 48 | 0 | 0/3/1 | redundant pair |
 | PLC-FOUNDRY | 87 | 4 | 87 | 0 | 0/17/0 | single |
-| PLC-GAS | 32 | 2 | 32 | 0 | 0/36/6 | redundant pair |
-| PLC-GEO | 8 | 0 | 8 | 0 | 0/4/2 | redundant pair |
+| PLC-GAS | 32 | 2 | 32 | 0 | 0/22/7 | redundant pair |
+| PLC-GEO | 8 | 0 | 8 | 0 | 0/2/1 | redundant pair |
 | PLC-GLASS | 10 | 0 | 10 | 0 | 0/3/1 | single |
 | PLC-HAB | 13 | 0 | 13 | 0 | 0/1/0 | redundant pair |
 | PLC-HEAT | 24 | 0 | 24 | 0 | 0/0/0 | single |
-| PLC-MEOH | 30 | 0 | 30 | 0 | 0/35/6 | single |
-| PLC-MFG | 28 | 1 | 28 | 0 | 9/62/11 | single |
-| PLC-NUT | 9 | 0 | 9 | 0 | 0/21/5 | redundant pair |
-| PLC-OIL | 55 | 3 | 55 | 0 | 0/42/5 | single |
+| PLC-MEOH | 30 | 0 | 30 | 0 | 0/25/8 | single |
+| PLC-MFG | 28 | 1 | 28 | 0 | 8/62/15 | single |
+| PLC-NUT | 9 | 0 | 9 | 0 | 0/11/5 | redundant pair |
+| PLC-OIL | 55 | 3 | 55 | 0 | 0/32/8 | single |
 | PLC-POLYMERS | 48 | 2 | 48 | 0 | 0/18/3 | single |
-| PLC-PUMPED_HYDRO | 2 | 0 | 2 | 0 | 1/2/0 | redundant pair |
-| PLC-WTR | 61 | 0 | 61 | 0 | 0/57/8 | redundant pair |
+| PLC-PUMPED_HYDRO | 2 | 0 | 2 | 0 | 0/2/1 | redundant pair |
+| PLC-WTR | 61 | 0 | 61 | 0 | 0/45/18 | redundant pair |
 
 ## 5. Scan simulation against the graph
 
@@ -65,7 +66,7 @@ claim and invents no tuning constants.
 The 68 discrete instrument points (LSH 66, PSH 2 rupture-disc and PSV-lift indication) are permissive/interlock inputs
 declared per the AQS-CTL-002 module table; their trip matrix is the AQS-CTL-003 cause and effect, not the basic program.
 
-- CONTROL loops exercised: 1045 checks pass, 0 fail
+- CONTROL loops exercised: 1095 checks pass, 0 fail
 - INDICATION loops exercised: 1142 checks pass, 0 fail
 - SIF watch bindings: 15 pass, 0 fail
 - AI-count cross-check vs AQS-CTL-002: 0 PLCs with a residual

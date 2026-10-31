@@ -4,7 +4,7 @@ Class: separator; sector DIGESTER. Study route. Not stamped.
 Envelope: Envelope 200×200×800 mm;
 service line: duty carbonate the POLISH_BANK LiOH slipstream -> the lithium thickener (feeds GREASE_LI); slipstream_kgd 0.5.
 
-Internals: duty sheet: "0.5. 3. Material. PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside th" [docs-authority/duties/LI_RECOVER.md]
+Internals: issued mfg model BOM (2 internals part row): "x 200 x 800 mm,1,PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the" [models/mfg/LI_RECOVER/bom.csv]
 Material: PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the wetted zone. (continues on the duty sheet)
 
 Nozzles: 2 process connections per docs-authority/nozzles/LI_RECOVER.csv

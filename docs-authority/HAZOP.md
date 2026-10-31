@@ -560,7 +560,7 @@ Table 2.1. Actions by kind
 | temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
 | level | High | inflow above outflow, outlet blocked | overflow to the bund | LSH trip of the feed | - |
 | level | Low | outlet pump runs on, leak | pump dry-running | LT low alarm | - |
-| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | check valve at the pump discharge of BMED_UPW_POLISH, CRU, CRYO_AHU, EVAP_ACID, EVAP_BASE, FLOAT_SINK, FUEL_CELL, HOPPER, NUTRIENT_DOSE, VCD_TRAIN, WAFER_FAB, WET_BENCH | - |
+| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | check valve at the pump discharge of BMED_UPW_POLISH, CRU, CRYO_AHU, EVAP_ACID, EVAP_BASE, FLOAT_SINK, FUEL_CELL, HOPPER, NORTH_DOCK, NUTRIENT_DOSE, VCD_TRAIN, WAFER_FAB, WET_BENCH | - |
 | composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
 
 ### MEOH_COND (separator)
@@ -943,7 +943,7 @@ Table 2.1. Actions by kind
 | temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
 | level | High | inflow above outflow, outlet blocked | overflow to the bund | LSH trip of the feed | - |
 | level | Low | outlet pump runs on, leak | pump dry-running | LT low alarm | - |
-| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | gravity or vented inlets: no back-pressure source | - |
+| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | check valve at the pump discharge of NORTH_DOCK | - |
 | composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
 
 ### ZNBR2 (flow_battery)
@@ -1138,7 +1138,7 @@ Table 2.1. Actions by kind
 | temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | independent high-temperature trip on the heater |
 | level | High | inflow above outflow, outlet blocked | overflow to the bund | LSH trip of the feed | - |
 | level | Low | outlet pump runs on, leak | pump dry-running | LT low alarm | - |
-| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | check valve at the pump discharge of F_RECOVER | - |
+| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | check valve at the pump discharge of F_RECOVER, NORTH_DOCK | - |
 | composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
 
 ### VDF_SYN (reactor)
@@ -1306,7 +1306,7 @@ Table 2.1. Actions by kind
 | temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
 | level | High | inflow above outflow, outlet blocked | overflow to the bund | LSH trip of the feed | - |
 | level | Low | outlet pump runs on, leak | pump dry-running | LT low alarm | - |
-| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | check valve at the pump discharge of TI_CELL | - |
+| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | check valve at the pump discharge of NORTH_DOCK, TI_CELL | - |
 | composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
 
 ### CA_POT (cell)
@@ -1319,7 +1319,7 @@ Table 2.1. Actions by kind
 | temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
 | level | High | inflow above outflow, outlet blocked | overflow to the bund | LSH trip of the feed | - |
 | level | Low | outlet pump runs on, leak | pump dry-running | LT low alarm | - |
-| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | gravity or vented inlets: no back-pressure source | - |
+| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | check valve at the pump discharge of NORTH_DOCK | - |
 | composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
 
 ### WAX_PATTERN (prep)

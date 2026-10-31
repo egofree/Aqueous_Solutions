@@ -4,7 +4,7 @@ Class: precip; sector DIGESTER. Study route. Not stamped.
 Envelope: Envelope 300×300×400 mm;
 service line: duty calcium-soap precipitation: wax + lime -> the grease thickener (feeds GREASE_CA); thickener_kgd 0.025.
 
-Internals: duty sheet: "0.025. 3. Material. PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside " [docs-authority/duties/P_CA.md]
+Internals: issued mfg model BOM (2 internals part row): "300 x 300 x 400 mm,1,PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside" [models/mfg/P_CA/bom.csv]
 Material: PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside the wetted headspace. (continues on the duty sheet)
 
 Nozzles: 2 process connections per docs-authority/nozzles/P_CA.csv

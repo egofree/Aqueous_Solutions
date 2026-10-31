@@ -561,6 +561,7 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {PE -- Professional Engineer. Stamp/permit role; architecture docs state Compliant-intent or study until PE confirmation.}
 
+{NEM -- NEMA Premium efficiency: the motor efficiency class per NEMA MG-1 Table 12-12 (IE3 equivalent).}
 {NFPA -- National Fire Protection Association. Fire/H₂/ESS/oxidizer themes (e.g. NFPA 2, 13, 30, 55, 400, 855).}
 
 {CGP -- Construction General Permit, the TPDES general permit for stormwater from construction sites.}

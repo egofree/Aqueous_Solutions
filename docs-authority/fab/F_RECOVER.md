@@ -4,7 +4,7 @@ Class: separator; sector DIGESTER. Study route. Not stamped.
 Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
 service line: see the duty sheet section 1 basis
 
-Internals: duty sheet: "Material. PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) legs to the hot HF make" [docs-authority/duties/F_RECOVER.md]
+Internals: issued mfg model BOM (4 internals part row): "x 1200 mm,1,PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) legs to the hot HF ma" [models/mfg/F_RECOVER/bom.csv]
 Material: PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) legs to the hot HF make-up; PE pump and PP-H frame attachments. Basis: HF-equivalent fluoride concentrate hold, 1.52 kg/d (graph design AQS-DUTY-073 sizing: the vessel row itself names PE): hot legs (85 C) are the issued P3 PVDF family (AQS-STD-002 section 12.1; ULLMANN_HF handling). (continues on the duty sheet)
 
 Nozzles: 5 process connections per docs-authority/nozzles/F_RECOVER.csv

@@ -4,7 +4,7 @@ Class: intake; sector WTR. Study route. Not stamped.
 Envelope: Envelope 800×800×600 mm;
 service line: duty standby well head: the make-up on loss of atmospheric harvest; pump_kw 0.37.
 
-Internals: duty sheet: "The envelope is `cad/stl/GW_INTAKE.stl` (a thick-walled tray at the claimed envelope; X-PAR-04). 8. Open items" [docs-authority/duties/GW_INTAKE.md]
+Internals: issued mfg model BOM (1 internals part row): "6,support: pipe clamp DN15,24,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004" [models/mfg/GW_INTAKE/bom.csv]
 Material: SS304 wellhead plate and discharge head, HDPE potable discharge line, submersible pump SS304/stainless stages. Basis: potable groundwater contact (X-LOC-13 well head): 304 wetted at the chloride-light aquifer class, HDPE for the discharge run; the pump stages are the well-class stainless Alternative: 316L wetted where the aquifer mineralisation ever shows pitting. (continues on the duty sheet)
 
 Nozzles: 3 process connections per docs-authority/nozzles/GW_INTAKE.csv

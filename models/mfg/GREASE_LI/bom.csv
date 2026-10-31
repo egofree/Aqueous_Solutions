@@ -1,0 +1,7 @@
+item,description,qty,material,basis
+1,Body / envelope 500 x 400 x 600 mm,1,316L jacketed soap kettle + 316L agitator (same kettle class as GREASE_CA) for the lithium soap.,docs-authority/duties/GREASE_LI.md
+2,Process nozzle DN15,3,316L jacketed soap kettle + 316L agitator (same kettle class as GREASE_CA) for the lithium soap.,one per mass edge; DN from AQS-INV-003
+3,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+4,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+5,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+6,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004

@@ -1,0 +1,13 @@
+item,description,qty,material,basis
+1,Body D650 x 950 mm,1,"Carbon steel, ASTM A106 Gr B, welded, spiral-wound 304/graphite gaskets; synthetic thermal oil, no water (AQS-STD-002 section 4.",docs-authority/duties/Q1_A.md
+2,fastener: anchor bolt M10,10,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+3,fastener: anchor bolt M10,36,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+4,fastener: anchor bolt M10,20,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+5,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+6,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+7,support: U-bolt with guide DN15,5,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+8,support: U-bolt with guide DN15,18,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+9,support: pipe clamp DN15,10,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+10,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+11,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+12,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
