@@ -66,7 +66,7 @@ Table 2.1. Tasks by group
 | CRYO | Utility / header | 210 | 196 |
 | OIL | Process (Mass transform) | 195 | 182 |
 | HEAT | Utility / header | 180 | 168 |
-| MFG | Process (Mass transform) | 165 | 150 |
+| MFG | Process (Mass transform) | 165 | 153 |
 | POLYMERS | Process (Mass transform) | 165 | 154 |
 | GAS | Process (Mass transform) | 150 | 140 |
 | WTR | Utility / header | 136 | 127 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 14 |
 | NUT | Process (Mass transform) | 15 | 14 |
-| | **Total** | **3267** | **3055** |
+| | **Total** | **3267** | **3058** |
 
 ## 3. Triage of open tasks
 
@@ -103,7 +103,7 @@ Table 3.1. Open tasks by triage tag
 | Triage | Open tasks |
 | --- | --- |
 | desk P2 | 2 |
-| desk P4 | 5 |
+| desk P4 | 2 |
 | hardware | 205 |
 
 ## 4. Unit task template
@@ -304,7 +304,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-10** Building-block family OF-10: electronics, compressor contactor + overload. Done when: open design and production plan for 1 items (IEC 60947-4-1) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-11** Building-block family OF-11: electronics, stepper driver. Done when: open design and production plan for 3 items (IEC 61800-5-1) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-12** Building-block family OF-12: electronics, safety PLC (SIL 2 capable), CPU and I/O rack. Done when: open design and production plan for 2 items (IEC 61508 / IEC 61511) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-13** Building-block family OF-13: fabricated part, fabricated part set. Done when: open design and production plan for 196 items (models/mfg/<unit>/bom.csv) in 196 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-13** Building-block family OF-13: fabricated part, fabricated part set. Done when: open design and production plan for 197 items (models/mfg/<unit>/bom.csv) in 197 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-14** Building-block family OF-14: fastener, anchor bolt. Done when: open design and production plan for 14710 items (ISO 3506 A4-70 wedge anchor) in 138 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-15** Building-block family OF-15: fastener, M10 x 40 lid bolt. Done when: open design and production plan for 20 items (ISO 3506 A4-70) in 2 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-16** Building-block family OF-16: fastener, M8 x 30 lid bolt. Done when: open design and production plan for 12 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
@@ -2677,9 +2677,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MFG-REE_RECOVER-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: MFG-REE_RECOVER-02, MFG-REE_RECOVER-03. Evidence: `docs-authority/duties/REE_RECOVER.md` §6 (C7 closed on MASTER_PLAN).
   - [x] MFG-REE_RECOVER-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: MFG-REE_RECOVER-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
   - [x] MFG-REE_RECOVER-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: MFG-REE_RECOVER-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] MFG-REE_RECOVER-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/REE_RECOVER/ builds; acceptance per AQS-PLAN-006 section 5. Depends: MFG-REE_RECOVER-02, MFG-REE_RECOVER-04, MFG-REE_RECOVER-06, MFG-REE_RECOVER-09. Triage: desk P4.
-  - [ ] MFG-REE_RECOVER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MFG-REE_RECOVER-10, X-DWG-01. Triage: desk P4.
-  - [ ] MFG-REE_RECOVER-12 BOM. Done when: models/mfg/REE_RECOVER/bom.csv. Depends: MFG-REE_RECOVER-10. Triage: desk P4.
+  - [x] MFG-REE_RECOVER-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/REE_RECOVER/ builds; acceptance per AQS-PLAN-006 section 5. Depends: MFG-REE_RECOVER-02, MFG-REE_RECOVER-04, MFG-REE_RECOVER-06, MFG-REE_RECOVER-09. Evidence: `models/mfg/REE_RECOVER/build_log.md` (AQS-PLAN-006 section 5 A-core acceptance: tool versions + checks recorded; STL manifold-checked, drawings name the graph revision).
+  - [x] MFG-REE_RECOVER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: MFG-REE_RECOVER-10, X-DWG-01. Evidence: `models/mfg/REE_RECOVER/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
+  - [x] MFG-REE_RECOVER-12 BOM. Done when: models/mfg/REE_RECOVER/bom.csv. Depends: MFG-REE_RECOVER-10. Evidence: `models/mfg/REE_RECOVER/bom.csv`.
   - [x] MFG-REE_RECOVER-13 Fabrication route. Done when: docs-authority/fab/REE_RECOVER.md. Depends: MFG-REE_RECOVER-10, MFG-REE_RECOVER-12. Evidence: `docs-authority/fab/REE_RECOVER.md` (study route).
   - [x] MFG-REE_RECOVER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-REE_RECOVER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 31: level position, structural/hoist supports, connections named per edge).
   - [ ] MFG-REE_RECOVER-15 Test and commission. Done when: test procedure and acceptance record. Depends: MFG-REE_RECOVER-14, X-COM-01. Triage: hardware.

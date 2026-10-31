@@ -2417,6 +2417,7 @@ MFG,former,BLOW_MOLD,instrument,temperature element,Pt100 class A,"IEC 60751, 31
 MFG,hx,MET_HX_Q4,fabricated part,fabricated part set,3 BOM lines,models/mfg/MET_HX_Q4/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 MFG,hx,MET_HX_Q4,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 MFG,hx,MET_HX_Q4,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+MFG,precip,REE_RECOVER,fabricated part,fabricated part set,3 BOM lines,models/mfg/REE_RECOVER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 MFG,precip,REE_RECOVER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 MFG,precip,REE_RECOVER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 MFG,scrubber,MET_SCRUB,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S72 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA : drive and non-drive end, IEC 60072 frame 63 (assumed size)"

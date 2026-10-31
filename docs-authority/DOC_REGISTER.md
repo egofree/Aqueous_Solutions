@@ -420,6 +420,7 @@ Table 3.1. Document numbers in use
 | AQS-SIZE-Q4_B | `docs-authority/sizing/Q4_B.md` | A | 2026-10-20 | Sizing calculation - Q4_B | current |
 | AQS-SIZE-Q4_BUS | `docs-authority/sizing/Q4_BUS.md` | A | 2026-10-20 | Sizing calculation - Q4_BUS | current |
 | AQS-SIZE-RECTIFIER | `docs-authority/sizing/RECTIFIER.md` | A | 2026-10-20 | Sizing calculation - RECTIFIER | current |
+| AQS-SIZE-REE_RECOVER | `docs-authority/sizing/REE_RECOVER.md` | A | 2026-10-20 | Sizing calculation - REE_RECOVER | current |
 | AQS-SIZE-RELIEF_CRYO | `docs-authority/sizing/RELIEF_CRYO.md` | A | 2026-10-20 | Sizing calculation - RELIEF_CRYO | current |
 | AQS-SIZE-RELIEF_H2 | `docs-authority/sizing/RELIEF_H2.md` | A | 2026-10-20 | Sizing calculation - RELIEF_H2 | current |
 | AQS-SIZE-RES_HEAT | `docs-authority/sizing/RES_HEAT.md` | A | 2026-10-20 | Sizing calculation - RES_HEAT | current |
