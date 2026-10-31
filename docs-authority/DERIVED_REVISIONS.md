@@ -42,7 +42,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/DECOMMISSIONING.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
 | `docs-authority/DESIGN_CHECK.md` | e7abac2 (regenerated, no change) | current |
-| `docs-authority/DOC_REGISTER.md` | working tree | current |
+| `docs-authority/DOC_REGISTER.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/DRAWING_REGISTER.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/ENCLOSURE_EGRESS.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/EOL_RETURN.md` | e7abac2 (regenerated, no change) | current |
@@ -102,7 +102,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/SITE_SCALING.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/SITE_UNITS.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/SPARES.md` | e7abac2 (regenerated, no change) | current |
-| `docs-authority/STANDARDS_LIST.md` | working tree | current |
+| `docs-authority/STANDARDS_LIST.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/STARTUP.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/STRUCT_LOADS.md` | e7abac2 (regenerated, no change) | current |
 | `docs-authority/SUPPORTS.md` | e7abac2 (regenerated, no change) | current |
