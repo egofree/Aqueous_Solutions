@@ -62,9 +62,17 @@ def test_open_set_is_a_named_gap_after_xmat22():
     assert not any('same hold as task 09' in b for b in open_u.values())
     for u in ('AL_POT', 'MG_POT', 'CA_POT', 'TI_CELL', 'H2O_ELYZ'):
         assert u in IN['defined'], u
-    # the neither-defined-nor-held units name the real design gap per class
-    for u in ('OIL_FRAC', 'VCD_TRAIN', 'Q1_A', 'H2_DRYER', 'ZNBR2', 'FUEL_CELL'):
-        assert 'no issued internals basis' in open_u[u], u
+    # the neither-defined-nor-held units name the real design gap per class. VCD_TRAIN, Q1_A and
+    # H2_DRYER left this set at the 2026-10-30 internals pass: their designs issued (the MVC
+    # stack, the AQS-DUTY-008 sec. 14 battery internals, the molecular-sieve beds).
+    for u in ('OIL_FRAC',):
+        assert 'column packing or tray design' in open_u[u], u
+    for u in ('ZNBR2',):
+        assert 'X-MFG-41 stack test' in open_u[u], u
+    for u in ('FUEL_CELL',):
+        assert 'cell count and active area' in open_u[u], u
+    for u in ('VCD_TRAIN', 'Q1_A', 'H2_DRYER'):
+        assert u in IN['defined'], u
     # none of the open units may be rendered as closed
     src = open(DOC).read()
     for u in open_u:

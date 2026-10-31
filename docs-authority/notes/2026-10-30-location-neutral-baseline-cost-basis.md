@@ -65,3 +65,27 @@ X-BAS-03 and X-PRO-03 as desk tasks and the owner-gated table empty.
 
 Desk P1 is now empty and desk P2 holds only the gated items (X-END-02's named holds, X-PRO-03's
 mass dependency) and the localization program's own tasks (X-LOC-01/02).
+
+## Internals dispositions (unit task 06, desk P3)
+
+The internals register pass closed 28 of the 38 open task-06 items with real
+issued bases, via an explicit disposition table in `docs-authority/_internals.py`
+(each carrying its own evidence artifact - the family sizing doc, the mfg BOM,
+or the unit's own AQS-SIZE sheet):
+
+- the eight heat batteries on the AQS-DUTY-008 sec. 14 internals (medium,
+  thermosyphon steps, cross-ties); the CRYO_CO2/H2/O2 tube banks as
+  none-with-basis (pressurised banks, open volume); AQUA_UV, BIOFILTER,
+  FEED_PREP, MET_SYN, MEOH_FC, VCD_TRAIN, BMED_UPW_POLISH, H2_DRYER on their
+  issued designs; HF_GEN, OIL_PYRO, POLY_FIBER, MEOH_FERM, BLACK_DIGEST on
+  their mfg models; RES_HEAT, SINTER, SI_REDUCE on the element-array and charge
+  bases; FLOAT_SINK as the water-bath separator.
+
+Ten remain honestly open with the specific missing data named per unit (the
+BAGHOUSE capture-air volume, the CRU contacting stages, the two Q4 recovery
+coils' design temperatures, the OIL_FRAC column internals, the OIL_DRYER
+media, the N2 receiver bank, the FUEL_CELL stack design, the GREY_TREAT stage
+design, the ZNBR2 stack gated on X-MFG-41). Desk P3 falls 38 -> 10.
+
+Also recorded: a DONE_X set-literal injury repaired (X-LOC-01/X-LOC-02 had been
+silently reopened by a lost comma) and X-LOC-02's loader clause verified.

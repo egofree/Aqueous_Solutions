@@ -4,7 +4,7 @@ Class: uv_sanitizer; sector FARM. Study route. Not stamped.
 Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
 service line: service optional UV-C 254 nm loop sanitizer between the biofilter and the growbeds; AQUA_BYPASS normally engaged; basis A-M-428; A-M-427 (fo
 
-Internals: open: no issued internals basis for a uv_sanitizer unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
+Internals: UV-C reactor internals: the 254 nm lamp array inside the reactor tube at the issued dose class, with the AQUA_BYPASS loop normally engaged (params.design dose/modes; A-M-428, A-M-427) [models/mfg/AQUA_UV/bom.csv]
 Material: SS304 reactor tube with a quartz UV sleeve, PP loop fittings, EPDM gasket class. Basis: loop-water service at aquaponic temperature (A-M-428): 304 tube with the lamp isolated behind quartz; the unit is normally bypassed, so wetted-time is intermittent Alternative: 316L tube if the loop ever runs saline (it does not at the freshwater class). (continues on the duty sheet)
 
 Nozzles: 4 process connections per docs-authority/nozzles/AQUA_UV.csv

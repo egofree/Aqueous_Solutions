@@ -4,7 +4,7 @@ Class: chemical_synthesis; sector MEOH. Study route. Not stamped.
 Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
 service line: service DL-methionine synthesis (the three-step Strecker route): CH3SH + acrolein -> MMP; MMP + NH3 + HCN -> aminonitrile; hydrolysis -> DL-
 
-Internals: open: no issued internals basis for a chemical_synthesis unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
+Internals: three-step Strecker bench internals per the reactor design (A-M-416 route A): the glass-lined reactor column (2 L working volume) with PTFE dip tubes, the reagent feed tanks and the Hastelloy C crystalliser; per-duty §3 material [docs-authority/sizing/REACTOR_DESIGN.md]
 Material: Borosilicate glass-lined reactor column, PTFE-lined transfer lines, SS304 reagent feed tanks, Hastelloy C crystalliser. (continues on the duty sheet)
 
 Nozzles: 6 process connections per docs-authority/nozzles/MET_SYN.csv

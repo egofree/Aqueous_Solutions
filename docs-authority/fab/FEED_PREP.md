@@ -4,7 +4,7 @@ Class: feed_prep; sector FARM. Study route. Not stamped.
 Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
 service line: service ration formulation: duckweed + larvae meal + recycled eggshell; HP drier on the storage draw only; basis A-M-426; A-M-416 (no import
 
-Internals: open: no issued internals basis for a feed_prep unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
+Internals: formulation internals per the issued mfg model (models/mfg/FEED_PREP/bom.csv): the mixer paddle stage and the HP drier stack on the storage draw (A-M-426) [models/mfg/FEED_PREP/bom.csv]
 Material: SS304 contact surfaces and mixing troughs, PP feed bins, quartz-sleeve drier ducting; no copper-bearing alloys on any feed path. Basis: food-contact sanitation class for the animal ration line (A-M-426): 304 at the chloride-light service, PP bins resist the wet duckweed; Cu is excluded from every feed path outright Alternative: SS316 where the eggshell grinding dust ever shows pitting. (continues on the duty sheet)
 
 Nozzles: 13 process connections per docs-authority/nozzles/FEED_PREP.csv

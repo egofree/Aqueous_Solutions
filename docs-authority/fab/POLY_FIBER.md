@@ -4,7 +4,7 @@ Class: melt_spin; sector POLYMERS. Study route. Not stamped.
 Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
 service line: service PP melt-spin staple-fiber line: pellet -> spun fiber -> needle-punched nonwoven fleece for the crew textile issue; basis A-M-429; A-
 
-Internals: open: no issued internals basis for a melt_spin unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
+Internals: none with basis: a melt-spin line is a machine - the extruder, quench cabinet and winder are the issued mfg model (models/mfg/POLY_FIBER/bom.csv); the tooling is the unit task 10-13 deliverable, not separate internals [models/mfg/POLY_FIBER/bom.csv]
 Material: SS304 melt vessel and spin pump with heater bands, brass-free spinnerette (stainless die plate), PP quench ducting. (continues on the duty sheet)
 
 Nozzles: 6 process connections per docs-authority/nozzles/POLY_FIBER.csv

@@ -4,7 +4,7 @@ Class: furnace; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 1000×1000×1500 mm;
 service line: service resistance radiant reheating furnace, N+1 of SHELL_BURNOUT/SINTER heating; connected_kW 12; backup_of SHELL_BURNOUT/SINTER; outage_d
 
-Internals: open: no issued internals basis for a furnace unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
+Internals: furnace internals per the duty: the 12 kW connected resistance element array on the chamber walls and hearth (radiant service at 900 C, N+1 standby of SHELL_BURNOUT/SINTER) with the hot-face liner per duty section 3; hearth furniture at unit tasks 10-12 [docs-authority/sizing/RES_HEAT.md]
 Material: Ceramic-fibre module lining + 80Ni-20Cr resistance elements on a mild-steel casing at the 900 C box-furnace class. Basis: resistance radiant reheating, N+1 of SHELL_BURNOUT/SINTER heating at 900 C (graph design): element and lining class to 1100 C per ASM_V1; lining design per SCHACHT2004 ch. 13. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). (continues on the duty sheet)
 
 Nozzles: none scheduled yet (unit task 04); route carries the connections once scheduled

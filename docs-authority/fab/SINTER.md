@@ -4,7 +4,7 @@ Class: furnace; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 1000×1000×1500 mm;
 service line: service Ti/Mo/Cr powder sinter furnace, N+1 consolidation of ROLL; connected_kW 8; backup_of ROLL; outage_d 2; design_case_kg_d 0.5; T_C 130
 
-Internals: open: no issued internals basis for a furnace unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
+Internals: furnace internals per the duty: the 8 kW connected element array for powder sintering at 1300 C (N+1 consolidation of ROLL) with the hot-face liner and retort furniture per duty section 3 [docs-authority/sizing/SINTER.md]
 Material: Graphite resistance elements + 95 % alumina muffle under inert/vacuum atmosphere; nickel-free hot zone on a water-cooled steel jacket. Basis: Ti/Mo/Cr powder sinter at 1300 C, press-and-sinter consolidation N+1 of ROLL (graph design): reactive-powder sintering furnaces use inert/vacuum hot zones with graphite or MoSi2 elements (ASM_V7); Ti embrittles in air/N2 at the class (CRC_TI). (continues on the duty sheet)
 
 Nozzles: 3 process connections per docs-authority/nozzles/SINTER.csv
