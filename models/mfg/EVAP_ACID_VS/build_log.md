@@ -11,6 +11,10 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/EVA
 ## Checks
 
 - Build bbox 400 x 400 x 1400 mm: inside the envelope with margin (envelope 400 x 400 x 1400 mm)
+- 2026-11-01 rebuild through the current `vent_scrubber.py`: export STL closed and
+  manifold. The assembly now measures 318.3 x 318.3 x 1480 mm against size_mm
+  400 x 400 x 1400: the off-gas outlet rises 80 mm above the stated height. Misfit
+  reported on the board per AQS-PLAN-006 rule 3; nothing was resized.
 - Solid source: build export `models/mfg/EVAP_ACID_VS/export/evap_acid_vs.step`
 - BOM `models/mfg/EVAP_ACID_VS/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/EVAP_ACID_VS/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
