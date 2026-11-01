@@ -19,9 +19,9 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1998 | 60 % |
-| organic | 1020 | 31 % |
-| silicate_oxide | 159 | 5 % |
+| metal_plateable | 1980 | 60 % |
+| organic | 1011 | 31 % |
+| silicate_oxide | 157 | 5 % |
 | metal_reactive | 120 | 4 % |
 | unassigned | 23 | 1 % |
 
@@ -95,7 +95,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | EW_4 | 2 | 5 | 0 | 5 | 0 |
 | EW_5 | 2 | 5 | 0 | 4 | 0 |
 | EW_6 | 2 | 5 | 0 | 4 | 0 |
-| EW_7 | 20 | 14 | 2 | 4 | 0 |
+| EW_7 | 2 | 5 | 0 | 4 | 0 |
 | EW_8 | 15 | 14 | 2 | 4 | 0 |
 | EW_9 | 21 | 18 | 2 | 4 | 0 |
 | EXTRUDE | 0 | 0 | 0 | 0 | 1 |
@@ -159,7 +159,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MET_MELT | 14 | 9 | 1 | 0 | 0 |
 | MET_SCRUB | 18 | 21 | 1 | 0 | 0 |
 | MET_SYN | 2 | 6 | 1 | 0 | 0 |
-| MF-01 x 20 | 3 | 1 | 0 | 2 | 0 |
+| MF-01 x 21 | 3 | 1 | 0 | 2 | 0 |
 | MF-02 x 55 | 3 | 1 | 0 | 2 | 0 |
 | MF-03 x 0 | 5 | 1 | 0 | 2 | 0 |
 | MF-04 x 0 | 5 | 0 | 0 | 1 | 0 |
@@ -167,8 +167,8 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MF-06 x 2 | 5 | 0 | 0 | 1 | 0 |
 | MF-07 x 3 | 5 | 0 | 0 | 1 | 0 |
 | MF-08 x 3 | 7 | 0 | 0 | 3 | 0 |
-| MF-09 x 236 | 7 | 0 | 0 | 3 | 0 |
-| MF-10 x 5 | 7 | 0 | 0 | 3 | 0 |
+| MF-09 x 235 | 7 | 0 | 0 | 3 | 0 |
+| MF-10 x 6 | 7 | 0 | 0 | 3 | 0 |
 | MF-11 x 4 | 7 | 0 | 0 | 3 | 0 |
 | MF-12 x 2 | 7 | 0 | 0 | 3 | 0 |
 | MF-13 x 1 | 7 | 0 | 0 | 3 | 0 |

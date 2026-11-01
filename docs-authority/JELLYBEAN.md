@@ -30,10 +30,10 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | Size | Type | Grade | Qty | Standard |
 | --- | --- | --- | --- | --- |
 | M10 | U-bolt | ISO 3506 A4-70 | 2 | DIN 3570 (U-bolt) |
-| M10 | anchor | ISO 3506 A4-70 | 36 | ISO 4017 + chemical anchor (ETAG 001) |
+| M10 | anchor | ISO 3506 A4-70 | 46 | ISO 4017 + chemical anchor (ETAG 001) |
 | M10 | anchor | ISO 898-1 8.8 | 40 | ISO 4017 + chemical anchor (ETAG 001) |
 | M10 | hex bolt | ASTM A193 B8 | 8 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M10 | hex bolt | ISO 3506 A4-70 | 124 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M10 | hex bolt | ISO 3506 A4-70 | 130 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | hex bolt | ISO 3506 A4-80 | 8 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | hex bolt | ISO 898-1 8.8 | 16 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | stud | ISO 898-1 8.8 | 66 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -46,8 +46,8 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M16 | stud | ISO 3506 A4-70 outside the wetted zone | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | stud | ISO 898-1 8.8 | 12 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | stud | ISO 898-1 8.8 zinc | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M6 | hex bolt | ISO 3506 A4-70 | 142 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M8 | hex bolt | ISO 3506 A4-70 | 66 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M6 | hex bolt | ISO 3506 A4-70 | 203 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M8 | hex bolt | ISO 3506 A4-70 | 78 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M8 | hex bolt | ISO 898-1 8.8 | 56 | ISO 4014 / ISO 4032 / ISO 7089 |
 
 ## 3. Seals and gaskets
@@ -84,9 +84,6 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | CRYO_O2 | valve: isolation valve DN50 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | CR_CELL | Return dip leg DN15, inside the riser annulus, bottom z 250 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | DRY_COOLER | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| EW_7 | seal: mechanical seal, single EN 12756 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| EW_7 | valve: check valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| EW_7 | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | EW_8 | seal: mechanical seal, single EN 12756 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | EW_8 | valve: check valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | EW_8 | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
