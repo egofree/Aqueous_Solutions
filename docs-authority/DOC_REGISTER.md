@@ -245,7 +245,7 @@ Table 3.1. Document numbers in use
 | AQS-PLAN-003 | `docs-authority/internal/CRITICAL_PATH.md` | D | 2026-10-12 | Critical path against the tech tree | superseded by AQS-PLAN-007 |
 | AQS-PLAN-004 | `docs-authority/internal/MASTER_PLAN.md` | A | 2026-10-12 | Status board | current |
 | AQS-PLAN-005 | `docs-authority/PROJECT_PLAN.md` | C | 2026-10-25 | Project plan | current |
-| AQS-PLAN-006 | `docs-authority/MFG_MODEL_PLAN.md` | A | 2026-10-15 | Manufacturing model plan | current |
+| AQS-PLAN-006 | `docs-authority/MFG_MODEL_PLAN.md` | B | 2026-11-01 | Manufacturing model plan | current |
 | AQS-PLAN-007 | `docs-authority/TASK_PLAN.md` | C | 2026-10-25 | Task plan | current |
 | AQS-PLAN-010 | `docs-authority/RESIZE_SWEEP.md` | B | 2026-10-16 | Bounding-case resize sweep | current |
 | AQS-PLAN-011 | `docs-authority/LOCALIZATION_PLAN.md` | J | 2026-10-25 | Localization plan: site profiles and locale variants | current |

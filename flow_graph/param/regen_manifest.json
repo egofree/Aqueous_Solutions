@@ -2493,6 +2493,26 @@
    "depends_on": []
   },
   {
+   "name": "mfg_tracker",
+   "argv": [
+    "python3",
+    "models/mfg/tracker.py"
+   ],
+   "outputs": [
+    "models/mfg/*/params.json"
+   ],
+   "amends": [
+    "docs-authority/MFG_MODEL_PLAN.md"
+   ],
+   "depends_on": [
+    "nozzle_sched",
+    "cad_mfg_models"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-PLAN-006 section 6 tracker: writes the W2 params.json of every present unit from the graph node and the duty page (builder-owned keys pass through), regenerates section 7 of the plan page from the tree, and runs the file-level A-core checks. Depends on the CAD stage for ordering; the CAD stage runs only under regen --cad, so a default regen re-derives section 7 from the tree as committed."
+  },
+  {
    "name": "cad_motors",
    "argv": [
     "python3",
