@@ -11,11 +11,12 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/HDR
 ## Checks
 
 - Build bbox 2000 x 50 x 50 mm: inside the envelope with margin (envelope 2000 x 50 x 50 mm)
-- Solid source: envelope box from the graph `params.size_mm` (envelope-class unit; no build export yet)
+- Solid source: build export `models/mfg/HDR_O2/export/hdr_o2.step`
 - BOM `models/mfg/HDR_O2/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/HDR_O2/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
 ## Sources
 
+- `models/mfg/HDR_O2/export/hdr_o2.step`
 
 Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

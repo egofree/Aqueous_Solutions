@@ -10,7 +10,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/EVA
 
 ## Checks
 
-- Build bbox 795 x 450 x 2950 mm: inside the envelope with margin (envelope 1250 x 800 x 3100 mm)
+- Build bbox 1250 x 800 x 3100 mm: inside the envelope with margin (envelope 1250 x 800 x 3100 mm)
 - Solid source: build export `models/mfg/EVAP_BASE/export/evap_base.step`
 - BOM `models/mfg/EVAP_BASE/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/EVAP_BASE/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)

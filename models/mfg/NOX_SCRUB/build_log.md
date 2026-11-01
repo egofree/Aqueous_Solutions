@@ -11,11 +11,12 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/NOX
 ## Checks
 
 - Build bbox 600 x 600 x 4103 mm: inside the envelope with margin (envelope 600 x 600 x 4103 mm)
-- Solid source: envelope box from the graph `params.size_mm` (envelope-class unit; no build export yet)
+- Solid source: build export `models/mfg/NOX_SCRUB/export/nox_scrub.step`
 - BOM `models/mfg/NOX_SCRUB/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/NOX_SCRUB/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
 ## Sources
 
+- `models/mfg/NOX_SCRUB/export/nox_scrub.step`
 
 Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

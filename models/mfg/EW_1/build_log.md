@@ -10,12 +10,13 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/EW_
 
 ## Checks
 
-- Build bbox 600 x 420 x 650 mm: inside the envelope with margin (envelope 600 x 420 x 650 mm)
-- Solid source: envelope box from the graph `params.size_mm` (envelope-class unit; no build export yet)
+- Build bbox 2670 x 720 x 760 mm: OVER ENVELOPE - open item (envelope 600 x 420 x 650 mm)
+- Solid source: build export `models/mfg/EW_1/export/ew_1.step`
 - BOM `models/mfg/EW_1/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/EW_1/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
 ## Sources
 
+- `models/mfg/EW_1/export/ew_1.step`
 
 Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

@@ -10,7 +10,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/SHE
 
 ## Checks
 
-- Build bbox 1530 x 810 x 1500 mm: no graph envelope; dims recorded
+- Build bbox 1500 x 800 x 1500 mm: no graph envelope; dims recorded
 - Solid source: build export `models/mfg/SHELL_BREAK/export/shell_break.step`
 - BOM `models/mfg/SHELL_BREAK/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/SHELL_BREAK/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)

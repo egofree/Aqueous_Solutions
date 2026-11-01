@@ -190,9 +190,9 @@
         "size_mm": [
           2000,
           1000,
-          1600
+          419
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset).",
         "rated_kW": 40.0,
         "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.197 kWh/d average; hydrogen first: 0.0197 kg/d H2 at 30% on 33.33 kWh/kg LHV; C5-C10 cut as fallback, 190 kg reserve in PROD_C5_C10 (flow_graph/param/backup_fuel.py)",
         "rated_kW_basis": "drivers.json backup_gen_rated_kW: single governed source (D3). Standby genset at 125 % of the critical list in 5 kW steps (AQS-ELEC-007 / AQS-RED-001, NFPA 110 standby basis); written by write_graph power(), read by docs-authority/_power_sizing.py and o2_close.py.",
@@ -1557,9 +1557,9 @@
         "size_mm": [
           1800,
           800,
-          1600
+          1000
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit).",
         "reversible_loop": {
           "electrolyser": "H2O_ELYZ",
           "round_trip": 0.364,
@@ -2427,7 +2427,7 @@
         "size_mm": [
           1800,
           800,
-          1600
+          1000
         ],
         "size_note": "sized from the issued graph duties, methanol train residual sizing (flow_graph/param/meoh_train.py, AQS-DUTY-077)",
         "design": {
@@ -3575,9 +3575,9 @@
         "size_mm": [
           600,
           600,
-          600
+          350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -3604,9 +3604,9 @@
         "size_mm": [
           600,
           600,
-          600
+          350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -3633,9 +3633,9 @@
         "size_mm": [
           600,
           600,
-          600
+          350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -3662,9 +3662,9 @@
         "size_mm": [
           600,
           600,
-          600
+          350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -3691,9 +3691,9 @@
         "size_mm": [
           600,
           600,
-          600
+          350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -3720,9 +3720,9 @@
         "size_mm": [
           600,
           600,
-          600
+          350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -3754,9 +3754,9 @@
         "size_mm": [
           600,
           600,
-          600
+          350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -3783,9 +3783,9 @@
         "size_mm": [
           600,
           600,
-          600
+          350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -3869,9 +3869,9 @@
         "size_mm": [
           600,
           600,
-          600
+          350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -4842,11 +4842,11 @@
           "task": "X-MAT-22"
         },
         "size_mm": [
-          800,
-          600,
-          1200
+          679,
+          560,
+          1174
         ],
-        "size_note": "F_RECOVER absorber column: 0.8 m diameter x 1.2 m packed section (A-M-077 acid-service class)"
+        "size_note": "F_RECOVER absorber column: 0.8 m diameter x 1.2 m packed section (A-M-077 acid-service class) Size follows the machine build (style builder vessel_z)."
       },
       "continuous_kw": null
     },

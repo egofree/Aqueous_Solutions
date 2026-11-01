@@ -11,11 +11,12 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/MET
 ## Checks
 
 - Build bbox 1000 x 600 x 800 mm: inside the envelope with margin (envelope 1000 x 600 x 800 mm)
-- Solid source: envelope box from the graph `params.size_mm` (envelope-class unit; no build export yet)
+- Solid source: build export `models/mfg/MET_HX_Q4/export/met_hx_q4.step`
 - BOM `models/mfg/MET_HX_Q4/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/MET_HX_Q4/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
 ## Sources
 
+- `models/mfg/MET_HX_Q4/export/met_hx_q4.step`
 
 Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

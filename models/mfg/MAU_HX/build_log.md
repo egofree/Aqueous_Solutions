@@ -11,11 +11,12 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/MAU
 ## Checks
 
 - Build bbox 600 x 400 x 400 mm: inside the envelope with margin (envelope 600 x 400 x 400 mm)
-- Solid source: envelope box from the graph `params.size_mm` (envelope-class unit; no build export yet)
+- Solid source: build export `models/mfg/MAU_HX/export/mau_hx.step`
 - BOM `models/mfg/MAU_HX/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/MAU_HX/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
 ## Sources
 
+- `models/mfg/MAU_HX/export/mau_hx.step`
 
 Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

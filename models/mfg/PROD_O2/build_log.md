@@ -11,11 +11,12 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/PRO
 ## Checks
 
 - Build bbox 1400 x 1400 x 1750 mm: inside the envelope with margin (envelope 1400 x 1400 x 1750 mm)
-- Solid source: envelope box from the graph `params.size_mm` (envelope-class unit; no build export yet)
+- Solid source: build export `models/mfg/PROD_O2/export/prod_o2.step`
 - BOM `models/mfg/PROD_O2/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/PROD_O2/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
 ## Sources
 
+- `models/mfg/PROD_O2/export/prod_o2.step`
 
 Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

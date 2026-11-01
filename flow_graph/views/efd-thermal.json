@@ -248,9 +248,9 @@
         "size_mm": [
           1800,
           800,
-          1600
+          1000
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit).",
         "reversible_loop": {
           "electrolyser": "H2O_ELYZ",
           "round_trip": 0.364,
@@ -579,7 +579,7 @@
         "size_mm": [
           1800,
           800,
-          1600
+          1000
         ],
         "size_note": "sized from the issued graph duties, methanol train residual sizing (flow_graph/param/meoh_train.py, AQS-DUTY-077)",
         "design": {
