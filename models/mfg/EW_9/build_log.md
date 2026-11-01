@@ -1,22 +1,30 @@
 # Build log - EW_9
 
-Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
-Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/EW_9.md`; sizing per the duty sheet section 2).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-CELL; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/EW_9.md`; sizing `docs-authority/sizing/EW_CELLS.md`).
 
 ## Tool versions
 
 - CadQuery 2.8.0 (CADQUERY_PYTHON)
-- Python 3.13.7; build run headless via `models/mfg/build_all.py`
+- Python 3.13.7; build run headless via `python3 models/mfg/EW_9/ew_9.py` (a `cad_mfg_models` pipeline stage through `models/mfg/build_all.py`)
 
 ## Checks
 
-- Build bbox 3270 x 720 x 760 mm: OVER ENVELOPE - open item (envelope 600 x 420 x 650 mm)
-- Solid source: build export `models/mfg/EW_9/export/ew_9.step`
-- BOM `models/mfg/EW_9/bom.csv`; fasteners and WORK_ORDER beside it
-- Drawing set `models/mfg/EW_9/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
+- Build bbox 3270.0 x 720.3 x 760.0 mm: inside the graph envelope 3270 x 720 x 760 mm with margin (tracker check green)
+- Solid source: build export `models/mfg/EW_9/export/ew_9.step`; export STL closed and manifold; `cad/stl/EW_9.stl` replaced from the build (ASCII, metres)
+- Nozzles: all 10 rows of `docs-authority/nozzles/EW_9.csv` present at face, height, bore and rating, tagged; drawn flush per the house idiom
+- A-CELL: 31 cathodes / 32 anodes at 100 mm pitch, plates 600 x 420 immersed (0.504 m2 both faces, 15.62 m2 bank); bus pack 2 x 120 x 6.3 mm per pole Cu per AQS-BUS-001 Rev C
+- BOM `models/mfg/EW_9/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/EW_9/drawings/` (GA front/side, nozzle orientation, 3 part sheets, iso; title blocks per AQS-DWG-002)
 
 ## Sources
 
+- `models/mfg/EW_9/ew_9.py`
+- `models/mfg/EW_9/draw_ew_9.py`
 - `models/mfg/EW_9/export/ew_9.step`
+- `models/mfg/EW_9/bom.csv`
+- `models/mfg/EW_9/fasteners.csv`
+- `models/mfg/EW_9/check.json`
+- `models/mfg/EW_9/WORK_ORDER.md`
 
-Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.
+Status: accepted per AQS-PLAN-006 section 5 A-core and A-CELL; the machine-design detail (weld procedures, hose makeup) follows the unit WORK_ORDER.

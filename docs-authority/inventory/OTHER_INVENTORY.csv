@@ -1,5 +1,5 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,96,1526 points / 16
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,96,1528 points / 16
 CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,844,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 175 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
@@ -548,13 +548,21 @@ DIGESTER,LEACH_EW,EW_2,valve,isolation valve,DN15,"PVC-U true-union ball valve, 
 DIGESTER,LEACH_EW,EW_2,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-HDR-H2-03: one at each end nozzle (assumed)
 DIGESTER,LEACH_EW,EW_2,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-EW2-H2: one at each end nozzle (assumed)
 DIGESTER,LEACH_EW,EW_2,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,IA-EW2-CL2: one at each end nozzle (assumed)
-DIGESTER,LEACH_EW,EW_9,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: electrolyte circulation pump (induction IE3, IEC 63 /: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-DIGESTER,LEACH_EW,EW_9,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump IA-EW-09 to POLISH_BANK (BLDC, 42 mm (N: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-DIGESTER,LEACH_EW,EW_9,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: electrolyte circulation pump (induction IE3, IEC 63 /: run and fault (assumed)"
-DIGESTER,LEACH_EW,EW_9,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump IA-EW-09 to POLISH_BANK (BLDC, 42 mm (N: run and fault (assumed)"
-DIGESTER,LEACH_EW,EW_9,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: electrolyte circulation pump (induction IE3, IEC 63 / (assumed VFD at >= 0.75 kW)"
-DIGESTER,LEACH_EW,EW_9,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump IA-EW-09 to POLISH_BANK (BLDC, 42 mm (N (assumed VFD at >= 0.75 kW)"
-DIGESTER,LEACH_EW,EW_9,fabricated part,fabricated part set,43 BOM lines,models/mfg/EW_9/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+DIGESTER,LEACH_EW,EW_9,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"electrolyte circulation pump: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
+DIGESTER,LEACH_EW,EW_9,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"screw conveyor IA-EW-MET-9 to MFG_SHOP: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
+DIGESTER,LEACH_EW,EW_9,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-EW-09 to POLISH_BANK (assumed size)
+DIGESTER,LEACH_EW,EW_9,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-EW-09 to POLISH_BANK
+DIGESTER,LEACH_EW,EW_9,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,electrolyte circulation pump: run and fault (assumed)
+DIGESTER,LEACH_EW,EW_9,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,screw conveyor IA-EW-MET-9 to MFG_SHOP: run and fault (assumed)
+DIGESTER,LEACH_EW,EW_9,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-EW-09 to POLISH_BANK: run and fault (assumed)
+DIGESTER,LEACH_EW,EW_9,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,electrolyte circulation pump (assumed VFD at >= 0.75 kW)
+DIGESTER,LEACH_EW,EW_9,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,screw conveyor IA-EW-MET-9 to MFG_SHOP (assumed VFD at >= 0.75 kW)
+DIGESTER,LEACH_EW,EW_9,fabricated part,fabricated part set,9 BOM lines,models/mfg/EW_9/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+DIGESTER,LEACH_EW,EW_9,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,10,models/mfg/EW_9/fasteners.csv
+DIGESTER,LEACH_EW,EW_9,fastener,M10 x 35,M10 x 35,ISO 3506 A4-70,6,models/mfg/EW_9/fasteners.csv
+DIGESTER,LEACH_EW,EW_9,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,63,models/mfg/EW_9/fasteners.csv
+DIGESTER,LEACH_EW,EW_9,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,10,models/mfg/EW_9/fasteners.csv
+DIGESTER,LEACH_EW,EW_9,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_9/fasteners.csv
 DIGESTER,LEACH_EW,EW_9,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-EW-09: 2 per support (assumed)
 DIGESTER,LEACH_EW,EW_9,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,IA-HDR-H2-04: 2 per support (assumed)
 DIGESTER,LEACH_EW,EW_9,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,76,EW9_LIQUOR_TO_MO: 2 per support (assumed)
@@ -571,8 +579,7 @@ DIGESTER,LEACH_EW,EW_9,instrument,pressure transmitter,0-10 bar,"ceramic diaphra
 DIGESTER,LEACH_EW,EW_9,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 DIGESTER,LEACH_EW,EW_9,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,LEACH_EW,EW_9,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-DIGESTER,LEACH_EW,EW_9,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: electrolyte circulation pump (induction IE3, IEC 63 /: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
-DIGESTER,LEACH_EW,EW_9,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump IA-EW-09 to POLISH_BANK (BLDC, 42 mm (N: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
+DIGESTER,LEACH_EW,EW_9,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,electrolyte circulation pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 DIGESTER,LEACH_EW,EW_9,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-EW-09: AQS-PIP-005 span count
 DIGESTER,LEACH_EW,EW_9,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",12,IA-HDR-H2-04: AQS-PIP-005 span count
 DIGESTER,LEACH_EW,EW_9,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",38,EW9_LIQUOR_TO_MO: AQS-PIP-005 span count

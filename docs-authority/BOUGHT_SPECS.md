@@ -17,14 +17,14 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 15661 |
+| fastener | 15754 |
 | support | 7355 |
-| electronics | 1965 |
+| electronics | 1968 |
 | valve | 988 |
 | instrument | 844 |
-| bearing | 680 |
+| bearing | 682 |
 | protection | 261 |
-| seal | 214 |
+| seal | 213 |
 
 ## 2a. What a datasheet is here
 
@@ -45,17 +45,17 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x160 | 160 | 24 | Biogas recirculation diaphragm blower about 2 L/min (assumed size); CNC vertical mill: axis drive (assumed size); Motor: cathode air blower (BLDC, 57  |  |
-| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6201-2Z x472; 6204-2Z x14; 6205-2Z x12; 6206-2Z x8; 6202-2Z x6; 6308-2Z x6; 6306-2Z x2 | 520 | 75 | Acid day tank D160 x 300 mm with metering pump: drive and non-drive end, IEC 600; Band saw: main drive: drive and non-drive end, IEC 60072 frame 90L ( |  |
+| OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x162 | 162 | 25 | Biogas recirculation diaphragm blower about 2 L/min (assumed size); CNC vertical mill: axis drive (assumed size); Motor: cathode air blower (BLDC, 57  |  |
+| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6201-2Z x470; 6204-2Z x16; 6205-2Z x12; 6206-2Z x8; 6202-2Z x6; 6308-2Z x6; 6306-2Z x2 | 520 | 75 | Acid day tank D160 x 300 mm with metering pump: drive and non-drive end, IEC 600; Band saw: main drive: drive and non-drive end, IEC 60072 frame 90L ( |  |
 ## 4. Electronics datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x682 | 682 | 89 | Acid day tank D160 x 300 mm with metering pump: run and fault (assumed); Band saw: main drive: run and fault (assumed); Biogas recirculation diaphragm |  |
+| OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x684 | 684 | 89 | Acid day tank D160 x 300 mm with metering pump: run and fault (assumed); Band saw: main drive: run and fault (assumed); Biogas recirculation diaphragm |  |
 | OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x844 | 844 | 1 | one per instrument |  |
-| OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x77 | 77 | 23 | Biogas recirculation diaphragm blower about 2 L/min; Motor: cathode air blower (BLDC, 57 mm (NEMA 23 flange)); Motor: cathode air blower (induction IE |  |
-| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.18 kW x234; 0.55 kW x6; 0.12 kW x2; 0.37 kW x2; 0.25 kW x1; 1.1 kW x1; 0.75 kW x1 | 247 | 70 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Body / envelope 600 x 600 x 600 mm (assumed VFD at >= 0.75 kW); Body / env |  |
-| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x96 | 96 | 1 | 1526 points / 16 |  |
+| OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x78 | 78 | 24 | Biogas recirculation diaphragm blower about 2 L/min; Motor: cathode air blower (BLDC, 57 mm (NEMA 23 flange)); Motor: cathode air blower (induction IE |  |
+| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.18 kW x233; 0.55 kW x7; 0.12 kW x2; 0.37 kW x2; 0.25 kW x1; 1.1 kW x1; 0.75 kW x1 | 247 | 70 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Body / envelope 600 x 600 x 600 mm (assumed VFD at >= 0.75 kW); Body / env |  |
+| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x96 | 96 | 1 | 1528 points / 16 |  |
 | OF-08 | variable-frequency drive | IEC 61800-5-1 | 2.2 kW x4; 1.5 kW x3; 7.5 kW x3; 1.1 kW x2; 4 kW x1 | 13 | 10 | Band saw: main drive (assumed VFD at >= 0.75 kW); Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf (assumed VFD at >= ; Blower, single-sta |  |
 | OF-10 | compressor contactor + overload | IEC 60947-4-1 | 1.1 kW hermetic x1 | 1 | 1 | cryocooler compressor |  |
 | OF-11 | stepper driver | IEC 61800-5-1 | 24/48 V DC x3 | 3 | 1 | CNC vertical mill: axis drive |  |
@@ -86,7 +86,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-47 | mechanical seal, single | SiC/SiC faces, FKM | EN 12756 x214 | 214 | 60 | Acid day tank D160 x 300 mm with metering pump: induction-driven pump assumed se; Dilute-HCl return pump and transfer line to CRU: induction-driven pu |  |
+| OF-47 | mechanical seal, single | SiC/SiC faces, FKM | EN 12756 x213 | 213 | 60 | Acid day tank D160 x 300 mm with metering pump: induction-driven pump assumed se; Dilute-HCl return pump and transfer line to CRU: induction-driven pu |  |
 ## 8. Support datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
@@ -147,10 +147,10 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-82 | M8 x 25 hood bolts | ISO 898-1 8.8 | M8 x 25 hood bolts x48 | 48 | 4 | models/mfg/CA_POT/fasteners.csv; models/mfg/CR_CELL/fasteners.csv; models/mfg/MG_POT/fasteners.csv |  |
 | OF-83 | M10 anchor | ISO 898-1 8.8 | M10 anchor x40 | 40 | 10 | models/mfg/CA_POT/fasteners.csv; models/mfg/CR_CELL/fasteners.csv; models/mfg/FILM_CAST/fasteners.csv |  |
 | OF-84 | M8 x 25 hopper bolts | ISO 898-1 8.8 | M8 x 25 hopper bolts x8 | 8 | 1 | models/mfg/TI_CELL/fasteners.csv |  |
-| OF-85 | M6 x 25 | ISO 3506 A4-70 | M6 x 25 x210 | 210 | 8 | models/mfg/EW_1/fasteners.csv; models/mfg/EW_2/fasteners.csv; models/mfg/EW_3/fasteners.csv |  |
-| OF-86 | M8 x 40 | ISO 3506 A4-70 | M8 x 40 x74 | 74 | 8 | models/mfg/EW_1/fasteners.csv; models/mfg/EW_2/fasteners.csv; models/mfg/EW_3/fasteners.csv |  |
-| OF-87 | M10 x 30 wedge anchor | ISO 3506 A4-70 | M10 x 30 wedge anchor x46 | 46 | 8 | models/mfg/EW_1/fasteners.csv; models/mfg/EW_2/fasteners.csv; models/mfg/EW_3/fasteners.csv |  |
-| OF-88 | M10 x 35 | ISO 3506 A4-70 | M10 x 35 x48 | 48 | 8 | models/mfg/EW_1/fasteners.csv; models/mfg/EW_2/fasteners.csv; models/mfg/EW_3/fasteners.csv |  |
+| OF-85 | M6 x 25 | ISO 3506 A4-70 | M6 x 25 x273 | 273 | 9 | models/mfg/EW_1/fasteners.csv; models/mfg/EW_2/fasteners.csv; models/mfg/EW_3/fasteners.csv |  |
+| OF-86 | M8 x 40 | ISO 3506 A4-70 | M8 x 40 x88 | 88 | 9 | models/mfg/EW_1/fasteners.csv; models/mfg/EW_2/fasteners.csv; models/mfg/EW_3/fasteners.csv |  |
+| OF-87 | M10 x 30 wedge anchor | ISO 3506 A4-70 | M10 x 30 wedge anchor x56 | 56 | 9 | models/mfg/EW_1/fasteners.csv; models/mfg/EW_2/fasteners.csv; models/mfg/EW_3/fasteners.csv |  |
+| OF-88 | M10 x 35 | ISO 3506 A4-70 | M10 x 35 x54 | 54 | 9 | models/mfg/EW_1/fasteners.csv; models/mfg/EW_2/fasteners.csv; models/mfg/EW_3/fasteners.csv |  |
 
 ## 11. Coverage gate
 
