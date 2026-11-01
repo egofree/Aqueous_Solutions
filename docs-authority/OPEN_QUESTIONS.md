@@ -1,13 +1,14 @@
 # Open questions
 
 Document number: AQS-OQ-001
-Revision: B
-Date: 2026-10-25
+Revision: C
+Date: 2026-11-01
 
 | Rev | Description | Date |
 | --- | --- | --- |
 | A | First issue | 2026-10-15 |
 | B | Purpose and scope added; introduction rewritten to the documentation style guide (AQS-DOC-002). No question or default changed. | 2026-10-25 |
+| C | Q-035 added (locale design passes) | 2026-11-01 |
 
 ## 1. Purpose and scope
 
@@ -57,3 +58,4 @@ Table 2.1. Open and closed questions
 | Q-031 | X-LOC-11 |  CLOSED (owner, 2026-10-30). CLOSED (owner 2026-10-30): PARAMETRIC. The storm strategy is a profile entry - the default rides out the design storm on the moorings (the 70 m/s bounding wind is the ride-out basis); relocation is an operational alternative a site design may adopt. Storm strategy for the floating island: ride out the design storm on the moorings, or relocate ahead of it (AQS-PLAN-011 section 10)? | Ride it out on the moorings, with relocation kept as an option. |
 | Q-032 | X-LOC-03 | CLOSED (owner, 2026-10-25): hard-coded values are a gap and the sizing must be parametric. Every module reads the profile gravity; the small change to baseline outputs from the rounded 9.81 m/s² is accepted. The baseline profile keeps standard gravity and the standard atmosphere, flagged for verification. | — |
 | Q-034 | X-BAS-03 | The antarctic localization site has a polar night (24 h night_hours, pv_yield 1.0 kWh/kWp d): the daily-cycle solar architecture cannot bound it at any array size. Is the polar site a different technology class for power (as leo and mars are), carrying its own power-portfolio replacements in its profile? |  CLOSED (owner, 2026-10-30). Confirmed and GENERALIZED: every locale is its own technology class - each locale profile carries its own technology replacements and power-portfolio entries, and the Earth-surface daily-cycle baseline bounds only the daily-cycle sites. Default: yes - the Earth-surface daily-cycle baseline bounds the daily-cycle sites (baseline, death_valley, floating_island); the antarctic profile carries its own power-portfolio replacements when its site design is worked. |
+| Q-035 | X-LOC-05 | Locale design passes. The 16 placeholder units (ATM_INT, BRIN_RECOVER, CAT_OX, DESAL_RO, E_HEAT, GEO_ORC, HYDRO_GROW, ICE_EXTRACT, LIO_BAT, MEM_DIST, PERC_REMOVE, RAD_PANEL, REC_HDR, SW_INTAKE, TANK_BLD, WET_OX) carry registered design bases (A-M-396 to A-M-411) and promote at Mars, LEO or the floating island through the site scaling rules; their nodes defer sizing to "the locale design pass". No task commissions those passes. Should locale design passes be commissioned (Mars, LEO, floating island, in some order), or do the profiles stay at study completeness with the units placeholder until a site design is ordered? Per-unit method selections ride on that decision (ICE_EXTRACT sublimation vs drill-and-melt; PERC_REMOVE biological vs ion-exchange; LIO_BAT eclipse re-size from the A-M-402 interim carry; BRIN_RECOVER precipitation vs ion-exchange train). | Defer; profiles stay study-complete. Placeholder presence is the recorded state, not an omission. GEO_ORC is separately ruled (D-GEO_ORC): installed standby, design trigger = first issued surplus-heat source. |

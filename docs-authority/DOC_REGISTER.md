@@ -48,7 +48,7 @@ Table 3.1. Document numbers in use
 | AQS-AUDIT-001 | `notes/pathway_audit.md` | A | 2026-10-09 | Pathway audit | current |
 | AQS-AUTH-001 | `docs-authority/AUTHORITY.md` | Y | 2026-10-24 | CAD authority lock | current |
 | AQS-BAL-KROLL | `notes/KROLL_BALANCE.md` | A | 2026-10-16 | Kroll loop — placeholder balance | current |
-| AQS-BLD-001 | `docs-authority/BUILDING_STACK.md` | G | 2026-10-24 | Building stack: the vertical campus | current |
+| AQS-BLD-001 | `docs-authority/BUILDING_STACK.md` | H | 2026-11-01 | Building stack: the vertical campus | current |
 | AQS-BLD-010 | `docs-authority/GA_CHECK.md` | B | 2026-10-25 | General arrangement clash check | current |
 | AQS-BLD-011 | `docs-authority/HAZMAT_SEPARATION.md` | B | 2026-10-25 | Incompatible hazardous-material separation | current |
 | AQS-BLD-012 | `docs-authority/ACCESS_CHECK.md` | — | — | Access and electrical working-space check | current |
@@ -226,7 +226,7 @@ Table 3.1. Document numbers in use
 | AQS-OPS-001 | `docs-authority/OPERATING_PROCEDURES.md` | A | 2026-10-16 | Operating procedures | current |
 | AQS-OPS-002 | `docs-authority/MAINT_PLAN.md` | A | 2026-10-16 | Maintenance plan | current |
 | AQS-OPS-003 | `docs-authority/SPARES.md` | A | 2026-10-16 | Critical spares list | current |
-| AQS-OQ-001 | `docs-authority/OPEN_QUESTIONS.md` | B | 2026-10-25 | Open questions | current |
+| AQS-OQ-001 | `docs-authority/OPEN_QUESTIONS.md` | C | 2026-11-01 | Open questions | current |
 | AQS-PAR-001 | `docs-authority/PARAMETRIC_MODEL.md` | B | 2026-10-15 | Parametric model | current |
 | AQS-PAR-003 | `docs-authority/BALANCE_RECONCILIATION.md` | E | 2026-10-25 | Mass balance reconciliation | current |
 | AQS-PAR-004 | `docs-authority/GAS_SPECIES.md` | B | 2026-10-15 | Oxygen species ledger | current |
@@ -279,7 +279,7 @@ Table 3.1. Document numbers in use
 | AQS-SAF-006 | `docs-authority/GAS_DETECTION.md` | B | 2026-10-25 | Gas detection | current |
 | AQS-SAF-007 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | B | 2026-10-25 | Hazard separation applied to the layout | current |
 | AQS-SAF-008 | `docs-authority/HAZOP_ACTION_REGISTER.md` | A | 2026-10-19 | HAZOP action register | current |
-| AQS-SCALE-001 | `docs-authority/SCALE_MODEL.md` | D | 2026-10-24 | Scale model: parametric building growth | current |
+| AQS-SCALE-001 | `docs-authority/SCALE_MODEL.md` | E | 2026-11-01 | Scale model: parametric building growth | current |
 | AQS-SCALE-UR-001 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | E | 2026-10-24 | What goes unreclaimed when the plant is made smaller or a sector is switched off | current |
 | AQS-SEC-001 | `docs-authority/SECTOR_DEFINITIONS.md` | I | 2026-10-25 | Sector definitions | current |
 | AQS-SEL-FP | `notes/MONOMER_ROUTE.md` | A | 2026-10-16 | Monomer route selection — VDF and TFE | current |

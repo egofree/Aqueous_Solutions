@@ -1,8 +1,8 @@
 # Scale model: parametric building growth
 
 Document number: AQS-SCALE-001  
-Revision: D  
-Date: 2026-10-24  
+Revision: E  
+Date: 2026-11-01  
 Basis: subordinate to AQS-BLD-001 (`BUILDING_STACK.md`) for levels, cores, shafts and fire ratings. Dimensions in millimetres are set in `models/freecad/params.py`.  
 Licence: CERN-OHL-S-2.0.
 
@@ -10,6 +10,7 @@ Licence: CERN-OHL-S-2.0.
 |---|---|---|
 | C | Parametric growth rules for plan area, cassettes, life floors, basements, tanks, electrical modules and overflow terraces | 2026-09-27 |
 | D | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose, terms, captions; rules and values unchanged | 2026-10-24 |
+| E | `SCALE_M` driver table names the sizing drivers instead of a fixed plate size (Q-015 owner ruling, 2026-10-30) | 2026-11-01 |
 
 ## 1. Purpose and scope
 
@@ -57,7 +58,7 @@ Table 4.1. Primary scale drivers
 
 | Driver | Meaning | Baseline |
 |---|---|---|
-| `SCALE_M` | Linear module scale; 1 = 24 × 18 m plate | `1.0` |
+| `SCALE_M` | Linear module scale; 1 = baseline plate (`base_bays_x` × `base_bays_y` × `bay_mm` from `drivers.json`) | `1.0` |
 | `MODULE_BAYS_X`, `MODULE_BAYS_Y` | Explicit 6 m bay counts (override) | 4 × 3 |
 
 When only `SCALE_M` is set, the other quantities follow from it as shown in Figure 4.1. The bay grid and the core stay on the centreline of the plate (`CORE_X = (PLATE_L − CORE_L) / 2`, and likewise in Y).

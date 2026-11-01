@@ -1,8 +1,8 @@
 # Building stack: the vertical campus
 
 Document number: AQS-BLD-001  
-Revision: G  
-Date: 2026-10-24  
+Revision: H  
+Date: 2026-11-01  
 Basis: AQS-AUTH-001 (this document is the active CAD authority for levels, cores, shafts and stacked masses). Compliance themes: AQS-COMPL-001. Style: AQS-DOC-002.  
 Licence: CERN-OHL-S-2.0.
 
@@ -12,6 +12,7 @@ Licence: CERN-OHL-S-2.0.
 | E | 1 | FAB/CRY layout relief (AQS-AUD-001 Rev D) | 2026-10-01 |
 | F | 1 | Layout locks: equator PV tilt; life-floor terraces+doors; dock+ELEV_DOCK discrete E–W jump; yard inset (no wall punch) | 2026-10-01 |
 | G | 1 | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose, terms, captions and references; values unchanged | 2026-10-24 |
+| H | 1 | Plate-size mentions made parametric (Q-015 owner ruling, 2026-10-30): section 7 and Table 7.1 name the sizing drivers instead of a fixed plate size | 2026-11-01 |
 
 ## 1. Purpose and scope
 
@@ -180,7 +181,7 @@ The hydro loop uses clean tower water only and never mixes with Salria, grey wat
 
 ## 7. Scaling the module
 
-The full rules are in `docs-authority/SCALE_MODEL.md` (AQS-SCALE-001). Scale is set by `SCALE_M` (1 = 24 × 18 m) or by `MODULE_BAYS_X` and `MODULE_BAYS_Y`. Different parts of the plant scale in different ways (Table 7.1).
+The full rules are in `docs-authority/SCALE_MODEL.md` (AQS-SCALE-001). Scale is set by `SCALE_M` (1 = the baseline bay grid, `base_bays_x` × `base_bays_y` bays from `flow_graph/param/drivers.json`) or by `MODULE_BAYS_X` and `MODULE_BAYS_Y`. Different parts of the plant scale in different ways (Table 7.1).
 
 Table 7.1. How each kind of element scales
 
@@ -246,11 +247,11 @@ Table 9.1. First-cut masses (M1)
 | FARM | 12 × 18 × 4.5 | L1 | 12, 0 |
 | ROOF TANK | 16 × 12 × 7 | L2 | 4, 3 |
 | CORE_LIFE + CORE_PROCESS | 6 × 6 × full height | all | 9, 6 |
-| ARRAY_ROOF | 24 × 18 projected | above tank | tilt = **+φ** about +X (equator, the south face in the northern hemisphere) |
+| ARRAY_ROOF | plate-projected (driver-sized) | above tank | tilt = **+φ** about +X (equator, the south face in the northern hemisphere) |
 | TERRACE_{S,E,W}_L1 | 3 m depth bands | each life FFL | door from floor; top floor first, step down |
 | ELEV_DOCK | 2.7 × 3.2 shaft | L-2…L2 | paired with each DOCK; ≠ CORE ELEV_SVC |
 
-The plate is 24 × 18 m with the `SCALE_M = 1` bay grid unchanged. CRYO is on L-1 east of the core (origin 15, 6; envelope 9 × 6 m), using the free east strip to the plate edge (Rev E). The zinc-bromide storage stays outdoors at grade, west of the dock. The offsets `PROCESS_DX` and `PROCESS_DY` in `freecad/params.py` keep the wet cassette inside `SLAB_Lm1`.
+The plate carries the `SCALE_M = 1` baseline bay grid unchanged. CRYO is on L-1 east of the core (origin 15, 6; envelope 9 × 6 m), using the free east strip to the plate edge (Rev E). The zinc-bromide storage stays outdoors at grade, west of the dock. The offsets `PROCESS_DX` and `PROCESS_DY` in `freecad/params.py` keep the wet cassette inside `SLAB_Lm1`.
 
 Table 9.2 records the trade-offs of the Rev E layout change (AQS-AUD-001 Rev D).
 
