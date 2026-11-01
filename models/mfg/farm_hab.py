@@ -65,7 +65,9 @@ def parts_frame(P):
         fr = q if fr is None else fr.union(q)
     parts['frame_legs'] = fr
     parts['drop_board'] = box(0, 0, 100, L, W, 3)                        # manure board, 3 mm sheet
-    parts['floor_wire'] = box(leg, leg, 300, L - 2 * leg, W - 2 * leg, 1)
+    # the wire floor laps 2 mm into every leg, so the union overlaps volumetrically and
+    # fuses (plates that met the leg corners edge-to-edge left the export non-manifold)
+    parts['floor_wire'] = box(leg - 2, leg - 2, 300, L - 2 * leg + 4, W - 2 * leg + 4, 1)
     parts['roof'] = box(0, 0, H - 100, L, W, 3)                          # 3 mm sheet roof
     panels = None
     for z in (300, H - 250):
