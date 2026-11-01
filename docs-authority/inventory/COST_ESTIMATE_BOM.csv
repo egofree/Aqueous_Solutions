@@ -473,27 +473,8 @@ CRYO_H2,"Connection set per docs-authority/nozzles/CRYO_H2.csv (8 rows, clamped 
 CRYO_HX_Q4,Body / envelope per duty sheet section 2 (not yet dimensioned),1.0,-,-,-,-,-,HOLD - line mass pending at the unit CAD build (AQS-PRO-003 section 3),docs-authority/duties/CRYO_HX_Q4.md
 CRYO_HX_Q4,instrument: pressure transmitter 0-10 bar,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
 CRYO_HX_Q4,instrument: temperature element Pt100 class A,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,Body / envelope per duty sheet section 2 (not yet dimensioned),1.0,-,-,-,-,-,HOLD - line mass pending at the unit CAD build (AQS-PRO-003 section 3),docs-authority/duties/CRYO_N2.md
-CRYO_N2,Process nozzle DN15,5.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),one per mass edge; DN from AQS-INV-003
-CRYO_N2,Process nozzle DN50,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),one per mass edge; DN from AQS-INV-003
-CRYO_N2,fastener: anchor bolt M10,28.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,fastener: anchor bolt M10,24.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,fastener: anchor bolt M10,36.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,fastener: anchor bolt M10,16.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,fastener: anchor bolt M10,24.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,"instrument: gas detector, O2 deficiency electrochemical O2",2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,instrument: pressure transmitter 0-10 bar,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,instrument: temperature element Pt100 class A,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,support: U-bolt with guide DN15,14.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,support: U-bolt with guide DN15,12.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,support: U-bolt with guide DN15,18.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,support: U-bolt with guide DN15,8.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,support: pipe clamp DN50,12.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,valve: isolation valve DN15,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,valve: isolation valve DN15,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,valve: isolation valve DN15,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,valve: isolation valve DN15,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-CRYO_N2,valve: isolation valve DN50,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
+CRYO_N2,"Shell 300 x 300 x 1980 mm, t 3, welded closed, on a 20 mm skid",1.0,78.6,3.80 $/kg (stainless 304/316 mill product),2 (plate and weld),1,597.36,P: 2024 US mill average; Ni/Cr content tracked against USGS_MCS_2025; F: TOWLER_SINNOTT ch.7 plate fabrication,"node size_mm box (the build is the shell machine: shell + nozzles + supports); shell t 3 is the house study value, no thickness stated (W12); duty section 3 CA 0 mm"
+CRYO_N2,Nozzle set per docs-authority/nozzles/CRYO_N2.csv (8 rows),8.0,4.8,3.80 $/kg (stainless 304/316 mill product),2 (plate and weld (default)),1,36.48,P: 2024 US mill average; Ni/Cr content tracked against USGS_MCS_2025; F: TOWLER_SINNOTT ch.7 plate fabrication (default class),schedule tags/faces/heights/bore verbatim; atmospheric hose per duty sections 4 and 6; barb profile a study proportion (lib/nozzles.py)
 CRYO_O2,Body D114 x 600 mm,1.0,-,-,-,-,-,HOLD - line mass pending at the unit CAD build (AQS-PRO-003 section 3),docs-authority/duties/CRYO_O2.md
 CRYO_O2,Process nozzle DN15,6.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),one per mass edge; DN from AQS-INV-003
 CRYO_O2,Process nozzle DN50,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),one per mass edge; DN from AQS-INV-003

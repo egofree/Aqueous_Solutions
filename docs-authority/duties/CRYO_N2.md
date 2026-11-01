@@ -14,6 +14,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Pressure and temperature. High pressure trips the feed.
 
 6. Relief. Atmospheric. The vent is IA-N2-VENT to NORTH_DOCK. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped. The solid is still an envelope. `cad/stl/CRYO_N2.stl` is the outer envelope only; nothing inside it is modelled yet.
+7. Code. Shop. Not stamped. The solid is `cad/stl/CRYO_N2.stl`, from `models/mfg/CRYO_N2/cryo_n2.py` (AQS-PLAN-006). Drawings at `models/mfg/CRYO_N2/drawings/`. The build is the shell machine at the node size_mm box; the node's missing diameter and internals stay named holds on the work order.
 
 8. Open items. No diameter on this node.

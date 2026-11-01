@@ -101,5 +101,23 @@ per unit (plan rule 4); this note gains a section per accepted unit.
   superseded. Holds led by the Class 150 schedule rating column against the 22000 kPa node
   design, the clamped datums, the steel_kg basis difference, and study frame sections.
 
+## CRYO_N2 (nitrogen shell machine, tier 3) — commit 5
+
+- `models/mfg/CRYO_N2/cryo_n2.py`: the node carries no design, no internals and no diameter
+  (duty section 8), so the build is the shell machine the house rule prescribes — welded 316L
+  shell t 3 closed top and bottom on a 20 mm skid, exactly the node size_mm box
+  300 × 300 × 2000 (bbox 300.0 × 300.0 × 2000.0, one closed manifold solid). No vacuum jacket
+  (not named anywhere) and no invented internals.
+- All 8 rows of the schedule drawn at tag, face, height and bore; every datum fits this
+  envelope and is drawn as issued (inlet −Y z 400; outlets +Y z 1500 and 600; drain flush at
+  z 0 to its 50 datum; vent flush at the 2000 top). Atmospheric hose per duty sections 4 and
+  6; no flange; the Class 150 schedule rating column carried as text.
+- Deliverables as per the batch recipe; `tracker --check CRYO_N2` green;
+  `cad/stl/CRYO_N2.stl` replaced from the build; the stale envelope `drawings/GA.md`
+  superseded. Holds led by the missing diameter/design (unit task 02), the unnamed internals
+  with A-COL stages left a hold, the study shell/skid thicknesses, and the unnamed vacuum
+  jacket.
+
+
 
 

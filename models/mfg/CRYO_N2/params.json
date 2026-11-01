@@ -88,5 +88,16 @@
  "acceptance_sets": [
   "A-core",
   "A-COL"
- ]
+ ],
+ "layout": {
+  "frame": "origin at the envelope corner; the shell is the node size_mm box on a 20 mm skid",
+  "nozzle_spread": "single row per face/height group centred on the face mid-length, 8 mm clear at the bore; per-tag positions in check.nozzles_drawn",
+  "vent_drain": "N4 flush at the 2000 top datum; N3 flush at z 0 through the skid pass, boss to the 50 datum",
+  "hardware_idiom": "hose barbs flush at the envelope faces with extension stubs into the cavity (lib/nozzles.place_on_face); nothing protrudes, bbox = size_mm"
+ },
+ "study": {
+  "skid_t_mm": 20.0,
+  "shell_t_mm": 3.0,
+  "note": "study values not stated by any authority (the node carries no design and the duty no thickness)"
+ }
 }

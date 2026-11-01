@@ -19,9 +19,9 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1904 | 60 % |
-| organic | 981 | 31 % |
-| silicate_oxide | 150 | 5 % |
+| metal_plateable | 1889 | 60 % |
+| organic | 979 | 31 % |
+| silicate_oxide | 148 | 5 % |
 | metal_reactive | 120 | 4 % |
 | unassigned | 26 | 1 % |
 
@@ -79,7 +79,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | CRYO_DED_COOL | 6 | 2 | 1 | 0 | 0 |
 | CRYO_H2 | 8 | 0 | 0 | 0 | 0 |
 | CRYO_HX_Q4 | 3 | 0 | 1 | 0 | 0 |
-| CRYO_N2 | 20 | 2 | 2 | 0 | 0 |
+| CRYO_N2 | 5 | 0 | 0 | 0 | 0 |
 | CRYO_O2 | 21 | 2 | 1 | 0 | 0 |
 | CR_CELL | 7 | 6 | 3 | 0 | 0 |
 | DRAW | 0 | 0 | 0 | 0 | 1 |

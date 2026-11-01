@@ -81,7 +81,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-84 | fastener: M8 x 25 hopper bolts (M8 x 25 hopper bolts x8) | 8 | 4 | 2 % min 4 |
 | building block | OF-85 | fastener: M6 x 25 (M6 x 25 x273) | 273 | 6 | 2 % min 4 |
 | building block | OF-86 | fastener: M8 x 40 (M8 x 40 x88) | 88 | 4 | 2 % min 4 |
-| building block | OF-87 | fastener: M10 x 30 wedge anchor (M10 x 30 wedge anchor x80) | 80 | 4 | 2 % min 4 |
+| building block | OF-87 | fastener: M10 x 30 wedge anchor (M10 x 30 wedge anchor x84) | 84 | 4 | 2 % min 4 |
 | building block | OF-88 | fastener: M10 x 35 (M10 x 35 x54) | 54 | 4 | 2 % min 4 |
 | building block | OF-89 | fastener: M12 x 60 hex bolt + nut + 2 washers (M12 x 60 hex bolt + nut + 2 washers x34) | 34 | 4 | 2 % min 4 |
 | building block | OF-90 | fastener: M12 x 40 (M12 x 40 x312) | 312 | 7 | 2 % min 4 |
