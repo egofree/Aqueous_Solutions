@@ -537,6 +537,25 @@
    "note": "Copies each unit's sector from its node onto the edges at that unit, so an edge never names a sector its unit has left."
   },
   {
+   "name": "style_builders",
+   "argv": [
+    "python3",
+    "models/mfg/style_builders.py"
+   ],
+   "outputs": [
+    "flow_graph/plant_flow_graph.json"
+   ],
+   "depends_on": [
+    "edge_sectors"
+   ],
+   "writes_graph": true,
+   "quick": false,
+   "requires": [
+    "python:cadquery"
+   ],
+   "note": "CAD last-mile style builders (M1/M2 machine geometry for the envelope classes): builds from the claimed envelopes + nozzle schedules + design params, trims to the envelope, size follows the build."
+  },
+  {
    "name": "sizing_bmed_stack",
    "argv": [
     "python3",

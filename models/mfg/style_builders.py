@@ -271,8 +271,9 @@ def baghouse(u, n, L, W, H):
 def bmed_stack(u, n, L, W, H):
     """BMED: frame + membrane cassette stack between end plates + manifold row."""
     m = cq.Workplane('XY').box(L, W, 150, centered=False)                                                        # frame base
-    m = m.union(cq.Workplane('XY', origin=(20, 20, 150)).box(60, W - 40, max(H - 200, 60), centered=False))               # end plate
-    m = m.union(cq.Workplane('XY', origin=(L - 80, 20, 150)).box(60, W - 40, max(H - 200, 60), centered=False))
+    m = m.union(cq.Workplane('XY', origin=(20, 20, 150)).box(60, W - 40, H - 150, centered=False))               # end plate to top
+    m = m.union(cq.Workplane('XY', origin=(L - 80, 20, 150)).box(60, W - 40, H - 150, centered=False))
+    m = m.union(cq.Workplane('XY', origin=(20, 20, H - 40)).box(L - 40, W - 40, 40, centered=False))             # top beam
     ph = max(min(H - 250, 400), 40)
     n_plates = max(int((L - 240) / 18), 6)
     for i in range(n_plates):
@@ -283,8 +284,9 @@ def bmed_stack(u, n, L, W, H):
 def stack_unit(u, n, L, W, H):
     """Electrochemical stack (PEM/flow battery): plate stack between end blocks + manifolds."""
     m = cq.Workplane('XY').box(L, W, 150, centered=False)
-    m = m.union(cq.Workplane('XY', origin=(20, 20, 150)).box(50, W - 40, max(H - 200, 60), centered=False))
-    m = m.union(cq.Workplane('XY', origin=(L - 70, 20, 150)).box(50, W - 40, max(H - 200, 60), centered=False))
+    m = m.union(cq.Workplane('XY', origin=(20, 20, 150)).box(50, W - 40, H - 150, centered=False))
+    m = m.union(cq.Workplane('XY', origin=(L - 70, 20, 150)).box(50, W - 40, H - 150, centered=False))
+    m = m.union(cq.Workplane('XY', origin=(20, 20, H - 40)).box(L - 40, W - 40, 40, centered=False))     # top beam
     ph = max(min(H - 250, 400), 40)
     n_p = max(int((L - 200) / 12), 8)
     for i in range(n_p):

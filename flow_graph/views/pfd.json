@@ -35,11 +35,11 @@
           "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
         },
         "size_mm": [
-          1000,
-          1000,
-          4103
+          846,
+          960,
+          3720
         ],
-        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03) Size follows the machine build (style builder column)."
       },
       "continuous_kw": {
         "value": 1.1122,
@@ -190,9 +190,9 @@
         "size_mm": [
           2000,
           1000,
-          419
+          400
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset).",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset).",
         "rated_kW": 40.0,
         "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.197 kWh/d average; hydrogen first: 0.0197 kg/d H2 at 30% on 33.33 kWh/kg LHV; C5-C10 cut as fallback, 190 kg reserve in PROD_C5_C10 (flow_graph/param/backup_fuel.py)",
         "rated_kW_basis": "drivers.json backup_gen_rated_kW: single governed source (D3). Standby genset at 125 % of the critical list in 5 kW steps (AQS-ELEC-007 / AQS-RED-001, NFPA 110 standby basis); written by write_graph power(), read by docs-authority/_power_sizing.py and o2_close.py.",
@@ -299,9 +299,9 @@
         "size_mm": [
           1000,
           600,
-          800
+          350
         ],
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack)."
       },
       "continuous_kw": {
         "value": 5.6267,
@@ -325,9 +325,9 @@
         "size_mm": [
           1000,
           600,
-          800
+          350
         ],
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack)."
       },
       "continuous_kw": null
     },
@@ -448,11 +448,11 @@
           "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2025 / NFPA20_2025 / NFPA22_2023"
         },
         "size_mm": [
-          1000,
-          600,
-          800
+          649,
+          520,
+          748
         ],
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder vessel_z). Size follows the machine build (style builder vessel_z)."
       }
     },
     {
@@ -1143,9 +1143,9 @@
         "size_mm": [
           1800,
           800,
-          1600
+          1350
         ],
-        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit)."
       }
     },
     {
@@ -1557,9 +1557,9 @@
         "size_mm": [
           1800,
           800,
-          1000
+          700
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit).",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit).",
         "reversible_loop": {
           "electrolyser": "H2O_ELYZ",
           "round_trip": 0.364,
@@ -1677,7 +1677,7 @@
           "cop_basis": "graph S44/SF-GEO_HP; study COP 3.43 at 285 K (AQS-HEAT-STUDY-002 sec. 6, KAVANAUGH2014)",
           "material": "316L plates, R410A-class refrigerant, propylene-glycol brine source"
         },
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)",
         "size_mm": [
           1000,
           600,
@@ -1860,11 +1860,11 @@
       "modules": [],
       "params": {
         "size_mm": [
-          1000,
-          600,
-          800
+          649,
+          520,
+          748
         ],
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder vessel_z). Size follows the machine build (style builder vessel_z)."
       },
       "continuous_kw": null
     },
@@ -2095,7 +2095,7 @@
           "hold_kg": 0.01,
           "connections": 5
         },
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
           50,
@@ -2133,7 +2133,7 @@
           "hold_kg": 0.0,
           "connections": 14
         },
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
           50,
@@ -2166,7 +2166,7 @@
           "hold_kg": 0.01,
           "connections": 7
         },
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_note": "DN32 manifold x 20 m run (0.009 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
           50,
@@ -2202,7 +2202,7 @@
           "hold_kg": 0.01,
           "connections": 8
         },
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
           50,
@@ -2241,7 +2241,7 @@
           "hold_kg": 4.46,
           "connections": 3
         },
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
           50,
@@ -2397,7 +2397,7 @@
           "material": "316L shell and coil (methanol/water traces)",
           "note": "knock-out pot + condenser on the same skid"
         },
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_note": "sized from the issued graph duties, methanol train residual sizing (flow_graph/param/meoh_train.py, AQS-DUTY-077)",
         "size_mm": [
           400,
           400,
@@ -2427,7 +2427,7 @@
         "size_mm": [
           1800,
           800,
-          1000
+          700
         ],
         "size_note": "sized from the issued graph duties, methanol train residual sizing (flow_graph/param/meoh_train.py, AQS-DUTY-077)",
         "design": {
@@ -2736,7 +2736,7 @@
           "hold_kg": 0.0,
           "connections": 2
         },
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
           50,
@@ -3232,7 +3232,7 @@
           "hold_kg": 8.89,
           "connections": 14
         },
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_note": "DN32 manifold x 20 m run (0.009 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
           50,
@@ -3335,11 +3335,11 @@
           "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2025 / NFPA20_2025 / NFPA22_2023"
         },
         "size_mm": [
-          1000,
-          600,
-          800
+          649,
+          520,
+          748
         ],
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder vessel_z). Size follows the machine build (style builder vessel_z)."
       }
     },
     {
@@ -3831,9 +3831,9 @@
         "size_mm": [
           1000,
           600,
-          800
+          450
         ],
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit)."
       }
     },
     {
