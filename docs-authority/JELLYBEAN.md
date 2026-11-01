@@ -23,7 +23,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | EVAP_BASE | Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaft | 1.189 | 1.5 | 90L | 6205-2Z C3 | IE3 (IEC 60034-30-1) |
 | EVAP_BASE | Recirculation pump 282.7 kg/h at 4 m | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
 | GLASS_DIGEST | Top-entry agitator, 4-blade 45 deg PBT D133 at 358 rpm, 0.09 kW motor, | 0.09 | 0.12 | 63 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
-| LEACH_CSTR_1 | Gearmotor 0.75 kW 150 rpm output on lid bridge | 0.75 | 1.1 | 90S | 6205-2Z C3 | IE3 (IEC 60034-30-1) |
+| LEACH_CSTR_1 | Gearmotor 0.75 kW, 150 rpm output, on the lid bridge | 0.75 | 1.1 | 90S | 6205-2Z C3 | IE3 (IEC 60034-30-1) |
 
 ## 2. Fasteners (ISO 898-1 / ISO 3506-1 property classes)
 
@@ -40,7 +40,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M12 | anchor | ISO 3506 A4-70 | 10 | ISO 4017 + chemical anchor (ETAG 001) |
 | M12 | anchor | ISO 3506 A4-80 | 3 | ISO 4017 + chemical anchor (ETAG 001) |
 | M12 | anchor | ISO 898-1 8.8 | 104 | ISO 4017 + chemical anchor (ETAG 001) |
-| M12 | hex bolt | PVDF | 36 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M12 | hex bolt | PVDF (non-metallic) | 34 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | stud | ISO 898-1 8.8 | 26 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | hex bolt | ISO 898-1 8.8 | 12 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | stud | ISO 3506 A4-70 outside the wetted zone | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -109,6 +109,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | HOPPER | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | HYDRO_SET | seal: mechanical seal, single EN 12756 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | LEACH_CSTR_1 | Lid shaft seal | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
+| LEACH_CSTR_1 | Lid gasket, 40 mm wide full-face | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | LITHO_DEV | seal: mechanical seal, single EN 12756 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | MEOH_FERM | Bolted flat lid with gasket | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | MEOH_SYNTH | Spiral-wound gasket DN50 Class 600, 316/graphite | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |

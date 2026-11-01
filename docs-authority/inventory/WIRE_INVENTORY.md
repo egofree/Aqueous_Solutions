@@ -175,9 +175,9 @@ Table 1.1. Conductor families
 | LEACH_EW | EW_9 | screw conveyor IA-EW-MET-9 to MFG_SHOP feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 8.1 | 1 | 24.2 | NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed) |
 | LEACH_EW | EW_9 | transfer pump IA-EW-09 to POLISH_BANK power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | LEACH_EW | EW_9 | transfer pump IA-EW-09 to POLISH_BANK signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
-| LEACH_EW | LEACH_CSTR_1 | Gearmotor 0.75 kW 150 rpm output on lid bridge EGC | 14 AWG | green XHHW-2 Cu | 1 | 13.7 | 1 | 13.7 | NEC 250.122 at 15 A OCPD |
-| LEACH_EW | LEACH_CSTR_1 | Gearmotor 0.75 kW 150 rpm output on lid bridge control | 18 AWG | TFFN 3-pair, shielded | 6 | 13.7 | 1 | 81.9 | start/stop, run, fault (assumed) |
-| LEACH_EW | LEACH_CSTR_1 | Gearmotor 0.75 kW 150 rpm output on lid bridge feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 13.7 | 1 | 41.0 | NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed) |
+| LEACH_EW | LEACH_CSTR_1 | Gearmotor 0.75 kW, 150 rpm output, on the lid bridge EGC | 14 AWG | green XHHW-2 Cu | 1 | 13.7 | 1 | 13.7 | NEC 250.122 at 15 A OCPD |
+| LEACH_EW | LEACH_CSTR_1 | Gearmotor 0.75 kW, 150 rpm output, on the lid bridge control | 18 AWG | TFFN 3-pair, shielded | 6 | 13.7 | 1 | 81.9 | start/stop, run, fault (assumed) |
+| LEACH_EW | LEACH_CSTR_1 | Gearmotor 0.75 kW, 150 rpm output, on the lid bridge feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 13.7 | 1 | 41.0 | NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed) |
 | distribution | LP-DIGESTER | panel feeder 208 V | 3 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 35.3 | 1 | 141.4 | NEC 430.24: 79.8 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
 | distribution | LP-DIGESTER | panel feeder 460 V | 10 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 35.3 | 1 | 141.4 | NEC 430.24: 26.6 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
 | ew_cell | EW_3 | electrolyte circulation pump EGC | 14 AWG | green XHHW-2 Cu | 1 | 4.9 | 1 | 4.9 | NEC 250.122 at 15 A OCPD |

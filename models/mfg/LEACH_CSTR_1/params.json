@@ -1,29 +1,5 @@
 {
  "unit_id": "LEACH_CSTR_1",
- "graph": {
-  "size_mm": [
-   2000,
-   1200,
-   1400
-  ],
-  "origin_mm": [
-   600,
-   5300,
-   -6000
-  ],
-  "design_kPa": 25.1,
-  "relief_mm": 2.8,
-  "internals": "none",
-  "continuous_kw": 2.0,
-  "nozzle_face_height_mm": 700,
-  "inlets": 25,
-  "outlets_process": 20,
-  "outlet_conductor": "IA-E-LEACH",
-  "dn_from_edge": {
-   "HL-Q3-A-HX5": 20,
-   "HL-Q3-B-HX5": 20
-  }
- },
  "material": "CPVC wetted, per AQS-STD-002 rules M2 and M5: liquor 70\u201385 \u00b0C (graph liquor_T_C 77.5 \u00b0C) is above PVC-U 60 \u00b0C and inside CPVC 93 \u00b0C. No metal wetted part. Wall 16 mm, floor 16 mm (AQS-DUTY-050), three external FRP belts. PVDF lid bolts. HX-5 is a borosilicate glass 3.3 coil, 4.22 m\u00b2 (AQS-DUTY-049 natural-convection case, 7.941 kW rated), two concentric helices of 25 \u00d7 3 mm tube, 53.7 m, on PTFE pads, entering through CPVC stubs at N6a/N6b with FKM gaskets (AQS-STD-002 section 3.3); the Q3 metal piping ends at a dielectric isolating flange outside the tank. Liquor high-temperature trip 88 \u00b0C (assumption). Wall checked at 85 \u00b0C in AQS-DUTY-050.",
  "assumptions": {
   "header_zone_mm": {
@@ -620,5 +596,61 @@
  ],
  "holds": [
   "no size on the node"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   2000.0,
+   1200.0,
+   1400.0
+  ],
+  "basis": "duty section 2 (AQS-DUTY-050): working level 1100 mm, 2.14 m3; the graph node carries no size_mm (tracker hold)",
+  "tank_body_mm": [
+   1888.0,
+   1080.0,
+   1400.0
+  ],
+  "reserved_bands": {
+   "y_face_mm": 60,
+   "x_end_mm": 56,
+   "note": "port hardware and belts sit inside the bands"
+  }
+ },
+ "design": {
+  "service": "leach CSTR, dilute HCl with metal chlorides, 70-85 C, atmospheric (duty sections 3 and 6)",
+  "wall_mm": 16,
+  "floor_mm": 16,
+  "lid_mm": 12,
+  "belts": {
+   "z_mm": [
+    300,
+    560,
+    900
+   ],
+   "section": "FRP pultruded channel C203x56x6.4, web on the wall, wrapped all round",
+   "depth_mm": 56,
+   "height_mm": 203,
+   "web_mm": 6.4,
+   "density_kg_m3": 1900,
+   "note": "Study, AQS-DUTY-050. Density and allowable are assumptions pending the pultrusion vendor sheet."
+  },
+  "level_mm": 1100,
+  "liquor_density_kg_m3": 1100,
+  "coil_area_m2": 4.22,
+  "agitator": {
+   "type": "4-blade 45 deg pitched-blade turbine, down-pumping",
+   "D_mm": 450,
+   "rpm": 150,
+   "shaft_W": 403,
+   "motor_kW": 0.75
+  },
+  "design_kPa_note": "params design_kPa 25.1 is the old head-plus-10 figure, not a set point (duty section 6)"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; x along 2000, y along 1200, z up",
+  "nozzle_spread": "the schedule gives face and height only; ports pack in one row per face/height group, centred on the face mid-length, 8 mm clear at the bore; per-tag positions recorded in check.nozzles_drawn",
+  "vent_drain": "N10 flush at the lid on the x 1700 centreline (datum 1400); N9 flush at z 0 at x 300, boss to the 50 datum",
+  "belt_segmentation": "port rows at z 160/280/600 cross the belt bands; each crossing port is notched out of the band (20 notches)",
+  "conductor": "IA-E-LEACH gland at +Y x 250, z 600 (duty section 4 prose)",
+  "hardware_idiom": "connection hardware flush at the envelope faces, extension stubs 10 mm into the cavity (lib/nozzles.place_on_face); nothing protrudes, bbox within the duty envelope"
+ }
 }

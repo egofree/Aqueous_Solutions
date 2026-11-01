@@ -1189,23 +1189,16 @@ INV_CAST,N1 fired-shell inlet chute -X z 160,1,carbon steel,Closed,Fe EW -> MET_
 INV_CAST,N2/N3 melt DN15 stubs -Y z 160,2,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 INV_CAST,N2/N3 melt-stub pipe stands to the base,2,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 INV_CAST,N5 drain well + N6 vent stub,2,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
-LEACH_CSTR_1,Tank shell 2000x1080x1394 mm open top welded wall 12 mm floor 16 mm,1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-LEACH_CSTR_1,Lid flange ring 40 mm x 10 mm,1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-LEACH_CSTR_1,Lid plate 12 mm,1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-LEACH_CSTR_1,Inlet header DN50 on -Y face Z 700,1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-LEACH_CSTR_1,Inlet port stub DN20 (HL-Q3-A-HX5 HL-Q3-B-HX5) Q3 water 95 C,2,CPVC (flagged: 95 C exceeds PVC-U; above usual CPVC limit; held X-MAT-05),Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-LEACH_CSTR_1,Inlet port stub DN25 placeholder bore not calculated,23,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-LEACH_CSTR_1,Outlet header DN50 on +Y face Z 700,1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-LEACH_CSTR_1,Outlet port stub DN25 placeholder bore not calculated,20,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-LEACH_CSTR_1,Cable gland boss IA-E-LEACH,1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-LEACH_CSTR_1,HX-5 coil two concentric helices 25x3 mm tube 53.7 m 4.22 m2,1,borosilicate glass 3.3,Partial,GLASS,boron not recovered; soda-lime or high-silica glass from GLASS is the substitute study
+LEACH_CSTR_1,"CPVC tank shell, body 1888 x 1080 x 1400 mm inside the reserved bands, wall 16 m",1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+LEACH_CSTR_1,"Nozzle set per docs-authority/nozzles/LEACH_CSTR_1.csv: 54 hose barbs, 7 solids ",61,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+LEACH_CSTR_1,"IA-E-LEACH conductor gland boss, DN15 passage",1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+LEACH_CSTR_1,"FRP belt set, pultruded channel FRP pultruded channel C203x56x6.4, web on the wa",3,FRP vinyl ester,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
+LEACH_CSTR_1,"HX-5 coil, two concentric helices 25 x 3 mm tube, 53.7 m, 4.22 m2",1,borosilicate glass 3.3,Partial,GLASS,boron not recovered; soda-lime or high-silica glass from GLASS is the substitute study
 LEACH_CSTR_1,HX-5 coil support pad,4,PTFE,Missing,-,no fluorine source on site; end of life Q-011
-LEACH_CSTR_1,Belt FRP pultruded channel C203x56x6.4 wrapped,3,FRP vinyl ester,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
-LEACH_CSTR_1,Agitator 4-blade 45 deg PBT D450 solid PVDF impeller,1,PVDF,Missing,-,no fluorine source on site; end of life Q-011
-LEACH_CSTR_1,Agitator shaft D50 PVDF-sheathed,1,PVDF over steel core (not wetted),Missing,-,no fluorine source on site; end of life Q-011
-LEACH_CSTR_1,Gearmotor 0.75 kW 150 rpm output on lid bridge,1,bought,Missing,-,line says bought: no on-site path stated
+LEACH_CSTR_1,"Agitator: 4-blade 45 deg pitched-blade turbine, down-pumping, D 450 mm at 150 rp",1,PVDF (sheath and impeller),Missing,-,no fluorine source on site; end of life Q-011
+LEACH_CSTR_1,"Gearmotor 0.75 kW, 150 rpm output, on the lid bridge",1,purchase item,Unstated,-,not classed: purchase item
 LEACH_CSTR_1,Lid shaft seal,1,PTFE lip,Missing,-,no fluorine source on site; end of life Q-011
-LEACH_CSTR_1,HX-5 coil guide post,4,PVDF,Missing,-,no fluorine source on site; end of life Q-011
+LEACH_CSTR_1,"Lid gasket, 40 mm wide full-face",1,FKM,Missing,-,no fluorine source on site; end of life Q-011
 LITHO_ALIGN,Body / envelope 1200 x 600 x 800 mm,1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 LITHO_ALIGN,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",Unstated,-,"not classed: ceramic diaphragm, IEC 61298"
 LITHO_ALIGN,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
@@ -3169,7 +3162,6 @@ OF-14,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),14710,,Unstated,-,mate
 OF-15,fastener: M10 x 40 lid bolt (ISO 3506 A4-70),20,,Unstated,-,material not stated on the unit BOM line
 OF-16,fastener: M8 x 30 lid bolt (ISO 3506 A4-70),12,,Unstated,-,material not stated on the unit BOM line
 OF-17,fastener: M12 anchor (ISO 3506 A4-70),10,,Unstated,-,material not stated on the unit BOM line
-OF-18,fastener: M12x40 hex bolt + nut + 2 washers (PVDF),36,,Unstated,-,material not stated on the unit BOM line
 OF-19,fastener: M16 stud + 2 nuts (ISO 4014 / ISO 4032) (ISO 3506 A4-70 outside the we,24,,Unstated,-,material not stated on the unit BOM line
 OF-20,fastener: M16 stud + 2 nuts (ISO 4014 / ISO 4032) (ISO 898-1 8.8 zinc),24,,Unstated,-,material not stated on the unit BOM line
 OF-22,fastener: 5/8 in stud bolt (ASTM A193 B7 / A194 2H),16,,Unstated,-,material not stated on the unit BOM line
@@ -3178,7 +3170,6 @@ OF-26,fastener: M10 x 40 lid bolt (ASTM A193 B8),8,,Unstated,-,material not stat
 OF-29,fastener: Flange gasket (PTFE envelope),2,,Unstated,-,material not stated on the unit BOM line
 OF-30,fastener: Flange gasket (graphite sheet),2,,Unstated,-,material not stated on the unit BOM line
 OF-31,fastener: M10 U-bolt for DN150 (ISO 3506 A4-70),2,,Unstated,-,material not stated on the unit BOM line
-OF-32,fastener: Lid gasket 40 mm wide (FKM),1,,Unstated,-,material not stated on the unit BOM line
 OF-33,fastener: Solvent cement (PVC-U per ASTM D2564),1,,Unstated,-,material not stated on the unit BOM line
 OF-34,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes",186,,Unstated,-,material not stated on the unit BOM line
 OF-35,"instrument: pressure transmitter (ceramic diaphragm, IEC 61298)",177,,Unstated,-,material not stated on the unit BOM line
@@ -3232,3 +3223,4 @@ OF-85,fastener: M6 x 25 (ISO 3506 A4-70),273,,Unstated,-,material not stated on 
 OF-86,fastener: M8 x 40 (ISO 3506 A4-70),88,,Unstated,-,material not stated on the unit BOM line
 OF-87,fastener: M10 x 30 wedge anchor (ISO 3506 A4-70),56,,Unstated,-,material not stated on the unit BOM line
 OF-88,fastener: M10 x 35 (ISO 3506 A4-70),54,,Unstated,-,material not stated on the unit BOM line
+OF-89,fastener: M12 x 60 hex bolt + nut + 2 washers (PVDF (non-metallic)),34,,Unstated,-,material not stated on the unit BOM line

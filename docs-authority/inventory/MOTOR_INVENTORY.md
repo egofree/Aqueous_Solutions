@@ -92,7 +92,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | LEACH_EW | EW_9 | electrolyte circulation pump | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | assumed |
 | LEACH_EW | EW_9 | screw conveyor IA-EW-MET-9 to MFG_SHOP | induction IE3 | IEC 80 / 0.55 kW | 0.37 | 480 V 3-ph | S3 | fixed speed | 1 | 61 kg/d solids (>= 50 kg/d conveyed, assumed) |
 | LEACH_EW | EW_9 | transfer pump IA-EW-09 to POLISH_BANK | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 3520.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| LEACH_EW | LEACH_CSTR_1 | Gearmotor 0.75 kW 150 rpm output on lid bridge | induction IE3 | IEC 90S / 1.1 kW | 0.75 | 480 V 3-ph | S1 | fixed speed | 1 | BOM (sized) |
+| LEACH_EW | LEACH_CSTR_1 | Gearmotor 0.75 kW, 150 rpm output, on the lid bridge | induction IE3 | IEC 90S / 1.1 kW | 0.75 | 480 V 3-ph | S1 | fixed speed | 1 | BOM (sized) |
 | ew_cell | EW_3 | electrolyte circulation pump | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | assumed |
 | ew_cell | EW_3 | transfer pump IA-EW-03 to EW_4 | BLDC | 42 mm (NEMA 17 flange) | 0.0112 | 24 V DC | S1 | BLDC driver | 1 | 3934.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | ew_cell | EW_4 | electrolyte circulation pump | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | assumed |

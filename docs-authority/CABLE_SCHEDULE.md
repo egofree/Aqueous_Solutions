@@ -109,7 +109,7 @@ Plant demand 224.9 kW at 480 V, power factor 0.9 assumed: 301 A. EW process bars
 | HF_GEN | Acid day tank D160 x 300 mm with metering pump feeder | 14 AWG | 1 | 2.4 | 15 | 6.0 | 460 | 0.06 | 3 | yes |
 | HOPPER | Motor: transfer pump IA-FEED-01 to LEACH_CSTR_1 (BLDC, 42 mm feeder | 14 AWG | 1 | 2.4 | 15 | 11.8 | 460 | 0.11 | 3 | yes |
 | HYDRO_SET | Motor: pump-turbine motor-generator (induction IE3, IEC 100L feeder | 14 AWG | 1 | 2.4 | 15 | 19.7 | 460 | 0.18 | 3 | yes |
-| LEACH_CSTR_1 | Gearmotor 0.75 kW 150 rpm output on lid bridge feeder | 14 AWG | 1 | 3.0 | 15 | 13.7 | 460 | 0.16 | 3 | yes |
+| LEACH_CSTR_1 | Gearmotor 0.75 kW, 150 rpm output, on the lid bridge feeder | 14 AWG | 1 | 3.0 | 15 | 13.7 | 460 | 0.16 | 3 | yes |
 | LITHO_DEV | Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW) feeder | 14 AWG | 1 | 2.4 | 15 | 6.9 | 460 | 0.06 | 3 | yes |
 | LP-DIGESTER | panel feeder 208 V | 3 AWG | 1 | 79.8 | 100 | 35.3 | 208 | 1.89 | 2 | yes |
 | LP-DIGESTER | panel feeder 460 V | 10 AWG | 1 | 26.6 | 30 | 35.3 | 460 | 1.40 | 2 | yes |

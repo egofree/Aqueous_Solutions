@@ -440,6 +440,11 @@
    "category": "fastener",
    "item": "M10 x 35",
    "spec": "ISO 3506 A4-70"
+  },
+  "OF-89": {
+   "category": "fastener",
+   "item": "M12 x 60 hex bolt + nut + 2 washers",
+   "spec": "PVDF (non-metallic)"
   }
  }
 }

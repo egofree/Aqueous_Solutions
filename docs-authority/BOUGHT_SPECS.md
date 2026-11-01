@@ -17,7 +17,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 15754 |
+| fastener | 15751 |
 | support | 7355 |
 | electronics | 1968 |
 | valve | 988 |
@@ -122,7 +122,6 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-15 | M10 x 40 lid bolt | ISO 3506 A4-70 | M10 x 40 lid bolt with nut and washers x20 | 20 | 2 | models/mfg/GLASS_DIGEST/fasteners.csv; models/mfg/MEOH_FERM/fasteners.csv |  |
 | OF-16 | M8 x 30 lid bolt | ISO 3506 A4-70 | M8 x 30 lid bolt with nut and washers x12 | 12 | 1 | models/mfg/BLACK_DIGEST/fasteners.csv |  |
 | OF-17 | M12 anchor | ISO 3506 A4-70 | M12 anchor x10 | 10 | 3 | models/mfg/GLASS_DIGEST/fasteners.csv; models/mfg/MEOH_FERM/fasteners.csv; models/mfg/OIL_PYRO/fasteners.csv |  |
-| OF-18 | M12x40 hex bolt + nut + 2 washers | PVDF | M12x40 hex bolt + nut + 2 washers x36 | 36 | 1 | models/mfg/LEACH_CSTR_1/fasteners.csv |  |
 | OF-19 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) | ISO 3506 A4-70 outside the wetted zone | M16 stud + 2 nuts (ISO 4014 / ISO 4032) x24 | 24 | 1 | models/mfg/EVAP_ACID/fasteners.csv |  |
 | OF-20 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) | ISO 898-1 8.8 zinc | M16 stud + 2 nuts (ISO 4014 / ISO 4032) x24 | 24 | 1 | models/mfg/EVAP_BASE/fasteners.csv |  |
 | OF-22 | 5/8 in stud bolt | ASTM A193 B7 / A194 2H | 5/8 in stud bolt with 2 heavy hex nuts x16 | 16 | 1 | models/mfg/MEOH_SYNTH/fasteners.csv |  |
@@ -131,7 +130,6 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-29 | Flange gasket | PTFE envelope | Flange gasket x2 | 2 | 1 | models/mfg/EVAP_ACID/fasteners.csv |  |
 | OF-30 | Flange gasket | graphite sheet | Flange gasket x2 | 2 | 1 | models/mfg/EVAP_BASE/fasteners.csv |  |
 | OF-31 | M10 U-bolt for DN150 | ISO 3506 A4-70 | M10 U-bolt for DN150 x2 | 2 | 1 | models/mfg/EVAP_ACID_VS/fasteners.csv |  |
-| OF-32 | Lid gasket 40 mm wide | FKM | Lid gasket 40 mm wide x1 | 1 | 1 | models/mfg/LEACH_CSTR_1/fasteners.csv |  |
 | OF-33 | Solvent cement | PVC-U per ASTM D2564 | Solvent cement x1 | 1 | 1 | models/mfg/EVAP_ACID_VS/fasteners.csv |  |
 | OF-66 | M12 anchor | ISO 898-1 8.8 | M12 anchor x104 | 104 | 23 | models/mfg/AL_POT/fasteners.csv; models/mfg/CAST_LINE/fasteners.csv; models/mfg/COMB_HEAT/fasteners.csv |  |
 | OF-67 | M10 x 30 hood bolts | ISO 898-1 8.8 | M10 x 30 hood bolts x16 | 16 | 1 | models/mfg/AL_POT/fasteners.csv |  |
@@ -151,9 +149,10 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-86 | M8 x 40 | ISO 3506 A4-70 | M8 x 40 x88 | 88 | 9 | models/mfg/EW_1/fasteners.csv; models/mfg/EW_2/fasteners.csv; models/mfg/EW_3/fasteners.csv |  |
 | OF-87 | M10 x 30 wedge anchor | ISO 3506 A4-70 | M10 x 30 wedge anchor x56 | 56 | 9 | models/mfg/EW_1/fasteners.csv; models/mfg/EW_2/fasteners.csv; models/mfg/EW_3/fasteners.csv |  |
 | OF-88 | M10 x 35 | ISO 3506 A4-70 | M10 x 35 x54 | 54 | 9 | models/mfg/EW_1/fasteners.csv; models/mfg/EW_2/fasteners.csv; models/mfg/EW_3/fasteners.csv |  |
+| OF-89 | M12 x 60 hex bolt + nut + 2 washers | PVDF (non-metallic) | M12 x 60 hex bolt + nut + 2 washers x34 | 34 | 1 | models/mfg/LEACH_CSTR_1/fasteners.csv |  |
 
 ## 11. Coverage gate
 
-- Bought families covered: 78 of 79 (the excluded one is OF-13, the fabricated-part set:
+- Bought families covered: 77 of 78 (the excluded one is OF-13, the fabricated-part set:
   sheets like those are `models/mfg/*/bom.csv` + `WORK_ORDER.md`, in-house work).
 - Items rest on the A-M-125 counting rule where the roll-up assumed; the count is the basis, not a measurement.

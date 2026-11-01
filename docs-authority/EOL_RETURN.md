@@ -20,7 +20,7 @@ At end of life each part goes back into the plant as feed of its class, through 
 | Feed class | BOM lines | Share |
 |---|---|---|
 | metal_plateable | 1948 | 60 % |
-| organic | 989 | 31 % |
+| organic | 981 | 30 % |
 | silicate_oxide | 153 | 5 % |
 | metal_reactive | 120 | 4 % |
 | unassigned | 23 | 1 % |
@@ -140,7 +140,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | HYDRO_SET | 8 | 1 | 1 | 0 | 0 |
 | IND_MELT | 6 | 3 | 3 | 0 | 0 |
 | INV_CAST | 7 | 0 | 1 | 0 | 0 |
-| LEACH_CSTR_1 | 1 | 15 | 1 | 0 | 0 |
+| LEACH_CSTR_1 | 1 | 8 | 1 | 0 | 0 |
 | LITHO_ALIGN | 3 | 0 | 1 | 0 | 0 |
 | LITHO_COAT | 5 | 0 | 1 | 0 | 0 |
 | LITHO_DEV | 14 | 1 | 1 | 0 | 0 |
@@ -205,7 +205,6 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-15 | 1 | 0 | 0 | 0 | 0 |
 | OF-16 | 1 | 0 | 0 | 0 | 0 |
 | OF-17 | 1 | 0 | 0 | 0 | 0 |
-| OF-18 | 0 | 1 | 0 | 0 | 0 |
 | OF-19 | 1 | 0 | 0 | 0 | 0 |
 | OF-20 | 1 | 0 | 0 | 0 | 0 |
 | OF-22 | 1 | 0 | 0 | 0 | 0 |
@@ -214,7 +213,6 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-29 | 0 | 1 | 0 | 0 | 0 |
 | OF-30 | 0 | 1 | 0 | 0 | 0 |
 | OF-31 | 1 | 0 | 0 | 0 | 0 |
-| OF-32 | 0 | 1 | 0 | 0 | 0 |
 | OF-33 | 0 | 1 | 0 | 0 | 0 |
 | OF-34 | 0 | 1 | 0 | 0 | 0 |
 | OF-35 | 0 | 0 | 1 | 0 | 0 |
@@ -268,6 +266,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-86 | 1 | 0 | 0 | 0 | 0 |
 | OF-87 | 1 | 0 | 0 | 0 | 0 |
 | OF-88 | 1 | 0 | 0 | 0 | 0 |
+| OF-89 | 0 | 1 | 0 | 0 | 0 |
 | OIL_DRYER | 11 | 1 | 2 | 0 | 0 |
 | OIL_FRAC | 43 | 10 | 2 | 0 | 0 |
 | OIL_PYRO | 4 | 1 | 2 | 0 | 0 |
