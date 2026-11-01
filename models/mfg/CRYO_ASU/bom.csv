@@ -1,27 +1,7 @@
-item,description,qty,material,basis
-1,Body D414 x 1243 mm,1,316L.,docs-authority/duties/CRYO_ASU.md
-2,Process nozzle DN15,11,316L.,one per mass edge; DN from AQS-INV-003
-3,Open vent DN25,1,316L.,"API 2000, A-M-155"
-4,"Motor: air compressor (cold box feed) (induction IE3, IEC 100L / 2.2 kW)",1,-,AQS-INV-001 / AQS-INV-005
-5,"Motor: expander brake / generator (induction IE3, IEC 63 / 0.12 kW)",1,-,AQS-INV-001 / AQS-INV-005
-6,bearing: deep-groove ball bearing 6206-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-7,bearing: deep-groove ball bearing 6201-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-8,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-9,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-10,electronics: motor starter (contactor + overload) 0.12 kW,1,IEC 60947-4-1,AQS-INV-004
-11,electronics: variable-frequency drive 2.2 kW,1,IEC 61800-5-1,AQS-INV-004
-12,fastener: anchor bolt M10,10,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-13,fastener: anchor bolt M10,16,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-14,fastener: anchor bolt M10,28,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-15,"instrument: gas detector, O2 deficiency electrochemical O2",2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",AQS-INV-004
-16,"instrument: gas detector, O2 enrichment electrochemical O2",2,"alarm 23.5 vol %, trip 25 vol %, breathing height",AQS-INV-004
-17,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-18,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-19,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-20,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-21,support: U-bolt with guide DN15,5,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-22,support: U-bolt with guide DN15,8,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-23,support: U-bolt with guide DN15,14,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-24,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-25,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-26,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"TSA bed set: 3 shells D 414.379 x 1243.14 mm, t 6, flat heads, support grids top and bottom, on pedestals",3,316L,717.5,make,"node design block (bed_D_mm 414.4, bed_L_mm 1243.1); duty section 3 316L, CA 0 mm; shell t 6 is the house plate convention, study (WORK_ORDER W12)"
+2,"13X molecular-sieve sorbent charge, 108.973 kg per bed",3,"13X molecular sieve, 4A grade",294.5,buy,node design sorbent_kg_per_bed; bulk density 700 kg/m3 study; vendor TDS at order
+3,Base frame: plinth 2460 x 560 x 200 with fork slots (modeled as its solid envelope; fabricated as a welded frame),1,316L,1916.2,make,duty section 3 (no carbon steel); CA 0 mm; study section sizes; carries the z 160 frame-level schedule rows
+4,CO2 two-stage compressor + condenser/chiller envelopes,1,purchase item,,buy,"node design co2_comp_kW 0.081, co2_chill_kW 0.033; internals row two-stage vs design comp_stages 4 - staging is a named hold; drawn as envelope and interface (AQS-PLAN-006 rule 6)"
+5,Heated Ar getter cartridge,1,purchase item,,buy,node design getter_kW 0.100; noble-gas inventories pass through (node internals row)
+6,"Nozzle set per docs-authority/nozzles/CRYO_ASU.csv: barbs and stubs, 3 solids rows at DN15 (bore not calculated)",16,316L,8.2,make,schedule tags/faces/heights verbatim; atmospheric per the API 2000 relief basis; vent datum clamped to the bed 3 top head (W12); barb profile a study proportion

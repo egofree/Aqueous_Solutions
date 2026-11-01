@@ -447,32 +447,12 @@ CRYO_AHU_COND_CONDENSABLE,instrument: temperature element Pt100 class A,1,"IEC 6
 CRYO_AHU_COND_CONDENSABLE,support: pipe clamp DN15,11,"PP clamp with EPDM liner, MSS SP-58 Type 7",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 CRYO_AHU_COND_CONDENSABLE,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 CRYO_AHU_COND_CONDENSABLE,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-CRYO_ASU,Body D414 x 1243 mm,1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_ASU,Process nozzle DN15,11,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_ASU,Open vent DN25,1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_ASU,"Motor: air compressor (cold box feed) (induction IE3, IEC 100L / 2.2 kW)",1,-,Unstated,-,not classed: -
-CRYO_ASU,"Motor: expander brake / generator (induction IE3, IEC 63 / 0.12 kW)",1,-,Unstated,-,not classed: -
-CRYO_ASU,bearing: deep-groove ball bearing 6206-2Z,2,"ISO 15 / ISO 492 normal class, C3",Unstated,-,"not classed: ISO 15 / ISO 492 normal class, C3"
-CRYO_ASU,bearing: deep-groove ball bearing 6201-2Z,2,"ISO 15 / ISO 492 normal class, C3",Unstated,-,"not classed: ISO 15 / ISO 492 normal class, C3"
-CRYO_ASU,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,Unstated,-,not classed: IEC 61131-2
-CRYO_ASU,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,Unstated,-,not classed: IEC 61131-2
-CRYO_ASU,electronics: motor starter (contactor + overload) 0.12 kW,1,IEC 60947-4-1,Unstated,-,not classed: IEC 60947-4-1
-CRYO_ASU,electronics: variable-frequency drive 2.2 kW,1,IEC 61800-5-1,Unstated,-,not classed: IEC 61800-5-1
-CRYO_ASU,fastener: anchor bolt M10,10,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor
-CRYO_ASU,fastener: anchor bolt M10,16,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor
-CRYO_ASU,fastener: anchor bolt M10,28,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor
-CRYO_ASU,"instrument: gas detector, O2 deficiency electrochemical O2",2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",Unstated,-,"not classed: alarm 19.5 vol %, trip 18.0 vol %, low ("
-CRYO_ASU,"instrument: gas detector, O2 enrichment electrochemical O2",2,"alarm 23.5 vol %, trip 25 vol %, breathing height",Unstated,-,"not classed: alarm 23.5 vol %, trip 25 vol %, breathi"
-CRYO_ASU,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",Unstated,-,"not classed: ceramic diaphragm, IEC 61298"
-CRYO_ASU,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_ASU,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,Unstated,-,not classed: UL 489 / IEC 60947-2
-CRYO_ASU,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,Unstated,-,not classed: UL 489 / IEC 60947-2
-CRYO_ASU,support: U-bolt with guide DN15,5,"316 U-bolt, MSS SP-58 Type 24",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_ASU,support: U-bolt with guide DN15,8,"316 U-bolt, MSS SP-58 Type 24",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_ASU,support: U-bolt with guide DN15,14,"316 U-bolt, MSS SP-58 Type 24",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_ASU,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_ASU,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_ASU,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+CRYO_ASU,"TSA bed set: 3 shells D 414.379 x 1243.14 mm, t 6, flat heads, support grids top",3,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+CRYO_ASU,"13X molecular-sieve sorbent charge, 108.973 kg per bed",3,"13X molecular sieve, 4A grade",Unstated,-,"not classed: 13X molecular sieve, 4A grade"
+CRYO_ASU,Base frame: plinth 2460 x 560 x 200 with fork slots (modeled as its solid envelo,1,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+CRYO_ASU,CO2 two-stage compressor + condenser/chiller envelopes,1,purchase item,Unstated,-,not classed: purchase item
+CRYO_ASU,Heated Ar getter cartridge,1,purchase item,Unstated,-,not classed: purchase item
+CRYO_ASU,"Nozzle set per docs-authority/nozzles/CRYO_ASU.csv: barbs and stubs, 3 solids ro",16,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_CO2,Body D114 x 450 mm,1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_CO2,Process nozzle DN15,8,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_CO2,"Relief valve, 9.0 mm bore, DN15 body",2,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
@@ -3221,6 +3201,7 @@ OF-83,fastener: M10 anchor (ISO 898-1 8.8),40,,Unstated,-,material not stated on
 OF-84,fastener: M8 x 25 hopper bolts (ISO 898-1 8.8),8,,Unstated,-,material not stated on the unit BOM line
 OF-85,fastener: M6 x 25 (ISO 3506 A4-70),273,,Unstated,-,material not stated on the unit BOM line
 OF-86,fastener: M8 x 40 (ISO 3506 A4-70),88,,Unstated,-,material not stated on the unit BOM line
-OF-87,fastener: M10 x 30 wedge anchor (ISO 3506 A4-70),56,,Unstated,-,material not stated on the unit BOM line
+OF-87,fastener: M10 x 30 wedge anchor (ISO 3506 A4-70),64,,Unstated,-,material not stated on the unit BOM line
 OF-88,fastener: M10 x 35 (ISO 3506 A4-70),54,,Unstated,-,material not stated on the unit BOM line
 OF-89,fastener: M12 x 60 hex bolt + nut + 2 washers (PVDF (non-metallic)),34,,Unstated,-,material not stated on the unit BOM line
+OF-90,fastener: M12 x 40 (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line

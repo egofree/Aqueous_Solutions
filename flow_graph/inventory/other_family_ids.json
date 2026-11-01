@@ -445,6 +445,11 @@
    "category": "fastener",
    "item": "M12 x 60 hex bolt + nut + 2 washers",
    "spec": "PVDF (non-metallic)"
+  },
+  "OF-90": {
+   "category": "fastener",
+   "item": "M12 x 40",
+   "spec": "ISO 3506 A4-70"
   }
  }
 }

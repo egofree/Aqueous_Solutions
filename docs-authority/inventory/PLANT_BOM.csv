@@ -447,32 +447,12 @@ unit,CRYO_AHU_COND_CONDENSABLE,instrument: temperature element Pt100 class A,1,"
 unit,CRYO_AHU_COND_CONDENSABLE,support: pipe clamp DN15,11,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 unit,CRYO_AHU_COND_CONDENSABLE,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
 unit,CRYO_AHU_COND_CONDENSABLE,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
-unit,CRYO_ASU,Body D414 x 1243 mm,1,316L.,docs-authority/duties/CRYO_ASU.md
-unit,CRYO_ASU,Process nozzle DN15,11,316L.,one per mass edge; DN from AQS-INV-003
-unit,CRYO_ASU,Open vent DN25,1,316L.,"API 2000, A-M-155"
-unit,CRYO_ASU,"Motor: air compressor (cold box feed) (induction IE3, IEC 100L / 2.2 kW)",1,-,AQS-INV-001 / AQS-INV-005
-unit,CRYO_ASU,"Motor: expander brake / generator (induction IE3, IEC 63 / 0.12 kW)",1,-,AQS-INV-001 / AQS-INV-005
-unit,CRYO_ASU,bearing: deep-groove ball bearing 6206-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-unit,CRYO_ASU,bearing: deep-groove ball bearing 6201-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-unit,CRYO_ASU,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-unit,CRYO_ASU,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-unit,CRYO_ASU,electronics: motor starter (contactor + overload) 0.12 kW,1,IEC 60947-4-1,AQS-INV-004
-unit,CRYO_ASU,electronics: variable-frequency drive 2.2 kW,1,IEC 61800-5-1,AQS-INV-004
-unit,CRYO_ASU,fastener: anchor bolt M10,10,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-unit,CRYO_ASU,fastener: anchor bolt M10,16,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-unit,CRYO_ASU,fastener: anchor bolt M10,28,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-unit,CRYO_ASU,"instrument: gas detector, O2 deficiency electrochemical O2",2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",AQS-INV-004
-unit,CRYO_ASU,"instrument: gas detector, O2 enrichment electrochemical O2",2,"alarm 23.5 vol %, trip 25 vol %, breathing height",AQS-INV-004
-unit,CRYO_ASU,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-unit,CRYO_ASU,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-unit,CRYO_ASU,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-unit,CRYO_ASU,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-unit,CRYO_ASU,support: U-bolt with guide DN15,5,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-unit,CRYO_ASU,support: U-bolt with guide DN15,8,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-unit,CRYO_ASU,support: U-bolt with guide DN15,14,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-unit,CRYO_ASU,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-unit,CRYO_ASU,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-unit,CRYO_ASU,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+unit,CRYO_ASU,"TSA bed set: 3 shells D 414.379 x 1243.14 mm, t 6, flat heads, support grids top and bottom, on pedestals",3,316L,"node design block (bed_D_mm 414.4, bed_L_mm 1243.1); duty section 3 316L, CA 0 mm; shell t 6 is the house plate convention, study (WORK_ORDER W12)"
+unit,CRYO_ASU,"13X molecular-sieve sorbent charge, 108.973 kg per bed",3,"13X molecular sieve, 4A grade",node design sorbent_kg_per_bed; bulk density 700 kg/m3 study; vendor TDS at order
+unit,CRYO_ASU,Base frame: plinth 2460 x 560 x 200 with fork slots (modeled as its solid envelope; fabricated as a welded frame),1,316L,duty section 3 (no carbon steel); CA 0 mm; study section sizes; carries the z 160 frame-level schedule rows
+unit,CRYO_ASU,CO2 two-stage compressor + condenser/chiller envelopes,1,purchase item,"node design co2_comp_kW 0.081, co2_chill_kW 0.033; internals row two-stage vs design comp_stages 4 - staging is a named hold; drawn as envelope and interface (AQS-PLAN-006 rule 6)"
+unit,CRYO_ASU,Heated Ar getter cartridge,1,purchase item,node design getter_kW 0.100; noble-gas inventories pass through (node internals row)
+unit,CRYO_ASU,"Nozzle set per docs-authority/nozzles/CRYO_ASU.csv: barbs and stubs, 3 solids rows at DN15 (bore not calculated)",16,316L,schedule tags/faces/heights verbatim; atmospheric per the API 2000 relief basis; vent datum clamped to the bed 3 top head (W12); barb profile a study proportion
 unit,CRYO_CO2,Body D114 x 450 mm,1,316L.,docs-authority/duties/CRYO_CO2.md
 unit,CRYO_CO2,Process nozzle DN15,8,316L.,one per mass edge; DN from AQS-INV-003
 unit,CRYO_CO2,"Relief valve, 9.0 mm bore, DN15 body",2,316L,"AQS-SAF-005 (one per bank half, fire case)"
@@ -3221,6 +3201,7 @@ building block,OF-83,fastener: M10 anchor (ISO 898-1 8.8),40,,AQS-INV-004
 building block,OF-84,fastener: M8 x 25 hopper bolts (ISO 898-1 8.8),8,,AQS-INV-004
 building block,OF-85,fastener: M6 x 25 (ISO 3506 A4-70),273,,AQS-INV-004
 building block,OF-86,fastener: M8 x 40 (ISO 3506 A4-70),88,,AQS-INV-004
-building block,OF-87,fastener: M10 x 30 wedge anchor (ISO 3506 A4-70),56,,AQS-INV-004
+building block,OF-87,fastener: M10 x 30 wedge anchor (ISO 3506 A4-70),64,,AQS-INV-004
 building block,OF-88,fastener: M10 x 35 (ISO 3506 A4-70),54,,AQS-INV-004
 building block,OF-89,fastener: M12 x 60 hex bolt + nut + 2 washers (PVDF (non-metallic)),34,,AQS-INV-004
+building block,OF-90,fastener: M12 x 40 (ISO 3506 A4-70),24,,AQS-INV-004

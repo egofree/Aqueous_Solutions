@@ -54,7 +54,9 @@ CRYO,CRYO,CRYO_ASU,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,air c
 CRYO,CRYO,CRYO_ASU,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,expander brake / generator: run and fault (assumed)
 CRYO,CRYO,CRYO_ASU,electronics,motor starter (contactor + overload),0.12 kW,IEC 60947-4-1,1,expander brake / generator (assumed VFD at >= 0.75 kW)
 CRYO,CRYO,CRYO_ASU,electronics,variable-frequency drive,2.2 kW,IEC 61800-5-1,1,air compressor (cold box feed) (assumed VFD at >= 0.75 kW)
-CRYO,CRYO,CRYO_ASU,fabricated part,fabricated part set,26 BOM lines,models/mfg/CRYO_ASU/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+CRYO,CRYO,CRYO_ASU,fabricated part,fabricated part set,6 BOM lines,models/mfg/CRYO_ASU/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+CRYO,CRYO,CRYO_ASU,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,8,models/mfg/CRYO_ASU/fasteners.csv
+CRYO,CRYO,CRYO_ASU,fastener,M12 x 40,M12 x 40,ISO 3506 A4-70,24,models/mfg/CRYO_ASU/fasteners.csv
 CRYO,CRYO,CRYO_ASU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,10,IA-ASU-N2: 2 per support (assumed)
 CRYO,CRYO,CRYO_ASU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-ASU-O2: 2 per support (assumed)
 CRYO,CRYO,CRYO_ASU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,IA-ASU-CO2: 2 per support (assumed)

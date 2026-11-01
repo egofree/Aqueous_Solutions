@@ -197,5 +197,21 @@
  "acceptance_sets": [
   "A-core",
   "A-COL"
- ]
+ ],
+ "layout": {
+  "frame": "skid frame: x along 2450, y across 560, z up; beds at x 257.2 + 514.4k on pedestals, purchased machinery row at x 1700..2440",
+  "bed_axis_z_mm": [
+   370.0,
+   1625.1373045717921
+  ],
+  "nozzle_spread": "inlets land on the bed shells' -Y side, outlets on +Y, distributed across the beds in tag order (second row per bed offset 130 mm); the z 160 rows land on the base frame; per-tag positions in check.nozzles_drawn",
+  "vent": "schedule datum 2000 mm predates the TSA layout; drawn at the bed 3 top head - named hold (WORK_ORDER W12)",
+  "hardware_idiom": "hose hardware laps the shell or frame so every union fuses; the build leaves the M0 study registry box on x and y and the misfit is reported (AQS-PLAN-006 rule 3)"
+ },
+ "study": {
+  "shell_t_mm": 6.0,
+  "grid_t_mm": 20.0,
+  "sorbent_bulk_density_kg_m3": 700.0,
+  "note": "study values not stated by any authority (AQS-PLAN-006 W6 needs a thickness; the duty states only 316L and CA 0 mm)"
+ }
 }

@@ -34,3 +34,31 @@ per unit (plan rule 4); this note gains a section per accepted unit.
   unit, and the committed STEP/STL files predated the current builder and graph. The refresh is
   deterministic current-code output (verified by rebuilding two units from a clean HEAD checkout
   and matching the regen bytes) and landed as its own housekeeping commit before this one.
+
+## CRYO_ASU (13X TSA cold box, tier 3) — commit 2
+
+- `models/mfg/CRYO_ASU/cryo_asu.py`: every internal named on the node drawn as a solid — three
+  13X TSA beds at the node design geometry (bed_D_mm 414.4, bed_L_mm 1243.1, 20 mm support
+  grids, sorbent charges as solids between the grids: 294.5 kg drawn against 326.9 kg booked at
+  the 700 kg/m³ study bulk density), the CO2 two-stage compressor, condenser and heated Ar
+  getter as purchased envelopes rated from the node design kW (AQS-PLAN-006 rule 6), on a
+  plinth skid. All 16 rows of the schedule drawn at tag, face, height and bore: bed-shell rows
+  at z 400 (inlets) and z 1500 (outlets), frame-level rows at z 160 through the plinth, the
+  drain beside the bed 1 pedestal to its 50 datum, and a DN15 vent standpipe on the bed 1 top
+  head to the 2000 mm datum (API 2000 open-vent relief basis, A-M-155; no flange anywhere, the
+  schedule rating column carried as text).
+- Envelope: the node `size_mm` [300, 300, 2000] is the M0 study registry box (params
+  `size_note`) and the beds at their design diameter cannot fit it. The build measures
+  2460.0 × 592.1 × 2000.1 mm; the misfit is reported on the tracker board per plan rule 3 and
+  nothing is resized (AL_POT precedent). `cad/stl/CRYO_ASU.stl` carries the in-envelope subset
+  of the build so the X-PAR-04 gate holds (bbox exactly 300 × 300 × 2000); the full build lives
+  in `export/` and the STEP, which is what the board misfit reads.
+- Deliverables: generated BOM with mass and make-or-buy, `fasteners.csv`, `check.json`,
+  `WORK_ORDER.md` (W1–W12), the seven-sheet drawing set; the stale envelope `drawings/GA.md`
+  superseded. `tracker --check CRYO_ASU` reports exactly the board-mandated misfit row.
+- Holds named in WORK_ORDER W12: the study-box misfit; the duty section 2 column prose
+  ("column diameter 150 mm, 20 trays") vs the issued node design (TSA beds) the model draws;
+  internals-row two-stage vs design-block comp_stages 4; house-plate shell/grid thicknesses;
+  sorbent bulk density; no distributor/demister named for TSA service (A-COL); the TSA
+  valve/regeneration manifold row left to the piping scope.
+
