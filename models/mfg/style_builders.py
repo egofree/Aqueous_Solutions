@@ -14,7 +14,7 @@ Honesty rules:
 Run: <cadquery python> models/mfg/style_builders.py [UNIT ...]   (default: every dispatched unit)
 Writes models/mfg/<U>/export/<u>.step|.stl and replaces cad/stl/<U>.stl from the build.
 """
-import csv, glob, json, os, sys
+import csv, glob, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 G = json.load(open(os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')))
@@ -384,7 +384,11 @@ def run(units=None):
             dims = [round(bb.xlen), round(bb.ylen), round(bb.zlen)]
             out = os.path.join(ROOT, 'models/mfg', u, 'export')
             os.makedirs(out, exist_ok=True)
-            cq.exporters.export(solid, f'{out}/{u.lower()}.step')             # STEP in mm (machine convention)
+            step_path = f'{out}/{u.lower()}.step'
+            cq.exporters.export(solid, step_path)                             # STEP in mm (machine convention)
+            _sh = open(step_path, encoding='utf-8', errors='replace').read()  # strip the exporter timestamp: the
+            _sh = re.sub(r"FILE_NAME\('[^']*','[^']*'", "FILE_NAME('','1970-01-01T00:00:00'", _sh, count=1)  # regen
+            open(step_path, 'w', encoding='utf-8').write(_sh)                 # must stay byte-idempotent
             stl_m = solid.scale(0.001)                                        # cad/stl convention is metres
             for dst in (f'{out}/{u.lower()}.stl', os.path.join(ROOT, 'cad/stl', u + '.stl')):
                 cq.exporters.export(stl_m, dst, opt={'ascii': True})          # ASCII STL: the X-PAR-04 gate parses text vertices
