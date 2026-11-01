@@ -1,0 +1,6 @@
+item,size,grade,qty,location,basis
+1,M10 x 30 wedge anchor,ISO 3506 A4-70,4,tank to slab,polymer-joint rule of AQS-PLAN-006 W5 (A4-70); supplier rule named per the plan
+2,M8 x 40,ISO 3506 A4-70,4,support beams to the inner walls (2 per beam station),polymer-joint rule; study count; torque per the PVC-U supplier rule
+3,M8 x 40,ISO 3506 A4-70,4,vent posts to the inner walls,polymer-joint rule
+4,M6 x 25,ISO 3506 A4-70,21,electrode tab clamps; one per tab through the Ti tab and the bus bar,Ti-Cu lap per AQS-STD-002 sections 9 and 11; wet-aisle stainless; count from the model
+5,M10 x 35,ISO 3506 A4-70,6,rectifier lugs; 3 per pole,AQS-BUS-001 section 4 (bolted at the cell bus; overlap at least the bar width)

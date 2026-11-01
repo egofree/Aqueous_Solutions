@@ -130,7 +130,7 @@ EXISTING_SOURCE = {
 }
 
 # Units whose section 5 acceptance the tracker verifies on the files before recording M3.
-ACCEPTED = ('AL_POT', 'EW_1', 'EW_2')
+ACCEPTED = ('AL_POT', 'EW_1', 'EW_2', 'EW_3')
 
 
 # --------------------------------------------------------------------------- authorities

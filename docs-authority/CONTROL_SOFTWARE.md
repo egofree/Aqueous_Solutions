@@ -34,7 +34,7 @@ PI blocks with set-point literals taken from the graph basis column of AQS-CTL-0
 | PLC | AI instruments (incl. SIF) | of which SIF | Table AI | Diff | Table AO/DI/DO | CPU |
 |---|---|---|---|---|---|---|
 | PLC-CRYO | 34 | 0 | 34 | 0 | 1/15/5 | redundant pair |
-| PLC-DIGESTER | 132 | 3 | 132 | 0 | 3/105/37 | single |
+| PLC-DIGESTER | 132 | 3 | 132 | 0 | 3/105/36 | single |
 | PLC-ELEC | 28 | 0 | 28 | 0 | 1/363/126 | redundant pair |
 | PLC-FAB | 63 | 0 | 63 | 0 | 0/56/22 | single |
 | PLC-FARM | 48 | 0 | 48 | 0 | 0/3/1 | redundant pair |

@@ -1,6 +1,6 @@
 unit,sector,substances,kg_d,group,T_class,zone0,zone1,zone2,instruments,motors_pumps,protection
 CRYO_H2,CRYO,H2,9.358,IIC (Group B),T1,inside vessel,1.0 m around relief/vent outlet,"1.5 m around the envelope, upward bias",2,0,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
-EW_3,DIGESTER,H2,0.141,IIC (Group B),T1,inside vessel,none (no vent on the unit),"1.5 m around the envelope, upward bias",7,2,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
+EW_3,DIGESTER,H2,0.141,IIC (Group B),T1,inside vessel,none (no vent on the unit),"1.5 m around the envelope, upward bias",7,1,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
 EW_5,DIGESTER,H2,0.031,IIC (Group B),T1,inside vessel,none (no vent on the unit),"1.5 m around the envelope, upward bias",7,2,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
 EW_6,DIGESTER,H2,0.034,IIC (Group B),T1,inside vessel,none (no vent on the unit),"1.5 m around the envelope, upward bias",7,2,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
 EW_7,DIGESTER,H2,0.446,IIC (Group B),T1,inside vessel,none (no vent on the unit),"1.5 m around the envelope, upward bias",7,2,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1

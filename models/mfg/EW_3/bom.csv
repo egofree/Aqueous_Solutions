@@ -1,34 +1,10 @@
-item,description,qty,material,basis
-1,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",docs-authority/duties/EW_3.md
-2,Process nozzle DN15,5,"Cathode titanium Grade 2, 3 mm.",one per mass edge; DN from AQS-INV-003
-3,"Motor: electrolyte circulation pump (induction IE3, IEC 63 / 0.18 kW)",1,-,AQS-INV-001 / AQS-INV-005
-4,"Motor: transfer pump IA-EW-03 to EW_4 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-5,bearing: deep-groove ball bearing 6201-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-6,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-7,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-8,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-9,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-10,electronics: motor starter (contactor + overload) 0.18 kW,1,IEC 60947-4-1,AQS-INV-004
-11,fastener: anchor bolt M10,18,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-12,fastener: anchor bolt M10,26,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-13,fastener: anchor bolt M10,24,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-14,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-15,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-16,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-17,"instrument: gas detector, Cl2 / HCl electrochemical Cl2 and HCl",2,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",AQS-INV-004
-18,"instrument: gas detector, H2 catalytic bead + IR backup",2,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",AQS-INV-004
-19,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-20,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-21,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-22,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-23,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-24,"seal: mechanical seal, single EN 12756",1,"SiC/SiC faces, FKM",AQS-INV-004
-25,support: pipe clamp DN15,9,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-26,support: pipe clamp DN15,13,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-27,support: pipe clamp DN15,12,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-28,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-29,valve: check valve DN15,1,"PVDF swing/ball check valve, ISO 16137, PTFE seats",AQS-INV-004
-30,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-31,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
-32,valve: isolation valve DN15,2,"PVDF ball valve, ISO 16135, PTFE seats",AQS-INV-004
-33,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"PVC-U tank shell, outside 1170 x 720 x 760 mm, wall 10 mm, open top (inside 1150 x 700 x 750: sump 150 + plate 420 + cover 100 + freeboard 80)",1,PVC-U,51.0,make,"AQS-DUTY-051 section 1 wall 10 mm and zone stack; duty section 3 via the EW_1 page: 55 C liquor stays PVC-U (AQS-STD-002 M5, limit 60 C); CA 0 mm (AQS-STD-001 polymer rule)"
+2,PVC-U support set: 2 cross beams 60 x 10 x 700 under the bus pads + vent bridge 60 x 10 x 700 + 2 posts 30 x 30 x 100,1,PVC-U,2.0,make,duty section 3 racks PVC-U; AQS-STD-002 section 11 (no busbar touches a tank lip); CA 0 mm
+3,"Cathode set: 10 sheets 600 x 420 x 3 mm Ti Grade 2 + 10 hanger tabs 120 x 111 x 3, at 100 mm pitch",10,titanium Grade 2 (ASTM B265),35.9,make,"AQS-DUTY-051 section 1 (plate 0.60 x 0.42, 0.504 m2 both faces); AQS-STD-002 section 9; CA 0 mm on titanium (duty section 3); annealed, no cold forming after anneal"
+4,"Anode set: 11 meshes 600 x 420 x 1.5 mm Ti + 11 hanger tabs 120 x 111 x 1.5, MMO coated (RuO2-IrO2-TiO2)",11,"titanium mesh, MMO coated",19.7,buy,duty section 3; AQS-STD-002 section 9; drawn as its sheet envelope (AQS-PLAN-006 rule 6); coat life is a vendor figure at the cell current density
+5,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",20,PVC-U,,buy,"AQS-STD-002 section 9 (plastic edge strip so the sheet peels); cut-to-length stock, density per the supplier TDS at order"
+6,"Bus pack, go and return: 2 x (1 flat 90 x 6.3 x 900 mm, spaced one thickness) + 2 rectifier lugs 110 x 90 x 6.3",1,"copper C101, painted",10.3,make,"AQS-BUS-001 Rev C EW-3 row (5.7 cm2 class, published at 790 A); pair per AQS-STD-002 section 11; copper above the liquor, contacts Ti-clad (section 9); CA 0 mm"
+7,"Standoff pads 10 x 90 x 8 under the bus packs, one per pack per beam station",4,FRP (glass-polyester),0.1,buy,AQS-STD-002 section 11 non-conductive standoffs
+8,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_3.csv: 3 x DN15 barbs (N3/N6/N7), 2 x DN50 barbs (N1/N2); 1 x DN15 drain (N4), 1 x DN15 vent (N5)",7,PVC-U,0.5,make,schedule tags/faces/heights verbatim; atmospheric joints are hose (duty section 4); barb profile is a study proportion (lib/nozzles.py)
+9,"Rectifier, 2.25 kW cell channel on IA-DC-EW_3 (floating, insulation monitor, protection current on trip)",1,purchase item,,buy,"duty sections 3 and 9, channel DC with the 0.3 V bus drop (AQS-STD-002 section 11); mass per the purchase datasheet at order"
