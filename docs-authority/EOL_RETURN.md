@@ -19,7 +19,7 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1918 | 60 % |
+| metal_plateable | 1904 | 60 % |
 | organic | 981 | 31 % |
 | silicate_oxide | 150 | 5 % |
 | metal_reactive | 120 | 4 % |
@@ -77,7 +77,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | CRYO_ASU | 6 | 0 | 1 | 0 | 2 |
 | CRYO_CO2 | 7 | 0 | 0 | 0 | 1 |
 | CRYO_DED_COOL | 6 | 2 | 1 | 0 | 0 |
-| CRYO_H2 | 23 | 0 | 0 | 0 | 0 |
+| CRYO_H2 | 8 | 0 | 0 | 0 | 0 |
 | CRYO_HX_Q4 | 3 | 0 | 1 | 0 | 0 |
 | CRYO_N2 | 20 | 2 | 2 | 0 | 0 |
 | CRYO_O2 | 21 | 2 | 1 | 0 | 0 |
@@ -269,6 +269,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-88 | 1 | 0 | 0 | 0 | 0 |
 | OF-89 | 0 | 1 | 0 | 0 | 0 |
 | OF-90 | 1 | 0 | 0 | 0 | 0 |
+| OF-91 | 1 | 0 | 0 | 0 | 0 |
 | OIL_DRYER | 11 | 1 | 2 | 0 | 0 |
 | OIL_FRAC | 43 | 10 | 2 | 0 | 0 |
 | OIL_PYRO | 4 | 1 | 2 | 0 | 0 |

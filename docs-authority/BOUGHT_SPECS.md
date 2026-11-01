@@ -17,7 +17,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 15823 |
+| fastener | 16095 |
 | support | 7355 |
 | electronics | 1968 |
 | valve | 988 |
@@ -147,13 +147,14 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-84 | M8 x 25 hopper bolts | ISO 898-1 8.8 | M8 x 25 hopper bolts x8 | 8 | 1 | models/mfg/TI_CELL/fasteners.csv |  |
 | OF-85 | M6 x 25 | ISO 3506 A4-70 | M6 x 25 x273 | 273 | 9 | models/mfg/EW_1/fasteners.csv; models/mfg/EW_2/fasteners.csv; models/mfg/EW_3/fasteners.csv |  |
 | OF-86 | M8 x 40 | ISO 3506 A4-70 | M8 x 40 x88 | 88 | 9 | models/mfg/EW_1/fasteners.csv; models/mfg/EW_2/fasteners.csv; models/mfg/EW_3/fasteners.csv |  |
-| OF-87 | M10 x 30 wedge anchor | ISO 3506 A4-70 | M10 x 30 wedge anchor x72 | 72 | 11 | models/mfg/CRYO_ASU/fasteners.csv; models/mfg/CRYO_CO2/fasteners.csv; models/mfg/EW_1/fasteners.csv |  |
+| OF-87 | M10 x 30 wedge anchor | ISO 3506 A4-70 | M10 x 30 wedge anchor x80 | 80 | 12 | models/mfg/CRYO_ASU/fasteners.csv; models/mfg/CRYO_CO2/fasteners.csv; models/mfg/CRYO_H2/fasteners.csv |  |
 | OF-88 | M10 x 35 | ISO 3506 A4-70 | M10 x 35 x54 | 54 | 9 | models/mfg/EW_1/fasteners.csv; models/mfg/EW_2/fasteners.csv; models/mfg/EW_3/fasteners.csv |  |
 | OF-89 | M12 x 60 hex bolt + nut + 2 washers | PVDF (non-metallic) | M12 x 60 hex bolt + nut + 2 washers x34 | 34 | 1 | models/mfg/LEACH_CSTR_1/fasteners.csv |  |
-| OF-90 | M12 x 40 | ISO 3506 A4-70 | M12 x 40 x56 | 56 | 2 | models/mfg/CRYO_ASU/fasteners.csv; models/mfg/CRYO_CO2/fasteners.csv |  |
+| OF-90 | M12 x 40 | ISO 3506 A4-70 | M12 x 40 x312 | 312 | 3 | models/mfg/CRYO_ASU/fasteners.csv; models/mfg/CRYO_CO2/fasteners.csv; models/mfg/CRYO_H2/fasteners.csv |  |
+| OF-91 | M12 x 45 | ISO 3506 A4-70 | M12 x 45 x8 | 8 | 1 | models/mfg/CRYO_H2/fasteners.csv |  |
 
 ## 11. Coverage gate
 
-- Bought families covered: 78 of 79 (the excluded one is OF-13, the fabricated-part set:
+- Bought families covered: 79 of 80 (the excluded one is OF-13, the fabricated-part set:
   sheets like those are `models/mfg/*/bom.csv` + `WORK_ORDER.md`, in-house work).
 - Items rest on the A-M-125 counting rule where the roll-up assumed; the count is the basis, not a measurement.

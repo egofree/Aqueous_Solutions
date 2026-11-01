@@ -144,5 +144,79 @@
  "acceptance_sets": [
   "A-core",
   "A-COL"
- ]
+ ],
+ "compressor_design": {
+  "H2_kg_d": 11.333083,
+  "n_stages": 5,
+  "T_limit_C": 135.0,
+  "ratio_per_stage": 1.8205642030260802,
+  "kWh_per_kg": 1.974725678896425,
+  "P_avg_kW": 0.9324887508818555,
+  "P_peak_kW": 2.7974662526455667,
+  "stages": [
+   {
+    "stage": 1,
+    "P_in_bar": 10.0,
+    "P_out_bar": 18.2056420302608,
+    "T_out_C": 125.22502918535349,
+    "intercooler_W": 507.71342866045075,
+    "swept_cm3": 125.01935524013318,
+    "diaphragm_D_mm": 325.7602256763204
+   },
+   {
+    "stage": 2,
+    "P_in_bar": 18.2056420302608,
+    "P_out_bar": 33.14454017339987,
+    "T_out_C": 125.22502918535349,
+    "intercooler_W": 507.71342866045075,
+    "swept_cm3": 68.67066540819063,
+    "diaphragm_D_mm": 241.43212539757465
+   },
+   {
+    "stage": 3,
+    "P_in_bar": 33.14454017339987,
+    "P_out_bar": 60.34176336545163,
+    "T_out_C": 125.22502918535349,
+    "intercooler_W": 507.71342866045075,
+    "swept_cm3": 37.71944175000726,
+    "diaphragm_D_mm": 178.93366525325104
+   },
+   {
+    "stage": 4,
+    "P_in_bar": 60.34176336545163,
+    "P_out_bar": 109.85605433061177,
+    "T_out_C": 125.22502918535349,
+    "intercooler_W": 507.71342866045075,
+    "swept_cm3": 20.71854521104572,
+    "diaphragm_D_mm": 132.61390342415518
+   },
+   {
+    "stage": 5,
+    "P_in_bar": 109.85605433061178,
+    "P_out_bar": 200.0,
+    "T_out_C": 125.22502918535349,
+    "intercooler_W": 507.71342866045075,
+    "swept_cm3": 11.380288141779374,
+    "diaphragm_D_mm": 98.28473225818323
+   }
+  ],
+  "units": 2,
+  "material": "head and plates 17-4PH H1150 / 316L (hydrogen service), triple-layer 301 SS diaphragm with leak detection between layers"
+ },
+ "layout": {
+  "frame": "rack frame: x along 6696, y across 1500, z up 900; skid 12, SHS 80 x 80 x 5 posts and side rails, tier ties and cross ties",
+  "tubes": "32 tubes in 4 tiers (z 142/342/542/742) x 4 rows (y pitch 187.5), one 6.096 m tube per tier-row; rows y < 750 = relief half 1, above = half 2",
+  "compressors": "2 purchased 5-stage diaphragm compressor envelopes in the +X end bay (node compressor_design)",
+  "nozzle_spread": "connections land on the side rails; schedule heights that fit the 900 rack are drawn as issued, the rest clamped (per-tag in check.nozzles_drawn)",
+  "hardware_idiom": "stubs lap the rails or skid so every union fuses; bbox = the A-M-167 rack envelope exactly"
+ },
+ "study": {
+  "skid_t_mm": 12.0,
+  "shs_mm": [
+   80.0,
+   5.0
+  ],
+  "tier_pitch_mm": 200.0,
+  "note": "frame sections and tier pitch are study sizes not stated by any authority (the duty names only the 316L grade and CA 0 mm)"
+ }
 }

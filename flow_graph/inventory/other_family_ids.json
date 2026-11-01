@@ -450,6 +450,11 @@
    "category": "fastener",
    "item": "M12 x 40",
    "spec": "ISO 3506 A4-70"
+  },
+  "OF-91": {
+   "category": "fastener",
+   "item": "M12 x 45",
+   "spec": "ISO 3506 A4-70"
   }
  }
 }

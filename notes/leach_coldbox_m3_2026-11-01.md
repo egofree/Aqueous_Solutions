@@ -81,4 +81,25 @@ per unit (plan rule 4); this note gains a section per accepted unit.
   seven-sheet drawing set; the stale envelope `drawings/GA.md` superseded.
 - `tracker --check CRYO_CO2` green; `cad/stl/CRYO_CO2.stl` replaced from the build (~9236 f).
 
+## CRYO_H2 (hydrogen bank + compression, tier 3) — commit 4
+
+- `models/mfg/CRYO_H2/cryo_h2.py`: 32 SA-312 TP316L DN100 Sch 160 tubes (OD 114.3 × t 13.49,
+  6.096 m, bores drawn open, 6547.8 kg drawn wall mass against the node steel_kg 5520.54 sizing
+  record, carried not recalculated) in 4 tiers × 8 rows over a 316L SHS rack frame that fills
+  the A-M-167 envelope 6696 × 1500 × 900 exactly; grooved tier combs at every tier lap the
+  tubes and land on the end posts and side rails. Rows y < 750 / > 750 are the two relief
+  halves of the node API 520/521 fire case (16 tubes per half). The 2 five-stage diaphragm
+  hydrogen compressors of node compressor_design (17-4PH H1150 / 316L heads, 301 SS
+  triple-layer diaphragms, 0.9325 kW average / 2.797 kW peak) are purchased envelopes in the
+  +X end bay (AQS-PLAN-006 rule 6).
+- All 8 rows of the schedule drawn at tag, face and bore on the side rails; z 400/600/160 as
+  issued, z 1500/2000/50 clamped with named holds.
+- tracker.py: the node `compressor_design` now passes through the W2 merge (the builder reads
+  params.json only; CRYO_H2 is the only node that carries it). CRYO_H2 joins ACCEPTED.
+- Deliverables as per the batch recipe; `tracker --check CRYO_H2` green;
+  `cad/stl/CRYO_H2.stl` replaced from the build; the stale envelope `drawings/GA.md`
+  superseded. Holds led by the Class 150 schedule rating column against the 22000 kPa node
+  design, the clamped datums, the steel_kg basis difference, and study frame sections.
+
+
 

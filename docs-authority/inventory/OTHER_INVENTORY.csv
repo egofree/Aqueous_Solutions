@@ -96,7 +96,10 @@ CRYO,CRYO,CRYO_DED_COOL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS S
 CRYO,CRYO,CRYO_DED_COOL,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,S55: one at each end nozzle (assumed)
 CRYO,CRYO,CRYO_H2,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,cryocooler compressor: run and fault (assumed)
 CRYO,CRYO,CRYO_H2,electronics,compressor contactor + overload,1.1 kW hermetic,IEC 60947-4-1,1,cryocooler compressor
-CRYO,CRYO,CRYO_H2,fabricated part,fabricated part set,20 BOM lines,models/mfg/CRYO_H2/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+CRYO,CRYO,CRYO_H2,fabricated part,fabricated part set,5 BOM lines,models/mfg/CRYO_H2/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+CRYO,CRYO,CRYO_H2,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,8,models/mfg/CRYO_H2/fasteners.csv
+CRYO,CRYO,CRYO_H2,fastener,M12 x 40,M12 x 40,ISO 3506 A4-70,256,models/mfg/CRYO_H2/fasteners.csv
+CRYO,CRYO,CRYO_H2,fastener,M12 x 45,M12 x 45,ISO 3506 A4-70,8,models/mfg/CRYO_H2/fasteners.csv
 CRYO,CRYO,CRYO_H2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,S45: 2 per support (assumed)
 CRYO,CRYO,CRYO_H2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,S49: 2 per support (assumed)
 CRYO,CRYO,CRYO_H2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,S74: 2 per support (assumed)

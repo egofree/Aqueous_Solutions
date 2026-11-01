@@ -131,7 +131,7 @@ EXISTING_SOURCE = {
 
 # Units whose section 5 acceptance the tracker verifies on the files before recording M3.
 ACCEPTED = ('AL_POT', 'LEACH_CSTR_1', 'EW_1', 'EW_2', 'EW_3', 'EW_4', 'EW_5', 'EW_6', 'EW_7',
-            'EW_8', 'EW_9', 'CRYO_ASU', 'CRYO_CO2')
+            'EW_8', 'EW_9', 'CRYO_ASU', 'CRYO_CO2', 'CRYO_H2')
 
 
 # --------------------------------------------------------------------------- authorities
@@ -347,6 +347,7 @@ def build_record(node, seed_map, graph_rev):
         internals=internals, size=size, size_basis=node_size_basis(p),
         design_kPa=p.get('design_kPa'), relief_mm=p.get('relief_mm'),
         relief_basis=p.get('relief_basis'), design=p.get('design'),
+        compressor_design=p.get('compressor_design'),
         material=material, nozzles=rows, holds=holds,
         seed_origin=seed is not None, origin_mm=(seed or {}).get('origin_mm'),
         existing_source=EXISTING_SOURCE.get(u, 'none'),
@@ -405,6 +406,8 @@ def merge_params(rec, existing):
     if rec['relief_basis']:
         p['relief_basis'] = rec['relief_basis']
     p['internals'] = rec['internals']
+    if rec.get('compressor_design'):
+        p['compressor_design'] = rec['compressor_design']
     if isinstance(rec['design'], dict):
         d = dict(rec['design'])
         for k, v in (existing or {}).get('design', {}).items():
