@@ -195,7 +195,10 @@ def topology_from_graph(
     streams: list[StreamModel] = []
     gaps: list[GapModel] = []
     for e in g.get("edges", []):
-        if not include_placeholders and e.get("presence") == "placeholder":
+        pres = e.get("presence")
+        if pres in ("retired", "absent"):
+            continue          # retired/absent streams are not live: they neither close nor flag (gap audit 2026-10-31)
+        if not include_placeholders and pres == "placeholder":
             continue
         if not include_intra_aisle and e.get("namespace") == "IA":
             continue

@@ -499,14 +499,14 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-EW8-H2B | EW_8 | HDR_H2 | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 9.5 | EW_8 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
 | SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | cable | — | — | 137.3 | SOL_ARK_60K → EXT_HALL, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
 | IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 14.0 | PROD_C5_C10 → POLY_OLEFIN, orthogonal × 1.2 (duty origin + GA move + GA move; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
-| SQ-EVAP_ACID | EVAP_ACID | HEAT_SINK | cable | — | — |  | EVAP_ACID → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
-| SQ-EVAP_BASE | EVAP_BASE | HEAT_SINK | cable | — | — |  | EVAP_BASE → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
+| SQ-EVAP_ACID | EVAP_ACID | Q4_BUS | cable | — | — | 11.2 | EVAP_ACID → Q4_BUS, orthogonal × 1.2 (placement_study (STUDY); duty origin) | electrical: cable schedule X-ELS-06 |
+| SQ-EVAP_BASE | EVAP_BASE | Q4_BUS | cable | — | — | 17.2 | EVAP_BASE → Q4_BUS, orthogonal × 1.2 (placement_study (STUDY); duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-EVAP_ACID-VENT | EVAP_ACID | EVAP_ACID_VS | DN15 | P3 | process vent gas | 31.4 | EVAP_ACID → EVAP_ACID_VS, orthogonal × 1.2 (placement_study (STUDY); placement_seed) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-VS-NAOH | BMED_BASE | EVAP_ACID_VS | DN15 | P4 | alkaline | 26.5 | BMED_BASE → EVAP_ACID_VS, orthogonal × 1.2 (placement_report; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-VS-SPENT | EVAP_ACID_VS | BMED_ACID | DN15 | P4 | alkaline | 26.5 | EVAP_ACID_VS → BMED_ACID, orthogonal × 1.2 (placement_seed; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-VS-OFF | EVAP_ACID_VS | ALK_SCRUBBER | DN15 | F1 | flue or acid gas | 39.8 | EVAP_ACID_VS → ALK_SCRUBBER, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
 | SF-EVAP_ACID_VS | SOL_ARK_60K | EVAP_ACID_VS | cable | — | — | 18.4 | SOL_ARK_60K → EVAP_ACID_VS, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SQ-EVAP_ACID_VS | EVAP_ACID_VS | HEAT_SINK | cable | — | — |  | EVAP_ACID_VS → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
+| SQ-EVAP_ACID_VS | EVAP_ACID_VS | Q4_BUS | cable | — | — | 41.2 | EVAP_ACID_VS → Q4_BUS, orthogonal × 1.2 (placement_seed; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-H2P-H2O | H2_DRYER | VCD_TRAIN | DN15 | P5 | water | 28.1 | H2_DRYER → VCD_TRAIN, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | S14D | FOOD_STORE | HABITATION | solids | — | — | 19.5 | FOOD_STORE → HABITATION, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-STOCK-STORE | STOCK_OUT | METAL_STORE | solids | — | — | 4.2 | STOCK_OUT → METAL_STORE, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |

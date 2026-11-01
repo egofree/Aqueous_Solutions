@@ -137,9 +137,9 @@ Table 3.1. DIGESTER off. Sector type: Process (Mass transform).
 | PCA_TO_GREASE | P_CA to GREASE_CA | OIL | 0.025 | left without a source: consumer goes short |
 | S08 | LEACH_CSTR_1 to MFG_SHOP | MFG | 42 kg/d | left without a source: consumer goes short |
 | S09 | BMED_ACID to WET_BENCH | FAB | 9.28 kg/d | left without a source: consumer goes short |
-| SQ-EVAP_ACID | EVAP_ACID to HEAT_SINK | GEO | 1.5 kW | left without a source: consumer goes short |
-| SQ-EVAP_ACID_VS | EVAP_ACID_VS to HEAT_SINK | GEO | 0.0238 kW | left without a source: consumer goes short |
-| SQ-EVAP_BASE | EVAP_BASE to HEAT_SINK | GEO | 1.33 kW | left without a source: consumer goes short |
+| SQ-EVAP_ACID | EVAP_ACID to Q4_BUS | HEAT | 1.5 kW | left without a source: consumer goes short |
+| SQ-EVAP_ACID_VS | EVAP_ACID_VS to Q4_BUS | HEAT | 0.0238 kW | left without a source: consumer goes short |
+| SQ-EVAP_BASE | EVAP_BASE to Q4_BUS | HEAT | 1.33 kW | left without a source: consumer goes short |
 | IA-DC-EW_1 | RECTIFIER to EW_1 | ELEC | 5.99 kW | stops with the sector |
 | IA-DC-EW_2 | RECTIFIER to EW_2 | ELEC | 5.99 kW | stops with the sector |
 | IA-DC-EW_3 | RECTIFIER to EW_3 | ELEC | 2.25 kW | stops with the sector |
@@ -722,6 +722,9 @@ Table 3.15. HEAT off. Sector type: Utility / header.
 | S54 | CRYO_HX_Q4 to Q4_BUS | CRYO | 0.545 kW | left without a sink: unreclaimed |
 | S63 | MET_HX_Q4 to Q4_BUS | MFG | 0.0171 kW | left without a sink: unreclaimed |
 | S80 | MEOH_FC to Q4_BUS | MEOH | 0.369 kW | left without a sink: unreclaimed |
+| SQ-EVAP_ACID | EVAP_ACID to Q4_BUS | DIGESTER | 1.5 kW | left without a sink: unreclaimed |
+| SQ-EVAP_ACID_VS | EVAP_ACID_VS to Q4_BUS | DIGESTER | 0.0238 kW | left without a sink: unreclaimed |
+| SQ-EVAP_BASE | EVAP_BASE to Q4_BUS | DIGESTER | 1.33 kW | left without a sink: unreclaimed |
 | SQ-H2O_ELYZ-Q4 | H2O_ELYZ to Q4_BUS | CRYO | 6.08 kW | left without a sink: unreclaimed |
 | HL-Q3-A-HX4 | Q3_A to OIL_DRYER | OIL | 0.0553 kW | left without a source: consumer goes short |
 | HL-Q3-A-HX5 | Q3_A to LEACH_CSTR_1 | DIGESTER | 1.45 kW | left without a source: consumer goes short |
@@ -774,9 +777,6 @@ Table 3.18. GEO off. Sector type: Utility / header.
 |---|---|---|---|---|
 | IA-BMED-03-TRIM | LEACH_CSTR_1 to GEO_GHEX | DIGESTER | 0.78 kW | left without a sink: unreclaimed |
 | IA-BMED-04-TRIM | LEACH_CSTR_1 to GEO_GHEX | DIGESTER | 1.03 kW | left without a sink: unreclaimed |
-| SQ-EVAP_ACID | EVAP_ACID to HEAT_SINK | DIGESTER | 1.5 kW | left without a sink: unreclaimed |
-| SQ-EVAP_ACID_VS | EVAP_ACID_VS to HEAT_SINK | DIGESTER | 0.0238 kW | left without a sink: unreclaimed |
-| SQ-EVAP_BASE | EVAP_BASE to HEAT_SINK | DIGESTER | 1.33 kW | left without a sink: unreclaimed |
 | S44 | GEO_HP to Q4_BUS | HEAT | 2.2 kW | left without a source: consumer goes short |
 | S48 | GEO_ORC to SOL_ARK_60K | ELEC | not yet rated | left without a source: consumer goes short |
 | SF-GEO_HP | SOL_ARK_60K to GEO_HP | ELEC | 0.687 kW | stops with the sector |

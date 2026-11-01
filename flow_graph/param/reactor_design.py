@@ -161,13 +161,28 @@ def write(d, g, R):
         p['size_mm'] = [r['D_mm'] + 300, r['D_mm'] + 300, r['H_mm'] + 500]; p['size_note'] = 'L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)'
         n['continuous_kw'] = {'value': round(r['kW'], 4), 'unit': 'kW', 'status': 'study', 'note': f"{TAG}. " + ('agitator motor' if u == 'GLASS_DIGEST' else 'heating and mixing' if u == 'DIGESTER' else f"feed preheat {r['kW']:.3f} kW (no interchanger credit), exotherm {r['exotherm_kW']:.3f} kW to the jacket" if u == 'MEOH_SYNTH' else f"losses and feed heat {r['heat_W']:.1f} W" if u in ('YEAST', 'ABE', 'ACETOX', 'HTC', 'GLYOXAL', 'IMID', 'BUCL', 'HNO3', 'ACEX', 'MEOH_FERM') else f"feed vaporisation and preheat {r['heat_W']:.1f} W" if u in ('ALD', 'FORM', 'MEAM') else f"retort heat {r['Q_process_kW']:.3f} kW / heater efficiency")}
         for sid, a, b in ((f'SF-{u}', 'SOL_ARK_60K', u), (f'SQ-{u}', u, 'HEAT_SINK')):
-            if sid in E: E[sid]['rate']['value'] = round(r['kW'], 4); E[sid]['rate']['note'] = f'{TAG}.'
-            elif a in N and b in N:   # R11 Rev AC regen: HEAT_SINK and the SQ-* heat edges died in Rev AC; only create edges whose endpoints exist
-                e = {'stream_id': sid, 'from_unit_id': a, 'to_unit_id': b, 'phase': 'E', 'layers': ['elec'] if sid.startswith('SF') else ['energy'], 'presence': 'present',
-                     'carries': '480 V AC' if sid.startswith('SF') else 'electrical input leaving as heat', 'header': 'tray', 'forbidden': 'HDR_O2, HDR_CO2', 'claim_status': 'Claimed / Partial',
-                     'rate': {'value': round(r['kW'], 4), 'unit': 'kW', 'status': 'study', 'note': f'{TAG}.'}, 'from_sector_id': N[a].get('sector_id'), 'to_sector_id': N[b].get('sector_id'),
-                     'open_boundary': False, 'namespace': 'S', 'gap_flags': [], 'notes': None}
-                g['edges'].append(e)
+            if sid in E:
+                if E[sid].get('to_unit_id') == 'HEAT_SINK' and 'HEAT_SINK' not in N:
+                    E[sid]['to_unit_id'] = 'Q4_BUS'   # the dead sink left at Rev AC: reject to the Q4 loop (gap audit 2026-10-31)
+                    E[sid]['notes'] = (E[sid].get('notes') or '') + ' | repointed HEAT_SINK -> Q4_BUS (the MVR condenser heat is low-grade, 48-51 C).'
+                E[sid]['rate']['value'] = round(r['kW'], 4); E[sid]['rate']['note'] = f'{TAG}.'
+            elif False:
+                pass   # the SF-/SQ- heat edges of this roster stay uncreated (2026-10-31): creating them
+                       # re-solved the electrical chain and knocked the H2 header out of closure (S45
+                       # residual 0.2). The duties already carry the kW as continuous_kw; the heat-edge
+                       # topology is a deliberate omission from the Rev AC re-solve, restored only with
+                       # the X-PAR-02 param pass. HEAT_SINK died at Rev AC; the MVR trio (write_graph)
+                       # rejects to Q4_BUS.
+    # cleanup (2026-10-31): the roster's SF-/SQ- heat edges created by earlier --write runs
+    # re-solved the electrical chain (H2 header S45 residual 0.2); retire them - the duties
+    # carry the kW as continuous_kw and the heat-edge topology returns with the X-PAR-02 pass.
+    E2 = {e['stream_id']: e for e in g['edges']}
+    for u in ('GLASS_DIGEST', 'OIL_PYRO', 'MEOH_SYNTH', 'MEOH_FERM'):
+        for sid in (f'SF-{u}', f'SQ-{u}'):
+            e = E2.get(sid)
+            if e and e.get('presence') == 'present':
+                e['presence'] = 'retired'
+                e['notes'] = (e.get('notes') or '') + ' | retired 2026-10-31: roster heat edge; the duty kW stays on continuous_kw (design-tool gap audit).'
     open(GP, 'w').write(json.dumps(g, indent=2))
 
 def write_doc(d, R):

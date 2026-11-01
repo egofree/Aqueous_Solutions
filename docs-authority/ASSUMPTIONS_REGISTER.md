@@ -1081,8 +1081,8 @@ Table 2.1. Graph study and assumed values
 | A-G-3cfce3 | 0.032278 | kg/d | graph IA-EW8-H2B rate | R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). / X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 238 A, CE 0.85; to the ... |  | X-BAS-02 |
 | A-G-7f5dc1 | 99.1801 | kW | graph SF-EXT_HALL rate | Equals EXT_HALL continuous_kw (X-PAR-07). |  | X-BAS-02 |
 | A-G-8b4e70 | 0.384603 | kg/d | graph IA-C5-POLY rate | Polyolefin naphtha feed (AQS-DUTY-073, A-M-264). / X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). |  | X-BAS-02 |
-| A-G-337dd7 | 1.498 | kW | graph SQ-EVAP_ACID rate | X-PAR acid-loop decision (AQS-PAR-001 §3). Compressor work leaves as heat (A-M-086). |  | X-BAS-02 |
-| A-G-1cb7e1 | 1.328 | kW | graph SQ-EVAP_BASE rate | X-PAR acid-loop decision (AQS-PAR-001 §3). Compressor work leaves as heat (A-M-086). |  | X-BAS-02 |
+| A-G-337dd7 | 1.498 | kW | graph SQ-EVAP_ACID rate | X-PAR acid-loop decision (AQS-PAR-001 §3). Compressor work leaves as heat (A-M-086); to the Q4 loop (HEAT_SINK retired at Rev AC; gap audit 2026-10-31). |  | X-BAS-02 |
+| A-G-1cb7e1 | 1.328 | kW | graph SQ-EVAP_BASE rate | X-PAR acid-loop decision (AQS-PAR-001 §3). Compressor work leaves as heat (A-M-086); to the Q4 loop (HEAT_SINK retired at Rev AC; gap audit 2026-10-31). |  | X-BAS-02 |
 | A-G-78dfca | 0.0293 | kg/d | graph IA-EVAP_ACID-VENT rate | X-PAR acid-loop decision (AQS-PAR-001 §3); X-PAR-10 vent scrubber (AQS-DUTY-061). Air from the feed (WEISS1970) saturated at the vent condenser; design case ... |  | X-BAS-02 |
 | A-G-7ca7ef | 0.0005 | kg/d | graph IA-VS-NAOH rate | X-PAR acid-loop decision (AQS-PAR-001 §3); X-PAR-10 vent scrubber (AQS-DUTY-061). 1.008 mmol/d = 2.0 x HCl absorbed. |  | X-BAS-02 |
 | A-G-209cda | 0.0006 | kg/d | graph IA-VS-SPENT rate | X-PAR acid-loop decision (AQS-PAR-001 §3); X-PAR-10 vent scrubber (AQS-DUTY-061). Bleed plus HCl absorbed. |  | X-BAS-02 |

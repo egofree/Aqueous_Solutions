@@ -728,8 +728,8 @@
     {
      "stream_id": "SQ-EVAP_ACID",
      "from": "EVAP_ACID",
-     "to": "HEAT_SINK",
-     "other_sector": "GEO",
+     "to": "Q4_BUS",
+     "other_sector": "HEAT",
      "rate": 1.498,
      "unit": "kW",
      "carries": "electrical input leaving as heat"
@@ -737,8 +737,8 @@
     {
      "stream_id": "SQ-EVAP_ACID_VS",
      "from": "EVAP_ACID_VS",
-     "to": "HEAT_SINK",
-     "other_sector": "GEO",
+     "to": "Q4_BUS",
+     "other_sector": "HEAT",
      "rate": 0.0238,
      "unit": "kW",
      "carries": "electrical input leaving as heat"
@@ -746,8 +746,8 @@
     {
      "stream_id": "SQ-EVAP_BASE",
      "from": "EVAP_BASE",
-     "to": "HEAT_SINK",
-     "other_sector": "GEO",
+     "to": "Q4_BUS",
+     "other_sector": "HEAT",
      "rate": 1.328,
      "unit": "kW",
      "carries": "electrical input leaving as heat"
@@ -6560,6 +6560,33 @@
      "carries": "heat < 80 °C"
     },
     {
+     "stream_id": "SQ-EVAP_ACID",
+     "from": "EVAP_ACID",
+     "to": "Q4_BUS",
+     "other_sector": "DIGESTER",
+     "rate": 1.498,
+     "unit": "kW",
+     "carries": "electrical input leaving as heat"
+    },
+    {
+     "stream_id": "SQ-EVAP_ACID_VS",
+     "from": "EVAP_ACID_VS",
+     "to": "Q4_BUS",
+     "other_sector": "DIGESTER",
+     "rate": 0.0238,
+     "unit": "kW",
+     "carries": "electrical input leaving as heat"
+    },
+    {
+     "stream_id": "SQ-EVAP_BASE",
+     "from": "EVAP_BASE",
+     "to": "Q4_BUS",
+     "other_sector": "DIGESTER",
+     "rate": 1.328,
+     "unit": "kW",
+     "carries": "electrical input leaving as heat"
+    },
+    {
      "stream_id": "SQ-H2O_ELYZ-Q4",
      "from": "H2O_ELYZ",
      "to": "Q4_BUS",
@@ -6999,33 +7026,6 @@
      "rate": 1.027,
      "unit": "kW",
      "carries": "trim cooler heat from IA-BMED-04 (to BMED_BASE)"
-    },
-    {
-     "stream_id": "SQ-EVAP_ACID",
-     "from": "EVAP_ACID",
-     "to": "HEAT_SINK",
-     "other_sector": "DIGESTER",
-     "rate": 1.498,
-     "unit": "kW",
-     "carries": "electrical input leaving as heat"
-    },
-    {
-     "stream_id": "SQ-EVAP_ACID_VS",
-     "from": "EVAP_ACID_VS",
-     "to": "HEAT_SINK",
-     "other_sector": "DIGESTER",
-     "rate": 0.0238,
-     "unit": "kW",
-     "carries": "electrical input leaving as heat"
-    },
-    {
-     "stream_id": "SQ-EVAP_BASE",
-     "from": "EVAP_BASE",
-     "to": "HEAT_SINK",
-     "other_sector": "DIGESTER",
-     "rate": 1.328,
-     "unit": "kW",
-     "carries": "electrical input leaving as heat"
     }
    ],
    "no_source": [

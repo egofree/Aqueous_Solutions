@@ -77,6 +77,9 @@ def test_no_booking_marker_in_covered_edges():
     booked = {r['unit'] for r in rows}
     g = json.load(open(os.path.join(R, 'flow_graph/plant_flow_graph.json')))
     markers = re.findall(r'(\S+) -> (\S+) \(no structural booking\)', src)
-    assert markers, 'roster expects unbooked partners to be named, none found'
+    # the marker list may legitimately be empty once every partner books a structural row
+    # (2026-10-31: the last unbooked partner, HEAT_SINK, retired at Rev AC - the MVR heat
+    # rejects to Q4_BUS, which books). The per-marker rule still holds: a named unbooked
+    # partner must sit outside the census.
     for _stream, p in markers:
         assert p not in booked, p

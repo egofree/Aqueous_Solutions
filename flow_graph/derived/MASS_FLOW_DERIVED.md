@@ -35,7 +35,7 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S27 | FAB_UPW_TANK→WET_BENCH | Closed | present | 60.000181 kg/d | From register: FAB_UPW_TANK → WET_BENCH |
 | S28 | VCD_TRAIN→LEACH_CSTR_1 | Closed | present | 17.877059 kg/d | presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18 |
 | S29 | GREY_TREAT→VCD_TRAIN | Closed | present | 104.499999 kg/d | From register: GREY_TREAT → VCD_FEED / SALT FEED. presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18 |
-| S30 | BLACK_DIGEST→NUTRIENT_DOSE | Closed | present | — | From register: BLACK_DIGEST → NUTRIENT DOSE / SALT FEED |
+| S30 | BLACK_DIGEST→NUTRIENT_DOSE | Study / Deferred | present | — | From register: BLACK_DIGEST → NUTRIENT DOSE / SALT FEED | claimed Study/Deferred 2026-10-31 (design-tool gap audit): live topology; the continuous rate is the X-PAR-02 param pass. |
 | S31 | WS_HF_ED→WET_BENCH | Closed / Claimed | present | 1.5 kg/d | From register: WS_HF_ED → WET_BENCH |
 | S32 | WS_PEROX→WET_BENCH | Claimed | present | 3.0 kg/d | From register: WS_PEROX → WET_BENCH |
 | S33 | WS_AMMONIA→WET_BENCH | Claimed | present | 3.008739 kg/d | From register: WS_AMMONIA → WET_BENCH |

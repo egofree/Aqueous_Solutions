@@ -62,7 +62,7 @@ def process():
         new = [edge(f'IA-{u}-FEED', src, u, 'L', ['mass'], f'{sa} 2 M from BMED', rate(v['feed_kg_d'],'kg/d',f'{TAG}. {v["solute_kg_d"]:.2f} kg/d {sa} / {DR.val(d,"bmed_product_wt_"+side.lower())}.'),'DIGESTER','DIGESTER'),
                edge(f'IA-{u}-COND', u, src, 'L', ['mass'], 'evaporator condensate return (BMED water make-up)', rate(v['water_kg_d'],'kg/d',f'{TAG}. Water evaporated, condensed and returned to {src}.'),'DIGESTER','DIGESTER'),
                edge(f'SF-{u}', 'SOL_ARK_60K', u, 'E', ['elec'], '480 V AC', rate(v['kW'],'kW',f'{TAG}. 480 V feed equal to {u} continuous_kw.'),'ELEC','DIGESTER','tray'),
-               edge(f'SQ-{u}', u, 'HEAT_SINK', 'E', ['energy'], 'electrical input leaving as heat', rate(v['kW'],'kW',f'{TAG}. Compressor work leaves as heat (A-M-086).'),'DIGESTER','GEO','tray')]
+               edge(f'SQ-{u}', u, 'Q4_BUS', 'E', ['energy'], 'electrical input leaving as heat', rate(v['kW'],'kW',f'{TAG}. Compressor work leaves as heat (A-M-086); to the Q4 loop (HEAT_SINK retired at Rev AC; gap audit 2026-10-31).'),'DIGESTER','HEAT','tray')]
         for e in new:
             if e['stream_id'] in E: E[e['stream_id']].update({k: e[k] for k in ('rate','from_unit_id','to_unit_id','carries')})
             else: g['edges'].append(e); E[e['stream_id']] = e
@@ -85,7 +85,7 @@ def process():
           edge('IA-VS-SPENT','EVAP_ACID_VS','BMED_ACID','L',['mass'],'spent scrub liquor (NaCl in NaOH) to the BMED brine',rate(up['spent_kg_d'],'kg/d',f'{VT}. Bleed plus HCl absorbed.'),'DIGESTER','DIGESTER'),
           edge('IA-VS-OFF','EVAP_ACID_VS','ALK_SCRUBBER','G',['mass'],'scrubbed vent to the house acid-gas header',rate(up['offgas_kg_d'],'kg/d',f"{VT}. {up['y_out_ppm']} ppmv HCl."),'DIGESTER','GAS'),
           edge('SF-EVAP_ACID_VS','SOL_ARK_60K','EVAP_ACID_VS','E',['elec'],'480 V AC',rate(vs['pump_kW'],'kW',f'{VT}. Feed equal to continuous_kw.'),'ELEC','DIGESTER','tray'),
-          edge('SQ-EVAP_ACID_VS','EVAP_ACID_VS','HEAT_SINK','E',['energy'],'electrical input leaving as heat',rate(vs['pump_kW'],'kW',f'{VT}. Pump work leaves as heat.'),'DIGESTER','GEO','tray')]
+          edge('SQ-EVAP_ACID_VS','EVAP_ACID_VS','Q4_BUS','E',['energy'],'electrical input leaving as heat',rate(vs['pump_kW'],'kW',f'{VT}. Pump work leaves as heat.'),'DIGESTER','HEAT','tray')]
     vn[1]['params'] = {'NaOH_mol_d': round(up['naoh_mol_d'], 9)}
     for e in vn:
         if e['stream_id'] in E: E[e['stream_id']].update({k: e[k] for k in ('rate','from_unit_id','to_unit_id','carries')}); E[e['stream_id']].setdefault('params',{}).update(e.get('params') or {})

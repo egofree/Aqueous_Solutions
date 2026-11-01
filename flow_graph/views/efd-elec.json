@@ -35,11 +35,11 @@
           "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
         },
         "size_mm": [
-          846,
-          960,
-          3720
+          1000,
+          1000,
+          4103
         ],
-        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03) Size follows the machine build (style builder column)."
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
       },
       "continuous_kw": {
         "value": 1.1122,

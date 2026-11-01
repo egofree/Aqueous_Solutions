@@ -244,7 +244,7 @@ def tote(u, n, L, W, H):
     m = m.union(cq.Workplane('XY', origin=(L - 250, 20, 150)).box(200, 150, 200, centered=False))                # pump box
     for i in range(3):                                                                                           # valve row
         m = m.union(cq.Workplane('XY', origin=(30 + i * 80, W - 15, 150 + tk_h / 2)).box(40, 40, 40, centered=False))
-    return m
+    return base_and_top(m, L, W, H)
 
 
 def genset(u, n, L, W, H):
@@ -253,7 +253,7 @@ def genset(u, n, L, W, H):
     m = m.union(cq.Workplane('XY', origin=(L * 0.18, W * 0.2, 200)).box(L * 0.34, W * 0.6, H * 0.42, centered=False))   # engine
     m = m.union(cq.Workplane('XY', origin=(L * 0.56, W * 0.25, 200)).circle(W * 0.3).extrude(H * 0.38))          # alternator
     m = m.union(cq.Workplane('XY', origin=(L * 0.02, W * 0.15, 200)).box(L * 0.14, W * 0.7, H * 0.5, centered=False))   # radiator
-    return m
+    return base_and_top(m, L, W, H)
 
 
 def baghouse(u, n, L, W, H):
@@ -265,7 +265,7 @@ def baghouse(u, n, L, W, H):
         for j in range(3):
             m = m.union(cq.Workplane('XY', origin=(L * 0.15 + i * L * 0.2, W * 0.2 + j * W * 0.25, H * 0.35))
                         .circle(60).extrude(H * 0.25))                                                         # cartridges
-    return m
+    return base_and_top(m, L, W, H)
 
 
 def bmed_stack(u, n, L, W, H):
@@ -278,7 +278,7 @@ def bmed_stack(u, n, L, W, H):
     n_plates = max(int((L - 240) / 18), 6)
     for i in range(n_plates):
         m = m.union(cq.Workplane('XY', origin=(100 + i * 18, 40, 150 + 40)).box(8, W - 80, ph, centered=False))
-    return m
+    return base_and_top(m, L, W, H)
 
 
 def stack_unit(u, n, L, W, H):
@@ -293,7 +293,7 @@ def stack_unit(u, n, L, W, H):
         m = m.union(cq.Workplane('XY', origin=(90 + i * 12, 40, 180)).box(6, W - 80, ph, centered=False))
     for j, y in ((0, W * 0.3), (1, W * 0.7)):
         m = m.union(cq.Workplane('YZ', origin=(80, y, H - 120)).circle(21.3 / 2).extrude(L - 160))               # manifolds
-    return m
+    return base_and_top(m, L, W, H)
 
 
 STYLES = {
@@ -337,6 +337,8 @@ CLASS_STYLE = {
     'flow_battery': 'stack_unit',
 }
 
+STAGE_OWNED_SIZE = {'ACID_POLISH_SCRUB', 'ALK_SCRUBBER', 'MET_SCRUB', 'NOX_SCRUB',
+                    'ZNBR2_BR2_REGEN', 'OIL_FRAC'}   # write_graph scrubber pass owns the envelope
 ENVELOPE_KEEP = {'boundary', 'building', 'shop', 'fab', 'pv', 'ghex', 'hydro', 'farm',
                  'chemical_synthesis', 'melt', 'furnace', 'former', 'forming', 'intra',
                  'coater', 'wet_bench', 'aligner', 'tool', 'dryer', 'cru', 'thermal',
@@ -352,6 +354,11 @@ def dispatch():
         cls = n.get('class')
         if cls in ENVELOPE_KEEP:
             continue
+        if (n.get('params', {}).get('sizing') or {}).get('size_mm'):
+            continue   # a sizing calculation owns this envelope (RSZ cells): the builder would fight
+                       # the sizing stage pass-for-pass
+        if u in STAGE_OWNED_SIZE:
+            continue   # the write_graph scrubber pass computes this envelope each regen (gap audit)
         st = CLASS_STYLE.get(cls)
         if st:
             todo.append((u, st))
@@ -392,9 +399,10 @@ def run(units=None):
             stl_m = solid.scale(0.001)                                        # cad/stl convention is metres
             for dst in (f'{out}/{u.lower()}.stl', os.path.join(ROOT, 'cad/stl', u + '.stl')):
                 cq.exporters.export(stl_m, dst, opt={'ascii': True})          # ASCII STL: the X-PAR-04 gate parses text vertices
-            if dims != [round(x) for x in (L, W, H)]:   # the machine is what it is: size follows the build
-                p['size_mm'] = dims
-                p['size_note'] = (p.get('size_note') or '') + ' Size follows the machine build (style builder ' + st + ').'
+            if dims != [round(x) for x in (L, W, H)]:
+                # under-fill is framing (the envelope stays the authority - a sizing stage may own
+                # it); recorded in the build log by draw_unit_ga, never written to the graph here:
+                # a per-pass graph mutation breaks regen convergence (gap audit 2026-10-31)
                 grew.append((u, [round(x) for x in (L, W, H)], dims))
             done.append(u)
         except Exception as e:

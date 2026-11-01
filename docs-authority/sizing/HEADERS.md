@@ -14,7 +14,7 @@ Unit task 02 for 8 header-class units. Bore from the concurrent design flow at t
 | HDR_N2 | plant air / N2 header (receiver in; AHU, afterburner air, reagent sparge draws) | DN32 | 17.2 | 20 | 0.009 | 0.01 | 7 | 316L tube |
 | HDR_CO2 | CO2 header (crew and cold-box in; farm and methanol-synthesis draws) | DN25 | 2.0 | 20 | 0.0045 | 0.01 | 5 | 316L tube |
 | HDR_UPW | UPW distribution header (polish skid in; fab and hab draws) | DN25 | 0.8 | 20 | 0.0045 | 4.46 | 3 | PVDF SDR 21, fusion-welded (high-purity water, AQS-STD-002) |
-| Q4_BUS | Q4 hot-water bus (Q4 batteries in; life, HX-9/HX-10 preheat, GHEX recharge, MAU/ADS branches) | DN32 | 18.1 | 20 | 0.009 | 8.89 | 14 | PP-H SDR 11 (80 C class), fusion-welded |
+| Q4_BUS | Q4 hot-water bus (Q4 batteries in; life, HX-9/HX-10 preheat, GHEX recharge, MAU/ADS branches) | DN32 | 18.1 | 20 | 0.009 | 8.89 | 17 | PP-H SDR 11 (80 C class), fusion-welded |
 | NCG_HEADER | pyrolysis non-condensable gas header (OIL_FRAC in; afterburner out) | DN25 | 4.3 | 20 | 0.0045 | 0.0 | 2 | 304L, heat-traced (tar service) |
 | AFTERBURNER_FLUE | afterburner flue duct to the knock-out (flue gas at 200 C class) | DN100 | 17.0 | 20 | 0.133 | 0.1 | 3 | CS Sch 40, insulated per AQS-THM-003 |
 

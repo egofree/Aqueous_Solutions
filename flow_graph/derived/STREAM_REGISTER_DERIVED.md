@@ -492,14 +492,14 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-EW8-H2B | EW_8 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.032278 kg/d | — |
 | SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 99.1801 kW | — |
 | IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | L | mass | present | C5-C10 naphtha olefin feed | 0.384603 kg/d | — |
-| SQ-EVAP_ACID | EVAP_ACID | HEAT_SINK | E | energy | present | electrical input leaving as heat | 1.498 kW | — |
-| SQ-EVAP_BASE | EVAP_BASE | HEAT_SINK | E | energy | present | electrical input leaving as heat | 1.328 kW | — |
+| SQ-EVAP_ACID | EVAP_ACID | Q4_BUS | E | energy | present | electrical input leaving as heat | 1.498 kW | — |
+| SQ-EVAP_BASE | EVAP_BASE | Q4_BUS | E | energy | present | electrical input leaving as heat | 1.328 kW | — |
 | IA-EVAP_ACID-VENT | EVAP_ACID | EVAP_ACID_VS | G | mass | present | column vent: non-condensables, water vapour, trace HCl | 0.0293 kg/d | — |
 | IA-VS-NAOH | BMED_BASE | EVAP_ACID_VS | L | mass | present | NaOH 2 M bleed | 0.0005 kg/d | — |
 | IA-VS-SPENT | EVAP_ACID_VS | BMED_ACID | L | mass | present | spent scrub liquor (NaCl in NaOH) to the BMED brine | 0.0006 kg/d | — |
 | IA-VS-OFF | EVAP_ACID_VS | ALK_SCRUBBER | G | mass | present | scrubbed vent to the house acid-gas header | 0.0292 kg/d | — |
 | SF-EVAP_ACID_VS | SOL_ARK_60K | EVAP_ACID_VS | E | elec | present | 480 V AC | 0.0238 kW | — |
-| SQ-EVAP_ACID_VS | EVAP_ACID_VS | HEAT_SINK | E | energy | present | electrical input leaving as heat | 0.0238 kW | — |
+| SQ-EVAP_ACID_VS | EVAP_ACID_VS | Q4_BUS | E | energy | present | electrical input leaving as heat | 0.0238 kW | — |
 | IA-H2P-H2O | H2_DRYER | VCD_TRAIN | L | mass | present | TSA regeneration condensate | 0.0 kg/d | — |
 | S14D | FOOD_STORE | HABITATION | S | mass | present | food | 4.2 kg/d | — |
 | IA-STOCK-STORE | STOCK_OUT | METAL_STORE | S | mass | present | formed metal product to the store | 36.7125 kg/d | — |

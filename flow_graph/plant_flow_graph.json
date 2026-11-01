@@ -48,11 +48,11 @@
           "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
         },
         "size_mm": [
-          846,
-          960,
-          3720
+          1000,
+          1000,
+          4103
         ],
-        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03) Size follows the machine build (style builder column)."
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
       },
       "continuous_kw": {
         "value": 1.1122,
@@ -3266,7 +3266,7 @@
           "volume_m3": 0.009,
           "material": "PP-H SDR 11 (80 C class), fusion-welded",
           "hold_kg": 8.89,
-          "connections": 14
+          "connections": 17
         },
         "size_note": "DN32 manifold x 20 m run (0.009 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
@@ -11510,7 +11510,7 @@
       "carries": "digest liquor / nutrients",
       "header": "dose / HDR_ORG",
       "forbidden": "VCD evaporators (solids), sewer",
-      "claim_status": "Closed",
+      "claim_status": "Study / Deferred",
       "rate": {
         "value": null,
         "unit": null,
@@ -11524,7 +11524,7 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: BLACK_DIGEST \u2192 NUTRIENT DOSE / SALT FEED"
+      "notes": "From register: BLACK_DIGEST \u2192 NUTRIENT DOSE / SALT FEED | claimed Study/Deferred 2026-10-31 (design-tool gap audit): live topology; the continuous rate is the X-PAR-02 param pass."
     },
     {
       "stream_id": "S31",
@@ -14258,7 +14258,7 @@
       "phase": "S",
       "presence": "present",
       "carries": "milled shell into digest",
-      "notes": "Investment casting baseline. Rate TBD.",
+      "notes": "Investment casting baseline. Rate TBD. | claimed Study/Deferred 2026-10-31 (design-tool gap audit): live topology; the continuous rate is the X-PAR-02 param pass.",
       "namespace": "IA",
       "layers": [
         "mass"
@@ -14271,7 +14271,8 @@
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
       "from_sector_id": "GLASS",
-      "to_sector_id": "GLASS"
+      "to_sector_id": "GLASS",
+      "claim_status": "Study / Deferred"
     },
     {
       "stream_id": "MFG_SCRAP_TO_IND",
@@ -14764,7 +14765,7 @@
       "phase": "S",
       "presence": "present",
       "carries": "Ca grease",
-      "notes": "Grease line. Rate per notes/GREASE_LINES.md.",
+      "notes": "Grease line. Rate per notes/GREASE_LINES.md. | claimed Study/Deferred 2026-10-31 (design-tool gap audit): live topology; the continuous rate is the X-PAR-02 param pass.",
       "namespace": "IA",
       "layers": [
         "mass"
@@ -14777,7 +14778,8 @@
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
       "from_sector_id": "OIL",
-      "to_sector_id": "MFG"
+      "to_sector_id": "MFG",
+      "claim_status": "Study / Deferred"
     },
     {
       "stream_id": "GREASE_LI_TO_MFG",
@@ -14786,7 +14788,7 @@
       "phase": "S",
       "presence": "present",
       "carries": "Li grease",
-      "notes": "Grease line. Rate per notes/GREASE_LINES.md.",
+      "notes": "Grease line. Rate per notes/GREASE_LINES.md. | claimed Study/Deferred 2026-10-31 (design-tool gap audit): live topology; the continuous rate is the X-PAR-02 param pass.",
       "namespace": "IA",
       "layers": [
         "mass"
@@ -14799,7 +14801,8 @@
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
       "from_sector_id": "OIL",
-      "to_sector_id": "MFG"
+      "to_sector_id": "MFG",
+      "claim_status": "Study / Deferred"
     },
     {
       "stream_id": "CHAR_TO_SI",
@@ -14874,7 +14877,7 @@
       "phase": "G",
       "presence": "present",
       "carries": "habitation CO2",
-      "notes": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md.",
+      "notes": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md. | claimed Study/Deferred 2026-10-31 (design-tool gap audit): live topology; the continuous rate is the X-PAR-02 param pass.",
       "namespace": "IA",
       "layers": [
         "mass"
@@ -14887,7 +14890,8 @@
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
       "from_sector_id": "HAB",
-      "to_sector_id": "HAB"
+      "to_sector_id": "HAB",
+      "claim_status": "Study / Deferred"
     },
     {
       "stream_id": "HAB_GREY",
@@ -14896,7 +14900,7 @@
       "phase": "L",
       "presence": "present",
       "carries": "grey water",
-      "notes": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md.",
+      "notes": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md. | claimed Study/Deferred 2026-10-31 (design-tool gap audit): live topology; the continuous rate is the X-PAR-02 param pass.",
       "namespace": "IA",
       "layers": [
         "mass"
@@ -14909,7 +14913,8 @@
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
       "from_sector_id": "HAB",
-      "to_sector_id": "WTR"
+      "to_sector_id": "WTR",
+      "claim_status": "Study / Deferred"
     },
     {
       "stream_id": "HAB_BLACK",
@@ -14918,7 +14923,7 @@
       "phase": "L",
       "presence": "present",
       "carries": "black water",
-      "notes": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md.",
+      "notes": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md. | claimed Study/Deferred 2026-10-31 (design-tool gap audit): live topology; the continuous rate is the X-PAR-02 param pass.",
       "namespace": "IA",
       "layers": [
         "mass"
@@ -14931,7 +14936,8 @@
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
       "from_sector_id": "HAB",
-      "to_sector_id": "WTR"
+      "to_sector_id": "WTR",
+      "claim_status": "Study / Deferred"
     },
     {
       "stream_id": "NUT_TO_BED",
@@ -14962,7 +14968,7 @@
       "phase": "L",
       "presence": "present",
       "carries": "UPW",
-      "notes": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md.",
+      "notes": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md. | claimed Study/Deferred 2026-10-31 (design-tool gap audit): live topology; the continuous rate is the X-PAR-02 param pass.",
       "namespace": "IA",
       "layers": [
         "mass"
@@ -14975,7 +14981,8 @@
         "note": "Rev AC new topology \u2014 unrated pending param pass"
       },
       "from_sector_id": "WTR",
-      "to_sector_id": "FAB"
+      "to_sector_id": "FAB",
+      "claim_status": "Study / Deferred"
     },
     {
       "stream_id": "HL-HX8-Q4-A",
@@ -22720,7 +22727,7 @@
     {
       "stream_id": "SQ-EVAP_ACID",
       "from_unit_id": "EVAP_ACID",
-      "to_unit_id": "HEAT_SINK",
+      "to_unit_id": "Q4_BUS",
       "phase": "E",
       "layers": [
         "energy"
@@ -22734,10 +22741,10 @@
         "value": 1.498,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086); to the Q4 loop (HEAT_SINK retired at Rev AC; gap audit 2026-10-31)."
       },
       "from_sector_id": "DIGESTER",
-      "to_sector_id": "GEO",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
@@ -22746,7 +22753,7 @@
     {
       "stream_id": "SQ-EVAP_BASE",
       "from_unit_id": "EVAP_BASE",
-      "to_unit_id": "HEAT_SINK",
+      "to_unit_id": "Q4_BUS",
       "phase": "E",
       "layers": [
         "energy"
@@ -22760,10 +22767,10 @@
         "value": 1.328,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086); to the Q4 loop (HEAT_SINK retired at Rev AC; gap audit 2026-10-31)."
       },
       "from_sector_id": "DIGESTER",
-      "to_sector_id": "GEO",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
@@ -22909,7 +22916,7 @@
     {
       "stream_id": "SQ-EVAP_ACID_VS",
       "from_unit_id": "EVAP_ACID_VS",
-      "to_unit_id": "HEAT_SINK",
+      "to_unit_id": "Q4_BUS",
       "phase": "E",
       "layers": [
         "energy"
@@ -22926,7 +22933,7 @@
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Pump work leaves as heat."
       },
       "from_sector_id": "DIGESTER",
-      "to_sector_id": "GEO",
+      "to_sector_id": "HEAT",
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],

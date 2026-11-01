@@ -305,7 +305,26 @@ def main():
             e = R['E'][i]
             if abs(R['x'][i] - R['x0'][i]) > 1e-7:
                 e['rate']['value'] = round(float(max(R['x'][i], 0.0)), 6)
-                e['rate']['note'] = (e['rate'].get('note') or '').split(' | X-PAR-02')[0] + ' | X-PAR-02 reconciled (AQS-PAR-003).'
+                e['rate']['note'] = (e.get('rate', {}).get('note') or '').split(' | X-PAR-02')[0] + ' | X-PAR-02 reconciled (AQS-PAR-003).'
+        # Rev AC topology cleanup (design-tool gap audit 2026-10-31): the unrated 'Rev AC new topology'
+        # edges that duplicate rated ones retire; edges whose rate the graph already states get it.
+        E = {e['stream_id']: e for e in g['edges']}
+        N = {n['unit_id']: n for n in g['nodes']}
+        # Rev AC topology audit (design-tool gap list 2026-10-31): the unrated 'Rev AC new topology'
+        # edges are live streams whose continuous rate awaits the param pass - claim them Study /
+        # Deferred (the honest ledger) rather than leave them unknown. Nothing is retired: several
+        # are the unit's balancing stream (the glass mill's fines pass, the hab grey/black split).
+        for k in ('HAB_GREY', 'HAB_BLACK', 'HAB_CO2_TO_HDR', 'GLASS_MILL_TO_DIGEST',
+                  'UPW_TO_FAB', 'S30', 'GREASE_CA_TO_MFG', 'GREASE_LI_TO_MFG'):
+            e = E.get(k)
+            if e and e.get('presence') == 'present' and not (e.get('rate') or {}).get('value'):
+                e['claim_status'] = 'Study / Deferred'
+                base = (e.get('notes') or '').split(' | claimed Study/Deferred')[0]
+                e['notes'] = base + ' | claimed Study/Deferred 2026-10-31 (design-tool gap audit): live topology; the continuous rate is the X-PAR-02 param pass.'
+        e48 = E.get('S48')
+        if e48 and e48.get('presence') == 'present' and not (e48.get('rate') or {}).get('value'):
+            e48['rate'] = {'value': 0.0, 'unit': 'kW', 'status': 'study',
+                           'note': 'Q-010 / A-M-186: GEO_ORC is the standby M1 at 0 kW_e until the GHEX survey books a surplus; the booked standby value, not an invented rate'}
         open(GP, 'w').write(json.dumps(g, indent=2))
 
 if __name__ == '__main__': main()
