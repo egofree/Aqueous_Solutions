@@ -1,0 +1,166 @@
+{
+  "bbox_mm": [
+    6696.0,
+    1500.0,
+    600.1
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    6696,
+    1500,
+    600
+  ],
+  "size_basis": "L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167)",
+  "graph_revision": "AC",
+  "solids": 1,
+  "all_parts_valid": true,
+  "tubes": {
+    "count": 16,
+    "od_mm": 114.3,
+    "wall_mm": 13.49,
+    "length_mm": 6096.0,
+    "halves": 2,
+    "tiers_z_mm": [
+      142.0,
+      382.0
+    ],
+    "rows_y_mm": [
+      83.3,
+      250.0,
+      416.7,
+      583.3,
+      750.0,
+      916.7,
+      1083.3,
+      1250.0,
+      1416.7
+    ],
+    "main_tubes": 14,
+    "crew_tubes": 2,
+    "divider_y_mm": 1166.7,
+    "tube_x_span_mm": [
+      300.0,
+      6396.0
+    ],
+    "material": "SA-312 TP316L seamless DN100 Sch 160, B16.11 Class 9000 fittings / autoclave cone-and-thread, O2 bank cleaned to ASTM G93",
+    "drawn_mass_kg": 3333.7,
+    "node_steel_kg": 2760.2688,
+    "note": "drawn tube set vs the node steel_kg: the node figure is the receivers.py sizing record and is carried, not recalculated (WORK_ORDER W12)"
+  },
+  "relief": {
+    "design_kPa": 22000.0,
+    "relief_mm": 9.0,
+    "valves": 2,
+    "basis": "node relief_basis: API 520 blocked-outlet governing with the API 521 fire case per half bank (8 tubes per half); valves purchased, bore 9 mm"
+  },
+  "storage": {
+    "mode": null,
+    "store_kg": null,
+    "crew_reserve_kg": null,
+    "crew_basis": null
+  },
+  "nozzles_drawn": {
+    "N5": {
+      "style": "stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "x_mm": 2281.3,
+      "z_drawn_mm": 400.0,
+      "schedule_rating": "Class 150",
+      "note": "schedule datum 600 mm was issued against the 300 x 300 x 2000 study box that predates the A-M-167 rack envelope (H 600); drawn clamped at 400 mm - named hold, WORK_ORDER W12"
+    },
+    "N6": {
+      "style": "stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "x_mm": 3348.0,
+      "z_drawn_mm": 400.0,
+      "schedule_rating": "Class 150",
+      "note": "schedule datum 600 mm was issued against the 300 x 300 x 2000 study box that predates the A-M-167 rack envelope (H 600); drawn clamped at 400 mm - named hold, WORK_ORDER W12"
+    },
+    "N8": {
+      "style": "stub",
+      "dn": "DN50",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "x_mm": 4414.7,
+      "z_drawn_mm": 400.0,
+      "schedule_rating": "Class 150",
+      "note": "schedule datum 600 mm was issued against the 300 x 300 x 2000 study box that predates the A-M-167 rack envelope (H 600); drawn clamped at 400 mm - named hold, WORK_ORDER W12"
+    },
+    "N2": {
+      "style": "stub",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 1500.0,
+      "x_mm": 3348.0,
+      "z_drawn_mm": 400.0,
+      "schedule_rating": "Class 150",
+      "note": "schedule datum 1500 mm was issued against the 300 x 300 x 2000 study box that predates the A-M-167 rack envelope (H 600); drawn clamped at 400 mm - named hold, WORK_ORDER W12"
+    },
+    "N7": {
+      "style": "stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "x_mm": 2548.0,
+      "z_drawn_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric stub on the rack side rail (hose makeup at the rack face)"
+    },
+    "N9": {
+      "style": "stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "x_mm": 4148.0,
+      "z_drawn_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric stub on the rack side rail (hose makeup at the rack face)"
+    },
+    "N1": {
+      "style": "stub",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 400.0,
+      "x_mm": 3348.0,
+      "z_drawn_mm": 400.0,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric stub on the rack side rail (hose makeup at the rack face)"
+    },
+    "N3": {
+      "style": "stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "x_mm": 3348.0,
+      "z_drawn_mm": 50.0,
+      "schedule_rating": "Class 150",
+      "note": "skid-top stub beside the -X post, tip at the 50 datum"
+    },
+    "N4": {
+      "style": "stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 2000.0,
+      "x_mm": 3348.0,
+      "z_drawn_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "note": "schedule datum 2000 mm was issued against the 300 x 300 x 2000 study box that predates the A-M-167 rack envelope (H 600); drawn clamped at 600 mm - named hold, WORK_ORDER W12; vent up the tie bar to the rack top"
+    }
+  },
+  "nozzle_count_schedule": 9,
+  "nozzle_idiom": "atmospheric stubs on the rack side rails; schedule rating column (Class 150) carried verbatim as text against node design 22000 kPa (hold, W12)",
+  "part_mass_kg": {
+    "frame": 2448.3,
+    "tubes": 3333.7,
+    "saddles": 631.1,
+    "divider": 98.5,
+    "relief_valves": 51.8,
+    "nozzles": 3.1
+  },
+  "cad_stl_scope": "full build, metres (the build fills the A-M-167 rack envelope exactly)",
+  "cadquery": "2.8.0"
+}

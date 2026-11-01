@@ -14,7 +14,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Pressure and temperature. High pressure trips the feed.
 
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped. The solid is still an envelope. `cad/stl/CRYO_O2.stl` is the outer envelope only; nothing inside it is modelled yet.
+7. Code. Shop. Not stamped. The solid is `cad/stl/CRYO_O2.stl`, from `models/mfg/CRYO_O2/cryo_o2.py` (AQS-PLAN-006). Drawings at `models/mfg/CRYO_O2/drawings/`. The build fills the node rack envelope (A-M-167) exactly; the duty relief text above predates the node relief_basis (API 520/521 per half bank) and the schedule rating column is carried as a named hold.
 
 8. Open items. No diameter on this node.
 9. Balance (AQS-PAR-003 Rev C). S87 13.820 kg/d photosynthetic O2 in; IA-ASU-O2 31.087 kg/d; S83 44.906 kg/d = header draw (T3, T6).

@@ -118,6 +118,32 @@ per unit (plan rule 4); this note gains a section per accepted unit.
   with A-COL stages left a hold, the study shell/skid thicknesses, and the unnamed vacuum
   jacket.
 
+## CRYO_O2 (oxygen bank, tier 3) — commit 6
+
+- `models/mfg/CRYO_O2/cryo_o2.py`: 16 SA-312 TP316L DN100 Sch 160 tubes (OD 114.3 × t 13.49,
+  6.096 m, bores drawn open, O2-cleaned to ASTM G93, 3273.9 kg drawn wall mass against the
+  node steel_kg 2760.27 sizing record, carried not recalculated) in 2 tiers × 9 rows over a
+  316L SHS rack frame that fills the A-M-167 envelope 6696 × 1500 × 600 exactly. Main bank
+  14 tubes (rows 1–7, both tiers); the crew reserve is the 2-tube separate bank behind a
+  divider plate at y 1166.7 (node banks + crew_reserve_basis, NFPA 2 ch. 7). Rows y < 750 /
+  > 750 are the two relief halves of the node API 520/521 fire case (8 tubes per half), with
+  one 9 mm relief-valve envelope per half at the +X end posts (AQS-PLAN-006 rule 6).
+- All 9 rows of the schedule drawn at tag, face and bore on the side rails; z 400/160 as
+  issued, z 1500/600/2000/50 clamped with named holds.
+- Deliverables as per the batch recipe; `tracker --check CRYO_O2` green;
+  `cad/stl/CRYO_O2.stl` replaced from the build; the stale envelope `drawings/GA.md`
+  superseded. Holds led by the Class 150 schedule rating column against the 22000 kPa node
+  design, the clamped datums, the steel_kg basis difference, and study frame sections.
+
+## Batch close
+
+Six units accepted in six commits (LEACH_CSTR_1, CRYO_ASU, CRYO_CO2, CRYO_H2, CRYO_N2,
+CRYO_O2). Tracker at 16 units on M3, 149 at M2, 32 at M0, 3 accounting nodes. The lane also
+landed a housekeeping commit ahead of the batch (a full-regen refresh of the style-builder
+exports that predated the current builder and graph). Rev-stamp register stamped in a
+dedicated commit after the batch, per house convention.
+
+
 
 
 

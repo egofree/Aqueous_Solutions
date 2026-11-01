@@ -10,7 +10,7 @@ OF-08,electronics,variable-frequency drive,IEC 61800-5-1,13,2.2 kW x4; 1.5 kW x3
 OF-10,electronics,compressor contactor + overload,IEC 60947-4-1,1,1.1 kW hermetic x1,1
 OF-11,electronics,stepper driver,IEC 61800-5-1,3,24/48 V DC x3,1
 OF-12,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",IEC 61508 / IEC 61511,2,- x2,1
-OF-13,fabricated part,fabricated part set,models/mfg/<unit>/bom.csv,197,9 BOM lines x27; 1 BOM lines x23; 7 BOM lines x15; 6 BOM lines x12; 5 BOM lines x12; 4 BOM lines x11; 18 BOM lines x10; 3 BOM lines x8; 12 BOM lines x8; 2 BOM lines x7; 15 BOM lines x6; 8 BOM lines x5; 30 BOM lines x4; 10 BOM lines x4; 39 BOM lines x3; 21 BOM lines x3; 23 BOM lines x3; 16 BOM lines x3; 17 BOM lines x3; 33 BOM lines x3; 13 BOM lines x2; 36 BOM lines x2; 26 BOM lines x2; 22 BOM lines x2; 20 BOM lines x1; 11 BOM lines x1; 25 BOM lines x1; 32 BOM lines x1; 19 BOM lines x1; 41 BOM lines x1; 34 BOM lines x1; 14 BOM lines x1; 50 BOM lines x1; 24 BOM lines x1; 48 BOM lines x1; 35 BOM lines x1; 67 BOM lines x1; 56 BOM lines x1; 72 BOM lines x1; 53 BOM lines x1; 28 BOM lines x1; 38 BOM lines x1; 118 BOM lines x1,197
+OF-13,fabricated part,fabricated part set,models/mfg/<unit>/bom.csv,197,9 BOM lines x27; 1 BOM lines x23; 7 BOM lines x15; 6 BOM lines x13; 5 BOM lines x12; 4 BOM lines x11; 18 BOM lines x10; 3 BOM lines x8; 12 BOM lines x8; 2 BOM lines x7; 15 BOM lines x6; 8 BOM lines x5; 30 BOM lines x4; 10 BOM lines x4; 39 BOM lines x3; 21 BOM lines x3; 23 BOM lines x3; 16 BOM lines x3; 17 BOM lines x3; 33 BOM lines x3; 13 BOM lines x2; 36 BOM lines x2; 26 BOM lines x2; 22 BOM lines x2; 11 BOM lines x1; 25 BOM lines x1; 32 BOM lines x1; 19 BOM lines x1; 41 BOM lines x1; 34 BOM lines x1; 14 BOM lines x1; 50 BOM lines x1; 24 BOM lines x1; 48 BOM lines x1; 35 BOM lines x1; 67 BOM lines x1; 56 BOM lines x1; 72 BOM lines x1; 53 BOM lines x1; 28 BOM lines x1; 38 BOM lines x1; 118 BOM lines x1,197
 OF-14,fastener,anchor bolt,ISO 3506 A4-70 wedge anchor,14710,M10 x14710,138
 OF-15,fastener,M10 x 40 lid bolt,ISO 3506 A4-70,20,M10 x 40 lid bolt with nut and washers x20,2
 OF-16,fastener,M8 x 30 lid bolt,ISO 3506 A4-70,12,M8 x 30 lid bolt with nut and washers x12,1
@@ -74,8 +74,8 @@ OF-83,fastener,M10 anchor,ISO 898-1 8.8,40,M10 anchor x40,10
 OF-84,fastener,M8 x 25 hopper bolts,ISO 898-1 8.8,8,M8 x 25 hopper bolts x8,1
 OF-85,fastener,M6 x 25,ISO 3506 A4-70,273,M6 x 25 x273,9
 OF-86,fastener,M8 x 40,ISO 3506 A4-70,88,M8 x 40 x88,9
-OF-87,fastener,M10 x 30 wedge anchor,ISO 3506 A4-70,84,M10 x 30 wedge anchor x84,13
+OF-87,fastener,M10 x 30 wedge anchor,ISO 3506 A4-70,92,M10 x 30 wedge anchor x92,14
 OF-88,fastener,M10 x 35,ISO 3506 A4-70,54,M10 x 35 x54,9
 OF-89,fastener,M12 x 60 hex bolt + nut + 2 washers,PVDF (non-metallic),34,M12 x 60 hex bolt + nut + 2 washers x34,1
-OF-90,fastener,M12 x 40,ISO 3506 A4-70,312,M12 x 40 x312,3
+OF-90,fastener,M12 x 40,ISO 3506 A4-70,440,M12 x 40 x440,4
 OF-91,fastener,M12 x 45,ISO 3506 A4-70,8,M12 x 45 x8,1

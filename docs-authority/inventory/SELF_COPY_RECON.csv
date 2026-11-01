@@ -475,26 +475,12 @@ CRYO_HX_Q4,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 6
 CRYO_HX_Q4,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_N2,"Shell 300 x 300 x 1980 mm, t 3, welded closed, on a 20 mm skid",1,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_N2,Nozzle set per docs-authority/nozzles/CRYO_N2.csv (8 rows),8,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_O2,Body D114 x 600 mm,1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_O2,Process nozzle DN15,6,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_O2,Process nozzle DN50,1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_O2,"Relief valve, 9.0 mm bore, DN15 body",2,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_O2,fastener: anchor bolt M10,30,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor
-CRYO_O2,fastener: anchor bolt M10,28,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor
-CRYO_O2,fastener: anchor bolt M10,42,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor
-CRYO_O2,fastener: anchor bolt M10,42,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor
-CRYO_O2,"instrument: gas detector, O2 enrichment electrochemical O2",3,"alarm 23.5 vol %, trip 25 vol %, breathing height",Unstated,-,"not classed: alarm 23.5 vol %, trip 25 vol %, breathi"
-CRYO_O2,instrument: pressure transmitter 0-400 bar,1,"316L thin-film strain gauge, IEC 61298",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_O2,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_O2,support: U-bolt with guide DN15,15,"316 U-bolt, MSS SP-58 Type 24",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_O2,support: U-bolt with guide DN15,14,"316 U-bolt, MSS SP-58 Type 24",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_O2,support: U-bolt with guide DN15,21,"316 U-bolt, MSS SP-58 Type 24",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_O2,support: pipe clamp DN50,21,"PP clamp with EPDM liner, MSS SP-58 Type 7",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
-CRYO_O2,"valve: ESD valve, spring-return actuator DN15",2,"316L, fail-safe, IEC 61511",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_O2,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_O2,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_O2,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_O2,valve: isolation valve DN50,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+CRYO_O2,"Cylinder tubes SA-312 TP316L seamless DN100 Sch 160, OD 114.3 x t 13.49, 6.096 m",16,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+CRYO_O2,"Rack frame: skid plate + SHS posts, tie bars, tier combs and side rails + cross ",1,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+CRYO_O2,"Tube saddles, 3 per tube, with wear groove",48,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+CRYO_O2,"Crew-reserve divider plate, main bank | crew bank",1,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+CRYO_O2,"Relief valves, API 520 / API 521 fire case per half bank, bore 9 mm",2,purchase item,Unstated,-,not classed: purchase item
+CRYO_O2,"Connection set per docs-authority/nozzles/CRYO_O2.csv (9 rows, clamped heights p",9,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CR_CELL,Lined cell shell 800 x 800 x 1600 mm: casing t6 (walls + roof + head plate 1154),1,carbon steel (CS class),Closed,Fe EW -> MET_MELT -> mill/draw,
 CR_CELL,"Ceramic-fibre backup lining kit, t24",1,ceramic-fibre board 128 kg/m3,Unstated,-,not classed: ceramic-fibre board 128 kg/m3
 CR_CELL,"Graphite ram lining kit, t40, wetted faces",1,graphite ramming paste 1550 kg/m3,Partial,OIL_PYRO char,"graphitisation above 2,500 C not in the heat ladder"
@@ -3156,8 +3142,8 @@ OF-83,fastener: M10 anchor (ISO 898-1 8.8),40,,Unstated,-,material not stated on
 OF-84,fastener: M8 x 25 hopper bolts (ISO 898-1 8.8),8,,Unstated,-,material not stated on the unit BOM line
 OF-85,fastener: M6 x 25 (ISO 3506 A4-70),273,,Unstated,-,material not stated on the unit BOM line
 OF-86,fastener: M8 x 40 (ISO 3506 A4-70),88,,Unstated,-,material not stated on the unit BOM line
-OF-87,fastener: M10 x 30 wedge anchor (ISO 3506 A4-70),84,,Unstated,-,material not stated on the unit BOM line
+OF-87,fastener: M10 x 30 wedge anchor (ISO 3506 A4-70),92,,Unstated,-,material not stated on the unit BOM line
 OF-88,fastener: M10 x 35 (ISO 3506 A4-70),54,,Unstated,-,material not stated on the unit BOM line
 OF-89,fastener: M12 x 60 hex bolt + nut + 2 washers (PVDF (non-metallic)),34,,Unstated,-,material not stated on the unit BOM line
-OF-90,fastener: M12 x 40 (ISO 3506 A4-70),312,,Unstated,-,material not stated on the unit BOM line
+OF-90,fastener: M12 x 40 (ISO 3506 A4-70),440,,Unstated,-,material not stated on the unit BOM line
 OF-91,fastener: M12 x 45 (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line

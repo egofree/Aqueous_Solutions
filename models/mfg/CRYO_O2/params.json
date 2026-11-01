@@ -158,5 +158,21 @@
  "acceptance_sets": [
   "A-core",
   "A-COL"
- ]
+ ],
+ "layout": {
+  "frame": "rack frame: x along 6696, y across 1500, z up 600; skid 12, SHS 80 x 80 x 5 posts and side rails, grooved tier combs, cross ties",
+  "tubes": "16 tubes (14 main + 2 crew reserve) in 2 tiers (z 142/382) x 9 rows (y pitch 166.7); main = rows 1-7 both tiers, crew = rows 8-9 lower tier behind the divider at y 1166.67; rows y < 750 = relief half 1, above = half 2",
+  "relief": "one 9 mm API 520/521 valve per half bank at the +X end posts",
+  "nozzle_spread": "connections land on the side rails; schedule heights that fit the 600 rack are drawn as issued, the rest clamped (per-tag in check.nozzles_drawn)",
+  "hardware_idiom": "stubs lap the rails or skid so every union fuses; bbox = the A-M-167 rack envelope exactly"
+ },
+ "study": {
+  "skid_t_mm": 12.0,
+  "shs_mm": [
+   80.0,
+   5.0
+  ],
+  "tier_pitch_mm": 240.0,
+  "note": "frame sections and tier pitch are study sizes not stated by any authority (the duty names only 316L and CA 0 mm)"
+ }
 }

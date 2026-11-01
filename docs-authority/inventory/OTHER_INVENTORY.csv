@@ -134,7 +134,9 @@ CRYO,CRYO,CRYO_N2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 15
 CRYO,CRYO,CRYO_N2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,S88: one at each end nozzle (assumed)
 CRYO,CRYO,CRYO_N2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-N2-VENT: one at each end nozzle (assumed)
 CRYO,CRYO,CRYO_N2,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-AHU-FIX: one at each end nozzle (assumed)
-CRYO,CRYO,CRYO_O2,fabricated part,fabricated part set,20 BOM lines,models/mfg/CRYO_O2/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+CRYO,CRYO,CRYO_O2,fabricated part,fabricated part set,6 BOM lines,models/mfg/CRYO_O2/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+CRYO,CRYO,CRYO_O2,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,8,models/mfg/CRYO_O2/fasteners.csv
+CRYO,CRYO,CRYO_O2,fastener,M12 x 40,M12 x 40,ISO 3506 A4-70,128,models/mfg/CRYO_O2/fasteners.csv
 CRYO,CRYO,CRYO_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,S02: 2 per support (assumed)
 CRYO,CRYO,CRYO_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,S50: 2 per support (assumed)
 CRYO,CRYO,CRYO_O2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,42,S83: 2 per support (assumed)
