@@ -16,7 +16,7 @@ This page ties every derived file to the graph commit it was last made from, so 
 
 The count line below is generated with the page. `python3 -m flow_graph.param.regen` refreshes the stamps; `--check` fails on any stale file.
 
-1575 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+1773 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Made from graph commit | Status |
 |---|---|---|
@@ -77,6 +77,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/LOAD_LIST.json` | 514e50a (regenerated, no change) | current |
 | `docs-authority/LOAD_LIST.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/MAINT_PLAN.md` | 514e50a (regenerated, no change) | current |
+| `docs-authority/MFG_MODEL_PLAN.md` | 514e50a | current |
 | `docs-authority/MFG_TOOLS.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/MODEL_WORKBOOK.xlsx` | 514e50a (regenerated, no change) | current |
 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | 514e50a (regenerated, no change) | current |
@@ -1248,6 +1249,203 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `media/_generated.json` | - | by design: the manifest that lists generated media and the graph each was made from (regen_derived.py) |
 | `media/logo3.png` | - | artwork, not derived |
 | `media/verify_view.png` | - | manual capture in GUI FreeCAD (models/freecad/verify_view_png.py) |
+| `models/mfg/ACID_POLISH_SCRUB/params.json` | 514e50a | current |
+| `models/mfg/ADS_CHILL/params.json` | 514e50a | current |
+| `models/mfg/AFTERBURNER/params.json` | 514e50a | current |
+| `models/mfg/AFTERBURNER_FLUE/params.json` | 514e50a | current |
+| `models/mfg/AIR_RECEIVER/params.json` | 514e50a | current |
+| `models/mfg/ALK_SCRUBBER/params.json` | 514e50a | current |
+| `models/mfg/AL_POT/params.json` | 514e50a | current |
+| `models/mfg/AQUA_TANK/params.json` | 514e50a | current |
+| `models/mfg/AQUA_UV/params.json` | 514e50a | current |
+| `models/mfg/BACKUP_GEN/params.json` | 514e50a | current |
+| `models/mfg/BAGHOUSE/params.json` | 514e50a | current |
+| `models/mfg/BEE_HIVE/params.json` | 514e50a | current |
+| `models/mfg/BIOFILTER/params.json` | 514e50a | current |
+| `models/mfg/BLACK_DIGEST/params.json` | 514e50a | current |
+| `models/mfg/BLOW_MOLD/params.json` | 514e50a | current |
+| `models/mfg/BMED_ACID/params.json` | 514e50a | current |
+| `models/mfg/BMED_BASE/params.json` | 514e50a | current |
+| `models/mfg/BMED_UPW_POLISH/params.json` | 514e50a | current |
+| `models/mfg/BSFL_BIN/params.json` | 514e50a | current |
+| `models/mfg/C29_RECYCLE/params.json` | 514e50a | current |
+| `models/mfg/CAST_LINE/params.json` | 514e50a | current |
+| `models/mfg/CATCH_TANK/params.json` | 514e50a | current |
+| `models/mfg/CA_POT/params.json` | 514e50a | current |
+| `models/mfg/CHICKEN_COOP/params.json` | 514e50a | current |
+| `models/mfg/COLD_MILL/params.json` | 514e50a | current |
+| `models/mfg/COMB_HEAT/params.json` | 514e50a | current |
+| `models/mfg/COMMON_AREA/params.json` | 514e50a | current |
+| `models/mfg/CONTINUOUS_RECYCLE/params.json` | 514e50a | current |
+| `models/mfg/CONT_CAST/params.json` | 514e50a | current |
+| `models/mfg/CRU/params.json` | 514e50a | current |
+| `models/mfg/CRYO_AHU/params.json` | 514e50a | current |
+| `models/mfg/CRYO_AHU_COND_CONDENSABLE/params.json` | 514e50a | current |
+| `models/mfg/CRYO_ASU/params.json` | 514e50a | current |
+| `models/mfg/CRYO_CO2/params.json` | 514e50a | current |
+| `models/mfg/CRYO_DED_COOL/params.json` | 514e50a | current |
+| `models/mfg/CRYO_H2/params.json` | 514e50a | current |
+| `models/mfg/CRYO_HX_Q4/params.json` | 514e50a | current |
+| `models/mfg/CRYO_N2/params.json` | 514e50a | current |
+| `models/mfg/CRYO_O2/params.json` | 514e50a | current |
+| `models/mfg/CR_CELL/params.json` | 514e50a | current |
+| `models/mfg/DRAW/params.json` | 514e50a | current |
+| `models/mfg/DRY_COOLER/params.json` | 514e50a | current |
+| `models/mfg/DUCKWEED/params.json` | 514e50a | current |
+| `models/mfg/DUCK_PEN/params.json` | 514e50a | current |
+| `models/mfg/ELECTRODE_COAT/params.json` | 514e50a | current |
+| `models/mfg/EVAP_ACID/params.json` | 514e50a | current |
+| `models/mfg/EVAP_ACID_VS/params.json` | 514e50a | current |
+| `models/mfg/EVAP_BASE/params.json` | 514e50a | current |
+| `models/mfg/EW_1/params.json` | 514e50a | current |
+| `models/mfg/EW_2/params.json` | 514e50a | current |
+| `models/mfg/EW_3/params.json` | 514e50a | current |
+| `models/mfg/EW_4/params.json` | 514e50a | current |
+| `models/mfg/EW_5/params.json` | 514e50a | current |
+| `models/mfg/EW_6/params.json` | 514e50a | current |
+| `models/mfg/EW_7/params.json` | 514e50a | current |
+| `models/mfg/EW_8/params.json` | 514e50a | current |
+| `models/mfg/EW_9/params.json` | 514e50a | current |
+| `models/mfg/EXTRUDE/params.json` | 514e50a | current |
+| `models/mfg/EXT_HALL/params.json` | 514e50a | current |
+| `models/mfg/FAB_UPW_TANK/params.json` | 514e50a | current |
+| `models/mfg/FEED_PREP/params.json` | 514e50a | current |
+| `models/mfg/FILM_CAST/params.json` | 514e50a | current |
+| `models/mfg/FLOAT_SINK/params.json` | 514e50a | current |
+| `models/mfg/FLUE_KO/params.json` | 514e50a | current |
+| `models/mfg/FLUX_PREP/params.json` | 514e50a | current |
+| `models/mfg/FOOD_STORE/params.json` | 514e50a | current |
+| `models/mfg/FORGE/params.json` | 514e50a | current |
+| `models/mfg/FUEL_CELL/params.json` | 514e50a | current |
+| `models/mfg/F_RECOVER/params.json` | 514e50a | current |
+| `models/mfg/GALLEY/params.json` | 514e50a | current |
+| `models/mfg/GAS_ATOMIZER/params.json` | 514e50a | current |
+| `models/mfg/GEO_GHEX/params.json` | 514e50a | current |
+| `models/mfg/GEO_HP/params.json` | 514e50a | current |
+| `models/mfg/GEO_HP_CLOSED_LOOP/params.json` | 514e50a | current |
+| `models/mfg/GLASS_BURNOUT/params.json` | 514e50a | current |
+| `models/mfg/GLASS_DIGEST/params.json` | 514e50a | current |
+| `models/mfg/GLASS_MILL/params.json` | 514e50a | current |
+| `models/mfg/GLASS_RINSE/params.json` | 514e50a | current |
+| `models/mfg/GREASE_CA/params.json` | 514e50a | current |
+| `models/mfg/GREASE_LI/params.json` | 514e50a | current |
+| `models/mfg/GREY_TREAT/params.json` | 514e50a | current |
+| `models/mfg/GROWBED_A/params.json` | 514e50a | current |
+| `models/mfg/GROWBED_B/params.json` | 514e50a | current |
+| `models/mfg/GROW_BED/params.json` | 514e50a | current |
+| `models/mfg/GW_INTAKE/params.json` | 514e50a | current |
+| `models/mfg/H2O_ELYZ/params.json` | 514e50a | current |
+| `models/mfg/H2_DRYER/params.json` | 514e50a | current |
+| `models/mfg/HABITATION/params.json` | 514e50a | current |
+| `models/mfg/HDR_CO2/params.json` | 514e50a | current |
+| `models/mfg/HDR_H2/params.json` | 514e50a | current |
+| `models/mfg/HDR_N2/params.json` | 514e50a | current |
+| `models/mfg/HDR_O2/params.json` | 514e50a | current |
+| `models/mfg/HDR_UPW/params.json` | 514e50a | current |
+| `models/mfg/HF_GEN/params.json` | 514e50a | current |
+| `models/mfg/HOPPER/params.json` | 514e50a | current |
+| `models/mfg/HX8/params.json` | 514e50a | current |
+| `models/mfg/HYDRO_SET/params.json` | 514e50a | current |
+| `models/mfg/IND_MELT/params.json` | 514e50a | current |
+| `models/mfg/INV_CAST/params.json` | 514e50a | current |
+| `models/mfg/LEACH_CSTR_1/params.json` | 514e50a | current |
+| `models/mfg/LITHO_ALIGN/params.json` | 514e50a | current |
+| `models/mfg/LITHO_COAT/params.json` | 514e50a | current |
+| `models/mfg/LITHO_DEV/params.json` | 514e50a | current |
+| `models/mfg/LI_RECOVER/params.json` | 514e50a | current |
+| `models/mfg/LOAD_AGG/params.json` | 514e50a | current |
+| `models/mfg/MAU_HX/params.json` | 514e50a | current |
+| `models/mfg/MEDICAL/params.json` | 514e50a | current |
+| `models/mfg/MEOH_COND/params.json` | 514e50a | current |
+| `models/mfg/MEOH_FC/params.json` | 514e50a | current |
+| `models/mfg/MEOH_FERM/params.json` | 514e50a | current |
+| `models/mfg/MEOH_SYNTH/params.json` | 514e50a | current |
+| `models/mfg/MEOH_TANK/params.json` | 514e50a | current |
+| `models/mfg/METAL_STORE/params.json` | 514e50a | current |
+| `models/mfg/MET_AHU/params.json` | 514e50a | current |
+| `models/mfg/MET_HX_Q4/params.json` | 514e50a | current |
+| `models/mfg/MET_MELT/params.json` | 514e50a | current |
+| `models/mfg/MET_SCRUB/params.json` | 514e50a | current |
+| `models/mfg/MET_SYN/params.json` | 514e50a | current |
+| `models/mfg/MFG_SHOP/params.json` | 514e50a | current |
+| `models/mfg/MG_POT/params.json` | 514e50a | current |
+| `models/mfg/MO_CELL/params.json` | 514e50a | current |
+| `models/mfg/NCG_HEADER/params.json` | 514e50a | current |
+| `models/mfg/NOX_SCRUB/params.json` | 514e50a | current |
+| `models/mfg/NUTRIENT_DOSE/params.json` | 514e50a | current |
+| `models/mfg/OIL_DRYER/params.json` | 514e50a | current |
+| `models/mfg/OIL_FRAC/params.json` | 514e50a | current |
+| `models/mfg/OIL_PYRO/params.json` | 514e50a | current |
+| `models/mfg/PELLET/params.json` | 514e50a | current |
+| `models/mfg/POLISH_BANK/params.json` | 514e50a | current |
+| `models/mfg/POLY_COND/params.json` | 514e50a | current |
+| `models/mfg/POLY_F/params.json` | 514e50a | current |
+| `models/mfg/POLY_FIBER/params.json` | 514e50a | current |
+| `models/mfg/POLY_OLEFIN/params.json` | 514e50a | current |
+| `models/mfg/POLY_STOCK/params.json` | 514e50a | current |
+| `models/mfg/POWDER_RESIN/params.json` | 514e50a | current |
+| `models/mfg/PROD_C11_C18/params.json` | 514e50a | current |
+| `models/mfg/PROD_C19_C28/params.json` | 514e50a | current |
+| `models/mfg/PROD_C29/params.json` | 514e50a | current |
+| `models/mfg/PROD_C5_C10/params.json` | 514e50a | current |
+| `models/mfg/PROD_MEOH/params.json` | 514e50a | current |
+| `models/mfg/PROD_O2/params.json` | 514e50a | current |
+| `models/mfg/PV_ARRAY/params.json` | 514e50a | current |
+| `models/mfg/P_CA/params.json` | 514e50a | current |
+| `models/mfg/Q1_A/params.json` | 514e50a | current |
+| `models/mfg/Q1_B/params.json` | 514e50a | current |
+| `models/mfg/Q2_A/params.json` | 514e50a | current |
+| `models/mfg/Q2_B/params.json` | 514e50a | current |
+| `models/mfg/Q3_A/params.json` | 514e50a | current |
+| `models/mfg/Q3_B/params.json` | 514e50a | current |
+| `models/mfg/Q4_A/params.json` | 514e50a | current |
+| `models/mfg/Q4_B/params.json` | 514e50a | current |
+| `models/mfg/Q4_BUS/params.json` | 514e50a | current |
+| `models/mfg/QUAIL_CAGE/params.json` | 514e50a | current |
+| `models/mfg/RABBIT_HUTCH/params.json` | 514e50a | current |
+| `models/mfg/RECTIFIER/params.json` | 514e50a | current |
+| `models/mfg/REC_DAYROOM/params.json` | 514e50a | current |
+| `models/mfg/REE_RECOVER/params.json` | 514e50a | current |
+| `models/mfg/RELIEF_CRYO/params.json` | 514e50a | current |
+| `models/mfg/RELIEF_H2/params.json` | 514e50a | current |
+| `models/mfg/REMIN/params.json` | 514e50a | current |
+| `models/mfg/RES_HEAT/params.json` | 514e50a | current |
+| `models/mfg/RF_HEAT/params.json` | 514e50a | current |
+| `models/mfg/ROLL/params.json` | 514e50a | current |
+| `models/mfg/ROOF_TANK/params.json` | 514e50a | current |
+| `models/mfg/SALT_FEED/params.json` | 514e50a | current |
+| `models/mfg/SHELL_BREAK/params.json` | 514e50a | current |
+| `models/mfg/SHELL_BUILD/params.json` | 514e50a | current |
+| `models/mfg/SHELL_BURNOUT/params.json` | 514e50a | current |
+| `models/mfg/SINTER/params.json` | 514e50a | current |
+| `models/mfg/SI_REDUCE/params.json` | 514e50a | current |
+| `models/mfg/SLEEP_QUARTERS/params.json` | 514e50a | current |
+| `models/mfg/SOLAR_PV_CELL/params.json` | 514e50a | current |
+| `models/mfg/SOL_ARK_60K/params.json` | 514e50a | current |
+| `models/mfg/STOCK_OUT/params.json` | 514e50a | current |
+| `models/mfg/TFE_SYN/params.json` | 514e50a | current |
+| `models/mfg/TI_CELL/params.json` | 514e50a | current |
+| `models/mfg/VAC_CAST/params.json` | 514e50a | current |
+| `models/mfg/VAC_IND/params.json` | 514e50a | current |
+| `models/mfg/VCD_TRAIN/params.json` | 514e50a | current |
+| `models/mfg/VDF_SYN/params.json` | 514e50a | current |
+| `models/mfg/VERMI_BIN/params.json` | 514e50a | current |
+| `models/mfg/WAFER_FAB/params.json` | 514e50a | current |
+| `models/mfg/WASHROOM/params.json` | 514e50a | current |
+| `models/mfg/WAX_PATTERN/params.json` | 514e50a | current |
+| `models/mfg/WET_BENCH/params.json` | 514e50a | current |
+| `models/mfg/WIRE_DRAW/params.json` | 514e50a | current |
+| `models/mfg/WS_AMMONIA/params.json` | 514e50a | current |
+| `models/mfg/WS_DOPE/params.json` | 514e50a | current |
+| `models/mfg/WS_HF_ED/params.json` | 514e50a | current |
+| `models/mfg/WS_KOH/params.json` | 514e50a | current |
+| `models/mfg/WS_NITRIC/params.json` | 514e50a | current |
+| `models/mfg/WS_PEROX/params.json` | 514e50a | current |
+| `models/mfg/WS_PHOS/params.json` | 514e50a | current |
+| `models/mfg/WS_SLURRY/params.json` | 514e50a | current |
+| `models/mfg/WS_SOLV/params.json` | 514e50a | current |
+| `models/mfg/ZNBR2/params.json` | 514e50a | current |
+| `models/mfg/ZNBR2_BR2_REGEN/params.json` | 514e50a | current |
 | `models/openscad/foam_ew/CUT_LIST.md` | 514e50a (regenerated, no change) | current |
 | `models/openscad/foam_ew/aisle.png` | 514e50a (regenerated, no change) | current |
 | `models/openscad/foam_ew/cell_unfold.png` | 514e50a (regenerated, no change) | current |
