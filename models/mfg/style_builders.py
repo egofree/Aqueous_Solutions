@@ -21,6 +21,9 @@ G = json.load(open(os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')))
 N = {n['unit_id']: n for n in G['nodes']}
 import cadquery as cq
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from tracker import stl_manifold   # noqa: E402  (acceptance gate: the export STL must read back closed)
+
 DN_OD = {'DN8': 13.5, 'DN15': 21.3, 'DN20': 26.9, 'DN25': 33.7, 'DN32': 42.4, 'DN40': 48.3,
          'DN50': 60.3, 'DN65': 76.1, 'DN80': 88.9, 'DN100': 114.3, 'DN150': 168.3, 'DN200': 219.1,
          'DN250': 273.0, 'DN300': 323.9}
@@ -44,31 +47,38 @@ def nozzles(u):
     return out
 
 
-def add_nozzles(m, u, D, H, x_c, y_c, L, W):
+def add_nozzles(m, u, D, H, x_c, y_c, L, W, z0, z1):
     """Stub stubs on the shell at the scheduled faces and heights (real schedule data).
-    Stubs stay inside the claimed envelope: they end flush at the envelope face."""
+
+    House idiom (lib/nozzles.place_on_face): every stub root sits inside the shell so the
+    union overlaps volumetrically and fuses into one solid, and the tip ends flush at the
+    envelope face, so the build keeps the bounding box the graph states. Side stubs cross
+    the shell wall band and reach the envelope face; the along-face position stays the
+    shell axis. `z0`/`z1` are the shell's bottom and top, so a top or bottom stub always
+    reaches the head plate instead of ending in air."""
+    EMBED = 10.0   # stub root depth past the shell wall, into the cavity
     for tag, od, face, h in nozzles(u)[:16]:
         z = min(max(h, od / 2 + 5), H - od / 2 - 5)
         if face == 'top':
-            m = m.union(cq.Workplane('XY', origin=(x_c, y_c, H - od - 8)).circle(od / 2).extrude(od + 8))
+            zb = min(H - od - 8, z1 - 70)     # the stub reaches the top head or the demister band:
+                                              # a real joint, not hardware floating in the cavity
+            m = m.union(cq.Workplane('XY', origin=(x_c, y_c, zb)).circle(od / 2).extrude(H - zb))
         elif face == 'bottom':
             m = m.union(cq.Workplane('XY', origin=(x_c, y_c, 0)).circle(od / 2).extrude(min(od / 2 + 12, H / 3)))
         elif face == 'inlet':
-            off = min(D / 2 + od + 10, L / 2 - od / 2)          # stub tip flush with the envelope face
-            m = m.union(cq.Workplane('XY', origin=(x_c - off, y_c, z)).circle(od / 2).extrude(off + 2)
-                        .rotate((x_c, y_c, z), (x_c, y_c, z + 1), 0))
-            m = m.union(cq.Workplane('YZ', origin=(-off - 2, y_c, z)).circle(od / 2).extrude(off + 2)
-                        .translate((x_c, 0, 0)))
+            m = m.union(cq.Workplane('YZ', origin=(0, y_c, z)).circle(od / 2).extrude(x_c - D / 2 + EMBED))
         elif face == 'outlet':
-            off = min(D / 2 + od + 10, L / 2 - od / 2)
-            m = m.union(cq.Workplane('YZ', origin=(x_c + x_c - off - 2 - x_c, y_c, z)).circle(od / 2).extrude(off + 2)
-                        .translate((x_c, 0, 0)))
+            m = m.union(cq.Workplane('YZ', origin=(x_c + D / 2 - EMBED, y_c, z)).circle(od / 2)
+                        .extrude(L - (x_c + D / 2 - EMBED)))
         else:                                                    # side stubs alternate +/-Y, flush at the face
             s = 1 if ord(tag[-1]) % 2 else -1
-            off = min(D / 2 + od + 10, W / 2 - od / 2)
-            yy = y_c + s * off
-            m = m.union(cq.Workplane('XZ', origin=(x_c, yy, z)).circle(od / 2).extrude(od / 2)
-                        .translate((0, -s * od / 2, 0)))
+            # 'XZ' extrudes along -Y, so the stub anchors at its envelope face and grows inward
+            if s > 0:
+                m = m.union(cq.Workplane('XZ', origin=(x_c, W, z)).circle(od / 2)
+                            .extrude(W - (y_c + D / 2 - EMBED)))
+            else:
+                m = m.union(cq.Workplane('XZ', origin=(x_c, y_c - D / 2 + EMBED, z)).circle(od / 2)
+                            .extrude(y_c - D / 2 + EMBED))
     return m
 
 
@@ -94,7 +104,7 @@ def vessel_z(u, n, L, W, H):
     m = m.union(cq.Workplane('XY', origin=(x_c, y_c, z1 - PLATE)).circle(D / 2).extrude(PLATE))              # top head
     if H - z0 - z1 > 200:   # mid ring stiffener on tall shells
         m = m.union(cq.Workplane('XY', origin=(x_c, y_c, (z0 + z1) / 2)).circle(D / 2 + 8).circle(D / 2).extrude(30))
-    m = add_nozzles(m, u, D, H, x_c, y_c, L, W)
+    m = add_nozzles(m, u, D, H, x_c, y_c, L, W, z0, z1)
     return base_and_top(m, L, W, H)
 
 
@@ -105,7 +115,10 @@ def column(u, n, L, W, H):
     x_c, y_c = L / 2, W / 2
     z0, z1 = BASE_T + 60, H - BASE_T - 40
     m = cq.Workplane('XY', origin=(x_c, y_c, z0)).circle(D / 2).circle(D / 2 - PLATE).extrude(z1 - z0)
-    m = m.union(cq.Workplane('XY', origin=(x_c, y_c, BASE_T)).circle(D / 2 + 20).circle(D / 2).extrude(60))   # skirt
+    # skirt: 2 mm radial interference with the shell wall and 20 mm of rise past the shell
+    # bottom, so the two overlap volumetrically and the union fuses (a skirt that only
+    # touches the shell along a circle left the export a compound of tangent solids)
+    m = m.union(cq.Workplane('XY', origin=(x_c, y_c, BASE_T)).circle(D / 2 + 20).circle(D / 2 - 2).extrude(80))   # skirt
     packed = d.get('packed_mm')
     if packed:
         bed_top = z1 - 120
@@ -115,7 +128,7 @@ def column(u, n, L, W, H):
                         .box(D - 2 * PLATE, D - 2 * PLATE, packed / 2.0, centered=False))
             m = m.union(cq.Workplane('XY', origin=(x_c, y_c, zb - 15)).circle(D / 2 - PLATE).extrude(15))
     m = m.union(cq.Workplane('XY', origin=(x_c, y_c, z1 - 80)).circle(D / 2 - PLATE).extrude(20))             # demister
-    m = add_nozzles(m, u, D, H, x_c, y_c, L, W)
+    m = add_nozzles(m, u, D, H, x_c, y_c, L, W, z0, z1)
     return base_and_top(m, L, W, H)
 
 
@@ -159,7 +172,7 @@ def heat_battery(u, n, L, W, H):
                         .rotate((x_c - D / 2 - 25, y_c, z), (x_c - D / 2 - 25, y_c, z + 1), -90))
             m = m.union(cq.Workplane('XY', origin=(x_c + D / 2 - 25, y_c, z)).circle(21.3 / 2).extrude(50)
                         .rotate((x_c + D / 2 - 25, y_c, z), (x_c + D / 2 - 25, y_c, z + 1), 90))
-    m = add_nozzles(m, u, D, H, x_c, y_c, L, W)
+    m = add_nozzles(m, u, D, H, x_c, y_c, L, W, z0, z1)
     return base_and_top(m, L, W, H)
 
 
@@ -170,7 +183,10 @@ def pipe_run(u, n, L, W, H):
     z, y = H / 2, W / 2
     m = (cq.Workplane('YZ', origin=(-dn / 2, y, z)).circle(dn / 2).circle(max(dn / 2 - 4, 2)).extrude(L))
     for x in (L * f for f in (0.1, 0.35, 0.65, 0.9)):   # support blocks (AQS-BLD supports)
-        m = m.union(cq.Workplane('XY', origin=(x - 40, y - dn / 2 - 20, 0)).box(80, dn + 40, z - dn / 2, centered=False))
+        # the block top sinks 6 mm past the pipe wall into the bore, so block and pipe
+        # overlap volumetrically and the union fuses (a block that only kissed the pipe
+        # bottom left the export non-manifold at the tangent line)
+        m = m.union(cq.Workplane('XY', origin=(x - 40, y - dn / 2 - 20, 0)).box(80, dn + 40, z - dn / 2 + 6, centered=False))
     return base_and_top(m, L, W, H)
 
 
@@ -208,7 +224,7 @@ def hx_unit(u, n, L, W, H):
     m = cq.Workplane('XY', origin=(x_c, y_c, BASE_T)).circle(D / 2).extrude(H - 2 * BASE_T)
     m = m.union(cq.Workplane('XY', origin=(x_c, y_c, BASE_T)).circle(D / 2 + 15).circle(D / 2 - PLATE).extrude(25))     # tubesheet
     m = m.union(cq.Workplane('XY', origin=(x_c, y_c, H - BASE_T - 25)).circle(D / 2 + 15).circle(D / 2 - PLATE).extrude(25))
-    m = add_nozzles(m, u, D, H, x_c, y_c, L, W)
+    m = add_nozzles(m, u, D, H, x_c, y_c, L, W, BASE_T, H - BASE_T)
     return base_and_top(m, L, W, H)
 
 
@@ -399,6 +415,11 @@ def run(units=None):
             stl_m = solid.scale(0.001)                                        # cad/stl convention is metres
             for dst in (f'{out}/{u.lower()}.stl', os.path.join(ROOT, 'cad/stl', u + '.stl')):
                 cq.exporters.export(stl_m, dst, opt={'ascii': True})          # ASCII STL: the X-PAR-04 gate parses text vertices
+            if not stl_manifold(f'{out}/{u.lower()}.stl'):
+                # section 5 A-core 9: the STL must read back closed and manifold. An open
+                # mesh means a union left tangent-contact parts; fix the style, not the check.
+                raise AssertionError('export STL is not closed and manifold '
+                                     '(tangent-contact union in the style builder)')
             if dims != [round(x) for x in (L, W, H)]:
                 # under-fill is framing (the envelope stays the authority - a sizing stage may own
                 # it); recorded in the build log by draw_unit_ga, never written to the graph here:
