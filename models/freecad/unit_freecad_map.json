@@ -2,34 +2,42 @@
   "schema": "aqs-unit-freecad-map-1.0",
   "licence": "CERN-OHL-S-2.0",
   "doc_id": "AQS-UNIT-FREECAD-MAP-001",
-  "revision": "E",
-  "date": "2026-10-29",
+  "revision": "F",
+  "date": "2026-11-01",
   "graph_doc_id": "AQS-FLOW-GRAPH-001",
-  "graph_revision": "B",
+  "graph_revision": "AC",
   "freecad_binary": "/usr/bin/freecadcmd",
   "evidence": {
     "plant_fcstd": "plant.FCStd",
-    "inventory_object_count": 1114,
-    "part_feature_count": 1030,
-    "method": "freecadcmd 1.0 inventory + WP-D1b d1b_massing.py TBD Part::Feature for 18 present units"
+    "inventory_object_count": 1181,
+    "part_feature_count": 1097,
+    "method": "freecadcmd 1.0 inventory + WP-D1b d1b_massing.py TBD Part::Feature for 23 present units"
   },
   "coverage": {
-    "graph_nodes": 91,
-    "rows_classified": 91,
+    "graph_nodes": 218,
+    "rows_classified": 150,
     "rows_classified_pct": 100.0,
     "by_status": {
-      "mapped": 56,
-      "massing_only": 25,
+      "mapped": 60,
+      "massing_only": 41,
+      "cadquery_export": 36,
       "placeholder_skip": 7,
-      "unmapped": 3
+      "unmapped": 6
     },
-    "present_nodes": 79,
-    "present_mapped_or_massing": 76,
-    "present_coverage_pct": 96.2,
-    "placeholder_nodes": 12,
+    "present_nodes_rowed": 146,
+    "present_covered": 135,
+    "present_coverage_rowed_pct": 92.5,
+    "graph_present_nodes": 200,
+    "unrowed_graph_nodes": 69,
+    "unrowed_present_with_own_name_feature": 13,
+    "present_covered_all": 148,
+    "present_coverage_all_pct": 74.0,
+    "placeholder_nodes": 16,
     "unmapped_present": [
       "BOUNDARY_EXPORT",
       "LOAD_AGG",
+      "PROD_MEOH",
+      "PROD_O2",
       "Q4_BUS"
     ]
   },
@@ -2430,5 +2438,6 @@
   ],
   "rev_c_note": "Graph Rev K: FLUE_KO -> FLUE_CAP and RELIEF_H2 -> H2_STACK added. LOAD_AGG is class boundary on the graph. Units created on the placed copy from issued or study envelopes carry their own unit_id as the Feature name and are not listed here. Coverage block below is from the original inventory and is not recounted.",
   "rev_d_note": "Rev D unit map check 2026-10-21: 28 geometry-class \"(standby)\" note tokens refreshed from each unit's live params.envelope.state (pot/cells LIVE via foundry_poly; alternates standby_rated).",
-  "rev_e_note": "Rev E 2026-10-29: the X-FARM/X-POLY/X-UI-002 build-out units join the map - the animal chain + FEED_PREP + AQUA_UV (farm.py), MET_SYN + GW_INTAKE (d1b_massing.py), POLY_FIBER (mfg_shop.py). Dims are read from the graph params at build time (flat size_mm or envelope.size_mm), never re-typed in the builders. DUCKWEED is scale-guarded and absent at the M1 baseline. CAD_ROOM_FINDINGS.json records the two fire rooms the fit pass now skips instead of crashing on (pre-existing squeeze at FR_AFTERBURNER / FR_OIL_PYRO); FR_H2O_ELYZ cuts its own unit - both GA findings."
+  "rev_e_note": "Rev E 2026-10-29: the X-FARM/X-POLY/X-UI-002 build-out units join the map - the animal chain + FEED_PREP + AQUA_UV (farm.py), MET_SYN + GW_INTAKE (d1b_massing.py), POLY_FIBER (mfg_shop.py). Dims are read from the graph params at build time (flat size_mm or envelope.size_mm), never re-typed in the builders. DUCKWEED is scale-guarded and absent at the M1 baseline. CAD_ROOM_FINDINGS.json records the two fire rooms the fit pass now skips instead of crashing on (pre-existing squeeze at FR_AFTERBURNER / FR_OIL_PYRO); FR_H2O_ELYZ cuts its own unit - both GA findings.",
+  "rev_f_note": "Rev F 2026-11-01: census re-stamp against graph Rev AC after the plant rebuild (models/REBUILD.sh: OpenSCAD detail STLs recompiled, build_plant.py rerun; totals 1181 objects / 1097 Part::Feature unchanged, geometry refreshed). Stamp graph_revision B -> AC. No row changed: every mapped and massing_only row's Feature is present in the new plant.FCStd inventory and every cadquery_export row has its STEP/STL under models/mfg/<UNIT>/export or cad/stl. The 54 present graph nodes without rows are counted in coverage (13 carry their own unit_id as a plant.FCStd Feature per the rev_c_note convention); the census lives in UNIT_MAP_COVERAGE.md."
 }
