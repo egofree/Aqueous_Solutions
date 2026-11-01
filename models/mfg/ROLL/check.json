@@ -33,7 +33,6 @@
     "drain_well": 1.0,
     "vent_stub": 0.7
   },
-  "non_manifold_edges_ascii": 1,
-  "non_manifold_note": "one tessellation-seam edge on the stand side faces in the ASCII export; the solid is one valid fused body (cap_solids), all parts valid",
+  "non_manifold_edges_ascii": 0,
   "cadquery": "2.8.0"
 }
