@@ -27,6 +27,26 @@ def tube(r_out, r_in, p, axis, ln):
 def rod(r, p, axis, ln):
     return tube(r, 0, p, axis, ln)
 
+def _bad_edges(path):
+    """Edges of the exported ASCII STL used by other than two triangles (the tracker's
+    manifold rule, so check.json reports the exported file, not an intention)."""
+    import collections
+    tri = []
+    vs = []
+    for ln in open(path):
+        f = ln.split()
+        if f and f[0] == "vertex":
+            vs.append((float(f[1]), float(f[2]), float(f[3])))
+            if len(vs) == 3:
+                tri.append(vs)
+                vs = []
+    use = collections.Counter()
+    for t in tri:
+        for i in range(3):
+            a, b = t[i], t[(i + 1) % 3]
+            use[(min(a, b), max(a, b))] += 1
+    return sum(1 for c in use.values() if c != 2)
+
 parts = {}
 CY = 400.0                                            # roll centreline
 RD = D["rolls_D_mm"] / 2                              # 150
@@ -57,12 +77,14 @@ for xx in range(120, 520, 100):
     for zz in (ROLL_Z - 20.0,):
         q = rod(40.0, (xx, 50.0, zz), "Y", 700)   # across the width, inside the frame
         table = q if table is None else table.union(q)
-for xx in range(980, 1440, 100):
+# exit rollers start 10 mm clear of the stand face (x 940): a roller that kissed the
+# face along a tangent line left the export non-manifold at the contact line
+for xx in range(990, 1440, 100):
     q = rod(40.0, (xx, 50.0, ROLL_Z - 20.0), "Y", 700)
     table = table.union(q)
 # roller pedestals: one column under each roller end, tied to the base
 ped = None
-for xx in list(range(120, 520, 100)) + list(range(980, 1440, 100)):
+for xx in list(range(120, 520, 100)) + list(range(990, 1440, 100)):
     for y0 in (30.0, 730.0):
         q = box(xx - 15.0, y0, 60.0, 30.0, 40.0, 835)
         ped = q if ped is None else ped.union(q)
@@ -128,8 +150,7 @@ report = {
     "cap_solids": len(cap_solid.Solids()),
     "all_parts_valid": valid,
     "part_mass_kg": mass,
-    "non_manifold_edges_ascii": 1,
-    "non_manifold_note": "one tessellation-seam edge on the stand side faces in the ASCII export; the solid is one valid fused body (cap_solids), all parts valid",
+    "non_manifold_edges_ascii": _bad_edges(str(out / "roll.stl")),
     "cadquery": "2.8.0",
 }
 rows = [
