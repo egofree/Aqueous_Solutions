@@ -24,6 +24,8 @@ DENSITY = {
     'graphite': (1550.0, 'models/mfg/AL_POT/params.json ramming paste (wetted liner class)'),
     'Cu': (8960.0, 'tables/materials.csv'),
     'CPVC': (1550.0, 'tables/materials.csv (Corzan / GF sheet)'),
+    'PVC_U': (1400.0, 'published rigid-PVC (PVC-U) data, AQS-STD-002 M5 class (60 C limit); '
+                      'band 1350-1450, midpoint carried; confirm per the supplier TDS at order'),
     'PP': (910.0, 'tables/materials.csv; farm_hab.py used 905 in built masses'),
     'PVDF': (1780.0, 'tables/materials.csv (GF SYGEF)'),
     'HDPE': (950.0, 'models/mfg/farm_hab.py RHO'),

@@ -43,12 +43,12 @@ Plant demand 224.9 kW at 480 V, power factor 0.9 assumed: 301 A. EW process bars
 | BACKUP_GEN | radiator fan feeder | 14 AWG | 1 | 1.1 | 15 | 12.0 | 460 | 0.05 | 3 | yes |
 | BACKUP_GEN | starter motor feeder | 14 AWG | 1 | 3.4 | 15 | 12.0 | 460 | 0.16 | 3 | yes |
 | BAGHOUSE | Motor: transfer pump IA-BAG-01 to LEACH_CSTR_1 (BLDC, 42 mm  feeder | 14 AWG | 1 | 2.4 | 15 | 24.0 | 460 | 0.22 | 3 | yes |
-| BMED_ACID | Motor: transfer pump IA-BMED-01 to WS_NITRIC (BLDC, 42 mm (N feeder | 14 AWG | 1 | 2.4 | 15 | 10.6 | 460 | 0.10 | 3 | yes |
-| BMED_ACID | Motor: transfer pump IA-EVAP_ACID-FEED to EVAP_ACID (BLDC, 4 feeder | 14 AWG | 1 | 2.4 | 15 | 10.6 | 460 | 0.10 | 3 | yes |
-| BMED_ACID | Motor: transfer pump S09 to WET_BENCH (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 10.6 | 460 | 0.10 | 3 | yes |
-| BMED_BASE | Motor: transfer pump IA-BMED-02 to WS_KOH (BLDC, 42 mm (NEMA feeder | 14 AWG | 1 | 2.4 | 15 | 10.6 | 460 | 0.10 | 3 | yes |
-| BMED_BASE | Motor: transfer pump IA-EVAP_BASE-FEED to EVAP_BASE (BLDC, 4 feeder | 14 AWG | 1 | 2.4 | 15 | 10.6 | 460 | 0.10 | 3 | yes |
-| BMED_BASE | Motor: transfer pump IA-VS-NAOH to EVAP_ACID_VS (BLDC, 42 mm feeder | 14 AWG | 1 | 2.4 | 15 | 10.6 | 460 | 0.10 | 3 | yes |
+| BMED_ACID | Motor: transfer pump IA-BMED-01 to WS_NITRIC (BLDC, 42 mm (N feeder | 14 AWG | 1 | 2.4 | 15 | 10.8 | 460 | 0.10 | 3 | yes |
+| BMED_ACID | Motor: transfer pump IA-EVAP_ACID-FEED to EVAP_ACID (BLDC, 4 feeder | 14 AWG | 1 | 2.4 | 15 | 10.8 | 460 | 0.10 | 3 | yes |
+| BMED_ACID | Motor: transfer pump S09 to WET_BENCH (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 10.8 | 460 | 0.10 | 3 | yes |
+| BMED_BASE | Motor: transfer pump IA-BMED-02 to WS_KOH (BLDC, 42 mm (NEMA feeder | 14 AWG | 1 | 2.4 | 15 | 10.8 | 460 | 0.10 | 3 | yes |
+| BMED_BASE | Motor: transfer pump IA-EVAP_BASE-FEED to EVAP_BASE (BLDC, 4 feeder | 14 AWG | 1 | 2.4 | 15 | 10.8 | 460 | 0.10 | 3 | yes |
+| BMED_BASE | Motor: transfer pump IA-VS-NAOH to EVAP_ACID_VS (BLDC, 42 mm feeder | 14 AWG | 1 | 2.4 | 15 | 10.8 | 460 | 0.10 | 3 | yes |
 | BMED_UPW_POLISH | Motor: transfer pump IA-UPW-FAB to FAB_UPW_TANK (BLDC, 42 mm feeder | 14 AWG | 1 | 2.4 | 15 | 23.0 | 460 | 0.21 | 3 | yes |
 | BMED_UPW_POLISH | Motor: transfer pump IA-UPW-REJ to LEACH_CSTR_1 (BLDC, 42 mm feeder | 14 AWG | 1 | 2.4 | 15 | 23.0 | 460 | 0.21 | 3 | yes |
 | BMED_UPW_POLISH | Motor: transfer pump IA-UPW-REMIN to REMIN (BLDC, 42 mm (NEM feeder | 14 AWG | 1 | 2.4 | 15 | 23.0 | 460 | 0.21 | 3 | yes |
@@ -61,48 +61,48 @@ Plant demand 224.9 kW at 480 V, power factor 0.9 assumed: 301 A. EW process bars
 | CB-4 | inverter AC output to section bus | 3 AWG | 1 | 72.2 | 100 | 25.0 | 460 | 0.55 | 3 | yes |
 | CB-4 | section main to CB-4 transformer LV | 400 kcmil | 3 | 1000.0 | 1005 | 15.0 | 460 | 0.20 | 2 | yes |
 | COLD_MILL | Two-high cold rolling mill: main drive feeder | 14 AWG | 1 | 4.8 | 15 | 3.0 | 460 | 0.06 | 3 | yes |
-| CRU | Motor: transfer pump IA-CRU-01 to LEACH_CSTR_1 (BLDC, 42 mm  feeder | 14 AWG | 1 | 2.4 | 15 | 10.6 | 460 | 0.10 | 3 | yes |
+| CRU | Motor: transfer pump IA-CRU-01 to LEACH_CSTR_1 (BLDC, 42 mm  feeder | 14 AWG | 1 | 2.4 | 15 | 10.8 | 460 | 0.10 | 3 | yes |
 | CRYO_AHU | Motor: transfer pump IA-HVAC-COND to ROOF_TANK (BLDC, 42 mm  feeder | 14 AWG | 1 | 2.4 | 15 | 15.5 | 460 | 0.14 | 3 | yes |
 | CRYO_AHU | Motor: transfer pump S68 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA  feeder | 14 AWG | 1 | 2.4 | 15 | 15.5 | 460 | 0.14 | 3 | yes |
 | CRYO_AHU_COND_CONDENSABLE | Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl feeder | 14 AWG | 1 | 2.4 | 15 | 15.3 | 460 | 0.14 | 3 | yes |
 | CRYO_ASU | air compressor (cold box feed) feeder | 14 AWG | 1 | 4.8 | 15 | 14.3 | 460 | 0.27 | 3 | yes |
 | CRYO_ASU | expander brake / generator feeder | 14 AWG | 1 | 2.4 | 15 | 14.3 | 460 | 0.13 | 3 | yes |
 | CRYO_H2 | cryocooler compressor feeder | 14 AWG | 1 | 3.0 | 15 | 33.1 | 460 | 0.39 | 3 | yes |
-| EVAP_ACID | Blower, single-stage centrifugal, ratio 1.648, 1.34 kW shaft feeder | 14 AWG | 1 | 4.8 | 15 | 15.1 | 460 | 0.28 | 3 | yes |
-| EVAP_ACID | Recirculation pump 311.0 kg/h at 4 m feeder | 14 AWG | 1 | 2.4 | 15 | 15.1 | 460 | 0.14 | 3 | yes |
-| EVAP_ACID_VS | Sump recirculation pump, magnetic drive, about 0.35 m3/h at  feeder | 14 AWG | 1 | 2.4 | 15 | 19.7 | 460 | 0.18 | 3 | yes |
-| EVAP_BASE | Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf feeder | 14 AWG | 1 | 3.4 | 15 | 8.3 | 460 | 0.11 | 3 | yes |
-| EVAP_BASE | Recirculation pump 282.7 kg/h at 4 m feeder | 14 AWG | 1 | 2.4 | 15 | 8.3 | 460 | 0.08 | 3 | yes |
-| EW_1 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 9.9 | 460 | 0.09 | 3 | yes |
-| EW_1 | screw conveyor IA-EW-MET-1 to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 9.9 | 460 | 0.06 | 3 | yes |
-| EW_2 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 6.8 | 460 | 0.06 | 3 | yes |
-| EW_2 | Motor: transfer pump IA-EW-02 to EW_3 (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 6.8 | 460 | 0.06 | 3 | yes |
-| EW_3 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 4.9 | 460 | 0.05 | 3 | yes |
-| EW_3 | Motor: transfer pump IA-EW-03 to EW_4 (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 4.9 | 460 | 0.05 | 3 | yes |
-| EW_4 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 6.9 | 460 | 0.06 | 3 | yes |
-| EW_4 | Motor: transfer pump IA-EW-10 to EW_5 (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 6.9 | 460 | 0.06 | 3 | yes |
-| EW_5 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 4.6 | 460 | 0.04 | 3 | yes |
-| EW_5 | Motor: transfer pump IA-EW-05 to EW_6 (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 4.6 | 460 | 0.04 | 3 | yes |
-| EW_6 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 3.5 | 460 | 0.03 | 3 | yes |
-| EW_6 | Motor: transfer pump IA-EW-06 to EW_7 (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 3.5 | 460 | 0.03 | 3 | yes |
-| EW_7 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 11.0 | 460 | 0.10 | 3 | yes |
-| EW_7 | Motor: transfer pump IA-EW-07 to EW_8 (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 11.0 | 460 | 0.10 | 3 | yes |
-| EW_8 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 4.6 | 460 | 0.04 | 3 | yes |
-| EW_8 | Motor: transfer pump IA-EW-08 to EW_9 (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 4.6 | 460 | 0.04 | 3 | yes |
-| EW_9 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 8.1 | 460 | 0.08 | 3 | yes |
-| EW_9 | Motor: transfer pump IA-EW-09 to POLISH_BANK (BLDC, 42 mm (N feeder | 14 AWG | 1 | 2.4 | 15 | 8.1 | 460 | 0.08 | 3 | yes |
+| EVAP_ACID | Blower, single-stage centrifugal, ratio 1.648, 1.34 kW shaft feeder | 14 AWG | 1 | 4.8 | 15 | 15.3 | 460 | 0.28 | 3 | yes |
+| EVAP_ACID | Recirculation pump 311.0 kg/h at 4 m feeder | 14 AWG | 1 | 2.4 | 15 | 15.3 | 460 | 0.14 | 3 | yes |
+| EVAP_ACID_VS | Sump recirculation pump, magnetic drive, about 0.35 m3/h at  feeder | 14 AWG | 1 | 2.4 | 15 | 19.5 | 460 | 0.18 | 3 | yes |
+| EVAP_BASE | Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf feeder | 14 AWG | 1 | 3.4 | 15 | 8.5 | 460 | 0.11 | 3 | yes |
+| EVAP_BASE | Recirculation pump 282.7 kg/h at 4 m feeder | 14 AWG | 1 | 2.4 | 15 | 8.5 | 460 | 0.08 | 3 | yes |
+| EW_1 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 9.6 | 460 | 0.09 | 3 | yes |
+| EW_1 | screw conveyor IA-EW-MET-1 to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 9.6 | 460 | 0.06 | 3 | yes |
+| EW_2 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 6.6 | 460 | 0.06 | 3 | yes |
+| EW_2 | screw conveyor IA-EW-MET-2 to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 6.6 | 460 | 0.04 | 3 | yes |
+| EW_3 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 4.7 | 460 | 0.04 | 3 | yes |
+| EW_3 | Motor: transfer pump IA-EW-03 to EW_4 (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 4.7 | 460 | 0.04 | 3 | yes |
+| EW_4 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 7.1 | 460 | 0.07 | 3 | yes |
+| EW_4 | Motor: transfer pump IA-EW-10 to EW_5 (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 7.1 | 460 | 0.07 | 3 | yes |
+| EW_5 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 4.4 | 460 | 0.04 | 3 | yes |
+| EW_5 | Motor: transfer pump IA-EW-05 to EW_6 (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 4.4 | 460 | 0.04 | 3 | yes |
+| EW_6 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 3.7 | 460 | 0.03 | 3 | yes |
+| EW_6 | Motor: transfer pump IA-EW-06 to EW_7 (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 3.7 | 460 | 0.03 | 3 | yes |
+| EW_7 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 10.8 | 460 | 0.10 | 3 | yes |
+| EW_7 | Motor: transfer pump IA-EW-07 to EW_8 (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 10.8 | 460 | 0.10 | 3 | yes |
+| EW_8 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 4.8 | 460 | 0.04 | 3 | yes |
+| EW_8 | Motor: transfer pump IA-EW-08 to EW_9 (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 4.8 | 460 | 0.04 | 3 | yes |
+| EW_9 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 7.9 | 460 | 0.07 | 3 | yes |
+| EW_9 | Motor: transfer pump IA-EW-09 to POLISH_BANK (BLDC, 42 mm (N feeder | 14 AWG | 1 | 2.4 | 15 | 7.9 | 460 | 0.07 | 3 | yes |
 | EXT_HALL | Motor: air-source heat pump compressor (hermetic induction ( feeder | 14 AWG | 1 | 2.4 | 15 | 131.8 | 460 | 1.23 | 3 | yes |
 | EXT_HALL | Motor: heat pump condenser fan (EC (electronically commutate feeder | 14 AWG | 1 | 2.4 | 15 | 131.8 | 460 | 1.23 | 3 | yes |
 | EXT_HALL | lighting branch circuit 277 V | 6 AWG | 1 | 16.0 | 65 | 120.0 | 277 | 2.23 | 3 | yes |
 | FAB_UPW_TANK | Motor: transfer pump S27 to WET_BENCH (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 12.5 | 460 | 0.12 | 3 | yes |
-| FLOAT_SINK | Motor: transfer pump IA-PLAST-01 to OIL_DRYER (BLDC, 42 mm ( feeder | 14 AWG | 1 | 2.4 | 15 | 10.4 | 460 | 0.10 | 3 | yes |
-| FLOAT_SINK | Motor: transfer pump IA-WET-FLOAT-01 to LEACH_CSTR_1 (BLDC,  feeder | 14 AWG | 1 | 2.4 | 15 | 10.4 | 460 | 0.10 | 3 | yes |
+| FLOAT_SINK | Motor: transfer pump IA-PLAST-01 to OIL_DRYER (BLDC, 42 mm ( feeder | 14 AWG | 1 | 2.4 | 15 | 10.2 | 460 | 0.09 | 3 | yes |
+| FLOAT_SINK | Motor: transfer pump IA-WET-FLOAT-01 to LEACH_CSTR_1 (BLDC,  feeder | 14 AWG | 1 | 2.4 | 15 | 10.2 | 460 | 0.09 | 3 | yes |
 | FUEL_CELL | Motor: coolant pump (BLDC, 57 mm (NEMA 23 flange)) feeder | 14 AWG | 1 | 2.4 | 15 | 5.0 | 460 | 0.05 | 3 | yes |
 | FUEL_CELL | Motor: transfer pump IA-FC-LEACH to LEACH_CSTR_1 (BLDC, 42 m feeder | 14 AWG | 1 | 2.4 | 15 | 5.0 | 460 | 0.05 | 3 | yes |
 | FUEL_CELL | Motor: transfer pump S52 to VCD_TRAIN (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 5.0 | 460 | 0.05 | 3 | yes |
-| F_RECOVER | Body / envelope 800 x 600 x 1200 mm feeder | 14 AWG | 1 | 2.4 | 15 | 20.5 | 460 | 0.19 | 3 | yes |
-| F_RECOVER | Motor: transfer pump F_RECOVER_TO_HF_GEN to HF_GEN (BLDC, 42 feeder | 14 AWG | 1 | 2.4 | 15 | 20.5 | 460 | 0.19 | 3 | yes |
-| F_RECOVER | Process nozzle DN15 feeder | 14 AWG | 1 | 2.4 | 15 | 20.5 | 460 | 0.19 | 3 | yes |
+| F_RECOVER | Body / envelope 800 x 600 x 1200 mm feeder | 14 AWG | 1 | 2.4 | 15 | 20.3 | 460 | 0.19 | 3 | yes |
+| F_RECOVER | Motor: transfer pump F_RECOVER_TO_HF_GEN to HF_GEN (BLDC, 42 feeder | 14 AWG | 1 | 2.4 | 15 | 20.3 | 460 | 0.19 | 3 | yes |
+| F_RECOVER | Process nozzle DN15 feeder | 14 AWG | 1 | 2.4 | 15 | 20.3 | 460 | 0.19 | 3 | yes |
 | GAS_ATOMIZER | Close-coupled gas atomiser with Ar recirculation: main drive feeder | 14 AWG | 1 | 11.0 | 15 | 3.0 | 460 | 0.13 | 3 | yes |
 | GEO_HP | Motor: heat pump compressor (hermetic induction (scroll), 0. feeder | 14 AWG | 1 | 2.4 | 15 | 26.9 | 460 | 0.25 | 3 | yes |
 | GLASS_DIGEST | Top-entry agitator, 4-blade 45 deg PBT D133 at 358 rpm, 0.09 feeder | 14 AWG | 1 | 2.4 | 15 | 22.1 | 460 | 0.21 | 3 | yes |
@@ -113,14 +113,14 @@ Plant demand 224.9 kW at 480 V, power factor 0.9 assumed: 301 A. EW process bars
 | GW_INTAKE | Process nozzle DN15 feeder | 14 AWG | 1 | 2.4 | 15 | 11.2 | 460 | 0.10 | 3 | yes |
 | HF_GEN | Acid day tank D160 x 300 mm with metering pump feeder | 14 AWG | 1 | 2.4 | 15 | 6.0 | 460 | 0.06 | 3 | yes |
 | HOPPER | Motor: transfer pump IA-FEED-01 to LEACH_CSTR_1 (BLDC, 42 mm feeder | 14 AWG | 1 | 2.4 | 15 | 11.8 | 460 | 0.11 | 3 | yes |
-| HYDRO_SET | Motor: pump-turbine motor-generator (induction IE3, IEC 100L feeder | 14 AWG | 1 | 2.4 | 15 | 19.7 | 460 | 0.18 | 3 | yes |
-| LEACH_CSTR_1 | Gearmotor 0.75 kW 150 rpm output on lid bridge feeder | 14 AWG | 1 | 3.0 | 15 | 13.7 | 460 | 0.16 | 3 | yes |
+| HYDRO_SET | Motor: pump-turbine motor-generator (induction IE3, IEC 100L feeder | 14 AWG | 1 | 2.4 | 15 | 26.2 | 460 | 0.24 | 3 | yes |
+| LEACH_CSTR_1 | Gearmotor 0.75 kW 150 rpm output on lid bridge feeder | 14 AWG | 1 | 3.0 | 15 | 13.4 | 460 | 0.16 | 3 | yes |
 | LITHO_DEV | Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW) feeder | 14 AWG | 1 | 2.4 | 15 | 8.1 | 460 | 0.08 | 3 | yes |
-| LP-DIGESTER | panel feeder 208 V | 2 AWG | 1 | 89.4 | 115 | 35.3 | 208 | 1.67 | 2 | yes |
-| LP-DIGESTER | panel feeder 460 V | 14 AWG | 1 | 14.0 | 15 | 35.3 | 460 | 1.92 | 2 | yes |
+| LP-DIGESTER | panel feeder 208 V | 3 AWG | 1 | 84.6 | 100 | 35.1 | 208 | 1.99 | 2 | yes |
+| LP-DIGESTER | panel feeder 460 V | 12 AWG | 1 | 15.6 | 20 | 35.1 | 460 | 1.31 | 2 | yes |
 | LP-ELEC | panel feeder 208 V | 350 kcmil | 1 | 300.6 | 310 | 8.5 | 208 | 0.26 | 2 | yes |
 | LP-ELEC | panel feeder 460 V | 14 AWG | 1 | 5.3 | 15 | 8.5 | 460 | 0.17 | 2 | yes |
-| LP-FAB | panel feeder 208 V | 4 AWG | 1 | 60.6 | 85 | 29.7 | 208 | 1.51 | 2 | yes |
+| LP-FAB | panel feeder 208 V | 4 AWG | 1 | 63.0 | 85 | 29.7 | 208 | 1.57 | 2 | yes |
 | LP-FAB | panel feeder 460 V | 14 AWG | 1 | 10.1 | 15 | 29.7 | 460 | 1.16 | 2 | yes |
 | LP-MEOH | panel feeder 208 V | 10 AWG | 1 | 19.8 | 30 | 23.6 | 208 | 1.54 | 2 | yes |
 | LP-MFG | panel feeder 208 V | 10 AWG | 1 | 12.6 | 30 | 43.3 | 208 | 1.80 | 2 | yes |
@@ -165,7 +165,7 @@ Plant demand 224.9 kW at 480 V, power factor 0.9 assumed: 301 A. EW process bars
 | OIL_FRAC | Motor: transfer pump CUT-2 to PROD_C11_C18 (BLDC, 42 mm (NEM feeder | 14 AWG | 1 | 2.4 | 15 | 3.0 | 460 | 0.03 | 3 | yes |
 | OIL_FRAC | Motor: transfer pump CUT-3 to PROD_C19_C28 (BLDC, 42 mm (NEM feeder | 14 AWG | 1 | 2.4 | 15 | 3.0 | 460 | 0.03 | 3 | yes |
 | OIL_FRAC | Motor: transfer pump CUT-4 to PROD_C29 (BLDC, 42 mm (NEMA 17 feeder | 14 AWG | 1 | 2.4 | 15 | 3.0 | 460 | 0.03 | 3 | yes |
-| POLISH_BANK | Motor: transfer pump IA-POL-02 to CONTINUOUS_RECYCLE (BLDC,  feeder | 14 AWG | 1 | 2.4 | 15 | 10.6 | 460 | 0.10 | 3 | yes |
+| POLISH_BANK | Motor: transfer pump IA-POL-02 to CONTINUOUS_RECYCLE (BLDC,  feeder | 14 AWG | 1 | 2.4 | 15 | 10.8 | 460 | 0.10 | 3 | yes |
 | POLY_COND | Dilute-HCl return pump and transfer line to CRU feeder | 14 AWG | 1 | 2.4 | 15 | 4.5 | 460 | 0.04 | 3 | yes |
 | PROD_C19_C28 | Motor: transfer pump CUT-3-OUT to MFG_SHOP (BLDC, 42 mm (NEM feeder | 14 AWG | 1 | 2.4 | 15 | 7.5 | 460 | 0.07 | 3 | yes |
 | PROD_C29 | Motor: transfer pump C29_RECYCLE to C29_RECYCLE (BLDC, 42 mm feeder | 14 AWG | 1 | 2.4 | 15 | 7.0 | 460 | 0.07 | 3 | yes |
@@ -178,7 +178,7 @@ Plant demand 224.9 kW at 480 V, power factor 0.9 assumed: 301 A. EW process bars
 | ROOF_TANK | Motor: transfer pump IA-NOX-HAB to HABITATION (BLDC, 42 mm ( feeder | 14 AWG | 1 | 2.4 | 15 | 18.1 | 460 | 0.17 | 3 | yes |
 | ROOF_TANK | Motor: transfer pump IA-PEROX-H2O to WS_PEROX (BLDC, 42 mm ( feeder | 14 AWG | 1 | 2.4 | 15 | 18.1 | 460 | 0.17 | 3 | yes |
 | ROOF_TANK | Motor: transfer pump S21 to HABITATION (BLDC, 42 mm (NEMA 17 feeder | 14 AWG | 1 | 2.4 | 15 | 18.1 | 460 | 0.17 | 3 | yes |
-| SALT_FEED | screw feeder feeder | 14 AWG | 1 | 2.4 | 15 | 10.6 | 460 | 0.10 | 3 | yes |
+| SALT_FEED | screw feeder feeder | 14 AWG | 1 | 2.4 | 15 | 10.8 | 460 | 0.10 | 3 | yes |
 | SOLAR_PV_CELL | main drive feeder | 14 AWG | 1 | 1.1 | 15 | 8.9 | 460 | 0.04 | 3 | yes |
 | TFE_SYN | Dilute-HCl return pump and transfer line to CRU feeder | 14 AWG | 1 | 2.4 | 15 | 5.3 | 460 | 0.05 | 3 | yes |
 | VCD_TRAIN | Motor: transfer pump IA-VCD-BD to LEACH_CSTR_1 (BLDC, 42 mm  feeder | 14 AWG | 1 | 2.4 | 15 | 20.1 | 460 | 0.19 | 3 | yes |

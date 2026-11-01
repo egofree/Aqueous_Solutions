@@ -27,8 +27,9 @@ DIGESTER,DIGESTER_EXT,SALT_FEED,screw feeder,induction IE3,IEC 71 / 0.25 kW,0.18
 DIGESTER,LEACH_EW,EW_1,electrolyte circulation pump,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,assumed
 DIGESTER,LEACH_EW,EW_1,screw conveyor IA-EW-MET-1 to MFG_SHOP,induction IE3,IEC 80 / 0.55 kW,0.37,480 V 3-ph,S3,fixed speed,1,"60 kg/d solids (>= 50 kg/d conveyed, assumed)"
 DIGESTER,LEACH_EW,EW_1,transfer pump IA-EW-01 to EW_2,BLDC,42 mm (NEMA 17 flange),0.0117,24 V DC,S1,BLDC driver,1,"4139.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
-DIGESTER,LEACH_EW,EW_2,"Motor: electrolyte circulation pump (induction IE3, IEC 63 /",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-DIGESTER,LEACH_EW,EW_2,"Motor: transfer pump IA-EW-02 to EW_3 (BLDC, 42 mm (NEMA 17 ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
+DIGESTER,LEACH_EW,EW_2,electrolyte circulation pump,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,assumed
+DIGESTER,LEACH_EW,EW_2,screw conveyor IA-EW-MET-2 to MFG_SHOP,induction IE3,IEC 80 / 0.55 kW,0.37,480 V 3-ph,S3,fixed speed,1,"60 kg/d solids (>= 50 kg/d conveyed, assumed)"
+DIGESTER,LEACH_EW,EW_2,transfer pump IA-EW-02 to EW_3,BLDC,42 mm (NEMA 17 flange),0.0113,24 V DC,S1,BLDC driver,1,"3990.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 DIGESTER,LEACH_EW,EW_9,"Motor: electrolyte circulation pump (induction IE3, IEC 63 /",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 DIGESTER,LEACH_EW,EW_9,"Motor: transfer pump IA-EW-09 to POLISH_BANK (BLDC, 42 mm (N",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 DIGESTER,LEACH_EW,LEACH_CSTR_1,Gearmotor 0.75 kW 150 rpm output on lid bridge,induction IE3,IEC 90S / 1.1 kW,0.75,480 V 3-ph,S1,fixed speed,1,BOM (sized)

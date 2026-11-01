@@ -130,7 +130,7 @@ EXISTING_SOURCE = {
 }
 
 # Units whose section 5 acceptance the tracker verifies on the files before recording M3.
-ACCEPTED = ('AL_POT', 'EW_1')
+ACCEPTED = ('AL_POT', 'EW_1', 'EW_2')
 
 
 # --------------------------------------------------------------------------- authorities
@@ -599,13 +599,10 @@ def section7_text(records, graph, seed):
              f'As of {today}: {counts["M0"]} units at M0, {counts["M1"]} at M1, '
              f'{counts["M2"]} at M2, {counts["M3"]} at M3, {counts["A-ACC"]} accounting nodes. '
              'The units whose build log records "no build export yet" carry the envelope box '
-             'in `cad/stl`. AL_POT is at M3 on its build log of 2026-10-31 ("envelope-class '
-             'build accepted per AQS-PLAN-006 section 5 A-core"), with the drawing set at '
-             '`models/mfg/AL_POT/drawings/` and the check record at '
-             '`models/mfg/AL_POT/check.json`. EW_1 is at M3 on its build log '
-             '("accepted per AQS-PLAN-006 section 5 A-core and A-CELL"), with the drawing '
-             'set at `models/mfg/EW_1/drawings/` and the check record at '
-             '`models/mfg/EW_1/check.json`.')
+             'in `cad/stl`. Units at M3 on their build logs (accepted per AQS-PLAN-006 '
+             'section 5, drawing sets at `models/mfg/<UNIT>/drawings/`, check records at '
+             '`models/mfg/<UNIT>/check.json`): '
+             + ', '.join(ACCEPTED) + '.')
     L.append('')
     L.append('Facet counts are read from the `cad/stl` file (ASCII or binary), not estimated. '
              'Existing source is an AQS-MFG-001 (`docs-authority/internal/DETAIL_MODEL_PLAN.md`) '

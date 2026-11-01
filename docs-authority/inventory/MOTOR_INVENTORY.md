@@ -28,13 +28,13 @@ Table 1.1. Motor families
 
 | Family | Motor type | Size | Voltage | Count | Units | Installed shaft kW |
 | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 15 | 11 | 0.04 |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 16 | 12 | 0.05 |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 55 | 5 | 2.66 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 2 | 2 | 0.56 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 3 | 3 | 2.43 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 241 | 64 | 28.92 |
-| MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 4 | 3 | 1.48 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 240 | 64 | 28.80 |
+| MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 5 | 4 | 1.85 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 4 | 4 | 6.04 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 2 | 2 | 0.17 |
 | MF-13 | induction IE3 | IEC 71 / 0.25 kW | 208 V 3-ph | 1 | 1 | 0.18 |
@@ -86,8 +86,9 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | LEACH_EW | EW_1 | electrolyte circulation pump | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | assumed |
 | LEACH_EW | EW_1 | screw conveyor IA-EW-MET-1 to MFG_SHOP | induction IE3 | IEC 80 / 0.55 kW | 0.37 | 480 V 3-ph | S3 | fixed speed | 1 | 60 kg/d solids (>= 50 kg/d conveyed, assumed) |
 | LEACH_EW | EW_1 | transfer pump IA-EW-01 to EW_2 | BLDC | 42 mm (NEMA 17 flange) | 0.0117 | 24 V DC | S1 | BLDC driver | 1 | 4139.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| LEACH_EW | EW_2 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| LEACH_EW | EW_2 | Motor: transfer pump IA-EW-02 to EW_3 (BLDC, 42 mm (NEMA 17  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| LEACH_EW | EW_2 | electrolyte circulation pump | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | assumed |
+| LEACH_EW | EW_2 | screw conveyor IA-EW-MET-2 to MFG_SHOP | induction IE3 | IEC 80 / 0.55 kW | 0.37 | 480 V 3-ph | S3 | fixed speed | 1 | 60 kg/d solids (>= 50 kg/d conveyed, assumed) |
+| LEACH_EW | EW_2 | transfer pump IA-EW-02 to EW_3 | BLDC | 42 mm (NEMA 17 flange) | 0.0113 | 24 V DC | S1 | BLDC driver | 1 | 3990.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | LEACH_EW | EW_9 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | LEACH_EW | EW_9 | Motor: transfer pump IA-EW-09 to POLISH_BANK (BLDC, 42 mm (N | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | LEACH_EW | LEACH_CSTR_1 | Gearmotor 0.75 kW 150 rpm output on lid bridge | induction IE3 | IEC 90S / 1.1 kW | 0.75 | 480 V 3-ph | S1 | fixed speed | 1 | BOM (sized) |
