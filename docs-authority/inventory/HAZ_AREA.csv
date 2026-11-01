@@ -4,7 +4,7 @@ EW_3,DIGESTER,H2,0.141,IIC (Group B),T1,inside vessel,none (no vent on the unit)
 EW_5,DIGESTER,H2,0.031,IIC (Group B),T1,inside vessel,none (no vent on the unit),"1.5 m around the envelope, upward bias",7,1,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
 EW_6,DIGESTER,H2,0.034,IIC (Group B),T1,inside vessel,none (no vent on the unit),"1.5 m around the envelope, upward bias",7,1,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
 EW_7,DIGESTER,H2,0.446,IIC (Group B),T1,inside vessel,none (no vent on the unit),"1.5 m around the envelope, upward bias",7,2,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
-EW_8,DIGESTER,H2,0.032,IIC (Group B),T1,inside vessel,none (no vent on the unit),"1.5 m around the envelope, upward bias",7,2,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
+EW_8,DIGESTER,H2,0.032,IIC (Group B),T1,inside vessel,none (no vent on the unit),"1.5 m around the envelope, upward bias",7,1,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
 H2O_ELYZ,CRYO,H2,9.358,IIC (Group B),T1,inside vessel,1.0 m around relief/vent outlet,"1.5 m around the envelope, upward bias",4,0,Zone 1: Ex d/e or Ex ia IIC T1; Zone 2: Ex ec/nA IIC T1
 MEOH_TANK,MEOH,CH3OH,28.029,IIA (Group D),T1,inside vessel,none (no vent on the unit),"3.0 m around the envelope, to floor",9,5,Zone 1: Ex d/e or Ex ia IIA T1; Zone 2: Ex ec/nA IIA T1
 POLY_OLEFIN,POLYMERS,C5-C10,0.385,IIA (Group D),T3,inside vessel,none (no vent on the unit),"3.0 m around the envelope, to floor",5,0,Zone 1: Ex d/e or Ex ia IIA T3; Zone 2: Ex ec/nA IIA T3

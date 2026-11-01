@@ -28,12 +28,12 @@ Table 1.1. Motor families
 
 | Family | Motor type | Size | Voltage | Count | Units | Installed shaft kW |
 | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 21 | 17 | 0.11 |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 22 | 18 | 0.12 |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 55 | 5 | 2.66 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 2 | 2 | 0.56 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 3 | 3 | 2.43 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 235 | 64 | 28.20 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 234 | 64 | 28.08 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 6 | 5 | 2.22 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 4 | 4 | 6.04 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 2 | 2 | 0.17 |
@@ -103,8 +103,8 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | ew_cell | EW_7 | electrolyte circulation pump | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | assumed |
 | ew_cell | EW_7 | screw conveyor IA-EW-MET-7 to MFG_SHOP | induction IE3 | IEC 80 / 0.55 kW | 0.37 | 480 V 3-ph | S3 | fixed speed | 1 | 71 kg/d solids (>= 50 kg/d conveyed, assumed) |
 | ew_cell | EW_7 | transfer pump IA-EW-07 to EW_8 | BLDC | 42 mm (NEMA 17 flange) | 0.0106 | 24 V DC | S1 | BLDC driver | 1 | 3719.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| ew_cell | EW_8 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| ew_cell | EW_8 | Motor: transfer pump IA-EW-08 to EW_9 (BLDC, 42 mm (NEMA 17  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| ew_cell | EW_8 | electrolyte circulation pump | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | assumed |
+| ew_cell | EW_8 | transfer pump IA-EW-08 to EW_9 | BLDC | 42 mm (NEMA 17 flange) | 0.0105 | 24 V DC | S1 | BLDC driver | 1 | 3707.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 
 ### ELEC
 

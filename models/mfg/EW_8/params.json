@@ -80,5 +80,41 @@
  "acceptance_sets": [
   "A-core",
   "A-CELL"
- ]
+ ],
+ "design": {
+  "service": "electrowinning cell, Cd cathode product; chloride liquor 55 C in / cell-to-cell launder out",
+  "I_A": 209.0,
+  "cell_V": 2.12,
+  "dc_kW": 0.44,
+  "channel_dc_kW": 0.51,
+  "j_A_m2": 138,
+  "cathodes": 3,
+  "anodes": 4,
+  "pitch_mm": 100.0,
+  "plate_immersed_mm": [
+   600.0,
+   420.0
+  ],
+  "active_m2_per_cathode": 0.504,
+  "tank_inside_mm": [
+   450.0,
+   700.0,
+   750.0
+  ],
+  "wall_mm": 10.0,
+  "liquor_m3": 0.211,
+  "liquor_density_kg_m3": 1100,
+  "bus_pack": "1 x 20 x 6.3 mm Cu C101 per pole (AQS-BUS-001 Rev C EW-8 row)",
+  "basis": "AQS-DUTY-051 Rev C section 1 and the EW_8 row of its section 2; duty section 9 supersedes the 2.5 V / CE 1.0 figures (Rev B basis: CE 0.85, 2.12 V); channel DC on IA-DC-EW_8 0.51 kW with the 0.3 V bus drop."
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; x along 470, y along 720, z up",
+  "electrodes": "anodes at x 85 + 100k (4), cathodes at x 135 + 100k (3); sheets y 60..660, z 160..580; tabs 120 wide rise to z 691 (study contact arrangement, AQS-STD-002 section 9: Ti tab against the Cu bar above the liquor line)",
+  "bus": "pack pair over the tab line: + y 330..350, - y 370..390 (20 mm creepage gap, AQS-STD-002 section 11); bars x 135..335 on FRP pads at beam stations x 110/300; rectifier lugs at the -X bar ends",
+  "nozzle_spread": "the schedule gives face and height only; the along-face x positions are this layout's study choice (overflow at the discharge end x 400, vent bridge at x 235, the rest spread clear of the largest bore), recorded per tag in check.nozzles_drawn",
+  "vent_support": "the schedule vent is face top on an open tank: two PVC-U posts on the inner walls carry a rim bridge at z 750..760; the stub hangs to its 650 datum",
+  "drain": "drain at the discharge-end sump (x 400), flush at z 0, boss top at the 50 datum",
+  "solids_ports": "none in this schedule",
+  "hardware_idiom": "connection hardware flush at the envelope faces (lib/nozzles.place_on_face default); nothing protrudes, bbox = size_mm"
+ }
 }
