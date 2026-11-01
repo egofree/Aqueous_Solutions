@@ -15,6 +15,14 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/GW_
 - BOM `models/mfg/GW_INTAKE/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/GW_INTAKE/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
 
+## Open items
+
+- 2026-11-01: the node carries two disagreeing size claims - `params.envelope.size_mm`
+  800 x 800 x 600 (the X-LOC-13 well-head envelope) and the study `size_mm`
+  900 x 700 x 1800 this build filled ("unit task 02 sizing pending"). The tracker
+  checks the export against the envelope field and reports the misfit; which claim
+  governs is a sizing decision, so nothing was resized.
+
 ## Sources
 
 - `models/mfg/GW_INTAKE/export/gw_intake.step`

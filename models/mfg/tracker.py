@@ -570,6 +570,7 @@ def acceptance_evidence(rec):
 
 def section7_text(records, graph, seed):
     present = [r for r in records]
+    fails_by_unit = {r['unit']: check_unit(r) for r in present}
     counts = {'M0': 0, 'M1': 0, 'M2': 0, 'M3': 0, 'A-ACC': 0}
     for r in present:
         if r['cls'] == 'boundary':
@@ -582,7 +583,7 @@ def section7_text(records, graph, seed):
             counts['M1'] += 1
         else:
             counts['M0'] += 1
-    n_check_fail = sum(1 for r in present if check_unit(r))
+    n_check_fail = sum(1 for f in fails_by_unit.values() if f)
     today = date.today().isoformat()
     L = []
     L.append(S7_MARK)
@@ -625,10 +626,17 @@ def section7_text(records, graph, seed):
             accept = 'A-ACC'
         else:
             accept = ', '.join(r['acceptance']) + ('' if r['route'] else ' (route hold)')
+        status = status_of(r)
+        # section 5 A-core 2: a build that leaves size_mm is reported on the board, with
+        # the measured box against the claimed envelope; nothing is resized
+        mis = [f.replace(' (misfit to report)', '') for f in fails_by_unit.get(r['unit'], [])
+               if f.startswith('bbox')]
+        if mis:
+            status += '. Misfit to report: ' + '; '.join(mis) + '; nothing is resized'
         L.append(f"| {i} | {cell(r['unit'])} | {cell(r['sector'])} | {cell(r['cls']) or 'hold: no class on the node'} "
                  f"| {r['tier']} | {cell(r['internals'])} | {'yes' if r['seed_origin'] else 'no'} "
                  f"| {cell(cad_stl_cell(r))} | {cell(r['existing_source'])} | {cell(route)} "
-                 f"| {cell(accept)} | {cell(status_of(r))} |")
+                 f"| {cell(accept)} | {cell(status)} |")
     return '\n'.join(L) + '\n'
 
 
