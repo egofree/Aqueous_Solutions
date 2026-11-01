@@ -383,7 +383,7 @@
      "register": "AQS-STD-007 (United States family; state and county codes at the parcel)"
     },
     "building_code": {
-     "value": "Florida Building Code, 8th Edition (2023) with ASCE 7-22 load chapters; NEC 2023",
+     "value": "Florida Building Code, 8th Edition (2023) with ASCE 7-22 load chapters; NEC 2026 (NFPA 70-2026)",
      "units": "-",
      "ref": "FBC8_2023"
     },

@@ -36,14 +36,17 @@ def test_bindings_exist_with_matching_units(base):
 
 
 def test_missing_group_is_an_error(base):
-    for gk in S.groups_spec():
-        p = copy.deepcopy(base); del p['groups'][gk]
-        assert any(f'group {gk} missing' in e for e in S.validate(p)), gk
+    # only the always-required groups error when absent (AQS-SITE-014 Rev B: the optional parcel
+    # group and the pending-able groups simply carry no bindings when absent)
+    for gk, gs in S.groups_spec().items():
+        p = copy.deepcopy(base); p['groups'].pop(gk, None)
+        errs = S.validate(p)
+        assert any(f'group {gk} missing' in e for e in errs) == bool(gs['always']), gk
 
 
 def test_missing_entry_is_an_error(base):
     for gk, gs in S.groups_spec().items():
-        if 'entries' not in base['groups'][gk]: continue
+        if gk not in base['groups'] or 'entries' not in base['groups'][gk]: continue
         for ek in gs['entries']:
             p = copy.deepcopy(base); del p['groups'][gk]['entries'][ek]
             assert any(f'{gk}.{ek} missing' in e for e in S.validate(p)), (gk, ek)
