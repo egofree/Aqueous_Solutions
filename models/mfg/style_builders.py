@@ -370,6 +370,10 @@ def dispatch():
         cls = n.get('class')
         if cls in ENVELOPE_KEEP:
             continue
+        if os.path.exists(os.path.join(MFG, u, u.lower() + '.py')) or \
+                os.path.exists(os.path.join(MFG, u, u + '.py')):
+            continue   # the unit folder owns its model script (AQS-PLAN-006 W1): the style
+                       # builder would clobber the accepted build at every regen pass
         if (n.get('params', {}).get('sizing') or {}).get('size_mm'):
             continue   # a sizing calculation owns this envelope (RSZ cells): the builder would fight
                        # the sizing stage pass-for-pass
