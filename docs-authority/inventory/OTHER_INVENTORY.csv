@@ -760,13 +760,18 @@ DIGESTER,ew_cell,EW_5,valve,check valve,DN15,"PVC-U true-union swing/ball check 
 DIGESTER,ew_cell,EW_5,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-EW-05: one at each end nozzle (assumed)
 DIGESTER,ew_cell,EW_5,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,IA-EW5-CL2: one at each end nozzle (assumed)
 DIGESTER,ew_cell,EW_5,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-EW5-H2B: one at each end nozzle (assumed)
-DIGESTER,ew_cell,EW_6,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: electrolyte circulation pump (induction IE3, IEC 63 /: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-DIGESTER,ew_cell,EW_6,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump IA-EW-06 to EW_7 (BLDC, 42 mm (NEMA 17 : drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-DIGESTER,ew_cell,EW_6,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: electrolyte circulation pump (induction IE3, IEC 63 /: run and fault (assumed)"
-DIGESTER,ew_cell,EW_6,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump IA-EW-06 to EW_7 (BLDC, 42 mm (NEMA 17 : run and fault (assumed)"
-DIGESTER,ew_cell,EW_6,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: electrolyte circulation pump (induction IE3, IEC 63 / (assumed VFD at >= 0.75 kW)"
-DIGESTER,ew_cell,EW_6,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump IA-EW-06 to EW_7 (BLDC, 42 mm (NEMA 17  (assumed VFD at >= 0.75 kW)"
-DIGESTER,ew_cell,EW_6,fabricated part,fabricated part set,33 BOM lines,models/mfg/EW_6/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+DIGESTER,ew_cell,EW_6,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"electrolyte circulation pump: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
+DIGESTER,ew_cell,EW_6,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-EW-06 to EW_7 (assumed size)
+DIGESTER,ew_cell,EW_6,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-EW-06 to EW_7
+DIGESTER,ew_cell,EW_6,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,electrolyte circulation pump: run and fault (assumed)
+DIGESTER,ew_cell,EW_6,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-EW-06 to EW_7: run and fault (assumed)
+DIGESTER,ew_cell,EW_6,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,electrolyte circulation pump (assumed VFD at >= 0.75 kW)
+DIGESTER,ew_cell,EW_6,fabricated part,fabricated part set,9 BOM lines,models/mfg/EW_6/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+DIGESTER,ew_cell,EW_6,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,4,models/mfg/EW_6/fasteners.csv
+DIGESTER,ew_cell,EW_6,fastener,M10 x 35,M10 x 35,ISO 3506 A4-70,6,models/mfg/EW_6/fasteners.csv
+DIGESTER,ew_cell,EW_6,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,7,models/mfg/EW_6/fasteners.csv
+DIGESTER,ew_cell,EW_6,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_6/fasteners.csv
+DIGESTER,ew_cell,EW_6,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_6/fasteners.csv
 DIGESTER,ew_cell,EW_6,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IA-EW-06: 2 per support (assumed)
 DIGESTER,ew_cell,EW_6,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,IA-EW6-CL2: 2 per support (assumed)
 DIGESTER,ew_cell,EW_6,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,IA-EW6-H2B: 2 per support (assumed)
@@ -780,9 +785,7 @@ DIGESTER,ew_cell,EW_6,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE
 DIGESTER,ew_cell,EW_6,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,ew_cell,EW_6,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 DIGESTER,ew_cell,EW_6,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-DIGESTER,ew_cell,EW_6,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-DIGESTER,ew_cell,EW_6,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: electrolyte circulation pump (induction IE3, IEC 63 /: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
-DIGESTER,ew_cell,EW_6,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump IA-EW-06 to EW_7 (BLDC, 42 mm (NEMA 17 : induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
+DIGESTER,ew_cell,EW_6,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,electrolyte circulation pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 DIGESTER,ew_cell,EW_6,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",15,IA-EW-06: AQS-PIP-005 span count
 DIGESTER,ew_cell,EW_6,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",14,IA-EW6-CL2: AQS-PIP-005 span count
 DIGESTER,ew_cell,EW_6,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,IA-EW6-H2B: AQS-PIP-005 span count

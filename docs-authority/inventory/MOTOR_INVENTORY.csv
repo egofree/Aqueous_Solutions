@@ -39,8 +39,8 @@ DIGESTER,ew_cell,EW_4,electrolyte circulation pump,induction IE3,IEC 63 / 0.18 k
 DIGESTER,ew_cell,EW_4,transfer pump IA-EW-10 to EW_5,BLDC,42 mm (NEMA 17 flange),0.0111,24 V DC,S1,BLDC driver,1,"3922.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 DIGESTER,ew_cell,EW_5,electrolyte circulation pump,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,assumed
 DIGESTER,ew_cell,EW_5,transfer pump IA-EW-05 to EW_6,BLDC,42 mm (NEMA 17 flange),0.0111,24 V DC,S1,BLDC driver,1,"3909.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
-DIGESTER,ew_cell,EW_6,"Motor: electrolyte circulation pump (induction IE3, IEC 63 /",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-DIGESTER,ew_cell,EW_6,"Motor: transfer pump IA-EW-06 to EW_7 (BLDC, 42 mm (NEMA 17 ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
+DIGESTER,ew_cell,EW_6,electrolyte circulation pump,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,assumed
+DIGESTER,ew_cell,EW_6,transfer pump IA-EW-06 to EW_7,BLDC,42 mm (NEMA 17 flange),0.0111,24 V DC,S1,BLDC driver,1,"3896.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 DIGESTER,ew_cell,EW_7,"Motor: electrolyte circulation pump (induction IE3, IEC 63 /",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 DIGESTER,ew_cell,EW_7,"Motor: transfer pump IA-EW-07 to EW_8 (BLDC, 42 mm (NEMA 17 ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 DIGESTER,ew_cell,EW_8,"Motor: electrolyte circulation pump (induction IE3, IEC 63 /",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
