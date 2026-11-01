@@ -1,0 +1,158 @@
+{
+  "bbox_mm": [
+    2670.0,
+    720.3,
+    760.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    2670,
+    720,
+    760
+  ],
+  "graph_revision": "AC",
+  "solids": 7,
+  "all_parts_valid": true,
+  "cathodes": {
+    "count": 25,
+    "sheet_mm": [
+      600.0,
+      420.0,
+      3.0
+    ],
+    "pitch_mm": 100.0,
+    "active_m2_each": 0.504,
+    "active_m2_bank": 12.6,
+    "duty_basis": "AQS-DUTY-051 section 1; 2476 A at 196 A/m2 = 12.63 m2 (duty rounding 12.60, 0.24 %)"
+  },
+  "anodes": {
+    "count": 26,
+    "sheet_envelope_mm": [
+      600.0,
+      420.0,
+      1.5
+    ],
+    "basis": "Ti mesh t1.5 MMO, drawn as its sheet envelope (AQS-PLAN-006 rule 6)"
+  },
+  "bus": {
+    "pack": "2 x 110 x 6.3 mm per pole",
+    "section_cm2": 13.9,
+    "A_cm2_at_2476": 178.6,
+    "published_A_cm2": 152,
+    "published_current_A": 2105,
+    "note": "pack verbatim from the published AQS-BUS-001 EW-1 row (2105 A basis). At the duty section 9 bounding 2476 A the same pack runs 179 A/cm2; the bus standard regenerates from the duty current in docs-authority/_ew_busbar.py - re-sizing is that generator's run, not the model's (named hold, WORK_ORDER W12)."
+  },
+  "liquor_m3": 1.208,
+  "liquor_fill_basis_m3": 1.243,
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "-Y",
+      "height_mm": 130,
+      "x_mm": 600.0,
+      "note": "atmospheric hose joint at the face (duty section 4)"
+    },
+    "N2": {
+      "style": "gland",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 130,
+      "x_mm": 200.0,
+      "note": "conductor gland, not a hose (duty section 4)"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "+Y",
+      "height_mm": 487,
+      "x_mm": 2500.0,
+      "note": "atmospheric hose joint at the face (duty section 4)"
+    },
+    "N4": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 487,
+      "x_mm": 900.0,
+      "note": "atmospheric hose joint at the face (duty section 4)"
+    },
+    "N5": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 487,
+      "x_mm": 1300.0,
+      "note": "atmospheric hose joint at the face (duty section 4)"
+    },
+    "N6": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 487,
+      "x_mm": 1700.0,
+      "note": "atmospheric hose joint at the face (duty section 4)"
+    },
+    "N7": {
+      "style": "drain",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "x_mm": 2500.0,
+      "note": "atmospheric hose joint at the face (duty section 4)"
+    },
+    "N8": {
+      "style": "vent",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 650,
+      "x_mm": 1335.0,
+      "note": "atmospheric hose joint at the face (duty section 4)"
+    },
+    "N9": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "+Y",
+      "height_mm": 600,
+      "x_mm": 2100.0,
+      "note": "atmospheric hose joint at the face (duty section 4)"
+    },
+    "N10": {
+      "style": "solids",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600,
+      "x_mm": 400.0,
+      "note": "solids hand transfer - bore not calculated (AQS-PLAN-006 W4)"
+    },
+    "N11": {
+      "style": "solids",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160,
+      "x_mm": 1000.0,
+      "note": "solids hand transfer - bore not calculated (AQS-PLAN-006 W4)"
+    },
+    "N12": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600,
+      "x_mm": 600.0,
+      "note": "atmospheric hose joint at the face (duty section 4)"
+    }
+  },
+  "nozzle_idiom": "hardware flush at the envelope faces (lib/nozzles.place_on_face default); external hose makeup at the face plane",
+  "part_mass_kg": {
+    "tank": 108.0,
+    "cathodes": 89.7,
+    "edge_strips": 4.7,
+    "anodes": 46.7,
+    "bus_bars": 61.0,
+    "standoff_pads": 0.1,
+    "support_beams": 2.6,
+    "nozzles": 0.9,
+    "vent_support": 0.9
+  },
+  "cadquery": "2.8.0"
+}

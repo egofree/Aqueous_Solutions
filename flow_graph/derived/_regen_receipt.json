@@ -493,6 +493,10 @@
    "status": "ok"
   },
   {
+   "name": "mfg_tracker",
+   "status": "ok"
+  },
+  {
    "name": "doc_cad_clash",
    "status": "ok"
   },
@@ -608,6 +612,7 @@
   "docs-authority/LOAD_LIST.json",
   "docs-authority/LOAD_LIST.md",
   "docs-authority/MAINT_PLAN.md",
+  "docs-authority/MFG_MODEL_PLAN.md",
   "docs-authority/MFG_TOOLS.md",
   "docs-authority/MODEL_WORKBOOK.xlsx",
   "docs-authority/MOTOR_FIRST_ARTICLE.md",
@@ -802,6 +807,7 @@
   "flow_graph/views/*",
   "media/3d/*",
   "media/_generated.json",
+  "models/mfg/*/params.json",
   "models/openscad/foam_ew/*.png",
   "models/openscad/foam_ew/CUT_LIST.md",
   "models/openscad/foam_ew/cut_list.csv",

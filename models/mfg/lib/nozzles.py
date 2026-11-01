@@ -105,16 +105,18 @@ def place_on_face(solid, face, height, center_xy, envelope_xyz, outside=False):
     if face == 'bottom':
         z = bb.zlen if not outside else -bb.zlen
         return solid.rotate((0, 0, 0), (1, 0, 0), 180).translate((x, y, z))
+    # side faces: rotate first, then offset by the rotated extent, so `not outside`
+    # really ends flush at the face (the pre-rotation bbox y/x extent is the stub
+    # diameter, not its length).
+    rot = {'+X': solid.rotate((0, 0, 0), (0, 1, 0), 90),
+           '-X': solid.rotate((0, 0, 0), (0, 1, 0), -90),
+           '+Y': solid.rotate((0, 0, 0), (1, 0, 0), -90),
+           '-Y': solid.rotate((0, 0, 0), (1, 0, 0), 90)}[face]
+    rb = rot.val().BoundingBox()
     if face == '+X':
-        x0 = (L - bb.xlen) if not outside else L
-        return solid.rotate((0, 0, 0), (0, 1, 0), 90).translate((x0, y, height))
+        return rot.translate(((L - rb.xlen) if not outside else L, y, height))
     if face == '-X':
-        x0 = bb.xlen if not outside else -bb.xlen
-        return solid.rotate((0, 0, 0), (0, 1, 0), -90).translate((x0, y, height))
+        return rot.translate((rb.xlen if not outside else -rb.xlen, y, height))
     if face == '+Y':
-        y0 = (W - bb.ylen) if not outside else W
-        return solid.rotate((0, 0, 0), (1, 0, 0), -90).translate((x, y0, height))
-    if face == '-Y':
-        y0 = bb.ylen if not outside else -bb.ylen
-        return solid.rotate((0, 0, 0), (1, 0, 0), 90).translate((x, y0, height))
-    raise ValueError(f'unknown face {face!r}; use top, bottom, +X, -X, +Y, -Y')
+        return rot.translate((x, (W - rb.ylen) if not outside else W, height))
+    return rot.translate((x, rb.ylen if not outside else -rb.ylen, height))

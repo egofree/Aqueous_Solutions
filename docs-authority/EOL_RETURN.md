@@ -19,10 +19,10 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 2085 | 60 % |
-| organic | 1090 | 31 % |
-| silicate_oxide | 171 | 5 % |
-| metal_reactive | 123 | 4 % |
+| metal_plateable | 2069 | 60 % |
+| organic | 1073 | 31 % |
+| silicate_oxide | 169 | 5 % |
+| metal_reactive | 122 | 4 % |
 | unassigned | 23 | 1 % |
 
 Unassigned: 23 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
@@ -89,7 +89,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | EVAP_ACID | 1 | 9 | 0 | 1 | 0 |
 | EVAP_ACID_VS | 0 | 8 | 0 | 0 | 0 |
 | EVAP_BASE | 5 | 3 | 0 | 1 | 0 |
-| EW_1 | 22 | 22 | 2 | 6 | 0 |
+| EW_1 | 2 | 5 | 0 | 5 | 0 |
 | EW_2 | 21 | 18 | 2 | 6 | 0 |
 | EW_3 | 15 | 14 | 2 | 4 | 0 |
 | EW_4 | 15 | 18 | 2 | 6 | 0 |
@@ -159,7 +159,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MET_MELT | 14 | 9 | 1 | 0 | 0 |
 | MET_SCRUB | 18 | 21 | 1 | 0 | 0 |
 | MET_SYN | 2 | 6 | 1 | 0 | 0 |
-| MF-01 x 14 | 3 | 1 | 0 | 2 | 0 |
+| MF-01 x 15 | 3 | 1 | 0 | 2 | 0 |
 | MF-02 x 55 | 3 | 1 | 0 | 2 | 0 |
 | MF-03 x 0 | 5 | 1 | 0 | 2 | 0 |
 | MF-04 x 0 | 5 | 0 | 0 | 1 | 0 |
@@ -167,8 +167,8 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MF-06 x 2 | 5 | 0 | 0 | 1 | 0 |
 | MF-07 x 3 | 5 | 0 | 0 | 1 | 0 |
 | MF-08 x 3 | 7 | 0 | 0 | 3 | 0 |
-| MF-09 x 242 | 7 | 0 | 0 | 3 | 0 |
-| MF-10 x 3 | 7 | 0 | 0 | 3 | 0 |
+| MF-09 x 241 | 7 | 0 | 0 | 3 | 0 |
+| MF-10 x 4 | 7 | 0 | 0 | 3 | 0 |
 | MF-11 x 4 | 7 | 0 | 0 | 3 | 0 |
 | MF-12 x 2 | 7 | 0 | 0 | 3 | 0 |
 | MF-13 x 1 | 7 | 0 | 0 | 3 | 0 |
@@ -264,6 +264,10 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-82 | 1 | 0 | 0 | 0 | 0 |
 | OF-83 | 1 | 0 | 0 | 0 | 0 |
 | OF-84 | 1 | 0 | 0 | 0 | 0 |
+| OF-85 | 1 | 0 | 0 | 0 | 0 |
+| OF-86 | 1 | 0 | 0 | 0 | 0 |
+| OF-87 | 1 | 0 | 0 | 0 | 0 |
+| OF-88 | 1 | 0 | 0 | 0 | 0 |
 | OIL_DRYER | 11 | 1 | 2 | 0 | 0 |
 | OIL_FRAC | 43 | 10 | 2 | 0 | 0 |
 | OIL_PYRO | 4 | 1 | 2 | 0 | 0 |

@@ -623,55 +623,15 @@ EVAP_BASE,Feed/condensate/product interchanger 0.146 m2,1.0,-,-,-,-,-,HOLD - lin
 EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m,1.0,-,-,-,-,-,HOLD - line mass pending at the unit CAD build (AQS-PRO-003 section 3),X-MFG-32
 EVAP_BASE,"Body relief valve API 526 D orifice, set 100 kPa g",1.0,-,-,-,-,-,HOLD - line mass pending at the unit CAD build (AQS-PRO-003 section 3),"fire case ISO 23251, sized in-house"
 EVAP_BASE,"Shell relief valve API 526 D orifice, set 350 kPa g",1.0,-,-,-,-,-,HOLD - line mass pending at the unit CAD build (AQS-PRO-003 section 3),"blocked outlet, sized in-house"
-EW_1,Body / envelope 600 x 420 x 650 mm,1.0,-,-,-,-,-,HOLD - line mass pending at the unit CAD build (AQS-PRO-003 section 3),docs-authority/duties/EW_1.md
-EW_1,Process nozzle DN15,7.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),one per mass edge; DN from AQS-INV-003
-EW_1,Process nozzle DN50,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),one per mass edge; DN from AQS-INV-003
-EW_1,"Motor: electrolyte circulation pump (induction IE3, IEC 63 / 0.18 kW)",1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-001 / AQS-INV-005
-EW_1,"Motor: screw conveyor IA-EW-MET-1 to MFG_SHOP (induction IE3, IEC 80 / 0.55 kW)",1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-001 / AQS-INV-005
-EW_1,"Motor: transfer pump IA-EW-01 to EW_2 (BLDC, 42 mm (NEMA 17 flange))",1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-001 / AQS-INV-005
-EW_1,bearing: deep-groove ball bearing 6201-2Z,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,bearing: deep-groove ball bearing 6204-2Z,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,bearing: deep-groove ball bearing 608-2Z,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,electronics: BLDC driver 24/48 V DC,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,electronics: PLC digital I/O point 24 V DC,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,electronics: PLC digital I/O point 24 V DC,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,electronics: PLC digital I/O point 24 V DC,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,electronics: motor starter (contactor + overload) 0.18 kW,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,electronics: motor starter (contactor + overload) 0.55 kW,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,fastener: anchor bolt M10,20.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,fastener: anchor bolt M10,16.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,fastener: anchor bolt M10,22.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,fastener: anchor bolt M10,12.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,fastener: anchor bolt M10,18.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,instrument: flow transmitter DN15,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,instrument: flow transmitter DN15,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,instrument: flow transmitter DN15,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,instrument: flow transmitter DN50,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,instrument: flow transmitter DN15,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,"instrument: gas detector, Cl2 / HCl electrochemical Cl2 and HCl",2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,"instrument: gas detector, H2 catalytic bead + IR backup",2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,instrument: high-level switch vibrating fork,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,instrument: level transmitter radar 80 GHz,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,instrument: pressure transmitter 0-10 bar,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,instrument: temperature element Pt100 class A,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,"protection: inverse-time circuit breaker, 3-pole 15 A",1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,"protection: inverse-time circuit breaker, 3-pole 15 A",1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,"seal: mechanical seal, single EN 12756",1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,support: pipe clamp DN15,10.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,support: pipe clamp DN15,8.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,support: pipe clamp DN15,11.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,support: pipe clamp DN50,6.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,support: pipe clamp DN15,9.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,valve: check valve DN15,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,valve: check valve DN15,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,valve: check valve DN15,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,valve: check valve DN50,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,valve: check valve DN15,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,valve: isolation valve DN15,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,valve: isolation valve DN15,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,valve: isolation valve DN15,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,valve: isolation valve DN50,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-EW_1,valve: isolation valve DN15,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
+EW_1,"CPVC tank shell, outside 2670 x 720 x 760 mm, wall 10 mm, open top (inside 2650 x 700 x 750: sump 150 + plate 420 + cover 100 + freeboard 80)",1.0,108,2.60 $/kg (CPVC compound),2 (plate and weld),1,561.60,P: 2024 US thermoplastic compound average; F: TOWLER_SINNOTT ch.7 plate fabrication,"AQS-DUTY-051 section 1 wall 10 mm and zone stack; duty section 3 tank CPVC (X-MAT-09, M5); CA 0 mm (AQS-STD-001 polymer rule)"
+EW_1,CPVC support set: 4 cross beams 60 x 10 x 700 under the bus pads + vent bridge 60 x 10 x 700 + 2 posts 30 x 30 x 100,1.0,3.5,2.60 $/kg (CPVC compound),2 (plate and weld (default)),1,18.20,P: 2024 US thermoplastic compound average; F: TOWLER_SINNOTT ch.7 plate fabrication (default class),duty section 3 racks CPVC; AQS-STD-002 section 11 (no busbar touches a tank lip); CA 0 mm
+EW_1,"Cathode set: 25 sheets 600 x 420 x 3 mm Ti Grade 2 + 25 hanger tabs 120 x 111 x 3, at 100 mm pitch",25.0,89.7,12.00 $/kg (Ti mill product (sponge $11.7/kg MCS)),2 (plate and weld),1,"2,152.80",P: USGS_MCS_2025 Ti sponge + mill surcharge; F: TOWLER_SINNOTT ch.7 plate fabrication,"AQS-DUTY-051 section 1 (plate 0.60 x 0.42, 0.504 m2 both faces); AQS-STD-002 section 9; CA 0 mm on titanium (duty section 3); annealed, no cold forming after anneal"
+EW_1,"Anode set: 26 meshes 600 x 420 x 1.5 mm Ti + 26 hanger tabs 120 x 111 x 1.5, MMO coated (RuO2-IrO2-TiO2)",26.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),duty section 3; AQS-STD-002 section 9; drawn as its sheet envelope (AQS-PLAN-006 rule 6); coat life is a vendor figure at the cell current density
+EW_1,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",50.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),"AQS-STD-002 section 9 (plastic edge strip so the sheet peels); cut-to-length stock, density per the supplier TDS at order"
+EW_1,"Bus packs, go and return: 2 x (2 flats 110 x 6.3 x 2400 mm, spaced one thickness) + 2 rectifier lugs 110 x 110 x 6.3",1.0,61,9.26 $/kg (copper),2 (plate and weld (default)),1,"1,129.72",P: USGS_MCS_2025 (2024 avg $4.20/lb); F: TOWLER_SINNOTT ch.7 plate fabrication (default class),"AQS-BUS-001 Rev C EW-1 row (13.9 cm2 class, published at 2105 A); pair per AQS-STD-002 section 11; copper above the liquor, contacts Ti-clad (section 9); CA 0 mm"
+EW_1,"Standoff pads 10 x 110 x 8 under the bus packs, 3 per pack per beam station",12.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-STD-002 section 11 non-conductive standoffs
+EW_1,"Nozzle set, set-in CPVC per docs-authority/nozzles/EW_1.csv: 3 x DN50 barbs (N1/N3/N9), 1 x DN25 barb (N6), 5 x DN15 barbs (N4/N5/N7/N8/N12), 2 x DN15 solids ports (N10/N11, bore not calculated), 1 x DN15 conductor gland (N2)",12.0,0.9,9.26 $/kg (copper),2 (plate and weld),1,16.67,P: USGS_MCS_2025 (2024 avg $4.20/lb); F: TOWLER_SINNOTT ch.7 plate fabrication,schedule tags/faces/heights verbatim; atmospheric joints are hose (duty section 4); solids at DN15 labeled bore not calculated (AQS-PLAN-006 W4); barb profile is a study proportion (lib/nozzles.py)
+EW_1,"Rectifier, 5.26 kW cell channel on IA-DC-EW_1 (floating, insulation monitor, protection current on trip)",1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),duty sections 3 and 9 (AQS-STD-002 section 11); mass per the purchase datasheet at order
 EW_2,Body / envelope 600 x 420 x 650 mm,1.0,-,-,-,-,-,HOLD - line mass pending at the unit CAD build (AQS-PRO-003 section 3),docs-authority/duties/EW_2.md
 EW_2,Process nozzle DN15,5.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),one per mass edge; DN from AQS-INV-003
 EW_2,Process nozzle DN50,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),one per mass edge; DN from AQS-INV-003

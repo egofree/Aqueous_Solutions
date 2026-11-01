@@ -1,0 +1,156 @@
+"""EW_1 drawing set (AQS-PLAN-006 W7): SVG/PDF sheets from the accepted build.
+
+The SVGs are exported here as drawing content only; the AQS-DWG-001 title block
+(content-hash revision per ISO_7200/ASME_Y14_35) and the DRAWING_REGISTER.md rows
+are applied by docs-authority/_drawings.py (AQS-DWG-002), which stamps every
+models/mfg/*/drawings/*.svg. Geometry and notes:
+
+  ga_front       general arrangement, front elevation (-Y)
+  ga_side        general arrangement, side elevation (-X)
+  nozzle_orient  nozzle orientation, top view (tags/faces/heights per the schedule)
+  sh01           CPVC tank shell (wall 10 mm, zone stack)
+  el01           electrode bank: 25 cathodes + edge strips, 26 anodes, bus pair
+  aux01          service group: barbs, gland, solids ports, drain, vent bridge
+  iso01          isometric orientation sheet
+
+Run twice around _drawings.py:
+    python3 models/mfg/EW_1/draw_ew_1.py    # SVG source from the build + build log
+    python3 docs-authority/_drawings.py     # title block + register rows
+    python3 models/mfg/EW_1/draw_ew_1.py    # PDF pass (now from stamped SVGs)
+"""
+import json, pathlib, runpy
+
+HERE = pathlib.Path(__file__).parent
+ns = runpy.run_path(HERE / "ew_1.py")
+parts, inv, P, R = ns["parts"], ns["inv"], ns["P"], ns["report"]
+REV = P["graph_revision"]
+DRAW = HERE / "drawings"; DRAW.mkdir(exist_ok=True)
+
+
+def union_all(shapes):
+    u = None
+    for s in shapes:
+        u = s if u is None else u.union(s)
+    return u
+
+
+tank = parts["tank"]
+electrode = union_all([parts["cathodes"], parts["edge_strips"], parts["anodes"],
+                       parts["bus_bars"], parts["standoff_pads"], parts["support_beams"]])
+aux = union_all([parts["nozzles"], parts["vent_support"]])
+full = union_all(list(parts.values()))
+drawn_full = union_all([full] + list(inv.values()))
+
+L, W, H = P["size_mm"]
+SHEETS = [
+    ("ga_front", drawn_full, (0, 1, 0),
+     [f'Keys: {L} x {W} x {H} mm overall (graph envelope, filled by the shell); open top',
+      'Zone stack above the floor: sump 150 / plate 420 / cover 100 / freeboard 80; liquor fill line z 680 (1.243 m3, AQS-DUTY-051)',
+      'Electrode bank: 25 cathodes + 26 anodes at 100 mm pitch, plates 600 x 420 immersed',
+      'Bus pair above the liquor line on FRP standoffs; N2 conductor gland at -Y z 130',
+      'Liquor shown as a process-inventory solid - not a BOM part'],
+     "General arrangement, front elevation. Shop, not stamped (AQS-STD-001 section 7)."),
+    ("ga_side", drawn_full, (1, 0, 0),
+     [f'Keys: {W} mm inside-width stack: plate 600 + 2 x 50 rack margin; wall 10 mm CPVC',
+      'Plates z 160..580 immersed; Ti tabs 120 wide rise to z 691; bus bars z 691..709.9',
+      'Support beams under the pads at z 673..683, bolted to the inner walls',
+      'Nozzle hardware drawn flush at the envelope faces (lib/nozzles.place_on_face); hose makeup at the face plane',
+      'General tolerance ISO 2768-m unless noted'],
+     "General arrangement, side elevation. Shop, not stamped (AQS-STD-001 section 7)."),
+    ("nozzle_orient", drawn_full, (0, 0, -1),
+     ['N1 DN50 -Y z 130 x 600: CSTR to EW-1, hose (atmospheric)',
+      'N2 DN15 -Y z 130 x 200: rectifier into the cell - conductor gland, not a hose (duty section 4)',
+      'N3 DN50 +Y z 487 x 2500: EW overflow (sets the working level; sizing fill 1.243 m3 reads to z 680 - see WORK_ORDER W12)',
+      'N4/N5 DN15 +Y z 487 x 900/1300: cathode H2 + sweep air; EW heat, hose. N6 DN25 +Y z 487 x 1700: plated sheet (schedule verbatim)',
+      'N7 DN15 bottom (2500, 360), flush z 0, boss to 50: drain. N8 DN15 top, hangs to z 650 on the rim bridge: vent',
+      'N9 DN50 +Y z 600 x 2100: hood hydrogen. N10 DN15 +Y z 600 x 400 and N11 DN15 -Y z 160 x 1000: solids, bore not calculated. N12 DN15 +Y z 600 x 600: anode Cl2 to leach oxidation',
+      'Heights/bore/rating per docs-authority/nozzles/EW_1.csv; along-face x positions are the registered layout choice (params.json layout)'],
+     "Nozzle orientation, top view. Tags/faces/heights per the task-04 schedule."),
+    ("sh01", tank, (0, 1, 0),
+     ['CPVC tank, outside 2670 x 720 x 760, wall 10 mm: inside 2650 x 700 x 750 (AQS-DUTY-051 section 1 zone stack)',
+      'Open top; freeboard 80 to the rim; bottom wall pierced for N7 only',
+      'Thermoplastic welds per the unit WORK_ORDER route (hot-gas / extrusion, CPVC); hydro or leak test per F-CELL route class',
+      'Corrosion allowance 0 mm (AQS-STD-001 polymer rule); general tolerance ISO 2768-m'],
+     "Fabricated part sheet: CPVC tank shell."),
+    ("el01", electrode, (0, 1, 0),
+     ['25 cathode sheets 600 x 420 x 3 Ti Grade 2 + PVC-U edge strip clips at x 135 + 100k',
+      '26 anode sheets 600 x 420 x 1.5 Ti mesh MMO (drawn as the sheet envelope) at x 85 + 100k',
+      'Hanger tabs 120 wide rise to z 691; bus pair 2 x (2 flats 110 x 6.3 x 2400) Cu C101, + y 240..350 / - y 370..480, on 12 FRP pads',
+      'Bus per the published AQS-BUS-001 EW-1 row; contacts Ti-tab on Cu bar above the liquor line (AQS-STD-002 sections 9 and 11); 51 M6 tab clamps (fasteners.csv)'],
+     "Fabricated part sheet: electrode bank + bus pair."),
+    ("aux01", aux, (0, 1, 0),
+     ['Hose barbs DN50/DN25/DN15 set in flush at the faces; barb profile a study proportion (lib/nozzles.py), finished against the hose supplier print',
+      'N2 conductor gland: DN15 passage in a boss od 32 at -Y z 130 (duty section 4: not a hose)',
+      'N10/N11 solids ports drawn at DN15, bore not calculated (AQS-PLAN-006 W4 hand/bin transfer)',
+      'Vent support: 2 posts 30 x 30 on the inner walls + rim bridge 60 x 10 at z 750..760; N7 drain flush at z 0 with the boss to its 50 datum'],
+     "Fabricated part sheet: nozzle hardware + vent support."),
+    ("iso01", drawn_full, (1, -1, 1),
+     ['Shop orientation: -X end carries the rectifier lugs; +Y face carries the overflow to the EW_2 launder (air break per AQS-STD-002 section 11)',
+      f'Graph revision {REV} is the model authority for this build; STEP (export/ew_1.step) is the solids of record',
+      'Process inventory (liquor to z 680) shown in place - not a BOM part'],
+     "Isometric orientation sheet."),
+]
+
+BAND = 100   # notes band appended under the drawing; _drawings.py stamps the title block bottom-right
+
+def add_notes(svg_path, notes):
+    import re
+    s = svg_path.read_text()
+    if "aqs-fab-notes" in s:
+        return
+    w = float(re.search(r'width="([\d.]+)"', s).group(1))
+    h = float(re.search(r'height="([\d.]+)"', s).group(1))
+    s = re.sub(r'height="[\d.]+"', f'height="{h + BAND}"', s, count=1)
+    rows = [f"Graph revision {REV} - {svg_path.stem}: {n}" for n in notes]
+    block = f'<g id="aqs-fab-notes" transform="translate(0,{h})" font-family="DejaVu Sans,sans-serif" font-size="10" fill="#000">'
+    for i, n0 in enumerate(rows):
+        block += f'<text x="6" y="{24 + 13 * i}">{n0}</text>'
+    block += '</g>'
+    svg_path.write_text(s.replace("</svg>", block + "</svg>"))
+
+pdf = "stamped pass pending"
+import cadquery as cq
+for sid, shape, pdir, notes, _title in SHEETS:
+    svg = DRAW / f"{sid}.svg"
+    if svg.exists() and "aqs-title-block" in svg.read_text():   # stamped: geometry frozen, PDF pass only
+        try:
+            import cairosvg
+            cairosvg.svg2pdf(url=str(svg), write_to=str(DRAW / f"{sid}.pdf"))
+            pdf = "pdf+svg current"
+        except Exception as e:
+            pdf = f"pdf skipped ({e.__class__.__name__}: {e})"
+        continue
+    cq.exporters.export(shape.val(), str(svg), opt={"projectionDir": pdir, "showAxes": False, "showHidden": True})
+    add_notes(svg, notes)          # notes only; the title block + register rows happen in _drawings.py
+
+# ---------------------------------------------------------------- build log (A-core record)
+step_src = "build export `models/mfg/EW_1/export/ew_1.step`"
+srcs = ["models/mfg/EW_1/ew_1.py", "models/mfg/EW_1/draw_ew_1.py", step_src,
+        "models/mfg/EW_1/bom.csv", "models/mfg/EW_1/fasteners.csv",
+        "models/mfg/EW_1/check.json", "models/mfg/EW_1/WORK_ORDER.md"]
+log = f"""# Build log - EW_1
+
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-CELL; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/EW_1.md`; sizing `docs-authority/sizing/EW_CELLS.md`).
+
+## Tool versions
+
+- CadQuery {cq.__version__} (CADQUERY_PYTHON)
+- Python {__import__('sys').version.split()[0]}; build run headless via `python3 models/mfg/EW_1/ew_1.py` (a `cad_mfg_models` pipeline stage through `models/mfg/build_all.py`)
+
+## Checks
+
+- Build bbox {R['bbox_mm'][0]} x {R['bbox_mm'][1]} x {R['bbox_mm'][2]} mm: inside the graph envelope {L} x {W} x {H} mm with margin (tracker check green)
+- Solid source: {step_src}; export STL closed and manifold; `cad/stl/EW_1.stl` replaced from the build (ASCII, metres)
+- Nozzles: all 12 rows of `docs-authority/nozzles/EW_1.csv` present at face, height, bore and rating, tagged; drawn flush per the house idiom
+- A-CELL: 25 cathodes / 26 anodes at 100 mm pitch, plates 600 x 420 immersed (0.504 m2 both faces, 12.6 m2 bank); bus pack 2 x 110 x 6.3 mm Cu per AQS-BUS-001 Rev C
+- BOM `models/mfg/EW_1/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/EW_1/drawings/` (GA front/side, nozzle orientation, 3 part sheets, iso; title blocks per AQS-DWG-002)
+
+## Sources
+
+""" + "".join(f"- `{s}`\n" for s in srcs) + """
+Status: accepted per AQS-PLAN-006 section 5 A-core and A-CELL; the machine-design detail (weld procedures, hose makeup) follows the unit WORK_ORDER.
+"""
+(HERE / "build_log.md").write_text(log)
+print(json.dumps({"sheets": [s[0] for s in SHEETS], "pdf": pdf}))

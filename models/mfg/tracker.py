@@ -24,7 +24,9 @@ phase; do not wrap it in a second flock. It writes only under `models/mfg/` and 
 section 7 block of the plan page.
 
 Run: python3 models/mfg/tracker.py            regenerate params.json files and section 7
-      python3 models/mfg/tracker.py --check   run the file checks, write nothing
+      python3 models/mfg/tracker.py --check [UNIT ...]
+                                              run the file checks, write nothing; with unit
+                                              names, report only those units
       python3 models/mfg/tracker.py --self-test   the T0 smoke test (needs CadQuery)
 """
 import argparse
@@ -128,7 +130,7 @@ EXISTING_SOURCE = {
 }
 
 # Units whose section 5 acceptance the tracker verifies on the files before recording M3.
-ACCEPTED = ('AL_POT',)
+ACCEPTED = ('AL_POT', 'EW_1')
 
 
 # --------------------------------------------------------------------------- authorities
@@ -538,8 +540,8 @@ def status_of(rec):
     if rec['unit'] in ACCEPTED:
         ok, missing = acceptance_evidence(rec)
         if ok:
-            return (f"M3. Envelope-class build accepted per its build log; GA and iso drawing "
-                    f"set; check.json bbox record. cad/stl {cad_stl_cell(rec).split(', ')[-1]}")
+            return (f"M3. Accepted per its build log; drawing set and check.json bbox "
+                    f"record. cad/stl {cad_stl_cell(rec).split(', ')[-1]}")
         return f'M2. acceptance evidence missing: {"; ".join(missing)}'
     s = f'M2. Builds from {src}; STEP and STL in export/'
     if rec['cad_stl']:
@@ -600,7 +602,10 @@ def section7_text(records, graph, seed):
              'in `cad/stl`. AL_POT is at M3 on its build log of 2026-10-31 ("envelope-class '
              'build accepted per AQS-PLAN-006 section 5 A-core"), with the drawing set at '
              '`models/mfg/AL_POT/drawings/` and the check record at '
-             '`models/mfg/AL_POT/check.json`.')
+             '`models/mfg/AL_POT/check.json`. EW_1 is at M3 on its build log '
+             '("accepted per AQS-PLAN-006 section 5 A-core and A-CELL"), with the drawing '
+             'set at `models/mfg/EW_1/drawings/` and the check record at '
+             '`models/mfg/EW_1/check.json`.')
     L.append('')
     L.append('Facet counts are read from the `cad/stl` file (ASCII or binary), not estimated. '
              'Existing source is an AQS-MFG-001 (`docs-authority/internal/DETAIL_MODEL_PLAN.md`) '
@@ -657,6 +662,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description='Manufacturing-model tracker (AQS-PLAN-006 section 6)')
     ap.add_argument('--check', action='store_true', help='run the file checks, write nothing')
     ap.add_argument('--self-test', action='store_true', help='run the T0 smoke test (needs CadQuery)')
+    ap.add_argument('units', nargs='*', help='with --check: restrict the named-failure report to these units')
     args = ap.parse_args(argv)
 
     if args.self_test:
@@ -665,12 +671,13 @@ def main(argv=None):
     graph, seed_map, records = collect_records()
     if args.check:
         failed = 0
-        for r in sorted(records, key=lambda x: x['unit']):
+        picked = [r for r in records if not args.units or r['unit'] in args.units]
+        for r in sorted(picked, key=lambda x: x['unit']):
             fails = check_unit(r)
             for f in fails:
                 print(f'CHECK {r["unit"]}: {f}')
             failed += bool(fails)
-        print(f'--check: {len(records)} units, {failed} with named failures')
+        print(f'--check: {len(picked)} of {len(records)} units, {failed} with named failures')
         return 0
 
     lock = take_lock()

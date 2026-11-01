@@ -79,7 +79,8 @@ def author(n, g, ins, outs, mi, mo, kw):
     if _pres == 'absent': stl = ' The unit is retired from the graph; no envelope is issued.'
     elif os.path.exists(os.path.join(ROOT, f'cad/stl/{u}.stl')): stl = f' The envelope is `cad/stl/{u}.stl` (a thick-walled tray at the claimed envelope; X-PAR-04).'
     else: stl = ' No CAD envelope issued yet.'
-    _mfg_mod = sorted(glob.glob(os.path.join(ROOT, f'models/mfg/{u}/*.py')))
+    _mfg_mod = sorted(m for m in glob.glob(os.path.join(ROOT, f'models/mfg/{u}/*.py'))
+                      if not os.path.basename(m).startswith('draw_'))
     _mfg = ''
     if _mfg_mod:
         _mfg = f' Manufacturing model `models/mfg/{u}/{os.path.basename(_mfg_mod[0])}` (AQS-PLAN-006; build log and drawings in the same folder).'
@@ -141,13 +142,22 @@ def main():
         if m and mi > 0: s = s.replace(m.group(0), re.sub(r'would be [\d.]+ h', f'would be {float(m.group(1))*1000/mi*24:.1f} h', m.group(0)))
         # AQS-PLAN-006 A-core 10: a duty sheet whose unit owns a manufacturing model names it in
         # section 7. Idempotent: the append fires only until the pointer text is present, so the
-        # EXPANDER/LEACH_CSTR_1 sheets that already name their model stay byte-identical.
-        _mfg_mod = sorted(glob.glob(os.path.join(ROOT, f'models/mfg/{u}/*.py')))
+        # EXPANDER/LEACH_CSTR_1 sheets that already name their model stay byte-identical. The
+        # pointer names the model source, never a draw_* script beside it.
+        _mfg_mod = sorted(m for m in glob.glob(os.path.join(ROOT, f'models/mfg/{u}/*.py'))
+                          if not os.path.basename(m).startswith('draw_'))
         if _mfg_mod:
             _m7 = re.search(r'^7\. Code\..*$', s, flags=re.M)
             _tag = f'`models/mfg/{u}/{os.path.basename(_mfg_mod[0])}`'
-            if _m7 and _tag not in _m7.group(0):
-                s = s.replace(_m7.group(0), _m7.group(0) + f' Manufacturing model {_tag} (AQS-PLAN-006).', 1)
+            if _m7:
+                # the pointer names the model source, never a draw_* script beside it: a
+                # pointer left by the pre-2026-11-01 glob is upgraded in place
+                _line = _m7.group(0)
+                _new = re.sub(r' Manufacturing model `models/mfg/' + re.escape(u) +
+                              r'/draw_[\w.]*` \(AQS-PLAN-006\)\.', '', _line).rstrip()
+                if _tag not in _new:
+                    _new = _new + f' Manufacturing model {_tag} (AQS-PLAN-006).'
+                if _new != _line: s = s.replace(_line, _new, 1)
         # A unit whose params carry a solved hvac block (the X-PAR-07/X-PAR-08 extension) has its
         # section 2 re-rendered from the graph every pass, like section 1 - the hand-authored load
         # text would otherwise trail the drivers it was written from.

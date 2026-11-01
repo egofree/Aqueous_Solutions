@@ -73,8 +73,8 @@ Plant demand 224.9 kW at 480 V, power factor 0.9 assumed: 301 A. EW process bars
 | EVAP_ACID_VS | Sump recirculation pump, magnetic drive, about 0.35 m3/h at  feeder | 14 AWG | 1 | 2.4 | 15 | 19.7 | 460 | 0.18 | 3 | yes |
 | EVAP_BASE | Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf feeder | 14 AWG | 1 | 3.4 | 15 | 8.3 | 460 | 0.11 | 3 | yes |
 | EVAP_BASE | Recirculation pump 282.7 kg/h at 4 m feeder | 14 AWG | 1 | 2.4 | 15 | 8.3 | 460 | 0.08 | 3 | yes |
-| EW_1 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 9.9 | 460 | 0.09 | 3 | yes |
-| EW_1 | Motor: transfer pump IA-EW-01 to EW_2 (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 9.9 | 460 | 0.09 | 3 | yes |
+| EW_1 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 9.9 | 460 | 0.09 | 3 | yes |
+| EW_1 | screw conveyor IA-EW-MET-1 to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 9.9 | 460 | 0.06 | 3 | yes |
 | EW_2 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 6.8 | 460 | 0.06 | 3 | yes |
 | EW_2 | Motor: transfer pump IA-EW-02 to EW_3 (BLDC, 42 mm (NEMA 17  feeder | 14 AWG | 1 | 2.4 | 15 | 6.8 | 460 | 0.06 | 3 | yes |
 | EW_3 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / feeder | 14 AWG | 1 | 2.4 | 15 | 4.9 | 460 | 0.05 | 3 | yes |
@@ -116,8 +116,8 @@ Plant demand 224.9 kW at 480 V, power factor 0.9 assumed: 301 A. EW process bars
 | HYDRO_SET | Motor: pump-turbine motor-generator (induction IE3, IEC 100L feeder | 14 AWG | 1 | 2.4 | 15 | 19.7 | 460 | 0.18 | 3 | yes |
 | LEACH_CSTR_1 | Gearmotor 0.75 kW 150 rpm output on lid bridge feeder | 14 AWG | 1 | 3.0 | 15 | 13.7 | 460 | 0.16 | 3 | yes |
 | LITHO_DEV | Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW) feeder | 14 AWG | 1 | 2.4 | 15 | 8.1 | 460 | 0.08 | 3 | yes |
-| LP-DIGESTER | panel feeder 208 V | 2 AWG | 1 | 91.8 | 115 | 35.3 | 208 | 1.72 | 2 | yes |
-| LP-DIGESTER | panel feeder 460 V | 14 AWG | 1 | 12.4 | 15 | 35.3 | 460 | 1.70 | 2 | yes |
+| LP-DIGESTER | panel feeder 208 V | 2 AWG | 1 | 89.4 | 115 | 35.3 | 208 | 1.67 | 2 | yes |
+| LP-DIGESTER | panel feeder 460 V | 14 AWG | 1 | 14.0 | 15 | 35.3 | 460 | 1.92 | 2 | yes |
 | LP-ELEC | panel feeder 208 V | 350 kcmil | 1 | 300.6 | 310 | 8.5 | 208 | 0.26 | 2 | yes |
 | LP-ELEC | panel feeder 460 V | 14 AWG | 1 | 5.3 | 15 | 8.5 | 460 | 0.17 | 2 | yes |
 | LP-FAB | panel feeder 208 V | 4 AWG | 1 | 60.6 | 85 | 29.7 | 208 | 1.51 | 2 | yes |
