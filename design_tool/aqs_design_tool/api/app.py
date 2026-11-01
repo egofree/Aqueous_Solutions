@@ -217,7 +217,6 @@ def get_flow_graph_view(view_name: str) -> JSONResponse:
     return JSONResponse(json.loads(path.read_text(encoding="utf-8")))
 
 
-@app.post("/api/v1/sandbox")
 @app.get("/api/v1/sites")
 def list_sites() -> dict:
     """The locale scaling profiles a site sandbox can start from (X-UI-002 Phase 1)."""
@@ -356,6 +355,7 @@ def solve_sandbox_pipeline(sandbox_id: str) -> SolveResponse:
     return result
 
 
+@app.post("/api/v1/sandbox")
 def create_sandbox(body: SandboxCreateRequest | None = None) -> dict:
     body = body or SandboxCreateRequest()
     rec = STORE.create(overrides=body.overrides, label=body.label)
