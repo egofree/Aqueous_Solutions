@@ -266,13 +266,97 @@
    "not_applicable": "Earth surface under the atmosphere: natural background only, no shielding design case"
   },
   "water_sources": {
-   "pending": "X-LOC-07"
+   "entries": {
+    "sources": {
+     "value": [
+      {
+       "name": "rain_harvest",
+       "kind": "rain",
+       "unit": "ROOF_TANK",
+       "annual_mm": 1320,
+       "note": "Brevard County normal annual precipitation ~52 in (NOAA normals, Melbourne FL station); the roof-PV array (18,607 m2 of the 31 x 29 bay roof) is the collection surface; first-flush and treatment per the UPW train",
+       "needs_verification": true,
+       "verification_test": "NOAA NCEI station normals for the Melbourne/SR-524 station; month-by-month wet/dry season split for the storage sizing",
+       "ref": "NOAA_MELBOURNE_FL"
+      },
+      {
+       "name": "municipal_cocoa",
+       "kind": "municipal",
+       "unit": "SALT_FEED",
+       "note": "the City of Cocoa water system is a regional bulk-water supplier (Upper Floridan aquifer source with reverse-osmosis treatment); the make-up and fire-water connection is the backup to rain harvest",
+       "ref": "COCOA_UTILITIES",
+       "needs_verification": true,
+       "verification_test": "City of Cocoa Utilities rate schedule and bulk-service agreement; tap size and backflow prevention per the FBC plumbing chapter"
+      },
+      {
+       "name": "surficial_groundwater",
+       "kind": "well",
+       "unit": "GW_INTAKE",
+       "temperature_C": 24.0,
+       "note": "surficial aquifer, water table ~1-3 m below grade at the low-relief riverine parcel; non-potable process and irrigation use; treatment per GW_INTAKE duty",
+       "needs_verification": true,
+       "verification_test": "FDEP consumptive-use permit and a test well; 62-777 F.A.C. tapering",
+       "ref": "FDEP_62777"
+      }
+     ],
+     "units": "-",
+     "ref": "NOAA_MELBOURNE_FL",
+     "register": "AQS-SITE-002 (site water basis); the municipal and well rows carry their own refs"
+    }
+   }
   },
   "local_feedstocks": {
-   "pending": "X-LOC-07"
+   "entries": {
+    "feed_cases": {
+     "value": [
+      {
+       "case": "metal chlorides (Al/Mg/K chlorides)",
+       "via": "NORTH_DOCK",
+       "am": "A-M-282 class"
+      },
+      {
+       "case": "acid-spar fluorspar >= 97 % CaF2",
+       "via": "NORTH_DOCK",
+       "am": "A-M-289"
+      },
+      {
+       "case": "petro-wax (pattern make-up)",
+       "via": "NORTH_DOCK",
+       "am": "A-M-284"
+      },
+      {
+       "case": "mineral nitrate make-up",
+       "via": "NORTH_DOCK",
+       "am": "A-M-430"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 6 (each case enters only after mapping to an AQS-ASSAY-001 assay case; the D-DOCK trade statement is the governing manifest)"
+    }
+   }
   },
   "logistics": {
-   "pending": "X-LOC-04"
+   "entries": {
+    "arrival_mode": {
+     "value": "road truck to NORTH_DOCK (the inter-plant trade boundary); I-95 to SR 524/Industry Rd",
+     "units": "-",
+     "ref": null,
+     "owner": true,
+     "basis": "D-DOCK 2026-10-19 (A-M-273); the dock opens into EXT_HALL_N"
+    },
+    "resupply_interval_d": {
+     "value": 30.0,
+     "units": "d",
+     "owner": true,
+     "basis": "the dock-feedstock campaigns (pot-cell chlorides, acid-spar, wax) run on monthly lot deliveries at the baseline scale"
+    },
+    "truck_route": {
+     "value": "a 6 m truck lane from the north wall to NORTH_DOCK (reserved, accepted 2026-10-15)",
+     "units": "-",
+     "owner": true,
+     "basis": "duty sheet EXT_HALL section 7"
+    }
+   }
   },
   "electrical": {
    "entries": {
@@ -296,7 +380,25 @@
       "us_land_building"
      ],
      "units": "-",
-     "register": "AQS-STD-007"
+     "register": "AQS-STD-007 (United States family; state and county codes at the parcel)"
+    },
+    "building_code": {
+     "value": "Florida Building Code, 8th Edition (2023) with ASCE 7-22 load chapters; NEC 2023",
+     "units": "-",
+     "ref": "FBC8_2023"
+    },
+    "ahj": {
+     "value": "City of Cocoa (building, utilities, fire); Brevard County for unincorporated scope",
+     "units": "-",
+     "owner": true,
+     "basis": "owner basis: the parcel address supplied by the project owner (555 South Industry Rd, Cocoa FL 32926): AHJ confirmation at permit application"
+    },
+    "flood_zone": {
+     "value": "coastal riverine parcel near the Indian River lagoon: the FEMA FIRM panel lookup fixes the foundation elevation before design; ASCE 24 applies in an A/V zone",
+     "units": "-",
+     "ref": "FEMA_FIRM",
+     "needs_verification": true,
+     "verification_test": "FEMA Map Service Center panel for the parcel address; elevation certificate at survey"
     }
    }
   },
@@ -456,6 +558,45 @@
      "register": "AQS-PLAN-011 section 5.5"
     }
    }
+  },
+  "parcel": {
+   "entries": {
+    "parcel_id": {
+     "value": "cocoa-555-s-industry-rd",
+     "units": "-",
+     "owner": true,
+     "basis": "owner basis: the parcel address supplied by the project owner (555 South Industry Rd, Cocoa FL 32926)"
+    },
+    "boundary_geojson": {
+     "value": "PENDING",
+     "units": "-",
+     "owner": true,
+     "needs_verification": true,
+     "verification_test": "ALTA/NSPS land-title survey; GeoJSON polygon in WGS84. owner basis: the parcel address supplied by the project owner (555 South Industry Rd, Cocoa FL 32926)"
+    },
+    "hazard_tool_run": {
+     "value": "PENDING",
+     "units": "-",
+     "ref": "ASCE_HAZARD_TOOL",
+     "needs_verification": true,
+     "verification_test": "ASCE 7 Hazard Tool run for 28.35 N, -80.74 E: record the report id here"
+    },
+    "geotech_report": {
+     "value": "PENDING",
+     "units": "-",
+     "owner": true,
+     "needs_verification": true,
+     "verification_test": "IBC 1803 geotechnical investigation (borings + SPT); the presumptive 144 kPa sand stands until the report lands (A-M-017)"
+    },
+    "wenner_date": {
+     "value": "PENDING",
+     "units": "-",
+     "owner": true,
+     "needs_verification": true,
+     "verification_test": "Wenner four-pin soil-resistivity test at the parcel (X-ELS-08)"
+    }
+   }
   }
- }
+ },
+ "schema_version": "aqs-site-profile-0.1"
 }
