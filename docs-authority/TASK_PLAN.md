@@ -366,10 +366,10 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-84** Building-block family OF-84: fastener, M8 x 25 hopper bolts. Done when: open design and production plan for 8 items (ISO 898-1 8.8) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-85** Building-block family OF-85: fastener, M6 x 25. Done when: open design and production plan for 273 items (ISO 3506 A4-70) in 9 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-86** Building-block family OF-86: fastener, M8 x 40. Done when: open design and production plan for 88 items (ISO 3506 A4-70) in 9 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-87** Building-block family OF-87: fastener, M10 x 30 wedge anchor. Done when: open design and production plan for 64 items (ISO 3506 A4-70) in 10 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-87** Building-block family OF-87: fastener, M10 x 30 wedge anchor. Done when: open design and production plan for 72 items (ISO 3506 A4-70) in 11 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-88** Building-block family OF-88: fastener, M10 x 35. Done when: open design and production plan for 54 items (ISO 3506 A4-70) in 9 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-89** Building-block family OF-89: fastener, M12 x 60 hex bolt + nut + 2 washers. Done when: open design and production plan for 34 items (PVDF (non-metallic)) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-90** Building-block family OF-90: fastener, M12 x 40. Done when: open design and production plan for 24 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-90** Building-block family OF-90: fastener, M12 x 40. Done when: open design and production plan for 56 items (ISO 3506 A4-70) in 2 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 
 ### X-BAS. Design basis
 

@@ -30,7 +30,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | Size | Type | Grade | Qty | Standard |
 | --- | --- | --- | --- | --- |
 | M10 | U-bolt | ISO 3506 A4-70 | 2 | DIN 3570 (U-bolt) |
-| M10 | anchor | ISO 3506 A4-70 | 68 | ISO 4017 + chemical anchor (ETAG 001) |
+| M10 | anchor | ISO 3506 A4-70 | 76 | ISO 4017 + chemical anchor (ETAG 001) |
 | M10 | anchor | ISO 898-1 8.8 | 40 | ISO 4017 + chemical anchor (ETAG 001) |
 | M10 | hex bolt | ASTM A193 B8 | 8 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | hex bolt | ISO 3506 A4-70 | 142 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -40,7 +40,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M12 | anchor | ISO 3506 A4-70 | 10 | ISO 4017 + chemical anchor (ETAG 001) |
 | M12 | anchor | ISO 3506 A4-80 | 3 | ISO 4017 + chemical anchor (ETAG 001) |
 | M12 | anchor | ISO 898-1 8.8 | 104 | ISO 4017 + chemical anchor (ETAG 001) |
-| M12 | hex bolt | ISO 3506 A4-70 | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M12 | hex bolt | ISO 3506 A4-70 | 56 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | PVDF (non-metallic) | 34 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | stud | ISO 898-1 8.8 | 26 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | hex bolt | ISO 898-1 8.8 | 12 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -178,6 +178,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 
 ## 4. Pipe and fittings
 
+- CRYO_CO2: Cylinder tubes SA-312 TP316L seamless DN100 Sch 160, OD 114.3 x t 13.49, 6.096 m. ASTM D1785 Sch 80 PVC-U / ISO 1452-2 metric equivalent; solvent cement ASTM D2564.
 - EVAP_ACID_VS: Shell PVC-U DN150 Sch 80 x 1400 mm with solvent-welded caps. ASTM D1785 Sch 80 PVC-U / ISO 1452-2 metric equivalent; solvent cement ASTM D2564.
 - MEOH_SYNTH: Reactor tube DN50 Sch 40 SA-106 B, 1885 mm, 1 off. ASTM D1785 Sch 80 PVC-U / ISO 1452-2 metric equivalent; solvent cement ASTM D2564.
 - MEOH_SYNTH: Jacket DN100 Sch 40, 1585 mm, thermal oil in/out DN25. ASTM D1785 Sch 80 PVC-U / ISO 1452-2 metric equivalent; solvent cement ASTM D2564.

@@ -81,10 +81,10 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-84 | fastener: M8 x 25 hopper bolts (M8 x 25 hopper bolts x8) | 8 | 4 | 2 % min 4 |
 | building block | OF-85 | fastener: M6 x 25 (M6 x 25 x273) | 273 | 6 | 2 % min 4 |
 | building block | OF-86 | fastener: M8 x 40 (M8 x 40 x88) | 88 | 4 | 2 % min 4 |
-| building block | OF-87 | fastener: M10 x 30 wedge anchor (M10 x 30 wedge anchor x64) | 64 | 4 | 2 % min 4 |
+| building block | OF-87 | fastener: M10 x 30 wedge anchor (M10 x 30 wedge anchor x72) | 72 | 4 | 2 % min 4 |
 | building block | OF-88 | fastener: M10 x 35 (M10 x 35 x54) | 54 | 4 | 2 % min 4 |
 | building block | OF-89 | fastener: M12 x 60 hex bolt + nut + 2 washers (M12 x 60 hex bolt + nut + 2 washers x34) | 34 | 4 | 2 % min 4 |
-| building block | OF-90 | fastener: M12 x 40 (M12 x 40 x24) | 24 | 4 | 2 % min 4 |
+| building block | OF-90 | fastener: M12 x 40 (M12 x 40 x56) | 56 | 4 | 2 % min 4 |
 | motor | MF-01 | BLDC 42 mm (NEMA 17 flange) 24 V DC | 23 | 2 | 5 % min 1 |
 | motor | MF-02 | BLDC 57 mm (NEMA 23 flange) 24 V DC | 55 | 3 | 5 % min 1 |
 | motor | MF-06 | induction IE3 IEC 71 / 0.37 kW 480 V 3-ph | 2 | 1 | 5 % min 1 |

@@ -62,3 +62,23 @@ per unit (plan rule 4); this note gains a section per accepted unit.
   sorbent bulk density; no distributor/demister named for TSA service (A-COL); the TSA
   valve/regeneration manifold row left to the piping scope.
 
+## CRYO_CO2 (cylinder bank, tier 3) — commit 3
+
+- `models/mfg/CRYO_CO2/cryo_co2.py`: the node's storage bank drawn as the machine — 4 SA-312
+  TP316L seamless DN100 Sch 160 tubes (OD 114.3 × t 13.49, 6.096 m, bores drawn open, 833.4 kg
+  drawn wall mass against the node steel_kg 690.07 sizing record, carried not recalculated),
+  one tube per row at y 187.5/562.5/937.5/1312.5 on 3 saddles each over a 316L SHS rack frame
+  that fills the A-M-167 envelope 6696 × 1500 × 450 exactly. Rows y < 750 / > 750 are the two
+  relief halves of the node API 520/521 fire case (2 tubes per half, 4.378 m² exposed), with
+  one 9 mm relief-valve envelope per half at the +X end posts (AQS-PLAN-006 rule 6).
+- All 10 rows of the schedule drawn at tag, face and bore on the side rails; the z 400/160
+  rows as issued, the z 1500/2000/50 datums clamped onto the rack with named holds (they were
+  issued against the 300 × 300 × 2000 study boxes that predate the rack envelope).
+- Deliverables: generated BOM with mass and make-or-buy, `fasteners.csv`, `check.json`,
+  `WORK_ORDER.md` (W1–W12; holds led by the Class 150 schedule rating column against the
+  2200 kPa node design — no flange drawn, lib/dn.py carries no table above Class 150 — the
+  clamped datums, the steel_kg basis difference, and the study frame sections), and the
+  seven-sheet drawing set; the stale envelope `drawings/GA.md` superseded.
+- `tracker --check CRYO_CO2` green; `cad/stl/CRYO_CO2.stl` replaced from the build (~9236 f).
+
+

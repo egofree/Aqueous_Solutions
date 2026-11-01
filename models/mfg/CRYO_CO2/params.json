@@ -160,5 +160,20 @@
  "acceptance_sets": [
   "A-core",
   "A-COL"
- ]
+ ],
+ "layout": {
+  "frame": "rack frame: x along 6696, y across 1500, z up 450; skid 12, SHS 80 x 80 x 5 posts and side rails, cross ties under the saddles",
+  "tubes": "4 tubes, one per row: rows y 187.5/562.5/937.5/1312.5 at tube centres z 231, x 300..6396; rows y < 750 = relief half 1, above = half 2",
+  "relief": "one 9 mm API 520/521 valve per half bank at the +X end posts",
+  "nozzle_spread": "connections land on the side rails; schedule heights that fit the 450 rack are drawn as issued, the rest clamped (per-tag in check.nozzles_drawn)",
+  "hardware_idiom": "stubs lap the rails or skid so every union fuses; bbox = the A-M-167 rack envelope exactly"
+ },
+ "study": {
+  "skid_t_mm": 12.0,
+  "shs_mm": [
+   80.0,
+   5.0
+  ],
+  "note": "frame sections are study sizes not stated by any authority (the duty names only 316L and CA 0 mm)"
+ }
 }

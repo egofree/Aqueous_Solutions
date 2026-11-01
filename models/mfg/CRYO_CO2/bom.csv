@@ -1,17 +1,6 @@
-item,description,qty,material,basis
-1,Body D114 x 450 mm,1,316L.,docs-authority/duties/CRYO_CO2.md
-2,Process nozzle DN15,8,316L.,one per mass edge; DN from AQS-INV-003
-3,"Relief valve, 9.0 mm bore, DN15 body",2,316L,"AQS-SAF-005 (one per bank half, fire case)"
-4,fastener: anchor bolt M10,54,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-5,fastener: anchor bolt M10,34,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-6,fastener: anchor bolt M10,42,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-7,"instrument: gas detector, O2 deficiency electrochemical O2",2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",AQS-INV-004
-8,instrument: pressure transmitter 0-40 bar,1,"316L thin-film strain gauge, IEC 61298",AQS-INV-004
-9,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-10,support: U-bolt with guide DN15,27,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-11,support: U-bolt with guide DN15,17,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-12,support: U-bolt with guide DN15,21,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-13,"valve: ESD valve, spring-return actuator DN15",2,"316L, fail-safe, IEC 61511",AQS-INV-004
-14,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-15,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-16,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Cylinder tubes SA-312 TP316L seamless DN100 Sch 160, OD 114.3 x t 13.49, 6.096 m",4,316L,833.4,buy,"node design block (OD/wall/length, A-M-167); drawn set 833.4 kg vs node steel_kg 690.067 - basis difference named, W12; duty section 3 CA 0 mm"
+2,"Rack frame: skid plate + SHS posts, tie bars and side rails + cross ties",1,316L,1880.0,make,duty section 3 (no carbon steel); SHS 80 x 80 x 5 and skid 12 are study sections (W12)
+3,"Tube saddles, 3 per tube, with wear groove",12,316L,409.8,make,study section; saddle laps the tube 6 mm
+4,"Relief valves, API 520 / API 521 fire case per half bank, bore 9 mm",2,purchase item,,buy,"node relief_basis (valves 2, per_half_bore 8.818 -> 9 mm); rated for the 2200 kPa design - the schedule Class 150 column is a named hold (W12)"
+5,"Connection set per docs-authority/nozzles/CRYO_CO2.csv (10 rows, clamped heights per check.nozzles_drawn)",10,316L,2.2,make,schedule tags/faces/bore verbatim; heights clamped onto the rack where the issued datum predates the A-M-167 envelope (W12)
