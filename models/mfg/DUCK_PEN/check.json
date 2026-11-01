@@ -10,17 +10,17 @@
     1300
   ],
   "inside_size_mm_shell": true,
-  "solids": 2,
+  "solids": 1,
   "all_parts_valid": true,
   "material_class": "HDG_steel",
   "form": "frame",
   "mass_kg": {
     "frame_legs": 60.3,
     "drop_board": 76.5,
-    "floor_wire": 23.2,
+    "floor_wire": 23.3,
     "roof": 76.5,
     "wire_panels": 29.8
   },
-  "empty_kg": 266.3,
+  "empty_kg": 266.4,
   "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
 }
