@@ -44,7 +44,9 @@ def validate(prof, name='profile'):
         if gk not in spec: err.append(f'{name}: unknown group {gk}')
     for gk, gs in spec.items():
         grp = g.get(gk)
-        if grp is None: err.append(f'{name}: group {gk} missing'); continue
+        if grp is None:
+            if gs['always']: err.append(f'{name}: group {gk} missing')   # optional groups (AQS-SITE-014 parcel, logistics pending) simply carry no bindings
+            continue
         if 'entries' not in grp:
             if gs['always']: err.append(f'{name}: group {gk} is required at every site and must carry entries')
             elif grp.get('not_applicable'): pass
