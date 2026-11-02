@@ -1,14 +1,15 @@
 # Glossary
 
 Document number: AQS-GLO-001  
-Revision: C  
-Date: 2026-11-01  
+Revision: D  
+Date: 2026-11-02  
 
 | Rev | Description | Date |
 |---|---|---|
 | A | First issue | — |
 | B | Purpose statement added; the withdrawn document-line scan removed from the A-M entry; style findings cleared | 2026-10-25 |
 | C | Entries added for the Lake Boehmer site vocabulary (TWDB, RRC, MPGCD, GHI, NWS, SEC, SMCL, TSWQS) | 2026-11-01 |
+| D | Entries added: LB (lake_boehmer site code) and KFST (Fort Stockton-Pecos County Airport station identifier); the Rev (graph) entry names the revision field instead of the current letter | 2026-11-02 |
 
 
 ## 1. Purpose and scope
@@ -23,7 +24,7 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {AQS-xxx-nnn -- Document number. Every controlled document carries one, with a revision letter and a date (e.g. AQS-SEC-001 Rev H). DOC_REGISTER.md lists them.}
 
-{Rev (graph) -- Revision of the plant flow graph, AQS-FLOW-GRAPH-001. The letters run from A to Z and then continue as Rev AA, Rev AB, Rev AC and so on. The current revision is stated in the `revision` field of `flow_graph/plant_flow_graph.json` (Rev AC at the time of writing). A document that says "checked against graph Rev X" was last reconciled at that graph revision. Document revisions are separate and also use letters.}
+{Rev (graph) -- Revision of the plant flow graph, AQS-FLOW-GRAPH-001. The letters run from A to Z and then continue as Rev AA, Rev AB, Rev AC and so on. The current revision is stated in the `revision` field of `flow_graph/plant_flow_graph.json`. A document that says "checked against graph Rev X" was last reconciled at that graph revision. Document revisions are separate and also use letters.}
 
 {X-xxx-nn -- Task id in TASK_PLAN.md (AQS-PLAN-007). The middle part is the work group, e.g. X-PAR parametric model, X-PIP piping, X-SAF safety, X-MAT materials, X-INV building-block inventories, X-ELS electrical, X-GOV governance. TASK_PLAN.md lists all groups.}
 
@@ -1177,11 +1178,13 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {SRT -- Solids retention time: the mean time solids stay in a digester or reactor.}
 
 {TDS -- Total dissolved solids.}
+{LB -- Site code of the lake_boehmer locale (Lake Boehmer, Pecos County, Texas); it prefixes the locale's unit ids (LB_INTAKE, LB_ED1, LB_PROD_TANK).}
 {TWDB -- Texas Water Development Board, the state water agency; its Technical Note 21-01 carries the reservoir evaporation rates (Lake Boehmer site basis).}
 {RRC -- Railroad Commission of Texas, the oil and gas regulator of the abandoned Sloan Blair No. 1 well that feeds Lake Boehmer.}
 {MPGCD -- Middle Pecos Groundwater Conservation District, whose sealed laboratory report on the Lake Boehmer wellhead brine is the pending verification of every derived feed value.}
 {GHI -- Global horizontal irradiance, the solar-resource measure behind the PV yield driver.}
 {NWS -- National Weather Service, source of the Fort Stockton-Pecos County Airport climate normals and records.}
+{KFST -- Station identifier of the Fort Stockton-Pecos County Airport climate station; the climate normals and records cited under NWS_FORT_STOCKTON are the Lake Boehmer design-temperature basis.}
 {SEC -- Specific energy consumption, kilowatt-hours per cubic metre of dilute flow; the electrodialysis sizing transfer function.}
 {SMCL -- Secondary maximum contaminant level, the aesthetic drinking-water standard the TCEQ applies to sulfate and chloride.}
 {TSWQS -- Texas Surface Water Quality Standards (30 TAC Chapter 307), the segment criteria the Lake Boehmer product water is held to.}
