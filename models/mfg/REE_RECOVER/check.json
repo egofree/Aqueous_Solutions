@@ -1,0 +1,112 @@
+{
+  "bbox_mm": [
+    800.0,
+    600.0,
+    1400.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    800.0,
+    600.0,
+    1400.0
+  ],
+  "size_basis": "bench campaign skid box (node size_note: demag oven + 10 L leach reactor + filter + muffle on one frame, fume-hood class)",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "route_hold": "the node class is precip, which has no row in the AQS-PLAN-006 section 4 route table - the tracker records the hold; the skid work follows the F-MACH frame and F-VES vessel operations as the nearest families (WORK_ORDER W10)",
+  "campaign": {
+    "basis": "bench campaign skid: 10 L glass-lined leach reactor + demag oven + filter + muffle; largest installed-family campaign MF-02 1.578 kg (A-M-433)",
+    "campaign_kg": 1.618,
+    "reo_kg": 0.585,
+    "reactor_L": 10.0,
+    "power_kW": 0.3,
+    "note": "figures reported from the node sizing block; nothing re-derived"
+  },
+  "equipment": {
+    "basis": "plan rule 6: the duty section 2 sizing line names the set; each unit is drawn as its envelope and interface, internals stay with the maker",
+    "demag_oven": {
+      "envelope_mm": [
+        300.0,
+        300.0,
+        280.0
+      ],
+      "rating": "> 320 C demag, 5 L class (duty section 2 sizing)",
+      "maker_class": "enclosure maker TDS at order"
+    },
+    "leach_reactor": {
+      "envelope_mm": [
+        240.0,
+        380.0
+      ],
+      "rating": "10 L glass-lined leach reactor, 55 C jacket, stirrer, H2 vent (duty section 2 sizing); envelope covers the charge",
+      "maker_class": "glass-lined vessel maker TDS at order"
+    },
+    "vacuum_filter": {
+      "envelope_mm": [
+        300.0,
+        220.0,
+        250.0
+      ],
+      "rating": "vacuum filter, PP-H wetted (duty section 3)",
+      "maker_class": "filter maker TDS at order"
+    },
+    "calcining_muffle": {
+      "envelope_mm": [
+        320.0,
+        280.0,
+        260.0
+      ],
+      "rating": "900 C calcining muffle, 2 L, 316L shell dry oxide (duty section 3)",
+      "maker_class": "furnace maker TDS at order"
+    },
+    "layout_note": "shelf and envelope positions are the registered layout choice (WORK_ORDER W12)"
+  },
+  "material": {
+    "wetted": "glass-lined reactor, PTFE transfer, PP-H filter (duty section 3, X-MAT-22; no metal wetted part below 60 C)",
+    "hot": "316L muffle shell, dry oxide at 900 C (duty section 3)",
+    "structure": "316L tube frame and shelves (wet-bench class, layout choice, W12); CA 0 mm (AQS-STD-001 rules)",
+    "alt": "Hastelloy C-276 wetted parts if the campaign moves above 60 C - not required at the bench scale (named hold, W12)"
+  },
+  "open_items": [
+    "no instrument loop yet (unit task 08) - no trip is specified",
+    "relief case study pending (unit task 07) - no set point claimed",
+    "nozzle elevations are schedule placeholders (unit tasks 02/06)"
+  ],
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "x_mm": 400.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain, open bore through the floor plate, flush at the envelope bottom (50 datum)"
+    },
+    "N2": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 1400.0,
+      "x_mm": 400.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent riser from the upper-shelf zone to the envelope top (the H2 vent to the acid-scrubber header, duty section 2 sizing); schedule datum 800 predates the 1400 box (hold, WORK_ORDER W12)"
+    }
+  },
+  "nozzle_count_schedule": 2,
+  "nozzle_idiom": "atmospheric open-bore tube (lib/dn Sch 40 table), flush at the envelope bottom and top; the schedule rating column (Class 150) is carried verbatim as text, no flange drawn (W4 110 % rule: no process pressure stated)",
+  "part_mass_kg": {
+    "frame": 123.2,
+    "shelving": 98.3,
+    "demag_oven": 201.6,
+    "leach_reactor": 137.5,
+    "vacuum_filter": 15.0,
+    "calcining_muffle": 186.4,
+    "nozzles": 0.74
+  },
+  "cadquery": "2.8.0"
+}

@@ -1,4 +1,8 @@
-item,description,qty,material,basis
-1,Body / envelope 800 x 600 x 1400 mm,1,"glass-lined reactor, PTFE transfer, PP-H filter wetted (HCl service per AQS-STD-002 thermoplastic rules; no metal wetted part below 60 C); 316L muffle shell (dry oxide, 900 C).",docs-authority/duties/REE_RECOVER.md
-2,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-3,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"AQS-MOD-002 frame 800 x 600 x 1400, 80 x 5 tube, the fixed weld pattern",1,316L tube,123.2,make,"frame standard AQS-MOD-002 parameter set; 316L per the wet-bench class (HCl fume service; layout choice, WORK_ORDER W12); CA 0 mm (AQS-STD-001)"
+2,"Shelves and floor plate, 720 x 520 x 10 and 800 x 600 x 10",3,316L plate,98.3,make,skid layout choice (WORK_ORDER W12); CA 0 mm (AQS-STD-001 316L rule)
+3,"Demag oven envelope 300 x 300 x 280 (> 320 C, 5 L class)",1,maker class,201.6,buy,"plan rule 6: purchased item named with the rating from the duty section 2 sizing line; envelope and interface only, internals with the maker; the row mass is the envelope mass at the tabulated shell density - the maker TDS mass governs at order (WORK_ORDER W12)"
+4,"Glass-lined leach reactor envelope OD 240 x 380 (10 L, 55 C jacket, stirrer, H2 vent)",1,glass-lined (maker class),137.5,buy,duty section 2 sizing / duty section 3; envelope covers the 10 L charge; wetted parts per the vessel maker TDS at order; the row mass is the envelope mass at the tabulated shell density (WORK_ORDER W12)
+5,PP-H vacuum filter envelope 300 x 220 x 250,1,PP-H (maker class),15.0,buy,duty section 3: PP-H filter wetted; envelope only per plan rule 6; the row mass is the envelope mass at the PP-H table density (WORK_ORDER W12)
+6,"Calcining muffle envelope 320 x 280 x 260 (900 C, 2 L, 316L shell)",1,316L (maker class),186.4,buy,"duty section 3: 316L muffle shell, dry oxide 900 C; envelope only per plan rule 6; the row mass is the envelope mass at the 316L table density (WORK_ORDER W12)"
+7,"Nozzle set per docs-authority/nozzles/REE_RECOVER.csv: 1 drain (through the floor plate), 1 vent at the envelope top (the H2 vent to the acid-scrubber header)",2,316L tube (lib/dn Sch 40 table dims),0.74,make,"schedule verbatim; no piped process connection on the graph yet - drain and vent utilities only (hold, WORK_ORDER W12)"

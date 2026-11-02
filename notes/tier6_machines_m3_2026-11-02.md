@@ -182,6 +182,31 @@ resized.
   `tracker --check P_CA` green; duty section 7 names the model; tracker regen
   puts P_CA at M3 (41).
 
+## REE_RECOVER (rare-earth campaign bench skid, MFG, tier 6) — commit 7
+
+- `models/mfg/REE_RECOVER/ree_recover.py` on the shared lib: the AQS-MOD-002
+  frame pattern (80 × 5 tube, 316L wet-bench class — layout choice) with two
+  shelves and a floor drip plate, carrying the duty-named equipment set as
+  purchased envelopes per plan rule 6: demag oven (> 320 C, 5 L class) and the
+  10 L glass-lined leach reactor (55 C jacket, stirrer, H2 vent) lower shelf,
+  PP-H vacuum filter and the 900 C 316L-shell muffle upper shelf. Node skid
+  box 800 × 600 × 1400 filled exactly; one closed manifold solid;
+  `cad/stl/REE_RECOVER.stl` replaced from the build.
+- Route hold carried (class precip): tracker records "A-core (route hold)",
+  WORK_ORDER W10 states the F-MACH/F-VES-operations intent with the hold
+  named; A-core met on the files.
+- Both schedule rows drawn as open-bore tube: N1 drain through the floor
+  plate (50 datum), N2 the H2 vent riser to the box top (the acid-scrubber
+  header route, duty section 2 sizing; 800 datum, W12). Campaign figures
+  (1.618 kg NdFeB, 0.585 kg REO, 10 L, 0.3 kW) reported from the graph node
+  sizing block; relief (task 07) and instrument (task 08) pending items named.
+- Deliverables: exports, generated `bom.csv` (buy rows carry the envelope-mass
+  caveat), `fasteners.csv` (anchors + equipment hold-downs), `check.json`,
+  `WORK_ORDER.md` (W1–W12 + route-hold W10), eight-sheet drawing set;
+  `tracker --check REE_RECOVER` green; duty section 7 names the model;
+  tracker regen puts REE_RECOVER at M3 (42).
+
+
 
 
 
