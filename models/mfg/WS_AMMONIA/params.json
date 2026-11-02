@@ -88,5 +88,39 @@
  "acceptance_sets": [
   "A-core",
   "A-MACH"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   600.0,
+   600.0,
+   350.0
+  ],
+  "basis": "storage-sizing box (node size_mm, AQS-DUTY-064); the duty section 4 prose seed line 800 x 800 x 1100 is an older figure (WORK_ORDER W12)",
+  "tank": {
+   "od_mm": 260.0,
+   "xy_mm": [
+    300.0,
+    380.0
+   ],
+   "z_mm": [
+    40.0,
+    300.0
+   ]
+  },
+  "tray_mm": 20.0
+ },
+ "design": {
+  "machine": "ammonia day-station (distribution to methylamine, imidazole, nitric and the Strecker draw; duty section 2: the largest edge is gas)",
+  "mat": "PVC-U wetted per AQS-STD-002 rules M1 and M2 (duty section 3)",
+  "ca_mm": 0.0,
+  "wall_mm": 10.0,
+  "wall_basis": "study fab-page polymer wall (WORK_ORDER W12)",
+  "internals": "none drawn (node internals row none; WORK_ORDER W12)",
+  "purchased": "none named on the node or the duty sheet - none drawn (WORK_ORDER W12)"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; tank axis at x 300, y 380, z up; tray floor z 0..20; guard rail over the front-right floor zone",
+  "nozzle_spread": "the schedule gives face and height only; side rows ride tray risers packed from x 420/470; drain through the floor at x 560; vent riser on the tank head; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }

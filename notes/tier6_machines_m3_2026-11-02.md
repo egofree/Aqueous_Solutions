@@ -206,6 +206,33 @@ resized.
   `tracker --check REE_RECOVER` green; duty section 7 names the model;
   tracker regen puts REE_RECOVER at M3 (42).
 
+## The WS reagent-station family (FAB, tier 6, F-MACH, A-core + A-MACH) — commits 8–12
+
+- Family recipe shared by all six stations: bund tray over the envelope
+  (floor 20 + curb 60 × 10 — the drip tray; the duty own-bund figures are the
+  room-side containment the placement seeds seat the stations in, named as a
+  hold), day tank at the back (OD and fill basis per each unit's duty
+  section 2/8), service-zone guard rail and slab anchors drawn (A-MACH), all
+  schedule rows as atmospheric open-bore tube connections on tray risers flush
+  at the envelope faces (side datums clamped into the 350 box; drain through
+  the floor; vent riser on the tank head — 800 datums, W12). Purchased items
+  are drawn only where the node or duty names them, as envelopes and
+  interfaces per plan rule 6.
+- Station notes per commit:
+
+### WS_AMMONIA — commit 8
+
+- Day-tank envelope (no vessel diameter on the node or duty — section 8
+  "No vessel diameter"; no volume claimed, model volume reported for the
+  record). PVC-U per duty section 3. All 8 schedule rows drawn (1 in, 5
+  distribution draws out, drain, vent). No purchased item named — none drawn
+  (the A-MACH criterion has nothing to match).
+- Deliverables: exports, generated `bom.csv`, `fasteners.csv`, `check.json`,
+  `WORK_ORDER.md` (W1–W12), six-sheet drawing set; `tracker --check
+  WS_AMMONIA` green; duty section 7 names the model; tracker regen puts
+  WS_AMMONIA at M3 (43).
+
+
 
 
 

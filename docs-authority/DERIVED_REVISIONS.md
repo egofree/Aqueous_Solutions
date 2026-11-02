@@ -391,7 +391,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/RECTIFIER.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/RECT_EW.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/REC_DAYROOM.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/REE_RECOVER.md` | working tree | current |
+| `docs-authority/duties/REE_RECOVER.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/RELIEF_CRYO.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/RELIEF_H2.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/REMIN.md` | f0160a6 (regenerated, no change) | current |
@@ -429,13 +429,13 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/WET_BENCH.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/WIRE_DRAW.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/WORMS.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/WS_AMMONIA.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/WS_AMMONIA.md` | working tree | current |
 | `docs-authority/duties/WS_DOPE.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/WS_HF_ED.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/WS_KOH.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/WS_NITRIC.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/WS_PEROX.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/WS_PHOS.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/WS_KOH.md` | working tree | current |
+| `docs-authority/duties/WS_NITRIC.md` | working tree | current |
+| `docs-authority/duties/WS_PEROX.md` | working tree | current |
+| `docs-authority/duties/WS_PHOS.md` | working tree | current |
 | `docs-authority/duties/WS_SLURRY.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/WS_SOLV.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/YEAST.md` | f0160a6 (regenerated, no change) | current |
@@ -1435,13 +1435,13 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/WAX_PATTERN/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/WET_BENCH/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/WIRE_DRAW/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/WS_AMMONIA/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/WS_AMMONIA/params.json` | working tree | current |
 | `models/mfg/WS_DOPE/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/WS_HF_ED/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/WS_KOH/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/WS_NITRIC/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/WS_PEROX/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/WS_PHOS/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/WS_KOH/params.json` | working tree | current |
+| `models/mfg/WS_NITRIC/params.json` | working tree | current |
+| `models/mfg/WS_PEROX/params.json` | working tree | current |
+| `models/mfg/WS_PHOS/params.json` | working tree | current |
 | `models/mfg/WS_SLURRY/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/WS_SOLV/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/ZNBR2/params.json` | f0160a6 (regenerated, no change) | current |
