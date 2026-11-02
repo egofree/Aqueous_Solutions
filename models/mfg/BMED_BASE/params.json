@@ -39,9 +39,9 @@
    "tag": "N3",
    "size": "DN25",
    "rating": "Class 150",
-   "service": "digest NaOH",
-   "face": " 20 wt%",
-   "height_mm": null
+   "service": "digest NaOH, 20 wt%",
+   "face": "outlet",
+   "height_mm": 600
   },
   {
    "tag": "N4",
@@ -88,5 +88,47 @@
  "acceptance_sets": [
   "A-core",
   "A-CELL"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   350.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack).",
+  "stack": {
+   "x_mm": [
+    40.0,
+    334.25
+   ],
+   "frames_mm": [
+    300.0,
+    300.0
+   ],
+   "laminate_x_mm": [
+    66.0,
+    308.25
+   ]
+  },
+  "tray": {
+   "floor_mm": 20.0,
+   "curb_mm": [
+    60.0,
+    10.0
+   ]
+  }
+ },
+ "design": {
+  "machine": "electrodialysis stack skid (BMED base side), EDBM per AQS-DUTY-068",
+  "construction": "A-M-170: 300 x 300 frames, 0.8 mm PE mesh spacers, 85 triplets, Ti/MMO anode and 316L/Ni cathode end plates, tie rods",
+  "active_area_m2_per_cell": 0.04,
+  "mat": "PVC-U",
+  "ca_mm": 0.0,
+  "mat_basis": "duty section 3: PVC-U wetted, no metal wetted part; sizing PP frames named as the conflict (WORK_ORDER W12)"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; stack at the -X end of the tray, cross-section 300 x 300 centred (y 150..450, z 18..318); tray floor z 0..20 over the full envelope; hold-down beam z 330..350 on four posts",
+  "nozzle_spread": "the schedule gives face and height only; side nozzles pack per face and datum group from x 420 at OD + 8 mm pitch on tray risers; drain through the floor at x 930; vent at the beam top; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }

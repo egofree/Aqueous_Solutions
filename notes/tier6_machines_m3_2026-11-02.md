@@ -58,3 +58,23 @@ resized.
   per AQS-DWG-002; the stale M2-era GA.md and SVGs regenerated through the
   draw/stamp/PDF sequence). Duty section 7 names the model; tracker regen puts
   BMED_ACID at M3 (36).
+
+## BMED_BASE (EDBM base-side stack skid, DIGESTER, tier 6) — commit 2
+
+- `models/mfg/BMED_BASE/bmed_base.py`, the BMED_ACID builder family at the
+  base-side unit: same tray, stack construction, clamp and hold-down, filled
+  to the same 1000 × 600 × 350 node registry box exactly; one closed manifold
+  solid; `cad/stl/BMED_BASE.stl` replaced from the build.
+- All 8 schedule rows drawn as atmospheric open-bore tube connections on tray
+  risers: N1 DN25 and N7 DN15 in on −Y at 160; N2/N6/N8 DN15 and N3 DN25 out
+  on +Y (600 datums clamped down, W12); N4 drain through the tray floor; N5
+  vent flush at the top face on the beam (800 datum, W12). Schedule row N3 was
+  repaired to schedule quoting (the HX8 W12-7 precedent, as N4 on BMED_ACID).
+- The pair's stack power stays booked on BMED_ACID (this unit's duty section 9
+  says so); the A-CELL facts are the same AQS-DUTY-068 / A-M-170/171
+  construction figures, reported from the model.
+- Deliverables as commit 1: exports, generated `bom.csv`, `fasteners.csv`,
+  `check.json`, `WORK_ORDER.md` (W1–W12), six-sheet drawing set; `tracker
+  --check BMED_BASE` green; duty section 7 names the model; tracker regen puts
+  BMED_BASE at M3 (37).
+
