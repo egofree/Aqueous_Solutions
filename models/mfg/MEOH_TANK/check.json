@@ -1,0 +1,190 @@
+{
+  "bbox_mm": [
+    600.0,
+    600.0,
+    600.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    600.0,
+    600.0,
+    600.0
+  ],
+  "size_basis": "node size_mm set by _storage_sizing.py (AQS-DUTY-064); the duty sheet still carries the unit-task-04 shell line 800 x 800 x 1100 (WORK_ORDER W12)",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "holdup_m3": 0.1028,
+  "holdup_basis": "reported; the duty section 2 working volume (7 days, 0.0421 m3) is the booked basis and the node design_storage nominal is V_nom_m3 None m3 - no residence time derived from the model volume (A-VES)",
+  "tank": {
+    "wall_mm": 3.0,
+    "wall_basis": "node design_storage wall_mm (AQS-DUTY-064 nominal basis); the fab study page 6 mm predates the node booking (WORK_ORDER W12)",
+    "internals": {
+      "source": "docs-authority/fab/MEOH_TANK.md (AQS-MFG-001 study page): dip pipe, stilling well",
+      "stilling_well": {
+        "od_mm": 110.0,
+        "wall_mm": 5.0,
+        "z_mm": [
+          35.0,
+          575.0
+        ]
+      },
+      "dip_pipe": {
+        "od_mm": 60.0,
+        "wall_mm": 4.0,
+        "z_mm": [
+          100.0,
+          575.0
+        ]
+      },
+      "basis": "internals named by the issued study page; dimensions study values (WORK_ORDER W12); node internals row none, so the tracker records no internal solid"
+    }
+  },
+  "material": {
+    "class": "304L",
+    "ca_mm": 0.0,
+    "basis": "duty section 3 / node design_storage: SA-240 304L, welded; CA 0 mm (AQS-STD-001)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 256.1,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 285.3,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 314.6,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 343.9,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 584.4,
+      "x_mm": 300.0,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); schedule datum 600 mm clamped to 584.4 mm (barb radius rule) - WORK_ORDER W12"
+    },
+    "N6": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 584.4,
+      "x_mm": 329.3,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); schedule datum 600 mm clamped to 584.4 mm (barb radius rule) - WORK_ORDER W12"
+    },
+    "N7": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 584.4,
+      "x_mm": 358.6,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); schedule datum 600 mm clamped to 584.4 mm (barb radius rule) - WORK_ORDER W12"
+    },
+    "N8": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 584.4,
+      "x_mm": 387.9,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); schedule datum 600 mm clamped to 584.4 mm (barb radius rule) - WORK_ORDER W12"
+    },
+    "N9": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "drain boss on the base head, tip at the 50 datum"
+    },
+    "N10": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "vent flush at the top head; schedule datum 800 predates the 600 box - WORK_ORDER W12"
+    },
+    "N11": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 584.4,
+      "x_mm": 212.1,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); schedule datum 600 mm clamped to 584.4 mm (barb radius rule) - WORK_ORDER W12"
+    },
+    "N12": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 584.4,
+      "x_mm": 241.4,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); schedule datum 600 mm clamped to 584.4 mm (barb radius rule) - WORK_ORDER W12"
+    },
+    "N13": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 584.4,
+      "x_mm": 270.7,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); schedule datum 600 mm clamped to 584.4 mm (barb radius rule) - WORK_ORDER W12"
+    }
+  },
+  "nozzle_count_schedule": 13,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (the shell stands 30 off the +/-Y faces, within the barb reach); the schedule rating column (Class 150) is carried verbatim as text, no flange drawn",
+  "part_mass_kg": {
+    "plinth": 57.6,
+    "shell": 131.0,
+    "stilling_well": 7.4,
+    "dip_pipe": 2.7,
+    "nozzles": 1.2
+  },
+  "cadquery": "2.8.0"
+}

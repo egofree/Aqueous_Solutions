@@ -308,3 +308,26 @@ recipe pattern in `models/mfg/EW_1/WORK_ORDER.md`. Graph Rev AC. One commit per 
   exports, generated BOM, fasteners.csv, check.json, WORK_ORDER.md (W1-W12), the
   seven-sheet drawing set (stale M2-era GA.md and invalid-XML SVGs regenerated).
   `cad/stl/FAB_UPW_TANK.stl` replaced. `tracker --check FAB_UPW_TANK` green.
+
+## MEOH_TANK (methanol product tank, tier 4) — commit 14
+
+- `models/mfg/MEOH_TANK/meoh_tank.py` on the shared lib. Vertical welded 304L
+  tank (shell OD 540, wall 3.0 = the node design_storage booking, AQS-DUTY-064;
+  the fab study page's 6 mm predates the node booking - hold) on a plinth with
+  heads, filling the node envelope 600 x 600 x 600 exactly; one closed manifold
+  solid. The duty sheet sections 2 and 4 still carry the unit-task-04 shell line
+  800 x 800 x 1100 against the node box - the node governs, hold (W12).
+- Internals per the AQS-MFG-001 study page (dip pipe, stilling well), drawn as
+  the CATCH_TANK concentric tubes; dims study, holds; node internals row none.
+- All 13 schedule rows drawn at tag, face, height and bore: 4 feeds in on -Y at
+  z 160, 7 draws out on +Y at z 600, N9 drain boss to its 50 datum, N10 vent
+  flush at the top head (its 800 datum predates the box - hold; Class 150
+  verbatim, no flange). The draft lane note had carried the duty section 4 prose
+  count (9 rows, "no drain or vent") - the issued schedule CSV governs and books
+  13 rows including drain and vent; the prose-count hold is dropped.
+  Holdup 0.1028 m3 reported against the duty working volume (0.0421 m3, 7 days)
+  and the design_storage nominal (0.02 m3) - the booked basis stays the duty
+  figure, no residence derived (A-VES). Deliverables: exports, generated BOM,
+  fasteners.csv, check.json, WORK_ORDER.md (W1-W12), the seven-sheet drawing
+  set (stale M2-era GA.md and invalid-XML SVGs regenerated).
+  `cad/stl/MEOH_TANK.stl` replaced. `tracker --check MEOH_TANK` green.
