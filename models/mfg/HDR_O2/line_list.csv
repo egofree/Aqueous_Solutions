@@ -1,0 +1,10 @@
+line,from,to,dn,class,service,rating,note
+MAIN,spool start,spool end,DN25,-,"O2 header (ASU/receiver in; fuel cell, peroxide, genset, afterburner, product draws)",atmospheric; no flange class (duty section 4),"manifold spool per AQS-DUTY-075 (node design: DN25, 20 m run, 0.0045 m3); modeled as the 2000 mm representative spool; material per duty section 3"
+IA-AB-O2,HDR_O2,AFTERBURNER,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-FC-AIR,HDR_O2,MEOH_FC,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-GEN-O2,HDR_O2,BACKUP_GEN,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-H2O2-SRC,HDR_O2,WS_PEROX,DN50,P3,"oxidizer, HF or PVDF unit",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-O2-MAKE,CRYO_O2,HDR_O2,DN50,P1,aqueous process liquor (AQS-ASSAY-001 envelope),atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-O2-PROD,HDR_O2,PROD_O2,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-O2-RET,HDR_O2,CRYO_ASU,solids,—,—,-,"not piped: solids transfer (conveyor, bin or hand)"
+S83,CRYO_O2,HDR_O2,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,

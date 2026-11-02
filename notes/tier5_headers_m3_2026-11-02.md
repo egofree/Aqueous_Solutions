@@ -111,3 +111,26 @@ calculated", rating; spool drawing; no new edge).
   (8 M10 wedge anchors, 8.8), `check.json`, `WORK_ORDER.md` (W1–W12 + line list),
   six-sheet drawing set. Duty section 7 names the model; tracker regen puts HDR_N2 at
   M3 (31).
+
+## HDR_O2 (O2 header, GAS, tier 5) — commit 5
+
+- `models/mfg/HDR_O2/hdr_o2.py` on the shared lib, the accepted spool shape at DN25
+  (OD 33.7, Sch 40 table, bore 26.9 mm; M1 class), 316L oxygen-clean per ASTM G93,
+  socketless (duty section 3). All 12 schedule rows drawn as open-bore tube stubs
+  flush at the envelope faces. The DN50 row N8 (OD 60.3) is drawn at the manifold
+  centreline and the mesh reads z 60.3 — misfit reported on the section 7 row,
+  nothing resized (plan rule 3; registry keeps the envelope-consistent mesh). The N11
+  no-bore row (oxygen return, solids) is drawn DN15 and labeled bore not calculated.
+  The N1 inlet datum 10 is clamped up to 17.5 mm for the DN25 branch bore; the DN25
+  37 mm outlet datum clamps to 32.4 mm; the 160/600 mm placeholder datums clamp down.
+  The seed placement defines one grid cell — no separate N/S/E/W leg nodes exist on
+  the graph (checked), so the spool set is the one manifold run.
+- A-PIPE: `line_list.csv` — 9 rows (manifold + the 8 issued lines: ASU product DN25
+  M1 and makeup DN50 P1, fuel-cell air DN15 M1, peroxide DN50 P3, genset and
+  afterburner O2 DN15 M1, ASU return solids, cylinder-filling draw DN15 M1); edge
+  coverage complete, no new edge.
+- Deliverables: exports (STEP + closed STL, cad/stl kept at the node size), `bom.csv`
+  (plinth 15.7 kg CS, manifold 5.15 kg 316L, branches 0.37 kg), `fasteners.csv`
+  (8 M10 wedge anchors, 8.8), `check.json`, `WORK_ORDER.md` (W1–W12 + line list),
+  six-sheet drawing set. Duty section 7 names the model; tracker regen puts HDR_O2 at
+  M3 (32).
