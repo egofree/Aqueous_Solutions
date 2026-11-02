@@ -119,7 +119,50 @@ recipe pattern in `models/mfg/EW_1/WORK_ORDER.md`. Graph Rev AC. One commit per 
   whole-tube area surplus; clamped outlet datums; the vent datum; the Class 150
   rating column; the schedule-row quoting repair; fastener patterns.
 
-## Pipeline repair ahead of the batch — housekeeping commit
+## MET_HX_Q4 (Q4 loop straight-tube exchanger, tier 4) — commit 8
+
+- `models/mfg/MET_HX_Q4/met_hx_q4.py` on the shared lib. Vertical 316L shell OD 540
+  (wall 3, study, hold) on a plinth inside a four-post hold-down frame, filling the
+  study registry envelope 1000 × 600 × 800 exactly. The bundle is drawn hardware:
+  198 tubes OD 12 × 525 (wall 1.5, study, hold) between two tube sheets at z 120/660,
+  3.9188 m² of tube area REPORTED AS DRAWN, not called calculated - the node carries
+  no heat rate (A-HX; duty sections 2 and 8), and no duty area figure exists to be
+  over or under (unlike HX8, whose duty carried 4.59 kW and 0.51 m²).
+- All 3 schedule rows drawn at tag, face, height and bore as atmospheric hose barbs
+  (duty section 4): N1 DN15 heat out on +Y at z 600 (fits the 800 box), N2 drain
+  boss on the base head to its 50 datum, N3 vent flush at the top head - the 800
+  datum IS the envelope top, drawn exact.
+- Material conditional: drawn 316L per duty section 3's wet branch ("316L if the
+  stream is wet or chloride"); the carbon-steel alternative (dry hydrocarbon or dry
+  gas stream) is a named hold. The schedule rating column (Class 150) carried
+  verbatim as text; no flange drawn (W4 110 % rule).
+- Deliverables: exports (STEP assembly + closed STL), generated BOM, fasteners.csv
+  (4 M10 wedge anchors, 8 M12 A4-70 at the top-head service joint; study patterns),
+  check.json, WORK_ORDER.md (W1-W12), and the seven-sheet drawing set (stale
+  envelope GA.md superseded). `cad/stl/MET_HX_Q4.stl` replaced from the build.
+  `python3 models/mfg/tracker.py --check MET_HX_Q4` green.
+- Sheet repair in the lane: ga_front and nozzle_orient never had PDFs because their
+  notes bands carried a raw `<` (from "heat < 80 C"), which made the SVGs
+  not-well-formed XML. The defect is in the shared `lib/sheets.add_notes` (note text
+  injected unescaped); it now XML-escapes the band text, the two sheets were
+  regenerated through the sanctioned draw/stamp/PDF sequence, and all seven sheets
+  parse and carry PDFs. The same raw-token class (`P&ID`, `heat < 80 C`) also breaks
+  139 other units' style_builders-era sheets repo-wide (M2-era, pre-existing, with
+  missing ga_front/ga_side/iso01 PDFs); reported here, out of this lane's scope.
+- Duty sheet section 4 still carries the unit-task-04 placeholder "Size
+  600 × 400 × 600 mm" against the node registry envelope 1000 × 600 × 800 the build
+  fills; the sheet line is generator-authored and is not rewritten in the update
+  path, the node governs, and the line-list origins sidecar reads the sheet line -
+  reported in WORK_ORDER W12, nothing hand-edited, nothing resized.
+- Build note: the interrupted overnight session's full regen had left the receipt at
+  `converged: false` (`doc-convergence`) with the drawing PDF pass unfinished. This
+  commit carries the completed regen (all doc layers refreshed, drawing PDFs
+  exported). Operational note for the lane: `models/mfg/tracker.py` takes the design
+  lock itself for its write phase - wrapping it (or a regen whose tracker stage runs
+  inside) in a second `flock` deadlocks the stage; run both bare, as the tracker
+  header states.
+
+
 
 - `models/mfg/style_builders.py`: the per-unit-script skip of the cold-box batch repair
   (f07280e2) referenced an `MFG` constant it never defined, so the `style_builders`

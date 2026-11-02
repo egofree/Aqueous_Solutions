@@ -1,0 +1,3 @@
+item,size,grade,qty,location,basis
+1,M10 wedge anchor,ISO 3506 A4-70,4,plinth to slab; one per corner (count from the model),plan W5 grade rule on 316L (ISO 3506 A4-70); study length; confirmed at fabrication
+2,M12 A4-70 bolt + nut,ISO 3506 A4-70,8,top-head to shell service joint (study pattern at the bolt circle),plan W5 grade rule on 316L; study pattern; confirmed at fabrication

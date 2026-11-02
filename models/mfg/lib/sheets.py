@@ -17,6 +17,12 @@ import re
 BAND = 100   # notes band appended under the drawing; _drawings.py stamps the title block
 
 
+def xml_escape(text):
+    """Note text goes into SVG content: escape the XML specials so a '<' or an
+    '&' in a duty phrase (heat < 80 C, P&ID) cannot break the sheet."""
+    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
 def add_notes(svg_path, rev, notes):
     s = svg_path.read_text()
     if "aqs-fab-notes" in s:
@@ -24,7 +30,7 @@ def add_notes(svg_path, rev, notes):
     w = float(re.search(r'width="([\d.]+)"', s).group(1))
     h = float(re.search(r'height="([\d.]+)"', s).group(1))
     s = re.sub(r'height="[\d.]+"', f'height="{h + BAND}"', s, count=1)
-    rows = [f"Graph revision {rev} - {svg_path.stem}: {n}" for n in notes]
+    rows = [f"Graph revision {rev} - {svg_path.stem}: {xml_escape(n)}" for n in notes]
     block = (f'<g id="aqs-fab-notes" transform="translate(0,{h})" '
              f'font-family="DejaVu Sans,sans-serif" font-size="10" fill="#000">')
     for i, n0 in enumerate(rows):

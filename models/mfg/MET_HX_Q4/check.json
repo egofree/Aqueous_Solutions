@@ -1,0 +1,74 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study registry box (params size_note); the duty section 2 states no kilowatts and no calculated area (WORK_ORDER W12)",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "hx": {
+    "type": "vertical straight-tube exchanger, shell-and-bundle",
+    "shell_od_mm": 540.0,
+    "wall_mm": 3.0,
+    "tube_sheets_z_mm": [
+      120.0,
+      660.0
+    ],
+    "tubes": 198,
+    "tube": "OD 12 x t 1.5 (study wall) x 525 long",
+    "area_drawn_m2": 3.9188,
+    "area_basis": "drawn area, NOT a calculated duty area: the node carries no heat rate (duty section 2; A-HX)",
+    "material_basis": "duty section 3 wet branch: 316L if the stream is wet or chloride; the conditional is not resolved - the carbon-steel alternative is a named hold (WORK_ORDER W12)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 500.0,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "drain boss on the base head, tip at the 50 datum"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "vent flush at the top head, the 800 envelope top"
+    }
+  },
+  "nozzle_count_schedule": 3,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (the shell stands 30 off the face, within the barb reach); the schedule rating column (Class 150) is carried verbatim as text, no flange drawn",
+  "part_mass_kg": {
+    "plinth": 96.0,
+    "frame": 20.0,
+    "shell": 139.1,
+    "tube_sheets": 53.8,
+    "bundle": 41.1,
+    "nozzles": 0.3
+  },
+  "cadquery": "2.8.0"
+}

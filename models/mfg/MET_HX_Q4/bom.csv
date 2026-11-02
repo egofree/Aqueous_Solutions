@@ -1,4 +1,5 @@
-item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L if the stream is wet or chloride.,docs-authority/duties/MET_HX_Q4.md
-2,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-3,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Shell OD 540, wall 3 mm, z 40..760, with heads, on a 1000 x 600 plinth in a four-post hold-down frame",1,316L plate/pipe,255.1,make,"duty section 3 wet branch (316L if the stream is wet or chloride - conditional hold, WORK_ORDER W12); wall a study value; CA 0 mm (AQS-STD-001)"
+2,"Tube sheet pair, OD 534 x 15 at z 120/660",2,316L,53.8,make,study thickness; same material basis
+3,"Straight-tube bundle: 198 tubes OD 12 x 525, 3.919 m2 drawn",198,316L,41.1,make,"A-HX: the area is reported as drawn, not calculated - the node has no heat rate (duty section 2); tube wall a study value (WORK_ORDER W12)"
+4,"Nozzle set per docs-authority/nozzles/MET_HX_Q4.csv: 1 hose barb (DN15), 1 drain boss, 1 vent at the top head",3,316L,0.3,make,schedule tags/faces/heights verbatim; atmospheric hose per duty section 4

@@ -28,6 +28,9 @@ DENSITY = {
                       'band 1350-1450, midpoint carried; confirm per the supplier TDS at order'),
     'PP': (910.0, 'tables/materials.csv; farm_hab.py used 905 in built masses'),
     'PVDF': (1780.0, 'tables/materials.csv (GF SYGEF)'),
+    'borosilicate': (2230.0, 'published borosilicate glass 3.3 data (Corning 7740 / '
+                             'Schott 8330 band, midpoint); AQS-STD-002 section 7 '
+                             'adoption (X-MAT-16)'),
     'HDPE': (950.0, 'models/mfg/farm_hab.py RHO'),
     'EPDM': (1150.0, 'models/mfg/farm_hab.py RHO'),
     'FRP': (1800.0, 'models/mfg/farm_hab.py RHO'),
