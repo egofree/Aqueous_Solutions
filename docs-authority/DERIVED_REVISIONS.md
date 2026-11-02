@@ -436,8 +436,8 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/WS_NITRIC.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/WS_PEROX.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/WS_PHOS.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/WS_SLURRY.md` | working tree | current |
-| `docs-authority/duties/WS_SOLV.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/WS_SLURRY.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/WS_SOLV.md` | working tree | current |
 | `docs-authority/duties/YEAST.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/ZNBR2.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/ZNBR2_BR2_REGEN.md` | f0160a6 (regenerated, no change) | current |
@@ -1442,8 +1442,8 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/WS_NITRIC/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/WS_PEROX/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/WS_PHOS/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/WS_SLURRY/params.json` | working tree | current |
-| `models/mfg/WS_SOLV/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/WS_SLURRY/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/WS_SOLV/params.json` | working tree | current |
 | `models/mfg/ZNBR2/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/ZNBR2_BR2_REGEN/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/openscad/foam_ew/CUT_LIST.md` | f0160a6 (regenerated, no change) | current |

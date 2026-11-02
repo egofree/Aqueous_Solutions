@@ -1,19 +1,5 @@
-item,description,qty,material,basis
-1,Body / envelope 600 x 600 x 600 mm,1,"SA-240 304L, welded (graph node material).",docs-authority/duties/WS_SOLV.md
-2,Process nozzle DN15,2,"SA-240 304L, welded (graph node material).",one per mass edge; DN from AQS-INV-003
-3,"Motor: on/off valve IA-SOLV-WB (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
-4,"Motor: transfer pump IA-SOLV-WB to WET_BENCH (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-5,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-6,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-7,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-8,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-9,electronics: solenoid driver channel 24 V DC,1,IEC 61131-2 DO,AQS-INV-004
-10,fastener: anchor bolt M10,28,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-11,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-12,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-13,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-14,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-15,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-16,support: pipe clamp DN15,14,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-17,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-18,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Bund tray 600 x 600, floor 20 + curb 60 x 10",1,304L plate,68.2,make,skid layout choice (WORK_ORDER W12); CA 0 mm on the 300-series alloy (AQS-STD-001); the duty section 4 prose own-bund lines are room-side containment (hold)
+2,"Day tank OD 300, wall 3 mm, z 30..350, with heads, per node design_storage",1,SA-240 304L plate/pipe,34.6,make,"duty section 3 SA-240 304L, welded; tank D/H/wall per node design_storage (AQS-DUTY-064, 3.0 wall); nominal 0.02 m3 reported for the record (WORK_ORDER W12)"
+3,"Service-zone guard rail 130 x 100 x 150, tube 12 (A-MACH: guard drawn)",1,PP tube,0.1,make,guard over the front-right floor zone; layout choice (WORK_ORDER W12)
+4,"Nozzle set per docs-authority/nozzles/WS_SOLV.csv: 7 rows as atmospheric open-bore tube connections on tray risers (drain through the floor, vent riser beside the tank)",7,304L,2.1,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4; bore per the lib/dn Sch 40 table

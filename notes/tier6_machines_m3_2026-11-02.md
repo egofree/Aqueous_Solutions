@@ -357,6 +357,29 @@ POLYMERS reactors) — commits 13–24
 - Deliverables as the family recipe; `tracker --check WS_SLURRY` green; duty
   section 7 names the model; tracker regen puts WS_SLURRY at M3 (50).
 
+### WS_SOLV — commit 16
+
+- The WS_DOPE builder family at the solvent day-station
+  (`models/mfg/WS_SOLV/ws_solv.py`): same tray/tank/guard recipe, node
+  storage-sizing box 600 × 600 × 350 filled exactly; one closed manifold solid;
+  `cad/stl/WS_SOLV.stl` replaced from the build. Tank D/H/wall per node
+  design_storage (AQS-DUTY-064, the 304L row: D 300, H 300, wall 3.0).
+- SA-240 304L welded per duty section 3 (the graph node material row; the
+  design_storage material row matches); CA 0 mm on the 300-series alloy. The
+  solvent (ethanol/acetone) is flammable - the guard rail and the room-side
+  bund are the fire measures on the skid; the relief stays atmospheric as
+  issued (duty section 6). The duty section 4 prose list (IA-ABE-ETOH …
+  IA-SOLV-WB at 550 datums, no drain/vent rows) predates the issued 7-row
+  schedule; the schedule governs (hold, W12).
+- All 7 schedule rows drawn: N1/N2/N3/N7 in on −Y at 160 (4-row pack); N4 out
+  on +Y (600 datum clamped down, W12); N5 drain through the tray floor; N6
+  vent riser beside the tank (800 datum, W12). Class 150 column carried
+  verbatim, no flange. Nominal 0.02 m³ reported for the record; no purchased
+  item named - none drawn.
+- Deliverables as the family recipe; `tracker --check WS_SOLV` green; duty
+  section 7 names the model; tracker regen puts WS_SOLV at M3 (51). The
+  reagent-station family is complete: all six FAB stations at M3.
+
 
 
 
