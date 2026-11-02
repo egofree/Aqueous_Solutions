@@ -252,3 +252,34 @@ standby in their work orders and BOMs, not placeholder boxes.
   the stale Oct-31 3-sheet GA set (which carried the invalid raw "P&ID" token)
   is regenerated into it. Duty section 7 now names the model source. Tracker
   row 151: M3. Route hold stays reported.
+
+## EXTRUDE (horizontal profile press, FOUNDRY N+1 alternate, tier 7) — commit 11
+
+- New per-unit model `models/mfg/EXTRUDE/extrude.py` on the shared lib, the
+  installed-standby idiom: the N+1 former of ROLL (A-M-282/A-M-283) drawn as
+  the real machine per duty section 3 — tie-rod press frame, container group
+  with the tool-steel liner to the node design container_mm 60 (press_t 50),
+  main ram, billet loader −X and run-out chute +X, H13 die (consumable buy
+  set), die-zone guard rail, and the HPU skid and control pedestal as purchased
+  envelopes (15 kW connected, node design) — replacing the placeholder
+  envelope box. Standby named in the WORK_ORDER header, the BOM rows and the
+  build log.
+- All 4 schedule rows drawn flush at the envelope faces (N1/N2 solids rows at
+  DN15, bore not calculated per W4, riding the loader and chute nose; N3 drain
+  through the plinth; N4 vent riser to the envelope top; the 800 datum is the
+  schedule placeholder, W12).
+- A-MACH: guard rail and slab anchors drawn; purchased items named with the
+  node rating. A-SC: the press extrudes the shop's profile stock; make rows
+  flagged and W11 cross-references AQS-BOM-SC-001.
+- Build fills the node box exactly (1500 × 800 × 1500, zero face overhang);
+  `tracker --check EXTRUDE` green; `cad/stl/EXTRUDE.stl` replaced from the
+  build; BOM complete with make-or-buy; fasteners grade 8.8 carbon steel per
+  the W5 grade rule; WORK_ORDER rewritten to W1–W12 with holds named
+  (route-class hold for `press`, study frame sections and ram OD, placeholder
+  elevations, solids bores, purchased hydraulic package, pending relief case,
+  nitrided-die-land first-article item).
+- Drawing set: new 7-sheet set (ga_front/ga_side/nozzle_orient/frame01/die01/
+  aux01/iso01; title blocks per AQS-DWG-002, graph Rev AD); the stale Oct-31
+  3-sheet GA set (with the invalid raw "P&ID" token) is regenerated into it.
+  Duty section 7 now names the model source. Tracker row 149: M3. Route hold
+  stays reported.

@@ -24,7 +24,12 @@
   "backup_of": "ROLL",
   "outage_d": 2.0,
   "press_t": 50,
-  "container_mm": 60
+  "container_mm": 60,
+  "mat": "H13 extrusion die + tool-steel container liner (duty section 3)",
+  "ca_mm": 0.0,
+  "wall_basis": "study CS frame sections and ram OD; no thickness booked on the node (WORK_ORDER W12)",
+  "internals": "none drawn (node internals row none)",
+  "purchased": "HPU skid and control pedestal (connected_kW 15.0 node design), drawn as their envelopes (plan rule 6); the H13 die is the purchased consumable"
  },
  "nozzles": [
   {
@@ -67,5 +72,39 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class press"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1500.0,
+   800.0,
+   1500.0
+  ],
+  "basis": "A-M-199 forming class N+1 rated envelope (A-M-282)",
+  "frame": {
+   "platen_x_mm": [
+    160.0,
+    760.0
+   ],
+   "centreline_y_mm": 400.0
+  },
+  "purchased_bays": {
+   "hpu_xy_mm": [
+    0.0,
+    300.0,
+    620.0,
+    780.0
+   ],
+   "pedestal_xy_mm": [
+    680.0,
+    920.0,
+    620.0,
+    780.0
+   ]
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; press centreline y 400; rear platen x 80..200, front platen x 640..760; container x 340..640 at the z 600 axis; billet loader -X at z 160, run-out chute +X at z 600; HPU bay -X floor, control pedestal centre-rear; die-zone guard rail on the operator side",
+  "nozzle_spread": "the schedule gives inlet/outlet/bottom/top and heights only; N1 rides the billet loader at -X z 160; N2 rides the chute nose at +X z 600; N3 drain under the frame; N4 vent riser to the envelope top; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }

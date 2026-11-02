@@ -1,2 +1,10 @@
-item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 1500 x 800 x 1500 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; standby train (AQS-DUTY-072 section 4)
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Plinth 1500 x 800 x 60 (CS, anchor bosses)",1,carbon steel,565.2,make,"dry forge-floor service, CA 0 mm (AQS-STD-001 shop rule); anchors in fasteners.csv"
+2,"Press frame: rear and front platens, 4 tie rods, bed",1,carbon steel,1583.7,make,study sections (WORK_ORDER W12); N+1 former of ROLL (A-M-282); press_t 50 node rating
+3,"Container group: tool-steel liner bore 60 (node design container_mm) in its housing, die holder, main ram with nut",1,tool steel,104.5,make,"duty section 3 (DIETER1988); ram OD is the study value (hold, WORK_ORDER W12); the hydraulic cylinder package purchases at fabrication"
+4,H13 extrusion die,1,H13 tool steel (consumable),12.7,buy,"duty section 3 (ASM_V1); consumable, buy; nitrided die land where galling is measured (first-article item, duty section 3)"
+5,"Billet loader (-X, z 160) and run-out chute (+X, z 600) on legs",1,carbon steel,56.6,make,schedule N1/N2 interface furniture; study geometry (WORK_ORDER W12)
+6,Die-zone guard rail on the operator side (A-MACH: guard drawn),1,CS tube,6.6,make,guard over the die zone; layout choice (WORK_ORDER W12)
+7,"Hydraulic power unit skid on the -X floor bay (purchased, envelope and interface)",1,purchased skid (envelope),263.8,buy,purchased per plan rule 6; connected_kW 15 is the node rating; standby unit (A-M-282)
+8,"Control pedestal (purchased, envelope and interface)",1,purchased pedestal (envelope),271.3,buy,purchased per plan rule 6
+9,"Nozzle set per docs-authority/nozzles/EXTRUDE.csv: 4 connections flush at the envelope faces (2 solids rows at DN15, bore not calculated; DN15 drain; DN15 vent riser)",4,carbon steel,1.8,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4

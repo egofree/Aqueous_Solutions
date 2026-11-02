@@ -1,0 +1,112 @@
+{
+  "bbox_mm": [
+    1500.0,
+    800.0,
+    1500.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1500.0,
+    800.0,
+    1500.0
+  ],
+  "size_basis": "A-M-199 forming class N+1 rated envelope (A-M-282)",
+  "graph_revision": "AD",
+  "solids": 2,
+  "all_parts_valid": true,
+  "machine": {
+    "frame": {
+      "platen_x_mm": [
+        160.0,
+        760.0
+      ],
+      "basis": "tie-rod press frame, CS platens (study sections, WORK_ORDER W12)"
+    },
+    "container": {
+      "bore_mm": 60.0,
+      "x_mm": [
+        340.0,
+        640.0
+      ],
+      "basis": "node design container_mm 60; tool-steel liner (duty section 3); the H13 extrusion die is the consumable buy set"
+    },
+    "ram": {
+      "dia_mm": 80.0,
+      "basis": "study ram OD (container bore + 20); the hydraulic cylinder package purchases at fabrication (WORK_ORDER W12)",
+      "press_t": "50 node rating"
+    },
+    "purchased": "HPU skid and control pedestal on their bays, drawn as their envelopes per plan rule 6 (connected_kW 15 is the node rating)",
+    "guard": "die-zone guard rail on the operator side (A-MACH: guard drawn)",
+    "nitrided_die_land": "the duty section 3 nitrided-die-land first-article item is a process note, not geometry"
+  },
+  "standby": {
+    "state": "standby_rated N+1 former of ROLL (A-M-282/A-M-283); energized on the roll-stand outage on profile-class lots (outage_d 2.0); design-day rate zero on the graph",
+    "basis": "duty section 2 sizing study"
+  },
+  "material": {
+    "class": "H13 extrusion die + tool-steel container liner on the press frame",
+    "ca_mm": 0.0,
+    "basis": "duty section 3 (X-MAT-22, ASM_V1/DIETER1988); CA 0 mm - dry hot-work contact, no corrosive stream (AQS-STD-001 shop rule)"
+  },
+  "a_mach": {
+    "guard": "die-zone guard rail drawn (A-MACH)",
+    "anchors": "8 M16 wedge anchors, plinth to slab (fasteners.csv)",
+    "purchased": "HPU skid and control pedestal (connected_kW 15, node design)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube",
+      "dn": "solids",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "billet to extrude",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4); solids row drawn at DN15, bore not calculated (W4 rule)"
+    },
+    "N2": {
+      "style": "tube",
+      "dn": "solids",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "rod/profile",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4); solids row drawn at DN15, bore not calculated (W4 rule)"
+    },
+    "N3": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4); flush at the envelope bottom (schedule datum 50)"
+    },
+    "N4": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 1500.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4); schedule datum 800 is the placeholder elevation - the riser stands on the front-platen head and flushes at the envelope top (hold, WORK_ORDER W12)"
+    }
+  },
+  "nozzle_count_schedule": 4,
+  "nozzle_idiom": "atmospheric open-bore connections flush at the envelope faces (duty section 4); the solids rows (N1 billet, N2 rod/profile) are drawn at DN15 labeled bore not calculated (W4 rule); the schedule faces map to compass by the registered layout (params.json layout block); the schedule rating column (Class 150) is carried verbatim as text; datums are the schedule placeholders (holds, WORK_ORDER W12)",
+  "part_mass_kg": {
+    "plinth": 565.2,
+    "frame": 1583.7,
+    "container_group": 104.5,
+    "h13_die": 12.7,
+    "loader_chute": 56.6,
+    "guard_rail": 6.6,
+    "hpu_skid": 263.8,
+    "control_pedestal": 271.3,
+    "nozzles": 1.8
+  },
+  "cadquery": "2.8.0"
+}
