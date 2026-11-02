@@ -341,7 +341,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/MET_AHU.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/duties/MET_HX_Q4.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/duties/MET_MELT.md` | 514e50a (regenerated, no change) | current |
-| `docs-authority/duties/MET_SCRUB.md` | 514e50a (regenerated, no change) | current |
+| `docs-authority/duties/MET_SCRUB.md` | working tree | current |
 | `docs-authority/duties/MET_SYN.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/duties/MFG_SHOP.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/duties/MG_POT.md` | 514e50a (regenerated, no change) | current |
@@ -354,7 +354,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/NFIX_BED.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/duties/NFT.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/duties/NORTH_DOCK.md` | 514e50a (regenerated, no change) | current |
-| `docs-authority/duties/NOX_SCRUB.md` | working tree | current |
+| `docs-authority/duties/NOX_SCRUB.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/duties/NUTRIENT_DOSE.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/duties/OIL_DRYER.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/duties/OIL_FRAC.md` | 514e50a (regenerated, no change) | current |
@@ -1365,13 +1365,13 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/MET_AHU/params.json` | 514e50a (regenerated, no change) | current |
 | `models/mfg/MET_HX_Q4/params.json` | 514e50a (regenerated, no change) | current |
 | `models/mfg/MET_MELT/params.json` | 514e50a (regenerated, no change) | current |
-| `models/mfg/MET_SCRUB/params.json` | 514e50a (regenerated, no change) | current |
+| `models/mfg/MET_SCRUB/params.json` | working tree | current |
 | `models/mfg/MET_SYN/params.json` | 514e50a (regenerated, no change) | current |
 | `models/mfg/MFG_SHOP/params.json` | 514e50a (regenerated, no change) | current |
 | `models/mfg/MG_POT/params.json` | 514e50a (regenerated, no change) | current |
 | `models/mfg/MO_CELL/params.json` | 514e50a (regenerated, no change) | current |
 | `models/mfg/NCG_HEADER/params.json` | 514e50a (regenerated, no change) | current |
-| `models/mfg/NOX_SCRUB/params.json` | working tree | current |
+| `models/mfg/NOX_SCRUB/params.json` | 514e50a (regenerated, no change) | current |
 | `models/mfg/NUTRIENT_DOSE/params.json` | 514e50a (regenerated, no change) | current |
 | `models/mfg/OIL_DRYER/params.json` | 514e50a (regenerated, no change) | current |
 | `models/mfg/OIL_FRAC/params.json` | 514e50a (regenerated, no change) | current |

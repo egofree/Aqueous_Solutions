@@ -97,6 +97,28 @@ recipe pattern in `models/mfg/EW_1/WORK_ORDER.md`. Graph Rev AC. One commit per 
   layout bed elevations; no stage/HTU count; the DN300 lib-table gap; the clamped
   N7 datum; Class 150 rating column; fastener lengths.
 
+## HX8 (EW reject / Q4 preheat exchanger, tier 4) — commit 7
+
+- `models/mfg/HX8/hx8.py` on the shared lib. Vertical PVC-U shell OD 340 (wall 6,
+  study, hold) on a plinth inside a four-post hold-down frame, filling the study
+  registry envelope 600 × 400 × 600 exactly. The bundle is real hardware: 46 PVDF
+  tubes OD 10 × 360 between two tube sheets, 0.5202 m² of tube area from the model
+  against the 0.51 m² duty figure (A-HX; the duty carries the heat rate 4.59 kW at
+  U 1500, LMTD 6 K, so the area is duty-sized and reported, nothing resized; the
+  0.0102 m² whole-tube surplus is named).
+- All 7 schedule rows drawn at tag, face, height and bore; the z 600 outlet datums
+  clamped below the barb radius, the 800 vent datum flush at the top head (holds).
+- Data repair in the lane: two hand-era rows of `docs-authority/nozzles/HX8.csv`
+  (N2/N3) carried an unquoted comma that shifted their face and height fields
+  (face read " Q4 return preheat", height None); repaired to the quoting of the
+  identical N6/N7 rows. The generator only appends and preserves hand rows verbatim,
+  so the fix is a source-data repair, recorded in the WORK_ORDER and this note.
+- Deliverables: exports, generated BOM, fasteners.csv, check.json, WORK_ORDER.md
+  (W1–W12), the seven-sheet drawing set (stale GA.md superseded). `cad/stl` replaced.
+- Holds named in W12: study registry envelope; study shell and tube walls; the
+  whole-tube area surplus; clamped outlet datums; the vent datum; the Class 150
+  rating column; the schedule-row quoting repair; fastener patterns.
+
 ## Pipeline repair ahead of the batch — housekeeping commit
 
 - `models/mfg/style_builders.py`: the per-unit-script skip of the cold-box batch repair

@@ -31,17 +31,17 @@
    "tag": "N2",
    "size": "DN15",
    "rating": "Class 150",
-   "service": "HX-8 EW reject",
-   "face": " Q4 return preheat",
-   "height_mm": null
+   "service": "HX-8 EW reject, Q4 return preheat",
+   "face": "outlet",
+   "height_mm": 600
   },
   {
    "tag": "N3",
    "size": "DN15",
    "rating": "Class 150",
-   "service": "HX-8 EW reject",
-   "face": " Q4 return preheat",
-   "height_mm": null
+   "service": "HX-8 EW reject, Q4 return preheat",
+   "face": "outlet",
+   "height_mm": 600
   },
   {
    "tag": "N4",
@@ -80,5 +80,36 @@
  "acceptance_sets": [
   "A-core",
   "A-HX"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   600.0,
+   400.0,
+   600.0
+  ],
+  "basis": "study registry box (params size_note); the duty section 2 sizing gives area, U and LMTD, not the box (WORK_ORDER W12)",
+  "shell": {
+   "od_mm": 340.0,
+   "z_mm": [
+    40.0,
+    560.0
+   ]
+  }
+ },
+ "design": {
+  "service": "HX-8: EW reject cooling against Q4 return preheat, atmospheric (duty sections 2 and 6)",
+  "wall_mm": 6.0,
+  "wall_basis": "study value",
+  "ca_mm": 0.0,
+  "area_model_m2": 0.5202,
+  "area_duty_m2": 0.51,
+  "tubes": 46,
+  "tube": "PVDF OD 10 x 360 (study wall 1.5)"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; shell axis at x 300, y 200, z up",
+  "nozzle_spread": "the schedule gives face and height only; ports pack in one row per face/height group at the envelope face, 8 mm clear at the bore; per-tag positions in check.nozzles_drawn",
+  "vent_drain": "N5 flush at the top head (800 datum predates the 600 box); N4 drain boss on the base head",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }

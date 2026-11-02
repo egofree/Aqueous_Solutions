@@ -1,0 +1,116 @@
+{
+  "bbox_mm": [
+    600.0,
+    400.0,
+    600.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    600.0,
+    400.0,
+    600.0
+  ],
+  "size_basis": "study registry box (params size_note); the duty section 2 sizing gives area, U and LMTD, not the box (WORK_ORDER W12)",
+  "graph_revision": "AC",
+  "solids": 1,
+  "all_parts_valid": true,
+  "hx": {
+    "type": "vertical straight-tube, PVDF bundle in PVC-U shell",
+    "shell_od_mm": 340.0,
+    "wall_mm": 6.0,
+    "tube_sheets_z_mm": [
+      100.0,
+      480.0
+    ],
+    "tubes": 46,
+    "tube": "OD 10 x t 1.5 (study wall) x 360 long",
+    "area_model_m2": 0.5202,
+    "area_duty_m2": 0.51,
+    "duty_kW": 4.59,
+    "duty_basis": "1500 W/m2K x 0.51 m2 x 6 K, duty section 2 (edges sum 4.572 kW); area not resized",
+    "material_basis": "duty section 3: PVDF tubes and tube sheets (AQS-STD-002 section 4.5, owner adoption 2026-10-15), PVC-U shell on the Q4 water side; titanium plates withdrawn, graphite not used"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 300.0,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 584.4,
+      "x_mm": 327.0,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); schedule datum 600 mm sits at the envelope top; drawn clamped to 584.4 mm (barb radius rule) - WORK_ORDER W12"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 584.4,
+      "x_mm": 356.3,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); schedule datum 600 mm sits at the envelope top; drawn clamped to 584.4 mm (barb radius rule) - WORK_ORDER W12"
+    },
+    "N4": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "drain boss on the base head, tip at the 50 datum"
+    },
+    "N5": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "vent flush at the top head; schedule datum 800 mm predates the 600 box - named hold, WORK_ORDER W12"
+    },
+    "N6": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 578.1,
+      "x_mm": 249.8,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); schedule datum 600 mm sits at the envelope top; drawn clamped to 578.1 mm (barb radius rule) - WORK_ORDER W12"
+    },
+    "N7": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 578.1,
+      "x_mm": 291.6,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); schedule datum 600 mm sits at the envelope top; drawn clamped to 578.1 mm (barb radius rule) - WORK_ORDER W12"
+    }
+  },
+  "nozzle_count_schedule": 7,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (the shell stands 30 off the face, within the barb reach); the schedule rating column (Class 150) is carried verbatim as text, no flange drawn (duty section 4: no process pressure; design_kPa 17.8 is the old head-plus-10 figure)",
+  "part_mass_kg": {
+    "plinth": 6.7,
+    "frame": 2.4,
+    "shell": 12.2,
+    "tube_sheets": 4.5,
+    "bundle": 1.2,
+    "nozzles": 0.2
+  },
+  "cadquery": "2.8.0"
+}
