@@ -189,7 +189,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/BLACK_DIGEST.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/BLOW_MOLD.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/BMED_ACID.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/BMED_BASE.md` | working tree | current |
+| `docs-authority/duties/BMED_BASE.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/BMED_UPW_POLISH.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/BOARD_MILL.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/BOUNDARY_EXPORT.md` | f0160a6 (regenerated, no change) | current |
@@ -361,7 +361,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/OIL_PYRO.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/PEANUT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/PELLET.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/POLISH_BANK.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/POLISH_BANK.md` | working tree | current |
 | `docs-authority/duties/POLY_COND.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/POLY_F.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/POLY_FIBER.md` | f0160a6 (regenerated, no change) | current |
@@ -582,7 +582,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/nozzles/BLOW.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/nozzles/BLOW_MOLD.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/nozzles/BMED_ACID.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/nozzles/BMED_BASE.csv` | working tree | current |
+| `docs-authority/nozzles/BMED_BASE.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/nozzles/BMED_UPW_POLISH.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/nozzles/BOARD_MILL.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/nozzles/BOUNDARY_EXPORT.csv` | f0160a6 (regenerated, no change) | current |
@@ -1265,7 +1265,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/BLACK_DIGEST/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/BLOW_MOLD/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/BMED_ACID/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/BMED_BASE/params.json` | working tree | current |
+| `models/mfg/BMED_BASE/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/BMED_UPW_POLISH/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/BSFL_BIN/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/C29_RECYCLE/params.json` | f0160a6 (regenerated, no change) | current |
@@ -1377,7 +1377,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/OIL_FRAC/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/OIL_PYRO/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/PELLET/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/POLISH_BANK/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/POLISH_BANK/params.json` | working tree | current |
 | `models/mfg/POLY_COND/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/POLY_F/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/POLY_FIBER/params.json` | f0160a6 (regenerated, no change) | current |

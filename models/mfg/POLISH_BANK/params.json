@@ -80,5 +80,36 @@
  "acceptance_sets": [
   "A-core",
   "A-VES"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study registry box (params size_note)",
+  "shell": {
+   "od_mm": 540.0,
+   "z_mm": [
+    40.0,
+    780.0
+   ]
+  }
+ },
+ "design": {
+  "service": "polish bank vessel on the EW tail line, atmospheric (duty sections 2, 4 and 6)",
+  "wall_mm": 10.0,
+  "wall_basis": "study fab-page polymer wall",
+  "ca_mm": 0.0,
+  "internals": "none drawn: no authority dimensions the polish media (WORK_ORDER W12)",
+  "working_level_mm": 449.4,
+  "working_level_basis": "the duty section 2 holdup basis (0.0827 m3, 30-minute hold)"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; shell axis at x 500, y 300, z up",
+  "nozzle_spread": "the schedule gives face and height only; ports pack centred on the face mid-length; per-tag positions in check.nozzles_drawn",
+  "vent_drain": "N5 vent flush at the top head (the 800 datum is the box top); N4 drain boss on the base head, tip at the 50 datum",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope",
+  "history": "the placement seed once carried the polish bank as separate columns (the PK_1..PK_9 label era); the present graph defines one unit and the model covers that column set as the node defines it (W12)"
+ }
 }

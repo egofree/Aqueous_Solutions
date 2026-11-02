@@ -78,3 +78,35 @@ resized.
   --check BMED_BASE` green; duty section 7 names the model; tracker regen puts
   BMED_BASE at M3 (37).
 
+## POLISH_BANK (polish bank vessel, DIGESTER, tier 6) — commit 3
+
+- `models/mfg/POLISH_BANK/polish_bank.py` on the shared lib, the accepted
+  vessel idiom (CATCH_TANK pattern): vertical PVC-U vessel, shell OD 540
+  (min(L,W) − 60), wall 10 (study fab page — hold), plinth with heads, filling
+  the node registry box 1000 × 600 × 800 exactly; one closed manifold solid;
+  `cad/stl/POLISH_BANK.stl` replaced from the build.
+- History handled: the placement seed once carried the polish bank as separate
+  columns (the PK_1..PK_9 label era); the present graph defines one unit and
+  the model covers that column set as the node defines it — one vessel skid
+  (named in WORK_ORDER W12 and params.layout).
+- Internals: none drawn — the node internals row is none and no authority
+  dimensions the polish media (duty section 5 names a differential-pressure
+  instrument across the packing; no packing height, media class or column
+  count exists); nothing invented (W12).
+- All 7 schedule rows drawn as atmospheric hose barbs flush at the envelope
+  faces (shell 30 off the ±Y faces, within the barb reach): N1 DN50 and N7
+  DN15 in on −Y at 160; N2/N3 DN50 and N6 DN15 out on +Y at 600 (datums fit
+  the box, no clamp); N4 drain boss to its 50 datum; N5 vent flush at the top
+  head (the 800 datum is the envelope top). The duty section 4 prose bore
+  line (6.25 mm, DN15) is not a specification and predates the issued DN50
+  tail rows — schedule governs (W12).
+- A-VES: the duty section 2 figure is an existing holdup basis (0.0827 m³ at
+  a 30-minute hold) — the model working level (z 449.4) is set by it and
+  reported (0.0827 m³; full shell 0.1529 m³); no new residence-time claim;
+  duty section 8's "not a measured volume" line is carried.
+- Deliverables: exports, generated `bom.csv`, `fasteners.csv`, `check.json`,
+  `WORK_ORDER.md` (W1–W12), six-sheet drawing set; `tracker --check
+  POLISH_BANK` green; duty section 7 names the model; tracker regen puts
+  POLISH_BANK at M3 (38).
+
+

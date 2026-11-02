@@ -1,0 +1,120 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study registry box (params size_note)",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "holdup_m3": 0.0827,
+  "holdup_basis": "the duty section 2 holdup basis (0.0827 m3 at a 30-minute hold) sets the working level z 449.4 (A-VES: the duty already carries a holdup basis, so the model level is set by it and reported; not turned into a new residence-time claim; duty section 8: the vessel is not built, so this is not a measured volume)",
+  "holdup_full_shell_m3": 0.1529,
+  "tank": {
+    "wall_mm": 10.0,
+    "wall_basis": "study fab-page polymer wall (10 mm); no thickness booked on the node (WORK_ORDER W12)",
+    "internals": {
+      "source": "none: the node internals row is none and no authority dimensions the polish media (duty section 5 names a differential-pressure instrument across the packing; no packing height, media class or column count is stated)",
+      "basis": "nothing invented (WORK_ORDER W12); the PK_1..PK_9 seed history split the bank across columns, the present graph defines one unit and the model covers that column set as the node defines it"
+    }
+  },
+  "material": {
+    "class": "PVC-U",
+    "ca_mm": 0.0,
+    "basis": "duty section 3, rules M1 and M2; corrosion allowance does not apply to the polymer"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 485.3,
+      "schedule_rating": "Class 150",
+      "service": "EW tail to polish",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 451.2,
+      "schedule_rating": "Class 150",
+      "service": "raffinate (EW tail after polish) to continuous recycle",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 519.5,
+      "schedule_rating": "Class 150",
+      "service": "recovered cake",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss on the base head, tip at the 50 datum"
+    },
+    "N5": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the top head; the schedule 800 datum is the envelope top"
+    },
+    "N6": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 568.3,
+      "schedule_rating": "Class 150",
+      "service": "Polish bank liquor return to the continuous recycle",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N7": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 534.1,
+      "schedule_rating": "Class 150",
+      "service": "raffinate after Mo cut",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    }
+  },
+  "nozzle_count_schedule": 7,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (the shell stands 30 off the +/-Y faces, within the barb reach); the schedule rating column (Class 150) is carried verbatim as text, no flange drawn; the duty section 4 prose bore line (6.25 mm, DN15) is not a specification and predates the issued DN50 tail rows - schedule governs (WORK_ORDER W12)",
+  "part_mass_kg": {
+    "plinth": 33.6,
+    "shell": 29.6,
+    "nozzles": 0.7
+  },
+  "cadquery": "2.8.0"
+}
