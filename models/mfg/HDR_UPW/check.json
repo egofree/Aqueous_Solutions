@@ -1,0 +1,105 @@
+{
+  "bbox_mm": [
+    2000.0,
+    50.0,
+    50.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    2000.0,
+    50.0,
+    50.0
+  ],
+  "size_basis": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
+  "misfit": null,
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "spool": {
+    "type": "single manifold run (the spool set as the node defines it), modeled as a 2000 mm representative spool on a 20 mm trough plinth",
+    "dn": "DN25",
+    "od_mm": 33.7,
+    "wall_mm": 3.38,
+    "wall_basis": "lib/dn Sch 40 table (ASME B36.10M); the node states no schedule; the node material carries SDR 21 - the purchased pipe's wall (WORK_ORDER W12)",
+    "id_mm": 26.94,
+    "id_grid_mm": 0.8,
+    "id_note": "AQS-DUTY-075 sizing: required id 0.8 mm at 1.5 m/s, seat minimum DN25; the DN-8 grid bore and the Sch 40 bore both seat DN25; nothing resized",
+    "run_basis": "20 m run carried by the line-list route lengths (AQS-PIP-004); not redrawn",
+    "material": "PVDF SDR 21, fusion-welded (high-purity water, AQS-STD-002) (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate."
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 10.0,
+      "drawn_height_mm": 17.6,
+      "x_mm": 116.8,
+      "schedule_rating": "Class 150",
+      "service": "UPW",
+      "note": "schedule datum 10 mm clamped up to 17.6 mm to keep the DN25 bore inside the 50 mm cross-section (hold, WORK_ORDER W12); DN25 atmospheric tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 37.0,
+      "drawn_height_mm": 37.0,
+      "x_mm": 110.7,
+      "schedule_rating": "Class 150",
+      "service": "potable makeup",
+      "note": "schedule datum drawn; DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 37.0,
+      "drawn_height_mm": 32.4,
+      "x_mm": 168.2,
+      "schedule_rating": "Class 150",
+      "service": "fab UPW",
+      "note": "schedule datum 37 mm is a placeholder above the 50 mm cross-section; clamped down to 32.4 mm (hold, WORK_ORDER W12); DN25 atmospheric tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": 970.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss, flush at the envelope bottom; 50 datum is the cross-section height"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 50.0,
+      "drawn_height_mm": 50.0,
+      "x_mm": 1030.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent, flush at the envelope top (duty section 4: into the loop suction, not the room)"
+    }
+  },
+  "nozzle_count_schedule": 5,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: atmospheric tube or hose, no flange class; the W4 110 % rule draws no flange where no process pressure is stated); schedule rating column (Class 150) carried verbatim as text",
+  "line_list": {
+    "csv": "models/mfg/HDR_UPW/line_list.csv",
+    "source": "unit edges in flow_graph/plant_flow_graph.json + docs-authority/LINE_LIST.md (AQS-PIP-004, DN and class authority)",
+    "edges": 4,
+    "rows": 5,
+    "missing_line_rows": [],
+    "rows_without_edge": [],
+    "no_new_edge": true
+  },
+  "part_mass_kg": {
+    "plinth": 15.7,
+    "manifold": 1.15,
+    "nozzles": 0.03
+  },
+  "cadquery": "2.8.0",
+  "cad_stl": "replaced from the build"
+}

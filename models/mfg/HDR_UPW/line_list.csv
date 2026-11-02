@@ -1,0 +1,6 @@
+line,from,to,dn,class,service,rating,note
+MAIN,spool start,spool end,DN25,-,UPW distribution header (polish skid in; fab and hab draws),atmospheric; no flange class (duty section 4),"manifold spool per AQS-DUTY-075 (node design: DN25, 20 m run, 0.0045 m3); modeled as the 2000 mm representative spool; PVDF SDR 21 fusion-welded (duty section 3)"
+IA-UPW-HAB,HDR_UPW,HABITATION,DN50,P5,water,atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-UPW-USE,HDR_UPW,WAFER_FAB,DN50,P5,water,atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+S01,BMED_UPW_POLISH,HDR_UPW,DN15,P1,aqueous process liquor (AQS-ASSAY-001 envelope),atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+UPW_TO_FAB,HDR_UPW,FAB_UPW_TANK,DN15,P5,water,atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,

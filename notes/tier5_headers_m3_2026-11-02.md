@@ -134,3 +134,27 @@ calculated", rating; spool drawing; no new edge).
   (8 M10 wedge anchors, 8.8), `check.json`, `WORK_ORDER.md` (W1–W12 + line list),
   six-sheet drawing set. Duty section 7 names the model; tracker regen puts HDR_O2 at
   M3 (32).
+
+## HDR_UPW (UPW distribution header, WTR, tier 5) — commit 6
+
+- `models/mfg/HDR_UPW/hdr_upw.py` on the shared lib, the accepted spool shape at DN25
+  in PVDF SDR 21 fusion-welded (duty section 3; the P3 class sheet is the PVDF class).
+  All 5 schedule rows drawn as open-bore tube stubs flush at the envelope faces: N1
+  DN25 inlet at 17.6 mm (datum 10 clamped up), N2 DN15 outlet at its 37 mm datum, N3
+  DN25 outlet clamped 37 to 32.4 mm, N4 drain and N5 vent flush at the faces. The
+  UPW_TO_FAB edge carries no distinct schedule row (the N3 fab UPW branch serves the
+  fab side) — named hold, drawn verbatim, no nozzle invented. Build fills the envelope
+  exactly (2000 × 50 × 50, one closed manifold solid); `cad/stl` replaced from the
+  build; `tracker --check HDR_UPW` fully green (no misfit on this unit).
+- A-PIPE: `line_list.csv` — 5 rows (manifold + S01 DN15 P1, UPW_TO_FAB DN15 P5,
+  IA-UPW-HAB DN50 P5, IA-UPW-USE DN50 P5); edge coverage complete, no new edge.
+- Holds named in WORK_ORDER W12: sizing box as envelope; Sch 40 table drawn with the
+  SDR 21 wall confirmed at order; the DN−8 grid against the Sch 40 bore; clamped
+  datums; the missing UPW_TO_FAB schedule row; the Class 150 column against the
+  atmospheric duty; the PVDF-to-P5 transition joint (the issued line classes are P5
+  HDPE while the manifold is PVDF); tube-vs-hose left to the connecting spool's joint;
+  the trough-mount layout choice; anchor lengths and branch pitch.
+- Deliverables: exports (STEP + closed STL, 4004 facets), `bom.csv` (plinth 15.7 kg
+  CS, manifold 1.15 kg PVDF, branches 0.03 kg), `fasteners.csv` (8 M10 wedge anchors,
+  8.8), `check.json`, `WORK_ORDER.md` (W1–W12 + line list), six-sheet drawing set.
+  Duty section 7 names the model; tracker regen puts HDR_UPW at M3 (33).

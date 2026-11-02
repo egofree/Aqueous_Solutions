@@ -1,2 +1,4 @@
-item,description,qty,material,make_or_buy,basis
-1,Body / envelope per duty sheet section 2,1,PVDF SDR 21, fusion-welded (high-purity water, AQS-STD-002),make,AQS-STD-002 per duty sheet
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Manifold spool DN25 OD 33.7 x wall 3.38 (Sch 40 table), 2 m modeled of the 20 m run; bore open both ends; fusion-welded",1,PVDF (duty section 3: high-purity water header),1.15,make,"AQS-DUTY-075 node design DN25 x 20 m run; PVDF SDR 21 per the node (the P3 class sheet of AQS-PIP-003 is the PVDF class); schedule not stated on the node - Sch 40 table drawn, SDR 21 wall confirmed at order (hold, WORK_ORDER W12); CA 0 mm (AQS-STD-001 polymer rule)"
+2,Branch connection set: 5 atmospheric open-bore tube stubs at the schedule tags/faces/heights,5,PVDF,0.03,make,"docs-authority/nozzles/HDR_UPW.csv verbatim; the UPW_TO_FAB edge carries no distinct schedule row (hold, W12); datums clamped into the 50 mm cross-section (holds)"
+3,"Trough plinth 2000 x 50 x 20, the spool mount (AQS-MOD-002 dry service class)",1,carbon steel (ASTM A500),15.7,make,"support scheme carried from the HDR_CO2 acceptance (trough mount, no top rails); metal parts bonded per duty section 3"
