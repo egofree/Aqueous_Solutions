@@ -204,3 +204,31 @@ recipe pattern in `models/mfg/EW_1/WORK_ORDER.md`. Graph Rev AC. One commit per 
   style_builders-era GA.md and the three invalid-XML M2-era SVGs regenerated
   through the draw/stamp/PDF sequence). `cad/stl/CATCH_TANK.stl` replaced from
   the build. `tracker --check CATCH_TANK` green.
+
+## ROOF_TANK (roof water tank, tier 4) — commit 10
+
+- `models/mfg/ROOF_TANK/roof_tank.py` on the shared lib. Rectangular welded-plate
+  PVC-U tank - the HOPPER/FLOAT_SINK house idiom for plate tanks (the study fab
+  page: "Shell 6 mm on metal, 10 mm on polymer. Shop weld."): floor and walls
+  10 mm inside the node registry envelope 649 × 520 × 748 with a 20 mm hold-down
+  rim frame closing the top; bbox exact, one closed manifold solid. The plate
+  body is a build decision with a cause worth recording: the duty books 26 face
+  ports in two chord-packed 160/600 rows, and on a round shell (OD 460, my first
+  draw) the outer ports of those rows float beyond the shell's plan projection -
+  the builder's own single-solid assert caught it (13 solids). Plate walls put
+  every port root on the wall at any position along the full 649 mm chord.
+- Internals: dip pipe OD 60 inside the stilling well OD 110 (AQS-MFG-001 study
+  page, dims study, holds), plus the duty section 3 PVDF air coil - a PVDF OD 16
+  stacked-turn coil, 4 turns at a 300 mm mean diameter with two OD 16 stubs
+  through the +X wall, 0.1979 m2 DRAWN (no authority sizes it; the AQS-STD-002
+  section 10 Rev J supersession conflict is a named hold; swept-helix coils do
+  not boolean-fuse reliably, so the coil is built as stacked torus turns with
+  risers - same hardware, clean unions). Node internals row none.
+- All 26 schedule rows drawn at tag, face, height and bore (N18 solids row at
+  DN15, bore not calculated; N10 vent on the +Y rim bar, its 800 datum predates
+  the 748 box - hold; the Class 150 rating column verbatim, no flange). Holdup
+  0.1997 m3 reported, no residence derived (A-VES). PVC-U-or-HDPE conditional
+  held (W12). Deliverables: exports, generated BOM, fasteners.csv, check.json,
+  WORK_ORDER.md (W1-W12), the seven-sheet drawing set (stale M2-era GA.md and
+  invalid-XML SVGs regenerated). `cad/stl/ROOF_TANK.stl` replaced.
+  `tracker --check ROOF_TANK` green.

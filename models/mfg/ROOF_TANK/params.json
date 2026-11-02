@@ -232,5 +232,31 @@
  "acceptance_sets": [
   "A-core",
   "A-VES"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   649.0,
+   520.0,
+   748.0
+  ],
+  "basis": "study registry box (params size_note); the duty sheet carries no size line and the fab study page envelope predates the node (WORK_ORDER W12)",
+  "tank_body_mm": [
+   649.0,
+   520.0,
+   708.0
+  ]
+ },
+ "design": {
+  "service": "roof water tank, atmospheric; hot draw cooled at the coil line (duty sections 2, 3 and 6)",
+  "wall_mm": 10.0,
+  "wall_basis": "study fab-page polymer wall",
+  "ca_mm": 0.0,
+  "internals": "dip pipe + stilling well (fab study page) + PVDF air coil (duty section 3); dims study"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; plate walls inside the envelope, rim frame closes the top; tank centre x 324.5, y 260, z up",
+  "nozzle_spread": "the schedule gives face and height only; the two 160/600 rows pack the full face chord (outer barbs near-tangent, hold); per-tag positions in check.nozzles_drawn",
+  "vent_drain": "N10 vent flush at the top head (the 800 datum predates the box); N9 drain boss on the base head, tip at the 50 datum",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }
