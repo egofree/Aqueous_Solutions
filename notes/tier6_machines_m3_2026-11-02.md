@@ -232,6 +232,15 @@ resized.
   WS_AMMONIA` green; duty section 7 names the model; tracker regen puts
   WS_AMMONIA at M3 (43).
 
+### WS_KOH — commit 9
+
+- Same family recipe; day-tank envelope (duty section 2 claims no holdup,
+  0.27 kg/d in and out — no volume claimed, model volume reported for the
+  record). PVC-U per duty section 3. All 4 schedule rows drawn (1 in, 1 out,
+  drain, vent). No purchased item named — none drawn.
+- Deliverables as commit 8; `tracker --check WS_KOH` green; duty section 7
+  names the model; tracker regen puts WS_KOH at M3 (44).
+
 
 
 

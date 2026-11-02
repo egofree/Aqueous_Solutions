@@ -1,22 +1,32 @@
 # Build log - WS_KOH
 
-Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
-Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/WS_KOH.md`; sizing per the duty sheet section 2).
+Date: 2026-11-02. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-MACH; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/WS_KOH.md`; envelope per `models/mfg/WS_KOH/params.json`).
 
 ## Tool versions
 
 - CadQuery 2.8.0 (CADQUERY_PYTHON)
-- Python 3.13.7; build run headless via `models/mfg/build_all.py`
+- Python 3.13.7; build run headless via `python3 models/mfg/WS_KOH/ws_koh.py`
 
 ## Checks
 
-- Build bbox 600 x 600 x 350 mm: inside the envelope with margin (envelope 600 x 600 x 350 mm)
-- Solid source: build export `models/mfg/WS_KOH/export/ws_koh.step`
-- BOM `models/mfg/WS_KOH/bom.csv`; fasteners and WORK_ORDER beside it
-- Drawing set `models/mfg/WS_KOH/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
+- Build bbox 600 x 600 x 350 mm against the 600 x 600 x 350 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
+- Solid source: build export `models/mfg/WS_KOH/export/ws_koh.step`; export STL closed and manifold, 1 solid(s); `cad/stl/WS_KOH.stl` replaced from the build (ASCII, metres)
+- Nozzles: all 4 rows of `docs-authority/nozzles/WS_KOH.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- A-MACH: guard rail and slab anchors drawn; no purchased item named on the node or duty - none drawn (W12)
+- Tank: station day-tank envelope, no volume claimed (duty section 8: no holdup basis; W12)
+- Schedule datums clamped into the 350 mm box (holds, W12)
+- BOM `models/mfg/WS_KOH/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/WS_KOH/drawings/` (GA front/side, nozzle orientation, part sheets, iso; title blocks per AQS-DWG-002); the stale envelope `drawings/GA.md` is superseded where one existed
 
 ## Sources
 
-- `models/mfg/WS_KOH/export/ws_koh.step`
+- `models/mfg/WS_KOH/ws_koh.py`
+- `models/mfg/WS_KOH/draw_ws_koh.py`
+- `models/mfg/WS_KOH/bom.csv`
+- `models/mfg/WS_KOH/fasteners.csv`
+- `models/mfg/WS_KOH/check.json`
+- `models/mfg/WS_KOH/WORK_ORDER.md`
+- `build export `models/mfg/WS_KOH/export/ws_koh.step``
 
-Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.
+Status: accepted per AQS-PLAN-006 section 5 A-core + A-MACH; holds named in WORK_ORDER W12.
