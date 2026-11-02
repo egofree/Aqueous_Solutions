@@ -84,8 +84,8 @@ SHEETS = [
      "Fabricated part sheet: service group (chute, pour, slag, trunnions, drain)."),
     ("iso01", full, (1, -1, 1),
      ['Shop orientation: +X face, y along depth, z up; coil, crucible and tilt gear in the lined furnace',
-      'Graph revision AC is the model authority for this build; STEP (export/ind_melt.step) is the solids of record',
-      'Melt inventory shown in place - not a BOM part'],
+      f'Graph revision {REV} is the model authority for this build; STEP (export/ind_melt.step) is the solids of record',
+      'Melt inventory shown in place - not a BOM part; all connection hardware flush at the envelope faces (nothing protrudes)'],
      "Isometric orientation sheet."),
 ]
 

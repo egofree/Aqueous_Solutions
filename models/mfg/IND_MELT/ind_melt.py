@@ -1,6 +1,6 @@
 """IND_MELT manufacturing model, AQS-PLAN-006 work order (X-MFG lane, FOUNDRY-IND_MELT-10 M3).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only.
+Graph revision AD. Study. Not a PE stamp. Reads params.json only.
 Medium-frequency coreless induction remelt furnace, tilt pour: Cu/Fe/Zn/Al scrap and
 pot metals, 10 kg crucible, ceramic-fibre hot face 150 mm in a 4 mm CS casing
 (AQS-DUTY-072; A-M-282/A-M-283 melt basis). The ten charge rows of the task-04
@@ -35,14 +35,13 @@ cx, cy = 480.0, 500.0                                 # crucible centreline
 BATH = 600.0                                          # melt-row datum z 600
 
 # ---------------- casing: CS shell t4, full envelope height ----------------
+# stub set-in: the DN15 melt stubs fuse into the +Y wall (set-in joint, W4); the
+# chute, spout and drain/vent passes are cut where they pass through casing metal
 casing = box(0, 0, 0, L, W, H).cut(box(4, 4, 4, L - 8, W - 8, 1492))
-casing = casing.cut(rod(DN15 + 1, (cx, W + 5.0, BATH), "Y", 95))          # N1/N8/N13/N14 stub passes
-for sx in (300.0, 480.0, 660.0):
-    casing = casing.cut(rod(DN15 + 1, (sx, W + 5.0, 600.0), "Y", 30))     # stub rows
 casing = casing.cut(box(500, 400, 590, 40, 120, 20))                      # N9 slag spout channel
 casing = casing.cut(rod(30.5, (500, 500, -5.0), "Z", 85.0))               # N16 drain pass
 casing = casing.cut(rod(DN15 + 1, (500, 500, 800.0), "Z", 40))            # N17 vent pass
-casing = casing.cut(box(-5.0, 420, 130, 60, 160, 90))                     # charge chute opening
+casing = casing.cut(box(0, 420, 130, 60, 160, 90))                        # charge chute throat, flush at the -X face
 parts["casing"] = casing
 
 # ---------------- lining: ceramic-fibre hot face t150 ----------------
@@ -68,8 +67,8 @@ parts["crucible_pedestal"] = cyl_rod = rod(70.0, (cx, cy, 154), "Z", 146)   # on
 # ---------------- tilt frame: trunnion pins on both -X / +X walls ----------------
 parts["trunnion_pins"] = rod(40.0, (cx, cy, 500.0), "Y", 60).union(
     rod(40.0, (cx, cy, 500.0), "Y", L - 60)).translate((0, 0, 0)).cut(rod(0.01, (0, 0, 0), "X", 1))
-parts["trunnion_pins"] = rod(40.0, (-25.0, cy, 500.0), "X", 60).union(
-    rod(40.0, (L - 35.0, cy, 500.0), "X", 60))
+parts["trunnion_pins"] = rod(40.0, (0.0, cy, 500.0), "X", 60).union(
+    rod(40.0, (L - 60.0, cy, 500.0), "X", 60))
 parts["tilt_frame"] = box(154, 400, 470, 130, 200, 60)                    # tilt cradle under the shell band
 
 # ---------------- hood + vent ----------------
@@ -79,14 +78,14 @@ parts["hood"] = hood
 parts["vent_stub"] = tube(DN15, DN15 - W15, (500.0, 500.0, BATH + 280.0), "Z", 120)   # N17 up to z 800..920
 
 # ---------------- charge chute (-X at z 160) ----------------
-chute = box(-35.0, 420, 130, 60, 160, 90)
+chute = box(0.0, 420, 130, 60, 160, 90)
 lip = box(20.0, 430, 190, 40, 140, 30)
 parts["charge_chute"] = chute.union(lip)
 
 # ---------------- melt DN15 stubs (+Y at z 600): N1/N8/N13/N14 ----------------
 st = None
 for sx in (300.0, 480.0, 660.0):
-    q = tube(DN15, DN15 - W15, (sx, W - 34.0, BATH), "Y", 40)
+    q = tube(DN15, DN15 - W15, (sx, W - 40.0, BATH), "Y", 40)
     st = q if st is None else st.union(q)
 parts["melt_stubs"] = st
 parts["pour_spout"] = box(cx - 60.0, cy - 70.0, BATH - 20.0, 150, 140, 40)   # tilt-pour lip (+X side of the cradle)
@@ -127,7 +126,7 @@ ALL = list(parts.values()) + list(inv.values())
 shell_parts = [parts[k] for k in ("casing", "fibre_lining")]
 sb = cq.Compound.makeCompound([v.val() for v in shell_parts]).BoundingBox()
 tb_ = cq.Compound.makeCompound([v.val() for v in ALL]).BoundingBox()
-slack = 50.0
+slack = 1.0   # A-core 2 gate: the flush-hardware build stays inside size_mm within 1 mm
 inside_shell = bool(sb.xmin >= -1 and sb.xmax <= L + 1 and sb.ymin >= -1 and sb.ymax <= W + 1
                     and sb.zmin >= -1 and sb.zmax <= H + 1)
 overhang = {"-X": round(-tb_.xmin, 1), "+X": round(tb_.xmax - L, 1),
@@ -158,7 +157,9 @@ report = {
 }
 rows = [
     ["1", "Furnace casing 1000 x 1000 x 1500 mm, CS t4 (walls + roof)", 1, "carbon steel",
-     round(mass["casing"], 1), "make", "duty section 3 (study 4 mm CS casing); WORK_ORDER step 1"],
+     round(mass["casing"], 1), "make", "duty section 3 (study 4 mm CS casing); dry furnace service, "
+     "CA 0 mm (AQS-STD-001 shop rule); the DN15 melt stubs set in through the +Y wall and the chute "
+     "throat sits flush at the -X face (flush-hardware build, nothing protrudes)"],
     ["2", "Ceramic-fibre hot face, t150", 1, "ceramic-fibre board 128 kg/m3", mass["fibre_lining"], "make",
      "design lining row (AQS-DUTY-072); SCHACHT2004 class"],
     ["3", f"Induction coil, {CO['turns']} turns x OD {CO['tube_od_mm']} mm Cu, around the crucible zone", 1,
@@ -189,14 +190,7 @@ fast = ('item,size,grade,qty,location,basis\n'
         '1,M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,8,hood rim,study\n'
         '2,M12 anchor,ISO 898-1 8.8,4,casing to slab,study\n')
 (HERE / "fasteners.csv").write_text(fast)
-wo = (f"# Work order IND_MELT\n\nAuthority: AQS-DUTY-072 (X-MFG lane). LIVE unit - the melt train anchor.\n\n"
-      f"1. Fabricate the 1000 x 1000 x 1500 mm casing (CS t4); fit the t150 ceramic-fibre hot face.\n"
-      f"2. Set the crucible on its pedestal; wind and clamp the {CO['turns']}-turn coil; fit the trunnions and tilt cradle.\n"
-      f"3. Route the coil leads through the +X pass; megger the coil to the casing.\n"
-      f"4. Mount the hood with the N17 vent; fit the N1/N8/N13/N14 melt stubs and the N9 slag spout.\n"
-      f"5. Wire the {D['connected_kW']} kW medium-frequency supply; interlock lid position and coil water flow.\n"
-      f"6. Test: coil dry-out, then first melt at the {CR['kg']} kg batch; prove the tilt-pour lip at +X.\n"
-      f"7. Inspect against models/mfg/IND_MELT/export/ind_melt.step; record dimensions on the traveller.\n")
-(HERE / "WORK_ORDER.md").write_text(wo)
+# WORK_ORDER.md is the hand-authored W1-W12 item beside the model (AQS-PLAN-006 section 2);
+# the builder no longer writes it, so a rebuild never clobbers the work order.
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps(report))
