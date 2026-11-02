@@ -72,5 +72,33 @@
  "acceptance_sets": [
   "A-core",
   "A-VES"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   649.0,
+   520.0,
+   748.0
+  ],
+  "basis": "study registry box (params size_note); the duty sheet section 4 reservoir line and the fab study page envelope are older figures (WORK_ORDER W12)",
+  "shell": {
+   "od_mm": 460.0,
+   "z_mm": [
+    40.0,
+    708.0
+   ]
+  }
+ },
+ "design": {
+  "service": "pumped-hydro catch tank, atmospheric (duty sections 2, 4 and 6)",
+  "wall_mm": 10.0,
+  "wall_basis": "study fab-page polymer wall",
+  "ca_mm": 0.0,
+  "internals": "dip pipe + stilling well (fab study page; dims study)"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; shell axis at x 324.5, y 260, z up",
+  "nozzle_spread": "the schedule gives face and height only; ports pack centred on the face mid-length; per-tag positions in check.nozzles_drawn",
+  "vent_drain": "N6 vent flush at the top head (the 800 datum predates the box); N5 drain boss on the base head, tip at the 50 datum",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }

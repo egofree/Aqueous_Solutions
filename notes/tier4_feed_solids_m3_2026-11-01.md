@@ -181,3 +181,26 @@ recipe pattern in `models/mfg/EW_1/WORK_ORDER.md`. Graph Rev AC. One commit per 
   carries the OCC translator's in-process export counter, so a rebuilt style STEP can
   differ from the committed one by that one digit alone; such counter-only diffs are
   restored, not committed.
+
+## CATCH_TANK (pumped-hydro catch tank, tier 4) — commit 9
+
+- `models/mfg/CATCH_TANK/catch_tank.py` on the shared lib. Vertical PVC-U tank
+  (shell OD 460, wall 10 per the study fab page - hold) on a plinth with heads,
+  filling the node registry envelope 649 × 520 × 748 exactly; one closed manifold
+  solid. Internals per the AQS-MFG-001 study page (`docs-authority/fab/
+  CATCH_TANK.md`): dip pipe OD 60 inside a stilling well OD 110, concentric, feed
+  down the dip pipe and the well damping the inlet jet for the level instruments
+  (dims study, holds; node internals row none).
+- All 6 schedule rows drawn at tag, face, height and bore as atmospheric hose
+  barbs; N5 drain boss to its 50 datum; N6 vent flush at the top head (its 800
+  datum predates the 748 box - hold). Duty sheet section 4 still carries the
+  unit-task-04 reservoir line 12000 × 8000 × 4000 against the node box, and the
+  fab study page a generic 1000 × 600 × 800: the node governs, both named (W12).
+  PVC-U-or-HDPE conditional held (duty section 3 rule M1). Holdup 0.0893 m3
+  reported, no residence derived (A-VES; the duty two-minute figure is not a
+  designed volume).
+- Deliverables: exports (STEP + closed STL), generated BOM, fasteners.csv,
+  check.json, WORK_ORDER.md (W1-W12), the seven-sheet drawing set (stale
+  style_builders-era GA.md and the three invalid-XML M2-era SVGs regenerated
+  through the draw/stamp/PDF sequence). `cad/stl/CATCH_TANK.stl` replaced from
+  the build. `tracker --check CATCH_TANK` green.

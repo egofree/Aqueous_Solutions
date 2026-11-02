@@ -1,13 +1,5 @@
-item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U or HDPE, per AQS-STD-002 rule M1.",docs-authority/duties/CATCH_TANK.md
-2,Process nozzle DN15,2,"PVC-U or HDPE, per AQS-STD-002 rule M1.",one per mass edge; DN from AQS-INV-003
-3,fastener: anchor bolt M10,62,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-4,fastener: anchor bolt M10,62,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-5,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-6,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-7,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-8,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-9,support: pipe clamp DN15,31,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-10,support: pipe clamp DN15,31,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-11,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
-12,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Shell OD 460, wall 10 mm, z 40..708, with heads, on a 649 x 520 plinth",1,PVC-U plate/pipe,36.6,make,study registry envelope (node size_mm); wall the study fab-page polymer value; CA 0 mm (AQS-STD-001 polymer rule); duty section 3 PVC-U-or-HDPE conditional hold (WORK_ORDER W12)
+2,"Stilling well, OD 110 x wall 5, z 35..723",1,PVC-U pipe,1.6,make,internals issued by the AQS-MFG-001 study page (fab/CATCH_TANK.md); dimensions study values (WORK_ORDER W12); node internals row none
+3,"Dip pipe inside the well, OD 60 x wall 4, z 100..723",1,PVC-U pipe,0.6,make,"same study-page basis; feed enters down the dip pipe, the well damps the jet for the level instruments (duty section 5)"
+4,"Nozzle set per docs-authority/nozzles/CATCH_TANK.csv: 4 hose barbs (DN15/DN50), 1 drain boss, 1 vent at the top head",6,PVC-U,0.5,make,schedule tags/faces/heights verbatim; atmospheric hose per duty section 4; barb profile a study proportion (lib/nozzles.py)
