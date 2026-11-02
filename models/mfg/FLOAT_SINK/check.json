@@ -1,0 +1,116 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study registry box (params size_note); no design sizing on the node or the duty sheet (WORK_ORDER W12)",
+  "graph_revision": "AC",
+  "solids": 1,
+  "all_parts_valid": true,
+  "holdup_m3": 0.399,
+  "holdup_basis": "none: duty section 2 claims no holdup; the model volume at the 720 mm working level is reported, not turned into a residence time (A-VES)",
+  "tank": {
+    "wall_mm": 10.0,
+    "wall_basis": "study value - no authority states a thickness (WORK_ORDER W12)",
+    "weir": {
+      "x_mm": [
+        690.0,
+        700.0
+      ],
+      "top_z_mm": 700.0,
+      "note": "sink zone x 0..690, float zone x 700..990 (layout solids from the duty section 1 separation duty; node internals row none)"
+    },
+    "launder": {
+      "lip_x_mm": 920.0,
+      "lip_top_z_mm": 700.0,
+      "floor_z_mm": [
+        640.0,
+        650.0
+      ]
+    }
+  },
+  "material": {
+    "class": "CPVC",
+    "ca_mm": 0.0,
+    "basis": "duty section 3: CPVC wetted (AQS-STD-002 M1/M2/M5, 85 C feed); corrosion allowance does not apply to the polymer"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 500.0,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 464.5,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 519.5,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "drain boss in the sink zone floor, tip at the 50 datum"
+    },
+    "N5": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "vent on the +Y rim bar, flush at the 800 envelope top"
+    },
+    "N6": {
+      "style": "solids",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 555.0,
+      "schedule_rating": "Class 150",
+      "note": "solids hand transfer - bore not calculated (AQS-PLAN-006 W4)"
+    }
+  },
+  "nozzle_count_schedule": 6,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (lib/nozzles.place_on_face); solids rows DN15 labeled bore not calculated; the schedule rating column (Class 150) is carried verbatim as text against duty section 4 (atmospheric tube or hose, no flange class)",
+  "part_mass_kg": {
+    "tank": 47.0,
+    "rim_frame": 1.9,
+    "weir": 6.0,
+    "launder": 1.1,
+    "nozzles": 0.6
+  },
+  "cadquery": "2.8.0"
+}

@@ -72,5 +72,33 @@
  "acceptance_sets": [
   "A-core",
   "A-VES"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study registry box (params size_note); no design sizing on the node or the duty sheet (WORK_ORDER W12)",
+  "tank_body_mm": [
+   1000.0,
+   600.0,
+   780.0
+  ]
+ },
+ "design": {
+  "service": "float/sink separation of leach sink solids, up to 85 C, atmospheric (duty sections 1, 3 and 6)",
+  "wall_mm": 10.0,
+  "wall_basis": "study value",
+  "ca_mm": 0.0,
+  "weir_top_z_mm": 700.0,
+  "working_level_mm": 720.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; x along 1000, y along 600, z up",
+  "zones": "sink zone x 0..690 (weir at 690..700), float zone x 700..990 with the launder at the +X wall (lip top z 700, channel floor z 640)",
+  "nozzle_spread": "the schedule gives face and height only; ports pack in one row per face/height group, centred on the face mid-length, 8 mm clear at the bore; the zoning against the weir is the fabricator's",
+  "vent_drain": "N5 vent on the +Y rim bar flush at the 800 top; N4 drain boss in the sink zone floor, tip at the 50 datum",
+  "hardware_idiom": "connection hardware flush at the envelope faces, roots through the shell wall (lib/nozzles.place_on_face); nothing protrudes, bbox within the node envelope"
+ }
 }

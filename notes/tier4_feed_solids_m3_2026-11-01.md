@@ -31,6 +31,33 @@ recipe pattern in `models/mfg/EW_1/WORK_ORDER.md`. Graph Rev AC. One commit per 
   STL (the measure the tracker gate reads), because the OCC Bnd_Box of the lofted barb
   faces is loose by tens of millimetres; the mesh itself fills the envelope exactly.
 
+## FLOAT_SINK (float/sink separator, tier 4) — commit 3
+
+- `models/mfg/FLOAT_SINK/float_sink.py` on the shared lib. All 6 rows of the issued
+  schedule drawn at tag, face, height and bore as atmospheric hose barbs (duty
+  section 4: no flange class), the rating column carried verbatim as text: N1 DN50
+  sink solids in on −Y at z 160; N2/N3 outlets and the N6 solids port (DN15, bore not
+  calculated) on +Y at z 600; N4 drain boss to its 50 datum in the sink zone floor;
+  N5 vent on the +Y rim bar flush at the 800 top.
+- Internals: CPVC weir plate x 690..700 to z 700 (sink zone x 0..690 / float zone
+  x 700..990) and the float launder at the +X wall (lip overflow z 700, channel floor
+  z 640) — layout solids from the duty section 1 separation duty; the node internals
+  row is none, so the tracker records no internal solid (hold). Weir laps the floor,
+  launder laps the wall and the lip laps the channel floor: every union fused.
+- Envelope: node `size_mm` 1000 × 600 × 800, recorded on the node as the study
+  registry box; no design sizing exists on the node or the duty (hold). Build bbox
+  1000.0 × 600.0 × 800.0 mm, one closed manifold solid; holdup 0.399 m³ at the
+  720 mm working level net of internals, reported (A-VES; no residence claimed).
+- Deliverables: exports, generated BOM with mass and make-or-buy, `fasteners.csv`
+  (4 M10 wedge anchors, A4-70 on the polymer joint), `check.json`, `WORK_ORDER.md`
+  (W1–W12), the seven-sheet drawing set (via the new shared `lib/sheets.py` driver;
+  stale envelope `GA.md` superseded). `cad/stl/FLOAT_SINK.stl` replaced from the
+  build. `tracker --check FLOAT_SINK` green.
+- Holds named in WORK_ORDER W12: study registry envelope with no design sizing;
+  study wall thickness; no holdup basis; unsized separation duty behind the weir and
+  launder layout; the Class 150 rating column; the +Y outlet row packing versus the
+  weir zoning; fastener lengths.
+
 ## Pipeline repair ahead of the batch — housekeeping commit
 
 - `models/mfg/style_builders.py`: the per-unit-script skip of the cold-box batch repair

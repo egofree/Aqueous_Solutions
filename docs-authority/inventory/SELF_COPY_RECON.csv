@@ -679,31 +679,11 @@ FILM_CAST,Winder OD 180 x 260 at +X,1,carbon steel,Closed,Fe EW -> MET_MELT -> m
 FILM_CAST,N2 PVDF resin DN15 inlet -X z 160 (from POLY_F N5),1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 FILM_CAST,"N1 film stock stop +X (solids, bore not calculated)",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 FILM_CAST,N3 drain well + N4 vent stub,2,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
-FLOAT_SINK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"CPVC wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-FLOAT_SINK,Process nozzle DN15,3,"CPVC wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-FLOAT_SINK,Process nozzle DN50,1,"CPVC wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-FLOAT_SINK,"Motor: transfer pump IA-PLAST-01 to OIL_DRYER (BLDC, 42 mm (NEMA 17 flange))",1,-,Unstated,-,not classed: -
-FLOAT_SINK,"Motor: transfer pump IA-WET-FLOAT-01 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flang",1,-,Unstated,-,not classed: -
-FLOAT_SINK,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",Unstated,-,"not classed: ISO 15, normal class"
-FLOAT_SINK,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",Unstated,-,"not classed: ISO 15, normal class"
-FLOAT_SINK,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,Unstated,-,not classed: IEC 61800-5-1
-FLOAT_SINK,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,Unstated,-,not classed: IEC 61800-5-1
-FLOAT_SINK,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,Unstated,-,not classed: IEC 61131-2
-FLOAT_SINK,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,Unstated,-,not classed: IEC 61131-2
-FLOAT_SINK,fastener: anchor bolt M10,22,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor
-FLOAT_SINK,fastener: anchor bolt M10,16,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor
-FLOAT_SINK,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-FLOAT_SINK,instrument: flow transmitter DN50,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-FLOAT_SINK,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-FLOAT_SINK,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",Missing,-,no fluorine source on site; end of life Q-011
-FLOAT_SINK,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",Unstated,-,"not classed: ceramic diaphragm, IEC 61298"
-FLOAT_SINK,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-FLOAT_SINK,support: pipe clamp DN15,11,"PP clamp with EPDM liner, MSS SP-58 Type 7",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
-FLOAT_SINK,support: pipe clamp DN50,8,"PP clamp with EPDM liner, MSS SP-58 Type 7",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
-FLOAT_SINK,valve: check valve DN15,1,"CPVC true-union swing/ball check valve, FKM seals",Missing,-,no fluorine source on site; end of life Q-011
-FLOAT_SINK,valve: check valve DN50,1,"CPVC true-union swing/ball check valve, FKM seals",Missing,-,no fluorine source on site; end of life Q-011
-FLOAT_SINK,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",Missing,-,no fluorine source on site; end of life Q-011
-FLOAT_SINK,valve: isolation valve DN50,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",Missing,-,no fluorine source on site; end of life Q-011
+FLOAT_SINK,"CPVC tank shell, open top, 1000 x 600 x 780 mm, wall 10 mm, floor 10 mm",1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+FLOAT_SINK,"Top hold-down rim frame, 20 mm bar, four sides",1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+FLOAT_SINK,"Weir plate, x 690..700, to z 700 (sink / float divider)",1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+FLOAT_SINK,"Float launder: lip plate x 920..930 (overflow z 700), channel floor z 640",1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+FLOAT_SINK,Nozzle set per docs-authority/nozzles/FLOAT_SINK.csv: 4 hose barbs (DN15/DN25/DN,6,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 FLUE_KO,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"FRP vinyl ester with C-veil liner, PVDF mesh pad, borosilicate glass 3.",Missing,-,no fluorine source on site; end of life Q-011
 FLUE_KO,Process nozzle DN15,5,"FRP vinyl ester with C-veil liner, PVDF mesh pad, borosilicate glass 3.",Missing,-,no fluorine source on site; end of life Q-011
 FLUE_KO,Process nozzle DN20,1,"FRP vinyl ester with C-veil liner, PVDF mesh pad, borosilicate glass 3.",Missing,-,no fluorine source on site; end of life Q-011

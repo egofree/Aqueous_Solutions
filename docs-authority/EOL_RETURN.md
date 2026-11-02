@@ -19,9 +19,9 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1864 | 60 % |
-| organic | 973 | 31 % |
-| silicate_oxide | 146 | 5 % |
+| metal_plateable | 1852 | 60 % |
+| organic | 966 | 31 % |
+| silicate_oxide | 145 | 5 % |
 | metal_reactive | 120 | 4 % |
 | unassigned | 27 | 1 % |
 
@@ -104,7 +104,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | FAB_UPW_TANK | 10 | 9 | 1 | 0 | 0 |
 | FEED_PREP | 4 | 0 | 0 | 0 | 0 |
 | FILM_CAST | 8 | 1 | 0 | 0 | 0 |
-| FLOAT_SINK | 12 | 15 | 1 | 0 | 0 |
+| FLOAT_SINK | 0 | 8 | 0 | 0 | 0 |
 | FLUE_KO | 6 | 9 | 3 | 0 | 0 |
 | FLUX_PREP | 6 | 0 | 0 | 0 | 0 |
 | FOOD_STORE | 4 | 10 | 1 | 0 | 0 |
