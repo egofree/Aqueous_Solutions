@@ -1,0 +1,9 @@
+line,from,to,dn,class,service,rating,note
+MAIN,spool start,spool end,DN32,-,"plant air / N2 header (receiver in; AHU, afterburner air, reagent sparge draws)",atmospheric; no flange class (duty section 4),"manifold spool per AQS-DUTY-075 (node design: DN32, 20 m run, 0.009 m3); modeled as the 2000 mm representative spool; material per duty section 3"
+IA-AB-AIR,HDR_N2,AFTERBURNER_FLUE,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-AHU-AIR,HDR_N2,CRYO_AHU,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-AIR-RX-OUT,AIR_RECEIVER,HDR_N2,DN15,P3,process vent gas,atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-EW4-N2,EW_4,HDR_N2,DN50,P1,"acid or brine, at or below 60 C",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-GEN-AIR,HDR_N2,BACKUP_GEN,DN15,P1,aqueous process liquor (AQS-ASSAY-001 envelope),atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-N2-RET,HDR_N2,CRYO_ASU,solids,—,—,-,"not piped: solids transfer (conveyor, bin or hand)"
+IA-NH3-SRC,HDR_N2,WS_AMMONIA,DN50,P1,"acid or brine, at or below 60 C",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,

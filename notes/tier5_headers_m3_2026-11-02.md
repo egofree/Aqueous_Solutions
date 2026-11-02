@@ -89,3 +89,25 @@ calculated", rating; spool drawing; no new edge).
   its mesh lives in `export/` — the AL_POT precedent. `lib/sheets.build_log` now takes
   the registry wording from the builder's check report instead of hardcoding "replaced
   from the build".
+
+## HDR_N2 (plant air / N2 header, HAB, tier 5) — commit 4
+
+- `models/mfg/HDR_N2/hdr_n2.py` on the shared lib, the accepted spool shape at DN32
+  (OD 42.4, Sch 40 table, bore 35.3 mm; M1 class). All 13 schedule rows drawn as
+  open-bore tube stubs flush at the envelope faces. The DN50 row N1 (OD 60.3) is drawn
+  at the manifold centreline and the mesh reads z 60.3 — misfit reported on the
+  section 7 row, nothing resized (plan rule 3; registry keeps the envelope-consistent
+  mesh, AL_POT/HDR_H2 precedent). N2–N4 inlets at 11.3 mm (datum 10 clamped up);
+  N6/N7 DN25 outlets clamped 37 to 32.4 mm; N13 clamped down from the 160 mm
+  placeholder; N11 and the N12 no-bore row (DN15 drawn, bore not calculated) clamped
+  down from the 600 mm datum; N3/N4 (worm and larvae bin vents) carry services with no
+  present edge and are drawn verbatim.
+- A-PIPE: `line_list.csv` — 8 rows (manifold + the 7 issued lines: AHU and afterburner
+  air DN15 M1, ammonia sparge DN50 P1, genset air DN15 P1, sweep nitrogen DN50 P1,
+  ASU return solids, receiver-bank plant air DN15 P3); edge coverage complete, no new
+  edge.
+- Deliverables: exports (STEP + closed STL, cad/stl kept at the node size), `bom.csv`
+  (plinth 15.7 kg CS, manifold 6.95 kg 316L, branches 0.29 kg), `fasteners.csv`
+  (8 M10 wedge anchors, 8.8), `check.json`, `WORK_ORDER.md` (W1–W12 + line list),
+  six-sheet drawing set. Duty section 7 names the model; tracker regen puts HDR_N2 at
+  M3 (31).
