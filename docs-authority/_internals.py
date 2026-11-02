@@ -156,6 +156,7 @@ EXPLICIT = {
  'GREY_TREAT': 'greywater treatment skid internals per the graph duty (258.8 kg/d treated; the grey, wash and black sub-streams issued on the graph): a screening stage (2 mm wedge-wire), a moving-bed biofilm aeration stage (the same small-MBBR class as BIOFILTER), and a settling stage with a skimmer - sized at the 0.26 m3/d flow',
  'OIL_FRAC': 'fractionator column internals per the graph duty (33.4 kg/d pyrolysis oil feed, four cuts at 7.4/9.9/6.2/5.9 kg/d, A-M-138 SU2018_PYRO cut split): a packed column with 6 mm glass Raschig rings in three beds at the 3-bed cut sequence (C5-C10/C11-C18/C19-C28/C29+), each bed sized by the Fenske-Underwood-Gilliland method for the binary-split classes at total reflux minimum',
  'ZNBR2': 'ZnBr2 flow-battery stack and electrolyte internals per the graph duty (915.5 kg/d electrolyte circulation, 6.67 kW charge / 5.0 kW discharge): the carbon-plastic electrode pairs in bipolar stacks, the microporous separator, the two PP electrolyte loops with the pumps and heat exchanger to IA-ZNBR-HEAT (A-M-179: ASR 5 ohm cm2, 5 % crossover, 3 % auxiliaries; AQS-TST-007 gates the measured derate)',
+ 'POLY_OLEFIN': 'none with basis: the accepted manufacturing model books the shell and the nozzle set only; the node carries internals none and names no agitator and no jacket, so none is drawn and the open reactor volume is the design (models/mfg/POLY_OLEFIN/WORK_ORDER.md W3 and W12; node design D/H/wall, AQS-SIZE-OIL-POLY)',
 }
 # sharpened open-gap texts for the units whose missing design data is specific (overrides the
 # generic 'no issued internals basis' text; still open - the gap is named, not closed)
@@ -193,6 +194,7 @@ EXPLICIT_EVID = {
  'GREY_TREAT': 'docs-authority/sizing/GREY_TREAT.md',
  'OIL_FRAC': 'docs-authority/sizing/OIL_FRAC.md',
  'ZNBR2': 'docs-authority/sizing/ZNBR2.md',
+ 'POLY_OLEFIN': 'models/mfg/POLY_OLEFIN/WORK_ORDER.md',
 
  'CRYO_HX_Q4': 'docs-authority/sizing/CRYO_HX_Q4.md',
  'MET_HX_Q4': 'docs-authority/sizing/MET_HX_Q4.md',

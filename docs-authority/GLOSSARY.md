@@ -669,6 +669,7 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {NIST -- National Institute of Standards and Technology, source of the property tables cited in the balance layer.}
 {BVAD -- Baseline Values and Assumptions Document, NASA/TP-2015-218570: the life-support baseline values source (BVAD2022).}
 {EDBM -- Electrodialysis with bipolar membranes: the BMED process class.}
+{MEA -- Membrane electrode assembly: the membrane-electrode-catalyst laminate of a fuel cell or electrolyser stack.}
 {OA -- Outside air (ventilation intake).}
 {DHF -- Dilute hydrofluoric acid: the wet-bench oxide etch class.}
 {ASF -- Anderson-Schulz-Flory: the chain-growth distribution that sets the hydrocarbon cut spread of an oligomerization or synthesis product.}

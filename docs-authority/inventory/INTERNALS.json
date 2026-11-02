@@ -85,6 +85,7 @@
   "POLY_COND": "sizing sheet: \"D_mm=200, H_mm=300, design_case_kg_d=0.5, jacket_C=160, agitator_kW=0.18 | envelope 600 x 600 x 1200 mm, state\" [docs-authority/sizing/POLY_COND.md]",
   "POLY_F": "issued mfg model BOM (1 internals part row): \"3,Agitator: shaft and two-blade impeller (solids) into the drive envelope,1,C-276 shaft\" [models/mfg/POLY_F/bom.csv]",
   "POLY_FIBER": "none with basis: a melt-spin line is a machine - the extruder, quench cabinet and winder are the issued mfg model (models/mfg/POLY_FIBER/bom.csv); the tooling is the unit task 10-13 deliverable, not separate internals [models/mfg/POLY_FIBER/bom.csv]",
+  "POLY_OLEFIN": "none with basis: the accepted manufacturing model books the shell and the nozzle set only; the node carries internals none and names no agitator and no jacket, so none is drawn and the open reactor volume is the design (models/mfg/POLY_OLEFIN/WORK_ORDER.md W3 and W12; node design D/H/wall, AQS-SIZE-OIL-POLY) [models/mfg/POLY_OLEFIN/WORK_ORDER.md]",
   "P_CA": "duty sheet: \"0.025. 3. Material. PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside \" [docs-authority/duties/P_CA.md]",
   "Q1_A": "heat-battery internals per AQS-DUTY-008 sec. 14: the thermal-oil medium (214.3 kg at 0.302 m3, Q1 tier, 80 K swing) with the internal thermosyphon downhill steps and cross-ties; no other contacting internals [docs-authority/sizing/HEAT_BATTERY.md]",
   "Q1_B": "heat-battery internals per AQS-DUTY-008 sec. 14: the thermal-oil medium with the internal thermosyphon downhill steps and cross-ties, sized per the issued store table (Q1 tier); no other contacting internals [docs-authority/sizing/HEAT_BATTERY.md]",
@@ -199,8 +200,6 @@
   "WS_SLURRY": "static reagent tote or day tank; no internals booked by the duty or sizing sheet",
   "WS_SOLV": "static reagent tote or day tank; no internals booked by the duty or sizing sheet"
  },
- "open": {
-  "POLY_OLEFIN": "no issued internals basis for a reactor unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)"
- },
+ "open": {},
  "units": 197
 }

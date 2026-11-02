@@ -92,6 +92,14 @@ for p in sorted(glob.glob(os.path.join(R, 'models/mfg/*/bom.csv'))):
         cost = mass * pk * f * E
         rows_out.append((u, item, qty, f'{mass:g}', f'{pk:.2f} $/kg ({pcls})', f'{f:g} ({fcls})', f'{E:g}', f'{cost:,.2f}', f'P: {psrc}; F: {fsrc}', r.get('basis') or ''))
 
+def cut(s, n):
+    """Truncate a BOM text cell at n chars on a word boundary (DOC_STYLE: a cut that
+    splits a word manufactures fake abbreviations, e.g. ROLL -> ROL)."""
+    s = (s or '').strip()
+    if len(s) <= n:
+        return s
+    return s[:n].rsplit(' ', 1)[0]
+
 tot = sum(float(c.replace(',', '')) for c, h, *_ in [(r[7], r[8]) for r in rows_out] if not h.startswith('HOLD'))
 nh = sum(1 for r in rows_out if r[8].startswith('HOLD'))
 md = ['# Priced bill of materials (AQS-PRO-003)', '',
@@ -102,7 +110,7 @@ md = ['# Priced bill of materials (AQS-PRO-003)', '',
       f'Fabricated total: **$ {tot:,.2f}** ({len(rows_out) - nh} lines). Held: {nh} lines, every one with its AQS-PRO-003 reason (bought parts wait on vendor price sources; mass-less lines wait on the unit CAD build).', '',
       f'Escalation: {E_SRC}.', '',
       '| Unit | Item | Qty | Mass kg | Price | Factor | E | Cost $ | Source | BOM basis |', '|---|---|---|---|---|---|---|---|---|---|']
-md += [f'| {u} | {item[:60]} | {qty:g} | {mass} | {price} | {factor} | {e} | {cost} | {src[:90]} | {(basis or "")[:50]} |'
+md += [f'| {u} | {cut(item, 60)} | {qty:g} | {mass} | {price} | {factor} | {e} | {cost} | {cut(src, 90)} | {cut(basis or "", 50)} |'
        for u, item, qty, mass, price, factor, e, cost, src, basis in rows_out]
 open(os.path.join(R, 'docs-authority/COST_ESTIMATE_BOM.md'), 'w').write('\n'.join(md) + '\n')
 with open(os.path.join(R, 'docs-authority/inventory/COST_ESTIMATE_BOM.csv'), 'w', newline='') as f:
