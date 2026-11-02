@@ -1,0 +1,8 @@
+line,from,to,dn,class,service,rating,note
+MAIN,spool start,spool end,DN25,-,CO2 header (crew and cold-box in; farm and methanol-synthesis draws),atmospheric; no flange class (duty section 4),"manifold spool per AQS-DUTY-075 (node design: DN25, 20 m run, 0.0045 m3); modeled as the 2000 mm representative spool; material per duty section 3"
+CO2_TO_FARM,HDR_CO2,GROW_BED,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+HAB_CO2_TO_HDR,HABITATION,HDR_CO2,DN15,P3,process vent gas,atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-HCO2-MEOH,HDR_CO2,MEOH_SYNTH,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+S85,CRYO_CO2,HDR_CO2,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+S89,HDR_CO2,GROW_BED,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+S90,HABITATION,HDR_CO2,DN15,P3,process vent gas,atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,

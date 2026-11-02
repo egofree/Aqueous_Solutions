@@ -2495,13 +2495,14 @@
     "models/mfg/*/drawings/*"
    ],
    "amends": [
-    "models/mfg/*/bom.csv"
+    "models/mfg/*/bom.csv",
+    "models/mfg/*/line_list.csv"
    ],
    "invokes": [
     "models/mfg/*.py",
     "models/mfg/*/*.py"
    ],
-   "note": "Every CadQuery manufacturing model under models/mfg, discovered by location.",
+   "note": "Every CadQuery manufacturing model under models/mfg, discovered by location. The unit builders also write their A-PIPE line list (line_list.csv beside the BOM).",
    "group": "cad",
    "writes_graph": false,
    "quick": false,
