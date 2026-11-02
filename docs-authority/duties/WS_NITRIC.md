@@ -18,6 +18,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Level with high-high trip closing IA-HNO3 and IA-BMED-01. Temperature high trip 40 °C (assumption). Density or conductivity alarm above 2.0 M. Bund sump pH.
 
 6. Relief. Atmospheric tank with breather. The vent goes on IA-NIT-VENT to NOX_SCRUB (0 kg/d design day, breathing and upset). Not to the room. Overflow to the oxidizing-acid bund.
-7. Code. Shop. Not stamped. The envelope is `cad/stl/WS_NITRIC.stl`.
+7. Code. Shop. Not stamped. The envelope is `cad/stl/WS_NITRIC.stl`. Manufacturing model `models/mfg/WS_NITRIC/ws_nitric.py` (AQS-PLAN-006).
 
 8. Open items. Tank volume; holdup basis not on the graph (X-SAF-09). Segregation per AQS-DSN-OX-001 section 3.

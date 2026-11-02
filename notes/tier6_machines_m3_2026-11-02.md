@@ -241,6 +241,21 @@ resized.
 - Deliverables as commit 8; `tracker --check WS_KOH` green; duty section 7
   names the model; tracker regen puts WS_KOH at M3 (44).
 
+### WS_NITRIC — commit 10
+
+- 25 L PVC-U day tank (X-SAF-09: 14 d at 1.17 L/d = 16.4 L net, tank 25 L
+  nominal, own bund 30 L room-side) + PVDF pump envelope in the guarded floor
+  zone (plan rule 6; drive rating per the maker TDS at order). PVC-U tank and
+  piping, PVDF pumps and valves, FKM or PTFE gaskets; 304L excluded (M3);
+  AQS-DSN-OX-001 section 1. Levels reported at the X-SAF-09 basis (25 L
+  nominal z 260.4, 16.4 L net z 184.6).
+- All 7 schedule rows drawn; the N6 DN25 vent-to-NOX_SCRUB row carries no
+  datum on the schedule and draws at the +Y band bound (layout choice, W12).
+  Duty section 6 breather/NOX_SCRUB routing and the duty section 5 instruments
+  named as loop hardware.
+- Deliverables as commit 8; `tracker --check WS_NITRIC` green; duty section 7
+  names the model; tracker regen puts WS_NITRIC at M3 (45).
+
 
 
 
