@@ -101,7 +101,7 @@ SHEETS = [
      "Fabricated part sheet: guards, static shear, lane guides, mould-change gantry."),
     ("iso01", full, (1, -1, 1),
      ['Shop orientation: +X line axis toward the discharge head, y across to the operator guide rail, z up',
-      'Graph revision AC is the model authority for this build; STEP (export/cast_line.step) is the solids of record',
+      f'Graph revision {REV} is the model authority for this build; STEP (export/cast_line.step) is the solids of record',
       'The whole machine is one manifold build solid (AQS-PLAN-006 A-core 4): bolted/press-fitted interfaces are modeled touching or with 0.1 mm interference',
       'No machine cooling-water rate, ladle residence time or mould output rate is drawn or claimed'],
      "Isometric orientation sheet."),

@@ -132,3 +132,19 @@ standby in their work orders and BOMs, not placeholder boxes.
 - Drawing set regenerated from the rebuilt solids (8 sheets; title blocks per
   AQS-DWG-002, graph Rev AD). Duty section 7 already named the model source.
   Tracker row 146: M3, misfit cleared. Route hold stays reported.
+
+## CAST_LINE (permanent-mould cast line, FOUNDRY, tier 7) — commit 6
+
+- Rebuild through the current lib confirms the Oct-31 build as issued: the
+  flush-hardware convention is already this machine (check.json
+  `connection_check` green, `bbox_exact` true), so no geometry changed and the
+  8-sheet drawing set stays current. `tracker --check CAST_LINE` green.
+- All 6 schedule rows already drawn (N1 melt row into the under-deck trough;
+  N2/N3/N4 solids rows at DN15, bore not calculated per W4; N5 drain; N6 vent
+  on the hood plenum). BOM complete with make-or-buy; fasteners grade 8.8
+  carbon steel per the W5 grade rule.
+- WORK_ORDER rewritten to the W1–W12 items with holds named (route-class hold
+  for `caster`, placeholder elevations, solids bores, mould-insert and actuator
+  unit-task items); A-SC make rows flagged and W11 cross-references
+  AQS-BOM-SC-001. Duty section 7 already named the model source. Tracker
+  row 144: M3. Route hold stays reported.
