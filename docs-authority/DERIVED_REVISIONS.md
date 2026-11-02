@@ -362,10 +362,10 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/PEANUT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/PELLET.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/POLISH_BANK.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/POLY_COND.md` | working tree | current |
+| `docs-authority/duties/POLY_COND.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/POLY_F.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/POLY_FIBER.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/POLY_OLEFIN.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/POLY_OLEFIN.md` | working tree | current |
 | `docs-authority/duties/POLY_STOCK.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/POWDER_RESIN.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/PROD_C11_C18.md` | f0160a6 (regenerated, no change) | current |
@@ -1378,10 +1378,10 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/OIL_PYRO/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/PELLET/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/POLISH_BANK/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/POLY_COND/params.json` | working tree | current |
+| `models/mfg/POLY_COND/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/POLY_F/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/POLY_FIBER/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/POLY_OLEFIN/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/POLY_OLEFIN/params.json` | working tree | current |
 | `models/mfg/POLY_STOCK/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/POWDER_RESIN/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/PROD_C11_C18/params.json` | f0160a6 (regenerated, no change) | current |

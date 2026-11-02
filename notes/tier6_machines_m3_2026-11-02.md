@@ -530,6 +530,27 @@ POLYMERS reactors) — commits 13–24
   green; duty section 7 names the model; tracker regen puts POLY_COND at M3
   (57).
 
+### POLY_OLEFIN — commit 23
+
+- `models/mfg/POLY_OLEFIN/poly_olefin.py`: the oligomerization reactor of the
+  node design block — SA-240 316L vessel D 150 × H 225, wall 3.8 (the node
+  wall_mm row, UG-27 at the 5 MPa design; op window 150-250 C at 1-5 MPa,
+  AQS-SIZE-OIL-POLY), heads on the support-ring stand. The node names no
+  agitator and no jacket — none drawn (hold, W12). Node envelope 600 × 600 ×
+  1200 filled exactly (vent riser to the box top, the X-PAR-04 registry gate);
+  `cad/stl/POLY_OLEFIN.stl` replaced from the build.
+- All 6 schedule rows drawn: N1/N2/N4 in on −Y at 160; N3 solids row
+  (polyolefin resin) drawn DN15, bore not calculated (plan W4) on +Y at 600;
+  N5 drain boss under the base head; N6 vent riser on the top head. Class 150
+  column carried verbatim, no flange.
+- A-VES: gross shell volume (3.6 L) reported; the 1 d hold-up of the 0.2941
+  kg/d naphtha feed (0.39 L at 750 kg/m3) is the node envelope basis
+  (existing), no new residence time derived.
+- Deliverables: exports, generated `bom.csv`, `fasteners.csv`, `check.json`,
+  `WORK_ORDER.md` (W1–W12), six-sheet drawing set; `tracker --check
+  POLY_OLEFIN` green; duty section 7 names the model; tracker regen puts
+  POLY_OLEFIN at M3 (58).
+
 ### Correction to POLY_COND (same commit)
 
 - The first build under-filled the node box (600 × 600 × 868) and failed the

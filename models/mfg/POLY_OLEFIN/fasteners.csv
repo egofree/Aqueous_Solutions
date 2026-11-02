@@ -1,3 +1,2 @@
 item,size,grade,qty,location,basis
-1,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-80,8,lid flange at 80 mm pitch,study
-2,M12 anchor,ISO 3506 A4-80,3,leg feet,study
+1,M12 wedge anchor,ISO 898-1 8.8,4,plinth to slab; one per corner (count from the model),grade rule AQS-PLAN-006 W5: 8.8 on the carbon-steel plinth; study length; confirmed at fabrication

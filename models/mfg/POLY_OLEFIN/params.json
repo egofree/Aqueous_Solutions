@@ -28,7 +28,13 @@
   "op_window": "150-250 C at 1-5 MPa (AQS-SIZE-OIL-POLY)",
   "feed_kg_d": 0.294127,
   "heat_W": 0.0013,
-  "material": "SA-240 316L, welded (ASME IX)"
+  "material": "SA-240 316L, welded (ASME IX)",
+  "machine": "vertical cylindrical oligomerization reactor: SA-240 316L vessel D 150 x H 225, wall 3.8 (UG-27 at 5 MPa), op window 150-250 C at 1-5 MPa (node design block, AQS-SIZE-OIL-POLY)",
+  "mat": "SA-240 316L, welded (duty section 3; the node design row matches)",
+  "ca_mm": 0.0,
+  "wall_basis": "node design wall_mm (UG-27 at 5 MPa)",
+  "internals": "none drawn (node internals row none; the node names no agitator and no jacket; WORK_ORDER W12)",
+  "purchased": "none named on the node or the duty sheet - none drawn (WORK_ORDER W12)"
  },
  "nozzles": [
   {
@@ -84,5 +90,30 @@
  "acceptance_sets": [
   "A-core",
   "A-VES"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   600.0,
+   600.0,
+   1200.0
+  ],
+  "basis": "reactor-class study minimum; DN150 at 1 d hold-up of the naphtha feed at 750 kg/m3 melt density; wall by ASME VIII-1 UG-27 at 5 MPa",
+  "vessel": {
+   "od_mm": 150.0,
+   "axis_xy_mm": [
+    300.0,
+    300.0
+   ],
+   "z_mm": [
+    616.0,
+    873.0
+   ]
+  },
+  "plinth_mm": 20.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; vessel axis at (300, 300); support ring z 608..616, shell 628..853, top head 853..873; vent riser to the envelope top (fills the node box, X-PAR-04 registry gate)",
+  "nozzle_spread": "side rows flush at the envelope faces (the CATCH_TANK idiom: the connecting line makes the joint at the face); N1/N2/N4 in on -Y at 160; N3 solids out on +Y at 600; drain boss under the base head; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "face hardware flush at the envelope faces; nothing protrudes"
+ }
 }

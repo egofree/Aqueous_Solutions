@@ -1,0 +1,118 @@
+{
+  "bbox_mm": [
+    600.0,
+    600.0,
+    1200.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    600.0,
+    600.0,
+    1200.0
+  ],
+  "size_basis": "reactor-class study minimum; DN150 at 1 d hold-up of the naphtha feed at 750 kg/m3 melt density; wall by ASME VIII-1 UG-27 at 5 MPa (node envelope basis)",
+  "graph_revision": "AD",
+  "solids": 5,
+  "all_parts_valid": true,
+  "solids_note": "the skid chain (plinth, stand, vessel, drain and vent) fuses to one solid; the face-stub connections stay separate until the connecting lines make their joints",
+  "vessel": {
+    "od_mm": 150.0,
+    "wall_mm": 3.8,
+    "z_mm": [
+      616.0,
+      873.0
+    ],
+    "wall_basis": "node design wall_mm (UG-27 at the 5 MPa design, AQS-SIZE-OIL-POLY op window 150-250 C at 1-5 MPa)",
+    "gross_volume_L": 3.5834,
+    "internals": {
+      "source": "none: the node internals row is none and the node names no agitator and no jacket",
+      "basis": "none drawn (WORK_ORDER W12)"
+    }
+  },
+  "a_ves": {
+    "gross_volume_L": 3.5834,
+    "holdup_1d_L": 0.0004,
+    "basis": "the node envelope basis books the 1 d hold-up of the 0.2941 kg/d naphtha feed at 750 kg/m3 (an existing basis); the gross shell volume is reported from the model and no residence time beyond the node basis is derived (A-VES)"
+  },
+  "material": {
+    "class": "SA-240 316L, welded",
+    "ca_mm": 0.0,
+    "basis": "duty section 3 (the node design row matches): SA-240 316L, welded (ASME IX); CA 0 mm (AQS-STD-001 rule)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 270.7,
+      "schedule_rating": "Class 150",
+      "service": "light cuts to polyolefin",
+      "note": "schedule datum drawn as issued; DN15 open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 300.0,
+      "schedule_rating": "Class 150",
+      "service": "methanol co-feed",
+      "note": "schedule datum drawn as issued; DN15 open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 300.0,
+      "schedule_rating": "Class 150",
+      "service": "polyolefin resin",
+      "note": "schedule datum drawn as issued; non-piped solids transfer (line-list classification): drawn DN15, bore not calculated (plan W4) flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 329.3,
+      "schedule_rating": "Class 150",
+      "service": "C5-C10 naphtha olefin feed",
+      "note": "schedule datum drawn as issued; DN15 open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "x_mm": 345.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss under the base head, flush at the envelope bottom (schedule datum 50)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 1200.0,
+      "x_mm": 300.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent riser on the top head, flush at the envelope top; the schedule datum 800 is the placeholder (hold, WORK_ORDER W12)"
+    }
+  },
+  "nozzle_count_schedule": 6,
+  "nozzle_idiom": "atmospheric open-bore tube connections flush at the envelope faces (duty section 4: atmospheric joints are hose; the W4 110 percent rule draws no flange where no process pressure is stated); the schedule rating column (Class 150) is carried verbatim as text; datums draw as issued; the N3 solids row drawn DN15, bore not calculated (plan W4)",
+  "part_mass_kg": {
+    "plinth_stand": 75.0,
+    "vessel": 7.7,
+    "nozzles": 1.5
+  },
+  "cadquery": "2.8.0"
+}

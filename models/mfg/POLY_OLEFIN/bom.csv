@@ -1,8 +1,3 @@
-item,description,qty,material,basis
-1,"Shell DN150 x 225 mm, 3.8 mm wall, 250.0 C / 5.0 MPa design",1,"SA-240 316L, welded (ASME IX)",AQS-DUTY-073 section 2; wall ASME VIII-1 UG-27 class
-2,Bolted flat lid with gasket and mixer gland,1,"SA-240 316L, welded (ASME IX)",AQS-DUTY-073 section 2
-3,Top-entry agitator with variable-speed drive,1,"316L shaft, PTFE gland","AQS-DUTY-073 section 2 (oligomerization, study)"
-4,Feed and product nozzles DN25,2,"SA-240 316L, welded (ASME IX)",IA-C5-POLY in; resin out to PELLET
-5,"Heater jacket band, 5 W with thermostat",1,silicone / mica,AQS-DUTY-073 section 2; 0.0013 W feed heating
-6,Relief: rupture disc DN25 to the vent header,1,316L / graphite,"blocked-outlet case, API 520 class"
-7,Three legs 40 x 40 x 600 mm with foot plates,3,"SA-240 316L, welded (ASME IX)",study
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Vessel OD 150 x wall 3.8, shell 225 with heads, z 616..873, on the support ring, 4 legs and the plinth",1,"SA-240 316L plate (welded, ASME IX)",82.7,make,"node design D/H/wall (wall by UG-27 at the 5 MPa design, AQS-SIZE-OIL-POLY); duty section 3 matches; CA 0 mm (AQS-STD-001)"
+2,"Nozzle set per docs-authority/nozzles/POLY_OLEFIN.csv: 6 atmospheric open-bore tube connections at the envelope faces (3 inlets on -Y at 160, the N3 solids row drawn DN15 bore not calculated, drain under the base head, vent riser to the envelope top)",6,316L tube,1.5,make,schedule tags/faces/heights verbatim; bores per the lib/dn Sch 40 table; the N3 solids row is a non-piped transfer drawn per plan W4
