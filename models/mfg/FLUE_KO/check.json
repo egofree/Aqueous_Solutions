@@ -1,0 +1,168 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study registry box (params size_note; matches the fab study page); the duty sheet section 4 still carries the unit-task-04 line 600 x 700 x 1100 (WORK_ORDER W12)",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "holdup_m3": 0.0345,
+  "holdup_basis": "reported, no residence derived: the duty claims no holdup for this class (section 8) (A-VES)",
+  "ko_drum": {
+    "wall_mm": 8.0,
+    "wall_basis": "study value - no authority states an FRP thickness (WORK_ORDER W12)",
+    "internals": {
+      "source": "duty section 3 (glass inlet spool, PVDF mesh pad) and the section 1/3 knock-out separation duty (weir and launder layout solids, the FLOAT_SINK idiom)",
+      "inlet_spool": {
+        "od_mm": 110.0,
+        "wall_mm": 3.0,
+        "z_mm": 300.0,
+        "reach_mm": 300.0,
+        "note": "S67 at 300 C quenched by N8 (X-SAF-07) so the spool stays wetted"
+      },
+      "mesh_pad": {
+        "od_mm": 508.0,
+        "t_mm": 16.0,
+        "z_mm": [
+          620.0,
+          636.0
+        ],
+        "support": {
+          "od_mm": 532.0,
+          "id_mm": 488.0,
+          "t_mm": 11.0,
+          "z_mm": [
+            610.0,
+            621.0
+          ]
+        }
+      },
+      "weir": {
+        "x_mm": [
+          420.0,
+          430.0
+        ],
+        "top_z_mm": 360.0
+      },
+      "launder": {
+        "channel_x_mm": [
+          660.0,
+          750.0
+        ],
+        "floor_z_mm": [
+          300.0,
+          310.0
+        ],
+        "lip_top_z_mm": 360.0
+      },
+      "basis": "internals named by the duty section 3 or layout solids from the separation duty; dimensions study values (WORK_ORDER W12); node internals row none, so the tracker records no internal solid"
+    }
+  },
+  "material": {
+    "class": "FRP vinyl ester + borosilicate 3.3 + PVDF",
+    "ca_mm": 0.0,
+    "basis": "duty section 3 (AQS-STD-002 section 8 audit row): FRP vessel with C-veil liner, PVDF mesh pad, borosilicate glass 3.3 inlet spool; no metal wetted part; corrosion allowance does not apply"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 504.9,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 540.4,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 449.8,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 534.1,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 485.3,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "drain boss on the base head, tip at the 50 datum"
+    },
+    "N7": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "vent flush at the top head, the 800 envelope top"
+    },
+    "N8": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 569.6,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    }
+  },
+  "nozzle_count_schedule": 8,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (the shell stands 30 off the +/-Y faces, within the barb reach); the schedule rating column (Class 150) is carried verbatim as text, no flange drawn",
+  "part_mass_kg": {
+    "plinth": 21.6,
+    "shell": 42.1,
+    "inlet_spool": 0.7,
+    "mesh_pad": 6.4,
+    "weir": 3.0,
+    "launder": 0.5,
+    "nozzles": 0.7
+  },
+  "cadquery": "2.8.0"
+}

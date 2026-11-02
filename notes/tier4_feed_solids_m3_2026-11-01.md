@@ -232,3 +232,30 @@ recipe pattern in `models/mfg/EW_1/WORK_ORDER.md`. Graph Rev AC. One commit per 
   WORK_ORDER.md (W1-W12), the seven-sheet drawing set (stale M2-era GA.md and
   invalid-XML SVGs regenerated). `cad/stl/ROOF_TANK.stl` replaced.
   `tracker --check ROOF_TANK` green.
+
+## FLUE_KO (flue knock-out drum, tier 4) — commit 11
+
+- `models/mfg/FLUE_KO/flue_ko.py` on the shared lib. Vertical FRP knock-out drum
+  (shell OD 540, wall 8 study - hold) on a plinth with heads, filling the node
+  registry envelope 1000 x 600 x 800 exactly (it matches the AQS-MFG-001 study
+  page; the duty sheet section 4 line 600 x 700 x 1100 is a unit-task-04
+  placeholder - hold). bbox exact, one closed manifold solid.
+- Internals per duty section 3: borosilicate glass 3.3 inlet spool (OD 110 x
+  wall 3 at z 300, reach 300 mm - S67 at 300 C quenched here by N8, X-SAF-07),
+  PVDF mesh pad OD 508 x 16 at z 620 on a support ring OD 532 x ID 488 (the ring
+  laps 4 mm into the shell wall band and its top laps the pad 1 mm - the first
+  draw left pad and ring floating, caught by the builder's new single-solid
+  assert), and the weir (x 420..430, to z 360) + launder trough (channel floor
+  z 300..310, overflow lip z 360, floor corners embedded in the +X wall band) as
+  layout solids from the knock-out separation duty - the FLOAT_SINK idiom; the
+  separation duty is unsized (duty section 8, hold). Node internals row none.
+- All 8 schedule rows drawn at tag, face, height and bore as atmospheric hose
+  barbs (N6 drain boss to its 50 datum; N7 vent flush at the top head - the 800
+  datum IS the envelope top, drawn exact; Class 150 rating column verbatim, no
+  flange). Sump 0.0345 m3 reported, no residence derived (A-VES; the duty claims
+  no holdup). Materials per duty section 3: FRP vinyl ester + C-veil liner,
+  borosilicate 3.3 (lib density row added last commit), PVDF; no metal wetted
+  part. Deliverables: exports, generated BOM, fasteners.csv, check.json,
+  WORK_ORDER.md (W1-W12), the seven-sheet drawing set (stale M2-era GA.md and
+  invalid-XML SVGs regenerated). `cad/stl/FLUE_KO.stl` replaced.
+  `tracker --check FLUE_KO` green.

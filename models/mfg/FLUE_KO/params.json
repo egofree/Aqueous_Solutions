@@ -88,5 +88,33 @@
  "acceptance_sets": [
   "A-core",
   "A-VES"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study registry box (params size_note; matches the fab study page); the duty sheet section 4 line is a unit-task-04 placeholder (W12)",
+  "shell": {
+   "od_mm": 540.0,
+   "z_mm": [
+    40.0,
+    760.0
+   ]
+  }
+ },
+ "design": {
+  "service": "flue knock-out: 300 C S67 quenched in the glass spool to below the FRP limit, condensate knocked out, gas to the NOx scrubber (duty sections 1, 3 and 6)",
+  "wall_mm": 8.0,
+  "wall_basis": "study value",
+  "ca_mm": 0.0,
+  "internals": "glass inlet spool + PVDF mesh pad (duty section 3); weir + launder layout solids from the separation duty"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; shell axis at x 500, y 300, z up",
+  "nozzle_spread": "the schedule gives face and height only; ports pack centred on the face mid-length; per-tag positions in check.nozzles_drawn",
+  "vent_drain": "N7 vent flush at the top head (the 800 datum IS the box top); N6 drain boss on the base head, tip at the 50 datum",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }
