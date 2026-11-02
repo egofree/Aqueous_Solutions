@@ -1337,8 +1337,6 @@ Table 3.1. Model parameters
 | A-P-897703 | 2.0 | mm | models/mfg/MO_CELL/params.json DN50_wall_mm | assumption |  | unit task 10 (MO_CELL) |
 | A-P-b2e297 | 21.3 | mm | models/mfg/MO_CELL/params.json DN15_OD_mm | assumption |  | unit task 10 (MO_CELL) |
 | A-P-fb7be3 | 2.0 | mm | models/mfg/MO_CELL/params.json DN15_wall_mm | assumption |  | unit task 10 (MO_CELL) |
-| A-P-f06446 | 21.3 | mm | models/mfg/POLY_F/params.json DN15_OD_mm | assumption |  | unit task 10 (POLY_F) |
-| A-P-506d4e | 2.0 | mm | models/mfg/POLY_F/params.json DN15_wall_mm | assumption |  | unit task 10 (POLY_F) |
 | A-P-8af796 | 21.3 | mm | models/mfg/POWDER_RESIN/params.json DN15_OD_mm | assumption |  | unit task 10 (POWDER_RESIN) |
 | A-P-307f03 | 2.0 | mm | models/mfg/POWDER_RESIN/params.json DN15_wall_mm | assumption |  | unit task 10 (POWDER_RESIN) |
 | A-P-ce3e65 | 21.3 | mm | models/mfg/ROLL/params.json DN15_OD_mm | assumption |  | unit task 10 (ROLL) |

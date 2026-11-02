@@ -480,6 +480,61 @@
    "category": "fastener",
    "item": "M12 A4-70 bolt + nut",
    "spec": "ISO 3506 A4-70"
+  },
+  "OF-97": {
+   "category": "fastener",
+   "item": "M12 wedge anchor",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-98": {
+   "category": "fastener",
+   "item": "M10 stud + nut (ISO 4014 / ISO 4032)",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-99": {
+   "category": "fastener",
+   "item": "M8 hold-down bolt",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-100": {
+   "category": "fastener",
+   "item": "M16 wedge anchor",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-101": {
+   "category": "fastener",
+   "item": "M24 stud + nut (ISO 4014 / ISO 4032)",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-102": {
+   "category": "fastener",
+   "item": "5/8 in stud bolt",
+   "spec": "ASTM A193 B8M / A194 8MA"
+  },
+  "OF-103": {
+   "category": "fastener",
+   "item": "M12 tie rod + nut",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-104": {
+   "category": "fastener",
+   "item": "M10 stud + nut",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-105": {
+   "category": "fastener",
+   "item": "M10 hold-down bolt",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-106": {
+   "category": "fastener",
+   "item": "M8 wedge anchor",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-107": {
+   "category": "fastener",
+   "item": "M12 housing bolt + nut",
+   "spec": "ISO 898-1 8.8"
   }
  }
 }

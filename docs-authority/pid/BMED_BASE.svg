@@ -93,12 +93,12 @@
 <text x="24" y="428" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="438" font-size="9">Every incident graph edge is drawn: 2 in, 3 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="453" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/BMED_BASE.csv.</text>
-<text x="24" y="468" font-size="9">Nozzles with no matching graph edge (service text): N3 digest NaOH; N4 drain; N5 vent</text>
+<text x="24" y="468" font-size="9">Nozzles with no matching graph edge (service text): N3 digest NaOH, 20 wt%; N4 drain; N5 vent</text>
 <text x="24" y="483" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
 <g id="aqs-title-block"><rect x="1116" y="520" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="537" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-BMED_BASE</text>
 <text x="1124" y="554" font-size="9">P&amp;ID BMED_BASE (bmed, DIGESTER sector)</text>
-<text x="1124" y="571" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev c823a32c   Issued 2026-10-19</text>
+<text x="1124" y="571" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev b62aff45   Issued 2026-10-19</text>
 <text x="1124" y="588" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
 <text x="1124" y="605" font-size="9">Graph SHA-256 b3ee606fa8e5f689   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

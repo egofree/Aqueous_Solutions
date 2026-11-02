@@ -593,7 +593,7 @@ Table 2.1. Actions by kind
 
 | Parameter | Guide word | Cause | Consequence | Safeguard | Action |
 |---|---|---|---|---|---|
-| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty; dry-running pump | FT low-flow alarm | - |
 | flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
 | pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
 | temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
@@ -619,7 +619,7 @@ Table 2.1. Actions by kind
 | temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
 | level | High | inflow above outflow, outlet blocked | overflow to the bund | LSH trip of the feed | - |
 | level | Low | outlet pump runs on, leak | pump dry-running | LT low alarm | - |
-| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | check valve at the pump discharge of MEOH_SYNTH | - |
+| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | check valve at the pump discharge of MEOH_FERM, MEOH_SYNTH | - |
 | composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
 
 ### MET_AHU (ahu)

@@ -104,12 +104,12 @@
 <text x="24" y="474" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="484" font-size="9">Every incident graph edge is drawn: 4 in, 3 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="499" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/BMED_ACID.csv.</text>
-<text x="24" y="514" font-size="9">Nozzles with no matching graph edge (service text): N4 regen HCl; N5 HCl to chlorobutane; N6 drain; N7 vent</text>
+<text x="24" y="514" font-size="9">Nozzles with no matching graph edge (service text): N4 regen HCl, 20 wt%; N5 HCl to chlorobutane; N6 drain; N7 vent</text>
 <text x="24" y="529" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
 <g id="aqs-title-block"><rect x="1116" y="566" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="583" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-BMED_ACID</text>
 <text x="1124" y="600" font-size="9">P&amp;ID BMED_ACID (bmed, DIGESTER sector)</text>
-<text x="1124" y="617" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 2574c540   Issued 2026-10-19</text>
+<text x="1124" y="617" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 485e6713   Issued 2026-10-19</text>
 <text x="1124" y="634" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
 <text x="1124" y="651" font-size="9">Graph SHA-256 b3ee606fa8e5f689   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

@@ -33,7 +33,7 @@ Logic solver: a safety PLC with its own I/O, separate from the basic control PLC
 | SIF-020 | H2_DRYER | H2_DRYER-TE-90 (independent element; not H2_DRYER-TE-01) | temperature high-high | heater supply off | heater contactor, de-energise | 1 | 1oo1 | HZ-056 |
 | SIF-021 | HOPPER | HOPPER-FT-01 | flow or level low-low | pump stop | pump starter, de-energise | 1 | 1oo1 | HZ-058 |
 | SIF-022 | HX8 | HX8 | flow or level low-low | pump stop | pump starter, de-energise | 1 | 1oo1 | HZ-060 |
-| SIF-023 | MEOH_FERM | MEOH_FERM | flow or level low-low | pump stop | pump starter, de-energise | 1 | 1oo1 | HZ-065 |
+| SIF-023 | MEOH_FERM | MEOH_FERM-FT-01 | flow or level low-low | pump stop | pump starter, de-energise | 1 | 1oo1 | HZ-065 |
 | SIF-024 | MEOH_SYNTH | MEOH_SYNTH-FT-01 | flow or level low-low | pump stop | pump starter, de-energise | 1 | 1oo1 | HZ-067 |
 | SIF-025 | MEOH_SYNTH | MEOH_SYNTH-TE-90 (independent element; not MEOH_SYNTH-TE-01) | temperature high-high | heater supply off | heater contactor, de-energise | 1 | 1oo1 | HZ-069 |
 | SIF-026 | MET_AHU | MET_AHU | flow or level low-low | pump stop | pump starter, de-energise | 1 | 1oo1 | HZ-071 |
