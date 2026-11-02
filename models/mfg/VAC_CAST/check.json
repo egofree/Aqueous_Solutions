@@ -1,0 +1,100 @@
+{
+  "bbox_mm": [
+    1500.0,
+    800.0,
+    1500.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1500.0,
+    800.0,
+    1500.0
+  ],
+  "size_basis": "A-M-199 forming class N+1 rated envelope (A-M-282)",
+  "graph_revision": "AD",
+  "solids": 6,
+  "all_parts_valid": true,
+  "machine": {
+    "chamber": {
+      "od_mm": [
+        900.0,
+        760.0
+      ],
+      "z_mm": [
+        60.0,
+        1200.0
+      ],
+      "wall_mm": 6.0,
+      "wall_basis": "study fab-page 304L t6 vacuum shell (no thickness booked on the node - hold, WORK_ORDER W12)"
+    },
+    "mould_table": {
+      "deck_z_mm": [
+        300.0,
+        330.0
+      ],
+      "basis": "steel mould-tilt table hardware (duty section 3); tilt about the z 500 trunnion axis"
+    },
+    "crucible": {
+      "od_mm": 140.0,
+      "h_mm": 160.0,
+      "wall_mm": 15.0,
+      "basis": "graphite crucible on its alumina backup (duty section 3); the 3 kg design case (node design design_case_kg_d) sets the size class; consumable set, buy"
+    },
+    "purchased": "vacuum pump skid and control cabinet on the +X bay, drawn as their envelopes per plan rule 6 (the 7.5 kW connected rating is the node design)"
+  },
+  "standby": {
+    "state": "standby_rated N+1 of CAST_LINE / CONT_CAST (A-M-282/A-M-283); energized during the cast-line stoppage of the VAC_IND outage window (outage_d 2.0); design-day rate zero on the graph",
+    "basis": "duty section 2 sizing study"
+  },
+  "material": {
+    "class": "304L vacuum chamber; graphite crucible + alumina backup; steel table hardware",
+    "ca_mm": 0.0,
+    "basis": "duty section 3 (X-MAT-22); CA 0 mm (AQS-STD-001 shop rule)"
+  },
+  "a_mach_anchors": "8 M12 wedge anchors, plinth to slab (fasteners.csv)",
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "vacuum melt to cast",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4); flush at the envelope bottom (schedule datum 50)"
+    },
+    "N3": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 1500.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4); schedule datum 800 is the placeholder elevation - the riser stands on the chamber lid and flushes at the envelope top (hold, WORK_ORDER W12)"
+    }
+  },
+  "nozzle_count_schedule": 3,
+  "nozzle_idiom": "atmospheric open-bore DN15 tube connections flush at the envelope faces (duty section 4: hose, atmospheric); the schedule inlet/bottom/top faces are mapped to compass faces by the registered layout (params.json layout block); the schedule rating column (Class 150) is carried verbatim as text; datums are the schedule placeholders (holds, WORK_ORDER W12)",
+  "part_mass_kg": {
+    "plinth": 565.2,
+    "chamber_shell": 237.5,
+    "chamber_lid": 217.6,
+    "mould_table": 84.1,
+    "crucible_set": 3.7,
+    "vacuum_pump_skid": 391.9,
+    "control_cabinet": 192.2,
+    "nozzles": 1.7
+  },
+  "cadquery": "2.8.0"
+}

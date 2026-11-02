@@ -1,2 +1,8 @@
-item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 1500 x 800 x 1500 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; standby train (AQS-DUTY-072 section 4)
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Plinth 1500 x 800 x 60 (CS, anchor bosses)",1,carbon steel,565.2,make,"dry foundry-floor service, CA 0 mm (AQS-STD-001 shop rule); anchors in fasteners.csv"
+2,"Vacuum chamber 304L t6, 900 x 760 x 1100, lid t40, with drain/vent/melt passes",1,304L plate,455.1,make,"duty section 3: 304L vacuum tilt-pour chamber (X-MAT-22); wall is the study fab-page value (hold, WORK_ORDER W12); standby_rated N+1 of CAST_LINE/CONT_CAST (A-M-282)"
+3,"Mould-tilt table hardware: deck on legs, tilt cradle, trunnions, pour lip",1,carbon steel,84.1,make,"duty section 3: steel table hardware; tilt about the z 500 trunnion axis (study, W12)"
+4,Graphite crucible OD 140 x 160 on its alumina backup ring (the 3.0 kg design case),1,graphite + alumina (consumable set),3.7,buy,duty section 3 consumable set; change-out at the unit task 12 work order
+5,"Vacuum pump skid on the +X bay (purchased, envelope and interface)",1,purchased skid (envelope),391.9,buy,purchased per plan rule 6; the maker rating reads the sheet at order; standby unit (A-M-282)
+6,"Control cabinet, 7.5 kW connected (node design), IP54",1,purchased cabinet (envelope),192.2,buy,purchased per plan rule 6
+7,"Nozzle set per docs-authority/nozzles/VAC_CAST.csv: 3 atmospheric open-bore tube connections flush at the envelope faces (drain through the plinth, vent riser on the chamber lid)",3,304L tube,1.7,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4

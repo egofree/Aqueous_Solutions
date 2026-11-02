@@ -62,3 +62,31 @@ standby in their work orders and BOMs, not placeholder boxes.
   Oct-31 3-sheet GA SVGs are regenerated into it. Duty section 7 now names the
   model source via `docs-authority/_duty_basis.py`. Tracker row 127: M3.
   Route hold stays reported.
+
+## VAC_CAST (vacuum tilt-pour station, FOUNDRY N+1 alternate, tier 7) — commit 3
+
+- New per-unit model `models/mfg/VAC_CAST/vac_cast.py` on the shared lib, the
+  installed-standby idiom: the standby_rated N+1 of CAST_LINE / CONT_CAST
+  (A-M-282/A-M-283) drawn as the real machine per its node design block and
+  duty section 3 — 304L vacuum chamber (t6) and lid, steel mould-tilt table
+  hardware about the z 500 trunnions, graphite crucible on its alumina backup
+  (consumable buy set), vacuum pump skid and 7.5 kW control cabinet on the +X
+  bay as purchased envelopes — replacing the placeholder envelope box. Standby
+  named in the WORK_ORDER header, the BOM rows and the build log.
+- All 3 schedule rows drawn flush at the envelope faces (N1 +Y melt inlet at
+  z 160; N2 drain through the plinth; N3 vent riser on the chamber lid; the
+  800 datum is the schedule placeholder, W12). The inlet face maps to compass
+  by the registered layout in the params layout block.
+- Build fills the node box exactly (1500 × 800 × 1500, zero face overhang; the
+  X-PAR-04 envelope test gates the registry STL); `tracker --check VAC_CAST`
+  green; `cad/stl/VAC_CAST.stl` replaced from the build; BOM complete with
+  make-or-buy (crucible set, pump skid and cabinet are the buy rows); fasteners
+  grade rule W5; WORK_ORDER rewritten to W1–W12 with holds named (route-class
+  hold for `caster`, study chamber wall, placeholder elevations, pending
+  vacuum/relief case, purchased ratings, chamber door at the unit task).
+- A-SC: the station casts plant castings; its make rows are flagged and W11
+  cross-references AQS-BOM-SC-001. Drawing set: new 7-sheet set
+  (ga_front/ga_side/nozzle_orient/chamber01/mould01/aux01/iso01; title blocks
+  per AQS-DWG-002, graph Rev AD); the stale Oct-31 3-sheet GA set is
+  regenerated into it. Duty section 7 now names the model source. Tracker
+  row 164: M3. Route hold stays reported.

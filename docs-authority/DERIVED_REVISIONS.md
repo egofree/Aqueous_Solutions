@@ -1425,7 +1425,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/STOCK_OUT/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/TFE_SYN/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/TI_CELL/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/VAC_CAST/params.json` | working tree | current |
+| `models/mfg/VAC_CAST/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/VAC_IND/params.json` | working tree | current |
 | `models/mfg/VCD_TRAIN/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/VDF_SYN/params.json` | f0160a6 (regenerated, no change) | current |

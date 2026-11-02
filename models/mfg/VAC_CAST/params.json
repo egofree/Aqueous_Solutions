@@ -23,7 +23,13 @@
   "connected_kW": 7.5,
   "backup_of": "CAST_LINE",
   "outage_d": 2.0,
-  "design_case_kg_d": 3.0
+  "design_case_kg_d": 3.0,
+  "mat": "304L vacuum chamber; graphite crucible + alumina backup; steel table hardware (duty section 3)",
+  "ca_mm": 0.0,
+  "wall_mm": 6.0,
+  "wall_basis": "study fab-page 304L t6 vacuum shell (WORK_ORDER W12)",
+  "internals": "none drawn (node internals row none); the 3 kg design-case melt is a process-inventory solid, not a BOM part",
+  "purchased": "vacuum pump skid and control cabinet (7.5 kW connected, node design), drawn as their envelopes (plan rule 6)"
  },
  "nozzles": [
   {
@@ -58,5 +64,35 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class caster"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1500.0,
+   800.0,
+   1500.0
+  ],
+  "basis": "A-M-199 forming class N+1 rated envelope (A-M-282)",
+  "chamber": {
+   "xy_mm": [
+    900.0,
+    760.0
+   ],
+   "z_mm": [
+    60.0,
+    1200.0
+   ],
+   "wall_mm": 6.0
+  },
+  "purchased_bay": {
+   "x_mm": [
+    900.0,
+    1500.0
+   ]
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; chamber on the plinth x 0..900, y 0..760, z 60..1200; mould-tilt table inside the chamber; pump and cabinet bay x 920..1500",
+  "nozzle_spread": "the schedule gives inlet/bottom/top and heights only; N1 melt inlet on +Y at x 300 flush at the envelope face; N2 drain under the crucible axis; N3 vent riser on the chamber lid to the envelope top; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }
