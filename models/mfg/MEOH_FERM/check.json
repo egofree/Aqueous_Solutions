@@ -1,0 +1,126 @@
+{
+  "bbox_mm": [
+    425.0,
+    425.0,
+    600.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    425.0,
+    425.0,
+    600.0
+  ],
+  "size_basis": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31); the duty section 2 prose line 'Envelope 2200 x 900 x 1400' predates it (WORK_ORDER W12)",
+  "graph_revision": "AD",
+  "solids": 5,
+  "all_parts_valid": true,
+  "solids_note": "the skid chain (plinth, stand, vessel, insulation envelope, pump envelope, recirculation loop, drain and vent) fuses to one solid; the four face-stub connections (N1, N2, N3, N6) are the CATCH_TANK-idiom face hardware and stay separate until the connecting lines make their joints; every solid closed and manifold",
+  "vessel": {
+    "od_mm": 125.0,
+    "wall_mm": 4.0,
+    "z_mm": [
+      230.0,
+      350.0
+    ],
+    "insulation": {
+      "od_mm": 225.0,
+      "thickness_mm": 50.0,
+      "class": "PIR (node material row), 35 kg/m3 study bulk"
+    },
+    "working_level_mm": 297.0,
+    "working_volume_m3": 0.00072,
+    "holdup_basis": "duty section 2: the 48 h working volume V = 0.0007 m3 is an existing holdup basis - the model level is set by it and reported (A-VES); no new residence-time claim",
+    "internals": {
+      "source": "none: the node internals row is none; the node mixer row names the daily recirculation pump",
+      "basis": "no top-entry agitator named on the node - none drawn (WORK_ORDER W12); agitation is by the recirculation loop"
+    }
+  },
+  "a_mach_named": {
+    "purchased": "daily recirculation pump (node mixer row) and the 0.74 W heater mat (node heat_W) drawn as envelopes and interfaces per plan rule 6; ratings read the maker sheets at order"
+  },
+  "material": {
+    "class": "PVC-U",
+    "ca_mm": 0.0,
+    "basis": "duty section 3: PVC-U wetted per AQS-STD-002 rules M1 and M2, no metal wetted part; above 60 C the thermoplastic is CPVC - the node T_C 35 sits inside the class; the node design HDPE row predates the duty selection and is superseded for the wetted parts (hold, WORK_ORDER W12)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 212.5,
+      "schedule_rating": "Class 150",
+      "service": "ferment feed",
+      "note": "schedule datum drawn as issued; DN15 open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face, the CATCH_TANK idiom)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 570.7,
+      "x_mm": 183.2,
+      "schedule_rating": "Class 150",
+      "service": "biogenic MeOH",
+      "note": "schedule datum 600 mm predates the box; clamped to 570.7 mm (the od + 8 rule - hold, WORK_ORDER W12); DN15 open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face, the CATCH_TANK idiom)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 570.7,
+      "x_mm": 212.5,
+      "schedule_rating": "Class 150",
+      "service": "fermenter residue",
+      "note": "schedule datum 600 mm predates the box; clamped to 570.7 mm (the od + 8 rule - hold, WORK_ORDER W12); DN15 open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face, the CATCH_TANK idiom)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "x_mm": 257.5,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss under the base head, flush at the envelope bottom (schedule datum 50)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 600.0,
+      "x_mm": 212.5,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent riser on the top head, flush at the envelope top; schedule datum 800 is the placeholder (hold, WORK_ORDER W12)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 570.7,
+      "x_mm": 241.8,
+      "schedule_rating": "Class 150",
+      "service": "fermenter digestate (water + spent solids)",
+      "note": "schedule datum 600 mm predates the box; clamped to 570.7 mm (the od + 8 rule - hold, WORK_ORDER W12); non-piped solids transfer (line-list classification): drawn DN15, bore not calculated (plan W4) flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face, the CATCH_TANK idiom)"
+    }
+  },
+  "nozzle_count_schedule": 6,
+  "nozzle_idiom": "atmospheric open-bore tube connections flush at the envelope faces (duty section 4: atmospheric joints are hose; the W4 110 percent rule draws no flange where no process pressure is stated); the schedule rating column (Class 150) is carried verbatim as text; clamped datums named in nozzles_drawn; the N6 solids row drawn DN15, bore not calculated (plan W4)",
+  "part_mass_kg": {
+    "plinth": 28.4,
+    "stand": 7.0,
+    "shell": 0.6,
+    "insulation": 0.2,
+    "purchased": 1.1,
+    "recirc_loop": 0.1,
+    "nozzles": 0.2
+  },
+  "cadquery": "2.8.0"
+}

@@ -455,6 +455,33 @@ POLYMERS reactors) — commits 13–24
   set; `tracker --check MEOH_SYNTH` green; duty section 7 names the model;
   tracker regen puts MEOH_SYNTH at M3 (54).
 
+### MEOH_FERM — commit 20
+
+- `models/mfg/MEOH_FERM/meoh_ferm.py`: the fermenter vessel per the node design
+  block (X-MFG-31) — PVC-U shell OD 125 × wall 4.0 × H 100 with heads on a
+  support-ring stand, the 50 mm PIR insulation envelope (node material row),
+  and the node mixer row's daily recirculation pump plus the 0.74 W heater mat
+  as purchased envelopes (plan rule 6) with a DN15 recirculation loop (pump to
+  the top head, base tap to pump). Node envelope 425 × 425 × 600 filled
+  exactly; the skid chain fuses to one solid, the four CATCH_TANK-idiom face
+  stubs stay separate until the connecting lines make their joints
+  (`check.solids_note`); `cad/stl/MEOH_FERM.stl` replaced from the build.
+- PVC-U wetted per duty section 3 (rules M1 and M2); the node HDPE row is
+  superseded for the wetted parts (hold, W12); T_C 35 sits inside the class.
+  The duty §2 prose line "Envelope 2200 × 900 × 1400" predates the node box
+  (hold, W12).
+- All 6 schedule rows drawn: N1 in on −Y at 160; N2/N3 out on +Y (600 datums
+  clamped to 570.7, W12); N6 solids row (digestate) drawn DN15, bore not
+  calculated (plan W4); N4 drain boss under the base; N5 vent riser on the top
+  head flush at the box top. Class 150 column carried verbatim, no flange.
+- A-VES: the 48 h working volume V = 0.0007 m³ (duty section 2) is an existing
+  holdup basis — the model level (z 305.1) is set by it and reported; no new
+  residence-time claim.
+- Deliverables: exports, generated `bom.csv`, `fasteners.csv`, `check.json`,
+  `WORK_ORDER.md` (W1–W12), six-sheet drawing set; `tracker --check MEOH_FERM`
+  green; duty section 7 names the model; tracker regen puts MEOH_FERM at M3
+  (55).
+
 
 
 
