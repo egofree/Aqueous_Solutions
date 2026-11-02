@@ -1,3 +1,2 @@
 item,size,grade,qty,location,basis
-1,M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,8,kettle flange,study
-2,M12 anchor,ISO 898-1 8.8,4,base to slab,study
+1,M12 wedge anchor,ISO 898-1 8.8,4,plinth to slab; one per corner (count from the model),grade rule AQS-PLAN-006 W5: 8.8 on the carbon-steel plinth; study length; confirmed at fabrication

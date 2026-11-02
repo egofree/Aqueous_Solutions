@@ -1,46 +1,154 @@
 {
-  "kettle_bbox_mm": [
-    150.0,
-    150.0,
-    225.0
+  "bbox_mm": [
+    600.0,
+    600.0,
+    1200.0
   ],
-  "inside_size_mm_shell": true,
-  "connection_overhang_mm": {
-    "-X": 0.0,
-    "+X": 0.0,
-    "-Y": 30.1,
-    "+Y": 0.0
-  },
-  "overhang_allowance_mm": 50.0,
-  "overhang_ok": true,
-  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: vdf_inlet, tfe_inlet, resin_chute, powder_chute, scrap_stub)",
-  "external_parts": [
-    "vdf_inlet",
-    "tfe_inlet",
-    "resin_chute",
-    "powder_chute",
-    "scrap_stub"
+  "inside_size_mm": true,
+  "size_mm": [
+    600.0,
+    600.0,
+    1200.0
   ],
-  "cap_solids": 3,
+  "size_basis": "reactor-class study minimum; jacketed kettle at the 0.25 kg/d monomer duty, reclaim loop to F_RECOVER (node envelope basis, A-M-289)",
+  "graph_revision": "AD",
+  "solids": 7,
   "all_parts_valid": true,
+  "solids_note": "the skid chain (plinth, stand, kettle, jacket envelope, agitator, drive envelope, drain and vent) fuses to one solid; the face-stub connections stay separate until the connecting lines make their joints",
+  "kettle": {
+    "od_mm": 150.0,
+    "wall_mm": 6.0,
+    "z_mm": [
+      616.0,
+      873.0
+    ],
+    "wall_basis": "study fab-page value (6 mm); the node books no thickness (WORK_ORDER W12)",
+    "gross_volume_L": 3.3654,
+    "jacket": {
+      "od_mm": 184.0,
+      "id_mm": 162.0,
+      "z_mm": [
+        616.0,
+        838.0
+      ],
+      "basis": "the node power basis (the X-PAR-02 stamp covers jacket loss + agitator, A-M-289); the jacket geometry is the envelope annulus (layout choice, WORK_ORDER W12)"
+    },
+    "internals": {
+      "source": "the node power basis (jacket loss + agitator, A-M-289)",
+      "basis": "shaft and two-blade impeller drawn as solids into the purchased drive envelope (plan rule 6); node internals row none, so the tracker records no internal solid"
+    }
+  },
+  "a_ves": {
+    "gross_volume_L": 3.3654,
+    "basis": "reported for the record: the duty claims no holdup figure (the flows are the AQS-RATE-FP-MET design case); no residence time is derived (A-VES)"
+  },
+  "material": {
+    "class": "Hastelloy C-276",
+    "ca_mm": null,
+    "basis": "duty section 3 (the node design row matches): Hastelloy C-276 wetted, PTFE gasketed; density 8900 kg/m3 published midpoint for mass reporting; the AQS-STD-001 rule has no C-276 row - no corrosion-allowance value is claimed (hold, WORK_ORDER W12)"
+  },
+  "a_mach_named": {
+    "purchased": "agitator drive (the node power basis names the agitator share of the 0.0449 kW stamp) drawn as its envelope and interface, plan rule 6; the rating reads the maker sheet at order"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 285.3,
+      "schedule_rating": "Class 150",
+      "service": "VDF monomer",
+      "note": "schedule datum drawn as issued; DN15 open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 314.6,
+      "schedule_rating": "Class 150",
+      "service": "TFE monomer",
+      "note": "schedule datum drawn as issued; DN15 open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 256.1,
+      "schedule_rating": "Class 150",
+      "service": "PVDF/PTFE resin",
+      "note": "schedule datum drawn as issued; non-piped solids transfer (line-list classification): drawn DN15, bore not calculated (plan W4) flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 285.3,
+      "schedule_rating": "Class 150",
+      "service": "fluoropolymer powder",
+      "note": "schedule datum drawn as issued; non-piped solids transfer (line-list classification): drawn DN15, bore not calculated (plan W4) flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 314.6,
+      "schedule_rating": "Class 150",
+      "service": "PVDF resin to the film/sheet line",
+      "note": "schedule datum drawn as issued; DN15 open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 343.9,
+      "schedule_rating": "Class 150",
+      "service": "off-spec fluoropolymer scrap/rework",
+      "note": "schedule datum drawn as issued; DN15 open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "x_mm": 345.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss under the base head, flush at the envelope bottom (schedule datum 50)"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 1200.0,
+      "x_mm": 300.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent riser on the top head, flush at the envelope top; the schedule datum 800 is the placeholder (hold, WORK_ORDER W12)"
+    }
+  },
+  "nozzle_count_schedule": 8,
+  "nozzle_idiom": "atmospheric open-bore tube connections flush at the envelope faces (duty section 4: atmospheric joints are hose; the W4 110 percent rule draws no flange where no process pressure is stated); the schedule rating column (Class 150) is carried verbatim as text; datums draw as issued; the N3/N4 solids rows drawn DN15, bore not calculated (plan W4)",
   "part_mass_kg": {
-    "base": 113.0,
-    "support_skirt": 68.2,
-    "kettle": 5.4,
-    "jacket": 6.5,
-    "dished_top": 5.4,
-    "agitator_shaft": 0.7,
-    "impeller": 0.3,
-    "motor": 11.3,
-    "support_frame": 314.0,
-    "vdf_inlet": 0.0,
-    "tfe_inlet": 0.0,
-    "resin_chute": 2.0,
-    "powder_chute": 2.0,
-    "pvdf_stub": 0.1,
-    "scrap_stub": 0.1,
-    "drain_well": 0.8,
-    "vent_stub": 0.0
+    "plinth_stand": 75.0,
+    "kettle": 10.5,
+    "jacket": 10.4,
+    "agitator": 1.0,
+    "drive": 1.6,
+    "nozzles": 1.8
   },
   "cadquery": "2.8.0"
 }

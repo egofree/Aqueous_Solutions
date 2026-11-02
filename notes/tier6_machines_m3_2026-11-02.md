@@ -551,6 +551,33 @@ POLYMERS reactors) — commits 13–24
   POLY_OLEFIN` green; duty section 7 names the model; tracker regen puts
   POLY_OLEFIN at M3 (58).
 
+### POLY_F — commit 24
+
+- `models/mfg/POLY_F/poly_f.py` replaces the pre-plan M2 study builder: the
+  emulsion polymerization kettle per the node design block — Hastelloy C-276
+  kettle D 150 × H 225 (wall 6, study fab page — hold), heads on the
+  support-ring stand, the jacket envelope and the agitator drawn per the node
+  power basis (the 0.0449 kW stamp covers jacket loss + agitator, A-M-289;
+  the drive is the purchased envelope, plan rule 6). Node envelope 600 × 600 ×
+  1200 filled exactly (vent riser to the box top, the X-PAR-04 registry gate).
+  The M2 misfit (bbox 630 in +Y against the 600 envelope) is cleared: the
+  connection hardware now sits flush at the envelope faces and the envelope
+  itself is unchanged — nothing resized. The superseded M2 constants block and
+  layout note are dropped from `params.json`.
+- No CA value claimed: the AQS-STD-001 rule has no C-276 row (hold, W12);
+  density 8900 kg/m3 published midpoint for mass reporting. All 8 schedule
+  rows drawn: N1/N2 monomer in on −Y at 160; N3/N4 solids rows (resin,
+  powder) drawn DN15, bore not calculated (plan W4) on +Y at 600; N5/N6
+  liquid rows on +Y at 600; N7 drain boss under the base head; N8 vent riser
+  on the top head. Class 150 column carried verbatim, no flange.
+- A-VES: gross shell volume (3.6 L) reported for the record; the duty claims
+  no holdup figure, no residence derived.
+- Deliverables: exports, generated `bom.csv`, `fasteners.csv`, `check.json`,
+  `WORK_ORDER.md` (W1–W12), six-sheet drawing set; `tracker --check POLY_F`
+  green; duty section 7 names the model; tracker regen puts POLY_F at M3
+  (59). The tier-6 continuation lane is complete: 12 units accepted this
+  lane (59 at M3 overall).
+
 ### Correction to POLY_COND (same commit)
 
 - The first build under-filled the node box (600 × 600 × 868) and failed the

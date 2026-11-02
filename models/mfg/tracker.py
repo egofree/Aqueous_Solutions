@@ -137,7 +137,7 @@ ACCEPTED = ('AL_POT', 'LEACH_CSTR_1', 'EW_1', 'EW_2', 'EW_3', 'EW_4', 'EW_5', 'E
             'WS_DOPE', 'WS_HF_ED', 'WS_SLURRY', 'WS_SOLV', 'C29_RECYCLE', 'CONTINUOUS_RECYCLE',
             'MEOH_SYNTH', 'MEOH_FERM',
             'MEOH_FC', 'POLY_COND',
-            'POLY_OLEFIN')
+            'POLY_OLEFIN', 'POLY_F')
 
 
 # --------------------------------------------------------------------------- authorities

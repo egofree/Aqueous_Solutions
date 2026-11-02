@@ -5,11 +5,6 @@
   1200
  ],
  "graph_revision": "AD",
- "layout_note": "Registered layout: N1 VDF and N2 TFE monomer stubs -Y z 160; N3/N4 discharge chutes +X z 600; N5 PVDF stub +X z 560; N6 scrap stub -X z 560; N7 drain bottom (300,300) z 40 through the skirt; N8 vent at (300,360) top. Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
- "assumptions": {
-  "DN15_OD_mm": 21.3,
-  "DN15_wall_mm": 2.0
- },
  "design": {
   "vessel": "PVDF/PTFE emulsion polymerization kettle",
   "D_mm": 150,
@@ -22,7 +17,13 @@
   "reclaim_kg_d": 0.02,
   "initiator": "persulfate class, emulsion/suspension (ULLMANN_FLUOROPOLY)",
   "duty_kW": 0.0449,
-  "material": "Hastelloy C-276 wetted, PTFE gasketed"
+  "material": "Hastelloy C-276 wetted, PTFE gasketed",
+  "machine": "PVDF/PTFE emulsion polymerization kettle: Hastelloy C-276 kettle D 150 x H 225 at 60 C, jacket + agitator per the node power basis (A-M-289), monomer from the gas train, reclaim to F_RECOVER (node design block, AQS-DUTY-073)",
+  "mat": "Hastelloy C-276 wetted, PTFE gasketed (duty section 3; the node row matches); no CA value claimed (no AQS-STD-001 C-276 row)",
+  "wall_mm": 6.0,
+  "wall_basis": "study fab-page value; the node books no thickness (WORK_ORDER W12)",
+  "internals": "the agitator drawn as solids per the node power basis; node internals row none",
+  "purchased": "agitator drive - envelope and interface per plan rule 6"
  },
  "doc": "AQS-DUTY-072; ULLMANN_FLUOROPOLY",
  "unit_id": "POLY_F",
@@ -108,5 +109,34 @@
  "acceptance_sets": [
   "A-core",
   "A-VES"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   600.0,
+   600.0,
+   1200.0
+  ],
+  "basis": "reactor-class study minimum; jacketed kettle at the 0.25 kg/d monomer duty, reclaim loop to F_RECOVER (A-M-289)",
+  "kettle": {
+   "od_mm": 150.0,
+   "axis_xy_mm": [
+    300.0,
+    300.0
+   ],
+   "z_mm": [
+    616.0,
+    873.0
+   ]
+  },
+  "jacket_z_mm": [
+   616.0,
+   838.0
+  ],
+  "plinth_mm": 20.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; kettle axis at (300, 300); support ring z 608..616, shell 628..853, top head 853..873, jacket envelope 616..838; drive envelope on the top head; vent riser to the envelope top (fills the node box, X-PAR-04 registry gate)",
+  "nozzle_spread": "side rows flush at the envelope faces (the CATCH_TANK idiom: the connecting line makes the joint at the face); N1/N2 monomer in on -Y at 160; N3/N4/N5/N6 out on +Y at 600; drain boss under the base head; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "face hardware flush at the envelope faces; nothing protrudes"
+ }
 }
