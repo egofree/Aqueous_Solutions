@@ -32,7 +32,10 @@
   "volume_m3": 0.0045,
   "material": "304L, heat-traced (tar service)",
   "hold_kg": 0.0,
-  "connections": 2
+  "connections": 2,
+  "dn_label": "DN25",
+  "wall_mm": 3.38,
+  "wall_basis": "lib/dn Sch 40 table; schedule not stated on the node (WORK_ORDER W12)"
  },
  "nozzles": [
   {
@@ -72,5 +75,26 @@
  "acceptance_sets": [
   "A-core",
   "A-PIPE"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   2000.0,
+   50.0,
+   50.0
+  ],
+  "basis": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
+  "pipe": {
+   "dn": "DN25",
+   "od_mm": 33.7,
+   "wall_mm": 3.38,
+   "z_mm": 25.0
+  },
+  "plinth_mm": 20.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; manifold along +x at the cross-section centre (y 25, z 25), trough plinth z 0..20",
+  "supports": "trough plinth + 8 slab anchors; no top rails (the branch zone stays clear)",
+  "nozzle_spread": "the schedule gives face and height only; branch stubs pack per face group from x 100 at OD + 30 mm pitch; drain at x 970, vent at x 1030; the DN50 rows sit at the manifold centreline; per-tag positions in check.nozzles_drawn",
+  "line_list": "models/mfg/NCG_HEADER/line_list.csv generated from the graph edges and AQS-PIP-004; no new edge"
+ }
 }

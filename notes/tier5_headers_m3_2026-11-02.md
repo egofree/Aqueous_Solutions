@@ -158,3 +158,26 @@ calculated", rating; spool drawing; no new edge).
   CS, manifold 1.15 kg PVDF, branches 0.03 kg), `fasteners.csv` (8 M10 wedge anchors,
   8.8), `check.json`, `WORK_ORDER.md` (W1–W12 + line list), six-sheet drawing set.
   Duty section 7 names the model; tracker regen puts HDR_UPW at M3 (33).
+
+## NCG_HEADER (pyrolysis NCG header, OIL, tier 5) — commit 7
+
+- `models/mfg/NCG_HEADER/ncg_header.py` on the shared lib, the accepted spool shape at
+  DN25 (OD 33.7, Sch 40 table, bore 26.9 mm) in 304L. All 4 schedule rows drawn as
+  open-bore tube stubs flush at the envelope faces (duty section 4 table: atmospheric
+  lines are hose, DN copied from the edge and not recalculated): N1 inlet and N2
+  outlet at 11.3 mm (datums 10 clamped up), N3 drain and N4 vent flush at the faces.
+  Material basis conflict named: duty section 3 carries the carbon-steel text with a
+  1.5 mm allowance, the node design says 304L heat-traced; 304L drawn with CA 0 mm,
+  both facts recorded (hold W12). The heat tracing is a purchased tracing cable,
+  named in the BOM as a buy row, not drawn (no authority dimensions it). The duty
+  section 4 table datums (400 mm on the seed block) predate the issued schedule,
+  which governs. Build fills the envelope exactly; `cad/stl` replaced from the build;
+  `tracker --check NCG_HEADER` fully green.
+- A-PIPE: `line_list.csv` — 3 rows (manifold + IA-OIL-03 DN15 P3, NCG_TO_AB DN15 P3);
+  the PVDF-to-304L transition joint at the header face is named (hold). Edge coverage
+  complete, no new edge.
+- Deliverables: exports (STEP + closed STL, 2654 facets), `bom.csv` (plinth 15.7 kg
+  CS, manifold 5.15 kg 304L, branches 0.09 kg, tracing buy row), `fasteners.csv`
+  (8 M10 wedge anchors, 8.8), `check.json`, `WORK_ORDER.md` (W1–W12 + line list),
+  six-sheet drawing set. Duty section 7 names the model; tracker regen puts
+  NCG_HEADER at M3 (34).
