@@ -174,3 +174,28 @@ standby in their work orders and BOMs, not placeholder boxes.
   burner01/aux01/iso01; title blocks per AQS-DWG-002, graph Rev AD); the stale
   Oct-31 3-sheet GA set is regenerated into it. Duty section 7 now names the
   model source. Tracker row 57: M3. Route hold stays reported.
+
+## RES_HEAT (resistance radiant reheating furnace, FOUNDRY N+1 alternate, tier 6) — commit 8
+
+- New per-unit model `models/mfg/RES_HEAT/res_heat.py` on the shared lib, the
+  installed-standby idiom: the N+1 of the SHELL_BURNOUT / SINTER heating duty
+  (A-M-282/A-M-283) drawn as the real machine per duty section 3 — mild-steel
+  casing with door face, ceramic-fibre module lining, 80Ni-20Cr element racks on
+  both walls and the crown (the purchased consumable set), hearth plate, and the
+  12 kW controls cabinet as a purchased envelope on the +X bay — replacing the
+  placeholder envelope box. Standby named in the WORK_ORDER header, the BOM
+  rows and the build log.
+- No piped process connection on the graph (duty section 4: no nozzle schedule
+  is issued), so no nozzle hardware is drawn; the first no-schedule unit in the
+  acceptance lane — the build log and check.json record the no-schedule
+  nozzle line honestly instead of the template's schedule claim.
+- Build fills the node box exactly (1000 × 1000 × 1500, zero face overhang;
+  `tracker --check RES_HEAT` green; `cad/stl/RES_HEAT.stl` replaced from the build; BOM complete with make-or-buy
+  (element set and controls cabinet are the buy rows); fasteners grade 8.8
+  carbon steel per the W5 grade rule; WORK_ORDER rewritten to W1–W12 with holds
+  named (route-class hold for `furnace`, study casing and lining thicknesses,
+  no-schedule hold, under-fill note, pending relief case).
+- Drawing set: new 6-sheet set (ga_front/ga_side/shell01/elements01/aux01/
+  iso01 — no nozzle sheet, no schedule; title blocks per AQS-DWG-002, graph Rev
+  AD); the stale Oct-31 3-sheet GA set is regenerated into it. Duty section 7
+  now names the model source. Tracker row 116: M3. Route hold stays reported.

@@ -1,0 +1,62 @@
+{
+  "bbox_mm": [
+    1000.0,
+    1000.0,
+    1500.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    1000.0,
+    1500.0
+  ],
+  "size_basis": "A-M-199 melt class N+1 rated envelope (A-M-282)",
+  "graph_revision": "AD",
+  "solids": 4,
+  "all_parts_valid": true,
+  "machine": {
+    "casing": {
+      "od_mm": [
+        660.0,
+        1000.0
+      ],
+      "z_mm": [
+        60.0,
+        1160.0
+      ],
+      "wall_mm": 4.0,
+      "wall_basis": "study fab-page mild-steel t4 casing (no thickness booked on the node - hold, WORK_ORDER W12)"
+    },
+    "lining": {
+      "fibre_mm": 100.0,
+      "basis": "ceramic-fibre module lining (duty section 3, SCHACHT2004 ch. 13 class; to 1100 C per ASM_V1), study t100 (hold, W12)"
+    },
+    "elements": {
+      "material": "80Ni-20Cr, OD 24 rods in wall and crown racks",
+      "basis": "duty section 3 element class; connected_kW 12.0 is the node rating at the 900 C design (node design T_C); MoSi2 is the duty alternative above 1100 C (not drawn)"
+    },
+    "door": "front door face on -X with recess; door interlock is loop hardware (W12)"
+  },
+  "standby": {
+    "state": "standby_rated N+1 of the SHELL_BURNOUT / SINTER heating duty (A-M-282/A-M-283); energized on a burnout-element outage during a shell campaign (outage_d 2.0); design-day rate zero on the graph",
+    "basis": "duty section 2 sizing study"
+  },
+  "material": {
+    "class": "mild-steel casing, ceramic-fibre module lining, 80Ni-20Cr elements",
+    "ca_mm": 0.0,
+    "basis": "duty section 3 (X-MAT-22); CA 0 mm - dry furnace service (AQS-STD-001 shop rule)"
+  },
+  "a_mach_anchors": "8 M12 wedge anchors, plinth to slab (fasteners.csv)",
+  "nozzles": "no piped process connection on the graph; no nozzle schedule is issued (duty section 4) - no nozzle hardware drawn (hold, WORK_ORDER W12)",
+  "nozzle_count_schedule": 0,
+  "part_mass_kg": {
+    "plinth": 471.0,
+    "casing": 154.7,
+    "door_face": 240.0,
+    "fibre_lining": 40.8,
+    "element_racks": 26.7,
+    "hearth_plate": 24.9,
+    "controls_cabinet": 174.9
+  },
+  "cadquery": "2.8.0"
+}

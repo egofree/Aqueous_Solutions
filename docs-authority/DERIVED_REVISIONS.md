@@ -43,7 +43,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
 | `docs-authority/DESIGN_CHECK.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/DOC_REGISTER.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/DRAWING_REGISTER.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/DRAWING_REGISTER.md` | working tree | current |
 | `docs-authority/ENCLOSURE_EGRESS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/EOL_RETURN.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/FARM_DESIGN.md` | f0160a6 (regenerated, no change) | current |
@@ -395,7 +395,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/RELIEF_CRYO.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/RELIEF_H2.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/REMIN.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/RES_HEAT.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/RES_HEAT.md` | working tree | current |
 | `docs-authority/duties/RF_HEAT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/ROLL.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/ROOF_TANK.md` | f0160a6 (regenerated, no change) | current |
@@ -1409,7 +1409,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/RELIEF_CRYO/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/RELIEF_H2/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/REMIN/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/RES_HEAT/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/RES_HEAT/params.json` | working tree | current |
 | `models/mfg/RF_HEAT/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/ROLL/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/ROOF_TANK/params.json` | f0160a6 (regenerated, no change) | current |

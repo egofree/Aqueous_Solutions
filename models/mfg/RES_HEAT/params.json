@@ -19,11 +19,13 @@
  "relief_mm": null,
  "internals": "none",
  "design": {
-  "service": "resistance radiant reheating furnace, N+1 of SHELL_BURNOUT/SINTER heating",
-  "connected_kW": 12.0,
-  "backup_of": "SHELL_BURNOUT/SINTER",
-  "outage_d": 2.0,
-  "T_C": 900.0
+  "machine": "resistance radiant reheating furnace, N+1 standby of the SHELL_BURNOUT/SINTER heating duty (node design service)",
+  "mat": "mild-steel casing, ceramic-fibre module lining, 80Ni-20Cr resistance elements (duty section 3)",
+  "ca_mm": 0.0,
+  "wall_mm": 4.0,
+  "wall_basis": "study fab-page mild-steel t4 casing (WORK_ORDER W12)",
+  "internals": "none drawn (node internals row none); the hearth plate is furnace furniture, a BOM part, not an internal",
+  "purchased": "controls cabinet 12.0 kW connected (node design), drawn as its envelope (plan rule 6); SCR package at fabrication; the 80Ni-20Cr element set is a purchased consumable (buy row)"
  },
  "nozzles": [],
  "material": "Ceramic-fibre module lining + 80Ni-20Cr resistance elements on a mild-steel casing at the 900 C box-furnace class",
@@ -33,5 +35,35 @@
  "holds": [
   "no duty section 4 schedule on file",
   "no AQS-PLAN-006 section 4 route class for class furnace"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   1000.0,
+   1500.0
+  ],
+  "basis": "A-M-199 melt class N+1 rated envelope (A-M-282)",
+  "casing": {
+   "xy_mm": [
+    660.0,
+    1000.0
+   ],
+   "z_mm": [
+    60.0,
+    1160.0
+   ],
+   "wall_mm": 4.0
+  },
+  "cabinet_bay": {
+   "x_mm": [
+    660.0,
+    1000.0
+   ]
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; casing on the plinth x 0..660, y 0..1000, z 60..1160; door face -X; element racks on both walls and the crown; controls bay x 660..1000",
+  "nozzle_spread": "no piped process connection on the graph (duty section 4); no nozzle hardware drawn (hold, WORK_ORDER W12)",
+  "hardware_idiom": "no connection hardware; bbox within the node envelope"
+ }
 }

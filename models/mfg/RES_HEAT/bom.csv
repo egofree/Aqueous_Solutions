@@ -1,2 +1,7 @@
-item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 1000 x 1000 x 1500 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; standby train (AQS-DUTY-072 section 4)
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Plinth 1000 x 1000 x 60 (CS, anchor bosses)",1,carbon steel,471.0,make,"dry furnace-shop service, CA 0 mm (AQS-STD-001 shop rule); anchors in fasteners.csv"
+2,"Furnace casing mild steel t4, 660 x 1000 x 1100, with front door face",1,carbon steel,394.7,make,"duty section 3: mild-steel casing; wall is the study fab-page value (hold, WORK_ORDER W12); N+1 standby of the SHELL_BURNOUT/SINTER heating duty (A-M-282)"
+3,Ceramic-fibre module lining t100,1,ceramic-fibre module 128 kg/m3,40.8,make,"duty section 3 (SCHACHT2004 ch. 13; ASM_V1 to 1100 C); thickness is the study fab-page value (hold, WORK_ORDER W12)"
+4,"80Ni-20Cr resistance elements, OD 24, wall and crown racks (12.0 kW connected, T_C 900.0 node design)",16,80Ni-20Cr (consumable set),26.7,buy,duty section 3 element class; element change-out is the consumable cycle the standby duty exists to cover (A-M-282)
+5,Hearth plate on the lining floor,1,carbon steel,24.9,make,"reheating hearth (study, WORK_ORDER W12)"
+6,"Controls cabinet, 12.0 kW connected (node design), IP54",1,purchased cabinet (envelope),174.9,buy,purchased per plan rule 6; standby unit (A-M-282); SCR package purchased at fabrication (WORK_ORDER W12)
