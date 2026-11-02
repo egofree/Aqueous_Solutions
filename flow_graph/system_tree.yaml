@@ -676,6 +676,43 @@ nodes:
   - id: WTR.grey-black-train.WET_OX
     parent: WTR.grey-black-train
     unit_id: WET_OX
+  - id: WTR.lake-boehmer-train
+    parent: WTR
+    description: >-
+      Lake Boehmer mobile solar ED train (site basis AQS-SITE-015): intake, degasser and
+      polish scrubber, lime/soda softening, two electrodialysis stages, product buffer and
+      the product/brine return outlet, chemical store. Placeholder units; the locale design
+      pass (flow_graph/param/lake_boehmer.py) sizes them at the site.
+  - id: WTR.lake-boehmer-train.LB_INTAKE
+    parent: WTR.lake-boehmer-train
+    unit_id: LB_INTAKE
+  - id: WTR.lake-boehmer-train.LB_DEGAS
+    parent: WTR.lake-boehmer-train
+    unit_id: LB_DEGAS
+  - id: WTR.lake-boehmer-train.LB_DEGAS_SCRUB
+    parent: WTR.lake-boehmer-train
+    unit_id: LB_DEGAS_SCRUB
+  - id: WTR.lake-boehmer-train.LB_SOFTEN
+    parent: WTR.lake-boehmer-train
+    unit_id: LB_SOFTEN
+  - id: WTR.lake-boehmer-train.LB_ED1
+    parent: WTR.lake-boehmer-train
+    unit_id: LB_ED1
+  - id: WTR.lake-boehmer-train.LB_ED2
+    parent: WTR.lake-boehmer-train
+    unit_id: LB_ED2
+  - id: WTR.lake-boehmer-train.LB_PROD_TANK
+    parent: WTR.lake-boehmer-train
+    unit_id: LB_PROD_TANK
+  - id: WTR.lake-boehmer-train.LB_PROD_OUTLET
+    parent: WTR.lake-boehmer-train
+    unit_id: LB_PROD_OUTLET
+  - id: WTR.lake-boehmer-train.LB_BRINE_RETURN
+    parent: WTR.lake-boehmer-train
+    unit_id: LB_BRINE_RETURN
+  - id: WTR.lake-boehmer-train.LB_CHEM_STORE
+    parent: WTR.lake-boehmer-train
+    unit_id: LB_CHEM_STORE
   - id: ELEC
     description: >-
       Utility / header — Sol-Ark / ATS / RECT / MCC hub.

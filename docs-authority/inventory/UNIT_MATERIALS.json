@@ -107,6 +107,15 @@
   "ICE_EXTRACT",
   "IND_MELT",
   "INV_CAST",
+  "LB_BRINE_RETURN",
+  "LB_CHEM_STORE",
+  "LB_DEGAS",
+  "LB_DEGAS_SCRUB",
+  "LB_ED1",
+  "LB_ED2",
+  "LB_INTAKE",
+  "LB_PROD_TANK",
+  "LB_SOFTEN",
   "LEACH_CSTR_1",
   "LIO_BAT",
   "LITHO_ALIGN",
@@ -217,6 +226,6 @@
   "ZNBR2_BR2_REGEN"
  ],
  "open": {},
- "tot_wetted_rows": 396,
- "units": 215
+ "tot_wetted_rows": 411,
+ "units": 224
 }

@@ -12,10 +12,11 @@ GRAPH = json.load(open('flow_graph/plant_flow_graph.json'))
 def test_placements_cover_the_design_pass_locales():
     rows = SU.placements_all()
     sites = {sid for sid, _, _ in rows}
-    assert sites == {'mars', 'leo'}
+    assert sites == {'mars', 'leo', 'lake_boehmer'}
     units = {s: {r for _s, r, _2 in rows if _s == s} for s in sites}
     assert {'RAD_PANEL', 'TANK_BLD', 'REC_HDR', 'CAT_OX', 'E_HEAT'} <= units['mars']
     assert {'LIO_BAT', 'WET_OX', 'HYDRO_GROW', 'MEM_DIST'} <= units['leo']
+    assert {'LIO_BAT'} <= units['lake_boehmer']
 
 
 def test_every_placement_carries_a_basis_or_design_record():

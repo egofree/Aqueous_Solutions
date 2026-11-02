@@ -1,8 +1,8 @@
 # Stream register excerpt — DERIVED from flow_graph
 
 Document number: AQS-STR-001-DERIVED
-Source: AQS-FLOW-GRAPH-001 Rev AC (`plant_flow_graph.json`)
-Graph date: 2026-10-17 (output is a pure function of the graph; no run date, so regen is idempotent)
+Source: AQS-FLOW-GRAPH-001 Rev AD (`plant_flow_graph.json`)
+Graph date: 2026-11-01 (output is a pure function of the graph; no run date, so regen is idempotent)
 Licence: CERN-OHL-S-2.0
 
 **Not** the legacy master while migration is incomplete — compare to `docs-authority/STREAM_REGISTER.md`.
@@ -651,3 +651,19 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-NH3-MET | WS_AMMONIA | MET_SYN | liquid | mass | present | ammonia feed to the Strecker step (trace) | 0 kg/d | — |
 | DL_MET_TO_FEED | MET_SYN | CHICKEN_COOP | liquid | mass | present | DL-methionine crystals: top-dressed supplement at the point of feeding | 0 kg/d | — |
 | SF-MET_SYN | SOL_ARK_60K | MET_SYN | electric | elec | present | heating jacket + stirrer + metering pumps | 0.2 kW | — |
+| LB-FEED | LB_INTAKE | LB_DEGAS | L | mass | placeholder | Lake Boehmer feed brine | — | no_S_id,site_design_stream |
+| LB-DEGAS-OUT | LB_DEGAS | LB_SOFTEN | L | mass | placeholder | degassed brine | — | no_S_id,site_design_stream |
+| LB-DEGAS-VENT | LB_DEGAS | LB_DEGAS_SCRUB | G | mass | placeholder | stripped H2S and CO2 | — | no_S_id,site_design_stream |
+| LB-SCRUB-VENT | LB_DEGAS_SCRUB | ATMOS | G | mass | placeholder | scrubbed stripper vent | — | no_S_id,site_design_stream |
+| LB-SOFTEN-OUT | LB_SOFTEN | LB_ED1 | L | mass | placeholder | softened brine to the primary stage | — | no_S_id,site_design_stream |
+| LB-SOFTEN-SLUDGE | LB_SOFTEN | LB_BRINE_RETURN | S | mass | placeholder | softening sludge (calcium carbonate and precipitated solids) | — | no_S_id,site_design_stream |
+| LB-ED1-DIL | LB_ED1 | LB_ED2 | L | mass | placeholder | dilute at the stage 1 product concentration | — | no_S_id,site_design_stream |
+| LB-ED1-CONC | LB_ED1 | LB_BRINE_RETURN | L | mass | placeholder | stage 1 concentrate | — | no_S_id,site_design_stream |
+| LB-ED2-DIL | LB_ED2 | LB_PROD_TANK | L | mass | placeholder | product dilute at the segment 2311 class | — | no_S_id,site_design_stream |
+| LB-ED2-CONC | LB_ED2 | LB_BRINE_RETURN | L | mass | placeholder | stage 2 concentrate | — | no_S_id,site_design_stream |
+| LB-PROD-RETURN | LB_PROD_TANK | LB_PROD_OUTLET | L | mass | placeholder | product return to the lake diffuser | — | no_S_id,site_design_stream |
+| LB-BRINE-OUT | LB_BRINE_RETURN | LB_PROD_OUTLET | L | mass | placeholder | concentrate return to the lake diffuser | — | no_S_id,site_design_stream |
+| LB-CHEM-DOSE | LB_CHEM_STORE | LB_SOFTEN | L | mass | placeholder | lime and soda ash dose | — | no_S_id,site_design_stream |
+| LB-CHEM-SCRUB | LB_CHEM_STORE | LB_DEGAS_SCRUB | L | mass | placeholder | scrubber caustic make-up | — | no_S_id,site_design_stream |
+| LB-CHEM-CIP1 | LB_CHEM_STORE | LB_ED1 | L | mass | placeholder | clean-in-place acid, primary stage | — | no_S_id,site_design_stream |
+| LB-CHEM-CIP2 | LB_CHEM_STORE | LB_ED2 | L | mass | placeholder | clean-in-place acid, polishing stage | — | no_S_id,site_design_stream |

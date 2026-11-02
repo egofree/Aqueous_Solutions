@@ -53,24 +53,24 @@ Table 4.1. I/O and modules by PLC
 | Sector PLC | AI | AO | DI | DO | Fieldbus drives | Modules AI/AO/DI/DO | CPU | 24 V load W |
 |---|---|---|---|---|---|---|---|---|
 | PLC-CRYO | 34 | 1 | 15 | 5 | 0 | 3/1/2/1 | redundant pair | 38 |
-| PLC-DIGESTER | 132 | 3 | 109 | 32 | 9 | 10/1/9/3 | single | 58 |
+| PLC-DIGESTER | 132 | 3 | 109 | 30 | 11 | 10/1/9/3 | single | 58 |
 | PLC-ELEC | 28 | 1 | 363 | 126 | 53 | 3/1/28/10 | redundant pair | 108 |
 | PLC-FAB | 63 | 0 | 56 | 22 | 0 | 5/0/5/2 | single | 36 |
 | PLC-FARM | 48 | 0 | 3 | 1 | 0 | 4/0/1/1 | redundant pair | 36 |
 | PLC-FOUNDRY | 87 | 0 | 17 | 0 | 5 | 7/0/2/0 | single | 30 |
-| PLC-GAS | 32 | 0 | 22 | 7 | 1 | 3/0/2/1 | redundant pair | 36 |
+| PLC-GAS | 32 | 0 | 24 | 3 | 6 | 3/0/2/1 | redundant pair | 36 |
 | PLC-GEO | 8 | 0 | 2 | 1 | 0 | 1/0/1/1 | redundant pair | 30 |
 | PLC-GLASS | 10 | 0 | 3 | 1 | 0 | 1/0/1/1 | single | 18 |
 | PLC-HAB | 13 | 0 | 1 | 0 | 0 | 1/0/1/0 | redundant pair | 28 |
 | PLC-HEAT | 24 | 0 | 0 | 0 | 0 | 2/0/0/0 | single | 16 |
 | PLC-MEOH | 31 | 0 | 25 | 8 | 3 | 3/0/2/1 | single | 24 |
-| PLC-MFG | 32 | 8 | 42 | 9 | 3 | 3/1/4/1 | single | 30 |
+| PLC-MFG | 32 | 9 | 44 | 7 | 5 | 3/1/4/1 | single | 30 |
 | PLC-NUT | 9 | 0 | 11 | 5 | 0 | 1/0/1/1 | redundant pair | 30 |
 | PLC-OIL | 55 | 0 | 36 | 9 | 4 | 5/0/3/1 | single | 30 |
 | PLC-POLYMERS | 48 | 0 | 20 | 4 | 3 | 4/0/2/1 | single | 26 |
 | PLC-PUMPED_HYDRO | 2 | 0 | 2 | 1 | 0 | 1/0/1/1 | redundant pair | 30 |
-| PLC-WTR | 61 | 0 | 45 | 18 | 1 | 5/0/4/2 | redundant pair | 46 |
-| Total | 717 | 13 | 772 | 249 | 82 | 163 modules | 9 redundant of 18 | 650 |
+| PLC-WTR | 70 | 0 | 49 | 18 | 3 | 6/0/4/2 | redundant pair | 48 |
+| Total | 726 | 14 | 780 | 241 | 93 | 164 modules | 9 redundant of 18 | 652 |
 
 The control system draws about 0.65 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
 

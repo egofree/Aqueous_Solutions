@@ -15,20 +15,23 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 
 | Phase | Scope | Items | Closes with |
 | --- | --- | --- | --- |
-| T1 | Owner and site data | 48 | Owner decision or site investigation report |
+| T1 | Owner and site data | 52 | Owner decision or site investigation report |
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
-| T3 | Bench and laboratory tests | 60 | Bench test report with method, data and result |
+| T3 | Bench and laboratory tests | 69 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 488 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 503 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 37 | Commissioning record |
 
-Total 687 items: 305 drivers, 382 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 715 items: 321 drivers, 394 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
 | Item | Value | Test | Task |
 | --- | --- | --- | --- |
 | driver ELEC.distribution-train.gnd_soil_rho_ohm_m | 50.0 ohm m soil resistivity | Wenner four-electrode soil resistivity survey at the site | X-PAR |
+| driver WTR.lake-boehmer.battery_contingency_days | 1 contingency days of full-load energy added to the night store (one overcast-day class; the 2021-02 Winter Storm Uri trim is the analog) | hourly PV production run at the parcel replaces the contingency-day allowance; sensitivity medium | X-PAR |
+| driver WTR.lake-boehmer.pv_winter_yield_kWh_kWp_d | 3.5 kWh/kWp/d before losses, winter trough design value | NSRDB/PVWatts hourly run at the parcel replaces the trough class | X-PAR |
+| driver WTR.lake-boehmer.utility_containers | {"intake_degasser": 1, "degas_scrubber": 1, "softening": 3, "chemical_store": 2, "power_conversion": 3, "controls": 1, "product_buffer": 2, "brine_return": 1} ISO 1CC containers per service (layout concept: one function per container; softening takes the reactor, the clarifier and the sludge set; power conversion takes the PV inverters, the ED rectifier rooms and the battery converters) | layout study at the locale design pass; the counts re-derive from the module and utility counts | X-PAR |
 | driver crit_autonomy_d | 2.0 d of critical-load autonomy without sun | Owner outage-basis decision: NFPA 110/111 class vs the PV cloudy-day statistics of the site (AQS-SITE-002 NSRDB run) | X-PAR |
 | driver ext_hvac | "air" 'air', 'ground' or 'best' (lower converged footprint) | Owner review of the X-PAR-08 comparison | X-PAR |
 | driver gw_depth_m | 0.0 m below grade, groundwater (worst case at grade until measured) | Piezometer readings at the parcel through a wet season | X-PAR |
@@ -76,6 +79,7 @@ Total 687 items: 305 drivers, 382 register entries. Classification rule: first m
 | A-M-114 | Collection at 480 V in sections with breakers <= 1000 A (NEC A, kVA, kV | Utility service voltage; short-circuit and coordination study with the utility source | X-ELS-11 |
 | A-M-115 | Hall classed general industrial ordinary hazard, sprinklered m, m2/person | Owner hall programme (contents hazard class); AHJ pre-application meeting; egress plan on the fit-out model | X-STD-01 |
 | A-M-268 | backup_gen_rated_kW 40.0 / crit_autonomy_d 2.0 (drivers.json kW / d | Critical-load list confirmation at unit task 02 completion; acceptance load test per NFPA 110 8.4.9 at 4 h; owner outage-basis decision vs AQS-SITE-002 NSRDB run | X-PAR |
+| A-M-443 | battery contingency allowance one day of full-load energy ad days of full-load energy | hourly PV production run at the parcel replaces the allowance | X-LOC-05 (lake_boehmer locale design pass) |
 
 ## 3. T2 In-house design tests and standard data
 
@@ -123,6 +127,11 @@ Total 687 items: 305 drivers, 382 register entries. Classification rule: first m
 | driver HDR.headers-train.hdr_rho_ncg | 0.5 kg/m3 pyrolysis NCG at 150-200 C | NCG composition from the pyrolysis assay at the OIL_FRAC unit task | X-PAR |
 | driver MEOH.synthesis-train.MEOH_FC.cell_V | 0.6 V per cell at the design point | Stack polarisation set at the first article | X-PAR |
 | driver MEOH.synthesis-train.MEOH_FC.j_A_cm2 | 0.3 A/cm2 current density at the design point | Stack polarisation set at the first article | X-PAR |
+| driver WTR.lake-boehmer.degasser_air_water_ratio_vol | 60 m3 air per m3 water through the packed degasser (packing practice class for moderately soluble gases) | tower transfer-units design at the locale design pass; the dissolved-sulfide assay does not exist yet and the ratio re-sizes on it | X-PAR |
+| driver WTR.lake-boehmer.ed_recovery | 0.5 - fraction of the feed drawn as dilute (product) flow | concentrate gypsum saturation check (at most 2 x Ksp with prior lime/soda softening) on the assayed feed at the locale design pass; sensitivity high | X-PAR |
+| driver WTR.lake-boehmer.feed_h2s_ppm | 110 ppm hydrogen sulfide at the wellhead (design value, worst reported case) | the MPGCD laboratory read far higher; the degasser and scrubber re-size at the locale design pass on the sealed assay | X-PAR |
+| driver WTR.lake-boehmer.feed_so4_mg_L | 7500 mg/L sulfate in the feed brine (about 25 x the TCEQ secondary maximum contaminant level of 300 mg/L) | sealed MPGCD laboratory report on the wellhead brine; the reported Railroad Commission sampling figure is replaced by the laboratory assay | X-PAR |
+| driver WTR.lake-boehmer.feed_tds_g_L | 105 g/L total dissolved solids in the feed brine (derived estimate: the lake is about three times saltier than the ocean) | sealed MPGCD laboratory report on the Sloan Blair No. 1 wellhead brine; the full ionic assay replaces the derived estimate at the locale design pass | X-PAR |
 | driver acid_conc_design_wt | 0.2 mass fraction HCl on IA-ACID-01 | Bench leach of class A feed at 20 wt% HCl, 90-108 C (CARLETON_HCL_2023 basis is 38 %); ICP-OES extraction vs time | X-PAR |
 | driver base_conc_design_wt | 0.2 mass fraction NaOH on IA-BASE-01 and IA-BASE-PPT | Bench hydroxide precipitation of class A leach liquor with 20 wt% NaOH; glass digest at 20 wt% | X-PAR |
 | driver bmed_cell_area_m2 | 0.04 m2 active area per membrane (200 x 200 mm) | stack polarisation test on the first-article stack | X-PAR |
@@ -179,6 +188,10 @@ Total 687 items: 305 drivers, 382 register entries. Classification rule: first m
 | A-M-312 | PEM cell design point 0.6 V at 0.3 A/cm2 (IEC62282-3-100 mod V per cell; A/cm2 at the design point | Stack polarisation set at the first article | reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where) |
 | A-M-406 | sublimation or drill-and-melt extraction - | In-situ ice assay and extraction trial at the landing site | X-LOC-09 |
 | A-M-408 | dust filter and compressor to process pressure - | In-situ atmospheric assay and compressor endurance test | X-LOC-09 |
+| A-M-436 | hydrogen sulfide design value 110 ppm at the wellhead (worst ppm H2S at the wellhead | sealed MPGCD assay; the degasser and scrubber re-size on the dissolved-sulfide figure | X-LOC-05 (lake_boehmer locale design pass) |
+| A-M-437 | electrodialysis recovery 0.50 of the feed as dilute (product fraction of feed | gypsum saturation check on the assayed feed at the locale design pass | X-LOC-05 (lake_boehmer locale design pass) |
+| A-M-447 | feed calcium unmeasured; the concentrate gypsum saturation a stated gap and governing limit | the assayed feed calcium and the gypsum saturation calculation set the recovery | X-LOC-05 (lake_boehmer locale design pass) |
+| A-M-450 | degasser basis: Henry coefficients H2S 0.00087 and CO2 0.000 mol/(m3 Pa); vol/vol; fraction | tower transfer-units design at the locale design pass on the assayed sulfide and its pH speciation; caustic chemical stripping is the fallback | X-LOC-05 (lake_boehmer locale design pass) |
 
 ## 5. T4 Pilot runs
 
@@ -246,6 +259,14 @@ Total 687 items: 305 drivers, 382 register entries. Classification rule: first m
 | driver HULL.pontoon.lightweight_t | 6500.0 t (steel and outfitting) | Structural design (X-LOC-11 hull structure) | X-PAR |
 | driver POLYMERS.fluoropolymer-train.hf_kiln.residence_min | 30.0 min | kiln exit HF strength vs residence at the first-article campaign | X-PAR |
 | driver WTR.grey-black-train.san_air_T_C | 20.0 C reference air temperature for the NOX_SCRUB superficial | Compare with the HVAC design room and line temperatures | X-PAR |
+| driver WTR.lake-boehmer.aux_degasser_kWh_m3 | 1.2 kWh/m3 of feed: air-stripper blower at the packing air-to-water ratio | pump and mixer schedule at the locale design pass (unit task 02) | X-PAR |
+| driver WTR.lake-boehmer.aux_dosing_cip_kWh_m3 | 0.5 kWh/m3 of feed: chemical dosing and clean-in-place pumps | pump and mixer schedule at the locale design pass (unit task 02) | X-PAR |
+| driver WTR.lake-boehmer.aux_intake_kWh_m3 | 0.8 kWh/m3 of feed: intake lift and screening pumps | pump and mixer schedule at the locale design pass (unit task 02) | X-PAR |
+| driver WTR.lake-boehmer.aux_softening_kWh_m3 | 1.5 kWh/m3 of feed: lime/soda reactor agitator and clarifier rake | pump and mixer schedule at the locale design pass (unit task 02) | X-PAR |
+| driver WTR.lake-boehmer.bess_container_kWh | 4000 kWh usable store per ISO 1CC battery container (standard 20-ft battery-energy-storage container class) | vendor shortlist at procurement; the container count scales one to one with the store | X-PAR |
+| driver WTR.lake-boehmer.degasser_h2s_removal_frac | 0.95 - design removal fraction of strippable sulfide across the packed degasser (tower design pass pending) | packed-tower design at the locale design pass; chemical (caustic) stripping is the fallback if the tower cannot meet the vent target | X-PAR |
+| driver WTR.lake-boehmer.henry_co2_mol_m3_pa | 0.00034 mol/(m3 Pa) Henry coefficient of CO2 in water at 25 C | coefficients re-checked at the design temperature at the locale design pass | X-PAR |
+| driver WTR.lake-boehmer.henry_h2s_mol_m3_pa | 0.00087 mol/(m3 Pa) Henry coefficient of H2S in water at 25 C (about 0.088 mol per m3 at one atmosphere; solubility class) | coefficients re-checked at the design temperature, with the pH-dependent sulfide speciation, at the locale design pass | X-PAR |
 | driver ash_cop_c | 3.22 air-source heat pump cooling COP (EER 11.0), >= 19 kW | Selected unit rating | X-PAR |
 | driver ash_cop_h | 3.3 air-source heat pump heating COP at 8.3 C, >= 19 kW | Selected unit rating; low-ambient derate in bin-hour run | X-PAR |
 | driver atm_design_sg | 1.25 - liquid specific gravity for the hydrostatic case of atmospheric vessels (covers 20 wt% HCl 1.10 and 20 wt% NaOH 1.22) | Replace with the stored liquid density per unit at its unit sizing task | X-PAR |
@@ -698,6 +719,13 @@ Total 687 items: 305 drivers, 382 register entries. Classification rule: first m
 | A-M-430 | mineral nitrate solution 6.5 kg/d (raceway 5.5 + media beds  kg/d (mineral solution, not feed) | Raceway N-uptake measurement at the X-FARM-04 trial | X-FARM-04 |
 | A-M-431 | commodity price table of the AQS-PRO-003 estimate (Cu 9.26,  $/kg (2024 US published averages) | verify each transcribed figure against its source table at the first X-PRO-03 QC pass (USGS_MCS_2025 PDF; TOWLER_SINNOTT ch.7) | X-PRO-03 |
 | A-M-432 | fabrication factors of the AQS-PRO-003 estimate: plate and w dimensionless multiplier on material cost | verify each transcribed figure against its source table at the first X-PRO-03 QC pass (USGS_MCS_2025 PDF; TOWLER_SINNOTT ch.7) | X-PRO-03 |
+| A-M-434 | feed TDS 105 g/L (derived estimate: the lake is about three  g/L total dissolved solids | sealed MPGCD laboratory report on the Sloan Blair No. 1 wellhead brine replaces the derived estimate | X-LOC-05 (lake_boehmer locale design pass) |
+| A-M-435 | feed sulfate about 7,500 mg/L (about 25 x the TCEQ secondary mg/L sulfate | sealed MPGCD laboratory report on the wellhead brine | X-LOC-05 (lake_boehmer locale design pass) |
+| A-M-442 | auxiliary loads 4.0 kWh/m3 of feed total (intake 0.8, degass kWh/m3 of feed | pump and mixer schedule at the locale design pass (unit task 02) | X-LOC-05 (lake_boehmer locale design pass) |
+| A-M-444 | ISO 1CC 20-ft container envelope 6058 x 2438 x 2591 mm exter mm external L x W x H; modules per container | layout study at the locale design pass | X-LOC-05 (lake_boehmer locale design pass) |
+| A-M-445 | utility container counts: intake/degasser 1, degas scrubber  ISO 1CC containers per service | layout study at the locale design pass | X-LOC-05 (lake_boehmer locale design pass) |
+| A-M-446 | battery store 4,000 kWh usable per ISO 1CC battery container kWh usable per container | vendor shortlist at procurement; the count scales one to one | X-LOC-05 (lake_boehmer locale design pass) |
+| A-M-448 | product water quality basis: TCEQ 30 TAC 307 segment 2311 cr mg/L annual average | re-verify the segment sheet and the applicability to lake-restoration return at the locale design pass | X-LOC-05 (lake_boehmer locale design pass) |
 
 ## 7. T6 Commissioning measurements
 

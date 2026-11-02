@@ -1,4 +1,4 @@
-Graph Rev AC. Closure is the cut around each Tarjan component.
+Graph Rev AD. Closure is the cut around each Tarjan component.
 A component passes when every unit balances and the cut balances, per rate unit, within 1%.
 Pass is on the present edges in this file. It is not on-site evidence.
 This result is not the MVS flag. mvs.mvs_criteria.loops_closed is not set here.

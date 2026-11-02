@@ -1,8 +1,8 @@
 # Mass-flow claim excerpt — DERIVED from flow_graph
 
 Document number: AQS-MF-001-DERIVED
-Source: AQS-FLOW-GRAPH-001 Rev AC (`plant_flow_graph.json`)
-Graph date: 2026-10-17 (output is a pure function of the graph; no run date, so regen is idempotent)
+Source: AQS-FLOW-GRAPH-001 Rev AD (`plant_flow_graph.json`)
+Graph date: 2026-11-01 (output is a pure function of the graph; no run date, so regen is idempotent)
 Licence: CERN-OHL-S-2.0
 
 **Not** the legacy master while migration is incomplete — compare to `docs-authority/MASS_FLOW.md`.
@@ -90,3 +90,19 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S89 | HDR_CO2→GROW_BED | Closed | present | 0.882362 kg/d | Only consumer of HDR_CO2. CO2 only: no tee to HDR_O2, hab air, the HAB return or the dock. Farm AHU is not the HAB AHU. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged |
 | S90 | HABITATION→HDR_CO2 | Closed | present | 4.021 kg/d | Rev L. CO2 only, from the sealed-hab sorbent (S02 supplies the O2). Joins S85 on HDR_CO2; S89 carries both to the farm AHU dose. No tee to hab air or the dock. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged |
 | S14D | FOOD_STORE→HABITATION | Closed | present | 4.2 kg/d | — |
+| LB-FEED | LB_INTAKE→LB_DEGAS | — | placeholder | — | Feed assay is a derived estimate (A-M-434/A-M-435); hydrogen sulfide design value 110 ppm at the wellhead (A-M-436); the sealed MPGCD laboratory report replaces all three. |
+| LB-DEGAS-OUT | LB_DEGAS→LB_SOFTEN | — | placeholder | — | site design stream (X-LOC-05) |
+| LB-DEGAS-VENT | LB_DEGAS→LB_DEGAS_SCRUB | — | placeholder | — | site design stream (X-LOC-05); load waits on the dissolved-sulfide assay (A-M-450) |
+| LB-SCRUB-VENT | LB_DEGAS_SCRUB→ATMOS | — | placeholder | — | site design stream (X-LOC-05); lethal-site controls at the vent (A-M-436) |
+| LB-SOFTEN-OUT | LB_SOFTEN→LB_ED1 | — | placeholder | — | site design stream (X-LOC-05) |
+| LB-SOFTEN-SLUDGE | LB_SOFTEN→LB_BRINE_RETURN | — | placeholder | — | site design stream (X-LOC-05); the sludge is one of the two streams that leave the lake system (Q-037) |
+| LB-ED1-DIL | LB_ED1→LB_ED2 | — | placeholder | — | site design stream (X-LOC-05) |
+| LB-ED1-CONC | LB_ED1→LB_BRINE_RETURN | — | placeholder | — | site design stream (X-LOC-05) |
+| LB-ED2-DIL | LB_ED2→LB_PROD_TANK | — | placeholder | — | site design stream (X-LOC-05) |
+| LB-ED2-CONC | LB_ED2→LB_BRINE_RETURN | — | placeholder | — | site design stream (X-LOC-05) |
+| LB-PROD-RETURN | LB_PROD_TANK→LB_PROD_OUTLET | — | placeholder | — | open boundary to the lake (Q-037); net salt removal through this edge is zero while the concentrate returns with it |
+| LB-BRINE-OUT | LB_BRINE_RETURN→LB_PROD_OUTLET | — | placeholder | — | open boundary to the lake (Q-037); carries the removed salt back to the lake, so net lake salt removal is about zero |
+| LB-CHEM-DOSE | LB_CHEM_STORE→LB_SOFTEN | — | placeholder | — | site design stream (X-LOC-05); dose waits on the assayed feed calcium (A-M-447) |
+| LB-CHEM-SCRUB | LB_CHEM_STORE→LB_DEGAS_SCRUB | — | placeholder | — | site design stream (X-LOC-05) |
+| LB-CHEM-CIP1 | LB_CHEM_STORE→LB_ED1 | — | placeholder | — | site design stream (X-LOC-05) |
+| LB-CHEM-CIP2 | LB_CHEM_STORE→LB_ED2 | — | placeholder | — | site design stream (X-LOC-05) |

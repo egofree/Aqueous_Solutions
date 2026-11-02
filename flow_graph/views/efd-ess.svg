@@ -10,7 +10,7 @@
 <title>G</title>
 <polygon fill="white" stroke="transparent" points="-21.6,21.6 -21.6,-416.6 1589.6,-416.6 1589.6,21.6 -21.6,21.6"/>
 <text text-anchor="middle" x="784" y="-382.2" font-family="Helvetica,sans-Serif" font-size="11.00">EFD ESS charge/discharge layer</text>
-<text text-anchor="middle" x="784" y="-370.2" font-family="Helvetica,sans-Serif" font-size="11.00">VIEW&#45;EFD&#45;ESS &#160;· &#160;AQS&#45;FLOW&#45;GRAPH&#45;001 rev AC</text>
+<text text-anchor="middle" x="784" y="-370.2" font-family="Helvetica,sans-Serif" font-size="11.00">VIEW&#45;EFD&#45;ESS &#160;· &#160;AQS&#45;FLOW&#45;GRAPH&#45;001 rev AD</text>
 <g id="clust1" class="cluster">
 <title>cluster_DOCK</title>
 <path fill="none" stroke="#94a3b8" d="M1296,-190C1296,-190 1548,-190 1548,-190 1554,-190 1560,-196 1560,-202 1560,-202 1560,-250 1560,-250 1560,-256 1554,-262 1548,-262 1548,-262 1296,-262 1296,-262 1290,-262 1284,-256 1284,-250 1284,-250 1284,-202 1284,-202 1284,-196 1290,-190 1296,-190"/>
@@ -191,5 +191,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="1392.8" y="378.2" width="216.0" height="57.6" fill="white" stroke="black" stroke-width="0.60"/><text x="1396.4" y="387.8" font-family="sans-serif" font-size="5.4">Aqueous Solutions (owner)   AQS-DWG-PFD-EFD-ESS</text><text x="1396.4" y="398.0" font-family="sans-serif" font-size="5.4">Energy storage flow diagram</text><text x="1396.4" y="408.2" font-family="sans-serif" font-size="5.4">Type: flow diagram (ISO_10628_2)   Rev 2b528040   Issued 2026-10-15</text><text x="1396.4" y="418.4" font-family="sans-serif" font-size="5.4">Created: flow graph pipeline   Approved: not approved (study)</text><text x="1396.4" y="428.6" font-family="sans-serif" font-size="5.4">Graph SHA-256 e836ad693092c406   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="1392.8" y="378.2" width="216.0" height="57.6" fill="white" stroke="black" stroke-width="0.60"/><text x="1396.4" y="387.8" font-family="sans-serif" font-size="5.4">Aqueous Solutions (owner)   AQS-DWG-PFD-EFD-ESS</text><text x="1396.4" y="398.0" font-family="sans-serif" font-size="5.4">Energy storage flow diagram</text><text x="1396.4" y="408.2" font-family="sans-serif" font-size="5.4">Type: flow diagram (ISO_10628_2)   Rev a31ce87a   Issued 2026-10-15</text><text x="1396.4" y="418.4" font-family="sans-serif" font-size="5.4">Created: flow graph pipeline   Approved: not approved (study)</text><text x="1396.4" y="428.6" font-family="sans-serif" font-size="5.4">Graph SHA-256 b3ee606fa8e5f689   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

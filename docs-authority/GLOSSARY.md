@@ -1,13 +1,14 @@
 # Glossary
 
 Document number: AQS-GLO-001  
-Revision: B  
-Date: 2026-10-25  
+Revision: C  
+Date: 2026-11-01  
 
 | Rev | Description | Date |
 |---|---|---|
 | A | First issue | — |
 | B | Purpose statement added; the withdrawn document-line scan removed from the A-M entry; style findings cleared | 2026-10-25 |
+| C | Entries added for the Lake Boehmer site vocabulary (TWDB, RRC, MPGCD, GHI, NWS, SEC, SMCL, TSWQS) | 2026-11-01 |
 
 
 ## 1. Purpose and scope
@@ -1176,6 +1177,14 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {SRT -- Solids retention time: the mean time solids stay in a digester or reactor.}
 
 {TDS -- Total dissolved solids.}
+{TWDB -- Texas Water Development Board, the state water agency; its Technical Note 21-01 carries the reservoir evaporation rates (Lake Boehmer site basis).}
+{RRC -- Railroad Commission of Texas, the oil and gas regulator of the abandoned Sloan Blair No. 1 well that feeds Lake Boehmer.}
+{MPGCD -- Middle Pecos Groundwater Conservation District, whose sealed laboratory report on the Lake Boehmer wellhead brine is the pending verification of every derived feed value.}
+{GHI -- Global horizontal irradiance, the solar-resource measure behind the PV yield driver.}
+{NWS -- National Weather Service, source of the Fort Stockton-Pecos County Airport climate normals and records.}
+{SEC -- Specific energy consumption, kilowatt-hours per cubic metre of dilute flow; the electrodialysis sizing transfer function.}
+{SMCL -- Secondary maximum contaminant level, the aesthetic drinking-water standard the TCEQ applies to sulfate and chloride.}
+{TSWQS -- Texas Surface Water Quality Standards (30 TAC Chapter 307), the segment criteria the Lake Boehmer product water is held to.}
 
 {TFFN -- A fixture wire type of NFPA 70: thermoplastic insulation with a nylon jacket.}
 

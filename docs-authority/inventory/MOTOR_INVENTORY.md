@@ -28,14 +28,14 @@ Table 1.1. Motor families
 
 | Family | Motor type | Size | Voltage | Count | Units | Installed shaft kW |
 | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 24 | 20 | 0.13 |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 35 | 25 | 0.16 |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 55 | 5 | 2.66 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 2 | 2 | 0.56 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 3 | 3 | 2.43 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 232 | 63 | 27.84 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 224 | 60 | 26.88 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 8 | 7 | 2.96 |
-| MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 4 | 4 | 6.04 |
+| MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 5 | 5 | 7.42 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 2 | 2 | 0.17 |
 | MF-13 | induction IE3 | IEC 71 / 0.25 kW | 208 V 3-ph | 2 | 2 | 0.36 |
 | MF-14 | induction IE3 | IEC 132M / 7.5 kW | 480 V 3-ph | 3 | 2 | 16.09 |
@@ -76,8 +76,8 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | DIGESTER_EXT | EVAP_ACID_VS | Sump recirculation pump, magnetic drive, about 0.35 m3/h at  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | DIGESTER_EXT | EVAP_BASE | Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf | induction IE3 | IEC 90L / 1.5 kW | 1.189 | 480 V 3-ph | S1 | fixed speed | 1 | BOM (sized) |
 | DIGESTER_EXT | EVAP_BASE | Recirculation pump 282.7 kg/h at 4 m | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| DIGESTER_EXT | FLOAT_SINK | Motor: transfer pump IA-PLAST-01 to OIL_DRYER (BLDC, 42 mm ( | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| DIGESTER_EXT | FLOAT_SINK | Motor: transfer pump IA-WET-FLOAT-01 to LEACH_CSTR_1 (BLDC,  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| DIGESTER_EXT | FLOAT_SINK | transfer pump IA-PLAST-01 to OIL_DRYER | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 33.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| DIGESTER_EXT | FLOAT_SINK | transfer pump IA-WET-FLOAT-01 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.001 | 24 V DC | S3 | BLDC driver | 1 | 343.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | DIGESTER_EXT | F_RECOVER | Body / envelope 800 x 600 x 1200 mm | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | DIGESTER_EXT | F_RECOVER | Motor: transfer pump F_RECOVER_TO_HF_GEN to HF_GEN (BLDC, 42 | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | DIGESTER_EXT | F_RECOVER | Process nozzle DN15 | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 3 | BOM; shaft assumed (A-M-119) |
@@ -174,10 +174,11 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | GAS_SCRUB | ALK_SCRUBBER | induced-draft fan | induction IE3 | IEC 90S / 1.1 kW | 0.7236 | 480 V 3-ph | S1 | fixed speed | 1 | 37509.9 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | GAS_SCRUB | BAGHOUSE | Motor: transfer pump IA-BAG-01 to LEACH_CSTR_1 (BLDC, 42 mm  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | GAS_SCRUB | H2_DRYER | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 2.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
-| scrubber | NOX_SCRUB | Motor: transfer pump IA-NOX-CO2 to CRYO_ASU (BLDC, 42 mm (NE | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| scrubber | NOX_SCRUB | Motor: transfer pump IA-NOX-H2O to ROOF_TANK (BLDC, 42 mm (N | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| scrubber | NOX_SCRUB | Motor: transfer pump IA-NOX-N to NUTRIENT_DOSE (BLDC, 42 mm  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| scrubber | NOX_SCRUB | Motor: transfer pump IA-NOX-N2 to CRYO_ASU (BLDC, 42 mm (NEM | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| scrubber | NOX_SCRUB | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
+| scrubber | NOX_SCRUB | transfer pump IA-NOX-CO2 to CRYO_ASU | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 21.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| scrubber | NOX_SCRUB | transfer pump IA-NOX-H2O to ROOF_TANK | BLDC | 42 mm (NEMA 17 flange) | 0.0006 | 24 V DC | S3 | BLDC driver | 1 | 221.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| scrubber | NOX_SCRUB | transfer pump IA-NOX-N to NUTRIENT_DOSE | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 20.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| scrubber | NOX_SCRUB | transfer pump IA-NOX-N2 to CRYO_ASU | BLDC | 42 mm (NEMA 17 flange) | 0.0006 | 24 V DC | S3 | BLDC driver | 1 | 196.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 
 ### GEO
 
@@ -227,8 +228,9 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | MFG | MFG_SHOP | drill press spindle | induction IE3 | IEC 80 / 0.75 kW | 0.55 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS; assumed |
 | MFG | WIRE_DRAW | Bull-block wire drawer: main drive | induction IE3 | IEC 90S / 1.1 kW | 0.9565 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS nameplate |
 | ahu | MET_AHU | induced-draft fan | induction IE3 | IEC 100L / 2.2 kW | 1.3813 | 480 V 3-ph | S1 | fixed speed | 1 | 71604.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
-| scrubber | MET_SCRUB | Motor: transfer pump S72 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| scrubber | MET_SCRUB | Motor: transfer pump S72B to OIL_FRAC (BLDC, 42 mm (NEMA 17  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| scrubber | MET_SCRUB | induced-draft fan | induction IE3 | IEC 100L / 2.2 kW | 1.3813 | 480 V 3-ph | S1 | fixed speed | 1 | 71604.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
+| scrubber | MET_SCRUB | transfer pump S72 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 2.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| scrubber | MET_SCRUB | transfer pump S72B to OIL_FRAC | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 
 ### NUT
 
@@ -297,5 +299,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | evaporator | VCD_TRAIN | Motor: transfer pump S28 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | intake | GW_INTAKE | Body / envelope 900 x 700 x 1800 mm | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | intake | GW_INTAKE | Process nozzle DN15 | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| scrubber | LB_DEGAS | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
+| scrubber | LB_DEGAS_SCRUB | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | treat | GREY_TREAT | Motor: transfer pump IA-GREY-01 to LEACH_CSTR_1 (BLDC, 42 mm | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | treat | GREY_TREAT | Motor: transfer pump S29 to VCD_TRAIN (BLDC, 42 mm (NEMA 17  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |

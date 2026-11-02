@@ -57,6 +57,14 @@ def capabilities(prof):
     return {k for k, e in grp['entries'].items() if e['value'] is True}
 
 
+def crew_zero_ruling(prof, a):
+    """True when a crew of zero admits a life-support elimination with the ruling recorded on
+    the action (Q-036): no crew, no life-support demand to keep. An energy unit at the same
+    locale keeps its guard - the plant's own demand does not leave with the crew."""
+    ent = (prof.get('groups', {}).get('identity', {}).get('entries', {}) or {}).get('crew')
+    return bool(ent) and ent.get('value') == 0 and bool(str(a.get('ruling', '')).strip())
+
+
 def consistency(prof, have):
     """A capability may not claim more than the profile's physical values allow."""
     err = []; g = prof['groups']; at = g['atmosphere']['entries']
@@ -108,7 +116,8 @@ def resolve(prof, units=None, nt=None):
             if rep not in units: err.append(f'{k}: replacement {rep!r} is not a unit in the graph'); rep = None
         if act == 'replace' and rep is None and not any(f'{k}: replacement' in e for e in err):
             err.append(f'{k}: replace needs a replacement unit')
-        if act == 'eliminate' and rep is None and not a.get('import_path'):
+        crew0 = crew_zero_ruling(prof, a)
+        if act == 'eliminate' and rep is None and not a.get('import_path') and not crew0:
             err.append(f'{k}: eliminate needs an import path or a replacement')
         for u in ts:
             if u not in plan: continue
@@ -125,8 +134,10 @@ def resolve(prof, units=None, nt=None):
                         err.append(f'{k}: {rep} is the same technology ({units[u].get("class")}) as {u}; use duplicate or size')
                     if function(rep, units[rep], nt) != fn:
                         err.append(f'{k}: {rep} ({function(rep, units[rep], nt)}) does not perform the {fn} function of {u}')
-                if act == 'eliminate' and fn in GUARDED and rep is None:
+                if act == 'eliminate' and fn in GUARDED and rep is None and not (fn == 'life_support' and crew0):
                     err.append(f'{k}: {u} is a {fn.replace("_", "-")} unit; eliminating it needs a replacement of a different technology, an import path alone does not keep the function')
+                if act == 'eliminate' and rep is None and not a.get('import_path') and crew0 and fn != 'life_support':
+                    err.append(f'{k}: {u} is not a life-support unit; the crew-0 ruling waives nothing for it')
     for u, p in plan.items():
         if p['status'] != 'kept': continue
         miss = [n for n in unit_needs(u, units[u], nt) if n not in have]

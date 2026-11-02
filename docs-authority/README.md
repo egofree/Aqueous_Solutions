@@ -87,6 +87,7 @@ The documents that explain how the design is organised and where its numbers com
 | [SITE_BASIS_ANTARCTIC.md](SITE_BASIS_ANTARCTIC.md) | AQS-SITE-008 | Antarctic site basis - cold-climate environment, scaling actions, closure status |
 | [SITE_BASIS_LEO.md](SITE_BASIS_LEO.md) | AQS-SITE-010 | LEO site basis - microgravity environment, scaling findings, design gap |
 | [SITE_BASIS_MARS.md](SITE_BASIS_MARS.md) | AQS-SITE-009 | Mars site basis - CO2 atmosphere, ground-ice water, pressurised shells, partial gravity |
+| [SITE_BASIS_LAKE_BOEHMER.md](SITE_BASIS_LAKE_BOEHMER.md) | AQS-SITE-015 | Lake Boehmer site basis - salt-lake feed and its gaps, the mobile solar electrodialysis train, the honest salt balance, power, storage and containers |
 | [SITE_POWER.md](SITE_POWER.md) | AQS-SITE-005 | Site power portfolio and redundancy of energy and life-support functions (generated) |
 | [SITE_SCALING.md](SITE_SCALING.md) | AQS-SITE-004 | Site scaling: capabilities, scaling actions and unit needs for the selected site (generated) |
 | [SITE_COMPARISON.md](SITE_COMPARISON.md) | AQS-SITE-011 |

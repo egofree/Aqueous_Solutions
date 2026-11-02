@@ -460,6 +460,26 @@
    "category": "fastener",
    "item": "M10 wedge anchor",
    "spec": "ISO 898-1 8.8"
+  },
+  "OF-93": {
+   "category": "fastener",
+   "item": "M10 wedge anchor",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-94": {
+   "category": "fastener",
+   "item": "M12 bolt + nut; PP-flanged joint",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-95": {
+   "category": "fastener",
+   "item": "M12 PVDF bolt + nut",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-96": {
+   "category": "fastener",
+   "item": "M12 A4-70 bolt + nut",
+   "spec": "ISO 3506 A4-70"
   }
  }
 }

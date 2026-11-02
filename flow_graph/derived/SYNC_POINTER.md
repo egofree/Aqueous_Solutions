@@ -1,7 +1,7 @@
 # Derived STREAM / MASS sync pointer — WP-Ap3
 
-Source graph: AQS-FLOW-GRAPH-001 Rev AC (`plant_flow_graph.json`)
-Graph date: 2026-10-17 (output is a pure function of the graph; no run date, so regen is idempotent)
+Source graph: AQS-FLOW-GRAPH-001 Rev AD (`plant_flow_graph.json`)
+Graph date: 2026-11-01 (output is a pure function of the graph; no run date, so regen is idempotent)
 Licence: CERN-OHL-S-2.0
 
 ## Generated (this directory)

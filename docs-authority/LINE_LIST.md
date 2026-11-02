@@ -11,11 +11,11 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-641 edges: 396 piped, 124 solids transfers, 121 electrical. Piped edges without a length (unit position missing): 0.
+657 edges: 411 piped, 125 solids transfers, 121 electrical. Piped edges without a length (unit position missing): 15.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-Units with no position anywhere in the repo (no duty origin, no placement row): 0: . Their lines carry DN and class; length and route wait for X-BLD placement.
+Units with no position anywhere in the repo (no duty origin, no placement row): 10: LB_BRINE_RETURN, LB_CHEM_STORE, LB_DEGAS, LB_DEGAS_SCRUB, LB_ED1, LB_ED2, LB_INTAKE, LB_PROD_OUTLET, LB_PROD_TANK, LB_SOFTEN. Their lines carry DN and class; length and route wait for X-BLD placement.
 
 | C29_RECYCLE | PROD_C29 | C29_RECYCLE | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 2.4 | PROD_C29 → C29_RECYCLE, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | C29_TO_PYRO | C29_RECYCLE | OIL_PYRO | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 6.8 | C29_RECYCLE → OIL_PYRO, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -658,3 +658,19 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-NH3-MET | WS_AMMONIA | MET_SYN | DN15 | P1 | acid or brine, at or below 60 C | 9.9 | WS_AMMONIA → MET_SYN, orthogonal × 1.2 (duty origin; placement_seed + GA move) | velocity 1 m/s, ρ 1000; min DN15 |
 | DL_MET_TO_FEED | MET_SYN | CHICKEN_COOP | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 13.4 | MET_SYN → CHICKEN_COOP, orthogonal × 1.2 (placement_seed + GA move; placement_seed + GA move) | velocity 1 m/s, ρ 1000; min DN15 |
 | SF-MET_SYN | SOL_ARK_60K | MET_SYN | cable | — | — | 28.9 | SOL_ARK_60K → MET_SYN, orthogonal × 1.2 (duty origin; placement_seed + GA move) | electrical: cable schedule X-ELS-06 |
+| LB-FEED | LB_INTAKE | LB_DEGAS | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_INTAKE → LB_DEGAS, position missing for LB_INTAKE, LB_DEGAS | velocity 1 m/s, ρ 1000; min DN15 |
+| LB-DEGAS-OUT | LB_DEGAS | LB_SOFTEN | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_DEGAS → LB_SOFTEN, position missing for LB_DEGAS, LB_SOFTEN | velocity 1 m/s, ρ 1000; min DN15 |
+| LB-DEGAS-VENT | LB_DEGAS | LB_DEGAS_SCRUB | DN15 | F1 | flue or acid gas |  | LB_DEGAS → LB_DEGAS_SCRUB, position missing for LB_DEGAS, LB_DEGAS_SCRUB | velocity 10 m/s, ρ 1.2; min DN15 |
+| LB-SCRUB-VENT | LB_DEGAS_SCRUB | ATMOS | DN15 | P3 | process vent gas |  | LB_DEGAS_SCRUB → ATMOS, position missing for LB_DEGAS_SCRUB | velocity 10 m/s, ρ 1.2; min DN15 |
+| LB-SOFTEN-OUT | LB_SOFTEN | LB_ED1 | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_SOFTEN → LB_ED1, position missing for LB_SOFTEN, LB_ED1 | velocity 1 m/s, ρ 1000; min DN15 |
+| LB-SOFTEN-SLUDGE | LB_SOFTEN | LB_BRINE_RETURN | solids | — | — |  | LB_SOFTEN → LB_BRINE_RETURN, position missing for LB_SOFTEN, LB_BRINE_RETURN | solids: conveyor, bin or hand transfer; not piped |
+| LB-ED1-DIL | LB_ED1 | LB_ED2 | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_ED1 → LB_ED2, position missing for LB_ED1, LB_ED2 | velocity 1 m/s, ρ 1000; min DN15 |
+| LB-ED1-CONC | LB_ED1 | LB_BRINE_RETURN | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_ED1 → LB_BRINE_RETURN, position missing for LB_ED1, LB_BRINE_RETURN | velocity 1 m/s, ρ 1000; min DN15 |
+| LB-ED2-DIL | LB_ED2 | LB_PROD_TANK | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_ED2 → LB_PROD_TANK, position missing for LB_ED2, LB_PROD_TANK | velocity 1 m/s, ρ 1000; min DN15 |
+| LB-ED2-CONC | LB_ED2 | LB_BRINE_RETURN | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_ED2 → LB_BRINE_RETURN, position missing for LB_ED2, LB_BRINE_RETURN | velocity 1 m/s, ρ 1000; min DN15 |
+| LB-PROD-RETURN | LB_PROD_TANK | LB_PROD_OUTLET | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_PROD_TANK → LB_PROD_OUTLET, position missing for LB_PROD_TANK, LB_PROD_OUTLET | velocity 1 m/s, ρ 1000; min DN15 |
+| LB-BRINE-OUT | LB_BRINE_RETURN | LB_PROD_OUTLET | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_BRINE_RETURN → LB_PROD_OUTLET, position missing for LB_BRINE_RETURN, LB_PROD_OUTLET | velocity 1 m/s, ρ 1000; min DN15 |
+| LB-CHEM-DOSE | LB_CHEM_STORE | LB_SOFTEN | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_CHEM_STORE → LB_SOFTEN, position missing for LB_CHEM_STORE, LB_SOFTEN | velocity 1 m/s, ρ 1000; min DN15 |
+| LB-CHEM-SCRUB | LB_CHEM_STORE | LB_DEGAS_SCRUB | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_CHEM_STORE → LB_DEGAS_SCRUB, position missing for LB_CHEM_STORE, LB_DEGAS_SCRUB | velocity 1 m/s, ρ 1000; min DN15 |
+| LB-CHEM-CIP1 | LB_CHEM_STORE | LB_ED1 | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_CHEM_STORE → LB_ED1, position missing for LB_CHEM_STORE, LB_ED1 | velocity 1 m/s, ρ 1000; min DN15 |
+| LB-CHEM-CIP2 | LB_CHEM_STORE | LB_ED2 | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_CHEM_STORE → LB_ED2, position missing for LB_CHEM_STORE, LB_ED2 | velocity 1 m/s, ρ 1000; min DN15 |

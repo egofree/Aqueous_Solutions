@@ -1,7 +1,7 @@
 # Isometric sheet data (no SVG: the isometric presentation retired 2026-10-27)
 
 Document number: AQS-ISO-002
-Status. 396 routed lines; waiting on placements 0. Pipe 7826 m, elbows 1151, flanges 792, joints 3799.
+Status. 396 routed lines; waiting on placements 15. Pipe 7826 m, elbows 1151, flanges 792, joints 3799.
 
 Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow take-off ASME B16.9 long-radius (metal) or 0.5 x OD (thermoplastic, A-M-121); 6 m random lengths; flanges at both nozzles; ASME B16.5 Class 150 bolting; OD ASME B36.10M. Not checked here: clashes with structure and other lines along the rack (X-PIP-04 with supports and stress).
 
@@ -405,3 +405,20 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | IA-H2S-CH3SH | BLACK_DIGEST | MET_SYN | 15 | P1 | 25.19 | 3 |
 | IA-NH3-MET | WS_AMMONIA | MET_SYN | 15 | P1 | 13.09 | 3 |
 | DL_MET_TO_FEED | MET_SYN | CHICKEN_COOP | 15 | P1 | 15.59 | 3 |
+
+Waiting on placements:
+- LB-FEED (LB_INTAKE unplaced)
+- LB-DEGAS-OUT (LB_DEGAS unplaced)
+- LB-DEGAS-VENT (LB_DEGAS unplaced)
+- LB-SCRUB-VENT (LB_DEGAS_SCRUB unplaced)
+- LB-SOFTEN-OUT (LB_SOFTEN unplaced)
+- LB-ED1-DIL (LB_ED1 unplaced)
+- LB-ED1-CONC (LB_ED1 unplaced)
+- LB-ED2-DIL (LB_ED2 unplaced)
+- LB-ED2-CONC (LB_ED2 unplaced)
+- LB-PROD-RETURN (LB_PROD_TANK unplaced)
+- LB-BRINE-OUT (LB_BRINE_RETURN unplaced)
+- LB-CHEM-DOSE (LB_CHEM_STORE unplaced)
+- LB-CHEM-SCRUB (LB_CHEM_STORE unplaced)
+- LB-CHEM-CIP1 (LB_CHEM_STORE unplaced)
+- LB-CHEM-CIP2 (LB_CHEM_STORE unplaced)

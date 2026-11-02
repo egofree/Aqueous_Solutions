@@ -1,0 +1,525 @@
+{
+ "site_id": "lake_boehmer",
+ "site_code": "LB",
+ "groups": {
+  "identity": {
+   "entries": {
+    "name": {
+     "value": "Lake Boehmer mobile solar electrodialysis plant (lake-restoration service, unmanned)",
+     "units": "-",
+     "register": "AQS-SITE-015"
+    },
+    "body": {
+     "value": "earth_surface",
+     "units": "-",
+     "register": "AQS-SITE-002"
+    },
+    "latitude_deg": {
+     "value": 31.22,
+     "units": "deg N",
+     "register": "AQS-SITE-015 section 2 (climate-grid point; the parcel is TBD and replaces the grid point at the site design)",
+     "owner": "OPEN_QUESTIONS.md Q-036 (owner, 2026-11-01)"
+    },
+    "longitude_deg": {
+     "value": -102.73,
+     "units": "deg E",
+     "register": "AQS-SITE-015 section 2 (climate-grid point; the parcel is TBD)"
+    },
+    "elevation_m": {
+     "value": 915.0,
+     "units": "m above sea level (Fort Stockton-Pecos County Airport class; the parcel survey replaces it)",
+     "ref": "NWS_FORT_STOCKTON",
+     "needs_verification": true,
+     "verification_test": "parcel topographic survey replaces the station-elevation class value"
+    },
+    "site_basis": {
+     "value": "AQS-SITE-015",
+     "units": "document number",
+     "register": "AQS-SITE-015"
+    },
+    "jurisdiction": {
+     "value": "profile input: United States, Texas - TCEQ water-quality and water-rights jurisdiction, RRC for the abandoned-well source, Pecos County codes at the parcel",
+     "units": "policy",
+     "basis": "Q-034 locale-as-technology-class; the jurisdiction flows into the compliance matrix.",
+     "owner": "OPEN_QUESTIONS.md Q-036 (owner, 2026-11-01)"
+    },
+    "storm_strategy": {
+     "value": "ride out design storms secured on the pad; the mobile container train relocates ahead of a forecast exceedance as an operational alternative",
+     "units": "policy",
+     "basis": "profile entry per AQS-PLAN-011 section 6; high-wind secure-down per the container layout concept.",
+     "owner": "OPEN_QUESTIONS.md Q-036 (owner, 2026-11-01)"
+    },
+    "crew": {
+     "value": 0,
+     "units": "persons",
+     "basis": "Q-036 (owner, 2026-11-01): unmanned lake-restoration service - the crew leaves with the habitation and farm sectors; crew size is a profile entry (Q-029 precedent). The scaling guard admits life-support eliminations only with this entry at zero and the ruling recorded on each action.",
+     "owner": "OPEN_QUESTIONS.md Q-036 (owner, 2026-11-01)"
+    }
+   }
+  },
+  "gravity": {
+   "entries": {
+    "g_m_s2": {
+     "value": 9.80665,
+     "units": "m/s2",
+     "ref": "CGPM1901_GN",
+     "note": "standard gravity; local gravity differs by about 0.1 %"
+    }
+   }
+  },
+  "atmosphere": {
+   "entries": {
+    "pressure_Pa": {
+     "value": 90800,
+     "units": "Pa absolute",
+     "ref": "USSA1976",
+     "needs_verification": true,
+     "verification_test": "standard-atmosphere value at the climate-grid elevation (915 m); the parcel barometric survey replaces it"
+    },
+    "composition_mole_fraction": {
+     "value": {
+      "N2": 0.7808,
+      "O2": 0.2095
+     },
+     "units": "mole fraction, dry air, rounded to four places",
+     "ref": "USSA1976"
+    },
+    "breathable": {
+     "value": true,
+     "units": "-",
+     "ref": "USSA1976",
+     "note": "the site is outdoors; the lethal-site hazard is hydrogen sulfide at the degasser, not the ambient air"
+    },
+    "vent_sink": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002 (open site; the degasser vent discharges to outside air through the scrubber)"
+    },
+    "oxidant": {
+     "value": true,
+     "units": "-",
+     "ref": "USSA1976"
+    },
+    "molar_mass_kg_kmol": {
+     "value": 28.9644,
+     "units": "kg/kmol, dry air",
+     "ref": "USSA1976"
+    }
+   }
+  },
+  "thermal": {
+   "entries": {
+    "cooling_dry_bulb_C": {
+     "value": 43.0,
+     "units": "C",
+     "ref": "NWS_FORT_STOCKTON",
+     "needs_verification": true,
+     "verification_test": "ASHRAE climatic design conditions for the nearest listed station replace the station-record value (114 F, June 2023)",
+     "binds": "site_design_dry_bulb_C"
+    },
+    "heating_dry_bulb_C": {
+     "value": -18.0,
+     "units": "C",
+     "ref": "NWS_FORT_STOCKTON",
+     "needs_verification": true,
+     "verification_test": "the ASHRAE 99.6 % heating value replaces the Winter Storm Uri station low (2021-02)"
+    },
+    "insulation_ambient_C": {
+     "value": 19.0,
+     "units": "C annual mean",
+     "ref": "NWS_FORT_STOCKTON",
+     "needs_verification": true,
+     "verification_test": "the parcel normals replace the station class value"
+    }
+   }
+  },
+  "solar": {
+   "entries": {
+    "pv_yield_kWh_kWp_d": {
+     "value": 5.8,
+     "units": "kWh/kWp/d before losses",
+     "ref": "SOLAR_RESOURCE_PECOS",
+     "needs_verification": true,
+     "verification_test": "PVWatts hourly run at the parcel with soiling and cell-temperature losses; the ERA5 grid point (2020-2024) reads 5.62",
+     "binds": "pv_yield_kWh_kWp_d"
+    },
+    "night_hours": {
+     "value": 13.5,
+     "units": "h/d served from storage",
+     "ref": "NWS_FORT_STOCKTON",
+     "needs_verification": true,
+     "verification_test": "the hourly load and irradiance run at the parcel replaces the December-fort-stocking night class",
+     "binds": "night_hours"
+    }
+   }
+  },
+  "wind": {
+   "entries": {
+    "basic_wind_speed_m_s": {
+     "value": 49.0,
+     "units": "m/s basic wind speed",
+     "ref": "ASCE7_22",
+     "needs_verification": true,
+     "verification_test": "the ASCE 7 hazard-tool run at the parcel coordinates replaces the class value",
+     "binds": "wt_wind_ms"
+    }
+   }
+  },
+  "snow": {
+   "entries": {
+    "roof_snow_kPa": {
+     "value": 0.5,
+     "units": "kPa ground snow",
+     "ref": "ASCE7_22",
+     "needs_verification": true,
+     "verification_test": "the hazard-tool ground snow load at the parcel replaces the class value"
+    }
+   }
+  },
+  "seismic": {
+   "entries": {
+    "SDS_g": {
+     "value": 0.25,
+     "units": "g design spectral response, short period",
+     "ref": "ASCE7_22",
+     "needs_verification": true,
+     "verification_test": "the USGS/ASCE hazard-tool values at the parcel replace the coarse class values"
+    },
+    "SD1_g": {
+     "value": 0.12,
+     "units": "g design spectral response, 1 s",
+     "ref": "ASCE7_22",
+     "needs_verification": true,
+     "verification_test": "the hazard-tool values at the parcel replace the coarse class values"
+    },
+    "TL_s": {
+     "value": 8.0,
+     "units": "s long-period transition period",
+     "ref": "ASCE7_22",
+     "needs_verification": true,
+     "verification_test": "the hazard-tool values at the parcel replace the coarse class values"
+    }
+   }
+  },
+  "ground": {
+   "entries": {
+    "allowable_bearing_kPa": {
+     "value": 72.0,
+     "units": "kPa presumptive allowable bearing (clay class)",
+     "ref": "IBC2027_1806",
+     "needs_verification": true,
+     "verification_test": "the geotechnical report at the parcel replaces the presumptive value"
+    },
+    "unit_weight_kN_m3": {
+     "value": 18.0,
+     "units": "kN/m3 soil unit weight class",
+     "ref": "ASCE7_22",
+     "needs_verification": true,
+     "verification_test": "the geotechnical report at the parcel replaces the class value"
+    },
+    "resistivity_ohm_m": {
+     "value": 100.0,
+     "units": "ohm m soil resistivity class",
+     "register": "AQS-SITE-015 section 6 (grounding study pending)",
+     "needs_verification": true,
+     "verification_test": "Wenner four-electrode survey at the parcel replaces the class value"
+    },
+    "ghex_capacity_W_m": {
+     "value": 40.0,
+     "units": "W/m closed-loop capacity class (recorded for completeness; the ground loop is eliminated at this locale)",
+     "register": "AQS-SITE-015 section 4 (GEO_GHEX eliminated; replacement DRY_COOLER)",
+     "needs_verification": true,
+     "verification_test": "not used at this locale; drop or re-derive only if a ground loop ever returns"
+    },
+    "frost_depth_m": {
+     "value": 0.15,
+     "units": "m frost depth class",
+     "ref": "ASCE7_22",
+     "needs_verification": true,
+     "verification_test": "the county building-code frost line at the parcel replaces the class value"
+    }
+   }
+  },
+  "radiation": {
+   "not_applicable": "Earth surface under the atmosphere: natural background only, no shielding design case. The feed's slight radioactivity is a water-quality gap (AQS-SITE-015 section 8), not a shielding input."
+  },
+  "water_sources": {
+   "entries": {
+    "sources": {
+     "value": [
+      {
+       "name": "lake_boehmer",
+       "kind": "salt_lake",
+       "unit": "LB_INTAKE",
+       "temperature_C": 20.0,
+       "composition_note": "TDS about 105 g/L (three times seawater; derived estimate, needs_verification against the sealed MPGCD Sloan Blair No. 1 laboratory report); sulfate about 7,500 mg/L; hydrogen sulfide design value 110 ppm at the wellhead (worst reported case; the MPGCD laboratory read far higher); slight radioactivity and arsenic reported, unquantified (gap). Artesian brine from the abandoned well, not irrigation drainage.",
+       "treatment": "degas, lime/soda softening, two-stage electrodialysis (the LB train); product and concentrate both return to the lake (Q-037)",
+       "ref": "TEXAS_MONTHLY_BOEHMER",
+       "needs_verification": true,
+       "verification_test": "sealed MPGCD laboratory report on the wellhead brine; the full ionic assay replaces every derived value (A-M-434/435/436)"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-SITE-015 section 3"
+    },
+    "lake_boehmer": {
+     "value": {
+      "name": "lake_boehmer",
+      "kind": "salt_lake",
+      "unit": "LB_INTAKE",
+      "temperature_C": 20.0,
+      "composition_note": "TDS about 105 g/L (three times seawater; derived estimate, needs_verification against the sealed MPGCD Sloan Blair No. 1 laboratory report); sulfate about 7,500 mg/L; hydrogen sulfide design value 110 ppm at the wellhead (worst reported case; the MPGCD laboratory read far higher); slight radioactivity and arsenic reported, unquantified (gap). Artesian brine from the abandoned well, not irrigation drainage.",
+      "treatment": "degas, lime/soda softening, two-stage electrodialysis (the LB train); product and concentrate both return to the lake (Q-037)",
+      "ref": "TEXAS_MONTHLY_BOEHMER",
+      "needs_verification": true,
+      "verification_test": "sealed MPGCD laboratory report on the wellhead brine; the full ionic assay replaces every derived value (A-M-434/435/436)"
+     },
+     "units": "-",
+     "register": "AQS-SITE-015 section 3"
+    },
+    "lake_boehmer_gaps": {
+     "value": "bathymetry (intake siting and diffuser design), the full ionic assay incl. calcium, magnesium, silica and the radioactivity/arsenic quantification, and the parcel boundary are open site-design gaps",
+     "units": "-",
+     "register": "AQS-SITE-015 section 8 (gaps)"
+    }
+   }
+  },
+  "local_feedstocks": {
+   "entries": {
+    "feed_cases": {
+     "value": [
+      {
+       "name": "lake_boehmer_brine",
+       "classes": {
+        "water": 0.895,
+        "other_inorganic": 0.105
+       },
+       "register": "AQS-ASSAY-001 classes; profile water_sources composition (TDS about 105 g/L, derived estimate A-M-434)"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-SITE-015 section 3"
+    }
+   }
+  },
+  "logistics": {
+   "entries": {
+    "arrival_mode": {
+     "value": "road haulage to the pad; every module is an ISO 1CC container on a standard semitrailer, crane set at the pad",
+     "units": "-",
+     "ref": "AASHTO_GB7",
+     "needs_verification": true,
+     "verification_test": "the haul route and pad crane study at the parcel replace the class basis"
+    },
+    "resupply_interval_d": {
+     "value": 30.0,
+     "units": "d between chemical resupply runs (lime, soda ash, caustic, acid, filter media)",
+     "register": "A-M-225 (hold-time basis)",
+     "needs_verification": true,
+     "verification_test": "the chemical-consumption design pass and the haul schedule set the interval"
+    }
+   }
+  },
+  "electrical": {
+   "entries": {
+    "ac_frequency_Hz": {
+     "value": 60,
+     "units": "Hz standalone equipment basis",
+     "register": "A-M-218"
+    },
+    "earthing_method": {
+     "value": "ground grid at the pad (ground contact; resistivity per the ground group, geotech and Wenner survey pending)",
+     "units": "-",
+     "register": "AQS-SITE-015 section 6 (grounding study at the parcel)"
+    }
+   }
+  },
+  "jurisdiction": {
+   "entries": {
+    "code_families": {
+     "value": [
+      "united_states_texas"
+     ],
+     "units": "-",
+     "register": "AQS-SITE-015 section 2: TCEQ 30 TAC 307 segment criteria and water rights; RRC for the abandoned-well source; Pecos County building/floodplain codes; NFPA/ASCE/IBC families as the baseline"
+    }
+   }
+  },
+  "heat_rejection": {
+   "entries": {
+    "levels": {
+     "value": [
+      {
+       "level": "low-grade water loop",
+       "unit": "DRY_COOLER",
+       "mode": "air",
+       "duty_param": "rated_kW",
+       "register": "AQS-SITE-015 section 4: air heat sink at the open pad; the ground loop is eliminated (replacement DRY_COOLER, antarctic precedent)"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-SITE-015 section 4"
+    }
+   }
+  },
+  "power_portfolio": {
+   "entries": {
+    "sources": {
+     "value": [
+      {
+       "id": "pv",
+       "kind": "pv",
+       "unit": "PV_ARRAY",
+       "role": "primary",
+       "share": 1.0,
+       "stretch_output_frac": 0.0,
+       "resource": "solar.pv_yield_kWh_kWp_d",
+       "register": "AQS-DUTY-012; Q-024 sources per site; Q-034 locale-as-technology-class; solar per the owner ruling (Q-036): no combustion, no genset at this locale"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-SITE-015 section 5"
+    },
+    "storage": {
+     "value": [
+      {
+       "kind": "electrochemical",
+       "unit": "LIO_BAT",
+       "energy_param": "kWh",
+       "register": "A-M-402 (sealed Li-ion interim carry); the lake_boehmer design pass re-sizes it (flow_graph/param/lake_boehmer.py)"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-SITE-015 section 5"
+    },
+    "worst_stretch": {
+     "value": {
+      "kind": "night",
+      "hours_entry": "solar.night_hours"
+     },
+     "units": "-",
+     "register": "AQS-PLAN-011 section 5.5"
+    },
+    "oversize_factor": {
+     "value": 2.0,
+     "units": "PV nameplate / PV needed to close the daily balance",
+     "needs_verification": true,
+     "verification_test": "NSRDB hourly run at the parcel replaces the oversize-factor basis",
+     "binds": "pv_oversize_factor",
+     "register": "D-PV rule (AQS-SITE-002 Rev C); A-M-109"
+    }
+   }
+  },
+  "scaling": {
+   "entries": {
+    "actions": {
+     "value": [
+      {"action": "size", "target": "LB_INTAKE", "factor": 1.0, "register": "AQS-SITE-015 section 4: the locale design pass promotes and sizes this unit (flow_graph/param/lake_boehmer.py)"},
+      {"action": "size", "target": "LB_DEGAS", "factor": 1.0, "register": "AQS-SITE-015 section 4: the locale design pass promotes and sizes this unit"},
+      {"action": "size", "target": "LB_DEGAS_SCRUB", "factor": 1.0, "register": "AQS-SITE-015 section 4: the locale design pass promotes and sizes this unit"},
+      {"action": "size", "target": "LB_SOFTEN", "factor": 1.0, "register": "AQS-SITE-015 section 4: the locale design pass promotes and sizes this unit"},
+      {"action": "size", "target": "LB_ED1", "factor": 1.0, "register": "AQS-SITE-015 section 4: the locale design pass promotes and sizes this unit"},
+      {"action": "size", "target": "LB_ED2", "factor": 1.0, "register": "AQS-SITE-015 section 4: the locale design pass promotes and sizes this unit"},
+      {"action": "size", "target": "LB_PROD_TANK", "factor": 1.0, "register": "AQS-SITE-015 section 4: the locale design pass promotes and sizes this unit"},
+      {"action": "size", "target": "LB_PROD_OUTLET", "factor": 1.0, "register": "AQS-SITE-015 section 4: the locale design pass promotes and sizes this unit"},
+      {"action": "size", "target": "LB_BRINE_RETURN", "factor": 1.0, "register": "AQS-SITE-015 section 4: the locale design pass promotes and sizes this unit"},
+      {"action": "size", "target": "LB_CHEM_STORE", "factor": 1.0, "register": "AQS-SITE-015 section 4: the locale design pass promotes and sizes this unit"},
+      {"action": "size", "target": "LIO_BAT", "factor": 1.0, "register": "AQS-SITE-015 section 5: promoted as the storage replacement set below and re-sized by the design pass (A-M-402 superseded at this locale)"},
+      {"action": "eliminate", "target": "BACKUP_GEN", "replacement": "LIO_BAT", "owner": "Q-036 (owner, 2026-11-01): solar per the owner ruling - no combustion at this locale; the battery carries the backup energy function (different technology)"},
+      {"action": "eliminate", "target": "FUEL_CELL", "replacement": "LIO_BAT", "owner": "Q-036: no hydrogen supply survives the CRYO and MEOH eliminations; the battery is the different-technology backup"},
+      {"action": "eliminate", "target": "ZNBR2", "replacement": "LIO_BAT", "register": "Q-035/A-M-402: sealed Li-ion carries storage where the flow-battery electrolyte has no buoyant management; re-sized by the design pass"},
+      {"action": "eliminate", "target": "ZNBR2_BR2_REGEN", "replacement": "LIO_BAT", "register": "serves ZNBR2, which the battery replaces at this locale"},
+      {"action": "eliminate", "target": "HYDRO_SET", "replacement": "LIO_BAT", "register": "pumped hydro has no head at the flat lakebed pad; the battery is the different-technology storage"},
+      {"action": "eliminate", "target": "MEOH_FC", "replacement": "LIO_BAT", "register": "methanol synthesis is eliminated at this locale; the battery carries the energy function"},
+      {"action": "eliminate", "target": "GEO_GHEX", "replacement": "DRY_COOLER", "register": "air heat sink at the open pad replaces the ground loop (antarctic precedent)"},
+      {"action": "eliminate", "target": "GEO_HP", "replacement": "DRY_COOLER", "register": "air heat sink at the open pad replaces the ground-loop heat pump"},
+      {"action": "eliminate", "target": "GEO_HP_CLOSED_LOOP", "replacement": "DRY_COOLER", "register": "air heat sink at the open pad replaces the closed ground loop"},
+      {"action": "eliminate", "target": "GEO_ORC", "replacement": "LIO_BAT", "register": "no surplus-heat source survives the industry eliminations; the energy function is served from PV plus battery (Q-034 locale class)"},
+      {"action": "eliminate", "target": "sector:HAB", "ruling": "Q-036 (owner, 2026-11-01): crew of zero - no habitable volume, no life-support demand; the function closes with the crew", "owner": "OPEN_QUESTIONS.md Q-036; scaling.py crew_zero_ruling"},
+      {"action": "eliminate", "target": "sector:FARM", "ruling": "Q-036 (owner, 2026-11-01): crew of zero - no food or sanitation demand; the function closes with the crew", "owner": "OPEN_QUESTIONS.md Q-036; scaling.py crew_zero_ruling"},
+      {"action": "eliminate", "target": "NUTRIENT_DOSE", "import_path": {"stream": "none; the farm the nutrient dose serves is eliminated at this locale (Q-036)"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "MEOH_COND", "import_path": {"stream": "none; the methanol synthesis train it serves is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "MEOH_FERM", "import_path": {"stream": "none; the methanol synthesis train it serves is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "MEOH_SYNTH", "import_path": {"stream": "none; the methanol synthesis train it serves is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "MEOH_TANK", "import_path": {"stream": "none; the methanol synthesis train it serves is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "MET_SYN", "import_path": {"stream": "none; the methylamine demand it serves is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "HDR_O2", "ruling": "Q-036 (owner, 2026-11-01): crew of zero - the oxygen header serves life support only at this locale", "owner": "OPEN_QUESTIONS.md Q-036; scaling.py crew_zero_ruling"},
+      {"action": "eliminate", "target": "ACID_POLISH_SCRUB", "import_path": {"stream": "none; the acid-loop vent it scrubs is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "AFTERBURNER_FLUE", "import_path": {"stream": "none; the combustion flue it carries is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "ALK_SCRUBBER", "import_path": {"stream": "none; the base-loop vent it scrubs is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "ATM_INT", "import_path": {"stream": "none; the atmospheric intake serves the eliminated air-separation class"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "BAGHOUSE", "import_path": {"stream": "none; the dust service it serves is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "FLUE_KO", "import_path": {"stream": "none; the flue knock-out serves the eliminated combustion class"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "H2_DRYER", "import_path": {"stream": "none; the hydrogen loop it dries is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "HDR_H2", "import_path": {"stream": "none; the hydrogen header serves the eliminated fuel class"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "NOX_SCRUB", "import_path": {"stream": "none; the nitric-acid vent it scrubs is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "REC_HDR", "import_path": {"stream": "none; the recovery header serves the eliminated vent classes"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "RELIEF_H2", "import_path": {"stream": "none; the hydrogen relief it carries is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "H2O_ELYZ", "ruling": "Q-036 (owner, 2026-11-01): crew of zero - the electrolyser fed life support and the fuel loop, both eliminated", "owner": "OPEN_QUESTIONS.md Q-036; scaling.py crew_zero_ruling"},
+      {"action": "eliminate", "target": "CRYO_ASU", "ruling": "Q-036 (owner, 2026-11-01): crew of zero - the oxygen function has no demand at this locale", "owner": "OPEN_QUESTIONS.md Q-036; scaling.py crew_zero_ruling"},
+      {"action": "eliminate", "target": "AIR_RECEIVER", "import_path": {"stream": "none; the plant-air service is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "CRYO_AHU", "import_path": {"stream": "none; the cold-box air handler serves the eliminated air-separation class"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "CRYO_AHU_COND_CONDENSABLE", "import_path": {"stream": "none; the cold-box condenser serves the eliminated air-separation class"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "CRYO_CO2", "import_path": {"stream": "none; the CO2 cold box serves the eliminated methanol class"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "CRYO_DED_COOL", "import_path": {"stream": "none; the dedicated cooler serves the eliminated cold box"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "CRYO_H2", "import_path": {"stream": "none; the hydrogen store serves the eliminated fuel and electrolysis classes"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "CRYO_HX_Q4", "import_path": {"stream": "none; the cold-box heat exchanger serves the eliminated air-separation class"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "CRYO_N2", "import_path": {"stream": "none; the nitrogen service is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "CRYO_O2", "import_path": {"stream": "none; the oxygen service is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "PROD_MEOH", "import_path": {"stream": "none; methanol production is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "PROD_O2", "import_path": {"stream": "none; oxygen production is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "RELIEF_CRYO", "import_path": {"stream": "none; the cold-box relief serves the eliminated air-separation class"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "sector:OIL", "import_path": {"stream": "none; the organic production sectors they serve are eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "sector:DIGESTER", "import_path": {"stream": "none; the metals and acid production they serve is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "sector:FOUNDRY", "import_path": {"stream": "none; metal production is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "sector:GLASS", "import_path": {"stream": "none; glass production is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "sector:POLYMERS", "import_path": {"stream": "none; fluoropolymer production is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "sector:MFG", "import_path": {"stream": "none; manufacturing is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"},
+      {"action": "eliminate", "target": "sector:FAB", "import_path": {"stream": "none; semiconductor fabrication is eliminated at this locale"}, "register": "AQS-SITE-015 section 4"}
+     ],
+     "units": "-",
+     "register": "AQS-SITE-015 section 4; Q-034 (every locale is its own technology class); Q-036 (crew of zero ruling)"
+    }
+   }
+  },
+  "capabilities": {
+   "entries": {
+    "buoyant_separation": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; gravity.g_m_s2 above zero, steady in direction (fixed pad)"
+    },
+    "free_surface": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; gravity.g_m_s2 above zero"
+    },
+    "air_heat_sink": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; open pad, cooling design dry bulb per the thermal group"
+    },
+    "air_oxidant": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; atmosphere.oxidant"
+    },
+    "vent_sink": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; atmosphere.vent_sink"
+    },
+    "ground_contact": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-015; ground group present (geotech pending at the parcel)"
+    },
+    "liquid_water_at_ambient": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; atmosphere.pressure_Pa above the triple point of water; the lake itself is the water body"
+    }
+   }
+  }
+ }
+}

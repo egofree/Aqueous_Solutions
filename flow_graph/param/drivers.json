@@ -2507,6 +2507,203 @@
   "ref": "SAFFIR_CAT5",
   "basis": "location-neutral bounding (AQS-SITE-002 Rev C): the strictest value across the daily-cycle localization set, carried from the governing site profile. A site design replaces it with its own published value. Governing site: floating_island (Saffir-Simpson category 5)."
  },
+ "WTR.lake-boehmer.feed_m3_d": {
+  "value": 1000,
+  "units": "m3/d of lake brine extracted from Lake Boehmer (design throughput)",
+  "owner": "owner decision recorded 2026-11-01 (OPEN_QUESTIONS.md Q-036; site basis AQS-SITE-015)"
+ },
+ "WTR.lake-boehmer.feed_tds_g_L": {
+  "value": 105,
+  "units": "g/L total dissolved solids in the feed brine (derived estimate: the lake is about three times saltier than the ocean)",
+  "ref": "TEXAS_MONTHLY_BOEHMER",
+  "register": "A-M-434",
+  "needs_verification": true,
+  "verification_test": "sealed MPGCD laboratory report on the Sloan Blair No. 1 wellhead brine; the full ionic assay replaces the derived estimate at the locale design pass"
+ },
+ "WTR.lake-boehmer.feed_so4_mg_L": {
+  "value": 7500,
+  "units": "mg/L sulfate in the feed brine (about 25 x the TCEQ secondary maximum contaminant level of 300 mg/L)",
+  "ref": "CBS7_BOEHMER_2022",
+  "register": "A-M-435",
+  "needs_verification": true,
+  "verification_test": "sealed MPGCD laboratory report on the wellhead brine; the reported Railroad Commission sampling figure is replaced by the laboratory assay"
+ },
+ "WTR.lake-boehmer.feed_h2s_ppm": {
+  "value": 110,
+  "units": "ppm hydrogen sulfide at the wellhead (design value, worst reported case)",
+  "ref": "RRC_BOEHMER_2022",
+  "register": "A-M-436",
+  "needs_verification": true,
+  "verification_test": "the MPGCD laboratory read far higher; the degasser and scrubber re-size at the locale design pass on the sealed assay"
+ },
+ "WTR.lake-boehmer.product_tds_mg_L": {
+  "value": 15000,
+  "units": "mg/L total dissolved solids in the product, annual average (segment 2311 criterion)",
+  "ref": "TCEQ_TSWQS_2022"
+ },
+ "WTR.lake-boehmer.product_cl_mg_L": {
+  "value": 7000,
+  "units": "mg/L chloride in the product, annual average (segment 2311 criterion)",
+  "ref": "TCEQ_TSWQS_2022"
+ },
+ "WTR.lake-boehmer.product_so4_mg_L": {
+  "value": 3500,
+  "units": "mg/L sulfate in the product, annual average (segment 2311 criterion)",
+  "ref": "TCEQ_TSWQS_2022"
+ },
+ "WTR.lake-boehmer.ed_recovery": {
+  "value": 0.5,
+  "units": "- fraction of the feed drawn as dilute (product) flow",
+  "register": "A-M-437",
+  "needs_verification": true,
+  "verification_test": "concentrate gypsum saturation check (at most 2 x Ksp with prior lime/soda softening) on the assayed feed at the locale design pass; sensitivity high",
+  "basis": "gypsum (CaSO4) saturation in the concentrate governs the electrodialysis recovery; the feed calcium is unmeasured (A-M-447)"
+ },
+ "WTR.lake-boehmer.ed_cellpair_voltage_V": {
+  "value": 1.2,
+  "units": "V per cell pair at the design current density (conservative end of the 0.9-1.2 V practice range)",
+  "ref": "STRATHMANN2004",
+  "register": "A-M-438"
+ },
+ "WTR.lake-boehmer.ed_current_efficiency": {
+  "value": 0.85,
+  "units": "- fraction of the cell current that transports salt (design practice class)",
+  "ref": "CAMPIONE2018",
+  "register": "A-M-439"
+ },
+ "WTR.lake-boehmer.ed_current_density_A_m2": {
+  "value": 100,
+  "units": "A/m2 of membrane area (upper end of the typical brackish-water electrodialysis range; confirm at stack selection)",
+  "ref": "CAMPIONE2018",
+  "register": "A-M-440"
+ },
+ "WTR.lake-boehmer.ed_membrane_area_m2": {
+  "value": 1000,
+  "units": "m2 of membrane area per ED module (one industrial stack)",
+  "register": "A-M-441"
+ },
+ "WTR.lake-boehmer.ed_stage1_product_tds_g_L": {
+  "value": 45,
+  "units": "g/L total dissolved solids in the dilute stream leaving the primary stage (stage split about 2:1 across the 105 to 15 g/L span)",
+  "register": "A-M-449"
+ },
+ "WTR.lake-boehmer.ed_modules_per_container": {
+  "value": 2,
+  "units": "ED modules per ISO 1CC container (two 1000 m2 stacks with rectifiers and the clean-in-place manifold in the 6058 x 2438 x 2591 mm envelope with service access)",
+  "ref": "ISO668_2020",
+  "register": "A-M-444"
+ },
+ "WTR.lake-boehmer.ed_spare_modules_per_stage": {
+  "value": 1,
+  "units": "spare ED modules per stage, installed in addition to the duty count (N+1)",
+  "register": "A-M-451",
+  "owner": "AGENTS.md Redundancy rule: a backup is sized by calculation for a defined outage of the primary"
+ },
+ "WTR.lake-boehmer.aux_intake_kWh_m3": {
+  "value": 0.8,
+  "units": "kWh/m3 of feed: intake lift and screening pumps",
+  "register": "A-M-442",
+  "needs_verification": true,
+  "verification_test": "pump and mixer schedule at the locale design pass (unit task 02)"
+ },
+ "WTR.lake-boehmer.aux_degasser_kWh_m3": {
+  "value": 1.2,
+  "units": "kWh/m3 of feed: air-stripper blower at the packing air-to-water ratio",
+  "register": "A-M-442",
+  "needs_verification": true,
+  "verification_test": "pump and mixer schedule at the locale design pass (unit task 02)"
+ },
+ "WTR.lake-boehmer.aux_softening_kWh_m3": {
+  "value": 1.5,
+  "units": "kWh/m3 of feed: lime/soda reactor agitator and clarifier rake",
+  "register": "A-M-442",
+  "needs_verification": true,
+  "verification_test": "pump and mixer schedule at the locale design pass (unit task 02)"
+ },
+ "WTR.lake-boehmer.aux_dosing_cip_kWh_m3": {
+  "value": 0.5,
+  "units": "kWh/m3 of feed: chemical dosing and clean-in-place pumps",
+  "register": "A-M-442",
+  "needs_verification": true,
+  "verification_test": "pump and mixer schedule at the locale design pass (unit task 02)"
+ },
+ "WTR.lake-boehmer.battery_contingency_days": {
+  "value": 1,
+  "units": "contingency days of full-load energy added to the night store (one overcast-day class; the 2021-02 Winter Storm Uri trim is the analog)",
+  "register": "A-M-443",
+  "needs_verification": true,
+  "verification_test": "hourly PV production run at the parcel replaces the contingency-day allowance; sensitivity medium"
+ },
+ "WTR.lake-boehmer.pv_winter_yield_kWh_kWp_d": {
+  "value": 3.5,
+  "units": "kWh/kWp/d before losses, winter trough design value",
+  "ref": "SOLAR_RESOURCE_PECOS",
+  "needs_verification": true,
+  "verification_test": "NSRDB/PVWatts hourly run at the parcel replaces the trough class"
+ },
+ "WTR.lake-boehmer.bess_container_kWh": {
+  "value": 4000,
+  "units": "kWh usable store per ISO 1CC battery container (standard 20-ft battery-energy-storage container class)",
+  "register": "A-M-446",
+  "needs_verification": true,
+  "verification_test": "vendor shortlist at procurement; the container count scales one to one with the store"
+ },
+ "WTR.lake-boehmer.henry_h2s_mol_m3_pa": {
+  "value": 0.00087,
+  "units": "mol/(m3 Pa) Henry coefficient of H2S in water at 25 C (about 0.088 mol per m3 at one atmosphere; solubility class)",
+  "ref": "SANDER2015",
+  "register": "A-M-450",
+  "needs_verification": true,
+  "verification_test": "coefficients re-checked at the design temperature, with the pH-dependent sulfide speciation, at the locale design pass"
+ },
+ "WTR.lake-boehmer.henry_co2_mol_m3_pa": {
+  "value": 0.00034,
+  "units": "mol/(m3 Pa) Henry coefficient of CO2 in water at 25 C",
+  "ref": "SANDER2015",
+  "register": "A-M-450",
+  "needs_verification": true,
+  "verification_test": "coefficients re-checked at the design temperature at the locale design pass"
+ },
+ "WTR.lake-boehmer.degasser_air_water_ratio_vol": {
+  "value": 60,
+  "units": "m3 air per m3 water through the packed degasser (packing practice class for moderately soluble gases)",
+  "register": "A-M-450",
+  "needs_verification": true,
+  "verification_test": "tower transfer-units design at the locale design pass; the dissolved-sulfide assay does not exist yet and the ratio re-sizes on it"
+ },
+ "WTR.lake-boehmer.degasser_h2s_removal_frac": {
+  "value": 0.95,
+  "units": "- design removal fraction of strippable sulfide across the packed degasser (tower design pass pending)",
+  "register": "A-M-450",
+  "needs_verification": true,
+  "verification_test": "packed-tower design at the locale design pass; chemical (caustic) stripping is the fallback if the tower cannot meet the vent target"
+ },
+ "WTR.lake-boehmer.iso_container_20ft_ext_mm": {
+  "value": [
+   6058,
+   2438,
+   2591
+  ],
+  "units": "mm external L x W x H of the ISO 1CC 20-ft container envelope",
+  "ref": "ISO668_2020",
+  "register": "A-M-444"
+ },
+ "WTR.lake-boehmer.utility_containers": {
+  "value": {
+   "intake_degasser": 1,
+   "degas_scrubber": 1,
+   "softening": 3,
+   "chemical_store": 2,
+   "power_conversion": 3,
+   "controls": 1,
+   "product_buffer": 2,
+   "brine_return": 1
+  },
+  "units": "ISO 1CC containers per service (layout concept: one function per container; softening takes the reactor, the clarifier and the sludge set; power conversion takes the PV inverters, the ED rectifier rooms and the battery converters)",
+  "register": "A-M-445",
+  "needs_verification": true,
+  "verification_test": "layout study at the locale design pass; the counts re-derive from the module and utility counts"
+ },
  "wt_life_per_shop": {
   "value": 2,
   "units": "- HAB/FARM levels added per added shop level as the building grows (owner rule, Q-009)",

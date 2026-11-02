@@ -19,9 +19,9 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1797 | 59 % |
-| organic | 940 | 31 % |
-| silicate_oxide | 141 | 5 % |
+| metal_plateable | 1802 | 59 % |
+| organic | 941 | 31 % |
+| silicate_oxide | 140 | 5 % |
 | metal_reactive | 120 | 4 % |
 | unassigned | 29 | 1 % |
 
@@ -156,11 +156,11 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MEOH_TANK | 60 | 9 | 1 | 0 | 0 |
 | METAL_STORE | 1 | 4 | 1 | 0 | 0 |
 | MET_AHU | 16 | 4 | 1 | 0 | 0 |
-| MET_HX_Q4 | 3 | 0 | 1 | 0 | 0 |
+| MET_HX_Q4 | 5 | 0 | 0 | 0 | 0 |
 | MET_MELT | 14 | 9 | 1 | 0 | 0 |
 | MET_SCRUB | 1 | 8 | 0 | 0 | 1 |
 | MET_SYN | 2 | 6 | 1 | 0 | 0 |
-| MF-01 x 24 | 3 | 1 | 0 | 2 | 0 |
+| MF-01 x 35 | 3 | 1 | 0 | 2 | 0 |
 | MF-02 x 55 | 3 | 1 | 0 | 2 | 0 |
 | MF-03 x 0 | 5 | 1 | 0 | 2 | 0 |
 | MF-04 x 0 | 5 | 0 | 0 | 1 | 0 |
@@ -168,9 +168,9 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MF-06 x 2 | 5 | 0 | 0 | 1 | 0 |
 | MF-07 x 3 | 5 | 0 | 0 | 1 | 0 |
 | MF-08 x 3 | 7 | 0 | 0 | 3 | 0 |
-| MF-09 x 232 | 7 | 0 | 0 | 3 | 0 |
+| MF-09 x 224 | 7 | 0 | 0 | 3 | 0 |
 | MF-10 x 8 | 7 | 0 | 0 | 3 | 0 |
-| MF-11 x 4 | 7 | 0 | 0 | 3 | 0 |
+| MF-11 x 5 | 7 | 0 | 0 | 3 | 0 |
 | MF-12 x 2 | 7 | 0 | 0 | 3 | 0 |
 | MF-13 x 2 | 7 | 0 | 0 | 3 | 0 |
 | MF-14 x 3 | 7 | 0 | 0 | 3 | 0 |
@@ -271,6 +271,10 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-90 | 1 | 0 | 0 | 0 | 0 |
 | OF-91 | 1 | 0 | 0 | 0 | 0 |
 | OF-92 | 1 | 0 | 0 | 0 | 0 |
+| OF-93 | 1 | 0 | 0 | 0 | 0 |
+| OF-94 | 1 | 0 | 0 | 0 | 0 |
+| OF-95 | 0 | 1 | 0 | 0 | 0 |
+| OF-96 | 1 | 0 | 0 | 0 | 0 |
 | OIL_DRYER | 11 | 1 | 2 | 0 | 0 |
 | OIL_FRAC | 43 | 10 | 2 | 0 | 0 |
 | OIL_PYRO | 4 | 1 | 2 | 0 | 0 |

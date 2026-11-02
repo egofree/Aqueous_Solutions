@@ -222,5 +222,14 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | POLY_FIBER | melt_spin | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | MET_SYN | chemical_synthesis | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | REE_RECOVER | precip | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| LB_INTAKE | intake | external visual (1 y, A-M-189) |
+| LB_DEGAS | scrubber | external visual (1 y, A-M-189) |
+| LB_DEGAS_SCRUB | scrubber | external visual (1 y, A-M-189) |
+| LB_SOFTEN | reactor | external visual (1 y, A-M-189) |
+| LB_ED1 | membrane | external visual (1 y, A-M-189) |
+| LB_ED2 | membrane | external visual (1 y, A-M-189) |
+| LB_PROD_TANK | tank | external visual (1 y, A-M-189) |
+| LB_BRINE_RETURN | junction | external visual (1 y, A-M-189) |
+| LB_CHEM_STORE | tank | external visual (1 y, A-M-189) |
 
-213 units, 466 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+222 units, 475 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.

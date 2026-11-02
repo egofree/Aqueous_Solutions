@@ -1,7 +1,7 @@
 {
  "site_id": "baseline",
  "placement_seed_revision": "O",
- "units_total": 216,
+ "units_total": 226,
  "built": 201,
  "ghosts_eliminated": 0,
  "block_centre_massing": 0,
@@ -13,6 +13,16 @@
   "E_HEAT",
   "HYDRO_GROW",
   "ICE_EXTRACT",
+  "LB_BRINE_RETURN",
+  "LB_CHEM_STORE",
+  "LB_DEGAS",
+  "LB_DEGAS_SCRUB",
+  "LB_ED1",
+  "LB_ED2",
+  "LB_INTAKE",
+  "LB_PROD_OUTLET",
+  "LB_PROD_TANK",
+  "LB_SOFTEN",
   "LIO_BAT",
   "MEM_DIST",
   "PERC_REMOVE",
@@ -790,6 +800,56 @@
    "level": "L0",
    "status": "built",
    "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
+  },
+  {
+   "unit_id": "LB_BRINE_RETURN",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "LB_CHEM_STORE",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "LB_DEGAS",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "LB_DEGAS_SCRUB",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "LB_ED1",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "LB_ED2",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "LB_INTAKE",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "LB_PROD_OUTLET",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "LB_PROD_TANK",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "LB_SOFTEN",
+   "sector_id": "WTR",
+   "status": "unplaced"
   },
   {
    "unit_id": "LEACH_CSTR_1",

@@ -1,5 +1,5 @@
 digraph G {
-  graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="MFD campus / mass view\nVIEW-MFD-CAMPUS  ·  AQS-FLOW-GRAPH-001 rev AC", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
+  graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="MFD campus / mass view\nVIEW-MFD-CAMPUS  ·  AQS-FLOW-GRAPH-001 rev AD", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
   node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=9];
   edge [fontname="Helvetica", fontsize=8];
   subgraph "cluster_CRYO" {
@@ -134,6 +134,17 @@ digraph G {
     "ROOF_TANK" [fillcolor="#ffffff", label="ROOF_TANK"];
     "VCD_TRAIN" [fillcolor="#ffffff", label="VCD_TRAIN"];
     "REMIN" [fillcolor="#ffffff", label="REMIN"];
+    "ATMOS" [fillcolor="#ffffff", label="ATMOS"];
+    "LB_INTAKE" [fillcolor="#e2e8f0", label="LB_INTAKE\n(placeholder)"];
+    "LB_DEGAS" [fillcolor="#e2e8f0", label="LB_DEGAS\n(placeholder)"];
+    "LB_DEGAS_SCRUB" [fillcolor="#e2e8f0", label="LB_DEGAS_SCRUB\n(placeholder)"];
+    "LB_SOFTEN" [fillcolor="#e2e8f0", label="LB_SOFTEN\n(placeholder)"];
+    "LB_ED1" [fillcolor="#e2e8f0", label="LB_ED1\n(placeholder)"];
+    "LB_ED2" [fillcolor="#e2e8f0", label="LB_ED2\n(placeholder)"];
+    "LB_PROD_TANK" [fillcolor="#e2e8f0", label="LB_PROD_TANK\n(placeholder)"];
+    "LB_PROD_OUTLET" [fillcolor="#e2e8f0", label="LB_PROD_OUTLET\n(placeholder)"];
+    "LB_BRINE_RETURN" [fillcolor="#e2e8f0", label="LB_BRINE_RETURN\n(placeholder)"];
+    "LB_CHEM_STORE" [fillcolor="#e2e8f0", label="LB_CHEM_STORE\n(placeholder)"];
   }
   "NORTH_DOCK" -> "BOUNDARY_EXPORT" [label="DOCK_EXPORT_TBD\\n0.0 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=2.2];
   "BMED_UPW_POLISH" -> "HDR_UPW" [label="S01\\n67.300214 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -215,4 +226,20 @@ digraph G {
   "HDR_CO2" -> "GROW_BED" [label="S89\\n0.882362 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HABITATION" -> "HDR_CO2" [label="S90\\n4.021 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FOOD_STORE" -> "HABITATION" [label="S14D\\n4.2 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_INTAKE" -> "LB_DEGAS" [label="LB-FEED\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_DEGAS" -> "LB_SOFTEN" [label="LB-DEGAS-OUT\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_DEGAS" -> "LB_DEGAS_SCRUB" [label="LB-DEGAS-VENT\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_DEGAS_SCRUB" -> "ATMOS" [label="LB-SCRUB-VENT\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_SOFTEN" -> "LB_ED1" [label="LB-SOFTEN-OUT\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_SOFTEN" -> "LB_BRINE_RETURN" [label="LB-SOFTEN-SLUDGE\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_ED1" -> "LB_ED2" [label="LB-ED1-DIL\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_ED1" -> "LB_BRINE_RETURN" [label="LB-ED1-CONC\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_ED2" -> "LB_PROD_TANK" [label="LB-ED2-DIL\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_ED2" -> "LB_BRINE_RETURN" [label="LB-ED2-CONC\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_PROD_TANK" -> "LB_PROD_OUTLET" [label="LB-PROD-RETURN\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_BRINE_RETURN" -> "LB_PROD_OUTLET" [label="LB-BRINE-OUT\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_CHEM_STORE" -> "LB_SOFTEN" [label="LB-CHEM-DOSE\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_CHEM_STORE" -> "LB_DEGAS_SCRUB" [label="LB-CHEM-SCRUB\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_CHEM_STORE" -> "LB_ED1" [label="LB-CHEM-CIP1\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LB_CHEM_STORE" -> "LB_ED2" [label="LB-CHEM-CIP2\\nTBD (no S##)", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
 }

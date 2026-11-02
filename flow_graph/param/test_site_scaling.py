@@ -100,5 +100,7 @@ def test_capabilities_cannot_exceed_the_profile(base):
 
 
 def test_scaling_document_renders():
-    t = SC.render()
+    t = SC.render(S.BASELINE)
     assert 'Document number: AQS-SITE-004' in t and 'no scaling action' in t
+    t = SC.render('lake_boehmer')
+    assert 'Document number: AQS-SITE-004' in t and 'LB_ED1' in t and 'Q-036' in t

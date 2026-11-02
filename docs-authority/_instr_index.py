@@ -243,6 +243,15 @@ A('TANK_BLD', 'PT', 'pressure transmitter', 'gauge, 316L diaphragm, pad service'
 A('REC_HDR', 'PT', 'pressure transmitter', 'gauge, 316L diaphragm, header service', '0-400 kPa', 'recovery header pressure watch; the header takes every relief and offgas discharge (X-LOC-09 placeholder; A-M-398)')
 A('CAT_OX', 'TE', 'temperature element', 'Pt100 class A, IEC 60751, 316L thermowell', K600, 'catalyst bed temperature watch against the A-M-399 450 C light-off window (X-LOC-09 placeholder)')
 A('E_HEAT', 'TE', 'temperature element', 'Pt100 class A, IEC 60751, 316L thermowell', K600, 'resistance element temperature watch on the N+1 melt trim duty (X-LOC-09 placeholder)')
+A('LB_INTAKE', 'FT', 'flow transmitter', 'magnetic, HDPE wetted, brine service', '0-60 m3/h', 'feed throughput watch against the design 1,000 m3/d (X-LOC-05 Lake Boehmer; A-M-434)')
+A('LB_DEGAS', 'PT', 'pressure transmitter', 'gauge, 316L diaphragm, blower discharge', '0-30 kPa', 'air-stripper blower discharge pressure watch at the packing air-to-water ratio (X-LOC-05 Lake Boehmer; A-M-450)')
+A('LB_DEGAS_SCRUB', 'AT', 'hydrogen sulfide analyzer', 'fixed H2S monitor at the scrubbed vent, electrochemical', '0-50 ppm', 'scrubbed-vent H2S watch against the 10 ppm OSHA ceiling; lethal-site alarm (X-LOC-05 Lake Boehmer; A-M-436)')
+A('LB_SOFTEN', 'AT', 'pH analyzer', 'gel electrode, 316L holder, softened outlet', '6-12 pH', 'lime/soda dosing control on the softened-brine pH (X-LOC-05 Lake Boehmer; A-M-447)')
+A('LB_ED1', 'PT', 'pressure transmitter', 'gauge, 316L diaphragm, stack feed header', '0-600 kPa', 'primary ED stack feed pressure watch (X-LOC-05 Lake Boehmer; A-M-438)')
+A('LB_ED2', 'AT', 'conductivity analyzer', 'graphite electrode, product line', '0-30 mS/cm', 'product TDS watch against the segment 2311 target (X-LOC-05 Lake Boehmer; A-M-448)')
+A('LB_PROD_TANK', 'LT', 'level transmitter', 'radar, atmospheric tank', '0-4 m', 'product buffer level watch (X-LOC-05 Lake Boehmer; A-M-225 basis)')
+A('LB_BRINE_RETURN', 'FT', 'flow transmitter', 'magnetic, HDPE wetted, concentrate service', '0-40 m3/h', 'concentrate return flow watch; with the product flow it closes the site salt balance (X-LOC-05 Lake Boehmer; A-M-437)')
+A('LB_CHEM_STORE', 'LT', 'level transmitter', 'radar, day tank', '0-2 m', 'chemical day-tank level watch against the resupply interval (X-LOC-05 Lake Boehmer; A-M-225 basis)')
 _have = {(r['unit'], r['tag'].split('-')[-2]) for r in rows}
 _nauth = 0
 for u, L, typ, spec, rng, sig, basis, sif in AUTH:

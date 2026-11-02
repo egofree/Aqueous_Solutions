@@ -7,7 +7,7 @@ Authority: the placement model (flow_graph/placement_seed.json Rev M, AQS-BLD-00
 
 Route rule: up to the source-level rack (datum + 3200 mm, AQS-PIP-002), X run, Y run, then vertical to the target centre. Legs in mm, signed. Elbows = non-zero legs - 1. Risers are at least 300 mm above the higher end so every route keeps a flexible leg (X-PIP-04). Unit centres are the placement-model centres; nozzle lateral offsets refine at detail design (the nozzle schedules carry face + height). Supports and stress: AQS-PIP-005.
 
-Status. 396 positioned piped lines routed, 7874 m total. 0 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
+Status. 396 positioned piped lines routed, 7874 m total. 15 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
 
 | Line | DN | Class | From | To | dZ up | dX | dY | dZ down | Length m | Elbows |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -408,4 +408,19 @@ Status. 396 positioned piped lines routed, 7874 m total. 0 piped lines wait on u
 | IA-NH3-MET | 15 | P1 | WS_AMMONIA | MET_SYN | 2650 | -2950 | -5100 | -2450 | 13.2 | 3 |
 | DL_MET_TO_FEED | 15 | P1 | MET_SYN | CHICKEN_COOP | 2450 | 5100 | 5850 | -2250 | 15.7 | 3 |
 
-All piped lines routed.
+Waiting on placements:
+- LB-FEED (LB_INTAKE unplaced)
+- LB-DEGAS-OUT (LB_DEGAS unplaced)
+- LB-DEGAS-VENT (LB_DEGAS unplaced)
+- LB-SCRUB-VENT (LB_DEGAS_SCRUB unplaced)
+- LB-SOFTEN-OUT (LB_SOFTEN unplaced)
+- LB-ED1-DIL (LB_ED1 unplaced)
+- LB-ED1-CONC (LB_ED1 unplaced)
+- LB-ED2-DIL (LB_ED2 unplaced)
+- LB-ED2-CONC (LB_ED2 unplaced)
+- LB-PROD-RETURN (LB_PROD_TANK unplaced)
+- LB-BRINE-OUT (LB_BRINE_RETURN unplaced)
+- LB-CHEM-DOSE (LB_CHEM_STORE unplaced)
+- LB-CHEM-SCRUB (LB_CHEM_STORE unplaced)
+- LB-CHEM-CIP1 (LB_CHEM_STORE unplaced)
+- LB-CHEM-CIP2 (LB_CHEM_STORE unplaced)

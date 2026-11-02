@@ -8837,6 +8837,167 @@
         "status": "study",
         "note": "A-M-433 X-END-02 rare-earth route (Q-013): REE_RECOVER batch campaign. muffle 0.25 kW + stirrer/pumps 0.05 kW; campaign duty, not continuous process load."
       }
+    },
+    {
+      "unit_id": "LB_INTAKE",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "intake",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "floating shallow-lake intake, screened, with feed pumps; draws Lake Boehmer brine to the degasser (site basis AQS-SITE-015)",
+          "feed": "Lake Boehmer artesian brine (abandoned well Sloan Blair No. 1): TDS about 105 g/L (derived estimate), sulfate about 7,500 mg/L, hydrogen sulfide design value 110 ppm at the wellhead; drivers WTR.lake-boehmer.*",
+          "basis": "A-M-434"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_DEGAS",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "scrubber",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "packed air stripper sized from the Henry coefficients of H2S and CO2 at the design air-to-water ratio; strips dissolved sulfide and carbon dioxide ahead of softening",
+          "basis": "A-M-450"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_DEGAS_SCRUB",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "scrubber",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "caustic-polish scrubber on the stripper off-gas: chemosorption of hydrogen sulfide before the vent; blowdown returns to the brine-return line",
+          "basis": "A-M-436"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_SOFTEN",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "reactor",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "lime/soda-ash softening reactor with clarifier: precipitates calcium ahead of electrodialysis; sludge returns to the brine-return line",
+          "basis": "A-M-447"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_ED1",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "membrane",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "primary electrodialysis stage: dilute 105 to 45 g/L TDS at the design recovery and current density",
+          "basis": "A-M-438 to A-M-441"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_ED2",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "membrane",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "polishing electrodialysis stage: dilute 45 to 15 g/L TDS to the product criterion (segment 2311 annual average)",
+          "basis": "A-M-438 to A-M-449"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_PROD_TANK",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "tank",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "product buffer between the polishing stage and the return diffuser; hold time at the locale design pass (A-M-225 basis)",
+          "basis": "A-M-448"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_PROD_OUTLET",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "boundary",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "accounting boundary of the return diffuser: product and concentrate both return to the lake (owner decision, OPEN_QUESTIONS.md Q-037); net lake salt removal is therefore about zero - the service is degas and in-lake dilution",
+          "basis": "A-M-448"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_BRINE_RETURN",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "junction",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "concentrate return line: ED concentrate from both stages and the softening sludge return to the lake diffuser",
+          "basis": "A-M-437"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_CHEM_STORE",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "tank",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "chemical store: lime, soda ash, scrubber caustic and clean-in-place acid; resupply by road",
+          "basis": "A-M-225 (hold-time basis)"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
     }
   ],
   "streams": [
@@ -19750,6 +19911,294 @@
       "to_sector_id": "MEOH",
       "open_boundary": false,
       "note": "X-UI-002 MET_SYN (A-M-416 route A); namespace=IA; layers=elec"
+    },
+    {
+      "stream_id": "LB-FEED",
+      "from_unit_id": "LB_INTAKE",
+      "to_unit_id": "LB_DEGAS",
+      "phase": "L",
+      "carries": "Lake Boehmer feed brine",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "open_boundary",
+      "note": "Feed assay is a derived estimate (A-M-434/A-M-435); hydrogen sulfide design value 110 ppm at the wellhead (A-M-436); the sealed MPGCD laboratory report replaces all three.; gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "LB-DEGAS-OUT",
+      "from_unit_id": "LB_DEGAS",
+      "to_unit_id": "LB_SOFTEN",
+      "phase": "L",
+      "carries": "degassed brine",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "open_boundary",
+      "note": "site design stream (X-LOC-05); gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "LB-DEGAS-VENT",
+      "from_unit_id": "LB_DEGAS",
+      "to_unit_id": "LB_DEGAS_SCRUB",
+      "phase": "G",
+      "carries": "stripped H2S and CO2",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "open_boundary",
+      "note": "site design stream (X-LOC-05); load waits on the dissolved-sulfide assay (A-M-450); gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "LB-SCRUB-VENT",
+      "from_unit_id": "LB_DEGAS_SCRUB",
+      "to_unit_id": "ATMOS",
+      "phase": "G",
+      "carries": "scrubbed stripper vent",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "open_boundary",
+      "note": "site design stream (X-LOC-05); lethal-site controls at the vent (A-M-436); gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "LB-SOFTEN-OUT",
+      "from_unit_id": "LB_SOFTEN",
+      "to_unit_id": "LB_ED1",
+      "phase": "L",
+      "carries": "softened brine to the primary stage",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "open_boundary",
+      "note": "site design stream (X-LOC-05); gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "LB-SOFTEN-SLUDGE",
+      "from_unit_id": "LB_SOFTEN",
+      "to_unit_id": "LB_BRINE_RETURN",
+      "phase": "S",
+      "carries": "softening sludge (calcium carbonate and precipitated solids)",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "open_boundary",
+      "note": "site design stream (X-LOC-05); the sludge is one of the two streams that leave the lake system (Q-037); gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "LB-ED1-DIL",
+      "from_unit_id": "LB_ED1",
+      "to_unit_id": "LB_ED2",
+      "phase": "L",
+      "carries": "dilute at the stage 1 product concentration",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "open_boundary",
+      "note": "site design stream (X-LOC-05); gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "LB-ED1-CONC",
+      "from_unit_id": "LB_ED1",
+      "to_unit_id": "LB_BRINE_RETURN",
+      "phase": "L",
+      "carries": "stage 1 concentrate",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "open_boundary",
+      "note": "site design stream (X-LOC-05); gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "LB-ED2-DIL",
+      "from_unit_id": "LB_ED2",
+      "to_unit_id": "LB_PROD_TANK",
+      "phase": "L",
+      "carries": "product dilute at the segment 2311 class",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "open_boundary",
+      "note": "site design stream (X-LOC-05); gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "LB-ED2-CONC",
+      "from_unit_id": "LB_ED2",
+      "to_unit_id": "LB_BRINE_RETURN",
+      "phase": "L",
+      "carries": "stage 2 concentrate",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "open_boundary",
+      "note": "site design stream (X-LOC-05); gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "LB-PROD-RETURN",
+      "from_unit_id": "LB_PROD_TANK",
+      "to_unit_id": "LB_PROD_OUTLET",
+      "phase": "L",
+      "carries": "product return to the lake diffuser",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": true,
+      "null_rate_kind": "open_boundary",
+      "note": "open boundary to the lake (Q-037); net salt removal through this edge is zero while the concentrate returns with it; gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "LB-BRINE-OUT",
+      "from_unit_id": "LB_BRINE_RETURN",
+      "to_unit_id": "LB_PROD_OUTLET",
+      "phase": "L",
+      "carries": "concentrate return to the lake diffuser",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": true,
+      "null_rate_kind": "open_boundary",
+      "note": "open boundary to the lake (Q-037); carries the removed salt back to the lake, so net lake salt removal is about zero; gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "LB-CHEM-DOSE",
+      "from_unit_id": "LB_CHEM_STORE",
+      "to_unit_id": "LB_SOFTEN",
+      "phase": "L",
+      "carries": "lime and soda ash dose",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "open_boundary",
+      "note": "site design stream (X-LOC-05); dose waits on the assayed feed calcium (A-M-447); gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "LB-CHEM-SCRUB",
+      "from_unit_id": "LB_CHEM_STORE",
+      "to_unit_id": "LB_DEGAS_SCRUB",
+      "phase": "L",
+      "carries": "scrubber caustic make-up",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "open_boundary",
+      "note": "site design stream (X-LOC-05); gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "LB-CHEM-CIP1",
+      "from_unit_id": "LB_CHEM_STORE",
+      "to_unit_id": "LB_ED1",
+      "phase": "L",
+      "carries": "clean-in-place acid, primary stage",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "open_boundary",
+      "note": "site design stream (X-LOC-05); gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
+    },
+    {
+      "stream_id": "LB-CHEM-CIP2",
+      "from_unit_id": "LB_CHEM_STORE",
+      "to_unit_id": "LB_ED2",
+      "phase": "L",
+      "carries": "clean-in-place acid, polishing stage",
+      "rate": {
+        "value": null,
+        "unit": "",
+        "status": "tbd",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "null_rate_kind": "open_boundary",
+      "note": "site design stream (X-LOC-05); gap_flags=no_S_id,site_design_stream; presence=placeholder; namespace=TBD; layers=mass"
     }
   ],
   "electrical": {
@@ -19811,5 +20260,5 @@
   },
   "gaps": [],
   "unclosed_streams": [],
-  "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress. | D-PV encode 2026-10-18 (AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78; A-M-231..238): PV 3466 kWp = 2.0 x 1733 balancing; 6932 x 0.5 kWp modules; array 30 444 m2; derived building 198 x 168 m (33 x 28 bays, 33 264 m2 gross, +32 832 m2 extension at 93.84 kW); 49 x 60 kW inverters; storage 3500 kWh / 1137 kW charge / 250 kW discharge; IA-PV-01 = 312.5 kW absolute; mvs.electrical need 250 / target 625 kW.\nGENERATED projection of AQS-FLOW-GRAPH-001 rev AC (plant_flow_graph.json). Single write path = plant_flow_graph.json (nodes/edges + mvs). Do not edit this file; regenerate via flow_graph/export_candidate_mvs.py. Never mvs_equivalent from topology alone."
+  "notes": "SEED candidate MVS at SCALE_M=1. Reconciled to AQS-SEC-001 Rev E (A4\u2013A9 defaults locked). Project locks: FAB+MFG required (A2); ESS peers ZNBR2/MEOH/PUMPED_HYDRO all required (A3 Rev D). Sandbox off any ESS \u2192 unreclaimed_resource. Study units: VCD_TRAIN, REMIN, GEO_ORC, LITHO_STUB, SOLAR_PV_CELL (AQS-EQP-STUDY-001). Surplus thresholds AQS-SUR-001; ESS duties AQS-ESS-001; self-copy AQS-BOM-SC-001 Partial. loops_closed=false (honest). Not frozen AQS-MVS-001. CAD note 2026-10-01 Rev C wave: more rates from AUD/REQ/MeOH; remaining nulls life-gas TBD / inventory cycle / event / contingency / ORC. See AQS-SCALE-UR-001 Rev B. Phase A (AQS-PLAN-UI-001 2026-10-01): WP-A1 null_rate_kind labels on remaining nulls; WP-A2 upper-band S14=4.2 \u2192 food export 1.8 kg/d pass_study; WP-A4 hydro continuous_kw incomplete + scale-up V path; WP-A5 study-unit blockers in unit.params; self_copy remains Partial. | Rev E-candidate 2026-10-01 Phase A side quests: ST-LITHO-01 resist 0.2-1 g/d dry + 0.1 kW_e; ST-BLOW-01 0.5 kW_e avg (2-4 peak); ST-ELC-01 0.3 kW_e non-precious class; ST-SOLAR-01 REQ bands locked; VCD/REMIN/ORC physics_closed_external_queued. Sandbox tracks MVS progress. | D-PV encode 2026-10-18 (AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78; A-M-231..238): PV 3466 kWp = 2.0 x 1733 balancing; 6932 x 0.5 kWp modules; array 30 444 m2; derived building 198 x 168 m (33 x 28 bays, 33 264 m2 gross, +32 832 m2 extension at 93.84 kW); 49 x 60 kW inverters; storage 3500 kWh / 1137 kW charge / 250 kW discharge; IA-PV-01 = 312.5 kW absolute; mvs.electrical need 250 / target 625 kW.\nGENERATED projection of AQS-FLOW-GRAPH-001 rev AD (plant_flow_graph.json). Single write path = plant_flow_graph.json (nodes/edges + mvs). Do not edit this file; regenerate via flow_graph/export_candidate_mvs.py. Never mvs_equivalent from topology alone."
 }

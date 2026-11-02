@@ -111,10 +111,13 @@ def validate(prof, units=None, plan=None):
 
 
 def redundancy(prof, units=None, plan=None, red=None):
-    """Return ({function: [(source, count, how)]}, errors) after the site's scaling actions."""
+    """Return ({function: [(source, count, how)]}, errors) after the site's scaling actions.
+    A life-support function at a crew of zero has no demand to protect (Q-036), so the
+    two-source rule does not bind there; the rows still render."""
     units = units or SC.graph_units(); red = red or json.load(open(RED))
     if plan is None: plan = SC.resolve(prof, units)[0]
     out, err = {}, []
+    crew0 = (prof.get('groups', {}).get('identity', {}).get('entries', {}).get('crew', {}).get('value') == 0)
     for fn, spec in red['functions'].items():
         rows = []
         for u, n in spec['sources'].items():
@@ -124,7 +127,7 @@ def redundancy(prof, units=None, plan=None, red=None):
             elif p['status'] == 'replaced' or (p['status'] == 'eliminated' and p['replacement']):
                 rows.append((p['replacement'], 1, f'replaces {u}'))
         out[fn] = rows
-        if sum(r[1] for r in rows) < 2:
+        if sum(r[1] for r in rows) < 2 and not (crew0 and spec['class'] == 'life_support'):
             err.append(f'{fn} ({spec["class"].replace("_", "-")}): {sum(r[1] for r in rows)} source unit(s) after the scaling actions; the redundancy rule needs a spare or a source of a different technology')
     return out, err
 

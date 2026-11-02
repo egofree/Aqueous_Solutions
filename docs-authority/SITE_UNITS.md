@@ -13,6 +13,7 @@ Table 1. Placements and sizing by locale
 
 | Site | Unit | Replaces | Sizing | Basis |
 | --- | --- | --- | --- | --- |
+| lake_boehmer | LIO_BAT | BACKUP_GEN, FUEL_CELL, ZNBR2, ZNBR2_BR2_REGEN, HYDRO_SET, MEOH_FC, GEO_ORC | storage delivered kWh 2946.4; stretch h 13.5 | AQS-PLAN-011 section 5.5 worst-stretch balance; A-M-402 interim |
 | leo | CAT_OX | AFTERBURNER | design record; sizes at the locale design pass | A-M-399 |
 | leo | E_HEAT | COMB_HEAT | design record; sizes at the locale design pass | A-M-283 (30 kW connected duty carried from COMB_HEAT) |
 | leo | HYDRO_GROW | GROW_BED | design record; sizes at the locale design pass | A-M-404 |

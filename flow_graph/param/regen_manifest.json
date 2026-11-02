@@ -537,6 +537,21 @@
    "note": "Copies each unit's sector from its node onto the edges at that unit, so an edge never names a sector its unit has left."
   },
   {
+   "name": "lake_boehmer_design",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.lake_boehmer"
+   ],
+   "outputs": [],
+   "depends_on": [
+    "edge_sectors"
+   ],
+   "writes_graph": true,
+   "quick": false,
+   "note": "X-LOC-05 Lake Boehmer site design pass (AQS-SITE-015): prints the ED train, aux, PV and battery sizing from the lake_boehmer profile and drivers, and with --write stamps params.lb_design on the LB_* units and LIO_BAT inside that locale's worktree. Validator-only for every other site: it writes nothing, so the baseline regeneration stays byte-identical."
+  },
+  {
    "name": "style_builders",
    "argv": [
     "python3",

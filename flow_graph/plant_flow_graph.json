@@ -1,9 +1,9 @@
 {
   "schema_version": "aqs-flow-graph-0.1",
   "doc_id": "AQS-FLOW-GRAPH-001",
-  "revision": "AC",
+  "revision": "AD",
   "licence": "CERN-OHL-S-2.0",
-  "date": "2026-10-17",
+  "date": "2026-11-01",
   "sole_authority": true,
   "locks": [
     "layered_views",
@@ -9141,6 +9141,197 @@
           "closures": "Fe(OH)3 cake to MET_MELT remnant; NaCl brine filtrate to the BMED feed class; REO product exported"
         }
       }
+    },
+    {
+      "unit_id": "LB_INTAKE",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "intake",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "floating shallow-lake intake, screened, with feed pumps; draws Lake Boehmer brine to the degasser (site basis AQS-SITE-015)",
+          "feed": "Lake Boehmer artesian brine (abandoned well Sloan Blair No. 1): TDS about 105 g/L (derived estimate), sulfate about 7,500 mg/L, hydrogen sulfide design value 110 ppm at the wellhead; drivers WTR.lake-boehmer.*",
+          "basis": "A-M-434"
+        }
+      },
+      "notes": "Lake Boehmer intake (X-LOC-05 Lake Boehmer site design pass): the resource boundary of the lake-restoration train, on the SW_INTAKE/GW_INTAKE pattern. Sizing at the locale design pass (flow_graph/param/lake_boehmer.py).",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_DEGAS",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "scrubber",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "packed air stripper sized from the Henry coefficients of H2S and CO2 at the design air-to-water ratio; strips dissolved sulfide and carbon dioxide ahead of softening",
+          "basis": "A-M-450"
+        }
+      },
+      "notes": "Degasser (X-LOC-05): the strippable-sulfide load and the achieved removal follow the packed-tower design pass; the dissolved-sulfide assay does not exist yet (A-M-450 verification). Stripped gas goes to LB_DEGAS_SCRUB.",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_DEGAS_SCRUB",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "scrubber",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "caustic-polish scrubber on the stripper off-gas: chemosorption of hydrogen sulfide before the vent; blowdown returns to the brine-return line",
+          "basis": "A-M-436"
+        }
+      },
+      "notes": "Scrubber (X-LOC-05). Lethal-site controls: fixed H2S monitors at the units and the vent, the OSHA ceiling 10 ppm as the never-exceed value, wind sock, two-person rule outside the control container. The 110 ppm wellhead reading is the site-safety design value; the scrubber design load waits on the dissolved-sulfide assay (A-M-436).",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_SOFTEN",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "reactor",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "lime/soda-ash softening reactor with clarifier: precipitates calcium ahead of electrodialysis; sludge returns to the brine-return line",
+          "basis": "A-M-447"
+        }
+      },
+      "notes": "Softening (X-LOC-05). The feed calcium is unmeasured; the concentrate gypsum saturation at most 2 x Ksp governs the electrodialysis recovery (A-M-437). Chemistry sizes at the locale design pass on the assayed feed.",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_ED1",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "membrane",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "primary electrodialysis stage: dilute 105 to 45 g/L TDS at the design recovery and current density",
+          "basis": "A-M-438 to A-M-441"
+        }
+      },
+      "notes": "Primary ED stage (X-LOC-05): sized by flow_graph/param/lake_boehmer.py in the lake_boehmer context (specific-energy transfer function in the module docstring); the node defers sizing to the locale design pass on the DESAL_RO pattern.",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_ED2",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "membrane",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "polishing electrodialysis stage: dilute 45 to 15 g/L TDS to the product criterion (segment 2311 annual average)",
+          "basis": "A-M-438 to A-M-449"
+        }
+      },
+      "notes": "Polishing ED stage (X-LOC-05): sized by flow_graph/param/lake_boehmer.py in the lake_boehmer context; the node defers sizing to the locale design pass.",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_PROD_TANK",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "tank",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "product buffer between the polishing stage and the return diffuser; hold time at the locale design pass (A-M-225 basis)",
+          "basis": "A-M-448"
+        }
+      },
+      "notes": "Product buffer (X-LOC-05).",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_PROD_OUTLET",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "boundary",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "accounting boundary of the return diffuser: product and concentrate both return to the lake (owner decision, OPEN_QUESTIONS.md Q-037); net lake salt removal is therefore about zero - the service is degas and in-lake dilution",
+          "basis": "A-M-448"
+        }
+      },
+      "notes": "Accounting outlet (X-LOC-05), on the BOUNDARY_EXPORT pattern. Honesty note: with both streams returned, only the scrubbed sulfide and the softening sludge leave the lake system; product export to segment 2311 waters would make net removal = product flow x product TDS (Q-037).",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_BRINE_RETURN",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "junction",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "concentrate return line: ED concentrate from both stages and the softening sludge return to the lake diffuser",
+          "basis": "A-M-437"
+        }
+      },
+      "notes": "Brine return (X-LOC-05): the concentrate carries the salt removed from the dilute plus the pass-through salt of the concentrate-side feed.",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LB_CHEM_STORE",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "tank",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "chemical store: lime, soda ash, scrubber caustic and clean-in-place acid; resupply by road",
+          "basis": "A-M-225 (hold-time basis)"
+        }
+      },
+      "notes": "Chemical store (X-LOC-05); incompatible-storage separation per the IFC 5003 class rules.",
+      "continuous_kw": null
     }
   ],
   "edges": [
@@ -26551,6 +26742,426 @@
       "phase": "electric",
       "namespace": "IA",
       "open_boundary": false
+    },
+    {
+      "stream_id": "LB-FEED",
+      "from_unit_id": "LB_INTAKE",
+      "to_unit_id": "LB_DEGAS",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "Lake Boehmer feed brine",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "assay_g_L": {
+        "TDS": 105.0,
+        "SO4": 7.5
+      },
+      "notes": "Feed assay is a derived estimate (A-M-434/A-M-435); hydrogen sulfide design value 110 ppm at the wellhead (A-M-436); the sealed MPGCD laboratory report replaces all three."
+    },
+    {
+      "stream_id": "LB-DEGAS-OUT",
+      "from_unit_id": "LB_DEGAS",
+      "to_unit_id": "LB_SOFTEN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "degassed brine",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "notes": "site design stream (X-LOC-05)"
+    },
+    {
+      "stream_id": "LB-DEGAS-VENT",
+      "from_unit_id": "LB_DEGAS",
+      "to_unit_id": "LB_DEGAS_SCRUB",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "stripped H2S and CO2",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "notes": "site design stream (X-LOC-05); load waits on the dissolved-sulfide assay (A-M-450)"
+    },
+    {
+      "stream_id": "LB-SCRUB-VENT",
+      "from_unit_id": "LB_DEGAS_SCRUB",
+      "to_unit_id": "ATMOS",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "scrubbed stripper vent",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "notes": "site design stream (X-LOC-05); lethal-site controls at the vent (A-M-436)"
+    },
+    {
+      "stream_id": "LB-SOFTEN-OUT",
+      "from_unit_id": "LB_SOFTEN",
+      "to_unit_id": "LB_ED1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "softened brine to the primary stage",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "notes": "site design stream (X-LOC-05)"
+    },
+    {
+      "stream_id": "LB-SOFTEN-SLUDGE",
+      "from_unit_id": "LB_SOFTEN",
+      "to_unit_id": "LB_BRINE_RETURN",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "softening sludge (calcium carbonate and precipitated solids)",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "notes": "site design stream (X-LOC-05); the sludge is one of the two streams that leave the lake system (Q-037)"
+    },
+    {
+      "stream_id": "LB-ED1-DIL",
+      "from_unit_id": "LB_ED1",
+      "to_unit_id": "LB_ED2",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "dilute at the stage 1 product concentration",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "notes": "site design stream (X-LOC-05)"
+    },
+    {
+      "stream_id": "LB-ED1-CONC",
+      "from_unit_id": "LB_ED1",
+      "to_unit_id": "LB_BRINE_RETURN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "stage 1 concentrate",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "notes": "site design stream (X-LOC-05)"
+    },
+    {
+      "stream_id": "LB-ED2-DIL",
+      "from_unit_id": "LB_ED2",
+      "to_unit_id": "LB_PROD_TANK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "product dilute at the segment 2311 class",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "notes": "site design stream (X-LOC-05)"
+    },
+    {
+      "stream_id": "LB-ED2-CONC",
+      "from_unit_id": "LB_ED2",
+      "to_unit_id": "LB_BRINE_RETURN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "stage 2 concentrate",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "notes": "site design stream (X-LOC-05)"
+    },
+    {
+      "stream_id": "LB-PROD-RETURN",
+      "from_unit_id": "LB_PROD_TANK",
+      "to_unit_id": "LB_PROD_OUTLET",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "product return to the lake diffuser",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": true,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "notes": "open boundary to the lake (Q-037); net salt removal through this edge is zero while the concentrate returns with it"
+    },
+    {
+      "stream_id": "LB-BRINE-OUT",
+      "from_unit_id": "LB_BRINE_RETURN",
+      "to_unit_id": "LB_PROD_OUTLET",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "concentrate return to the lake diffuser",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": true,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "notes": "open boundary to the lake (Q-037); carries the removed salt back to the lake, so net lake salt removal is about zero"
+    },
+    {
+      "stream_id": "LB-CHEM-DOSE",
+      "from_unit_id": "LB_CHEM_STORE",
+      "to_unit_id": "LB_SOFTEN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "lime and soda ash dose",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "notes": "site design stream (X-LOC-05); dose waits on the assayed feed calcium (A-M-447)"
+    },
+    {
+      "stream_id": "LB-CHEM-SCRUB",
+      "from_unit_id": "LB_CHEM_STORE",
+      "to_unit_id": "LB_DEGAS_SCRUB",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "scrubber caustic make-up",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "notes": "site design stream (X-LOC-05)"
+    },
+    {
+      "stream_id": "LB-CHEM-CIP1",
+      "from_unit_id": "LB_CHEM_STORE",
+      "to_unit_id": "LB_ED1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "clean-in-place acid, primary stage",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "notes": "site design stream (X-LOC-05)"
+    },
+    {
+      "stream_id": "LB-CHEM-CIP2",
+      "from_unit_id": "LB_CHEM_STORE",
+      "to_unit_id": "LB_ED2",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "placeholder",
+      "carries": "clean-in-place acid, polishing stage",
+      "namespace": "TBD",
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "gap_flags": [
+        "no_S_id",
+        "site_design_stream"
+      ],
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "placeholder - no invented rate (the site design pass derives the rates)"
+      },
+      "notes": "site design stream (X-LOC-05)"
     }
   ],
   "view_presets": [
@@ -26956,5 +27567,6 @@
   "notes_rev_AA": "Item 8. Power duties in notes/POWER_DUTIES.md. Tied to LOAD_ROLLUP.",
   "notes_rev_AB": "Item 9. Dock intake and export list in notes/DOCK_BOUNDARY.md.",
   "loops_closed": false,
-  "notes_rev_AC": "Item 10. Assumption rates on named edges. loops_closed false. Cut-test script not in this workspace."
+  "notes_rev_AC": "Item 10. Assumption rates on named edges. loops_closed false. Cut-test script not in this workspace.",
+  "notes_rev_AD": "Lake Boehmer site train added (X-LOC-05, site basis AQS-SITE-015): the LB_* placeholder units and their placeholder edges, closed on the LB set plus the ATMOS vent sink. No rates; flow_graph/param/lake_boehmer.py derives the design rates in the lake_boehmer context. Net lake salt removal is about zero while product and concentrate both return (Q-037). loops_closed remains false."
 }
