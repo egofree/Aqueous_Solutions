@@ -1,2 +1,10 @@
-item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 1000 x 1000 x 1500 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; standby train (AQS-DUTY-072 section 4)
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Plinth 1000 x 1000 x 60 (CS, anchor bosses)",1,carbon steel,471.0,make,"dry furnace-shop service, CA 0 mm (AQS-STD-001 shop rule); anchors in fasteners.csv"
+2,"Vacuum chamber 304L t6, 660 x 800 x 1100, lid t40, with drain/vent/charge/pour passes",1,304L plate,369.3,make,"duty section 3: 304L vacuum chamber (X-MAT-22); wall is the study fab-page value (hold, WORK_ORDER W12); standby_rated N+1 of IND_MELT (A-M-282)"
+3,Ceramic-fibre insulation package t40 inside the vacuum boundary,1,ceramic-fibre board 128 kg/m3,22.3,make,duty section 3: ceramic-fibre insulation on the shell
+4,"Water-cooled Cu crucible OD 120 x 160, jacket wall 10 (the 2.0 kg ISM design case)",1,"copper, water-cooled",5.0,make,"duty section 3: no wetted-refractory interface (CRC_TI 1668 C class); cooling-water circuit is loop hardware, not modeled (WORK_ORDER W12)"
+5,"ISM induction coil, 8 turns x OD 15 Cu, with leads",1,Cu ETP tube,0.6,make,duty section 2: the node connected_kW is the rating; coil water interlock is a unit-task item
+6,Tilt-pour lip and trunnion pins,1,carbon steel,4.4,make,tilt pour to the +Y melt rows at z 600; study geometry (WORK_ORDER W12)
+7,"PSU cabinet, 15.0 kW connected (node design), IP54",1,purchased cabinet (envelope),164.6,buy,"purchased per plan rule 6; the maker rating reads the sheet at order; standby unit, energized only on the IND_MELT outage (A-M-282)"
+8,Tilt-frame hydraulics bay on the +X floor,1,carbon steel,667.2,make,WORK_ORDER W10 route; actuator package purchased at fabrication (WORK_ORDER W12)
+9,"Nozzle set per docs-authority/nozzles/VAC_IND.csv: 5 atmospheric open-bore tube connections flush at the envelope faces (drain through the plinth, vent riser on the chamber lid)",5,304L tube,2.2,make,"schedule tags/faces/heights verbatim; solids row at DN15, bore not calculated (W4)"

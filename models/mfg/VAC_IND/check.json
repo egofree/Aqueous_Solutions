@@ -1,0 +1,122 @@
+{
+  "bbox_mm": [
+    1000.0,
+    1000.0,
+    1500.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    1000.0,
+    1500.0
+  ],
+  "size_basis": "A-M-199 melt class N+1 rated envelope (A-M-282): real machine, standby-zero design-day rate",
+  "graph_revision": "AD",
+  "solids": 11,
+  "all_parts_valid": true,
+  "machine": {
+    "chamber": {
+      "od_mm": [
+        660.0,
+        800.0
+      ],
+      "z_mm": [
+        60.0,
+        1200.0
+      ],
+      "wall_mm": 6.0,
+      "wall_basis": "study fab-page 304L t6 vacuum shell (no thickness booked on the node - hold, WORK_ORDER W12)"
+    },
+    "crucible": {
+      "od_mm": 120.0,
+      "h_mm": 160.0,
+      "wall_mm": 10.0,
+      "basis": "water-cooled copper induction crucible, no wetted-refractory interface (duty section 3); the 2 kg ISM design case (node design design_case_kg) sets the size class"
+    },
+    "coil": {
+      "turns": 8,
+      "tube_od_mm": 15.0,
+      "basis": "ISM through-coil; the duty section 2 connected_kW 15.0 is the node rating"
+    },
+    "psu": {
+      "bay": "x 660..1000, 15 kW connected (node design); purchased cabinet drawn as its envelope per plan rule 6"
+    }
+  },
+  "standby": {
+    "state": "standby_rated N+1 diverse of IND_MELT (A-M-282/A-M-283); energized only on the IND_MELT relining/repair outage (outage_d 2.0); design-day rate zero on the graph",
+    "basis": "duty section 2 sizing study; the machine is designed per the node design block so the alternate is real, not a placeholder"
+  },
+  "material": {
+    "class": "304L vacuum chamber + water-cooled Cu crucible, ceramic-fibre insulation on the shell",
+    "ca_mm": 0.0,
+    "basis": "duty section 3 (X-MAT-22): the water-cooled copper face keeps the Ti melt out of contact with any refractory; 304L chamber; CA 0 mm (AQS-STD-001 shop rule)"
+  },
+  "a_mach_anchors": "8 M12 wedge anchors, plinth to slab (fasteners.csv)",
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "vacuum melt to cast",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube",
+      "dn": "solids",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "Ti sponge/powder to vacuum melt",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4); solids row drawn at DN15, bore not calculated (W4 rule)"
+    },
+    "N3": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "reactive melt for investment pour",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4); flush at the envelope bottom (schedule datum 50)"
+    },
+    "N5": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 1500.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4); schedule datum 800 is the placeholder elevation - the riser stands on the chamber lid and flushes at the envelope top (hold, WORK_ORDER W12)"
+    }
+  },
+  "nozzle_count_schedule": 5,
+  "nozzle_idiom": "atmospheric open-bore DN15 tube connections flush at the envelope faces (duty section 4: hose, atmospheric); the schedule inlet/outlet/bottom/top faces are mapped to compass faces by the registered layout (params.json layout block); the solids row is drawn at DN15 labeled bore not calculated (W4 rule); the schedule rating column (Class 150) is carried verbatim as text; datums are the schedule placeholders (holds, WORK_ORDER W12)",
+  "part_mass_kg": {
+    "plinth": 471.0,
+    "chamber_shell": 201.6,
+    "chamber_lid": 167.7,
+    "fibre_lining": 22.3,
+    "crucible_jacket": 5.0,
+    "ism_coil": 0.6,
+    "pour_hardware": 4.4,
+    "psu_cabinet": 164.6,
+    "tilt_frame": 667.2,
+    "nozzles": 2.2
+  },
+  "cadquery": "2.8.0"
+}

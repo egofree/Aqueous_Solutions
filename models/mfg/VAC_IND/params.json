@@ -24,7 +24,14 @@
   "connected_kW": 15.0,
   "backup_of": "IND_MELT",
   "outage_d": 2.0,
-  "duty_note": "equal-duty backup of the 25 kW melt at the 2 kg ISM batch class (A-M-283)"
+  "duty_note": "equal-duty backup of the 25 kW melt at the 2 kg ISM batch class (A-M-283)",
+  "machine": "vacuum induction skull-melt (ISM) furnace, N+1 diverse standby of IND_MELT (node design service)",
+  "mat": "304L vacuum chamber + water-cooled Cu crucible, ceramic-fibre insulation (duty section 3)",
+  "ca_mm": 0.0,
+  "wall_mm": 6.0,
+  "wall_basis": "study fab-page 304L t6 vacuum shell (WORK_ORDER W12)",
+  "internals": "none drawn (node internals row none); the 2 kg design-case skull melt is a process-inventory solid, not a BOM part",
+  "purchased": "PSU cabinet 15.0 kW connected, drawn as its envelope (plan rule 6); actuator package at fabrication"
  },
  "nozzles": [
   {
@@ -74,5 +81,35 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class furnace"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   1000.0,
+   1500.0
+  ],
+  "basis": "A-M-199 melt class N+1 rated envelope (A-M-282); real machine, standby-zero design-day rate",
+  "chamber": {
+   "xy_mm": [
+    660.0,
+    800.0
+   ],
+   "z_mm": [
+    60.0,
+    1200.0
+   ],
+   "wall_mm": 6.0
+  },
+  "psu_bay": {
+   "x_mm": [
+    660.0,
+    1000.0
+   ]
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; chamber on the plinth x 0..660, y 0..800, z 60..1200; PSU bay x 660..1000; tilt hydraulics floor bay; crucible axis at the chamber centre",
+  "nozzle_spread": "the schedule gives inlet/outlet/bottom/top and heights only; +Y melt stubs at x 240/420 flush at the envelope face; -Y charge port at x 240; drain under the crucible axis; vent riser on the chamber lid to the envelope top; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }

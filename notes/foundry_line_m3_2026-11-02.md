@@ -34,3 +34,31 @@ standby in their work orders and BOMs, not placeholder boxes.
 - Drawing set regenerated from the rebuilt solids (8 sheets; title blocks per
   AQS-DWG-002, graph Rev AD). Duty section 7 already named the model source.
   Tracker row 80: M3, misfit cleared. Route hold stays reported.
+
+## VAC_IND (vacuum induction skull-melt furnace, FOUNDRY N+1 alternate, tier 6) — commit 2
+
+- New per-unit model `models/mfg/VAC_IND/vac_ind.py` on the shared lib, the
+  POLY_COND installed-standby idiom: the standby_rated N+1 alternate (A-M-282/
+  A-M-283) is drawn as the real machine per its node design block and duty
+  section 3 — 304L vacuum chamber (t6) with the ceramic-fibre insulation
+  package inside the vacuum boundary, water-cooled Cu crucible (no
+  wetted-refractory interface), ISM coil and lead to the 15 kW PSU bay, tilt
+  pour about the z 500 trunnions — replacing the placeholder envelope box.
+  Standby named in the WORK_ORDER header, the BOM rows and the build log.
+- All 5 schedule rows drawn flush at the envelope faces (N1/N3 +Y melt rows at
+  z 600; N2 solids charge port at DN15, bore not calculated; N4 drain through
+  the plinth; N5 vent riser on the chamber lid; the 800 datum is the schedule
+  placeholder, W12). The inlet/outlet face words map to compass by the
+  registered layout in the params layout block.
+- Build fills the node box exactly (1000 × 1000 × 1500, zero face overhang);
+  `tracker --check VAC_IND` green; `cad/stl/VAC_IND.stl` replaced from the
+  build; BOM complete with make-or-buy (PSU cabinet is the buy row); fasteners
+  grade rule W5 (8.8 CS anchors, A4-70 on the 304L lid studs); WORK_ORDER
+  rewritten to W1–W12 with holds named (route-class hold for `furnace`, study
+  chamber wall, placeholder elevations, pending vacuum/relief case, purchased
+  ratings, loop hardware).
+- Drawing set: new 7-sheet set (ga_front/ga_side/nozzle_orient/chamber01/
+  melt01/aux01/iso01; title blocks per AQS-DWG-002, graph Rev AD); the stale
+  Oct-31 3-sheet GA SVGs are regenerated into it. Duty section 7 now names the
+  model source via `docs-authority/_duty_basis.py`. Tracker row 127: M3.
+  Route hold stays reported.
