@@ -1,0 +1,79 @@
+{
+  "bbox_mm": [
+    1500.0,
+    800.0,
+    1500.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1500.0,
+    800.0,
+    1500.0
+  ],
+  "size_basis": "A-M-199 forming class N+1 rated envelope (A-M-282)",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "machine": {
+    "frame": {
+      "housing_x_mm": [
+        340.0,
+        440.0,
+        1060.0,
+        1160.0
+      ],
+      "crown_z_mm": [
+        1360.0,
+        1500.0
+      ],
+      "basis": "twin-housing open-die frame, cast-steel class (duty section 3, DIETER1988)"
+    },
+    "ram": {
+      "dia_mm": 200.0,
+      "span_z_mm": [
+        660.0,
+        1160.0
+      ],
+      "basis": "node design ram_mm 200; press_t 25 is the node rating; cast-steel ram and platens (duty section 3)"
+    },
+    "die_set": {
+      "t_mm": 120.0,
+      "basis": "H13 die blocks (duty section 3, ASM_V1); purchased consumable pair, buy; the re-cuttable cast alternative is the duty alternative row"
+    },
+    "bolster": {
+      "z_mm": [
+        560.0,
+        680.0
+      ]
+    },
+    "purchased": "hydraulic power unit and control pedestal on their bays, drawn as their envelopes per plan rule 6 (connected_kW 11 is the node rating)",
+    "guard": "die-zone guard rail on 4 posts, 2 rail tiers (A-MACH: guard drawn)"
+  },
+  "standby": {
+    "state": "standby_rated N+1 former of ROLL (A-M-282/A-M-283); energized on the roll-stand outage at the bar class (outage_d 2.0); design-day rate zero on the graph",
+    "basis": "duty section 2 sizing study"
+  },
+  "material": {
+    "class": "H13 die blocks + cast-steel platens/ram on the open-die press",
+    "ca_mm": 0.0,
+    "basis": "duty section 3 (X-MAT-22); CA 0 mm - dry hot-work contact, no corrosive stream (AQS-STD-001 shop rule)"
+  },
+  "a_mach": {
+    "guard": "die-zone guard rail drawn (A-MACH)",
+    "anchors": "8 M16 wedge anchors, plinth to slab (fasteners.csv)",
+    "purchased": "HPU skid and control pedestal (connected_kW 11, node design)"
+  },
+  "nozzles": "no piped process connection on the graph; no nozzle schedule is issued (duty section 4) - no nozzle hardware drawn (hold, WORK_ORDER W12)",
+  "nozzle_count_schedule": 0,
+  "part_mass_kg": {
+    "plinth": 565.2,
+    "frame": 1211.7,
+    "ram_group": 238.4,
+    "bolster": 328.3,
+    "die_set": 72.3,
+    "guard_rail": 7.5,
+    "hpu_skid": 663.2,
+    "control_pedestal": 542.6
+  },
+  "cadquery": "2.8.0"
+}

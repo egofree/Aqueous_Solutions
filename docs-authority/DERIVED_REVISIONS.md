@@ -395,8 +395,8 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/RELIEF_CRYO.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/RELIEF_H2.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/REMIN.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/RES_HEAT.md` | working tree | current |
-| `docs-authority/duties/RF_HEAT.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/RES_HEAT.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/RF_HEAT.md` | working tree | current |
 | `docs-authority/duties/ROLL.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/ROOF_TANK.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/S13_CLASS_TREAT.md` | f0160a6 (regenerated, no change) | current |
@@ -1315,7 +1315,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/FLUE_KO/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/FLUX_PREP/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/FOOD_STORE/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/FORGE/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/FORGE/params.json` | working tree | current |
 | `models/mfg/FUEL_CELL/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/F_RECOVER/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/GALLEY/params.json` | f0160a6 (regenerated, no change) | current |
@@ -1410,7 +1410,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/RELIEF_H2/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/REMIN/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/RES_HEAT/params.json` | working tree | current |
-| `models/mfg/RF_HEAT/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/RF_HEAT/params.json` | working tree | current |
 | `models/mfg/ROLL/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/ROOF_TANK/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/SALT_FEED/params.json` | f0160a6 (regenerated, no change) | current |

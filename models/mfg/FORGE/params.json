@@ -24,7 +24,12 @@
   "backup_of": "ROLL",
   "outage_d": 2.0,
   "press_t": 25,
-  "ram_mm": 200
+  "ram_mm": 200,
+  "mat": "H13 die blocks + cast-steel platens/ram (duty section 3)",
+  "ca_mm": 0.0,
+  "wall_basis": "study cast-steel sections; no thickness booked on the node (WORK_ORDER W12)",
+  "internals": "none drawn (node internals row none)",
+  "purchased": "HPU skid and control pedestal (connected_kW 11.0 node design), drawn as their envelopes (plan rule 6); the H13 die pair is the purchased consumable"
  },
  "nozzles": [],
  "material": "H13 die blocks + cast-steel platens/ram on the open-die press (graph design ram_mm 200)",
@@ -35,5 +40,38 @@
  "holds": [
   "no duty section 4 schedule on file",
   "no AQS-PLAN-006 section 4 route class for class press"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1500.0,
+   800.0,
+   1500.0
+  ],
+  "basis": "A-M-199 forming class N+1 rated envelope (A-M-282)",
+  "frame": {
+   "housing_x_mm": [
+    340.0,
+    1060.0
+   ],
+   "crown_z_mm": [
+    1360.0,
+    1500.0
+   ]
+  },
+  "purchased_bays": {
+   "hpu_x_mm": [
+    1200.0,
+    1500.0
+   ],
+   "pedestal_x_mm": [
+    40.0,
+    280.0
+   ]
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; twin housings x 340..440 / 1060..1160 on the plinth, crown across the top; ram centreline at x 750; bolster bed mid-height; HPU bay +X, control pedestal -X; die-zone guard rail between them",
+  "nozzle_spread": "no piped process connection on the graph (duty section 4); no nozzle hardware drawn (hold, WORK_ORDER W12)",
+  "hardware_idiom": "no connection hardware; bbox within the node envelope"
+ }
 }

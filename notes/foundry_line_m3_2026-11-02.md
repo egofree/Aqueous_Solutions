@@ -224,3 +224,31 @@ standby in their work orders and BOMs, not placeholder boxes.
   no nozzle sheet, no schedule; title blocks per AQS-DWG-002, graph Rev AD);
   the stale Oct-31 3-sheet GA set is regenerated into it. Duty section 7 now
   names the model source. Tracker row 117: M3. Route hold stays reported.
+
+## FORGE (open-die hydraulic press, FOUNDRY N+1 alternate, tier 7) — commit 10
+
+- New per-unit model `models/mfg/FORGE/forge.py` on the shared lib, the
+  installed-standby idiom: the N+1 former of ROLL (A-M-282/A-M-283) drawn as
+  the real machine per duty section 3 — twin-housing cast-steel frame with
+  crown, ram group to the node design ram_mm 200 (press_t 25), bolster bed,
+  H13 die pair (consumable buy set), die-zone guard rail, and the HPU skid and
+  control pedestal as purchased envelopes (11 kW connected, node design) —
+  replacing the placeholder envelope box. Standby named in the WORK_ORDER
+  header, the BOM rows and the build log.
+- No piped process connection on the graph (duty section 4: no nozzle schedule
+  is issued), so no nozzle hardware is drawn; the no-schedule nozzle line is
+  recorded honestly in the build log, check.json and the BOM's zero-qty row.
+- A-MACH: guard rail and slab anchors drawn; purchased items named with the
+  node rating. A-SC: the press forges the shop's bar stock; make rows flagged
+  and W11 cross-references AQS-BOM-SC-001.
+- Build fills the node box exactly (1500 × 800 × 1500, zero face overhang);
+  `tracker --check FORGE` green; `cad/stl/FORGE.stl` replaced from the build;
+  BOM complete with make-or-buy; fasteners grade 8.8 carbon steel per the W5
+  grade rule; WORK_ORDER rewritten to W1–W12 with holds named (route-class
+  hold for `press`, study frame sections, no-schedule hold, purchased hydraulic
+  package, pending relief case); the HPU abbreviation joined AQS-GLOSSARY.
+- Drawing set: new 6-sheet set (ga_front/ga_side/frame01/die01/aux01/iso01 —
+  no nozzle sheet, no schedule; title blocks per AQS-DWG-002, graph Rev AD);
+  the stale Oct-31 3-sheet GA set (which carried the invalid raw "P&ID" token)
+  is regenerated into it. Duty section 7 now names the model source. Tracker
+  row 151: M3. Route hold stays reported.

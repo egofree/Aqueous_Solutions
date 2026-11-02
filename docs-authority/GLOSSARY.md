@@ -1169,6 +1169,8 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {PSU -- Power supply unit.}
 
+{HPU -- Hydraulic power unit: the pump, reservoir and valve package that pressurises a hydraulic machine.}
+
 {SCR -- Silicon-controlled rectifier (thyristor), used for heater power control.}
 
 {SD -- Hydrostatic design stress of a polyethylene tank wall (ASTM D1998).}

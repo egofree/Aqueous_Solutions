@@ -1,2 +1,10 @@
-item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 1500 x 800 x 1500 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; standby train (AQS-DUTY-072 section 4)
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Plinth 1500 x 800 x 60 (CS, anchor bosses)",1,carbon steel,565.2,make,"dry forge-floor service, CA 0 mm (AQS-STD-001 shop rule); anchors in fasteners.csv"
+2,Twin-housing frame: housing plates 100 t with crown beam z 1360..1500,1,cast steel,1211.7,make,duty section 3: cast-steel platens/frame (DIETER1988); N+1 former of ROLL (A-M-282); study sections (WORK_ORDER W12)
+3,"Ram group: cylinder OD 280 (node design ram_mm 200) with platen, press_t 25 node rating",1,cast steel,238.4,make,duty section 3: cast-steel ram and platens; the hydraulic cylinder package purchases at fabrication (WORK_ORDER W12)
+4,Bolster bed z 560..680,1,cast steel,328.3,make,duty section 3 platen class
+5,"H13 die block pair, t120 (open-die flat dies)",1,H13 tool steel (consumable),72.3,buy,"duty section 3 (ASM_V1); consumable set, buy; the re-cuttable cast alternative is the duty alternative row (not drawn)"
+6,"Die-zone guard rail, 4 posts x 2 tiers (A-MACH: guard drawn)",1,CS tube,7.5,make,guard over the die zone; layout choice (WORK_ORDER W12)
+7,"Hydraulic power unit skid on the +X bay (purchased, envelope and interface)",1,purchased skid (envelope),663.2,buy,purchased per plan rule 6; connected_kW 11 is the node rating; standby unit (A-M-282)
+8,"Control pedestal on the -X floor (purchased, envelope and interface)",1,purchased pedestal (envelope),542.6,buy,purchased per plan rule 6
+9,"Nozzle set: none - no piped process connection on the graph, no schedule issued (duty section 4; hold, WORK_ORDER W12)",0,n/a,0.0,n/a,no nozzle hardware drawn; a schedule row lands as a DN15 set-in when the graph rates an edge
