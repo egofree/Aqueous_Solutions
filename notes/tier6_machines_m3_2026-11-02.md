@@ -271,6 +271,18 @@ resized.
   drain, vent). Deliverables as commit 8; `tracker --check WS_PEROX` green;
   duty section 7 names the model; tracker regen puts WS_PEROX at M3 (46).
 
+### WS_PHOS — commit 12
+
+- Day tank (OD 180 layout) with the duty section 2 seven-day charge basis
+  (0.0043 m3 sets the working level z 253.8, reported; the box-over-flow
+  line is explicitly not a residence time). PVC-U per duty section 3; duty
+  section 8's "phosphoric concentration is not on the node, so 316L is not
+  confirmed" carried as a hold. All 5 schedule rows drawn (1 in, 2 out,
+  drain, vent). No purchased item named — none drawn.
+- Deliverables as commit 8; `tracker --check WS_PHOS` green; duty section 7
+  names the model; tracker regen puts WS_PHOS at M3 (47). Tier-6 lane
+  complete: 12 units accepted this lane (47 at M3 overall).
+
 
 
 

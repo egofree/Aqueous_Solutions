@@ -17,6 +17,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped. The envelope is `cad/stl/WS_PHOS.stl`.
+7. Code. Shop. Not stamped. The envelope is `cad/stl/WS_PHOS.stl`. Manufacturing model `models/mfg/WS_PHOS/ws_phos.py` (AQS-PLAN-006).
 
 8. Open items. Phosphoric concentration is not on the node, so 316L is not confirmed.

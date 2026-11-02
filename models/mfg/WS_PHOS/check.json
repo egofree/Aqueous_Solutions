@@ -1,0 +1,112 @@
+{
+  "bbox_mm": [
+    600.0,
+    600.0,
+    350.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    600.0,
+    600.0,
+    350.0
+  ],
+  "size_basis": "storage-sizing box (node size_mm, AQS-DUTY-064); the duty section 4 prose seed line 800 x 800 x 1100 predates it (WORK_ORDER W12)",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "tank": {
+    "od_mm": 180.0,
+    "xy_mm": [
+      300.0,
+      380.0
+    ],
+    "z_mm": [
+      40.0,
+      310.0
+    ],
+    "wall_mm": 10.0,
+    "wall_basis": "study fab-page polymer wall (10 mm); no thickness booked on the node (WORK_ORDER W12)",
+    "working_volume_m3": 0.0043,
+    "working_volume_basis": "the duty section 2 charge basis: the seven-day charge 0.0043 m3 sets the working level z 253.9 (reported); the box-over-flow line in duty section 2 is explicitly not a residence time (A-VES n/a; WORK_ORDER W12); duty section 8: the phosphoric concentration is not on the node, so 316L is not confirmed - PVC-U drawn per duty section 3 (hold, WORK_ORDER W12)",
+    "internals": {
+      "source": "none: the node internals row is none and no study page issues internals for this station",
+      "basis": "no internal solid drawn (WORK_ORDER W12)"
+    }
+  },
+  "material": {
+    "class": "PVC-U",
+    "ca_mm": 0.0,
+    "basis": "duty section 3: PVC-U wetted per AQS-STD-002 rules M1 and M2, no metal wetted part; CA does not apply to the polymer"
+  },
+  "a_mach": {
+    "guard": "service-zone guard rail over the front-right floor zone (A-MACH: guard drawn; layout choice, WORK_ORDER W12)",
+    "anchors": "4 M10 wedge anchors, tray to slab (fasteners.csv)",
+    "purchased": "none named on the node or the duty sheet for this station - none drawn (the criterion has nothing to match, WORK_ORDER W12)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 430.6,
+      "schedule_rating": "Class 150",
+      "service": "phosphate",
+      "note": "schedule datum drawn; atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600,
+      "drawn_height_mm": 320.7,
+      "x_mm": 310.6,
+      "schedule_rating": "Class 150",
+      "service": "H3PO4",
+      "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600,
+      "drawn_height_mm": 320.7,
+      "x_mm": 339.9,
+      "schedule_rating": "Class 150",
+      "service": "phosphate to dopant",
+      "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "x_mm": 560.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain, open bore through the tray floor, flush at the envelope bottom (schedule datum 50)"
+    },
+    "N5": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 350.0,
+      "x_mm": 300.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent riser on the tank head, flush at the envelope top; schedule datum 800 predates the box (hold, WORK_ORDER W12)"
+    }
+  },
+  "nozzle_count_schedule": 5,
+  "nozzle_idiom": "atmospheric open-bore tube connections on tray risers, flush at the envelope faces (duty section 4: atmospheric joints are hose; the W4 110 percent rule draws no flange where no process pressure is stated); the schedule rating column (Class 150) is carried verbatim as text; clamped datums named in nozzles_drawn",
+  "part_mass_kg": {
+    "tray": 11.9,
+    "tank": 3.9,
+    "guard_rail": 0.1,
+    "nozzles": 0.2
+  },
+  "cadquery": "2.8.0"
+}
