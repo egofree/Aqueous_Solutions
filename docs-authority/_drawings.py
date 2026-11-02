@@ -20,7 +20,8 @@ def files():
     # is the authority, so from_graph stays False (the content-hash revision governs per ASME_Y14_35).
     for f in sorted(glob.glob(os.path.join(R, 'models/mfg/*/drawings/*.svg'))):
         p = f.split(os.sep); mf = p[-3]; b = os.path.basename(f)[:-4].upper()
-        out.append((f, f'AQS-MFG-{mf}-{b}', f'{mf} fabrication drawing {b} (AQS-PLAN-006 M3; graph revision AC)',
+        rev = re.search(r'"revision"\s*:\s*"(\w+)"', open(os.path.join(R, 'flow_graph/plant_flow_graph.json')).read(4000))
+        out.append((f, f'AQS-MFG-{mf}-{b}', f'{mf} fabrication drawing {b} (AQS-PLAN-006 M3; graph Rev {rev.group(1) if rev else "pending"})',
                     'fabrication drawing (GA / nozzle orientation / part sheet)', False))
     return out
 def box(svg):
