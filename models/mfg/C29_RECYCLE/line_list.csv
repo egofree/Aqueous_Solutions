@@ -1,0 +1,4 @@
+line,from,to,dn,class,service,rating,note
+MAIN,spool start,spool end,DN15,-,C29 heavy cut,atmospheric; no flange class (duty section 4),recycle-line spool per the unit duty (node design: DN15 per the issued lines); modeled as the in-envelope run of this unit's 1000 x 600 x 800 study box; material per duty section 3
+C29_RECYCLE,PROD_C29,C29_RECYCLE,DN15,M2,"hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry)",atmospheric tube/hose joint at the face (duty section 4); pipe class per AQS-PIP-003,
+C29_TO_PYRO,C29_RECYCLE,OIL_PYRO,DN15,M2,"hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry)",atmospheric tube/hose joint at the face (duty section 4); pipe class per AQS-PIP-003,

@@ -56,5 +56,36 @@
  "acceptance_sets": [
   "A-core",
   "A-PIPE"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "pipe": {
+   "dn": "DN15",
+   "od_mm": 21.3,
+   "wall_mm": 2.77,
+   "xy_mm": [
+    null,
+    300.0
+   ],
+   "run_z_mm": 160.0
+  },
+  "plinth_mm": 20.0
+ },
+ "design": {
+  "dn_label": "DN15",
+  "wall_mm": 2.77,
+  "wall_basis": "lib/dn Sch 40 table; schedule not stated on the node (WORK_ORDER W12)",
+  "mat": "carbon steel per duty section 3 (hydrocarbon, line class M2); CA 1.5 mm carried in the procurement basis (AQS-STD-001)"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; x-run at depth centre y 300, z 160 (schedule inlet datum); inlet branch at the mid-run x 500; bend riser to z 600 (schedule outlet datum) leaving the +Y face; trough plinth under the run zone with two saddle stands",
+  "supports": "trough plinth + 2 saddle stands + 4 slab anchors - the HDR_CO2 idiom at the schedule datum height (layout choice, WORK_ORDER W12)",
+  "nozzle_spread": "the schedule gives face and height; N1 at the mid-run x 500 (the old L1/L2 mid-run frame), N2 the bend-riser branch, drain boss under the run at x 300, vent riser at x 700; per-tag positions in check.nozzles_drawn",
+  "line_list": "models/mfg/C29_RECYCLE/line_list.csv generated from the graph edges and AQS-PIP-004; no new edge"
+ }
 }

@@ -1,0 +1,97 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "misfit": null,
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "spool": {
+    "type": "one x-run at the schedule inlet datum (z 160) on a trough plinth with two saddle stands; mid-run inlet branch from the -Y face; bend riser to the outlet datum (z 600) leaving the +Y face",
+    "dn": "DN15",
+    "od_mm": 21.3,
+    "wall_mm": 2.77,
+    "wall_basis": "lib/dn Sch 40 table (ASME B36.10M); the node states no schedule (WORK_ORDER W12)",
+    "id_mm": 15.76,
+    "run_basis": "the routed run (2.4 m + 6.8 m per AQS-PIP-004) stays in the line-list route lengths; the model draws the in-envelope run of the node study box",
+    "material": "Carbon steel. Hydrocarbon. No aqueous chloride in this vessel. Corrosion allowance 1.5 mm. Pit rate is not measured.",
+    "ca_mm": 1.5,
+    "ca_basis": "AQS-STD-001 hydrocarbon rule on carbon steel, carried in the procurement basis; the drawn wall is the Sch 40 table value"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 500.0,
+      "schedule_rating": "Class 150",
+      "service": "C29 heavy cut",
+      "note": "schedule datum 160 drawn as issued; branch stub from the -Y face, set-in weld at the mid-run joint (duty section 4: hose, atmospheric)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 500.0,
+      "schedule_rating": "Class 150",
+      "service": "C29 heavy cut",
+      "note": "schedule datum 600 drawn as issued; the +Y face branch of the bend riser is the outlet hardware (duty section 4: hose, atmospheric)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "x_mm": 300.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss under the run, flush at the envelope bottom (schedule datum 50)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 800.0,
+      "x_mm": 700.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent riser off the run, flush at the envelope top (schedule datum 800 = the box top)"
+    }
+  },
+  "nozzle_count_schedule": 4,
+  "nozzle_idiom": "atmospheric tube stubs (duty section 4: hose, atmospheric; the connecting line makes the joint at the face; the W4 110 percent rule draws no flange where no process pressure is stated); schedule rating column (Class 150) carried verbatim as text; datums draw as issued - the 160 and 600 datums fit the 800 box, the drain passes to the envelope bottom and the vent riser reaches the envelope top",
+  "line_list": {
+    "csv": "models/mfg/C29_RECYCLE/line_list.csv",
+    "source": "unit edges in flow_graph/plant_flow_graph.json + docs-authority/LINE_LIST.md (AQS-PIP-004, DN and class authority)",
+    "edges": 2,
+    "rows": 3,
+    "missing_line_rows": [],
+    "rows_without_edge": [],
+    "no_new_edge": true
+  },
+  "part_mass_kg": {
+    "plinth": 9.42,
+    "stands": 2.13,
+    "run": 1.27,
+    "riser": 0.56,
+    "out_branch": 0.38,
+    "in_branch": 0.38,
+    "nozzles": 1.79
+  },
+  "cadquery": "2.8.0"
+}

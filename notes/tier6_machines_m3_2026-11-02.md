@@ -380,6 +380,30 @@ POLYMERS reactors) — commits 13–24
   section 7 names the model; tracker regen puts WS_SOLV at M3 (51). The
   reagent-station family is complete: all six FAB stations at M3.
 
+### C29_RECYCLE — commit 17
+
+- `models/mfg/C29_RECYCLE/c29_recycle.py` on the accepted HDR_CO2 spool/line-list
+  idiom: one DN15 carbon-steel x-run at the schedule inlet datum (z 160) with a
+  mid-run inlet branch from the −Y face and a bend riser to the schedule outlet
+  datum (z 600) at the +Y face; trough plinth with two saddle stands and 4 slab
+  anchors. The node study registry box 1000 × 600 × 800 (its size_note says so)
+  is filled exactly by the run, the inlet face and the vent top; the duty §4
+  prose line "Size 2000 × 60 × 60" and its height-30 L1/L2 rows are an older
+  study frame — the node governs (hold, W12).
+- Wall on the lib/dn Sch 40 table (schedule not stated on the node, W12); CA
+  1.5 mm per the AQS-STD-001 hydrocarbon rule carried in the procurement basis;
+  the dry support steel stays CA-free (the HDR_CO2 basis). All 4 schedule rows
+  drawn as atmospheric tube stubs; datums draw as issued (160/600 fit the 800
+  box; drain flush at the envelope bottom, vent riser flush at the box top);
+  Class 150 column carried verbatim, no flange.
+- A-PIPE: `line_list.csv` 3 rows (MAIN spool + the issued C29_RECYCLE and
+  C29_TO_PYRO lines, DN15 class M2 per AQS-PIP-004), edge coverage complete, no
+  new edge; the routed run stays in the route lengths.
+- Deliverables: exports, generated `bom.csv`, `fasteners.csv`, `line_list.csv`,
+  `check.json`, `WORK_ORDER.md` (W1–W12), six-sheet drawing set;
+  `tracker --check C29_RECYCLE` green; duty section 7 names the model; tracker
+  regen puts C29_RECYCLE at M3 (52).
+
 
 
 
