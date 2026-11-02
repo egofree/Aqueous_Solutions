@@ -319,6 +319,27 @@ POLYMERS reactors) — commits 13–24
   set; `tracker --check WS_DOPE` green; duty section 7 names the model;
   tracker regen puts WS_DOPE at M3 (48).
 
+### WS_HF_ED — commit 14
+
+- The WS_DOPE builder family at the HF day-station (`models/mfg/WS_HF_ED/
+  ws_hf_ed.py`): same tray/tank/guard recipe, same node storage-sizing box
+  600 × 600 × 350 filled exactly; one closed manifold solid;
+  `cad/stl/WS_HF_ED.stl` replaced from the build.
+- Materials: PVDF wetted per duty section 3 (AQS-STD-002 rules M1 and M2, no
+  metal wetted part); IA-HF-SRC arrives from LEACH_CSTR_1 at up to 85 °C
+  (X-MAT-09) and HF at that temperature takes PVDF (M1 compatibility, M5), not
+  CPVC. The node design_storage material row reads PE - duty section 3 governs
+  the alloy and PVDF is drawn (hold, W12). Tank D/H/wall stay the node
+  design_storage figures (D 300, H 300, wall 4.75, AQS-DUTY-064).
+- All 5 schedule rows drawn as atmospheric open-bore tube connections on tray
+  risers: N1 (fluoride to HF) and N5 (aqueous HF to the fab reagent fork) in on
+  −Y at 160; N2 HF (aq) out on +Y (600 datum clamped down, W12); N3 drain
+  through the tray floor; N4 vent riser beside the tank (800 datum, W12).
+  Class 150 column carried verbatim, no flange. Nominal 0.02 m³ reported for
+  the record; no purchased item named - none drawn.
+- Deliverables as the family recipe; `tracker --check WS_HF_ED` green; duty
+  section 7 names the model; tracker regen puts WS_HF_ED at M3 (49).
+
 
 
 

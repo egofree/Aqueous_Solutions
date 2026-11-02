@@ -430,8 +430,8 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/WIRE_DRAW.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/WORMS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/WS_AMMONIA.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/WS_DOPE.md` | working tree | current |
-| `docs-authority/duties/WS_HF_ED.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/WS_DOPE.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/WS_HF_ED.md` | working tree | current |
 | `docs-authority/duties/WS_KOH.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/WS_NITRIC.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/WS_PEROX.md` | f0160a6 (regenerated, no change) | current |
@@ -1436,8 +1436,8 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/WET_BENCH/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/WIRE_DRAW/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/WS_AMMONIA/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/WS_DOPE/params.json` | working tree | current |
-| `models/mfg/WS_HF_ED/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/WS_DOPE/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/WS_HF_ED/params.json` | working tree | current |
 | `models/mfg/WS_KOH/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/WS_NITRIC/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/WS_PEROX/params.json` | f0160a6 (regenerated, no change) | current |
