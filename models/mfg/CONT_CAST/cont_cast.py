@@ -73,11 +73,11 @@ parts["billet_bed"] = box(1400, 180, 575, 100, 440, 35)   # overlaps the deck: f
 parts["water_manifold"] = tube(18.0, 14.0, (170.0, 120.0, 605.0), "Y", 560)
 
 # ---------------- nozzle hardware ----------------
-parts["melt_inlet"] = tube(DN15, DN15 - W15, (-40.0, 400.0, 160.0), "X", 110)      # N1 -X z 160
+parts["melt_inlet"] = tube(DN15, DN15 - W15, (0.0, 400.0, 160.0), "X", 110)        # N1 -X z 160, flush at the face
 parts["billet_stop"] = box(1470.0, 200.0, 610.0, 30.0, 400.0, 120)                 # N2 billet/stock stop +X
 st = None
 for sx in (400.0, 640.0):
-    q = tube(DN15, DN15 - W15, (sx, W - 34.0, 600.0), "Y", 40)                     # N3 stock stubs +Y z 600
+    q = tube(DN15, DN15 - W15, (sx, W - 40.0, 600.0), "Y", 40)                     # N3 stock stubs +Y z 600, set-in
     st = q if st is None else st.union(q)
 parts["stock_stubs"] = st
 parts["drain_well"] = tube(30.5, DN15, (400, 400, 0), "Z", 50)                     # N4
@@ -118,7 +118,7 @@ in_env_solid.scale(0.001).exportStl(str(HERE.parents[2] / "cad" / "stl" / "CONT_
 ALL = list(parts.values()) + list(inv.values())
 sb = cq.Compound.makeCompound([parts["frame"].val()]).BoundingBox()
 tb_ = cq.Compound.makeCompound([v.val() for v in ALL]).BoundingBox()
-slack = 50.0
+slack = 1.0   # A-core 2 gate: the flush-hardware build stays inside size_mm within 1 mm
 inside_shell = bool(sb.xmin >= -1 and sb.xmax <= L + 1 and sb.ymin >= -1 and sb.ymax <= W + 1
                     and sb.zmin >= -1 and sb.zmax <= H + 1)
 overhang = {"-X": round(-tb_.xmin, 1), "+X": round(tb_.xmax - L, 1),
@@ -172,13 +172,7 @@ fast = ('item,size,grade,qty,location,basis\n'
         '1,M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,8,roll stands,study\n'
         '2,M12 anchor,ISO 898-1 8.8,4,frame to slab,study\n')
 (HERE / "fasteners.csv").write_text(fast)
-wo = (f"# Work order CONT_CAST\n\nAuthority: AQS-DUTY-072 (X-MFG lane). LIVE unit - two-strand caster.\n\n"
-      f"1. Fabricate the frame {L} x {W} x 40 base with posts and table deck; set on anchors.\n"
-      f"2. Fit the copper mould housing with its water jacket; prove the coolant circuit.\n"
-      f"3. Set the withdrawal rolls and run-out rollers; align the strand lines to the mould.\n"
-      f"4. Fit the N1 melt inlet, N3 stock stubs, N4 drain and N5 vent.\n"
-      f"5. Test: water-side pressure hold, then a dry strand pull; first cast from IND_MELT N8.\n"
-      f"6. Inspect against models/mfg/CONT_CAST/export/cont_cast.step; record dimensions on the traveller.\n")
-(HERE / "WORK_ORDER.md").write_text(wo)
+# WORK_ORDER.md is the hand-authored W1-W12 item beside the model (AQS-PLAN-006 section 2);
+# the builder no longer writes it, so a rebuild never clobbers the work order.
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps(report))

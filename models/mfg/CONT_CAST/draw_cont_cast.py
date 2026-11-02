@@ -84,7 +84,7 @@ SHEETS = [
      "Fabricated part sheet: service group (melt inlet, stop, drain)."),
     ("iso01", full, (1, -1, 1),
      ['Shop orientation: +X face, y along depth, z up; mould, run-out and gantry on the frame',
-      'Graph revision AC is the model authority for this build; STEP (export/cont_cast.step) is the solids of record',
+      f'Graph revision {REV} is the model authority for this build; STEP (export/cont_cast.step) is the solids of record',
       'Strand inventory shown in place - not a BOM part'],
      "Isometric orientation sheet."),
 ]

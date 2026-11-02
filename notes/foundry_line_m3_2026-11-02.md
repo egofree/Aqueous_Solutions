@@ -111,3 +111,24 @@ standby in their work orders and BOMs, not placeholder boxes.
   AQS-DWG-002, graph Rev AD; the stale "Graph revision AC" note corrected to
   the live REV). Duty section 7 already named the model source. Tracker
   row 153: M3, misfit cleared. Route hold stays reported.
+
+## CONT_CAST (two-strand semi-continuous caster, FOUNDRY, tier 7) — commit 5
+
+- Flush-hardware rebuild through the current lib in `models/mfg/CONT_CAST/
+  cont_cast.py`: the −X melt inlet and the +Y stock stubs moved to the
+  envelope faces, so the A-core 2 overshoot the §7 row carried is cleared,
+  not resized: measured 1500.0 × 800.0 × 1500.0 mm, face overhang 0 mm all
+  round. `tracker --check CONT_CAST` green; `cad/stl/CONT_CAST.stl` replaced
+  from the in-envelope build solid (scope in check.json).
+- All 5 schedule rows drawn (N1 melt row carried to the mould inlet pass; N2/N3
+  solids rows at DN15, bore not calculated per W4; N4 drain flush at the
+  bottom; N5 vent on the table deck). BOM complete with make-or-buy (all rows
+  make; the Cu moulds are shop-made per AQS-SIZE-FOUNDRY); fasteners grade 8.8
+  carbon steel per the W5 grade rule.
+- WORK_ORDER rewritten to the W1–W12 items with holds named (route-class hold
+  for `caster`, placeholder elevations, solids bores, mould-water loop hardware,
+  launders/tundish at the melt-side interface); A-SC make rows flagged and W11
+  cross-references AQS-BOM-SC-001.
+- Drawing set regenerated from the rebuilt solids (8 sheets; title blocks per
+  AQS-DWG-002, graph Rev AD). Duty section 7 already named the model source.
+  Tracker row 146: M3, misfit cleared. Route hold stays reported.
