@@ -286,3 +286,25 @@ recipe pattern in `models/mfg/EW_1/WORK_ORDER.md`. Graph Rev AC. One commit per 
   design keys instead of overwriting them (the node block here is issued sizing
   data - meoh_train.py - and the first build run clobbered it; restored from git
   and re-merged).
+
+## FAB_UPW_TANK (fab UPW storage tank, tier 4) — commit 13
+
+- `models/mfg/FAB_UPW_TANK/fab_upw_tank.py` on the shared lib. Vertical PE tank
+  (shell OD 540, wall 4.75 = the node design_storage booking, AQS-DUTY-064) on a
+  plinth with heads, filling the node envelope 600 x 600 x 600 exactly; one
+  closed manifold solid. PE carried at the lib HDPE class row (950 kg/m3; no
+  separate PE row in tables/materials.csv - supplier TDS confirms at order, W12).
+- Internals per the AQS-MFG-001 study page (fab/FAB_UPW_TANK.md: dip pipe,
+  stilling well): dip pipe OD 60 inside the stilling well OD 110, concentric
+  (UPW feeds down the dip pipe, the well damps the jet for the level
+  instruments); dims study, holds; node internals row none.
+- All 4 schedule rows drawn at tag, face, height and bore as atmospheric hose
+  barbs (N2 outlet datum 600 clamped to 584.4 by the barb-radius rule; N4 vent
+  flush at the top head, its 800 datum predates the 600 box; Class 150 verbatim,
+  no flange). Duty section 2's seven-day figure (0.4200 m3) exceeds the node box
+  and the design_storage nominal (0.02 m3) - the node governs, conflict held
+  (W12). Holdup 0.1014 m3 reported; the duty section 8 records the vessel is not
+  built - not a measured volume, no residence derived (A-VES). Deliverables:
+  exports, generated BOM, fasteners.csv, check.json, WORK_ORDER.md (W1-W12), the
+  seven-sheet drawing set (stale M2-era GA.md and invalid-XML SVGs regenerated).
+  `cad/stl/FAB_UPW_TANK.stl` replaced. `tracker --check FAB_UPW_TANK` green.

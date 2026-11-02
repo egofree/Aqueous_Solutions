@@ -1,0 +1,100 @@
+{
+  "bbox_mm": [
+    600.0,
+    600.0,
+    600.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    600.0,
+    600.0,
+    600.0
+  ],
+  "size_basis": "node size_mm set by _storage_sizing.py (AQS-DUTY-064); the duty section 2 seven-day figure (0.4200 m3) exceeds the box - hold (WORK_ORDER W12)",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "holdup_m3": 0.1014,
+  "holdup_basis": "reported; the duty section 8 records the vessel is not built, so this is not a measured volume, and the node design_storage nominal is V_nom_m3 None m3 - no residence time derived (A-VES)",
+  "tank": {
+    "wall_mm": 4.75,
+    "wall_basis": "node design_storage wall_mm (AQS-DUTY-064 nominal basis)",
+    "internals": {
+      "source": "docs-authority/fab/FAB_UPW_TANK.md (AQS-MFG-001 study page): dip pipe, stilling well",
+      "stilling_well": {
+        "od_mm": 110.0,
+        "wall_mm": 5.0,
+        "z_mm": [
+          35.0,
+          575.0
+        ]
+      },
+      "dip_pipe": {
+        "od_mm": 60.0,
+        "wall_mm": 4.0,
+        "z_mm": [
+          100.0,
+          575.0
+        ]
+      },
+      "basis": "internals named by the issued study page; dimensions study values (WORK_ORDER W12); node internals row none, so the tracker records no internal solid"
+    }
+  },
+  "material": {
+    "class": "PE",
+    "ca_mm": 0.0,
+    "basis": "duty section 3 / node design_storage: PE (rotomoulded / fabricated), carried at the lib HDPE class row (950 kg/m3); corrosion allowance does not apply to the polymer"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 300.0,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 578.1,
+      "x_mm": 300.0,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); schedule datum 600 mm clamped to 578.1 mm (barb radius rule) - WORK_ORDER W12"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "drain boss on the base head, tip at the 50 datum"
+    },
+    "N4": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "vent flush at the top head; schedule datum 800 predates the 600 box - WORK_ORDER W12"
+    }
+  },
+  "nozzle_count_schedule": 4,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (the shell stands 30 off the +/-Y faces, within the barb reach); the schedule rating column (Class 150) is carried verbatim as text, no flange drawn",
+  "part_mass_kg": {
+    "plinth": 6.8,
+    "shell": 17.0,
+    "stilling_well": 0.9,
+    "dip_pipe": 0.3,
+    "nozzles": 0.1
+  },
+  "cadquery": "2.8.0"
+}
