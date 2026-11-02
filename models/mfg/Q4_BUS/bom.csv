@@ -1,2 +1,4 @@
-item,description,qty,material,make_or_buy,basis
-1,Body / envelope per duty sheet section 2,1,PP-H SDR 11 (80 C class), fusion-welded,make,AQS-STD-002 per duty sheet
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Manifold spool DN32 OD 42.4 x wall 3.56 (Sch 40 table), 2 m modeled of the 20 m run; bore open both ends; fusion-welded",1,"PP-H (node design: SDR 11, 80 C class)",0.79,make,"AQS-DUTY-075 node design DN32 x 20 m run at the winter concurrent duty (15.8144 kW, AQS-HEAT-LADDER-001); the issued AQS-PIP-004 rows class the Q4 water lines M1 (316L) - material basis conflict named (hold, WORK_ORDER W12); schedule not stated on the node - Sch 40 table drawn; CA 0 mm (AQS-STD-001 polymer rule)"
+2,Branch connection set: 9 atmospheric open-bore tube stubs at the schedule tags/faces/heights,9,PP-H,0.02,make,docs-authority/nozzles/Q4_BUS.csv verbatim; DN copied from the edge and not recalculated (duty section 4); datums clamped into the 50 mm cross-section (holds)
+3,"Trough plinth 2000 x 50 x 20, the spool mount (AQS-MOD-002 dry service class)",1,carbon steel (ASTM A500),15.7,make,"support scheme carried from the HDR_CO2 acceptance (trough mount, no top rails); metal parts bonded per duty section 3"

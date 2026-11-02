@@ -1,0 +1,152 @@
+{
+  "bbox_mm": [
+    2000.0,
+    50.0,
+    50.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    2000.0,
+    50.0,
+    50.0
+  ],
+  "size_basis": "DN32 manifold x 20 m run (0.009 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
+  "misfit": null,
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "spool": {
+    "type": "single manifold run (the spool set as the node defines it), modeled as a 2000 mm representative spool on a 20 mm trough plinth",
+    "dn": "DN32",
+    "od_mm": 42.4,
+    "wall_mm": 3.56,
+    "wall_basis": "lib/dn Sch 40 table (ASME B36.10M); the node states no schedule (WORK_ORDER W12)",
+    "id_mm": 35.28,
+    "id_grid_mm": 18.1,
+    "id_note": "AQS-DUTY-075 sizing: required id 18.1 mm at 1.5 m/s, seat minimum DN32; the DN-8 grid bore and the Sch 40 bore both seat DN25; nothing resized",
+    "run_basis": "20 m run carried by the line-list route lengths (AQS-PIP-004); not redrawn",
+    "material": "PP-H SDR 11 (80 C class), fusion-welded (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate."
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 10.0,
+      "drawn_height_mm": 11.3,
+      "x_mm": 110.7,
+      "schedule_rating": "Class 150",
+      "service": "water <80 C",
+      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the 50 mm cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 10.0,
+      "drawn_height_mm": 11.3,
+      "x_mm": 162.0,
+      "schedule_rating": "Class 150",
+      "service": "water <80 C",
+      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the 50 mm cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 10.0,
+      "drawn_height_mm": 11.3,
+      "x_mm": 213.3,
+      "schedule_rating": "Class 150",
+      "service": "heat < 80 \u00b0C",
+      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the 50 mm cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 10.0,
+      "drawn_height_mm": 11.3,
+      "x_mm": 264.6,
+      "schedule_rating": "Class 150",
+      "service": "warm residual < 80 \u00b0C",
+      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the 50 mm cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 37.0,
+      "drawn_height_mm": 37.0,
+      "x_mm": 110.7,
+      "schedule_rating": "Class 150",
+      "service": "Q4 surplus heat",
+      "note": "schedule datum drawn; DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 37.0,
+      "drawn_height_mm": 37.0,
+      "x_mm": 162.0,
+      "schedule_rating": "Class 150",
+      "service": "life heat",
+      "note": "schedule datum drawn; DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": 970.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss, flush at the envelope bottom; 50 datum is the cross-section height"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 50.0,
+      "drawn_height_mm": 50.0,
+      "x_mm": 1030.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent, flush at the envelope top (duty section 4: into the loop suction, not the room)"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 38.6,
+      "x_mm": 315.9,
+      "schedule_rating": "Class 150",
+      "service": "round-trip loss",
+      "note": "schedule datum 160 mm is a placeholder above the 50 mm cross-section; clamped down to 38.6 mm (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+    }
+  },
+  "nozzle_count_schedule": 9,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4 line-list table: atmospheric lines are hose, DN copied from the edge and not recalculated); schedule rating column (Class 150) carried verbatim as text",
+  "line_list": {
+    "csv": "models/mfg/Q4_BUS/line_list.csv",
+    "source": "unit edges in flow_graph/plant_flow_graph.json + docs-authority/LINE_LIST.md (AQS-PIP-004, DN and class authority)",
+    "edges": 17,
+    "rows": 20,
+    "missing_line_rows": [],
+    "rows_without_edge": [
+      "HL-Q4-A-BUS",
+      "HL-Q4-B-BUS"
+    ],
+    "no_new_edge": true
+  },
+  "part_mass_kg": {
+    "plinth": 15.7,
+    "manifold": 0.79,
+    "nozzles": 0.02
+  },
+  "cadquery": "2.8.0",
+  "cad_stl": "replaced from the build"
+}

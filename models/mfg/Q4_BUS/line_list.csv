@@ -1,0 +1,21 @@
+line,from,to,dn,class,service,rating,note
+MAIN,spool start,spool end,DN32,-,"Q4 hot-water bus (Q4 batteries in; life, HX-9/HX-10 preheat, GHEX recharge, MAU/ADS branches)",atmospheric; no flange class (duty section 4),"manifold spool per AQS-DUTY-075 (node design: DN32, 20 m run, 0.009 m3); modeled as the 2000 mm representative spool; PP-H SDR 11 (node design)"
+HL-Q4-A-BUS,Q4_A,Q4_BUS,DN15,M1,Q3/Q4 water loop,atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+HL-Q4-B-BUS,Q4_B,Q4_BUS,DN15,M1,Q3/Q4 water loop,atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+HL-Q4-REJ,Q4_BUS,DRY_COOLER,DN15,M1,Q3/Q4 water loop,atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-Q4-ADS,Q4_BUS,ADS_CHILL,cable,—,—,-,not piped: heat/electrical cable (cable schedule X-ELS-06)
+IA-Q4-LIFE,Q4_BUS,HABITATION,DN15,M1,Q3/Q4 water loop,atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-Q4-MAU,Q4_BUS,MAU_HX,cable,—,—,-,not piped: heat/electrical cable (cable schedule X-ELS-06)
+IA-RECT-Q4,RECTIFIER,Q4_BUS,cable,—,—,-,not piped: heat/electrical cable (cable schedule X-ELS-06)
+IA-ZNBR-HEAT,ZNBR2,Q4_BUS,DN15,P1,aqueous process liquor (AQS-ASSAY-001 envelope),atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+S100,Q4_BUS,LEACH_CSTR_1,cable,—,—,-,not piped: heat/electrical cable (cable schedule X-ELS-06)
+S101,Q4_BUS,GLASS_DIGEST,cable,—,—,-,not piped: heat/electrical cable (cable schedule X-ELS-06)
+S44,GEO_HP,Q4_BUS,cable,—,—,-,not piped: heat/electrical cable (cable schedule X-ELS-06)
+S53,FUEL_CELL,Q4_BUS,cable,—,—,-,not piped: heat/electrical cable (cable schedule X-ELS-06)
+S54,CRYO_HX_Q4,Q4_BUS,cable,—,—,-,not piped: heat/electrical cable (cable schedule X-ELS-06)
+S63,MET_HX_Q4,Q4_BUS,cable,—,—,-,not piped: heat/electrical cable (cable schedule X-ELS-06)
+S80,MEOH_FC,Q4_BUS,cable,—,—,-,not piped: heat/electrical cable (cable schedule X-ELS-06)
+SQ-EVAP_ACID,EVAP_ACID,Q4_BUS,cable,—,—,-,not piped: heat/electrical cable (cable schedule X-ELS-06)
+SQ-EVAP_ACID_VS,EVAP_ACID_VS,Q4_BUS,cable,—,—,-,not piped: heat/electrical cable (cable schedule X-ELS-06)
+SQ-EVAP_BASE,EVAP_BASE,Q4_BUS,cable,—,—,-,not piped: heat/electrical cable (cable schedule X-ELS-06)
+SQ-H2O_ELYZ-Q4,H2O_ELYZ,Q4_BUS,cable,—,—,-,not piped: heat/electrical cable (cable schedule X-ELS-06)

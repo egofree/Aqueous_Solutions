@@ -181,3 +181,26 @@ calculated", rating; spool drawing; no new edge).
   (8 M10 wedge anchors, 8.8), `check.json`, `WORK_ORDER.md` (W1–W12 + line list),
   six-sheet drawing set. Duty section 7 names the model; tracker regen puts
   NCG_HEADER at M3 (34).
+
+## Q4_BUS (Q4 hot-water bus, HEAT, tier 5) — commit 8
+
+- `models/mfg/Q4_BUS/q4_bus.py` on the shared lib, the accepted spool shape at DN32
+  (OD 42.4, Sch 40 table, bore 35.3 mm) in PP-H SDR 11 (80 C class), fusion-welded.
+  All 9 schedule rows drawn as open-bore tube stubs flush at the envelope faces: N1/N2
+  (Q4 battery feeds), N3 (heat takes) and N4 (warm residual) inlets at 11.3 mm
+  (datums 10 clamped up), N5/N6 outlets at their 37 mm datum, N9 clamped down from the
+  160 mm placeholder, N7 drain and N8 vent flush at the faces. Material basis conflict
+  named: the issued rows class the Q4 water lines M1 (316L, the AQS-STD-002
+  water-loop audit) and the node design carries PP-H SDR 11; PP-H drawn, both facts
+  recorded (hold W12). The duty section 4 table predates the schedule and names
+  GEO_ORC on the rejection line where the graph and AQS-PIP-004 name DRY_COOLER —
+  issued rows govern. HL-Q4-A/B-BUS are issued lines whose graph edges carry presence
+  study (hold). Build fills the envelope exactly; `cad/stl` replaced from the build;
+  `tracker --check Q4_BUS` fully green.
+- A-PIPE: `line_list.csv` — 20 rows (manifold + 19 issued lines: 5 piped water lines,
+  14 carried as not piped — cable and energy entries, cable schedule X-ELS-06); edge
+  coverage complete, no new edge.
+- Deliverables: exports (STEP + closed STL, 5082 facets), `bom.csv` (plinth 15.7 kg
+  CS, manifold 0.79 kg PP-H, branches 0.02 kg), `fasteners.csv` (8 M10 wedge anchors,
+  8.8), `check.json`, `WORK_ORDER.md` (W1–W12 + line list), six-sheet drawing set.
+  Duty section 7 names the model; tracker regen puts Q4_BUS at M3 (35).
