@@ -24,7 +24,14 @@
   "thermal_kW": 30.0,
   "backup_of": "IND_MELT",
   "outage_d": 2.0,
-  "offgas": "to MET_SCRUB when energized (COMB_OFFGAS)"
+  "offgas": "to MET_SCRUB when energized (COMB_OFFGAS)",
+  "machine": "combustion reheating furnace, tertiary N+1 standby of IND_MELT (node design service)",
+  "mat": "mild-steel shell, alumina-silica brick + castable crown hot face, 310S radiant burner tube (duty section 3)",
+  "ca_mm": 0.0,
+  "wall_mm": 4.0,
+  "wall_basis": "study fab-page mild-steel t4 shell (WORK_ORDER W12)",
+  "internals": "none drawn (node internals row none); the hearth rail is furnace furniture, a BOM part, not an internal",
+  "purchased": "controls cabinet 0.05 kW connected (node design), drawn as its envelope (plan rule 6); burner train at fabrication"
  },
  "nozzles": [
   {
@@ -58,5 +65,35 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class furnace"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   1000.0,
+   1500.0
+  ],
+  "basis": "A-M-199 melt class N+1 rated envelope (A-M-282)",
+  "shell": {
+   "xy_mm": [
+    660.0,
+    1000.0
+   ],
+   "z_mm": [
+    60.0,
+    1160.0
+   ],
+   "wall_mm": 4.0
+  },
+  "cabinet_bay": {
+   "x_mm": [
+    660.0,
+    1000.0
+   ]
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; furnace shell on the plinth x 0..660, y 0..1000, z 60..1160; radiant tube along X at z 600; controls bay x 660..1000",
+  "nozzle_spread": "the schedule gives outlet/bottom/top and heights only; N1 off-gas takeoff rides the dry flue duct to +Y flush at the envelope face; N2 drain under the crown centre; N3 vent riser on the shell roof to the envelope top; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }

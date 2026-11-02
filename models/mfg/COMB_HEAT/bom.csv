@@ -1,2 +1,9 @@
-item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 1000 x 1000 x 1500 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; standby train (AQS-DUTY-072 section 4)
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Plinth 1000 x 1000 x 60 (CS, anchor bosses)",1,carbon steel,471.0,make,"dry furnace-shop service, CA 0 mm (AQS-STD-001 shop rule); anchors in fasteners.csv"
+2,"Furnace shell mild steel t4, 660 x 1000 x 1100",1,carbon steel,154.5,make,"duty section 3: mild-steel shell; wall is the study fab-page value (hold, WORK_ORDER W12); tertiary N+1 standby of IND_MELT (A-M-282)"
+3,Hot face: alumina-silica brick t115 + castable crown,1,alumina-silica brick + castable,936.9,make,"duty section 3 (SCHACHT2004 ch. 10 class); thickness is the study fab-page value (hold, WORK_ORDER W12)"
+4,310S radiant burner tube OD 130 with burner block (thermal_kW 30.0 node rating),1,310S,27.3,make,duty section 3: combustion products stay inside the tube; fuel class is the plant C5-C10 product (duty section 1); stoichiometry per TURNS2012
+5,Hearth rail on the chamber floor,1,carbon steel,10.2,make,"reheating hearth (study, WORK_ORDER W12)"
+6,Dry flue duct with N1 takeoff to MET_SCRUB,1,310S,14.7,make,duty section 3: flue path dry above the acid dew point into MET_SCRUB when energized
+7,"Controls cabinet, 0.05 kW connected (node design), IP54",1,purchased cabinet (envelope),164.6,buy,"purchased per plan rule 6; standby unit, energized only on the IND_MELT outage (A-M-282); burner train purchased at fabrication (WORK_ORDER W12)"
+8,"Nozzle set per docs-authority/nozzles/COMB_HEAT.csv: 3 atmospheric open-bore tube connections flush at the envelope faces (off-gas takeoff, drain through the plinth, vent riser on the shell roof)",3,carbon steel,1.7,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4

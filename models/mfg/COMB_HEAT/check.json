@@ -1,0 +1,97 @@
+{
+  "bbox_mm": [
+    1000.0,
+    1000.0,
+    1500.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    1000.0,
+    1500.0
+  ],
+  "size_basis": "A-M-199 melt class N+1 rated envelope (A-M-282)",
+  "graph_revision": "AD",
+  "solids": 2,
+  "all_parts_valid": true,
+  "machine": {
+    "shell": {
+      "od_mm": [
+        660.0,
+        1000.0
+      ],
+      "z_mm": [
+        60.0,
+        1160.0
+      ],
+      "wall_mm": 4.0,
+      "wall_basis": "study fab-page mild-steel t4 shell (no thickness booked on the node - hold, WORK_ORDER W12)"
+    },
+    "lining": {
+      "brick_mm": 115.0,
+      "basis": "alumina-silica brick + castable crown hot face (duty section 3), study t115 (hold, WORK_ORDER W12)"
+    },
+    "burner_tube": {
+      "od_mm": 130.0,
+      "axis_z_mm": 600.0,
+      "basis": "310S radiant tube (duty section 3): combustion products stay inside the tube; thermal_kW 30 is the node rating; the fuel class is the plant C5-C10 product (duty section 1)"
+    },
+    "flue": "dry flue path above the acid dew point; N1 takeoff to MET_SCRUB when energized (node design offgas)"
+  },
+  "standby": {
+    "state": "standby_rated tertiary N+1 of IND_MELT (A-M-282/A-M-283); energized only on a long IND_MELT outage with both electric alternates unavailable (outage_d 2.0); design-day rate zero on the graph",
+    "basis": "duty section 2 sizing study"
+  },
+  "material": {
+    "class": "mild-steel shell, alumina-silica brick + castable crown hot face, 310S burner tube",
+    "ca_mm": 0.0,
+    "basis": "duty section 3 (X-MAT-22); CA 0 mm - dry furnace service (AQS-STD-001 shop rule)"
+  },
+  "a_mach_anchors": "8 M12 wedge anchors, plinth to slab (fasteners.csv)",
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "combustion off-gas when alternate used",
+      "note": "combustion off-gas takeoff on +Y at z 600 (registered layout), dry flue path above the acid dew point to MET_SCRUB (duty section 3); atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4); flush at the envelope bottom (schedule datum 50)"
+    },
+    "N3": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 1500.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4); schedule datum 800 is the placeholder elevation - the riser stands on the shell roof and flushes at the envelope top (hold, WORK_ORDER W12)"
+    }
+  },
+  "nozzle_count_schedule": 3,
+  "nozzle_idiom": "atmospheric open-bore DN15 tube connections flush at the envelope faces (duty section 4: hose, atmospheric); the schedule outlet/bottom/top faces are mapped to compass faces by the registered layout (params.json layout block); the schedule rating column (Class 150) is carried verbatim as text; datums are the schedule placeholders (holds, WORK_ORDER W12)",
+  "part_mass_kg": {
+    "plinth": 471.0,
+    "furnace_shell": 154.5,
+    "brick_lining": 910.9,
+    "castable_crown": 26.0,
+    "burner_tube": 27.3,
+    "hearth_rail": 10.2,
+    "flue_duct": 14.7,
+    "controls_cabinet": 164.6,
+    "nozzles": 1.7
+  },
+  "cadquery": "2.8.0"
+}

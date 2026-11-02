@@ -148,3 +148,29 @@ standby in their work orders and BOMs, not placeholder boxes.
   unit-task items); A-SC make rows flagged and W11 cross-references
   AQS-BOM-SC-001. Duty section 7 already named the model source. Tracker
   row 144: M3. Route hold stays reported.
+
+## COMB_HEAT (combustion reheating furnace, FOUNDRY tertiary alternate, tier 6) — commit 7
+
+- New per-unit model `models/mfg/COMB_HEAT/comb_heat.py` on the shared lib, the
+  installed-standby idiom: the tertiary N+1 of IND_MELT (A-M-282/A-M-283)
+  drawn as the real machine per duty section 3 — mild-steel shell with the
+  alumina-silica brick + castable crown hot face, 310S radiant burner tube
+  (combustion products stay inside the tube), dry flue duct with the N1
+  off-gas takeoff to MET_SCRUB above the acid dew point, hearth rail, and the
+  0.05 kW controls cabinet as a purchased envelope on the +X bay — replacing
+  the placeholder envelope box. Standby named in the WORK_ORDER header, the
+  BOM rows and the build log.
+- All 3 schedule rows drawn flush at the envelope faces (N1 off-gas takeoff on
+  +Y at z 600; N2 drain through the plinth; N3 vent riser on the shell roof;
+  the 800 datum is the schedule placeholder, W12).
+- Build fills the node box exactly (1000 × 1000 × 1500, zero face overhang);
+  `tracker --check COMB_HEAT` green; `cad/stl/COMB_HEAT.stl` replaced from the
+  build; BOM complete with make-or-buy (controls cabinet is the buy row, the
+  burner train purchases at fabrication); fasteners grade 8.8 carbon steel per
+  the W5 grade rule; WORK_ORDER rewritten to W1–W12 with holds named
+  (route-class hold for `furnace`, study shell and lining thicknesses,
+  placeholder elevations, pending relief case, purchased burner train).
+- Drawing set: new 7-sheet set (ga_front/ga_side/nozzle_orient/shell01/
+  burner01/aux01/iso01; title blocks per AQS-DWG-002, graph Rev AD); the stale
+  Oct-31 3-sheet GA set is regenerated into it. Duty section 7 now names the
+  model source. Tracker row 57: M3. Route hold stays reported.
