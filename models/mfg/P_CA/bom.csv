@@ -1,5 +1,6 @@
-item,description,qty,material,basis
-1,Body / envelope 300 x 300 x 400 mm,1,PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside the wetted headspace.,docs-authority/duties/P_CA.md
-2,Process nozzle DN15,1,PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside the wetted headspace.,one per mass edge; DN from AQS-INV-003
-3,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-4,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Steel frame plinth 300 x 300 x 20 (duty section 3: steel frame outside the wetted headspace),1,carbon steel (ASTM A500),14.13,make,CA 1.5 mm carbon-steel rule not applied: the frame is outside the wetted headspace and carries the vessel only (duty section 3); paint scheme at fabrication
+2,"PP-H vessel OD 250, wall 6 mm, z 18..336, with heads",1,PP-H plate,3.03,make,"duty section 3 (X-MAT-22): PP-H precipitation vessel; wall study (hold, WORK_ORDER W12); CA 0 mm (AQS-STD-001 polymer rule); the 316L mixed-build alternative is a named hold"
+3,PP agitator: shaft on the vessel axis with two blades (duty section 3 names the agitator; dimensions study),1,PP-H rod/plate,0.04,make,"study dimensions (hold, WORK_ORDER W12)"
+4,"Agitator drive envelope on the top head (purchased, maker class at order)",1,polymer/maker class,0.26,buy,plan rule 6: purchased item drawn as its envelope and interface; drive rating per the maker TDS at order (WORK_ORDER W12)
+5,"Nozzle set per docs-authority/nozzles/P_CA.csv: 1 drain (through the plinth and base head), 1 vent at the vessel top head",2,PP-H pipe (lib/dn Sch 40 table dims),0.01,make,"schedule verbatim; no piped process connection on the graph yet - drain and vent utilities only; PE slurry lines wait for rated edges (hold, WORK_ORDER W12)"

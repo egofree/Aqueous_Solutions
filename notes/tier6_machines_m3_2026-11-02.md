@@ -157,6 +157,32 @@ resized.
   --check REMIN` green; duty section 7 names the model; tracker regen puts
   REMIN at M3 (40).
 
+## P_CA (calcium-soap precipitation vessel, DIGESTER, tier 6) — commit 6
+
+- `models/mfg/P_CA/p_ca.py` on the shared lib: PP-H precipitation vessel
+  (OD 250, wall 6 study — hold) with heads on a steel frame plinth, PP
+  agitator (shaft up through the top head into the purchased drive envelope,
+  two blades) — the duty section 3 X-MAT-22 selection. Node seed envelope
+  300 × 300 × 400 filled exactly; one closed manifold solid;
+  `cad/stl/P_CA.stl` replaced from the build.
+- Route hold handled: the node class `precip` has no section 4 route class —
+  the tracker records "A-core (route hold)", the WORK_ORDER W10 states the
+  F-VES-operations-as-nearest-family intent with the hold named, and the
+  tracker keeps the unit at M3 (the acceptance set is A-core alone, which
+  passes; the orchestrator rule "skip if A-core cannot pass" does not fire).
+- All 2 schedule rows drawn (drain and vent utilities only — no piped process
+  connection on the graph yet; PE slurry lines wait for rated edges, hold):
+  N1 drain open-bore through the plinth and base head (50 datum), N2 vent
+  flush at the vessel top head (800 datum, W12).
+- A-core met on the files; the duty section 6 relief-pending and section 8
+  open items are named in check.json and W12; working volume 0.0159 m³
+  reported for the record (no holdup basis, no residence claim).
+- Deliverables: exports, generated `bom.csv`, `fasteners.csv`, `check.json`,
+  `WORK_ORDER.md` (W1–W12 + the route-hold W10), seven-sheet drawing set;
+  `tracker --check P_CA` green; duty section 7 names the model; tracker regen
+  puts P_CA at M3 (41).
+
+
 
 
 

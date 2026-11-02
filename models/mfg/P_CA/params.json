@@ -20,7 +20,13 @@
  "internals": "none",
  "design": {
   "duty": "calcium-soap precipitation: wax + lime -> the grease thickener (feeds GREASE_CA)",
-  "thickener_kgd": 0.025
+  "thickener_kgd": 0.025,
+  "mat": "PP-H precipitation vessel + PP agitator; steel frame outside the wetted headspace (duty section 3, X-MAT-22)",
+  "ca_mm": 0.0,
+  "wall_mm": 6.0,
+  "wall_basis": "study value (WORK_ORDER W12)",
+  "internals": "PP agitator per duty section 3; dimensions study (WORK_ORDER W12)",
+  "route": "route hold: no AQS-PLAN-006 section 4 class for precip; F-VES operations as the nearest family (WORK_ORDER W10)"
  },
  "nozzles": [
   {
@@ -46,5 +52,26 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class precip"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   300.0,
+   300.0,
+   400.0
+  ],
+  "basis": "envelope from the placement seed (params size_note); the calcium-soap precipitation vessel at the 0.025 kg/d thickener draw (node envelope block)",
+  "vessel": {
+   "od_mm": 250.0,
+   "z_mm": [
+    18.0,
+    356.0
+   ]
+  },
+  "frame_plinth_mm": 20.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; vessel axis at x 150, y 150, z up; frame plinth z 0..20; drive envelope z 356..400",
+  "nozzle_spread": "drain through the plinth at x 230; vent at the vessel top head at x 70; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }

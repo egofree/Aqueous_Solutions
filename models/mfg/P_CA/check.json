@@ -1,0 +1,74 @@
+{
+  "bbox_mm": [
+    300.0,
+    300.0,
+    400.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    300.0,
+    300.0,
+    400.0
+  ],
+  "size_basis": "envelope from the placement seed (params size_note); the node envelope block records the calcium-soap precipitation vessel at the 0.025 kg/d thickener draw",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "route_hold": "the node class is precip, which has no row in the AQS-PLAN-006 section 4 route table - the tracker records the hold; the vessel work follows the F-VES operations as the nearest family (WORK_ORDER W10)",
+  "working_volume_m3": 0.0159,
+  "working_volume_basis": "reported for the record: the duty section 2 books no holdup basis (sizing study pending), so no level or residence is derived",
+  "vessel": {
+    "wall_mm": 6.0,
+    "wall_basis": "study value; no thickness booked on the node (WORK_ORDER W12)",
+    "internals": {
+      "source": "the duty section 3 material line names the PP agitator; drawn from the model",
+      "basis": "shaft and blade dimensions are study values (WORK_ORDER W12); the node internals row is none, so the tracker records no internal solid"
+    }
+  },
+  "material": {
+    "class": "PP-H",
+    "ca_mm": 0.0,
+    "basis": "duty section 3 (X-MAT-22): PP-H vessel + PP agitator, PE slurry lines, steel frame outside the wetted headspace; scale is knocked down mechanically at clean-out (a design note, not an allowance); the 316L mixed-build alternative is a named hold (WORK_ORDER W12); the duty section 8 line 'material selection pending (unit task 09)' predates the issued X-MAT-22 selection",
+    "density_basis": "PP-H at the lib PP table density (910 kg/m3)"
+  },
+  "open_items": [
+    "relief case study pending (unit task 07) - no set point is claimed on this page (duty section 6)",
+    "no piped process connection on the graph yet; the PCA_TO_GREASE edges carry no kg/d rate yet (duty section 8)",
+    "instrument loops P_CALT-01, P_CAPT-01, P_CATE-01 are loop hardware, not modeled (duty section 5)",
+    "nozzle elevations are schedule placeholders (unit tasks 02/06)"
+  ],
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "x_mm": 230.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain, open bore through the plinth and base head, flush at the envelope bottom (50 datum)"
+    },
+    "N2": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 356.0,
+      "x_mm": 70.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent, flush at the vessel top head; schedule datum 800 predates the 400 box (hold, WORK_ORDER W12)"
+    }
+  },
+  "nozzle_count_schedule": 2,
+  "nozzle_idiom": "atmospheric open-bore tube (lib/dn Sch 40 table), flush at the envelope bottom and the vessel top head; the schedule rating column (Class 150) is carried verbatim as text, no flange drawn (W4 110 % rule: no process pressure stated)",
+  "part_mass_kg": {
+    "frame_plinth": 14.13,
+    "vessel": 3.03,
+    "agitator": 0.04,
+    "agitator_drive": 0.26,
+    "nozzles": 0.01
+  },
+  "cadquery": "2.8.0"
+}
