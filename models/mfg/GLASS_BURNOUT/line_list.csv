@@ -1,0 +1,5 @@
+line,from,to,dn,class,service,rating,note
+HL-GLASS_BURNOUT-Q2-A,GLASS_BURNOUT,Q2_A,DN15,M2,Q1/Q2 thermal oil,atmospheric tube/hose joint at the machine face (duty section 4); pipe class per AQS-PIP-003,"graph edge present as study (heat-recovery loop); drawn verbatim, no new edge"
+HL-GLASS_BURNOUT-Q2-B,GLASS_BURNOUT,Q2_B,DN15,M2,Q1/Q2 thermal oil,atmospheric tube/hose joint at the machine face (duty section 4); pipe class per AQS-PIP-003,"graph edge present as study (heat-recovery loop); drawn verbatim, no new edge"
+IA-GLASS-02,GLASS_MILL,GLASS_BURNOUT,solids,—,—,-,"not piped: solids transfer (conveyor, bin or hand)"
+IA-GLASS-03,GLASS_BURNOUT,GLASS_DIGEST,solids,—,—,-,"not piped: solids transfer (conveyor, bin or hand)"

@@ -1,0 +1,129 @@
+{
+  "bbox_mm": [
+    800.0,
+    600.0,
+    1200.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    800.0,
+    600.0,
+    1200.0
+  ],
+  "size_basis": "L\u00d7W\u00d7H mm, issued envelope",
+  "graph_revision": "AD",
+  "solids": 4,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "burnout rotary drum: horizontal 316L drum OD 560 x 700 between two tire rings on trunnion stands (ported AQS-MFG-001 form mfg_burnout_rotary.scad), on an 800 x 600 x 20 plinth",
+    "drum_od_mm": 560.0,
+    "drum_len_mm": 700.0,
+    "wall_mm": 12.0,
+    "wall_basis": "study value; no authority states a drum wall (WORK_ORDER W12)",
+    "v_full_m3": 0.1579,
+    "charge_duty_m3": 0.21,
+    "charge_note": "duty section 2 seven-day charge 0.21 m3; the drum holds 0.158 m3 full - reported, nothing resized (plan rule 3); charge basis is a capacity figure, not a residence time",
+    "drive": "rotary drive not designed: no drive is named on the node or duty (WORK_ORDER W12)",
+    "material": "316L"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 385.4,
+      "schedule_rating": "Class 150",
+      "service": "milled cullet",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 420.8,
+      "schedule_rating": "Class 150",
+      "service": "fuel into the burner",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 406.2,
+      "schedule_rating": "Class 150",
+      "service": "Q2 burnout, not Q4",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 435.5,
+      "schedule_rating": "Class 150",
+      "service": "Q2 burnout, not Q4",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 370.7,
+      "schedule_rating": "Class 150",
+      "service": "burned cullet",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N7": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 1200.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm predates the 1200 box - named hold, WORK_ORDER W12"
+    }
+  },
+  "nozzle_count_schedule": 7,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (duty section 4: atmospheric joints are hose); the schedule rating column (Class 150) is carried verbatim as text, no flange drawn (W4 110 % rule - no process pressure stated); N3/N4 schedule rows were repaired to the schedule quoting so face and height read true (hold, WORK_ORDER W12)",
+  "line_list": {
+    "csv": "models/mfg/GLASS_BURNOUT/line_list.csv",
+    "source": "unit edges in flow_graph/plant_flow_graph.json + docs-authority/LINE_LIST.md (AQS-PIP-004, DN and class authority)",
+    "edges": 2,
+    "rows": 4,
+    "missing_line_rows": [],
+    "rows_without_edge": [
+      "HL-GLASS_BURNOUT-Q2-A",
+      "HL-GLASS_BURNOUT-Q2-B"
+    ],
+    "no_new_edge": true
+  },
+  "part_mass_kg": {
+    "plinth": 75.36,
+    "drum": 163.73,
+    "stands": 30.37,
+    "nozzles": 1.06
+  },
+  "cadquery": "2.8.0"
+}
