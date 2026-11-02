@@ -283,3 +283,34 @@ standby in their work orders and BOMs, not placeholder boxes.
   3-sheet GA set (with the invalid raw "P&ID" token) is regenerated into it.
   Duty section 7 now names the model source. Tracker row 149: M3. Route hold
   stays reported.
+
+## DRAW (bench wire/rod draw bench, FOUNDRY N+1 alternate, tier 7, F-MACH) — commit 12
+
+- New per-unit model `models/mfg/DRAW/draw.py` on the shared lib, the
+  installed-standby idiom: the N+1 former of ROLL (A-M-282/A-M-283) drawn as
+  the real machine per duty section 3 — steel bench bed to the node design
+  bench_mm 1200, die stand with the 6-die tungsten-carbide set in tool-steel
+  casings (consumable buy set), capstan drum with shaft, gripper carriage and
+  wire-guide sheaves, drive group and control cabinet as purchased envelopes
+  (3 kW connected, node design), die-zone and capstan guard rail — replacing
+  the placeholder envelope box. Standby named in the WORK_ORDER header, the
+  BOM rows and the build log.
+- All 3 schedule rows drawn flush at the envelope faces (N1 solids wire row at
+  DN15, bore not calculated per W4; N2 drain through the plinth; N3 vent riser
+  on the capstan head; the 800 datum is the schedule placeholder, W12).
+- Route class F-MACH lands (the `mill` class sits in the F-MACH row of plan
+  section 4 — the only unit of the lane without a route hold). A-MACH: guard
+  rail and anchors drawn, purchased items named with the node rating. A-SC:
+  the bench draws the shop's wire/rod stock; make rows flagged and W11
+  cross-references AQS-BOM-SC-001.
+- Build fills the node box exactly (1500 × 800 × 1500, zero face overhang);
+  `tracker --check DRAW` green; `cad/stl/DRAW.stl` replaced from the build;
+  BOM complete with make-or-buy; fasteners grade 8.8 carbon steel per the W5
+  grade rule; WORK_ORDER rewritten to W1–W12 with holds named (study bench
+  sections and capstan size, placeholder elevations, solids bore, purchased
+  drive, pending relief case, wire-sizing note to MFG WIRE_DRAW S57).
+- Drawing set: new 7-sheet set (ga_front/ga_side/nozzle_orient/bench01/
+  capstan01/aux01/iso01; title blocks per AQS-DWG-002, graph Rev AD); the
+  stale Oct-31 3-sheet GA set is regenerated into it. Duty section 7 now names
+  the model source. Tracker row 147: M3. The FOUNDRY lane closes: 12 units,
+  M2 to M3, one commit per unit.

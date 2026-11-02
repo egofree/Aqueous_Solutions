@@ -1,0 +1,101 @@
+{
+  "bbox_mm": [
+    1500.0,
+    800.0,
+    1500.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1500.0,
+    800.0,
+    1500.0
+  ],
+  "size_basis": "A-M-199 forming class N+1 rated envelope (A-M-282)",
+  "graph_revision": "AD",
+  "solids": 7,
+  "all_parts_valid": true,
+  "machine": {
+    "bench": {
+      "bed_x_mm": [
+        120.0,
+        1320.0
+      ],
+      "z_mm": [
+        300.0,
+        420.0
+      ],
+      "basis": "node design bench_mm 1200; steel bench (duty section 3)"
+    },
+    "die_set": {
+      "count": 6,
+      "basis": "tungsten-carbide drawing dies in tool-steel casings (duty section 3, DIETER1988 ch. 20/21); consumable buy set; the polished-diamond last-pass alternative is the duty alternative row (not drawn)"
+    },
+    "capstan": {
+      "od_mm": 420.0,
+      "axis_z_mm": 720.0,
+      "basis": "study drum size (hold, WORK_ORDER W12); the capstan hardware carries the machine lubricant programme - no wetted stream (duty section 3)"
+    },
+    "purchased": "drive group and control cabinet on their bays, drawn as their envelopes per plan rule 6 (connected_kW 3 is the node rating)",
+    "guard": "die-zone and capstan guard rail on 4 posts x 3 tiers (A-MACH: guard drawn)"
+  },
+  "standby": {
+    "state": "standby_rated N+1 former of ROLL (A-M-282/A-M-283); energized on the roll-stand outage on wire-class lots (outage_d 2.0); design-day rate zero on the graph",
+    "basis": "duty section 2 sizing study"
+  },
+  "material": {
+    "class": "tungsten-carbide drawing dies in tool-steel casings; steel bench",
+    "ca_mm": 0.0,
+    "basis": "duty section 3 (X-MAT-22); CA 0 mm - dry process, no wetted stream (AQS-STD-001 shop rule)"
+  },
+  "a_mach": {
+    "guard": "die-zone and capstan guard rail drawn (A-MACH)",
+    "anchors": "8 M12 wedge anchors, plinth to slab (fasteners.csv)",
+    "purchased": "drive group and control cabinet (connected_kW 3, node design)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube",
+      "dn": "solids",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "wire",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4); solids row drawn at DN15, bore not calculated (W4 rule)"
+    },
+    "N2": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4); flush at the envelope bottom (schedule datum 50)"
+    },
+    "N3": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 1500.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore DN15 tube, flush at the envelope face (duty section 4); schedule datum 800 is the placeholder elevation - the riser stands on the capstan head and flushes at the envelope top (hold, WORK_ORDER W12)"
+    }
+  },
+  "nozzle_count_schedule": 3,
+  "nozzle_idiom": "atmospheric open-bore connections flush at the envelope faces (duty section 4); the solids row (N1 wire) is drawn at DN15 labeled bore not calculated (W4 rule); the schedule faces map to compass by the registered layout (params.json layout block); the schedule rating column (Class 150) is carried verbatim as text; datums are the schedule placeholders (holds, WORK_ORDER W12)",
+  "part_mass_kg": {
+    "plinth": 565.2,
+    "bench_bed": 289.4,
+    "die_stand": 144.7,
+    "die_set": 8.5,
+    "capstan_group": 206.0,
+    "drive_group": 293.9,
+    "control_cabinet": 339.1,
+    "guard_rail": 20.7,
+    "nozzles": 1.7
+  },
+  "cadquery": "2.8.0"
+}

@@ -24,7 +24,12 @@
   "backup_of": "ROLL",
   "outage_d": 2.0,
   "bench_mm": 1200,
-  "dies": 6
+  "dies": 6,
+  "mat": "tungsten-carbide drawing dies in tool-steel casings; steel bench (duty section 3)",
+  "ca_mm": 0.0,
+  "wall_basis": "study bench sections and capstan size; no thickness booked on the node (WORK_ORDER W12)",
+  "internals": "none drawn (node internals row none)",
+  "purchased": "drive group and control cabinet (connected_kW 3.0 node design), drawn as their envelopes (plan rule 6); the carbide die set is the purchased consumable"
  },
  "nozzles": [
   {
@@ -57,5 +62,41 @@
   "A-core",
   "A-MACH",
   "A-SC"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1500.0,
+   800.0,
+   1500.0
+  ],
+  "basis": "A-M-199 forming class N+1 rated envelope (A-M-282)",
+  "bench": {
+   "x_mm": [
+    120.0,
+    1320.0
+   ],
+   "z_mm": [
+    300.0,
+    420.0
+   ],
+   "capstan_od_mm": 420.0
+  },
+  "purchased_bays": {
+   "drive_x_mm": [
+    1260.0,
+    1500.0
+   ],
+   "cabinet_xy_mm": [
+    40.0,
+    340.0,
+    620.0,
+    780.0
+   ]
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; bench centreline y 400; bed x 120..1320 at z 300..420; die stand on the -X head, capstan head +X with the drive bay behind it; control cabinet on the -X floor; guard rail over the die zone and capstan",
+  "nozzle_spread": "the schedule gives outlet/bottom/top and heights only; N1 rides the take-off guide at +X z 600; N2 drain under the bed centre; N3 vent riser on the capstan head to the envelope top; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }
