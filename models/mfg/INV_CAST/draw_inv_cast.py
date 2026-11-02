@@ -62,7 +62,7 @@ SHEETS = [
      "Fabricated part sheet: drain + vent."),
     ("iso01", full, (1, -1, 1),
      ['Shop orientation: +X face, y along depth, z up',
-      'Graph revision AC is the model authority for this build; STEP (export/inv_cast.step) is the solids of record',
+      f'Graph revision {REV} is the model authority for this build; STEP (export/inv_cast.step) is the solids of record',
       'Process inventory drawn in place - not a BOM part'],
      "Isometric orientation sheet."),
 ]

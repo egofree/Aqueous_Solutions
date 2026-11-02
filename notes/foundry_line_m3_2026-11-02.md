@@ -90,3 +90,24 @@ standby in their work orders and BOMs, not placeholder boxes.
   per AQS-DWG-002, graph Rev AD); the stale Oct-31 3-sheet GA set is
   regenerated into it. Duty section 7 now names the model source. Tracker
   row 164: M3. Route hold stays reported.
+
+## INV_CAST (investment tilt-pour station, FOUNDRY, tier 7) — commit 4
+
+- Flush-hardware rebuild through the current lib in `models/mfg/INV_CAST/
+  inv_cast.py`: the −X fired-shell inlet chute and the −Y melt stubs and pipe
+  stands moved to the envelope faces, so the A-core 2 overshoot the §7 row
+  carried is cleared, not resized: measured 1500.0 × 800.0 × 1500.0 mm, face
+  overhang 0 mm all round. `tracker --check INV_CAST` green; `cad/stl/
+  INV_CAST.stl` replaced from the in-envelope build solid (scope in check.json).
+- All 6 schedule rows drawn (N2/N3 melt rows set in through the −Y face;
+  N1/N4 solids rows at DN15, bore not calculated per W4; N5 drain flush at the
+  bottom; N6 vent on the table deck). BOM complete with make-or-buy (all rows
+  make); fasteners grade 8.8 carbon steel per the W5 grade rule.
+- WORK_ORDER rewritten to the W1–W12 items with holds named (route-class hold
+  for `caster`, placeholder elevations, solids bores, mould-seat and actuator
+  unit-task items); A-SC: the station casts plant castings — make rows flagged
+  and W11 cross-references AQS-BOM-SC-001.
+- Drawing set regenerated from the rebuilt solids (8 sheets; title blocks per
+  AQS-DWG-002, graph Rev AD; the stale "Graph revision AC" note corrected to
+  the live REV). Duty section 7 already named the model source. Tracker
+  row 153: M3, misfit cleared. Route hold stays reported.

@@ -54,13 +54,13 @@ for xx in range(950, 1440, 100):
 parts["cast_out_bed"] = bed
 
 # ---------------- nozzle hardware ----------------
-parts["shell_inlet"] = box(-30.0, 340.0, 40.0, 40.0, 120.0, 150)   # N1 -X z 160, full height to the base
+parts["shell_inlet"] = box(0.0, 340.0, 40.0, 40.0, 120.0, 150)     # N1 -X z 160, flush at the frame face
 st = None
 stands = None
 for sx in (240.0, 400.0):
-    q = tube(DN15, DN15 - W15, (sx, -34.0, 160.0), "Y", 40)        # N2/N3 melt DN15 -Y z 160
+    q = tube(DN15, DN15 - W15, (sx, 0.0, 160.0), "Y", 40)          # N2/N3 melt DN15 -Y z 160, set-in at the face
     st = q if st is None else st.union(q)
-    pd = box(sx - 20.0, -30.0, 30.0, 40.0, 46.0, 120.0)            # pipe stand to the base: fuses
+    pd = box(sx - 20.0, 0.0, 30.0, 40.0, 46.0, 120.0)              # pipe stand to the base: fuses
     stands = pd if stands is None else stands.union(pd)
 parts["melt_stubs"] = st
 parts["melt_stub_stands"] = stands
@@ -98,7 +98,7 @@ in_env_solid.scale(0.001).exportStl(str(HERE.parents[2] / "cad" / "stl" / "INV_C
 ALL = list(parts.values()) + list(inv.values())
 sb = cq.Compound.makeCompound([parts["frame"].val()]).BoundingBox()
 tb_ = cq.Compound.makeCompound([v.val() for v in ALL]).BoundingBox()
-slack = 50.0
+slack = 1.0   # A-core 2 gate: the flush-hardware build stays inside size_mm within 1 mm
 inside_shell = bool(sb.xmin >= -1 and sb.xmax <= L + 1 and sb.ymin >= -1 and sb.ymax <= W + 1
                     and sb.zmin >= -1 and sb.zmax <= H + 1)
 overhang = {"-X": round(-tb_.xmin, 1), "+X": round(tb_.xmax - L, 1),
@@ -147,13 +147,7 @@ with open(HERE / "bom.csv", "w", newline="") as f:
     'item,size,grade,qty,location,basis\n'
     '1,M12 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,8,clamp station,study\n'
     '2,M12 anchor,ISO 898-1 8.8,4,frame to slab,study\n')
-(HERE / "WORK_ORDER.md").write_text(
-    f"# Work order INV_CAST\n\nAuthority: AQS-DUTY-072 (X-MFG lane). LIVE unit - investment tilt-pour station.\n\n"
-    f"1. Fabricate the frame {L} x {W} x 40 base with posts and table deck; set on anchors.\n"
-    f"2. Fit the shell-mould clamp station; prove the {D['molds_per_campaign']}-mould campaign clamp.\n"
-    f"3. Set the tilt-pour station and the cast-out roller bed; align to the clamp.\n"
-    f"4. Fit the N1 shell inlet, N2/N3 melt stubs, N5 drain and N6 vent.\n"
-    f"5. Test: clamp-pressure hold, then a trial pour from IND_MELT N14.\n"
-    f"6. Inspect against models/mfg/INV_CAST/export/inv_cast.step; record dimensions on the traveller.\n")
+# WORK_ORDER.md is the hand-authored W1-W12 item beside the model (AQS-PLAN-006 section 2);
+# the builder no longer writes it, so a rebuild never clobbers the work order.
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps(report))

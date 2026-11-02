@@ -417,8 +417,8 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/TERRACE_IRRIG.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/TFE_SYN.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/TI_CELL.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/VAC_CAST.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/VAC_IND.md` | working tree | current |
+| `docs-authority/duties/VAC_CAST.md` | working tree | current |
+| `docs-authority/duties/VAC_IND.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/VCD_TRAIN.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/VDF_SYN.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/VEG_BED.md` | f0160a6 (regenerated, no change) | current |
@@ -1425,8 +1425,8 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/STOCK_OUT/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/TFE_SYN/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/TI_CELL/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/VAC_CAST/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/VAC_IND/params.json` | working tree | current |
+| `models/mfg/VAC_CAST/params.json` | working tree | current |
+| `models/mfg/VAC_IND/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/VCD_TRAIN/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/VDF_SYN/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/VERMI_BIN/params.json` | f0160a6 (regenerated, no change) | current |
