@@ -17,6 +17,7 @@ Writes models/mfg/<U>/export/<u>.step|.stl and replaces cad/stl/<U>.stl from the
 import csv, glob, json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+MFG = os.path.join(ROOT, 'models', 'mfg')
 G = json.load(open(os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')))
 N = {n['unit_id']: n for n in G['nodes']}
 import cadquery as cq

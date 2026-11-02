@@ -66,11 +66,11 @@ Table 4.1. I/O and modules by PLC
 | PLC-MEOH | 31 | 0 | 25 | 8 | 3 | 3/0/2/1 | single | 24 |
 | PLC-MFG | 32 | 8 | 42 | 9 | 3 | 3/1/4/1 | single | 30 |
 | PLC-NUT | 9 | 0 | 11 | 5 | 0 | 1/0/1/1 | redundant pair | 30 |
-| PLC-OIL | 55 | 0 | 32 | 8 | 3 | 5/0/3/1 | single | 30 |
+| PLC-OIL | 55 | 0 | 36 | 9 | 4 | 5/0/3/1 | single | 30 |
 | PLC-POLYMERS | 48 | 0 | 20 | 4 | 3 | 4/0/2/1 | single | 26 |
 | PLC-PUMPED_HYDRO | 2 | 0 | 2 | 1 | 0 | 1/0/1/1 | redundant pair | 30 |
 | PLC-WTR | 61 | 0 | 45 | 18 | 1 | 5/0/4/2 | redundant pair | 46 |
-| Total | 717 | 13 | 768 | 248 | 81 | 163 modules | 9 redundant of 18 | 650 |
+| Total | 717 | 13 | 772 | 249 | 82 | 163 modules | 9 redundant of 18 | 650 |
 
 The control system draws about 0.65 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
 

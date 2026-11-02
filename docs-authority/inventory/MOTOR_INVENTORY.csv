@@ -130,7 +130,9 @@ NUT,FARM,NUTRIENT_DOSE,"Motor: transfer pump IA-NUT-BED to GROW_BED (BLDC, 42 mm
 NUT,FARM,NUTRIENT_DOSE,"Motor: transfer pump IA-NUT-LEACH to LEACH_CSTR_1 (BLDC, 42 ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 NUT,FARM,NUTRIENT_DOSE,"Motor: transfer pump IA-SIC-RET to LEACH_CSTR_1 (BLDC, 42 mm",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 NUT,FARM,NUTRIENT_DOSE,"Motor: transfer pump S07 to GROW_BED (BLDC, 42 mm (NEMA 17 f",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-OIL,LEACH_EW,HOPPER,"Motor: transfer pump IA-FEED-01 to LEACH_CSTR_1 (BLDC, 42 mm",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
+OIL,LEACH_EW,HOPPER,screw conveyor IA-HOP-01 to LEACH_CSTR_1,induction IE3,IEC 80 / 0.55 kW,0.37,480 V 3-ph,S3,fixed speed,1,"531 kg/d solids (>= 50 kg/d conveyed, assumed)"
+OIL,LEACH_EW,HOPPER,screw feeder,induction IE3,IEC 71 / 0.25 kW,0.18,208 V 3-ph,S3,fixed speed,1,assumed
+OIL,LEACH_EW,HOPPER,transfer pump IA-FEED-01 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0003,24 V DC,S3,BLDC driver,1,"102.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 OIL,OIL_GLASS,AFTERBURNER,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"7.1 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 OIL,OIL_GLASS,OIL_DRYER,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 OIL,OIL_GLASS,OIL_FRAC,"Motor: transfer pump CUT-1 to PROD_C5_C10 (BLDC, 42 mm (NEMA",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)

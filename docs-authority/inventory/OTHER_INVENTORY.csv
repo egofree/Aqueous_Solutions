@@ -1,5 +1,5 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,96,1528 points / 16
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,96,1532 points / 16
 CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,844,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 175 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
@@ -2562,16 +2562,23 @@ NUT,FARM,NUTRIENT_DOSE,valve,isolation valve,DN15,"PP ball valve with HDPE stub 
 NUT,FARM,NUTRIENT_DOSE,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-NUT-LEACH: one at each end nozzle (assumed)
 NUT,FARM,NUTRIENT_DOSE,valve,isolation valve,DN15,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-NUT-BED: one at each end nozzle (assumed)
 NUT,FARM,NUTRIENT_DOSE,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-SIC-RET: one at each end nozzle (assumed)
-OIL,LEACH_EW,HOPPER,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump IA-FEED-01 to LEACH_CSTR_1 (BLDC, 42 mm: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-OIL,LEACH_EW,HOPPER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump IA-FEED-01 to LEACH_CSTR_1 (BLDC, 42 mm: run and fault (assumed)"
-OIL,LEACH_EW,HOPPER,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump IA-FEED-01 to LEACH_CSTR_1 (BLDC, 42 mm (assumed VFD at >= 0.75 kW)"
-OIL,LEACH_EW,HOPPER,fabricated part,fabricated part set,23 BOM lines,models/mfg/HOPPER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+OIL,LEACH_EW,HOPPER,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"screw conveyor IA-HOP-01 to LEACH_CSTR_1: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
+OIL,LEACH_EW,HOPPER,bearing,deep-groove ball bearing,6202-2Z,"ISO 15 / ISO 492 normal class, C3",2,"screw feeder: drive and non-drive end, IEC 60072 frame 71 (assumed size)"
+OIL,LEACH_EW,HOPPER,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-FEED-01 to LEACH_CSTR_1 (assumed size)
+OIL,LEACH_EW,HOPPER,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-FEED-01 to LEACH_CSTR_1
+OIL,LEACH_EW,HOPPER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,screw conveyor IA-HOP-01 to LEACH_CSTR_1: run and fault (assumed)
+OIL,LEACH_EW,HOPPER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,screw feeder: run and fault (assumed)
+OIL,LEACH_EW,HOPPER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-FEED-01 to LEACH_CSTR_1: run and fault (assumed)
+OIL,LEACH_EW,HOPPER,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,screw conveyor IA-HOP-01 to LEACH_CSTR_1 (assumed VFD at >= 0.75 kW)
+OIL,LEACH_EW,HOPPER,electronics,motor starter (contactor + overload),0.25 kW,IEC 60947-4-1,1,screw feeder (assumed VFD at >= 0.75 kW)
+OIL,LEACH_EW,HOPPER,fabricated part,fabricated part set,4 BOM lines,models/mfg/HOPPER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+OIL,LEACH_EW,HOPPER,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,4,models/mfg/HOPPER/fasteners.csv
 OIL,LEACH_EW,HOPPER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,IA-FEED-01: 2 per support (assumed)
 OIL,LEACH_EW,HOPPER,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-FEED-01: pumped line (assumed)
 OIL,LEACH_EW,HOPPER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 OIL,LEACH_EW,HOPPER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 OIL,LEACH_EW,HOPPER,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-OIL,LEACH_EW,HOPPER,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump IA-FEED-01 to LEACH_CSTR_1 (BLDC, 42 mm: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
+OIL,LEACH_EW,HOPPER,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 OIL,LEACH_EW,HOPPER,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",11,IA-FEED-01: AQS-PIP-005 span count
 OIL,LEACH_EW,HOPPER,valve,check valve,DN15,"CPVC true-union swing/ball check valve, FKM seals",1,IA-FEED-01: pump discharge (assumed)
 OIL,LEACH_EW,HOPPER,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-FEED-01: one at each end nozzle (assumed)
