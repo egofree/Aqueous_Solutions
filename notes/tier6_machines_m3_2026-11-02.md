@@ -340,6 +340,23 @@ POLYMERS reactors) — commits 13–24
 - Deliverables as the family recipe; `tracker --check WS_HF_ED` green; duty
   section 7 names the model; tracker regen puts WS_HF_ED at M3 (49).
 
+### WS_SLURRY — commit 15
+
+- The WS_DOPE builder family at the slurry day-station
+  (`models/mfg/WS_SLURRY/ws_slurry.py`): same tray/tank/guard recipe, node
+  storage-sizing box 600 × 600 × 350 filled exactly; one closed manifold solid;
+  `cad/stl/WS_SLURRY.stl` replaced from the build. Tank D/H/wall per node
+  design_storage (AQS-DUTY-064).
+- PE wetted per duty section 3 (the graph node material row); the colloidal
+  silica slurry is abrasive - the issued PE section carries no wear allowance
+  and none is invented (hold, W12). All 4 schedule rows drawn: N1 silicate to
+  slurry in on −Y at 160; N2 slurry out on +Y (600 datum clamped down, W12);
+  N3 drain through the tray floor; N4 vent riser beside the tank (800 datum,
+  W12). Class 150 column carried verbatim, no flange. Nominal 0.02 m³ reported
+  for the record; no purchased item named - none drawn.
+- Deliverables as the family recipe; `tracker --check WS_SLURRY` green; duty
+  section 7 names the model; tracker regen puts WS_SLURRY at M3 (50).
+
 
 
 
