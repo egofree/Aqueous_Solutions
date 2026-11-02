@@ -134,7 +134,8 @@ ACCEPTED = ('AL_POT', 'LEACH_CSTR_1', 'EW_1', 'EW_2', 'EW_3', 'EW_4', 'EW_5', 'E
             'EW_8', 'EW_9', 'CRYO_ASU', 'CRYO_CO2', 'CRYO_H2', 'CRYO_N2', 'CRYO_O2', 'HOPPER',
             'FLOAT_SINK', 'NOX_SCRUB', 'MET_SCRUB', 'HX8', 'MET_HX_Q4', 'CATCH_TANK',
             'ROOF_TANK', 'FLUE_KO', 'MEOH_COND', 'FAB_UPW_TANK', 'MEOH_TANK', 'HDR_CO2', 'HDR_H2', 'HDR_N2', 'HDR_O2', 'HDR_UPW', 'NCG_HEADER', 'Q4_BUS', 'BMED_ACID', 'BMED_BASE', 'POLISH_BANK', 'GREY_TREAT', 'REMIN', 'P_CA', 'REE_RECOVER', 'WS_AMMONIA', 'WS_KOH', 'WS_NITRIC', 'WS_PEROX', 'WS_PHOS',
-            'WS_DOPE', 'WS_HF_ED', 'WS_SLURRY', 'WS_SOLV', 'C29_RECYCLE', 'CONTINUOUS_RECYCLE')
+            'WS_DOPE', 'WS_HF_ED', 'WS_SLURRY', 'WS_SOLV', 'C29_RECYCLE', 'CONTINUOUS_RECYCLE',
+            'MEOH_SYNTH')
 
 
 # --------------------------------------------------------------------------- authorities

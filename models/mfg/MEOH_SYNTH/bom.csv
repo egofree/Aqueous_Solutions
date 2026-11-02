@@ -1,10 +1,8 @@
-item,description,qty,material,basis
-1,"Reactor tube DN50 Sch 40 SA-106 B, 1885 mm, 1 off",1,SA-106 B,AQS-DUTY-062 section 4; UG-27
-2,Weld-neck flange DN50 Class 600 RF,2,SA-105,ASME B16.5
-3,Blind flange DN50 Class 600 with DN15 nozzle,2,SA-105,ASME B16.5
-4,"Spiral-wound gasket DN50 Class 600, 316/graphite",2,316L / flexible graphite,ASME B16.20
-5,"Jacket DN100 Sch 40, 1585 mm, thermal oil in/out DN25",1,SA-106 B,AQS-DUTY-062
-6,Cu/ZnO/Al2O3 catalyst pellets 3.54 kg (3.21 L),1,Cu/ZnO/Al2O3,CTC2020_CZA
-7,Catalyst support grid and inert alumina balls top and bottom,1,316L / alpha-alumina,study
-8,"Feed preheater, 0.82 kW electric",1,mineral-insulated cable on 316L,AQS-DUTY-062
-9,"Safety valve, conventional, set at design pressure (API 520 sized orifice in the graph relief_basis)",1,316L,API 520
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Reactor tube DN50 OD 60.3 x wall 3.91, 1885 mm (L_bed 1485 + 400), bore open",1,316L tube (duty section 3),10.4,make,"node design tube row (X-MFG-31, A-M-156); alloy per duty section 3: 316L per API 941 (AQS-REV-H2-001 section 5), the SA-106 B row superseded (hold, W12); CA 0 mm (AQS-STD-001)"
+2,"Weld-neck flanges DN50 Class 600 RF (OD 165 x 32, B16.5), one pair",2,SA-182 F316L,9.8,make,ASME B16.5 Class 600 at the 250 C / 5.5 MPa design (node design; the A-M-156 construction); stud bolts in fasteners.csv
+3,"Jacket DN100 (OD 114 x wall 6.02), 1585 mm, end plates, thermal-oil service to Q3",1,316L tube/plate,26.1,make,"node design jacket row (DN100 thermal-oil jacket, exotherm to Q3)"
+4,Catalyst bed envelope 52.08 x 1485 mm: 3.5357 kg Cu/ZnO/Al2O3 pellets (3.2143 L),1,Cu/ZnO/Al2O3 (bulk),7.6,buy,"purchased catalyst, drawn as its envelope per plan rule 6 (CTC2020_CZA class); the reduction schedule is an operating-procedure item"
+5,"Catalyst support grids (pair) and inert-alumina ball layer (loading, not drawn)",2,316L / alpha-alumina,0.1,make,"the A-M-156 construction; ball layer is a loading item, not a solid"
+6,"Feed preheater 0.818 kW (node design preheat_kW), envelope and interface only",1,316L sheath (envelope),18.4,buy,purchased heater per plan rule 6; the maker rating reads the sheet at order
+7,"Nozzle set per docs-authority/nozzles/MEOH_SYNTH.csv: 9 atmospheric open-bore tube connections at the skid faces (drain under the bottom flange, vent riser on the top flange)",9,316L tube,2.7,make,"schedule tags/faces/heights verbatim; bores per the lib/dn Sch 40 table; elevations are the schedule placeholders pending vessel design (duty section 4, hold W12)"

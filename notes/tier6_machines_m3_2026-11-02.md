@@ -426,6 +426,35 @@ POLYMERS reactors) — commits 13–24
   duty section 7 names the model; tracker regen puts CONTINUOUS_RECYCLE at M3
   (53). Both recycle pipes accepted; the tier-5 pipe lane is complete.
 
+### MEOH_SYNTH — commit 19
+
+- `models/mfg/MEOH_SYNTH/meoh_synth.py`: the fixed-bed synthesis tube of the
+  node design block (X-MFG-31, A-M-156) — DN50 tube (OD 60.3 × wall 3.91,
+  L_bed 1485 + 400), DN50 Class 600 flange pair (B16.5 OD 165 × 32), DN100
+  thermal-oil jacket to Q3, the catalyst bed envelope (3.54 kg Cu/ZnO/Al2O3,
+  3.2143 L) and support grids at running clearance in the bore, and the feed
+  preheater (0.818 kW) as a purchased envelope (plan rule 6). Node envelope
+  414 × 414 × 2585 filled exactly; two closed solids (the vessel chain and the
+  bed-with-grids envelope); `cad/stl/MEOH_SYNTH.stl` replaced from the build.
+- Materials: 316L per duty section 3 (API 941, AQS-REV-H2-001 section 5 — no
+  carbon steel above 200 C with H2 partial pressure); the node SA-106 B tube
+  row is superseded, the drawn wall keeps the node t_nom 3.91 (t_req 2.88,
+  t_ok) and the alloy changes; the wall geometry stays the node figure
+  (hold, W12). Studs follow
+  the alloy (A193 B8M / A194 8MA).
+- All 9 schedule rows drawn: N1/N2 in and N8 at the −Y 160 pack; N3/N6/N7/N9
+  out at the +Y 600 pack (datums draw as issued — both fit the 2585 box; the
+  elevations are the schedule placeholders pending vessel design, W12); N4
+  drain boss under the bottom flange; N5 vent riser on the top flange flush at
+  the box top. Class 150 column carried verbatim at the faces; the pressure
+  part carries the Class 600 node rating.
+- A-VES: the bed volume (3.213 L model against the node 3.2143 L) is reported;
+  no residence time derived (duty section 2 claims no holdup; a fixed bed).
+- Deliverables: exports, generated `bom.csv` (make/buy per rule 6),
+  `fasteners.csv`, `check.json`, `WORK_ORDER.md` (W1–W12), six-sheet drawing
+  set; `tracker --check MEOH_SYNTH` green; duty section 7 names the model;
+  tracker regen puts MEOH_SYNTH at M3 (54).
+
 
 
 

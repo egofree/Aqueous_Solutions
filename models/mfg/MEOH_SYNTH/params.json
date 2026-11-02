@@ -39,7 +39,13 @@
   "V_work_L": 3.2143,
   "V_L": 3.2143,
   "material": "SA-106 B tube in a DN100 thermal-oil jacket (exotherm to Q3); Cu/ZnO/Al2O3 pellets",
-  "kW": 0.818
+  "kW": 0.818,
+  "machine": "fixed-bed methanol synthesis tube (DN50, L_bed 1485 + 400) in a DN100 thermal-oil jacket, exotherm to Q3 (node design, A-M-156)",
+  "mat": "316L per duty section 3 (API 941, AQS-REV-H2-001 section 5); the node SA-106 B tube row predates the selection (WORK_ORDER W12)",
+  "ca_mm": 0.0,
+  "wall_basis": "node design t_nom (t_req 2.88, t_ok true)",
+  "internals": "catalyst bed envelope (purchased, rule 6) + support grids drawn; node internals row none, so the tracker records no internal solid",
+  "purchased": "catalyst bed (3.54 kg Cu/ZnO/Al2O3) and feed preheater (0.818 kW) drawn as envelopes and interfaces per plan rule 6"
  },
  "nozzles": [
   {
@@ -119,5 +125,34 @@
  "acceptance_sets": [
   "A-core",
   "A-VES"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   414.0,
+   414.0,
+   2585.0
+  ],
+  "basis": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
+  "vessel": {
+   "axis_xy_mm": [
+    207.0,
+    207.0
+   ],
+   "tube_z_mm": [
+    120.0,
+    2005.0
+   ],
+   "jacket_z_mm": [
+    270.0,
+    1855.0
+   ],
+   "top_flange_top_mm": 2037.0
+  },
+  "plinth_mm": 20.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; vessel axis at (207, 207), plinth z 0..20; bottom flange 88..120, tube 120..2005, top flange 2005..2037, jacket 270..1855, bed 350..1835; preheater envelope at the +X corner",
+  "nozzle_spread": "side rows flush at the skid faces packed from x 90 at an od + 8 pitch (N1/N2/N8 on -Y at 160; N3/N6/N7/N9 on +Y at 600); drain under the bottom flange; vent riser on the top flange; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "face connection hardware flush at the envelope faces; the pressure-part flanges carry the Class 600 rating"
+ }
 }

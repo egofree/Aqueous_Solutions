@@ -1,2 +1,3 @@
 item,size,grade,qty,location,basis
-1,5/8 in stud bolt with 2 heavy hex nuts,ASTM A193 B7 / A194 2H,16,DN50 Class 600 flanges (8 per joint),ASME B16.5
+1,5/8 in stud bolt with 2 heavy hex nuts,ASTM A193 B8M / A194 8MA,16,DN50 Class 600 flange joints; top and bottom (8 per joint),ASME B16.5 stud pattern at the 250 C / 5.5 MPa design; austenitic studs for the 316L pressure part (the pre-duty-3 SA-106 build carried B7/2H; superseded by the duty section 3 alloy - hold; WORK_ORDER W12); torque per ASME PCC-1
+2,M12 wedge anchor,ISO 898-1 8.8,4,plinth to slab; one per corner (count from the model),grade rule AQS-PLAN-006 W5: 8.8 on the carbon-steel plinth; study length; confirmed at fabrication

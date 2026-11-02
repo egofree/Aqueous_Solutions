@@ -1,0 +1,191 @@
+{
+  "bbox_mm": [
+    414.0,
+    414.0,
+    2585.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    414.0,
+    414.0,
+    2585.0
+  ],
+  "size_basis": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
+  "graph_revision": "AD",
+  "solids": 2,
+  "all_parts_valid": true,
+  "solids_note": "two solids: the vessel chain (plinth, flanges, tube, jacket, branches, preheater) and the catalyst-bed envelope with its support grids, which sit at their running clearances inside the tube bore and are not welded to the pressure part; both closed and manifold",
+  "reactor": {
+    "tube": {
+      "dn": "DN50",
+      "od_mm": 60.3,
+      "wall_mm": 3.91,
+      "z_mm": [
+        120.0,
+        2005.0
+      ],
+      "length_mm": 1885.0,
+      "construction": "node design: DN50 Sch 40 SA-106 B, L_bed + 400 (A-M-156 / X-MFG-31); the alloy follows duty section 3 - 316L per API 941 (AQS-REV-H2-001 section 5); the SA-106 B row predates it (hold, WORK_ORDER W12)"
+    },
+    "flanges": {
+      "rating": "ASME B16.5 Class 600 (Group 1.1 at the 250 C design)",
+      "od_mm": 165.0,
+      "t_mm": 32.0,
+      "z_mm": [
+        88.0,
+        120.0
+      ],
+      "top_z_mm": [
+        2005.0,
+        2037.0
+      ]
+    },
+    "jacket": {
+      "od_mm": 114.0,
+      "wall_mm": 6.02,
+      "z_mm": [
+        270.0,
+        1855.0
+      ],
+      "service": "DN100 thermal-oil jacket, exotherm to Q3 (node design)"
+    },
+    "design_pressure": {
+      "MPa": 5.5,
+      "t_req_mm": 2.8796,
+      "t_nom_mm": 3.91,
+      "basis": "node design t_ok; wall geometry per the node, alloy per duty section 3"
+    },
+    "bed": {
+      "length_mm": 1485.0,
+      "volume_L_model": 3.1634,
+      "volume_L_node": 3.2143,
+      "cat_kg": 3.5357,
+      "basis": "purchased-bed envelope per plan rule 6 (Cu/ZnO/Al2O3 pellets, CTC2020_CZA class); the node V_bed_L is the authority"
+    }
+  },
+  "a_ves": {
+    "holdup_L": 3.1634,
+    "basis": "reported from the model bed envelope against the node V_work_L; no residence time is derived - the duty section 2 claims no holdup and a fixed bed is not a liquid holdup (A-VES)"
+  },
+  "material": {
+    "class": "316L",
+    "ca_mm": 0.0,
+    "basis": "duty section 3: synthesis 50 bar a, 250 C (study); 316L per API 941 (AQS-REV-H2-001 section 5); above 200 C with H2 partial pressure no carbon steel; CA 0 mm (AQS-STD-001 rule)"
+  },
+  "a_mach_named": {
+    "purchased": "feed preheater 0.818 kW (node design preheat_kW) drawn as its envelope and interface, plan rule 6; the drive rating reads the maker sheet at order"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 177.7,
+      "schedule_rating": "Class 150",
+      "service": "CO2 feedstock",
+      "note": "schedule datum drawn as issued; the piped takeoff lands on the tube at the placeholder elevation (duty section 4: elevations are the schedule placeholders pending vessel design, unit tasks 02/06); atmospheric open-bore tube, flush at the envelope face"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 207.0,
+      "schedule_rating": "Class 150",
+      "service": "H2 for MeOH",
+      "note": "schedule datum drawn as issued; the piped takeoff lands on the tube at the placeholder elevation (duty section 4: elevations are the schedule placeholders pending vessel design, unit tasks 02/06); atmospheric open-bore tube, flush at the envelope face"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 163.1,
+      "schedule_rating": "Class 150",
+      "service": "crude MeOH",
+      "note": "schedule datum drawn as issued; the piped takeoff lands on the tube at the placeholder elevation (duty section 4: elevations are the schedule placeholders pending vessel design, unit tasks 02/06); atmospheric open-bore tube, flush at the envelope face"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "x_mm": 207.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss under the bottom flange, flush at the envelope bottom (schedule datum 50)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 2585.0,
+      "x_mm": 207.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent riser on the top flange, flush at the envelope top; schedule datum 800 is the placeholder elevation (hold, WORK_ORDER W12)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 192.4,
+      "schedule_rating": "Class 150",
+      "service": "methanol co-feed",
+      "note": "schedule datum drawn as issued; the piped takeoff lands on the tube at the placeholder elevation (duty section 4: elevations are the schedule placeholders pending vessel design, unit tasks 02/06); atmospheric open-bore tube, flush at the envelope face"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 221.7,
+      "schedule_rating": "Class 150",
+      "service": "synthesis water",
+      "note": "schedule datum drawn as issued; the piped takeoff lands on the tube at the placeholder elevation (duty section 4: elevations are the schedule placeholders pending vessel design, unit tasks 02/06); atmospheric open-bore tube, flush at the envelope face"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 236.3,
+      "schedule_rating": "Class 150",
+      "service": "CO2 not taken by the bed",
+      "note": "schedule datum drawn as issued; the piped takeoff lands on the tube at the placeholder elevation (duty section 4: elevations are the schedule placeholders pending vessel design, unit tasks 02/06); atmospheric open-bore tube, flush at the envelope face"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 251.0,
+      "schedule_rating": "Class 150",
+      "service": "methanol feed to the methyl-mercaptan synthesis (trace)",
+      "note": "schedule datum drawn as issued; the piped takeoff lands on the tube at the placeholder elevation (duty section 4: elevations are the schedule placeholders pending vessel design, unit tasks 02/06); atmospheric open-bore tube, flush at the envelope face"
+    }
+  },
+  "nozzle_count_schedule": 9,
+  "nozzle_idiom": "atmospheric open-bore tube connections flush at the envelope faces (duty section 4: hose, atmospheric; the W4 110 percent rule draws no flange hardware where no process pressure is stated at the face); the pressure-part flanges carry the B16.5 Class 600 rating of the node construction; the schedule rating column (Class 150) is carried verbatim as text; datums draw as issued (160 and 600 fit the 2585 box); drain flush at the envelope bottom; vent riser flush at the envelope top",
+  "part_mass_kg": {
+    "plinth": 26.9,
+    "pressure_part": 20.3,
+    "jacket": 26.1,
+    "grids": 0.1,
+    "bed": 7.6,
+    "preheater": 18.4,
+    "nozzles": 2.7
+  },
+  "cadquery": "2.8.0"
+}
