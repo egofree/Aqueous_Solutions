@@ -1,2 +1,4 @@
-item,description,qty,material,make_or_buy,basis
-1,Body / envelope per duty sheet section 2,1,PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06),make,AQS-STD-002 per duty sheet
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Manifold spool DN25 OD 33.7 x wall 3.38 (Sch 40 table), 2 m modeled of the 20 m run; bore open both ends; bonded joints",1,PVC-U (duty section 3: wet acid H2 + sweep air header),0.9,make,"AQS-DUTY-075 node design DN25 x 20 m run; AQS-REV-H2-001 material family M3; schedule not stated on the node - Sch 40 table drawn, P1 class sheet carries Sch 80 at order (hold, WORK_ORDER W12); CA 0 mm (AQS-STD-001 polymer rule)"
+2,"Branch connection set: 16 atmospheric open-bore tube stubs at the schedule tags/faces/heights, incl. 3 DN50 rows (drawn at the manifold centreline - misfit reported) and 1 no-bore row drawn DN15",16,PVC-U,0.1,make,docs-authority/nozzles/HDR_H2.csv verbatim; no-bore rows drawn DN15 and labeled bore not calculated (plan W4); datums clamped into the 50 mm cross-section (holds)
+3,"Trough plinth 2000 x 50 x 20, the spool mount (AQS-MOD-002 dry service class)",1,carbon steel (ASTM A500),15.7,make,"support scheme carried from the HDR_CO2 acceptance (trough mount, no top rails); metal parts bonded per duty section 3"

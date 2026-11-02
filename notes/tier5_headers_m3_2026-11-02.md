@@ -59,3 +59,33 @@ calculated", rating; spool drawing; no new edge).
   the accepted vessels draw their small connections through the same lib, so the lib is
   not changed mid-lane — flagged here for the next lib pass.
 
+
+## HDR_H2 (H2 header, GAS, tier 5) — commit 3
+
+- `models/mfg/HDR_H2/hdr_h2.py` on the shared lib, the HDR_CO2 spool shape in PVC-U.
+  All 16 rows of the issued schedule drawn at tag, face, height and bore as open-bore
+  tube stubs flush at the envelope faces (duty section 4: atmospheric tube or hose, no
+  flange class; Class 150 column carried verbatim as text). N1–N4 inlets on −Y drawn at
+  11.3 mm (datum 10 clamped up); the 160 mm placeholder datums clamped down; N8 carries
+  "solids" (dried hydrogen) and is drawn DN15, bore not calculated (plan W4); N5 outlet
+  at its 37 mm datum; N6 drain and N7 vent flush at the faces.
+- Misfit reported (plan rule 3), nothing resized: the DN50 rows N9/N10/N11 (OD 60.3)
+  cannot sit inside the 50 mm cross-section; drawn at the manifold centreline, the
+  assembly mesh reads z 60.3 against the 50 mm envelope. The section 7 row carries the
+  misfit and the unit stays at M3 (the AL_POT precedent); `tracker --check HDR_H2` is
+  green on every gate except the reported misfit.
+- Spool: DN25 OD 33.7 × wall 3.38 (Sch 40 table; the P1 class sheet carries Sch 80 at
+  order), bore 26.9 mm inside the 6.6 mm DN-8 sizing grid seat; nothing resized.
+- A-PIPE: `line_list.csv` — 15 rows (manifold + the 14 issued lines: EW cathode-gas and
+  hood rows DN15/DN50, IA-H2-IN as solids, dryer outlet DN15), class P1
+  wet-acid-header family per AQS-PIP-004 Rev C; edge coverage complete, no new edge.
+- Deliverables: exports (STEP + closed STL, 11138 facets; cad/stl replaced), `bom.csv`
+  (plinth 15.7 kg CS, manifold 0.9 kg PVC-U, branches 0.1 kg), `fasteners.csv` (8 M10
+  wedge anchors, 8.8), `check.json`, `WORK_ORDER.md` (W1–W12 + line list), six-sheet
+  drawing set. Duty section 7 names the model; tracker regen puts HDR_H2 at M3 (30).
+- Registry note: `cad/stl/HDR_H2.stl` is kept as the envelope registry at the node size
+  (the X-PAR-04 gate in `flow_graph/param/test_envelopes.py` matches the registry bbox
+  to size_mm within 1 mm); the accepted build carries the reported DN50 overshoot and
+  its mesh lives in `export/` — the AL_POT precedent. `lib/sheets.build_log` now takes
+  the registry wording from the builder's check report instead of hardcoding "replaced
+  from the build".

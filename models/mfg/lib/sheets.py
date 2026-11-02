@@ -99,7 +99,9 @@ def build_log(unit, here, report, srcs, extra_checks, acceptance_set):
         + " (bbox read back from the export STL: the CAD kernel's bounding box of "
         "the lofted barb faces is loose; the mesh is the gate measure)",
         f"- Solid source: {step_src}; export STL closed and manifold, "
-        f"{r['solids']} solid(s); `cad/stl/{unit}.stl` replaced from the build (ASCII, metres)",
+        f"{r['solids']} solid(s); `cad/stl/{unit}.stl` "
+        + ("; " + r["cad_stl"] if r.get("cad_stl") else "replaced from the build")
+        + " (ASCII, metres)",
         f"- Nozzles: all {r['nozzle_count_schedule']} rows of "
         f"`docs-authority/nozzles/{unit}.csv` present at face, height and bore "
         "(per-tag notes in check.nozzles_drawn)",
