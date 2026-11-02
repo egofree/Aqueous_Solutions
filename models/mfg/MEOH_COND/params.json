@@ -31,7 +31,18 @@
   "H_mm": 600,
   "to": "condensate to ROOF_TANK (IA-MEOH-COND)",
   "material": "316L shell and coil (methanol/water traces)",
-  "note": "knock-out pot + condenser on the same skid"
+  "note": "knock-out pot + condenser on the same skid",
+  "service": "methanol-train knock-out pot + condenser on one skid, atmospheric (node design block, duty sections 2, 4 and 6)",
+  "wall_mm": 3.0,
+  "wall_basis": "study value",
+  "ca_mm": 0.0,
+  "coil": {
+   "tube_od_mm": 10.0,
+   "developed_mm": 1005.0,
+   "area_drawn_m2": 0.0316,
+   "area_node_m2": 0.0301,
+   "condensing_kW": 0.7079
+  }
  },
  "nozzles": [
   {
@@ -79,5 +90,26 @@
  "acceptance_sets": [
   "A-core",
   "A-VES"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   400.0,
+   400.0,
+   600.0
+  ],
+  "basis": "node-sized (params size_note: meoh_train.py, AQS-DUTY-077); the build fills the node box exactly",
+  "shell": {
+   "od_mm": 400.0,
+   "z_mm": [
+    40.0,
+    560.0
+   ]
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; shell axis at x 200, y 200, z up; the shell is tangent to all four faces (node D 400)",
+  "nozzle_spread": "the schedule gives face and height only; ports pack centred on the face mid-length; per-tag positions in check.nozzles_drawn",
+  "vent_drain": "N4 vent flush at the top head (the 800 datum predates the box); N3 drain boss on the base head, tip at the 50 datum",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }

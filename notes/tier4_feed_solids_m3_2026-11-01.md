@@ -259,3 +259,30 @@ recipe pattern in `models/mfg/EW_1/WORK_ORDER.md`. Graph Rev AC. One commit per 
   WORK_ORDER.md (W1-W12), the seven-sheet drawing set (stale M2-era GA.md and
   invalid-XML SVGs regenerated). `cad/stl/FLUE_KO.stl` replaced.
   `tracker --check FLUE_KO` green.
+
+## MEOH_COND (methanol-train knock-out pot + coil, tier 4) — commit 12
+
+- `models/mfg/MEOH_COND/meoh_cond.py` on the shared lib. Vertical 316L knock-out
+  drum - shell OD 400 (the node design D_mm) tangent to all four faces of the
+  node-SIZED envelope 400 x 400 x 600 (params size_note: meoh_train.py,
+  AQS-DUTY-077; drum 71.19 L nominal) - on a plinth with heads; bbox exact, one
+  closed manifold solid (builder assert added after the ROOF_TANK floats).
+- Coil per the node design block ("1 x 10 mm x 1 m coil", area_m2 0.0301,
+  condensing 0.7079 kW at U 1.2, LMTD 19.6 K): 316L OD 10 helix, 2.5 turns at a
+  ~127 mm mean diameter, ~1.000 m developed (2.5 exact turns land both coil ends
+  on the drum's x axis, where radial OD 10 stubs reach both end walls - a coil is
+  hardware, its ends must reach the wall; the first draw's free-floating helix
+  was caught by the assert). Drawn area 0.0314 m2, 0.0013 m2 over the node book
+  figure - reported, nothing resized (W12). Node internals row none.
+- All 5 schedule rows drawn at tag, face, height and bore (N2 outlet datum 600
+  clamped to 584.4 by the barb-radius rule; N4 vent flush at the top head, its
+  800 datum predates the 600 box - holds; Class 150 verbatim, no flange). Holdup
+  0.0584 m3 reported against the node drum_L figure, no residence derived
+  (A-VES). Deliverables: exports, generated BOM, fasteners.csv, check.json,
+  WORK_ORDER.md (W1-W12), the seven-sheet drawing set (stale M2-era GA.md and
+  invalid-XML SVGs regenerated). `cad/stl/MEOH_COND.stl` replaced.
+  `tracker --check MEOH_COND` green.
+- Lane note: the builder-owned params `design` block now MERGES beside the node's
+  design keys instead of overwriting them (the node block here is issued sizing
+  data - meoh_train.py - and the first build run clobbered it; restored from git
+  and re-merged).

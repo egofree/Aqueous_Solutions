@@ -1,0 +1,108 @@
+{
+  "bbox_mm": [
+    400.0,
+    400.0,
+    600.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    400.0,
+    400.0,
+    600.0
+  ],
+  "size_basis": "node-sized (params size_note: meoh_train.py, AQS-DUTY-077; node design D_mm 400, H_mm 600, drum_L 71.19)",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "holdup_m3": 0.0584,
+  "holdup_basis": "reported against the node drum_L 71.19 nominal figure; no residence derived - the duty section 2 box sentence is explicitly not a residence time (A-VES)",
+  "ko_drum": {
+    "wall_mm": 3.0,
+    "wall_basis": "study value - no authority states a wall (WORK_ORDER W12)",
+    "drum_L_node": 71.19,
+    "coil": {
+      "tube_od_mm": 10.0,
+      "mean_radius_mm": 63.66,
+      "turns": 2.5,
+      "developed_mm": 1005.0,
+      "z_mm": [
+        80.0,
+        180.0
+      ],
+      "area_drawn_m2": 0.0316,
+      "area_node_m2": 0.0301,
+      "area_basis": "drawn coil hardware against the node book '1 x 10 mm x 1 m coil', area_m2 0.0301: the drawn area is 0.0013 m2 over the node figure - reported, nothing resized (WORK_ORDER W12)",
+      "duty": {
+        "condensing_kW": 0.7079,
+        "U_kW_m2K": 1.2,
+        "LMTD_K": 19.6
+      }
+    }
+  },
+  "material": {
+    "class": "316L",
+    "ca_mm": 0.0,
+    "basis": "duty section 3 / graph node material: 316L shell and coil (methanol/water traces); CA 0 mm (AQS-STD-001)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 185.3,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 584.4,
+      "x_mm": 200.0,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); schedule datum 600 mm clamped to 584.4 mm (barb radius rule) - WORK_ORDER W12"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "drain boss on the base head, tip at the 50 datum"
+    },
+    "N4": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "vent flush at the top head; schedule datum 800 predates the 600 box - WORK_ORDER W12"
+    },
+    "N5": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 214.7,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    }
+  },
+  "nozzle_count_schedule": 5,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (the shell is tangent to the faces, so every root laps the shell or a head); the schedule rating column (Class 150) is carried verbatim as text, no flange drawn",
+  "part_mass_kg": {
+    "plinth": 25.6,
+    "shell": 75.9,
+    "coil": 0.9,
+    "nozzles": 0.5
+  },
+  "cadquery": "2.8.0"
+}

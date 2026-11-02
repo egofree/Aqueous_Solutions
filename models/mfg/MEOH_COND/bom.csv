@@ -1,7 +1,4 @@
-item,description,qty,material,basis
-1,Body D400 x 600 mm,1,316L shell and coil (methanol/water traces) (graph node material).,docs-authority/duties/MEOH_COND.md
-2,Process nozzle DN15,3,316L shell and coil (methanol/water traces) (graph node material).,one per mass edge; DN from AQS-INV-003
-3,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-4,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-5,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-6,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Shell OD 400, wall 3 mm, z 40..560, with heads, on a 400 x 400 plinth (knock-out pot, node design D 400 / H 600 / drum 71.19 L nominal)",1,316L plate/pipe,101.5,make,"node-sized envelope (meoh_train.py, AQS-DUTY-077); wall a study value (WORK_ORDER W12); CA 0 mm (AQS-STD-001)"
+2,"Coil, tube OD 10 x 1.005 m developed, ~2.6 turns at a 127.32 mm mean diameter, 0.0316 m2 drawn",1,316L,0.9,make,"node design '1 x 10 mm x 1 m coil' (area_m2 0.0301); the drawn area is 0.0013 m2 over the node figure - reported, nothing resized (WORK_ORDER W12); condensing 0.7079 kW at U 1.2, LMTD 19.6 K"
+3,"Nozzle set per docs-authority/nozzles/MEOH_COND.csv: 3 hose barbs (DN15), 1 drain boss, 1 vent at the top head",5,316L,0.5,make,"schedule tags/faces/heights verbatim; atmospheric hose per duty section 4; N2 datum 600 clamped to 584.4 and the N4 800 datum predates the 600 box (holds, WORK_ORDER W12); barb profile a study proportion (lib/nozzles.py)"
