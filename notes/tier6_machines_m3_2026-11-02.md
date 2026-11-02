@@ -283,6 +283,42 @@ resized.
   names the model; tracker regen puts WS_PHOS at M3 (47). Tier-6 lane
   complete: 12 units accepted this lane (47 at M3 overall).
 
+## Tier-6 continuation lane (FAB reagent stations, recycle pipes, MeOH train,
+POLYMERS reactors) — commits 13–24
+
+- Continuation recipe: the same family patterns (the WS reagent-station recipe
+  for the four remaining FAB stations; the accepted HDR_CO2 spool/line-list
+  idiom for the two recycle pipes; per-node reactor construction for the MeOH
+  train and the three POLYMERS reactors, internals per node and purchased items
+  as envelopes per plan rule 6). Every dimension from the unit's own graph
+  node, duty sheet and issued nozzle schedule; misfits §7-reported, never
+  resized. One commit per unit (plan rule 4); subsections follow.
+
+### WS_DOPE — commit 13
+
+- `models/mfg/WS_DOPE/ws_dope.py` on the shared lib, the WS reagent-station
+  family recipe: bund tray (floor 20 + curb 60 × 10), day tank at the back
+  drawn to the node design_storage figures (D 300, H 300, wall 4.75, AQS-DUTY-064;
+  the tracker W2 file does not carry design_storage, so the builder reads the
+  graph - the sole topology authority), service-zone guard rail and 4 slab
+  anchors (A-MACH). Node storage-sizing box 600 × 600 × 350 filled exactly;
+  one closed manifold solid; `cad/stl/WS_DOPE.stl` replaced from the build.
+- PE wetted per duty section 3 (the graph node material row); CA 0 mm on the
+  polymer. All 5 schedule rows drawn as atmospheric open-bore tube connections
+  on tray risers: N1 in on −Y at 160; N2 and N5 out on +Y (600 datums clamped
+  down, W12); N3 drain through the tray floor; N4 vent riser beside the tank,
+  flush at the envelope top (800 datum, W12). Row N5 carries the line-list
+  classification `solids` (non-piped hand transfer): drawn DN15, bore not
+  calculated, labeled (plan W4). Class 150 column carried verbatim, no flange.
+- The design_storage nominal 0.02 m³ (30-day hold) is reported for the record
+  (gross shell 21.2 L); duty section 2 claims no holdup, no residence derived
+  (A-VES n/a). No purchased item named - none drawn (the A-MACH criterion has
+  nothing to match).
+- Deliverables as the family recipe: exports, generated `bom.csv`,
+  `fasteners.csv`, `check.json`, `WORK_ORDER.md` (W1–W12), six-sheet drawing
+  set; `tracker --check WS_DOPE` green; duty section 7 names the model;
+  tracker regen puts WS_DOPE at M3 (48).
+
 
 
 

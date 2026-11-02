@@ -1,0 +1,118 @@
+{
+  "bbox_mm": [
+    600.0,
+    600.0,
+    350.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    600.0,
+    600.0,
+    350.0
+  ],
+  "size_basis": "storage-sizing box (node size_mm, AQS-DUTY-064); the duty section 4 prose seed line 800 x 800 x 1100 predates it (WORK_ORDER W12)",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "tank": {
+    "od_mm": 300.0,
+    "xy_mm": [
+      300.0,
+      380.0
+    ],
+    "z_mm": [
+      30.0,
+      350.0
+    ],
+    "wall_mm": 4.75,
+    "wall_basis": "node design_storage wall_mm (AQS-DUTY-064)",
+    "gross_volume_m3": 0.0212,
+    "nominal_volume_m3": 0.02,
+    "nominal_volume_basis": "node design_storage V_nom_m3 at hold_d 30 d (AQS-DUTY-064); the nominal volume sits the level at z 30.3 (reported for the record; duty section 2 claims no holdup and no residence time is derived; A-VES n/a, WORK_ORDER W12)",
+    "internals": {
+      "source": "none: the node internals row is none and no study page issues internals for this station",
+      "basis": "no internal solid drawn (WORK_ORDER W12)"
+    }
+  },
+  "material": {
+    "class": "PE (rotomoulded / fabricated)",
+    "ca_mm": null,
+    "basis": "duty section 3: PE (rotomoulded / fabricated), the graph node material row; CA does not apply to the polymer (AQS-STD-001)"
+  },
+  "a_mach": {
+    "guard": "service-zone guard rail over the front-right floor zone (A-MACH: guard drawn; layout choice, WORK_ORDER W12)",
+    "anchors": "4 M10 wedge anchors, tray to slab (fasteners.csv)",
+    "purchased": "none named on the node or the duty sheet for this station - none drawn (the criterion has nothing to match, WORK_ORDER W12)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 430.6,
+      "schedule_rating": "Class 150",
+      "service": "phosphate to dopant",
+      "note": "schedule datum drawn; DN15 open-bore tube on a tray riser, flush at the envelope face (duty section 4: atmospheric joints are hose)",
+      "solids_row": false
+    },
+    "N2": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600,
+      "drawn_height_mm": 320.7,
+      "x_mm": 310.6,
+      "schedule_rating": "Class 150",
+      "service": "B/P/As concentrate; BBr\u2083 / POCl\u2083 class",
+      "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); DN15 open-bore tube on a tray riser, flush at the envelope face (duty section 4: atmospheric joints are hose)",
+      "solids_row": false
+    },
+    "N3": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "x_mm": 560.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain, open bore through the tray floor, flush at the envelope bottom (schedule datum 50)",
+      "solids_row": false
+    },
+    "N4": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 350.0,
+      "x_mm": 464.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent riser beside the tank with a short branch into the shell head zone, flush at the envelope top; schedule datum 800 predates the box (hold, WORK_ORDER W12)",
+      "solids_row": false
+    },
+    "N5": {
+      "style": "tube",
+      "dn": "solids",
+      "face": "+Y",
+      "height_mm": 600,
+      "drawn_height_mm": 320.7,
+      "x_mm": 339.9,
+      "schedule_rating": "Class 150",
+      "service": "dopant concentrate",
+      "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); non-piped solids transfer (line-list classification): drawn DN15, bore not calculated (plan W4) on a tray riser, flush at the envelope face (duty section 4: atmospheric joints are hose)",
+      "solids_row": true
+    }
+  },
+  "nozzle_count_schedule": 5,
+  "nozzle_idiom": "atmospheric open-bore tube connections on tray risers, flush at the envelope faces (duty section 4: atmospheric joints are hose; the W4 110 percent rule draws no flange where no process pressure is stated); the schedule rating column (Class 150) is carried verbatim as text; clamped datums named in nozzles_drawn; the N5 solids row drawn DN15, bore not calculated (plan W4)",
+  "part_mass_kg": {
+    "tray": 8.1,
+    "tank": 4.5,
+    "guard_rail": 0.1,
+    "nozzles": 0.2
+  },
+  "cadquery": "2.8.0"
+}
