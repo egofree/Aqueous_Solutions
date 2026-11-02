@@ -109,4 +109,28 @@ resized.
   POLISH_BANK` green; duty section 7 names the model; tracker regen puts
   POLISH_BANK at M3 (38).
 
+## GREY_TREAT (greywater treatment vessel, WTR, tier 6) — commit 4
+
+- `models/mfg/GREY_TREAT/grey_treat.py` on the shared lib, the accepted vessel
+  idiom at the same registry box as CATCH_TANK (649 × 520 × 748): vertical
+  PVC-U vessel, shell OD 460 (min(L,W) − 60), wall 10 (study fab page —
+  hold), plinth with heads, filling the box exactly; one closed manifold
+  solid; `cad/stl/GREY_TREAT.stl` replaced from the build.
+- Internals: none — the node row is none and no study page issues internals
+  for this unit (W12). The duty section 4 prose block (7 rows on the seed
+  line "Size 800 × 800 × 1100 mm") predates both the issued 11-row schedule
+  and the node box; the node and the schedule govern (holds).
+- All 11 schedule rows drawn as atmospheric hose barbs flush at the envelope
+  faces: N1 DN50 and five DN15 inlets on −Y at 160; N3 DN25, N4 DN50 and N7
+  DN15 outlets on +Y at 600 (datums fit the box, no clamp); N5 drain boss to
+  its 50 datum; N6 vent flush at the top head (its 800 datum predates the
+  box, W12). Class 150 column carried verbatim as text, no flange drawn.
+- A-VES: the 0.0955 m³ liquor volume at the study working level is reported;
+  the duty section 2 claims no holdup and no residence time is derived.
+- Deliverables: exports, generated `bom.csv`, `fasteners.csv`, `check.json`,
+  `WORK_ORDER.md` (W1–W12), six-sheet drawing set; `tracker --check
+  GREY_TREAT` green; duty section 7 names the model; tracker regen puts
+  GREY_TREAT at M3 (39).
+
+
 

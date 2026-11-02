@@ -1,0 +1,163 @@
+{
+  "bbox_mm": [
+    649.0,
+    520.0,
+    748.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    649.0,
+    520.0,
+    748.0
+  ],
+  "size_basis": "study registry box (params size_note); the duty sheet section 4 prose block still carries the seed line Size 800 x 800 x 1100 mm (WORK_ORDER W12)",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "holdup_m3": 0.0955,
+  "holdup_basis": "reported at the study working level z 668, no residence derived: the duty section 2 claims no holdup (A-VES)",
+  "tank": {
+    "wall_mm": 10.0,
+    "wall_basis": "study fab-page polymer wall (10 mm); no thickness booked on the node (WORK_ORDER W12)",
+    "internals": {
+      "source": "none: the node internals row is none and no study page issues internals for this unit",
+      "basis": "no internal solid drawn (WORK_ORDER W12)"
+    }
+  },
+  "material": {
+    "class": "PVC-U",
+    "ca_mm": 0.0,
+    "basis": "duty section 3, rules M1 and M2; corrosion allowance does not apply to the polymer"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 251.2,
+      "schedule_rating": "Class 150",
+      "service": "grey/solids",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 358.6,
+      "schedule_rating": "Class 150",
+      "service": "electrolyte bleed",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 344.0,
+      "schedule_rating": "Class 150",
+      "service": "treated grey",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 289.0,
+      "schedule_rating": "Class 150",
+      "service": "grey sludge",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss on the base head, tip at the 50 datum"
+    },
+    "N6": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 748.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the top head; schedule datum 800 predates the 748 box - WORK_ORDER W12"
+    },
+    "N7": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 379.5,
+      "schedule_rating": "Class 150",
+      "service": "treated grey to the water cycle",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N8": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 387.9,
+      "schedule_rating": "Class 150",
+      "service": "released digest liquor to grey treatment",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N9": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 417.2,
+      "schedule_rating": "Class 150",
+      "service": "wash grey water to the treatment train",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N10": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 300.0,
+      "schedule_rating": "Class 150",
+      "service": "duck wash water",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N11": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 329.3,
+      "schedule_rating": "Class 150",
+      "service": "galley wash grey water to the treatment train",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    }
+  },
+  "nozzle_count_schedule": 11,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (the shell stands 30 off the +/-Y faces, within the barb reach); the schedule rating column (Class 150) is carried verbatim as text, no flange drawn; the issued schedule (11 rows) governs, the duty section 4 prose table (7 rows on the seed block) predates it (WORK_ORDER W12)",
+  "part_mass_kg": {
+    "plinth": 9.4,
+    "shell": 27.2,
+    "nozzles": 0.6
+  },
+  "cadquery": "2.8.0"
+}

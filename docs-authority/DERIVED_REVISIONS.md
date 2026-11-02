@@ -292,7 +292,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/GOATS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GREASE_CA.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GREASE_LI.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/GREY_TREAT.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/GREY_TREAT.md` | working tree | current |
 | `docs-authority/duties/GROWBED_A.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GROWBED_B.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GROW_BED.md` | f0160a6 (regenerated, no change) | current |
@@ -361,7 +361,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/OIL_PYRO.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/PEANUT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/PELLET.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/POLISH_BANK.md` | working tree | current |
+| `docs-authority/duties/POLISH_BANK.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/POLY_COND.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/POLY_F.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/POLY_FIBER.md` | f0160a6 (regenerated, no change) | current |
@@ -1329,7 +1329,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/GLASS_RINSE/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/GREASE_CA/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/GREASE_LI/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/GREY_TREAT/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/GREY_TREAT/params.json` | working tree | current |
 | `models/mfg/GROWBED_A/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/GROWBED_B/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/GROW_BED/params.json` | f0160a6 (regenerated, no change) | current |
@@ -1377,7 +1377,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/OIL_FRAC/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/OIL_PYRO/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/PELLET/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/POLISH_BANK/params.json` | working tree | current |
+| `models/mfg/POLISH_BANK/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/POLY_COND/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/POLY_F/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/POLY_FIBER/params.json` | f0160a6 (regenerated, no change) | current |
