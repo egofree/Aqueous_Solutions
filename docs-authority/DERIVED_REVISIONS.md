@@ -292,7 +292,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/GOATS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GREASE_CA.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GREASE_LI.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/GREY_TREAT.md` | working tree | current |
+| `docs-authority/duties/GREY_TREAT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GROWBED_A.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GROWBED_B.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GROW_BED.md` | f0160a6 (regenerated, no change) | current |
@@ -394,7 +394,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/REE_RECOVER.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/RELIEF_CRYO.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/RELIEF_H2.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/REMIN.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/REMIN.md` | working tree | current |
 | `docs-authority/duties/RES_HEAT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/RF_HEAT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/ROLL.md` | f0160a6 (regenerated, no change) | current |
@@ -1329,7 +1329,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/GLASS_RINSE/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/GREASE_CA/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/GREASE_LI/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/GREY_TREAT/params.json` | working tree | current |
+| `models/mfg/GREY_TREAT/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/GROWBED_A/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/GROWBED_B/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/GROW_BED/params.json` | f0160a6 (regenerated, no change) | current |
@@ -1408,7 +1408,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/REE_RECOVER/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/RELIEF_CRYO/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/RELIEF_H2/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/REMIN/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/REMIN/params.json` | working tree | current |
 | `models/mfg/RES_HEAT/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/RF_HEAT/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/ROLL/params.json` | f0160a6 (regenerated, no change) | current |

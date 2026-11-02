@@ -132,5 +132,31 @@ resized.
   GREY_TREAT` green; duty section 7 names the model; tracker regen puts
   GREY_TREAT at M3 (39).
 
+## REMIN (remineralization dosing skid, WTR, tier 6) — commit 5
+
+- `models/mfg/REMIN/remin.py` on the shared lib: a dosing skid in the node
+  storage-sizing box 600 × 600 × 600, filled exactly; one closed manifold
+  solid; `cad/stl/REMIN.stl` replaced from the build. PVC-U day tank OD 460
+  (wall 10, study — hold) on a tray with heads, plus the purchased envelopes
+  the node design block names: 2 × metering diaphragm pumps (Ca slurry, MgCl2)
+  and the UV unit after the dose — envelope and interface only, plan rule 6
+  (A-MACH-style naming on an A-VES unit; the maker TDS carries the wetted
+  parts and drive/lamp ratings at order).
+- Duty section 2's older shell line (600 × 400 × 800) predates the
+  storage-sizing box; the node governs (W12). The duty section 3
+  PVC-U-or-HDPE conditional holds (PVC-U drawn, CATCH_TANK idiom).
+- All 5 schedule rows drawn: N1 in on −Y at 160 and N2/N5 out on +Y ride tray
+  risers flush at the faces (600 datums clamped down, W12); N3 drain through
+  the tray floor; N4 vent flush at the tank top head (800 datum, W12).
+- A-VES: the duty carries a holdup basis (7 days at the 10 L/d potable tap =
+  0.07 m³) — the model working level (z 520.4) is set by it and reported; no
+  new residence claim.
+- Deliverables: exports, generated `bom.csv` (make: tray, tank, connections;
+  buy: pumps, UV), `fasteners.csv` (anchors + envelope hold-down bolts),
+  `check.json`, `WORK_ORDER.md` (W1–W12), seven-sheet drawing set; `tracker
+  --check REMIN` green; duty section 7 names the model; tracker regen puts
+  REMIN at M3 (40).
+
+
 
 

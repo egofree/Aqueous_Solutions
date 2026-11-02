@@ -26,7 +26,14 @@
   "mgcl2_g_d": 0.3917,
   "drink_L_d": 10,
   "duty_kW": 0.046,
-  "chemistry": "hydroxide crib salts (AQS-WTR-001); no farm S07 tee"
+  "chemistry": "hydroxide crib salts (AQS-WTR-001); no farm S07 tee",
+  "service": "remineralization dosing skid, atmospheric (duty sections 2, 4 and 6)",
+  "wall_mm": 10.0,
+  "wall_basis": "study fab-page polymer wall",
+  "ca_mm": 0.0,
+  "internals": "none drawn: pumps and UV are purchased envelopes (plan rule 6)",
+  "working_level_mm": 520.4,
+  "working_level_basis": "the duty section 2 holdup basis (7 days at 10 L/d = 0.07 m3)"
  },
  "nozzles": [
   {
@@ -74,5 +81,31 @@
  "acceptance_sets": [
   "A-core",
   "A-VES"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   600.0,
+   600.0,
+   600.0
+  ],
+  "basis": "storage-sizing box (node size_mm, AQS-DUTY-064); the duty section 2 shell line 600 x 400 x 800 is an older figure (WORK_ORDER W12)",
+  "tank": {
+   "od_mm": 460.0,
+   "xy_mm": [
+    300.0,
+    350.0
+   ],
+   "z_mm": [
+    40.0,
+    580.0
+   ]
+  },
+  "tray_mm": 20.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; tank axis at x 300, y 350, z up; tray floor z 0..20 over the full envelope",
+  "purchased_zone": "pump envelopes front-right (x 490..600, y 15..205), UV lantern front-left along x (x 40..260, y centre 60); the tank footprint stays clear of the floor zone",
+  "nozzle_spread": "the schedule gives face and height only; side rows ride tray risers packed clear of the tank at the riser line; drain through the floor; vent at the tank top head; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }

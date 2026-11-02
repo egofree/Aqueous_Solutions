@@ -1,0 +1,105 @@
+{
+  "bbox_mm": [
+    600.0,
+    600.0,
+    600.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    600.0,
+    600.0,
+    600.0
+  ],
+  "size_basis": "storage-sizing box (node size_mm, AQS-DUTY-064); the duty section 2 shell line 600 x 400 x 800 predates it (WORK_ORDER W12)",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "holdup_m3": 0.07,
+  "holdup_basis": "the duty section 2 holdup basis (7 days of throughput at the 10 L/d potable tap = 0.0700 m3) sets the working level z 520.4 (A-VES: the duty already carries a holdup basis, so the model level is set by it and reported; not turned into a new residence-time claim)",
+  "tank": {
+    "wall_mm": 10.0,
+    "wall_basis": "study fab-page polymer wall (10 mm); no thickness booked on the node (WORK_ORDER W12)",
+    "internals": {
+      "source": "none: the node internals row is none; the pumps and UV are purchased equipment envelopes on the skid, not node internals",
+      "basis": "no internal solid drawn; purchased internals stay with the maker (WORK_ORDER W12)"
+    }
+  },
+  "purchased": {
+    "basis": "plan rule 6: purchased items are named as purchased, drawn as their envelope and interface; the node design block names them",
+    "metering_pumps": "2 x metering diaphragm (Ca slurry, MgCl2) - node design block; envelope 110 x 90 x 130 each; drive rating with the maker TDS at order",
+    "uv_unit": "UV unit after the dose (potable integrity) - node design block; envelope OD 90 x 220 long on the tray front-left; lamp rating with the maker TDS at order",
+    "skid_duty_kW": 0.046
+  },
+  "material": {
+    "class": "PVC-U",
+    "ca_mm": 0.0,
+    "basis": "duty section 3: PVC-U or HDPE per AQS-STD-002 rule M1; PVC-U drawn, the HDPE alternative is a named hold (WORK_ORDER W12); corrosion allowance does not apply to the polymer"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 310.6,
+      "schedule_rating": "Class 150",
+      "service": "remineralizer",
+      "note": "schedule datum drawn; atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4; hose makeup by the connecting line at the face)"
+    },
+    "N2": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 570.7,
+      "x_mm": 480.6,
+      "schedule_rating": "Class 150",
+      "service": "potable",
+      "note": "schedule datum 600 mm predates the box; clamped to 570.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4; hose makeup by the connecting line at the face)"
+    },
+    "N3": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": 560.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain, open bore through the tray floor, flush at the envelope bottom (schedule datum 50)"
+    },
+    "N4": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 300.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the tank top head; schedule datum 800 predates the box (hold, WORK_ORDER W12)"
+    },
+    "N5": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 570.7,
+      "x_mm": 509.9,
+      "schedule_rating": "Class 150",
+      "service": "potable makeup, remineralised",
+      "note": "schedule datum 600 mm predates the box; clamped to 570.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4; hose makeup by the connecting line at the face)"
+    }
+  },
+  "nozzle_count_schedule": 5,
+  "nozzle_idiom": "atmospheric open-bore tube connections on tray risers, flush at the envelope faces (duty section 4: atmospheric tube or hose; the W4 110 % rule draws no flange where no process pressure is stated); the schedule rating column (Class 150) is carried verbatim as text; clamped datums named in nozzles_drawn",
+  "part_mass_kg": {
+    "tray": 10.1,
+    "tank": 24.7,
+    "metering_pumps": 2.3,
+    "uv_unit": 1.3,
+    "nozzles": 0.3
+  },
+  "cadquery": "2.8.0"
+}
