@@ -80,6 +80,23 @@ recipe pattern in `models/mfg/EW_1/WORK_ORDER.md`. Graph Rev AC. One commit per 
   datums; the clamped N10 datum; the tangent-row packing; Class 150 rating column;
   fastener patterns.
 
+## MET_SCRUB (metal-aisle scrubber, tier 4) — commit 6
+
+- `models/mfg/MET_SCRUB/met_scrub.py` on the shared lib. Same column family as
+  NOX_SCRUB at the node design D 800: PVC-U shell (wall 6, study, hold; the graph
+  gives no gas temperature — above 60 °C it would be CPVC, held), skirt + plinth,
+  A-COL internals as envelope solids (support grid, 2303 mm packing in two beds with
+  a redistribution disc, distributor, PP mesh demister). All 9 schedule rows drawn
+  at tag, face, height and bore; N9 DN300 air return (z 600) drawn as a plain stub
+  at the house OD series 323.9 — outside the lib DN15..DN50 hardware table (hold);
+  N7's 2000 datum predates the sized column (hold). bbox 1200.0 × 1200.0 × 4103.0
+  mm exact, one closed manifold solid; no holdup or stage/HTU count claimed (A-COL).
+- Deliverables: exports, generated BOM, fasteners.csv, check.json, WORK_ORDER.md
+  (W1–W12), the seven-sheet drawing set (stale GA.md superseded). `cad/stl` replaced.
+- Holds named in W12: study wall; missing gas temperature; node PP-H vs duty PVC-U;
+  layout bed elevations; no stage/HTU count; the DN300 lib-table gap; the clamped
+  N7 datum; Class 150 rating column; fastener lengths.
+
 ## Pipeline repair ahead of the batch — housekeeping commit
 
 - `models/mfg/style_builders.py`: the per-unit-script skip of the cold-box batch repair

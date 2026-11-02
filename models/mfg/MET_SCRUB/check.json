@@ -1,0 +1,165 @@
+{
+  "bbox_mm": [
+    1200.0,
+    1200.0,
+    4103.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1200.0,
+    1200.0,
+    4103.0
+  ],
+  "size_basis": "node size_mm set by flow_graph/param/house_scrubbers.py (X-PAR-03)",
+  "graph_revision": "AC",
+  "solids": 1,
+  "all_parts_valid": true,
+  "column": {
+    "D_mm": 800.0,
+    "shell_z_mm": [
+      150.0,
+      4063.0
+    ],
+    "wall_mm": 6.0,
+    "wall_basis": "study value - no authority states a thickness (WORK_ORDER W12)",
+    "packed_mm": 2303.0,
+    "beds": 2,
+    "beds_z_mm": [
+      [
+        715.0,
+        1859.0
+      ],
+      [
+        1874.0,
+        3033.0
+      ]
+    ],
+    "support_z_mm": [
+      700.0,
+      715.0
+    ],
+    "redistribution_z_mm": [
+      1859.0,
+      1874.0
+    ],
+    "distributor_z_mm": [
+      3060.0,
+      3075.0
+    ],
+    "demister_z_mm": [
+      4003.0,
+      4043.0
+    ],
+    "note": "beds, support, distributor and demister drawn as their envelope solids (A-COL); ring count and mesh not modelled piece-wise; bed elevations are the layout choice - the design gives packed height only"
+  },
+  "material": {
+    "class": "PVC-U shell / PP packing and demister",
+    "ca_mm": 0.0,
+    "basis": "duty section 3: PVC-U shell, sump and packing support (AQS-STD-002 M1/M2); the graph gives no gas temperature - above 60 C it would be CPVC (hold, W12). The node design block names PP-H - duty section 3 governs wetted materials (plan rule 5)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "-Y",
+      "height_mm": 400.0,
+      "drawn_height_mm": 400.0,
+      "x_mm": 551.2,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "-Y",
+      "height_mm": 400.0,
+      "drawn_height_mm": 400.0,
+      "x_mm": 619.5,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 400.0,
+      "drawn_height_mm": 400.0,
+      "x_mm": 668.3,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 1500.0,
+      "drawn_height_mm": 1500.0,
+      "x_mm": 585.4,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 1500.0,
+      "drawn_height_mm": 1500.0,
+      "x_mm": 614.6,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "drain boss laps the skirt ring at the plinth, tip at the 50 datum"
+    },
+    "N7": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 2000.0,
+      "drawn_height_mm": 4103.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "vent riser on the top head to the 4103 envelope top; schedule datum 2000 mm predates the sized column - named hold, WORK_ORDER W12"
+    },
+    "N8": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N9": {
+      "style": "stub",
+      "dn": "DN300",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "note": "DN300 outside the lib DN15..DN50 hardware table: plain stub at the house DN300 OD 323.9, study 6 mm wall - named hold, WORK_ORDER W12"
+    }
+  },
+  "nozzle_count_schedule": 9,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces with ray-set extension spools crossing to the shell; N9 DN300 drawn as a plain stub at the house OD series (outside the lib table - hold); the schedule rating column (Class 150) is carried verbatim as text, no flange drawn",
+  "part_mass_kg": {
+    "plinth": 40.3,
+    "skirt": 10.9,
+    "shell": 96.1,
+    "support": 10.2,
+    "packing": 1028.7,
+    "distributor": 10.2,
+    "demister": 17.8,
+    "nozzles": 65.3
+  },
+  "cadquery": "2.8.0"
+}

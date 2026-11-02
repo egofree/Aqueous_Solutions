@@ -1283,42 +1283,12 @@ MET_MELT,"seal: mechanical seal, single EN 12756",1,"SiC/SiC faces, FKM",Missing
 MET_MELT,support: pipe clamp DN50,2,"PP clamp with EPDM liner, MSS SP-58 Type 7",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 MET_MELT,valve: check valve DN50,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 MET_MELT,valve: isolation valve DN50,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-MET_SCRUB,Body D800 x 3803 mm,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-MET_SCRUB,Process nozzle DN15,5,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-MET_SCRUB,Process nozzle DN50,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-MET_SCRUB,Process nozzle DN300,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-MET_SCRUB,"Motor: induced-draft fan (induction IE3, IEC 100L / 2.2 kW)",1,-,Unstated,-,not classed: -
-MET_SCRUB,"Motor: transfer pump S72 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,Unstated,-,not classed: -
-MET_SCRUB,"Motor: transfer pump S72B to OIL_FRAC (BLDC, 42 mm (NEMA 17 flange))",1,-,Unstated,-,not classed: -
-MET_SCRUB,bearing: deep-groove ball bearing 6206-2Z,2,"ISO 15 / ISO 492 normal class, C3",Unstated,-,"not classed: ISO 15 / ISO 492 normal class, C3"
-MET_SCRUB,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",Unstated,-,"not classed: ISO 15, normal class"
-MET_SCRUB,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",Unstated,-,"not classed: ISO 15, normal class"
-MET_SCRUB,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,Unstated,-,not classed: IEC 61800-5-1
-MET_SCRUB,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,Unstated,-,not classed: IEC 61800-5-1
-MET_SCRUB,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,Unstated,-,not classed: IEC 61131-2
-MET_SCRUB,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,Unstated,-,not classed: IEC 61131-2
-MET_SCRUB,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,Unstated,-,not classed: IEC 61131-2
-MET_SCRUB,electronics: variable-frequency drive 2.2 kW,1,IEC 61800-5-1,Unstated,-,not classed: IEC 61800-5-1
-MET_SCRUB,fastener: anchor bolt M10,36,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor
-MET_SCRUB,fastener: anchor bolt M10,66,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor
-MET_SCRUB,fastener: anchor bolt M10,8,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor
-MET_SCRUB,instrument: flow transmitter DN50,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-MET_SCRUB,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-MET_SCRUB,instrument: flow transmitter DN300,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-MET_SCRUB,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-MET_SCRUB,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",Missing,-,no fluorine source on site; end of life Q-011
-MET_SCRUB,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",Unstated,-,"not classed: ceramic diaphragm, IEC 61298"
-MET_SCRUB,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-MET_SCRUB,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,Unstated,-,not classed: UL 489 / IEC 60947-2
-MET_SCRUB,support: pipe clamp DN50,18,"PP clamp with EPDM liner, MSS SP-58 Type 7",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
-MET_SCRUB,support: pipe clamp DN15,33,"PP clamp with EPDM liner, MSS SP-58 Type 7",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
-MET_SCRUB,support: pipe clamp DN300,4,"PP clamp with EPDM liner, MSS SP-58 Type 7",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
-MET_SCRUB,valve: check valve DN50,1,"CPVC true-union swing/ball check valve, FKM seals",Missing,-,no fluorine source on site; end of life Q-011
-MET_SCRUB,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-MET_SCRUB,valve: check valve DN300,1,"PVDF swing/ball check valve, ISO 16137, PTFE seats",Missing,-,no fluorine source on site; end of life Q-011
-MET_SCRUB,valve: isolation valve DN50,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",Missing,-,no fluorine source on site; end of life Q-011
-MET_SCRUB,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-MET_SCRUB,valve: isolation valve DN300,2,"PVDF ball valve, ISO 16135, PTFE seats",Missing,-,no fluorine source on site; end of life Q-011
+MET_SCRUB,"PVC-U column shell OD 800, wall 6 mm, z 150..4063, with top head, skirt and 1200",1,PVC-U pipe/plate,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+MET_SCRUB,"Packing support grid, OD 788 x 15 at z 700",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+MET_SCRUB,"Pall-ring bed, 2303 mm of PP rings in two beds with a redistribution disc, drawn",1,PP (in-house cut rings),Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
+MET_SCRUB,"Liquid distributor plate, OD 788 x 15 at z 3060",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+MET_SCRUB,"PP mesh demister pad, OD 788 x 40 below the top head",1,PP mesh,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
+MET_SCRUB,Nozzle set per docs-authority/nozzles/MET_SCRUB.csv: 7 hose barbs (DN15/DN50) on,9,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 MET_SYN,Body / envelope 1500 x 1000 x 1800 mm,1,"Borosilicate glass-lined reactor column, PTFE-lined transfer lines, SS304 reagen",Missing,-,no fluorine source on site; end of life Q-011
 MET_SYN,Process nozzle DN15,4,"Borosilicate glass-lined reactor column, PTFE-lined transfer lines, SS304 reagen",Missing,-,no fluorine source on site; end of life Q-011
 MET_SYN,fastener: anchor bolt M10,36,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor

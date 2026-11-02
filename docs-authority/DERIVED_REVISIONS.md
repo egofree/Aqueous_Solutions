@@ -38,14 +38,14 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/COMPLIANCE_MATRIX.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/CONTROL_ARCH.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/CONTROL_SOFTWARE.md` | 514e50a (regenerated, no change) | current |
-| `docs-authority/COST_ESTIMATE_BOM.md` | 514e50a (regenerated, no change) | current |
+| `docs-authority/COST_ESTIMATE_BOM.md` | working tree | current |
 | `docs-authority/DECOMMISSIONING.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
 | `docs-authority/DESIGN_CHECK.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/DOC_REGISTER.md` | 514e50a (regenerated, no change) | current |
-| `docs-authority/DRAWING_REGISTER.md` | 514e50a (regenerated, no change) | current |
+| `docs-authority/DRAWING_REGISTER.md` | working tree | current |
 | `docs-authority/ENCLOSURE_EGRESS.md` | 514e50a (regenerated, no change) | current |
-| `docs-authority/EOL_RETURN.md` | 514e50a (regenerated, no change) | current |
+| `docs-authority/EOL_RETURN.md` | working tree | current |
 | `docs-authority/FARM_DESIGN.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/FIRE_PROTECTION.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/FOUNDATION.md` | 514e50a (regenerated, no change) | current |
@@ -71,13 +71,13 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/ISO_ROUTES.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/ISO_SHEETS.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/ITP.md` | 514e50a (regenerated, no change) | current |
-| `docs-authority/JELLYBEAN.md` | 514e50a (regenerated, no change) | current |
+| `docs-authority/JELLYBEAN.md` | working tree | current |
 | `docs-authority/LIFTING.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/LINE_LIST.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/LOAD_LIST.json` | 514e50a (regenerated, no change) | current |
 | `docs-authority/LOAD_LIST.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/MAINT_PLAN.md` | 514e50a (regenerated, no change) | current |
-| `docs-authority/MFG_MODEL_PLAN.md` | 514e50a (regenerated, no change) | current |
+| `docs-authority/MFG_MODEL_PLAN.md` | working tree | current |
 | `docs-authority/MFG_TOOLS.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/MODEL_WORKBOOK.xlsx` | 514e50a (regenerated, no change) | current |
 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | 514e50a (regenerated, no change) | current |
@@ -89,14 +89,14 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/PARAMETRIC_MODEL.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/PERF_TEST.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/PIPE_SPECS.md` | 514e50a (regenerated, no change) | current |
-| `docs-authority/PLANT_BOM.md` | 514e50a (regenerated, no change) | current |
+| `docs-authority/PLANT_BOM.md` | working tree | current |
 | `docs-authority/POWER_SIZING.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/PROTECTION.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/RELIEF_REGISTER.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/RIGGING_PLANS.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/SECTOR_DEFINITIONS.md` | 514e50a (regenerated, no change) | current |
-| `docs-authority/SELF_COPY_BOM.md` | 514e50a (regenerated, no change) | current |
+| `docs-authority/SELF_COPY_BOM.md` | working tree | current |
 | `docs-authority/SITE_ACCESS_CHECK.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/SITE_COMPARISON.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/SITE_POWER.md` | 514e50a (regenerated, no change) | current |
@@ -354,7 +354,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/NFIX_BED.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/duties/NFT.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/duties/NORTH_DOCK.md` | 514e50a (regenerated, no change) | current |
-| `docs-authority/duties/NOX_SCRUB.md` | 514e50a (regenerated, no change) | current |
+| `docs-authority/duties/NOX_SCRUB.md` | working tree | current |
 | `docs-authority/duties/NUTRIENT_DOSE.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/duties/OIL_DRYER.md` | 514e50a (regenerated, no change) | current |
 | `docs-authority/duties/OIL_FRAC.md` | 514e50a (regenerated, no change) | current |
@@ -492,10 +492,10 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/hazop_actions.csv` | 514e50a (regenerated, no change) | current |
 | `docs-authority/insulation_schedule.csv` | 514e50a (regenerated, no change) | current |
 | `docs-authority/inventory/COMMISSIONING.csv` | 514e50a (regenerated, no change) | current |
-| `docs-authority/inventory/COST_ESTIMATE_BOM.csv` | 514e50a (regenerated, no change) | current |
+| `docs-authority/inventory/COST_ESTIMATE_BOM.csv` | working tree | current |
 | `docs-authority/inventory/DECOMMISSIONING.csv` | 514e50a (regenerated, no change) | current |
 | `docs-authority/inventory/DESIGN_CHECK.csv` | 514e50a (regenerated, no change) | current |
-| `docs-authority/inventory/EOL_RETURN.csv` | 514e50a (regenerated, no change) | current |
+| `docs-authority/inventory/EOL_RETURN.csv` | working tree | current |
 | `docs-authority/inventory/FRAME_CHECK.json` | 514e50a (regenerated, no change) | current |
 | `docs-authority/inventory/GAS_DETECTORS.csv` | 514e50a (regenerated, no change) | current |
 | `docs-authority/inventory/HVAC_ROOMS.csv` | 514e50a (regenerated, no change) | current |
@@ -514,8 +514,8 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/inventory/PIPE_FAMILIES.csv` | 514e50a (regenerated, no change) | current |
 | `docs-authority/inventory/PIPE_INVENTORY.csv` | 514e50a (regenerated, no change) | current |
 | `docs-authority/inventory/PIPE_INVENTORY.md` | 514e50a (regenerated, no change) | current |
-| `docs-authority/inventory/PLANT_BOM.csv` | 514e50a (regenerated, no change) | current |
-| `docs-authority/inventory/SELF_COPY_RECON.csv` | 514e50a (regenerated, no change) | current |
+| `docs-authority/inventory/PLANT_BOM.csv` | working tree | current |
+| `docs-authority/inventory/SELF_COPY_RECON.csv` | working tree | current |
 | `docs-authority/inventory/SITE_ACCESS.json` | 514e50a (regenerated, no change) | current |
 | `docs-authority/inventory/SIZING_COVERAGE.json` | 514e50a (regenerated, no change) | current |
 | `docs-authority/inventory/STORAGE_HOLDUP.json` | 514e50a (regenerated, no change) | current |
@@ -1371,7 +1371,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/MG_POT/params.json` | 514e50a (regenerated, no change) | current |
 | `models/mfg/MO_CELL/params.json` | 514e50a (regenerated, no change) | current |
 | `models/mfg/NCG_HEADER/params.json` | 514e50a (regenerated, no change) | current |
-| `models/mfg/NOX_SCRUB/params.json` | 514e50a (regenerated, no change) | current |
+| `models/mfg/NOX_SCRUB/params.json` | working tree | current |
 | `models/mfg/NUTRIENT_DOSE/params.json` | 514e50a (regenerated, no change) | current |
 | `models/mfg/OIL_DRYER/params.json` | 514e50a (regenerated, no change) | current |
 | `models/mfg/OIL_FRAC/params.json` | 514e50a (regenerated, no change) | current |

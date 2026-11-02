@@ -19,13 +19,13 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1827 | 60 % |
-| organic | 950 | 31 % |
-| silicate_oxide | 143 | 5 % |
+| metal_plateable | 1810 | 60 % |
+| organic | 937 | 31 % |
+| silicate_oxide | 142 | 5 % |
 | metal_reactive | 120 | 4 % |
-| unassigned | 28 | 1 % |
+| unassigned | 29 | 1 % |
 
-Unassigned: 28 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
+Unassigned: 29 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
 
 ## Held lines (no route in the present plant, or material pending)
 
@@ -33,7 +33,7 @@ Unassigned: 28 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a n
 |---|---|
 | held - material not stated on the line | 13 |
 | held - standby machine, envelope-only placeholder; material issues at its unit task 10/12 design (owner programme gate) | 9 |
-| held - material not identified on the line | 5 |
+| held - material not identified on the line | 6 |
 | held - pointer line: these parts are classed line by line in their unit BOMs (AQS-INV-004 roll-up) | 1 |
 
 Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) cannot go to OIL_PYRO because the HF is outside the scrubber design basis; options are mechanical re-use as regrind for non-pressure parts, or an HF-rated scrubber stage. NdFeB magnets sit in the precipitate cake with no recovery unit; the ferrite motor variant (AQS-INV-005) removes this hold. Titanium cathode blanks are re-used directly.
@@ -158,7 +158,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MET_AHU | 16 | 4 | 1 | 0 | 0 |
 | MET_HX_Q4 | 3 | 0 | 1 | 0 | 0 |
 | MET_MELT | 14 | 9 | 1 | 0 | 0 |
-| MET_SCRUB | 18 | 21 | 1 | 0 | 0 |
+| MET_SCRUB | 1 | 8 | 0 | 0 | 1 |
 | MET_SYN | 2 | 6 | 1 | 0 | 0 |
 | MF-01 x 24 | 3 | 1 | 0 | 2 | 0 |
 | MF-02 x 55 | 3 | 1 | 0 | 2 | 0 |
