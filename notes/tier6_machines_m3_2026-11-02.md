@@ -404,6 +404,28 @@ POLYMERS reactors) — commits 13–24
   `tracker --check C29_RECYCLE` green; duty section 7 names the model; tracker
   regen puts C29_RECYCLE at M3 (52).
 
+### CONTINUOUS_RECYCLE — commit 18
+
+- The C29_RECYCLE builder family at the continuous-line liquor return
+  (`models/mfg/CONTINUOUS_RECYCLE/continuous_recycle.py`): one DN15 PVC-U spool
+  at the cross-section centre of the node box 1500 × 60 × 60, on the HDR_CO2
+  trough plinth with 6 slab anchors; one closed manifold solid;
+  `cad/stl/CONTINUOUS_RECYCLE.stl` replaced from the build.
+- PVC-U per duty section 3 (rules M1 and M2, no metal wetted part); above 60 C
+  the thermoplastic is CPVC, never metal - the line temperature is not on the
+  graph (the IA-REC-01 class P2 line carries hot leach liquor; hold, W12). All
+  5 schedule rows drawn as atmospheric tube stubs; the DN50 hand rows N1/N2
+  drawn verbatim against the DN15 issued lines and they seat the 60 mm
+  cross-section with 0.15 mm per side outside the box, inside the 1 mm house
+  gate and reported in check.json (holds, W12); the DN15 160 datum clamps to
+  48.65; drain flush at the bottom, vent flush at the top; Class 150 column
+  carried verbatim, no flange.
+- A-PIPE: `line_list.csv` 3 rows (MAIN spool + IA-POL-02 class P1 + IA-REC-01
+  class P2, DN15 per AQS-PIP-004), edge coverage complete, no new edge.
+- Deliverables as the C29 commit; `tracker --check CONTINUOUS_RECYCLE` green;
+  duty section 7 names the model; tracker regen puts CONTINUOUS_RECYCLE at M3
+  (53). Both recycle pipes accepted; the tier-5 pipe lane is complete.
+
 
 
 

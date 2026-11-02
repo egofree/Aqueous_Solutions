@@ -1,0 +1,4 @@
+line,from,to,dn,class,service,rating,note
+MAIN,spool start,spool end,DN15,-,continuous recycle liquor,atmospheric; no flange class (duty section 4),recycle-line spool per the unit duty (node design: DN15 per the issued lines); modeled as the in-envelope run of this unit's 1500 x 60 x 60 box; material per duty section 3
+IA-POL-02,POLISH_BANK,CONTINUOUS_RECYCLE,DN15,P1,"acid or brine, at or below 60 C",atmospheric tube/hose joint at the face (duty section 4); pipe class per AQS-PIP-003,
+IA-REC-01,CONTINUOUS_RECYCLE,LEACH_CSTR_1,DN15,P2,hot leach liquor,atmospheric tube/hose joint at the face (duty section 4); pipe class per AQS-PIP-003,

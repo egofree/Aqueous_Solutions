@@ -1,0 +1,106 @@
+{
+  "bbox_mm": [
+    1500.0,
+    60.0,
+    60.3
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1500.0,
+    60.0,
+    60.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "misfit": null,
+  "hardware_overshoot_mm": [
+    0.3
+  ],
+  "hardware_overshoot_basis": "the DN50 schedule rows N1/N2 seat the 60 mm cross-section at the section centre; the 0.15 mm per side sits inside the 1 mm house gate (A-core 2) and is reported here, nothing resized",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "spool": {
+    "type": "single run, modeled as the in-envelope 1500 mm spool on a 20 mm trough plinth (the HDR_CO2 idiom)",
+    "dn": "DN15",
+    "od_mm": 21.3,
+    "wall_mm": 2.77,
+    "wall_basis": "lib/dn Sch 40 table (ASME B36.10M); the node states no schedule (WORK_ORDER W12)",
+    "id_mm": 15.76,
+    "run_basis": "the routed run (17.0 m + 9.7 m per AQS-PIP-004) stays in the line-list route lengths; the model draws the in-envelope run",
+    "material": "PVC-U wetted, per AQS-STD-002 rules M1 and M2. No metal wetted part. The graph gives no temperature for this unit; above 60 \u00b0C the thermoplastic is CPVC, never metal. Corrosion allowance does not apply to the polymer."
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN50",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 30.0,
+      "x_mm": 400.0,
+      "schedule_rating": "Class 150",
+      "service": "raffinate (EW tail after polish) to continuous recycle",
+      "note": "schedule row N1 carries DN50: the hardware seats the 60 mm cross-section at the section centre 30 mm (datum 160 predates it; hold, WORK_ORDER W12); DN50 atmospheric tube stub flush at the envelope face (duty section 4); the connecting line makes the joint at the face"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN50",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 30.0,
+      "x_mm": 1100.0,
+      "schedule_rating": "Class 150",
+      "service": "continuous recycle liquor",
+      "note": "schedule row N2 carries DN50: the hardware seats the 60 mm cross-section at the section centre 30 mm (datum 600 predates it; hold, WORK_ORDER W12); DN50 atmospheric tube stub flush at the envelope face (duty section 4); the connecting line makes the joint at the face"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "x_mm": 1300.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss, flush at the envelope bottom; 50 datum passes through the section"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 60.0,
+      "x_mm": 200.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent, flush at the envelope top (schedule datum 800 is the placeholder above the 60 mm cross-section)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 48.6,
+      "x_mm": 700.0,
+      "schedule_rating": "Class 150",
+      "service": "Polish bank liquor return to the continuous recycle",
+      "note": "schedule datum 160 mm is a placeholder above the 60 mm cross-section; clamped down to 48.6 mm (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4); the connecting line makes the joint at the face"
+    }
+  },
+  "nozzle_count_schedule": 5,
+  "nozzle_idiom": "atmospheric tube stubs flush at the envelope faces (duty section 4: hose, atmospheric; the connecting line makes the joint at the face; the W4 110 percent rule draws no flange where no process pressure is stated); schedule rating column (Class 150) carried verbatim as text; the DN50 hand rows N1/N2 drawn verbatim against the DN15 issued lines (holds, WORK_ORDER W12); DN15 datums clamped into the 60 mm cross-section",
+  "line_list": {
+    "csv": "models/mfg/CONTINUOUS_RECYCLE/line_list.csv",
+    "source": "unit edges in flow_graph/plant_flow_graph.json + docs-authority/LINE_LIST.md (AQS-PIP-004, DN and class authority)",
+    "edges": 2,
+    "rows": 3,
+    "missing_line_rows": [],
+    "rows_without_edge": [],
+    "no_new_edge": true
+  },
+  "part_mass_kg": {
+    "plinth": 2.52,
+    "spool": 0.34,
+    "nozzles": 0.07
+  },
+  "cadquery": "2.8.0"
+}

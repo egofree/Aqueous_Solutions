@@ -64,5 +64,32 @@
  "acceptance_sets": [
   "A-core",
   "A-PIPE"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1500.0,
+   60.0,
+   60.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "pipe": {
+   "dn": "DN15",
+   "od_mm": 21.3,
+   "wall_mm": 2.77,
+   "z_mm": 30.0
+  },
+  "plinth_mm": 20.0
+ },
+ "design": {
+  "dn_label": "DN15",
+  "wall_mm": 2.77,
+  "wall_basis": "lib/dn Sch 40 table; schedule not stated on the node (WORK_ORDER W12)",
+  "mat": "PVC-U wetted per AQS-STD-002 rules M1 and M2 (duty section 3); above 60 C the thermoplastic is CPVC, never metal - line temperature hold"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; spool along +x at the cross-section centre (y 30, z 30), trough plinth z 0..20",
+  "supports": "trough plinth + 6 slab anchors (the HDR_CO2 idiom)",
+  "nozzle_spread": "the schedule gives face and height; branch stubs at the registered x positions (N1 400, N5 700, N2 1100, drain 1300, vent 200); per-tag positions in check.nozzles_drawn",
+  "line_list": "models/mfg/CONTINUOUS_RECYCLE/line_list.csv generated from the graph edges and AQS-PIP-004; no new edge"
+ }
 }
