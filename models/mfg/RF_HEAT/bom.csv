@@ -1,2 +1,8 @@
-item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 1000 x 1000 x 1500 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; standby train (AQS-DUTY-072 section 4)
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Plinth 1000 x 1000 x 60 (CS, anchor bosses)",1,carbon steel,471.0,make,"dry furnace-shop service, CA 0 mm (AQS-STD-001 shop rule); anchors in fasteners.csv"
+2,"Furnace casing CS t4, 660 x 1000 x 1100, with lid",1,carbon steel,361.9,make,"duty section 3: 4 mm CS casing (the IND_MELT lining class); wall is the study fab-page value (hold, WORK_ORDER W12); N+1 diverse standby of IND_MELT (A-M-282)"
+3,Ceramic-fibre hot face t150,1,ceramic-fibre board 128 kg/m3,65.7,make,duty section 3: the IND_MELT melt-shop lining class
+4,Clay-graphite crucible D110 x 165 on its pedestal (10 kg class),1,clay-graphite (consumable),4.4,buy,duty section 3 consumable; change-out at the unit task 12 work order
+5,"Water-cooled Cu RF coil, 8 turns x OD 15, inside its enclosure (100-400 kHz through-coil, node design)",1,Cu ETP tube,31.0,make,"duty section 3: the coil enclosure keeps the water-cooled coil out of the melt space; cooling-water circuit is loop hardware, not modeled (WORK_ORDER W12)"
+6,"RF generator / PSU cabinet, 5.0 kW connected (node design), IP54",1,purchased cabinet (envelope),174.9,buy,"purchased per plan rule 6; standby unit, energized only on the IND_MELT outage (A-M-282); the RF supply is the A-M-232 rating held"
+7,"Nozzle set: none - no piped process connection on the graph, no schedule issued (duty section 4; hold, WORK_ORDER W12)",0,n/a,0.0,n/a,no nozzle hardware drawn; a schedule row lands as a DN15 set-in when the graph rates an edge

@@ -25,7 +25,14 @@
   "outage_d": 2.0,
   "crucible_kg": 10.0,
   "freq_kHz": "100-400",
-  "duty_note": "equal-duty backup of the 10 kg crucible class (A-M-283; A-M-232 rating held)"
+  "duty_note": "equal-duty backup of the 10 kg crucible class (A-M-283; A-M-232 rating held)",
+  "machine": "RF preheat/hold unit, N+1 diverse standby of IND_MELT at equal melt duty (node design service)",
+  "mat": "clay-graphite crucible + ceramic-fibre hot face + 4 mm CS casing (duty section 3)",
+  "ca_mm": 0.0,
+  "wall_mm": 4.0,
+  "wall_basis": "study fab-page CS t4 casing (WORK_ORDER W12)",
+  "internals": "none drawn (node internals row none)",
+  "purchased": "RF generator / PSU cabinet 5.0 kW connected (node design), drawn as its envelope (plan rule 6); crucible is the purchased consumable"
  },
  "nozzles": [],
  "material": "Clay-graphite crucible + ceramic-fibre hot face + 4 mm CS casing (same melt-shop lining class as IND_MELT); the RF coil enclosure keeps the water-cooled copper coil out of the melt space",
@@ -35,5 +42,35 @@
  "holds": [
   "no duty section 4 schedule on file",
   "no AQS-PLAN-006 section 4 route class for class furnace"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   1000.0,
+   1500.0
+  ],
+  "basis": "A-M-199 melt class N+1 rated envelope (A-M-282)",
+  "casing": {
+   "xy_mm": [
+    660.0,
+    1000.0
+   ],
+   "z_mm": [
+    60.0,
+    1200.0
+   ],
+   "wall_mm": 4.0
+  },
+  "cabinet_bay": {
+   "x_mm": [
+    660.0,
+    1000.0
+   ]
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; casing on the plinth x 0..660, y 0..1000, z 60..1200; crucible axis at the chamber centre; RF cabinet bay x 660..1000",
+  "nozzle_spread": "no piped process connection on the graph (duty section 4); no nozzle hardware drawn (hold, WORK_ORDER W12)",
+  "hardware_idiom": "no connection hardware; bbox within the node envelope"
+ }
 }

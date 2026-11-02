@@ -1,0 +1,71 @@
+{
+  "bbox_mm": [
+    1000.0,
+    1000.0,
+    1500.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    1000.0,
+    1500.0
+  ],
+  "size_basis": "A-M-199 melt class N+1 rated envelope (A-M-282)",
+  "graph_revision": "AD",
+  "solids": 7,
+  "all_parts_valid": true,
+  "machine": {
+    "casing": {
+      "od_mm": [
+        660.0,
+        1000.0
+      ],
+      "z_mm": [
+        60.0,
+        1200.0
+      ],
+      "wall_mm": 4.0,
+      "wall_basis": "study fab-page 4 mm CS casing (duty section 3 lining class; no thickness booked on the node - hold, WORK_ORDER W12)"
+    },
+    "lining": {
+      "fibre_mm": 150.0,
+      "basis": "ceramic-fibre hot face t150 (duty section 3: the same melt-shop lining class as IND_MELT)"
+    },
+    "crucible": {
+      "od_mm": 110.0,
+      "h_mm": 165.0,
+      "basis": "clay-graphite crucible, the 10 kg class (node design crucible_kg); consumable, buy"
+    },
+    "coil": {
+      "turns": 8,
+      "tube_od_mm": 15.0,
+      "basis": "water-cooled copper RF coil inside its enclosure (duty section 3), 100-400 kHz through-coil (node design freq_kHz); connected_kW 5.0 is the node rating"
+    },
+    "rf_cabinet": "RF generator / PSU cabinet on the +X bay - purchased envelope per plan rule 6",
+    "quartz_sleeve": "the duty section 3 quartz isolation-sleeve alternative applies only past the crucible wall under flux vapours - not drawn (hold, W12)"
+  },
+  "standby": {
+    "state": "standby_rated N+1 diverse of IND_MELT at equal melt duty (A-M-282/A-M-232); energized on the IND_MELT coil/PSU outage (outage_d 2.0); design-day rate zero on the graph",
+    "basis": "duty section 2 sizing study"
+  },
+  "material": {
+    "class": "clay-graphite crucible + ceramic-fibre hot face + 4 mm CS casing",
+    "ca_mm": 0.0,
+    "basis": "duty section 3 (X-MAT-22, the IND_MELT lining class); CA 0 mm - dry furnace service (AQS-STD-001 shop rule)"
+  },
+  "a_mach_anchors": "8 M12 wedge anchors, plinth to slab (fasteners.csv)",
+  "nozzles": "no piped process connection on the graph; no nozzle schedule is issued (duty section 4) - no nozzle hardware drawn (hold, WORK_ORDER W12)",
+  "nozzle_count_schedule": 0,
+  "part_mass_kg": {
+    "plinth": 471.0,
+    "casing": 154.7,
+    "lid": 207.2,
+    "fibre_lining": 65.7,
+    "crucible": 0.9,
+    "crucible_pedestal": 3.5,
+    "rf_coil": 0.4,
+    "coil_enclosure": 30.6,
+    "rf_cabinet": 174.9
+  },
+  "cadquery": "2.8.0"
+}

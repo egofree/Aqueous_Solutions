@@ -199,3 +199,28 @@ standby in their work orders and BOMs, not placeholder boxes.
   iso01 — no nozzle sheet, no schedule; title blocks per AQS-DWG-002, graph Rev
   AD); the stale Oct-31 3-sheet GA set is regenerated into it. Duty section 7
   now names the model source. Tracker row 116: M3. Route hold stays reported.
+
+## RF_HEAT (RF preheat/hold unit, FOUNDRY N+1 alternate, tier 6) — commit 9
+
+- New per-unit model `models/mfg/RF_HEAT/rf_heat.py` on the shared lib, the
+  installed-standby idiom: the N+1 diverse standby of IND_MELT at equal melt
+  duty (A-M-282/A-M-232) drawn as the real machine per duty section 3 —
+  clay-graphite crucible (consumable, buy) + ceramic-fibre hot face t150 + 4 mm
+  CS casing (the IND_MELT lining class), water-cooled Cu RF coil inside its
+  enclosure with the lead-out to the 5 kW RF/PSU cabinet bay (purchased
+  envelope) — replacing the placeholder envelope box. Standby named in the
+  WORK_ORDER header, the BOM rows and the build log.
+- No piped process connection on the graph (duty section 4: no nozzle schedule
+  is issued), so no nozzle hardware is drawn; the no-schedule nozzle line is
+  recorded honestly in the build log, check.json and the BOM's zero-qty row.
+- Build fills the node box exactly (1000 × 1000 × 1500, zero face overhang;
+  `tracker --check RF_HEAT` green; `cad/stl/RF_HEAT.stl` replaced from the
+  build; BOM complete with make-or-buy; fasteners grade 8.8 carbon steel per
+  the W5 grade rule; WORK_ORDER rewritten to W1–W12 with holds named
+  (route-class hold for `furnace`, study casing wall, no-schedule hold,
+  purchased RF supply, coil cooling-water loop hardware, pending relief case,
+  quartz-sleeve alternative not drawn).
+- Drawing set: new 6-sheet set (ga_front/ga_side/shell01/melt01/aux01/iso01 —
+  no nozzle sheet, no schedule; title blocks per AQS-DWG-002, graph Rev AD);
+  the stale Oct-31 3-sheet GA set is regenerated into it. Duty section 7 now
+  names the model source. Tracker row 117: M3. Route hold stays reported.
