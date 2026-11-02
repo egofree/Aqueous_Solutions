@@ -482,6 +482,32 @@ POLYMERS reactors) — commits 13–24
   green; duty section 7 names the model; tracker regen puts MEOH_FERM at M3
   (55).
 
+### MEOH_FC — commit 21
+
+- `models/mfg/MEOH_FC/meoh_fc.py`: the direct methanol fuel-cell skid per the
+  node design block (AQS-DUTY-077) — the 28-cell stack (0.6 V at 0.3 A/cm2 on
+  200 cm2 cells, 0.56 m2, IEC 62282-3-100 module class) as 316L end plates
+  around the MEA (membrane-electrode assembly) laminate envelope (buy,
+  plan rule 6) at 6 mm pitch enclosing
+  the 141.4 mm active window, the 316L reformer shell (OD 150, Cu/ZnO class bed
+  envelope, buy), and the copper bus (30 × 5, duty section 3) running from the
+  stack end plate to the +Y face at the N5 datum. Node envelope 1800 × 800 ×
+  700 filled exactly; the duty prose 1600 skid line predates the node box
+  (hold, W12); `cad/stl/MEOH_FC.stl` replaced from the build.
+- All 11 schedule rows drawn: N1..N4 in on −Y at 160; N6/N7/N8/N11 out on +Y at
+  600; N5 (MEOH DC) drawn as the copper conductor pad — duty section 4 prose
+  rates it "conductor, not a hose", a conductor has no bore (hold, W12); N9
+  drain boss under the reformer; N10 vent riser flush at the box top. Class
+  150 column carried verbatim, no flange hardware.
+- A-CELL: count and active area per the node design block reported from the
+  model (duty section 2 carries no plate row — the match is against the node
+  design, hold W12); POWER.md states no bus-bar section for this unit, so the
+  bus criterion has nothing to match (named, W12).
+- Deliverables: exports, generated `bom.csv` (make/buy per rule 6),
+  `fasteners.csv`, `check.json`, `WORK_ORDER.md` (W1–W12), six-sheet drawing
+  set; `tracker --check MEOH_FC` green; duty section 7 names the model;
+  tracker regen puts MEOH_FC at M3 (56).
+
 
 
 

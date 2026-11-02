@@ -1,34 +1,6 @@
-item,description,qty,material,basis
-1,Body / envelope 1800 x 800 x 1600 mm,1,No wetted alloy.,docs-authority/duties/MEOH_FC.md
-2,Process nozzle DN15,7,No wetted alloy.,one per mass edge; DN from AQS-INV-003
-3,"Motor: cathode air blower (BLDC, 57 mm (NEMA 23 flange))",1,-,AQS-INV-001 / AQS-INV-005
-4,"Motor: coolant pump (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-5,"Motor: transfer pump S81 to MEOH_COND (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-6,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-7,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-8,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-9,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-10,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-11,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-12,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-13,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-14,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-15,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-16,fastener: anchor bolt M10,42,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-17,fastener: anchor bolt M10,16,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-18,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-19,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-20,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-21,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-22,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-23,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-24,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-25,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-26,support: U-bolt with guide DN15,21,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-27,support: pipe clamp DN15,8,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-28,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-29,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-30,valve: check valve DN15,1,"PVC-lined swing/ball check valve in FRP service, ISO 16137",AQS-INV-004
-31,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-32,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-33,valve: isolation valve DN15,2,"PVC-lined ball valve in FRP service, ISO 16135",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Cell stack: 2 end plates 160 x 160 x 15 316L + the 28-cell MEA laminate envelope 144 x 144 x 168 at 6 mm pitch (PTFE gaskets),1,316L / MEA laminate / PTFE,7.1,"make (ends) / buy (laminate, gaskets)","node design block: 28 cells, 0.6 V at 0.3 A/cm2, 200 cm2 cells, 0.56 m2 (IEC 62282-3-100 module class); the laminate and gaskets drawn as the stack envelope per plan rule 6; plate size and pitch are the registered layout choices enclosing the 141.4 mm active window (hold, WORK_ORDER W12)"
+2,"Reformer shell OD 150 x wall 4, z 40..440, heads, on the saddle; Cu/ZnO class catalyst bed envelope inside",1,316L shell / catalyst bed (buy),18.2,make (shell) / buy (bed),"node design material row (316L reformer shell, Cu/ZnO class catalyst); bed drawn as its envelope per plan rule 6; duty section 3: no wetted alloy"
+3,"Bus bars 30 x 5 mm copper: stack end plate to the +Y face at the N5 datum (600), return run on the -Y-side rail",2,copper (duty section 3),1.3,make,conductors are copper (duty section 3); POWER.md states no bus-bar section for this unit - the A-CELL bus criterion has nothing to match (W12)
+4,Skid base plate 1800 x 800 x 20 with stack stand and reformer saddle (AQS-MOD-002 dry service class),1,carbon steel (ASTM A500),247.2,make,"layout choice; the dry skid sees no aqueous chloride (duty section 3), so no corrosion allowance is applied"
+5,"Nozzle set per docs-authority/nozzles/MEOH_FC.csv: 11 rows - 10 atmospheric open-bore tube connections (drain under the reformer, vent riser on the reformer head) and the N5 MEOH DC copper bus pad",11,316L tube / Cu,0.9,make,"schedule tags/faces/heights verbatim; bores per the lib/dn Sch 40 table; N5 drawn as the DC conductor per duty section 4 prose (hold, WORK_ORDER W12)"

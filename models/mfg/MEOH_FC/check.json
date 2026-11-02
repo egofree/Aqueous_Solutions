@@ -1,0 +1,181 @@
+{
+  "bbox_mm": [
+    1800.0,
+    800.0,
+    700.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1800.0,
+    800.0,
+    700.0
+  ],
+  "size_basis": "sized from the issued graph duties, methanol train residual sizing (flow_graph/param/meoh_train.py, AQS-DUTY-077); the duty section 4 prose and the node design note carry the issued 1800 x 800 x 1600 skid line - the node governs (WORK_ORDER W12)",
+  "graph_revision": "AD",
+  "solids": 10,
+  "all_parts_valid": true,
+  "solids_note": "the skid chain (base, stands, reformer, stack ends, bus bars, drain and vent) fuses to one solid; the stack laminate envelope sits at its gasket clearance between the end plates and the face-stub connections stay separate until the connecting lines make their joints",
+  "a_cell": {
+    "n_cells": 28,
+    "cell_V": 0.6,
+    "j_A_cm2": 0.3,
+    "cell_A_cm2": 200.0,
+    "stack_area_m2_model": 0.56,
+    "stack_area_m2_node": 0.56,
+    "plate_mm": 160.0,
+    "active_mm": 141.4,
+    "pitch_mm": 6.0,
+    "basis": "count/active-area per the node design block (0.6 V at 0.3 A/cm2 on 200 cm2 cells, IEC 62282-3-100 module class); plate size and pitch are the registered layout choices enclosing the active window; duty section 2 carries no plate row, so the section 5 match is against the node design (hold, WORK_ORDER W12)"
+  },
+  "bus": {
+    "section_mm": [
+      30.0,
+      5.0
+    ],
+    "material": "copper (duty section 3)",
+    "basis": "POWER.md states no bus-bar section for this unit, so the A-CELL bus criterion has nothing to match (named, WORK_ORDER W12); the bus runs from the stack end plate to the +Y face at the N5 datum"
+  },
+  "purchased_named": {
+    "items": "MEA laminate and gaskets (stack envelope, buy), reformer catalyst bed (buy)",
+    "basis": "drawn as envelopes and interfaces per plan rule 6; ratings read the maker sheets at order"
+  },
+  "material": {
+    "class": "316L / Cu / PTFE",
+    "basis": "duty section 3: no wetted alloy; conductors are copper; the node design material row names the PEM stack, the 316L reformer shell (Cu/ZnO class catalyst) and PTFE gaskets; CA does not apply (AQS-STD-001)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 452.0,
+      "schedule_rating": "Class 150",
+      "service": "MeOH fuel",
+      "note": "schedule datum drawn as issued; open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 481.3,
+      "schedule_rating": "Class 150",
+      "service": "cell air",
+      "note": "schedule datum drawn as issued; open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 510.6,
+      "schedule_rating": "Class 150",
+      "service": "tank draw",
+      "note": "schedule datum drawn as issued; open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 539.9,
+      "schedule_rating": "Class 150",
+      "service": "leach condensate to the methanol cell",
+      "note": "schedule datum drawn as issued; open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N5": {
+      "style": "bus_pad",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 493.0,
+      "schedule_rating": "Class 150",
+      "service": "MEOH DC",
+      "note": "the DC conductor per duty section 4 prose ('rating conductor, not a hose') and duty section 3 (conductors are copper): drawn as the copper bus-bar pad at the schedule face and height; a conductor has no bore (the size column is the schedule placeholder - hold, WORK_ORDER W12); POWER.md states no bus-bar section for this unit"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 553.9,
+      "schedule_rating": "Class 150",
+      "service": "heat < 80 \u00b0C",
+      "note": "schedule datum drawn as issued; open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 583.2,
+      "schedule_rating": "Class 150",
+      "service": "MeOH FC condensate",
+      "note": "schedule datum drawn as issued; open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 612.5,
+      "schedule_rating": "Class 150",
+      "service": "CO\u2082 return from MeOH FC",
+      "note": "schedule datum drawn as issued; open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "x_mm": 195.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss under the reformer base head, flush at the envelope bottom (schedule datum 50)"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 700.0,
+      "x_mm": 150.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent riser on the reformer top head, flush at the envelope top; schedule datum 800 is the placeholder (hold, WORK_ORDER W12)"
+    },
+    "N11": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 524.6,
+      "schedule_rating": "Class 150",
+      "service": "cell exhaust",
+      "note": "schedule datum drawn as issued; open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    }
+  },
+  "nozzle_count_schedule": 11,
+  "nozzle_idiom": "atmospheric open-bore tube connections flush at the envelope faces (duty section 4: atmospheric joints are hose; the W4 110 percent rule draws no flange hardware where no process pressure is stated); the N5 (MEOH DC) row is the DC conductor, drawn as the copper bus pad; the schedule rating column (Class 150) is carried verbatim as text; datums draw as issued (160 and 600 fit the 700 box); drain flush at the envelope bottom; vent riser flush at the envelope top",
+  "part_mass_kg": {
+    "base": 247.2,
+    "reformer": 8.7,
+    "reformer_bed": 9.5,
+    "stack_ends": 6.1,
+    "stack_pack": 1.0,
+    "bus": 1.3,
+    "nozzles": 0.9
+  },
+  "cadquery": "2.8.0"
+}

@@ -33,7 +33,11 @@
   "methanol_energy_kW": 1.152,
   "basis": "rated graph duty S79; cell point 0.6 V at 0.3 A/cm2, 200 cm2 cells (IEC62282_3_100 module class); methanol LHV 19.9 MJ/kg (PERRY9)",
   "material": "PEM stack, 316L reformer shell (Cu/ZnO class catalyst), PTFE gaskets",
-  "note": "skid at the issued 1800 x 800 x 1600 mm envelope; S79 is the rated electric point - the methanol draw (S76) supports about 0.5 kW_e continuous, so the skid runs at part load on the dispatch schedule; the species edges (O2, CO2, water) close on the graph"
+  "note": "skid at the issued 1800 x 800 x 1600 mm envelope; S79 is the rated electric point - the methanol draw (S76) supports about 0.5 kW_e continuous, so the skid runs at part load on the dispatch schedule; the species edges (O2, CO2, water) close on the graph",
+  "machine": "direct methanol fuel-cell skid (iem_fc): 28-cell stack (0.6 V at 0.3 A/cm2, 200 cm2 cells, 0.56 m2) + 316L reformer shell (Cu/ZnO class bed) + copper bus, per the node design block (AQS-DUTY-077)",
+  "mat": "316L ends and reformer, copper bus (duty section 3: conductors are copper), PTFE gaskets; no wetted alloy",
+  "internals": "the MEA laminate and the reformer bed drawn as envelopes (plan rule 6); node internals row none",
+  "purchased": "MEA laminate, PTFE gaskets, reformer catalyst bed - envelopes and interfaces per plan rule 6"
  },
  "nozzles": [
   {
@@ -129,5 +133,43 @@
  "acceptance_sets": [
   "A-core",
   "A-CELL"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1800.0,
+   800.0,
+   700.0
+  ],
+  "basis": "sized from the issued graph duties, methanol train residual sizing (flow_graph/param/meoh_train.py, AQS-DUTY-077)",
+  "stack": {
+   "xy_mm": [
+    480.0,
+    250.0
+   ],
+   "z_mm": [
+    120.0,
+    318.0
+   ],
+   "plate_mm": 160.0,
+   "pitch_mm": 6.0,
+   "n_cells": 28
+  },
+  "reformer": {
+   "axis_xy_mm": [
+    150.0,
+    250.0
+   ],
+   "od_mm": 150.0,
+   "z_mm": [
+    40.0,
+    440.0
+   ]
+  },
+  "plinth_mm": 20.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; reformer axis (150, 250), stack centre (480, 250) at z 120..318; bus run to the +Y face at the N5 datum z 600; vent riser to the box top",
+  "nozzle_spread": "inlet pack (N1..N4) flush at the -Y face at z 160 centred on x 315; outlet pack (N6..N8, N11) flush at the +Y face at z 600 led by the N5 copper bus pad; drain under the reformer; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "face hardware flush at the envelope faces; the DC row is the conductor pad, not a bore"
+ }
 }

@@ -1,0 +1,3 @@
+item,size,grade,qty,location,basis
+1,M10 stud + nut,ISO 3506 A4-70,8,stack end-plate tie rods; corners of the plate pair (count from the model),A4-70 per the plan grade rule on the 316L ends; compresses the laminate against the PTFE gaskets; study length; confirmed at fabrication
+2,M12 wedge anchor,ISO 898-1 8.8,6,base plate to slab (3 per 2 m of skid),grade rule AQS-PLAN-006 W5: 8.8 on the carbon-steel base; study length; confirmed at fabrication
