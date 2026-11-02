@@ -104,5 +104,35 @@
  "acceptance_sets": [
   "A-core",
   "A-VES"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   600.0,
+   600.0,
+   600.0
+  ],
+  "basis": "node size_mm set by docs-authority/_storage_sizing.py (AQS-DUTY-064); the duty sheet section 2 carries no size line (WORK_ORDER W12)",
+  "bin_z_mm": [
+   310.0,
+   580.0
+  ],
+  "frustum_z_mm": [
+   40.0,
+   310.0
+  ]
+ },
+ "design": {
+  "service": "mixed metal-scrap / worn-goods receiving hopper, gravity discharge, atmospheric (duty sections 1, 4 and 6)",
+  "wall_mm": 4.0,
+  "wall_basis": "study value",
+  "ca_mm": 1.5,
+  "discharge_bore_mm": 196.0,
+  "opening_mm": 190.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; x along 600, y along 600, z up",
+  "nozzle_spread": "the schedule gives face and height only; ports pack in one row per face/height group, centred on the face mid-length, 8 mm clear at the bore; per-tag positions recorded in check.nozzles_drawn",
+  "vent_drain": "N8 vent on the +Y rim bar (datum 800 predates the 600 box); N7 drain boss beside the discharge opening, tip at the 50 datum",
+  "hardware_idiom": "connection hardware flush at the envelope faces, roots through the shell wall (lib/nozzles.place_on_face); nothing protrudes, bbox within the node envelope"
+ }
 }

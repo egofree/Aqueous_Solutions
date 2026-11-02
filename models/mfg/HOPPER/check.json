@@ -1,0 +1,148 @@
+{
+  "bbox_mm": [
+    600.0,
+    600.0,
+    600.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    600.0,
+    600.0,
+    600.0
+  ],
+  "size_basis": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+  "graph_revision": "AC",
+  "solids": 1,
+  "all_parts_valid": true,
+  "holdup_m3": 0.1424,
+  "holdup_basis": "none: duty section 2 claims no holdup and section 8 records that no holdup basis exists for this class; the volume is reported, not turned into a residence time (A-VES)",
+  "body": {
+    "bin_z_mm": [
+      310.0,
+      580.0
+    ],
+    "frustum_z_mm": [
+      40.0,
+      310.0
+    ],
+    "wall_mm": 4.0,
+    "wall_basis": "study value - no authority states a thickness (WORK_ORDER W12)",
+    "discharge": "190 mm base-plate opening under a 196 mm outlet-box bore"
+  },
+  "material": {
+    "class": "carbon steel",
+    "ca_mm": 1.5,
+    "basis": "duty section 3: carbon steel, hydrocarbon, CA 1.5 mm (AQS-STD-001)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 340.3,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); root set in the shell wall (the frustum slope stands off the envelope face)"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 249.8,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); root set in the shell wall (the frustum slope stands off the envelope face)"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 304.9,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); root set in the shell wall (the frustum slope stands off the envelope face)"
+    },
+    "N4": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 578.1,
+      "x_mm": 304.9,
+      "schedule_rating": "Class 150",
+      "note": "schedule datum 600 mm sits at the envelope top; drawn clamped to 578.1 mm (barb radius rule) - named hold, WORK_ORDER W12"
+    },
+    "N5": {
+      "style": "hose",
+      "dn": "DN50",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 564.9,
+      "x_mm": 249.8,
+      "schedule_rating": "Class 150",
+      "note": "schedule datum 600 mm sits at the envelope top; drawn clamped to 564.9 mm (barb radius rule) - named hold, WORK_ORDER W12"
+    },
+    "N6": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 584.4,
+      "x_mm": 340.3,
+      "schedule_rating": "Class 150",
+      "note": "schedule datum 600 mm sits at the envelope top; drawn clamped to 584.4 mm (barb radius rule) - named hold, WORK_ORDER W12"
+    },
+    "N7": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "drain boss beside the discharge opening, tip at the 50 datum"
+    },
+    "N8": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "note": "vent on the +Y rim bar; schedule datum 800 mm predates the 600 mm box - named hold, WORK_ORDER W12"
+    },
+    "N9": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 584.4,
+      "x_mm": 369.6,
+      "schedule_rating": "Class 150",
+      "note": "schedule datum 600 mm sits at the envelope top; drawn clamped to 584.4 mm (barb radius rule) - named hold, WORK_ORDER W12"
+    },
+    "N10": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 369.6,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); root set in the shell wall (the frustum slope stands off the envelope face)"
+    }
+  },
+  "nozzle_count_schedule": 10,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (lib/nozzles.place_on_face); the schedule rating column (Class 150) is carried verbatim as text against duty section 4 (no flange class, atmospheric tube or hose)",
+  "part_mass_kg": {
+    "body": 36.5,
+    "frame_base": 50.9,
+    "rim_frame": 7.3,
+    "nozzles": 3.3
+  },
+  "cadquery": "2.8.0"
+}

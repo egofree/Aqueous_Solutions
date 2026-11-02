@@ -131,7 +131,7 @@ EXISTING_SOURCE = {
 
 # Units whose section 5 acceptance the tracker verifies on the files before recording M3.
 ACCEPTED = ('AL_POT', 'LEACH_CSTR_1', 'EW_1', 'EW_2', 'EW_3', 'EW_4', 'EW_5', 'EW_6', 'EW_7',
-            'EW_8', 'EW_9', 'CRYO_ASU', 'CRYO_CO2', 'CRYO_H2', 'CRYO_N2', 'CRYO_O2')
+            'EW_8', 'EW_9', 'CRYO_ASU', 'CRYO_CO2', 'CRYO_H2', 'CRYO_N2', 'CRYO_O2', 'HOPPER')
 
 
 # --------------------------------------------------------------------------- authorities

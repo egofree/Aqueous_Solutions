@@ -19,9 +19,9 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1877 | 60 % |
-| organic | 977 | 31 % |
-| silicate_oxide | 147 | 5 % |
+| metal_plateable | 1864 | 60 % |
+| organic | 973 | 31 % |
+| silicate_oxide | 146 | 5 % |
 | metal_reactive | 120 | 4 % |
 | unassigned | 27 | 1 % |
 
@@ -136,7 +136,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | HDR_O2 | 1 | 0 | 0 | 0 | 0 |
 | HDR_UPW | 0 | 1 | 0 | 0 | 0 |
 | HF_GEN | 4 | 2 | 1 | 0 | 0 |
-| HOPPER | 20 | 4 | 1 | 0 | 0 |
+| HOPPER | 6 | 0 | 0 | 0 | 0 |
 | HX8 | 13 | 2 | 1 | 0 | 0 |
 | HYDRO_SET | 8 | 1 | 1 | 0 | 0 |
 | IND_MELT | 6 | 3 | 3 | 0 | 0 |
@@ -160,7 +160,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MET_MELT | 14 | 9 | 1 | 0 | 0 |
 | MET_SCRUB | 18 | 21 | 1 | 0 | 0 |
 | MET_SYN | 2 | 6 | 1 | 0 | 0 |
-| MF-01 x 23 | 3 | 1 | 0 | 2 | 0 |
+| MF-01 x 24 | 3 | 1 | 0 | 2 | 0 |
 | MF-02 x 55 | 3 | 1 | 0 | 2 | 0 |
 | MF-03 x 0 | 5 | 1 | 0 | 2 | 0 |
 | MF-04 x 0 | 5 | 0 | 0 | 1 | 0 |
@@ -168,11 +168,11 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MF-06 x 2 | 5 | 0 | 0 | 1 | 0 |
 | MF-07 x 3 | 5 | 0 | 0 | 1 | 0 |
 | MF-08 x 3 | 7 | 0 | 0 | 3 | 0 |
-| MF-09 x 233 | 7 | 0 | 0 | 3 | 0 |
-| MF-10 x 7 | 7 | 0 | 0 | 3 | 0 |
+| MF-09 x 232 | 7 | 0 | 0 | 3 | 0 |
+| MF-10 x 8 | 7 | 0 | 0 | 3 | 0 |
 | MF-11 x 4 | 7 | 0 | 0 | 3 | 0 |
 | MF-12 x 2 | 7 | 0 | 0 | 3 | 0 |
-| MF-13 x 1 | 7 | 0 | 0 | 3 | 0 |
+| MF-13 x 2 | 7 | 0 | 0 | 3 | 0 |
 | MF-14 x 3 | 7 | 0 | 0 | 3 | 0 |
 | MF-15 x 1 | 7 | 0 | 0 | 3 | 0 |
 | MF-16 x 1 | 7 | 0 | 0 | 3 | 0 |
@@ -270,6 +270,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-89 | 0 | 1 | 0 | 0 | 0 |
 | OF-90 | 1 | 0 | 0 | 0 | 0 |
 | OF-91 | 1 | 0 | 0 | 0 | 0 |
+| OF-92 | 1 | 0 | 0 | 0 | 0 |
 | OIL_DRYER | 11 | 1 | 2 | 0 | 0 |
 | OIL_FRAC | 43 | 10 | 2 | 0 | 0 |
 | OIL_PYRO | 4 | 1 | 2 | 0 | 0 |
