@@ -1,40 +1,9 @@
-item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/BMED_ACID.md
-2,Process nozzle DN15,6,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
-3,"Motor: stack loop pumps (acid, base, salt) (induction IE3, IEC 71 / 0.37 kW)",3,-,AQS-INV-001 / AQS-INV-005
-4,"Motor: transfer pump IA-BMED-01 to WS_NITRIC (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-5,"Motor: transfer pump IA-EVAP_ACID-FEED to EVAP_ACID (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-6,"Motor: transfer pump S09 to WET_BENCH (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-7,bearing: deep-groove ball bearing 6202-2Z,6,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-8,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-9,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-10,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-11,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-12,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-13,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-14,electronics: PLC digital I/O point 24 V DC,6,IEC 61131-2,AQS-INV-004
-15,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-16,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-17,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-18,electronics: motor starter (contactor + overload) 0.37 kW,3,IEC 60947-4-1,AQS-INV-004
-19,fastener: anchor bolt M10,18,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-20,fastener: anchor bolt M10,34,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-21,fastener: anchor bolt M10,16,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-22,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-23,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-24,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-25,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-26,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-27,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-28,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-29,"protection: inverse-time circuit breaker, 3-pole 15 A",3,UL 489 / IEC 60947-2,AQS-INV-004
-30,"seal: mechanical seal, single EN 12756",3,"SiC/SiC faces, FKM",AQS-INV-004
-31,support: pipe clamp DN15,9,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-32,support: pipe clamp DN15,17,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-33,support: pipe clamp DN15,8,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-34,valve: check valve DN15,1,"PVDF swing/ball check valve, ISO 16137, PTFE seats",AQS-INV-004
-35,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-36,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-37,valve: isolation valve DN15,2,"PVDF ball valve, ISO 16135, PTFE seats",AQS-INV-004
-38,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
-39,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Drip tray 1000 x 600, floor 20 + curb 60 x 10",1,PVC-U plate,19.28,make,"duty section 3: PVC-U wetted, no metal wetted part; CA 0 mm (AQS-STD-001 polymer rule); tray is the skid layout choice (WORK_ORDER W12)"
+2,"Anode end plate 300 x 300 x 10, Ti/MMO (A-M-170)",1,Ti G2,4.06,buy,AQS-DUTY-068 construction line; thickness study (W12); MMO coating per the anode supplier class at order
+3,"Clamp frame plates 300 x 300 x 20 (pair, stack ends)",2,PVC-U plate,5.04,make,"duty section 3 PVC-U drawn; the sizing construction names PP frames (hold, W12); thickness study (W12)"
+4,"Triplet laminate: 85 triplets x (1 bipolar + 2 monopolar membranes + 0.8 mm PE mesh spacers), 242.25 stack, window 200 x 200 (0.04 m2 per cell)",85,membrane/PE spacer laminate,9.21,buy,"AQS-DUTY-068 and A-M-170; membranes per the maker class, gaskets per the membrane maker (AQS-TST-006 section 2); membrane sheet thickness study (W12); drawn as the stack envelope per plan rule 6"
+5,"Cathode end plate 300 x 300 x 10, 316L/Ni (A-M-170)",1,316L/Ni,7.2,buy,AQS-DUTY-068 construction line; thickness study (W12)
+6,"Tie rods M12 x 290, 4 per stack",4,316L rod,1.05,make,"A-M-170 tie-rod clamp; ends drawn buried in the end plates, the protruding stud length and nuts are fabrication detail (AQS-TST-006 section 2 torque pattern); grade rule AQS-PLAN-006 W5: A4-70 on 316L"
+7,Hold-down beam 314 x 320 x 20 on four 9 x 9 posts,1,PVC-U plate,2.97,make,"skid layout choice (the M2 style-build top rails are not carried, W12)"
+8,"Nozzle set per docs-authority/nozzles/BMED_ACID.csv: 10 atmospheric open-bore tube connections (DN15/DN25) on tray risers, drain through the floor, vent at the top face",10,PVC-U,0.69,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4; bore per the lib/dn Sch 40 table

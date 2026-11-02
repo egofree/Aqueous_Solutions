@@ -1,0 +1,179 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    350.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    350.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack).",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "stack": {
+    "construction": "AQS-DUTY-068 (docs-authority/sizing/BMED_STACK.md) / A-M-170: 300 x 300 frames, 0.8 mm PE mesh spacers, one bipolar and two monopolar membranes per triplet, Ti/MMO anode and 316L/Ni cathode end plates, tie-rod clamped; the same construction AQS-TST-006 (AQS-TST-006 section 2) builds the bench apparatus to",
+    "frames_mm": [
+      300.0,
+      300.0
+    ],
+    "active_window_mm": [
+      200.0,
+      200.0
+    ],
+    "active_area_m2_per_cell": 0.04,
+    "triplets_per_stack": 85,
+    "triplet_pitch_mm": 2.8500000000000005,
+    "laminate_mm": [
+      242.25,
+      200.0,
+      200.0
+    ],
+    "membranes_per_stack": 255,
+    "stack_current_class_A": 8.0,
+    "allocation_note": "the sizing page books 421 triplets in 5 stacks of 85 plus 1 spare for the BMED pair; the node books no per-unit stack count, so the model draws the representative stack module (hold, WORK_ORDER W12)",
+    "material_note": "frames drawn PVC-U per duty section 3 (no metal wetted part); the sizing page construction names PP frames - PVC-U drawn, PP named (hold, W12); electrode end plates are the A-M-170 electrochemical hardware (Ti/MMO, 316L/Ni)"
+  },
+  "a_cell": {
+    "basis": "A-CELL: plate count, plate size, pitch and active area per the AQS-DUTY-068 / A-M-170/171 construction; duty section 2 carries no plate row, so the match is against the sizing construction, not the duty sheet (hold, W12); POWER.md states no bus bar for this class, so the bus-bar criterion has nothing to match",
+    "design_voltage_class_V_per_triplet": [
+      1.22,
+      1.67
+    ],
+    "voltage_note": "duty section 9 books the stack power on this unit at 26.93 kW from the A-M-088 SEC revision; the sizing design voltage is the 1.67 V pilot class, and AQS-TST-006 section 5 holds the measured verification band - figures reported, not re-derived here"
+  },
+  "skid": {
+    "tray": "PVC-U drip tray, floor 20 + curb 60 x 10 (duty section 3: PVC-U wetted; CA 0 mm, AQS-STD-001 polymer rule)",
+    "hold_down": "PVC-U beam z 330..350 on four posts over the stack; the M2 style-build top rails are not carried (layout choice, WORK_ORDER W12)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 436.9,
+      "schedule_rating": "Class 150",
+      "service": "CRU \u2192 BMED acid regen loop",
+      "note": "schedule datum drawn; atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4; hose makeup by the connecting line at the face)"
+    },
+    "N2": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 320.7,
+      "x_mm": 472.3,
+      "schedule_rating": "Class 150",
+      "service": "HCl product",
+      "note": "schedule datum 600 mm predates the 350 mm box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4; hose makeup by the connecting line at the face)"
+    },
+    "N3": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 320.7,
+      "x_mm": 501.6,
+      "schedule_rating": "Class 150",
+      "service": "HCl",
+      "note": "schedule datum 600 mm predates the 350 mm box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4; hose makeup by the connecting line at the face)"
+    },
+    "N4": {
+      "style": "tube",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 308.3,
+      "x_mm": 436.9,
+      "schedule_rating": "Class 150",
+      "service": "regen HCl, 20 wt%",
+      "note": "schedule datum 600 mm predates the 350 mm box; clamped to 308.3 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4; hose makeup by the connecting line at the face)"
+    },
+    "N5": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 320.7,
+      "x_mm": 530.9,
+      "schedule_rating": "Class 150",
+      "service": "HCl to chlorobutane",
+      "note": "schedule datum 600 mm predates the 350 mm box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4; hose makeup by the connecting line at the face)"
+    },
+    "N6": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": 930.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain, open bore through the tray floor, flush at the envelope bottom (schedule datum 50)"
+    },
+    "N7": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 350.0,
+      "x_mm": 180.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent, flush at the top face on the hold-down beam; schedule datum 800 predates the 350 mm box (hold, WORK_ORDER W12)"
+    },
+    "N8": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 320.7,
+      "x_mm": 560.2,
+      "schedule_rating": "Class 150",
+      "service": "HCl 2 M from BMED",
+      "note": "schedule datum 600 mm predates the 350 mm box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4; hose makeup by the connecting line at the face)"
+    },
+    "N9": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 501.6,
+      "schedule_rating": "Class 150",
+      "service": "evaporator condensate return (BMED water make-up)",
+      "note": "schedule datum drawn; atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4; hose makeup by the connecting line at the face)"
+    },
+    "N10": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 472.3,
+      "schedule_rating": "Class 150",
+      "service": "spent scrub liquor (NaCl in NaOH) to the BMED brine",
+      "note": "schedule datum drawn; atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4; hose makeup by the connecting line at the face)"
+    }
+  },
+  "nozzle_count_schedule": 10,
+  "nozzle_idiom": "atmospheric open-bore tube connections on tray risers, flush at the envelope faces (duty section 4: atmospheric tube or hose, no flange class; the W4 110 % rule draws no flange where no process pressure is stated; hose makeup by the connecting line at the face); the schedule rating column (Class 150) is carried verbatim as text; clamped datums named in nozzles_drawn",
+  "part_mass_kg": {
+    "tray": 19.28,
+    "anode_end_plate": 4.06,
+    "frame_plate_a": 2.52,
+    "triplet_laminate": 9.21,
+    "frame_plate_b": 2.52,
+    "cathode_end_plate": 7.2,
+    "tie_rods": 1.05,
+    "hold_down_beam": 2.82,
+    "beam_posts": 0.15,
+    "nozzles": 0.69
+  },
+  "cadquery": "2.8.0"
+}
