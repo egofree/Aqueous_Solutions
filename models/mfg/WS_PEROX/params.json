@@ -72,5 +72,39 @@
  "acceptance_sets": [
   "A-core",
   "A-MACH"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   600.0,
+   600.0,
+   350.0
+  ],
+  "basis": "storage-sizing box (node size_mm, AQS-DUTY-064); the duty section 4 prose seed line 800 x 800 x 1100 is an older figure (WORK_ORDER W12)",
+  "tank": {
+   "od_mm": 200.0,
+   "xy_mm": [
+    300.0,
+    390.0
+   ],
+   "z_mm": [
+    40.0,
+    290.0
+   ]
+  },
+  "tray_mm": 20.0
+ },
+ "design": {
+  "machine": "peroxide day-station (5 wt% nominal, 6 wt% maximum, no stabilizer; storage per X-SAF-09; AQS-DSN-OX-001 section 2)",
+  "mat": "HDPE tank (cross-linked, unpigmented, UV stabilized), PVDF piping, pump and valves, PTFE or FKM seals (duty section 3; M3)",
+  "ca_mm": 0.0,
+  "wall_mm": 10.0,
+  "wall_basis": "study fab-page polymer wall (WORK_ORDER W12)",
+  "internals": "none drawn (node internals row none; pump and cell are envelopes)",
+  "purchased": "PVDF pump (duty section 3) and the electrolysis cell (AQS-DSN-OX-001 2.1), envelopes drawn; maker TDS at order"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; tank axis at x 300, y 390, z up; tray floor z 0..20; guard rail and pump envelope front-right, cell envelope front-left",
+  "nozzle_spread": "the schedule gives face and height only; side rows ride tray risers packed from x 420/300; drain through the floor at x 560; vent riser on the tank head; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }

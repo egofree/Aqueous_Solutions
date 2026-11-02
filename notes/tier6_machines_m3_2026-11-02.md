@@ -256,6 +256,21 @@ resized.
 - Deliverables as commit 8; `tracker --check WS_NITRIC` green; duty section 7
   names the model; tracker regen puts WS_NITRIC at M3 (45).
 
+### WS_PEROX — commit 11
+
+- 5 L HDPE day tank (cross-linked, unpigmented, UV stabilized; X-SAF-09: 1 d
+  at 2.94 L/d = 2.9 L net, tank 5 L nominal, own bund 6 L room-side) + PVDF
+  pump envelope front-right and the electrolysis cell envelope front-left
+  (AQS-DSN-OX-001 2.1: 12.31 A, 246 cm2, 30.8 W, anode held — designed
+  in-house, drawn as its envelope per plan rule 6). PVDF piping, pump and
+  valves, PTFE or FKM seals; no metal wetted part (M3). Levels reported at
+  the X-SAF-09 basis (5 L nominal z 236.5, 2.9 L net z 154.0). Duty
+  section 6: continuous filtered vent and the free-lifting manway cover
+  (manway noted, not drawn — W12).
+- All 6 schedule rows drawn (oxygen and dilution water in, peroxide out,
+  drain, vent). Deliverables as commit 8; `tracker --check WS_PEROX` green;
+  duty section 7 names the model; tracker regen puts WS_PEROX at M3 (46).
+
 
 
 

@@ -1,0 +1,125 @@
+{
+  "bbox_mm": [
+    600.0,
+    600.0,
+    350.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    600.0,
+    600.0,
+    350.0
+  ],
+  "size_basis": "storage-sizing box (node size_mm, AQS-DUTY-064); the duty section 4 prose seed line 800 x 800 x 1100 predates it (WORK_ORDER W12)",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "tank": {
+    "od_mm": 200.0,
+    "xy_mm": [
+      300.0,
+      390.0
+    ],
+    "z_mm": [
+      40.0,
+      290.0
+    ],
+    "wall_mm": 10.0,
+    "wall_basis": "study fab-page polymer wall (10 mm); no thickness booked on the node (WORK_ORDER W12)",
+    "working_volume_m3": 0.005,
+    "working_volume_basis": "the duty section 2 X-SAF-09 basis: 5 L tank nominal (reported at z 236.5), 2.9 L net at the 1-day holdup (z 154.0); own bund 6 L is the room-side containment the station seats in - the tray is the drip tray (WORK_ORDER W12); duty section 6: continuous filtered vent and a free-lifting manway cover - the manway is noted, not drawn (WORK_ORDER W12)",
+    "internals": {
+      "source": "none: the node internals row is none; the pump and cell are purchased/designed envelopes on the skid",
+      "basis": "no internal solid drawn (WORK_ORDER W12)"
+    }
+  },
+  "material": {
+    "class": "HDPE / PVDF",
+    "ca_mm": 0.0,
+    "basis": "duty section 3: HDPE tank (cross-linked, unpigmented, UV stabilized), PVDF piping, pump and valves, PTFE or FKM seals; no metal wetted part (M3); cell electrodes under M6; 5 wt% nominal, 6 wt% maximum, no stabilizer (graph product_spec); AQS-DSN-OX-001 section 2; CA does not apply to the polymers"
+  },
+  "a_mach": {
+    "guard": "service-zone guard rail over the front-right floor zone (A-MACH: guard drawn; layout choice, WORK_ORDER W12)",
+    "anchors": "4 M10 wedge anchors, tray to slab (fasteners.csv)",
+    "purchased": "PVDF pump (duty section 3) and the electrolysis cell (AQS-DSN-OX-001 2.1: 12.31 A, 246 cm2, 30.8 W), drawn as their envelopes and interfaces per plan rule 6; wetted parts and drive ratings per the maker TDS at order (holds, WORK_ORDER W12)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 430.6,
+      "schedule_rating": "Class 150",
+      "service": "oxygen to peroxide",
+      "note": "schedule datum drawn; atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600,
+      "drawn_height_mm": 320.7,
+      "x_mm": 310.6,
+      "schedule_rating": "Class 150",
+      "service": "H\u2082O\u2082",
+      "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "x_mm": 560.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain, open bore through the tray floor, flush at the envelope bottom (schedule datum 50)"
+    },
+    "N4": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 350.0,
+      "x_mm": 300.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent riser on the tank head, flush at the envelope top; schedule datum 800 predates the box (hold, WORK_ORDER W12)"
+    },
+    "N5": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 459.9,
+      "schedule_rating": "Class 150",
+      "service": "dilution water",
+      "note": "schedule datum drawn; atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 489.2,
+      "schedule_rating": "Class 150",
+      "service": "peroxide dilution water",
+      "note": "schedule datum drawn; atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
+    }
+  },
+  "nozzle_count_schedule": 6,
+  "nozzle_idiom": "atmospheric open-bore tube connections on tray risers, flush at the envelope faces (duty section 4: atmospheric joints are hose; the W4 110 percent rule draws no flange where no process pressure is stated); the schedule rating column (Class 150) is carried verbatim as text; clamped datums named in nozzles_drawn",
+  "part_mass_kg": {
+    "tray": 8.1,
+    "tank": 3.1,
+    "guard_rail": 0.1,
+    "pump": 1.1,
+    "electrolysis_cell": 3.1,
+    "nozzles": 0.2
+  },
+  "cadquery": "2.8.0"
+}
