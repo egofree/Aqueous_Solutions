@@ -58,6 +58,28 @@ recipe pattern in `models/mfg/EW_1/WORK_ORDER.md`. Graph Rev AC. One commit per 
   launder layout; the Class 150 rating column; the +Y outlet row packing versus the
   weir zoning; fastener lengths.
 
+## NOX_SCRUB (NOx scrubber, tier 4) — commit 5
+
+- `models/mfg/NOX_SCRUB/nox_scrub.py` on the shared lib. A-COL internals as envelope
+  solids at recorded layout elevations: packing support grid (z 700), the 2303 mm
+  packing (node design) in two beds with a redistribution disc (z 715..1866.5 /
+  1881.5..3033), liquid distributor (z 3060), PP mesh demister (z 4043). CPVC shell
+  OD 200, wall 6 (study, hold), skirt and plinth; the vent riser on the top head
+  closes the 4103 envelope. All 15 schedule rows drawn at tag, face, height and bore
+  as atmospheric hose barbs flush at the envelope faces on extension spools that
+  cross the air gap and the shell wall (ray-set lengths); N11/N12 (no schedule
+  datum) drawn at z 3400 in the gas space; N10's 2000 datum predates the sized
+  column (hold). The z 400 row packs the full DN 200 chord - outer nozzles
+  near-tangent, named hold.
+- Envelope: node 600 × 600 × 4103 (X-PAR-03). Build bbox exact, one closed manifold
+  solid; no holdup or stage/HTU count claimed (A-COL).
+- Deliverables: exports, generated BOM, fasteners.csv, check.json, WORK_ORDER.md
+  (W1–W12), the seven-sheet drawing set (stale GA.md superseded). `cad/stl` replaced.
+- Holds named in W12: study wall; node PP-H vs duty CPVC (duty section 3 governs);
+  layout bed elevations; no stage/HTU count; duty prose vs 15-row CSV; blank N11/N12
+  datums; the clamped N10 datum; the tangent-row packing; Class 150 rating column;
+  fastener patterns.
+
 ## Pipeline repair ahead of the batch — housekeeping commit
 
 - `models/mfg/style_builders.py`: the per-unit-script skip of the cold-box batch repair

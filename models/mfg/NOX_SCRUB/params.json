@@ -31,7 +31,22 @@
   "fan_W": 5.96,
   "pump_W": 32.5201,
   "kW": 0.0385,
-  "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
+  "material": "PP-H shell and in-house cut PP rings; PP mesh demister",
+  "service": "flue, leach off-gas and nitric vents, atmospheric (duty sections 4 and 6)",
+  "wall_mm": 6.0,
+  "wall_basis": "study value",
+  "ca_mm": 0.0,
+  "beds_z_mm": [
+   [
+    715.0,
+    1859.0
+   ],
+   [
+    1874.0,
+    3033.0
+   ]
+  ],
+  "material_node_PP_H_vs_duty_CPVC": "hold, WORK_ORDER W12"
  },
  "nozzles": [
   {
@@ -159,5 +174,27 @@
  "acceptance_sets": [
   "A-core",
   "A-COL"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   600.0,
+   600.0,
+   4103.0
+  ],
+  "basis": "node size_mm set by flow_graph/param/house_scrubbers.py (X-PAR-03)",
+  "column": {
+   "D_mm": 200.0,
+   "shell_z_mm": [
+    150.0,
+    4063.0
+   ]
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; column axis at x 300, y 300, z up",
+  "nozzle_spread": "the schedule gives face and height only; ports pack in one row per face/height group at the envelope face, 8 mm clear at the bore; extension spools cross the air gap and the shell wall",
+  "vent_drain": "N10 flush at the top head (2000 datum predates the column); N9 drain boss lapping the skirt ring at the plinth",
+  "internals": "support grid, two beds + redistribution disc, distributor, demister - envelope solids at the recorded layout elevations",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }

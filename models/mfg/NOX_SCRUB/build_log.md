@@ -1,22 +1,31 @@
 # Build log - NOX_SCRUB
 
-Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
-Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/NOX_SCRUB.md`; sizing `docs-authority/sizing/NOX_SCRUB.md`).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-COL; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/NOX_SCRUB.md`; envelope per `models/mfg/NOX_SCRUB/params.json`).
 
 ## Tool versions
 
 - CadQuery 2.8.0 (CADQUERY_PYTHON)
-- Python 3.13.7; build run headless via `models/mfg/build_all.py`
+- Python 3.13.7; build run headless via `python3 models/mfg/NOX_SCRUB/nox_scrub.py`
 
 ## Checks
 
-- Build bbox 600 x 600 x 4103 mm: inside the envelope with margin (envelope 600 x 600 x 4103 mm)
-- Solid source: build export `models/mfg/NOX_SCRUB/export/nox_scrub.step`
-- BOM `models/mfg/NOX_SCRUB/bom.csv`; fasteners and WORK_ORDER beside it
-- Drawing set `models/mfg/NOX_SCRUB/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
+- Build bbox 600 x 600 x 4103 mm against the 600 x 600 x 4103 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
+- Solid source: build export `models/mfg/NOX_SCRUB/export/nox_scrub.step`; export STL closed and manifold, 1 solid(s); `cad/stl/NOX_SCRUB.stl` replaced from the build (ASCII, metres)
+- Nozzles: all 15 rows of `docs-authority/nozzles/NOX_SCRUB.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- A-COL: packing height (2303 mm in two beds), support grid, redistribution disc, liquid distributor and PP mesh demister are solids (envelope solids; ring count not modelled); no stage or HTU count is claimed anywhere
+- Internals basis: node design block (D 200, packed 2303, H 3803) and duty section 3 materials; bed elevations are the layout choice (hold, W12)
+- BOM `models/mfg/NOX_SCRUB/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/NOX_SCRUB/drawings/` (GA front/side, nozzle orientation, part sheets, iso; title blocks per AQS-DWG-002); the stale envelope `drawings/GA.md` is superseded where one existed
 
 ## Sources
 
-- `models/mfg/NOX_SCRUB/export/nox_scrub.step`
+- `models/mfg/NOX_SCRUB/nox_scrub.py`
+- `models/mfg/NOX_SCRUB/draw_nox_scrub.py`
+- `models/mfg/NOX_SCRUB/bom.csv`
+- `models/mfg/NOX_SCRUB/fasteners.csv`
+- `models/mfg/NOX_SCRUB/check.json`
+- `models/mfg/NOX_SCRUB/WORK_ORDER.md`
+- `build export `models/mfg/NOX_SCRUB/export/nox_scrub.step``
 
-Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.
+Status: accepted per AQS-PLAN-006 section 5 A-core + A-COL; holds named in WORK_ORDER W12.
