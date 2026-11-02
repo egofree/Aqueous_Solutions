@@ -1,8 +1,5 @@
-item,description,qty,material,basis
-1,"Synthesis reactor shell D360 x 440 mm, wall 8 mm, jacketed",1,"316L shell, PTFE-lined heads (fluorocarbon service)",AQS-DUTY-073 fluoro train; duty TBD kW; AQS-SEL-FP route
-2,Catalyst charge port and dip leg,1,316L / PTFE,catalyst per route
-3,Chlorination / pyrolysis heater circuit with SCR control,1,Inconel 600 sheath,stage temperatures per AQS-DUTY-073 route table
-4,Dilute-HCl return pump and transfer line to CRU,1,PVDF pump + PTFE line,HCl return rated kg/d
-5,Scrub/catch pot with caustic charge,1,PP-H / PVDF,vent scrub per AQS-SEL-FP
-6,Skid frame rails and module tie-ins,1,"CS, HDG",envelope 600 x 600 x 1200 mm
-7,"Control cabinet with interlocks (high-T, high-P, low-flow)",1,CS enclosure IP54,study
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Kettle OD 200 x wall 6, shell 300 with heads, z 416..748, on the support ring, 4 legs and the plinth",1,316L plate/pipe,86.4,make,"node design D/H (X-MFG-31 class, AQS-DUTY-073); wall the study fab-page value (hold, WORK_ORDER W12); duty section 3 316L, the Hastelloy option a named hold; CA 0 mm (AQS-STD-001)"
+2,"Jacket envelope OD 234 / ID 212, z 416..708 (jacket_C 160, node design row)",1,carbon steel,17.7,make,the jacket service is the 160 C thermal envelope; geometry is the layout choice annulus (WORK_ORDER W12); the duty sheet carries no jacket pressure
+3,Agitator: shaft and two-blade impeller (solids) into the drive envelope 0.18 kW (node design row),1,316L shaft / PP drive envelope,3.3,make (shaft) / buy (drive),"the node agitator_kW row; the drive is the purchased item per plan rule 6, rating reads the maker sheet at order"
+4,"Nozzle set per docs-authority/nozzles/POLY_COND.csv: 3 atmospheric open-bore tube connections (inlet at the -Y face, drain under the base head, vent riser to the schedule datum 800)",3,316L tube,1.2,make,schedule tags/faces/heights verbatim; bores per the lib/dn Sch 40 table

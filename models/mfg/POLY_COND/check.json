@@ -1,0 +1,103 @@
+{
+  "bbox_mm": [
+    600.0,
+    600.0,
+    1200.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    600.0,
+    600.0,
+    1200.0
+  ],
+  "size_basis": "reactor-class study minimum (AQS-DUTY-073; envelope state standby - the recipe waits on the digester organic assay, AQS-DES-POLY)",
+  "graph_revision": "AD",
+  "solids": 2,
+  "all_parts_valid": true,
+  "solids_note": "the skid chain (plinth, stand, kettle, jacket envelope, agitator, drive envelope, drain and vent) fuses to one solid; the inlet face stub stays separate until the connecting line makes its joint",
+  "kettle": {
+    "od_mm": 200.0,
+    "wall_mm": 6.0,
+    "z_mm": [
+      416.0,
+      748.0
+    ],
+    "wall_basis": "study fab-page value (6 mm); the node books no thickness (WORK_ORDER W12)",
+    "gross_volume_L": 8.3277,
+    "jacket": {
+      "od_mm": 234.0,
+      "id_mm": 212.0,
+      "z_mm": [
+        416.0,
+        708.0
+      ],
+      "basis": "the node jacket_C 160 row; the jacket geometry is the envelope annulus (layout choice, WORK_ORDER W12)"
+    },
+    "internals": {
+      "source": "the node design agitator row (agitator_kW 0.18)",
+      "basis": "shaft and two-blade impeller drawn as solids into the purchased drive envelope (plan rule 6); node internals row none, so the tracker records no internal solid"
+    }
+  },
+  "a_ves": {
+    "gross_volume_L": 8.3277,
+    "basis": "reported for the record: the duty claims no holdup (DIGEST_TO_POLY stays 0 until the digester organic assay issues the recipe); no residence time is derived (A-VES)"
+  },
+  "standby": {
+    "state": "installed standby (node envelope state)",
+    "basis": "duty section 1 flows are 0; the model covers the installed geometry the node issues"
+  },
+  "material": {
+    "class": "316L",
+    "ca_mm": 0.0,
+    "basis": "duty section 3: 316L, Hastelloy option; 316L drawn, the Hastelloy alternative is a named hold (WORK_ORDER W12); CA 0 mm (AQS-STD-001 rule)"
+  },
+  "a_mach_named": {
+    "purchased": "agitator drive 0.18 kW (node design row) drawn as its envelope and interface, plan rule 6; the rating reads the maker sheet at order"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 300.0,
+      "schedule_rating": "Class 150",
+      "service": "digester organics",
+      "note": "schedule datum drawn as issued; open-bore tube flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "x_mm": 345.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss under the base head, flush at the envelope bottom (schedule datum 50)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 1200.0,
+      "x_mm": 300.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent riser on the top head, flush at the envelope top; the schedule datum 800 is the placeholder (hold, WORK_ORDER W12)"
+    }
+  },
+  "nozzle_count_schedule": 3,
+  "nozzle_idiom": "atmospheric open-bore tube connections flush at the envelope faces (duty section 4: atmospheric joints are hose; the W4 110 percent rule draws no flange where no process pressure is stated); the schedule rating column (Class 150) is carried verbatim as text; datums draw as issued",
+  "part_mass_kg": {
+    "plinth_stand": 69.6,
+    "kettle": 16.8,
+    "jacket": 17.7,
+    "agitator": 1.2,
+    "drive": 2.1,
+    "nozzles": 1.2
+  },
+  "cadquery": "2.8.0"
+}

@@ -26,7 +26,14 @@
   "jacket_C": 160,
   "agitator_kW": 0.18,
   "material": "316L, Hastelloy option",
-  "note": "installed standby: DIGEST_TO_POLY stays 0 until the digester organic assay issues the recipe"
+  "note": "installed standby: DIGEST_TO_POLY stays 0 until the digester organic assay issues the recipe",
+  "machine": "condensation resin kettle (installed standby): 316L kettle D 200 x H 300, jacket_C 160 envelope, 0.18 kW agitator into the purchased drive envelope (node design block, AQS-DUTY-073)",
+  "mat": "316L per duty section 3 (the Hastelloy option is a named hold)",
+  "ca_mm": 0.0,
+  "wall_mm": 6.0,
+  "wall_basis": "study fab-page value; the node books no thickness (WORK_ORDER W12)",
+  "internals": "the agitator drawn as solids per the node design row; node internals row none",
+  "purchased": "agitator drive 0.18 kW - envelope and interface per plan rule 6"
  },
  "nozzles": [
   {
@@ -58,5 +65,34 @@
  "acceptance_sets": [
   "A-core",
   "A-VES"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   600.0,
+   600.0,
+   1200.0
+  ],
+  "basis": "real kettle design at the 0.5 kg/d design case; standby envelope (recipe waits on the digester organic assay, AQS-DES-POLY; geometry issued A-M-289)",
+  "kettle": {
+   "od_mm": 200.0,
+   "axis_xy_mm": [
+    300.0,
+    300.0
+   ],
+   "z_mm": [
+    416.0,
+    748.0
+   ]
+  },
+  "jacket_z_mm": [
+   416.0,
+   708.0
+  ],
+  "plinth_mm": 20.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; kettle axis at (300, 300); support ring z 408..416, shell 428..728, top head 728..748, jacket envelope 416..708; drive envelope on the top head; vent riser to the schedule datum 800",
+  "nozzle_spread": "N1 in flush at the -Y face at 160 (CATCH_TANK idiom: the connecting line makes the joint at the face); drain boss under the base head; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "face hardware flush at the envelope faces; nothing protrudes"
+ }
 }

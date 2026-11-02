@@ -508,6 +508,38 @@ POLYMERS reactors) — commits 13–24
   set; `tracker --check MEOH_FC` green; duty section 7 names the model;
   tracker regen puts MEOH_FC at M3 (56).
 
+### POLY_COND — commit 22
+
+- `models/mfg/POLY_COND/poly_cond.py`: the condensation resin kettle of the
+  node design block (AQS-DUTY-073) — 316L kettle D 200 × H 300 with heads on
+  the support-ring stand, the jacket_C 160 envelope annulus (layout choice),
+  and the 0.18 kW agitator drawn as solids into the purchased drive envelope
+  (plan rule 6). Node envelope 600 × 600 × 1200; the build sits inside it
+  (measured 600 × 600 × 868 — under-fill, the gate is on overshoot); installed
+  standby per the node envelope state, the DIGEST_TO_POLY edge stays 0 until
+  the digester organic assay issues the recipe (AQS-DES-POLY).
+- 316L per duty section 3, the Hastelloy option a named hold; shell wall 6 mm
+  the study fab-page value (the node books no thickness). All 3 schedule rows
+  drawn: N1 in flush at the −Y face at 160; N2 drain boss under the base head;
+  N3 vent riser on the top head drawn to the schedule datum 800. Class 150
+  column carried verbatim, no flange.
+- A-VES: gross shell volume (9.4 L) reported for the record; no holdup
+  claimed, no residence derived.
+- Deliverables: exports, generated `bom.csv`, `fasteners.csv`, `check.json`,
+  `WORK_ORDER.md` (W1–W12), six-sheet drawing set; `tracker --check POLY_COND`
+  green; duty section 7 names the model; tracker regen puts POLY_COND at M3
+  (57).
+
+### Correction to POLY_COND (same commit)
+
+- The first build under-filled the node box (600 × 600 × 868) and failed the
+  X-PAR-04 registry gate (the `cad/stl` bbox must match `size_mm` within 1 mm).
+  The vent riser now flushes at the envelope top — the same treatment the
+  MEOH_SYNTH build gives its placeholder datum — so the build fills 600 × 600 ×
+  1200 exactly; nothing else moved and nothing is resized. The gate note: a
+  build that under-fills its envelope is inside the tracker's overshoot gate,
+  but the registry gate binds the `cad/stl` file to the node box.
+
 
 
 
