@@ -1,3 +1,4 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,basin_shell,1,HDPE,3414.9,make,"tray class; 300 m2 raceway at the A-M-420 revision, 400 mm water + 100 freeboard + 200 berm:"
-2,liner,1,HDPE,1440.2,make,"tray class; 300 m2 raceway at the A-M-420 revision, 400 mm water + 100 freeboard + 200 berm:"
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"HDPE civil basin: walls and floor 10 mm, 30100 x 10100 x 700 outer (300 m2 raceway class, A-M-420)",1,HDPE (duty section 3),3414.9,make,size_mm verbatim; A-FARM: drawn at the node box flush; CA does not apply to the polymer (AQS-STD-001)
+2,"EPDM liner sheet 5 mm: floor + four walls, berm band bare",1,EPDM (duty section 3),1962.8,buy,"A-FARM: liner drawn; sheet roll goods, buy roll (plan rule 6); supplier TDS at order (hold, WORK_ORDER W12)"
+3,"Nozzle set per docs-authority/nozzles/DUCKWEED.csv: 17 rows drawn as DN15/DN50 tube stubs (in z 80/160, harvest z 300, ration rows z 600, drain, vent)",17,HDPE/CPVC tube,0.2,make,schedule tags/faces/heights verbatim (N2 is the DN50 row); atmospheric per duty section 4

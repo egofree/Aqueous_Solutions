@@ -1,0 +1,3 @@
+item,size,grade,qty,location,basis
+1,M12 batten strip bolt,ISO 3506 A4-70,24,liner batten strips to the basin rim; 12 per long wall (study pattern),polymer joint to the polymer supplier rule (A4-70 hardware); the liner is held by batten strips; not adhesive; study pattern; confirmed at fabrication
+2,M12 base hold-down anchor,ISO 898-1 8.8,8,basin rim to the pad; long-wall spacing (count from the model),8.8 on carbon steel per the plan grade rule (anchor is not a wetted part)

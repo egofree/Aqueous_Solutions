@@ -1,23 +1,279 @@
 {
-  "shell_bbox_mm": [
+  "bbox_mm": [
     30100.0,
     10100.0,
     700.0
   ],
-  "envelope_mm": [
-    30100,
-    10100,
-    700
+  "inside_size_mm": true,
+  "size_mm": [
+    30100.0,
+    10100.0,
+    700.0
   ],
-  "inside_size_mm_shell": true,
-  "solids": 1,
+  "size_basis": "300 m2 raceway at the A-M-420 revision, 400 mm water + 100 freeboard + 200 berm: a lined civil basin, HDPE/EPDM (X-FARM sec3)",
+  "graph_revision": "AD",
+  "solids": 2,
   "all_parts_valid": true,
-  "material_class": "HDPE",
-  "form": "tray",
-  "mass_kg": {
-    "basin_shell": 3414.9,
-    "liner": 1440.2
+  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the rebuild fills the node box 30100 x 10100 x 700 flush)",
+  "cad_stl_bbox_mm": [
+    30.1,
+    10.1,
+    0.7
+  ],
+  "machine": {
+    "type": "duckweed raceway (Lemna minor, azolla co-culture; A-M-420): 30100 x 10100 x 700 HDPE civil basin with the EPDM liner sheet 5 mm floor and walls, 400 mm water + 100 freeboard + 200 berm (size_note)",
+    "a_farm": "the raceway is drawn at the node box flush; the liner and the drain are drawn",
+    "water_line": "400 mm is the size_note water line - the water and the duckweed mat are process inventory, not BOM parts",
+    "flow_layout": "the raceway flow layout (baffles, paddlewheel) has no node layout - not drawn (hold, WORK_ORDER W12)",
+    "material": "HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.",
+    "ca_mm": 0.0
   },
-  "empty_kg": 4855.1,
-  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 80.0,
+      "drawn_height_mm": 80.0,
+      "xy_mm": [
+        15084.1,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "nutrient water",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN50",
+      "face": "-Y",
+      "height_mm": 80.0,
+      "drawn_height_mm": 80.0,
+      "xy_mm": [
+        15035.4,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "nitrate water",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 300.0,
+      "drawn_height_mm": 300.0,
+      "xy_mm": [
+        15006.0,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "duckweed",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 300.0,
+      "drawn_height_mm": 300.0,
+      "xy_mm": [
+        15035.3,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "duckweed",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 300.0,
+      "drawn_height_mm": 300.0,
+      "xy_mm": [
+        15064.6,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "duckweed",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 300.0,
+      "drawn_height_mm": 300.0,
+      "xy_mm": [
+        15093.9,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "duckweed reserve",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        15050.0,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 400.0,
+      "drawn_height_mm": 700.0,
+      "xy_mm": [
+        15050.0,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 400 predates the build height 700 - drawn flush at the envelope top (hold, W12)"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        15064.6,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "loop water to the duckweed raceway (polisher + feed crop)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        14962.1,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "polished loop water return (2.2 kg/d duckweed growth drawn from the loop)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N11": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        14991.4,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "fresh duckweed: tilapia ration (dry-equivalent, 1.5 % BW)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N12": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        15020.7,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "duckweed: layer ration base (dry-equivalent)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N13": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        15050.0,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "duckweed/larvae quail ration (dry-equivalent)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N14": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        15079.3,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "fresh duckweed forage (ad lib)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N15": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        15108.6,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "fresh duckweed to formulation (layers + quail + reserve draw)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N16": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        15137.9,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "human-grade fresh duckweed greens to the galley",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N17": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        15035.4,
+        5050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "mineral nitrate solution to the raceway",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    }
+  },
+  "nozzle_count_schedule": 17,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15/DN50, no flange class, atmospheric tube or hose); N1 in on -Y at z 80 with N2 beside it (DN50), N9/N17 in on -Y at z 160; N3-N6 out on +Y at z 300 (the water-line harvest class), N10-N16 out on +Y at z 600; N7 drain flush at the envelope bottom; N8 vent flush at the envelope top (schedule z 400 predates the 700 box - stale datum, hold W12); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "basin_shell": 3414.9,
+    "liner": 1962.8,
+    "nozzles": 0.2
+  },
+  "cadquery": "2.8.0"
 }
