@@ -13,7 +13,7 @@ The AQS-PID-001 series (unit P&amp;IDs) is appended by `docs-authority/_pid_shee
 | AQS-DWG-PFD-EFD-ELEC | Electrical flow diagram | flow diagram (ISO_10628_2) | d73f475f | flow_graph/views/efd-elec.svg |
 | AQS-DWG-PFD-EFD-ESS | Energy storage flow diagram | flow diagram (ISO_10628_2) | a31ce87a | flow_graph/views/efd-ess.svg |
 | AQS-DWG-PFD-EFD-THERMAL | Thermal flow diagram | flow diagram (ISO_10628_2) | e86a7014 | flow_graph/views/efd-thermal.svg |
-| AQS-DWG-PFD-MFD | Mass flow diagram | flow diagram (ISO_10628_2) | 65fb1c06 | flow_graph/views/mfd.svg |
+| AQS-DWG-PFD-MFD | Mass flow diagram | flow diagram (ISO_10628_2) | d36e0da0 | flow_graph/views/mfd.svg |
 | AQS-DWG-PFD-PFD | Process flow diagram | flow diagram (ISO_10628_2) | 62c27120 | flow_graph/views/pfd.svg |
 | AQS-INV-005-MF-01 | Motor family MF-01 assembly | assembly drawing | 33535f5f | models/motors/MF-01/export/drawing.svg |
 | AQS-INV-005-MF-02 | Motor family MF-02 assembly | assembly drawing | e97ebaea | models/motors/MF-02/export/drawing.svg |
@@ -80,14 +80,14 @@ The AQS-PID-001 series (unit P&amp;IDs) is appended by `docs-authority/_pid_shee
 | AQS-MFG-AQUA_TANK-PT2_LID | AQUA_TANK fabrication drawing PT2_LID (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | f226025e | models/mfg/AQUA_TANK/drawings/pt2_lid.svg |
 | AQS-MFG-AQUA_TANK-PT3_LINER | AQUA_TANK fabrication drawing PT3_LINER (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | daf15705 | models/mfg/AQUA_TANK/drawings/pt3_liner.svg |
 | AQS-MFG-AQUA_TANK-PT4_NOZZLES | AQUA_TANK fabrication drawing PT4_NOZZLES (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 952d0772 | models/mfg/AQUA_TANK/drawings/pt4_nozzles.svg |
-| AQS-MFG-AQUA_UV-GA_FRONT | AQUA_UV fabrication drawing GA_FRONT (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 5dc9f3e2 | models/mfg/AQUA_UV/drawings/ga_front.svg |
-| AQS-MFG-AQUA_UV-GA_SIDE | AQUA_UV fabrication drawing GA_SIDE (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 0a8ab883 | models/mfg/AQUA_UV/drawings/ga_side.svg |
-| AQS-MFG-AQUA_UV-ISO01 | AQUA_UV fabrication drawing ISO01 (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | a54f9770 | models/mfg/AQUA_UV/drawings/iso01.svg |
-| AQS-MFG-AQUA_UV-PLAN | AQUA_UV fabrication drawing PLAN (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | ee2fd302 | models/mfg/AQUA_UV/drawings/plan.svg |
+| AQS-MFG-AQUA_UV-GA_FRONT | AQUA_UV fabrication drawing GA_FRONT (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | c9fea1ae | models/mfg/AQUA_UV/drawings/ga_front.svg |
+| AQS-MFG-AQUA_UV-GA_SIDE | AQUA_UV fabrication drawing GA_SIDE (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 98a3ead3 | models/mfg/AQUA_UV/drawings/ga_side.svg |
+| AQS-MFG-AQUA_UV-ISO01 | AQUA_UV fabrication drawing ISO01 (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 3011c56e | models/mfg/AQUA_UV/drawings/iso01.svg |
+| AQS-MFG-AQUA_UV-PLAN | AQUA_UV fabrication drawing PLAN (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 0cdd08d1 | models/mfg/AQUA_UV/drawings/plan.svg |
 | AQS-MFG-AQUA_UV-PT1_CABINET_SHELL | AQUA_UV fabrication drawing PT1_CABINET_SHELL (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | f20d3666 | models/mfg/AQUA_UV/drawings/pt1_cabinet_shell.svg |
 | AQS-MFG-AQUA_UV-PT2_TOP | AQUA_UV fabrication drawing PT2_TOP (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 5a80b45d | models/mfg/AQUA_UV/drawings/pt2_top.svg |
-| AQS-MFG-AQUA_UV-PT3_REACTOR_TUBE | AQUA_UV fabrication drawing PT3_REACTOR_TUBE (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | ea826f83 | models/mfg/AQUA_UV/drawings/pt3_reactor_tube.svg |
-| AQS-MFG-AQUA_UV-PT4_DETAIL_4 | AQUA_UV fabrication drawing PT4_DETAIL_4 (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | c1faed7c | models/mfg/AQUA_UV/drawings/pt4_detail_4.svg |
+| AQS-MFG-AQUA_UV-PT3_REACTOR_TUBE | AQUA_UV fabrication drawing PT3_REACTOR_TUBE (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 64f3f0fc | models/mfg/AQUA_UV/drawings/pt3_reactor_tube.svg |
+| AQS-MFG-AQUA_UV-PT4_QUARTZ_SLEEVE | AQUA_UV fabrication drawing PT4_QUARTZ_SLEEVE (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 3621e982 | models/mfg/AQUA_UV/drawings/pt4_quartz_sleeve.svg |
 | AQS-MFG-BACKUP_GEN-GA_FRONT | BACKUP_GEN fabrication drawing GA_FRONT (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 7517fc41 | models/mfg/BACKUP_GEN/drawings/ga_front.svg |
 | AQS-MFG-BACKUP_GEN-GA_SIDE | BACKUP_GEN fabrication drawing GA_SIDE (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 5eda9940 | models/mfg/BACKUP_GEN/drawings/ga_side.svg |
 | AQS-MFG-BACKUP_GEN-ISO01 | BACKUP_GEN fabrication drawing ISO01 (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 7eacf0b2 | models/mfg/BACKUP_GEN/drawings/iso01.svg |

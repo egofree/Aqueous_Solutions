@@ -1,4 +1,6 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,cabinet_shell,1,SS304,49.7,make,cabinet class; inline 254 nm reactor tube + control box at the 0.04 kW lamp class (A-M-428) (X-
-2,reactor_tube,1,SS304,5.7,make,cabinet class; inline 254 nm reactor tube + control box at the 0.04 kW lamp class (A-M-428) (X-
-3,top,1,SS304,5.6,make,cabinet class; inline 254 nm reactor tube + control box at the 0.04 kW lamp class (A-M-428) (X-
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"SS304 cabinet: sheet 5 mm walls and floor, 5 mm top (control box + reactor housing)",1,SS304 (duty section 3),55.300000000000004,make,size_basis verbatim (A-M-428); CA does not apply to the stainless interior loop class at ambient aquaponic temperature (AQS-STD-001)
+2,"SS304 reactor tube OD 90 x 280, wall 2 mm, on the cabinet centreline at z 250",1,SS304 (duty section 3),1.2,make,"tube diameter is a study proportion of the inline reactor class (hold, WORK_ORDER W12); tube wall is a study value"
+3,Quartz UV sleeve OD 60 x 260 inside the reactor tube,1,quartz (duty section 3),0.2,buy,"catalogue sleeve cut to length; carried at the borosilicate table row until the supplier TDS (hold, WORK_ORDER W12); fouling is the duty maintenance item (X-FARM-12 dose validation)"
+4,"UV-C lamp 254 nm, 0.04 kW lamp class, drawn as its envelope rod",1,purchased lamp (envelope),0.5,buy,rating from the node (A-M-428 sizing: 30-100 mJ/cm2 class at the 40 kg/d loop); purchased per plan rule 6
+5,"Nozzle set per docs-authority/nozzles/AQUA_UV.csv: 4 rows drawn as DN15 PP tube stubs (in z 160, out z 600, drain, vent)",4,PP loop fittings (duty section 3),0.2,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4

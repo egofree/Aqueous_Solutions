@@ -1,24 +1,99 @@
 {
-  "shell_bbox_mm": [
+  "bbox_mm": [
     400.0,
     350.0,
     750.0
   ],
-  "envelope_mm": [
-    400,
-    350,
-    750
+  "inside_size_mm": true,
+  "size_mm": [
+    400.0,
+    350.0,
+    750.0
   ],
-  "inside_size_mm_shell": true,
-  "solids": 2,
+  "size_basis": "inline 254 nm reactor tube + control box at the 0.04 kW lamp class (A-M-428) (X-FARM sec3)",
+  "graph_revision": "AD",
+  "solids": 4,
   "all_parts_valid": true,
-  "material_class": "SS304",
-  "form": "cabinet",
-  "mass_kg": {
+  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the rebuild fills the node box 400 x 350 x 750 flush)",
+  "cad_stl_bbox_mm": [
+    400.0,
+    350.0,
+    750.0
+  ],
+  "machine": {
+    "type": "optional UV-C 254 nm loop sanitizer between the biofilter and the growbeds (A-M-428; AQUA_BYPASS normally engaged): SS304 cabinet 400 x 350 x 750 with the reactor train on the centreline - SS304 tube OD 90 x 280 (wall 2 mm study), quartz sleeve OD 60 x 260, and the 0.04 kW lamp as its envelope rod (purchased, plan rule 6)",
+    "a_mach": "the purchased lamp is named with the rating from the node (254 nm, 0.04 kW lamp class, A-M-428) and drawn as its envelope; the cabinet is the guard and the base anchors are drawn",
+    "modes": "normal = bypassed; food-safety mode = inline (A-M-427); contamination response = inline (node design) - the duty sheet carries the wetted-time caveat",
+    "material": "SS304 reactor tube with a quartz UV sleeve, PP loop fittings, EPDM gasket class",
+    "ca_mm": 0.0
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        200.0,
+        175.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "nitrified water to the optional sanitizer (NO3- passes; sloughed cells die in food-safety mode)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        200.0,
+        175.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "sanitized loop water to the growbeds (food-safety/contingency mode)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        200.0,
+        175.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 750.0,
+      "xy_mm": [
+        200.0,
+        175.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 predates the build height 750 - drawn flush at the envelope top (hold, W12)"
+    }
+  },
+  "nozzle_count_schedule": 4,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); N1 in on -Y at z 160, N2 out on +Y at z 600; N3 drain flush at the envelope bottom; N4 vent flush at the envelope top (schedule z 800 predates the 750 box - stale datum, hold W12); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
     "cabinet_shell": 49.7,
     "top": 5.6,
-    "reactor_tube": 5.7
+    "reactor_tube": 1.2,
+    "quartz_sleeve": 0.2,
+    "uv_lamp": 0.5,
+    "nozzles": 0.2
   },
-  "empty_kg": 61.0,
-  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+  "cadquery": "2.8.0"
 }
