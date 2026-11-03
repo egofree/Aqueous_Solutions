@@ -1,5 +1,5 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,100,1595 points / 16
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,100,1591 points / 16
 CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,847,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 176 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
@@ -3003,16 +3003,12 @@ PUMPED_HYDRO,HYDRO,HYDRO_SET,instrument,pressure transmitter,0-10 bar,"ceramic d
 PUMPED_HYDRO,HYDRO,HYDRO_SET,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 PUMPED_HYDRO,HYDRO,HYDRO_SET,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 PUMPED_HYDRO,HYDRO,HYDRO_SET,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: pump-turbine motor-generator (induction IE3, IEC 100L: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
-WTR,BMED_CRU,BMED_UPW_POLISH,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump IA-UPW-FAB to FAB_UPW_TANK (BLDC, 42 mm: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-WTR,BMED_CRU,BMED_UPW_POLISH,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump IA-UPW-REJ to LEACH_CSTR_1 (BLDC, 42 mm: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-WTR,BMED_CRU,BMED_UPW_POLISH,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump IA-UPW-REMIN to REMIN (BLDC, 42 mm (NEM: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-WTR,BMED_CRU,BMED_UPW_POLISH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump IA-UPW-FAB to FAB_UPW_TANK (BLDC, 42 mm: run and fault (assumed)"
-WTR,BMED_CRU,BMED_UPW_POLISH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump IA-UPW-REJ to LEACH_CSTR_1 (BLDC, 42 mm: run and fault (assumed)"
-WTR,BMED_CRU,BMED_UPW_POLISH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump IA-UPW-REMIN to REMIN (BLDC, 42 mm (NEM: run and fault (assumed)"
-WTR,BMED_CRU,BMED_UPW_POLISH,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump IA-UPW-FAB to FAB_UPW_TANK (BLDC, 42 mm (assumed VFD at >= 0.75 kW)"
-WTR,BMED_CRU,BMED_UPW_POLISH,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump IA-UPW-REJ to LEACH_CSTR_1 (BLDC, 42 mm (assumed VFD at >= 0.75 kW)"
-WTR,BMED_CRU,BMED_UPW_POLISH,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump IA-UPW-REMIN to REMIN (BLDC, 42 mm (NEM (assumed VFD at >= 0.75 kW)"
-WTR,BMED_CRU,BMED_UPW_POLISH,fabricated part,fabricated part set,38 BOM lines,models/mfg/BMED_UPW_POLISH/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+WTR,BMED_CRU,BMED_UPW_POLISH,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"RO pump envelope: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
+WTR,BMED_CRU,BMED_UPW_POLISH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,RO pump envelope: run and fault (assumed)
+WTR,BMED_CRU,BMED_UPW_POLISH,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,RO pump envelope (assumed VFD at >= 0.75 kW)
+WTR,BMED_CRU,BMED_UPW_POLISH,fabricated part,fabricated part set,8 BOM lines,models/mfg/BMED_UPW_POLISH/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+WTR,BMED_CRU,BMED_UPW_POLISH,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,8,models/mfg/BMED_UPW_POLISH/fasteners.csv
+WTR,BMED_CRU,BMED_UPW_POLISH,fastener,M8 module-clip bolt,M8 module-clip bolt,ISO 3506 A4-70,8,models/mfg/BMED_UPW_POLISH/fasteners.csv
 WTR,BMED_CRU,BMED_UPW_POLISH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,70,S01: 2 per support (assumed)
 WTR,BMED_CRU,BMED_UPW_POLISH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,46,IA-UPW-FAB: 2 per support (assumed)
 WTR,BMED_CRU,BMED_UPW_POLISH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,78,IA-UPW-REMIN: 2 per support (assumed)
@@ -3026,11 +3022,7 @@ WTR,BMED_CRU,BMED_UPW_POLISH,instrument,level transmitter,radar 80 GHz,"IEC 6282
 WTR,BMED_CRU,BMED_UPW_POLISH,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 WTR,BMED_CRU,BMED_UPW_POLISH,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WTR,BMED_CRU,BMED_UPW_POLISH,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-WTR,BMED_CRU,BMED_UPW_POLISH,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-WTR,BMED_CRU,BMED_UPW_POLISH,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-WTR,BMED_CRU,BMED_UPW_POLISH,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump IA-UPW-FAB to FAB_UPW_TANK (BLDC, 42 mm: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
-WTR,BMED_CRU,BMED_UPW_POLISH,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump IA-UPW-REJ to LEACH_CSTR_1 (BLDC, 42 mm: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
-WTR,BMED_CRU,BMED_UPW_POLISH,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump IA-UPW-REMIN to REMIN (BLDC, 42 mm (NEM: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
+WTR,BMED_CRU,BMED_UPW_POLISH,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,RO pump envelope: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 WTR,BMED_CRU,BMED_UPW_POLISH,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",35,S01: AQS-PIP-005 span count
 WTR,BMED_CRU,BMED_UPW_POLISH,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",23,IA-UPW-FAB: AQS-PIP-005 span count
 WTR,BMED_CRU,BMED_UPW_POLISH,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",39,IA-UPW-REMIN: AQS-PIP-005 span count

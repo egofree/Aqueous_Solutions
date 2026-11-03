@@ -1,39 +1,9 @@
-item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/BMED_UPW_POLISH.md
-2,Process nozzle DN15,5,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
-3,"Motor: transfer pump IA-UPW-FAB to FAB_UPW_TANK (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-4,"Motor: transfer pump IA-UPW-REJ to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-5,"Motor: transfer pump IA-UPW-REMIN to REMIN (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-6,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-7,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-8,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-9,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-10,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-11,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-12,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-13,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-14,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-15,fastener: anchor bolt M10,70,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-16,fastener: anchor bolt M10,46,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-17,fastener: anchor bolt M10,78,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-18,fastener: anchor bolt M10,62,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-19,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-20,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-21,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-22,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-23,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-24,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-25,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-26,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-27,support: pipe clamp DN15,35,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-28,support: pipe clamp DN15,23,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-29,support: pipe clamp DN15,39,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-30,support: pipe clamp DN15,31,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-31,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-32,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
-33,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-34,valve: check valve DN15,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
-35,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
-36,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
-37,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
-38,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Skid deck 912 x 512 x 20 over the plinth 1000 x 600 x 20,1,carbon steel (ASTM A500),167.51,make,AQS-MOD-002 dry service; dry structure outside the wetted 316L hardware
+2,"Hold-down/guard frame pinning the 1000 x 600 x 800 envelope (40 x 40 posts, top rails)",1,carbon steel (ASTM A500),76.36,make,HX8 hold-down idiom (X-PAR-04); A-MACH guard; anchors in fasteners.csv
+3,"Flat-sheet TFC RO module envelopes, 120 dia x 500 (2 off, one per train)",2,purchased module (envelope),113.04,buy,"node design: membrane_m2 0.2652, modules 2, feed 6.859 bar, recovery 0.9547; A-M-176 basis 0.27 m2/module at 6.9 bar, rejection 0.98; module internals are the X-MFG-34 design task (plan rule 6 envelope, hold W12)"
+4,"EDI stack envelopes, 150 x 150 x 400 (2 off, one per train)",2,purchased module (envelope),141.3,buy,node design EDI_A 0.00973 A / EDI_kW 0.000389; A-M-176 basis 10 cell pairs at 4 V; X-MFG-34 design task (hold W12)
+5,UV-TOC lamp envelope,1,purchased lamp (quartz sleeve),0.8,buy,"node design UV_kW 0.015 (15 W; A-M-176 basis); purchased per plan rule 6, rating from the node"
+6,RO pump envelope,1,purchased pump (envelope),16.96,buy,"node continuous-kW note: RO pump 2.6 W at the 6.859 bar feed (design block); purchased per plan rule 6, rating from the node"
+7,Potable bypass run DN25 Sch 40 with risers (the potable share bypasses RO/EDI),1,316L tube,7.21,make,"node internals row 'potable bypass' and design bypass_kg_d 206.77; A-M-176: the potable share bypasses, 2 x 100 % trains"
+8,"Nozzle set per docs-authority/nozzles/BMED_UPW_POLISH.csv: N1 DN50 in on -Y, the four product/reject rows on +Y, drain and vent flush at the envelope faces",7,316L tube,0.76,make,7-row issued schedule verbatim; atmospheric hose per duty section 4

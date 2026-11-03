@@ -33,7 +33,12 @@
   "UV_kW": 0.015,
   "total_kW": 0.01803555742909093,
   "kWh_per_m3": 3.2461065645922726,
-  "kWh_per_m3_RO_EDI": 0.5463508924805983
+  "kWh_per_m3_RO_EDI": 0.5463508924805983,
+  "service": "BMED_UPW_POLISH: RO/EDI polish of VCD distillate to UPW - 2 x 100 % trains (flat-sheet TFC RO then EDI, UV-TOC on the product), potable share bypasses; reject to the water line (node internals row and design block; X-MFG-34, A-M-176, AQS-DUTY-070)",
+  "material": "316L",
+  "ca_mm": 0.0,
+  "material_basis": "duty section 3: 316L where the stream is wet (UPW service); CA 0 mm (AQS-STD-001)",
+  "vendor_basis": "A-M-072 RO 3.0 / EDI 0.5 kWh/m3 vendor-class energy bases - replaced by the X-MFG-34 in-house design and bench test (hold, WORK_ORDER W12)"
  },
  "nozzles": [
   {
@@ -97,5 +102,84 @@
  "acceptance_sets": [
   "A-core",
   "A-MACH"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "deck_mm": [
+   44.0,
+   44.0,
+   20.0,
+   912.0,
+   512.0,
+   20.0
+  ],
+  "plinth_mm": 20.0,
+  "internals_mm": {
+   "ro1": [
+    140.0,
+    120.0,
+    40.0,
+    120.0,
+    120.0,
+    500.0
+   ],
+   "ro2": [
+    300.0,
+    120.0,
+    40.0,
+    120.0,
+    120.0,
+    500.0
+   ],
+   "edi1": [
+    470.0,
+    120.0,
+    40.0,
+    150.0,
+    150.0,
+    400.0
+   ],
+   "edi2": [
+    650.0,
+    120.0,
+    40.0,
+    150.0,
+    150.0,
+    400.0
+   ],
+   "uv_lamp": [
+    470.0,
+    330.0,
+    40.0,
+    400.0,
+    30.0,
+    30.0
+   ],
+   "ro_pump": [
+    60.0,
+    400.0,
+    40.0,
+    120.0,
+    120.0,
+    150.0
+   ]
+  },
+  "bypass_run_mm": {
+   "y": 470.0,
+   "z": 260.0,
+   "dn": "DN25"
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; internals on the deck per params.envelope.internals_mm (RO x 140/300, EDI x 470/650, UV lamp x 470..870 at y 330, pump x 60..180 at y 400); hold-down posts at the envelope corners",
+  "bypass": "DN25 run at y 470, z 260 along x 80..920 with risers to the deck at both ends",
+  "supports": "plinth + deck + hold-down frame + 8 slab anchors; module clip rail (A-MACH)",
+  "nozzle_spread": "the schedule gives face and height only; ports pack in one row per face/height group from x 150, 8 mm clear at the bore; drain at x 430, vent at x 570; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

@@ -1,0 +1,119 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 7,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "UPW polish skid per the node internals row and design block (X-MFG-34, A-M-176, AQS-DUTY-070): 2 flat-sheet TFC RO module envelopes (membrane_m2 0.2652, feed 6.859 bar, recovery 0.9547 per the node design; A-M-176 basis 0.27 m2/module at 6.9 bar), 2 EDI stack envelopes (EDI_A 0.00973 A / 0.39 W; A-M-176 basis 10 cell pairs at 4 V), the UV-TOC lamp envelope (15 W), the RO pump envelope (2.6 W), and the potable bypass run (bypass_kg_d 206.77, the potable share bypasses RO/EDI, 2 x 100 % trains per A-M-176)",
+    "internals_solid": "every named internal is a solid envelope per plan rule 6; the module internals are the X-MFG-34 in-house design task and are not invented (hold, WORK_ORDER W12)",
+    "vendor_basis_hold": "A-M-072 (RO 3.0 / EDI 0.5 kWh/m3) is the vendor-class energy basis, replaced by the X-MFG-34 in-house design and bench test - named hold, WORK_ORDER W12",
+    "material": "316L",
+    "ca_mm": 0.0,
+    "material_basis": "duty section 3: 316L where the stream is wet (UPW service); CA 0 mm (AQS-STD-001)",
+    "guard": "hold-down frame (40 x 40 posts, top rails) on the 20 mm plinth is the A-MACH guard + 8 slab anchors (fasteners.csv)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN50",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 150.0,
+      "schedule_rating": "Class 150",
+      "service": "VCD distillate",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 99.8,
+      "schedule_rating": "Class 150",
+      "service": "UPW",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 141.6,
+      "schedule_rating": "Class 150",
+      "service": "fab UPW",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 177.1,
+      "schedule_rating": "Class 150",
+      "service": "remineralizer",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 206.4,
+      "schedule_rating": "Class 150",
+      "service": "polish reject",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm is the box top"
+    }
+  },
+  "nozzle_count_schedule": 7,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: atmospheric joints are hose, bore not calculated); N1 DN50 VCD distillate in on -Y at z 160; the four product/reject rows on +Y at z 600; drain and vent flush at the envelope faces; the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "deck": 73.31,
+    "frame": 76.36,
+    "ro_modules": 113.04,
+    "edi_stacks": 141.3,
+    "uv_lamp": 0.8,
+    "ro_pump": 16.96,
+    "bypass": 7.21,
+    "nozzles": 0.76
+  },
+  "cadquery": "2.8.0"
+}
