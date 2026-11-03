@@ -30,7 +30,7 @@ Table 1.1. Induction first-article dimensions
 | MF-09 | 0.18 | 4 | 59.23 | 0.228 | 33 | 24/22 | 86.0 | 14.57 | 3.73 | 7.6 | 107 / 103.6 | 24.3 | 1.0 | 190 |
 | MF-10 | 0.55 | 4 | 75.25 | 0.255 | 52 | 24/22 | 139.6 | 18.59 | 4.74 | 9.66 | 136 / 131.8 | 30.9 | 3.0 | 9 |
 | MF-11 | 2.2 | 4 | 94.31 | 0.31 | 81 | 36/28 | 167.9 | 25.85 | 3.96 | 12.11 | 170 / 170.2 | 45.6 | 12.0 | 5 |
-| MF-12 | 0.12 | 4 | 52.22 | 0.221 | 29 | 24/22 | 76.9 | 14.28 | 3.29 | 6.7 | 95 / 94.2 | 21.5 | 0.7 | 2 |
+| MF-12 | 0.12 | 4 | 52.22 | 0.221 | 29 | 24/22 | 76.9 | 14.28 | 3.29 | 6.7 | 95 / 94.2 | 21.5 | 0.7 | 1 |
 | MF-13 | 0.25 | 4 | 64.23 | 0.235 | 36 | 24/22 | 103.4 | 16.08 | 4.05 | 8.25 | 117 / 112.9 | 26.5 | 1.4 | 2 |
 | MF-14 | 7.5 | 4 | 123.39 | 0.393 | 147 | 36/28 | 180.5 | 23.71 | 5.19 | 15.85 | 224 / 202.5 | 62.9 | 41.0 | 3 |
 | MF-15 | 4.0 | 4 | 105.35 | 0.346 | 111 | 36/28 | 173.0 | 25.01 | 4.43 | 13.53 | 190 / 182.4 | 53.4 | 21.9 | 1 |
@@ -47,7 +47,7 @@ Table 2.1. Other motor families
 
 | Family | Type | Rating | Items | First article |
 |---|---|---|---|---|
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 65 | stator stack + bonded NdFeB rotor, hall board; back-EMF constant and torque constant on the rig |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 67 | stator stack + bonded NdFeB rotor, hall board; back-EMF constant and torque constant on the rig |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 55 | stator stack + bonded NdFeB rotor, hall board; back-EMF constant and torque constant on the rig |
 | MF-17 | solenoid | ISO 15218 coil, 22 mm | 19 | bobbin coil, plunger and frame; pull-in and drop-out voltage, coil temperature rise at 110 % V |
 | MF-19 | stepper | NEMA 34 (86 mm) | 3 | hybrid stepper stack, 1.8 deg; holding torque and pull-out torque curve |

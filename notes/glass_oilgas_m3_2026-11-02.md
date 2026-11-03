@@ -87,3 +87,26 @@ never resized.
   make-or-buy, fasteners, build log acceptance line, check.json. Added to the
   tracker ACCEPTED row set; tracker and full regen run; `--check` and
   `check_all` green.
+
+## GLASS_DIGEST (NaOH cullet digestor, GLASS, tier 6) — commit 4 (M2 close-out)
+
+- `models/mfg/GLASS_DIGEST/glass_digest.py` on the shared lib. Route F-VES,
+  acceptance A-core + A-VES. Build 460 × 700 × 900 mm inside the 700 × 700 ×
+  900 node envelope; one closed manifold mesh; `cad/stl/GLASS_DIGEST.stl`
+  replaced from the build; `tracker --check GLASS_DIGEST` green.
+- Close-out per the HX8 close pattern: the Oct-31-era `reactors.py` study
+  build (M2) verified through the current shared lib — the issued X-MFG-31
+  construction (CPVC OD 400 × wall 4 × H 400, bolted lid, 4 legs, PBT D133
+  agitator at 358 rpm with 0.09 kW gearmotor envelope, Q3 PVDF DN15 coil)
+  carried through the lib, the 12-row issued schedule replacing the 5-row
+  study layout, placeholder datums clamped into the shell span (holds), and
+  the section 5 artifacts completed: WORK_ORDER W1–W12 (the old 4-line route
+  note superseded), BOM with make-or-buy and mass, fasteners via the lib,
+  check.json, build log acceptance line, 7-sheet drawing set (the stale
+  envelope-era sheets superseded), duty §7 pointer, tracker ACCEPTED row.
+- A-VES report: model shell volume 48.3 L against the node V_L 49.9724 L
+  (V_work 37.4793, tau 22.5014 h); no residence claim added. Duty section 3
+  names 316L, the node design names CPVC — conflict carried as a hold
+  (W12), nothing resized. The N4 schedule row quoting repaired ("digest
+  NaOH, 20 wt%" — unquoted comma shifted face and height). Tracker and full
+  regen run; `--check` and `check_all` green.

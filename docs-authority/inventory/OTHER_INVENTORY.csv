@@ -1,6 +1,6 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,100,1585 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,845,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,100,1589 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,847,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 175 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: run and fault (assumed)"
@@ -1996,21 +1996,27 @@ GEO,heat_pump,GEO_HP,instrument,temperature element,Pt100 class A,"IEC 60751, 31
 GEO,heat_pump,GEO_HP,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 GEO,orc,GEO_ORC,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 GEO,orc,GEO_ORC,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-GLASS,OIL_GLASS,GLASS_DIGEST,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Top-entry agitator, 4-blade 45 deg PBT D133 at 358 rpm, 0.09: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-GLASS,OIL_GLASS,GLASS_DIGEST,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Top-entry agitator, 4-blade 45 deg PBT D133 at 358 rpm, 0.09: run and fault (assumed)"
-GLASS,OIL_GLASS,GLASS_DIGEST,electronics,motor starter (contactor + overload),0.12 kW,IEC 60947-4-1,1,"Top-entry agitator, 4-blade 45 deg PBT D133 at 358 rpm, 0.09 (assumed VFD at >= 0.75 kW)"
-GLASS,OIL_GLASS,GLASS_DIGEST,fabricated part,fabricated part set,6 BOM lines,models/mfg/GLASS_DIGEST/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+GLASS,OIL_GLASS,GLASS_DIGEST,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-DIG-LIQ to LEACH_CSTR_1 (assumed size)
+GLASS,OIL_GLASS,GLASS_DIGEST,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-SIL-SRC to WS_SLURRY (assumed size)
+GLASS,OIL_GLASS,GLASS_DIGEST,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-DIG-LIQ to LEACH_CSTR_1
+GLASS,OIL_GLASS,GLASS_DIGEST,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-SIL-SRC to WS_SLURRY
+GLASS,OIL_GLASS,GLASS_DIGEST,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-DIG-LIQ to LEACH_CSTR_1: run and fault (assumed)
+GLASS,OIL_GLASS,GLASS_DIGEST,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-SIL-SRC to WS_SLURRY: run and fault (assumed)
+GLASS,OIL_GLASS,GLASS_DIGEST,fabricated part,fabricated part set,7 BOM lines,models/mfg/GLASS_DIGEST/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+GLASS,OIL_GLASS,GLASS_DIGEST,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,4,models/mfg/GLASS_DIGEST/fasteners.csv
 GLASS,OIL_GLASS,GLASS_DIGEST,fastener,M10 x 40 lid bolt,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-70,12,models/mfg/GLASS_DIGEST/fasteners.csv
-GLASS,OIL_GLASS,GLASS_DIGEST,fastener,M12 anchor,M12 anchor,ISO 3506 A4-70,4,models/mfg/GLASS_DIGEST/fasteners.csv
 GLASS,OIL_GLASS,GLASS_DIGEST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-DIG-LIQ: 2 per support (assumed)
 GLASS,OIL_GLASS,GLASS_DIGEST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-SIL-SRC: 2 per support (assumed)
+GLASS,OIL_GLASS,GLASS_DIGEST,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-DIG-LIQ: pumped line (assumed)
+GLASS,OIL_GLASS,GLASS_DIGEST,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-SIL-SRC: pumped line (assumed)
 GLASS,OIL_GLASS,GLASS_DIGEST,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 GLASS,OIL_GLASS,GLASS_DIGEST,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 GLASS,OIL_GLASS,GLASS_DIGEST,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 GLASS,OIL_GLASS,GLASS_DIGEST,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-GLASS,OIL_GLASS,GLASS_DIGEST,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 GLASS,OIL_GLASS,GLASS_DIGEST,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",17,IA-DIG-LIQ: AQS-PIP-005 span count
 GLASS,OIL_GLASS,GLASS_DIGEST,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-SIL-SRC: AQS-PIP-005 span count
+GLASS,OIL_GLASS,GLASS_DIGEST,valve,check valve,DN15,"CPVC true-union swing/ball check valve, FKM seals",1,IA-DIG-LIQ: pump discharge (assumed)
+GLASS,OIL_GLASS,GLASS_DIGEST,valve,check valve,DN50,"PP-H swing/ball check valve, ISO 16137, EPDM seals",1,IA-SIL-SRC: pump discharge (assumed)
 GLASS,OIL_GLASS,GLASS_DIGEST,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-DIG-LIQ: one at each end nozzle (assumed)
 GLASS,OIL_GLASS,GLASS_DIGEST,valve,isolation valve,DN50,"PP-H ball valve, ISO 16135, EPDM seals",2,IA-SIL-SRC: one at each end nozzle (assumed)
 GLASS,furnace,SI_REDUCE,fabricated part,fabricated part set,2 BOM lines,models/mfg/SI_REDUCE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory

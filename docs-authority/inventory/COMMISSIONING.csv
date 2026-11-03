@@ -95,7 +95,7 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 10,OIL,PROD_C29,pressure test as R2,5,SIF-149,5.87,
 10,OIL,PROD_C5_C10,pressure test as R2,7,SIF-150,7.42,
 11,GLASS,GLASS_BURNOUT,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",2,SIF-035,,
-11,GLASS,GLASS_DIGEST,fill or function test per AQS-QA-001 R8,4,SIF-121,21.97,solute
+11,GLASS,GLASS_DIGEST,fill or function test per AQS-QA-001 R8,6,SIF-121,21.97,solute
 11,GLASS,GLASS_MILL,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",2,SIF-034,,
 11,GLASS,GLASS_RINSE,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",2,SIF-033,,Fe HCl other_metals
 11,GLASS,SI_REDUCE,thermal or leak test at first heat-up,1,SIF-063,,

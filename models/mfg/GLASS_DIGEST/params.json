@@ -37,7 +37,18 @@
   "T_C": 85,
   "material": "CPVC (to 93 C; DVS 2205 allowable 3.0 MPa at 85 C); PVDF impeller and shaft sleeve",
   "heat": "Q3 coil HX-6 (graph HL-Q3-A/B-HX6)",
-  "kW": 0.09
+  "kW": 0.09,
+  "service": "GLASS_DIGEST: NaOH digest of burned cullet at 85 C (design T_C); silicate liquor to leach, stock to the shop, at atmospheric (duty sections 2, 4 and 6)",
+  "wall_basis": "node design wall_mm (X-MFG-31)",
+  "ca_mm": 0.0,
+  "v_shell_model_l": 48.27,
+  "v_L_node_l": 49.9724,
+  "coil": {
+   "tube": "PVDF DN15",
+   "turns": 3,
+   "radius_mm": 155.0,
+   "basis": "node design.heat 'Q3 coil HX-6' (graph HL-Q3-A/B-HX6)"
+  }
  },
  "nozzles": [
   {
@@ -68,9 +79,9 @@
    "tag": "N4",
    "size": "DN25",
    "rating": "Class 150",
-   "service": "digest NaOH",
-   "face": " 20 wt%",
-   "height_mm": null
+   "service": "digest NaOH, 20 wt%",
+   "face": "inlet",
+   "height_mm": 160
   },
   {
    "tag": "N5",
@@ -141,5 +152,32 @@
  "acceptance_sets": [
   "A-core",
   "A-VES"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   700.0,
+   700.0,
+   900.0
+  ],
+  "basis": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
+  "vessel": {
+   "od_mm": 400.0,
+   "wall_mm": 4.0,
+   "z_mm": [
+    150.0,
+    550.0
+   ],
+   "axis_mm": [
+    350.0,
+    350.0
+   ]
+  },
+  "legs_mm": 150.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; vessel axis at x 350, y 350; legs 150; shell z 150..550; lid 550..566; agitator to 696; vent riser to 900; four-post hold-down frame (40 x 40 posts + top rails) pins the envelope so the build fills the registry box (X-PAR-04)",
+  "supports": "4 CPVC legs + four-post hold-down frame + 4 slab anchors (layout choice, hold W12)",
+  "nozzle_spread": "the schedule gives face and height only; side ports pack in one row per face/height group, 12 mm clear at the bore, drawn as open-bore stubs from the shell to the envelope face; placeholder datums clamped into [175, 525]; vent riser at x 420, y 290; drain at x 390; per-tag positions in check.nozzles_drawn",
+  "close_out": "M2 close-out of the Oct-31-era reactors.py study build per the HX8 close pattern: 12-row issued schedule, lib builders, section 5 artifacts completed; nothing resized"
+ }
 }

@@ -1,0 +1,176 @@
+{
+  "bbox_mm": [
+    700.0,
+    700.0,
+    900.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    700.0,
+    700.0,
+    900.0
+  ],
+  "size_basis": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
+  "graph_revision": "AD",
+  "solids": 13,
+  "all_parts_valid": true,
+  "vessel": {
+    "type": "CPVC stirred digestor per the X-MFG-31 node design: OD 400 shell, wall 4.0, H 400, bolted lid flange, 4 legs, top-entry PBT agitator (D133, 358 rpm, 0.09 kW purchased gearmotor envelope), Q3 PVDF DN15 helical coil (3 turns, R 155)",
+    "od_mm": 400.0,
+    "wall_mm": 4.0,
+    "shell_h_mm": 400.0,
+    "material": "CPVC shell and lid (design.material; duty section 3 names 316L - conflict carried as a hold, WORK_ORDER W12); PVDF impeller and shaft sleeve; motor envelope carbon-steel frame",
+    "v_shell_model_l": 48.27,
+    "v_L_node_l": 49.9724,
+    "v_note": "model shell volume 48.3 L against the node design V_L 49.9724 L (V_work 37.4793 L, tau 22.5014 h at 85 C); reported, no new residence time derived (A-VES)",
+    "leg_mm": 150.0,
+    "leg_basis": "layout choice carried from the issued construction; the node names no support (hold, WORK_ORDER W12)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 175.0,
+      "x_mm": 362.4,
+      "schedule_rating": "Class 150",
+      "service": "HX-6 Q3 process heat (NaOH digest jacket)",
+      "note": "atmospheric open-bore tube connection, shell to the envelope face (duty section 4); schedule datum 160 mm clamped up to 175.0 mm: the datum predate the leg-mounted vessel (placeholder elevation; hold, WORK_ORDER W12)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 175.0,
+      "x_mm": 429.0,
+      "schedule_rating": "Class 150",
+      "service": "HX-6 Q3 process heat (NaOH digest jacket)",
+      "note": "atmospheric open-bore tube connection, shell to the envelope face (duty section 4); schedule datum 160 mm clamped up to 175.0 mm: the datum predate the leg-mounted vessel (placeholder elevation; hold, WORK_ORDER W12)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 175.0,
+      "x_mm": 277.2,
+      "schedule_rating": "Class 150",
+      "service": "burned cullet",
+      "note": "atmospheric open-bore tube connection, shell to the envelope face (duty section 4); schedule datum 160 mm clamped up to 175.0 mm: the datum predate the leg-mounted vessel (placeholder elevation; hold, WORK_ORDER W12)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 175.0,
+      "x_mm": 322.9,
+      "schedule_rating": "Class 150",
+      "service": "digest NaOH, 20 wt%",
+      "note": "atmospheric open-bore tube connection, shell to the envelope face (duty section 4); schedule datum 160 mm clamped up to 175.0 mm: the datum predate the leg-mounted vessel (placeholder elevation; hold, WORK_ORDER W12)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 525.0,
+      "x_mm": 277.2,
+      "schedule_rating": "Class 150",
+      "service": "glass and ceramic stock",
+      "note": "atmospheric open-bore tube connection, shell to the envelope face (duty section 4); schedule datum 600 mm clamped down to 525.0 mm into the shell span (placeholder elevation; hold, WORK_ORDER W12)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 525.0,
+      "x_mm": 322.9,
+      "schedule_rating": "Class 150",
+      "service": "silicate liquor",
+      "note": "atmospheric open-bore tube connection, shell to the envelope face (duty section 4); schedule datum 600 mm clamped down to 525.0 mm into the shell span (placeholder elevation; hold, WORK_ORDER W12)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 525.0,
+      "x_mm": 395.7,
+      "schedule_rating": "Class 150",
+      "service": "silicate to slurry",
+      "note": "atmospheric open-bore tube connection, shell to the envelope face (duty section 4); schedule datum 600 mm clamped down to 525.0 mm into the shell span (placeholder elevation; hold, WORK_ORDER W12)"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 525.0,
+      "x_mm": 429.0,
+      "schedule_rating": "Class 150",
+      "service": "digest reject",
+      "note": "atmospheric open-bore tube connection, shell to the envelope face (duty section 4); schedule datum 600 mm clamped down to 525.0 mm into the shell span (placeholder elevation; hold, WORK_ORDER W12)"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss, flush at the envelope bottom; 50 datum is the placeholder"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 900.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent riser stands on the lid and flushes at the envelope top; the 800 datum is the schedule placeholder"
+    },
+    "N11": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 525.0,
+      "x_mm": 362.4,
+      "schedule_rating": "Class 150",
+      "service": "glass/ceramic goods",
+      "note": "atmospheric open-bore tube connection, shell to the envelope face (duty section 4); schedule datum 600 mm clamped down to 525.0 mm into the shell span (placeholder elevation; hold, WORK_ORDER W12); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N12": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 175.0,
+      "x_mm": 395.7,
+      "schedule_rating": "Class 150",
+      "service": "digest NaOH, 20 wt%",
+      "note": "atmospheric open-bore tube connection, shell to the envelope face (duty section 4); schedule datum 160 mm clamped up to 175.0 mm: the datum predate the leg-mounted vessel (placeholder elevation; hold, WORK_ORDER W12)"
+    }
+  },
+  "nozzle_count_schedule": 12,
+  "nozzle_idiom": "atmospheric open-bore tube connections from the shell to the envelope faces (duty section 4: atmospheric tube or hose); the 12-row issued schedule replaces the 5-row study layout of the Oct-31-era build; placeholder datums clamped into the shell span [175, 525] (holds); vent riser flush at the envelope top, drain flush at the bottom; the N11 solids row drawn DN15, bore not calculated (plan W4); the schedule rating column (Class 150) carried verbatim as text, no flange drawn (no process pressure stated)",
+  "part_mass_kg": {
+    "frame": 76.36,
+    "legs": 1.49,
+    "shell": 3.83,
+    "lid": 1.13,
+    "agitator": 0.38,
+    "motor": 2.81,
+    "coil": 1.85,
+    "nozzles": 0.65
+  },
+  "cadquery": "2.8.0"
+}

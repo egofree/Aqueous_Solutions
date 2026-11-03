@@ -28,7 +28,7 @@ Table 1.1. Motor families
 
 | Family | Motor type | Size | Voltage | Count | Units | Installed shaft kW |
 | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 65 | 39 | 0.19 |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 67 | 40 | 0.19 |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 55 | 5 | 2.69 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 8 | 4 | 2.06 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 3 | 3 | 2.43 |
@@ -36,7 +36,7 @@ Table 1.1. Motor families
 | MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 190 | 46 | 22.80 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 9 | 8 | 3.33 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 5 | 5 | 7.42 |
-| MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 2 | 2 | 0.17 |
+| MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 1 | 1 | 0.08 |
 | MF-13 | induction IE3 | IEC 71 / 0.25 kW | 208 V 3-ph | 2 | 2 | 0.36 |
 | MF-14 | induction IE3 | IEC 132M / 7.5 kW | 480 V 3-ph | 3 | 2 | 16.09 |
 | MF-15 | induction IE3 | IEC 112M / 4 kW | 480 V 3-ph | 1 | 1 | 3.48 |
@@ -201,7 +201,8 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 
 | Sub-system | Unit | Device | Motor type | Size | Shaft kW | Voltage | Duty | Speed control | Qty | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| OIL_GLASS | GLASS_DIGEST | Top-entry agitator, 4-blade 45 deg PBT D133 at 358 rpm, 0.09 | induction IE3 | IEC 63 / 0.12 kW | 0.09 | 208 V 3-ph | S1 | fixed speed | 1 | BOM (sized) |
+| OIL_GLASS | GLASS_DIGEST | transfer pump IA-DIG-LIQ to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 22.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| OIL_GLASS | GLASS_DIGEST | transfer pump IA-SIL-SRC to WS_SLURRY | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 3.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 
 ### MEOH
 

@@ -445,6 +445,8 @@ GEO_HP-PT-01,GEO_HP,GEO,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10
 GEO_HP-TE-01,GEO_HP,GEO,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),GEO_HPTE-01,PLC-GEO,band by service
 GEO_ORC-PT-01,GEO_ORC,GEO,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),GEO_ORCPT-01,PLC-GEO,no design pressure on the graph
 GEO_ORC-TE-01,GEO_ORC,GEO,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),GEO_ORCTE-01,PLC-GEO,band by service
+GLASS_DIGEST-FT-01,GLASS_DIGEST,GLASS,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-2 L/h,4-20 mA HART (AI),GLASS_DIGESTFT-01,PLC-GLASS,IA-DIG-LIQ normal 0.92 L/h
+GLASS_DIGEST-FT-02,GLASS_DIGEST,GLASS,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),GLASS_DIGESTFT-02,PLC-GLASS,IA-SIL-SRC normal 0.14 L/h
 GLASS_DIGEST-LSH-01,GLASS_DIGEST,GLASS,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),GLASS_DIGESTLSH-01,PLC-GLASS,alarm at 90 %
 GLASS_DIGEST-LT-01,GLASS_DIGEST,GLASS,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),GLASS_DIGESTLT-01,PLC-GLASS,A-M-182 liquid height
 GLASS_DIGEST-PT-01,GLASS_DIGEST,GLASS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),GLASS_DIGESTPT-01,PLC-GLASS,no design pressure on the graph

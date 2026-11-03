@@ -1,7 +1,8 @@
-item,description,qty,material,basis
-1,Shell DN400 x 400 mm x 4.0 mm wall with flat bottom,1,"CPVC sheet, rolled and extrusion-welded (DVS 2207-3)",AQS-DUTY-062 section 1
-2,Bolted flat lid with gasket,1,"CPVC sheet, rolled and extrusion-welded (DVS 2207-3)",AQS-DUTY-062
-3,Nozzles DN25: feed slurry in; NaOH in; liquor out; drain; vent,5,"CPVC sheet, rolled and extrusion-welded (DVS 2207-3)",AQS-DUTY-062
-4,Legs 40x40 x 300 mm,4,"CPVC sheet, rolled and extrusion-welded (DVS 2207-3)",study
-5,"Top-entry agitator, 4-blade 45 deg PBT D133 at 358 rpm, 0.09 kW motor, PVDF sleeve",1,PVDF / 316L,PERRY9_MIX
-6,"Q3 heating coil, PVDF tube DN15",1,PVDF,graph HL-Q3-A/B-HX6
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Shell OD 400 x wall 4 x H 400 with base head, on 4 CPVC legs 40 x 40 x 150",1,CPVC sheet (duty section 3 conflict carried; design.material X-MFG-31),5.32,make,"node design D/H/wall (AQS-DUTY-062/X-MFG-31); CA 0 mm (AQS-STD-001 polymer rule); duty section 3 names 316L - hold, WORK_ORDER W12"
+1b,"Four-post hold-down frame pinning the 700 x 700 x 900 envelope (40 x 40 posts, top rails), around the vessel",1,carbon steel (ASTM A500),76.36,make,HX8 hold-down idiom: the frame pins the registry box so the build fills the node envelope (X-PAR-04); AQS-MOD-002 dry service; anchors in fasteners.csv
+2,"Bolted lid: flange ring OD 460 x 16 with lid disc, 12-bolt circle",1,CPVC sheet,1.13,make,issued construction (reactors.py Oct-31 build carried through the lib); bolt circle in fasteners.csv
+3,"Agitator: shaft D24 with 4-blade 45 deg PBT D133 (PVDF), at 358 rpm",1,PVDF (design.material),0.38,make,"node design agitator block (D_imp, rpm, shaft_W); impeller and shaft sleeve PVDF per design.material"
+4,"Gearmotor for the agitator, 0.09 kW, with mounting ring",1,purchased unit (carbon-steel frame envelope),2.81,buy,node design motor_kW 0.09 - purchased envelope per plan rule 6; rating from the node
+5,"Q3 coil: PVDF DN15 helical coil, 3 turns R 155, per design.heat (graph HL-Q3-A/B-HX6)",1,PVDF,1.85,make,"node design.heat 'Q3 coil HX-6'; the schedule N1/N2 service text says jacket - carried verbatim, the coil is the issued construction (hold, WORK_ORDER W12)"
+6,"Nozzle set per docs-authority/nozzles/GLASS_DIGEST.csv: 12 open-bore tube connections shell-to-face (vent riser on the lid, drain boss at the bottom, N11 solids row drawn DN15 bore not calculated)",12,CPVC,0.65,make,12-row issued schedule verbatim; placeholder datums clamped into the shell span (holds); atmospheric tube per duty section 4

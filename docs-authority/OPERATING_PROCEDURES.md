@@ -105,7 +105,7 @@ Units: AFTERBURNER, C29_RECYCLE, GREASE_CA, GREASE_LI, HOPPER, OIL_DRYER, OIL_FR
 
 Units: GLASS_BURNOUT, GLASS_DIGEST, GLASS_MILL, GLASS_RINSE, SI_REDUCE.
 
-- **Normal:** 11 loops on PLC-GLASS in auto; operator rounds per shift on levels and temperatures of GLASS_DIGEST; alarm response per AQS-CTL-001.
+- **Normal:** 13 loops on PLC-GLASS in auto; operator rounds per shift on levels and temperatures of GLASS_DIGEST; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-10 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 12-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
 - **Emergency:** 5 trips: SIF-035 flow or level low-low → pump stop; SIF-121 level high-high → close feed valve / stop feed pump; SIF-034 flow or level low-low → pump stop; SIF-033 flow or level low-low → pump stop; SIF-063 flow or level low-low → pump stop. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
