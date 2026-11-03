@@ -27,7 +27,10 @@
   "formulation": "carbon / Ni non-precious M1 class (RuO2-IrO2 deferred)",
   "exhaust": "MET_AHU -> MET_SCRUB (S71-S72)",
   "recoat_loop": "IA-COAT-IN/OUT 0.02 kg/d, net zero",
-  "duty_kW": 0.0792
+  "duty_kW": 0.0792,
+  "service": "ELECTRODE_COAT: coating booth + IR cure for the EW/BMED replaceable electrodes, carbon/Ni non-precious M1 class (RuO2-IrO2 deferred); exhaust MET_AHU -> MET_SCRUB (S71-S72); recoat loop IA-COAT-IN/OUT 0.02 kg/d net zero (node design block; AQS-MFG-ELC-001 Rev D)",
+  "material": "316L wetted (coat head, tray, racks); CS hood and frame",
+  "material_basis": "duty section 3: 316L where the stream is wet (coating slurry); CA 0 mm (AQS-STD-001)"
  },
  "nozzles": [
   {
@@ -70,5 +73,115 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class coater"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1200.0,
+   800.0,
+   1800.0
+  ],
+  "basis": "L\u00d7W\u00d7H mm, issued envelope",
+  "base_mm": [
+   1200.0,
+   800.0,
+   20.0
+  ],
+  "hood_mm": {
+   "panels": [
+    [
+     44.0,
+     745.0,
+     20.0,
+     1112.0,
+     10.0,
+     1540.0
+    ],
+    [
+     44.0,
+     44.0,
+     20.0,
+     10.0,
+     711.0,
+     1540.0
+    ],
+    [
+     1146.0,
+     44.0,
+     20.0,
+     10.0,
+     711.0,
+     1540.0
+    ],
+    [
+     44.0,
+     44.0,
+     1560.0,
+     1112.0,
+     711.0,
+     10.0
+    ]
+   ],
+   "sheet": 5.0
+  },
+  "interior_mm": {
+   "tray": [
+    48.0,
+    48.0,
+    20.0,
+    1104.0,
+    704.0,
+    15.0
+   ],
+   "spray": [
+    560.0,
+    340.0,
+    1000.0,
+    60.0,
+    60.0,
+    80.0
+   ],
+   "racks": [
+    [
+     200.0,
+     300.0,
+     700.0,
+     800.0,
+     30.0,
+     30.0
+    ],
+    [
+     200.0,
+     300.0,
+     900.0,
+     800.0,
+     30.0,
+     30.0
+    ]
+   ]
+  },
+  "purchased_mm": {
+   "cure": [
+    300.0,
+    690.0,
+    1200.0,
+    400.0,
+    50.0,
+    150.0
+   ],
+   "exhaust": [
+    450.0,
+    700.0,
+    1400.0,
+    300.0,
+    55.0,
+    160.0
+   ]
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; hood panels per params.envelope.hood_mm (open front on -Y); spray head at x 560..620, z 1000..1080; cure panel z 1200..1350; exhaust fan z 1400..1560 at the top rear; guard posts at the envelope corners",
+  "supports": "base plate + guard frame + 8 slab anchors; hood panel bolts",
+  "nozzle_spread": "the two solids rows at x 600/660 on their faces; tray drain at x 430 flush at the bottom, hood exhaust at x 770 flush at the top; per-tag notes in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

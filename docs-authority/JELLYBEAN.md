@@ -32,7 +32,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | --- | --- | --- | --- | --- |
 | M10 | U-bolt | ISO 3506 A4-70 | 2 | DIN 3570 (U-bolt) |
 | M10 | anchor | ISO 3506 A4-70 | 206 | ISO 4017 + chemical anchor (ETAG 001) |
-| M10 | anchor | ISO 898-1 8.8 | 168 | ISO 4017 + chemical anchor (ETAG 001) |
+| M10 | anchor | ISO 898-1 8.8 | 176 | ISO 4017 + chemical anchor (ETAG 001) |
 | M10 | hex bolt | ASTM A193 B8 | 8 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | hex bolt | ISO 3506 A4-70 | 126 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | hex bolt | ISO 898-1 8.8 | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -54,7 +54,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M8 | anchor | ISO 3506 A4-70 | 4 | ISO 4017 + chemical anchor (ETAG 001) |
 | M8 | anchor | ISO 898-1 8.8 | 4 | ISO 4017 + chemical anchor (ETAG 001) |
 | M8 | hex bolt | ISO 3506 A4-70 | 156 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M8 | hex bolt | ISO 898-1 8.8 | 56 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M8 | hex bolt | ISO 898-1 8.8 | 68 | ISO 4014 / ISO 4032 / ISO 7089 |
 
 ## 3. Seals and gaskets
 

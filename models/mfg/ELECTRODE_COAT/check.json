@@ -1,0 +1,84 @@
+{
+  "bbox_mm": [
+    1200.0,
+    800.0,
+    1800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1200.0,
+    800.0,
+    1800.0
+  ],
+  "size_basis": "L\u00d7W\u00d7H mm, issued envelope",
+  "graph_revision": "AD",
+  "solids": 7,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "electrode coating booth per the node design block and its equipment authority AQS-MFG-ELC-001 Rev D (named on the node note): open-front sheet-steel hood over a 316L drip tray, coat-head envelope (ELC-SPRAY-01), IR cure panel envelope (ELC-CURE-01, 1.2 kW, purchased), exhaust fan envelope (ELC-EXH-01, 0.35 kW, purchased); the formulation is the node carbon/Ni non-precious M1 class (RuO2-IrO2 deferred)",
+    "exhaust_routing": "node design line MET_AHU -> MET_SCRUB (S71-S72), named at the vent (AQS-MFG-ELC-001 section 3.2; the afterburner is not the primary treatment)",
+    "design_gap": "AQS-MFG-ELC-001: coating recipes and equipment nameplates are not designed - the coat head is an envelope, no internals invented (hold, WORK_ORDER W12)",
+    "wetted": "coat head, drip tray and rack rails 316L per duty section 3 (coating slurry); CA 0 mm (AQS-STD-001); substrates (316L-stainless or titanium mesh/plate per AQS-MFG-ELC-001 section 3) are the workpiece, not drawn",
+    "guard": "four-post guard frame (40 x 40 posts, top rails) on the base plate pins the registry box (X-PAR-04); anchors in fasteners.csv"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "tray drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 1800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "hood exhaust flush at the envelope top; the schedule datum 800 mm predates the 1800 box (hold W12); the routing is the node design line MET_AHU -> MET_SCRUB (S71-S72), destination named"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 1800.0,
+      "x_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "nickel sheet to the booth",
+      "note": "atmospheric hose joint per duty section 4; solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 1800.0,
+      "x_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "coated anode",
+      "note": "atmospheric hose joint per duty section 4; solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    }
+  },
+  "nozzle_count_schedule": 4,
+  "nozzle_idiom": "atmospheric hose joints per duty section 4; the N3/N4 solids rows are non-piped transfers drawn DN15, bore not calculated (plan W4); the N2 vent carries the hood exhaust with the MET_AHU -> MET_SCRUB destination named; the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "base": 150.72,
+    "frame": 136.65,
+    "hood": 365.98,
+    "tray": 93.27,
+    "racks": 11.52,
+    "spray": 2.3,
+    "cure": 23.55,
+    "exhaust": 20.72,
+    "nozzles": 0.23
+  },
+  "cadquery": "2.8.0"
+}

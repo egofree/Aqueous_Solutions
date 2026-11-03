@@ -1,5 +1,9 @@
-item,description,qty,material,basis
-1,Body / envelope 1200 x 800 x 1800 mm,1,316L where the stream is wet.,docs-authority/duties/ELECTRODE_COAT.md
-2,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
-3,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-4,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Base plate 1200 x 800 x 20 (ELC-BOOTH-01 booth base),1,carbon steel (ASTM A500),150.72,make (AQS-BOM-SC-001),issued envelope frame; anchors in fasteners.csv
+2,Guard frame: four 40 x 40 posts + top rails pinning the 1200 x 800 x 1800 envelope,1,carbon steel (ASTM A500),136.65,make (AQS-BOM-SC-001),machine guard practice (A-MACH hardware drawn); the frame pins the registry box (X-PAR-04)
+3,"Booth hood: back, side and top sheet panels (open front), sheet 5 (study, W12)",1,carbon steel sheet (AQS-MOD-002),365.98,make (AQS-BOM-SC-001),"booth per AQS-MFG-ELC-001 section 3.2 (metal aisle, exhaust to MET_AHU); panel sizes are the layout choice (hold, W12)"
+4,Drip tray and electrode rack rails (slurry-wetted interior),1,316L (duty section 3),104.78999999999999,make (AQS-BOM-SC-001),wetted per duty section 3 (coating slurry); CA 0 mm (AQS-STD-001)
+5,Coat head envelope on its rail (ELC-SPRAY-01),1,316L class envelope (wetted),2.3,make (AQS-BOM-SC-001),"AQS-MFG-ELC-001: coating recipes and nameplates not designed - envelope + interface per plan rule 6, no internals invented (hold, W12)"
+6,IR cure panel envelope (ELC-CURE-01),1,purchased unit (envelope),23.55,buy,"node design cure_kW 1.2 over the 1.0 h cure (campaign 2.0 h/d); purchased per plan rule 6, rating from the node"
+7,Exhaust fan envelope (ELC-EXH-01) at the hood top rear,1,purchased unit (envelope),20.72,buy,"node design exhaust_kW 0.35; routing MET_AHU -> MET_SCRUB (S71-S72) per the node design and AQS-MFG-ELC-001 section 3.2; purchased per plan rule 6, rating from the node"
+8,Nozzle set per docs-authority/nozzles/ELECTRODE_COAT.csv: tray drain and hood exhaust flush at the envelope faces; the two solids transfer rows drawn DN15 bore not calculated,4,316L (duty section 3),0.23,make (AQS-BOM-SC-001),4-row issued schedule verbatim; atmospheric hose per duty section 4

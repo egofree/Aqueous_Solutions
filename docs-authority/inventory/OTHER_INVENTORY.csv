@@ -2514,7 +2514,9 @@ MFG,ahu,MET_AHU,support,pipe clamp,DN250,"PP clamp with EPDM liner, MSS SP-58 Ty
 MFG,ahu,MET_AHU,support,pipe clamp,DN200,"PP clamp with EPDM liner, MSS SP-58 Type 7",3,S71: AQS-PIP-005 span count
 MFG,ahu,MET_AHU,valve,isolation valve,DN250,"PVC-lined ball valve in FRP service, ISO 16135",2,S62: one at each end nozzle (assumed)
 MFG,ahu,MET_AHU,valve,isolation valve,DN200,"PVC-lined ball valve in FRP service, ISO 16135",2,S71: one at each end nozzle (assumed)
-MFG,coater,ELECTRODE_COAT,fabricated part,fabricated part set,4 BOM lines,models/mfg/ELECTRODE_COAT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+MFG,coater,ELECTRODE_COAT,fabricated part,fabricated part set,8 BOM lines,models/mfg/ELECTRODE_COAT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+MFG,coater,ELECTRODE_COAT,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,8,models/mfg/ELECTRODE_COAT/fasteners.csv
+MFG,coater,ELECTRODE_COAT,fastener,M8 hood-panel bolt,M8 hood-panel bolt,ISO 898-1 8.8,12,models/mfg/ELECTRODE_COAT/fasteners.csv
 MFG,coater,ELECTRODE_COAT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 MFG,coater,ELECTRODE_COAT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 MFG,former,BLOW_MOLD,fabricated part,fabricated part set,4 BOM lines,models/mfg/BLOW_MOLD/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
