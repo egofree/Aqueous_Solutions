@@ -1,2 +1,5 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,basin_shell,1,HDPE,57.6,make,tray class; 2 m2 bin at 300 mm bedding depth (A-M-425) (X-FARM sec3)
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"HDPE bin basin: walls and floor 10 mm, 2100 x 1100 x 600 outer",1,HDPE (duty section 3),57.6,make,size_mm verbatim; A-FARM: drawn at the node box flush; CA does not apply to the polymer (AQS-STD-001)
+2,SS316 harvest screen false floor 2 mm over the bin floor (the worm tea drains below it to the N4 row),1,SS316 mesh (duty section 3),5.4,buy,hardware-cloth panel cut to size (plan rule 6); mesh carries ~0.15 of the drawn plate mass (the hardware-cloth idiom)
+3,Bedding envelope: coco-coir and shredded-paper at 300 mm (size_basis) over the screen,1,coco-coir / paper bedding,0.0,buy,"the charge is a buy row (plan rule 6); no bedding density row exists in the material table, so the mass carries 0.0 (hold, WORK_ORDER W12)"
+4,"Nozzle set per docs-authority/nozzles/VERMI_BIN.csv: 6 rows drawn as DN15 HDPE tube stubs (2 in z 160, 2 out at the rim line, drain, vent)",6,HDPE fittings,0.0,make,"schedule tags/faces/heights verbatim; the z 600 rim rows and the z 800 vent datum drawn at the envelope top (hold, WORK_ORDER W12); atmospheric per duty section 4"

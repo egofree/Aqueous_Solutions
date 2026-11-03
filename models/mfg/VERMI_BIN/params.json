@@ -88,5 +88,32 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class worm_bin"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   2100,
+   1100,
+   600
+  ],
+  "basis": "2 m2 bin at 300 mm bedding depth (A-M-425) (X-FARM sec3)",
+  "wall_mm": 10.0,
+  "bedding_depth_mm": 300.0,
+  "screen_mm": 2.0,
+  "interior_mm": [
+   2080,
+   1080
+  ],
+  "interior_area_m2": 2.25,
+  "measured_bbox_mm": [
+   2100.0,
+   1100.0,
+   600.0
+  ]
+ },
+ "layout": {
+  "frame": "origin at the bin corner; bin 2100 x 1100 x 600 outer, walls and floor 10 mm; harvest screen false floor at z 19..21; bedding to z 321; freeboard to the rim",
+  "supports": "bin plinth to the slab on 4 anchors; screen on rim ledges",
+  "nozzle_spread": "the schedule gives face and height only; inlet rows on the -Y wall at z 160, the z 600 rim rows at the top line, drain at the base centreline, vent at the top centreline; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces"
+ }
 }

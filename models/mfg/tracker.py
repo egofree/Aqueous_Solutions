@@ -172,7 +172,8 @@ ACCEPTED = ('AL_POT', 'IND_MELT', 'VAC_IND', 'VAC_CAST', 'INV_CAST', 'CONT_CAST'
             'DUCK_PEN',
             'FEED_PREP',
             'GROWBED_A',
-            'GROWBED_B')
+            'GROWBED_B',
+            'VERMI_BIN')
 
 
 # --------------------------------------------------------------------------- authorities

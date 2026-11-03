@@ -4,7 +4,7 @@ Class: worm_bin; sector FARM. Study route. Not stamped.
 Envelope: Envelope 2100×1100×600 mm;
 service line: service vermiculture bin, Eisenia fetida; bin_m2 2; basis A-M-425 (X-FARM-09); organisms Eisenia fetida (red wiggler): surface-dwelling, no 
 
-Internals: issued mfg model BOM (1 internals part row): "1,basin_shell,1,HDPE,57.6,make,tray class; 2 m2 bin at 300 mm bedding depth (A-M-425) (X-FARM sec3)" [models/mfg/VERMI_BIN/bom.csv]
+Internals: duty sheet: "The envelope is `cad/stl/VERMI_BIN.stl` (a thick-walled tray at the claimed envelope; X-PAR-04). Manufacturing" [docs-authority/duties/VERMI_BIN.md]
 Material: HDPE bin with coco-coir and shredded-paper bedding, PP working fork, SS316 harvest screen. Basis: bedding held at 70-80 % moisture near neutral pH for Eisenia fetida (graph design; A-M-425): the wet near-neutral bedding is benign to HDPE/PP and hostile to unprotected steel; no metal contact with the casting harvest Alternative: FRP bin at larger areas (same polymer-class logic as the BSFL bin). (continues on the duty sheet)
 
 Nozzles: 6 process connections per docs-authority/nozzles/VERMI_BIN.csv

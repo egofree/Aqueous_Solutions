@@ -13,7 +13,7 @@ The AQS-PID-001 series (unit P&amp;IDs) is appended by `docs-authority/_pid_shee
 | AQS-DWG-PFD-EFD-ELEC | Electrical flow diagram | flow diagram (ISO_10628_2) | d73f475f | flow_graph/views/efd-elec.svg |
 | AQS-DWG-PFD-EFD-ESS | Energy storage flow diagram | flow diagram (ISO_10628_2) | a31ce87a | flow_graph/views/efd-ess.svg |
 | AQS-DWG-PFD-EFD-THERMAL | Thermal flow diagram | flow diagram (ISO_10628_2) | e86a7014 | flow_graph/views/efd-thermal.svg |
-| AQS-DWG-PFD-MFD | Mass flow diagram | flow diagram (ISO_10628_2) | d36e0da0 | flow_graph/views/mfd.svg |
+| AQS-DWG-PFD-MFD | Mass flow diagram | flow diagram (ISO_10628_2) | 65fb1c06 | flow_graph/views/mfd.svg |
 | AQS-DWG-PFD-PFD | Process flow diagram | flow diagram (ISO_10628_2) | 62c27120 | flow_graph/views/pfd.svg |
 | AQS-INV-005-MF-01 | Motor family MF-01 assembly | assembly drawing | 33535f5f | models/motors/MF-01/export/drawing.svg |
 | AQS-INV-005-MF-02 | Motor family MF-02 assembly | assembly drawing | e97ebaea | models/motors/MF-02/export/drawing.svg |
@@ -1087,14 +1087,14 @@ The AQS-PID-001 series (unit P&amp;IDs) is appended by `docs-authority/_pid_shee
 | AQS-MFG-VDF_SYN-GA_FRONT | VDF_SYN fabrication drawing GA_FRONT (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | c3b13f2a | models/mfg/VDF_SYN/drawings/ga_front.svg |
 | AQS-MFG-VDF_SYN-GA_SIDE | VDF_SYN fabrication drawing GA_SIDE (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | d7fe8455 | models/mfg/VDF_SYN/drawings/ga_side.svg |
 | AQS-MFG-VDF_SYN-ISO01 | VDF_SYN fabrication drawing ISO01 (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | d64169aa | models/mfg/VDF_SYN/drawings/iso01.svg |
-| AQS-MFG-VERMI_BIN-GA_FRONT | VERMI_BIN fabrication drawing GA_FRONT (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | b2e3b18d | models/mfg/VERMI_BIN/drawings/ga_front.svg |
-| AQS-MFG-VERMI_BIN-GA_SIDE | VERMI_BIN fabrication drawing GA_SIDE (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 2cba0623 | models/mfg/VERMI_BIN/drawings/ga_side.svg |
-| AQS-MFG-VERMI_BIN-ISO01 | VERMI_BIN fabrication drawing ISO01 (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 6a1c9558 | models/mfg/VERMI_BIN/drawings/iso01.svg |
-| AQS-MFG-VERMI_BIN-PLAN | VERMI_BIN fabrication drawing PLAN (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | b53c9b8f | models/mfg/VERMI_BIN/drawings/plan.svg |
+| AQS-MFG-VERMI_BIN-GA_FRONT | VERMI_BIN fabrication drawing GA_FRONT (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | dc5143e3 | models/mfg/VERMI_BIN/drawings/ga_front.svg |
+| AQS-MFG-VERMI_BIN-GA_SIDE | VERMI_BIN fabrication drawing GA_SIDE (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | f0bea7f8 | models/mfg/VERMI_BIN/drawings/ga_side.svg |
+| AQS-MFG-VERMI_BIN-ISO01 | VERMI_BIN fabrication drawing ISO01 (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | b27b66ca | models/mfg/VERMI_BIN/drawings/iso01.svg |
+| AQS-MFG-VERMI_BIN-PLAN | VERMI_BIN fabrication drawing PLAN (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 468c8c0d | models/mfg/VERMI_BIN/drawings/plan.svg |
 | AQS-MFG-VERMI_BIN-PT1_BASIN_SHELL | VERMI_BIN fabrication drawing PT1_BASIN_SHELL (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 7e51d785 | models/mfg/VERMI_BIN/drawings/pt1_basin_shell.svg |
-| AQS-MFG-VERMI_BIN-PT2_DETAIL_2 | VERMI_BIN fabrication drawing PT2_DETAIL_2 (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | c85b880c | models/mfg/VERMI_BIN/drawings/pt2_detail_2.svg |
-| AQS-MFG-VERMI_BIN-PT3_DETAIL_3 | VERMI_BIN fabrication drawing PT3_DETAIL_3 (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 66b2e504 | models/mfg/VERMI_BIN/drawings/pt3_detail_3.svg |
-| AQS-MFG-VERMI_BIN-PT4_DETAIL_4 | VERMI_BIN fabrication drawing PT4_DETAIL_4 (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 3af0fe04 | models/mfg/VERMI_BIN/drawings/pt4_detail_4.svg |
+| AQS-MFG-VERMI_BIN-PT2_HARVEST_SCREEN | VERMI_BIN fabrication drawing PT2_HARVEST_SCREEN (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 282bbdb9 | models/mfg/VERMI_BIN/drawings/pt2_harvest_screen.svg |
+| AQS-MFG-VERMI_BIN-PT3_BEDDING | VERMI_BIN fabrication drawing PT3_BEDDING (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 68565b57 | models/mfg/VERMI_BIN/drawings/pt3_bedding.svg |
+| AQS-MFG-VERMI_BIN-PT4_NOZZLES | VERMI_BIN fabrication drawing PT4_NOZZLES (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 45d42643 | models/mfg/VERMI_BIN/drawings/pt4_nozzles.svg |
 | AQS-MFG-WAFER_FAB-AUX01 | WAFER_FAB fabrication drawing AUX01 (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | e603f8bc | models/mfg/WAFER_FAB/drawings/aux01.svg |
 | AQS-MFG-WAFER_FAB-BENCH01 | WAFER_FAB fabrication drawing BENCH01 (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | f3fab39c | models/mfg/WAFER_FAB/drawings/bench01.svg |
 | AQS-MFG-WAFER_FAB-GA_FRONT | WAFER_FAB fabrication drawing GA_FRONT (AQS-PLAN-006 M3; graph Rev AD) | fabrication drawing (GA / nozzle orientation / part sheet) | 6ebc3fb0 | models/mfg/WAFER_FAB/drawings/ga_front.svg |

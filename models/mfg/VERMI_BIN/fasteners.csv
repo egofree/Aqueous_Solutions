@@ -1,0 +1,3 @@
+item,size,grade,qty,location,basis
+1,M10 base hold-down anchor,ISO 898-1 8.8,4,bin plinth to the slab; 4 corners (count from the model),8.8 on carbon steel per the plan grade rule (anchor is not a wetted part)
+2,M6 screen-frame clamp screw,ISO 3506 A4-70,8,harvest screen to the bin rim ledges; 4 per long wall (study pattern),polymer joint to the polymer supplier rule (A4-70 hardware); study pattern; confirmed at fabrication

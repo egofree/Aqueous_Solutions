@@ -1,22 +1,125 @@
 {
-  "shell_bbox_mm": [
+  "bbox_mm": [
     2100.0,
     1100.0,
     600.0
   ],
-  "envelope_mm": [
-    2100,
-    1100,
-    600
+  "inside_size_mm": true,
+  "size_mm": [
+    2100.0,
+    1100.0,
+    600.0
   ],
-  "inside_size_mm_shell": true,
-  "solids": 1,
+  "size_basis": "2 m2 bin at 300 mm bedding depth (A-M-425) (X-FARM sec3)",
+  "graph_revision": "AD",
+  "solids": 2,
   "all_parts_valid": true,
-  "material_class": "HDPE",
-  "form": "tray",
-  "mass_kg": {
-    "basin_shell": 57.6
+  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the rebuild fills the node box 2100 x 1100 x 600 flush)",
+  "cad_stl_bbox_mm": [
+    2100.0,
+    1100.0,
+    600.0
+  ],
+  "machine": {
+    "type": "vermiculture bin, Eisenia fetida (A-M-425): HDPE bin 2100 x 1100 x 600 with the SS316 harvest screen as a false floor 2 mm over the bin floor (worm tea drains below to the N4 row) and the bedding envelope at the 300 mm depth the size_basis names",
+    "a_farm": "bin area reading: interior 2080 x 1080 = 2.25 m2 at the registry box, NOT shrunk to fit, against the node design bin_m2 2.0 (hold, W12); the drain is drawn",
+    "bedding": "coco-coir and shredded-paper bedding at 300 mm (size_basis); held 70-80 % moisture near neutral pH (duty section 3); the charge is a buy row - no bedding density row exists in the material table, mass carries 0.0 (hold, WORK_ORDER W12)",
+    "material": "HDPE bin with coco-coir and shredded-paper bedding, PP working fork, SS316 harvest screen",
+    "ca_mm": 0.0
   },
-  "empty_kg": 57.6,
-  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1035.4,
+        550.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "quail droppings to the vermi bin",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1064.7,
+        550.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "soft canopy residue to the vermi bin",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 589.35,
+      "xy_mm": [
+        1035.4,
+        550.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vermicompost to the growbed soil",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 600 sits at or above the build height 600 - drawn flush at the envelope top (hold, WORK_ORDER W12)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 589.35,
+      "xy_mm": [
+        1064.7,
+        550.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "worm tea to the growbed soil",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 600 sits at or above the build height 600 - drawn flush at the envelope top (hold, WORK_ORDER W12)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        1050.0,
+        550.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1050.0,
+        550.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 predates the build height 600 - drawn flush at the envelope top (hold, W12)"
+    }
+  },
+  "nozzle_count_schedule": 6,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); inlets N1/N2 on -Y at z 160; outlets N3/N4 at the schedule z 600 rim height - drawn flush at the envelope top (hold W12); N5 drain flush at the envelope bottom; N6 vent flush at the envelope top (schedule z 800 predates the 600 box - stale datum, hold W12); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "basin_shell": 57.6,
+    "harvest_screen": 36.0,
+    "bedding": 0.0,
+    "nozzles": 0.0
+  },
+  "cadquery": "2.8.0"
 }
