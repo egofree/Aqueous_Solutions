@@ -406,7 +406,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/SHELL_BUILD.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/SHELL_BURNOUT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/SIC_FURNACE.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/SINTER.md` | working tree | current |
+| `docs-authority/duties/SINTER.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/SI_REDUCE.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/SLEEP_QUARTERS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/SOLAR_PV_CELL.md` | f0160a6 (regenerated, no change) | current |
@@ -1417,7 +1417,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/SHELL_BREAK/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/SHELL_BUILD/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/SHELL_BURNOUT/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/SINTER/params.json` | working tree | current |
+| `models/mfg/SINTER/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/SI_REDUCE/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/SLEEP_QUARTERS/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/SOLAR_PV_CELL/params.json` | f0160a6 (regenerated, no change) | current |
