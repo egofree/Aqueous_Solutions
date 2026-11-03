@@ -160,7 +160,8 @@ ACCEPTED = ('AL_POT', 'IND_MELT', 'VAC_IND', 'VAC_CAST', 'INV_CAST', 'CONT_CAST'
             'SHELL_BUILD',
             'SHELL_BURNOUT',
             'SINTER',
-            'WAX_PATTERN')
+            'WAX_PATTERN',
+            'FLUX_PREP')
 
 
 # --------------------------------------------------------------------------- authorities
