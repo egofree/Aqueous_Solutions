@@ -1,0 +1,40 @@
+{
+  "bbox_mm": [
+    186000.0,
+    174000.0,
+    6000.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    186000.0,
+    174000.0,
+    6000.0
+  ],
+  "size_basis": null,
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "building massing per the node size_note and the placement_seed blocks EXT_HALL_E/N (the authority): 162 x 174 m east extension + 24 x 156 m north extension, 6 m eave; on-grade slab 150 mm, perimeter wall panels 300 mm to the IECC U-factor class (A-M-104 wall U 0.534), roof deck 100 mm (roof U 0.199 class), and the steel portal-frame column grid at every 6 m grid point inside the L (31 x 29 bays); no process internals - the fitout programme stays the duty-sheet open item",
+    "grid": {
+      "bay_mm": 6000.0,
+      "bays": "31 x 29 of the size note; column positions at the grid points inside the L-shape",
+      "columns": 803
+    },
+    "loads": "roof framing for LRFD 1.72 kPa (A-M-105: PV dead 0.15 + roof live 0.96, ASCE 7-22); the roof PV interface is the PV_ARRAY model (15 array tables, accepted separately) - nothing doubled",
+    "massing_basis": "column/wall/roof section sizes are massing values; the structural design is the X-BLD lane's (WORK_ORDER W12); steel sections and panels are made in-house (duty section 3, X-MFG-32)",
+    "material": "steel portal frames; insulated metal roof and wall panels (duty section 3)",
+    "ca_mm": 1.5,
+    "nozzle_note": "duty section 4: None. Electrical feed SF-EXT_HALL at 480 V AC. Air-source heat pumps (D77). GEO_GHEX not coupled."
+  },
+  "nozzles_drawn": {},
+  "nozzle_count_schedule": 0,
+  "nozzle_idiom": "no nozzles: the duty section 4 states None (electrical feed and heat-pump service are electrical/mech lanes) and no nozzle schedule is issued - nothing piped, nothing drawn at the faces",
+  "part_mass_kg": {
+    "slab": 11495520.0,
+    "walls": 9902727.9,
+    "roof": 25066620.0,
+    "frame_grid": 3262087.1
+  },
+  "cadquery": "2.8.0"
+}

@@ -26,5 +26,44 @@
  "holds": [
   "no duty section 4 schedule on file",
   "no AQS-PLAN-006 section 4 route class for class building"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   186000.0,
+   174000.0,
+   6000.0
+  ],
+  "basis": null,
+  "blocks": {
+   "EXT_HALL_E": [
+    24000.0,
+    0.0,
+    186000.0,
+    174000.0
+   ],
+   "EXT_HALL_N": [
+    0.0,
+    18000.0,
+    24000.0,
+    174000.0
+   ]
+  },
+  "slab_mm": 150.0,
+  "wall_mm": 300.0,
+  "roof_mm": 100.0,
+  "column_mm": 300.0,
+  "bay_mm": 6000.0,
+  "columns": 803
+ },
+ "design": {
+  "service": "EXT_HALL: the single-storey conditioned hall extension carrying the roof PV (X-PAR-07, A-M-104); NORTH_DOCK opens into EXT_HALL_N with the 6 m truck lane reserved (duty sections 1 and 7)",
+  "material": "steel portal frames; insulated metal roof and wall panels (IECC U-factor classes, A-M-104)",
+  "massing_basis": "column/wall/roof sections are massing values; the structural design and the fitout programme stay with their lanes (duty section 8; hold, WORK_ORDER W12)",
+  "hvac": null
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; the L-shape tiles the box (E block x 24000..186000, N block x 0..24000 y 18000..174000); walls on the L perimeter, roof at z 5900..6000, column grid at the 6 m bay lines inside the L",
+  "nozzle_spread": "no schedule issued (duty section 4: None) - nothing piped, nothing drawn at the faces",
+  "hardware_idiom": "the massing fills the node box exactly; the X-PAR-04 registry reads the build (walls pin the box)"
+ }
 }

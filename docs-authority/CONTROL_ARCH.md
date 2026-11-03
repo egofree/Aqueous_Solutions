@@ -54,7 +54,7 @@ Table 4.1. I/O and modules by PLC
 |---|---|---|---|---|---|---|---|---|
 | PLC-CRYO | 34 | 1 | 15 | 5 | 0 | 3/1/2/1 | redundant pair | 38 |
 | PLC-DIGESTER | 132 | 3 | 123 | 29 | 19 | 10/1/10/3 | single | 60 |
-| PLC-ELEC | 28 | 1 | 363 | 126 | 53 | 3/1/28/10 | redundant pair | 108 |
+| PLC-ELEC | 28 | 17 | 443 | 110 | 77 | 3/2/34/9 | redundant pair | 120 |
 | PLC-FAB | 63 | 3 | 70 | 11 | 15 | 5/1/6/1 | single | 38 |
 | PLC-FARM | 48 | 0 | 3 | 1 | 0 | 4/0/1/1 | redundant pair | 36 |
 | PLC-FOUNDRY | 87 | 0 | 19 | 1 | 5 | 7/0/2/1 | single | 32 |
@@ -70,8 +70,8 @@ Table 4.1. I/O and modules by PLC
 | PLC-POLYMERS | 48 | 0 | 18 | 3 | 3 | 4/0/2/1 | single | 26 |
 | PLC-PUMPED_HYDRO | 2 | 0 | 2 | 1 | 0 | 1/0/1/1 | redundant pair | 30 |
 | PLC-WTR | 70 | 0 | 57 | 14 | 11 | 6/0/5/2 | redundant pair | 50 |
-| Total | 730 | 17 | 834 | 220 | 138 | 169 modules | 9 redundant of 18 | 662 |
+| Total | 730 | 33 | 914 | 204 | 162 | 175 modules | 9 redundant of 18 | 674 |
 
-The control system draws about 0.66 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
+The control system draws about 0.67 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
 
 The module count in AQS-INV-004 (item OF-07) uses a different basis, the number of points divided by 16 with no spare, and is superseded by Table 4.1. The DI count adds the high-level switches of the instrument index to the digital points of the inventory. If the inventory already counts those switches, the DI count is 113 too high, which errs on the safe side.

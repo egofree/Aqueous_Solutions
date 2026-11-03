@@ -630,6 +630,11 @@
    "category": "fastener",
    "item": "M12 drum-bearing block bolt + nut",
    "spec": "ISO 898-1 8.8"
+  },
+  "OF-127": {
+   "category": "fastener",
+   "item": "M20 column base bolts (F1552 class)",
+   "spec": "ISO 898-1 8.8"
   }
  }
 }

@@ -18,6 +18,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 6. Relief. Not a pressure system. Roof PV access per IFC 2027 1205.3 / NFPA 1 11.12: 1829 mm perimeter pathway, 1219 mm interior pathways, 16 arrays.
 
-7. Code. Building. Not stamped. NORTH_DOCK opens into EXT_HALL_N; a 6 m truck lane to the hall's north wall is reserved (accepted 2026-10-15).
+7. Code. Building. Not stamped. NORTH_DOCK opens into EXT_HALL_N; a 6 m truck lane to the hall's north wall is reserved (accepted 2026-10-15). Manufacturing model `models/mfg/EXT_HALL/ext_hall.py` (AQS-PLAN-006).
 
 8. Open items. Bin-hour load calculation on TMY3;  hall programme; egress for the hall (AQS-EGR-001 update under X-STD-01); FreeCAD massing of the extension.
