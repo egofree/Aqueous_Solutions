@@ -105,8 +105,8 @@ Plant demand 224.9 kW at 480 V, power factor 0.9 assumed: 301 A. EW process bars
 | LP-DIGESTER | panel feeder 460 V | 8 AWG | 1 | 34.8 | 50 | 34.3 | 460 | 1.13 | 2 | yes |
 | LP-ELEC | panel feeder 208 V | 350 kcmil | 1 | 303.0 | 310 | 13.8 | 208 | 0.42 | 2 | yes |
 | LP-ELEC | panel feeder 460 V | 14 AWG | 1 | 5.3 | 15 | 13.8 | 460 | 0.28 | 2 | yes |
-| LP-FAB | panel feeder 208 V | 12 AWG | 1 | 7.8 | 20 | 30.0 | 208 | 1.23 | 2 | yes |
-| LP-FAB | panel feeder 460 V | 14 AWG | 1 | 10.8 | 15 | 30.0 | 460 | 1.26 | 2 | yes |
+| LP-FAB | panel feeder 208 V | 12 AWG | 1 | 10.2 | 20 | 30.0 | 208 | 1.61 | 2 | yes |
+| LP-FAB | panel feeder 460 V | 14 AWG | 1 | 9.8 | 15 | 30.0 | 460 | 1.14 | 2 | yes |
 | LP-MFG | panel feeder 208 V | 12 AWG | 1 | 7.8 | 20 | 43.3 | 208 | 1.78 | 2 | yes |
 | LP-MFG | panel feeder 460 V | 3 AWG | 1 | 88.3 | 100 | 43.3 | 460 | 1.16 | 2 | yes |
 | LP-NUT | panel feeder 208 V | 10 AWG | 1 | 12.6 | 30 | 44.2 | 208 | 1.84 | 2 | yes |
@@ -137,7 +137,7 @@ Plant demand 224.9 kW at 480 V, power factor 0.9 assumed: 301 A. EW process bars
 | PROD_C5_C10 | Motor: transfer pump IA-C5-POLY to POLY_OLEFIN (BLDC, 42 mm  feeder | 14 AWG | 1 | 2.4 | 15 | 32.2 | 460 | 0.30 | 3 | yes |
 | REMIN | Metering diaphragm pump, Ca slurry duty (node design block:  feeder | 14 AWG | 1 | 2.4 | 15 | 24.3 | 460 | 0.23 | 3 | yes |
 | SALT_FEED | screw feeder feeder | 14 AWG | 1 | 2.4 | 15 | 9.6 | 460 | 0.09 | 3 | yes |
-| SOLAR_PV_CELL | main drive feeder | 14 AWG | 1 | 1.1 | 15 | 4.8 | 460 | 0.02 | 3 | yes |
+| SOLAR_PV_CELL | PV-ARC-01 dry vacuum pump envelope feeder | 14 AWG | 1 | 2.4 | 15 | 4.8 | 460 | 0.04 | 3 | yes |
 | TFE_SYN | Dilute-HCl return pump and transfer line to CRU feeder | 14 AWG | 1 | 2.4 | 15 | 14.7 | 460 | 0.14 | 3 | yes |
 | VAC_CAST | Vacuum pump skid on the +X bay (purchased, envelope and inte feeder | 14 AWG | 1 | 2.4 | 15 | 27.5 | 460 | 0.26 | 3 | yes |
 | VCD_TRAIN | Motor: transfer pump IA-VCD-BD to LEACH_CSTR_1 (BLDC, 42 mm  feeder | 14 AWG | 1 | 2.4 | 15 | 14.3 | 460 | 0.13 | 3 | yes |

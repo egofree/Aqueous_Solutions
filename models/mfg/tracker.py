@@ -139,7 +139,7 @@ ACCEPTED = ('AL_POT', 'IND_MELT', 'VAC_IND', 'VAC_CAST', 'INV_CAST', 'CONT_CAST'
             'MEOH_FC', 'POLY_COND',
             'POLY_OLEFIN', 'POLY_F', 'GLASS_BURNOUT', 'GLASS_MILL', 'GLASS_RINSE',
             'GLASS_DIGEST', 'AFTERBURNER', 'AFTERBURNER_FLUE', 'OIL_DRYER',
-            'H2_DRYER', 'OIL_FRAC', 'CRU', 'WAFER_FAB', 'WET_BENCH', 'LITHO_ALIGN', 'LITHO_COAT', 'LITHO_DEV')
+            'H2_DRYER', 'OIL_FRAC', 'CRU', 'WAFER_FAB', 'WET_BENCH', 'LITHO_ALIGN', 'LITHO_COAT', 'LITHO_DEV', 'SOLAR_PV_CELL')
 
 
 # --------------------------------------------------------------------------- authorities

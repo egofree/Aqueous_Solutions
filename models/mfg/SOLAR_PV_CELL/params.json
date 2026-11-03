@@ -67,7 +67,10 @@
   "kWh_d": 9.401594044946709,
   "avg_kW": 0.3917330852061129,
   "peak_kW": 3.7942691188488986,
-  "kWh_per_cell": 3.133864681648903
+  "kWh_per_cell": 3.133864681648903,
+  "service": "SOLAR_PV_CELL: in-house PV cell line - texture, POCl3 diffusion, PSG etch, PECVD SiNx, screen print, fast firing, IV; 3 cells per batch; KOH feed from WS_KOH (node design block; X-MFG-38, A-M-178, AQS-DUTY-071)",
+  "material": "316L wetted baths (duty section 3); quartz tube and ceramic fibre at PV-EMIT-01; CS bench and dry envelopes",
+  "material_basis": "duty section 3: 316L where the stream is wet - the node station texts name PP tanks/baths, the duty selection governs (plan rule 5; hold, WORK_ORDER W12); tube quartz and screen stainless shop-cut per AQS-PV-001 section 3"
  },
  "nozzles": [
   {
@@ -108,5 +111,114 @@
   "A-core",
   "A-MACH",
   "A-SC"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   2400.0,
+   1200.0,
+   1600.0
+  ],
+  "basis": "L x W x H mm, issued envelope (X-MFG-38 tool line)",
+  "base_mm": [
+   2400.0,
+   1200.0,
+   20.0
+  ],
+  "stations": {
+   "PV-TEX-01": {
+    "envelope_mm": [
+     60.0,
+     90.0,
+     20.0,
+     350.0,
+     500.0,
+     200.0
+    ],
+    "make_or_buy": "make"
+   },
+   "PV-EMIT-01": {
+    "envelope_mm": [
+     430.0,
+     90.0,
+     20.0,
+     1100.0,
+     600.0,
+     660.0
+    ],
+    "make_or_buy": "mixed"
+   },
+   "PV-PSG-01": {
+    "envelope_mm": [
+     1550.0,
+     90.0,
+     20.0,
+     250.0,
+     400.0,
+     200.0
+    ],
+    "make_or_buy": "make"
+   },
+   "PV-CON-01": {
+    "envelope_mm": [
+     1820.0,
+     90.0,
+     20.0,
+     520.0,
+     400.0,
+     300.0
+    ],
+    "make_or_buy": "mixed"
+   },
+   "PV-ARC-01": {
+    "envelope_mm": [
+     60.0,
+     620.0,
+     20.0,
+     600.0,
+     520.0,
+     420.0
+    ],
+    "make_or_buy": "mixed"
+   },
+   "PV-FIRE-01": {
+    "envelope_mm": [
+     680.0,
+     620.0,
+     20.0,
+     400.0,
+     520.0,
+     320.0
+    ],
+    "make_or_buy": "mixed"
+   },
+   "PV-IV-01": {
+    "envelope_mm": [
+     1100.0,
+     620.0,
+     20.0,
+     300.0,
+     520.0,
+     220.0
+    ],
+    "make_or_buy": "buy"
+   }
+  },
+  "emit_tube_mm": {
+   "od": 200.0,
+   "wall": 5.0,
+   "len": 1000.0,
+   "fibre": 200.0,
+   "x0": 480.0,
+   "axis_yz": [
+    390.0,
+    340.0
+   ]
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; station rows on the deck per params.envelope.stations (TEX/EMIT/PSG/CON on y 90, ARC/FIRE/IV on y 620); hold-down posts at the envelope corners",
+  "supports": "base plate + hold-down frame + 8 slab anchors; tube stands",
+  "nozzle_spread": "the two solids rows at x 1200 on their faces; drain and vent at x 1200 flush at the bottom/top; per-tag notes in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

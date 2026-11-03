@@ -1556,15 +1556,16 @@ SLEEP_QUARTERS,wall_end_door,1,aluminium,Unstated,-,not classed: aluminium
 SLEEP_QUARTERS,wall_end_solid,1,aluminium,Unstated,-,not classed: aluminium
 SLEEP_QUARTERS,wall_long_a,1,aluminium,Unstated,-,not classed: aluminium
 SLEEP_QUARTERS,wall_long_b,1,aluminium,Unstated,-,not classed: aluminium
-SOLAR_PV_CELL,Body / envelope 2400 x 1200 x 1600 mm,1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-SOLAR_PV_CELL,Process nozzle DN15,2,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-SOLAR_PV_CELL,"Motor: main drive (induction IE3, IEC 71 / 0.37 kW)",1,-,Unstated,-,not classed: -
-SOLAR_PV_CELL,bearing: deep-groove ball bearing 6202-2Z,2,"ISO 15 / ISO 492 normal class, C3",Unstated,-,"not classed: ISO 15 / ISO 492 normal class, C3"
-SOLAR_PV_CELL,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,Unstated,-,not classed: IEC 61131-2
-SOLAR_PV_CELL,electronics: motor starter (contactor + overload) 0.37 kW,1,IEC 60947-4-1,Unstated,-,not classed: IEC 60947-4-1
-SOLAR_PV_CELL,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",Unstated,-,"not classed: ceramic diaphragm, IEC 61298"
-SOLAR_PV_CELL,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-SOLAR_PV_CELL,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,Unstated,-,not classed: UL 489 / IEC 60947-2
+SOLAR_PV_CELL,Base plate 2400 x 1200 x 20 (X-MFG-38 tool-line bench),1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
+SOLAR_PV_CELL,Hold-down/guard frame: four 40 x 40 posts + top rails pinning the 2400 x 1200 x ,1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
+SOLAR_PV_CELL,"Station envelopes: PV-TEX-01 KOH texture bath, PV-PSG-01 HF PSG etch bath, PV-AR",6,316L wetted baths (duty section 3); CS envelopes (dry stations),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+SOLAR_PV_CELL,"PV-TEX-01 immersion heater envelope (10 L bath, 80 C)",1,purchased unit (envelope),Unstated,-,not classed: purchased unit (envelope)
+SOLAR_PV_CELL,"PV-EMIT-01 quartz diffusion tube OD 200 x 1000, wall 5 (study)",1,quartz (AQS-PV-001 section 3: tube quartz),Unstated,-,not classed: quartz (AQS-PV-001 section 3: tube quart
+SOLAR_PV_CELL,PV-EMIT-01 ceramic-fibre insulation annulus 200 mm x 1000,1,ceramic fibre (A-M-178 k basis),Unstated,-,not classed: ceramic fibre (A-M-178 k basis)
+SOLAR_PV_CELL,PV-ARC-01 dry vacuum pump envelope,1,purchased unit (envelope),Unstated,-,not classed: purchased unit (envelope)
+SOLAR_PV_CELL,"Screen print mesh (PV-CON-01, grid 2 mm lines at 10 mm pitch per AQS-PV-001)",1,"stainless, shop-cut (AQS-PV-001 section 3)",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+SOLAR_PV_CELL,Purchased drive/heat/electrical sets by node rating: PV-CON-01 200 C dryer 0.5 k,4,purchased units (envelopes in the station shells),Unstated,-,not classed: purchased units (envelopes in the statio
+SOLAR_PV_CELL,Nozzle set per docs-authority/nozzles/SOLAR_PV_CELL.csv: drain and vent flush at,4,316L (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 SOL_ARK_60K,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 SOL_ARK_60K,"Motor: cooling fan (BLDC, 57 mm (NEMA 23 flange))",48,-,Unstated,-,not classed: -
 SOL_ARK_60K,bearing: deep-groove ball bearing 608-2Z,96,"ISO 15, normal class",Unstated,-,"not classed: ISO 15, normal class"
@@ -2072,12 +2073,12 @@ MF-05 x 0,magnet wire IEC 60317-13 22 AWG (0.130 mm2),0.61 kg,,Unstated,-,materi
 MF-05 x 0,die-cast Al cage (bars + rings),0.14 kg,,Unstated,-,material not stated on the unit BOM line
 MF-05 x 0,shaft C45,0,,Unstated,-,material not stated on the unit BOM line
 MF-05 x 0,compressor shell (scroll line X-MFG-35),0,,Unstated,-,material not stated on the unit BOM line
-MF-06 x 8,stator laminations M400-50A (EN 10106) 0.5 mm,816,,Unstated,-,material not stated on the unit BOM line
-MF-06 x 8,rotor laminations M400-50A 0.5 mm,816,,Unstated,-,material not stated on the unit BOM line
-MF-06 x 8,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.19 kg,,Unstated,-,material not stated on the unit BOM line
-MF-06 x 8,die-cast Al cage (bars + rings),0.40 kg,,Unstated,-,material not stated on the unit BOM line
-MF-06 x 8,shaft C45,8,,Unstated,-,material not stated on the unit BOM line
-MF-06 x 8,compressor shell (scroll line X-MFG-35),0,,Unstated,-,material not stated on the unit BOM line
+MF-06 x 7,stator laminations M400-50A (EN 10106) 0.5 mm,714,,Unstated,-,material not stated on the unit BOM line
+MF-06 x 7,rotor laminations M400-50A 0.5 mm,714,,Unstated,-,material not stated on the unit BOM line
+MF-06 x 7,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.19 kg,,Unstated,-,material not stated on the unit BOM line
+MF-06 x 7,die-cast Al cage (bars + rings),0.40 kg,,Unstated,-,material not stated on the unit BOM line
+MF-06 x 7,shaft C45,7,,Unstated,-,material not stated on the unit BOM line
+MF-06 x 7,compressor shell (scroll line X-MFG-35),0,,Unstated,-,material not stated on the unit BOM line
 MF-07 x 6,stator laminations M400-50A (EN 10106) 0.5 mm,732,,Unstated,-,material not stated on the unit BOM line
 MF-07 x 6,rotor laminations M400-50A 0.5 mm,732,,Unstated,-,material not stated on the unit BOM line
 MF-07 x 6,magnet wire IEC 60317-13 17 AWG (0.927 mm2),2.58 kg,,Unstated,-,material not stated on the unit BOM line
@@ -2094,16 +2095,16 @@ MF-08 x 3,end shields A356,6,,Unstated,-,material not stated on the unit BOM lin
 MF-08 x 3,bearing 6202-2Z,6,,Unstated,-,material not stated on the unit BOM line
 MF-08 x 3,fan PP + fan cover steel,3,,Unstated,-,material not stated on the unit BOM line
 MF-08 x 3,terminal box + 6-stud block,3,,Unstated,-,material not stated on the unit BOM line
-MF-09 x 178,stator laminations M400-50A (EN 10106) 0.5 mm,18512,,Unstated,-,material not stated on the unit BOM line
-MF-09 x 178,rotor laminations M400-50A 0.5 mm,18512,,Unstated,-,material not stated on the unit BOM line
-MF-09 x 178,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.77 kg,,Unstated,-,material not stated on the unit BOM line
-MF-09 x 178,die-cast Al cage (bars + rings),0.58 kg,,Unstated,-,material not stated on the unit BOM line
-MF-09 x 178,"shaft C45 (EN 10083-2) D24 x 222 mm, key to IEC 60072-1",178,,Unstated,-,material not stated on the unit BOM line
-MF-09 x 178,"frame A356 IEC 90S, feet A140 x B100, holes K10",178,,Unstated,-,material not stated on the unit BOM line
-MF-09 x 178,end shields A356,356,,Unstated,-,material not stated on the unit BOM line
-MF-09 x 178,bearing 6205-2Z,356,,Unstated,-,material not stated on the unit BOM line
-MF-09 x 178,fan PP + fan cover steel,178,,Unstated,-,material not stated on the unit BOM line
-MF-09 x 178,terminal box + 6-stud block,178,,Unstated,-,material not stated on the unit BOM line
+MF-09 x 179,stator laminations M400-50A (EN 10106) 0.5 mm,18616,,Unstated,-,material not stated on the unit BOM line
+MF-09 x 179,rotor laminations M400-50A 0.5 mm,18616,,Unstated,-,material not stated on the unit BOM line
+MF-09 x 179,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.77 kg,,Unstated,-,material not stated on the unit BOM line
+MF-09 x 179,die-cast Al cage (bars + rings),0.58 kg,,Unstated,-,material not stated on the unit BOM line
+MF-09 x 179,"shaft C45 (EN 10083-2) D24 x 222 mm, key to IEC 60072-1",179,,Unstated,-,material not stated on the unit BOM line
+MF-09 x 179,"frame A356 IEC 90S, feet A140 x B100, holes K10",179,,Unstated,-,material not stated on the unit BOM line
+MF-09 x 179,end shields A356,358,,Unstated,-,material not stated on the unit BOM line
+MF-09 x 179,bearing 6205-2Z,358,,Unstated,-,material not stated on the unit BOM line
+MF-09 x 179,fan PP + fan cover steel,179,,Unstated,-,material not stated on the unit BOM line
+MF-09 x 179,terminal box + 6-stud block,179,,Unstated,-,material not stated on the unit BOM line
 MF-10 x 9,stator laminations M400-50A (EN 10106) 0.5 mm,1278,,Unstated,-,material not stated on the unit BOM line
 MF-10 x 9,rotor laminations M400-50A 0.5 mm,1278,,Unstated,-,material not stated on the unit BOM line
 MF-10 x 9,magnet wire IEC 60317-13 18 AWG (0.597 mm2),2.03 kg,,Unstated,-,material not stated on the unit BOM line
@@ -2331,7 +2332,7 @@ OF-43,"instrument: gas detector, O2 enrichment (alarm 23.5 vol %, trip 25 vol %,
 OF-44,"instrument: gas detector, CO (alarm 25 ppm, trip 50 ppm, breathing height)",14,,Unstated,-,material not stated on the unit BOM line
 OF-45,"instrument: gas detector, NOx (alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing he",6,,Unstated,-,material not stated on the unit BOM line
 OF-46,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",218,,Unstated,-,material not stated on the unit BOM line
-OF-47,"seal: mechanical seal, single (SiC/SiC faces, FKM)",170,,Unstated,-,material not stated on the unit BOM line
+OF-47,"seal: mechanical seal, single (SiC/SiC faces, FKM)",171,,Unstated,-,material not stated on the unit BOM line
 OF-48,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",5863,,Unstated,-,material not stated on the unit BOM line
 OF-49,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1492,,Unstated,-,material not stated on the unit BOM line
 OF-50,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",280,,Unstated,-,material not stated on the unit BOM line
@@ -2376,7 +2377,7 @@ OF-93,fastener: M10 wedge anchor (ISO 3506 A4-70),110,,Unstated,-,material not s
 OF-94,fastener: M12 bolt + nut; PP-flanged joint (ISO 3506 A4-70),16,,Unstated,-,material not stated on the unit BOM line
 OF-95,fastener: M12 PVDF bolt + nut (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
 OF-96,fastener: M12 A4-70 bolt + nut (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
-OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),118,,Unstated,-,material not stated on the unit BOM line
+OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),126,,Unstated,-,material not stated on the unit BOM line
 OF-98,fastener: M10 stud + nut (ISO 4014 / ISO 4032) (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line
 OF-99,fastener: M8 hold-down bolt (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line
 OF-100,fastener: M16 wedge anchor (ISO 898-1 8.8),16,,Unstated,-,material not stated on the unit BOM line
@@ -2395,3 +2396,4 @@ OF-112,fastener: M8 socket screw (ISO 3506 A4-70),8,,Unstated,-,material not sta
 OF-113,fastener: M8 bench anchor (ISO 3506 A4-70),4,,Unstated,-,material not stated on the unit BOM line
 OF-114,fastener: M8 bowl-stand bolt (ISO 3506 A4-70),4,,Unstated,-,material not stated on the unit BOM line
 OF-115,fastener: M8 bowl-clip bolt (ISO 3506 A4-70),4,,Unstated,-,material not stated on the unit BOM line
+OF-116,fastener: M10 tube-stand bolt (ISO 3506 A4-70),4,,Unstated,-,material not stated on the unit BOM line

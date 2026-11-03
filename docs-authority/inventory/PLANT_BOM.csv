@@ -1556,15 +1556,16 @@ unit,SLEEP_QUARTERS,wall_end_door,1,aluminium,
 unit,SLEEP_QUARTERS,wall_end_solid,1,aluminium,
 unit,SLEEP_QUARTERS,wall_long_a,1,aluminium,
 unit,SLEEP_QUARTERS,wall_long_b,1,aluminium,
-unit,SOLAR_PV_CELL,Body / envelope 2400 x 1200 x 1600 mm,1,316L where the stream is wet.,docs-authority/duties/SOLAR_PV_CELL.md
-unit,SOLAR_PV_CELL,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
-unit,SOLAR_PV_CELL,"Motor: main drive (induction IE3, IEC 71 / 0.37 kW)",1,-,AQS-INV-001 / AQS-INV-005
-unit,SOLAR_PV_CELL,bearing: deep-groove ball bearing 6202-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-unit,SOLAR_PV_CELL,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-unit,SOLAR_PV_CELL,electronics: motor starter (contactor + overload) 0.37 kW,1,IEC 60947-4-1,AQS-INV-004
-unit,SOLAR_PV_CELL,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-unit,SOLAR_PV_CELL,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-unit,SOLAR_PV_CELL,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+unit,SOLAR_PV_CELL,Base plate 2400 x 1200 x 20 (X-MFG-38 tool-line bench),1,carbon steel (ASTM A500),issued envelope frame; anchors in fasteners.csv
+unit,SOLAR_PV_CELL,Hold-down/guard frame: four 40 x 40 posts + top rails pinning the 2400 x 1200 x 1600 envelope,1,carbon steel (ASTM A500),HX8 hold-down idiom (X-PAR-04); A-MACH guard
+unit,SOLAR_PV_CELL,"Station envelopes: PV-TEX-01 KOH texture bath, PV-PSG-01 HF PSG etch bath, PV-ARC-01 PECVD chamber (with platen), PV-CON-01 screen printer, PV-FIRE-01 IR furnace housing, PV-IV-01 flash IV tester",6,316L wetted baths (duty section 3); CS envelopes (dry stations),"node design tool table (design texts and peak kW); envelope sizes are the layout choice (hold, W12); wetted material per duty section 3 - the node texts name PP, the duty governs (plan rule 5; hold W12)"
+unit,SOLAR_PV_CELL,"PV-TEX-01 immersion heater envelope (10 L bath, 80 C)",1,purchased unit (envelope),node PV-TEX-01 basis 0.687 kWh/d; A-M-178 texture 10 L at 80 C; no per-heater kW rating stated (hold W12)
+unit,SOLAR_PV_CELL,"PV-EMIT-01 quartz diffusion tube OD 200 x 1000, wall 5 (study)",1,quartz (AQS-PV-001 section 3: tube quartz),node design dims 200 mm x 1.0 m; A-M-178 diffusion basis 20 kg heated mass to 850 C; AQS-PV-001 rev C carries the older 50 mm ID x 800 mm figure - the node governs (hold W12)
+unit,SOLAR_PV_CELL,PV-EMIT-01 ceramic-fibre insulation annulus 200 mm x 1000,1,ceramic fibre (A-M-178 k basis),node design text '200 mm ceramic fibre' taken at face value as the fibre thickness (hold W12)
+unit,SOLAR_PV_CELL,PV-ARC-01 dry vacuum pump envelope,1,purchased unit (envelope),"A-M-178 basis 1.5 kW vacuum pump 1 h; purchased per plan rule 6, rating from the node design basis"
+unit,SOLAR_PV_CELL,"Screen print mesh (PV-CON-01, grid 2 mm lines at 10 mm pitch per AQS-PV-001)",1,"stainless, shop-cut (AQS-PV-001 section 3)","AQS-PV-001 section 3: screen stainless, shop-cut; mass study figure"
+unit,SOLAR_PV_CELL,"Purchased drive/heat/electrical sets by node rating: PV-CON-01 200 C dryer 0.5 kW and printer drive 0.2 kW (A-M-178), PV-FIRE-01 IR lamp set 3.0 kW (node peak), PV-IV-01 flash IV tester 0.1 kW (node peak)",4,purchased units (envelopes in the station shells),"ratings from the node design tool table and A-M-178; purchased per plan rule 6, not drawn beyond their station envelopes"
+unit,SOLAR_PV_CELL,Nozzle set per docs-authority/nozzles/SOLAR_PV_CELL.csv: drain and vent flush at the envelope faces; the two solids transfer rows drawn DN15 bore not calculated,4,316L (duty section 3),4-row issued schedule verbatim; atmospheric hose per duty section 4
 unit,SOL_ARK_60K,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,docs-authority/duties/SOL_ARK_60K.md
 unit,SOL_ARK_60K,"Motor: cooling fan (BLDC, 57 mm (NEMA 23 flange))",48,-,AQS-INV-001 / AQS-INV-005
 unit,SOL_ARK_60K,bearing: deep-groove ball bearing 608-2Z,96,"ISO 15, normal class",AQS-INV-004
@@ -2072,12 +2073,12 @@ motor family,MF-05 x 0,magnet wire IEC 60317-13 22 AWG (0.130 mm2),0.61 kg,,X-IN
 motor family,MF-05 x 0,die-cast Al cage (bars + rings),0.14 kg,,A356 in-house melt (assumed 12 % of steel mass)
 motor family,MF-05 x 0,shaft C45,0,,turned
 motor family,MF-05 x 0,compressor shell (scroll line X-MFG-35),0,,not in this model
-motor family,MF-06 x 8,stator laminations M400-50A (EN 10106) 0.5 mm,816,,EN 10106
-motor family,MF-06 x 8,rotor laminations M400-50A 0.5 mm,816,,EN 10106
-motor family,MF-06 x 8,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.19 kg,,X-INV-03 wire line
-motor family,MF-06 x 8,die-cast Al cage (bars + rings),0.40 kg,,A356 in-house melt (assumed 12 % of steel mass)
-motor family,MF-06 x 8,shaft C45,8,,turned
-motor family,MF-06 x 8,compressor shell (scroll line X-MFG-35),0,,not in this model
+motor family,MF-06 x 7,stator laminations M400-50A (EN 10106) 0.5 mm,714,,EN 10106
+motor family,MF-06 x 7,rotor laminations M400-50A 0.5 mm,714,,EN 10106
+motor family,MF-06 x 7,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.19 kg,,X-INV-03 wire line
+motor family,MF-06 x 7,die-cast Al cage (bars + rings),0.40 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-06 x 7,shaft C45,7,,turned
+motor family,MF-06 x 7,compressor shell (scroll line X-MFG-35),0,,not in this model
 motor family,MF-07 x 6,stator laminations M400-50A (EN 10106) 0.5 mm,732,,EN 10106
 motor family,MF-07 x 6,rotor laminations M400-50A 0.5 mm,732,,EN 10106
 motor family,MF-07 x 6,magnet wire IEC 60317-13 17 AWG (0.927 mm2),2.58 kg,,X-INV-03 wire line
@@ -2094,16 +2095,16 @@ motor family,MF-08 x 3,end shields A356,6,,cast + machined
 motor family,MF-08 x 3,bearing 6202-2Z,6,,X-INV-05 OF bearing family
 motor family,MF-08 x 3,fan PP + fan cover steel,3,,IC 411
 motor family,MF-08 x 3,terminal box + 6-stud block,3,,IEC 60034-8 marking
-motor family,MF-09 x 178,stator laminations M400-50A (EN 10106) 0.5 mm,18512,,EN 10106
-motor family,MF-09 x 178,rotor laminations M400-50A 0.5 mm,18512,,EN 10106
-motor family,MF-09 x 178,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.77 kg,,X-INV-03 wire line
-motor family,MF-09 x 178,die-cast Al cage (bars + rings),0.58 kg,,A356 in-house melt (assumed 12 % of steel mass)
-motor family,MF-09 x 178,"shaft C45 (EN 10083-2) D24 x 222 mm, key to IEC 60072-1",178,,turned
-motor family,MF-09 x 178,"frame A356 IEC 90S, feet A140 x B100, holes K10",178,,cast + machined
-motor family,MF-09 x 178,end shields A356,356,,cast + machined
-motor family,MF-09 x 178,bearing 6205-2Z,356,,X-INV-05 OF bearing family
-motor family,MF-09 x 178,fan PP + fan cover steel,178,,IC 411
-motor family,MF-09 x 178,terminal box + 6-stud block,178,,IEC 60034-8 marking
+motor family,MF-09 x 179,stator laminations M400-50A (EN 10106) 0.5 mm,18616,,EN 10106
+motor family,MF-09 x 179,rotor laminations M400-50A 0.5 mm,18616,,EN 10106
+motor family,MF-09 x 179,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.77 kg,,X-INV-03 wire line
+motor family,MF-09 x 179,die-cast Al cage (bars + rings),0.58 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-09 x 179,"shaft C45 (EN 10083-2) D24 x 222 mm, key to IEC 60072-1",179,,turned
+motor family,MF-09 x 179,"frame A356 IEC 90S, feet A140 x B100, holes K10",179,,cast + machined
+motor family,MF-09 x 179,end shields A356,358,,cast + machined
+motor family,MF-09 x 179,bearing 6205-2Z,358,,X-INV-05 OF bearing family
+motor family,MF-09 x 179,fan PP + fan cover steel,179,,IC 411
+motor family,MF-09 x 179,terminal box + 6-stud block,179,,IEC 60034-8 marking
 motor family,MF-10 x 9,stator laminations M400-50A (EN 10106) 0.5 mm,1278,,EN 10106
 motor family,MF-10 x 9,rotor laminations M400-50A 0.5 mm,1278,,EN 10106
 motor family,MF-10 x 9,magnet wire IEC 60317-13 18 AWG (0.597 mm2),2.03 kg,,X-INV-03 wire line
@@ -2331,7 +2332,7 @@ building block,OF-43,"instrument: gas detector, O2 enrichment (alarm 23.5 vol %,
 building block,OF-44,"instrument: gas detector, CO (alarm 25 ppm, trip 50 ppm, breathing height)",14,,AQS-INV-004
 building block,OF-45,"instrument: gas detector, NOx (alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height)",6,,AQS-INV-004
 building block,OF-46,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",218,,AQS-INV-004
-building block,OF-47,"seal: mechanical seal, single (SiC/SiC faces, FKM)",170,,AQS-INV-004
+building block,OF-47,"seal: mechanical seal, single (SiC/SiC faces, FKM)",171,,AQS-INV-004
 building block,OF-48,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",5863,,AQS-INV-004
 building block,OF-49,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1492,,AQS-INV-004
 building block,OF-50,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",280,,AQS-INV-004
@@ -2376,7 +2377,7 @@ building block,OF-93,fastener: M10 wedge anchor (ISO 3506 A4-70),110,,AQS-INV-00
 building block,OF-94,fastener: M12 bolt + nut; PP-flanged joint (ISO 3506 A4-70),16,,AQS-INV-004
 building block,OF-95,fastener: M12 PVDF bolt + nut (ISO 3506 A4-70),8,,AQS-INV-004
 building block,OF-96,fastener: M12 A4-70 bolt + nut (ISO 3506 A4-70),8,,AQS-INV-004
-building block,OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),118,,AQS-INV-004
+building block,OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),126,,AQS-INV-004
 building block,OF-98,fastener: M10 stud + nut (ISO 4014 / ISO 4032) (ISO 3506 A4-70),24,,AQS-INV-004
 building block,OF-99,fastener: M8 hold-down bolt (ISO 3506 A4-70),24,,AQS-INV-004
 building block,OF-100,fastener: M16 wedge anchor (ISO 898-1 8.8),16,,AQS-INV-004
@@ -2395,3 +2396,4 @@ building block,OF-112,fastener: M8 socket screw (ISO 3506 A4-70),8,,AQS-INV-004
 building block,OF-113,fastener: M8 bench anchor (ISO 3506 A4-70),4,,AQS-INV-004
 building block,OF-114,fastener: M8 bowl-stand bolt (ISO 3506 A4-70),4,,AQS-INV-004
 building block,OF-115,fastener: M8 bowl-clip bolt (ISO 3506 A4-70),4,,AQS-INV-004
+building block,OF-116,fastener: M10 tube-stand bolt (ISO 3506 A4-70),4,,AQS-INV-004

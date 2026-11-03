@@ -34,7 +34,7 @@ The rule in `merge_panels` folds the panel with the least feeder copper into the
 | PUMPED_HYDRO | LP-DIGESTER |
 | WTR | LP-DIGESTER |
 
-The following merges were rejected because they would add less than 5 kg of copper. They are kept separate under the rule. A panel enclosure and main breaker probably outweigh this copper, but no cost basis is registered, so these merges are held for review: OIL (+0.4 kg), FAB (+1.9 kg), MFG (+2.1 kg), NUT (+4.2 kg).
+The following merges were rejected because they would add less than 5 kg of copper. They are kept separate under the rule. A panel enclosure and main breaker probably outweigh this copper, but no cost basis is registered, so these merges are held for review: OIL (+0.4 kg), FAB (+1.9 kg), NUT (+4.2 kg).
 
 ## 1. Family rollup
 
@@ -301,8 +301,8 @@ Table 1.1. Conductor families
 | FAB | WET_BENCH | transfer pump S10 to LEACH_CSTR_1 signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | FAB | WET_BENCH | transfer pump S38 to OIL_FRAC power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | FAB | WET_BENCH | transfer pump S38 to OIL_FRAC signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
-| distribution | LP-FAB | panel feeder 208 V | 12 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 30.0 | 1 | 120.1 | NEC 430.24: 7.8 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
-| distribution | LP-FAB | panel feeder 460 V | 14 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 30.0 | 1 | 120.1 | NEC 430.24: 10.8 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
+| distribution | LP-FAB | panel feeder 208 V | 12 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 30.0 | 1 | 120.1 | NEC 430.24: 10.2 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
+| distribution | LP-FAB | panel feeder 460 V | 14 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 30.0 | 1 | 120.1 | NEC 430.24: 9.8 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
 | reagent | WS_AMMONIA | on/off valve S33 power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | reagent | WS_AMMONIA | on/off valve S33 signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | reagent | WS_AMMONIA | transfer pump S33 to WET_BENCH power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
@@ -341,9 +341,9 @@ Table 1.1. Conductor families
 | tank | FAB_UPW_TANK | on/off valve S27 signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | tank | FAB_UPW_TANK | transfer pump S27 to WET_BENCH power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | tank | FAB_UPW_TANK | transfer pump S27 to WET_BENCH signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
-| tool | SOLAR_PV_CELL | main drive EGC | 14 AWG | green XHHW-2 Cu | 1 | 4.8 | 1 | 4.8 | NEC 250.122 at 15 A OCPD |
-| tool | SOLAR_PV_CELL | main drive control | 18 AWG | TFFN 3-pair, shielded | 6 | 4.8 | 1 | 28.9 | start/stop, run, fault (assumed) |
-| tool | SOLAR_PV_CELL | main drive feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 4.8 | 1 | 14.4 | NEC 430.22: 1.25 x 1.1 A FLC; routed tray from panel LP-FAB (Manhattan x 1.1 + 3 m drop, assumed) |
+| tool | SOLAR_PV_CELL | PV-ARC-01 dry vacuum pump envelope EGC | 14 AWG | green XHHW-2 Cu | 1 | 4.8 | 1 | 4.8 | NEC 250.122 at 15 A OCPD |
+| tool | SOLAR_PV_CELL | PV-ARC-01 dry vacuum pump envelope control | 18 AWG | TFFN 3-pair, shielded | 6 | 4.8 | 1 | 28.9 | start/stop, run, fault (assumed) |
+| tool | SOLAR_PV_CELL | PV-ARC-01 dry vacuum pump envelope feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 4.8 | 1 | 14.4 | NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-FAB (Manhattan x 1.1 + 3 m drop, assumed) |
 | wet_bench | LITHO_DEV | induced-draft fan power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | wet_bench | LITHO_DEV | induced-draft fan signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | wet_bench | LITHO_DEV | process vacuum pump EGC | 14 AWG | green XHHW-2 Cu | 1 | 6.9 | 1 | 6.9 | NEC 250.122 at 15 A OCPD |

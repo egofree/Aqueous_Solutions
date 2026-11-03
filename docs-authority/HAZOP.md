@@ -16,7 +16,7 @@ This page carries the study HAZOP worksheets: for every node of the generated de
 
 This is a design-derived study HAZOP: deviations, causes and safeguards come from the generated design. It does not replace a facilitated team HAZOP; the team review signs off rev B.
 
-151 nodes, 967 deviations, 233 actions: 144 closed at issue against cited artifacts (duty sheet section 6 relief statements, X-SAF-03 C7; AQS-CTL-001 indication loops), 89 trip actions close in the SIF pass (AQS-CTL-003, `docs-authority/_sif.py`), 0 tracked open in the action register AQS-SAF-008 (`docs-authority/HAZOP_ACTION_REGISTER.md`) with owner tasks in plan terms.
+151 nodes, 967 deviations, 234 actions: 144 closed at issue against cited artifacts (duty sheet section 6 relief statements, X-SAF-03 C7; AQS-CTL-001 indication loops), 90 trip actions close in the SIF pass (AQS-CTL-003, `docs-authority/_sif.py`), 0 tracked open in the action register AQS-SAF-008 (`docs-authority/HAZOP_ACTION_REGISTER.md`) with owner tasks in plan terms.
 
 ## 2. Actions by kind
 
@@ -28,7 +28,7 @@ Table 2.1. Actions by kind
 | high-level or high-flow protection | 70 | X-CTL-03 |
 | independent high-temperature trip on the heater | 14 | X-CTL-03 |
 | PT low-low trip isolating the bank | 3 | X-CTL-03 |
-| pump dry-run protection (low-flow or low-level interlock) | 2 | X-CTL-03 |
+| pump dry-run protection (low-flow or low-level interlock) | 3 | X-CTL-03 |
 
 ## 3. Worksheets
 
@@ -1089,7 +1089,7 @@ Table 2.1. Actions by kind
 
 | Parameter | Guide word | Cause | Consequence | Safeguard | Action |
 |---|---|---|---|---|---|
-| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty; dry-running pump | none | pump dry-run protection (low-flow or low-level interlock) |
 | flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
 | pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
 | temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |

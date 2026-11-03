@@ -1,10 +1,11 @@
-item,description,qty,material,basis
-1,Body / envelope 2400 x 1200 x 1600 mm,1,316L where the stream is wet.,docs-authority/duties/SOLAR_PV_CELL.md
-2,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
-3,"Motor: main drive (induction IE3, IEC 71 / 0.37 kW)",1,-,AQS-INV-001 / AQS-INV-005
-4,bearing: deep-groove ball bearing 6202-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-5,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-6,electronics: motor starter (contactor + overload) 0.37 kW,1,IEC 60947-4-1,AQS-INV-004
-7,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-8,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-9,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Base plate 2400 x 1200 x 20 (X-MFG-38 tool-line bench),1,carbon steel (ASTM A500),452.16,make (AQS-BOM-SC-001),issued envelope frame; anchors in fasteners.csv
+2,Hold-down/guard frame: four 40 x 40 posts + top rails pinning the 2400 x 1200 x 1600 envelope,1,carbon steel (ASTM A500),166.8,make (AQS-BOM-SC-001),HX8 hold-down idiom (X-PAR-04); A-MACH guard
+3,"Station envelopes: PV-TEX-01 KOH texture bath, PV-PSG-01 HF PSG etch bath, PV-ARC-01 PECVD chamber (with platen), PV-CON-01 screen printer, PV-FIRE-01 IR furnace housing, PV-IV-01 flash IV tester",6,316L wetted baths (duty section 3); CS envelopes (dry stations),6001.94,mixed (per-station rows below),"node design tool table (design texts and peak kW); envelope sizes are the layout choice (hold, W12); wetted material per duty section 3 - the node texts name PP, the duty governs (plan rule 5; hold W12)"
+4,"PV-TEX-01 immersion heater envelope (10 L bath, 80 C)",1,purchased unit (envelope),1.79,buy,node PV-TEX-01 basis 0.687 kWh/d; A-M-178 texture 10 L at 80 C; no per-heater kW rating stated (hold W12)
+5,"PV-EMIT-01 quartz diffusion tube OD 200 x 1000, wall 5 (study)",1,quartz (AQS-PV-001 section 3: tube quartz),6.74,buy,node design dims 200 mm x 1.0 m; A-M-178 diffusion basis 20 kg heated mass to 850 C; AQS-PV-001 rev C carries the older 50 mm ID x 800 mm figure - the node governs (hold W12)
+6,PV-EMIT-01 ceramic-fibre insulation annulus 200 mm x 1000,1,ceramic fibre (A-M-178 k basis),32.67,buy,node design text '200 mm ceramic fibre' taken at face value as the fibre thickness (hold W12)
+7,PV-ARC-01 dry vacuum pump envelope,1,purchased unit (envelope),98.12,buy,"A-M-178 basis 1.5 kW vacuum pump 1 h; purchased per plan rule 6, rating from the node design basis"
+8,"Screen print mesh (PV-CON-01, grid 2 mm lines at 10 mm pitch per AQS-PV-001)",1,"stainless, shop-cut (AQS-PV-001 section 3)",0.5,make (AQS-BOM-SC-001),"AQS-PV-001 section 3: screen stainless, shop-cut; mass study figure"
+9,"Purchased drive/heat/electrical sets by node rating: PV-CON-01 200 C dryer 0.5 kW and printer drive 0.2 kW (A-M-178), PV-FIRE-01 IR lamp set 3.0 kW (node peak), PV-IV-01 flash IV tester 0.1 kW (node peak)",4,purchased units (envelopes in the station shells),0.0,buy,"ratings from the node design tool table and A-M-178; purchased per plan rule 6, not drawn beyond their station envelopes"
+10,Nozzle set per docs-authority/nozzles/SOLAR_PV_CELL.csv: drain and vent flush at the envelope faces; the two solids transfer rows drawn DN15 bore not calculated,4,316L (duty section 3),0.23,make (AQS-BOM-SC-001),4-row issued schedule verbatim; atmospheric hose per duty section 4
