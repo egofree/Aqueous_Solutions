@@ -47,10 +47,15 @@ SPEC = {
     "liner_bag": False,
     "rho_map": {"screen_floor": "316L"},        # the SS316 screen bottom board
     "drop_keys": (),
-    "cad_stl_scope": "full build solid, metres (X-PAR-04 envelope registry; the "
-                     "assembly leaves the node box by the stand and lid laps and "
-                     "the box stack - the CRYO_ASU treatment; the misfit is "
-                     "section-7-reported, nothing resized)",
+    "cad_stl_envelope_box": True,               # no in-envelope module fills the node
+                                                # box: the registry keeps the study
+                                                # box (X-PAR-04 gate); the full build
+                                                # lives in export/ and the STEP
+    "cad_stl_scope": "study envelope box, metres (X-PAR-04 registry gate: the box "
+                     "equals the node size_mm 600 x 500 x 1100; the full build "
+                     "leaves the node box by the stand and lid laps and lives in "
+                     "export/ and the STEP - the misfit is section-7-reported, "
+                     "nothing resized)",
     "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces "
                     "(duty section 4: DN15, no flange class, atmospheric tube or "
                     "hose; loop accounting rows on a hive); N1 in on -Y at z 160, "

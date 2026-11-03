@@ -188,13 +188,18 @@ def build_and_export(here, spec):
     solid_val.exportStl(str(out / f"{UNIT.lower()}.stl"), tolerance=0.5,
                         angularTolerance=0.4, ascii=True)
     # cad/stl is the envelope registry in metres (X-PAR-04): replaced from the build
-    # solid (the CRYO_ASU treatment where the build leaves the node box by design)
-    solid_val.scale(0.001).exportStl(str(here.parents[2] / "cad" / "stl" / f"{UNIT}.stl"),
-                                     tolerance=0.0005, angularTolerance=0.4, ascii=True)
+    # solid - UNLESS the build leaves the node box and no in-envelope module fills it,
+    # in which case the registry keeps the study envelope box (the X-PAR-04 gate: the
+    # registry bbox matches size_mm within 1 mm) and the full build lives in export/
+    # and the STEP, the misfit section-7-reported
+    if not spec.get("cad_stl_envelope_box"):
+        solid_val.scale(0.001).exportStl(str(here.parents[2] / "cad" / "stl" / f"{UNIT}.stl"),
+                                         tolerance=0.0005, angularTolerance=0.4, ascii=True)
 
     dims = stl_bbox_mm(str(out / f"{UNIT.lower()}.stl"))
     inside = all(d <= s + 1.0 for d, s in zip(dims, [L, W, H]))
-    reg_dims = stl_bbox_mm(str(here.parents[2] / "cad" / "stl" / f"{UNIT}.stl"))
+    reg_path = here.parents[2] / "cad" / "stl" / f"{UNIT}.stl"
+    reg_dims = stl_bbox_mm(str(reg_path))
     drawn_report = draw_nozzles(P, spec)[1]
     mass = _masses(P, spec, parts)
     report = {

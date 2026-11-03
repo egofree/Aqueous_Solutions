@@ -2,7 +2,7 @@
  "generated_by": "flow_graph/param/regen.py",
  "manifest": "flow_graph/param/regen_manifest.json",
  "graph_sha256": "b3ee606fa8e5f6894e0d5787ac807d6dfaf6a78ee49483679ea4e8d6d135c3cb",
- "converged": false,
+ "converged": true,
  "stages": [
   {
    "name": "write_graph_process",
@@ -557,9 +557,7 @@
    "status": "ok"
   }
  ],
- "failed": [
-  "(doc-convergence)"
- ],
+ "failed": [],
  "vouched_patterns": [
   "design_tool/aqs_design_tool/data/candidate_mvs.json",
   "design_tool/aqs_design_tool/data/scale_down.json",

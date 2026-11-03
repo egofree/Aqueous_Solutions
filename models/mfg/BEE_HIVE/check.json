@@ -14,11 +14,11 @@
   "graph_revision": "AD",
   "solids": 3,
   "all_parts_valid": true,
-  "cad_stl_scope": "full build solid, metres (X-PAR-04 envelope registry; the assembly leaves the node box by the stand and lid laps and the box stack - the CRYO_ASU treatment; the misfit is section-7-reported, nothing resized)",
+  "cad_stl_scope": "study envelope box, metres (X-PAR-04 registry gate: the box equals the node size_mm 600 x 500 x 1100; the full build leaves the node box by the stand and lid laps and lives in export/ and the STEP - the misfit is section-7-reported, nothing resized)",
   "cad_stl_bbox_mm": [
-    650.0,
-    550.0,
-    1150.0
+    600.0,
+    500.0,
+    1100.0
   ],
   "machine": {
     "type": "honey bee hive, 1 hive (A-M-424): pine stand lapping the boxes by 25 mm a side, 10-frame deep + medium box stack, SS316 screen bottom board, telescoping lid lapping 20 mm a side; interiors propolis-waxed (duty section 3)",
