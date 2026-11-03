@@ -1,0 +1,3 @@
+item,size,grade,qty,location,basis
+1,M8 cabinet base anchor,ISO 898-1 8.8,4,cabinet to the slab; 4 corners (count from the model),8.8 on carbon steel per the plan grade rule (anchor is not a feed-path part)
+2,M6 drive-plate bolt,ISO 3506 A4-70,8,mixer/grinder drive plates to their housings; 4 per drive (study pattern),A4-70 on the SS304 joint per the grade rule; NO copper-bearing alloys on any feed path (duty section 3); study pattern; confirmed at fabrication

@@ -1,5 +1,8 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,cabinet_shell,1,SS304,343.8,make,cabinet class; mixer + grinder + HP drier cabinet at the 0.6 kW duty (A-M-426) (X-FARM sec3) (s
-2,drier_stack,1,SS304,63.0,make,cabinet class; mixer + grinder + HP drier cabinet at the 0.6 kW duty (A-M-426) (X-FARM sec3) (s
-3,mixer_housing,1,SS304,37.7,make,cabinet class; mixer + grinder + HP drier cabinet at the 0.6 kW duty (A-M-426) (X-FARM sec3) (s
-4,top,1,SS304,46.8,make,cabinet class; mixer + grinder + HP drier cabinet at the 0.6 kW duty (A-M-426) (X-FARM sec3) (s
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"SS304 cabinet: sheet 5 mm walls and floor, 5 mm top (1300 x 900 x 1700)",1,SS304 (duty section 3),390.6,make,size_basis verbatim (A-M-426); food-contact sanitation class; no copper-bearing alloys on any feed path (duty section 3)
+2,Mixer trough housing 400 x 400 x 500 (hollow sheet box),1,SS304 (duty section 3),37.7,make,housing drawn; the drive is the purchased item below (plan rule 6)
+3,Grinder housing 180 x 400 x 400 between mixer and drier,1,SS304 (duty section 3),20.9,make,"the size_basis names the grinder; housing position is a study layout choice (hold, WORK_ORDER W12); the drive is the purchased item below"
+4,HP drier stack housing 400 x 400 x 900 with the quartz-sleeve duct class,1,SS304 + quartz sleeve (duty section 3),63.0,make,duty section 3 quartz-sleeve ducting; the drier unit is the purchased item below
+5,"Mixer + grinder drive set, purchased, 0.6 kW duty class",1,purchased drive set (envelope),0.0,buy,"node duty class 0.6 kW (A-M-426) - the rating from the node; purchased per plan rule 6; the maker's mass governs (hold, WORK_ORDER W12)"
+6,"HP drier unit, purchased, on the storage draw only",1,purchased drier (envelope),0.0,buy,"node design: drying serves only the A-M-270 dry-reserve draw (0.5 kg/d); purchased per plan rule 6 (hold, WORK_ORDER W12)"
+7,"Nozzle set per docs-authority/nozzles/FEED_PREP.csv: 13 rows drawn as DN15 tube stubs (4 in z 160, 7 out z 600, drain, vent)",13,PP fittings (duty section 3),0.8,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4

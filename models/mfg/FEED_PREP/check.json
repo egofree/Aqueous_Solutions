@@ -1,25 +1,225 @@
 {
-  "shell_bbox_mm": [
+  "bbox_mm": [
     1300.0,
     900.0,
     1700.0
   ],
-  "envelope_mm": [
-    1300,
-    900,
-    1700
+  "inside_size_mm": true,
+  "size_mm": [
+    1300.0,
+    900.0,
+    1700.0
   ],
-  "inside_size_mm_shell": true,
-  "solids": 3,
+  "size_basis": "mixer + grinder + HP drier cabinet at the 0.6 kW duty (A-M-426) (X-FARM sec3)",
+  "graph_revision": "AD",
+  "solids": 4,
   "all_parts_valid": true,
-  "material_class": "SS304",
-  "form": "cabinet",
-  "mass_kg": {
+  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the rebuild fills the node box 1300 x 900 x 1700 flush)",
+  "cad_stl_bbox_mm": [
+    1300.0,
+    900.0,
+    1700.0
+  ],
+  "machine": {
+    "type": "ration formulation cabinet (A-M-426; A-M-416 no imported grain): SS304 cabinet 1300 x 900 x 1700 with the mixer trough, the grinder housing the size_basis names, and the HP drier stack - housings drawn, drives purchased per plan rule 6",
+    "a_farm": "the cabinet is drawn at the node box flush; the drain and the sec3-named housings are drawn",
+    "purchased": "the mixer/grinder drive set and the HP drier unit are the purchased items, named with the node rating (0.6 kW duty class, A-M-426; the drier runs on the storage draw only, node design) - plan rule 6",
+    "material": "SS304 contact surfaces and mixing troughs, PP feed bins, quartz-sleeve drier ducting; no copper-bearing alloys on any feed path",
+    "ca_mm": 0.0
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        606.0,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "fresh duckweed to formulation (layers + quail + reserve draw)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        664.6,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "dried larvae meal to the layer formulation",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        693.9,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "baked crushed eggshell return (38 g Ca/d)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        620.7,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "formulated layer ration",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        650.0,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "formulated quail ration",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        679.3,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "dried duckweed to the dry reserve",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        708.6,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "screenings/fines back to the larvae bin",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        737.9,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drying evaporation on the storage draw (fresh-basis water)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        650.0,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 1700.0,
+      "xy_mm": [
+        650.0,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 predates the build height 1700 - drawn flush at the envelope top (hold, W12)"
+    },
+    "N11": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        635.3,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "fresh larvae to the formulation drier",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N12": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        562.1,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "pressed duckweed mash to the duck ration",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N13": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        591.4,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "press water back to the loop",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    }
+  },
+  "nozzle_count_schedule": 13,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); inlets N1/N2/N3/N11 on -Y at z 160, outlets N4/N5/N6/N7/N8/N12/N13 on +Y at z 600; N9 drain flush at the envelope bottom; N10 vent flush at the envelope top (schedule z 800 predates the 1700 box - stale datum, hold W12); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
     "cabinet_shell": 343.8,
     "top": 46.8,
     "mixer_housing": 37.7,
-    "drier_stack": 63.0
+    "drier_stack": 63.0,
+    "grinder_housing": 20.9,
+    "nozzles": 0.8
   },
-  "empty_kg": 491.3,
-  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+  "cadquery": "2.8.0"
 }
