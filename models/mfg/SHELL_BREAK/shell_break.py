@@ -1,10 +1,11 @@
 """SHELL_BREAK manufacturing model, AQS-PLAN-006 work order (X-MFG lane, FOUNDRY-SHELL_BREAK-10 M3).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only.
+Graph revision AD. Study. Not a PE stamp. Reads params.json only.
 Vibratory shell knock-out station with reclaim sieve (AQS-DUTY-072): the cast
 tree arrives from INV_CAST N4, the vibratory table breaks the shell, the sieve
 splits reclaim stucco/flour from the spent silica export. No measured rate is
-claimed anywhere.
+claimed anywhere. Connection hardware draws flush at the envelope faces:
+nothing protrudes (A-core 2).
 """
 import csv, json, math, pathlib
 import cadquery as cq
@@ -47,11 +48,11 @@ parts["reclaim_pan"] = box(880.0, 220.0, 580.0, 360.0, 360.0, 40)
 parts["enclosure"] = box(80.0, 180.0, 700.0, 860.0, 440.0, 250.0).cut(
     box(100.0, 200.0, 670.0, 820.0, 400.0, 280.0))
 # ---------------- nozzle hardware ----------------
-parts["cast_inlet"] = box(-30.0, 340.0, 40.0, 40.0, 120.0, 130.0)   # N1 -X z 160, full height
+parts["cast_inlet"] = box(0.0, 340.0, 40.0, 40.0, 120.0, 130.0)   # N1 -X z 160, flush at the face
 parts["casting_out"] = box(1460.0, 200.0, 600.0, 40.0, 400.0, 100)  # N2 +X z 600
 parts["spent_out"] = box(1400.0, 60.0, 600.0, 40.0, 200.0, 100)     # N3 +X z 600 (spent silica)
-parts["reclaim_out"] = box(900.0, W - 30.0, 550.0, 200.0, 40.0, 100)  # N4 +Y z 600
-parts["silica_out"] = box(1300.0, W - 30.0, 550.0, 120.0, 40.0, 100)  # N5 +Y z 600
+parts["reclaim_out"] = box(900.0, W - 40.0, 550.0, 200.0, 40.0, 100)  # N4 +Y z 600, flush at the face
+parts["silica_out"] = box(1300.0, W - 40.0, 550.0, 120.0, 40.0, 100)  # N5 +Y z 600, flush at the face
 parts["drain_well"] = tube(30.5, DN15, (400, 400, 0), "Z", 50)        # N6
 parts["vent_stub"] = tube(DN15, DN15 - W15, (110.0, 110.0, 1460.0), "Z", 40)   # N7 on the mast at the z 1500 datum
 
@@ -71,7 +72,7 @@ for k, v in parts.items():
 cap_solid = body.val()
 cap_solid.exportStl(str(out / "shell_break.stl"), tolerance=0.4, angularTolerance=0.4, ascii=True)
 
-EXTERNAL = ("cast_inlet", "casting_out", "spent_out", "reclaim_out", "silica_out")
+EXTERNAL = ("cast_inlet", "casting_out", "spent_out", "reclaim_out", "silica_out")   # schedule hardware, drawn flush at the faces
 in_env = None
 for k, v in parts.items():
     if k in EXTERNAL:
@@ -85,7 +86,7 @@ in_env_solid.scale(0.001).exportStl(str(HERE.parents[2] / "cad" / "stl" / "SHELL
 ALL = list(parts.values()) + list(inv.values())
 sb = cq.Compound.makeCompound([parts["frame"].val()]).BoundingBox()
 tb_ = cq.Compound.makeCompound([v.val() for v in ALL]).BoundingBox()
-slack = 50.0
+slack = 1.0   # A-core 2 gate: the flush-hardware build stays inside size_mm within 1 mm
 inside_shell = bool(sb.xmin >= -1 and sb.xmax <= L + 1 and sb.ymin >= -1 and sb.ymax <= W + 1
                     and sb.zmin >= -1 and sb.zmax <= H + 1)
 overhang = {"-X": round(-tb_.xmin, 1), "+X": round(tb_.xmax - L, 1),
@@ -107,6 +108,7 @@ report = {
     "external_parts": list(EXTERNAL),
     "cap_solids": len(cap_solid.Solids()),
     "all_parts_valid": valid,
+    "reclaim_pan_volume_litres": round(parts["reclaim_pan"].val().Volume() / 1e6, 1),
     "part_mass_kg": mass,
     "cadquery": "2.8.0",
 }
@@ -133,14 +135,10 @@ with open(HERE / "bom.csv", "w", newline="") as f:
     w.writerows(rows)
 (HERE / "fasteners.csv").write_text(
     'item,size,grade,qty,location,basis\n'
-    '1,M10 anchor,ISO 898-1 8.8,4,frame to slab,study\n')
-(HERE / "WORK_ORDER.md").write_text(
-    "# Work order SHELL_BREAK\n\nAuthority: AQS-DUTY-072 (X-MFG lane). LIVE unit - vibratory knock-out.\n\n"
-    "1. Fabricate the frame and feed deck; set on anchors.\n"
-    "2. Fit the vibratory table with the drive; prove the isolation mounts.\n"
-    "3. Fit the reclaim sieve and pan at the stated slope.\n"
-    "4. Mount the enclosure hood; fit the N1 inlet, N2..N5 outlets, N6 drain and N7 vent.\n"
-    "5. Test: table vibration survey, then a trial knock-out of an INV_CAST campaign tree.\n"
-    "6. Inspect against models/mfg/SHELL_BREAK/export/shell_break.step; record dimensions on the traveller.\n")
+    '1,M10 anchor,ISO 898-1 8.8,4,frame to slab,study\n'
+    '2,M10 table mount,ISO 898-1 8.8,4,vibratory table isolation mounts,study\n'
+    '3,M8 bolt,ISO 898-1 8.8,8,enclosure hood to the posts,study\n')
+# WORK_ORDER.md is the hand-authored W1-W12 item beside the model (AQS-PLAN-006 section 2);
+# the builder no longer writes it, so a rebuild never clobbers the work order.
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps(report))

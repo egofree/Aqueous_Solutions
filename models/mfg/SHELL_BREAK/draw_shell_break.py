@@ -81,7 +81,7 @@ SHEETS = [
      "Fabricated part sheet: inlet + drain."),
     ("iso01", full, (1, -1, 1),
      ['Shop orientation: +X face, y along depth, z up; vibratory table, sieve and enclosure on the frame',
-      'Graph revision AC is the model authority for this build; STEP (export/shell_break.step) is the solids of record',
+      'The live graph revision in params.json is the model authority for this build; STEP (export/shell_break.step) is the solids of record',
       'Cast-tree inventory shown on the table - not a BOM part'],
      "Isometric orientation sheet."),
 ]

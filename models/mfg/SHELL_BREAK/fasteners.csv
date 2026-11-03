@@ -1,2 +1,4 @@
 item,size,grade,qty,location,basis
 1,M10 anchor,ISO 898-1 8.8,4,frame to slab,study
+2,M10 table mount,ISO 898-1 8.8,4,vibratory table isolation mounts,study
+3,M8 bolt,ISO 898-1 8.8,8,enclosure hood to the posts,study
