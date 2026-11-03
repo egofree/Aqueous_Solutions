@@ -2515,6 +2515,8 @@ MFG,MFG,WIRE_DRAW,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 nor
 MFG,MFG,WIRE_DRAW,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Bull-block wire drawer: main drive: run and fault (assumed)
 MFG,MFG,WIRE_DRAW,electronics,variable-frequency drive,1.1 kW,IEC 61800-5-1,1,Bull-block wire drawer: main drive (assumed VFD at >= 0.75 kW)
 MFG,MFG,WIRE_DRAW,fabricated part,fabricated part set,9 BOM lines,models/mfg/WIRE_DRAW/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+MFG,MFG,WIRE_DRAW,fastener,M12 drum-bearing block bolt + nut,M12 drum-bearing block bolt + nut,ISO 898-1 8.8,4,models/mfg/WIRE_DRAW/fasteners.csv
+MFG,MFG,WIRE_DRAW,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,8,models/mfg/WIRE_DRAW/fasteners.csv
 MFG,MFG,WIRE_DRAW,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 MFG,MFG,WIRE_DRAW,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 MFG,MFG,WIRE_DRAW,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"

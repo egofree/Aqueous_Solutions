@@ -39,9 +39,9 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M10 | stud | ISO 3506 A4-70 | 32 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | stud | ISO 898-1 8.8 | 94 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | anchor | ISO 3506 A4-70 | 3 | ISO 4017 + chemical anchor (ETAG 001) |
-| M12 | anchor | ISO 898-1 8.8 | 244 | ISO 4017 + chemical anchor (ETAG 001) |
+| M12 | anchor | ISO 898-1 8.8 | 252 | ISO 4017 + chemical anchor (ETAG 001) |
 | M12 | hex bolt | ISO 3506 A4-70 | 488 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M12 | hex bolt | ISO 898-1 8.8 | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M12 | hex bolt | ISO 898-1 8.8 | 28 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | PVDF (non-metallic) | 34 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | stud | ISO 898-1 8.8 | 48 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | anchor | ISO 898-1 8.8 | 16 | ISO 4017 + chemical anchor (ETAG 001) |

@@ -1621,15 +1621,15 @@ unit,WET_BENCH,"DIW rinse bath (inner 120 x 250 x 160, drawn to its bay), wall 1
 unit,WET_BENCH,Immersion heater envelopes in SC1 and SC2,2,purchased unit (envelope),"node equipment rows carry the energy basis (2.479 kWh/d each, heat-up + insulated hold per the node note); no per-heater kW rating is stated on the node or duty - rating hold, WORK_ORDER W12"
 unit,WET_BENCH,N2 gun set (node equipment row: DIW rinse + N2 guns),1,purchased hand tools (not drawn),"node equipment row 0.05 kWh/d; hand tools at the bench, no rating stated on the node or duty (plan rule 6: named, not invented)"
 unit,WET_BENCH,"Nozzle set per docs-authority/nozzles/WET_BENCH.csv: 11 open-bore tube stubs (DN15/DN25) drawn polymer per duty section 3, drain and vent flush at the envelope faces",13,PVC-U (duty section 3: no metal wetted part),"13-row issued schedule verbatim; atmospheric tube per duty section 4; stub ODs follow the DN series (the steel pipe table); polymer wall is the supplier rule (hold, WORK_ORDER W12)"
-unit,WIRE_DRAW,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/WIRE_DRAW.md
-unit,WIRE_DRAW,Process nozzle DN15,5,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
-unit,WIRE_DRAW,"Motor: Bull-block wire drawer: main drive (induction IE3, IEC 90S / 1.1 kW)",1,-,AQS-INV-001 / AQS-INV-005
-unit,WIRE_DRAW,bearing: deep-groove ball bearing 6205-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-unit,WIRE_DRAW,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-unit,WIRE_DRAW,electronics: variable-frequency drive 1.1 kW,1,IEC 61800-5-1,AQS-INV-004
-unit,WIRE_DRAW,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-unit,WIRE_DRAW,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-unit,WIRE_DRAW,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+unit,WIRE_DRAW,"Plinth 1000 x 600 x 20 (CS, anchor bosses)",1,carbon steel,"dry machine-shop floor service, CA 0 mm (AQS-STD-001 shop rule); anchors in fasteners.csv"
+unit,WIRE_DRAW,Bench bed 600 long on 4 legs (DRAW bench idiom scaled to the node box),1,carbon steel,duty section 3: steel bench; study sections (WORK_ORDER W12)
+unit,WIRE_DRAW,"Tungsten-carbide drawing die set, 4 dies in tool-steel casings",1,carbide + tool steel (consumable set),"duty section 3 class (DIETER1988 ch. 20/21); consumable, buy; the die count is a study value (hold, WORK_ORDER W12)"
+unit,WIRE_DRAW,Bull-block take-up drum OD 300 with shaft and wire-guide sheaves,1,carbon steel,"duty section 3: capstan hardware carries the machine lubricant programme (no wetted stream); drum size is the study value (hold, WORK_ORDER W12)"
+unit,WIRE_DRAW,Draw-fume extraction hood over the die zone (N4 routes to the house scrubber train),1,carbon steel,layout choice (WORK_ORDER W12)
+unit,WIRE_DRAW,"Drive group on the drum bay (purchased, envelope and interface)",1,purchased drive (envelope),purchased per plan rule 6; nameplate 1.1 kW is the node stamp (AQS-MFG-010 Table 2.1)
+unit,WIRE_DRAW,"Control cabinet (purchased, envelope and interface)",1,purchased cabinet (envelope),purchased per plan rule 6; mass a table-density placeholder until the maker TDS quotes (W12)
+unit,WIRE_DRAW,"Die-zone and bull-block guard rail, 4 posts x 3 tiers (A-MACH: guard drawn)",1,CS tube,guard over the die zone and rotating drum; layout choice (WORK_ORDER W12)
+unit,WIRE_DRAW,Nozzle set per docs-authority/nozzles/WIRE_DRAW.csv: 6 DN15 stubs and 1 solids row drawn DN15 bore not calculated,7,316L tube,schedule tags/faces/heights verbatim; atmospheric per duty section 4
 unit,WS_AMMONIA,"Bund tray 600 x 600, floor 20 + curb 60 x 10",1,PVC-U plate,skid layout choice (WORK_ORDER W12); CA 0 mm (AQS-STD-001 polymer rule); the duty section 4 prose own-bund lines are room-side containment (hold)
 unit,WS_AMMONIA,"Day tank OD 260, wall 10 mm, z 40..300, with heads",1,PVC-U plate/pipe,"duty section 3 PVC-U wetted (rules M1 and M2); station day-tank envelope - no vessel diameter or holdup basis on the node or duty (hold, WORK_ORDER W12)"
 unit,WS_AMMONIA,"Service-zone guard rail 130 x 100 x 150, tube 12 (A-MACH: guard drawn)",1,PP tube,guard over the front-right floor zone; layout choice (WORK_ORDER W12)
@@ -2309,7 +2309,7 @@ building block,OF-93,fastener: M10 wedge anchor (ISO 3506 A4-70),110,,AQS-INV-00
 building block,OF-94,fastener: M12 bolt + nut; PP-flanged joint (ISO 3506 A4-70),16,,AQS-INV-004
 building block,OF-95,fastener: M12 PVDF bolt + nut (ISO 3506 A4-70),8,,AQS-INV-004
 building block,OF-96,fastener: M12 A4-70 bolt + nut (ISO 3506 A4-70),8,,AQS-INV-004
-building block,OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),182,,AQS-INV-004
+building block,OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),190,,AQS-INV-004
 building block,OF-98,fastener: M10 stud + nut (ISO 4014 / ISO 4032) (ISO 3506 A4-70),24,,AQS-INV-004
 building block,OF-99,fastener: M8 hold-down bolt (ISO 3506 A4-70),24,,AQS-INV-004
 building block,OF-100,fastener: M16 wedge anchor (ISO 898-1 8.8),16,,AQS-INV-004
@@ -2338,3 +2338,4 @@ building block,OF-122,fastener: M12 trunnion stud + nut (ISO 898-1 8.8),4,,AQS-I
 building block,OF-123,fastener: M16 journal-block bolt + nut (ISO 898-1 8.8),8,,AQS-INV-004
 building block,OF-124,fastener: M10 tower-flange bolt + nut (ISO 3506 A4-70),8,,AQS-INV-004
 building block,OF-125,fastener: M10 machine hold-down bolt + nut (ISO 898-1 8.8),12,,AQS-INV-004
+building block,OF-126,fastener: M12 drum-bearing block bolt + nut (ISO 898-1 8.8),4,,AQS-INV-004

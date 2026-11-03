@@ -81,5 +81,64 @@
   "A-core",
   "A-MACH",
   "A-SC"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "bench": {
+   "x_mm": [
+    100.0,
+    700.0
+   ],
+   "z_mm": [
+    300.0,
+    420.0
+   ]
+  },
+  "bull_block": {
+   "od_mm": 300.0,
+   "w_mm": 140.0,
+   "x_mm": 780.0,
+   "axis_z_mm": 600.0
+  },
+  "die_stand": {
+   "x_mm": [
+    100.0,
+    220.0
+   ],
+   "dies": 4
+  },
+  "purchased_bays": {
+   "drive_x_mm": [
+    700.0,
+    960.0
+   ],
+   "cabinet_xy_mm": [
+    60.0,
+    440.0,
+    300.0,
+    560.0
+   ]
+  }
+ },
+ "design": {
+  "service": "WIRE_DRAW: billet drawn to wire product (S58); draw scrap returns and the draw-fume row routes to the house scrubber train (duty sections 1 and 4)",
+  "tool_row": "AQS-MFG-010 Table 2.1: bull-block wire drawer, nameplate 1.1 kW; 250 MPa x strain 3.0 / 0.55 (DIETER1988) + no-load 15 % (A-M-177)",
+  "idiom": "the DRAW accepted model (commit e1e7d94b) is the bench idiom this wire variant reuses, scaled to the node box and the bull-block class",
+  "material": "316L where the stream is wet (duty section 3); dry forming machine",
+  "ca_mm": 0.0,
+  "material_basis": "duty section 3; CA 0 mm shop rule (AQS-STD-001)",
+  "purchased": "drive group and control cabinet (nameplate 1.1 kW, node stamp), plan rule 6 envelopes; the carbide die set is the purchased consumable"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; bench centreline y 300; bed x 100..700 at z 300..420; die stand on the -X head, bull block +X at z 600 with the drive bay behind it; control cabinet on the -X floor; guard rail over the die zone and drum",
+  "fume": "extraction hood over the die zone; the N4 row is the fume edge to the house scrubber train",
+  "supports": "plinth + hold-down frame + 8 slab anchors (A-MACH practice)",
+  "nozzle_spread": "the schedule gives face and height only; N1/N7 pack one row on -Y at z 160; N2/N3/N4 on +Y at z 600; drain under the bench centre, vent on the drum head; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

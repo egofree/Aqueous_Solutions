@@ -1,0 +1,144 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 11,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "bull-block wire drawer per the duty sheet and the AQS-MFG-010 tool row (Table 2.1, rev C metering split), built on the DRAW accepted idiom (commit e1e7d94b) scaled to the node box: steel bench bed on legs, die stand with the tungsten-carbide die set in tool-steel casings (consumable buy set), bull-block take-up drum OD 300 with shaft, wire-guide sheaves, draw-fume extraction hood over the die zone, drive group and control cabinet as purchased envelopes; die-zone/drum guard rail (A-MACH) + hold-down frame",
+    "tool_row": "AQS-MFG-010 Table 2.1: Bull-block wire drawer, nameplate 1.1 kW; energy basis 250 MPa x strain 3.0 / 0.55 (DIETER1988) = 0.0423 kWh/kg + no-load 15 % x 1 h (A-M-177)",
+    "bench": {
+      "bed_x_mm": [
+        100.0,
+        700.0
+      ],
+      "z_mm": [
+        300.0,
+        420.0
+      ],
+      "basis": "DRAW bench idiom scaled to the node box; study sections (hold, WORK_ORDER W12)"
+    },
+    "die_set": {
+      "count": 4,
+      "basis": "tungsten-carbide drawing dies in tool-steel casings (duty section 3 class, DIETER1988 ch. 20/21); consumable buy set; the die count is a study value (hold, WORK_ORDER W12)"
+    },
+    "bull_block": {
+      "od_mm": 300.0,
+      "w_mm": 140.0,
+      "axis_z_mm": 600.0,
+      "basis": "study drum size (hold, WORK_ORDER W12); the capstan hardware carries the machine lubricant programme - no wetted stream (duty section 3)"
+    },
+    "fume": "the N4 draw-fume row routes to the house scrubber train; the extraction hood over the die zone is the layout choice (W12)",
+    "purchased": "drive group and control cabinet on their bays, drawn as their envelopes per plan rule 6 (nameplate 1.1 kW is the node stamp); the carbide die set is the purchased consumable",
+    "guard": "four-post hold-down/guard frame pins the registry box (X-PAR-04); die-zone and drum guard rail on 4 posts x 3 tiers; 8 slab anchors (fasteners.csv)",
+    "material": "316L where the stream is wet (duty section 3); dry forming machine - CA 0 mm",
+    "ca_mm": 0.0
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 485.3,
+      "schedule_rating": "Class 150",
+      "service": "billet / melt / charge",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 470.7,
+      "schedule_rating": "Class 150",
+      "service": "wire product",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 500.0,
+      "schedule_rating": "Class 150",
+      "service": "draw scrap",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 529.3,
+      "schedule_rating": "Class 150",
+      "service": "draw fume",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; the 800 datum is the box top"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 514.6,
+      "schedule_rating": "Class 150",
+      "service": "rod/wire for final sizing",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    }
+  },
+  "nozzle_count_schedule": 7,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); N1 billet in and N7 rod/wire stock in (solids row drawn DN15, bore not calculated, plan W4) on -Y at z 160; N2 wire product, N3 draw scrap and N4 draw fume on +Y at z 600; drain flush at the envelope bottom (50 datum); vent flush at the envelope top (800 datum is the box top); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "frame": 76.36,
+    "bench_bed": 134.14,
+    "die_stand": 79.13,
+    "die_set": 4.1,
+    "bull_block": 77.68,
+    "block_shaft": 7.85,
+    "wire_guides": 3.55,
+    "fume_hood": 36.17,
+    "drive_group": 145.07,
+    "control_cabinet": 158.26,
+    "guard_rail": 17.44,
+    "nozzles": 0.41
+  },
+  "cadquery": "2.8.0"
+}

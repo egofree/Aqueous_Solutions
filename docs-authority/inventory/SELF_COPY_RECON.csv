@@ -1621,15 +1621,15 @@ WET_BENCH,"DIW rinse bath (inner 120 x 250 x 160, drawn to its bay), wall 10 (st
 WET_BENCH,Immersion heater envelopes in SC1 and SC2,2,purchased unit (envelope),Unstated,-,not classed: purchased unit (envelope)
 WET_BENCH,N2 gun set (node equipment row: DIW rinse + N2 guns),1,purchased hand tools (not drawn),Unstated,-,not classed: purchased hand tools (not drawn)
 WET_BENCH,Nozzle set per docs-authority/nozzles/WET_BENCH.csv: 11 open-bore tube stubs (DN,13,PVC-U (duty section 3: no metal wetted part),Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-WIRE_DRAW,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-WIRE_DRAW,Process nozzle DN15,5,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-WIRE_DRAW,"Motor: Bull-block wire drawer: main drive (induction IE3, IEC 90S / 1.1 kW)",1,-,Unstated,-,not classed: -
-WIRE_DRAW,bearing: deep-groove ball bearing 6205-2Z,2,"ISO 15 / ISO 492 normal class, C3",Unstated,-,"not classed: ISO 15 / ISO 492 normal class, C3"
-WIRE_DRAW,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,Unstated,-,not classed: IEC 61131-2
-WIRE_DRAW,electronics: variable-frequency drive 1.1 kW,1,IEC 61800-5-1,Unstated,-,not classed: IEC 61800-5-1
-WIRE_DRAW,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",Unstated,-,"not classed: ceramic diaphragm, IEC 61298"
-WIRE_DRAW,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-WIRE_DRAW,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,Unstated,-,not classed: UL 489 / IEC 60947-2
+WIRE_DRAW,"Plinth 1000 x 600 x 20 (CS, anchor bosses)",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+WIRE_DRAW,Bench bed 600 long on 4 legs (DRAW bench idiom scaled to the node box),1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+WIRE_DRAW,"Tungsten-carbide drawing die set, 4 dies in tool-steel casings",1,carbide + tool steel (consumable set),Closed,Fe EW -> MET_MELT -> mill/draw,
+WIRE_DRAW,Bull-block take-up drum OD 300 with shaft and wire-guide sheaves,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+WIRE_DRAW,Draw-fume extraction hood over the die zone (N4 routes to the house scrubber tra,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+WIRE_DRAW,"Drive group on the drum bay (purchased, envelope and interface)",1,purchased drive (envelope),Unstated,-,not classed: purchased drive (envelope)
+WIRE_DRAW,"Control cabinet (purchased, envelope and interface)",1,purchased cabinet (envelope),Unstated,-,not classed: purchased cabinet (envelope)
+WIRE_DRAW,"Die-zone and bull-block guard rail, 4 posts x 3 tiers (A-MACH: guard drawn)",1,CS tube,Closed,Fe EW -> MET_MELT -> mill/draw,
+WIRE_DRAW,Nozzle set per docs-authority/nozzles/WIRE_DRAW.csv: 6 DN15 stubs and 1 solids r,7,316L tube,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 WS_AMMONIA,"Bund tray 600 x 600, floor 20 + curb 60 x 10",1,PVC-U plate,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 WS_AMMONIA,"Day tank OD 260, wall 10 mm, z 40..300, with heads",1,PVC-U plate/pipe,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 WS_AMMONIA,"Service-zone guard rail 130 x 100 x 150, tube 12 (A-MACH: guard drawn)",1,PP tube,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
@@ -2309,7 +2309,7 @@ OF-93,fastener: M10 wedge anchor (ISO 3506 A4-70),110,,Unstated,-,material not s
 OF-94,fastener: M12 bolt + nut; PP-flanged joint (ISO 3506 A4-70),16,,Unstated,-,material not stated on the unit BOM line
 OF-95,fastener: M12 PVDF bolt + nut (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
 OF-96,fastener: M12 A4-70 bolt + nut (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
-OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),182,,Unstated,-,material not stated on the unit BOM line
+OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),190,,Unstated,-,material not stated on the unit BOM line
 OF-98,fastener: M10 stud + nut (ISO 4014 / ISO 4032) (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line
 OF-99,fastener: M8 hold-down bolt (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line
 OF-100,fastener: M16 wedge anchor (ISO 898-1 8.8),16,,Unstated,-,material not stated on the unit BOM line
@@ -2338,3 +2338,4 @@ OF-122,fastener: M12 trunnion stud + nut (ISO 898-1 8.8),4,,Unstated,-,material 
 OF-123,fastener: M16 journal-block bolt + nut (ISO 898-1 8.8),8,,Unstated,-,material not stated on the unit BOM line
 OF-124,fastener: M10 tower-flange bolt + nut (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
 OF-125,fastener: M10 machine hold-down bolt + nut (ISO 898-1 8.8),12,,Unstated,-,material not stated on the unit BOM line
+OF-126,fastener: M12 drum-bearing block bolt + nut (ISO 898-1 8.8),4,,Unstated,-,material not stated on the unit BOM line
