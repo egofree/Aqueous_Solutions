@@ -79,7 +79,7 @@ SHEETS = [
      "Fabricated part sheet: service group (chutes, outlets, drain)."),
     ("iso01", full, (1, -1, 1),
      ['Shop orientation: +X face, y along depth, z up; booth, tank, stucco station and manipulator',
-      'Graph revision AC is the model authority for this build; STEP (export/shell_build.step) is the solids of record',
+      'The live graph revision in params.json is the model authority for this build; STEP (export/shell_build.step) is the solids of record',
       'Slurry inventory shown in place - not a BOM part'],
      "Isometric orientation sheet."),
 ]

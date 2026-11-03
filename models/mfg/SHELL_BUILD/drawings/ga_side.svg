@@ -111,21 +111,17 @@
 			<path d="M1500.0,-400.0 L1500.0,-400.9684927182936 L1500.0,-401.9248060787221 L1500.0,-402.8569138859122 L1500.0,-403.75309434336685 L1500.0,-404.6020774618577 L1500.0,-405.39318678607805 L1500.0,-406.1164736572636 L1500.0,-406.7628423233485 L1500.0,-407.3241643233247 L1500.0,-407.79338070735594 L1500.0,-408.1645908071674 L1500.0,-408.4331264403728 L1500.0,-408.59561061557656 L1500.0,-408.65 " />
 			<path d="M1500.0,-408.65 L1500.0,-408.4331264403728 L1500.0,-407.79338070735594 L1500.0,-406.7628423233485 L1500.0,-405.39318678607805 L1500.0,-403.75309434336685 L1500.0,-401.9248060787221 L1500.0,-400.0 L1500.0,-398.0751939212779 L1500.0,-396.24690565663315 L1500.0,-394.60681321392195 L1500.0,-393.2371576766515 L1500.0,-392.20661929264406 L1500.0,-391.5668735596272 L1500.0,-391.35 " />
 			<path d="M1500.0,-391.35 L1500.0,-391.40438938442344 L1500.0,-391.5668735596272 L1500.0,-391.8354091928326 L1500.0,-392.20661929264406 L1500.0,-392.6758356766753 L1500.0,-393.2371576766515 L1500.0,-393.8835263427364 L1500.0,-394.60681321392195 L1500.0,-395.3979225381423 L1500.0,-396.24690565663315 L1500.0,-397.1430861140878 L1500.0,-398.0751939212779 L1500.0,-399.0315072817064 L1500.0,-399.99999999999994 " />
-			<path d="M130.0,-320.0 L220.0,-320.0 " />
-			<path d="M220.0,-320.0 L220.0,-480.0 " />
-			<path d="M130.0,-480.0 L220.0,-480.0 " />
-			<path d="M130.0,-320.0 L130.0,-480.0 " />
-			<path d="M130.0,-320.0 L190.0,-320.0 " />
-			<path d="M190.0,-480.0 L130.0,-480.0 " />
-			<path d="M130.0,-200.0 L130.0,-320.0 " />
-			<path d="M130.0,-480.0 L130.0,-520.0 " />
-			<path d="M130.0,-200.0 L190.0,-200.0 " />
+			<path d="M190.0,-320.0 L220.0,-320.0 " />
 			<path d="M190.0,-200.0 L190.0,-320.0 " />
+			<path d="M130.0,-200.0 L190.0,-200.0 " />
+			<path d="M130.0,-520.0 L130.0,-200.0 " />
+			<path d="M130.0,-520.0 L190.0,-520.0 " />
+			<path d="M190.0,-480.0 L190.0,-520.0 " />
+			<path d="M190.0,-480.0 L220.0,-480.0 " />
+			<path d="M220.0,-320.0 L220.0,-480.0 " />
 			<path d="M130.0,-320.0 L190.0,-320.0 " />
 			<path d="M190.0,-480.0 L190.0,-400.0 " />
 			<path d="M130.0,-400.0 L190.0,-400.0 " />
-			<path d="M190.0,-480.0 L190.0,-520.0 " />
-			<path d="M130.0,-520.0 L190.0,-520.0 " />
 			<path d="M550.0,-340.0 L650.0,-340.0 " />
 			<path d="M650.0,-340.0 L650.0,-460.0 " />
 			<path d="M550.0,-460.0 L650.0,-460.0 " />
@@ -193,22 +189,22 @@
 			<path d="M40.0,-60.0 L300.0,-60.0 " />
 			<path d="M40.0,-60.0 L40.0,-369.5 " />
 			<path d="M40.0,-430.5 L40.0,-740.0 " />
-			<path d="M190.0,-320.0 L220.0,-320.0 " />
 			<path d="M220.0,-320.0 L220.0,-480.0 " />
+			<path d="M190.0,-320.0 L220.0,-320.0 " />
 			<path d="M190.0,-480.0 L220.0,-480.0 " />
-			<path d="M130.0,-200.0 L130.0,-320.0 " />
 			<path d="M130.0,-320.0 L130.0,-400.0 " />
-			<path d="M130.0,-400.0 L130.0,-520.0 " />
-			<path d="M190.0,-200.0 L190.0,-320.0 " />
-			<path d="M190.0,-400.0 L190.0,-520.0 " />
-			<path d="M130.0,-200.0 L190.0,-200.0 " />
-			<path d="M130.0,-320.0 L190.0,-320.0 " />
 			<path d="M130.0,-400.0 L190.0,-400.0 " />
+			<path d="M190.0,-400.0 L190.0,-520.0 " />
 			<path d="M130.0,-520.0 L190.0,-520.0 " />
+			<path d="M130.0,-400.0 L130.0,-520.0 " />
+			<path d="M130.0,-320.0 L190.0,-320.0 " />
+			<path d="M130.0,-200.0 L190.0,-200.0 " />
+			<path d="M190.0,-200.0 L190.0,-320.0 " />
+			<path d="M130.0,-200.0 L130.0,-320.0 " />
+			<path d="M550.0,-340.0 L550.0,-460.0 " />
 			<path d="M550.0,-340.0 L650.0,-340.0 " />
 			<path d="M650.0,-340.0 L650.0,-460.0 " />
 			<path d="M550.0,-460.0 L650.0,-460.0 " />
-			<path d="M550.0,-340.0 L550.0,-460.0 " />
 			<path d="M50.0,-400.0 L50.0,-403.4149165211509 L50.0,-406.7868884856676 L50.0,-410.0735113896326 L50.0,-413.23345404308554 L50.0,-416.22697833371774 L50.0,-419.0164389566914 L50.0,-421.5667568261897 L50.0,-423.8458602152749 L50.0,-425.8250880764627 L50.0,-427.4795504710238 L50.0,-428.7884415744052 L50.0,-429.73530132154565 L50.0,-430.3082224017439 L50.0,-430.5 " />
 			<path d="M50.0,-369.5 L50.0,-369.6917775982561 L50.0,-370.26469867845435 L50.0,-371.2115584255948 L50.0,-372.5204495289762 L50.0,-374.1749119235373 L50.0,-376.1541397847251 L50.0,-378.4332431738103 L50.0,-380.9835610433086 L50.0,-383.7730216662822 L50.0,-386.76654595691446 L50.0,-389.9264886103674 L50.0,-393.2131115143324 L50.0,-396.5850834788491 L50.0,-399.9999999999997 " />
 			<path d="M1200.0,-365.0 L850.0,-365.0 " />
@@ -219,6 +215,6 @@
        </g>
     </g>
     
-<g id="aqs-fab-notes" transform="translate(0,240.0)" font-family="DejaVu Sans,sans-serif" font-size="10" fill="#000"><text x="6" y="24">Graph revision AC - ga_side: Keys: dip cycle 6 positions (design row); rainfall head above the drip deck</text><text x="6" y="37">Graph revision AC - ga_side: General tolerance ISO 2768-m unless noted</text></g>
-<g id="aqs-title-block"><rect x="581.6" y="280.0" width="216.0" height="57.6" fill="white" stroke="black" stroke-width="0.60"/><text x="585.2" y="289.6" font-family="sans-serif" font-size="5.4">Aqueous Solutions (owner)   AQS-MFG-SHELL_BUILD-GA_SIDE</text><text x="585.2" y="299.8" font-family="sans-serif" font-size="5.4">SHELL_BUILD fabrication drawing GA_SIDE (AQS-PLAN-006 M3; gr</text><text x="585.2" y="310.0" font-family="sans-serif" font-size="5.4">Type: fabrication drawing (GA / nozzle orientation / part sheet)   Rev a334d15e   Issued 2026-10-15</text><text x="585.2" y="320.2" font-family="sans-serif" font-size="5.4">Created: flow graph pipeline   Approved: not approved (study)</text><text x="585.2" y="330.4" font-family="sans-serif" font-size="5.4">Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-fab-notes" transform="translate(0,240.0)" font-family="DejaVu Sans,sans-serif" font-size="10" fill="#000"><text x="6" y="24">Graph revision AD - ga_side: Keys: dip cycle 6 positions (design row); rainfall head above the drip deck</text><text x="6" y="37">Graph revision AD - ga_side: General tolerance ISO 2768-m unless noted</text></g>
+<g id="aqs-title-block"><rect x="581.6" y="280.0" width="216.0" height="57.6" fill="white" stroke="black" stroke-width="0.60"/><text x="585.2" y="289.6" font-family="sans-serif" font-size="5.4">Aqueous Solutions (owner)   AQS-MFG-SHELL_BUILD-GA_SIDE</text><text x="585.2" y="299.8" font-family="sans-serif" font-size="5.4">SHELL_BUILD fabrication drawing GA_SIDE (AQS-PLAN-006 M3; gr</text><text x="585.2" y="310.0" font-family="sans-serif" font-size="5.4">Type: fabrication drawing (GA / nozzle orientation / part sheet)   Rev 8193cd47   Issued 2026-10-15</text><text x="585.2" y="320.2" font-family="sans-serif" font-size="5.4">Created: flow graph pipeline   Approved: not approved (study)</text><text x="585.2" y="330.4" font-family="sans-serif" font-size="5.4">Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

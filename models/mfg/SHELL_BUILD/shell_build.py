@@ -1,8 +1,9 @@
 """SHELL_BUILD manufacturing model, AQS-PLAN-006 work order (X-MFG lane, FOUNDRY-SHELL_BUILD-10 M3).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only.
+Graph revision AD. Study. Not a PE stamp. Reads params.json only.
 Dip-coat + rainfall-stucco shell-building booth: 40 L slurry tank, 6-dip manipulator,
-rainfall stucco station with reclaim (AQS-DUTY-072). No measured rate is claimed anywhere.
+rainfall stucco station with reclaim (AQS-DUTY-072). Connection hardware draws flush
+at the envelope faces: nothing protrudes (A-core 2). No measured rate is claimed anywhere.
 """
 import csv, json, math, pathlib
 import cadquery as cq
@@ -52,11 +53,11 @@ for i in range(D["dips"]):
 parts["dip_deck"] = box(60.0, 200.0, 700.0, 700.0, 400.0, 40)  # drip deck over the tank
 
 # ---------------- nozzle hardware ----------------
-parts["pattern_chute"] = box(-35.0, 320.0, 130.0, 35.0, 160.0, 90)     # N1 -X z 160
-parts["green_shell_out"] = box(L - 30.0, 340.0, 550.0, 40.0, 120.0, 100)   # N2 +X z 600
+parts["pattern_chute"] = box(0.0, 320.0, 130.0, 35.0, 160.0, 90)     # N1 -X z 160, flush at the face
+parts["green_shell_out"] = box(L - 40.0, 340.0, 550.0, 40.0, 120.0, 100)   # N2 +X z 600, flush at the face
 ch = None
 for yy in (200.0, 400.0):
-    q = box(-30.0, yy, 130.0, 40.0, 120.0, 60)
+    q = box(0.0, yy, 130.0, 40.0, 120.0, 60)   # flush at the -X face
     ch = q if ch is None else ch.union(q)
 parts["silica_inlets"] = ch                                            # N3/N4 -X z 160
 parts["drain_well"] = tube(30.5, DN15, (400, 400, 0), "Z", 50)         # N5
@@ -78,7 +79,7 @@ for k, v in parts.items():
 cap_solid = body.val()
 cap_solid.exportStl(str(out / "shell_build.stl"), tolerance=0.4, angularTolerance=0.4, ascii=True)
 
-EXTERNAL = ("pattern_chute", "green_shell_out", "silica_inlets")
+EXTERNAL = ("pattern_chute", "green_shell_out", "silica_inlets")   # schedule hardware, drawn flush at the faces
 in_env = None
 for k, v in parts.items():
     if k in EXTERNAL:
@@ -92,7 +93,7 @@ in_env_solid.scale(0.001).exportStl(str(HERE.parents[2] / "cad" / "stl" / "SHELL
 ALL = list(parts.values()) + list(inv.values())
 sb = cq.Compound.makeCompound([parts["booth_frame"].val()]).BoundingBox()
 tb_ = cq.Compound.makeCompound([v.val() for v in ALL]).BoundingBox()
-slack = 50.0
+slack = 1.0   # A-core 2 gate: the flush-hardware build stays inside size_mm within 1 mm
 inside_shell = bool(sb.xmin >= -1 and sb.xmax <= L + 1 and sb.ymin >= -1 and sb.ymax <= W + 1
                     and sb.zmin >= -1 and sb.zmax <= H + 1)
 overhang = {"-X": round(-tb_.xmin, 1), "+X": round(tb_.xmax - L, 1),
@@ -118,22 +119,22 @@ report = {
 }
 rows = [
     ["1", "Booth frame 1500 x 800 with back-wall cladding", 1, "carbon steel",
-     mass["booth_frame"], "make", "WORK_ORDER step 1; AQS-DUTY-072 shell-building booth"],
+     mass["booth_frame"], "make (AQS-BOM-SC-001)", "WORK_ORDER W10 route; AQS-DUTY-072 shell-building booth; flush build"],
     ["2", f"Slurry tank 40 L ({D['slurry_L']} L design), agitated", 1, "316L",
-     mass["slurry_tank"], "make", f"design slurry {D['slurry_L']} L; duty section 2"],
-    ["3", "Rainfall stucco station with reclaim pan", 1, "carbon steel", mass["stucco_station"], "make",
+     mass["slurry_tank"], "make (AQS-BOM-SC-001)", f"design slurry {D['slurry_L']} L; duty section 2; agitator drive mounts at fabrication"],
+    ["3", "Rainfall stucco station with reclaim pan", 1, "carbon steel", mass["stucco_station"], "make (AQS-BOM-SC-001)",
      f"{D['dips']} dip cycles; reclaim {D['reclaim_kg_d']} kg/d of {D['silica_makeup_kg_d'] + D['reclaim_kg_d']} kg/d silica"],
     ["4", f"{D['dips']}-dip manipulator: mast, cross arm, grip hoist", 1, "carbon steel",
-     mass["manipulator"], "make", f"design dips {D['dips']}"],
-    ["5", "Drip deck over the slurry tank", 1, "carbon steel", mass["dip_deck"], "make", "WO step 3"],
-    ["6", "N1 pattern chute -X z 160 (from WAX_PATTERN N1)", 1, "carbon steel", mass["pattern_chute"], "make",
+     mass["manipulator"], "make (AQS-BOM-SC-001)", f"design dips {D['dips']}; hoist drive purchased at fabrication (hold, W12)"],
+    ["5", "Drip deck over the slurry tank", 1, "carbon steel", mass["dip_deck"], "make (AQS-BOM-SC-001)", "WORK_ORDER W10 route"],
+    ["6", "N1 pattern chute -X z 160, flush at the face (from WAX_PATTERN N1)", 1, "carbon steel", mass["pattern_chute"], "make (AQS-BOM-SC-001)",
      "task-04 schedule N1"],
-    ["7", "N2 green-shell out +X z 600 (to SHELL_BURNOUT N1)", 1, "carbon steel", mass["green_shell_out"], "make",
+    ["7", "N2 green-shell out +X z 600, flush at the face (to SHELL_BURNOUT N1)", 1, "carbon steel", mass["green_shell_out"], "make (AQS-BOM-SC-001)",
      "task-04 schedule N2"],
-    ["8", "N3/N4 silica make-up + reclaim inlets -X z 160", 2, "carbon steel", mass["silica_inlets"], "make",
+    ["8", "N3/N4 silica make-up + reclaim inlets -X z 160, flush at the face", 2, "carbon steel", mass["silica_inlets"], "make (AQS-BOM-SC-001)",
      "task-04 schedule N3/N4"],
     ["9", "N5 drain well + N6 vent stub", 2, "carbon steel", round(mass["drain_well"] + mass["vent_stub"], 1),
-     "make", "task-04 schedule N5/N6"],
+     "make (AQS-BOM-SC-001)", "task-04 schedule N5/N6"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)
@@ -141,14 +142,10 @@ with open(HERE / "bom.csv", "w", newline="") as f:
     w.writerows(rows)
 (HERE / "fasteners.csv").write_text(
     'item,size,grade,qty,location,basis\n'
-    '1,M10 anchor,ISO 898-1 8.8,4,booth to slab,study\n')
-(HERE / "WORK_ORDER.md").write_text(
-    "# Work order SHELL_BUILD\n\nAuthority: AQS-DUTY-072 (X-MFG lane). LIVE unit - shell-building booth.\n\n"
-    "1. Fabricate the booth frame with back-wall cladding; set on anchors.\n"
-    "2. Set the 40 L slurry tank with the rainfall stucco station and reclaim pan.\n"
-    "3. Erect the manipulator mast over the dip deck; prove the 6-position cycle.\n"
-    "4. Fit the N1 pattern chute, the N3/N4 silica inlets, the N2 green-shell out, N5 drain and N6 vent.\n"
-    "5. Test: slurry viscosity hold, then a trial shell on a wax pattern.\n"
-    "6. Inspect against models/mfg/SHELL_BUILD/export/shell_build.step; record dimensions on the traveller.\n")
+    '1,M10 anchor,ISO 898-1 8.8,4,booth to slab,study\n'
+    '2,M10 hold-down,ISO 898-1 8.8,4,slurry tank to the booth deck,study\n'
+    '3,M8 bolt,ISO 898-1 8.8,8,manipulator mast base plate,study\n')
+# WORK_ORDER.md is the hand-authored W1-W12 item beside the model (AQS-PLAN-006 section 2);
+# the builder no longer writes it, so a rebuild never clobbers the work order.
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps(report))
