@@ -20,7 +20,8 @@
   "count": 3,
   "plate_x_mm": 110,
   "plate_t_mm": 12,
-  "plate_h_mm": 400
+  "plate_h_mm": 300,
+  "basis": "duty section 2 graph design row 'cathodes 3' (AQS-PAR-001). The Oct-31 build carried a count of 3 but drew two plates - corrected to the design row (3 plates, AL_POT interleave idiom), logged in build_log.md. plate_h_mm records the drawn 300 mm plate (study size, hold WORK_ORDER W12)."
  },
  "busbar": {
   "mm2": 25,

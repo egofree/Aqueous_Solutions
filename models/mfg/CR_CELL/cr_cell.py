@@ -1,13 +1,15 @@
 """CR_CELL manufacturing model, AQS-PLAN-006 work order (X-MFG lane, FOUNDRY-CR_CELL-10 M3).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only.
+Graph revision AD. Study. Not a PE stamp. Reads params.json only.
 Placement frame: x along 800 mm, y along 800 mm, z up, origin at the envelope
 corner. The cell makes chromium: Cr(III) molten-salt electrolysis at 700 C, 18.95 A at
 2.8 V (A-M-282 Faraday class) behind the carbochlorination loop, on the D-DOCK
 feedstock ruling (A-M-284); the chlorinator CO leaves as fuel-gas class export. Layout choices named in params.json (layout_note); heights, bores and
 ratings per docs-authority/nozzles/CR_CELL.csv (task-04 schedule). Materials per
 docs-authority/duties/CR_CELL.md section 3: graphite wetted faces + ceramic-fibre
-backup + CS shell below the liner. No measured rate is claimed anywhere.
+backup + CS shell below the liner. Connection hardware draws flush at the
+envelope faces: nothing protrudes (A-core 2). No measured rate is claimed
+anywhere.
 """
 import csv, json, math, pathlib
 import cadquery as cq
@@ -35,9 +37,9 @@ RY = A["DN50_OD_mm"] / 2                        # DN50 riser (gas < 1 kg/d class
 rx_, ry_ = 550.0, 550.0                         # riser centre (hood offset +150,+150)
 ay = 400.0                                      # electrode centreline
 BATH = D["bath_top_mm"]                         # bath top z 350 (250 mm immersion, tips z 100)
-cath_pitch = (L - 272) / CA["count"]            # plate centres across the 660 cavity
-cath_xc = [70 + 66 + i * cath_pitch for i in range(CA["count"] - 1)]   # 2 plates
-anode_xc = [165 + i * 235 for i in range(AN["count"])]                 # 165, 400, 635
+cath_pitch = (L - 272) / (CA["count"] - 1)      # plate centres across the 660 cavity (AL_POT interleave idiom)
+cath_xc = [70 + 66 + i * cath_pitch for i in range(CA["count"])]   # design row 'cathodes 3': 136, 400, 664
+anode_xc = [x + 34 for x in cath_xc]                   # 170, 434, 698 (offset from the plate columns)
 bw, bh = BUS["rail_w_mm"], BUS["rail_t_mm"]     # 25 mm2 class rail
 
 # ---------------- casing: CS shell, full envelope height, t6 -------------
@@ -127,22 +129,22 @@ parts["dip_leg"] = tube(dl, dl - A["DN15_wall_mm"], (rx_, ry_, BATH - 100), "Z",
 parts["vent_stub"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (rx_, ry_ - RY + 20.0, 800), "Y", -45)  # N6 on the riser at z 800, fused to the wall
 
 # ---------------- N4 CO export stub (+Y at z 600) ---------------------------------
-parts["co_stub"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (544.0, W - 34.0, 600.0), "Y", 40)   # starts inside the casing wall: fuses
+parts["co_stub"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (544.0, W - 40.0, 600.0), "Y", 40)   # flush at the +Y face (A-core 2)
 
 # ---------------- N1 Cr-metal tap well (+X at z 600) ------------------------------
 wr = 44.45                                        # tap-well bore class (DN80 study form, OD 88.9)
 well = rod(wr, (670, 400, 80), "Z", 535)                        # riser leg 80..615
-crest = box(660, 400 - wr, 605, 160, 2 * wr, 10)                 # horizontal run 660..820 at z 605..615
-lip = rod(wr, (800, 400, 555), "Z", 55)
+crest = box(660, 400 - wr, 605, 140, 2 * wr, 10)                 # horizontal run 660..800, flush at the +X face
+lip = rod(wr, (800.0 - wr, 400.0, 555.0), "Z", 55)               # discharge lip rides at the face: flush build
 tap = well.union(crest).union(lip)
 tap = tap.cut(rod(15.0, (670, 400, 75), "Z", 700))               # bore through the riser leg
-tap = tap.cut(box(655, 385, 602, 170, 30, 16))                   # bore through the crest
-tap = tap.cut(rod(15.0, (800, 400, 540), "Z", 80))               # bore through the discharge leg
+tap = tap.cut(box(655, 385, 602, 150, 30, 16))                   # bore through the crest
+tap = tap.cut(rod(15.0, (800.0 - wr, 400.0, 540.0), "Z", 80))    # bore through the discharge leg
 parts["cr_tap_group"] = tap
 
 # ---------------- N2/N3 feed chutes (-X at z 160) ---------------------------------
-ch1 = box(-35, 320, 130, 35, 160, 90)                            # chromite concentrate chute
-ch2 = box(-35, 480, 130, 35, 160, 90)                            # carbon reductant chute
+ch1 = box(0.0, 320, 130, 35, 160, 90)                            # chromite concentrate chute, flush at the -X face
+ch2 = box(0.0, 480, 130, 35, 160, 90)                            # carbon reductant chute, flush at the -X face
 parts["feed_chutes"] = ch1.union(ch2)
 
 # ---------------- N4 drain well ---------------------------------------------------
@@ -159,7 +161,6 @@ for blk in (melt_salt, melt_metal):
         blk = blk.cut(box(xc - 56, 69, 80, 112, 14, bath_h + 20))
     blk = blk.cut(rod(16.0, (670, 400, 60), "Z", 450))            # tap well leg
     blk = blk.cut(rod(dl + 1, (rx_, ry_, 240), "Z", 160))         # dip leg
-    blk = blk.cut(rod(A['DN15_OD_mm'] / 2 + 1, (256.0, 240.0, 160.0), 'Y', 200))  # N2 liquor inlet bore
     blk = blk.cut(rod(31.0, (256, 160, 40), "Z", 40))             # drain sump bore pocket
 inv = {"melt_salt": melt_salt, "melt_metal": melt_metal}
 
@@ -176,7 +177,7 @@ for k, v in parts.items():
 cap_solid = body.val()
 cap_solid.exportStl(str(out / "cr_cell.stl"), tolerance=0.4, angularTolerance=0.4, ascii=True)
 
-EXTERNAL = ("cr_tap_group", "feed_chutes", "co_stub")   # schedule hardware outside the faces (overhang reported)
+EXTERNAL = ("cr_tap_group", "feed_chutes", "co_stub")   # schedule hardware, drawn flush at the faces
 in_env = None
 for k, v in parts.items():
     if k in EXTERNAL:
@@ -191,7 +192,7 @@ ALL = list(parts.values()) + list(inv.values())
 shell_parts = [parts[k] for k in ("casing", "fibre_lining", "ram_lining", "head_plate")]
 sb = cq.Compound.makeCompound([v.val() for v in shell_parts]).BoundingBox()
 tb_ = cq.Compound.makeCompound([v.val() for v in ALL]).BoundingBox()
-slack = 50.0
+slack = 1.0   # A-core 2 gate: the flush-hardware build stays inside size_mm within 1 mm
 inside_shell = bool(sb.xmin >= -1 and sb.xmax <= L + 1 and sb.ymin >= -1 and sb.ymax <= W + 1
                     and sb.zmin >= -1 and sb.zmax <= H + 1)
 overhang = {"-X": round(-tb_.xmin, 1), "+X": round(tb_.xmax - L, 1),
@@ -227,7 +228,7 @@ report = {
 rows = [
     ["1", "Lined cell shell 800 x 800 x 1600 mm: casing t6 (walls + roof + head plate 1154)", 1,
      "carbon steel (CS class)", round(mass["casing"] + mass["head_plate"], 1), "make",
-     "WORK_ORDER step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per AQS-DUTY-072 cell-class study minimum"],
+     f"WORK_ORDER step 1; duty section 3 CS outer shell below the liner, {D['bath_T_C']:.0f} C, dry outside the lining; envelope per AQS-DUTY-072 cell-class study minimum"],
     ["2", "Ceramic-fibre backup lining kit, t24", 1, "ceramic-fibre board 128 kg/m3",
      mass["fibre_lining"], "make", "duty section 3 backup lining class (SCHACHT2004); anhydrous concentrate (X-MAT-22)"],
     ["3", "Graphite ram lining kit, t40, wetted faces", 1, "graphite ramming paste 1550 kg/m3",
@@ -235,29 +236,30 @@ rows = [
     ["4", f"Anode bank, {AN['count']} x D{AN['D_mm']} x 1064 mm, {D['anode_imm_mm']:.0f} mm immersion", AN["count"],
      "graphite (chlorinated)", mass["anodes"], "buy",
      f"Faraday I = {D['I_A']} A at CE 0.85 (A-M-282); drawn j {j_anode:.4f} A/cm2; {D['chemistry']}"],
-    ["5", f"Cathode plate set, {CA['count']} x 110 x 12 x 300 mm", CA["count"], "mild steel / clad",
-     mass["cathodes"], "make", f"{D['metal_kg_d']:.4f} kg/d Cr metal on the D-DOCK feedstock ruling (A-M-284)"],
+    ["5", f"Cathode plate set, {CA['count']} x 110 x 12 x 300 mm (design row 'cathodes {D['cathodes']}')", CA["count"], "mild steel / clad",
+     mass["cathodes"], "make", f"{D['metal_kg_d']:.4f} kg/d Cr metal on the D-DOCK feedstock ruling (A-M-284); "
+     "plate size is the study value (hold, WORK_ORDER W12)"],
     ["6", f"Cu busbar ladder: 2 rails {BUS['rail_w_mm']} x {BUS['rail_t_mm']} mm ({BUS['mm2']} mm2 class) + straps + ceramic pads", 1,
      "Cu ETP + alumina pads", round(mass["bus_rails"] + mass["bus_straps"] + mass["ceramic_pads"], 1), "make",
      f"{D['I_A']} A at {D['cell_V']} V cell; {D['dc_kW']} kW dc + {D['hold_kW']} kW hold of {D['connected_kW']} kW connected; frame-isolated per AQS-STD-002 section 11"],
     ["7", f"Anode clamp bars 90 x 40 x 24 on the head plate ({AN['count'] * 2} x M10 studs, fasteners.csv item 1)", AN["count"],
      "carbon steel", mass["anode_clamps"], "make", "WORK_ORDER step 2/3: torque and megger check"],
     ["8", "Hood group: CS hood plate t6 + perimeter rim lip, on the graphite hot plate", 1,
-     "carbon steel", mass["hood"], "make", "WO step 4; dry Cl2 headspace at 700 C (M7)"],
+     "carbon steel", mass["hood"], "make", f"WO step 4; dry Cl2 headspace at {D['bath_T_C']:.0f} C (M7)"],
     ["9", "Hood hot plate, graphite t10 (expendable wetted face)", 1, "graphite",
      mass["hood_hot_plate"], "make", "duty section 3 wetted-face class; change-out at the unit task 12 work order"],
-    ["10", f"Offtake riser DN50 OD {A['DN50_OD_mm']} t {A['DN50_wall_mm']}, z {BATH:.0f}..1594, flange + N5 vent at top", 1,
+    ["10", f"Offtake riser DN50 OD {A['DN50_OD_mm']} t {A['DN50_wall_mm']}, z {BATH:.0f}..1594, flange + N6 vent at top", 1,
      "carbon steel (dry hot Cl2)", round(mass["offtake_riser"] + mass["riser_flange"] + mass["vent_stub"], 1), "make",
-     "WO row 5; nozzles per the task-04 schedule (N5 vent top 800)"],
+     "WO row 5; nozzles per the task-04 schedule (N6 vent top 800)"],
     ["11", "Return dip leg DN15, inside the riser annulus, bottom z 250", 1, "carbon steel",
      mass["dip_leg"], "make", "WO row 5; brine-fog return seal leg"],
     ["12", f"N4 CO export stub DN15 at +Y z 600 ({D['co_kg_d']} kg/d, fuel-gas class)", 1,
      "carbon steel (dry hot gas)", mass["co_stub"], "make",
      "task-04 schedule N4"],
-    ["12b", f"N2/N3 feed chutes -X z 160: Cr2O3 chromite concentrate + carbon reductant ({D['feed_kg_d']} kg/d)", 2,
+    ["12b", f"N2/N3 feed chutes -X z 160, flush at the -X face: Cr2O3 chromite concentrate + carbon reductant ({D['feed_kg_d']} kg/d)", 2,
      "CS chute, refractory throat", mass["feed_chutes"], "make",
      "task-04 schedule N2/N3; A-M-284 feedstock ruling"],
-    ["13", "N1 Cr-metal tap group: well DN80-class carbon + crest + discharge lip at +X z 600", 1,
+    ["13", "N1 Cr-metal tap group: well DN80-class carbon + crest + discharge lip at +X z 600, flush at the +X face", 1,
      "carbon (ram class)", mass["cr_tap_group"], "make",
      "task-04 schedule N1 (solids, bore not calculated); WO step 6 trial-electrolysis tap"],
     ["14", "N5 drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0", 1,
@@ -276,14 +278,7 @@ fast = ('item,size,grade,qty,location,basis\n'
         '2,M8 x 25 hood bolts,ISO 898-1 8.8,12,hood rim flange,study\n'
         '3,M10 anchor,ISO 898-1 8.8,4,cell shell to slab,study\n')
 (HERE / "fasteners.csv").write_text(fast)
-wo = (f"# Work order CA_POT\n\nAuthority: AQS-DUTY-072 (X-MFG lane). LIVE unit - D-DOCK feedstock program (A-M-284).\n\n"
-      f"1. Fabricate the 800 x 800 x 1600 mm shell; line 70 mm (casing + ceramic fibre + ram) for {D['bath_T_C']:.0f} C service.\n"
-      f"2. Set the {CA['count']} cathode plates on the pocket wall; hang the {AN['count']} x D{AN['D_mm']} mm anodes at {D['anode_imm_mm']:.0f} mm immersion.\n"
-      f"3. Fit the busbar ladder ({BUS['mm2']} mm2 Cu class for {D['I_A']} A) and the DC drops; torque and megger-check.\n"
-      f"4. Mount the hood, DN50 offtake with return dip leg, the N4 CO stub, and the N2/N3 feed chutes.\n"
-      f"5. Wire the {D['connected_kW']} kW rectifier; interlock hood draft, bath temperature and cover position.\n"
-      f"6. Test: dry-out and melt-up curve, then trial electrolysis; tap the Ca metal at N1, route the Cl2 export (water-treatment class).\n"
-      f"7. Inspect against models/mfg/CR_CELL/export/cr_cell.step; record dimensions on the traveller.\n")
-(HERE / "WORK_ORDER.md").write_text(wo)
+# WORK_ORDER.md is the hand-authored W1-W12 item beside the model (AQS-PLAN-006 section 2);
+# the builder no longer writes it, so a rebuild never clobbers the work order.
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps(report))
