@@ -1,5 +1,5 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,106,1683 points / 16
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,106,1685 points / 16
 CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,849,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 176 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
@@ -2002,9 +2002,15 @@ GAS,separator,FLUE_KO,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type
 GAS,separator,FLUE_KO,support,pipe clamp,DN20,"PP clamp with EPDM liner, MSS SP-58 Type 7",17,IA-FLUE-EXH: AQS-PIP-005 span count
 GAS,separator,FLUE_KO,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,S67B: one at each end nozzle (assumed)
 GAS,separator,FLUE_KO,valve,isolation valve,DN20,"PVC-lined ball valve in FRP service, ISO 16135",2,IA-FLUE-EXH: one at each end nozzle (assumed)
-GEO,-,GEO_HP_CLOSED_LOOP,fabricated part,fabricated part set,4 BOM lines,models/mfg/GEO_HP_CLOSED_LOOP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+GEO,-,GEO_HP_CLOSED_LOOP,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Circulator envelope (AQS-DUTY-076 source-loop circulator, 12: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
+GEO,-,GEO_HP_CLOSED_LOOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Circulator envelope (AQS-DUTY-076 source-loop circulator, 12: run and fault (assumed)"
+GEO,-,GEO_HP_CLOSED_LOOP,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Circulator envelope (AQS-DUTY-076 source-loop circulator, 12 (assumed VFD at >= 0.75 kW)"
+GEO,-,GEO_HP_CLOSED_LOOP,fabricated part,fabricated part set,7 BOM lines,models/mfg/GEO_HP_CLOSED_LOOP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+GEO,-,GEO_HP_CLOSED_LOOP,fastener,M10 header clip bolt + nut,M10 header clip bolt + nut,ISO 898-1 8.8,6,models/mfg/GEO_HP_CLOSED_LOOP/fasteners.csv
+GEO,-,GEO_HP_CLOSED_LOOP,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,8,models/mfg/GEO_HP_CLOSED_LOOP/fasteners.csv
 GEO,-,GEO_HP_CLOSED_LOOP,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 GEO,-,GEO_HP_CLOSED_LOOP,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+GEO,-,GEO_HP_CLOSED_LOOP,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 GEO,ghex,GEO_GHEX,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Circulation pump envelope (125.7 W, node design circ_pump_W): drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 GEO,ghex,GEO_GHEX,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Circulation pump envelope (125.7 W, node design circ_pump_W): run and fault (assumed)"
 GEO,ghex,GEO_GHEX,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Circulation pump envelope (125.7 W, node design circ_pump_W) (assumed VFD at >= 0.75 kW)"

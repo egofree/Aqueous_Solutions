@@ -637,10 +637,13 @@ unit,GEO_HP,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 
 unit,GEO_HP,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
 unit,GEO_HP,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
 unit,GEO_HP,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-unit,GEO_HP_CLOSED_LOOP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C) (graph node material).,docs-authority/duties/GEO_HP_CLOSED_LOOP.md
-unit,GEO_HP_CLOSED_LOOP,Process nozzle DN15,1,HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C) (graph node material).,one per mass edge; DN from AQS-INV-003
-unit,GEO_HP_CLOSED_LOOP,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-unit,GEO_HP_CLOSED_LOOP,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+unit,GEO_HP_CLOSED_LOOP,Plinth 1000 x 600 x 20,1,carbon steel (ASTM A500),AQS-MOD-002 dry service; anchors in fasteners.csv
+unit,GEO_HP_CLOSED_LOOP,"Four-post hold-down/guard frame pinning the 1000 x 600 x 800 envelope (40 x 40 posts, top rails)",1,carbon steel (ASTM A500),frame pins the registry box (X-PAR-04); anchors in fasteners.csv
+unit,GEO_HP_CLOSED_LOOP,Loop buffer manifold vessel OD 220 x 300 (the seed's 'loop vessel'; study),1,HDPE,"seed note 'loop vessel beside GHEX'; vessel size is a study value (hold, WORK_ORDER W12)"
+unit,GEO_HP_CLOSED_LOOP,DN32 HDPE supply/return header runs (x 120..620),2,HDPE DR-11 (node material),"node design DN 32; skid stations are study values (hold, WORK_ORDER W12)"
+unit,GEO_HP_CLOSED_LOOP,"Tie-in stubs, 2 off: below-grade interface to the GHEX bore field and the skid-side tie toward GEO_HP",2,HDPE DR-11,"interface indications - the buried ground array is the GHEX/site lane's (hold, WORK_ORDER W12)"
+unit,GEO_HP_CLOSED_LOOP,"Circulator envelope (AQS-DUTY-076 source-loop circulator, 125.7 W node stamp)",1,purchased pump (envelope),"purchased per plan rule 6, rating from the node; mass a table-density placeholder until the maker TDS quotes (W12)"
+unit,GEO_HP_CLOSED_LOOP,Nozzle set per docs-authority/nozzles/GEO_HP_CLOSED_LOOP.csv: 3 hose barbs (DN15),3,HDPE,"schedule tags/faces/heights verbatim (bores not calculated, hose, atmospheric); atmospheric hose per duty section 4"
 unit,GLASS_BURNOUT,"Burnout drum OD 560 x 700, wall 12 mm (study), with end heads, two tire rings and trunnion shafts",1,316L (duty section 3),"drum drawn to the node envelope; no drum dimension on the node or duty (hold, WORK_ORDER W12); CA 0 mm (AQS-STD-001 316L rule); capacity report in check.machine (0.2100 m3 duty charge vs drum-full figure)"
 unit,GLASS_BURNOUT,"Trunnion stands, 2 off: 220 x 70 x 22 base, pedestal, OD 120 plain housing under each tire",2,carbon steel (ASTM A500),"ported UCP213 form (AQS-MOD-002 dry service class); housing bore is a study proportion, confirmed at fabrication (WORK_ORDER W12)"
 unit,GLASS_BURNOUT,Plinth 800 x 600 x 20,1,carbon steel (ASTM A500),AQS-MOD-002 dry service; anchors in fasteners.csv
@@ -1961,16 +1964,16 @@ motor family,MF-08 x 3,end shields A356,6,,cast + machined
 motor family,MF-08 x 3,bearing 6202-2Z,6,,X-INV-05 OF bearing family
 motor family,MF-08 x 3,fan PP + fan cover steel,3,,IC 411
 motor family,MF-08 x 3,terminal box + 6-stud block,3,,IEC 60034-8 marking
-motor family,MF-09 x 154,stator laminations M400-50A (EN 10106) 0.5 mm,16016,,EN 10106
-motor family,MF-09 x 154,rotor laminations M400-50A 0.5 mm,16016,,EN 10106
-motor family,MF-09 x 154,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.77 kg,,X-INV-03 wire line
-motor family,MF-09 x 154,die-cast Al cage (bars + rings),0.58 kg,,A356 in-house melt (assumed 12 % of steel mass)
-motor family,MF-09 x 154,"shaft C45 (EN 10083-2) D24 x 222 mm, key to IEC 60072-1",154,,turned
-motor family,MF-09 x 154,"frame A356 IEC 90S, feet A140 x B100, holes K10",154,,cast + machined
-motor family,MF-09 x 154,end shields A356,308,,cast + machined
-motor family,MF-09 x 154,bearing 6205-2Z,308,,X-INV-05 OF bearing family
-motor family,MF-09 x 154,fan PP + fan cover steel,154,,IC 411
-motor family,MF-09 x 154,terminal box + 6-stud block,154,,IEC 60034-8 marking
+motor family,MF-09 x 155,stator laminations M400-50A (EN 10106) 0.5 mm,16120,,EN 10106
+motor family,MF-09 x 155,rotor laminations M400-50A 0.5 mm,16120,,EN 10106
+motor family,MF-09 x 155,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.77 kg,,X-INV-03 wire line
+motor family,MF-09 x 155,die-cast Al cage (bars + rings),0.58 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-09 x 155,"shaft C45 (EN 10083-2) D24 x 222 mm, key to IEC 60072-1",155,,turned
+motor family,MF-09 x 155,"frame A356 IEC 90S, feet A140 x B100, holes K10",155,,cast + machined
+motor family,MF-09 x 155,end shields A356,310,,cast + machined
+motor family,MF-09 x 155,bearing 6205-2Z,310,,X-INV-05 OF bearing family
+motor family,MF-09 x 155,fan PP + fan cover steel,155,,IC 411
+motor family,MF-09 x 155,terminal box + 6-stud block,155,,IEC 60034-8 marking
 motor family,MF-10 x 10,stator laminations M400-50A (EN 10106) 0.5 mm,1420,,EN 10106
 motor family,MF-10 x 10,rotor laminations M400-50A 0.5 mm,1420,,EN 10106
 motor family,MF-10 x 10,magnet wire IEC 60317-13 18 AWG (0.597 mm2),2.03 kg,,X-INV-03 wire line
@@ -2139,35 +2142,35 @@ bulk pipe,PF-20,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 5/8 i
 bulk pipe,PF-21,"PVDF SDR 21 ISO 10931 DN32 pipe, 2 x 6.096 m",7.4 m,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk pipe,PF-21,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 in studs,3 / 2 / 2 / 8,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",40440 m,Cu,AQS-INV-002
-bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",43735 m,Cu,AQS-INV-002
+bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",44794 m,Cu,AQS-INV-002
 bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",20520 m,Cu,AQS-INV-002
 bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",20220 m,Cu,AQS-INV-002
-bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",18697 m,Cu,AQS-INV-002
+bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",19296 m,Cu,AQS-INV-002
 bulk wire,WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",5262 m,Cu,AQS-INV-002
 bulk wire,WF-07,"control 18 AWG shielded pair, 300 V",3660 m,Cu,AQS-INV-002
 bulk wire,WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",3600 m,Cu,AQS-INV-002
-bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",6223 m,Cu,AQS-INV-002
+bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",6422 m,Cu,AQS-INV-002
 bulk wire,WF-10,"power 3 AWG XHHW-2 Cu, 600 V",3225 m,Cu,AQS-INV-002
-bulk wire,WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",3161 m,Cu,AQS-INV-002
+bulk wire,WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",3092 m,Cu,AQS-INV-002
 bulk wire,WF-12,"MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield, 15 kV",1200 m,Cu,AQS-INV-002
-bulk wire,WF-13,"equipment ground 8 AWG green XHHW-2 Cu, 600 V",1054 m,Cu,AQS-INV-002
+bulk wire,WF-13,"equipment ground 8 AWG green XHHW-2 Cu, 600 V",1031 m,Cu,AQS-INV-002
 bulk wire,WF-14,"power 400 kcmil XHHW-2 Cu, 600 V",540 m,Cu,AQS-INV-002
 bulk wire,WF-15,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",200 m,Cu,AQS-INV-002
-bulk wire,WF-16,"power 10 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",317 m,Cu,AQS-INV-002
+bulk wire,WF-16,"power 10 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",309 m,Cu,AQS-INV-002
 bulk wire,WF-19,"equipment ground 2/0 AWG green XHHW-2 Cu, 600 V",180 m,Cu,AQS-INV-002
-bulk wire,WF-20,"power 3 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",314 m,Cu,AQS-INV-002
+bulk wire,WF-20,"power 3 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",306 m,Cu,AQS-INV-002
 bulk wire,WF-21,"DC power pair 14 AWG TC-ER 2-cond, 600 V",60 m,Cu,AQS-INV-002
 bulk wire,WF-24,"equipment ground 10 AWG green XHHW-2 Cu, 600 V",12 m,Cu,AQS-INV-002
 bulk wire,WF-25,"power 10 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",9 m,Cu,AQS-INV-002
 bulk wire,WF-31,"power 12 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",200 m,Cu,AQS-INV-002
-bulk wire,WF-34,"power 3/0 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",65 m,Cu,AQS-INV-002
-bulk wire,WF-35,"power 300 kcmil XHHW-2 Cu, tray cable TC-ER, 600 V",32 m,Cu,AQS-INV-002
+bulk wire,WF-34,"power 3/0 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",40 m,Cu,AQS-INV-002
+bulk wire,WF-35,"power 300 kcmil XHHW-2 Cu, tray cable TC-ER, 600 V",20 m,Cu,AQS-INV-002
 building block,OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",328,,AQS-INV-004
-building block,OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",418,,AQS-INV-004
-building block,OF-03,electronics: PLC digital I/O point (IEC 61131-2),834,,AQS-INV-004
+building block,OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",420,,AQS-INV-004
+building block,OF-03,electronics: PLC digital I/O point (IEC 61131-2),836,,AQS-INV-004
 building block,OF-04,electronics: PLC analog input point (IEC 61131-2),849,,AQS-INV-004
 building block,OF-05,electronics: BLDC driver (IEC 61800-5-1),161,,AQS-INV-004
-building block,OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),176,,AQS-INV-004
+building block,OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),177,,AQS-INV-004
 building block,OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",106,,AQS-INV-004
 building block,OF-08,electronics: variable-frequency drive (IEC 61800-5-1),33,,AQS-INV-004
 building block,OF-09,electronics: solenoid driver channel (IEC 61131-2 DO),19,,AQS-INV-004
@@ -2199,7 +2202,7 @@ building block,OF-42,"instrument: temperature element (SIF, independent) (IEC 60
 building block,OF-43,"instrument: gas detector, O2 enrichment (alarm 23.5 vol %, trip 25 vol %, breathing height)",12,,AQS-INV-004
 building block,OF-44,"instrument: gas detector, CO (alarm 25 ppm, trip 50 ppm, breathing height)",14,,AQS-INV-004
 building block,OF-45,"instrument: gas detector, NOx (alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height)",6,,AQS-INV-004
-building block,OF-46,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",234,,AQS-INV-004
+building block,OF-46,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",235,,AQS-INV-004
 building block,OF-47,"seal: mechanical seal, single (SiC/SiC faces, FKM)",154,,AQS-INV-004
 building block,OF-48,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",5863,,AQS-INV-004
 building block,OF-49,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1492,,AQS-INV-004
@@ -2245,7 +2248,7 @@ building block,OF-93,fastener: M10 wedge anchor (ISO 3506 A4-70),110,,AQS-INV-00
 building block,OF-94,fastener: M12 bolt + nut; PP-flanged joint (ISO 3506 A4-70),16,,AQS-INV-004
 building block,OF-95,fastener: M12 PVDF bolt + nut (ISO 3506 A4-70),8,,AQS-INV-004
 building block,OF-96,fastener: M12 A4-70 bolt + nut (ISO 3506 A4-70),8,,AQS-INV-004
-building block,OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),214,,AQS-INV-004
+building block,OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),222,,AQS-INV-004
 building block,OF-98,fastener: M10 stud + nut (ISO 4014 / ISO 4032) (ISO 3506 A4-70),24,,AQS-INV-004
 building block,OF-99,fastener: M8 hold-down bolt (ISO 3506 A4-70),24,,AQS-INV-004
 building block,OF-100,fastener: M16 wedge anchor (ISO 898-1 8.8),16,,AQS-INV-004
@@ -2280,4 +2283,4 @@ building block,OF-128,fastener: M16 set-base bolt + nut (ISO 898-1 8.8),8,,AQS-I
 building block,OF-129,fastener: M10 ballast-foot bolt + nut (ISO 898-1 8.8),8,,AQS-INV-004
 building block,OF-130,fastener: M10 basin hold-down bolt + nut (ISO 3506 A4-70),8,,AQS-INV-004
 building block,OF-131,fastener: M12 canopy base plate bolt + nut (ISO 898-1 8.8),8,,AQS-INV-004
-building block,OF-132,fastener: M10 header clip bolt + nut (ISO 898-1 8.8),6,,AQS-INV-004
+building block,OF-132,fastener: M10 header clip bolt + nut (ISO 898-1 8.8),12,,AQS-INV-004

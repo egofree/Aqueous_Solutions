@@ -26,7 +26,13 @@
   "head_m": 25,
   "pump_W": 125.7,
   "duty": "source loop between the bore field and the heat-pump evaporators; S43 carries it on the graph (0 kW idle standby)",
-  "material": "HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C)"
+  "material": "HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C)",
+  "service": "GEO_HP_CLOSED_LOOP: the closed source loop between the GHEX bore field and the heat-pump evaporators - the S43 class edge at 0 kW idle standby, design case 3.0 kW th (duty sections 1 and 4)",
+  "ca_mm": 0.0,
+  "material_basis": "node material row; CA does not apply to the HDPE (AQS-STD-001)",
+  "node_class": "blank on the node (the tracker row says what is known); route hold named (W12)",
+  "purchased": "circulator envelope (AQS-DUTY-076, 125.7 W node stamp)",
+  "buried_scope": "the buried ground array is the GHEX/site lane's; the tie stubs are interface indications"
  },
  "nozzles": [
   {
@@ -60,5 +66,48 @@
  ],
  "holds": [
   "class not stated on the node"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "plinth_mm": 20.0,
+  "buffer_vessel": {
+   "od_mm": 220.0,
+   "h_mm": 300.0
+  },
+  "headers": {
+   "dn": "DN32",
+   "x_mm": [
+    120.0,
+    620.0
+   ],
+   "z_mm": [
+    320.0,
+    380.0
+   ]
+  },
+  "tie_stubs_x_mm": [
+   200.0,
+   480.0
+  ],
+  "pump_env_mm": [
+   640.0,
+   170.0,
+   20.0,
+   240.0,
+   260.0,
+   460.0
+  ]
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; buffer vessel at x 200 on the skid centreline; header runs x 120..620 at z 320/380 +/- 70; tie stubs at x 200/480; circulator envelope x 640..880",
+  "below_grade": "the tie stubs run to the box floor and below grade toward the GHEX bore field - interface indication only",
+  "supports": "plinth + hold-down frame + 8 slab anchors",
+  "nozzle_spread": "the schedule gives face and height only; N3 on -Y at z 160 (the return from the bore field), drain at x 430, vent at x 570; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

@@ -1,0 +1,84 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 3,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "closed source-loop distribution skid per the node design block: the loop between the GHEX bore field and the heat-pump evaporators (GEO_HP) - DN32 HDPE supply/return header runs, the loop buffer manifold vessel (OD 220 x 300, the seed's 'loop vessel'; study, W12), the circulator envelope (pump_W 125.7, node - purchased per plan rule 6), and the tie stubs (below-grade interface to the bore field; skid-side tie toward GEO_HP)",
+    "node_class": "blank on the node - the tracker row says what is known; route hold carried by name (no AQS-PLAN-006 section 4 class; AFTERBURNER_FLUE/REE_RECOVER precedent)",
+    "loop": {
+      "dn": "DN32",
+      "design_case_kW_th": 3.0,
+      "flow_kg_s": 0.2564,
+      "dT_K": 3,
+      "head_m": 25,
+      "pump_W": 125.7,
+      "fluid": "25 % propylene glycol (freeze protection to -10 C, node material)",
+      "standby": "the S43 class edge runs at 0 kW idle standby on the graph (node design duty text)"
+    },
+    "buried_scope": "the buried ground array is the GHEX/site lane's - the tie stubs are the interface indication, the below-grade runs are named, not drawn (hold, WORK_ORDER W12)",
+    "purchased": "circulator envelope (AQS-DUTY-076 source-loop circulator, 125.7 W node stamp; node continuous 0.1257 kW) - purchased per plan rule 6",
+    "guard": "four-post hold-down/guard frame pins the registry box (X-PAR-04); 8 slab anchors (fasteners.csv)",
+    "material": "HDPE DR-11 buried; 25 % propylene glycol (node material); skid frame painted A500",
+    "ca_mm": 0.0,
+    "study_dims": "skid header stations, buffer vessel and pump envelope are study values (hold, WORK_ORDER W12)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm is the box top"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 500.0,
+      "schedule_rating": "Class 150",
+      "service": "geothermal loop fluid",
+      "note": "atmospheric hose joint at the envelope face (duty section 4; bore not calculated, hose, atmospheric); the loop return from the GHEX bore field"
+    }
+  },
+  "nozzle_count_schedule": 3,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (duty section 4: atmospheric joints are hose; DN copied from the edge, not recalculated; rows read 'Bore not calculated. Rating hose, atmospheric'); N3 geothermal loop fluid in on -Y at z 160 (the return from the GHEX bore field); drain flush at the envelope bottom (50 datum); vent flush at the envelope top (800 datum is the box top); no flange (W4 110 % rule); the schedule rating column carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "frame": 76.36,
+    "buffer_vessel": 10.83,
+    "headers": 0.41,
+    "tie_stubs": 0.32,
+    "pump_env": 225.33,
+    "nozzles": 0.04
+  },
+  "cadquery": "2.8.0"
+}
