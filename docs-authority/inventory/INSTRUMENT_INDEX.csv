@@ -483,6 +483,7 @@ Q4_A-PT-01,Q4_A,HEAT,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 ba
 Q4_A-TE-01,Q4_A,HEAT,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),Q4_ATE-01,PLC-HEAT,band by service
 Q4_B-PT-01,Q4_B,HEAT,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),Q4_BPT-01,PLC-HEAT,no design pressure on the graph
 Q4_B-TE-01,Q4_B,HEAT,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),Q4_BTE-01,PLC-HEAT,band by service
+MET_SYN-FT-01,MET_SYN,MEOH,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),MET_SYNFT-01,PLC-MEOH,DL_MET_TO_FEED normal 0.00 L/h
 MET_SYN-PT-01,MET_SYN,MEOH,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),MET_SYNPT-01,PLC-MEOH,no design pressure on the graph
 MET_SYN-TE-01,MET_SYN,MEOH,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),MET_SYNTE-01,PLC-MEOH,band by service
 MEOH_FERM-FT-01,MEOH_FERM,MEOH,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.002 L/h,4-20 mA HART (AI),MEOH_FERMFT-01,PLC-MEOH,S77 normal 0.00 L/h

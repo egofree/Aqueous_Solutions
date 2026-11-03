@@ -116,7 +116,7 @@ MET_AHU,AQS-PID-001-MET_AHU,a8572962,docs-authority/pid/MET_AHU.svg,MFG,ahu,1,2,
 MET_HX_Q4,AQS-PID-001-MET_HX_Q4,2529557a,docs-authority/pid/MET_HX_Q4.svg,MFG,hx,2,1,0,0,2,0,3
 MET_MELT,AQS-PID-001-MET_MELT,ae394ef5,docs-authority/pid/MET_MELT.svg,MFG,melt,3,3,3,0,4,2,7
 MET_SCRUB,AQS-PID-001-MET_SCRUB,c6d993f5,docs-authority/pid/MET_SCRUB.svg,MFG,scrubber,5,3,9,0,7,1,9
-MET_SYN,AQS-PID-001-MET_SYN,51352e9f,docs-authority/pid/MET_SYN.svg,MEOH,chemical_synthesis,4,1,2,0,4,0,6
+MET_SYN,AQS-PID-001-MET_SYN,87862e14,docs-authority/pid/MET_SYN.svg,MEOH,chemical_synthesis,4,1,3,0,5,1,6
 MFG_SHOP,AQS-PID-001-MFG_SHOP,46e01014,docs-authority/pid/MFG_SHOP.svg,MFG,shop,25,5,3,0,5,1,33
 MG_POT,AQS-PID-001-MG_POT,7555bbd7,docs-authority/pid/MG_POT.svg,FOUNDRY,cell,3,4,4,0,6,1,8
 MO_CELL,AQS-PID-001-MO_CELL,f6a87d41,docs-authority/pid/MO_CELL.svg,FOUNDRY,cell,4,4,6,0,4,0,9

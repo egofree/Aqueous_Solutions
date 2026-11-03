@@ -24,7 +24,12 @@
   "chemistry": "step 1: CH3OH + H2S -> CH3SH (K2O/Al2O3, 350 C); step 2: CH3SH + acrolein -> MMP (base-catalysed Michael addition); step 3: MMP + NH3 + HCN -> aminonitrile; hydrolysis -> DL-Met (Strecker)",
   "throughput_g_d": 9.0,
   "precursor_chain": "CH3OH from MEOH_SYNTH; H2S from BLACK_DIGEST; NH3 from WS_AMMONIA; acrolein from the olefin line; HCN from the Andrussow reaction (CH4 + NH3 + O2) at the gram/d scale",
-  "product": "DL-methionine crystals to the FEED_PREP formulation (A-M-426)"
+  "product": "DL-methionine crystals to the FEED_PREP formulation (A-M-426)",
+  "material": "borosilicate glass-lined column, PTFE-lined transfer lines, SS304 feed tanks, Hastelloy C crystalliser",
+  "ca_mm": 0.0,
+  "material_basis": "duty section 3 (X-MAT-22): glass-lined for the reaction column, PTFE for the transfer, Hastelloy C for the acidic hydrolysis/crystallisation; structure 316L wet-bench class (layout choice, W12)",
+  "connected_kw": 0.2,
+  "purchased": "stirrer drive, heating jacket, metering pumps, Hastelloy C crystalliser (plan rule 6 envelopes; connected set 0.2 kW from the node)"
  },
  "nozzles": [
   {
@@ -82,5 +87,53 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class chemical_synthesis"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1500.0,
+   1000.0,
+   1800.0
+  ],
+  "basis": "bench fume-hood train: glass-lined reactor column (2 L working volume), reagent feed tanks, Hastelloy C crystalliser; the 9 g/d DL-Met duty sets nothing larger (A-M-416 route A; X-UI-002)",
+  "deck_z_mm": 800.0,
+  "hood_z_mm": [
+   820.0,
+   1800.0
+  ],
+  "column": {
+   "od_mm": 150.0,
+   "h_mm": 600.0,
+   "pos_mm": [
+    400.0,
+    500.0
+   ],
+   "jacket_od_mm": 190.0,
+   "jacket_h_mm": 300.0
+  },
+  "tanks": {
+   "od_mm": 200.0,
+   "h_mm": 300.0,
+   "y_mm": [
+    300.0,
+    550.0,
+    800.0
+   ],
+   "x_mm": 700.0
+  },
+  "crystalliser": {
+   "od_mm": 220.0,
+   "h_mm": 350.0,
+   "pos_mm": [
+    1150.0,
+    500.0
+   ]
+  },
+  "plinth_mm": 20.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; bench deck at z 800 over the 20 mm plinth; reactor column x 400 y 500, feed-tank row x 700 at y 300/550/800, crystalliser x 1150 y 500 - all on the deck inside the four-post hold-down frame; fume-hood shell over the bench z 820..1800",
+  "supports": "plinth + hold-down frame + 8 slab anchors (A-MACH practice)",
+  "nozzle_spread": "the schedule gives face and height only; N1-N3 pack one row on -Y at z 160 from x 150, 8 mm clear at the bore; N4 on +Y at z 600 at the crystalliser discharge; drain at x 710, vent at x 790; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

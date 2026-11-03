@@ -1,6 +1,6 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,100,1591 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,847,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,100,1600 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,848,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 176 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: run and fault (assumed)"
@@ -2256,11 +2256,25 @@ HEAT,heat_battery,Q4_B,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Typ
 HEAT,heat_battery,Q4_B,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-Q4-B-BUS: one at each end nozzle (assumed)
 HEAT,heat_battery,Q4_B,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-Q4-X-BA: one at each end nozzle (assumed)
 HEAT,hx,MAU_HX,fabricated part,fabricated part set,1 BOM lines,models/mfg/MAU_HX/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MEOH,chemical_synthesis,MET_SYN,fabricated part,fabricated part set,7 BOM lines,models/mfg/MET_SYN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+MEOH,chemical_synthesis,MET_SYN,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",6,"Metering pump set on the tank bases (purchased-class envelop: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
+MEOH,chemical_synthesis,MET_SYN,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"PTFE-lined transfer lines: column-to-crystalliser run, pump : drive and non-drive end, IEC 60072 frame 63 (assumed size)"
+MEOH,chemical_synthesis,MET_SYN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,6,Metering pump set on the tank bases (purchased-class envelop: run and fault (assumed)
+MEOH,chemical_synthesis,MET_SYN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"PTFE-lined transfer lines: column-to-crystalliser run, pump : run and fault (assumed)"
+MEOH,chemical_synthesis,MET_SYN,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,3,Metering pump set on the tank bases (purchased-class envelop (assumed VFD at >= 0.75 kW)
+MEOH,chemical_synthesis,MET_SYN,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"PTFE-lined transfer lines: column-to-crystalliser run, pump  (assumed VFD at >= 0.75 kW)"
+MEOH,chemical_synthesis,MET_SYN,fabricated part,fabricated part set,11 BOM lines,models/mfg/MET_SYN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+MEOH,chemical_synthesis,MET_SYN,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,8,models/mfg/MET_SYN/fasteners.csv
+MEOH,chemical_synthesis,MET_SYN,fastener,M8 hold-down bolt + nut,M8 hold-down bolt + nut,ISO 3506 A4-70,8,models/mfg/MET_SYN/fasteners.csv
 MEOH,chemical_synthesis,MET_SYN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,DL_MET_TO_FEED: 2 per support (assumed)
+MEOH,chemical_synthesis,MET_SYN,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,DL_MET_TO_FEED: pumped line (assumed)
 MEOH,chemical_synthesis,MET_SYN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 MEOH,chemical_synthesis,MET_SYN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+MEOH,chemical_synthesis,MET_SYN,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,3,"NEC 430.52, from AQS-INV-002"
+MEOH,chemical_synthesis,MET_SYN,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
+MEOH,chemical_synthesis,MET_SYN,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",3,Metering pump set on the tank bases (purchased-class envelop: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
+MEOH,chemical_synthesis,MET_SYN,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"PTFE-lined transfer lines: column-to-crystalliser run, pump : induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 MEOH,chemical_synthesis,MET_SYN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",18,DL_MET_TO_FEED: AQS-PIP-005 span count
+MEOH,chemical_synthesis,MET_SYN,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,DL_MET_TO_FEED: pump discharge (assumed)
 MEOH,chemical_synthesis,MET_SYN,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,DL_MET_TO_FEED: one at each end nozzle (assumed)
 MEOH,ferment,MEOH_FERM,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Recirculation loop DN15 PVC-U: pump to top head and shell ba: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 MEOH,ferment,MEOH_FERM,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Recirculation loop DN15 PVC-U: pump to top head and shell ba: run and fault (assumed)

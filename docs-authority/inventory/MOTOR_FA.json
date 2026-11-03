@@ -96,7 +96,7 @@
   "family": "MF-09",
   "type": "induction IE3",
   "rating": "IEC 63 / 0.18 kW",
-  "items": 177,
+  "items": 181,
   "P_kW": 0.18,
   "poles": 4,
   "Dg": 59.0,

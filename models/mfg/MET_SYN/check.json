@@ -1,0 +1,118 @@
+{
+  "bbox_mm": [
+    1500.0,
+    1000.0,
+    1800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1500.0,
+    1000.0,
+    1800.0
+  ],
+  "size_basis": "bench fume-hood train: glass-lined reactor column (2 L working volume), reagent feed tanks, Hastelloy C crystalliser; the 9 g/d DL-Met duty sets nothing larger (A-M-416 route A; X-UI-002)",
+  "graph_revision": "AD",
+  "solids": 10,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "bench fume-hood synthesis train per the node sizing/design blocks and duty section 3: borosilicate glass-lined reactor column (OD 150 x 600, 2 L working volume, node sizing throughput_g_d 9 at the bench class) with heating-jacket band (190 x 300); 3 SS304 reagent feed tanks (OD 200 x 300, CH3OH / H2S / NH3 per the schedule feeds); Hastelloy C crystalliser (OD 220 x 350, duty section 3: the product-quality bottleneck, X-UI-002); PTFE-lined transfer lines; metering pumps and stirrer drive as purchased-class envelopes",
+    "chemistry": "step 1: CH3OH + H2S -> CH3SH (K2O/Al2O3, 350 C); step 2: CH3SH + acrolein -> MMP (base-catalysed Michael addition); step 3: MMP + NH3 + HCN -> aminonitrile; hydrolysis -> DL-Met (Strecker)",
+    "connected_kw": {
+      "value": 0.2,
+      "basis": "node continuous_kw 0.2 kW: heating jacket + stirrer + metering pumps as one connected set; no per-item figure is stated or invented"
+    },
+    "work_volume_L": 2.0,
+    "study_dims": "column/tank/crystalliser shell dimensions are study values sized to the 2 L duty and the bench class (WORK_ORDER W12)",
+    "structure": "316L bench frame, deck and fume hood (wet-bench class under HCN/acrolein fume; REE_RECOVER idiom; layout choice, W12)",
+    "purchased": "stirrer drive, metering pumps and the heating jacket are purchased-class envelopes per plan rule 6 (connected set 0.2 kW from the node); the Hastelloy C crystalliser is a buy-row envelope",
+    "guard": "four-post hold-down/guard frame (40 x 40 posts, top rails) pins the registry box (X-PAR-04); 8 slab anchors (fasteners.csv)",
+    "material": "borosilicate glass-lined column, PTFE-lined transfer lines, SS304 feed tanks, Hastelloy C crystalliser (duty section 3, X-MAT-22)",
+    "ca_mm": 0.0
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 120.7,
+      "schedule_rating": "Class 150",
+      "service": "methanol feed to the methyl-mercaptan synthesis (trace)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 150.0,
+      "schedule_rating": "Class 150",
+      "service": "H2S feed to the methyl-mercaptan synthesis (trace)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 179.3,
+      "schedule_rating": "Class 150",
+      "service": "ammonia feed to the Strecker step (trace)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 150.0,
+      "schedule_rating": "Class 150",
+      "service": "DL-methionine crystals: top-dressed supplement at the point of feeding",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 1800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm predates the 1800 box - named hold, WORK_ORDER W12"
+    }
+  },
+  "nozzle_count_schedule": 6,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: Class 150 rows, atmospheric tube or hose); N1-N3 reagent feeds on -Y at z 160 under the bench deck; N4 DL-Met crystals (solids service) on +Y at z 600 drawn DN15, bore not calculated (plan W4); drain flush at the envelope bottom (50 datum); vent flush at the envelope top (the 800 datum predates the 1800 box - hold, WORK_ORDER W12); no flange drawn (W4 110 % rule - no process pressure stated); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 240.0,
+    "deck": 206.04,
+    "frame": 152.06,
+    "hood": 1316.53,
+    "column": 23.64,
+    "glass_liner": 19.35,
+    "jacket": 68.05,
+    "stirrer": 10.37,
+    "feed_tanks": 226.19,
+    "metering_pumps": 20.74,
+    "crystalliser": 118.41,
+    "ptfe_lines": 0.27,
+    "nozzles": 0.35
+  },
+  "cadquery": "2.8.0"
+}

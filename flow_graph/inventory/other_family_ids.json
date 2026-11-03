@@ -595,6 +595,11 @@
    "category": "fastener",
    "item": "M8 module-clip bolt",
    "spec": "ISO 3506 A4-70"
+  },
+  "OF-120": {
+   "category": "fastener",
+   "item": "M8 hold-down bolt + nut",
+   "spec": "ISO 3506 A4-70"
   }
  }
 }

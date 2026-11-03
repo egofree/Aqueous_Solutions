@@ -63,14 +63,14 @@ Table 4.1. I/O and modules by PLC
 | PLC-GLASS | 12 | 0 | 5 | 0 | 2 | 1/0/1/0 | single | 16 |
 | PLC-HAB | 13 | 0 | 1 | 0 | 0 | 1/0/1/0 | redundant pair | 28 |
 | PLC-HEAT | 24 | 0 | 0 | 0 | 0 | 2/0/0/0 | single | 16 |
-| PLC-MEOH | 32 | 0 | 35 | 6 | 10 | 3/0/3/1 | single | 26 |
+| PLC-MEOH | 33 | 0 | 43 | 10 | 10 | 3/0/4/1 | single | 28 |
 | PLC-MFG | 32 | 9 | 44 | 7 | 5 | 3/1/4/1 | single | 30 |
 | PLC-NUT | 9 | 0 | 11 | 5 | 0 | 1/0/1/1 | redundant pair | 30 |
 | PLC-OIL | 55 | 0 | 36 | 5 | 8 | 5/0/3/1 | single | 30 |
 | PLC-POLYMERS | 48 | 0 | 18 | 3 | 3 | 4/0/2/1 | single | 26 |
 | PLC-PUMPED_HYDRO | 2 | 0 | 2 | 1 | 0 | 1/0/1/1 | redundant pair | 30 |
 | PLC-WTR | 70 | 0 | 57 | 14 | 11 | 6/0/5/2 | redundant pair | 50 |
-| Total | 729 | 17 | 828 | 218 | 137 | 168 modules | 9 redundant of 18 | 660 |
+| Total | 730 | 17 | 836 | 222 | 137 | 169 modules | 9 redundant of 18 | 662 |
 
 The control system draws about 0.66 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
 

@@ -1748,7 +1748,7 @@ Table 2.1. Actions by kind
 
 | Parameter | Guide word | Cause | Consequence | Safeguard | Action |
 |---|---|---|---|---|---|
-| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty; dry-running pump | FT low-flow alarm | - |
 | flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
 | pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
 | temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |

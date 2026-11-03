@@ -88,7 +88,7 @@ SIF-086,VERMI_BIN,VERMI_BIN,flow or level low-low,pump stop,"pump starter, de-en
 SIF-087,FEED_PREP,FEED_PREP,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-227
 SIF-088,AQUA_UV,AQUA_UV,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-229
 SIF-089,POLY_FIBER,POLY_FIBER,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-231
-SIF-090,MET_SYN,MET_SYN,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-233
+SIF-090,MET_SYN,MET_SYN-FT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-233
 SIF-091,ACID_POLISH_SCRUB,ACID_POLISH_SCRUB-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
 SIF-092,ALK_SCRUBBER,ALK_SCRUBBER-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
 SIF-093,BACKUP_GEN,BACKUP_GEN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
