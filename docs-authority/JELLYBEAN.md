@@ -32,15 +32,15 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | --- | --- | --- | --- | --- |
 | M10 | U-bolt | ISO 3506 A4-70 | 2 | DIN 3570 (U-bolt) |
 | M10 | anchor | ISO 3506 A4-70 | 206 | ISO 4017 + chemical anchor (ETAG 001) |
-| M10 | anchor | ISO 898-1 8.8 | 192 | ISO 4017 + chemical anchor (ETAG 001) |
+| M10 | anchor | ISO 898-1 8.8 | 228 | ISO 4017 + chemical anchor (ETAG 001) |
 | M10 | hex bolt | ASTM A193 B8 | 8 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M10 | hex bolt | ISO 3506 A4-70 | 142 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M10 | hex bolt | ISO 898-1 8.8 | 64 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M10 | hex bolt | ISO 3506 A4-70 | 158 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M10 | hex bolt | ISO 898-1 8.8 | 92 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | stud | ISO 3506 A4-70 | 32 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M10 | stud | ISO 898-1 8.8 | 94 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M10 | stud | ISO 898-1 8.8 | 106 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | anchor | ISO 3506 A4-70 | 3 | ISO 4017 + chemical anchor (ETAG 001) |
-| M12 | anchor | ISO 898-1 8.8 | 284 | ISO 4017 + chemical anchor (ETAG 001) |
-| M12 | hex bolt | ISO 3506 A4-70 | 488 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M12 | anchor | ISO 898-1 8.8 | 300 | ISO 4017 + chemical anchor (ETAG 001) |
+| M12 | hex bolt | ISO 3506 A4-70 | 512 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | ISO 898-1 8.8 | 36 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | PVDF (non-metallic) | 34 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | stud | ISO 898-1 8.8 | 48 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -51,11 +51,11 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M16 | stud | ISO 898-1 8.8 zinc | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M20 | hex bolt | ISO 898-1 8.8 | 3212 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M24 | stud | ISO 898-1 8.8 | 16 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M6 | hex bolt | ISO 3506 A4-70 | 273 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M6 | hex bolt | ISO 3506 A4-70 | 333 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M8 | anchor | ISO 3506 A4-70 | 4 | ISO 4017 + chemical anchor (ETAG 001) |
-| M8 | anchor | ISO 898-1 8.8 | 4 | ISO 4017 + chemical anchor (ETAG 001) |
-| M8 | hex bolt | ISO 3506 A4-70 | 172 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M8 | hex bolt | ISO 898-1 8.8 | 68 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M8 | anchor | ISO 898-1 8.8 | 12 | ISO 4017 + chemical anchor (ETAG 001) |
+| M8 | hex bolt | ISO 3506 A4-70 | 188 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M8 | hex bolt | ISO 898-1 8.8 | 92 | ISO 4014 / ISO 4032 / ISO 7089 |
 
 ## 3. Seals and gaskets
 

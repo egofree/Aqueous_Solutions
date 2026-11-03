@@ -17,7 +17,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 20217 |
+| fastener | 20457 |
 | support | 7355 |
 | electronics | 2195 |
 | valve | 993 |
@@ -152,7 +152,24 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-130 | M10 basin hold-down bolt + nut | ISO 3506 A4-70 | M10 basin hold-down bolt + nut x8 | 8 | 1 | models/mfg/GROW_BED/fasteners.csv |  |
 | OF-131 | M12 canopy base plate bolt + nut | ISO 898-1 8.8 | M12 canopy base plate bolt + nut x8 | 8 | 1 | models/mfg/GROW_BED/fasteners.csv |  |
 | OF-132 | M10 header clip bolt + nut | ISO 898-1 8.8 | M10 header clip bolt + nut x12 | 12 | 2 | models/mfg/GEO_GHEX/fasteners.csv; models/mfg/GEO_HP_CLOSED_LOOP/fasteners.csv |  |
+| OF-133 | M10 base hold-down anchor | ISO 898-1 8.8 | M10 base hold-down anchor x32 | 32 | 8 | models/mfg/AQUA_TANK/fasteners.csv; models/mfg/BIOFILTER/fasteners.csv; models/mfg/BSFL_BIN/fasteners.csv |  |
+| OF-134 | M12 batten strip bolt | ISO 3506 A4-70 | M12 batten strip bolt x24 | 24 | 1 | models/mfg/DUCKWEED/fasteners.csv |  |
+| OF-135 | M6 box-assembly screw | ISO 3506 A4-70 | M6 box-assembly screw x24 | 24 | 1 | models/mfg/BEE_HIVE/fasteners.csv |  |
+| OF-136 | M8 bolt | ISO 898-1 8.8 | M8 bolt x24 | 24 | 4 | models/mfg/FLUX_PREP/fasteners.csv; models/mfg/SHELL_BREAK/fasteners.csv; models/mfg/SHELL_BUILD/fasteners.csv |  |
+| OF-137 | M10 lid hold-down bolt + nut | ISO 3506 A4-70 | M10 lid hold-down bolt + nut x16 | 16 | 2 | models/mfg/AQUA_TANK/fasteners.csv; models/mfg/BIOFILTER/fasteners.csv |  |
+| OF-138 | M6 screen-frame clamp screw | ISO 3506 A4-70 | M6 screen-frame clamp screw x16 | 16 | 2 | models/mfg/BSFL_BIN/fasteners.csv; models/mfg/VERMI_BIN/fasteners.csv |  |
+| OF-139 | M8 liner batten bolt | ISO 3506 A4-70 | M8 liner batten bolt x16 | 16 | 2 | models/mfg/GROWBED_A/fasteners.csv; models/mfg/GROWBED_B/fasteners.csv |  |
 | OF-14 | anchor bolt | ISO 3506 A4-70 wedge anchor | M10 x14710 | 14710 | 138 | AL_POT_CL2: 2 per support (assumed); AQUA_BYPASS: 2 per support (assumed); AQUA_LOOP1: 2 per support (assumed) |  |
+| OF-140 | M10 bolt | ISO 898-1 8.8 | M10 bolt x12 | 12 | 1 | models/mfg/STOCK_OUT/fasteners.csv |  |
+| OF-141 | M12 base hold-down anchor | ISO 898-1 8.8 | M12 base hold-down anchor x8 | 8 | 1 | models/mfg/DUCKWEED/fasteners.csv |  |
+| OF-142 | M10 nest-row carriage bolt | ISO 898-1 8.8 | M10 nest-row carriage bolt x8 | 8 | 1 | models/mfg/CHICKEN_COOP/fasteners.csv |  |
+| OF-143 | M6 drive-plate bolt | ISO 3506 A4-70 | M6 drive-plate bolt x8 | 8 | 1 | models/mfg/FEED_PREP/fasteners.csv |  |
+| OF-144 | M8 cabinet base anchor | ISO 898-1 8.8 | M8 cabinet base anchor x8 | 8 | 2 | models/mfg/AQUA_UV/fasteners.csv; models/mfg/FEED_PREP/fasteners.csv |  |
+| OF-145 | M6 wallow batten screw | ISO 3506 A4-70 | M6 wallow batten screw x8 | 8 | 1 | models/mfg/DUCK_PEN/fasteners.csv |  |
+| OF-146 | M10 stand-to-pad anchor | ISO 898-1 8.8 | M10 stand-to-pad anchor x4 | 4 | 1 | models/mfg/BEE_HIVE/fasteners.csv |  |
+| OF-147 | M6 reactor tube clamp bolt | ISO 3506 A4-70 | M6 reactor tube clamp bolt x4 | 4 | 1 | models/mfg/AQUA_UV/fasteners.csv |  |
+| OF-148 | M10 table mount | ISO 898-1 8.8 | M10 table mount x4 | 4 | 1 | models/mfg/SHELL_BREAK/fasteners.csv |  |
+| OF-149 | M10 hold-down | ISO 898-1 8.8 | M10 hold-down x4 | 4 | 1 | models/mfg/SHELL_BUILD/fasteners.csv |  |
 | OF-15 | M10 x 40 lid bolt | ISO 3506 A4-70 | M10 x 40 lid bolt with nut and washers x12 | 12 | 1 | models/mfg/GLASS_DIGEST/fasteners.csv |  |
 | OF-16 | M8 x 30 lid bolt | ISO 3506 A4-70 | M8 x 30 lid bolt with nut and washers x12 | 12 | 1 | models/mfg/BLACK_DIGEST/fasteners.csv |  |
 | OF-17 | M12 anchor | ISO 3506 A4-70 | M12 anchor x3 | 3 | 1 | models/mfg/OIL_PYRO/fasteners.csv |  |
@@ -164,7 +181,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-30 | Flange gasket | graphite sheet | Flange gasket x2 | 2 | 1 | models/mfg/EVAP_BASE/fasteners.csv |  |
 | OF-31 | M10 U-bolt for DN150 | ISO 3506 A4-70 | M10 U-bolt for DN150 x2 | 2 | 1 | models/mfg/EVAP_ACID_VS/fasteners.csv |  |
 | OF-33 | Solvent cement | PVC-U per ASTM D2564 | Solvent cement x1 | 1 | 1 | models/mfg/EVAP_ACID_VS/fasteners.csv |  |
-| OF-66 | M12 anchor | ISO 898-1 8.8 | M12 anchor x62 | 62 | 13 | models/mfg/AL_POT/fasteners.csv; models/mfg/CAST_LINE/fasteners.csv; models/mfg/CONT_CAST/fasteners.csv |  |
+| OF-66 | M12 anchor | ISO 898-1 8.8 | M12 anchor x58 | 58 | 12 | models/mfg/AL_POT/fasteners.csv; models/mfg/CAST_LINE/fasteners.csv; models/mfg/CONT_CAST/fasteners.csv |  |
 | OF-67 | M10 x 30 hood bolts | ISO 898-1 8.8 | M10 x 30 hood bolts x16 | 16 | 1 | models/mfg/AL_POT/fasteners.csv |  |
 | OF-68 | M16 T-bolt + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M16 T-bolt + nut (ISO 4014 / ISO 4032) x12 | 12 | 1 | models/mfg/CAST_LINE/fasteners.csv |  |
 | OF-69 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) x12 | 12 | 1 | models/mfg/HF_GEN/fasteners.csv |  |
@@ -172,7 +189,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-71 | M10 x 30 guard screws | ISO 3506 A4-70 | M10 x 30 guard screws x16 | 16 | 1 | models/mfg/PELLET/fasteners.csv |  |
 | OF-72 | M10 x 30 jacket screws | ISO 3506 A4-70 | M10 x 30 jacket screws x32 | 32 | 2 | models/mfg/TFE_SYN/fasteners.csv; models/mfg/VDF_SYN/fasteners.csv |  |
 | OF-75 | M10 clamp | ISO 3506 A4-70 | M10 clamp x4 | 4 | 1 | models/mfg/POLY_STOCK/fasteners.csv |  |
-| OF-81 | M10 stud + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M10 stud + nut (ISO 4014 / ISO 4032) x94 | 94 | 11 | models/mfg/CA_POT/fasteners.csv; models/mfg/COMB_HEAT/fasteners.csv; models/mfg/CONT_CAST/fasteners.csv |  |
+| OF-81 | M10 stud + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M10 stud + nut (ISO 4014 / ISO 4032) x106 | 106 | 12 | models/mfg/CA_POT/fasteners.csv; models/mfg/COMB_HEAT/fasteners.csv; models/mfg/CONT_CAST/fasteners.csv |  |
 | OF-82 | M8 x 25 hood bolts | ISO 898-1 8.8 | M8 x 25 hood bolts x48 | 48 | 4 | models/mfg/CA_POT/fasteners.csv; models/mfg/CR_CELL/fasteners.csv; models/mfg/MG_POT/fasteners.csv |  |
 | OF-83 | M10 anchor | ISO 898-1 8.8 | M10 anchor x40 | 40 | 10 | models/mfg/CA_POT/fasteners.csv; models/mfg/CR_CELL/fasteners.csv; models/mfg/FILM_CAST/fasteners.csv |  |
 | OF-84 | M8 x 25 hopper bolts | ISO 898-1 8.8 | M8 x 25 hopper bolts x8 | 8 | 1 | models/mfg/TI_CELL/fasteners.csv |  |
@@ -188,12 +205,12 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-94 | M12 bolt + nut; PP-flanged joint | ISO 3506 A4-70 | M12 bolt + nut; PP-flanged joint x16 | 16 | 1 | models/mfg/NOX_SCRUB/fasteners.csv |  |
 | OF-95 | M12 PVDF bolt + nut | ISO 3506 A4-70 | M12 PVDF bolt + nut x8 | 8 | 1 | models/mfg/HX8/fasteners.csv |  |
 | OF-96 | M12 A4-70 bolt + nut | ISO 3506 A4-70 | M12 A4-70 bolt + nut x8 | 8 | 1 | models/mfg/MET_HX_Q4/fasteners.csv |  |
-| OF-97 | M12 wedge anchor | ISO 898-1 8.8 | M12 wedge anchor x222 | 222 | 30 | models/mfg/AFTERBURNER/fasteners.csv; models/mfg/BLOW_MOLD/fasteners.csv; models/mfg/COLD_MILL/fasteners.csv |  |
+| OF-97 | M12 wedge anchor | ISO 898-1 8.8 | M12 wedge anchor x234 | 234 | 32 | models/mfg/AFTERBURNER/fasteners.csv; models/mfg/BLOW_MOLD/fasteners.csv; models/mfg/COLD_MILL/fasteners.csv |  |
 | OF-98 | M10 stud + nut (ISO 4014 / ISO 4032) | ISO 3506 A4-70 | M10 stud + nut (ISO 4014 / ISO 4032) x24 | 24 | 2 | models/mfg/VAC_CAST/fasteners.csv; models/mfg/VAC_IND/fasteners.csv |  |
 | OF-99 | M8 hold-down bolt | ISO 3506 A4-70 | M8 hold-down bolt x24 | 24 | 2 | models/mfg/REE_RECOVER/fasteners.csv; models/mfg/REMIN/fasteners.csv |  |
 
 ## 11. Coverage gate
 
-- Bought families covered: 118 of 119 (the excluded one is OF-13, the fabricated-part set:
+- Bought families covered: 135 of 136 (the excluded one is OF-13, the fabricated-part set:
   sheets like those are `models/mfg/*/bom.csv` + `WORK_ORDER.md`, in-house work).
 - Items rest on the A-M-125 counting rule where the roll-up assumed; the count is the basis, not a measurement.

@@ -20,3 +20,17 @@ def test_gated_derived_files_not_stale():
     import subprocess, sys
     r = subprocess.run([sys.executable, os.path.join(D, '_rev_stamp.py'), '--check-only'], cwd=ROOT, capture_output=True, text=True)
     assert r.returncode == 0, r.stdout
+
+def test_receipt_vouch_trust_is_sha_only():
+    """U4c (2026-11-03): the gate trusts a regen receipt's vouches on a graph-sha match alone.
+    `converged` is run-health reporting; one oscillating stage must not un-vouch the globs
+    other stages verified (that global coupling turned a single flaky view into 959 false
+    stale files at the gate)."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('aqs_rev_stamp', os.path.join(D, '_rev_stamp.py'))
+    rs = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(rs)
+    r = {'graph_sha256': 'abc123', 'converged': False, 'vouched_patterns': ['docs-authority/duties/*'], 'vouched_files': ['flow_graph/views/pfd.svg']}
+    assert rs.receipt_vouched(r, 'abc123') == ['docs-authority/duties/*', 'flow_graph/views/pfd.svg']
+    assert rs.receipt_vouched(r, 'other-sha') == []
+    assert rs.receipt_vouched({'graph_sha256': 'abc123'}, 'abc123') == []

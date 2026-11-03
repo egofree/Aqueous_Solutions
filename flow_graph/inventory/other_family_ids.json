@@ -660,6 +660,91 @@
    "category": "fastener",
    "item": "M10 header clip bolt + nut",
    "spec": "ISO 898-1 8.8"
+  },
+  "OF-133": {
+   "category": "fastener",
+   "item": "M10 base hold-down anchor",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-134": {
+   "category": "fastener",
+   "item": "M12 batten strip bolt",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-135": {
+   "category": "fastener",
+   "item": "M6 box-assembly screw",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-136": {
+   "category": "fastener",
+   "item": "M8 bolt",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-137": {
+   "category": "fastener",
+   "item": "M10 lid hold-down bolt + nut",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-138": {
+   "category": "fastener",
+   "item": "M6 screen-frame clamp screw",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-139": {
+   "category": "fastener",
+   "item": "M8 liner batten bolt",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-140": {
+   "category": "fastener",
+   "item": "M10 bolt",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-141": {
+   "category": "fastener",
+   "item": "M12 base hold-down anchor",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-142": {
+   "category": "fastener",
+   "item": "M10 nest-row carriage bolt",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-143": {
+   "category": "fastener",
+   "item": "M6 drive-plate bolt",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-144": {
+   "category": "fastener",
+   "item": "M8 cabinet base anchor",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-145": {
+   "category": "fastener",
+   "item": "M6 wallow batten screw",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-146": {
+   "category": "fastener",
+   "item": "M10 stand-to-pad anchor",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-147": {
+   "category": "fastener",
+   "item": "M6 reactor tube clamp bolt",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-148": {
+   "category": "fastener",
+   "item": "M10 table mount",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-149": {
+   "category": "fastener",
+   "item": "M10 hold-down",
+   "spec": "ISO 898-1 8.8"
   }
  }
 }

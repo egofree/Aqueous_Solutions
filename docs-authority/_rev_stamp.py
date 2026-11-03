@@ -4,8 +4,9 @@ file's own last commit. A file is stale when the graph has changed since. A file
 commit-based staleness (git sees no change), so generators also record their provenance: pattern manifests (duties/_generated.json,
 media/_generated.json) clear every file matching a pattern, per-file manifests (*._generated.json, e.g. sizing/REACTOR_DESIGN._generated.json)
 record (file, graph_sha256) rows, a data sidecar <NAME>.json with a matching _generated_from.graph_sha256 clears its <NAME>.md twin, and
-the U3 regen receipt (flow_graph/derived/_regen_receipt.json, written by flow_graph/param/regen.py) vouches the output globs of every stage
-that ran clean against the current graph.
+and the U3 regen receipt (flow_graph/derived/_regen_receipt.json, written by flow_graph/param/regen.py) vouches the stage output globs — and, for a
+stage that was only partly stable, the individually verified files — that its run re-derived byte-stable against the current graph (vouched on a
+graph-sha match alone; a failed or oscillating stage disqualifies exactly its own outputs, not the tree).
 The graph sha is computed at check time: a manifest row matching the current graph counts the file as current. Writes docs-authority/DERIVED_REVISIONS.md; exit 1 with --check when a
 GATED file is stale. --check-only evaluates and prints the summary without writing the file.
 U3 gated expansion (2026-10-18): GATED is no longer a 3-file list — every DERIVED file is gated unless it is classified. CLASS keeps the
@@ -29,6 +30,15 @@ BY_DESIGN = {
 FILE_MANIFESTS = ['docs-authority/sizing/REACTOR_DESIGN._generated.json']
 RECEIPT = 'flow_graph/derived/_regen_receipt.json'
 def git(*a): return subprocess.run(['git', *a], cwd=ROOT, capture_output=True, text=True, check=True).stdout
+def receipt_vouched(receipt, gsha):
+    """Globs and files a regen receipt vouches at graph sha `gsha` (empty at any other sha).
+    The receipt lists only what its own regen run re-derived and observed byte-stable at
+    receipt['graph_sha256'] (U4c, 2026-11-03), so a sha match is the only trust condition:
+    `converged` is run-health information, not a vouch precondition — one oscillating stage
+    must not un-vouch the 400+ globs other stages verified."""
+    if receipt.get('graph_sha256') == gsha:
+        return list(receipt.get('vouched_patterns', [])) + list(receipt.get('vouched_files', []))
+    return []
 def compute():
     """Read-only evaluation: returns (rows, stale count, gated-stale list, graph revision, head graph commit); writes nothing."""
     log = git('log', '--format=@%H %ct', '--name-only', '--no-renames'); last = {}; graph = []; cur = None
@@ -44,11 +54,10 @@ def compute():
     for man in ('docs-authority/duties/_generated.json', 'media/_generated.json'):   # generators derived again these outputs from this exact graph
         m = os.path.join(ROOT, man)
         if os.path.exists(m) and json.load(open(m)).get('graph_sha256') == gsha: checked += json.load(open(m)).get('patterns', [])
-    rp = os.path.join(ROOT, RECEIPT)                                                  # U3: regen receipt vouches stage output globs
+    rp = os.path.join(ROOT, RECEIPT)                                                  # U3: regen receipt vouches what its run verified
     if os.path.exists(rp):
         try:
-            r = json.load(open(rp))
-            if r.get('graph_sha256') == gsha and r.get('converged'): checked += r.get('vouched_patterns', [])
+            checked += receipt_vouched(json.load(open(rp)), gsha)
         except ValueError: pass
     vouched = {}   # derived file -> graph_sha256 it was regenerated from (per-file manifests and json sidecars beside the .md)
     for man in FILE_MANIFESTS:

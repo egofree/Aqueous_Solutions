@@ -11,8 +11,12 @@ Executes flow_graph/param/regen_manifest.json (data, not code):
      manifests record the final graph sha and byte-identical regens stay current. Some
      documents read each other, so the phase repeats until no doc output or amended file
      changes (same --max-passes cap).
-  3. Receipt: flow_graph/derived/_regen_receipt.json (graph sha, final per-stage status,
-     vouched_patterns = output and amend globs of stages that ran clean against the final sha).
+  3. Receipt: flow_graph/derived/_regen_receipt.json (graph sha, final per-stage status and
+     stability, vouched_patterns = output/amend globs of stages that ran clean AND whose
+     outputs this run verified byte-stable at the final graph sha, vouched_files = the
+     individually stable files of a stage that was only partly stable). The receipt vouches
+     only what THIS run re-derived and observed byte-stable: a failed or oscillating stage
+     disqualifies exactly its own outputs, never the rest of the tree (2026-11-03, U4c).
      docs-authority/_rev_stamp.py reads it as a provenance manifest. The receipt is tracked
      and deterministic: it holds no timings, pass counts or argv, so a full run on a clean,
      converged tree rewrites it byte-identically. Run details (durations, passes, per-pass
@@ -121,6 +125,45 @@ def expand_outputs(stage, root):
     for pat in stage.get('outputs', []):
         out += sorted(glob.glob(os.path.join(root, pat), recursive=True))
     return out
+
+def stage_files(stage, root):
+    """Every file a stage owns or amends (expanded outputs + amends)."""
+    return sorted(set(expand_outputs(stage, root)) | {os.path.join(root, a) for a in stage.get('amends', [])})
+
+def compute_vouches(sel, loop_stages, entries, stage_stable, graph_converged, doc_aborted,
+                    doc_before, doc_after, passes, root):
+    """Receipt vouches from what THIS run verified, as (patterns, files).
+
+    patterns: output/amend globs of stages fully verified byte-stable at the final graph sha —
+    graph-loop stages at the converged fixed point, doc stages whose outputs+amends are
+    hash-identical across the final doc pass. files: for a doc stage that was only partly
+    stable (the rest of the phase converged around it), the individually stable files.
+    A failed, skipped or not-run-in-final-phase stage vouches nothing. If the graph phase did
+    not converge, nothing vouches (the docs ran against a moving graph). If the doc phase
+    aborted mid-pass on a failing stage, its files were not fully re-verified: no doc-stage
+    vouches. This is what makes a vouch checkable: docs-authority/_rev_stamp.py clears a
+    derived file when it matches a vouched pattern/file at the receipt's graph sha.
+    """
+    patterns, files = [], []
+    if not graph_converged:
+        return patterns, files
+    for s in sel:
+        ents = [e for e in entries if e['name'] == s['name']]
+        if not (ents and ents[-1]['status'] == 'ok' and ents[-1]['pass'] in (passes, 0)):
+            continue                      # failed, skipped, or not run in the final phase
+        globs = s.get('outputs', []) + s.get('amends', [])
+        if s in loop_stages:
+            patterns += globs             # fixed point of the converged graph loop
+            continue
+        if doc_aborted:
+            continue                      # an aborted doc pass re-verified nothing
+        if stage_stable.get(s['name'], False):
+            patterns += globs             # every owned/amended file verified byte-stable
+        else:
+            files += [os.path.relpath(f, root) for f in stage_files(s, root)
+                      if os.path.isfile(f) and doc_before.get(f) == doc_after.get(f)]
+    return sorted(set(patterns)), sorted(set(files))
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog='flow_graph.param.regen', description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--stage', action='append', default=[], metavar='NAME', help='run only these stages (once each, manifest order)')
@@ -210,24 +253,32 @@ def main(argv=None):
             failed.append('(graph-convergence)')
 
     # Doc phase, against the final graph. Some documents feed each other (stage `feeds_back_from` in the
-    # manifest), so the phase repeats until no output changes, like the graph loop above.
+    # manifest), so the phase repeats until no output changes, like the graph loop above. Per-stage
+    # stability is tracked across the final comparison: it decides which stages the receipt vouches.
     doc_passes = 0
+    stage_stable, doc_before, doc_after, doc_aborted = {}, None, None, False
     if not failed and doc_stages:
         before = doc_snapshot(doc_stages)
         for p in range(1, args.max_passes + 1):
             doc_passes = p
             for s in doc_stages:
                 if not run_one(s, env, entries, graph_path, 0):   # pass 0 = doc phase, after convergence
-                    failed.append(s['name']); break
+                    failed.append(s['name']); doc_aborted = True; break
             if failed or args.stage: break
             after = doc_snapshot(doc_stages)
+            for s in doc_stages:
+                fs = stage_files(s, ROOT)
+                stage_stable[s['name']] = all(before.get(f) == after.get(f) for f in fs)
             changed = sorted(os.path.relpath(f, ROOT) for f in set(before) | set(after) if before.get(f) != after.get(f))
             print(f"--- doc pass {p} done: {'stable' if not changed else str(len(changed)) + ' files changed'}", flush=True)
             if changed and len(changed) <= 12: print('    changed: ' + ', '.join(changed), flush=True)
             if not changed: break
+            doc_before, doc_after = before, after
             before = after
         else:
-            print(f"regen: doc phase did NOT converge in {args.max_passes} passes", flush=True)
+            owners = sorted({s['name'] for s in doc_stages if not stage_stable.get(s['name'], False)})
+            print(f"regen: doc phase did NOT converge in {args.max_passes} passes"
+                  f"; unstable stages: {owners or 'unknown (aborted mid-pass)'}", flush=True)
             failed.append('(doc-convergence)')
 
     total = time.monotonic() - t_start
@@ -244,28 +295,9 @@ def main(argv=None):
         print(f"receipt not written ({'quick' if args.quick else 'stage selection'} mode); {os.path.relpath(receipt_path, ROOT)} keeps the last full run")
         return 1 if failed else 0
 
-    vouched = []
-    if not failed:
-        # Vouch = the stage ran ok in the FINAL graph pass or in the doc phase (which runs after
-        # convergence). The final pass is net-stable by construction; mid-pass normalisation
-        # transients (foundry newline, evap relief_basis reset re-computed by relief/vent) are the
-        # pipeline's own ordering, so per-stage post-sha equality is diagnostic only.
-        for s in sel:
-            ents = [e for e in entries if e['name'] == s['name']]
-            if ents and ents[-1]['status'] == 'ok' and ents[-1]['pass'] in (passes, 0):   # a skipped stage vouches nothing
-                vouched += s.get('outputs', []) + s.get('amends', [])
-    # Monotonic vouch carry-over (U4b fix): a converged clean pass re-derives every output
-    # byte-identically against the same final graph sha, so prior vouches remain true and must
-    # survive the rewrite - zeroing them on an already-converged tree turns _rev_stamp red
-    # until the next content-changing commit.
-    prior = set()
-    try:
-        prev = json.load(open(receipt_path))
-        if prev.get('graph_sha256') == final_sha and prev.get('converged'):
-            prior = set(prev.get('vouched_patterns', []))
-    except Exception:
-        pass
-    vouched = sorted(set(vouched) | prior)
+    graph_converged = not any(f == '(graph-convergence)' or f in {s['name'] for s in loop_stages} for f in failed)
+    vouched, vouched_files = compute_vouches(sel, loop_stages, entries, stage_stable, graph_converged,
+                                             doc_aborted, doc_before, doc_after, passes, ROOT)
     final_status = {}
     for e in entries: final_status[e['name']] = e['status']     # last pass wins
     receipt = {
@@ -273,15 +305,18 @@ def main(argv=None):
         'manifest': os.path.relpath(MANIFEST_PATH, ROOT),
         'graph_sha256': final_sha,
         'converged': not failed,
-        'stages': [{'name': s['name'], 'status': final_status[s['name']]} for s in sel if s['name'] in final_status],
+        'stages': [{'name': s['name'], 'status': final_status[s['name']],
+                    'stable': True if (s in loop_stages and graph_converged) else stage_stable.get(s['name'], False)}
+                   for s in sel if s['name'] in final_status],
         'failed': failed,
-        'vouched_patterns': sorted(set(vouched)),
+        'vouched_patterns': vouched,
+        'vouched_files': vouched_files,
     }
     with open(receipt_path, 'w') as f: json.dump(receipt, f, indent=1); f.write('\n')
     run_log = {'argv': sys.argv[1:], 'graph_sha256': final_sha, 'passes': passes, 'doc_passes': doc_passes, 'seconds': round(total, 2),
                'converged': not failed, 'failed': failed, 'stages': entries}
     with open(os.path.join(os.path.dirname(receipt_path), RUN_LOG_NAME), 'w') as f: json.dump(run_log, f, indent=1)
-    print(f"receipt: {os.path.relpath(receipt_path, ROOT)} ({len(receipt['vouched_patterns'])} vouched patterns)")
+    print(f"receipt: {os.path.relpath(receipt_path, ROOT)} ({len(receipt['vouched_patterns'])} vouched patterns, {len(receipt['vouched_files'])} vouched files)")
     return 1 if failed else 0
 
 if __name__ == '__main__':

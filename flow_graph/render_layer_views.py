@@ -5,6 +5,17 @@
 
 Emits usable Graphviz SVG under views/ (requires ``dot`` on PATH).
 Does not invent rates or stream routes — topology only from the graph.
+
+Render determinism (2026-11-03): graphviz dot 2.42.4 intermittently takes a
+"trouble in init_rank" error path on byte-identical input and renders two
+layouts alternately, so a single invocation must not decide the committed SVG
+bytes. Two guards keep a regen pass byte-stable by construction:
+
+1. Skip: when the freshly generated DOT text equals the on-disk DOT file and
+   the SVG already exists, the SVG is kept untouched — no render is rolled.
+2. Settle: a render that is needed repeats until two consecutive renders agree
+   (bounded), so the committed bytes do not depend on which layout one
+   invocation happened to produce.
 """
 from __future__ import annotations
 
@@ -246,6 +257,38 @@ def render_svg(dot_path: Path, svg_path: Path, engine: str = "dot") -> bool:
         return False
 
 
+def svg_is_current(dot_path: Path, dot_text: str, svg_path: Path) -> bool:
+    """True when the on-disk DOT equals `dot_text` and the SVG already exists: the render
+    input is unchanged, so the existing SVG stays (skip path — no layout re-roll)."""
+    return svg_path.is_file() and dot_path.is_file() and dot_path.read_text() == dot_text
+
+
+def render_svg_stable(dot_path: Path, svg_path: Path, engine: str = "dot", attempts: int = 5) -> bool:
+    """Render dot -> SVG with the init_rank flake contained: dot 2.42.4 can render two
+    layouts alternately on byte-identical input, so render repeatedly until two consecutive
+    renders agree (bounded by `attempts`) and commit that layout. A bounded non-settling
+    render keeps the last layout with a warning; the skip path (svg_is_current) is what
+    keeps repeated regen passes byte-stable regardless."""
+    tmp = svg_path.with_name(svg_path.stem + ".render.tmp.svg")
+    last = None
+    try:
+        for _ in range(max(2, attempts)):
+            if not render_svg(dot_path, tmp, engine=engine):
+                return False
+            data = tmp.read_bytes()
+            if data == last:
+                break
+            last = data
+        else:
+            print(f"  WARN: {engine} did not settle in {attempts} renders of {dot_path.name} "
+                  f"(init_rank flake); keeping the last layout")
+        shutil.move(str(tmp), str(svg_path))
+        return True
+    finally:
+        if tmp.exists():
+            tmp.unlink()
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--graph", type=Path, default=GRAPH)
@@ -295,6 +338,7 @@ def main() -> None:
             }.get(key, key)
             dot_text = to_dot(view, title=title)
             dot_path = args.out_dir / f"{key}.dot"
+            dot_prev = dot_path.read_text() if dot_path.is_file() else None
             if write_dot:
                 dot_path.write_text(dot_text)
             if write_svg:
@@ -302,7 +346,13 @@ def main() -> None:
                 if not write_dot:
                     dot_path.write_text(dot_text)
                 svg_path = args.out_dir / f"{key}.svg"
-                ok = render_svg(dot_path, svg_path, engine=cfg.get("engine", "dot"))
+                if dot_prev is not None and svg_is_current(dot_path, dot_prev, svg_path):
+                    # Unchanged render input (on-disk DOT before this pass == generated DOT)
+                    # and the SVG exists: keep it instead of re-rolling dot's layout — this
+                    # is what makes repeated regen passes byte-stable.
+                    print(f"  SVG kept (dot unchanged): {svg_path.name}")
+                    continue
+                ok = render_svg_stable(dot_path, svg_path, engine=cfg.get("engine", "dot"))
                 if ok:
                     print(f"  SVG → {svg_path.name}")
 

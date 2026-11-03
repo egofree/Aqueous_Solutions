@@ -1407,7 +1407,9 @@ FARM,FARM,GROW_BED,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 1
 FARM,FARM,GROW_BED,valve,isolation valve,DN15,"PP ball valve with HDPE stub ends, ISO 16135",2,RABBIT_FORAGE: one at each end nozzle (assumed)
 FARM,FARM,GROW_BED,valve,isolation valve,DN15,"PP ball valve with HDPE stub ends, ISO 16135",2,NECTAR_FORAGE: one at each end nozzle (assumed)
 FARM,FARM,GROW_BED,valve,isolation valve,DN15,"PP ball valve with HDPE stub ends, ISO 16135",2,VERMI_FEED: one at each end nozzle (assumed)
-FARM,FARM_EXT,DUCKWEED,fabricated part,fabricated part set,2 BOM lines,models/mfg/DUCKWEED/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,FARM_EXT,DUCKWEED,fabricated part,fabricated part set,3 BOM lines,models/mfg/DUCKWEED/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,FARM_EXT,DUCKWEED,fastener,M12 base hold-down anchor,M12 base hold-down anchor,ISO 898-1 8.8,8,models/mfg/DUCKWEED/fasteners.csv
+FARM,FARM_EXT,DUCKWEED,fastener,M12 batten strip bolt,M12 batten strip bolt,ISO 3506 A4-70,24,models/mfg/DUCKWEED/fasteners.csv
 FARM,FARM_EXT,DUCKWEED,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,86,AQUA_RETURN2: 2 per support (assumed)
 FARM,FARM_EXT,DUCKWEED,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,86,DUCK_FISH: 2 per support (assumed)
 FARM,FARM_EXT,DUCKWEED,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,76,DUCK_FODDER: 2 per support (assumed)
@@ -1425,7 +1427,9 @@ FARM,FARM_EXT,DUCKWEED,valve,isolation valve,DN15,"PVC-U true-union ball valve, 
 FARM,FARM_EXT,DUCKWEED,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,DUCK_FODDER: one at each end nozzle (assumed)
 FARM,FARM_EXT,DUCKWEED,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,DUCK_FORM: one at each end nozzle (assumed)
 FARM,FARM_EXT,DUCKWEED,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,DUCK_GREENS: one at each end nozzle (assumed)
-FARM,biofilter,BIOFILTER,fabricated part,fabricated part set,4 BOM lines,models/mfg/BIOFILTER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,biofilter,BIOFILTER,fabricated part,fabricated part set,3 BOM lines,models/mfg/BIOFILTER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,biofilter,BIOFILTER,fastener,M10 base hold-down anchor,M10 base hold-down anchor,ISO 898-1 8.8,4,models/mfg/BIOFILTER/fasteners.csv
+FARM,biofilter,BIOFILTER,fastener,M10 lid hold-down bolt + nut,M10 lid hold-down bolt + nut,ISO 3506 A4-70,8,models/mfg/BIOFILTER/fasteners.csv
 FARM,biofilter,BIOFILTER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,52,AQUA_NUT: 2 per support (assumed)
 FARM,biofilter,BIOFILTER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,AQUA_BYPASS: 2 per support (assumed)
 FARM,biofilter,BIOFILTER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -1434,7 +1438,9 @@ FARM,biofilter,BIOFILTER,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS 
 FARM,biofilter,BIOFILTER,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",24,AQUA_BYPASS: AQS-PIP-005 span count
 FARM,biofilter,BIOFILTER,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,AQUA_NUT: one at each end nozzle (assumed)
 FARM,biofilter,BIOFILTER,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,AQUA_BYPASS: one at each end nozzle (assumed)
-FARM,bsfl_bin,BSFL_BIN,fabricated part,fabricated part set,1 BOM lines,models/mfg/BSFL_BIN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,bsfl_bin,BSFL_BIN,fabricated part,fabricated part set,5 BOM lines,models/mfg/BSFL_BIN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,bsfl_bin,BSFL_BIN,fastener,M10 base hold-down anchor,M10 base hold-down anchor,ISO 898-1 8.8,4,models/mfg/BSFL_BIN/fasteners.csv
+FARM,bsfl_bin,BSFL_BIN,fastener,M6 screen-frame clamp screw,M6 screen-frame clamp screw,ISO 3506 A4-70,8,models/mfg/BSFL_BIN/fasteners.csv
 FARM,bsfl_bin,BSFL_BIN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,52,FRASS: 2 per support (assumed)
 FARM,bsfl_bin,BSFL_BIN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,BSFL_VAP: 2 per support (assumed)
 FARM,bsfl_bin,BSFL_BIN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,LARVAE_FRESH: 2 per support (assumed)
@@ -1459,6 +1465,8 @@ FARM,cage,QUAIL_CAGE,valve,isolation valve,DN15,"PVC-U true-union ball valve, MS
 FARM,cage,QUAIL_CAGE,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,QUAIL_DROP: one at each end nozzle (assumed)
 FARM,cage,QUAIL_CAGE,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,QUAIL_VAP: one at each end nozzle (assumed)
 FARM,coop,CHICKEN_COOP,fabricated part,fabricated part set,6 BOM lines,models/mfg/CHICKEN_COOP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,coop,CHICKEN_COOP,fastener,M10 base hold-down anchor,M10 base hold-down anchor,ISO 898-1 8.8,4,models/mfg/CHICKEN_COOP/fasteners.csv
+FARM,coop,CHICKEN_COOP,fastener,M10 nest-row carriage bolt,M10 nest-row carriage bolt,ISO 898-1 8.8,8,models/mfg/CHICKEN_COOP/fasteners.csv
 FARM,coop,CHICKEN_COOP,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,44,EGG_HARVEST: 2 per support (assumed)
 FARM,coop,CHICKEN_COOP,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,CHICK_MANURE: 2 per support (assumed)
 FARM,coop,CHICKEN_COOP,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,CHICK_VAP: 2 per support (assumed)
@@ -1470,7 +1478,9 @@ FARM,coop,CHICKEN_COOP,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP
 FARM,coop,CHICKEN_COOP,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,EGG_HARVEST: one at each end nozzle (assumed)
 FARM,coop,CHICKEN_COOP,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,CHICK_MANURE: one at each end nozzle (assumed)
 FARM,coop,CHICKEN_COOP,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,CHICK_VAP: one at each end nozzle (assumed)
-FARM,feed_prep,FEED_PREP,fabricated part,fabricated part set,4 BOM lines,models/mfg/FEED_PREP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,feed_prep,FEED_PREP,fabricated part,fabricated part set,7 BOM lines,models/mfg/FEED_PREP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,feed_prep,FEED_PREP,fastener,M6 drive-plate bolt,M6 drive-plate bolt,ISO 3506 A4-70,8,models/mfg/FEED_PREP/fasteners.csv
+FARM,feed_prep,FEED_PREP,fastener,M8 cabinet base anchor,M8 cabinet base anchor,ISO 898-1 8.8,4,models/mfg/FEED_PREP/fasteners.csv
 FARM,feed_prep,FEED_PREP,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,LAYER_FEED: 2 per support (assumed)
 FARM,feed_prep,FEED_PREP,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,QUAIL_RATION: 2 per support (assumed)
 FARM,feed_prep,FEED_PREP,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,42,DUCK_STORE: 2 per support (assumed)
@@ -1494,7 +1504,9 @@ FARM,feed_prep,FEED_PREP,valve,isolation valve,DN15,"PVC-U true-union ball valve
 FARM,feed_prep,FEED_PREP,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,FORM_VAP: one at each end nozzle (assumed)
 FARM,feed_prep,FEED_PREP,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,DUCK_RATION: one at each end nozzle (assumed)
 FARM,feed_prep,FEED_PREP,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,FORM_PRESS: one at each end nozzle (assumed)
-FARM,fish_tank,AQUA_TANK,fabricated part,fabricated part set,3 BOM lines,models/mfg/AQUA_TANK/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,fish_tank,AQUA_TANK,fabricated part,fabricated part set,4 BOM lines,models/mfg/AQUA_TANK/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,fish_tank,AQUA_TANK,fastener,M10 base hold-down anchor,M10 base hold-down anchor,ISO 898-1 8.8,4,models/mfg/AQUA_TANK/fasteners.csv
+FARM,fish_tank,AQUA_TANK,fastener,M10 lid hold-down bolt + nut,M10 lid hold-down bolt + nut,ISO 3506 A4-70,8,models/mfg/AQUA_TANK/fasteners.csv
 FARM,fish_tank,AQUA_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,46,AQUA_LOOP1: 2 per support (assumed)
 FARM,fish_tank,AQUA_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,FISH_SLUDGE: 2 per support (assumed)
 FARM,fish_tank,AQUA_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,FISH_HARVEST: 2 per support (assumed)
@@ -1506,13 +1518,17 @@ FARM,fish_tank,AQUA_TANK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS 
 FARM,fish_tank,AQUA_TANK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,AQUA_LOOP1: one at each end nozzle (assumed)
 FARM,fish_tank,AQUA_TANK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,FISH_SLUDGE: one at each end nozzle (assumed)
 FARM,fish_tank,AQUA_TANK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,FISH_HARVEST: one at each end nozzle (assumed)
-FARM,growbed,GROWBED_A,fabricated part,fabricated part set,2 BOM lines,models/mfg/GROWBED_A/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,growbed,GROWBED_A,fabricated part,fabricated part set,5 BOM lines,models/mfg/GROWBED_A/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,growbed,GROWBED_A,fastener,M10 base hold-down anchor,M10 base hold-down anchor,ISO 898-1 8.8,4,models/mfg/GROWBED_A/fasteners.csv
+FARM,growbed,GROWBED_A,fastener,M8 liner batten bolt,M8 liner batten bolt,ISO 3506 A4-70,8,models/mfg/GROWBED_A/fasteners.csv
 FARM,growbed,GROWBED_A,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,AQUA_LOOP3: 2 per support (assumed)
 FARM,growbed,GROWBED_A,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,growbed,GROWBED_A,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,growbed,GROWBED_A,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",11,AQUA_LOOP3: AQS-PIP-005 span count
 FARM,growbed,GROWBED_A,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,AQUA_LOOP3: one at each end nozzle (assumed)
-FARM,growbed,GROWBED_B,fabricated part,fabricated part set,2 BOM lines,models/mfg/GROWBED_B/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,growbed,GROWBED_B,fabricated part,fabricated part set,5 BOM lines,models/mfg/GROWBED_B/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,growbed,GROWBED_B,fastener,M10 base hold-down anchor,M10 base hold-down anchor,ISO 898-1 8.8,4,models/mfg/GROWBED_B/fasteners.csv
+FARM,growbed,GROWBED_B,fastener,M8 liner batten bolt,M8 liner batten bolt,ISO 3506 A4-70,8,models/mfg/GROWBED_B/fasteners.csv
 FARM,growbed,GROWBED_B,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,72,AQUA_LOOP4: 2 per support (assumed)
 FARM,growbed,GROWBED_B,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,BED_GREENS: 2 per support (assumed)
 FARM,growbed,GROWBED_B,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,BED_ET: 2 per support (assumed)
@@ -1524,7 +1540,9 @@ FARM,growbed,GROWBED_B,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP
 FARM,growbed,GROWBED_B,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,AQUA_LOOP4: one at each end nozzle (assumed)
 FARM,growbed,GROWBED_B,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,BED_GREENS: one at each end nozzle (assumed)
 FARM,growbed,GROWBED_B,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,BED_ET: one at each end nozzle (assumed)
-FARM,hive,BEE_HIVE,fabricated part,fabricated part set,5 BOM lines,models/mfg/BEE_HIVE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,hive,BEE_HIVE,fabricated part,fabricated part set,7 BOM lines,models/mfg/BEE_HIVE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,hive,BEE_HIVE,fastener,M10 stand-to-pad anchor,M10 stand-to-pad anchor,ISO 898-1 8.8,4,models/mfg/BEE_HIVE/fasteners.csv
+FARM,hive,BEE_HIVE,fastener,M6 box-assembly screw,M6 box-assembly screw,ISO 3506 A4-70,24,models/mfg/BEE_HIVE/fasteners.csv
 FARM,hive,BEE_HIVE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,56,HONEY: 2 per support (assumed)
 FARM,hive,BEE_HIVE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,BEE_VAP: 2 per support (assumed)
 FARM,hive,BEE_HIVE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -1546,6 +1564,8 @@ FARM,hutch,RABBIT_HUTCH,valve,isolation valve,DN15,"PVC-U true-union ball valve,
 FARM,hutch,RABBIT_HUTCH,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,RABBIT_MANURE: one at each end nozzle (assumed)
 FARM,hutch,RABBIT_HUTCH,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,RABBIT_VAP: one at each end nozzle (assumed)
 FARM,pen,DUCK_PEN,fabricated part,fabricated part set,5 BOM lines,models/mfg/DUCK_PEN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,pen,DUCK_PEN,fastener,M10 base hold-down anchor,M10 base hold-down anchor,ISO 898-1 8.8,4,models/mfg/DUCK_PEN/fasteners.csv
+FARM,pen,DUCK_PEN,fastener,M6 wallow batten screw,M6 wallow batten screw,ISO 3506 A4-70,8,models/mfg/DUCK_PEN/fasteners.csv
 FARM,pen,DUCK_PEN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,56,DUCK_EGGS: 2 per support (assumed)
 FARM,pen,DUCK_PEN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,DUCK_MANURE: 2 per support (assumed)
 FARM,pen,DUCK_PEN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,DUCK_VAP: 2 per support (assumed)
@@ -1572,13 +1592,17 @@ FARM,store,FOOD_STORE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-
 FARM,store,FOOD_STORE,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,FOOD_GALLEY: one at each end nozzle (assumed)
 FARM,store,FOOD_STORE,valve,isolation valve,DN15,"PP ball valve with HDPE stub ends, ISO 16135",2,FOOD_HAB: one at each end nozzle (assumed)
 FARM,store,FOOD_STORE,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,FOOD_EXPORT: one at each end nozzle (assumed)
-FARM,uv_sanitizer,AQUA_UV,fabricated part,fabricated part set,3 BOM lines,models/mfg/AQUA_UV/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,uv_sanitizer,AQUA_UV,fabricated part,fabricated part set,5 BOM lines,models/mfg/AQUA_UV/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,uv_sanitizer,AQUA_UV,fastener,M6 reactor tube clamp bolt,M6 reactor tube clamp bolt,ISO 3506 A4-70,4,models/mfg/AQUA_UV/fasteners.csv
+FARM,uv_sanitizer,AQUA_UV,fastener,M8 cabinet base anchor,M8 cabinet base anchor,ISO 898-1 8.8,4,models/mfg/AQUA_UV/fasteners.csv
 FARM,uv_sanitizer,AQUA_UV,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,AQUA_SAN: 2 per support (assumed)
 FARM,uv_sanitizer,AQUA_UV,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,uv_sanitizer,AQUA_UV,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,uv_sanitizer,AQUA_UV,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,AQUA_SAN: AQS-PIP-005 span count
 FARM,uv_sanitizer,AQUA_UV,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,AQUA_SAN: one at each end nozzle (assumed)
-FARM,worm_bin,VERMI_BIN,fabricated part,fabricated part set,1 BOM lines,models/mfg/VERMI_BIN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,worm_bin,VERMI_BIN,fabricated part,fabricated part set,4 BOM lines,models/mfg/VERMI_BIN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,worm_bin,VERMI_BIN,fastener,M10 base hold-down anchor,M10 base hold-down anchor,ISO 898-1 8.8,4,models/mfg/VERMI_BIN/fasteners.csv
+FARM,worm_bin,VERMI_BIN,fastener,M6 screen-frame clamp screw,M6 screen-frame clamp screw,ISO 3506 A4-70,8,models/mfg/VERMI_BIN/fasteners.csv
 FARM,worm_bin,VERMI_BIN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,VERMICOMPOST: 2 per support (assumed)
 FARM,worm_bin,VERMI_BIN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,WORM_TEA: 2 per support (assumed)
 FARM,worm_bin,VERMI_BIN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -1656,6 +1680,7 @@ FOUNDRY,FOUNDRY_E,EXTRUDE,instrument,pressure transmitter,0-10 bar,"ceramic diap
 FOUNDRY,FOUNDRY_E,EXTRUDE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,FOUNDRY_E,FLUX_PREP,fabricated part,fabricated part set,6 BOM lines,models/mfg/FLUX_PREP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,FOUNDRY_E,FLUX_PREP,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/FLUX_PREP/fasteners.csv
+FOUNDRY,FOUNDRY_E,FLUX_PREP,fastener,M8 bolt,M8 bolt,ISO 898-1 8.8,4,models/mfg/FLUX_PREP/fasteners.csv
 FOUNDRY,FOUNDRY_E,FLUX_PREP,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,FLUX_PREP,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,FOUNDRY_E,FORGE,fabricated part,fabricated part set,9 BOM lines,models/mfg/FORGE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
@@ -1706,7 +1731,7 @@ FOUNDRY,FOUNDRY_E,INV_CAST,instrument,temperature element,Pt100 class A,"IEC 607
 FOUNDRY,FOUNDRY_E,METAL_STORE,fabricated part,fabricated part set,4 BOM lines,models/mfg/METAL_STORE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,FOUNDRY_E,METAL_STORE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,METAL_STORE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,FOUNDRY_E,MG_POT,fabricated part,fabricated part set,18 BOM lines,models/mfg/MG_POT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,FOUNDRY_E,MG_POT,fabricated part,fabricated part set,17 BOM lines,models/mfg/MG_POT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,FOUNDRY_E,MG_POT,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/MG_POT/fasteners.csv
 FOUNDRY,FOUNDRY_E,MG_POT,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,6,models/mfg/MG_POT/fasteners.csv
 FOUNDRY,FOUNDRY_E,MG_POT,fastener,M8 x 25 hood bolts,M8 x 25 hood bolts,ISO 898-1 8.8,12,models/mfg/MG_POT/fasteners.csv
@@ -1750,12 +1775,16 @@ FOUNDRY,FOUNDRY_E,ROLL,instrument,pressure transmitter,0-10 bar,"ceramic diaphra
 FOUNDRY,FOUNDRY_E,ROLL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,FOUNDRY_E,SHELL_BREAK,fabricated part,fabricated part set,7 BOM lines,models/mfg/SHELL_BREAK/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,FOUNDRY_E,SHELL_BREAK,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/SHELL_BREAK/fasteners.csv
+FOUNDRY,FOUNDRY_E,SHELL_BREAK,fastener,M10 table mount,M10 table mount,ISO 898-1 8.8,4,models/mfg/SHELL_BREAK/fasteners.csv
+FOUNDRY,FOUNDRY_E,SHELL_BREAK,fastener,M8 bolt,M8 bolt,ISO 898-1 8.8,8,models/mfg/SHELL_BREAK/fasteners.csv
 FOUNDRY,FOUNDRY_E,SHELL_BREAK,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FOUNDRY,FOUNDRY_E,SHELL_BREAK,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,FOUNDRY_E,SHELL_BREAK,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,SHELL_BREAK,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,FOUNDRY_E,SHELL_BUILD,fabricated part,fabricated part set,9 BOM lines,models/mfg/SHELL_BUILD/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,FOUNDRY_E,SHELL_BUILD,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/SHELL_BUILD/fasteners.csv
+FOUNDRY,FOUNDRY_E,SHELL_BUILD,fastener,M10 hold-down,M10 hold-down,ISO 898-1 8.8,4,models/mfg/SHELL_BUILD/fasteners.csv
+FOUNDRY,FOUNDRY_E,SHELL_BUILD,fastener,M8 bolt,M8 bolt,ISO 898-1 8.8,8,models/mfg/SHELL_BUILD/fasteners.csv
 FOUNDRY,FOUNDRY_E,SHELL_BUILD,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,SHELL_BUILD,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump WAX_RECLAIM_TO_PATTERN to WAX_PATTERN (assumed size)
@@ -1782,11 +1811,13 @@ FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,valve,check valve,DN15,"PVDF swing/ball check va
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,WAX_RECLAIM_TO_PATTERN: one at each end nozzle (assumed)
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,WAX_TO_OIL: one at each end nozzle (assumed)
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,IA-BURNOUT-VENT: one at each end nozzle (assumed)
-FOUNDRY,FOUNDRY_E,SINTER,fabricated part,fabricated part set,1 BOM lines,models/mfg/SINTER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,FOUNDRY_E,SINTER,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/SINTER/fasteners.csv
+FOUNDRY,FOUNDRY_E,SINTER,fabricated part,fabricated part set,7 BOM lines,models/mfg/SINTER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,FOUNDRY_E,SINTER,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,models/mfg/SINTER/fasteners.csv
+FOUNDRY,FOUNDRY_E,SINTER,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,8,models/mfg/SINTER/fasteners.csv
 FOUNDRY,FOUNDRY_E,SINTER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,SINTER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,FOUNDRY_E,STOCK_OUT,fabricated part,fabricated part set,6 BOM lines,models/mfg/STOCK_OUT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,FOUNDRY_E,STOCK_OUT,fastener,M10 bolt,M10 bolt,ISO 898-1 8.8,12,models/mfg/STOCK_OUT/fasteners.csv
 FOUNDRY,FOUNDRY_E,STOCK_OUT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/STOCK_OUT/fasteners.csv
 FOUNDRY,FOUNDRY_E,STOCK_OUT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,STOCK_OUT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
@@ -1795,6 +1826,7 @@ FOUNDRY,FOUNDRY_E,TI_CELL,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,tra
 FOUNDRY,FOUNDRY_E,TI_CELL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-MGCL2-KROLL to MG_POT: run and fault (assumed)
 FOUNDRY,FOUNDRY_E,TI_CELL,fabricated part,fabricated part set,17 BOM lines,models/mfg/TI_CELL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,FOUNDRY_E,TI_CELL,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,models/mfg/TI_CELL/fasteners.csv
+FOUNDRY,FOUNDRY_E,TI_CELL,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,4,models/mfg/TI_CELL/fasteners.csv
 FOUNDRY,FOUNDRY_E,TI_CELL,fastener,M8 x 25 hopper bolts,M8 x 25 hopper bolts,ISO 898-1 8.8,8,models/mfg/TI_CELL/fasteners.csv
 FOUNDRY,FOUNDRY_E,TI_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,64,TI_CELL_CL2_TO_CRU: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,TI_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-MGCL2-KROLL: 2 per support (assumed)
@@ -1838,6 +1870,7 @@ FOUNDRY,FOUNDRY_E,VAC_IND,valve,isolation valve,DN15,"316L ball valve, ASME B16.
 FOUNDRY,FOUNDRY_E,VAC_IND,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,VAC_TO_INV: one at each end nozzle (assumed)
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,fabricated part,fabricated part set,8 BOM lines,models/mfg/WAX_PATTERN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/WAX_PATTERN/fasteners.csv
+FOUNDRY,FOUNDRY_E,WAX_PATTERN,fastener,M8 bolt,M8 bolt,ISO 898-1 8.8,4,models/mfg/WAX_PATTERN/fasteners.csv
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure

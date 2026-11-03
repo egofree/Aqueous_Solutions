@@ -11,7 +11,7 @@ OF-09,electronics,solenoid driver channel,IEC 61131-2 DO,19,24 V DC x19,9
 OF-10,electronics,compressor contactor + overload,IEC 60947-4-1,9,18.5 kW hermetic x8; 1.1 kW hermetic x1,2
 OF-11,electronics,stepper driver,IEC 61800-5-1,3,24/48 V DC x3,1
 OF-12,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",IEC 61508 / IEC 61511,2,- x2,1
-OF-13,fabricated part,fabricated part set,models/mfg/<unit>/bom.csv,197,4 BOM lines x26; 9 BOM lines x25; 5 BOM lines x21; 7 BOM lines x20; 6 BOM lines x16; 3 BOM lines x16; 8 BOM lines x15; 2 BOM lines x10; 1 BOM lines x7; 12 BOM lines x6; 10 BOM lines x5; 15 BOM lines x4; 18 BOM lines x4; 11 BOM lines x3; 16 BOM lines x3; 17 BOM lines x3; 21 BOM lines x2; 33 BOM lines x2; 36 BOM lines x1; 32 BOM lines x1; 39 BOM lines x1; 19 BOM lines x1; 13 BOM lines x1; 26 BOM lines x1; 35 BOM lines x1; 72 BOM lines x1; 28 BOM lines x1,197
+OF-13,fabricated part,fabricated part set,models/mfg/<unit>/bom.csv,197,4 BOM lines x26; 9 BOM lines x25; 5 BOM lines x24; 7 BOM lines x23; 6 BOM lines x16; 3 BOM lines x16; 8 BOM lines x15; 2 BOM lines x7; 12 BOM lines x6; 10 BOM lines x5; 15 BOM lines x4; 1 BOM lines x4; 17 BOM lines x4; 11 BOM lines x3; 16 BOM lines x3; 18 BOM lines x3; 21 BOM lines x2; 33 BOM lines x2; 36 BOM lines x1; 32 BOM lines x1; 39 BOM lines x1; 19 BOM lines x1; 13 BOM lines x1; 26 BOM lines x1; 35 BOM lines x1; 72 BOM lines x1; 28 BOM lines x1,197
 OF-14,fastener,anchor bolt,ISO 3506 A4-70 wedge anchor,14710,M10 x14710,138
 OF-15,fastener,M10 x 40 lid bolt,ISO 3506 A4-70,12,M10 x 40 lid bolt with nut and washers x12,1
 OF-16,fastener,M8 x 30 lid bolt,ISO 3506 A4-70,12,M8 x 30 lid bolt with nut and washers x12,1
@@ -56,7 +56,7 @@ OF-62,valve,isolation valve,"PP-H ball valve, ISO 16135, EPDM seals",18,DN15 x14
 OF-63,valve,"ESD valve, spring-return actuator","316L, fail-safe, IEC 61511",10,DN15 x10,4
 OF-64,valve,check valve,"PP-H swing/ball check valve, ISO 16137, EPDM seals",9,DN15 x7; DN50 x2,7
 OF-65,valve,check valve,"PVC-lined swing/ball check valve in FRP service, ISO 16137",3,DN15 x2; DN250 x1,3
-OF-66,fastener,M12 anchor,ISO 898-1 8.8,62,M12 anchor x62,13
+OF-66,fastener,M12 anchor,ISO 898-1 8.8,58,M12 anchor x58,12
 OF-67,fastener,M10 x 30 hood bolts,ISO 898-1 8.8,16,M10 x 30 hood bolts x16,1
 OF-68,fastener,M16 T-bolt + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,M16 T-bolt + nut (ISO 4014 / ISO 4032) x12,1
 OF-69,fastener,M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,M16 stud + 2 nuts (ISO 4014 / ISO 4032) x12,1
@@ -66,7 +66,7 @@ OF-72,fastener,M10 x 30 jacket screws,ISO 3506 A4-70,32,M10 x 30 jacket screws x
 OF-75,fastener,M10 clamp,ISO 3506 A4-70,4,M10 clamp x4,1
 OF-77,instrument,pressure transmitter,"316L thin-film strain gauge, IEC 61298",3,0-400 bar x2; 0-40 bar x1,3
 OF-78,valve,check valve,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",17,DN15 x17,7
-OF-81,fastener,M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,94,M10 stud + nut (ISO 4014 / ISO 4032) x94,11
+OF-81,fastener,M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,106,M10 stud + nut (ISO 4014 / ISO 4032) x106,12
 OF-82,fastener,M8 x 25 hood bolts,ISO 898-1 8.8,48,M8 x 25 hood bolts x48,4
 OF-83,fastener,M10 anchor,ISO 898-1 8.8,40,M10 anchor x40,10
 OF-84,fastener,M8 x 25 hopper bolts,ISO 898-1 8.8,8,M8 x 25 hopper bolts x8,1
@@ -82,7 +82,7 @@ OF-93,fastener,M10 wedge anchor,ISO 3506 A4-70,110,M10 wedge anchor x110,27
 OF-94,fastener,M12 bolt + nut; PP-flanged joint,ISO 3506 A4-70,16,M12 bolt + nut; PP-flanged joint x16,1
 OF-95,fastener,M12 PVDF bolt + nut,ISO 3506 A4-70,8,M12 PVDF bolt + nut x8,1
 OF-96,fastener,M12 A4-70 bolt + nut,ISO 3506 A4-70,8,M12 A4-70 bolt + nut x8,1
-OF-97,fastener,M12 wedge anchor,ISO 898-1 8.8,222,M12 wedge anchor x222,30
+OF-97,fastener,M12 wedge anchor,ISO 898-1 8.8,234,M12 wedge anchor x234,32
 OF-98,fastener,M10 stud + nut (ISO 4014 / ISO 4032),ISO 3506 A4-70,24,M10 stud + nut (ISO 4014 / ISO 4032) x24,2
 OF-99,fastener,M8 hold-down bolt,ISO 3506 A4-70,24,M8 hold-down bolt x24,2
 OF-100,fastener,M16 wedge anchor,ISO 898-1 8.8,16,M16 wedge anchor x16,2
@@ -118,3 +118,20 @@ OF-129,fastener,M10 ballast-foot bolt + nut,ISO 898-1 8.8,8,M10 ballast-foot bol
 OF-130,fastener,M10 basin hold-down bolt + nut,ISO 3506 A4-70,8,M10 basin hold-down bolt + nut x8,1
 OF-131,fastener,M12 canopy base plate bolt + nut,ISO 898-1 8.8,8,M12 canopy base plate bolt + nut x8,1
 OF-132,fastener,M10 header clip bolt + nut,ISO 898-1 8.8,12,M10 header clip bolt + nut x12,2
+OF-133,fastener,M10 base hold-down anchor,ISO 898-1 8.8,32,M10 base hold-down anchor x32,8
+OF-134,fastener,M12 batten strip bolt,ISO 3506 A4-70,24,M12 batten strip bolt x24,1
+OF-135,fastener,M6 box-assembly screw,ISO 3506 A4-70,24,M6 box-assembly screw x24,1
+OF-136,fastener,M8 bolt,ISO 898-1 8.8,24,M8 bolt x24,4
+OF-137,fastener,M10 lid hold-down bolt + nut,ISO 3506 A4-70,16,M10 lid hold-down bolt + nut x16,2
+OF-138,fastener,M6 screen-frame clamp screw,ISO 3506 A4-70,16,M6 screen-frame clamp screw x16,2
+OF-139,fastener,M8 liner batten bolt,ISO 3506 A4-70,16,M8 liner batten bolt x16,2
+OF-140,fastener,M10 bolt,ISO 898-1 8.8,12,M10 bolt x12,1
+OF-141,fastener,M12 base hold-down anchor,ISO 898-1 8.8,8,M12 base hold-down anchor x8,1
+OF-142,fastener,M10 nest-row carriage bolt,ISO 898-1 8.8,8,M10 nest-row carriage bolt x8,1
+OF-143,fastener,M6 drive-plate bolt,ISO 3506 A4-70,8,M6 drive-plate bolt x8,1
+OF-144,fastener,M8 cabinet base anchor,ISO 898-1 8.8,8,M8 cabinet base anchor x8,2
+OF-145,fastener,M6 wallow batten screw,ISO 3506 A4-70,8,M6 wallow batten screw x8,1
+OF-146,fastener,M10 stand-to-pad anchor,ISO 898-1 8.8,4,M10 stand-to-pad anchor x4,1
+OF-147,fastener,M6 reactor tube clamp bolt,ISO 3506 A4-70,4,M6 reactor tube clamp bolt x4,1
+OF-148,fastener,M10 table mount,ISO 898-1 8.8,4,M10 table mount x4,1
+OF-149,fastener,M10 hold-down,ISO 898-1 8.8,4,M10 hold-down x4,1

@@ -13,7 +13,7 @@ The AQS-PID-001 series (unit P&amp;IDs) is appended by `docs-authority/_pid_shee
 | AQS-DWG-PFD-EFD-ELEC | Electrical flow diagram | flow diagram (ISO_10628_2) | d73f475f | flow_graph/views/efd-elec.svg |
 | AQS-DWG-PFD-EFD-ESS | Energy storage flow diagram | flow diagram (ISO_10628_2) | a31ce87a | flow_graph/views/efd-ess.svg |
 | AQS-DWG-PFD-EFD-THERMAL | Thermal flow diagram | flow diagram (ISO_10628_2) | e86a7014 | flow_graph/views/efd-thermal.svg |
-| AQS-DWG-PFD-MFD | Mass flow diagram | flow diagram (ISO_10628_2) | d36e0da0 | flow_graph/views/mfd.svg |
+| AQS-DWG-PFD-MFD | Mass flow diagram | flow diagram (ISO_10628_2) | 65fb1c06 | flow_graph/views/mfd.svg |
 | AQS-DWG-PFD-PFD | Process flow diagram | flow diagram (ISO_10628_2) | 62c27120 | flow_graph/views/pfd.svg |
 | AQS-INV-005-MF-01 | Motor family MF-01 assembly | assembly drawing | 33535f5f | models/motors/MF-01/export/drawing.svg |
 | AQS-INV-005-MF-02 | Motor family MF-02 assembly | assembly drawing | e97ebaea | models/motors/MF-02/export/drawing.svg |

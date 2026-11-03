@@ -63,7 +63,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-63 | valve: ESD valve, spring-return actuator (DN15 x10) | 10 | 1 | 5 % min 1 |
 | building block | OF-64 | valve: check valve (DN15 x7; DN50 x2) | 9 | 1 | 5 % min 1 |
 | building block | OF-65 | valve: check valve (DN15 x2; DN250 x1) | 3 | 1 | 5 % min 1 |
-| building block | OF-66 | fastener: M12 anchor (M12 anchor x62) | 62 | 4 | 2 % min 4 |
+| building block | OF-66 | fastener: M12 anchor (M12 anchor x58) | 58 | 4 | 2 % min 4 |
 | building block | OF-67 | fastener: M10 x 30 hood bolts (M10 x 30 hood bolts x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-68 | fastener: M16 T-bolt + nut (ISO 4014 / ISO 4032) (M16 T-bolt + nut (ISO 4014 / ISO 4032) x12) | 12 | 4 | 2 % min 4 |
 | building block | OF-69 | fastener: M16 stud + 2 nuts (ISO 4014 / ISO 4032) (M16 stud + 2 nuts (ISO 4014 / ISO 4032) x12) | 12 | 4 | 2 % min 4 |
@@ -73,7 +73,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-75 | fastener: M10 clamp (M10 clamp x4) | 4 | 4 | 2 % min 4 |
 | building block | OF-77 | instrument: pressure transmitter (0-400 bar x2; 0-40 bar x1) | 3 | 1 | 10 % min 1 |
 | building block | OF-78 | valve: check valve (DN15 x17) | 17 | 1 | 5 % min 1 |
-| building block | OF-81 | fastener: M10 stud + nut (ISO 4014 / ISO 4032) (M10 stud + nut (ISO 4014 / ISO 4032) x94) | 94 | 4 | 2 % min 4 |
+| building block | OF-81 | fastener: M10 stud + nut (ISO 4014 / ISO 4032) (M10 stud + nut (ISO 4014 / ISO 4032) x106) | 106 | 4 | 2 % min 4 |
 | building block | OF-82 | fastener: M8 x 25 hood bolts (M8 x 25 hood bolts x48) | 48 | 4 | 2 % min 4 |
 | building block | OF-83 | fastener: M10 anchor (M10 anchor x40) | 40 | 4 | 2 % min 4 |
 | building block | OF-84 | fastener: M8 x 25 hopper bolts (M8 x 25 hopper bolts x8) | 8 | 4 | 2 % min 4 |
@@ -89,7 +89,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-94 | fastener: M12 bolt + nut; PP-flanged joint (M12 bolt + nut; PP-flanged joint x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-95 | fastener: M12 PVDF bolt + nut (M12 PVDF bolt + nut x8) | 8 | 4 | 2 % min 4 |
 | building block | OF-96 | fastener: M12 A4-70 bolt + nut (M12 A4-70 bolt + nut x8) | 8 | 4 | 2 % min 4 |
-| building block | OF-97 | fastener: M12 wedge anchor (M12 wedge anchor x222) | 222 | 5 | 2 % min 4 |
+| building block | OF-97 | fastener: M12 wedge anchor (M12 wedge anchor x234) | 234 | 5 | 2 % min 4 |
 | building block | OF-98 | fastener: M10 stud + nut (ISO 4014 / ISO 4032) (M10 stud + nut (ISO 4014 / ISO 4032) x24) | 24 | 4 | 2 % min 4 |
 | building block | OF-99 | fastener: M8 hold-down bolt (M8 hold-down bolt x24) | 24 | 4 | 2 % min 4 |
 | building block | OF-100 | fastener: M16 wedge anchor (M16 wedge anchor x16) | 16 | 4 | 2 % min 4 |
@@ -125,6 +125,23 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-130 | fastener: M10 basin hold-down bolt + nut (M10 basin hold-down bolt + nut x8) | 8 | 4 | 2 % min 4 |
 | building block | OF-131 | fastener: M12 canopy base plate bolt + nut (M12 canopy base plate bolt + nut x8) | 8 | 4 | 2 % min 4 |
 | building block | OF-132 | fastener: M10 header clip bolt + nut (M10 header clip bolt + nut x12) | 12 | 4 | 2 % min 4 |
+| building block | OF-133 | fastener: M10 base hold-down anchor (M10 base hold-down anchor x32) | 32 | 4 | 2 % min 4 |
+| building block | OF-134 | fastener: M12 batten strip bolt (M12 batten strip bolt x24) | 24 | 4 | 2 % min 4 |
+| building block | OF-135 | fastener: M6 box-assembly screw (M6 box-assembly screw x24) | 24 | 4 | 2 % min 4 |
+| building block | OF-136 | fastener: M8 bolt (M8 bolt x24) | 24 | 4 | 2 % min 4 |
+| building block | OF-137 | fastener: M10 lid hold-down bolt + nut (M10 lid hold-down bolt + nut x16) | 16 | 4 | 2 % min 4 |
+| building block | OF-138 | fastener: M6 screen-frame clamp screw (M6 screen-frame clamp screw x16) | 16 | 4 | 2 % min 4 |
+| building block | OF-139 | fastener: M8 liner batten bolt (M8 liner batten bolt x16) | 16 | 4 | 2 % min 4 |
+| building block | OF-140 | fastener: M10 bolt (M10 bolt x12) | 12 | 4 | 2 % min 4 |
+| building block | OF-141 | fastener: M12 base hold-down anchor (M12 base hold-down anchor x8) | 8 | 4 | 2 % min 4 |
+| building block | OF-142 | fastener: M10 nest-row carriage bolt (M10 nest-row carriage bolt x8) | 8 | 4 | 2 % min 4 |
+| building block | OF-143 | fastener: M6 drive-plate bolt (M6 drive-plate bolt x8) | 8 | 4 | 2 % min 4 |
+| building block | OF-144 | fastener: M8 cabinet base anchor (M8 cabinet base anchor x8) | 8 | 4 | 2 % min 4 |
+| building block | OF-145 | fastener: M6 wallow batten screw (M6 wallow batten screw x8) | 8 | 4 | 2 % min 4 |
+| building block | OF-146 | fastener: M10 stand-to-pad anchor (M10 stand-to-pad anchor x4) | 4 | 4 | 2 % min 4 |
+| building block | OF-147 | fastener: M6 reactor tube clamp bolt (M6 reactor tube clamp bolt x4) | 4 | 4 | 2 % min 4 |
+| building block | OF-148 | fastener: M10 table mount (M10 table mount x4) | 4 | 4 | 2 % min 4 |
+| building block | OF-149 | fastener: M10 hold-down (M10 hold-down x4) | 4 | 4 | 2 % min 4 |
 | motor | MF-01 | BLDC 42 mm (NEMA 17 flange) 24 V DC | 82 | 5 | 5 % min 1 |
 | motor | MF-02 | BLDC 57 mm (NEMA 23 flange) 24 V DC | 55 | 3 | 5 % min 1 |
 | motor | MF-03 | BLDC actuator ISO 5211 F03 mount 24 V DC | 24 | 2 | 5 % min 1 |
@@ -161,4 +178,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-151 lines; 34 spare motors, 1151 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+168 lines; 34 spare motors, 1219 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
