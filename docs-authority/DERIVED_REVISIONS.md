@@ -168,7 +168,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/ACID_POLISH_SCRUB.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/ADS_CHILL.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/AFTERBURNER.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/AFTERBURNER_FLUE.md` | working tree | current |
+| `docs-authority/duties/AFTERBURNER_FLUE.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/AIR_RECEIVER.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/ALD.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/ALK_SCRUBBER.md` | f0160a6 (regenerated, no change) | current |
@@ -356,7 +356,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/NORTH_DOCK.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/NOX_SCRUB.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/NUTRIENT_DOSE.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/OIL_DRYER.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/OIL_DRYER.md` | working tree | current |
 | `docs-authority/duties/OIL_FRAC.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/OIL_PYRO.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/PEANUT.md` | f0160a6 (regenerated, no change) | current |
@@ -1252,7 +1252,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/ACID_POLISH_SCRUB/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/ADS_CHILL/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/AFTERBURNER/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/AFTERBURNER_FLUE/params.json` | working tree | current |
+| `models/mfg/AFTERBURNER_FLUE/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/AIR_RECEIVER/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/ALK_SCRUBBER/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/AL_POT/params.json` | f0160a6 (regenerated, no change) | current |
@@ -1373,7 +1373,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/NCG_HEADER/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/NOX_SCRUB/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/NUTRIENT_DOSE/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/OIL_DRYER/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/OIL_DRYER/params.json` | working tree | current |
 | `models/mfg/OIL_FRAC/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/OIL_PYRO/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/PELLET/params.json` | f0160a6 (regenerated, no change) | current |

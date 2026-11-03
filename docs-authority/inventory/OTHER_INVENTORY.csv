@@ -2652,7 +2652,9 @@ OIL,OIL_GLASS,AFTERBURNER,valve,isolation valve,DN15,"PVC-lined ball valve in FR
 OIL,OIL_GLASS,OIL_DRYER,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,induced-draft fan (assumed size)
 OIL,OIL_GLASS,OIL_DRYER,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,induced-draft fan
 OIL,OIL_GLASS,OIL_DRYER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,induced-draft fan: run and fault (assumed)
-OIL,OIL_GLASS,OIL_DRYER,fabricated part,fabricated part set,12 BOM lines,models/mfg/OIL_DRYER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+OIL,OIL_GLASS,OIL_DRYER,fabricated part,fabricated part set,4 BOM lines,models/mfg/OIL_DRYER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+OIL,OIL_GLASS,OIL_DRYER,fastener,M12 saddle bolt + nut,M12 saddle bolt + nut,ISO 898-1 8.8,8,models/mfg/OIL_DRYER/fasteners.csv
+OIL,OIL_GLASS,OIL_DRYER,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,8,models/mfg/OIL_DRYER/fasteners.csv
 OIL,OIL_GLASS,OIL_DRYER,instrument,"gas detector, CO",electrochemical CO,"alarm 25 ppm, trip 50 ppm, breathing height",2,AQS-SAF-006 alarm 1oo2
 OIL,OIL_GLASS,OIL_DRYER,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 OIL,OIL_GLASS,OIL_DRYER,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup

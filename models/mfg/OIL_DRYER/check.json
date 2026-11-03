@@ -1,0 +1,119 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 6,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "horizontal jacketed drying drum drawn to the envelope: drum OD 500 x 700 with end heads, jacket annulus 20 mm (the N1/N2 rows are the HX-4 Q3 process heat connections), steel wall 6 (study - holds, W12), on two saddles over a 20 mm plinth",
+    "drum_od_mm": 500.0,
+    "length_mm": 700.0,
+    "wall_mm": 6.0,
+    "jacket_mm": 20.0,
+    "wall_basis": "study values; no authority states a drum or jacket wall (WORK_ORDER W12)",
+    "material": "CS",
+    "ca_mm": 1.5,
+    "purchased": "none named on the node or duty: no equipment row exists, so the dryer drive and vacuum hardware are not drawn (A-MACH hold, WORK_ORDER W12)",
+    "guard": "four-post guard frame (40 x 40 posts, mid and top rails) pins the envelope around the drum (A-MACH: guard and anchor drawn)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 126.2,
+      "schedule_rating": "Class 150",
+      "service": "HX-4 Q3 process heat (dryer jacket)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 155.5,
+      "schedule_rating": "Class 150",
+      "service": "HX-4 Q3 process heat (dryer jacket)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 90.7,
+      "schedule_rating": "Class 150",
+      "service": "float plastics",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 105.3,
+      "schedule_rating": "Class 150",
+      "service": "Dryer \u2192 pyro",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 140.8,
+      "schedule_rating": "Class 150",
+      "service": "dryer reject",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm is the box top"
+    }
+  },
+  "nozzle_count_schedule": 7,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: nozzle DN15, no flange class, atmospheric tube or hose); the schedule rating column (Class 150) is carried verbatim as text; the N1/N2 service text (HX-4 Q3 process heat, dryer jacket) is carried verbatim and matches the drawn jacket",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "saddles": 246.3,
+    "drum": 51.93,
+    "jacket": 190.24,
+    "frame": 112.54,
+    "nozzles": 0.57
+  },
+  "cadquery": "2.8.0"
+}

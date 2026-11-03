@@ -138,7 +138,7 @@ ACCEPTED = ('AL_POT', 'IND_MELT', 'VAC_IND', 'VAC_CAST', 'INV_CAST', 'CONT_CAST'
             'MEOH_SYNTH', 'MEOH_FERM',
             'MEOH_FC', 'POLY_COND',
             'POLY_OLEFIN', 'POLY_F', 'GLASS_BURNOUT', 'GLASS_MILL', 'GLASS_RINSE',
-            'GLASS_DIGEST', 'AFTERBURNER', 'AFTERBURNER_FLUE')
+            'GLASS_DIGEST', 'AFTERBURNER', 'AFTERBURNER_FLUE', 'OIL_DRYER')
 
 
 # --------------------------------------------------------------------------- authorities

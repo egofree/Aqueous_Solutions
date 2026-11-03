@@ -167,3 +167,26 @@ never resized.
   hold named first, BOM make-or-buy, fasteners, build log acceptance line,
   check.json. Added to the tracker ACCEPTED row set; tracker and full regen
   run; `--check` and `check_all` green.
+
+## OIL_DRYER (jacketed drum dryer, OIL, tier 6) — commit 7
+
+- `models/mfg/OIL_DRYER/oil_dryer.py` on the shared lib. Route F-MACH (the
+  `dryer` class sits in the F-MACH row of plan section 4), acceptance
+  A-core + A-MACH. Build 1000 × 600 × 800 mm against the node envelope:
+  inside, filled exactly (the guard frame pins the registry box, X-PAR-04);
+  one closed manifold mesh; `cad/stl/OIL_DRYER.stl` replaced from the build;
+  `tracker --check OIL_DRYER` green.
+- Machine per the unit's own duty sheet: horizontal jacketed drying drum OD
+  500 × 700 (wall 6 study, hold W12) with a heating jacket OD 540 / annulus
+  20 (study, hold W12) as the HX-4 Q3 heat surface (schedule N1/N2 service
+  text verbatim), on saddles over a 20 mm plinth. A-MACH: guard frame drawn
+  (four posts, mid and top rails), 8 anchors; no purchased items named on the
+  node or duty — none drawn (hold, W12). Duty section 8: no holdup basis for
+  this class — none claimed.
+- Nozzles: all 7 schedule rows at tag, face, height and bore, atmospheric
+  open-bore tube stubs flush at the envelope faces.
+- 7-sheet drawing set (GA front/side, nozzle orientation, drum+jacket,
+  frame+supports, hardware, iso); WORK_ORDER W1–W12, BOM make-or-buy,
+  fasteners, build log acceptance line, check.json. Added to the tracker
+  ACCEPTED row set; tracker and full regen run; `--check` and `check_all`
+  green.

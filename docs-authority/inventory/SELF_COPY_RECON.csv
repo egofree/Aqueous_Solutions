@@ -1240,18 +1240,10 @@ NUTRIENT_DOSE,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, 
 NUTRIENT_DOSE,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",Missing,-,no fluorine source on site; end of life Q-011
 NUTRIENT_DOSE,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 NUTRIENT_DOSE,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",Missing,-,no fluorine source on site; end of life Q-011
-OIL_DRYER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
-OIL_DRYER,Process nozzle DN15,2,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
-OIL_DRYER,"Motor: induced-draft fan (BLDC, 42 mm (NEMA 17 flange))",1,-,Unstated,-,not classed: -
-OIL_DRYER,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",Unstated,-,"not classed: ISO 15, normal class"
-OIL_DRYER,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,Unstated,-,not classed: IEC 61800-5-1
-OIL_DRYER,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,Unstated,-,not classed: IEC 61131-2
-OIL_DRYER,"instrument: gas detector, CO electrochemical CO",2,"alarm 25 ppm, trip 50 ppm, breathing height",Unstated,-,"not classed: alarm 25 ppm, trip 50 ppm, breathing hei"
-OIL_DRYER,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-OIL_DRYER,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",Missing,-,no fluorine source on site; end of life Q-011
-OIL_DRYER,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",Unstated,-,"not classed: ceramic diaphragm, IEC 61298"
-OIL_DRYER,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-OIL_DRYER,"instrument: temperature element (SIF, independent) Pt100 class A",1,"IEC 60751, own thermowell",Unstated,-,"not classed: IEC 60751, own thermowell"
+OIL_DRYER,"Drying drum OD 500 x 700, wall 6 mm (study), with end heads",1,carbon steel (duty section 3),Closed,Fe EW -> MET_MELT -> mill/draw,
+OIL_DRYER,"Heating jacket OD 540, annulus 20 mm (study), with end plates, over the drum mid",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+OIL_DRYER,Guard frame: four 40 x 40 posts full height with mid and top rails (A-MACH guard,1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
+OIL_DRYER,Nozzle set per docs-authority/nozzles/OIL_DRYER.csv: 5 open-bore tube stubs (DN1,7,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 OIL_FRAC,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 OIL_FRAC,Process nozzle DN15,12,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 OIL_FRAC,"Motor: transfer pump CUT-1 to PROD_C5_C10 (BLDC, 42 mm (NEMA 17 flange))",1,-,Unstated,-,not classed: -
@@ -2530,7 +2522,7 @@ OF-93,fastener: M10 wedge anchor (ISO 3506 A4-70),110,,Unstated,-,material not s
 OF-94,fastener: M12 bolt + nut; PP-flanged joint (ISO 3506 A4-70),16,,Unstated,-,material not stated on the unit BOM line
 OF-95,fastener: M12 PVDF bolt + nut (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
 OF-96,fastener: M12 A4-70 bolt + nut (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
-OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),78,,Unstated,-,material not stated on the unit BOM line
+OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),86,,Unstated,-,material not stated on the unit BOM line
 OF-98,fastener: M10 stud + nut (ISO 4014 / ISO 4032) (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line
 OF-99,fastener: M8 hold-down bolt (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line
 OF-100,fastener: M16 wedge anchor (ISO 898-1 8.8),16,,Unstated,-,material not stated on the unit BOM line
@@ -2542,4 +2534,4 @@ OF-105,fastener: M10 hold-down bolt (ISO 3506 A4-70),4,,Unstated,-,material not 
 OF-106,fastener: M8 wedge anchor (ISO 898-1 8.8),4,,Unstated,-,material not stated on the unit BOM line
 OF-107,fastener: M12 housing bolt + nut (ISO 898-1 8.8),4,,Unstated,-,material not stated on the unit BOM line
 OF-108,fastener: M12 roll-shaft bolt + nut (ISO 898-1 8.8),4,,Unstated,-,material not stated on the unit BOM line
-OF-109,fastener: M12 saddle bolt + nut (ISO 898-1 8.8),8,,Unstated,-,material not stated on the unit BOM line
+OF-109,fastener: M12 saddle bolt + nut (ISO 898-1 8.8),16,,Unstated,-,material not stated on the unit BOM line
