@@ -214,3 +214,27 @@ never resized.
   buy rows, fasteners, build log acceptance line, check.json. Added to the
   tracker ACCEPTED row set; tracker and full regen run; `--check` and
   `check_all` green.
+
+## OIL_FRAC (fractionator column, OIL, tier 6) — commit 9 (M2 close-out)
+
+- `models/mfg/OIL_FRAC/oil_frac.py` on the shared lib. Route F-COL, acceptance
+  A-core + A-COL. Build 1000 × 600 × 800 mm against the node envelope
+  (stage-owned by the write_graph scrubber pass — the builder reads it from
+  params and does not pin it): inside, filled exactly (hold-down frame,
+  X-PAR-04); one closed manifold mesh; `cad/stl/OIL_FRAC.stl` replaced from
+  the build; `tracker --check OIL_FRAC` green.
+- Close-out per the HX8 close pattern: the style-builders column study (M2)
+  rebuilt through the current shared lib — vertical CS column shell OD 480,
+  wall 6 (study; the duty states no diameter and no wall — drawn to the
+  envelope, holds W12), heads and skirt seat inside a four-post hold-down
+  frame; the 14-row issued schedule replacing the study layout; the section 5
+  artifacts completed (WORK_ORDER W1–W12, make-or-buy BOM, fasteners —
+  previously missing, check.json, build log acceptance line, 7-sheet drawing
+  set, duty §7 pointer, tracker ACCEPTED row).
+- A-COL: stages/HTU not stated anywhere — named hold; no packing, distributor
+  or demister named on the node (internals none), so none drawn; the cut
+  split rides the node cut_basis fractions (A-M-138) — a flowsheet
+  allocation, not tray design. Sump report: the duty 0.0006 m³ (30 min) stands
+  3.5 mm deep in the modeled bore — the sump zone is the bottom head; nothing
+  resized (plan rule 3). Tracker and full regen run; `--check` and
+  `check_all` green.

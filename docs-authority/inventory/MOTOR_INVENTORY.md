@@ -28,12 +28,12 @@ Table 1.1. Motor families
 
 | Family | Motor type | Size | Voltage | Count | Units | Installed shaft kW |
 | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 67 | 40 | 0.19 |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 71 | 41 | 0.19 |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 55 | 5 | 2.69 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 8 | 4 | 2.06 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 3 | 3 | 2.43 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 190 | 46 | 22.80 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 186 | 45 | 22.32 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 9 | 8 | 3.33 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 5 | 5 | 7.42 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 1 | 1 | 0.08 |
@@ -268,10 +268,10 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | LEACH_EW | HOPPER | transfer pump IA-FEED-01 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0003 | 24 V DC | S3 | BLDC driver | 1 | 102.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | OIL_GLASS | AFTERBURNER | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 7.1 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | OIL_GLASS | OIL_DRYER | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
-| OIL_GLASS | OIL_FRAC | Motor: transfer pump CUT-1 to PROD_C5_C10 (BLDC, 42 mm (NEMA | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| OIL_GLASS | OIL_FRAC | Motor: transfer pump CUT-2 to PROD_C11_C18 (BLDC, 42 mm (NEM | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| OIL_GLASS | OIL_FRAC | Motor: transfer pump CUT-3 to PROD_C19_C28 (BLDC, 42 mm (NEM | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| OIL_GLASS | OIL_FRAC | Motor: transfer pump CUT-4 to PROD_C29 (BLDC, 42 mm (NEMA 17 | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| OIL_GLASS | OIL_FRAC | transfer pump CUT-1 to PROD_C5_C10 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 7.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| OIL_GLASS | OIL_FRAC | transfer pump CUT-2 to PROD_C11_C18 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 9.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| OIL_GLASS | OIL_FRAC | transfer pump CUT-3 to PROD_C19_C28 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 6.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| OIL_GLASS | OIL_FRAC | transfer pump CUT-4 to PROD_C29 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 5.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | OIL_GLASS | OIL_PYRO | transfer pump IA-OIL-02 to OIL_FRAC | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 33.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | cut_tank | PROD_C19_C28 | Motor: transfer pump CUT-3-OUT to MFG_SHOP (BLDC, 42 mm (NEM | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | cut_tank | PROD_C29 | Motor: transfer pump C29_RECYCLE to C29_RECYCLE (BLDC, 42 mm | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |

@@ -1,0 +1,197 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 13,
+  "all_parts_valid": true,
+  "column": {
+    "type": "vertical carbon-steel fractionator column drawn to the node envelope: shell OD 480 (drawn to the envelope - the duty states no diameter), wall 6 (study), top and bottom heads, skirt seat, inside a four-post hold-down frame on a 20 mm plinth",
+    "od_mm": 480.0,
+    "wall_mm": 6.0,
+    "z_mm": [
+      60.0,
+      760.0
+    ],
+    "wall_basis": "study values; the duty states no diameter and no wall (holds, WORK_ORDER W12)",
+    "sump_duty_m3": 0.0006,
+    "sump_model_note": "duty section 2 sump 0.0006 m3 (30 min): that volume stands 3.5 mm deep in the modeled bore - the sump zone is the bottom head; reported, nothing resized (A-COL; plan rule 3)",
+    "internals": "the node internals row is none: no packing, distributor or demister is drawn; stages and HTU are not stated anywhere and stay a named hold (A-COL, W12); the cut split rides the node cut_basis pass fractions (A-M-138, SU2018_PYRO) - a flowsheet allocation, not tray design",
+    "material": "CS",
+    "ca_mm": 1.5
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 76.8,
+      "schedule_rating": "Class 150",
+      "service": "Pyro \u2192 frac",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 170.9,
+      "schedule_rating": "Class 150",
+      "service": "resist and solvent waste",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 200.2,
+      "schedule_rating": "Class 150",
+      "service": "solvent and photoresist",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 229.5,
+      "schedule_rating": "Class 150",
+      "service": "organic mist",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 135.3,
+      "schedule_rating": "Class 150",
+      "service": "fractionator cut",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 164.7,
+      "schedule_rating": "Class 150",
+      "service": "fractionator cut",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 194.0,
+      "schedule_rating": "Class 150",
+      "service": "fractionator cut",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 223.3,
+      "schedule_rating": "Class 150",
+      "service": "fractionator cut",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm is the box top"
+    },
+    "N11": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 76.8,
+      "schedule_rating": "Class 150",
+      "service": "NCG only",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N12": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 112.2,
+      "schedule_rating": "Class 150",
+      "service": "unrecovered wax to oil line",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N13": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 106.0,
+      "schedule_rating": "Class 150",
+      "service": "light cuts to polyolefin",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N14": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 141.6,
+      "schedule_rating": "Class 150",
+      "service": "spent resist and solvent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    }
+  },
+  "nozzle_count_schedule": 14,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: nozzle DN15, no flange class, atmospheric tube or hose); the N14 solids row (spent resist and solvent) drawn DN15, bore not calculated (plan W4); the schedule rating column (Class 150) is carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "frame": 76.36,
+    "column": 102.86,
+    "nozzles": 0.92
+  },
+  "cadquery": "2.8.0"
+}

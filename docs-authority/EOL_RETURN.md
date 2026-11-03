@@ -19,10 +19,10 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1496 | 59 % |
-| organic | 733 | 29 % |
+| metal_plateable | 1458 | 59 % |
+| organic | 723 | 29 % |
 | metal_reactive | 120 | 5 % |
-| silicate_oxide | 114 | 5 % |
+| silicate_oxide | 112 | 5 % |
 | unassigned | 59 | 2 % |
 
 Unassigned: 59 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
@@ -160,7 +160,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MET_MELT | 14 | 9 | 0 | 1 | 0 |
 | MET_SCRUB | 1 | 8 | 0 | 0 | 1 |
 | MET_SYN | 2 | 6 | 0 | 1 | 0 |
-| MF-01 x 67 | 3 | 1 | 2 | 0 | 0 |
+| MF-01 x 71 | 3 | 1 | 2 | 0 | 0 |
 | MF-02 x 55 | 3 | 1 | 2 | 0 | 0 |
 | MF-03 x 0 | 5 | 1 | 2 | 0 | 0 |
 | MF-04 x 0 | 5 | 0 | 1 | 0 | 0 |
@@ -168,7 +168,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MF-06 x 8 | 5 | 0 | 1 | 0 | 0 |
 | MF-07 x 3 | 5 | 0 | 1 | 0 | 0 |
 | MF-08 x 3 | 7 | 0 | 3 | 0 | 0 |
-| MF-09 x 190 | 7 | 0 | 3 | 0 | 0 |
+| MF-09 x 186 | 7 | 0 | 3 | 0 | 0 |
 | MF-10 x 9 | 7 | 0 | 3 | 0 | 0 |
 | MF-11 x 5 | 7 | 0 | 3 | 0 | 0 |
 | MF-12 x 1 | 7 | 0 | 3 | 0 | 0 |
@@ -288,7 +288,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-98 | 1 | 0 | 0 | 0 | 0 |
 | OF-99 | 1 | 0 | 0 | 0 | 0 |
 | OIL_DRYER | 6 | 0 | 0 | 0 | 0 |
-| OIL_FRAC | 43 | 10 | 0 | 2 | 0 |
+| OIL_FRAC | 5 | 0 | 0 | 0 | 0 |
 | OIL_PYRO | 4 | 1 | 0 | 2 | 0 |
 | PELLET | 6 | 0 | 0 | 0 | 0 |
 | PF-01 | 0 | 2 | 0 | 0 | 0 |

@@ -153,10 +153,10 @@ OIL,LEACH_EW,HOPPER,screw feeder,induction IE3,IEC 71 / 0.25 kW,0.18,208 V 3-ph,
 OIL,LEACH_EW,HOPPER,transfer pump IA-FEED-01 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0003,24 V DC,S3,BLDC driver,1,"102.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 OIL,OIL_GLASS,AFTERBURNER,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"7.1 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 OIL,OIL_GLASS,OIL_DRYER,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
-OIL,OIL_GLASS,OIL_FRAC,"Motor: transfer pump CUT-1 to PROD_C5_C10 (BLDC, 42 mm (NEMA",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-OIL,OIL_GLASS,OIL_FRAC,"Motor: transfer pump CUT-2 to PROD_C11_C18 (BLDC, 42 mm (NEM",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-OIL,OIL_GLASS,OIL_FRAC,"Motor: transfer pump CUT-3 to PROD_C19_C28 (BLDC, 42 mm (NEM",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-OIL,OIL_GLASS,OIL_FRAC,"Motor: transfer pump CUT-4 to PROD_C29 (BLDC, 42 mm (NEMA 17",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
+OIL,OIL_GLASS,OIL_FRAC,transfer pump CUT-1 to PROD_C5_C10,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"7.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+OIL,OIL_GLASS,OIL_FRAC,transfer pump CUT-2 to PROD_C11_C18,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"9.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+OIL,OIL_GLASS,OIL_FRAC,transfer pump CUT-3 to PROD_C19_C28,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"6.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+OIL,OIL_GLASS,OIL_FRAC,transfer pump CUT-4 to PROD_C29,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"5.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 OIL,OIL_GLASS,OIL_PYRO,transfer pump IA-OIL-02 to OIL_FRAC,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"33.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 OIL,cut_tank,PROD_C19_C28,"Motor: transfer pump CUT-3-OUT to MFG_SHOP (BLDC, 42 mm (NEM",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 OIL,cut_tank,PROD_C29,"Motor: transfer pump C29_RECYCLE to C29_RECYCLE (BLDC, 42 mm",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
