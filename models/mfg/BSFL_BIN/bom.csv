@@ -1,2 +1,6 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,basin_shell,1,HDPE,65.7,make,tray class; 2 x 5 kg/d-class bins in one frame at the 8.21 kg/d wet feedstock (A-M-418 revis
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"HDPE tray basin: walls and floor 10 mm, 2500 x 900 x 700 outer",1,HDPE (duty section 3),65.7,make,size_mm verbatim; A-FARM: drawn at the node box flush; CA does not apply to the polymer (AQS-STD-001)
+2,"Centre divider - the size_basis two-bin split (2 x 5 kg/d class, even split)",1,HDPE (duty section 3),5.7,make,"the even per-bin duty split is a study layout choice (hold, WORK_ORDER W12); sheet cut and thermoplastic weld"
+3,"PP larval self-harvest ramp per bin, foot at the floor, top at the rim",2,PP (duty section 3),11.6,make,"ramp angle and foot are study layout choices (hold, WORK_ORDER W12); PP weld"
+4,SS316 mesh top screen per bin (the ventilation path; no metal below the substrate line),2,SS316 mesh (duty section 3),5.2,buy,"hardware-cloth panels cut to size; mesh carries ~0.15 of the drawn plate mass (the hardware-cloth idiom); buy panels, plan rule 6"
+5,"Nozzle set per docs-authority/nozzles/BSFL_BIN.csv: 12 rows drawn as DN15 tube stubs (5 in z 160, 5 out z 600, drain, vent)",12,HDPE (duty section 3),0.1,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4

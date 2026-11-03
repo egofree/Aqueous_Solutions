@@ -1,22 +1,212 @@
 {
-  "shell_bbox_mm": [
+  "bbox_mm": [
     2500.0,
     900.0,
     700.0
   ],
-  "envelope_mm": [
-    2500,
-    900,
-    700
+  "inside_size_mm": true,
+  "size_mm": [
+    2500.0,
+    900.0,
+    700.0
   ],
-  "inside_size_mm_shell": true,
+  "size_basis": "2 x 5 kg/d-class bins in one frame at the 8.21 kg/d wet feedstock (A-M-418 revision) (X-FARM sec3)",
+  "graph_revision": "AD",
   "solids": 1,
   "all_parts_valid": true,
-  "material_class": "HDPE",
-  "form": "tray",
-  "mass_kg": {
-    "basin_shell": 65.7
+  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the rebuild fills the node box 2500 x 900 x 700 flush)",
+  "cad_stl_bbox_mm": [
+    2500.0,
+    900.0,
+    700.0
+  ],
+  "machine": {
+    "type": "black-soldier-fly larvae composting frame, 2 x 5 kg/d-class bins in one frame (A-M-418 revision): HDPE tray 2500 x 900 x 700 with a centre divider, one PP self-harvest ramp per bin leaning on the +X wall, and an SS316 mesh top screen per bin whose open area is the ventilation path",
+    "a_farm": "the frame is drawn at the node box flush; the drain and the sec3-named ramp and screen are drawn",
+    "substrate": "no substrate depth is named on the node - the bins are drawn empty; larvae and substrate are process inventory, not BOM parts (the STOCK_OUT idiom; hold, WORK_ORDER W12)",
+    "material": "HDPE tray bin, PP larval self-harvest ramp, SS316 mesh screen; no metal below the substrate line",
+    "ca_mm": 0.0
   },
-  "empty_kg": 65.7,
-  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1191.4,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "poultry manure to the larvae bin",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1250.0,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "fish sludge to the larvae bin",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1250.0,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "larvae meal to the layer ration",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1279.3,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "frass compost to the solids line",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1308.6,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "bin respiration/evaporation",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1279.3,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "galley biowaste to the larvae bin",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1308.6,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "duck manure to the larvae bin",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        1250.0,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 700.0,
+      "xy_mm": [
+        1250.0,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 predates the build height 700 - drawn flush at the envelope top (hold, W12)"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1191.4,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "dried larvae meal to the layer formulation",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N11": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1220.7,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "screenings/fines back to the larvae bin",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N12": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1220.7,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "fresh larvae to the formulation drier",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    }
+  },
+  "nozzle_count_schedule": 12,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); inlets N1/N2/N6/N7/N11 on -Y at z 160, outlets N3/N4/N5/N10/N12 on +Y at z 600; N8 drain flush at the envelope bottom; N9 vent flush at the envelope top (schedule z 800 predates the 700 box - stale datum, hold W12); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "basin_shell": 65.7,
+    "divider": 5.7,
+    "ramp_a": 5.8,
+    "ramp_b": 5.8,
+    "screen_a": 17.5,
+    "screen_b": 17.5,
+    "nozzles": 0.1
+  },
+  "cadquery": "2.8.0"
 }

@@ -138,5 +138,34 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class bsfl_bin"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   2500,
+   900,
+   700
+  ],
+  "basis": "2 x 5 kg/d-class bins in one frame at the 8.21 kg/d wet feedstock (A-M-418 revision) (X-FARM sec3)",
+  "wall_mm": 10,
+  "bins": {
+   "divider_x_mm": 1250.0,
+   "split": "even (study)"
+  },
+  "ramps": {
+   "dx_mm": 340.0,
+   "dz_mm": 680.0,
+   "one_per_bin": true
+  },
+  "measured_bbox_mm": [
+   2500.0,
+   900.0,
+   700.0
+  ]
+ },
+ "layout": {
+  "frame": "origin at the frame corner; tray 2500 x 900 x 700 outer, walls and floor 10 mm; centre divider at x 1250 splits the frame into two 5 kg/d-class bins",
+  "supports": "frame plinth to the slab on 4 base anchors; screens clamped to the rim",
+  "nozzle_spread": "the schedule gives face and height only; inlet rows on the -Y wall at z 160, outlet rows on the +Y wall at z 600, drain at the base centreline, vent at the top centreline; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; no metal below the substrate line"
+ }
 }

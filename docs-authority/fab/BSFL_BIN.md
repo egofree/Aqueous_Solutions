@@ -4,7 +4,7 @@ Class: bsfl_bin; sector FARM. Study route. Not stamped.
 Envelope: Envelope 2500×900×700 mm;
 service line: service BSFL larvae composting bin; feedstock_kg_d 1.43; larvae_kg_d 0.114; frass_kg_d 0.357; basis A-M-418 (X-FARM-03); organisms Hermetia 
 
-Internals: issued mfg model BOM (1 internals part row): "1,basin_shell,1,HDPE,65.7,make,tray class; 2 x 5 kg/d-class bins in one frame at the 8.21 kg/d wet feedstock" [models/mfg/BSFL_BIN/bom.csv]
+Internals: issued mfg model BOM (1 internals part row): "1,"HDPE tray basin: walls and floor 10 mm, 2500 x 900 x 700 outer",1,HDPE (duty section" [models/mfg/BSFL_BIN/bom.csv]
 Material: HDPE tray bin, PP larval self-harvest ramp, SS316 mesh screen; no metal below the substrate line. Basis: substrate goes pH 4-6 under frass acids at 65-75 % moisture with self-heating toward 40 C (graph design; A-M-418): wet acid compost pits zinc and plate steel, HDPE/PP are inert across the whole range Alternative: FRP tray if bin scaling raises wall temperatures past the HDPE class. (continues on the duty sheet)
 
 Nozzles: 12 process connections per docs-authority/nozzles/BSFL_BIN.csv
