@@ -1,5 +1,5 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,100,1591 points / 16
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,100,1593 points / 16
 CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,847,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 175 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
@@ -1109,16 +1109,21 @@ FAB,FAB,WAFER_FAB,valve,check valve,DN15,"CPVC true-union swing/ball check valve
 FAB,FAB,WAFER_FAB,valve,isolation valve,DN50,"PP-H ball valve, ISO 16135, EPDM seals",2,S39: one at each end nozzle (assumed)
 FAB,FAB,WAFER_FAB,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,S39B: one at each end nozzle (assumed)
 FAB,FAB,WAFER_FAB,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-FAB-SPENT: one at each end nozzle (assumed)
-FAB,FAB,WET_BENCH,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW): drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-FAB,FAB,WET_BENCH,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S10 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA : drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-FAB,FAB,WET_BENCH,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S38 to OIL_FRAC (BLDC, 42 mm (NEMA 17 f: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-FAB,FAB,WET_BENCH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW): run and fault (assumed)"
-FAB,FAB,WET_BENCH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump S10 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA : run and fault (assumed)"
-FAB,FAB,WET_BENCH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump S38 to OIL_FRAC (BLDC, 42 mm (NEMA 17 f: run and fault (assumed)"
-FAB,FAB,WET_BENCH,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW) (assumed VFD at >= 0.75 kW)"
-FAB,FAB,WET_BENCH,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump S10 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA  (assumed VFD at >= 0.75 kW)"
-FAB,FAB,WET_BENCH,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump S38 to OIL_FRAC (BLDC, 42 mm (NEMA 17 f (assumed VFD at >= 0.75 kW)"
-FAB,FAB,WET_BENCH,fabricated part,fabricated part set,34 BOM lines,models/mfg/WET_BENCH/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FAB,FAB,WET_BENCH,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,induced-draft fan (assumed size)
+FAB,FAB,WET_BENCH,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",2,"process vacuum pump: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
+FAB,FAB,WET_BENCH,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S10 to LEACH_CSTR_1 (assumed size)
+FAB,FAB,WET_BENCH,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S38 to OIL_FRAC (assumed size)
+FAB,FAB,WET_BENCH,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,induced-draft fan
+FAB,FAB,WET_BENCH,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S10 to LEACH_CSTR_1
+FAB,FAB,WET_BENCH,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S38 to OIL_FRAC
+FAB,FAB,WET_BENCH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,induced-draft fan: run and fault (assumed)
+FAB,FAB,WET_BENCH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,process vacuum pump: run and fault (assumed)
+FAB,FAB,WET_BENCH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S10 to LEACH_CSTR_1: run and fault (assumed)
+FAB,FAB,WET_BENCH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S38 to OIL_FRAC: run and fault (assumed)
+FAB,FAB,WET_BENCH,electronics,variable-frequency drive,1.1 kW,IEC 61800-5-1,1,process vacuum pump (assumed VFD at >= 0.75 kW)
+FAB,FAB,WET_BENCH,fabricated part,fabricated part set,9 BOM lines,models/mfg/WET_BENCH/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FAB,FAB,WET_BENCH,fastener,M10 tank-clip bolt + nut,M10 tank-clip bolt + nut,ISO 898-1 8.8,8,models/mfg/WET_BENCH/fasteners.csv
+FAB,FAB,WET_BENCH,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,8,models/mfg/WET_BENCH/fasteners.csv
 FAB,FAB,WET_BENCH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,66,S10: 2 per support (assumed)
 FAB,FAB,WET_BENCH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,S38: 2 per support (assumed)
 FAB,FAB,WET_BENCH,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S10: pumped line (assumed)
@@ -1128,11 +1133,7 @@ FAB,FAB,WET_BENCH,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE len
 FAB,FAB,WET_BENCH,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FAB,FAB,WET_BENCH,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FAB,FAB,WET_BENCH,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-FAB,FAB,WET_BENCH,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-FAB,FAB,WET_BENCH,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-FAB,FAB,WET_BENCH,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW): induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
-FAB,FAB,WET_BENCH,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump S10 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA : induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
-FAB,FAB,WET_BENCH,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump S38 to OIL_FRAC (BLDC, 42 mm (NEMA 17 f: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
+FAB,FAB,WET_BENCH,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,process vacuum pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 FAB,FAB,WET_BENCH,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",33,S10: AQS-PIP-005 span count
 FAB,FAB,WET_BENCH,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",25,S38: AQS-PIP-005 span count
 FAB,FAB,WET_BENCH,valve,check valve,DN15,"CPVC true-union swing/ball check valve, FKM seals",1,S10: pump discharge (assumed)

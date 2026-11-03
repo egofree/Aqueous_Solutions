@@ -36,8 +36,8 @@ Properties: NdFeB sintered N42, Br 1.29-1.32 T, Hcj >= 955 kA/m; ferrite anisotr
 
 | Family | Magnet | Count | Torque mN m | B gap T | Rotor D x L mm | Frame | Efficiency % | Magnet g/unit | Rare earth g/unit | Fleet magnet kg | Fleet RE kg |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | NdFeB | 75 | 8.5 | 0.8 | 7.7 x 7.7 | fits | 84.6 | 4.2 | 1.3 | 0.31 | 0.1 |
-| MF-01 | ferrite | 75 | 8.5 | 0.22 | 11.7 x 11.7 | fits | 73.7 | 9.3 | 0.0 | 0.7 | 0.0 |
+| MF-01 | NdFeB | 78 | 8.6 | 0.8 | 7.7 x 7.7 | fits | 84.7 | 4.2 | 1.3 | 0.33 | 0.1 |
+| MF-01 | ferrite | 78 | 8.6 | 0.22 | 11.8 x 11.8 | fits | 73.7 | 9.4 | 0.0 | 0.73 | 0.0 |
 | MF-02 | NdFeB | 55 | 155.7 | 0.8 | 20.2 x 20.2 | fits | 90.9 | 28.9 | 9.0 | 1.59 | 0.49 |
 | MF-02 | ferrite | 55 | 155.7 | 0.22 | 28.5 x 36.4 | fits | 85.6 | 70.4 | 0.0 | 3.87 | 0.0 |
 

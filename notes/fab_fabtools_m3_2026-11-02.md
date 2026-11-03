@@ -36,3 +36,27 @@ are drawn as their envelope and interface per plan rule 6; misfits are
 - A-SC: the parts the on-site shop makes (bench, frame, purge distribution,
   connection hardware) are flagged make in the BOM and cross-referenced to
   AQS-BOM-SC-001; the station tools are purchased envelopes.
+
+## WET_BENCH (RCA/etch wet bench, FAB, tier 7) — commit 2
+
+- `models/mfg/WET_BENCH/wet_bench.py` on the shared lib. Route F-MACH (the
+  `wet_bench` class sits in the F-MACH row of plan section 4). Acceptance
+  A-core + A-MACH + A-SC. Build 1000 × 600 × 800 mm against the node envelope:
+  inside, exact; one closed manifold mesh; `cad/stl/WET_BENCH.stl` replaced
+  from the build; `tracker --check WET_BENCH` green.
+- Bench per the node equipment list: SC1 and SC2 baths 10 L nominal at 80 °C
+  with immersion heater envelopes (2.479 kWh/d each, purchased per plan rule 6),
+  DHF etch bath at ambient, DIW rinse bay, on the bench deck inside the
+  four-post hold-down frame. Wetted material per duty section 3: PVC-U per
+  AQS-STD-002 rules M1 and M2, no metal wetted part; above 60 °C the
+  thermoplastic is CPVC — the node equipment rows give the 80 °C bath
+  temperatures, so the heated baths are CPVC. The node rows name PP tanks; the
+  duty selection governs (plan rule 5) — hold W12. Bath wall 10 mm and the DHF/
+  rinse bath sizes are study/layout values (W12).
+- Nozzles: all 13 schedule rows at tag, face, height and bore as atmospheric
+  open-bore tube stubs drawn polymer (duty section 3: no metal wetted part);
+  drain and vent flush at the envelope faces. `DIW` added to the glossary
+  (the node equipment row's term).
+- The envelope-era drawing set superseded by the 7-sheet fabrication set.
+  A-SC: bench, frame, baths and connection hardware flagged make and
+  cross-referenced to AQS-BOM-SC-001; heaters and N2 gun set are buy rows.

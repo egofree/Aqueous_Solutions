@@ -423,10 +423,10 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/VDF_SYN.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/VEG_BED.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/VERMI_BIN.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/WAFER_FAB.md` | working tree | current |
+| `docs-authority/duties/WAFER_FAB.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/WASHROOM.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/WAX_PATTERN.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/WET_BENCH.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/WET_BENCH.md` | working tree | current |
 | `docs-authority/duties/WIRE_DRAW.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/WORMS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/WS_AMMONIA.md` | f0160a6 (regenerated, no change) | current |
@@ -502,7 +502,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/inventory/INSTRUMENT_INDEX.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/INTERNALS.json` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/MAGNET_COMPARISON.csv` | working tree | current |
-| `docs-authority/inventory/MOTOR_DESIGNS.csv` | working tree | current |
+| `docs-authority/inventory/MOTOR_DESIGNS.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/MOTOR_DESIGNS.md` | working tree | current |
 | `docs-authority/inventory/MOTOR_FA.json` | working tree | current |
 | `docs-authority/inventory/MOTOR_FAMILIES.csv` | working tree | current |
@@ -1214,10 +1214,10 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/derived/MASS_FLOW_DERIVED.md` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/derived/STREAM_REGISTER_DERIVED.md` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/derived/SYNC_POINTER.md` | f0160a6 (regenerated, no change) | current |
-| `flow_graph/derived/_regen_receipt.json` | working tree | current |
+| `flow_graph/derived/_regen_receipt.json` | - | by design: manifest mechanism itself (U3 regen provenance receipt) |
 | `flow_graph/fire_rooms.json` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/inventory/motor_family_ids.json` | f0160a6 (regenerated, no change) | current |
-| `flow_graph/inventory/other_family_ids.json` | f0160a6 (regenerated, no change) | current |
+| `flow_graph/inventory/other_family_ids.json` | working tree | current |
 | `flow_graph/inventory/pipe_family_ids.json` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/inventory/wire_family_ids.json` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/placement_seed.json` | f0160a6 (regenerated, no change) | current |
@@ -1233,7 +1233,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/views/efd-thermal.svg` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/mfd.dot` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/mfd.json` | f0160a6 (regenerated, no change) | current |
-| `flow_graph/views/mfd.svg` | working tree | current |
+| `flow_graph/views/mfd.svg` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/pfd.dot` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/pfd.json` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/pfd.svg` | f0160a6 (regenerated, no change) | current |
@@ -1430,10 +1430,10 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/VCD_TRAIN/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/VDF_SYN/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/VERMI_BIN/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/WAFER_FAB/params.json` | working tree | current |
+| `models/mfg/WAFER_FAB/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/WASHROOM/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/WAX_PATTERN/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/WET_BENCH/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/WET_BENCH/params.json` | working tree | current |
 | `models/mfg/WIRE_DRAW/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/WS_AMMONIA/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/WS_DOPE/params.json` | f0160a6 (regenerated, no change) | current |

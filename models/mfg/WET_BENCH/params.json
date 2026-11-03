@@ -129,5 +129,84 @@
   "A-core",
   "A-MACH",
   "A-SC"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "deck_mm": [
+   44.0,
+   44.0,
+   20.0,
+   912.0,
+   512.0,
+   20.0
+  ],
+  "plinth_mm": 20.0,
+  "baths": {
+   "sc1": {
+    "inner_mm": [
+     120.0,
+     250.0,
+     250.0
+    ],
+    "material": 160.0,
+    "xy_mm": [
+     60.0,
+     120.0
+    ]
+   },
+   "sc2": {
+    "inner_mm": [
+     120.0,
+     250.0,
+     250.0
+    ],
+    "material": 160.0,
+    "xy_mm": [
+     350.0,
+     120.0
+    ]
+   },
+   "dhf": {
+    "inner_mm": [
+     120.0,
+     120.0,
+     250.0
+    ],
+    "material": 160.0,
+    "xy_mm": [
+     640.0,
+     120.0
+    ]
+   },
+   "rinse": {
+    "inner_mm": [
+     120.0,
+     120.0,
+     250.0
+    ],
+    "material": 160.0,
+    "xy_mm": [
+     800.0,
+     120.0
+    ]
+   }
+  }
+ },
+ "design": {
+  "service": "WET_BENCH: RCA/etch wet bench - SC1/SC2 at 80 C, DHF etch at ambient, DIW rinse, on the fab UPW class (duty sections 1 and 3; node equipment list)",
+  "material": "PVC_U (ambient wetted); CPVC (the node 80 C baths)",
+  "ca_mm": 0.0,
+  "material_basis": "duty section 3: PVC-U wetted per AQS-STD-002 rules M1 and M2, no metal wetted part; above 60 C the thermoplastic is CPVC, never metal - the node equipment rows give the 80 C bath temperatures; the node rows name PP tanks, the duty selection governs (plan rule 5; hold, WORK_ORDER W12)"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; baths on the deck per params.envelope.baths (SC1 x 60, SC2 x 350, DHF x 640, rinse x 800, all y 120); hold-down posts at the envelope corners",
+  "supports": "plinth + deck + hold-down frame + 8 slab anchors; bath clip rail (A-MACH)",
+  "nozzle_spread": "the schedule gives face and height only; ports pack in one row per face/height group from x 150, 8 mm clear at the bore; drain at x 430, vent at x 570; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

@@ -1,0 +1,230 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 12,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "RCA/etch wet bench per the node equipment list: SC1 bath 10 L at 80 C and SC2 bath 10 L at 80 C with immersion heater envelopes (2.479 kWh/d each), DHF etch bath at ambient, and the DIW rinse bay, on a bench deck over a 20 mm plinth inside a four-post hold-down frame that pins the registry box (X-PAR-04)",
+    "baths": {
+      "sc1": {
+        "inner_mm": [
+          120.0,
+          250.0,
+          250.0
+        ],
+        "material": 160.0,
+        "nominal_l": 7.5,
+        "node_basis": "CPVC",
+        "make_or_buy": "make"
+      },
+      "sc2": {
+        "inner_mm": [
+          120.0,
+          250.0,
+          250.0
+        ],
+        "material": 160.0,
+        "nominal_l": 7.5,
+        "node_basis": "CPVC",
+        "make_or_buy": "make"
+      },
+      "dhf": {
+        "inner_mm": [
+          120.0,
+          120.0,
+          250.0
+        ],
+        "material": 160.0,
+        "nominal_l": 3.6,
+        "node_basis": "PVC_U",
+        "make_or_buy": "make"
+      },
+      "rinse": {
+        "inner_mm": [
+          120.0,
+          120.0,
+          250.0
+        ],
+        "material": 160.0,
+        "nominal_l": 3.6,
+        "node_basis": "PVC_U",
+        "make_or_buy": "make"
+      }
+    },
+    "material_rule": "duty section 3: PVC-U wetted per AQS-STD-002 rules M1 and M2, no metal wetted part; above 60 C the thermoplastic is CPVC, never metal - the node equipment rows give the 80 C bath temperatures, so SC1/SC2 are CPVC and the ambient baths PVC-U; the node equipment rows name PP tanks, the duty selection governs (plan rule 5; hold, WORK_ORDER W12)",
+    "guard": "four-post hold-down frame (40 x 40 posts, top rails) is the A-MACH guard + 8 slab anchors (fasteners.csv)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 68.3,
+      "schedule_rating": "Class 150",
+      "service": "HCl",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4; polymer per duty section 3 - no metal wetted part)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 32.8,
+      "schedule_rating": "Class 150",
+      "service": "fab UPW > 18 M\u03a9\u00b7cm class",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4; polymer per duty section 3 - no metal wetted part)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 214.8,
+      "schedule_rating": "Class 150",
+      "service": "HF (aq)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4; polymer per duty section 3 - no metal wetted part)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 244.1,
+      "schedule_rating": "Class 150",
+      "service": "H\u2082O\u2082",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4; polymer per duty section 3 - no metal wetted part)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 135.3,
+      "schedule_rating": "Class 150",
+      "service": "spent etch",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4; polymer per duty section 3 - no metal wetted part)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 170.8,
+      "schedule_rating": "Class 150",
+      "service": "resist and solvent waste",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4; polymer per duty section 3 - no metal wetted part)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm is the box top"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 273.4,
+      "schedule_rating": "Class 150",
+      "service": "NH\u2084OH / NH\u2083 (aq)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4; polymer per duty section 3 - no metal wetted part)"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 97.6,
+      "schedule_rating": "Class 150",
+      "service": "KOH",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4; polymer per duty section 3 - no metal wetted part)"
+    },
+    "N11": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 126.9,
+      "schedule_rating": "Class 150",
+      "service": "HNO3",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4; polymer per duty section 3 - no metal wetted part)"
+    },
+    "N12": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 156.2,
+      "schedule_rating": "Class 150",
+      "service": "H3PO4",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4; polymer per duty section 3 - no metal wetted part)"
+    },
+    "N13": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 185.5,
+      "schedule_rating": "Class 150",
+      "service": "ethanol and acetone",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4; polymer per duty section 3 - no metal wetted part)"
+    }
+  },
+  "nozzle_count_schedule": 13,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: nozzle DN15, no flange class, atmospheric tube or hose), drawn polymer per duty section 3 (no metal wetted part); drain flush at the envelope bottom (50 datum), vent flush at the envelope top (800 datum is the box top); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "deck": 73.31,
+    "frame": 76.36,
+    "baths": 63.1,
+    "heaters": 0.39,
+    "nozzles": 0.92
+  },
+  "cadquery": "2.8.0",
+  "bath_mass_kg": {
+    "sc1": 3.26,
+    "sc2": 3.26,
+    "dhf": 2.09,
+    "rinse": 2.09
+  }
+}

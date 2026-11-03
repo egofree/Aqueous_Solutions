@@ -34,7 +34,7 @@ The rule in `merge_panels` folds the panel with the least feeder copper into the
 | PUMPED_HYDRO | LP-DIGESTER |
 | WTR | LP-DIGESTER |
 
-The following merges were rejected because they would add less than 5 kg of copper. They are kept separate under the rule. A panel enclosure and main breaker probably outweigh this copper, but no cost basis is registered, so these merges are held for review: OIL (+0.4 kg), FAB (+4.4 kg), MFG (+4.9 kg).
+The following merges were rejected because they would add less than 5 kg of copper. They are kept separate under the rule. A panel enclosure and main breaker probably outweigh this copper, but no cost basis is registered, so these merges are held for review: OIL (+0.4 kg), FAB (+1.4 kg), NUT (+4.2 kg).
 
 ## 1. Family rollup
 
@@ -45,26 +45,26 @@ Table 1.1. Conductor families
 | Family | Type | Size | Insulation | Voltage class | Conductor m | Circuits |
 | --- | --- | --- | --- | --- | --- | --- |
 | WF-01 | PV DC | 10 AWG | PV Wire, UL 4703, 2 kV | 2000 V DC | 40440 | 337 |
-| WF-02 | control | 18 AWG | TFFN 3-pair, shielded | 600 V | 28204 | 220 |
+| WF-02 | control | 18 AWG | TFFN 3-pair, shielded | 600 V | 28144 | 218 |
 | WF-03 | power | 6 AWG | THHN/THWN-2 Cu in EMT | 600 V | 20520 | 57 |
 | WF-04 | equipment ground | 10 AWG | bare Cu | - | 20220 | 337 |
-| WF-05 | power | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 600 V | 14093 | 219 |
+| WF-05 | power | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 600 V | 14062 | 217 |
 | WF-06 | bare grounding | 4/0 AWG | bare soft-drawn Cu | - | 5262 | 1 |
-| WF-07 | control | 18 AWG | shielded pair | 300 V | 3040 | 152 |
-| WF-08 | DC power pair | 16 AWG | TC-ER 2-cond | 600 V | 2980 | 149 |
-| WF-09 | equipment ground | 14 AWG | green XHHW-2 Cu | 600 V | 4688 | 216 |
+| WF-07 | control | 18 AWG | shielded pair | 300 V | 3100 | 155 |
+| WF-08 | DC power pair | 16 AWG | TC-ER 2-cond | 600 V | 3040 | 152 |
+| WF-09 | equipment ground | 14 AWG | green XHHW-2 Cu | 600 V | 4678 | 214 |
 | WF-10 | power | 3 AWG | XHHW-2 Cu | 600 V | 3225 | 43 |
 | WF-12 | MV power | 2 AWG | MV-105 Cu, 133 % insulation, tape shield | 15 kV | 1200 | 4 |
 | WF-14 | power | 400 kcmil | XHHW-2 Cu | 600 V | 540 | 4 |
 | WF-15 | power | 14 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 246 | 3 |
-| WF-16 | power | 10 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 367 | 3 |
+| WF-16 | power | 10 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 247 | 2 |
 | WF-19 | equipment ground | 2/0 AWG | green XHHW-2 Cu | 600 V | 180 | 4 |
 | WF-20 | power | 3 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 310 | 2 |
 | WF-21 | DC power pair | 14 AWG | TC-ER 2-cond | 600 V | 60 | 3 |
 | WF-24 | equipment ground | 10 AWG | green XHHW-2 Cu | 600 V | 12 | 4 |
 | WF-25 | power | 10 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 600 V | 9 | 1 |
 | WF-28 | power | 8 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 137 | 1 |
-| WF-31 | power | 12 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 173 | 1 |
+| WF-31 | power | 12 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 293 | 2 |
 | WF-33 | power | 350 kcmil | XHHW-2 Cu, tray cable TC-ER | 600 V | 55 | 1 |
 
 ## 2. Circuits by sector, sub-system and unit
@@ -292,17 +292,17 @@ Table 1.1. Conductor families
 | FAB | WAFER_FAB | transfer pump IA-FAB-SPENT to LEACH_CSTR_1 signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | FAB | WAFER_FAB | transfer pump S39 to LEACH_CSTR_1 power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | FAB | WAFER_FAB | transfer pump S39 to LEACH_CSTR_1 signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
-| FAB | WET_BENCH | Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW) EGC | 14 AWG | green XHHW-2 Cu | 1 | 5.0 | 1 | 5.0 | NEC 250.122 at 15 A OCPD |
-| FAB | WET_BENCH | Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW) control | 18 AWG | TFFN 3-pair, shielded | 6 | 5.0 | 1 | 30.2 | start/stop, run, fault (assumed) |
-| FAB | WET_BENCH | Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW) feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 5.0 | 1 | 15.1 | NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-FAB (Manhattan x 1.1 + 3 m drop, assumed) |
-| FAB | WET_BENCH | Motor: transfer pump S10 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA  EGC | 14 AWG | green XHHW-2 Cu | 1 | 5.0 | 1 | 5.0 | NEC 250.122 at 15 A OCPD |
-| FAB | WET_BENCH | Motor: transfer pump S10 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA  control | 18 AWG | TFFN 3-pair, shielded | 6 | 5.0 | 1 | 30.2 | start/stop, run, fault (assumed) |
-| FAB | WET_BENCH | Motor: transfer pump S10 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA  feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 5.0 | 1 | 15.1 | NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-FAB (Manhattan x 1.1 + 3 m drop, assumed) |
-| FAB | WET_BENCH | Motor: transfer pump S38 to OIL_FRAC (BLDC, 42 mm (NEMA 17 f EGC | 14 AWG | green XHHW-2 Cu | 1 | 5.0 | 1 | 5.0 | NEC 250.122 at 15 A OCPD |
-| FAB | WET_BENCH | Motor: transfer pump S38 to OIL_FRAC (BLDC, 42 mm (NEMA 17 f control | 18 AWG | TFFN 3-pair, shielded | 6 | 5.0 | 1 | 30.2 | start/stop, run, fault (assumed) |
-| FAB | WET_BENCH | Motor: transfer pump S38 to OIL_FRAC (BLDC, 42 mm (NEMA 17 f feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 5.0 | 1 | 15.1 | NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-FAB (Manhattan x 1.1 + 3 m drop, assumed) |
-| distribution | LP-FAB | panel feeder 208 V | 10 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 30.0 | 1 | 120.1 | NEC 430.24: 17.4 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
-| distribution | LP-FAB | panel feeder 460 V | 14 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 30.0 | 1 | 120.1 | NEC 430.24: 4.8 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
+| FAB | WET_BENCH | induced-draft fan power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
+| FAB | WET_BENCH | induced-draft fan signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
+| FAB | WET_BENCH | process vacuum pump EGC | 14 AWG | green XHHW-2 Cu | 1 | 5.0 | 1 | 5.0 | NEC 250.122 at 15 A OCPD |
+| FAB | WET_BENCH | process vacuum pump control | 18 AWG | TFFN 3-pair, shielded | 6 | 5.0 | 1 | 30.2 | start/stop, run, fault (assumed) |
+| FAB | WET_BENCH | process vacuum pump feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 5.0 | 1 | 15.1 | NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-FAB (Manhattan x 1.1 + 3 m drop, assumed) |
+| FAB | WET_BENCH | transfer pump S10 to LEACH_CSTR_1 power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
+| FAB | WET_BENCH | transfer pump S10 to LEACH_CSTR_1 signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
+| FAB | WET_BENCH | transfer pump S38 to OIL_FRAC power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
+| FAB | WET_BENCH | transfer pump S38 to OIL_FRAC signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
+| distribution | LP-FAB | panel feeder 208 V | 12 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 30.0 | 1 | 120.1 | NEC 430.24: 10.2 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
+| distribution | LP-FAB | panel feeder 460 V | 14 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 30.0 | 1 | 120.1 | NEC 430.24: 7.8 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
 | reagent | WS_AMMONIA | on/off valve S33 power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | reagent | WS_AMMONIA | on/off valve S33 signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | reagent | WS_AMMONIA | transfer pump S33 to WET_BENCH power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |

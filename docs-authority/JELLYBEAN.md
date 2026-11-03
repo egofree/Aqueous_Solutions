@@ -35,11 +35,11 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M10 | anchor | ISO 898-1 8.8 | 152 | ISO 4017 + chemical anchor (ETAG 001) |
 | M10 | hex bolt | ASTM A193 B8 | 8 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | hex bolt | ISO 3506 A4-70 | 122 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M10 | hex bolt | ISO 898-1 8.8 | 16 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M10 | hex bolt | ISO 898-1 8.8 | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | stud | ISO 3506 A4-70 | 32 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | stud | ISO 898-1 8.8 | 94 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | anchor | ISO 3506 A4-70 | 3 | ISO 4017 + chemical anchor (ETAG 001) |
-| M12 | anchor | ISO 898-1 8.8 | 172 | ISO 4017 + chemical anchor (ETAG 001) |
+| M12 | anchor | ISO 898-1 8.8 | 180 | ISO 4017 + chemical anchor (ETAG 001) |
 | M12 | hex bolt | ISO 3506 A4-70 | 488 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | ISO 898-1 8.8 | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | PVDF (non-metallic) | 34 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -113,9 +113,6 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | Q2_B | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | VCD_TRAIN | valve: check valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | VCD_TRAIN | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| WET_BENCH | seal: mechanical seal, single EN 12756 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| WET_BENCH | valve: check valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| WET_BENCH | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | ZNBR2 | seal: mechanical seal, single EN 12756 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | ZNBR2 | valve: check valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | ZNBR2 | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
