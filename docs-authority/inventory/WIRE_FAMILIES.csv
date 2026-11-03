@@ -11,7 +11,7 @@ WF-09,equipment ground,14 AWG,green XHHW-2 Cu,600 V,4816,214
 WF-10,power,3 AWG,XHHW-2 Cu,600 V,3225,43
 WF-12,MV power,2 AWG,"MV-105 Cu, 133 % insulation, tape shield",15 kV,1200,4
 WF-14,power,400 kcmil,XHHW-2 Cu,600 V,540,4
-WF-15,power,14 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,428,4
+WF-15,power,14 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,255,3
 WF-16,power,10 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,177,1
 WF-19,equipment ground,2/0 AWG,green XHHW-2 Cu,600 V,180,4
 WF-20,power,3 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,173,1

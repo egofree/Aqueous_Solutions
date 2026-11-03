@@ -2467,30 +2467,32 @@ MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 norm
 MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",6,CNC vertical mill: axis drive (assumed size)
 MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,6308-2Z,"ISO 15 / ISO 492 normal class, C3",2,"CNC vertical mill: main drive: drive and non-drive end, IEC 60072 frame 132M (assumed size)"
 MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,6308-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Engine lathe: main drive: drive and non-drive end, IEC 60072 frame 132M (assumed size)"
-MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: TIG/MIG welder: cooling-water pump (induction IE3, IE: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,6306-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Rotary-screw air compressor: main drive: drive and non-drive end, IEC 60072 frame 112M (assumed size)"
 MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"TIG/MIG welder: cooling-water pump: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
 MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"bench grinder: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
 MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"drill press spindle: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
+MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"screw conveyor IA-MFG-OUT to HABITATION: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
 MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Band saw: main drive: run and fault (assumed)
 MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,6,CNC vertical mill: axis drive: run and fault (assumed)
 MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,CNC vertical mill: main drive: run and fault (assumed)
 MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Engine lathe: main drive: run and fault (assumed)
-MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: TIG/MIG welder: cooling-water pump (induction IE3, IE: run and fault (assumed)"
 MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Rotary-screw air compressor: main drive: run and fault (assumed)
 MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,TIG/MIG welder: cooling-water pump: run and fault (assumed)
 MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,bench grinder: run and fault (assumed)
 MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,drill press spindle: run and fault (assumed)
-MFG,MFG,MFG_SHOP,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: TIG/MIG welder: cooling-water pump (induction IE3, IE (assumed VFD at >= 0.75 kW)"
+MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,screw conveyor IA-MFG-OUT to HABITATION: run and fault (assumed)
 MFG,MFG,MFG_SHOP,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,TIG/MIG welder: cooling-water pump (assumed VFD at >= 0.75 kW)
 MFG,MFG,MFG_SHOP,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,bench grinder (assumed VFD at >= 0.75 kW)
 MFG,MFG,MFG_SHOP,electronics,motor starter (contactor + overload),0.75 kW,IEC 60947-4-1,1,drill press spindle (assumed VFD at >= 0.75 kW)
+MFG,MFG,MFG_SHOP,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,screw conveyor IA-MFG-OUT to HABITATION (assumed VFD at >= 0.75 kW)
 MFG,MFG,MFG_SHOP,electronics,stepper driver,24/48 V DC,IEC 61800-5-1,3,CNC vertical mill: axis drive
 MFG,MFG,MFG_SHOP,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,1,Band saw: main drive (assumed VFD at >= 0.75 kW)
 MFG,MFG,MFG_SHOP,electronics,variable-frequency drive,7.5 kW,IEC 61800-5-1,1,CNC vertical mill: main drive (assumed VFD at >= 0.75 kW)
 MFG,MFG,MFG_SHOP,electronics,variable-frequency drive,7.5 kW,IEC 61800-5-1,1,Engine lathe: main drive (assumed VFD at >= 0.75 kW)
 MFG,MFG,MFG_SHOP,electronics,variable-frequency drive,4 kW,IEC 61800-5-1,1,Rotary-screw air compressor: main drive (assumed VFD at >= 0.75 kW)
-MFG,MFG,MFG_SHOP,fabricated part,fabricated part set,56 BOM lines,models/mfg/MFG_SHOP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+MFG,MFG,MFG_SHOP,fabricated part,fabricated part set,10 BOM lines,models/mfg/MFG_SHOP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+MFG,MFG,MFG_SHOP,fastener,M10 machine hold-down bolt + nut,M10 machine hold-down bolt + nut,ISO 898-1 8.8,12,models/mfg/MFG_SHOP/fasteners.csv
+MFG,MFG,MFG_SHOP,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,8,models/mfg/MFG_SHOP/fasteners.csv
 MFG,MFG,MFG_SHOP,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,TEXTILE_HAB: 2 per support (assumed)
 MFG,MFG,MFG_SHOP,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,TEXTILE_HAB: pumped line (assumed)
 MFG,MFG,MFG_SHOP,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
@@ -2500,12 +2502,11 @@ MFG,MFG,MFG_SHOP,instrument,temperature element,Pt100 class A,"IEC 60751, 316L t
 MFG,MFG,MFG_SHOP,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 MFG,MFG,MFG_SHOP,protection,"inverse-time circuit breaker, 3-pole",60 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 MFG,MFG,MFG_SHOP,protection,"inverse-time circuit breaker, 3-pole",30 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-MFG,MFG,MFG_SHOP,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 MFG,MFG,MFG_SHOP,protection,"inverse-time circuit breaker, 3-pole",30 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 MFG,MFG,MFG_SHOP,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 MFG,MFG,MFG_SHOP,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 MFG,MFG,MFG_SHOP,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-MFG,MFG,MFG_SHOP,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: TIG/MIG welder: cooling-water pump (induction IE3, IE: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
+MFG,MFG,MFG_SHOP,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 MFG,MFG,MFG_SHOP,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,TIG/MIG welder: cooling-water pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 MFG,MFG,MFG_SHOP,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,TEXTILE_HAB: AQS-PIP-005 span count
 MFG,MFG,MFG_SHOP,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,TEXTILE_HAB: pump discharge (assumed)

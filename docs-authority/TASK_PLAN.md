@@ -40,7 +40,7 @@ Table 2.1. Tasks by group
 | X-PAR | Parametric model (owner priority 2026-10-15; AQS-PAR-001) | 29 | 24 |
 | X-RSZ | Bounding-case resizing (owner approval 2026-10-15) | 7 | 7 |
 | X-SAN | Sanitation and pathogen barriers (owner decision 2026-10-15) | 1 | 1 |
-| X-INV | Building-block inventories (owner programme 2026-10-15; in order) | 179 | 178 |
+| X-INV | Building-block inventories (owner programme 2026-10-15; in order) | 180 | 179 |
 | X-BAS | Design basis | 4 | 4 |
 | X-PIP | Piping and line list | 5 | 5 |
 | X-ELS | Electrical system (plant level) | 12 | 12 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 14 |
 | NUT | Process (Mass transform) | 15 | 14 |
-| | **Total** | **3305** | **3100** |
+| | **Total** | **3306** | **3101** |
 
 ## 3. Triage of open tasks
 
@@ -232,8 +232,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-02-MF-06** Motor family MF-06: induction IE3 IEC 71 / 0.37 kW 480 V 3-ph. Done when: open design basis (electromagnetic sizing, frame, winding or coil data) and in-house manufacturing plan for 7 items in 3 units; feeds the motor production line (X-INV-02). Depends: X-INV-01. Evidence: `docs-authority/inventory/motor_families/MF-06.md`.
 - [x] **X-INV-02-MF-07** Motor family MF-07: induction IE3 IEC 90S / 1.1 kW 480 V 3-ph. Done when: open design basis (electromagnetic sizing, frame, winding or coil data) and in-house manufacturing plan for 6 items in 6 units; feeds the motor production line (X-INV-02). Depends: X-INV-01. Evidence: `docs-authority/inventory/motor_families/MF-07.md`.
 - [x] **X-INV-02-MF-08** Motor family MF-08: induction IE3 IEC 90L / 1.5 kW 480 V 3-ph. Done when: open design basis (electromagnetic sizing, frame, winding or coil data) and in-house manufacturing plan for 3 items in 3 units; feeds the motor production line (X-INV-02). Depends: X-INV-01. Evidence: `docs-authority/inventory/motor_families/MF-08.md`.
-- [x] **X-INV-02-MF-09** Motor family MF-09: induction IE3 IEC 63 / 0.18 kW 208 V 3-ph. Done when: open design basis (electromagnetic sizing, frame, winding or coil data) and in-house manufacturing plan for 179 items in 42 units; feeds the motor production line (X-INV-02). Depends: X-INV-01. Evidence: `docs-authority/inventory/motor_families/MF-09.md`.
-- [x] **X-INV-02-MF-10** Motor family MF-10: induction IE3 IEC 80 / 0.55 kW 480 V 3-ph. Done when: open design basis (electromagnetic sizing, frame, winding or coil data) and in-house manufacturing plan for 9 items in 8 units; feeds the motor production line (X-INV-02). Depends: X-INV-01. Evidence: `docs-authority/inventory/motor_families/MF-10.md`.
+- [x] **X-INV-02-MF-09** Motor family MF-09: induction IE3 IEC 63 / 0.18 kW 208 V 3-ph. Done when: open design basis (electromagnetic sizing, frame, winding or coil data) and in-house manufacturing plan for 178 items in 41 units; feeds the motor production line (X-INV-02). Depends: X-INV-01. Evidence: `docs-authority/inventory/motor_families/MF-09.md`.
+- [x] **X-INV-02-MF-10** Motor family MF-10: induction IE3 IEC 80 / 0.55 kW 480 V 3-ph. Done when: open design basis (electromagnetic sizing, frame, winding or coil data) and in-house manufacturing plan for 10 items in 8 units; feeds the motor production line (X-INV-02). Depends: X-INV-01. Evidence: `docs-authority/inventory/motor_families/MF-10.md`.
 - [x] **X-INV-02-MF-11** Motor family MF-11: induction IE3 IEC 100L / 2.2 kW 480 V 3-ph. Done when: open design basis (electromagnetic sizing, frame, winding or coil data) and in-house manufacturing plan for 5 items in 5 units; feeds the motor production line (X-INV-02). Depends: X-INV-01. Evidence: `docs-authority/inventory/motor_families/MF-11.md`.
 - [x] **X-INV-02-MF-12** Motor family MF-12: induction IE3 IEC 63 / 0.12 kW 208 V 3-ph. Done when: open design basis (electromagnetic sizing, frame, winding or coil data) and in-house manufacturing plan for 1 items in 1 units; feeds the motor production line (X-INV-02). Depends: X-INV-01. Evidence: `docs-authority/inventory/motor_families/MF-12.md`.
 - [x] **X-INV-02-MF-13** Motor family MF-13: induction IE3 IEC 71 / 0.25 kW 208 V 3-ph. Done when: open design basis (electromagnetic sizing, frame, winding or coil data) and in-house manufacturing plan for 2 items in 2 units; feeds the motor production line (X-INV-02). Depends: X-INV-01. Evidence: `docs-authority/inventory/motor_families/MF-13.md`.
@@ -259,7 +259,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-03-WF-10** Wire family WF-10: power 3 AWG XHHW-2 Cu. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 3225 m in 43 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-12** Wire family WF-12: MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 1200 m in 4 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-14** Wire family WF-14: power 400 kcmil XHHW-2 Cu. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 540 m in 4 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
-- [x] **X-INV-03-WF-15** Wire family WF-15: power 14 AWG XHHW-2 Cu, tray cable TC-ER. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 428 m in 4 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
+- [x] **X-INV-03-WF-15** Wire family WF-15: power 14 AWG XHHW-2 Cu, tray cable TC-ER. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 255 m in 3 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-16** Wire family WF-16: power 10 AWG XHHW-2 Cu, tray cable TC-ER. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 177 m in 1 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-19** Wire family WF-19: equipment ground 2/0 AWG green XHHW-2 Cu. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 180 m in 4 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-20** Wire family WF-20: power 3 AWG XHHW-2 Cu, tray cable TC-ER. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 173 m in 1 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
@@ -331,7 +331,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-44** Building-block family OF-44: instrument, gas detector, CO. Done when: open design and production plan for 14 items (alarm 25 ppm, trip 50 ppm, breathing height) in 7 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-45** Building-block family OF-45: instrument, gas detector, NOx. Done when: open design and production plan for 6 items (alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height) in 3 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-46** Building-block family OF-46: protection, inverse-time circuit breaker, 3-pole. Done when: open design and production plan for 218 items (UL 489 / IEC 60947-2) in 61 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-47** Building-block family OF-47: seal, mechanical seal, single. Done when: open design and production plan for 172 items (SiC/SiC faces, FKM) in 44 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-47** Building-block family OF-47: seal, mechanical seal, single. Done when: open design and production plan for 171 items (SiC/SiC faces, FKM) in 44 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-48** Building-block family OF-48: support, pipe clamp. Done when: open design and production plan for 5863 items (PP clamp with EPDM liner, MSS SP-58 Type 7) in 116 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-49** Building-block family OF-49: support, U-bolt with guide. Done when: open design and production plan for 1492 items (316 U-bolt, MSS SP-58 Type 24) in 44 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-50** Building-block family OF-50: valve, isolation valve. Done when: open design and production plan for 280 items (PVC-U true-union ball valve, MSS SP-122, EPDM seals) in 64 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
@@ -376,7 +376,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-94** Building-block family OF-94: fastener, M12 bolt + nut; PP-flanged joint. Done when: open design and production plan for 16 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-95** Building-block family OF-95: fastener, M12 PVDF bolt + nut. Done when: open design and production plan for 8 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-96** Building-block family OF-96: fastener, M12 A4-70 bolt + nut. Done when: open design and production plan for 8 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-97** Building-block family OF-97: fastener, M12 wedge anchor. Done when: open design and production plan for 174 items (ISO 898-1 8.8) in 24 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-97** Building-block family OF-97: fastener, M12 wedge anchor. Done when: open design and production plan for 182 items (ISO 898-1 8.8) in 25 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-98** Building-block family OF-98: fastener, M10 stud + nut (ISO 4014 / ISO 4032). Done when: open design and production plan for 24 items (ISO 3506 A4-70) in 2 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-99** Building-block family OF-99: fastener, M8 hold-down bolt. Done when: open design and production plan for 24 items (ISO 3506 A4-70) in 2 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-100** Building-block family OF-100: fastener, M16 wedge anchor. Done when: open design and production plan for 16 items (ISO 898-1 8.8) in 2 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
@@ -404,6 +404,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-122** Building-block family OF-122: fastener, M12 trunnion stud + nut. Done when: open design and production plan for 4 items (ISO 898-1 8.8) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-123** Building-block family OF-123: fastener, M16 journal-block bolt + nut. Done when: open design and production plan for 8 items (ISO 898-1 8.8) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-124** Building-block family OF-124: fastener, M10 tower-flange bolt + nut. Done when: open design and production plan for 8 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-125** Building-block family OF-125: fastener, M10 machine hold-down bolt + nut. Done when: open design and production plan for 12 items (ISO 898-1 8.8) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 
 ### X-BAS. Design basis
 

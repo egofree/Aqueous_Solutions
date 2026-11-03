@@ -1,0 +1,483 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 34,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "machine-shop fitout per the node continuous note's authority (AQS-MFG-010 rev C, Table 2.1): bench deck over a 20 mm plinth inside a four-post hold-down/guard frame that pins the registry box (X-PAR-04), with the six shop machine tools as purchased-class envelopes per plan rule 6 - CNC vertical mill (7.5 kW), engine lathe (5.5 kW), band saw (1.5 kW), rotary-screw air compressor (4.0 kW), TIG/MIG welder (6.0 kW), bench grinder/drill-press/hand-tool set (2.0 kW); connected 26.5 kW, one 8 h shift, average 2.55 kW; shop-air DN15 header with four drop legs on the compressor service",
+    "tool_roster": "AQS-MFG-010 Table 2.1 (rev C metering split): the four metal-forming tools (melt, atomiser, mill, drawer) are metered at their own units and are not part of this fitout; the AQS-EQP-MFG-001 polymer-line massing tags (shredder, wash/dry, extrusion, injection, sheetpress) are area equipment, not graph units",
+    "stations": {
+      "cnc": {
+        "note": "CNC vertical mill",
+        "kw_nameplate": 7.5,
+        "envelope_mm": [
+          60.0,
+          100.0,
+          40.0,
+          220.0,
+          320.0,
+          520.0
+        ],
+        "make_or_buy": "buy"
+      },
+      "lathe": {
+        "note": "Engine lathe",
+        "kw_nameplate": 5.5,
+        "envelope_mm": [
+          288.0,
+          100.0,
+          40.0,
+          180.0,
+          320.0,
+          340.0
+        ],
+        "make_or_buy": "buy"
+      },
+      "saw": {
+        "note": "Band saw",
+        "kw_nameplate": 1.5,
+        "envelope_mm": [
+          476.0,
+          100.0,
+          40.0,
+          100.0,
+          320.0,
+          260.0
+        ],
+        "make_or_buy": "buy"
+      },
+      "compressor": {
+        "note": "Rotary-screw air compressor",
+        "kw_nameplate": 4.0,
+        "envelope_mm": [
+          584.0,
+          100.0,
+          40.0,
+          140.0,
+          320.0,
+          340.0
+        ],
+        "make_or_buy": "buy"
+      },
+      "welder": {
+        "note": "TIG/MIG welder",
+        "kw_nameplate": 6.0,
+        "envelope_mm": [
+          732.0,
+          100.0,
+          40.0,
+          100.0,
+          320.0,
+          260.0
+        ],
+        "make_or_buy": "buy"
+      },
+      "benchset": {
+        "note": "Bench grinder, drill press, hand tools",
+        "kw_nameplate": 2.0,
+        "envelope_mm": [
+          840.0,
+          100.0,
+          40.0,
+          100.0,
+          320.0,
+          200.0
+        ],
+        "make_or_buy": "buy"
+      }
+    },
+    "metering": "connected 26.5 kW frames the MCC-1 feeder with the roster (AQS-MFG-010 section 3); coincident peak 24.5 kW",
+    "guard": "four-post hold-down/guard frame (40 x 40 posts, top rails) is the A-MACH guard + 8 slab anchors (fasteners.csv)",
+    "material": "316L",
+    "ca_mm": 0.0,
+    "material_basis": "duty section 3: 316L where the stream is wet; CA 0 mm (AQS-STD-001); dry shop machines",
+    "study_dims": "machine envelope footprints are study values (WORK_ORDER W12); the maker prints govern at order"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 219.4,
+      "schedule_rating": "Class 150",
+      "service": "fractionator cut",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 483.1,
+      "schedule_rating": "Class 150",
+      "service": "fractionator cut",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 142.2,
+      "schedule_rating": "Class 150",
+      "service": "metals/Si",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 183.9,
+      "schedule_rating": "Class 150",
+      "service": "glass and ceramic stock",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 534.1,
+      "schedule_rating": "Class 150",
+      "service": "scrap",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 563.4,
+      "schedule_rating": "Class 150",
+      "service": "metal scrap",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN50",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 426.8,
+      "schedule_rating": "Class 150",
+      "service": "goods in service",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 592.7,
+      "schedule_rating": "Class 150",
+      "service": "shop scrap to the digester",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm is the box top"
+    },
+    "N11": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 248.7,
+      "schedule_rating": "Class 150",
+      "service": "glass/ceramic goods",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N12": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 278.0,
+      "schedule_rating": "Class 150",
+      "service": "wire product",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N13": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 307.3,
+      "schedule_rating": "Class 150",
+      "service": "sheet / strip",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N14": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 336.6,
+      "schedule_rating": "Class 150",
+      "service": "metal powder",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N15": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 365.9,
+      "schedule_rating": "Class 150",
+      "service": "plate/rod/wire to manufacturing",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N16": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 475.6,
+      "schedule_rating": "Class 150",
+      "service": "manufacturing scrap return",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N17": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 395.2,
+      "schedule_rating": "Class 150",
+      "service": "polymer feedstock to manufacturing",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N18": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 424.5,
+      "schedule_rating": "Class 150",
+      "service": "plated sheet",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N19": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 453.8,
+      "schedule_rating": "Class 150",
+      "service": "plated sheet",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N20": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 512.4,
+      "schedule_rating": "Class 150",
+      "service": "plated sheet",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N21": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 541.7,
+      "schedule_rating": "Class 150",
+      "service": "plated sheet",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N22": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 571.0,
+      "schedule_rating": "Class 150",
+      "service": "plated sheet",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N23": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 600.3,
+      "schedule_rating": "Class 150",
+      "service": "plated sheet",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N24": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 629.6,
+      "schedule_rating": "Class 150",
+      "service": "plated sheet",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N25": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 658.9,
+      "schedule_rating": "Class 150",
+      "service": "plated sheet",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N26": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 688.2,
+      "schedule_rating": "Class 150",
+      "service": "plated sheet",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N27": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 717.5,
+      "schedule_rating": "Class 150",
+      "service": "recovered cake",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N28": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 746.8,
+      "schedule_rating": "Class 150",
+      "service": "char reductant",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N29": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 776.1,
+      "schedule_rating": "Class 150",
+      "service": "blown parts",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N30": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 805.4,
+      "schedule_rating": "Class 150",
+      "service": "C19-C28 from the tank",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N31": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 834.7,
+      "schedule_rating": "Class 150",
+      "service": "fluoropolymer stock issue to the shop",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N32": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 864.0,
+      "schedule_rating": "Class 150",
+      "service": "FR-finished fleece to the shop for conversion",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N33": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 504.9,
+      "schedule_rating": "Class 150",
+      "service": "finished crew textiles to the hab issue",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    }
+  },
+  "nozzle_count_schedule": 33,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); the 19 solids rows (goods, scrap returns, plated sheet, stock issues) are non-piped transfers drawn DN15, bore not calculated (plan W4); N7 goods-in-service is the DN50 row on +Y at z 600; drain flush at the envelope bottom (50 datum), vent flush at the envelope top (800 datum is the box top); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "deck": 73.31,
+    "frame": 76.36,
+    "stations": 741.54,
+    "shop_air": 3.37,
+    "nozzles": 2.39
+  },
+  "cadquery": "2.8.0"
+}

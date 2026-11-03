@@ -33,8 +33,8 @@ Table 1.1. Motor families
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 7 | 3 | 1.75 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 6 | 6 | 4.68 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 179 | 42 | 21.48 |
-| MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 9 | 8 | 3.33 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 178 | 41 | 21.36 |
+| MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 10 | 8 | 3.70 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 5 | 5 | 7.42 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 1 | 1 | 0.08 |
 | MF-13 | induction IE3 | IEC 71 / 0.25 kW | 208 V 3-ph | 2 | 2 | 0.36 |
@@ -242,11 +242,11 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | MFG | MFG_SHOP | CNC vertical mill: axis drive | stepper | NEMA 34 (86 mm) | 0.4 | 48 V DC | S3 | stepper driver | 3 | assumed closed-loop stepper per axis (A-M-119) |
 | MFG | MFG_SHOP | CNC vertical mill: main drive | induction IE3 | IEC 132M / 7.5 kW | 6.5217 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS nameplate |
 | MFG | MFG_SHOP | Engine lathe: main drive | induction IE3 | IEC 132M / 7.5 kW | 4.7826 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS nameplate |
-| MFG | MFG_SHOP | Motor: TIG/MIG welder: cooling-water pump (induction IE3, IE | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | MFG | MFG_SHOP | Rotary-screw air compressor: main drive | induction IE3 | IEC 112M / 4 kW | 3.4783 | 480 V 3-ph | S1 | fixed speed | 1 | MFG_TOOLS nameplate |
 | MFG | MFG_SHOP | TIG/MIG welder: cooling-water pump | induction IE3 | IEC 80 / 0.55 kW | 0.37 | 480 V 3-ph | S1 | fixed speed | 1 | MFG_TOOLS; assumed (A-M-119) |
 | MFG | MFG_SHOP | bench grinder | induction IE3 | IEC 80 / 0.55 kW | 0.37 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS; assumed |
 | MFG | MFG_SHOP | drill press spindle | induction IE3 | IEC 80 / 0.75 kW | 0.55 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS; assumed |
+| MFG | MFG_SHOP | screw conveyor IA-MFG-OUT to HABITATION | induction IE3 | IEC 80 / 0.55 kW | 0.37 | 480 V 3-ph | S3 | fixed speed | 1 | 597 kg/d solids (>= 50 kg/d conveyed, assumed) |
 | MFG | WIRE_DRAW | Bull-block wire drawer: main drive | induction IE3 | IEC 90S / 1.1 kW | 0.9565 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS nameplate |
 | ahu | MET_AHU | induced-draft fan | induction IE3 | IEC 100L / 2.2 kW | 1.3813 | 480 V 3-ph | S1 | fixed speed | 1 | 71604.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | scrubber | MET_SCRUB | induced-draft fan | induction IE3 | IEC 100L / 2.2 kW | 1.3813 | 480 V 3-ph | S1 | fixed speed | 1 | 71604.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
