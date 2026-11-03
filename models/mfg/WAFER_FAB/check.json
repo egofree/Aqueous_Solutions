@@ -1,0 +1,246 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 15,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "wafer-fab tool row on a shop bench: bench deck over a 20 mm plinth inside a four-post hold-down frame that pins the registry box (X-PAR-04), with the node equipment stations as purchased-class envelopes per plan rule 6: CZ puller (0.2317 kW), ingot cool/anneal (0.02 kW), crop/grind/edge tools (0.04 kW), FAB_TOOL dry row (ox/RTA/metal/probe standby, 0.12 kW); N2 purge distribution as the DN15 header with four drop legs (ISO 14644 Class 6 row, 0.03 kW)",
+    "stations": {
+      "cz": {
+        "note": "CZ puller (charge heat-up over the 7 d campaign + 4 h hot hold)",
+        "kw_connected": 0.2317,
+        "envelope_mm": [
+          60.0,
+          100.0,
+          40.0,
+          220.0,
+          320.0,
+          520.0
+        ],
+        "make_or_buy": "buy"
+      },
+      "ingot": {
+        "note": "ingot cool/anneal station (N2 circulator duty share)",
+        "kw_connected": 0.02,
+        "envelope_mm": [
+          300.0,
+          100.0,
+          40.0,
+          140.0,
+          320.0,
+          320.0
+        ],
+        "make_or_buy": "buy"
+      },
+      "sawset": {
+        "note": "crop/grind/edge tools at 5 starts/d",
+        "kw_connected": 0.04,
+        "envelope_mm": [
+          460.0,
+          100.0,
+          40.0,
+          180.0,
+          320.0,
+          260.0
+        ],
+        "make_or_buy": "buy"
+      },
+      "dryrow": {
+        "note": "FAB_TOOL dry row parasitics (ox, RTA, metal, probe standby)",
+        "kw_connected": 0.12,
+        "envelope_mm": [
+          660.0,
+          100.0,
+          40.0,
+          280.0,
+          320.0,
+          200.0
+        ],
+        "make_or_buy": "buy"
+      }
+    },
+    "iso_note": "node note carried as text: ISO 14644-1 Class 7 wet bench, Class 6 tool row (room-side classification, not modeled hardware)",
+    "guard": "four-post hold-down frame (40 x 40 posts, top rails) is the A-MACH guard + 8 slab anchors (fasteners.csv)",
+    "material": "316L",
+    "ca_mm": 0.0,
+    "material_basis": "duty section 3: 316L where the stream is wet; CA 0 mm (AQS-STD-001)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 97.6,
+      "schedule_rating": "Class 150",
+      "service": "N2",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 214.8,
+      "schedule_rating": "Class 150",
+      "service": "B/P/As concentrate; BBr\u2083 / POCl\u2083 class",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 244.1,
+      "schedule_rating": "Class 150",
+      "service": "colloidal silica slurry",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 62.1,
+      "schedule_rating": "Class 150",
+      "service": "fab UPW",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 156.2,
+      "schedule_rating": "Class 150",
+      "service": "spent slurry and etch liquor",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 185.5,
+      "schedule_rating": "Class 150",
+      "service": "solvent and photoresist",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 214.8,
+      "schedule_rating": "Class 150",
+      "service": "kerf",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 91.4,
+      "schedule_rating": "Class 150",
+      "service": "spent UPW",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm is the box top"
+    },
+    "N11": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 126.9,
+      "schedule_rating": "Class 150",
+      "service": "specialty stock to fab",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N12": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 156.2,
+      "schedule_rating": "Class 150",
+      "service": "polymer feedstock to fab",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N13": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 126.9,
+      "schedule_rating": "Class 150",
+      "service": "spent resist and solvent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N14": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 185.5,
+      "schedule_rating": "Class 150",
+      "service": "dopant into the wafer fab",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    }
+  },
+  "nozzle_count_schedule": 14,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: nozzle DN15, no flange class, atmospheric tube or hose); the four solids rows (specialty stock, polymer feedstock, dopant in; spent resist and solvent out) are non-piped transfers drawn DN15, bore not calculated (plan W4); drain flush at the envelope bottom (50 datum), vent flush at the envelope top (800 datum is the box top); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "deck": 73.31,
+    "frame": 76.36,
+    "stations": 658.14,
+    "purge": 3.41,
+    "nozzles": 1.0
+  },
+  "cadquery": "2.8.0"
+}

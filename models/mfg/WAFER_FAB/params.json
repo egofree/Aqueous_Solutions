@@ -137,5 +137,82 @@
   "A-core",
   "A-MACH",
   "A-SC"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "deck_mm": [
+   44.0,
+   44.0,
+   20.0,
+   912.0,
+   512.0,
+   20.0
+  ],
+  "plinth_mm": 20.0,
+  "stations": {
+   "cz": {
+    "envelope_mm": [
+     60.0,
+     100.0,
+     40.0,
+     220.0,
+     320.0,
+     520.0
+    ],
+    "kw_connected": 0.2317
+   },
+   "ingot": {
+    "envelope_mm": [
+     300.0,
+     100.0,
+     40.0,
+     140.0,
+     320.0,
+     320.0
+    ],
+    "kw_connected": 0.02
+   },
+   "sawset": {
+    "envelope_mm": [
+     460.0,
+     100.0,
+     40.0,
+     180.0,
+     320.0,
+     260.0
+    ],
+    "kw_connected": 0.04
+   },
+   "dryrow": {
+    "envelope_mm": [
+     660.0,
+     100.0,
+     40.0,
+     280.0,
+     320.0,
+     200.0
+    ],
+    "kw_connected": 0.12
+   }
+  }
+ },
+ "design": {
+  "service": "WAFER_FAB: the wafer-fab tool row - CZ crystal growth, ingot cool/anneal, crop/grind/edge, and the dry tool row behind one envelope; N2 purge on the ISO 14644 Class 6 row (duty sections 1 and 6; node note)",
+  "material": "316L",
+  "ca_mm": 0.0,
+  "material_basis": "duty section 3: 316L where the stream is wet; CA 0 mm (AQS-STD-001)",
+  "stations_basis": "node equipment list (the calculated connected load, 0.4417 kW total): station kW figures are node figures; arrangement is the layout choice (WORK_ORDER W12)"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; station envelopes per params.envelope.stations (CZ x 60..280, ingot x 300..440, crop/grind/edge x 460..640, dry row x 660..940, all y 100..420 on the deck); hold-down posts at the envelope corners",
+  "purge": "DN15 header at y 470, z 720 along x 120..880 with drop legs at x 170/370/550/800",
+  "supports": "plinth + deck + hold-down frame + 8 slab anchors (A-MACH)",
+  "nozzle_spread": "the schedule gives face and height only; ports pack in one row per face/height group from x 150, 8 mm clear at the bore; drain at x 430, vent at x 570; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

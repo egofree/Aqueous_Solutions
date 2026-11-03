@@ -17,14 +17,14 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 16689 |
+| fastener | 16697 |
 | support | 7355 |
-| electronics | 2062 |
+| electronics | 2065 |
 | valve | 991 |
 | instrument | 847 |
-| bearing | 702 |
-| protection | 222 |
-| seal | 174 |
+| bearing | 704 |
+| protection | 220 |
+| seal | 172 |
 
 ## 2a. What a datasheet is here
 
@@ -45,18 +45,18 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x260 | 260 | 47 | Biogas recirculation diaphragm blower about 2 L/min (assumed size); CNC vertical mill: axis drive (assumed size); Motor: cathode air blower (induction |  |
-| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6201-2Z x372; 6202-2Z x20; 6204-2Z x20; 6205-2Z x12; 6206-2Z x10; 6308-2Z x6; 6306-2Z x2 | 442 | 59 | Acid day tank D160 x 300 mm with metering pump: drive and non-drive end, IEC 600; Band saw: main drive: drive and non-drive end, IEC 60072 frame 90L ( |  |
+| OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x266 | 266 | 48 | Biogas recirculation diaphragm blower about 2 L/min (assumed size); CNC vertical mill: axis drive (assumed size); Motor: cathode air blower (induction |  |
+| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6201-2Z x366; 6202-2Z x20; 6204-2Z x20; 6205-2Z x14; 6206-2Z x10; 6308-2Z x6; 6306-2Z x2 | 438 | 59 | Acid day tank D160 x 300 mm with metering pump: drive and non-drive end, IEC 600; Band saw: main drive: drive and non-drive end, IEC 60072 frame 90L ( |  |
 ## 4. Electronics datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x742 | 742 | 91 | Acid day tank D160 x 300 mm with metering pump: run and fault (assumed); Band saw: main drive: run and fault (assumed); Biogas recirculation diaphragm |  |
+| OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x744 | 744 | 91 | Acid day tank D160 x 300 mm with metering pump: run and fault (assumed); Band saw: main drive: run and fault (assumed); Biogas recirculation diaphragm |  |
 | OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x847 | 847 | 1 | one per instrument |  |
-| OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x127 | 127 | 46 | Biogas recirculation diaphragm blower about 2 L/min; Motor: cathode air blower (induction IE3, IEC 71 / 0.25 kW); cathode air blower |  |
-| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.18 kW x185; 0.55 kW x9; 0.37 kW x8; 0.25 kW x2; 0.12 kW x1; 1.1 kW x1; 0.75 kW x1 | 207 | 53 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Body / envelope 800 x 600 x 1200 mm (assumed VFD at >= 0.75 kW); Body / en |  |
-| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x100 | 100 | 1 | 1589 points / 16 |  |
-| OF-08 | variable-frequency drive | IEC 61800-5-1 | 2.2 kW x5; 1.5 kW x3; 7.5 kW x3; 1.1 kW x2; 4 kW x1 | 14 | 11 | Band saw: main drive (assumed VFD at >= 0.75 kW); Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf (assumed VFD at >= ; Blower, single-sta |  |
+| OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x130 | 130 | 47 | Biogas recirculation diaphragm blower about 2 L/min; Motor: cathode air blower (induction IE3, IEC 71 / 0.25 kW); cathode air blower |  |
+| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.18 kW x182; 0.55 kW x9; 0.37 kW x8; 0.25 kW x2; 0.12 kW x1; 1.1 kW x1; 0.75 kW x1 | 204 | 52 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Body / envelope 800 x 600 x 1200 mm (assumed VFD at >= 0.75 kW); Body / en |  |
+| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x100 | 100 | 1 | 1591 points / 16 |  |
+| OF-08 | variable-frequency drive | IEC 61800-5-1 | 2.2 kW x5; 1.5 kW x3; 1.1 kW x3; 7.5 kW x3; 4 kW x1 | 15 | 12 | Band saw: main drive (assumed VFD at >= 0.75 kW); Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf (assumed VFD at >= ; Blower, single-sta |  |
 | OF-09 | solenoid driver channel | IEC 61131-2 DO | 24 V DC x19 | 19 | 9 | on/off valve IA-BED-H2O; on/off valve IA-ELY-H2O; on/off valve IA-FLUE-QUENCH |  |
 | OF-10 | compressor contactor + overload | IEC 60947-4-1 | 1.1 kW hermetic x1 | 1 | 1 | cryocooler compressor |  |
 | OF-11 | stepper driver | IEC 61800-5-1 | 24/48 V DC x3 | 3 | 1 | CNC vertical mill: axis drive |  |
@@ -82,12 +82,12 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x218; 30 A x3; 60 A x1 | 222 | 60 | NEC 430.52, from AQS-INV-002 |  |
+| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x216; 30 A x3; 60 A x1 | 220 | 60 | NEC 430.52, from AQS-INV-002 |  |
 ## 7. Seal datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-47 | mechanical seal, single | SiC/SiC faces, FKM | EN 12756 x174 | 174 | 42 | Acid day tank D160 x 300 mm with metering pump: induction-driven pump assumed se; Dilute-HCl return pump and transfer line to CRU: induction-driven pu |  |
+| OF-47 | mechanical seal, single | SiC/SiC faces, FKM | EN 12756 x172 | 172 | 42 | Acid day tank D160 x 300 mm with metering pump: induction-driven pump assumed se; Dilute-HCl return pump and transfer line to CRU: induction-driven pu |  |
 ## 8. Support datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
@@ -166,7 +166,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-94 | M12 bolt + nut; PP-flanged joint | ISO 3506 A4-70 | M12 bolt + nut; PP-flanged joint x16 | 16 | 1 | models/mfg/NOX_SCRUB/fasteners.csv |  |
 | OF-95 | M12 PVDF bolt + nut | ISO 3506 A4-70 | M12 PVDF bolt + nut x8 | 8 | 1 | models/mfg/HX8/fasteners.csv |  |
 | OF-96 | M12 A4-70 bolt + nut | ISO 3506 A4-70 | M12 A4-70 bolt + nut x8 | 8 | 1 | models/mfg/MET_HX_Q4/fasteners.csv |  |
-| OF-97 | M12 wedge anchor | ISO 898-1 8.8 | M12 wedge anchor x102 | 102 | 15 | models/mfg/AFTERBURNER/fasteners.csv; models/mfg/COMB_HEAT/fasteners.csv; models/mfg/CRU/fasteners.csv |  |
+| OF-97 | M12 wedge anchor | ISO 898-1 8.8 | M12 wedge anchor x110 | 110 | 16 | models/mfg/AFTERBURNER/fasteners.csv; models/mfg/COMB_HEAT/fasteners.csv; models/mfg/CRU/fasteners.csv |  |
 | OF-98 | M10 stud + nut (ISO 4014 / ISO 4032) | ISO 3506 A4-70 | M10 stud + nut (ISO 4014 / ISO 4032) x24 | 24 | 2 | models/mfg/VAC_CAST/fasteners.csv; models/mfg/VAC_IND/fasteners.csv |  |
 | OF-99 | M8 hold-down bolt | ISO 3506 A4-70 | M8 hold-down bolt x24 | 24 | 2 | models/mfg/REE_RECOVER/fasteners.csv; models/mfg/REMIN/fasteners.csv |  |
 

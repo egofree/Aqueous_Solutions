@@ -19,19 +19,19 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1446 | 59 % |
-| organic | 714 | 29 % |
+| metal_plateable | 1423 | 59 % |
+| organic | 703 | 29 % |
 | metal_reactive | 120 | 5 % |
-| silicate_oxide | 110 | 4 % |
-| unassigned | 59 | 2 % |
+| silicate_oxide | 108 | 4 % |
+| unassigned | 62 | 3 % |
 
-Unassigned: 59 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
+Unassigned: 62 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
 
 ## Held lines (no route in the present plant, or material pending)
 
 | Reason | Lines |
 |---|---|
-| held - material not identified on the line | 46 |
+| held - material not identified on the line | 49 |
 | held - material not stated on the line | 11 |
 | held - standby machine, envelope-only placeholder; material issues at its unit task 10/12 design (owner programme gate) | 1 |
 | held - pointer line: these parts are classed line by line in their unit BOMs (AQS-INV-004 roll-up) | 1 |
@@ -160,15 +160,15 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MET_MELT | 14 | 9 | 0 | 1 | 0 |
 | MET_SCRUB | 1 | 8 | 0 | 0 | 1 |
 | MET_SYN | 2 | 6 | 0 | 1 | 0 |
-| MF-01 x 72 | 3 | 1 | 2 | 0 | 0 |
+| MF-01 x 75 | 3 | 1 | 2 | 0 | 0 |
 | MF-02 x 55 | 3 | 1 | 2 | 0 | 0 |
 | MF-03 x 0 | 5 | 1 | 2 | 0 | 0 |
 | MF-04 x 0 | 5 | 0 | 1 | 0 | 0 |
 | MF-05 x 0 | 5 | 0 | 1 | 0 | 0 |
 | MF-06 x 8 | 5 | 0 | 1 | 0 | 0 |
-| MF-07 x 3 | 5 | 0 | 1 | 0 | 0 |
+| MF-07 x 4 | 5 | 0 | 1 | 0 | 0 |
 | MF-08 x 3 | 7 | 0 | 3 | 0 | 0 |
-| MF-09 x 185 | 7 | 0 | 3 | 0 | 0 |
+| MF-09 x 182 | 7 | 0 | 3 | 0 | 0 |
 | MF-10 x 9 | 7 | 0 | 3 | 0 | 0 |
 | MF-11 x 5 | 7 | 0 | 3 | 0 | 0 |
 | MF-12 x 1 | 7 | 0 | 3 | 0 | 0 |
@@ -365,7 +365,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | VCD_TRAIN | 21 | 13 | 0 | 1 | 0 |
 | VDF_SYN | 3 | 4 | 0 | 0 | 0 |
 | VERMI_BIN | 0 | 1 | 0 | 0 | 0 |
-| WAFER_FAB | 31 | 11 | 0 | 2 | 0 |
+| WAFER_FAB | 8 | 0 | 0 | 0 | 3 |
 | WASHROOM | 0 | 5 | 0 | 0 | 0 |
 | WAX_PATTERN | 8 | 0 | 0 | 0 | 0 |
 | WET_BENCH | 21 | 14 | 0 | 1 | 0 |

@@ -3,7 +3,7 @@
   "family": "MF-01",
   "type": "BLDC",
   "rating": "42 mm (NEMA 17 flange)",
-  "items": 72
+  "items": 75
  },
  {
   "family": "MF-02",
@@ -42,7 +42,7 @@
   "family": "MF-07",
   "type": "induction IE3",
   "rating": "IEC 90S / 1.1 kW",
-  "items": 3,
+  "items": 4,
   "P_kW": 1.1,
   "poles": 4,
   "Dg": 84.0,
@@ -96,7 +96,7 @@
   "family": "MF-09",
   "type": "induction IE3",
   "rating": "IEC 63 / 0.18 kW",
-  "items": 185,
+  "items": 182,
   "P_kW": 0.18,
   "poles": 4,
   "Dg": 59.0,
