@@ -1,5 +1,4 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,lid,1,HDPE,14.1,make,"tank class; moving-bed vessel 0.55 m3 at the 0.9 kg/d feed ammonia load, K1 media 0.2 m3 (A-"
-2,stub_1,1,HDPE,0.2,make,"tank class; moving-bed vessel 0.55 m3 at the 0.9 kg/d feed ammonia load, K1 media 0.2 m3 (A-"
-3,stub_2,1,HDPE,0.4,make,"tank class; moving-bed vessel 0.55 m3 at the 0.9 kg/d feed ammonia load, K1 media 0.2 m3 (A-"
-4,vessel_shell,1,HDPE,69.4,make,"tank class; moving-bed vessel 0.55 m3 at the 0.9 kg/d feed ammonia load, K1 media 0.2 m3 (A-"
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"HDPE vessel: walls and floor 15 mm, 1100 x 900 x 1000 outer, lid 15 mm",1,HDPE (duty section 3),83.5,make,size_mm verbatim; CA does not apply to the polymer (AQS-STD-001)
+2,"K1 moving-bed carrier envelope, 0.2 m3 over the vessel floor (node size_basis)",1,PE carrier class (K1),28.5,buy,"the drawn envelope carries ~0.15 of its solid volume as bare carrier PE (the hardware-cloth idiom for open media); the charge is a buy row (plan rule 6); supplier TDS at order (hold, WORK_ORDER W12)"
+3,"Nozzle set per docs-authority/nozzles/BIOFILTER.csv: 12 rows drawn as DN15/DN50 HDPE tube stubs (4 DN50, 8 DN15)",12,HDPE/PVC (duty section 3),0.2,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4

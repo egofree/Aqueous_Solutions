@@ -21,6 +21,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. No trip is specified.
 
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped. The unit is retired from the graph; no envelope is issued. Manufacturing model `models/mfg/BIOFILTER/draw_biofilter.py` (AQS-PLAN-006).
+7. Code. Shop, not stamped (AQS-STD-001 section 7 shop rule). The envelope is `cad/stl/BIOFILTER.stl` (a thick-walled tray at the claimed envelope; X-PAR-04). Manufacturing model `models/mfg/BIOFILTER/biofilter.py` (AQS-PLAN-006; build log and drawings in the same folder).
 
 8. Open items. This unit has not been measured.

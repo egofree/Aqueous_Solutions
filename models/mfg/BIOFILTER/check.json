@@ -1,25 +1,210 @@
 {
-  "shell_bbox_mm": [
+  "bbox_mm": [
     1100.0,
     900.0,
-    1012.1
+    1000.0
   ],
-  "envelope_mm": [
-    1100,
-    900,
-    1000
+  "inside_size_mm": true,
+  "size_mm": [
+    1100.0,
+    900.0,
+    1000.0
   ],
-  "inside_size_mm_shell": false,
+  "size_basis": "moving-bed vessel 0.55 m3 at the 0.9 kg/d feed ammonia load, K1 media 0.2 m3 (A-M-415; TECHTREE aquaponics) (X-FARM sec3)",
+  "graph_revision": "AD",
   "solids": 1,
   "all_parts_valid": true,
-  "material_class": "HDPE",
-  "form": "tank",
-  "mass_kg": {
+  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the flush rebuild fills the node box 1100 x 900 x 1000)",
+  "cad_stl_bbox_mm": [
+    1100.0,
+    900.0,
+    1000.0
+  ],
+  "machine": {
+    "type": "nitrifying moving-bed biofilter (Nitrosomonas + Nitrobacter biofilm on moving-bed media, node design): HDPE vessel 1100 x 900 x 1000 with 15 mm walls and floor, 15 mm lid, and the K1 carrier envelope drawn at the node's 0.2 m3 over the floor",
+    "media": "K1 moving-bed carrier envelope 0.2 m3 (node size_basis) drawn as a solid; the charge is a buy row (plan rule 6) carried at the HDPE table density until the supplier TDS (hold, W12); the 0.55 m3 moving-bed volume is a duty figure, not a model claim",
+    "o2": "aerobic: 2 mol O2 per mol NH4+ nitrified (node design) - the aeration hardware has no position or rating on the node, not drawn (hold, WORK_ORDER W12)",
+    "misfit": null,
+    "material": "HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.",
+    "ca_mm": 0.0
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 240.0,
+      "drawn_height_mm": 240.0,
+      "xy_mm": [
+        584.1,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "urine to the biofilter",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN50",
+      "face": "-Y",
+      "height_mm": 240.0,
+      "drawn_height_mm": 240.0,
+      "xy_mm": [
+        535.4,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "clarified water",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN50",
+      "face": "+Y",
+      "height_mm": 900.0,
+      "drawn_height_mm": 900.0,
+      "xy_mm": [
+        467.0,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "nitrate water",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN50",
+      "face": "+Y",
+      "height_mm": 900.0,
+      "drawn_height_mm": 900.0,
+      "xy_mm": [
+        535.4,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "nitrate water",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN50",
+      "face": "+Y",
+      "height_mm": 900.0,
+      "drawn_height_mm": 900.0,
+      "xy_mm": [
+        603.6,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "nitrate water",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 900.0,
+      "drawn_height_mm": 900.0,
+      "xy_mm": [
+        652.4,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "biofilter bleed to the nutrient tank",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        550.0,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 1200.0,
+      "drawn_height_mm": 1000.0,
+      "xy_mm": [
+        550.0,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 1200 predates the build height 1000 - drawn flush at the envelope top (hold, W12)"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        550.0,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "ammonia-rich fish waste water (NH3/NH4+ from the gills)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        520.7,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "nitrified water (NO3- nitrate, plant-available nitrogen)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N11": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        550.0,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "nitrified water to the optional sanitizer (NO3- passes; sloughed cells die in food-safety mode)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N12": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        579.3,
+        450.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "normal-mode loop bypass around AQUA_UV",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    }
+  },
+  "nozzle_count_schedule": 12,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15/DN50, no flange class, atmospheric tube or hose); N1/N2 in on -Y at z 240 (N2 DN50), N9 in on -Y at z 160; N3/N4/N5 out on +Y at z 900 (DN50) with N6 bleed beside them, N10/N11/N12 out on +Y at z 600; N7 drain flush at the envelope bottom; N8 vent flush at the envelope top (schedule z 1200 predates the 1000 box - stale datum, hold W12); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
     "vessel_shell": 69.4,
     "lid": 14.1,
-    "stub_1": 0.2,
-    "stub_2": 0.4
+    "media": 190.0,
+    "nozzles": 0.2
   },
-  "empty_kg": 84.1,
-  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+  "cadquery": "2.8.0"
 }

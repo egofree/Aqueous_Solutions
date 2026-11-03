@@ -165,7 +165,8 @@ ACCEPTED = ('AL_POT', 'IND_MELT', 'VAC_IND', 'VAC_CAST', 'INV_CAST', 'CONT_CAST'
             'STOCK_OUT',
             'AQUA_TANK',
             'AQUA_UV',
-            'BEE_HIVE')
+            'BEE_HIVE',
+            'BIOFILTER')
 
 
 # --------------------------------------------------------------------------- authorities

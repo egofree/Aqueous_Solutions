@@ -1,0 +1,3 @@
+item,size,grade,qty,location,basis
+1,M10 lid hold-down bolt + nut,ISO 3506 A4-70,8,lid clamp hardware to the vessel rim; 8 around the perimeter (study pattern),polymer joint to the polymer supplier rule (A4-70 hardware); study pattern; confirmed at fabrication
+2,M10 base hold-down anchor,ISO 898-1 8.8,4,vessel plinth to the slab; 4 corners (count from the model),8.8 on carbon steel per the plan grade rule (anchor is not a wetted part)
