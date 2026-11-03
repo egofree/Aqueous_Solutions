@@ -1,0 +1,185 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 12,
+  "all_parts_valid": true,
+  "chamber": {
+    "type": "horizontal refractory-lined combustion chamber per duty section 8 (AQS-DUTY-063 Rev B section 6, X-SAN-01): ID 200 x 600, steel shell wall 6 and refractory lining 50 (study values - holds, W12), on two saddles over a 20 mm plinth",
+    "id_mm": 200.0,
+    "length_mm": 600.0,
+    "wall_mm": 6.0,
+    "refractory_mm": 50.0,
+    "wall_basis": "study values; duty section 8: refractory and burner detail open (WORK_ORDER W12)",
+    "class_C": 850.0,
+    "residence_req_s": 2.0,
+    "v_chamber_m3": 0.01885,
+    "residence_at_flue_s": 10.5,
+    "residence_basis": "chamber volume / the AFTERBURNER_FLUE node design flow 0.0018 m3/s (200 C flue class): 10.5 s against the >= 2 s requirement (Directive 2010/75/EU Art. 50 via duty section 8); reported, not called a calculated design (A-HX; the duty claims no heat rate)",
+    "feed_kg_d": 7.03,
+    "material": "CS",
+    "ca_mm": 1.5
+  },
+  "purchased": {
+    "burner": "burner + ignition transformer + BMS panel, 0.05 kW (node equipment list) - envelope per plan rule 6; burner detail open (duty section 8, hold W12)",
+    "fan": "flue ID fan, variable-speed high-temp class, 0.1332 kW (node equipment list) - envelope per plan rule 6",
+    "damper": "dampers and flame monitor, 0.01 kW (node equipment list) - envelope per plan rule 6"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 126.8,
+      "schedule_rating": "Class 150",
+      "service": "NCG",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 244.0,
+      "schedule_rating": "Class 150",
+      "service": "organics",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 273.2,
+      "schedule_rating": "Class 150",
+      "service": "fuel into the afterburner",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 156.1,
+      "schedule_rating": "Class 150",
+      "service": "Q1 flue, not Q4",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 185.4,
+      "schedule_rating": "Class 150",
+      "service": "Q1 flue, not Q4",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 214.7,
+      "schedule_rating": "Class 150",
+      "service": "flue",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm is the box top"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 244.0,
+      "schedule_rating": "Class 150",
+      "service": "captured CO2/air",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 156.1,
+      "schedule_rating": "Class 150",
+      "service": "digester biogas, flared in the afterburner",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N11": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 185.4,
+      "schedule_rating": "Class 150",
+      "service": "combustion O2, 10 % excess",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N12": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 214.7,
+      "schedule_rating": "Class 150",
+      "service": "dewatered digestate cake to incineration (barrier 2)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    }
+  },
+  "nozzle_count_schedule": 12,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: no duct bore, no flange class); the N12 solids row (dewatered digestate cake to incineration, barrier 2) drawn DN15, bore not calculated (plan W4); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "saddles": 272.56,
+    "chamber": 33.33,
+    "refractory": 198.41,
+    "burner": 22.04,
+    "fan": 32.93,
+    "damper": 9.04,
+    "nozzles": 0.76
+  },
+  "cadquery": "2.8.0"
+}

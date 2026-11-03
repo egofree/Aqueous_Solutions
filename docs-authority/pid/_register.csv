@@ -1,7 +1,7 @@
 unit,drawing,rev,file,sector,unit_class,edges_in,edges_out,valves_placed,valves_unplaced,instruments,sifs,nozzles
 ACID_POLISH_SCRUB,AQS-PID-001-ACID_POLISH_SCRUB,5f8caf1b,docs-authority/pid/ACID_POLISH_SCRUB.svg,GAS,scrubber,3,2,6,0,6,1,6
 ADS_CHILL,AQS-PID-001-ADS_CHILL,66ec033f,docs-authority/pid/ADS_CHILL.svg,HEAT,adsorption_chiller,1,2,0,0,2,0,0
-AFTERBURNER,AQS-PID-001-AFTERBURNER,6358fdd8,docs-authority/pid/AFTERBURNER.svg,OIL,thermal,5,4,8,0,3,1,12
+AFTERBURNER,AQS-PID-001-AFTERBURNER,52f56ea2,docs-authority/pid/AFTERBURNER.svg,OIL,thermal,5,4,8,0,3,1,12
 AFTERBURNER_FLUE,AQS-PID-001-AFTERBURNER_FLUE,4695fb44,docs-authority/pid/AFTERBURNER_FLUE.svg,GAS,flue_junction,2,1,2,0,3,1,5
 AIR_RECEIVER,AQS-PID-001-AIR_RECEIVER,06227382,docs-authority/pid/AIR_RECEIVER.svg,CRYO,store,1,1,2,0,2,0,4
 ALK_SCRUBBER,AQS-PID-001-ALK_SCRUBBER,15d67afb,docs-authority/pid/ALK_SCRUBBER.svg,GAS,scrubber,3,1,2,0,4,1,5

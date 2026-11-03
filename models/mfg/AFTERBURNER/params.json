@@ -47,17 +47,17 @@
    "tag": "N4",
    "size": "DN15",
    "rating": "Class 150",
-   "service": "Q1 flue",
-   "face": " not Q4",
-   "height_mm": null
+   "service": "Q1 flue, not Q4",
+   "face": "outlet",
+   "height_mm": 600
   },
   {
    "tag": "N5",
    "size": "DN15",
    "rating": "Class 150",
-   "service": "Q1 flue",
-   "face": " not Q4",
-   "height_mm": null
+   "service": "Q1 flue, not Q4",
+   "face": "outlet",
+   "height_mm": 600
   },
   {
    "tag": "N6",
@@ -120,5 +120,49 @@
  "acceptance_sets": [
   "A-core",
   "A-HX"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "chamber": {
+   "id_mm": 200.0,
+   "length_mm": 600.0,
+   "od_mm": 312.0,
+   "axis_mm": [
+    null,
+    300.0,
+    420.0
+   ],
+   "x0_mm": 200.0
+  },
+  "plinth_mm": 20.0
+ },
+ "design": {
+  "service": "AFTERBURNER: waste-gas and sanitation-cake combustion chamber, >= 850 C for >= 2 s (duty section 8, EU IED Art. 50), atmospheric",
+  "material": "CS",
+  "ca_mm": 1.5,
+  "wall_mm": 6.0,
+  "wall_basis": "study value (hold W12)",
+  "refractory_mm": 50.0,
+  "refractory_basis": "study layer; duty detail open (hold W12)",
+  "class_C": 850.0,
+  "residence_req_s": 2.0,
+  "residence_at_flue_s": 10.5,
+  "purchased": {
+   "burner_kW": 0.05,
+   "fan_kW": 0.1332,
+   "damper_kW": 0.01,
+   "basis": "node equipment list, envelopes per plan rule 6"
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; chamber axis along +x at y 300, z 420, chamber x 200..800; burner envelope on -X, fan envelope on +X, damper envelope on top",
+  "supports": "plinth + two saddles + 8 slab anchors",
+  "nozzle_spread": "the schedule gives face and height only; ports pack in one row per face/height group from x 100, 8 mm clear at the bore; drain at x 460, vent at x 540; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

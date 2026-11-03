@@ -110,3 +110,30 @@ never resized.
   (W12), nothing resized. The N4 schedule row quoting repaired ("digest
   NaOH, 20 wt%" — unquoted comma shifted face and height). Tracker and full
   regen run; `--check` and `check_all` green.
+
+## AFTERBURNER (waste-gas combustion chamber, OIL, tier 6) — commit 5
+
+- `models/mfg/AFTERBURNER/afterburner.py` on the shared lib. Route F-HX (the
+  `thermal` class sits in the F-HX row of plan section 4), acceptance
+  A-core + A-HX. Build 1000 × 600 × 800 mm against the node envelope: inside,
+  filled exactly; one closed manifold mesh; `cad/stl/AFTERBURNER.stl` replaced
+  from the build; `tracker --check AFTERBURNER` green.
+- Machine per duty section 8 (AQS-DUTY-063 Rev B section 6, X-SAN-01):
+  horizontal combustion chamber ID 200 × 600, ≥ 850 C for ≥ 2 s (Directive
+  2010/75/EU Art. 50), steel shell wall 6 and refractory lining 50 as study
+  values ("refractory and burner detail open" — holds, W12), on saddles over a
+  20 mm plinth. Purchased envelopes per plan rule 6 from the node equipment
+  list: burner + ignition transformer + BMS 0.05 kW, flue ID fan 0.1332 kW,
+  dampers + flame monitor 0.01 kW.
+- A-HX report: chamber volume 0.01885 m³; residence at the AFTERBURNER_FLUE
+  node design flow 0.0018 m³/s (200 C flue class) is 10.5 s against the ≥ 2 s
+  requirement — reported, not called a calculated design.
+- Nozzles: all 12 schedule rows at tag, face, height and bore, atmospheric
+  open-bore tube stubs flush at the envelope faces; the N12 solids row drawn
+  DN15, bore not calculated (plan W4); the N4/N5 schedule row quoting repaired
+  ("Q1 flue, not Q4" — unquoted comma shifted face and height).
+- 7-sheet drawing set (GA front/side, nozzle orientation, chamber,
+  supports+purchased envelopes, hardware, iso); WORK_ORDER W1–W12, BOM
+  make-or-buy, fasteners, build log acceptance line, check.json. Added to the
+  tracker ACCEPTED row set; tracker and full regen run; `--check` and
+  `check_all` green.

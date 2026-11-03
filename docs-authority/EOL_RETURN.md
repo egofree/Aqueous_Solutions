@@ -19,19 +19,19 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1527 | 60 % |
-| organic | 744 | 29 % |
+| metal_plateable | 1513 | 59 % |
+| organic | 742 | 29 % |
 | metal_reactive | 120 | 5 % |
-| silicate_oxide | 119 | 5 % |
-| unassigned | 54 | 2 % |
+| silicate_oxide | 118 | 5 % |
+| unassigned | 57 | 2 % |
 
-Unassigned: 54 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
+Unassigned: 57 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
 
 ## Held lines (no route in the present plant, or material pending)
 
 | Reason | Lines |
 |---|---|
-| held - material not identified on the line | 41 |
+| held - material not identified on the line | 44 |
 | held - material not stated on the line | 11 |
 | held - standby machine, envelope-only placeholder; material issues at its unit task 10/12 design (owner programme gate) | 1 |
 | held - pointer line: these parts are classed line by line in their unit BOMs (AQS-INV-004 roll-up) | 1 |
@@ -44,7 +44,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 |---|---|---|---|---|---|
 | ACID_POLISH_SCRUB | 13 | 15 | 0 | 1 | 0 |
 | ADS_CHILL | 0 | 2 | 0 | 0 | 0 |
-| AFTERBURNER | 20 | 2 | 0 | 2 | 0 |
+| AFTERBURNER | 5 | 0 | 0 | 1 | 3 |
 | AFTERBURNER_FLUE | 7 | 2 | 0 | 3 | 0 |
 | AIR_RECEIVER | 6 | 2 | 0 | 2 | 0 |
 | ALK_SCRUBBER | 8 | 9 | 0 | 1 | 0 |
@@ -209,6 +209,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-106 | 1 | 0 | 0 | 0 | 0 |
 | OF-107 | 1 | 0 | 0 | 0 | 0 |
 | OF-108 | 1 | 0 | 0 | 0 | 0 |
+| OF-109 | 1 | 0 | 0 | 0 | 0 |
 | OF-11 | 1 | 0 | 0 | 0 | 0 |
 | OF-12 | 1 | 0 | 0 | 0 | 0 |
 | OF-13 | 0 | 0 | 0 | 0 | 1 |

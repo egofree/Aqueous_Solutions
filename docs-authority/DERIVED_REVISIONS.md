@@ -16,7 +16,7 @@ This page ties every derived file to the graph commit it was last made from, so 
 
 The count line below is generated with the page. `python3 -m flow_graph.param.regen` refreshes the stamps; `--check` fails on any stale file.
 
-1773 derived files, 970 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+1773 derived files, 969 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Made from graph commit | Status |
 |---|---|---|
@@ -30,14 +30,14 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/BOUGHT_SPECS.md` | working tree | current |
 | `docs-authority/BUSBAR.json` | f0160a6 | current |
 | `docs-authority/BUSBAR.md` | 91d33f4 | stale |
-| `docs-authority/CABLE_SCHEDULE.md` | working tree | current |
+| `docs-authority/CABLE_SCHEDULE.md` | f0160a6 | current |
 | `docs-authority/CAUSE_EFFECT.md` | f0160a6 | current |
 | `docs-authority/CODE_BASIS.md` | 4f4f69d | stale |
 | `docs-authority/COLLECTION_BUS.md` | 49f8768 | stale |
-| `docs-authority/COMMISSIONING.md` | working tree | current |
+| `docs-authority/COMMISSIONING.md` | f0160a6 | current |
 | `docs-authority/COMPLIANCE_MATRIX.md` | 4f4f69d | stale |
-| `docs-authority/CONTROL_ARCH.md` | working tree | current |
-| `docs-authority/CONTROL_SOFTWARE.md` | working tree | current |
+| `docs-authority/CONTROL_ARCH.md` | f0160a6 | current |
+| `docs-authority/CONTROL_SOFTWARE.md` | f0160a6 | current |
 | `docs-authority/COST_ESTIMATE_BOM.md` | working tree | current |
 | `docs-authority/DECOMMISSIONING.md` | 49f8768 | stale |
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
@@ -57,14 +57,14 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/HALL_EGRESS.md` | e286326 | stale |
 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | 48bc545 | stale |
 | `docs-authority/HAZMAT_SEPARATION.md` | 0d58fe8 | stale |
-| `docs-authority/HAZOP.md` | working tree | current |
+| `docs-authority/HAZOP.md` | f0160a6 | current |
 | `docs-authority/HAZOP_ACTION_REGISTER.md` | 66d9b85 | stale |
 | `docs-authority/HAZ_AREA.md` | f0160a6 | current |
 | `docs-authority/HULL_DESIGN.md` | ebd85a5 | stale |
 | `docs-authority/HVAC.md` | 49f8768 | stale |
 | `docs-authority/HYDRO_SITING.md` | 0d58fe8 | stale |
 | `docs-authority/INSTALL_SEQUENCE.md` | 514e50a | stale |
-| `docs-authority/INSTRUMENT_INDEX.md` | working tree | current |
+| `docs-authority/INSTRUMENT_INDEX.md` | f0160a6 | current |
 | `docs-authority/INSULATION_SCHEDULE.md` | e7abac2 | stale |
 | `docs-authority/INTERNALS.md` | f0160a6 | current |
 | `docs-authority/ISO_ROUTES.json` | f0160a6 | current |
@@ -80,12 +80,12 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/MFG_MODEL_PLAN.md` | working tree | current |
 | `docs-authority/MFG_TOOLS.md` | 0d58fe8 | stale |
 | `docs-authority/MODEL_WORKBOOK.xlsx` | f0160a6 | current |
-| `docs-authority/MOTOR_FIRST_ARTICLE.md` | working tree | current |
+| `docs-authority/MOTOR_FIRST_ARTICLE.md` | f0160a6 | current |
 | `docs-authority/O2_SOURCE.md` | d50ba80 | stale |
 | `docs-authority/O2_SOURCE_AUDIT.md` | 91d33f4 | stale |
 | `docs-authority/ONE_LINE.json` | f0160a6 | current |
 | `docs-authority/ONE_LINE.md` | 49f8768 | stale |
-| `docs-authority/OPERATING_PROCEDURES.md` | working tree | current |
+| `docs-authority/OPERATING_PROCEDURES.md` | f0160a6 | current |
 | `docs-authority/PARAMETRIC_MODEL.md` | f0160a6 | current |
 | `docs-authority/PERF_TEST.md` | 49f8768 | stale |
 | `docs-authority/PIPE_SPECS.md` | 97033c5 | stale |
@@ -112,7 +112,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/TEST_RIGS.md` | 91d33f4 | stale |
 | `docs-authority/UNIT_MATERIALS.md` | f0160a6 | current |
 | `docs-authority/WATER_TOWER.md` | 66d9b85 | stale |
-| `docs-authority/WIRE_SPECS.md` | working tree | current |
+| `docs-authority/WIRE_SPECS.md` | f0160a6 | current |
 | `docs-authority/WPS_REGISTER.md` | 97033c5 | stale |
 | `docs-authority/ZNBR2_STACK_TEST.md` | 3b7a776 | stale |
 | `docs-authority/drawings/motor_fa/MF-04.svg` | 91d33f4 | stale |
@@ -167,7 +167,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/ACEX.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/ACID_POLISH_SCRUB.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/ADS_CHILL.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/AFTERBURNER.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/AFTERBURNER.md` | working tree | current |
 | `docs-authority/duties/AFTERBURNER_FLUE.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/AIR_RECEIVER.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/ALD.md` | f0160a6 (regenerated, no change) | current |
@@ -285,7 +285,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/GEO_HP_CLOSED_LOOP.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GEO_ORC.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GLASS_BURNOUT.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/GLASS_DIGEST.md` | working tree | current |
+| `docs-authority/duties/GLASS_DIGEST.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GLASS_MILL.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GLASS_RINSE.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GLYOXAL.md` | f0160a6 (regenerated, no change) | current |
@@ -491,7 +491,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/fab/WAX_PATTERN.md` | cd250ea | stale |
 | `docs-authority/hazop_actions.csv` | e7abac2 | stale |
 | `docs-authority/insulation_schedule.csv` | e7abac2 | stale |
-| `docs-authority/inventory/COMMISSIONING.csv` | working tree | current |
+| `docs-authority/inventory/COMMISSIONING.csv` | f0160a6 | current |
 | `docs-authority/inventory/COST_ESTIMATE_BOM.csv` | working tree | current |
 | `docs-authority/inventory/DECOMMISSIONING.csv` | 49f8768 | stale |
 | `docs-authority/inventory/DESIGN_CHECK.csv` | f0160a6 | current |
@@ -499,15 +499,15 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/inventory/FRAME_CHECK.json` | 49f8768 | stale |
 | `docs-authority/inventory/GAS_DETECTORS.csv` | d50ba80 | stale |
 | `docs-authority/inventory/HVAC_ROOMS.csv` | 49f8768 | stale |
-| `docs-authority/inventory/INSTRUMENT_INDEX.csv` | working tree | current |
+| `docs-authority/inventory/INSTRUMENT_INDEX.csv` | f0160a6 | current |
 | `docs-authority/inventory/INTERNALS.json` | f0160a6 | current |
-| `docs-authority/inventory/MAGNET_COMPARISON.csv` | working tree | current |
-| `docs-authority/inventory/MOTOR_DESIGNS.csv` | working tree | current |
-| `docs-authority/inventory/MOTOR_DESIGNS.md` | working tree | current |
-| `docs-authority/inventory/MOTOR_FA.json` | working tree | current |
-| `docs-authority/inventory/MOTOR_FAMILIES.csv` | working tree | current |
-| `docs-authority/inventory/MOTOR_INVENTORY.csv` | working tree | current |
-| `docs-authority/inventory/MOTOR_INVENTORY.md` | working tree | current |
+| `docs-authority/inventory/MAGNET_COMPARISON.csv` | f0160a6 | current |
+| `docs-authority/inventory/MOTOR_DESIGNS.csv` | f0160a6 | current |
+| `docs-authority/inventory/MOTOR_DESIGNS.md` | f0160a6 | current |
+| `docs-authority/inventory/MOTOR_FA.json` | f0160a6 | current |
+| `docs-authority/inventory/MOTOR_FAMILIES.csv` | f0160a6 | current |
+| `docs-authority/inventory/MOTOR_INVENTORY.csv` | f0160a6 | current |
+| `docs-authority/inventory/MOTOR_INVENTORY.md` | f0160a6 | current |
 | `docs-authority/inventory/OTHER_FAMILIES.csv` | working tree | current |
 | `docs-authority/inventory/OTHER_INVENTORY.csv` | working tree | current |
 | `docs-authority/inventory/OTHER_INVENTORY.md` | working tree | current |
@@ -522,11 +522,11 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/inventory/STRUCT_ROWS.json` | 49f8768 | stale |
 | `docs-authority/inventory/TEST_RIGS.json` | 91d33f4 | stale |
 | `docs-authority/inventory/UNIT_MATERIALS.json` | f0160a6 | current |
-| `docs-authority/inventory/WIRE_FAMILIES.csv` | working tree | current |
-| `docs-authority/inventory/WIRE_INVENTORY.csv` | working tree | current |
-| `docs-authority/inventory/WIRE_INVENTORY.md` | working tree | current |
-| `docs-authority/inventory/WIRE_SPECS.json` | working tree | current |
-| `docs-authority/inventory/motor_families/MF-01.md` | working tree | current |
+| `docs-authority/inventory/WIRE_FAMILIES.csv` | f0160a6 | current |
+| `docs-authority/inventory/WIRE_INVENTORY.csv` | f0160a6 | current |
+| `docs-authority/inventory/WIRE_INVENTORY.md` | f0160a6 | current |
+| `docs-authority/inventory/WIRE_SPECS.json` | f0160a6 | current |
+| `docs-authority/inventory/motor_families/MF-01.md` | f0160a6 | current |
 | `docs-authority/inventory/motor_families/MF-02.md` | f0160a6 | current |
 | `docs-authority/inventory/motor_families/MF-03.md` | 3be5b7b | stale |
 | `docs-authority/inventory/motor_families/MF-04.md` | 4f4f69d | stale |
@@ -537,7 +537,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/inventory/motor_families/MF-09.md` | f0160a6 | current |
 | `docs-authority/inventory/motor_families/MF-10.md` | f0160a6 | current |
 | `docs-authority/inventory/motor_families/MF-11.md` | f0160a6 | current |
-| `docs-authority/inventory/motor_families/MF-12.md` | working tree | current |
+| `docs-authority/inventory/motor_families/MF-12.md` | f0160a6 | current |
 | `docs-authority/inventory/motor_families/MF-13.md` | 514e50a | stale |
 | `docs-authority/inventory/motor_families/MF-14.md` | 0d58fe8 | stale |
 | `docs-authority/inventory/motor_families/MF-15.md` | 0d58fe8 | stale |
@@ -559,7 +559,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/nozzles/ACETOX.csv` | 32aad55 | stale |
 | `docs-authority/nozzles/ACEX.csv` | 32aad55 | stale |
 | `docs-authority/nozzles/ACID_POLISH_SCRUB.csv` | 3321f37 | stale |
-| `docs-authority/nozzles/AFTERBURNER.csv` | 3321f37 | stale |
+| `docs-authority/nozzles/AFTERBURNER.csv` | working tree | current |
 | `docs-authority/nozzles/AFTERBURNER_FLUE.csv` | 32aad55 | stale |
 | `docs-authority/nozzles/AIR_RECEIVER.csv` | 3321f37 | stale |
 | `docs-authority/nozzles/ALD.csv` | 32aad55 | stale |
@@ -677,7 +677,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/nozzles/GEO_HP_CLOSED_LOOP.csv` | 3321f37 | stale |
 | `docs-authority/nozzles/GEO_ORC.csv` | 32aad55 | stale |
 | `docs-authority/nozzles/GLASS_BURNOUT.csv` | f0160a6 | current |
-| `docs-authority/nozzles/GLASS_DIGEST.csv` | working tree | current |
+| `docs-authority/nozzles/GLASS_DIGEST.csv` | f0160a6 | current |
 | `docs-authority/nozzles/GLASS_MILL.csv` | 3321f37 | stale |
 | `docs-authority/nozzles/GLASS_RINSE.csv` | 32aad55 | stale |
 | `docs-authority/nozzles/GLYOXAL.csv` | 32aad55 | stale |
@@ -828,7 +828,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/nozzles/ZNBR2_BR2_REGEN.csv` | 32aad55 | stale |
 | `docs-authority/pid/ACID_POLISH_SCRUB.svg` | f0160a6 | current |
 | `docs-authority/pid/ADS_CHILL.svg` | f0160a6 | current |
-| `docs-authority/pid/AFTERBURNER.svg` | f0160a6 | current |
+| `docs-authority/pid/AFTERBURNER.svg` | working tree | current |
 | `docs-authority/pid/AFTERBURNER_FLUE.svg` | f0160a6 | current |
 | `docs-authority/pid/AIR_RECEIVER.svg` | f0160a6 | current |
 | `docs-authority/pid/ALK_SCRUBBER.svg` | f0160a6 | current |
@@ -901,7 +901,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/pid/GEO_HP.svg` | f0160a6 | current |
 | `docs-authority/pid/GEO_HP_CLOSED_LOOP.svg` | f0160a6 | current |
 | `docs-authority/pid/GLASS_BURNOUT.svg` | f0160a6 | current |
-| `docs-authority/pid/GLASS_DIGEST.svg` | working tree | current |
+| `docs-authority/pid/GLASS_DIGEST.svg` | f0160a6 | current |
 | `docs-authority/pid/GLASS_MILL.svg` | f0160a6 | current |
 | `docs-authority/pid/GLASS_RINSE.svg` | f0160a6 | current |
 | `docs-authority/pid/GREASE_CA.svg` | f0160a6 | current |
@@ -1033,7 +1033,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/plc/PLC-FOUNDRY.st` | f0160a6 | current |
 | `docs-authority/plc/PLC-GAS.st` | f0160a6 | current |
 | `docs-authority/plc/PLC-GEO.st` | 3be5b7b | stale |
-| `docs-authority/plc/PLC-GLASS.st` | working tree | current |
+| `docs-authority/plc/PLC-GLASS.st` | f0160a6 | current |
 | `docs-authority/plc/PLC-HAB.st` | 85b98af | stale |
 | `docs-authority/plc/PLC-HEAT.st` | 6e92030 | stale |
 | `docs-authority/plc/PLC-MEOH.st` | f0160a6 | current |
@@ -1217,7 +1217,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/derived/_regen_receipt.json` | working tree | current |
 | `flow_graph/fire_rooms.json` | 48bc545 | stale |
 | `flow_graph/inventory/motor_family_ids.json` | ab2c5a3 | stale |
-| `flow_graph/inventory/other_family_ids.json` | f0160a6 | current |
+| `flow_graph/inventory/other_family_ids.json` | working tree | current |
 | `flow_graph/inventory/pipe_family_ids.json` | 93594c7 | stale |
 | `flow_graph/inventory/wire_family_ids.json` | 3be5b7b | stale |
 | `flow_graph/placement_seed.json` | 49f8768 | stale |
@@ -1251,7 +1251,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `media/verify_view.png` | - | manual capture in GUI FreeCAD (models/freecad/verify_view_png.py) |
 | `models/mfg/ACID_POLISH_SCRUB/params.json` | f0160a6 | current |
 | `models/mfg/ADS_CHILL/params.json` | f0160a6 | current |
-| `models/mfg/AFTERBURNER/params.json` | f0160a6 | current |
+| `models/mfg/AFTERBURNER/params.json` | working tree | current |
 | `models/mfg/AFTERBURNER_FLUE/params.json` | f0160a6 | current |
 | `models/mfg/AIR_RECEIVER/params.json` | f0160a6 | current |
 | `models/mfg/ALK_SCRUBBER/params.json` | f0160a6 | current |
@@ -1324,7 +1324,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/GEO_HP/params.json` | f0160a6 | current |
 | `models/mfg/GEO_HP_CLOSED_LOOP/params.json` | f0160a6 | current |
 | `models/mfg/GLASS_BURNOUT/params.json` | f0160a6 | current |
-| `models/mfg/GLASS_DIGEST/params.json` | working tree | current |
+| `models/mfg/GLASS_DIGEST/params.json` | f0160a6 | current |
 | `models/mfg/GLASS_MILL/params.json` | f0160a6 | current |
 | `models/mfg/GLASS_RINSE/params.json` | f0160a6 | current |
 | `models/mfg/GREASE_CA/params.json` | f0160a6 | current |

@@ -89,7 +89,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-94 | fastener: M12 bolt + nut; PP-flanged joint (M12 bolt + nut; PP-flanged joint x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-95 | fastener: M12 PVDF bolt + nut (M12 PVDF bolt + nut x8) | 8 | 4 | 2 % min 4 |
 | building block | OF-96 | fastener: M12 A4-70 bolt + nut (M12 A4-70 bolt + nut x8) | 8 | 4 | 2 % min 4 |
-| building block | OF-97 | fastener: M12 wedge anchor (M12 wedge anchor x70) | 70 | 4 | 2 % min 4 |
+| building block | OF-97 | fastener: M12 wedge anchor (M12 wedge anchor x78) | 78 | 4 | 2 % min 4 |
 | building block | OF-98 | fastener: M10 stud + nut (ISO 4014 / ISO 4032) (M10 stud + nut (ISO 4014 / ISO 4032) x24) | 24 | 4 | 2 % min 4 |
 | building block | OF-99 | fastener: M8 hold-down bolt (M8 hold-down bolt x24) | 24 | 4 | 2 % min 4 |
 | building block | OF-100 | fastener: M16 wedge anchor (M16 wedge anchor x16) | 16 | 4 | 2 % min 4 |
@@ -101,6 +101,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-106 | fastener: M8 wedge anchor (M8 wedge anchor x4) | 4 | 4 | 2 % min 4 |
 | building block | OF-107 | fastener: M12 housing bolt + nut (M12 housing bolt + nut x4) | 4 | 4 | 2 % min 4 |
 | building block | OF-108 | fastener: M12 roll-shaft bolt + nut (M12 roll-shaft bolt + nut x4) | 4 | 4 | 2 % min 4 |
+| building block | OF-109 | fastener: M12 saddle bolt + nut (M12 saddle bolt + nut x8) | 8 | 4 | 2 % min 4 |
 | motor | MF-01 | BLDC 42 mm (NEMA 17 flange) 24 V DC | 67 | 4 | 5 % min 1 |
 | motor | MF-02 | BLDC 57 mm (NEMA 23 flange) 24 V DC | 55 | 3 | 5 % min 1 |
 | motor | MF-06 | induction IE3 IEC 71 / 0.37 kW 480 V 3-ph | 8 | 1 | 5 % min 1 |
@@ -134,4 +135,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-124 lines; 30 spare motors, 980 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+125 lines; 30 spare motors, 984 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.

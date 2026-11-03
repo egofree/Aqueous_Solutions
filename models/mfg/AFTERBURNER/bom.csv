@@ -1,23 +1,8 @@
-item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,docs-authority/duties/AFTERBURNER.md
-2,Process nozzle DN15,7,Carbon steel.,one per mass edge; DN from AQS-INV-003
-3,"Motor: induced-draft fan (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-4,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-5,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-6,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-7,fastener: anchor bolt M10,40,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-8,fastener: anchor bolt M10,28,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-9,fastener: anchor bolt M10,48,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-10,fastener: anchor bolt M10,22,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-11,"instrument: gas detector, CO electrochemical CO",2,"alarm 25 ppm, trip 50 ppm, breathing height",AQS-INV-004
-12,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-13,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-14,"instrument: temperature element (SIF, independent) Pt100 class A",1,"IEC 60751, own thermowell",AQS-INV-004
-15,support: U-bolt with guide DN15,20,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-16,support: U-bolt with guide DN15,14,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-17,support: U-bolt with guide DN15,24,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-18,support: pipe clamp DN15,11,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-19,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-20,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-21,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-22,valve: isolation valve DN15,2,"PVC-lined ball valve in FRP service, ISO 16135",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Combustion chamber ID 200 x 600, steel shell wall 6 (study) with two end heads, per duty section 8 (X-SAN-01)",1,carbon steel (duty section 3),33.33,make,"duty section 8 chamber sizing; wall a study value (hold, WORK_ORDER W12); CA 1.5 mm (AQS-STD-001 hydrocarbon rule)"
+2,Refractory lining t 50 over the full chamber bore and ends,1,refractory (castable/class per duty - detail open),198.41,make,"duty section 8: refractory detail open - lining drawn as a study layer (hold, WORK_ORDER W12); nothing resized"
+2,"Saddles, 2 off (180 mm bases to the chamber bore) + plinth 1000 x 600 x 20",1,carbon steel (ASTM A500),366.76,make,AQS-MOD-002 dry service; saddle tops pierce the shell annulus (fuse idiom); anchors in fasteners.csv
+5,"Burner + ignition transformer + BMS panel envelope, 0.05 kW",1,purchased unit (envelope),22.04,buy,"node equipment list; plan rule 6 envelope; burner detail open (hold, W12)"
+6,"Flue ID fan envelope, variable-speed high-temp class, 0.1332 kW",1,purchased unit (envelope),32.93,buy,node equipment list; plan rule 6 envelope
+7,"Damper and flame monitor envelope, 0.01 kW",1,purchased unit (envelope),9.04,buy,node equipment list; plan rule 6 envelope
+8,"Nozzle set per docs-authority/nozzles/AFTERBURNER.csv: 11 open-bore tube stubs (DN15), the N12 solids row drawn DN15 bore not calculated",12,carbon steel,0.76,make,schedule tags/faces/heights verbatim; atmospheric tube per duty section 4

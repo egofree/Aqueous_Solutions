@@ -2629,7 +2629,9 @@ OIL,LEACH_EW,HOPPER,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS 
 OIL,OIL_GLASS,AFTERBURNER,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,induced-draft fan (assumed size)
 OIL,OIL_GLASS,AFTERBURNER,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,induced-draft fan
 OIL,OIL_GLASS,AFTERBURNER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,induced-draft fan: run and fault (assumed)
-OIL,OIL_GLASS,AFTERBURNER,fabricated part,fabricated part set,22 BOM lines,models/mfg/AFTERBURNER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+OIL,OIL_GLASS,AFTERBURNER,fabricated part,fabricated part set,7 BOM lines,models/mfg/AFTERBURNER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+OIL,OIL_GLASS,AFTERBURNER,fastener,M12 saddle bolt + nut,M12 saddle bolt + nut,ISO 898-1 8.8,8,models/mfg/AFTERBURNER/fasteners.csv
+OIL,OIL_GLASS,AFTERBURNER,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,8,models/mfg/AFTERBURNER/fasteners.csv
 OIL,OIL_GLASS,AFTERBURNER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,HL-AFTERBURNER-Q1-A: 2 per support (assumed)
 OIL,OIL_GLASS,AFTERBURNER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,HL-AFTERBURNER-Q1-B: 2 per support (assumed)
 OIL,OIL_GLASS,AFTERBURNER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,S18: 2 per support (assumed)
