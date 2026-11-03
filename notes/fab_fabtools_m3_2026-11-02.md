@@ -121,7 +121,7 @@ All nine wafer-fab/fab-tools units accepted M3 in one commit per unit (plan
 rule 4), plus one WAFER_FAB seat correction: WAFER_FAB, WET_BENCH,
 LITHO_ALIGN, LITHO_COAT, LITHO_DEV, SOLAR_PV_CELL, ELECTRODE_COAT,
 BLOW_MOLD, BMED_UPW_POLISH. Final counts are on the tracker (section 7 of
-AQS-PLAN-006; 13 units remain at M0). Route holds carried by name:
+AQS-PLAN-006; 14 units remain at M0). Route holds carried by name:
 LITHO_ALIGN (aligner), LITHO_COAT (coater), ELECTRODE_COAT (coater),
 BLOW_MOLD (former). Systemic observations carried, not fixed: (a) graphviz
 `dot` 2.42.4 intermittently takes a "trouble in init_rank" error path on

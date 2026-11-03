@@ -38,12 +38,12 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/COMPLIANCE_MATRIX.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/CONTROL_ARCH.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/CONTROL_SOFTWARE.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/COST_ESTIMATE_BOM.md` | working tree | current |
+| `docs-authority/COST_ESTIMATE_BOM.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/DECOMMISSIONING.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
 | `docs-authority/DESIGN_CHECK.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/DOC_REGISTER.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/DRAWING_REGISTER.md` | working tree | current |
+| `docs-authority/DRAWING_REGISTER.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/ENCLOSURE_EGRESS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/EOL_RETURN.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/FARM_DESIGN.md` | f0160a6 (regenerated, no change) | current |
@@ -77,7 +77,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/LOAD_LIST.json` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/LOAD_LIST.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/MAINT_PLAN.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/MFG_MODEL_PLAN.md` | working tree | current |
+| `docs-authority/MFG_MODEL_PLAN.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/MFG_TOOLS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/MODEL_WORKBOOK.xlsx` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | f0160a6 (regenerated, no change) | current |
@@ -492,7 +492,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/hazop_actions.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/insulation_schedule.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/COMMISSIONING.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/COST_ESTIMATE_BOM.csv` | working tree | current |
+| `docs-authority/inventory/COST_ESTIMATE_BOM.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/DECOMMISSIONING.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/DESIGN_CHECK.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/EOL_RETURN.csv` | f0160a6 (regenerated, no change) | current |
@@ -1233,7 +1233,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/views/efd-thermal.svg` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/mfd.dot` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/mfd.json` | f0160a6 (regenerated, no change) | current |
-| `flow_graph/views/mfd.svg` | working tree | current |
+| `flow_graph/views/mfd.svg` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/pfd.dot` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/pfd.json` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/pfd.svg` | f0160a6 (regenerated, no change) | current |
