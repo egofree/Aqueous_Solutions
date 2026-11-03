@@ -1,6 +1,6 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,drop_board,1,HDG_steel,76.5,make,frame class; 6 ducks x 0.3 m2 + wallow strip (A-M-421; TECHTREE ducks.md) (X-FARM sec3)
-2,floor_wire,1,HDG_steel,23.3,make,frame class; 6 ducks x 0.3 m2 + wallow strip (A-M-421; TECHTREE ducks.md) (X-FARM sec3)
-3,frame_legs,1,HDG_steel,60.3,make,frame class; 6 ducks x 0.3 m2 + wallow strip (A-M-421; TECHTREE ducks.md) (X-FARM sec3)
-4,roof,1,HDG_steel,76.5,make,frame class; 6 ducks x 0.3 m2 + wallow strip (A-M-421; TECHTREE ducks.md) (X-FARM sec3)
-5,wire_panels,1,HDG_steel,29.8,make,frame class; 6 ducks x 0.3 m2 + wallow strip (A-M-421; TECHTREE ducks.md) (X-FARM sec3)
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"HDG frame: 4 legs 40 x 40 to z 1200, sheet roof at z 1200",1,hot-dip galvanised steel (duty section 3),136.8,make,"size_basis verbatim (A-M-421); frame weldment, AQS-MOD-002 farm frame class"
+2,Drop board 3 mm at z 100,1,hot-dip galvanised steel (duty section 3),76.5,make,board under the wire floor; wash-down class
+3,Hardware cloth: wire floor at z 300 + panel bands at z 300..550 and z 1050..1300 (1 mm cloth class),1,hot-dip galvanised hardware cloth (duty section 3),53.1,buy,"drawn as plate solids; the mesh open area carries ~0.15 of the plate mass (the hardware-cloth idiom); buy panels cut to size, plan rule 6"
+4,"EPDM wallow liner patch 800 x 600 x 5 on the drop board, -X end",1,EPDM (duty section 3),2.8,buy,"the size_basis wallow strip, lined per duty section 3 (permanently wet; standing water governs); liner sheet is a buy good, plan rule 6; patch size and position are study layout choices (hold, WORK_ORDER W12)"
+5,"Nozzle set per docs-authority/nozzles/DUCK_PEN.csv: 9 rows drawn as DN15 tube stubs (3 in z 160, 4 out z 600, drain, vent)",9,HDPE fittings,0.6,make,"schedule tags/faces/heights verbatim; elevations are schedule placeholders, the cloth wall backing is a fabrication detail (hold, WORK_ORDER W12); atmospheric per duty section 4"

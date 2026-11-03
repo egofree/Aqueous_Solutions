@@ -168,7 +168,8 @@ ACCEPTED = ('AL_POT', 'IND_MELT', 'VAC_IND', 'VAC_CAST', 'INV_CAST', 'CONT_CAST'
             'BEE_HIVE',
             'BIOFILTER',
             'BSFL_BIN',
-            'CHICKEN_COOP')
+            'CHICKEN_COOP',
+            'DUCK_PEN')
 
 
 # --------------------------------------------------------------------------- authorities

@@ -4,7 +4,7 @@ Class: pen; sector FARM. Study route. Not stamped.
 Envelope: Envelope 2500×1300×1300 mm;
 service line: service duck pen, 6 Khaki Campbell ducks; stock 6; egg_kg_d 0.34; ration_kg_d 0.9; basis A-M-421 (X-FARM-05).
 
-Internals: duty sheet: "Hot-dip galvanised steel frame and hardware cloth, EPDM liner in the wallow, SS316 waterers. Basis: permanentl" [docs-authority/duties/DUCK_PEN.md]
+Internals: issued mfg model BOM (1 internals part row): "4,"EPDM wallow liner patch 800 x 600 x 5 on the drop board, -X end",1,EPDM (duty section" [models/mfg/DUCK_PEN/bom.csv]
 Material: Hot-dip galvanised steel frame and hardware cloth, EPDM liner in the wallow, SS316 waterers. Basis: permanently wet pen with a wallow (graph design; A-M-421): standing water governs the zinc budget, so the wet zone is EPDM-lined and drinking-water contact is SS316 Alternative: FRP wet panels in place of the liner if the pen geometry changes. (continues on the duty sheet)
 
 Nozzles: 9 process connections per docs-authority/nozzles/DUCK_PEN.csv
