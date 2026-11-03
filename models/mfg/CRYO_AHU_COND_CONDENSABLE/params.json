@@ -58,5 +58,51 @@
  ],
  "holds": [
   "class not stated on the node"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "plinth_mm": 20.0,
+  "shell": {
+   "od_mm": 540.0,
+   "wall_mm": 8.0,
+   "z_mm": [
+    40.0,
+    760.0
+   ],
+   "pos_mm": [
+    500.0,
+    300.0
+   ]
+  },
+  "weir": {
+   "x_mm": 420.0,
+   "top_mm": 360.0
+  },
+  "launder": {
+   "x_mm": [
+    660.0,
+    750.0
+   ],
+   "lip_mm": 360.0
+  }
+ },
+ "design": {
+  "service": "CRYO_AHU_COND_CONDENSABLE: the AHU condensable slip knocked out against the cooled shell; condensables leave above the weir to the S70 line (duty sections 1 and 4)",
+  "node_class": "blank on the node (the tracker row says what is known); route hold named (W12)",
+  "material": "316L",
+  "ca_mm": 0.0,
+  "material_basis": "duty section 3: 316L, condensation, no carbon steel; CA 0 mm (AQS-STD-001)",
+  "superseded": "duty section 4 / seed 600 x 400 x 600 figures predate the node study box; the node governs (W12)"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; shell centred with a 30 mm stand-off to the +/-Y faces; weir at x 420..430 to z 360; launder at x 660..750, lip top z 360 (the FLUE_KO idiom)",
+  "supports": "plinth + base head lap + 8 slab anchors",
+  "nozzle_spread": "the schedule gives face and height only; ports pack one row per face/height group at the envelope face, 8 mm clear at the bore; drain at x 460, vent at x 540; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

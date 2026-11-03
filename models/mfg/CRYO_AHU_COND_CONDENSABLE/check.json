@@ -1,0 +1,86 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "condensable knock-out vessel per the duty section 3 material row (316L, condensation, no carbon steel), in the FLUE_KO weir/launder idiom (FLOAT_SINK/FLUE_KO family): vertical 316L drum OD 540 (wall 8, study) with a laps-to-plinth base head and a top head, weir plate at the shell centreline (to z 360) dividing settle from overflow, launder trough at the +X side (lip top z 360); the IA-AHU-POT condensable slip (0.0521 kg/d) condenses against the cooled shell and the S70 condensables leave above the weir",
+    "node_class": "blank on the node - the tracker row says what is known; route hold carried by name (no AQS-PLAN-006 section 4 class; AFTERBURNER_FLUE/REE_RECOVER precedent)",
+    "material": "316L",
+    "ca_mm": 0.0,
+    "study_dims": "shell OD/wall, weir and launder dimensions are study values (hold, WORK_ORDER W12)",
+    "sump_report": {
+      "v_half_shell_to_lip_l": 34.504,
+      "weir_chord_mm": 499.0,
+      "note": "A-VES-style report from the model; the duty claims no holdup (section 8) - no residence time is derived from the model volume"
+    },
+    "superseded_figures": "the duty section 4 line 'Size 600 x 400 x 600 mm' and the placement seed 600 x 400 x 600 box predate the node size_mm study box - the node governs, the older figures are named holds (W12; the FLUE_KO precedent)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 500.0,
+      "schedule_rating": "Class 150",
+      "service": "condensable slip",
+      "note": "atmospheric hose joint at the envelope face (duty section 4; bore not calculated, hose, atmospheric)"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 500.0,
+      "schedule_rating": "Class 150",
+      "service": "condensables",
+      "note": "atmospheric hose joint at the envelope face (duty section 4; bore not calculated, hose, atmospheric)"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N4": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm is the box top"
+    }
+  },
+  "nozzle_count_schedule": 4,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (duty section 4: atmospheric joints are hose; the rows read 'Bore not calculated. Rating hose, atmospheric'); N1 condensable slip in on -Y at z 160; N2 condensables out on +Y at z 600; drain flush at the envelope bottom (50 datum); vent flush at the envelope top (800 datum is the box top); no flange (W4 110 % rule); the schedule rating column carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "shell": 186.95,
+    "weir": 13.2,
+    "launder": 2.16,
+    "nozzles": 0.42
+  },
+  "cadquery": "2.8.0"
+}

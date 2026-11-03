@@ -147,7 +147,8 @@ ACCEPTED = ('AL_POT', 'IND_MELT', 'VAC_IND', 'VAC_CAST', 'INV_CAST', 'CONT_CAST'
             'EXT_HALL',
             'HYDRO_SET',
             'PV_ARRAY',
-            'GROW_BED')
+            'GROW_BED',
+            'CRYO_AHU_COND_CONDENSABLE')
 
 
 # --------------------------------------------------------------------------- authorities

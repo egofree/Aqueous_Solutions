@@ -19,10 +19,10 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1335 | 58 % |
-| organic | 638 | 28 % |
+| metal_plateable | 1328 | 58 % |
+| organic | 634 | 28 % |
 | metal_reactive | 125 | 5 % |
-| silicate_oxide | 98 | 4 % |
+| silicate_oxide | 97 | 4 % |
 | unassigned | 97 | 4 % |
 
 Unassigned: 97 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
@@ -73,7 +73,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | CONT_CAST | 9 | 0 | 0 | 0 | 0 |
 | CRU | 1 | 4 | 0 | 0 | 0 |
 | CRYO_AHU | 27 | 10 | 0 | 1 | 0 |
-| CRYO_AHU_COND_CONDENSABLE | 10 | 4 | 0 | 1 | 0 |
+| CRYO_AHU_COND_CONDENSABLE | 6 | 0 | 0 | 0 | 0 |
 | CRYO_ASU | 6 | 0 | 0 | 1 | 2 |
 | CRYO_CO2 | 7 | 0 | 0 | 0 | 1 |
 | CRYO_DED_COOL | 6 | 2 | 0 | 1 | 0 |
@@ -160,7 +160,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MET_MELT | 8 | 4 | 0 | 1 | 1 |
 | MET_SCRUB | 1 | 8 | 0 | 0 | 1 |
 | MET_SYN | 7 | 3 | 0 | 1 | 2 |
-| MF-01 x 81 | 3 | 1 | 2 | 0 | 0 |
+| MF-01 x 82 | 3 | 1 | 2 | 0 | 0 |
 | MF-02 x 55 | 3 | 1 | 2 | 0 | 0 |
 | MF-03 x 24 | 5 | 1 | 2 | 0 | 0 |
 | MF-04 x 0 | 5 | 0 | 1 | 0 | 0 |
@@ -168,7 +168,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MF-06 x 7 | 5 | 0 | 1 | 0 | 0 |
 | MF-07 x 22 | 5 | 0 | 1 | 0 | 0 |
 | MF-08 x 3 | 7 | 0 | 3 | 0 | 0 |
-| MF-09 x 154 | 7 | 0 | 3 | 0 | 0 |
+| MF-09 x 153 | 7 | 0 | 3 | 0 | 0 |
 | MF-10 x 10 | 7 | 0 | 3 | 0 | 0 |
 | MF-11 x 5 | 7 | 0 | 3 | 0 | 0 |
 | MF-12 x 1 | 7 | 0 | 3 | 0 | 0 |
@@ -406,15 +406,12 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | WF-14 | 1 | 0 | 0 | 0 | 0 |
 | WF-15 | 1 | 0 | 0 | 0 | 0 |
 | WF-16 | 1 | 0 | 0 | 0 | 0 |
-| WF-17 | 1 | 0 | 0 | 0 | 0 |
 | WF-19 | 1 | 0 | 0 | 0 | 0 |
 | WF-20 | 1 | 0 | 0 | 0 | 0 |
 | WF-21 | 1 | 0 | 0 | 0 | 0 |
 | WF-24 | 1 | 0 | 0 | 0 | 0 |
 | WF-25 | 1 | 0 | 0 | 0 | 0 |
-| WF-28 | 1 | 0 | 0 | 0 | 0 |
 | WF-31 | 1 | 0 | 0 | 0 | 0 |
-| WF-32 | 1 | 0 | 0 | 0 | 0 |
 | WF-34 | 1 | 0 | 0 | 0 | 0 |
 | WF-35 | 1 | 0 | 0 | 0 | 0 |
 | WIRE_DRAW | 8 | 1 | 0 | 0 | 2 |

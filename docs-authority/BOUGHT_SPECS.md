@@ -17,14 +17,14 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 20181 |
+| fastener | 20189 |
 | support | 7355 |
 | electronics | 2187 |
 | valve | 992 |
 | instrument | 848 |
 | bearing | 744 |
-| protection | 234 |
-| seal | 154 |
+| protection | 233 |
+| seal | 153 |
 
 ## 2a. What a datasheet is here
 
@@ -45,16 +45,16 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x326 | 326 | 53 | AHU damper actuator (assumed size); Biogas recirculation diaphragm blower about 2 L/min (assumed size); CNC vertical mill: axis drive (assumed size) |  |
-| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6201-2Z x310; 6205-2Z x50; 6204-2Z x22; 6202-2Z x18; 6206-2Z x10; 6308-2Z x6; 6306-2Z x2 | 418 | 59 | AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size); AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed si |  |
+| OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x328 | 328 | 54 | AHU damper actuator (assumed size); Biogas recirculation diaphragm blower about 2 L/min (assumed size); CNC vertical mill: axis drive (assumed size) |  |
+| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6201-2Z x308; 6205-2Z x50; 6204-2Z x22; 6202-2Z x18; 6206-2Z x10; 6308-2Z x6; 6306-2Z x2 | 416 | 58 | AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size); AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed si |  |
 ## 4. Electronics datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
 | OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x832 | 832 | 92 | AHU damper actuator: run and fault (assumed); AHU exhaust fan: run and fault (assumed); AHU supply fan: run and fault (assumed) |  |
 | OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x848 | 848 | 1 | one per instrument |  |
-| OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x160 | 160 | 52 | AHU damper actuator; Biogas recirculation diaphragm blower about 2 L/min; Motor: cathode air blower (induction IE3, IEC 71 / 0.25 kW) |  |
-| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.18 kW x154; 0.55 kW x10; 0.37 kW x7; 0.25 kW x2; 0.12 kW x1; 1.1 kW x1; 0.75 kW x1 | 176 | 49 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Body / envelope 800 x 600 x 1200 mm (assumed VFD at >= 0.75 kW); Body / en |  |
+| OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x161 | 161 | 53 | AHU damper actuator; Biogas recirculation diaphragm blower about 2 L/min; Motor: cathode air blower (induction IE3, IEC 71 / 0.25 kW) |  |
+| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.18 kW x153; 0.55 kW x10; 0.37 kW x7; 0.25 kW x2; 0.12 kW x1; 1.1 kW x1; 0.75 kW x1 | 175 | 48 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Body / envelope 800 x 600 x 1200 mm (assumed VFD at >= 0.75 kW); Body / en |  |
 | OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x105 | 105 | 1 | 1680 points / 16 |  |
 | OF-08 | variable-frequency drive | IEC 61800-5-1 | 1.1 kW x21; 2.2 kW x5; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 33 | 15 | AHU exhaust fan (assumed VFD at >= 0.75 kW); AHU supply fan (assumed VFD at >= 0.75 kW); Band saw: main drive (assumed VFD at >= 0.75 kW) |  |
 | OF-09 | solenoid driver channel | IEC 61131-2 DO | 24 V DC x19 | 19 | 9 | on/off valve IA-BED-H2O; on/off valve IA-ELY-H2O; on/off valve IA-FLUE-QUENCH |  |
@@ -82,12 +82,12 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x222; 90 A x8; 30 A x3; 60 A x1 | 234 | 60 | NEC 430.52, from AQS-INV-002 |  |
+| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x221; 90 A x8; 30 A x3; 60 A x1 | 233 | 59 | NEC 430.52, from AQS-INV-002 |  |
 ## 7. Seal datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-47 | mechanical seal, single | SiC/SiC faces, FKM | EN 12756 x154 | 154 | 42 | Acid day tank D160 x 300 mm with metering pump: induction-driven pump assumed se; Dilute-HCl return pump and transfer line to CRU: induction-driven pu |  |
+| OF-47 | mechanical seal, single | SiC/SiC faces, FKM | EN 12756 x153 | 153 | 41 | Acid day tank D160 x 300 mm with metering pump: induction-driven pump assumed se; Dilute-HCl return pump and transfer line to CRU: induction-driven pu |  |
 ## 8. Support datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
@@ -182,7 +182,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-89 | M12 x 60 hex bolt + nut + 2 washers | PVDF (non-metallic) | M12 x 60 hex bolt + nut + 2 washers x34 | 34 | 1 | models/mfg/LEACH_CSTR_1/fasteners.csv |  |
 | OF-90 | M12 x 40 | ISO 3506 A4-70 | M12 x 40 x440 | 440 | 4 | models/mfg/CRYO_ASU/fasteners.csv; models/mfg/CRYO_CO2/fasteners.csv; models/mfg/CRYO_H2/fasteners.csv |  |
 | OF-91 | M12 x 45 | ISO 3506 A4-70 | M12 x 45 x8 | 8 | 1 | models/mfg/CRYO_H2/fasteners.csv |  |
-| OF-92 | M10 wedge anchor | ISO 898-1 8.8 | M10 wedge anchor x144 | 144 | 20 | models/mfg/AFTERBURNER_FLUE/fasteners.csv; models/mfg/BMED_UPW_POLISH/fasteners.csv; models/mfg/C29_RECYCLE/fasteners.csv |  |
+| OF-92 | M10 wedge anchor | ISO 898-1 8.8 | M10 wedge anchor x152 | 152 | 21 | models/mfg/AFTERBURNER_FLUE/fasteners.csv; models/mfg/BMED_UPW_POLISH/fasteners.csv; models/mfg/C29_RECYCLE/fasteners.csv |  |
 | OF-93 | M10 wedge anchor | ISO 3506 A4-70 | M10 wedge anchor x110 | 110 | 27 | models/mfg/BMED_ACID/fasteners.csv; models/mfg/BMED_BASE/fasteners.csv; models/mfg/CATCH_TANK/fasteners.csv |  |
 | OF-94 | M12 bolt + nut; PP-flanged joint | ISO 3506 A4-70 | M12 bolt + nut; PP-flanged joint x16 | 16 | 1 | models/mfg/NOX_SCRUB/fasteners.csv |  |
 | OF-95 | M12 PVDF bolt + nut | ISO 3506 A4-70 | M12 PVDF bolt + nut x8 | 8 | 1 | models/mfg/HX8/fasteners.csv |  |

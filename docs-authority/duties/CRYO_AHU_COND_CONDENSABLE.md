@@ -15,6 +15,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Level and temperature where the node is a liquid holdup. High level trips the inlet.
 
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped. The solid is still an envelope. `cad/stl/CRYO_AHU_COND_CONDENSABLE.stl` is the outer envelope only; nothing inside it is modelled yet.
+7. Code. Shop. Not stamped. The solid is still an envelope. `cad/stl/CRYO_AHU_COND_CONDENSABLE.stl` is the outer envelope only; nothing inside it is modelled yet. Manufacturing model `models/mfg/CRYO_AHU_COND_CONDENSABLE/cryo_ahu_cond_condensable.py` (AQS-PLAN-006).
 
 8. Open items. No holdup basis.

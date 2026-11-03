@@ -2,16 +2,15 @@ sector,subsystem,unit,category,item,size,spec,qty,basis
 CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,105,1680 points / 16
 CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,848,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 176 SIFs, redundant pair"
-CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: run and fault (assumed)"
-CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl (assumed VFD at >= 0.75 kW)"
-CRYO,-,CRYO_AHU_COND_CONDENSABLE,fabricated part,fabricated part set,13 BOM lines,models/mfg/CRYO_AHU_COND_CONDENSABLE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
+CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
+CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S70 to FLUE_KO: run and fault (assumed)
+CRYO,-,CRYO_AHU_COND_CONDENSABLE,fabricated part,fabricated part set,4 BOM lines,models/mfg/CRYO_AHU_COND_CONDENSABLE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+CRYO,-,CRYO_AHU_COND_CONDENSABLE,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,8,models/mfg/CRYO_AHU_COND_CONDENSABLE/fasteners.csv
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,S70: 2 per support (assumed)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S70: pumped line (assumed)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-CRYO,-,CRYO_AHU_COND_CONDENSABLE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-CRYO,-,CRYO_AHU_COND_CONDENSABLE,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",11,S70: AQS-PIP-005 span count
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,S70: pump discharge (assumed)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,S70: one at each end nozzle (assumed)

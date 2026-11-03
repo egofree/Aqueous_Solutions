@@ -28,13 +28,13 @@ Table 1.1. Motor families
 
 | Family | Motor type | Size | Voltage | Count | Units | Installed shaft kW |
 | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 81 | 47 | 0.22 |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 82 | 48 | 0.22 |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 55 | 5 | 2.69 |
 | MF-03 | BLDC actuator | ISO 5211 F03 mount | 24 V DC | 24 | 1 | 0.12 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 7 | 3 | 1.75 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 22 | 7 | 18.95 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 154 | 39 | 18.48 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 153 | 38 | 18.36 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 10 | 8 | 3.70 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 5 | 5 | 7.42 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 1 | 1 | 0.08 |
@@ -57,7 +57,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 
 | Sub-system | Unit | Device | Motor type | Size | Shaft kW | Voltage | Duty | Speed control | Qty | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| - | CRYO_AHU_COND_CONDENSABLE | Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| - | CRYO_AHU_COND_CONDENSABLE | transfer pump S70 to FLUE_KO | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | CRYO | CRYO_AHU | Motor: transfer pump IA-HVAC-COND to ROOF_TANK (BLDC, 42 mm  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | CRYO | CRYO_AHU | Motor: transfer pump S68 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | CRYO | CRYO_ASU | air compressor (cold box feed) | induction IE3 | IEC 100L / 2.2 kW | 1.4086 | 480 V 3-ph | S1 | fixed speed | 1 | graph continuous_kw x 0.85 (assumed) |
