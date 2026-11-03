@@ -1,7 +1,7 @@
 item,description,qty,material,mass_kg,make_or_buy,basis
 1,Bench deck 912 x 512 x 20 over the plinth 1000 x 600 x 20,1,carbon steel (ASTM A500),167.51,make (AQS-BOM-SC-001),AQS-MOD-002 dry service; the shop-fabricable bench the station envelopes mount on
 2,"Four-post hold-down/guard frame pinning the 1000 x 600 x 800 envelope (40 x 40 posts, top rails)",1,carbon steel (ASTM A500),76.36,make (AQS-BOM-SC-001),HX8 hold-down idiom: the frame pins the registry box so the build fills the node envelope (X-PAR-04); A-MACH guard; anchors in fasteners.csv
-3,N2 purge distribution: DN15 Sch 40 header (x 120..880 at z 720) with four drop legs to the stations,1,316L tube,3.41,make (AQS-BOM-SC-001),"node equipment row: N2 purge distribution (ISO 14644 Class 6 row), 0.03 kW connected parasitics named on the node"
+3,N2 purge distribution: DN15 Sch 40 header (x 120..880 at z 720) with four drop legs to the stations,1,316L tube,3.44,make (AQS-BOM-SC-001),"node equipment row: N2 purge distribution (ISO 14644 Class 6 row), 0.03 kW connected parasitics named on the node"
 4,CZ puller station envelope (charge heat-up over the 7 d campaign + 4 h hot hold),1,purchased tool (envelope),296.163,buy,"node equipment list 0.2317 kW connected; envelope + interface per plan rule 6, vendor print governs (station masses are study envelopes at carbon-steel density, apportioned by envelope volume)"
 5,Ingot cool/anneal station envelope (N2 circulator duty share),1,purchased tool (envelope),65.81400000000001,buy,node equipment list 0.02 kW connected; envelope + interface per plan rule 6
 6,Crop/grind/edge tool set envelope (5 starts/d),1,purchased tool (envelope),98.72099999999999,buy,node equipment list 0.04 kW connected; envelope + interface per plan rule 6

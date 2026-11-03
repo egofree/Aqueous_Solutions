@@ -110,12 +110,10 @@ parts["stations"] = stations
 # ---------------------------------------------------------------- N2 purge distribution header + drops
 HEAD_Y, HEAD_Z = 470.0, 720.0                              # header line along the row (layout, W12)
 hdr = (tube_z("DN15", L - 240.0).rotate((0, 0, 0), (0, 1, 0), 90)
-       .translate((120.0, HEAD_Y - dn.pipe_od("DN15") / 2,
-                   HEAD_Z - dn.pipe_od("DN15") / 2)))
+       .translate((120.0, HEAD_Y, HEAD_Z)))
 drops = None
 for x in (170.0, 370.0, 550.0, 800.0):
-    d = tube_z("DN15", HEAD_Z - 240.0).translate((x - dn.pipe_od("DN15") / 2,
-                                                  HEAD_Y - dn.pipe_od("DN15") / 2, 240.0))
+    d = tube_z("DN15", HEAD_Z - 240.0).translate((x, HEAD_Y, 240.0))
     drops = d if drops is None else drops.union(d)
 parts["purge"] = hdr.union(drops)
 

@@ -239,7 +239,7 @@
     "deck": 73.31,
     "frame": 76.36,
     "stations": 658.14,
-    "purge": 3.41,
+    "purge": 3.44,
     "nozzles": 1.0
   },
   "cadquery": "2.8.0"
