@@ -6,9 +6,9 @@
    height="340.0"
 
 >
-    <g transform="scale(0.21686746987951805, -0.21686746987951805)   translate(922.2222223222223,-892.2222222222222)" stroke-width="4.611111111111112"  fill="none">
+    <g transform="scale(0.22499999999999998, -0.22499999999999998)   translate(888.888888988889,-888.8888888888889)" stroke-width="4.444444444444445"  fill="none">
        <!-- hidden lines -->
-       <g  stroke="rgb(160,160,160)" fill="none" stroke-dasharray="4.611111111111112,4.611111111111112" >
+       <g  stroke="rgb(160,160,160)" fill="none" stroke-dasharray="4.444444444444445,4.444444444444445" >
 			<path d="M0.0,0.0 L900.0,0.0 " />
 			<path d="M0.0,0.0 L850.0,0.0 " />
 			<path d="M0.0,0.0 L850.0,0.0 " />
@@ -69,21 +69,22 @@
 			<path d="M1080.0,408.65000000000003 L1200.0,408.65000000000003 " />
 			<path d="M1080.0,408.65000000000003 L1080.0,408.4331264403728 L1080.0,407.793380707356 L1080.0,406.76284232334854 L1080.0,405.3931867860781 L1080.0,403.7530943433669 L1080.0,401.92480607872216 L1080.0,400.00000000000006 L1080.0,398.07519392127796 L1080.0,396.2469056566332 L1080.0,394.606813213922 L1080.0,393.2371576766516 L1080.0,392.2066192926441 L1080.0,391.5668735596273 L1080.0,391.3500000000001 " />
 			<path d="M1080.0,391.3500000000001 L1080.0,391.5668735596273 L1080.0,392.2066192926441 L1080.0,393.2371576766516 L1080.0,394.606813213922 L1080.0,396.2469056566332 L1080.0,398.07519392127796 L1080.0,400.00000000000006 L1080.0,401.92480607872216 L1080.0,403.7530943433669 L1080.0,405.3931867860781 L1080.0,406.76284232334854 L1080.0,407.793380707356 L1080.0,408.4331264403728 L1080.0,408.65000000000003 " />
-			<path d="M130.0,-30.0 L190.0,-30.0 " />
-			<path d="M130.0,-30.0 L190.0,-30.0 " />
-			<path d="M130.0,10.0 L190.0,10.0 " />
-			<path d="M130.0,10.0 L190.0,10.0 " />
-			<path d="M130.0,-30.0 L130.0,10.0 " />
-			<path d="M190.0,-30.0 L190.0,10.0 " />
-			<path d="M130.0,-30.0 L130.0,10.0 " />
-			<path d="M190.0,-30.0 L190.0,10.0 " />
-			<path d="M130.0,-30.0 L190.0,-30.0 " />
-			<path d="M130.0,10.0 L190.0,10.0 " />
-			<path d="M130.0,10.0 L190.0,10.0 " />
-			<path d="M130.0,-30.0 L130.0,10.0 " />
-			<path d="M190.0,-30.0 L190.0,10.0 " />
-			<path d="M130.0,0.0 L130.0,10.0 " />
-			<path d="M190.0,0.0 L190.0,10.0 " />
+			<path d="M130.0,0.0 L190.0,0.0 " />
+			<path d="M130.0,0.0 L190.0,0.0 " />
+			<path d="M130.0,40.0 L190.0,40.0 " />
+			<path d="M130.0,40.0 L190.0,40.0 " />
+			<path d="M130.0,0.0 L130.0,40.0 " />
+			<path d="M190.0,0.0 L190.0,40.0 " />
+			<path d="M130.0,0.0 L130.0,40.0 " />
+			<path d="M190.0,0.0 L190.0,40.0 " />
+			<path d="M130.0,0.0 L190.0,0.0 " />
+			<path d="M130.0,0.0 L190.0,0.0 " />
+			<path d="M130.0,40.0 L190.0,40.0 " />
+			<path d="M130.0,40.0 L190.0,40.0 " />
+			<path d="M130.0,0.0 L130.0,40.0 " />
+			<path d="M190.0,0.0 L190.0,40.0 " />
+			<path d="M130.0,0.0 L130.0,40.0 " />
+			<path d="M190.0,0.0 L190.0,40.0 " />
 			<path d="M0.0,369.5 L0.0,370.26469867845435 L0.0,372.5204495289762 L0.0,376.1541397847251 L0.0,380.9835610433086 L0.0,386.76654595691446 L0.0,393.2131115143324 L0.0,400.0 L0.0,406.7868884856676 L0.0,413.23345404308554 L0.0,419.0164389566914 L0.0,423.8458602152749 L0.0,427.4795504710238 L0.0,429.7353013215456 L0.0,430.49999999999994 " />
 			<path d="M50.0,369.5 L50.0,370.26469867845435 L50.0,372.5204495289762 L50.0,376.1541397847251 L50.0,380.9835610433086 L50.0,386.76654595691446 L50.0,393.2131115143324 L50.0,400.0 L50.0,406.7868884856676 L50.0,413.23345404308554 L50.0,419.0164389566914 L50.0,423.8458602152749 L50.0,427.4795504710238 L50.0,429.7353013215456 L50.0,430.49999999999994 " />
 			<path d="M0.0,410.65000000000015 L50.0,410.65000000000015 " />
@@ -123,9 +124,6 @@
 			<path d="M1080.0,150.0 L1080.0,650.0 " />
 			<path d="M1080.0,410.65 L1200.0,410.65 " />
 			<path d="M1200.0,410.65 L1200.0,410.3829822647364 L1200.0,409.59531844316075 L1200.0,408.3265052882845 L1200.0,406.6401663897955 L1200.0,404.620861821602 L1200.0,402.36984794663476 L1200.0,400.0 L1200.0,397.63015205336524 L1200.0,395.379138178398 L1200.0,393.3598336102045 L1200.0,391.6734947117155 L1200.0,390.40468155683925 L1200.0,389.6170177352636 L1200.0,389.35 " />
-			<path d="M130.0,-30.0 L190.0,-30.0 " />
-			<path d="M130.0,-30.0 L130.0,0.0 " />
-			<path d="M190.0,-30.0 L190.0,0.0 " />
 			<path d="M0.0,430.5 L50.0,430.5 " />
 			<path d="M0.0,430.5 L0.0,429.73530132154565 L0.0,427.4795504710238 L0.0,423.8458602152749 L0.0,419.0164389566914 L0.0,413.23345404308554 L0.0,406.7868884856676 L0.0,400.0 L0.0,393.2131115143324 L0.0,386.76654595691446 L0.0,380.9835610433086 L0.0,376.1541397847251 L0.0,372.5204495289762 L0.0,370.26469867845435 L0.0,369.5 " />
 			<path d="M50.0,430.5 L50.0,429.73530132154565 L50.0,427.4795504710238 L50.0,423.8458602152749 L50.0,419.0164389566914 L50.0,413.23345404308554 L50.0,406.7868884856676 L50.0,400.0 L50.0,393.2131115143324 L50.0,386.76654595691446 L50.0,380.9835610433086 L50.0,376.1541397847251 L50.0,372.5204495289762 L50.0,370.26469867845435 L50.0,369.5 " />
@@ -136,6 +134,6 @@
        </g>
     </g>
     
-<g id="aqs-fab-notes" transform="translate(0,240.0)" font-family="DejaVu Sans,sans-serif" font-size="10" fill="#000"><text x="6" y="24">Graph revision AC - ga_front: Keys: bench 800 x 600, work top z 850..900; wax pot 10 L and 0.5 kW injector head at z 700..1060</text><text x="6" y="37">Graph revision AC - ga_front: Extraction hood z 900..1080 with the N5 vent to the z 1200 datum</text><text x="6" y="50">Graph revision AC - ga_front: N1 pattern discharge chute +X z 600..900; N2/N3 inlets -X z 160</text><text x="6" y="63">Graph revision AC - ga_front: N4 drain bottom (400,300) flush at z 0</text><text x="6" y="76">Graph revision AC - ga_front: Wax inventory drawn where applicable - process inventory, not a BOM part</text></g>
-<g id="aqs-title-block"><rect x="581.6" y="280.0" width="216.0" height="57.6" fill="white" stroke="black" stroke-width="0.60"/><text x="585.2" y="289.6" font-family="sans-serif" font-size="5.4">Aqueous Solutions (owner)   AQS-MFG-WAX_PATTERN-GA_FRONT</text><text x="585.2" y="299.8" font-family="sans-serif" font-size="5.4">WAX_PATTERN fabrication drawing GA_FRONT (AQS-PLAN-006 M3; g</text><text x="585.2" y="310.0" font-family="sans-serif" font-size="5.4">Type: fabrication drawing (GA / nozzle orientation / part sheet)   Rev 23cfa565   Issued 2026-10-15</text><text x="585.2" y="320.2" font-family="sans-serif" font-size="5.4">Created: flow graph pipeline   Approved: not approved (study)</text><text x="585.2" y="330.4" font-family="sans-serif" font-size="5.4">Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-fab-notes" transform="translate(0,240.0)" font-family="DejaVu Sans,sans-serif" font-size="10" fill="#000"><text x="6" y="24">Graph revision AD - ga_front: Keys: bench 800 x 600, work top z 850..900; wax pot 10 L and 0.5 kW injector head at z 700..1060</text><text x="6" y="37">Graph revision AD - ga_front: Extraction hood z 900..1080 with the N5 vent to the z 1200 datum</text><text x="6" y="50">Graph revision AD - ga_front: N1 pattern discharge chute +X z 600..900; N2/N3 inlets -X z 160</text><text x="6" y="63">Graph revision AD - ga_front: N4 drain bottom (400,300) flush at z 0</text><text x="6" y="76">Graph revision AD - ga_front: Wax inventory drawn where applicable - process inventory, not a BOM part</text></g>
+<g id="aqs-title-block"><rect x="581.6" y="280.0" width="216.0" height="57.6" fill="white" stroke="black" stroke-width="0.60"/><text x="585.2" y="289.6" font-family="sans-serif" font-size="5.4">Aqueous Solutions (owner)   AQS-MFG-WAX_PATTERN-GA_FRONT</text><text x="585.2" y="299.8" font-family="sans-serif" font-size="5.4">WAX_PATTERN fabrication drawing GA_FRONT (AQS-PLAN-006 M3; g</text><text x="585.2" y="310.0" font-family="sans-serif" font-size="5.4">Type: fabrication drawing (GA / nozzle orientation / part sheet)   Rev 843a0fc8   Issued 2026-10-15</text><text x="585.2" y="320.2" font-family="sans-serif" font-size="5.4">Created: flow graph pipeline   Approved: not approved (study)</text><text x="585.2" y="330.4" font-family="sans-serif" font-size="5.4">Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

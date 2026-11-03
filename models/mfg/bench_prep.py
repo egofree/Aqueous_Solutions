@@ -1,11 +1,12 @@
 """FLUX_PREP / WAX_PATTERN bench manufacturing models, AQS-PLAN-006 work order
 (X-MFG lane, FOUNDRY-FLUX_PREP-10 / FOUNDRY-WAX_PATTERN-10 M3).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only.
+Graph revision AD. Study. Not a PE stamp. Reads params.json only.
 Shared bench frame (800 x 600, work top at z 900, extraction hood above): the
 salt-flux preparation bench (20 L hopper, 0.1 kW mixer) and the wax pattern
 injection bench (10 L pot, 0.5 kW injector). Nozzle hardware per each unit's
-task-04 schedule. No measured rate is claimed anywhere.
+task-04 schedule. Connection hardware draws flush at the envelope faces:
+nothing protrudes (A-core 2). No measured rate is claimed anywhere.
 
 Run: $CADQUERY_PYTHON <this file> [FLUX_PREP|WAX_PATTERN]
 """
@@ -52,8 +53,8 @@ def build_flux_prep(unit):
     parts["mixer"] = rod(45.0, (280, 200, 900), "Z", 180).union(rod(12.0, (280, 200, 1080), "Z", 40))
     parts["mix_stage"] = box(430.0, 150.0, 900.0, 180.0, 300.0, 40)
     parts["flux_chute"] = box(690.0, 200.0, 700.0, 60.0, 200.0, 200)   # N1 +X z 600..900
-    parts["salt_inlet"] = box(-30.0, 120.0, 130.0, 40.0, 120.0, 60)    # N2 -X z 160
-    parts["mgcl2_inlet"] = box(-30.0, 320.0, 130.0, 40.0, 120.0, 60)   # N3 -X z 160
+    parts["salt_inlet"] = box(0.0, 120.0, 130.0, 40.0, 120.0, 60)    # N2 -X z 160, flush at the face
+    parts["mgcl2_inlet"] = box(0.0, 320.0, 130.0, 40.0, 120.0, 60)   # N3 -X z 160, flush at the face
     EXTERNAL = ("flux_chute", "salt_inlet", "mgcl2_inlet")
     rho = {"bench_frame": 7.85e-6, "work_top": 7.85e-6, "extraction_hood": 7.85e-6,
            "vent_stub": 7.85e-6, "drain_well": 7.85e-6, "hopper": 7.85e-6, "mixer": 7.85e-6,
@@ -84,8 +85,8 @@ def build_wax_pattern(unit):
     parts["wax_pot"] = tube(110.0, 98.0, (280.0, 300.0, 700.0), "Z", 200)          # 10 L pot
     parts["injector_head"] = rod(60.0, (280.0, 300.0, 900.0), "Z", 160)
     parts["pattern_table"] = box(430.0, 150.0, 900.0, 220.0, 300.0, 40)
-    parts["condensate_trap"] = box(-30.0, 120.0, 130.0, 40.0, 120.0, 60)           # N2 -X z 160
-    parts["makeup_hopper"] = box(-30.0, 320.0, 130.0, 40.0, 120.0, 60)             # N3 -X z 160
+    parts["condensate_trap"] = box(0.0, 120.0, 130.0, 40.0, 120.0, 60)           # N2 -X z 160, flush at the face
+    parts["makeup_hopper"] = box(0.0, 320.0, 130.0, 40.0, 120.0, 60)             # N3 -X z 160, flush at the face
     parts["pattern_chute"] = box(690.0, 200.0, 700.0, 60.0, 200.0, 200)            # N1 +X z 600..900
     EXTERNAL = ("pattern_chute", "condensate_trap", "makeup_hopper")
     rho = {"bench_frame": 7.85e-6, "work_top": 7.85e-6, "extraction_hood": 7.85e-6,
@@ -145,7 +146,7 @@ def build_and_export(unit):
     ALL = list(parts.values())
     sb = cq.Compound.makeCompound([parts["bench_frame"].val()]).BoundingBox()
     tb_ = cq.Compound.makeCompound([v.val() for v in ALL]).BoundingBox()
-    slack = 50.0
+    slack = 1.0   # A-core 2 gate: the flush-hardware build stays inside size_mm within 1 mm
     inside_shell = bool(sb.xmin >= -1 and sb.xmax <= L + 1 and sb.ymin >= -1 and sb.ymax <= W + 1
                         and sb.zmin >= -1 and sb.zmax <= H + 1)
     overhang = {"-X": round(-tb_.xmin, 1), "+X": round(tb_.xmax - L, 1),
@@ -173,15 +174,10 @@ def build_and_export(unit):
         _bw.writerows(bom)
     (HERE / unit / "fasteners.csv").write_text(
         'item,size,grade,qty,location,basis\n'
-        '1,M10 anchor,ISO 898-1 8.8,4,bench to slab,study\n')
-    (HERE / unit / "WORK_ORDER.md").write_text(
-        f"# Work order {unit}\n\nAuthority: AQS-DUTY-072 (X-MFG lane). LIVE unit - bench_prep class.\n\n"
-        f"1. Fabricate the bench frame and work top; set on anchors.\n"
-        f"2. Mount the extraction hood and the vent stub; prove the draft.\n"
-        f"3. Fit the unit hardware per bom.csv; align to the task-04 nozzle positions.\n"
-        f"4. Fit the N-drain and utility stubs.\n"
-        f"5. Test: dry run of the hardware, then the first service batch.\n"
-        f"6. Inspect against models/mfg/{unit}/export/{unit.lower()}.step; record dimensions on the traveller.\n")
+        '1,M10 anchor,ISO 898-1 8.8,4,bench to slab,study\n'
+        '2,M8 bolt,ISO 898-1 8.8,4,extraction hood to the bench frame,study\n')
+    # WORK_ORDER.md is the hand-authored W1-W12 item beside the model (AQS-PLAN-006 section 2);
+    # the builder no longer writes it, so a rebuild never clobbers the work order.
     (HERE / unit / "check.json").write_text(json.dumps(report, indent=2) + "\n")
     return report
 

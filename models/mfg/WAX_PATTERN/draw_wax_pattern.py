@@ -68,7 +68,7 @@ SHEETS = [
      "Fabricated part sheet: drain + vent."),
     ("iso01", full, (1, -1, 1),
      ['Shop orientation: +X face, y along depth, z up; bench, hood and unit hardware',
-      'Graph revision AC is the model authority for this build; STEP (export/wax_pattern.step) is the solids of record'],
+      'The live graph revision in params.json is the model authority for this build; STEP (export/wax_pattern.step) is the solids of record'],
      "Isometric orientation sheet."),
 ]
 
