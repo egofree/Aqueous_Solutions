@@ -26,26 +26,26 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/ASME_CODE_INTENT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/ASSUMPTIONS_REGISTER.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/BALANCE_RECONCILIATION.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/BLOCK_FAMILY_PLANS.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/BOUGHT_SPECS.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/BLOCK_FAMILY_PLANS.md` | working tree | current |
+| `docs-authority/BOUGHT_SPECS.md` | working tree | current |
 | `docs-authority/BUSBAR.json` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/BUSBAR.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/CABLE_SCHEDULE.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/CABLE_SCHEDULE.md` | working tree | current |
 | `docs-authority/CAUSE_EFFECT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/CODE_BASIS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/COLLECTION_BUS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/COMMISSIONING.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/COMPLIANCE_MATRIX.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/CONTROL_ARCH.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/CONTROL_SOFTWARE.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/COST_ESTIMATE_BOM.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/CONTROL_ARCH.md` | working tree | current |
+| `docs-authority/CONTROL_SOFTWARE.md` | working tree | current |
+| `docs-authority/COST_ESTIMATE_BOM.md` | working tree | current |
 | `docs-authority/DECOMMISSIONING.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
 | `docs-authority/DESIGN_CHECK.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/DOC_REGISTER.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/DRAWING_REGISTER.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/DRAWING_REGISTER.md` | working tree | current |
 | `docs-authority/ENCLOSURE_EGRESS.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/EOL_RETURN.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/EOL_RETURN.md` | working tree | current |
 | `docs-authority/FARM_DESIGN.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/FIRE_PROTECTION.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/FOUNDATION.md` | f0160a6 (regenerated, no change) | current |
@@ -71,16 +71,16 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/ISO_ROUTES.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/ISO_SHEETS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/ITP.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/JELLYBEAN.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/JELLYBEAN.md` | working tree | current |
 | `docs-authority/LIFTING.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/LINE_LIST.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/LOAD_LIST.json` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/LOAD_LIST.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/MAINT_PLAN.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/MFG_MODEL_PLAN.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/MFG_MODEL_PLAN.md` | working tree | current |
 | `docs-authority/MFG_TOOLS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/MODEL_WORKBOOK.xlsx` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/MOTOR_FIRST_ARTICLE.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/MOTOR_FIRST_ARTICLE.md` | working tree | current |
 | `docs-authority/O2_SOURCE.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/O2_SOURCE_AUDIT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/ONE_LINE.json` | f0160a6 (regenerated, no change) | current |
@@ -89,30 +89,30 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/PARAMETRIC_MODEL.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/PERF_TEST.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/PIPE_SPECS.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/PLANT_BOM.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/PLANT_BOM.md` | working tree | current |
 | `docs-authority/POWER_SIZING.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/PROTECTION.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/RELIEF_REGISTER.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/RIGGING_PLANS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/SECTOR_DEFINITIONS.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/SELF_COPY_BOM.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/SELF_COPY_BOM.md` | working tree | current |
 | `docs-authority/SITE_ACCESS_CHECK.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/SITE_COMPARISON.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/SITE_POWER.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/SITE_SCALING.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/SITE_UNITS.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/SPARES.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/SPARES.md` | working tree | current |
 | `docs-authority/STANDARDS_LIST.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/STARTUP.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/STRUCT_LOADS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/SUPPORTS.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/TASK_PLAN.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/TASK_PLAN.md` | working tree | current |
 | `docs-authority/TEST_PLAN.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/TEST_RIGS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/UNIT_MATERIALS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/WATER_TOWER.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/WIRE_SPECS.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/WIRE_SPECS.md` | working tree | current |
 | `docs-authority/WPS_REGISTER.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/ZNBR2_STACK_TEST.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/drawings/motor_fa/MF-04.svg` | f0160a6 (regenerated, no change) | current |
@@ -325,7 +325,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/LIGNO_PRE.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/LITHO_ALIGN.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/LITHO_COAT.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/LITHO_DEV.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/LITHO_DEV.md` | working tree | current |
 | `docs-authority/duties/LITHO_STUB.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/LI_RECOVER.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/LOAD_AGG.md` | f0160a6 (regenerated, no change) | current |
@@ -492,49 +492,49 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/hazop_actions.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/insulation_schedule.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/COMMISSIONING.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/COST_ESTIMATE_BOM.csv` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/inventory/COST_ESTIMATE_BOM.csv` | working tree | current |
 | `docs-authority/inventory/DECOMMISSIONING.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/DESIGN_CHECK.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/EOL_RETURN.csv` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/inventory/EOL_RETURN.csv` | working tree | current |
 | `docs-authority/inventory/FRAME_CHECK.json` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/GAS_DETECTORS.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/HVAC_ROOMS.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/INSTRUMENT_INDEX.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/INTERNALS.json` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/MAGNET_COMPARISON.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/MOTOR_DESIGNS.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/MOTOR_DESIGNS.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/MOTOR_FA.json` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/MOTOR_FAMILIES.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/MOTOR_INVENTORY.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/MOTOR_INVENTORY.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/OTHER_FAMILIES.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/OTHER_INVENTORY.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/OTHER_INVENTORY.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/inventory/MAGNET_COMPARISON.csv` | working tree | current |
+| `docs-authority/inventory/MOTOR_DESIGNS.csv` | working tree | current |
+| `docs-authority/inventory/MOTOR_DESIGNS.md` | working tree | current |
+| `docs-authority/inventory/MOTOR_FA.json` | working tree | current |
+| `docs-authority/inventory/MOTOR_FAMILIES.csv` | working tree | current |
+| `docs-authority/inventory/MOTOR_INVENTORY.csv` | working tree | current |
+| `docs-authority/inventory/MOTOR_INVENTORY.md` | working tree | current |
+| `docs-authority/inventory/OTHER_FAMILIES.csv` | working tree | current |
+| `docs-authority/inventory/OTHER_INVENTORY.csv` | working tree | current |
+| `docs-authority/inventory/OTHER_INVENTORY.md` | working tree | current |
 | `docs-authority/inventory/PIPE_FAMILIES.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/PIPE_INVENTORY.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/PIPE_INVENTORY.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/PLANT_BOM.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/SELF_COPY_RECON.csv` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/inventory/PLANT_BOM.csv` | working tree | current |
+| `docs-authority/inventory/SELF_COPY_RECON.csv` | working tree | current |
 | `docs-authority/inventory/SITE_ACCESS.json` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/SIZING_COVERAGE.json` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/STORAGE_HOLDUP.json` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/STRUCT_ROWS.json` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/TEST_RIGS.json` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/UNIT_MATERIALS.json` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/WIRE_FAMILIES.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/WIRE_INVENTORY.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/WIRE_INVENTORY.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/WIRE_SPECS.json` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/motor_families/MF-01.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/inventory/WIRE_FAMILIES.csv` | working tree | current |
+| `docs-authority/inventory/WIRE_INVENTORY.csv` | working tree | current |
+| `docs-authority/inventory/WIRE_INVENTORY.md` | working tree | current |
+| `docs-authority/inventory/WIRE_SPECS.json` | working tree | current |
+| `docs-authority/inventory/motor_families/MF-01.md` | working tree | current |
 | `docs-authority/inventory/motor_families/MF-02.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-03.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-04.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-05.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-06.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/motor_families/MF-07.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/inventory/motor_families/MF-07.md` | working tree | current |
 | `docs-authority/inventory/motor_families/MF-08.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/motor_families/MF-09.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/inventory/motor_families/MF-09.md` | working tree | current |
 | `docs-authority/inventory/motor_families/MF-10.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-11.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-12.md` | f0160a6 (regenerated, no change) | current |
@@ -1028,7 +1028,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/plc/PLC-CRYO.st` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/plc/PLC-DIGESTER.st` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/plc/PLC-ELEC.st` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/plc/PLC-FAB.st` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/plc/PLC-FAB.st` | working tree | current |
 | `docs-authority/plc/PLC-FARM.st` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/plc/PLC-FOUNDRY.st` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/plc/PLC-GAS.st` | f0160a6 (regenerated, no change) | current |
@@ -1214,10 +1214,10 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/derived/MASS_FLOW_DERIVED.md` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/derived/STREAM_REGISTER_DERIVED.md` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/derived/SYNC_POINTER.md` | f0160a6 (regenerated, no change) | current |
-| `flow_graph/derived/_regen_receipt.json` | working tree | current |
+| `flow_graph/derived/_regen_receipt.json` | - | by design: manifest mechanism itself (U3 regen provenance receipt) |
 | `flow_graph/fire_rooms.json` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/inventory/motor_family_ids.json` | f0160a6 (regenerated, no change) | current |
-| `flow_graph/inventory/other_family_ids.json` | f0160a6 (regenerated, no change) | current |
+| `flow_graph/inventory/other_family_ids.json` | working tree | current |
 | `flow_graph/inventory/pipe_family_ids.json` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/inventory/wire_family_ids.json` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/placement_seed.json` | f0160a6 (regenerated, no change) | current |
@@ -1233,7 +1233,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/views/efd-thermal.svg` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/mfd.dot` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/mfd.json` | f0160a6 (regenerated, no change) | current |
-| `flow_graph/views/mfd.svg` | f0160a6 (regenerated, no change) | current |
+| `flow_graph/views/mfd.svg` | working tree | current |
 | `flow_graph/views/pfd.dot` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/pfd.json` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/pfd.svg` | f0160a6 (regenerated, no change) | current |
@@ -1351,7 +1351,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/LEACH_CSTR_1/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/LITHO_ALIGN/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/LITHO_COAT/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/LITHO_DEV/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/LITHO_DEV/params.json` | working tree | current |
 | `models/mfg/LI_RECOVER/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/LOAD_AGG/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/MAU_HX/params.json` | f0160a6 (regenerated, no change) | current |

@@ -9,14 +9,14 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 
 | Kind | Family / unit | Item | Installed | Spares | Rule |
 |---|---|---|---|---|---|
-| building block | OF-01 | bearing: deep-groove ball bearing (608-2Z x272) | 272 | 28 | 10 % min 2 |
-| building block | OF-02 | bearing: deep-groove ball bearing (6201-2Z x360; 6202-2Z x20; 6204-2Z x20; 6205-2Z x16; 6206-2Z) | 434 | 44 | 10 % min 2 |
-| building block | OF-03 | electronics: PLC digital I/O point (24 V DC x746) | 746 | 75 | 10 % min 1 |
+| building block | OF-01 | bearing: deep-groove ball bearing (608-2Z x274) | 274 | 28 | 10 % min 2 |
+| building block | OF-02 | bearing: deep-groove ball bearing (6201-2Z x358; 6202-2Z x20; 6204-2Z x20; 6205-2Z x18; 6206-2Z) | 434 | 44 | 10 % min 2 |
+| building block | OF-03 | electronics: PLC digital I/O point (24 V DC x748) | 748 | 75 | 10 % min 1 |
 | building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x847) | 847 | 85 | 10 % min 1 |
-| building block | OF-05 | electronics: BLDC driver (24/48 V DC x133) | 133 | 14 | 10 % min 1 |
-| building block | OF-06 | electronics: motor starter (contactor + overload) (0.18 kW x179; 0.55 kW x9; 0.37 kW x8; 0.25 kW x2; 0.12 kW x1) | 201 | 21 | 10 % min 1 |
+| building block | OF-05 | electronics: BLDC driver (24/48 V DC x134) | 134 | 14 | 10 % min 1 |
+| building block | OF-06 | electronics: motor starter (contactor + overload) (0.18 kW x178; 0.55 kW x9; 0.37 kW x8; 0.25 kW x2; 0.12 kW x1) | 200 | 20 | 10 % min 1 |
 | building block | OF-07 | electronics: PLC I/O module, 16 channel (24 V DC x100) | 100 | 10 | 10 % min 1 |
-| building block | OF-08 | electronics: variable-frequency drive (2.2 kW x5; 1.1 kW x4; 1.5 kW x3; 7.5 kW x3; 4 kW x1) | 16 | 2 | 10 % min 1 |
+| building block | OF-08 | electronics: variable-frequency drive (2.2 kW x5; 1.1 kW x5; 1.5 kW x3; 7.5 kW x3; 4 kW x1) | 17 | 2 | 10 % min 1 |
 | building block | OF-09 | electronics: solenoid driver channel (24 V DC x19) | 19 | 2 | 10 % min 1 |
 | building block | OF-10 | electronics: compressor contactor + overload (1.1 kW hermetic x1) | 1 | 1 | 10 % min 1 |
 | building block | OF-11 | electronics: stepper driver (24/48 V DC x3) | 3 | 1 | 10 % min 1 |
@@ -84,7 +84,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-89 | fastener: M12 x 60 hex bolt + nut + 2 washers (M12 x 60 hex bolt + nut + 2 washers x34) | 34 | 4 | 2 % min 4 |
 | building block | OF-90 | fastener: M12 x 40 (M12 x 40 x440) | 440 | 9 | 2 % min 4 |
 | building block | OF-91 | fastener: M12 x 45 (M12 x 45 x8) | 8 | 4 | 2 % min 4 |
-| building block | OF-92 | fastener: M10 wedge anchor (M10 wedge anchor x120) | 120 | 4 | 2 % min 4 |
+| building block | OF-92 | fastener: M10 wedge anchor (M10 wedge anchor x128) | 128 | 4 | 2 % min 4 |
 | building block | OF-93 | fastener: M10 wedge anchor (M10 wedge anchor x110) | 110 | 4 | 2 % min 4 |
 | building block | OF-94 | fastener: M12 bolt + nut; PP-flanged joint (M12 bolt + nut; PP-flanged joint x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-95 | fastener: M12 PVDF bolt + nut (M12 PVDF bolt + nut x8) | 8 | 4 | 2 % min 4 |
@@ -107,12 +107,13 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-112 | fastener: M8 socket screw (M8 socket screw x8) | 8 | 4 | 2 % min 4 |
 | building block | OF-113 | fastener: M8 bench anchor (M8 bench anchor x4) | 4 | 4 | 2 % min 4 |
 | building block | OF-114 | fastener: M8 bowl-stand bolt (M8 bowl-stand bolt x4) | 4 | 4 | 2 % min 4 |
-| motor | MF-01 | BLDC 42 mm (NEMA 17 flange) 24 V DC | 78 | 4 | 5 % min 1 |
+| building block | OF-115 | fastener: M8 bowl-clip bolt (M8 bowl-clip bolt x4) | 4 | 4 | 2 % min 4 |
+| motor | MF-01 | BLDC 42 mm (NEMA 17 flange) 24 V DC | 79 | 4 | 5 % min 1 |
 | motor | MF-02 | BLDC 57 mm (NEMA 23 flange) 24 V DC | 55 | 3 | 5 % min 1 |
 | motor | MF-06 | induction IE3 IEC 71 / 0.37 kW 480 V 3-ph | 8 | 1 | 5 % min 1 |
-| motor | MF-07 | induction IE3 IEC 90S / 1.1 kW 480 V 3-ph | 5 | 1 | 5 % min 1 |
+| motor | MF-07 | induction IE3 IEC 90S / 1.1 kW 480 V 3-ph | 6 | 1 | 5 % min 1 |
 | motor | MF-08 | induction IE3 IEC 90L / 1.5 kW 480 V 3-ph | 3 | 1 | 5 % min 1 |
-| motor | MF-09 | induction IE3 IEC 63 / 0.18 kW 208 V 3-ph | 179 | 9 | 5 % min 1 |
+| motor | MF-09 | induction IE3 IEC 63 / 0.18 kW 208 V 3-ph | 178 | 9 | 5 % min 1 |
 | motor | MF-10 | induction IE3 IEC 80 / 0.55 kW 480 V 3-ph | 9 | 1 | 5 % min 1 |
 | motor | MF-11 | induction IE3 IEC 100L / 2.2 kW 480 V 3-ph | 5 | 1 | 5 % min 1 |
 | motor | MF-12 | induction IE3 IEC 63 / 0.12 kW 208 V 3-ph | 1 | 1 | 5 % min 1 |
@@ -140,4 +141,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-130 lines; 29 spare motors, 1002 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+131 lines; 29 spare motors, 1005 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.

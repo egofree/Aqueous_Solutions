@@ -24,7 +24,10 @@
   "puddle_mL_per_wafer": 40.0,
   "waste": "S38-class resist/solvent loop to OIL_FRAC",
   "duty_kW": 0.008,
-  "peak_kW": 0.05
+  "peak_kW": 0.05,
+  "service": "LITHO_DEV: wet develop bench - TMAH 2.38 % class developer on the shared WET_BENCH chemistry fork, puddle 40 mL/wafer, waste on the S38-class resist/solvent loop to OIL_FRAC (node design block; A-M-287)",
+  "material": "316L wetted (bowl, dispense, hardware); CS dry frame",
+  "material_basis": "duty section 3: 316L where the stream is wet (developer); CA 0 mm (AQS-STD-001)"
  },
  "nozzles": [
   {
@@ -65,5 +68,41 @@
   "A-core",
   "A-MACH",
   "A-SC"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1200.0,
+   600.0,
+   900.0
+  ],
+  "basis": "L x W x H mm, issued envelope (A-M-287)",
+  "base_mm": [
+   1200.0,
+   600.0,
+   20.0
+  ],
+  "bowl_mm": [
+   150.0,
+   150.0,
+   40.0,
+   300.0,
+   200.0,
+   120.0,
+   10.0
+  ],
+  "dispense_mm": [
+   280.0,
+   230.0,
+   200.0,
+   40.0,
+   40.0,
+   40.0
+  ]
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; bowl at x 150..480, y 150..370, z 40..170 with the dispense point above; hold-down posts at the envelope corners",
+  "supports": "base plate + hold-down frame + 8 slab anchors; bowl base flange bolts",
+  "nozzle_spread": "the two solids rows at x 600/660 on their faces; drain at x 430 flush at the bottom, vent at x 770 flush at the top; per-tag notes in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

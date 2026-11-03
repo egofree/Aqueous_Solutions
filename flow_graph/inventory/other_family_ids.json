@@ -570,6 +570,11 @@
    "category": "fastener",
    "item": "M8 bowl-stand bolt",
    "spec": "ISO 3506 A4-70"
+  },
+  "OF-115": {
+   "category": "fastener",
+   "item": "M8 bowl-clip bolt",
+   "spec": "ISO 3506 A4-70"
   }
  }
 }

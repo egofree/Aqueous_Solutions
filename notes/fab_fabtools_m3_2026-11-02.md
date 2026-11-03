@@ -60,3 +60,33 @@ are drawn as their envelope and interface per plan rule 6; misfits are
 - The envelope-era drawing set superseded by the 7-sheet fabrication set.
   A-SC: bench, frame, baths and connection hardware flagged make and
   cross-referenced to AQS-BOM-SC-001; heaters and N2 gun set are buy rows.
+
+## LITHO_ALIGN / LITHO_COAT / LITHO_DEV (litho train, FAB, tier 7) — commits 3-5
+
+- `models/mfg/LITHO_ALIGN/litho_align.py`, `models/mfg/LITHO_COAT/litho_coat.py`,
+  `models/mfg/LITHO_DEV/litho_dev.py` on the shared lib. LITHO_ALIGN and
+  LITHO_COAT carry the section 4 route hold by name (no route row names the
+  `aligner`/`coater` classes); LITHO_DEV is F-MACH (the `wet_bench` class).
+  Builds 1200 × 600 × 800, 1200 × 800 × 1400 and 1200 × 600 × 900 mm against
+  the node envelopes: inside, exact; closed manifold meshes; `cad/stl` replaced
+  from the builds; `tracker --check` green on each.
+- LITHO_ALIGN per the node design block and AQS-LITH-001 rev C (named on the
+  node): 6061 frame/base, aluminium stage, 4140 leadscrew (shop lathe),
+  chrome-on-glass mask (shop mill); the 365 nm LED array (1 W optical) is the
+  purchased envelope. Duty §2 prose still carries the seed figure 500 × 500 ×
+  800; the node governs, older figure named (WS_SOLV precedent).
+- LITHO_COAT per the node design block and note (A-M-287): spin bowl and coat
+  catch bowl 316L (duty §3), 150 mm vacuum chuck (node chuck_mm), spin-chuck
+  motor 0.75 kW peak and softbake hotplate 0.3 kW at 100 °C as purchased
+  envelopes with node ratings; no vacuum source named on the node or duty —
+  none drawn (W12).
+- LITHO_DEV: wet develop bench, 316L bowl (TMAH class developer on the shared
+  WET_BENCH chemistry fork), puddle dispense point (40 mL/wafer node figure);
+  no purchased item named — none drawn (WS_SOLV precedent).
+- Systemic observation, carried not fixed: `dot` 2.42.4 intermittently takes a
+  "trouble in init_rank" error path on the byte-identical `views/mfd.dot`
+  (verified identical to HEAD), rendering two layouts alternately; a regen
+  pass can then fail doc-convergence and a retry converges. The LITHO_COAT
+  full regen was cut by a shell timeout mid-run once and left a partial
+  receipt in that commit; the amended commit carries the corrected, fully
+  regenerated tree and check_all is green on it.

@@ -1,5 +1,5 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,100,1593 points / 16
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,100,1595 points / 16
 CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,847,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 175 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
@@ -1332,14 +1332,19 @@ FAB,tool,SOLAR_PV_CELL,fabricated part,fabricated part set,9 BOM lines,models/mf
 FAB,tool,SOLAR_PV_CELL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FAB,tool,SOLAR_PV_CELL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FAB,tool,SOLAR_PV_CELL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-FAB,wet_bench,LITHO_DEV,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW): drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-FAB,wet_bench,LITHO_DEV,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW): run and fault (assumed)"
-FAB,wet_bench,LITHO_DEV,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW) (assumed VFD at >= 0.75 kW)"
-FAB,wet_bench,LITHO_DEV,fabricated part,fabricated part set,14 BOM lines,models/mfg/LITHO_DEV/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FAB,wet_bench,LITHO_DEV,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,induced-draft fan (assumed size)
+FAB,wet_bench,LITHO_DEV,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",2,"process vacuum pump: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
+FAB,wet_bench,LITHO_DEV,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,induced-draft fan
+FAB,wet_bench,LITHO_DEV,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,induced-draft fan: run and fault (assumed)
+FAB,wet_bench,LITHO_DEV,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,process vacuum pump: run and fault (assumed)
+FAB,wet_bench,LITHO_DEV,electronics,variable-frequency drive,1.1 kW,IEC 61800-5-1,1,process vacuum pump (assumed VFD at >= 0.75 kW)
+FAB,wet_bench,LITHO_DEV,fabricated part,fabricated part set,5 BOM lines,models/mfg/LITHO_DEV/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FAB,wet_bench,LITHO_DEV,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,8,models/mfg/LITHO_DEV/fasteners.csv
+FAB,wet_bench,LITHO_DEV,fastener,M8 bowl-clip bolt,M8 bowl-clip bolt,ISO 3506 A4-70,4,models/mfg/LITHO_DEV/fasteners.csv
 FAB,wet_bench,LITHO_DEV,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FAB,wet_bench,LITHO_DEV,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FAB,wet_bench,LITHO_DEV,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-FAB,wet_bench,LITHO_DEV,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW): induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
+FAB,wet_bench,LITHO_DEV,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,process vacuum pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 FARM,FARM,GROW_BED,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S13 to VCD_TRAIN (BLDC, 42 mm (NEMA 17 : drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 FARM,FARM,GROW_BED,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump S13 to VCD_TRAIN (BLDC, 42 mm (NEMA 17 : run and fault (assumed)"
 FARM,FARM,GROW_BED,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump S13 to VCD_TRAIN (BLDC, 42 mm (NEMA 17  (assumed VFD at >= 0.75 kW)"

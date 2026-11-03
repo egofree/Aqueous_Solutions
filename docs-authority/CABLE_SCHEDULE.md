@@ -100,13 +100,13 @@ Plant demand 224.9 kW at 480 V, power factor 0.9 assumed: 301 A. EW process bars
 | HOPPER | screw feeder feeder | 14 AWG | 1 | 2.4 | 15 | 11.8 | 460 | 0.11 | 3 | yes |
 | HYDRO_SET | Motor: pump-turbine motor-generator (induction IE3, IEC 100L feeder | 14 AWG | 1 | 2.4 | 15 | 20.6 | 460 | 0.19 | 3 | yes |
 | LEACH_CSTR_1 | Gearmotor 0.75 kW, 150 rpm output, on the lid bridge feeder | 14 AWG | 1 | 3.0 | 15 | 14.6 | 460 | 0.17 | 3 | yes |
-| LITHO_DEV | Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW) feeder | 14 AWG | 1 | 2.4 | 15 | 6.9 | 460 | 0.06 | 3 | yes |
+| LITHO_DEV | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 6.9 | 460 | 0.08 | 3 | yes |
 | LP-DIGESTER | panel feeder 208 V | 3 AWG | 1 | 84.6 | 100 | 34.3 | 208 | 1.94 | 2 | yes |
 | LP-DIGESTER | panel feeder 460 V | 8 AWG | 1 | 34.8 | 50 | 34.3 | 460 | 1.13 | 2 | yes |
 | LP-ELEC | panel feeder 208 V | 350 kcmil | 1 | 303.0 | 310 | 13.8 | 208 | 0.42 | 2 | yes |
 | LP-ELEC | panel feeder 460 V | 14 AWG | 1 | 5.3 | 15 | 13.8 | 460 | 0.28 | 2 | yes |
-| LP-FAB | panel feeder 208 V | 12 AWG | 1 | 10.2 | 20 | 30.0 | 208 | 1.61 | 2 | yes |
-| LP-FAB | panel feeder 460 V | 14 AWG | 1 | 7.8 | 15 | 30.0 | 460 | 0.91 | 2 | yes |
+| LP-FAB | panel feeder 208 V | 12 AWG | 1 | 7.8 | 20 | 30.0 | 208 | 1.23 | 2 | yes |
+| LP-FAB | panel feeder 460 V | 14 AWG | 1 | 10.8 | 15 | 30.0 | 460 | 1.26 | 2 | yes |
 | LP-MFG | panel feeder 208 V | 12 AWG | 1 | 7.8 | 20 | 43.3 | 208 | 1.78 | 2 | yes |
 | LP-MFG | panel feeder 460 V | 3 AWG | 1 | 88.3 | 100 | 43.3 | 460 | 1.16 | 2 | yes |
 | LP-NUT | panel feeder 208 V | 10 AWG | 1 | 12.6 | 30 | 44.2 | 208 | 1.84 | 2 | yes |

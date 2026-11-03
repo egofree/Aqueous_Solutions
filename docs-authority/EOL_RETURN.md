@@ -19,10 +19,10 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1411 | 59 % |
-| organic | 696 | 29 % |
+| metal_plateable | 1405 | 59 % |
+| organic | 695 | 29 % |
 | metal_reactive | 125 | 5 % |
-| silicate_oxide | 106 | 4 % |
+| silicate_oxide | 105 | 4 % |
 | unassigned | 66 | 3 % |
 
 Unassigned: 66 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
@@ -144,7 +144,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | LEACH_CSTR_1 | 1 | 8 | 0 | 1 | 0 |
 | LITHO_ALIGN | 2 | 0 | 5 | 1 | 1 |
 | LITHO_COAT | 9 | 0 | 0 | 0 | 1 |
-| LITHO_DEV | 14 | 1 | 0 | 1 | 0 |
+| LITHO_DEV | 7 | 0 | 0 | 0 | 0 |
 | LI_RECOVER | 2 | 5 | 0 | 1 | 0 |
 | LOAD_AGG | 2 | 0 | 0 | 1 | 1 |
 | MAU_HX | 0 | 0 | 2 | 0 | 0 |
@@ -160,15 +160,15 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MET_MELT | 14 | 9 | 0 | 1 | 0 |
 | MET_SCRUB | 1 | 8 | 0 | 0 | 1 |
 | MET_SYN | 2 | 6 | 0 | 1 | 0 |
-| MF-01 x 78 | 3 | 1 | 2 | 0 | 0 |
+| MF-01 x 79 | 3 | 1 | 2 | 0 | 0 |
 | MF-02 x 55 | 3 | 1 | 2 | 0 | 0 |
 | MF-03 x 0 | 5 | 1 | 2 | 0 | 0 |
 | MF-04 x 0 | 5 | 0 | 1 | 0 | 0 |
 | MF-05 x 0 | 5 | 0 | 1 | 0 | 0 |
 | MF-06 x 8 | 5 | 0 | 1 | 0 | 0 |
-| MF-07 x 5 | 5 | 0 | 1 | 0 | 0 |
+| MF-07 x 6 | 5 | 0 | 1 | 0 | 0 |
 | MF-08 x 3 | 7 | 0 | 3 | 0 | 0 |
-| MF-09 x 179 | 7 | 0 | 3 | 0 | 0 |
+| MF-09 x 178 | 7 | 0 | 3 | 0 | 0 |
 | MF-10 x 9 | 7 | 0 | 3 | 0 | 0 |
 | MF-11 x 5 | 7 | 0 | 3 | 0 | 0 |
 | MF-12 x 1 | 7 | 0 | 3 | 0 | 0 |
@@ -216,6 +216,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-112 | 1 | 0 | 0 | 0 | 0 |
 | OF-113 | 1 | 0 | 0 | 0 | 0 |
 | OF-114 | 1 | 0 | 0 | 0 | 0 |
+| OF-115 | 1 | 0 | 0 | 0 | 0 |
 | OF-12 | 1 | 0 | 0 | 0 | 0 |
 | OF-13 | 0 | 0 | 0 | 0 | 1 |
 | OF-14 | 1 | 0 | 0 | 0 | 0 |

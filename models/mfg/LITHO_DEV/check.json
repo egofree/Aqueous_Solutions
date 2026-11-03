@@ -1,0 +1,92 @@
+{
+  "bbox_mm": [
+    1200.0,
+    600.0,
+    900.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1200.0,
+    600.0,
+    900.0
+  ],
+  "size_basis": "L x W x H mm, issued envelope (A-M-287)",
+  "graph_revision": "AD",
+  "solids": 6,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "wet develop bench per the node design block and note (A-M-287): develop bowl in 316L per duty section 3 (TMAH 2.38 % class developer, the shared WET_BENCH chemistry fork) with the puddle dispense point envelope above it; waste on the S38-class resist/solvent loop to OIL_FRAC",
+    "duty_line": "duty section 2 prose carries the seed figure 500 x 500 x 800; the node 1200 x 600 x 900 governs (hold, WORK_ORDER W12, WS_SOLV precedent)",
+    "bowl": {
+      "inner_mm": [
+        300.0,
+        200.0,
+        120.0
+      ],
+      "nominal_l": 7.2,
+      "wall_mm": 10.0,
+      "size_basis": "layout choice (hold, W12); the puddle figure 40.0 mL/wafer is a node design figure"
+    },
+    "material": "316L",
+    "ca_mm": 0.0,
+    "material_basis": "duty section 3: 316L where the stream is wet (developer); CA 0 mm (AQS-STD-001)",
+    "guard": "four-post hold-down frame (40 x 40 posts, top rails) is the A-MACH guard + 8 slab anchors (fasteners.csv)",
+    "purchased": "no purchased item is named on the node or duty, so none is drawn (WS_SOLV precedent)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 900.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; the schedule datum 800 mm predates the 900 box (hold, WORK_ORDER W12)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 900.0,
+      "x_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "spent resist and solvent",
+      "note": "atmospheric hose joint per duty section 4; solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 900.0,
+      "x_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "resist/solvent carry (coat catch bowl + developer) to the develop bench",
+      "note": "atmospheric hose joint per duty section 4; solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    }
+  },
+  "nozzle_count_schedule": 4,
+  "nozzle_idiom": "atmospheric hose joints per duty section 4 (DN copied from the edge and not recalculated); the N3/N4 solids rows are non-piped transfers drawn DN15, bore not calculated (plan W4); the N2 vent datum 800 predates the 900 box (hold, W12); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "base": 113.04,
+    "frame": 86.41,
+    "bowl": 15.62,
+    "dispense": 0.51,
+    "nozzles": 0.23
+  },
+  "cadquery": "2.8.0"
+}

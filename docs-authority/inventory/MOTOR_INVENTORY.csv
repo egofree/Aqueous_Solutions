@@ -90,7 +90,8 @@ FAB,reagent,WS_SOLV,transfer pump IA-SOLV-WB to WET_BENCH,BLDC,42 mm (NEMA 17 fl
 FAB,tank,FAB_UPW_TANK,on/off valve S27,solenoid,"ISO 15218 coil, 22 mm",0.008,24 V DC,S3,on/off,1,assumed one per dosed line
 FAB,tank,FAB_UPW_TANK,transfer pump S27 to WET_BENCH,BLDC,42 mm (NEMA 17 flange),0.0002,24 V DC,S3,BLDC driver,1,"60.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 FAB,tool,SOLAR_PV_CELL,main drive,induction IE3,IEC 71 / 0.37 kW,0.3134,480 V 3-ph,S3,fixed speed,1,graph continuous_kw x 0.8 (assumed)
-FAB,wet_bench,LITHO_DEV,"Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW)",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
+FAB,wet_bench,LITHO_DEV,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
+FAB,wet_bench,LITHO_DEV,process vacuum pump,induction IE3,IEC 90S / 1.1 kW,0.75,480 V 3-ph,S1,fixed speed,1,assumed
 FARM,FARM,GROW_BED,"Motor: transfer pump S13 to VCD_TRAIN (BLDC, 42 mm (NEMA 17 ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 FOUNDRY,FOUNDRY_E,IND_MELT,transfer pump IND_MELT_TO_CAST to CAST_LINE,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"3.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 FOUNDRY,FOUNDRY_E,IND_MELT,transfer pump IND_TO_CONT to CONT_CAST,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"31.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
