@@ -1879,7 +1879,9 @@ GAS,GAS_SCRUB,BAGHOUSE,valve,isolation valve,DN50,"CPVC true-union ball valve, M
 GAS,GAS_SCRUB,H2_DRYER,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,induced-draft fan (assumed size)
 GAS,GAS_SCRUB,H2_DRYER,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,induced-draft fan
 GAS,GAS_SCRUB,H2_DRYER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,induced-draft fan: run and fault (assumed)
-GAS,GAS_SCRUB,H2_DRYER,fabricated part,fabricated part set,24 BOM lines,models/mfg/H2_DRYER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+GAS,GAS_SCRUB,H2_DRYER,fabricated part,fabricated part set,9 BOM lines,models/mfg/H2_DRYER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+GAS,GAS_SCRUB,H2_DRYER,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,8,models/mfg/H2_DRYER/fasteners.csv
+GAS,GAS_SCRUB,H2_DRYER,fastener,M8 tube-clip bolt + nut,M8 tube-clip bolt + nut,ISO 3506 A4-70,16,models/mfg/H2_DRYER/fasteners.csv
 GAS,GAS_SCRUB,H2_DRYER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,S24: 2 per support (assumed)
 GAS,GAS_SCRUB,H2_DRYER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,S64: 2 per support (assumed)
 GAS,GAS_SCRUB,H2_DRYER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-H2-AIR: 2 per support (assumed)

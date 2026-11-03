@@ -190,3 +190,27 @@ never resized.
   fasteners, build log acceptance line, check.json. Added to the tracker
   ACCEPTED row set; tracker and full regen run; `--check` and `check_all`
   green.
+
+## H2_DRYER (molecular-sieve H2 dryer skid, GAS, tier 6) — commit 8
+
+- `models/mfg/H2_DRYER/h2_dryer.py` on the shared lib. Route F-MACH, acceptance
+  A-core + A-MACH. Build 600 × 400 × 1028 mm against the node envelope:
+  inside, filled exactly (guard frame pins the registry box, X-PAR-04); one
+  closed manifold mesh; `cad/stl/H2_DRYER.stl` replaced from the build;
+  `tracker --check H2_DRYER` green.
+- Skid per the node design block: dryer vessel OD 60.3 × 628, wall 3.91 (316L
+  annealed per M6/AQS-REV-H2-001) with 38 mm insulation; 2 deoxo DN25 × 328;
+  2 guard DN25 × 300; 2 TSA DN50 × 300 bed tubes with molecular-sieve and
+  guard-media envelopes (sieve_kg 0.353, guard_kg 0.032); regeneration heater
+  envelope (regen_W 1.03, purchased per plan rule 6); PVC-U inlet knock-out
+  pot (duty section 3). A-MACH: guard frame drawn, 8 anchors. Bed stations
+  are the layout choice (hold, W12).
+- Nozzles: all 9 schedule rows at tag, face, height and bore, atmospheric
+  open-bore tube stubs flush at the envelope faces; the N7 solids row drawn
+  DN15, bore not calculated (plan W4); the N4 vent is the S24 relief edge to
+  RELIEF_H2 (duty section 6) with the destination named.
+- 7-sheet drawing set (GA front/side, nozzle orientation, vessel,
+  beds+media, aux, iso); WORK_ORDER W1–W12, BOM make-or-buy with the four
+  buy rows, fasteners, build log acceptance line, check.json. Added to the
+  tracker ACCEPTED row set; tracker and full regen run; `--check` and
+  `check_all` green.

@@ -820,30 +820,15 @@ H2O_ELYZ,support: U-bolt with guide DN15,6.0,-,-,-,-,-,HOLD - bought standard pa
 H2O_ELYZ,support: U-bolt with guide DN15,9.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
 H2O_ELYZ,valve: isolation valve DN15,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
 H2O_ELYZ,valve: isolation valve DN15,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,Body D60 x 628 mm,1.0,-,-,-,-,-,HOLD - line mass pending at the unit CAD build (AQS-PRO-003 section 3),docs-authority/duties/H2_DRYER.md
-H2_DRYER,Process nozzle DN15,6.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),one per mass edge; DN from AQS-INV-003
-H2_DRYER,"Motor: induced-draft fan (BLDC, 42 mm (NEMA 17 flange))",1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-001 / AQS-INV-005
-H2_DRYER,bearing: deep-groove ball bearing 608-2Z,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,electronics: BLDC driver 24/48 V DC,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,electronics: PLC digital I/O point 24 V DC,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,fastener: anchor bolt M10,38.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,fastener: anchor bolt M10,38.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,fastener: anchor bolt M10,26.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,fastener: anchor bolt M10,62.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,"instrument: gas detector, H2 catalytic bead + IR backup",2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,instrument: high-level switch vibrating fork,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,instrument: level transmitter radar 80 GHz,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,instrument: pressure transmitter 0-10 bar,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,instrument: temperature element Pt100 class A,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,"instrument: temperature element (SIF, independent) Pt100 class A",1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,support: U-bolt with guide DN15,19.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,support: U-bolt with guide DN15,13.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,support: pipe clamp DN15,19.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,support: pipe clamp DN15,31.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,valve: isolation valve DN15,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,valve: isolation valve DN15,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,valve: isolation valve DN15,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
-H2_DRYER,valve: isolation valve DN15,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),AQS-INV-004
+H2_DRYER,"Dryer vessel OD 60.3 x 628, wall 3.91 (node design D_mm/H_mm/wall_mm), with heads",1.0,14.35,3.80 $/kg (stainless 304/316 mill product),2.4 (vessel plate and weld),1,130.87,P: 2024 US mill average; Ni/Cr content tracked against USGS_MCS_2025; F: TOWLER_SINNOTT ch.7 pressure-vessel fabrication,node design block; CA 0 mm (AQS-STD-001 316L rule); T_C 250 design class
+H2_DRYER,Insulation jacket 38 mm over the vessel,1.0,58.96,-,-,-,-,"HOLD - no registered price for material ""mineral wool + cladding (class per AQS-T""",node design insulation_mm 38; regeneration held per the duty
+H2_DRYER,"Bed tubes: 2 deoxo DN25 x 328, 2 guard DN25 x 300, 2 TSA DN50 x 300 (Sch 40 table)",6.0,22.67,3.80 $/kg (stainless 304/316 mill product),2 (plate and weld),1,172.29,P: 2024 US mill average; Ni/Cr content tracked against USGS_MCS_2025; F: TOWLER_SINNOTT ch.7 plate fabrication,"node design beds block (tube, L_mm, count); stations are the layout choice (hold, WORK_ORDER W12)"
+H2_DRYER,Media envelopes: molecular sieve 0.353 kg in the TSA tubes; guard media 0.032 kg in the guard tubes,4.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),node design sieve_kg/guard_kg; sieve and guard charges are buy rows per plan rule 6
+H2_DRYER,"Deoxo catalyst charge 0.183 L, 2 tubes",2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),node design beds.deoxo V_L; catalyst not drawn (plan rule 6)
+H2_DRYER,Regeneration heater envelope at the vessel base,1.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),"node design regen_W 1.03; purchased envelope per plan rule 6, rating from the node"
+H2_DRYER,"PVC-U inlet knock-out pot OD 60 x 120 (duty section 3: inlet knock-out PVC-U, wet)",1.0,0.48,1.90 $/kg (PVC-U compound),1.8 (cast),1,1.64,P: 2024 US thermoplastic compound average; F: TOWLER_SINNOTT ch.7 castings,duty section 3 wet-side selection; CA 0 mm (AQS-STD-001 polymer rule)
+H2_DRYER,Guard frame: four 30 x 30 posts with top rail (A-MACH guard) + plinth 600 x 400 x 20,1.0,80.68,0.82 $/kg (carbon steel mill product),2 (plate and weld),1,132.32,P: 2024 US HRC mill average; tracked against USGS_MCS_2025 iron and steel; F: TOWLER_SINNOTT ch.7 plate fabrication,AQS-MOD-002 dry service; the frame pins the envelope (X-PAR-04); anchors in fasteners.csv
+H2_DRYER,"Nozzle set per docs-authority/nozzles/H2_DRYER.csv: 8 open-bore tube stubs (DN15), the N7 solids row drawn DN15 bore not calculated",9.0,0.56,3.80 $/kg (stainless 304/316 mill product),3 (machined),1,6.38,P: 2024 US mill average; Ni/Cr content tracked against USGS_MCS_2025; F: TOWLER_SINNOTT ch.7 machined parts,schedule tags/faces/heights verbatim; the N4 vent is S24 to RELIEF_H2 (destination named); atmospheric tube per duty section 4
 HABITATION,Body / envelope per duty sheet section 2 (not yet dimensioned),1.0,-,-,-,-,-,HOLD - line mass pending at the unit CAD build (AQS-PRO-003 section 3),docs-authority/duties/HABITATION.md
 HABITATION,Process nozzle DN15,22.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),one per mass edge; DN from AQS-INV-003
 HABITATION,Process nozzle DN50,2.0,-,-,-,-,-,HOLD - bought standard part: vendor price pending (AQS-PRO-003 section 2),one per mass edge; DN from AQS-INV-003

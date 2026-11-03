@@ -52,7 +52,11 @@
   "D_mm": 60,
   "H_mm": 628,
   "T_C": 250.0,
-  "wall_mm": 3.91
+  "wall_mm": 3.91,
+  "service": "H2_DRYER: process H2 dried on the molecular-sieve beds; the vent is S24 to RELIEF_H2 (duty sections 1, 4 and 6)",
+  "material": "316L",
+  "ca_mm": 0.0,
+  "material_basis": "duty section 3: inlet knock-out PVC-U (wet); dryer vessel and dry outlet 316L annealed (M6, dry H2; AQS-REV-H2-001)"
  },
  "nozzles": [
   {
@@ -132,5 +136,31 @@
  "acceptance_sets": [
   "A-core",
   "A-MACH"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   600.0,
+   400.0,
+   1028.0
+  ],
+  "basis": null,
+  "vessel": {
+   "od_mm": 60.3,
+   "h_mm": 628.0,
+   "wall_mm": 3.91,
+   "pos_mm": [
+    450.0,
+    200.0,
+    120.0
+   ]
+  },
+  "insulation_mm": 38.0,
+  "plinth_mm": 20.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; bed stations per POS (KO pot x 60, deoxo x 150, guard x 220, TSA x 300, vessel x 450, all on the z 120 seat); guard posts at the envelope corners",
+  "supports": "plinth + guard frame + 8 slab anchors; tube clip rail (A-MACH)",
+  "nozzle_spread": "the schedule gives face and height only; ports pack in one row per face/height group from x 200, 8 mm clear at the bore; drain at x 180, vent at x 400; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

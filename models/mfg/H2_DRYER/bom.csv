@@ -1,25 +1,10 @@
-item,description,qty,material,basis
-1,Body D60 x 628 mm,1,Inlet knock-out PVC-U (wet).,docs-authority/duties/H2_DRYER.md
-2,Process nozzle DN15,6,Inlet knock-out PVC-U (wet).,one per mass edge; DN from AQS-INV-003
-3,"Motor: induced-draft fan (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-4,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-5,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-6,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-7,fastener: anchor bolt M10,38,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-8,fastener: anchor bolt M10,38,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-9,fastener: anchor bolt M10,26,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-10,fastener: anchor bolt M10,62,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-11,"instrument: gas detector, H2 catalytic bead + IR backup",2,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",AQS-INV-004
-12,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-13,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-14,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-15,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-16,"instrument: temperature element (SIF, independent) Pt100 class A",1,"IEC 60751, own thermowell",AQS-INV-004
-17,support: U-bolt with guide DN15,19,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-18,support: U-bolt with guide DN15,13,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-19,support: pipe clamp DN15,19,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-20,support: pipe clamp DN15,31,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-21,valve: isolation valve DN15,2,"PVDF ball valve, ISO 16135, PTFE seats",AQS-INV-004
-22,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-23,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-24,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Dryer vessel OD 60.3 x 628, wall 3.91 (node design D_mm/H_mm/wall_mm), with heads",1,"316L annealed (duty section 3, M6; AQS-REV-H2-001)",14.35,make,node design block; CA 0 mm (AQS-STD-001 316L rule); T_C 250 design class
+2,Insulation jacket 38 mm over the vessel,1,mineral wool + cladding (class per AQS-THM-003),58.96,make,node design insulation_mm 38; regeneration held per the duty
+3,"Bed tubes: 2 deoxo DN25 x 328, 2 guard DN25 x 300, 2 TSA DN50 x 300 (Sch 40 table)",6,316L tube,22.67,make,"node design beds block (tube, L_mm, count); stations are the layout choice (hold, WORK_ORDER W12)"
+4,Media envelopes: molecular sieve 0.353 kg in the TSA tubes; guard media 0.032 kg in the guard tubes,4,molecular sieve (buy charge; envelope drawn),1.67,buy,node design sieve_kg/guard_kg; sieve and guard charges are buy rows per plan rule 6
+5,"Deoxo catalyst charge 0.183 L, 2 tubes",2,deoxo catalyst (purchased charge),0.0,buy,node design beds.deoxo V_L; catalyst not drawn (plan rule 6)
+6,Regeneration heater envelope at the vessel base,1,purchased unit (envelope),8.92,buy,"node design regen_W 1.03; purchased envelope per plan rule 6, rating from the node"
+7,"PVC-U inlet knock-out pot OD 60 x 120 (duty section 3: inlet knock-out PVC-U, wet)",1,PVC-U,0.48,make,duty section 3 wet-side selection; CA 0 mm (AQS-STD-001 polymer rule)
+8,Guard frame: four 30 x 30 posts with top rail (A-MACH guard) + plinth 600 x 400 x 20,1,carbon steel (ASTM A500),80.68,make,AQS-MOD-002 dry service; the frame pins the envelope (X-PAR-04); anchors in fasteners.csv
+9,"Nozzle set per docs-authority/nozzles/H2_DRYER.csv: 8 open-bore tube stubs (DN15), the N7 solids row drawn DN15 bore not calculated",9,316L tube,0.56,make,schedule tags/faces/heights verbatim; the N4 vent is S24 to RELIEF_H2 (destination named); atmospheric tube per duty section 4

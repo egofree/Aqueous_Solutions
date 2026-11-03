@@ -19,19 +19,19 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1506 | 59 % |
-| organic | 739 | 29 % |
+| metal_plateable | 1496 | 59 % |
+| organic | 733 | 29 % |
 | metal_reactive | 120 | 5 % |
-| silicate_oxide | 114 | 4 % |
-| unassigned | 57 | 2 % |
+| silicate_oxide | 114 | 5 % |
+| unassigned | 59 | 2 % |
 
-Unassigned: 57 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
+Unassigned: 59 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
 
 ## Held lines (no route in the present plant, or material pending)
 
 | Reason | Lines |
 |---|---|
-| held - material not identified on the line | 44 |
+| held - material not identified on the line | 46 |
 | held - material not stated on the line | 11 |
 | held - standby machine, envelope-only placeholder; material issues at its unit task 10/12 design (owner programme gate) | 1 |
 | held - pointer line: these parts are classed line by line in their unit BOMs (AQS-INV-004 roll-up) | 1 |
@@ -128,7 +128,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | GROW_BED | 20 | 31 | 0 | 1 | 0 |
 | GW_INTAKE | 2 | 6 | 0 | 1 | 0 |
 | H2O_ELYZ | 11 | 5 | 0 | 2 | 0 |
-| H2_DRYER | 16 | 9 | 0 | 1 | 0 |
+| H2_DRYER | 5 | 3 | 0 | 1 | 2 |
 | HABITATION | 19 | 17 | 0 | 2 | 0 |
 | HDR_CO2 | 3 | 0 | 0 | 0 | 0 |
 | HDR_H2 | 1 | 2 | 0 | 0 | 0 |
@@ -211,6 +211,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-108 | 1 | 0 | 0 | 0 | 0 |
 | OF-109 | 1 | 0 | 0 | 0 | 0 |
 | OF-11 | 1 | 0 | 0 | 0 | 0 |
+| OF-110 | 1 | 0 | 0 | 0 | 0 |
 | OF-12 | 1 | 0 | 0 | 0 | 0 |
 | OF-13 | 0 | 0 | 0 | 0 | 1 |
 | OF-14 | 1 | 0 | 0 | 0 | 0 |
