@@ -1,0 +1,3 @@
+line,from,to,dn,class,service,rating,note
+IA-CULLET,LEACH_CSTR_1,GLASS_RINSE,DN50,P2,hot leach liquor,atmospheric tube/hose joint at the machine face (duty section 4); pipe class per AQS-PIP-003,
+IA-GLASS-01,GLASS_RINSE,GLASS_MILL,solids,—,—,-,"not piped: solids transfer (conveyor, bin or hand)"

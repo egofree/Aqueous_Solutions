@@ -1,0 +1,19 @@
+# Work order GLASS_RINSE
+
+Plan AQS-PLAN-006 (section 2 work order; section 5 acceptance A-core + A-PIPE). Route class F-PIPE (the `intra` class sits in the F-PIPE row of plan section 4). Graph Rev AD. Status M3. Study. Not a PE stamp.
+Authority: `docs-authority/duties/GLASS_RINSE.md`, `docs-authority/nozzles/GLASS_RINSE.csv`, AQS-STD-001 (shop rule), AQS-PIP-003/004 (line list), AQS-MOD-002 (frame system), `flow_graph/plant_flow_graph.json` node GLASS_RINSE.
+
+## Per-unit items
+
+W1 Source. `glass_rinse.py` (CadQuery) reads `params.json` only and rebuilds every solid. The W2 fields of `params.json` are tracker-generated; the `envelope`, `design` and `layout` blocks are builder-owned and pass through tracker regeneration.
+W2 Envelope. The node carries `size_mm` 1200 × 600 × 800 ("issued envelope"). The build stays inside it exactly: measured 1200.0 × 600.0 × 800.0 mm, one closed manifold mesh.
+W3 Internals. The node carries `internals: none`, so the tracker records no internal solid. The machine is drawn as the unit: an open-topped 316L rinse bath to the envelope — walls 10 mm (study, W12), inside 1180 × 580, base head on a 20 mm plinth (the ported AQS-MFG-001 form `models/openscad/detail/mfg_rinse.scad`: rinse + dewater, liquor to SALT FEED, not sewer).
+W4 Nozzles. All 4 rows of the issued schedule `docs-authority/nozzles/GLASS_RINSE.csv` are drawn at tag, face, height and bore: N1 DN25 cullet on −Y at z 160; N2 DN25 rinsed cullet on +Y at z 600; N3 DN15 drain flush at the envelope bottom (50 datum is the schedule placeholder); N4 DN15 vent flush at the envelope top (800 datum is the box top). Atmospheric joints are hose (duty section 4): hose barbs; no flange is drawn because no process pressure is stated (W4 110 % rule); the schedule rating column (Class 150) is carried verbatim as text.
+W5 Fasteners. `fasteners.csv`: 8 M10 wedge anchors (plinth to slab, 4 per 1.2 m bay), count from the model. 8.8 on carbon steel per the grade rule; length and pattern are study values, confirmed at fabrication.
+W6 Materials. Bath, base head and nozzles 316L (duty section 3 "316L where the stream is wet"); plinth carbon steel A500 (AQS-MOD-002 dry service class). CA 0 mm on the 316L (AQS-STD-001 rule); the dry carbon-steel plinth takes no CA.
+W7 Pressure. Atmospheric, no vent edge (duty section 6). No test pressure is claimed. The rinse liquor routes to SALT FEED, not the sewer (legacy form note carried by the line list).
+W8 Exports. `export/glass_rinse.step` (assembly); `export/glass_rinse.stl` closed and manifold; `cad/stl/GLASS_RINSE.stl` replaced from the build (ASCII, metres, X-PAR-04 envelope registry). Bounding box 1200.0 × 600.0 × 800.0 mm against the node envelope: inside, exact. Masses in `check.json`: plinth 113.0 kg, bath 276.9 kg, hardware 0.7 kg.
+W9 BOM. `bom.csv`, generated from the model: quantity, material, mass, make-or-buy, basis. All rows make: bath, plinth and hardware are in-house fabrication.
+W10 Fabrication route. F-PIPE (plan section 4: spool cut, join, support, line list) applied to the machine hardware: plate cut, squarebutt and corner welds of the bath, base-head seam, connection stubs, full leak test (hydrostatic fill to the freeboard line, 24 h). On-site tool: the metal shop (shear, weld); no machining beyond nozzle set-in.
+W11 Self-copy relevance. None: the rinse bath washes cullet; it does not make plant parts. No AQS-BOM-SC-001 cross-reference.
+W12 Holds, named. (1) No wall thickness is stated on the node or duty; the 10 mm bath wall is a study value. (2) Bath volume 0.4585 m³ to the 100 mm freeboard against the duty section 2 seven-day charge 0.2577 m³: the bath holds the charge; both figures are reported, nothing resized (plan rule 3). (3) The dewater pump is not designed: no pump is named on the node or duty (the legacy form carried a DN80 pump hint only). (4) Fastener lengths and anchor embedment are study values, confirmed at fabrication.

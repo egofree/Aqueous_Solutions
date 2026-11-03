@@ -1,5 +1,4 @@
-item,description,qty,material,basis
-1,Body / envelope 1200 x 600 x 800 mm,1,316L where the stream is wet.,docs-authority/duties/GLASS_RINSE.md
-2,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
-3,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-4,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Rinse bath 1200 x 600 x 780, wall 10 mm (study), open-topped, with base head on the plinth",1,316L (duty section 3),276.9,make,"bath drawn to the node envelope; no wall thickness on the node or duty (hold, WORK_ORDER W12); CA 0 mm (AQS-STD-001 316L rule); bath volume report in check.machine"
+2,Plinth 1200 x 600 x 20,1,carbon steel (ASTM A500),113.04,make,AQS-MOD-002 dry service; anchors in fasteners.csv
+3,"Nozzle set per docs-authority/nozzles/GLASS_RINSE.csv: 2 hose barbs (DN25), drain and vent flush at the envelope faces",4,316L,0.74,make,schedule tags/faces/heights verbatim; atmospheric hose per duty section 4; barb profile a study proportion (lib/nozzles.py)

@@ -1,0 +1,91 @@
+{
+  "bbox_mm": [
+    1200.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1200.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "L\u00d7W\u00d7H mm, issued envelope",
+  "graph_revision": "AD",
+  "solids": 2,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "open-topped rinse bath drawn to the envelope: 316L walls 10 mm (study), inside 1180 x 580, on a 20 mm plinth (ported AQS-MFG-001 form mfg_rinse.scad: rinse + dewater, liquor to SALT FEED, not sewer)",
+    "wall_mm": 10.0,
+    "wall_basis": "study value; no authority states a tank wall (WORK_ORDER W12)",
+    "v_bath_m3": 0.4585,
+    "freeboard_mm": 100.0,
+    "charge_duty_m3": 0.2577,
+    "charge_note": "duty section 2 seven-day charge 0.2577 m3; the bath holds 0.459 m3 to the 100 mm freeboard - reported, nothing resized (plan rule 3); the charge basis is a capacity figure, not a residence time",
+    "dewater": "dewater pump not designed: no pump is named on the node or duty (WORK_ORDER W12; the legacy form carried a DN80 pump hint only)",
+    "material": "316L"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "cullet",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "rinsed cullet",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N4": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm is the box top"
+    }
+  },
+  "nozzle_count_schedule": 4,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (duty section 4); the schedule rating column (Class 150) is carried verbatim as text, no flange drawn (no process pressure stated)",
+  "line_list": {
+    "csv": "models/mfg/GLASS_RINSE/line_list.csv",
+    "source": "unit edges in flow_graph/plant_flow_graph.json + docs-authority/LINE_LIST.md (AQS-PIP-004, DN and class authority)",
+    "edges": 2,
+    "rows": 2,
+    "missing_line_rows": [],
+    "rows_without_edge": [],
+    "no_new_edge": true
+  },
+  "part_mass_kg": {
+    "plinth": 113.04,
+    "bath": 276.9,
+    "nozzles": 0.74
+  },
+  "cadquery": "2.8.0"
+}

@@ -64,3 +64,26 @@ never resized.
   make-or-buy, fasteners, build log acceptance line, check.json. Added to the
   tracker ACCEPTED row set; tracker and full regen run; `--check` and
   `check_all` green.
+
+## GLASS_RINSE (rinse/dewater bath, GLASS, tier 5) — commit 3
+
+- `models/mfg/GLASS_RINSE/glass_rinse.py` on the shared lib. Route F-PIPE,
+  acceptance A-core + A-PIPE. Build 1200 × 600 × 800 mm against the node
+  envelope: inside, exact; one closed manifold mesh;
+  `cad/stl/GLASS_RINSE.stl` replaced from the build;
+  `tracker --check GLASS_RINSE` green.
+- Machine per the unit's own duty sheet and the ported AQS-MFG-001 form
+  (`mfg_rinse.scad`): open-topped 316L rinse bath to the envelope, walls 10 mm
+  (study — no wall thickness on the node or duty), on a 20 mm plinth. Bath
+  volume to the 100 mm freeboard 0.4585 m³ reported against the duty section 2
+  seven-day charge 0.2577 m³ — nothing resized (plan rule 3). Dewater pump not
+  drawn: no pump named on the node or duty (WORK_ORDER W12; the legacy form
+  carried a DN80 pump hint only).
+- Nozzles: all 4 schedule rows at tag, face, height and bore, atmospheric hose
+  barbs flush at the envelope faces. Line list generated from the unit's
+  present edges and AQS-PIP-004, no new edge.
+- 7-sheet drawing set (GA front/side, nozzle orientation, bath, plinth, aux,
+  iso) replaces the stale envelope-era set; WORK_ORDER W1–W12, BOM
+  make-or-buy, fasteners, build log acceptance line, check.json. Added to the
+  tracker ACCEPTED row set; tracker and full regen run; `--check` and
+  `check_all` green.

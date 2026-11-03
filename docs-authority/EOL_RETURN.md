@@ -19,7 +19,7 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1526 | 60 % |
+| metal_plateable | 1525 | 60 % |
 | organic | 745 | 29 % |
 | metal_reactive | 120 | 5 % |
 | silicate_oxide | 119 | 5 % |
@@ -119,7 +119,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | GLASS_BURNOUT | 5 | 0 | 0 | 1 | 0 |
 | GLASS_DIGEST | 0 | 6 | 0 | 0 | 0 |
 | GLASS_MILL | 5 | 0 | 0 | 1 | 0 |
-| GLASS_RINSE | 5 | 0 | 0 | 1 | 0 |
+| GLASS_RINSE | 4 | 0 | 0 | 1 | 0 |
 | GREASE_CA | 6 | 1 | 0 | 1 | 0 |
 | GREASE_LI | 6 | 1 | 0 | 1 | 0 |
 | GREY_TREAT | 0 | 5 | 0 | 0 | 0 |

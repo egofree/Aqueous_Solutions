@@ -17,7 +17,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 16601 |
+| fastener | 16609 |
 | support | 7355 |
 | electronics | 2057 |
 | valve | 989 |
@@ -159,7 +159,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-89 | M12 x 60 hex bolt + nut + 2 washers | PVDF (non-metallic) | M12 x 60 hex bolt + nut + 2 washers x34 | 34 | 1 | models/mfg/LEACH_CSTR_1/fasteners.csv |  |
 | OF-90 | M12 x 40 | ISO 3506 A4-70 | M12 x 40 x440 | 440 | 4 | models/mfg/CRYO_ASU/fasteners.csv; models/mfg/CRYO_CO2/fasteners.csv; models/mfg/CRYO_H2/fasteners.csv |  |
 | OF-91 | M12 x 45 | ISO 3506 A4-70 | M12 x 45 x8 | 8 | 1 | models/mfg/CRYO_H2/fasteners.csv |  |
-| OF-92 | M10 wedge anchor | ISO 898-1 8.8 | M10 wedge anchor x84 | 84 | 12 | models/mfg/C29_RECYCLE/fasteners.csv; models/mfg/GLASS_BURNOUT/fasteners.csv; models/mfg/GLASS_MILL/fasteners.csv |  |
+| OF-92 | M10 wedge anchor | ISO 898-1 8.8 | M10 wedge anchor x92 | 92 | 13 | models/mfg/C29_RECYCLE/fasteners.csv; models/mfg/GLASS_BURNOUT/fasteners.csv; models/mfg/GLASS_MILL/fasteners.csv |  |
 | OF-93 | M10 wedge anchor | ISO 3506 A4-70 | M10 wedge anchor x110 | 110 | 27 | models/mfg/BMED_ACID/fasteners.csv; models/mfg/BMED_BASE/fasteners.csv; models/mfg/CATCH_TANK/fasteners.csv |  |
 | OF-94 | M12 bolt + nut; PP-flanged joint | ISO 3506 A4-70 | M12 bolt + nut; PP-flanged joint x16 | 16 | 1 | models/mfg/NOX_SCRUB/fasteners.csv |  |
 | OF-95 | M12 PVDF bolt + nut | ISO 3506 A4-70 | M12 PVDF bolt + nut x8 | 8 | 1 | models/mfg/HX8/fasteners.csv |  |
