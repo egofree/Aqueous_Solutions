@@ -40,7 +40,7 @@ Table 2.1. Tasks by group
 | X-PAR | Parametric model (owner priority 2026-10-15; AQS-PAR-001) | 29 | 24 |
 | X-RSZ | Bounding-case resizing (owner approval 2026-10-15) | 7 | 7 |
 | X-SAN | Sanitation and pathogen barriers (owner decision 2026-10-15) | 1 | 1 |
-| X-INV | Building-block inventories (owner programme 2026-10-15; in order) | 190 | 189 |
+| X-INV | Building-block inventories (owner programme 2026-10-15; in order) | 191 | 190 |
 | X-BAS | Design basis | 4 | 4 |
 | X-PIP | Piping and line list | 5 | 5 |
 | X-ELS | Electrical system (plant level) | 12 | 12 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 14 |
 | NUT | Process (Mass transform) | 15 | 14 |
-| | **Total** | **3316** | **3111** |
+| | **Total** | **3317** | **3112** |
 
 ## 3. Triage of open tasks
 
@@ -383,7 +383,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-94** Building-block family OF-94: fastener, M12 bolt + nut; PP-flanged joint. Done when: open design and production plan for 16 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-95** Building-block family OF-95: fastener, M12 PVDF bolt + nut. Done when: open design and production plan for 8 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-96** Building-block family OF-96: fastener, M12 A4-70 bolt + nut. Done when: open design and production plan for 8 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-97** Building-block family OF-97: fastener, M12 wedge anchor. Done when: open design and production plan for 198 items (ISO 898-1 8.8) in 27 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-97** Building-block family OF-97: fastener, M12 wedge anchor. Done when: open design and production plan for 206 items (ISO 898-1 8.8) in 28 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-98** Building-block family OF-98: fastener, M10 stud + nut (ISO 4014 / ISO 4032). Done when: open design and production plan for 24 items (ISO 3506 A4-70) in 2 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-99** Building-block family OF-99: fastener, M8 hold-down bolt. Done when: open design and production plan for 24 items (ISO 3506 A4-70) in 2 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-100** Building-block family OF-100: fastener, M16 wedge anchor. Done when: open design and production plan for 16 items (ISO 898-1 8.8) in 2 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
@@ -415,6 +415,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-126** Building-block family OF-126: fastener, M12 drum-bearing block bolt + nut. Done when: open design and production plan for 4 items (ISO 898-1 8.8) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-127** Building-block family OF-127: fastener, M20 column base bolts (F1552 class). Done when: open design and production plan for 3212 items (ISO 898-1 8.8) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-128** Building-block family OF-128: fastener, M16 set-base bolt + nut. Done when: open design and production plan for 8 items (ISO 898-1 8.8) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-129** Building-block family OF-129: fastener, M10 ballast-foot bolt + nut. Done when: open design and production plan for 8 items (ISO 898-1 8.8) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 
 ### X-BAS. Design basis
 

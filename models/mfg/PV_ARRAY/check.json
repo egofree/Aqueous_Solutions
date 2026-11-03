@@ -1,0 +1,111 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 6,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "representative array-table section at the registry box (the WAFER_FAB room-scale precedent): roof-plane deck, ballast feet, table rails, and the tilted module plane with 3 strips covering 60 % of the plane (GCR 0.6, A-M-103), tilt +10 deg about +X with the +Y edge raised (equator-facing, site north = +Y, models/freecad heritage rule)",
+    "array_facts": {
+      "tables": 15,
+      "modules": 6052,
+      "module_kw": 0.5,
+      "nameplate_kWp": 3026,
+      "area_m2": 26574.0,
+      "roof_footprint_mm": [
+        210000,
+        138000
+      ],
+      "table_mm": [
+        40293.2,
+        43968.0
+      ],
+      "pathways": "perimeter 1829 mm, interior 1219 mm (IFC 2027 1205.3 / NFPA 1 11.12; solver roof_close segment math)",
+      "mounting": "roof only (X-PAR-07); ground field removed",
+      "mass_t": 451.8,
+      "mass_basis": "struct_pv_kg_m2 17.0 kg/m2 modules + ballasted racking (A-M-184) over the node area_m2",
+      "loads_kPa": {
+        "service": 1.11,
+        "lrfd": 1.716
+      },
+      "roof_capacity_kWp_class": 3029.5
+    },
+    "tilt": {
+      "deg_drawn": 10.0,
+      "basis": "low-tilt rows at GCR 0.6 (A-M-103); the numeric tilt is a study value - the verification test is a PVWatts run at the roof tilt and azimuth (hold, WORK_ORDER W12); azimuth equator-facing per the site-north +Y heritage rule"
+    },
+    "purchased": "PV modules (0.5 kW, STC eff 0.19) and the inverter row are purchased per plan rule 6; the ballasted racking is the shop make",
+    "guard": "four-post hold-down/guard frame pins the registry box (X-PAR-04) and is the A-MACH guard; the ballast feet are the A-MACH anchor (A-M-105 roof_pv_dead 0.15 kPa: modules and ballasted racking); 8 slab anchors (fasteners.csv)",
+    "material": "no wetted alloy (duty section 3); conductors copper; structure carbon steel/aluminium class; CA does not apply",
+    "ca_mm": 0.0,
+    "rep_scale": "the representative build is box-scale; the array itself spans the roof planes (facts above) - the drawing set and this check carry the array figures (WAFER_FAB room-scale precedent)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 500.0,
+      "schedule_rating": "Class 150",
+      "service": "solar into the array",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 500.0,
+      "schedule_rating": "Class 150",
+      "service": "PV daily average",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm is the box top"
+    }
+  },
+  "nozzle_count_schedule": 4,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4 verbatim: DN copied from the edge, not recalculated); N1 solar into the array (DN25) on -Y at z 160; N2 PV daily average (DN25) on +Y at z 600 - the electrical edges drawn as the schedule's tube rows with the conductor note carried; drain flush at the envelope bottom (50 datum); vent flush at the envelope top (800 datum is the box top); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "frame": 76.36,
+    "roof_deck": 73.31,
+    "table_rails": 48.61,
+    "ballast_feet": 48.23,
+    "module_strips": 23.33,
+    "nozzles": 0.35
+  },
+  "cadquery": "2.8.0"
+}

@@ -56,5 +56,67 @@
  "acceptance_sets": [
   "A-core",
   "A-MACH"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "rep_scale": "box-scale representative table section (WAFER_FAB precedent); the array facts are reported, not shrunk onto the box",
+  "table": {
+   "l_mm": 860.0,
+   "w_mm": 480.0,
+   "tilt_deg": 10.0,
+   "gcr": 0.6,
+   "strips": 3
+  },
+  "ballast_foot_mm": [
+   80.0,
+   80.0,
+   240.0
+  ]
+ },
+ "design": {
+  "service": "PV_ARRAY: the roof PV - 15 array tables over the extension roof, nameplate 3026 kWp (6052 x 0.5 kW), roof only per X-PAR-07 (duty sections 1 and 2; A-M-233 rebasis)",
+  "array_facts": {
+   "tables": 15,
+   "modules": 6052,
+   "module_kw": 0.5,
+   "nameplate_kWp": 3026,
+   "area_m2": 26574.0,
+   "roof_footprint_mm": [
+    210000,
+    138000
+   ],
+   "table_mm": [
+    40293.2,
+    43968.0
+   ],
+   "pathways": "perimeter 1829 mm, interior 1219 mm (IFC 2027 1205.3 / NFPA 1 11.12; solver roof_close segment math)",
+   "mounting": "roof only (X-PAR-07); ground field removed",
+   "mass_t": 451.8,
+   "mass_basis": "struct_pv_kg_m2 17.0 kg/m2 modules + ballasted racking (A-M-184) over the node area_m2",
+   "loads_kPa": {
+    "service": 1.11,
+    "lrfd": 1.716
+   },
+   "roof_capacity_kWp_class": 3029.5
+  },
+  "tilt": {
+   "deg_drawn": 10.0,
+   "basis": "low-tilt rows at GCR 0.6 (A-M-103); the numeric tilt is a study value - the verification test is a PVWatts run at the roof tilt and azimuth (hold, WORK_ORDER W12); azimuth equator-facing per the site-north +Y heritage rule"
+  },
+  "material": "no wetted alloy (duty section 3); conductors copper; structure carbon steel/aluminium class",
+  "ca_mm": 0.0,
+  "material_basis": "duty section 3; CA does not apply",
+  "purchased": "PV modules and the inverter row (plan rule 6); ballasted racking is the shop make (X-MFG-32 class)"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; roof-plane deck over the plinth; table section centred (860 x 480 at +10 deg, +Y edge raised - equator-facing, site north = +Y); hold-down posts at the corners",
+  "supports": "plinth + hold-down frame + ballast feet (A-MACH anchor) + 8 slab anchors",
+  "nozzle_spread": "the schedule gives face and height only; N1 on -Y at z 160, N2 on +Y at z 600, drain at x 430, vent at x 570; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

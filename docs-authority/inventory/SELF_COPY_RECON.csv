@@ -1248,7 +1248,12 @@ PROD_C5_C10,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 C
 PROD_C5_C10,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",Closed,Fe EW -> MET_MELT -> mill/draw,
 PROD_MEOH,Body / envelope 1150 x 1150 x 1450 mm,1,"SA-240 304L, welded (graph node material)",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 PROD_O2,Body / envelope 1400 x 1400 x 1750 mm,1,"SA-240 304L, welded (graph node material)",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-PV_ARRAY,Body / envelope per duty sheet section 2,1,No wetted alloy. Conductors are copper (duty sheet section 3),Closed,Cu EW -> WIRE_DRAW,
+PV_ARRAY,Plinth 1000 x 600 x 20 (rep-section base),1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
+PV_ARRAY,Four-post hold-down/guard frame pinning the 1000 x 600 x 800 envelope (40 x 40 p,1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
+PV_ARRAY,Roof-plane segment deck (the representative roof plane),1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+PV_ARRAY,Array table rails + 4 ballast feet (rep section; 10 deg low-tilt),1,carbon steel + ballast,Closed,Fe EW -> MET_MELT -> mill/draw,
+PV_ARRAY,"Tilted module-plane strips, 3 off covering 60 % of the table plane (GCR 0.6, A-M",3,"PV module plane (purchased, envelope)",Unstated,-,"not classed: PV module plane (purchased, envelope)"
+PV_ARRAY,Nozzle set per docs-authority/nozzles/PV_ARRAY.csv: 2 DN25 electrical edges + DN,4,316L tube,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 P_CA,Steel frame plinth 300 x 300 x 20 (duty section 3: steel frame outside the wette,1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
 P_CA,"PP-H vessel OD 250, wall 6 mm, z 18..336, with heads",1,PP-H plate,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 P_CA,PP agitator: shaft on the vessel axis with two blades (duty section 3 names the ,1,PP-H rod/plate,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
@@ -2295,7 +2300,7 @@ OF-93,fastener: M10 wedge anchor (ISO 3506 A4-70),110,,Unstated,-,material not s
 OF-94,fastener: M12 bolt + nut; PP-flanged joint (ISO 3506 A4-70),16,,Unstated,-,material not stated on the unit BOM line
 OF-95,fastener: M12 PVDF bolt + nut (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
 OF-96,fastener: M12 A4-70 bolt + nut (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
-OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),198,,Unstated,-,material not stated on the unit BOM line
+OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),206,,Unstated,-,material not stated on the unit BOM line
 OF-98,fastener: M10 stud + nut (ISO 4014 / ISO 4032) (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line
 OF-99,fastener: M8 hold-down bolt (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line
 OF-100,fastener: M16 wedge anchor (ISO 898-1 8.8),16,,Unstated,-,material not stated on the unit BOM line
@@ -2327,3 +2332,4 @@ OF-125,fastener: M10 machine hold-down bolt + nut (ISO 898-1 8.8),12,,Unstated,-
 OF-126,fastener: M12 drum-bearing block bolt + nut (ISO 898-1 8.8),4,,Unstated,-,material not stated on the unit BOM line
 OF-127,fastener: M20 column base bolts (F1552 class) (ISO 898-1 8.8),3212,,Unstated,-,material not stated on the unit BOM line
 OF-128,fastener: M16 set-base bolt + nut (ISO 898-1 8.8),8,,Unstated,-,material not stated on the unit BOM line
+OF-129,fastener: M10 ballast-foot bolt + nut (ISO 898-1 8.8),8,,Unstated,-,material not stated on the unit BOM line

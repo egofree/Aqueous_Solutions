@@ -89,7 +89,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-94 | fastener: M12 bolt + nut; PP-flanged joint (M12 bolt + nut; PP-flanged joint x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-95 | fastener: M12 PVDF bolt + nut (M12 PVDF bolt + nut x8) | 8 | 4 | 2 % min 4 |
 | building block | OF-96 | fastener: M12 A4-70 bolt + nut (M12 A4-70 bolt + nut x8) | 8 | 4 | 2 % min 4 |
-| building block | OF-97 | fastener: M12 wedge anchor (M12 wedge anchor x198) | 198 | 4 | 2 % min 4 |
+| building block | OF-97 | fastener: M12 wedge anchor (M12 wedge anchor x206) | 206 | 5 | 2 % min 4 |
 | building block | OF-98 | fastener: M10 stud + nut (ISO 4014 / ISO 4032) (M10 stud + nut (ISO 4014 / ISO 4032) x24) | 24 | 4 | 2 % min 4 |
 | building block | OF-99 | fastener: M8 hold-down bolt (M8 hold-down bolt x24) | 24 | 4 | 2 % min 4 |
 | building block | OF-100 | fastener: M16 wedge anchor (M16 wedge anchor x16) | 16 | 4 | 2 % min 4 |
@@ -121,6 +121,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-126 | fastener: M12 drum-bearing block bolt + nut (M12 drum-bearing block bolt + nut x4) | 4 | 4 | 2 % min 4 |
 | building block | OF-127 | fastener: M20 column base bolts (F1552 class) (M20 column base bolts (F1552 class) x3212) | 3212 | 65 | 2 % min 4 |
 | building block | OF-128 | fastener: M16 set-base bolt + nut (M16 set-base bolt + nut x8) | 8 | 4 | 2 % min 4 |
+| building block | OF-129 | fastener: M10 ballast-foot bolt + nut (M10 ballast-foot bolt + nut x8) | 8 | 4 | 2 % min 4 |
 | motor | MF-01 | BLDC 42 mm (NEMA 17 flange) 24 V DC | 80 | 4 | 5 % min 1 |
 | motor | MF-02 | BLDC 57 mm (NEMA 23 flange) 24 V DC | 55 | 3 | 5 % min 1 |
 | motor | MF-03 | BLDC actuator ISO 5211 F03 mount 24 V DC | 24 | 2 | 5 % min 1 |
@@ -157,4 +158,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-147 lines; 33 spare motors, 1132 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+148 lines; 33 spare motors, 1137 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.

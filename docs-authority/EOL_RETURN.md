@@ -19,19 +19,19 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1346 | 58 % |
+| metal_plateable | 1351 | 58 % |
 | organic | 663 | 28 % |
 | metal_reactive | 125 | 5 % |
 | silicate_oxide | 99 | 4 % |
-| unassigned | 95 | 4 % |
+| unassigned | 96 | 4 % |
 
-Unassigned: 95 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
+Unassigned: 96 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
 
 ## Held lines (no route in the present plant, or material pending)
 
 | Reason | Lines |
 |---|---|
-| held - material not identified on the line | 82 |
+| held - material not identified on the line | 83 |
 | held - material not stated on the line | 11 |
 | held - standby machine, envelope-only placeholder; material issues at its unit task 10/12 design (owner programme gate) | 1 |
 | held - pointer line: these parts are classed line by line in their unit BOMs (AQS-INV-004 roll-up) | 1 |
@@ -231,6 +231,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-126 | 1 | 0 | 0 | 0 | 0 |
 | OF-127 | 1 | 0 | 0 | 0 | 0 |
 | OF-128 | 1 | 0 | 0 | 0 | 0 |
+| OF-129 | 1 | 0 | 0 | 0 | 0 |
 | OF-13 | 0 | 0 | 0 | 0 | 1 |
 | OF-14 | 1 | 0 | 0 | 0 | 0 |
 | OF-15 | 1 | 0 | 0 | 0 | 0 |
@@ -343,7 +344,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | PROD_C5_C10 | 25 | 4 | 0 | 1 | 0 |
 | PROD_MEOH | 1 | 0 | 0 | 0 | 0 |
 | PROD_O2 | 1 | 0 | 0 | 0 | 0 |
-| PV_ARRAY | 1 | 0 | 0 | 0 | 0 |
+| PV_ARRAY | 5 | 0 | 0 | 0 | 1 |
 | P_CA | 1 | 5 | 0 | 0 | 1 |
 | Q1_A | 8 | 4 | 0 | 1 | 0 |
 | Q1_B | 8 | 4 | 0 | 1 | 0 |

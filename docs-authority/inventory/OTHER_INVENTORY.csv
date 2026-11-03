@@ -1057,7 +1057,9 @@ ELEC,pem_fc,FUEL_CELL,valve,check valve,DN15,"CPVC true-union swing/ball check v
 ELEC,pem_fc,FUEL_CELL,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,S52: one at each end nozzle (assumed)
 ELEC,pem_fc,FUEL_CELL,valve,isolation valve,DN50,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-FC-FIX: one at each end nozzle (assumed)
 ELEC,pem_fc,FUEL_CELL,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-FC-LEACH: one at each end nozzle (assumed)
-ELEC,pv,PV_ARRAY,fabricated part,fabricated part set,1 BOM lines,models/mfg/PV_ARRAY/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+ELEC,pv,PV_ARRAY,fabricated part,fabricated part set,6 BOM lines,models/mfg/PV_ARRAY/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+ELEC,pv,PV_ARRAY,fastener,M10 ballast-foot bolt + nut,M10 ballast-foot bolt + nut,ISO 898-1 8.8,8,models/mfg/PV_ARRAY/fasteners.csv
+ELEC,pv,PV_ARRAY,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,8,models/mfg/PV_ARRAY/fasteners.csv
 ELEC,pv,PV_ARRAY,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 ELEC,pv,PV_ARRAY,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 ELEC,rectifier,RECTIFIER,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",8,cooling fan (assumed size)
