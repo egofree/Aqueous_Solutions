@@ -1,0 +1,77 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 3,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "pumped-hydro powerhouse set per the node backup_basis (A-M-145 lane; Q-006/Q-009 closed), drawn as purchased-class machine envelopes per plan rule 6: turbine envelope (rated_kW_discharge 14.46 at head_m 36.21, eta_turbine_generator 0.8), generator envelope, pump-motor envelope (recharge 49.6 kW over the PV window, eta_pump_motor 0.85; round_trip 0.68), electrical cabinet envelope, buffer manifold vessel (study, W12); hold-down/guard frame pins the registry box (X-PAR-04)",
+    "n1_backup": "diverse N+1 backup of ZNBR2 (third source FUEL_CELL) to NFPA 111 Level 1, Class X: 14 h at the 14.46 kW critical load = 202.4 kWh at the bus (node backup_basis)",
+    "reservoir_interface": "Q-009 facts (closed 2026-10-16): upper reservoir = the building's top floors, 3 levels x 3.06 m water over 367 m2, 2 cells per level, from +16.8 m (upper_m3 2700 node); lower = CATCH_TANK, 9.17 m water over 367 m2; eta_net_with_penstock 0.76. Penstock supply and tailrace return pads drawn inside the envelope, bores not calculated (W4) - the reservoir structures are building scope (AQS-BLD-014, A-M-187), not this unit's hardware",
+    "purchased": "turbine-generator set and pump-motor set are plan rule 6 envelopes with the node ratings; no machine type is invented - the maker prints govern (holds, W12)",
+    "guard": "four-post hold-down/guard frame (40 x 40 posts, top rails) + 8 slab anchors (fasteners.csv)",
+    "material": "316L where the stream is wet (duty section 3); CA 0 mm; the water sides are the reservoir/penstock building scope",
+    "ca_mm": 0.0,
+    "standby": "the set runs standby; the continuous kW model is honest-incomplete on the node (WP-A4) - nothing claimed here"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 500.0,
+      "schedule_rating": "Class 150",
+      "service": "Hydro turbine-pump electrical (MISSING on SLD)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); schedule service text verbatim: the turbine-pump electrical row is the one the SLD still carries as MISSING"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; the 800 datum is the box top"
+    }
+  },
+  "nozzle_count_schedule": 3,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); N1 turbine-pump electrical out on +Y at z 600 with the schedule service text verbatim (the SLD MISSING note); drain flush at the envelope bottom (50 datum); vent flush at the envelope top (800 datum is the box top); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "frame": 76.36,
+    "turbine_env": 297.17,
+    "generator_env": 134.71,
+    "pump_motor_env": 97.97,
+    "cabinet_env": 280.34,
+    "buffer_vessel": 47.35,
+    "penstock_pad": 0.49,
+    "tailrace_pad": 0.49,
+    "nozzles": 0.16
+  },
+  "cadquery": "2.8.0"
+}

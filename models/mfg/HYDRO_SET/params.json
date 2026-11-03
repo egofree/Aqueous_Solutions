@@ -48,5 +48,52 @@
  "acceptance_sets": [
   "A-core",
   "A-MACH"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "plinth_mm": 20.0,
+  "bays_mm": {
+   "turbine": [
+    60.0,
+    340.0
+   ],
+   "generator": [
+    340.0,
+    560.0
+   ],
+   "pump_motor": [
+    560.0,
+    720.0
+   ],
+   "cabinet": [
+    720.0,
+    960.0
+   ]
+  },
+  "buffer_vessel": {
+   "od_mm": 160.0,
+   "h_mm": 300.0
+  }
+ },
+ "design": {
+  "service": "HYDRO_SET: the pumped-hydro N+1 backup of ZNBR2 - turbine-generator discharge at the night class, pump-motor recharge on the PV window (duty sections 1 and 4; A-M-145 lane)",
+  "backup_basis": {},
+  "q009": "Q-009 closed: upper reservoir = the building's top floors (3 levels x 3.06 m water over 367 m2, 2 cells per level, from +16.8 m); lower = CATCH_TANK 9.17 m over 367 m2; roof PV at +34.8 m",
+  "material": "316L",
+  "ca_mm": 0.0,
+  "material_basis": "duty section 3: 316L where the stream is wet; CA 0 mm (AQS-STD-001); the water sides are building scope",
+  "purchased": "turbine-generator and pump-motor sets, electrical cabinet (plan rule 6 envelopes with the node ratings); no machine type invented"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; turbine bay x 60..340, generator x 340..560, pump-motor x 560..720, cabinet x 720..960, buffer vessel at x 450; hold-down posts at the envelope corners",
+  "interface": "penstock supply pad on the turbine bay top (from the upper reservoir above), tailrace return pad at the pump bay base (to CATCH_TANK); bores not calculated (W4)",
+  "supports": "plinth + hold-down frame + 8 slab anchors (A-MACH practice)",
+  "nozzle_spread": "the schedule gives face and height only; N1 on +Y at z 600, drain at x 450, vent at x 550; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

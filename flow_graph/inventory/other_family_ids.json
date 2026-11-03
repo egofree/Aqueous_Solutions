@@ -635,6 +635,11 @@
    "category": "fastener",
    "item": "M20 column base bolts (F1552 class)",
    "spec": "ISO 898-1 8.8"
+  },
+  "OF-128": {
+   "category": "fastener",
+   "item": "M16 set-base bolt + nut",
+   "spec": "ISO 898-1 8.8"
   }
  }
 }

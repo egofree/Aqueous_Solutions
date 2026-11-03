@@ -17,13 +17,13 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 20133 |
+| fastener | 20149 |
 | support | 7355 |
-| electronics | 2184 |
+| electronics | 2187 |
 | valve | 992 |
 | instrument | 848 |
-| bearing | 742 |
-| protection | 234 |
+| bearing | 744 |
+| protection | 235 |
 | seal | 155 |
 
 ## 2a. What a datasheet is here
@@ -46,16 +46,16 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
 | OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x324 | 324 | 52 | AHU damper actuator (assumed size); Biogas recirculation diaphragm blower about 2 L/min (assumed size); CNC vertical mill: axis drive (assumed size) |  |
-| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6201-2Z x310; 6205-2Z x50; 6204-2Z x22; 6202-2Z x18; 6206-2Z x10; 6308-2Z x6; 6306-2Z x2 | 418 | 60 | AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size); AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed si |  |
+| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6201-2Z x312; 6205-2Z x50; 6204-2Z x22; 6202-2Z x18; 6206-2Z x10; 6308-2Z x6; 6306-2Z x2 | 420 | 60 | AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size); AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed si |  |
 ## 4. Electronics datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x830 | 830 | 92 | AHU damper actuator: run and fault (assumed); AHU exhaust fan: run and fault (assumed); AHU supply fan: run and fault (assumed) |  |
+| OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x832 | 832 | 92 | AHU damper actuator: run and fault (assumed); AHU exhaust fan: run and fault (assumed); AHU supply fan: run and fault (assumed) |  |
 | OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x848 | 848 | 1 | one per instrument |  |
 | OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x159 | 159 | 51 | AHU damper actuator; Biogas recirculation diaphragm blower about 2 L/min; Motor: cathode air blower (induction IE3, IEC 71 / 0.25 kW) |  |
-| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.18 kW x154; 0.55 kW x10; 0.37 kW x7; 0.25 kW x2; 0.12 kW x1; 1.1 kW x1; 0.75 kW x1 | 176 | 50 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Body / envelope 800 x 600 x 1200 mm (assumed VFD at >= 0.75 kW); Body / en |  |
-| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x105 | 105 | 1 | 1678 points / 16 |  |
+| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.18 kW x155; 0.55 kW x10; 0.37 kW x7; 0.25 kW x2; 0.12 kW x1; 1.1 kW x1; 0.75 kW x1 | 177 | 50 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Body / envelope 800 x 600 x 1200 mm (assumed VFD at >= 0.75 kW); Body / en |  |
+| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x105 | 105 | 1 | 1680 points / 16 |  |
 | OF-08 | variable-frequency drive | IEC 61800-5-1 | 1.1 kW x21; 2.2 kW x5; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 33 | 15 | AHU exhaust fan (assumed VFD at >= 0.75 kW); AHU supply fan (assumed VFD at >= 0.75 kW); Band saw: main drive (assumed VFD at >= 0.75 kW) |  |
 | OF-09 | solenoid driver channel | IEC 61131-2 DO | 24 V DC x19 | 19 | 9 | on/off valve IA-BED-H2O; on/off valve IA-ELY-H2O; on/off valve IA-FLUE-QUENCH |  |
 | OF-10 | compressor contactor + overload | IEC 60947-4-1 | 18.5 kW hermetic x8; 1.1 kW hermetic x1 | 9 | 2 | air-source heat pump compressor; cryocooler compressor |  |
@@ -82,7 +82,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x222; 90 A x8; 30 A x3; 60 A x1 | 234 | 61 | NEC 430.52, from AQS-INV-002 |  |
+| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x223; 90 A x8; 30 A x3; 60 A x1 | 235 | 61 | NEC 430.52, from AQS-INV-002 |  |
 ## 7. Seal datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
@@ -147,6 +147,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-125 | M10 machine hold-down bolt + nut | ISO 898-1 8.8 | M10 machine hold-down bolt + nut x12 | 12 | 1 | models/mfg/MFG_SHOP/fasteners.csv |  |
 | OF-126 | M12 drum-bearing block bolt + nut | ISO 898-1 8.8 | M12 drum-bearing block bolt + nut x4 | 4 | 1 | models/mfg/WIRE_DRAW/fasteners.csv |  |
 | OF-127 | M20 column base bolts (F1552 class) | ISO 898-1 8.8 | M20 column base bolts (F1552 class) x3212 | 3212 | 1 | models/mfg/EXT_HALL/fasteners.csv |  |
+| OF-128 | M16 set-base bolt + nut | ISO 898-1 8.8 | M16 set-base bolt + nut x8 | 8 | 1 | models/mfg/HYDRO_SET/fasteners.csv |  |
 | OF-14 | anchor bolt | ISO 3506 A4-70 wedge anchor | M10 x14710 | 14710 | 138 | AL_POT_CL2: 2 per support (assumed); AQUA_BYPASS: 2 per support (assumed); AQUA_LOOP1: 2 per support (assumed) |  |
 | OF-15 | M10 x 40 lid bolt | ISO 3506 A4-70 | M10 x 40 lid bolt with nut and washers x12 | 12 | 1 | models/mfg/GLASS_DIGEST/fasteners.csv |  |
 | OF-16 | M8 x 30 lid bolt | ISO 3506 A4-70 | M8 x 30 lid bolt with nut and washers x12 | 12 | 1 | models/mfg/BLACK_DIGEST/fasteners.csv |  |
@@ -183,12 +184,12 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-94 | M12 bolt + nut; PP-flanged joint | ISO 3506 A4-70 | M12 bolt + nut; PP-flanged joint x16 | 16 | 1 | models/mfg/NOX_SCRUB/fasteners.csv |  |
 | OF-95 | M12 PVDF bolt + nut | ISO 3506 A4-70 | M12 PVDF bolt + nut x8 | 8 | 1 | models/mfg/HX8/fasteners.csv |  |
 | OF-96 | M12 A4-70 bolt + nut | ISO 3506 A4-70 | M12 A4-70 bolt + nut x8 | 8 | 1 | models/mfg/MET_HX_Q4/fasteners.csv |  |
-| OF-97 | M12 wedge anchor | ISO 898-1 8.8 | M12 wedge anchor x190 | 190 | 26 | models/mfg/AFTERBURNER/fasteners.csv; models/mfg/BLOW_MOLD/fasteners.csv; models/mfg/COLD_MILL/fasteners.csv |  |
+| OF-97 | M12 wedge anchor | ISO 898-1 8.8 | M12 wedge anchor x198 | 198 | 27 | models/mfg/AFTERBURNER/fasteners.csv; models/mfg/BLOW_MOLD/fasteners.csv; models/mfg/COLD_MILL/fasteners.csv |  |
 | OF-98 | M10 stud + nut (ISO 4014 / ISO 4032) | ISO 3506 A4-70 | M10 stud + nut (ISO 4014 / ISO 4032) x24 | 24 | 2 | models/mfg/VAC_CAST/fasteners.csv; models/mfg/VAC_IND/fasteners.csv |  |
 | OF-99 | M8 hold-down bolt | ISO 3506 A4-70 | M8 hold-down bolt x24 | 24 | 2 | models/mfg/REE_RECOVER/fasteners.csv; models/mfg/REMIN/fasteners.csv |  |
 
 ## 11. Coverage gate
 
-- Bought families covered: 113 of 114 (the excluded one is OF-13, the fabricated-part set:
+- Bought families covered: 114 of 115 (the excluded one is OF-13, the fabricated-part set:
   sheets like those are `models/mfg/*/bom.csv` + `WORK_ORDER.md`, in-house work).
 - Items rest on the A-M-125 counting rule where the roll-up assumed; the count is the basis, not a measurement.

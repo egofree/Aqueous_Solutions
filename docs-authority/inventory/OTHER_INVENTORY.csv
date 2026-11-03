@@ -1,5 +1,5 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,105,1678 points / 16
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,105,1680 points / 16
 CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,848,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 176 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
@@ -3022,14 +3022,20 @@ POLYMERS,melt_spin,POLY_FIBER,support,pipe clamp,DN15,"PP clamp with EPDM liner,
 POLYMERS,melt_spin,POLY_FIBER,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,FLEECE_TO_MFG: AQS-PIP-005 span count
 POLYMERS,melt_spin,POLY_FIBER,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,FIBER_SCRAP: one at each end nozzle (assumed)
 POLYMERS,melt_spin,POLY_FIBER,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,FLEECE_TO_MFG: one at each end nozzle (assumed)
-PUMPED_HYDRO,HYDRO,HYDRO_SET,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: pump-turbine motor-generator (induction IE3, IEC 100L: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-PUMPED_HYDRO,HYDRO,HYDRO_SET,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: pump-turbine motor-generator (induction IE3, IEC 100L: run and fault (assumed)"
-PUMPED_HYDRO,HYDRO,HYDRO_SET,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: pump-turbine motor-generator (induction IE3, IEC 100L (assumed VFD at >= 0.75 kW)"
+PUMPED_HYDRO,HYDRO,HYDRO_SET,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Buffer manifold vessel OD 160 x 300 (study): drive and non-drive end, IEC 60072 frame 63 (assumed size)"
+PUMPED_HYDRO,HYDRO,HYDRO_SET,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Pump-motor envelope (recharge 49.6 kW over the PV window, et: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
+PUMPED_HYDRO,HYDRO,HYDRO_SET,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Buffer manifold vessel OD 160 x 300 (study): run and fault (assumed)
+PUMPED_HYDRO,HYDRO,HYDRO_SET,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Pump-motor envelope (recharge 49.6 kW over the PV window, et: run and fault (assumed)"
+PUMPED_HYDRO,HYDRO,HYDRO_SET,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,Buffer manifold vessel OD 160 x 300 (study) (assumed VFD at >= 0.75 kW)
+PUMPED_HYDRO,HYDRO,HYDRO_SET,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Pump-motor envelope (recharge 49.6 kW over the PV window, et (assumed VFD at >= 0.75 kW)"
 PUMPED_HYDRO,HYDRO,HYDRO_SET,fabricated part,fabricated part set,9 BOM lines,models/mfg/HYDRO_SET/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+PUMPED_HYDRO,HYDRO,HYDRO_SET,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,8,models/mfg/HYDRO_SET/fasteners.csv
+PUMPED_HYDRO,HYDRO,HYDRO_SET,fastener,M16 set-base bolt + nut,M16 set-base bolt + nut,ISO 898-1 8.8,8,models/mfg/HYDRO_SET/fasteners.csv
 PUMPED_HYDRO,HYDRO,HYDRO_SET,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 PUMPED_HYDRO,HYDRO,HYDRO_SET,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 PUMPED_HYDRO,HYDRO,HYDRO_SET,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-PUMPED_HYDRO,HYDRO,HYDRO_SET,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: pump-turbine motor-generator (induction IE3, IEC 100L: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
+PUMPED_HYDRO,HYDRO,HYDRO_SET,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
+PUMPED_HYDRO,HYDRO,HYDRO_SET,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Pump-motor envelope (recharge 49.6 kW over the PV window, et: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 WTR,BMED_CRU,BMED_UPW_POLISH,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"RO pump envelope: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 WTR,BMED_CRU,BMED_UPW_POLISH,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,RO pump envelope: run and fault (assumed)
 WTR,BMED_CRU,BMED_UPW_POLISH,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,RO pump envelope (assumed VFD at >= 0.75 kW)

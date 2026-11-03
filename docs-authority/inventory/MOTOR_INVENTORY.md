@@ -34,7 +34,7 @@ Table 1.1. Motor families
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 7 | 3 | 1.75 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 22 | 7 | 18.95 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 154 | 40 | 18.48 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 155 | 40 | 18.60 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 10 | 8 | 3.70 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 5 | 5 | 7.42 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 1 | 1 | 0.08 |
@@ -302,7 +302,8 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 
 | Sub-system | Unit | Device | Motor type | Size | Shaft kW | Voltage | Duty | Speed control | Qty | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| HYDRO | HYDRO_SET | Motor: pump-turbine motor-generator (induction IE3, IEC 100L | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| HYDRO | HYDRO_SET | Buffer manifold vessel OD 160 x 300 (study) | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| HYDRO | HYDRO_SET | Pump-motor envelope (recharge 49.6 kW over the PV window, et | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 
 ### WTR
 
