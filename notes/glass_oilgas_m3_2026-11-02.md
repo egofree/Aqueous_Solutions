@@ -137,3 +137,33 @@ never resized.
   make-or-buy, fasteners, build log acceptance line, check.json. Added to the
   tracker ACCEPTED row set; tracker and full regen run; `--check` and
   `check_all` green.
+
+## AFTERBURNER_FLUE (flue junction duct, GAS, tier 6) — commit 6 (route hold)
+
+- `models/mfg/AFTERBURNER_FLUE/afterburner_flue.py` on the shared lib. Route
+  hold: the `flue_junction` class has no plan section 4 route class, so the
+  acceptance is A-core with the hold named (COMB_HEAT/RES_HEAT precedent);
+  the node design block defines a duct, so the model follows the A-PIPE idiom
+  (spool + line list) and the tracker keeps the route hold on the board.
+  Build 1000 × 600 × 800 mm against the node envelope: inside, filled
+  exactly; one closed manifold mesh; `cad/stl/AFTERBURNER_FLUE.stl` replaced
+  from the build; `tracker --check AFTERBURNER_FLUE` green.
+- Spool per the node design block: DN100 seat, 20 m run (0.133 m³) modeled as
+  a 1000 mm representative spool on a 20 mm trough plinth (HDR_CO2 idiom);
+  OD 114.3 × wall 6.02 as named ASME B36.10M Sch 40 values (DN100 sits
+  outside the lib/dn DN15-DN50 table — hold, W12). Material 316L per duty
+  section 3 (issued selection); the node design block says CS Sch 40
+  insulated per AQS-THM-003 — conflict carried as a hold (W12), nothing
+  resized. Insulation jacket 40 mm (study thickness, hold W12) with the
+  dielectric isolating flange at the FLUE_KO end bare (AQS-STD-002 section
+  4.3, drawn as the interface disc).
+- Nozzles: all 5 schedule rows at tag, face, height and bore, atmospheric
+  tube stubs flush at the envelope faces, stopping at the insulation surface.
+- A-PIPE line list `line_list.csv`: MAIN spool row + the 3 issued lines
+  (IA-AB-FLUE, IA-AB-AIR, S67), generated from the graph edges and
+  AQS-PIP-004; no new edge.
+- 7-sheet drawing set (GA front/side, nozzle orientation, spool+isolating
+  flange, insulation, trough+branches, iso); WORK_ORDER W1–W12 with the route
+  hold named first, BOM make-or-buy, fasteners, build log acceptance line,
+  check.json. Added to the tracker ACCEPTED row set; tracker and full regen
+  run; `--check` and `check_all` green.

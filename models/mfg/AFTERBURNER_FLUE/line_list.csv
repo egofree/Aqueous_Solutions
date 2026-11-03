@@ -1,0 +1,5 @@
+line,from,to,dn,class,service,rating,note
+MAIN,spool start,spool end,DN100,-,afterburner flue duct to the knock-out (flue gas at 200 C class),atmospheric; no flange class (duty section 4),"flue duct spool per the node design block (DN100, 20 m run, 0.133 m3); modeled as the 1000 mm representative spool; material per duty section 3 (316L; the node design block says CS - hold, WORK_ORDER W12); dielectric isolating flange at the FLUE_KO end (AQS-STD-002 section 4.3)"
+IA-AB-AIR,HDR_N2,AFTERBURNER_FLUE,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube joint at the duct face (duty section 4); pipe class per AQS-PIP-003,
+IA-AB-FLUE,AFTERBURNER,AFTERBURNER_FLUE,DN15,F1,flue or acid gas,atmospheric tube joint at the duct face (duty section 4); pipe class per AQS-PIP-003,
+S67,AFTERBURNER_FLUE,FLUE_KO,DN15,F1,flue or acid gas,atmospheric tube joint at the duct face (duty section 4); pipe class per AQS-PIP-003,

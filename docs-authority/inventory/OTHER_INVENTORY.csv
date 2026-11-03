@@ -1841,7 +1841,8 @@ GAS,GAS_SCRUB,ACID_POLISH_SCRUB,valve,check valve,DN15,"CPVC true-union swing/ba
 GAS,GAS_SCRUB,ACID_POLISH_SCRUB,valve,check valve,DN250,"PVC-lined swing/ball check valve in FRP service, ISO 16137",1,IA-ACID-AIR-RET: pump discharge (assumed)
 GAS,GAS_SCRUB,ACID_POLISH_SCRUB,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,S66: one at each end nozzle (assumed)
 GAS,GAS_SCRUB,ACID_POLISH_SCRUB,valve,isolation valve,DN250,"PVC-lined ball valve in FRP service, ISO 16135",2,IA-ACID-AIR-RET: one at each end nozzle (assumed)
-GAS,GAS_SCRUB,AFTERBURNER_FLUE,fabricated part,fabricated part set,10 BOM lines,models/mfg/AFTERBURNER_FLUE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+GAS,GAS_SCRUB,AFTERBURNER_FLUE,fabricated part,fabricated part set,4 BOM lines,models/mfg/AFTERBURNER_FLUE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+GAS,GAS_SCRUB,AFTERBURNER_FLUE,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,8,models/mfg/AFTERBURNER_FLUE/fasteners.csv
 GAS,GAS_SCRUB,AFTERBURNER_FLUE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,S67: 2 per support (assumed)
 GAS,GAS_SCRUB,AFTERBURNER_FLUE,instrument,"gas detector, NOx",electrochemical NO2,"alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height",2,AQS-SAF-006 alarm 1oo2
 GAS,GAS_SCRUB,AFTERBURNER_FLUE,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2

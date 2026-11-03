@@ -19,10 +19,10 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1513 | 59 % |
-| organic | 742 | 29 % |
+| metal_plateable | 1511 | 59 % |
+| organic | 740 | 29 % |
 | metal_reactive | 120 | 5 % |
-| silicate_oxide | 118 | 5 % |
+| silicate_oxide | 116 | 5 % |
 | unassigned | 57 | 2 % |
 
 Unassigned: 57 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
@@ -45,7 +45,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | ACID_POLISH_SCRUB | 13 | 15 | 0 | 1 | 0 |
 | ADS_CHILL | 0 | 2 | 0 | 0 | 0 |
 | AFTERBURNER | 5 | 0 | 0 | 1 | 3 |
-| AFTERBURNER_FLUE | 7 | 2 | 0 | 3 | 0 |
+| AFTERBURNER_FLUE | 5 | 0 | 0 | 1 | 0 |
 | AIR_RECEIVER | 6 | 2 | 0 | 2 | 0 |
 | ALK_SCRUBBER | 8 | 9 | 0 | 1 | 0 |
 | AL_POT | 6 | 6 | 0 | 4 | 0 |

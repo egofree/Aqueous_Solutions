@@ -32,7 +32,13 @@
   "volume_m3": 0.133,
   "material": "CS Sch 40, insulated per AQS-THM-003",
   "hold_kg": 0.1,
-  "connections": 3
+  "connections": 3,
+  "dn_label": "DN100",
+  "wall_mm": 6.02,
+  "wall_basis": "ASME B36.10M Sch 40 named values (lib table DN15-DN50; hold W12)",
+  "material_basis": "duty section 3 issued selection; node design block says CS - conflict carried (hold W12)",
+  "insulation_mm": 40.0,
+  "insulation_basis": "study value (hold W12)"
  },
  "nozzles": [
   {
@@ -82,5 +88,28 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class flue_junction"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "pipe": {
+   "dn": "DN100",
+   "od_mm": 114.3,
+   "wall_mm": 6.02,
+   "z_mm": 400.0
+  },
+  "insulation_mm": 40.0,
+  "plinth_mm": 20.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; duct along +x at the box centre (y 300, z 400), trough plinth z 0..20; isolating flange at the +X end",
+  "supports": "trough plinth + 8 slab anchors",
+  "nozzle_spread": "the schedule gives face and height only; branch stubs pack per face group from x 150 at OD + 40 mm pitch; drain at x 470, vent at x 530; per-tag positions in check.nozzles_drawn",
+  "line_list": "models/mfg/AFTERBURNER_FLUE/line_list.csv generated from the graph edges and AQS-PIP-004; no new edge",
+  "route_hold": "flue_junction has no plan section 4 route class: A-core with the route hold named; A-PIPE idiom per the node duct design"
+ }
 }

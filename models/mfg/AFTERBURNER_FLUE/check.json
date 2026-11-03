@@ -1,0 +1,110 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "misfit": null,
+  "graph_revision": "AD",
+  "solids": 5,
+  "all_parts_valid": true,
+  "spool": {
+    "type": "flue duct run (the spool set as the node design block defines it), modeled as a 1000 mm representative spool on a 20 mm trough plinth",
+    "dn": "DN100",
+    "od_mm": 114.3,
+    "wall_mm": 6.02,
+    "wall_basis": "ASME B36.10M Sch 40 (named values; the lib/dn table covers DN15-DN50; the MEOH_SYNTH DN100 jacket carried the same figures) - WORK_ORDER W12",
+    "id_mm": 102.26,
+    "id_req_mm": 17.0,
+    "id_note": "node design sizing: required id 17 mm at 8 m/s, DN100 seat; the Sch 40 bore 102.26 mm sits inside the DN100 seat; nothing resized",
+    "run_basis": "20 m run carried by the line-list route lengths (AQS-PIP-004); not redrawn",
+    "insulation_mm": 40.0,
+    "insulation_basis": "study value; AQS-THM-003 states no thickness for this line (hold, WORK_ORDER W12); duty section 3: insulated to hold the wall above the acid dew point",
+    "isolating_flange": "dielectric isolating flange at the FLUE_KO end (AQS-STD-002 section 4.3), drawn as the interface disc",
+    "material": "316L",
+    "material_note": "duty section 3: 316L pipe, dry flue at 300 C (issued selection); the node design block says CS Sch 40 insulated per AQS-THM-003 - conflict carried as a hold (WORK_ORDER W12), nothing resized"
+  },
+  "route_hold": "no AQS-PLAN-006 section 4 route class for class flue_junction; the node design block defines a duct, so the model follows the A-PIPE idiom (spool + line list) with the route hold named (COMB_HEAT/RES_HEAT precedent)",
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 160.7,
+      "schedule_rating": "Class 150",
+      "service": "flue",
+      "note": "schedule datum drawn; DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 228.2,
+      "schedule_rating": "Class 150",
+      "service": "combustion air",
+      "note": "schedule datum drawn; DN25 atmospheric tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 166.8,
+      "schedule_rating": "Class 150",
+      "service": "flue N2/O2/CO2/NOx",
+      "note": "schedule datum drawn; DN25 atmospheric tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": 470.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss, flush at the envelope bottom; 50 datum is the placeholder"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": 530.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent, flush at the envelope top (duty section 4: stays on the gas edge, not the room)"
+    }
+  },
+  "nozzle_count_schedule": 5,
+  "nozzle_idiom": "atmospheric tube stubs flush at the envelope faces (duty section 4: no flange class; the W4 110 % rule draws no flange where no process pressure is stated); schedule rating column (Class 150) carried verbatim as text",
+  "line_list": {
+    "csv": "models/mfg/AFTERBURNER_FLUE/line_list.csv",
+    "source": "unit edges in flow_graph/plant_flow_graph.json + docs-authority/LINE_LIST.md (AQS-PIP-004, DN and class authority)",
+    "edges": 3,
+    "rows": 4,
+    "missing_line_rows": [],
+    "rows_without_edge": [],
+    "no_new_edge": true
+  },
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "spool": 19.28,
+    "insulation": 2.28,
+    "nozzles": 2.0
+  },
+  "cadquery": "2.8.0"
+}

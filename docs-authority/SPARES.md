@@ -84,7 +84,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-89 | fastener: M12 x 60 hex bolt + nut + 2 washers (M12 x 60 hex bolt + nut + 2 washers x34) | 34 | 4 | 2 % min 4 |
 | building block | OF-90 | fastener: M12 x 40 (M12 x 40 x440) | 440 | 9 | 2 % min 4 |
 | building block | OF-91 | fastener: M12 x 45 (M12 x 45 x8) | 8 | 4 | 2 % min 4 |
-| building block | OF-92 | fastener: M10 wedge anchor (M10 wedge anchor x96) | 96 | 4 | 2 % min 4 |
+| building block | OF-92 | fastener: M10 wedge anchor (M10 wedge anchor x104) | 104 | 4 | 2 % min 4 |
 | building block | OF-93 | fastener: M10 wedge anchor (M10 wedge anchor x110) | 110 | 4 | 2 % min 4 |
 | building block | OF-94 | fastener: M12 bolt + nut; PP-flanged joint (M12 bolt + nut; PP-flanged joint x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-95 | fastener: M12 PVDF bolt + nut (M12 PVDF bolt + nut x8) | 8 | 4 | 2 % min 4 |
