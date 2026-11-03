@@ -10,7 +10,7 @@ model/mfg/*/drawings/*.svg. Geometry and notes:
   nozzle_orient  nozzle orientation, top view (faces per the task-04 schedule)
   sh01         casing + lining + head plate (weld + tolerance notes)
   hd01         hood group: hot plate, plate, rim, DN80 riser, dip leg, vent
-  el01         electrode bank: 4 anodes + clamps, 3 cathodes, bus rails/straps
+  el01         electrode bank: 4 anodes + clamps, 4 cathodes, bus rails/straps
   aux01        service group: N1/N5 taps, N3/N4 inlets, N7 drain, N2/N6 Cl2 stubs
   iso01        isometric orientation sheet
 
@@ -46,7 +46,7 @@ SHEETS = [
      ['Keys: 800 overall width (shell); 1600 overall height, roof datum z 1594..1600',
       f'Bath top z {BATH:.0f} (hood hot plate at {BATH-10:.0f}..{BATH:.0f}); head plate deck 1154..1160; bus rails 1196..1201',
       'N1 Mg-metal tap lip +X z 600; N5 reductant tap lip -X z 600; N2/N6 Cl2 stubs +Y z 600; N3/N4 inlets -Y z 160; N7 drain bottom z 50; N8 vent on the riser at z 800',
-      'Connection hardware protrudes no more than 50 mm outside the shell faces (task-04 schedule; reported in check.json, nothing resized)',
+      'Connection hardware draws flush at the envelope faces: nothing protrudes, the assembly fills 800 x 800 x 1600 (check.json overhang record)',
       'Bath inventory (salt + metal layer) drawn as solids - process inventory, not a BOM part'],
      "General arrangement, front elevation. Shop, not stamped (AQS-STD-001 section 7)."),
     ("ga_side", union_all([shell, hood, electrode, aux]), (1, 0, 0),
@@ -77,8 +77,8 @@ SHEETS = [
       'Gasket faces per AQS-PIP-003 class practice (AQS-STD-002 section 14); general tolerance ISO 2768-m'],
      "Fabricated part sheet: hood group (hot plate, plate + rim, riser, dip leg, vent)."),
     ("el01", electrode, (0, 1, 0),
-     ['4 anodes D50 x 1064 at x 140..659 (y 400); immersion 300 mm, tips z 100; clamp bars 90 x 40 x 24 (8 x M10 studs, fasteners.csv item 1)',
-      '3 cathode plates 110 x 12 x 400 on the -Y ram face, z 90..490 (duty section 2 graph design row)',
+     ['4 anodes D50 x 1064 at x 170, 346, 522, 698 (y 400); immersion 300 mm, tips z 100; clamp bars 90 x 40 x 24 (8 x M10 studs, fasteners.csv item 1)',
+      '4 cathode plates 110 x 12 x 400 on the -Y ram face, z 90..490 (duty section 2 graph design row cathodes 4)',
       'Cu rails 2 x 10 x 5 (50 mm2 class) on ceramic pads, z 1196..1201; straps 6 x 20 Cu, 3 mm fillet at the clamp welds (ISO 2553)',
       'Bus hardware frame-isolated per AQS-STD-002 section 11; general tolerance ISO 2768-m'],
      "Fabricated part sheet: electrode bank + busbar ladder."),
@@ -90,7 +90,7 @@ SHEETS = [
      "Fabricated part sheet: service group (tap, brine inlet, drain)."),
     ("iso01", full, (1, -1, 1),
      ['Shop orientation: +X face, y along depth, z up; hood + head plate + bus in place over the 800 x 800 x 1600 lined cell',
-      'Graph revision AC is the model authority for this build; STEP (export/ca_pot.step) is the solids of record',
+      'The live graph revision in params.json is the model authority for this build; STEP (export/mg_pot.step) is the solids of record',
       'Bath inventory (salt + metal layer) shown in place - not a BOM part'],
      "Isometric orientation sheet."),
 ]

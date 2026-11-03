@@ -1,13 +1,15 @@
 """MG_POT manufacturing model, AQS-PLAN-006 work order (X-MFG lane, FOUNDRY-MG_POT-10 M3).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only.
+Graph revision AD. Study. Not a PE stamp. Reads params.json only.
 Placement frame: x along 800 mm, y along 800 mm, z up, origin at the envelope
 corner. The pot recycles Kroll magnesium: molten MgCl2 electrolysis at 700 C, 54.89 A at
 4.2 V (A-M-282 Faraday class); its chlorine feeds the Kroll chlorinator (A-M-280)
 on the D-DOCK chloride import (A-M-284). Layout choices named in params.json (layout_note); heights, bores and
 ratings per docs-authority/nozzles/MG_POT.csv (task-04 schedule). Materials per
 docs-authority/duties/MG_POT.md section 3: graphite wetted faces + ceramic-fibre
-backup + CS shell below the liner. No measured rate is claimed anywhere.
+backup + CS shell below the liner. Connection hardware draws flush at the
+envelope faces: nothing protrudes (A-core 2). No measured rate is claimed
+anywhere.
 """
 import csv, json, math, pathlib
 import cadquery as cq
@@ -35,9 +37,9 @@ RY = A["DN80_OD_mm"] / 2                        # DN80 riser (Cl2 1.48 kg/d clas
 rx_, ry_ = 550.0, 550.0                         # riser centre (hood offset +150,+150)
 ay = 400.0                                      # electrode centreline
 BATH = D["bath_top_mm"]                         # bath top z 350 (250 mm immersion, tips z 100)
-cath_pitch = (L - 272) / CA["count"]            # plate centres across the 660 cavity
-cath_xc = [70 + 66 + i * cath_pitch for i in range(CA["count"] - 1)]   # 3 plates
-anode_xc = [140 + i * 173 for i in range(AN["count"])]                 # 140..659 across the cavity
+cath_pitch = (L - 272) / (CA["count"] - 1)      # plate centres across the 660 cavity (AL_POT interleave idiom)
+cath_xc = [70 + 66 + i * cath_pitch for i in range(CA["count"])]   # design row 'cathodes 4': 136..664
+anode_xc = [x + 34 for x in cath_xc]                   # 170..698 (offset from the plate columns)
 bw, bh = BUS["rail_w_mm"], BUS["rail_t_mm"]     # 25 mm2 class rail
 
 # ---------------- casing: CS shell, full envelope height, t6 -------------
@@ -45,7 +47,6 @@ casing = box(0, 0, 0, L, W, H).cut(box(6, 6, 6, L - 12, W - 12, 1588))          
 roof = box(0, 0, 1594, L, W, 6)
 casing = casing.union(roof)
 casing = casing.cut(rod(RY + 2, (rx_, ry_, 1585), "Z", 30))                      # riser pass at the roof
-casing = casing.cut(rod(A["DN15_OD_mm"] / 2 + 1, (-5.0, 400.0, 160.0), "X", 90.0))   # N2 brine inlet pass
 casing = casing.cut(rod(A["DN15_OD_mm"] / 2 + 1, (202.0, W - 40, 600.0), "Y", 90.0)) # N2 Cl2 return pass (+Y at 600)
 casing = casing.cut(rod(A["DN15_OD_mm"] / 2 + 1, (598.0, W - 40, 600.0), "Y", 90.0)) # N6 Cl2 to the chlorinator pass (+Y at 600)
 casing = casing.cut(rod(30.5, (256.0, 160.0, -5.0), "Z", 85.0))                  # N7 drain well pass
@@ -130,28 +131,27 @@ parts["vent_stub"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wal
 # ---------------- N2/N6 Cl2 stubs (+Y at z 600) -----------------------------------
 st = None
 for sx in (202.0, 598.0):
-    q = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (sx, W - 40, 600.0), "Y", 45)
+    q = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (sx, W - 45, 600.0), "Y", 45)
     st = q if st is None else st.union(q)
 parts["cl2_stubs"] = st
 
 # ---------------- N1 Mg-metal tap well (+X at z 600) ------------------------------
 wr = A["DN80_OD_mm"] / 2
-def tap_run(x_leg, crest_x0):
+def tap_run(x_leg, crest_x0, crest_dx, lip_cx):
     well = rod(wr, (x_leg, 400, 80), "Z", 535)                   # riser leg 80..615
-    crest = box(crest_x0, 400 - wr, 605, 160, 2 * wr, 10)        # horizontal run at z 605..615
-    lx = (800 if crest_x0 > 400 else 0)
-    lip = rod(wr, (lx, 400, 555), "Z", 55)
+    crest = box(crest_x0, 400 - wr, 605, crest_dx, 2 * wr, 10)   # horizontal run at z 605..615, to the face
+    lip = rod(wr, (lip_cx, 400, 555), "Z", 55)                   # discharge lip rides at the face: flush build
     t = well.union(crest).union(lip)
     t = t.cut(rod(15.0, (x_leg, 400, 75), "Z", 700))             # bore through the riser leg
-    t = t.cut(box(crest_x0 - 5, 385, 602, 170, 30, 16))          # bore through the crest
-    t = t.cut(rod(15.0, (lx, 400, 540), "Z", 80))                # bore through the discharge leg
+    t = t.cut(box(crest_x0 - 5, 385, 602, crest_dx + 10, 30, 16))  # bore through the crest
+    t = t.cut(rod(15.0, (lip_cx, 400, 540), "Z", 80))            # bore through the discharge leg
     return t
-parts["mg_tap_group"] = tap_run(670, 660)                        # N1 +X: metal tap to the stock area
-parts["reductant_tap_group"] = tap_run(130, -45)                 # N5 -X: Mg reductant draw to the Kroll retort
+parts["mg_tap_group"] = tap_run(670, 660, 140, 800.0 - wr)       # N1 +X: metal tap to the stock area, flush at +X
+parts["reductant_tap_group"] = tap_run(130, 0.0, 115, wr)        # N5 -X: Mg reductant draw to the Kroll retort, flush at -X
 
 # ---------------- N3/N4 inlets (-Y at z 160): return stub + brine lance -----------
-ret_chute = box(238, -45, 130, 36, 115, 90)              # N3 MgCl2 return launder: crosses the -Y wall into the bath
-br_chute = box(526, -45, 130, 36, 115, 90)               # N4 brine launder
+ret_chute = box(238, 0.0, 130, 36, 70, 90)               # N3 MgCl2 return launder, flush at the -Y face
+br_chute = box(526, 0.0, 130, 36, 70, 90)                # N4 brine launder, flush at the -Y face
 lance = tube(22.0, 11.0, (544.0, 20.0, 160.0), "Y", 380)  # brine lance from inside the launder into the bath
 parts["inlet_groups"] = ret_chute.union(br_chute).union(lance)
 
@@ -188,7 +188,7 @@ for k, v in parts.items():
 cap_solid = body.val()
 cap_solid.exportStl(str(out / "mg_pot.stl"), tolerance=0.4, angularTolerance=0.4, ascii=True)
 
-EXTERNAL = ("mg_tap_group", "reductant_tap_group", "inlet_groups", "cl2_stubs")   # schedule hardware outside the faces (overhang reported)
+EXTERNAL = ("mg_tap_group", "reductant_tap_group", "inlet_groups", "cl2_stubs")   # schedule hardware, drawn flush at the faces
 in_env = None
 for k, v in parts.items():
     if k in EXTERNAL:
@@ -203,7 +203,7 @@ ALL = list(parts.values()) + list(inv.values())
 shell_parts = [parts[k] for k in ("casing", "fibre_lining", "ram_lining", "head_plate")]
 sb = cq.Compound.makeCompound([v.val() for v in shell_parts]).BoundingBox()
 tb_ = cq.Compound.makeCompound([v.val() for v in ALL]).BoundingBox()
-slack = 50.0
+slack = 1.0   # A-core 2 gate: the flush-hardware build stays inside size_mm within 1 mm
 inside_shell = bool(sb.xmin >= -1 and sb.xmax <= L + 1 and sb.ymin >= -1 and sb.ymax <= W + 1
                     and sb.zmin >= -1 and sb.zmax <= H + 1)
 overhang = {"-X": round(-tb_.xmin, 1), "+X": round(tb_.xmax - L, 1),
@@ -247,8 +247,9 @@ rows = [
     ["4", f"Anode bank, {AN['count']} x D{AN['D_mm']} x 1064 mm, {D['anode_imm_mm']:.0f} mm immersion", AN["count"],
      "graphite (chlorinated)", mass["anodes"], "buy",
      f"Faraday I = {D['I_A']} A at CE 0.85 (A-M-282); drawn j {j_anode:.4f} A/cm2; {D['chemistry']}"],
-    ["5", f"Cathode plate set, {CA['count']} x 110 x 12 x 300 mm", CA["count"], "mild steel / clad",
-     mass["cathodes"], "make", f"{D['metal_kg_d']:.4f} kg/d Ca metal on the D-DOCK chloride import (A-M-284)"],
+    ["5", f"Cathode plate set, {CA['count']} x 110 x 12 x {CA['plate_h_mm']} mm (design row 'cathodes {D['cathodes']}')", CA["count"], "mild steel / clad",
+     mass["cathodes"], "make", f"{D['metal_kg_d']:.4f} kg/d Mg metal on the D-DOCK chloride import (A-M-284); "
+     "plate size is the study value (hold, WORK_ORDER W12)"],
     ["6", f"Cu busbar ladder: 2 rails {BUS['rail_w_mm']} x {BUS['rail_t_mm']} mm ({BUS['mm2']} mm2 class) + straps + ceramic pads", 1,
      "Cu ETP + alumina pads", round(mass["bus_rails"] + mass["bus_straps"] + mass["ceramic_pads"], 1), "make",
      f"{D['I_A']} A at {D['cell_V']} V cell; {D['dc_kW']} kW dc + {D['hold_kW']} kW hold of {D['connected_kW']} kW connected; frame-isolated per AQS-STD-002 section 11"],
@@ -266,21 +267,18 @@ rows = [
     ["12", f"N2/N6 Cl2 stubs DN15 at +Y z 600 ({D['cl2_kg_d']} kg/d: return and chlorinator feed)", 2,
      "carbon steel (dry hot Cl2)", mass["cl2_stubs"], "make",
      "task-04 schedule N2/N6; A-M-280 Cl2 ruling (chlorinator feed, return net of drag-out)"],
-    ["12b", f"N5 Mg-reductant tap group -X z 600 ({D['metal_kg_d']} kg/d Mg to the Kroll retort)", 1,
+    ["12b", f"N5 Mg-reductant tap group -X z 600, flush at the -X face ({D['metal_kg_d']} kg/d Mg to the Kroll retort)", 1,
      "carbon (ram class)", mass["reductant_tap_group"], "make",
      "task-04 schedule N5 (solids, bore not calculated); WO step 6 reductant draw"],
-    ["12c", f"N3/N4 inlets -Y z 160: Kroll MgCl2 return stub + brine lance ({D['feed_kg_d']} kg/d)", 2,
+    ["12c", f"N3/N4 inlets -Y z 160 flush at the -Y face: Kroll MgCl2 return stub + brine lance ({D['feed_kg_d']} kg/d)", 2,
      "CS chute, carbon lance", mass["inlet_groups"], "make",
      "task-04 schedule N3/N4; A-M-284 feedstock ruling"],
-    ["13", "Ca-metal tap group: well DN80 OD 88.9 carbon + crest + discharge lip at +X z 600", 1,
+    ["13", f"Mg-metal tap group: well DN80 OD 88.9 carbon + crest + discharge lip at +X z 600, flush at the +X face", 1,
      "carbon (ram class)", mass["mg_tap_group"], "make",
      "task-04 schedule N1 (solids, bore not calculated); WO step 6 trial-electrolysis tap"],
-    ["14", f"N4 brine inlet group: chute box + DN44 lance into the bath at z 160", 1,
-     "CS chute, carbon lance", mass["inlet_groups"], "make",
-     "task-04 schedule N4; A-M-284 feedstock ruling; WO step 4"],
     ["15", "N7 drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0", 1,
      "carbon (ram class)", mass["drain_well"], "make",
-     "task-04 schedule N4 bottom DN15 Class 150; frozen-salt drain pig per WO step 6"],
+     "task-04 schedule N7 bottom DN15 Class 150; frozen-salt drain pig per WO step 6"],
     ["16", f"Thyristor rectifier + bath hold heaters, {D['connected_kW']} kW connected, IP54 cabinet", 1,
      "purchase item", "", "buy", "WO step 5/7; AQS-DUTY-072 section 4; A-M-282 class; mass per the purchase datasheet at order"],
 ]
@@ -293,14 +291,7 @@ fast = ('item,size,grade,qty,location,basis\n'
         '2,M8 x 25 hood bolts,ISO 898-1 8.8,12,hood rim flange,study\n'
         '3,M10 anchor,ISO 898-1 8.8,4,cell shell to slab,study\n')
 (HERE / "fasteners.csv").write_text(fast)
-wo = (f"# Work order CA_POT\n\nAuthority: AQS-DUTY-072 (X-MFG lane). LIVE unit - D-DOCK feedstock program (A-M-284).\n\n"
-      f"1. Fabricate the 800 x 800 x 1600 mm shell; line 70 mm (casing + ceramic fibre + ram) for {D['bath_T_C']:.0f} C service.\n"
-      f"2. Set the {CA['count']} cathode plates on the pocket wall; hang the {AN['count']} x D{AN['D_mm']} mm anodes at {D['anode_imm_mm']:.0f} mm immersion.\n"
-      f"3. Fit the busbar ladder ({BUS['mm2']} mm2 Cu class for {D['I_A']} A) and the DC drops; torque and megger-check.\n"
-      f"4. Mount the hood, DN80 offtake with return dip leg, N2/N6 Cl2 stubs, and the N3/N4 inlets with lance.\n"
-      f"5. Wire the {D['connected_kW']} kW rectifier; interlock hood draft, bath temperature and cover position.\n"
-      f"6. Test: dry-out and melt-up curve, then trial electrolysis; tap the Ca metal at N1, route the Cl2 export (water-treatment class).\n"
-      f"7. Inspect against models/mfg/MG_POT/export/mg_pot.step; record dimensions on the traveller.\n")
-(HERE / "WORK_ORDER.md").write_text(wo)
+# WORK_ORDER.md is the hand-authored W1-W12 item beside the model (AQS-PLAN-006 section 2);
+# the builder no longer writes it, so a rebuild never clobbers the work order.
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps(report))

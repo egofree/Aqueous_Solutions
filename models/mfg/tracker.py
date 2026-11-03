@@ -151,7 +151,8 @@ ACCEPTED = ('AL_POT', 'IND_MELT', 'VAC_IND', 'VAC_CAST', 'INV_CAST', 'CONT_CAST'
             'CRYO_AHU_COND_CONDENSABLE',
             'GEO_GHEX',
             'GEO_HP_CLOSED_LOOP',
-            'CA_POT')
+            'CA_POT',
+            'MG_POT')
 
 
 # --------------------------------------------------------------------------- authorities
