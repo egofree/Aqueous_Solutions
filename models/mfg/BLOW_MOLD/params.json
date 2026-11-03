@@ -27,7 +27,10 @@
   "run_h_d": 3.0,
   "feed_kg_d": 8.4072,
   "products": "molded articles to MFG_SHOP (IA-BLOW-OUT)",
-  "duty_kW": 0.3691
+  "duty_kW": 0.3691,
+  "service": "BLOW_MOLD: continuous-extrusion blow molder (Precious Plastic class) - wax/polymer articles for the shop goods loop, 2.8 kg/h at 3.0 h/d on the 8.407 kg/d C11-C18 feed; products to MFG_SHOP, scrap to OIL_FRAC (node design block; AQS-EQP-MFG-001; A-M-285)",
+  "material": "316L melt path (barrel, head, die); CS frame and dry groups",
+  "material_basis": "duty section 3: 316L where the stream is wet (the wax melt); CA 0 mm (AQS-STD-001)"
  },
  "nozzles": [
   {
@@ -70,5 +73,77 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class former"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1200.0,
+   800.0,
+   1600.0
+  ],
+  "basis": "L\u00d7W\u00d7H mm, issued envelope",
+  "base_mm": [
+   1200.0,
+   800.0,
+   20.0
+  ],
+  "melt_path_mm": {
+   "barrel_od": 60.0,
+   "barrel_x": [
+    80.0,
+    780.0
+   ],
+   "axis_yz": [
+    400.0,
+    900.0
+   ],
+   "die": [
+    740.0,
+    355.0,
+    640.0,
+    80.0,
+    90.0,
+    260.0
+   ]
+  },
+  "groups_mm": {
+   "drive": [
+    80.0,
+    310.0,
+    800.0,
+    120.0,
+    180.0,
+    200.0
+   ],
+   "platens": [
+    800.0,
+    250.0,
+    520.0,
+    40.0,
+    300.0,
+    300.0
+   ],
+   "mold": [
+    840.0,
+    290.0,
+    640.0,
+    140.0,
+    220.0,
+    160.0
+   ],
+   "air": [
+    820.0,
+    570.0,
+    520.0,
+    220.0,
+    160.0,
+    200.0
+   ]
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; barrel axis at y 400, z 900, x 80..780 with the drive at the tail and the head/die at the front; clamp platens and mold envelope x 840..1080; air group beside the clamp; guard posts at the envelope corners",
+  "supports": "base plate + guard frame + 8 slab anchors; barrel cradle bolts",
+  "nozzle_spread": "the two solids rows at x 600/660 on their faces; drain at x 430 flush at the bottom, vent at x 770 flush at the top; per-tag notes in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

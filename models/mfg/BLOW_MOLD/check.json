@@ -1,0 +1,86 @@
+{
+  "bbox_mm": [
+    1200.0,
+    800.0,
+    1600.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1200.0,
+    800.0,
+    1600.0
+  ],
+  "size_basis": "L\u00d7W\u00d7H mm, issued envelope",
+  "graph_revision": "AD",
+  "solids": 6,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "continuous-extrusion blow molder per the node design block (Precious Plastic class; AQS-EQP-MFG-001; A-M-285): 316L melt path (extruder barrel, extrusion head, downward die) per duty section 3, the three drive groups as purchased envelopes per plan rule 6 with the node ratings (extruder 2.2 kW, clamp 0.75 kW BLOW-CLAMP-01, air 0.75 kW BLOW-AIR-01), and the mold tool envelope (BLOW-MOLD-TOOL-01) between the platens",
+    "process": "node figures: 2.8 kg/h at 3.0 h/d on the 8.407 kg/d wax feed (C11-C18 to the mold); products to MFG_SHOP (IA-BLOW-OUT); scrap to OIL_FRAC (node design lines)",
+    "mold_hold": "the article geometry is not named on the node, so the mold set is an envelope and the mold detail is a named hold (WORK_ORDER W12)",
+    "material": "316L",
+    "ca_mm": 0.0,
+    "material_basis": "duty section 3: 316L where the stream is wet (the wax melt path); CA 0 mm (AQS-STD-001); frame and dry groups carbon steel",
+    "guard": "four-post guard frame (40 x 40 posts, top rails) on the base plate pins the registry box (X-PAR-04); anchors in fasteners.csv"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 1600.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; the schedule datum 800 mm predates the 1600 box (hold, WORK_ORDER W12)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 1600.0,
+      "x_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "C11-C18 to the mold",
+      "note": "atmospheric hose joint per duty section 4; solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 1600.0,
+      "x_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "blown parts",
+      "note": "atmospheric hose joint per duty section 4; solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    }
+  },
+  "nozzle_count_schedule": 4,
+  "nozzle_idiom": "atmospheric hose joints per duty section 4; the N3/N4 solids rows are non-piped transfers drawn DN15, bore not calculated (plan W4); the N2 vent datum 800 predates the 1600 box (hold, W12); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "base": 150.72,
+    "frame": 126.6,
+    "barrel": 15.83,
+    "head_die": 14.98,
+    "drive": 33.91,
+    "clamp_platens": 56.52,
+    "mold": 38.68,
+    "air": 55.26,
+    "nozzles": 0.23
+  },
+  "cadquery": "2.8.0"
+}

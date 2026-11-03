@@ -139,10 +139,14 @@ BLACK_DIGEST,Biogas recirculation diaphragm blower about 2 L/min,1,PP/EPDM,Parti
 BLACK_DIGEST,"Heating mat 150 W, thermostat 55 C, two RTDs",1,silicone / 316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 BLACK_DIGEST,"PIR insulation 50 mm, PE cladding",1,PIR,Partial,OIL/MEOH chemistry,monomer route not yet in the graph
 BLACK_DIGEST,Water seal and flame arrester on the biogas line to AFTERBURNER,1,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-BLOW_MOLD,Body / envelope 1200 x 800 x 1600 mm,1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-BLOW_MOLD,Process nozzle DN15,2,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-BLOW_MOLD,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",Unstated,-,"not classed: ceramic diaphragm, IEC 61298"
-BLOW_MOLD,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+BLOW_MOLD,Base plate 1200 x 800 x 20 (BLOW-01 machine base),1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
+BLOW_MOLD,Guard frame: four 40 x 40 posts + top rails pinning the 1200 x 800 x 1600 envelo,1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
+BLOW_MOLD,Extruder barrel OD 60 x 700 with extrusion head and downward die (the melt path),1,316L (duty section 3: the wax melt is the wet service),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+BLOW_MOLD,Extruder drive envelope at the barrel tail,1,purchased drive (envelope),Unstated,-,not classed: purchased drive (envelope)
+BLOW_MOLD,Clamp platens and tie bars (BLOW-CLAMP-01),1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
+BLOW_MOLD,Purchased drive groups by node rating: clamp 0.75 kW (BLOW-CLAMP-01) and air sup,2,purchased drive (envelope),Unstated,-,not classed: purchased drive (envelope)
+BLOW_MOLD,Mold-halves envelope between the platens (BLOW-MOLD-TOOL-01),1,carbon steel mold blank (envelope),Closed,Fe EW -> MET_MELT -> mill/draw,
+BLOW_MOLD,Nozzle set per docs-authority/nozzles/BLOW_MOLD.csv: drain and vent flush at the,4,316L (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 BMED_ACID,"Drip tray 1000 x 600, floor 20 + curb 60 x 10",1,PVC-U plate,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 BMED_ACID,"Anode end plate 300 x 300 x 10, Ti/MMO (A-M-170)",1,Ti G2,Unstated,-,not classed: Ti G2
 BMED_ACID,"Clamp frame plates 300 x 300 x 20 (pair, stack ends)",2,PVC-U plate,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
@@ -2381,7 +2385,7 @@ OF-93,fastener: M10 wedge anchor (ISO 3506 A4-70),110,,Unstated,-,material not s
 OF-94,fastener: M12 bolt + nut; PP-flanged joint (ISO 3506 A4-70),16,,Unstated,-,material not stated on the unit BOM line
 OF-95,fastener: M12 PVDF bolt + nut (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
 OF-96,fastener: M12 A4-70 bolt + nut (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
-OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),126,,Unstated,-,material not stated on the unit BOM line
+OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),134,,Unstated,-,material not stated on the unit BOM line
 OF-98,fastener: M10 stud + nut (ISO 4014 / ISO 4032) (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line
 OF-99,fastener: M8 hold-down bolt (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line
 OF-100,fastener: M16 wedge anchor (ISO 898-1 8.8),16,,Unstated,-,material not stated on the unit BOM line
@@ -2402,3 +2406,4 @@ OF-114,fastener: M8 bowl-stand bolt (ISO 3506 A4-70),4,,Unstated,-,material not 
 OF-115,fastener: M8 bowl-clip bolt (ISO 3506 A4-70),4,,Unstated,-,material not stated on the unit BOM line
 OF-116,fastener: M10 tube-stand bolt (ISO 3506 A4-70),4,,Unstated,-,material not stated on the unit BOM line
 OF-117,fastener: M8 hood-panel bolt (ISO 898-1 8.8),12,,Unstated,-,material not stated on the unit BOM line
+OF-118,fastener: M10 platen bolt (ISO 898-1 8.8),8,,Unstated,-,material not stated on the unit BOM line

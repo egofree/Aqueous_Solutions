@@ -17,7 +17,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 16781 |
+| fastener | 16797 |
 | support | 7355 |
 | electronics | 2071 |
 | valve | 991 |
@@ -137,6 +137,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-115 | M8 bowl-clip bolt | ISO 3506 A4-70 | M8 bowl-clip bolt x4 | 4 | 1 | models/mfg/LITHO_DEV/fasteners.csv |  |
 | OF-116 | M10 tube-stand bolt | ISO 3506 A4-70 | M10 tube-stand bolt x4 | 4 | 1 | models/mfg/SOLAR_PV_CELL/fasteners.csv |  |
 | OF-117 | M8 hood-panel bolt | ISO 898-1 8.8 | M8 hood-panel bolt x12 | 12 | 1 | models/mfg/ELECTRODE_COAT/fasteners.csv |  |
+| OF-118 | M10 platen bolt | ISO 898-1 8.8 | M10 platen bolt x8 | 8 | 1 | models/mfg/BLOW_MOLD/fasteners.csv |  |
 | OF-14 | anchor bolt | ISO 3506 A4-70 wedge anchor | M10 x14710 | 14710 | 138 | AL_POT_CL2: 2 per support (assumed); AQUA_BYPASS: 2 per support (assumed); AQUA_LOOP1: 2 per support (assumed) |  |
 | OF-15 | M10 x 40 lid bolt | ISO 3506 A4-70 | M10 x 40 lid bolt with nut and washers x12 | 12 | 1 | models/mfg/GLASS_DIGEST/fasteners.csv |  |
 | OF-16 | M8 x 30 lid bolt | ISO 3506 A4-70 | M8 x 30 lid bolt with nut and washers x12 | 12 | 1 | models/mfg/BLACK_DIGEST/fasteners.csv |  |
@@ -173,12 +174,12 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-94 | M12 bolt + nut; PP-flanged joint | ISO 3506 A4-70 | M12 bolt + nut; PP-flanged joint x16 | 16 | 1 | models/mfg/NOX_SCRUB/fasteners.csv |  |
 | OF-95 | M12 PVDF bolt + nut | ISO 3506 A4-70 | M12 PVDF bolt + nut x8 | 8 | 1 | models/mfg/HX8/fasteners.csv |  |
 | OF-96 | M12 A4-70 bolt + nut | ISO 3506 A4-70 | M12 A4-70 bolt + nut x8 | 8 | 1 | models/mfg/MET_HX_Q4/fasteners.csv |  |
-| OF-97 | M12 wedge anchor | ISO 898-1 8.8 | M12 wedge anchor x126 | 126 | 18 | models/mfg/AFTERBURNER/fasteners.csv; models/mfg/COMB_HEAT/fasteners.csv; models/mfg/CRU/fasteners.csv |  |
+| OF-97 | M12 wedge anchor | ISO 898-1 8.8 | M12 wedge anchor x134 | 134 | 19 | models/mfg/AFTERBURNER/fasteners.csv; models/mfg/BLOW_MOLD/fasteners.csv; models/mfg/COMB_HEAT/fasteners.csv |  |
 | OF-98 | M10 stud + nut (ISO 4014 / ISO 4032) | ISO 3506 A4-70 | M10 stud + nut (ISO 4014 / ISO 4032) x24 | 24 | 2 | models/mfg/VAC_CAST/fasteners.csv; models/mfg/VAC_IND/fasteners.csv |  |
 | OF-99 | M8 hold-down bolt | ISO 3506 A4-70 | M8 hold-down bolt x24 | 24 | 2 | models/mfg/REE_RECOVER/fasteners.csv; models/mfg/REMIN/fasteners.csv |  |
 
 ## 11. Coverage gate
 
-- Bought families covered: 103 of 104 (the excluded one is OF-13, the fabricated-part set:
+- Bought families covered: 104 of 105 (the excluded one is OF-13, the fabricated-part set:
   sheets like those are `models/mfg/*/bom.csv` + `WORK_ORDER.md`, in-house work).
 - Items rest on the A-M-125 counting rule where the roll-up assumed; the count is the basis, not a measurement.

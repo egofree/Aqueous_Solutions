@@ -15,6 +15,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Temperature or current. High temperature trips the power. There is no liquid-level trip.
 
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped. The envelope is `cad/stl/BLOW_MOLD.stl`.
+7. Code. Shop. Not stamped. The envelope is `cad/stl/BLOW_MOLD.stl`. Manufacturing model `models/mfg/BLOW_MOLD/blow_mold.py` (AQS-PLAN-006).
 
 8. Open items. This unit has not been measured.

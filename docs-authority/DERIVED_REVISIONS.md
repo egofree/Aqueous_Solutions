@@ -187,7 +187,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/BEE_HIVE.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/BIOFILTER.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/BLACK_DIGEST.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/BLOW_MOLD.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/BLOW_MOLD.md` | working tree | current |
 | `docs-authority/duties/BMED_ACID.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/BMED_BASE.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/BMED_UPW_POLISH.md` | f0160a6 (regenerated, no change) | current |
@@ -246,7 +246,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/DUAL_ROOT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/DUCKWEED.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/DUCK_PEN.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/ELECTRODE_COAT.md` | working tree | current |
+| `docs-authority/duties/ELECTRODE_COAT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/EMETH.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/ETOH_STILL.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/EVAP_ACID.md` | f0160a6 (regenerated, no change) | current |
@@ -1233,7 +1233,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/views/efd-thermal.svg` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/mfd.dot` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/mfd.json` | f0160a6 (regenerated, no change) | current |
-| `flow_graph/views/mfd.svg` | f0160a6 (regenerated, no change) | current |
+| `flow_graph/views/mfd.svg` | working tree | current |
 | `flow_graph/views/pfd.dot` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/pfd.json` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/pfd.svg` | f0160a6 (regenerated, no change) | current |
@@ -1263,7 +1263,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/BEE_HIVE/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/BIOFILTER/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/BLACK_DIGEST/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/BLOW_MOLD/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/BLOW_MOLD/params.json` | working tree | current |
 | `models/mfg/BMED_ACID/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/BMED_BASE/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/BMED_UPW_POLISH/params.json` | f0160a6 (regenerated, no change) | current |
@@ -1293,7 +1293,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/DRY_COOLER/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/DUCKWEED/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/DUCK_PEN/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/ELECTRODE_COAT/params.json` | working tree | current |
+| `models/mfg/ELECTRODE_COAT/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/EVAP_ACID/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/EVAP_ACID_VS/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/EVAP_BASE/params.json` | f0160a6 (regenerated, no change) | current |

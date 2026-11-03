@@ -1,5 +1,9 @@
-item,description,qty,material,basis
-1,Body / envelope 1200 x 800 x 1600 mm,1,316L where the stream is wet.,docs-authority/duties/BLOW_MOLD.md
-2,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
-3,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-4,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Base plate 1200 x 800 x 20 (BLOW-01 machine base),1,carbon steel (ASTM A500),150.72,make (AQS-BOM-SC-001),issued envelope frame; anchors in fasteners.csv
+2,Guard frame: four 40 x 40 posts + top rails pinning the 1200 x 800 x 1600 envelope,1,carbon steel (ASTM A500),126.6,make (AQS-BOM-SC-001),machine guard practice (A-MACH hardware drawn); the frame pins the registry box (X-PAR-04)
+3,Extruder barrel OD 60 x 700 with extrusion head and downward die (the melt path),1,316L (duty section 3: the wax melt is the wet service),30.810000000000002,make (AQS-BOM-SC-001),"melt path per duty section 3; CA 0 mm (AQS-STD-001); barrel and die sizes are the layout choice (hold, W12)"
+4,Extruder drive envelope at the barrel tail,1,purchased drive (envelope),33.91,buy,"node design extruder_kW 2.2; purchased per plan rule 6, rating from the node"
+5,Clamp platens and tie bars (BLOW-CLAMP-01),1,carbon steel (ASTM A500),56.52,make (AQS-BOM-SC-001),"clamp drive is the purchased 0.75 kW group (BOM row 6); platens are shop work; sizes are the layout choice (hold, W12)"
+6,Purchased drive groups by node rating: clamp 0.75 kW (BLOW-CLAMP-01) and air supply 0.75 kW (BLOW-AIR-01),2,purchased drive (envelope),55.26,buy,"node design clamp_kW 0.75 and air_kW 0.75; purchased per plan rule 6, ratings from the node (the air envelope is drawn beside the clamp)"
+7,Mold-halves envelope between the platens (BLOW-MOLD-TOOL-01),1,carbon steel mold blank (envelope),38.68,make (AQS-BOM-SC-001),"AQS-BOM-SC-001 row: blow moulds and shoe moulds, shop-machinable; the article geometry is not named on the node - mold detail is a hold (W12)"
+8,Nozzle set per docs-authority/nozzles/BLOW_MOLD.csv: drain and vent flush at the envelope faces; the two solids transfer rows drawn DN15 bore not calculated,4,316L (duty section 3),0.23,make (AQS-BOM-SC-001),4-row issued schedule verbatim; atmospheric hose per duty section 4
