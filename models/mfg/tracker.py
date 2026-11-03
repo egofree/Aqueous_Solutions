@@ -137,7 +137,7 @@ ACCEPTED = ('AL_POT', 'IND_MELT', 'VAC_IND', 'VAC_CAST', 'INV_CAST', 'CONT_CAST'
             'WS_DOPE', 'WS_HF_ED', 'WS_SLURRY', 'WS_SOLV', 'C29_RECYCLE', 'CONTINUOUS_RECYCLE',
             'MEOH_SYNTH', 'MEOH_FERM',
             'MEOH_FC', 'POLY_COND',
-            'POLY_OLEFIN', 'POLY_F', 'GLASS_BURNOUT')
+            'POLY_OLEFIN', 'POLY_F', 'GLASS_BURNOUT', 'GLASS_MILL')
 
 
 # --------------------------------------------------------------------------- authorities

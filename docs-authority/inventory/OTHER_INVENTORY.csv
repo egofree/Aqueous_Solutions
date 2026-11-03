@@ -2026,6 +2026,8 @@ GLASS,intra,GLASS_BURNOUT,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 
 GLASS,intra,GLASS_BURNOUT,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-GLASS_BURNOUT-Q2-A: one at each end nozzle (assumed)
 GLASS,intra,GLASS_BURNOUT,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-GLASS_BURNOUT-Q2-B: one at each end nozzle (assumed)
 GLASS,intra,GLASS_MILL,fabricated part,fabricated part set,4 BOM lines,models/mfg/GLASS_MILL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+GLASS,intra,GLASS_MILL,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,8,models/mfg/GLASS_MILL/fasteners.csv
+GLASS,intra,GLASS_MILL,fastener,M12 roll-shaft bolt + nut,M12 roll-shaft bolt + nut,ISO 898-1 8.8,4,models/mfg/GLASS_MILL/fasteners.csv
 GLASS,intra,GLASS_MILL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 GLASS,intra,GLASS_MILL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 GLASS,intra,GLASS_RINSE,fabricated part,fabricated part set,4 BOM lines,models/mfg/GLASS_RINSE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory

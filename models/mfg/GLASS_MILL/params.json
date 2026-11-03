@@ -72,5 +72,38 @@
  "acceptance_sets": [
   "A-core",
   "A-PIPE"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   800.0,
+   600.0,
+   800.0
+  ],
+  "basis": "L\u00d7W\u00d7H mm, issued envelope",
+  "jar": {
+   "od_mm": 350.0,
+   "len_mm": 500.0,
+   "axis_mm": [
+    null,
+    300.0,
+    430.0
+   ],
+   "x0_mm": 150.0
+  },
+  "plinth_mm": 20.0
+ },
+ "design": {
+  "service": "GLASS_MILL: rinsed cullet milled to the burnout feed, with the spent ceramic shell to the solids line and mill dust to the baghouse, atmospheric (duty sections 1, 4 and 6)",
+  "material": "316L",
+  "ca_mm": 0.0,
+  "v_full_m3": 0.0438,
+  "charge_duty_m3": 0.2577,
+  "charge_basis": "duty section 2 seven-day charge; capacity figure, not a residence time"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; jar axis along +x at y 300, z 430, jar centred x 150..650; roll stations at x 220/580",
+  "supports": "plinth + two V-roll cradle stands + 8 slab anchors",
+  "nozzle_spread": "the schedule gives face and height only; ports pack in one row per face/height group at the envelope face, 8 mm clear at the bore; drain at x 360, vent at x 440; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

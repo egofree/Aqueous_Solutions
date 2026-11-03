@@ -1,0 +1,6 @@
+line,from,to,dn,class,service,rating,note
+GLASS_MILL_TO_DIGEST,GLASS_MILL,GLASS_DIGEST,solids,—,—,-,"not piped: solids transfer (conveyor, bin or hand)"
+IA-GLASS-01,GLASS_RINSE,GLASS_MILL,solids,—,—,-,"not piped: solids transfer (conveyor, bin or hand)"
+IA-GLASS-02,GLASS_MILL,GLASS_BURNOUT,solids,—,—,-,"not piped: solids transfer (conveyor, bin or hand)"
+IA-MILL-LOSS,GLASS_MILL,BAGHOUSE,solids,—,—,-,"not piped: solids transfer (conveyor, bin or hand)"
+SHELL_TO_GLASS,SHELL_BREAK,GLASS_MILL,solids,—,—,-,"not piped: solids transfer (conveyor, bin or hand)"

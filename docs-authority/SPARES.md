@@ -84,7 +84,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-89 | fastener: M12 x 60 hex bolt + nut + 2 washers (M12 x 60 hex bolt + nut + 2 washers x34) | 34 | 4 | 2 % min 4 |
 | building block | OF-90 | fastener: M12 x 40 (M12 x 40 x440) | 440 | 9 | 2 % min 4 |
 | building block | OF-91 | fastener: M12 x 45 (M12 x 45 x8) | 8 | 4 | 2 % min 4 |
-| building block | OF-92 | fastener: M10 wedge anchor (M10 wedge anchor x76) | 76 | 4 | 2 % min 4 |
+| building block | OF-92 | fastener: M10 wedge anchor (M10 wedge anchor x84) | 84 | 4 | 2 % min 4 |
 | building block | OF-93 | fastener: M10 wedge anchor (M10 wedge anchor x110) | 110 | 4 | 2 % min 4 |
 | building block | OF-94 | fastener: M12 bolt + nut; PP-flanged joint (M12 bolt + nut; PP-flanged joint x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-95 | fastener: M12 PVDF bolt + nut (M12 PVDF bolt + nut x8) | 8 | 4 | 2 % min 4 |
@@ -100,6 +100,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-105 | fastener: M10 hold-down bolt (M10 hold-down bolt x4) | 4 | 4 | 2 % min 4 |
 | building block | OF-106 | fastener: M8 wedge anchor (M8 wedge anchor x4) | 4 | 4 | 2 % min 4 |
 | building block | OF-107 | fastener: M12 housing bolt + nut (M12 housing bolt + nut x4) | 4 | 4 | 2 % min 4 |
+| building block | OF-108 | fastener: M12 roll-shaft bolt + nut (M12 roll-shaft bolt + nut x4) | 4 | 4 | 2 % min 4 |
 | motor | MF-01 | BLDC 42 mm (NEMA 17 flange) 24 V DC | 65 | 4 | 5 % min 1 |
 | motor | MF-02 | BLDC 57 mm (NEMA 23 flange) 24 V DC | 55 | 3 | 5 % min 1 |
 | motor | MF-06 | induction IE3 IEC 71 / 0.37 kW 480 V 3-ph | 8 | 1 | 5 % min 1 |
@@ -133,4 +134,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-123 lines; 30 spare motors, 974 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+124 lines; 30 spare motors, 978 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.

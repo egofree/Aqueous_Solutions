@@ -1,0 +1,115 @@
+{
+  "bbox_mm": [
+    800.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    800.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "L\u00d7W\u00d7H mm, issued envelope",
+  "graph_revision": "AD",
+  "solids": 6,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "jar mill: horizontal 316L jar OD 350 x 500 with end heads and trunnion journals in two V-roll cradle stands on a 20 mm plinth (ported AQS-MFG-001 form mfg_mill.scad: jar + media)",
+    "jar_od_mm": 350.0,
+    "jar_len_mm": 500.0,
+    "wall_mm": 8.0,
+    "wall_basis": "study value; no authority states a jar wall (WORK_ORDER W12)",
+    "v_full_m3": 0.0438,
+    "charge_duty_m3": 0.2577,
+    "charge_note": "duty section 2 seven-day charge 0.2577 m3; the jar holds 0.044 m3 full - reported, nothing resized (plan rule 3); the media charge is not drawn: the node carries internals none (WORK_ORDER W12)",
+    "drive": "jar drive not designed: no drive is named on the node or duty (WORK_ORDER W12)",
+    "material": "316L"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 385.4,
+      "schedule_rating": "Class 150",
+      "service": "rinsed cullet",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN25",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 385.4,
+      "schedule_rating": "Class 150",
+      "service": "milled cullet",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 420.8,
+      "schedule_rating": "Class 150",
+      "service": "mill dust",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N5": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm is the box top"
+    },
+    "N6": {
+      "style": "hose",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 420.8,
+      "schedule_rating": "Class 150",
+      "service": "spent ceramic shell to solids line",
+      "note": "atmospheric hose joint at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    }
+  },
+  "nozzle_count_schedule": 6,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (duty section 4); the N6 solids row is a non-piped transfer drawn DN15, bore not calculated (plan W4); the schedule rating column (Class 150) is carried verbatim as text, no flange drawn (no process pressure stated)",
+  "line_list": {
+    "csv": "models/mfg/GLASS_MILL/line_list.csv",
+    "source": "unit edges in flow_graph/plant_flow_graph.json + docs-authority/LINE_LIST.md (AQS-PIP-004, DN and class authority)",
+    "edges": 5,
+    "rows": 5,
+    "missing_line_rows": [],
+    "rows_without_edge": [],
+    "no_new_edge": true
+  },
+  "part_mass_kg": {
+    "plinth": 75.36,
+    "jar": 46.24,
+    "stands": 147.31,
+    "nozzles": 0.96
+  },
+  "cadquery": "2.8.0"
+}

@@ -1,5 +1,5 @@
-item,description,qty,material,basis
-1,Body / envelope 800 x 600 x 800 mm,1,316L where the stream is wet.,docs-authority/duties/GLASS_MILL.md
-2,Process nozzle DN15,5,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
-3,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-4,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Mill jar OD 350 x 500, wall 8 mm (study), with end heads and trunnion journals",1,316L (duty section 3),46.24,make,"jar drawn to the ported AQS-MFG-001 form; no jar dimension on the node or duty (hold, WORK_ORDER W12); CA 0 mm (AQS-STD-001 316L rule); capacity report in check.machine"
+2,"V-roll cradle stands, 2 off: 180 x 160 base, pedestal, two OD 70 rolls",2,carbon steel (ASTM A500),147.31,make,"jar-mill cradle form (AQS-MOD-002 dry service class); roll fit is a study proportion, confirmed at fabrication (WORK_ORDER W12)"
+3,Plinth 800 x 600 x 20,1,carbon steel (ASTM A500),75.36,make,AQS-MOD-002 dry service; anchors in fasteners.csv
+4,"Nozzle set per docs-authority/nozzles/GLASS_MILL.csv: 5 hose barbs (DN15/DN25), drain and vent flush at the envelope faces",6,316L,0.96,make,"schedule tags/faces/heights verbatim; the N6 solids row drawn DN15, bore not calculated (plan W4); atmospheric hose per duty section 4; barb profile a study proportion (lib/nozzles.py)"

@@ -41,3 +41,26 @@ never resized.
   "accepted per AQS-PLAN-006 section 5 (A-core + A-PIPE)"; check.json bbox
   record. Added to the tracker ACCEPTED row set; tracker and full regen run;
   `scripts/check_all.sh` green.
+
+## GLASS_MILL (jar mill, GLASS, tier 5) — commit 2
+
+- `models/mfg/GLASS_MILL/glass_mill.py` on the shared lib. Route F-PIPE,
+  acceptance A-core + A-PIPE. Build 800 × 600 × 800 mm against the node
+  envelope: inside, exact; one closed manifold mesh; `cad/stl/GLASS_MILL.stl`
+  replaced from the build; `tracker --check GLASS_MILL` green.
+- Machine per the unit's own duty sheet and the ported AQS-MFG-001 form
+  (`mfg_mill.scad`): horizontal 316L jar OD 350 × 500, wall 8 mm (study — no
+  jar dimension on the node or duty), trunnion journals in two V-roll cradle
+  stands over a 20 mm plinth. Jar-full volume 0.0438 m³ reported against the
+  duty section 2 seven-day charge 0.2577 m³ — nothing resized (plan rule 3).
+  Media charge not drawn: the node carries internals none. No drive drawn:
+  none named on the node or duty (WORK_ORDER W12).
+- Nozzles: all 6 schedule rows at tag, face, height and bore, atmospheric
+  hose barbs flush at the envelope faces; the N6 solids row (spent ceramic
+  shell) drawn DN15, bore not calculated (plan W4). Line list generated from
+  the unit's present edges and AQS-PIP-004, no new edge.
+- 7-sheet drawing set (GA front/side, nozzle orientation, jar, stands, aux,
+  iso) replaces the stale envelope-era set; WORK_ORDER W1–W12, BOM
+  make-or-buy, fasteners, build log acceptance line, check.json. Added to the
+  tracker ACCEPTED row set; tracker and full regen run; `--check` and
+  `check_all` green.

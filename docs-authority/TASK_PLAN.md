@@ -40,7 +40,7 @@ Table 2.1. Tasks by group
 | X-PAR | Parametric model (owner priority 2026-10-15; AQS-PAR-001) | 29 | 24 |
 | X-RSZ | Bounding-case resizing (owner approval 2026-10-15) | 7 | 7 |
 | X-SAN | Sanitation and pathogen barriers (owner decision 2026-10-15) | 1 | 1 |
-| X-INV | Building-block inventories (owner programme 2026-10-15; in order) | 161 | 160 |
+| X-INV | Building-block inventories (owner programme 2026-10-15; in order) | 162 | 161 |
 | X-BAS | Design basis | 4 | 4 |
 | X-PIP | Piping and line list | 5 | 5 |
 | X-ELS | Electrical system (plant level) | 12 | 12 |
@@ -67,7 +67,7 @@ Table 2.1. Tasks by group
 | OIL | Process (Mass transform) | 195 | 182 |
 | HEAT | Utility / header | 180 | 168 |
 | MFG | Process (Mass transform) | 165 | 154 |
-| POLYMERS | Process (Mass transform) | 165 | 153 |
+| POLYMERS | Process (Mass transform) | 165 | 154 |
 | GAS | Process (Mass transform) | 150 | 140 |
 | WTR | Utility / header | 136 | 127 |
 | ELEC | Utility / header | 135 | 126 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 14 |
 | NUT | Process (Mass transform) | 15 | 14 |
-| | **Total** | **3287** | **3081** |
+| | **Total** | **3288** | **3083** |
 
 ## 3. Triage of open tasks
 
@@ -102,7 +102,6 @@ Table 3.1. Open tasks by triage tag
 
 | Triage | Open tasks |
 | --- | --- |
-| desk P3 | 1 |
 | hardware | 205 |
 
 ## 4. Unit task template
@@ -371,7 +370,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-89** Building-block family OF-89: fastener, M12 x 60 hex bolt + nut + 2 washers. Done when: open design and production plan for 34 items (PVDF (non-metallic)) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-90** Building-block family OF-90: fastener, M12 x 40. Done when: open design and production plan for 440 items (ISO 3506 A4-70) in 4 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-91** Building-block family OF-91: fastener, M12 x 45. Done when: open design and production plan for 8 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-92** Building-block family OF-92: fastener, M10 wedge anchor. Done when: open design and production plan for 76 items (ISO 898-1 8.8) in 11 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-92** Building-block family OF-92: fastener, M10 wedge anchor. Done when: open design and production plan for 84 items (ISO 898-1 8.8) in 12 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-93** Building-block family OF-93: fastener, M10 wedge anchor. Done when: open design and production plan for 110 items (ISO 3506 A4-70) in 27 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-94** Building-block family OF-94: fastener, M12 bolt + nut; PP-flanged joint. Done when: open design and production plan for 16 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-95** Building-block family OF-95: fastener, M12 PVDF bolt + nut. Done when: open design and production plan for 8 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
@@ -387,6 +386,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-105** Building-block family OF-105: fastener, M10 hold-down bolt. Done when: open design and production plan for 4 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-106** Building-block family OF-106: fastener, M8 wedge anchor. Done when: open design and production plan for 4 items (ISO 898-1 8.8) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-107** Building-block family OF-107: fastener, M12 housing bolt + nut. Done when: open design and production plan for 4 items (ISO 898-1 8.8) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-108** Building-block family OF-108: fastener, M12 roll-shaft bolt + nut. Done when: open design and production plan for 4 items (ISO 898-1 8.8) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 
 ### X-BAS. Design basis
 
@@ -2823,7 +2823,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] POLYMERS-POLY_OLEFIN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: POLYMERS-POLY_OLEFIN-01, POLYMERS-POLY_OLEFIN-02. Evidence: `docs-authority/pid/POLY_OLEFIN.svg` (AQS-PID-001).
   - [x] POLYMERS-POLY_OLEFIN-04 Nozzle schedule. Done when: docs-authority/nozzles/POLY_OLEFIN.csv, one row per edge. Depends: POLYMERS-POLY_OLEFIN-03. Evidence: `docs-authority/nozzles/POLY_OLEFIN.csv` (all 4 process connections listed).
   - [x] POLYMERS-POLY_OLEFIN-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: POLYMERS-POLY_OLEFIN-04, POLYMERS-POLY_OLEFIN-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] POLYMERS-POLY_OLEFIN-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: POLYMERS-POLY_OLEFIN-02. Triage: desk P3.
+  - [x] POLYMERS-POLY_OLEFIN-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: POLYMERS-POLY_OLEFIN-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] POLYMERS-POLY_OLEFIN-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: POLYMERS-POLY_OLEFIN-02, POLYMERS-POLY_OLEFIN-03. Evidence: `docs-authority/duties/POLY_OLEFIN.md` §6 (C7 closed on MASTER_PLAN).
   - [x] POLYMERS-POLY_OLEFIN-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: POLYMERS-POLY_OLEFIN-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (5 loops; AQS-CTL-001).
   - [x] POLYMERS-POLY_OLEFIN-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: POLYMERS-POLY_OLEFIN-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).

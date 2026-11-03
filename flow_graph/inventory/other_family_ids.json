@@ -535,6 +535,11 @@
    "category": "fastener",
    "item": "M12 housing bolt + nut",
    "spec": "ISO 898-1 8.8"
+  },
+  "OF-108": {
+   "category": "fastener",
+   "item": "M12 roll-shaft bolt + nut",
+   "spec": "ISO 898-1 8.8"
   }
  }
 }
