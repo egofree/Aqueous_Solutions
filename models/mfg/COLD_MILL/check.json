@@ -1,0 +1,97 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 6,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "two-high cold rolling mill per the duty sheet and the AQS-MFG-010 tool row (Table 2.1, rev C metering split): bedplate, two vertical housings (40 x 360, study) with crown tie, upper/lower work rolls OD 120 x 300 (5 mm gap at the strip class), journals, screw-down studs, entry/exit strip tables on the pass line, drive gearbox and motor as purchased envelopes, control cabinet as a purchased envelope; roll-zone guard rail (A-MACH) + hold-down frame",
+    "tool_row": "AQS-MFG-010 Table 2.1: Two-high cold rolling mill, nameplate 2.2 kW; energy basis 250 MPa x strain 2.3 / 0.55 (DIETER1988) = 0.0324 kWh/kg + no-load 15 % x 1 h (A-M-177)",
+    "pass_line": {
+      "z_mm": 302.5,
+      "gap_mm": 5.0,
+      "basis": "roll centres are study values; the strip pass line is the layout choice (WORK_ORDER W12)"
+    },
+    "material": "316L where the stream is wet (duty section 3); the mill is a dry forming machine - no wetted stream on the graph; CA 0 mm",
+    "ca_mm": 0.0,
+    "purchased": "drive gearbox + motor (2.2 kW nameplate, AQS-MFG-010) and control cabinet per plan rule 6, ratings from the node",
+    "guard": "four-post hold-down/guard frame pins the registry box (X-PAR-04); roll-zone guard rail on 4 posts x 3 tiers; 8 slab anchors (fasteners.csv)",
+    "study_dims": "housing, roll and table dimensions are study values sized to the strip class (WORK_ORDER W12)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 200.0,
+      "schedule_rating": "Class 150",
+      "service": "melt to the mill",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 200.0,
+      "schedule_rating": "Class 150",
+      "service": "sheet / strip",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 600 is a placeholder above the strip pass line (hold, WORK_ORDER W12)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; the 800 datum is the box top"
+    }
+  },
+  "nozzle_count_schedule": 4,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); N1 strand in on -Y at z 160; N2 sheet/strip out on +Y at z 600 (schedule datum is a placeholder above the pass line - hold, W12); drain flush at the envelope bottom (50 datum); vent flush at the envelope top (800 datum is the box top); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "frame": 76.36,
+    "bedplate": 78.37,
+    "housings": 126.6,
+    "crown": 38.43,
+    "roll_lower": 26.63,
+    "roll_upper": 26.63,
+    "journals": 1.82,
+    "screw_downs": 0.44,
+    "strip_tables": 13.82,
+    "gearbox": 34.16,
+    "drive_motor": 5.33,
+    "control_cabinet": 303.7,
+    "guard_rail": 8.99,
+    "nozzles": 0.22
+  },
+  "cadquery": "2.8.0"
+}

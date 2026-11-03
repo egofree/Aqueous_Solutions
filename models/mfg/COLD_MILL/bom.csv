@@ -1,10 +1,11 @@
-item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/COLD_MILL.md
-2,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
-3,"Motor: Two-high cold rolling mill: main drive (induction IE3, IEC 100L / 2.2 kW)",1,-,AQS-INV-001 / AQS-INV-005
-4,bearing: deep-groove ball bearing 6206-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-5,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-6,electronics: variable-frequency drive 2.2 kW,1,IEC 61800-5-1,AQS-INV-004
-7,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-8,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-9,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Plinth 1000 x 600 x 20,1,carbon steel (ASTM A500),94.2,make (AQS-BOM-SC-001),AQS-MOD-002 dry service; anchors in fasteners.csv
+2,"Four-post hold-down/guard frame pinning the 1000 x 600 x 800 envelope (40 x 40 posts, top rails)",1,carbon steel (ASTM A500),76.36,make (AQS-BOM-SC-001),frame pins the registry box (X-PAR-04); A-MACH guard; anchors in fasteners.csv
+3,Mill bedplate and two vertical housings with crown tie (two-high housing idiom),1,carbon steel (ASTM A500),243.4,make (AQS-BOM-SC-001),"housing sections study (hold, WORK_ORDER W12); CA 0 mm (AQS-STD-001)"
+4,"Work rolls OD 120 x 300, 2 off (5 mm gap), with journals OD 40",2,"tool steel (AR400/D2 class, lib table)",55.08,make (AQS-BOM-SC-001),two-high rolls per the AQS-MFG-010 tool row; roll size study (W12); journals turned in the shop lathe
+5,"Screw-down studs on the crown, 2 off",2,carbon steel,0.44,make (AQS-BOM-SC-001),gap adjustment hardware; layout choice (W12)
+6,Entry/exit strip tables on the pass line,1,carbon steel,13.82,make (AQS-BOM-SC-001),pass line z 302.5; tables are the layout choice (W12)
+7,"Roll-zone guard rail, 4 posts x 3 tiers (A-MACH: guard drawn)",1,CS tube,8.99,make (AQS-BOM-SC-001),guard over the rotating roll zone; layout choice (W12)
+8,"Drive gearbox + motor (purchased, envelope and interface)",1,purchased drive (envelope),39.489999999999995,buy,nameplate 2.2 kW (AQS-MFG-010 Table 2.1; node stamp); purchased per plan rule 6
+9,"Control cabinet (purchased, envelope and interface)",1,purchased cabinet (envelope),303.7,buy,purchased per plan rule 6; mass a table-density placeholder until the maker TDS quotes (W12)
+10,Nozzle set per docs-authority/nozzles/COLD_MILL.csv: 4 DN15 stubs,4,316L tube,0.22,make (AQS-BOM-SC-001),schedule tags/faces/heights verbatim; atmospheric per duty section 4

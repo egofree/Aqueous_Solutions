@@ -57,5 +57,54 @@
   "A-core",
   "A-MACH",
   "A-SC"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "plinth_mm": 20.0,
+  "housing": {
+   "stations_x_mm": [
+    230.0,
+    530.0
+   ],
+   "t_mm": 40.0,
+   "w_mm": 360.0,
+   "z1_mm": 620.0
+  },
+  "rolls": {
+   "od_mm": 120.0,
+   "len_mm": 300.0,
+   "centres_z_mm": [
+    240.0,
+    365.0
+   ],
+   "gap_mm": 5.0,
+   "pass_line_z_mm": 302.5
+  },
+  "cabinet_mm": [
+   700.0,
+   180.0,
+   260.0,
+   240.0,
+   620.0
+  ]
+ },
+ "design": {
+  "service": "COLD_MILL: melt rolled to sheet/strip for the shop and goods lines (duty sections 1 and 4; strand IA-MELT-MILL in, S59 out)",
+  "tool_row": "AQS-MFG-010 Table 2.1: two-high cold rolling mill, nameplate 2.2 kW; 250 MPa x strain 2.3 / 0.55 (DIETER1988) + 15 % no-load (A-M-177)",
+  "material": "316L where the stream is wet (duty section 3); dry forming machine, no wetted stream on the graph",
+  "ca_mm": 0.0,
+  "material_basis": "duty section 3; CA 0 mm shop rule (AQS-STD-001)",
+  "purchased": "drive set (2.2 kW nameplate) and control cabinet, plan rule 6 envelopes with the node ratings"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; housings x 230/530 on the bedplate, roll axes along x at the pass line z 302.5, strip along y; drive train -X, control cabinet x 700..960; hold-down posts at the envelope corners; roll-zone guard rail over the pass line",
+  "supports": "plinth + hold-down frame + 8 slab anchors (A-MACH practice)",
+  "nozzle_spread": "the schedule gives face and height only; N1 on -Y at z 160, N2 on +Y at z 600 (schedule placeholder above the pass line), drain at x 350, vent at x 650; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

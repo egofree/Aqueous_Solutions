@@ -2429,7 +2429,9 @@ MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, I
 MFG,MFG,COLD_MILL,bearing,deep-groove ball bearing,6206-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Two-high cold rolling mill: main drive: drive and non-drive end, IEC 60072 frame 100L (assumed size)"
 MFG,MFG,COLD_MILL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Two-high cold rolling mill: main drive: run and fault (assumed)
 MFG,MFG,COLD_MILL,electronics,variable-frequency drive,2.2 kW,IEC 61800-5-1,1,Two-high cold rolling mill: main drive (assumed VFD at >= 0.75 kW)
-MFG,MFG,COLD_MILL,fabricated part,fabricated part set,9 BOM lines,models/mfg/COLD_MILL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+MFG,MFG,COLD_MILL,fabricated part,fabricated part set,10 BOM lines,models/mfg/COLD_MILL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+MFG,MFG,COLD_MILL,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,8,models/mfg/COLD_MILL/fasteners.csv
+MFG,MFG,COLD_MILL,fastener,M16 journal-block bolt + nut,M16 journal-block bolt + nut,ISO 898-1 8.8,8,models/mfg/COLD_MILL/fasteners.csv
 MFG,MFG,COLD_MILL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 MFG,MFG,COLD_MILL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 MFG,MFG,COLD_MILL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"

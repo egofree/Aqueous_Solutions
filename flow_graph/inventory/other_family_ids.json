@@ -610,6 +610,11 @@
    "category": "fastener",
    "item": "M12 trunnion stud + nut",
    "spec": "ISO 898-1 8.8"
+  },
+  "OF-123": {
+   "category": "fastener",
+   "item": "M16 journal-block bolt + nut",
+   "spec": "ISO 898-1 8.8"
   }
  }
 }
