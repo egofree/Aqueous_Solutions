@@ -87,7 +87,7 @@ SHEETS = [
      "Fabricated part sheet: service group (chutes, harvest, trough, drain)."),
     ("iso01", full, (1, -1, 1),
      ['Shop orientation: +X face, y along depth, z up; chlorinator, condenser and reduction retort on the skid frame',
-      'Graph revision AC is the model authority for this build; STEP (export/ti_cell.step) is the solids of record',
+      'The live graph revision in params.json is the model authority for this build; STEP (export/ti_cell.step) is the solids of record',
       'Ti sponge inventory in the retort shown in place - not a BOM part'],
      "Isometric orientation sheet."),
 ]

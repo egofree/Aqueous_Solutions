@@ -1,6 +1,6 @@
 """TI_CELL manufacturing model, AQS-PLAN-006 work order (X-MFG lane, FOUNDRY-TI_CELL-10 M3).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only.
+Graph revision AD. Study. Not a PE stamp. Reads params.json only.
 Kroll train in one frame: chlorinator (TiO2 + 2C + 2Cl2 -> TiCl4 + 2CO at 800 C), TiCl4
 condenser, and the Mg-reduction retort (TiCl4 + 2Mg -> Ti + 2MgCl2 at 900 C, batch
 campaigns at the 0.5 kg/d Ti scale, AQS-BAL-KROLL). The chlorine loop closes with
@@ -142,7 +142,7 @@ ALL = list(parts.values()) + list(inv.values())
 vessel_parts = [parts[k] for k in ("chlorinator", "condenser", "reduction_retort")]
 sb = cq.Compound.makeCompound([v.val() for v in vessel_parts]).BoundingBox()
 tb_ = cq.Compound.makeCompound([v.val() for v in ALL]).BoundingBox()
-slack = 50.0
+slack = 1.0   # A-core 2 gate: the flush-hardware build stays inside size_mm within 1 mm
 inside_shell = bool(sb.xmin >= -1 and sb.xmax <= L + 1 and sb.ymin >= -1 and sb.ymax <= W + 1
                     and sb.zmin >= -1 and sb.zmax <= H + 1)
 overhang = {"-X": round(-tb_.xmin, 1), "+X": round(tb_.xmax - L, 1),
@@ -214,17 +214,10 @@ with open(HERE / "bom.csv", "w", newline="") as f:
     w.writerows(rows)
 fast = ('item,size,grade,qty,location,basis\n'
         '1,M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,retort flange and harvest ports,study\n'
-        '2,M8 x 25 hopper bolts,ISO 898-1 8.8,8,Mg hopper rim,study\n')
+        '2,M8 x 25 hopper bolts,ISO 898-1 8.8,8,Mg hopper rim,study\n'
+        '3,M12 wedge anchor,ISO 898-1 8.8,4,skid base plate to slab,study\n')
 (HERE / "fasteners.csv").write_text(fast)
-wo = (f"# Work order TI_CELL\n\nAuthority: AQS-DUTY-072 (X-MFG lane). LIVE unit - Kroll train on the D-DOCK feedstock (A-M-284).\n\n"
-      f"1. Fabricate the chlorinator retort OD {2 * RC} x 640 mm with the heater band; dry-out per the refractory class.\n"
-      f"2. Fabricate the TiCl4 condenser OD {2 * RV} x 420 mm with the water band; prove the coolant loop.\n"
-      f"3. Fabricate the reduction retort OD {2 * RRed} x 520 mm and the furnace box; leak-check under vacuum.\n"
-      f"4. Set the interconnects with the stated slope; dry Cl2 service, no dead legs.\n"
-      f"5. Mount the charge chutes (N2/N10/N11), the Cl2 stubs (N3/N9), the CO export (N12) and the slag spout (N1).\n"
-      f"6. Mount the harvest ports (N4/N5), the MgCl2 stubs (N6/N7), the Mg chute (N8), drain (N13) and vent (N14).\n"
-      f"7. Campaign test: chlorination run to TiCl4, then the reduction batch; harvest the sponge at N4/N5.\n"
-      f"8. Inspect against models/mfg/TI_CELL/export/ti_cell.step; record dimensions on the traveller.\n")
-(HERE / "WORK_ORDER.md").write_text(wo)
+# WORK_ORDER.md is the hand-authored W1-W12 item beside the model (AQS-PLAN-006 section 2);
+# the builder no longer writes it, so a rebuild never clobbers the work order.
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps(report))

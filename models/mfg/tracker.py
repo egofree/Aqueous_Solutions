@@ -154,7 +154,8 @@ ACCEPTED = ('AL_POT', 'IND_MELT', 'VAC_IND', 'VAC_CAST', 'INV_CAST', 'CONT_CAST'
             'CA_POT',
             'MG_POT',
             'MO_CELL',
-            'CR_CELL')
+            'CR_CELL',
+            'TI_CELL')
 
 
 # --------------------------------------------------------------------------- authorities

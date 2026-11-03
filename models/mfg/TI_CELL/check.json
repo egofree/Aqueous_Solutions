@@ -19,7 +19,7 @@
     "-Y": 0.0,
     "+Y": 0.0
   },
-  "overhang_allowance_mm": 50.0,
+  "overhang_allowance_mm": 1.0,
   "overhang_ok": true,
   "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: )",
   "external_parts": [],
