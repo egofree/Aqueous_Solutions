@@ -1,23 +1,154 @@
 {
-  "shell_bbox_mm": [
+  "bbox_mm": [
     3600.0,
     2100.0,
     500.0
   ],
-  "envelope_mm": [
-    3600,
-    2100,
-    500
+  "inside_size_mm": true,
+  "size_mm": [
+    3600.0,
+    2100.0,
+    500.0
   ],
-  "inside_size_mm_shell": true,
-  "solids": 1,
+  "size_basis": "media bed 7 m2 of the 14 m2 dual-root-zone duty at the 0.9 kg/d feed class, 300 mm media + freeboard (A-M-415; A-M-229) (X-FARM sec3)",
+  "graph_revision": "AD",
+  "solids": 2,
   "all_parts_valid": true,
-  "material_class": "HDPE",
-  "form": "tray",
-  "mass_kg": {
-    "basin_shell": 124.7,
-    "liner": 35.4
+  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the rebuild fills the node box 3600 x 2100 x 500 flush)",
+  "cad_stl_bbox_mm": [
+    3600.0,
+    2100.0,
+    500.0
+  ],
+  "machine": {
+    "type": "aquaponic root zone A - aerobic plant-root media bed (A-M-415; A-M-229): HDPE tray 3600 x 2100 x 500 with the EPDM liner sheet 5 mm, geotextile separation cloth, and the LECA media envelope at the 300 mm depth the size_note names, 183 mm freeboard",
+    "a_farm": "bed area matches the node box - interior 3580 x 2080 = 7.45 m2, drawn at the registry box and NOT shrunk to fit; the liner and the drain are drawn",
+    "area_reading": "the size_note names the 7 m2 class of the 14 m2 dual-root-zone duty; the design block area_m2 14.56 is the A+B pair - the registry box governs (hold, W12)",
+    "material": "HDPE tray with EPDM liner at the ponded inlet zone, expanded-clay (LECA) media on a geotextile separation cloth, CPVC loop piping",
+    "ca_mm": 0.0
   },
-  "empty_kg": 160.1,
-  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1741.4,
+        1050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "nitrified water (NO3- nitrate, plant-available nitrogen)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 489.35,
+      "xy_mm": [
+        1800.0,
+        1050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "nitrate water through the aerobic root zone (plant uptake + anaerobic mineralisation layer)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 600 sits at or above the build height 500 - drawn flush at the envelope top (hold, WORK_ORDER W12)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1770.7,
+        1050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vermicompost to the growbed soil",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1800.0,
+        1050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "worm tea to the growbed soil",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        1800.0,
+        1050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 500.0,
+      "xy_mm": [
+        1800.0,
+        1050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 predates the build height 500 - drawn flush at the envelope top (hold, W12)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1829.3,
+        1050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "sanitized loop water to the growbeds (food-safety/contingency mode)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1858.6,
+        1050.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "normal-mode loop bypass around AQUA_UV",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    }
+  },
+  "nozzle_count_schedule": 8,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); inlets N1/N3/N4/N7/N8 on -Y at z 160; outlet N2 and vent N6 drawn flush at the envelope top - the schedule z 600/z 800 datums predate the 500 box (stale datum, hold W12); N5 drain flush at the envelope bottom; no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "basin_shell": 124.7,
+    "liner": 72.4,
+    "geotextile_cloth": 13.6,
+    "media": 997.6,
+    "nozzles": 0.1
+  },
+  "cadquery": "2.8.0"
 }

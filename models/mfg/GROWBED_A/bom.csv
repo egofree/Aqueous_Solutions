@@ -1,3 +1,6 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,basin_shell,1,HDPE,124.7,make,"tray class; media bed 7 m2 of the 14 m2 dual-root-zone duty at the 0.9 kg/d feed class, 300 "
-2,liner,1,HDPE,35.4,make,"tray class; media bed 7 m2 of the 14 m2 dual-root-zone duty at the 0.9 kg/d feed class, 300 "
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"HDPE tray basin: walls and floor 10 mm, 3600 x 2100 x 500 outer",1,HDPE (duty section 3),124.7,make,size_mm verbatim; A-FARM: drawn at the node box flush; CA does not apply to the polymer (AQS-STD-001)
+2,EPDM liner sheet 5 mm: floor + four walls (the ponded inlet zone class),1,EPDM (duty section 3),72.4,buy,"A-FARM: liner drawn; sheet roll goods, buy roll (plan rule 6)"
+3,Geotextile separation cloth 2 mm over the liner,1,"geotextile, PP class (duty section 3)",13.6,buy,"duty section 3 separation cloth; roll goods cut to size, plan rule 6"
+4,LECA media envelope at 300 mm depth (the size_note media class) over the cloth,1,expanded clay (LECA),997.6,buy,"the charge is a buy row (plan rule 6) at the LECA table bulk density; supplier TDS at order (hold, WORK_ORDER W12)"
+5,"Nozzle set per docs-authority/nozzles/GROWBED_A.csv: 8 rows drawn as DN15 CPVC tube stubs (5 in z 160, root-zone out at the top line, drain, vent)",8,CPVC loop fittings (duty section 3),0.1,make,"schedule tags/faces/heights verbatim; the z 600 outlet and z 800 vent datums predate the 500 box - drawn at the envelope top (hold, WORK_ORDER W12); atmospheric per duty section 4"

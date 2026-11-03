@@ -4,7 +4,7 @@ Class: growbed; sector FARM. Study route. Not stamped.
 Envelope: Envelope 3600×2100×500 mm;
 service line: service aquaponic root zone A (aerobic plant roots); area_m2 14.56; zones aerobic top / anaerobic mineralisation bottom (dual root zone); ba
 
-Internals: issued mfg model BOM (2 internals part row): "1,basin_shell,1,HDPE,124.7,make,"tray class; media bed 7 m2 of the 14 m2 dual-root-zone duty at the 0.9 kg/d f" [models/mfg/GROWBED_A/bom.csv]
+Internals: issued mfg model BOM (3 internals part row): "1,"HDPE tray basin: walls and floor 10 mm, 3600 x 2100 x 500 outer",1,HDPE (duty section" [models/mfg/GROWBED_A/bom.csv]
 Material: HDPE tray with EPDM liner at the ponded inlet zone, expanded-clay (LECA) media on a geotextile separation cloth, CPVC loop piping. (continues on the duty sheet)
 
 Nozzles: 8 process connections per docs-authority/nozzles/GROWBED_A.csv
