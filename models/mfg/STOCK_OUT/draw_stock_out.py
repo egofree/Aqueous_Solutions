@@ -77,7 +77,7 @@ SHEETS = [
      "Fabricated part sheet: issue sill + drain."),
     ("iso01", full, (1, -1, 1),
      ['Shop orientation: +X face, y along depth, z up; three-tier rack with staged stock',
-      'Graph revision AC is the model authority for this build; STEP (export/stock_out.step) is the solids of record',
+      'The live graph revision in params.json is the model authority for this build; STEP (export/stock_out.step) is the solids of record',
       'Stock inventory shown in place - not a BOM part'],
      "Isometric orientation sheet."),
 ]

@@ -1,9 +1,10 @@
 """STOCK_OUT manufacturing model, AQS-PLAN-006 work order (X-MFG lane, FOUNDRY-STOCK_OUT-10 M3).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only.
+Graph revision AD. Study. Not a PE stamp. Reads params.json only.
 Three-tier bar/plate/ingot staging rack (AQS-DUTY-072). The seven stock-inlet rows
 of the task-04 schedule land on the tier decks at z 160 (registered layout choice);
-formed product issues at the +X face at z 600. No measured rate is claimed anywhere.
+formed product issues at the +X face at z 600. Connection hardware draws flush at
+the envelope faces: nothing protrudes (A-core 2). No measured rate is claimed anywhere.
 """
 import csv, json, math, pathlib
 import cadquery as cq
@@ -73,7 +74,7 @@ for k, v in parts.items():
 cap_solid = body.val()
 cap_solid.exportStl(str(out / "stock_out.stl"), tolerance=0.4, angularTolerance=0.4, ascii=True)
 
-EXTERNAL = ("issue_sill",)                            # the issue-face sill crosses the +X envelope face
+EXTERNAL = ()                                        # the flush build keeps every part inside the envelope
 in_env = None
 for k, v in parts.items():
     if k in EXTERNAL:
@@ -87,7 +88,7 @@ in_env_solid.scale(0.001).exportStl(str(HERE.parents[2] / "cad" / "stl" / "STOCK
 ALL = list(parts.values()) + list(inv.values())
 sb = cq.Compound.makeCompound([parts["uprights"].val()]).BoundingBox()
 tb_ = cq.Compound.makeCompound([v.val() for v in ALL]).BoundingBox()
-slack = 50.0
+slack = 1.0   # A-core 2 gate: the flush-hardware build stays inside size_mm within 1 mm
 inside_shell = bool(sb.xmin >= -1 and sb.xmax <= L + 1 and sb.ymin >= -1 and sb.ymax <= W + 1
                     and sb.zmin >= -1 and sb.zmax <= H + 1)
 overhang = {"-X": round(-tb_.xmin, 1), "+X": round(tb_.xmax - L, 1),
@@ -128,13 +129,9 @@ with open(HERE / "bom.csv", "w", newline="") as f:
     w.writerows(rows)
 (HERE / "fasteners.csv").write_text(
     'item,size,grade,qty,location,basis\n'
-    '1,M12 anchor,ISO 898-1 8.8,4,uprights to slab,study\n')
-(HERE / "WORK_ORDER.md").write_text(
-    "# Work order STOCK_OUT\n\nAuthority: AQS-DUTY-072 (X-MFG lane). LIVE unit - stock staging rack.\n\n"
-    "1. Fabricate and erect the six uprights; bolt to the slab.\n"
-    "2. Fit the three tier decks and the back guard; fit the issue-face edge stops and sill.\n"
-    "3. Fit the N9 floor drain and N10 vent stub.\n"
-    "4. Load test: rated stock per tier, 1.0 d hold (AQS-DUTY-072).\n"
-    "5. Inspect against models/mfg/STOCK_OUT/export/stock_out.step; record dimensions on the traveller.\n")
+    '1,M12 anchor,ISO 898-1 8.8,4,uprights to slab,study\n'
+    '2,M10 bolt,ISO 898-1 8.8,12,tier decks to the uprights,study\n')
+# WORK_ORDER.md is the hand-authored W1-W12 item beside the model (AQS-PLAN-006 section 2);
+# the builder no longer writes it, so a rebuild never clobbers the work order.
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps(report))

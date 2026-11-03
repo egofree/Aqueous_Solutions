@@ -11,12 +11,10 @@
     "-Y": 0.0,
     "+Y": 0.0
   },
-  "overhang_allowance_mm": 50.0,
+  "overhang_allowance_mm": 1.0,
   "overhang_ok": true,
-  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: issue_sill)",
-  "external_parts": [
-    "issue_sill"
-  ],
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: )",
+  "external_parts": [],
   "cap_solids": 3,
   "all_parts_valid": true,
   "part_mass_kg": {
