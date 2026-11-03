@@ -1,24 +1,154 @@
 {
-  "shell_bbox_mm": [
+  "bbox_mm": [
     2100.0,
     1100.0,
     1100.0
   ],
-  "envelope_mm": [
-    2100,
-    1100,
-    1100
+  "inside_size_mm": true,
+  "size_mm": [
+    2100.0,
+    1100.0,
+    1100.0
   ],
-  "inside_size_mm_shell": true,
+  "size_basis": "2.0 m3 working volume at the 60 kg stock / 30 kg-per-m3 class (TECHTREE tilapia glossary; A-M-415): 2000 x 1000 x 1000 ID + 50 walls, EPDM-lined HDPE (X-FARM sec3)",
+  "graph_revision": "AD",
   "solids": 1,
   "all_parts_valid": true,
-  "material_class": "HDPE",
-  "form": "tank",
-  "mass_kg": {
+  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the rebuild fills the node box 2100 x 1100 x 1100 flush)",
+  "cad_stl_bbox_mm": [
+    2100.0,
+    1100.0,
+    1100.0
+  ],
+  "machine": {
+    "type": "aquaponic fish tank, 60 kg standing stock (A-M-415): HDPE shell 2000 x 1000 x 1000 ID with 15 mm walls and floor, 15 mm lid, food-grade LDPE liner sheet 5 mm (floor + walls, the GROW_BED ponded-zone idiom); the fish are the ammonia SOURCE and the O2 SINK of the aquaponic loop (node design)",
+    "a_farm": "the tank is drawn at the node box flush; the liner and the drain are drawn",
+    "liner": "the Oct-31 liner was a solid-block envelope filling the cavity (2230.4 kg); the rebuild draws the 5 mm sheet the params name (liner_mm 5, duty section 3 LDPE liner class)",
+    "aeration": "the air stones the design block names are the O2 source; no position or rating on the node - not drawn (hold, WORK_ORDER W12)",
+    "material": "HDPE tank body with a food-grade LDPE aquaculture liner, SS316 hardware above the waterline, CPVC loop fittings",
+    "ca_mm": 0.0
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1020.7,
+        550.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "ammonia-rich fish waste water (NH3/NH4+ from the gills)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1050.0,
+        550.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "fish sludge to the larvae bin",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1079.3,
+        550.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "fish harvest to the food store",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1020.7,
+        550.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "loop top-up: root-zone growth water and evaporation",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1050.0,
+        550.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "polished loop water return (2.2 kg/d duckweed growth drawn from the loop)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1079.3,
+        550.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "fresh duckweed: tilapia ration (dry-equivalent, 1.5 % BW)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        1050.0,
+        550.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 1100.0,
+      "xy_mm": [
+        1050.0,
+        550.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 predates the build height 1100 - drawn flush at the envelope top (hold, W12)"
+    }
+  },
+  "nozzle_count_schedule": 8,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); N1-N3 out on +Y at z 600, N4-N6 in on -Y at z 160; N7 drain flush at the envelope bottom; N8 vent flush at the envelope top (schedule z 800 predates the 1100 box - stale datum, hold W12); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
     "vessel_shell": 130.9,
     "lid": 32.9,
-    "liner": 2230.4
+    "liner": 41.9,
+    "nozzles": 0.1
   },
-  "empty_kg": 2394.2,
-  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+  "cadquery": "2.8.0"
 }

@@ -1,4 +1,5 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,lid,1,HDPE,32.9,make,tank class; 2.0 m3 working volume at the 60 kg stock / 30 kg-per-m3 class (TECHTREE tilapia 
-2,liner,1,HDPE,2230.4,make,tank class; 2.0 m3 working volume at the 60 kg stock / 30 kg-per-m3 class (TECHTREE tilapia 
-3,vessel_shell,1,HDPE,130.9,make,tank class; 2.0 m3 working volume at the 60 kg stock / 30 kg-per-m3 class (TECHTREE tilapia 
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"HDPE tank shell: 2000 x 1000 x 1000 ID + 15 mm walls and floor (2.0 m3 working volume, A-M-415 60 kg stock class)",1,HDPE,130.9,make,size_basis verbatim; A-FARM: drawn at the node box flush; CA does not apply to the polymer (AQS-STD-001)
+2,HDPE lid 15 mm on the tank rim,1,HDPE,32.9,make,"lid thickness follows the shell wall (study, hold WORK_ORDER W12)"
+3,Food-grade aquaculture liner sheet 5 mm: floor + four walls,1,LDPE liner class (duty section 3),41.9,make,"sheet goods; carried at the HDPE table density (950 kg/m3) until the supplier TDS - the table has no LDPE row (hold, WORK_ORDER W12)"
+4,"Nozzle set per docs-authority/nozzles/AQUA_TANK.csv: 8 rows drawn as DN15 CPVC tube stubs (3 out z 600, 3 in z 160, drain, vent)",8,CPVC loop fittings (duty section 3),0.1,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4

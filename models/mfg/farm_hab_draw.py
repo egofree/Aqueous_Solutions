@@ -73,10 +73,25 @@ def sheets_for(P, parts):
     return out[:8]
 
 
+def unit_parts(unit, P):
+    """The unit source's own parts() when the unit folder carries one (the close-out
+    builders add media, nozzles and the purchased envelopes); the form-class parts
+    otherwise."""
+    p = HERE / unit / (unit.lower() + '.py')
+    if not p.exists():
+        return None
+    import importlib.util
+    mspec = importlib.util.spec_from_file_location(f'mfg_unit_{unit.lower()}', str(p))
+    mod = importlib.util.module_from_spec(mspec)
+    mspec.loader.exec_module(mod)
+    fn = getattr(mod, 'parts', None)
+    return fn(P) if fn is not None else None
+
+
 def draw(unit):
     H = HERE / unit
     P = json.loads((H / 'params.json').read_text())
-    parts = farm_hab.FORMS[P['form']](P)
+    parts = unit_parts(unit, P) or farm_hab.FORMS[P['form']](P)
     DRAW = H / 'drawings'
     DRAW.mkdir(exist_ok=True)
     pdf = 'svg current (stamped pass pending)'

@@ -4,7 +4,7 @@ Class: fish_tank; sector FARM. Study route. Not stamped.
 Envelope: Envelope 2100×1100×1100 mm;
 service line: service aquaponic fish tanks, 60 kg standing stock; stock_kg 60; ration_kg_d 0.9; basis A-M-415 (X-FARM-01); ammonia_load fish excrete NH3/N
 
-Internals: issued mfg model BOM (1 internals part row): "2,liner,1,HDPE,2230.4,make,tank class; 2.0 m3 working volume at the 60 kg stock / 30" [models/mfg/AQUA_TANK/bom.csv]
+Internals: issued mfg model BOM (1 internals part row): "3,Food-grade aquaculture liner sheet 5 mm: floor + four walls,1,LDPE liner class (duty section" [models/mfg/AQUA_TANK/bom.csv]
 Material: HDPE tank body with a food-grade LDPE aquaculture liner, SS316 hardware above the waterline, CPVC loop fittings. Basis: the tank holds the fish stock in the RAS loop at 26-28 C (graph design; A-M-415): ichthyotoxicity governs the wetted set, so Cu/Zn/brass are excluded outright; the liner is the aquaculture food-contact class over the 2.5 m3 envelope (203.8 kg/d loop). (continues on the duty sheet)
 
 Nozzles: 8 process connections per docs-authority/nozzles/AQUA_TANK.csv
