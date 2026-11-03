@@ -1145,7 +1145,9 @@ FAB,aligner,LITHO_ALIGN,fastener,M8 bench anchor,M8 bench anchor,ISO 3506 A4-70,
 FAB,aligner,LITHO_ALIGN,fastener,M8 socket screw,M8 socket screw,ISO 3506 A4-70,8,models/mfg/LITHO_ALIGN/fasteners.csv
 FAB,aligner,LITHO_ALIGN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FAB,aligner,LITHO_ALIGN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FAB,coater,LITHO_COAT,fabricated part,fabricated part set,4 BOM lines,models/mfg/LITHO_COAT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FAB,coater,LITHO_COAT,fabricated part,fabricated part set,8 BOM lines,models/mfg/LITHO_COAT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FAB,coater,LITHO_COAT,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,8,models/mfg/LITHO_COAT/fasteners.csv
+FAB,coater,LITHO_COAT,fastener,M8 bowl-stand bolt,M8 bowl-stand bolt,ISO 3506 A4-70,4,models/mfg/LITHO_COAT/fasteners.csv
 FAB,coater,LITHO_COAT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FAB,coater,LITHO_COAT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FAB,reagent,WS_AMMONIA,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S33 to WET_BENCH (assumed size)

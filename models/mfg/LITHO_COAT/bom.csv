@@ -1,5 +1,9 @@
-item,description,qty,material,basis
-1,Body / envelope 1200 x 800 x 1400 mm,1,316L where the stream is wet.,docs-authority/duties/LITHO_COAT.md
-2,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
-3,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-4,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Base plate 1200 x 800 x 20,1,carbon steel (ASTM A500),150.72,make (AQS-BOM-SC-001),issued envelope frame (A-M-287); anchors in fasteners.csv
+2,Guard frame: four 40 x 40 posts + top rails pinning the 1200 x 800 x 1400 envelope,1,carbon steel (ASTM A500),116.56,make (AQS-BOM-SC-001),machine guard practice (A-MACH hardware drawn); the frame pins the registry box (X-PAR-04)
+3,"Spin bowl OD 360 x 200, wall 10 (study), with rim collar, on the stand",1,316L (duty section 3),31.26,make (AQS-BOM-SC-001),"wetted per duty section 3 (resist/solvent); CA 0 mm (AQS-STD-001); bowl envelope is the layout choice around the node 150 mm chuck (hold, W12)"
+4,Coat catch bowl OD 480 x 60 tray (the IA-LITHO-CARRY stream names the coat catch bowl),1,316L (duty section 3),20.38,make (AQS-BOM-SC-001),"catch tray under the spin bowl; envelope is the layout choice (hold, W12)"
+5,Vacuum chuck D 150 (node chuck_mm) on the spindle,1,316L (duty section 3),5.09,make (AQS-BOM-SC-001),"node design chuck_mm; the vacuum source is not named on the node or duty - none drawn (hold, W12)"
+6,Spin-chuck motor envelope under the bowl stand,1,purchased drive (envelope),45.22,buy,"node spin_peak_kW 0.75 (A-M-287 basis: spin-chuck motor 0.75 kW peak); purchased per plan rule 6, rating from the node"
+7,Softbake hotplate envelope on the deck,1,purchased unit (envelope),29.44,buy,"node softbake_kW 0.3 at the 100 C hold (A-M-287 basis); purchased per plan rule 6, rating from the node"
+8,Nozzle set per docs-authority/nozzles/LITHO_COAT.csv: drain and vent flush at the envelope faces; the two solids transfer rows drawn DN15 bore not calculated,4,316L (duty section 3),0.23,make (AQS-BOM-SC-001),4-row issued schedule verbatim; atmospheric hose per duty section 4

@@ -26,7 +26,10 @@
   "softbake_C": 100,
   "chemistry": "novolac resist, 1 um (AQS-LITH-001)",
   "duty_kW": 0.0254,
-  "peak_kW": 0.75
+  "peak_kW": 0.75,
+  "service": "LITHO_COAT: spin-coater line - dispense 2.0 mL, spin 5000 rpm, softbake 100 C, novolac resist 1 um, 5 wafer starts/d (node design block; A-M-287; AQS-LITH-001 chemistry)",
+  "material": "316L wetted (spin bowl, catch bowl, chuck, hardware); CS dry frame",
+  "material_basis": "duty section 3: 316L where the stream is wet (resist/solvent); CA 0 mm (AQS-STD-001)"
  },
  "nozzles": [
   {
@@ -69,5 +72,45 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class coater"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1200.0,
+   800.0,
+   1400.0
+  ],
+  "basis": "L x W x H mm, issued envelope (A-M-287)",
+  "base_mm": [
+   1200.0,
+   800.0,
+   20.0
+  ],
+  "spin_station_mm": {
+   "axis_xy": [
+    300.0,
+    400.0
+   ],
+   "bowl_od": 360.0,
+   "bowl_z": [
+    140.0,
+    340.0
+   ],
+   "catch_od": 480.0,
+   "chuck_d": 150.0
+  },
+  "hotplate_mm": [
+   700.0,
+   300.0,
+   20.0,
+   250.0,
+   250.0,
+   60.0
+  ]
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; spin station axis at (300, 400), bowl z 140..340 on the stand over the base plate, catch tray z 140..200, chuck z 300..330; hotplate at x 700..950; guard posts at the envelope corners",
+  "supports": "base plate + guard frame + 8 slab anchors; bowl stand bolts",
+  "nozzle_spread": "the two solids rows at x 600/660 on their faces; drain at x 430 flush at the bottom, vent at x 770 flush at the top; per-tag notes in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

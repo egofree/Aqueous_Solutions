@@ -565,6 +565,11 @@
    "category": "fastener",
    "item": "M8 bench anchor",
    "spec": "ISO 3506 A4-70"
+  },
+  "OF-114": {
+   "category": "fastener",
+   "item": "M8 bowl-stand bolt",
+   "spec": "ISO 3506 A4-70"
   }
  }
 }

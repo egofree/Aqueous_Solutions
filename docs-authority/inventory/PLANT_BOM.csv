@@ -918,10 +918,14 @@ unit,LITHO_ALIGN,Mask holder 200 x 200 x 8,1,aluminium 6061,"layout choice aroun
 unit,LITHO_ALIGN,"Mask 160 x 160 x 3 (chrome on glass, 100 um pattern)",1,"glass, chrome coating (AQS-LITH-001 section 2)",pattern cut on the mill per AQS-LITH-001 section 2; the coating is not drawn
 unit,LITHO_ALIGN,"365 nm LED array head envelope (1 W optical, node design source)",1,purchased unit (envelope),"purchased per plan rule 6, rating from the node design block (365 nm LED array, 1 W optical; 10 mW/cm2 x 20 s = 200 mJ/cm2)"
 unit,LITHO_ALIGN,Nozzle set per docs-authority/nozzles/LITHO_ALIGN.csv: drain and vent flush at the envelope faces,2,aluminium 6061,2-row envelope hardware schedule verbatim; duty section 4: no present process edge
-unit,LITHO_COAT,Body / envelope 1200 x 800 x 1400 mm,1,316L where the stream is wet.,docs-authority/duties/LITHO_COAT.md
-unit,LITHO_COAT,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
-unit,LITHO_COAT,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-unit,LITHO_COAT,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+unit,LITHO_COAT,Base plate 1200 x 800 x 20,1,carbon steel (ASTM A500),issued envelope frame (A-M-287); anchors in fasteners.csv
+unit,LITHO_COAT,Guard frame: four 40 x 40 posts + top rails pinning the 1200 x 800 x 1400 envelope,1,carbon steel (ASTM A500),machine guard practice (A-MACH hardware drawn); the frame pins the registry box (X-PAR-04)
+unit,LITHO_COAT,"Spin bowl OD 360 x 200, wall 10 (study), with rim collar, on the stand",1,316L (duty section 3),"wetted per duty section 3 (resist/solvent); CA 0 mm (AQS-STD-001); bowl envelope is the layout choice around the node 150 mm chuck (hold, W12)"
+unit,LITHO_COAT,Coat catch bowl OD 480 x 60 tray (the IA-LITHO-CARRY stream names the coat catch bowl),1,316L (duty section 3),"catch tray under the spin bowl; envelope is the layout choice (hold, W12)"
+unit,LITHO_COAT,Vacuum chuck D 150 (node chuck_mm) on the spindle,1,316L (duty section 3),"node design chuck_mm; the vacuum source is not named on the node or duty - none drawn (hold, W12)"
+unit,LITHO_COAT,Spin-chuck motor envelope under the bowl stand,1,purchased drive (envelope),"node spin_peak_kW 0.75 (A-M-287 basis: spin-chuck motor 0.75 kW peak); purchased per plan rule 6, rating from the node"
+unit,LITHO_COAT,Softbake hotplate envelope on the deck,1,purchased unit (envelope),"node softbake_kW 0.3 at the 100 C hold (A-M-287 basis); purchased per plan rule 6, rating from the node"
+unit,LITHO_COAT,Nozzle set per docs-authority/nozzles/LITHO_COAT.csv: drain and vent flush at the envelope faces; the two solids transfer rows drawn DN15 bore not calculated,4,316L (duty section 3),4-row issued schedule verbatim; atmospheric hose per duty section 4
 unit,LITHO_DEV,Body / envelope 1200 x 600 x 900 mm,1,316L where the stream is wet.,docs-authority/duties/LITHO_DEV.md
 unit,LITHO_DEV,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 unit,LITHO_DEV,"Motor: induced-draft fan (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
@@ -2376,7 +2380,7 @@ building block,OF-88,fastener: M10 x 35 (ISO 3506 A4-70),54,,AQS-INV-004
 building block,OF-89,fastener: M12 x 60 hex bolt + nut + 2 washers (PVDF (non-metallic)),34,,AQS-INV-004
 building block,OF-90,fastener: M12 x 40 (ISO 3506 A4-70),440,,AQS-INV-004
 building block,OF-91,fastener: M12 x 45 (ISO 3506 A4-70),8,,AQS-INV-004
-building block,OF-92,fastener: M10 wedge anchor (ISO 898-1 8.8),112,,AQS-INV-004
+building block,OF-92,fastener: M10 wedge anchor (ISO 898-1 8.8),120,,AQS-INV-004
 building block,OF-93,fastener: M10 wedge anchor (ISO 3506 A4-70),110,,AQS-INV-004
 building block,OF-94,fastener: M12 bolt + nut; PP-flanged joint (ISO 3506 A4-70),16,,AQS-INV-004
 building block,OF-95,fastener: M12 PVDF bolt + nut (ISO 3506 A4-70),8,,AQS-INV-004
@@ -2398,3 +2402,4 @@ building block,OF-110,fastener: M8 tube-clip bolt + nut (ISO 3506 A4-70),16,,AQS
 building block,OF-111,fastener: M10 tank-clip bolt + nut (ISO 898-1 8.8),8,,AQS-INV-004
 building block,OF-112,fastener: M8 socket screw (ISO 3506 A4-70),8,,AQS-INV-004
 building block,OF-113,fastener: M8 bench anchor (ISO 3506 A4-70),4,,AQS-INV-004
+building block,OF-114,fastener: M8 bowl-stand bolt (ISO 3506 A4-70),4,,AQS-INV-004

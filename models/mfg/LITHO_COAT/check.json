@@ -1,0 +1,90 @@
+{
+  "bbox_mm": [
+    1200.0,
+    800.0,
+    1400.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1200.0,
+    800.0,
+    1400.0
+  ],
+  "size_basis": "L x W x H mm, issued envelope (A-M-287)",
+  "graph_revision": "AD",
+  "solids": 6,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "spin-coater line per the node design block and note (A-M-287): spin bowl and coat catch bowl in 316L per duty section 3, the 150 mm vacuum chuck (node chuck_mm) on the spindle inside the bowl, spin-chuck motor and softbake hotplate drawn as purchased envelopes per plan rule 6 with the node ratings",
+    "duty_line": "duty section 2 prose carries the seed figure 600 x 500 x 800; the node 1200 x 800 x 1400 governs (hold, WORK_ORDER W12, WS_SOLV precedent)",
+    "wetted": "spin bowl, catch bowl, chuck and hardware 316L per duty section 3 (resist/solvent stream); CA 0 mm (AQS-STD-001)",
+    "parts": {
+      "spin_bowl": "OD 360 x 200 deep, wall 10 (envelope sizes are the layout choice, W12)",
+      "catch_bowl": "OD 480 x 60 tray (the IA-LITHO-CARRY stream names the coat catch bowl)",
+      "chuck": "vacuum chuck D 150 (node chuck_mm) on the spindle; the vacuum source is not named on the node or duty - none drawn (hold, W12)",
+      "motor": "spin-chuck motor envelope, 0.75 kW peak (node spin_peak_kW; A-M-287 basis) - purchased per plan rule 6",
+      "hotplate": "softbake hotplate envelope, 0.3 kW at the node 100 C hold (node softbake_kW/softbake_C) - purchased per plan rule 6"
+    },
+    "guard": "four-post guard frame (40 x 40 posts, top rails) on the base plate pins the registry box (X-PAR-04); anchors in fasteners.csv"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 1400.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; the schedule datum 800 mm predates the 1400 box (hold, WORK_ORDER W12)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 1400.0,
+      "x_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "spent resist and solvent",
+      "note": "atmospheric hose joint per duty section 4; solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 1400.0,
+      "x_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "resist/solvent carry (coat catch bowl + developer) to the develop bench",
+      "note": "atmospheric hose joint per duty section 4; solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    }
+  },
+  "nozzle_count_schedule": 4,
+  "nozzle_idiom": "atmospheric hose joints per duty section 4 (DN copied from the edge and not recalculated); the N3/N4 solids rows are non-piped transfers drawn DN15, bore not calculated (plan W4); the N2 vent datum 800 predates the 1400 box (hold, W12); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "base": 150.72,
+    "frame": 116.56,
+    "spin_bowl": 31.26,
+    "catch_bowl": 20.38,
+    "stand": 45.22,
+    "chuck": 5.09,
+    "motor": 45.22,
+    "hotplate": 29.44,
+    "nozzles": 0.23
+  },
+  "cadquery": "2.8.0"
+}
