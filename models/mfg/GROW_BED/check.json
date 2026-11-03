@@ -1,0 +1,308 @@
+{
+  "bbox_mm": [
+    7310.0,
+    4030.0,
+    910.6
+  ],
+  "inside_size_mm": false,
+  "size_mm": [
+    2000.0,
+    1000.0,
+    400.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 4,
+  "all_parts_valid": true,
+  "cad_stl_scope": "in-envelope bay module of the build, metres (X-PAR-04 gate: the cad/stl box equals the node size_mm 2000 x 1000 x 400; the full bed lives in export/ and the STEP - the CRYO_ASU treatment)",
+  "cad_stl_bbox_mm": [
+    2000.0,
+    1000.0,
+    400.0
+  ],
+  "machine": {
+    "type": "crop grow bed per the node area_basis (A-M-229): HDPE basin (walls and floor 15 mm) with EPDM liner (5 mm), interior 7280 x 4000 mm = 29.12 m2 (NOT shrunk to fit the study box - A-FARM), LECA media envelope at a 250 mm study depth, drain sump at the bay corner with the N9 drain above it, internal cross-ribs framing the nominal 2000 x 1000 bays, and the LED canopy with the panel envelope (2.0463 kW = 29.12 m2 x 70.3 W/m2, DLI 17 at 2.8 umol/J, A-M-133/A-M-144)",
+    "area": {
+      "m2": 29.12,
+      "interior_mm": [
+        7280.0,
+        4000.0
+      ],
+      "basis": "crew duty (A-M-229): S14 4.2 kg/d / 0.1442 kg/m2/d; supersedes the A-M-151 residue-line claim studies",
+      "a_farm": "bed area matches the node; liner and drain drawn; not shrunk to fit the block"
+    },
+    "misfit": {
+      "export_bbox_mm": [
+        7310.0,
+        4030.0,
+        910.6
+      ],
+      "size_mm": [
+        2000.0,
+        1000.0,
+        400.0
+      ],
+      "note": "the full bed leaves the study box by design - the misfit is section-7-reported, nothing resized (plan rule 3; A-FARM area rule governs)"
+    },
+    "media": "LECA media envelope at a 250 mm study depth (the duty names no media depth - hold, WORK_ORDER W12); GROWBED_A media idiom",
+    "circulation": "duty section 2: 19100.9 kg/d, two-minute holdup 0.0265 m3 - reported, not a residence time claim",
+    "purchased": "the LED panel envelope (2.0463 kW node stamp, A-M-144) - purchased per plan rule 6",
+    "material": "HDPE basin, EPDM liner, LECA media (duty section 3: HDPE or PVC for the water; the frame is not the wetted part); canopy painted A500",
+    "ca_mm": 0.0
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 80.0,
+      "drawn_height_mm": 80.0,
+      "x_mm": 3611.1,
+      "schedule_rating": "Class 150",
+      "service": "CO2",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 80.0,
+      "drawn_height_mm": 80.0,
+      "x_mm": 3640.4,
+      "schedule_rating": "Class 150",
+      "service": "nutrients",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 80.0,
+      "drawn_height_mm": 80.0,
+      "x_mm": 3669.7,
+      "schedule_rating": "Class 150",
+      "service": "load",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 80.0,
+      "drawn_height_mm": 80.0,
+      "x_mm": 3699.0,
+      "schedule_rating": "Class 150",
+      "service": "CO2 enrichment dose (FARM AHU supply)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 300.0,
+      "drawn_height_mm": 300.0,
+      "x_mm": 3611.1,
+      "schedule_rating": "Class 150",
+      "service": "organics",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 300.0,
+      "drawn_height_mm": 300.0,
+      "x_mm": 3640.4,
+      "schedule_rating": "Class 150",
+      "service": "condensate",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 300.0,
+      "drawn_height_mm": 300.0,
+      "x_mm": 3669.7,
+      "schedule_rating": "Class 150",
+      "service": "food",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 300.0,
+      "drawn_height_mm": 300.0,
+      "x_mm": 3699.0,
+      "schedule_rating": "Class 150",
+      "service": "food waste to larvae",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom over the bay sump; 50 datum is the schedule placeholder"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 400.0,
+      "drawn_height_mm": 400.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top (the canopy top; 400 datum is the bed height)"
+    },
+    "N11": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 900.0,
+      "x_mm": 3567.1,
+      "schedule_rating": "Class 150",
+      "service": "photosynthetic O2",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 600 predates the build height - drawn flush at the envelope top (hold, WORK_ORDER W12)"
+    },
+    "N12": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 900.0,
+      "x_mm": 3596.4,
+      "schedule_rating": "Class 150",
+      "service": "surplus O2 capture",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 600 predates the build height - drawn flush at the envelope top (hold, WORK_ORDER W12)"
+    },
+    "N13": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 3596.4,
+      "schedule_rating": "Class 150",
+      "service": "N2 make-up",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N14": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 3625.7,
+      "schedule_rating": "Class 150",
+      "service": "CO2 enrichment",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N15": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 900.0,
+      "x_mm": 3625.7,
+      "schedule_rating": "Class 150",
+      "service": "farm O2",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 600 predates the build height - drawn flush at the envelope top (hold, WORK_ORDER W12)"
+    },
+    "N16": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 3655.0,
+      "schedule_rating": "Class 150",
+      "service": "nutrient solution",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N17": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 3684.3,
+      "schedule_rating": "Class 150",
+      "service": "irrigation",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N18": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 900.0,
+      "x_mm": 3655.0,
+      "schedule_rating": "Class 150",
+      "service": "bed transpiration",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 600 predates the build height - drawn flush at the envelope top (hold, WORK_ORDER W12)"
+    },
+    "N19": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 3713.6,
+      "schedule_rating": "Class 150",
+      "service": "nitrate and bleed salts",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N20": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 900.0,
+      "x_mm": 3684.3,
+      "schedule_rating": "Class 150",
+      "service": "canopy thinnings/greens: rabbit forage",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 600 predates the build height - drawn flush at the envelope top (hold, WORK_ORDER W12)"
+    },
+    "N21": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 900.0,
+      "x_mm": 3713.6,
+      "schedule_rating": "Class 150",
+      "service": "nectar/pollen forage from the canopy and greenhouse crops",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 600 predates the build height - drawn flush at the envelope top (hold, WORK_ORDER W12)"
+    },
+    "N22": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 900.0,
+      "x_mm": 3742.9,
+      "schedule_rating": "Class 150",
+      "service": "soft canopy residue to the vermi bin",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 600 predates the build height - drawn flush at the envelope top (hold, WORK_ORDER W12)"
+    }
+  },
+  "nozzle_count_schedule": 22,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); N1-N4 in on -Y at z 80, N5-N8 out on +Y at z 300 (the bed water line), the z 160 inlets on -Y, and the canopy rows (N11/N12/N15/N18/N20/N21/N22) drawn flush at the envelope top - the schedule z 600 datum predates the build height (hold, W12); N9 drain over the bay sump; N10 vent at the top; no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "bay_module": 282.15,
+    "basin": 3440.03,
+    "canopy": 690.67,
+    "led_panel": 11665.73,
+    "nozzles": 0.16,
+    "media_total_kg": 3475.0
+  },
+  "cadquery": "2.8.0"
+}

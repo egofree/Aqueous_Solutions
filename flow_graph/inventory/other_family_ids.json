@@ -645,6 +645,16 @@
    "category": "fastener",
    "item": "M10 ballast-foot bolt + nut",
    "spec": "ISO 898-1 8.8"
+  },
+  "OF-130": {
+   "category": "fastener",
+   "item": "M10 basin hold-down bolt + nut",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-131": {
+   "category": "fastener",
+   "item": "M12 canopy base plate bolt + nut",
+   "spec": "ISO 898-1 8.8"
   }
  }
 }

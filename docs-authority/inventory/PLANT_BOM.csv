@@ -686,56 +686,13 @@ unit,GROWBED_A,basin_shell,1,HDPE,
 unit,GROWBED_A,liner,1,HDPE,
 unit,GROWBED_B,basin_shell,1,HDPE,
 unit,GROWBED_B,liner,1,HDPE,
-unit,GROW_BED,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/GROW_BED.md
-unit,GROW_BED,Process nozzle DN15,18,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
-unit,GROW_BED,"Motor: transfer pump S13 to VCD_TRAIN (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-unit,GROW_BED,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-unit,GROW_BED,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-unit,GROW_BED,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-unit,GROW_BED,fastener: anchor bolt M10,70,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-unit,GROW_BED,fastener: anchor bolt M10,28,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-unit,GROW_BED,fastener: anchor bolt M10,44,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-unit,GROW_BED,fastener: anchor bolt M10,28,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-unit,GROW_BED,fastener: anchor bolt M10,32,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-unit,GROW_BED,fastener: anchor bolt M10,42,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-unit,GROW_BED,fastener: anchor bolt M10,46,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-unit,GROW_BED,fastener: anchor bolt M10,56,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-unit,GROW_BED,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-unit,GROW_BED,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-unit,GROW_BED,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-unit,GROW_BED,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-unit,GROW_BED,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-unit,GROW_BED,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-unit,GROW_BED,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-unit,GROW_BED,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-unit,GROW_BED,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-unit,GROW_BED,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-unit,GROW_BED,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-unit,GROW_BED,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-unit,GROW_BED,support: U-bolt with guide DN15,22,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-unit,GROW_BED,support: U-bolt with guide DN15,16,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-unit,GROW_BED,support: pipe clamp DN15,35,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-unit,GROW_BED,support: pipe clamp DN15,14,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-unit,GROW_BED,support: pipe clamp DN15,14,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-unit,GROW_BED,support: pipe clamp DN15,21,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-unit,GROW_BED,support: pipe clamp DN15,23,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-unit,GROW_BED,support: pipe clamp DN15,28,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-unit,GROW_BED,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
-unit,GROW_BED,valve: check valve DN15,1,"PVDF swing/ball check valve, ISO 16137, PTFE seats",AQS-INV-004
-unit,GROW_BED,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-unit,GROW_BED,valve: check valve DN15,1,"PVDF swing/ball check valve, ISO 16137, PTFE seats",AQS-INV-004
-unit,GROW_BED,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-unit,GROW_BED,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
-unit,GROW_BED,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
-unit,GROW_BED,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
-unit,GROW_BED,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
-unit,GROW_BED,valve: isolation valve DN15,2,"PVDF ball valve, ISO 16135, PTFE seats",AQS-INV-004
-unit,GROW_BED,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-unit,GROW_BED,valve: isolation valve DN15,2,"PVDF ball valve, ISO 16135, PTFE seats",AQS-INV-004
-unit,GROW_BED,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-unit,GROW_BED,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
-unit,GROW_BED,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
-unit,GROW_BED,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
+unit,GROW_BED,"HDPE basin: walls and floor 15 mm, interior 7280 x 4000 mm (29.12 m2, A-M-229) x 400 high, with internal cross-ribs",1,HDPE (duty section 3),"A-FARM: bed area matches the node, not shrunk to fit the block; CA does not apply to the polymer (AQS-STD-001)"
+unit,GROW_BED,EPDM liner 5 mm over the basin floor and walls,1,EPDM (duty section 3 water class; GROWBED_A liner idiom),"A-FARM: liner drawn; sheet goods, buy roll"
+unit,GROW_BED,LECA media envelope at a 250 mm study depth over 7280 x 4000 mm,1,"expanded clay (LECA, buy charge; envelope drawn)","media depth is a study value (hold, WORK_ORDER W12); the charge is a buy row, the envelope drawn per plan rule 6"
+unit,GROW_BED,Drain sump at the bay corner (300 x 300 x 120) with the N9 drain above it,1,HDPE,"A-FARM: drain drawn; sump size is a study value (hold, WORK_ORDER W12)"
+unit,GROW_BED,LED canopy: 4 posts and perimeter rails to z 900,1,painted A500 (farm frame class),"canopy height is the layout choice (hold, WORK_ORDER W12); frame is not the wetted part (duty section 3)"
+unit,GROW_BED,LED panel envelope over the bed,1,purchased LED fixture (envelope),"node continuous 2.0463 kW = 29.12 m2 x 70.3 W/m2, DLI 17 at 2.8 umol/J (A-M-133/A-M-144); purchased per plan rule 6"
+unit,GROW_BED,Nozzle set per docs-authority/nozzles/GROW_BED.csv: 22 rows drawn as DN15 tube stubs (bed wall and canopy rows),22,HDPE/CPVC tube,"schedule tags/faces/heights verbatim; the z 600 canopy rows drawn at the envelope top (stale datum, hold W12); atmospheric per duty section 4"
 unit,GW_INTAKE,Body / envelope 900 x 700 x 1800 mm,1,"SS304 wellhead plate and discharge head, HDPE potable discharge line, submersible pump SS304/stainless stages.",docs-authority/duties/GW_INTAKE.md
 unit,GW_INTAKE,Process nozzle DN15,1,"SS304 wellhead plate and discharge head, HDPE potable discharge line, submersible pump SS304/stainless stages.",one per mass edge; DN from AQS-INV-003
 unit,GW_INTAKE,fastener: anchor bolt M10,48,ISO 3506 A4-70 wedge anchor,AQS-INV-004
@@ -1959,12 +1916,12 @@ unit envelope BOM,ZNBR2,Process nozzle DN15,3,No wetted alloy.,one per mass edge
 unit envelope BOM,ZNBR2,Process nozzle DN32,1,No wetted alloy.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,ZNBR2_BR2_REGEN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U shell, sump, liquor piping, and Pall-ring packing; FKM gaskets.",docs-authority/duties/ZNBR2_BR2_REGEN.md
 unit envelope BOM,ZNBR2_BR2_REGEN,Process nozzle DN15,2,"PVC-U shell, sump, liquor piping, and Pall-ring packing; FKM gaskets.",one per mass edge; DN from AQS-INV-003
-motor family,MF-01 x 80,stator laminations M270-35A 0.35 mm,1440,,EN 10106
-motor family,MF-01 x 80,NdFeB magnets 2.8 g (basis; ferrite variant in AQS-INV-005),80,,X-INV-02D
-motor family,MF-01 x 80,magnet wire IEC 60317-13 class 200,-,,X-INV-03 wire line
-motor family,MF-01 x 80,"housing extruded 6063, NEMA ICS 16 42 mm flange",80,,extruded + machined
-motor family,MF-01 x 80,bearing 6000-2Z,160,,X-INV-05
-motor family,MF-01 x 80,Hall sensor PCB,80,,X-INV-05 electronics
+motor family,MF-01 x 81,stator laminations M270-35A 0.35 mm,1458,,EN 10106
+motor family,MF-01 x 81,NdFeB magnets 2.8 g (basis; ferrite variant in AQS-INV-005),81,,X-INV-02D
+motor family,MF-01 x 81,magnet wire IEC 60317-13 class 200,-,,X-INV-03 wire line
+motor family,MF-01 x 81,"housing extruded 6063, NEMA ICS 16 42 mm flange",81,,extruded + machined
+motor family,MF-01 x 81,bearing 6000-2Z,162,,X-INV-05
+motor family,MF-01 x 81,Hall sensor PCB,81,,X-INV-05 electronics
 motor family,MF-02 x 55,stator laminations M270-35A 0.35 mm,3190,,EN 10106
 motor family,MF-02 x 55,NdFeB magnets 28.7 g (basis; ferrite variant in AQS-INV-005),55,,X-INV-02D
 motor family,MF-02 x 55,magnet wire IEC 60317-13 class 200,-,,X-INV-03 wire line
@@ -2013,16 +1970,16 @@ motor family,MF-08 x 3,end shields A356,6,,cast + machined
 motor family,MF-08 x 3,bearing 6202-2Z,6,,X-INV-05 OF bearing family
 motor family,MF-08 x 3,fan PP + fan cover steel,3,,IC 411
 motor family,MF-08 x 3,terminal box + 6-stud block,3,,IEC 60034-8 marking
-motor family,MF-09 x 155,stator laminations M400-50A (EN 10106) 0.5 mm,16120,,EN 10106
-motor family,MF-09 x 155,rotor laminations M400-50A 0.5 mm,16120,,EN 10106
-motor family,MF-09 x 155,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.77 kg,,X-INV-03 wire line
-motor family,MF-09 x 155,die-cast Al cage (bars + rings),0.58 kg,,A356 in-house melt (assumed 12 % of steel mass)
-motor family,MF-09 x 155,"shaft C45 (EN 10083-2) D24 x 222 mm, key to IEC 60072-1",155,,turned
-motor family,MF-09 x 155,"frame A356 IEC 90S, feet A140 x B100, holes K10",155,,cast + machined
-motor family,MF-09 x 155,end shields A356,310,,cast + machined
-motor family,MF-09 x 155,bearing 6205-2Z,310,,X-INV-05 OF bearing family
-motor family,MF-09 x 155,fan PP + fan cover steel,155,,IC 411
-motor family,MF-09 x 155,terminal box + 6-stud block,155,,IEC 60034-8 marking
+motor family,MF-09 x 154,stator laminations M400-50A (EN 10106) 0.5 mm,16016,,EN 10106
+motor family,MF-09 x 154,rotor laminations M400-50A 0.5 mm,16016,,EN 10106
+motor family,MF-09 x 154,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.77 kg,,X-INV-03 wire line
+motor family,MF-09 x 154,die-cast Al cage (bars + rings),0.58 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-09 x 154,"shaft C45 (EN 10083-2) D24 x 222 mm, key to IEC 60072-1",154,,turned
+motor family,MF-09 x 154,"frame A356 IEC 90S, feet A140 x B100, holes K10",154,,cast + machined
+motor family,MF-09 x 154,end shields A356,308,,cast + machined
+motor family,MF-09 x 154,bearing 6205-2Z,308,,X-INV-05 OF bearing family
+motor family,MF-09 x 154,fan PP + fan cover steel,154,,IC 411
+motor family,MF-09 x 154,terminal box + 6-stud block,154,,IEC 60034-8 marking
 motor family,MF-10 x 10,stator laminations M400-50A (EN 10106) 0.5 mm,1420,,EN 10106
 motor family,MF-10 x 10,rotor laminations M400-50A 0.5 mm,1420,,EN 10106
 motor family,MF-10 x 10,magnet wire IEC 60317-13 18 AWG (0.597 mm2),2.03 kg,,X-INV-03 wire line
@@ -2191,14 +2148,14 @@ bulk pipe,PF-20,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 5/8 i
 bulk pipe,PF-21,"PVDF SDR 21 ISO 10931 DN32 pipe, 2 x 6.096 m",7.4 m,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk pipe,PF-21,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 in studs,3 / 2 / 2 / 8,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",40440 m,Cu,AQS-INV-002
-bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",44267 m,Cu,AQS-INV-002
+bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",44169 m,Cu,AQS-INV-002
 bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",20520 m,Cu,AQS-INV-002
 bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",20220 m,Cu,AQS-INV-002
-bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",19032 m,Cu,AQS-INV-002
+bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",18983 m,Cu,AQS-INV-002
 bulk wire,WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",5262 m,Cu,AQS-INV-002
-bulk wire,WF-07,"control 18 AWG shielded pair, 300 V",3620 m,Cu,AQS-INV-002
-bulk wire,WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",3560 m,Cu,AQS-INV-002
-bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",6335 m,Cu,AQS-INV-002
+bulk wire,WF-07,"control 18 AWG shielded pair, 300 V",3640 m,Cu,AQS-INV-002
+bulk wire,WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",3580 m,Cu,AQS-INV-002
+bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",6318 m,Cu,AQS-INV-002
 bulk wire,WF-10,"power 3 AWG XHHW-2 Cu, 600 V",3225 m,Cu,AQS-INV-002
 bulk wire,WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",3092 m,Cu,AQS-INV-002
 bulk wire,WF-12,"MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield, 15 kV",1200 m,Cu,AQS-INV-002
@@ -2217,12 +2174,12 @@ bulk wire,WF-31,"power 12 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",120 m,Cu,AQS-I
 bulk wire,WF-32,"power 4 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",133 m,Cu,AQS-INV-002
 bulk wire,WF-34,"power 3/0 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",40 m,Cu,AQS-INV-002
 bulk wire,WF-35,"power 300 kcmil XHHW-2 Cu, tray cable TC-ER, 600 V",20 m,Cu,AQS-INV-002
-building block,OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",324,,AQS-INV-004
-building block,OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",420,,AQS-INV-004
+building block,OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",326,,AQS-INV-004
+building block,OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",418,,AQS-INV-004
 building block,OF-03,electronics: PLC digital I/O point (IEC 61131-2),832,,AQS-INV-004
 building block,OF-04,electronics: PLC analog input point (IEC 61131-2),848,,AQS-INV-004
-building block,OF-05,electronics: BLDC driver (IEC 61800-5-1),159,,AQS-INV-004
-building block,OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),177,,AQS-INV-004
+building block,OF-05,electronics: BLDC driver (IEC 61800-5-1),160,,AQS-INV-004
+building block,OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),176,,AQS-INV-004
 building block,OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",105,,AQS-INV-004
 building block,OF-08,electronics: variable-frequency drive (IEC 61800-5-1),33,,AQS-INV-004
 building block,OF-09,electronics: solenoid driver channel (IEC 61131-2 DO),19,,AQS-INV-004
@@ -2254,8 +2211,8 @@ building block,OF-42,"instrument: temperature element (SIF, independent) (IEC 60
 building block,OF-43,"instrument: gas detector, O2 enrichment (alarm 23.5 vol %, trip 25 vol %, breathing height)",12,,AQS-INV-004
 building block,OF-44,"instrument: gas detector, CO (alarm 25 ppm, trip 50 ppm, breathing height)",14,,AQS-INV-004
 building block,OF-45,"instrument: gas detector, NOx (alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height)",6,,AQS-INV-004
-building block,OF-46,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",235,,AQS-INV-004
-building block,OF-47,"seal: mechanical seal, single (SiC/SiC faces, FKM)",155,,AQS-INV-004
+building block,OF-46,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",234,,AQS-INV-004
+building block,OF-47,"seal: mechanical seal, single (SiC/SiC faces, FKM)",154,,AQS-INV-004
 building block,OF-48,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",5863,,AQS-INV-004
 building block,OF-49,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1492,,AQS-INV-004
 building block,OF-50,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",280,,AQS-INV-004
@@ -2333,3 +2290,5 @@ building block,OF-126,fastener: M12 drum-bearing block bolt + nut (ISO 898-1 8.8
 building block,OF-127,fastener: M20 column base bolts (F1552 class) (ISO 898-1 8.8),3212,,AQS-INV-004
 building block,OF-128,fastener: M16 set-base bolt + nut (ISO 898-1 8.8),8,,AQS-INV-004
 building block,OF-129,fastener: M10 ballast-foot bolt + nut (ISO 898-1 8.8),8,,AQS-INV-004
+building block,OF-130,fastener: M10 basin hold-down bolt + nut (ISO 3506 A4-70),8,,AQS-INV-004
+building block,OF-131,fastener: M12 canopy base plate bolt + nut (ISO 898-1 8.8),8,,AQS-INV-004

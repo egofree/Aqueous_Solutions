@@ -200,5 +200,55 @@
  "acceptance_sets": [
   "A-core",
   "A-FARM"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   2000.0,
+   1000.0,
+   400.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "bed": {
+   "interior_mm": [
+    7280.0,
+    4000.0
+   ],
+   "outer_mm": [
+    7310.0,
+    4030.0
+   ],
+   "height_mm": 400.0,
+   "area_m2": 29.12
+  },
+  "wall_mm": 15.0,
+  "liner_mm": 5.0,
+  "media_depth_mm": 250.0,
+  "sump_mm": [
+   1700.0,
+   700.0,
+   300.0,
+   300.0,
+   120.0
+  ],
+  "canopy_z_mm": [
+   400.0,
+   900.0
+  ]
+ },
+ "design": {
+  "service": "GROW_BED: the crew-duty crop bed (S14 4.2 kg/d food out on the BVAD2022 tomato proxy, A-M-229); irrigated media culture with the LED canopy (duty sections 1 and 3)",
+  "area_basis": "crew duty (A-M-229): 29.12 m2; supersedes the A-M-151 residue-line claim studies",
+  "material": "HDPE basin, EPDM liner, LECA media; canopy painted A500",
+  "ca_mm": 0.0,
+  "material_basis": "duty section 3: HDPE or PVC for the water; the frame is not the wetted part; CA does not apply to the polymer",
+  "purchased": "LED panel envelope (2.0463 kW node stamp, A-M-144; plan rule 6); LECA media charge (buy)",
+  "a_farm": "bed area matches the node; liner and drain drawn; not shrunk to fit the block",
+  "cad_stl_scope": "in-envelope bay module of the build, metres (X-PAR-04 gate: the cad/stl box equals the node size_mm 2000 x 1000 x 400; the full bed lives in export/ and the STEP - the CRYO_ASU treatment)"
+ },
+ "layout": {
+  "frame": "origin at the bed corner; basin interior 7280 x 4000 with cross-ribs framing the nominal 2000 x 1000 bays; sump at the bay corner (x 1700..2000, y 700..1000); LED canopy posts and rails to z 900 with the panel at z 840",
+  "supports": "basin on the pad + hold-down bolts; canopy posts base-plated",
+  "nozzle_spread": "the schedule gives face and height only; bed rows on the -Y/+Y walls at z 80/160/300; the z 600 canopy rows drawn at the envelope top; drain over the sump, vent at the centreline; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; the full-bed build is the export/ STEP (the registry carries the bay module)"
+ }
 }

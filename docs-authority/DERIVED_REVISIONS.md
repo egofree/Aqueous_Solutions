@@ -30,14 +30,14 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/BOUGHT_SPECS.md` | working tree | current |
 | `docs-authority/BUSBAR.json` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/BUSBAR.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/CABLE_SCHEDULE.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/CABLE_SCHEDULE.md` | working tree | current |
 | `docs-authority/CAUSE_EFFECT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/CODE_BASIS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/COLLECTION_BUS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/COMMISSIONING.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/COMPLIANCE_MATRIX.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/CONTROL_ARCH.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/CONTROL_SOFTWARE.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/CONTROL_ARCH.md` | working tree | current |
+| `docs-authority/CONTROL_SOFTWARE.md` | working tree | current |
 | `docs-authority/COST_ESTIMATE_BOM.md` | working tree | current |
 | `docs-authority/DECOMMISSIONING.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
@@ -80,7 +80,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/MFG_MODEL_PLAN.md` | working tree | current |
 | `docs-authority/MFG_TOOLS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/MODEL_WORKBOOK.xlsx` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/MOTOR_FIRST_ARTICLE.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/MOTOR_FIRST_ARTICLE.md` | working tree | current |
 | `docs-authority/O2_SOURCE.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/O2_SOURCE_AUDIT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/ONE_LINE.json` | f0160a6 (regenerated, no change) | current |
@@ -112,7 +112,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/TEST_RIGS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/UNIT_MATERIALS.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/WATER_TOWER.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/WIRE_SPECS.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/WIRE_SPECS.md` | working tree | current |
 | `docs-authority/WPS_REGISTER.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/ZNBR2_STACK_TEST.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/drawings/motor_fa/MF-04.svg` | f0160a6 (regenerated, no change) | current |
@@ -295,7 +295,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/GREY_TREAT.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GROWBED_A.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/GROWBED_B.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/GROW_BED.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/duties/GROW_BED.md` | working tree | current |
 | `docs-authority/duties/GW_INTAKE.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/H2O_ELYZ.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/H2_DRYER.md` | f0160a6 (regenerated, no change) | current |
@@ -374,7 +374,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/PROD_C5_C10.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/PROD_MEOH.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/PROD_O2.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/duties/PV_ARRAY.md` | working tree | current |
+| `docs-authority/duties/PV_ARRAY.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/P_CA.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/Q1_A.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/duties/Q1_B.md` | f0160a6 (regenerated, no change) | current |
@@ -501,13 +501,13 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/inventory/HVAC_ROOMS.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/INSTRUMENT_INDEX.csv` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/INTERNALS.json` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/MAGNET_COMPARISON.csv` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/inventory/MAGNET_COMPARISON.csv` | working tree | current |
 | `docs-authority/inventory/MOTOR_DESIGNS.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/MOTOR_DESIGNS.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/MOTOR_FA.json` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/MOTOR_FAMILIES.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/MOTOR_INVENTORY.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/MOTOR_INVENTORY.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/inventory/MOTOR_DESIGNS.md` | working tree | current |
+| `docs-authority/inventory/MOTOR_FA.json` | working tree | current |
+| `docs-authority/inventory/MOTOR_FAMILIES.csv` | working tree | current |
+| `docs-authority/inventory/MOTOR_INVENTORY.csv` | working tree | current |
+| `docs-authority/inventory/MOTOR_INVENTORY.md` | working tree | current |
 | `docs-authority/inventory/OTHER_FAMILIES.csv` | working tree | current |
 | `docs-authority/inventory/OTHER_INVENTORY.csv` | working tree | current |
 | `docs-authority/inventory/OTHER_INVENTORY.md` | working tree | current |
@@ -522,11 +522,11 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/inventory/STRUCT_ROWS.json` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/TEST_RIGS.json` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/UNIT_MATERIALS.json` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/WIRE_FAMILIES.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/WIRE_INVENTORY.csv` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/WIRE_INVENTORY.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/WIRE_SPECS.json` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/motor_families/MF-01.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/inventory/WIRE_FAMILIES.csv` | working tree | current |
+| `docs-authority/inventory/WIRE_INVENTORY.csv` | working tree | current |
+| `docs-authority/inventory/WIRE_INVENTORY.md` | working tree | current |
+| `docs-authority/inventory/WIRE_SPECS.json` | working tree | current |
+| `docs-authority/inventory/motor_families/MF-01.md` | working tree | current |
 | `docs-authority/inventory/motor_families/MF-02.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-03.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-04.md` | f0160a6 (regenerated, no change) | current |
@@ -534,7 +534,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/inventory/motor_families/MF-06.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-07.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-08.md` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/inventory/motor_families/MF-09.md` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/inventory/motor_families/MF-09.md` | working tree | current |
 | `docs-authority/inventory/motor_families/MF-10.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-11.md` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-12.md` | f0160a6 (regenerated, no change) | current |
@@ -1029,7 +1029,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/plc/PLC-DIGESTER.st` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/plc/PLC-ELEC.st` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/plc/PLC-FAB.st` | f0160a6 (regenerated, no change) | current |
-| `docs-authority/plc/PLC-FARM.st` | f0160a6 (regenerated, no change) | current |
+| `docs-authority/plc/PLC-FARM.st` | working tree | current |
 | `docs-authority/plc/PLC-FOUNDRY.st` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/plc/PLC-GAS.st` | f0160a6 (regenerated, no change) | current |
 | `docs-authority/plc/PLC-GEO.st` | f0160a6 (regenerated, no change) | current |
@@ -1233,7 +1233,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/views/efd-thermal.svg` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/mfd.dot` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/mfd.json` | f0160a6 (regenerated, no change) | current |
-| `flow_graph/views/mfd.svg` | working tree | current |
+| `flow_graph/views/mfd.svg` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/pfd.dot` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/pfd.json` | f0160a6 (regenerated, no change) | current |
 | `flow_graph/views/pfd.svg` | f0160a6 (regenerated, no change) | current |
@@ -1332,7 +1332,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/GREY_TREAT/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/GROWBED_A/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/GROWBED_B/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/GROW_BED/params.json` | f0160a6 (regenerated, no change) | current |
+| `models/mfg/GROW_BED/params.json` | working tree | current |
 | `models/mfg/GW_INTAKE/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/H2O_ELYZ/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/H2_DRYER/params.json` | f0160a6 (regenerated, no change) | current |
@@ -1390,7 +1390,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/mfg/PROD_C5_C10/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/PROD_MEOH/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/PROD_O2/params.json` | f0160a6 (regenerated, no change) | current |
-| `models/mfg/PV_ARRAY/params.json` | working tree | current |
+| `models/mfg/PV_ARRAY/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/P_CA/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/Q1_A/params.json` | f0160a6 (regenerated, no change) | current |
 | `models/mfg/Q1_B/params.json` | f0160a6 (regenerated, no change) | current |

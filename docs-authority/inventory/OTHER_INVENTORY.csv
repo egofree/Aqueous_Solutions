@@ -1358,10 +1358,12 @@ FAB,wet_bench,LITHO_DEV,instrument,pressure transmitter,0-10 bar,"ceramic diaphr
 FAB,wet_bench,LITHO_DEV,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FAB,wet_bench,LITHO_DEV,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 FAB,wet_bench,LITHO_DEV,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,process vacuum pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
-FARM,FARM,GROW_BED,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S13 to VCD_TRAIN (BLDC, 42 mm (NEMA 17 : drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-FARM,FARM,GROW_BED,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump S13 to VCD_TRAIN (BLDC, 42 mm (NEMA 17 : run and fault (assumed)"
-FARM,FARM,GROW_BED,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump S13 to VCD_TRAIN (BLDC, 42 mm (NEMA 17  (assumed VFD at >= 0.75 kW)"
-FARM,FARM,GROW_BED,fabricated part,fabricated part set,50 BOM lines,models/mfg/GROW_BED/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,FARM,GROW_BED,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S13 to VCD_TRAIN (assumed size)
+FARM,FARM,GROW_BED,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S13 to VCD_TRAIN
+FARM,FARM,GROW_BED,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S13 to VCD_TRAIN: run and fault (assumed)
+FARM,FARM,GROW_BED,fabricated part,fabricated part set,7 BOM lines,models/mfg/GROW_BED/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,FARM,GROW_BED,fastener,M10 basin hold-down bolt + nut,M10 basin hold-down bolt + nut,ISO 3506 A4-70,8,models/mfg/GROW_BED/fasteners.csv
+FARM,FARM,GROW_BED,fastener,M12 canopy base plate bolt + nut,M12 canopy base plate bolt + nut,ISO 898-1 8.8,8,models/mfg/GROW_BED/fasteners.csv
 FARM,FARM,GROW_BED,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,70,S13: 2 per support (assumed)
 FARM,FARM,GROW_BED,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,S15: 2 per support (assumed)
 FARM,FARM,GROW_BED,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,44,S87: 2 per support (assumed)
@@ -1382,8 +1384,6 @@ FARM,FARM,GROW_BED,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316
 FARM,FARM,GROW_BED,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FARM,FARM,GROW_BED,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,FARM,GROW_BED,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FARM,FARM,GROW_BED,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-FARM,FARM,GROW_BED,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump S13 to VCD_TRAIN (BLDC, 42 mm (NEMA 17 : induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 FARM,FARM,GROW_BED,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",22,S87: AQS-PIP-005 span count
 FARM,FARM,GROW_BED,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",16,IA-BED-VAP: AQS-PIP-005 span count
 FARM,FARM,GROW_BED,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",35,S13: AQS-PIP-005 span count

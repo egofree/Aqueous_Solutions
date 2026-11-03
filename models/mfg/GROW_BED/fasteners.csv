@@ -1,0 +1,3 @@
+item,size,grade,qty,location,basis
+1,M10 basin hold-down bolt + nut,ISO 3506 A4-70,8,basin flange ribs to the pad; 2 per wall line (count from the model),A4-70 on the polymer-joint hardware per the plan grade rule (polymer supplier rule named at order)
+2,M12 canopy base plate bolt + nut,ISO 898-1 8.8,8,canopy posts to the pad; 2 per post (count from the model),8.8 on carbon steel per the grade rule; study pattern; confirmed at fabrication
