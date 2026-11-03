@@ -82,7 +82,7 @@ OF-93,fastener,M10 wedge anchor,ISO 3506 A4-70,110,M10 wedge anchor x110,27
 OF-94,fastener,M12 bolt + nut; PP-flanged joint,ISO 3506 A4-70,16,M12 bolt + nut; PP-flanged joint x16,1
 OF-95,fastener,M12 PVDF bolt + nut,ISO 3506 A4-70,8,M12 PVDF bolt + nut x8,1
 OF-96,fastener,M12 A4-70 bolt + nut,ISO 3506 A4-70,8,M12 A4-70 bolt + nut x8,1
-OF-97,fastener,M12 wedge anchor,ISO 898-1 8.8,166,M12 wedge anchor x166,23
+OF-97,fastener,M12 wedge anchor,ISO 898-1 8.8,174,M12 wedge anchor x174,24
 OF-98,fastener,M10 stud + nut (ISO 4014 / ISO 4032),ISO 3506 A4-70,24,M10 stud + nut (ISO 4014 / ISO 4032) x24,2
 OF-99,fastener,M8 hold-down bolt,ISO 3506 A4-70,24,M8 hold-down bolt x24,2
 OF-100,fastener,M16 wedge anchor,ISO 898-1 8.8,16,M16 wedge anchor x16,2
@@ -109,3 +109,4 @@ OF-120,fastener,M8 hold-down bolt + nut,ISO 3506 A4-70,8,M8 hold-down bolt + nut
 OF-121,fastener,M12 lid clamp stud + nut,ISO 898-1 8.8,8,M12 lid clamp stud + nut x8,1
 OF-122,fastener,M12 trunnion stud + nut,ISO 898-1 8.8,4,M12 trunnion stud + nut x4,1
 OF-123,fastener,M16 journal-block bolt + nut,ISO 898-1 8.8,8,M16 journal-block bolt + nut x8,1
+OF-124,fastener,M10 tower-flange bolt + nut,ISO 3506 A4-70,8,M10 tower-flange bolt + nut x8,1

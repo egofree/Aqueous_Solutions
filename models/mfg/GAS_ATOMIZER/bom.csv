@@ -1,10 +1,10 @@
-item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/GAS_ATOMIZER.md
-2,Process nozzle DN15,5,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
-3,"Motor: Close-coupled gas atomiser with Ar recirculation: main drive (induction IE3, IEC 132M / 7.5 kW)",1,-,AQS-INV-001 / AQS-INV-005
-4,bearing: deep-groove ball bearing 6308-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-5,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-6,electronics: variable-frequency drive 7.5 kW,1,IEC 61800-5-1,AQS-INV-004
-7,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-8,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-9,"protection: inverse-time circuit breaker, 3-pole 30 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Plinth 1000 x 600 x 20,1,carbon steel (ASTM A500),94.2,make (AQS-BOM-SC-001),AQS-MOD-002 dry service; anchors in fasteners.csv
+2,"Four-post hold-down/guard frame pinning the 1000 x 600 x 800 envelope (40 x 40 posts, top rails)",1,carbon steel (ASTM A500),76.36,make (AQS-BOM-SC-001),frame pins the registry box (X-PAR-04); A-MACH guard; anchors in fasteners.csv
+3,"Atomization tower OD 300 (wall 6, study) with base/neck heads and powder-collection pot",1,"316L (duty section 3, melt contact)",91.53,make (AQS-BOM-SC-001),"tower dimensions study (hold, WORK_ORDER W12); CA 0 mm - dry powder loop (AQS-STD-001)"
+4,"Close-coupled gas ring (R 60, 4 gas ports + annulus)",1,316L,1.77,make (AQS-BOM-SC-001),GMR 2.5 at the A-M-177 study basis; ring geometry study (W12)
+5,Heated tundish OD 160 on a stand with heater band,1,"316L + heater band (1 kW duty, purchased per plan rule 6)",10.399999999999999,make (AQS-BOM-SC-001),tundish 1 kW x 1 h (AQS-MFG-010 Table 2.1; A-M-177); the heater set is the buy element
+6,"Ar recirculation loop, DN32 tube runs",1,316L tube,3.34,make (AQS-BOM-SC-001),30 bar Ar class per A-M-177; loop runs are layout choice (W12); no flange (W4 110 % rule - no node design_kPa); relief case pending (unit task 07)
+7,"Ar compressor set (purchased, envelope and interface)",1,purchased compressor (envelope),293.9,buy,"30 bar class, isothermal eta 0.6 (A-M-177); purchased per plan rule 6; mass a table-density placeholder until the maker TDS quotes (W12)"
+8,"Control cabinet (purchased, envelope and interface)",1,purchased cabinet (envelope),74.18,buy,nameplate 5.5 kW (AQS-MFG-010 Table 2.1; node stamp); purchased per plan rule 6
+9,Nozzle set per docs-authority/nozzles/GAS_ATOMIZER.csv: 4 DN15 stubs and 3 solids rows drawn DN15 bore not calculated,7,316L tube,0.41,make (AQS-BOM-SC-001),schedule tags/faces/heights verbatim; atmospheric per duty section 4

@@ -81,5 +81,60 @@
   "A-core",
   "A-MACH",
   "A-SC"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "plinth_mm": 20.0,
+  "tower": {
+   "od_mm": 300.0,
+   "wall_mm": 6.0,
+   "z_mm": [
+    60.0,
+    560.0
+   ],
+   "pos_mm": [
+    300.0,
+    300.0
+   ]
+  },
+  "gas_ring": {
+   "r_mm": 60.0,
+   "gmr": 2.5
+  },
+  "tundish": {
+   "od_mm": 160.0,
+   "z_mm": [
+    580.0,
+    700.0
+   ]
+  },
+  "ar_loop_dn": "DN32",
+  "compressor_mm": [
+   700.0,
+   150.0,
+   260.0,
+   300.0,
+   480.0
+  ]
+ },
+ "design": {
+  "service": "GAS_ATOMIZER: melt atomised to metal powder (S60); off-spec powder returns to MET_MELT (IA-ATOM-REMELT) and the IND_TO_ATOM standby row stays at zero on the design day (duty sections 1 and 4)",
+  "tool_row": "AQS-MFG-010 Table 2.1: close-coupled gas atomiser with Ar recirculation, nameplate 5.5 kW; GMR 2.5 at 30 bar + tundish 1 kW (A-M-177)",
+  "material": "316L where the stream is wet (duty section 3); dry powder loop",
+  "ca_mm": 0.0,
+  "material_basis": "duty section 3; CA 0 mm shop rule (AQS-STD-001)",
+  "purchased": "Ar compressor set (30 bar class), control cabinet (5.5 kW nameplate), tundish heater set - plan rule 6 envelopes with the node ratings",
+  "pressure_note": "no design_kPa on the node; the 30 bar loop class is the A-M-177 study basis and the relief case is pending (unit task 07)"
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; tower centre x 300 on the plinth, tundish on a stand over the tower neck, gas ring at the tower neck, Ar loop DN32 to the compressor bay x 700..960, control cabinet beside it; hold-down posts at the envelope corners",
+  "supports": "plinth + hold-down frame + 8 slab anchors (A-MACH practice)",
+  "nozzle_spread": "the schedule gives face and height only; N1/N5 pack one row on -Y at z 160; N2/N6/N7 on +Y at z 600; drain at the plinth centre, vent on the tower axis; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

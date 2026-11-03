@@ -1,0 +1,128 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 7,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "close-coupled gas atomiser with Ar recirculation per the duty sheet and the AQS-MFG-010 tool row (Table 2.1, rev C metering split): atomization tower OD 300 (wall 6, study) with powder-collection pot, close-coupled gas ring (R 60, GMR 2.5 study) at the tower neck, heated tundish OD 160 on a stand over the tower (1 kW tundish duty), Ar recirculation loop (DN32) to the compressor envelope (30 bar class, A-M-177), control cabinet as a purchased envelope; hold-down frame is the guard (A-MACH practice)",
+    "tool_row": "AQS-MFG-010 Table 2.1: Close-coupled gas atomiser with Ar recirculation, nameplate 5.5 kW; energy basis Ar GMR 2.5 at 30 bar: 0.246 kWh/kg x 3.56 kg/d + tundish 1 kW x 1 h",
+    "a177": "A-M-177: GMR 2.5, 30 bar, compressor isothermal eta 0.6, 10 min pour, 1 kW tundish",
+    "material": "316L where the stream is wet (duty section 3); the powder loop is dry - CA 0 mm shop practice; 316L carried for the melt-contact hardware",
+    "ca_mm": 0.0,
+    "purchased": {
+      "compressor": "Ar recirculation compressor, 30 bar class (A-M-177); purchased per plan rule 6",
+      "cabinet": "control cabinet (5.5 kW nameplate, AQS-MFG-010 Table 2.1); purchased per plan rule 6",
+      "tundish_heater": "1 kW tundish duty (AQS-MFG-010); purchased per plan rule 6"
+    },
+    "pressure_class": "the 30 bar Ar loop class is the A-M-177 study basis; no design_kPa is stated on the node and the relief case is pending (unit task 07) - the loop hardware is drawn as envelopes, no flange drawn (W4 110 % rule)",
+    "guard": "four-post hold-down/guard frame pins the registry box (X-PAR-04); 8 slab anchors (fasteners.csv)",
+    "study_dims": "tower, tundish, ring and pot dimensions are study values sized to the 3.56 kg/d class (WORK_ORDER W12)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 185.3,
+      "schedule_rating": "Class 150",
+      "service": "melt to the atomizer",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 170.7,
+      "schedule_rating": "Class 150",
+      "service": "metal powder",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; the 800 datum is the box top"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 214.7,
+      "schedule_rating": "Class 150",
+      "service": "melt to atomizer when powder required",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 200.0,
+      "schedule_rating": "Class 150",
+      "service": "powder stock",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 229.3,
+      "schedule_rating": "Class 150",
+      "service": "off-spec powder to remelt",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    }
+  },
+  "nozzle_count_schedule": 7,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); N1 melt in and N5 standby melt row (the IND_TO_ATOM study edge, 'when powder required') on -Y at z 160; N2 metal powder, N6 powder stock and N7 off-spec remelt (solids rows drawn DN15, bore not calculated, plan W4) on +Y at z 600; drain flush at the envelope bottom (50 datum); vent flush at the envelope top (800 datum is the box top); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "frame": 76.36,
+    "tower": 42.21,
+    "powder_pot": 49.32,
+    "gas_ring": 1.77,
+    "tundish": 4.63,
+    "tundish_heater": 5.41,
+    "tundish_stand": 0.36,
+    "ar_loop": 3.34,
+    "compressor": 293.9,
+    "control_cabinet": 74.18,
+    "nozzles": 0.41
+  },
+  "cadquery": "2.8.0"
+}
