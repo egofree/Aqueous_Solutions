@@ -82,9 +82,6 @@ def draw_nozzles(P, spec):
     """All schedule rows as flush tube stubs; returns (union, drawn record)."""
     L, W, H = (float(v) for v in P["size_mm"])
     schedule = P["nozzles"]
-    stale_top = spec.get("stale_top_note") or (
-        "the schedule datum predates the build height - drawn flush at the "
-        "envelope top (the GLASS_BURNOUT stale-datum idiom; hold, WORK_ORDER W12)")
     groups = {}
     for r in schedule:
         face = FACE_OF.get(r["face"], r["face"])
@@ -124,8 +121,10 @@ def draw_nozzles(P, spec):
         else:
             z_draw = h
             if h + od / 2 > H - 5.0:                       # stale datum above the build
-                z_draw = H
-                note += "; " + stale_top
+                z_draw = H - od / 2                        # top of the stub flush at H
+                note += (f"; the schedule datum z {h:g} sits at or above the "
+                         f"build height {H:g} - drawn flush at the envelope top "
+                         "(hold, WORK_ORDER W12)")
             s = tube_z(dnl if dnl.startswith("DN") else "DN15", STUB_LEN)
             s = nozzles.place_on_face(s, face, z_draw, (layout_x[tag], W / 2), (L, W, H))
             drawn_h = z_draw
