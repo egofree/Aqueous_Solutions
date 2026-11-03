@@ -1,0 +1,3 @@
+item,size,grade,qty,location,basis
+1,M8 socket screw,ISO 3506 A4-70,8,guard posts to the base plate; 2 per post (count from the model),no plan grade rule covers aluminium joints; A4-70 stainless selected against galvanic action with the 6061 frame; study length; confirmed at fabrication
+2,M8 bench anchor,ISO 3506 A4-70,4,base plate to the bench top; one per corner (count from the model),same aluminium-joint basis; the machine sits on the fab bench per the placement seed (on the bench)

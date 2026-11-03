@@ -104,6 +104,8 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-109 | fastener: M12 saddle bolt + nut (M12 saddle bolt + nut x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-110 | fastener: M8 tube-clip bolt + nut (M8 tube-clip bolt + nut x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-111 | fastener: M10 tank-clip bolt + nut (M10 tank-clip bolt + nut x8) | 8 | 4 | 2 % min 4 |
+| building block | OF-112 | fastener: M8 socket screw (M8 socket screw x8) | 8 | 4 | 2 % min 4 |
+| building block | OF-113 | fastener: M8 bench anchor (M8 bench anchor x4) | 4 | 4 | 2 % min 4 |
 | motor | MF-01 | BLDC 42 mm (NEMA 17 flange) 24 V DC | 78 | 4 | 5 % min 1 |
 | motor | MF-02 | BLDC 57 mm (NEMA 23 flange) 24 V DC | 55 | 3 | 5 % min 1 |
 | motor | MF-06 | induction IE3 IEC 71 / 0.37 kW 480 V 3-ph | 8 | 1 | 5 % min 1 |
@@ -137,4 +139,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-127 lines; 29 spare motors, 990 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+129 lines; 29 spare motors, 998 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.

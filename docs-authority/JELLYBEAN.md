@@ -51,8 +51,9 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M16 | stud | ISO 898-1 8.8 zinc | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M24 | stud | ISO 898-1 8.8 | 16 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M6 | hex bolt | ISO 3506 A4-70 | 273 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M8 | anchor | ISO 3506 A4-70 | 4 | ISO 4017 + chemical anchor (ETAG 001) |
 | M8 | anchor | ISO 898-1 8.8 | 4 | ISO 4017 + chemical anchor (ETAG 001) |
-| M8 | hex bolt | ISO 3506 A4-70 | 140 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M8 | hex bolt | ISO 3506 A4-70 | 148 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M8 | hex bolt | ISO 898-1 8.8 | 56 | ISO 4014 / ISO 4032 / ISO 7089 |
 
 ## 3. Seals and gaskets

@@ -1,0 +1,64 @@
+{
+  "bbox_mm": [
+    1200.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1200.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "L x W x H mm, AQS-LITH-001 rev C frame 6061",
+  "graph_revision": "AD",
+  "solids": 5,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "contact aligner per the node design block and AQS-LITH-001 rev C (named on the node): 6061 frame and base, aluminium stage plate, 4140 leadscrew 10 mm at 1 mm pitch (shop-cut on the lathe), chrome-on-glass mask with the 100 um pattern (cut on the mill), and the 365 nm LED array envelope (1 W optical) above the mask; 200 mJ/cm2 dose over the 100 mm field",
+    "duty_line": "duty section 2 prose carries the seed figure 500 x 500 x 800; the node 1200 x 600 x 800 governs (hold, WORK_ORDER W12, WS_SOLV precedent)",
+    "parts": {
+      "stage": "aluminium (AQS-LITH-001 section 3; plate size is the layout choice around the 100 mm field, W12)",
+      "leadscrew": "4140, 10 mm dia, 1 mm pitch, cut on the lathe (AQS-LITH-001 section 2; make)",
+      "mask": "chrome on glass, 100 um pattern, cut on the mill (AQS-LITH-001 section 2; the pattern coating is not a solid)",
+      "led_head": "365 nm LED array, 1 W optical (node design source) - purchased envelope per plan rule 6"
+    },
+    "guard": "four-post guard frame (6061, 40 x 40 posts + top rails) on the base plate pins the registry box (X-PAR-04); anchors in fasteners.csv",
+    "material_rule": "frame 6061 per AQS-LITH-001 section 3; duty section 3 (316L where the stream is wet) has nothing to match: mass in and out are zero, the machine is dry"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder; duty section 4: no present process edge"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm is the box top; the AQS-LITH-001 section 4 SB350 hose barb is the machine service interface, not a schedule row (W12)"
+    }
+  },
+  "nozzle_count_schedule": 2,
+  "nozzle_idiom": "both schedule rows are envelope hardware rows drawn flush at the envelope faces (duty section 4: 'No present edge. No nozzle.'); the AQS-LITH-001 section 4 SB350 hose barb is the machine service interface and is not a schedule row (named, W12); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "base": 38.88,
+    "frame": 27.99,
+    "stage": 1.04,
+    "leadscrew": 0.49,
+    "mask_holder": 0.86,
+    "mask": 0.17,
+    "led_head": 2.33,
+    "nozzles": 0.03
+  },
+  "cadquery": "2.8.0"
+}

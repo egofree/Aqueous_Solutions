@@ -1,4 +1,9 @@
-item,description,qty,material,basis
-1,Body / envelope 1200 x 600 x 800 mm,1,316L where the stream is wet.,docs-authority/duties/LITHO_ALIGN.md
-2,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-3,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Base plate 1200 x 600 x 20 (6061, AQS-LITH-001 section 3 frame)",1,aluminium 6061,38.88,make (AQS-BOM-SC-001),equipment authority AQS-LITH-001 rev C (named on the node); anchors in fasteners.csv
+2,Guard frame: four 40 x 40 posts + top rails pinning the 1200 x 600 x 800 envelope,1,aluminium 6061,27.99,make (AQS-BOM-SC-001),machine guard practice (A-MACH hardware drawn); the frame pins the registry box (X-PAR-04)
+3,Stage plate 160 x 160 x 15 (envelope around the 100 mm field),1,aluminium (AQS-LITH-001 section 3: stage aluminum),1.04,make (AQS-BOM-SC-001),"named part, no plate size stated - layout choice (hold, W12)"
+4,"Leadscrew 10 mm dia, 1 mm pitch, x 140..940",1,steel 4140 (AQS-LITH-001 section 3),0.49,make (AQS-BOM-SC-001),"AQS-LITH-001 section 2: leadscrew cut on the lathe; 10 um repeatability read by a dial, not an encoder"
+5,Mask holder 200 x 200 x 8,1,aluminium 6061,0.86,make (AQS-BOM-SC-001),"layout choice around the 100 mm field (hold, W12)"
+6,"Mask 160 x 160 x 3 (chrome on glass, 100 um pattern)",1,"glass, chrome coating (AQS-LITH-001 section 2)",0.17,make (AQS-BOM-SC-001),pattern cut on the mill per AQS-LITH-001 section 2; the coating is not drawn
+7,"365 nm LED array head envelope (1 W optical, node design source)",1,purchased unit (envelope),2.33,buy,"purchased per plan rule 6, rating from the node design block (365 nm LED array, 1 W optical; 10 mW/cm2 x 20 s = 200 mJ/cm2)"
+8,Nozzle set per docs-authority/nozzles/LITHO_ALIGN.csv: drain and vent flush at the envelope faces,2,aluminium 6061,0.03,make (AQS-BOM-SC-001),2-row envelope hardware schedule verbatim; duty section 4: no present process edge

@@ -17,7 +17,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 16713 |
+| fastener | 16725 |
 | support | 7355 |
 | electronics | 2068 |
 | valve | 991 |
@@ -131,6 +131,8 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-109 | M12 saddle bolt + nut | ISO 898-1 8.8 | M12 saddle bolt + nut x16 | 16 | 2 | models/mfg/AFTERBURNER/fasteners.csv; models/mfg/OIL_DRYER/fasteners.csv |  |
 | OF-110 | M8 tube-clip bolt + nut | ISO 3506 A4-70 | M8 tube-clip bolt + nut x16 | 16 | 1 | models/mfg/H2_DRYER/fasteners.csv |  |
 | OF-111 | M10 tank-clip bolt + nut | ISO 898-1 8.8 | M10 tank-clip bolt + nut x8 | 8 | 1 | models/mfg/WET_BENCH/fasteners.csv |  |
+| OF-112 | M8 socket screw | ISO 3506 A4-70 | M8 socket screw x8 | 8 | 1 | models/mfg/LITHO_ALIGN/fasteners.csv |  |
+| OF-113 | M8 bench anchor | ISO 3506 A4-70 | M8 bench anchor x4 | 4 | 1 | models/mfg/LITHO_ALIGN/fasteners.csv |  |
 | OF-14 | anchor bolt | ISO 3506 A4-70 wedge anchor | M10 x14710 | 14710 | 138 | AL_POT_CL2: 2 per support (assumed); AQUA_BYPASS: 2 per support (assumed); AQUA_LOOP1: 2 per support (assumed) |  |
 | OF-15 | M10 x 40 lid bolt | ISO 3506 A4-70 | M10 x 40 lid bolt with nut and washers x12 | 12 | 1 | models/mfg/GLASS_DIGEST/fasteners.csv |  |
 | OF-16 | M8 x 30 lid bolt | ISO 3506 A4-70 | M8 x 30 lid bolt with nut and washers x12 | 12 | 1 | models/mfg/BLACK_DIGEST/fasteners.csv |  |
@@ -173,6 +175,6 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 ## 11. Coverage gate
 
-- Bought families covered: 97 of 98 (the excluded one is OF-13, the fabricated-part set:
+- Bought families covered: 99 of 100 (the excluded one is OF-13, the fabricated-part set:
   sheets like those are `models/mfg/*/bom.csv` + `WORK_ORDER.md`, in-house work).
 - Items rest on the A-M-125 counting rule where the roll-up assumed; the count is the basis, not a measurement.

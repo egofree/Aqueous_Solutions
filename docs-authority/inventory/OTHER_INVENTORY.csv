@@ -1140,7 +1140,9 @@ FAB,FAB,WET_BENCH,valve,check valve,DN15,"CPVC true-union swing/ball check valve
 FAB,FAB,WET_BENCH,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,S38: pump discharge (assumed)
 FAB,FAB,WET_BENCH,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,S10: one at each end nozzle (assumed)
 FAB,FAB,WET_BENCH,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,S38: one at each end nozzle (assumed)
-FAB,aligner,LITHO_ALIGN,fabricated part,fabricated part set,3 BOM lines,models/mfg/LITHO_ALIGN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FAB,aligner,LITHO_ALIGN,fabricated part,fabricated part set,8 BOM lines,models/mfg/LITHO_ALIGN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FAB,aligner,LITHO_ALIGN,fastener,M8 bench anchor,M8 bench anchor,ISO 3506 A4-70,4,models/mfg/LITHO_ALIGN/fasteners.csv
+FAB,aligner,LITHO_ALIGN,fastener,M8 socket screw,M8 socket screw,ISO 3506 A4-70,8,models/mfg/LITHO_ALIGN/fasteners.csv
 FAB,aligner,LITHO_ALIGN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FAB,aligner,LITHO_ALIGN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FAB,coater,LITHO_COAT,fabricated part,fabricated part set,4 BOM lines,models/mfg/LITHO_COAT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory

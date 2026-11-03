@@ -26,7 +26,10 @@
   "stage": "leadscrew 1 mm pitch, 10 um repeatability",
   "mask": "chrome on glass, 100 um pattern",
   "duty_kW": 0.004,
-  "peak_kW": 0.25
+  "peak_kW": 0.25,
+  "service": "LITHO_ALIGN: contact aligner - 365 nm exposure of the 100 mm field at 200 mJ/cm2, 5 wafer starts/d (node design block; AQS-LITH-001 rev C; not a stepper)",
+  "material": "6061 frame; aluminium stage; 4140 leadscrew; chrome-on-glass mask",
+  "material_basis": "AQS-LITH-001 rev C section 3 (named on the node); duty section 3 has nothing to match (no wet stream)"
  },
  "nozzles": [
   {
@@ -53,5 +56,66 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class aligner"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1200.0,
+   600.0,
+   800.0
+  ],
+  "basis": "L x W x H mm, AQS-LITH-001 rev C frame 6061",
+  "base_mm": [
+   1200.0,
+   600.0,
+   20.0
+  ],
+  "parts": {
+   "stage": [
+    420.0,
+    220.0,
+    40.0,
+    160.0,
+    160.0,
+    15.0
+   ],
+   "leadscrew": [
+    140.0,
+    295.0,
+    30.0,
+    800.0,
+    10.0,
+    10.0
+   ],
+   "mask_holder": [
+    400.0,
+    200.0,
+    120.0,
+    200.0,
+    200.0,
+    8.0
+   ],
+   "mask": [
+    420.0,
+    220.0,
+    128.0,
+    160.0,
+    160.0,
+    3.0
+   ],
+   "led_head": [
+    430.0,
+    240.0,
+    190.0,
+    120.0,
+    120.0,
+    60.0
+   ]
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; stage x 420..580, leadscrew x 140..940 at y 300, mask holder x 400..600, LED head x 430..550 at z 190..250; guard posts at the envelope corners",
+  "supports": "base plate + guard frame + 4 bench anchors",
+  "nozzle_spread": "the two schedule rows are envelope hardware: drain at x 430 flush at the bottom, vent at x 770 flush at the top",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

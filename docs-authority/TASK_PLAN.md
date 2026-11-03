@@ -40,7 +40,7 @@ Table 2.1. Tasks by group
 | X-PAR | Parametric model (owner priority 2026-10-15; AQS-PAR-001) | 29 | 24 |
 | X-RSZ | Bounding-case resizing (owner approval 2026-10-15) | 7 | 7 |
 | X-SAN | Sanitation and pathogen barriers (owner decision 2026-10-15) | 1 | 1 |
-| X-INV | Building-block inventories (owner programme 2026-10-15; in order) | 165 | 164 |
+| X-INV | Building-block inventories (owner programme 2026-10-15; in order) | 167 | 166 |
 | X-BAS | Design basis | 4 | 4 |
 | X-PIP | Piping and line list | 5 | 5 |
 | X-ELS | Electrical system (plant level) | 12 | 12 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 14 |
 | NUT | Process (Mass transform) | 15 | 14 |
-| | **Total** | **3291** | **3086** |
+| | **Total** | **3293** | **3088** |
 
 ## 3. Triage of open tasks
 
@@ -390,6 +390,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-109** Building-block family OF-109: fastener, M12 saddle bolt + nut. Done when: open design and production plan for 16 items (ISO 898-1 8.8) in 2 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-110** Building-block family OF-110: fastener, M8 tube-clip bolt + nut. Done when: open design and production plan for 16 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-111** Building-block family OF-111: fastener, M10 tank-clip bolt + nut. Done when: open design and production plan for 8 items (ISO 898-1 8.8) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-112** Building-block family OF-112: fastener, M8 socket screw. Done when: open design and production plan for 8 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-113** Building-block family OF-113: fastener, M8 bench anchor. Done when: open design and production plan for 4 items (ISO 3506 A4-70) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 
 ### X-BAS. Design basis
 

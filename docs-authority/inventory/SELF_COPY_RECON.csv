@@ -910,9 +910,14 @@ LEACH_CSTR_1,"Agitator: 4-blade 45 deg pitched-blade turbine, down-pumping, D 45
 LEACH_CSTR_1,"Gearmotor 0.75 kW, 150 rpm output, on the lid bridge",1,purchase item,Unstated,-,not classed: purchase item
 LEACH_CSTR_1,Lid shaft seal,1,PTFE lip,Missing,-,no fluorine source on site; end of life Q-011
 LEACH_CSTR_1,"Lid gasket, 40 mm wide full-face",1,FKM,Missing,-,no fluorine source on site; end of life Q-011
-LITHO_ALIGN,Body / envelope 1200 x 600 x 800 mm,1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-LITHO_ALIGN,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",Unstated,-,"not classed: ceramic diaphragm, IEC 61298"
-LITHO_ALIGN,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+LITHO_ALIGN,"Base plate 1200 x 600 x 20 (6061, AQS-LITH-001 section 3 frame)",1,aluminium 6061,Unstated,-,not classed: aluminium 6061
+LITHO_ALIGN,Guard frame: four 40 x 40 posts + top rails pinning the 1200 x 600 x 800 envelop,1,aluminium 6061,Unstated,-,not classed: aluminium 6061
+LITHO_ALIGN,Stage plate 160 x 160 x 15 (envelope around the 100 mm field),1,aluminium (AQS-LITH-001 section 3: stage aluminum),Unstated,-,not classed: aluminium (AQS-LITH-001 section 3: stage
+LITHO_ALIGN,"Leadscrew 10 mm dia, 1 mm pitch, x 140..940",1,steel 4140 (AQS-LITH-001 section 3),Closed,Fe EW -> MET_MELT -> mill/draw,
+LITHO_ALIGN,Mask holder 200 x 200 x 8,1,aluminium 6061,Unstated,-,not classed: aluminium 6061
+LITHO_ALIGN,"Mask 160 x 160 x 3 (chrome on glass, 100 um pattern)",1,"glass, chrome coating (AQS-LITH-001 section 2)",Closed,GLASS / silicate melt,
+LITHO_ALIGN,"365 nm LED array head envelope (1 W optical, node design source)",1,purchased unit (envelope),Unstated,-,not classed: purchased unit (envelope)
+LITHO_ALIGN,Nozzle set per docs-authority/nozzles/LITHO_ALIGN.csv: drain and vent flush at t,2,aluminium 6061,Unstated,-,not classed: aluminium 6061
 LITHO_COAT,Body / envelope 1200 x 800 x 1400 mm,1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 LITHO_COAT,Process nozzle DN15,2,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 LITHO_COAT,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",Unstated,-,"not classed: ceramic diaphragm, IEC 61298"
@@ -2391,3 +2396,5 @@ OF-108,fastener: M12 roll-shaft bolt + nut (ISO 898-1 8.8),4,,Unstated,-,materia
 OF-109,fastener: M12 saddle bolt + nut (ISO 898-1 8.8),16,,Unstated,-,material not stated on the unit BOM line
 OF-110,fastener: M8 tube-clip bolt + nut (ISO 3506 A4-70),16,,Unstated,-,material not stated on the unit BOM line
 OF-111,fastener: M10 tank-clip bolt + nut (ISO 898-1 8.8),8,,Unstated,-,material not stated on the unit BOM line
+OF-112,fastener: M8 socket screw (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
+OF-113,fastener: M8 bench anchor (ISO 3506 A4-70),4,,Unstated,-,material not stated on the unit BOM line
