@@ -1,0 +1,99 @@
+{
+  "bbox_mm": [
+    1000.0,
+    1000.0,
+    1500.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    1000.0,
+    1500.0
+  ],
+  "size_basis": "A-M-199 melt class N+1 rated envelope (A-M-282): real machine, standby-zero design-day rate",
+  "graph_revision": "AD",
+  "solids": 14,
+  "all_parts_valid": true,
+  "machine": {
+    "jacket": {
+      "od_mm": [
+        660.0,
+        1000.0
+      ],
+      "z_mm": [
+        60.0,
+        1160.0
+      ],
+      "wall_mm": 4.0,
+      "water_gap_mm": 15.0,
+      "basis": "water-cooled nickel-free steel jacket (duty section 3): double wall with the cooling-water annulus; the water circuit is loop hardware, not modeled (hold, WORK_ORDER W12); wall is the study fab-page value (hold, WORK_ORDER W12)"
+    },
+    "muffle": {
+      "od_mm": 260.0,
+      "id_mm": 220.0,
+      "h_mm": 480.0,
+      "basis": "95 % alumina muffle under inert/vacuum atmosphere (duty section 3, ASM_V7 reactive-powder class); buy consumable, change-out per campaign"
+    },
+    "elements": {
+      "material": "graphite, OD 24 rods in wall and crown racks",
+      "basis": "duty section 3 element class at T_C 1300.0 C (node design); connected_kW 8.0 is the node rating; Mo elements are the duty alternative for an air variant (not drawn)"
+    },
+    "cabinet": {
+      "bay": "x 660..1000, 8 kW connected (node design); purchased cabinet drawn as its envelope per plan rule 6"
+    }
+  },
+  "standby": {
+    "state": "standby_rated N+1 consolidation of ROLL (A-M-282/A-M-283); energized on the roll-stand outage (outage_d 2.0); design-day rate zero on the graph",
+    "basis": "duty section 2 sizing study; the machine is designed per the node design block so the alternate is real, not a placeholder"
+  },
+  "material": {
+    "class": "water-cooled CS jacket, ceramic-fibre board, 95 % alumina muffle and hearth, graphite elements",
+    "ca_mm": 0.0,
+    "basis": "duty section 3 (X-MAT-22): nickel-free hot zone; Ti embrittles in air/N2 (CRC_TI); CA 0 mm - dry furnace service (AQS-STD-001 shop rule)"
+  },
+  "a_mach_anchors": "8 M12 wedge anchors, plinth to slab (fasteners.csv)",
+  "nozzles_drawn": {
+    "N1": {
+      "dn": "solids",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "sintered stock",
+      "note": "flush at the envelope face (duty section 4); solids row drawn as an outlet chute, bore not calculated (W4 rule)"
+    },
+    "N2": {
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": 0.0,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "flush at the envelope face (duty section 4); through the plinth, flush at the envelope bottom (schedule datum 50)"
+    },
+    "N3": {
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 1500.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "flush at the envelope face (duty section 4); schedule datum 800 is the placeholder elevation - the riser stands on the jacket roof and flushes at the envelope top (hold, WORK_ORDER W12)"
+    }
+  },
+  "nozzle_count_schedule": 3,
+  "nozzle_idiom": "the 3 schedule rows draw flush at the envelope faces (duty section 4); the solids row (N1 sintered stock) is drawn as an outlet chute labeled bore not calculated (W4 rule); the schedule rating column (Class 150) is carried verbatim as text; datums are the schedule placeholders (holds, WORK_ORDER W12)",
+  "part_mass_kg": {
+    "plinth": 471.0,
+    "jacket_outer": 149.9,
+    "jacket_inner": 143.6,
+    "door_face": 62.8,
+    "fibre_lining": 40.1,
+    "hearth_plate": 28.0,
+    "muffle": 28.5,
+    "element_racks": 4.8,
+    "controls_cabinet": 174.9,
+    "nozzles": 5.6
+  },
+  "cadquery": "2.8.0"
+}

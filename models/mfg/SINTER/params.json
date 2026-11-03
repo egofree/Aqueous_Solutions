@@ -24,7 +24,14 @@
   "backup_of": "ROLL",
   "outage_d": 2.0,
   "design_case_kg_d": 0.5,
-  "T_C": 1300.0
+  "T_C": 1300.0,
+  "machine": "Ti/Mo/Cr powder sinter furnace, N+1 consolidation of ROLL (node design service)",
+  "mat": "water-cooled nickel-free steel jacket, ceramic-fibre board, 95 % alumina muffle, graphite resistance elements (duty section 3)",
+  "ca_mm": 0.0,
+  "wall_mm": 4.0,
+  "wall_basis": "study fab-page jacket wall (WORK_ORDER W12)",
+  "internals": "none drawn (node internals row none); the alumina muffle and hearth are furnace furniture (buy consumables), not internals; the powder charge is a process-inventory solid",
+  "purchased": "controls cabinet 8.0 kW connected (node design), drawn as its envelope (plan rule 6); alumina muffle set and graphite element set are purchased consumables (buy rows); vacuum/inert atmosphere package at fabrication"
  },
  "nozzles": [
   {
@@ -58,5 +65,36 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class furnace"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   1000.0,
+   1500.0
+  ],
+  "basis": "A-M-199 melt class N+1 rated envelope (A-M-282); real machine, standby-zero design-day rate",
+  "jacket": {
+   "xy_mm": [
+    660.0,
+    1000.0
+   ],
+   "z_mm": [
+    60.0,
+    1160.0
+   ],
+   "wall_mm": 4.0,
+   "water_gap_mm": 15.0
+  },
+  "cabinet_bay": {
+   "x_mm": [
+    660.0,
+    1000.0
+   ]
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; jacket on the plinth x 0..660, y 0..1000, z 60..1160; charge door face -X; muffle on the hearth at the jacket centre; controls bay x 660..1000",
+  "nozzle_spread": "the 3 schedule rows draw flush at the envelope faces: N1 stock chute +X at z 600; N2 drain through the plinth; N3 vent riser on the jacket roof to the envelope top; per-tag notes in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox within the node envelope"
+ }
 }

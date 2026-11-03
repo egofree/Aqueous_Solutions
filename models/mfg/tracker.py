@@ -158,7 +158,8 @@ ACCEPTED = ('AL_POT', 'IND_MELT', 'VAC_IND', 'VAC_CAST', 'INV_CAST', 'CONT_CAST'
             'TI_CELL',
             'SHELL_BREAK',
             'SHELL_BUILD',
-            'SHELL_BURNOUT')
+            'SHELL_BURNOUT',
+            'SINTER')
 
 
 # --------------------------------------------------------------------------- authorities

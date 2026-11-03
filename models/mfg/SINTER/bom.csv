@@ -1,2 +1,8 @@
-item,description,qty,material,basis
-1,"PLACEHOLDER (standby, envelope-only): box 1000 x 1000 x 1500 mm per params.envelope; no machine design until the feed lands",1,n/a (massing only),AQS-DUTY-072 section 4; standby train (AQS-DUTY-072 section 4)
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Plinth 1000 x 1000 x 60 (CS, anchor bosses)",1,carbon steel,471.0,make,"dry furnace-shop service, CA 0 mm (AQS-STD-001 shop rule); anchors in fasteners.csv"
+2,"Water-cooled steel jacket, double wall t4 with the 15 mm cooling-water annulus, 660 x 1000 x 1100, with charge door",1,carbon steel (nickel-free),356.3,make,"duty section 3: nickel-free hot zone on a water-cooled steel jacket; wall is the study fab-page value (hold, WORK_ORDER W12); the water circuit is loop hardware, not modeled (hold, WORK_ORDER W12); standby_rated N+1 of ROLL (A-M-282)"
+3,"Ceramic-fibre board between jacket and hot zone, t100",1,ceramic-fibre board 128 kg/m3,40.1,make,"study furnace construction (IND_MELT lining class; SCHACHT2004); thickness is the study value (hold, WORK_ORDER W12)"
+4,95 % alumina muffle OD 260 x 480 with lid and alumina hearth (inert/vacuum chamber),1,95 % alumina (consumable set),56.5,buy,"duty section 3 muffle class (ASM_V7 reactive-powder sinter); change-out per campaign (hold, WORK_ORDER W12)"
+5,"Graphite resistance elements, OD 24, wall and crown racks (8.0 kW connected, T_C 1300.0 node design)",13,graphite (consumable set),4.8,buy,duty section 3 element class at 1300 C; element change-out is the consumable cycle (A-M-282); Mo elements are the air-variant alternative (not drawn)
+6,"Controls cabinet, 8.0 kW connected (node design), IP54",1,purchased cabinet (envelope),174.9,buy,"purchased per plan rule 6; standby unit, energized only on the roll-stand outage (A-M-282); vacuum/inert atmosphere package purchased at fabrication (WORK_ORDER W12)"
+7,"Nozzle set per docs-authority/nozzles/SINTER.csv: stock chute (solids, bore not calculated), drain and vent riser, flush at the envelope faces",3,carbon steel tube,5.6,make,schedule tags/faces/heights verbatim; N1 solids row bore not calculated (W4)
