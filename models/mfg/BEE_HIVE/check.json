@@ -1,26 +1,125 @@
 {
-  "shell_bbox_mm": [
+  "bbox_mm": [
     650.0,
     550.0,
     1150.0
   ],
-  "envelope_mm": [
-    600,
-    500,
-    1100
+  "inside_size_mm": false,
+  "size_mm": [
+    600.0,
+    500.0,
+    1100.0
   ],
-  "inside_size_mm_shell": false,
+  "size_basis": "10-frame deep + medium + stand (A-M-424; TECHTREE beekeeping) (X-FARM sec3)",
+  "graph_revision": "AD",
   "solids": 3,
   "all_parts_valid": true,
-  "material_class": "pine",
-  "form": "hive",
-  "mass_kg": {
+  "cad_stl_scope": "full build solid, metres (X-PAR-04 envelope registry; the assembly leaves the node box by the stand and lid laps and the box stack - the CRYO_ASU treatment; the misfit is section-7-reported, nothing resized)",
+  "cad_stl_bbox_mm": [
+    650.0,
+    550.0,
+    1150.0
+  ],
+  "machine": {
+    "type": "honey bee hive, 1 hive (A-M-424): pine stand lapping the boxes by 25 mm a side, 10-frame deep + medium box stack, SS316 screen bottom board, telescoping lid lapping 20 mm a side; interiors propolis-waxed (duty section 3)",
+    "misfit": {
+      "export_bbox_mm": [
+        650.0,
+        550.0,
+        1150.0
+      ],
+      "size_mm": [
+        600.0,
+        500.0,
+        1100.0
+      ],
+      "note": "the assembly leaves the node box by the stand and lid laps (stand +50, lid +40 a side) and the box stack tops at z 1150 - the misfit is section-7-reported, nothing resized (plan rule 3); the node states no per-box heights, so fitting under 1100 would invent dimensions"
+    },
+    "material": "Untreated solid-pine box bodies, SS316 screen bottom board, propolis-waxed interiors; no copper-bearing alloys and no treated lumber anywhere on the hive",
+    "frames": "the size_basis names the 10-frame deep + medium class; frames and foundation are the buy woodenware (plan rule 6), count not stated on the node (hold, WORK_ORDER W12)",
+    "ca_mm": 0.0
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        300.0,
+        250.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "nectar/pollen forage from the canopy and greenhouse crops",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        285.3,
+        250.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "honey to the food store (annual average)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        314.6,
+        250.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "hive evaporation",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        300.0,
+        250.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 1100.0,
+      "xy_mm": [
+        300.0,
+        250.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 predates the build height 1100 - drawn flush at the envelope top (hold, W12)"
+    }
+  },
+  "nozzle_count_schedule": 5,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose; loop accounting rows on a hive); N1 in on -Y at z 160, N2/N3 out on +Y at z 600; N4 drain flush at the envelope bottom; N5 vent flush at the envelope top (schedule z 800 predates the 1100 box - stale datum, hold W12); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
     "stand": 26.8,
     "box_deep": 71.3,
     "box_medium": 71.3,
     "lid": 5.2,
-    "screen_floor": 1.5
+    "screen_floor": 24.0,
+    "nozzles": 0.0
   },
-  "empty_kg": 176.1,
-  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+  "cadquery": "2.8.0"
 }

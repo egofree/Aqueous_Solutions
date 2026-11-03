@@ -1,6 +1,8 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,box_deep,1,pine,71.3,make,hive class; 10-frame deep + medium + stand (A-M-424; TECHTREE beekeeping) (X-FARM sec3)
-2,box_medium,1,pine,71.3,make,hive class; 10-frame deep + medium + stand (A-M-424; TECHTREE beekeeping) (X-FARM sec3)
-3,lid,1,pine,5.2,make,hive class; 10-frame deep + medium + stand (A-M-424; TECHTREE beekeeping) (X-FARM sec3)
-4,screen_floor,1,pine,1.5,make,hive class; 10-frame deep + medium + stand (A-M-424; TECHTREE beekeeping) (X-FARM sec3)
-5,stand,1,pine,26.8,make,hive class; 10-frame deep + medium + stand (A-M-424; TECHTREE beekeeping) (X-FARM sec3)
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Pine stand, laps the boxes by 25 mm a side, 150 high",1,untreated solid pine (duty section 3),26.8,make,no treated lumber anywhere on the hive (duty section 3)
+2,"Pine deep box (10-frame class), 475 high",1,untreated solid pine (duty section 3),71.3,make,interior propolis-waxed at assembly (duty section 3)
+3,"Pine medium box (10-frame class), 475 high",1,untreated solid pine (duty section 3),71.3,make,interior propolis-waxed at assembly (duty section 3)
+4,"Telescoping pine lid, laps 20 mm a side",1,untreated solid pine (duty section 3),5.2,make,cover laps by design - the section-7-reported misfit rides on it
+5,Screen bottom board: SS316 hardware-cloth mesh on a pine frame,1,SS316 mesh + pine frame (duty section 3),3.6,make,drawn as its plate solid; the mesh open area carries ~0.15 of the plate mass - the mesh-class mass is the row value (hardware-cloth idiom)
+6,"Frames and foundation, deep + medium sets (10-frame class)",2,purchased woodenware + wax foundation,0.0,buy,"size_basis names the 10-frame deep + medium class (A-M-424); the frame count inside the boxes is not stated on the node (hold, WORK_ORDER W12); the charge is a buy row, plan rule 6"
+7,"Nozzle set per docs-authority/nozzles/BEE_HIVE.csv: 5 rows drawn as DN15 tube stubs (forage in, honey and evaporation out, drain, vent)",5,pine/SS316 hardware,0.0,make,schedule tags/faces/heights verbatim (loop accounting rows); atmospheric per duty section 4

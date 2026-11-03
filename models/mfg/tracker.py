@@ -164,7 +164,8 @@ ACCEPTED = ('AL_POT', 'IND_MELT', 'VAC_IND', 'VAC_CAST', 'INV_CAST', 'CONT_CAST'
             'FLUX_PREP',
             'STOCK_OUT',
             'AQUA_TANK',
-            'AQUA_UV')
+            'AQUA_UV',
+            'BEE_HIVE')
 
 
 # --------------------------------------------------------------------------- authorities

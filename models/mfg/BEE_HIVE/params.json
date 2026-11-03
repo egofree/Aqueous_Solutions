@@ -79,5 +79,40 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class hive"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   600,
+   500,
+   1100
+  ],
+  "basis": "10-frame deep + medium + stand (A-M-424; TECHTREE beekeeping) (X-FARM sec3)",
+  "stack": {
+   "stand_z_mm": [
+    0.0,
+    150.0
+   ],
+   "screen_z_mm": [
+    140.0,
+    150.0
+   ],
+   "boxes": "deep 475 + medium 475 at the +25 mm offset",
+   "lid_z_mm": [
+    1120.0,
+    1150.0
+   ]
+  },
+  "measured_bbox_mm": [
+   650.0,
+   550.0,
+   1150.0
+  ],
+  "misfit_note": "assembly leaves the node box (stand/lid laps + the box stack) - section-7-reported, nothing resized"
+ },
+ "layout": {
+  "frame": "origin at the stand corner; stand 650 x 550 x 150, boxes 600 x 500 at the (25, 25) offset, lid 640 x 540 x 30 at z 1120",
+  "supports": "stand legs to the pad on 4 anchors; the hive stands free on the stand",
+  "nozzle_spread": "the schedule gives face and height only; N1 in on -Y at z 160, N2/N3 out on +Y at z 600, drain at the base, vent at the top centreline; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; SS hardware only, no copper-bearing alloys"
+ }
 }

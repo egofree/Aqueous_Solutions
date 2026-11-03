@@ -1,0 +1,3 @@
+item,size,grade,qty,location,basis
+1,M6 box-assembly screw,ISO 3506 A4-70,24,box corner joints; 6 per box x 3 boxes + lid (study pattern),A4-70 stainless per the plan grade rule; NO copper-bearing alloys (no brass screws) and no treated lumber anywhere on the hive (duty section 3); study pattern; confirmed at fabrication
+2,M10 stand-to-pad anchor,ISO 898-1 8.8,4,stand legs to the slab; 4 corners (count from the model),8.8 on carbon steel per the grade rule (anchor is not hive material)
