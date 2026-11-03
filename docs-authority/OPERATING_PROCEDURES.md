@@ -69,7 +69,7 @@ Units: AIR_RECEIVER, CRYO_AHU, CRYO_AHU_COND_CONDENSABLE, CRYO_ASU, CRYO_CO2, CR
 
 Units: GEO_GHEX, GEO_HP, GEO_HP_CLOSED_LOOP.
 
-- **Normal:** 6 loops on PLC-GEO in auto; operator rounds per shift on levels and temperatures of the units; alarm response per AQS-CTL-001.
+- **Normal:** 7 loops on PLC-GEO in auto; operator rounds per shift on levels and temperatures of the units; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-6 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 8-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
 - **Emergency:** 4 trips: SIF-016 flow or level low-low → pump stop; SIF-017 flow or level low-low → pump stop; SIF-018 flow or level low-low → pump stop; SIF-019 flow or level low-low → pump stop. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.

@@ -26,7 +26,7 @@ Logic solver: a safety PLC with its own I/O, separate from the basic control PLC
 | SIF-013 | CRYO_O2 | CRYO_O2-PT-01 + second PT | pressure low-low (leak) | close bank isolation valves, stop compressor, alarm | bank outlet ESD valves (one per half), fail closed | 2 | 1oo2 | HZ-029 |
 | SIF-014 | FUEL_CELL | FUEL_CELL-FT-01 | flow or level low-low | pump stop | pump starter, de-energise | 1 | 1oo1 | HZ-042 |
 | SIF-015 | GAS_ATOMIZER | GAS_ATOMIZER | flow or level low-low | pump stop | pump starter, de-energise | 1 | 1oo1 | HZ-044 |
-| SIF-016 | GEO_GHEX | GEO_GHEX | flow or level low-low | pump stop | pump starter, de-energise | 1 | 1oo1 | HZ-046 |
+| SIF-016 | GEO_GHEX | GEO_GHEX-FT-01 | flow or level low-low | pump stop | pump starter, de-energise | 1 | 1oo1 | HZ-046 |
 | SIF-017 | GEO_HP | GEO_HP | flow or level low-low | pump stop | pump starter, de-energise | 1 | 1oo1 | HZ-048 |
 | SIF-018 | GEO_HP | GEO_HP | flow or level low-low | pump stop | pump starter, de-energise | 1 | 1oo1 | HZ-049 |
 | SIF-019 | GEO_HP_CLOSED_LOOP | GEO_HP_CLOSED_LOOP | flow or level low-low | pump stop | pump starter, de-energise | 1 | 1oo1 | HZ-051 |

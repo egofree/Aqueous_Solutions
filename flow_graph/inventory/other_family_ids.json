@@ -655,6 +655,11 @@
    "category": "fastener",
    "item": "M12 canopy base plate bolt + nut",
    "spec": "ISO 898-1 8.8"
+  },
+  "OF-132": {
+   "category": "fastener",
+   "item": "M10 header clip bolt + nut",
+   "spec": "ISO 898-1 8.8"
   }
  }
 }

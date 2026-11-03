@@ -35,7 +35,17 @@
   "loop_fluid": "25 % propylene glycol",
   "circ_pump_W": 125.7,
   "status": "design_survey_locked (ST-ORC-01)",
-  "material": "HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal"
+  "material": "HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal",
+  "service": "GEO_GHEX: the ground heat exchanger - 2 boreholes x 45 m at 6 m spacing, HDPE DR-11 U-tubes on the DN32 glycol loop, tied to GEO_HP by the S43 class edge (duty sections 1 and 4; ST-ORC-01 design_survey_locked)",
+  "ca_mm": 0.0,
+  "material_basis": "node material row; CA does not apply to the HDPE (AQS-STD-001)",
+  "a_hx_area": {
+   "loop_m": 186.0,
+   "area_m2": 24.78,
+   "basis": "pipe length 2 bores x 2 legs x 45 m + 6 m header = 186 m of DN32 (OD 42.4) = 24.8 m2 wetted loop area, from the model skid plus the node-quoted buried run; NOT called a calculated duty - the duty sheet states no mass throughput; q_per_m 35 W/m and Q_ceiling 3.0 kW th are the node's survey-locked class figures"
+  },
+  "purchased": "circulation pump envelope (125.7 W, node)",
+  "bore_scope": "the boreholes and grout are drilled subsurface works (site/well lane); the skid is the shop hardware"
  },
  "nozzles": [
   {
@@ -67,5 +77,48 @@
  "acceptance_sets": [
   "A-core",
   "A-HX"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "plinth_mm": 20.0,
+  "headers": {
+   "dn": "DN32",
+   "x_mm": [
+    120.0,
+    700.0
+   ],
+   "z_mm": [
+    300.0,
+    360.0
+   ]
+  },
+  "bore_stubs_x_mm": [
+   200.0,
+   800.0
+  ],
+  "pump_env_mm": [
+   720.0,
+   150.0,
+   240.0,
+   220.0,
+   300.0,
+   480.0
+  ],
+  "fill_pot": {
+   "od_mm": 140.0,
+   "h_mm": 220.0
+  }
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; header runs x 120..700 at z 300/360 on the skid centreline +/- 80; bore tie-in stubs at x 200 and 800 to the box floor; pump envelope x 720..940; fill pot at x 860",
+  "below_grade": "the boreholes continue below the box floor to the 45 m node depth at the 6 m node spacing - interface indication only",
+  "supports": "plinth + hold-down frame + 8 slab anchors",
+  "nozzle_spread": "the schedule gives face and height only; N3 on +Y at z 600 (the GEO_HP tie), drain at x 430, vent at x 570; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

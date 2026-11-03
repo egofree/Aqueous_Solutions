@@ -1,8 +1,8 @@
-item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal (graph node material).",docs-authority/duties/GEO_GHEX.md
-2,Process nozzle DN15,1,"HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal (graph node material).",one per mass edge; DN from AQS-INV-003
-3,fastener: anchor bolt M10,20,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-4,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-5,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-6,support: pipe clamp DN15,10,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-7,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Plinth 1000 x 600 x 20,1,carbon steel (ASTM A500),94.2,make,AQS-MOD-002 dry service; anchors in fasteners.csv
+2,"Four-post hold-down/guard frame pinning the 1000 x 600 x 800 envelope (40 x 40 posts, top rails)",1,carbon steel (ASTM A500),76.36,make,frame pins the registry box (X-PAR-04); anchors in fasteners.csv
+3,DN32 HDPE flow/return header runs on the skid (x 120..700),2,HDPE DR-11 (node material),0.48,make,"node design loop_DN 32; header_m 6 of horizontal header quoted on the node; skid stations are study values (hold, WORK_ORDER W12)"
+4,"Bore-pair tie-in stubs, 2 off (below-grade interface indication)",2,HDPE DR-11,0.61,make,"2 bores x 45 m at 6 m spacing (node design; 90 m installed); the boreholes are drilled subsurface works - depth/spacing named, not drawn to depth (hold, WORK_ORDER W12)"
+5,"Circulation pump envelope (125.7 W, node design circ_pump_W)",1,purchased pump (envelope),248.69,buy,"purchased per plan rule 6, rating from the node; mass a table-density placeholder until the maker TDS quotes (W12)"
+6,Glycol fill pot OD 140 x 220 (study),1,HDPE,3.22,make,"fill point for the 25 % propylene-glycol loop fluid (node design); study size (hold, WORK_ORDER W12)"
+7,Nozzle set per docs-authority/nozzles/GEO_GHEX.csv: 3 hose barbs (DN15),3,HDPE,0.04,make,"schedule tags/faces/heights verbatim (bores not calculated, hose, atmospheric); atmospheric hose per duty section 4"

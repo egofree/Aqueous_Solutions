@@ -70,7 +70,7 @@ FUEL_CELL,AQS-PID-001-FUEL_CELL,72e8c452,docs-authority/pid/FUEL_CELL.svg,ELEC,p
 F_RECOVER,AQS-PID-001-F_RECOVER,5ea61a7d,docs-authority/pid/F_RECOVER.svg,DIGESTER,separator,2,1,3,0,5,1,5
 GALLEY,AQS-PID-001-GALLEY,8b06ee3d,docs-authority/pid/GALLEY.svg,HAB,galley,2,4,8,0,2,0,8
 GAS_ATOMIZER,AQS-PID-001-GAS_ATOMIZER,26e2fc74,docs-authority/pid/GAS_ATOMIZER.svg,MFG,forming,3,3,0,0,2,0,7
-GEO_GHEX,AQS-PID-001-GEO_GHEX,cb2aedae,docs-authority/pid/GEO_GHEX.svg,GEO,ghex,2,1,2,0,2,0,3
+GEO_GHEX,AQS-PID-001-GEO_GHEX,2685dae9,docs-authority/pid/GEO_GHEX.svg,GEO,ghex,2,1,3,0,3,1,3
 GEO_HP,AQS-PID-001-GEO_HP,24f4c8f8,docs-authority/pid/GEO_HP.svg,GEO,heat_pump,1,1,0,0,2,0,2
 GEO_HP_CLOSED_LOOP,AQS-PID-001-GEO_HP_CLOSED_LOOP,e51dca9e,docs-authority/pid/GEO_HP_CLOSED_LOOP.svg,GEO,,2,0,0,0,2,0,3
 GLASS_BURNOUT,AQS-PID-001-GLASS_BURNOUT,299f12c2,docs-authority/pid/GLASS_BURNOUT.svg,GLASS,intra,1,3,4,0,2,0,7

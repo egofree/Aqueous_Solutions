@@ -439,6 +439,7 @@ FLUE_KO-PT-01,FLUE_KO,GAS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-
 FLUE_KO-TE-01,FLUE_KO,GAS,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),FLUE_KOTE-01,PLC-GAS,band by service
 GEO_HP_CLOSED_LOOP-PT-01,GEO_HP_CLOSED_LOOP,GEO,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),GEO_HP_CLOSED_LOOPPT-01,PLC-GEO,no design pressure on the graph
 GEO_HP_CLOSED_LOOP-TE-01,GEO_HP_CLOSED_LOOP,GEO,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),GEO_HP_CLOSED_LOOPTE-01,PLC-GEO,band by service
+GEO_GHEX-FT-01,GEO_GHEX,GEO,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),GEO_GHEXFT-01,PLC-GEO,S43 normal 0.00 L/h
 GEO_GHEX-PT-01,GEO_GHEX,GEO,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),GEO_GHEXPT-01,PLC-GEO,no design pressure on the graph
 GEO_GHEX-TE-01,GEO_GHEX,GEO,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),GEO_GHEXTE-01,PLC-GEO,band by service
 GEO_HP-PT-01,GEO_HP,GEO,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),GEO_HPPT-01,PLC-GEO,no design pressure on the graph

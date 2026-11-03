@@ -1,6 +1,6 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,105,1680 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,848,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,106,1683 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,849,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 176 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
@@ -2005,11 +2005,20 @@ GAS,separator,FLUE_KO,valve,isolation valve,DN20,"PVC-lined ball valve in FRP se
 GEO,-,GEO_HP_CLOSED_LOOP,fabricated part,fabricated part set,4 BOM lines,models/mfg/GEO_HP_CLOSED_LOOP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 GEO,-,GEO_HP_CLOSED_LOOP,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 GEO,-,GEO_HP_CLOSED_LOOP,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+GEO,ghex,GEO_GHEX,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Circulation pump envelope (125.7 W, node design circ_pump_W): drive and non-drive end, IEC 60072 frame 63 (assumed size)"
+GEO,ghex,GEO_GHEX,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Circulation pump envelope (125.7 W, node design circ_pump_W): run and fault (assumed)"
+GEO,ghex,GEO_GHEX,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Circulation pump envelope (125.7 W, node design circ_pump_W) (assumed VFD at >= 0.75 kW)"
 GEO,ghex,GEO_GHEX,fabricated part,fabricated part set,7 BOM lines,models/mfg/GEO_GHEX/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+GEO,ghex,GEO_GHEX,fastener,M10 header clip bolt + nut,M10 header clip bolt + nut,ISO 898-1 8.8,6,models/mfg/GEO_GHEX/fasteners.csv
+GEO,ghex,GEO_GHEX,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,8,models/mfg/GEO_GHEX/fasteners.csv
 GEO,ghex,GEO_GHEX,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,S43: 2 per support (assumed)
+GEO,ghex,GEO_GHEX,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S43: pumped line (assumed)
 GEO,ghex,GEO_GHEX,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 GEO,ghex,GEO_GHEX,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+GEO,ghex,GEO_GHEX,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
+GEO,ghex,GEO_GHEX,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Circulation pump envelope (125.7 W, node design circ_pump_W): induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 GEO,ghex,GEO_GHEX,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,S43: AQS-PIP-005 span count
+GEO,ghex,GEO_GHEX,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,S43: pump discharge (assumed)
 GEO,ghex,GEO_GHEX,valve,isolation valve,DN15,"PP ball valve with HDPE stub ends, ISO 16135",2,S43: one at each end nozzle (assumed)
 GEO,heat_pump,GEO_HP,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: heat pump compressor (hermetic induction (scroll), 0.: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 GEO,heat_pump,GEO_HP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: heat pump compressor (hermetic induction (scroll), 0.: run and fault (assumed)"

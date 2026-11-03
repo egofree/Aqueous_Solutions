@@ -1,0 +1,97 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 3,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "ground heat exchanger manifold skid per the node design block (design_survey_locked, ST-ORC-01): DN32 HDPE flow/return header runs on the skid, two bore-pair tie-in stubs to below grade (interface indication), the circulation-pump envelope (circ_pump_W 125.7, node) and the glycol fill pot; the hold-down/guard frame pins the registry box",
+    "bore_field": {
+      "bores": 2,
+      "depth_m": 45,
+      "spacing_m": 6,
+      "metres_installed": 90,
+      "metres_required": 85.7,
+      "grout": "borehole grout thermal (node material)",
+      "note": "the boreholes are drilled subsurface works - not shop fabrication; the tie-in stubs are the interface indication, the depth/spacing are node facts named, not drawn to depth (hold, WORK_ORDER W12)"
+    },
+    "loop": {
+      "dn": "DN32",
+      "fluid": "25 % propylene glycol",
+      "flow_kg_s": 0.2564,
+      "dT_K": 3,
+      "q_per_m_W": 35,
+      "Q_ceiling_kW_th": 3.0,
+      "T_source_K": 285.0,
+      "k_ground_W_mK": 1.5,
+      "status": "design_survey_locked (ST-ORC-01)"
+    },
+    "a_hx_area": {
+      "loop_m": 186.0,
+      "area_m2": 24.78,
+      "basis": "pipe length 2 bores x 2 legs x 45 m + 6 m header = 186 m of DN32 (OD 42.4) = 24.8 m2 wetted loop area, from the model skid plus the node-quoted buried run; NOT called a calculated duty - the duty sheet states no mass throughput; q_per_m 35 W/m and Q_ceiling 3.0 kW th are the node's survey-locked class figures"
+    },
+    "purchased": "circulation pump envelope (125.7 W, node design circ_pump_W) - purchased per plan rule 6",
+    "guard": "four-post hold-down/guard frame pins the registry box (X-PAR-04); 8 slab anchors (fasteners.csv)",
+    "material": "HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal (node material); skid frame painted A500",
+    "ca_mm": 0.0,
+    "study_dims": "skid header stations, pump envelope and fill pot are study values (hold, WORK_ORDER W12)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N2": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent flush at the envelope top; schedule datum 800 mm is the box top"
+    },
+    "N3": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 500.0,
+      "schedule_rating": "Class 150",
+      "service": "geothermal loop fluid",
+      "note": "atmospheric hose joint at the envelope face (duty section 4; bore not calculated, hose, atmospheric); the loop tie to GEO_HP (the S43 class edge)"
+    }
+  },
+  "nozzle_count_schedule": 3,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (duty section 4: atmospheric joints are hose; DN copied from the edge, not recalculated; rows read 'Bore not calculated. Rating hose, atmospheric'); N3 geothermal loop fluid out on +Y at z 600 (the loop tie to GEO_HP); drain flush at the envelope bottom (50 datum); vent flush at the envelope top (800 datum is the box top); no flange (W4 110 % rule); the schedule rating column carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "frame": 76.36,
+    "headers": 0.48,
+    "bore_stubs": 0.61,
+    "pump_env": 248.69,
+    "fill_pot": 3.22,
+    "nozzles": 0.04
+  },
+  "cadquery": "2.8.0"
+}
