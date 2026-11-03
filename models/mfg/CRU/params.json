@@ -120,5 +120,42 @@
  "acceptance_sets": [
   "A-core",
   "A-VES"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1000.0,
+   600.0,
+   800.0
+  ],
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "vessel": {
+   "od_mm": 520.0,
+   "wall_mm": 10.0,
+   "z_mm": [
+    40.0,
+    680.0
+   ],
+   "axis_mm": [
+    500.0,
+    300.0
+   ]
+  },
+  "plinth_mm": 20.0
+ },
+ "design": {
+  "service": "CRU: chlorine recovery and chlorate finish - scrub liquor in, sodium chlorate liquor out, cell-gas sparges in, chlorine to the fluoro trains, atmospheric (duty sections 1, 4 and 6)",
+  "material": "PVC_U",
+  "ca_mm": 0.0,
+  "ca_basis": "CA does not apply to the polymer (AQS-STD-001 rule)",
+  "material_basis": "duty section 3: PVC-U wetted per AQS-STD-002 rules M1 and M2; no metal wetted part; above 60 C the thermoplastic is CPVC, never metal (temperature watch, hold W12)",
+  "wall_mm": 10.0,
+  "wall_basis": "study value (hold W12)",
+  "holdup_model_l": 104.1
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; vessel axis at x 500, y 300, shell z 40..680; hold-down posts at the envelope corners",
+  "supports": "plinth + vessel seat + hold-down frame + 8 slab anchors",
+  "nozzle_spread": "the schedule gives face and height only; ports pack in one row per face/height group from x 150, 8 mm clear at the bore; drain at x 430, vent at x 570; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
+ }
 }

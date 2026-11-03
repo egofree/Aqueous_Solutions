@@ -39,7 +39,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M10 | stud | ISO 3506 A4-70 | 32 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | stud | ISO 898-1 8.8 | 94 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | anchor | ISO 3506 A4-70 | 3 | ISO 4017 + chemical anchor (ETAG 001) |
-| M12 | anchor | ISO 898-1 8.8 | 156 | ISO 4017 + chemical anchor (ETAG 001) |
+| M12 | anchor | ISO 898-1 8.8 | 164 | ISO 4017 + chemical anchor (ETAG 001) |
 | M12 | hex bolt | ISO 3506 A4-70 | 488 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | ISO 898-1 8.8 | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | PVDF (non-metallic) | 34 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -72,8 +72,6 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | BMED_UPW_POLISH | valve: check valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | BMED_UPW_POLISH | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | CA_POT | Return dip leg DN15, inside the riser annulus, bottom z 250 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| CRU | valve: check valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| CRU | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | CRYO_AHU | valve: check valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | CRYO_AHU | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | CRYO_AHU_COND_CONDENSABLE | valve: check valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |

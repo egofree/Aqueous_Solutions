@@ -265,10 +265,11 @@ DIGESTER,DIGESTER_EXT,BMED_BASE,valve,check valve,DN15,"PP-H swing/ball check va
 DIGESTER,DIGESTER_EXT,BMED_BASE,valve,isolation valve,DN15,"PP-H ball valve, ISO 16135, EPDM seals",2,IA-BMED-02: one at each end nozzle (assumed)
 DIGESTER,DIGESTER_EXT,BMED_BASE,valve,isolation valve,DN15,"PP-H ball valve, ISO 16135, EPDM seals",2,IA-EVAP_BASE-FEED: one at each end nozzle (assumed)
 DIGESTER,DIGESTER_EXT,BMED_BASE,valve,isolation valve,DN15,"PP-H ball valve, ISO 16135, EPDM seals",2,IA-VS-NAOH: one at each end nozzle (assumed)
-DIGESTER,DIGESTER_EXT,CRU,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump IA-CRU-01 to LEACH_CSTR_1 (BLDC, 42 mm : drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-DIGESTER,DIGESTER_EXT,CRU,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump IA-CRU-01 to LEACH_CSTR_1 (BLDC, 42 mm : run and fault (assumed)"
-DIGESTER,DIGESTER_EXT,CRU,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump IA-CRU-01 to LEACH_CSTR_1 (BLDC, 42 mm  (assumed VFD at >= 0.75 kW)"
-DIGESTER,DIGESTER_EXT,CRU,fabricated part,fabricated part set,26 BOM lines,models/mfg/CRU/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+DIGESTER,DIGESTER_EXT,CRU,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-CRU-01 to LEACH_CSTR_1 (assumed size)
+DIGESTER,DIGESTER_EXT,CRU,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-CRU-01 to LEACH_CSTR_1
+DIGESTER,DIGESTER_EXT,CRU,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-CRU-01 to LEACH_CSTR_1: run and fault (assumed)
+DIGESTER,DIGESTER_EXT,CRU,fabricated part,fabricated part set,3 BOM lines,models/mfg/CRU/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+DIGESTER,DIGESTER_EXT,CRU,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,8,models/mfg/CRU/fasteners.csv
 DIGESTER,DIGESTER_EXT,CRU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,72,CRU_TO_VDF: 2 per support (assumed)
 DIGESTER,DIGESTER_EXT,CRU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,68,CRU_TO_TFE: 2 per support (assumed)
 DIGESTER,DIGESTER_EXT,CRU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-CRU-01: 2 per support (assumed)
@@ -280,8 +281,6 @@ DIGESTER,DIGESTER_EXT,CRU,instrument,high-level switch,vibrating fork,"IEC 60947
 DIGESTER,DIGESTER_EXT,CRU,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DIGESTER,DIGESTER_EXT,CRU,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,DIGESTER_EXT,CRU,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-DIGESTER,DIGESTER_EXT,CRU,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-DIGESTER,DIGESTER_EXT,CRU,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump IA-CRU-01 to LEACH_CSTR_1 (BLDC, 42 mm : induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 DIGESTER,DIGESTER_EXT,CRU,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",36,CRU_TO_VDF: AQS-PIP-005 span count
 DIGESTER,DIGESTER_EXT,CRU,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",34,CRU_TO_TFE: AQS-PIP-005 span count
 DIGESTER,DIGESTER_EXT,CRU,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-CRU-01: AQS-PIP-005 span count

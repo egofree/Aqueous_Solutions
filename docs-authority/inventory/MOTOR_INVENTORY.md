@@ -28,12 +28,12 @@ Table 1.1. Motor families
 
 | Family | Motor type | Size | Voltage | Count | Units | Installed shaft kW |
 | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 71 | 41 | 0.19 |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 72 | 42 | 0.19 |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 55 | 5 | 2.69 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 8 | 4 | 2.06 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 3 | 3 | 2.43 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 186 | 45 | 22.32 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 185 | 44 | 22.20 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 9 | 8 | 3.33 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 5 | 5 | 7.42 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 1 | 1 | 0.08 |
@@ -73,7 +73,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | DIGESTER_EXT | BMED_BASE | transfer pump IA-BMED-02 to WS_KOH | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | DIGESTER_EXT | BMED_BASE | transfer pump IA-EVAP_BASE-FEED to EVAP_BASE | BLDC | 42 mm (NEMA 17 flange) | 0.0037 | 24 V DC | S1 | BLDC driver | 1 | 1301.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | DIGESTER_EXT | BMED_BASE | transfer pump IA-VS-NAOH to EVAP_ACID_VS | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| DIGESTER_EXT | CRU | Motor: transfer pump IA-CRU-01 to LEACH_CSTR_1 (BLDC, 42 mm  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| DIGESTER_EXT | CRU | transfer pump IA-CRU-01 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 27.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | DIGESTER_EXT | EVAP_ACID | Blower, single-stage centrifugal, ratio 1.648, 1.34 kW shaft | induction IE3 | IEC 100L / 2.2 kW | 1.34 | 480 V 3-ph | S1 | fixed speed | 1 | BOM (sized) |
 | DIGESTER_EXT | EVAP_ACID | Recirculation pump 311.0 kg/h at 4 m | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | DIGESTER_EXT | EVAP_ACID_VS | Sump recirculation pump, magnetic drive, about 0.35 m3/h at  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |

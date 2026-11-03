@@ -1,5 +1,5 @@
 family,magnet,count,torque_mNm,Bg_T,D_mm,L_mm,frame,eta,magnet_g,RE_g,fleet_magnet_kg,fleet_RE_kg
-MF-01,NdFeB,71,8.5,0.8,7.7,7.7,fits,84.7,4.2,1.3,0.3,0.09
-MF-01,ferrite,71,8.5,0.22,11.7,11.7,fits,73.7,9.4,0.0,0.66,0.0
+MF-01,NdFeB,72,8.4,0.8,7.6,7.6,fits,84.6,4.1,1.3,0.3,0.09
+MF-01,ferrite,72,8.4,0.22,11.7,11.7,fits,73.6,9.3,0.0,0.67,0.0
 MF-02,NdFeB,55,155.7,0.8,20.2,20.2,fits,90.9,28.9,9.0,1.59,0.49
 MF-02,ferrite,55,155.7,0.22,28.5,36.4,fits,85.6,70.4,0.0,3.87,0.0

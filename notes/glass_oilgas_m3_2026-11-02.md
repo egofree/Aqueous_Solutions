@@ -238,3 +238,28 @@ never resized.
   3.5 mm deep in the modeled bore — the sump zone is the bottom head; nothing
   resized (plan rule 3). Tracker and full regen run; `--check` and
   `check_all` green.
+
+## CRU (chlorine-recovery chlorate vessel, DIGESTER, tier 6) — commit 10
+
+- `models/mfg/CRU/cru.py` on the shared lib. Route F-VES (the `cru` class
+  sits in the F-VES row of plan section 4), acceptance A-core + A-VES.
+  Build 1000 × 600 × 800 mm against the node envelope: inside, filled
+  exactly (hold-down frame pins the registry box, X-PAR-04); one closed
+  manifold mesh; `cad/stl/CRU.stl` replaced from the build;
+  `tracker --check CRU` green.
+- Vessel per the unit's own duty sheet: vertical PVC-U chlorate-finish shell
+  OD 520, wall 10 (study — the duty states no diameter and no wall: drawn to
+  the envelope, holds W12), welded top and bottom, on a seat over a 20 mm
+  plinth. Material per duty section 3: PVC-U wetted (AQS-STD-002 rules M1
+  and M2; no metal wetted part); CA does not apply to the polymer. The
+  temperature watch is a named hold (above 60 C the thermoplastic is CPVC,
+  never metal; the graph gives no temperature for this unit).
+- A-VES: the vessel holds 104.1 L to 100 mm below the top weld; the duty
+  states no holdup basis for this class, so no residence time is derived.
+- Nozzles: all 12 schedule rows at tag, face, height and bore, atmospheric
+  open-bore tube stubs flush at the envelope faces; the six gas rows (cell
+  gas in, chlorine out) stay on their gas edges, not the room.
+- 7-sheet drawing set (GA front/side, nozzle orientation, vessel, frame,
+  hardware, iso); WORK_ORDER W1–W12, BOM make-or-buy, fasteners, build log
+  acceptance line, check.json. Added to the tracker ACCEPTED row set;
+  tracker and full regen run; `--check` and `check_all` green.
