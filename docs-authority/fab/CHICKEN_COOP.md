@@ -4,7 +4,7 @@ Class: coop; sector FARM. Study route. Not stamped.
 Envelope: Envelope 2500×1300×1900 mm;
 service line: service layer flock, 12 birds; stock_birds 12; egg_kg_d 0.6; feed_kg_d 1.44; basis A-M-417 (X-FARM-02).
 
-Internals: duty sheet: "cloth, SS316 feeders and waterers, HDPE drop-board liner. Basis: wet uric-acid manure with ammonia offgas and " [docs-authority/duties/CHICKEN_COOP.md]
+Internals: issued mfg model BOM (1 internals part row): "2,Drop board 3 mm at z 100 with the HDPE liner sheet 5 mm over it,1,HDG board + HDPE liner (duty section 3),91" [models/mfg/CHICKEN_COOP/bom.csv]
 Material: Hot-dip galvanised steel frame and hardware cloth, SS316 feeders and waterers, HDPE drop-board liner. (continues on the duty sheet)
 
 Nozzles: 10 process connections per docs-authority/nozzles/CHICKEN_COOP.csv

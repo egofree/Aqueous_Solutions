@@ -1,27 +1,186 @@
 {
-  "shell_bbox_mm": [
+  "bbox_mm": [
     2500.0,
     1300.0,
     1900.0
   ],
-  "envelope_mm": [
-    2500,
-    1300,
-    1900
+  "inside_size_mm": true,
+  "size_mm": [
+    2500.0,
+    1300.0,
+    1900.0
   ],
-  "inside_size_mm_shell": true,
-  "solids": 2,
+  "size_basis": "12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (A-M-417; TECHTREE chickens.md) (X-FARM sec3)",
+  "graph_revision": "AD",
+  "solids": 12,
   "all_parts_valid": true,
-  "material_class": "HDG_steel",
-  "form": "frame",
-  "mass_kg": {
+  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the rebuild fills the node box 2500 x 1300 x 1900 flush)",
+  "cad_stl_bbox_mm": [
+    2500.0,
+    1300.0,
+    1900.0
+  ],
+  "machine": {
+    "type": "layer flock house, 12 birds (A-M-417): HDG frame 2500 x 1300 x 1900 with wire floor and panel bands, drop board with the HDPE liner sheet duty section 3 names, nest-row envelope (purchased), and the perch the size_basis names on two posts",
+    "a_farm": "the coop is drawn at the node box flush; the drain and the drop-board liner are drawn",
+    "purchased": "the nest row is the purchased envelope (plan rule 6) - drawn as its box envelope, bought complete; the SS316 feeders and waterers duty section 3 names have no rating on the node: not drawn (hold, WORK_ORDER W12)",
+    "material": "Hot-dip galvanised steel frame and hardware cloth, SS316 feeders and waterers, HDPE drop-board liner",
+    "ca_mm": 0.0
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1191.4,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "flock drinking water",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1220.7,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "eggs to the food store",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1250.0,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "poultry manure to the larvae bin",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1279.3,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "flock respiration/evaporation",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1250.0,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "larvae meal to the layer ration",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1279.3,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "duckweed: layer ration base (dry-equivalent)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        1250.0,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 1900.0,
+      "xy_mm": [
+        1250.0,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 predates the build height 1900 - drawn flush at the envelope top (hold, W12)"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1308.6,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "formulated layer ration",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1220.7,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "DL-methionine crystals: top-dressed supplement at the point of feeding",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    }
+  },
+  "nozzle_count_schedule": 10,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); inlets N1/N5/N6/N9/N10 on -Y at z 160, outlets N2/N3/N4 on +Y at z 600; N7 drain flush at the envelope bottom; N8 vent flush at the envelope top (schedule z 800 predates the 1900 box - stale datum, hold W12); the elevations are schedule placeholders (duty tasks 02/06) and the wall is hardware cloth - stub backing is a fabrication detail (hold W12); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
     "frame_legs": 90.4,
     "drop_board": 76.5,
     "floor_wire": 23.3,
     "roof": 76.5,
     "wire_panels": 29.8,
-    "nest_row": 753.6
+    "nest_row": 753.6,
+    "perch": 33.0,
+    "drop_liner": 15.3,
+    "nozzles": 0.6
   },
-  "empty_kg": 1050.1,
-  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+  "cadquery": "2.8.0"
 }

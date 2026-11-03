@@ -131,5 +131,37 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class coop"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   2500,
+   1300,
+   1900
+  ],
+  "basis": "12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (A-M-417; TECHTREE chickens.md) (X-FARM sec3)",
+  "frame": {
+   "leg_mm": 40,
+   "wire_floor_z_mm": 300.0,
+   "roof_z_mm": 1800.0
+  },
+  "perch": {
+   "rod_od_mm": 40.0,
+   "centreline_z_mm": 640.0,
+   "posts_x_mm": [
+    300.0,
+    2200.0
+   ]
+  },
+  "measured_bbox_mm": [
+   2500.0,
+   1300.0,
+   1900.0
+  ]
+ },
+ "layout": {
+  "frame": "origin at the frame corner; legs at the 4 corners, drop board at z 100, wire floor at z 300, panel bands z 300..550 and z 1650..1900, roof at z 1800; nest row at the -X end, perch on the centreline at z 640",
+  "supports": "frame legs to the slab on 4 anchors; nest row bolted to the frame rails",
+  "nozzle_spread": "the schedule gives face and height only; inlet rows on the -Y wall at z 160, outlet rows on the +Y wall at z 600, drain at the base centreline, vent at the top centreline; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces; the cloth wall takes a backing plate at each stub at fabrication (hold W12)"
+ }
 }

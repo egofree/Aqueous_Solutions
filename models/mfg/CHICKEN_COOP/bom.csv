@@ -1,7 +1,7 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,drop_board,1,HDG_steel,76.5,make,frame class; 12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (
-2,floor_wire,1,HDG_steel,23.3,make,frame class; 12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (
-3,frame_legs,1,HDG_steel,90.4,make,frame class; 12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (
-4,nest_row,1,HDG_steel,753.6,make,frame class; 12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (
-5,roof,1,HDG_steel,76.5,make,frame class; 12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (
-6,wire_panels,1,HDG_steel,29.8,make,frame class; 12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"HDG frame: 4 legs 40 x 40 to z 1800, sheet roof at z 1800",1,hot-dip galvanised steel (duty section 3),166.9,make,"size_basis verbatim (A-M-417); frame weldment, AQS-MOD-002 farm frame class"
+2,Drop board 3 mm at z 100 with the HDPE liner sheet 5 mm over it,1,HDG board + HDPE liner (duty section 3),91.8,make,"the liner sheet is the duty section 3 drop-board liner, drawn"
+3,Hardware cloth: wire floor at z 300 + panel bands at z 300..550 and z 1650..1900 (1 mm cloth class),1,hot-dip galvanised hardware cloth (duty section 3),53.1,buy,"drawn as plate solids; the mesh open area carries ~0.15 of the plate mass (the hardware-cloth idiom); buy panels cut to size, plan rule 6"
+4,Nest-row envelope 600 x 400 x 400 at the -X end,1,purchased nest boxes (envelope),753.6,buy,"drawn as its box envelope, bought complete (plan rule 6); the drawn-envelope mass is the HDG table-density figure, the purchase mass is the maker's (hold, WORK_ORDER W12)"
+5,Perch: HDG rod OD 40 on two posts rising from the wire floor,1,hot-dip galvanised steel (duty section 3),33.0,make,"the size_basis names the perch; rod height and post positions are study layout choices (hold, WORK_ORDER W12)"
+6,"Nozzle set per docs-authority/nozzles/CHICKEN_COOP.csv: 10 rows drawn as DN15 tube stubs (5 in z 160, 3 out z 600, drain, vent)",10,HDPE fittings,0.6,make,"schedule tags/faces/heights verbatim; elevations are schedule placeholders, the cloth wall backing is a fabrication detail (hold, WORK_ORDER W12); atmospheric per duty section 4"
