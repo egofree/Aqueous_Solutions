@@ -1,22 +1,12 @@
-item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Graphite or refractory on the hot face.,docs-authority/duties/MET_MELT.md
-2,Process nozzle DN15,4,Graphite or refractory on the hot face.,one per mass edge; DN from AQS-INV-003
-3,Process nozzle DN50,1,Graphite or refractory on the hot face.,one per mass edge; DN from AQS-INV-003
-4,"Motor: Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump (induction IE3, IEC 80 / 0.55 kW)",1,-,AQS-INV-001 / AQS-INV-005
-5,"Motor: transfer pump S57 to WIRE_DRAW (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-6,bearing: deep-groove ball bearing 6204-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-7,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-8,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-9,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-10,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-11,electronics: motor starter (contactor + overload) 0.55 kW,1,IEC 60947-4-1,AQS-INV-004
-12,fastener: anchor bolt M10,4,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-13,instrument: flow transmitter DN50,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-14,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-15,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-16,"instrument: temperature element (SIF, independent) Pt100 class A",1,"IEC 60751, own thermowell",AQS-INV-004
-17,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-18,"seal: mechanical seal, single EN 12756",1,"SiC/SiC faces, FKM",AQS-INV-004
-19,support: pipe clamp DN50,2,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-20,valve: check valve DN50,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-21,valve: isolation valve DN50,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Plinth 1000 x 600 x 20,1,carbon steel (ASTM A500),94.2,make (AQS-BOM-SC-001),AQS-MOD-002 dry service; anchors in fasteners.csv
+2,"Four-post hold-down/guard frame pinning the 1000 x 600 x 800 envelope (40 x 40 posts, top rails)",1,carbon steel (ASTM A500),76.36,make (AQS-BOM-SC-001),frame pins the registry box (X-PAR-04); A-MACH guard; anchors in fasteners.csv
+3,"Furnace casing OD 420 (wall 6, study) with heads",1,carbon steel (duty section 3 frame class),77.81,make (AQS-BOM-SC-001),"duty section 3: frame A500 behind a heat shield; shell dimensions study (W12); CA 0 mm - dry, non-hydrocarbon furnace service (AQS-STD-001)"
+4,Refractory hot face 40 mm band inside the casing,1,refractory liner charge (supplier TDS governs),45.69,buy,duty section 3: graphite or refractory on the hot face; density is the published refractory class midpoint (study)
+5,Induction coil band 30 mm between hot face and crucible,1,"copper tube (study section, W12)",85.56,make (AQS-BOM-SC-001),coreless induction per the AQS-MFG-010 tool row; A-M-177 eta 0.55; coil section is a study value
+6,"Clay-graphite crucible OD 110 (bore 80), 10 kg Cu class",1,"clay-graphite (buy consumable, change-out per campaign)",2.18,buy,duty section 3; IND_MELT W6 consumable idiom; maker TDS mass governs at order
+7,Tilt trunnions and pour lip over the +Y melt-out rows,1,carbon steel,4.640000000000001,make (AQS-BOM-SC-001),pour lip at z 600 over the N2/N3/N4 rows; layout choice (W12)
+8,Heat shield plate under the frame line,1,carbon steel,18.09,make (AQS-BOM-SC-001),duty section 3: frame behind a heat shield
+9,Fume hood over the furnace with the vent riser at the box top,1,carbon steel,143.69,make (AQS-BOM-SC-001),hood riser carries the N6 vent flush at the envelope top (800 datum = box top)
+10,"Power-supply cabinet (purchased, envelope and interface)",1,purchased cabinet (envelope),303.7,buy,nameplate 7.5 kW (AQS-MFG-010 Table 2.1; node stamp); purchased per plan rule 6; cabinet mass is a table-density placeholder until the maker TDS quotes (W12)
+11,Nozzle set per docs-authority/nozzles/MET_MELT.csv: 6 DN15 stubs and 1 solids row drawn DN15 bore not calculated,7,316L tube,0.41,make (AQS-BOM-SC-001),schedule tags/faces/heights verbatim; atmospheric per duty section 4

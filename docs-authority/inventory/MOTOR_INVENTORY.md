@@ -28,12 +28,12 @@ Table 1.1. Motor families
 
 | Family | Motor type | Size | Voltage | Count | Units | Installed shaft kW |
 | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 79 | 45 | 0.22 |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 80 | 46 | 0.22 |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 55 | 5 | 2.69 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 7 | 3 | 1.75 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 6 | 6 | 4.68 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 181 | 43 | 21.72 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 179 | 42 | 21.48 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 9 | 8 | 3.33 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 5 | 5 | 7.42 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 1 | 1 | 0.08 |
@@ -237,8 +237,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | MFG | COLD_MILL | Two-high cold rolling mill: main drive | induction IE3 | IEC 100L / 2.2 kW | 1.913 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS nameplate |
 | MFG | GAS_ATOMIZER | Close-coupled gas atomiser with Ar recirculation: main drive | induction IE3 | IEC 132M / 7.5 kW | 4.7826 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS nameplate |
 | MFG | MET_MELT | Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump | induction IE3 | IEC 80 / 0.55 kW | 0.37 | 480 V 3-ph | S1 | fixed speed | 1 | MFG_TOOLS; assumed (A-M-119) |
-| MFG | MET_MELT | Motor: Induction melt furnace, coreless, 10 kg Cu crucible:  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| MFG | MET_MELT | Motor: transfer pump S57 to WIRE_DRAW (BLDC, 42 mm (NEMA 17  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| MFG | MET_MELT | transfer pump S57 to WIRE_DRAW | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 6.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | MFG | MFG_SHOP | Band saw: main drive | induction IE3 | IEC 90L / 1.5 kW | 1.3043 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS nameplate |
 | MFG | MFG_SHOP | CNC vertical mill: axis drive | stepper | NEMA 34 (86 mm) | 0.4 | 48 V DC | S3 | stepper driver | 3 | assumed closed-loop stepper per axis (A-M-119) |
 | MFG | MFG_SHOP | CNC vertical mill: main drive | induction IE3 | IEC 132M / 7.5 kW | 6.5217 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS nameplate |

@@ -1,0 +1,132 @@
+{
+  "bbox_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1000.0,
+    600.0,
+    800.0
+  ],
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "graph_revision": "AD",
+  "solids": 9,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "coreless induction melt furnace per the duty sheet and the AQS-MFG-010 tool row (Table 2.1, rev C metering split): CS casing OD 420 (wall 6, study) with refractory hot face 40 mm, induction coil band, clay-graphite crucible (OD 110, bore 80), tilt trunnions and pour lip toward +Y (the three melt-out rows), fume hood with the vent riser at the box top, power-supply cabinet as a purchased envelope; hold-down frame is the guard (A-MACH practice)",
+    "tool_row": "AQS-MFG-010 Table 2.1: Induction melt furnace, coreless, 10 kg Cu crucible, nameplate 7.5 kW",
+    "a177": "A-M-177 melt basis: eta 0.55, 10 kg charge, 0.5 h melt, 100 K superheat",
+    "holdup": {
+      "crucible_m3": 0.000402,
+      "duty_basis_m3": 0.0006,
+      "note": "duty section 2: V = (13.99/1000) x (1/24) = 0.0006 m3, 1 h charge; the crucible melt line is sized to it and the model figure is reported (A-VES), not used as a new rate; the melt solid is process inventory, not a BOM part and not an internal"
+    },
+    "material": "graphite/refractory hot face; frame A500 behind a heat shield (duty section 3); CA 0 mm on the frame",
+    "ca_mm": 0.0,
+    "purchased": {
+      "crucible": "clay-graphite crucible, buy consumable (change-out per campaign, IND_MELT W6 idiom)",
+      "power_supply": "7.5 kW nameplate (AQS-MFG-010 Table 2.1); purchased per plan rule 6, rating from the node stamp"
+    },
+    "guard": "four-post hold-down/guard frame (40 x 40 posts, top rails) pins the registry box (X-PAR-04); 8 slab anchors (fasteners.csv)",
+    "study_dims": "casing, coil and crucible dimensions are study values sized to the 10 kg class at the bench box (WORK_ORDER W12)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 185.3,
+      "schedule_rating": "Class 150",
+      "service": "cathode sheet",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 170.7,
+      "schedule_rating": "Class 150",
+      "service": "billet / melt / charge",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 200.0,
+      "schedule_rating": "Class 150",
+      "service": "melt to the mill",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 229.3,
+      "schedule_rating": "Class 150",
+      "service": "melt to the atomizer",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent on the hood riser flush at the envelope top; the 800 datum is the box top"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 214.7,
+      "schedule_rating": "Class 150",
+      "service": "off-spec powder to remelt",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    }
+  },
+  "nozzle_count_schedule": 7,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); N1 charge in and N7 solids powder return on -Y at z 160 (N7 drawn DN15, bore not calculated, plan W4); N2/N3/N4 pour rows on +Y at z 600 at the pour lip; drain flush at the envelope bottom (50 datum); vent on the hood riser flush at the envelope top (the 800 datum is the box top); no flange drawn (W4 110 % rule - no process pressure stated); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "plinth": 94.2,
+    "frame": 76.36,
+    "casing": 77.81,
+    "hot_face": 45.69,
+    "coil": 85.56,
+    "crucible": 2.18,
+    "melt_line": 3.16,
+    "trunnions": 2.66,
+    "pour_lip": 1.98,
+    "heat_shield": 18.09,
+    "hood": 143.69,
+    "power_cabinet": 303.7,
+    "nozzles": 0.41
+  },
+  "cadquery": "2.8.0"
+}

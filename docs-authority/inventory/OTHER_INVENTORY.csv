@@ -1,5 +1,5 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,100,1600 points / 16
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,100,1598 points / 16
 CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,848,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 176 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
@@ -2441,25 +2441,21 @@ MFG,MFG,GAS_ATOMIZER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm
 MFG,MFG,GAS_ATOMIZER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 MFG,MFG,GAS_ATOMIZER,protection,"inverse-time circuit breaker, 3-pole",30 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 MFG,MFG,MET_MELT,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
-MFG,MFG,MET_MELT,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: Induction melt furnace, coreless, 10 kg Cu crucible: : drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-MFG,MFG,MET_MELT,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S57 to WIRE_DRAW (BLDC, 42 mm (NEMA 17 : drive and non-drive end, IEC 60072 frame 63 (assumed size)"
+MFG,MFG,MET_MELT,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S57 to WIRE_DRAW (assumed size)
+MFG,MFG,MET_MELT,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S57 to WIRE_DRAW
 MFG,MFG,MET_MELT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump: run and fault (assumed)"
-MFG,MFG,MET_MELT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: Induction melt furnace, coreless, 10 kg Cu crucible: : run and fault (assumed)"
-MFG,MFG,MET_MELT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump S57 to WIRE_DRAW (BLDC, 42 mm (NEMA 17 : run and fault (assumed)"
+MFG,MFG,MET_MELT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S57 to WIRE_DRAW: run and fault (assumed)
 MFG,MFG,MET_MELT,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,"Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump (assumed VFD at >= 0.75 kW)"
-MFG,MFG,MET_MELT,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: Induction melt furnace, coreless, 10 kg Cu crucible:  (assumed VFD at >= 0.75 kW)"
-MFG,MFG,MET_MELT,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump S57 to WIRE_DRAW (BLDC, 42 mm (NEMA 17  (assumed VFD at >= 0.75 kW)"
-MFG,MFG,MET_MELT,fabricated part,fabricated part set,21 BOM lines,models/mfg/MET_MELT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+MFG,MFG,MET_MELT,fabricated part,fabricated part set,11 BOM lines,models/mfg/MET_MELT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+MFG,MFG,MET_MELT,fastener,M12 trunnion stud + nut,M12 trunnion stud + nut,ISO 898-1 8.8,4,models/mfg/MET_MELT/fasteners.csv
+MFG,MFG,MET_MELT,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,8,models/mfg/MET_MELT/fasteners.csv
 MFG,MFG,MET_MELT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,4,S57: 2 per support (assumed)
 MFG,MFG,MET_MELT,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S57: pumped line (assumed)
 MFG,MFG,MET_MELT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 MFG,MFG,MET_MELT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 MFG,MFG,MET_MELT,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-029 SIL 2
 MFG,MFG,MET_MELT,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-MFG,MFG,MET_MELT,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-MFG,MFG,MET_MELT,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 MFG,MFG,MET_MELT,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
-MFG,MFG,MET_MELT,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump S57 to WIRE_DRAW (BLDC, 42 mm (NEMA 17 : induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 MFG,MFG,MET_MELT,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",2,S57: AQS-PIP-005 span count
 MFG,MFG,MET_MELT,valve,check valve,DN50,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,S57: pump discharge (assumed)
 MFG,MFG,MET_MELT,valve,isolation valve,DN50,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,S57: one at each end nozzle (assumed)
