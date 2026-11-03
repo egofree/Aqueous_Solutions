@@ -1,6 +1,6 @@
 item,description,qty,material,mass_kg,make_or_buy,basis
-1,"Furnace casing 1000 x 1000 x 1500 mm, CS t4, front door 900 C class",1,carbon steel,674.4,make,duty section 3; WORK_ORDER step 1
-2,Ceramic-fibre hot face,1,ceramic-fibre board 128 kg/m3,110.0,make,design lining; SCHACHT2004 class
+1,"Furnace casing 1000 x 1000 x 1500 mm, CS t4, front door 900 C class",1,carbon steel,669.5,make,duty section 3; WORK_ORDER step 1; door on the -X face with a real through opening
+2,Ceramic-fibre hot face,1,ceramic-fibre board 128 kg/m3,108.5,make,"design lining; SCHACHT2004 class; the 0.25 kW element set purchases at fabrication (hold, W12)"
 3,Hearth plate,1,carbon steel,217.8,make,WO step 2
 4,Wax condensate pan (to WAX_PATTERN N2),1,carbon steel,55.3,make,task-04 schedule N3; reclaim 1.8 kg/d of 2.0 kg/d wax
 5,Off-gas collector hood -Y z 600,1,carbon steel,41.4,make,task-04 schedule N5 (burned wax + steam)

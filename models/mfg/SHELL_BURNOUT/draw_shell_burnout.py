@@ -63,7 +63,7 @@ SHEETS = [
       'Heights/bore/rating per docs-authority/nozzles/SHELL_BURNOUT.csv; compass faces are the registered layout choice (params.json layout_note)'],
      "Nozzle orientation, top view. Heights per the task-04 schedule."),
     ("sh01", shell, (0, 1, 0),
-     ['Casing CS t4 with the front door slab (6 x M10 hinges, fasteners.csv item 1); hot-face lining with the door throat recess',
+     ['Casing CS t4 with the front door slab flush at the -X face (6 x M10 hinges, fasteners.csv item 1); the door opening cuts through the wall and the hot-face throat',
       '6 mm fillet welds (ISO 2553 a6) at the wall/roof seams; general tolerance ISO 2768-m unless noted'],
      "Fabricated part sheet: casing + hot face + hearth + door. Welds per ISO 2553."),
     ("hd01", hood, (0, 1, 0),
@@ -82,7 +82,7 @@ SHEETS = [
      "Fabricated part sheet: drain + hearth."),
     ("iso01", full, (1, -1, 1),
      ['Shop orientation: +X face, y along depth, z up; furnace with the door and condensate pan',
-      'Graph revision AC is the model authority for this build; STEP (export/shell_burnout.step) is the solids of record',
+      'The live graph revision in params.json is the model authority for this build; STEP (export/shell_burnout.step) is the solids of record',
       'Shell-rack inventory shown in place - not a BOM part'],
      "Isometric orientation sheet."),
 ]
