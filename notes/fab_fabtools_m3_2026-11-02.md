@@ -90,3 +90,43 @@ are drawn as their envelope and interface per plan rule 6; misfits are
   full regen was cut by a shell timeout mid-run once and left a partial
   receipt in that commit; the amended commit carries the corrected, fully
   regenerated tree and check_all is green on it.
+
+## ELECTRODE_COAT / BLOW_MOLD / BMED_UPW_POLISH (commits 7-9)
+
+- ELECTRODE_COAT: coating booth per the node design block and AQS-MFG-ELC-001
+  Rev D (open-front hood over a 316L drip tray, ELC-SPRAY-01 coat-head
+  envelope, ELC-CURE-01 IR panel 1.2 kW and ELC-EXH-01 fan 0.35 kW as
+  purchased envelopes); the vent carries the MET_AHU -> MET_SCRUB (S71-S72)
+  routing, destination named. Route hold (coater class) carried by name.
+- BLOW_MOLD: continuous-extrusion blow molder per the node design block
+  (Precious Plastic class) - 316L melt path per duty §3, drive groups as
+  purchased envelopes at the node ratings (2.2/0.75/0.75 kW), mold tool
+  envelope (BLOW-MOLD-TOOL-01); article geometry not named on the node —
+  mold detail held (W12). Route hold (former class) carried by name.
+- BMED_UPW_POLISH: the X-MFG-34 envelope stage - skid per the node internals
+  row and design block (2 flat-sheet TFC RO modules membrane_m2 0.2652 at
+  the 6.859 bar feed, 2 EDI stacks, 15 W UV-TOC lamp, 2.6 W RO pump, potable
+  bypass run 206.77 kg/d, 2 x 100 % trains per A-M-176); every named
+  internal is a solid envelope per plan rule 6, module internals are the
+  X-MFG-34 design task (not invented), and the A-M-072 vendor-class energy
+  bases are the named hold pending the X-MFG-34 bench test.
+- WAFER_FAB follow-up (commit 10): the purge header seat was corrected to
+  the documented layout coordinates (it had been seated one tube radius off
+  by the rotate-translate construction); no schedule, material or acceptance
+  figure changed.
+
+## Lane close-out
+
+All nine wafer-fab/fab-tools units accepted M3 in one commit per unit (plan
+rule 4), plus one WAFER_FAB seat correction: WAFER_FAB, WET_BENCH,
+LITHO_ALIGN, LITHO_COAT, LITHO_DEV, SOLAR_PV_CELL, ELECTRODE_COAT,
+BLOW_MOLD, BMED_UPW_POLISH. Final counts are on the tracker (section 7 of
+AQS-PLAN-006; 13 units remain at M0). Route holds carried by name:
+LITHO_ALIGN (aligner), LITHO_COAT (coater), ELECTRODE_COAT (coater),
+BLOW_MOLD (former). Systemic observations carried, not fixed: (a) graphviz
+`dot` 2.42.4 intermittently takes a "trouble in init_rank" error path on
+the byte-identical `views/mfd.dot` and renders two layouts alternately, so
+a regen pass can fail doc-convergence and a retry converges; (b) the
+rotate-then-translate tube-seat convention places the profile center at the
+translate vector — later builders use it directly, and the one unit built
+with the radius-subtracted convention was corrected (commit 10).
