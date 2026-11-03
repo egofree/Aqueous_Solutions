@@ -1,0 +1,3 @@
+item,size,grade,qty,location,basis
+1,M12 wedge anchor,ISO 898-1 8.8,8,plinth to slab; 4 per side (count from the model),grade rule AQS-PLAN-006 W5: 8.8 on carbon steel; study length; confirmed at fabrication
+2,M12 lid clamp stud + nut,ISO 898-1 8.8,8,clamp ring to casing flange (count from the model),8.8 on carbon steel per the grade rule; study pattern; confirmed at fabrication

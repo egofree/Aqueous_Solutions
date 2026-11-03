@@ -1,3 +1,7 @@
-item,description,qty,material,basis
-1,Body / envelope 1200 x 1000 x 1600 mm,1,Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel casing; dry char and silica-class feed handling; the hot face stays dry (M7).,docs-authority/duties/SI_REDUCE.md
-2,Process nozzle DN15,1,Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel casing; dry char and silica-class feed handling; the hot face stays dry (M7).,one per mass edge; DN from AQS-INV-003
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Plinth 1200 x 1000 x 20 (anchor frame),1,carbon steel (ASTM A500),188.4,make,AQS-MOD-002 dry service; anchors in fasteners.csv
+2,"Retort casing OD 700 (wall 6, study) with base head, lid plate and clamp ring",1,mild steel (duty section 3),378.64000000000004,make,"shell radii are study values (hold, WORK_ORDER W12); CA 0 mm - dry furnace service (AQS-STD-001)"
+3,Alumina brick backup 60 mm ring between the heads,1,alumina brick (buy-row liner charge; supplier TDS governs),350.86,buy,"duty section 3 (X-MAT-22, SCHACHT2004 ch. 8); density is the published alumina brick class midpoint (study)"
+4,"Graphite hot face 40 mm ring + hearth floor disc (dry, M7)",1,graphite (duty section 3),120.14,make,"duty section 3: graphite hot face, dry; CA 0 mm (AQS-STD-001 graphite rule); the silicon-carbide hot-face alternative is the duty alternative row (a process-change decision, not drawn)"
+5,Charge hopper cone (R 240 -> 80 x 280) with hatch box on the lid,1,mild steel,197.53,make,duty section 3 feed handling; hopper size is a study value (W12)
+6,Heater band envelope around the heating zone,1,purchased heater set (envelope),3416.32,buy,"node continuous_kw 5.0 kW (X-SPEC carbothermic study class); purchased per plan rule 6, rating from the node"

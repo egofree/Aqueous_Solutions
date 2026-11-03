@@ -1,0 +1,67 @@
+{
+  "bbox_mm": [
+    1200.0,
+    1000.0,
+    1600.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1200.0,
+    1000.0,
+    1600.0
+  ],
+  "size_basis": "graphite hot-face furnace (the issued sec3 selection) at the batch class",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "machine": {
+    "type": "carbothermic silicon reduction retort per the duty section 3 lining stack (X-MAT-22; SCHACHT2004 ch. 8; CRC_SI benchmark): mild-steel casing OD 700 (wall 6, study) with alumina brick backup 60 mm and a graphite hot face 40 mm (dry, M7) in the Kroll-class retort idiom shared with the AQS-DUTY-072 pot-cell lineage (TI_CELL train); charge hopper on the lid for the dry char/silica blend; heater band envelope (node continuous 5.0 kW)",
+    "lining": {
+      "casing_od_mm": 700.0,
+      "wall_mm": 6.0,
+      "brick_mm": 60.0,
+      "hot_face_mm": 40.0,
+      "bore_mm": 488.0,
+      "basis": "study radii - no authority states a bore or a wall (WORK_ORDER W12)"
+    },
+    "duty": {
+      "duty": "carbothermic silicon reduction for the PV cell line (SOLAR_PV_CELL draws 1.8 kg/d Si)",
+      "si_kgd": 1.8,
+      "sio2_kgd": 3.85,
+      "char_kgd": 1.924,
+      "service": "SI_REDUCE: carbothermic silicon reduction for the PV cell line (SOLAR_PV_CELL draws 1.8 kg/d Si); dry hot face (duty sections 1 and 3)",
+      "material": "graphite hot face, alumina brick backup, mild-steel casing",
+      "ca_mm": 1.5,
+      "material_basis": "duty section 3 (X-MAT-22; SCHACHT2004 ch. 8; CRC_SI): construction issued at the lining level; the hot face stays dry (M7)",
+      "heater_kw": 5.0,
+      "purchased": "heater band set (plan rule 6 envelope, node continuous 5.0 kW); alumina brick liner charge (buy)"
+    },
+    "heater": {
+      "kw": 5.0,
+      "basis": "node continuous_kw 5.0 kW (X-SPEC carbothermic study class at the 1.8 kg/d Si draw); heater band drawn as its envelope per plan rule 6"
+    },
+    "feed_handling": "charge hopper cone on the lid (duty section 3: dry char and silica-class feed handling; design sio2_kgd 3.85 + char_kgd 1.924 per si_kgd 1.8)",
+    "not_drawn": {
+      "product_tap": "no tap hardware is named on the node or duty (WORK_ORDER W12)",
+      "loop": "SI_REDUCETE-01 temperature loop (AQS-CTL-001) is control hardware; sensor circuit not modeled (IND_MELT loop precedent, W12)"
+    },
+    "structure": "plinth + anchor frame per AQS-MOD-002 dry service; 8 slab anchors (fasteners.csv)",
+    "material": "graphite hot face, alumina brick backup, mild-steel casing (duty section 3)",
+    "ca_mm": 1.5,
+    "ca_basis": "duty section 3: the hot face stays dry (M7); dry, non-hydrocarbon furnace service - CA 0 mm (AQS-STD-001)"
+  },
+  "nozzles_drawn": {},
+  "nozzle_count_schedule": 0,
+  "nozzle_idiom": "no nozzles: the duty section 4 states no piped process connection on the graph and no nozzle schedule is issued yet; the CHAR_TO_SI feed is a solids edge with no kg/d rate - nothing piped, nothing drawn at the faces",
+  "part_mass_kg": {
+    "plinth": 188.4,
+    "casing": 364.91,
+    "brick_backup": 350.86,
+    "hot_face": 117.24,
+    "bore": 2.9,
+    "clamp_ring": 13.73,
+    "hopper": 197.53,
+    "heater_band": 3416.32
+  },
+  "cadquery": "2.8.0"
+}

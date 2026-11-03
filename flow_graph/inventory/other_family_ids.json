@@ -600,6 +600,11 @@
    "category": "fastener",
    "item": "M8 hold-down bolt + nut",
    "spec": "ISO 3506 A4-70"
+  },
+  "OF-121": {
+   "category": "fastener",
+   "item": "M12 lid clamp stud + nut",
+   "spec": "ISO 898-1 8.8"
   }
  }
 }

@@ -18,6 +18,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 6. Relief. Relief case study pending (unit task 07). No set point is claimed on this page. Not to the room.
 
-7. Code. Shop, not stamped (AQS-STD-001 section 7 shop rule). No CAD envelope issued yet.
+7. Code. Shop, not stamped (AQS-STD-001 section 7 shop rule). No CAD envelope issued yet. Manufacturing model `models/mfg/SI_REDUCE/si_reduce.py` (AQS-PLAN-006).
 
 8. Open items. Material selection pending (unit task 09). Relief case pending (unit task 07). Edges CHAR_TO_SI carry no kg/d rate yet; section 1 reads zero flow until the parametric model rates them.

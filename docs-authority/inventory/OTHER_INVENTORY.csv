@@ -2034,7 +2034,9 @@ GLASS,OIL_GLASS,GLASS_DIGEST,valve,check valve,DN15,"CPVC true-union swing/ball 
 GLASS,OIL_GLASS,GLASS_DIGEST,valve,check valve,DN50,"PP-H swing/ball check valve, ISO 16137, EPDM seals",1,IA-SIL-SRC: pump discharge (assumed)
 GLASS,OIL_GLASS,GLASS_DIGEST,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-DIG-LIQ: one at each end nozzle (assumed)
 GLASS,OIL_GLASS,GLASS_DIGEST,valve,isolation valve,DN50,"PP-H ball valve, ISO 16135, EPDM seals",2,IA-SIL-SRC: one at each end nozzle (assumed)
-GLASS,furnace,SI_REDUCE,fabricated part,fabricated part set,2 BOM lines,models/mfg/SI_REDUCE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+GLASS,furnace,SI_REDUCE,fabricated part,fabricated part set,6 BOM lines,models/mfg/SI_REDUCE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+GLASS,furnace,SI_REDUCE,fastener,M12 lid clamp stud + nut,M12 lid clamp stud + nut,ISO 898-1 8.8,8,models/mfg/SI_REDUCE/fasteners.csv
+GLASS,furnace,SI_REDUCE,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,8,models/mfg/SI_REDUCE/fasteners.csv
 GLASS,intra,GLASS_BURNOUT,fabricated part,fabricated part set,4 BOM lines,models/mfg/GLASS_BURNOUT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 GLASS,intra,GLASS_BURNOUT,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,8,models/mfg/GLASS_BURNOUT/fasteners.csv
 GLASS,intra,GLASS_BURNOUT,fastener,M12 housing bolt + nut,M12 housing bolt + nut,ISO 898-1 8.8,4,models/mfg/GLASS_BURNOUT/fasteners.csv

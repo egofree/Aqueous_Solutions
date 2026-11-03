@@ -22,7 +22,13 @@
   "duty": "carbothermic silicon reduction for the PV cell line (SOLAR_PV_CELL draws 1.8 kg/d Si)",
   "si_kgd": 1.8,
   "sio2_kgd": 3.85,
-  "char_kgd": 1.924
+  "char_kgd": 1.924,
+  "service": "SI_REDUCE: carbothermic silicon reduction for the PV cell line (SOLAR_PV_CELL draws 1.8 kg/d Si); dry hot face (duty sections 1 and 3)",
+  "material": "graphite hot face, alumina brick backup, mild-steel casing",
+  "ca_mm": 1.5,
+  "material_basis": "duty section 3 (X-MAT-22; SCHACHT2004 ch. 8; CRC_SI): construction issued at the lining level; the hot face stays dry (M7)",
+  "heater_kw": 5.0,
+  "purchased": "heater band set (plan rule 6 envelope, node continuous 5.0 kW); alumina brick liner charge (buy)"
  },
  "nozzles": [],
  "material": "Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel casing; dry char and silica-class feed handling; the hot face stays dry (M7)",
@@ -32,5 +38,45 @@
  "holds": [
   "no duty section 4 schedule on file",
   "no AQS-PLAN-006 section 4 route class for class furnace"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1200.0,
+   1000.0,
+   1600.0
+  ],
+  "basis": "graphite hot-face furnace (the issued sec3 selection) at the batch class",
+  "plinth_mm": 20.0,
+  "retort": {
+   "casing_od_mm": 700.0,
+   "wall_mm": 6.0,
+   "brick_mm": 60.0,
+   "hot_face_mm": 40.0,
+   "z_mm": [
+    0.0,
+    1260.0
+   ],
+   "pos_mm": [
+    600.0,
+    500.0
+   ]
+  },
+  "hopper_mm": {
+   "r0": 240.0,
+   "r1": 80.0,
+   "h": 280.0
+  },
+  "heater_band_mm": [
+   200.0,
+   100.0,
+   800.0,
+   700.0
+  ]
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; retort on the plinth centre (x 600, y 500), casing z 0..1260, lid + clamp ring + hopper to z 1600; heater band box around the lower shaft",
+  "supports": "plinth + base head lap + 8 slab anchors",
+  "nozzle_spread": "no schedule issued (duty section 4): nothing piped, nothing drawn at the envelope faces",
+  "hardware_idiom": "shell layers lap volumetrically; nothing protrudes, bbox inside the node envelope (the retort under-fills the box by design - the batch class sets it, not the registry box)"
+ }
 }
