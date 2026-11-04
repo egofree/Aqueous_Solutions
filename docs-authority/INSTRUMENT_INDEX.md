@@ -173,7 +173,7 @@ bookkeeping boundaries (here ATMOS, BOUNDARY_EXPORT, LB_PROD_OUTLET, NORTH_DOCK)
 | CRYO_AHU-FT-04 | flow transmitter | 0-10 L/h | 4-20 mA HART (AI) | CRYO_AHUFT-04 | IA-HVAC-COND normal 2.81 L/h |
 | CRYO_AHU-PT-01 | pressure transmitter | 0-10 bar g | 4-20 mA HART (AI) | CRYO_AHUPT-01 | no design pressure on the graph |
 | CRYO_AHU-TE-01 | temperature element | -200 to 50 C | 4-20 mA HART (AI) | CRYO_AHUTE-01 | band by service |
-| CRYO_ASU-PT-01 | pressure transmitter | 0-10 bar g | 4-20 mA HART (AI) | CRYO_ASUPT-01 | design 17.5 kPa g |
+| CRYO_ASU-PT-01 | pressure transmitter | 0-10 bar g | 4-20 mA HART (AI) | CRYO_ASUPT-01 | design 18.0 kPa g |
 | CRYO_ASU-TE-01 | temperature element | -200 to 50 C | 4-20 mA HART (AI) | CRYO_ASUTE-01 | band by service |
 | CRYO_CO2-PT-01 | pressure transmitter | 0-40 bar g | 4-20 mA HART (AI) | CRYO_CO2PT-01 | design 2200.0 kPa g |
 | CRYO_CO2-TE-01 | temperature element | -200 to 50 C | 4-20 mA HART (AI) | CRYO_CO2TE-01 | design T 25 C |

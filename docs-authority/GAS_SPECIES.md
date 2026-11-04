@@ -19,8 +19,8 @@ The total-mass ledger closes (AQS-PAR-003). The O2 species does not: the cold bo
 | IA-FC-AIR | MEOH_FC | 9.407 | methanol cell: to CO2 + H2O |
 | IA-H2O2-SRC | WS_PEROX | 0.176 | peroxide (returns as H2O + 1/2 O2 on decomposition at the bench) |
 | IA-GEN-O2 | BACKUP_GEN | 0.172 | genset combustion, 10 % excess |
-| IA-AB-O2 | AFTERBURNER | 0.528 | afterburner combustion, 10 % excess |
-| total | | 10.284 | |
+| IA-AB-O2 | AFTERBURNER | 19.983 | afterburner combustion, 10 % excess |
+| total | | 29.738 | |
 
 ## 2. Combustion oxidant not on the graph (units fed from HDR_N2)
 
@@ -29,10 +29,11 @@ The total-mass ledger closes (AQS-PAR-003). The O2 species does not: the cold bo
 | BACKUP_GEN | S45 H2 | 0.020 | 7.94 | 0.16 |
 | BACKUP_GEN | CUT-1-OUT C5-C10 fuel | 0.000 | 3.51 | 0.00 |
 | AFTERBURNER | IA-SIC-CO carbon monoxide | 0.000 | 0.571 | 0.00 |
-| AFTERBURNER | S11 grow-bed organics (CH2O basis) | 0.800 | 1.066 | 0.85 |
+| AFTERBURNER | S11 dry organics (0.2 % as CH2O) | 0.001 | 1.066 | 0.00 |
+| AFTERBURNER | NCG C1-C4 fuel (AQS-DUTY-008 mix, A-M-452) | 5.000 | 3.633 | 18.16 |
 | total | | | | 0.00 |
 
-Not counted: NCG_TO_AB 5.00 kg/d (composition not on the graph); sanitation cake and biogas 0.32 kg/d O2, already taken on S02 (AQS-DUTY-063 Rev B).
+Not counted here: sanitation cake and biogas 0.32 kg/d O2, booked on the X-SAN-01 Rev B deltas (S83/S02, AQS-DUTY-063 Rev B). The NCG C1-C4 fuel 5.00 kg/d is counted on IA-AB-O2 at the A-M-452 full-combustion basis (3.633 kg O2/kg).
 The 110.3 kg/d drawn as combustion air (IA-AB-AIR, IA-GEN-AIR) is N2 product; at 23.2 wt% O2 synthetic air it would carry 25.6 kg/d O2.
 
 ## 3. O2 regeneration on the graph
@@ -40,9 +41,9 @@ The 110.3 kg/d drawn as combustion air (IA-AB-AIR, IA-GEN-AIR) is N2 product; at
 | Edge | Path | kg/d |
 | --- | --- | --- |
 | S87 | grow-bed photosynthesis | 0.642 |
-| IA-ASU-O2 | cold box: excess combustion O2 recovered (species-conserving) | 0.064 |
-| IA-ELY-O2 | PEM electrolyser | 74.263 |
+| IA-ASU-O2 | cold box: excess combustion O2 recovered (species-conserving) | 1.832 |
+| IA-ELY-O2 | PEM electrolyser | 75.311 |
 
 ## 4. Result
 
-O2 drawn 10.28 (combustion included, on HDR_O2) against real sources 74.97: no species gap; surplus 64.68 kg/d O2 to PROD_O2 (X-PAR-12, AQS-PAR-005 Rev B).
+O2 drawn 29.74 (combustion included, on HDR_O2) against real sources 77.78: no species gap; surplus 48.05 kg/d O2 to PROD_O2 (X-PAR-12, AQS-PAR-005 Rev B).

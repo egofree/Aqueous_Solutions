@@ -84,7 +84,7 @@ Table 4.1. Code intent per unit
 | CRU | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | CRYO_AHU | CRYO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | CRYO_AHU_COND_CONDENSABLE | CRYO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
-| CRYO_ASU | CRYO | 17.5 |  | 414 | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
+| CRYO_ASU | CRYO | 18.0 |  | 422 | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | CRYO_CO2 | CRYO | 2200.0 | 25 | 87 | B31.3 piping component | U-1(c)(2)(j): ID 87 mm <= 152 mm | none (piping carries no Certification Mark, ASME_B31_3) | hydrostatic 1.5 x design (ASME_B31_3 345.4.2); 341 examination |
 | CRYO_DED_COOL | CRYO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | CRYO_H2 | CRYO | 22000.0 | 25 | 87 | B31.3 piping component | U-1(c)(2)(j): ID 87 mm <= 152 mm | none (piping carries no Certification Mark, ASME_B31_3) | hydrostatic 1.5 x design (ASME_B31_3 345.4.2); 341 examination |

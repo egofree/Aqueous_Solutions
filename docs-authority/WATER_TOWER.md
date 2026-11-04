@@ -7,17 +7,17 @@ Authority: AQS-PLAN-007 X-RED-02; owner decision Q-009 (closed 2026-10-16): buil
 
 ## Sizing from need
 
-Store: 202.4 kWh at the bus (HYDRO_SET backup basis, NFPA 111 Class X, A-M-145). Turbine-generator 0.8 (DOE_PSH) less 5 % penstock friction gives 0.76.
+Store: 204.1 kWh at the bus (HYDRO_SET backup basis, NFPA 111 Class X, A-M-145). Turbine-generator 0.8 (DOE_PSH) less 5 % penstock friction gives 0.76.
 Head is the drop between the water centroids, upper full to lower full. It depends on the reservoir depth, so the solver iterates: V = E / (rho g h eta).
 
 | Item | Value |
 |---|---|
-| Head (centroid to centroid) | 36.21 m |
-| Water | 2700 m3 live + 451 m3 fire reserve below the hydro outlet (AQS-SAF-005) = 3151 t |
+| Head (centroid to centroid) | 36.25 m |
+| Water | 2720 m3 live + 451 m3 fire reserve below the hydro outlet (AQS-SAF-005) = 3171 t |
 | Reservoir plan area (plate less 15 % cores) | 367 m2 |
-| Upper reservoir | 3 levels at 6.0 m floor-to-floor above the ROOF_TANK storey, 3.06 m water each (max 4.5 m), 2.0 cells per level of 12.0 m |
+| Upper reservoir | 3 levels at 6.0 m floor-to-floor above the ROOF_TANK storey, 3.07 m water each (max 4.5 m), 2.0 cells per level of 12.0 m |
 | Upper reservoir floor / roof | +16.8 m / +34.8 m |
-| Lower reservoir (CATCH_TANK) | 9.17 m water + 0.5 m freeboard over 367 m2, floor at -16.17 m |
+| Lower reservoir (CATCH_TANK) | 9.22 m water + 0.5 m freeboard over 367 m2, floor at -16.22 m |
 | Penstock static pressure | 0.32 MPa at the turbine |
 
 Each reservoir level is split into at least two cells, each with its own outlet valve to the penstock, so one cell can be drained for inspection while the store keeps 83 % of its energy (redundancy rule).
@@ -26,17 +26,17 @@ Building rule (owner): as the plant grows, HAB/FARM levels are added at 2 x the 
 
 ## CATCH_TANK basis (check)
 
-The earlier CATCH_TANK was a fixed 12 x 8 x 4 m box scaled by plate area (384 m3; 3,916 kN test load in AQS-BLD-013 rev A). That was not from need. It is now the lower reservoir and holds the full upper volume plus freeboard; terrace rain catch uses the freeboard and overflows to the site drain. The tank is 24.0 x 15.3 x 9.67 m.
+The earlier CATCH_TANK was a fixed 12 x 8 x 4 m box scaled by plate area (384 m3; 3,916 kN test load in AQS-BLD-013 rev A). That was not from need. It is now the lower reservoir and holds the full upper volume plus freeboard; terrace rain catch uses the freeboard and overflows to the site drain. The tank is 24.0 x 15.3 x 9.72 m.
 
 ## Structural loads (ASCE7_22, ACI350_3, ACI350_20)
 
 | Load | Value | Basis |
 |---|---|---|
-| Water weight, upper | 30901 kN (28.1 kPa per reservoir slab) | operating = test (full) |
-| Seismic base shear from the water mass | 1653 kN (Cs 0.05) | ASCE 7 12.8, SDS 0.107, R 3.0, Ie 1.5 (Risk Cat. IV), impulsive mass taken rigid |
-| Seismic overturning at grade | 42652 kN m | water centroid height |
-| Convective period, sloshing height | 4.79 s, 0.19 m (Sac 0.025 g) | ACI 350.3 rectangular cell, ASCE 7 15.7.6.1.2 |
-| Freeboard in each reservoir level | 2.64 m, covers the sloshing height | soffit must not take wave impact |
+| Water weight, upper | 31095 kN (28.2 kPa per reservoir slab) | operating = test (full) |
+| Seismic base shear from the water mass | 1664 kN (Cs 0.05) | ASCE 7 12.8, SDS 0.107, R 3.0, Ie 1.5 (Risk Cat. IV), impulsive mass taken rigid |
+| Seismic overturning at grade | 42920 kN m | water centroid height |
+| Convective period, sloshing height | 4.78 s, 0.19 m (Sac 0.025 g) | ACI 350.3 rectangular cell, ASCE 7 15.7.6.1.2 |
+| Freeboard in each reservoir level | 2.63 m, covers the sloshing height | soffit must not take wave impact |
 | Wind on the reservoir storeys | 1586 kN (qz 3.32 kPa at 34.8 m) | ASCE 7 ch. 26-27, exposure C, 70.0 m/s |
 
 Seismic governs over wind by 1 x. The lateral system (X-BLD-01) and the foundations (X-BLD-03) must carry it; walls and slabs that retain water follow ACI 350 crack control. Site SDS, SD1 and wind speed are assumptions until the geotechnical report (A-M-187).
@@ -49,4 +49,4 @@ The reservoir levels are unoccupied: maintenance access only. The two exit stair
 
 The PV array moves to the reservoir roof at +34.8 m (datum ROOF). The footprint is unchanged, so the roof area and the PV area (solver.roof_close) are unchanged; the PV dead load now lands on the reservoir roof slab.
 
-Placement datums changed: L-2 -16468 -> -16468 mm, ROOF 34800 -> 34800 mm, added R1 16800, R2 22800, R3 28800 mm.
+Placement datums changed: L-2 -16525 -> -16525 mm, ROOF 34800 -> 34800 mm, added R1 16800, R2 22800, R3 28800 mm.

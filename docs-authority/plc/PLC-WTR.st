@@ -6,7 +6,7 @@ VAR
   (* 100 ms cyclic task per AQS-CTL-002 *)
   BMED_UPW_POLISHFT-01_PV : REAL ;  (* S01 normal 2.80 L/h )
   BMED_UPW_POLISHFT-02_PV : REAL ;  (* IA-UPW-FAB normal 2.50 L/h )
-  BMED_UPW_POLISHFT-03_PV : REAL ;  (* IA-UPW-REMIN normal 8.62 L/h )
+  BMED_UPW_POLISHFT-03_PV : REAL ;  (* IA-UPW-REMIN normal 8.66 L/h )
   BMED_UPW_POLISHFT-04_PV : REAL ;  (* IA-UPW-REJ normal 0.25 L/h )
   BMED_UPW_POLISHLT-01_PV : REAL ;  (* A-M-182 liquid height )
   BMED_UPW_POLISHPT-01_PV : REAL ;  (* no design pressure on the graph )
@@ -22,7 +22,7 @@ VAR
   ROOF_TANKFT-06_PV : REAL ;  (* IA-NOX-HAB normal 8.64 L/h )
   ROOF_TANKFT-07_PV : REAL ;  (* IA-FLUE-QUENCH normal 1.01 L/h )
   ROOF_TANKFT-08_PV : REAL ;  (* IA-PEROX-H2O normal 0.12 L/h )
-  ROOF_TANKFT-09_PV : REAL ;  (* IA-ELY-H2O normal 3.48 L/h )
+  ROOF_TANKFT-09_PV : REAL ;  (* IA-ELY-H2O normal 3.53 L/h )
   ROOF_TANKFT-10_PV : REAL ;  (* IA-CHICK-H2O normal 0.01 L/h )
   ROOF_TANKFT-11_PV : REAL ;  (* IA-AQUA-TOPUP normal 1.14 L/h )
   ROOF_TANKFT-12_PV : REAL ;  (* IA-DUCK-H2O normal 0.08 L/h )
@@ -35,11 +35,11 @@ VAR
   BLACK_DIGESTPT-01_PV : REAL ;  (* no design pressure on the graph )
   BLACK_DIGESTTE-01_PV : REAL ;  (* design T 55 C )
   REMINFT-01_PV : REAL ;  (* S26 normal 0.42 L/h )
-  REMINFT-02_PV : REAL ;  (* IA-POT-01 normal 8.20 L/h )
+  REMINFT-02_PV : REAL ;  (* IA-POT-01 normal 8.24 L/h )
   REMINLT-01_PV : REAL ;  (* A-M-182 liquid height )
   REMINPT-01_PV : REAL ;  (* no design pressure on the graph )
   REMINTE-01_PV : REAL ;  (* band by service )
-  VCD_TRAINFT-01_PV : REAL ;  (* S25 normal 14.17 L/h )
+  VCD_TRAINFT-01_PV : REAL ;  (* S25 normal 14.21 L/h )
   VCD_TRAINFT-02_PV : REAL ;  (* S28 normal 0.74 L/h )
   VCD_TRAINFT-03_PV : REAL ;  (* IA-VCD-BD normal 0.28 L/h )
   VCD_TRAINLT-01_PV : REAL ;  (* A-M-182 liquid height )
@@ -89,10 +89,10 @@ END_VAR
   BMED_UPW_POLISHFT-02_ALARM_LO := 2.25 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  BMED_UPW_POLISHFT-03_SP := 8.62 ;  (* graph basis: IA-UPW-REMIN normal 8.62 L/h )
+  BMED_UPW_POLISHFT-03_SP := 8.66 ;  (* graph basis: IA-UPW-REMIN normal 8.66 L/h )
   FB_PI_BMED_UPW_POLISHFT-03( PV := BMED_UPW_POLISHFT-03_PV, SP := BMED_UPW_POLISHFT-03_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  BMED_UPW_POLISHFT-03_ALARM_HI := 9.482 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  BMED_UPW_POLISHFT-03_ALARM_LO := 7.757999999999999 ;
+  BMED_UPW_POLISHFT-03_ALARM_HI := 9.526000000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  BMED_UPW_POLISHFT-03_ALARM_LO := 7.7940000000000005 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   BMED_UPW_POLISHFT-04_SP := 0.25 ;  (* graph basis: IA-UPW-REJ normal 0.25 L/h )
@@ -170,10 +170,10 @@ END_VAR
   ROOF_TANKFT-08_ALARM_LO := 0.108 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  ROOF_TANKFT-09_SP := 3.48 ;  (* graph basis: IA-ELY-H2O normal 3.48 L/h )
+  ROOF_TANKFT-09_SP := 3.53 ;  (* graph basis: IA-ELY-H2O normal 3.53 L/h )
   FB_PI_ROOF_TANKFT-09( PV := ROOF_TANKFT-09_PV, SP := ROOF_TANKFT-09_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  ROOF_TANKFT-09_ALARM_HI := 3.8280000000000003 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  ROOF_TANKFT-09_ALARM_LO := 3.132 ;
+  ROOF_TANKFT-09_ALARM_HI := 3.883 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  ROOF_TANKFT-09_ALARM_LO := 3.177 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   ROOF_TANKFT-10_SP := 0.01 ;  (* graph basis: IA-CHICK-H2O normal 0.01 L/h )
@@ -237,10 +237,10 @@ END_VAR
   REMINFT-01_ALARM_LO := 0.378 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  REMINFT-02_SP := 8.2 ;  (* graph basis: IA-POT-01 normal 8.20 L/h )
+  REMINFT-02_SP := 8.24 ;  (* graph basis: IA-POT-01 normal 8.24 L/h )
   FB_PI_REMINFT-02( PV := REMINFT-02_PV, SP := REMINFT-02_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  REMINFT-02_ALARM_HI := 9.02 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  REMINFT-02_ALARM_LO := 7.38 ;
+  REMINFT-02_ALARM_HI := 9.064000000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  REMINFT-02_ALARM_LO := 7.416 ;
 
   (* LEVEL monitoring block - indication, no set-point invented )
   FB_AI_REMINLT-01( PV := REMINLT-01_PV );
@@ -255,10 +255,10 @@ END_VAR
   REMINTE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* FLOW control loop - set-point from the graph basis *)
-  VCD_TRAINFT-01_SP := 14.17 ;  (* graph basis: S25 normal 14.17 L/h )
+  VCD_TRAINFT-01_SP := 14.21 ;  (* graph basis: S25 normal 14.21 L/h )
   FB_PI_VCD_TRAINFT-01( PV := VCD_TRAINFT-01_PV, SP := VCD_TRAINFT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  VCD_TRAINFT-01_ALARM_HI := 15.587000000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  VCD_TRAINFT-01_ALARM_LO := 12.753 ;
+  VCD_TRAINFT-01_ALARM_HI := 15.631000000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  VCD_TRAINFT-01_ALARM_LO := 12.789000000000001 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   VCD_TRAINFT-02_SP := 0.74 ;  (* graph basis: S28 normal 0.74 L/h )

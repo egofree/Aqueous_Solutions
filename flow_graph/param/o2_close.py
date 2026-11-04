@@ -15,7 +15,9 @@ X-PAR-12 rate from those bases on each run.
   FC   existing pure-O2 PEM FUEL_CELL: reversible water loop and night/cloudy store with ELY (separate H2 and O2, NFPA2, ISO22734, IEC62282).
   GEN  BACKUP_GEN is standby: NFPA 110 8.4.2 monthly exercise only, daily-average fuel; unburned C5-C10 shipped.
   COMB BACKUP_GEN and AFTERBURNER draw O2 from HDR_O2 at 10 % excess (TURNS2012); the same mass less N2 on IA-GEN-AIR; products by species to
-       NOX_SCRUB/FLUE_KO; excess O2 recovered by the cold box.
+       NOX_SCRUB/FLUE_KO; excess O2 recovered by the cold box. The AFTERBURNER burns the NCG C1-C4 fuel to completion at stoichiometric + 10 %
+       (A-M-452): the heat ladders (AQS-DUTY-008) book the release for the same 5.0 kg/d fuel basis, and the flue CO2 the KO cut does not
+       capture rides IA-NOX-CO2 to the cold box.
   ASU  species conserving: O2 out = O2 in, CO2 out = CO2 in, IA-CO2-RET = 0.
   CO2  bed dose = light-limited uptake; rest to methanol (CO2 + 3 H2 -> CH3OH + H2O) with ELY H2; methanol product to PROD_MEOH.
 """
@@ -27,6 +29,8 @@ CE, FO2, VCELL = _D['ew_cathode_CE']['value'], _D['ew_anode_O2_frac']['value'], 
 KWH_H2 = _D['pem_kWh_kg_H2']['value']; HHV_H2 = _D['CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.h2_hhv_kWh_kg']['value']; PSH_ELY = _D['ely_window_h']['value']   # PEM system kWh/kg; HHV kWh/kg (CRC_H2); electrolyser runs on the PV window (A-M-133, ely_window_h)
 QY, ABS, LED, DLI = (_D[k]['value'] for k in ('bed_quantum_yield', 'bed_absorptance', 'led_efficacy_umol_J', 'bed_DLI')); BED_M2 = _D['FARM.grow-bed-train.GROW_BED.fallback_area_m2']['value']   # BED_M2 fallback only; live area comes from GROW_BED params (A-M-229)
 EXC = _D['combustion_excess_O2']['value']
+NCG_O2 = _D['OIL.afterburner-train.ncg_o2_stoich_kg_kg']['value']    # stoich O2 of the AQS-DUTY-008 C1-C4 NCG mix, kg/kg (A-M-452)
+NCG_CO2 = _D['OIL.afterburner-train.ncg_co2_yield_kg_kg']['value']   # its CO2 yield, kg/kg (the AQS-DUTY-010 15.0/3.002 fuel basis)
 GEN_KW = _D['backup_gen_rated_kW']['value']; EX_LOAD, EX_H, GEN_ETA, LHV_C5 = (_D[k]['value'] for k in ('ELEC.generation-train.BACKUP_GEN.exercise_load_frac', 'ELEC.generation-train.BACKUP_GEN.exercise_h', 'ELEC.generation-train.BACKUP_GEN.eta', 'ELEC.generation-train.BACKUP_GEN.fuel_lhv_kWh_kg'))   # D3: rated kW single-sourced from drivers (AQS-ELEC-007/AQS-RED-001 NFPA 110 rule); NFPA110 8.4.2 exercise; spark engine ~30 % (A-M-134); C5-C10 LHV 44 MJ/kg
 PSH_STORE_D = _D['crit_autonomy_d']['value']   # D7: AQS-ELEC-007 AUT_CRIT autonomy days, single-sourced from drivers (read here and in _power_sizing.py)
 CO2_M2 = DLI*ABS*QY*44.01                # g CO2/m2/d
@@ -229,19 +233,31 @@ def tf(g):
     put('S46', v('IA-GEN-AIR') + og + v('CUT-1-OUT') + v('S45'), 'genset exhaust = inputs')
     dn2 = B['IA-GEN-AIR'] - v('IA-GEN-AIR'); dC = (gf['CUT-1-OUT'] - v('CUT-1-OUT'))*90.0/107.2; dH = (gf['CUT-1-OUT'] - v('CUT-1-OUT'))*17.2/107.2 + gf['S45'] - v('S45')   # fuel C and H no longer burned, relative to the old graph
     gco2 = v('CUT-1-OUT')*(7.5*32.0/107.2); gh2o = gen_b - gco2
-    ab_co, ab_org = vv('IA-SIC-CO')*0.5711, v('NCG_TO_AB')*0.03*1.066 + 0.3195 + v('S11')*0.001*1.066
-    oa = EXC*(ab_co + ab_org); put('IA-AB-O2', oa, f'1.10 x (CO {ab_co:.3f} + organics {ab_org:.3f}); S11 is 99.8 % water')
+    # F-1 combustion-basis fix (2026-11-03, A-M-452): the NCG fuel is the AQS-DUTY-008/AQS-DUTY-010 C1-C4
+    #     pyrolysis-gas mix (NCG_O2/NCG_CO2 from drivers; docs-authority/_hl_edges_study.py NCG dict), burned to
+    #     completion - the SAME fuel basis the heat ladders book (5.0 kg/d x 47.46 MJ/kg LHV = 2.744 kW release,
+    #     HL-AFTERBURNER-Q1-A/B rated 1.383 kW each). Before this fix the O2 edge counted only a 3 %-organics
+    #     proxy (0.480 kg/d at the CH2O 1.066 factor) while the flue passed 5.0 kg/d of fuel through unburned and
+    #     the ladders booked full-combustion heat; mass, O2 and heat now share the one fuel basis. The sanitation
+    #     cake/biogas O2 stays on the X-SAN-01 Rev B deltas (S83/S02): the 0.3195 kg/d constant that also sat in
+    #     ab_org counted that O2 twice (here at x1.10 and on the air chain).
+    ab_co = vv('IA-SIC-CO')*(16.0/28.01)            # CO + 1/2 O2 -> CO2 (TURNS2012)
+    ab_org = v('S11')*0.001*1.066                   # S11 dry 0.2 % as CH2O (A-M-129 chemistry)
+    ncg_co2 = v('NCG_TO_AB')*NCG_CO2                # full-combustion CO2 of the C1-C4 fuel
+    ab_stoich = v('NCG_TO_AB')*NCG_O2 + ab_co + ab_org
+    oa = EXC*ab_stoich
+    put('IA-AB-O2', oa, f'1.10 x (NCG {v("NCG_TO_AB"):.3f} x {NCG_O2:.3f} stoich + CO {ab_co:.3f} + S11 dry organics {ab_org:.4f}); full combustion of the AQS-DUTY-008 C1-C4 fuel - the heat-ladder fuel basis (A-M-452)')
     # D-DOCK lane 2026-10-19 (balance close, AFTERBURNER -2.18): the flue is the burner mass balance, not a frozen base + O2.
     #    All oxidised inputs (NCG, bed organics S11, sanitation digester gas + cake, combustion O2) leave as flue; the dilution
     #    air IA-AB-AIR joins at the flue junction AFTERBURNER_FLUE on the restored combustion-air path (STOICH), not through
     #    the burner — so it enters S67, not IA-AB-FLUE.
     ab_in = v('NCG_TO_AB') + v('S11') + vv('IA-BLK-GAS') + vv('IA-BLK-CAKE')
     put('IA-AB-FLUE', ab_in + oa, f'burner mass balance: NCG {v("NCG_TO_AB"):.3f} + S11 {v("S11"):.3f} + digester gas {vv("IA-BLK-GAS"):.3f} + cake {vv("IA-BLK-CAKE"):.2f} + combustion O2 {oa:.3f} (oxidised to CO2/H2O, mass through)')
-    put('S67B', B['S67B'] + ab_co + ab_org/2, 'bound O2 into CO2 (KO CO2 cut keeps the chemistry basis)')
+    put('S67B', B['S67B'] + ab_co*(44.01/28.01), 'KO CO2 cut: the Rev N base is sized to the DUTY-008 15.0 kg/d flue-CO2 duty (full NCG combustion), so the increment counts only burner carbon outside that basis - SiC CO (S11 farm trim stays under the Rev N +0.554 farm-trim allowance; sanitation CO2 rides IA-ASU-CO2 via the X-SAN-01 deltas) (A-M-452)')
     put('S67', v('IA-AB-FLUE') + v('IA-AB-AIR'), 'flue junction passes burner flue + dilution air (restored combustion-air path, STOICH IA-AB-AIR)')
     put('IA-FLUE-EXH', v('S67') + vv('S70') + v('IA-LEACH-FLUE') + v('IA-FLUE-QUENCH') - v('S67B'),
         'knockout passes the flue less the CO2 cut S67B (X-SAN-01 quench water and the leach vent ride the inputs)')
-    xs = (og - gen_b) + (oa - ab_co - ab_org)
+    xs = (og - gen_b) + (oa - ab_stoich)
     if 'FORM' in N and all(k in E for k in ('IA-FORM-S', 'IA-MEOH-FORM', 'IA-FORM-O2', 'IA-FORM-N2', 'IA-FORM-TAIL')):
         # X-SAF-11 (A-M-159): FORM feed at about 10 mol% MeOH, 10 mol% O2, 80 mol% N2 (FORMOX_REVIEW2021): O2 = 1 mol per MeOH (half reacts),
         # N2 = 8 mol per MeOH taken from the afterburner dilution air (IA-AB-AIR) so the flue N2 is unchanged; tail to the afterburner.
@@ -253,7 +269,7 @@ def tf(g):
         put('IA-FLUE-EXH', v('IA-FLUE-EXH') + xo, 'FORM excess O2'); xs += xo
     if all(k in E for k in ('IA-NOX-N2', 'IA-NOX-CO2', 'IA-ASU-N2', 'IA-ASU-O2', 'IA-ASU-CO2', 'IA-CO2-RET')):
         # R8: the cold-box species family died with CRYO_ASU in the Rev AC pivot; NOX_SCRUB keeps its study rates (R10 re-basis)
-        put('IA-NOX-CO2', B['IA-NOX-CO2'] - dC + gco2, 'genset bound O2 into CO2, less the carbon of the fuel no longer burned'); put('IA-NOX-H2O', B['IA-NOX-H2O'] - dH + gh2o + ab_org/2, 'bound O2 into water, less the H no longer burned')
+        put('IA-NOX-CO2', B['IA-NOX-CO2'] - dC + gco2 + max(0.0, ncg_co2 - v('S67B')), f'genset bound O2 into CO2 + the NCG combustion CO2 the KO cut does not capture ({ncg_co2:.3f} formed - {v("S67B"):.3f} cut); both CO2 routes land in the cold box so no flue carbon leaves uncounted (A-M-452)'); put('IA-NOX-H2O', B['IA-NOX-H2O'] - dH + gh2o + ab_org/2, 'bound O2 into water, less the H no longer burned')
         # D-DOCK lane 2026-10-19 (balance close, NOX_SCRUB +5.04): the gas outlet re-homes to its BH routing — the scrubber
         #    vents to the cold box on IA-NOX-N2/IA-NOX-CO2 (outlets restored with CRYO_ASU per D-AIR) — and closes by
         #    difference against the live inlets instead of the frozen BH base: X-SAN-01 Rev B moved the sanitation loads onto
@@ -278,7 +294,7 @@ def tf(g):
             put('IA-AIR-RX-OUT', v('S84'), 'air receiver passes the cold-box delivery to the header at steady state (D-DOCK product buffer; A-M-270)')
         if avail < need - 1e-6: L['n2_header_short_kg_d'] = round(need - avail, 6)
         put('IA-CO2-RET', 0.0, 'no CO2 recycle into the cold box'); put('IA-ASU-CO2', v('IA-NOX-CO2'), 'CO2 out = CO2 in'); put('IA-ASU-O2', xs, 'O2 out = O2 in (combustion excess)')
-    L['comb'] = dict(gen=og, ab=oa, gen_b=gen_b, ab_b=ab_co + ab_org, xs=xs)
+    L['comb'] = dict(gen=og, ab=oa, gen_b=gen_b, ab_b=ab_stoich, xs=xs)
     # --- CO2: light-limited bed, rest to methanol
     bm2 = N['GROW_BED']['params'].get('area_m2', BED_M2); bed = bm2*CO2_M2/1000; veg = sum(v(k) for k in E if k.startswith('IA-') and k.endswith('-CO2') and E[k]['from_unit_id'] == 'HDR_CO2' and E[k]['to_unit_id'] not in ('MEOH_SYNTH',)); others = sum(vv(k) for k in ('S90', 'IA-COMP-CO2', 'IA-COMP-FIX', 'IA-YEAST-CO2', 'IA-ABE-CO2'))
     put('S04', 0.0, 'bed dosed from HDR_CO2 only'); put('S85', max(0.0, bed + veg - others), 'cold-box CO2 to header only if the bed needs it'); put('S89', bed, f'light-limited uptake {bm2:.2f} m2 x {CO2_M2:.1f} g CO2/m2/d (DLI {DLI}, A-M-133); crew-duty area from GROW_BED params: S14 crew food / BVAD2022 tomato edible at the same flux (A-M-229)')

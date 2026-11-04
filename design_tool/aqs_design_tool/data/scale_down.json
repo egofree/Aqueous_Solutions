@@ -622,7 +622,7 @@
      "from": "LEACH_CSTR_1",
      "to": "VCD_TRAIN",
      "other_sector": "WTR",
-     "rate": 199.595479,
+     "rate": 200.621927,
      "unit": "kg/d",
      "carries": "leach liquor water bleed to vapour-compression distillation"
     },
@@ -840,7 +840,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DOCK",
-     "rate": 57.785915,
+     "rate": 58.812363,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -1089,7 +1089,7 @@
      "from": "HDR_O2",
      "to": "AFTERBURNER",
      "other_sector": "GAS",
-     "rate": 0.528278,
+     "rate": 19.982834,
      "unit": "kg/d",
      "carries": "combustion O2, 10 % excess"
     },
@@ -1262,7 +1262,7 @@
      "from": "AFTERBURNER",
      "to": "AFTERBURNER_FLUE",
      "other_sector": "GAS",
-     "rate": 7.096878,
+     "rate": 26.551434,
      "unit": "kg/d",
      "carries": "flue"
     },
@@ -1839,7 +1839,7 @@
      "from": "AFTERBURNER",
      "to": "AFTERBURNER_FLUE",
      "other_sector": "OIL",
-     "rate": 7.096878,
+     "rate": 26.551434,
      "unit": "kg/d",
      "carries": "flue"
     },
@@ -2028,7 +2028,7 @@
      "from": "CRYO_O2",
      "to": "HDR_O2",
      "other_sector": "CRYO",
-     "rate": 33.167875,
+     "rate": 35.984533,
      "unit": "kg/d",
      "carries": "O2 product"
     }
@@ -2039,7 +2039,7 @@
      "from": "HDR_O2",
      "to": "AFTERBURNER",
      "other_sector": "OIL",
-     "rate": 0.528278,
+     "rate": 19.982834,
      "unit": "kg/d",
      "carries": "combustion O2, 10 % excess"
     },
@@ -2084,7 +2084,7 @@
      "from": "NOX_SCRUB",
      "to": "CRYO_ASU",
      "other_sector": "CRYO",
-     "rate": 21.581514,
+     "rate": 22.782648,
      "unit": "kg/d",
      "carries": "scrubbed CO2 to the cold box"
     },
@@ -2093,7 +2093,7 @@
      "from": "NOX_SCRUB",
      "to": "ROOF_TANK",
      "other_sector": "WTR",
-     "rate": 221.583096,
+     "rate": 221.343396,
      "unit": "kg/d",
      "carries": "scrubber condensate"
     },
@@ -2111,7 +2111,7 @@
      "from": "NOX_SCRUB",
      "to": "CRYO_ASU",
      "other_sector": "CRYO",
-     "rate": 196.652277,
+     "rate": 215.385525,
      "unit": "kg/d",
      "carries": "scrubbed flue nitrogen to the cold box"
     },
@@ -2120,7 +2120,7 @@
      "from": "HDR_O2",
      "to": "PROD_O2",
      "other_sector": "CRYO",
-     "rate": 22.884294,
+     "rate": 6.246396,
      "unit": "kg/d",
      "carries": "surplus O2 to product cylinders"
     },
@@ -2147,7 +2147,7 @@
      "from": "FLUE_KO",
      "to": "CRYO_CO2",
      "other_sector": "CRYO",
-     "rate": 14.050492,
+     "rate": 13.810366,
      "unit": "kg/d",
      "carries": "CO2-rich gas after KO"
     }
@@ -2185,7 +2185,7 @@
      "from": "SOL_ARK_60K",
      "to": "NOX_SCRUB",
      "other_sector": "ELEC",
-     "rate": 0.0385,
+     "rate": 0.0389,
      "unit": "kW",
      "carries": "480 V AC"
     }
@@ -4581,7 +4581,7 @@
      "from": "ROOF_TANK",
      "to": "H2O_ELYZ",
      "other_sector": "WTR",
-     "rate": 83.620295,
+     "rate": 84.800421,
      "unit": "kg/d",
      "carries": "electrolyser feed water"
     },
@@ -4590,7 +4590,7 @@
      "from": "MEOH_TANK",
      "to": "PROD_MEOH",
      "other_sector": "MEOH",
-     "rate": 28.028914,
+     "rate": 28.728609,
      "unit": "kg/d",
      "carries": "methanol product"
     },
@@ -4599,7 +4599,7 @@
      "from": "NOX_SCRUB",
      "to": "CRYO_ASU",
      "other_sector": "GAS",
-     "rate": 21.581514,
+     "rate": 22.782648,
      "unit": "kg/d",
      "carries": "scrubbed CO2 to the cold box"
     },
@@ -4608,7 +4608,7 @@
      "from": "NOX_SCRUB",
      "to": "CRYO_ASU",
      "other_sector": "GAS",
-     "rate": 196.652277,
+     "rate": 215.385525,
      "unit": "kg/d",
      "carries": "scrubbed flue nitrogen to the cold box"
     },
@@ -4617,7 +4617,7 @@
      "from": "HDR_O2",
      "to": "PROD_O2",
      "other_sector": "GAS",
-     "rate": 22.884294,
+     "rate": 6.246396,
      "unit": "kg/d",
      "carries": "surplus O2 to product cylinders"
     },
@@ -4653,7 +4653,7 @@
      "from": "FLUE_KO",
      "to": "CRYO_CO2",
      "other_sector": "GAS",
-     "rate": 14.050492,
+     "rate": 13.810366,
      "unit": "kg/d",
      "carries": "CO2-rich gas after KO"
     },
@@ -4772,7 +4772,7 @@
      "from": "CRYO_CO2",
      "to": "MEOH_SYNTH",
      "other_sector": "MEOH",
-     "rate": 44.257647,
+     "rate": 45.218655,
      "unit": "kg/d",
      "carries": "CO2 feedstock"
     },
@@ -4781,7 +4781,7 @@
      "from": "CRYO_H2",
      "to": "MEOH_SYNTH",
      "other_sector": "MEOH",
-     "rate": 6.513355,
+     "rate": 6.645419,
      "unit": "kg/d",
      "carries": "H2 for MeOH"
     },
@@ -4790,7 +4790,7 @@
      "from": "CRYO_O2",
      "to": "HDR_O2",
      "other_sector": "GAS",
-     "rate": 33.167875,
+     "rate": 35.984533,
      "unit": "kg/d",
      "carries": "O2 product"
     },
@@ -4799,7 +4799,7 @@
      "from": "H2O_ELYZ",
      "to": "Q4_BUS",
      "other_sector": "HEAT",
-     "rate": 6.0825,
+     "rate": 6.1683,
      "unit": "kW",
      "carries": "PEM stack heat above Q4 return"
     }
@@ -4810,7 +4810,7 @@
      "from": "PROD_MEOH",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 28.028914,
+     "rate": 28.728609,
      "unit": "kg/d",
      "carries": "methanol shipped at the dock"
     },
@@ -4819,7 +4819,7 @@
      "from": "CRYO_N2",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 3.09978,
+     "rate": 20.064432,
      "unit": "kg/d",
      "carries": "nitrogen vent"
     },
@@ -4828,7 +4828,7 @@
      "from": "PROD_O2",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 22.884294,
+     "rate": 6.246396,
      "unit": "kg/d",
      "carries": "O2 cylinders shipped at the dock"
     },
@@ -4846,7 +4846,7 @@
      "from": "SOL_ARK_60K",
      "to": "CRYO_ASU",
      "other_sector": "ELEC",
-     "rate": 1.6572,
+     "rate": 1.7455,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -4855,7 +4855,7 @@
      "from": "SOL_ARK_60K",
      "to": "CRYO_H2",
      "other_sector": "ELEC",
-     "rate": 0.9325,
+     "rate": 0.9434,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -4864,7 +4864,7 @@
      "from": "SOL_ARK_60K",
      "to": "H2O_ELYZ",
      "other_sector": "ELEC",
-     "rate": 21.4447,
+     "rate": 21.7473,
      "unit": "kW",
      "carries": "480 V AC (daily average)"
     }
@@ -5059,7 +5059,7 @@
      "from": "LEACH_CSTR_1",
      "to": "VCD_TRAIN",
      "other_sector": "DIGESTER",
-     "rate": 199.595479,
+     "rate": 200.621927,
      "unit": "kg/d",
      "carries": "leach liquor water bleed to vapour-compression distillation"
     },
@@ -5068,7 +5068,7 @@
      "from": "MEOH_COND",
      "to": "ROOF_TANK",
      "other_sector": "MEOH",
-     "rate": 26.652161,
+     "rate": 27.045539,
      "unit": "kg/d",
      "carries": "methanol condensate"
     },
@@ -5077,7 +5077,7 @@
      "from": "NOX_SCRUB",
      "to": "ROOF_TANK",
      "other_sector": "GAS",
-     "rate": 221.583096,
+     "rate": 221.343396,
      "unit": "kg/d",
      "carries": "scrubber condensate"
     },
@@ -5214,7 +5214,7 @@
      "from": "ROOF_TANK",
      "to": "H2O_ELYZ",
      "other_sector": "CRYO",
-     "rate": 83.620295,
+     "rate": 84.800421,
      "unit": "kg/d",
      "carries": "electrolyser feed water"
     },
@@ -5863,7 +5863,7 @@
      "from": "SOL_ARK_60K",
      "to": "CRYO_ASU",
      "other_sector": "CRYO",
-     "rate": 1.6572,
+     "rate": 1.7455,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -5872,7 +5872,7 @@
      "from": "SOL_ARK_60K",
      "to": "CRYO_H2",
      "other_sector": "CRYO",
-     "rate": 0.9325,
+     "rate": 0.9434,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -5953,7 +5953,7 @@
      "from": "SOL_ARK_60K",
      "to": "GEO_HP",
      "other_sector": "GEO",
-     "rate": 0.6866,
+     "rate": 0.6598,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -5980,7 +5980,7 @@
      "from": "SOL_ARK_60K",
      "to": "H2O_ELYZ",
      "other_sector": "CRYO",
-     "rate": 21.4447,
+     "rate": 21.7473,
      "unit": "kW",
      "carries": "480 V AC (daily average)"
     },
@@ -6133,7 +6133,7 @@
      "from": "SOL_ARK_60K",
      "to": "NOX_SCRUB",
      "other_sector": "GAS",
-     "rate": 0.0385,
+     "rate": 0.0389,
      "unit": "kW",
      "carries": "480 V AC"
     },
@@ -6519,7 +6519,7 @@
      "from": "GEO_HP",
      "to": "Q4_BUS",
      "other_sector": "GEO",
-     "rate": 2.1972,
+     "rate": 2.1114,
      "unit": "kW",
      "carries": "heat < 80 °C"
     },
@@ -6591,7 +6591,7 @@
      "from": "H2O_ELYZ",
      "to": "Q4_BUS",
      "other_sector": "CRYO",
-     "rate": 6.0825,
+     "rate": 6.1683,
      "unit": "kW",
      "carries": "PEM stack heat above Q4 return"
     }
@@ -6808,7 +6808,7 @@
      "from": "CRYO_CO2",
      "to": "MEOH_SYNTH",
      "other_sector": "CRYO",
-     "rate": 44.257647,
+     "rate": 45.218655,
      "unit": "kg/d",
      "carries": "CO2 feedstock"
     },
@@ -6817,7 +6817,7 @@
      "from": "CRYO_H2",
      "to": "MEOH_SYNTH",
      "other_sector": "CRYO",
-     "rate": 6.513355,
+     "rate": 6.645419,
      "unit": "kg/d",
      "carries": "H2 for MeOH"
     },
@@ -6855,7 +6855,7 @@
      "from": "MEOH_COND",
      "to": "ROOF_TANK",
      "other_sector": "WTR",
-     "rate": 26.652161,
+     "rate": 27.045539,
      "unit": "kg/d",
      "carries": "methanol condensate"
     },
@@ -6864,7 +6864,7 @@
      "from": "MEOH_TANK",
      "to": "PROD_MEOH",
      "other_sector": "CRYO",
-     "rate": 28.028914,
+     "rate": 28.728609,
      "unit": "kg/d",
      "carries": "methanol product"
     },
@@ -7034,7 +7034,7 @@
      "from": "GEO_HP",
      "to": "Q4_BUS",
      "other_sector": "HEAT",
-     "rate": 2.1972,
+     "rate": 2.1114,
      "unit": "kW",
      "carries": "heat < 80 °C"
     },
@@ -7054,7 +7054,7 @@
      "from": "SOL_ARK_60K",
      "to": "GEO_HP",
      "other_sector": "ELEC",
-     "rate": 0.6866,
+     "rate": 0.6598,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -7158,7 +7158,7 @@
      "from": "PROD_MEOH",
      "to": "NORTH_DOCK",
      "other_sector": "CRYO",
-     "rate": 28.028914,
+     "rate": 28.728609,
      "unit": "kg/d",
      "carries": "methanol shipped at the dock"
     },
@@ -7185,7 +7185,7 @@
      "from": "CRYO_N2",
      "to": "NORTH_DOCK",
      "other_sector": "CRYO",
-     "rate": 3.09978,
+     "rate": 20.064432,
      "unit": "kg/d",
      "carries": "nitrogen vent"
     },
@@ -7203,7 +7203,7 @@
      "from": "PROD_O2",
      "to": "NORTH_DOCK",
      "other_sector": "CRYO",
-     "rate": 22.884294,
+     "rate": 6.246396,
      "unit": "kg/d",
      "carries": "O2 cylinders shipped at the dock"
     },
@@ -7340,7 +7340,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 57.785915,
+     "rate": 58.812363,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },

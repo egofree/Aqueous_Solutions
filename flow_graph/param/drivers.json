@@ -4912,6 +4912,16 @@
   "units": "fraction",
   "owner": "small high-temperature centrifugal fan (A-M-300) (A-M-301)"
  },
+ "OIL.afterburner-train.ncg_o2_stoich_kg_kg": {
+  "value": 3.633072,
+  "units": "kg O2 per kg NCG fuel, stoichiometric, complete combustion",
+  "owner": "AQS-DUTY-008 C1-C4 pyrolysis-gas mix (CH4 0.25, C2H4 0.25, C2H6 0.10, C3H6 0.25, C3H8 0.15 mass): sum w (x + y/4) 32 / M = CH4 4.000 + C2H4 3.429 + C2H6 3.733 + C3H6 3.429 + C3H8 3.636 weighted (A-M-452)"
+ },
+ "OIL.afterburner-train.ncg_co2_yield_kg_kg": {
+  "value": 3.0023,
+  "units": "kg CO2 per kg NCG fuel, complete combustion",
+  "owner": "same mix, sum w x 44 / M = 3.002: the AQS-DUTY-010 fuel basis (15.0 kg CO2/d / 3.002 = 5.0 kg/d NCG) (A-M-452)"
+ },
  "NUT.nutrient-train.dose_head_m": {
   "value": 15.0,
   "units": "m",

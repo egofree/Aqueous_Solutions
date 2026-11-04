@@ -2,7 +2,7 @@
 is converted at its stoichiometry; every O2 regeneration path is listed. Combustion oxidant demand is computed for the units that draw
 'combustion air' from HDR_N2, which carries N2 product (composition N2 0.99), so on the graph they burn in nitrogen.
 Stoichiometry: H2 + 1/2 O2 -> H2O (7.94 kg O2/kg H2); C7.5H17 alkane cut + 11.75 O2 (3.51 kg/kg) [TURNS2012 ch. 2]; CO + 1/2 O2 (0.571);
-CH2O organics + O2 (1.066); photosynthesis CO2 + H2O -> CH2O + O2 (S87, TAIZ2015). Writes docs-authority/GAS_SPECIES.md.
+CH2O organics + O2 (1.066); NCG C1-C4 fuel + 3.633 kg O2/kg (AQS-DUTY-008 mix, A-M-452); photosynthesis CO2 + H2O -> CH2O + O2 (S87, TAIZ2015). Writes docs-authority/GAS_SPECIES.md.
 Run: python3 -m flow_graph.param.gas_species"""
 import json, os
 from . import drivers as DR
@@ -15,7 +15,7 @@ def ledger(g):
             'IA-FC-AIR': 'methanol cell: to CO2 + H2O', 'IA-O2-NIT': 'nitric acid: O into HNO3', 'IA-AC-O2': 'acetic acid oxidation', 'IA-GLX-O2': 'glyoxal oxidation',
             'IA-FORM-O2': 'formaldehyde oxidation', 'IA-H2O2-SRC': 'peroxide (returns as H2O + 1/2 O2 on decomposition at the bench)'}
     comb = [('BACKUP_GEN', 'S45 H2', v('S45'), 7.94), ('BACKUP_GEN', 'CUT-1-OUT C5-C10 fuel', v('CUT-1-OUT'), 3.51), ('AFTERBURNER', 'IA-SIC-CO carbon monoxide', v('IA-SIC-CO'), 0.571),
-            ('AFTERBURNER', 'S11 grow-bed organics (CH2O basis)', v('S11'), 1.066)]
+            ('AFTERBURNER', 'S11 dry organics (0.2 % as CH2O)', v('S11')*0.001, 1.066), ('AFTERBURNER', 'NCG C1-C4 fuel (AQS-DUTY-008 mix, A-M-452)', v('NCG_TO_AB'), 3.633)]
     san = DR.val(_D, 'WTR.grey-black-train.BLACK_DIGEST.san_comb_O2_kg_d')   # AQS-DUTY-063 Rev B combustion O2 for cake + biogas (taken on S02 there)
     ncg = v('NCG_TO_AB')
     regen = [('S87', 'grow-bed photosynthesis', v('S87'))]
@@ -32,7 +32,7 @@ def write(L_):
          '## 1. O2 drawn from HDR_O2 and its fate', '', '| Edge | To | kg/d | Fate |', '| --- | --- | --- | --- |'] + [f"| {k} | {t} | {r:.3f} | {d['fate'].get(k, '-')} |" for k, t, r in d['draws']] + [
          f"| total | | {d['sink']:.3f} | |", '', '## 2. Combustion oxidant not on the graph (units fed from HDR_N2)', '', '| Unit | Fuel | Fuel kg/d | kg O2/kg | O2 kg/d |', '| --- | --- | --- | --- | --- |'] + [
          f'| {u} | {f} | {m:.3f} | {k} | {m*k:.2f} |' for u, f, m, k in d['comb']] + [
-         f"| total | | | | {d['need']:.2f} |", '', f"Not counted: NCG_TO_AB {d['ncg']:.2f} kg/d (composition not on the graph); sanitation cake and biogas {d['san']:.2f} kg/d O2, already taken on S02 (AQS-DUTY-063 Rev B).",
+         f"| total | | | | {d['need']:.2f} |", '', f"Not counted here: sanitation cake and biogas {d['san']:.2f} kg/d O2, booked on the X-SAN-01 Rev B deltas (S83/S02, AQS-DUTY-063 Rev B). The NCG C1-C4 fuel {d['ncg']:.2f} kg/d is counted on IA-AB-O2 at the A-M-452 full-combustion basis (3.633 kg O2/kg).",
          f"The {d['air']:.1f} kg/d drawn as combustion air (IA-AB-AIR, IA-GEN-AIR) is N2 product; at 23.2 wt% O2 synthetic air it would carry {0.232*d['air']:.1f} kg/d O2.", '',
          '## 3. O2 regeneration on the graph', '', '| Edge | Path | kg/d |', '| --- | --- | --- |'] + [f'| {k} | {p} | {r:.3f} |' for k, p, r in d['regen']] + [
          '', '## 4. Result', ''] + ([f"O2 drawn {d['sink']:.2f} (combustion included, on HDR_O2) against real sources {d['src']:.2f}: no species gap; surplus {d['src'] - d['sink']:.2f} kg/d O2 to PROD_O2 (X-PAR-12, AQS-PAR-005 Rev B)."]

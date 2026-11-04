@@ -48,11 +48,11 @@ Table 3. Storage and coverage of the worst stretch
 
 | Kind | Unit | Stored kWh | Graph parameter |
 | --- | --- | --- | --- |
-| electrochemical | ZNBR2 | 3056 | `kWh` |
-| pumped_hydro | HYDRO_SET | 213.1 | `energy_kwh_recoverable_study` |
-| all | - | 3269.1 | - |
+| electrochemical | ZNBR2 | 3073 | `kWh` |
+| pumped_hydro | HYDRO_SET | 214.9 | `energy_kwh_recoverable_study` |
+| all | - | 3287.9 | - |
 
-Plant demand 218.25 kW; energy drawn over the stretch 3055.5 kWh; coverage 1.07.
+Plant demand 219.44 kW; energy drawn over the stretch 3072.2 kWh; coverage 1.07.
 
 ## 3. Redundancy of energy and life-support functions
 

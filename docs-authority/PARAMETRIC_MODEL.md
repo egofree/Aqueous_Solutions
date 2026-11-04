@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3026.000 | 3026.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3043.000 | 3043.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -863,6 +863,8 @@ All solved units close.
 | FAB.wafer-line-train.cz_charge_kg | 0.5 | kg | small-ingot CZ charge per pull (AQS-EQP-FAB-001 CZ class; A-M-297) (A-M-301) | — |
 | OIL.afterburner-train.flue_fan_dP_Pa | 350.0 | Pa | duct + stack draft loss class of a 100 mm bore flue run (A-M-300) (A-M-301) | — |
 | OIL.afterburner-train.flue_fan_eta | 0.35 | fraction | small high-temperature centrifugal fan (A-M-300) (A-M-301) | — |
+| OIL.afterburner-train.ncg_o2_stoich_kg_kg | 3.633072 | kg O2 per kg NCG fuel, stoichiometric, complete combustion | AQS-DUTY-008 C1-C4 pyrolysis-gas mix (CH4 0.25, C2H4 0.25, C2H6 0.10, C3H6 0.25, C3H8 0.15 mass): sum w (x + y/4) 32 / M = CH4 4.000 + C2H4 3.429 + C2H6 3.733 + C3H6 3.429 + C3H8 3.636 weighted (A-M-452) | — |
+| OIL.afterburner-train.ncg_co2_yield_kg_kg | 3.0023 | kg CO2 per kg NCG fuel, complete combustion | same mix, sum w x 44 / M = 3.002: the AQS-DUTY-010 fuel basis (15.0 kg CO2/d / 3.002 = 5.0 kg/d NCG) (A-M-452) | — |
 | NUT.nutrient-train.dose_head_m | 15.0 | m | dose-header head to the grow beds (AQS-EQP-NUT-001; A-M-299) (A-M-301) | — |
 | NUT.nutrient-train.pump_eta | 0.35 | fraction | small metering-diaphragm pump class (A-M-299) (A-M-301) | — |
 | GEO.orc-train.eta_th | 0.1 | fraction | binary ORC 0.08-0.12 study band mid (AQS-EQP-STUDY-001 sec.5; D-GEO_ORC) | — |
@@ -2074,3 +2076,4 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-447 | feed calcium unmeasured; the concentrate gypsum saturation a stated gap and governing limit | the assayed feed calcium and the gypsum saturation calculation set the recovery |
 | A-M-448 | product water quality basis: TCEQ 30 TAC 307 segment 2311 cr mg/L annual average | re-verify the segment sheet and the applicability to lake-restoration return at the locale design pass |
 | A-M-450 | degasser basis: Henry coefficients H2S 0.00087 and CO2 0.000 mol/(m3 Pa); vol/vol; fraction | tower transfer-units design at the locale design pass on the assayed sulfide and its pH speciation; caustic chemical stripping is the fallback |
+| A-M-452 | AFTERBURNER combustion basis: the NCG fuel (AQS-DUTY-010, 5. kg/d; kW | commissioning flue-gas analysis at the afterburner run: dry O2 near 9 %, CO2 near 11 vol% of S67, CO within the EU IED class, against the A-M-452 species ledger |

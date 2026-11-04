@@ -39,7 +39,7 @@ Table 2.1. Pipe families
 | Family | Class | Material | DN | Pipe m | Lines | 6 m lengths | Offcut m | Elbows | Flanges | Gaskets | Studs | Joints |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | PF-01 | P1 | PVC-U Sch 80 ASTM D1785 | 15 | 2572.2 | 129 | 428 | 35.0 | 374 | 258 | 258 | 1032 1/2 in | 1235 solvent |
-| PF-02 | M1 | 316L ASTM A312 | 15 | 1412.3 | 68 | 236 | 25.0 | 202 | 136 | 136 | 544 1/2 in | 672 butt weld |
+| PF-02 | M1 | 316L ASTM A312 | 15 | 1407.1 | 67 | 235 | 24.2 | 199 | 134 | 134 | 536 1/2 in | 664 butt weld |
 | PF-03 | P2 | CPVC Sch 80 ASTM F441 | 15 | 578.5 | 28 | 99 | 24.6 | 84 | 56 | 56 | 224 1/2 in | 272 solvent |
 | PF-04 | P2 | CPVC Sch 80 ASTM F441 | 50 | 358.4 | 17 | 60 | 7.1 | 51 | 34 | 34 | 136 5/8 in | 171 solvent |
 | PF-05 | P3 | PVDF SDR 21 ISO 10931 | 15 | 868.4 | 41 | 146 | 21.0 | 120 | 82 | 82 | 328 1/2 in | 401 fusion |
@@ -51,7 +51,7 @@ Table 2.1. Pipe families
 | PF-11 | P3 | PVDF SDR 21 ISO 10931 | 50 | 35.9 | 2 | 7 | 6.7 | 6 | 4 | 4 | 16 5/8 in | 19 fusion |
 | PF-12 | P4 | PP-H ISO 15494 | 15 | 101.9 | 7 | 18 | 7.8 | 21 | 14 | 14 | 56 1/2 in | 64 fusion |
 | PF-13 | M1 | 316L ASTM A312 | 25 | 42.2 | 2 | 8 | 6.5 | 6 | 4 | 4 | 16 1/2 in | 21 butt weld |
-| PF-14 | M1 | 316L ASTM A312 | 20 | 39.2 | 2 | 7 | 3.5 | 6 | 4 | 4 | 16 1/2 in | 19 butt weld |
+| PF-14 | M1 | 316L ASTM A312 | 20 | 44.4 | 3 | 8 | 4.3 | 9 | 6 | 6 | 24 1/2 in | 27 butt weld |
 | PF-15 | F1 | FRP vinyl ester | 20 | 30.4 | 1 | 6 | 6.1 | 3 | 2 | 2 | 8 1/2 in | 12 butt-and-strap |
 | PF-16 | F1 | FRP vinyl ester | 250 | 9.5 | 3 | 2 | 2.7 | 7 | 6 | 6 | 72 7/8 in | 20 butt-and-strap |
 | PF-17 | F1 | FRP vinyl ester | 200 | 7.1 | 1 | 2 | 5.0 | 3 | 2 | 2 | 16 3/4 in | 8 butt-and-strap |
@@ -101,7 +101,7 @@ These lines have no class in the line list (AQS-PIP-004): either they are not pi
 | CRYO | CRYO_AHU | S68 | 15 | P2 | 17.94 | 3 | 2 | 10 solvent |
 | CRYO | CRYO_AHU | S86 | 15 | M1 | 12.17 | 3 | 2 | 8 butt weld |
 | CRYO | CRYO_ASU | IA-ASU-CO2 | 15 | M1 | 18.72 | 3 | 2 | 9 butt weld |
-| CRYO | CRYO_ASU | IA-ASU-N2 | 15 | M1 | 5.22 | 3 | 2 | 8 butt weld |
+| CRYO | CRYO_ASU | IA-ASU-N2 | 20 | M1 | 5.28 | 3 | 2 | 8 butt weld |
 | CRYO | CRYO_ASU | IA-ASU-O2 | 15 | M1 | 9.72 | 3 | 2 | 8 butt weld |
 | CRYO | CRYO_CO2 | S04 | 15 | M1 | 38.12 | 3 | 2 | 13 butt weld |
 | CRYO | CRYO_CO2 | S73 | 15 | M1 | 23.27 | 3 | 2 | 10 butt weld |

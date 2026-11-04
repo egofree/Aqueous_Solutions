@@ -13,7 +13,7 @@ VAR
   CRYO_AHUFT-04_PV : REAL ;  (* IA-HVAC-COND normal 2.81 L/h )
   CRYO_AHUPT-01_PV : REAL ;  (* no design pressure on the graph )
   CRYO_AHUTE-01_PV : REAL ;  (* band by service )
-  CRYO_ASUPT-01_PV : REAL ;  (* design 17.5 kPa g )
+  CRYO_ASUPT-01_PV : REAL ;  (* design 18.0 kPa g )
   CRYO_ASUTE-01_PV : REAL ;  (* band by service )
   CRYO_CO2PT-01_PV : REAL ;  (* design 2200.0 kPa g )
   CRYO_CO2TE-01_PV : REAL ;  (* design T 25 C )
@@ -37,7 +37,7 @@ VAR
   PROD_O2TE-01_PV : REAL ;  (* band by service )
   AIR_RECEIVERPT-01_PV : REAL ;  (* no design pressure on the graph )
   AIR_RECEIVERTE-01_PV : REAL ;  (* band by service )
-  PROD_MEOHFT-01_PV : REAL ;  (* methanol product: IA-MEOH-PROD 28.15 kg/d (1.47 L/h at 792 kg/m3) )
+  PROD_MEOHFT-01_PV : REAL ;  (* methanol product: IA-MEOH-PROD 28.15 kg/d (1.51 L/h at 792 kg/m3) )
 END_VAR
 
   (* FLOW control loop - set-point from the graph basis *)
@@ -84,10 +84,10 @@ END_VAR
   CRYO_AHUTE-01_ALARM_HI := 45.0 ;  (* 90 % of span, registered LSH convention )
 
   (* PRESSURE control loop - set-point from the graph basis *)
-  CRYO_ASUPT-01_SP := 17.5 ;  (* graph basis: design 17.5 kPa g )
+  CRYO_ASUPT-01_SP := 18.0 ;  (* graph basis: design 18.0 kPa g )
   FB_PI_CRYO_ASUPT-01( PV := CRYO_ASUPT-01_PV, SP := CRYO_ASUPT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  CRYO_ASUPT-01_ALARM_HI := 19.25 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  CRYO_ASUPT-01_ALARM_LO := 15.75 ;
+  CRYO_ASUPT-01_ALARM_HI := 19.8 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  CRYO_ASUPT-01_ALARM_LO := 16.2 ;
 
   (* TEMPERATURE monitoring block - indication, no set-point invented )
   FB_AI_CRYO_ASUTE-01( PV := CRYO_ASUTE-01_PV );

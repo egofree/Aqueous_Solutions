@@ -22,12 +22,12 @@
   "machine": "MVC still stack",
   "modules": 2,
   "compressor": "scroll class (small-MVC)",
-  "hx_area_m2": 0.612,
-  "q_latent_kW": 8.574,
-  "feed_m3_d": 0.3647,
-  "distillate_m3_d": 0.3282,
+  "hx_area_m2": 0.614,
+  "q_latent_kW": 8.598,
+  "feed_m3_d": 0.3657,
+  "distillate_m3_d": 0.3291,
   "sec_kWh_m3": 17,
-  "duty_kW": 0.2583,
+  "duty_kW": 0.2591,
   "basis": "0.333 m3/d x 17 kWh/m3 / 24 h at the issued band midpoint (A-M-149)"
  },
  "nozzles": [

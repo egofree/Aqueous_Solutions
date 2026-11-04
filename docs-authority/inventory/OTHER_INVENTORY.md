@@ -78,10 +78,10 @@ Table 2.1. Item families
 | OF-46 | protection | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 235 | 15 A x223; 90 A x8; 30 A x3; 60 A x1 | 61 |
 | OF-47 | seal | mechanical seal, single | SiC/SiC faces, FKM | 154 | EN 12756 x154 | 42 |
 | OF-48 | support | pipe clamp | PP clamp with EPDM liner, MSS SP-58 Type 7 | 5863 | DN15 x5289; DN50 x537; DN20 x17; DN250 x7; DN32 x6; DN300 x4; DN200 x3 | 116 |
-| OF-49 | support | U-bolt with guide | 316 U-bolt, MSS SP-58 Type 24 | 1492 | DN15 x1437; DN20 x25; DN25 x23; DN50 x7 | 44 |
+| OF-49 | support | U-bolt with guide | 316 U-bolt, MSS SP-58 Type 24 | 1492 | DN15 x1432; DN20 x30; DN25 x23; DN50 x7 | 44 |
 | OF-50 | valve | isolation valve | PVC-U true-union ball valve, MSS SP-122, EPDM seals | 280 | DN15 x258; DN50 x22 | 64 |
 | OF-51 | valve | isolation valve | PP ball valve with HDPE stub ends, ISO 16135 | 42 | DN15 x32; DN50 x10 | 13 |
-| OF-52 | valve | isolation valve | 316L ball valve, ASME B16.34 Cl 150, RF flanged | 188 | DN15 x176; DN50 x4; DN25 x4; DN20 x4 | 40 |
+| OF-52 | valve | isolation valve | 316L ball valve, ASME B16.34 Cl 150, RF flanged | 188 | DN15 x174; DN20 x6; DN50 x4; DN25 x4 | 40 |
 | OF-53 | valve | isolation valve | CPVC true-union ball valve, MSS SP-122, FKM seals | 90 | DN15 x56; DN50 x34 | 24 |
 | OF-54 | valve | check valve | PP swing/ball check valve with HDPE stub ends, ISO 16137 | 14 | DN15 x12; DN50 x2 | 8 |
 | OF-55 | valve | check valve | PVC-U true-union swing/ball check valve, EPDM seals | 62 | DN15 x58; DN50 x4 | 30 |
@@ -253,10 +253,10 @@ Table 2.1. Item families
 | CRYO | CRYO_ASU | instrument | temperature element | Pt100 class A | IEC 60751, 316L thermowell | 1 | duty item 5 (assumed one per unit) |
 | CRYO | CRYO_ASU | protection | inverse-time circuit breaker, 3-pole | 15 A | UL 489 / IEC 60947-2 | 1 | NEC 430.52, from AQS-INV-002 |
 | CRYO | CRYO_ASU | protection | inverse-time circuit breaker, 3-pole | 15 A | UL 489 / IEC 60947-2 | 1 | NEC 430.52, from AQS-INV-002 |
-| CRYO | CRYO_ASU | support | U-bolt with guide | DN15 | 316 U-bolt, MSS SP-58 Type 24 | 5 | IA-ASU-N2: AQS-PIP-005 span count |
+| CRYO | CRYO_ASU | support | U-bolt with guide | DN20 | 316 U-bolt, MSS SP-58 Type 24 | 5 | IA-ASU-N2: AQS-PIP-005 span count |
 | CRYO | CRYO_ASU | support | U-bolt with guide | DN15 | 316 U-bolt, MSS SP-58 Type 24 | 8 | IA-ASU-O2: AQS-PIP-005 span count |
 | CRYO | CRYO_ASU | support | U-bolt with guide | DN15 | 316 U-bolt, MSS SP-58 Type 24 | 14 | IA-ASU-CO2: AQS-PIP-005 span count |
-| CRYO | CRYO_ASU | valve | isolation valve | DN15 | 316L ball valve, ASME B16.34 Cl 150, RF flanged | 2 | IA-ASU-N2: one at each end nozzle (assumed) |
+| CRYO | CRYO_ASU | valve | isolation valve | DN20 | 316L ball valve, ASME B16.34 Cl 150, RF flanged | 2 | IA-ASU-N2: one at each end nozzle (assumed) |
 | CRYO | CRYO_ASU | valve | isolation valve | DN15 | 316L ball valve, ASME B16.34 Cl 150, RF flanged | 2 | IA-ASU-O2: one at each end nozzle (assumed) |
 | CRYO | CRYO_ASU | valve | isolation valve | DN15 | 316L ball valve, ASME B16.34 Cl 150, RF flanged | 2 | IA-ASU-CO2: one at each end nozzle (assumed) |
 | CRYO | CRYO_CO2 | fabricated part | fabricated part set | 5 BOM lines | models/mfg/CRYO_CO2/bom.csv and WORK_ORDER.md | 1 | unit work order; bought-in lines in the set are counted again in their own inventory |

@@ -17,9 +17,9 @@ VAR
   MEOH_FCPT-01_PV : REAL ;  (* no design pressure on the graph )
   MEOH_FCTE-01_PV : REAL ;  (* band by service )
   MEOH_SYNTHFT-01_PV : REAL ;  (* IA-ESS-MEOH-CHG normal 0.00 L/h )
-  MEOH_SYNTHFT-02_PV : REAL ;  (* S75 normal 1.44 L/h )
+  MEOH_SYNTHFT-02_PV : REAL ;  (* S75 normal 1.47 L/h )
   MEOH_SYNTHFT-03_PV : REAL ;  (* MEOH_TO_OLEFIN normal 0.00 L/h )
-  MEOH_SYNTHFT-04_PV : REAL ;  (* IA-MEOH-H2O normal 0.81 L/h )
+  MEOH_SYNTHFT-04_PV : REAL ;  (* IA-MEOH-H2O normal 0.82 L/h )
   MEOH_SYNTHFT-05_PV : REAL ;  (* IA-MEOH-CH3SH normal 0.00 L/h )
   MEOH_SYNTHPT-01_PV : REAL ;  (* no design pressure on the graph )
   MEOH_SYNTHTE-01_PV : REAL ;  (* design T 250 C )
@@ -28,7 +28,7 @@ VAR
   MEOH_CONDTE-01_PV : REAL ;  (* band by service )
   MEOH_TANKFT-01_PV : REAL ;  (* S76 normal 0.21 L/h )
   MEOH_TANKFT-02_PV : REAL ;  (* IA-MEOH-REST normal 0.05 L/h )
-  MEOH_TANKFT-03_PV : REAL ;  (* IA-MEOH-PROD normal 1.17 L/h )
+  MEOH_TANKFT-03_PV : REAL ;  (* IA-MEOH-PROD normal 1.20 L/h )
   MEOH_TANKFT-04_PV : REAL ;  (* MEOH_TO_VDF normal 0.01 L/h )
   MEOH_TANKFT-05_PV : REAL ;  (* MEOH_TO_TFE normal 0.00 L/h )
   MEOH_TANKLT-01_PV : REAL ;  (* A-M-182 liquid height )
@@ -102,10 +102,10 @@ END_VAR
   MEOH_SYNTHFT-01_ALARM_HI := 0.0 ;  (* expected-zero state: any positive PV alarms )
 
   (* FLOW control loop - set-point from the graph basis *)
-  MEOH_SYNTHFT-02_SP := 1.44 ;  (* graph basis: S75 normal 1.44 L/h )
+  MEOH_SYNTHFT-02_SP := 1.47 ;  (* graph basis: S75 normal 1.47 L/h )
   FB_PI_MEOH_SYNTHFT-02( PV := MEOH_SYNTHFT-02_PV, SP := MEOH_SYNTHFT-02_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  MEOH_SYNTHFT-02_ALARM_HI := 1.584 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  MEOH_SYNTHFT-02_ALARM_LO := 1.296 ;
+  MEOH_SYNTHFT-02_ALARM_HI := 1.617 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  MEOH_SYNTHFT-02_ALARM_LO := 1.323 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   MEOH_SYNTHFT-03_SP := 0.0 ;  (* graph basis: MEOH_TO_OLEFIN normal 0.00 L/h )
@@ -113,10 +113,10 @@ END_VAR
   MEOH_SYNTHFT-03_ALARM_HI := 0.0 ;  (* expected-zero state: any positive PV alarms )
 
   (* FLOW control loop - set-point from the graph basis *)
-  MEOH_SYNTHFT-04_SP := 0.81 ;  (* graph basis: IA-MEOH-H2O normal 0.81 L/h )
+  MEOH_SYNTHFT-04_SP := 0.82 ;  (* graph basis: IA-MEOH-H2O normal 0.82 L/h )
   FB_PI_MEOH_SYNTHFT-04( PV := MEOH_SYNTHFT-04_PV, SP := MEOH_SYNTHFT-04_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  MEOH_SYNTHFT-04_ALARM_HI := 0.8910000000000001 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  MEOH_SYNTHFT-04_ALARM_LO := 0.7290000000000001 ;
+  MEOH_SYNTHFT-04_ALARM_HI := 0.902 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  MEOH_SYNTHFT-04_ALARM_LO := 0.738 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   MEOH_SYNTHFT-05_SP := 0.0 ;  (* graph basis: IA-MEOH-CH3SH normal 0.00 L/h )
@@ -158,10 +158,10 @@ END_VAR
   MEOH_TANKFT-02_ALARM_LO := 0.045000000000000005 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  MEOH_TANKFT-03_SP := 1.17 ;  (* graph basis: IA-MEOH-PROD normal 1.17 L/h )
+  MEOH_TANKFT-03_SP := 1.2 ;  (* graph basis: IA-MEOH-PROD normal 1.20 L/h )
   FB_PI_MEOH_TANKFT-03( PV := MEOH_TANKFT-03_PV, SP := MEOH_TANKFT-03_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  MEOH_TANKFT-03_ALARM_HI := 1.287 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  MEOH_TANKFT-03_ALARM_LO := 1.053 ;
+  MEOH_TANKFT-03_ALARM_HI := 1.32 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  MEOH_TANKFT-03_ALARM_LO := 1.08 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   MEOH_TANKFT-04_SP := 0.01 ;  (* graph basis: MEOH_TO_VDF normal 0.01 L/h )

@@ -141,7 +141,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 13,CRYO,AIR_RECEIVER,0,,-,180,no
 13,CRYO,CRYO_AHU,0,N2,-,338,no
 13,CRYO,CRYO_AHU_COND_CONDENSABLE,0,solute,-,22,no
-13,CRYO,CRYO_ASU,0,CO2 N2,-,1170,no
+13,CRYO,CRYO_ASU,0,CO2 N2 O2,N2/air to 19.5-23.5 % O2,1170,no
 13,CRYO,CRYO_CO2,0,CO2,-,690,no
 13,CRYO,CRYO_DED_COOL,0,,-,338,no
 13,CRYO,CRYO_H2,0,H2,"N2 to < 25 % LFL, then < 1 % H2",5520,no
@@ -173,7 +173,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 15,HEAT,Q4_B,0,,-,115,no
 16,WTR,BLACK_DIGEST,953,solids,-,229,yes
 16,WTR,BMED_UPW_POLISH,1733,,-,416,yes
-16,WTR,CATCH_TANK,2218806,,-,142004,yes
+16,WTR,CATCH_TANK,2231888,,-,142841,yes
 16,WTR,GREY_TREAT,440,solute,-,106,no
 16,WTR,GW_INTAKE,0,,-,58,no
 16,WTR,REMIN,120,solute,-,29,no

@@ -72,10 +72,10 @@
       "notes": " Design: notes/OIL_SECTOR.md.",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.1332,
+        "value": 0.4984,
         "unit": "kW",
         "status": "study",
-        "note": "ID blower on the 7.097 kg/d flue (IA-AB-FLUE): 0.1 L/s at the 300 C exit duct class (850 C chamber per X-SAN-01, cooled exit), 350 Pa at eta 0.35 - the ignition transformer and burner management ride the combustion panel at < 50 W. | X-ELS-02 load-basis (A-M-301)."
+        "note": "ID blower on the 26.551 kg/d flue (IA-AB-FLUE): 0.5 L/s at the 300 C exit duct class (850 C chamber per X-SAN-01, cooled exit), 350 Pa at eta 0.35 - the ignition transformer and burner management ride the combustion panel at < 50 W. | X-ELS-02 load-basis (A-M-301)."
       },
       "modules": [],
       "params": {
@@ -83,7 +83,7 @@
         "equipment": [
           {
             "item": "flue ID fan (variable-speed, high-temp class)",
-            "kW": 0.1332
+            "kW": 0.4984
           },
           {
             "item": "ignition transformer + BMS panel",
@@ -117,12 +117,12 @@
         "design": {
           "service": "afterburner flue duct to the knock-out (flue gas at 200 C class)",
           "kind": "flue",
-          "flow_kg_s": 0.0014,
+          "flow_kg_s": 0.0016,
           "duty_kW": null,
           "rho_kg_m3": 0.75,
-          "Q_m3_s": 0.0018,
+          "Q_m3_s": 0.0021,
           "v_m_s": 8.0,
-          "id_req_mm": 17.0,
+          "id_req_mm": 18.3,
           "DN": 100,
           "length_m": 20,
           "volume_m3": 0.133,
@@ -207,7 +207,7 @@
         ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset).",
         "rated_kW": 40.0,
-        "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.197 kWh/d average; hydrogen first: 0.0197 kg/d H2 at 30% on 33.33 kWh/kg LHV; C5-C10 cut as fallback, 190 kg reserve in PROD_C5_C10 (flow_graph/param/backup_fuel.py)",
+        "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.197 kWh/d average; hydrogen first: 0.0197 kg/d H2 at 30% on 33.33 kWh/kg LHV; C5-C10 cut as fallback, 191 kg reserve in PROD_C5_C10 (flow_graph/param/backup_fuel.py)",
         "rated_kW_basis": "drivers.json backup_gen_rated_kW: single governed source (D3). Standby genset at 125 % of the critical list in 5 kW steps (AQS-ELEC-007 / AQS-RED-001, NFPA 110 standby basis); written by write_graph power(), read by docs-authority/_power_sizing.py and o2_close.py.",
         "fuel_selection": [
           {
@@ -225,8 +225,8 @@
             "from": "PROD_C5_C10",
             "rule": "used when hydrogen is short; PROD_C5_C10 keeps a reserve that is not shipped",
             "normal_kg_d": 0.0,
-            "reserve_kg": 189.6,
-            "reserve_basis": "critical list 14.5 kW x 24 h x crit_autonomy_d 2 d = 694 kWh, at engine efficiency 30% on 12.2 kWh/kg; edge case: hydrogen store empty at the start of the outage"
+            "reserve_kg": 191.2,
+            "reserve_basis": "critical list 14.6 kW x 24 h x crit_autonomy_d 2 d = 700 kWh, at engine efficiency 30% on 12.2 kWh/kg; edge case: hydrogen store empty at the start of the outage"
           },
           {
             "priority": 3,
@@ -366,7 +366,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 206.770079,
+          "bypass_kg_d": 207.796527,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -601,7 +601,7 @@
         "presence": "present",
         "duty": "In 220.747 kg/d, out 220.747 kg/d, 1.660 kW. Sheet docs-authority/duties/CRYO_ASU.md.",
         "internals": "3 x 13X TSA beds, CO2 two-stage compressor and condenser, heated Ar getter; noble-gas inventories pass through",
-        "design_kPa": 17.5,
+        "design_kPa": 18.0,
         "relief_mm": 3.3,
         "relief_basis": {
           "case": "atmospheric",
@@ -616,37 +616,37 @@
           "vent_bore_req_mm": 6.4,
           "vent_DN": 25,
           "thermal_term": "envelope volume",
-          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 15.2 kPa (1.24 m full at SG 1.25) = 17.5 kPa g (A-M-174)"
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 15.5 kPa (1.27 m full at SG 1.25) = 18.0 kPa g (A-M-174)"
         },
         "design": {
-          "feed_N2_kg_d": 196.652277,
-          "feed_CO2_kg_d": 21.581514,
-          "x_CO2": 0.06529300748782826,
-          "CO2_mol_per_cycle": 163.4591683708248,
-          "sorbent_kg_per_bed": 108.9727789138832,
+          "feed_N2_kg_d": 215.385525,
+          "feed_CO2_kg_d": 22.782648,
+          "x_CO2": 0.06308092059892817,
+          "CO2_mol_per_cycle": 172.55660077255166,
+          "sorbent_kg_per_bed": 115.03773384836778,
           "beds": 3,
-          "bed_D_mm": 414.3791015239308,
-          "bed_L_mm": 1243.1373045717921,
-          "regen_kW": 1.3993012919033552,
-          "blower_kW": 0.043957774772434344,
-          "co2_comp_kW": 0.08109776820114514,
-          "co2_chill_kW": 0.03284686447916667,
+          "bed_D_mm": 421.92825393409134,
+          "bed_L_mm": 1265.784761802274,
+          "regen_kW": 1.4771803673912494,
+          "blower_kW": 0.04803155443898941,
+          "co2_comp_kW": 0.08561132024900028,
+          "co2_chill_kW": 0.034674979305555555,
           "getter_kW": 0.1,
-          "total_kW": 1.6572036993561015,
+          "total_kW": 1.7454982213847947,
           "comp_stages": 4,
           "comp_ratio_per_stage": 2.114742526881128,
           "comp_T_out_C": 121.93064278721914,
           "expander_backup": {
-            "cold_kW": 0.08211716119791666,
+            "cold_kW": 0.08668744826388888,
             "T_out_C": -56.08836699924316,
-            "loop_kg_d": 219.44031618967603,
-            "shaft_kW": 0.21907433261240844,
-            "net_kW": 0.44182895075708484,
-            "COP": 0.18585735737145986,
-            "chiller_kW": 0.03284686447916667
+            "loop_kg_d": 231.6534178629956,
+            "shaft_kW": 0.23126706521810383,
+            "net_kW": 0.46641924479014757,
+            "COP": 0.1858573573714599,
+            "chiller_kW": 0.034674979305555555
           },
-          "H_mm": 1243,
-          "D_mm": 414
+          "H_mm": 1266,
+          "D_mm": 422
         },
         "size_mm": [
           300,
@@ -656,10 +656,10 @@
         "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "continuous_kw": {
-        "value": 1.6572,
+        "value": 1.7455,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-33 (A-M-175, AQS-DUTY-069): 13X TSA regeneration 1.40 + blower 0.044 + CO2 compressor 0.081 + condenser chiller 0.033 + Ar getter 0.10 kW; no cryogenic column (no air intake)."
+        "note": "X-MFG-33 (A-M-175, AQS-DUTY-069): 13X TSA regeneration 1.48 + blower 0.048 + CO2 compressor 0.086 + condenser chiller 0.035 + Ar getter 0.10 kW; no cryogenic column (no air intake)."
       },
       "internals": "3 x 13X TSA beds, CO2 two-stage compressor and condenser, heated Ar getter; noble-gas inventories pass through"
     },
@@ -677,8 +677,8 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "store_kg": 88.515,
-        "store_water_volume_m3": 0.0953,
+        "store_kg": 90.437,
+        "store_water_volume_m3": 0.0974,
         "design": {
           "P_design_MPa": 2.2,
           "S_MPa": 115.0,
@@ -691,7 +691,7 @@
           "banks": [
             {
               "bank": "main",
-              "V_m3": 0.0953,
+              "V_m3": 0.0974,
               "tubes": 4,
               "halves": 2
             }
@@ -777,16 +777,16 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.9325,
+        "value": 0.9434,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-36 (A-M-169): 11.33 kg/d x 1.97 kWh/kg; peak 2.80 kW over the run hours."
+        "note": "X-MFG-36 (A-M-169): 11.47 kg/d x 1.97 kWh/kg; peak 2.83 kW over the run hours."
       },
       "modules": [],
       "params": {
         "presence": "present",
         "store_kg": 17,
-        "store_basis": "need: 7.0 kg dark-hours buffer (9.36 kg/d x (1 - 6/24)) + 9.6 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
+        "store_basis": "need: 7.1 kg dark-hours buffer (9.49 kg/d x (1 - 6/24)) + 9.6 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
         "store_water_volume_m3": 1.14,
         "design": {
           "P_design_MPa": 22.0,
@@ -825,58 +825,58 @@
         ],
         "size_note": "L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167)",
         "compressor_design": {
-          "H2_kg_d": 11.333083,
+          "H2_kg_d": 11.465147,
           "n_stages": 5,
           "T_limit_C": 135.0,
           "ratio_per_stage": 1.8205642030260802,
           "kWh_per_kg": 1.974725678896425,
-          "P_avg_kW": 0.9324887508818555,
-          "P_peak_kW": 2.7974662526455667,
+          "P_avg_kW": 0.9433550080509294,
+          "P_peak_kW": 2.8300650241527885,
           "stages": [
             {
               "stage": 1,
               "P_in_bar": 10.0,
               "P_out_bar": 18.2056420302608,
               "T_out_C": 125.22502918535349,
-              "intercooler_W": 507.71342866045075,
-              "swept_cm3": 125.01935524013318,
-              "diaphragm_D_mm": 325.7602256763204
+              "intercooler_W": 513.6297945992349,
+              "swept_cm3": 126.47620119550409,
+              "diaphragm_D_mm": 327.6527641981131
             },
             {
               "stage": 2,
               "P_in_bar": 18.2056420302608,
               "P_out_bar": 33.14454017339987,
               "T_out_C": 125.22502918535349,
-              "intercooler_W": 507.71342866045075,
-              "swept_cm3": 68.67066540819063,
-              "diaphragm_D_mm": 241.43212539757465
+              "intercooler_W": 513.6297945992349,
+              "swept_cm3": 69.47088215031341,
+              "diaphragm_D_mm": 242.83475089233718
             },
             {
               "stage": 3,
               "P_in_bar": 33.14454017339987,
               "P_out_bar": 60.34176336545163,
               "T_out_C": 125.22502918535349,
-              "intercooler_W": 507.71342866045075,
-              "swept_cm3": 37.71944175000726,
-              "diaphragm_D_mm": 178.93366525325104
+              "intercooler_W": 513.6297945992349,
+              "swept_cm3": 38.1589850195018,
+              "diaphragm_D_mm": 179.97319932661523
             },
             {
               "stage": 4,
               "P_in_bar": 60.34176336545163,
               "P_out_bar": 109.85605433061177,
               "T_out_C": 125.22502918535349,
-              "intercooler_W": 507.71342866045075,
-              "swept_cm3": 20.71854521104572,
-              "diaphragm_D_mm": 132.61390342415518
+              "intercooler_W": 513.6297945992349,
+              "swept_cm3": 20.959977657516948,
+              "diaphragm_D_mm": 133.38433793694585
             },
             {
               "stage": 5,
               "P_in_bar": 109.85605433061178,
               "P_out_bar": 200.0,
               "T_out_C": 125.22502918535349,
-              "intercooler_W": 507.71342866045075,
-              "swept_cm3": 11.380288141779374,
-              "diaphragm_D_mm": 98.28473225818323
+              "intercooler_W": 513.6297945992349,
+              "swept_cm3": 11.512902221562955,
+              "diaphragm_D_mm": 98.85572781639331
             }
           ],
           "units": 2,
@@ -1003,9 +1003,9 @@
         "o2_gap": {
           "hdr_short_kg_d": 0.0,
           "system_short_kg_d": 0.0,
-          "system_surplus_kg_d": 22.8843,
-          "src_kg_d": 74.9679,
-          "hdr_draw_kg_d": 10.2836,
+          "system_surplus_kg_d": 6.2464,
+          "src_kg_d": 77.7845,
+          "hdr_draw_kg_d": 29.7381,
           "direct_draw_kg_d": 41.8,
           "basis": "A-M-230 (D-O2): H2O_ELYZ restored \u2014 sources IA-ELY-O2 (PEM electrolyser, the O2 source) + S87 (crew-duty bed, A-M-229) + IA-ASU-O2 (recovered combustion excess); S02/S50 draw directly on CRYO_O2 (Rev AC re-home), the rest via HDR_O2",
           "note": "reported ledger, not an assert (A-M-228 discipline kept): surplus carried by IA-O2-PROD/IA-O2-SHIP"
@@ -1099,10 +1099,10 @@
       "notes": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)",
       "enabled": true,
       "continuous_kw": {
-        "value": 21.4447,
+        "value": 21.7473,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-12 TF: 9.36 kg/d H2 x 55.0 kWh/kg / 24 h; rated 85.8 kW on a 6.0 h PV window."
+        "note": "X-PAR-12 TF: 9.49 kg/d H2 x 55.0 kWh/kg / 24 h; rated 87.0 kW on a 6.0 h PV window."
       },
       "modules": [],
       "params": {
@@ -1126,10 +1126,10 @@
           "adequate": true
         },
         "stack_heat_kw": {
-          "value": 6.0825,
+          "value": 6.1683,
           "unit": "kW",
           "status": "study",
-          "note": "X-PAR-12 TF: 6.08 kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b."
+          "note": "X-PAR-12 TF: 6.17 kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b."
         },
         "sec3_material": {
           "mat": "PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family",
@@ -1664,10 +1664,10 @@
       "notes": " Duty: notes/POWER_DUTIES.md.",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.6866,
+        "value": 0.6598,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: Q4-bus lift S44 2.1972 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.6866 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317)."
+        "note": "X-ELS-02: Q4-bus lift S44 2.1114 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.6598 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317)."
       },
       "modules": [],
       "params": {
@@ -1678,14 +1678,14 @@
         "units_installed": 2,
         "redundancy": "2 x 100 % (X-RED-07)",
         "design": {
-          "lift_kW_th": 2.1972,
-          "electric_kW": 0.6866,
+          "lift_kW_th": 2.1114,
+          "electric_kW": 0.6598,
           "cop": 3.2,
           "modules": 2,
           "redundancy": "2 x 100 % (X-RED-07)",
           "module_kW_th": 2.2,
           "source_area_m2": 0.22,
-          "condenser_area_m2": 0.289,
+          "condenser_area_m2": 0.286,
           "hx_class": "brazed plate, U 2.0 kW/m2 K at 5 K approach (PERRY9)",
           "cop_basis": "graph S44/SF-GEO_HP; study COP 3.43 at 285 K (AQS-HEAT-STUDY-002 sec. 6, KAVANAUGH2014)",
           "material": "316L plates, R410A-class refrigerant, propylene-glycol brine source"
@@ -2207,7 +2207,7 @@
           "rho_kg_m3": 1.2041,
           "Q_m3_s": 0.0003,
           "v_m_s": 8.0,
-          "id_req_mm": 7.1,
+          "id_req_mm": 7.4,
           "DN": 25,
           "length_m": 20,
           "volume_m3": 0.0045,
@@ -2327,12 +2327,12 @@
       },
       "modules": [],
       "params": {
-        "energy_kwh_ideal_study": 266.3,
-        "energy_kwh_recoverable_study": 213.1,
+        "energy_kwh_ideal_study": 268.6,
+        "energy_kwh_recoverable_study": 214.9,
         "ref": "AQS-ESS-001",
-        "volume_m3_m1": 2700.0,
-        "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 3056.0,
+        "volume_m3_m1": 2720.0,
+        "head_m_m1": 36.25,
+        "vs_znbr2_kwh": 3073.0,
         "fraction_of_znbr2_study": 0.07,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
@@ -2340,20 +2340,20 @@
         "backup_basis": {
           "role": "diverse N+1 backup of ZNBR2 (night store); third source FUEL_CELL",
           "standard": "NFPA 111 Level 1, Class X",
-          "critical_kW": 14.46,
+          "critical_kW": 14.58,
           "class_hours": 14.0,
-          "energy_kWh_bus": 202.4,
-          "head_m": 36.21,
+          "energy_kWh_bus": 204.1,
+          "head_m": 36.25,
           "eta_turbine_generator": 0.8,
           "eta_pump_motor": 0.85,
           "round_trip": 0.68,
-          "upper_reservoir_m3": 2700.0,
-          "rated_kW_discharge": 14.46,
-          "recharge_kW_over_PV_window": 49.6,
+          "upper_reservoir_m3": 2720.0,
+          "rated_kW_discharge": 14.58,
+          "recharge_kW_over_PV_window": 50.0,
           "A-M": "A-M-145",
           "Q": "Q-006 closed; Q-009 closed: water tower",
-          "upper": "3 reservoir levels x 3.06 m water over 367 m2, 2.0 cells per level",
-          "lower": "CATCH_TANK 9.17 m deep over 367 m2",
+          "upper": "3 reservoir levels x 3.08 m water over 367 m2, 2.0 cells per level",
+          "lower": "CATCH_TANK 9.23 m deep over 367 m2",
           "eta_net_with_penstock": 0.76
         },
         "size_mm": [
@@ -2419,14 +2419,14 @@
       "modules": [],
       "params": {
         "design": {
-          "water_kg_d": 26.6522,
+          "water_kg_d": 27.0455,
           "sources": "IA-MEOH-H2O (synthesis loop) + S81 (fuel cell)",
-          "condensing_kW": 0.7079,
+          "condensing_kW": 0.7184,
           "U_kW_m2K": 1.2,
           "LMTD_K": 19.6,
-          "area_m2": 0.0301,
+          "area_m2": 0.0306,
           "tube": "1 x 10 mm x 1 m coil",
-          "drum_L": 71.19,
+          "drum_L": 72.24,
           "D_mm": 400,
           "H_mm": 600,
           "to": "condensate to ROOF_TANK (IA-MEOH-COND)",
@@ -2797,13 +2797,13 @@
         "presence": "present",
         "trade_statement": {
           "exports_kg_d": {
-            "IA-N2-VENT": 3.1,
+            "IA-N2-VENT": 20.064,
             "IA-NA-PURGE": 4.394,
             "IA-C5-SHIP": 7.04,
             "IA-C11-SHIP": 1.512,
             "IA-C19-SHIP": 2.218,
-            "IA-O2-SHIP": 22.884,
-            "IA-MEOH-SHIP": 28.029,
+            "IA-O2-SHIP": 6.246,
+            "IA-MEOH-SHIP": 28.729,
             "IA-GYPSUM-SHIP": 0.576,
             "IA-CL2-SHIP": 39.419,
             "IA-CA-CL2-SHIP": 0.097,
@@ -2815,7 +2815,7 @@
             "IA-METAL-SHIP": 10.812
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 57.786,
+            "IA-H2O-MU": 58.812,
             "IA-NAOH-MU": 4.394,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
@@ -2836,7 +2836,7 @@
             "CA_HOPPER": 0.035,
             "FR_FINISH": 0.002
           },
-          "net_kg_d": -0.0,
+          "net_kg_d": 0.0,
           "residual_kg_d": 0.002,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
@@ -2855,17 +2855,17 @@
         "ref": "NFPA 37 / plant acid-gas practice",
         "design": {
           "duty": "flue, leach off-gas and nitric vents",
-          "gas_kg_d": 263.8392,
-          "Q_m3_s": 0.0025,
+          "gas_kg_d": 283.5339,
+          "Q_m3_s": 0.0027,
           "u_flood_m_s": 2.0195,
           "D_mm": 200,
           "packed_mm": 2303,
           "H_mm": 3803,
           "recirc_m3_h": 0.4775,
           "dP_Pa": 1171.034,
-          "fan_W": 5.96,
+          "fan_W": 6.4049,
           "pump_W": 32.5201,
-          "kW": 0.0385,
+          "kW": 0.0389,
           "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
         },
         "size_mm": [
@@ -2876,7 +2876,7 @@
         "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
       },
       "continuous_kw": {
-        "value": 0.0385,
+        "value": 0.0389,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 6 W, pump 33 W."
@@ -3179,8 +3179,8 @@
           "wall_mm": 3.0,
           "material": "SA-240 304L, welded"
         },
-        "genset_reserve_kg": 189.6,
-        "genset_reserve_basis": "BACKUP_GEN fallback fuel, not shipped: critical list 14.5 kW x 24 h x crit_autonomy_d 2 d = 694 kWh, at engine efficiency 30% on 12.2 kWh/kg; edge case: hydrogen store empty at the start of the outage"
+        "genset_reserve_kg": 191.2,
+        "genset_reserve_basis": "BACKUP_GEN fallback fuel, not shipped: critical list 14.6 kW x 24 h x crit_autonomy_d 2 d = 700 kWh, at engine efficiency 30% on 12.2 kWh/kg; edge case: hydrogen store empty at the start of the outage"
       }
     },
     {
@@ -3194,7 +3194,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 368.9871,
+        "value": 369.8149,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -3202,28 +3202,28 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 6052,
+        "count": 6086,
         "presence": "present",
-        "nameplate_kw": 3026,
-        "area_m2": 26574,
-        "balance_kWp": 1513,
+        "nameplate_kw": 3043,
+        "area_m2": 26712,
+        "balance_kWp": 1522,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            210000,
-            138000
+            180000,
+            162000
           ],
           "bays": [
-            35,
-            23
+            30,
+            27
           ],
-          "footprint_m2": 28980.0,
-          "extension_m2": 28548.0,
-          "roof_capacity_kWp": 3029.5,
+          "footprint_m2": 29160.0,
+          "extension_m2": 28728.0,
+          "roof_capacity_kWp": 3045.1,
           "perimeter_pathway_mm": 1829,
-          "arrays": 15,
-          "extension_load_kW": 99.18,
+          "arrays": 16,
+          "extension_load_kW": 99.63,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -3431,8 +3431,8 @@
         "count": 43,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2361.7,
-          "export_kWh_d_clear": 6548,
+          "export_peak_kW": 2360.6,
+          "export_kWh_d_clear": 6583,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -3462,13 +3462,13 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 183.0,
+          "bus_demand_kW": 183.8,
           "section_rating_A": 350,
-          "basis_A": 244.6,
+          "basis_A": 245.7,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
-          "critical_kW": 14.459999999999999,
+          "critical_kW": 14.58,
           "inverter_sections": 6,
           "rule": "X-RED-03, A-M-152; NEC 240.6, 0.9 pf, 125 % continuous"
         },
@@ -3858,25 +3858,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 218.2501,
+        "value": 219.4425,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.3 kW, charge 992.0 kW, 3056 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 219.4 kW, charge 997.4 kW, 3072 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 993,
-        "kWh": 3056,
+        "kW": 998,
+        "kWh": 3073,
         "presence": "present",
-        "charge_kW": 993,
-        "discharge_kW": 219,
+        "charge_kW": 998,
+        "discharge_kW": 220,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 43 hybrid inverters, 71.1 kWh and 23.1 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 43 hybrid inverters, 71.5 kWh and 23.2 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.747,
-          "purge_m3_h": 32.28,
+          "H2_m3_d": 7.789,
+          "purge_m3_h": 32.45,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1998.6
+          "electrode_area_m2": 2009.5
         },
         "size_mm": [
           1000,
@@ -4004,8 +4004,8 @@
         "equipment_id": "VCD-COMP-01",
         "type": "scroll or diaphragm",
         "sec_kWh_m3": "14-20",
-        "feed_m3_d": 0.3647,
-        "avg_kw": 0.2583,
+        "feed_m3_d": 0.3657,
+        "avg_kw": 0.2591,
         "status": "duty_issued",
         "size_mm": [
           1400,
@@ -4019,20 +4019,20 @@
           "machine": "MVC still stack",
           "modules": 2,
           "compressor": "scroll class (small-MVC)",
-          "hx_area_m2": 0.612,
-          "q_latent_kW": 8.574,
-          "feed_m3_d": 0.3647,
-          "distillate_m3_d": 0.3282,
+          "hx_area_m2": 0.614,
+          "q_latent_kW": 8.598,
+          "feed_m3_d": 0.3657,
+          "distillate_m3_d": 0.3291,
           "sec_kWh_m3": 17,
-          "duty_kW": 0.2583,
+          "duty_kW": 0.2591,
           "basis": "0.333 m3/d x 17 kWh/m3 / 24 h at the issued band midpoint (A-M-149)"
         }
       },
       "continuous_kw": {
-        "value": 0.2583,
+        "value": 0.2591,
         "unit": "kW",
         "status": "study",
-        "note": "0.365 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)"
+        "note": "0.366 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)"
       }
     },
     {
@@ -7811,27 +7811,27 @@
       "modules": [],
       "params": {
         "hvac": {
-          "light_kW": 25.122,
-          "vent_kW": 42.396,
-          "envelope_kW": 31.662,
-          "total_kW": 99.18,
-          "vent_L_s": 8564.4,
-          "Qh_kW": 29.544,
-          "Qc_kW": 175.167,
-          "slab_kW": 1.675,
-          "gains_kW": 35.828,
+          "light_kW": 25.281,
+          "vent_kW": 42.663,
+          "envelope_kW": 31.688,
+          "total_kW": 99.633,
+          "vent_L_s": 8618.4,
+          "Qh_kW": 29.59,
+          "Qc_kW": 175.851,
+          "slab_kW": 1.646,
+          "gains_kW": 36.054,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 445.723,
-          "peak_c_kW": 395.352
+          "peak_h_kW": 446.827,
+          "peak_c_kW": 396.811
         },
-        "footprint_m2": 28548.0,
+        "footprint_m2": 28728.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 99.180 kW. Sheet docs-authority/duties/EXT_HALL.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 99.632 kW. Sheet docs-authority/duties/EXT_HALL.md.",
         "size_mm": [
           186000,
           174000,
@@ -7840,10 +7840,10 @@
         "size_note": "building massing envelope (bounding box of the issued L-shape): EXT_HALL_E 162 x 174 m east extension + EXT_HALL_N 24 x 156 m north extension, 6 m eave, portal frames on the 6 m grid (31 x 29 bays, X-PAR-07, A-M-104; placement_seed blocks EXT_HALL_E/N are the authority). Conditioned footprint per params.footprint_m2; the fitout programme stays the duty-sheet open item."
       },
       "continuous_kw": {
-        "value": 99.1801,
+        "value": 99.6325,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 28548 m2; lighting 25.12 kW (IECC 2021 C405, 10 % lit), ventilation 42.40 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 31.66 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 29.5 kW and cooling 175.2 kW thermal average after internal gains 35.8 kW and slab edge 1.68 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 28728 m2; lighting 25.28 kW (IECC 2021 C405, 10 % lit), ventilation 42.66 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 31.69 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 29.6 kW and cooling 175.9 kW thermal average after internal gains 36.1 kW and slab edge 1.65 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       },
       "class": "building"
     },
@@ -8065,7 +8065,7 @@
         "design": {
           "service": "catalytic oxidation of waste CO and organics on a plant-oxygen bleed",
           "bed_C": 450,
-          "feed": "7.097 kg/d flue class carried from the AFTERBURNER duty (X-SAN-01)",
+          "feed": "6.57 kg/d waste class (NCG 5.0 + S11 0.8 + sanitation cake/biogas 0.77) with a 20.0 kg/d plant-O2 bleed at stoichiometric + 10 %, carried from the AFTERBURNER duty (X-SAN-01, A-M-452)",
           "trim_duty": "bed trim heater duty is sized at the locale design pass",
           "basis": "A-M-399"
         }
@@ -11569,10 +11569,10 @@
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Closed",
       "rate": {
-        "value": 340.115479,
+        "value": 341.141927,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
+        "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d. | X-PAR-02 TF: roof-tank shortfall +0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -11998,10 +11998,10 @@
       "forbidden": "Q1 flue in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": 2.1972,
+        "value": 2.1114,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-THM-01 R10b: GEO_HP lifts the Q4 bus deficit 2.197 kW (AQS-DUTY-010 dispatch: lift only on deficit) (A-M-259)."
+        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-THM-01 R10b: GEO_HP lifts the Q4 bus deficit 2.111 kW (AQS-DUTY-010 dispatch: lift only on deficit) (A-M-259)."
       },
       "from_sector_id": "GEO",
       "to_sector_id": "HEAT",
@@ -12620,7 +12620,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 117.42759,
+        "value": 136.882146,
         "unit": "kg/d",
         "status": "study",
         "note": "Flue includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: flue junction passes burner flue + dilution air (restored combustion-air path, STOICH IA-AB-AIR) (AQS-PAR-005)."
@@ -12642,10 +12642,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 14.050492,
+        "value": 13.810366,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: bound O2 into CO2 (KO CO2 cut keeps the chemistry basis) (AQS-PAR-005)."
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: KO CO2 cut: the Rev N base is sized to the DUTY-008 15.0 kg/d flue-CO2 duty (full NCG combustion), so the increment counts only burner carbon outside that basis - SiC CO (S11 farm trim stays under the Rev N +0.554 farm-trim allowance; sanitation CO2 rides IA-ASU-CO2 via the X-SAN-01 deltas) (A-M-452) (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -12691,10 +12691,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 917.123291,
+        "value": 922.134158,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.3 m3/h holds H2 at 25 % LFL: HER 6.60 + open-circuit 1.15 m3/d H2 on 4365 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.5 m3/h holds H2 at 25 % LFL: HER 6.63 + open-circuit 1.16 m3/d H2 on 4389 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -12714,7 +12714,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 917.123291,
+        "value": 922.134158,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -12833,7 +12833,7 @@
       "forbidden": "HDR_H2, potable",
       "claim_status": null,
       "rate": {
-        "value": 44.257647,
+        "value": 45.218655,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-MeOH-001: 5 kg/d MeOH mid \u00d7 1.375 kg CO2/kg MeOH; surplus-H2 path | X-PAR-12 TF: cold-box CO2 to methanol by difference (AQS-PAR-005)."
@@ -12862,7 +12862,7 @@
       "forbidden": "HDR_O2, continuous dump",
       "claim_status": null,
       "rate": {
-        "value": 6.513355,
+        "value": 6.645419,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-MeOH-001: 5 kg/d MeOH mid \u00d7 0.188 kg H2/kg; priority after PEM/GEN | X-PAR-12 TF: CO2 + 3 H2 (AQS-PAR-005)."
@@ -12888,7 +12888,7 @@
       "forbidden": "potable, CATCH",
       "claim_status": null,
       "rate": {
-        "value": 34.508502,
+        "value": 35.208197,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-MeOH-001 mid synth ~2\u20138 kg/d on surplus H2 | X-PAR-12 TF: -> CH3OH (mass closed) (AQS-PAR-005)."
@@ -13107,7 +13107,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 33.167875,
+        "value": 35.984533,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003)."
@@ -15810,7 +15810,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 368.9871,
+        "value": 369.8149,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -15930,10 +15930,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 206.770079,
+        "value": 207.796527,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. | X-PAR-02 TF: roof-tank shortfall +0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -16026,10 +16026,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 7.096878,
+        "value": 26.551434,
         "unit": "kg/d",
         "status": "study",
-        "note": "Includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: burner mass balance: NCG 5.000 + S11 0.800 + digester gas 0.099 + cake 0.67 + combustion O2 0.528 (oxidised to CO2/H2O, mass through) (AQS-PAR-005)."
+        "note": "Includes the silicon-carbide CO. | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: burner mass balance: NCG 5.000 + S11 0.800 + digester gas 0.099 + cake 0.67 + combustion O2 19.983 (oxidised to CO2/H2O, mass through) (AQS-PAR-005)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "GAS",
@@ -16488,7 +16488,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 263.641098,
+        "value": 283.33578,
         "unit": "kg/d",
         "status": "study",
         "note": "Knockout passes the added CO mass. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: knockout passes the flue less the CO2 cut S67B (X-SAN-01 quench water and the leach vent ride the inputs) (AQS-PAR-005)."
@@ -16645,7 +16645,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 19.401138,
+        "value": 19.794516,
         "unit": "kg/d",
         "status": "study",
         "note": "One water per methanol. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: + H2O (AQS-PAR-005)."
@@ -17574,10 +17574,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 196.77004,
+        "value": 197.796488,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
+        "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw. | X-PAR-02 TF: roof-tank shortfall +0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -18053,7 +18053,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 221.583096,
+        "value": 221.343396,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. +24.31 kg/d flue quench water (X-SAF-07). | X-SAN-01 Rev B: +0.6780 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: bound O2 into water, less the H no longer burned (AQS-PAR-005)."
@@ -18244,10 +18244,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 3.09978,
+        "value": 20.064432,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: retired, no vent | X-PAR-12 TF: cold-box N2 surplus exported at the dock boundary (D-DOCK 2026-10-19; BH vent path re-opened with D-AIR): available 195.089 less header need 191.989 kg/d (AQS-PAR-005)."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: retired, no vent | X-PAR-12 TF: cold-box N2 surplus exported at the dock boundary (D-DOCK 2026-10-19; BH vent path re-opened with D-AIR): available 212.053 less header need 191.989 kg/d (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "DOCK",
@@ -18335,7 +18335,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 26.652161,
+        "value": 27.045539,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: condensate to roof (AQS-PAR-005)."
@@ -19830,10 +19830,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 199.595479,
+        "value": 200.621927,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
+        "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. | X-PAR-02 TF: roof-tank shortfall +0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "WTR",
@@ -19930,7 +19930,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.9325,
+        "value": 0.9434,
         "unit": "kW",
         "status": "study",
         "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
@@ -19956,7 +19956,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.6866,
+        "value": 0.6598,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02 load-basis (A-M-275). Feed equal to GEO_HP continuous_kw."
@@ -20454,10 +20454,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.528278,
+        "value": 19.982834,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: 1.10 x (CO 0.000 + organics 0.480); S11 is 99.8 % water (AQS-PAR-005)."
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: 1.10 x (NCG 5.000 x 3.633 stoich + CO 0.000 + S11 dry organics 0.0009); full combustion of the AQS-DUTY-008 C1-C4 fuel - the heat-ladder fuel basis (A-M-452) (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "OIL",
@@ -20513,7 +20513,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 57.785915,
+        "value": 58.812363,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
@@ -21007,7 +21007,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0385,
+        "value": 0.0389,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164)."
@@ -21386,10 +21386,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 21.581514,
+        "value": 22.782648,
         "unit": "kg/d",
         "status": "study",
-        "note": "The added flue mass leaves with the CO2 cut. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: genset bound O2 into CO2, less the carbon of the fuel no longer burned (AQS-PAR-005)."
+        "note": "The added flue mass leaves with the CO2 cut. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: genset bound O2 into CO2 + the NCG combustion CO2 the KO cut does not capture (15.011 formed - 13.810 cut); both CO2 routes land in the cold box so no flue carbon leaves uncounted (A-M-452) (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21415,10 +21415,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 196.652277,
+        "value": 215.385525,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: scrubber gas outlet by difference: in 459.864 (flue 263.64 + leach vent 195.02 + genset/ties 1.198) less water 221.58, nutrients 20.05, CO2 21.58 \u2014 BH routing to the cold box (D-AIR restored the outlets) (AQS-PAR-005)."
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: scrubber gas outlet by difference: in 479.559 (flue 283.34 + leach vent 195.02 + genset/ties 1.198) less water 221.34, nutrients 20.05, CO2 22.78 \u2014 BH routing to the cold box (D-AIR restored the outlets) (AQS-PAR-005)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -21427,8 +21427,8 @@
       "gap_flags": [],
       "notes": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope",
       "composition": {
-        "N2": 0.9997,
-        "O2": 0.0003
+        "N2": 0.9915,
+        "O2": 0.0085
       }
     },
     {
@@ -21445,7 +21445,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 196.588594,
+        "value": 213.553246,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: N2 out = N2 in (AQS-PAR-005)."
@@ -21474,7 +21474,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.063683,
+        "value": 1.832279,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003). | X-PAR-12 TF: O2 out = O2 in (combustion excess) (AQS-PAR-005)."
@@ -21504,7 +21504,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 21.581514,
+        "value": 22.782648,
         "unit": "kg/d",
         "status": "study",
         "note": "Cold box passes the added CO2. | X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. | X-PAR-12 TF: CO2 out = CO2 in (AQS-PAR-005)."
@@ -21662,7 +21662,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.669 kg/d (SANDER2015) (AQS-PAR-003)."
+        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.670 kg/d (SANDER2015) (AQS-PAR-003)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "CRYO",
@@ -21699,7 +21699,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 1.6572,
+        "value": 1.7455,
         "unit": "kW",
         "status": "study",
         "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
@@ -21725,7 +21725,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 83.620295,
+        "value": 84.800421,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: water split (AQS-PAR-005)."
@@ -21754,10 +21754,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 9.357675,
+        "value": 9.489739,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: H2 demand net of the live EW Faraday cathode credit: genset 0.02 + fuel cell 4.80 + methanol 6.51 - S64 1.975 kg/d (A-M-255 credit; H2 side governs, O2 headroom documented in A-M-272) (AQS-PAR-005)."
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: H2 demand net of the live EW Faraday cathode credit: genset 0.02 + fuel cell 4.80 + methanol 6.65 - S64 1.975 kg/d (A-M-255 credit; H2 side governs, O2 headroom documented in A-M-272) (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
@@ -21783,7 +21783,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 74.26262,
+        "value": 75.310682,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: O2 = 7.937 x H2 (AQS-PAR-005)."
@@ -21812,7 +21812,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 21.4447,
+        "value": 21.7473,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
@@ -21839,7 +21839,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 22.884294,
+        "value": 6.246396,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
@@ -21869,7 +21869,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 22.884294,
+        "value": 6.246396,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
@@ -22245,10 +22245,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 6.0825,
+        "value": 6.1683,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 (heat lane) + A-M-230: X-PAR-12 stack heat 7.30 kW routed to the Q4 water header \u2014 replaces the retired BH SQ-H2O_ELYZ -> HEAT_SINK booking; 45-60 C class, Q4 feed per the S53/S54 pattern. | X-PAR-12 TF: stack heat 6.08 kW routed to Q4_BUS (Rev AC heat-study wiring; BH HEAT_SINK retired), closes the ELY energy balance (A-M-230, restamped R10b)."
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 (heat lane) + A-M-230: X-PAR-12 stack heat 7.30 kW routed to the Q4 water header \u2014 replaces the retired BH SQ-H2O_ELYZ -> HEAT_SINK booking; 45-60 C class, Q4 feed per the S53/S54 pattern. | X-PAR-12 TF: stack heat 6.17 kW routed to Q4_BUS (Rev AC heat-study wiring; BH HEAT_SINK retired), closes the ELY energy balance (A-M-230, restamped R10b)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HEAT"
@@ -22423,7 +22423,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 28.028914,
+        "value": 28.728609,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: methanol product by difference (AQS-PAR-005)."
@@ -22452,7 +22452,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 28.028914,
+        "value": 28.728609,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: shipped (AQS-PAR-005)."
@@ -22874,7 +22874,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 99.1801,
+        "value": 99.6325,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
@@ -27492,19 +27492,19 @@
         "PUMPED_HYDRO"
       ],
       "need_kw": {
-        "value": 218.25,
+        "value": 219.44,
         "unit": "kW",
         "status": "study",
-        "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 35x23 bays, ext 99.18 kW)."
+        "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 30x27 bays, ext 99.63 kW)."
       },
       "target_kw": {
-        "value": 545.63,
+        "value": 548.61,
         "unit": "kW",
         "status": "study",
         "note": "write_graph power() live derivation: mean-day average generation of the installed array = pv_oversize_factor x balancing energy / 24 (= 2.5 x need at the drivers basis; A-M-234 formula, D75)."
       },
       "pv_module_kw": 0.5,
-      "pv_count": 6052,
+      "pv_count": 6086,
       "znbr_module_kw": 60.0,
       "znbr_count": 43,
       "rect_count": 1,

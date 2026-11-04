@@ -30,9 +30,9 @@ Table 3.1. Floor loads (kPa)
 | L0 | 0.0 | 9.35 | 0.00 | 6.00 | 20.82 |
 | L1 | 6.0 | 9.11 | 0.00 | 4.79 | 18.59 |
 | L2 | 10.8 | 7.20 | 0.00 | 4.79 | 16.31 |
-| R1 | 16.8 | 7.20 | 27.47 | 0.00 | 48.54 |
-| R2 | 22.8 | 7.20 | 27.47 | 0.00 | 48.54 |
-| R3 | 28.8 | 7.20 | 27.47 | 0.00 | 48.54 |
+| R1 | 16.8 | 7.20 | 27.63 | 0.00 | 48.76 |
+| R2 | 22.8 | 7.20 | 27.63 | 0.00 | 48.76 |
+| R3 | 28.8 | 7.20 | 27.63 | 0.00 | 48.76 |
 | ROOF | 34.8 | 7.37 | 0.00 | 0.96 | 10.38 |
 
 ## 4. Beams
@@ -47,9 +47,9 @@ Table 4.1. Beams
 | L0 | 281 | 360 x 180 x 12 x 6 | 565 | 450 x 225 x 15 x 8 | 565 | 6.6 (L/360 = 16.7) |
 | L1 | 251 | 340 x 170 x 12 x 6 | 504 | 430 x 215 x 15 x 8 | 515 | 6.1 (L/360 = 16.7) |
 | L2 | 220 | 330 x 165 x 11 x 6 | 443 | 420 x 210 x 14 x 7 | 454 | 7.0 (L/360 = 16.7) |
-| R1 | 655 | 480 x 240 x 16 x 8 | 1315 | 600 x 300 x 20 x 10 | 1324 | 9.6 (L/360 = 16.7) |
-| R2 | 655 | 480 x 240 x 16 x 8 | 1315 | 600 x 300 x 20 x 10 | 1324 | 9.6 (L/360 = 16.7) |
-| R3 | 655 | 480 x 240 x 16 x 8 | 1315 | 600 x 300 x 20 x 10 | 1324 | 9.6 (L/360 = 16.7) |
+| R1 | 658 | 480 x 240 x 16 x 8 | 1321 | 600 x 300 x 20 x 10 | 1324 | 9.7 (L/360 = 16.7) |
+| R2 | 658 | 480 x 240 x 16 x 8 | 1321 | 600 x 300 x 20 x 10 | 1324 | 9.7 (L/360 = 16.7) |
+| R3 | 658 | 480 x 240 x 16 x 8 | 1321 | 600 x 300 x 20 x 10 | 1324 | 9.7 (L/360 = 16.7) |
 | ROOF | 140 | 280 x 140 x 10 x 6 | 282 | 360 x 180 x 12 x 6 | 286 | 2.6 (L/360 = 16.7) |
 
 ## 5. Columns
@@ -61,17 +61,17 @@ Table 5.1. Columns
 | Level | KL m | Interior Pu kN | Interior b x t | Edge Pu | Edge b x t | Corner Pu | Corner b x t |
 |---|---|---|---|---|---|---|---|
 | ROOF | 6.0 | 374 | 150 x 10 (KL/r 105) | 187 | 150 x 10 (KL/r 105) | 93 | 150 x 10 (KL/r 105) |
-| R3 | 6.0 | 2121 | 250 x 10 (KL/r 61) | 1061 | 170 x 10 (KL/r 92) | 530 | 150 x 10 (KL/r 105) |
-| R2 | 6.0 | 3869 | 340 x 12 (KL/r 45) | 1934 | 230 x 10 (KL/r 67) | 967 | 170 x 10 (KL/r 92) |
-| R1 | 6.0 | 5616 | 400 x 14 (KL/r 38) | 2808 | 290 x 10 (KL/r 52) | 1404 | 200 x 10 (KL/r 77) |
-| L2 | 4.8 | 6203 | 400 x 14 (KL/r 30) | 3102 | 300 x 10 (KL/r 41) | 1551 | 190 x 10 (KL/r 65) |
-| L1 | 6.0 | 6873 | 430 x 15 (KL/r 35) | 3436 | 320 x 11 (KL/r 48) | 1718 | 220 x 10 (KL/r 70) |
-| L0 | 6.0 | 7622 | 460 x 16 (KL/r 33) | 3811 | 340 x 12 (KL/r 45) | 1906 | 230 x 10 (KL/r 67) |
-| L-1 | 6.0 | 8324 | 470 x 16 (KL/r 32) | 4162 | 340 x 12 (KL/r 45) | 2081 | 240 x 10 (KL/r 64) |
+| R3 | 6.0 | 2129 | 250 x 10 (KL/r 61) | 1065 | 170 x 10 (KL/r 92) | 532 | 150 x 10 (KL/r 105) |
+| R2 | 6.0 | 3885 | 340 x 12 (KL/r 45) | 1942 | 230 x 10 (KL/r 67) | 971 | 170 x 10 (KL/r 92) |
+| R1 | 6.0 | 5640 | 400 x 14 (KL/r 38) | 2820 | 290 x 10 (KL/r 52) | 1410 | 200 x 10 (KL/r 77) |
+| L2 | 4.8 | 6227 | 400 x 14 (KL/r 30) | 3114 | 300 x 10 (KL/r 41) | 1557 | 190 x 10 (KL/r 65) |
+| L1 | 6.0 | 6897 | 430 x 15 (KL/r 35) | 3448 | 320 x 11 (KL/r 48) | 1724 | 220 x 10 (KL/r 70) |
+| L0 | 6.0 | 7646 | 460 x 16 (KL/r 33) | 3823 | 340 x 12 (KL/r 45) | 1912 | 230 x 10 (KL/r 67) |
+| L-1 | 6.0 | 8348 | 470 x 16 (KL/r 32) | 4174 | 340 x 12 (KL/r 45) | 2087 | 240 x 10 (KL/r 64) |
 
 ## 6. Lateral bracing
 
-The design base shear is 1653 kN, governed by earthquake (AQS-BLD-014). There are two braced lines in each direction, with two braced bays in each line. The diagonals act in tension only and are set at 45 degrees. Each diagonal carries a tension T of 584 kN and needs an area of at least 1882 mm2 (AISC 360-22 D2), which a welded box of about 120 mm provides. The overturning load on the columns of the braced bays is carried forward to task X-BLD-03.
+The design base shear is 1664 kN, governed by earthquake (AQS-BLD-014). There are two braced lines in each direction, with two braced bays in each line. The diagonals act in tension only and are set at 45 degrees. Each diagonal carries a tension T of 588 kN and needs an area of at least 1894 mm2 (AISC 360-22 D2), which a welded box of about 120 mm provides. The overturning load on the columns of the braced bays is carried forward to task X-BLD-03.
 
 ## 7. Result
 

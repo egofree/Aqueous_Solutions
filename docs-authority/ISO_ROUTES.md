@@ -290,7 +290,7 @@ Status. 396 positioned piped lines routed, 7874 m total. 15 piped lines wait on 
 | IA-AIR-IN | 50 | P5 | NORTH_DOCK | CRYO_ASU | 3200 | 4600 | -2750 | -7900 | 18.4 | 3 |
 | IA-NOX-CO2 | 50 | P2 | NOX_SCRUB | CRYO_ASU | 2600 | 13800 | 5250 | -7900 | 29.6 | 3 |
 | IA-NOX-N2 | 50 | P2 | NOX_SCRUB | CRYO_ASU | 2600 | 13800 | 5250 | -7900 | 29.6 | 3 |
-| IA-ASU-N2 | 15 | M1 | CRYO_ASU | CRYO_N2 | 1900 | -2100 | -250 | -1200 | 5.5 | 3 |
+| IA-ASU-N2 | 20 | M1 | CRYO_ASU | CRYO_N2 | 1900 | -2100 | -250 | -1200 | 5.5 | 3 |
 | IA-ASU-O2 | 15 | M1 | CRYO_ASU | CRYO_O2 | 1900 | -3100 | 3750 | -1200 | 9.9 | 3 |
 | IA-ASU-CO2 | 15 | M1 | CRYO_ASU | CRYO_CO2 | 1900 | -10600 | 5250 | -1200 | 18.9 | 3 |
 | IA-H2-AIR | 15 | M1 | H2_DRYER | CRYO_ASU | 700 | -10400 | -3750 | -1900 | 16.8 | 3 |

@@ -7600,5 +7600,23 @@
   "sensitivity": "adds one module and up to one container per stage",
   "replaced_by": null,
   "task": "X-LOC-05 (lake_boehmer locale design pass)"
+ },
+ {
+  "id": "A-M-452",
+  "value": "AFTERBURNER combustion basis: the NCG fuel (AQS-DUTY-010, 5.0 kg/d at the AQS-DUTY-008 C1-C4 mix) burns to completion - IA-AB-O2 = 1.10 x stoich = 19.983 kg/d, IA-AB-FLUE = oxidised inputs + combustion O2 = 26.551 kg/d, heat release 2.744 kW on the same fuel (HL-AFTERBURNER-Q1-A/B unchanged); the KO cut S67B keeps the Rev N base sized to the 15.0 kg/d flue-CO2 duty and the uncaptured NCG CO2 rides IA-NOX-CO2 to the cold box",
+  "units": "kg/d; kW",
+  "where": "flow_graph/param/o2_close.py combustion block; graph IA-AB-O2, IA-AB-FLUE, S67, S67B, IA-NOX-CO2, IA-ASU-O2; drivers OIL.afterburner-train.ncg_o2_stoich_kg_kg / ncg_co2_yield_kg_kg; CAT_OX design feed (X-LOC-09); docs-authority/duties/AFTERBURNER.md via regen",
+  "basis": "Physics-audit finding F-1/F-1b: the O2 edge (0.528 kg/d = 1.10 x a 3 %-organics proxy) and the pass-through flue (7.097 kg/d) contradicted the heat ladders, which already book full combustion of the 5.0 kg/d fuel (2.744 kW, 15.0 kg CO2/d). Stoich O2 per kg fuel = sum w (x + y/4) 32 / M = 3.633 (CH4 0.25, C2H4 0.25, C2H6 0.10, C3H6 0.25, C3H8 0.15 mass; per-species 4.000 / 3.429 / 3.733 / 3.429 / 3.636); CO2 yield 3.002 kg/kg (the DUTY-010 15.0 / 3.002 fuel basis); 10 % excess per TURNS2012 (combustion_excess_O2 driver). The sanitation cake/biogas O2 stays on the X-SAN-01 Rev B deltas (A-M-118): the 0.3195 kg/d constant that also sat in the O2 edge counted it twice, and its CO2/water were likewise double-booked - both removed. O2 ledger headroom: IA-O2-PROD falls 22.884 to about 6.3 kg/d (draw +19.455, excess 1.832 recovered on IA-ASU-O2, methanol chain +1.085 electrolyser O2 from the now-counted flue carbon) and stays positive, so the export outlet survives; A-M-272's 27.2 kg/d surplus figure is superseded by this entry",
+  "sensitivity": "O2 draw scales 3.997 kg/kg NCG incl. excess; PROD_O2 export moves about -17 kg/d against the graph as committed and stays positive; a leaner NCG case (partial oxidation) would move the PROD_O2 export, the methanol CO2 feed and the ladder heat together - the three are one basis and change together",
+  "replaced_by": "burner commissioning flue-gas analysis at 850 C (dry O2 about 9 %, CO within the EU IED CO class) on the as-built fuel mix",
+  "task": "X-PAR-12 (physics-audit F-1/F-1b combustion-basis fix, 2026-11-03)",
+  "files": [
+   "flow_graph/param/o2_close.py",
+   "flow_graph/param/drivers.json",
+   "flow_graph/param/stub_activation.py",
+   "flow_graph/plant_flow_graph.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "commissioning flue-gas analysis at the afterburner run: dry O2 near 9 %, CO2 near 11 vol% of S67, CO within the EU IED class, against the A-M-452 species ledger"
  }
 ]

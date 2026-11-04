@@ -49,7 +49,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-47 | seal: mechanical seal, single (EN 12756 x154) | 154 | 31 | 20 % min 2 |
 | building block | OF-50 | valve: isolation valve (DN15 x258; DN50 x22) | 280 | 14 | 5 % min 1 |
 | building block | OF-51 | valve: isolation valve (DN15 x32; DN50 x10) | 42 | 3 | 5 % min 1 |
-| building block | OF-52 | valve: isolation valve (DN15 x176; DN50 x4; DN25 x4; DN20 x4) | 188 | 10 | 5 % min 1 |
+| building block | OF-52 | valve: isolation valve (DN15 x174; DN20 x6; DN50 x4; DN25 x4) | 188 | 10 | 5 % min 1 |
 | building block | OF-53 | valve: isolation valve (DN15 x56; DN50 x34) | 90 | 5 | 5 % min 1 |
 | building block | OF-54 | valve: check valve (DN15 x12; DN50 x2) | 14 | 1 | 5 % min 1 |
 | building block | OF-55 | valve: check valve (DN15 x58; DN50 x4) | 62 | 4 | 5 % min 1 |
@@ -163,7 +163,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | motor | MF-28 | hermetic induction (scroll) 18.5 kW hermetic 480 V 3-ph | 8 | 1 | 5 % min 1 |
 | process insert | BMED_ACID | one stack of bipolar, anion and cation membranes (AQS-DUTY-068 spare stack is installed; this is the membrane set to rebuild it) | 1 | 1 | one charge or set |
 | process insert | BMED_UPW_POLISH | RO flat-sheet set and one EDI stack (AQS-DUTY-070) | 1 | 1 | one charge or set |
-| process insert | CRYO_ASU | 13X sorbent charge, 109 kg (AQS-DUTY-069) | 1 | 1 | one charge or set |
+| process insert | CRYO_ASU | 13X sorbent charge, 115 kg (AQS-DUTY-069) | 1 | 1 | one charge or set |
 | process insert | CRYO_H2 | compressor diaphragm set, one per stage (AQS-DUTY-067) | 1 | 1 | one charge or set |
 | process insert | H2_PURIFIER | deoxo, guard and TSA bed charges (AQS-DUTY-066) | 1 | 1 | one charge or set |
 | process insert | MEOH_SYNTH | Cu/ZnO/Al2O3 catalyst charge (AQS-DUTY-062) | 1 | 1 | one charge or set |

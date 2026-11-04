@@ -56,7 +56,7 @@
   "banks": [
    {
     "bank": "main",
-    "V_m3": 0.0953,
+    "V_m3": 0.0974,
     "tubes": 4,
     "halves": 2
    }

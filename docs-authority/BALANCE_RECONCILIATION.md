@@ -51,12 +51,12 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | export | IA-CR-VENT | chlorinator CO (fuel-gas class export) | 0.202 |
 | export | IA-GYPSUM-SHIP | fluorgypsum (anhydrite) cake byproduct | 0.576 |
 | export | IA-KROLL-CO | chlorinator CO (fuel-gas class export) | 0.585 |
-| export | IA-MEOH-SHIP | methanol shipped at the dock | 28.029 |
+| export | IA-MEOH-SHIP | methanol shipped at the dock | 28.729 |
 | export | IA-METAL-SHIP | surplus foundry metal export (pot-line p | 10.812 |
 | export | IA-MO-VENT | chlorinator CO2 (vent class) | 0.043 |
-| export | IA-N2-VENT | nitrogen vent | 3.1 |
+| export | IA-N2-VENT | nitrogen vent | 20.064 |
 | export | IA-NA-PURGE | sodium salt purge equal to the make-up m | 4.394 |
-| export | IA-O2-SHIP | O2 cylinders shipped at the dock | 22.884 |
+| export | IA-O2-SHIP | O2 cylinders shipped at the dock | 6.246 |
 | export | IA-SHELL-EXPORT | spent foundry silica (solids return clas | 1.0 |
 | import | CA_HOPPER | mineral calcium carbonate (free-choice h | 0.035 |
 | import | FR_FINISH | phosphorus-FR finish (reagent manifest) | 0.002 |
@@ -67,7 +67,7 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | import | IA-CACL2-MU | CaCl2 brine concentrate (mining-waste cl | 0.152 |
 | import | IA-CAF2-MU | fluorspar make-up, acid-spar class >= 97 | 0.326 |
 | import | IA-CR2O3-MU | Cr2O3-equivalent chromite concentrate (d | 0.365 |
-| import | IA-H2O-MU | water make-up for H and O leaving as pro | 57.786 |
+| import | IA-H2O-MU | water make-up for H and O leaving as pro | 58.812 |
 | import | IA-H2SO4-MU | 98 wt% sulfuric acid make-up | 0.404 |
 | import | IA-MGCL2-MU | CaCl2-MgCl2 brine concentrate (mining-wa | 0.04 |
 | import | IA-MOO3-MU | MoO3-equivalent concentrate (dock import | 0.094 |
@@ -79,7 +79,7 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | import | NUT_AQUA | mineral nitrate solution to the raceway | 5.5 |
 | import | NUT_AQUA_BED | mineral nitrate solution to the media be | 1.0 |
 
-**Net trade: -0.000 kg/d** (exports 122.111 - imports 122.111); dock ledger residual +0.002 kg/d (reported, exempt per D-DOCK).
+**Net trade: +0.000 kg/d** (exports 123.137 - imports 123.137); dock ledger residual +0.002 kg/d (reported, exempt per D-DOCK).
 
 ## 4. Moves outside measurement tolerance (2 % of the rate, 1 g/d floor); must be empty
 

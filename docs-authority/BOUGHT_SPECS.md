@@ -93,14 +93,14 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
 | OF-48 | pipe clamp | PP clamp with EPDM liner, MSS SP-58 Type 7 | DN15 x5289; DN50 x537; DN20 x17; DN250 x7; DN32 x6; DN300 x4; DN200 x3 | 5863 | 116 | AL_POT_CL2: AQS-PIP-005 span count; AQUA_BYPASS: AQS-PIP-005 span count; AQUA_LOOP1: AQS-PIP-005 span count |  |
-| OF-49 | U-bolt with guide | 316 U-bolt, MSS SP-58 Type 24 | DN15 x1437; DN20 x25; DN25 x23; DN50 x7 | 1492 | 44 | C29_RECYCLE: AQS-PIP-005 span count; C29_TO_PYRO: AQS-PIP-005 span count; CO2_TO_FARM: AQS-PIP-005 span count |  |
+| OF-49 | U-bolt with guide | 316 U-bolt, MSS SP-58 Type 24 | DN15 x1432; DN20 x30; DN25 x23; DN50 x7 | 1492 | 44 | C29_RECYCLE: AQS-PIP-005 span count; C29_TO_PYRO: AQS-PIP-005 span count; CO2_TO_FARM: AQS-PIP-005 span count |  |
 ## 9. Valve datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
 | OF-50 | isolation valve | PVC-U true-union ball valve, MSS SP-122, EPDM seals | DN15 x258; DN50 x22 | 280 | 64 | AQUA_BYPASS: one at each end nozzle (assumed); AQUA_LOOP1: one at each end nozzle (assumed); AQUA_LOOP3: one at each end nozzle (assumed) |  |
 | OF-51 | isolation valve | PP ball valve with HDPE stub ends, ISO 16135 | DN15 x32; DN50 x10 | 42 | 13 | FOOD_HAB: one at each end nozzle (assumed); GALLEY_MEALS: one at each end nozzle (assumed); IA-AIR-IN: one at each end nozzle (assumed) |  |
-| OF-52 | isolation valve | 316L ball valve, ASME B16.34 Cl 150, RF flanged | DN15 x176; DN50 x4; DN25 x4; DN20 x4 | 188 | 40 | CO2_TO_FARM: one at each end nozzle (assumed); CRU_TO_TFE: one at each end nozzle (assumed); CRU_TO_VDF: one at each end nozzle (assumed) |  |
+| OF-52 | isolation valve | 316L ball valve, ASME B16.34 Cl 150, RF flanged | DN15 x174; DN20 x6; DN50 x4; DN25 x4 | 188 | 40 | CO2_TO_FARM: one at each end nozzle (assumed); CRU_TO_TFE: one at each end nozzle (assumed); CRU_TO_VDF: one at each end nozzle (assumed) |  |
 | OF-53 | isolation valve | CPVC true-union ball valve, MSS SP-122, FKM seals | DN15 x56; DN50 x34 | 90 | 24 | FIBER_SCRAP: one at each end nozzle (assumed); IA-ACID-01: one at each end nozzle (assumed); IA-BAG-01: one at each end nozzle (assumed) |  |
 | OF-54 | check valve | PP swing/ball check valve with HDPE stub ends, ISO 16137 | DN15 x12; DN50 x2 | 14 | 8 | IA-FLUE-QUENCH: pump discharge (assumed); IA-MEOH-H2O: pump discharge (assumed); IA-MEOH-REST: pump discharge (assumed) |  |
 | OF-55 | check valve | PVC-U true-union swing/ball check valve, EPDM seals | DN15 x58; DN50 x4 | 62 | 30 | DL_MET_TO_FEED: pump discharge (assumed); EW9_LIQUOR_TO_MO: pump discharge (assumed); IA-AQUA-TOPUP: pump discharge (assumed) |  |

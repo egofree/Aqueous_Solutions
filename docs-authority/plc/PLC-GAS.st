@@ -20,10 +20,10 @@ VAR
   H2_DRYERLT-01_PV : REAL ;  (* A-M-182 liquid height )
   H2_DRYERPT-01_PV : REAL ;  (* no design pressure on the graph )
   H2_DRYERTE-01_PV : REAL ;  (* design T 250.0 C )
-  NOX_SCRUBFT-01_PV : REAL ;  (* IA-NOX-H2O normal 9.23 L/h )
+  NOX_SCRUBFT-01_PV : REAL ;  (* IA-NOX-H2O normal 9.22 L/h )
   NOX_SCRUBFT-02_PV : REAL ;  (* IA-NOX-N normal 0.84 L/h )
-  NOX_SCRUBFT-03_PV : REAL ;  (* IA-NOX-CO2 normal 0.90 L/h )
-  NOX_SCRUBFT-04_PV : REAL ;  (* IA-NOX-N2 normal 8.19 L/h )
+  NOX_SCRUBFT-03_PV : REAL ;  (* IA-NOX-CO2 normal 0.95 L/h )
+  NOX_SCRUBFT-04_PV : REAL ;  (* IA-NOX-N2 normal 8.97 L/h )
   NOX_SCRUBLT-01_PV : REAL ;  (* A-M-182 liquid height )
   NOX_SCRUBPT-01_PV : REAL ;  (* no design pressure on the graph )
   NOX_SCRUBTE-01_PV : REAL ;  (* band by service )
@@ -111,10 +111,10 @@ END_VAR
   H2_DRYERTE-01_ALARM_LO := 225.0 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  NOX_SCRUBFT-01_SP := 9.23 ;  (* graph basis: IA-NOX-H2O normal 9.23 L/h )
+  NOX_SCRUBFT-01_SP := 9.22 ;  (* graph basis: IA-NOX-H2O normal 9.22 L/h )
   FB_PI_NOX_SCRUBFT-01( PV := NOX_SCRUBFT-01_PV, SP := NOX_SCRUBFT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  NOX_SCRUBFT-01_ALARM_HI := 10.153 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  NOX_SCRUBFT-01_ALARM_LO := 8.307 ;
+  NOX_SCRUBFT-01_ALARM_HI := 10.142000000000001 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  NOX_SCRUBFT-01_ALARM_LO := 8.298 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   NOX_SCRUBFT-02_SP := 0.84 ;  (* graph basis: IA-NOX-N normal 0.84 L/h )
@@ -123,16 +123,16 @@ END_VAR
   NOX_SCRUBFT-02_ALARM_LO := 0.756 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  NOX_SCRUBFT-03_SP := 0.9 ;  (* graph basis: IA-NOX-CO2 normal 0.90 L/h )
+  NOX_SCRUBFT-03_SP := 0.95 ;  (* graph basis: IA-NOX-CO2 normal 0.95 L/h )
   FB_PI_NOX_SCRUBFT-03( PV := NOX_SCRUBFT-03_PV, SP := NOX_SCRUBFT-03_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  NOX_SCRUBFT-03_ALARM_HI := 0.9900000000000001 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  NOX_SCRUBFT-03_ALARM_LO := 0.81 ;
+  NOX_SCRUBFT-03_ALARM_HI := 1.045 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  NOX_SCRUBFT-03_ALARM_LO := 0.855 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  NOX_SCRUBFT-04_SP := 8.19 ;  (* graph basis: IA-NOX-N2 normal 8.19 L/h )
+  NOX_SCRUBFT-04_SP := 8.97 ;  (* graph basis: IA-NOX-N2 normal 8.97 L/h )
   FB_PI_NOX_SCRUBFT-04( PV := NOX_SCRUBFT-04_PV, SP := NOX_SCRUBFT-04_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  NOX_SCRUBFT-04_ALARM_HI := 9.009 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  NOX_SCRUBFT-04_ALARM_LO := 7.3709999999999996 ;
+  NOX_SCRUBFT-04_ALARM_HI := 9.867 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  NOX_SCRUBFT-04_ALARM_LO := 8.073 ;
 
   (* LEVEL monitoring block - indication, no set-point invented )
   FB_AI_NOX_SCRUBLT-01( PV := NOX_SCRUBLT-01_PV );

@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "b3ee606fa8e5f6894e0d5787ac807d6dfaf6a78ee49483679ea4e8d6d135c3cb",
+  "graph_sha256": "3eaae8b937ec8c0eff2b52c49f74b62db2224dbae25b6c9ff054cab346bf59c2",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 368.987,
-   "calc_kw": 368.987,
+   "kw": 369.815,
+   "calc_kw": 369.815,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,27 +16,27 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 218.25,
-   "calc_kw": 218.25,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.3 kW, charge 992.0 kW, 3056 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 219.442,
+   "calc_kw": 219.442,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 219.4 kW, charge 997.4 kW, 3072 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "EXT_HALL",
    "role": "load",
-   "kw": 99.18,
-   "calc_kw": 99.18,
-   "basis": "X-PAR-07 solver.roof_close: conditioned extension 28548 m2; lighting 25.12 kW (IECC 2021 C405, 10 % lit), ventilation 42.40 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 31.66 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 29.5 kW and cooling 175.2 kW thermal average after internal gains 35.8 kW and slab edge 1.68 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
+   "kw": 99.632,
+   "calc_kw": 99.632,
+   "basis": "X-PAR-07 solver.roof_close: conditioned extension 28728 m2; lighting 25.28 kW (IECC 2021 C405, 10 % lit), ventilation 42.66 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 31.69 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 29.6 kW and cooling 175.9 kW thermal average after internal gains 36.1 kW and slab edge 1.65 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "H2O_ELYZ",
    "role": "load",
-   "kw": 21.445,
-   "calc_kw": 21.445,
-   "basis": "X-PAR-12 TF: 9.36 kg/d H2 x 55.0 kWh/kg / 24 h; rated 85.8 kW on a 6.0 h PV window.",
+   "kw": 21.747,
+   "calc_kw": 21.747,
+   "basis": "X-PAR-12 TF: 9.49 kg/d H2 x 55.0 kWh/kg / 24 h; rated 87.0 kW on a 6.0 h PV window.",
    "class": "calculated",
    "sector": "CRYO"
   },
@@ -158,6 +158,15 @@
    "sector": "DIGESTER"
   },
   {
+   "unit": "CRYO_ASU",
+   "role": "\u2014",
+   "kw": 1.746,
+   "calc_kw": 1.746,
+   "basis": "X-MFG-33 (A-M-175, AQS-DUTY-069): 13X TSA regeneration 1.48 + blower 0.048 + CO2 compressor 0.086 + condenser chiller 0.035 + Ar getter 0.10 kW; no cryogenic column (no air intake).",
+   "class": "calculated",
+   "sector": "CRYO"
+  },
+  {
    "unit": "OIL_PYRO",
    "role": "\u2014",
    "kw": 1.664,
@@ -165,15 +174,6 @@
    "basis": "X-ELS-02: node aligned to its calculated SF-OIL_PYRO feed (retort heat / heater efficiency); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to OIL_PYRO continuous_kw..",
    "class": "calculated",
    "sector": "OIL"
-  },
-  {
-   "unit": "CRYO_ASU",
-   "role": "\u2014",
-   "kw": 1.657,
-   "calc_kw": 1.657,
-   "basis": "X-MFG-33 (A-M-175, AQS-DUTY-069): 13X TSA regeneration 1.40 + blower 0.044 + CO2 compressor 0.081 + condenser chiller 0.033 + Ar getter 0.10 kW; no cryogenic column (no air intake).",
-   "class": "calculated",
-   "sector": "CRYO"
   },
   {
    "unit": "EVAP_ACID",
@@ -223,9 +223,9 @@
   {
    "unit": "CRYO_H2",
    "role": "load",
-   "kw": 0.932,
-   "calc_kw": 0.932,
-   "basis": "X-MFG-36 (A-M-169): 11.33 kg/d x 1.97 kWh/kg; peak 2.80 kW over the run hours.",
+   "kw": 0.943,
+   "calc_kw": 0.943,
+   "basis": "X-MFG-36 (A-M-169): 11.47 kg/d x 1.97 kWh/kg; peak 2.83 kW over the run hours.",
    "class": "calculated",
    "sector": "CRYO"
   },
@@ -259,9 +259,9 @@
   {
    "unit": "GEO_HP",
    "role": "load",
-   "kw": 0.687,
-   "calc_kw": 0.687,
-   "basis": "X-ELS-02: Q4-bus lift S44 2.1972 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.6866 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317).",
+   "kw": 0.66,
+   "calc_kw": 0.66,
+   "basis": "X-ELS-02: Q4-bus lift S44 2.1114 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.6598 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317).",
    "class": "calculated",
    "sector": "GEO"
   },
@@ -309,6 +309,15 @@
    "basis": "AQS-DUTY-072 pattern injector + wax conditioning pot at 2.0 kg/d patterns (A-M-286 study).",
    "class": "calculated",
    "sector": "FOUNDRY"
+  },
+  {
+   "unit": "AFTERBURNER",
+   "role": "load",
+   "kw": 0.498,
+   "calc_kw": 0.498,
+   "basis": "ID blower on the 26.551 kg/d flue (IA-AB-FLUE): 0.5 L/s at the 300 C exit duct class (850 C chamber per X-SAN-01, cooled exit), 350 Pa at eta 0.35 - the ignition transformer and burner management ride the combustion panel at < 50 W. / X-ELS-02 load-basis (A-M-301).",
+   "class": "calculated",
+   "sector": "OIL"
   },
   {
    "unit": "EW_6",
@@ -421,9 +430,9 @@
   {
    "unit": "VCD_TRAIN",
    "role": "\u2014",
-   "kw": 0.258,
-   "calc_kw": 0.258,
-   "basis": "0.365 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)",
+   "kw": 0.259,
+   "calc_kw": 0.259,
+   "basis": "0.366 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)",
    "class": "calculated",
    "sector": "WTR"
   },
@@ -471,15 +480,6 @@
    "basis": "AQS-DUTY-072 tilt-pour station at 2.0 kg/d castings (study).",
    "class": "calculated",
    "sector": "FOUNDRY"
-  },
-  {
-   "unit": "AFTERBURNER",
-   "role": "load",
-   "kw": 0.133,
-   "calc_kw": 0.133,
-   "basis": "ID blower on the 7.097 kg/d flue (IA-AB-FLUE): 0.1 L/s at the 300 C exit duct class (850 C chamber per X-SAN-01, cooled exit), 350 Pa at eta 0.35 - the ignition transformer and burner management ride the combustion panel at < 50 W. / X-ELS-02 load-basis (A-M-301).",
-   "class": "calculated",
-   "sector": "OIL"
   },
   {
    "unit": "GEO_HP_CLOSED_LOOP",
@@ -583,8 +583,8 @@
   {
    "unit": "NOX_SCRUB",
    "role": "\u2014",
-   "kw": 0.038,
-   "calc_kw": 0.038,
+   "kw": 0.039,
+   "calc_kw": 0.039,
    "basis": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 6 W, pump 33 W.",
    "class": "calculated",
    "sector": "GAS"
@@ -939,10 +939,10 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 103,
-  "graph_sum_kW": 179.58,
-  "calc_sum_kW": 179.58,
-  "connected_load_kW": 179.6,
-  "connected_calculated_kW": 177.6,
+  "graph_sum_kW": 180.78,
+  "calc_sum_kW": 180.78,
+  "connected_load_kW": 180.8,
+  "connected_calculated_kW": 178.8,
   "connected_standby_kW": 0.1,
   "connected_study_kW": 1.9,
   "connected_calculated_pct": 98.9,

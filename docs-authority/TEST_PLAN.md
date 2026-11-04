@@ -20,9 +20,9 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T3 | Bench and laboratory tests | 69 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
 | T5 | Design calculations and drawings | 503 | Calculation or drawing issued under the named task |
-| T6 | Commissioning measurements | 37 | Commissioning record |
+| T6 | Commissioning measurements | 38 | Commissioning record |
 
-Total 715 items: 321 drivers, 394 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 716 items: 321 drivers, 395 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -768,3 +768,4 @@ Total 715 items: 321 drivers, 394 register entries. Classification rule: first m
 | A-M-325 | ADS_CHILL 304L adsorber shells + silica-gel beds + 316L wate selection class | season-commissioning trial: seal leak-down on the adsorbers, coil condition at the dry cooler and make-up-air coil | X-MAT-22 |
 | A-M-426 | FEED_PREP formulation: layers 1.44, quail 0.50, dry-reserve  kg/d (dry-equivalent feed) | Ration trial at the FEED_PREP commissioning (X-FARM-10) | X-FARM-10 |
 | A-M-429 | Textiles: wool/sheep eliminated at the 4-crew class; FR-fini - (roster decision) | Textile-line commissioning (X-POLY-01) | X-POLY-01 |
+| A-M-452 | AFTERBURNER combustion basis: the NCG fuel (AQS-DUTY-010, 5. kg/d; kW | commissioning flue-gas analysis at the afterburner run: dry O2 near 9 %, CO2 near 11 vol% of S67, CO within the EU IED class, against the A-M-452 species ledger | X-PAR-12 (physics-audit F-1/F-1b combustion-basis fix, 2026-11-03) |

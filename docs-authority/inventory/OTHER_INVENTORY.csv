@@ -65,10 +65,10 @@ CRYO,CRYO,CRYO_ASU,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, 
 CRYO,CRYO,CRYO_ASU,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 CRYO,CRYO,CRYO_ASU,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 CRYO,CRYO,CRYO_ASU,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-CRYO,CRYO,CRYO_ASU,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",5,IA-ASU-N2: AQS-PIP-005 span count
+CRYO,CRYO,CRYO_ASU,support,U-bolt with guide,DN20,"316 U-bolt, MSS SP-58 Type 24",5,IA-ASU-N2: AQS-PIP-005 span count
 CRYO,CRYO,CRYO_ASU,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",8,IA-ASU-O2: AQS-PIP-005 span count
 CRYO,CRYO,CRYO_ASU,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",14,IA-ASU-CO2: AQS-PIP-005 span count
-CRYO,CRYO,CRYO_ASU,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-ASU-N2: one at each end nozzle (assumed)
+CRYO,CRYO,CRYO_ASU,valve,isolation valve,DN20,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-ASU-N2: one at each end nozzle (assumed)
 CRYO,CRYO,CRYO_ASU,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-ASU-O2: one at each end nozzle (assumed)
 CRYO,CRYO,CRYO_ASU,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-ASU-CO2: one at each end nozzle (assumed)
 CRYO,CRYO,CRYO_CO2,fabricated part,fabricated part set,5 BOM lines,models/mfg/CRYO_CO2/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory

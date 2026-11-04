@@ -301,7 +301,8 @@ def apply(g=None, write=False):
           'discharge returns through the header to recovery, so the site needs no vent sink.')
     lnode('CAT_OX', 'OIL', 'catalytic', None,
           dict(service='catalytic oxidation of waste CO and organics on a plant-oxygen bleed',
-               bed_C=450, feed='7.097 kg/d flue class carried from the AFTERBURNER duty (X-SAN-01)',
+               bed_C=450, feed='6.57 kg/d waste class (NCG 5.0 + S11 0.8 + sanitation cake/biogas 0.77) with a 20.0 kg/d '
+                                'plant-O2 bleed at stoichiometric + 10 %, carried from the AFTERBURNER duty (X-SAN-01, A-M-452)',
                trim_duty='bed trim heater duty is sized at the locale design pass',
                basis='A-M-399'),
           'Catalytic waste-gas oxidiser (X-LOC-09): oxidises plant waste streams on plant oxygen '

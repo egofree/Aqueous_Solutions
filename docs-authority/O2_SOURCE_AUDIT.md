@@ -56,7 +56,7 @@ Finding 3.1: the cold box sends 31.09 kg/d O2 (IA-ASU-O2) while its only O-beari
 
 | | consumed | combustion | regenerated | gap kg/d |
 | --- | --- | --- | --- | --- |
-| before (AQS-PAR-004 A) | 44.91 | 45.45 | 13.82 | 76.5 |
-| after audit, light-limited bed 28 m2 | 44.91 | 45.45 | 0.62 | 89.7 |
+| before (AQS-PAR-004 A) | 44.91 | 62.76 | 13.82 | 93.8 |
+| after audit, light-limited bed 28 m2 | 44.91 | 62.76 | 0.62 | 107.1 |
 
 Superseded for the graph by AQS-PAR-005 Rev B (O2_SOURCE.md).

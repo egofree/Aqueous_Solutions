@@ -288,7 +288,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | IA-AIR-IN | NORTH_DOCK | CRYO_ASU | 50 | P5 | 18.27 | 3 |
 | IA-NOX-CO2 | NOX_SCRUB | CRYO_ASU | 50 | P2 | 29.37 | 3 |
 | IA-NOX-N2 | NOX_SCRUB | CRYO_ASU | 50 | P2 | 29.37 | 3 |
-| IA-ASU-N2 | CRYO_ASU | CRYO_N2 | 15 | M1 | 5.22 | 3 |
+| IA-ASU-N2 | CRYO_ASU | CRYO_N2 | 20 | M1 | 5.28 | 3 |
 | IA-ASU-O2 | CRYO_ASU | CRYO_O2 | 15 | M1 | 9.72 | 3 |
 | IA-ASU-CO2 | CRYO_ASU | CRYO_CO2 | 15 | M1 | 18.72 | 3 |
 | IA-H2-AIR | H2_DRYER | CRYO_ASU | 15 | M1 | 16.52 | 3 |

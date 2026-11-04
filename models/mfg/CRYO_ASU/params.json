@@ -15,7 +15,7 @@
  ],
  "class": "cold_box",
  "sector": "CRYO",
- "design_kPa": 17.5,
+ "design_kPa": 18.0,
  "relief_mm": 3.3,
  "relief_basis": {
   "case": "atmospheric",
@@ -30,38 +30,38 @@
   "vent_bore_req_mm": 6.4,
   "vent_DN": 25,
   "thermal_term": "envelope volume",
-  "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 15.2 kPa (1.24 m full at SG 1.25) = 17.5 kPa g (A-M-174)"
+  "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 15.5 kPa (1.27 m full at SG 1.25) = 18.0 kPa g (A-M-174)"
  },
  "internals": "3 x 13X TSA beds, CO2 two-stage compressor and condenser, heated Ar getter; noble-gas inventories pass through",
  "design": {
-  "feed_N2_kg_d": 196.652277,
-  "feed_CO2_kg_d": 21.581514,
-  "x_CO2": 0.06529300748782826,
-  "CO2_mol_per_cycle": 163.4591683708248,
-  "sorbent_kg_per_bed": 108.9727789138832,
+  "feed_N2_kg_d": 215.385525,
+  "feed_CO2_kg_d": 22.782648,
+  "x_CO2": 0.06308092059892817,
+  "CO2_mol_per_cycle": 172.55660077255166,
+  "sorbent_kg_per_bed": 115.03773384836778,
   "beds": 3,
-  "bed_D_mm": 414.3791015239308,
-  "bed_L_mm": 1243.1373045717921,
-  "regen_kW": 1.3993012919033552,
-  "blower_kW": 0.043957774772434344,
-  "co2_comp_kW": 0.08109776820114514,
-  "co2_chill_kW": 0.03284686447916667,
+  "bed_D_mm": 421.92825393409134,
+  "bed_L_mm": 1265.784761802274,
+  "regen_kW": 1.4771803673912494,
+  "blower_kW": 0.04803155443898941,
+  "co2_comp_kW": 0.08561132024900028,
+  "co2_chill_kW": 0.034674979305555555,
   "getter_kW": 0.1,
-  "total_kW": 1.6572036993561015,
+  "total_kW": 1.7454982213847947,
   "comp_stages": 4,
   "comp_ratio_per_stage": 2.114742526881128,
   "comp_T_out_C": 121.93064278721914,
   "expander_backup": {
-   "cold_kW": 0.08211716119791666,
+   "cold_kW": 0.08668744826388888,
    "T_out_C": -56.08836699924316,
-   "loop_kg_d": 219.44031618967603,
-   "shaft_kW": 0.21907433261240844,
-   "net_kW": 0.44182895075708484,
-   "COP": 0.18585735737145986,
-   "chiller_kW": 0.03284686447916667
+   "loop_kg_d": 231.6534178629956,
+   "shaft_kW": 0.23126706521810383,
+   "net_kW": 0.46641924479014757,
+   "COP": 0.1858573573714599,
+   "chiller_kW": 0.034674979305555555
   },
-  "H_mm": 1243,
-  "D_mm": 414
+  "H_mm": 1266,
+  "D_mm": 422
  },
  "nozzles": [
   {

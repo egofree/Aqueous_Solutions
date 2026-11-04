@@ -32,8 +32,8 @@ Table 3.1. Guarantee points
 | PROD_C19_C28 | CUT-3 | OIL_FRAC | 6.166 | kg/d | OIL_FRAC-FT-03 | 5.549 - 6.782 |
 | PROD_C29 | CUT-4 | OIL_FRAC | 5.873 | kg/d | OIL_FRAC-FT-04 | 5.286 - 6.461 |
 | PROD_C5_C10 | CUT-1 | OIL_FRAC | 7.425 | kg/d | OIL_FRAC-FT-01 | 6.682 - 8.167 |
-| PROD_MEOH | IA-MEOH-PROD | MEOH_TANK | 28.03 | kg/d | MEOH_TANK-FT-03 | 25.23 - 30.83 |
-| PROD_O2 | IA-O2-PROD | HDR_O2 | 22.88 | kg/d | weighed batch (scale, 0.1 % FS) | 20.6 - 25.17 |
+| PROD_MEOH | IA-MEOH-PROD | MEOH_TANK | 28.73 | kg/d | MEOH_TANK-FT-03 | 25.86 - 31.6 |
+| PROD_O2 | IA-O2-PROD | HDR_O2 | 6.246 | kg/d | weighed batch (scale, 0.1 % FS) | 5.622 - 6.871 |
 | metal from EW_1 | IA-EW-MET-1 | EW_1 | 59.87 | kg/d | weighed cathode harvest | 53.88 - 65.86 |
 | metal from EW_2 | IA-EW-MET-2 | EW_2 | 59.89 | kg/d | weighed cathode harvest | 53.9 - 65.88 |
 | metal from EW_3 | IA-EW-MET-3 | EW_3 | 22.48 | kg/d | weighed cathode harvest | 20.23 - 24.73 |
@@ -45,7 +45,7 @@ Table 3.1. Guarantee points
 | metal from EW_9 | IA-EW-MET-9 | EW_9 | 61.34 | kg/d | weighed cathode harvest | 55.21 - 67.48 |
 | metal from EW_9 | IA-EW-SHEET | EW_9 | 13.99 | kg/d | weighed cathode harvest | 12.59 - 15.39 |
 | metal from EW_1 | IA-COAT-IN | EW_1 | 0.02 | kg/d | weighed cathode harvest | 0.018 - 0.022 |
-| H2 to bank | IA-ELY-H2 | H2O_ELYZ | 9.358 | kg/d | thermal mass flow meter | 8.422 - 10.29 |
-| Plant load (sum of the continuous loads of all consumers, excluding the PV array, fuel cells, generator set, battery and ORC unit) | - | - | 184.8 | kW | revenue-grade meter at LOAD_AGG | <= 203.2 |
+| H2 to bank | IA-ELY-H2 | H2O_ELYZ | 9.49 | kg/d | thermal mass flow meter | 8.541 - 10.44 |
+| Plant load (sum of the continuous loads of all consumers, excluding the PV array, fuel cells, generator set, battery and ORC unit) | - | - | 186.0 | kW | revenue-grade meter at LOAD_AGG | <= 204.6 |
 
 The table has 18 product guarantee points and one plant load point.
