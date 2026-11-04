@@ -25,11 +25,28 @@ def test_classification_counts():
     assert counts['SIF'] == len(sif_tags)
 
 
+def _graph_design():
+    """The graph is the sole authority: loop setpoints must equal the node design values."""
+    import json
+    g = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                    'flow_graph', 'plant_flow_graph.json')))
+    d = {}
+    for n in g['nodes']:
+        p = n.get('params') or {}
+        des = p.get('design') or {}
+        if n.get('unit_id') == 'CRYO_ASU':
+            d['CRYO_ASUPT-01'] = p['design_kPa']            # vessel design pressure, kPa g (A-M-174 basis)
+        if n.get('unit_id') == 'POLY_OLEFIN':
+            d['POLY_OLEFINPT-01'] = des['P_MPa'] * 1000.0   # reactor pressure, kPa g
+        if n.get('unit_id') == 'CRYO_CO2':
+            d['CRYO_CO2TE-01'] = float(des['T_C'])          # condenser temperature, C
+    return d
+
+
 def test_setpoints_from_the_graph():
     sp = {r['loop']: r['sp'] for r in _loops() if r['cls'] == 'CONTROL'}
-    assert sp['CRYO_ASUPT-01'] == 17.5          # design 17.5 kPa g from the graph
-    assert sp['POLY_OLEFINPT-01'] == 5000.0     # design P_MPa 5.0 (A-M-283 poly wave)
-    assert sp['CRYO_CO2TE-01'] == 25.0          # design T 25 C
+    for tag, want in _graph_design().items():
+        assert sp[tag] == want, f'{tag}: PLC {sp[tag]} != graph {want}'
     zero = [r for r in _loops() if r['cls'] == 'CONTROL' and r['sp'] == 0]
     for r in zero:
         assert r['pv_hi'] == 0.0 and r['pv_lo'] is None   # expected-zero: any positive PV alarms
