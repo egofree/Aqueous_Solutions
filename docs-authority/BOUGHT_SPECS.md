@@ -17,10 +17,10 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 20457 |
-| support | 7355 |
+| fastener | 20511 |
+| support | 7382 |
 | electronics | 2195 |
-| valve | 993 |
+| valve | 995 |
 | instrument | 849 |
 | bearing | 748 |
 | protection | 235 |
@@ -60,7 +60,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-09 | solenoid driver channel | IEC 61131-2 DO | 24 V DC x19 | 19 | 9 | on/off valve IA-BED-H2O; on/off valve IA-ELY-H2O; on/off valve IA-FLUE-QUENCH |  |
 | OF-10 | compressor contactor + overload | IEC 60947-4-1 | 18.5 kW hermetic x8; 1.1 kW hermetic x1 | 9 | 2 | air-source heat pump compressor; cryocooler compressor |  |
 | OF-11 | stepper driver | IEC 61800-5-1 | 24/48 V DC x3 | 3 | 1 | CNC vertical mill: axis drive |  |
-| OF-12 | safety PLC (SIL 2 capable), CPU and I/O rack | IEC 61508 / IEC 61511 | - x2 | 2 | 1 | AQS-CTL-003: 176 SIFs, redundant pair |  |
+| OF-12 | safety PLC (SIL 2 capable), CPU and I/O rack | IEC 61508 / IEC 61511 | - x2 | 2 | 1 | AQS-CTL-003: 174 SIFs, redundant pair |  |
 ## 5. Instrument datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
@@ -73,7 +73,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-39 | gas detector, H2 | alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling | catalytic bead + IR backup x30 | 30 | 14 | AQS-SAF-006 2oo3 to SIF (AQS-CTL-003); AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-40 | gas detector, O2 deficiency | alarm 19.5 vol %, trip 18.0 vol %, low (dense gases) | electrochemical O2 x20 | 20 | 10 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-41 | gas detector, Cl2 / HCl | alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low | electrochemical Cl2 and HCl x38 | 38 | 19 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
-| OF-42 | temperature element (SIF, independent) | IEC 60751, own thermowell | Pt100 class A x14 | 14 | 14 | SIF-002 SIL 2; SIF-004 SIL 2; SIF-020 SIL 1 | spec per tag on AQS-CTL-001 |
+| OF-42 | temperature element (SIF, independent) | IEC 60751, own thermowell | Pt100 class A x14 | 14 | 14 | SIF-002 SIL 2; SIF-004 SIL 2; SIF-018 SIL 1 | spec per tag on AQS-CTL-001 |
 | OF-43 | gas detector, O2 enrichment | alarm 23.5 vol %, trip 25 vol %, breathing height | electrochemical O2 x12 | 12 | 5 | AQS-SAF-006 2oo3 to SIF (AQS-CTL-003); AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-44 | gas detector, CO | alarm 25 ppm, trip 50 ppm, breathing height | electrochemical CO x14 | 14 | 7 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-45 | gas detector, NOx | alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height | electrochemical NO2 x6 | 6 | 3 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
@@ -92,13 +92,13 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-48 | pipe clamp | PP clamp with EPDM liner, MSS SP-58 Type 7 | DN15 x5289; DN50 x537; DN20 x17; DN250 x7; DN32 x6; DN300 x4; DN200 x3 | 5863 | 116 | AL_POT_CL2: AQS-PIP-005 span count; AQUA_BYPASS: AQS-PIP-005 span count; AQUA_LOOP1: AQS-PIP-005 span count |  |
+| OF-48 | pipe clamp | PP clamp with EPDM liner, MSS SP-58 Type 7 | DN15 x5316; DN50 x537; DN20 x17; DN250 x7; DN32 x6; DN300 x4; DN200 x3 | 5890 | 116 | AL_POT_CL2: AQS-PIP-005 span count; AQUA_BYPASS: AQS-PIP-005 span count; AQUA_LOOP1: AQS-PIP-005 span count |  |
 | OF-49 | U-bolt with guide | 316 U-bolt, MSS SP-58 Type 24 | DN15 x1432; DN20 x30; DN25 x23; DN50 x7 | 1492 | 44 | C29_RECYCLE: AQS-PIP-005 span count; C29_TO_PYRO: AQS-PIP-005 span count; CO2_TO_FARM: AQS-PIP-005 span count |  |
 ## 9. Valve datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-50 | isolation valve | PVC-U true-union ball valve, MSS SP-122, EPDM seals | DN15 x258; DN50 x22 | 280 | 64 | AQUA_BYPASS: one at each end nozzle (assumed); AQUA_LOOP1: one at each end nozzle (assumed); AQUA_LOOP3: one at each end nozzle (assumed) |  |
+| OF-50 | isolation valve | PVC-U true-union ball valve, MSS SP-122, EPDM seals | DN15 x260; DN50 x22 | 282 | 64 | AQUA_BYPASS: one at each end nozzle (assumed); AQUA_LOOP1: one at each end nozzle (assumed); AQUA_LOOP3: one at each end nozzle (assumed) |  |
 | OF-51 | isolation valve | PP ball valve with HDPE stub ends, ISO 16135 | DN15 x32; DN50 x10 | 42 | 13 | FOOD_HAB: one at each end nozzle (assumed); GALLEY_MEALS: one at each end nozzle (assumed); IA-AIR-IN: one at each end nozzle (assumed) |  |
 | OF-52 | isolation valve | 316L ball valve, ASME B16.34 Cl 150, RF flanged | DN15 x174; DN20 x6; DN50 x4; DN25 x4 | 188 | 40 | CO2_TO_FARM: one at each end nozzle (assumed); CRU_TO_TFE: one at each end nozzle (assumed); CRU_TO_VDF: one at each end nozzle (assumed) |  |
 | OF-53 | isolation valve | CPVC true-union ball valve, MSS SP-122, FKM seals | DN15 x56; DN50 x34 | 90 | 24 | FIBER_SCRAP: one at each end nozzle (assumed); IA-ACID-01: one at each end nozzle (assumed); IA-BAG-01: one at each end nozzle (assumed) |  |
@@ -159,7 +159,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-137 | M10 lid hold-down bolt + nut | ISO 3506 A4-70 | M10 lid hold-down bolt + nut x16 | 16 | 2 | models/mfg/AQUA_TANK/fasteners.csv; models/mfg/BIOFILTER/fasteners.csv |  |
 | OF-138 | M6 screen-frame clamp screw | ISO 3506 A4-70 | M6 screen-frame clamp screw x16 | 16 | 2 | models/mfg/BSFL_BIN/fasteners.csv; models/mfg/VERMI_BIN/fasteners.csv |  |
 | OF-139 | M8 liner batten bolt | ISO 3506 A4-70 | M8 liner batten bolt x16 | 16 | 2 | models/mfg/GROWBED_A/fasteners.csv; models/mfg/GROWBED_B/fasteners.csv |  |
-| OF-14 | anchor bolt | ISO 3506 A4-70 wedge anchor | M10 x14710 | 14710 | 138 | AL_POT_CL2: 2 per support (assumed); AQUA_BYPASS: 2 per support (assumed); AQUA_LOOP1: 2 per support (assumed) |  |
+| OF-14 | anchor bolt | ISO 3506 A4-70 wedge anchor | M10 x14764 | 14764 | 138 | AL_POT_CL2: 2 per support (assumed); AQUA_BYPASS: 2 per support (assumed); AQUA_LOOP1: 2 per support (assumed) |  |
 | OF-140 | M10 bolt | ISO 898-1 8.8 | M10 bolt x12 | 12 | 1 | models/mfg/STOCK_OUT/fasteners.csv |  |
 | OF-141 | M12 base hold-down anchor | ISO 898-1 8.8 | M12 base hold-down anchor x8 | 8 | 1 | models/mfg/DUCKWEED/fasteners.csv |  |
 | OF-142 | M10 nest-row carriage bolt | ISO 898-1 8.8 | M10 nest-row carriage bolt x8 | 8 | 1 | models/mfg/CHICKEN_COOP/fasteners.csv |  |

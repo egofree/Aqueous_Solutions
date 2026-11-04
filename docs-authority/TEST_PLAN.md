@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 69 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 503 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 505 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 38 | Commissioning record |
 
-Total 716 items: 321 drivers, 395 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 718 items: 321 drivers, 397 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -726,6 +726,8 @@ Total 716 items: 321 drivers, 395 register entries. Classification rule: first m
 | A-M-445 | utility container counts: intake/degasser 1, degas scrubber  ISO 1CC containers per service | layout study at the locale design pass | X-LOC-05 (lake_boehmer locale design pass) |
 | A-M-446 | battery store 4,000 kWh usable per ISO 1CC battery container kWh usable per container | vendor shortlist at procurement; the count scales one to one | X-LOC-05 (lake_boehmer locale design pass) |
 | A-M-448 | product water quality basis: TCEQ 30 TAC 307 segment 2311 cr mg/L annual average | re-verify the segment sheet and the applicability to lake-restoration return at the locale design pass | X-LOC-05 (lake_boehmer locale design pass) |
+| A-M-453 | Heat-ladder A/B ledger convention: the two ladders are a ful convention; kW | python3 -m flow_graph.param.write_graph heat closes Q4_BUS and DRY_COOLER on the thermal-kW ledger within 0.01 kW; test_heat_ladder.py passes; HL-Q4-A/B-BUS notes state the N+1 convention | physics audit F-3/F-25 (heat-ladder convention, 2026-11-03) |
+| A-M-454 | The MVR evaporator compressor/pump heat edges (SQ-EVAP_ACID, kW; layer | python3 -m flow_graph.param.write_graph heat: Q4_BUS in = out on thermal kW edges; IA-DC-REJ == sum of thermal kW into DRY_COOLER; DRY_COOLER balances within 0.01 kW | physics audit F-3 (Q4 heat-rejection path, 2026-11-03) |
 
 ## 7. T6 Commissioning measurements
 

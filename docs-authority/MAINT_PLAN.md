@@ -49,7 +49,7 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | FUEL_CELL | pem_fc | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
 | GAS_ATOMIZER | forming | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | GEO_GHEX | ghex | external visual (1 y, A-M-189) |
-| GEO_HP | heat_pump | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| GEO_HP | heat_pump | external visual (1 y, A-M-189) |
 | GEO_HP_CLOSED_LOOP |  | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | GEO_ORC | orc | external visual (1 y, A-M-189) |
 | GLASS_DIGEST | digest | external visual (1 y, A-M-189) |
@@ -232,4 +232,4 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | LB_BRINE_RETURN | junction | external visual (1 y, A-M-189) |
 | LB_CHEM_STORE | tank | external visual (1 y, A-M-189) |
 
-222 units, 475 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+222 units, 472 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.

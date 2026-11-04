@@ -562,6 +562,7 @@ Table 3.13. WTR off. Sector type: Utility / header.
 | HAB_BLACK | HABITATION to BLACK_DIGEST | HAB | not yet rated | left without a sink: unreclaimed |
 | HAB_GREY | HABITATION to GREY_TREAT | HAB | not yet rated | left without a sink: unreclaimed |
 | IA-BLK-01 | HABITATION to BLACK_DIGEST | HAB | 19.6 kg/d | left without a sink: unreclaimed |
+| IA-DC-REJ | DRY_COOLER to ATMOS | HEAT | 7.99 kW | left without a sink: unreclaimed |
 | IA-FEC-01 | HABITATION to BLACK_DIGEST | HAB | 0.13 kg/d | left without a sink: unreclaimed |
 | IA-FERM-DIG | MEOH_FERM to BLACK_DIGEST | MEOH | 0.345 kg/d | left without a sink: unreclaimed |
 | IA-GAL | HABITATION to BLACK_DIGEST | HAB | 1.18 kg/d | left without a sink: unreclaimed |
@@ -662,7 +663,6 @@ Table 3.14. ELEC off. Sector type: Utility / header.
 | SF-FILM_CAST | SOL_ARK_60K to FILM_CAST | POLYMERS | 0.109 kW | left without a source: consumer goes short |
 | SF-FLUX_PREP | SOL_ARK_60K to FLUX_PREP | FOUNDRY | 0.1 kW | left without a source: consumer goes short |
 | SF-GAS_ATOMIZER | SOL_ARK_60K to GAS_ATOMIZER | MFG | 0.0781 kW | left without a source: consumer goes short |
-| SF-GEO_HP | SOL_ARK_60K to GEO_HP | GEO | 0.66 kW | left without a source: consumer goes short |
 | SF-GEO_HP_CLOSED_LOOP | SOL_ARK_60K to GEO_HP_CLOSED_LOOP | GEO | 0.126 kW | left without a source: consumer goes short |
 | SF-GLASS_DIGEST | SOL_ARK_60K to GLASS_DIGEST | GLASS | 0.09 kW | left without a source: consumer goes short |
 | SF-H2O_ELYZ | SOL_ARK_60K to H2O_ELYZ | CRYO | 21.7 kW | left without a source: consumer goes short |
@@ -717,7 +717,6 @@ Table 3.15. HEAT off. Sector type: Utility / header.
 | HL-HX8-Q4-B | HX8 to Q4_B | DIGESTER | 2.29 kW | left without a sink: unreclaimed |
 | IA-RECT-Q4 | RECTIFIER to Q4_BUS | ELEC | 1 kW | left without a sink: unreclaimed |
 | IA-ZNBR-HEAT | ZNBR2 to Q4_BUS | ELEC | 1.67 kW | left without a sink: unreclaimed |
-| S44 | GEO_HP to Q4_BUS | GEO | 2.11 kW | left without a sink: unreclaimed |
 | S53 | FUEL_CELL to Q4_BUS | ELEC | 1.14 kW | left without a sink: unreclaimed |
 | S54 | CRYO_HX_Q4 to Q4_BUS | CRYO | 0.545 kW | left without a sink: unreclaimed |
 | S63 | MET_HX_Q4 to Q4_BUS | MFG | 0.0171 kW | left without a sink: unreclaimed |
@@ -733,6 +732,7 @@ Table 3.15. HEAT off. Sector type: Utility / header.
 | HL-Q3-B-HX5 | Q3_B to LEACH_CSTR_1 | DIGESTER | 1.45 kW | left without a source: consumer goes short |
 | HL-Q3-B-HX6 | Q3_B to GLASS_DIGEST | GLASS | 0.381 kW | left without a source: consumer goes short |
 | IA-ADS-CHW | ADS_CHILL to HABITATION | HAB | 2.25 kW | left without a source: consumer goes short |
+| IA-DC-REJ | DRY_COOLER to ATMOS | WTR | 7.99 kW | left without a source: consumer goes short |
 | IA-MAU-AIR | MAU_HX to HABITATION | HAB | 12 kW | left without a source: consumer goes short |
 | IA-Q4-LIFE | Q4_BUS to HABITATION | HAB | 3 kW | left without a source: consumer goes short |
 | S100 | Q4_BUS to LEACH_CSTR_1 | DIGESTER | 0.532 kW | left without a source: consumer goes short |
@@ -777,9 +777,7 @@ Table 3.18. GEO off. Sector type: Utility / header.
 |---|---|---|---|---|
 | IA-BMED-03-TRIM | LEACH_CSTR_1 to GEO_GHEX | DIGESTER | 0.78 kW | left without a sink: unreclaimed |
 | IA-BMED-04-TRIM | LEACH_CSTR_1 to GEO_GHEX | DIGESTER | 1.03 kW | left without a sink: unreclaimed |
-| S44 | GEO_HP to Q4_BUS | HEAT | 2.11 kW | left without a source: consumer goes short |
 | S48 | GEO_ORC to SOL_ARK_60K | ELEC | not yet rated | left without a source: consumer goes short |
-| SF-GEO_HP | SOL_ARK_60K to GEO_HP | ELEC | 0.66 kW | stops with the sector |
 | SF-GEO_HP_CLOSED_LOOP | SOL_ARK_60K to GEO_HP_CLOSED_LOOP | ELEC | 0.126 kW | stops with the sector |
 
 Table 3.19. DOCK off. Sector type: Export / dock.

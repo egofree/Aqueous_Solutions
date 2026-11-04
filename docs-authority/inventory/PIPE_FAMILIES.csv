@@ -1,5 +1,5 @@
 family,cls,material,DN,pipe_m,lines,stock_lengths_6m,offcut_m,elbows_90,elbow_std,flanges,flange_std,gaskets,stud_bolts,stud_size,joints,joint_type
-PF-01,P1,PVC-U Sch 80 ASTM D1785,15,2572.2,129,428,35.0,374,ASTM D2467 socket 90 elbow,258,ASTM D2467 flange,258,1032,1/2 in,1235,solvent
+PF-01,P1,PVC-U Sch 80 ASTM D1785,15,2596.8,130,432,34.8,377,ASTM D2467 socket 90 elbow,260,ASTM D2467 flange,260,1040,1/2 in,1245,solvent
 PF-02,M1,316L ASTM A312,15,1407.1,67,235,24.2,199,ASME B16.9 LR 90 elbow,134,ASME B16.5 Cl 150 flange,134,536,1/2 in,664,butt weld
 PF-03,P2,CPVC Sch 80 ASTM F441,15,578.5,28,99,24.6,84,ASTM F439 socket 90 elbow,56,ASTM F439 flange,56,224,1/2 in,272,solvent
 PF-04,P2,CPVC Sch 80 ASTM F441,50,358.4,17,60,7.1,51,ASTM F439 socket 90 elbow,34,ASTM F439 flange,34,136,5/8 in,171,solvent

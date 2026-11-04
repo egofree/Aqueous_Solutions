@@ -62,9 +62,9 @@ def process():
         new = [edge(f'IA-{u}-FEED', src, u, 'L', ['mass'], f'{sa} 2 M from BMED', rate(v['feed_kg_d'],'kg/d',f'{TAG}. {v["solute_kg_d"]:.2f} kg/d {sa} / {DR.val(d,"bmed_product_wt_"+side.lower())}.'),'DIGESTER','DIGESTER'),
                edge(f'IA-{u}-COND', u, src, 'L', ['mass'], 'evaporator condensate return (BMED water make-up)', rate(v['water_kg_d'],'kg/d',f'{TAG}. Water evaporated, condensed and returned to {src}.'),'DIGESTER','DIGESTER'),
                edge(f'SF-{u}', 'SOL_ARK_60K', u, 'E', ['elec'], '480 V AC', rate(v['kW'],'kW',f'{TAG}. 480 V feed equal to {u} continuous_kw.'),'ELEC','DIGESTER','tray'),
-               edge(f'SQ-{u}', u, 'Q4_BUS', 'E', ['energy'], 'electrical input leaving as heat', rate(v['kW'],'kW',f'{TAG}. Compressor work leaves as heat (A-M-086); to the Q4 loop (HEAT_SINK retired at Rev AC; gap audit 2026-10-31).'),'DIGESTER','HEAT','tray')]
+               edge(f'SQ-{u}', u, 'Q4_BUS', 'E', ['thermal'], 'electrical input leaving as heat', rate(v['kW'],'kW',f'{TAG}. Compressor work leaves as heat (A-M-086); to the Q4 loop (HEAT_SINK retired at Rev AC; gap audit 2026-10-31). Layer thermal (F-3 fix, A-M-454): the MVR compressor heat is heat, not a mixed energy stream, so the X-THM-01 Q4 ledger counts it.'),'DIGESTER','HEAT','tray')]
         for e in new:
-            if e['stream_id'] in E: E[e['stream_id']].update({k: e[k] for k in ('rate','from_unit_id','to_unit_id','carries')})
+            if e['stream_id'] in E: E[e['stream_id']].update({k: e[k] for k in ('rate','from_unit_id','to_unit_id','carries','layers')})
             else: g['edges'].append(e); E[e['stream_id']] = e
         for p in prods:
             # R8-style presence gate: IA-ACEX-NAOH was retired with the ACEX train re-homes; only re-point
@@ -85,10 +85,10 @@ def process():
           edge('IA-VS-SPENT','EVAP_ACID_VS','BMED_ACID','L',['mass'],'spent scrub liquor (NaCl in NaOH) to the BMED brine',rate(up['spent_kg_d'],'kg/d',f'{VT}. Bleed plus HCl absorbed.'),'DIGESTER','DIGESTER'),
           edge('IA-VS-OFF','EVAP_ACID_VS','ALK_SCRUBBER','G',['mass'],'scrubbed vent to the house acid-gas header',rate(up['offgas_kg_d'],'kg/d',f"{VT}. {up['y_out_ppm']} ppmv HCl."),'DIGESTER','GAS'),
           edge('SF-EVAP_ACID_VS','SOL_ARK_60K','EVAP_ACID_VS','E',['elec'],'480 V AC',rate(vs['pump_kW'],'kW',f'{VT}. Feed equal to continuous_kw.'),'ELEC','DIGESTER','tray'),
-          edge('SQ-EVAP_ACID_VS','EVAP_ACID_VS','Q4_BUS','E',['energy'],'electrical input leaving as heat',rate(vs['pump_kW'],'kW',f'{VT}. Pump work leaves as heat.'),'DIGESTER','HEAT','tray')]
+          edge('SQ-EVAP_ACID_VS','EVAP_ACID_VS','Q4_BUS','E',['thermal'],'electrical input leaving as heat',rate(vs['pump_kW'],'kW',f'{VT}. Pump work leaves as heat. Layer thermal (F-3 fix, A-M-454): the X-THM-01 Q4 ledger counts it.'),'DIGESTER','HEAT','tray')]
     vn[1]['params'] = {'NaOH_mol_d': round(up['naoh_mol_d'], 9)}
     for e in vn:
-        if e['stream_id'] in E: E[e['stream_id']].update({k: e[k] for k in ('rate','from_unit_id','to_unit_id','carries')}); E[e['stream_id']].setdefault('params',{}).update(e.get('params') or {})
+        if e['stream_id'] in E: E[e['stream_id']].update({k: e[k] for k in ('rate','from_unit_id','to_unit_id','carries','layers')}); E[e['stream_id']].setdefault('params',{}).update(e.get('params') or {})
         else: g['edges'].append(e); E[e['stream_id']] = e
     E['IA-EVAP_ACID-COND']['rate'] = rate(s['evap_acid']['water_kg_d'] - up['vent_kg_d'],'kg/d',f'{TAG}. Water evaporated, condensed and returned to BMED_ACID, less the vent (X-PAR-10).')
     # BMED_BASE closes on its brine feed: out (EVAP_BASE feed + IA-BMED-02) = IA-BMED-04 + condensate
@@ -559,23 +559,54 @@ def heat():
         # Q4 batteries pass what they receive (HX-8 split + trim) to the header bus
         put(f'HL-Q4-{A}-BUS', kw(f'HL-HX8-Q4-{A}') + kw(f'IA-Q4{A}-TRIM') + kw(f'HL-Q3-{A}-DOWN'),
             'store-bus link = HX-8 split + rectifier trim + Q3 down (store closes)')
-    fixed_in = sum(kw(s) for s in ('S53', 'S54', 'S63', 'S80', 'IA-ZNBR-HEAT', 'IA-RECT-Q4', 'SQ-H2O_ELYZ-Q4') if s in E)
-    stores = kw('HL-Q4-A-BUS') + kw('HL-Q4-B-BUS')
-    fixed_out = sum(kw(s) for s in ('IA-Q4-LIFE', 'S100', 'S101', 'IA-Q4-ADS', 'IA-Q4-MAU') if s in E)
+    STORE_LINKS = ('HL-Q4-A-BUS', 'HL-Q4-B-BUS')
+    # F-25 convention, now explicit: the A/B pair is N+1 (HEAT_LADDER.md section 3) - two identical
+    # full-capacity ladders, either carries the plant alone while the other is isolated. rate.value
+    # books the design-day NORMAL state (both ladders on line at their per-ladder share), so the bus
+    # ledger sums real simultaneous flows, never 2 x the single-ladder rating. The rating case (one
+    # ladder isolated, all source heat on the other, AQS-DUTY-008 section 3) sizes the link hardware
+    # and the DRY_COOLER upset.
+    for s in STORE_LINKS:
+        if s in E:
+            base = 'N+1 pair (HEAT_LADDER.md section 3, A-M-453): each ladder is full-capacity and either carries the plant alone. The rate books the design-day normal flow with both ladders on line (HX-8 50/50 split + store trim per ladder). The single-ladder case (one ladder isolated, all source heat on the other, AQS-DUTY-008 section 3) sizes the hardware and the dry-cooler upset; it is not a simultaneous flow.'
+            rest = (E[s]['rate'].get('note') or '').split(' | X-THM-01')
+            E[s]['rate']['note'] = base + ''.join(' | X-THM-01' + seg for seg in rest[1:])
+            E[s].setdefault('params', {})['duty_normal_kw'] = kw(s)
+    fixed_in = sum(kw(e['stream_id']) for e in g['edges'] if e['to_unit_id'] == 'Q4_BUS' and e.get('presence') != 'retired'
+                   and 'thermal' in (e.get('layers') or []) and (e.get('rate') or {}).get('unit') == 'kW'
+                   and e['stream_id'] != 'S44' and e['stream_id'] not in STORE_LINKS)
+    stores = sum(kw(s) for s in STORE_LINKS if s in E)
+    fixed_out = sum(kw(e['stream_id']) for e in g['edges'] if e['from_unit_id'] == 'Q4_BUS' and e.get('presence') != 'retired'
+                    and 'thermal' in (e.get('layers') or []) and (e.get('rate') or {}).get('unit') == 'kW'
+                    and e['stream_id'] != 'HL-Q4-REJ')
     need = fixed_out - (fixed_in + stores)
     if need > 1e-6:
         put('S44', need, f'GEO_HP lifts the Q4 bus deficit {need:.3f} kW (AQS-DUTY-010 dispatch: lift only on deficit)')
-        put('HL-Q4-REJ', 0.0, 'terminal idle on the design day: the study branches absorb the bus; dry cooler stays rated 12 kW for the upset case')
+        put('HL-Q4-REJ', 0.0, 'terminal idle on the design day: the study branches absorb the bus; dry cooler stays rated for the upset case')
     else:
         put('S44', 0.0, 'GEO_HP idle: bus sources cover the branches (AQS-DUTY-010)')
-        put('HL-Q4-REJ', -(need), f'terminal by difference {-(need):.3f} kW; dry cooler rated 12 kW for the upset case (A-M-244)')
-    # ledger check on the stores (X-THM-01 tolerance 0.01 kW)
+        put('HL-Q4-REJ', -(need), f'terminal by difference {-(need):.3f} kW; dry cooler rated for the upset case (A-M-244)')
+    # F-3 (A-M-454): the terminal closes. The dry cooler passes every kW it receives to ambient air,
+    # so its rejection edge books the in-sum and the node ledger closes with the bus.
+    dc_in = sum(kw(e['stream_id']) for e in g['edges'] if e['to_unit_id'] == 'DRY_COOLER' and e.get('presence') != 'retired'
+                and 'thermal' in (e.get('layers') or []) and (e.get('rate') or {}).get('unit') == 'kW')
+    if 'IA-DC-REJ' not in E:
+        rej = json.loads(json.dumps(E['HL-Q4-REJ']))
+        rej.update(stream_id='IA-DC-REJ', from_unit_id='DRY_COOLER', to_unit_id='ATMOS', to_sector_id='WTR',
+                   carries='dry-cooler rejection to ambient air', namespace='IA',
+                   notes='F-3 (A-M-454): terminal rejection edge - the cooler passes the duty it receives to ambient air. Written by write_graph heat.')
+        rej['rate'] = {'value': 0.0, 'unit': 'kW', 'status': 'study', 'note': ''}
+        g['edges'].append(rej); E['IA-DC-REJ'] = rej
+    E['IA-DC-REJ']['rate']['value'] = round(dc_in, 4)
+    E['IA-DC-REJ']['rate']['note'] = (f'X-THM-01 R10b terminal closure (F-3, A-M-454): equals every thermal kW edge into DRY_COOLER'
+                                      f' ({dc_in:.3f} kW on this pass); the node ledger closes: in = out to ambient air.')
+    # ledger check on the stores and the terminal (X-THM-01 tolerance 0.01 kW)
     import collections
     b = collections.Counter()
     for e in g['edges']:
         if 'thermal' in (e.get('layers') or []) and e.get('presence') != 'retired' and (e['rate'] or {}).get('unit') == 'kW':
             x = float(e['rate']['value'] or 0); b[e['from_unit_id']] -= x; b[e['to_unit_id']] += x
-    bad = {u: round(v, 4) for u, v in b.items() if u[:3] in ('Q1_', 'Q2_', 'Q3_', 'Q4_') and abs(v) > 0.01}
+    bad = {u: round(v, 4) for u, v in b.items() if (u[:3] in ('Q1_', 'Q2_', 'Q3_', 'Q4_') or u == 'DRY_COOLER') and abs(v) > 0.01}
     open(GP, 'w').write(_j.dumps(g, indent=2))
     print(f"heat ladder re-solved: stores {'CLOSE' if not bad else bad}; GEO_HP lift {kw('S44'):.3f} kW, dry-cooler rejection {kw('HL-Q4-REJ'):.3f} kW")
 

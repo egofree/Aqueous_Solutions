@@ -7,7 +7,7 @@ Authority: the placement model (flow_graph/placement_seed.json Rev M, AQS-BLD-00
 
 Route rule: up to the source-level rack (datum + 3200 mm, AQS-PIP-002), X run, Y run, then vertical to the target centre. Legs in mm, signed. Elbows = non-zero legs - 1. Risers are at least 300 mm above the higher end so every route keeps a flexible leg (X-PIP-04). Unit centres are the placement-model centres; nozzle lateral offsets refine at detail design (the nozzle schedules carry face + height). Supports and stress: AQS-PIP-005.
 
-Status. 396 positioned piped lines routed, 7874 m total. 15 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
+Status. 397 positioned piped lines routed, 7899 m total. 15 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
 
 | Line | DN | Class | From | To | dZ up | dX | dY | dZ down | Length m | Elbows |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -407,6 +407,7 @@ Status. 396 positioned piped lines routed, 7874 m total. 15 piped lines wait on 
 | IA-H2S-CH3SH | 15 | P1 | BLACK_DIGEST | MET_SYN | 2400 | 10350 | 4050 | -8450 | 25.2 | 3 |
 | IA-NH3-MET | 15 | P1 | WS_AMMONIA | MET_SYN | 2650 | -2950 | -5100 | -2450 | 13.2 | 3 |
 | DL_MET_TO_FEED | 15 | P1 | MET_SYN | CHICKEN_COOP | 2450 | 5100 | 5850 | -2250 | 15.7 | 3 |
+| IA-DC-REJ | 15 | P1 | DRY_COOLER | ATMOS | 2600 | 5950 | -2800 | -13250 | 24.6 | 3 |
 
 Waiting on placements:
 - LB-FEED (LB_INTAKE unplaced)

@@ -63,6 +63,14 @@
    "service": "evaporative spray make-up",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N6",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "dry-cooler rejection to ambient air",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "Copper-tube, aluminium-fin air coil with galvanized-steel casing; epoxy-coated headers; the rejection loop is the house HDPE-class closed water loop",

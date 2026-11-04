@@ -9,13 +9,13 @@ This result is not the MVS flag. mvs.mvs_criteria.loops_closed is not set here.
   one circuit: S66 -> CRU_TO_VDF -> VDF_TO_POLY_F -> POLYF_TO_PELLET -> PELLET_TO_STOCK -> POLY_TO_MFG -> S16 -> IA-BMED-03
   kg/d: nodes off 0, cut in 0.00 out 0.00 pass
 
-## thermal: 40 edges, 0 loops
+## thermal: 44 edges, 0 loops
 
 ## elec: 93 edges, 1 loops
 - 2 units. Circuits listed: 1 (cap 20).
   SOL_ARK_60K, ZNBR2
   one circuit: IA-ESS-ZNBR2-CHG -> IA-ESS-ZNBR2-DIS
-  kW: nodes off 1, cut in 374.82 out 178.83 fail
+  kW: nodes off 1, cut in 373.71 out 177.71 fail
 
 ## ess: 10 edges, 2 loops
 - 2 units. Circuits listed: 4 (cap 20).

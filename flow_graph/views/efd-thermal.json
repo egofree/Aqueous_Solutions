@@ -3,8 +3,8 @@
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AD",
-  "node_count": 34,
-  "edge_count": 60,
+  "node_count": 38,
+  "edge_count": 64,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -316,10 +316,10 @@
       "notes": " Duty: notes/POWER_DUTIES.md.",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.6598,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: Q4-bus lift S44 2.1114 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.6598 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317)."
+        "note": "X-ELS-02: Q4-bus lift S44 0.0000 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.0000 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317)."
       },
       "modules": [],
       "params": {
@@ -330,14 +330,14 @@
         "units_installed": 2,
         "redundancy": "2 x 100 % (X-RED-07)",
         "design": {
-          "lift_kW_th": 2.1114,
-          "electric_kW": 0.6598,
+          "lift_kW_th": 0.0,
+          "electric_kW": 0.0,
           "cop": 3.2,
           "modules": 2,
           "redundancy": "2 x 100 % (X-RED-07)",
           "module_kW_th": 2.2,
           "source_area_m2": 0.22,
-          "condenser_area_m2": 0.286,
+          "condenser_area_m2": 0.22,
           "hx_class": "brazed plate, U 2.0 kW/m2 K at 5 K approach (PERRY9)",
           "cop_basis": "graph S44/SF-GEO_HP; study COP 3.43 at 285 K (AQS-HEAT-STUDY-002 sec. 6, KAVANAUGH2014)",
           "material": "316L plates, R410A-class refrigerant, propylene-glycol brine source"
@@ -725,25 +725,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 219.4425,
+        "value": 218.3301,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 219.4 kW, charge 997.4 kW, 3072 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.3 kW, charge 992.4 kW, 3057 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 998,
-        "kWh": 3073,
+        "kW": 993,
+        "kWh": 3057,
         "presence": "present",
-        "charge_kW": 998,
-        "discharge_kW": 220,
+        "charge_kW": 993,
+        "discharge_kW": 219,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 43 hybrid inverters, 71.5 kWh and 23.2 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 43 hybrid inverters, 71.1 kWh and 23.1 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.789,
-          "purge_m3_h": 32.45,
+          "H2_m3_d": 7.75,
+          "purge_m3_h": 32.29,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2009.5
+          "electrode_area_m2": 1999.4
         },
         "size_mm": [
           1000,
@@ -1359,6 +1359,199 @@
       }
     },
     {
+      "unit_id": "EVAP_ACID",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "evaporator",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "water_off_kg_d": 865.17,
+        "feed_wt": 0.0707,
+        "product_wt": 0.2,
+        "mvr_kWh_per_t": 41.5,
+        "size_mm": [
+          1650,
+          1300,
+          3800
+        ],
+        "size_note": "L x W x H mm: body plus interchanger and compressor frame, in-house design X-MFG-30 (AQS-DUTY-060)",
+        "doc": "AQS-PAR-001, AQS-DUTY-060",
+        "duty": "In 1304.518 kg/d, out 1304.518 kg/d, 1.497 kW. Sheet docs-authority/duties/EVAP_ACID.md.",
+        "design": {
+          "unit": "EVAP_ACID",
+          "T_boil_C": 108.6,
+          "T_cond_C": 114.6,
+          "p_body_kPa": 101.325,
+          "p_shell_kPa": 166.98,
+          "ratio": 1.648,
+          "water_kg_h": 36.049,
+          "duty_kW": 22.6,
+          "comp_shaft_kW": 1.34,
+          "comp_elec_kW": 1.489,
+          "w_kJ_kg": 93.7,
+          "kWh_per_t": 41.5,
+          "A_ff_m2": 2.51,
+          "tubes": 22,
+          "tube_id_mm": 25.0,
+          "tube_L_mm": 1500.0,
+          "recirc_kg_h": 311.0,
+          "pump_kW": 0.008,
+          "shell_D_mm": 350,
+          "height_mm": 3800,
+          "ix_Q_kW": 3.7,
+          "ix_A_m2": 0.155,
+          "T_feed_preheat_C": 98.6,
+          "T_out_C": 49.1,
+          "trim_kW": 0.0,
+          "total_kW": 1.498,
+          "column": {
+            "ideal_stages_incl_body": 5,
+            "column_stages": 4,
+            "cond_hcl_wt_pct": 0.5,
+            "y_eq_feed_pct": 0.343,
+            "y_eq_body_pct": 17.09,
+            "packed_mm": 3000,
+            "D_req_mm": 148.9,
+            "DN": 150,
+            "recycle_hcl_kg_d": 4.33,
+            "material": "borosilicate glass 3.3 sections (ISO 3585), PTFE Pall rings, PTFE-lined flanges (PERRY9_MAT)",
+            "height_mm": 3800,
+            "placement": "free-standing beside the body on the same frame (L-1 headroom 6 m); vapour duct from the separator to the column bottom, column bottoms back to the body"
+          }
+        },
+        "relief_mm": 9.51,
+        "relief_basis": {
+          "case": "fire, ISO 23251 / API 521 adequate drainage",
+          "A_wetted_m2": 0.536,
+          "Q_kW": 25.9,
+          "W_kg_h": 41.32,
+          "P1_kPa_abs": 222.3,
+          "T_K": 405.3,
+          "M_kg_kmol": 18.02,
+          "k": 1.33,
+          "A_req_mm2": 34.01,
+          "orifice": "API 526 D (71 mm2)",
+          "adequate": true,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "shell_side": {
+            "case": "blocked outlet, compressor at 120 % design flow",
+            "W_kg_h": 43.26,
+            "P1_kPa_abs": 486.3,
+            "T_K": 423.9,
+            "M_kg_kmol": 18.02,
+            "k": 1.33,
+            "A_req_mm2": 16.646,
+            "orifice": "API 526 D (71 mm2)",
+            "adequate": true
+          },
+          "bore_req_mm": 6.58
+        },
+        "design_kPa": 100.0
+      },
+      "notes": "HCl concentrator after BMED_ACID (X-PAR acid-loop decision (AQS-PAR-001 \u00a73)). Wetted parts per ULLMANN_HCL (impregnated graphite or fluoropolymer-lined; study).",
+      "continuous_kw": {
+        "value": 1.498,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, HCl from 2 M (7.07 wt%) to 20 wt% (below the HCl azeotrope 20.2 wt%, PERRY9_HCL); water off 865.2 kg/d x 41.5 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.489 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.50 kW. Study."
+      }
+    },
+    {
+      "unit_id": "EVAP_BASE",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "evaporator",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "water_off_kg_d": 801.86,
+        "feed_wt": 0.0741,
+        "product_wt": 0.2,
+        "mvr_kWh_per_t": 39.8,
+        "size_mm": [
+          1250,
+          800,
+          3100
+        ],
+        "size_note": "L x W x H mm: body plus interchanger and compressor frame, in-house design X-MFG-30 (AQS-DUTY-060)",
+        "doc": "AQS-PAR-001, AQS-DUTY-060",
+        "duty": "In 1306.823 kg/d, out 1306.823 kg/d, 1.324 kW. Sheet docs-authority/duties/EVAP_BASE.md.",
+        "design": {
+          "unit": "EVAP_BASE",
+          "T_boil_C": 108.0,
+          "T_cond_C": 114.0,
+          "p_body_kPa": 101.325,
+          "p_shell_kPa": 163.73,
+          "ratio": 1.616,
+          "water_kg_h": 33.411,
+          "duty_kW": 20.95,
+          "comp_shaft_kW": 1.189,
+          "comp_elec_kW": 1.321,
+          "w_kJ_kg": 89.6,
+          "kWh_per_t": 39.8,
+          "A_ff_m2": 2.33,
+          "tubes": 20,
+          "tube_id_mm": 25.0,
+          "tube_L_mm": 1500.0,
+          "recirc_kg_h": 282.7,
+          "pump_kW": 0.008,
+          "shell_D_mm": 350,
+          "height_mm": 3100,
+          "ix_Q_kW": 3.67,
+          "ix_A_m2": 0.146,
+          "T_feed_preheat_C": 98.0,
+          "T_out_C": 50.6,
+          "trim_kW": 0.0,
+          "total_kW": 1.328,
+          "column": null
+        },
+        "relief_mm": 9.51,
+        "relief_basis": {
+          "case": "fire, ISO 23251 / API 521 adequate drainage",
+          "A_wetted_m2": 0.536,
+          "Q_kW": 25.9,
+          "W_kg_h": 41.32,
+          "P1_kPa_abs": 222.3,
+          "T_K": 404.7,
+          "M_kg_kmol": 18.02,
+          "k": 1.33,
+          "A_req_mm2": 33.98,
+          "orifice": "API 526 D (71 mm2)",
+          "adequate": true,
+          "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
+          "shell_side": {
+            "case": "blocked outlet, compressor at 120 % design flow",
+            "W_kg_h": 40.09,
+            "P1_kPa_abs": 486.3,
+            "T_K": 423.9,
+            "M_kg_kmol": 18.02,
+            "k": 1.33,
+            "A_req_mm2": 15.427,
+            "orifice": "API 526 D (71 mm2)",
+            "adequate": true
+          },
+          "bore_req_mm": 6.58
+        },
+        "design_kPa": 100.0
+      },
+      "notes": "NaOH concentrator after BMED_BASE (X-PAR acid-loop decision (AQS-PAR-001 \u00a73)). Nickel or fluoropolymer-lined wetted parts (study).",
+      "continuous_kw": {
+        "value": 1.328,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 801.9 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.321 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.33 kW. Study."
+      }
+    },
+    {
       "unit_id": "ADS_CHILL",
       "sector_id": "HEAT",
       "presence": "present",
@@ -1461,6 +1654,18 @@
       "class": "hx"
     },
     {
+      "unit_id": "ATMOS",
+      "sector_id": "WTR",
+      "presence": "present",
+      "class": "boundary",
+      "notes": "Atmospheric exchange boundary (bookkeeping, not a process unit): water that leaves the cycle as vapour is booked here - today only the site evaporative rejection spray at DRY_COOLER (AQS-PLAN-011 section 6.2, task X-LOC-13). In does not equal out by design; the unit is exempt from closure like the dock and relief meters.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "equipment_id": "ATMOS"
+      }
+    },
+    {
       "unit_id": "DRY_COOLER",
       "sector_id": "HEAT",
       "presence": "present",
@@ -1518,6 +1723,42 @@
         "note": "the fan at ~0.03 kW per 100 m3/h class for the dry coil draft (the fan; the rejection is passive-draft assisted) (X-SPEC sizing, calculated)"
       },
       "class": "dry_cooler"
+    },
+    {
+      "unit_id": "EVAP_ACID_VS",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "scrubber",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "DN": 150,
+        "packed_mm": 500,
+        "height_mm": 1400,
+        "sump_L": 20.0,
+        "material": "PVC-U pipe and fittings (ASTM D1785 Sch 80), in-house cut PVC tube rings, PVC mesh demister (PERRY9_MAT: PVC to 60 C in HCl and NaOH)",
+        "y_in_ppm_design": 489.8,
+        "y_out_ppm": 1.0,
+        "design_case": "upset: column bypassed (A-M-111)",
+        "size_mm": [
+          400,
+          400,
+          1400
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/vent_scrubber.py (X-PAR-10)",
+        "doc": "AQS-DUTY-061"
+      },
+      "notes": "Packed PVC alkali scrubber on the EVAP_ACID column vent; NaOH bleed from BMED_BASE; spent liquor to BMED_ACID. Duty sheet docs-authority/duties/EVAP_ACID_VS.md.",
+      "continuous_kw": {
+        "value": 0.0238,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Sump recirculation pump 350 L/h at the minimum wetting rate (PERRY9_ABS), 10 m head, 40 % efficiency (study)."
+      }
     }
   ],
   "edges": [
@@ -1899,10 +2140,13 @@
         "value": 3.896,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder. | X-THM-01: 5.51 kW less 0.7619 kW of insulated line loss upstream (A-M-166). | X-THM-01 R10b: store-bus link = HX-8 split + rectifier trim + Q3 down (store closes) (A-M-259)."
+        "note": "N+1 pair (HEAT_LADDER.md section 3, A-M-453): each ladder is full-capacity and either carries the plant alone. The rate books the design-day normal flow with both ladders on line (HX-8 50/50 split + store trim per ladder). The single-ladder case (one ladder isolated, all source heat on the other, AQS-DUTY-008 section 3) sizes the hardware and the dry-cooler upset; it is not a simultaneous flow. | X-THM-01: 5.51 kW less 0.7619 kW of insulated line loss upstream (A-M-166). | X-THM-01 R10b: store-bus link = HX-8 split + rectifier trim + Q3 down (store closes) (A-M-259)."
       },
       "from_sector_id": "HEAT",
-      "to_sector_id": "HEAT"
+      "to_sector_id": "HEAT",
+      "params": {
+        "duty_normal_kw": 3.896
+      }
     },
     {
       "stream_id": "HL-Q4-B-BUS",
@@ -1921,10 +2165,13 @@
         "value": 3.896,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-008 Rev B: rated = single-ladder bus feed with HX-8 x 1.25. Normal (both ladders, draws running) 2.122 kW per ladder. | X-THM-01: 5.51 kW less 0.8371 kW of insulated line loss upstream (A-M-166). | X-THM-01 R10b: store-bus link = HX-8 split + rectifier trim + Q3 down (store closes) (A-M-259)."
+        "note": "N+1 pair (HEAT_LADDER.md section 3, A-M-453): each ladder is full-capacity and either carries the plant alone. The rate books the design-day normal flow with both ladders on line (HX-8 50/50 split + store trim per ladder). The single-ladder case (one ladder isolated, all source heat on the other, AQS-DUTY-008 section 3) sizes the hardware and the dry-cooler upset; it is not a simultaneous flow. | X-THM-01: 5.51 kW less 0.8371 kW of insulated line loss upstream (A-M-166). | X-THM-01 R10b: store-bus link = HX-8 split + rectifier trim + Q3 down (store closes) (A-M-259)."
       },
       "from_sector_id": "HEAT",
-      "to_sector_id": "HEAT"
+      "to_sector_id": "HEAT",
+      "params": {
+        "duty_normal_kw": 3.896
+      }
     },
     {
       "stream_id": "HL-Q4-X",
@@ -2036,10 +2283,10 @@
       "forbidden": "Q1 flue in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": 2.1114,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-THM-01 R10b: GEO_HP lifts the Q4 bus deficit 2.111 kW (AQS-DUTY-010 dispatch: lift only on deficit) (A-M-259)."
+        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-THM-01 R10b: GEO_HP idle: bus sources cover the branches (AQS-DUTY-010) (A-M-259)."
       },
       "from_sector_id": "GEO",
       "to_sector_id": "HEAT",
@@ -2651,10 +2898,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0,
+        "value": 0.7384,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.8/\u00a710.11 (A-M-244): rated-case terminal flow with the Rev M preheats restored \u2014 13.1637 in - 3.0 life - 0.532 HX-9 - 0.282 HX-10 (X-THM-01 line-loss closure basis unchanged). The DRY_COOLER unit is rated 12 kW to pass the 10.16 kW case with all seasonal branches down. AQS-DUTY-011 Rev M sized to the continuous neighbour draw; dry cooler, not an ORC. | X-THM-01 R10b: terminal idle on the design day: the study branches absorb the bus; dry cooler stays rated 12 kW for the upset case (A-M-259)."
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.8/\u00a710.11 (A-M-244): rated-case terminal flow with the Rev M preheats restored \u2014 13.1637 in - 3.0 life - 0.532 HX-9 - 0.282 HX-10 (X-THM-01 line-loss closure basis unchanged). The DRY_COOLER unit is rated 12 kW to pass the 10.16 kW case with all seasonal branches down. AQS-DUTY-011 Rev M sized to the continuous neighbour draw; dry cooler, not an ORC. | X-THM-01 R10b: terminal by difference 0.738 kW; dry cooler rated for the upset case (A-M-244) (A-M-259)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -3203,6 +3450,112 @@
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HEAT"
+    },
+    {
+      "stream_id": "SQ-EVAP_ACID",
+      "from_unit_id": "EVAP_ACID",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.498,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086); to the Q4 loop (HEAT_SINK retired at Rev AC; gap audit 2026-10-31). Layer thermal (F-3 fix, A-M-454): the MVR compressor heat is heat, not a mixed energy stream, so the X-THM-01 Q4 ledger counts it."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "SQ-EVAP_BASE",
+      "from_unit_id": "EVAP_BASE",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.328,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Compressor work leaves as heat (A-M-086); to the Q4 loop (HEAT_SINK retired at Rev AC; gap audit 2026-10-31). Layer thermal (F-3 fix, A-M-454): the MVR compressor heat is heat, not a mixed energy stream, so the X-THM-01 Q4 ledger counts it."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "SQ-EVAP_ACID_VS",
+      "from_unit_id": "EVAP_ACID_VS",
+      "to_unit_id": "Q4_BUS",
+      "phase": "E",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "electrical input leaving as heat",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0238,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Pump work leaves as heat. Layer thermal (F-3 fix, A-M-454): the X-THM-01 Q4 ledger counts it."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null,
+      "params": {}
+    },
+    {
+      "stream_id": "IA-DC-REJ",
+      "from_unit_id": "DRY_COOLER",
+      "to_unit_id": "ATMOS",
+      "phase": "thermal",
+      "layers": [
+        "thermal"
+      ],
+      "presence": "present",
+      "carries": "dry-cooler rejection to ambient air",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 7.9884,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-THM-01 R10b terminal closure (F-3, A-M-454): equals every thermal kW edge into DRY_COOLER (7.988 kW on this pass); the node ledger closes: in = out to ambient air."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "F-3 (A-M-454): terminal rejection edge - the cooler passes the duty it receives to ambient air. Written by write_graph heat.",
+      "params": {}
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

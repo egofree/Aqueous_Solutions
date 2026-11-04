@@ -12,7 +12,7 @@ OF-10,electronics,compressor contactor + overload,IEC 60947-4-1,9,18.5 kW hermet
 OF-11,electronics,stepper driver,IEC 61800-5-1,3,24/48 V DC x3,1
 OF-12,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",IEC 61508 / IEC 61511,2,- x2,1
 OF-13,fabricated part,fabricated part set,models/mfg/<unit>/bom.csv,197,4 BOM lines x26; 9 BOM lines x25; 5 BOM lines x24; 7 BOM lines x23; 6 BOM lines x16; 3 BOM lines x16; 8 BOM lines x15; 2 BOM lines x7; 12 BOM lines x6; 10 BOM lines x5; 15 BOM lines x4; 1 BOM lines x4; 17 BOM lines x4; 11 BOM lines x3; 16 BOM lines x3; 18 BOM lines x3; 21 BOM lines x2; 33 BOM lines x2; 36 BOM lines x1; 32 BOM lines x1; 39 BOM lines x1; 19 BOM lines x1; 13 BOM lines x1; 26 BOM lines x1; 35 BOM lines x1; 72 BOM lines x1; 28 BOM lines x1,197
-OF-14,fastener,anchor bolt,ISO 3506 A4-70 wedge anchor,14710,M10 x14710,138
+OF-14,fastener,anchor bolt,ISO 3506 A4-70 wedge anchor,14764,M10 x14764,138
 OF-15,fastener,M10 x 40 lid bolt,ISO 3506 A4-70,12,M10 x 40 lid bolt with nut and washers x12,1
 OF-16,fastener,M8 x 30 lid bolt,ISO 3506 A4-70,12,M8 x 30 lid bolt with nut and washers x12,1
 OF-17,fastener,M12 anchor,ISO 3506 A4-70,3,M12 anchor x3,1
@@ -38,9 +38,9 @@ OF-44,instrument,"gas detector, CO","alarm 25 ppm, trip 50 ppm, breathing height
 OF-45,instrument,"gas detector, NOx","alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height",6,electrochemical NO2 x6,3
 OF-46,protection,"inverse-time circuit breaker, 3-pole",UL 489 / IEC 60947-2,235,15 A x223; 90 A x8; 30 A x3; 60 A x1,61
 OF-47,seal,"mechanical seal, single","SiC/SiC faces, FKM",154,EN 12756 x154,42
-OF-48,support,pipe clamp,"PP clamp with EPDM liner, MSS SP-58 Type 7",5863,DN15 x5289; DN50 x537; DN20 x17; DN250 x7; DN32 x6; DN300 x4; DN200 x3,116
+OF-48,support,pipe clamp,"PP clamp with EPDM liner, MSS SP-58 Type 7",5890,DN15 x5316; DN50 x537; DN20 x17; DN250 x7; DN32 x6; DN300 x4; DN200 x3,116
 OF-49,support,U-bolt with guide,"316 U-bolt, MSS SP-58 Type 24",1492,DN15 x1432; DN20 x30; DN25 x23; DN50 x7,44
-OF-50,valve,isolation valve,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",280,DN15 x258; DN50 x22,64
+OF-50,valve,isolation valve,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",282,DN15 x260; DN50 x22,64
 OF-51,valve,isolation valve,"PP ball valve with HDPE stub ends, ISO 16135",42,DN15 x32; DN50 x10,13
 OF-52,valve,isolation valve,"316L ball valve, ASME B16.34 Cl 150, RF flanged",188,DN15 x174; DN20 x6; DN50 x4; DN25 x4,40
 OF-53,valve,isolation valve,"CPVC true-union ball valve, MSS SP-122, FKM seals",90,DN15 x56; DN50 x34,24

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 930.6 kg/d. Mass out 930.6 kg/d. Electrical duty 219.4425 kW. In: S69B 922.1 kg/d (NaBr after ORP); IA-ZNBR-MU 8.486 kg/d (electrolyte water make-up). Out: S69 922.1 kg/d (Br2 vapor); IA-ZNBR-BD 8.487 kg/d (electrolyte bleed).
+1. Basis. Mass in 925.9 kg/d. Mass out 925.9 kg/d. Electrical duty 218.3301 kW. In: S69B 917.5 kg/d (NaBr after ORP); IA-ZNBR-MU 8.486 kg/d (electrolyte water make-up). Out: S69 917.5 kg/d (Br2 vapor); IA-ZNBR-BD 8.487 kg/d (electrolyte bleed).
 
 2. Size.
 - 6.67 kW. No exchanger area. A heat-transfer area does not belong on this class.

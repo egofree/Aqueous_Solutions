@@ -7,7 +7,7 @@ service line: machine vibratory shell knock-out station with reclaim sieve; spen
 Internals: duty sheet: "1; table_kW 0.4. 3. Material. Vibratory knock-out tray with UHMW-PE wear liner, 304 stainless reclaim sieve, o" [docs-authority/duties/SHELL_BREAK.md]
 Material: Vibratory knock-out tray with UHMW-PE wear liner, 304 stainless reclaim sieve, open-steel frame housing the dry, noncombustible silica dust. Basis: shell knock-out + stucco reclaim, 8 kg shell/d (graph design A-M-281): wear selection per the mechanical-metallurgy wear text (DIETER1988 ch. (continues on the duty sheet)
 
-Nozzles: 7 process connections per docs-authority/nozzles/SHELL_BREAK.csv
+Nozzles: 8 process connections per docs-authority/nozzles/SHELL_BREAK.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

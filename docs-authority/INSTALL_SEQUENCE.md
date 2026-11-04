@@ -140,7 +140,7 @@ Recycle-loop tie-in pass: 15 same-level connections of ['BMED_UPW_POLISH', 'CRYO
 | 11 | EVAP_BASE | 465 | 2402 | hoist | initial feed | IA-BASE-01 -> GLASS_DIGEST (L-1); IA-BASE-PPT -> LEACH_CSTR_1 (L-1) |
 | 12 | FUEL_CELL | 346 | 346 | hoist | IA-FC-FIX -> NOX_SCRUB; S51 -> SOL_ARK_60K; S53 -> Q4_BUS | IA-FC-LEACH -> LEACH_CSTR_1 (L-1); S49 -> CRYO_H2 (L-1); S50 -> CRYO_O2 (L-1); S52 -> VCD_TRAIN (L-1) |
 | 13 | AFTERBURNER_FLUE | 338 | 338 | hoist | initial feed | IA-AB-AIR -> HDR_N2 (L1); IA-AB-FLUE -> AFTERBURNER (L-1); S67 -> FLUE_KO (L-1) |
-| 14 | ATMOS | 338 | 338 | built in place | initial feed | IA-DC-EVAP -> DRY_COOLER (L2) |
+| 14 | ATMOS | 338 | 338 | built in place | initial feed | IA-DC-EVAP -> DRY_COOLER (L2); IA-DC-REJ -> DRY_COOLER (L2) |
 | 15 | BMED_BASE | 338 | 1744 | hoist | IA-BMED-02 -> WS_KOH; IA-VS-NAOH -> EVAP_ACID_VS | IA-BMED-04 -> LEACH_CSTR_1 (L-1); IA-EVAP_BASE-COND -> EVAP_BASE (L-1); IA-EVAP_BASE-FEED -> EVAP_BASE (L-1) |
 | 16 | FLOAT_SINK | 338 | 338 | hoist | FLOAT_SINK_GRIT_TO_TI -> TI_CELL | IA-PLAST-01 -> OIL_DRYER (L-1); IA-SINK-01 -> LEACH_CSTR_1 (L-1); IA-WET-FLOAT-01 -> LEACH_CSTR_1 (L-1) |
 | 17 | HDR_O2 | 338 | 338 | built in place | IA-FC-AIR -> MEOH_FC; IA-GEN-O2 -> BACKUP_GEN; IA-H2O2-SRC -> WS_PEROX | IA-AB-O2 -> AFTERBURNER (L-1); IA-O2-MAKE -> CRYO_O2 (L-1); IA-O2-PROD -> PROD_O2 (L-1); IA-O2-RET -> CRYO_ASU (L-1); S83 -> CRYO_O2 (L-1) |
@@ -342,7 +342,7 @@ Recycle-loop tie-in pass: 4 same-level connections of ['BEE_HIVE', 'GROW_BED', '
 | Seq | Unit | Empty kg | Operation kg | Placed by | Same-level connections | Cross-level connections |
 |---|---|---|---|---|---|---|
 | 1 | ADS_CHILL | 63 | 63 | hoist | IA-ADS-REJ -> DRY_COOLER | IA-ADS-CHW -> HABITATION (L1); IA-Q4-ADS -> Q4_BUS (L0) |
-| 2 | DRY_COOLER | 130 | 130 | hoist | IA-ADS-REJ -> ADS_CHILL | HL-Q4-REJ -> Q4_BUS (L0); IA-DC-EVAP -> ATMOS (L0); IA-DC-SPRAY -> ROOF_TANK (L0) |
+| 2 | DRY_COOLER | 130 | 130 | hoist | IA-ADS-REJ -> ADS_CHILL | HL-Q4-REJ -> Q4_BUS (L0); IA-DC-EVAP -> ATMOS (L0); IA-DC-REJ -> ATMOS (L0); IA-DC-SPRAY -> ROOF_TANK (L0) |
 | 3 | MAU_HX | 14 | 14 | hoist | initial feed | IA-MAU-AIR -> HABITATION (L1); IA-Q4-MAU -> Q4_BUS (L0) |
 
 ## R1 (1 unit, hoist - t)

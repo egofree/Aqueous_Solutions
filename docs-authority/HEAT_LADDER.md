@@ -8,6 +8,7 @@ Authority: plant flow graph Rev AC. Edge duties are held in the graph. Not a PE 
 | Rev | Description | Date |
 |---|---|---|
 | A | First issue under the documentation style guide (AQS-DOC-002). It consolidates the text dated 2026-10-02, with tier notes updated for graph Rev K on 2026-10-07, heater ratings and Q4 sinks for graph Rev M on 2026-10-08, and checks against graph Rev BH on 2026-10-12 and graph Rev AC on 2026-10-24. The earlier text is in the git history. No rate change. | 2026-10-25 |
+| B | Section 3 states the A/B ledger convention (A-M-453): the two ladders are a full-capacity N+1 pair; graph edge rates book the design-day normal state with both ladders on line, and the single-ladder case sizes the hardware and the terminal upset. No rate change. | 2026-11-03 |
 
 ## 1. Purpose and scope
 
@@ -40,7 +41,9 @@ The test `test_heat_ladder_moves_heat_down_only` in `flow_graph/test_doc_consist
 
 ## 3. Two ladders
 
-Ladder A is west of the building core and ladder B is east of it. Both have the same four tiers. Either ladder can carry the plant while the other is isolated.
+Ladder A is west of the building core and ladder B is east of it. Both have the same four tiers. Either ladder can carry the plant while the other is isolated (A-M-453).
+
+The two ladders are a full-capacity N+1 pair, not two half-size units. Each edge rate in the graph books the design-day normal state: both ladders on line, the sources split evenly, each ladder at its per-ladder share. The single-ladder case (one ladder isolated, all source heat on the other) sizes the hardware and the terminal rejection upset; it is a rating case, not a simultaneous flow, so no ledger sums the two rated duties of one tier. The Q4 bus ledger (X-THM-01, `flow_graph/param/write_graph.py heat`) sums the normal flows only.
 
 Each tier on each ladder has:
 

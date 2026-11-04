@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3043.000 | 3043.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3027.000 | 3027.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -2077,3 +2077,5 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-448 | product water quality basis: TCEQ 30 TAC 307 segment 2311 cr mg/L annual average | re-verify the segment sheet and the applicability to lake-restoration return at the locale design pass |
 | A-M-450 | degasser basis: Henry coefficients H2S 0.00087 and CO2 0.000 mol/(m3 Pa); vol/vol; fraction | tower transfer-units design at the locale design pass on the assayed sulfide and its pH speciation; caustic chemical stripping is the fallback |
 | A-M-452 | AFTERBURNER combustion basis: the NCG fuel (AQS-DUTY-010, 5. kg/d; kW | commissioning flue-gas analysis at the afterburner run: dry O2 near 9 %, CO2 near 11 vol% of S67, CO within the EU IED class, against the A-M-452 species ledger |
+| A-M-453 | Heat-ladder A/B ledger convention: the two ladders are a ful convention; kW | python3 -m flow_graph.param.write_graph heat closes Q4_BUS and DRY_COOLER on the thermal-kW ledger within 0.01 kW; test_heat_ladder.py passes; HL-Q4-A/B-BUS notes state the N+1 convention |
+| A-M-454 | The MVR evaporator compressor/pump heat edges (SQ-EVAP_ACID, kW; layer | python3 -m flow_graph.param.write_graph heat: Q4_BUS in = out on thermal kW edges; IA-DC-REJ == sum of thermal kW into DRY_COOLER; DRY_COOLER balances within 0.01 kW |

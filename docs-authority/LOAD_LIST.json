@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "3eaae8b937ec8c0eff2b52c49f74b62db2224dbae25b6c9ff054cab346bf59c2",
+  "graph_sha256": "975622beebddeefca7848bd9ec8aa90266ed4067bfda8f3e65ab56ef02b38121",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 369.815,
-   "calc_kw": 369.815,
+   "kw": 368.703,
+   "calc_kw": 368.703,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,18 +16,18 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 219.442,
-   "calc_kw": 219.442,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 219.4 kW, charge 997.4 kW, 3072 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 218.33,
+   "calc_kw": 218.33,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.3 kW, charge 992.4 kW, 3057 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "EXT_HALL",
    "role": "load",
-   "kw": 99.632,
-   "calc_kw": 99.632,
-   "basis": "X-PAR-07 solver.roof_close: conditioned extension 28728 m2; lighting 25.28 kW (IECC 2021 C405, 10 % lit), ventilation 42.66 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 31.69 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 29.6 kW and cooling 175.9 kW thermal average after internal gains 36.1 kW and slab edge 1.65 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
+   "kw": 99.18,
+   "calc_kw": 99.18,
+   "basis": "X-PAR-07 solver.roof_close: conditioned extension 28548 m2; lighting 25.12 kW (IECC 2021 C405, 10 % lit), ventilation 42.40 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 31.66 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 29.5 kW and cooling 175.2 kW thermal average after internal gains 35.8 kW and slab edge 1.68 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -255,15 +255,6 @@
    "basis": "X-ELS-02: agitator PBT D450 at 150 rpm, 403 W shaft (Np x rho x N^3 x D^5) -> 0.75 kW motor (drivers key motor_kW; AQS-DUTY-050 Rev B); leach heat is Q3 via HX-5, not electric (was the 2 kW AC parasitics share).",
    "class": "calculated",
    "sector": "DIGESTER"
-  },
-  {
-   "unit": "GEO_HP",
-   "role": "load",
-   "kw": 0.66,
-   "calc_kw": 0.66,
-   "basis": "X-ELS-02: Q4-bus lift S44 2.1114 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.6598 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317).",
-   "class": "calculated",
-   "sector": "GEO"
   },
   {
    "unit": "CRYO_AHU",
@@ -707,6 +698,15 @@
    "sector": "FAB"
   },
   {
+   "unit": "GEO_HP",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 0.0,
+   "basis": "X-ELS-02: Q4-bus lift S44 0.0000 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.0000 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317).",
+   "class": "calculated",
+   "sector": "GEO"
+  },
+  {
    "unit": "FUEL_CELL",
    "role": "generation",
    "kw": 4.0,
@@ -939,10 +939,10 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 103,
-  "graph_sum_kW": 180.78,
-  "calc_sum_kW": 180.78,
-  "connected_load_kW": 180.8,
-  "connected_calculated_kW": 178.8,
+  "graph_sum_kW": 179.67,
+  "calc_sum_kW": 179.67,
+  "connected_load_kW": 179.7,
+  "connected_calculated_kW": 177.7,
   "connected_standby_kW": 0.1,
   "connected_study_kW": 1.9,
   "connected_calculated_pct": 98.9,

@@ -21,7 +21,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-10 | electronics: compressor contactor + overload (18.5 kW hermetic x8; 1.1 kW hermetic x1) | 9 | 1 | 10 % min 1 |
 | building block | OF-11 | electronics: stepper driver (24/48 V DC x3) | 3 | 1 | 10 % min 1 |
 | building block | OF-12 | electronics: safety PLC (SIL 2 capable), CPU and I/O rack (- x2) | 2 | 1 | 10 % min 1 |
-| building block | OF-14 | fastener: anchor bolt (M10 x14710) | 14710 | 295 | 2 % min 4 |
+| building block | OF-14 | fastener: anchor bolt (M10 x14764) | 14764 | 296 | 2 % min 4 |
 | building block | OF-15 | fastener: M10 x 40 lid bolt (M10 x 40 lid bolt with nut and washers x12) | 12 | 4 | 2 % min 4 |
 | building block | OF-16 | fastener: M8 x 30 lid bolt (M8 x 30 lid bolt with nut and washers x12) | 12 | 4 | 2 % min 4 |
 | building block | OF-17 | fastener: M12 anchor (M12 anchor x3) | 3 | 4 | 2 % min 4 |
@@ -47,7 +47,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-45 | instrument: gas detector, NOx (electrochemical NO2 x6) | 6 | 1 | 10 % min 1 |
 | building block | OF-46 | protection: inverse-time circuit breaker, 3-pole (15 A x223; 90 A x8; 30 A x3; 60 A x1) | 235 | 24 | 10 % min 1 |
 | building block | OF-47 | seal: mechanical seal, single (EN 12756 x154) | 154 | 31 | 20 % min 2 |
-| building block | OF-50 | valve: isolation valve (DN15 x258; DN50 x22) | 280 | 14 | 5 % min 1 |
+| building block | OF-50 | valve: isolation valve (DN15 x260; DN50 x22) | 282 | 15 | 5 % min 1 |
 | building block | OF-51 | valve: isolation valve (DN15 x32; DN50 x10) | 42 | 3 | 5 % min 1 |
 | building block | OF-52 | valve: isolation valve (DN15 x174; DN20 x6; DN50 x4; DN25 x4) | 188 | 10 | 5 % min 1 |
 | building block | OF-53 | valve: isolation valve (DN15 x56; DN50 x34) | 90 | 5 | 5 % min 1 |
@@ -178,4 +178,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-168 lines; 34 spare motors, 1219 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+168 lines; 34 spare motors, 1221 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.

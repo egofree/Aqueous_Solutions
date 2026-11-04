@@ -5019,6 +5019,15 @@
      "carries": "vacuum-toilet blackwater"
     },
     {
+     "stream_id": "IA-DC-REJ",
+     "from": "DRY_COOLER",
+     "to": "ATMOS",
+     "other_sector": "HEAT",
+     "rate": 7.9884,
+     "unit": "kW",
+     "carries": "dry-cooler rejection to ambient air"
+    },
+    {
      "stream_id": "IA-FEC-01",
      "from": "HABITATION",
      "to": "BLACK_DIGEST",
@@ -5949,15 +5958,6 @@
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
     {
-     "stream_id": "SF-GEO_HP",
-     "from": "SOL_ARK_60K",
-     "to": "GEO_HP",
-     "other_sector": "GEO",
-     "rate": 0.6598,
-     "unit": "kW",
-     "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
-    },
-    {
      "stream_id": "SF-GEO_HP_CLOSED_LOOP",
      "from": "SOL_ARK_60K",
      "to": "GEO_HP_CLOSED_LOOP",
@@ -6367,6 +6367,15 @@
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
     {
+     "stream_id": "SF-GEO_HP",
+     "from": "SOL_ARK_60K",
+     "to": "GEO_HP",
+     "other_sector": "GEO",
+     "rate": 0.0,
+     "unit": "kW",
+     "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
+    },
+    {
      "stream_id": "SF-LITHO_STUB",
      "from": "SOL_ARK_60K",
      "to": "LITHO_STUB",
@@ -6515,15 +6524,6 @@
      "carries": "round-trip loss"
     },
     {
-     "stream_id": "S44",
-     "from": "GEO_HP",
-     "to": "Q4_BUS",
-     "other_sector": "GEO",
-     "rate": 2.1114,
-     "unit": "kW",
-     "carries": "heat < 80 °C"
-    },
-    {
      "stream_id": "S53",
      "from": "FUEL_CELL",
      "to": "Q4_BUS",
@@ -6661,6 +6661,15 @@
      "carries": "chilled water 12 C (kW_c cooling service)"
     },
     {
+     "stream_id": "IA-DC-REJ",
+     "from": "DRY_COOLER",
+     "to": "ATMOS",
+     "other_sector": "WTR",
+     "rate": 7.9884,
+     "unit": "kW",
+     "carries": "dry-cooler rejection to ambient air"
+    },
+    {
      "stream_id": "IA-MAU-AIR",
      "from": "MAU_HX",
      "to": "HABITATION",
@@ -6771,6 +6780,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "evaporative spray make-up"
+    },
+    {
+     "stream_id": "S44",
+     "from": "GEO_HP",
+     "to": "Q4_BUS",
+     "other_sector": "GEO",
+     "rate": 0.0,
+     "unit": "kW",
+     "carries": "heat < 80 °C"
     }
    ]
   },
@@ -7030,15 +7048,6 @@
    ],
    "no_source": [
     {
-     "stream_id": "S44",
-     "from": "GEO_HP",
-     "to": "Q4_BUS",
-     "other_sector": "HEAT",
-     "rate": 2.1114,
-     "unit": "kW",
-     "carries": "heat < 80 °C"
-    },
-    {
      "stream_id": "S48",
      "from": "GEO_ORC",
      "to": "SOL_ARK_60K",
@@ -7050,15 +7059,6 @@
    ],
    "stops": [
     {
-     "stream_id": "SF-GEO_HP",
-     "from": "SOL_ARK_60K",
-     "to": "GEO_HP",
-     "other_sector": "ELEC",
-     "rate": 0.6598,
-     "unit": "kW",
-     "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
-    },
-    {
      "stream_id": "SF-GEO_HP_CLOSED_LOOP",
      "from": "SOL_ARK_60K",
      "to": "GEO_HP_CLOSED_LOOP",
@@ -7068,7 +7068,26 @@
      "carries": "480 V AC"
     }
    ],
-   "inactive": []
+   "inactive": [
+    {
+     "stream_id": "S44",
+     "from": "GEO_HP",
+     "to": "Q4_BUS",
+     "other_sector": "HEAT",
+     "rate": 0.0,
+     "unit": "kW",
+     "carries": "heat < 80 °C"
+    },
+    {
+     "stream_id": "SF-GEO_HP",
+     "from": "SOL_ARK_60K",
+     "to": "GEO_HP",
+     "other_sector": "ELEC",
+     "rate": 0.0,
+     "unit": "kW",
+     "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
+    }
+   ]
   },
   "DOCK": {
    "no_sink": [

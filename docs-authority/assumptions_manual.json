@@ -7618,5 +7618,38 @@
   ],
   "needs_verification": true,
   "verification_test": "commissioning flue-gas analysis at the afterburner run: dry O2 near 9 %, CO2 near 11 vol% of S67, CO within the EU IED class, against the A-M-452 species ledger"
+ },
+ {
+  "id": "A-M-453",
+  "value": "Heat-ladder A/B ledger convention: the two ladders are a full-capacity N+1 pair (either carries the plant alone while the other is isolated, HEAT_LADDER.md section 3); graph edge rates book the design-day normal state with both ladders on line at their per-ladder share, and the Q4_BUS ledger sums those normal flows only - never the two rated duties of one tier",
+  "units": "convention; kW",
+  "where": "flow_graph/param/write_graph.py heat() (X-THM-01 store-ledger re-solve: HL-Q4-A-BUS / HL-Q4-B-BUS base notes + duty_normal_kw params); HEAT_LADDER.md section 3; test_heat_ladder.py counts the same thermal-kW edges",
+  "basis": "Physics-audit findings F-3/F-25: the Q4_BUS ledger summed the identical 3.896 kW store-bus links while the link notes called each a single-ladder x 1.25 rating, and HEAT_LADDER.md left the A/B reading undefined. Read against AQS-DUTY-008 section 3 (rated = governing single-ladder throughput x 1.25; normal = both ladders on line, sources split 50/50) and the AGENTS.md redundancy rule, the pair is N+1: the rating case sizes hardware and the DRY_COOLER upset, the normal case is the design-day book. The booked components (HX-8 50/50 split 2.286, params duty_normal_kw 2.286, + store trim 1.61) are normal-duty numbers, so the ledger sum 2 x 3.896 is the real normal bus feed",
+  "sensitivity": "No rate moves; the ledger book is declared a normal-state book. If the owner later books one-ladder-carrying as the design state, the Q4 bus deficit grows by 3.896 kW and the GEO_HP lift moves with it - the writer computes it by difference either way",
+  "replaced_by": "a control-system dispatch model of the ladder A/B state if the plant ever runs one ladder isolated as the design state",
+  "task": "physics audit F-3/F-25 (heat-ladder convention, 2026-11-03)",
+  "files": [
+   "flow_graph/param/write_graph.py",
+   "docs-authority/HEAT_LADDER.md",
+   "flow_graph/plant_flow_graph.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.write_graph heat closes Q4_BUS and DRY_COOLER on the thermal-kW ledger within 0.01 kW; test_heat_ladder.py passes; HL-Q4-A/B-BUS notes state the N+1 convention"
+ },
+ {
+  "id": "A-M-454",
+  "value": "The MVR evaporator compressor/pump heat edges (SQ-EVAP_ACID, SQ-EVAP_BASE, SQ-EVAP_ACID_VS, 2.8498 kW total) carry layer thermal and count in the X-THM-01 Q4_BUS ledger; DRY_COOLER closes on a terminal rejection edge (IA-DC-REJ) equal to every thermal kW edge it receives",
+  "units": "kW; layer",
+  "where": "flow_graph/param/write_graph.py process() (SQ-EVAP edge layers) and heat() (dynamic Q4_BUS fixed-in scan + IA-DC-REJ DRY_COOLER to ATMOS)",
+  "basis": "Physics-audit finding F-3: the audit ledger read Q4_BUS in 23.67 vs out 20.81 kW with HL-Q4-REJ 0.0 because 2.85 kW of real compressor/pump heat sat on the mixed 'energy' layer, so the re-solve never saw it and the bus showed a fictitious 2.11 kW GEO_HP deficit. Compressor work leaves as heat (A-M-086); the evaporators reject it to the Q4 loop at Q4 grade, so it is thermal-layer like the PEM stack heat edge SQ-H2O_ELYZ-Q4. With the heat counted the bus book is by difference like every other tier",
+  "sensitivity": "the GEO_HP design-day lift moves by the counted evaporator heat (about -2.85 kW); the dry-cooler terminal duty moves with whatever the bus rejects",
+  "replaced_by": "measured MVR skid heat balance at commissioning",
+  "task": "physics audit F-3 (Q4 heat-rejection path, 2026-11-03)",
+  "files": [
+   "flow_graph/param/write_graph.py",
+   "flow_graph/plant_flow_graph.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.write_graph heat: Q4_BUS in = out on thermal kW edges; IA-DC-REJ == sum of thermal kW into DRY_COOLER; DRY_COOLER balances within 0.01 kW"
  }
 ]

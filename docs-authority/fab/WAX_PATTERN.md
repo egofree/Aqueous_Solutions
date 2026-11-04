@@ -7,7 +7,7 @@ service line: bench wax pattern injection bench; wax_kg_d 2; makeup_kg_d 0.2; re
 Internals: none with basis: a prep machine; no process internals booked by the duty
 Material: 304L wax melt tank with steam/hot-water manifold; PP-H storage bins; PE drain pans. Basis: pattern-wax melt at 70-90 C (dry hydrocarbon, no corrosion load; graph design A-M-281): 304/316L hot-melt practice per ULLMANN_WAX; the PP-H bins respect the house thermoplastic temperature rule (AQS-STD-002 M5 at the 80 C P4-class house limit). (continues on the duty sheet)
 
-Nozzles: 5 process connections per docs-authority/nozzles/WAX_PATTERN.csv
+Nozzles: 6 process connections per docs-authority/nozzles/WAX_PATTERN.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

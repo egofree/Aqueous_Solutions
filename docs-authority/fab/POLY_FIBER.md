@@ -7,7 +7,7 @@ service line: service PP melt-spin staple-fiber line: pellet -> spun fiber -> ne
 Internals: none with basis: a melt-spin line is a machine - the extruder, quench cabinet and winder are the issued mfg model (models/mfg/POLY_FIBER/bom.csv); the tooling is the unit task 10-13 deliverable, not separate internals [models/mfg/POLY_FIBER/bom.csv]
 Material: SS304 melt vessel and spin pump with heater bands, brass-free spinnerette (stainless die plate), PP quench ducting. (continues on the duty sheet)
 
-Nozzles: 6 process connections per docs-authority/nozzles/POLY_FIBER.csv
+Nozzles: 7 process connections per docs-authority/nozzles/POLY_FIBER.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

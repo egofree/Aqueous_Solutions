@@ -7,7 +7,7 @@ service line: machine investment casting tilt-pour station; pour_kg_d 2; shell_k
 Internals: duty sheet: "8; molds_per_campaign 8. 3. Material. Graphite crucible tilt-pour + alumina shell as the mould hot face; steel" [docs-authority/duties/INV_CAST.md]
 Material: Graphite crucible tilt-pour + alumina shell as the mould hot face; steel table and tilt hardware. Basis: investment casting at 2 kg/d castings through the 6-dip shell (graph design, A-M-281): the shell is a refractory hot face (SCHACHT2004); the crucible is the melt-contact part (DIETER1988). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). (continues on the duty sheet)
 
-Nozzles: 6 process connections per docs-authority/nozzles/INV_CAST.csv
+Nozzles: 7 process connections per docs-authority/nozzles/INV_CAST.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

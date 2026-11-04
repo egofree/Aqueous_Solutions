@@ -7,7 +7,7 @@ service line: machine PTFE powder line: pin mill + cyclone classifier + collecto
 Internals: none with basis: a forming machine; the tooling is the design at unit tasks 10-13
 Material: 316L mill, PE-lined collector (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.
 
-Nozzles: 4 process connections per docs-authority/nozzles/POWDER_RESIN.csv
+Nozzles: 5 process connections per docs-authority/nozzles/POWDER_RESIN.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

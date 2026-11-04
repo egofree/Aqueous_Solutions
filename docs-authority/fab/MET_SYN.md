@@ -7,7 +7,7 @@ service line: service DL-methionine synthesis (the three-step Strecker route): C
 Internals: three-step Strecker bench internals per the reactor design (A-M-416 route A): the glass-lined reactor column (2 L working volume) with PTFE dip tubes, the reagent feed tanks and the Hastelloy C crystalliser; per-duty §3 material [docs-authority/sizing/REACTOR_DESIGN.md]
 Material: Borosilicate glass-lined reactor column, PTFE-lined transfer lines, SS304 reagent feed tanks, Hastelloy C crystalliser. (continues on the duty sheet)
 
-Nozzles: 6 process connections per docs-authority/nozzles/MET_SYN.csv
+Nozzles: 7 process connections per docs-authority/nozzles/MET_SYN.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

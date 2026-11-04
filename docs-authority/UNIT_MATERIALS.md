@@ -17,7 +17,7 @@ Rule: a unit closes task 09 where every wetted edge touching it carries a wetted
 
 ## 2. Families invoked
 
-- Aqueous process liquor (AQS-ASSAY-001 envelope) (76 edge ends)
+- Aqueous process liquor (AQS-ASSAY-001 envelope) (77 edge ends)
 - Acid or brine, at or below 60 C (64 edge ends)
 - Hot leach liquor (45 edge ends)
 - Dry gas, H2/O2/N2/CO2 (38 edge ends)
@@ -422,6 +422,7 @@ No wetted piped stream: every edge of this unit is a solids transfer or an elect
 | HL-Q4-REJ | Q4_BUS | DRY_COOLER | M1 | 12.1 q3/q4 water loop | 316L loops |
 | IA-DC-EVAP | DRY_COOLER | ATMOS | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
 | IA-DC-SPRAY | ROOF_TANK | DRY_COOLER | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
+| IA-DC-REJ | DRY_COOLER | ATMOS | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
 
 ### DUCKWEED
 

@@ -265,6 +265,7 @@ HAB,galley,GALLEY,GALLEY_MEALS,15,P5,HDPE PE4710 DR 11 (ASTM D3035),18.04,6,3,AS
 HAB,galley,GALLEY,GAL_GREY,15,P1,PVC-U Sch 80 ASTM D1785,7.01,3,2,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,6,solvent
 HAB,washroom,WASHROOM,WASH_GREY,15,P1,PVC-U Sch 80 ASTM D1785,10.09,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 HEAT,dry_cooler,DRY_COOLER,IA-DC-EVAP,15,P1,PVC-U Sch 80 ASTM D1785,24.54,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
+HEAT,dry_cooler,DRY_COOLER,IA-DC-REJ,15,P1,PVC-U Sch 80 ASTM D1785,24.54,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
 HEAT,header,Q4_BUS,HL-Q4-REJ,15,M1,316L ASTM A312,25.19,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
 HEAT,header,Q4_BUS,IA-Q4-LIFE,15,M1,316L ASTM A312,27.89,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
 HEAT,heat_battery,Q1_A,HL-Q1-A-DOWN,15,M2,CS ASTM A106 Gr B,5.7,3,2,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,6,butt weld

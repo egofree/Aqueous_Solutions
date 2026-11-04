@@ -7,7 +7,7 @@ service line: machine PVDF cast film/sheet line; extruder_D_mm 25; die_mm 200; c
 Internals: none with basis: a forming machine; the tooling is the design at unit tasks 10-13
 Material: 316L barrel, Hastelloy die (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.
 
-Nozzles: 4 process connections per docs-authority/nozzles/FILM_CAST.csv
+Nozzles: 5 process connections per docs-authority/nozzles/FILM_CAST.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

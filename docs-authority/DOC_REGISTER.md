@@ -119,7 +119,7 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-075 | `docs-authority/sizing/HEADERS.md` | A | 2026-10-20 | Header and bus sizing | current |
 | AQS-DUTY-076 | `docs-authority/sizing/GEO_LOOP.md` | A | 2026-10-20 | GEO loop sizing | current |
 | AQS-DUTY-077 | `docs-authority/sizing/MEOH_TRAIN.md` | A | 2026-10-20 | Methanol train residual sizing | current |
-| AQS-DUTY-078 | `docs-authority/BALANCE_CLOSE.md` | A | 2026-10-09 | Balance close | current |
+| AQS-DUTY-078 | `docs-authority/BALANCE_CLOSE.md` | B | 2026-11-03 | Balance close | current |
 | AQS-DUTY-079 | `docs-authority/sizing/HOUSE_SCRUBBERS.md` | A | 2026-10-15 | House scrubbers | current |
 | AQS-DUTY-080 | `docs-authority/CHECKS.md` | — | — | Cathode size from the sheet | current |
 | AQS-DUTY-082 | `docs-authority/S83_S88.md` | — | 2026-10-02 | S83–S88 endpoints | current |

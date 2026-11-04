@@ -32,7 +32,7 @@ Table 1.1. Motor families
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 55 | 5 | 2.69 |
 | MF-03 | BLDC actuator | ISO 5211 F03 mount | 24 V DC | 24 | 1 | 0.12 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 7 | 3 | 1.75 |
-| MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 22 | 7 | 19.04 |
+| MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 22 | 7 | 18.95 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
 | MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 155 | 40 | 18.60 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 10 | 8 | 3.70 |
@@ -46,7 +46,7 @@ Table 1.1. Motor families
 | MF-19 | stepper | NEMA 34 (86 mm) | 48 V DC | 3 | 1 | 1.20 |
 | MF-25 | hermetic induction (scroll) | 1.1 kW hermetic | 480 V 3-ph | 1 | 1 | 0.94 |
 | MF-27 | EC (electronically commutated, permanent-magnet) fan motor | 1.1 kW EC fan, integrated drive | 480 V 3-ph | 16 | 1 | 12.00 |
-| MF-28 | hermetic induction (scroll) | 18.5 kW hermetic | 480 V 3-ph | 8 | 1 | 123.23 |
+| MF-28 | hermetic induction (scroll) | 18.5 kW hermetic | 480 V 3-ph | 8 | 1 | 122.78 |
 
 ## 2. Inventory by sector, sub-system and unit
 
@@ -119,9 +119,9 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | Sub-system | Unit | Device | Motor type | Size | Shaft kW | Voltage | Duty | Speed control | Qty | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | EXT_HALL_N | EXT_HALL | AHU damper actuator | BLDC actuator | ISO 5211 F03 mount | 0.005 | 24 V DC | S2 | on/off | 24 | assumed 3 per AHU |
-| EXT_HALL_N | EXT_HALL | AHU exhaust fan | induction IE3 | IEC 90S / 1.1 kW | 0.8978 | 480 V 3-ph | S1 | variable-frequency drive | 8 | 8618 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed) |
-| EXT_HALL_N | EXT_HALL | AHU supply fan | induction IE3 | IEC 90S / 1.1 kW | 0.8978 | 480 V 3-ph | S1 | variable-frequency drive | 8 | 8618 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed) |
-| EXT_HALL_N | EXT_HALL | air-source heat pump compressor | hermetic induction (scroll) | 18.5 kW hermetic | 15.4042 | 480 V 3-ph | S1 | variable-frequency drive | 8 | peak cooling 397 kW / COP 3.22 / 8 modules (module count assumed, A-M-119) |
+| EXT_HALL_N | EXT_HALL | AHU exhaust fan | induction IE3 | IEC 90S / 1.1 kW | 0.8921 | 480 V 3-ph | S1 | variable-frequency drive | 8 | 8564 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed) |
+| EXT_HALL_N | EXT_HALL | AHU supply fan | induction IE3 | IEC 90S / 1.1 kW | 0.8921 | 480 V 3-ph | S1 | variable-frequency drive | 8 | 8564 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed) |
+| EXT_HALL_N | EXT_HALL | air-source heat pump compressor | hermetic induction (scroll) | 18.5 kW hermetic | 15.3475 | 480 V 3-ph | S1 | variable-frequency drive | 8 | peak cooling 395 kW / COP 3.22 / 8 modules (module count assumed, A-M-119) |
 | EXT_HALL_N | EXT_HALL | heat pump condenser fan | EC (electronically commutated, permanent-magnet) fan motor | 1.1 kW EC fan, integrated drive | 0.75 | 480 V 3-ph | S1 | electronically commutated (EC) motor | 16 | assumed 2 per module; EC fan type assumed (A-M-119) |
 | flow_battery | ZNBR2 | Motor: electrolyte pump (anolyte, catholyte) per stack strin | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 96 | BOM; shaft assumed (A-M-119) |
 | flow_battery | ZNBR2 | Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm ( | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
