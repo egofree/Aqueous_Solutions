@@ -77,10 +77,14 @@ source. Agent-only instructions stay in this file and `docs-authority/internal/`
 
 ## Concurrency
 
-- When more than one process may write the model at the same time, serialise
-  every write to the graph, `drivers.json` or `refs.py` with a lock, for example
-  `flock "${AQS_LOCK:-.aqs-design.lock}" <command>`. Writers that skip the lock
-  corrupt each other's staged JSON. The lock file is ignored by git.
+- The pipeline takes the design lock itself: `python3 -m flow_graph.param.regen`
+  holds `<repo>/.aqs-design.lock` for its write run, and tools that need the lock
+  acquire it through `flow_graph.param.design_lock.acquire()`, which is reentrant
+  down the process tree (the descriptor travels as `AQS_LOCK_FD` and
+  `subprocess.run(..., pass_fds=design_lock.pass_fds())`). Do not shell-wrap
+  `flock` around the regen: a stage that re-locks the same path then deadlocks
+  (the 2026-11-03 mfg_tracker wedge). Writers that skip the lock corrupt each
+  other's staged JSON. The lock file is ignored by git.
 - If an interrupted session leaves partial work, inventory `git status` and
   finish the work from the script headers and assert messages, which carry the
   design intent. Do not restart the same objective from scratch without checking

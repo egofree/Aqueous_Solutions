@@ -101,8 +101,10 @@ def run_one(stage, env, entries, graph_path, pass_no):
                         'status': 'skipped', 'missing': miss, 'post_graph_sha256': gsha(graph_path)})
         print(f"[{stage['name']}] skipped: needs {', '.join(miss)}; its committed outputs are kept", flush=True)
         return True
+    from .design_lock import pass_fds as lock_pass_fds
     t0 = time.monotonic()
-    r = subprocess.run(stage['argv'], cwd=ROOT, env=env, capture_output=True, text=True)
+    r = subprocess.run(stage['argv'], cwd=ROOT, env=env, capture_output=True, text=True,
+                       pass_fds=lock_pass_fds())
     dt = time.monotonic() - t0
     entry = {'name': stage['name'], 'argv': stage['argv'], 'pass': pass_no, 'seconds': round(dt, 2),
              'status': 'ok' if r.returncode == 0 else f'rc={r.returncode}',
@@ -230,6 +232,15 @@ def main(argv=None):
         return 0
 
     os.makedirs(os.path.dirname(receipt_path), exist_ok=True)
+    from .design_lock import acquire, release
+    lock = acquire()                      # exclusive writer ownership for the run; stages re-enter via AQS_LOCK_FD
+    try:
+        return _run(args, m, sel, loop_stages, doc_stages, graph_path, receipt_path)
+    finally:
+        release(lock)
+
+
+def _run(args, m, sel, loop_stages, doc_stages, graph_path, receipt_path):
     env = child_env()
     t_start = time.monotonic()
     entries, failed = [], []

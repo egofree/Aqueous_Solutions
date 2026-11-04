@@ -34,7 +34,7 @@ Run: python3 models/mfg/tracker.py            regenerate params.json files and s
 """
 import argparse
 import csv
-import fcntl
+
 import json
 import os
 import re
@@ -745,10 +745,18 @@ def collect_records():
 
 
 def take_lock():
-    path = os.environ.get('AQS_LOCK', os.path.join(ROOT, '.aqs-design.lock'))
-    fh = open(path, 'w')
-    fcntl.flock(fh, fcntl.LOCK_EX)
-    return fh
+    """Take the design lock reentrantly (flow_graph/param/design_lock.py).
+
+    Standalone: opens and holds <repo>/.aqs-design.lock. Under a pipeline
+    ancestor (a full regen holds the lock and exports AQS_LOCK_FD) this
+    re-locks the same open file description and returns immediately -
+    the 56-minute mfg_tracker wedge inside a wrapped regen is the case
+    this replaces; flow_graph/param/test_design_lock.py enforces it.
+    """
+    import sys
+    sys.path.insert(0, ROOT)
+    from flow_graph.param.design_lock import acquire
+    return acquire()
 
 
 def main(argv=None):
@@ -782,7 +790,8 @@ def main(argv=None):
                 n_params += 1
         splice_section7(section7_text(records, graph, load_seed(), internals_register()))
     finally:
-        lock.close()
+        from flow_graph.param.design_lock import release
+        release(lock)
     print(f'tracker: {n_params} params.json written; section 7 regenerated '
           f'({len(records)} present units, graph revision {graph["revision"]})')
     return 0

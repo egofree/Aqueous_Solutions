@@ -3488,10 +3488,11 @@
   {
    "role": "pipeline",
    "scripts": [
+    "flow_graph/param/design_lock.py",
     "flow_graph/param/regen.py",
     "flow_graph/param/site_outputs.py"
    ],
-   "reason": "The pipeline runner itself, and its locale runner (--site), which writes only under sites/<site_id>/."
+   "reason": "The pipeline runner itself, and its locale runner (--site), which writes only under sites/<site_id>/. The design lock (flow_graph/param/design_lock.py) is the runner's reentrant writer-ownership helper: imported by the runner and by tools that take the lock (models/mfg/tracker.py); writes no repository file."
   },
   {
    "role": "library",
