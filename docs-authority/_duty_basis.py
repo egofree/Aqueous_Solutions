@@ -22,6 +22,28 @@ def _scalars(d, skip=()):
 def _dot(s):
     while s.endswith('..'): s = s[:-1]
     return s if s.endswith('.') else s + '.'
+def _znbr2_machine_lines(prm):
+    """X-MFG-43 (A-M-456/457): the ZNBR2 machine next to the thermal block - the stack the
+    booked electrode area fills, the electrolyte the store holds, and the placement-block
+    consequence. Generator-owned: every figure reads the graph, none is hand-stated."""
+    ds = prm.get('design') or {}
+    if not ds.get('modules'):
+        return ''
+    _seed = json.load(open(os.path.join(ROOT, 'flow_graph/placement_seed.json')))
+    _blk = next((u for u in _seed.get('units', []) if u.get('unit_id') == 'ZNBR2'), {})
+    _bsz = ' x '.join(str(v) for v in (_blk.get('size_mm') or []))
+    _sz = ' x '.join(str(v) for v in (prm.get('size_mm') or []))
+    return (f"- Stack (X-MFG-43, A-M-456): {ds.get('modules')} module bays x {ds.get('plates_per_module')} bipolar plates of "
+            f"{ds.get('plate_active_L_mm')} x {ds.get('plate_active_W_mm')} mm active at the 20 mA/cm2 book fill the booked "
+            f"electrode area {ds.get('electrode_area_m2_booked')} m2 (purge basis); j.A = current closes at "
+            f"{ds.get('stack_I_A')} A x {ds.get('stack_V_dc')} V DC and {ds.get('stack_charge_kw_dc')} kW charge per module.\n"
+            f"- Electrolyte (A-M-457): {ds.get('zn_kg_per_module')} kg Zn cycled per module per day at {ds.get('electrolyte_M')} M ZnBr2 = "
+            f"{ds.get('electrolyte_L_per_module')} L per module in a {ds.get('tank_mm')[0]} x {ds.get('tank_mm')[1]} x {ds.get('tank_mm')[2]} reservoir; "
+            f"Br2 inventory {ds.get('br2_kg_per_module')} kg per module; cooler {ds.get('cooler_kw_per_module')} kW at the charge-window rate (A-M-455).\n"
+            f"- Machine envelope {_sz} mm (the X-MFG-43 rack hall, models/mfg/ZNBR2); the placement seed block ({_bsz} mm) under-books it - "
+            "the floor-space reservation is the named consequence (ZNBR2 WORK_ORDER W12).\n")
+
+
 def author(n, g, ins, outs, mi, mo, kw):
     """Full AQS-STD-001 sheet for a present unit whose sheet does not exist yet: graph facts quoted, gaps stated as pending."""
     u = n['unit_id']; p = n.get('params') or {}; env = p.get('envelope') or {}; ds = p.get('design') or {}; sz = p.get('sizing') or {}
@@ -186,6 +208,7 @@ def main():
             _ck = n.get('continuous_kw') or {}
             _s2m = re.search(r'^2\. Size\..*?(?=^3\. )', s, flags=re.M | re.S)
             if _s2m:
+                _zn = _znbr2_machine_lines(prm)
                 _s2 = (f"2. Size.\n"
                        f"- Store and electrolyte thermal management are solved in the graph (X-ELS-02 / X-THM-01 F-4, A-M-455).\n"
                        f"- Store: {_ct.get('kwh_d_out', 0):.0f} kWh/d cycled at round trip {_ct.get('round_trip', 0)} (A-M-062/179);"
@@ -194,7 +217,8 @@ def main():
                        f" {_ct.get('avg_kW', 0):.1f} kW average thermal, rejected on IA-ZNBR-HEAT to the Q4 bus and the dry cooler.\n"
                        f"- Charge-window sizing case: {_ct.get('window_kW', 0):.1f} kW thermal over the {_ct.get('window_h', 0):.0f} h"
                        f" charge window; sizes the electrolyte cooling loop.\n"
-                       f"- Electrical: {float(_ck.get('value') or 0):.4f} kW continuous discharge rating (storage; the charge draw rides IA-ESS-ZNBR2-CHG).\n\n")
+                       f"- Electrical: {float(_ck.get('value') or 0):.4f} kW continuous discharge rating (storage; the charge draw rides IA-ESS-ZNBR2-CHG).\n"
+                       + _zn + "\n")
                 if _s2m.group(0) != _s2: s = s.replace(_s2m.group(0), _s2, 1)
         if s != s0: open(p, 'w').write(s); ch += 1
     # R11 Rev AC regen: the graph is closed this lane, so params.duty is refreshed in memory only

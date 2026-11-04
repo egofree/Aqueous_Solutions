@@ -16,13 +16,13 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | Phase | Scope | Items | Closes with |
 | --- | --- | --- | --- |
 | T1 | Owner and site data | 52 | Owner decision or site investigation report |
-| T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
+| T2 | In-house design tests and standard data | 34 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 69 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 506 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 507 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 38 | Commissioning record |
 
-Total 719 items: 321 drivers, 398 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 721 items: 321 drivers, 400 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -118,6 +118,7 @@ Total 719 items: 321 drivers, 398 register entries. Classification rule: first m
 | A-M-258 | Power chain derived again on the live graph: demand 281.99 k kW / kWp / kWh / m2 | python3 -m flow_graph.param.write_graph power exits 0; PV nameplate x 8.78 m2/kWp = area_m2 within rounding; nameplate <= roof capacity; sections breaker <= 1200 A (NEC 240.87) | R10b power-chain lane 2026-10-18 |
 | A-M-332 | EXT_HALL heat-pump condenser fans: electronically commutated kW | Check the selected fan's nameplate or datasheet for motor type (EC or induction), rated power, supply voltage and speed-control method; update the motor inventory row and this entry | X-INV-01 |
 | A-M-397 | 0.90 - | Coating coupon exposure test at the landing site | X-LOC-09 |
+| A-M-456 | 95 plates/module, 0.49789 m2 active each, 6 mm pitch, 20 mA/ plates/module; m2; mm; mA/cm2; V | X-MFG-41 10-cell stack test (AQS-TST-002) for the performance class; the plate layout reads the first-article stack GA | CAD-representation audit, ZNBR2 machine design (X-MFG-41 support, 2026-11-04) |
 
 ## 4. T3 Bench and laboratory tests
 
@@ -729,6 +730,7 @@ Total 719 items: 321 drivers, 398 register entries. Classification rule: first m
 | A-M-453 | Heat-ladder A/B ledger convention: the two ladders are a ful convention; kW | python3 -m flow_graph.param.write_graph heat closes Q4_BUS and DRY_COOLER on the thermal-kW ledger within 0.01 kW; test_heat_ladder.py passes; HL-Q4-A/B-BUS notes state the N+1 convention | physics audit F-3/F-25 (heat-ladder convention, 2026-11-03) |
 | A-M-454 | The MVR evaporator compressor/pump heat edges (SQ-EVAP_ACID, kW; layer | python3 -m flow_graph.param.write_graph heat: Q4_BUS in = out on thermal kW edges; IA-DC-REJ == sum of thermal kW into DRY_COOLER; DRY_COOLER balances within 0.01 kW | physics audit F-3 (Q4 heat-rejection path, 2026-11-03) |
 | A-M-455 | ZNBR2 electrolyte cycling heat = the booked daily round-trip kWh/d; kW thermal | IA-ZNBR-HEAT == (_power_sizing store_in_kWh - store_kWh)/24 within 0.01 kW; ZNBR2.params.cycling_thermal window_kW == loss/(24 - night_hours); the Q4_BUS and DRY_COOLER thermal ledgers close with the edge counted (X-THM-01 tolerance 0.01 kW); test_heat_ladder.py passes | physics audit F-4 (ZNBR2 cycling heat, 2026-11-04) |
+| A-M-457 | 2.0 M ZnBr2, 529.4 L per module (47 reservoirs, 24.9 m3 tota mol/L; L; kg | Electrolyte sample density and ZnBr2 titre at the X-MFG-41 first article | CAD-representation audit, ZNBR2 machine design (X-MFG-41 support, 2026-11-04) |
 
 ## 7. T6 Commissioning measurements
 

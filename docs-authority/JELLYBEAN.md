@@ -39,13 +39,13 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M10 | stud | ISO 3506 A4-70 | 32 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | stud | ISO 898-1 8.8 | 106 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | anchor | ISO 3506 A4-70 | 3 | ISO 4017 + chemical anchor (ETAG 001) |
-| M12 | anchor | ISO 898-1 8.8 | 300 | ISO 4017 + chemical anchor (ETAG 001) |
+| M12 | anchor | ISO 898-1 8.8 | 304 | ISO 4017 + chemical anchor (ETAG 001) |
 | M12 | hex bolt | ISO 3506 A4-70 | 512 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | ISO 898-1 8.8 | 36 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | PVDF (non-metallic) | 34 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | stud | ISO 898-1 8.8 | 48 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | anchor | ISO 898-1 8.8 | 16 | ISO 4017 + chemical anchor (ETAG 001) |
-| M16 | hex bolt | ISO 898-1 8.8 | 28 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M16 | hex bolt | ISO 898-1 8.8 | 216 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | stud | ISO 3506 A4-70 outside the wetted zone | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | stud | ISO 898-1 8.8 | 12 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | stud | ISO 898-1 8.8 zinc | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -54,7 +54,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M6 | hex bolt | ISO 3506 A4-70 | 333 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M8 | anchor | ISO 3506 A4-70 | 4 | ISO 4017 + chemical anchor (ETAG 001) |
 | M8 | anchor | ISO 898-1 8.8 | 12 | ISO 4017 + chemical anchor (ETAG 001) |
-| M8 | hex bolt | ISO 3506 A4-70 | 188 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M8 | hex bolt | ISO 3506 A4-70 | 282 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M8 | hex bolt | ISO 898-1 8.8 | 92 | ISO 4014 / ISO 4032 / ISO 7089 |
 
 ## 3. Seals and gaskets
@@ -106,9 +106,6 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | Q2_B | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | VCD_TRAIN | valve: check valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | VCD_TRAIN | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| ZNBR2 | seal: mechanical seal, single EN 12756 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| ZNBR2 | valve: check valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| ZNBR2 | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | ZNBR2_BR2_REGEN | Body / envelope per duty sheet section 2 (not yet dimensioned) | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | ZNBR2_BR2_REGEN | Process nozzle DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | ZNBR2_BR2_REGEN | valve: check valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |

@@ -1428,3 +1428,4 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {CEPCI -- Chemical Engineering Plant Cost Index, published monthly in Chemical Engineering magazine; the escalation index of the cost estimate (AQS-PRO-003).}
 {RAS -- Recirculating aquaculture system. The fish-tank water loop: AQUA_TANK, BIOFILTER, the grow beds and DUCKWEED (A-M-415).}
 {HDG -- Hot-dip galvanised steel. The zinc-coated structural class for livestock housing frames, wire floors and hardware cloth (CHICKEN_COOP, DUCK_PEN, QUAIL_CAGE, RABBIT_HUTCH).}
+{ZBFB -- Zinc-bromine flow battery. The aqueous Zn/Br2 reversible-electrode chemistry of the ZNBR2 store: zinc plates on charge and bromine is held in the electrolyte (A-M-135/179; ZBFB_REVIEW2023).}

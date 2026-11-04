@@ -10,6 +10,9 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - Electrolyte thermal-management duty: cycling loss 1457 kWh/d = 60.7 kW average thermal, rejected on IA-ZNBR-HEAT to the Q4 bus and the dry cooler.
 - Charge-window sizing case: 145.7 kW thermal over the 10 h charge window; sizes the electrolyte cooling loop.
 - Electrical: 242.7610 kW continuous discharge rating (storage; the charge draw rides IA-ESS-ZNBR2-CHG).
+- Stack (X-MFG-43, A-M-456): 47 module bays x 95 bipolar plates of 995.8 x 500.0 mm active at the 20 mA/cm2 book fill the booked electrode area 2223.1 m2 (purge basis); j.A = current closes at 99.6 A x 172.9 V DC and 17.217 kW charge per module.
+- Electrolyte (A-M-457): 69.2 kg Zn cycled per module per day at 2.0 M ZnBr2 = 529.4 L per module in a 700.0 x 700.0 x 1155.0 reservoir; Br2 inventory 169.2 kg per module; cooler 3.1 kW at the charge-window rate (A-M-455).
+- Machine envelope 7900 x 6050 x 1970 mm (the X-MFG-43 rack hall, models/mfg/ZNBR2); the placement seed block (1800 x 1200 x 1600 mm) under-books it - the floor-space reservation is the named consequence (ZNBR2 WORK_ORDER W12).
 
 3. Material. No wetted alloy. Conductors are copper. Corrosion allowance does not apply.
 
@@ -26,6 +29,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Current. Overcurrent opens the breaker.
 
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped. The envelope is `cad/stl/ZNBR2.stl`.
+7. Code. Shop. Not stamped. The envelope is `cad/stl/ZNBR2.stl`. Manufacturing model `models/mfg/ZNBR2/znbr2.py` (AQS-PLAN-006).
 
 8. Open items. This unit has not been measured.

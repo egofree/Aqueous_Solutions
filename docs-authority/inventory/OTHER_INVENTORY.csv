@@ -961,13 +961,16 @@ ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",15 A,
 ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
 ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",100 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
 ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,16,"NEC 430.52, from AQS-INV-002"
-ELEC,flow_battery,ZNBR2,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",192,"Motor: electrolyte pump (anolyte, catholyte) per stack strin: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-ELEC,flow_battery,ZNBR2,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm (: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-ELEC,flow_battery,ZNBR2,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,192,"Motor: electrolyte pump (anolyte, catholyte) per stack strin: run and fault (assumed)"
-ELEC,flow_battery,ZNBR2,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm (: run and fault (assumed)"
-ELEC,flow_battery,ZNBR2,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,96,"Motor: electrolyte pump (anolyte, catholyte) per stack strin (assumed VFD at >= 0.75 kW)"
-ELEC,flow_battery,ZNBR2,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm ( (assumed VFD at >= 0.75 kW)"
-ELEC,flow_battery,ZNBR2,fabricated part,fabricated part set,32 BOM lines,models/mfg/ZNBR2/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+ELEC,flow_battery,ZNBR2,bearing,deep-groove ball bearing,6202-2Z,"ISO 15 / ISO 492 normal class, C3",192,"electrolyte pump (anolyte, catholyte) per stack string: drive and non-drive end, IEC 60072 frame 71 (assumed size)"
+ELEC,flow_battery,ZNBR2,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-ZNBR-BD to GREY_TREAT (assumed size)
+ELEC,flow_battery,ZNBR2,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-ZNBR-BD to GREY_TREAT
+ELEC,flow_battery,ZNBR2,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,192,"electrolyte pump (anolyte, catholyte) per stack string: run and fault (assumed)"
+ELEC,flow_battery,ZNBR2,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-ZNBR-BD to GREY_TREAT: run and fault (assumed)
+ELEC,flow_battery,ZNBR2,electronics,motor starter (contactor + overload),0.37 kW,IEC 60947-4-1,96,"electrolyte pump (anolyte, catholyte) per stack string (assumed VFD at >= 0.75 kW)"
+ELEC,flow_battery,ZNBR2,fabricated part,fabricated part set,9 BOM lines,models/mfg/ZNBR2/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+ELEC,flow_battery,ZNBR2,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,4,models/mfg/ZNBR2/fasteners.csv
+ELEC,flow_battery,ZNBR2,fastener,M16 tie rod,M16 tie rod with 2 heavy hex nuts,ISO 898-1 8.8,188,models/mfg/ZNBR2/fasteners.csv
+ELEC,flow_battery,ZNBR2,fastener,M8 bolt,M8 bolt with nut,ISO 3506 A4-70,94,models/mfg/ZNBR2/fasteners.csv
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,S69: 2 per support (assumed)
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,IA-ZNBR-BD: 2 per support (assumed)
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,IA-ZNBR-HEAT: 2 per support (assumed)
@@ -982,9 +985,7 @@ ELEC,flow_battery,ZNBR2,instrument,level transmitter,radar 80 GHz,"IEC 62828, PT
 ELEC,flow_battery,ZNBR2,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 ELEC,flow_battery,ZNBR2,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 ELEC,flow_battery,ZNBR2,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,96,"NEC 430.52, from AQS-INV-002"
-ELEC,flow_battery,ZNBR2,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-ELEC,flow_battery,ZNBR2,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",96,"Motor: electrolyte pump (anolyte, catholyte) per stack strin: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
-ELEC,flow_battery,ZNBR2,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm (: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
+ELEC,flow_battery,ZNBR2,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",96,"electrolyte pump (anolyte, catholyte) per stack string: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 ELEC,flow_battery,ZNBR2,support,pipe clamp,DN40,"PP clamp with EPDM liner, MSS SP-58 Type 7",6,S69: AQS-PIP-005 span count
 ELEC,flow_battery,ZNBR2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",24,IA-ZNBR-BD: AQS-PIP-005 span count
 ELEC,flow_battery,ZNBR2,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",27,IA-ZNBR-HEAT: AQS-PIP-005 span count

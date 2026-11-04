@@ -28,13 +28,13 @@ Table 1.1. Motor families
 
 | Family | Motor type | Size | Voltage | Count | Units | Installed shaft kW |
 | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 82 | 48 | 0.22 |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 83 | 49 | 0.22 |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 55 | 5 | 2.69 |
 | MF-03 | BLDC actuator | ISO 5211 F03 mount | 24 V DC | 24 | 1 | 0.12 |
-| MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 7 | 3 | 1.75 |
+| MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 103 | 4 | 25.75 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 6 | 6 | 4.68 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 19 | 4 | 19.42 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 155 | 40 | 18.60 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 58 | 39 | 6.96 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 10 | 8 | 3.70 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 5 | 5 | 7.50 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 1 | 1 | 0.09 |
@@ -123,8 +123,8 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | EXT_HALL_N | EXT_HALL | AHU supply fan | induction IE3 | IEC 90L / 1.5 kW | 0.9956 | 480 V 3-ph | S1 | variable-frequency drive | 8 | 9558 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed) |
 | EXT_HALL_N | EXT_HALL | air-source heat pump compressor | hermetic induction (scroll) | 22 kW hermetic | 17.0478 | 480 V 3-ph | S1 | variable-frequency drive | 8 | peak cooling 439 kW / COP 3.22 / 8 modules (module count assumed, A-M-119) |
 | EXT_HALL_N | EXT_HALL | heat pump condenser fan | EC (electronically commutated, permanent-magnet) fan motor | 1.1 kW EC fan, integrated drive | 0.75 | 480 V 3-ph | S1 | electronically commutated (EC) motor | 16 | assumed 2 per module; EC fan type assumed (A-M-119) |
-| flow_battery | ZNBR2 | Motor: electrolyte pump (anolyte, catholyte) per stack strin | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 96 | BOM; shaft assumed (A-M-119) |
-| flow_battery | ZNBR2 | Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm ( | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| flow_battery | ZNBR2 | electrolyte pump (anolyte, catholyte) per stack string | induction IE3 | IEC 71 / 0.37 kW | 0.25 | 480 V 3-ph | S1 | fixed speed | 96 | assumed 0.25 kW per string, 2 per string, 48 strings (A-M-119) |
+| flow_battery | ZNBR2 | transfer pump IA-ZNBR-BD to GREY_TREAT | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 7.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | genset | BACKUP_GEN | radiator fan | induction IE3 | IEC 71 / 0.37 kW | 0.25 | 480 V 3-ph | S1 | fixed speed | 1 | assumed |
 | genset | BACKUP_GEN | starter motor | induction IE3 | IEC 90L / 1.5 kW | 1 | 480 V 3-ph | S2 | fixed speed | 1 | assumed |
 | inverter | SOL_ARK_60K | cooling fan | BLDC | 57 mm (NEMA 23 flange) | 0.05 | 24 V DC | S1 | BLDC driver | 48 | assumed per cabinet |

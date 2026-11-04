@@ -745,6 +745,16 @@
    "category": "fastener",
    "item": "M10 hold-down",
    "spec": "ISO 898-1 8.8"
+  },
+  "OF-150": {
+   "category": "fastener",
+   "item": "M16 tie rod",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-151": {
+   "category": "fastener",
+   "item": "M8 bolt",
+   "spec": "ISO 3506 A4-70"
   }
  }
 }

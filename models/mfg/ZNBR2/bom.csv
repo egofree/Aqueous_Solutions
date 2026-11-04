@@ -1,33 +1,10 @@
-item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,docs-authority/duties/ZNBR2.md
-2,Process nozzle DN15,3,No wetted alloy.,one per mass edge; DN from AQS-INV-003
-3,Process nozzle DN32,1,No wetted alloy.,one per mass edge; DN from AQS-INV-003
-4,"Motor: electrolyte pump (anolyte, catholyte) per stack string (induction IE3, IEC 71 / 0.37 kW)",96,-,AQS-INV-001 / AQS-INV-005
-5,"Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-6,bearing: deep-groove ball bearing 6202-2Z,192,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-7,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-8,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-9,electronics: PLC digital I/O point 24 V DC,192,IEC 61131-2,AQS-INV-004
-10,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-11,electronics: motor starter (contactor + overload) 0.37 kW,96,IEC 60947-4-1,AQS-INV-004
-12,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-13,fastener: anchor bolt M10,48,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-14,fastener: anchor bolt M10,78,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-15,instrument: flow transmitter DN32,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-16,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-17,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-18,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-19,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-20,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-21,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-22,"protection: inverse-time circuit breaker, 3-pole 15 A",96,UL 489 / IEC 60947-2,AQS-INV-004
-23,"seal: mechanical seal, single EN 12756",96,"SiC/SiC faces, FKM",AQS-INV-004
-24,support: pipe clamp DN32,6,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-25,support: pipe clamp DN15,24,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-26,support: pipe clamp DN15,39,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-27,valve: check valve DN32,1,"PVDF swing/ball check valve, ISO 16137, PTFE seats",AQS-INV-004
-28,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-29,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-30,valve: isolation valve DN32,2,"PVDF ball valve, ISO 16135, PTFE seats",AQS-INV-004
-31,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
-32,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Plinth, support posts, end plates, tie rods and lifting beams, 7900 x 6050 x 1970 mm rack frame over 47 bays",377,"carbon steel, painted",70084.3,make,dry support outside the electrolyte (duty section 3: no wetted alloy); anchors in fasteners.csv
+2,"Bipolar plates 995.8 x 500 x 5 mm active window (0.4979 m2 each, 6 mm pitch), drawn as the bonded per-module plate-pack envelope",4465,carbon-plastic composite (ZBFB class),18896.5,make,"fills the booked cell-summed electrode area 2223.1 m2 at the 20 mA/cm2 book (purge_basis; X-MFG-43, A-M-456); the performance class is gated by the X-MFG-41 stack test (AQS-TST-002)"
+3,"Electrolyte reservoirs 700 x 700 x 1155 mm, wall 10 mm, open top",47,PVC-U sheet (AQS-STD-002 halogen class),2401.8,make,the reactant holdup as hardware: 529.4 L at 2 M ZnBr2 per module (A-M-457); the PP-loop register wording is superseded by the duty-standard halogen class (W12)
+4,"Microporous separator sheets, 996 x 500 x 1 mm, one per plate gap (inside the drawn pack envelope)",4418,microporous polyolefin sheet (separator class),2.2,buy,"loading item between plates at the 1 mm land, not drawn as a solid (W12); wetted material per coupon test with the hypobromite rating (duty section 3)"
+5,"Electrolyte pumps, 517 W each (auxiliaries share)",47,"PP/PVDF wetted, purchased",1992.3,buy,"rating from the A-M-179 auxiliary share (3 % of throughput) at the design charge rate; purchased per plan rule 6, envelope and interface drawn"
+6,"Electrolyte coolers, 3.1 kW plate HX each",47,"PVC-U/CPVC class wetted, purchased",2258.0,buy,"rating at the cycling_thermal charge-window rate (A-M-455); to IA-ZNBR-HEAT on the Q4 bus; purchased per plan rule 6, envelope and interface drawn"
+7,"Bus flats 300 x 20 x 6.3 mm copper, one per stack terminal",94,copper C101,31.8,make,conductors are copper (duty section 3); section by the AQS-BUS-001 class method - POWER.md states no ZNBR2 bus section (A-CELL bus rule)
+8,"Electrolyte inventory, 2 M ZnBr2 solution (Zn cycled per day and Br2 booked on the design)",24.9,ZnBr2 in water (A-M-457),0.0,buy,"loading item: 69.2 kg Zn and 169.2 kg Br2 per module per day cycled; held in the item 3 reservoirs; top-up on IA-ZNBR-MU, bleed on IA-ZNBR-BD"
+9,"Nozzle set per docs-authority/nozzles/ZNBR2.csv: 12 rows at the hall faces (drain under the plinth, vent riser on the last bay beam)",12,DN per schedule,3.1,make,"schedule tags/faces/heights verbatim; atmospheric open-bore tube (duty section 4: hose, atmospheric); the 'cable' row is a text row, no stub"

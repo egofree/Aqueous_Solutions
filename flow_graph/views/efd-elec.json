@@ -2081,11 +2081,11 @@
           "electrode_area_m2": 2223.1
         },
         "size_mm": [
-          1000,
-          600,
-          450
+          7900,
+          6050,
+          1970
         ],
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit).",
+        "size_note": "L x W x H mm, set by flow_graph/param/ess_tf.py (X-MFG-43): the 47-bay rack hall (47 bays of stack-over-tank at 1100 x 850 mm pitch); the placement seed block for ZNBR2 stays the 1800 x 1200 x 1600 mm study box and under-books this machine - the floor-space reservation is the named consequence (ZNBR2 WORK_ORDER W12)",
         "cycling_thermal": {
           "kwh_d_in": 4855.2,
           "kwh_d_out": 3398.7,
@@ -2096,6 +2096,42 @@
           "window_kW": 145.66,
           "charge_kW_window": 485.52,
           "basis": "store 3399 kWh/d (AQS-ELEC-007 P x night) at round trip 0.7 (A-M-062/179): the round-trip difference is electrolyte heat; window_kW is the bounding heat rate with all the daily loss in the 10 h charge window; charge_kW_window 485.5 kW is the charge electrical rate over the same window; rejected to the Q4 bus on IA-ZNBR-HEAT and the terminal (A-M-455)"
+        },
+        "design": {
+          "machine": "ZnBr2 flow-battery store: 47 module bays (one per hybrid inverter, AQS-ELEC-008), each a bipolar plate stack over its electrolyte reservoir, pumps and electrolyte cooler",
+          "modules": 47,
+          "module_kwh": 72.3,
+          "module_charge_kw_ac": 23.48,
+          "plates_per_module": 95,
+          "plate_active_L_mm": 995.8,
+          "plate_active_W_mm": 500.0,
+          "plate_t_mm": 5.0,
+          "pitch_mm": 6.0,
+          "stack_I_A": 99.6,
+          "stack_V_dc": 172.9,
+          "stack_charge_kw_dc": 17.217,
+          "electrode_area_m2_booked": 2223.1,
+          "electrode_area_m2_model": 2223.09,
+          "zn_kg_per_module": 69.2,
+          "br2_kg_per_module": 169.2,
+          "electrolyte_M": 2.0,
+          "electrolyte_L_per_module": 529.4,
+          "tank_mm": [
+            700.0,
+            700.0,
+            1155.0
+          ],
+          "cooler_kw_per_module": 3.1,
+          "pump_W_per_module": 517.0,
+          "bus_bar_mm": "1 x 20 x 6.3 copper flat per stack terminal (AQS-BUS-001 class method; POWER.md states no ZNBR2 bus section)",
+          "bay_pitch_mm": [
+            1100.0,
+            850.0
+          ],
+          "bay_cols": 7,
+          "bay_rows": 7,
+          "basis": "cell-summed area from the booked charge (Ah at 1.82 V over the 6 h window at 20 mA/cm2, the purge-basis book); plates 95/module x 47 modules fill it at 6 mm pitch (A-M-456); electrolyte 529.447 L/module at 2 M ZnBr2 (A-M-457); cooler at the cycling_thermal charge-window rate (A-M-455); pump at the 3 % auxiliary share (A-M-179)",
+          "computed_by": "flow_graph/param/ess_tf.py tf() (X-PAR-02 lane, X-MFG-43 machine design)"
         }
       }
     },

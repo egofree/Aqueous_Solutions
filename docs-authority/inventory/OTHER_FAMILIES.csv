@@ -1,17 +1,17 @@
 family,category,item,spec,qty,sizes,units
-OF-01,bearing,deep-groove ball bearing,"ISO 15, normal class",328,608-2Z x328,54
-OF-02,bearing,deep-groove ball bearing,"ISO 15 / ISO 492 normal class, C3",420,6201-2Z x312; 6205-2Z x50; 6204-2Z x22; 6202-2Z x18; 6206-2Z x10; 6308-2Z x6; 6306-2Z x2,60
+OF-01,bearing,deep-groove ball bearing,"ISO 15, normal class",330,608-2Z x330,55
+OF-02,bearing,deep-groove ball bearing,"ISO 15 / ISO 492 normal class, C3",418,6202-2Z x210; 6201-2Z x118; 6205-2Z x50; 6204-2Z x22; 6206-2Z x10; 6308-2Z x6; 6306-2Z x2,60
 OF-03,electronics,PLC digital I/O point,IEC 61131-2,836,24 V DC x836,94
 OF-04,electronics,PLC analog input point,IEC 61131-2,852,4-20 mA HART x852,1
-OF-05,electronics,BLDC driver,IEC 61800-5-1,161,24/48 V DC x161,53
-OF-06,electronics,motor starter (contactor + overload),IEC 60947-4-1,177,0.18 kW x155; 0.55 kW x10; 0.37 kW x7; 0.25 kW x2; 0.12 kW x1; 1.1 kW x1; 0.75 kW x1,50
+OF-05,electronics,BLDC driver,IEC 61800-5-1,162,24/48 V DC x162,54
+OF-06,electronics,motor starter (contactor + overload),IEC 60947-4-1,176,0.37 kW x103; 0.18 kW x58; 0.55 kW x10; 0.25 kW x2; 0.12 kW x1; 1.1 kW x1; 0.75 kW x1,50
 OF-07,electronics,"PLC I/O module, 16 channel",IEC 61131-2,106,24 V DC x106,1
 OF-08,electronics,variable-frequency drive,IEC 61800-5-1,33,1.5 kW x19; 2.2 kW x5; 1.1 kW x5; 7.5 kW x3; 4 kW x1,15
 OF-09,electronics,solenoid driver channel,IEC 61131-2 DO,19,24 V DC x19,9
 OF-10,electronics,compressor contactor + overload,IEC 60947-4-1,9,22 kW hermetic x8; 1.1 kW hermetic x1,2
 OF-11,electronics,stepper driver,IEC 61800-5-1,3,24/48 V DC x3,1
 OF-12,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",IEC 61508 / IEC 61511,2,- x2,1
-OF-13,fabricated part,fabricated part set,models/mfg/<unit>/bom.csv,197,4 BOM lines x26; 9 BOM lines x25; 5 BOM lines x24; 7 BOM lines x23; 6 BOM lines x16; 3 BOM lines x16; 8 BOM lines x15; 2 BOM lines x7; 12 BOM lines x6; 10 BOM lines x5; 15 BOM lines x4; 1 BOM lines x4; 17 BOM lines x4; 11 BOM lines x3; 16 BOM lines x3; 18 BOM lines x3; 21 BOM lines x2; 33 BOM lines x2; 36 BOM lines x1; 32 BOM lines x1; 39 BOM lines x1; 19 BOM lines x1; 13 BOM lines x1; 26 BOM lines x1; 35 BOM lines x1; 72 BOM lines x1; 28 BOM lines x1,197
+OF-13,fabricated part,fabricated part set,models/mfg/<unit>/bom.csv,197,4 BOM lines x26; 9 BOM lines x26; 5 BOM lines x24; 7 BOM lines x23; 6 BOM lines x16; 3 BOM lines x16; 8 BOM lines x15; 2 BOM lines x7; 12 BOM lines x6; 10 BOM lines x5; 15 BOM lines x4; 1 BOM lines x4; 17 BOM lines x4; 11 BOM lines x3; 16 BOM lines x3; 18 BOM lines x3; 21 BOM lines x2; 33 BOM lines x2; 36 BOM lines x1; 39 BOM lines x1; 19 BOM lines x1; 13 BOM lines x1; 26 BOM lines x1; 35 BOM lines x1; 72 BOM lines x1; 28 BOM lines x1,197
 OF-14,fastener,anchor bolt,ISO 3506 A4-70 wedge anchor,14754,M10 x14754,138
 OF-15,fastener,M10 x 40 lid bolt,ISO 3506 A4-70,12,M10 x 40 lid bolt with nut and washers x12,1
 OF-16,fastener,M8 x 30 lid bolt,ISO 3506 A4-70,12,M8 x 30 lid bolt with nut and washers x12,1
@@ -36,8 +36,8 @@ OF-42,instrument,"temperature element (SIF, independent)","IEC 60751, own thermo
 OF-43,instrument,"gas detector, O2 enrichment","alarm 23.5 vol %, trip 25 vol %, breathing height",12,electrochemical O2 x12,5
 OF-44,instrument,"gas detector, CO","alarm 25 ppm, trip 50 ppm, breathing height",14,electrochemical CO x14,7
 OF-45,instrument,"gas detector, NOx","alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height",6,electrochemical NO2 x6,3
-OF-46,protection,"inverse-time circuit breaker, 3-pole",UL 489 / IEC 60947-2,235,15 A x223; 100 A x8; 30 A x3; 60 A x1,61
-OF-47,seal,"mechanical seal, single","SiC/SiC faces, FKM",154,EN 12756 x154,42
+OF-46,protection,"inverse-time circuit breaker, 3-pole",UL 489 / IEC 60947-2,234,15 A x222; 100 A x8; 30 A x3; 60 A x1,61
+OF-47,seal,"mechanical seal, single","SiC/SiC faces, FKM",153,EN 12756 x153,42
 OF-48,support,pipe clamp,"PP clamp with EPDM liner, MSS SP-58 Type 7",5893,DN15 x5274; DN50 x582; DN20 x17; DN250 x7; DN40 x6; DN300 x4; DN200 x3,116
 OF-49,support,U-bolt with guide,"316 U-bolt, MSS SP-58 Type 24",1484,DN15 x1414; DN20 x30; DN25 x23; DN50 x17,44
 OF-50,valve,isolation valve,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",284,DN15 x258; DN50 x26,64
@@ -82,7 +82,7 @@ OF-93,fastener,M10 wedge anchor,ISO 3506 A4-70,110,M10 wedge anchor x110,27
 OF-94,fastener,M12 bolt + nut; PP-flanged joint,ISO 3506 A4-70,16,M12 bolt + nut; PP-flanged joint x16,1
 OF-95,fastener,M12 PVDF bolt + nut,ISO 3506 A4-70,8,M12 PVDF bolt + nut x8,1
 OF-96,fastener,M12 A4-70 bolt + nut,ISO 3506 A4-70,8,M12 A4-70 bolt + nut x8,1
-OF-97,fastener,M12 wedge anchor,ISO 898-1 8.8,234,M12 wedge anchor x234,32
+OF-97,fastener,M12 wedge anchor,ISO 898-1 8.8,238,M12 wedge anchor x238,33
 OF-98,fastener,M10 stud + nut (ISO 4014 / ISO 4032),ISO 3506 A4-70,24,M10 stud + nut (ISO 4014 / ISO 4032) x24,2
 OF-99,fastener,M8 hold-down bolt,ISO 3506 A4-70,24,M8 hold-down bolt x24,2
 OF-100,fastener,M16 wedge anchor,ISO 898-1 8.8,16,M16 wedge anchor x16,2
@@ -135,3 +135,5 @@ OF-146,fastener,M10 stand-to-pad anchor,ISO 898-1 8.8,4,M10 stand-to-pad anchor 
 OF-147,fastener,M6 reactor tube clamp bolt,ISO 3506 A4-70,4,M6 reactor tube clamp bolt x4,1
 OF-148,fastener,M10 table mount,ISO 898-1 8.8,4,M10 table mount x4,1
 OF-149,fastener,M10 hold-down,ISO 898-1 8.8,4,M10 hold-down x4,1
+OF-150,fastener,M16 tie rod,ISO 898-1 8.8,188,M16 tie rod with 2 heavy hex nuts x188,1
+OF-151,fastener,M8 bolt,ISO 3506 A4-70,94,M8 bolt with nut x94,1

@@ -155,7 +155,7 @@ EXPLICIT = {
  'CRYO_N2': 'none with basis: a pressurised N2 receiver bank per the CRYO_CO2/H2/O2 receiver precedent - SA-312 TP316L DN100 Sch 160 tubes in manifolded halves, open volume, no contacting internals; the bank tube count and volume derive from the receiver sizing at the ASU inflow (196.6 kg/d, CRYO_ASU)',
  'GREY_TREAT': 'greywater treatment skid internals per the graph duty (258.8 kg/d treated; the grey, wash and black sub-streams issued on the graph): a screening stage (2 mm wedge-wire), a moving-bed biofilm aeration stage (the same small-MBBR class as BIOFILTER), and a settling stage with a skimmer - sized at the 0.26 m3/d flow',
  'OIL_FRAC': 'fractionator column internals per the graph duty (33.4 kg/d pyrolysis oil feed, four cuts at 7.4/9.9/6.2/5.9 kg/d, A-M-138 SU2018_PYRO cut split): a packed column with 6 mm glass Raschig rings in three beds at the 3-bed cut sequence (C5-C10/C11-C18/C19-C28/C29+), each bed sized by the Fenske-Underwood-Gilliland method for the binary-split classes at total reflux minimum',
- 'ZNBR2': 'ZnBr2 flow-battery stack and electrolyte internals per the graph duty (915.5 kg/d electrolyte circulation, 6.67 kW charge / 5.0 kW discharge): the carbon-plastic electrode pairs in bipolar stacks, the microporous separator, the two PP electrolyte loops with the pumps and heat exchanger to IA-ZNBR-HEAT (A-M-179: ASR 5 ohm cm2, 5 % crossover, 3 % auxiliaries; AQS-TST-007 gates the measured derate)',
+ 'ZNBR2': 'ZnBr2 flow-battery store internals per the design-linked build (ess_tf design block, X-MFG-43, A-M-456/457): 47 module bays (one per hybrid inverter) of 95 bipolar plates at the 6 mm pitch filling the booked 2223.1 m2 electrode area (99.6 A x 172.9 V DC per stack), one PVC-U electrolyte reservoir per module at 2 M (529.4 L, A-M-457), with the pumps and coolers at the charge-window book to IA-ZNBR-HEAT (A-M-455; A-M-179 gates the measured derate)',
  'POLY_OLEFIN': 'none with basis: the accepted manufacturing model books the shell and the nozzle set only; the node carries internals none and names no agitator and no jacket, so none is drawn and the open reactor volume is the design (models/mfg/POLY_OLEFIN/WORK_ORDER.md W3 and W12; node design D/H/wall, AQS-SIZE-OIL-POLY)',
 }
 # sharpened open-gap texts for the units whose missing design data is specific (overrides the
@@ -169,7 +169,7 @@ OPEN_NOTES = {
  'OIL_DRYER': 'open: the dryer media and heating circuit need the dryer design at the 33.0 kg/d plastics stream',
  'OIL_FRAC': 'open: the fractionator column packing or tray design needs issuing at the issued column duties',
  'FUEL_CELL': 'open: the PEM stack cell count and active area are not issued (the stack rating is) - the membrane/electrode/bipolar-plate construction needs the cell design',
- 'ZNBR2': 'open: the ZnBr2 cell-stack internals wait on the X-MFG-41 stack test; the electrolyte tanks and balance of plant are the issued mfg BOM',
+ 'ZNBR2': 'open: the plate layout class and electrolyte basis are registered study assumptions (A-M-456/457) - the X-MFG-41 stack test gates the performance class and the first-article GA the drawn layout; the model books the internals (models/mfg/ZNBR2/bom.csv)',
  'GREY_TREAT': 'open: the greywater treatment stage internals (screen, aeration, baffle sizing) need the stage design inside the issued skid envelope',
 }
 EXPLICIT_EVID = {

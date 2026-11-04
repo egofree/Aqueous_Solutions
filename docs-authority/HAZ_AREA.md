@@ -41,9 +41,9 @@ Table 3.1. Release sources and zones
 | PROD_C19_C28 | OIL | C19-C28 | 2.218 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 8 | 1 |
 | PROD_C5_C10 | OIL | C5-C10 | 7.04 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 7 | 1 |
 | PROD_MEOH | CRYO | CH3OH | 28.729 | IIA (Group D) | T1 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 5 | 0 |
-| ZNBR2 | ELEC | H2 | 0.775 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 8 | 2 |
+| ZNBR2 | ELEC | H2 | 0.775 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 8 | 1 |
 
-In total, 87 instruments and 10 motors or pumps are in Zone 1 or Zone 2. Their specifications in the instrument index (AQS-CTL-001) and the inventories take the protection type from the protection column of `docs-authority/inventory/HAZ_AREA.csv`.
+In total, 87 instruments and 9 motors or pumps are in Zone 1 or Zone 2. Their specifications in the instrument index (AQS-CTL-001) and the inventories take the protection type from the protection column of `docs-authority/inventory/HAZ_AREA.csv`.
 
 The headspace of the zinc–bromine flow battery (ZNBR2), where hydrogen forms by the hydrogen evolution reaction (HER), is Zone 2 inside the enclosure while the purge is running (NFPA 855; gas detection in AQS-SAF-006).
 

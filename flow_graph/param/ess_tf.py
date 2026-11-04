@@ -68,6 +68,46 @@ def tf(g, ps=None):
     for t in (N['ZNBR2']['params'].get('balance_rev_l') or {}).get('terms', []):
         if t['label'].startswith('purge air'): t['value'] = round(q*RHO_AIR, 4); t['basis'] = 'X-PAR-02 TF ess_tf.py'
     N['ZNBR2']['params']['purge_basis'] = {'H2_m3_d': round(h2, 3), 'purge_m3_h': round(q/24, 2), 'HER_fraction': round(F_HER, 5), 'electrode_area_m2': round(area/1e4, 1)}
+    # X-MFG-43 machine design (A-M-456/457): the flow-battery store as hardware, design-linked to the
+    # booked electrode area - the booked cell-summed area (the purge basis above) is split over the
+    # inverter count (mvs znbr_count mirror, ps inverters) and filled with bipolar plates at the
+    # registered plate/pitch class, with the electrolyte reservoirs as solids (the reactant holdup).
+    inv = int(ps['inverters']); plates_mod = 95
+    a_plate = area / 1e4 / (inv * plates_mod)                # m2 active per plate, fills the booked area exactly (area is cm2)
+    i_stack = J / 1000.0 * (a_plate * 1e4)                   # A per stack at the booked j (cell-summed / plates)
+    v_stack = plates_mod * VZB                               # V DC per stack
+    zn_mol = ah / inv * 3600.0 / F / 2.0                     # mol Zn cycled per module per day (CE 1 basis; crossover rides the round-trip book, A-M-179)
+    c_M = 2.0                                                # A-M-457 electrolyte concentration
+    v_el_L = zn_mol / c_M                                    # L electrolyte per module
+    tank = [700.0, 700.0, 1155.0]                            # v_el_L inside 10 mm PVC-U walls (680 x 680 x 1145)
+    bp = (1100.0, 850.0); cols, rows = 7, 7                  # bay grid: 47 bays over 7 rows (last row 5)
+    rack = [int(2*100 + cols*bp[0]), int(100 + rows*bp[1]), 1970]
+    cooler_kw = float(N['ZNBR2']['params'].get('cycling_thermal', {}).get('window_kW') or 0.0) / inv
+    aux_w = float(DRV['znbr_aux_frac']['value']) * ah / CHG_H * VZB / 1000.0 / inv * 1000.0   # auxiliaries share per module (A-M-179)
+    N['ZNBR2']['params']['design'] = {
+        'machine': 'ZnBr2 flow-battery store: %d module bays (one per hybrid inverter, AQS-ELEC-008), each a '
+                   'bipolar plate stack over its electrolyte reservoir, pumps and electrolyte cooler' % inv,
+        'modules': inv, 'module_kwh': round(float(ps['store_kWh']) / inv, 1),
+        'module_charge_kw_ac': round(float(ps['charge_kW']) / inv, 2),
+        'plates_per_module': plates_mod, 'plate_active_L_mm': round(a_plate / 0.5 * 1000, 1),
+        'plate_active_W_mm': 500.0, 'plate_t_mm': 5.0, 'pitch_mm': 6.0,
+        'stack_I_A': round(i_stack, 1), 'stack_V_dc': round(v_stack, 1), 'stack_charge_kw_dc': round(i_stack * v_stack / 1000.0, 3),
+        'electrode_area_m2_booked': round(area / 1e4, 1), 'electrode_area_m2_model': round(inv * plates_mod * a_plate, 2),
+        'zn_kg_per_module': round(zn_mol * 65.38 / 1000.0, 1), 'br2_kg_per_module': round(zn_mol * 159.808 / 1000.0, 1),
+        'electrolyte_M': c_M, 'electrolyte_L_per_module': round(v_el_L, 1), 'tank_mm': tank,
+        'cooler_kw_per_module': round(cooler_kw, 2), 'pump_W_per_module': round(aux_w, 0),
+        'bus_bar_mm': '1 x 20 x 6.3 copper flat per stack terminal (AQS-BUS-001 class method; POWER.md states no ZNBR2 bus section)',
+        'bay_pitch_mm': list(bp), 'bay_cols': cols, 'bay_rows': rows,
+        'basis': 'cell-summed area from the booked charge (Ah at 1.82 V over the %.0f h window at %g mA/cm2, '
+                 'the purge-basis book); plates %d/module x %d modules fill it at %g mm pitch (A-M-456); '
+                 'electrolyte %g L/module at %g M ZnBr2 (A-M-457); cooler at the cycling_thermal charge-window '
+                 'rate (A-M-455); pump at the 3 %% auxiliary share (A-M-179)' % (CHG_H, J, plates_mod, inv, 6.0, v_el_L, c_M),
+        'computed_by': 'flow_graph/param/ess_tf.py tf() (X-PAR-02 lane, X-MFG-43 machine design)'}
+    N['ZNBR2']['params']['size_mm'] = rack
+    N['ZNBR2']['params']['size_note'] = ('L x W x H mm, set by flow_graph/param/ess_tf.py (X-MFG-43): the %d-bay rack hall '
+                                         '(%d bays of stack-over-tank at %g x %g mm pitch); the placement seed block for ZNBR2 '
+                                         'stays the 1800 x 1200 x 1600 mm study box and under-books this machine - the '
+                                         'floor-space reservation is the named consequence (ZNBR2 WORK_ORDER W12)' % (inv, inv, bp[0], bp[1]))
     # HYDRO_SET (owner guideline: redundancy in every energy and life-support system; A-M-145): diverse N+1 backup of the night store.
     # NFPA 111 Level 1, Class X = the night hours the failed ZNBR2 would carry, at the AQS-ELEC-007 critical life-support load.
     crit = float(ps.get('critical_kW') or _crit()); night = DRV['night_hours']['value']; e_bus = crit*night
