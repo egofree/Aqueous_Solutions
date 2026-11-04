@@ -2642,6 +2642,15 @@
           "distillate_m3_d": 0.3229,
           "sec_kWh_m3": 17,
           "duty_kW": 0.2542,
+          "u_kW_m2K": 2.8,
+          "dT_drive_K": 5.0,
+          "tube_id_mm": 12.0,
+          "tube_L_mm": 890.0,
+          "tubes": 18,
+          "sep_h_mm": 40.0,
+          "sump_h_mm": 220.0,
+          "shell_D_mm": 240.0,
+          "area_basis": "latent / (U 2.8 kW/m2 K x 5 K lift), PERRY9_EVAP class; bundle = tubes x pi x ID x L at the 12 mm / 890 mm tube class (X-MFG-38 pattern)",
           "basis": "0.333 m3/d x 17 kWh/m3 / 24 h at the issued band midpoint (A-M-149)"
         }
       },

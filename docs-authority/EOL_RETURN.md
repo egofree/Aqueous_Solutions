@@ -19,11 +19,11 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1328 | 58 % |
-| organic | 636 | 28 % |
-| metal_reactive | 125 | 5 % |
+| metal_plateable | 1316 | 58 % |
+| organic | 623 | 27 % |
+| metal_reactive | 125 | 6 % |
 | unassigned | 114 | 5 % |
-| silicate_oxide | 95 | 4 % |
+| silicate_oxide | 94 | 4 % |
 
 Unassigned: 114 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
 
@@ -159,7 +159,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MET_MELT | 8 | 4 | 0 | 1 | 1 |
 | MET_SCRUB | 1 | 8 | 0 | 1 | 0 |
 | MET_SYN | 7 | 3 | 0 | 2 | 1 |
-| MF-01 x 85 | 3 | 1 | 2 | 0 | 0 |
+| MF-01 x 88 | 3 | 1 | 2 | 0 | 0 |
 | MF-02 x 55 | 3 | 1 | 2 | 0 | 0 |
 | MF-03 x 24 | 5 | 1 | 2 | 0 | 0 |
 | MF-04 x 0 | 5 | 0 | 1 | 0 | 0 |
@@ -167,7 +167,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MF-06 x 103 | 5 | 0 | 1 | 0 | 0 |
 | MF-07 x 6 | 5 | 0 | 1 | 0 | 0 |
 | MF-08 x 19 | 7 | 0 | 3 | 0 | 0 |
-| MF-09 x 57 | 7 | 0 | 3 | 0 | 0 |
+| MF-09 x 54 | 7 | 0 | 3 | 0 | 0 |
 | MF-10 x 10 | 7 | 0 | 3 | 0 | 0 |
 | MF-11 x 5 | 7 | 0 | 3 | 0 | 0 |
 | MF-12 x 1 | 7 | 0 | 3 | 0 | 0 |
@@ -258,6 +258,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-151 | 1 | 0 | 0 | 0 | 0 |
 | OF-152 | 1 | 0 | 0 | 0 | 0 |
 | OF-153 | 0 | 1 | 0 | 0 | 0 |
+| OF-154 | 1 | 0 | 0 | 0 | 0 |
 | OF-16 | 1 | 0 | 0 | 0 | 0 |
 | OF-17 | 1 | 0 | 0 | 0 | 0 |
 | OF-19 | 1 | 0 | 0 | 0 | 0 |
@@ -404,7 +405,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | TI_CELL | 15 | 0 | 0 | 0 | 2 |
 | VAC_CAST | 5 | 1 | 0 | 1 | 0 |
 | VAC_IND | 7 | 0 | 0 | 1 | 1 |
-| VCD_TRAIN | 21 | 13 | 0 | 0 | 1 |
+| VCD_TRAIN | 8 | 0 | 0 | 0 | 0 |
 | VDF_SYN | 3 | 4 | 0 | 0 | 0 |
 | VERMI_BIN | 1 | 2 | 0 | 1 | 0 |
 | WAFER_FAB | 8 | 0 | 0 | 3 | 0 |
@@ -421,7 +422,6 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | WF-08 | 1 | 0 | 0 | 0 | 0 |
 | WF-09 | 1 | 0 | 0 | 0 | 0 |
 | WF-10 | 1 | 0 | 0 | 0 | 0 |
-| WF-11 | 1 | 0 | 0 | 0 | 0 |
 | WF-12 | 1 | 0 | 0 | 0 | 0 |
 | WF-13 | 1 | 0 | 0 | 0 | 0 |
 | WF-14 | 1 | 0 | 0 | 0 | 0 |
@@ -436,6 +436,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | WF-31 | 1 | 0 | 0 | 0 | 0 |
 | WF-32 | 1 | 0 | 0 | 0 | 0 |
 | WF-35 | 1 | 0 | 0 | 0 | 0 |
+| WF-36 | 1 | 0 | 0 | 0 | 0 |
 | WIRE_DRAW | 8 | 1 | 0 | 2 | 0 |
 | WS_AMMONIA | 0 | 5 | 0 | 1 | 0 |
 | WS_DOPE | 2 | 3 | 0 | 1 | 0 |

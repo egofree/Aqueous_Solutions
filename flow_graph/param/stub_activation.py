@@ -201,6 +201,11 @@ def apply(g=None, write=False):
                          compressor='scroll class (small-MVC)', hx_area_m2=round(a_hx, 3),
                          q_latent_kW=round(q_lat, 3), feed_m3_d=feed_m3, distillate_m3_d=round(dist, 4),
                          sec_kWh_m3=sec, duty_kW=N['VCD_TRAIN']['continuous_kw']['value'],
+                         u_kW_m2K=2.8, dT_drive_K=5.0, tube_id_mm=12.0, tube_L_mm=890.0,
+                         tubes=int(math.ceil(a_hx / (math.pi * 0.012 * 0.89))),
+                         sep_h_mm=40.0, sump_h_mm=220.0, shell_D_mm=240.0,
+                         area_basis='latent / (U 2.8 kW/m2 K x 5 K lift), PERRY9_EVAP class; bundle = '
+                                    'tubes x pi x ID x L at the 12 mm / 890 mm tube class (X-MFG-38 pattern)',
                          basis='0.333 m3/d x 17 kWh/m3 / 24 h at the issued band midpoint (A-M-149)')
 
     # ---- BLOW_MOLD: continuous-extrusion blow molder at the wax duty ------------------------------

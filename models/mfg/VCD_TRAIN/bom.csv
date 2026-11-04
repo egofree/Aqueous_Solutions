@@ -1,34 +1,7 @@
-item,description,qty,material,basis
-1,Body / envelope 1400 x 600 x 1200 mm,1,316L if the stream is wet or chloride.,docs-authority/duties/VCD_TRAIN.md
-2,Process nozzle DN15,9,316L if the stream is wet or chloride.,one per mass edge; DN from AQS-INV-003
-3,"Motor: transfer pump IA-VCD-BD to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-4,"Motor: transfer pump S25 to BMED_UPW_POLISH (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-5,"Motor: transfer pump S28 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-6,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-7,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-8,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-9,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-10,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-11,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-12,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-13,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-14,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-15,fastener: anchor bolt M10,52,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-16,fastener: anchor bolt M10,44,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-17,fastener: anchor bolt M10,44,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-18,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-19,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-20,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-21,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-22,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-23,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-24,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-25,support: pipe clamp DN15,26,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-26,support: pipe clamp DN15,22,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-27,support: pipe clamp DN15,22,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-28,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-29,valve: check valve DN15,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
-30,valve: check valve DN15,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
-31,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
-32,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
-33,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Still vessels x 2 (2 x 100 %, X-RED-05): shell OD 240 x wall 10, 1170 mm, sump + tubesheet pair + separator flange + top cap",2,"316L, CA 0 mm",174.7,make,"duty section 3 (316L wetted); the MVC still principle: boiling inside, compressed vapour condensing on the shell"
+2,"Falling-film bundles: 18 tubes ID 12 x OD 14 x 890 mm per module, 0.6039 m2 each",36,"316L tube, CA 0 mm",10.5,make,booked bundle 0.603 m2 at U 2.8 kW/m2 K x 5 K (PERRY9_EVAP class) on the node's 8.436 kW latent duty (params.design area_basis); drawn at +0.1 %
+3,"Separator demister pads, 90 mm",2,316L mesh,0.3,buy,vapour separator internals above the upper tubesheet (design sep_h_mm)
+4,"Scroll compressors, 0.2542 kW duty class (node design scroll class), envelope and interface",2,"purchased, 316L refrigeration class",12.0,buy,"purchased per plan rule 6; the drive rating reads the maker sheet at order (node design sec_kWh_m3 17 kWh/m3 driver basis, A-M-149)"
+5,"Nozzle set per docs-authority/nozzles/VCD_TRAIN.csv: 11 rows at the skid faces (drain boss through the plinth, vent riser on the bay-0 separator cap)",11,316L tube,1.2,make,"schedule tags/faces/heights verbatim; atmospheric open-bore tube (duty section 4: hose, atmospheric)"
+6,Plinth 1400 x 600 x 30 carrying both module bays,1,"carbon steel, painted",197.8,make,dry frame; anchors in fasteners.csv

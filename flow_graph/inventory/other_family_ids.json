@@ -765,6 +765,11 @@
    "category": "fastener",
    "item": "Solvent cement joints",
    "spec": "PVC-U per ASTM D2564"
+  },
+  "OF-154": {
+   "category": "fastener",
+   "item": "M10 stud",
+   "spec": "ISO 3506 A4-70"
   }
  }
 }

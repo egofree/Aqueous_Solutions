@@ -1,0 +1,173 @@
+{
+  "bbox_mm": [
+    1400.0,
+    600.0,
+    1201.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1400.0,
+    600.0,
+    1200.0
+  ],
+  "size_basis": "L\u00d7W\u00d7H mm, issued envelope",
+  "graph_revision": "AD",
+  "solids": 52,
+  "all_parts_valid": true,
+  "solids_note": "one compound of closed solids: plinth, two vessel chains (shell, heads, tubesheets, separator ring, top cap), the two 18-tube bundles at running clearance, demister pads, compressor envelopes and the nozzle stubs; every union partner overlaps volumetrically, so the mesh reads back closed and manifold",
+  "a_hx": {
+    "modules": 2,
+    "tubes_per_module": 18,
+    "tube_mm": [
+      12.0,
+      14.0,
+      890.0
+    ],
+    "area_m2_drawn": 0.6039,
+    "area_m2_booked": 0.603,
+    "q_latent_kW": 8.436,
+    "u_kW_m2K": 2.8,
+    "dT_drive_K": 5.0,
+    "basis": "A-HX: the bundle area is reported drawn against booked; the node carries the 8.436 kW latent duty, so the booked area is the calculated figure (latent / (U 2.8 x 5 K), PERRY9_EVAP class, stub_activation X-MFG-38 pattern) and the drawn bundle carries it at +0.1 %"
+  },
+  "holdup_L": {
+    "sump_per_module_model": 8.3629,
+    "working_volume_book_L": 13.8,
+    "basis": "the duty section 2 working volume (2 h, 0.0138 m3 book) against the model sump; reported, not used as a residence time beyond the duty's own claim (A-VES rule)"
+  },
+  "redundancy": {
+    "modules": 2,
+    "rule": "2 x 100 %, standby still on the same feed header (X-RED-05); both modules drawn (installed)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 614.4,
+      "schedule_rating": "Class 150",
+      "service": "condensate",
+      "note": "schedule datum drawn as issued (all fit the 1200 box); atmospheric open-bore tube flush at the skid face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 708.4,
+      "schedule_rating": "Class 150",
+      "service": "treated grey",
+      "note": "schedule datum drawn as issued (all fit the 1200 box); atmospheric open-bore tube flush at the skid face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN25",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 750.1,
+      "schedule_rating": "Class 150",
+      "service": "PEM product H2O",
+      "note": "schedule datum drawn as issued (all fit the 1200 box); atmospheric open-bore tube flush at the skid face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 785.6,
+      "schedule_rating": "Class 150",
+      "service": "digest surplus",
+      "note": "schedule datum drawn as issued (all fit the 1200 box); atmospheric open-bore tube flush at the skid face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN50",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 670.7,
+      "schedule_rating": "Class 150",
+      "service": "VCD distillate",
+      "note": "schedule datum drawn as issued (all fit the 1200 box); atmospheric open-bore tube flush at the skid face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 719.5,
+      "schedule_rating": "Class 150",
+      "service": "VCD brine",
+      "note": "schedule datum drawn as issued (all fit the 1200 box); atmospheric open-bore tube flush at the skid face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 748.8,
+      "schedule_rating": "Class 150",
+      "service": "still bottoms",
+      "note": "schedule datum drawn as issued (all fit the 1200 box); atmospheric open-bore tube flush at the skid face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated)"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": -0.5,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "schedule datum drawn as issued (all fit the 1200 box); atmospheric open-bore tube flush at the skid face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated)"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 1200.5,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "schedule datum drawn as issued (all fit the 1200 box); atmospheric open-bore tube flush at the skid face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated)"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 643.6,
+      "schedule_rating": "Class 150",
+      "service": "leach liquor water bleed to vapour-compression distillation",
+      "note": "schedule datum drawn as issued (all fit the 1200 box); atmospheric open-bore tube flush at the skid face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated)"
+    },
+    "N11": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 672.9,
+      "schedule_rating": "Class 150",
+      "service": "TSA regeneration condensate",
+      "note": "schedule datum drawn as issued (all fit the 1200 box); atmospheric open-bore tube flush at the skid face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated)"
+    }
+  },
+  "nozzle_count_schedule": 11,
+  "part_mass_kg": {
+    "vessels": 174.7,
+    "bundle": 10.5,
+    "plinth_compressors": 339.3,
+    "nozzles": 1.2
+  },
+  "cadquery": "2.8.0"
+}

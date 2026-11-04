@@ -194,9 +194,9 @@ WTR,ROOF,ROOF_TANK,transfer pump IA-PEROX-H2O to WS_PEROX,BLDC,42 mm (NEMA 17 fl
 WTR,ROOF,ROOF_TANK,transfer pump S21 to HABITATION,BLDC,42 mm (NEMA 17 flange),0.0003,24 V DC,S3,BLDC driver,1,"120.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,digest,BLACK_DIGEST,Biogas recirculation diaphragm blower about 2 L/min,BLDC,57 mm (NEMA 23 flange),0.02,24 V DC,S1,BLDC driver,1,BOM; shaft assumed (A-M-119)
 WTR,dose,REMIN,"Metering diaphragm pump, Ca slurry duty (node design block: ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,2,BOM; shaft assumed (A-M-119)
-WTR,evaporator,VCD_TRAIN,"Motor: transfer pump IA-VCD-BD to LEACH_CSTR_1 (BLDC, 42 mm ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-WTR,evaporator,VCD_TRAIN,"Motor: transfer pump S25 to BMED_UPW_POLISH (BLDC, 42 mm (NE",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-WTR,evaporator,VCD_TRAIN,"Motor: transfer pump S28 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
+WTR,evaporator,VCD_TRAIN,transfer pump IA-VCD-BD to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"6.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+WTR,evaporator,VCD_TRAIN,transfer pump S25 to BMED_UPW_POLISH,BLDC,42 mm (NEMA 17 flange),0.0009,24 V DC,S3,BLDC driver,1,"334.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+WTR,evaporator,VCD_TRAIN,transfer pump S28 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"17.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,intake,GW_INTAKE,Body / envelope 900 x 700 x 1800 mm,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 WTR,intake,GW_INTAKE,Process nozzle DN15,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 WTR,scrubber,LB_DEGAS,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"

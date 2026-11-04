@@ -3308,16 +3308,18 @@ WTR,dose,REMIN,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, 
 WTR,dose,REMIN,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-POT-01: pump discharge (assumed)
 WTR,dose,REMIN,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,S26: one at each end nozzle (assumed)
 WTR,dose,REMIN,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-POT-01: one at each end nozzle (assumed)
-WTR,evaporator,VCD_TRAIN,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump IA-VCD-BD to LEACH_CSTR_1 (BLDC, 42 mm : drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-WTR,evaporator,VCD_TRAIN,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S25 to BMED_UPW_POLISH (BLDC, 42 mm (NE: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-WTR,evaporator,VCD_TRAIN,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S28 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA : drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-WTR,evaporator,VCD_TRAIN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump IA-VCD-BD to LEACH_CSTR_1 (BLDC, 42 mm : run and fault (assumed)"
-WTR,evaporator,VCD_TRAIN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump S25 to BMED_UPW_POLISH (BLDC, 42 mm (NE: run and fault (assumed)"
-WTR,evaporator,VCD_TRAIN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump S28 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA : run and fault (assumed)"
-WTR,evaporator,VCD_TRAIN,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump IA-VCD-BD to LEACH_CSTR_1 (BLDC, 42 mm  (assumed VFD at >= 0.75 kW)"
-WTR,evaporator,VCD_TRAIN,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump S25 to BMED_UPW_POLISH (BLDC, 42 mm (NE (assumed VFD at >= 0.75 kW)"
-WTR,evaporator,VCD_TRAIN,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump S28 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA  (assumed VFD at >= 0.75 kW)"
-WTR,evaporator,VCD_TRAIN,fabricated part,fabricated part set,33 BOM lines,models/mfg/VCD_TRAIN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+WTR,evaporator,VCD_TRAIN,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-VCD-BD to LEACH_CSTR_1 (assumed size)
+WTR,evaporator,VCD_TRAIN,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S25 to BMED_UPW_POLISH (assumed size)
+WTR,evaporator,VCD_TRAIN,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S28 to LEACH_CSTR_1 (assumed size)
+WTR,evaporator,VCD_TRAIN,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-VCD-BD to LEACH_CSTR_1
+WTR,evaporator,VCD_TRAIN,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S25 to BMED_UPW_POLISH
+WTR,evaporator,VCD_TRAIN,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S28 to LEACH_CSTR_1
+WTR,evaporator,VCD_TRAIN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-VCD-BD to LEACH_CSTR_1: run and fault (assumed)
+WTR,evaporator,VCD_TRAIN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S25 to BMED_UPW_POLISH: run and fault (assumed)
+WTR,evaporator,VCD_TRAIN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S28 to LEACH_CSTR_1: run and fault (assumed)
+WTR,evaporator,VCD_TRAIN,fabricated part,fabricated part set,6 BOM lines,models/mfg/VCD_TRAIN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+WTR,evaporator,VCD_TRAIN,fastener,M10 stud,M10 stud with 2 nuts (ISO 4014 / ISO 4032),ISO 3506 A4-70,16,models/mfg/VCD_TRAIN/fasteners.csv
+WTR,evaporator,VCD_TRAIN,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,4,models/mfg/VCD_TRAIN/fasteners.csv
 WTR,evaporator,VCD_TRAIN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,52,S25: 2 per support (assumed)
 WTR,evaporator,VCD_TRAIN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,44,S28: 2 per support (assumed)
 WTR,evaporator,VCD_TRAIN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,44,IA-VCD-BD: 2 per support (assumed)
@@ -3328,12 +3330,6 @@ WTR,evaporator,VCD_TRAIN,instrument,high-level switch,vibrating fork,"IEC 60947-
 WTR,evaporator,VCD_TRAIN,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 WTR,evaporator,VCD_TRAIN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 WTR,evaporator,VCD_TRAIN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-WTR,evaporator,VCD_TRAIN,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-WTR,evaporator,VCD_TRAIN,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-WTR,evaporator,VCD_TRAIN,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-WTR,evaporator,VCD_TRAIN,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump IA-VCD-BD to LEACH_CSTR_1 (BLDC, 42 mm : induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
-WTR,evaporator,VCD_TRAIN,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump S25 to BMED_UPW_POLISH (BLDC, 42 mm (NE: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
-WTR,evaporator,VCD_TRAIN,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump S28 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA : induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 WTR,evaporator,VCD_TRAIN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",26,S25: AQS-PIP-005 span count
 WTR,evaporator,VCD_TRAIN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",22,S28: AQS-PIP-005 span count
 WTR,evaporator,VCD_TRAIN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",22,IA-VCD-BD: AQS-PIP-005 span count

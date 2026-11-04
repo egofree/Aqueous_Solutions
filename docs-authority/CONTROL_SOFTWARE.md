@@ -50,7 +50,7 @@ PI blocks with set-point literals taken from the graph basis column of AQS-CTL-0
 | PLC-OIL | 55 | 3 | 55 | 0 | 0/36/5 | single |
 | PLC-POLYMERS | 48 | 2 | 48 | 0 | 0/18/3 | single |
 | PLC-PUMPED_HYDRO | 2 | 0 | 2 | 0 | 0/4/2 | redundant pair |
-| PLC-WTR | 70 | 0 | 70 | 0 | 0/57/14 | redundant pair |
+| PLC-WTR | 70 | 0 | 70 | 0 | 0/57/11 | redundant pair |
 
 ## 5. Scan simulation against the graph
 

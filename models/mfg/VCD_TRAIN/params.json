@@ -28,7 +28,19 @@
   "distillate_m3_d": 0.3229,
   "sec_kWh_m3": 17,
   "duty_kW": 0.2542,
-  "basis": "0.333 m3/d x 17 kWh/m3 / 24 h at the issued band midpoint (A-M-149)"
+  "u_kW_m2K": 2.8,
+  "dT_drive_K": 5.0,
+  "tube_id_mm": 12.0,
+  "tube_L_mm": 890.0,
+  "tubes": 18,
+  "sep_h_mm": 40.0,
+  "sump_h_mm": 220.0,
+  "shell_D_mm": 240.0,
+  "area_basis": "latent / (U 2.8 kW/m2 K x 5 K lift), PERRY9_EVAP class; bundle = tubes x pi x ID x L at the 12 mm / 890 mm tube class (X-MFG-38 pattern)",
+  "basis": "0.333 m3/d x 17 kWh/m3 / 24 h at the issued band midpoint (A-M-149)",
+  "machine_note": "two MVC still modules (2 x 100 %, X-RED-05) in the issued envelope: each a vertical evaporator/condenser vessel with the 18-tube bundle at the booked area, vapour separator above, scroll compressor at the flank",
+  "wetted": "316L wetted, CA 0 mm (duty section 3); frame carbon steel",
+  "internals_drawn": "bundles as tube solids at running clearance; demister pads; the scroll compressor as its purchased envelope (rule 6)"
  },
  "nozzles": [
   {
@@ -126,5 +138,32 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class evaporator"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1400.0,
+   600.0,
+   1200.0
+  ],
+  "basis": "L\u00d7W\u00d7H mm, issued envelope",
+  "modules": {
+   "count": 2,
+   "bay_w_mm": 700.0
+  },
+  "vessel_z_mm": [
+   30.0,
+   1200.0
+  ],
+  "bundle_z_mm": [
+   250.0,
+   1140.0
+  ],
+  "plinth_mm": 30.0,
+  "sump_h_mm": 220.0,
+  "sep_h_mm": 40.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; two 700 mm module bays; plinth 0..30; vessels 30..1200 with sump 30..250, tubes 250..1140, separator 1160..1190, cap flush at the envelope top",
+  "nozzle_spread": "side rows flush at the skid faces packed at an od + 8 pitch centred on the skid (60 mm hose-joint stubs); drain boss through the plinth at (300, 300); vent riser on the bay-0 separator cap, flush at the envelope top; per-tag positions in check.nozzles_drawn"
+ }
 }
