@@ -5,3 +5,4 @@ N3,DN15,Class 150,reactive melt for investment pour,inlet,160
 N4,solids,Class 150,cast + shell,outlet,600
 N5,DN15,Class 150,drain,bottom,50
 N6,DN15,Class 150,vent,top,800
+N7,cable,Class 150,"power terminal (SF-INV_CAST, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",top,800

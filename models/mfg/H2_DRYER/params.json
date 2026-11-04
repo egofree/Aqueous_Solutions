@@ -130,6 +130,14 @@
    "service": "TSA regeneration condensate",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N10",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-H2_DRYER, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "Inlet knock-out PVC-U (wet). Dryer vessel and dry outlet 316L, annealed (M6, dry H\u2082). Regeneration conditions held. AQS-REV-H2-001.",

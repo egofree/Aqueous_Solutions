@@ -81,6 +81,14 @@
    "service": "acid-gas dilution air returned to the alkaline scrubber",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N7",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-ACID_POLISH_SCRUB, 480 V AC)",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2. Packing is polymer. No metal wetted part. IA-SCRUB-SRC arrives from LEACH_CSTR_1 at up to 85 \u00b0C (X-MAT-09). Shell, sump and inlet CPVC per M5. Corrosion allowance does not apply to the polymer.",

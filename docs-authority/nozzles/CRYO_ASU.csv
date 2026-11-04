@@ -15,3 +15,4 @@ N13,solids,Class 150,nitrogen return,inlet,160
 N14,solids,Class 150,oxygen return,inlet,160
 N15,solids,Class 150,CO2 return,inlet,160
 N16,DN50,Class 150,dissolved gas,inlet,160
+N17,cable,Class 150,"power terminal (SF-CRYO_ASU, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",top,800

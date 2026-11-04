@@ -5,3 +5,4 @@ N3,DN15,Class 150,evaporator condensate return (BMED water make-up),outlet,600
 N4,DN15,Class 150,"column vent: non-condensables, water vapour, trace HCl",outlet,600
 N5,DN15,Class 150,drain,bottom,50
 N6,DN15,Class 150,vent,top,800
+N7,cable,Class 150,"power terminal (SF-EVAP_ACID, 480 V AC)",top,800

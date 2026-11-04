@@ -4,3 +4,4 @@ N2,solids,Class 150,digester/leach salts to flux,inlet,160
 N3,solids,Class 150,MgCl2-class salt drag-out (flux cover source),inlet,160
 N4,DN15,Class 150,drain,bottom,50
 N5,DN15,Class 150,vent,top,800
+N6,cable,Class 150,"power terminal (SF-FLUX_PREP, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",top,800

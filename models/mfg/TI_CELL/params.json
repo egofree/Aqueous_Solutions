@@ -155,6 +155,14 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N15",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-TI_CELL, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "Alumina-brick-lined carbochlorinator at 800 C with graphite hot face; TiCl4 take-off cooled through a 316L condensation train; Kroll reduction retort 310S (25Cr-20Ni) with a graphite crucible insert at 900 C; molten MgCl2 return through graphite/Ni-200 launder",

@@ -89,6 +89,14 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N8",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-SHELL_BURNOUT, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "Alumina-silica kiln hot face + castable hearth, 80Ni-20Cr elements, mild-steel casing; 304L wax condenser on the condensate leg",

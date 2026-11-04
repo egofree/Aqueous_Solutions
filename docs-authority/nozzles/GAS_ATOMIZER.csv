@@ -6,3 +6,4 @@ N4,DN15,Class 150,vent,top,800
 N5,DN15,Class 150,melt to atomizer when powder required,inlet,160
 N6,solids,Class 150,powder stock,outlet,600
 N7,solids,Class 150,off-spec powder to remelt,outlet,600
+N8,cable,Class 150,"power terminal (SF-GAS_ATOMIZER, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",top,800

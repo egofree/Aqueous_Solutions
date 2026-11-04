@@ -168,6 +168,14 @@
    "service": "leach vent to the NOx scrubber",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N16",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-NOX_SCRUB, 480 V AC)",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2. Packing is polymer. No metal wetted part. IA-LEACH-NOX and IA-CLOSE-1 arrive from LEACH_CSTR_1 at up to 85 \u00b0C (X-MAT-09). Inlet section and sump CPVC per M5; the packed section above the quench may stay PVC-U once the gas temperature there is calculated (held). Corrosion allowance does not apply to the polymer.",

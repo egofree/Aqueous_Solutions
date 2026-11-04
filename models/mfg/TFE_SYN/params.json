@@ -86,6 +86,14 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N8",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-TFE_SYN, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "Inconel 600 pyrolysis tube, Hastelloy C-276 coolers, PTFE-lined scrubber (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.",

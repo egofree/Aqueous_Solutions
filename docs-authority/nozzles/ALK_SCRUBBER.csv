@@ -4,3 +4,4 @@ N2,DN15,Class 150,drain,bottom,50
 N3,DN15,Class 150,vent,top,2000
 N4,DN250,Class 150,acid-gas dilution air returned to the alkaline scrubber,inlet,160
 N5,DN15,Class 150,scrubbed vent to the house acid-gas header,inlet,160
+N6,cable,Class 150,"power terminal (SF-ALK_SCRUBBER, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",top,800

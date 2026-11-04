@@ -7,3 +7,4 @@ N5,DN15,Class 150,vent,top,2000
 N6,DN15,Class 150,H2 fuel,outlet,600
 N7,DN15,Class 150,H2 normal path,inlet,160
 N8,DN15,Class 150,electrolyser H2,inlet,160
+N9,cable,Class 150,"power terminal (SF-CRYO_H2, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",top,800

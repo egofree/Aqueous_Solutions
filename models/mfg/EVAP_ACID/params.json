@@ -134,6 +134,14 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N7",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-EVAP_ACID, 480 V AC)",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "Wetted parts in hot HCl: impregnated graphite heat exchanger, fluoropolymer-lined shell, PVDF or PTFE piping (ULLMANN_HCL). No stainless or nickel in the HCl circuit. Above 60 \u00b0C no PVC-U or CPVC (AQS-STD-002).",

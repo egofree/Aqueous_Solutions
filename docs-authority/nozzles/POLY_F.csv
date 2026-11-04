@@ -7,3 +7,4 @@ N5,DN15,Class 150,PVDF resin to the film/sheet line,outlet,600
 N6,DN15,Class 150,off-spec fluoropolymer scrap/rework,outlet,600
 N7,DN15,Class 150,drain,bottom,50
 N8,DN15,Class 150,vent,top,800
+N9,cable,Class 150,"power terminal (SF-POLY_F, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",top,800

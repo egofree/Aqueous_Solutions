@@ -61,6 +61,14 @@
    "service": "resist/solvent carry (coat catch bowl + developer) to the develop bench",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N5",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-LITHO_DEV, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.",

@@ -8,3 +8,4 @@ N6,DN15,Class 150,H2 normal path,outlet,600
 N7,solids,Class 150,dried hydrogen,outlet,600
 N8,DN15,Class 150,sweep air from the hydrogen hood,outlet,600
 N9,DN15,Class 150,TSA regeneration condensate,outlet,600
+N10,cable,Class 150,"power terminal (SF-H2_DRYER, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",top,800

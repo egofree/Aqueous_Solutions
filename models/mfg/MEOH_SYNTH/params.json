@@ -119,6 +119,14 @@
    "service": "methanol feed to the methyl-mercaptan synthesis (trace)",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N10",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-MEOH_SYNTH, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "Held. Pressure and temperature are not on the graph. Above 200 \u00b0C with H\u2082 partial pressure, API 941 applies: no carbon steel; 316L or Cr-Mo from the Nelson curves. AQS-REV-H2-001. Synthesis 50 bar a, 250 \u00b0C (study); 316L per API 941 (AQS-REV-H2-001 section 5).",

@@ -32,3 +32,4 @@ N30,DN15,Class 150,C19-C28 from the tank,inlet,160
 N31,DN15,Class 150,fluoropolymer stock issue to the shop,inlet,160
 N32,DN15,Class 150,FR-finished fleece to the shop for conversion,inlet,160
 N33,DN15,Class 150,finished crew textiles to the hab issue,outlet,600
+N34,cable,Class 150,"power terminal (SF-MFG_SHOP, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",top,800

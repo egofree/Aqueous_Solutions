@@ -98,6 +98,14 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N11",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (IA-ZNBR-LOSS, round-trip loss)",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "No wetted alloy. Conductors are copper. Corrosion allowance does not apply.",

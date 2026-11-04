@@ -60,3 +60,5 @@ N58,DN15,Class 150,"regen HCl, 20 wt%",inlet,160
 N59,DN15,Class 150,"NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A)",inlet,160
 N60,DN50,Class 150,dissolved gas,outlet,600
 N61,DN15,Class 150,spin scrap to the solids line,inlet,160
+N62,cable,Class 150,"power terminal (IA-TRIM-HX5, HX-5 electric trim at the process)",top,800
+N63,cable,Class 150,"power terminal (SF-LEACH_CSTR_1, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",top,800

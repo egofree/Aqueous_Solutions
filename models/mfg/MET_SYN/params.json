@@ -79,6 +79,14 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N7",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-MET_SYN, heating jacket + stirrer + metering pumps)",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "Borosilicate glass-lined reactor column, PTFE-lined transfer lines, SS304 reagent feed tanks, Hastelloy C crystalliser",

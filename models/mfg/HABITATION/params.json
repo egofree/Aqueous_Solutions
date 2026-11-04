@@ -218,6 +218,22 @@
    "service": "finished crew textiles to the hab issue",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N26",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "service terminal (IA-ADS-CHW, chilled water 12 C (kW_c cooling service))",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N27",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "service terminal (IA-MAU-AIR, tempered make-up air (+1.8 K))",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.",

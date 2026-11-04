@@ -74,6 +74,14 @@
    "service": "cathode H2 to the H2 pool",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N8",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (IA-DC-EW_5, DC bus bar)",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "Cathode titanium Grade 2, 3 mm. Anode titanium mesh, 1.5 mm, mixed-metal-oxide coated (AQS-STD-002 section 9). Tank and racks PVC/FRP; 316L frame withdrawn (AQS-STD-002 M3). Corrosion allowance 0 mm on the titanium; hydride check per AQS-STD-002 section 9. Pit rate is not measured. Cathode annealed, no cold forming after anneal; anode protected from reverse current (AQS-REV-H2-001). Cell-to-cell transfer by free-fall launder with air break; floating DC; protection current on trip (AQS-STD-002 section 11).",

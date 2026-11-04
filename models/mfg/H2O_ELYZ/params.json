@@ -76,6 +76,22 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N6",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-H2O_ELYZ, 480 V AC (daily average))",
+   "face": "top",
+   "height_mm": 800
+  },
+  {
+   "tag": "N7",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "service terminal (SQ-H2O_ELYZ-Q4, PEM stack heat above Q4 return)",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family",

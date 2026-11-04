@@ -81,6 +81,14 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N7",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-OIL_PYRO, 480 V AC)",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "Carbon steel. Hydrocarbon. No aqueous chloride in this vessel. Corrosion allowance 1.5 mm. Pit rate is not measured.",

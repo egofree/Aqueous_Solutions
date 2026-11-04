@@ -134,6 +134,14 @@
    "service": "H2S feed to the methyl-mercaptan synthesis (trace)",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N14",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-BLACK_DIGEST, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "PVC-U wetted, per AQS-STD-002 rules M1 and M2. No metal wetted part. The graph gives no temperature for this unit; above 60 \u00b0C the thermoplastic is CPVC, never metal. Corrosion allowance does not apply to the polymer.",

@@ -71,3 +71,54 @@ generator (`models/mfg/tracker.py`) is fixed, not the output:
   changed (the tracker rewrote 197 params.json byte-identically).
 - The section 7 preamble states the join and names the register authority.
 
+## 3. Terminal service rows in the nozzle schedules
+
+The audit found three classes of service connection with no schedule row: the plant
+power feed at each powered unit, three HVAC and heat service edges at their terminal
+units, and the electric half of the ZNBR2 round-trip loss (its issued row N8 covers
+the piped heat edge only). The sanctioned generator
+(`docs-authority/_nozzle_sched.py`) gains a terminal-row pass; the schedules are
+generated output and were regenerated, never hand-edited. The pass appends 71 rows
+across 67 schedules and is idempotent (a second run appends nothing).
+
+Row basis (stated in the generator header): the size column carries the AQS-PIP-004
+line-list classification verbatim - `cable` for every terminal circuit, so no bore is
+claimed; the rating column carries the plant-wide Class 150 convention verbatim with
+no flange, breaker or conductor rating implied (named hold: AQS-ELEC-010 rates branch
+feeders per load, and the unit feed circuit itself is not separately rated); the power
+rows sit at the top-face placeholder (z 800) pending design, which leaves the issued
+side-face connection packs of the schedules unchanged; the ZNBR2 row and the HVAC
+rows take the face and house placeholder elevation of the edge direction at the
+terminal unit.
+
+- Power terminals: 68 rows. The in-scope census is the current graph, not a fixed
+  count: 66 present units fed by an SF- (480 V AC distribution), IA-DC (rectifier DC
+  bus) or IA-TRIM (electric trim) edge that are not standby_rated and have a schedule
+  file. EW_1 already carries its conductor row ("rectifier into the cell", the issued
+  precedent) and takes none; LEACH_CSTR_1 and GLASS_DIGEST carry two circuits each
+  (unit feed + electric trim) and get two rows - one row covering two edges is the
+  conflation this fix removes. The EW_2..EW_9 rows name the DC bus bar per
+  AQS-BUS-001 / AQS-ELEC-010.
+- HVAC terminals: IA-ADS-CHW and IA-MAU-AIR on HABITATION (N26, N27), SQ-H2O_ELYZ-Q4
+  on H2O_ELYZ (N7), each carried as the line-list `cable` class verbatim.
+- ZNBR2: N8 (round-trip loss, DN15) stays the piped heat edge IA-ZNBR-HEAT - a cable
+  cannot carry a DN bore, so the bare service text is pinned to the piped edge - and
+  the new N11 names the electric loss to BOUNDARY_EXPORT at the skid outlet.
+- Holds named: no row for the 9 standby_rated units (COMB_HEAT, DRAW, EXTRUDE, FORGE,
+  RES_HEAT, RF_HEAT, SINTER, VAC_CAST, VAC_IND - the standby feed is unrated until
+  the standby basis issues the rating) and no schedule file for EXT_HALL, FORGE,
+  RES_HEAT, RF_HEAT (the generator's no-file rule: machines with no piped process
+  connection keep no file). ZNBR2 row N4 ("charge into the battery") matches no graph
+  edge and no duty section 4 row (the duty's own N4 is S69B, "NaBr after ORP", which
+  the schedule carries as N2): it is recorded schedule-only - the commissioning
+  electrolyte charge, unrated, no edge - and the hand row is preserved verbatim.
+- Follow-up named: the manufacturing models draw schedule rows as tube hardware. The
+  terminal rows are connection records, not nozzle hardware; the next geometry pass
+  that rebuilds these units draws the terminals as conductor glands (the MEOH_FC
+  conductor idiom) or extends the builders to skip `cable` rows. No model was rebuilt
+  in this pass, so no geometry changed.
+
+The tracker merged the new rows into the 67 W2 params files (schedule fields refresh
+from the CSV by tag) and re-ran its file checks green.
+
+

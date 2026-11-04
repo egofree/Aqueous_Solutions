@@ -120,6 +120,14 @@
    "service": "scrubbed metal-aisle air returned to the hall",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N10",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-MET_SCRUB, 480 V AC)",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2. Packing is polymer. No metal wetted part. The graph gives no temperature for this unit; above 60 \u00b0C, CPVC. Corrosion allowance does not apply to the polymer.",

@@ -9,3 +9,4 @@ N7,DN15,Class 150,vent,top,650
 N8,DN15,Class 150,post-EW liquor for Mo cut,outlet,600
 N9,solids,Class 150,EW cathode/powder metals,outlet,600
 N10,DN15,Class 150,anode Cl2 (+ O2 side) to leach oxidation,outlet,600
+N11,cable,Class 150,"power terminal (IA-DC-EW_9, DC bus bar)",top,800

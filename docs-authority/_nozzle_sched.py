@@ -22,8 +22,32 @@ connection plus the drain and vent utility rows (AQS-STD-001 section 4 "include 
 the vent"). Vessels with no piped process connection (kettle / precip / separator holds) get
 the utilities-only file so the T04 note reads truthfully; machines with no piped process
 connection get no file - nothing to schedule, nothing invented.
+
+Terminal service rows (audit 2026-11-03). Electrical and HVAC service connections carry
+their own row class, appended by the same pass:
+
+- Power terminals: every present unit fed by an SF- (plant 480 V AC distribution),
+  IA-DC (rectifier DC bus) or IA-TRIM (electric trim) edge gets one row per power
+  circuit, and ZNBR2 gets the row for its electric round-trip loss at the skid
+  terminal. A unit at standby_rated carries no row (its feed is unrated until the
+  standby basis issues the rating), a unit with no schedule file keeps no file (the
+  rule above), and a unit whose schedule already carries a conductor or power row
+  keeps it (EW_1's "rectifier into the cell", the issued conductor-row precedent). Row basis: size carries the AQS-PIP-004 line-list
+  classification verbatim (`cable` - a circuit, no bore); the rating column carries the
+  plant-wide Class 150 convention verbatim with no flange, breaker or conductor rating
+  implied (branch feeders are rated per load in AQS-ELEC-010; the unit feed itself is
+  not separately rated); face and height are the top-face placeholder pending design,
+  which leaves the issued side-face connection packs unchanged.
+- HVAC terminals: three HVAC and heat service edges land where no schedule row
+  existed, at the terminal unit the service map names (chilled water and tempered
+  make-up air on HABITATION, PEM stack heat at the H2O_ELYZ skid). Row basis as above;
+  face and height from the edge direction at the house placeholder elevations.
+- ZNBR2 row N8 (round-trip loss) covers the piped heat edge IA-ZNBR-HEAT (the DN15
+  heat loop per AQS-PIP-004); the electric loss IA-ZNBR-LOSS is a separate circuit and
+  gets the power-terminal row. Row N4 (charge into the battery) matches no graph edge;
+  it is a schedule-only row, named in the change record.
 Run: python3 docs-authority/_nozzle_sched.py"""
-import csv, json, os, collections
+import csv, json, os, collections, re
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R)
 g = json.load(open('flow_graph/plant_flow_graph.json'))
 P = [n for n in g['nodes'] if n.get('presence') == 'present']
@@ -78,3 +102,84 @@ for n in sorted(P, key=lambda n: n['unit_id']):
     n_add += len(add)
     print(f'{"new " if rows is None else "add "}{u}: +{len(add)} rows ({sum(need.values())} process connections)')
 print(f'files created {n_new}, rows appended {n_add}')
+
+# ---------------------------------------------------------------- terminal service rows
+# One row per electrical or HVAC service connection, appended to the existing schedule
+# file (no new files, no standby_rated units). See the module header for the basis.
+_POWER_TERMINAL_UNIT = {           # stream_id -> unit whose schedule carries the terminal
+    'IA-ZNBR-LOSS': 'ZNBR2',       # the electric round-trip loss leaves at the skid terminal
+}                                  # (the edge's other end is the export accounting node)
+_HVAC_TERMINAL = {                 # stream_id -> unit whose schedule carries the terminal
+    'IA-ADS-CHW': 'HABITATION',    # chilled water into the habitation loop
+    'IA-MAU-AIR': 'HABITATION',    # tempered make-up air into the habitation loop
+    'SQ-H2O_ELYZ-Q4': 'H2O_ELYZ',  # PEM stack heat, leaving at the skid
+}
+_IS_POWER_ROW = re.compile(r'rectifier|bus bar|480 V|power|terminal|conductor', re.I)
+_node = {n['unit_id']: n for n in P}
+_by_sid = {e['stream_id']: e for e in g['edges'] if e.get('presence') == 'present'}
+power = [e for e in g['edges'] if e.get('presence') == 'present'
+         and 'elec' in (e.get('layers') or [])
+         and (e.get('rate') or {}).get('unit') == 'kW'
+         and (e['stream_id'].startswith(('SF-', 'IA-DC', 'IA-TRIM'))
+              or e['stream_id'] in _POWER_TERMINAL_UNIT)]
+# Units whose schedule carried a conductor or power row before this pass keep it and
+# take no appended row (EW_1's "rectifier into the cell", the issued precedent). The
+# other units get one row per power circuit: LEACH_CSTR_1 and GLASS_DIGEST each carry
+# a feed and an electric-trim circuit, and one row must not cover two edges.
+_pre_covered = set()
+for e in power:
+    u = e['to_unit_id']
+    if u in _pre_covered:
+        continue
+    p = f'docs-authority/nozzles/{u}.csv'
+    if os.path.exists(p):
+        body = [r for r in list(csv.reader(open(p)))[1:] if r and r[0].strip()]
+        if any(_IS_POWER_ROW.search(r[3]) for r in body if len(r) > 3):
+            _pre_covered.add(u)
+n_term = 0
+for e in sorted(power, key=lambda e: e['stream_id']):
+    sid = e['stream_id']
+    u = _POWER_TERMINAL_UNIT.get(sid, e['to_unit_id'])
+    n = _node.get(u)
+    if not n or n.get('presence') != 'present' or u in _pre_covered:
+        continue
+    if (n.get('params') or {}).get('envelope', {}).get('state') == 'standby_rated':
+        continue        # hold: unrated standby feed (change record names the unit set)
+    p = f'docs-authority/nozzles/{u}.csv'
+    if not os.path.exists(p):
+        continue        # hold: the no-file rule stands (change record names the unit set)
+    rows = list(csv.reader(open(p)))
+    body = [r for r in rows[1:] if r and r[0].strip()]
+    if any(sid in r[3] for r in body if len(r) > 3):
+        continue        # this circuit is already scheduled
+    tag = max([int(r[0][1:]) for r in body if r[0].startswith('N') and r[0][1:].isdigit()] + [0])
+    size = _LN.get(sid, ('cable', ''))[0]           # line-list classification, verbatim
+    svc = f'power terminal ({sid}, {e.get("carries") or ""})'
+    if e['from_unit_id'] == u:                      # an outgoing circuit: outlet at the skid
+        face, h = 'outlet', H['outlet']
+    else:
+        face, h = 'top', H['top']
+    with open(p, 'a', newline='') as fh:
+        csv.writer(fh).writerow([f'N{tag + 1}', size, 'Class 150', svc, face, str(h)])
+    n_term += 1
+    print(f'term {u}: N{tag + 1} power terminal ({sid})')
+for sid, u in _HVAC_TERMINAL.items():
+    e = _by_sid.get(sid)
+    if not e:
+        continue
+    p = f'docs-authority/nozzles/{u}.csv'
+    if not os.path.exists(p):
+        continue
+    rows = list(csv.reader(open(p)))
+    body = [r for r in rows[1:] if r and r[0].strip()]
+    if any(sid in r[3] for r in body if len(r) > 3):
+        continue        # already scheduled
+    face = 'inlet' if e['to_unit_id'] == u else 'outlet'
+    tag = max([int(r[0][1:]) for r in body if r[0].startswith('N') and r[0][1:].isdigit()] + [0])
+    size = _LN.get(sid, ('cable', ''))[0]
+    svc = f'service terminal ({sid}, {e.get("carries") or ""})'
+    with open(p, 'a', newline='') as fh:
+        csv.writer(fh).writerow([f'N{tag + 1}', size, 'Class 150', svc, face, str(H[face])])
+    n_term += 1
+    print(f'term {u}: N{tag + 1} service terminal ({sid})')
+print(f'terminal service rows appended {n_term}')

@@ -282,6 +282,14 @@
    "service": "finished crew textiles to the hab issue",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N34",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-MFG_SHOP, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.",

@@ -58,6 +58,14 @@
    "service": "geothermal loop fluid",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N4",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-GEO_HP_CLOSED_LOOP, 480 V AC)",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C) (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.",

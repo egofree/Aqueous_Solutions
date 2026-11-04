@@ -24,3 +24,5 @@ N22,solids,Class 150,galley food waste to the blackwater barrier train,outlet,60
 N23,DN15,Class 150,prepared meals to the crew,inlet,160
 N24,DN15,Class 150,food issue to the habitation (direct),inlet,160
 N25,DN15,Class 150,finished crew textiles to the hab issue,inlet,160
+N26,cable,Class 150,"service terminal (IA-ADS-CHW, chilled water 12 C (kW_c cooling service))",inlet,160
+N27,cable,Class 150,"service terminal (IA-MAU-AIR, tempered make-up air (+1.8 K))",inlet,160

@@ -12,3 +12,4 @@ N10,DN15,Class 150,vent,top,800
 N11,DN15,Class 150,nutrient solution,outlet,600
 N12,DN15,Class 150,compost carbon returned to the leach,outlet,600
 N13,DN15,Class 150,released digest-liquor nutrient split,inlet,160
+N14,cable,Class 150,"power terminal (SF-NUTRIENT_DOSE, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",top,800

@@ -74,6 +74,14 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N6",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-FLUX_PREP, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "PP-H day-drum metering + 304L mixing bench kept dry; sealed anhydrous handling of the MgCl2-class drag-out",

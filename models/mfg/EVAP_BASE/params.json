@@ -129,6 +129,14 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N8",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-EVAP_BASE, 480 V AC)",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "Wetted parts in hot NaOH: nickel 200 or fluoropolymer-lined. No aluminium, zinc or PVC above 60 \u00b0C (AQS-STD-002).",

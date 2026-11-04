@@ -80,6 +80,14 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N7",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-SHELL_BUILD, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "PP-H slurry tank and rainfall-sander housing; silica-flour wear faces in PE; PP slurry pump; steel frame isolated from the slurry",

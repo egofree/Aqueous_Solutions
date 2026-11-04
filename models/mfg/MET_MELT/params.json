@@ -74,6 +74,14 @@
    "service": "off-spec powder to remelt",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N8",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-MET_MELT, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "Graphite or refractory on the hot face. Frame is A500 behind a heat shield. Corrosion allowance 0 mm on the frame. Pit rate is not measured.",

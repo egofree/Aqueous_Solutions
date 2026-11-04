@@ -178,6 +178,14 @@
    "service": "growbed evapotranspiration",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N21",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-CRYO_AHU, AHU coil chiller)",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "316L. Condensation. No carbon steel. Corrosion allowance 0 mm. Pit rate is not measured.",

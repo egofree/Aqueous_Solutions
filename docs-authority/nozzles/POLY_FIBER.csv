@@ -5,3 +5,4 @@ N3,DN15,Class 150,spin scrap to the solids line,outlet,600
 N4,DN15,Class 150,FR-finished fleece to the shop for conversion,outlet,600
 N5,DN15,Class 150,drain,bottom,50
 N6,DN15,Class 150,vent,top,800
+N7,cable,Class 150,"power terminal (SF-POLY_FIBER, melt-spin electrical load)",top,800

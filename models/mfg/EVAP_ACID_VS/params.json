@@ -66,6 +66,14 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N7",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-EVAP_ACID_VS, 480 V AC)",
+   "face": "top",
+   "height_mm": 800
   }
  ],
  "material": "PVC-U shell, packing, distributor and support; PVC or PP mesh demister; PVDF pump wetted parts. Service below 60 C (PERRY9_MAT).",
