@@ -187,7 +187,7 @@ The class comes from the graph. Any unit whose sizing sheet, duty sheet, or issu
 | VERMI_BIN | worm_bin | duty sheet: "The envelope is `cad/stl/VERMI_BIN.stl` (a thick-walled tray at the claimed envelope; X-PAR-04). Manufacturing" | docs-authority/duties/VERMI_BIN.md |
 | WASHROOM | washroom | duty sheet: "The envelope is `cad/stl/WASHROOM.stl` (a thick-walled tray at the claimed envelope; X-PAR-04). Manufacturing " | docs-authority/duties/WASHROOM.md |
 | ZNBR2 | flow_battery | ZnBr2 flow-battery store internals per the design-linked build (ess_tf design block, X-MFG-43, A-M-456/457): 47 module bays (one per hybrid inverter) of 95 bipolar plates at the 6 mm pitch filling the booked 2223.1 m2 electrode area (99.6 A x 172.9 V DC per stack), one PVC-U electrolyte reservoir per module at 2 M (529.4 L, A-M-457), with the pumps and coolers at the charge-window book to IA-ZNBR-HEAT (A-M-455; A-M-179 gates the measured derate) | docs-authority/sizing/ZNBR2.md |
-| ZNBR2_BR2_REGEN | scrubber | issued mfg model BOM (4 internals part row): "shell, sump, liquor piping, and Pall-ring packing; FKM gaskets.",docs-authority/duties/ZNBR2_BR2_REGEN.md 2,Pr" | models/mfg/ZNBR2_BR2_REGEN/bom.csv |
+| ZNBR2_BR2_REGEN | scrubber | issued mfg model BOM (3 internals part row): "2,"Packing support plate, perforated 50 % open envelope",1,PVC-U sheet,0.1,make,A-COL" | models/mfg/ZNBR2_BR2_REGEN/bom.csv |
 
 ## 4. Open units (named gaps)
 

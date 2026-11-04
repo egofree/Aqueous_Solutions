@@ -8,7 +8,7 @@ MISTER: high-pressure aeroponics, 6 nozzles/m2 at 0.057 L/min, 4 s on / 4 min of
 FARM: D-FARM owner ruling 2026-10-18 - GROW_BED re-based to crew duty (A-M-229): area from the crew food need S14 at the
 BVAD2022 tomato per-m2 carbon chain scaled to the DLI-17 light-limited CO2 flux; the BH farm neighbourhood (DUAL_ROOT, VEG_BED,
 BSFL, FISH_SUMP, NFT, MISTER) and TERRACE_IRRIG stay retired/deleted; the farm gate is GROW_BED presence alone."""
-import json, os, subprocess, sys
+import json, math, os, subprocess, sys
 from . import site as SITE   # apparent gravity from the site profile
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from . import drivers as _drv0; _D = _drv0.load()   # X-PAR-01: constants live in drivers.json
@@ -108,6 +108,32 @@ def tf(g, ps=None):
                                          '(%d bays of stack-over-tank at %g x %g mm pitch); the placement seed block for ZNBR2 '
                                          'stays the 1800 x 1200 x 1600 mm study box and under-books this machine - the '
                                          'floor-space reservation is the named consequence (ZNBR2 WORK_ORDER W12)' % (inv, inv, bp[0], bp[1]))
+    # X-MFG-43b Br2 regen tower sizing (duty section 2 rules on the live purge): the duty books the
+    # geometry rules (1.5 m/s, HTU 0.5 m on 25 mm PVC-U Pall rings, NTU 6, 10 ppmv Br2 out) at a stale
+    # 30 m3/h gas figure; the column sizes at the bounding live purge (q above, the 25 % LFL book).
+    if 'ZNBR2_BR2_REGEN' in N:
+        u_t = 1.5
+        a_t = (q / 24) / 3600.0 / u_t
+        d_req = math.sqrt(4.0 * a_t / math.pi) * 1000.0
+        dn_t = 100                                                   # next PVC-U nominal above d_req (duty figure D 84 sizes the stale 30 m3/h)
+        h_t = 450 + 10 + 3000 + 80 + 100 + 60                        # sump + support + bed + distributor + demister + top head (AQS-DUTY-061 class)
+        nt = N['ZNBR2_BR2_REGEN']['params']
+        nt['design'] = {
+            'machine': 'packed Br2-recovery wash column on the ZNBR2 headspace purge (S69 in, scrubbed '
+                       'electrolyte S69B back to the battery)',
+            'gas_duty_m3_h': 30.0, 'gas_m3_h': round(q / 24, 1),
+            'u_m_s': u_t, 'D_req_mm': round(d_req, 1), 'DN_mm': dn_t, 'od_mm': 114.3, 'wall_mm': 8.56,
+            'packed_mm': 3000, 'packing': '25 mm PVC-U Pall rings (in-house cut tube rings, X-MFG-32 class)',
+            'htu_m': 0.5, 'ntu': 6, 'removal': 0.9975, 'y_out_ppmv': 10,
+            'sump_mm': 450, 'support_mm': 10, 'distributor_mm': 80, 'demister_mm': 100, 'height_mm': h_t,
+            'material': 'PVC-U shell, sump, liquor piping and packing; FKM gaskets; no metal wetted part (duty section 3, AQS-STD-002)',
+            'basis': 'duty section 2 rules on the live purge: bed = NTU 6 x HTU 0.5 m (duty-held figures); '
+                     'diameter at 1.5 m/s on the %g m3/h purge (the duty 30 m3/h figure predates the '
+                     'X-PAR-02 TF re-solve, WORK_ORDER W12); sump, support, distributor and demister are the '
+                     'AQS-DUTY-061 house class, not derived from the gas mass' % (q / 24),
+            'computed_by': 'flow_graph/param/ess_tf.py tf() (X-PAR-02 lane, X-MFG-43b)'}
+        nt['size_mm'] = [400, 400, h_t]
+        nt['size_note'] = 'L x W x H mm, set by flow_graph/param/ess_tf.py (X-MFG-43b): the PVC-U DN100 column on its plinth'
     # HYDRO_SET (owner guideline: redundancy in every energy and life-support system; A-M-145): diverse N+1 backup of the night store.
     # NFPA 111 Level 1, Class X = the night hours the failed ZNBR2 would carry, at the AQS-ELEC-007 critical life-support load.
     crit = float(ps.get('critical_kW') or _crit()); night = DRV['night_hours']['value']; e_bus = crit*night
@@ -214,7 +240,6 @@ def tf(g, ps=None):
     N['GEO_HP']['params'].update(units_installed=2, redundancy='2 x 100 % (X-RED-07)')
     # X-RED-03 distribution N+1 (A-M-152): main-tie-main 480 V bus, each section rated for the whole bus demand (tie closes on loss of a main);
     # MCC and T-1 duplicated; critical life-support loads on an ATS fed from both sections. NEC 240.6 standard ratings.
-    import math
     dem = sum(e['rate']['value'] or 0 for e in g['edges'] if e['from_unit_id'] == 'SOL_ARK_60K' and e['rate'].get('unit') == 'kW')
     BUS_V = _D['ELEC.distribution-train.SOL_ARK_60K.bus_V']['value']; PF = _D['bus_power_factor']['value']; CLF = _D['continuous_load_factor']['value']
     amps = dem*1000/(math.sqrt(3)*BUS_V*PF); std = _D['ELEC.distribution-train.SOL_ARK_60K.nec_240_6_ratings_A']['value']

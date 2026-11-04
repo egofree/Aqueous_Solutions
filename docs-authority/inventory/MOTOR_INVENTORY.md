@@ -28,13 +28,13 @@ Table 1.1. Motor families
 
 | Family | Motor type | Size | Voltage | Count | Units | Installed shaft kW |
 | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 83 | 49 | 0.22 |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 85 | 50 | 0.23 |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 55 | 5 | 2.69 |
 | MF-03 | BLDC actuator | ISO 5211 F03 mount | 24 V DC | 24 | 1 | 0.12 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 103 | 4 | 25.75 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 6 | 6 | 4.68 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 19 | 4 | 19.42 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 58 | 39 | 6.96 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 57 | 38 | 6.84 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 10 | 8 | 3.70 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 5 | 5 | 7.50 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 1 | 1 | 0.09 |
@@ -133,7 +133,8 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | pem_fc | FUEL_CELL | Motor: transfer pump IA-FC-LEACH to LEACH_CSTR_1 (BLDC, 42 m | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | pem_fc | FUEL_CELL | Motor: transfer pump S52 to VCD_TRAIN (BLDC, 42 mm (NEMA 17  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | rectifier | RECTIFIER | cooling fan | BLDC | 57 mm (NEMA 23 flange) | 0.05 | 24 V DC | S1 | BLDC driver | 4 | assumed per cabinet |
-| scrubber | ZNBR2_BR2_REGEN | Motor: transfer pump S69B to ZNBR2 (BLDC, 42 mm (NEMA 17 fla | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| scrubber | ZNBR2_BR2_REGEN | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
+| scrubber | ZNBR2_BR2_REGEN | transfer pump S69B to ZNBR2 | BLDC | 42 mm (NEMA 17 flange) | 0.0029 | 24 V DC | S1 | BLDC driver | 1 | 1020.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 
 ### FAB
 

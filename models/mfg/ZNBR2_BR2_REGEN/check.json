@@ -1,0 +1,85 @@
+{
+  "bbox_mm": [
+    400.0,
+    400.0,
+    3701.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    400.0,
+    400.0,
+    3700.0
+  ],
+  "size_basis": "L x W x H mm, set by flow_graph/param/ess_tf.py (X-MFG-43b): the PVC-U DN100 column on its plinth",
+  "graph_revision": "AD",
+  "solids": 12,
+  "all_parts_valid": true,
+  "solids_note": "one compound of closed solids: plinth with drain slot, shell, sump floor, perforated support plate, ring bed, distributor, demister, top cap, vent riser and the socket stubs; every union/cut partner overlaps or clears, so the mesh reads back closed and manifold",
+  "a_col": {
+    "packed_mm": 3000.0,
+    "packing": "25 mm PVC-U Pall rings (in-house cut tube rings, X-MFG-32 class)",
+    "htu_m": 0.5,
+    "ntu": 6,
+    "removal": 0.9975,
+    "y_out_ppmv": 10,
+    "D_req_mm": 92.0,
+    "DN_mm": 100,
+    "gas_m3_h": 35.9,
+    "gas_duty_m3_h": 30.0,
+    "basis": "A-COL: packing height, support, distributor and demister are solids; HTU and NTU stay the duty-held figures (duty section 8; W12(2)). Diameter at 1.5 m/s on the live purge (ess_tf, X-MFG-43b); the duty 30 m3/h / 84 mm figures predate the TF re-solve (W12(1))"
+  },
+  "holdup_L": {
+    "sump_nominal": 3.3,
+    "basis": "the nominal sump class is hardware (AQS-DUTY-061 house class), not a residence time derived from the gas mass (duty section 2 rule); reported, not used (A-VES rule)"
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "pvc_socket_stub",
+      "dn": "DN50",
+      "face": "inlet",
+      "height_mm": 400,
+      "drawn_height_mm": 400.0,
+      "schedule_rating": "Class 150",
+      "service": "Br2 vapor",
+      "note": "schedule datum drawn as issued; solvent-welded PVC-U socket stub, atmospheric open bore flush at the skid face (duty section 4: hose, atmospheric)"
+    },
+    "N2": {
+      "style": "pvc_socket_stub",
+      "dn": "DN50",
+      "face": "outlet",
+      "height_mm": 1500,
+      "drawn_height_mm": 1500.0,
+      "schedule_rating": "Class 150",
+      "service": "NaBr after ORP",
+      "note": "schedule datum drawn as issued; solvent-welded PVC-U socket stub, atmospheric open bore flush at the skid face (duty section 4: hose, atmospheric)"
+    },
+    "N3": {
+      "style": "pvc_socket_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": -0.5,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss through the plinth slot (schedule datum 50)"
+    },
+    "N4": {
+      "style": "riser",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 2000,
+      "drawn_height_mm": 3700.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "schedule datum 2000 is the placeholder elevation: the vent is the DN50 riser on the top cap, flush at the envelope top (hold, W12(4))"
+    }
+  },
+  "nozzle_count_schedule": 4,
+  "part_mass_kg": {
+    "shell_caps": 14.8,
+    "internals": 10.1,
+    "plinth_riser_stub": 46.1,
+    "gaskets": 0.01
+  },
+  "cadquery": "2.8.0"
+}

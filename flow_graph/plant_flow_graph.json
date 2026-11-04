@@ -3949,9 +3949,33 @@
         "size_mm": [
           400,
           400,
-          2000
+          3700
         ],
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+        "size_note": "L x W x H mm, set by flow_graph/param/ess_tf.py (X-MFG-43b): the PVC-U DN100 column on its plinth",
+        "design": {
+          "machine": "packed Br2-recovery wash column on the ZNBR2 headspace purge (S69 in, scrubbed electrolyte S69B back to the battery)",
+          "gas_duty_m3_h": 30.0,
+          "gas_m3_h": 35.9,
+          "u_m_s": 1.5,
+          "D_req_mm": 92.0,
+          "DN_mm": 100,
+          "od_mm": 114.3,
+          "wall_mm": 8.56,
+          "packed_mm": 3000,
+          "packing": "25 mm PVC-U Pall rings (in-house cut tube rings, X-MFG-32 class)",
+          "htu_m": 0.5,
+          "ntu": 6,
+          "removal": 0.9975,
+          "y_out_ppmv": 10,
+          "sump_mm": 450,
+          "support_mm": 10,
+          "distributor_mm": 80,
+          "demister_mm": 100,
+          "height_mm": 3700,
+          "material": "PVC-U shell, sump, liquor piping and packing; FKM gaskets; no metal wetted part (duty section 3, AQS-STD-002)",
+          "basis": "duty section 2 rules on the live purge: bed = NTU 6 x HTU 0.5 m (duty-held figures); diameter at 1.5 m/s on the 35.9028 m3/h purge (the duty 30 m3/h figure predates the X-PAR-02 TF re-solve, WORK_ORDER W12); sump, support, distributor and demister are the AQS-DUTY-061 house class, not derived from the gas mass",
+          "computed_by": "flow_graph/param/ess_tf.py tf() (X-PAR-02 lane, X-MFG-43b)"
+        }
       }
     },
     {

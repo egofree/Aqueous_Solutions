@@ -25,6 +25,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | LEACH_CSTR_1 | Gearmotor 0.75 kW, 150 rpm output, on the lid bridge | 0.75 | 1.1 | 90S | 6205-2Z C3 | IE3 (IEC 60034-30-1) |
 | MET_SCRUB | Liquid distributor plate, OD 788 x 15 at z 3060 | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
 | NOX_SCRUB | Liquid distributor plate, OD 188 x 15 at z 3060 | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
+| ZNBR2_BR2_REGEN | Column shell PVC-U DN100 Sch 80 (OD 114.3 x wall 8.56), 3700 mm with s | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
 
 ## 2. Fasteners (ISO 898-1 / ISO 3506-1 property classes)
 
@@ -52,6 +53,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M20 | hex bolt | ISO 898-1 8.8 | 3212 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M24 | stud | ISO 898-1 8.8 | 16 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M6 | hex bolt | ISO 3506 A4-70 | 333 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M8 | U-bolt | ISO 3506 A4-70 | 2 | DIN 3570 (U-bolt) |
 | M8 | anchor | ISO 3506 A4-70 | 4 | ISO 4017 + chemical anchor (ETAG 001) |
 | M8 | anchor | ISO 898-1 8.8 | 12 | ISO 4017 + chemical anchor (ETAG 001) |
 | M8 | hex bolt | ISO 3506 A4-70 | 282 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -106,10 +108,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | Q2_B | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | VCD_TRAIN | valve: check valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | VCD_TRAIN | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| ZNBR2_BR2_REGEN | Body / envelope per duty sheet section 2 (not yet dimensioned) | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| ZNBR2_BR2_REGEN | Process nozzle DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| ZNBR2_BR2_REGEN | valve: check valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| ZNBR2_BR2_REGEN | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
+| ZNBR2_BR2_REGEN | Nozzle set per docs-authority/nozzles/ZNBR2_BR2_REGEN.csv: 4 rows (gas | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 
 ## 4. Pipe and fittings
 
@@ -119,6 +118,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 - CRYO_O2: Cylinder tubes SA-312 TP316L seamless DN100 Sch 160, OD 114.3 x t 13.49, 6.096 m, O2-cleaned to ASTM G93. ASTM D1785 Sch 80 PVC-U / ISO 1452-2 metric equivalent; solvent cement ASTM D2564.
 - EVAP_ACID_VS: Shell PVC-U DN150 Sch 80 x 1400 mm with solvent-welded caps. ASTM D1785 Sch 80 PVC-U / ISO 1452-2 metric equivalent; solvent cement ASTM D2564.
 - WAFER_FAB: N2 purge distribution: DN15 Sch 40 header (x 120..880 at z 720) with four drop legs to the stations. ASTM D1785 Sch 80 PVC-U / ISO 1452-2 metric equivalent; solvent cement ASTM D2564.
+- ZNBR2_BR2_REGEN: Column shell PVC-U DN100 Sch 80 (OD 114.3 x wall 8.56), 3700 mm with solvent-welded base ring and top cap. ASTM D1785 Sch 80 PVC-U / ISO 1452-2 metric equivalent; solvent cement ASTM D2564.
 
 ## 5. Open designs and in-house lines
 

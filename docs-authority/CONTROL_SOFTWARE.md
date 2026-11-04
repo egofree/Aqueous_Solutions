@@ -35,7 +35,7 @@ PI blocks with set-point literals taken from the graph basis column of AQS-CTL-0
 |---|---|---|---|---|---|---|
 | PLC-CRYO | 34 | 0 | 34 | 0 | 1/15/4 | redundant pair |
 | PLC-DIGESTER | 132 | 3 | 132 | 0 | 3/123/29 | single |
-| PLC-ELEC | 29 | 0 | 29 | 0 | 17/443/109 | redundant pair |
+| PLC-ELEC | 29 | 0 | 29 | 0 | 17/445/108 | redundant pair |
 | PLC-FAB | 63 | 0 | 63 | 0 | 3/70/11 | single |
 | PLC-FARM | 48 | 0 | 48 | 0 | 0/3/0 | redundant pair |
 | PLC-FOUNDRY | 87 | 4 | 87 | 0 | 0/19/1 | single |

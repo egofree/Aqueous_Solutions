@@ -755,6 +755,16 @@
    "category": "fastener",
    "item": "M8 bolt",
    "spec": "ISO 3506 A4-70"
+  },
+  "OF-152": {
+   "category": "fastener",
+   "item": "M8 U-bolt",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-153": {
+   "category": "fastener",
+   "item": "Solvent cement joints",
+   "spec": "PVC-U per ASTM D2564"
   }
  }
 }
