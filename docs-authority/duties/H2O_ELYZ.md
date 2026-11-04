@@ -20,6 +20,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 6. Relief. Node relief basis: blocked outlet at full inflow 1.789 kg/h (hydrogen side of the PEM stack at the compressor suction (h2c_P1_bar 10 bar a); O2 side on its own valve at the same set, A-M-196); operating 9 bar, design 9.9 bar g. Bore 3.3 mm. Design 990 kPa g (node design_kPa). Not to the room.
 
-7. Code. Shop, not stamped (AQS-STD-001 section 7 shop rule). No CAD envelope issued yet.
+7. Code. Shop, not stamped (AQS-STD-001 section 7 shop rule). No CAD envelope issued yet. Manufacturing model `models/mfg/H2O_ELYZ/h2o_elyz.py` (AQS-PLAN-006).
 
 8. Open items. Material selection pending (unit task 09). Nozzle elevations are schedule placeholders, not designed elevations (unit tasks 02/06).

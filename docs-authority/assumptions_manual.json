@@ -7723,5 +7723,23 @@
    "flow_graph/param/specialty_sizing.py",
    "models/mfg/BAGHOUSE/baghouse.py"
   ]
+ },
+ {
+  "id": "A-M-459",
+  "task": "CAD-representation audit, H2O_ELYZ skid machine design (2026-11-04)",
+  "title": "H2O_ELYZ PEM stack operating point",
+  "statement": "The stack sizes at 1.8 A/cm2 and 1.85 V/cell (BERNT2018-class PEM operating point, study): the rated H2 (9.358 kg/d over the 6 h window, A-M-133) books 26,590 Ah/kg, so the cell-summed current is 41,474 A and the cell-summed active area 2.304 m2; drawn as 80 cells of 288 cm2 (169.7 x 169.7 mm active) at 518.4 A stack current and 148 V DC = 76.7 kW DC, the 85.8 kW system draw adding BoP and power electronics inside the 55 kWh/kg book (A-M-133)",
+  "value": "j 1.8 A/cm2; V_cell 1.85 V; 80 cells x 288 cm2; 518.4 A; 148 V DC; 76.7 kW DC",
+  "units": "A/cm2; V; cm2; A; kW",
+  "where": "flow_graph/plant_flow_graph.json H2O_ELYZ.params.design.stack (written by flow_graph/param/specialty_sizing.py); models/mfg/H2O_ELYZ/h2o_elyz.py (the drawn cell field)",
+  "basis": "BERNT2018 PEM polarisation class (Ir/Ru anode per duty section 3); the Faraday charge book 26,590 Ah/kg H2; the rated point on the A-M-133 window",
+  "sensitivity": "Stack area scales 1/j at the booked V_cell; the system draw keeps the 55 kWh/kg book (A-M-133) while DC moves with the cell voltage",
+  "replaced_by": "The measured polarisation curve at the X-PAR-12 first article (replaces j and V_cell; the area follows)",
+  "verification_test": "X-PAR-12 first-article stack: polarisation curve gives the measured j/V point and the ASR; the skid GA is the verification test of A-M-279",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/specialty_sizing.py",
+   "models/mfg/H2O_ELYZ/h2o_elyz.py"
+  ]
  }
 ]

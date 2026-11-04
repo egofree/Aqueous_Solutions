@@ -45,7 +45,7 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 6,CRYO,CRYO_HX_Q4,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",2,-,,
 6,CRYO,CRYO_N2,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",2,SIF-012,,N2
 6,CRYO,CRYO_O2,"hydrostatic test at 1.5 x design, 10 min hold; then helium sensitive leak test (ASME B31.3 345.8)",2,SIF-013,,Ar O2
-6,CRYO,H2O_ELYZ,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",4,SIF-125,77.87,
+6,CRYO,H2O_ELYZ,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",6,SIF-125,77.87,
 6,CRYO,PROD_MEOH,fill or function test per AQS-QA-001 R8,5,SIF-150,28.73,CH3OH
 6,CRYO,PROD_O2,fill or function test per AQS-QA-001 R8; then helium sensitive leak test (ASME B31.3 345.8),2,-,,Ar O2
 6,CRYO,RELIEF_CRYO,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",1,-,,

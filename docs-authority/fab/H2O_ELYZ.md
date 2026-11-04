@@ -4,7 +4,7 @@ Class: pem_electrolyser; sector CRYO. Study route. Not stamped.
 Envelope: Envelope 1800×800×1600 mm;
 service line: duty PEM electrolysis: 83.62 kg/d water -> 9.358 kg/d H2 + 74.263 kg/d O2 at 21.445 kW; kwh_per_kg_h2 55.
 
-Internals: issued mfg model BOM (2 internals part row): "transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardw" [models/mfg/H2O_ELYZ/bom.csv]
+Internals: issued mfg model BOM (2 internals part row): "legs, one per side",2,316L (M1 family),25.0,make,node internals row; design 990 kPa g (node design_kPa) 3,Deox" [models/mfg/H2O_ELYZ/bom.csv]
 Material: PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family. (continues on the duty sheet)
 
 Nozzles: 7 process connections per docs-authority/nozzles/H2O_ELYZ.csv

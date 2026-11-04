@@ -24,6 +24,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | EVAP_ACID_VS | Sump recirculation pump, magnetic drive, about 0.35 m3/h at 10 m | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
 | EVAP_BASE | MVR blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaft, env | 1.189 | 1.5 | 90L | 6205-2Z C3 | IE3 (IEC 60034-30-1) |
 | EVAP_BASE | Recirculation pump, 282.7 kg/h at 4 m (0.008 kW), envelope and interfa | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
+| H2O_ELYZ | Deoxo on H2: 2 beds DN80 x 345 mm (Pd/Al2O3 class) | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
 | LEACH_CSTR_1 | Gearmotor 0.75 kW, 150 rpm output, on the lid bridge | 0.75 | 1.1 | 90S | 6205-2Z C3 | IE3 (IEC 60034-30-1) |
 | MET_SCRUB | Liquid distributor plate, OD 788 x 15 at z 3060 | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
 | NOX_SCRUB | Liquid distributor plate, OD 188 x 15 at z 3060 | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
@@ -42,10 +43,11 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M10 | stud | ISO 3506 A4-70 | 48 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | stud | ISO 898-1 8.8 | 106 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | anchor | ISO 3506 A4-70 | 3 | ISO 4017 + chemical anchor (ETAG 001) |
-| M12 | anchor | ISO 898-1 8.8 | 312 | ISO 4017 + chemical anchor (ETAG 001) |
+| M12 | anchor | ISO 898-1 8.8 | 316 | ISO 4017 + chemical anchor (ETAG 001) |
 | M12 | hex bolt | ISO 3506 A4-70 | 512 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | ISO 898-1 8.8 | 36 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | PVDF (non-metallic) | 34 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M12 | stud | ISO 3506 A4-70 | 16 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | stud | ISO 898-1 8.8 | 48 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | anchor | ISO 898-1 8.8 | 16 | ISO 4017 + chemical anchor (ETAG 001) |
 | M16 | hex bolt | ISO 898-1 8.8 | 216 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -85,8 +87,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | FUEL_CELL | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | FUEL_CELL | valve: isolation valve DN50 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | GW_INTAKE | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| H2O_ELYZ | Body / envelope 1800 x 800 x 1600 mm | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| H2O_ELYZ | Process nozzle DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
+| H2O_ELYZ | PEM stack: 80 cells of 169.7 x 169.7 mm active (2.304 m2 cell-summed)  | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | HABITATION | valve: isolation valve DN50 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | HABITATION | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | LEACH_CSTR_1 | Lid shaft seal | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |

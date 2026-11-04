@@ -1,16 +1,9 @@
-item,description,qty,material,basis
-1,Body / envelope 1800 x 800 x 1600 mm,1,"PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family.",docs-authority/duties/H2O_ELYZ.md
-2,Process nozzle DN15,3,"PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family.",one per mass edge; DN from AQS-INV-003
-3,"Relief valve, 3.3 mm bore, DN15 body",1,316L,AQS-SAF-004
-4,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-5,fastener: anchor bolt M10,18,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-6,"instrument: gas detector, H2 catalytic bead + IR backup",3,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",AQS-INV-004
-7,"instrument: gas detector, O2 enrichment electrochemical O2",3,"alarm 23.5 vol %, trip 25 vol %, breathing height",AQS-INV-004
-8,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-9,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-10,instrument: pressure transmitter 0-16 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-11,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-12,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-13,support: U-bolt with guide DN15,9,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-14,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-15,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,PEM stack: 80 cells of 169.7 x 169.7 mm active (2.304 m2 cell-summed) at the 8 mm pitch between Ti end plates,80,"Ti cell hardware, Ir/Ru anode / Pt cathode CCM, PTFE ionomer and seals (duty section 3)",64.7,make,"the A-M-459 operating point (518.4 A at 148 V DC, 76.7 kW DC on the rated H2); the plates + lands draw, the MEAs are a loading row inside the pitch; the polarisation curve replaces the operating point at the first article (W12(2))"
+2,"H2 and O2 gas-liquid separators DN150 x 400 with legs, one per side",2,316L (M1 family),25.0,make,node internals row; design 990 kPa g (node design_kPa)
+3,Deoxo on H2: 2 beds DN80 x 345 mm (Pd/Al2O3 class),2,"316L tube, catalyst purchased",6.3,make,"GHSV 5000 1/h on the rated 17.4 Nm3/h (A-M-168 driver class, A-M-459 companion); beds duplicated"
+4,"Dryer on H2: 2 beds DN80 x 712 mm (4A/13X at margin 3, 250 C regen)",2,"316L tube, sieve purchased",10.4,make,5.01 kg sieve on the 0.167 kg/d water book (A-M-168 class); beds duplicated
+5,"Power electronics enclosure + DI-water loop pump, envelopes and interfaces (purchased, plan rule 6)",2,"purchased, 316L wetted class",2801.5,buy,the rated-draw balance inside the 55 kWh/kg book (A-M-133)
+6,Copper bus pair at the stack terminals (conductors are copper per duty section 3),1,copper C110,3.0,make,"dry-side conductors; the A-CELL bus rule: POWER.md states no H2O_ELYZ bus section, the bus pair follows the terminal current"
+7,"Nozzle set per docs-authority/nozzles/H2O_ELYZ.csv: 7 rows (feed water in, H2 and O2 out, drain boss, vent riser; power and service terminals as text rows)",7,316L tube,0.4,make,"schedule tags/faces/heights verbatim; the elevations are the schedule placeholders (duty section 4, W12(4))"
+8,"Skid frame and plinth 3367 x 1050 x 2200 (stack deck 2042 + gap 100 + BoP deck 1225, the A-M-279 allowances)",1,"carbon steel frame, painted",3785.6,make,A-M-279 skid allowances at the rated kW; anchors in fasteners.csv

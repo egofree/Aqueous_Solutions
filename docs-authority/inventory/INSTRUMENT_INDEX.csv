@@ -22,6 +22,8 @@ CRYO_O2-PT-01,CRYO_O2,CRYO,pressure transmitter,"316L thin-film strain gauge, IE
 CRYO_O2-TE-01,CRYO_O2,CRYO,temperature element,"IEC 60751, 316L thermowell",-200 to 50 C,4-20 mA HART (AI),CRYO_O2TE-01,PLC-CRYO,design T 25 C
 CRYO_HX_Q4-PT-01,CRYO_HX_Q4,CRYO,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),CRYO_HX_Q4PT-01,PLC-CRYO,no design pressure on the graph
 CRYO_HX_Q4-TE-01,CRYO_HX_Q4,CRYO,temperature element,"IEC 60751, 316L thermowell",-200 to 50 C,4-20 mA HART (AI),CRYO_HX_Q4TE-01,PLC-CRYO,band by service
+H2O_ELYZ-FT-01,H2O_ELYZ,CRYO,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),H2O_ELYZFT-01,PLC-CRYO,IA-ELY-H2 normal 0.36 L/h
+H2O_ELYZ-FT-02,H2O_ELYZ,CRYO,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),H2O_ELYZFT-02,PLC-CRYO,IA-ELY-O2 normal 2.88 L/h
 H2O_ELYZ-LSH-01,H2O_ELYZ,CRYO,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),H2O_ELYZLSH-01,PLC-CRYO,alarm at 90 %
 H2O_ELYZ-LT-01,H2O_ELYZ,CRYO,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),H2O_ELYZLT-01,PLC-CRYO,A-M-182 liquid height
 H2O_ELYZ-PT-01,H2O_ELYZ,CRYO,pressure transmitter,"ceramic diaphragm, IEC 61298",0-16 bar g,4-20 mA HART (AI),H2O_ELYZPT-01,PLC-CRYO,design 990.0 kPa g

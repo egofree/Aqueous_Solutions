@@ -47,7 +47,7 @@ Table 4.1. Commissioning sequence
 | 3 | WTR | 8 | 58 | 7 | 6 | Fe, HCl, other_metals, solids, solute |
 | 4 | HEAT | 11 | 21 | 5 | 0 |  |
 | 5 | GAS | 8 | 34 | 9 | 1 | Fe, HCl, N2, other_metals, solute |
-| 6 | CRYO | 14 | 37 | 10 | 2 | Ar, CH3OH, CO2, H2, N2, O2, solute |
+| 6 | CRYO | 14 | 39 | 10 | 2 | Ar, CH3OH, CO2, H2, N2, O2, solute |
 | 7 | GEO | 3 | 7 | 2 | 0 |  |
 | 8 | DIGESTER | 24 | 151 | 25 | 19 | Cl2, Fe, HCl, O2, metal_plateable, metal_reactive, organic, other_metals, silicate_oxide, solute, unassigned |
 | 9 | MEOH | 6 | 36 | 7 | 3 | Ar, CO2, Fe, HCl, O2, other_metals, solute |

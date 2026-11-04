@@ -775,6 +775,11 @@
    "category": "fastener",
    "item": "M16 stud",
    "spec": "ISO 3506 A4-70"
+  },
+  "OF-156": {
+   "category": "fastener",
+   "item": "M12 stud",
+   "spec": "ISO 3506 A4-70"
   }
  }
 }

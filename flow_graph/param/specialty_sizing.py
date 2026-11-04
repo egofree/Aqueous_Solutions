@@ -177,10 +177,69 @@ def write():
         sizing={'pump_kw': v['gw_pump_kw'][0]},
         envelope=v['gw_env'][0], size_note=v['gw_env'][1],
         kw=0.37, kw_note=v['gw_pump_kw'][1] + ' (standby-zero at the baseline: ' + v['gw_note'] + ')')
+    # --- H2O_ELYZ skid machine design (A-M-459 stack point; A-M-133 window; A-M-168 bed
+    # classes reused on the skid; A-M-279 skid allowances set the envelope) ------------
+    _h2_d = 9.358                                                  # the design-block H2 (kg/d)
+    _win = 6.0                                                     # ely_window_h (A-M-133)
+    _h2_rate = _h2_d / _win                                        # kg/h at the rated point
+    _ah_kg = 2 * 96485.0 * 1000.0 / 2.016 / 3600.0                 # 26,590 Ah per kg H2 (Faraday)
+    _j, _vc = 1.8, 1.85                                            # A/cm2, V/cell (A-M-459 PEM class)
+    _i_sum = _h2_rate * _ah_kg                                     # A, cell-summed at the rated point
+    _a_sum_cm2 = _i_sum / _j                                       # cm2, cell-summed active area
+    _cells = 80
+    _a_cell = _a_sum_cm2 / _cells                                  # cm2 per cell
+    _v_stack = _cells * _vc
+    _p_dc = _i_sum * _vc / 1000.0                                  # kW DC
+    _rated = _h2_d * v['elyz_kwh_per_kg'][0] / _win                # kW, the system draw at the window
+    _l_stack = int(_rated * 0.025 / 1.050 * 1000)                  # A-M-279 stack plan allowance at W 1050
+    _l_bop = int(_rated * 0.015 / 1.050 * 1000)                    # A-M-279 BoP plan allowance
+    _l_skid = _l_stack + 100 + _l_bop                              # 100 mm gap between the decks
+    _nm3_h = _h2_rate * 11.127                                     # Nm3/h H2 at the rated point
+    _deoxo_v = _nm3_h / 5000.0 * 1000.0                            # L of bed (GHSV 5000 1/h, A-M-168 driver class)
+    _bed_r = 0.040                                                 # m, DN80 Sch 40 bore (ASME_B36_10M class)
+    _deoxo_bed_l = int(_deoxo_v / 2.0 / (math.pi * _bed_r ** 2))          # mm per bed (V in L / 1000 = m3; the 1000s cancel), two beds
+    _w_kg_d = round(_h2_d * 0.0492 / 2.750, 3)                     # saturated water carried, scaled off the H2_DRYER book
+    _sieve_kg = round(_w_kg_d / 0.10 * 3.0, 2)                     # 0.10 kg/kg working capacity, margin 3 (A-M-168)
+    _dryer_v = round(_sieve_kg / 0.7, 2)                           # L at the 0.7 kg/L sieve bulk (A-M-168 driver)
+    _dryer_bed_l = int(_dryer_v / 2.0 / (math.pi * _bed_r ** 2))          # mm per bed
     put('H2O_ELYZ', design={'duty': 'PEM electrolysis: 83.62 kg/d water -> 9.358 kg/d H2 + 74.263 kg/d O2 at 21.445 kW',
-                            'kwh_per_kg_h2': v['elyz_kwh_per_kg'][0]},
-        sizing={'kwh_per_kg_h2': v['elyz_kwh_per_kg'][0]},
-        envelope=v['elyz_env'][0], size_note=v['elyz_env'][1],
+                            'kwh_per_kg_h2': v['elyz_kwh_per_kg'][0],
+                            'machine': 'PEM stack skid + balance-of-plant deck (H2/O2 gas-liquid '
+                                       'separators, deoxo on H2, dryer on H2 per params.internals)',
+                            'rated_kw': round(_rated, 1), 'window_h': _win,
+                            'h2_rate_kg_h': round(_h2_rate, 4),
+                            'stack': {'j_A_cm2': _j, 'v_cell': _vc, 'cells': _cells,
+                                      'active_per_cell_cm2': round(_a_cell, 1),
+                                      'active_mm': [round(math.sqrt(_a_cell) * 10, 1), round(math.sqrt(_a_cell) * 10, 1)],
+                                      'i_stack_A': round(_j * _a_cell, 1),
+                                      'v_stack_V': round(_v_stack, 1), 'p_dc_kW': round(_p_dc, 2),
+                                      'area_m2_total': round(_a_sum_cm2 / 1e4, 3),
+                                      'basis': 'the cell-summed area the rated H2 books: m_dot x '
+                                               '26,590 Ah/kg / j (A-M-459); stack DC at V_cell x '
+                                               'cells; the system draw adds BoP and power '
+                                               'electronics to the 55 kWh/kg book (A-M-133)'},
+                            'separators': 'H2 and O2 gas-liquid separators DN150 x 400, one per '
+                                          'side, 316L (duty section 3 M1 family)',
+                            'deoxo': {'beds': 2, 'tube': 'DN80 x %d mm 316L' % int(_deoxo_bed_l),
+                                      'basis': 'GHSV 5000 1/h on the rated %s Nm3/h H2 '
+                                               '(A-M-168 driver class)' % round(_nm3_h, 1)},
+                            'dryer': {'beds': 2, 'tube': 'DN80 x %d mm 316L' % int(_dryer_bed_l),
+                                      'sieve_kg': _sieve_kg, 'water_kg_d': _w_kg_d,
+                                      'basis': '4A/13X 0.10 kg/kg at margin 3, regenerated at 250 C '
+                                               '(A-M-168 class); water book scaled off the H2_DRYER '
+                                               'saturation figure'},
+                            'skid': {'w_mm': 1050, 'h_mm': 2200, 'l_stack_mm': _l_stack,
+                                     'l_bop_mm': _l_bop,
+                                     'basis': 'the A-M-279 allowances at the rated kW (stack 0.025 '
+                                              '+ BoP 0.015 m2/kW at W 1050, H 2200)'},
+                            'computed_by': 'flow_graph/param/specialty_sizing.py (X-SPEC lane, '
+                                           'CAD-representation audit item 8)'},
+        sizing={'kwh_per_kg_h2': v['elyz_kwh_per_kg'][0], 'rated_kw': round(_rated, 1)},
+        size_mm=[_l_skid, 1050, 2200], envelope=[_l_skid, 1050, 2200],
+        size_note='L x W x H mm, set by flow_graph/param/specialty_sizing.py: the A-M-279 skid '
+                  'allowances at the rated kW (stack deck %d + gap 100 + BoP deck %d at W 1050, '
+                  'H 2200); the placement seed block (1800 x 800 x 1600) under-books it - the '
+                  'named consequence (H2O_ELYZ WORK_ORDER W12)' % (_l_stack, _l_bop),
         kw_note=v['elyz_note'] + ' (X-SPEC)')
     # --- BAGHOUSE (the dry-dust filter machine: housing, tubesheet, bag field, hopper,
     # pulse header and rotary-valve discharge, sized on the capture air per A-M-458) ---

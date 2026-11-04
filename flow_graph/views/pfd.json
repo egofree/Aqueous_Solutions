@@ -1180,25 +1180,66 @@
         },
         "design": {
           "duty": "PEM electrolysis: 83.62 kg/d water -> 9.358 kg/d H2 + 74.263 kg/d O2 at 21.445 kW",
-          "kwh_per_kg_h2": 55.0
+          "kwh_per_kg_h2": 55.0,
+          "machine": "PEM stack skid + balance-of-plant deck (H2/O2 gas-liquid separators, deoxo on H2, dryer on H2 per params.internals)",
+          "rated_kw": 85.8,
+          "window_h": 6.0,
+          "h2_rate_kg_h": 1.5597,
+          "stack": {
+            "j_A_cm2": 1.8,
+            "v_cell": 1.85,
+            "cells": 80,
+            "active_per_cell_cm2": 288.0,
+            "active_mm": [
+              169.7,
+              169.7
+            ],
+            "i_stack_A": 518.4,
+            "v_stack_V": 148.0,
+            "p_dc_kW": 76.72,
+            "area_m2_total": 2.304,
+            "basis": "the cell-summed area the rated H2 books: m_dot x 26,590 Ah/kg / j (A-M-459); stack DC at V_cell x cells; the system draw adds BoP and power electronics to the 55 kWh/kg book (A-M-133)"
+          },
+          "separators": "H2 and O2 gas-liquid separators DN150 x 400, one per side, 316L (duty section 3 M1 family)",
+          "deoxo": {
+            "beds": 2,
+            "tube": "DN80 x 345 mm 316L",
+            "basis": "GHSV 5000 1/h on the rated 17.4 Nm3/h H2 (A-M-168 driver class)"
+          },
+          "dryer": {
+            "beds": 2,
+            "tube": "DN80 x 712 mm 316L",
+            "sieve_kg": 5.01,
+            "water_kg_d": 0.167,
+            "basis": "4A/13X 0.10 kg/kg at margin 3, regenerated at 250 C (A-M-168 class); water book scaled off the H2_DRYER saturation figure"
+          },
+          "skid": {
+            "w_mm": 1050,
+            "h_mm": 2200,
+            "l_stack_mm": 2042,
+            "l_bop_mm": 1225,
+            "basis": "the A-M-279 allowances at the rated kW (stack 0.025 + BoP 0.015 m2/kW at W 1050, H 2200)"
+          },
+          "computed_by": "flow_graph/param/specialty_sizing.py (X-SPEC lane, CAD-representation audit item 8)"
         },
         "sizing": {
-          "kwh_per_kg_h2": 55.0
+          "kwh_per_kg_h2": 55.0,
+          "rated_kw": 85.8
         },
         "envelope": {
           "size_mm": [
-            1800,
-            800,
-            1600
+            3367,
+            1050,
+            2200
           ],
-          "basis": "the PEM stack skid: stack + power electronics + water loop at the 21.445 kW duty"
+          "basis": "L x W x H mm, set by flow_graph/param/specialty_sizing.py: the A-M-279 skid allowances at the rated kW (stack deck 2042 + gap 100 + BoP deck 1225 at W 1050, H 2200); the placement seed block (1800 x 800 x 1600) under-books it - the named consequence (H2O_ELYZ WORK_ORDER W12)"
         },
         "size_mm": [
-          1800,
-          800,
-          1350
+          3367,
+          1050,
+          2200
         ],
-        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit)."
+        "size_note": "L x W x H mm, set by flow_graph/param/specialty_sizing.py: the A-M-279 skid allowances at the rated kW (stack deck 2042 + gap 100 + BoP deck 1225 at W 1050, H 2200); the placement seed block (1800 x 800 x 1600) under-books it - the named consequence (H2O_ELYZ WORK_ORDER W12)"
       }
     },
     {

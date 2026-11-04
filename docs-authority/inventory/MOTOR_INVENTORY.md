@@ -34,7 +34,7 @@ Table 1.1. Motor families
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 103 | 4 | 25.75 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 6 | 6 | 4.68 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 19 | 4 | 19.42 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 53 | 36 | 6.36 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 55 | 37 | 6.60 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 10 | 8 | 3.70 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 5 | 5 | 7.50 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 1 | 1 | 0.09 |
@@ -63,6 +63,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | CRYO | CRYO_ASU | air compressor (cold box feed) | induction IE3 | IEC 100L / 2.2 kW | 1.4837 | 480 V 3-ph | S1 | fixed speed | 1 | graph continuous_kw x 0.85 (assumed) |
 | CRYO | CRYO_ASU | expander brake / generator | induction IE3 | IEC 63 / 0.12 kW | 0.0873 | 208 V 3-ph | S1 | fixed speed | 1 | assumed |
 | CRYO | CRYO_H2 | cryocooler compressor | hermetic induction (scroll) | 1.1 kW hermetic | 0.9434 | 480 V 3-ph | S1 | fixed speed | 1 | graph continuous_kw (assumed all compressor) |
+| pem_electrolyser | H2O_ELYZ | Power electronics enclosure + DI-water loop pump, envelopes  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 2 | BOM; shaft assumed (A-M-119) |
 
 ### DIGESTER
 

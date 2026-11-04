@@ -179,7 +179,7 @@ ACCEPTED = ('AL_POT', 'IND_MELT', 'VAC_IND', 'VAC_CAST', 'INV_CAST', 'CONT_CAST'
             'GROWBED_A',
             'GROWBED_B',
             'VERMI_BIN',
-            'ZNBR2', 'ZNBR2_BR2_REGEN', 'VCD_TRAIN', 'EVAP_BASE', 'BAGHOUSE')
+            'ZNBR2', 'ZNBR2_BR2_REGEN', 'VCD_TRAIN', 'EVAP_BASE', 'BAGHOUSE', 'H2O_ELYZ')
 
 
 # --------------------------------------------------------------------------- authorities

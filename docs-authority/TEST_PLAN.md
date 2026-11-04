@@ -17,12 +17,12 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | --- | --- | --- | --- |
 | T1 | Owner and site data | 52 | Owner decision or site investigation report |
 | T2 | In-house design tests and standard data | 34 | In-house test record or standard data filed against the item |
-| T3 | Bench and laboratory tests | 69 | Bench test report with method, data and result |
+| T3 | Bench and laboratory tests | 70 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
 | T5 | Design calculations and drawings | 508 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 38 | Commissioning record |
 
-Total 722 items: 321 drivers, 401 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 723 items: 321 drivers, 402 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -193,6 +193,7 @@ Total 722 items: 321 drivers, 401 register entries. Classification rule: first m
 | A-M-437 | electrodialysis recovery 0.50 of the feed as dilute (product fraction of feed | gypsum saturation check on the assayed feed at the locale design pass | X-LOC-05 (lake_boehmer locale design pass) |
 | A-M-447 | feed calcium unmeasured; the concentrate gypsum saturation a stated gap and governing limit | the assayed feed calcium and the gypsum saturation calculation set the recovery | X-LOC-05 (lake_boehmer locale design pass) |
 | A-M-450 | degasser basis: Henry coefficients H2S 0.00087 and CO2 0.000 mol/(m3 Pa); vol/vol; fraction | tower transfer-units design at the locale design pass on the assayed sulfide and its pH speciation; caustic chemical stripping is the fallback | X-LOC-05 (lake_boehmer locale design pass) |
+| A-M-459 | j 1.8 A/cm2; V_cell 1.85 V; 80 cells x 288 cm2; 518.4 A; 148 A/cm2; V; cm2; A; kW | X-PAR-12 first-article stack: polarisation curve gives the measured j/V point and the ASR; the skid GA is the verification test of A-M-279 | CAD-representation audit, H2O_ELYZ skid machine design (2026-11-04) |
 
 ## 5. T4 Pilot runs
 

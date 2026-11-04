@@ -60,7 +60,7 @@ Units: ACID_POLISH_SCRUB, AFTERBURNER_FLUE, ALK_SCRUBBER, BAGHOUSE, FLUE_KO, H2_
 
 Units: AIR_RECEIVER, CRYO_AHU, CRYO_AHU_COND_CONDENSABLE, CRYO_ASU, CRYO_CO2, CRYO_DED_COOL, CRYO_H2, CRYO_HX_Q4, CRYO_N2, CRYO_O2, H2O_ELYZ, PROD_MEOH, PROD_O2, RELIEF_CRYO.
 
-- **Normal:** 37 loops on PLC-CRYO in auto; operator rounds per shift on levels and temperatures of H2O_ELYZ, PROD_MEOH; alarm response per AQS-CTL-001.
+- **Normal:** 39 loops on PLC-CRYO in auto; operator rounds per shift on levels and temperatures of H2O_ELYZ, PROD_MEOH; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-5 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 7-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
 - **Emergency:** 10 trips: SIF-071 flow or level low-low → pump stop; SIF-007 flow or level low-low → pump stop; SIF-008 flow or level low-low → pump stop; SIF-009 pressure low-low (leak) → close bank isolation valves, stop compressor, alarm; SIF-010 flow or level low-low → pump stop; SIF-011 pressure low-low (leak) → close bank isolation valves, stop compressor, alarm …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.

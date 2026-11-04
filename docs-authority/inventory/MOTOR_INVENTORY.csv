@@ -5,6 +5,7 @@ CRYO,CRYO,CRYO_AHU,"Motor: transfer pump S68 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 
 CRYO,CRYO,CRYO_ASU,air compressor (cold box feed),induction IE3,IEC 100L / 2.2 kW,1.4837,480 V 3-ph,S1,fixed speed,1,graph continuous_kw x 0.85 (assumed)
 CRYO,CRYO,CRYO_ASU,expander brake / generator,induction IE3,IEC 63 / 0.12 kW,0.0873,208 V 3-ph,S1,fixed speed,1,assumed
 CRYO,CRYO,CRYO_H2,cryocooler compressor,hermetic induction (scroll),1.1 kW hermetic,0.9434,480 V 3-ph,S1,fixed speed,1,graph continuous_kw (assumed all compressor)
+CRYO,pem_electrolyser,H2O_ELYZ,"Power electronics enclosure + DI-water loop pump, envelopes ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,2,BOM; shaft assumed (A-M-119)
 DIGESTER,DIGESTER_EXT,BMED_ACID,"stack loop pumps (acid, base, salt)",induction IE3,IEC 71 / 0.37 kW,0.25,480 V 3-ph,S1,fixed speed,3,assumed 3 per stack
 DIGESTER,DIGESTER_EXT,BMED_ACID,transfer pump IA-BMED-01 to WS_NITRIC,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"1.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 DIGESTER,DIGESTER_EXT,BMED_ACID,transfer pump IA-EVAP_ACID-FEED to EVAP_ACID,BLDC,42 mm (NEMA 17 flange),0.0037,24 V DC,S1,BLDC driver,1,"1304.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"

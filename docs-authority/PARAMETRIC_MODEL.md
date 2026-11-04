@@ -2083,3 +2083,4 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-456 | 95 plates/module, 0.49789 m2 active each, 6 mm pitch, 20 mA/ plates/module; m2; mm; mA/cm2; V | X-MFG-41 10-cell stack test (AQS-TST-002) for the performance class; the plate layout reads the first-article stack GA |
 | A-M-457 | 2.0 M ZnBr2, 529.4 L per module (47 reservoirs, 24.9 m3 tota mol/L; L; kg | Electrolyte sample density and ZnBr2 titre at the X-MFG-41 first article |
 | A-M-458 | hood face velocity 0.5 m/s; hoods 0.20/0.12/0.10 m2; capture m/s; m2; m3/h; m3/min/m2 | Differential-pressure and isokinetic capture check at the three hoods on the first-article duct run |
+| A-M-459 | j 1.8 A/cm2; V_cell 1.85 V; 80 cells x 288 cm2; 518.4 A; 148 A/cm2; V; cm2; A; kW | X-PAR-12 first-article stack: polarisation curve gives the measured j/V point and the ASR; the skid GA is the verification test of A-M-279 |

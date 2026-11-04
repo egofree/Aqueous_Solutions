@@ -268,7 +268,7 @@ Table 2.1. Actions by kind
 
 | Parameter | Guide word | Cause | Consequence | Safeguard | Action |
 |---|---|---|---|---|---|
-| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty; dry-running pump | FT low-flow alarm | - |
 | flow | More | control valve fails open, upstream surge | overfill or overpressure | LSH trip; PSV | - |
 | pressure | High | blocked outlet; fire; thermal expansion | loss of containment | PSV 3.3 mm, case: blocked outlet at full inflow 1.789 kg/h (hydrogen side of t | - |
 | pressure | Low | leak, PSV lift, downstream draw | air ingress (H2: flammable mixture) or loss of store | PT low alarm | - |

@@ -1,6 +1,6 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,107,1702 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,852,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,107,1708 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,854,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 174 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
@@ -155,17 +155,28 @@ CRYO,CRYO,CRYO_O2,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS S
 CRYO,hx,CRYO_HX_Q4,fabricated part,fabricated part set,3 BOM lines,models/mfg/CRYO_HX_Q4/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 CRYO,hx,CRYO_HX_Q4,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 CRYO,hx,CRYO_HX_Q4,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-CRYO,pem_electrolyser,H2O_ELYZ,fabricated part,fabricated part set,15 BOM lines,models/mfg/H2O_ELYZ/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+CRYO,pem_electrolyser,H2O_ELYZ,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",4,"Power electronics enclosure + DI-water loop pump, envelopes : drive and non-drive end, IEC 60072 frame 63 (assumed size)"
+CRYO,pem_electrolyser,H2O_ELYZ,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,4,"Power electronics enclosure + DI-water loop pump, envelopes : run and fault (assumed)"
+CRYO,pem_electrolyser,H2O_ELYZ,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,2,"Power electronics enclosure + DI-water loop pump, envelopes  (assumed VFD at >= 0.75 kW)"
+CRYO,pem_electrolyser,H2O_ELYZ,fabricated part,fabricated part set,8 BOM lines,models/mfg/H2O_ELYZ/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+CRYO,pem_electrolyser,H2O_ELYZ,fastener,M12 stud,M12 stud with 2 nuts (ISO 4014 / ISO 4032),ISO 3506 A4-70,16,models/mfg/H2O_ELYZ/fasteners.csv
+CRYO,pem_electrolyser,H2O_ELYZ,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,4,models/mfg/H2O_ELYZ/fasteners.csv
 CRYO,pem_electrolyser,H2O_ELYZ,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,IA-ELY-H2: 2 per support (assumed)
 CRYO,pem_electrolyser,H2O_ELYZ,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-ELY-O2: 2 per support (assumed)
+CRYO,pem_electrolyser,H2O_ELYZ,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ELY-H2: pumped line (assumed)
+CRYO,pem_electrolyser,H2O_ELYZ,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ELY-O2: pumped line (assumed)
 CRYO,pem_electrolyser,H2O_ELYZ,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",3,AQS-SAF-006 2oo3 to SIF (AQS-CTL-003)
 CRYO,pem_electrolyser,H2O_ELYZ,instrument,"gas detector, O2 enrichment",electrochemical O2,"alarm 23.5 vol %, trip 25 vol %, breathing height",3,AQS-SAF-006 2oo3 to SIF (AQS-CTL-003)
 CRYO,pem_electrolyser,H2O_ELYZ,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 CRYO,pem_electrolyser,H2O_ELYZ,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 CRYO,pem_electrolyser,H2O_ELYZ,instrument,pressure transmitter,0-16 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 CRYO,pem_electrolyser,H2O_ELYZ,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+CRYO,pem_electrolyser,H2O_ELYZ,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,2,"NEC 430.52, from AQS-INV-002"
+CRYO,pem_electrolyser,H2O_ELYZ,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",2,"Power electronics enclosure + DI-water loop pump, envelopes : induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 CRYO,pem_electrolyser,H2O_ELYZ,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",6,IA-ELY-H2: AQS-PIP-005 span count
 CRYO,pem_electrolyser,H2O_ELYZ,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",9,IA-ELY-O2: AQS-PIP-005 span count
+CRYO,pem_electrolyser,H2O_ELYZ,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-ELY-H2: pump discharge (assumed)
+CRYO,pem_electrolyser,H2O_ELYZ,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-ELY-O2: pump discharge (assumed)
 CRYO,pem_electrolyser,H2O_ELYZ,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-ELY-H2: one at each end nozzle (assumed)
 CRYO,pem_electrolyser,H2O_ELYZ,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-ELY-O2: one at each end nozzle (assumed)
 CRYO,product,PROD_MEOH,fabricated part,fabricated part set,1 BOM lines,models/mfg/PROD_MEOH/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory

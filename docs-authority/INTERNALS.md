@@ -128,7 +128,7 @@ The class comes from the graph. Any unit whose sizing sheet, duty sheet, or issu
 | GROWBED_A | growbed | issued mfg model BOM (3 internals part row): "1,"HDPE tray basin: walls and floor 10 mm, 3600 x 2100 x 500 outer",1,HDPE (duty section" | models/mfg/GROWBED_A/bom.csv |
 | GROWBED_B | growbed | issued mfg model BOM (3 internals part row): "1,"HDPE tray basin: walls and floor 10 mm, 3600 x 2100 x 500 outer",1,HDPE (duty section" | models/mfg/GROWBED_B/bom.csv |
 | GW_INTAKE | intake | issued mfg model BOM (1 internals part row): "6,support: pipe clamp DN15,24,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004" | models/mfg/GW_INTAKE/bom.csv |
-| H2O_ELYZ | pem_electrolyser | issued mfg model BOM (2 internals part row): "transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardw" | models/mfg/H2O_ELYZ/bom.csv |
+| H2O_ELYZ | pem_electrolyser | issued mfg model BOM (2 internals part row): "legs, one per side",2,316L (M1 family),25.0,make,node internals row; design 990 kPa g (node design_kPa) 3,Deox" | models/mfg/H2O_ELYZ/bom.csv |
 | H2_DRYER | dryer | dryer internals per the issued sizing: the molecular-sieve beds (sieve_kg per params.design) with the guard bed (guard_kg) on the 0.92 Nm3/h H2 stream | docs-authority/sizing/H2_DRYER.md |
 | HF_GEN | reactor | kiln internals per the issued mfg model and design (A-M-289): the D200 x 1200 mm kiln tube at the 2 deg slope with its refractory lining, the spar-feed hopper with rotary valve, and the discharge hood with cake chute | models/mfg/HF_GEN/bom.csv |
 | HX8 | hx | HX8 PVDF bundle: the issued tube-bundle construction (AQS-STD-002 section 4.5) | docs-authority/MATERIALS_STD.md section 4.5 |
