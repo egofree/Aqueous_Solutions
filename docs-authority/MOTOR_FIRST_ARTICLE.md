@@ -24,7 +24,6 @@ Table 1.1. Induction first-article dimensions
 
 | Family | kW | Poles | Bore mm | Gap mm | Core mm | Qs/Qr | Slot mm2 | Slot depth mm | Tooth mm | Yoke mm | OD sheet / check mm | Bar mm2 | T N m | Items |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| MF-04 | 30.0 | 2 | 162.82 | 0.818 | 127 | 36/28 | 395.2 | 37.39 | 6.83 | 41.75 | 324 / 321.1 | 109.7 | 82.0 | 8 |
 | MF-06 | 0.37 | 4 | 66.24 | 0.244 | 46 | 24/22 | 122.9 | 18.01 | 4.17 | 8.51 | 121 / 119.3 | 27.3 | 2.0 | 7 |
 | MF-07 | 1.1 | 4 | 84.28 | 0.279 | 52 | 36/28 | 124.0 | 21.8 | 3.54 | 10.82 | 153 / 149.5 | 40.9 | 6.0 | 6 |
 | MF-08 | 1.5 | 4 | 84.29 | 0.292 | 72 | 36/28 | 135.0 | 23.22 | 3.54 | 10.82 | 153 / 152.4 | 40.1 | 8.2 | 19 |
@@ -37,6 +36,7 @@ Table 1.1. Induction first-article dimensions
 | MF-15 | 4.0 | 4 | 105.35 | 0.346 | 111 | 36/28 | 173.0 | 25.01 | 4.43 | 13.53 | 190 / 182.4 | 53.4 | 21.9 | 1 |
 | MF-16 | 0.75 | 4 | 75.26 | 0.265 | 69 | 24/22 | 156.0 | 20.21 | 4.74 | 9.66 | 136 / 135.0 | 30.8 | 4.1 | 1 |
 | MF-25 | 1.1 | 2 | 62.36 | 0.365 | 110 | 36/28 | 59.8 | 14.67 | 2.61 | 15.98 | 124 / 123.7 | 13.4 | 3.0 | 1 |
+| MF-29 | 22.0 | 2 | 147.75 | 0.746 | 168 | 36/28 | 332.2 | 34.47 | 6.2 | 37.89 | 293 / 292.5 | 68.1 | 60.2 | 8 |
 
 No family is flagged: every recalculated OD is within 2 % of its sheet OD.
 
@@ -77,8 +77,8 @@ Table 3.1. Build traveller for an induction first article
 
 One rig is used to type-test all families. It has the following parts.
 
-- Load machine. An MF-18 motor made in-house (18.5 kW, IEC frame 180M) runs as a regenerating load on a back-to-back pair of variable-frequency drives (VFDs) with a common DC bus, so that only the losses are drawn from the supply. The largest family (MF-04, a 30 kW hermetic motor) is tested at 85 % of its rating on this load, or with a second MF-18 coupled in tandem.
-- Torque transducer. An in-line transducer with a range of 200 N m and an accuracy class of 0.2 %; the largest rated torque of any family is 82.0 N m. Speed is measured with an encoder of 1024 pulses per revolution.
+- Load machine. An MF-18 motor made in-house (18.5 kW, IEC frame 180M) runs as a regenerating load on a back-to-back pair of variable-frequency drives (VFDs) with a common DC bus, so that only the losses are drawn from the supply. The largest family (MF-04, a 22 kW hermetic motor) is tested at 85 % of its rating on this load, or with a second MF-18 coupled in tandem.
+- Torque transducer. An in-line transducer with a range of 200 N m and an accuracy class of 0.2 %; the largest rated torque of any family is 60.2 N m. Speed is measured with an encoder of 1024 pulses per revolution.
 - Power analyser. A three-phase analyser of accuracy class 0.1 %, measuring harmonics to the 50th, with six thermocouples in each winding for temperature rise and a timer for the resistance measurement after shutdown.
 - Bed. A cast or welded steel T-slot bed with adjustable centre-height adapter plates for IEC frames 63 to 180, jaw couplings sized for the transducer, and a guard to ISO 14120.
 - Supply. A 480 V three-phase supply, adjustable through the VFD for the no-load voltage sweep from 110 % to 30 % of rated voltage (IEC 60034-2-1), and a DC supply for the winding resistance measurement.

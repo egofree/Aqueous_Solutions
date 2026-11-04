@@ -2,14 +2,14 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 1166 kg/d. Mass out 1166 kg/d. Electrical duty 275.3422 kW. In: S69B 1157 kg/d (NaBr after ORP); IA-ZNBR-MU 8.486 kg/d (electrolyte water make-up). Out: S69 1157 kg/d (Br2 vapor); IA-ZNBR-BD 8.487 kg/d (electrolyte bleed).
+1. Basis. Mass in 1029 kg/d. Mass out 1029 kg/d. Electrical duty 242.7610 kW. In: S69B 1020 kg/d (NaBr after ORP); IA-ZNBR-MU 8.486 kg/d (electrolyte water make-up). Out: S69 1020 kg/d (Br2 vapor); IA-ZNBR-BD 7.712 kg/d (electrolyte bleed); IA-ZNBR-H2 0.775 kg/d (ZNBR2 HER hydrogen stripped with the purge air to the H2 header).
 
 2. Size.
 - Store and electrolyte thermal management are solved in the graph (X-ELS-02 / X-THM-01 F-4, A-M-455).
-- Store: 3855 kWh/d cycled at round trip 0.7 (A-M-062/179); charge 5507 kWh/d.
-- Electrolyte thermal-management duty: cycling loss 1652 kWh/d = 68.8 kW average thermal, rejected on IA-ZNBR-HEAT to the Q4 bus and the dry cooler.
-- Charge-window sizing case: 165.2 kW thermal over the 10 h charge window; sizes the electrolyte cooling loop.
-- Electrical: 275.3422 kW continuous discharge rating (storage; the charge draw rides IA-ESS-ZNBR2-CHG).
+- Store: 3399 kWh/d cycled at round trip 0.7 (A-M-062/179); charge 4855 kWh/d.
+- Electrolyte thermal-management duty: cycling loss 1457 kWh/d = 60.7 kW average thermal, rejected on IA-ZNBR-HEAT to the Q4 bus and the dry cooler.
+- Charge-window sizing case: 145.7 kW thermal over the 10 h charge window; sizes the electrolyte cooling loop.
+- Electrical: 242.7610 kW continuous discharge rating (storage; the charge draw rides IA-ESS-ZNBR2-CHG).
 
 3. Material. No wetted alloy. Conductors are copper. Corrosion allowance does not apply.
 

@@ -1,6 +1,6 @@
 {
  "_generated_from": {
-  "graph_sha256": "5e42dbf4be0de5223e73ad3455f99bde69e759672192eaf8fc57585bae377db1",
+  "graph_sha256": "bfdd2cc5b00e734172fb979079a7e957b568fc99e728b4bce24a68ffefd785e1",
   "generator": "docs-authority/_placement_routes.py",
   "placement_seed_revision": "O"
  },
@@ -5959,11 +5959,26 @@
    ],
    "length_m": 24.6,
    "elbows": 3
+  },
+  {
+   "line": "IA-ZNBR-H2",
+   "dn": 15,
+   "class": "P1",
+   "from": "ZNBR2",
+   "to": "HDR_H2",
+   "legs_mm": [
+    2400,
+    9948,
+    -2600,
+    -6950
+   ],
+   "length_m": 21.9,
+   "elbows": 3
   }
  ],
  "summary": {
-  "routed": 397,
+  "routed": 398,
   "missing_position": 15,
-  "total_m": 7899
+  "total_m": 7921
  }
 }

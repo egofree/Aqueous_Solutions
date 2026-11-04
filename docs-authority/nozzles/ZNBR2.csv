@@ -10,3 +10,4 @@ N8,DN15,Class 150,round-trip loss,outlet,600
 N9,DN15,Class 150,drain,bottom,50
 N10,DN15,Class 150,vent,top,800
 N11,cable,Class 150,"power terminal (IA-ZNBR-LOSS, round-trip loss)",outlet,600
+N12,DN15,Class 150,ZNBR2 HER hydrogen stripped with the purge air to the H2 header,outlet,600

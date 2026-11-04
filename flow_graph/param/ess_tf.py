@@ -46,7 +46,25 @@ def tf(g, ps=None):
     area = ah/CHG_H*1000/J                                                               # cm2 (cell-summed)
     h2_oc = OC*area*(24 - CHG_H)/1e6; h2 = h2_chg + h2_oc; q = h2/LFL25                 # m3/d purge
     put('S69', q*RHO_AIR, f'purge {q/24:.1f} m3/h holds H2 at 25 % LFL: HER {h2_chg:.2f} + open-circuit {h2_oc:.2f} m3/d H2 on {kwh:.0f} kWh/d charge (ZBFB_REVIEW2023, NFPA 69)')
-    put('S69B', E['S69']['rate']['value'], 'regen return = purge (closed loop, H2 recombined with Br2 in the regen bed)')
+    put('S69B', E['S69']['rate']['value'], 'regen return = purge air (the loop books the air mass; the HER H2 generated in the stack is booked at the unit on IA-ZNBR-H2, recombination with Br2 not credited, A-M-135)')
+    # F-26: the HER H2 was generated but unledgered - the ZNBR2 unit balance hid it inside the closed
+    # purge loop. The generated mass joins the H2 pool on a new edge (ZNBR2 -> HDR_H2); the make-up water
+    # it came from leaves the electrolyte as H2 instead of accumulating, so the bleed IA-ZNBR-BD shrinks
+    # by the same mass and the unit balance stays closed. Downstream the pool closes by the existing
+    # by-difference writers: o2_close passes the header residual into the dryer feed (IA-HDR-H2-02), and
+    # the electrolyser is sized net of the pool credit.
+    h2_kgd = h2*2.016/22.414
+    if 'IA-ZNBR-H2' not in E:
+        from flow_graph.param.o2_close import _edge as _he
+        g['edges'].append(_he('IA-ZNBR-H2', 'ZNBR2', 'HDR_H2', 'G', ['mass'], 'ZNBR2 HER hydrogen stripped with the purge air to the H2 header',
+                              0.0, 'kg/d', 'ELEC', 'GAS', {'H2': 1.0},
+                              'X-PAR-02 TF F-26: HER rate from A-M-135; recombination with Br2 not credited (A-M-135)'))
+        E['IA-ZNBR-H2'] = g['edges'][-1]
+    put('IA-ZNBR-H2', h2_kgd, f'HER {h2_chg:.2f} + open-circuit {h2_oc:.2f} m3/d at 2.016/22.414 kg/m3 = {h2_kgd:.3f} kg/d H2 to the pool (A-M-135)')
+    if 'X-PAR-02 TF' not in (E['IA-ZNBR-BD']['rate'].get('note') or ''):
+        E['IA-ZNBR-BD'].setdefault('params', {})['bd_static_kg_d'] = round(E['IA-ZNBR-BD']['rate']['value'], 6)
+    bd_static = float(E['IA-ZNBR-BD']['params'].get('bd_static_kg_d') or E['IA-ZNBR-BD']['rate']['value'])
+    put('IA-ZNBR-BD', bd_static - h2_kgd, f'electrolyte bleed less the water that leaves as HER H2 on IA-ZNBR-H2 ({h2_kgd:.3f} kg/d, static bleed {bd_static:.3f}; A-M-135)')
     for t in (N['ZNBR2']['params'].get('balance_rev_l') or {}).get('terms', []):
         if t['label'].startswith('purge air'): t['value'] = round(q*RHO_AIR, 4); t['basis'] = 'X-PAR-02 TF ess_tf.py'
     N['ZNBR2']['params']['purge_basis'] = {'H2_m3_d': round(h2, 3), 'purge_m3_h': round(q/24, 2), 'HER_fraction': round(F_HER, 5), 'electrode_area_m2': round(area/1e4, 1)}

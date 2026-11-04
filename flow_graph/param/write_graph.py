@@ -95,8 +95,10 @@ def process():
     E['IA-BMED-04']['rate'] = rate(s['evap_base']['feed_kg_d'] + E['IA-BMED-02']['rate']['value'] + up['naoh_soln_kg_d'] - s['evap_base']['water_kg_d'],'kg/d',f'{TAG}. Brine to BMED_BASE closing the stack balance with the condensate return.')
     # EW cells and rectifier (R10b: RECT_EW remapped to the live RECTIFIER; the DC feeds IA-DC-EW_n are restored on it
     # by o2_close.tf, A-M-255; the IA-EWQ-* cell-heat and IA-RECT-EW-LOSS edges died with HEAT_SINK in Rev AC and are
-    # guarded; the node continuous_kw stays the 12 kW A-M-231 basis so the EW DC load is counted once, behind the
-    # AQS-ELEC-004 bounding AC row in _power_sizing)
+    # guarded. F-24: the node no longer carries a 12 kW electrical load stamp - the audited basis ("DC to cells and
+    # induction", notes/POWER_DUTIES.md via AQS-PWR-001) is booked once as the AQS-ELEC-004 bounding AC row
+    # (params.rect_ac_input_kW, A-M-255), the induction units carry their own stamps, and no 48 V rail load table
+    # exists; the conversion losses ride IA-RECT-Q4 at the calculated rectifier loss)
     rows = {r['cell']: r for r in json.loads(subprocess.run([sys.executable,'docs-authority/_ew_sizing.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout)['rows']}
     rect = json.loads(subprocess.run([sys.executable,'docs-authority/_rect_ew_sizing.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout)['total']
     V = DR.val(d,'ew_cell_voltage_V'); CE = DR.val(d,'ew_current_efficiency_design'); VD = DR.val(d,'ew_bus_drop_V')
@@ -117,11 +119,26 @@ def process():
         if f'IA-DC-{c}' in E: E[f'IA-DC-{c}']['rate'] = rate(v['P_bus_kW'],'kW',f'{TAG}. Channel DC at {V} V cell + {VD} V bus drop, bounding current.')
         if f'IA-EWQ-{c}' in E: E[f'IA-EWQ-{c}']['rate'] = rate(v['P_bus_kW']-sum(e['rate']['value'] for e in g['edges'] if e['from_unit_id']==c and 'thermal' in (e.get('layers') or [])),'kW',f'{TAG}. DC input less the HX-8 thermal draw.')
     R = s['ew']['RECT_EW']; n_rect = N.get('RECT_EW') or N.get('RECTIFIER')   # Rev AC renamed the EW rectifier RECTIFIER
+    TAG24 = 'X-PAR F-24'
     if n_rect is not None:
         n_rect['params'].update({'rated_A': rect['rated_A'], 'nameplate_kw_dc': rect['rated_kW'], 'rect_ac_input_kW': round(R['P_ac_kW'], 3), 'rect_loss_kW': round(R['loss_kW'], 3),
-            'rect_basis': f"{TAG}/R10b: nine-channel EW rectifier {rect['rated_A']} A, {rect['rated_kW']:.0f} kW DC nameplate at 6 V; bounding AC input {R['P_ac_kW']:.2f} kW (AQS-ELEC-004). "
-                          "Node continuous_kw stays the 12 kW A-M-231 basis and S17 equals it: the EW DC load is counted once, behind the AQS-ELEC-004 bounding AC row in _power_sizing (A-M-255)."})
+            'rect_basis': f"{TAG}/R10b: nine-channel EW rectifier {rect['rated_A']} A, {rect['rated_kW']:.0f} kW DC nameplate at 6 V; bounding AC input {R['P_ac_kW']:.2f} kW (AQS-ELEC-004), counted once in _power_sizing (A-M-255). "
+                          "F-24: the 12 kW node load stamp (A-M-231 '48 V rail' basis) is removed as a double count - its cited basis ('DC to cells and induction', POWER_DUTIES.md) "
+                          "is booked in the AQS-ELEC-004 row, the induction units carry their own stamps, and no 48 V rail load table exists (CRITICAL_PATH says 20 kW; the per-motor "
+                          "48 V driver loads live in the unit stamps). S17 is retired."})
         n_rect['notes'] = f"{TAG}; AQS-ELEC-004. Nine-channel EW rectifier, {rect['rated_A']} A, {rect['rated_kW']:.0f} kW DC nameplate at 6 V (Rev AC node RECTIFIER; RECT_EW remapped R10b)."
+        n_rect['continuous_kw'] = rate(0.0, 'kW', f"{TAG24} (A-M-231 restated): the 12 kW '48 V rail and auxiliary' stamp was a double count - the cited basis 'DC to cells and induction' "
+            f"(notes/POWER_DUTIES.md via AQS-PWR-001) is booked once as the AQS-ELEC-004 bounding AC row {R['P_ac_kW']:.2f} kW (A-M-255), and the rectifier auxiliaries sit inside "
+            f"the 20 percent loss at eff 0.80 (RECT_EW.md). No independent 48 V rail load basis exists (internal CRITICAL_PATH says 20 kW; per-motor 48 V drivers are inside the "
+            f"unit stamps, OTHER_INVENTORY).")
+    if 'S17' in E:
+        E['S17']['presence'] = 'retired'
+        E['S17']['rate'] = rate(0.0, 'kW', f"{TAG24} (A-M-231 restated): retired - the 12 kW RECTIFIER supply double-counted the EW rectifier AC feed now booked behind the AQS-ELEC-004 "
+            f"bounding row (A-M-255); the '48 V rail' re-branding has no load table. Live path: the EW rectifier AC input is counted in _power_sizing (params.rect_ac_input_kW).")
+    if 'IA-RECT-Q4' in E:
+        E['IA-RECT-Q4']['rate'] = rate(round(R['loss_kW'], 4), 'kW', f"{TAG24} (A-M-246 restated): the rectifier reject is the calculated conversion loss at the bounding duty - "
+            f"AC input {R['P_ac_kW']:.3f} kW less DC out {R['P_dc_kW']:.3f} kW at eff 0.80 = {R['loss_kW']:.3f} kW to the Q4 recovery loop. Was the 1.0 kW bound of the removed 12 kW "
+            f"basis (12 kW at 92-96 percent efficiency, POWER_DUTIES.md).")
     if 'S17-EW' in E: E['S17-EW']['rate'] = rate(R['P_ac_kW'],'kW',f'{TAG}. RECT-EW AC input.')
     if 'IA-RECT-EW-LOSS' in E: E['IA-RECT-EW-LOSS']['rate'] = rate(R['loss_kW'],'kW',f'{TAG}. Rectifier conversion loss.')
     # X-ELS-02 load-basis provenance (A-M-275): every node continuous_kw either cites its calculation or is
@@ -598,6 +615,19 @@ def heat():
                       f' difference is electrolyte heat; window_kW is the bounding heat rate with all the daily loss in the'
                       f' {win:.0f} h charge window; charge_kW_window {chg_win:.1f} kW is the charge electrical rate over the same'
                       f' window; rejected to the Q4 bus on IA-ZNBR-HEAT and the terminal (A-M-455)')}
+    # F-11: the fuel-cell heat credit is the physical stack heat - H2 LHV in less the electric draw -
+    # all of which lands on the Q4 loop it serves. The previous book credited only the portion above
+    # the 45 C Q4 return (x 15/35) and dropped the other 1.52 kW of physical heat (unledgered).
+    TAGF = 'X-THM-01 F-11'
+    if 'S53' in E and 'S49' in E and 'S51' in E:
+        lhv = DR.val(d, 'ELEC.generation-train.BACKUP_GEN.h2_lhv_kWh_kg')   # A-M-383: H2 LHV 33.33 kWh/kg
+        fc_lhv = kw('S49')*lhv/24.0; fc_heat = fc_lhv - kw('S51')
+        E['S53']['rate']['value'] = round(fc_heat, 4)
+        E['S53']['rate']['note'] = ((E['S53']['rate'].get('note') or '').split(f' | {TAGF}')[0]
+            + f' | {TAGF}: full stack heat on the bus - S49 {kw("S49"):.1f} kg/d H2 x {lhv} kWh/kg LHV (A-M-383) / 24 h'
+              f' = {fc_lhv:.3f} kW less the {kw("S51"):.1f} kW electric draw (S51) = {fc_heat:.3f} kW.'
+              f' The previous book credited only the portion above the 45 C Q4 return (x 15/35, 1.1419 kW)'
+              f' and dropped the rest of the physical heat; the bus ledger takes the full credit.')
     fixed_in = sum(kw(e['stream_id']) for e in g['edges'] if e['to_unit_id'] == 'Q4_BUS' and e.get('presence') != 'retired'
                    and 'thermal' in (e.get('layers') or []) and (e.get('rate') or {}).get('unit') == 'kW'
                    and e['stream_id'] != 'S44' and e['stream_id'] not in STORE_LINKS)

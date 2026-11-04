@@ -1,6 +1,6 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,106,1685 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,849,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,106,1688 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,852,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 174 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
@@ -952,7 +952,7 @@ ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,1
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,16,AHU supply fan: run and fault (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,16,air-source heat pump compressor: run and fault (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,32,heat pump condenser fan: run and fault (assumed)
-ELEC,EXT_HALL_N,EXT_HALL,electronics,compressor contactor + overload,30 kW hermetic,IEC 60947-4-1,8,air-source heat pump compressor
+ELEC,EXT_HALL_N,EXT_HALL,electronics,compressor contactor + overload,22 kW hermetic,IEC 60947-4-1,8,air-source heat pump compressor
 ELEC,EXT_HALL_N,EXT_HALL,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,8,AHU exhaust fan (assumed VFD at >= 0.75 kW)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,8,AHU supply fan (assumed VFD at >= 0.75 kW)
 ELEC,EXT_HALL_N,EXT_HALL,fabricated part,fabricated part set,4 BOM lines,models/mfg/EXT_HALL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
@@ -971,9 +971,12 @@ ELEC,flow_battery,ZNBR2,fabricated part,fabricated part set,32 BOM lines,models/
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,S69: 2 per support (assumed)
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,IA-ZNBR-BD: 2 per support (assumed)
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,IA-ZNBR-HEAT: 2 per support (assumed)
+ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,IA-ZNBR-H2: 2 per support (assumed)
 ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN40,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S69: pumped line (assumed)
 ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ZNBR-BD: pumped line (assumed)
 ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ZNBR-HEAT: pumped line (assumed)
+ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ZNBR-H2: pumped line (assumed)
+ELEC,flow_battery,ZNBR2,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 ELEC,flow_battery,ZNBR2,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 ELEC,flow_battery,ZNBR2,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 ELEC,flow_battery,ZNBR2,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -985,12 +988,15 @@ ELEC,flow_battery,ZNBR2,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, 
 ELEC,flow_battery,ZNBR2,support,pipe clamp,DN40,"PP clamp with EPDM liner, MSS SP-58 Type 7",6,S69: AQS-PIP-005 span count
 ELEC,flow_battery,ZNBR2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",24,IA-ZNBR-BD: AQS-PIP-005 span count
 ELEC,flow_battery,ZNBR2,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",27,IA-ZNBR-HEAT: AQS-PIP-005 span count
+ELEC,flow_battery,ZNBR2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",24,IA-ZNBR-H2: AQS-PIP-005 span count
 ELEC,flow_battery,ZNBR2,valve,check valve,DN40,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,S69: pump discharge (assumed)
 ELEC,flow_battery,ZNBR2,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-ZNBR-BD: pump discharge (assumed)
 ELEC,flow_battery,ZNBR2,valve,check valve,DN50,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-ZNBR-HEAT: pump discharge (assumed)
+ELEC,flow_battery,ZNBR2,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-ZNBR-H2: pump discharge (assumed)
 ELEC,flow_battery,ZNBR2,valve,isolation valve,DN40,"PVDF ball valve, ISO 16135, PTFE seats",2,S69: one at each end nozzle (assumed)
 ELEC,flow_battery,ZNBR2,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-ZNBR-BD: one at each end nozzle (assumed)
 ELEC,flow_battery,ZNBR2,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-ZNBR-HEAT: one at each end nozzle (assumed)
+ELEC,flow_battery,ZNBR2,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-ZNBR-H2: one at each end nozzle (assumed)
 ELEC,genset,BACKUP_GEN,bearing,deep-groove ball bearing,6202-2Z,"ISO 15 / ISO 492 normal class, C3",2,"radiator fan: drive and non-drive end, IEC 60072 frame 71 (assumed size)"
 ELEC,genset,BACKUP_GEN,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",2,"starter motor: drive and non-drive end, IEC 60072 frame 90L (assumed size)"
 ELEC,genset,BACKUP_GEN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,radiator fan: run and fault (assumed)

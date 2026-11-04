@@ -25,8 +25,8 @@ Rule: a unit closes task 09 where every wetted edge touching it carries a wetted
 - Q3/Q4 water loop (20 edge ends)
 - Hydrocarbon product, fuel or wax cut (19 edge ends)
 - Water loops (protective, irrigation, UPW) (19 edge ends)
+- Wet acid H₂ + sweep air header (14 edge ends)
 - Oxidizer, wet HF or PVDF unit (13 edge ends)
-- Wet acid H₂ + sweep air header (13 edge ends)
 - Q1/Q2 thermal oil (12 edge ends)
 - Wet methanol service (12 edge ends)
 - Flue or acid gas (11 edge ends)
@@ -878,6 +878,7 @@ No wetted piped stream: every edge of this unit is a solids transfer or an elect
 | IA-EW6-H2B | EW_6 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-EW7-H2B | EW_7 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-EW8-H2B | EW_8 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
+| IA-ZNBR-H2 | ZNBR2 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 
 ### HDR_N2
 
@@ -1887,6 +1888,7 @@ No wetted piped stream: every edge of this unit is a solids transfer or an elect
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-ZNBR-MU | LEACH_CSTR_1 | ZNBR2 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
+| IA-ZNBR-H2 | ZNBR2 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 
 ### ZNBR2_BR2_REGEN
 

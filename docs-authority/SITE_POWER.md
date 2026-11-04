@@ -48,11 +48,11 @@ Table 3. Storage and coverage of the worst stretch
 
 | Kind | Unit | Stored kWh | Graph parameter |
 | --- | --- | --- | --- |
-| electrochemical | ZNBR2 | 3855 | `kWh` |
+| electrochemical | ZNBR2 | 3399 | `kWh` |
 | pumped_hydro | HYDRO_SET | 214.9 | `energy_kwh_recoverable_study` |
-| all | - | 4069.9 | - |
+| all | - | 3613.9 | - |
 
-Plant demand 275.34 kW; energy drawn over the stretch 3854.8 kWh; coverage 1.06.
+Plant demand 242.76 kW; energy drawn over the stretch 3398.6 kWh; coverage 1.06.
 
 ## 3. Redundancy of energy and life-support functions
 
@@ -80,5 +80,5 @@ Table 5. Heat rejection modes
 
 | Level | Unit | Mode | Duty kW | Sizing | Basis |
 | --- | --- | --- | --- | --- | --- |
-| low-grade water loop | DRY_COOLER | air | 215 | - | AQS-HEAT-STUDY-002 section 10.8 (A-M-244) |
+| low-grade water loop | DRY_COOLER | air | 200 | - | AQS-HEAT-STUDY-002 section 10.8 (A-M-244) |
 | ground loop | GEO_GHEX | ground | 3 | - | AQS-DUTY-076 |

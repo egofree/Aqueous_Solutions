@@ -106,6 +106,14 @@
    "service": "power terminal (IA-ZNBR-LOSS, round-trip loss)",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N12",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "ZNBR2 HER hydrogen stripped with the purge air to the H2 header",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "No wetted alloy. Conductors are copper. Corrosion allowance does not apply.",

@@ -100,7 +100,7 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-038 | `docs-authority/MVS_SIZE.md` | D | 2026-10-12 | Sector size and MVS | current |
 | AQS-DUTY-049 | `docs-authority/POLYMER_HX_SIZING.md` | A | 2026-10-15 | Polymer exchanger sizing, HX-5 and HX8 | current |
 | AQS-DUTY-050 | `docs-authority/sizing/LEACH_CSTR_1.md` | B | 2026-10-18 | LEACH_CSTR_1 sizing | current |
-| AQS-DUTY-051 | `docs-authority/sizing/EW_CELLS.md` | C | 2026-10-18 | EW_1 to EW_9 cell sizing | current |
+| AQS-DUTY-051 | `docs-authority/sizing/EW_CELLS.md` | D | 2026-11-04 | EW_1 to EW_9 cell sizing | current |
 | AQS-DUTY-060 | `docs-authority/sizing/EVAP_DESIGN.md` | — | — | In-house MVR evaporators EVAP_ACID and EVAP_BASE | current |
 | AQS-DUTY-061 | `docs-authority/sizing/VENT_SCRUBBER.md` | A | 2026-10-15 | EVAP_ACID vent scrubber | current |
 | AQS-DUTY-062 | `docs-authority/sizing/REACTOR_DESIGN.md` | B | 2026-10-18 | In-house reaction chambers | current |
@@ -141,7 +141,7 @@ Table 3.1. Document numbers in use
 | AQS-ELEC-001 | `docs-authority/ELECTRONICS.md` | C | 2026-10-11 | Electronics bay | current |
 | AQS-ELEC-002 | `docs-authority/ONE_LINE.md` | E | 2026-10-24 | Single-line diagram | current |
 | AQS-ELEC-003 | `docs-authority/LOAD_LIST.md` | C | 2026-10-21 | Load list | current |
-| AQS-ELEC-004 | `docs-authority/RECT_EW.md` | C | 2026-10-25 | Electrowinning rectifier sizing (RECT-EW) | current |
+| AQS-ELEC-004 | `docs-authority/RECT_EW.md` | D | 2026-11-04 | Electrowinning rectifier sizing (RECT-EW) | current |
 | AQS-ELEC-005 | `docs-authority/GROUNDING.md` | B | 2026-10-25 | Grounding and bonding | current |
 | AQS-ELEC-006 | `docs-authority/PROTECTION.md` | D | 2026-10-15 | Protection and coordination | current |
 | AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | F | 2026-10-15 | Storage and generation sizing | current |
@@ -254,7 +254,7 @@ Table 3.1. Document numbers in use
 | AQS-PRO-003 | `docs-authority/COST_ESTIMATE.md` | A | 2026-10-29 | Cost estimate method | current |
 | AQS-PRO-003-BOM | `docs-authority/COST_ESTIMATE_BOM.md` | A | 2026-10-31 | Priced bill of materials (AQS-PRO-003) | current |
 | AQS-PV-001 | `docs-authority/PV_CELL_MOD.md` | C | 2026-10-11 | Photovoltaic cell | current |
-| AQS-PWR-001 | `docs-authority/POWER.md` | A | 2026-10-17 | Power | current |
+| AQS-PWR-001 | `docs-authority/POWER.md` | B | 2026-11-04 | Power | current |
 | AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | B | 2026-09-28 | Geothermal loop and backup generator | current |
 | AQS-PWR-ROLLUP | `notes/LOAD_ROLLUP.md` | A | 2026-10-17 | Load rollup — foundry, polymers, grease | current |
 | AQS-QA-001 | `docs-authority/ITP.md` | A | 2026-10-16 | Inspection and test plan | current |

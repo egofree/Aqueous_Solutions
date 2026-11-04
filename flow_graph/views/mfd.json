@@ -334,7 +334,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 207.796527,
+          "bypass_kg_d": 200.870966,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -593,7 +593,7 @@
       "params": {
         "presence": "present",
         "store_kg": 17,
-        "store_basis": "need: 7.1 kg dark-hours buffer (9.49 kg/d x (1 - 6/24)) + 9.6 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
+        "store_basis": "need: 6.5 kg dark-hours buffer (8.71 kg/d x (1 - 6/24)) + 9.6 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
         "store_water_volume_m3": 1.14,
         "design": {
           "P_design_MPa": 22.0,
@@ -789,8 +789,8 @@
         "o2_gap": {
           "hdr_short_kg_d": 0.0,
           "system_short_kg_d": 0.0,
-          "system_surplus_kg_d": 6.2464,
-          "src_kg_d": 77.7845,
+          "system_surplus_kg_d": 0.0959,
+          "src_kg_d": 71.634,
           "hdr_draw_kg_d": 29.7381,
           "direct_draw_kg_d": 41.8,
           "basis": "A-M-230 (D-O2): H2O_ELYZ restored \u2014 sources IA-ELY-O2 (PEM electrolyser, the O2 source) + S87 (crew-duty bed, A-M-229) + IA-ASU-O2 (recovered combustion excess); S02/S50 draw directly on CRYO_O2 (Rev AC re-home), the rest via HDR_O2",
@@ -1197,55 +1197,55 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.0205,
+        "value": 0.0226,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-39 (A-M-168): TSA regeneration 1.0 W / 0.7 + half the insulated loss."
+        "note": "X-MFG-39 (A-M-168): TSA regeneration 1.4 W / 0.7 + half the insulated loss."
       },
       "modules": [],
       "params": {
         "presence": "present",
         "design": {
-          "H2_kg_d": 1.975408,
-          "Nm3_h": 0.9151123287037036,
-          "O2_mol_d": 0.9798650793650794,
-          "water_kg_d": 0.03530453880952381,
-          "HCl_kg_d": 3.572686065873015e-05,
-          "guard_kg": 0.03215417459285713,
-          "sieve_kg": 0.3530453880952381,
+          "H2_kg_d": 2.750425,
+          "Nm3_h": 1.2741407479745368,
+          "O2_mol_d": 1.3642981150793647,
+          "water_kg_d": 0.04915566108630951,
+          "HCl_kg_d": 4.9743673573908714e-05,
+          "guard_kg": 0.04476930621651784,
+          "sieve_kg": 0.491556610863095,
           "beds": {
             "deoxo": {
-              "V_L": 0.18302246574074074,
-              "tube": "DN25 Sch 40 316L",
-              "L_mm": 328,
+              "V_L": 0.25482814959490735,
+              "tube": "DN50 Sch 40 316L",
+              "L_mm": 300,
               "count": 2
             },
             "guard": {
-              "V_L": 0.05,
+              "V_L": 0.0559616327706473,
               "tube": "DN25 Sch 40 316L",
               "L_mm": 300,
               "count": 2
             },
             "TSA": {
-              "V_L": 0.5043505544217688,
+              "V_L": 0.7022237298044215,
               "tube": "DN50 Sch 40 316L",
-              "L_mm": 300,
+              "L_mm": 325,
               "count": 2
             }
           },
-          "regen_W": 1.031007210286295,
-          "loss_W": 37.98279150873541,
+          "regen_W": 1.433364741820396,
+          "loss_W": 41.14802413446337,
           "insulation_mm": 38,
-          "kW": 0.0205,
+          "kW": 0.0226,
           "D_mm": 60,
-          "H_mm": 628,
+          "H_mm": 625,
           "T_C": 250.0,
           "wall_mm": 3.91
         },
         "size_mm": [
           600,
           400,
-          1028
+          1025
         ]
       }
     },
@@ -1380,12 +1380,12 @@
         "design": {
           "service": "O2 header (ASU/receiver in; fuel cell, peroxide, genset, afterburner, product draws)",
           "kind": "gas",
-          "flow_kg_s": 0.0004,
+          "flow_kg_s": 0.0003,
           "duty_kW": null,
           "rho_kg_m3": 1.2041,
           "Q_m3_s": 0.0003,
           "v_m_s": 8.0,
-          "id_req_mm": 7.4,
+          "id_req_mm": 6.8,
           "DN": 25,
           "length_m": 20,
           "volume_m3": 0.0045,
@@ -1492,8 +1492,8 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2720.0,
         "head_m_m1": 36.25,
-        "vs_znbr2_kwh": 3855.0,
-        "fraction_of_znbr2_study": 0.056,
+        "vs_znbr2_kwh": 3399.0,
+        "fraction_of_znbr2_study": 0.063,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
@@ -1885,7 +1885,7 @@
             "IA-C5-SHIP": 7.04,
             "IA-C11-SHIP": 1.512,
             "IA-C19-SHIP": 2.218,
-            "IA-O2-SHIP": 6.246,
+            "IA-O2-SHIP": 0.096,
             "IA-MEOH-SHIP": 28.729,
             "IA-GYPSUM-SHIP": 0.576,
             "IA-CL2-SHIP": 39.419,
@@ -1898,7 +1898,7 @@
             "IA-METAL-SHIP": 10.812
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 58.812,
+            "IA-H2O-MU": 52.662,
             "IA-NAOH-MU": 4.394,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
@@ -2464,25 +2464,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 275.3422,
+        "value": 242.761,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 275.3 kW, charge 1251.5 kW, 3855 kWh over 54 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 242.8 kW, charge 1103.4 kW, 3399 kWh over 47 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 1252,
-        "kWh": 3855,
+        "kW": 1104,
+        "kWh": 3399,
         "presence": "present",
-        "charge_kW": 1252,
-        "discharge_kW": 276,
+        "charge_kW": 1104,
+        "discharge_kW": 243,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 54 hybrid inverters, 71.4 kWh and 23.2 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 47 hybrid inverters, 72.3 kWh and 23.5 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 9.773,
-          "purge_m3_h": 40.72,
+          "H2_m3_d": 8.617,
+          "purge_m3_h": 35.9,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2521.4
+          "electrode_area_m2": 2223.1
         },
         "size_mm": [
           1000,
@@ -2491,15 +2491,15 @@
         ],
         "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit).",
         "cycling_thermal": {
-          "kwh_d_in": 5506.8,
-          "kwh_d_out": 3854.8,
+          "kwh_d_in": 4855.2,
+          "kwh_d_out": 3398.7,
           "round_trip": 0.7,
-          "loss_kwh_d": 1652.1,
-          "avg_kW": 68.84,
+          "loss_kwh_d": 1456.6,
+          "avg_kW": 60.69,
           "window_h": 10.0,
-          "window_kW": 165.21,
-          "charge_kW_window": 550.68,
-          "basis": "store 3855 kWh/d (AQS-ELEC-007 P x night) at round trip 0.7 (A-M-062/179): the round-trip difference is electrolyte heat; window_kW is the bounding heat rate with all the daily loss in the 10 h charge window; charge_kW_window 550.7 kW is the charge electrical rate over the same window; rejected to the Q4 bus on IA-ZNBR-HEAT and the terminal (A-M-455)"
+          "window_kW": 145.66,
+          "charge_kW_window": 485.52,
+          "basis": "store 3399 kWh/d (AQS-ELEC-007 P x night) at round trip 0.7 (A-M-062/179): the round-trip difference is electrolyte heat; window_kW is the bounding heat rate with all the daily loss in the 10 h charge window; charge_kW_window 485.5 kW is the charge electrical rate over the same window; rejected to the Q4 bus on IA-ZNBR-HEAT and the terminal (A-M-455)"
         }
       }
     },
@@ -2561,8 +2561,8 @@
         "equipment_id": "VCD-COMP-01",
         "type": "scroll or diaphragm",
         "sec_kWh_m3": "14-20",
-        "feed_m3_d": 0.3657,
-        "avg_kw": 0.2591,
+        "feed_m3_d": 0.3588,
+        "avg_kw": 0.2542,
         "status": "duty_issued",
         "size_mm": [
           1400,
@@ -2576,20 +2576,20 @@
           "machine": "MVC still stack",
           "modules": 2,
           "compressor": "scroll class (small-MVC)",
-          "hx_area_m2": 0.614,
-          "q_latent_kW": 8.598,
-          "feed_m3_d": 0.3657,
-          "distillate_m3_d": 0.3291,
+          "hx_area_m2": 0.603,
+          "q_latent_kW": 8.436,
+          "feed_m3_d": 0.3588,
+          "distillate_m3_d": 0.3229,
           "sec_kWh_m3": 17,
-          "duty_kW": 0.2591,
+          "duty_kW": 0.2542,
           "basis": "0.333 m3/d x 17 kWh/m3 / 24 h at the issued band midpoint (A-M-149)"
         }
       },
       "continuous_kw": {
-        "value": 0.2591,
+        "value": 0.2542,
         "unit": "kW",
         "status": "study",
-        "note": "0.366 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)"
+        "note": "0.359 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)"
       }
     },
     {
@@ -3452,7 +3452,7 @@
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Closed",
       "rate": {
-        "value": 341.141927,
+        "value": 334.216366,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d. | X-PAR-02 TF: roof-tank shortfall +0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -4234,7 +4234,7 @@
       "forbidden": "hab air, HDR_O2, continuous roof dump",
       "claim_status": "Partial",
       "rate": {
-        "value": 1.975408,
+        "value": 2.750425,
         "unit": "kg/d",
         "status": "authority",
         "note": "Same Faraday pool as S05; normal H2 path (AQS-VENT-001); S24 contingency only | X-PAR-12 TF: dryer pass-through to the store (S24 relief stays shut, AQS-VENT-001) (AQS-PAR-005)."
@@ -4382,10 +4382,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1157.033623,
+        "value": 1020.122235,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 40.7 m3/h holds H2 at 25 % LFL: HER 8.32 + open-circuit 1.45 m3/d H2 on 5507 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 35.9 m3/h holds H2 at 25 % LFL: HER 7.34 + open-circuit 1.28 m3/d H2 on 4855 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -4405,10 +4405,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1157.033623,
+        "value": 1020.122235,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
+        "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge air (the loop books the air mass; the HER H2 generated in the stack is booked at the unit on IA-ZNBR-H2, recombination with Br2 not credited, A-M-135) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -4743,7 +4743,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 35.984533,
+        "value": 29.833989,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003)."

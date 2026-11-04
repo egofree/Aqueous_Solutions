@@ -1,7 +1,7 @@
 # Isometric sheet data (no SVG: the isometric presentation retired 2026-10-27)
 
 Document number: AQS-ISO-002
-Status. 397 routed lines; waiting on placements 15. Pipe 7850 m, elbows 1154, flanges 794, joints 3809.
+Status. 398 routed lines; waiting on placements 15. Pipe 7872 m, elbows 1157, flanges 796, joints 3819.
 
 Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow take-off ASME B16.9 long-radius (metal) or 0.5 x OD (thermoplastic, A-M-121); 6 m random lengths; flanges at both nozzles; ASME B16.5 Class 150 bolting; OD ASME B36.10M. Not checked here: clashes with structure and other lines along the rack (X-PIP-04 with supports and stress).
 
@@ -406,6 +406,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | IA-NH3-MET | WS_AMMONIA | MET_SYN | 15 | P1 | 13.09 | 3 |
 | DL_MET_TO_FEED | MET_SYN | CHICKEN_COOP | 15 | P1 | 15.59 | 3 |
 | IA-DC-REJ | DRY_COOLER | ATMOS | 50 | P1 | 24.42 | 3 |
+| IA-ZNBR-H2 | ZNBR2 | HDR_H2 | 15 | P1 | 21.83 | 3 |
 
 Waiting on placements:
 - LB-FEED (LB_INTAKE unplaced)

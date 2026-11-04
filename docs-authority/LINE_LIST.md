@@ -11,7 +11,7 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-658 edges: 412 piped, 125 solids transfers, 121 electrical. Piped edges without a length (unit position missing): 15.
+659 edges: 413 piped, 125 solids transfers, 121 electrical. Piped edges without a length (unit position missing): 15.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -270,7 +270,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | S90 | HABITATION | HDR_CO2 | DN15 | P3 | process vent gas | 12.7 | HABITATION → HDR_CO2, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | edge line_DN |
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | DN50 | P2 | hot leach liquor | 21.3 | GREY_TREAT → LEACH_CSTR_1, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN50 |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 19.9 | CRU → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
-| HL-Q4-REJ | Q4_BUS | DRY_COOLER | DN50 | M1 | Q3/Q4 water loop | 29.8 | Q4_BUS → DRY_COOLER, orthogonal × 1.2 (duty origin; placement_seed) | heat loop 67.9039 kW at ΔT 10 K, 1 m/s |
+| HL-Q4-REJ | Q4_BUS | DRY_COOLER | DN50 | M1 | Q3/Q4 water loop | 29.8 | Q4_BUS → DRY_COOLER, orthogonal × 1.2 (duty origin; placement_seed) | heat loop 67.5117 kW at ΔT 10 K, 1 m/s |
 | IA-PV-01 | PV_ARRAY | SOL_ARK_60K | cable | — | — | 15.1 | PV_ARRAY → SOL_ARK_60K, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | DN15 | P1 | acid or brine, at or below 60 C | 26.3 | ZNBR2 → GREY_TREAT, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | DN15 | P5 | water | 31.4 | NUTRIENT_DOSE → VCD_TRAIN, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -302,7 +302,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-VCD-BD | VCD_TRAIN | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 20.3 | VCD_TRAIN → LEACH_CSTR_1, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-CHAR | OIL_PYRO | MFG_SHOP | solids | — | — | 36.3 | OIL_PYRO → MFG_SHOP, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-FC-EXH | MEOH_FC | NOX_SCRUB | DN15 | F1 | flue or acid gas | 7.6 | MEOH_FC → NOX_SCRUB, orthogonal × 1.2 (duty origin; duty origin) | velocity 10 m/s, ρ 1.2; min DN15 |
-| IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | DN50 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 38.7 | ZNBR2 → Q4_BUS, orthogonal × 1.2 (duty origin; duty origin) | heat loop 68.8355 kW at ΔT 10 K, 1 m/s |
+| IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | DN50 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 38.7 | ZNBR2 → Q4_BUS, orthogonal × 1.2 (duty origin; duty origin) | heat loop 60.6903 kW at ΔT 10 K, 1 m/s |
 | IA-Q4A-TRIM | RECTIFIER | Q4_A | cable | — | — | 17.6 | RECTIFIER → Q4_A, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-Q4B-TRIM | RECTIFIER | Q4_B | cable | — | — | 32.2 | RECTIFIER → Q4_B, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-FAB-LOSS | WAFER_FAB | BAGHOUSE | solids | — | — | 12.6 | WAFER_FAB → BAGHOUSE, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
@@ -674,4 +674,5 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | LB-CHEM-SCRUB | LB_CHEM_STORE | LB_DEGAS_SCRUB | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_CHEM_STORE → LB_DEGAS_SCRUB, position missing for LB_CHEM_STORE, LB_DEGAS_SCRUB | velocity 1 m/s, ρ 1000; min DN15 |
 | LB-CHEM-CIP1 | LB_CHEM_STORE | LB_ED1 | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_CHEM_STORE → LB_ED1, position missing for LB_CHEM_STORE, LB_ED1 | velocity 1 m/s, ρ 1000; min DN15 |
 | LB-CHEM-CIP2 | LB_CHEM_STORE | LB_ED2 | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_CHEM_STORE → LB_ED2, position missing for LB_CHEM_STORE, LB_ED2 | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-DC-REJ | DRY_COOLER | ATMOS | DN50 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 23.3 | DRY_COOLER → ATMOS, orthogonal × 1.2 (placement_seed; placement_seed) | heat loop 75.1539 kW at ΔT 10 K, 1 m/s |
+| IA-DC-REJ | DRY_COOLER | ATMOS | DN50 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 23.3 | DRY_COOLER → ATMOS, orthogonal × 1.2 (placement_seed; placement_seed) | heat loop 74.7617 kW at ΔT 10 K, 1 m/s |
+| IA-ZNBR-H2 | ZNBR2 | HDR_H2 | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 20.5 | ZNBR2 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |

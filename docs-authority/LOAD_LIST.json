@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "5e42dbf4be0de5223e73ad3455f99bde69e759672192eaf8fc57585bae377db1",
+  "graph_sha256": "bfdd2cc5b00e734172fb979079a7e957b568fc99e728b4bce24a68ffefd785e1",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 415.116,
-   "calc_kw": 415.116,
+   "kw": 387.39,
+   "calc_kw": 387.39,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,18 +16,18 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 275.342,
-   "calc_kw": 275.342,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 275.3 kW, charge 1251.5 kW, 3855 kWh over 54 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 242.761,
+   "calc_kw": 242.761,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 242.8 kW, charge 1103.4 kW, 3399 kWh over 47 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "EXT_HALL",
    "role": "load",
-   "kw": 124.292,
-   "calc_kw": 124.292,
-   "basis": "X-PAR-07 solver.roof_close: conditioned extension 36000 m2; lighting 31.68 kW (IECC 2021 C405, 10 % lit), ventilation 53.46 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 39.15 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 36.6 kW and cooling 219.0 kW thermal average after internal gains 45.2 kW and slab edge 1.93 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
+   "kw": 110.341,
+   "calc_kw": 110.341,
+   "basis": "X-PAR-07 solver.roof_close: conditioned extension 31860 m2; lighting 28.04 kW (IECC 2021 C405, 10 % lit), ventilation 47.31 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 34.99 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 32.7 kW and cooling 194.6 kW thermal average after internal gains 40.0 kW and slab edge 1.79 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -43,20 +43,11 @@
   {
    "unit": "H2O_ELYZ",
    "role": "load",
-   "kw": 21.747,
-   "calc_kw": 21.747,
-   "basis": "X-PAR-12 TF: 9.49 kg/d H2 x 55.0 kWh/kg / 24 h; rated 87.0 kW on a 6.0 h PV window.",
+   "kw": 19.971,
+   "calc_kw": 19.971,
+   "basis": "X-PAR-12 TF: 8.71 kg/d H2 x 55.0 kWh/kg / 24 h; rated 79.9 kW on a 6.0 h PV window.",
    "class": "calculated",
    "sector": "CRYO"
-  },
-  {
-   "unit": "RECTIFIER",
-   "role": "load",
-   "kw": 12.0,
-   "calc_kw": 12.0,
-   "basis": "A-M-231 (AQS-NOTE-PV-REBASE Rev A section 8): 12 kW 48 V rail and auxiliary basis (AQS-PWR-001). The nine-channel EW DC load is counted once behind the AQS-ELEC-004 bounding AC row in _power_sizing (params.rect_ac_input_kW 38.66 kW; A-M-255); S17 equals this node value.",
-   "class": "calculated",
-   "sector": "ELEC"
   },
   {
    "unit": "EW_9",
@@ -111,15 +102,6 @@
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
    "sector": "DIGESTER"
-  },
-  {
-   "unit": "SI_REDUCE",
-   "role": "\u2014",
-   "kw": 5.0,
-   "calc_kw": 5.0,
-   "basis": "the furnace at the ~12 kWh/kg Si class (carbothermic study class) / 24 h at the 1.8 kg/d draw (X-SPEC sizing, calculated)",
-   "class": "calculated",
-   "sector": "GLASS"
   },
   {
    "unit": "MFG_SHOP",
@@ -228,6 +210,15 @@
    "basis": "X-MFG-36 (A-M-169): 11.47 kg/d x 1.97 kWh/kg; peak 2.83 kW over the run hours.",
    "class": "calculated",
    "sector": "CRYO"
+  },
+  {
+   "unit": "SI_REDUCE",
+   "role": "\u2014",
+   "kw": 0.9,
+   "calc_kw": 0.9,
+   "basis": "the furnace at the ~12 kWh/kg Si class (carbothermic study class) / 24 h at the 1.8 kg/d draw (X-SPEC sizing, calculated)",
+   "class": "calculated",
+   "sector": "GLASS"
   },
   {
    "unit": "IND_MELT",
@@ -421,9 +412,9 @@
   {
    "unit": "VCD_TRAIN",
    "role": "\u2014",
-   "kw": 0.259,
-   "calc_kw": 0.259,
-   "basis": "0.366 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)",
+   "kw": 0.254,
+   "calc_kw": 0.254,
+   "basis": "0.359 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)",
    "class": "calculated",
    "sector": "WTR"
   },
@@ -617,6 +608,15 @@
    "sector": "DIGESTER"
   },
   {
+   "unit": "H2_DRYER",
+   "role": "load",
+   "kw": 0.023,
+   "calc_kw": 0.023,
+   "basis": "X-MFG-39 (A-M-168): TSA regeneration 1.4 W / 0.7 + half the insulated loss.",
+   "class": "calculated",
+   "sector": "GAS"
+  },
+  {
    "unit": "MEOH_FERM",
    "role": "\u2014",
    "kw": 0.021,
@@ -624,15 +624,6 @@
    "basis": "X-ELS-02: node aligned to its calculated SF-MEOH_FERM feed (losses and feed heat); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to MEOH_FERM continuous_kw..",
    "class": "calculated",
    "sector": "MEOH"
-  },
-  {
-   "unit": "H2_DRYER",
-   "role": "load",
-   "kw": 0.021,
-   "calc_kw": 0.021,
-   "basis": "X-MFG-39 (A-M-168): TSA regeneration 1.0 W / 0.7 + half the insulated loss.",
-   "class": "calculated",
-   "sector": "GAS"
   },
   {
    "unit": "COLD_MILL",
@@ -707,9 +698,18 @@
    "sector": "GEO"
   },
   {
+   "unit": "RECTIFIER",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 0.0,
+   "basis": "A-M-231 (AQS-NOTE-PV-REBASE Rev A section 8): 12 kW 48 V rail and auxiliary basis (AQS-PWR-001). The nine-channel EW DC load is counted once behind the AQS-ELEC-004 bounding AC row in _power_sizing (params.rect_ac_input_kW 38.66 kW; A-M-255); S17 equals this node value.",
+   "class": "calculated",
+   "sector": "ELEC"
+  },
+  {
    "unit": "DRY_COOLER",
    "role": "\u2014",
-   "kw": 10.75,
+   "kw": 10.0,
    "calc_kw": null,
    "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
    "class": "pending",
@@ -939,13 +939,13 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 103,
-  "graph_sum_kW": 236.68,
-  "calc_sum_kW": 236.68,
-  "connected_load_kW": 236.7,
-  "connected_calculated_kW": 224.1,
+  "graph_sum_kW": 204.1,
+  "calc_sum_kW": 204.1,
+  "connected_load_kW": 204.1,
+  "connected_calculated_kW": 192.3,
   "connected_standby_kW": 0.1,
-  "connected_study_kW": 12.5,
-  "connected_calculated_pct": 94.7,
+  "connected_study_kW": 11.8,
+  "connected_calculated_pct": 94.2,
   "by_sector": {
    "CRYO": {
     "calculated": 4

@@ -43,7 +43,7 @@ def compute():
     v['si_kgd'] = (si_kgd, 'the PV cell line silicon: 3 cells/d x 0.6 kg/cell (AQS-DUTY-071 throughput; wafer + kerf class)')
     v['sio2_kgd'] = (round(si_kgd * 60.08 / 28.09, 3), 'SiO2 per the carbothermic stoichiometry SiO2 + 2C -> Si + 2CO')
     v['char_to_si_kgd'] = (round(si_kgd * 24.02 / 28.09 / 0.8, 3), 'char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits)')
-    v['si_reduce_kw'] = (5.0, 'the furnace at the ~12 kWh/kg Si class (carbothermic study class) / 24 h at the 1.8 kg/d draw')
+    v['si_reduce_kw'] = (round(si_kgd * 12.0 / 24.0, 2), f'the furnace at the ~12 kWh/kg Si class (carbothermic study class) / 24 h at the {si_kgd} kg/d draw: {si_kgd} x 12 / 24 = {round(si_kgd * 12.0 / 24.0, 2)} kW')
     v['si_reduce_env'] = ([1200, 1000, 1600], 'graphite hot-face furnace (the issued sec3 selection) at the batch class')
     # --- ADS_CHILL (2.25 kW chilled, 5 kW drive, 7.25 kW rejected - the rated edges) --
     v['ads_env'] = ([700, 500, 1200], 'the 2.25 kW-class silica gel-water adsorption chiller: drive 65 C, chilled 12 C, thermal COP ~0.45 (A-M-239/240; WANG2006_ADS); 304L shells per the issued sec3')

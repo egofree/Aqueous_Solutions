@@ -24,15 +24,15 @@
   "flow_kg_s": 0.0,
   "duty_kW": null,
   "rho_kg_m3": 0.084,
-  "Q_m3_s": 0.0003,
+  "Q_m3_s": 0.0004,
   "v_m_s": 8.0,
-  "id_req_mm": 6.6,
+  "id_req_mm": 7.8,
   "DN": 25,
   "length_m": 20,
   "volume_m3": 0.0045,
   "material": "PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06)",
   "hold_kg": 0.0,
-  "connections": 14,
+  "connections": 15,
   "dn_label": "DN25",
   "wall_mm": 3.38,
   "wall_basis": "lib/dn Sch 40 table; schedule not stated on the node; P1 class sheet carries Sch 80 at order (WORK_ORDER W12)"
@@ -163,6 +163,14 @@
    "size": "DN15",
    "rating": "Class 150",
    "service": "cathode H2 to the H2 pool",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N17",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "ZNBR2 HER hydrogen stripped with the purge air to the H2 header",
    "face": "inlet",
    "height_mm": 160
   }

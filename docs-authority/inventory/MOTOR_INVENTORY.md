@@ -31,10 +31,9 @@ Table 1.1. Motor families
 | MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 82 | 48 | 0.22 |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 55 | 5 | 2.69 |
 | MF-03 | BLDC actuator | ISO 5211 F03 mount | 24 V DC | 24 | 1 | 0.12 |
-| MF-04 | hermetic induction (scroll) | 30 kW hermetic | 480 V 3-ph | 8 | 1 | 153.39 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 7 | 3 | 1.75 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 6 | 6 | 4.68 |
-| MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 19 | 4 | 21.49 |
+| MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 19 | 4 | 19.42 |
 | MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 155 | 40 | 18.60 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 10 | 8 | 3.70 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 5 | 5 | 7.50 |
@@ -47,6 +46,7 @@ Table 1.1. Motor families
 | MF-19 | stepper | NEMA 34 (86 mm) | 48 V DC | 3 | 1 | 1.20 |
 | MF-25 | hermetic induction (scroll) | 1.1 kW hermetic | 480 V 3-ph | 1 | 1 | 0.94 |
 | MF-27 | EC (electronically commutated, permanent-magnet) fan motor | 1.1 kW EC fan, integrated drive | 480 V 3-ph | 16 | 1 | 12.00 |
+| MF-29 | hermetic induction (scroll) | 22 kW hermetic | 480 V 3-ph | 8 | 1 | 136.38 |
 
 ## 2. Inventory by sector, sub-system and unit
 
@@ -119,9 +119,9 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | Sub-system | Unit | Device | Motor type | Size | Shaft kW | Voltage | Duty | Speed control | Qty | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | EXT_HALL_N | EXT_HALL | AHU damper actuator | BLDC actuator | ISO 5211 F03 mount | 0.005 | 24 V DC | S2 | on/off | 24 | assumed 3 per AHU |
-| EXT_HALL_N | EXT_HALL | AHU exhaust fan | induction IE3 | IEC 90L / 1.5 kW | 1.125 | 480 V 3-ph | S1 | variable-frequency drive | 8 | 10800 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed) |
-| EXT_HALL_N | EXT_HALL | AHU supply fan | induction IE3 | IEC 90L / 1.5 kW | 1.125 | 480 V 3-ph | S1 | variable-frequency drive | 8 | 10800 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed) |
-| EXT_HALL_N | EXT_HALL | air-source heat pump compressor | hermetic induction (scroll) | 30 kW hermetic | 19.1732 | 480 V 3-ph | S1 | variable-frequency drive | 8 | peak cooling 494 kW / COP 3.22 / 8 modules (module count assumed, A-M-119) |
+| EXT_HALL_N | EXT_HALL | AHU exhaust fan | induction IE3 | IEC 90L / 1.5 kW | 0.9956 | 480 V 3-ph | S1 | variable-frequency drive | 8 | 9558 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed) |
+| EXT_HALL_N | EXT_HALL | AHU supply fan | induction IE3 | IEC 90L / 1.5 kW | 0.9956 | 480 V 3-ph | S1 | variable-frequency drive | 8 | 9558 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed) |
+| EXT_HALL_N | EXT_HALL | air-source heat pump compressor | hermetic induction (scroll) | 22 kW hermetic | 17.0478 | 480 V 3-ph | S1 | variable-frequency drive | 8 | peak cooling 439 kW / COP 3.22 / 8 modules (module count assumed, A-M-119) |
 | EXT_HALL_N | EXT_HALL | heat pump condenser fan | EC (electronically commutated, permanent-magnet) fan motor | 1.1 kW EC fan, integrated drive | 0.75 | 480 V 3-ph | S1 | electronically commutated (EC) motor | 16 | assumed 2 per module; EC fan type assumed (A-M-119) |
 | flow_battery | ZNBR2 | Motor: electrolyte pump (anolyte, catholyte) per stack strin | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 96 | BOM; shaft assumed (A-M-119) |
 | flow_battery | ZNBR2 | Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm ( | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
@@ -193,7 +193,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | GAS_SCRUB | ACID_POLISH_SCRUB | Motor: transfer pump S66 to CRU (BLDC, 42 mm (NEMA 17 flange | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | GAS_SCRUB | ALK_SCRUBBER | induced-draft fan | induction IE3 | IEC 90S / 1.1 kW | 0.7236 | 480 V 3-ph | S1 | fixed speed | 1 | 37509.9 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | GAS_SCRUB | BAGHOUSE | Motor: transfer pump IA-BAG-01 to LEACH_CSTR_1 (BLDC, 42 mm  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| GAS_SCRUB | H2_DRYER | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 2.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
+| GAS_SCRUB | H2_DRYER | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 2.8 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | scrubber | NOX_SCRUB | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | scrubber | NOX_SCRUB | transfer pump IA-NOX-CO2 to CRYO_ASU | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 22.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | scrubber | NOX_SCRUB | transfer pump IA-NOX-H2O to ROOF_TANK | BLDC | 42 mm (NEMA 17 flange) | 0.0006 | 24 V DC | S3 | BLDC driver | 1 | 221.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
@@ -319,7 +319,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | ROOF | ROOF_TANK | on/off valve IA-PEROX-H2O | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
 | ROOF | ROOF_TANK | on/off valve S21 | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
 | ROOF | ROOF_TANK | transfer pump IA-BED-H2O to GROW_BED | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 43.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| ROOF | ROOF_TANK | transfer pump IA-ELY-H2O to H2O_ELYZ | BLDC | 42 mm (NEMA 17 flange) | 0.0002 | 24 V DC | S3 | BLDC driver | 1 | 84.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| ROOF | ROOF_TANK | transfer pump IA-ELY-H2O to H2O_ELYZ | BLDC | 42 mm (NEMA 17 flange) | 0.0002 | 24 V DC | S3 | BLDC driver | 1 | 77.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | ROOF | ROOF_TANK | transfer pump IA-FLUE-QUENCH to FLUE_KO | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 24.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | ROOF | ROOF_TANK | transfer pump IA-NOX-HAB to HABITATION | BLDC | 42 mm (NEMA 17 flange) | 0.0006 | 24 V DC | S3 | BLDC driver | 1 | 207.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | ROOF | ROOF_TANK | transfer pump IA-PEROX-H2O to WS_PEROX | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 2.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
@@ -333,5 +333,5 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | intake | GW_INTAKE | Process nozzle DN15 | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | scrubber | LB_DEGAS | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | scrubber | LB_DEGAS_SCRUB | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
-| treat | GREY_TREAT | transfer pump IA-GREY-01 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0007 | 24 V DC | S3 | BLDC driver | 1 | 258.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| treat | GREY_TREAT | transfer pump IA-GREY-01 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0007 | 24 V DC | S3 | BLDC driver | 1 | 258.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | treat | GREY_TREAT | transfer pump S29 to VCD_TRAIN | BLDC | 42 mm (NEMA 17 flange) | 0.0003 | 24 V DC | S3 | BLDC driver | 1 | 104.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |

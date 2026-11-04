@@ -233,7 +233,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 207.796527,
+          "bypass_kg_d": 200.870966,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -424,7 +424,7 @@
       "params": {
         "presence": "present",
         "store_kg": 17,
-        "store_basis": "need: 7.1 kg dark-hours buffer (9.49 kg/d x (1 - 6/24)) + 9.6 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
+        "store_basis": "need: 6.5 kg dark-hours buffer (8.71 kg/d x (1 - 6/24)) + 9.6 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
         "store_water_volume_m3": 1.14,
         "design": {
           "P_design_MPa": 22.0,
@@ -562,10 +562,10 @@
       "notes": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)",
       "enabled": true,
       "continuous_kw": {
-        "value": 21.7473,
+        "value": 19.9712,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-12 TF: 9.49 kg/d H2 x 55.0 kWh/kg / 24 h; rated 87.0 kW on a 6.0 h PV window."
+        "note": "X-PAR-12 TF: 8.71 kg/d H2 x 55.0 kWh/kg / 24 h; rated 79.9 kW on a 6.0 h PV window."
       },
       "modules": [],
       "params": {
@@ -589,10 +589,10 @@
           "adequate": true
         },
         "stack_heat_kw": {
-          "value": 6.1683,
+          "value": 5.6646,
           "unit": "kW",
           "status": "study",
-          "note": "X-PAR-12 TF: 6.17 kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b."
+          "note": "X-PAR-12 TF: 5.66 kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b."
         },
         "sec3_material": {
           "mat": "PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family",
@@ -1277,55 +1277,55 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.0205,
+        "value": 0.0226,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-39 (A-M-168): TSA regeneration 1.0 W / 0.7 + half the insulated loss."
+        "note": "X-MFG-39 (A-M-168): TSA regeneration 1.4 W / 0.7 + half the insulated loss."
       },
       "modules": [],
       "params": {
         "presence": "present",
         "design": {
-          "H2_kg_d": 1.975408,
-          "Nm3_h": 0.9151123287037036,
-          "O2_mol_d": 0.9798650793650794,
-          "water_kg_d": 0.03530453880952381,
-          "HCl_kg_d": 3.572686065873015e-05,
-          "guard_kg": 0.03215417459285713,
-          "sieve_kg": 0.3530453880952381,
+          "H2_kg_d": 2.750425,
+          "Nm3_h": 1.2741407479745368,
+          "O2_mol_d": 1.3642981150793647,
+          "water_kg_d": 0.04915566108630951,
+          "HCl_kg_d": 4.9743673573908714e-05,
+          "guard_kg": 0.04476930621651784,
+          "sieve_kg": 0.491556610863095,
           "beds": {
             "deoxo": {
-              "V_L": 0.18302246574074074,
-              "tube": "DN25 Sch 40 316L",
-              "L_mm": 328,
+              "V_L": 0.25482814959490735,
+              "tube": "DN50 Sch 40 316L",
+              "L_mm": 300,
               "count": 2
             },
             "guard": {
-              "V_L": 0.05,
+              "V_L": 0.0559616327706473,
               "tube": "DN25 Sch 40 316L",
               "L_mm": 300,
               "count": 2
             },
             "TSA": {
-              "V_L": 0.5043505544217688,
+              "V_L": 0.7022237298044215,
               "tube": "DN50 Sch 40 316L",
-              "L_mm": 300,
+              "L_mm": 325,
               "count": 2
             }
           },
-          "regen_W": 1.031007210286295,
-          "loss_W": 37.98279150873541,
+          "regen_W": 1.433364741820396,
+          "loss_W": 41.14802413446337,
           "insulation_mm": 38,
-          "kW": 0.0205,
+          "kW": 0.0226,
           "D_mm": 60,
-          "H_mm": 628,
+          "H_mm": 625,
           "T_C": 250.0,
           "wall_mm": 3.91
         },
         "size_mm": [
           600,
           400,
-          1028
+          1025
         ]
       }
     },
@@ -1352,8 +1352,8 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2720.0,
         "head_m_m1": 36.25,
-        "vs_znbr2_kwh": 3855.0,
-        "fraction_of_znbr2_study": 0.056,
+        "vs_znbr2_kwh": 3399.0,
+        "fraction_of_znbr2_study": 0.063,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
@@ -1773,7 +1773,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 415.1157,
+        "value": 387.3905,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -1781,28 +1781,28 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 7636,
+        "count": 6732,
         "presence": "present",
-        "nameplate_kw": 3818,
-        "area_m2": 33536,
-        "balance_kWp": 1909,
+        "nameplate_kw": 3366,
+        "area_m2": 29740,
+        "balance_kWp": 1683,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            264000,
+            234000,
             138000
           ],
           "bays": [
-            44,
+            39,
             23
           ],
-          "footprint_m2": 36432.0,
-          "extension_m2": 36000.0,
-          "roof_capacity_kWp": 3823.1,
+          "footprint_m2": 32292.0,
+          "extension_m2": 31860.0,
+          "roof_capacity_kWp": 3390.3,
           "perimeter_pathway_mm": 1829,
-          "arrays": 18,
-          "extension_load_kW": 124.29,
+          "arrays": 15,
+          "extension_load_kW": 110.34,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -1828,7 +1828,7 @@
       "notes": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); AQS-ELEC-004. Nine-channel EW rectifier, 16500 A, 99 kW DC nameplate at 6 V (Rev AC node RECTIFIER; RECT_EW remapped R10b).",
       "enabled": true,
       "continuous_kw": {
-        "value": 12.0,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
         "note": "A-M-231 (AQS-NOTE-PV-REBASE Rev A section 8): 12 kW 48 V rail and auxiliary basis (AQS-PWR-001). The nine-channel EW DC load is counted once behind the AQS-ELEC-004 bounding AC row in _power_sizing (params.rect_ac_input_kW 38.66 kW; A-M-255); S17 equals this node value."
@@ -1840,7 +1840,7 @@
         "nameplate_kw_dc": 99.0,
         "rect_ac_input_kW": 38.663,
         "rect_loss_kW": 7.733,
-        "rect_basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73)/R10b: nine-channel EW rectifier 16500 A, 99 kW DC nameplate at 6 V; bounding AC input 38.66 kW (AQS-ELEC-004). Node continuous_kw stays the 12 kW A-M-231 basis and S17 equals it: the EW DC load is counted once, behind the AQS-ELEC-004 bounding AC row in _power_sizing (A-M-255).",
+        "rect_basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73)/R10b: nine-channel EW rectifier 16500 A, 99 kW DC nameplate at 6 V; bounding AC input 38.66 kW (AQS-ELEC-004), counted once in _power_sizing (A-M-255). F-24: the 12 kW node load stamp (A-M-231 '48 V rail' basis) is removed as a double count - its cited basis ('DC to cells and induction', POWER_DUTIES.md) is booked in the AQS-ELEC-004 row, the induction units carry their own stamps, and no 48 V rail load table exists (CRITICAL_PATH says 20 kW; the per-motor 48 V driver loads live in the unit stamps). S17 is retired.",
         "size_mm": [
           1000,
           600,
@@ -1862,24 +1862,24 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 3240.0,
+        "kW": 2820.0,
         "presence": "present",
-        "count": 54,
+        "count": 47,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2964.7,
-          "export_kWh_d_clear": 8260,
+          "export_peak_kW": 2577.2,
+          "export_kWh_d_clear": 7283,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
         "sections": {
           "count": 5,
           "inverters": [
-            11,
-            11,
-            11,
-            11,
-            10
+            10,
+            10,
+            9,
+            9,
+            9
           ],
           "breaker_A": [
             1000,
@@ -1901,9 +1901,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 229.1,
-          "section_rating_A": 400,
-          "basis_A": 306.2,
+          "bus_demand_kW": 201.4,
+          "section_rating_A": 350,
+          "basis_A": 269.2,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -2060,25 +2060,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 275.3422,
+        "value": 242.761,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 275.3 kW, charge 1251.5 kW, 3855 kWh over 54 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 242.8 kW, charge 1103.4 kW, 3399 kWh over 47 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 1252,
-        "kWh": 3855,
+        "kW": 1104,
+        "kWh": 3399,
         "presence": "present",
-        "charge_kW": 1252,
-        "discharge_kW": 276,
+        "charge_kW": 1104,
+        "discharge_kW": 243,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 54 hybrid inverters, 71.4 kWh and 23.2 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 47 hybrid inverters, 72.3 kWh and 23.5 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 9.773,
-          "purge_m3_h": 40.72,
+          "H2_m3_d": 8.617,
+          "purge_m3_h": 35.9,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2521.4
+          "electrode_area_m2": 2223.1
         },
         "size_mm": [
           1000,
@@ -2087,15 +2087,15 @@
         ],
         "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit).",
         "cycling_thermal": {
-          "kwh_d_in": 5506.8,
-          "kwh_d_out": 3854.8,
+          "kwh_d_in": 4855.2,
+          "kwh_d_out": 3398.7,
           "round_trip": 0.7,
-          "loss_kwh_d": 1652.1,
-          "avg_kW": 68.84,
+          "loss_kwh_d": 1456.6,
+          "avg_kW": 60.69,
           "window_h": 10.0,
-          "window_kW": 165.21,
-          "charge_kW_window": 550.68,
-          "basis": "store 3855 kWh/d (AQS-ELEC-007 P x night) at round trip 0.7 (A-M-062/179): the round-trip difference is electrolyte heat; window_kW is the bounding heat rate with all the daily loss in the 10 h charge window; charge_kW_window 550.7 kW is the charge electrical rate over the same window; rejected to the Q4 bus on IA-ZNBR-HEAT and the terminal (A-M-455)"
+          "window_kW": 145.66,
+          "charge_kW_window": 485.52,
+          "basis": "store 3399 kWh/d (AQS-ELEC-007 P x night) at round trip 0.7 (A-M-062/179): the round-trip difference is electrolyte heat; window_kW is the bounding heat rate with all the daily loss in the 10 h charge window; charge_kW_window 485.5 kW is the charge electrical rate over the same window; rejected to the Q4 bus on IA-ZNBR-HEAT and the terminal (A-M-455)"
         }
       }
     },
@@ -4479,27 +4479,27 @@
       "modules": [],
       "params": {
         "hvac": {
-          "light_kW": 31.68,
-          "vent_kW": 53.463,
-          "envelope_kW": 39.149,
-          "total_kW": 124.292,
-          "vent_L_s": 10800.0,
-          "Qh_kW": 36.629,
-          "Qc_kW": 219.0,
-          "slab_kW": 1.935,
-          "gains_kW": 45.18,
+          "light_kW": 28.037,
+          "vent_kW": 47.315,
+          "envelope_kW": 34.99,
+          "total_kW": 110.341,
+          "vent_L_s": 9558.0,
+          "Qh_kW": 32.693,
+          "Qc_kW": 194.649,
+          "slab_kW": 1.791,
+          "gains_kW": 39.984,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 554.401,
-          "peak_c_kW": 493.902
+          "peak_h_kW": 494.024,
+          "peak_c_kW": 439.152
         },
-        "footprint_m2": 36000.0,
+        "footprint_m2": 31860.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 124.292 kW. Sheet docs-authority/duties/EXT_HALL.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 110.341 kW. Sheet docs-authority/duties/EXT_HALL.md.",
         "size_mm": [
           186000,
           174000,
@@ -4508,10 +4508,10 @@
         "size_note": "building massing envelope (bounding box of the issued L-shape): EXT_HALL_E 162 x 174 m east extension + EXT_HALL_N 24 x 156 m north extension, 6 m eave, portal frames on the 6 m grid (31 x 29 bays, X-PAR-07, A-M-104; placement_seed blocks EXT_HALL_E/N are the authority). Conditioned footprint per params.footprint_m2; the fitout programme stays the duty-sheet open item."
       },
       "continuous_kw": {
-        "value": 124.2922,
+        "value": 110.341,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 36000 m2; lighting 31.68 kW (IECC 2021 C405, 10 % lit), ventilation 53.46 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 39.15 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 36.6 kW and cooling 219.0 kW thermal average after internal gains 45.2 kW and slab edge 1.93 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 31860 m2; lighting 28.04 kW (IECC 2021 C405, 10 % lit), ventilation 47.31 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 34.99 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 32.7 kW and cooling 194.6 kW thermal average after internal gains 40.0 kW and slab edge 1.79 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       },
       "class": "building"
     },
@@ -4933,16 +4933,16 @@
       "layers": [
         "elec"
       ],
-      "presence": "present",
+      "presence": "retired",
       "carries": "DC/480V",
       "header": "tray",
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": "Closed",
       "rate": {
-        "value": 12.0,
+        "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-231): RECTIFIER 48 V rails at the node basis (AQS-PWR-001); the 50.0 ELEC_NEED_KW_BASE seed was circular and is removed."
+        "note": "X-PAR F-24 (A-M-231 restated): retired - the 12 kW RECTIFIER supply double-counted the EW rectifier AC feed now booked behind the AQS-ELEC-004 bounding row (A-M-255); the '48 V rail' re-branding has no load table. Live path: the EW rectifier AC input is counted in _power_sizing (params.rect_ac_input_kW)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -5098,7 +5098,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 415.1157,
+        "value": 387.3905,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -5333,7 +5333,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.0205,
+        "value": 0.0226,
         "unit": "kW",
         "status": "study",
         "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
@@ -5880,7 +5880,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 21.7473,
+        "value": 19.9712,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
@@ -6300,7 +6300,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 124.2922,
+        "value": 110.341,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."

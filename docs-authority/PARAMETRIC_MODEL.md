@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3818.000 | 3818.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3366.000 | 3366.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -1912,7 +1912,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-228 | -2.71 kg/d at the HDR_O2 header (0.684 supply vs 3.393 draws kg/d O2 | o2_close.close_o2 src >= draw (the 'O2 short' assert passes) and two independent O2 sources exist (P19); CRYO_O2 residual >= -1e-4 |
 | A-M-229 | GROW_BED crew duty: 29.12 m2 tomato-proxy bed (area = 4.2 kg m2; kg/d; kW | python3 -c "import json,sys; sys.path.insert(0,'.'); from flow_graph.param import balance as B; g=json.load(open(B.GP)); B.physics(g); R=B.reconcile(g)" runs to completion with no assert; GROW_BED residual 0.000 kg/d; TERRACE_IRRIG absent; python3 flow_graph/check_authority_contract.py exit 0 |
 | A-M-230 | H2O_ELYZ restored as the plant O2 source: BH rates on the gr kg/d; kW | python3 -c "import json,sys; sys.path.insert(0,'.'); from flow_graph.param import balance as B; g=json.load(open(B.GP)); B.physics(g); R=B.reconcile(g)" completes with no assert and no negative rates; CRYO_O2.params.o2_gap.system_short_kg_d == 0.0 and system_surplus_kg_d > 0 with IA-O2-PROD == IA-O2-SHIP == system_surplus; CRYO_O2, HDR_O2, H2O_ELYZ, ROOF_TANK unit residuals 0.000; two independent O2 sources present (P19: IA-ELY-O2 + S87); python3 flow_graph/check_authority_contract.py exit 0 |
-| A-M-231 | 156.16 kW process base / 250.0 kW converged (note basis). Li kW | python3 docs-authority/_power_sizing.py reports base demand 179.46 kW (156.16 class derivation, not the 309 kW stale-list figure); roof_close converges; schema keys unchanged for ess_tf/_one_line/solver/write_graph consumers |
+| A-M-231 | Bounding electrical demand = max(node continuous_kw, SOL_ARK kW | python3 docs-authority/_power_sizing.py reports the demand without the RECTIFIER node stamp (graph value 0.0 kW, F-24 note); S17 presence retired; the EW AC row is counted once (params.rect_ac_input_kW); roof_close converges |
 | A-M-232 | 45.0 kW flat (IND_MELT 25 / VAC_IND 15 / RF_HEAT 5), 24 h kW | Foundry sensitivity case in the derivation note §7; replaced when FOUNDRY_SIZING duty-cycle data lands on the graph |
 | A-M-233 | 312.5 kW kW | grep IA-PV-01 rate 312.5 and PV_ARRAY.continuous_kw 312.5 in plant_flow_graph.json; note cites A-M-233 |
 | A-M-234 | need 250.0 kW / target 625.0 kW kW | mvs.electrical.need_kw.value == 250.0 and target_kw.value == 625.0 with notes citing A-M-234 and AQS-NOTE-PV-REBASE |
@@ -1927,7 +1927,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-243 | 3.0 kW_th sustained injection ceiling; 0.7 kW normal recharg kW_th | GEO_GHEX.params.Q_GHEX_avail_kW_th == 3.0 and survey_status design_survey_locked unchanged; no Q4->GEO_GHEX branch added by this lane |
 | A-M-244 | rated from the calculated bounding terminal duty: rated_kW = kW | DRY_COOLER.params rated_kW == ceil(1.25 x (terminal book - IA-ZNBR-HEAT average + cycling_thermal.window_kW)) and fan_kW == 0.05 x rated_kW, both written by write_graph heat(); IA-DC-REJ equals every thermal kW edge into DRY_COOLER; the specialty_sizing fan stamp and airside read the rating |
 | A-M-245 | 1.7 kW average / 8-11 kW batch at 40-60 °C kW_th | IND_HEAT_TO_HX + VAC_HEAT_TO_HX rates 1.063 + 0.638 kW, layers [thermal], params duty_batch_kW 8-11; edges land on MET_HX_Q4 |
-| A-M-246 | 0.5-1.0 kW at <=60 °C (bounding 1.0 kW encoded) kW_th | IA-Q3A-TRIM/IA-Q3B-TRIM absent from the graph; IA-RECT-Q4 1.0 kW to Q4_BUS; IA-TRIM-HX5/HX6 from RECTIFIER to the process units with elec+thermal layers |
+| A-M-246 | EW rectifier reject = calculated conversion loss at the boun kW_th | IA-RECT-Q4 == RECTIFIER.params.rect_loss_kW (write_graph process stamp); the Q4_BUS thermal ledger closes with it counted (X-THM-01, 0.01 kW) |
 | A-M-247 | 0.5-1.0 kW at 45-60 °C (grease-kettle wax-hold stage) kW_th | No grease Q4 branch exists in the graph until the temperature-class check closes (grep Q4_BUS grease yields nothing this lane) |
 | A-M-249 | 0.2-0.4 kW_e net kW_e | GEO_ORC presence stays placeholder, continuous_kw value None/0-class, params.study_close cites AQS-HEAT-STUDY-002; HL-Q4-REJ no longer terminates on GEO_ORC |
 | A-M-250 | S12 crew grey+wash to GREY_TREAT = habitation in-sum minus f kg/d | python3 -m flow_graph.param.balance (no --write): HABITATION and GREY_TREAT residuals < 0.5 kg/d post-physics |

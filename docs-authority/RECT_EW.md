@@ -1,8 +1,8 @@
 # Electrowinning rectifier sizing (RECT-EW)
 
 Document number: AQS-ELEC-004
-Revision: C
-Date: 2026-10-25
+Revision: D
+Date: 2026-11-04
 Authority: graph Rev BH; AQS-PLAN-007 task X-ELS-04. Calculation script `docs-authority/_rect_ew_sizing.py`. Assumed study values are recorded in the assumptions register AQS-REG-002 (A-M-041 to A-M-044). The cell voltage, bus drop and efficiency are read from `flow_graph/param/drivers.json`, and the channel function is `flow_graph/param/sizing/power.py` (task X-PAR-03). Study; this page is not stamped by a Professional Engineer (PE).
 
 | Rev | Description | Date |
@@ -10,6 +10,7 @@ Authority: graph Rev BH; AQS-PLAN-007 task X-ELS-04. Calculation script `docs-au
 | A | First issue. One DC channel per cell at the bounding current. | 2026-10-15 |
 | B | Acid-loop decision of the X-PAR tasks: cell voltage 2.12 V and current efficiency (CE) 0.85, on the chloride electrowinning basis of the US Bureau of Mines (USBM); converted to the parametric library. | 2026-10-15 |
 | C | Purpose and scope added; text rewritten to the documentation style guide (AQS-DOC-002). Section 4 records how the flow graph now represents the rectifier. No rating changed. | 2026-10-25 |
+| D | Section 4: the 12 kW graph supply stamp was removed as a double count and the AC input is reconciled; the reject edge re-books at the calculated conversion loss. No rating in Table 2.1 changed. | 2026-11-04 |
 
 ## Purpose and scope
 
@@ -52,4 +53,4 @@ Table 2.1. Rectifier channels
 
 ## 4. Representation in the flow graph at this revision
 
-The graph no longer has the node RECT_EW or the streams S17-EW and IA-RECT-EW-LOSS named in finding 1. The rectifier is the node RECTIFIER. Its supply is stream S17 from SOL_ARK_60K at 12.0 kW (48 V rails at the node basis, assumption A-M-231), and its heat loss is stream IA-RECT-Q4 at 1.0 kW to Q4_BUS. The channel streams IA-DC-EW_1 to IA-DC-EW_9 remain and carry the DC values of Table 2.1 (for example 7.538 kW to EW_9). The 38.66 kW AC input of Table 2.1 and the 12.0 kW supply in the graph have not been reconciled.
+The graph no longer has the node RECT_EW or the streams S17-EW and IA-RECT-EW-LOSS named in finding 1. The rectifier is the node RECTIFIER. The former 12 kW supply stamp (S17 from SOL_ARK_60K, "48 V rails at the node basis") was removed as a double count: its cited basis, "DC to cells and induction" in POWER_DUTIES.md, is booked once as the AQS-ELEC-004 bounding AC row (`params.rect_ac_input_kW`, A-M-255), which reconciles the 38.66 kW AC input of Table 2.1 with the graph. The conversion loss is stream IA-RECT-Q4 at the calculated rectifier loss (`params.rect_loss_kW`, 7.733 kW at the bounding duty) to Q4_BUS. The channel streams IA-DC-EW_1 to IA-DC-EW_9 remain and carry the DC values of Table 2.1 (for example 7.538 kW to EW_9).

@@ -42,6 +42,7 @@ Table 3.1. Same-level pairs
 | S1 | AFTERBURNER | PROD_MEOH | L-1 | 15842 | distance | pass |
 | S1 | BACKUP_GEN | MEOH_TANK | L0 | 5300 | 1 h room around BACKUP_GEN | pass |
 | S1 | BACKUP_GEN | POLY_OLEFIN | L0 | 15827 | distance | pass |
+| S1 | BACKUP_GEN | ZNBR2 | L0 | 1300 | 1 h room around BACKUP_GEN | pass |
 | S1 | CRYO_ASU | CRYO_H2 | L-1 | 12027 | distance | pass |
 | S1 | CRYO_ASU | EW_3 | L-1 | 15743 | distance | pass |
 | S1 | CRYO_ASU | EW_4 | L-1 | 13230 | distance | pass |
@@ -85,6 +86,7 @@ Table 3.1. Same-level pairs
 | S1 | H2O_ELYZ | PROD_MEOH | L-1 | 400 | 1 h room around H2O_ELYZ | pass |
 | S1 | MEOH_FC | MEOH_TANK | L0 | 1166 | 1 h room around MEOH_FC | pass |
 | S1 | MEOH_FC | POLY_OLEFIN | L0 | 23667 | distance | pass |
+| S1 | MEOH_FC | ZNBR2 | L0 | 9000 | distance | pass |
 | S1 | PROD_O2 | CRYO_H2 | L-1 | 15621 | distance | pass |
 | S1 | PROD_O2 | EW_3 | L-1 | 16563 | distance | pass |
 | S1 | PROD_O2 | EW_4 | L-1 | 13393 | distance | pass |
@@ -115,8 +117,10 @@ Table 3.1. Same-level pairs
 | S2 | AFTERBURNER | PROD_MEOH | L-1 | 15842 | distance | pass |
 | S2 | AFTERBURNER_FLUE | MEOH_TANK | L0 | 5391 | 1 h room around AFTERBURNER_FLUE | pass |
 | S2 | AFTERBURNER_FLUE | POLY_OLEFIN | L0 | 27900 | distance | pass |
+| S2 | AFTERBURNER_FLUE | ZNBR2 | L0 | 13958 | distance | pass |
 | S2 | BACKUP_GEN | MEOH_TANK | L0 | 5300 | 1 h room around BACKUP_GEN | pass |
 | S2 | BACKUP_GEN | POLY_OLEFIN | L0 | 15827 | distance | pass |
+| S2 | BACKUP_GEN | ZNBR2 | L0 | 1300 | 1 h room around BACKUP_GEN | pass |
 | S2 | GLASS_BURNOUT | CRYO_H2 | L-1 | 20808 | distance | pass |
 | S2 | GLASS_BURNOUT | EW_3 | L-1 | 7694 | distance | pass |
 | S2 | GLASS_BURNOUT | EW_4 | L-1 | 6453 | 1 h room around GLASS_BURNOUT | pass |
@@ -133,6 +137,7 @@ Table 3.1. Same-level pairs
 | S2 | GLASS_BURNOUT | PROD_MEOH | L-1 | 16422 | distance | pass |
 | S2 | MET_MELT | MEOH_TANK | L0 | 16048 | distance | pass |
 | S2 | MET_MELT | POLY_OLEFIN | L0 | 25158 | distance | pass |
+| S2 | MET_MELT | ZNBR2 | L0 | 19064 | distance | pass |
 | S2 | OIL_PYRO | CRYO_H2 | L-1 | 20565 | distance | pass |
 | S2 | OIL_PYRO | EW_3 | L-1 | 9608 | distance | pass |
 | S2 | OIL_PYRO | EW_4 | L-1 | 6180 | 1 h room around OIL_PYRO | pass |
@@ -149,7 +154,8 @@ Table 3.1. Same-level pairs
 | S2 | OIL_PYRO | PROD_MEOH | L-1 | 11582 | distance | pass |
 | S2 | SHELL_BURNOUT | MEOH_TANK | L0 | 15693 | distance | pass |
 | S2 | SHELL_BURNOUT | POLY_OLEFIN | L0 | 26169 | distance | pass |
+| S2 | SHELL_BURNOUT | ZNBR2 | L0 | 13523 | distance | pass |
 
-Cross-level pairs (116) pass on the floor slab.
+Cross-level pairs (125) pass on the floor slab.
 
 Layout change applied: 1 h rated rooms with their own exhaust around 10 units (AFTERBURNER, AFTERBURNER_FLUE, BACKUP_GEN, CRYO_ASU, CRYO_O2, GLASS_BURNOUT, H2O_ELYZ, MEOH_FC, OIL_PYRO, PROD_O2), written to `flow_graph/fire_rooms.json` (room = unit plan + 1 m each side) for the CAD fire-barrier model. Any remaining FAIL is a layout action: move one unit to 7,620 mm, add a rated 1 h partition between them, or (S2) enclose the ignition source in a 1 h room with its own ventilation. Unresolved pairs are checked again once the block-placed units get individual positions.

@@ -3998,11 +3998,11 @@
  },
  {
   "id": "A-M-231",
-  "value": "156.16 kW process base / 250.0 kW converged (note basis). Live graph 2026-10-18: 179.46 / 285.78 kW",
+  "value": "Bounding electrical demand = max(node continuous_kw, SOL_ARK-fed elec edge) per unit, plus the EW rectifier bounding AC row once (AQS-ELEC-004); no 48 V rail load stamp (F-24: the 12 kW RECTIFIER basis removed as a double count)",
   "units": "kW",
   "where": "flow_graph/plant_flow_graph.json: mvs.electrical.need_kw, PV_ARRAY, IA-PV-01, S17, mvs.notes; docs-authority/_power_sizing.py (demand derivation)",
-  "basis": "notes/pv_sizing_derivation_2026-10-18.md §2/§4: Rev AC bounding electrical demand = max(node continuous_kw, elec edge) per unit; RECTIFIER at the node 12 kW basis (the S17 50.0 ELEC_NEED_KW_BASE seed rejected as circular — removed); EW_1..EW_9 DC behind the RECT-EW bounding AC row 38.66 kW (AQS-ELEC-004). Encoded per §8 at the note basis (250.0 kW converged). Sensitivity ±20 % → 2792/4144 kWp at the note basis.",
-  "sensitivity": "Live-scope deltas vs the note basis: +24.59 H2O_ELYZ (D-O2 restore, A-M-230), +1.66 CRYO_ASU at duty (A-M-238), −2.95 GROW_BED crew-duty LED re-base (A-M-229) → 179.46 kW base / 285.78 kW converged when derived again from the live graph",
+  "basis": "notes/pv_sizing_derivation_2026-10-18.md §2/§4: Rev AC bounding electrical demand = max(node continuous_kw, elec edge) per unit; RECTIFIER at the node 12 kW basis (the S17 50.0 ELEC_NEED_KW_BASE seed rejected as circular — removed); EW_1..EW_9 DC behind the RECT-EW bounding AC row 38.66 kW (AQS-ELEC-004). Encoded per §8 at the note basis (250.0 kW converged). Sensitivity ±20 % → 2792/4144 kWp at the note basis. Physics-audit F-24 (2026-11-04): the 12 kW RECTIFIER node/S17 book (this assumption recorded it as the AQS-PWR-001 48 V rail basis) is removed. Its cited basis (\"DC to cells and induction\", notes/POWER_DUTIES.md) is booked once as the AQS-ELEC-004 bounding AC row (A-M-255), the induction units carry their own node stamps, and no 48 V rail load table exists (internal CRITICAL_PATH says 20 kW; the per-motor 48 V driver loads live in the unit stamps). The rectifier auxiliaries sit inside the 20 percent loss at eff 0.80. S17 is retired; the reject re-books on IA-RECT-Q4 (A-M-246 restated)",
+  "sensitivity": "Live-scope deltas vs the note basis: +24.59 H2O_ELYZ (D-O2 restore, A-M-230), +1.66 CRYO_ASU at duty (A-M-238), −2.95 GROW_BED crew-duty LED re-base (A-M-229) → 179.46 kW base / 285.78 kW converged when derived again from the live graph; F-24 removes 12.0 kW of demand and retires S17 - the demand and the PV/storage chain regenerate through write_graph power()",
   "replaced_by": "each unit task 02 calculated load; write_graph power() re-derivation on the live scope (needs the RECT_EW node + S17-EW restored first, note §10.4)",
   "task": "D-PV encode lane 2026-10-18",
   "files": [
@@ -4011,7 +4011,7 @@
    "docs-authority/_power_sizing.py"
   ],
   "needs_verification": true,
-  "verification_test": "python3 docs-authority/_power_sizing.py reports base demand 179.46 kW (156.16 class derivation, not the 309 kW stale-list figure); roof_close converges; schema keys unchanged for ess_tf/_one_line/solver/write_graph consumers"
+  "verification_test": "python3 docs-authority/_power_sizing.py reports the demand without the RECTIFIER node stamp (graph value 0.0 kW, F-24 note); S17 presence retired; the EW AC row is counted once (params.rect_ac_input_kW); roof_close converges"
  },
  {
   "id": "A-M-232",
@@ -4245,11 +4245,11 @@
  },
  {
   "id": "A-M-246",
-  "value": "0.5-1.0 kW at <=60 °C (bounding 1.0 kW encoded)",
+  "value": "EW rectifier reject = calculated conversion loss at the bounding duty: AC input 38.66 kW less DC out 30.93 kW at eff 0.80 = 7.73 kW to the Q4 recovery loop (F-24 restated; was the 1.0 kW bound of the removed 12 kW basis)",
   "units": "kW_th",
   "where": "flow_graph/plant_flow_graph.json: IA-RECT-Q4 edge; retired IA-Q3A-TRIM / IA-Q3B-TRIM; IA-TRIM-HX5 (15.882 kW) / IA-TRIM-HX6 (4.158 kW) process trim edges",
-  "basis": "notes/heat_sink_study_2026-10-18.md §7.1/§10.9: 12 kW rectifier at 92-96 % efficiency (POWER_DUTIES.md) rejects 0.5-1.0 kW at <=60 °C — cannot heat an 85-100 °C store (second law; identical to the ruled HX-8 finding, AQS-DUTY-008 §13.1). The 2 x 10.048 kW Q3 edges were the rated trim mis-booked into the stores: trim re-homed to LEACH_CSTR_1 / GLASS_DIGEST as electric process heat ((HX-5 6.353 + HX-6 1.663) x 1.25 per ladder)",
-  "sensitivity": "±0.25 kW; confirm on the rectifier datasheet",
+  "basis": "The heat study (notes/heat_sink_study_2026-10-18.md sections 7.1/10.9) bounded a 12 kW rectifier reject at 0.5-1.0 kW at <= 60 C. Physics-audit F-24 removed the 12 kW basis as a double count (A-M-231 restated), so the reject re-books at the live rectifier loss (params.rect_loss_kW, AQS-ELEC-004 bounding AC row): the conversion loss is physical heat and the Q4 ledger takes it, as with every other electrical reject. The 2 x 10.048 kW Q3 trim re-home to LEACH_CSTR_1 / GLASS_DIGEST is unchanged",
+  "sensitivity": "moves with the rectifier loss (rect_ac_input_kW - DC out); the DRY_COOLER rating follows the terminal book through A-M-244",
   "replaced_by": "rectifier datasheet / first-article heat balance",
   "task": "AQS-HEAT-STUDY-002 implementation lane 2026-10-18",
   "files": [
@@ -4258,7 +4258,7 @@
    "notes/POWER_DUTIES.md"
   ],
   "needs_verification": true,
-  "verification_test": "IA-Q3A-TRIM/IA-Q3B-TRIM absent from the graph; IA-RECT-Q4 1.0 kW to Q4_BUS; IA-TRIM-HX5/HX6 from RECTIFIER to the process units with elec+thermal layers"
+  "verification_test": "IA-RECT-Q4 == RECTIFIER.params.rect_loss_kW (write_graph process stamp); the Q4_BUS thermal ledger closes with it counted (X-THM-01, 0.01 kW)"
  },
  {
   "id": "A-M-247",

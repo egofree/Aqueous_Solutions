@@ -2,10 +2,10 @@
 
 Document number: AQS-PWR-001  
 Former number: AQS-PWR-002 (on this page 2026-10-17 to 2026-10-24 in error; AQS-PWR-002 is GEOTHERMAL_BACKUP.md)  
-Revision: A  
-Date: 2026-10-17  
-Authority: graph Rev AC. Not a PE stamp.  
-Checked against Rev AC.
+Revision: B  
+Date: 2026-11-04  
+Authority: the live graph. Not a PE stamp.  
+The demand and supply figures below are the Rev A study summary, kept for the record; the live book is the graph and `docs-authority/ONE_LINE.md`.
 
 ## Summary
 
@@ -15,7 +15,7 @@ Checked against Rev AC.
 | Fuel cell firm | 4 |
 | ZnBr₂ | 60 class |
 | Backup gen | 2.5 (outage) |
-| Rectifier | 12 |
+| EW rectifier AC input | graph `params.rect_ac_input_kW` (counted once; the former 12 kW rail stamp was removed as a double count) |
 | New process average | ~20 |
 | New process peak if stacked | ~67 |
 
