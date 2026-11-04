@@ -65,8 +65,8 @@ Plant demand 249.4 kW at 480 V, power factor 0.9 assumed: 333 A. EW process bars
 | EVAP_ACID | Blower, single-stage centrifugal, ratio 1.648, 1.34 kW shaft feeder | 14 AWG | 1 | 4.8 | 15 | 16.1 | 460 | 0.30 | 3 | yes |
 | EVAP_ACID | Recirculation pump 311.0 kg/h at 4 m feeder | 14 AWG | 1 | 2.4 | 15 | 16.1 | 460 | 0.15 | 3 | yes |
 | EVAP_ACID_VS | Sump recirculation pump, magnetic drive, about 0.35 m3/h at  feeder | 14 AWG | 1 | 2.4 | 15 | 18.7 | 460 | 0.17 | 3 | yes |
-| EVAP_BASE | Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf feeder | 14 AWG | 1 | 3.4 | 15 | 9.3 | 460 | 0.12 | 3 | yes |
-| EVAP_BASE | Recirculation pump 282.7 kg/h at 4 m feeder | 14 AWG | 1 | 2.4 | 15 | 9.3 | 460 | 0.09 | 3 | yes |
+| EVAP_BASE | MVR blower, single-stage centrifugal, ratio 1.616, 1.189 kW  feeder | 14 AWG | 1 | 3.4 | 15 | 9.3 | 460 | 0.12 | 3 | yes |
+| EVAP_BASE | Recirculation pump, 282.7 kg/h at 4 m (0.008 kW), envelope a feeder | 14 AWG | 1 | 2.4 | 15 | 9.3 | 460 | 0.09 | 3 | yes |
 | EW_1 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 8.8 | 460 | 0.08 | 3 | yes |
 | EW_1 | screw conveyor IA-EW-MET-1 to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 8.8 | 460 | 0.05 | 3 | yes |
 | EW_2 | electrolyte circulation pump feeder | 14 AWG | 1 | 2.4 | 15 | 5.7 | 460 | 0.05 | 3 | yes |

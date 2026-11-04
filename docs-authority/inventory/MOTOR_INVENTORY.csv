@@ -17,8 +17,9 @@ DIGESTER,DIGESTER_EXT,CRU,transfer pump IA-CRU-01 to LEACH_CSTR_1,BLDC,42 mm (NE
 DIGESTER,DIGESTER_EXT,EVAP_ACID,"Blower, single-stage centrifugal, ratio 1.648, 1.34 kW shaft",induction IE3,IEC 100L / 2.2 kW,1.34,480 V 3-ph,S1,fixed speed,1,BOM (sized)
 DIGESTER,DIGESTER_EXT,EVAP_ACID,Recirculation pump 311.0 kg/h at 4 m,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 DIGESTER,DIGESTER_EXT,EVAP_ACID_VS,"Sump recirculation pump, magnetic drive, about 0.35 m3/h at ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-DIGESTER,DIGESTER_EXT,EVAP_BASE,"Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf",induction IE3,IEC 90L / 1.5 kW,1.189,480 V 3-ph,S1,fixed speed,1,BOM (sized)
-DIGESTER,DIGESTER_EXT,EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
+DIGESTER,DIGESTER_EXT,EVAP_BASE,"MVR blower, single-stage centrifugal, ratio 1.616, 1.189 kW ",induction IE3,IEC 90L / 1.5 kW,1.189,480 V 3-ph,S1,fixed speed,1,BOM (sized)
+DIGESTER,DIGESTER_EXT,EVAP_BASE,"Plinth 1250 x 800 x 15 (body, blower and interchanger frame)",BLDC,57 mm (NEMA 23 flange),0.02,24 V DC,S1,BLDC driver,1,BOM; shaft assumed (A-M-119)
+DIGESTER,DIGESTER_EXT,EVAP_BASE,"Recirculation pump, 282.7 kg/h at 4 m (0.008 kW), envelope a",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 DIGESTER,DIGESTER_EXT,FLOAT_SINK,transfer pump IA-PLAST-01 to OIL_DRYER,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"33.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 DIGESTER,DIGESTER_EXT,FLOAT_SINK,transfer pump IA-WET-FLOAT-01 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.001,24 V DC,S3,BLDC driver,1,"343.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 DIGESTER,DIGESTER_EXT,F_RECOVER,Body / envelope 800 x 600 x 1200 mm,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)

@@ -53,7 +53,7 @@ Table 4.1. I/O and modules by PLC
 | Sector PLC | AI | AO | DI | DO | Fieldbus drives | Modules AI/AO/DI/DO | CPU | 24 V load W |
 |---|---|---|---|---|---|---|---|---|
 | PLC-CRYO | 34 | 1 | 15 | 4 | 1 | 3/1/2/1 | redundant pair | 38 |
-| PLC-DIGESTER | 132 | 3 | 123 | 29 | 19 | 10/1/10/3 | single | 60 |
+| PLC-DIGESTER | 132 | 3 | 125 | 29 | 20 | 10/1/10/3 | single | 60 |
 | PLC-ELEC | 29 | 17 | 445 | 108 | 80 | 3/2/34/9 | redundant pair | 120 |
 | PLC-FAB | 63 | 3 | 70 | 11 | 15 | 5/1/6/1 | single | 38 |
 | PLC-FARM | 48 | 0 | 3 | 0 | 1 | 4/0/1/0 | redundant pair | 34 |
@@ -70,7 +70,7 @@ Table 4.1. I/O and modules by PLC
 | PLC-POLYMERS | 48 | 0 | 18 | 3 | 3 | 4/0/2/1 | single | 26 |
 | PLC-PUMPED_HYDRO | 2 | 0 | 4 | 2 | 0 | 1/0/1/1 | redundant pair | 30 |
 | PLC-WTR | 70 | 0 | 57 | 11 | 14 | 6/0/5/1 | redundant pair | 48 |
-| Total | 732 | 33 | 922 | 200 | 170 | 173 modules | 9 redundant of 18 | 670 |
+| Total | 732 | 33 | 924 | 200 | 171 | 173 modules | 9 redundant of 18 | 670 |
 
 The control system draws about 0.67 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
 

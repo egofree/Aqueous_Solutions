@@ -71,7 +71,10 @@
   "T_out_C": 50.6,
   "trim_kW": 0.0,
   "total_kW": 1.328,
-  "column": null
+  "column": null,
+  "machine_note": "the X-MFG-30 MVR falling-film idiom in nickel for the NaOH service: DN350 body, 20-tube bundle at the booked 2.33 m2, vapour separator, blower and interchanger (unit-owned builder; the style pass no longer clobbers this build)",
+  "wetted": "nickel 200 wetted (duty section 3); CA not applicable (AQS-STD-001); frame carbon steel",
+  "internals_drawn": "bundle as tube solids at the design pitch; separator mesh pad; blower, interchanger and recirculation pump as purchased envelopes (rule 6)"
  },
  "nozzles": [
   {
@@ -145,5 +148,37 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class evaporator"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   1250.0,
+   800.0,
+   3100.0
+  ],
+  "basis": "L x W x H mm: body plus interchanger and compressor frame, in-house design X-MFG-30 (AQS-DUTY-060)",
+  "body": {
+   "axis_xy_mm": [
+    300.0,
+    400.0
+   ],
+   "dn_mm": 350.0,
+   "z_mm": [
+    15.0,
+    2115.0
+   ]
+  },
+  "separator_z_mm": [
+   2115.0,
+   3100.0
+  ],
+  "bundle_z_mm": [
+   440.0,
+   1940.0
+  ],
+  "plinth_mm": 15.0
+ },
+ "layout": {
+  "frame": "origin at the envelope corner; shell axis at (300, 400); plinth 0..15; body 15..2115 (sump to 415, tubes 440..1940); separator 2115..3025; blower envelope at the +X flank; residual envelope margin is framing (build log)",
+  "nozzle_spread": "side stubs pierce to the shell at the schedule datums (feed in -Y at 160, product/condensate out +Y at 600); drain boss through the plinth; vent riser on the separator top cap flush at the envelope top (the 800 datum is the placeholder); per-tag positions in check.nozzles_drawn"
+ }
 }

@@ -1,5 +1,5 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,106,1690 points / 16
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,106,1692 points / 16
 CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,852,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 174 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
@@ -345,15 +345,18 @@ DIGESTER,DIGESTER_EXT,EVAP_ACID_VS,valve,check valve,DN15,"PP-H swing/ball check
 DIGESTER,DIGESTER_EXT,EVAP_ACID_VS,valve,check valve,DN15,"PVC-lined swing/ball check valve in FRP service, ISO 16137",1,IA-VS-OFF: pump discharge (assumed)
 DIGESTER,DIGESTER_EXT,EVAP_ACID_VS,valve,isolation valve,DN15,"PP-H ball valve, ISO 16135, EPDM seals",2,IA-VS-SPENT: one at each end nozzle (assumed)
 DIGESTER,DIGESTER_EXT,EVAP_ACID_VS,valve,isolation valve,DN15,"PVC-lined ball valve in FRP service, ISO 16135",2,IA-VS-OFF: one at each end nozzle (assumed)
-DIGESTER,DIGESTER_EXT,EVAP_BASE,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf: drive and non-drive end, IEC 60072 frame 90L (assumed size)"
-DIGESTER,DIGESTER_EXT,EVAP_BASE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Recirculation pump 282.7 kg/h at 4 m: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-DIGESTER,DIGESTER_EXT,EVAP_BASE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf: run and fault (assumed)"
-DIGESTER,DIGESTER_EXT,EVAP_BASE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Recirculation pump 282.7 kg/h at 4 m: run and fault (assumed)
-DIGESTER,DIGESTER_EXT,EVAP_BASE,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,Recirculation pump 282.7 kg/h at 4 m (assumed VFD at >= 0.75 kW)
-DIGESTER,DIGESTER_EXT,EVAP_BASE,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,1,"Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf (assumed VFD at >= 0.75 kW)"
+DIGESTER,DIGESTER_EXT,EVAP_BASE,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",2,"MVR blower, single-stage centrifugal, ratio 1.616, 1.189 kW : drive and non-drive end, IEC 60072 frame 90L (assumed size)"
+DIGESTER,DIGESTER_EXT,EVAP_BASE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,"Plinth 1250 x 800 x 15 (body, blower and interchanger frame) (assumed size)"
+DIGESTER,DIGESTER_EXT,EVAP_BASE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Recirculation pump, 282.7 kg/h at 4 m (0.008 kW), envelope a: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
+DIGESTER,DIGESTER_EXT,EVAP_BASE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,"Plinth 1250 x 800 x 15 (body, blower and interchanger frame)"
+DIGESTER,DIGESTER_EXT,EVAP_BASE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"MVR blower, single-stage centrifugal, ratio 1.616, 1.189 kW : run and fault (assumed)"
+DIGESTER,DIGESTER_EXT,EVAP_BASE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Plinth 1250 x 800 x 15 (body, blower and interchanger frame): run and fault (assumed)"
+DIGESTER,DIGESTER_EXT,EVAP_BASE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Recirculation pump, 282.7 kg/h at 4 m (0.008 kW), envelope a: run and fault (assumed)"
+DIGESTER,DIGESTER_EXT,EVAP_BASE,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Recirculation pump, 282.7 kg/h at 4 m (0.008 kW), envelope a (assumed VFD at >= 0.75 kW)"
+DIGESTER,DIGESTER_EXT,EVAP_BASE,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,1,"MVR blower, single-stage centrifugal, ratio 1.616, 1.189 kW  (assumed VFD at >= 0.75 kW)"
 DIGESTER,DIGESTER_EXT,EVAP_BASE,fabricated part,fabricated part set,9 BOM lines,models/mfg/EVAP_BASE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-DIGESTER,DIGESTER_EXT,EVAP_BASE,fastener,Flange gasket,Flange gasket,graphite sheet,2,models/mfg/EVAP_BASE/fasteners.csv
-DIGESTER,DIGESTER_EXT,EVAP_BASE,fastener,M16 stud + 2 nuts (ISO 4014 / ISO 4032),M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 898-1 8.8 zinc,24,models/mfg/EVAP_BASE/fasteners.csv
+DIGESTER,DIGESTER_EXT,EVAP_BASE,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,4,models/mfg/EVAP_BASE/fasteners.csv
+DIGESTER,DIGESTER_EXT,EVAP_BASE,fastener,M16 stud,M16 stud with 2 nuts (ISO 4014 / ISO 4032),ISO 3506 A4-70,24,models/mfg/EVAP_BASE/fasteners.csv
 DIGESTER,DIGESTER_EXT,EVAP_BASE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,IA-BASE-01: 2 per support (assumed)
 DIGESTER,DIGESTER_EXT,EVAP_BASE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-BASE-PPT: 2 per support (assumed)
 DIGESTER,DIGESTER_EXT,EVAP_BASE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-EVAP_BASE-COND: 2 per support (assumed)
@@ -367,7 +370,7 @@ DIGESTER,DIGESTER_EXT,EVAP_BASE,instrument,temperature element,Pt100 class A,"IE
 DIGESTER,DIGESTER_EXT,EVAP_BASE,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-064 SIL 1
 DIGESTER,DIGESTER_EXT,EVAP_BASE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,DIGESTER_EXT,EVAP_BASE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-DIGESTER,DIGESTER_EXT,EVAP_BASE,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Recirculation pump 282.7 kg/h at 4 m: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
+DIGESTER,DIGESTER_EXT,EVAP_BASE,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Recirculation pump, 282.7 kg/h at 4 m (0.008 kW), envelope a: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 DIGESTER,DIGESTER_EXT,EVAP_BASE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,IA-BASE-01: AQS-PIP-005 span count
 DIGESTER,DIGESTER_EXT,EVAP_BASE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",17,IA-BASE-PPT: AQS-PIP-005 span count
 DIGESTER,DIGESTER_EXT,EVAP_BASE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",8,IA-EVAP_BASE-COND: AQS-PIP-005 span count

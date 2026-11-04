@@ -1,10 +1,10 @@
-item,description,qty,material,basis
-1,"Shell DN350 x 2050 mm, wall 6.0 mm",1,nickel 200,AQS-DUTY-060 section 2
-2,Tubes ID 25.0 x OD 29.0 x 1500 mm,20,nickel 200 (PERRY9_MAT),falling film 2.33 m2 at U from PERRY9_EVAP
-3,Tubesheets 25.0 mm,2,nickel 200 (PERRY9_MAT),AQS-DUTY-060
-4,Vapour separator DN350 x 900 mm with mesh pad,1,nickel 200; PTFE or PVDF mesh,AQS-DUTY-060
-5,"Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaft",1,impeller titanium grade 7 or PVDF-lined (acid); nickel (base),X-MFG-32 in-house line; motor IEC 60034 frame
-6,Feed/condensate/product interchanger 0.146 m2,1,nickel 200 (PERRY9_MAT),"3.67 kW, outlets 50.6 C"
-7,Recirculation pump 282.7 kg/h at 4 m,1,PVDF (acid) or nickel (base) wetted,X-MFG-32
-8,"Body relief valve API 526 D orifice, set 100 kPa g",1,PTFE-lined (acid) or nickel trim (base),"fire case ISO 23251, sized in-house"
-9,"Shell relief valve API 526 D orifice, set 350 kPa g",1,stainless trim on steam side,"blocked outlet, sized in-house"
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Falling-film body DN350: shell wall 6 over sump 400 + tube zone 1500 + head 150, bottom plate, tubesheet pair, on the plinth",1,"nickel 200, CA not applicable",231.3,make,duty section 3 (nickel 200 wetted in hot NaOH); AQS-DUTY-060 section 2 geometry
+2,"Falling-film bundle: 20 tubes ID 25 x OD 29 x 1500 mm at the design pitch (1.25 x OD), 2.356 m2",20,nickel 200 tube,45.3,make,booked A_ff 2.33 m2 = latent / (U 1500 x 6 K) on the node 20.95 kW duty (AQS-DUTY-060 section 1); drawn at +0.3 % (A-HX)
+3,Vapour separator DN350 x 975 with 100 mm mesh pad,1,nickel 200; Ni mesh,69.7,make,separator above the body top (node design height_mm chain); mesh pad bought (rule 6)
+4,"MVR blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaft, envelope and interface",1,"nickel wetted class, purchased (X-MFG-32 line)",715.3,buy,purchased per plan rule 6 (X-MFG-32 in-house blower line); drive rating reads the maker sheet at order
+5,"Feed/condensate/product interchanger 0.146 m2, 3.67 kW, outlets 50.6 C, envelope and interface",1,"nickel 200 class, purchased",282.6,buy,purchased per plan rule 6; duty and area from the node design (X-MFG-30)
+6,"Recirculation pump, 282.7 kg/h at 4 m (0.008 kW), envelope and interface",1,"nickel wetted class, purchased",0.0,buy,minimum-wetting-rate book (AQS-DUTY-060 section 1); rides the interchanger envelope bay
+7,"Relief set per node relief_basis: body fire valve (set 100 kPa g) and shell blocked-outlet valve (set 350 kPa g), API 526 D orifice, drawn as envelopes",2,nickel trim,2.9,buy,"sized in-house (AQS-DUTY-060 section 3, API 520 Part I); vent to ACID_POLISH_SCRUB (duty section 6)"
+8,"Nozzle set per docs-authority/nozzles/EVAP_BASE.csv: 8 rows (feed in, product and condensate out, drain boss, vent riser; flake make-up and power terminal as text rows)",8,nickel 200 tube,2.4,make,schedule tags/faces/heights verbatim; the takeoffs pierce to the shell bore (the three +Y outlet rows share z 600 and spread along the shell axis); DN by the line list at the next line-list run (duty section 4)
+9,"Plinth 1250 x 800 x 15 (body, blower and interchanger frame)",1,"carbon steel, painted",117.8,make,dry frame; anchors in fasteners.csv

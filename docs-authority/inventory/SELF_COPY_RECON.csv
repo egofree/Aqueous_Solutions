@@ -401,15 +401,15 @@ EVAP_ACID_VS,Mesh demister pad 100 mm,1,PVC or PP mesh,Partial,OIL cuts -> olefi
 EVAP_ACID_VS,"Sump recirculation pump, magnetic drive, about 0.35 m3/h at 10 m",1,PVDF or PP wetted,Missing,-,no fluorine source on site; end of life Q-011
 EVAP_ACID_VS,"Nozzles DN25: vent in, liquor in, spent out, NaOH in, off-gas out",5,PVC-U socket,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 EVAP_ACID_VS,Sump level switch and pH probe,1,PVDF body,Missing,-,no fluorine source on site; end of life Q-011
-EVAP_BASE,"Shell DN350 x 2050 mm, wall 6.0 mm",1,nickel 200,Missing,Ni EW -> MET_MELT,
-EVAP_BASE,Tubes ID 25.0 x OD 29.0 x 1500 mm,20,nickel 200 (PERRY9_MAT),Missing,Ni EW -> MET_MELT,
-EVAP_BASE,Tubesheets 25.0 mm,2,nickel 200 (PERRY9_MAT),Missing,Ni EW -> MET_MELT,
-EVAP_BASE,Vapour separator DN350 x 900 mm with mesh pad,1,nickel 200; PTFE or PVDF mesh,Missing,-,no fluorine source on site; end of life Q-011
-EVAP_BASE,"Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaft",1,impeller titanium grade 7 or PVDF-lined (acid); nickel (base),Missing,-,no fluorine source on site; end of life Q-011
-EVAP_BASE,Feed/condensate/product interchanger 0.146 m2,1,nickel 200 (PERRY9_MAT),Missing,Ni EW -> MET_MELT,
-EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m,1,PVDF (acid) or nickel (base) wetted,Missing,-,no fluorine source on site; end of life Q-011
-EVAP_BASE,"Body relief valve API 526 D orifice, set 100 kPa g",1,PTFE-lined (acid) or nickel trim (base),Missing,-,no fluorine source on site; end of life Q-011
-EVAP_BASE,"Shell relief valve API 526 D orifice, set 350 kPa g",1,stainless trim on steam side,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+EVAP_BASE,"Falling-film body DN350: shell wall 6 over sump 400 + tube zone 1500 + head 150,",1,"nickel 200, CA not applicable",Missing,Ni EW -> MET_MELT,
+EVAP_BASE,Falling-film bundle: 20 tubes ID 25 x OD 29 x 1500 mm at the design pitch (1.25 ,20,nickel 200 tube,Missing,Ni EW -> MET_MELT,
+EVAP_BASE,Vapour separator DN350 x 975 with 100 mm mesh pad,1,nickel 200; Ni mesh,Missing,Ni EW -> MET_MELT,
+EVAP_BASE,"MVR blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaft, envelope and ",1,"nickel wetted class, purchased (X-MFG-32 line)",Missing,Ni EW -> MET_MELT,
+EVAP_BASE,"Feed/condensate/product interchanger 0.146 m2, 3.67 kW, outlets 50.6 C, envelope",1,"nickel 200 class, purchased",Missing,Ni EW -> MET_MELT,
+EVAP_BASE,"Recirculation pump, 282.7 kg/h at 4 m (0.008 kW), envelope and interface",1,"nickel wetted class, purchased",Missing,Ni EW -> MET_MELT,
+EVAP_BASE,Relief set per node relief_basis: body fire valve (set 100 kPa g) and shell bloc,2,nickel trim,Missing,Ni EW -> MET_MELT,
+EVAP_BASE,"Nozzle set per docs-authority/nozzles/EVAP_BASE.csv: 8 rows (feed in, product an",8,nickel 200 tube,Missing,Ni EW -> MET_MELT,
+EVAP_BASE,"Plinth 1250 x 800 x 15 (body, blower and interchanger frame)",1,"carbon steel, painted",Closed,Fe EW -> MET_MELT -> mill/draw,
 EW_1,"CPVC tank shell, outside 2670 x 720 x 760 mm, wall 10 mm, open top (inside 2650 ",1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 EW_1,CPVC support set: 4 cross beams 60 x 10 x 700 under the bus pads + vent bridge 6,1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 EW_1,Cathode set: 25 sheets 600 x 420 x 3 mm Ti Grade 2 + 25 hanger tabs 120 x 111 x ,25,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
@@ -1880,12 +1880,12 @@ MF-01 x 88,magnet wire IEC 60317-13 class 200,-,,Unstated,-,material not stated 
 MF-01 x 88,"housing extruded 6063, NEMA ICS 16 42 mm flange",88,,Unstated,-,material not stated on the unit BOM line
 MF-01 x 88,bearing 6000-2Z,176,,Unstated,-,material not stated on the unit BOM line
 MF-01 x 88,Hall sensor PCB,88,,Unstated,-,material not stated on the unit BOM line
-MF-02 x 55,stator laminations M270-35A 0.35 mm,3190,,Unstated,-,material not stated on the unit BOM line
-MF-02 x 55,NdFeB magnets 28.7 g (basis; ferrite variant in AQS-INV-005),55,,Unstated,-,material not stated on the unit BOM line
-MF-02 x 55,magnet wire IEC 60317-13 class 200,-,,Unstated,-,material not stated on the unit BOM line
-MF-02 x 55,"housing extruded 6063, NEMA ICS 16 57 mm flange",55,,Unstated,-,material not stated on the unit BOM line
-MF-02 x 55,bearing 6000-2Z,110,,Unstated,-,material not stated on the unit BOM line
-MF-02 x 55,Hall sensor PCB,55,,Unstated,-,material not stated on the unit BOM line
+MF-02 x 56,stator laminations M270-35A 0.35 mm,3248,,Unstated,-,material not stated on the unit BOM line
+MF-02 x 56,NdFeB magnets 28.7 g (basis; ferrite variant in AQS-INV-005),56,,Unstated,-,material not stated on the unit BOM line
+MF-02 x 56,magnet wire IEC 60317-13 class 200,-,,Unstated,-,material not stated on the unit BOM line
+MF-02 x 56,"housing extruded 6063, NEMA ICS 16 57 mm flange",56,,Unstated,-,material not stated on the unit BOM line
+MF-02 x 56,bearing 6000-2Z,112,,Unstated,-,material not stated on the unit BOM line
+MF-02 x 56,Hall sensor PCB,56,,Unstated,-,material not stated on the unit BOM line
 MF-03 x 24,stator laminations M270-35A 0.35 mm,432,,Unstated,-,material not stated on the unit BOM line
 MF-03 x 24,NdFeB magnets 2.8 g (basis; ferrite variant in AQS-INV-005),24,,Unstated,-,material not stated on the unit BOM line
 MF-03 x 24,magnet wire IEC 60317-13 class 200,-,,Unstated,-,material not stated on the unit BOM line
@@ -2111,8 +2111,8 @@ WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",23040 m,Cu,Closed,Cu EW -> WIRE
 WF-04,"equipment ground 10 AWG bare Cu, -",22440 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",19202 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",5826 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-07,"control 18 AWG shielded pair, 300 V",3780 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",3720 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-07,"control 18 AWG shielded pair, 300 V",3800 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",3740 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",6392 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-10,"power 3 AWG XHHW-2 Cu, 600 V",3525 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-12,"MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield, 15 kV",1500 m,Cu,Closed,Cu EW -> WIRE_DRAW,
@@ -2130,11 +2130,11 @@ WF-31,"power 12 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",80 m,Cu,Closed,Cu EW -> 
 WF-32,"power 4 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",136 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-35,"power 300 kcmil XHHW-2 Cu, tray cable TC-ER, 600 V",41 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-36,"power 4 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",3095 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",340,,Unstated,-,material not stated on the unit BOM line
+OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",342,,Unstated,-,material not stated on the unit BOM line
 OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",410,,Unstated,-,material not stated on the unit BOM line
-OF-03,electronics: PLC digital I/O point (IEC 61131-2),838,,Unstated,-,material not stated on the unit BOM line
+OF-03,electronics: PLC digital I/O point (IEC 61131-2),840,,Unstated,-,material not stated on the unit BOM line
 OF-04,electronics: PLC analog input point (IEC 61131-2),852,,Unstated,-,material not stated on the unit BOM line
-OF-05,electronics: BLDC driver (IEC 61800-5-1),167,,Unstated,-,material not stated on the unit BOM line
+OF-05,electronics: BLDC driver (IEC 61800-5-1),168,,Unstated,-,material not stated on the unit BOM line
 OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),172,,Unstated,-,material not stated on the unit BOM line
 OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",106,,Unstated,-,material not stated on the unit BOM line
 OF-08,electronics: variable-frequency drive (IEC 61800-5-1),33,,Unstated,-,material not stated on the unit BOM line
@@ -2148,11 +2148,9 @@ OF-15,fastener: M10 x 40 lid bolt (ISO 3506 A4-70),12,,Unstated,-,material not s
 OF-16,fastener: M8 x 30 lid bolt (ISO 3506 A4-70),12,,Unstated,-,material not stated on the unit BOM line
 OF-17,fastener: M12 anchor (ISO 3506 A4-70),3,,Unstated,-,material not stated on the unit BOM line
 OF-19,fastener: M16 stud + 2 nuts (ISO 4014 / ISO 4032) (ISO 3506 A4-70 outside the we,24,,Unstated,-,material not stated on the unit BOM line
-OF-20,fastener: M16 stud + 2 nuts (ISO 4014 / ISO 4032) (ISO 898-1 8.8 zinc),24,,Unstated,-,material not stated on the unit BOM line
 OF-23,fastener: M10 anchor (ISO 3506 A4-70),4,,Unstated,-,material not stated on the unit BOM line
 OF-26,fastener: M10 x 40 lid bolt (ASTM A193 B8),8,,Unstated,-,material not stated on the unit BOM line
 OF-29,fastener: Flange gasket (PTFE envelope),2,,Unstated,-,material not stated on the unit BOM line
-OF-30,fastener: Flange gasket (graphite sheet),2,,Unstated,-,material not stated on the unit BOM line
 OF-31,fastener: M10 U-bolt for DN150 (ISO 3506 A4-70),2,,Unstated,-,material not stated on the unit BOM line
 OF-33,fastener: Solvent cement (PVC-U per ASTM D2564),1,,Unstated,-,material not stated on the unit BOM line
 OF-34,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes",192,,Unstated,-,material not stated on the unit BOM line
@@ -2213,7 +2211,7 @@ OF-93,fastener: M10 wedge anchor (ISO 3506 A4-70),110,,Unstated,-,material not s
 OF-94,fastener: M12 bolt + nut; PP-flanged joint (ISO 3506 A4-70),16,,Unstated,-,material not stated on the unit BOM line
 OF-95,fastener: M12 PVDF bolt + nut (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
 OF-96,fastener: M12 A4-70 bolt + nut (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
-OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),238,,Unstated,-,material not stated on the unit BOM line
+OF-97,fastener: M12 wedge anchor (ISO 898-1 8.8),242,,Unstated,-,material not stated on the unit BOM line
 OF-98,fastener: M10 stud + nut (ISO 4014 / ISO 4032) (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line
 OF-99,fastener: M8 hold-down bolt (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line
 OF-100,fastener: M16 wedge anchor (ISO 898-1 8.8),16,,Unstated,-,material not stated on the unit BOM line
@@ -2271,3 +2269,4 @@ OF-151,fastener: M8 bolt (ISO 3506 A4-70),94,,Unstated,-,material not stated on 
 OF-152,fastener: M8 U-bolt (ISO 3506 A4-70),2,,Unstated,-,material not stated on the unit BOM line
 OF-153,fastener: Solvent cement joints (PVC-U per ASTM D2564),1,,Unstated,-,material not stated on the unit BOM line
 OF-154,fastener: M10 stud (ISO 3506 A4-70),16,,Unstated,-,material not stated on the unit BOM line
+OF-155,fastener: M16 stud (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line

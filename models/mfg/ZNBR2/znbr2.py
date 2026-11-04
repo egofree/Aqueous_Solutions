@@ -161,6 +161,16 @@ for (face, z), rows in sorted(groups.items()):
         od_s = DN_OD[r["size"]]
         layout_y[r["tag"]] = round(y0 + od_s / 2, 1)
         y0 += od_s + 8.0
+# along-face positions: the face packs spread along x around the rack centre
+layout_x = {}
+for (face, z), rows in sorted(groups.items()):
+    rows = sorted(rows, key=lambda r: r["tag"])
+    span = sum(DN_OD[r["size"]] + 8.0 for r in rows) - 8.0
+    x0 = L / 2 - span / 2
+    for r in rows:
+        od_s = DN_OD[r["size"]]
+        layout_x[r["tag"]] = round(x0 + od_s / 2, 1)
+        x0 += od_s + 8.0
 
 STUB = 150.0   # face stub length: the atmospheric hose joint lands at the envelope face
 noz_pieces, drawn = [], {}
@@ -184,16 +194,17 @@ for r in schedule:
     else:
         z_d = float(r["height_mm"])
         y_d = layout_y[tag]
+        x_d = layout_x[tag]
         wall = dn.pipe_wall(dnl, 40)
-        if face0 == "inlet":             # stub from the -Y face into the rack margin
-            s = (cq.Workplane("YZ", origin=(0.0, y_d, z_d)).circle(DN_OD[dnl] / 2)
-                 .circle(DN_OD[dnl] / 2 - wall).extrude(STUB))
-        else:                            # stub from the +Y face into the rack margin
-            s = (cq.Workplane("YZ", origin=(L, y_d, z_d)).circle(DN_OD[dnl] / 2)
-                 .circle(DN_OD[dnl] / 2 - wall).extrude(-STUB))
+        if face0 == "inlet":             # stub from the -Y face into the rack margin (tube rotated to +Y)
+            s = (cq.Workplane("XY").circle(DN_OD[dnl] / 2).circle(DN_OD[dnl] / 2 - wall)
+                 .extrude(STUB).rotate((0, 0, 0), (1, 0, 0), -90).translate((x_d, 0.0, z_d)))
+        else:                            # stub from the +Y face into the rack margin (rotated to -Y)
+            s = (cq.Workplane("XY").circle(DN_OD[dnl] / 2).circle(DN_OD[dnl] / 2 - wall)
+                 .extrude(STUB).rotate((0, 0, 0), (1, 0, 0), 90).translate((x_d, W, z_d)))
     noz_pieces.append(s)
     drawn[tag] = {"style": "tube_stub", "dn": dnl, "face": face0, "height_mm": r["height_mm"],
-                  "drawn_height_mm": z_d, "y_mm": layout_y.get(tag),
+                  "drawn_height_mm": z_d, "y_mm": layout_y.get(tag), "x_mm": layout_x.get(tag),
                   "schedule_rating": r["rating"], "service": r["service"],
                   "note": "schedule datum drawn as issued (all fit the 1970 box); atmospheric "
                           "open-bore tube flush at the hall face - the hose joint lands at the "
@@ -356,10 +367,11 @@ p["layout"] = {
     "frame": "origin at the envelope corner; 7 x 7 bay grid at 1100 x 850 pitch, 47 bays "
              "(last row 5); plinth 0..100 (tanks and posts root 5 mm into it); stack frame "
              "1270..1970, lifting beams top the envelope",
-    "nozzle_spread": "side rows flush at the hall faces packed at an od + 8 pitch centred on "
-                     "the rack (150 mm hose-joint stubs); drain under the plinth at (2000, "
-                     "3000); vent riser on the last bay lifting beam, flush at the envelope "
-                     "top; per-tag positions in check.nozzles_drawn",
+    "nozzle_spread": "side rows flush at the hall faces: along-face x positions packed at an "
+                     "od + 8 pitch centred on the rack, stubs run in from the face 150 mm "
+                     "(hose joints); drain under the plinth at (2000, 3000); vent riser on "
+                     "the last bay lifting beam, flush at the envelope top; per-tag "
+                     "positions in check.nozzles_drawn",
 }
 (HERE / "params.json").write_text(json.dumps(p, indent=1) + "\n")
 

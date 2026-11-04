@@ -188,6 +188,6 @@
  },
  "layout": {
   "frame": "origin at the envelope corner; 7 x 7 bay grid at 1100 x 850 pitch, 47 bays (last row 5); plinth 0..100 (tanks and posts root 5 mm into it); stack frame 1270..1970, lifting beams top the envelope",
-  "nozzle_spread": "side rows flush at the hall faces packed at an od + 8 pitch centred on the rack (150 mm hose-joint stubs); drain under the plinth at (2000, 3000); vent riser on the last bay lifting beam, flush at the envelope top; per-tag positions in check.nozzles_drawn"
+  "nozzle_spread": "side rows flush at the hall faces: along-face x positions packed at an od + 8 pitch centred on the rack, stubs run in from the face 150 mm (hose joints); drain under the plinth at (2000, 3000); vent riser on the last bay lifting beam, flush at the envelope top; per-tag positions in check.nozzles_drawn"
  }
 }

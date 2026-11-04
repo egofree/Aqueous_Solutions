@@ -19,9 +19,9 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1316 | 58 % |
-| organic | 623 | 27 % |
-| metal_reactive | 125 | 6 % |
+| metal_plateable | 1320 | 58 % |
+| organic | 619 | 27 % |
+| metal_reactive | 124 | 5 % |
 | unassigned | 114 | 5 % |
 | silicate_oxide | 94 | 4 % |
 
@@ -88,7 +88,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | ELECTRODE_COAT | 9 | 0 | 0 | 1 | 0 |
 | EVAP_ACID | 1 | 9 | 1 | 0 | 0 |
 | EVAP_ACID_VS | 0 | 8 | 0 | 0 | 0 |
-| EVAP_BASE | 5 | 3 | 1 | 0 | 0 |
+| EVAP_BASE | 9 | 0 | 0 | 0 | 0 |
 | EW_1 | 2 | 5 | 5 | 0 | 0 |
 | EW_2 | 2 | 5 | 5 | 0 | 0 |
 | EW_3 | 2 | 5 | 4 | 0 | 0 |
@@ -160,7 +160,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MET_SCRUB | 1 | 8 | 0 | 1 | 0 |
 | MET_SYN | 7 | 3 | 0 | 2 | 1 |
 | MF-01 x 88 | 3 | 1 | 2 | 0 | 0 |
-| MF-02 x 55 | 3 | 1 | 2 | 0 | 0 |
+| MF-02 x 56 | 3 | 1 | 2 | 0 | 0 |
 | MF-03 x 24 | 5 | 1 | 2 | 0 | 0 |
 | MF-04 x 0 | 5 | 0 | 1 | 0 | 0 |
 | MF-05 x 0 | 5 | 0 | 1 | 0 | 0 |
@@ -259,14 +259,13 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-152 | 1 | 0 | 0 | 0 | 0 |
 | OF-153 | 0 | 1 | 0 | 0 | 0 |
 | OF-154 | 1 | 0 | 0 | 0 | 0 |
+| OF-155 | 1 | 0 | 0 | 0 | 0 |
 | OF-16 | 1 | 0 | 0 | 0 | 0 |
 | OF-17 | 1 | 0 | 0 | 0 | 0 |
 | OF-19 | 1 | 0 | 0 | 0 | 0 |
-| OF-20 | 1 | 0 | 0 | 0 | 0 |
 | OF-23 | 1 | 0 | 0 | 0 | 0 |
 | OF-26 | 1 | 0 | 0 | 0 | 0 |
 | OF-29 | 0 | 1 | 0 | 0 | 0 |
-| OF-30 | 0 | 1 | 0 | 0 | 0 |
 | OF-31 | 1 | 0 | 0 | 0 | 0 |
 | OF-33 | 0 | 1 | 0 | 0 | 0 |
 | OF-34 | 0 | 1 | 0 | 0 | 0 |

@@ -52,6 +52,7 @@
       "height_mm": 160,
       "drawn_height_mm": 160.0,
       "y_mm": 2961.6,
+      "x_mm": 3886.6,
       "schedule_rating": "Class 150",
       "service": "ZnBr2 charge (PV/RECT surplus)",
       "note": "schedule datum drawn as issued (all fit the 1970 box); atmospheric open-bore tube flush at the hall face - the hose joint lands at the face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated; elevations are the issued datums)"
@@ -63,6 +64,7 @@
       "height_mm": 160,
       "drawn_height_mm": 160.0,
       "y_mm": 3010.4,
+      "x_mm": 3935.4,
       "schedule_rating": "Class 150",
       "service": "NaBr after ORP",
       "note": "schedule datum drawn as issued (all fit the 1970 box); atmospheric open-bore tube flush at the hall face - the hose joint lands at the face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated; elevations are the issued datums)"
@@ -74,6 +76,7 @@
       "height_mm": 160,
       "drawn_height_mm": 160.0,
       "y_mm": 3059.2,
+      "x_mm": 3984.2,
       "schedule_rating": "Class 150",
       "service": "electrolyte water make-up",
       "note": "schedule datum drawn as issued (all fit the 1970 box); atmospheric open-bore tube flush at the hall face - the hose joint lands at the face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated; elevations are the issued datums)"
@@ -85,6 +88,7 @@
       "height_mm": 160,
       "drawn_height_mm": 160.0,
       "y_mm": 3088.5,
+      "x_mm": 4013.5,
       "schedule_rating": "Class 150",
       "service": "charge into the battery",
       "note": "schedule datum drawn as issued (all fit the 1970 box); atmospheric open-bore tube flush at the hall face - the hose joint lands at the face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated; elevations are the issued datums)"
@@ -96,6 +100,7 @@
       "height_mm": 600,
       "drawn_height_mm": 600.0,
       "y_mm": 2976.2,
+      "x_mm": 3901.2,
       "schedule_rating": "Class 150",
       "service": "ZnBr2 discharge to bus",
       "note": "schedule datum drawn as issued (all fit the 1970 box); atmospheric open-bore tube flush at the hall face - the hose joint lands at the face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated; elevations are the issued datums)"
@@ -107,6 +112,7 @@
       "height_mm": 600,
       "drawn_height_mm": 600.0,
       "y_mm": 3025.0,
+      "x_mm": 3950.0,
       "schedule_rating": "Class 150",
       "service": "Br2 vapor",
       "note": "schedule datum drawn as issued (all fit the 1970 box); atmospheric open-bore tube flush at the hall face - the hose joint lands at the face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated; elevations are the issued datums)"
@@ -118,6 +124,7 @@
       "height_mm": 600,
       "drawn_height_mm": 600.0,
       "y_mm": 3073.8,
+      "x_mm": 3998.8,
       "schedule_rating": "Class 150",
       "service": "electrolyte bleed",
       "note": "schedule datum drawn as issued (all fit the 1970 box); atmospheric open-bore tube flush at the hall face - the hose joint lands at the face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated; elevations are the issued datums)"
@@ -129,6 +136,7 @@
       "height_mm": 600,
       "drawn_height_mm": 600.0,
       "y_mm": 3103.1,
+      "x_mm": 4028.1,
       "schedule_rating": "Class 150",
       "service": "round-trip loss",
       "note": "schedule datum drawn as issued (all fit the 1970 box); atmospheric open-bore tube flush at the hall face - the hose joint lands at the face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated; elevations are the issued datums)"
@@ -140,6 +148,7 @@
       "height_mm": 50,
       "drawn_height_mm": -0.5,
       "y_mm": null,
+      "x_mm": null,
       "schedule_rating": "Class 150",
       "service": "drain",
       "note": "schedule datum drawn as issued (all fit the 1970 box); atmospheric open-bore tube flush at the hall face - the hose joint lands at the face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated; elevations are the issued datums)"
@@ -151,6 +160,7 @@
       "height_mm": 800,
       "drawn_height_mm": 1970.5,
       "y_mm": null,
+      "x_mm": null,
       "schedule_rating": "Class 150",
       "service": "vent",
       "note": "schedule datum drawn as issued (all fit the 1970 box); atmospheric open-bore tube flush at the hall face - the hose joint lands at the face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated; elevations are the issued datums)"
@@ -171,6 +181,7 @@
       "height_mm": 600,
       "drawn_height_mm": 600.0,
       "y_mm": 2946.9,
+      "x_mm": 3871.9,
       "schedule_rating": "Class 150",
       "service": "ZNBR2 HER hydrogen stripped with the purge air to the H2 header",
       "note": "schedule datum drawn as issued (all fit the 1970 box); atmospheric open-bore tube flush at the hall face - the hose joint lands at the face (duty section 4: hose, atmospheric; DN copied from the edge, not recalculated; elevations are the issued datums)"

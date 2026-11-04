@@ -24,7 +24,7 @@ if __name__ == '__main__':
     # everything else runs argless (foundry/polymers default to their own UNITS).
     # PYTHONPATH carries the repo root so unit draw_*.py scripts can import models.*.
     env = dict(os.environ, PYTHONPATH=ROOT + os.pathsep + os.environ.get('PYTHONPATH', ''))
-    PER_UNIT = {'evap_mvr.py': ['EVAP_ACID', 'EVAP_BASE']}
+    PER_UNIT = {'evap_mvr.py': ['EVAP_ACID']}   # EVAP_BASE owns its builder (AQS-PLAN-006 W1: the unit folder script, so the style pass never clobbers)
     for f in scripts():
         base = os.path.basename(f)
         calls = [[f, u] for u in PER_UNIT[base]] if base in PER_UNIT else [[f]]

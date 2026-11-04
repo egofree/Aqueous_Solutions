@@ -1,9 +1,9 @@
 family,category,item,spec,qty,sizes,units
-OF-01,bearing,deep-groove ball bearing,"ISO 15, normal class",340,608-2Z x340,57
+OF-01,bearing,deep-groove ball bearing,"ISO 15, normal class",342,608-2Z x342,58
 OF-02,bearing,deep-groove ball bearing,"ISO 15 / ISO 492 normal class, C3",410,6202-2Z x210; 6201-2Z x110; 6205-2Z x50; 6204-2Z x22; 6206-2Z x10; 6308-2Z x6; 6306-2Z x2,58
-OF-03,electronics,PLC digital I/O point,IEC 61131-2,838,24 V DC x838,94
+OF-03,electronics,PLC digital I/O point,IEC 61131-2,840,24 V DC x840,94
 OF-04,electronics,PLC analog input point,IEC 61131-2,852,4-20 mA HART x852,1
-OF-05,electronics,BLDC driver,IEC 61800-5-1,167,24/48 V DC x167,56
+OF-05,electronics,BLDC driver,IEC 61800-5-1,168,24/48 V DC x168,57
 OF-06,electronics,motor starter (contactor + overload),IEC 60947-4-1,172,0.37 kW x103; 0.18 kW x54; 0.55 kW x10; 0.25 kW x2; 0.12 kW x1; 1.1 kW x1; 0.75 kW x1,48
 OF-07,electronics,"PLC I/O module, 16 channel",IEC 61131-2,106,24 V DC x106,1
 OF-08,electronics,variable-frequency drive,IEC 61800-5-1,33,1.5 kW x19; 2.2 kW x5; 1.1 kW x5; 7.5 kW x3; 4 kW x1,15
@@ -17,11 +17,9 @@ OF-15,fastener,M10 x 40 lid bolt,ISO 3506 A4-70,12,M10 x 40 lid bolt with nut an
 OF-16,fastener,M8 x 30 lid bolt,ISO 3506 A4-70,12,M8 x 30 lid bolt with nut and washers x12,1
 OF-17,fastener,M12 anchor,ISO 3506 A4-70,3,M12 anchor x3,1
 OF-19,fastener,M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 3506 A4-70 outside the wetted zone,24,M16 stud + 2 nuts (ISO 4014 / ISO 4032) x24,1
-OF-20,fastener,M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 898-1 8.8 zinc,24,M16 stud + 2 nuts (ISO 4014 / ISO 4032) x24,1
 OF-23,fastener,M10 anchor,ISO 3506 A4-70,4,M10 anchor x4,1
 OF-26,fastener,M10 x 40 lid bolt,ASTM A193 B8,8,M10 x 40 lid bolt with nut and washers x8,1
 OF-29,fastener,Flange gasket,PTFE envelope,2,Flange gasket x2,1
-OF-30,fastener,Flange gasket,graphite sheet,2,Flange gasket x2,1
 OF-31,fastener,M10 U-bolt for DN150,ISO 3506 A4-70,2,M10 U-bolt for DN150 x2,1
 OF-33,fastener,Solvent cement,PVC-U per ASTM D2564,1,Solvent cement x1,1
 OF-34,instrument,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",192,DN15 x170; DN50 x19; DN40 x1; DN250 x1; DN300 x1,68
@@ -82,7 +80,7 @@ OF-93,fastener,M10 wedge anchor,ISO 3506 A4-70,110,M10 wedge anchor x110,27
 OF-94,fastener,M12 bolt + nut; PP-flanged joint,ISO 3506 A4-70,16,M12 bolt + nut; PP-flanged joint x16,1
 OF-95,fastener,M12 PVDF bolt + nut,ISO 3506 A4-70,8,M12 PVDF bolt + nut x8,1
 OF-96,fastener,M12 A4-70 bolt + nut,ISO 3506 A4-70,8,M12 A4-70 bolt + nut x8,1
-OF-97,fastener,M12 wedge anchor,ISO 898-1 8.8,238,M12 wedge anchor x238,33
+OF-97,fastener,M12 wedge anchor,ISO 898-1 8.8,242,M12 wedge anchor x242,34
 OF-98,fastener,M10 stud + nut (ISO 4014 / ISO 4032),ISO 3506 A4-70,24,M10 stud + nut (ISO 4014 / ISO 4032) x24,2
 OF-99,fastener,M8 hold-down bolt,ISO 3506 A4-70,24,M8 hold-down bolt x24,2
 OF-100,fastener,M16 wedge anchor,ISO 898-1 8.8,16,M16 wedge anchor x16,2
@@ -140,3 +138,4 @@ OF-151,fastener,M8 bolt,ISO 3506 A4-70,94,M8 bolt with nut x94,1
 OF-152,fastener,M8 U-bolt,ISO 3506 A4-70,2,M8 U-bolt with nut and gasketed clamp x2,1
 OF-153,fastener,Solvent cement joints,PVC-U per ASTM D2564,1,Solvent cement joints x1,1
 OF-154,fastener,M10 stud,ISO 3506 A4-70,16,M10 stud with 2 nuts (ISO 4014 / ISO 4032) x16,1
+OF-155,fastener,M16 stud,ISO 3506 A4-70,24,M16 stud with 2 nuts (ISO 4014 / ISO 4032) x24,1
