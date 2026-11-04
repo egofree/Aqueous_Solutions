@@ -153,7 +153,7 @@ Table 3.1. DIGESTER off. Sector type: Process (Mass transform).
 | IA-NA-PURGE | LEACH_CSTR_1 to NORTH_DOCK | DOCK | 4.39 kg/d | stops with the sector |
 | IA-NAOH-MU | NORTH_DOCK to EVAP_BASE | DOCK | 4.39 kg/d | stops with the sector |
 | IA-TRIM-HX5 | RECTIFIER to LEACH_CSTR_1 | ELEC | 15.9 kW | stops with the sector |
-| S17-BMED | SOL_ARK_60K to BMED_ACID | ELEC | 5.63 kW | stops with the sector |
+| S17-BMED | SOL_ARK_60K to BMED_ACID | ELEC | 26.9 kW | stops with the sector |
 | SF-EVAP_ACID | SOL_ARK_60K to EVAP_ACID | ELEC | 1.5 kW | stops with the sector |
 | SF-EVAP_ACID_VS | SOL_ARK_60K to EVAP_ACID_VS | ELEC | 0.0238 kW | stops with the sector |
 | SF-EVAP_BASE | SOL_ARK_60K to EVAP_BASE | ELEC | 1.33 kW | stops with the sector |
@@ -638,7 +638,7 @@ Table 3.14. ELEC off. Sector type: Utility / header.
 | IA-TRIM-HX6 | RECTIFIER to GLASS_DIGEST | GLASS | 4.16 kW | left without a source: consumer goes short |
 | IA-ZNBR-BD | ZNBR2 to GREY_TREAT | WTR | 8.49 kg/d | left without a source: consumer goes short |
 | IA-ZNBR-HEAT | ZNBR2 to Q4_BUS | HEAT | 1.67 kW | left without a source: consumer goes short |
-| S17-BMED | SOL_ARK_60K to BMED_ACID | DIGESTER | 5.63 kW | left without a source: consumer goes short |
+| S17-BMED | SOL_ARK_60K to BMED_ACID | DIGESTER | 26.9 kW | left without a source: consumer goes short |
 | S20 | SOL_ARK_60K to GROW_BED | FARM | 2.05 kW | left without a source: consumer goes short |
 | S46 | BACKUP_GEN to NOX_SCRUB | GAS | 0.198 kg/d | left without a source: consumer goes short |
 | S52 | FUEL_CELL to VCD_TRAIN | WTR | 42.9 kg/d | left without a source: consumer goes short |

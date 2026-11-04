@@ -45,9 +45,9 @@ Table 2.1. Item families
 | OF-05 | electronics | BLDC driver | IEC 61800-5-1 | 161 | 24/48 V DC x161 | 53 |
 | OF-06 | electronics | motor starter (contactor + overload) | IEC 60947-4-1 | 177 | 0.18 kW x155; 0.55 kW x10; 0.37 kW x7; 0.25 kW x2; 0.12 kW x1; 1.1 kW x1; 0.75 kW x1 | 50 |
 | OF-07 | electronics | PLC I/O module, 16 channel | IEC 61131-2 | 106 | 24 V DC x106 | 1 |
-| OF-08 | electronics | variable-frequency drive | IEC 61800-5-1 | 33 | 1.1 kW x21; 2.2 kW x5; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 15 |
+| OF-08 | electronics | variable-frequency drive | IEC 61800-5-1 | 33 | 1.5 kW x19; 2.2 kW x5; 1.1 kW x5; 7.5 kW x3; 4 kW x1 | 15 |
 | OF-09 | electronics | solenoid driver channel | IEC 61131-2 DO | 19 | 24 V DC x19 | 9 |
-| OF-10 | electronics | compressor contactor + overload | IEC 60947-4-1 | 9 | 18.5 kW hermetic x8; 1.1 kW hermetic x1 | 2 |
+| OF-10 | electronics | compressor contactor + overload | IEC 60947-4-1 | 9 | 22 kW hermetic x8; 1.1 kW hermetic x1 | 2 |
 | OF-11 | electronics | stepper driver | IEC 61800-5-1 | 3 | 24/48 V DC x3 | 1 |
 | OF-12 | electronics | safety PLC (SIL 2 capable), CPU and I/O rack | IEC 61508 / IEC 61511 | 2 | - x2 | 1 |
 | OF-13 | fabricated part | fabricated part set | models/mfg/<unit>/bom.csv | 197 | 4 BOM lines x26; 9 BOM lines x25; 5 BOM lines x24; 7 BOM lines x23; 6 BOM lines x16; 3 BOM lines x16; 8 BOM lines x15; 2 | 197 |
@@ -63,7 +63,7 @@ Table 2.1. Item families
 | OF-30 | fastener | Flange gasket | graphite sheet | 2 | Flange gasket x2 | 1 |
 | OF-31 | fastener | M10 U-bolt for DN150 | ISO 3506 A4-70 | 2 | M10 U-bolt for DN150 x2 | 1 |
 | OF-33 | fastener | Solvent cement | PVC-U per ASTM D2564 | 1 | Solvent cement x1 | 1 |
-| OF-34 | instrument | flow transmitter | electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456 | 191 | DN15 x170; DN50 x18; DN32 x1; DN250 x1; DN300 x1 | 68 |
+| OF-34 | instrument | flow transmitter | electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456 | 191 | DN15 x170; DN50 x18; DN40 x1; DN250 x1; DN300 x1 | 68 |
 | OF-35 | instrument | pressure transmitter | ceramic diaphragm, IEC 61298 | 177 | 0-10 bar x176; 0-16 bar x1 | 177 |
 | OF-36 | instrument | temperature element | IEC 60751, 316L thermowell | 180 | Pt100 class A x180 | 180 |
 | OF-37 | instrument | high-level switch | IEC 60947-5, 316L | 82 | vibrating fork x82 | 82 |
@@ -75,9 +75,9 @@ Table 2.1. Item families
 | OF-43 | instrument | gas detector, O2 enrichment | alarm 23.5 vol %, trip 25 vol %, breathing height | 12 | electrochemical O2 x12 | 5 |
 | OF-44 | instrument | gas detector, CO | alarm 25 ppm, trip 50 ppm, breathing height | 14 | electrochemical CO x14 | 7 |
 | OF-45 | instrument | gas detector, NOx | alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height | 6 | electrochemical NO2 x6 | 3 |
-| OF-46 | protection | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 235 | 15 A x223; 90 A x8; 30 A x3; 60 A x1 | 61 |
+| OF-46 | protection | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 235 | 15 A x223; 100 A x8; 30 A x3; 60 A x1 | 61 |
 | OF-47 | seal | mechanical seal, single | SiC/SiC faces, FKM | 154 | EN 12756 x154 | 42 |
-| OF-48 | support | pipe clamp | PP clamp with EPDM liner, MSS SP-58 Type 7 | 5890 | DN15 x5316; DN50 x537; DN20 x17; DN250 x7; DN32 x6; DN300 x4; DN200 x3 | 116 |
+| OF-48 | support | pipe clamp | PP clamp with EPDM liner, MSS SP-58 Type 7 | 5890 | DN15 x5316; DN50 x537; DN20 x17; DN250 x7; DN40 x6; DN300 x4; DN200 x3 | 116 |
 | OF-49 | support | U-bolt with guide | 316 U-bolt, MSS SP-58 Type 24 | 1492 | DN15 x1432; DN20 x30; DN25 x23; DN50 x7 | 44 |
 | OF-50 | valve | isolation valve | PVC-U true-union ball valve, MSS SP-122, EPDM seals | 282 | DN15 x260; DN50 x22 | 64 |
 | OF-51 | valve | isolation valve | PP ball valve with HDPE stub ends, ISO 16135 | 42 | DN15 x32; DN50 x10 | 13 |
@@ -85,9 +85,9 @@ Table 2.1. Item families
 | OF-53 | valve | isolation valve | CPVC true-union ball valve, MSS SP-122, FKM seals | 90 | DN15 x56; DN50 x34 | 24 |
 | OF-54 | valve | check valve | PP swing/ball check valve with HDPE stub ends, ISO 16137 | 14 | DN15 x12; DN50 x2 | 8 |
 | OF-55 | valve | check valve | PVC-U true-union swing/ball check valve, EPDM seals | 62 | DN15 x58; DN50 x4 | 30 |
-| OF-56 | valve | isolation valve | PVDF ball valve, ISO 16135, PTFE seats | 90 | DN15 x82; DN50 x4; DN32 x2; DN300 x2 | 35 |
+| OF-56 | valve | isolation valve | PVDF ball valve, ISO 16135, PTFE seats | 90 | DN15 x82; DN50 x4; DN40 x2; DN300 x2 | 35 |
 | OF-57 | valve | check valve | CPVC true-union swing/ball check valve, FKM seals | 26 | DN15 x17; DN50 x9 | 19 |
-| OF-58 | valve | check valve | PVDF swing/ball check valve, ISO 16137, PTFE seats | 29 | DN15 x27; DN32 x1; DN300 x1 | 23 |
+| OF-58 | valve | check valve | PVDF swing/ball check valve, ISO 16137, PTFE seats | 29 | DN15 x27; DN40 x1; DN300 x1 | 23 |
 | OF-59 | valve | isolation valve | CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged | 64 | DN15 x64 | 16 |
 | OF-60 | valve | isolation valve | PVC-lined ball valve in FRP service, ISO 16135 | 20 | DN15 x10; DN250 x6; DN20 x2; DN200 x2 | 9 |
 | OF-61 | valve | check valve | 316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged | 31 | DN15 x30; DN50 x1 | 14 |
@@ -1147,22 +1147,22 @@ Table 2.1. Item families
 | Sub-system | Unit | Category | Item | Size | Spec | Qty | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | EXT_HALL_N | EXT_HALL | bearing | deep-groove ball bearing | 608-2Z | ISO 15, normal class | 48 | AHU damper actuator (assumed size) |
-| EXT_HALL_N | EXT_HALL | bearing | deep-groove ball bearing | 6205-2Z | ISO 15 / ISO 492 normal class, C3 | 16 | AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size) |
-| EXT_HALL_N | EXT_HALL | bearing | deep-groove ball bearing | 6205-2Z | ISO 15 / ISO 492 normal class, C3 | 16 | AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed size) |
+| EXT_HALL_N | EXT_HALL | bearing | deep-groove ball bearing | 6205-2Z | ISO 15 / ISO 492 normal class, C3 | 16 | AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90L (assumed size) |
+| EXT_HALL_N | EXT_HALL | bearing | deep-groove ball bearing | 6205-2Z | ISO 15 / ISO 492 normal class, C3 | 16 | AHU supply fan: drive and non-drive end, IEC 60072 frame 90L (assumed size) |
 | EXT_HALL_N | EXT_HALL | electronics | BLDC driver | 24/48 V DC | IEC 61800-5-1 | 24 | AHU damper actuator |
 | EXT_HALL_N | EXT_HALL | electronics | PLC digital I/O point | 24 V DC | IEC 61131-2 | 48 | AHU damper actuator: run and fault (assumed) |
 | EXT_HALL_N | EXT_HALL | electronics | PLC digital I/O point | 24 V DC | IEC 61131-2 | 16 | AHU exhaust fan: run and fault (assumed) |
 | EXT_HALL_N | EXT_HALL | electronics | PLC digital I/O point | 24 V DC | IEC 61131-2 | 16 | AHU supply fan: run and fault (assumed) |
 | EXT_HALL_N | EXT_HALL | electronics | PLC digital I/O point | 24 V DC | IEC 61131-2 | 16 | air-source heat pump compressor: run and fault (assumed) |
 | EXT_HALL_N | EXT_HALL | electronics | PLC digital I/O point | 24 V DC | IEC 61131-2 | 32 | heat pump condenser fan: run and fault (assumed) |
-| EXT_HALL_N | EXT_HALL | electronics | compressor contactor + overload | 18.5 kW hermetic | IEC 60947-4-1 | 8 | air-source heat pump compressor |
-| EXT_HALL_N | EXT_HALL | electronics | variable-frequency drive | 1.1 kW | IEC 61800-5-1 | 8 | AHU exhaust fan (assumed VFD at >= 0.75 kW) |
-| EXT_HALL_N | EXT_HALL | electronics | variable-frequency drive | 1.1 kW | IEC 61800-5-1 | 8 | AHU supply fan (assumed VFD at >= 0.75 kW) |
+| EXT_HALL_N | EXT_HALL | electronics | compressor contactor + overload | 22 kW hermetic | IEC 60947-4-1 | 8 | air-source heat pump compressor |
+| EXT_HALL_N | EXT_HALL | electronics | variable-frequency drive | 1.5 kW | IEC 61800-5-1 | 8 | AHU exhaust fan (assumed VFD at >= 0.75 kW) |
+| EXT_HALL_N | EXT_HALL | electronics | variable-frequency drive | 1.5 kW | IEC 61800-5-1 | 8 | AHU supply fan (assumed VFD at >= 0.75 kW) |
 | EXT_HALL_N | EXT_HALL | fabricated part | fabricated part set | 4 BOM lines | models/mfg/EXT_HALL/bom.csv and WORK_ORDER.md | 1 | unit work order; bought-in lines in the set are counted again in their own inventory |
 | EXT_HALL_N | EXT_HALL | fastener | M20 column base bolts (F1552 class) | M20 column base bolts (F1552 class) | ISO 898-1 8.8 | 3212 | models/mfg/EXT_HALL/fasteners.csv |
 | EXT_HALL_N | EXT_HALL | protection | inverse-time circuit breaker, 3-pole | 15 A | UL 489 / IEC 60947-2 | 8 | NEC 430.52, from AQS-INV-002 |
 | EXT_HALL_N | EXT_HALL | protection | inverse-time circuit breaker, 3-pole | 15 A | UL 489 / IEC 60947-2 | 8 | NEC 430.52, from AQS-INV-002 |
-| EXT_HALL_N | EXT_HALL | protection | inverse-time circuit breaker, 3-pole | 90 A | UL 489 / IEC 60947-2 | 8 | NEC 430.52, from AQS-INV-002 |
+| EXT_HALL_N | EXT_HALL | protection | inverse-time circuit breaker, 3-pole | 100 A | UL 489 / IEC 60947-2 | 8 | NEC 430.52, from AQS-INV-002 |
 | EXT_HALL_N | EXT_HALL | protection | inverse-time circuit breaker, 3-pole | 15 A | UL 489 / IEC 60947-2 | 16 | NEC 430.52, from AQS-INV-002 |
 | flow_battery | ZNBR2 | bearing | deep-groove ball bearing | 6201-2Z | ISO 15 / ISO 492 normal class, C3 | 192 | Motor: electrolyte pump (anolyte, catholyte) per stack strin: drive and non-drive end, IEC 60072 frame 63 (assumed size) |
 | flow_battery | ZNBR2 | bearing | deep-groove ball bearing | 6201-2Z | ISO 15 / ISO 492 normal class, C3 | 2 | Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm (: drive and non-drive end, IEC 60072 frame 63 (assumed size) |
@@ -1174,7 +1174,7 @@ Table 2.1. Item families
 | flow_battery | ZNBR2 | fastener | anchor bolt | M10 | ISO 3506 A4-70 wedge anchor | 12 | S69: 2 per support (assumed) |
 | flow_battery | ZNBR2 | fastener | anchor bolt | M10 | ISO 3506 A4-70 wedge anchor | 48 | IA-ZNBR-BD: 2 per support (assumed) |
 | flow_battery | ZNBR2 | fastener | anchor bolt | M10 | ISO 3506 A4-70 wedge anchor | 78 | IA-ZNBR-HEAT: 2 per support (assumed) |
-| flow_battery | ZNBR2 | instrument | flow transmitter | DN32 | electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456 | 1 | S69: pumped line (assumed) |
+| flow_battery | ZNBR2 | instrument | flow transmitter | DN40 | electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456 | 1 | S69: pumped line (assumed) |
 | flow_battery | ZNBR2 | instrument | flow transmitter | DN15 | electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456 | 1 | IA-ZNBR-BD: pumped line (assumed) |
 | flow_battery | ZNBR2 | instrument | flow transmitter | DN15 | electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456 | 1 | IA-ZNBR-HEAT: pumped line (assumed) |
 | flow_battery | ZNBR2 | instrument | high-level switch | vibrating fork | IEC 60947-5, 316L | 1 | duty item 5: high level trips the inlet |
@@ -1185,13 +1185,13 @@ Table 2.1. Item families
 | flow_battery | ZNBR2 | protection | inverse-time circuit breaker, 3-pole | 15 A | UL 489 / IEC 60947-2 | 1 | NEC 430.52, from AQS-INV-002 |
 | flow_battery | ZNBR2 | seal | mechanical seal, single | EN 12756 | SiC/SiC faces, FKM | 96 | Motor: electrolyte pump (anolyte, catholyte) per stack strin: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive |
 | flow_battery | ZNBR2 | seal | mechanical seal, single | EN 12756 | SiC/SiC faces, FKM | 1 | Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm (: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive |
-| flow_battery | ZNBR2 | support | pipe clamp | DN32 | PP clamp with EPDM liner, MSS SP-58 Type 7 | 6 | S69: AQS-PIP-005 span count |
+| flow_battery | ZNBR2 | support | pipe clamp | DN40 | PP clamp with EPDM liner, MSS SP-58 Type 7 | 6 | S69: AQS-PIP-005 span count |
 | flow_battery | ZNBR2 | support | pipe clamp | DN15 | PP clamp with EPDM liner, MSS SP-58 Type 7 | 24 | IA-ZNBR-BD: AQS-PIP-005 span count |
 | flow_battery | ZNBR2 | support | pipe clamp | DN15 | PP clamp with EPDM liner, MSS SP-58 Type 7 | 39 | IA-ZNBR-HEAT: AQS-PIP-005 span count |
-| flow_battery | ZNBR2 | valve | check valve | DN32 | PVDF swing/ball check valve, ISO 16137, PTFE seats | 1 | S69: pump discharge (assumed) |
+| flow_battery | ZNBR2 | valve | check valve | DN40 | PVDF swing/ball check valve, ISO 16137, PTFE seats | 1 | S69: pump discharge (assumed) |
 | flow_battery | ZNBR2 | valve | check valve | DN15 | PVC-U true-union swing/ball check valve, EPDM seals | 1 | IA-ZNBR-BD: pump discharge (assumed) |
 | flow_battery | ZNBR2 | valve | check valve | DN15 | PVC-U true-union swing/ball check valve, EPDM seals | 1 | IA-ZNBR-HEAT: pump discharge (assumed) |
-| flow_battery | ZNBR2 | valve | isolation valve | DN32 | PVDF ball valve, ISO 16135, PTFE seats | 2 | S69: one at each end nozzle (assumed) |
+| flow_battery | ZNBR2 | valve | isolation valve | DN40 | PVDF ball valve, ISO 16135, PTFE seats | 2 | S69: one at each end nozzle (assumed) |
 | flow_battery | ZNBR2 | valve | isolation valve | DN15 | PVC-U true-union ball valve, MSS SP-122, EPDM seals | 2 | IA-ZNBR-BD: one at each end nozzle (assumed) |
 | flow_battery | ZNBR2 | valve | isolation valve | DN15 | PVC-U true-union ball valve, MSS SP-122, EPDM seals | 2 | IA-ZNBR-HEAT: one at each end nozzle (assumed) |
 | genset | BACKUP_GEN | bearing | deep-groove ball bearing | 6202-2Z | ISO 15 / ISO 492 normal class, C3 | 2 | radiator fan: drive and non-drive end, IEC 60072 frame 71 (assumed size) |

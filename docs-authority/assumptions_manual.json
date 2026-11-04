@@ -2814,17 +2814,17 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Triplet voltage = bipolar membrane 1.0 V + 2 x 3 ohm cm2 monopolar + 1.5 x 0.8 mm x sum(1/kappa) solution + 3 V/stack end electrodes; design takes the larger of this (1.22 V) and the pilot-measured 1.67 V",
+  "value": "BMED design energy at the product's own concentration: SEC 6.7 kWh/kg NaOH at the 2 M product (EDBM_WHEY_2021, the driver bmed_sec_kWh_per_kg_base), so BMED_ACID/S17-BMED carry the SEC x 96.5 kg/d / 24 h = 26.93 kW. The triplet-voltage model (BPM 1.0 V + 2 x 3 ohm cm2 monopolar + 1.5 x 0.8 mm x sum(1/kappa) solution + 3 V/stack end electrodes; design took the larger of 1.22 V and the pilot 1.67 V) and the EDBM_PILOT_2023 1.4 kWh/kg stay as model data at their own seawater-brine (0.5-1 M) concentration",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "STRATHMANN2004 (the bipolar and monopolar membrane voltages); CRC_COND (the solution conductivity)",
-  "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
+  "basis": "EDBM_WHEY_2021 quotes 6.7 kWh/kg to produce 2 M acid or base - the concentration the plant books (bmed_product_molarity 2.0, product wt fractions at 2 M). Physics audit F-5: pairing the pilot voltage (its 1.4 kWh/kg is the seawater-brine concentration class) with the 2 M product gave a stale 1.40 kWh/kg design basis that A-M-170's 'energy stays on the 2 M SEC' already ruled out. STRATHMANN2004 / CRC_COND remain the voltage-model references",
+  "sensitivity": "BMED kW scales with the SEC class: at 2 M it is 26.93 kW (was 5.63 at the pilot-class basis); the demand, PV nameplate and storage chain re-derive through write_graph power() - EDBM pilot on the plant chloride brine at 2 M (the registered verification test) replaces the quoted class",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
   "title": "BMED triplet voltage from physics",
   "statement": "Triplet voltage = bipolar membrane 1.0 V + 2 x 3 ohm cm2 monopolar + 1.5 x 0.8 mm x sum(1/kappa) solution + 3 V/stack end electrodes; design takes the larger of this (1.22 V) and the pilot-measured 1.67 V",
-  "verification": "BMED SEC 6.7 -> 1.40 kWh/kg; BMED_ACID 26.9 -> 5.6 kW",
-  "replace_when": "X-MFG-35 stack I-V and current efficiency at 2 M",
+  "verification": "BMED SEC 6.7 kWh/kg at the booked 2 M (was the pilot-class 1.40); BMED_ACID 26.93 kW (was 5.63)",
+  "replace_when": "X-MFG-35 stack I-V and current efficiency at 2 M, or the EDBM pilot on the plant chloride brine (the registered verification test)",
   "doc": "AQS-PAR-003"
  },
  {

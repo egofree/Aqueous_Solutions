@@ -125,7 +125,7 @@ On the Rev N design day the cell currents range from 17 A (`EW_8`) to 572 A (`EW
 
 Aluminium, magnesium, calcium, lithium and the rare earth elements are not electrowon here. Their energy is BMED sodium hydroxide plus mixing, about 0.3 to 0.6 kWh/kg of hydroxide cake.
 
-BMED (Rev C): the specific energy comes from the repeating-unit voltage, P = n_pairs · F · V_ru / CE, with V_ru 2.0 V (1.8 to 2.2 V per repeating unit) and CE 0.65 for feed-and-bleed operation (63 to 67 %; Cassaro et al. 2023, Membranes 13, 217, https://pmc.ncbi.nlm.nih.gov/articles/PMC9945178/). This gives 2.06 kWh/kg NaOH, inside the 1.9 to 2.6 kWh/kg feed-and-bleed range reported there (1.4 kWh/kg in closed loop). On the Rev N design day: 1811 pairs/d, 6.22 kW DC, rated 8 kW (1.25 × P, rounded up).
+BMED: the design energy basis is the product's own concentration — the 2 M product books 6.7 kWh/kg NaOH (EDBM_WHEY_2021, A-M-171; the driver `bmed_sec_kWh_per_kg_base`). The in-house repeating-unit voltage model (P = n_pairs · F · V_ru / CE, STRATHMANN2004/CRC_COND) and the EDBM_PILOT_2023 seawater-brine figures stay as model data at their own concentration. The live stack power and current are graph values (`BMED_ACID` continuous_kw and S17-BMED, written by `flow_graph/param/write_graph.py` from `flow_graph/param/solver.py bmed()`); the historical 2.06 kWh/kg / 6.22 kW figures above are superseded.
 
 - Induction pyrolysis: 0.8 to 1.2 kWh/kg of dry plastic to the coil, plus afterburner heat from the non-condensable gas.
 - Dryer: 0.70 to 0.85 kWh/kg of water evaporated (Q3 through HX-4). Since graph Rev J, the electrowinning reject heat goes to Q4 through HX-8 (AQS-DUTY-008 Rev B).

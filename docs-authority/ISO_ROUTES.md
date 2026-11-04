@@ -114,7 +114,7 @@ Status. 397 positioned piped lines routed, 7899 m total. 15 piped lines wait on 
 | S67 | 15 | F1 | AFTERBURNER_FLUE | FLUE_KO | 700 | -1900 | -7450 | -2650 | 12.7 | 3 |
 | S67B | 15 | M1 | FLUE_KO | CRYO_CO2 | 2650 | -19100 | 8950 | -1200 | 31.9 | 3 |
 | S68 | 15 | P2 | CRYO_AHU | LEACH_CSTR_1 | 1200 | -13400 | 900 | -2500 | 18.0 | 3 |
-| S69 | 32 | P3 | ZNBR2 | ZNBR2_BR2_REGEN | 2400 | -2252 | -400 | -2450 | 7.5 | 3 |
+| S69 | 40 | P3 | ZNBR2 | ZNBR2_BR2_REGEN | 2400 | -2252 | -400 | -2450 | 7.5 | 3 |
 | S69B | 15 | P1 | ZNBR2_BR2_REGEN | ZNBR2 | 2450 | 2252 | 400 | -2400 | 7.5 | 3 |
 | S70 | 15 | P1 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | 2900 | 3200 | 950 | -2650 | 9.7 | 3 |
 | S71 | 200 | F1 | MET_AHU | MET_SCRUB | 2300 | 1200 | 2100 | -2200 | 7.8 | 3 |

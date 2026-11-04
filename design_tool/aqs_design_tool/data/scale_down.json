@@ -876,7 +876,7 @@
      "from": "SOL_ARK_60K",
      "to": "BMED_ACID",
      "other_sector": "ELEC",
-     "rate": 5.6267,
+     "rate": 26.9276,
      "unit": "kW",
      "carries": "480 V AC"
     },
@@ -5737,7 +5737,7 @@
      "from": "SOL_ARK_60K",
      "to": "BMED_ACID",
      "other_sector": "DIGESTER",
-     "rate": 5.6267,
+     "rate": 26.9276,
      "unit": "kW",
      "carries": "480 V AC"
     },

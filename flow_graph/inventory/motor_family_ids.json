@@ -136,6 +136,11 @@
    "motor_type": "hermetic induction (scroll)",
    "size": "18.5 kW hermetic",
    "voltage": "480 V 3-ph"
+  },
+  "MF-29": {
+   "motor_type": "hermetic induction (scroll)",
+   "size": "22 kW hermetic",
+   "voltage": "480 V 3-ph"
   }
  }
 }

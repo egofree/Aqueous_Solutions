@@ -58,7 +58,7 @@ Table 2.1. Pipe families
 | PF-18 | P3 | PVDF SDR 21 ISO 10931 | 300 | 6.8 | 1 | 2 | 5.4 | 3 | 2 | 2 | 24 7/8 in | 8 fusion |
 | PF-19 | P4 | PP-H ISO 15494 | 50 | 56.7 | 2 | 10 | 4.2 | 6 | 4 | 4 | 16 5/8 in | 23 fusion |
 | PF-20 | M1 | 316L ASTM A312 | 50 | 17.1 | 1 | 3 | 1.2 | 3 | 2 | 2 | 8 5/8 in | 9 butt weld |
-| PF-21 | P3 | PVDF SDR 21 ISO 10931 | 32 | 7.4 | 1 | 2 | 4.8 | 3 | 2 | 2 | 8 1/2 in | 8 fusion |
+| PF-23 | P3 | PVDF SDR 21 ISO 10931 | 40 | 7.4 | 1 | 2 | 4.8 | 3 | 2 | 2 | 8 1/2 in | 8 fusion |
 
 ### 2a. Lines without a piping class
 
@@ -229,7 +229,7 @@ These lines have no class in the line list (AQS-PIP-004): either they are not pi
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | flow_battery | ZNBR2 | IA-ZNBR-BD | 15 | P1 | 22.43 | 3 | 2 | 11 solvent |
 | flow_battery | ZNBR2 | IA-ZNBR-HEAT | 15 | P1 | 37.0 | 3 | 2 | 12 solvent |
-| flow_battery | ZNBR2 | S69 | 32 | P3 | 7.38 | 3 | 2 | 8 fusion |
+| flow_battery | ZNBR2 | S69 | 40 | P3 | 7.36 | 3 | 2 | 8 fusion |
 | genset | BACKUP_GEN | S46 | 15 | P2 | 7.84 | 3 | 2 | 8 solvent |
 | pem_fc | FUEL_CELL | IA-FC-FIX | 50 | P2 | 16.32 | 3 | 2 | 9 solvent |
 | pem_fc | FUEL_CELL | IA-FC-LEACH | 15 | P2 | 27.24 | 3 | 2 | 10 solvent |

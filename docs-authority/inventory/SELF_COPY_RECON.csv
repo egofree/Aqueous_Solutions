@@ -1974,22 +1974,22 @@ MF-06 x 7,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.19 kg,,Unstated,-,materi
 MF-06 x 7,die-cast Al cage (bars + rings),0.40 kg,,Unstated,-,material not stated on the unit BOM line
 MF-06 x 7,shaft C45,7,,Unstated,-,material not stated on the unit BOM line
 MF-06 x 7,compressor shell (scroll line X-MFG-35),0,,Unstated,-,material not stated on the unit BOM line
-MF-07 x 22,stator laminations M400-50A (EN 10106) 0.5 mm,2684,,Unstated,-,material not stated on the unit BOM line
-MF-07 x 22,rotor laminations M400-50A 0.5 mm,2684,,Unstated,-,material not stated on the unit BOM line
-MF-07 x 22,magnet wire IEC 60317-13 17 AWG (0.927 mm2),2.58 kg,,Unstated,-,material not stated on the unit BOM line
-MF-07 x 22,die-cast Al cage (bars + rings),0.70 kg,,Unstated,-,material not stated on the unit BOM line
-MF-07 x 22,shaft C45,22,,Unstated,-,material not stated on the unit BOM line
-MF-07 x 22,compressor shell (scroll line X-MFG-35),0,,Unstated,-,material not stated on the unit BOM line
-MF-08 x 3,stator laminations M400-50A (EN 10106) 0.5 mm,276,,Unstated,-,material not stated on the unit BOM line
-MF-08 x 3,rotor laminations M400-50A 0.5 mm,276,,Unstated,-,material not stated on the unit BOM line
-MF-08 x 3,magnet wire IEC 60317-13 21 AWG (0.184 mm2),0.77 kg,,Unstated,-,material not stated on the unit BOM line
-MF-08 x 3,die-cast Al cage (bars + rings),0.32 kg,,Unstated,-,material not stated on the unit BOM line
-MF-08 x 3,"shaft C45 (EN 10083-2) D14 x 196 mm, key to IEC 60072-1",3,,Unstated,-,material not stated on the unit BOM line
-MF-08 x 3,"frame A356 IEC 71, feet A112 x B90, holes K7",3,,Unstated,-,material not stated on the unit BOM line
-MF-08 x 3,end shields A356,6,,Unstated,-,material not stated on the unit BOM line
-MF-08 x 3,bearing 6202-2Z,6,,Unstated,-,material not stated on the unit BOM line
-MF-08 x 3,fan PP + fan cover steel,3,,Unstated,-,material not stated on the unit BOM line
-MF-08 x 3,terminal box + 6-stud block,3,,Unstated,-,material not stated on the unit BOM line
+MF-07 x 6,stator laminations M400-50A (EN 10106) 0.5 mm,732,,Unstated,-,material not stated on the unit BOM line
+MF-07 x 6,rotor laminations M400-50A 0.5 mm,732,,Unstated,-,material not stated on the unit BOM line
+MF-07 x 6,magnet wire IEC 60317-13 17 AWG (0.927 mm2),2.58 kg,,Unstated,-,material not stated on the unit BOM line
+MF-07 x 6,die-cast Al cage (bars + rings),0.70 kg,,Unstated,-,material not stated on the unit BOM line
+MF-07 x 6,shaft C45,6,,Unstated,-,material not stated on the unit BOM line
+MF-07 x 6,compressor shell (scroll line X-MFG-35),0,,Unstated,-,material not stated on the unit BOM line
+MF-08 x 19,stator laminations M400-50A (EN 10106) 0.5 mm,1748,,Unstated,-,material not stated on the unit BOM line
+MF-08 x 19,rotor laminations M400-50A 0.5 mm,1748,,Unstated,-,material not stated on the unit BOM line
+MF-08 x 19,magnet wire IEC 60317-13 21 AWG (0.184 mm2),0.77 kg,,Unstated,-,material not stated on the unit BOM line
+MF-08 x 19,die-cast Al cage (bars + rings),0.32 kg,,Unstated,-,material not stated on the unit BOM line
+MF-08 x 19,"shaft C45 (EN 10083-2) D14 x 196 mm, key to IEC 60072-1",19,,Unstated,-,material not stated on the unit BOM line
+MF-08 x 19,"frame A356 IEC 71, feet A112 x B90, holes K7",19,,Unstated,-,material not stated on the unit BOM line
+MF-08 x 19,end shields A356,38,,Unstated,-,material not stated on the unit BOM line
+MF-08 x 19,bearing 6202-2Z,38,,Unstated,-,material not stated on the unit BOM line
+MF-08 x 19,fan PP + fan cover steel,19,,Unstated,-,material not stated on the unit BOM line
+MF-08 x 19,terminal box + 6-stud block,19,,Unstated,-,material not stated on the unit BOM line
 MF-09 x 155,stator laminations M400-50A (EN 10106) 0.5 mm,16120,,Unstated,-,material not stated on the unit BOM line
 MF-09 x 155,rotor laminations M400-50A 0.5 mm,16120,,Unstated,-,material not stated on the unit BOM line
 MF-09 x 155,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.77 kg,,Unstated,-,material not stated on the unit BOM line
@@ -2165,32 +2165,32 @@ PF-19,"PP-H ISO 15494 DN50 pipe, 10 x 6.096 m",56.7 m,PP-H ISO 15494,Partial,OIL
 PF-19,ISO 15494 butt-fusion 90 elbow; ISO 15494 stub end + backing ring; gaskets; 5/8 ,6 / 4 / 4 / 16,PP-H ISO 15494,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 PF-20,"316L ASTM A312 DN50 pipe, 3 x 6.096 m",17.1 m,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 PF-20,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 5/8 in studs,3 / 2 / 2 / 8,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-PF-21,"PVDF SDR 21 ISO 10931 DN32 pipe, 2 x 6.096 m",7.4 m,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
-PF-21,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 ,3 / 2 / 2 / 8,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
-WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",40440 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+PF-23,"PVDF SDR 21 ISO 10931 DN40 pipe, 2 x 6.096 m",7.4 m,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
+PF-23,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 ,3 / 2 / 2 / 8,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
+WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",47520 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",44794 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",20520 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-04,"equipment ground 10 AWG bare Cu, -",20220 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",24120 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-04,"equipment ground 10 AWG bare Cu, -",23760 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",19296 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",5262 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",6252 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-07,"control 18 AWG shielded pair, 300 V",3660 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",3600 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",6422 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-10,"power 3 AWG XHHW-2 Cu, 600 V",3225 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",3092 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-12,"MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield, 15 kV",1200 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-10,"power 3 AWG XHHW-2 Cu, 600 V",3750 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-12,"MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield, 15 kV",1500 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-13,"equipment ground 8 AWG green XHHW-2 Cu, 600 V",1031 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-14,"power 400 kcmil XHHW-2 Cu, 600 V",540 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-14,"power 400 kcmil XHHW-2 Cu, 600 V",675 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-15,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",200 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-16,"power 10 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",309 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-19,"equipment ground 2/0 AWG green XHHW-2 Cu, 600 V",180 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-18,"power 4/0 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",40 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-19,"equipment ground 2/0 AWG green XHHW-2 Cu, 600 V",225 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-20,"power 3 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",306 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-21,"DC power pair 14 AWG TC-ER 2-cond, 600 V",60 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-24,"equipment ground 10 AWG green XHHW-2 Cu, 600 V",12 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-25,"power 10 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",9 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-31,"power 12 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",200 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-34,"power 3/0 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",40 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-35,"power 300 kcmil XHHW-2 Cu, tray cable TC-ER, 600 V",20 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-36,"power 4 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",3092 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",328,,Unstated,-,material not stated on the unit BOM line
 OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",420,,Unstated,-,material not stated on the unit BOM line
 OF-03,electronics: PLC digital I/O point (IEC 61131-2),836,,Unstated,-,material not stated on the unit BOM line

@@ -46,7 +46,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
 | OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x328 | 328 | 54 | AHU damper actuator (assumed size); Biogas recirculation diaphragm blower about 2 L/min (assumed size); CNC vertical mill: axis drive (assumed size) |  |
-| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6201-2Z x312; 6205-2Z x50; 6204-2Z x22; 6202-2Z x18; 6206-2Z x10; 6308-2Z x6; 6306-2Z x2 | 420 | 60 | AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size); AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed si |  |
+| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6201-2Z x312; 6205-2Z x50; 6204-2Z x22; 6202-2Z x18; 6206-2Z x10; 6308-2Z x6; 6306-2Z x2 | 420 | 60 | AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90L (assumed size); AHU supply fan: drive and non-drive end, IEC 60072 frame 90L (assumed si |  |
 ## 4. Electronics datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
@@ -56,16 +56,16 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x161 | 161 | 53 | AHU damper actuator; Biogas recirculation diaphragm blower about 2 L/min; Motor: cathode air blower (induction IE3, IEC 71 / 0.25 kW) |  |
 | OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.18 kW x155; 0.55 kW x10; 0.37 kW x7; 0.25 kW x2; 0.12 kW x1; 1.1 kW x1; 0.75 kW x1 | 177 | 50 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Body / envelope 800 x 600 x 1200 mm (assumed VFD at >= 0.75 kW); Body / en |  |
 | OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x106 | 106 | 1 | 1685 points / 16 |  |
-| OF-08 | variable-frequency drive | IEC 61800-5-1 | 1.1 kW x21; 2.2 kW x5; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 33 | 15 | AHU exhaust fan (assumed VFD at >= 0.75 kW); AHU supply fan (assumed VFD at >= 0.75 kW); Band saw: main drive (assumed VFD at >= 0.75 kW) |  |
+| OF-08 | variable-frequency drive | IEC 61800-5-1 | 1.5 kW x19; 2.2 kW x5; 1.1 kW x5; 7.5 kW x3; 4 kW x1 | 33 | 15 | AHU exhaust fan (assumed VFD at >= 0.75 kW); AHU supply fan (assumed VFD at >= 0.75 kW); Band saw: main drive (assumed VFD at >= 0.75 kW) |  |
 | OF-09 | solenoid driver channel | IEC 61131-2 DO | 24 V DC x19 | 19 | 9 | on/off valve IA-BED-H2O; on/off valve IA-ELY-H2O; on/off valve IA-FLUE-QUENCH |  |
-| OF-10 | compressor contactor + overload | IEC 60947-4-1 | 18.5 kW hermetic x8; 1.1 kW hermetic x1 | 9 | 2 | air-source heat pump compressor; cryocooler compressor |  |
+| OF-10 | compressor contactor + overload | IEC 60947-4-1 | 22 kW hermetic x8; 1.1 kW hermetic x1 | 9 | 2 | air-source heat pump compressor; cryocooler compressor |  |
 | OF-11 | stepper driver | IEC 61800-5-1 | 24/48 V DC x3 | 3 | 1 | CNC vertical mill: axis drive |  |
 | OF-12 | safety PLC (SIL 2 capable), CPU and I/O rack | IEC 61508 / IEC 61511 | - x2 | 2 | 1 | AQS-CTL-003: 174 SIFs, redundant pair |  |
 ## 5. Instrument datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-34 | flow transmitter | electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456 | DN15 x170; DN50 x18; DN32 x1; DN250 x1; DN300 x1 | 191 | 68 | C29_RECYCLE: pumped line (assumed); CRU_TO_TFE: pumped line (assumed); CRU_TO_VDF: pumped line (assumed) | spec per tag on AQS-CTL-001 |
+| OF-34 | flow transmitter | electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456 | DN15 x170; DN50 x18; DN40 x1; DN250 x1; DN300 x1 | 191 | 68 | C29_RECYCLE: pumped line (assumed); CRU_TO_TFE: pumped line (assumed); CRU_TO_VDF: pumped line (assumed) | spec per tag on AQS-CTL-001 |
 | OF-35 | pressure transmitter | ceramic diaphragm, IEC 61298 | 0-10 bar x176; 0-16 bar x1 | 177 | 177 | duty item 5 (one per unit); range >= 1.25 x design pressure | spec per tag on AQS-CTL-001 |
 | OF-36 | temperature element | IEC 60751, 316L thermowell | Pt100 class A x180 | 180 | 180 | duty item 5 (assumed one per unit) | spec per tag on AQS-CTL-001 |
 | OF-37 | high-level switch | IEC 60947-5, 316L | vibrating fork x82 | 82 | 82 | duty item 5: high level trips the inlet | spec per tag on AQS-CTL-001 |
@@ -82,7 +82,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x223; 90 A x8; 30 A x3; 60 A x1 | 235 | 61 | NEC 430.52, from AQS-INV-002 |  |
+| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x223; 100 A x8; 30 A x3; 60 A x1 | 235 | 61 | NEC 430.52, from AQS-INV-002 |  |
 ## 7. Seal datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
@@ -92,7 +92,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-48 | pipe clamp | PP clamp with EPDM liner, MSS SP-58 Type 7 | DN15 x5316; DN50 x537; DN20 x17; DN250 x7; DN32 x6; DN300 x4; DN200 x3 | 5890 | 116 | AL_POT_CL2: AQS-PIP-005 span count; AQUA_BYPASS: AQS-PIP-005 span count; AQUA_LOOP1: AQS-PIP-005 span count |  |
+| OF-48 | pipe clamp | PP clamp with EPDM liner, MSS SP-58 Type 7 | DN15 x5316; DN50 x537; DN20 x17; DN250 x7; DN40 x6; DN300 x4; DN200 x3 | 5890 | 116 | AL_POT_CL2: AQS-PIP-005 span count; AQUA_BYPASS: AQS-PIP-005 span count; AQUA_LOOP1: AQS-PIP-005 span count |  |
 | OF-49 | U-bolt with guide | 316 U-bolt, MSS SP-58 Type 24 | DN15 x1432; DN20 x30; DN25 x23; DN50 x7 | 1492 | 44 | C29_RECYCLE: AQS-PIP-005 span count; C29_TO_PYRO: AQS-PIP-005 span count; CO2_TO_FARM: AQS-PIP-005 span count |  |
 ## 9. Valve datasheets
 
@@ -104,9 +104,9 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-53 | isolation valve | CPVC true-union ball valve, MSS SP-122, FKM seals | DN15 x56; DN50 x34 | 90 | 24 | FIBER_SCRAP: one at each end nozzle (assumed); IA-ACID-01: one at each end nozzle (assumed); IA-BAG-01: one at each end nozzle (assumed) |  |
 | OF-54 | check valve | PP swing/ball check valve with HDPE stub ends, ISO 16137 | DN15 x12; DN50 x2 | 14 | 8 | IA-FLUE-QUENCH: pump discharge (assumed); IA-MEOH-H2O: pump discharge (assumed); IA-MEOH-REST: pump discharge (assumed) |  |
 | OF-55 | check valve | PVC-U true-union swing/ball check valve, EPDM seals | DN15 x58; DN50 x4 | 62 | 30 | DL_MET_TO_FEED: pump discharge (assumed); EW9_LIQUOR_TO_MO: pump discharge (assumed); IA-AQUA-TOPUP: pump discharge (assumed) |  |
-| OF-56 | isolation valve | PVDF ball valve, ISO 16135, PTFE seats | DN15 x82; DN50 x4; DN32 x2; DN300 x2 | 90 | 35 | AL_POT_CL2: one at each end nozzle (assumed); FARM_O2_TO_HAB: one at each end nozzle (assumed); F_RECOVER_TO_HF_GEN: one at each end nozzle (assumed) |  |
+| OF-56 | isolation valve | PVDF ball valve, ISO 16135, PTFE seats | DN15 x82; DN50 x4; DN40 x2; DN300 x2 | 90 | 35 | AL_POT_CL2: one at each end nozzle (assumed); FARM_O2_TO_HAB: one at each end nozzle (assumed); F_RECOVER_TO_HF_GEN: one at each end nozzle (assumed) |  |
 | OF-57 | check valve | CPVC true-union swing/ball check valve, FKM seals | DN15 x17; DN50 x9 | 26 | 19 | IA-ACID-01: pump discharge (assumed); IA-BAG-01: pump discharge (assumed); IA-BASE-PPT: pump discharge (assumed) |  |
-| OF-58 | check valve | PVDF swing/ball check valve, ISO 16137, PTFE seats | DN15 x27; DN32 x1; DN300 x1 | 29 | 23 | FARM_O2_TO_HAB: pump discharge (assumed); F_RECOVER_TO_HF_GEN: pump discharge (assumed); HF_GEN_TO_TFE: pump discharge (assumed) |  |
+| OF-58 | check valve | PVDF swing/ball check valve, ISO 16137, PTFE seats | DN15 x27; DN40 x1; DN300 x1 | 29 | 23 | FARM_O2_TO_HAB: pump discharge (assumed); F_RECOVER_TO_HF_GEN: pump discharge (assumed); HF_GEN_TO_TFE: pump discharge (assumed) |  |
 | OF-59 | isolation valve | CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged | DN15 x64 | 64 | 16 | C29_RECYCLE: one at each end nozzle (assumed); C29_TO_PYRO: one at each end nozzle (assumed); CUT-1-OUT: one at each end nozzle (assumed) |  |
 | OF-60 | isolation valve | PVC-lined ball valve in FRP service, ISO 16135 | DN15 x10; DN250 x6; DN20 x2; DN200 x2 | 20 | 9 | COMB_OFFGAS: one at each end nozzle (assumed); IA-AB-FLUE: one at each end nozzle (assumed); IA-ACID-AIR-RET: one at each end nozzle (assumed) |  |
 | OF-61 | check valve | 316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged | DN15 x30; DN50 x1 | 31 | 14 | CRU_TO_TFE: pump discharge (assumed); CRU_TO_VDF: pump discharge (assumed); FLUORO_TO_MFG: pump discharge (assumed) |  |

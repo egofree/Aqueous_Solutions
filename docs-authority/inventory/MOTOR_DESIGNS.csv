@@ -17,4 +17,4 @@ MF-17,solenoid,"ISO 15218 coil, 22 mm",-,-,22,-,0.33,-,-,-,-
 MF-19,stepper,NEMA 34 (86 mm),-,-,86,-,-,-,-,-,-
 MF-25,hermetic induction (scroll),1.1 kW hermetic,62,110,124,209,1.97,18 AWG (0.597 mm2),6.8,1.01,-
 MF-27,"EC (electronically commutated, permanent-magnet) fan motor","1.1 kW EC fan, integrated drive",-,-,-,-,-,-,-,-,-
-MF-28,hermetic induction (scroll),18.5 kW hermetic,138,113,277,92,28.89,13 AWG (6.835 mm2),34.3,10.64,-
+MF-29,hermetic induction (scroll),22 kW hermetic,147,168,293,58,34.35,12 AWG (11.952 mm2),57.2,9.56,-

@@ -944,22 +944,22 @@ DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MS
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,CA_HOPPER: one at each end nozzle (assumed)
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,FR_FINISH: one at each end nozzle (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",48,AHU damper actuator (assumed size)
-ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",16,"AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
-ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",16,"AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
+ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",16,"AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90L (assumed size)"
+ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",16,"AHU supply fan: drive and non-drive end, IEC 60072 frame 90L (assumed size)"
 ELEC,EXT_HALL_N,EXT_HALL,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,24,AHU damper actuator
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,48,AHU damper actuator: run and fault (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,16,AHU exhaust fan: run and fault (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,16,AHU supply fan: run and fault (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,16,air-source heat pump compressor: run and fault (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,32,heat pump condenser fan: run and fault (assumed)
-ELEC,EXT_HALL_N,EXT_HALL,electronics,compressor contactor + overload,18.5 kW hermetic,IEC 60947-4-1,8,air-source heat pump compressor
-ELEC,EXT_HALL_N,EXT_HALL,electronics,variable-frequency drive,1.1 kW,IEC 61800-5-1,8,AHU exhaust fan (assumed VFD at >= 0.75 kW)
-ELEC,EXT_HALL_N,EXT_HALL,electronics,variable-frequency drive,1.1 kW,IEC 61800-5-1,8,AHU supply fan (assumed VFD at >= 0.75 kW)
+ELEC,EXT_HALL_N,EXT_HALL,electronics,compressor contactor + overload,22 kW hermetic,IEC 60947-4-1,8,air-source heat pump compressor
+ELEC,EXT_HALL_N,EXT_HALL,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,8,AHU exhaust fan (assumed VFD at >= 0.75 kW)
+ELEC,EXT_HALL_N,EXT_HALL,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,8,AHU supply fan (assumed VFD at >= 0.75 kW)
 ELEC,EXT_HALL_N,EXT_HALL,fabricated part,fabricated part set,4 BOM lines,models/mfg/EXT_HALL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 ELEC,EXT_HALL_N,EXT_HALL,fastener,M20 column base bolts (F1552 class),M20 column base bolts (F1552 class),ISO 898-1 8.8,3212,models/mfg/EXT_HALL/fasteners.csv
 ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
 ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
-ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",90 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
+ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",100 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
 ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,16,"NEC 430.52, from AQS-INV-002"
 ELEC,flow_battery,ZNBR2,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",192,"Motor: electrolyte pump (anolyte, catholyte) per stack strin: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 ELEC,flow_battery,ZNBR2,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm (: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
@@ -971,7 +971,7 @@ ELEC,flow_battery,ZNBR2,fabricated part,fabricated part set,32 BOM lines,models/
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,S69: 2 per support (assumed)
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,IA-ZNBR-BD: 2 per support (assumed)
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,78,IA-ZNBR-HEAT: 2 per support (assumed)
-ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN32,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S69: pumped line (assumed)
+ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN40,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S69: pumped line (assumed)
 ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ZNBR-BD: pumped line (assumed)
 ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ZNBR-HEAT: pumped line (assumed)
 ELEC,flow_battery,ZNBR2,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
@@ -982,13 +982,13 @@ ELEC,flow_battery,ZNBR2,protection,"inverse-time circuit breaker, 3-pole",15 A,U
 ELEC,flow_battery,ZNBR2,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 ELEC,flow_battery,ZNBR2,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",96,"Motor: electrolyte pump (anolyte, catholyte) per stack strin: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 ELEC,flow_battery,ZNBR2,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm (: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
-ELEC,flow_battery,ZNBR2,support,pipe clamp,DN32,"PP clamp with EPDM liner, MSS SP-58 Type 7",6,S69: AQS-PIP-005 span count
+ELEC,flow_battery,ZNBR2,support,pipe clamp,DN40,"PP clamp with EPDM liner, MSS SP-58 Type 7",6,S69: AQS-PIP-005 span count
 ELEC,flow_battery,ZNBR2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",24,IA-ZNBR-BD: AQS-PIP-005 span count
 ELEC,flow_battery,ZNBR2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",39,IA-ZNBR-HEAT: AQS-PIP-005 span count
-ELEC,flow_battery,ZNBR2,valve,check valve,DN32,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,S69: pump discharge (assumed)
+ELEC,flow_battery,ZNBR2,valve,check valve,DN40,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,S69: pump discharge (assumed)
 ELEC,flow_battery,ZNBR2,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-ZNBR-BD: pump discharge (assumed)
 ELEC,flow_battery,ZNBR2,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-ZNBR-HEAT: pump discharge (assumed)
-ELEC,flow_battery,ZNBR2,valve,isolation valve,DN32,"PVDF ball valve, ISO 16135, PTFE seats",2,S69: one at each end nozzle (assumed)
+ELEC,flow_battery,ZNBR2,valve,isolation valve,DN40,"PVDF ball valve, ISO 16135, PTFE seats",2,S69: one at each end nozzle (assumed)
 ELEC,flow_battery,ZNBR2,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-ZNBR-BD: one at each end nozzle (assumed)
 ELEC,flow_battery,ZNBR2,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-ZNBR-HEAT: one at each end nozzle (assumed)
 ELEC,genset,BACKUP_GEN,bearing,deep-groove ball bearing,6202-2Z,"ISO 15 / ISO 492 normal class, C3",2,"radiator fan: drive and non-drive end, IEC 60072 frame 71 (assumed size)"

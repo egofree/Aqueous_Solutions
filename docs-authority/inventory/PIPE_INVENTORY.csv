@@ -118,7 +118,7 @@ DOCK,DOCK,NORTH_DOCK,NUT_AQUA,15,P1,PVC-U Sch 80 ASTM D1785,51.94,11,3,ASTM D246
 DOCK,DOCK,NORTH_DOCK,NUT_AQUA_BED,15,P1,PVC-U Sch 80 ASTM D1785,23.84,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
 ELEC,flow_battery,ZNBR2,IA-ZNBR-BD,15,P1,PVC-U Sch 80 ASTM D1785,22.43,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
 ELEC,flow_battery,ZNBR2,IA-ZNBR-HEAT,15,P1,PVC-U Sch 80 ASTM D1785,37.0,8,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,12,solvent
-ELEC,flow_battery,ZNBR2,S69,32,P3,PVDF SDR 21 ISO 10931,7.38,4,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,fusion
+ELEC,flow_battery,ZNBR2,S69,40,P3,PVDF SDR 21 ISO 10931,7.36,4,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,fusion
 ELEC,genset,BACKUP_GEN,S46,15,P2,CPVC Sch 80 ASTM F441,7.84,4,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 ELEC,pem_fc,FUEL_CELL,IA-FC-FIX,50,P2,CPVC Sch 80 ASTM F441,16.32,5,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,9,solvent
 ELEC,pem_fc,FUEL_CELL,IA-FC-LEACH,15,P2,CPVC Sch 80 ASTM F441,27.24,6,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent

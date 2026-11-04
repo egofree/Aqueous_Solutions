@@ -141,8 +141,8 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S67 | AFTERBURNER_FLUE | FLUE_KO | G | mass | present | flue N2/O2/CO2/NOx | 136.882146 kg/d | — |
 | S67B | FLUE_KO | CRYO_CO2 | G | mass | present | CO2-rich gas after KO | 13.810366 kg/d | — |
 | S68 | CRYO_AHU | LEACH_CSTR_1 | L | mass | present | flue condensate | 102.592478 kg/d | — |
-| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 917.459465 kg/d | — |
-| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 917.459465 kg/d | — |
+| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 1079.307599 kg/d | — |
+| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 1079.307599 kg/d | — |
 | S70 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | L | mass | present | condensables | 0.0521 kg/d | — |
 | S71 | MET_AHU | MET_SCRUB | G | mass | present | metal-aisle fume / mist / dust | 20458.32 kg/d | absent_from_candidate_mvs |
 | S72 | MET_SCRUB | LEACH_CSTR_1 | L/S | mass | present | metal fines and aqueous scrub liquor | 2.4442 kg/d | — |
@@ -264,7 +264,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | S/L | mass | present | grey sludge | 258.762606 kg/d | — |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | L | mass | present | sodium chlorate liquor | 27.509975 kg/d | — |
 | HL-Q4-REJ | Q4_BUS | DRY_COOLER | thermal | thermal | present | Q4 surplus heat | 0.7384 kW | — |
-| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 368.7027 kW | — |
+| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 407.219 kW | — |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | L | mass | present | electrolyte bleed | 8.486841 kg/d | — |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | L | mass | present | digest surplus | 13.930007 kg/d | — |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | L | mass | present | fab UPW | 60.000181 kg/d | — |
@@ -378,7 +378,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-NIT-VENT | WS_NITRIC | NOX_SCRUB | G | mass | present | nitric tank vent | 0.0 kg/d | — |
 | IA-FLUE-QUENCH | ROOF_TANK | FLUE_KO | L | mass | present | flue quench water | 24.31 kg/d | — |
 | IA-PEROX-H2O | ROOF_TANK | WS_PEROX | L | mass | present | peroxide dilution water | 2.824 kg/d | — |
-| S17-BMED | SOL_ARK_60K | BMED_ACID | E | elec | present | 480 V AC | 5.6267 kW | — |
+| S17-BMED | SOL_ARK_60K | BMED_ACID | E | elec | present | 480 V AC | 26.9276 kW | — |
 | IA-BMED-03-TRIM | LEACH_CSTR_1 | GEO_GHEX | E | thermal | present | trim cooler heat from IA-BMED-03 (to BMED_ACID) | 0.78 kW | — |
 | IA-BMED-04-TRIM | LEACH_CSTR_1 | GEO_GHEX | E | thermal | present | trim cooler heat from IA-BMED-04 (to BMED_BASE) | 1.027 kW | — |
 | IA-LEACH-VCD | LEACH_CSTR_1 | VCD_TRAIN | L | mass | present | leach liquor water bleed to vapour-compression distillation | 200.621927 kg/d | — |
@@ -490,7 +490,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-EW6-H2B | EW_6 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.03496 kg/d | — |
 | IA-EW7-H2B | EW_7 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.454643 kg/d | — |
 | IA-EW8-H2B | EW_8 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.032278 kg/d | — |
-| SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 99.1801 kW | — |
+| SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 116.3955 kW | — |
 | IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | L | mass | present | C5-C10 naphtha olefin feed | 0.384603 kg/d | — |
 | SQ-EVAP_ACID | EVAP_ACID | Q4_BUS | E | thermal | present | electrical input leaving as heat | 1.498 kW | — |
 | SQ-EVAP_BASE | EVAP_BASE | Q4_BUS | E | thermal | present | electrical input leaving as heat | 1.328 kW | — |

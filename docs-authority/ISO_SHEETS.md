@@ -112,7 +112,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | S67 | AFTERBURNER_FLUE | FLUE_KO | 15 | F1 | 12.64 | 3 |
 | S67B | FLUE_KO | CRYO_CO2 | 15 | M1 | 31.67 | 3 |
 | S68 | CRYO_AHU | LEACH_CSTR_1 | 15 | P2 | 17.94 | 3 |
-| S69 | ZNBR2 | ZNBR2_BR2_REGEN | 32 | P3 | 7.38 | 3 |
+| S69 | ZNBR2 | ZNBR2_BR2_REGEN | 40 | P3 | 7.36 | 3 |
 | S69B | ZNBR2_BR2_REGEN | ZNBR2 | 15 | P1 | 7.44 | 3 |
 | S70 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | 15 | P1 | 9.64 | 3 |
 | S71 | MET_AHU | MET_SCRUB | 200 | F1 | 7.14 | 3 |

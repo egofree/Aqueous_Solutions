@@ -42,7 +42,7 @@ All solved units close.
 | Item | Graph | Solved | Deviation | Reference |
 | --- | --- | --- | --- | --- |
 | IA-ACID-01 HCl content, kg/d | 87.923 | 87.923 | +0.0 % | GREENWOOD, LUNAR_SOURCEBOOK |
-| BMED_ACID kW vs physics triplet voltage | 5.627 | 5.627 | +0.0 % | STRATHMANN2004 |
+| BMED_ACID kW at the 2 M SEC (F-5 basis) | 26.928 | 26.928 | -0.0 % | EDBM_WHEY_2021 |
 | IA-BASE-PPT NaOH, kg/d | 96.457 | 96.457 | -0.0 % | GREENWOOD |
 | IA-BASE-01 NaOH, kg/d | 4.394 | 4.394 | +0.0 % | GREENWOOD |
 | IA-NAOH-MU make-up, kg/d | 4.394 | 4.394 | -0.0 % | NaOH balance |
@@ -61,11 +61,11 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3027.000 | 3027.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3561.000 | 3561.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
-1. BMED runs at 2 M product, inside the published EDBM limit of about 3.6 M acid (EDBM_WHEY_2021). Stack power 5.63 kW from 1.40 kWh/kg NaOH (triplet voltage 1.67 V, AQS-DUTY-068); the 2 M whey figure of 6.7 kWh/kg would give 26.93 kW. Study.
+1. BMED runs at 2 M product, inside the published EDBM limit of about 3.6 M acid (EDBM_WHEY_2021). Stack power 26.93 kW from 6.7 kWh/kg NaOH at the 2 M product (EDBM_WHEY_2021; the design SEC is the product's own concentration, physics audit F-5, A-M-171). The in-house triplet-voltage model gives 5.63 kW at its own seawater-brine concentration (AQS-DUTY-068 model data). Study.
 2. EVAP_ACID concentrates HCl from 7.07 wt% to 20 wt%, below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL): feed 1304.8 kg/d, water off 865.2 kg/d, 1.50 kW at 72.0 kWh/t (VOGELBUSCH_MVR upper bound). Study.
 3. EVAP_BASE concentrates NaOH from 7.41 wt% to 20 wt%: feed 1301.7 kg/d, water off 801.9 kg/d, 1.33 kW. Study.
 4. Condensate returns to the BMED stack as water make-up (IA-EVAP_ACID-COND, IA-EVAP_BASE-COND). Both evaporators have 480 V feeds (SF-EVAP_ACID, SF-EVAP_BASE) and heat edges to HEAT_SINK.
@@ -1852,7 +1852,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-168 | Deoxo Pd/Al2O3 at GHSV 5000 1/h on 1000 ppm v O2; chloride g mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator |
 | A-M-169 | Two-stage in-house diaphragm compressor 10 to 200 bar a, equ mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator |
 | A-M-170 | In-house BMED stack: 0.04 m2 cells, at most 100 triplets per mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator |
-| A-M-171 | Triplet voltage = bipolar membrane 1.0 V + 2 x 3 ohm cm2 mon mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator |
+| A-M-171 | BMED design energy at the product's own concentration: SEC 6 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator |
 | A-M-172 | Stage count is the fewest equal-ratio stages with predicted  mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator |
 | A-M-173 | EW bars sized so I2R heat is shed by free convection and rad mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator |
 | A-M-174 | Atmospheric design pressure = 4 x open-vent dP (vent dP held mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator |

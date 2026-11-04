@@ -25,9 +25,9 @@ def process():
     d, g, s = solver.solve()
     N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}
     before = bus_load(g)
-    # BMED energy from published SEC at 2 M
+    # BMED energy from the concentration-honest SEC at 2 M (F-5, A-M-171 restated)
     kw = s['bmed']['kW_published']
-    N['BMED_ACID']['continuous_kw'] = rate(kw,'kW',f"{TAG}. BMED stack: {s['bmed']['base_kg_d']:.2f} kg/d NaOH x {s['bmed']['sec_kWh_kg']:.2f} kWh/kg from triplet voltage {s['bmed']['voltage']['V_design']:.2f} V at CE {DR.val(d,'bmed_CE')} (STRATHMANN2004, CRC_COND, EDBM_PILOT_2023; AQS-DUTY-068) / 24 h. Solver flow_graph/param/solver.py bmed().")
+    N['BMED_ACID']['continuous_kw'] = rate(kw,'kW',f"{TAG}. BMED stack: {s['bmed']['base_kg_d']:.2f} kg/d NaOH x {s['bmed']['sec_kWh_kg']:.1f} kWh/kg at the 2 M product (EDBM_WHEY_2021 quotes 6.7 kWh/kg at 2 M; the design basis is the product's own concentration, physics audit F-5, A-M-171) / 24 h. The in-house triplet voltage {s['bmed']['voltage']['V_design']:.2f} V at CE {DR.val(d,'bmed_CE')} (STRATHMANN2004, CRC_COND, EDBM_PILOT_2023; AQS-DUTY-068) is model data at its own seawater-brine concentration. Solver flow_graph/param/solver.py bmed().")
     E['S17-BMED']['rate'] = rate(kw,'kW',f'{TAG}. 480 V feed equal to BMED_ACID continuous_kw.')
     B12 = N['CRYO_O2']['params'].get('x_par_12_base')
     if B12: B12['BMED_kW'] = round(kw,4); B12['S17-BMED'] = round(kw,4)   # X-PAR-12 rescaling base follows the solver BMED energy

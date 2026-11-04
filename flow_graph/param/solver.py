@@ -38,11 +38,16 @@ def bmed_voltage(d):
                 sec_kWh_kg=V*96485.33212/(NAOH/1000*v('bmed_CE'))/3.6e6)
 
 def bmed(d, hcl_mol):
-    """Salt split 1:1 acid:base; energy from the physics triplet voltage (bmed_voltage) at the design current efficiency."""
+    """Salt split 1:1 acid:base; energy from the concentration-honest SEC: the product is 2 M
+    (bmed_product_molarity) and the cited source quotes 6.7 kWh/kg at 2 M (EDBM_WHEY_2021,
+    A-M-171 restated). The in-house triplet voltage (bmed_voltage) and the seawater-brine pilot
+    SEC stay as model data at their own (0.5-1 M) concentration - taking V_pilot to the 2 M
+    product gave the stale 1.40 kWh/kg design basis (physics audit F-5)."""
     base_kg = hcl_mol*NAOH/1000
     c = DR.val(d,'acid_conc_design_wt'); bv = bmed_voltage(d)
-    return dict(acid_solution_kg_d=hcl_mol*HCL/1000/c, base_kg_d=base_kg, voltage=bv, sec_kWh_kg=bv['sec_kWh_kg'],
-                kW_published=bv['sec_kWh_kg']*base_kg/24, kW_whey_2M=DR.val(d,'bmed_sec_kWh_per_kg_base')*base_kg/24,
+    sec = DR.val(d,'bmed_sec_kWh_per_kg_base')
+    return dict(acid_solution_kg_d=hcl_mol*HCL/1000/c, base_kg_d=base_kg, voltage=bv, sec_kWh_kg=sec,
+                kW_published=sec*base_kg/24, kW_model_brine=bv['sec_kWh_kg']*base_kg/24,
                 kW_design=DR.val(d,'bmed_sec_design_kWh_per_kg_pair')*(hcl_mol*HCL/1000+base_kg)/24)
 
 def evap(d, solute_kg_d, w_in, w_out, added_kg_d=0.0, unit=None):
@@ -122,7 +127,7 @@ def check():
         mis.append((what, graph, solved, dev, ref))
     cmp('IA-ACID-01 HCl content, kg/d', E['IA-ACID-01']['rate']['value']*DR.val(d,'acid_conc_design_wt'), s['leach']['hcl_kg_d'], 'GREENWOOD, LUNAR_SOURCEBOOK')
     if (N['BMED_ACID'].get('continuous_kw') or {}).get('value') is not None:      # R8: Rev AC keeps BMED kW on the S17-BMED feed edge only
-        cmp('BMED_ACID kW vs physics triplet voltage', N['BMED_ACID']['continuous_kw']['value'], s['bmed']['kW_published'], 'STRATHMANN2004')
+        cmp('BMED_ACID kW at the 2 M SEC (F-5 basis)', N['BMED_ACID']['continuous_kw']['value'], s['bmed']['kW_published'], 'EDBM_WHEY_2021')
     w = DR.val(d,'base_conc_design_wt'); nb = s['naoh']
     cmp('IA-BASE-PPT NaOH, kg/d', E['IA-BASE-PPT']['rate']['value']*w, nb['ppt_kg_d'], 'GREENWOOD')
     cmp('IA-BASE-01 NaOH, kg/d', E['IA-BASE-01']['rate']['value']*w, nb['digest_kg_d'], 'GREENWOOD')

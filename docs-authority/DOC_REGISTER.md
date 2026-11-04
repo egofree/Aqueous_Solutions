@@ -539,6 +539,7 @@ Table 5.1. Parts of numbered documents
 | AQS-INV-005 | sheet MF-26 | `docs-authority/inventory/motor_families/MF-26.md` |
 | AQS-INV-005 | sheet MF-27 | `docs-authority/inventory/motor_families/MF-27.md` |
 | AQS-INV-005 | sheet MF-28 | `docs-authority/inventory/motor_families/MF-28.md` |
+| AQS-INV-005 | sheet MF-29 | `docs-authority/inventory/motor_families/MF-29.md` |
 | AQS-PLAN-007 | note (no new AQS number; working record) | `docs-authority/notes/2026-10-19-closure-lane.md` |
 | AQS-PLAN-007 | note (no new AQS number; this is a working record) | `docs-authority/notes/2026-10-19-evidence-pass.md` |
 | AQS-PLAN-007 | note (working record; no new AQS number) | `docs-authority/notes/2026-10-20-duties-nozzles.md` |

@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "975622beebddeefca7848bd9ec8aa90266ed4067bfda8f3e65ab56ef02b38121",
+  "graph_sha256": "2459edaddbd7baa72bae68023b5c5531a48892431d9336455b8d7cae631753f3",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 368.703,
-   "calc_kw": 368.703,
+   "kw": 407.219,
+   "calc_kw": 407.219,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,20 +16,29 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 218.33,
-   "calc_kw": 218.33,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.3 kW, charge 992.4 kW, 3057 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 256.846,
+   "calc_kw": 256.846,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 256.8 kW, charge 1167.4 kW, 3596 kWh over 50 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "EXT_HALL",
    "role": "load",
-   "kw": 99.18,
-   "calc_kw": 99.18,
-   "basis": "X-PAR-07 solver.roof_close: conditioned extension 28548 m2; lighting 25.12 kW (IECC 2021 C405, 10 % lit), ventilation 42.40 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 31.66 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 29.5 kW and cooling 175.2 kW thermal average after internal gains 35.8 kW and slab edge 1.68 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
+   "kw": 116.395,
+   "calc_kw": 116.395,
+   "basis": "X-PAR-07 solver.roof_close: conditioned extension 33624 m2; lighting 29.59 kW (IECC 2021 C405, 10 % lit), ventilation 49.93 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 36.87 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 34.5 kW and cooling 205.3 kW thermal average after internal gains 42.2 kW and slab edge 1.88 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
    "class": "calculated",
    "sector": "ELEC"
+  },
+  {
+   "unit": "BMED_ACID",
+   "role": "\u2014",
+   "kw": 26.928,
+   "calc_kw": 26.928,
+   "basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). BMED stack: 96.46 kg/d NaOH x 6.7 kWh/kg at the 2 M product (EDBM_WHEY_2021 quotes 6.7 kWh/kg at 2 M; the design basis is the product's own concentration, physics audit F-5, A-M-171) / 24 h. The in-house triplet voltage 1.67 V at CE 0.8 (STRATHMANN2004, CRC_COND, EDBM_PILOT_2023; AQS-DUTY-068) is model data at its own seawater-brine concentration. Solver flow_graph/param/solver.py bmed().",
+   "class": "calculated",
+   "sector": "DIGESTER"
   },
   {
    "unit": "H2O_ELYZ",
@@ -75,15 +84,6 @@
    "basis": "AQS-DUTY-072 pot cell: Faraday 1461 A x 3.8 V at CE 0.85 = 5.55 kW DC + bath hold 0.11 kW (150 mm fibre, study; A-M-282).",
    "class": "calculated",
    "sector": "FOUNDRY"
-  },
-  {
-   "unit": "BMED_ACID",
-   "role": "\u2014",
-   "kw": 5.627,
-   "calc_kw": 5.627,
-   "basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). BMED stack: 96.46 kg/d NaOH x 1.40 kWh/kg from triplet voltage 1.67 V at CE 0.8 (STRATHMANN2004, CRC_COND, EDBM_PILOT_2023; AQS-DUTY-068) / 24 h. Solver flow_graph/param/solver.py bmed().",
-   "class": "calculated",
-   "sector": "DIGESTER"
   },
   {
    "unit": "EW_2",
@@ -939,13 +939,13 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 103,
-  "graph_sum_kW": 179.67,
-  "calc_sum_kW": 179.67,
-  "connected_load_kW": 179.7,
-  "connected_calculated_kW": 177.7,
+  "graph_sum_kW": 218.18,
+  "calc_sum_kW": 218.18,
+  "connected_load_kW": 218.2,
+  "connected_calculated_kW": 216.2,
   "connected_standby_kW": 0.1,
   "connected_study_kW": 1.9,
-  "connected_calculated_pct": 98.9,
+  "connected_calculated_pct": 99.1,
   "by_sector": {
    "CRYO": {
     "calculated": 4

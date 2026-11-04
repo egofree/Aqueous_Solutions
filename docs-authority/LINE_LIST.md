@@ -148,7 +148,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | S67 | AFTERBURNER_FLUE | FLUE_KO | DN15 | F1 | flue or acid gas | 13.6 | AFTERBURNER_FLUE → FLUE_KO, orthogonal × 1.2 (placement_report; duty origin) | velocity 10 m/s, ρ 1.2; min DN15 |
 | S67B | FLUE_KO | CRYO_CO2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 35.4 | FLUE_KO → CRYO_CO2, orthogonal × 1.2 (duty origin; placement_report + GA move + GA move) | velocity 10 m/s, ρ 1.2; min DN15 |
 | S68 | CRYO_AHU | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 18.7 | CRYO_AHU → LEACH_CSTR_1, orthogonal × 1.2 (placement_report + GA move; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
-| S69 | ZNBR2 | ZNBR2_BR2_REGEN | DN32 | P3 | process vent gas | 3.2 | ZNBR2 → ZNBR2_BR2_REGEN, orthogonal × 1.2 (duty origin; duty origin) | velocity 10 m/s, ρ 1.2; min DN15 |
+| S69 | ZNBR2 | ZNBR2_BR2_REGEN | DN40 | P3 | process vent gas | 3.2 | ZNBR2 → ZNBR2_BR2_REGEN, orthogonal × 1.2 (duty origin; duty origin) | velocity 10 m/s, ρ 1.2; min DN15 |
 | S69B | ZNBR2_BR2_REGEN | ZNBR2 | DN15 | P1 | acid or brine, at or below 60 C | 3.2 | ZNBR2_BR2_REGEN → ZNBR2, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | S70 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 5.3 | CRYO_AHU_COND_CONDENSABLE → FLUE_KO, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | S71 | MET_AHU | MET_SCRUB | DN200 | F1 | flue or acid gas | 4.1 | MET_AHU → MET_SCRUB, orthogonal × 1.2 (duty origin; duty origin + GA move) | velocity 10 m/s, ρ 1.2; min DN15 |
