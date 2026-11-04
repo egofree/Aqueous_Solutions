@@ -8,7 +8,10 @@ node and the duty page of every present unit, writes that unit's W2 parameters f
 and runs the section 5 A-core checks that can run on files: assembly bounding box against
 `size_mm` within 1 mm, nozzle count against the duty section 4 schedule, closed and
 manifold STL, STEP present, and BOM complete. Both outputs are generated: edit the graph,
-the duty pages or this tracker, never the outputs.
+the duty pages or this tracker, never the outputs. Section 7's internals column carries
+the node internals row where the node states one, and otherwise the unit's disposition
+in the AQS-DSN-INT-001 internals register, which names the issued sizing-sheet, duty or
+model-BOM evidence.
 
 Section 7 statuses come from the files, not from memory. M0: the `cad/stl` file is an
 envelope box (12 facets a box; boxes and box-plus-stub builds stay under 48 facets, the
@@ -43,6 +46,7 @@ from datetime import date
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 MFG = os.path.join(ROOT, 'models', 'mfg')
 PLAN = os.path.join(ROOT, 'docs-authority', 'MFG_MODEL_PLAN.md')
+INTERNALS_REGISTER = os.path.join(ROOT, 'docs-authority', 'inventory', 'INTERNALS.json')
 S7_MARK = '## 7. Tracker'
 
 # Route classes, AQS-PLAN-006 section 4, verbatim. A class absent here is a hold in the
@@ -239,6 +243,39 @@ def node_size_basis(p):
 def node_internals(node):
     p = node.get('params') or {}
     return node.get('internals') or p.get('internals') or 'none'
+
+
+def internals_register():
+    """The AQS-DSN-INT-001 per-unit internals dispositions: the issued sizing-sheet,
+    duty-sheet or manufacturing-model-BOM evidence for each unit, or the stated-none
+    basis. A missing file yields an empty register; the column then carries the node
+    row alone."""
+    try:
+        with open(INTERNALS_REGISTER) as fh:
+            d = json.load(fh)
+    except (OSError, json.JSONDecodeError):
+        return {}
+    reg = {}
+    for bucket in ('defined', 'none'):
+        for u, text in (d.get(bucket) or {}).items():
+            reg[u] = text
+    return reg
+
+
+def internals_cell(rec, register):
+    """The section 7 internal-evidence cell. The node internals row where the node
+    states one; otherwise the unit's internals-register disposition (the design or
+    sizing mechanism evidence, or the manufacturing-model BOM that books the
+    internals); otherwise none. `rec['internals']` stays the bare node row: the work
+    tiers and the W2 file keep their node-row meaning."""
+    if rec['internals'] != 'none':
+        return rec['internals']
+    disp = register.get(rec['unit'])
+    if disp is None:
+        return 'none'                     # boundary accounting node, or undisposed
+    if disp.startswith('none with basis'):
+        return disp                       # the register's own stated-none disposition
+    return f'none (register: {disp})'
 
 
 # ------------------------------------------------------------------------------ STL read
@@ -615,7 +652,7 @@ def acceptance_evidence(rec):
     return (not missing), missing
 
 
-def section7_text(records, graph, seed):
+def section7_text(records, graph, seed, register):
     present = [r for r in records]
     fails_by_unit = {r['unit']: check_unit(r) for r in present}
     counts = {'M0': 0, 'M1': 0, 'M2': 0, 'M3': 0, 'A-ACC': 0}
@@ -653,6 +690,10 @@ def section7_text(records, graph, seed):
              + ', '.join(ACCEPTED) + '.')
     L.append('')
     L.append('Facet counts are read from the `cad/stl` file (ASCII or binary), not estimated. '
+             'The internals column carries the node internals row where the node states one, and '
+             'otherwise the unit\'s disposition in the AQS-DSN-INT-001 internals register '
+             '(`docs-authority/inventory/INTERNALS.json`), which names the issued sizing-sheet, '
+             'duty or manufacturing-model evidence; the work tiers keep the node-row meaning. '
              'Existing source is an AQS-MFG-001 (`docs-authority/internal/DETAIL_MODEL_PLAN.md`) '
              'or `models/openscad/detail` file that bears on the unit; none of them is accepted. '
              f'The tracker file checks name their failures: `python3 models/mfg/tracker.py --check` '
@@ -661,7 +702,7 @@ def section7_text(records, graph, seed):
              'A unit whose assembly bounding box leaves `size_mm` carries the misfit in its '
              'status cell; nothing is resized.')
     L.append('')
-    L.append('| Seq | Unit | Sector | Class | Tier | Internal on node | Seed origin | `cad/stl` now | '
+    L.append('| Seq | Unit | Sector | Class | Tier | Internal evidence | Seed origin | `cad/stl` now | '
              'Existing source | Route | Acceptance | Status |')
     L.append('| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |')
     order = sorted(present, key=lambda r: (r['tier'], 0 if r['seed_origin'] else 1,
@@ -681,7 +722,7 @@ def section7_text(records, graph, seed):
         if mis:
             status += '. Misfit to report: ' + '; '.join(mis) + '; nothing is resized'
         L.append(f"| {i} | {cell(r['unit'])} | {cell(r['sector'])} | {cell(r['cls']) or 'hold: no class on the node'} "
-                 f"| {r['tier']} | {cell(r['internals'])} | {'yes' if r['seed_origin'] else 'no'} "
+                 f"| {r['tier']} | {cell(internals_cell(r, register))} | {'yes' if r['seed_origin'] else 'no'} "
                  f"| {cell(cad_stl_cell(r))} | {cell(r['existing_source'])} | {cell(route)} "
                  f"| {cell(accept)} | {cell(status)} |")
     return '\n'.join(L) + '\n'
@@ -739,7 +780,7 @@ def main(argv=None):
             if r['has_dir']:
                 write_params(r)
                 n_params += 1
-        splice_section7(section7_text(records, graph, load_seed()))
+        splice_section7(section7_text(records, graph, load_seed(), internals_register()))
     finally:
         lock.close()
     print(f'tracker: {n_params} params.json written; section 7 regenerated '

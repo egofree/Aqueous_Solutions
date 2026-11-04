@@ -46,3 +46,28 @@ Holds named: the five under-filled builds (ACID_POLISH_SCRUB, OIL_PYRO, BLACK_DI
 HF_GEN, PELLET) need either a flush rebuild on the geometry lane (the POLY_COND
 idiom: connection hardware flush at the envelope faces) or a node-envelope decision
 before their registries can carry the build. Nothing is fabricated in the meantime.
+
+## 2. Section 7 internals column carries the model evidence
+
+The audit found the section 7 "Internal on node" column under-reporting: it read only
+the node internals row (`node.internals` / `params.internals`), while the electrode
+banks of the EW cells live in `params.sizing` (25 cathodes / 26 anodes per cell,
+`AQS-DUTY-051`), the BMED triplet construction and the MeOH-train beds are booked on
+their issued sheets and model BOMs, and the accepted builders draw that hardware. The
+generator (`models/mfg/tracker.py`) is fixed, not the output:
+
+- The column, renamed "Internal evidence", carries the node internals row where the
+  node states one (the four units with explicit rows, H2O_ELYZ among them, verbatim),
+  and otherwise the unit's disposition from the AQS-DSN-INT-001 internals register
+  (`docs-authority/inventory/INTERNALS.json`): 183 units now name the issued
+  sizing-sheet, duty or manufacturing-model-BOM evidence (EW cells: the electrode
+  array per `sizing/EW_CELLS.md`; BMED_ACID: the triplet construction per
+  `sizing/BMED_STACK.md`; MEOH_SYNTH: the catalyst-bed BOM row; HX8: the PVDF bundle
+  construction), 11 carry the register's stated-none disposition verbatim (OIL_PYRO
+  among them: "the pyrolysis retort is the shell itself"), and the three boundary
+  accounting nodes read none.
+- `rec['internals']` stays the bare node row: the work tiers and the W2 params.json
+  `internals` key keep their node-row meaning, so no tier shifted and no W2 file
+  changed (the tracker rewrote 197 params.json byte-identically).
+- The section 7 preamble states the join and names the register authority.
+
