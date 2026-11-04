@@ -562,7 +562,7 @@ Table 3.13. WTR off. Sector type: Utility / header.
 | HAB_BLACK | HABITATION to BLACK_DIGEST | HAB | not yet rated | left without a sink: unreclaimed |
 | HAB_GREY | HABITATION to GREY_TREAT | HAB | not yet rated | left without a sink: unreclaimed |
 | IA-BLK-01 | HABITATION to BLACK_DIGEST | HAB | 19.6 kg/d | left without a sink: unreclaimed |
-| IA-DC-REJ | DRY_COOLER to ATMOS | HEAT | 7.99 kW | left without a sink: unreclaimed |
+| IA-DC-REJ | DRY_COOLER to ATMOS | HEAT | 75.2 kW | left without a sink: unreclaimed |
 | IA-FEC-01 | HABITATION to BLACK_DIGEST | HAB | 0.13 kg/d | left without a sink: unreclaimed |
 | IA-FERM-DIG | MEOH_FERM to BLACK_DIGEST | MEOH | 0.345 kg/d | left without a sink: unreclaimed |
 | IA-GAL | HABITATION to BLACK_DIGEST | HAB | 1.18 kg/d | left without a sink: unreclaimed |
@@ -637,7 +637,7 @@ Table 3.14. ELEC off. Sector type: Utility / header.
 | IA-TRIM-HX5 | RECTIFIER to LEACH_CSTR_1 | DIGESTER | 15.9 kW | left without a source: consumer goes short |
 | IA-TRIM-HX6 | RECTIFIER to GLASS_DIGEST | GLASS | 4.16 kW | left without a source: consumer goes short |
 | IA-ZNBR-BD | ZNBR2 to GREY_TREAT | WTR | 8.49 kg/d | left without a source: consumer goes short |
-| IA-ZNBR-HEAT | ZNBR2 to Q4_BUS | HEAT | 1.67 kW | left without a source: consumer goes short |
+| IA-ZNBR-HEAT | ZNBR2 to Q4_BUS | HEAT | 68.8 kW | left without a source: consumer goes short |
 | S17-BMED | SOL_ARK_60K to BMED_ACID | DIGESTER | 26.9 kW | left without a source: consumer goes short |
 | S20 | SOL_ARK_60K to GROW_BED | FARM | 2.05 kW | left without a source: consumer goes short |
 | S46 | BACKUP_GEN to NOX_SCRUB | GAS | 0.198 kg/d | left without a source: consumer goes short |
@@ -716,7 +716,7 @@ Table 3.15. HEAT off. Sector type: Utility / header.
 | HL-HX8-Q4-A | HX8 to Q4_A | DIGESTER | 2.29 kW | left without a sink: unreclaimed |
 | HL-HX8-Q4-B | HX8 to Q4_B | DIGESTER | 2.29 kW | left without a sink: unreclaimed |
 | IA-RECT-Q4 | RECTIFIER to Q4_BUS | ELEC | 1 kW | left without a sink: unreclaimed |
-| IA-ZNBR-HEAT | ZNBR2 to Q4_BUS | ELEC | 1.67 kW | left without a sink: unreclaimed |
+| IA-ZNBR-HEAT | ZNBR2 to Q4_BUS | ELEC | 68.8 kW | left without a sink: unreclaimed |
 | S53 | FUEL_CELL to Q4_BUS | ELEC | 1.14 kW | left without a sink: unreclaimed |
 | S54 | CRYO_HX_Q4 to Q4_BUS | CRYO | 0.545 kW | left without a sink: unreclaimed |
 | S63 | MET_HX_Q4 to Q4_BUS | MFG | 0.0171 kW | left without a sink: unreclaimed |
@@ -732,7 +732,7 @@ Table 3.15. HEAT off. Sector type: Utility / header.
 | HL-Q3-B-HX5 | Q3_B to LEACH_CSTR_1 | DIGESTER | 1.45 kW | left without a source: consumer goes short |
 | HL-Q3-B-HX6 | Q3_B to GLASS_DIGEST | GLASS | 0.381 kW | left without a source: consumer goes short |
 | IA-ADS-CHW | ADS_CHILL to HABITATION | HAB | 2.25 kW | left without a source: consumer goes short |
-| IA-DC-REJ | DRY_COOLER to ATMOS | WTR | 7.99 kW | left without a source: consumer goes short |
+| IA-DC-REJ | DRY_COOLER to ATMOS | WTR | 75.2 kW | left without a source: consumer goes short |
 | IA-MAU-AIR | MAU_HX to HABITATION | HAB | 12 kW | left without a source: consumer goes short |
 | IA-Q4-LIFE | Q4_BUS to HABITATION | HAB | 3 kW | left without a source: consumer goes short |
 | S100 | Q4_BUS to LEACH_CSTR_1 | DIGESTER | 0.532 kW | left without a source: consumer goes short |

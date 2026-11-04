@@ -40,7 +40,7 @@ CRYO_N2,AQS-PID-001-CRYO_N2,cf7a7048,docs-authority/pid/CRYO_N2.svg,CRYO,cold_bo
 CRYO_O2,AQS-PID-001-CRYO_O2,f06291ba,docs-authority/pid/CRYO_O2.svg,CRYO,cold_box,3,4,8,1,2,1,9
 CR_CELL,AQS-PID-001-CR_CELL,e7344c35,docs-authority/pid/CR_CELL.svg,FOUNDRY,cell,3,2,2,0,4,0,7
 DRAW,AQS-PID-001-DRAW,089da736,docs-authority/pid/DRAW.svg,FOUNDRY,mill,1,1,0,0,2,0,3
-DRY_COOLER,AQS-PID-001-DRY_COOLER,4a52d3cf,docs-authority/pid/DRY_COOLER.svg,HEAT,dry_cooler,3,2,4,0,2,0,6
+DRY_COOLER,AQS-PID-001-DRY_COOLER,1eb0d102,docs-authority/pid/DRY_COOLER.svg,HEAT,dry_cooler,3,2,4,0,2,0,6
 DUCKWEED,AQS-PID-001-DUCKWEED,cfb296d4,docs-authority/pid/DUCKWEED.svg,FARM,duckweed,2,5,10,0,2,0,17
 DUCK_PEN,AQS-PID-001-DUCK_PEN,52e8296e,docs-authority/pid/DUCK_PEN.svg,FARM,pen,3,4,8,0,2,0,9
 ELECTRODE_COAT,AQS-PID-001-ELECTRODE_COAT,0baf7266,docs-authority/pid/ELECTRODE_COAT.svg,MFG,coater,2,1,0,0,2,0,5
@@ -57,7 +57,7 @@ EW_7,AQS-PID-001-EW_7,b875274c,docs-authority/pid/EW_7.svg,DIGESTER,ew_cell,2,4,
 EW_8,AQS-PID-001-EW_8,658e63d4,docs-authority/pid/EW_8.svg,DIGESTER,ew_cell,2,4,9,0,7,1,8
 EW_9,AQS-PID-001-EW_9,086782ba,docs-authority/pid/EW_9.svg,DIGESTER,ew_cell,2,7,12,0,8,1,11
 EXTRUDE,AQS-PID-001-EXTRUDE,a3251793,docs-authority/pid/EXTRUDE.svg,FOUNDRY,press,2,1,0,0,2,0,4
-EXT_HALL,AQS-PID-001-EXT_HALL,2456e871,docs-authority/pid/EXT_HALL.svg,ELEC,building,1,0,0,0,1,0,0
+EXT_HALL,AQS-PID-001-EXT_HALL,3fbec824,docs-authority/pid/EXT_HALL.svg,ELEC,building,1,0,0,0,1,0,0
 FAB_UPW_TANK,AQS-PID-001-FAB_UPW_TANK,c3727304,docs-authority/pid/FAB_UPW_TANK.svg,FAB,tank,2,1,3,0,5,1,4
 FEED_PREP,AQS-PID-001-FEED_PREP,2b127398,docs-authority/pid/FEED_PREP.svg,FARM,feed_prep,4,7,14,0,3,0,13
 FILM_CAST,AQS-PID-001-FILM_CAST,64b88a9d,docs-authority/pid/FILM_CAST.svg,POLYMERS,former,2,1,0,0,5,1,5
@@ -140,7 +140,7 @@ PROD_C29,AQS-PID-001-PROD_C29,fa7159e2,docs-authority/pid/PROD_C29.svg,OIL,cut_t
 PROD_C5_C10,AQS-PID-001-PROD_C5_C10,130788d1,docs-authority/pid/PROD_C5_C10.svg,OIL,cut_tank,1,3,9,0,7,1,6
 PROD_MEOH,AQS-PID-001-PROD_MEOH,ed048135,docs-authority/pid/PROD_MEOH.svg,CRYO,product,1,1,2,0,5,1,4
 PROD_O2,AQS-PID-001-PROD_O2,00effdca,docs-authority/pid/PROD_O2.svg,CRYO,product,1,1,2,0,2,0,4
-PV_ARRAY,AQS-PID-001-PV_ARRAY,5002a135,docs-authority/pid/PV_ARRAY.svg,ELEC,pv,0,2,0,0,2,0,4
+PV_ARRAY,AQS-PID-001-PV_ARRAY,c0a4d9eb,docs-authority/pid/PV_ARRAY.svg,ELEC,pv,0,2,0,0,2,0,4
 P_CA,AQS-PID-001-P_CA,a51417aa,docs-authority/pid/P_CA.svg,DIGESTER,precip,0,1,0,0,3,0,2
 Q1_A,AQS-PID-001-Q1_A,672f7e5f,docs-authority/pid/Q1_A.svg,HEAT,heat_battery,2,3,6,0,2,0,7
 Q1_B,AQS-PID-001-Q1_B,4507b851,docs-authority/pid/Q1_B.svg,HEAT,heat_battery,2,3,6,0,2,0,7
@@ -150,7 +150,7 @@ Q3_A,AQS-PID-001-Q3_A,94ff8456,docs-authority/pid/Q3_A.svg,HEAT,heat_battery,3,5
 Q3_B,AQS-PID-001-Q3_B,907b77df,docs-authority/pid/Q3_B.svg,HEAT,heat_battery,3,5,10,0,2,0,9
 Q4_A,AQS-PID-001-Q4_A,606bec24,docs-authority/pid/Q4_A.svg,HEAT,heat_battery,4,2,4,0,2,0,9
 Q4_B,AQS-PID-001-Q4_B,aeb72731,docs-authority/pid/Q4_B.svg,HEAT,heat_battery,4,2,4,0,2,0,9
-Q4_BUS,AQS-PID-001-Q4_BUS,a53d1247,docs-authority/pid/Q4_BUS.svg,HEAT,header,13,6,4,0,2,0,9
+Q4_BUS,AQS-PID-001-Q4_BUS,9d1bbbe8,docs-authority/pid/Q4_BUS.svg,HEAT,header,13,6,4,0,2,0,9
 QUAIL_CAGE,AQS-PID-001-QUAIL_CAGE,635f276a,docs-authority/pid/QUAIL_CAGE.svg,FARM,cage,3,3,6,0,2,0,9
 RABBIT_HUTCH,AQS-PID-001-RABBIT_HUTCH,dc9bf14e,docs-authority/pid/RABBIT_HUTCH.svg,FARM,hutch,1,3,6,0,2,0,6
 RECTIFIER,AQS-PID-001-RECTIFIER,8446e9d7,docs-authority/pid/RECTIFIER.svg,ELEC,rectifier,1,14,0,0,2,0,7
@@ -171,7 +171,7 @@ SINTER,AQS-PID-001-SINTER,828a9c9e,docs-authority/pid/SINTER.svg,FOUNDRY,furnace
 SI_REDUCE,AQS-PID-001-SI_REDUCE,2565fb26,docs-authority/pid/SI_REDUCE.svg,GLASS,furnace,1,0,0,0,1,0,0
 SLEEP_QUARTERS,AQS-PID-001-SLEEP_QUARTERS,9638d8bf,docs-authority/pid/SLEEP_QUARTERS.svg,HAB,quarters,0,0,0,0,1,0,0
 SOLAR_PV_CELL,AQS-PID-001-SOLAR_PV_CELL,bfe35410,docs-authority/pid/SOLAR_PV_CELL.svg,FAB,tool,2,1,0,0,2,0,5
-SOL_ARK_60K,AQS-PID-001-SOL_ARK_60K,32bb27a0,docs-authority/pid/SOL_ARK_60K.svg,ELEC,inverter,9,77,0,0,2,0,10
+SOL_ARK_60K,AQS-PID-001-SOL_ARK_60K,d01e50cb,docs-authority/pid/SOL_ARK_60K.svg,ELEC,inverter,9,77,0,0,2,0,10
 STOCK_OUT,AQS-PID-001-STOCK_OUT,f008cce8,docs-authority/pid/STOCK_OUT.svg,FOUNDRY,store,7,1,0,0,2,0,10
 TFE_SYN,AQS-PID-001-TFE_SYN,4a8f63c6,docs-authority/pid/TFE_SYN.svg,POLYMERS,reactor,4,2,6,0,6,1,8
 TI_CELL,AQS-PID-001-TI_CELL,27bddd8a,docs-authority/pid/TI_CELL.svg,FOUNDRY,cell,6,7,9,0,6,1,15
@@ -194,5 +194,5 @@ WS_PEROX,AQS-PID-001-WS_PEROX,30726dbd,docs-authority/pid/WS_PEROX.svg,FAB,reage
 WS_PHOS,AQS-PID-001-WS_PHOS,b6bd8396,docs-authority/pid/WS_PHOS.svg,FAB,reagent,1,2,6,0,6,1,5
 WS_SLURRY,AQS-PID-001-WS_SLURRY,57b6f8aa,docs-authority/pid/WS_SLURRY.svg,FAB,reagent,1,1,3,0,5,1,4
 WS_SOLV,AQS-PID-001-WS_SOLV,7b472ccd,docs-authority/pid/WS_SOLV.svg,FAB,reagent,1,1,3,0,5,1,7
-ZNBR2,AQS-PID-001-ZNBR2,e9ba1f99,docs-authority/pid/ZNBR2.svg,ELEC,flow_battery,3,5,9,0,7,1,11
-ZNBR2_BR2_REGEN,AQS-PID-001-ZNBR2_BR2_REGEN,0243a356,docs-authority/pid/ZNBR2_BR2_REGEN.svg,ELEC,scrubber,1,1,3,0,5,1,4
+ZNBR2,AQS-PID-001-ZNBR2,e6482f52,docs-authority/pid/ZNBR2.svg,ELEC,flow_battery,3,5,9,0,7,1,11
+ZNBR2_BR2_REGEN,AQS-PID-001-ZNBR2_BR2_REGEN,b76a083e,docs-authority/pid/ZNBR2_BR2_REGEN.svg,ELEC,scrubber,1,1,3,0,5,1,4

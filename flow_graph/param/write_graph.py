@@ -535,6 +535,7 @@ def heat():
     deficit (its AQS-DUTY-010 dispatch rule) and the dry-cooler rejection by difference. Idempotent."""
     import json as _j
     g = _j.load(open(GP)); N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}
+    d = DR.load()
     TAGH = 'X-THM-01 R10b'
     kw = lambda sid: float(E[sid]['rate']['value'] or 0)
     def put(sid, x, why):
@@ -572,6 +573,31 @@ def heat():
             rest = (E[s]['rate'].get('note') or '').split(' | X-THM-01')
             E[s]['rate']['note'] = base + ''.join(' | X-THM-01' + seg for seg in rest[1:])
             E[s].setdefault('params', {})['duty_normal_kw'] = kw(s)
+    # F-4 (A-M-455): the ZNBR2 cycling heat, derived from the store the power chain actually books.
+    # The store cycles store_kWh out per day and store_in_kWh = store_kWh / RT back in; the difference
+    # is heat in the electrolyte. The edge books the 24 h average (the ledger book is a design-day
+    # average book, like every kW edge); the charge-window rate is stated for the electrolyte
+    # thermal-management sizing case. Replaces the stale 1.67 kW Rev-N seed (a 120 kWh-class book).
+    TAGZ = 'X-THM-01 F-4'
+    if 'IA-ZNBR-HEAT' in E:
+        pw = json.loads(subprocess.run([sys.executable, 'docs-authority/_power_sizing.py'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)['bounding']
+        rt = DR.val(d, 'storage_round_trip'); night = DR.val(d, 'night_hours'); win = 24.0 - night
+        e_out = float(pw['store_kWh']); e_in = float(pw['store_in_kWh']); loss = e_in - e_out
+        znbr_avg = loss / 24.0; znbr_win = loss / win; chg_win = e_in / win
+        E['IA-ZNBR-HEAT']['rate']['value'] = round(znbr_avg, 4)
+        E['IA-ZNBR-HEAT']['rate']['note'] = ((E['IA-ZNBR-HEAT']['rate'].get('note') or '').split(f' | {TAGZ}')[0]
+            + f' | {TAGZ}: cycling heat from the booked store - {e_out:.0f} kWh/d out at round trip {rt} (A-M-062/179) = {e_in:.0f} kWh/d charge,'
+              f' loss {loss:.0f} kWh/d = {znbr_avg:.1f} kW average thermal; window thermal rate {znbr_win:.1f} kW (bounding sizing case:'
+              f' all the daily loss in the {win:.0f} h charge window) against a {chg_win:.1f} kW charge rate over the same window'
+              f' (electrolyte thermal-management sizing case; A-M-455). Was the stale 1.67 kW Rev-N 120 kWh-class seed.')
+        N['ZNBR2'].setdefault('params', {})['cycling_thermal'] = {
+            'kwh_d_in': round(e_in, 1), 'kwh_d_out': round(e_out, 1), 'round_trip': rt,
+            'loss_kwh_d': round(loss, 1), 'avg_kW': round(znbr_avg, 2), 'window_h': win,
+            'window_kW': round(znbr_win, 2), 'charge_kW_window': round(chg_win, 2),
+            'basis': (f'store {e_out:.0f} kWh/d (AQS-ELEC-007 P x night) at round trip {rt} (A-M-062/179): the round-trip'
+                      f' difference is electrolyte heat; window_kW is the bounding heat rate with all the daily loss in the'
+                      f' {win:.0f} h charge window; charge_kW_window {chg_win:.1f} kW is the charge electrical rate over the same'
+                      f' window; rejected to the Q4 bus on IA-ZNBR-HEAT and the terminal (A-M-455)')}
     fixed_in = sum(kw(e['stream_id']) for e in g['edges'] if e['to_unit_id'] == 'Q4_BUS' and e.get('presence') != 'retired'
                    and 'thermal' in (e.get('layers') or []) and (e.get('rate') or {}).get('unit') == 'kW'
                    and e['stream_id'] != 'S44' and e['stream_id'] not in STORE_LINKS)
@@ -600,6 +626,29 @@ def heat():
     E['IA-DC-REJ']['rate']['value'] = round(dc_in, 4)
     E['IA-DC-REJ']['rate']['note'] = (f'X-THM-01 R10b terminal closure (F-3, A-M-454): equals every thermal kW edge into DRY_COOLER'
                                       f' ({dc_in:.3f} kW on this pass); the node ledger closes: in = out to ambient air.')
+    # F-4 (A-M-244 restated, A-M-455): the cooler rating is resized from the calculated bounding duty in
+    # this lane (sizing-driven change, AGENTS.md Sizing). Bounding case = the design-day terminal book with
+    # the ZNBR2 cycling heat riding at its charge-window rate (the store charges over the window; the loss
+    # lands there), the other terminal duties at their book rates; hardware at the AQS-DUTY-008 section 3
+    # x1.25 rating margin, fan at the 0.05 kW_fan/kW_th class. Design bulb and LMTD unchanged (A-M-244).
+    # This writer owns the rating params; the fan electrical stamp (continuous_kw) and the airside
+    # design stay with specialty_sizing, which reads the rating written here.
+    bound = znbr_win = 0.0
+    if N.get('DRY_COOLER') is not None and 'cycling_thermal' in N.get('ZNBR2', {}).get('params', {}):
+        znbr_avg_b = kw('IA-ZNBR-HEAT') if 'IA-ZNBR-HEAT' in E else 0.0
+        znbr_win = float(N['ZNBR2']['params']['cycling_thermal']['window_kW'])
+        bound = dc_in - znbr_avg_b + znbr_win
+        rated = math.ceil(1.25 * bound); fan_kw = round(0.05 * rated, 2)
+        _stale = 'The DRY_COOLER unit is rated 12 kW to pass the 10.16 kW case with all seasonal branches down.'
+        E['HL-Q4-REJ']['rate']['note'] = (E['HL-Q4-REJ']['rate'].get('note') or '').replace(
+            _stale, 'The DRY_COOLER unit is rated for the calculated bounding terminal duty (DRY_COOLER params.rated_kW; A-M-244 restated, A-M-455).')
+        N['DRY_COOLER'].setdefault('params', {}).update({
+            'rated_kW': float(rated), 'fan_kW': fan_kw,
+            'basis': (f'X-THM-01 F-4 (A-M-244 restated, A-M-455): rated {rated} kW = 1.25 x the calculated bounding duty'
+                      f' {bound:.1f} kW (design-day terminal book {dc_in:.1f} kW with the ZNBR2 cycling heat at its'
+                      f' {znbr_win:.1f} kW charge-window rate; AQS-DUTY-008 section 3 margin); fan {fan_kw} kW at the'
+                      f' 0.05 kW_fan/kW_th class. Was the 12 kW class sized to the 10.16 kW no-preheat upset.')
+            })
     # ledger check on the stores and the terminal (X-THM-01 tolerance 0.01 kW)
     import collections
     b = collections.Counter()

@@ -5023,7 +5023,7 @@
      "from": "DRY_COOLER",
      "to": "ATMOS",
      "other_sector": "HEAT",
-     "rate": 7.9884,
+     "rate": 75.1539,
      "unit": "kW",
      "carries": "dry-cooler rejection to ambient air"
     },
@@ -5728,7 +5728,7 @@
      "from": "ZNBR2",
      "to": "Q4_BUS",
      "other_sector": "HEAT",
-     "rate": 1.67,
+     "rate": 68.8355,
      "unit": "kW",
      "carries": "round-trip loss"
     },
@@ -6519,7 +6519,7 @@
      "from": "ZNBR2",
      "to": "Q4_BUS",
      "other_sector": "ELEC",
-     "rate": 1.67,
+     "rate": 68.8355,
      "unit": "kW",
      "carries": "round-trip loss"
     },
@@ -6665,7 +6665,7 @@
      "from": "DRY_COOLER",
      "to": "ATMOS",
      "other_sector": "WTR",
-     "rate": 7.9884,
+     "rate": 75.1539,
      "unit": "kW",
      "carries": "dry-cooler rejection to ambient air"
     },

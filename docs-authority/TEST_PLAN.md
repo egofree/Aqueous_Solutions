@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 69 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 505 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 506 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 38 | Commissioning record |
 
-Total 718 items: 321 drivers, 397 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 719 items: 321 drivers, 398 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -593,7 +593,7 @@ Total 718 items: 321 drivers, 397 register entries. Classification rule: first m
 | A-M-241 | 6.65 kW/K make-up-air tempering (~23 900 m3/h); 12 kW coil a kW/K; kW | MAU_HX.params kW 12.0 / kW_per_K 6.65 / dT_K 1.8; IA-Q4-MAU 12.0 kW winter design; complementary-season note vs IA-Q4-ADS | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
 | A-M-242 | 1.5 m3 per ladder; 43.5 kWh at 70/45 K swing; <=0.3 kW stand m3; kWh; kW | Buffer module rows appear in HEAT_LADDER_DUTIES.md when the heat lane encodes Q4 buffer nodes (not in this lane write-set) | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
 | A-M-243 | 3.0 kW_th sustained injection ceiling; 0.7 kW normal recharg kW_th | GEO_GHEX.params.Q_GHEX_avail_kW_th == 3.0 and survey_status design_survey_locked unchanged; no Q4->GEO_GHEX branch added by this lane | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
-| A-M-244 | 12 kW at 37.8 °C (0.4 % design); fan 0.6 kW kW | HL-Q4-REJ to_unit_id == DRY_COOLER, rate 9.3493 kW with the derivation note; DRY_COOLER.params rated_kW 12.0 / fan_kW 0.6 / design_C 37.8; GEO_ORC stays placeholder with study_close citation | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
+| A-M-244 | rated from the calculated bounding terminal duty: rated_kW = kW | DRY_COOLER.params rated_kW == ceil(1.25 x (terminal book - IA-ZNBR-HEAT average + cycling_thermal.window_kW)) and fan_kW == 0.05 x rated_kW, both written by write_graph heat(); IA-DC-REJ equals every thermal kW edge into DRY_COOLER; the specialty_sizing fan stamp and airside read the rating | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
 | A-M-245 | 1.7 kW average / 8-11 kW batch at 40-60 °C kW_th | IND_HEAT_TO_HX + VAC_HEAT_TO_HX rates 1.063 + 0.638 kW, layers [thermal], params duty_batch_kW 8-11; edges land on MET_HX_Q4 | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
 | A-M-246 | 0.5-1.0 kW at <=60 °C (bounding 1.0 kW encoded) kW_th | IA-Q3A-TRIM/IA-Q3B-TRIM absent from the graph; IA-RECT-Q4 1.0 kW to Q4_BUS; IA-TRIM-HX5/HX6 from RECTIFIER to the process units with elec+thermal layers | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
 | A-M-247 | 0.5-1.0 kW at 45-60 °C (grease-kettle wax-hold stage) kW_th | No grease Q4 branch exists in the graph until the temperature-class check closes (grep Q4_BUS grease yields nothing this lane) | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
@@ -728,6 +728,7 @@ Total 718 items: 321 drivers, 397 register entries. Classification rule: first m
 | A-M-448 | product water quality basis: TCEQ 30 TAC 307 segment 2311 cr mg/L annual average | re-verify the segment sheet and the applicability to lake-restoration return at the locale design pass | X-LOC-05 (lake_boehmer locale design pass) |
 | A-M-453 | Heat-ladder A/B ledger convention: the two ladders are a ful convention; kW | python3 -m flow_graph.param.write_graph heat closes Q4_BUS and DRY_COOLER on the thermal-kW ledger within 0.01 kW; test_heat_ladder.py passes; HL-Q4-A/B-BUS notes state the N+1 convention | physics audit F-3/F-25 (heat-ladder convention, 2026-11-03) |
 | A-M-454 | The MVR evaporator compressor/pump heat edges (SQ-EVAP_ACID, kW; layer | python3 -m flow_graph.param.write_graph heat: Q4_BUS in = out on thermal kW edges; IA-DC-REJ == sum of thermal kW into DRY_COOLER; DRY_COOLER balances within 0.01 kW | physics audit F-3 (Q4 heat-rejection path, 2026-11-03) |
+| A-M-455 | ZNBR2 electrolyte cycling heat = the booked daily round-trip kWh/d; kW thermal | IA-ZNBR-HEAT == (_power_sizing store_in_kWh - store_kWh)/24 within 0.01 kW; ZNBR2.params.cycling_thermal window_kW == loss/(24 - night_hours); the Q4_BUS and DRY_COOLER thermal ledgers close with the edge counted (X-THM-01 tolerance 0.01 kW); test_heat_ladder.py passes | physics audit F-4 (ZNBR2 cycling heat, 2026-11-04) |
 
 ## 7. T6 Commissioning measurements
 

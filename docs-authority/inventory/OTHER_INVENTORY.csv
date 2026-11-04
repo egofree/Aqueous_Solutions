@@ -952,7 +952,7 @@ ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,1
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,16,AHU supply fan: run and fault (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,16,air-source heat pump compressor: run and fault (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,32,heat pump condenser fan: run and fault (assumed)
-ELEC,EXT_HALL_N,EXT_HALL,electronics,compressor contactor + overload,22 kW hermetic,IEC 60947-4-1,8,air-source heat pump compressor
+ELEC,EXT_HALL_N,EXT_HALL,electronics,compressor contactor + overload,30 kW hermetic,IEC 60947-4-1,8,air-source heat pump compressor
 ELEC,EXT_HALL_N,EXT_HALL,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,8,AHU exhaust fan (assumed VFD at >= 0.75 kW)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,8,AHU supply fan (assumed VFD at >= 0.75 kW)
 ELEC,EXT_HALL_N,EXT_HALL,fabricated part,fabricated part set,4 BOM lines,models/mfg/EXT_HALL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
@@ -970,10 +970,10 @@ ELEC,flow_battery,ZNBR2,electronics,motor starter (contactor + overload),0.18 kW
 ELEC,flow_battery,ZNBR2,fabricated part,fabricated part set,32 BOM lines,models/mfg/ZNBR2/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,S69: 2 per support (assumed)
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,IA-ZNBR-BD: 2 per support (assumed)
-ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,78,IA-ZNBR-HEAT: 2 per support (assumed)
+ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,IA-ZNBR-HEAT: 2 per support (assumed)
 ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN40,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S69: pumped line (assumed)
 ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ZNBR-BD: pumped line (assumed)
-ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ZNBR-HEAT: pumped line (assumed)
+ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ZNBR-HEAT: pumped line (assumed)
 ELEC,flow_battery,ZNBR2,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 ELEC,flow_battery,ZNBR2,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 ELEC,flow_battery,ZNBR2,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -984,13 +984,13 @@ ELEC,flow_battery,ZNBR2,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, 
 ELEC,flow_battery,ZNBR2,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm (: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 ELEC,flow_battery,ZNBR2,support,pipe clamp,DN40,"PP clamp with EPDM liner, MSS SP-58 Type 7",6,S69: AQS-PIP-005 span count
 ELEC,flow_battery,ZNBR2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",24,IA-ZNBR-BD: AQS-PIP-005 span count
-ELEC,flow_battery,ZNBR2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",39,IA-ZNBR-HEAT: AQS-PIP-005 span count
+ELEC,flow_battery,ZNBR2,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",27,IA-ZNBR-HEAT: AQS-PIP-005 span count
 ELEC,flow_battery,ZNBR2,valve,check valve,DN40,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,S69: pump discharge (assumed)
 ELEC,flow_battery,ZNBR2,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-ZNBR-BD: pump discharge (assumed)
-ELEC,flow_battery,ZNBR2,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-ZNBR-HEAT: pump discharge (assumed)
+ELEC,flow_battery,ZNBR2,valve,check valve,DN50,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-ZNBR-HEAT: pump discharge (assumed)
 ELEC,flow_battery,ZNBR2,valve,isolation valve,DN40,"PVDF ball valve, ISO 16135, PTFE seats",2,S69: one at each end nozzle (assumed)
 ELEC,flow_battery,ZNBR2,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-ZNBR-BD: one at each end nozzle (assumed)
-ELEC,flow_battery,ZNBR2,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-ZNBR-HEAT: one at each end nozzle (assumed)
+ELEC,flow_battery,ZNBR2,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-ZNBR-HEAT: one at each end nozzle (assumed)
 ELEC,genset,BACKUP_GEN,bearing,deep-groove ball bearing,6202-2Z,"ISO 15 / ISO 492 normal class, C3",2,"radiator fan: drive and non-drive end, IEC 60072 frame 71 (assumed size)"
 ELEC,genset,BACKUP_GEN,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",2,"starter motor: drive and non-drive end, IEC 60072 frame 90L (assumed size)"
 ELEC,genset,BACKUP_GEN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,radiator fan: run and fault (assumed)
@@ -2200,20 +2200,20 @@ HAB,washroom,WASHROOM,valve,isolation valve,DN15,"PVC-U true-union ball valve, M
 HEAT,adsorption_chiller,ADS_CHILL,fabricated part,fabricated part set,1 BOM lines,models/mfg/ADS_CHILL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 HEAT,dry_cooler,DRY_COOLER,fabricated part,fabricated part set,7 BOM lines,models/mfg/DRY_COOLER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 HEAT,dry_cooler,DRY_COOLER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,IA-DC-EVAP: 2 per support (assumed)
-HEAT,dry_cooler,DRY_COOLER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,IA-DC-REJ: 2 per support (assumed)
+HEAT,dry_cooler,DRY_COOLER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-DC-REJ: 2 per support (assumed)
 HEAT,dry_cooler,DRY_COOLER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 HEAT,dry_cooler,DRY_COOLER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 HEAT,dry_cooler,DRY_COOLER,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",27,IA-DC-EVAP: AQS-PIP-005 span count
-HEAT,dry_cooler,DRY_COOLER,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",27,IA-DC-REJ: AQS-PIP-005 span count
+HEAT,dry_cooler,DRY_COOLER,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",18,IA-DC-REJ: AQS-PIP-005 span count
 HEAT,dry_cooler,DRY_COOLER,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-DC-EVAP: one at each end nozzle (assumed)
-HEAT,dry_cooler,DRY_COOLER,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-DC-REJ: one at each end nozzle (assumed)
+HEAT,dry_cooler,DRY_COOLER,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-DC-REJ: one at each end nozzle (assumed)
 HEAT,header,Q4_BUS,fabricated part,fabricated part set,3 BOM lines,models/mfg/Q4_BUS/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 HEAT,header,Q4_BUS,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,8,models/mfg/Q4_BUS/fasteners.csv
-HEAT,header,Q4_BUS,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,HL-Q4-REJ: 2 per support (assumed)
+HEAT,header,Q4_BUS,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,HL-Q4-REJ: 2 per support (assumed)
 HEAT,header,Q4_BUS,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-Q4-LIFE: 2 per support (assumed)
-HEAT,header,Q4_BUS,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",18,HL-Q4-REJ: AQS-PIP-005 span count
+HEAT,header,Q4_BUS,support,U-bolt with guide,DN50,"316 U-bolt, MSS SP-58 Type 24",10,HL-Q4-REJ: AQS-PIP-005 span count
 HEAT,header,Q4_BUS,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",20,IA-Q4-LIFE: AQS-PIP-005 span count
-HEAT,header,Q4_BUS,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-Q4-REJ: one at each end nozzle (assumed)
+HEAT,header,Q4_BUS,valve,isolation valve,DN50,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-Q4-REJ: one at each end nozzle (assumed)
 HEAT,header,Q4_BUS,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-Q4-LIFE: one at each end nozzle (assumed)
 HEAT,heat_battery,Q1_A,fabricated part,fabricated part set,12 BOM lines,models/mfg/Q1_A/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 HEAT,heat_battery,Q1_A,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,10,HL-Q1-A-DOWN: 2 per support (assumed)

@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "2459edaddbd7baa72bae68023b5c5531a48892431d9336455b8d7cae631753f3",
+  "graph_sha256": "5e42dbf4be0de5223e73ad3455f99bde69e759672192eaf8fc57585bae377db1",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 407.219,
-   "calc_kw": 407.219,
+   "kw": 415.116,
+   "calc_kw": 415.116,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,18 +16,18 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 256.846,
-   "calc_kw": 256.846,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 256.8 kW, charge 1167.4 kW, 3596 kWh over 50 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 275.342,
+   "calc_kw": 275.342,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 275.3 kW, charge 1251.5 kW, 3855 kWh over 54 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "EXT_HALL",
    "role": "load",
-   "kw": 116.395,
-   "calc_kw": 116.395,
-   "basis": "X-PAR-07 solver.roof_close: conditioned extension 33624 m2; lighting 29.59 kW (IECC 2021 C405, 10 % lit), ventilation 49.93 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 36.87 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 34.5 kW and cooling 205.3 kW thermal average after internal gains 42.2 kW and slab edge 1.88 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
+   "kw": 124.292,
+   "calc_kw": 124.292,
+   "basis": "X-PAR-07 solver.roof_close: conditioned extension 36000 m2; lighting 31.68 kW (IECC 2021 C405, 10 % lit), ventilation 53.46 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 39.15 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 36.6 kW and cooling 219.0 kW thermal average after internal gains 45.2 kW and slab edge 1.93 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -707,6 +707,15 @@
    "sector": "GEO"
   },
   {
+   "unit": "DRY_COOLER",
+   "role": "\u2014",
+   "kw": 10.75,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "HEAT"
+  },
+  {
    "unit": "FUEL_CELL",
    "role": "generation",
    "kw": 4.0,
@@ -777,15 +786,6 @@
    "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
    "class": "pending",
    "sector": "MEOH"
-  },
-  {
-   "unit": "DRY_COOLER",
-   "role": "\u2014",
-   "kw": 0.15,
-   "calc_kw": null,
-   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
-   "class": "pending",
-   "sector": "HEAT"
   },
   {
    "unit": "COMB_HEAT",
@@ -939,13 +939,13 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 103,
-  "graph_sum_kW": 218.18,
-  "calc_sum_kW": 218.18,
-  "connected_load_kW": 218.2,
-  "connected_calculated_kW": 216.2,
+  "graph_sum_kW": 236.68,
+  "calc_sum_kW": 236.68,
+  "connected_load_kW": 236.7,
+  "connected_calculated_kW": 224.1,
   "connected_standby_kW": 0.1,
-  "connected_study_kW": 1.9,
-  "connected_calculated_pct": 99.1,
+  "connected_study_kW": 12.5,
+  "connected_calculated_pct": 94.7,
   "by_sector": {
    "CRYO": {
     "calculated": 4

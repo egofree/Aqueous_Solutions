@@ -181,7 +181,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | S90 | HABITATION | HDR_CO2 | 15 | P3 | 13.74 | 3 |
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | 50 | P2 | 22.87 | 3 |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | 15 | P2 | 19.39 | 3 |
-| HL-Q4-REJ | Q4_BUS | DRY_COOLER | 15 | M1 | 25.19 | 3 |
+| HL-Q4-REJ | Q4_BUS | DRY_COOLER | 50 | M1 | 24.96 | 3 |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | 15 | P1 | 22.43 | 3 |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | 15 | P5 | 27.99 | 3 |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | 15 | P5 | 18.09 | 3 |
@@ -199,7 +199,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | IA-LEACH-BD | LEACH_CSTR_1 | NUTRIENT_DOSE | 15 | P2 | 33.59 | 3 |
 | IA-VCD-BD | VCD_TRAIN | LEACH_CSTR_1 | 15 | P2 | 21.84 | 3 |
 | IA-FC-EXH | MEOH_FC | NOX_SCRUB | 15 | F1 | 11.08 | 3 |
-| IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | 15 | P1 | 37.0 | 3 |
+| IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | 50 | P1 | 36.89 | 3 |
 | IA-Q1A-LOSS | Q1_A | BOUNDARY_EXPORT | 15 | P1 | 8.54 | 3 |
 | IA-Q1B-LOSS | Q1_B | BOUNDARY_EXPORT | 15 | P1 | 25.94 | 3 |
 | IA-Q2A-LOSS | Q2_A | BOUNDARY_EXPORT | 15 | P1 | 8.79 | 3 |
@@ -405,7 +405,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | IA-H2S-CH3SH | BLACK_DIGEST | MET_SYN | 15 | P1 | 25.19 | 3 |
 | IA-NH3-MET | WS_AMMONIA | MET_SYN | 15 | P1 | 13.09 | 3 |
 | DL_MET_TO_FEED | MET_SYN | CHICKEN_COOP | 15 | P1 | 15.59 | 3 |
-| IA-DC-REJ | DRY_COOLER | ATMOS | 15 | P1 | 24.54 | 3 |
+| IA-DC-REJ | DRY_COOLER | ATMOS | 50 | P1 | 24.42 | 3 |
 
 Waiting on placements:
 - LB-FEED (LB_INTAKE unplaced)

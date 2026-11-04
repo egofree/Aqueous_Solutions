@@ -18,10 +18,10 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-07 | electronics: PLC I/O module, 16 channel (24 V DC x106) | 106 | 11 | 10 % min 1 |
 | building block | OF-08 | electronics: variable-frequency drive (1.5 kW x19; 2.2 kW x5; 1.1 kW x5; 7.5 kW x3; 4 kW x1) | 33 | 4 | 10 % min 1 |
 | building block | OF-09 | electronics: solenoid driver channel (24 V DC x19) | 19 | 2 | 10 % min 1 |
-| building block | OF-10 | electronics: compressor contactor + overload (22 kW hermetic x8; 1.1 kW hermetic x1) | 9 | 1 | 10 % min 1 |
+| building block | OF-10 | electronics: compressor contactor + overload (30 kW hermetic x8; 1.1 kW hermetic x1) | 9 | 1 | 10 % min 1 |
 | building block | OF-11 | electronics: stepper driver (24/48 V DC x3) | 3 | 1 | 10 % min 1 |
 | building block | OF-12 | electronics: safety PLC (SIL 2 capable), CPU and I/O rack (- x2) | 2 | 1 | 10 % min 1 |
-| building block | OF-14 | fastener: anchor bolt (M10 x14764) | 14764 | 296 | 2 % min 4 |
+| building block | OF-14 | fastener: anchor bolt (M10 x14706) | 14706 | 295 | 2 % min 4 |
 | building block | OF-15 | fastener: M10 x 40 lid bolt (M10 x 40 lid bolt with nut and washers x12) | 12 | 4 | 2 % min 4 |
 | building block | OF-16 | fastener: M8 x 30 lid bolt (M8 x 30 lid bolt with nut and washers x12) | 12 | 4 | 2 % min 4 |
 | building block | OF-17 | fastener: M12 anchor (M12 anchor x3) | 3 | 4 | 2 % min 4 |
@@ -33,7 +33,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-30 | fastener: Flange gasket (Flange gasket x2) | 2 | 4 | 2 % min 4 |
 | building block | OF-31 | fastener: M10 U-bolt for DN150 (M10 U-bolt for DN150 x2) | 2 | 4 | 2 % min 4 |
 | building block | OF-33 | fastener: Solvent cement (Solvent cement x1) | 1 | 4 | 2 % min 4 |
-| building block | OF-34 | instrument: flow transmitter (DN15 x170; DN50 x18; DN40 x1; DN250 x1; DN300 x1) | 191 | 20 | 10 % min 1 |
+| building block | OF-34 | instrument: flow transmitter (DN15 x169; DN50 x19; DN40 x1; DN250 x1; DN300 x1) | 191 | 20 | 10 % min 1 |
 | building block | OF-35 | instrument: pressure transmitter (0-10 bar x176; 0-16 bar x1) | 177 | 18 | 10 % min 1 |
 | building block | OF-36 | instrument: temperature element (Pt100 class A x180) | 180 | 18 | 10 % min 1 |
 | building block | OF-37 | instrument: high-level switch (vibrating fork x82) | 82 | 9 | 10 % min 1 |
@@ -47,12 +47,12 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-45 | instrument: gas detector, NOx (electrochemical NO2 x6) | 6 | 1 | 10 % min 1 |
 | building block | OF-46 | protection: inverse-time circuit breaker, 3-pole (15 A x223; 100 A x8; 30 A x3; 60 A x1) | 235 | 24 | 10 % min 1 |
 | building block | OF-47 | seal: mechanical seal, single (EN 12756 x154) | 154 | 31 | 20 % min 2 |
-| building block | OF-50 | valve: isolation valve (DN15 x260; DN50 x22) | 282 | 15 | 5 % min 1 |
+| building block | OF-50 | valve: isolation valve (DN15 x256; DN50 x26) | 282 | 15 | 5 % min 1 |
 | building block | OF-51 | valve: isolation valve (DN15 x32; DN50 x10) | 42 | 3 | 5 % min 1 |
-| building block | OF-52 | valve: isolation valve (DN15 x174; DN20 x6; DN50 x4; DN25 x4) | 188 | 10 | 5 % min 1 |
+| building block | OF-52 | valve: isolation valve (DN15 x172; DN20 x6; DN50 x6; DN25 x4) | 188 | 10 | 5 % min 1 |
 | building block | OF-53 | valve: isolation valve (DN15 x56; DN50 x34) | 90 | 5 | 5 % min 1 |
 | building block | OF-54 | valve: check valve (DN15 x12; DN50 x2) | 14 | 1 | 5 % min 1 |
-| building block | OF-55 | valve: check valve (DN15 x58; DN50 x4) | 62 | 4 | 5 % min 1 |
+| building block | OF-55 | valve: check valve (DN15 x57; DN50 x5) | 62 | 4 | 5 % min 1 |
 | building block | OF-56 | valve: isolation valve (DN15 x82; DN50 x4; DN40 x2; DN300 x2) | 90 | 5 | 5 % min 1 |
 | building block | OF-57 | valve: check valve (DN15 x17; DN50 x9) | 26 | 2 | 5 % min 1 |
 | building block | OF-58 | valve: check valve (DN15 x27; DN40 x1; DN300 x1) | 29 | 2 | 5 % min 1 |
@@ -145,6 +145,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | motor | MF-01 | BLDC 42 mm (NEMA 17 flange) 24 V DC | 82 | 5 | 5 % min 1 |
 | motor | MF-02 | BLDC 57 mm (NEMA 23 flange) 24 V DC | 55 | 3 | 5 % min 1 |
 | motor | MF-03 | BLDC actuator ISO 5211 F03 mount 24 V DC | 24 | 2 | 5 % min 1 |
+| motor | MF-04 | hermetic induction (scroll) 30 kW hermetic 480 V 3-ph | 8 | 1 | 5 % min 1 |
 | motor | MF-06 | induction IE3 IEC 71 / 0.37 kW 480 V 3-ph | 7 | 1 | 5 % min 1 |
 | motor | MF-07 | induction IE3 IEC 90S / 1.1 kW 480 V 3-ph | 6 | 1 | 5 % min 1 |
 | motor | MF-08 | induction IE3 IEC 90L / 1.5 kW 480 V 3-ph | 19 | 1 | 5 % min 1 |
@@ -160,7 +161,6 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | motor | MF-19 | stepper NEMA 34 (86 mm) 48 V DC | 3 | 1 | 5 % min 1 |
 | motor | MF-25 | hermetic induction (scroll) 1.1 kW hermetic 480 V 3-ph | 1 | 1 | 5 % min 1 |
 | motor | MF-27 | EC (electronically commutated, permanent-magnet) fan motor 1.1 kW EC fan, integrated drive 480 V 3-ph | 16 | 1 | 5 % min 1 |
-| motor | MF-29 | hermetic induction (scroll) 22 kW hermetic 480 V 3-ph | 8 | 1 | 5 % min 1 |
 | process insert | BMED_ACID | one stack of bipolar, anion and cation membranes (AQS-DUTY-068 spare stack is installed; this is the membrane set to rebuild it) | 1 | 1 | one charge or set |
 | process insert | BMED_UPW_POLISH | RO flat-sheet set and one EDI stack (AQS-DUTY-070) | 1 | 1 | one charge or set |
 | process insert | CRYO_ASU | 13X sorbent charge, 115 kg (AQS-DUTY-069) | 1 | 1 | one charge or set |
@@ -178,4 +178,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-168 lines; 33 spare motors, 1221 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+168 lines; 33 spare motors, 1220 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.

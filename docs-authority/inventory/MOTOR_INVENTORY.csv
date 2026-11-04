@@ -51,9 +51,9 @@ DIGESTER,ew_cell,EW_7,transfer pump IA-EW-07 to EW_8,BLDC,42 mm (NEMA 17 flange)
 DIGESTER,ew_cell,EW_8,electrolyte circulation pump,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,assumed
 DIGESTER,ew_cell,EW_8,transfer pump IA-EW-08 to EW_9,BLDC,42 mm (NEMA 17 flange),0.0105,24 V DC,S1,BLDC driver,1,"3707.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 ELEC,EXT_HALL_N,EXT_HALL,AHU damper actuator,BLDC actuator,ISO 5211 F03 mount,0.005,24 V DC,S2,on/off,24,assumed 3 per AHU
-ELEC,EXT_HALL_N,EXT_HALL,AHU exhaust fan,induction IE3,IEC 90L / 1.5 kW,1.0508,480 V 3-ph,S1,variable-frequency drive,8,"10087 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed)"
-ELEC,EXT_HALL_N,EXT_HALL,AHU supply fan,induction IE3,IEC 90L / 1.5 kW,1.0508,480 V 3-ph,S1,variable-frequency drive,8,"10087 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed)"
-ELEC,EXT_HALL_N,EXT_HALL,air-source heat pump compressor,hermetic induction (scroll),22 kW hermetic,17.979,480 V 3-ph,S1,variable-frequency drive,8,"peak cooling 463 kW / COP 3.22 / 8 modules (module count assumed, A-M-119)"
+ELEC,EXT_HALL_N,EXT_HALL,AHU exhaust fan,induction IE3,IEC 90L / 1.5 kW,1.125,480 V 3-ph,S1,variable-frequency drive,8,"10800 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed)"
+ELEC,EXT_HALL_N,EXT_HALL,AHU supply fan,induction IE3,IEC 90L / 1.5 kW,1.125,480 V 3-ph,S1,variable-frequency drive,8,"10800 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed)"
+ELEC,EXT_HALL_N,EXT_HALL,air-source heat pump compressor,hermetic induction (scroll),30 kW hermetic,19.1732,480 V 3-ph,S1,variable-frequency drive,8,"peak cooling 494 kW / COP 3.22 / 8 modules (module count assumed, A-M-119)"
 ELEC,EXT_HALL_N,EXT_HALL,heat pump condenser fan,"EC (electronically commutated, permanent-magnet) fan motor","1.1 kW EC fan, integrated drive",0.75,480 V 3-ph,S1,electronically commutated (EC) motor,16,assumed 2 per module; EC fan type assumed (A-M-119)
 ELEC,flow_battery,ZNBR2,"Motor: electrolyte pump (anolyte, catholyte) per stack strin",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,96,BOM; shaft assumed (A-M-119)
 ELEC,flow_battery,ZNBR2,"Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm (",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)

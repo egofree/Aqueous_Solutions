@@ -7,7 +7,7 @@
   600,
   1200
  ],
- "size_basis": "the dry coil + fan at the 7.25 kW rejection duty",
+ "size_basis": "the dry coil + fan at the calculated rejection duty (study envelope box; design sizing per the duty sheet follows)",
  "origin_mm": [
   6800,
   3600,
@@ -19,9 +19,9 @@
  "relief_mm": null,
  "internals": "none",
  "design": {
-  "duty": "dry rejection of the ADS_CHILL 7.25 kW + the Q4 dry share",
-  "airflow_m3_s": 0.61,
-  "fan_kw": 0.15
+  "duty": "dry rejection of the ADS_CHILL 7.25 kW + the Q4 dry share + the ZNBR2 cycling heat",
+  "airflow_m3_s": 14.47,
+  "fan_kw": 10.75
  },
  "nozzles": [
   {

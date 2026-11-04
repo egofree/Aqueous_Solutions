@@ -2,11 +2,14 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 1088 kg/d. Mass out 1088 kg/d. Electrical duty 256.8455 kW. In: S69B 1079 kg/d (NaBr after ORP); IA-ZNBR-MU 8.486 kg/d (electrolyte water make-up). Out: S69 1079 kg/d (Br2 vapor); IA-ZNBR-BD 8.487 kg/d (electrolyte bleed).
+1. Basis. Mass in 1166 kg/d. Mass out 1166 kg/d. Electrical duty 275.3422 kW. In: S69B 1157 kg/d (NaBr after ORP); IA-ZNBR-MU 8.486 kg/d (electrolyte water make-up). Out: S69 1157 kg/d (Br2 vapor); IA-ZNBR-BD 8.487 kg/d (electrolyte bleed).
 
 2. Size.
-- 6.67 kW. No exchanger area. A heat-transfer area does not belong on this class.
-- Charge 6.6667 kW average. Discharge 5.0 kW. Peak 60 kW.
+- Store and electrolyte thermal management are solved in the graph (X-ELS-02 / X-THM-01 F-4, A-M-455).
+- Store: 3855 kWh/d cycled at round trip 0.7 (A-M-062/179); charge 5507 kWh/d.
+- Electrolyte thermal-management duty: cycling loss 1652 kWh/d = 68.8 kW average thermal, rejected on IA-ZNBR-HEAT to the Q4 bus and the dry cooler.
+- Charge-window sizing case: 165.2 kW thermal over the 10 h charge window; sizes the electrolyte cooling loop.
+- Electrical: 275.3422 kW continuous discharge rating (storage; the charge draw rides IA-ESS-ZNBR2-CHG).
 
 3. Material. No wetted alloy. Conductors are copper. Corrosion allowance does not apply.
 

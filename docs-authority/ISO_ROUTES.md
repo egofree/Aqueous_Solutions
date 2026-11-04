@@ -183,7 +183,7 @@ Status. 397 positioned piped lines routed, 7899 m total. 15 piped lines wait on 
 | S90 | 15 | P3 | HABITATION | HDR_CO2 | 1600 | -2100 | -7050 | -3050 | 13.8 | 3 |
 | IA-GREY-01 | 50 | P2 | GREY_TREAT | LEACH_CSTR_1 | 2650 | -600 | 5300 | -14500 | 23.1 | 3 |
 | IA-CRU-01 | 15 | P2 | CRU | LEACH_CSTR_1 | 1450 | -14400 | -1100 | -2500 | 19.4 | 3 |
-| HL-Q4-REJ | 15 | M1 | Q4_BUS | DRY_COOLER | 11660 | -9600 | 3860 | -300 | 25.4 | 3 |
+| HL-Q4-REJ | 50 | M1 | Q4_BUS | DRY_COOLER | 11660 | -9600 | 3860 | -300 | 25.4 | 3 |
 | IA-ZNBR-BD | 15 | P1 | ZNBR2 | GREY_TREAT | 6050 | 6148 | -10000 | -300 | 22.5 | 3 |
 | IA-NUT-01 | 15 | P5 | NUTRIENT_DOSE | VCD_TRAIN | 950 | -4500 | -8000 | -14600 | 28.1 | 3 |
 | IA-UPW-FAB | 15 | P5 | BMED_UPW_POLISH | FAB_UPW_TANK | 6000 | 4150 | -7700 | -300 | 18.1 | 3 |
@@ -201,7 +201,7 @@ Status. 397 positioned piped lines routed, 7899 m total. 15 piped lines wait on 
 | IA-LEACH-BD | 15 | P2 | LEACH_CSTR_1 | NUTRIENT_DOSE | 13850 | 16400 | 3100 | -300 | 33.6 | 3 |
 | IA-VCD-BD | 15 | P2 | VCD_TRAIN | LEACH_CSTR_1 | 2600 | -11900 | 4900 | -2500 | 21.9 | 3 |
 | IA-FC-EXH | 15 | F1 | MEOH_FC | NOX_SCRUB | 2400 | 748 | 5400 | -2600 | 11.1 | 3 |
-| IA-ZNBR-HEAT | 15 | P1 | ZNBR2 | Q4_BUS | 2400 | 20948 | -10560 | -3160 | 37.1 | 3 |
+| IA-ZNBR-HEAT | 50 | P1 | ZNBR2 | Q4_BUS | 2400 | 20948 | -10560 | -3160 | 37.1 | 3 |
 | IA-Q1A-LOSS | 15 | P1 | Q1_A | BOUNDARY_EXPORT | 7100 | 200 | 1000 | -300 | 8.6 | 3 |
 | IA-Q1B-LOSS | 15 | P1 | Q1_B | BOUNDARY_EXPORT | 7100 | -13600 | -5000 | -300 | 26.0 | 3 |
 | IA-Q2A-LOSS | 15 | P1 | Q2_A | BOUNDARY_EXPORT | 6250 | -1300 | 1000 | -300 | 8.8 | 3 |
@@ -407,7 +407,7 @@ Status. 397 positioned piped lines routed, 7899 m total. 15 piped lines wait on 
 | IA-H2S-CH3SH | 15 | P1 | BLACK_DIGEST | MET_SYN | 2400 | 10350 | 4050 | -8450 | 25.2 | 3 |
 | IA-NH3-MET | 15 | P1 | WS_AMMONIA | MET_SYN | 2650 | -2950 | -5100 | -2450 | 13.2 | 3 |
 | DL_MET_TO_FEED | 15 | P1 | MET_SYN | CHICKEN_COOP | 2450 | 5100 | 5850 | -2250 | 15.7 | 3 |
-| IA-DC-REJ | 15 | P1 | DRY_COOLER | ATMOS | 2600 | 5950 | -2800 | -13250 | 24.6 | 3 |
+| IA-DC-REJ | 50 | P1 | DRY_COOLER | ATMOS | 2600 | 5950 | -2800 | -13250 | 24.6 | 3 |
 
 Waiting on placements:
 - LB-FEED (LB_INTAKE unplaced)

@@ -178,6 +178,24 @@ def main():
                        f"- Peak block load: heating {_hv.get('peak_h_kW', 0):.1f} kW, cooling {_hv.get('peak_c_kW', 0):.1f} kW at the "
                        f"bounding design temperatures.\n\n")
                 if _s2m.group(0) != _s2: s = s.replace(_s2m.group(0), _s2, 1)
+        # X-THM-01 F-4 (A-M-455): a unit whose params carry the solved cycling_thermal block (the ZNBR2
+        # electrolyte thermal-management duty) has its section 2 re-rendered from the graph every pass,
+        # like section 1 - the hand-authored load text would otherwise trail the store it was written from.
+        _ct = prm.get('cycling_thermal')
+        if _ct:
+            _ck = n.get('continuous_kw') or {}
+            _s2m = re.search(r'^2\. Size\..*?(?=^3\. )', s, flags=re.M | re.S)
+            if _s2m:
+                _s2 = (f"2. Size.\n"
+                       f"- Store and electrolyte thermal management are solved in the graph (X-ELS-02 / X-THM-01 F-4, A-M-455).\n"
+                       f"- Store: {_ct.get('kwh_d_out', 0):.0f} kWh/d cycled at round trip {_ct.get('round_trip', 0)} (A-M-062/179);"
+                       f" charge {_ct.get('kwh_d_in', 0):.0f} kWh/d.\n"
+                       f"- Electrolyte thermal-management duty: cycling loss {_ct.get('loss_kwh_d', 0):.0f} kWh/d ="
+                       f" {_ct.get('avg_kW', 0):.1f} kW average thermal, rejected on IA-ZNBR-HEAT to the Q4 bus and the dry cooler.\n"
+                       f"- Charge-window sizing case: {_ct.get('window_kW', 0):.1f} kW thermal over the {_ct.get('window_h', 0):.0f} h"
+                       f" charge window; sizes the electrolyte cooling loop.\n"
+                       f"- Electrical: {float(_ck.get('value') or 0):.4f} kW continuous discharge rating (storage; the charge draw rides IA-ESS-ZNBR2-CHG).\n\n")
+                if _s2m.group(0) != _s2: s = s.replace(_s2m.group(0), _s2, 1)
         if s != s0: open(p, 'w').write(s); ch += 1
     # R11 Rev AC regen: the graph is closed this lane, so params.duty is refreshed in memory only
     # (CRYO_ASU duty text trails its balanced rates; a graph-write lane picks it up). The manifest

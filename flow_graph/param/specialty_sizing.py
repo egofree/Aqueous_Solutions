@@ -49,10 +49,11 @@ def compute():
     v['ads_env'] = ([700, 500, 1200], 'the 2.25 kW-class silica gel-water adsorption chiller: drive 65 C, chilled 12 C, thermal COP ~0.45 (A-M-239/240; WANG2006_ADS); 304L shells per the issued sec3')
     v['ads_kw_note'] = ('the rated edges carry the arithmetic: 2.25 kW chilled = 5.0 kW drive x the 0.45 '
                         'thermal COP class (A-M-239/240); 7.25 kW rejected = drive + chilled in. (AQS-DUTY-013 class)')
-    # --- DRY_COOLER (7.25 kW dry rejection from the adsorption chiller) --------------
-    v['dc_airflow_m3_s'] = (0.61, 'air 25->38 C at 1.06 kg/m3: Q/(rho cp dT) = 7.25/(1.06 x 1.006 x 13) (AQS-BLD class approach)')
-    v['dc_fan_kw'] = (0.15, 'the fan at ~0.03 kW per 100 m3/h class for the dry coil draft')
-    v['dc_env'] = ([1200, 600, 1200], 'the dry coil + fan at the 7.25 kW rejection duty')
+    # --- DRY_COOLER (dry rejection terminal: ADS_CHILL 7.25 kW + the Q4 dry share + the ZNBR2 cycling heat) --
+    # The rejection duty and the rating are calculated by write_graph heat (X-THM-01 F-4, A-M-244 restated /
+    # A-M-455) from the terminal book; the fan electrical stamp below reads that rating (write() re-derives
+    # from the graph params this pass, write_graph heat runs earlier in the regen stage order).
+    v['dc_env'] = ([1200, 600, 1200], 'the dry coil + fan at the calculated rejection duty (study envelope box; design sizing per the duty sheet follows)')
     # --- GW_INTAKE (standby well head: the make-up on loss of atmospheric harvest) ----
     v['gw_pump_kw'] = (0.37, 'the submersible at the make-up class (the T4 shortfall bound ~30 m3/d worst case: 0.37 kW lifts 30 m3 x 30 m)')
     v['gw_env'] = ([800, 800, 600], 'the wellhead hatch + pump discharge set (X-LOC-13 well head)')
@@ -154,11 +155,21 @@ def write():
                              'chilled_kw': 2.25, 'cop_thermal': 0.45},
         sizing={'chilled_kw': 2.25, 'cop_thermal': 0.45},
         envelope=v['ads_env'][0], size_note=v['ads_env'][1])
-    put('DRY_COOLER', design={'duty': 'dry rejection of the ADS_CHILL 7.25 kW + the Q4 dry share',
+    # --- DRY_COOLER: the fan electrical stamp and airside read the calculated rating written by
+    # write_graph heat (X-THM-01 F-4, A-M-244 restated / A-M-455): airside at the same 13 K rise
+    # class as the issued 0.61 m3/s per 7.25 kW basis, fan at the 0.05 kW_fan/kW_th class.
+    _dc_rated = float(((N.get('DRY_COOLER', {}).get('params') or {}).get('rated_kW')) or 12.0)
+    _dc_duty = _dc_rated / 1.25
+    v['dc_airflow_m3_s'] = (round(0.61 * _dc_duty / 7.25, 2), f'air 25->38 C at 1.06 kg/m3: Q/(rho cp dT) at the rated duty {_dc_duty:.1f} kW, 0.61 m3/s per 7.25 kW class (AQS-BLD class approach)')
+    v['dc_fan_kw'] = (round(0.05 * _dc_rated, 2), f'the fan at the 0.05 kW_fan/kW_th class on the rated duty {_dc_rated:.0f} kW (A-M-244 restated)')
+    put('DRY_COOLER', design={'duty': 'dry rejection of the ADS_CHILL 7.25 kW + the Q4 dry share + the ZNBR2 cycling heat',
                               'airflow_m3_s': v['dc_airflow_m3_s'][0], 'fan_kw': v['dc_fan_kw'][0]},
         sizing={'airflow_m3_s': v['dc_airflow_m3_s'][0]},
-        envelope=v['dc_env'][0], size_note=v['dc_env'][1],
-        kw=0.15, kw_note=v['dc_fan_kw'][1] + ' (the fan; the rejection is passive-draft assisted)')
+        envelope=v['dc_env'][0], size_note=v['dc_env'][1])
+    # the fan electrical stamp tracks the calculated rating every pass (the put() note-freeze is for
+    # hand-authored texts; this note is generator-owned)
+    N['DRY_COOLER']['continuous_kw'] = {'value': v['dc_fan_kw'][0], 'unit': 'kW', 'status': 'study',
+        'note': f'{v["dc_fan_kw"][1]}; fan-assisted at the window bounding case (X-SPEC sizing, calculated)'}
     put('GW_INTAKE', design={'duty': 'standby well head: the make-up on loss of atmospheric harvest',
                              'pump_kw': v['gw_pump_kw'][0]},
         sizing={'pump_kw': v['gw_pump_kw'][0]},

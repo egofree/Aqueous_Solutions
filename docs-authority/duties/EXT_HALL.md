@@ -2,13 +2,13 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 116.3955 kW. In: none. Out: none.
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 124.2922 kW. In: none. Out: none.
 
 2. Size.
 - Envelope and loads are solved in the graph (X-PAR-07/X-PAR-08, A-M-104, A-M-112) from the location-neutral bounding climate of AQS-SITE-002 Rev C; a site design re-solves them.
-- Electrical, average: lighting 29.59 kW (IECC 2021 C405, 10 % lit), ventilation 49.93 kW (ASHRAE 62.1-2025), envelope service 36.87 kW; total 116.40 kW on the bus.
-- Thermal, average: heating 34.46 kW and cooling 205.29 kW after internal gains 42.20 kW and slab edge 1.88 kW (IECC C402 F-factor); heat pumps per ASHRAE 90.1-2025 Table 6.8.1-2, loop pumping 0.00 kW.
-- Peak block load: heating 520.8 kW, cooling 463.1 kW at the bounding design temperatures.
+- Electrical, average: lighting 31.68 kW (IECC 2021 C405, 10 % lit), ventilation 53.46 kW (ASHRAE 62.1-2025), envelope service 39.15 kW; total 124.29 kW on the bus.
+- Thermal, average: heating 36.63 kW and cooling 219.00 kW after internal gains 45.18 kW and slab edge 1.94 kW (IECC C402 F-factor); heat pumps per ASHRAE 90.1-2025 Table 6.8.1-2, loop pumping 0.00 kW.
+- Peak block load: heating 554.4 kW, cooling 493.9 kW at the bounding design temperatures.
 
 3. Material. Steel portal frames on the 6 m grid; insulated metal roof and wall panels to the IECC U-factors; roof framing for LRFD 1.72 kPa (ASCE 7-22: 1.2 x 0.15 kPa PV dead + 1.6 x 0.96 kPa roof live; A-M-105). Steel sections and panels are made in-house (X-MFG-32).
 
