@@ -1,22 +1,9 @@
-item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; deflagration venting or suppression (combustible dust).",docs-authority/duties/BAGHOUSE.md
-2,Process nozzle DN15,4,"Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; deflagration venting or suppression (combustible dust).",one per mass edge; DN from AQS-INV-003
-3,Process nozzle DN50,1,"Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; deflagration venting or suppression (combustible dust).",one per mass edge; DN from AQS-INV-003
-4,"Motor: induced-draft fan (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-5,"Motor: pulse-jet solenoid valve (solenoid, ISO 15218 coil, 22 mm)",4,-,AQS-INV-001 / AQS-INV-005
-6,"Motor: transfer pump IA-BAG-01 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-7,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-8,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-9,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-10,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-11,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-12,electronics: PLC digital I/O point 24 V DC,8,IEC 61131-2,AQS-INV-004
-13,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-14,electronics: solenoid driver channel 24 V DC,4,IEC 61131-2 DO,AQS-INV-004
-15,fastener: anchor bolt M10,44,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-16,instrument: flow transmitter DN50,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-17,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-18,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-19,support: pipe clamp DN50,22,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-20,valve: check valve DN50,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
-21,valve: isolation valve DN50,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Pulse-jet housing 906 x 706 x 2206, wall 3, roof; painted, bonded and grounded",1,"carbon steel (duty section 3), CA 1.5 mm paint system class",267.3,make,duty section 3 material and finish; deflagration-rated panel on the +X wall
+2,Tubesheet 900 x 700 x 20 with the 20-bag hole field,1,carbon steel,41.9,make,bag field per the design (A-M-458 cloth book)
+3,"Antistatic polyester bags D150 x 1200 (11.31 m2 drawn, A/C 1.114 m3/min/m2 drawn against the 1.2 basis)",20,antistatic polyester felt,19.8,buy,"capture air 756 m3/h at the 1.2 m3/min/m2 EPA-453 basis (A-M-458); bags purchased per plan rule 6, drawn as the felt-wall envelopes"
+4,60 deg dust hopper with DN200 rotary-valve discharge to IA-BAG-01 (valve and drive guard drawn),1,carbon steel; valve purchased (316L rotor),139.9,make,captured dust 7.77 kg/d class (the duty section 1 book) at the rotary-valve rating; dry dust wetted only after the PVC-U sluice break (duty section 3)
+5,Pulse-clean header DN40 with 5 diaphragm-valve envelopes (0.5 MPa compressed-air class) and solenoid enclosure,1,carbon steel; valves purchased,142.9,buy,pulse-jet cleaning per the AQS-DSN-INT-001 disposition; compressed-air service rating named (A-MACH rule)
+6,"Hood conveying duct set (shop spools to the hoods): DN100 (mill, 360 m3/h) + DN80 x 2 (fab 216, wire 180 m3/h) at the 18-20 m/s duct class",4,"carbon steel, bonded and grounded",18.0,make,"design ducts from the capture-air basis (A-M-458); NOT drawn - they run to the tool hoods (hold, W12(5)); the schedule DN15 rows stay the duty connection table"
+7,"Nozzle set per docs-authority/nozzles/BAGHOUSE.csv: 7 rows (three dust draws in at the plenum face, vent riser on the roof, drain boss; solids row as text)",7,DN15 per schedule,0.3,make,schedule tags/faces/heights verbatim; the duty section 4 bore note ('0.28 mm is not a specification; nozzle is DN15') carries the row
+8,Plinth 1250 x 1000 x 50 with the drawn M12 anchors,1,"carbon steel, painted",490.6,make,dry frame; anchors in fasteners.csv (A-MACH anchor drawn)

@@ -3,7 +3,7 @@
   "family": "MF-01",
   "type": "BLDC",
   "rating": "42 mm (NEMA 17 flange)",
-  "items": 88
+  "items": 90
  },
  {
   "family": "MF-02",
@@ -102,7 +102,7 @@
   "family": "MF-09",
   "type": "induction IE3",
   "rating": "IEC 63 / 0.18 kW",
-  "items": 54,
+  "items": 53,
   "P_kW": 0.18,
   "poles": 4,
   "Dg": 59.0,
@@ -318,7 +318,7 @@
   "family": "MF-17",
   "type": "solenoid",
   "rating": "ISO 15218 coil, 22 mm",
-  "items": 19
+  "items": 23
  },
  {
   "family": "MF-19",

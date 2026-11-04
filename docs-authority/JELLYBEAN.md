@@ -17,6 +17,8 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 
 | Unit | Item | Shaft kW | Rating kW | Frame | Bearing (ISO 15), typical | Efficiency class |
 | --- | --- | --- | --- | --- | --- | --- |
+| BAGHOUSE | Antistatic polyester bags D150 x 1200 (11.31 m2 drawn, A/C 1.114 m3/mi | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
+| BAGHOUSE | Hood conveying duct set (shop spools to the hoods): DN100 (mill, 360 m | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
 | EVAP_ACID | Blower, single-stage centrifugal, ratio 1.648, 1.34 kW shaft | 1.34 | 2.2 | 100L | 6206-2Z C3 | IE3 (IEC 60034-30-1) |
 | EVAP_ACID | Recirculation pump 311.0 kg/h at 4 m | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
 | EVAP_ACID_VS | Sump recirculation pump, magnetic drive, about 0.35 m3/h at 10 m | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
@@ -36,11 +38,11 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M10 | anchor | ISO 898-1 8.8 | 232 | ISO 4017 + chemical anchor (ETAG 001) |
 | M10 | hex bolt | ASTM A193 B8 | 8 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | hex bolt | ISO 3506 A4-70 | 158 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M10 | hex bolt | ISO 898-1 8.8 | 92 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M10 | hex bolt | ISO 898-1 8.8 | 124 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | stud | ISO 3506 A4-70 | 48 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | stud | ISO 898-1 8.8 | 106 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | anchor | ISO 3506 A4-70 | 3 | ISO 4017 + chemical anchor (ETAG 001) |
-| M12 | anchor | ISO 898-1 8.8 | 308 | ISO 4017 + chemical anchor (ETAG 001) |
+| M12 | anchor | ISO 898-1 8.8 | 312 | ISO 4017 + chemical anchor (ETAG 001) |
 | M12 | hex bolt | ISO 3506 A4-70 | 512 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | ISO 898-1 8.8 | 36 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | PVDF (non-metallic) | 34 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -68,8 +70,6 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | AL_POT | Dip leg DN50 OD60.3, inside the riser annulus, bottom z 250 (250 mm su | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | AL_POT | Feed chute group: chute box + hopper + rotary-seal flange + DN100 lanc | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | BACKUP_GEN | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| BAGHOUSE | valve: check valve DN50 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| BAGHOUSE | valve: isolation valve DN50 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | BLACK_DIGEST | Water seal and flame arrester on the biogas line to AFTERBURNER | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | BMED_ACID | Triplet laminate: 85 triplets x (1 bipolar + 2 monopolar membranes + 0 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | BMED_BASE | Triplet laminate: 85 triplets x (1 bipolar + 2 monopolar membranes + 0 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |

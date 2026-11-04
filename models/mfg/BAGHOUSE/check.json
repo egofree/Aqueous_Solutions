@@ -1,0 +1,131 @@
+{
+  "bbox_mm": [
+    1250.0,
+    1000.0,
+    2276.5
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    1250.0,
+    1000.0,
+    2276.0
+  ],
+  "size_basis": "L x W x H mm, set by flow_graph/param/specialty_sizing.py (X-SPEC): housing, inlet plenum, bag field and 60 deg hopper; the placement seed block (1500 x 1000 x 1500) under-books the height by 0.78 m - the named consequence (BAGHOUSE WORK_ORDER W12)",
+  "graph_revision": "AD",
+  "solids": 41,
+  "all_parts_valid": true,
+  "solids_note": "one compound of closed solids: plinth, housing walls and roof, tubesheet with the 20-bag hole field, the 20-bag felt field (compound), the 60 deg hopper, the rotary valve with drive guard, the pulse header with diaphragm valves, solenoid enclosure, deflagration panel and the nozzle stubs; every union partner overlaps volumetrically, so the mesh reads back closed and manifold",
+  "a_mach": {
+    "capture_air_m3_h": 756.0,
+    "hood_face_velocity_m_s": 0.5,
+    "hoods_m2": {
+      "IA-MILL-LOSS": 0.2,
+      "IA-FAB-LOSS": 0.12,
+      "IA-WIRE-LOSS": 0.1
+    },
+    "dust_kg_d": {
+      "IA-MILL-LOSS": 6.82,
+      "IA-FAB-LOSS": 0.51,
+      "IA-WIRE-LOSS": 0.44
+    },
+    "cloth_m2_drawn": 11.31,
+    "cloth_m2_required": 10.5,
+    "ac_basis_m3_min_m2": 1.2,
+    "ac_drawn_m3_min_m2": 1.114,
+    "bags": 20,
+    "bag_mm": [
+      150.0,
+      1200.0
+    ],
+    "basis": "A-MACH: purchased items named with the rating from the node/computation (rotary valve at the 7.77 kg/d dust class; pulse diaphragm valves at the 0.5 MPa compressed-air class; solenoid enclosure); the drive guard is drawn and the plinth anchors are drawn; the capture-air basis is registered (A-M-458)"
+  },
+  "no_fan_stated": "duty section 1 books 0.0 kW electrical: the baghouse dP rides the tool-extraction air mover (the purchased fan of that lane); the unit draws no fan hardware of its own (stated, not omitted - W12(3))",
+  "placement_hold": "the placement seed block (1500 x 1000 x 1500) under-books the design envelope height by 0.78 m - the named consequence for the placement lane (W12(1); nothing is resized)",
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 595.7,
+      "schedule_rating": "Class 150",
+      "service": "mill dust",
+      "note": "schedule datum drawn as issued; the DN15 rows are the duty connection table - the hood conveying ducts are the design DN100/DN80 set (BOM item 6, W12(5)); the stubs pierce the inlet plenum wall"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 625.0,
+      "schedule_rating": "Class 150",
+      "service": "kerf",
+      "note": "schedule datum drawn as issued; the DN15 rows are the duty connection table - the hood conveying ducts are the design DN100/DN80 set (BOM item 6, W12(5)); the stubs pierce the inlet plenum wall"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 654.3,
+      "schedule_rating": "Class 150",
+      "service": "draw scrap",
+      "note": "schedule datum drawn as issued; the DN15 rows are the duty connection table - the hood conveying ducts are the design DN100/DN80 set (BOM item 6, W12(5)); the stubs pierce the inlet plenum wall"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 600.0,
+      "x_mm": 625.0,
+      "schedule_rating": "Class 150",
+      "service": "captured dust",
+      "note": "schedule datum drawn as issued; the captured-dust edge is IA-BAG-01 via the hopper rotary valve - the 600 datum is the placeholder (hold, W12(6))"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50,
+      "drawn_height_mm": -0.5,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss through the plinth (schedule datum 50)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 2276.5,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "schedule datum 800 is the placeholder elevation: the clean-air vent is the riser on the roof, flush at the envelope top (hold, W12(4))"
+    },
+    "N7": {
+      "style": "text_row",
+      "dn": "solids",
+      "face": "outlet",
+      "height_mm": 600,
+      "schedule_rating": "Class 150",
+      "service": "dust",
+      "note": "non-piped row carried verbatim (dust leaves as solids via the rotary valve to IA-BAG-01; no stub drawn)"
+    }
+  },
+  "nozzle_count_schedule": 7,
+  "part_mass_kg": {
+    "housing_roof": 267.3,
+    "tubesheet": 41.9,
+    "bags": 19.8,
+    "hopper": 82.7,
+    "valve_guard_pulse": 142.9,
+    "plinth_misc": 490.9
+  },
+  "cadquery": "2.8.0"
+}

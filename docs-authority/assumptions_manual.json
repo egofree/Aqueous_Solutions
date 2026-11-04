@@ -7705,5 +7705,23 @@
    "flow_graph/param/ess_tf.py",
    "models/mfg/ZNBR2/znbr2.py"
   ]
+ },
+ {
+  "id": "A-M-458",
+  "task": "CAD-representation audit, BAGHOUSE machine design (2026-11-04)",
+  "title": "BAGHOUSE capture-air basis",
+  "statement": "The three dry-dust draws each extract through a hood at the 0.5 m/s face-velocity class (ACGIH industrial-ventilation practice for machine-tool enclosures): hood faces 0.20 m2 (COLD_MILL), 0.12 m2 (kerf draw), 0.10 m2 (wire draw) give 0.21 m3/s = 756 m3/h of capture air; the bag field sizes at the 1.2 m3/min/m2 air-to-cloth ratio (EPA-453 baghouse practice) = 10.5 m2, drawn as 20 antistatic-polyester bags of D150 x 1200 mm (11.31 m2, drawn A/C 1.11 m3/min/m2)",
+  "value": "hood face velocity 0.5 m/s; hoods 0.20/0.12/0.10 m2; capture air 756 m3/h; A/C 1.2 m3/min/m2 basis",
+  "units": "m/s; m2; m3/h; m3/min/m2",
+  "where": "flow_graph/plant_flow_graph.json BAGHOUSE.params.design (written by flow_graph/param/specialty_sizing.py); models/mfg/BAGHOUSE/baghouse.py (bag field and housing)",
+  "basis": "ACGIH_IND_VENT hood-face-velocity class for machine enclosures; EPA-453 baghouse air-to-cloth practice (the AQS-DSN-INT-001 disposition already carried the 1.2 m3/min/m2 basis)",
+  "sensitivity": "Cloth area scales with the capture air (hood face velocity x hood area); bag count with the cartridge class",
+  "replaced_by": "The measured hood entries and \u0394P at the first-article duct run",
+  "verification_test": "Differential-pressure and isokinetic capture check at the three hoods on the first-article duct run",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/specialty_sizing.py",
+   "models/mfg/BAGHOUSE/baghouse.py"
+  ]
  }
 ]

@@ -106,7 +106,9 @@ FOUNDRY,FOUNDRY_E,TI_CELL,transfer pump IA-MGCL2-KROLL to MG_POT,BLDC,42 mm (NEM
 FOUNDRY,FOUNDRY_E,VAC_CAST,"Vacuum pump skid on the +X bay (purchased, envelope and inte",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 GAS,GAS_SCRUB,ACID_POLISH_SCRUB,"Motor: transfer pump S66 to CRU (BLDC, 42 mm (NEMA 17 flange",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 GAS,GAS_SCRUB,ALK_SCRUBBER,induced-draft fan,induction IE3,IEC 90S / 1.1 kW,0.7236,480 V 3-ph,S1,fixed speed,1,"37509.9 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
-GAS,GAS_SCRUB,BAGHOUSE,"Motor: transfer pump IA-BAG-01 to LEACH_CSTR_1 (BLDC, 42 mm ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
+GAS,GAS_SCRUB,BAGHOUSE,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
+GAS,GAS_SCRUB,BAGHOUSE,pulse-jet solenoid valve,solenoid,"ISO 15218 coil, 22 mm",0.01,24 V DC,S3,on/off,4,assumed 4 rows
+GAS,GAS_SCRUB,BAGHOUSE,transfer pump IA-BAG-01 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"7.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 GAS,GAS_SCRUB,H2_DRYER,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"2.8 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 GAS,scrubber,NOX_SCRUB,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 GAS,scrubber,NOX_SCRUB,transfer pump IA-NOX-CO2 to CRYO_ASU,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"22.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"

@@ -1,5 +1,5 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,106,1692 points / 16
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,107,1702 points / 16
 CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,852,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 174 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
@@ -1930,16 +1930,21 @@ GAS,GAS_SCRUB,ALK_SCRUBBER,instrument,temperature element,Pt100 class A,"IEC 607
 GAS,GAS_SCRUB,ALK_SCRUBBER,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 GAS,GAS_SCRUB,ALK_SCRUBBER,support,pipe clamp,DN250,"PP clamp with EPDM liner, MSS SP-58 Type 7",2,S65: AQS-PIP-005 span count
 GAS,GAS_SCRUB,ALK_SCRUBBER,valve,isolation valve,DN250,"PVC-lined ball valve in FRP service, ISO 16135",2,S65: one at each end nozzle (assumed)
-GAS,GAS_SCRUB,BAGHOUSE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump IA-BAG-01 to LEACH_CSTR_1 (BLDC, 42 mm : drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-GAS,GAS_SCRUB,BAGHOUSE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump IA-BAG-01 to LEACH_CSTR_1 (BLDC, 42 mm : run and fault (assumed)"
-GAS,GAS_SCRUB,BAGHOUSE,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump IA-BAG-01 to LEACH_CSTR_1 (BLDC, 42 mm  (assumed VFD at >= 0.75 kW)"
-GAS,GAS_SCRUB,BAGHOUSE,fabricated part,fabricated part set,21 BOM lines,models/mfg/BAGHOUSE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+GAS,GAS_SCRUB,BAGHOUSE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,induced-draft fan (assumed size)
+GAS,GAS_SCRUB,BAGHOUSE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-BAG-01 to LEACH_CSTR_1 (assumed size)
+GAS,GAS_SCRUB,BAGHOUSE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,induced-draft fan
+GAS,GAS_SCRUB,BAGHOUSE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-BAG-01 to LEACH_CSTR_1
+GAS,GAS_SCRUB,BAGHOUSE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,induced-draft fan: run and fault (assumed)
+GAS,GAS_SCRUB,BAGHOUSE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,8,pulse-jet solenoid valve: run and fault (assumed)
+GAS,GAS_SCRUB,BAGHOUSE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-BAG-01 to LEACH_CSTR_1: run and fault (assumed)
+GAS,GAS_SCRUB,BAGHOUSE,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,4,pulse-jet solenoid valve
+GAS,GAS_SCRUB,BAGHOUSE,fabricated part,fabricated part set,8 BOM lines,models/mfg/BAGHOUSE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+GAS,GAS_SCRUB,BAGHOUSE,fastener,M10 bolt,M10 bolt with nut,ISO 898-1 8.8,32,models/mfg/BAGHOUSE/fasteners.csv
+GAS,GAS_SCRUB,BAGHOUSE,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,4,models/mfg/BAGHOUSE/fasteners.csv
 GAS,GAS_SCRUB,BAGHOUSE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,44,IA-BAG-01: 2 per support (assumed)
 GAS,GAS_SCRUB,BAGHOUSE,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-BAG-01: pumped line (assumed)
 GAS,GAS_SCRUB,BAGHOUSE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 GAS,GAS_SCRUB,BAGHOUSE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-GAS,GAS_SCRUB,BAGHOUSE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-GAS,GAS_SCRUB,BAGHOUSE,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Motor: transfer pump IA-BAG-01 to LEACH_CSTR_1 (BLDC, 42 mm : induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 GAS,GAS_SCRUB,BAGHOUSE,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",22,IA-BAG-01: AQS-PIP-005 span count
 GAS,GAS_SCRUB,BAGHOUSE,valve,check valve,DN50,"CPVC true-union swing/ball check valve, FKM seals",1,IA-BAG-01: pump discharge (assumed)
 GAS,GAS_SCRUB,BAGHOUSE,valve,isolation valve,DN50,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-BAG-01: one at each end nozzle (assumed)

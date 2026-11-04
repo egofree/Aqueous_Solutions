@@ -28,13 +28,13 @@ Table 1.1. Motor families
 
 | Family | Motor type | Size | Voltage | Count | Units | Installed shaft kW |
 | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 88 | 51 | 0.24 |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 90 | 52 | 0.25 |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 56 | 6 | 2.71 |
 | MF-03 | BLDC actuator | ISO 5211 F03 mount | 24 V DC | 24 | 1 | 0.12 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 103 | 4 | 25.75 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 6 | 6 | 4.68 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 19 | 4 | 19.42 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 54 | 37 | 6.48 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 53 | 36 | 6.36 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 10 | 8 | 3.70 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 5 | 5 | 7.50 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 1 | 1 | 0.09 |
@@ -42,7 +42,7 @@ Table 1.1. Motor families
 | MF-14 | induction IE3 | IEC 132M / 7.5 kW | 480 V 3-ph | 3 | 2 | 16.09 |
 | MF-15 | induction IE3 | IEC 112M / 4 kW | 480 V 3-ph | 1 | 1 | 3.48 |
 | MF-16 | induction IE3 | IEC 80 / 0.75 kW | 480 V 3-ph | 1 | 1 | 0.55 |
-| MF-17 | solenoid | ISO 15218 coil, 22 mm | 24 V DC | 19 | 9 | 0.15 |
+| MF-17 | solenoid | ISO 15218 coil, 22 mm | 24 V DC | 23 | 10 | 0.19 |
 | MF-19 | stepper | NEMA 34 (86 mm) | 48 V DC | 3 | 1 | 1.20 |
 | MF-25 | hermetic induction (scroll) | 1.1 kW hermetic | 480 V 3-ph | 1 | 1 | 0.94 |
 | MF-27 | EC (electronically commutated, permanent-magnet) fan motor | 1.1 kW EC fan, integrated drive | 480 V 3-ph | 16 | 1 | 12.00 |
@@ -194,7 +194,9 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | GAS_SCRUB | ACID_POLISH_SCRUB | Motor: transfer pump S66 to CRU (BLDC, 42 mm (NEMA 17 flange | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | GAS_SCRUB | ALK_SCRUBBER | induced-draft fan | induction IE3 | IEC 90S / 1.1 kW | 0.7236 | 480 V 3-ph | S1 | fixed speed | 1 | 37509.9 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
-| GAS_SCRUB | BAGHOUSE | Motor: transfer pump IA-BAG-01 to LEACH_CSTR_1 (BLDC, 42 mm  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| GAS_SCRUB | BAGHOUSE | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
+| GAS_SCRUB | BAGHOUSE | pulse-jet solenoid valve | solenoid | ISO 15218 coil, 22 mm | 0.01 | 24 V DC | S3 | on/off | 4 | assumed 4 rows |
+| GAS_SCRUB | BAGHOUSE | transfer pump IA-BAG-01 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 7.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | GAS_SCRUB | H2_DRYER | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 2.8 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | scrubber | NOX_SCRUB | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | scrubber | NOX_SCRUB | transfer pump IA-NOX-CO2 to CRYO_ASU | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 22.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |

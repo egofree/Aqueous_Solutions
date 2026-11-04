@@ -79,8 +79,10 @@ def compute():
 
 
 def write():
+    import math
     g = json.load(open(GP))
     N = {n['unit_id']: n for n in g['nodes']}
+    E = {e['stream_id']: e for e in g['edges']}
     v = compute()
 
     def put(u, design=None, sizing=None, envelope=None, size_mm=None, size_note=None, kw=None, kw_note=None):
@@ -180,6 +182,52 @@ def write():
         sizing={'kwh_per_kg_h2': v['elyz_kwh_per_kg'][0]},
         envelope=v['elyz_env'][0], size_note=v['elyz_env'][1],
         kw_note=v['elyz_note'] + ' (X-SPEC)')
+    # --- BAGHOUSE (the dry-dust filter machine: housing, tubesheet, bag field, hopper,
+    # pulse header and rotary-valve discharge, sized on the capture air per A-M-458) ---
+    _bh_dust = {k: float((E.get(k, {}).get('rate') or {}).get('value') or 0.0)
+                for k in ('IA-MILL-LOSS', 'IA-FAB-LOSS', 'IA-WIRE-LOSS')}
+    _bh_hoods = {'IA-MILL-LOSS': 0.20, 'IA-FAB-LOSS': 0.12, 'IA-WIRE-LOSS': 0.10}   # m2 hood faces (A-M-458)
+    _bh_u = 0.5                                                     # m/s hood face velocity (ACGIH class)
+    _bh_q_m3_h = round(_bh_u * sum(_bh_hoods.values()) * 3600.0, 0)  # 756 m3/h capture air
+    _bh_ac_basis = 1.2                                              # m3/min/m2 (EPA-453 practice)
+    _bh_cloth_req = round(_bh_q_m3_h / 60.0 / _bh_ac_basis, 2)      # 10.5 m2
+    _bh_bags = 20                                                   # D150 x 1200, 5 x 4 field at the 180 mm pitch
+    _bh_bag_area = round(math.pi * 0.150 * 1.200, 4)                # 0.5655 m2 per bag
+    _bh_cloth = round(_bh_bags * _bh_bag_area, 2)                   # 11.31 m2 drawn
+    _bh_hop_h = int((900 - 200) / 2 * 1.732)                        # 60 deg hopper, 200 mm valve outlet
+    _bh_h = 50 + _bh_hop_h + 20 + 1200 + 20 + 360 + 20         # plinth, hopper, hopper clear, bags, tubesheet, plenum, roof
+    put('BAGHOUSE', design={'machine': 'pulse-jet dust baghouse: CS housing, tubesheet, 20-bag '
+                            'antistatic-polyester field, 60 deg dust hopper with rotary valve to '
+                            'IA-BAG-01, pulse-clean header and solenoid/diaphragm envelopes',
+                            'dust_kg_d': {k: round(v, 3) for k, v in _bh_dust.items()},
+                            'hoods_m2': _bh_hoods, 'hood_face_velocity_m_s': _bh_u,
+                            'capture_air_m3_h': _bh_q_m3_h, 'ac_basis_m3_min_m2': _bh_ac_basis,
+                            'cloth_req_m2': _bh_cloth_req, 'bags': _bh_bags,
+                            'bag_mm': [150, 1200], 'bag_pitch_mm': 180,
+                            'cloth_drawn_m2': _bh_cloth,
+                            'ac_drawn_m3_min_m2': round(_bh_q_m3_h / 60.0 / _bh_cloth, 3),
+                            'ducts': 'hood ducts DN100 (mill, 360 m3/h) and DN80 x 2 (fab 216, '
+                                     'wire 180 m3/h) at the 18-20 m/s duct class; the schedule '
+                                     'DN15 rows stay the duty connection table (WORK_ORDER W12)',
+                            'housing_inner_mm': [900, 700], 'wall_mm': 3.0,
+                            'hopper_h_mm': _bh_hop_h, 'valve_outlet_mm': 200,
+                            'z_chain': {'plinth': 50, 'hopper_top': 50 + _bh_hop_h,
+                                        'bags': [50 + _bh_hop_h + 20, 50 + _bh_hop_h + 20 + 1200],
+                                        'tubesheet': 50 + _bh_hop_h + 20 + 1200,
+                                        'plenum': [50 + _bh_hop_h + 20 + 1200 + 20,
+                                                   50 + _bh_hop_h + 20 + 1200 + 20 + 360]},
+                            'material': 'carbon steel housing, painted, bonded and grounded; '
+                            'antistatic polyester bags (duty section 3); deflagration vent per '
+                            'the combustible-dust class',
+                            'basis': 'capture air = hood face velocity x hood faces (A-M-458, '
+                                     'ACGIH class); cloth = air / 1.2 m3/min/m2 (EPA-453 '
+                                     'practice); drawn field carries it at +8 %',
+                            'computed_by': 'flow_graph/param/specialty_sizing.py (X-SPEC lane, CAD-representation audit item 5)'},
+        sizing={'capture_air_m3_h': _bh_q_m3_h, 'cloth_m2': _bh_cloth},
+        size_mm=[1250, 1000, _bh_h], size_note='L x W x H mm, set by flow_graph/param/specialty_sizing.py '
+              '(X-SPEC): housing, inlet plenum, bag field and 60 deg hopper; the placement seed block '
+              '(1500 x 1000 x 1500) under-books the height by 0.78 m - the named consequence '
+              '(BAGHOUSE WORK_ORDER W12)')
     put('MAU_HX', design={'duty': 'the 12 kW water-to-air coil on the hab make-up air (Q4 -> MAU)'},
         sizing={'duty_kw': 12.0},
         envelope=v['mau_env'][0], size_note=v['mau_env'][1])
