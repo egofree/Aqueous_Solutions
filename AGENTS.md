@@ -131,13 +131,20 @@ Values the parametric model solves (AQS-PAR-001) come from
 `flow_graph/param/solver.py` with drivers in `flow_graph/param/drivers.json` and
 references in `refs.py`. `python3 -m flow_graph.param.write_graph` writes them to
 the graph, and `pytest flow_graph/param/test_param_misfit.py` fails on a misfit
-over 1 %. Nothing is fixed arbitrarily. Size every unit, rate and space for the
+over 1 %. Nothing is fixed arbitrarily. Every size is computed from demand and supply
+through the drivers and the transfer functions (AQS-PAR-001); a number that
+cannot name its driver, transfer function or assumption basis does not enter
+the model. A hard-coded size is a defect, not a convention; an interim value
+survives only as a registered assumption. Size every unit, rate and space for the
 bounding case from actual need (AQS-ASSAY-001 envelope, AQS-ELEC-007 bounding
 load). Constraints exist only to make the parts integrate. When a restriction
 blocks a sized design, revise the restriction. Sizing-driven rate and layout
 changes are approved by default; each is still documented, propagated to every
 affected file, register-tracked, and committed with the checks passing.
 Supplier quotations and vendor data are not a design basis.
+`pytest flow_graph/param/test_parametric_provenance.py` enforces the trace: every
+present unit of the graph is covered by the sizing evidence registry
+(`docs-authority/inventory/SIZING_COVERAGE.json`) or a registered assumption.
 
 ## Regeneration
 

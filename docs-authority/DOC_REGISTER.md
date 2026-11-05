@@ -258,7 +258,7 @@ Table 3.1. Document numbers in use
 | AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | B | 2026-09-28 | Geothermal loop and backup generator | current |
 | AQS-PWR-ROLLUP | `notes/LOAD_ROLLUP.md` | A | 2026-10-17 | Load rollup — foundry, polymers, grease | current |
 | AQS-QA-001 | `docs-authority/ITP.md` | A | 2026-10-16 | Inspection and test plan | current |
-| AQS-QA-002 | `docs-authority/DESIGN_CHECK.md` | B | 2026-10-25 | Independent design check record | current |
+| AQS-QA-002 | `docs-authority/DESIGN_CHECK.md` | C | 2026-11-04 | Independent design check record | current |
 | AQS-RATE-FP-MET | `notes/DESIGN_RATES.md` | A | 2026-10-16 | Design rates — fluoropolymer and critical metals | current |
 | AQS-REB-001 | `docs-authority/REBUILD.md` | D | 2026-10-24 | Rebuilding the design from the plant graph | current |
 | AQS-RED-001 | `docs-authority/RED_AUDIT.md` | C | 2026-10-25 | Redundancy audit, energy and life support | current |
