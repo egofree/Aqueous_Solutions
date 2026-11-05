@@ -34,7 +34,7 @@ PI blocks with set-point literals taken from the graph basis column of AQS-CTL-0
 | PLC | AI instruments (incl. SIF) | of which SIF | Table AI | Diff | Table AO/DI/DO | CPU |
 |---|---|---|---|---|---|---|
 | PLC-CRYO | 36 | 0 | 36 | 0 | 1/19/6 | redundant pair |
-| PLC-DIGESTER | 132 | 3 | 132 | 0 | 3/125/29 | single |
+| PLC-DIGESTER | 132 | 3 | 132 | 0 | 3/117/25 | single |
 | PLC-ELEC | 29 | 0 | 29 | 0 | 17/445/108 | redundant pair |
 | PLC-FAB | 63 | 0 | 63 | 0 | 3/70/11 | single |
 | PLC-FARM | 48 | 0 | 48 | 0 | 0/3/0 | redundant pair |
@@ -47,7 +47,7 @@ PI blocks with set-point literals taken from the graph basis column of AQS-CTL-0
 | PLC-MEOH | 33 | 1 | 33 | 0 | 0/43/10 | single |
 | PLC-MFG | 32 | 1 | 32 | 0 | 9/42/5 | single |
 | PLC-NUT | 9 | 0 | 9 | 0 | 0/11/5 | redundant pair |
-| PLC-OIL | 55 | 3 | 55 | 0 | 0/36/5 | single |
+| PLC-OIL | 55 | 3 | 55 | 0 | 0/34/4 | single |
 | PLC-POLYMERS | 48 | 2 | 48 | 0 | 0/18/3 | single |
 | PLC-PUMPED_HYDRO | 2 | 0 | 2 | 0 | 0/4/2 | redundant pair |
 | PLC-WTR | 70 | 0 | 70 | 0 | 0/57/11 | redundant pair |

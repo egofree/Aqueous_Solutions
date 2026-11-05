@@ -688,86 +688,6 @@
 "foot_m2": 0.09
 },
 {
-"unit": "EW_9",
-"level": "L-1",
-"empty_kg": 268.4,
-"op_kg": 1386.7,
-"test_kg": 2057.7,
-"foot_m2": 2.354
-},
-{
-"unit": "EW_7",
-"level": "L-1",
-"empty_kg": 260.2,
-"op_kg": 1344.3,
-"test_kg": 1994.8,
-"foot_m2": 2.282
-},
-{
-"unit": "EW_1",
-"level": "L-1",
-"empty_kg": 219.2,
-"op_kg": 1132.3,
-"test_kg": 1680.2,
-"foot_m2": 1.922
-},
-{
-"unit": "EW_2",
-"level": "L-1",
-"empty_kg": 219.2,
-"op_kg": 1132.3,
-"test_kg": 1680.2,
-"foot_m2": 1.922
-},
-{
-"unit": "RECT_EW",
-"level": "L-1",
-"empty_kg": 576.0,
-"op_kg": 576.0,
-"test_kg": 576.0,
-"foot_m2": 1.92
-},
-{
-"unit": "EW_3",
-"level": "L-1",
-"empty_kg": 96.0,
-"op_kg": 496.2,
-"test_kg": 736.3,
-"foot_m2": 0.842
-},
-{
-"unit": "EW_5",
-"level": "L-1",
-"empty_kg": 38.6,
-"op_kg": 199.3,
-"test_kg": 295.8,
-"foot_m2": 0.338
-},
-{
-"unit": "EW_6",
-"level": "L-1",
-"empty_kg": 38.6,
-"op_kg": 199.3,
-"test_kg": 295.8,
-"foot_m2": 0.338
-},
-{
-"unit": "EW_8",
-"level": "L-1",
-"empty_kg": 38.6,
-"op_kg": 199.3,
-"test_kg": 295.8,
-"foot_m2": 0.338
-},
-{
-"unit": "EW_4",
-"level": "L-1",
-"empty_kg": 30.4,
-"op_kg": 156.9,
-"test_kg": 232.8,
-"foot_m2": 0.266
-},
-{
 "unit": "BLACK_DEWATER",
 "level": "L1",
 "empty_kg": 64.8,
@@ -1122,9 +1042,9 @@
 {
 "unit": "CRYO_H2",
 "level": "L-1",
-"empty_kg": 5520.5,
-"op_kg": 5520.5,
-"test_kg": 5520.5,
+"empty_kg": 5865.6,
+"op_kg": 5865.6,
+"test_kg": 5865.6,
 "foot_m2": 10.044
 },
 {
@@ -1758,6 +1678,86 @@
 "op_kg": 100.8,
 "test_kg": 100.8,
 "foot_m2": 0.48
+},
+{
+"unit": "EW_9",
+"level": "L-1",
+"empty_kg": 268.4,
+"op_kg": 1386.7,
+"test_kg": 2057.7,
+"foot_m2": 2.354
+},
+{
+"unit": "EW_7",
+"level": "L-1",
+"empty_kg": 260.2,
+"op_kg": 1344.3,
+"test_kg": 1994.8,
+"foot_m2": 2.282
+},
+{
+"unit": "EW_1",
+"level": "L-1",
+"empty_kg": 219.2,
+"op_kg": 1132.3,
+"test_kg": 1680.2,
+"foot_m2": 1.922
+},
+{
+"unit": "EW_2",
+"level": "L-1",
+"empty_kg": 219.2,
+"op_kg": 1132.3,
+"test_kg": 1680.2,
+"foot_m2": 1.922
+},
+{
+"unit": "RECT_EW",
+"level": "L-1",
+"empty_kg": 576.0,
+"op_kg": 576.0,
+"test_kg": 576.0,
+"foot_m2": 1.92
+},
+{
+"unit": "EW_3",
+"level": "L-1",
+"empty_kg": 96.0,
+"op_kg": 496.2,
+"test_kg": 736.3,
+"foot_m2": 0.842
+},
+{
+"unit": "EW_5",
+"level": "L-1",
+"empty_kg": 38.6,
+"op_kg": 199.3,
+"test_kg": 295.8,
+"foot_m2": 0.338
+},
+{
+"unit": "EW_6",
+"level": "L-1",
+"empty_kg": 38.6,
+"op_kg": 199.3,
+"test_kg": 295.8,
+"foot_m2": 0.338
+},
+{
+"unit": "EW_8",
+"level": "L-1",
+"empty_kg": 38.6,
+"op_kg": 199.3,
+"test_kg": 295.8,
+"foot_m2": 0.338
+},
+{
+"unit": "EW_4",
+"level": "L-1",
+"empty_kg": 30.4,
+"op_kg": 156.9,
+"test_kg": 232.8,
+"foot_m2": 0.266
 },
 {
 "unit": "GROW_BED/R1",

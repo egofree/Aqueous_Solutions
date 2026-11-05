@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 213.6 kg/d. Mass out 213.6 kg/d. Electrical duty 0.0000 kW. In: IA-ASU-N2 213.6 kg/d (nitrogen product). Out: S03 1.5 kg/d (N2); S84 192 kg/d (N2 product); S88 0 kg/d (N2 make-up); IA-N2-VENT 20.06 kg/d (nitrogen vent); 1 more.
+1. Basis. Mass in 213.6 kg/d. Mass out 213.6 kg/d. Electrical duty 0.0000 kW. In: IA-ASU-N2 213.6 kg/d (nitrogen product). Out: S03 1.5 kg/d (N2); S84 194.4 kg/d (N2 product); S88 0 kg/d (N2 make-up); IA-N2-VENT 17.62 kg/d (nitrogen vent); 1 more.
 
 2. Size.
 - Not a packed tower. The column diameter and the tray count are on CRYO_ASU only.

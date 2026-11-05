@@ -51,17 +51,17 @@ All solved units close.
 | EVAP_BASE kW | 1.328 | 1.328 | +0.0 % | X-MFG-30 in-house MVR design |
 | EVAP_BASE water off, kg/d | 801.856 | 801.856 | -0.0 % | PERRY9_HCL |
 | IA-VS-NAOH NaOH, mol/d | 0.001 | 0.001 | +0.0 % | X-PAR-10, PERRY9_ABS |
-| EW_1 DC kW (cell + bus drop) | 5.991 | 5.991 | -0.0 % | CODATA2018, USBM_CL_EW |
-| EW_2 DC kW (cell + bus drop) | 5.993 | 5.993 | -0.0 % | CODATA2018, USBM_CL_EW |
-| EW_3 DC kW (cell + bus drop) | 2.249 | 2.250 | -0.0 % | CODATA2018, USBM_CL_EW |
-| EW_4 DC kW (cell + bus drop) | 0.485 | 0.485 | -0.0 % | CODATA2018, USBM_CL_EW |
-| EW_5 DC kW (cell + bus drop) | 0.502 | 0.502 | +0.0 % | CODATA2018, USBM_CL_EW |
-| EW_6 DC kW (cell + bus drop) | 0.547 | 0.547 | +0.0 % | CODATA2018, USBM_CL_EW |
-| EW_7 DC kW (cell + bus drop) | 7.119 | 7.119 | +0.0 % | CODATA2018, USBM_CL_EW |
-| EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
-| EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
-| RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3366.000 | 3366.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| EW_1 DC kW (cell + bus drop) | 0.000 | 0.000 | -0.0 % | CODATA2018, USBM_CL_EW |
+| EW_2 DC kW (cell + bus drop) | 0.001 | 0.001 | +0.0 % | CODATA2018, USBM_CL_EW |
+| EW_3 DC kW (cell + bus drop) | 0.879 | 0.879 | -0.0 % | CODATA2018, USBM_CL_EW |
+| EW_4 DC kW (cell + bus drop) | 0.022 | 0.022 | -0.0 % | CODATA2018, USBM_CL_EW |
+| EW_5 DC kW (cell + bus drop) | 0.038 | 0.038 | +0.0 % | CODATA2018, USBM_CL_EW |
+| EW_6 DC kW (cell + bus drop) | 0.077 | 0.077 | -0.0 % | CODATA2018, USBM_CL_EW |
+| EW_7 DC kW (cell + bus drop) | 3.374 | 3.374 | +0.0 % | CODATA2018, USBM_CL_EW |
+| EW_8 DC kW (cell + bus drop) | 0.040 | 0.040 | -0.0 % | CODATA2018, USBM_CL_EW |
+| EW_9 DC kW (cell + bus drop) | 0.069 | 0.069 | +0.0 % | CODATA2018, USBM_CL_EW |
+| RECT_EW AC kW (params stamp) | 5.625 | 5.625 | -0.0 % | USBM_CL_EW |
+| PV_ARRAY nameplate kWp vs roof-closed need | 2585.000 | 2585.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -69,7 +69,7 @@ All solved units close.
 2. EVAP_ACID concentrates HCl from 7.07 wt% to 20 wt%, below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL): feed 1304.8 kg/d, water off 865.2 kg/d, 1.50 kW at 72.0 kWh/t (VOGELBUSCH_MVR upper bound). Study.
 3. EVAP_BASE concentrates NaOH from 7.41 wt% to 20 wt%: feed 1301.7 kg/d, water off 801.9 kg/d, 1.33 kW. Study.
 4. Condensate returns to the BMED stack as water make-up (IA-EVAP_ACID-COND, IA-EVAP_BASE-COND). Both evaporators have 480 V feeds (SF-EVAP_ACID, SF-EVAP_BASE) and heat edges to HEAT_SINK.
-5. EW at 2.12 V per cell and current efficiency 0.85 (USBM_CL_EW chloride EW basis), 0.3 V bus drop, rectifier efficiency 0.8: 12781 A, DC 30.93 kW, AC 38.66 kW.
+5. EW at 2.12 V per cell and current efficiency 0.85 (USBM_CL_EW chloride EW basis), 0.3 V bus drop, rectifier efficiency 0.8: 1860 A, DC 4.50 kW, AC 5.63 kW.
 7. NaOH balance (owner decision 2026-10-15, X-PAR-06): precipitation 2412 mol/d (one NaOH per chloride, GREENWOOD); glass digest 109.8 mol/d (2 NaOH per SiO2 dissolved, bounding; was 593 mol/d); BMED 2412 mol/d; make-up 4.39 kg/d NaOH flake on IA-NAOH-MU from NORTH_DOCK, worst case with no sodium credit; equal-mass purge IA-NA-PURGE. EVAP_BASE is derived from the BMED output plus make-up: water off 801.9 kg/d, 1.33 kW.
 6. The bus change is carried on IA-PV-01; PV, storage and inverters follow AQS-ELEC-007 (POWER_SIZING.md Rev C). The EW aisle and the evaporator skids are re-placed (placement seed Rev I, AQS-PLACE-STUDY-001).
 
@@ -1024,6 +1024,7 @@ All solved units close.
 | FARM.classes.food_hab_issue_kgd | 2.55 | kg/d food issue to the habitation rooms | A-M-426 | — |
 | POLYMERS.textile.textile_kg_person_yr | 8.0 | kg finished textiles per person per year (clothing 4 + bedding 2 + wipes/other 2; A-M-429 study class) | A-M-429 | — |
 | POLYMERS.textile.fr_pickup_frac | 0.02 | - phosphorus-FR finish pick-up, % of fiber mass | A-M-429 | — |
+| wire_melt_fume_frac | 0.003 | - mass fraction of the wire billet lost as melt fume (AQS-DUTY-010 wire route) | A-M-460 | — |
 | POLYMERS.textile.spin_yield | 0.95 | - melt-spin first-pass yield; scrap to the solids line | A-M-429 | — |
 | POLYMERS.textile.power_kW | 0.3 | kW melt-spin heater + spindle + winder | A-M-429 | — |
 
@@ -2084,3 +2085,4 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-457 | 2.0 M ZnBr2, 529.4 L per module (47 reservoirs, 24.9 m3 tota mol/L; L; kg | Electrolyte sample density and ZnBr2 titre at the X-MFG-41 first article |
 | A-M-458 | hood face velocity 0.5 m/s; hoods 0.20/0.12/0.10 m2; capture m/s; m2; m3/h; m3/min/m2 | Differential-pressure and isokinetic capture check at the three hoods on the first-article duct run |
 | A-M-459 | j 1.8 A/cm2; V_cell 1.85 V; 80 cells x 288 cm2; 518.4 A; 148 A/cm2; V; cm2; A; kW | X-PAR-12 first-article stack: polarisation curve gives the measured j/V point and the ASR; the skid GA is the verification test of A-M-279 |
+| A-M-460 | EW cascade element-rate basis: the cascade plates the S08 de kg/d (element metal; wear return kg/d) | pytest flow_graph/param/test_param_misfit.py; python3 models/mfg/tracker.py --check EW_1 EW_2 EW_3 EW_4 EW_5 EW_6 EW_7 EW_8 EW_9 |

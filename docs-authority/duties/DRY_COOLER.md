@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 10.0000 kW. In: IA-DC-SPRAY 0 kg/d (evaporative spray make-up). Out: IA-DC-EVAP 0 kg/d (evaporated spray water to air).
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 7.5500 kW. In: IA-DC-SPRAY 0 kg/d (evaporative spray make-up). Out: IA-DC-EVAP 0 kg/d (evaporated spray water to air).
 
 2. Size.
 - Envelope 1200×600×1200 mm, 0.864 m³.

@@ -20,8 +20,8 @@
  "internals": "none",
  "design": {
   "bin": "pellet tote bin",
-  "issue_kg_d": 0.267388,
-  "to_wet_kg_d": 0.026739,
+  "issue_kg_d": 0.267436,
+  "to_wet_kg_d": 0.026744,
   "hold_d": 1.0
  },
  "nozzles": [

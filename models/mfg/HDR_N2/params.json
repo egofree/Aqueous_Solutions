@@ -21,18 +21,18 @@
  "design": {
   "service": "plant air / N2 header (receiver in; AHU, afterburner air, reagent sparge draws)",
   "kind": "gas",
-  "flow_kg_s": 0.0022,
+  "flow_kg_s": 0.0023,
   "duty_kW": null,
   "rho_kg_m3": 1.2041,
-  "Q_m3_s": 0.0018,
+  "Q_m3_s": 0.0019,
   "v_m_s": 8.0,
-  "id_req_mm": 17.2,
+  "id_req_mm": 17.3,
   "DN": 32,
   "length_m": 20,
   "volume_m3": 0.009,
   "material": "316L tube",
   "hold_kg": 0.01,
-  "connections": 7,
+  "connections": 8,
   "dn_label": "DN32",
   "wall_mm": 3.56,
   "wall_basis": "lib/dn Sch 40 table; schedule not stated on the node; the M1 class sheet carries the schedule at order (WORK_ORDER W12)"
@@ -141,6 +141,14 @@
    "service": "plant air from the receiver bank",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N14",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "aisle make-up air (plant air) replacing the scrub blowdown loss",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "316L tube (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.",

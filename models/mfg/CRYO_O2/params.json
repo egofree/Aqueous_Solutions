@@ -36,8 +36,8 @@
    "A_req_mm2_per_half": 58.173,
    "bore_req_mm_per_half": 8.606,
    "valves": 2,
-   "depress_kg": 68.81,
-   "depress_bore_mm": 1.924,
+   "depress_kg": 73.005,
+   "depress_bore_mm": 1.982,
    "liquid": false,
    "method": "API 521 7th ed. 4.4.13.2.4 (API521_2020)"
   },
@@ -56,13 +56,13 @@
   "banks": [
    {
     "bank": "main",
-    "V_m3": 0.47,
+    "V_m3": 0.5,
     "tubes": 14,
     "halves": 2
    },
    {
     "bank": "crew reserve",
-    "V_m3": 0.023691623424759077,
+    "V_m3": 0.02379286214135759,
     "tubes": 2,
     "halves": 2
    }

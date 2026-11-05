@@ -4,7 +4,7 @@
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AD",
   "node_count": 206,
-  "edge_count": 659,
+  "edge_count": 662,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -248,7 +248,7 @@
           "dust_kg_d": {
             "IA-MILL-LOSS": 6.82,
             "IA-FAB-LOSS": 0.51,
-            "IA-WIRE-LOSS": 0.44
+            "IA-WIRE-LOSS": 0.438
           },
           "hoods_m2": {
             "IA-MILL-LOSS": 0.2,
@@ -406,7 +406,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 200.870966,
+          "bypass_kg_d": 217.562363,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -528,7 +528,7 @@
         "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "continuous_kw": {
-        "value": 0.0191,
+        "value": 0.0197,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.5 kWh/d / 24 h; batch nameplate 2.2 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged)."
@@ -825,9 +825,9 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "store_kg": 17,
-        "store_basis": "need: 6.5 kg dark-hours buffer (8.71 kg/d x (1 - 6/24)) + 9.6 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
-        "store_water_volume_m3": 1.14,
+        "store_kg": 18,
+        "store_basis": "need: 7.9 kg dark-hours buffer (10.58 kg/d x (1 - 6/24)) + 9.6 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
+        "store_water_volume_m3": 1.21,
         "design": {
           "P_design_MPa": 22.0,
           "S_MPa": 115.0,
@@ -840,28 +840,28 @@
           "banks": [
             {
               "bank": "main",
-              "V_m3": 1.14,
-              "tubes": 32,
+              "V_m3": 1.21,
+              "tubes": 34,
               "halves": 2
             }
           ],
-          "tubes": 32,
-          "steel_kg": 5520.5376,
+          "tubes": 34,
+          "steel_kg": 5865.5712,
           "D_mm": 114,
           "wall_mm": 13.49,
-          "H_mm": 900,
+          "H_mm": 1050,
           "T_C": 25,
           "rack_mm": [
             6696,
             1500,
-            900
+            1050
           ],
           "material": "SA-312 TP316L seamless DN100 Sch 160, B16.11 Class 9000 fittings / autoclave cone-and-thread, O2 bank cleaned to ASTM G93"
         },
         "size_mm": [
           6696,
           1500,
-          900
+          1050
         ],
         "size_note": "L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167)",
         "compressor_design": {
@@ -937,15 +937,15 @@
           "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
           "adequate": true,
           "fire_case": {
-            "exposed_m2": 70.047,
-            "per_half_m2": 35.024,
+            "exposed_m2": 74.425,
+            "per_half_m2": 37.213,
             "P1_kPa_abs": 26721.325,
             "T1_K": 344.335,
-            "A_req_mm2_per_half": 116.06,
-            "bore_req_mm_per_half": 12.156,
+            "A_req_mm2_per_half": 123.314,
+            "bore_req_mm_per_half": 12.53,
             "valves": 2,
-            "depress_kg": 8.593,
-            "depress_bore_mm": 1.408,
+            "depress_kg": 9.121,
+            "depress_bore_mm": 1.451,
             "liquid": false,
             "method": "API 521 7th ed. 4.4.13.2.4 (API521_2020)"
           },
@@ -1043,16 +1043,16 @@
         "o2_gap": {
           "hdr_short_kg_d": 0.0,
           "system_short_kg_d": 0.0,
-          "system_surplus_kg_d": 0.0959,
-          "src_kg_d": 71.634,
+          "system_surplus_kg_d": 14.9194,
+          "src_kg_d": 86.4575,
           "hdr_draw_kg_d": 29.7381,
           "direct_draw_kg_d": 41.8,
           "basis": "A-M-230 (D-O2): H2O_ELYZ restored \u2014 sources IA-ELY-O2 (PEM electrolyser, the O2 source) + S87 (crew-duty bed, A-M-229) + IA-ASU-O2 (recovered combustion excess); S02/S50 draw directly on CRYO_O2 (Rev AC re-home), the rest via HDR_O2",
           "note": "reported ledger, not an assert (A-M-228 discipline kept): surplus carried by IA-O2-PROD/IA-O2-SHIP"
         },
         "storage_mode": "compressed gas, 200 bar, Type I cylinder bank, O2-cleaned (ASTM G93), separate from H2 (NFPA 2 ch. 7 separation)",
-        "store_kg": 134.9,
-        "store_water_volume_m3": 0.47,
+        "store_kg": 142.9,
+        "store_water_volume_m3": 0.5,
         "store_basis": "stoichiometric partner of the CRYO_H2 store (X-PAR-12)",
         "crew_reserve_kg": 6.8,
         "crew_reserve_basis": "separate cylinder bank, crew draw 3.40 kg/d x 2 d (NFPA 99 reserve >= 1 average day; AQS-ELEC-007 autonomy 2 d governs); not drawn by FUEL_CELL (X-RED-04, A-M-146)",
@@ -1068,13 +1068,13 @@
           "banks": [
             {
               "bank": "main",
-              "V_m3": 0.47,
+              "V_m3": 0.5,
               "tubes": 14,
               "halves": 2
             },
             {
               "bank": "crew reserve",
-              "V_m3": 0.023691623424759077,
+              "V_m3": 0.02379286214135759,
               "tubes": 2,
               "halves": 2
             }
@@ -1119,8 +1119,8 @@
             "A_req_mm2_per_half": 58.173,
             "bore_req_mm_per_half": 8.606,
             "valves": 2,
-            "depress_kg": 68.81,
-            "depress_bore_mm": 1.924,
+            "depress_kg": 73.005,
+            "depress_bore_mm": 1.982,
             "liquid": false,
             "method": "API 521 7th ed. 4.4.13.2.4 (API521_2020)"
           },
@@ -1139,10 +1139,10 @@
       "notes": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)",
       "enabled": true,
       "continuous_kw": {
-        "value": 19.9712,
+        "value": 24.2518,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-12 TF: 8.71 kg/d H2 x 55.0 kWh/kg / 24 h; rated 79.9 kW on a 6.0 h PV window."
+        "note": "X-PAR-12 TF: 10.58 kg/d H2 x 55.0 kWh/kg / 24 h; rated 97.0 kW on a 6.0 h PV window."
       },
       "modules": [],
       "params": {
@@ -1166,10 +1166,10 @@
           "adequate": true
         },
         "stack_heat_kw": {
-          "value": 5.6646,
+          "value": 6.8787,
           "unit": "kW",
           "status": "study",
-          "note": "X-PAR-12 TF: 5.66 kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b."
+          "note": "X-PAR-12 TF: 6.88 kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b."
         },
         "sec3_material": {
           "mat": "PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family",
@@ -1255,10 +1255,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 5.2483,
+        "value": 0.0003,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Cell DC at the electrode: 2476 A (Faraday, copper-equivalent, CE 0.85) x 2.12 V (USBM_CL_EW chloride EW)."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Cell DC at the electrode: 0 A (Faraday at the element deposit, AQS-ASSAY-001 section 5, recovery 1.0; Q-038 basis) x 2.12 V (USBM_CL_EW chloride EW)."
       },
       "modules": [],
       "params": {
@@ -1271,16 +1271,16 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
-            2670,
+            270,
             720,
             760
           ],
-          "I_bounding_A": 2476,
-          "cathodes": 25,
-          "anodes": 26,
-          "j_A_m2": 196,
-          "V_liq_m3": 1.243,
-          "P_dc_kW": 5.25,
+          "I_bounding_A": 0,
+          "cathodes": 1,
+          "anodes": 2,
+          "j_A_m2": 0,
+          "V_liq_m3": 0.117,
+          "P_dc_kW": 0.0,
           "status": "study",
           "source": "AQS-DUTY-051"
         }
@@ -1306,16 +1306,16 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
-            2670,
+            270,
             720,
             760
           ],
-          "I_bounding_A": 2476,
-          "cathodes": 25,
-          "anodes": 26,
-          "j_A_m2": 197,
-          "V_liq_m3": 1.243,
-          "P_dc_kW": 5.25,
+          "I_bounding_A": 0,
+          "cathodes": 1,
+          "anodes": 2,
+          "j_A_m2": 1,
+          "V_liq_m3": 0.117,
+          "P_dc_kW": 0.0,
           "status": "study",
           "source": "AQS-DUTY-051"
         }
@@ -1341,16 +1341,16 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
-            1170,
+            570,
             720,
             760
           ],
-          "I_bounding_A": 930,
-          "cathodes": 10,
-          "anodes": 11,
-          "j_A_m2": 184,
-          "V_liq_m3": 0.539,
-          "P_dc_kW": 1.97,
+          "I_bounding_A": 363,
+          "cathodes": 4,
+          "anodes": 5,
+          "j_A_m2": 180,
+          "V_liq_m3": 0.258,
+          "P_dc_kW": 0.77,
           "status": "study",
           "source": "AQS-DUTY-051"
         }
@@ -1375,16 +1375,16 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
-            370,
+            270,
             720,
             760
           ],
-          "I_bounding_A": 201,
-          "cathodes": 2,
-          "anodes": 3,
-          "j_A_m2": 199,
-          "V_liq_m3": 0.164,
-          "P_dc_kW": 0.43,
+          "I_bounding_A": 9,
+          "cathodes": 1,
+          "anodes": 2,
+          "j_A_m2": 18,
+          "V_liq_m3": 0.117,
+          "P_dc_kW": 0.02,
           "status": "study",
           "source": "AQS-DUTY-051"
         }
@@ -1409,16 +1409,16 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
-            470,
+            270,
             720,
             760
           ],
-          "I_bounding_A": 208,
-          "cathodes": 3,
-          "anodes": 4,
-          "j_A_m2": 137,
-          "V_liq_m3": 0.211,
-          "P_dc_kW": 0.44,
+          "I_bounding_A": 16,
+          "cathodes": 1,
+          "anodes": 2,
+          "j_A_m2": 31,
+          "V_liq_m3": 0.117,
+          "P_dc_kW": 0.03,
           "status": "study",
           "source": "AQS-DUTY-051"
         }
@@ -1443,16 +1443,16 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
-            470,
+            270,
             720,
             760
           ],
-          "I_bounding_A": 226,
-          "cathodes": 3,
-          "anodes": 4,
-          "j_A_m2": 150,
-          "V_liq_m3": 0.211,
-          "P_dc_kW": 0.48,
+          "I_bounding_A": 32,
+          "cathodes": 1,
+          "anodes": 2,
+          "j_A_m2": 63,
+          "V_liq_m3": 0.117,
+          "P_dc_kW": 0.07,
           "status": "study",
           "source": "AQS-DUTY-051"
         }
@@ -1477,16 +1477,16 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
-            3170,
+            1570,
             720,
             760
           ],
-          "I_bounding_A": 2942,
-          "cathodes": 30,
-          "anodes": 31,
-          "j_A_m2": 195,
-          "V_liq_m3": 1.477,
-          "P_dc_kW": 6.24,
+          "I_bounding_A": 1394,
+          "cathodes": 14,
+          "anodes": 15,
+          "j_A_m2": 198,
+          "V_liq_m3": 0.727,
+          "P_dc_kW": 2.96,
           "status": "study",
           "source": "AQS-DUTY-051"
         }
@@ -1511,16 +1511,16 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
-            470,
+            270,
             720,
             760
           ],
-          "I_bounding_A": 209,
-          "cathodes": 3,
-          "anodes": 4,
-          "j_A_m2": 138,
-          "V_liq_m3": 0.211,
-          "P_dc_kW": 0.44,
+          "I_bounding_A": 17,
+          "cathodes": 1,
+          "anodes": 2,
+          "j_A_m2": 33,
+          "V_liq_m3": 0.117,
+          "P_dc_kW": 0.04,
           "status": "study",
           "source": "AQS-DUTY-051"
         }
@@ -1546,16 +1546,16 @@
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
-            3270,
+            270,
             720,
             760
           ],
-          "I_bounding_A": 3115,
-          "cathodes": 31,
-          "anodes": 32,
-          "j_A_m2": 199,
-          "V_liq_m3": 1.524,
-          "P_dc_kW": 6.6,
+          "I_bounding_A": 29,
+          "cathodes": 1,
+          "anodes": 2,
+          "j_A_m2": 57,
+          "V_liq_m3": 0.117,
+          "P_dc_kW": 0.06,
           "status": "study",
           "source": "AQS-DUTY-051"
         }
@@ -2029,55 +2029,55 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.0226,
+        "value": 0.0262,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-39 (A-M-168): TSA regeneration 1.4 W / 0.7 + half the insulated loss."
+        "note": "X-MFG-39 (A-M-168): TSA regeneration 0.5 W / 0.7 + half the insulated loss."
       },
       "modules": [],
       "params": {
         "presence": "present",
         "design": {
-          "H2_kg_d": 2.750425,
-          "Nm3_h": 1.2741407479745368,
-          "O2_mol_d": 1.3642981150793647,
-          "water_kg_d": 0.04915566108630951,
-          "HCl_kg_d": 4.9743673573908714e-05,
-          "guard_kg": 0.04476930621651784,
-          "sieve_kg": 0.491556610863095,
+          "H2_kg_d": 0.882545,
+          "Nm3_h": 0.4088410141782408,
+          "O2_mol_d": 0.4377703373015873,
+          "water_kg_d": 0.015772865252976193,
+          "HCl_kg_d": 1.5961544268353173e-05,
+          "guard_kg": 0.014365389841517856,
+          "sieve_kg": 0.15772865252976193,
           "beds": {
             "deoxo": {
-              "V_L": 0.25482814959490735,
-              "tube": "DN50 Sch 40 316L",
+              "V_L": 0.08176820283564816,
+              "tube": "DN25 Sch 40 316L",
               "L_mm": 300,
               "count": 2
             },
             "guard": {
-              "V_L": 0.0559616327706473,
+              "V_L": 0.05,
               "tube": "DN25 Sch 40 316L",
               "L_mm": 300,
               "count": 2
             },
             "TSA": {
-              "V_L": 0.7022237298044215,
-              "tube": "DN50 Sch 40 316L",
-              "L_mm": 325,
+              "V_L": 0.2253266464710885,
+              "tube": "DN25 Sch 40 316L",
+              "L_mm": 404,
               "count": 2
             }
           },
-          "regen_W": 1.433364741820396,
-          "loss_W": 41.14802413446337,
+          "regen_W": 0.4626909029064863,
+          "loss_W": 51.150159231763695,
           "insulation_mm": 38,
-          "kW": 0.0226,
+          "kW": 0.0262,
           "D_mm": 60,
-          "H_mm": 625,
+          "H_mm": 704,
           "T_C": 250.0,
           "wall_mm": 3.91
         },
         "size_mm": [
           600,
           400,
-          1025
+          1104
         ]
       }
     },
@@ -2217,9 +2217,9 @@
           "flow_kg_s": 0.0,
           "duty_kW": null,
           "rho_kg_m3": 0.084,
-          "Q_m3_s": 0.0004,
+          "Q_m3_s": 0.0001,
           "v_m_s": 8.0,
-          "id_req_mm": 7.8,
+          "id_req_mm": 4.4,
           "DN": 25,
           "length_m": 20,
           "volume_m3": 0.0045,
@@ -2247,18 +2247,18 @@
         "design": {
           "service": "plant air / N2 header (receiver in; AHU, afterburner air, reagent sparge draws)",
           "kind": "gas",
-          "flow_kg_s": 0.0022,
+          "flow_kg_s": 0.0023,
           "duty_kW": null,
           "rho_kg_m3": 1.2041,
-          "Q_m3_s": 0.0018,
+          "Q_m3_s": 0.0019,
           "v_m_s": 8.0,
-          "id_req_mm": 17.2,
+          "id_req_mm": 17.3,
           "DN": 32,
           "length_m": 20,
           "volume_m3": 0.009,
           "material": "316L tube",
           "hold_kg": 0.01,
-          "connections": 7
+          "connections": 8
         },
         "size_note": "DN32 manifold x 20 m run (0.009 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
@@ -2283,12 +2283,12 @@
         "design": {
           "service": "O2 header (ASU/receiver in; fuel cell, peroxide, genset, afterburner, product draws)",
           "kind": "gas",
-          "flow_kg_s": 0.0003,
+          "flow_kg_s": 0.0005,
           "duty_kW": null,
           "rho_kg_m3": 1.2041,
-          "Q_m3_s": 0.0003,
+          "Q_m3_s": 0.0004,
           "v_m_s": 8.0,
-          "id_req_mm": 6.8,
+          "id_req_mm": 8.3,
           "DN": 25,
           "length_m": 20,
           "volume_m3": 0.0045,
@@ -2413,8 +2413,8 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2720.0,
         "head_m_m1": 36.25,
-        "vs_znbr2_kwh": 3399.0,
-        "fraction_of_znbr2_study": 0.063,
+        "vs_znbr2_kwh": 2610.0,
+        "fraction_of_znbr2_study": 0.082,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
@@ -2731,10 +2731,10 @@
         "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "continuous_kw": {
-        "value": 0.2369,
+        "value": 0.2067,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 5.7 kWh/d / 24 h; batch nameplate 7.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged)."
+        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 5.0 kWh/d / 24 h; batch nameplate 7.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged)."
       }
     },
     {
@@ -2855,12 +2855,12 @@
         "presence": "present",
         "trade_statement": {
           "exports_kg_d": {
-            "IA-N2-VENT": 20.064,
+            "IA-N2-VENT": 17.618,
             "IA-NA-PURGE": 4.394,
             "IA-C5-SHIP": 7.04,
             "IA-C11-SHIP": 1.512,
             "IA-C19-SHIP": 2.218,
-            "IA-O2-SHIP": 0.096,
+            "IA-O2-SHIP": 14.919,
             "IA-MEOH-SHIP": 28.729,
             "IA-GYPSUM-SHIP": 0.576,
             "IA-CL2-SHIP": 39.419,
@@ -2870,10 +2870,11 @@
             "IA-CR-VENT": 0.202,
             "IA-BURNOUT-VENT": 0.2,
             "IA-SHELL-EXPORT": 1.0,
-            "IA-METAL-SHIP": 10.812
+            "IA-METAL-SHIP": 10.812,
+            "IA-GOODS-SHIP": 331.854
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 52.662,
+            "IA-H2O-MU": 331.346,
             "IA-NAOH-MU": 4.394,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
@@ -2892,10 +2893,11 @@
             "NUT_AQUA": 5.5,
             "NUT_AQUA_BED": 1.0,
             "CA_HOPPER": 0.035,
-            "FR_FINISH": 0.002
+            "FR_FINISH": 0.002,
+            "IA-FEED-MU": 65.547
           },
-          "net_kg_d": 0.0,
-          "residual_kg_d": 0.002,
+          "net_kg_d": -0.0,
+          "residual_kg_d": 0.001,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
         }
@@ -3252,7 +3254,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 387.3905,
+        "value": 366.5288,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -3260,28 +3262,28 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 6732,
+        "count": 5170,
         "presence": "present",
-        "nameplate_kw": 3366,
-        "area_m2": 29740,
-        "balance_kWp": 1683,
+        "nameplate_kw": 2585,
+        "area_m2": 22778,
+        "balance_kWp": 1293,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            234000,
+            180000,
             138000
           ],
           "bays": [
-            39,
+            30,
             23
           ],
-          "footprint_m2": 32292.0,
-          "extension_m2": 31860.0,
-          "roof_capacity_kWp": 3390.3,
+          "footprint_m2": 24840.0,
+          "extension_m2": 24408.0,
+          "roof_capacity_kWp": 2596.7,
           "perimeter_pathway_mm": 1829,
-          "arrays": 15,
-          "extension_load_kW": 110.34,
+          "arrays": 12,
+          "extension_load_kW": 85.23,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -3343,22 +3345,22 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); AQS-ELEC-004. Nine-channel EW rectifier, 16500 A, 99 kW DC nameplate at 6 V (Rev AC node RECTIFIER; RECT_EW remapped R10b).",
+      "notes": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); AQS-ELEC-004. Nine-channel EW rectifier, 4250 A, 26 kW DC nameplate at 6 V (Rev AC node RECTIFIER; RECT_EW remapped R10b).",
       "enabled": true,
       "continuous_kw": {
         "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "A-M-231 (AQS-NOTE-PV-REBASE Rev A section 8): 12 kW 48 V rail and auxiliary basis (AQS-PWR-001). The nine-channel EW DC load is counted once behind the AQS-ELEC-004 bounding AC row in _power_sizing (params.rect_ac_input_kW 38.66 kW; A-M-255); S17 equals this node value."
+        "note": "A-M-231 (AQS-NOTE-PV-REBASE Rev A section 8): 12 kW 48 V rail and auxiliary basis (AQS-PWR-001). The nine-channel EW DC load is counted once behind the AQS-ELEC-004 bounding AC row in _power_sizing (params.rect_ac_input_kW 5.63 kW; A-M-255); S17 equals this node value."
       },
       "modules": [],
       "params": {
         "presence": "present",
-        "rated_A": 16500,
-        "nameplate_kw_dc": 99.0,
-        "rect_ac_input_kW": 38.663,
-        "rect_loss_kW": 7.733,
-        "rect_basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73)/R10b: nine-channel EW rectifier 16500 A, 99 kW DC nameplate at 6 V; bounding AC input 38.66 kW (AQS-ELEC-004), counted once in _power_sizing (A-M-255). F-24: the 12 kW node load stamp (A-M-231 '48 V rail' basis) is removed as a double count - its cited basis ('DC to cells and induction', POWER_DUTIES.md) is booked in the AQS-ELEC-004 row, the induction units carry their own stamps, and no 48 V rail load table exists (CRITICAL_PATH says 20 kW; the per-motor 48 V driver loads live in the unit stamps). S17 is retired.",
+        "rated_A": 4250,
+        "nameplate_kw_dc": 25.5,
+        "rect_ac_input_kW": 5.625,
+        "rect_loss_kW": 1.125,
+        "rect_basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73)/R10b: nine-channel EW rectifier 4250 A, 26 kW DC nameplate at 6 V; bounding AC input 5.63 kW (AQS-ELEC-004), counted once in _power_sizing (A-M-255). F-24: the 12 kW node load stamp (A-M-231 '48 V rail' basis) is removed as a double count - its cited basis ('DC to cells and induction', POWER_DUTIES.md) is booked in the AQS-ELEC-004 row, the induction units carry their own stamps, and no 48 V rail load table exists (CRITICAL_PATH says 20 kW; the per-motor 48 V driver loads live in the unit stamps). S17 is retired.",
         "size_mm": [
           1000,
           600,
@@ -3470,21 +3472,20 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 2820.0,
+        "kW": 2160.0,
         "presence": "present",
-        "count": 47,
+        "count": 36,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2577.2,
-          "export_kWh_d_clear": 7283,
+          "export_peak_kW": 1973.6,
+          "export_kWh_d_clear": 5593,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
         "sections": {
-          "count": 5,
+          "count": 4,
           "inverters": [
-            10,
-            10,
+            9,
             9,
             9,
             9
@@ -3493,11 +3494,9 @@
             1000,
             1000,
             1000,
-            1000,
             1000
           ],
           "xfmr_kVA": [
-            750,
             750,
             750,
             750,
@@ -3509,9 +3508,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 201.4,
+          "bus_demand_kW": 180.5,
           "section_rating_A": 350,
-          "basis_A": 269.2,
+          "basis_A": 241.3,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -3651,10 +3650,10 @@
         "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "continuous_kw": {
-        "value": 0.0189,
+        "value": 0.0146,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.5 kWh/d / 24 h; batch nameplate 1.1 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged)."
+        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.4 kWh/d / 24 h; batch nameplate 1.1 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged)."
       }
     },
     {
@@ -3905,69 +3904,69 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 242.761,
+        "value": 186.419,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 242.8 kW, charge 1103.4 kW, 3399 kWh over 47 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 186.4 kW, charge 847.3 kW, 2610 kWh over 36 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 1104,
-        "kWh": 3399,
+        "kW": 848,
+        "kWh": 2610,
         "presence": "present",
-        "charge_kW": 1104,
-        "discharge_kW": 243,
+        "charge_kW": 848,
+        "discharge_kW": 187,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 47 hybrid inverters, 72.3 kWh and 23.5 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 36 hybrid inverters, 72.5 kWh and 23.6 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 8.617,
-          "purge_m3_h": 35.9,
+          "H2_m3_d": 6.617,
+          "purge_m3_h": 27.57,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2223.1
+          "electrode_area_m2": 1707.1
         },
         "size_mm": [
           7900,
           6050,
           1970
         ],
-        "size_note": "L x W x H mm, set by flow_graph/param/ess_tf.py (X-MFG-43): the 47-bay rack hall (47 bays of stack-over-tank at 1100 x 850 mm pitch); the placement seed block for ZNBR2 stays the 1800 x 1200 x 1600 mm study box and under-books this machine - the floor-space reservation is the named consequence (ZNBR2 WORK_ORDER W12)",
+        "size_note": "L x W x H mm, set by flow_graph/param/ess_tf.py (X-MFG-43): the 36-bay rack hall (36 bays of stack-over-tank at 1100 x 850 mm pitch); the placement seed block for ZNBR2 stays the 1800 x 1200 x 1600 mm study box and under-books this machine - the floor-space reservation is the named consequence (ZNBR2 WORK_ORDER W12)",
         "cycling_thermal": {
-          "kwh_d_in": 4855.2,
-          "kwh_d_out": 3398.7,
+          "kwh_d_in": 3728.4,
+          "kwh_d_out": 2609.9,
           "round_trip": 0.7,
-          "loss_kwh_d": 1456.6,
-          "avg_kW": 60.69,
+          "loss_kwh_d": 1118.5,
+          "avg_kW": 46.6,
           "window_h": 10.0,
-          "window_kW": 145.66,
-          "charge_kW_window": 485.52,
-          "basis": "store 3399 kWh/d (AQS-ELEC-007 P x night) at round trip 0.7 (A-M-062/179): the round-trip difference is electrolyte heat; window_kW is the bounding heat rate with all the daily loss in the 10 h charge window; charge_kW_window 485.5 kW is the charge electrical rate over the same window; rejected to the Q4 bus on IA-ZNBR-HEAT and the terminal (A-M-455)"
+          "window_kW": 111.85,
+          "charge_kW_window": 372.84,
+          "basis": "store 2610 kWh/d (AQS-ELEC-007 P x night) at round trip 0.7 (A-M-062/179): the round-trip difference is electrolyte heat; window_kW is the bounding heat rate with all the daily loss in the 10 h charge window; charge_kW_window 372.8 kW is the charge electrical rate over the same window; rejected to the Q4 bus on IA-ZNBR-HEAT and the terminal (A-M-455)"
         },
         "design": {
-          "machine": "ZnBr2 flow-battery store: 47 module bays (one per hybrid inverter, AQS-ELEC-008), each a bipolar plate stack over its electrolyte reservoir, pumps and electrolyte cooler",
-          "modules": 47,
-          "module_kwh": 72.3,
-          "module_charge_kw_ac": 23.48,
+          "machine": "ZnBr2 flow-battery store: 36 module bays (one per hybrid inverter, AQS-ELEC-008), each a bipolar plate stack over its electrolyte reservoir, pumps and electrolyte cooler",
+          "modules": 36,
+          "module_kwh": 72.5,
+          "module_charge_kw_ac": 23.54,
           "plates_per_module": 95,
-          "plate_active_L_mm": 995.8,
+          "plate_active_L_mm": 998.3,
           "plate_active_W_mm": 500.0,
           "plate_t_mm": 5.0,
           "pitch_mm": 6.0,
-          "stack_I_A": 99.6,
+          "stack_I_A": 99.8,
           "stack_V_dc": 172.9,
-          "stack_charge_kw_dc": 17.217,
-          "electrode_area_m2_booked": 2223.1,
-          "electrode_area_m2_model": 2223.09,
-          "zn_kg_per_module": 69.2,
-          "br2_kg_per_module": 169.2,
+          "stack_charge_kw_dc": 17.261,
+          "electrode_area_m2_booked": 1707.1,
+          "electrode_area_m2_model": 1707.13,
+          "zn_kg_per_module": 69.4,
+          "br2_kg_per_module": 169.7,
           "electrolyte_M": 2.0,
-          "electrolyte_L_per_module": 529.4,
+          "electrolyte_L_per_module": 530.8,
           "tank_mm": [
             700.0,
             700.0,
             1155.0
           ],
-          "cooler_kw_per_module": 3.1,
-          "pump_W_per_module": 517.0,
+          "cooler_kw_per_module": 3.11,
+          "pump_W_per_module": 518.0,
           "bus_bar_mm": "1 x 20 x 6.3 copper flat per stack terminal (AQS-BUS-001 class method; POWER.md states no ZNBR2 bus section)",
           "bay_pitch_mm": [
             1100.0,
@@ -3975,7 +3974,7 @@
           ],
           "bay_cols": 7,
           "bay_rows": 7,
-          "basis": "cell-summed area from the booked charge (Ah at 1.82 V over the 6 h window at 20 mA/cm2, the purge-basis book); plates 95/module x 47 modules fill it at 6 mm pitch (A-M-456); electrolyte 529.447 L/module at 2 M ZnBr2 (A-M-457); cooler at the cycling_thermal charge-window rate (A-M-455); pump at the 3 % auxiliary share (A-M-179)",
+          "basis": "cell-summed area from the booked charge (Ah at 1.82 V over the 6 h window at 20 mA/cm2, the purge-basis book); plates 95/module x 36 modules fill it at 6 mm pitch (A-M-456); electrolyte 530.798 L/module at 2 M ZnBr2 (A-M-457); cooler at the cycling_thermal charge-window rate (A-M-455); pump at the 3 % auxiliary share (A-M-179)",
           "computed_by": "flow_graph/param/ess_tf.py tf() (X-PAR-02 lane, X-MFG-43 machine design)"
         }
       }
@@ -3999,9 +3998,9 @@
         "design": {
           "machine": "packed Br2-recovery wash column on the ZNBR2 headspace purge (S69 in, scrubbed electrolyte S69B back to the battery)",
           "gas_duty_m3_h": 30.0,
-          "gas_m3_h": 35.9,
+          "gas_m3_h": 27.6,
           "u_m_s": 1.5,
-          "D_req_mm": 92.0,
+          "D_req_mm": 80.6,
           "DN_mm": 100,
           "od_mm": 114.3,
           "wall_mm": 8.56,
@@ -4017,7 +4016,7 @@
           "demister_mm": 100,
           "height_mm": 3700,
           "material": "PVC-U shell, sump, liquor piping and packing; FKM gaskets; no metal wetted part (duty section 3, AQS-STD-002)",
-          "basis": "duty section 2 rules on the live purge: bed = NTU 6 x HTU 0.5 m (duty-held figures); diameter at 1.5 m/s on the 35.9028 m3/h purge (the duty 30 m3/h figure predates the X-PAR-02 TF re-solve, WORK_ORDER W12); sump, support, distributor and demister are the AQS-DUTY-061 house class, not derived from the gas mass",
+          "basis": "duty section 2 rules on the live purge: bed = NTU 6 x HTU 0.5 m (duty-held figures); diameter at 1.5 m/s on the 27.5702 m3/h purge (the duty 30 m3/h figure predates the X-PAR-02 TF re-solve, WORK_ORDER W12); sump, support, distributor and demister are the AQS-DUTY-061 house class, not derived from the gas mass",
           "computed_by": "flow_graph/param/ess_tf.py tf() (X-PAR-02 lane, X-MFG-43b)"
         }
       }
@@ -4122,8 +4121,8 @@
         "equipment_id": "VCD-COMP-01",
         "type": "scroll or diaphragm",
         "sec_kWh_m3": "14-20",
-        "feed_m3_d": 0.3588,
-        "avg_kw": 0.2542,
+        "feed_m3_d": 0.3755,
+        "avg_kw": 0.266,
         "status": "duty_issued",
         "size_mm": [
           1400,
@@ -4137,17 +4136,17 @@
           "machine": "MVC still stack",
           "modules": 2,
           "compressor": "scroll class (small-MVC)",
-          "hx_area_m2": 0.603,
-          "q_latent_kW": 8.436,
-          "feed_m3_d": 0.3588,
-          "distillate_m3_d": 0.3229,
+          "hx_area_m2": 0.631,
+          "q_latent_kW": 8.828,
+          "feed_m3_d": 0.3755,
+          "distillate_m3_d": 0.338,
           "sec_kWh_m3": 17,
-          "duty_kW": 0.2542,
+          "duty_kW": 0.266,
           "u_kW_m2K": 2.8,
           "dT_drive_K": 5.0,
           "tube_id_mm": 12.0,
           "tube_L_mm": 890.0,
-          "tubes": 18,
+          "tubes": 19,
           "sep_h_mm": 40.0,
           "sump_h_mm": 220.0,
           "shell_D_mm": 240.0,
@@ -4156,10 +4155,10 @@
         }
       },
       "continuous_kw": {
-        "value": 0.2542,
+        "value": 0.266,
         "unit": "kW",
         "status": "study",
-        "note": "0.359 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)"
+        "note": "0.375 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)"
       }
     },
     {
@@ -6410,7 +6409,7 @@
         "design": {
           "machine": "two-strand horizontal semi-continuous caster",
           "feed_kg_d": 31.7125,
-          "billet_kg_d": 13.244228000000065,
+          "billet_kg_d": 13.244179999999972,
           "ingot_kg_d": 21.7125,
           "strands": 2,
           "mould": "water-cooled copper (AQS-SIZE-FOUNDRY)"
@@ -6987,7 +6986,7 @@
         "sizing": {
           "status": "study",
           "source": "AQS-DUTY-073",
-          "feed_kg_d": 0.294127,
+          "feed_kg_d": 0.29418,
           "feed": "C5-C10 naphtha at the cut tank (IA-C5-POLY)",
           "T_C": "150-250",
           "P_MPa": "1-5",
@@ -7007,7 +7006,7 @@
           "T_C": 250.0,
           "P_MPa": 5.0,
           "op_window": "150-250 C at 1-5 MPa (AQS-SIZE-OIL-POLY)",
-          "feed_kg_d": 0.294127,
+          "feed_kg_d": 0.29418,
           "heat_W": 0.0013,
           "material": "SA-240 316L, welded (ASME IX)"
         },
@@ -7089,7 +7088,7 @@
         "sizing": {
           "status": "study",
           "source": "AQS-DUTY-073",
-          "pellet_kg_d": 0.294127,
+          "pellet_kg_d": 0.29418,
           "form": "2-4 mm pellets (AQS-DES-POLY)",
           "size_mm": [
             1500,
@@ -7099,7 +7098,7 @@
         },
         "design": {
           "machine": "underwater die-face pelletizer",
-          "rate_kg_d": 0.294127,
+          "rate_kg_d": 0.29418,
           "pellet_mm": "2-4"
         },
         "envelope": {
@@ -7244,16 +7243,16 @@
         "sizing": {
           "status": "study",
           "source": "AQS-DUTY-073",
-          "out_kg_d": 0.497388,
+          "out_kg_d": 0.497436,
           "fluoro_kg_d": 0.23,
-          "to_wet_kg_d": 0.026739,
+          "to_wet_kg_d": 0.026744,
           "to_fab_kg_d": 0.0,
           "status_note": "olefin issue (foundry_poly P) + fluoropolymer issue 0.230 kg/d (A-M-289)"
         },
         "design": {
           "bin": "pellet tote bin",
-          "issue_kg_d": 0.267388,
-          "to_wet_kg_d": 0.026739,
+          "issue_kg_d": 0.267436,
+          "to_wet_kg_d": 0.026744,
           "hold_d": 1.0
         },
         "envelope": {
@@ -7847,7 +7846,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "rated_kW": 200.0,
+        "rated_kW": 151.0,
         "design_C": 37.8,
         "design_basis": "0.4 % summer design temp (AQS-SITE-002 via AQS-THM-002)",
         "LMTD_K": 15.0,
@@ -7855,8 +7854,8 @@
           65,
           45
         ],
-        "fan_kW": 10.0,
-        "basis": "X-THM-01 F-4 (A-M-244 restated, A-M-455): rated 200 kW = 1.25 x the calculated bounding duty 159.7 kW (design-day terminal book 74.8 kW with the ZNBR2 cycling heat at its 145.7 kW charge-window rate; AQS-DUTY-008 section 3 margin); fan 10.0 kW at the 0.05 kW_fan/kW_th class. Was the 12 kW class sized to the 10.16 kW no-preheat upset.",
+        "fan_kW": 7.55,
+        "basis": "X-THM-01 F-4 (A-M-244 restated, A-M-455): rated 151 kW = 1.25 x the calculated bounding duty 120.5 kW (design-day terminal book 55.3 kW with the ZNBR2 cycling heat at its 111.8 kW charge-window rate; AQS-DUTY-008 section 3 margin); fan 7.55 kW at the 0.05 kW_fan/kW_th class. Was the 12 kW class sized to the 10.16 kW no-preheat upset.",
         "sec3_material": {
           "mat": "Copper-tube, aluminium-fin air coil with galvanized-steel casing; epoxy-coated headers; the rejection loop is the house HDPE-class closed water loop",
           "basis": "12 kW dry rejection at the 37.8 C design bulb (graph params; A-M-244): air-sided fin-coil construction is the air-cooled exchanger class (PERRY9_HEAT); the loop side follows the issued water-loop families (AQS-STD-002 section 12.1). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
@@ -7866,11 +7865,11 @@
         },
         "design": {
           "duty": "dry rejection of the ADS_CHILL 7.25 kW + the Q4 dry share + the ZNBR2 cycling heat",
-          "airflow_m3_s": 13.46,
-          "fan_kw": 10.0
+          "airflow_m3_s": 10.16,
+          "fan_kw": 7.55
         },
         "sizing": {
-          "airflow_m3_s": 13.46
+          "airflow_m3_s": 10.16
         },
         "envelope": {
           "size_mm": [
@@ -7888,10 +7887,10 @@
         "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
       },
       "continuous_kw": {
-        "value": 10.0,
+        "value": 7.55,
         "unit": "kW",
         "status": "study",
-        "note": "the fan at the 0.05 kW_fan/kW_th class on the rated duty 200 kW (A-M-244 restated); fan-assisted at the window bounding case (X-SPEC sizing, calculated)"
+        "note": "the fan at the 0.05 kW_fan/kW_th class on the rated duty 151 kW (A-M-244 restated); fan-assisted at the window bounding case (X-SPEC sizing, calculated)"
       },
       "class": "dry_cooler"
     },
@@ -7938,27 +7937,27 @@
       "modules": [],
       "params": {
         "hvac": {
-          "light_kW": 28.037,
-          "vent_kW": 47.315,
-          "envelope_kW": 34.99,
-          "total_kW": 110.341,
-          "vent_L_s": 9558.0,
-          "Qh_kW": 32.693,
-          "Qc_kW": 194.649,
-          "slab_kW": 1.791,
-          "gains_kW": 39.984,
+          "light_kW": 21.479,
+          "vent_kW": 36.248,
+          "envelope_kW": 27.502,
+          "total_kW": 85.229,
+          "vent_L_s": 7322.4,
+          "Qh_kW": 25.607,
+          "Qc_kW": 150.815,
+          "slab_kW": 1.531,
+          "gains_kW": 30.632,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 494.024,
-          "peak_c_kW": 439.152
+          "peak_h_kW": 385.346,
+          "peak_c_kW": 340.602
         },
-        "footprint_m2": 31860.0,
+        "footprint_m2": 24408.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 110.341 kW. Sheet docs-authority/duties/EXT_HALL.md.",
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 85.229 kW. Sheet docs-authority/duties/EXT_HALL.md.",
         "size_mm": [
           186000,
           174000,
@@ -7967,10 +7966,10 @@
         "size_note": "building massing envelope (bounding box of the issued L-shape): EXT_HALL_E 162 x 174 m east extension + EXT_HALL_N 24 x 156 m north extension, 6 m eave, portal frames on the 6 m grid (31 x 29 bays, X-PAR-07, A-M-104; placement_seed blocks EXT_HALL_E/N are the authority). Conditioned footprint per params.footprint_m2; the fitout programme stays the duty-sheet open item."
       },
       "continuous_kw": {
-        "value": 110.341,
+        "value": 85.229,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 31860 m2; lighting 28.04 kW (IECC 2021 C405, 10 % lit), ventilation 47.31 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 34.99 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 32.7 kW and cooling 194.6 kW thermal average after internal gains 40.0 kW and slab edge 1.79 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 24408 m2; lighting 21.48 kW (IECC 2021 C405, 10 % lit), ventilation 36.25 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 27.50 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 25.6 kW and cooling 150.8 kW thermal average after internal gains 30.6 kW and slab edge 1.53 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       },
       "class": "building"
     },
@@ -9107,7 +9106,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Goods balance (A-M-265 rev): the accounting placeholder stays 0.0 - the real surplus exports ride their own dock edges: foundry pot metal IA-METAL-SHIP 10.8125 kg/d + pot chlorine IA-CL2-SHIP/IA-CA-CL2-SHIP 39.517 kg/d (A-M-285) on top of the shipped products (O2, MeOH, oil cuts); mfg goods surplus net 0 (IA-MFG-OUT 596.863 = IA-WEAR worn return). THIS IS THE PLANT SURPLUS STATEMENT at Rev AC scope with the foundry feedstock program live: the plant is a net exporter of metal and chlorine through the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Goods balance (A-M-265 rev, restated A-M-460): the accounting placeholder stays 0.0 - the real surplus exports ride their own dock edges: foundry pot metal IA-METAL-SHIP 10.8125 kg/d + pot chlorine IA-CL2-SHIP/IA-CA-CL2-SHIP 39.517 kg/d (A-M-285) and the shop finished-goods surplus IA-GOODS-SHIP on top of the shipped products (O2, MeOH, oil cuts). THIS IS THE PLANT SURPLUS STATEMENT: the plant is a net exporter of metal, chlorine and finished goods through the dock (Q-038 rebasis 2026-11-04: the wear-goods plug pair IA-MFG-OUT/IA-WEAR is retired; wear rides the A-M-429 roster line). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "DOCK",
@@ -9947,7 +9946,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "rate": {
-        "value": 4139.222213,
+        "value": 4287.789181,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: EW_1 in 4284.0 - Au deposit 0.006 - anode Cl2 0.003 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
@@ -9969,7 +9968,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "rate": {
-        "value": 3990.594815,
+        "value": 4287.753124,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: EW_2 in 4222.2 - Ag deposit 0.025 - anode Cl2 0.008 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
@@ -9991,7 +9990,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "rate": {
-        "value": 3934.805911,
+        "value": 4274.737872,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: EW_3 in 4160.4 - Cu deposit 8.784 - anode Cl2 9.802 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
@@ -10035,7 +10034,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "rate": {
-        "value": 3909.914016,
+        "value": 4273.454145,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: EW_5 in 4133.1 - Sn deposit 0.711 - anode Cl2 0.425 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
@@ -10057,7 +10056,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "rate": {
-        "value": 3896.338257,
+        "value": 4272.313407,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: EW_6 in 4128.1 - Ni deposit 0.711 - anode Cl2 0.859 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
@@ -10079,7 +10078,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "rate": {
-        "value": 3719.79104,
+        "value": 4192.729704,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: EW_7 in 4122.6 - Fe deposit 29.629 - anode Cl2 37.620 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
@@ -10101,7 +10100,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "rate": {
-        "value": 3707.257179,
+        "value": 4192.134089,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: EW_8 in 4051.5 - Cd deposit 0.711 - anode Cl2 0.449 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
@@ -10123,7 +10122,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "rate": {
-        "value": 3520.311349,
+        "value": 4179.125916,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: EW_9 in 4046.4 - Zn deposit 0.711 - anode Cl2 0.771 - side H2 1.60 - side Cl2 56.27 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
@@ -10145,7 +10144,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "rate": {
-        "value": 3922.373456,
+        "value": 4274.018162,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-010: EW_4 in 4137.9 - Pb deposit 0.711 - anode Cl2 0.243 - side H2 0.00 - side Cl2 0.00 - evaporation 3.89 | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: overflow by difference after Faraday gases (AQS-PAR-005)."
@@ -10231,10 +10230,10 @@
       "forbidden": "HDR_O2, HDR_ACID_GAS, HDR_OIL_VAPOR, hab air",
       "claim_status": "Partial",
       "rate": {
-        "value": 0.382615,
+        "value": 1.9e-05,
         "unit": "kg/d",
         "status": "study",
-        "note": "EW_1 cathode H2 share ~4.8/3 kg/d Faraday pool \u2014 WP-L2 \u2014 catch-point allocation retained (EW_1/EW_2/EW_9); EW_3\u2026EW_8 hood rates HOLD (no invent 4.8/9). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 2826 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
+        "note": "EW_1 cathode H2 share ~4.8/3 kg/d Faraday pool \u2014 WP-L2 \u2014 catch-point allocation retained (EW_1/EW_2/EW_9); EW_3\u2026EW_8 hood rates HOLD (no invent 4.8/9). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 0 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
@@ -10261,7 +10260,7 @@
       "forbidden": "HDR_O2, hab air, continuous roof dump",
       "claim_status": "Partial",
       "rate": {
-        "value": 2.750425,
+        "value": 0.882545,
         "unit": "kg/d",
         "status": "study",
         "note": "HDR_H2\u2192H2_DRYER = sum EW hood Faraday pool 1.6\u00d73 = 4.8 kg/d \u2014 true-closure \u2014 plant Faraday pool unchanged 4.8 kg/d (AQS-GAS-003). | X-PAR-12 TF: header passes the EW cathode H2 (R10b Faraday re-base, A-M-255) (AQS-PAR-005)."
@@ -10292,10 +10291,10 @@
       "forbidden": "HDR_O2, HDR_ACID_GAS, HDR_OIL_VAPOR, hab air",
       "claim_status": "Partial",
       "rate": {
-        "value": 0.382743,
+        "value": 4.7e-05,
         "unit": "kg/d",
         "status": "study",
-        "note": "EW_2 cathode H2 share ~4.8/3 kg/d Faraday pool \u2014 WP-L2 multi-EW hood \u2014 catch-point allocation retained (EW_1/EW_2/EW_9); EW_3\u2026EW_8 hood rates HOLD (no invent 4.8/9). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 2827 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
+        "note": "EW_2 cathode H2 share ~4.8/3 kg/d Faraday pool \u2014 WP-L2 multi-EW hood \u2014 catch-point allocation retained (EW_1/EW_2/EW_9); EW_3\u2026EW_8 hood rates HOLD (no invent 4.8/9). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 0 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
@@ -10322,10 +10321,10 @@
       "forbidden": "HDR_O2, HDR_ACID_GAS, HDR_OIL_VAPOR, hab air",
       "claim_status": "Partial",
       "rate": {
-        "value": 0.481422,
+        "value": 0.004417,
         "unit": "kg/d",
         "status": "study",
-        "note": "EW_9 cathode H2 share ~4.8/3 kg/d Faraday pool \u2014 WP-L2 multi-EW hood \u2014 catch-point allocation retained (EW_1/EW_2/EW_9); EW_3\u2026EW_8 hood rates HOLD (no invent 4.8/9). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 3556 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
+        "note": "EW_9 cathode H2 share ~4.8/3 kg/d Faraday pool \u2014 WP-L2 multi-EW hood \u2014 catch-point allocation retained (EW_1/EW_2/EW_9); EW_3\u2026EW_8 hood rates HOLD (no invent 4.8/9). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 33 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
@@ -10487,7 +10486,7 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 3302.941356,
+        "value": 3961.755923,
         "unit": "kg/d",
         "status": "study",
         "note": "Rev BH (91d33f4) edge IA-POL-02 study rate restored on the BH endpoint POLISH_BANK->CONTINUOUS_RECYCLE, replacing the degenerate self-loop stub; per first-principles audit correction 3, owner rulings 2026-10-18 | X-PAR-12 TF: polish return by difference (AQS-PAR-005)."
@@ -10517,7 +10516,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 3302.941356,
+        "value": 3961.755923,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Recycle out equals polish return. DN80, 0.4 m/s. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: recycle out = polish return (AQS-PAR-005)."
@@ -10854,7 +10853,7 @@
       "forbidden": "HDR_ACID_GAS",
       "claim_status": "Closed",
       "rate": {
-        "value": 326.991631,
+        "value": 326.904971,
         "unit": "kg/d",
         "status": "study",
         "note": "grey/solids (the farm-protein metabolic load is inside this total: AQS-FARM-001) | X-PAR-02 TF: crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH retired; 91d33f4) (AQS-PAR-003)."
@@ -10963,7 +10962,7 @@
         "value": 12.299499,
         "unit": "kg/d",
         "status": "study",
-        "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 \u00a710.6) | X-PAR-02 TF: shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base) (AQS-PAR-003)."
+        "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 s10.6): 29.3 % of the S08 solids. X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460): the shop closes on the goods export IA-GOODS-SHIP; this line holds its band basis."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "DIGESTER",
@@ -11193,7 +11192,7 @@
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Closed",
       "rate": {
-        "value": 334.216366,
+        "value": 350.907763,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d. | X-PAR-02 TF: roof-tank shortfall +0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -11965,10 +11964,10 @@
       "forbidden": "polymer, FR-4, pyro",
       "claim_status": "Closed",
       "rate": {
-        "value": 6.8389,
+        "value": 4.3921,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: Cu deposit 8.784 x 0.5 to wire, less melt fume 0.3% | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). wire billet: half the Cu deposit; derived from the S08 deposit rows through solver.ew_products()."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -11996,10 +11995,10 @@
       "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
-        "value": 3.9389,
+        "value": 3.941,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: S57 less 10% draw swarf | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). wire product: billet less melt fume at 10 % draw swarf; derived from the S08 deposit rows through solver.ew_products()."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -12024,10 +12023,10 @@
       "forbidden": "\u2014",
       "claim_status": "Closed",
       "rate": {
-        "value": 3.950359,
+        "value": 4.3921,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: Cu 4.392 to cold mill less 10% trim | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). mill sheet (the mill closes at its feed); derived from the S08 deposit rows through solver.ew_products()."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -12052,10 +12051,10 @@
       "forbidden": "open ignition, HAB air",
       "claim_status": "Closed / Claimed",
       "rate": {
-        "value": 3.200359,
+        "value": 3.1999,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: blend deposit 3.555 (Pb/Sn/Ni/Cd/Zn) less 10% off-spec | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). powder: blend deposits at 10 % off-spec; derived from the S08 deposit rows through solver.ew_products()."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -12167,7 +12166,7 @@
       "forbidden": "hab air, HDR_O2, continuous roof dump",
       "claim_status": "Partial",
       "rate": {
-        "value": 2.750425,
+        "value": 0.882545,
         "unit": "kg/d",
         "status": "authority",
         "note": "Same Faraday pool as S05; normal H2 path (AQS-VENT-001); S24 contingency only | X-PAR-12 TF: dryer pass-through to the store (S24 relief stays shut, AQS-VENT-001) (AQS-PAR-005)."
@@ -12315,10 +12314,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1020.122235,
+        "value": 783.363528,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 35.9 m3/h holds H2 at 25 % LFL: HER 7.34 + open-circuit 1.28 m3/d H2 on 4855 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 27.6 m3/h holds H2 at 25 % LFL: HER 5.63 + open-circuit 0.98 m3/d H2 on 3728 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -12338,7 +12337,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 1020.122235,
+        "value": 783.363528,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge air (the loop books the air mass; the HER H2 generated in the stack is booked at the unit on IA-ZNBR-H2, recombination with Br2 not credited, A-M-135) (AQS-PAR-003)."
@@ -12731,7 +12730,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 29.833989,
+        "value": 44.657506,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003)."
@@ -12754,7 +12753,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 191.989014,
+        "value": 194.435814,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: cold-box N2 product to the air receiver, less direct draws (S03 fab N2 purge BH 1.4998 AQS-DUTY-010, R10b) and the dock export (AQS-PAR-005)."
@@ -14235,10 +14234,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.384603,
+        "value": 0.384656,
         "unit": "kg/d",
         "status": "study",
-        "note": "Polyolefin resin = naphtha feed 0.3846 kg/d (mass-conserving oligomerization, AQS-SIZE-OIL-POLY POLY_OLEFIN 150-250 C / 1-5 MPa). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Polyolefin resin = naphtha feed 0.3847 kg/d (mass-conserving oligomerization, AQS-SIZE-OIL-POLY POLY_OLEFIN 150-250 C / 1-5 MPa). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -14301,7 +14300,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.384603,
+        "value": 0.384656,
         "unit": "kg/d",
         "status": "study",
         "note": "Pellet line passes the resin to stock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
@@ -14367,10 +14366,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.267388,
+        "value": 0.267436,
         "unit": "kg/d",
         "status": "study",
-        "note": "Shop polymer draw by difference on the shop closure (A-M-257 pattern): -r0 -0.005772 + melt loss term f*K/(1-f); molded articles ride BLOW_MOLD (IA-BLOW-OUT 8.407). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Shop polymer draw by difference on the shop closure (A-M-257 pattern): -r0 -0.005820 + melt loss term f*K/(1-f); molded articles ride BLOW_MOLD (IA-BLOW-OUT 8.407). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "MFG"
@@ -14411,7 +14410,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.026739,
+        "value": 0.026744,
         "unit": "kg/d",
         "status": "study",
         "note": "Shop polymer offcut to the wet line, 10% of the issue (the S58/S59/S60 10 % shop-loss class, AQS-DUTY-010; A-M-263). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
@@ -15335,7 +15334,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 257.987589,
+        "value": 258.080802,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated. | X-PAR-02 TF: grey sludge to the leach by difference (Rev M: sized to the continuous neighbor draw; was 242.65 at BH) (AQS-PAR-003)."
@@ -15407,10 +15406,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 67.5117,
+        "value": 48.0326,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.8/\u00a710.11 (A-M-244): rated-case terminal flow with the Rev M preheats restored \u2014 13.1637 in - 3.0 life - 0.532 HX-9 - 0.282 HX-10 (X-THM-01 line-loss closure basis unchanged). The DRY_COOLER unit is rated for the calculated bounding terminal duty (DRY_COOLER params.rated_kW; A-M-244 restated, A-M-455). AQS-DUTY-011 Rev M sized to the continuous neighbour draw; dry cooler, not an ORC. | X-THM-01 R10b: terminal by difference 67.512 kW; dry cooler rated for the upset case (A-M-244) (A-M-259)."
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.8/\u00a710.11 (A-M-244): rated-case terminal flow with the Rev M preheats restored \u2014 13.1637 in - 3.0 life - 0.532 HX-9 - 0.282 HX-10 (X-THM-01 line-loss closure basis unchanged). The DRY_COOLER unit is rated for the calculated bounding terminal duty (DRY_COOLER params.rated_kW; A-M-244 restated, A-M-455). AQS-DUTY-011 Rev M sized to the continuous neighbour draw; dry cooler, not an ORC. | X-THM-01 R10b: terminal by difference 48.033 kW; dry cooler rated for the upset case (A-M-244) (A-M-259)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -15434,7 +15433,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 387.3905,
+        "value": 366.5288,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -15460,10 +15459,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 7.711824,
+        "value": 7.891697,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Purge-air water and NaOH make-up. Stops the accumulation. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: electrolyte bleed less the water that leaves as HER H2 on IA-ZNBR-H2 (0.775 kg/d, static bleed 8.487; A-M-135) (AQS-PAR-003)."
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Purge-air water and NaOH make-up. Stops the accumulation. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: electrolyte bleed less the water that leaves as HER H2 on IA-ZNBR-H2 (0.595 kg/d, static bleed 8.487; A-M-135) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "WTR",
@@ -15555,7 +15554,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 200.870966,
+        "value": 217.562363,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. | X-PAR-02 TF: roof-tank shortfall +0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -15721,10 +15720,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 59.869999,
+        "value": 0.0063,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). Cell EW_1 plated product, element deposit mass at leach recovery 1.0."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
@@ -15758,10 +15757,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 59.889999,
+        "value": 0.0251,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). Cell EW_2 plated product, element deposit mass at leach recovery 1.0."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
@@ -15795,10 +15794,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 22.480359,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). Cell EW_3 plated product, element deposit mass at leach recovery 1.0; this cell's harvest rides IA-EW-SHEET (the forming routes take the Cu and blend deposits, AQS-DUTY-010)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
@@ -15832,10 +15831,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 4.85,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). Cell EW_4 plated product, element deposit mass at leach recovery 1.0; this cell's harvest rides IA-EW-SHEET (the forming routes take the Cu and blend deposits, AQS-DUTY-010)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
@@ -15869,10 +15868,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 5.020359,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). Cell EW_5 plated product, element deposit mass at leach recovery 1.0; this cell's harvest rides IA-EW-SHEET (the forming routes take the Cu and blend deposits, AQS-DUTY-010)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
@@ -15906,10 +15905,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 5.470359,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). Cell EW_6 plated product, element deposit mass at leach recovery 1.0; this cell's harvest rides IA-EW-SHEET (the forming routes take the Cu and blend deposits, AQS-DUTY-010)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
@@ -15943,10 +15942,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 71.139999,
+        "value": 29.629,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). Cell EW_7 plated product, element deposit mass at leach recovery 1.0."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
@@ -15980,10 +15979,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 5.050359,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). Cell EW_8 plated product, element deposit mass at leach recovery 1.0; this cell's harvest rides IA-EW-SHEET (the forming routes take the Cu and blend deposits, AQS-DUTY-010)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
@@ -16017,10 +16016,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 61.341099,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). Cell EW_9 plated product, element deposit mass at leach recovery 1.0; this cell's harvest rides IA-EW-SHEET (the forming routes take the Cu and blend deposits, AQS-DUTY-010)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
@@ -16209,10 +16208,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 596.862802,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Goods less the mass that left as CO. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). Retired plug: the crew goods issue is the roster textile line on TEXTILE_HAB (A-M-429); the shop finished-goods surplus exports on IA-GOODS-SHIP (self-sustaining plant rule)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "HAB",
@@ -16466,10 +16465,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 60.6903,
+        "value": 46.6047,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. | X-THM-01 F-4: cycling heat from the booked store - 3399 kWh/d out at round trip 0.7 (A-M-062/179) = 4855 kWh/d charge, loss 1457 kWh/d = 60.7 kW average thermal; window thermal rate 145.7 kW (bounding sizing case: all the daily loss in the 10 h charge window) against a 485.5 kW charge rate over the same window (electrolyte thermal-management sizing case; A-M-455). Was the stale 1.67 kW Rev-N 120 kWh-class seed."
+        "note": "AQS-DUTY-012 Rev N. | X-THM-01 F-4: cycling heat from the booked store - 2610 kWh/d out at round trip 0.7 (A-M-062/179) = 3728 kWh/d charge, loss 1119 kWh/d = 46.6 kW average thermal; window thermal rate 111.9 kW (bounding sizing case: all the daily loss in the 10 h charge window) against a 372.8 kW charge rate over the same window (electrolyte thermal-management sizing case; A-M-455). Was the stale 1.67 kW Rev-N 120 kWh-class seed."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "HEAT",
@@ -16574,10 +16573,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.44,
+        "value": 0.4379,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). draw swarf to the baghouse (10 % of the billet net of fume); derived from the S08 deposit rows through solver.ew_products()."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "GAS",
@@ -17199,7 +17198,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 190.870927,
+        "value": 207.562324,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw. | X-PAR-02 TF: roof-tank shortfall +0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -17283,10 +17282,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 7.77,
+        "value": 7.7679,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). baghouse collected fines to the leach: mill loss + fab loss + draw swarf; derived from the S08 deposit rows through solver.ew_products()."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "DIGESTER",
@@ -17869,10 +17868,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 20.064432,
+        "value": 17.617632,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: retired, no vent | X-PAR-12 TF: cold-box N2 surplus exported at the dock boundary (D-DOCK 2026-10-19; BH vent path re-opened with D-AIR): available 212.053 less header need 191.989 kg/d (AQS-PAR-005)."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: retired, no vent | X-PAR-12 TF: cold-box N2 surplus exported at the dock boundary (D-DOCK 2026-10-19; BH vent path re-opened with D-AIR): available 212.053 less header need 194.436 kg/d (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "DOCK",
@@ -17898,10 +17897,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 531.228831,
+        "value": -0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Returned scrap follows the worn goods. The leach receives it back on IA-NUT-LEACH. | X-PAR-02 TF: returned scrap closes the scrap yard by difference: worn goods + swarf + leach return less the dock feed (its stated basis: follows the worn goods) (AQS-PAR-003)."
+        "note": "Returned scrap follows the worn goods. The leach receives it back on IA-NUT-LEACH. | X-PAR-02 TF: the returned-scrap line closes at zero: the worn-goods plug is retired (Q-038 owner ruling 2026-11-04, A-M-460) and the loop receipts - the roster wear line, shop swarf, frass and the leach return - plus the dock make-up feed IA-FEED-MU close the scrap yard on the design feed (AQS-PAR-003)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "DIGESTER",
@@ -17930,10 +17929,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 596.863842,
+        "value": 0.0877,
         "unit": "kg/d",
         "status": "study",
-        "note": "Worn goods follow the goods. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). Worn-goods return at the roster line: the crew finished-textile issue (TEXTILE_HAB, 0.0877 kg/d, A-M-429) worn out at steady state. The 596.86 kg/d closing-by-difference plug (A-M-265, 149 kg/person/d) is retired."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "OIL",
@@ -18028,10 +18027,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 13.9889,
+        "value": 11.9841,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-019. No vent. Goods and gases return."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). The forming feed booked at the EW_9 collection point: Cu deposit half to wire and half to mill, the Pb/Sn/Ni/Cd/Zn blend deposits to powder (AQS-DUTY-010 bases on S57/S59/S60), less the atomizer off-spec return 0.3556 kg/d. Element mass at recovery 1.0; the wear-goods copper-equivalent convention is retired (Q-038 owner ruling 2026-11-04)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
@@ -18105,10 +18104,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 3.949641,
+        "value": 4.3921,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. | X-PAR-02 TF: mill draw closes the melt (-0.0000) (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). mill feed: the other half of the Cu deposit; derived from the S08 deposit rows through solver.ew_products(). | X-PAR-02 TF: mill draw closes the melt (-0.0000) (AQS-PAR-003)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -18134,10 +18133,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 3.555954,
+        "value": 3.555444,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. | X-PAR-02 TF: powder 3.200 / (1 - 10% off-spec) (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). atomizer feed: the blend deposits; derived from the S08 deposit rows through solver.ew_products(). | X-PAR-02 TF: powder 3.200 / (1 - 10% off-spec) (AQS-PAR-003)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -18163,10 +18162,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.46,
+        "value": 0.0132,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). melt fume at the AQS-DUTY-010 0.3 % of billet; derived from the S08 deposit rows through solver.ew_products()."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -18439,10 +18438,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.030994,
+        "value": 0.001394,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 229 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
+        "note": "AQS-DUTY-022. | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 10 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
@@ -18488,7 +18487,7 @@
         "value": 0.396575,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: header balance: sweep N2 re-solved +0.000 kg/d at HDR_N2 (restored ASU topology) (AQS-PAR-005)."
+        "note": "AQS-DUTY-022. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: header balance: sweep N2 re-solved -0.000 kg/d at HDR_N2 (restored ASU topology) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "HAB",
@@ -19119,10 +19118,10 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 71604.0,
+        "value": 71601.5532,
         "unit": "kg/d",
         "status": "study",
-        "note": "S62 + S71. Closed aisle. No stack. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). Closed aisle return: S62 + S71 + draw fume - scrub blowdown."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -19455,7 +19454,7 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 193.696366,
+        "value": 210.387763,
         "unit": "kg/d",
         "status": "study",
         "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. | X-PAR-02 TF: roof-tank shortfall +0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -19633,7 +19632,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.0226,
+        "value": 0.0262,
         "unit": "kW",
         "status": "study",
         "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
@@ -20138,7 +20137,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 52.661819,
+        "value": 331.34599,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
@@ -20167,7 +20166,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 88.32517,
+        "value": 0.004497,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS-PAR-005)."
@@ -20197,7 +20196,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 88.354656,
+        "value": 0.01091,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS-PAR-005)."
@@ -20227,7 +20226,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 33.164878,
+        "value": 12.959115,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS-PAR-005)."
@@ -20257,7 +20256,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 7.154886,
+        "value": 0.321741,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS-PAR-005)."
@@ -20287,7 +20286,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 7.406995,
+        "value": 0.561584,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS-PAR-005)."
@@ -20317,7 +20316,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 8.07044,
+        "value": 1.135818,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS-PAR-005)."
@@ -20347,7 +20346,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 104.952575,
+        "value": 49.739238,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS-PAR-005)."
@@ -20377,7 +20376,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 7.451224,
+        "value": 0.593046,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS-PAR-005)."
@@ -20407,7 +20406,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 111.134409,
+        "value": 1.019656,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) (AQS-PAR-005)."
@@ -20437,10 +20436,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 7.04017,
+        "value": 7.040117,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0000 and the olefin feed 0.2941 (this pass, AQS-DUTY-073); shipped at the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). | X-PAR-12 TF: C5-C10 product not burned: shipped at the dock less the olefin draw 0.3846 kg/d (AQS-DUTY-073) (AQS-PAR-005)."
+        "note": "X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0000 and the olefin feed 0.2942 (this pass, AQS-DUTY-073); shipped at the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). | X-PAR-12 TF: C5-C10 product not burned: shipped at the dock less the olefin draw 0.3847 kg/d (AQS-DUTY-073) (AQS-PAR-005)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
@@ -20524,10 +20523,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.355595,
+        "value": 0.355544,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: 10% off-spec remelted (AQS-PAR-003)."
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). powder off-spec returned to the melt (10 %); derived from the S08 deposit rows through solver.ew_products(). | X-PAR-02 TF: 10% off-spec remelted (AQS-PAR-003)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -21287,7 +21286,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.660 kg/d (SANDER2015) (AQS-PAR-003)."
+        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.494 kg/d (SANDER2015) (AQS-PAR-003)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "CRYO",
@@ -21350,7 +21349,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 77.87486,
+        "value": 94.566257,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: water split (AQS-PAR-005)."
@@ -21379,10 +21378,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 8.714722,
+        "value": 10.582602,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: H2 demand net of the live EW Faraday cathode credit: genset 0.02 + fuel cell 4.80 + methanol 6.65 - S64 2.750 kg/d (A-M-255 credit; H2 side governs, O2 headroom documented in A-M-272) (AQS-PAR-005)."
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: H2 demand net of the live EW Faraday cathode credit: genset 0.02 + fuel cell 4.80 + methanol 6.65 - S64 0.883 kg/d (A-M-255 credit; H2 side governs, O2 headroom documented in A-M-272) (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
@@ -21408,7 +21407,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 69.160138,
+        "value": 83.983655,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: O2 = 7.937 x H2 (AQS-PAR-005)."
@@ -21437,7 +21436,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 19.9712,
+        "value": 24.2518,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
@@ -21464,7 +21463,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.095852,
+        "value": 14.919369,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
@@ -21494,7 +21493,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.095852,
+        "value": 14.919369,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
@@ -21802,10 +21801,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 7.7326,
+        "value": 1.125,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR F-24 (A-M-246 restated): the rectifier reject is the calculated conversion loss at the bounding duty - AC input 38.663 kW less DC out 30.930 kW at eff 0.80 = 7.733 kW to the Q4 recovery loop. Was the 1.0 kW bound of the removed 12 kW basis (12 kW at 92-96 percent efficiency, POWER_DUTIES.md)."
+        "note": "X-PAR F-24 (A-M-246 restated): the rectifier reject is the calculated conversion loss at the bounding duty - AC input 5.625 kW less DC out 4.500 kW at eff 0.80 = 1.125 kW to the Q4 recovery loop. Was the 1.0 kW bound of the removed 12 kW basis (12 kW at 92-96 percent efficiency, POWER_DUTIES.md)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "HEAT"
@@ -21870,10 +21869,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 5.6646,
+        "value": 6.8787,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 (heat lane) + A-M-230: X-PAR-12 stack heat 7.30 kW routed to the Q4 water header \u2014 replaces the retired BH SQ-H2O_ELYZ -> HEAT_SINK booking; 45-60 C class, Q4 feed per the S53/S54 pattern. | X-PAR-12 TF: stack heat 5.66 kW routed to Q4_BUS (Rev AC heat-study wiring; BH HEAT_SINK retired), closes the ELY energy balance (A-M-230, restamped R10b)."
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 (heat lane) + A-M-230: X-PAR-12 stack heat 7.30 kW routed to the Q4 water header \u2014 replaces the retired BH SQ-H2O_ELYZ -> HEAT_SINK booking; 45-60 C class, Q4 feed per the S53/S54 pattern. | X-PAR-12 TF: stack heat 6.88 kW routed to Q4_BUS (Rev AC heat-study wiring; BH HEAT_SINK retired), closes the ELY energy balance (A-M-230, restamped R10b)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HEAT"
@@ -22106,10 +22105,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 5.9909,
+        "value": 0.000305,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, design current at the element deposit (Q-038 basis); 6 dp so the sub-watt cells carry no rounding misfit."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -22133,10 +22132,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 5.9929,
+        "value": 0.00074,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, design current at the element deposit (Q-038 basis); 6 dp so the sub-watt cells carry no rounding misfit."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -22160,10 +22159,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.2495,
+        "value": 0.878988,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, design current at the element deposit (Q-038 basis); 6 dp so the sub-watt cells carry no rounding misfit."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -22187,10 +22186,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.4853,
+        "value": 0.021823,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, design current at the element deposit (Q-038 basis); 6 dp so the sub-watt cells carry no rounding misfit."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -22214,10 +22213,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.5024,
+        "value": 0.038091,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, design current at the element deposit (Q-038 basis); 6 dp so the sub-watt cells carry no rounding misfit."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -22241,10 +22240,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.5474,
+        "value": 0.07704,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, design current at the element deposit (Q-038 basis); 6 dp so the sub-watt cells carry no rounding misfit."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -22268,10 +22267,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 7.1187,
+        "value": 3.373702,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, design current at the element deposit (Q-038 basis); 6 dp so the sub-watt cells carry no rounding misfit."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -22295,10 +22294,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.5054,
+        "value": 0.040225,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, design current at the element deposit (Q-038 basis); 6 dp so the sub-watt cells carry no rounding misfit."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -22322,10 +22321,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 7.538,
+        "value": 0.069161,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, bounding current."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Channel DC at 2.12 V cell + 0.3 V bus drop, design current at the element deposit (Q-038 basis); 6 dp so the sub-watt cells carry no rounding misfit."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
@@ -22349,10 +22348,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.143667,
+        "value": 0.056137,
         "unit": "kg/d",
         "status": "study",
-        "note": "R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 1061 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
+        "note": "R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 415 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
@@ -22379,10 +22378,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.032086,
+        "value": 0.002433,
         "unit": "kg/d",
         "status": "study",
-        "note": "R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 237 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
+        "note": "R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 18 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
@@ -22409,10 +22408,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.03496,
+        "value": 0.00492,
         "unit": "kg/d",
         "status": "study",
-        "note": "R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 258 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
+        "note": "R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 36 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
@@ -22439,10 +22438,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.454643,
+        "value": 0.215465,
         "unit": "kg/d",
         "status": "study",
-        "note": "R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 3358 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
+        "note": "R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 1591 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
@@ -22469,10 +22468,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.032278,
+        "value": 0.002569,
         "unit": "kg/d",
         "status": "study",
-        "note": "R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 238 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
+        "note": "R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 19 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
@@ -22499,7 +22498,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 110.341,
+        "value": 85.229,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
@@ -22525,7 +22524,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.384603,
+        "value": 0.384656,
         "unit": "kg/d",
         "status": "study",
         "note": "Polyolefin naphtha feed (AQS-DUTY-073, A-M-264). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
@@ -22848,7 +22847,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 191.989014,
+        "value": 194.435814,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF: air receiver passes the cold-box delivery to the header at steady state (D-DOCK buffer, A-M-270). | X-PAR-12 TF: air receiver passes the cold-box delivery to the header at steady state (D-DOCK product buffer; A-M-270) (AQS-PAR-005)."
@@ -24580,7 +24579,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.2369,
+        "value": 0.2067,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02 load-basis (A-M-275). Feed equal to MET_MELT continuous_kw."
@@ -24632,7 +24631,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.0191,
+        "value": 0.0197,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02 load-basis (A-M-275). Feed equal to COLD_MILL continuous_kw."
@@ -24658,7 +24657,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.0189,
+        "value": 0.0146,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02 load-basis (A-M-275). Feed equal to WIRE_DRAW continuous_kw."
@@ -26802,10 +26801,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 74.7617,
+        "value": 55.2826,
         "unit": "kW",
         "status": "study",
-        "note": "X-THM-01 R10b terminal closure (F-3, A-M-454): equals every thermal kW edge into DRY_COOLER (74.762 kW on this pass); the node ledger closes: in = out to ambient air."
+        "note": "X-THM-01 R10b terminal closure (F-3, A-M-454): equals every thermal kW edge into DRY_COOLER (55.283 kW on this pass); the node ledger closes: in = out to ambient air."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "WTR",
@@ -26829,10 +26828,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.775017,
+        "value": 0.595144,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF F-26: HER rate from A-M-135; recombination with Br2 not credited (A-M-135) | X-PAR-02 TF: HER 7.34 + open-circuit 1.28 m3/d at 2.016/22.414 kg/m3 = 0.775 kg/d H2 to the pool (A-M-135) (AQS-PAR-003)."
+        "note": "X-PAR-02 TF F-26: HER rate from A-M-135; recombination with Br2 not credited (A-M-135) | X-PAR-02 TF: HER 5.63 + open-circuit 0.98 m3/d at 2.016/22.414 kg/m3 = 0.595 kg/d H2 to the pool (A-M-135) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "GAS",
@@ -26843,6 +26842,84 @@
       "composition": {
         "H2": 1.0
       }
+    },
+    {
+      "stream_id": "IA-MET-AIR-MU",
+      "from_unit_id": "HDR_N2",
+      "to_unit_id": "MET_AHU",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "aisle make-up air (plant air) replacing the scrub blowdown loss",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 2.4468,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). MET_AHU make-up = MET_SCRUB blowdown 2.4600 less the wire-draw fume 0.0132."
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-FEED-MU",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "HOPPER",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "feedstock make-up (dock import)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 65.547311,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). Dock make-up feedstock: the design feed 102.68 kg/d (AQS-ASSAY-001 section 3) less the loop receipts - wear 0.0877 + shop swarf S61 1.1971 + frass 0.4929 + leach return 35.3550 (D-DOCK import class; A-M-460)."
+      },
+      "from_sector_id": "DOCK",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "IA-GOODS-SHIP",
+      "from_unit_id": "MFG_SHOP",
+      "to_unit_id": "NORTH_DOCK",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "finished-goods surplus export",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 331.8541,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460). Shop surplus: throughput 371.60 less the crew issue, the scrap returns and the foundry stock loop; balance.physics re-closes it by difference (AQS-PAR-003 R10c). | X-PAR-02 TF: finished-goods surplus exports at the dock (Q-038 rebasis 2026-11-04, A-M-460): shop throughput less the crew issue (the roster textile line), the scrap returns and the foundry stock loop - the plant surplus statement moves from the wear plug to the dock goods export (AQS-PAR-003)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "DOCK",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

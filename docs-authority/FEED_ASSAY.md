@@ -1,9 +1,9 @@
 # Feed assay
 
 Document number: AQS-ASSAY-001
-Revision: F
-Date: 2026-10-25
-Authority: graph Rev BH. Not a PE stamp. Not a weighed sample.
+Revision: G
+Date: 2026-11-04
+Authority: graph Rev AD. Not a PE stamp. Not a weighed sample.
 
 | Rev | Description | Date |
 | --- | --- | --- |
@@ -12,6 +12,7 @@ Authority: graph Rev BH. Not a PE stamp. Not a weighed sample.
 | D | Held rates recalculated at the bounding cases (X-BAS-02). No rate change. | 2026-10-15 |
 | E | Acid system resized to the case A bound (X-RSZ-01); the acid line is no longer held (section 8). | 2026-10-15 |
 | F | Rewritten to the documentation style guide (AQS-DOC-002); record of revisions put in order and revision E, previously recorded only in section 8, added to it. No value changed. | 2026-10-25 |
+| G | Owner ruling Q-038: the electrowinning cascade books the section 5 deposit rows at recovery 1.0 as its rate basis (A-M-460), so section 4's held-design check re-states per element against the plated mass; the copper-equivalent sheet-edge reading retires and the case B rows become the EW resize trigger. No deposit rate changed. | 2026-11-04 |
 
 ## Purpose and scope
 
@@ -83,19 +84,21 @@ Table 4.1 lists the elements that the held design covers in every case. For each
 
 ### Bounded by the held design
 
+At the Q-038 element-rate basis (2026-11-04) the sheet edges carry the reference-feed deposit rows of section 5 at recovery 1.0, so the held-design check is the plated mass against the case mass. Table 4.1 lists the result per element.
+
 Table 4.1. Elements bounded by the held design
 
-| Element | Largest fraction, case | kg/d | Cell | Sheet edge, kg/d | Result |
+| Element | Largest fraction, case | kg/d | Cell | Deposit / sheet edge, kg/d | Result |
 | --- | --- | --- | --- | --- | --- |
-| Fe | 0.25, reference | 25.67 | EW_7 | IA-EW-MET-7, 71.14 | bounded |
-| Fe, oxide-bound, if fully leached | about 0.17, A (FeO 0.22) | 17.5 | EW_7 | 71.14 | bounded |
-| Cu | 0.16, B | 16.43 | EW_3 | IA-EW-MET-3, 22.48 | bounded |
-| Au | 0.00015, B | 0.0154 | EW_1 | IA-EW-MET-1, 59.87 | bounded |
-| Ag | 0.0008, B | 0.0821 | EW_2 | IA-EW-MET-2, 59.89 | bounded |
-| Ni, Zn, Sn, Pb, Cd, all in one element | 0.04, B | 4.107 | smallest of EW_4, 5, 6, 8, 9 | IA-EW-MET-4, 4.85 | bounded |
+| Fe | 0.25, reference | 25.67 | EW_7 | 29.63 | bounded |
+| Fe, oxide-bound, if fully leached | about 0.17, A (FeO 0.22) | 17.5 | EW_7 | 29.63 | bounded |
+| Cu | 0.16, B | 16.43 | EW_3 | 8.78 | held: EW_3 resize needed before a class B lot is accepted |
+| Au | 0.00015, B | 0.0154 | EW_1 | 0.0063 | held: same trigger as Cu |
+| Ag | 0.0008, B | 0.0821 | EW_2 | 0.0251 | held: same trigger as Cu |
+| Ni, Zn, Sn, Pb, Cd, all in one element | 0.04, B | 4.107 | EW_4, 5, 6, 8, 9 (forming share books on IA-EW-SHEET) | 3.56 total | held: same trigger as Cu |
 | metal_reactive | 0.05, reference | 5.13 | precipitate | reference | bounded |
 
-The sheet edge rates are copper-equivalent study rates, not splits by element. They bound the mass of each element but do not identify it.
+The reference feed governs the booked rates (the plant takes the reference class); the case B rows are the resize trigger, not a current shortfall. A characterized lot replaces the reference point and the cascade re-solves (section 7, A-M-460).
 
 ### Held
 

@@ -11,17 +11,17 @@ Authority: AQS-PLAN-007 unit tasks (FOUNDRY)-02; graph Rev AC; notes/FOUNDRY_SIZ
 
 ## 1. Demand side (what the foundry must supply)
 
-- WAFER_FAB draws are 0 (A-M-257: the fab closes on UPW + slurry + N2 purge). WIRE_DRAW (MFG) closes on S57 Cu 6.8389 kg/d from MET_MELT, so STOCK_TO_WIRE_DRAW = 0.
-- MFG_SHOP goods loop is closed: IA-MFG-OUT 596.863 kg/d out = IA-WEAR 596.864 kg/d worn return. The shop needs no net foundry mass beyond its rounding remnant r0 = -0.005772 kg/d (rated in - rated out).
+- WAFER_FAB draws are 0 (A-M-257: the fab closes on UPW + slurry + N2 purge). WIRE_DRAW (MFG) closes on S57 Cu 4.3921 kg/d from MET_MELT, so STOCK_TO_WIRE_DRAW = 0.
+- MFG_SHOP goods loop is closed: IA-MFG-OUT 0.000 kg/d out = IA-WEAR 0.088 kg/d worn return. The shop needs no net foundry mass beyond its rounding remnant r0 = -0.005820 kg/d (rated in - rated out).
 - The pot/cell products (Al 8, stainless 1.5 via Cr 0.20 + Mo 0.05, Ti 0.40 kg/d of the AQS-SIZE-FOUNDRY / AQS-RATE-FP-MET consumable-replacement table) have no live feed at the bounding case (section 4).
 - Live stock demand K = 25.9 kg/d = the non-pot-blocked table lines: Cu 3 (bus, windings) + Fe 10 (structural, fasteners) + Zn/EW 1 (castings, coatings). Registered A-M-261.
 
 ## 2. Closure (exact, from the live graph)
 
 ```
-    r0 = -0.005772 kg/d                MFG_SHOP rated remnant (excludes this pass's own loop edges)
+    r0 = -0.005820 kg/d                MFG_SHOP rated remnant (excludes this pass's own loop edges)
     f  = 0.01                      melt loss to slag+dross (INDUCT_SOCX 1-2 % band, A-M-262)
-    P  = -r0 + f*K/(1-f) = 0.267388    shop polymer draw that closes the shop (A-M-257 pattern, AQS-DUTY-073)
+    P  = -r0 + f*K/(1-f) = 0.267436    shop polymer draw that closes the shop (A-M-257 pattern, AQS-DUTY-073)
     S  = K + P + r0 = 26.161616         shop scrap charge to IND_MELT (MFG_SCRAP_TO_IND)
     slag = f*S = 0.356466           FOUNDRY_SLAG_TO_LEACH by mass conservation on the melt
     stock out = S - slag = 25.805150 = K    STOCK_TO_MFG
@@ -70,9 +70,9 @@ Melt energy by class, (cp_s dT + L + cp_l superheat)/eta 0.55 (A-M-177 method): 
 
 Chlorine and magnesium close internally (net zero) once the Mg pot is in the loop; the CRU sees pot Cl2 only.
 
-## 5. EW_9 double-booking resolved (A-M-255, this pass owns it)
+## 5. EW_9 double-booking resolved (A-M-255; re-stated at the Q-038 element-rate basis)
 
-EW_9 closes exactly on its Rev BH rates: IA-EW-09 liquor 3520.316 to POLISH_BANK, IA-EW-MET-9 61.341 to the shop, IA-EW-SHEET 13.989 to MET_MELT, IA-EW9-CL2 111.134 to the leach, IA-HDR-H2-04 0.481 to the H2 pool. The Rev AC stubs are aliases of booked paths and are retired at 0:
+The double-booking finding stands: EW_9 books exactly one liquor tail (IA-EW-09 to POLISH_BANK) and one metal book. At the Q-038 element-rate rebasis (A-M-460, 2026-11-04) the metal book is the Zn share of the forming collection: EW_9 carries IA-EW-SHEET (the Cu and blend deposits ride it to MET_MELT) and IA-EW-MET-9 is 0; the liquor and gas rates are the live graph values (write_graph and o2_close re-solve them each pass). The Rev AC stubs are aliases of booked paths and are retired at 0:
 
 | Edge | Retirement basis |
 | --- | --- |

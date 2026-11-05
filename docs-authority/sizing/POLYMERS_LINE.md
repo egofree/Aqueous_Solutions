@@ -12,19 +12,19 @@ Authority: AQS-PLAN-007 unit tasks (POLYMERS)-02; graph Rev AC; notes/POLYMERS_D
 ## 1. Demand side (what the sector must supply)
 
 - POLY_TO_FAB = 0 (A-M-257: the fab closes at steady state; a net draw appears when the fab product basis is sized).
-- POLY_TO_MFG P = 0.267388 kg/d by difference on the shop closure (A-M-257 pattern, A-M-266): the shop goods loop is closed (IA-MFG-OUT = IA-WEAR) and the moulded-polymer articles ride BLOW_MOLD on IA-BLOW-IN 8.4072 kg/d C11-C18 wax, so the shop's residual polymer consumable is exactly what closes it with the foundry stock loop.
-- POLY_TO_WET = 0.026739 kg/d = 10% of the issue (the S58/S59/S60 10 % shop-loss class, AQS-DUTY-010; A-M-263): the shop offcut returns to the wet line.
+- POLY_TO_MFG P = 0.267436 kg/d by difference on the shop closure (A-M-257 pattern, A-M-266): the shop goods loop is closed (IA-MFG-OUT = IA-WEAR) and the moulded-polymer articles ride BLOW_MOLD on IA-BLOW-IN 8.4072 kg/d C11-C18 wax, so the shop's residual polymer consumable is exactly what closes it with the foundry stock loop.
+- POLY_TO_WET = 0.026744 kg/d = 10% of the issue (the S58/S59/S60 10 % shop-loss class, AQS-DUTY-010; A-M-263): the shop offcut returns to the wet line.
 
 ## 2. Results - live loop
 
 | Unit | In, kg/d | Out, kg/d | Duty |
 | --- | --- | --- | --- |
-| POLY_OLEFIN | 0.384603 naphtha (IA-C5-POLY from PROD_C5_C10) | 0.384603 resin | 150-250 C, 1-5 MPa (AQS-SIZE-OIL-POLY); feed heating 0.0013 W (25->200 C at 2.1 kJ/kg K), oligomerization exotherm neglected at this rate (study) |
-| PELLET | 0.384603 | 0.384603 | 2-4 mm pellets (AQS-DES-POLY) |
+| POLY_OLEFIN | 0.384656 naphtha (IA-C5-POLY from PROD_C5_C10) | 0.384656 resin | 150-250 C, 1-5 MPa (AQS-SIZE-OIL-POLY); feed heating 0.0013 W (25->200 C at 2.1 kJ/kg K), oligomerization exotherm neglected at this rate (study) |
+| PELLET | 0.384656 | 0.384656 | 2-4 mm pellets (AQS-DES-POLY) |
 | POLY_FIBER | 0.090476 + 0.001719 FR | 0.087671 fleece + 0.004524 scrap | PP melt-spin staple fibre -> needle-punched fleece: the crew textile line (A-M-429; spin yield at the POLYMERS.textile.spin_yield driver class; FR finish on the D-DOCK reagent manifest per A-M-225; conversion (cutting/sewing/knitting) runs in MFG_SHOP, the issue rides TEXTILE_HAB and the worn goods return on IA-WEAR) |
-| POLY_STOCK | 0.384603 | 0.267388 to MFG + 0.026739 to wet + 0.0 to fab | staged polymer feedstock |
+| POLY_STOCK | 0.384656 | 0.267436 to MFG + 0.026744 to wet + 0.0 to fab | staged polymer feedstock |
 
-Feed balance: IA-C5-POLY 0.384603 kg/d drawn at the cut tank; IA-C5-SHIP re-solved by its transfer function make - genset - olefin = 7.424773 - 0.000000 - 0.384603 = 7.040170 kg/d shipped (the saleable naphtha surplus falls 1:1 with the polymer need - stated, not hidden). OIL_TO_OLEFIN stays 0 (the fractionator-side wax path is 0 with the investment train blocked) and OIL_FRAC closes; MEOH_TO_OLEFIN 0 (methanol committed to the tank/ship balance, X-PAR-12).
+Feed balance: IA-C5-POLY 0.384656 kg/d drawn at the cut tank; IA-C5-SHIP re-solved by its transfer function make - genset - olefin = 7.424773 - 0.000000 - 0.384656 = 7.040117 kg/d shipped (the saleable naphtha surplus falls 1:1 with the polymer need - stated, not hidden). OIL_TO_OLEFIN stays 0 (the fractionator-side wax path is 0 with the investment train blocked) and OIL_FRAC closes; MEOH_TO_OLEFIN 0 (methanol committed to the tank/ship balance, X-PAR-12).
 
 ## 3. Fluoropolymer train - rated 0 with basis (F-blocked)
 

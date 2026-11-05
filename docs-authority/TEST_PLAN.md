@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 34 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 70 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 508 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 509 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 38 | Commissioning record |
 
-Total 723 items: 321 drivers, 402 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 724 items: 321 drivers, 403 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -733,6 +733,7 @@ Total 723 items: 321 drivers, 402 register entries. Classification rule: first m
 | A-M-455 | ZNBR2 electrolyte cycling heat = the booked daily round-trip kWh/d; kW thermal | IA-ZNBR-HEAT == (_power_sizing store_in_kWh - store_kWh)/24 within 0.01 kW; ZNBR2.params.cycling_thermal window_kW == loss/(24 - night_hours); the Q4_BUS and DRY_COOLER thermal ledgers close with the edge counted (X-THM-01 tolerance 0.01 kW); test_heat_ladder.py passes | physics audit F-4 (ZNBR2 cycling heat, 2026-11-04) |
 | A-M-457 | 2.0 M ZnBr2, 529.4 L per module (47 reservoirs, 24.9 m3 tota mol/L; L; kg | Electrolyte sample density and ZnBr2 titre at the X-MFG-41 first article | CAD-representation audit, ZNBR2 machine design (X-MFG-41 support, 2026-11-04) |
 | A-M-458 | hood face velocity 0.5 m/s; hoods 0.20/0.12/0.10 m2; capture m/s; m2; m3/h; m3/min/m2 | Differential-pressure and isokinetic capture check at the three hoods on the first-article duct run | CAD-representation audit, BAGHOUSE machine design (2026-11-04) |
+| A-M-460 | EW cascade element-rate basis: the cascade plates the S08 de kg/d (element metal; wear return kg/d) | pytest flow_graph/param/test_param_misfit.py; python3 models/mfg/tracker.py --check EW_1 EW_2 EW_3 EW_4 EW_5 EW_6 EW_7 EW_8 EW_9 | X-PAR-02 (Q-038 closure) |
 
 ## 7. T6 Commissioning measurements
 

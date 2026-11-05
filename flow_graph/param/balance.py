@@ -63,7 +63,7 @@ def physics(g):
     #    is a pass-through, stoichiometric or source-sized-to-draw basis already named on the edge; nothing is absorbed
     #    without a basis (A-M-228 discipline). Runs between the two o2_close passes so the leach / BMED / header / CO2
     #    chains re-settle on the second pass below.
-    for u, k, out, why in (('HOPPER', 'IA-HOP-01', True, 'returned scrap closes the scrap yard by difference: worn goods + swarf + leach return less the dock feed (its stated basis: follows the worn goods)'),
+    for u, k, out, why in (('HOPPER', 'IA-HOP-01', True, 'the returned-scrap line closes at zero: the worn-goods plug is retired (Q-038 owner ruling 2026-11-04, A-M-460) and the loop receipts - the roster wear line, shop swarf, frass and the leach return - plus the dock make-up feed IA-FEED-MU close the scrap yard on the design feed'),
                            ('FUEL_CELL', 'IA-FC-LEACH', True, 'cell drain closes the cell; product water S52 stays on its stoichiometric basis (AQS-DUTY-023)'),
                            ('WS_NITRIC', 'IA-BMED-01', False, 'reagent day tank passes its draw S34; 1.25 mol/d HCl at 36.46 g/mol = 0.0456 kg/d is the stated molar basis (AQS-DUTY-010); BMED_ACID re-closes on the spent-acid purge IA-BMED-03'),
                            ('WS_AMMONIA', 'IA-NH3-SRC', False, 'ammonia source sized to the bench draw S33 (AQS-DUTY-016: each chemical has a source); the N2 header re-settles in o2_close'),
@@ -71,7 +71,7 @@ def physics(g):
                            ('MEOH_FERM', 'IA-FERM-DIG', True, 'fermenter digestate (water + spent solids) joins the blackwater barrier - galley-organics class like IA-GAL; BLACK_DIGEST closes on IA-BLK-GREY (T7)'),
                            ('OIL_PYRO', 'IA-CHAR', True, 'char by difference: pyro feed less the per-pass volatiles = the documented oil 22.5 + NCG 5.0 + C29 pass-through split (the SiC-furnace carbon charge rides IA-SIC-RET)'),
                            ('WET_BENCH', 'S10', True, 'spent etch/return order-of-magnitude band unchanged; closes the bench by difference'),
-                           ('MFG_SHOP', 'S16', True, 'shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base)'),
+                           ('MFG_SHOP', 'IA-GOODS-SHIP', True, 'finished-goods surplus exports at the dock (Q-038 rebasis 2026-11-04, A-M-460): shop throughput less the crew issue (the roster textile line), the scrap returns and the foundry stock loop - the plant surplus statement moves from the wear plug to the dock goods export'),
                            ('HABITATION', 'S12', True, 'the hab sanitation anchor becomes computed (X-FARM 2026-10-27): S12 carries the hab metabolic load by difference over the hab mass edges - the A-M-426 diet basis supersedes the frozen 319.60396'),
                            ('GREY_TREAT', 'IA-GREY-01', True, 'the treatment feed carries the grey input by difference (S12 plus the farm grey: DUCK_GREY, GAL_GREY join)'),
                            ('CRYO_AHU', 'S68', True, 'AHU condensate carries the vapor load by difference (T2 extended: FORM_VAP, BED_ET and the livestock vapors ride the condensate line)'),
@@ -80,10 +80,13 @@ def physics(g):
                            ('GALLEY', 'GALLEY_MEALS', True, 'served meals close the galley by difference over the issue, greens, biowaste, shell and grey (A-M-426/427)')):
         if k in E:
             r = _unit_resid(g, u); put(k, v(k) + (r if out else -r), why)
+    if 'IA-HOP-01' in E and -1e-3 < float(E['IA-HOP-01']['rate']['value'] or 0) < 0:
+        put('IA-HOP-01', 0.0, 'snapped to zero: the retired scrap line closes at the grid; the sub-milligram dust rides the reconciliation')
     # MFG_SHOP is NOT closed here on POLY_TO_MFG/MFG_SCRAP_TO_IND: that pair is a coupled two-edge closure owned by the
     # foundry_poly regen stage (S = K + P + r0, A-M-261) - a partial in-memory mirror would fight it. The shop's surplus
-    # outlet S16 (scrap to the leach, AUD s10.6 band) closes it here instead; the foundry stage then re-derives the same
-    # P from its own idempotent remnant and the two writers agree at the fixed point.
+    # outlet is the finished-goods dock export IA-GOODS-SHIP (Q-038 rebasis 2026-11-04: was the S16 scrap line, which had
+    # become the twin of the retired wear plug); the foundry stage re-derives the same P from its own idempotent remnant
+    # and the two writers agree at the fixed point.
     if all(k in E for k in ('S76', 'IA-MEOH-REST', 'IA-FC-AIR', 'S82', 'S81', 'IA-CLOSE-10')):
         # MEOH_FC re-base: Rev N held a small-feed oxidant rate (IA-FC-AIR 2.48 kg/d) against the current 5.0 kg/d methanol
         # feed (residual +0.42). Complete oxidation CH3OH + 1.5 O2 -> CO2 + 2 H2O is re-based on the methanol actually

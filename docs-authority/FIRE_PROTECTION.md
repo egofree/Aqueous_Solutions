@@ -73,8 +73,8 @@ Gas-filled tubes: A = F' A'/sqrt(P1), F' = 0.1406/(C Kd) (Tw - T1)^1.25 / T1^0.6
 
 | Receiver | Tubes | Exposed m2 | P1 kPa abs | T1 K | Fire area per half mm2 | Fire bore per half mm | Blocked-outlet bore mm | Installed bore mm (2 valves) | Depressuring release kg | Depressuring bore mm |
 |---|---|---|---|---|---|---|---|---|---|---|
-| CRYO_H2 | 32 | 70.0 | 26721 | 344 | 116.1 | 12.2 | 0.2 | 13 | 8.6 | 1.41 |
-| CRYO_O2 | 16 | 35.0 | 26721 | 344 | 58.2 | 8.6 | 0.27 | 9 | 68.8 | 1.92 |
+| CRYO_H2 | 34 | 74.4 | 26721 | 344 | 123.3 | 12.5 | 0.22 | 13 | 9.1 | 1.45 |
+| CRYO_O2 | 16 | 35.0 | 26721 | 344 | 58.2 | 8.6 | 0.29 | 9 | 73.0 | 1.98 |
 | CRYO_CO2 | 4 | 8.8 | 2763 | 283 | 61.1 | 8.8 | 0.29 | 9 | 0.0 | 0.00 |
 
 The fire case governs every receiver: the earlier 3.3 mm bore covered only the blocked outlet. Each manifolded half now has its own relief valve sized for the fire on its tubes (bore in the table, propagated to the graph relief_mm and the relief register). For gas-filled tubes API 521 warns that a relief valve alone may not prevent wall rupture in a fire, because the unwetted wall heats and loses strength while the pressure stays near set. The H2 and O2 banks therefore get automatic depressuring on flame detection to 50 % of design gauge in 15 min (API 521 5.20, wall 13.5 mm), sized in the table at twice the average rate for the initial peak, plus NFPA 15 water spray to keep the tubes cool. The depressuring vents go to the same safe-location vent stacks as the relief valves.

@@ -86,18 +86,57 @@ def naoh_balance(d, g, hcl_mol, vs_mol=0.0):
 BASE_DEMAND = ('IA-BASE-01','IA-BASE-PPT','IA-ACEX-NAOH')   # 20 wt% NaOH users (glass digest, hydroxide precipitation)
 
 def ew(d, g):
-    """Copper-equivalent sheet edges -> current by Faraday [CODATA2018, SCHLESINGER2011]."""
-    R = {e['stream_id']: e['rate']['value'] for e in g['edges']}
+    """EW cascade currents from the S08 deposit rows (AQS-ASSAY-001 section 5, leach recovery 1.0):
+    I = m z F / (M t CE) per element [CODATA2018, SCHLESINGER2011]. Owner ruling Q-038 (2026-11-04):
+    the cascade rate is the supply basis - the dissolved metal values of the design feed - so the
+    per-cell currents derive from the deposit rows, not from the wear-goods closing-by-difference
+    chain and not from a copper-equivalent sheet convention (both retired with Q-038)."""
+    dep = {int(k): x for k, x in DR.val(d, 'DIGESTER.ew-cascade-train.ew_s08_deposits_kg_d').items()}
+    CE = DR.val(d, 'ew_current_efficiency_design')
     out = {}
-    for n in range(1,10):
-        m = R[f'IA-EW-MET-{n}'] + (R.get('IA-EW-SHEET',0) if n==9 else 0)
-        I = electrochem.faraday_current_A(m, M['Cu'], 2, DR.val(d,'ew_current_efficiency_design'))
-        out[f'EW_{n}'] = dict(I_A=I, P_kW=electrochem.dc_power_kW(I, DR.val(d,'ew_cell_voltage_V')),
+    for n in range(1, 10):
+        el, z = EW_METAL[n]
+        I = electrochem.faraday_current_A(dep[n], M[el], z, CE)
+        out[f'EW_{n}'] = dict(metal=el, dep_kg_d=dep[n], I_A=I, P_kW=electrochem.dc_power_kW(I, DR.val(d,'ew_cell_voltage_V')),
                               P_bus_kW=electrochem.dc_power_kW(I, DR.val(d,'ew_cell_voltage_V')+DR.val(d,'ew_bus_drop_V')))
     dc = sum(v['P_bus_kW'] for v in out.values())
     out['RECT_EW'] = dict(I_A=sum(v['I_A'] for v in out.values()), P_dc_kW=dc,
                           P_ac_kW=dc/DR.val(d,'rect_efficiency'), loss_kW=dc/DR.val(d,'rect_efficiency')-dc)
     return out
+
+def ew_products(d, g):
+    """Q-038 element-rate booking of the plated harvest (write_graph.process writes the edges).
+    Supply basis: the S08 deposits at recovery 1.0 (AQS-ASSAY-001 sections 4 and 5). Demand basis,
+    computed for the governing statement in AQS-DUTY-051 section 2: the plated metal the plant
+    consumes is the forming routes (half the Cu deposit to wire, half to mill; the minor-element
+    blend to powder - the AQS-DUTY-010 bases the graph already states on S57/S59/S60) plus the
+    crew goods line (the roster textile wear, A-M-429); the supply (42.0 kg/d element at the
+    reference feed) exceeds it, so the supply governs the cascade rate and the surplus metal
+    leaves through the shop finished-goods export (self-sustaining plant rule, AGENTS.md)."""
+    R = {e['stream_id']: e['rate']['value'] for e in g['edges']}
+    dep = {int(k): x for k, x in DR.val(d, 'DIGESTER.ew-cascade-train.ew_s08_deposits_kg_d').items()}
+    cu = dep[3]
+    blend = sum(dep[n] for n in (4, 5, 6, 8, 9))
+    s57 = round(cu/2, 4)                       # wire billet: half the Cu deposit (AQS-DUTY-010)
+    mill = round(cu/2, 4)                      # mill feed: the other half
+    atom = round(blend, 4)                     # atomizer feed: the blend deposits
+    remelt = round(blend*0.1, 4)               # powder off-spec returned to the melt (10 %)
+    sheet = round(s57 + mill + atom - remelt, 4)
+    fume = round(s57*DR.val(d, 'wire_melt_fume_frac'), 4)   # AQS-DUTY-010 melt fume basis
+    s58 = round((s57 - fume)*0.9, 4)           # wire product at 10 % draw swarf
+    wloss = round((s57 - fume)*0.1, 4)
+    s59 = mill                                 # the mill closes at its feed (no trim edge in the graph)
+    s60 = round(blend*0.9, 4)                  # powder at 10 % off-spec
+    # product edges: every cell's plated element mass books once; the forming share (Cu + blend)
+    # leaves on IA-EW-SHEET at the EW_9 collection point, the noble/iron share on IA-EW-MET-n
+    met = {n: (dep[n] if n in (1, 2, 7) else 0.0) for n in range(1, 10)}
+    wear = DR.val(d, 'POLYMERS.textile.textile_kg_person_yr')*DR.val(d, 'san_crew')/365.0   # A-M-429 roster line
+    hopper_in = R['S61'] + R['FRASS'] + R['IA-LEACH-HOP'] + round(wear, 4)
+    feed_mu = round(R['IA-FEED-01'] - hopper_in, 6)   # dock make-up feedstock behind the retired scrap loop (6 dp so the scrap-yard closure lands exactly on zero)
+    assert feed_mu > 0, ('hopper make-up negative: loop receipts exceed the design feed', feed_mu)
+    return dict(met=met, sheet=sheet, s57=s57, mill=mill, atom=atom, remelt=remelt, s58=s58,
+                wloss=wloss, s59=s59, s60=s60, fume=fume, wear=round(wear, 4), feed_mu=feed_mu,
+                blend=blend, cu=cu)
 
 def solve():
     d = DR.load(); g = json.load(open(os.path.join(ROOT,'flow_graph/plant_flow_graph.json')))
@@ -112,7 +151,7 @@ def solve():
     import subprocess, sys as _s, os as _o
     root = _o.path.dirname(_o.path.dirname(_o.path.dirname(_o.path.abspath(__file__))))
     roof = json.loads(subprocess.run([_s.executable, 'docs-authority/_power_sizing.py'], cwd=root, capture_output=True, text=True, check=True).stdout)['roof']
-    return d, g, dict(leach=la, bmed=bm, ew=e, evap_acid=ea, evap_base=eb, naoh=nb, roof=roof, vs=vs)
+    return d, g, dict(leach=la, bmed=bm, ew=e, ew_products=ew_products(d, g), evap_acid=ea, evap_base=eb, naoh=nb, roof=roof, vs=vs)
 
 def check():
     d, g, s = solve(); E = {x['stream_id']: x for x in g['edges']}; N = {x['unit_id']: x for x in g['nodes']}

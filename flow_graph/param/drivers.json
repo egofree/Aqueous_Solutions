@@ -5877,6 +5877,11 @@
   "units": "- phosphorus-FR finish pick-up, % of fiber mass",
   "register": "A-M-429"
  },
+ "wire_melt_fume_frac": {
+  "value": 0.003,
+  "units": "- mass fraction of the wire billet lost as melt fume (AQS-DUTY-010 wire route)",
+  "register": "A-M-460"
+ },
  "POLYMERS.textile.spin_yield": {
   "value": 0.95,
   "units": "- melt-spin first-pass yield; scrap to the solids line",

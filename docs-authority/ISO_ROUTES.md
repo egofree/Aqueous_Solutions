@@ -7,7 +7,7 @@ Authority: the placement model (flow_graph/placement_seed.json Rev M, AQS-BLD-00
 
 Route rule: up to the source-level rack (datum + 3200 mm, AQS-PIP-002), X run, Y run, then vertical to the target centre. Legs in mm, signed. Elbows = non-zero legs - 1. Risers are at least 300 mm above the higher end so every route keeps a flexible leg (X-PIP-04). Unit centres are the placement-model centres; nozzle lateral offsets refine at detail design (the nozzle schedules carry face + height). Supports and stress: AQS-PIP-005.
 
-Status. 398 positioned piped lines routed, 7921 m total. 15 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
+Status. 399 positioned piped lines routed, 7941 m total. 15 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
 
 | Line | DN | Class | From | To | dZ up | dX | dY | dZ down | Length m | Elbows |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -114,7 +114,7 @@ Status. 398 positioned piped lines routed, 7921 m total. 15 piped lines wait on 
 | S67 | 15 | F1 | AFTERBURNER_FLUE | FLUE_KO | 700 | -1900 | -7450 | -2650 | 12.7 | 3 |
 | S67B | 15 | M1 | FLUE_KO | CRYO_CO2 | 2650 | -19100 | 8950 | -1200 | 31.9 | 3 |
 | S68 | 15 | P2 | CRYO_AHU | LEACH_CSTR_1 | 1200 | -13400 | 900 | -2500 | 18.0 | 3 |
-| S69 | 40 | P3 | ZNBR2 | ZNBR2_BR2_REGEN | 2400 | -2252 | -400 | -2450 | 7.5 | 3 |
+| S69 | 32 | P3 | ZNBR2 | ZNBR2_BR2_REGEN | 2400 | -2252 | -400 | -2450 | 7.5 | 3 |
 | S69B | 15 | P1 | ZNBR2_BR2_REGEN | ZNBR2 | 2450 | 2252 | 400 | -2400 | 7.5 | 3 |
 | S70 | 15 | P1 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | 2900 | 3200 | 950 | -2650 | 9.7 | 3 |
 | S71 | 200 | F1 | MET_AHU | MET_SCRUB | 2300 | 1200 | 2100 | -2200 | 7.8 | 3 |
@@ -183,7 +183,7 @@ Status. 398 positioned piped lines routed, 7921 m total. 15 piped lines wait on 
 | S90 | 15 | P3 | HABITATION | HDR_CO2 | 1600 | -2100 | -7050 | -3050 | 13.8 | 3 |
 | IA-GREY-01 | 50 | P2 | GREY_TREAT | LEACH_CSTR_1 | 2650 | -600 | 5300 | -14500 | 23.1 | 3 |
 | IA-CRU-01 | 15 | P2 | CRU | LEACH_CSTR_1 | 1450 | -14400 | -1100 | -2500 | 19.4 | 3 |
-| HL-Q4-REJ | 50 | M1 | Q4_BUS | DRY_COOLER | 11660 | -9600 | 3860 | -300 | 25.4 | 3 |
+| HL-Q4-REJ | 40 | M1 | Q4_BUS | DRY_COOLER | 11660 | -9600 | 3860 | -300 | 25.4 | 3 |
 | IA-ZNBR-BD | 15 | P1 | ZNBR2 | GREY_TREAT | 6050 | 6148 | -10000 | -300 | 22.5 | 3 |
 | IA-NUT-01 | 15 | P5 | NUTRIENT_DOSE | VCD_TRAIN | 950 | -4500 | -8000 | -14600 | 28.1 | 3 |
 | IA-UPW-FAB | 15 | P5 | BMED_UPW_POLISH | FAB_UPW_TANK | 6000 | 4150 | -7700 | -300 | 18.1 | 3 |
@@ -201,7 +201,7 @@ Status. 398 positioned piped lines routed, 7921 m total. 15 piped lines wait on 
 | IA-LEACH-BD | 15 | P2 | LEACH_CSTR_1 | NUTRIENT_DOSE | 13850 | 16400 | 3100 | -300 | 33.6 | 3 |
 | IA-VCD-BD | 15 | P2 | VCD_TRAIN | LEACH_CSTR_1 | 2600 | -11900 | 4900 | -2500 | 21.9 | 3 |
 | IA-FC-EXH | 15 | F1 | MEOH_FC | NOX_SCRUB | 2400 | 748 | 5400 | -2600 | 11.1 | 3 |
-| IA-ZNBR-HEAT | 50 | P1 | ZNBR2 | Q4_BUS | 2400 | 20948 | -10560 | -3160 | 37.1 | 3 |
+| IA-ZNBR-HEAT | 40 | P1 | ZNBR2 | Q4_BUS | 2400 | 20948 | -10560 | -3160 | 37.1 | 3 |
 | IA-Q1A-LOSS | 15 | P1 | Q1_A | BOUNDARY_EXPORT | 7100 | 200 | 1000 | -300 | 8.6 | 3 |
 | IA-Q1B-LOSS | 15 | P1 | Q1_B | BOUNDARY_EXPORT | 7100 | -13600 | -5000 | -300 | 26.0 | 3 |
 | IA-Q2A-LOSS | 15 | P1 | Q2_A | BOUNDARY_EXPORT | 6250 | -1300 | 1000 | -300 | 8.8 | 3 |
@@ -409,6 +409,7 @@ Status. 398 positioned piped lines routed, 7921 m total. 15 piped lines wait on 
 | DL_MET_TO_FEED | 15 | P1 | MET_SYN | CHICKEN_COOP | 2450 | 5100 | 5850 | -2250 | 15.7 | 3 |
 | IA-DC-REJ | 50 | P1 | DRY_COOLER | ATMOS | 2600 | 5950 | -2800 | -13250 | 24.6 | 3 |
 | IA-ZNBR-H2 | 15 | P1 | ZNBR2 | HDR_H2 | 2400 | 9948 | -2600 | -6950 | 21.9 | 3 |
+| IA-MET-AIR-MU | 15 | M1 | HDR_N2 | MET_AHU | 3050 | 7700 | -1350 | -8300 | 20.4 | 3 |
 
 Waiting on placements:
 - LB-FEED (LB_INTAKE unplaced)

@@ -1,5 +1,5 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,107,1708 points / 16
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,107,1698 points / 16
 CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,854,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 174 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
@@ -482,14 +482,11 @@ DIGESTER,DIGESTER_EXT,SALT_FEED,instrument,pressure transmitter,0-10 bar,"cerami
 DIGESTER,DIGESTER_EXT,SALT_FEED,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 DIGESTER,DIGESTER_EXT,SALT_FEED,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,LEACH_EW,EW_1,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"electrolyte circulation pump: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-DIGESTER,LEACH_EW,EW_1,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"screw conveyor IA-EW-MET-1 to MFG_SHOP: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
 DIGESTER,LEACH_EW,EW_1,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-EW-01 to EW_2 (assumed size)
 DIGESTER,LEACH_EW,EW_1,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-EW-01 to EW_2
 DIGESTER,LEACH_EW,EW_1,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,electrolyte circulation pump: run and fault (assumed)
-DIGESTER,LEACH_EW,EW_1,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,screw conveyor IA-EW-MET-1 to MFG_SHOP: run and fault (assumed)
 DIGESTER,LEACH_EW,EW_1,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-EW-01 to EW_2: run and fault (assumed)
 DIGESTER,LEACH_EW,EW_1,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,electrolyte circulation pump (assumed VFD at >= 0.75 kW)
-DIGESTER,LEACH_EW,EW_1,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,screw conveyor IA-EW-MET-1 to MFG_SHOP (assumed VFD at >= 0.75 kW)
 DIGESTER,LEACH_EW,EW_1,fabricated part,fabricated part set,9 BOM lines,models/mfg/EW_1/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 DIGESTER,LEACH_EW,EW_1,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,8,models/mfg/EW_1/fasteners.csv
 DIGESTER,LEACH_EW,EW_1,fastener,M10 x 35,M10 x 35,ISO 3506 A4-70,6,models/mfg/EW_1/fasteners.csv
@@ -513,7 +510,6 @@ DIGESTER,LEACH_EW,EW_1,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTF
 DIGESTER,LEACH_EW,EW_1,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,LEACH_EW,EW_1,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 DIGESTER,LEACH_EW,EW_1,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-DIGESTER,LEACH_EW,EW_1,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,LEACH_EW,EW_1,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,electrolyte circulation pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 DIGESTER,LEACH_EW,EW_1,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,IA-EW-01: AQS-PIP-005 span count
 DIGESTER,LEACH_EW,EW_1,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",8,IA-HDR-H2-01: AQS-PIP-005 span count
@@ -531,14 +527,11 @@ DIGESTER,LEACH_EW,EW_1,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, P
 DIGESTER,LEACH_EW,EW_1,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-EW1-H2: one at each end nozzle (assumed)
 DIGESTER,LEACH_EW,EW_1,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,IA-EW1-CL2: one at each end nozzle (assumed)
 DIGESTER,LEACH_EW,EW_2,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"electrolyte circulation pump: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-DIGESTER,LEACH_EW,EW_2,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"screw conveyor IA-EW-MET-2 to MFG_SHOP: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
 DIGESTER,LEACH_EW,EW_2,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-EW-02 to EW_3 (assumed size)
 DIGESTER,LEACH_EW,EW_2,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-EW-02 to EW_3
 DIGESTER,LEACH_EW,EW_2,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,electrolyte circulation pump: run and fault (assumed)
-DIGESTER,LEACH_EW,EW_2,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,screw conveyor IA-EW-MET-2 to MFG_SHOP: run and fault (assumed)
 DIGESTER,LEACH_EW,EW_2,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-EW-02 to EW_3: run and fault (assumed)
 DIGESTER,LEACH_EW,EW_2,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,electrolyte circulation pump (assumed VFD at >= 0.75 kW)
-DIGESTER,LEACH_EW,EW_2,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,screw conveyor IA-EW-MET-2 to MFG_SHOP (assumed VFD at >= 0.75 kW)
 DIGESTER,LEACH_EW,EW_2,fabricated part,fabricated part set,9 BOM lines,models/mfg/EW_2/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 DIGESTER,LEACH_EW,EW_2,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,8,models/mfg/EW_2/fasteners.csv
 DIGESTER,LEACH_EW,EW_2,fastener,M10 x 35,M10 x 35,ISO 3506 A4-70,6,models/mfg/EW_2/fasteners.csv
@@ -560,7 +553,6 @@ DIGESTER,LEACH_EW,EW_2,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTF
 DIGESTER,LEACH_EW,EW_2,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,LEACH_EW,EW_2,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 DIGESTER,LEACH_EW,EW_2,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-DIGESTER,LEACH_EW,EW_2,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,LEACH_EW,EW_2,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,electrolyte circulation pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 DIGESTER,LEACH_EW,EW_2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",12,IA-EW-02: AQS-PIP-005 span count
 DIGESTER,LEACH_EW,EW_2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",7,IA-HDR-H2-03: AQS-PIP-005 span count
@@ -575,14 +567,11 @@ DIGESTER,LEACH_EW,EW_2,valve,isolation valve,DN15,"PVC-U true-union ball valve, 
 DIGESTER,LEACH_EW,EW_2,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-EW2-H2: one at each end nozzle (assumed)
 DIGESTER,LEACH_EW,EW_2,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,IA-EW2-CL2: one at each end nozzle (assumed)
 DIGESTER,LEACH_EW,EW_9,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"electrolyte circulation pump: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-DIGESTER,LEACH_EW,EW_9,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"screw conveyor IA-EW-MET-9 to MFG_SHOP: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
 DIGESTER,LEACH_EW,EW_9,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-EW-09 to POLISH_BANK (assumed size)
 DIGESTER,LEACH_EW,EW_9,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-EW-09 to POLISH_BANK
 DIGESTER,LEACH_EW,EW_9,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,electrolyte circulation pump: run and fault (assumed)
-DIGESTER,LEACH_EW,EW_9,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,screw conveyor IA-EW-MET-9 to MFG_SHOP: run and fault (assumed)
 DIGESTER,LEACH_EW,EW_9,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-EW-09 to POLISH_BANK: run and fault (assumed)
 DIGESTER,LEACH_EW,EW_9,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,electrolyte circulation pump (assumed VFD at >= 0.75 kW)
-DIGESTER,LEACH_EW,EW_9,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,screw conveyor IA-EW-MET-9 to MFG_SHOP (assumed VFD at >= 0.75 kW)
 DIGESTER,LEACH_EW,EW_9,fabricated part,fabricated part set,9 BOM lines,models/mfg/EW_9/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 DIGESTER,LEACH_EW,EW_9,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,10,models/mfg/EW_9/fasteners.csv
 DIGESTER,LEACH_EW,EW_9,fastener,M10 x 35,M10 x 35,ISO 3506 A4-70,6,models/mfg/EW_9/fasteners.csv
@@ -603,7 +592,6 @@ DIGESTER,LEACH_EW,EW_9,instrument,high-level switch,vibrating fork,"IEC 60947-5,
 DIGESTER,LEACH_EW,EW_9,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DIGESTER,LEACH_EW,EW_9,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,LEACH_EW,EW_9,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-DIGESTER,LEACH_EW,EW_9,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,LEACH_EW,EW_9,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,LEACH_EW,EW_9,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,electrolyte circulation pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 DIGESTER,LEACH_EW,EW_9,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-EW-09: AQS-PIP-005 span count
@@ -828,14 +816,11 @@ DIGESTER,ew_cell,EW_6,valve,isolation valve,DN15,"PVC-U true-union ball valve, M
 DIGESTER,ew_cell,EW_6,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,IA-EW6-CL2: one at each end nozzle (assumed)
 DIGESTER,ew_cell,EW_6,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-EW6-H2B: one at each end nozzle (assumed)
 DIGESTER,ew_cell,EW_7,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"electrolyte circulation pump: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-DIGESTER,ew_cell,EW_7,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"screw conveyor IA-EW-MET-7 to MFG_SHOP: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
 DIGESTER,ew_cell,EW_7,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-EW-07 to EW_8 (assumed size)
 DIGESTER,ew_cell,EW_7,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-EW-07 to EW_8
 DIGESTER,ew_cell,EW_7,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,electrolyte circulation pump: run and fault (assumed)
-DIGESTER,ew_cell,EW_7,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,screw conveyor IA-EW-MET-7 to MFG_SHOP: run and fault (assumed)
 DIGESTER,ew_cell,EW_7,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-EW-07 to EW_8: run and fault (assumed)
 DIGESTER,ew_cell,EW_7,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,electrolyte circulation pump (assumed VFD at >= 0.75 kW)
-DIGESTER,ew_cell,EW_7,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,screw conveyor IA-EW-MET-7 to MFG_SHOP (assumed VFD at >= 0.75 kW)
 DIGESTER,ew_cell,EW_7,fabricated part,fabricated part set,9 BOM lines,models/mfg/EW_7/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 DIGESTER,ew_cell,EW_7,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,10,models/mfg/EW_7/fasteners.csv
 DIGESTER,ew_cell,EW_7,fastener,M10 x 35,M10 x 35,ISO 3506 A4-70,6,models/mfg/EW_7/fasteners.csv
@@ -854,7 +839,6 @@ DIGESTER,ew_cell,EW_7,instrument,high-level switch,vibrating fork,"IEC 60947-5, 
 DIGESTER,ew_cell,EW_7,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DIGESTER,ew_cell,EW_7,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,ew_cell,EW_7,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-DIGESTER,ew_cell,EW_7,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,ew_cell,EW_7,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,ew_cell,EW_7,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,electrolyte circulation pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 DIGESTER,ew_cell,EW_7,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-EW-07: AQS-PIP-005 span count
@@ -958,22 +942,22 @@ DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MS
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,CA_HOPPER: one at each end nozzle (assumed)
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,FR_FINISH: one at each end nozzle (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",48,AHU damper actuator (assumed size)
-ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",16,"AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90L (assumed size)"
-ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",16,"AHU supply fan: drive and non-drive end, IEC 60072 frame 90L (assumed size)"
+ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",16,"AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
+ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",16,"AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
 ELEC,EXT_HALL_N,EXT_HALL,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,24,AHU damper actuator
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,48,AHU damper actuator: run and fault (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,16,AHU exhaust fan: run and fault (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,16,AHU supply fan: run and fault (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,16,air-source heat pump compressor: run and fault (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,32,heat pump condenser fan: run and fault (assumed)
-ELEC,EXT_HALL_N,EXT_HALL,electronics,compressor contactor + overload,22 kW hermetic,IEC 60947-4-1,8,air-source heat pump compressor
-ELEC,EXT_HALL_N,EXT_HALL,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,8,AHU exhaust fan (assumed VFD at >= 0.75 kW)
-ELEC,EXT_HALL_N,EXT_HALL,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,8,AHU supply fan (assumed VFD at >= 0.75 kW)
+ELEC,EXT_HALL_N,EXT_HALL,electronics,compressor contactor + overload,18.5 kW hermetic,IEC 60947-4-1,8,air-source heat pump compressor
+ELEC,EXT_HALL_N,EXT_HALL,electronics,variable-frequency drive,1.1 kW,IEC 61800-5-1,8,AHU exhaust fan (assumed VFD at >= 0.75 kW)
+ELEC,EXT_HALL_N,EXT_HALL,electronics,variable-frequency drive,1.1 kW,IEC 61800-5-1,8,AHU supply fan (assumed VFD at >= 0.75 kW)
 ELEC,EXT_HALL_N,EXT_HALL,fabricated part,fabricated part set,4 BOM lines,models/mfg/EXT_HALL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 ELEC,EXT_HALL_N,EXT_HALL,fastener,M20 column base bolts (F1552 class),M20 column base bolts (F1552 class),ISO 898-1 8.8,3212,models/mfg/EXT_HALL/fasteners.csv
 ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
 ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
-ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",100 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
+ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",90 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
 ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,16,"NEC 430.52, from AQS-INV-002"
 ELEC,flow_battery,ZNBR2,bearing,deep-groove ball bearing,6202-2Z,"ISO 15 / ISO 492 normal class, C3",192,"electrolyte pump (anolyte, catholyte) per stack string: drive and non-drive end, IEC 60072 frame 71 (assumed size)"
 ELEC,flow_battery,ZNBR2,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-ZNBR-BD to GREY_TREAT (assumed size)
@@ -987,11 +971,11 @@ ELEC,flow_battery,ZNBR2,fastener,M16 tie rod,M16 tie rod with 2 heavy hex nuts,I
 ELEC,flow_battery,ZNBR2,fastener,M8 bolt,M8 bolt with nut,ISO 3506 A4-70,94,models/mfg/ZNBR2/fasteners.csv
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,S69: 2 per support (assumed)
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,IA-ZNBR-BD: 2 per support (assumed)
-ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,IA-ZNBR-HEAT: 2 per support (assumed)
+ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,IA-ZNBR-HEAT: 2 per support (assumed)
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,IA-ZNBR-H2: 2 per support (assumed)
-ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN40,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S69: pumped line (assumed)
+ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN32,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S69: pumped line (assumed)
 ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ZNBR-BD: pumped line (assumed)
-ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ZNBR-HEAT: pumped line (assumed)
+ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN40,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ZNBR-HEAT: pumped line (assumed)
 ELEC,flow_battery,ZNBR2,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ZNBR-H2: pumped line (assumed)
 ELEC,flow_battery,ZNBR2,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 ELEC,flow_battery,ZNBR2,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
@@ -1000,17 +984,17 @@ ELEC,flow_battery,ZNBR2,instrument,pressure transmitter,0-10 bar,"ceramic diaphr
 ELEC,flow_battery,ZNBR2,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 ELEC,flow_battery,ZNBR2,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,96,"NEC 430.52, from AQS-INV-002"
 ELEC,flow_battery,ZNBR2,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",96,"electrolyte pump (anolyte, catholyte) per stack string: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
-ELEC,flow_battery,ZNBR2,support,pipe clamp,DN40,"PP clamp with EPDM liner, MSS SP-58 Type 7",6,S69: AQS-PIP-005 span count
+ELEC,flow_battery,ZNBR2,support,pipe clamp,DN32,"PP clamp with EPDM liner, MSS SP-58 Type 7",6,S69: AQS-PIP-005 span count
 ELEC,flow_battery,ZNBR2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",24,IA-ZNBR-BD: AQS-PIP-005 span count
-ELEC,flow_battery,ZNBR2,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",27,IA-ZNBR-HEAT: AQS-PIP-005 span count
+ELEC,flow_battery,ZNBR2,support,pipe clamp,DN40,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,IA-ZNBR-HEAT: AQS-PIP-005 span count
 ELEC,flow_battery,ZNBR2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",24,IA-ZNBR-H2: AQS-PIP-005 span count
-ELEC,flow_battery,ZNBR2,valve,check valve,DN40,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,S69: pump discharge (assumed)
+ELEC,flow_battery,ZNBR2,valve,check valve,DN32,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,S69: pump discharge (assumed)
 ELEC,flow_battery,ZNBR2,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-ZNBR-BD: pump discharge (assumed)
-ELEC,flow_battery,ZNBR2,valve,check valve,DN50,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-ZNBR-HEAT: pump discharge (assumed)
+ELEC,flow_battery,ZNBR2,valve,check valve,DN40,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-ZNBR-HEAT: pump discharge (assumed)
 ELEC,flow_battery,ZNBR2,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-ZNBR-H2: pump discharge (assumed)
-ELEC,flow_battery,ZNBR2,valve,isolation valve,DN40,"PVDF ball valve, ISO 16135, PTFE seats",2,S69: one at each end nozzle (assumed)
+ELEC,flow_battery,ZNBR2,valve,isolation valve,DN32,"PVDF ball valve, ISO 16135, PTFE seats",2,S69: one at each end nozzle (assumed)
 ELEC,flow_battery,ZNBR2,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-ZNBR-BD: one at each end nozzle (assumed)
-ELEC,flow_battery,ZNBR2,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-ZNBR-HEAT: one at each end nozzle (assumed)
+ELEC,flow_battery,ZNBR2,valve,isolation valve,DN40,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-ZNBR-HEAT: one at each end nozzle (assumed)
 ELEC,flow_battery,ZNBR2,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-ZNBR-H2: one at each end nozzle (assumed)
 ELEC,genset,BACKUP_GEN,bearing,deep-groove ball bearing,6202-2Z,"ISO 15 / ISO 492 normal class, C3",2,"radiator fan: drive and non-drive end, IEC 60072 frame 71 (assumed size)"
 ELEC,genset,BACKUP_GEN,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",2,"starter motor: drive and non-drive end, IEC 60072 frame 90L (assumed size)"
@@ -2193,14 +2177,17 @@ HAB,HAB,HDR_N2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,62,IA-AB-AIR
 HAB,HAB,HDR_N2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,42,IA-AHU-AIR: 2 per support (assumed)
 HAB,HAB,HDR_N2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,44,IA-NH3-SRC: 2 per support (assumed)
 HAB,HAB,HDR_N2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,IA-GEN-AIR: 2 per support (assumed)
+HAB,HAB,HDR_N2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IA-MET-AIR-MU: 2 per support (assumed)
 HAB,HAB,HDR_N2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",31,IA-AB-AIR: AQS-PIP-005 span count
 HAB,HAB,HDR_N2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",21,IA-AHU-AIR: AQS-PIP-005 span count
+HAB,HAB,HDR_N2,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",15,IA-MET-AIR-MU: AQS-PIP-005 span count
 HAB,HAB,HDR_N2,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",22,IA-NH3-SRC: AQS-PIP-005 span count
 HAB,HAB,HDR_N2,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",27,IA-GEN-AIR: AQS-PIP-005 span count
 HAB,HAB,HDR_N2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-AB-AIR: one at each end nozzle (assumed)
 HAB,HAB,HDR_N2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-AHU-AIR: one at each end nozzle (assumed)
 HAB,HAB,HDR_N2,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-NH3-SRC: one at each end nozzle (assumed)
 HAB,HAB,HDR_N2,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-GEN-AIR: one at each end nozzle (assumed)
+HAB,HAB,HDR_N2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-MET-AIR-MU: one at each end nozzle (assumed)
 HAB,dayroom,COMMON_AREA,fabricated part,fabricated part set,5 BOM lines,models/mfg/COMMON_AREA/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 HAB,dayroom,REC_DAYROOM,fabricated part,fabricated part set,5 BOM lines,models/mfg/REC_DAYROOM/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 HAB,galley,GALLEY,fabricated part,fabricated part set,5 BOM lines,models/mfg/GALLEY/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
@@ -2238,11 +2225,11 @@ HEAT,dry_cooler,DRY_COOLER,valve,isolation valve,DN15,"PVC-U true-union ball val
 HEAT,dry_cooler,DRY_COOLER,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-DC-REJ: one at each end nozzle (assumed)
 HEAT,header,Q4_BUS,fabricated part,fabricated part set,3 BOM lines,models/mfg/Q4_BUS/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 HEAT,header,Q4_BUS,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,8,models/mfg/Q4_BUS/fasteners.csv
-HEAT,header,Q4_BUS,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,HL-Q4-REJ: 2 per support (assumed)
+HEAT,header,Q4_BUS,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,HL-Q4-REJ: 2 per support (assumed)
 HEAT,header,Q4_BUS,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-Q4-LIFE: 2 per support (assumed)
-HEAT,header,Q4_BUS,support,U-bolt with guide,DN50,"316 U-bolt, MSS SP-58 Type 24",10,HL-Q4-REJ: AQS-PIP-005 span count
+HEAT,header,Q4_BUS,support,U-bolt with guide,DN40,"316 U-bolt, MSS SP-58 Type 24",11,HL-Q4-REJ: AQS-PIP-005 span count
 HEAT,header,Q4_BUS,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",20,IA-Q4-LIFE: AQS-PIP-005 span count
-HEAT,header,Q4_BUS,valve,isolation valve,DN50,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-Q4-REJ: one at each end nozzle (assumed)
+HEAT,header,Q4_BUS,valve,isolation valve,DN40,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-Q4-REJ: one at each end nozzle (assumed)
 HEAT,header,Q4_BUS,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-Q4-LIFE: one at each end nozzle (assumed)
 HEAT,heat_battery,Q1_A,fabricated part,fabricated part set,12 BOM lines,models/mfg/Q1_A/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 HEAT,heat_battery,Q1_A,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,10,HL-Q1-A-DOWN: 2 per support (assumed)
@@ -2560,7 +2547,7 @@ MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,6306-2Z,"ISO 15 / ISO 492 norm
 MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"TIG/MIG welder: cooling-water pump: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
 MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"bench grinder: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
 MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"drill press spindle: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
-MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"screw conveyor IA-MFG-OUT to HABITATION: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
+MFG,MFG,MFG_SHOP,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"screw conveyor IA-GOODS-SHIP to NORTH_DOCK: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
 MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Band saw: main drive: run and fault (assumed)
 MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,6,CNC vertical mill: axis drive: run and fault (assumed)
 MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,CNC vertical mill: main drive: run and fault (assumed)
@@ -2569,11 +2556,11 @@ MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Rotary-
 MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,TIG/MIG welder: cooling-water pump: run and fault (assumed)
 MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,bench grinder: run and fault (assumed)
 MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,drill press spindle: run and fault (assumed)
-MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,screw conveyor IA-MFG-OUT to HABITATION: run and fault (assumed)
+MFG,MFG,MFG_SHOP,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,screw conveyor IA-GOODS-SHIP to NORTH_DOCK: run and fault (assumed)
 MFG,MFG,MFG_SHOP,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,TIG/MIG welder: cooling-water pump (assumed VFD at >= 0.75 kW)
 MFG,MFG,MFG_SHOP,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,bench grinder (assumed VFD at >= 0.75 kW)
 MFG,MFG,MFG_SHOP,electronics,motor starter (contactor + overload),0.75 kW,IEC 60947-4-1,1,drill press spindle (assumed VFD at >= 0.75 kW)
-MFG,MFG,MFG_SHOP,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,screw conveyor IA-MFG-OUT to HABITATION (assumed VFD at >= 0.75 kW)
+MFG,MFG,MFG_SHOP,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,screw conveyor IA-GOODS-SHIP to NORTH_DOCK (assumed VFD at >= 0.75 kW)
 MFG,MFG,MFG_SHOP,electronics,stepper driver,24/48 V DC,IEC 61800-5-1,3,CNC vertical mill: axis drive
 MFG,MFG,MFG_SHOP,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,1,Band saw: main drive (assumed VFD at >= 0.75 kW)
 MFG,MFG,MFG_SHOP,electronics,variable-frequency drive,7.5 kW,IEC 61800-5-1,1,CNC vertical mill: main drive (assumed VFD at >= 0.75 kW)
@@ -2733,14 +2720,11 @@ NUT,FARM,NUTRIENT_DOSE,valve,isolation valve,DN15,"PP ball valve with HDPE stub 
 NUT,FARM,NUTRIENT_DOSE,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-NUT-LEACH: one at each end nozzle (assumed)
 NUT,FARM,NUTRIENT_DOSE,valve,isolation valve,DN15,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-NUT-BED: one at each end nozzle (assumed)
 NUT,FARM,NUTRIENT_DOSE,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-SIC-RET: one at each end nozzle (assumed)
-OIL,LEACH_EW,HOPPER,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"screw conveyor IA-HOP-01 to LEACH_CSTR_1: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
 OIL,LEACH_EW,HOPPER,bearing,deep-groove ball bearing,6202-2Z,"ISO 15 / ISO 492 normal class, C3",2,"screw feeder: drive and non-drive end, IEC 60072 frame 71 (assumed size)"
 OIL,LEACH_EW,HOPPER,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-FEED-01 to LEACH_CSTR_1 (assumed size)
 OIL,LEACH_EW,HOPPER,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-FEED-01 to LEACH_CSTR_1
-OIL,LEACH_EW,HOPPER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,screw conveyor IA-HOP-01 to LEACH_CSTR_1: run and fault (assumed)
 OIL,LEACH_EW,HOPPER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,screw feeder: run and fault (assumed)
 OIL,LEACH_EW,HOPPER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-FEED-01 to LEACH_CSTR_1: run and fault (assumed)
-OIL,LEACH_EW,HOPPER,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,screw conveyor IA-HOP-01 to LEACH_CSTR_1 (assumed VFD at >= 0.75 kW)
 OIL,LEACH_EW,HOPPER,electronics,motor starter (contactor + overload),0.25 kW,IEC 60947-4-1,1,screw feeder (assumed VFD at >= 0.75 kW)
 OIL,LEACH_EW,HOPPER,fabricated part,fabricated part set,4 BOM lines,models/mfg/HOPPER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 OIL,LEACH_EW,HOPPER,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,4,models/mfg/HOPPER/fasteners.csv
@@ -2748,7 +2732,6 @@ OIL,LEACH_EW,HOPPER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,IA-F
 OIL,LEACH_EW,HOPPER,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-FEED-01: pumped line (assumed)
 OIL,LEACH_EW,HOPPER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 OIL,LEACH_EW,HOPPER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-OIL,LEACH_EW,HOPPER,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 OIL,LEACH_EW,HOPPER,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 OIL,LEACH_EW,HOPPER,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",11,IA-FEED-01: AQS-PIP-005 span count
 OIL,LEACH_EW,HOPPER,valve,check valve,DN15,"CPVC true-union swing/ball check valve, FKM seals",1,IA-FEED-01: pump discharge (assumed)

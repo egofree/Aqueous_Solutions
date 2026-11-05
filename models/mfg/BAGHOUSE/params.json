@@ -86,7 +86,7 @@
   "dust_kg_d": {
    "IA-MILL-LOSS": 6.82,
    "IA-FAB-LOSS": 0.51,
-   "IA-WIRE-LOSS": 0.44
+   "IA-WIRE-LOSS": 0.438
   },
   "hoods_m2": {
    "IA-MILL-LOSS": 0.2,

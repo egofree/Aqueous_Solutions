@@ -33,19 +33,13 @@ Table 3.1. Guarantee points
 | PROD_C29 | CUT-4 | OIL_FRAC | 5.873 | kg/d | OIL_FRAC-FT-04 | 5.286 - 6.461 |
 | PROD_C5_C10 | CUT-1 | OIL_FRAC | 7.425 | kg/d | OIL_FRAC-FT-01 | 6.682 - 8.167 |
 | PROD_MEOH | IA-MEOH-PROD | MEOH_TANK | 28.73 | kg/d | MEOH_TANK-FT-03 | 25.86 - 31.6 |
-| PROD_O2 | IA-O2-PROD | HDR_O2 | 0.09585 | kg/d | weighed batch (scale, 0.1 % FS) | 0.08627 - 0.1054 |
-| metal from EW_1 | IA-EW-MET-1 | EW_1 | 59.87 | kg/d | weighed cathode harvest | 53.88 - 65.86 |
-| metal from EW_2 | IA-EW-MET-2 | EW_2 | 59.89 | kg/d | weighed cathode harvest | 53.9 - 65.88 |
-| metal from EW_3 | IA-EW-MET-3 | EW_3 | 22.48 | kg/d | weighed cathode harvest | 20.23 - 24.73 |
-| metal from EW_4 | IA-EW-MET-4 | EW_4 | 4.85 | kg/d | weighed cathode harvest | 4.365 - 5.335 |
-| metal from EW_5 | IA-EW-MET-5 | EW_5 | 5.02 | kg/d | weighed cathode harvest | 4.518 - 5.522 |
-| metal from EW_6 | IA-EW-MET-6 | EW_6 | 5.47 | kg/d | weighed cathode harvest | 4.923 - 6.017 |
-| metal from EW_7 | IA-EW-MET-7 | EW_7 | 71.14 | kg/d | weighed cathode harvest | 64.03 - 78.25 |
-| metal from EW_8 | IA-EW-MET-8 | EW_8 | 5.05 | kg/d | weighed cathode harvest | 4.545 - 5.555 |
-| metal from EW_9 | IA-EW-MET-9 | EW_9 | 61.34 | kg/d | weighed cathode harvest | 55.21 - 67.48 |
-| metal from EW_9 | IA-EW-SHEET | EW_9 | 13.99 | kg/d | weighed cathode harvest | 12.59 - 15.39 |
+| PROD_O2 | IA-O2-PROD | HDR_O2 | 14.92 | kg/d | weighed batch (scale, 0.1 % FS) | 13.43 - 16.41 |
+| metal from EW_1 | IA-EW-MET-1 | EW_1 | 0.0063 | kg/d | weighed cathode harvest | 0.00567 - 0.00693 |
+| metal from EW_2 | IA-EW-MET-2 | EW_2 | 0.0251 | kg/d | weighed cathode harvest | 0.02259 - 0.02761 |
+| metal from EW_7 | IA-EW-MET-7 | EW_7 | 29.63 | kg/d | weighed cathode harvest | 26.67 - 32.59 |
+| metal from EW_9 | IA-EW-SHEET | EW_9 | 11.98 | kg/d | weighed cathode harvest | 10.79 - 13.18 |
 | metal from EW_1 | IA-COAT-IN | EW_1 | 0.02 | kg/d | weighed cathode harvest | 0.018 - 0.022 |
-| H2 to bank | IA-ELY-H2 | H2O_ELYZ | 8.715 | kg/d | H2O_ELYZ-FT-01 | 7.843 - 9.586 |
-| Plant load (sum of the continuous loads of all consumers, excluding the PV array, fuel cells, generator set, battery and ORC unit) | - | - | 209.3 | kW | revenue-grade meter at LOAD_AGG | <= 230.2 |
+| H2 to bank | IA-ELY-H2 | H2O_ELYZ | 10.58 | kg/d | H2O_ELYZ-FT-01 | 9.524 - 11.64 |
+| Plant load (sum of the continuous loads of all consumers, excluding the PV array, fuel cells, generator set, battery and ORC unit) | - | - | 180.7 | kW | revenue-grade meter at LOAD_AGG | <= 198.8 |
 
-The table has 18 product guarantee points and one plant load point.
+The table has 12 product guarantee points and one plant load point.

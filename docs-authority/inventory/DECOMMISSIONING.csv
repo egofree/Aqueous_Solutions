@@ -144,7 +144,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 13,CRYO,CRYO_ASU,0,CO2 N2 O2,N2/air to 19.5-23.5 % O2,1170,no
 13,CRYO,CRYO_CO2,0,CO2,-,690,no
 13,CRYO,CRYO_DED_COOL,0,,-,338,no
-13,CRYO,CRYO_H2,0,H2,"N2 to < 25 % LFL, then < 1 % H2",5520,no
+13,CRYO,CRYO_H2,0,H2,"N2 to < 25 % LFL, then < 1 % H2",5866,no
 13,CRYO,CRYO_HX_Q4,0,,-,22,no
 13,CRYO,CRYO_N2,0,N2,-,338,no
 13,CRYO,CRYO_O2,0,Ar O2,N2/air to 19.5-23.5 % O2,2760,no

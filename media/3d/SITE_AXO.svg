@@ -245,7 +245,7 @@
 <polygon points="-3291,5740 -2884,5505 -3507,5145 -3914,5380" fill="#7d6608" fill-opacity="0.92" stroke="#7d6608" stroke-width="2"/>
 <polygon points="-3291,6500 -2884,6265 -2884,5505 -3291,5740" fill="#00000022" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
 <polygon points="-2884,6265 -3507,5905 -3507,5145 -2884,5505" fill="#00000044" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
-<text x="-3399" y="5823" textAnchor="middle" fontSize="12" fill="#111">EW_6</text>
+<text x="-3399" y="5823" textAnchor="middle" fontSize="12" fill="#111">EW_8</text>
 <polygon points="-17754,1150 -16671,525 -17364,125 -18446,750" fill="#7d6608" fill-opacity="0.92" stroke="#7d6608" stroke-width="2"/>
 <polygon points="-17754,4250 -16671,3625 -16671,525 -17754,1150" fill="#00000022" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
 <polygon points="-16671,3625 -17364,3225 -17364,125 -16671,525" fill="#00000044" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
@@ -270,10 +270,10 @@
 <polygon points="-3159,224 -2466,-176 -2466,-1276 -3159,-876" fill="#00000022" fill-opacity="1.0" stroke="#117a65" stroke-width="2"/>
 <polygon points="-2466,-176 -3159,-576 -3159,-1676 -2466,-1276" fill="#00000044" fill-opacity="1.0" stroke="#117a65" stroke-width="2"/>
 <text x="-3159" y="-726" textAnchor="middle" fontSize="12" fill="#111">MEOH_TANK</text>
-<polygon points="-2078,5040 -1671,4805 -2295,4445 -2702,4680" fill="#7d6608" fill-opacity="0.92" stroke="#7d6608" stroke-width="2"/>
-<polygon points="-2078,5800 -1671,5565 -1671,4805 -2078,5040" fill="#00000022" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
-<polygon points="-1671,5565 -2295,5205 -2295,4445 -1671,4805" fill="#00000044" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
-<text x="-2187" y="5123" textAnchor="middle" fontSize="12" fill="#111">EW_8</text>
+<polygon points="-2078,5040 -1758,4855 -2382,4495 -2702,4680" fill="#7d6608" fill-opacity="0.92" stroke="#7d6608" stroke-width="2"/>
+<polygon points="-2078,5800 -1758,5615 -1758,4855 -2078,5040" fill="#00000022" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
+<polygon points="-1758,5615 -2382,5255 -2382,4495 -1758,4855" fill="#00000044" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
+<text x="-2230" y="5148" textAnchor="middle" fontSize="12" fill="#111">EW_4</text>
 <polygon points="2685,5690 5517,4055 4893,3695 2061,5330" fill="#7d6608" fill-opacity="0.92" stroke="#7d6608" stroke-width="2"/>
 <polygon points="2685,6450 5517,4815 5517,4055 2685,5690" fill="#00000022" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
 <polygon points="5517,4815 4893,4455 4893,3695 5517,4055" fill="#00000044" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
@@ -306,10 +306,6 @@
 <polygon points="6928,7968 8227,7218 8227,5718 6928,6468" fill="#00000022" fill-opacity="1.0" stroke="#2874a6" stroke-width="2"/>
 <polygon points="8227,7218 7361,6718 7361,5218 8227,5718" fill="#00000044" fill-opacity="1.0" stroke="#2874a6" stroke-width="2"/>
 <text x="7145" y="6593" textAnchor="middle" fontSize="12" fill="#111">HYDRO_SET</text>
-<polygon points="-866,4340 -546,4155 -1169,3795 -1490,3980" fill="#7d6608" fill-opacity="0.92" stroke="#7d6608" stroke-width="2"/>
-<polygon points="-866,5100 -546,4915 -546,4155 -866,4340" fill="#00000022" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
-<polygon points="-546,4915 -1169,4555 -1169,3795 -546,4155" fill="#00000044" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
-<text x="-1018" y="4448" textAnchor="middle" fontSize="12" fill="#111">EW_4</text>
 <polygon points="-10392,4000 -9093,3250 -9959,2750 -11258,3500" fill="#7b241c" fill-opacity="0.92" stroke="#7b241c" stroke-width="2"/>
 <polygon points="-10392,5500 -9093,4750 -9093,3250 -10392,4000" fill="#00000022" fill-opacity="1.0" stroke="#7b241c" stroke-width="2"/>
 <polygon points="-9093,4750 -9959,4250 -9959,2750 -9093,3250" fill="#00000044" fill-opacity="1.0" stroke="#7b241c" stroke-width="2"/>
@@ -330,6 +326,10 @@
 <polygon points="-8833,4900 -7794,4300 -7794,3500 -8833,4100" fill="#00000022" fill-opacity="1.0" stroke="#a04000" stroke-width="2"/>
 <polygon points="-7794,4300 -8314,4000 -8314,3200 -7794,3500" fill="#00000044" fill-opacity="1.0" stroke="#a04000" stroke-width="2"/>
 <text x="-8574" y="4050" textAnchor="middle" fontSize="12" fill="#111">GLASS_RINSE</text>
+<polygon points="6322,3590 6729,3355 6105,2995 5698,3230" fill="#7d6608" fill-opacity="0.92" stroke="#7d6608" stroke-width="2"/>
+<polygon points="6322,4350 6729,4115 6729,3355 6322,3590" fill="#00000022" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
+<polygon points="6729,4115 6105,3755 6105,2995 6729,3355" fill="#00000044" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
+<text x="6214" y="3673" textAnchor="middle" fontSize="12" fill="#111">EW_5</text>
 <polygon points="-4157,2450 -3464,2050 -4157,1650 -4850,2050" fill="#d68910" fill-opacity="0.92" stroke="#d68910" stroke-width="2"/>
 <polygon points="-4157,3650 -3464,3250 -3464,2050 -4157,2450" fill="#00000022" fill-opacity="1.0" stroke="#d68910" stroke-width="2"/>
 <polygon points="-3464,3250 -4157,2850 -4157,1650 -3464,2050" fill="#00000044" fill-opacity="1.0" stroke="#d68910" stroke-width="2"/>
@@ -353,7 +353,7 @@
 <polygon points="4503,2940 4910,2705 4287,2345 3880,2580" fill="#7d6608" fill-opacity="0.92" stroke="#7d6608" stroke-width="2"/>
 <polygon points="4503,3700 4910,3465 4910,2705 4503,2940" fill="#00000022" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
 <polygon points="4910,3465 4287,3105 4287,2345 4910,2705" fill="#00000044" fill-opacity="1.0" stroke="#7d6608" stroke-width="2"/>
-<text x="4395" y="3023" textAnchor="middle" fontSize="12" fill="#111">EW_5</text>
+<text x="4395" y="3023" textAnchor="middle" fontSize="12" fill="#111">EW_6</text>
 <polygon points="-9180,2900 -8487,2500 -9007,2200 -9699,2600" fill="#a04000" fill-opacity="0.92" stroke="#a04000" stroke-width="2"/>
 <polygon points="-9180,3700 -8487,3300 -8487,2500 -9180,2900" fill="#00000022" fill-opacity="1.0" stroke="#a04000" stroke-width="2"/>
 <polygon points="-8487,3300 -9007,3000 -9007,2200 -8487,2500" fill="#00000044" fill-opacity="1.0" stroke="#a04000" stroke-width="2"/>

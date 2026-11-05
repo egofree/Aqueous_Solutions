@@ -38,3 +38,5 @@ N36,DN15,Class 150,mineral nitrate solution to the raceway,outlet,600
 N37,DN15,Class 150,mineral nitrate solution to the media beds,outlet,600
 N38,DN15,Class 150,mineral calcium carbonate (free-choice hopper),outlet,600
 N39,DN15,Class 150,phosphorus-FR finish (reagent manifest),outlet,600
+N40,solids,Class 150,feedstock make-up (dock import),outlet,600
+N41,solids,Class 150,finished-goods surplus export,inlet,160

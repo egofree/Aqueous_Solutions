@@ -4,10 +4,10 @@
 PROGRAM PLC_ELEC_CTRL
 VAR
   (* 100 ms cyclic task per AQS-CTL-002 *)
-  ZNBR2FT-01_PV : REAL ;  (* S69 normal 42.51 L/h )
-  ZNBR2FT-02_PV : REAL ;  (* IA-ZNBR-BD normal 0.32 L/h )
-  ZNBR2FT-03_PV : REAL ;  (* IA-ZNBR-HEAT normal 2.53 L/h )
-  ZNBR2FT-04_PV : REAL ;  (* IA-ZNBR-H2 normal 0.03 L/h )
+  ZNBR2FT-01_PV : REAL ;  (* S69 normal 32.64 L/h )
+  ZNBR2FT-02_PV : REAL ;  (* IA-ZNBR-BD normal 0.33 L/h )
+  ZNBR2FT-03_PV : REAL ;  (* IA-ZNBR-HEAT normal 1.94 L/h )
+  ZNBR2FT-04_PV : REAL ;  (* IA-ZNBR-H2 normal 0.02 L/h )
   ZNBR2LT-01_PV : REAL ;  (* A-M-182 liquid height )
   ZNBR2PT-01_PV : REAL ;  (* no design pressure on the graph )
   ZNBR2TE-01_PV : REAL ;  (* band by service )
@@ -27,7 +27,7 @@ VAR
   PV_ARRAYTE-01_PV : REAL ;  (* band by service )
   RECTIFIERPT-01_PV : REAL ;  (* no design pressure on the graph )
   RECTIFIERTE-01_PV : REAL ;  (* band by service )
-  ZNBR2_BR2_REGENFT-01_PV : REAL ;  (* S69B normal 42.51 L/h )
+  ZNBR2_BR2_REGENFT-01_PV : REAL ;  (* S69B normal 32.64 L/h )
   ZNBR2_BR2_REGENLT-01_PV : REAL ;  (* A-M-182 liquid height )
   ZNBR2_BR2_REGENPT-01_PV : REAL ;  (* no design pressure on the graph )
   ZNBR2_BR2_REGENTE-01_PV : REAL ;  (* band by service )
@@ -36,28 +36,28 @@ VAR
 END_VAR
 
   (* FLOW control loop - set-point from the graph basis *)
-  ZNBR2FT-01_SP := 42.51 ;  (* graph basis: S69 normal 42.51 L/h )
+  ZNBR2FT-01_SP := 32.64 ;  (* graph basis: S69 normal 32.64 L/h )
   FB_PI_ZNBR2FT-01( PV := ZNBR2FT-01_PV, SP := ZNBR2FT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  ZNBR2FT-01_ALARM_HI := 46.761 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  ZNBR2FT-01_ALARM_LO := 38.259 ;
+  ZNBR2FT-01_ALARM_HI := 35.904 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  ZNBR2FT-01_ALARM_LO := 29.376 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  ZNBR2FT-02_SP := 0.32 ;  (* graph basis: IA-ZNBR-BD normal 0.32 L/h )
+  ZNBR2FT-02_SP := 0.33 ;  (* graph basis: IA-ZNBR-BD normal 0.33 L/h )
   FB_PI_ZNBR2FT-02( PV := ZNBR2FT-02_PV, SP := ZNBR2FT-02_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  ZNBR2FT-02_ALARM_HI := 0.35200000000000004 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  ZNBR2FT-02_ALARM_LO := 0.28800000000000003 ;
+  ZNBR2FT-02_ALARM_HI := 0.36300000000000004 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  ZNBR2FT-02_ALARM_LO := 0.29700000000000004 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  ZNBR2FT-03_SP := 2.53 ;  (* graph basis: IA-ZNBR-HEAT normal 2.53 L/h )
+  ZNBR2FT-03_SP := 1.94 ;  (* graph basis: IA-ZNBR-HEAT normal 1.94 L/h )
   FB_PI_ZNBR2FT-03( PV := ZNBR2FT-03_PV, SP := ZNBR2FT-03_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  ZNBR2FT-03_ALARM_HI := 2.783 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  ZNBR2FT-03_ALARM_LO := 2.2769999999999997 ;
+  ZNBR2FT-03_ALARM_HI := 2.134 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  ZNBR2FT-03_ALARM_LO := 1.746 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  ZNBR2FT-04_SP := 0.03 ;  (* graph basis: IA-ZNBR-H2 normal 0.03 L/h )
+  ZNBR2FT-04_SP := 0.02 ;  (* graph basis: IA-ZNBR-H2 normal 0.02 L/h )
   FB_PI_ZNBR2FT-04( PV := ZNBR2FT-04_PV, SP := ZNBR2FT-04_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  ZNBR2FT-04_ALARM_HI := 0.033 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  ZNBR2FT-04_ALARM_LO := 0.027 ;
+  ZNBR2FT-04_ALARM_HI := 0.022000000000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  ZNBR2FT-04_ALARM_LO := 0.018000000000000002 ;
 
   (* LEVEL monitoring block - indication, no set-point invented )
   FB_AI_ZNBR2LT-01( PV := ZNBR2LT-01_PV );
@@ -141,10 +141,10 @@ END_VAR
   RECTIFIERTE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* FLOW control loop - set-point from the graph basis *)
-  ZNBR2_BR2_REGENFT-01_SP := 42.51 ;  (* graph basis: S69B normal 42.51 L/h )
+  ZNBR2_BR2_REGENFT-01_SP := 32.64 ;  (* graph basis: S69B normal 32.64 L/h )
   FB_PI_ZNBR2_BR2_REGENFT-01( PV := ZNBR2_BR2_REGENFT-01_PV, SP := ZNBR2_BR2_REGENFT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  ZNBR2_BR2_REGENFT-01_ALARM_HI := 46.761 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  ZNBR2_BR2_REGENFT-01_ALARM_LO := 38.259 ;
+  ZNBR2_BR2_REGENFT-01_ALARM_HI := 35.904 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  ZNBR2_BR2_REGENFT-01_ALARM_LO := 29.376 ;
 
   (* LEVEL monitoring block - indication, no set-point invented )
   FB_AI_ZNBR2_BR2_REGENLT-01( PV := ZNBR2_BR2_REGENLT-01_PV );

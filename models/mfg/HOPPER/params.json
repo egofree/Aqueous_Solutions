@@ -98,6 +98,14 @@
    "service": "frass compost to the solids line",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N11",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "feedstock make-up (dock import)",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "Carbon steel. Hydrocarbon. No aqueous chloride in this vessel. Corrosion allowance 1.5 mm. Pit rate is not measured.",

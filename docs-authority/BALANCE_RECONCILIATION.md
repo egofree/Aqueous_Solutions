@@ -20,8 +20,8 @@ This page records how the plant mass balance is reconciled. The method is minimu
 
 X-SAF-10 corrected the peroxide cell feed from 3.0 kg/d O2 to 0.176 kg/d O2 (Faraday) plus 2.824 kg/d make-up water from ROOF_TANK, and took that water off S40. It did not propagate: TERRACE_IRRIG still transpired 40 kg/d on 37.176 kg/d irrigation, and the cold box still made 2.824 kg/d O2 that nothing drew. Revision A reconciled the two by least squares (IA-TERR-VAP -2.824, IA-O2-RET +2.824) and smeared small moves over 361 edges. Hypothesis tested: missing photosynthetic O2 from the terrace. Rejected for this cut: the terrace has no CO2 supply and no harvest edge, so net CO2 + H2O -> CH2O + O2 fixation there is zero (TAIZ2015), and the sign is wrong (the terrace was short water, the header long O2). Fix: Revision A moves withdrawn; T1-T5 in balance.physics. X-PAR-11 (T6): GROW_BED fixes the 19.0 kg/d CO2 dosed to it (S04 + S89); its photosynthetic O2, 32/44 x CO2 at PQ 1.0, leaves on S87 to CRYO_O2 instead of the trim lump; the trim, compost and nutrient surplus pass the difference; the cold box extracts that much less O2 and the leach dissolved-gas edge falls with it, now asserted under the Henry-law bound (SANDER2015). CO2 edges carry CO2 composition. Verification: T-PAR-02 (A-M-123).
 
-Mass edges 462; held by a transfer function or stoichiometry 433; reconciled 29. Units 156.
-Before: 4 units out of balance (sum of residuals 0.002 kg/d). After: max unit residual 7.18e-04 kg/d. Negative rates after reconciliation: 0.
+Mass edges 465; held by a transfer function or stoichiometry 439; reconciled 26. Units 156.
+Before: 3 units out of balance (sum of residuals 0.001 kg/d). After: max unit residual 3.60e-04 kg/d. Negative rates after reconciliation: 0.
 
 ## 3. Units out of balance before reconciliation
 
@@ -32,7 +32,6 @@ Table 3.1. Unit residual before reconciliation
 | Unit | In - out, kg/d |
 | --- | --- |
 | BLOW_MOLD | -0.0004 |
-| COLD_MILL | -0.0007 |
 | VCD_TRAIN | -0.0004 |
 | ZNBR2 | -0.0004 |
 
@@ -49,14 +48,15 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | export | IA-CA-CL2-SHIP | chlorine byproduct export (water-treatme | 0.097 |
 | export | IA-CL2-SHIP | chlorine byproduct export (water-treatme | 39.419 |
 | export | IA-CR-VENT | chlorinator CO (fuel-gas class export) | 0.202 |
+| export | IA-GOODS-SHIP | finished-goods surplus export | 331.854 |
 | export | IA-GYPSUM-SHIP | fluorgypsum (anhydrite) cake byproduct | 0.576 |
 | export | IA-KROLL-CO | chlorinator CO (fuel-gas class export) | 0.585 |
 | export | IA-MEOH-SHIP | methanol shipped at the dock | 28.729 |
 | export | IA-METAL-SHIP | surplus foundry metal export (pot-line p | 10.812 |
 | export | IA-MO-VENT | chlorinator CO2 (vent class) | 0.043 |
-| export | IA-N2-VENT | nitrogen vent | 20.064 |
+| export | IA-N2-VENT | nitrogen vent | 17.618 |
 | export | IA-NA-PURGE | sodium salt purge equal to the make-up m | 4.394 |
-| export | IA-O2-SHIP | O2 cylinders shipped at the dock | 0.096 |
+| export | IA-O2-SHIP | O2 cylinders shipped at the dock | 14.919 |
 | export | IA-SHELL-EXPORT | spent foundry silica (solids return clas | 1.0 |
 | import | CA_HOPPER | mineral calcium carbonate (free-choice h | 0.035 |
 | import | FR_FINISH | phosphorus-FR finish (reagent manifest) | 0.002 |
@@ -67,7 +67,8 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | import | IA-CACL2-MU | CaCl2 brine concentrate (mining-waste cl | 0.152 |
 | import | IA-CAF2-MU | fluorspar make-up, acid-spar class >= 97 | 0.326 |
 | import | IA-CR2O3-MU | Cr2O3-equivalent chromite concentrate (d | 0.365 |
-| import | IA-H2O-MU | water make-up for H and O leaving as pro | 52.662 |
+| import | IA-FEED-MU | feedstock make-up (dock import) | 65.547 |
+| import | IA-H2O-MU | water make-up for H and O leaving as pro | 331.346 |
 | import | IA-H2SO4-MU | 98 wt% sulfuric acid make-up | 0.404 |
 | import | IA-MGCL2-MU | CaCl2-MgCl2 brine concentrate (mining-wa | 0.04 |
 | import | IA-MOO3-MU | MoO3-equivalent concentrate (dock import | 0.094 |
@@ -79,7 +80,7 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | import | NUT_AQUA | mineral nitrate solution to the raceway | 5.5 |
 | import | NUT_AQUA_BED | mineral nitrate solution to the media be | 1.0 |
 
-**Net trade: +0.000 kg/d** (exports 116.987 - imports 116.987); dock ledger residual +0.002 kg/d (reported, exempt per D-DOCK).
+**Net trade: -0.000 kg/d** (exports 461.218 - imports 461.218); dock ledger residual +0.001 kg/d (reported, exempt per D-DOCK).
 
 ## 4. Moves outside measurement tolerance (2 % of the rate, 1 g/d floor); must be empty
 
@@ -119,7 +120,7 @@ Table 6.1. Stoichiometric edges
 
 ## 5. Transfer functions for the study edges (closure layer complete)
 
-29 study edges: 25 closure transfer functions (rate = balance of the named unit, solved in elimination order) and 4 design inputs (independent rates with their stated basis; each is replaced when its unit sizing task issues a calculation). Re-derivation of every closure from the inputs reproduces the graph to 8.3e-12 kg/d.
+26 study edges: 22 closure transfer functions (rate = balance of the named unit, solved in elimination order) and 4 design inputs (independent rates with their stated basis; each is replaced when its unit sizing task issues a calculation). Re-derivation of every closure from the inputs reproduces the graph to 8.3e-12 kg/d.
 
 | Edge | Role | Closes unit | Rate kg/d | Basis |
 | --- | --- | --- | --- | --- |
@@ -129,11 +130,9 @@ Table 6.1. Stoichiometric edges
 | HF_GEN_TO_VDF | closure | HF_GEN | 0.0937 | Aqueous HF to VDF: 0.15 kg/d VDF x 2 HF/VDF (2 CH3OH + 2 Cl2 + 2 HF -> CH2=CF2 + 4 HCl + 2 |
 | IA-COAT-OUT | closure | ELECTRODE_COAT | 0.0200 | Coated anode back to EW-1. Net zero. |
 | IA-CRU-01 | closure | LEACH_CSTR_1 | 27.5100 | CRU liquor re-solved on the unit balance: S66 27.3720 + dilute HCl returns 0.7537 - Cl2 dr |
-| IA-EW-SHEET | closure | EW_9 | 13.9889 | AQS-DUTY-019. No vent. Goods and gases return. |
 | IA-LITHO-CARRY | closure | LITHO_COAT | 0.9875 | Resist/solvent carry coat -> develop at the fab issue rate (the coated wafers ride the too |
-| IA-MILL-LOSS | closure | GLASS_MILL | 6.8200 | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |
+| IA-MILL-LOSS | closure | BAGHOUSE | 6.8200 | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |
 | IA-OIL-03 | closure | NCG_HEADER | 5.0000 | AQS-DUTY-010: NCG C1-C4 = DUTY-008 afterburner fuel (CO2 15.0 / 3.002) |
-| IA-WIRE-LOSS | closure | WIRE_DRAW | 0.4400 | AQS-DUTY-012 Rev N. |
 | NCG_TO_AB | closure | AFTERBURNER | 5.0000 | AQS-DUTY-010: = IA-OIL-03 (header pass-through) |
 | POLYF_TO_POWDER | closure | POWDER_RESIN | 0.0900 | PTFE resin to the powder line: 0.10 kg/d TFE -> 0.09 kg/d at the ~90 % yield of the AQS-RA |
 | POWDER_TO_STOCK | closure | POLY_STOCK | 0.0900 | PTFE fine powder to stock (A-M-289). |
@@ -141,7 +140,6 @@ Table 6.1. Stoichiometric edges
 | S11 | closure | GROW_BED | 0.8000 | Study farm/galley organics return order ~fraction of S14 (AQS-AUD-001 §12) |
 | S32 | closure | WS_PEROX | 3.0000 | AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | value restored fr |
 | S38 | closure | WET_BENCH | 0.0060 | AQS-DUTY-010: ST-LITHO-01 resist waste 6 g/d |
-| S57 | closure | MET_MELT | 6.8389 | AQS-DUTY-010: Cu deposit 8.784 x 0.5 to wire, less melt fume 0.3% | value restored from gr |
 | S71 | closure | MET_AHU | 20458.3200 | AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converte |
 | S72B | closure | MET_SCRUB | 0.0158 | AQS-DUTY-010: lubricant mist 2.0 g/kg formed x 7.89 kg/d |
 | S76 | closure | MEOH_FC | 5.0000 | Matches mid Source-A synth ~2–8 kg/d MeOH (AQS-MeOH-001); fuel to MEOH_FC |

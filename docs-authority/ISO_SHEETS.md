@@ -1,7 +1,7 @@
 # Isometric sheet data (no SVG: the isometric presentation retired 2026-10-27)
 
 Document number: AQS-ISO-002
-Status. 398 routed lines; waiting on placements 15. Pipe 7872 m, elbows 1157, flanges 796, joints 3819.
+Status. 399 routed lines; waiting on placements 15. Pipe 7892 m, elbows 1160, flanges 798, joints 3829.
 
 Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow take-off ASME B16.9 long-radius (metal) or 0.5 x OD (thermoplastic, A-M-121); 6 m random lengths; flanges at both nozzles; ASME B16.5 Class 150 bolting; OD ASME B36.10M. Not checked here: clashes with structure and other lines along the rack (X-PIP-04 with supports and stress).
 
@@ -112,7 +112,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | S67 | AFTERBURNER_FLUE | FLUE_KO | 15 | F1 | 12.64 | 3 |
 | S67B | FLUE_KO | CRYO_CO2 | 15 | M1 | 31.67 | 3 |
 | S68 | CRYO_AHU | LEACH_CSTR_1 | 15 | P2 | 17.94 | 3 |
-| S69 | ZNBR2 | ZNBR2_BR2_REGEN | 40 | P3 | 7.36 | 3 |
+| S69 | ZNBR2 | ZNBR2_BR2_REGEN | 32 | P3 | 7.38 | 3 |
 | S69B | ZNBR2_BR2_REGEN | ZNBR2 | 15 | P1 | 7.44 | 3 |
 | S70 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | 15 | P1 | 9.64 | 3 |
 | S71 | MET_AHU | MET_SCRUB | 200 | F1 | 7.14 | 3 |
@@ -181,7 +181,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | S90 | HABITATION | HDR_CO2 | 15 | P3 | 13.74 | 3 |
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | 50 | P2 | 22.87 | 3 |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | 15 | P2 | 19.39 | 3 |
-| HL-Q4-REJ | Q4_BUS | DRY_COOLER | 50 | M1 | 24.96 | 3 |
+| HL-Q4-REJ | Q4_BUS | DRY_COOLER | 40 | M1 | 25.08 | 3 |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | 15 | P1 | 22.43 | 3 |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | 15 | P5 | 27.99 | 3 |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | 15 | P5 | 18.09 | 3 |
@@ -199,7 +199,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | IA-LEACH-BD | LEACH_CSTR_1 | NUTRIENT_DOSE | 15 | P2 | 33.59 | 3 |
 | IA-VCD-BD | VCD_TRAIN | LEACH_CSTR_1 | 15 | P2 | 21.84 | 3 |
 | IA-FC-EXH | MEOH_FC | NOX_SCRUB | 15 | F1 | 11.08 | 3 |
-| IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | 50 | P1 | 36.89 | 3 |
+| IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | 40 | P1 | 36.92 | 3 |
 | IA-Q1A-LOSS | Q1_A | BOUNDARY_EXPORT | 15 | P1 | 8.54 | 3 |
 | IA-Q1B-LOSS | Q1_B | BOUNDARY_EXPORT | 15 | P1 | 25.94 | 3 |
 | IA-Q2A-LOSS | Q2_A | BOUNDARY_EXPORT | 15 | P1 | 8.79 | 3 |
@@ -407,6 +407,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | DL_MET_TO_FEED | MET_SYN | CHICKEN_COOP | 15 | P1 | 15.59 | 3 |
 | IA-DC-REJ | DRY_COOLER | ATMOS | 50 | P1 | 24.42 | 3 |
 | IA-ZNBR-H2 | ZNBR2 | HDR_H2 | 15 | P1 | 21.83 | 3 |
+| IA-MET-AIR-MU | HDR_N2 | MET_AHU | 15 | M1 | 20.17 | 3 |
 
 Waiting on placements:
 - LB-FEED (LB_INTAKE unplaced)

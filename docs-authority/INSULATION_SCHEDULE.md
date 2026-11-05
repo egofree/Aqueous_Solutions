@@ -29,7 +29,7 @@ Other abbreviations are in `docs-authority/GLOSSARY.md`.
 
 Method: radial conduction in series with an outer coefficient of 10.0 W/(m2 K) (ASTM_C680). Hot items above 50.0 C: smallest standard thickness giving a surface at or below 50.0 C (ASTM_C1055 contact threshold about 60 C). Cold items: surface at least 1 K above the dew point 16.7 C of 25.0 C / 60 % RH air (ASHRAE_FUND2021_PSY). Vessel losses include 30 % for heads and nozzles.
 
-Total insulation 4.957 m3; total loss 19.447 kW hot, -100.7 W gain cold.
+Total insulation 4.959 m3; total loss 19.457 kW hot, -100.7 W gain cold.
 
 Heat-ladder lines (HL-*) also carry a heat-conservation limit: loss at most 10 % of the rated loop duty. Lines that cannot meet it even at 200 mm are marked (limit not met) in Table 4.1; their loss fraction is carried to X-THM-01 (heat ladder duty balance).
 
@@ -40,7 +40,7 @@ Table 4.1. Insulation schedule
 | Item | Kind | DN/D mm | T C | Duty | Material | Thickness mm | Surface C | Loss W/m | Length m | Loss W | Loss / duty |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | OIL_PYRO | vessel | 200 | 500.0 | hot, personnel protection and heat conservation | mineral wool (ASTM C547), SS cladding | 125 | 45.8 | 294.7 | 0.17 | 65.1 |  |
-| H2_DRYER | vessel | 60 | 250.0 | hot, personnel protection and heat conservation | mineral wool (ASTM C547), SS cladding | 38 | 47.7 | 97.07 | 0.625 | 78.9 |  |
+| H2_DRYER | vessel | 60 | 250.0 | hot, personnel protection and heat conservation | mineral wool (ASTM C547), SS cladding | 38 | 47.7 | 97.07 | 0.704 | 88.8 |  |
 | MEOH_SYNTH | vessel | 114 | 250 | hot, personnel protection and heat conservation | mineral wool (ASTM C547), SS cladding | 50 | 44.1 | 128.39 | 2.085 | 348.0 |  |
 | POLY_OLEFIN | vessel | 150 | 250.0 | hot, personnel protection and heat conservation | mineral wool (ASTM C547), SS cladding | 50 | 45.1 | 157.55 | 0.225 | 46.1 |  |
 | HL-Q3-A-HX4 | line | 15 | 95.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 200 | 25.5 | 7.21 | 7.57 | 54.6 | 0.181 (limit not met) |
@@ -106,7 +106,7 @@ Table 5.1. Store closure
 | Q4_B | 0.0000 | 0.0000 |
 | Q4_BUS | 0.0000 | 0.0010 |
 
-Each store closes on the graph rates (in = out within 0.01 kW). Line losses pass down the ladder as less heat on the downhill steps and end as 0.000 kW less rejected on HL-Q4-REJ, which closes Q4_BUS at 67.5107 kW. No electric trim is added: Q4 rejects a surplus in normal operation.
+Each store closes on the graph rates (in = out within 0.01 kW). Line losses pass down the ladder as less heat on the downhill steps and end as 0.000 kW less rejected on HL-Q4-REJ, which closes Q4_BUS at 48.0316 kW. No electric trim is added: Q4 rejects a surplus in normal operation.
 
 ## 6. Heat-ladder line losses (X-THM-04, A-M-165)
 

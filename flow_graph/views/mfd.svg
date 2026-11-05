@@ -263,7 +263,7 @@
 <title>CRYO_N2&#45;&gt;AIR_RECEIVER</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1723.68,-1080.55C1738.85,-1096.74 1761.2,-1120.6 1778.12,-1138.67"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1775.61,-1141.11 1785.01,-1146.02 1780.72,-1136.33 1775.61,-1141.11"/>
-<text text-anchor="middle" x="1703.9" y="-1112.21" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S84\n191.989014 kg/d</text>
+<text text-anchor="middle" x="1703.9" y="-1112.21" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S84\n194.435814 kg/d</text>
 </g>
 <!-- WAFER_FAB -->
 <g id="node20" class="node">
@@ -309,7 +309,7 @@
 <title>CRYO_O2&#45;&gt;HDR_O2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1837.11,-1073.95C1841.39,-1178.11 1862.79,-1698.73 1868.04,-1826.41"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1864.55,-1826.7 1868.45,-1836.55 1871.54,-1826.42 1864.55,-1826.7"/>
-<text text-anchor="middle" x="1808.07" y="-1452.78" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S83\n29.833989 kg/d</text>
+<text text-anchor="middle" x="1808.07" y="-1452.78" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S83\n44.657506 kg/d</text>
 </g>
 <!-- HABITATION -->
 <g id="node44" class="node">
@@ -365,23 +365,23 @@
 <!-- BOUNDARY_EXPORT -->
 <g id="node13" class="node">
 <title>BOUNDARY_EXPORT</title>
-<path fill="#fde68a" stroke="black" d="M1000.48,-415.28C1000.48,-415.28 764.48,-415.28 764.48,-415.28 758.48,-415.28 752.48,-409.28 752.48,-403.28 752.48,-403.28 752.48,-391.28 752.48,-391.28 752.48,-385.28 758.48,-379.28 764.48,-379.28 764.48,-379.28 1000.48,-379.28 1000.48,-379.28 1006.48,-379.28 1012.48,-385.28 1012.48,-391.28 1012.48,-391.28 1012.48,-403.28 1012.48,-403.28 1012.48,-409.28 1006.48,-415.28 1000.48,-415.28"/>
-<text text-anchor="middle" x="882.48" y="-400.08" font-family="Helvetica,sans-Serif" font-size="9.00">BOUNDARY_EXPORT</text>
-<text text-anchor="middle" x="882.48" y="-390.08" font-family="Helvetica,sans-Serif" font-size="9.00">DOCK export boundary — no inter&#45;block S## for go…</text>
+<path fill="#fde68a" stroke="black" d="M1168.48,-475.28C1168.48,-475.28 932.48,-475.28 932.48,-475.28 926.48,-475.28 920.48,-469.28 920.48,-463.28 920.48,-463.28 920.48,-451.28 920.48,-451.28 920.48,-445.28 926.48,-439.28 932.48,-439.28 932.48,-439.28 1168.48,-439.28 1168.48,-439.28 1174.48,-439.28 1180.48,-445.28 1180.48,-451.28 1180.48,-451.28 1180.48,-463.28 1180.48,-463.28 1180.48,-469.28 1174.48,-475.28 1168.48,-475.28"/>
+<text text-anchor="middle" x="1050.48" y="-460.08" font-family="Helvetica,sans-Serif" font-size="9.00">BOUNDARY_EXPORT</text>
+<text text-anchor="middle" x="1050.48" y="-450.08" font-family="Helvetica,sans-Serif" font-size="9.00">DOCK export boundary — no inter&#45;block S## for go…</text>
 </g>
 <!-- NORTH_DOCK -->
 <g id="node14" class="node">
 <title>NORTH_DOCK</title>
-<path fill="#fde68a" stroke="black" d="M1168.48,-475.28C1168.48,-475.28 932.48,-475.28 932.48,-475.28 926.48,-475.28 920.48,-469.28 920.48,-463.28 920.48,-463.28 920.48,-451.28 920.48,-451.28 920.48,-445.28 926.48,-439.28 932.48,-439.28 932.48,-439.28 1168.48,-439.28 1168.48,-439.28 1174.48,-439.28 1180.48,-445.28 1180.48,-451.28 1180.48,-451.28 1180.48,-463.28 1180.48,-463.28 1180.48,-469.28 1174.48,-475.28 1168.48,-475.28"/>
-<text text-anchor="middle" x="1050.48" y="-460.08" font-family="Helvetica,sans-Serif" font-size="9.00">NORTH_DOCK</text>
-<text text-anchor="middle" x="1050.48" y="-450.08" font-family="Helvetica,sans-Serif" font-size="9.00">Dedicated hydro_dock_pfd.png (graph&#45;bridged); ca…</text>
+<path fill="#fde68a" stroke="black" d="M1000.48,-415.28C1000.48,-415.28 764.48,-415.28 764.48,-415.28 758.48,-415.28 752.48,-409.28 752.48,-403.28 752.48,-403.28 752.48,-391.28 752.48,-391.28 752.48,-385.28 758.48,-379.28 764.48,-379.28 764.48,-379.28 1000.48,-379.28 1000.48,-379.28 1006.48,-379.28 1012.48,-385.28 1012.48,-391.28 1012.48,-391.28 1012.48,-403.28 1012.48,-403.28 1012.48,-409.28 1006.48,-415.28 1000.48,-415.28"/>
+<text text-anchor="middle" x="882.48" y="-400.08" font-family="Helvetica,sans-Serif" font-size="9.00">NORTH_DOCK</text>
+<text text-anchor="middle" x="882.48" y="-390.08" font-family="Helvetica,sans-Serif" font-size="9.00">Dedicated hydro_dock_pfd.png (graph&#45;bridged); ca…</text>
 </g>
 <!-- NORTH_DOCK&#45;&gt;BOUNDARY_EXPORT -->
 <g id="edge1" class="edge">
 <title>NORTH_DOCK&#45;&gt;BOUNDARY_EXPORT</title>
-<path fill="none" stroke="#1b5e20" stroke-width="2.2" stroke-dasharray="5,2" d="M1000.07,-439.28C982.05,-432.84 961.55,-425.52 942.78,-418.82"/>
-<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="2.2" points="943.73,-415.44 933.14,-415.37 941.38,-422.03 943.73,-415.44"/>
-<text text-anchor="middle" x="911.42" y="-431.65" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">DOCK_EXPORT_TBD\n0.0 kg/d</text>
+<path fill="none" stroke="#1b5e20" stroke-width="2.2" stroke-dasharray="5,2" d="M932.88,-415.28C950.91,-421.72 971.4,-429.04 990.18,-435.75"/>
+<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="2.2" points="989.22,-439.12 999.82,-439.19 991.58,-432.53 989.22,-439.12"/>
+<text text-anchor="middle" x="901.53" y="-428.12" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">DOCK_EXPORT_TBD\n0.0 kg/d</text>
 </g>
 <!-- NOX_SCRUB -->
 <g id="node39" class="node">
@@ -426,14 +426,14 @@
 <title>ZNBR2&#45;&gt;ZNBR2_BR2_REGEN</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M2410.71,-1465.22C2411.15,-1462.14 2411.43,-1458.88 2411.55,-1455.61"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="2415.05,-1455.3 2411.36,-1445.36 2408.05,-1455.42 2415.05,-1455.3"/>
-<text text-anchor="middle" x="2461.13" y="-1454.02" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n1020.122235 kg/d</text>
+<text text-anchor="middle" x="2458.13" y="-1454.02" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n783.363528 kg/d</text>
 </g>
 <!-- ZNBR2_BR2_REGEN&#45;&gt;ZNBR2 -->
 <g id="edge57" class="edge">
 <title>ZNBR2_BR2_REGEN&#45;&gt;ZNBR2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M2393.69,-1445.26C2393.23,-1448.34 2392.93,-1451.6 2392.82,-1454.87"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="2389.32,-1455.2 2393.05,-1465.12 2396.32,-1455.05 2389.32,-1455.2"/>
-<text text-anchor="middle" x="2340.75" y="-1452.67" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n1020.122235 kg/d</text>
+<text text-anchor="middle" x="2343.25" y="-1452.67" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n783.363528 kg/d</text>
 </g>
 <!-- FAB_UPW_TANK -->
 <g id="node19" class="node">
@@ -710,7 +710,7 @@
 <title>H2_DRYER&#45;&gt;CRYO_H2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1786.39,-1793.58C1785.56,-1684.44 1781.25,-1118.55 1780.24,-984.89"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1783.74,-984.63 1780.16,-974.66 1776.74,-984.69 1783.74,-984.63"/>
-<text text-anchor="middle" x="1741.31" y="-1391.84" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S64\n2.750425 kg/d</text>
+<text text-anchor="middle" x="1741.31" y="-1391.84" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S64\n0.882545 kg/d</text>
 </g>
 <!-- RELIEF_H2 -->
 <g id="node40" class="node">
@@ -788,7 +788,7 @@
 <title>HABITATION&#45;&gt;GREY_TREAT</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M2158.26,-447.7C2143.44,-485.75 2109.05,-574.06 2091.45,-619.26"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="2088.13,-618.15 2087.76,-628.74 2094.65,-620.69 2088.13,-618.15"/>
-<text text-anchor="middle" x="2077.85" y="-536.08" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S12\n326.991631 kg/d</text>
+<text text-anchor="middle" x="2077.85" y="-536.08" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S12\n326.904971 kg/d</text>
 </g>
 <!-- HDR_CO2&#45;&gt;GROW_BED -->
 <g id="edge78" class="edge">
@@ -861,7 +861,7 @@
 <title>COLD_MILL&#45;&gt;MFG_SHOP</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" stroke-dasharray="5,2" d="M619.49,-1199.75C613.95,-1183.49 605.78,-1159.48 599.43,-1140.84"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="602.66,-1139.47 596.12,-1131.13 596.03,-1141.72 602.66,-1139.47"/>
-<text text-anchor="middle" x="567.46" y="-1172.9" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S59\n3.950359 kg/d</text>
+<text text-anchor="middle" x="572.96" y="-1172.9" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S59\n4.3921 kg/d</text>
 </g>
 <!-- GAS_ATOMIZER -->
 <g id="node52" class="node">
@@ -874,7 +874,7 @@
 <title>GAS_ATOMIZER&#45;&gt;MFG_SHOP</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" stroke-dasharray="5,2" d="M634.61,-1113.05C633.98,-1113.05 633.34,-1113.05 632.7,-1113.05"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="632.5,-1109.55 622.5,-1113.05 632.5,-1116.55 632.5,-1109.55"/>
-<text text-anchor="middle" x="591.66" y="-1115.65" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S60\n3.200359 kg/d</text>
+<text text-anchor="middle" x="597.16" y="-1115.65" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S60\n3.1999 kg/d</text>
 </g>
 <!-- MET_AHU -->
 <g id="node53" class="node">
@@ -919,7 +919,7 @@
 <title>MET_MELT&#45;&gt;WIRE_DRAW</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" stroke-dasharray="5,2" d="M658.95,-1082.31C669.55,-1109.06 689.36,-1159.07 701.75,-1190.35"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="698.55,-1191.79 705.49,-1199.8 705.06,-1189.21 698.55,-1191.79"/>
-<text text-anchor="middle" x="643.85" y="-1138.93" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S57\n6.8389 kg/d</text>
+<text text-anchor="middle" x="643.85" y="-1138.93" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S57\n4.3921 kg/d</text>
 </g>
 <!-- MET_SCRUB&#45;&gt;LEACH_CSTR_1 -->
 <g id="edge60" class="edge">
@@ -960,7 +960,7 @@
 <title>WIRE_DRAW&#45;&gt;MFG_SHOP</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" stroke-dasharray="5,2" d="M691.61,-1199.99C671.59,-1182.87 641.33,-1156.98 619.03,-1137.9"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="621.08,-1135.05 611.2,-1131.21 616.53,-1140.37 621.08,-1135.05"/>
-<text text-anchor="middle" x="618.82" y="-1162.55" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S58\n3.9389 kg/d</text>
+<text text-anchor="middle" x="621.32" y="-1162.55" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S58\n3.941 kg/d</text>
 </g>
 <!-- NUTRIENT_DOSE -->
 <g id="node58" class="node">
@@ -1053,7 +1053,7 @@
 <title>VCD_TRAIN&#45;&gt;BMED_UPW_POLISH</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M2099.96,-733.59C2116.98,-713.24 2144.77,-680.01 2164.09,-656.9"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="2166.81,-659.1 2170.54,-649.19 2161.44,-654.61 2166.81,-659.1"/>
-<text text-anchor="middle" x="2132.03" y="-688.84" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S25\n334.216366 kg/d</text>
+<text text-anchor="middle" x="2132.03" y="-688.84" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S25\n350.907763 kg/d</text>
 </g>
 <!-- REMIN -->
 <g id="node69" class="node">
@@ -1258,5 +1258,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="1916.1" y="1813.5" width="816.1" height="217.6" fill="white" stroke="black" stroke-width="2.27"/><text x="1929.7" y="1849.8" font-family="sans-serif" font-size="20.4">Aqueous Solutions (owner)   AQS-DWG-PFD-MFD</text><text x="1929.7" y="1888.3" font-family="sans-serif" font-size="20.4">Mass flow diagram</text><text x="1929.7" y="1926.9" font-family="sans-serif" font-size="20.4">Type: flow diagram (ISO_10628_2)   Rev 28be70d2   Issued 2026-10-15</text><text x="1929.7" y="1965.4" font-family="sans-serif" font-size="20.4">Created: flow graph pipeline   Approved: not approved (study)</text><text x="1929.7" y="2003.9" font-family="sans-serif" font-size="20.4">Graph SHA-256 a58b4af2eb50af71   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="1916.1" y="1813.5" width="816.1" height="217.6" fill="white" stroke="black" stroke-width="2.27"/><text x="1929.7" y="1849.8" font-family="sans-serif" font-size="20.4">Aqueous Solutions (owner)   AQS-DWG-PFD-MFD</text><text x="1929.7" y="1888.3" font-family="sans-serif" font-size="20.4">Mass flow diagram</text><text x="1929.7" y="1926.9" font-family="sans-serif" font-size="20.4">Type: flow diagram (ISO_10628_2)   Rev 072c95a7   Issued 2026-10-15</text><text x="1929.7" y="1965.4" font-family="sans-serif" font-size="20.4">Created: flow graph pipeline   Approved: not approved (study)</text><text x="1929.7" y="2003.9" font-family="sans-serif" font-size="20.4">Graph SHA-256 ef4e9352461d2399   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

@@ -453,15 +453,15 @@
    "level": "L0",
    "origin_mm": [
     0,
-    67950
+    68150
    ],
    "size_mm": [
-    234000,
-    2100,
+    180000,
+    1700,
     6000
    ],
    "unit_ids": [],
-   "source": "X-STD-01 AQS-EGR-002: 2 h exit passageway (NFPA 101 7.2.6, IBC 1024), 2.1 m clear, across the hall at mid-depth, discharging at both ends."
+   "source": "X-STD-01 AQS-EGR-002: 2 h exit passageway (NFPA 101 7.2.6, IBC 1024), 1.7 m clear, across the hall at mid-depth, discharging at both ends."
   }
  ],
  "units": [
@@ -1792,156 +1792,6 @@
     1200
    ],
    "source": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
-  },
-  {
-   "unit_id": "EW_9",
-   "level": "L-1",
-   "origin_mm": [
-    7100,
-    4000,
-    -6000
-   ],
-   "size_mm": [
-    3270,
-    720,
-    760
-   ],
-   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 31); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
-  },
-  {
-   "unit_id": "EW_7",
-   "level": "L-1",
-   "origin_mm": [
-    3200,
-    5700,
-    -6000
-   ],
-   "size_mm": [
-    3170,
-    720,
-    760
-   ],
-   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 30); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
-  },
-  {
-   "unit_id": "EW_1",
-   "level": "L-1",
-   "origin_mm": [
-    7300,
-    5700,
-    -6000
-   ],
-   "size_mm": [
-    2670,
-    720,
-    760
-   ],
-   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 25); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
-  },
-  {
-   "unit_id": "EW_2",
-   "level": "L-1",
-   "origin_mm": [
-    0,
-    7400,
-    -6000
-   ],
-   "size_mm": [
-    2670,
-    720,
-    760
-   ],
-   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 25); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
-  },
-  {
-   "unit_id": "RECT_EW",
-   "level": "L-1",
-   "origin_mm": [
-    7800,
-    7700,
-    -6000
-   ],
-   "size_mm": [
-    2400,
-    800,
-    2000
-   ],
-   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051, study cabinet); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
-  },
-  {
-   "unit_id": "EW_3",
-   "level": "L-1",
-   "origin_mm": [
-    3200,
-    4000,
-    -6000
-   ],
-   "size_mm": [
-    1170,
-    720,
-    760
-   ],
-   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 10); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
-  },
-  {
-   "unit_id": "EW_5",
-   "level": "L-1",
-   "origin_mm": [
-    10900,
-    5700,
-    -6000
-   ],
-   "size_mm": [
-    470,
-    720,
-    760
-   ],
-   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 3); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
-  },
-  {
-   "unit_id": "EW_6",
-   "level": "L-1",
-   "origin_mm": [
-    3600,
-    7400,
-    -6000
-   ],
-   "size_mm": [
-    470,
-    720,
-    760
-   ],
-   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 3); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
-  },
-  {
-   "unit_id": "EW_8",
-   "level": "L-1",
-   "origin_mm": [
-    5000,
-    7400,
-    -6000
-   ],
-   "size_mm": [
-    470,
-    720,
-    760
-   ],
-   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 3); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
-  },
-  {
-   "unit_id": "EW_4",
-   "level": "L-1",
-   "origin_mm": [
-    6400,
-    7400,
-    -6000
-   ],
-   "size_mm": [
-    370,
-    720,
-    760
-   ],
-   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 2); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
   },
   {
    "unit_id": "BLACK_DEWATER",
@@ -3802,6 +3652,156 @@
     1400
    ],
    "source": "A-M-433 X-END-02 rare-earth route (Q-013): REE_RECOVER batch campaign: bench campaign unit seated beside the MFG wet-chem row (MET_SYN), 800 mm clearance; no daily mass edges, so the process-adjacency refinement does not re-seat it."
+  },
+  {
+   "unit_id": "EW_9",
+   "level": "L-1",
+   "origin_mm": [
+    7100,
+    4000,
+    -6000
+   ],
+   "size_mm": [
+    3270,
+    720,
+    760
+   ],
+   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 31); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_7",
+   "level": "L-1",
+   "origin_mm": [
+    3200,
+    5700,
+    -6000
+   ],
+   "size_mm": [
+    3170,
+    720,
+    760
+   ],
+   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 30); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_1",
+   "level": "L-1",
+   "origin_mm": [
+    7300,
+    5700,
+    -6000
+   ],
+   "size_mm": [
+    2670,
+    720,
+    760
+   ],
+   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 25); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_2",
+   "level": "L-1",
+   "origin_mm": [
+    0,
+    7400,
+    -6000
+   ],
+   "size_mm": [
+    2670,
+    720,
+    760
+   ],
+   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 25); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "RECT_EW",
+   "level": "L-1",
+   "origin_mm": [
+    7800,
+    7700,
+    -6000
+   ],
+   "size_mm": [
+    2400,
+    800,
+    2000
+   ],
+   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051, study cabinet); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_3",
+   "level": "L-1",
+   "origin_mm": [
+    3200,
+    4000,
+    -6000
+   ],
+   "size_mm": [
+    1170,
+    720,
+    760
+   ],
+   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 10); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_5",
+   "level": "L-1",
+   "origin_mm": [
+    11300,
+    4000,
+    -6000
+   ],
+   "size_mm": [
+    470,
+    720,
+    760
+   ],
+   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 3); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_6",
+   "level": "L-1",
+   "origin_mm": [
+    10900,
+    5700,
+    -6000
+   ],
+   "size_mm": [
+    470,
+    720,
+    760
+   ],
+   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 3); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_8",
+   "level": "L-1",
+   "origin_mm": [
+    3600,
+    7400,
+    -6000
+   ],
+   "size_mm": [
+    470,
+    720,
+    760
+   ],
+   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 3); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_4",
+   "level": "L-1",
+   "origin_mm": [
+    5000,
+    7400,
+    -6000
+   ],
+   "size_mm": [
+    370,
+    720,
+    760
+   ],
+   "source": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 2); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
   }
  ],
  "notes_rev_f": "2026-10-07. Origins only; issued size_mm unchanged. Resolved BACKUP_GEN x FUEL_CELL, MEOH_SYNTH x MEOH_TANK, PV_ARRAY x ZNBR2_BR2_REGEN, GLASS_BURNOUT x PROD_C5_C10 / PROD_C11_C18 and C29_RECYCLE x GLASS_RINSE / GLASS_MILL. Moved boxes keep 600 mm (maint_clear_mm) to every neighbour; BACKUP_GEN and FUEL_CELL keep 1100 mm (nec_110_26_mm, stricter than 1000 mm) on all faces because the electrical face is not fixed in docs-authority. Line items (recycle pipe) are exempt from the maintenance figure but may not intersect. GEO_ORC pad stays empty. Plate-world origins; PROCESS_DX/DY not applied.",

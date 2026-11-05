@@ -28,11 +28,11 @@ Table 3.1. Same-level pairs
 |---|---|---|---|---|---|---|
 | S1 | AFTERBURNER | CRYO_H2 | L-1 | 20752 | distance | pass |
 | S1 | AFTERBURNER | EW_3 | L-1 | 7872 | distance | pass |
-| S1 | AFTERBURNER | EW_4 | L-1 | 6208 | 1 h room around AFTERBURNER | pass |
-| S1 | AFTERBURNER | EW_5 | L-1 | 10779 | distance | pass |
-| S1 | AFTERBURNER | EW_6 | L-1 | 4663 | 1 h room around AFTERBURNER | pass |
+| S1 | AFTERBURNER | EW_4 | L-1 | 5309 | 1 h room around AFTERBURNER | pass |
+| S1 | AFTERBURNER | EW_5 | L-1 | 12125 | distance | pass |
+| S1 | AFTERBURNER | EW_6 | L-1 | 10779 | distance | pass |
 | S1 | AFTERBURNER | EW_7 | L-1 | 6197 | 1 h room around AFTERBURNER | pass |
-| S1 | AFTERBURNER | EW_8 | L-1 | 5309 | 1 h room around AFTERBURNER | pass |
+| S1 | AFTERBURNER | EW_8 | L-1 | 4663 | 1 h room around AFTERBURNER | pass |
 | S1 | AFTERBURNER | H2O_ELYZ | L-1 | 13682 | distance | pass |
 | S1 | AFTERBURNER | OIL_FRAC | L-1 | 5459 | 1 h room around AFTERBURNER | pass |
 | S1 | AFTERBURNER | PROD_C11_C18 | L-1 | 2402 | 1 h room around AFTERBURNER | pass |
@@ -45,11 +45,11 @@ Table 3.1. Same-level pairs
 | S1 | BACKUP_GEN | ZNBR2 | L0 | 1300 | 1 h room around BACKUP_GEN | pass |
 | S1 | CRYO_ASU | CRYO_H2 | L-1 | 12027 | distance | pass |
 | S1 | CRYO_ASU | EW_3 | L-1 | 15743 | distance | pass |
-| S1 | CRYO_ASU | EW_4 | L-1 | 13230 | distance | pass |
-| S1 | CRYO_ASU | EW_5 | L-1 | 8632 | distance | pass |
-| S1 | CRYO_ASU | EW_6 | L-1 | 15930 | distance | pass |
+| S1 | CRYO_ASU | EW_4 | L-1 | 14630 | distance | pass |
+| S1 | CRYO_ASU | EW_5 | L-1 | 8442 | distance | pass |
+| S1 | CRYO_ASU | EW_6 | L-1 | 8632 | distance | pass |
 | S1 | CRYO_ASU | EW_7 | L-1 | 13631 | distance | pass |
-| S1 | CRYO_ASU | EW_8 | L-1 | 14530 | distance | pass |
+| S1 | CRYO_ASU | EW_8 | L-1 | 15930 | distance | pass |
 | S1 | CRYO_ASU | H2O_ELYZ | L-1 | 3677 | 1 h room around CRYO_ASU | pass |
 | S1 | CRYO_ASU | OIL_FRAC | L-1 | 12965 | distance | pass |
 | S1 | CRYO_ASU | PROD_C11_C18 | L-1 | 15660 | distance | pass |
@@ -59,11 +59,11 @@ Table 3.1. Same-level pairs
 | S1 | CRYO_ASU | PROD_MEOH | L-1 | 2804 | 1 h room around CRYO_ASU | pass |
 | S1 | CRYO_O2 | CRYO_H2 | L-1 | 800 | 1 h room around CRYO_O2 | pass |
 | S1 | CRYO_O2 | EW_3 | L-1 | 10794 | distance | pass |
-| S1 | CRYO_O2 | EW_4 | L-1 | 11962 | distance | pass |
-| S1 | CRYO_O2 | EW_5 | L-1 | 8872 | distance | pass |
-| S1 | CRYO_O2 | EW_6 | L-1 | 13465 | distance | pass |
+| S1 | CRYO_O2 | EW_4 | L-1 | 12692 | distance | pass |
+| S1 | CRYO_O2 | EW_5 | L-1 | 7137 | 1 h room around CRYO_O2 | pass |
+| S1 | CRYO_O2 | EW_6 | L-1 | 8872 | distance | pass |
 | S1 | CRYO_O2 | EW_7 | L-1 | 10725 | distance | pass |
-| S1 | CRYO_O2 | EW_8 | L-1 | 12636 | distance | pass |
+| S1 | CRYO_O2 | EW_8 | L-1 | 13465 | distance | pass |
 | S1 | CRYO_O2 | H2O_ELYZ | L-1 | 13300 | distance | pass |
 | S1 | CRYO_O2 | OIL_FRAC | L-1 | 17769 | distance | pass |
 | S1 | CRYO_O2 | PROD_C11_C18 | L-1 | 16950 | distance | pass |
@@ -73,11 +73,11 @@ Table 3.1. Same-level pairs
 | S1 | CRYO_O2 | PROD_MEOH | L-1 | 13300 | distance | pass |
 | S1 | H2O_ELYZ | CRYO_H2 | L-1 | 15600 | distance | pass |
 | S1 | H2O_ELYZ | EW_3 | L-1 | 12496 | distance | pass |
-| S1 | H2O_ELYZ | EW_4 | L-1 | 9072 | distance | pass |
-| S1 | H2O_ELYZ | EW_5 | L-1 | 5673 | 1 h partition X=15000 | pass |
-| S1 | H2O_ELYZ | EW_6 | L-1 | 11716 | distance | pass |
+| S1 | H2O_ELYZ | EW_4 | L-1 | 10439 | distance | pass |
+| S1 | H2O_ELYZ | EW_5 | L-1 | 6686 | 1 h partition X=15000 | pass |
+| S1 | H2O_ELYZ | EW_6 | L-1 | 5673 | 1 h partition X=15000 | pass |
 | S1 | H2O_ELYZ | EW_7 | L-1 | 9974 | distance | pass |
-| S1 | H2O_ELYZ | EW_8 | L-1 | 10341 | distance | pass |
+| S1 | H2O_ELYZ | EW_8 | L-1 | 11716 | distance | pass |
 | S1 | H2O_ELYZ | OIL_FRAC | L-1 | 7469 | 1 h partition X=15000 | pass |
 | S1 | H2O_ELYZ | PROD_C11_C18 | L-1 | 10657 | distance | pass |
 | S1 | H2O_ELYZ | PROD_C19_C28 | L-1 | 11402 | distance | pass |
@@ -89,11 +89,11 @@ Table 3.1. Same-level pairs
 | S1 | MEOH_FC | ZNBR2 | L0 | 9000 | distance | pass |
 | S1 | PROD_O2 | CRYO_H2 | L-1 | 15621 | distance | pass |
 | S1 | PROD_O2 | EW_3 | L-1 | 16563 | distance | pass |
-| S1 | PROD_O2 | EW_4 | L-1 | 13393 | distance | pass |
-| S1 | PROD_O2 | EW_5 | L-1 | 9422 | distance | pass |
-| S1 | PROD_O2 | EW_6 | L-1 | 16065 | distance | pass |
+| S1 | PROD_O2 | EW_4 | L-1 | 14777 | distance | pass |
+| S1 | PROD_O2 | EW_5 | L-1 | 9888 | distance | pass |
+| S1 | PROD_O2 | EW_6 | L-1 | 9422 | distance | pass |
 | S1 | PROD_O2 | EW_7 | L-1 | 14144 | distance | pass |
-| S1 | PROD_O2 | EW_8 | L-1 | 14678 | distance | pass |
+| S1 | PROD_O2 | EW_8 | L-1 | 16065 | distance | pass |
 | S1 | PROD_O2 | H2O_ELYZ | L-1 | 2600 | 1 h room around PROD_O2 | pass |
 | S1 | PROD_O2 | OIL_FRAC | L-1 | 11424 | distance | pass |
 | S1 | PROD_O2 | PROD_C11_C18 | L-1 | 15008 | distance | pass |
@@ -103,11 +103,11 @@ Table 3.1. Same-level pairs
 | S1 | PROD_O2 | PROD_MEOH | L-1 | 1050 | 1 h room around PROD_O2 | pass |
 | S2 | AFTERBURNER | CRYO_H2 | L-1 | 20752 | distance | pass |
 | S2 | AFTERBURNER | EW_3 | L-1 | 7872 | distance | pass |
-| S2 | AFTERBURNER | EW_4 | L-1 | 6208 | 1 h room around AFTERBURNER | pass |
-| S2 | AFTERBURNER | EW_5 | L-1 | 10779 | distance | pass |
-| S2 | AFTERBURNER | EW_6 | L-1 | 4663 | 1 h room around AFTERBURNER | pass |
+| S2 | AFTERBURNER | EW_4 | L-1 | 5309 | 1 h room around AFTERBURNER | pass |
+| S2 | AFTERBURNER | EW_5 | L-1 | 12125 | distance | pass |
+| S2 | AFTERBURNER | EW_6 | L-1 | 10779 | distance | pass |
 | S2 | AFTERBURNER | EW_7 | L-1 | 6197 | 1 h room around AFTERBURNER | pass |
-| S2 | AFTERBURNER | EW_8 | L-1 | 5309 | 1 h room around AFTERBURNER | pass |
+| S2 | AFTERBURNER | EW_8 | L-1 | 4663 | 1 h room around AFTERBURNER | pass |
 | S2 | AFTERBURNER | H2O_ELYZ | L-1 | 13682 | distance | pass |
 | S2 | AFTERBURNER | OIL_FRAC | L-1 | 5459 | 1 h room around AFTERBURNER | pass |
 | S2 | AFTERBURNER | PROD_C11_C18 | L-1 | 2402 | 1 h room around AFTERBURNER | pass |
@@ -123,11 +123,11 @@ Table 3.1. Same-level pairs
 | S2 | BACKUP_GEN | ZNBR2 | L0 | 1300 | 1 h room around BACKUP_GEN | pass |
 | S2 | GLASS_BURNOUT | CRYO_H2 | L-1 | 20808 | distance | pass |
 | S2 | GLASS_BURNOUT | EW_3 | L-1 | 7694 | distance | pass |
-| S2 | GLASS_BURNOUT | EW_4 | L-1 | 6453 | 1 h room around GLASS_BURNOUT | pass |
-| S2 | GLASS_BURNOUT | EW_5 | L-1 | 11120 | distance | pass |
-| S2 | GLASS_BURNOUT | EW_6 | L-1 | 4635 | 1 h room around GLASS_BURNOUT | pass |
+| S2 | GLASS_BURNOUT | EW_4 | L-1 | 5441 | 1 h room around GLASS_BURNOUT | pass |
+| S2 | GLASS_BURNOUT | EW_5 | L-1 | 12408 | distance | pass |
+| S2 | GLASS_BURNOUT | EW_6 | L-1 | 11120 | distance | pass |
 | S2 | GLASS_BURNOUT | EW_7 | L-1 | 6054 | 1 h room around GLASS_BURNOUT | pass |
-| S2 | GLASS_BURNOUT | EW_8 | L-1 | 5441 | 1 h room around GLASS_BURNOUT | pass |
+| S2 | GLASS_BURNOUT | EW_8 | L-1 | 4635 | 1 h room around GLASS_BURNOUT | pass |
 | S2 | GLASS_BURNOUT | H2O_ELYZ | L-1 | 14251 | distance | pass |
 | S2 | GLASS_BURNOUT | OIL_FRAC | L-1 | 6185 | 1 h room around GLASS_BURNOUT | pass |
 | S2 | GLASS_BURNOUT | PROD_C11_C18 | L-1 | 3000 | 1 h room around GLASS_BURNOUT | pass |
@@ -141,10 +141,10 @@ Table 3.1. Same-level pairs
 | S2 | OIL_PYRO | CRYO_H2 | L-1 | 20565 | distance | pass |
 | S2 | OIL_PYRO | EW_3 | L-1 | 9608 | distance | pass |
 | S2 | OIL_PYRO | EW_4 | L-1 | 6180 | 1 h room around OIL_PYRO | pass |
-| S2 | OIL_PYRO | EW_5 | L-1 | 8977 | distance | pass |
-| S2 | OIL_PYRO | EW_6 | L-1 | 6265 | 1 h room around OIL_PYRO | pass |
+| S2 | OIL_PYRO | EW_5 | L-1 | 10671 | distance | pass |
+| S2 | OIL_PYRO | EW_6 | L-1 | 8977 | distance | pass |
 | S2 | OIL_PYRO | EW_7 | L-1 | 7880 | distance | pass |
-| S2 | OIL_PYRO | EW_8 | L-1 | 6180 | 1 h room around OIL_PYRO | pass |
+| S2 | OIL_PYRO | EW_8 | L-1 | 6265 | 1 h room around OIL_PYRO | pass |
 | S2 | OIL_PYRO | H2O_ELYZ | L-1 | 9586 | distance | pass |
 | S2 | OIL_PYRO | OIL_FRAC | L-1 | 800 | 1 h room around OIL_PYRO | pass |
 | S2 | OIL_PYRO | PROD_C11_C18 | L-1 | 1903 | 1 h room around OIL_PYRO | pass |

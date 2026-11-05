@@ -12,3 +12,4 @@ N10,DN15,Class 150,vent,top,50
 N11,DN15,Class 150,genset air,outlet,600
 N12,solids,Class 150,nitrogen return,outlet,600
 N13,DN15,Class 150,plant air from the receiver bank,inlet,160
+N14,DN15,Class 150,aisle make-up air (plant air) replacing the scrub blowdown loss,outlet,600

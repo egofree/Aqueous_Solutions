@@ -115,6 +115,16 @@
    "cls": "P3",
    "material": "PVDF SDR 21 ISO 10931",
    "DN": 40
+  },
+  "PF-24": {
+   "cls": "P1",
+   "material": "PVC-U Sch 80 ASTM D1785",
+   "DN": 40
+  },
+  "PF-25": {
+   "cls": "M1",
+   "material": "316L ASTM A312",
+   "DN": 40
   }
  }
 }

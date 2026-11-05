@@ -127,10 +127,12 @@ A('| CO to gas handling | 1.17 |')
 A('')
 A('Chlorine and magnesium close internally (net zero) once the Mg pot is in the loop; the CRU sees pot Cl2 only.')
 A('')
-A('## 5. EW_9 double-booking resolved (A-M-255, this pass owns it)')
+A('## 5. EW_9 double-booking resolved (A-M-255; re-stated at the Q-038 element-rate basis)')
 A('')
-A('EW_9 closes exactly on its Rev BH rates: IA-EW-09 liquor 3520.316 to POLISH_BANK, IA-EW-MET-9 61.341 to the shop, '
-  'IA-EW-SHEET 13.989 to MET_MELT, IA-EW9-CL2 111.134 to the leach, IA-HDR-H2-04 0.481 to the H2 pool. The Rev AC stubs '
+A('The double-booking finding stands: EW_9 books exactly one liquor tail (IA-EW-09 to POLISH_BANK) and one metal book. '
+  'At the Q-038 element-rate rebasis (A-M-460, 2026-11-04) the metal book is the Zn share of the forming collection: '
+  'EW_9 carries IA-EW-SHEET (the Cu and blend deposits ride it to MET_MELT) and IA-EW-MET-9 is 0; the liquor and gas '
+  'rates are the live graph values (write_graph and o2_close re-solve them each pass). The Rev AC stubs '
   'are aliases of booked paths and are retired at 0:')
 A('')
 A('| Edge | Retirement basis |')

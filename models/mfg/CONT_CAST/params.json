@@ -13,7 +13,7 @@
  "design": {
   "machine": "two-strand horizontal semi-continuous caster",
   "feed_kg_d": 31.7125,
-  "billet_kg_d": 13.244228000000065,
+  "billet_kg_d": 13.244179999999972,
   "ingot_kg_d": 21.7125,
   "strands": 2,
   "mould": "water-cooled copper (AQS-SIZE-FOUNDRY)"

@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "a58b4af2eb50af71b095aa281767e7a94157cb1e9a022c51dd5a2da08c2b5018",
+  "graph_sha256": "ef4e9352461d2399ba5d070f3e93cfce6ee8f40d1a5d3937eb724887418812fe",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 387.39,
-   "calc_kw": 387.39,
+   "kw": 366.529,
+   "calc_kw": 366.529,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,18 +16,18 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 242.761,
-   "calc_kw": 242.761,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 242.8 kW, charge 1103.4 kW, 3399 kWh over 47 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 186.419,
+   "calc_kw": 186.419,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 186.4 kW, charge 847.3 kW, 2610 kWh over 36 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "EXT_HALL",
    "role": "load",
-   "kw": 110.341,
-   "calc_kw": 110.341,
-   "basis": "X-PAR-07 solver.roof_close: conditioned extension 31860 m2; lighting 28.04 kW (IECC 2021 C405, 10 % lit), ventilation 47.31 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 34.99 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 32.7 kW and cooling 194.6 kW thermal average after internal gains 40.0 kW and slab edge 1.79 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
+   "kw": 85.229,
+   "calc_kw": 85.229,
+   "basis": "X-PAR-07 solver.roof_close: conditioned extension 24408 m2; lighting 21.48 kW (IECC 2021 C405, 10 % lit), ventilation 36.25 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 27.50 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 25.6 kW and cooling 150.8 kW thermal average after internal gains 30.6 kW and slab edge 1.53 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -43,29 +43,11 @@
   {
    "unit": "H2O_ELYZ",
    "role": "load",
-   "kw": 19.971,
-   "calc_kw": 19.971,
-   "basis": "X-PAR-12 TF: 8.71 kg/d H2 x 55.0 kWh/kg / 24 h; rated 79.9 kW on a 6.0 h PV window.",
+   "kw": 24.252,
+   "calc_kw": 24.252,
+   "basis": "X-PAR-12 TF: 10.58 kg/d H2 x 55.0 kWh/kg / 24 h; rated 97.0 kW on a 6.0 h PV window.",
    "class": "calculated",
    "sector": "CRYO"
-  },
-  {
-   "unit": "EW_9",
-   "role": "load",
-   "kw": 0,
-   "calc_kw": 6.604,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
-   "class": "calculated",
-   "sector": "DIGESTER"
-  },
-  {
-   "unit": "EW_7",
-   "role": "load",
-   "kw": 0,
-   "calc_kw": 6.236,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
-   "class": "calculated",
-   "sector": "DIGESTER"
   },
   {
    "unit": "AL_POT",
@@ -77,28 +59,10 @@
    "sector": "FOUNDRY"
   },
   {
-   "unit": "EW_2",
+   "unit": "EW_7",
    "role": "load",
    "kw": 0,
-   "calc_kw": 5.25,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
-   "class": "calculated",
-   "sector": "DIGESTER"
-  },
-  {
-   "unit": "EW_1",
-   "role": "load",
-   "kw": 5.248,
-   "calc_kw": 5.248,
-   "basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Cell DC at the electrode: 2476 A (Faraday, copper-equivalent, CE 0.85) x 2.12 V (USBM_CL_EW chloride EW).",
-   "class": "calculated",
-   "sector": "DIGESTER"
-  },
-  {
-   "unit": "EW_1",
-   "role": "load",
-   "kw": 5.248,
-   "calc_kw": 5.248,
+   "calc_kw": 2.955,
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
    "sector": "DIGESTER"
@@ -129,15 +93,6 @@
    "basis": "LED 29.12 m2 x 70.3 W/m2 (DLI 17.0, 2.8 umol/J, A-M-133/A-M-144); crew duty (A-M-229)",
    "class": "calculated",
    "sector": "FARM"
-  },
-  {
-   "unit": "EW_3",
-   "role": "load",
-   "kw": 0,
-   "calc_kw": 1.971,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
-   "class": "calculated",
-   "sector": "DIGESTER"
   },
   {
    "unit": "CRYO_ASU",
@@ -239,6 +194,15 @@
    "sector": "MEOH"
   },
   {
+   "unit": "EW_3",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 0.77,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "DIGESTER"
+  },
+  {
    "unit": "LEACH_CSTR_1",
    "role": "load",
    "kw": 0.75,
@@ -302,24 +266,6 @@
    "sector": "OIL"
   },
   {
-   "unit": "EW_6",
-   "role": "load",
-   "kw": 0,
-   "calc_kw": 0.48,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
-   "class": "calculated",
-   "sector": "DIGESTER"
-  },
-  {
-   "unit": "EW_8",
-   "role": "load",
-   "kw": 0,
-   "calc_kw": 0.443,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
-   "class": "calculated",
-   "sector": "DIGESTER"
-  },
-  {
    "unit": "WAFER_FAB",
    "role": "load",
    "kw": 0.442,
@@ -327,24 +273,6 @@
    "basis": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 0.42 kWh/pull (CRC_SI cp/L) over a 7 d campaign + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share. / X-ELS-02 load-basis (A-M-301).",
    "class": "calculated",
    "sector": "FAB"
-  },
-  {
-   "unit": "EW_5",
-   "role": "load",
-   "kw": 0,
-   "calc_kw": 0.44,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
-   "class": "calculated",
-   "sector": "DIGESTER"
-  },
-  {
-   "unit": "EW_4",
-   "role": "load",
-   "kw": 0,
-   "calc_kw": 0.425,
-   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
-   "class": "calculated",
-   "sector": "DIGESTER"
   },
   {
    "unit": "SHELL_BREAK",
@@ -412,9 +340,9 @@
   {
    "unit": "VCD_TRAIN",
    "role": "\u2014",
-   "kw": 0.254,
-   "calc_kw": 0.254,
-   "basis": "0.359 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)",
+   "kw": 0.266,
+   "calc_kw": 0.266,
+   "basis": "0.375 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)",
    "class": "calculated",
    "sector": "WTR"
   },
@@ -430,9 +358,9 @@
   {
    "unit": "MET_MELT",
    "role": "load",
-   "kw": 0.237,
-   "calc_kw": 0.237,
-   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 5.7 kWh/d / 24 h; batch nameplate 7.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
+   "kw": 0.207,
+   "calc_kw": 0.207,
+   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 5.0 kWh/d / 24 h; batch nameplate 7.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
    "class": "calculated",
    "sector": "MFG"
   },
@@ -545,6 +473,24 @@
    "sector": "MFG"
   },
   {
+   "unit": "EW_6",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 0.067,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "DIGESTER"
+  },
+  {
+   "unit": "EW_9",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 0.061,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "DIGESTER"
+  },
+  {
    "unit": "REMIN",
    "role": "\u2014",
    "kw": 0.046,
@@ -572,6 +518,24 @@
    "sector": "GAS"
   },
   {
+   "unit": "EW_8",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 0.035,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "DIGESTER"
+  },
+  {
+   "unit": "EW_5",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 0.033,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "DIGESTER"
+  },
+  {
    "unit": "WS_PEROX",
    "role": "\u2014",
    "kw": 0.031,
@@ -579,6 +543,15 @@
    "basis": "X-ELS-10 (AQS-DSN-OX-001): peroxide electrolytic cell 12.31 A x 2.5 V = 0.0308 kW from the S32 duty; DC behind the RECTIFIER AC sum.",
    "class": "calculated",
    "sector": "FAB"
+  },
+  {
+   "unit": "H2_DRYER",
+   "role": "load",
+   "kw": 0.026,
+   "calc_kw": 0.026,
+   "basis": "X-MFG-39 (A-M-168): TSA regeneration 0.5 W / 0.7 + half the insulated loss.",
+   "class": "calculated",
+   "sector": "GAS"
   },
   {
    "unit": "LITHO_COAT",
@@ -608,15 +581,6 @@
    "sector": "DIGESTER"
   },
   {
-   "unit": "H2_DRYER",
-   "role": "load",
-   "kw": 0.023,
-   "calc_kw": 0.023,
-   "basis": "X-MFG-39 (A-M-168): TSA regeneration 1.4 W / 0.7 + half the insulated loss.",
-   "class": "calculated",
-   "sector": "GAS"
-  },
-  {
    "unit": "MEOH_FERM",
    "role": "\u2014",
    "kw": 0.021,
@@ -628,20 +592,20 @@
   {
    "unit": "COLD_MILL",
    "role": "load",
-   "kw": 0.019,
-   "calc_kw": 0.019,
+   "kw": 0.02,
+   "calc_kw": 0.02,
    "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.5 kWh/d / 24 h; batch nameplate 2.2 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
    "class": "calculated",
    "sector": "MFG"
   },
   {
-   "unit": "WIRE_DRAW",
+   "unit": "EW_4",
    "role": "load",
-   "kw": 0.019,
+   "kw": 0,
    "calc_kw": 0.019,
-   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.5 kWh/d / 24 h; batch nameplate 1.1 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
-   "sector": "MFG"
+   "sector": "DIGESTER"
   },
   {
    "unit": "BMED_UPW_POLISH",
@@ -660,6 +624,15 @@
    "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-289): pin-mill class 0.05 kWh/kg + classifier fan (A-M-289).",
    "class": "calculated",
    "sector": "POLYMERS"
+  },
+  {
+   "unit": "WIRE_DRAW",
+   "role": "load",
+   "kw": 0.015,
+   "calc_kw": 0.015,
+   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.4 kWh/d / 24 h; batch nameplate 1.1 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
+   "class": "calculated",
+   "sector": "MFG"
   },
   {
    "unit": "BACKUP_GEN",
@@ -689,6 +662,33 @@
    "sector": "FAB"
   },
   {
+   "unit": "EW_2",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": 0.001,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "DIGESTER"
+  },
+  {
+   "unit": "EW_1",
+   "role": "load",
+   "kw": 0.0,
+   "calc_kw": 0.0,
+   "basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Cell DC at the electrode: 0 A (Faraday at the element deposit, AQS-ASSAY-001 section 5, recovery 1.0; Q-038 basis) x 2.12 V (USBM_CL_EW chloride EW).",
+   "class": "calculated",
+   "sector": "DIGESTER"
+  },
+  {
+   "unit": "EW_1",
+   "role": "load",
+   "kw": 0.0,
+   "calc_kw": 0.0,
+   "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
+   "class": "calculated",
+   "sector": "DIGESTER"
+  },
+  {
    "unit": "GEO_HP",
    "role": "load",
    "kw": 0,
@@ -702,14 +702,14 @@
    "role": "load",
    "kw": 0,
    "calc_kw": 0.0,
-   "basis": "A-M-231 (AQS-NOTE-PV-REBASE Rev A section 8): 12 kW 48 V rail and auxiliary basis (AQS-PWR-001). The nine-channel EW DC load is counted once behind the AQS-ELEC-004 bounding AC row in _power_sizing (params.rect_ac_input_kW 38.66 kW; A-M-255); S17 equals this node value.",
+   "basis": "A-M-231 (AQS-NOTE-PV-REBASE Rev A section 8): 12 kW 48 V rail and auxiliary basis (AQS-PWR-001). The nine-channel EW DC load is counted once behind the AQS-ELEC-004 bounding AC row in _power_sizing (params.rect_ac_input_kW 5.63 kW; A-M-255); S17 equals this node value.",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "DRY_COOLER",
    "role": "\u2014",
-   "kw": 10.0,
+   "kw": 7.55,
    "calc_kw": null,
    "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
    "class": "pending",
@@ -939,13 +939,13 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 103,
-  "graph_sum_kW": 204.1,
-  "calc_sum_kW": 204.1,
-  "connected_load_kW": 204.1,
-  "connected_calculated_kW": 192.3,
+  "graph_sum_kW": 180.8,
+  "calc_sum_kW": 180.8,
+  "connected_load_kW": 180.8,
+  "connected_calculated_kW": 171.4,
   "connected_standby_kW": 0.1,
-  "connected_study_kW": 11.8,
-  "connected_calculated_pct": 94.2,
+  "connected_study_kW": 9.3,
+  "connected_calculated_pct": 94.8,
   "by_sector": {
    "CRYO": {
     "calculated": 4

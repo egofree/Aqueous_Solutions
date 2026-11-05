@@ -5,7 +5,7 @@
  "size_mm": [
   6696,
   1500,
-  900
+  1050
  ],
  "size_basis": "L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167)",
  "origin_mm": [
@@ -29,15 +29,15 @@
   "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
   "adequate": true,
   "fire_case": {
-   "exposed_m2": 70.047,
-   "per_half_m2": 35.024,
+   "exposed_m2": 74.425,
+   "per_half_m2": 37.213,
    "P1_kPa_abs": 26721.325,
    "T1_K": 344.335,
-   "A_req_mm2_per_half": 116.06,
-   "bore_req_mm_per_half": 12.156,
+   "A_req_mm2_per_half": 123.314,
+   "bore_req_mm_per_half": 12.53,
    "valves": 2,
-   "depress_kg": 8.593,
-   "depress_bore_mm": 1.408,
+   "depress_kg": 9.121,
+   "depress_bore_mm": 1.451,
    "liquid": false,
    "method": "API 521 7th ed. 4.4.13.2.4 (API521_2020)"
   },
@@ -56,21 +56,21 @@
   "banks": [
    {
     "bank": "main",
-    "V_m3": 1.14,
-    "tubes": 32,
+    "V_m3": 1.21,
+    "tubes": 34,
     "halves": 2
    }
   ],
-  "tubes": 32,
-  "steel_kg": 5520.5376,
+  "tubes": 34,
+  "steel_kg": 5865.5712,
   "D_mm": 114,
   "wall_mm": 13.49,
-  "H_mm": 900,
+  "H_mm": 1050,
   "T_C": 25,
   "rack_mm": [
    6696,
    1500,
-   900
+   1050
   ],
   "material": "SA-312 TP316L seamless DN100 Sch 160, B16.11 Class 9000 fittings / autoclave cone-and-thread, O2 bank cleaned to ASTM G93"
  },

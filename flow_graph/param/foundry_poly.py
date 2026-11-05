@@ -24,10 +24,11 @@ exactly on S66 = IA-CRU-01).
 
 Demand-side notes unchanged: WAFER_FAB draws are 0 (A-M-257: the fab closes on UPW + slurry + N2
 purge); WIRE_DRAW closes on S57 (MFG Cu wire line), so STOCK_TO_WIRE_DRAW = 0. The MFG_SHOP goods
-loop is closed (IA-MFG-OUT 596.863 out = IA-WEAR return), so the shop's only live need is its
-rounding remnant r0 (rated in - rated out) plus whatever the foundry stock loop and polymer draw feed
-back through it. K now carries the full AQS-SIZE-FOUNDRY consumable-replacement table (25.9 kg/d,
-A-M-261 rev): the Al 8 / stainless 1.5 / Ti 0.40 / casting 2 lines unblock with their feeds.
+loop closes on the dock finished-goods export IA-GOODS-SHIP (Q-038 rebasis, A-M-460: the wear plug
+pair IA-MFG-OUT/IA-WEAR retired, wear at the A-M-429 roster line), so the shop's only live need is
+its rounding remnant r0 (rated in - rated out) plus whatever the foundry stock loop and polymer
+draw feed back through it. K now carries the full AQS-SIZE-FOUNDRY consumable-replacement table
+(25.9 kg/d, A-M-261 rev): the Al 8 / stainless 1.5 / Ti 0.40 / casting 2 lines unblock with their feeds.
 
 Polymers chain (AQS-DUTY-073) unchanged from Rev A: the fluoropolymer train stays F-blocked (no
 fluorine source on site, AQS-BOM-SC-001 43 BOM lines Missing, Q-013) and POLY_COND waits on the
@@ -584,11 +585,12 @@ def apply(g=None, write=False):
             N['HF_GEN']['continuous_kw'] = {'value': 0.0, 'unit': 'kW', 'status': 'study',
                                             'note': f'standby, 0 duty at the bounding case ({DOC_P} sec. 3). | {TAG}.'}
     put('DOCK_EXPORT_TBD', 0.0,
-        'Goods balance (A-M-265 rev): the accounting placeholder stays 0.0 - the real surplus exports ride their own '
-        'dock edges: foundry pot metal IA-METAL-SHIP ' f'{s["potm"]:.4f} kg/d + pot chlorine IA-CL2-SHIP/IA-CA-CL2-SHIP '
-        f'{s["al_cl2"] + s["ca_cl2"]:.3f} kg/d (A-M-285) on top of the shipped products (O2, MeOH, oil cuts); mfg goods '
-        'surplus net 0 (IA-MFG-OUT 596.863 = IA-WEAR worn return). THIS IS THE PLANT SURPLUS STATEMENT at Rev AC scope '
-        'with the foundry feedstock program live: the plant is a net exporter of metal and chlorine through the dock.')
+        'Goods balance (A-M-265 rev, restated A-M-460): the accounting placeholder stays 0.0 - the real surplus exports '
+        'ride their own dock edges: foundry pot metal IA-METAL-SHIP ' f'{s["potm"]:.4f} kg/d + pot chlorine '
+        'IA-CL2-SHIP/IA-CA-CL2-SHIP ' f'{s["al_cl2"] + s["ca_cl2"]:.3f} kg/d (A-M-285) and the shop finished-goods surplus '
+        'IA-GOODS-SHIP on top of the shipped products (O2, MeOH, oil cuts). THIS IS THE PLANT SURPLUS STATEMENT: the plant '
+        'is a net exporter of metal, chlorine and finished goods through the dock (Q-038 rebasis 2026-11-04: the wear-goods '
+        'plug pair IA-MFG-OUT/IA-WEAR is retired; wear rides the A-M-429 roster line).')
     E['DOCK_EXPORT_TBD']['rate']['note'] = (E['DOCK_EXPORT_TBD']['rate']['note'].split(f' | {TAG}')[0]) + f' | {TAG}.'
     stamp(g, s)
     # retire this pass's own Rev B interim edge (Ca routed via the melt; P_CA stays the DIGESTER lane's unrated stub)

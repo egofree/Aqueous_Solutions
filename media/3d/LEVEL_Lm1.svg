@@ -36,16 +36,16 @@
 <text x="86" y="16696" fontSize="11">EW_2</text>
 <rect x="3280" y="13280" width="1170" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
 <text x="3286" y="13296" fontSize="11">EW_3</text>
-<rect x="6480" y="16680" width="370" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="6486" y="16696" fontSize="11">EW_4</text>
+<rect x="5080" y="16680" width="370" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="5086" y="16696" fontSize="11">EW_4</text>
+<rect x="11380" y="13280" width="470" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="11386" y="13296" fontSize="11">EW_5</text>
 <rect x="10980" y="14980" width="470" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="10986" y="14996" fontSize="11">EW_5</text>
-<rect x="3680" y="16680" width="470" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="3686" y="16696" fontSize="11">EW_6</text>
+<text x="10986" y="14996" fontSize="11">EW_6</text>
 <rect x="3280" y="14980" width="3170" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
 <text x="3286" y="14996" fontSize="11">EW_7</text>
-<rect x="5080" y="16680" width="470" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="5086" y="16696" fontSize="11">EW_8</text>
+<rect x="3680" y="16680" width="470" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="3686" y="16696" fontSize="11">EW_8</text>
 <rect x="7180" y="13280" width="3270" height="720" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
 <text x="7186" y="13296" fontSize="11">EW_9</text>
 <rect x="18880" y="16480" width="600" height="700" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>

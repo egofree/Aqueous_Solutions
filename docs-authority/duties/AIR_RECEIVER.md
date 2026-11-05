@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 192 kg/d. Mass out 192 kg/d. Electrical duty 0.0000 kW. In: S84 192 kg/d (N2 product). Out: IA-AIR-RX-OUT 192 kg/d (plant air from the receiver bank).
+1. Basis. Mass in 194.4 kg/d. Mass out 194.4 kg/d. Electrical duty 0.0000 kW. In: S84 194.4 kg/d (N2 product). Out: IA-AIR-RX-OUT 194.4 kg/d (plant air from the receiver bank).
 
 2. Size.
-- Envelope 1000×1000×1200 mm, 1.2 m³. That box over this flow would be 150.0 h if it were full. It is not a residence time.
+- Envelope 1000×1000×1200 mm, 1.2 m³. That box over this flow would be 148.1 h if it were full. It is not a residence time.
 - Envelope: L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064).
 - Storage sizing (AQS-DUTY-064, graph design_storage): hold_d 1; V_nom_m3 0.3312; D_mm 700; H_mm 900; wall_mm 3.06.
 - Node note: D-DOCK product buffer (A-M-270): S84 in from the cold box, IA-AIR-RX-OUT to HDR_N2; the surplus margin exports on IA-N2-VENT at the dock.

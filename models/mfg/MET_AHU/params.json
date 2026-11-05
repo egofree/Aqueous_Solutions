@@ -58,6 +58,14 @@
    "service": "scrubbed metal-aisle air returned to the hall",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N6",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "aisle make-up air (plant air) replacing the scrub blowdown loss",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.",

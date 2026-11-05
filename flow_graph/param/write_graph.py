@@ -101,11 +101,95 @@ def process():
     # exists; the conversion losses ride IA-RECT-Q4 at the calculated rectifier loss)
     rows = {r['cell']: r for r in json.loads(subprocess.run([sys.executable,'docs-authority/_ew_sizing.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout)['rows']}
     rect = json.loads(subprocess.run([sys.executable,'docs-authority/_rect_ew_sizing.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout)['total']
+    pr = s['ew_products'] if 'ew_products' in s else solver.ew_products(d, g)
+    MET_TAG = 'X-PAR-02 Q-038 element-rate rebasis (AQS-ASSAY-001 sections 4 and 5; A-M-460)'
+    for n in range(1, 10):
+        v = pr['met'][n]
+        sid = f'IA-EW-MET-{n}'
+        note = (f"{MET_TAG}. Cell EW_{n} plated product, element deposit mass at leach recovery 1.0"
+                + ("; this cell's harvest rides IA-EW-SHEET (the forming routes take the Cu and blend deposits, AQS-DUTY-010)."
+                   if v == 0 else "."))
+        if sid in E: E[sid]['rate'] = rate(v, 'kg/d', note)
+    sheet_note = (f"{MET_TAG}. The forming feed booked at the EW_9 collection point: Cu deposit half to wire and half to mill, "
+                  f"the Pb/Sn/Ni/Cd/Zn blend deposits to powder (AQS-DUTY-010 bases on S57/S59/S60), less the atomizer "
+                  f"off-spec return {pr['remelt']:.4f} kg/d. Element mass at recovery 1.0; the wear-goods copper-equivalent "
+                  f"convention is retired (Q-038 owner ruling 2026-11-04).")
+    if 'IA-EW-SHEET' in E: E['IA-EW-SHEET']['rate'] = rate(pr['sheet'], 'kg/d', sheet_note)
+    else: E['IA-EW-SHEET'] = edge('IA-EW-SHEET','EW_9','MET_MELT','S',['mass'],'plated sheet to the melt shop',
+                                  rate(pr['sheet'],'kg/d',sheet_note),'DIGESTER','MFG')
+    # forming chain re-derived on its AQS-DUTY-010 deposit bases (Q-038: the rates follow the assay).
+    # IA-MELT-ATOM / IA-ATOM-REMELT / IA-MELT-MILL stay owned by ess_tf (the atomizer off-spec and the
+    # melt-by-difference closure, A-M-139): they follow S60 and the melt book written here.
+    form = [('S57','MET_MELT','WIRE_DRAW','MFG','MFG',pr['s57'],'wire billet: half the Cu deposit'),
+            ('S58','WIRE_DRAW','MFG_SHOP','MFG','MFG',pr['s58'],'wire product: billet less melt fume at 10 % draw swarf'),
+            ('S59','COLD_MILL','MFG_SHOP','MFG','MFG',pr['s59'],'mill sheet (the mill closes at its feed)'),
+            ('S60','GAS_ATOMIZER','MFG_SHOP','MFG','MFG',pr['s60'],'powder: blend deposits at 10 % off-spec'),
+            ('IA-WIRE-LOSS','WIRE_DRAW','BAGHOUSE','MFG','MFG',pr['wloss'],'draw swarf to the baghouse (10 % of the billet net of fume)'),
+            ('IA-DRAW-FUME','WIRE_DRAW','MET_SCRUB','MFG','GAS',pr['fume'],'melt fume at the AQS-DUTY-010 0.3 % of billet'),
+            ('IA-BAG-01','BAGHOUSE','LEACH_CSTR_1','MFG','DIGESTER',round(pr['wloss']+float(E['IA-MILL-LOSS']['rate']['value'])+float(E['IA-FAB-LOSS']['rate']['value']),4),
+             'baghouse collected fines to the leach: mill loss + fab loss + draw swarf')]
+    for sid, a, b, sa, sb, v, why in form:
+        note = f'{MET_TAG}. {why}; derived from the S08 deposit rows through solver.ew_products().'
+        if sid in E: E[sid]['rate'] = rate(v, 'kg/d', note)
+    # aisle air book: the wire-draw fume shrink leaves the MET_SCRUB blowdown without its old phantom make-up
+    blow = float(E['S72']['rate']['value']) + float(E['S72B']['rate']['value'])
+    mu_air = round(blow - pr['fume'], 4)
+    if 'IA-MET-AIR-MU' not in E:
+        se = edge('IA-MET-AIR-MU','HDR_N2','MET_AHU','G',['mass'],'aisle make-up air (plant air) replacing the scrub blowdown loss',
+                  rate(mu_air,'kg/d',f'{MET_TAG}. MET_AHU make-up = MET_SCRUB blowdown {blow:.4f} less the wire-draw fume {pr["fume"]:.4f}; the N2 header balance re-vents the draw.'),
+                  'CRYO','MFG')
+        g['edges'].append(se); E['IA-MET-AIR-MU'] = se
+    else: E['IA-MET-AIR-MU']['rate'] = rate(mu_air, 'kg/d', f'{MET_TAG}. MET_AHU make-up = MET_SCRUB blowdown {blow:.4f} less the wire-draw fume {pr["fume"]:.4f}.')
+    ret = round(float(E['S62']['rate']['value']) + float(E['S71']['rate']['value']) + pr['fume'] - blow, 4)
+    E['IA-MET-AIR-RET']['rate'] = rate(ret, 'kg/d', f'{MET_TAG}. Closed aisle return: S62 + S71 + draw fume - scrub blowdown.')
+    # wear loop: the roster line replaces the worn-goods plug (Q-038 owner ruling 2026-11-04)
+    E['IA-WEAR']['rate'] = rate(pr['wear'], 'kg/d', f'{MET_TAG}. Worn-goods return at the roster line: the crew finished-textile issue '
+        f"(TEXTILE_HAB, {pr['wear']:.4f} kg/d, A-M-429) worn out at steady state. The 596.86 kg/d closing-by-difference "
+        f'plug (A-M-265, 149 kg/person/d) is retired.')
+    E['IA-MFG-OUT']['rate'] = rate(0.0, 'kg/d', f'{MET_TAG}. Retired plug: the crew goods issue is the roster textile line on '
+        f'TEXTILE_HAB (A-M-429); the shop finished-goods surplus exports on IA-GOODS-SHIP (self-sustaining plant rule).')
+    # hopper make-up feedstock behind the retired scrap loop (the leach feed stays the AQS-ASSAY-001 design feed);
+    # 6 dp so the scrap-yard closure lands exactly on zero. The note belongs to balance.physics (the closure owner,
+    # write-convergence rule 2026-10-19): the writer sets the value only on an existing edge.
+    if 'IA-FEED-MU' not in E:
+        fe = edge('IA-FEED-MU','NORTH_DOCK','HOPPER','S',['mass'],'feedstock make-up (dock import)',
+                  {'value': pr['feed_mu'], 'unit': 'kg/d', 'status': 'study',
+                   'note': f'{MET_TAG}. Dock make-up feedstock: the design feed less the loop receipts - wear, shop swarf, frass and the leach return (A-M-460); balance.physics closes the scrap yard through it.'},
+                  'DOCK','DIGESTER')
+        g['edges'].append(fe); E['IA-FEED-MU'] = fe
+    else:
+        E['IA-FEED-MU']['rate']['value'] = pr['feed_mu']
+    # shop finished-goods surplus export (closes the shop; balance.physics re-closes it by difference each pass).
+    # The writer seeds the derived value so the foundry stage (which reads the shop remnant earlier in the same
+    # pass) sees the closed shop instead of the pre-closure surplus.
+    _shop_in = sum(float(e['rate']['value'] or 0) for e in g['edges'] if e['presence'] == 'present'
+                   and e['to_unit_id'] == 'MFG_SHOP' and 'mass' in (e.get('layers') or [])
+                   and e['rate'].get('unit') == 'kg/d' and isinstance(e['rate'].get('value'), (int, float)))
+    _shop_out = 0.0
+    for e in g['edges']:
+        if e['presence'] != 'present' or e['from_unit_id'] != 'MFG_SHOP' or 'mass' not in (e.get('layers') or []) \
+                or e['rate'].get('unit') != 'kg/d' or e['stream_id'] in ('IA-GOODS-SHIP', 'IA-MFG-OUT'):
+            continue
+        v = e['rate'].get('value')
+        if isinstance(v, (int, float)): _shop_out += float(v)
+    _goods = round(_shop_in - _shop_out, 4)
+    assert _goods > 0, ('shop goods surplus negative: the shop consumes more than it takes in', _goods)
+    if 'IA-GOODS-SHIP' not in E:
+        ge = edge('IA-GOODS-SHIP','MFG_SHOP','NORTH_DOCK','S',['mass'],'finished-goods surplus export',
+                  rate(_goods,'kg/d',f'{MET_TAG}. Shop surplus: throughput {_shop_in:.2f} less the crew issue, the scrap '
+                       f'returns and the foundry stock loop (self-sustaining plant rule); balance.physics re-closes it '
+                       f'by difference (AQS-PAR-003 R10c).'),
+                  'MFG','DOCK')
+        g['edges'].append(ge); E['IA-GOODS-SHIP'] = ge
+    else:
+        E['IA-GOODS-SHIP']['rate']['value'] = _goods   # value only: the note belongs to balance.physics (closure owner)
+    E['S16']['rate']['note'] = (f'Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 s10.6): 29.3 % of the '
+        f'S08 solids. {MET_TAG}: the shop closes on the goods export IA-GOODS-SHIP; this line holds its band basis.')
     V = DR.val(d,'ew_cell_voltage_V'); CE = DR.val(d,'ew_current_efficiency_design'); VD = DR.val(d,'ew_bus_drop_V')
     for c, v in s['ew'].items():
         if c == 'RECT_EW': continue
         n = N[c]; r = rows[c]
-        if isinstance(n.get('continuous_kw'), dict): n['continuous_kw'] = rate(v['P_kW'],'kW',f"{TAG}. Cell DC at the electrode: {v['I_A']:.0f} A (Faraday, copper-equivalent, CE {CE}) x {V} V (USBM_CL_EW chloride EW).")
+        if isinstance(n.get('continuous_kw'), dict): n['continuous_kw'] = rate(v['P_kW'],'kW',f"{TAG}. Cell DC at the electrode: {v['I_A']:.0f} A (Faraday at the element deposit, AQS-ASSAY-001 section 5, recovery 1.0; Q-038 basis) x {V} V (USBM_CL_EW chloride EW).")
         if 'cell_voltage_V' in n['params']: n['params']['cell_current_A'] = round(v['I_A']); n['params']['cell_voltage_V'] = V
         # D9 ownership rule (documented, no change): the EW plate GEOMETRY calculator (docs-authority/_ew_sizing.py, AQS-EW-MOD-001
         # constants) owns the geometry; it reads only the harvest edges from the graph. The params.sizing stamped here (size_mm,
@@ -116,7 +200,10 @@ def process():
         sz.update({'size_mm': r['size_mm'], 'I_bounding_A': round(v['I_A']), 'cathodes': r['cathodes'], 'anodes': r['anodes'], 'j_A_m2': round(r['j_A_m2']),
                    'V_liq_m3': round(r['V_liq_m3'],3), 'P_dc_kW': round(v['P_kW'],2), 'status': 'study', 'source': 'AQS-DUTY-051'})
         n['params']['sizing'] = sz
-        if f'IA-DC-{c}' in E: E[f'IA-DC-{c}']['rate'] = rate(v['P_bus_kW'],'kW',f'{TAG}. Channel DC at {V} V cell + {VD} V bus drop, bounding current.')
+        if f'IA-DC-{c}' in E:
+            _pv = round(v['P_bus_kW'], 6)
+            E[f'IA-DC-{c}']['rate'] = {'value': _pv, 'unit': 'kW', 'status': 'study',
+                'note': f'{TAG}. Channel DC at {V} V cell + {VD} V bus drop, design current at the element deposit (Q-038 basis); 6 dp so the sub-watt cells carry no rounding misfit.'}
         if f'IA-EWQ-{c}' in E: E[f'IA-EWQ-{c}']['rate'] = rate(v['P_bus_kW']-sum(e['rate']['value'] for e in g['edges'] if e['from_unit_id']==c and 'thermal' in (e.get('layers') or [])),'kW',f'{TAG}. DC input less the HX-8 thermal draw.')
     R = s['ew']['RECT_EW']; n_rect = N.get('RECT_EW') or N.get('RECTIFIER')   # Rev AC renamed the EW rectifier RECTIFIER
     TAG24 = 'X-PAR F-24'

@@ -9,7 +9,7 @@ Basis: NEC 2026 110.26(A)(1)-(2); NFPA 101 (2027) 7.3.4.1.1 and IBC 2027 1018.5 
 | Row | Level | Faces clear at 1067 mm (Cond. 2) | Faces clear at 1219 mm (Cond. 3) | Result |
 |---|---|---|---|---|
 | RECTIFIER | L0 | N W E | W E | pass |
-| RECT_EW | L-1 | S N E | S N E | pass |
+| RECT_EW | L-1 | S N W E | S N W E | pass |
 | SOL_ARK_60K | L0 | S N W E | N W E | pass |
 | LOAD_AGG | L0 | S W E | S W E | pass |
 | BOUNDARY_EXPORT | L0 | S W E | S W E | pass |

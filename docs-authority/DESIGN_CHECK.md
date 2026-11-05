@@ -29,13 +29,13 @@ Table 2.1. Closed-form checks
 | QC-03 | `flow_graph/param/receivers.py` | CRYO_CO2 pressure-design wall mm | 1.085 | 1.085 | 2 % | pass |
 | QC-04 | `docs-authority/HEAT_LADDER.md` | Q4_A stored kWh over 30 K (basis 20 kWh_th Q4 hold) | 20 | 20.9 | 10 % | pass |
 | QC-04 | `docs-authority/HEAT_LADDER.md` | Q4_B stored kWh over 30 K (basis 20 kWh_th Q4 hold) | 20 | 20.9 | 10 % | pass |
-| QC-05 | `flow_graph/param/write_graph.py` | kW of the 67 feeder-supplied units: node continuous kW vs SF- feeder edges | 160.4137 | 160.4137 | 1 % | pass |
+| QC-05 | `flow_graph/param/write_graph.py` | kW of the 67 feeder-supplied units: node continuous kW vs SF- feeder edges | 139.552 | 139.552 | 1 % | pass |
 | QC-06 | `docs-authority/_struct_loads.py` | equipment rows with test >= operating >= empty | 279 | 279 | 0 % | pass |
 | QC-07 | `flow_graph/param/write_graph.py` | stream compositions sum to 1 and match their note (157 streams) | 157 | 157 | 2 % | pass |
-| QC-09 | `flow_graph/param/receivers.py` | H2 bank kg at 200 bar vs the sized store (AQS-ELEC-007 / X-PAR-12 basis in the graph) | 17 | 17.406 | 5 % | pass |
+| QC-09 | `flow_graph/param/receivers.py` | H2 bank kg at 200 bar vs the sized store (AQS-ELEC-007 / X-PAR-12 basis in the graph) | 18 | 18.4939 | 5 % | pass |
 | QC-12 | `docs-authority/HEAT_LADDER.md` | Q1_A oil kWh over 80 K (basis 10 kWh) | 10.0 | 12.4667 | 30 % | pass |
 | QC-16 | `flow_graph/param/water_tower.py` | hydro head m, upper to lower water centroid | 36.2499 | 35.9499 | 3 % | pass |
-| QC-17 | `docs-authority/_struct_loads.py` | plant operating kN: level table vs row sum | 66983.0 | 66983.553 | 1 % | pass |
+| QC-17 | `docs-authority/_struct_loads.py` | plant operating kN: level table vs row sum | 66986.0 | 66986.9373 | 1 % | pass |
 | QC-18 | `docs-authority/_foundation.py` | uplift FS = W/U | 1.1 | 1.101 | 1 % | pass |
 | QC-19 | `docs-authority/_wire_specs.py` | 14 AWG R20 ohm/km vs NEC Ch. 9 Table 8 | 8.4708 | 8.451 | 3 % | pass |
 | QC-19 | `docs-authority/_wire_specs.py` | 10 AWG R20 ohm/km vs NEC Ch. 9 Table 8 | 3.3451 | 3.3426 | 3 % | pass |

@@ -20,7 +20,7 @@ Rule: a unit closes task 09 where every wetted edge touching it carries a wetted
 - Aqueous process liquor (AQS-ASSAY-001 envelope) (77 edge ends)
 - Acid or brine, at or below 60 C (64 edge ends)
 - Hot leach liquor (45 edge ends)
-- Dry gas, H2/O2/N2/CO2 (38 edge ends)
+- Dry gas, H2/O2/N2/CO2 (39 edge ends)
 - Process vent gas (33 edge ends)
 - Q3/Q4 water loop (20 edge ends)
 - Hydrocarbon product, fuel or wax cut (19 edge ends)
@@ -890,6 +890,7 @@ No wetted piped stream: every edge of this unit is a solids transfer or an elect
 | IA-GEN-AIR | HDR_N2 | BACKUP_GEN | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
 | IA-EW4-N2 | EW_4 | HDR_N2 | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-AIR-RX-OUT | AIR_RECEIVER | HDR_N2 | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-MET-AIR-MU | HDR_N2 | MET_AHU | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 
 ### HDR_O2
 
@@ -1201,6 +1202,7 @@ No wetted piped stream: every edge of this unit is a solids transfer or an elect
 | S62 | MET_AHU | MET_SCRUB | F1 | 12.1 flue or acid gas | FRP/composite F1 per section 4.3 |
 | S71 | MET_AHU | MET_SCRUB | F1 | 12.1 flue or acid gas | FRP/composite F1 per section 4.3 |
 | IA-MET-AIR-RET | MET_SCRUB | MET_AHU | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-MET-AIR-MU | HDR_N2 | MET_AHU | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 
 ### MET_HX_Q4
 

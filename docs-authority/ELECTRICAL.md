@@ -1,8 +1,8 @@
 # Electrical analysis
 
 Document number: AQS-ELC-001  
-Revision: D  
-Date: 2026-10-24  
+Revision: E  
+Date: 2026-11-04  
 Basis: AQS-AUTH-001. Interconnection of the Sol-Ark inverter, zinc-bromide battery, generator and fuel cell: AQS-PWR-002, AQS-FC-001 and `FLOW_BATTERY.md`. Hazardous electrical areas: AQS-HSE-001 §6. Compliance themes: AQS-COMPL-001 §4 (NEC). Single-line diagram: `electrical_sld.png`.  
 Licence: CERN-OHL-S-2.0. This is not a document stamped by a professional engineer, and no permits are claimed.
 
@@ -13,6 +13,7 @@ Licence: CERN-OHL-S-2.0. This is not a document stamped by a professional engine
 | C | 2 | Rev N (AQS-DUTY-012): CE column redefined as HER-only intrinsic efficiency; Au/Ag/Cu at 1.00, Fe at 0.415 (Liu et al. 2025, B2); per-cell current model; Fe EW basis; BMED repeating-unit model; RECT-EW topology | 2026-10-08 |
 | C | 3 | Merged with the Rev BH/AC line: RECT-EW nine-channel 16500 A, BMED_EVAP sizing per AQS-PAR-001 Rev B; Rev C CE column and BMED repeating-unit method retained, sizing numbers superseded | 2026-10-17 |
 | D | 1 | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose, terms, captions; one merged table row split; values unchanged | 2026-10-24 |
+| E | 1 | The RECT-EW module row re-states at the Q-038 element-rate basis (AQS-ELEC-004 Rev E: 4250 A total, 25.5 kW nameplate, 5.6 kW AC); section 4 stays the historical Rev N study it is marked as | 2026-11-04 |
 
 ## 1. Purpose and scope
 
@@ -146,7 +147,7 @@ Table 5.1. AC and DC loads
 | VDF, mill, vibratory | AC 480 V | 2.0 kW |
 | HVAC / makeup | AC 480 V | 1.5 kW |
 | Induction coil drive | AC 5–20 kHz | 0–25 kW |
-| RECT-EW | Nine channels, 6 V, 250–4000 A frames, 16500 A total (AQS-ELEC-004 Rev B; cell 2.12 V, CE 0.85) | 99 kW nameplate; 38.7 kW AC at the bounding case |
+| RECT-EW | Nine channels, 6 V, 250–2000 A frames, 4250 A total (AQS-ELEC-004 Rev E; cell 2.12 V, CE 0.85, element deposit rates per Q-038) | 25.5 kW nameplate; 5.6 kW AC at the design case |
 | RECT-BMED | DC 0–80 V, 0–120 A steady | 5–8 kW class (study row; graph BMED_ACID books 26.93 kW, AQS-PAR-001 Rev B) |
 | EVAP_ACID, EVAP_BASE | AC 480 V, MVR compressor | 2.41 kW and 2.40 kW (AQS-PAR-001 Rev B; X-PAR-06) |
 | RECT-PK | DC 0–12 V, 0–40 A avg, pulsed | <0.5 kW |

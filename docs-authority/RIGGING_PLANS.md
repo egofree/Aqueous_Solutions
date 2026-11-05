@@ -40,8 +40,8 @@ The X-ASM-002 heavy-lift roster reproduced with the plan numbers (one plan per l
 | 9 | L1 | SLEEP_QUARTERS | 5760 | 6336 | 10.0 | 12.5 |
 | 10 | L1 | REC_DAYROOM | 7200 | 7920 | 10.0 | 12.5 |
 | 11 | L0 | POLY_FIBER | 1149 | 1264 | 2.0 | 2.5 |
-| 12 | L-1 | CRYO_H2 (one bank half) | 2760 | 3036 | 3.2 | 4.0 |
-| 13 | L-1 | CRYO_O2 (one bank half) | 1380 | 1518 | 3.2 | 4.0 |
+| 12 | L-1 | CRYO_H2 (one bank half) | 2933 | 3226 | 5.0 | 6.25 |
+| 13 | L-1 | CRYO_O2 (one bank half) | 1380 | 1518 | 5.0 | 6.25 |
 | 14 | L0 | EVAP_ACID | 1223 | 1345 | 2.0 | 2.5 |
 | 15 | L0 | PEANUT/R1 | 1015 | 1116 | 2.0 | 2.5 |
 | 16 | L0 | PEANUT/R2 | 1015 | 1116 | 2.0 | 2.5 |
@@ -52,8 +52,8 @@ The X-ASM-002 heavy-lift roster reproduced with the plan numbers (one plan per l
 | 21 | L1 | HAB_WASH | 3510 | 3861 | 10.0 | 12.5 |
 | 22 | L1 | ANIMAL_PEN | 2160 | 2376 | 10.0 | 12.5 |
 | 23 | L1 | COMPOST | 2160 | 2376 | 10.0 | 12.5 |
-| 24 | L-1 | CRYO_ASU | 1170 | 1287 | 3.2 | 4.0 |
-| 25 | L-1 | EVAP_ACID | 1223 | 1345 | 3.2 | 4.0 |
+| 24 | L-1 | CRYO_ASU | 1170 | 1287 | 5.0 | 6.25 |
+| 25 | L-1 | EVAP_ACID | 1223 | 1345 | 5.0 | 6.25 |
 
 ## 3. Plans
 
@@ -147,9 +147,9 @@ The X-ASM-002 heavy-lift roster reproduced with the plan numbers (one plan per l
   the heavier lifts of the level are seated; nothing hangs while connections are made.
 ### Plan 12: CRYO_H2 (one bank half) to L-1
 
-- **Mass per lift**: 2760 kg (AQS-BLD-013 booked empty mass, one bank half).
-- **Design load**: 2760 x 1.10 = 3036 kg.
-- **Hoist**: the L-1 booked hoist, rated 3.2 t, load-tested to 4.0 t (125 % of rated, ASME B30.2) - covers the design load with margin 5 %.
+- **Mass per lift**: 2933 kg (AQS-BLD-013 booked empty mass, one bank half).
+- **Design load**: 2933 x 1.10 = 3226 kg.
+- **Hoist**: the L-1 booked hoist, rated 5.0 t, load-tested to 6.25 t (125 % of rated, ASME B30.2) - covers the design load with margin 55 %.
 - **Lift points**: open item on the CRYO_H2 unit work order (no lug geometry is modeled in this study plan).
 - **Sequence context**: seat per section L-1 of AQS-ASM-002; hoist runs the lightest-remaining duty after
   the heavier lifts of the level are seated; nothing hangs while connections are made.
@@ -157,7 +157,7 @@ The X-ASM-002 heavy-lift roster reproduced with the plan numbers (one plan per l
 
 - **Mass per lift**: 1380 kg (AQS-BLD-013 booked empty mass, one bank half).
 - **Design load**: 1380 x 1.10 = 1518 kg.
-- **Hoist**: the L-1 booked hoist, rated 3.2 t, load-tested to 4.0 t (125 % of rated, ASME B30.2) - covers the design load with margin 111 %.
+- **Hoist**: the L-1 booked hoist, rated 5.0 t, load-tested to 6.25 t (125 % of rated, ASME B30.2) - covers the design load with margin 229 %.
 - **Lift points**: open item on the CRYO_O2 unit work order (no lug geometry is modeled in this study plan).
 - **Sequence context**: seat per section L-1 of AQS-ASM-002; hoist runs the lightest-remaining duty after
   the heavier lifts of the level are seated; nothing hangs while connections are made.
@@ -245,7 +245,7 @@ The X-ASM-002 heavy-lift roster reproduced with the plan numbers (one plan per l
 
 - **Mass per lift**: 1170 kg (AQS-BLD-013 booked empty mass).
 - **Design load**: 1170 x 1.10 = 1287 kg.
-- **Hoist**: the L-1 booked hoist, rated 3.2 t, load-tested to 4.0 t (125 % of rated, ASME B30.2) - covers the design load with margin 149 %.
+- **Hoist**: the L-1 booked hoist, rated 5.0 t, load-tested to 6.25 t (125 % of rated, ASME B30.2) - covers the design load with margin 289 %.
 - **Lift points**: open item on the CRYO_ASU unit work order (no lug geometry is modeled in this study plan).
 - **Sequence context**: seat per section L-1 of AQS-ASM-002; hoist runs the lightest-remaining duty after
   the heavier lifts of the level are seated; nothing hangs while connections are made.
@@ -253,7 +253,7 @@ The X-ASM-002 heavy-lift roster reproduced with the plan numbers (one plan per l
 
 - **Mass per lift**: 1223 kg (AQS-BLD-013 booked empty mass).
 - **Design load**: 1223 x 1.10 = 1345 kg.
-- **Hoist**: the L-1 booked hoist, rated 3.2 t, load-tested to 4.0 t (125 % of rated, ASME B30.2) - covers the design load with margin 138 %.
+- **Hoist**: the L-1 booked hoist, rated 5.0 t, load-tested to 6.25 t (125 % of rated, ASME B30.2) - covers the design load with margin 272 %.
 - **Lift points**: open item on the EVAP_ACID unit work order (no lug geometry is modeled in this study plan).
 - **Sequence context**: seat per section L-1 of AQS-ASM-002; hoist runs the lightest-remaining duty after
   the heavier lifts of the level are seated; nothing hangs while connections are made.
