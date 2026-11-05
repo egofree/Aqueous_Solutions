@@ -219,7 +219,7 @@ unit,COLD_MILL,Entry/exit strip tables on the pass line,1,carbon steel,pass line
 unit,COLD_MILL,"Roll-zone guard rail, 4 posts x 3 tiers (A-MACH: guard drawn)",1,CS tube,guard over the rotating roll zone; layout choice (W12)
 unit,COLD_MILL,"Drive gearbox + motor (purchased, envelope and interface)",1,purchased drive (envelope),nameplate 2.2 kW (AQS-MFG-010 Table 2.1; node stamp); purchased per plan rule 6
 unit,COLD_MILL,"Control cabinet (purchased, envelope and interface)",1,purchased cabinet (envelope),purchased per plan rule 6; mass a table-density placeholder until the maker TDS quotes (W12)
-unit,COLD_MILL,Nozzle set per docs-authority/nozzles/COLD_MILL.csv: 4 DN15 stubs,4,316L tube,schedule tags/faces/heights verbatim; atmospheric per duty section 4
+unit,COLD_MILL,Nozzle set per docs-authority/nozzles/COLD_MILL.csv: 4 DN15 stubs,5,316L tube,schedule tags/faces/heights verbatim; atmospheric per duty section 4
 unit,COMB_HEAT,"Plinth 1000 x 1000 x 60 (CS, anchor bosses)",1,carbon steel,"dry furnace-shop service, CA 0 mm (AQS-STD-001 shop rule); anchors in fasteners.csv"
 unit,COMB_HEAT,"Furnace shell mild steel t4, 660 x 1000 x 1100",1,carbon steel,"duty section 3: mild-steel shell; wall is the study fab-page value (hold, WORK_ORDER W12); tertiary N+1 standby of IND_MELT (A-M-282)"
 unit,COMB_HEAT,Hot face: alumina-silica brick t115 + castable crown,1,alumina-silica brick + castable,"duty section 3 (SCHACHT2004 ch. 10 class); thickness is the study fab-page value (hold, WORK_ORDER W12)"
@@ -616,7 +616,7 @@ unit,GAS_ATOMIZER,Heated tundish OD 160 on a stand with heater band,1,"316L + he
 unit,GAS_ATOMIZER,"Ar recirculation loop, DN32 tube runs",1,316L tube,30 bar Ar class per A-M-177; loop runs are layout choice (W12); no flange (W4 110 % rule - no node design_kPa); relief case pending (unit task 07)
 unit,GAS_ATOMIZER,"Ar compressor set (purchased, envelope and interface)",1,purchased compressor (envelope),"30 bar class, isothermal eta 0.6 (A-M-177); purchased per plan rule 6; mass a table-density placeholder until the maker TDS quotes (W12)"
 unit,GAS_ATOMIZER,"Control cabinet (purchased, envelope and interface)",1,purchased cabinet (envelope),nameplate 5.5 kW (AQS-MFG-010 Table 2.1; node stamp); purchased per plan rule 6
-unit,GAS_ATOMIZER,Nozzle set per docs-authority/nozzles/GAS_ATOMIZER.csv: 4 DN15 stubs and 3 solids rows drawn DN15 bore not calculated,7,316L tube,schedule tags/faces/heights verbatim; atmospheric per duty section 4
+unit,GAS_ATOMIZER,Nozzle set per docs-authority/nozzles/GAS_ATOMIZER.csv: 4 DN15 stubs and 3 solids rows drawn DN15 bore not calculated,8,316L tube,schedule tags/faces/heights verbatim; atmospheric per duty section 4
 unit,GEO_GHEX,Plinth 1000 x 600 x 20,1,carbon steel (ASTM A500),AQS-MOD-002 dry service; anchors in fasteners.csv
 unit,GEO_GHEX,"Four-post hold-down/guard frame pinning the 1000 x 600 x 800 envelope (40 x 40 posts, top rails)",1,carbon steel (ASTM A500),frame pins the registry box (X-PAR-04); anchors in fasteners.csv
 unit,GEO_GHEX,DN32 HDPE flow/return header runs on the skid (x 120..700),2,HDPE DR-11 (node material),"node design loop_DN 32; header_m 6 of horizontal header quoted on the node; skid stations are study values (hold, WORK_ORDER W12)"
@@ -915,7 +915,7 @@ unit,MET_MELT,Tilt trunnions and pour lip over the +Y melt-out rows,1,carbon ste
 unit,MET_MELT,Heat shield plate under the frame line,1,carbon steel,duty section 3: frame behind a heat shield
 unit,MET_MELT,Fume hood over the furnace with the vent riser at the box top,1,carbon steel,hood riser carries the N6 vent flush at the envelope top (800 datum = box top)
 unit,MET_MELT,"Power-supply cabinet (purchased, envelope and interface)",1,purchased cabinet (envelope),nameplate 7.5 kW (AQS-MFG-010 Table 2.1; node stamp); purchased per plan rule 6; cabinet mass is a table-density placeholder until the maker TDS quotes (W12)
-unit,MET_MELT,Nozzle set per docs-authority/nozzles/MET_MELT.csv: 6 DN15 stubs and 1 solids row drawn DN15 bore not calculated,7,316L tube,schedule tags/faces/heights verbatim; atmospheric per duty section 4
+unit,MET_MELT,Nozzle set per docs-authority/nozzles/MET_MELT.csv: 6 DN15 stubs and 1 solids row drawn DN15 bore not calculated,8,316L tube,schedule tags/faces/heights verbatim; atmospheric per duty section 4
 unit,MET_SCRUB,"PVC-U column shell OD 800, wall 6 mm, z 150..4063, with top head, skirt and 1200 x 1200 plinth",1,PVC-U pipe/plate,node envelope (X-PAR-03) and design D 800; wall a study value (WORK_ORDER W12); CA 0 mm (AQS-STD-001 polymer rule)
 unit,MET_SCRUB,"Packing support grid, OD 788 x 15 at z 700",1,PVC-U,A-COL support solid (envelope); layout elevation
 unit,MET_SCRUB,"Pall-ring bed, 2303 mm of PP rings in two beds with a redistribution disc, drawn as its envelope OD 788",1,PP (in-house cut rings),"node design packed_mm 2303, PP rings; ring count not modelled; bed split and elevations are the layout choice"
@@ -932,7 +932,7 @@ unit,MET_SYN,"Reagent feed tanks OD 200 x 300, 3 off (CH3OH / H2S / NH3 per the 
 unit,MET_SYN,"Hastelloy C crystalliser OD 220 x 350 (duty section 3: the product-quality bottleneck, X-UI-002)",1,Hastelloy C (buy-row envelope; maker TDS mass governs),duty section 3 selection (X-MAT-22); drawn as its envelope per plan rule 6; density is the published Hastelloy C class midpoint (study)
 unit,MET_SYN,"PTFE-lined transfer lines: column-to-crystalliser run, pump discharge risers, crystalliser vent stub",1,PTFE (duty section 3),duty section 3: PTFE-lined transfer for the HCN/acrolein/methanethiol class; tubing OD is a study proportion (W12)
 unit,MET_SYN,Metering pump set on the tank bases (purchased-class envelopes),3,purchased pumps (envelopes),connected set 0.2 kW (node); purchased per plan rule 6
-unit,MET_SYN,"Nozzle set per docs-authority/nozzles/MET_SYN.csv: 3 reagent feed stubs (DN15), product/drain/vent stubs (DN15)",6,316L tube,"schedule tags/faces/heights verbatim; atmospheric per duty section 4; the N4 crystals row drawn DN15, bore not calculated (plan W4)"
+unit,MET_SYN,"Nozzle set per docs-authority/nozzles/MET_SYN.csv: 3 reagent feed stubs (DN15), product/drain/vent stubs (DN15)",7,316L tube,"schedule tags/faces/heights verbatim; atmospheric per duty section 4; the N4 crystals row drawn DN15, bore not calculated (plan W4)"
 unit,MFG_SHOP,Bench deck 912 x 512 x 20 over the plinth 1000 x 600 x 20,1,carbon steel (ASTM A500),AQS-MOD-002 dry service; the shop-fabricable bench the machine envelopes mount on
 unit,MFG_SHOP,"Four-post hold-down/guard frame pinning the 1000 x 600 x 800 envelope (40 x 40 posts, top rails)",1,carbon steel (ASTM A500),frame pins the registry box (X-PAR-04); A-MACH guard; anchors in fasteners.csv
 unit,MFG_SHOP,Shop-air distribution: DN15 header (x 120..880 at z 720) with four drop legs,1,316L tube,"compressor service (AQS-MFG-010 Table 2.1 air compressor row, 4.0 kW nameplate); layout choice (W12)"
@@ -1546,7 +1546,7 @@ unit,WIRE_DRAW,Draw-fume extraction hood over the die zone (N4 routes to the hou
 unit,WIRE_DRAW,"Drive group on the drum bay (purchased, envelope and interface)",1,purchased drive (envelope),purchased per plan rule 6; nameplate 1.1 kW is the node stamp (AQS-MFG-010 Table 2.1)
 unit,WIRE_DRAW,"Control cabinet (purchased, envelope and interface)",1,purchased cabinet (envelope),purchased per plan rule 6; mass a table-density placeholder until the maker TDS quotes (W12)
 unit,WIRE_DRAW,"Die-zone and bull-block guard rail, 4 posts x 3 tiers (A-MACH: guard drawn)",1,CS tube,guard over the die zone and rotating drum; layout choice (WORK_ORDER W12)
-unit,WIRE_DRAW,Nozzle set per docs-authority/nozzles/WIRE_DRAW.csv: 6 DN15 stubs and 1 solids row drawn DN15 bore not calculated,7,316L tube,schedule tags/faces/heights verbatim; atmospheric per duty section 4
+unit,WIRE_DRAW,Nozzle set per docs-authority/nozzles/WIRE_DRAW.csv: 6 DN15 stubs and 1 solids row drawn DN15 bore not calculated,8,316L tube,schedule tags/faces/heights verbatim; atmospheric per duty section 4
 unit,WS_AMMONIA,"Bund tray 600 x 600, floor 20 + curb 60 x 10",1,PVC-U plate,skid layout choice (WORK_ORDER W12); CA 0 mm (AQS-STD-001 polymer rule); the duty section 4 prose own-bund lines are room-side containment (hold)
 unit,WS_AMMONIA,"Day tank OD 260, wall 10 mm, z 40..300, with heads",1,PVC-U plate/pipe,"duty section 3 PVC-U wetted (rules M1 and M2); station day-tank envelope - no vessel diameter or holdup basis on the node or duty (hold, WORK_ORDER W12)"
 unit,WS_AMMONIA,"Service-zone guard rail 130 x 100 x 150, tube 12 (A-MACH: guard drawn)",1,PP tube,guard over the front-right floor zone; layout choice (WORK_ORDER W12)
