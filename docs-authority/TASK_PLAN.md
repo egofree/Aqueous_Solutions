@@ -55,7 +55,7 @@ Table 2.1. Tasks by group
 | X-ASM | Assembly and installation sequence | 2 | 2 |
 | X-COM | Commissioning and startup | 3 | 3 |
 | X-OPS | Operations and maintenance | 3 | 3 |
-| X-QA | QA and verification | 17 | 2 |
+| X-QA | QA and verification | 18 | 2 |
 | X-END | Decommissioning and recycling loop closure | 2 | 2 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 13 |
 | X-TOOL | Modeling tooling | 4 | 4 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 14 |
 | NUT | Process (Mass transform) | 15 | 14 |
-| | **Total** | **3356** | **3137** |
+| | **Total** | **3357** | **3137** |
 
 ## 3. Triage of open tasks
 
@@ -102,7 +102,7 @@ Table 3.1. Open tasks by triage tag
 
 | Triage | Open tasks |
 | --- | --- |
-| desk P2 | 14 |
+| desk P2 | 15 |
 | hardware | 205 |
 
 ## 4. Unit task template
@@ -167,6 +167,7 @@ Table 6.1. Next cross-cutting desk tasks
 | X-QA-15 | Repeated sentences removed from graph size notes | desk P2 |
 | X-QA-16 | Superseded electrowinning figures withdrawn from hand-written pages (CHECKS.md AQS-DUTY-080, EW_MODULE.md AQS-EW-MOD-001) | desk P2 |
 | X-QA-17 | Regeneration provenance simplified (the receipt and its listed files replace a content check) | desk P2 |
+| X-QA-18 | Generation pipeline simplified (graph rewritten in place by many stages, bookkeeping manifests, commit-order staleness) | desk P2 |
 
 Table 6.2 lists the open cross-cutting tasks that wait on a decision by the project owner.
 
@@ -618,6 +619,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [ ] **X-QA-15** Repeated sentences removed from graph size notes. Done when: no node parameter string repeats the same sentence, and a test in flow_graph/ fails if one does. Depends: —. Triage: desk P2.
 - [ ] **X-QA-16** Superseded electrowinning figures withdrawn from hand-written pages (CHECKS.md AQS-DUTY-080, EW_MODULE.md AQS-EW-MOD-001). Done when: each page is marked superseded by AQS-DUTY-051 or regenerated from it, and flow_graph/check_doc_style.py flags fixed counts of units, files, documents or tests in hand-written pages. Depends: —. Triage: desk P2.
 - [ ] **X-QA-17** Regeneration provenance simplified (the receipt and its listed files replace a content check). Done when: the proposal in docs-authority/notes/2026-11-04-review-work-items.md is decided; if adopted, staleness is decided by input hashes recorded in one manifest and by the full-regeneration idempotency check, and the receipt lists are removed. Depends: —. Triage: desk P2.
+- [ ] **X-QA-18** Generation pipeline simplified (graph rewritten in place by many stages, bookkeeping manifests, commit-order staleness). Done when: the migration steps of docs-authority/notes/2026-11-04-pipeline-simplification-plan.md section 3 are each approved and done in order, each step passing `scripts/check_all.sh --full` with no diff; no commit that changes only derived files is needed after a graph change. Depends: X-QA-17. Triage: desk P2.
 
 ### X-END. Decommissioning and recycling loop closure
 
