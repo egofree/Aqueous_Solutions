@@ -1,8 +1,8 @@
 # Glossary
 
 Document number: AQS-GLO-001  
-Revision: D  
-Date: 2026-11-02  
+Revision: E  
+Date: 2026-11-04  
 
 | Rev | Description | Date |
 |---|---|---|
@@ -10,6 +10,7 @@ Date: 2026-11-02
 | B | Purpose statement added; the withdrawn document-line scan removed from the A-M entry; style findings cleared | 2026-10-25 |
 | C | Entries added for the Lake Boehmer site vocabulary (TWDB, RRC, MPGCD, GHI, NWS, SEC, SMCL, TSWQS) | 2026-11-01 |
 | D | Entries added: LB (lake_boehmer site code) and KFST (Fort Stockton-Pecos County Airport station identifier); the Rev (graph) entry names the revision field instead of the current letter | 2026-11-02 |
+| E | Entries added for the manufacturing-model status codes (M0 to M3), the acceptance criteria sets (A-core and the class sets), the fabrication route classes (F-xxx), route hold, and the regeneration receipt and its entries | 2026-11-04 |
 
 
 ## 1. Purpose and scope
@@ -49,6 +50,22 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 {MVS -- Minimum viable system: the smallest set of sectors that closes every loop (mass, energy, life support) and still exports a surplus. See SECTOR_DEFINITIONS.md and DESIGN_TOOL_ARCHITECTURE.md.}
 
 {Bounding case -- The feed assay or operating case that sets the largest duty for a unit. Units are sized for it so the plant stays feedstock-agnostic.}
+
+## Manufacturing models and regeneration
+
+{M0, M1, M2, M3 -- Status of a unit's manufacturing model in AQS-PLAN-006 (MFG_MODEL_PLAN.md) section 7. M0: the unit's `cad/stl` file is an envelope box only. M1: the STL shows coarse internals but no manufacturing source exists. M2: a parametric CadQuery source in `models/mfg/<UNIT>/` builds. M3: the model meets the acceptance criteria of section 5. "Unit to M3" in a commit message means the unit's model was accepted.}
+
+{A-core -- The acceptance criteria every unit with hardware must meet before its manufacturing model is accepted (AQS-PLAN-006 section 5): headless build, bounding box inside the sized envelope, all nozzles present, internals as solids, materials, generated BOM, fasteners, drawings, closed STEP and STL, and named holds.}
+
+{A-P, A-VES, A-CELL, A-COL, A-HX, A-PIPE, A-MACH, A-SC, A-FARM -- Additional acceptance criteria sets that apply to a unit class in addition to A-core (AQS-PLAN-006 section 5), for example A-CELL: plate count, size, pitch and active area match the duty sheet.}
+
+{F-VES, F-CELL, F-COL, F-HX, F-PIPE, F-MACH, F-FARM -- Fabrication route classes (AQS-PLAN-006 section 4): the sequence of shop operations used to make a unit of that class, for example F-VES: cut, roll, weld, set nozzles, pressure or leak test.}
+
+{Route hold -- A unit whose class has no fabrication route class in AQS-PLAN-006 section 4. Its model can be accepted, but its shop operations are not yet defined; the hold is recorded in its work order.}
+
+{Regeneration receipt -- The file `flow_graph/derived/_regen_receipt.json`, written by a full run of `python3 -m flow_graph.param.regen`. It records the graph SHA-256 of the run and the derived files the run regenerated and found byte-identical across its final pass.}
+
+{Receipt entries -- The derived files and file patterns listed in the regeneration receipt (fields `vouched_files` and `vouched_patterns`) as regenerated and unchanged at the receipt's graph SHA-256. The staleness check (`docs-authority/_rev_stamp.py`) treats a listed file as current although its last commit is older than the last graph commit.}
 
 ## Process and chemistry
 

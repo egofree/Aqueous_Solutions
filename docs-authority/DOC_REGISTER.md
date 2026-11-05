@@ -177,7 +177,7 @@ Table 3.1. Document numbers in use
 | AQS-FONT-001 | `docs-authority/FONTS.md` | A | 2026-10-25 | Fonts for 3D sign glyphs | current |
 | AQS-GAS-002 | `docs-authority/SCRUBBER_CHEMISTRY.md` | Basic | 2026-09-27 | Scrubber chemistry | current |
 | AQS-GAS-003 | `docs-authority/FAN_STACK.md` | B | 2026-09-27 | Fan curves and stack heights | current |
-| AQS-GLO-001 | `docs-authority/GLOSSARY.md` | D | 2026-11-02 | Glossary | current |
+| AQS-GLO-001 | `docs-authority/GLOSSARY.md` | E | 2026-11-04 | Glossary | current |
 | AQS-GOV-006 | `docs-authority/DERIVED_REVISIONS.md` | C | — | Derived file revisions | current |
 | AQS-HAB-001 | `docs-authority/HAB_FIXTURES.md` | B | 2026-10-12 | Habitation fixtures | current |
 | AQS-HAB-002 | `docs-authority/HAB_DESIGN.md` | A | 2026-10-26 | Hab interior design: zoning | current |
