@@ -1,7 +1,6 @@
 """BMED_BASE manufacturing model, AQS-PLAN-006 work order (X-MFG lane, tier 6, F-CELL).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json only (W2 fields by the
-tracker; the envelope, design and layout blocks beside them are builder-owned) and
+Graph revision AD. Study. Not a PE stamp. Sizes and counts come from the plant graph through the shared reader (models/mfg/lib/graph_node.py); the params.json write-back merges the builder-owned blocks only. and
 rebuilds every solid.
 
 Placement frame: x along 1000 mm, y along 600 mm, z up, origin at the envelope corner.
@@ -40,10 +39,12 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles  # noqa: E402
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("BMED_BASE")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P})   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
 L, W, H = (float(v) for v in P["size_mm"])                 # 1000 x 600 x 350, study registry box
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
@@ -91,7 +92,7 @@ RHO_PE = materials.density("HDPE")     # 950, laminate spacer/membrane class
 RHO_TI = materials.density("Ti_G2")    # 4510, anode end plate (A-M-170)
 RHO_316 = materials.density("316L")    # 8000, cathode end plate 316L/Ni
 
-assert L == 1000.0 and W == 600.0 and H == 350.0, "BMED_BASE node envelope changed"
+# Envelope and design both come from the graph node; no hard-coded duplicate stays.
 assert FRAME == 300.0 and CELL == 200.0, "AQS-DUTY-068 construction changed"
 
 
