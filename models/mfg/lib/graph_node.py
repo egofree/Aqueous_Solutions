@@ -74,6 +74,7 @@ class GraphNode:
         self.sector = node.get("sector_id")
         self.design_kPa = self.params.get("design_kPa")
         self.relief_mm = self.params.get("relief_mm")
+        self.internals = node.get("internals") or self.params.get("internals") or "none"
         sec3 = (self.params.get("sec3_material") or {}).get("mat")
         self.material = sec3
 
@@ -90,6 +91,7 @@ class GraphNode:
             "relief_mm": self.relief_mm,
             "nozzles": self.nozzles or [],
             "material": self.material,
+            "internals": self.internals,
             "design": self.design,
         }
 

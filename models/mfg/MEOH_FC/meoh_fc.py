@@ -45,15 +45,15 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles          # noqa: E402
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("MEOH_FC")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
 L, W, H = (float(v) for v in P["size_mm"])                 # 1800 x 800 x 700
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
-_g = json.loads((HERE.parents[2] / "flow_graph" / "plant_flow_graph.json").read_text())
-DS = (next(n for n in _g["nodes"] if n["unit_id"] == UNIT).get("params") or {}).get("design") or {}
+DS = GN.design
 
 T_PLINTH = 20.0
 N_CELLS = int(DS.get("n_cells", 28))                       # node design
@@ -76,8 +76,7 @@ RHO_CU = materials.density("Cu")                           # 8960, lib table
 RHO_SS = materials.density("316L")                         # 8000, lib table
 RHO_BED = 2400.0                                           # catalyst bulk, study value (buy)
 
-assert L == 1800.0 and W == 800.0 and H == 700.0, "MEOH_FC node envelope changed"
-assert N_CELLS == 28 and CELL_A == 200.0, "MEOH_FC node design changed"
+# Cell count, cell area and envelope all come from the graph node; no hard-coded count or envelope stays.
 assert Z_ST1 < H and Z_REF1 < H, "assemblies must stay inside the envelope"
 
 
