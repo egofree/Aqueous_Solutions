@@ -11,7 +11,7 @@
     2000
   ],
   "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
-  "graph_revision": "AC",
+  "graph_revision": "AD",
   "solids": 1,
   "all_parts_valid": true,
   "shell": {

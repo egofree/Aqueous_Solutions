@@ -72,6 +72,7 @@ class GraphNode:
         self.design = self.params.get("design") or {}
         self.class_ = node.get("class")
         self.sector = node.get("sector_id")
+        self.compressor_design = self.params.get("compressor_design")
         self.design_kPa = self.params.get("design_kPa")
         self.relief_mm = self.params.get("relief_mm")
         self.internals = node.get("internals") or self.params.get("internals") or "none"
@@ -89,6 +90,7 @@ class GraphNode:
             "sector": self.sector,
             "design_kPa": self.design_kPa,
             "relief_mm": self.relief_mm,
+            "compressor_design": self.compressor_design,
             "nozzles": self.nozzles or [],
             "material": self.material,
             "internals": self.internals,

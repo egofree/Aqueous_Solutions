@@ -11,7 +11,7 @@
     450
   ],
   "size_basis": "L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167)",
-  "graph_revision": "AC",
+  "graph_revision": "AD",
   "solids": 1,
   "all_parts_valid": true,
   "tubes": {
