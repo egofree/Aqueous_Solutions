@@ -1,7 +1,7 @@
 """FLUX_PREP / WAX_PATTERN bench manufacturing models, AQS-PLAN-006 work order
 (X-MFG lane, FOUNDRY-FLUX_PREP-10 / FOUNDRY-WAX_PATTERN-10 M3).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json only.
+Graph revision AD. Study. Not a PE stamp. Sizes and counts come from the plant graph through the shared reader (models/mfg/lib/graph_node.py); the params.json write-back merges the builder-owned blocks only.
 Shared bench frame (800 x 600, work top at z 900, extraction hood above): the
 salt-flux preparation bench (20 L hopper, 0.1 kW mixer) and the wax pattern
 injection bench (10 L pot, 0.5 kW injector). Nozzle hardware per each unit's
@@ -14,6 +14,8 @@ import csv, json, math, pathlib, sys
 import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
+sys.path.insert(0, str(HERE))                 # models/mfg: lib
+from lib import graph_node  # noqa: E402
 L, W, H = 800, 600, 1200
 TOP = 900.0
 DN15, W15 = 10.65, 2.0
@@ -47,7 +49,9 @@ _LAST_PARTS = None
 
 
 def build_flux_prep(unit):
-    P = json.loads((HERE / unit / "params.json").read_text())
+    GN = graph_node.graph_node(unit)   # the plant graph is the sole authority
+    P = GN.as_params()
+    P.update({k: v for k, v in json.loads((HERE / unit / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })
     parts = bench_frame()
     parts["hopper"] = cone = cq.Workplane("XY").circle(150).workplane(offset=250).circle(70).loft(ruled=True).translate((280, 200, 650))
     parts["mixer"] = rod(45.0, (280, 200, 900), "Z", 180).union(rod(12.0, (280, 200, 1080), "Z", 40))
@@ -68,7 +72,7 @@ def build_flux_prep(unit):
        "make", "task-04 schedule N5"],
       ["3", "Flux hopper 20 L cone + 0.1 kW mixer stage", 1, "CS + carbon steel",
        round(parts["hopper"].val().Volume() * 7.85e-6 + parts["mixer"].val().Volume() * 8.96e-6 + parts["mix_stage"].val().Volume() * 7.85e-6, 1),
-       "make", f"design hopper 20 L, mixer 0.1 kW; {P['design']['salt_kg_d']} kg/d salt batch"],
+       "make", f"design hopper 20 L, mixer 0.1 kW; {GN.design['salt_kg_d']} kg/d salt batch"],
       ["4", "N1 flux discharge chute +X z 600", 1, "carbon steel", parts["flux_chute"].val().Volume() * 7.85e-6,
        "make", "task-04 schedule N1 (solids, bore not calculated)"],
       ["5", "N2/N3 inlet chutes -X z 160 (digester salts; MgCl2 drag-out from TI_CELL N7)", 2,
@@ -80,7 +84,9 @@ def build_flux_prep(unit):
     return P, parts, {}, EXTERNAL, rho, bom
 
 def build_wax_pattern(unit):
-    P = json.loads((HERE / unit / "params.json").read_text())
+    GN = graph_node.graph_node(unit)   # the plant graph is the sole authority
+    P = GN.as_params()
+    P.update({k: v for k, v in json.loads((HERE / unit / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })
     parts = bench_frame()
     parts["wax_pot"] = tube(110.0, 98.0, (280.0, 300.0, 700.0), "Z", 200)          # 10 L pot
     parts["injector_head"] = rod(60.0, (280.0, 300.0, 900.0), "Z", 160)
@@ -102,7 +108,7 @@ def build_wax_pattern(unit):
        "make", "task-04 schedule N5"],
       ["3", f"Wax pot 10 L with the 0.5 kW injector head", 1, "CS + heater class",
        round(parts["wax_pot"].val().Volume() * 7.85e-6 + parts["injector_head"].val().Volume() * 7.85e-6, 1),
-       "make", f"design pot 10 L, injector 0.5 kW; {P['design']['wax_kg_d']} kg/d wax"],
+       "make", f"design pot 10 L, injector 0.5 kW; {GN.design['wax_kg_d']} kg/d wax"],
       ["4", "Pattern table 220 x 300 x 40", 1, "carbon steel", parts["pattern_table"].val().Volume() * 7.85e-6,
        "make", "WO step 3"],
       ["5", "N1 pattern discharge chute +X z 600", 1, "carbon steel",

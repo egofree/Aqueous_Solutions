@@ -1,8 +1,7 @@
 """FARM / HAB / POLY unit manufacturing models (X-FARM / X-HAB / X-POLY M3 roster, AQS-PLAN-006).
 
 One shared builder per form class - tray/basin, tank, frame, hive, cabinet, room shell - reading
-each unit's params.json (size_mm from the claimed graph envelope, the sec3 material class, the
-driver-derived duty). Every mass is wall volume x the material density; no rate is claimed.
+each unit's graph node through the shared reader (models/mfg/lib/graph_node.py; form/model/material keys read from params.json merge). Every mass is wall volume x the material density; no rate is claimed.
 M3 roster acceptance: build + check.json + bom.csv + WORK_ORDER + build_log (the FLUX_PREP-class
 acceptance; the 8-sheet drawing sets follow as their own pass).
 
@@ -12,6 +11,8 @@ import csv, json, math, pathlib, sys
 import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
+sys.path.insert(0, str(HERE))                 # models/mfg: lib
+from lib import graph_node  # noqa: E402
 RHO = {'HDPE': 950.0, 'PP': 905.0, 'EPDM': 1150.0, 'steel': 7850.0, 'HDG_steel': 7850.0,
        'SS304': 8000.0, 'SS316': 8000.0, 'aluminium': 2700.0, 'pine': 500.0, 'FRP': 1800.0,
        'LECA': 450.0, 'acrylic': 1180.0}
@@ -133,7 +134,9 @@ def default_material(P):
 
 def build(unit):
     H = HERE / unit
-    P = json.loads((H / 'params.json').read_text())
+    GN = graph_node.graph_node(unit)   # the plant graph is the sole authority
+    P = GN.as_params()
+    P.update({k: v for k, v in json.loads((H / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned form keys only (form/material_class/wall do not live on the graph)
     form = P['form']
     parts = FORMS[form](P)
     body = None
