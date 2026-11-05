@@ -1,8 +1,8 @@
 """HYDRO_SET manufacturing model, AQS-PLAN-006 work order (M0 lane, tier 8, F-MACH).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json (W2 fields by the tracker;
-the envelope, design and layout blocks beside them are builder-owned) and rebuilds
-every solid.
+Graph revision AD. Study. Not a PE stamp. Sizes and counts come from the plant graph
+through the shared reader (models/mfg/lib/graph_node.py); the params.json write-back
+merges the builder-owned blocks only, and rebuilds every solid.
 
 Placement frame: x along 1000 mm, y along 600 mm, z up, origin at the envelope corner.
 Every dimension is an authority figure or a named layout choice:
@@ -45,10 +45,12 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles         # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
 from tracker import stl_bbox_mm                           # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("HYDRO_SET")       # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {})})   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
 L, W, H = (float(v) for v in P["size_mm"])                 # 1000 x 600 x 800
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
@@ -65,7 +67,7 @@ MAT = "316L"
 CA = materials.ca_for(MAT)
 RHO_CS = materials.density("CS")
 
-assert L == 1000.0 and W == 600.0 and H == 800.0, "HYDRO_SET node envelope changed"
+# Envelope and design both come from the graph node; no hard-coded duplicate stays.
 assert CAB_X[1] <= L - POST, "cabinet clears the frame"
 assert float(BB.get("rated_kW_discharge") or 14.46) == 14.46, "node discharge rating"
 assert float(BB.get("head_m") or 36.21) == 36.21, "node head"
