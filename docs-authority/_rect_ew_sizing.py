@@ -7,8 +7,8 @@ from flow_graph.param import drivers as DR
 from flow_graph.param.sizing import power as PW
 _d = DR.load()
 ew=json.loads(subprocess.run([sys.executable,'docs-authority/_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['rows']
-STD=[250,500,1000,1500,2000,2500,3000,4000]   # channel frame sizes, A (study, A-M register)
-MARGIN=1.10; VRATED=6.0; JBAR=200.0            # study (A-M register); JBAR from AQS-PWR-001
+STD=DR.val(_d,'rect_channel_frame_sizes_A')   # channel frame sizes, A (A-M-044)
+MARGIN=DR.val(_d,'rect_channel_margin'); VRATED=DR.val(_d,'rect_channel_rated_V'); JBAR=DR.val(_d,'rect_busbar_J_A_cm2')   # A-M-041/042; JBAR from AQS-PWR-001
 VCELL=DR.val(_d,'ew_cell_voltage_V'); VDROP=DR.val(_d,'ew_bus_drop_V'); EFF=DR.val(_d,'rect_efficiency')
 rows=[]
 for r in ew:

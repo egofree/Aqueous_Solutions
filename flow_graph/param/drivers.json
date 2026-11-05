@@ -5891,5 +5891,196 @@
   "value": 0.3,
   "units": "kW melt-spin heater + spindle + winder",
   "register": "A-M-429"
+ },
+ "rect_channel_frame_sizes_A": {
+  "value": [
+   250,
+   500,
+   1000,
+   1500,
+   2000,
+   2500,
+   3000,
+   4000
+  ],
+  "units": "A rectifier channel frame sizes (study list)",
+  "register": "A-M-044",
+  "needs_verification": true,
+  "verification_test": "Vendor catalog"
+ },
+ "rect_channel_margin": {
+  "value": 1.1,
+  "units": "- channel rating margin over design current",
+  "register": "A-M-041",
+  "needs_verification": true,
+  "verification_test": "Vendor selection"
+ },
+ "rect_channel_rated_V": {
+  "value": 6.0,
+  "units": "V channel voltage rating (study)",
+  "register": "A-M-042",
+  "needs_verification": true,
+  "verification_test": "Measured cell and bus voltage"
+ },
+ "rect_busbar_J_A_cm2": {
+  "value": 200.0,
+  "units": "A/cm2 DC busbar design current density (shop rule of AQS-PWR-001)",
+  "register": "A-M-044",
+  "needs_verification": true,
+  "verification_test": "Busbar temperature-rise test (CDA_PUB22 class) at rated current"
+ },
+ "ew_sheet_collection_cell": {
+  "value": 9,
+  "units": "EW_n cell index of the IA-EW-SHEET collection point (forming share books at EW_9)",
+  "register": "A-M-460",
+  "needs_verification": true,
+  "verification_test": "Balance ledger: IA-EW-SHEET source is EW_9"
+ },
+ "si_kgd": {
+  "value": 1.8,
+  "units": "kg/d PV cell line silicon (3 cells/d x 0.6 kg/cell, 200 mm wafer class, kerf included)",
+  "register": "A-M-466",
+  "needs_verification": true,
+  "verification_test": "Weigh Si feed per cell over a production campaign"
+ },
+ "pem_stack_j_A_cm2": {
+  "value": 1.8,
+  "units": "A/cm2 PEM stack current density (BERNT2018-class operating point, study)",
+  "register": "A-M-459",
+  "needs_verification": true,
+  "verification_test": "Stack polarisation test at 1.8 A/cm2"
+ },
+ "pem_stack_v_cell_V": {
+  "value": 1.85,
+  "units": "V/cell PEM stack cell voltage (BERNT2018-class operating point, study)",
+  "register": "A-M-459",
+  "needs_verification": true,
+  "verification_test": "Stack voltage test at the rated current density"
+ },
+ "pem_stack_cells": {
+  "value": 80,
+  "units": "cells in the drawn PEM stack",
+  "register": "A-M-459",
+  "needs_verification": true,
+  "verification_test": "Stack build record"
+ },
+ "elyz_h2_design_kg_d": {
+  "value": 9.358,
+  "units": "kg/d H2O_ELYZ design-block H2 rate (83.62 kg/d water -> 9.358 H2 + 74.263 O2)",
+  "register": "A-M-459",
+  "needs_verification": true,
+  "verification_test": "H2O_ELYZ H2 product-edge rate"
+ },
+ "elyz_bed_radius_m": {
+  "value": 0.04,
+  "units": "m DN80 Sch 40 tube bore radius (ASME_B36_10M class)",
+  "register": "A-M-168",
+  "needs_verification": true,
+  "verification_test": "Tube bore dimension from the ASME B36.10M schedule table"
+ },
+ "baghouse_hood_face_velocity_m_s": {
+  "value": 0.5,
+  "units": "m/s hood face velocity (ACGIH industrial-ventilation class)",
+  "register": "A-M-458",
+  "needs_verification": true,
+  "verification_test": "Capture-velocity measurement at each hood (ACGIH_IND_VENT)"
+ },
+ "baghouse_ac_basis_m3_min_m2": {
+  "value": 1.2,
+  "units": "m3/min/m2 air-to-cloth ratio (EPA-453 baghouse practice)",
+  "register": "A-M-458",
+  "needs_verification": true,
+  "verification_test": "Baghouse pressure-drop test at the design air-to-cloth"
+ },
+ "baghouse_bag_count": {
+  "value": 20,
+  "units": "bags D150 x 1200 mm, 5 x 4 field",
+  "register": "A-M-458",
+  "needs_verification": true,
+  "verification_test": "As-built bag count"
+ },
+ "baghouse_hood_mill_m2": {
+  "value": 0.2,
+  "units": "m2 COLD_MILL hood face (A-M-458)",
+  "register": "A-M-458",
+  "needs_verification": true,
+  "verification_test": "As-built hood face"
+ },
+ "baghouse_hood_kerf_m2": {
+  "value": 0.12,
+  "units": "m2 kerf (FAB) hood face (A-M-458)",
+  "register": "A-M-458",
+  "needs_verification": true,
+  "verification_test": "As-built hood face"
+ },
+ "baghouse_hood_wire_m2": {
+  "value": 0.1,
+  "units": "m2 wire-draw hood face (A-M-458)",
+  "register": "A-M-458",
+  "needs_verification": true,
+  "verification_test": "As-built hood face"
+ },
+ "litho_dev_kW": {
+  "value": 0.008,
+  "units": "kW wet-develop bench circulation + N2 puff class (study)",
+  "register": "A-M-287",
+  "needs_verification": true,
+  "verification_test": "Bench inventory audit"
+ },
+ "blow_mold_rate_kg_h": {
+  "value": 2.8,
+  "units": "kg/h Precious Plastic class throughput (SI-MFG-01)",
+  "register": "A-M-285",
+  "needs_verification": true,
+  "verification_test": "Extruder rate trial"
+ },
+ "blow_mold_extruder_kW": {
+  "value": 2.2,
+  "units": "kW extruder motor class (SI-MFG-01; AQS-REQ-KW-001)",
+  "register": "A-M-285",
+  "needs_verification": true,
+  "verification_test": "Motor nameplate"
+ },
+ "blow_mold_clamp_kW": {
+  "value": 0.75,
+  "units": "kW clamp class (SI-MFG-01)",
+  "register": "A-M-285",
+  "needs_verification": true,
+  "verification_test": "Motor nameplate"
+ },
+ "blow_mold_air_kW": {
+  "value": 0.75,
+  "units": "kW blow-air class (SI-MFG-01)",
+  "register": "A-M-285",
+  "needs_verification": true,
+  "verification_test": "Motor nameplate"
+ },
+ "electrode_coat_exhaust_kW": {
+  "value": 0.35,
+  "units": "kW booth exhaust fan (ST-ELC-01 class)",
+  "register": "A-M-285",
+  "needs_verification": true,
+  "verification_test": "Fan nameplate"
+ },
+ "electrode_coat_cure_kW": {
+  "value": 1.2,
+  "units": "kW IR cure panel (ST-ELC-01 class)",
+  "register": "A-M-285",
+  "needs_verification": true,
+  "verification_test": "Panel nameplate"
+ },
+ "lio_bat_energy_kWh": {
+  "value": 2517,
+  "units": "kWh sealed Li-ion storage (interim carries the reference storage duty; re-sized at the locale design pass)",
+  "register": "A-M-402",
+  "needs_verification": true,
+  "verification_test": "Locale storage sizing from the eclipse energy"
+ },
+ "geo_orc_feed_pump_kW": {
+  "value": 0.05,
+  "units": "kW ORC feed pump (R245fa study class)",
+  "register": "A-M-285",
+  "needs_verification": true,
+  "verification_test": "Pump selection"
  }
 }

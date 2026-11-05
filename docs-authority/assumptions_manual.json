@@ -7753,5 +7753,23 @@
     "task": "X-PAR-02 (Q-038 closure)",
     "sensitivity": "the cascade rate scales 1:1 with the accepted feed lot's deposit assay (AQS-ASSAY-001 section 7: a characterized lot re-points the deposits and the cascade re-solves); the envelope cases stay the held-design check of AQS-ASSAY-001 section 4",
     "replaced_by": "A-M-265 (goods balance) restated; per-lot deposit assay task on the AQS-ASSAY-001 station"
+  },
+  {
+    "id": "A-M-466",
+    "task": "X-QA-06",
+    "title": "PV cell line silicon draw",
+    "statement": "The SI_REDUCE carbothermic furnace runs at 1.8 kg/d Si: 3 cells/d x 0.6 kg Si/cell (200 mm wafer class, kerf included), the AQS-DUTY-071 throughput class",
+    "value": "1.8 kg/d Si",
+    "units": "kg/d",
+    "where": "flow_graph/param/drivers.json si_kgd (read by flow_graph/param/specialty_sizing.py compute())",
+    "basis": "AQS-DUTY-071 throughput; wafer + kerf class (200 mm wafer)",
+    "sensitivity": "The furnace draw and the SiO2/char draws scale 1:1 with the throughput",
+    "replaced_by": "Cell-line wafer throughput at the fab product-basis task",
+    "needs_verification": true,
+    "verification_test": "Weigh Si feed per cell over a production campaign",
+    "files": [
+      "flow_graph/param/specialty_sizing.py",
+      "flow_graph/param/drivers.json"
+    ]
   }
 ]

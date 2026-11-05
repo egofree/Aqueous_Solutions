@@ -99,7 +99,7 @@ def apply(g=None, write=False):
     coat_kWh = spin_kW * starts * 2 / 60 + bake_kW * starts * 5 / 60 + 0.015 * 24
     coat_kW = coat_kWh / 24
     align_kW = uv_W * starts * 20 / 3600 / 24 / 1000 + 0.004                # LED duty + stage/controls parasitic
-    dev_kW = 0.008                                                          # bench circulation + N2 puff class
+    dev_kW = val('litho_dev_kW')                                                    # bench circulation + N2 puff class
     litho_kW = coat_kW + align_kW + dev_kW
     node(g, N, 'LITHO_COAT', 'FAB', 'coater',
          'Spin-coater line: spin bowl, vacuum chuck, softbake hotplate. Parent LITHO_STUB retired into the real '
@@ -210,9 +210,9 @@ def apply(g=None, write=False):
 
     # ---- BLOW_MOLD: continuous-extrusion blow molder at the wax duty ------------------------------
     blow_in = float((E['IA-BLOW-IN'].get('rate') or {}).get('value') or 0)
-    rate_kg_h = 2.8                                          # Precious Plastic class throughput (SI-MFG-01)
+    rate_kg_h = val('blow_mold_rate_kg_h')                          # Precious Plastic class throughput (SI-MFG-01)
     hours = blow_in / rate_kg_h
-    ext_kW, clamp_kW, air_kW = 2.2, 0.75, 0.75               # SI-MFG-01 motor class + clamp + air (AQS-REQ-KW-001)
+    ext_kW = val('blow_mold_extruder_kW'); clamp_kW = val('blow_mold_clamp_kW'); air_kW = val('blow_mold_air_kW')   # SI-MFG-01 motor class + clamp + air (AQS-REQ-KW-001)
     blow_kWh = ext_kW * hours + (clamp_kW + air_kW) * hours * 0.5
     blow_kW = blow_kWh / 24
     N['BLOW_MOLD']['class'] = 'former'
@@ -231,7 +231,7 @@ def apply(g=None, write=False):
     feed(g, E, 'BLOW_MOLD', blow_kW, f'Feed equal to BLOW_MOLD continuous_kw. | {TAG}.')
 
     # ---- ELECTRODE_COAT: booth + IR cure at the recoat duty ----------------------------------------
-    exh_kW, cure_kW = 0.35, 1.2                              # booth exhaust fan + IR cure panel (ST-ELC-01 class)
+    exh_kW = val('electrode_coat_exhaust_kW'); cure_kW = val('electrode_coat_cure_kW')   # booth exhaust fan + IR cure panel (ST-ELC-01 class)
     elc_kWh = exh_kW * 2.0 + cure_kW * 1.0                   # 2 h/d booth + 1 h/d cure campaign
     elc_kW = elc_kWh / 24
     N['ELECTRODE_COAT']['class'] = 'coater'
@@ -261,7 +261,7 @@ def apply(g=None, write=False):
     o['params']['design'] = dict(machine='binary ORC skid (installed standby)', p_rated_kW_e=round(p_orc, 2),
                                  q_sink_kW_th=q_sink, eta_th=eta, working_fluid='R245fa class',
                                  expander='scroll expander + generator', evaporator_kW_th=q_sink,
-                                 condenser_kW_th=round(q_sink * (1 - eta), 2), feed_pump_kW=0.05,
+                                 condenser_kW_th=round(q_sink * (1 - eta), 2), feed_pump_kW=val('geo_orc_feed_pump_kW'),
                                  basis='D-GEO_ORC: study endpoint 0 kW_e; geometry at the A-M-244 12 kW dry-cooler '
                                        'context so the standby is real (A-M-285)',
                                  placement='electrical_yard.py massing stands in (unit map row)')
@@ -277,17 +277,18 @@ def apply(g=None, write=False):
         n['params']['design'] = design
         return n
 
+    _rad_kW = val('GEO.orc-train.q_sink_kW')
     rad_area_per_kW = 1000.0 / (0.90 * 5.670374419e-8 * (328.0 ** 4 - 180.0 ** 4))   # Stefan-Boltzmann
     ln = lnode('RAD_PANEL', 'HEAT', 'radiator', None,
-               dict(rated_kW=12.0, radiator_K=328.0, emissivity=0.90, sink_K=180.0,
+               dict(rated_kW=_rad_kW, radiator_K=328.0, emissivity=0.90, sink_K=180.0,
                     area_m2_per_kW=round(rad_area_per_kW, 2),
-                    area_m2_at_duty=round(rad_area_per_kW * 12.0, 1),
+                    area_m2_at_duty=round(rad_area_per_kW * _rad_kW, 1),
                     loop='65/45 C low-grade water loop, mean 55 C (328 K), carried from the DRY_COOLER design (AQS-THM-002)',
                     basis='A-M-396 (sky sink 180 K), A-M-397 (emissivity 0.90); duty context A-M-244'),
                'Space radiator at the DRY_COOLER duty context (X-LOC-09): rejects to the sky where the site '
                'gives no air heat sink. Area follows the Stefan-Boltzmann law (heat_rejection.radiator_m2_per_kW). '
                'presence stays placeholder at the Earth reference, which rejects through DRY_COOLER and GEO_GHEX.')
-    ln['params']['rated_kW'] = 12.0   # duty at the top level: the heat_rejection level reads it (A-M-244 context)
+    ln['params']['rated_kW'] = _rad_kW   # duty at the top level: the heat_rejection level reads it (A-M-244 context)
     lnode('TANK_BLD', 'WTR', 'press_tank', None,
           dict(design_kPa_g=200.0, fluid='water', roles='pumped fire supply and treated-water buffer '
                '(replaces CATCH_TANK); gravity reserve re-pumped (replaces ROOF_TANK)',
@@ -327,12 +328,12 @@ def apply(g=None, write=False):
     lnode('LIO_BAT', 'ELEC', 'li_ion', None,
           dict(chemistry='sealed Li-ion NMC packs, rack modules with battery management',
                service='station storage through each eclipse; charges on the sunlit part of the orbit',
-               energy_kWh=2517, kwh_basis='interim carries the reference storage duty (ZNBR2 params.kWh); '
+               energy_kWh=val('lio_bat_energy_kWh'), kwh_basis='interim carries the reference storage duty (ZNBR2 params.kWh); '
                're-sized at the locale design pass from the eclipse energy (A-M-402)',
                basis='A-M-402'),
           'Sealed lithium-ion storage (X-LOC-10): carries the storage function where the flow-battery '
           'electrolyte has no buoyant management. Sealed cells need no site capability.')
-    N['LIO_BAT']['params']['kWh'] = 2517   # storage duty at the top level: the portfolio storage check reads it (A-M-402 interim)
+    N['LIO_BAT']['params']['kWh'] = val('lio_bat_energy_kWh')   # storage duty at the top level: the portfolio storage check reads it (A-M-402 interim)
     lnode('WET_OX', 'WTR', 'wet_ox', None,
           dict(service='wet oxidation of black water: organic solids oxidise in water at high '
                'temperature and pressure, no settling step',

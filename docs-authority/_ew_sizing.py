@@ -26,7 +26,7 @@ V=DR.val(_d,'ew_cell_voltage_V')                # drivers.json (needs_verificati
 WALL=DR.val(_d,'DIGESTER.ew-cascade-train.ew_tank_wall_m')       # AQS-DUTY-051 Rev A
 END=DR.val(_d,'DIGESTER.ew-cascade-train.ew_tank_end_margin_m'); SIDE=DR.val(_d,'DIGESTER.ew-cascade-train.ew_tank_side_margin_m')
 SUMP=DR.val(_d,'DIGESTER.ew-cascade-train.ew_tank_sump_m'); TOP=DR.val(_d,'DIGESTER.ew-cascade-train.ew_tank_cover_m'); FB=DR.val(_d,'DIGESTER.ew-cascade-train.ew_tank_freeboard_m')   # A-M-038 allowances
-SHEET_TO=9   # the forming share books on IA-EW-SHEET at the EW_9 collection point (write_graph.process)
+SHEET_TO=DR.val(_d,'ew_sheet_collection_cell')   # the forming share books on IA-EW-SHEET at the EW_9 collection point (write_graph.process)
 rows=[]
 for n in range(1,10):
     el,M,z=EL[n]; dep=DEP[n]

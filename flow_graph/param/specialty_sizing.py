@@ -19,6 +19,12 @@ Run: python3 -m flow_graph.param.specialty_sizing
 import json
 import math
 import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+from flow_graph.param import drivers as _DR
+_D = _DR.load()
+def _dv(k):
+    return _DR.val(_D, k)
 
 R = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GP = os.path.join(R, 'flow_graph', 'plant_flow_graph.json')
@@ -39,7 +45,7 @@ def compute():
     v['li_slipstream_kgd'] = (0.5, 'the POLISH_BANK liquor slipstream at the ~1.5 wt% LiOH class: carries the Li2CO3 thickener need (0.012 kg/d at 12 % of the Li grease)')
     v['li_carbonated_kgd'] = (0.5, 'the carbonated slurry to the Li kettle (thickener + liquor water)')
     # --- SI_REDUCE (PV cell line silicon) ------------------------------------------
-    si_kgd = 1.8                                   # 3 cells/d x 0.6 kg Si/cell (200 mm wafer class, kerf incl.)
+    si_kgd = _dv('si_kgd')   # 3 cells/d x 0.6 kg Si/cell (200 mm wafer class, kerf incl.)
     v['si_kgd'] = (si_kgd, 'the PV cell line silicon: 3 cells/d x 0.6 kg/cell (AQS-DUTY-071 throughput; wafer + kerf class)')
     v['sio2_kgd'] = (round(si_kgd * 60.08 / 28.09, 3), 'SiO2 per the carbothermic stoichiometry SiO2 + 2C -> Si + 2CO')
     v['char_to_si_kgd'] = (round(si_kgd * 24.02 / 28.09 / 0.8, 3), 'char carbon per the stoichiometry at the 80 % reactive-carbon class (the IA-CHAR pool is 5.5 kg/d: the draw fits)')
@@ -145,7 +151,8 @@ def write():
         kw=0.05, kw_note='contactor agitator + CO2 metering at the batch class')
 
     # --- the machines -----------------------------------------------------------------
-    put('SI_REDUCE', design={'duty': 'carbothermic silicon reduction for the PV cell line (SOLAR_PV_CELL draws 1.8 kg/d Si)',
+    _si_txt = v['si_kgd'][0]
+    put('SI_REDUCE', design={'duty': f'carbothermic silicon reduction for the PV cell line (SOLAR_PV_CELL draws {_si_txt} kg/d Si)',
                              'si_kgd': v['si_kgd'][0], 'sio2_kgd': v['sio2_kgd'][0],
                              'char_kgd': v['char_to_si_kgd'][0]},
         sizing={'si_kgd': v['si_kgd'][0]},
@@ -179,14 +186,14 @@ def write():
         kw=0.37, kw_note=v['gw_pump_kw'][1] + ' (standby-zero at the baseline: ' + v['gw_note'] + ')')
     # --- H2O_ELYZ skid machine design (A-M-459 stack point; A-M-133 window; A-M-168 bed
     # classes reused on the skid; A-M-279 skid allowances set the envelope) ------------
-    _h2_d = 9.358                                                  # the design-block H2 (kg/d)
-    _win = 6.0                                                     # ely_window_h (A-M-133)
+    _h2_d = _dv('elyz_h2_design_kg_d')                                 # the design-block H2 (kg/d)
+    _win = _dv('ely_window_h')                                             # ely_window_h (A-M-133)
     _h2_rate = _h2_d / _win                                        # kg/h at the rated point
     _ah_kg = 2 * 96485.0 * 1000.0 / 2.016 / 3600.0                 # 26,590 Ah per kg H2 (Faraday)
-    _j, _vc = 1.8, 1.85                                            # A/cm2, V/cell (A-M-459 PEM class)
+    _j = _dv('pem_stack_j_A_cm2'); _vc = _dv('pem_stack_v_cell_V')   # A/cm2, V/cell (A-M-459 PEM class)
     _i_sum = _h2_rate * _ah_kg                                     # A, cell-summed at the rated point
     _a_sum_cm2 = _i_sum / _j                                       # cm2, cell-summed active area
-    _cells = 80
+    _cells = int(_dv('pem_stack_cells'))
     _a_cell = _a_sum_cm2 / _cells                                  # cm2 per cell
     _v_stack = _cells * _vc
     _p_dc = _i_sum * _vc / 1000.0                                  # kW DC
@@ -196,7 +203,7 @@ def write():
     _l_skid = _l_stack + 100 + _l_bop                              # 100 mm gap between the decks
     _nm3_h = _h2_rate * 11.127                                     # Nm3/h H2 at the rated point
     _deoxo_v = _nm3_h / 5000.0 * 1000.0                            # L of bed (GHSV 5000 1/h, A-M-168 driver class)
-    _bed_r = 0.040                                                 # m, DN80 Sch 40 bore (ASME_B36_10M class)
+    _bed_r = _dv('elyz_bed_radius_m')                                # m, DN80 Sch 40 bore (ASME_B36_10M class)
     _deoxo_bed_l = int(_deoxo_v / 2.0 / (math.pi * _bed_r ** 2))          # mm per bed (V in L / 1000 = m3; the 1000s cancel), two beds
     _w_kg_d = round(_h2_d * 0.0492 / 2.750, 3)                     # saturated water carried, scaled off the H2_DRYER book
     _sieve_kg = round(_w_kg_d / 0.10 * 3.0, 2)                     # 0.10 kg/kg working capacity, margin 3 (A-M-168)
@@ -245,12 +252,12 @@ def write():
     # pulse header and rotary-valve discharge, sized on the capture air per A-M-458) ---
     _bh_dust = {k: float((E.get(k, {}).get('rate') or {}).get('value') or 0.0)
                 for k in ('IA-MILL-LOSS', 'IA-FAB-LOSS', 'IA-WIRE-LOSS')}
-    _bh_hoods = {'IA-MILL-LOSS': 0.20, 'IA-FAB-LOSS': 0.12, 'IA-WIRE-LOSS': 0.10}   # m2 hood faces (A-M-458)
-    _bh_u = 0.5                                                     # m/s hood face velocity (ACGIH class)
+    _bh_hoods = {'IA-MILL-LOSS': _dv('baghouse_hood_mill_m2'), 'IA-FAB-LOSS': _dv('baghouse_hood_kerf_m2'), 'IA-WIRE-LOSS': _dv('baghouse_hood_wire_m2')}   # m2 hood faces (A-M-458)
+    _bh_u = _dv('baghouse_hood_face_velocity_m_s')                     # m/s hood face velocity (ACGIH class)
     _bh_q_m3_h = round(_bh_u * sum(_bh_hoods.values()) * 3600.0, 0)  # 756 m3/h capture air
-    _bh_ac_basis = 1.2                                              # m3/min/m2 (EPA-453 practice)
+    _bh_ac_basis = _dv('baghouse_ac_basis_m3_min_m2')                # m3/min/m2 (EPA-453 practice)
     _bh_cloth_req = round(_bh_q_m3_h / 60.0 / _bh_ac_basis, 2)      # 10.5 m2
-    _bh_bags = 20                                                   # D150 x 1200, 5 x 4 field at the 180 mm pitch
+    _bh_bags = int(_dv('baghouse_bag_count'))                       # D150 x 1200, 5 x 4 field at the 180 mm pitch
     _bh_bag_area = round(math.pi * 0.150 * 1.200, 4)                # 0.5655 m2 per bag
     _bh_cloth = round(_bh_bags * _bh_bag_area, 2)                   # 11.31 m2 drawn
     _bh_hop_h = int((900 - 200) / 2 * 1.732)                        # 60 deg hopper, 200 mm valve outlet

@@ -25,6 +25,7 @@ Each electrowinning (EW) cell plates metal from solution using direct current (D
 - Each channel is rated at 6 V. This covers the cell voltage of 2.12 V (USBM_CL_EW) and the bus drop of 0.3 V, and leaves room for anode ageing and for start-up (study value).
 - The rectifier efficiency is taken as 0.80 at this low voltage (study value).
 - The DC busbar is sized at 200 A/cm² of copper for each pole (shop rule of AQS-PWR-001).
+- The frame list, the 1.10 margin, the 6 V rating and the busbar density are read from `flow_graph/param/drivers.json` (`rect_channel_frame_sizes_A`, `rect_channel_margin`, `rect_channel_rated_V`, `rect_busbar_J_A_cm2`); the values are unchanged.
 
 ## 2. Channels
 
