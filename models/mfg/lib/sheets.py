@@ -13,7 +13,6 @@ Run twice around _drawings.py: draw script, _drawings.py, draw script (PDF pass)
 import json
 import pathlib
 import re
-from datetime import date
 
 BAND = 100   # notes band appended under the drawing; _drawings.py stamps the title block
 
@@ -68,6 +67,14 @@ def export_sheets(unit, parts, report, sheets, here=None):
     return {"sheets": [s[0] for s in sheets], "pdf": pdf}
 
 
+def _stamp_date():
+    from lib.stamp_date import deterministic_date
+    return deterministic_date()
+
+
+deterministic_date = _stamp_date
+
+
 def build_log(unit, here, report, srcs, extra_checks, acceptance_set):
     """Write the A-core acceptance build log from the check report."""
     import cadquery as cq
@@ -81,7 +88,7 @@ def build_log(unit, here, report, srcs, extra_checks, acceptance_set):
     lines = [
         f"# Build log - {unit}",
         "",
-        f"Date: {date.today().isoformat()}. Authority: AQS-PLAN-006 section 5 (acceptance) {acceptance_set}; "
+        f"Date: {_stamp_date()}. Authority: AQS-PLAN-006 section 5 (acceptance) {acceptance_set}; "
         "MFG_MODEL_PLAN (AQS-PLAN-006).",
         f"Graph: `flow_graph/plant_flow_graph.json` (duty sheet "
         f"`docs-authority/duties/{unit}.md`; envelope per `models/mfg/{unit}/params.json`).",

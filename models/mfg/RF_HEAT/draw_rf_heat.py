@@ -87,14 +87,13 @@ print(json.dumps(sheets.export_sheets(unit, parts, R, SHEETS, HERE)))
 # schedule, and this unit has none (duty section 4) - the honest line is written below.
 import sys  # noqa: E402
 import cadquery as cq  # noqa: E402
-from datetime import date  # noqa: E402
 
 dims = " x ".join(f"{v:g}" for v in R["bbox_mm"])
 env = " x ".join(f"{v:g}" for v in R["size_mm"])
 lines = [
     f"# Build log - {unit}",
     "",
-    f"Date: {date.today().isoformat()}. Authority: AQS-PLAN-006 section 5 (acceptance) "
+    f"Date: {sheets.deterministic_date()}. Authority: AQS-PLAN-006 section 5 (acceptance) "
     "A-core (route hold); MFG_MODEL_PLAN (AQS-PLAN-006).",
     f"Graph: `flow_graph/plant_flow_graph.json` (duty sheet "
     f"`docs-authority/duties/{unit}.md`; envelope per `models/mfg/{unit}/params.json`).",

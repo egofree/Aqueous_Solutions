@@ -41,7 +41,6 @@ import re
 import struct
 import sys
 import tempfile
-from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 MFG = os.path.join(ROOT, 'models', 'mfg')
@@ -669,7 +668,8 @@ def section7_text(records, graph, seed, register):
         else:
             counts['M0'] += 1
     n_check_fail = sum(1 for f in fails_by_unit.values() if f)
-    today = date.today().isoformat()
+    from lib.stamp_date import deterministic_date
+    today = deterministic_date()  # no wall clock: the inputs' own state date
     L = []
     L.append(S7_MARK)
     L.append('')
