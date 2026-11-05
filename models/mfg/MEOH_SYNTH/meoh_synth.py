@@ -1,8 +1,8 @@
 """MEOH_SYNTH manufacturing model, AQS-PLAN-006 work order (X-MFG lane, tier 6, F-VES).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json (W2 fields by the tracker;
-the envelope, design and layout blocks beside them are builder-owned) and rebuilds
-every solid.
+Graph revision AD. Study. Not a PE stamp. Reads the graph node through the shared
+reader (models/mfg/lib/graph_node.py); the params.json write-back beside it carries
+only the builder-owned envelope, design and layout blocks. Rebuilds every solid.
 
 Placement frame: x along 414 mm, y along 414 mm, z up, origin at the envelope corner.
 Every dimension is an authority figure or a named layout choice:
@@ -22,15 +22,18 @@ Every dimension is an authority figure or a named layout choice:
   partial pressure no carbon steel). The node design row "SA-106 B tube" predates
   that selection and is superseded; the jacket and shell follow the same alloy
   (holds, W12). Wall geometry stays the node t_nom 3.91 (t_req 2.8796, t_ok true).
-- Nozzles: all 9 rows of docs-authority/nozzles/MEOH_SYNTH.csv drawn at tag, face,
+- Nozzles: all 10 rows of docs-authority/nozzles/MEOH_SYNTH.csv drawn at tag, face,
   height and bore as atmospheric open-bore tube connections on the skid faces (duty
   section 4: hose, atmospheric; the connecting line makes the joint at the face).
   The 160 inlets and 600 outlets draw as issued (both fit the 2585 box); the drain
   passes to the envelope bottom (50 datum); the vent riser stands on the top flange
-  and flushes at the envelope top (the 800 datum is the schedule placeholder). The
-  rating column (Class 150) is carried verbatim as text, no flange hardware is
-  drawn at the face connections (W4 110 % rule); the pressure-part flanges carry
-  the B16.5 Class 600 rating of the node construction.
+  and flushes at the envelope top (the 800 datum is the schedule placeholder). N10
+  is the power terminal (cable schedule X-ELS-06, AQS-ELEC-010): electrical, not
+  piped - drawn as a DN15 stand-in penetration flush at the envelope top beside the
+  vent riser, bore not calculated (plan W4). The rating column (Class 150) is
+  carried verbatim as text, no flange hardware is drawn at the face connections
+  (W4 110 % rule); the pressure-part flanges carry the B16.5 Class 600 rating of
+  the node construction.
 - A-VES: the bed volume is reported from the model against the node V_work_L; no
   residence time is derived (the duty section 2 claims no holdup; a fixed bed).
 """
@@ -40,15 +43,17 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("MEOH_SYNTH")      # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
+          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
 L, W, H = (float(v) for v in P["size_mm"])                 # 414 x 414 x 2585
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
-_g = json.loads((HERE.parents[2] / "flow_graph" / "plant_flow_graph.json").read_text())
-DS = (next(n for n in _g["nodes"] if n["unit_id"] == UNIT).get("params") or {}).get("design") or {}
+DS = GN.design                                # node design block (reactor_design.py, X-MFG-31)
 
 T_PLINTH = 20.0
 CX, CY = L / 2, W / 2                                      # vessel axis
@@ -73,9 +78,13 @@ CA = materials.ca_for(MAT)                                 # 0.0, AQS-STD-001
 RHO = materials.density(MAT)                               # 8000, lib table
 RHO_BED = 2400.0                                           # catalyst bulk, study value (buy row)
 
-assert L == 414.0 and W == 414.0 and H == 2585.0, "MEOH_SYNTH node envelope changed"
-assert OD_JK == 114.0 and WALL_TUBE == 3.91, "MEOH_SYNTH node design changed"
 assert Z_TOP < H and Z_BED1 < Z_JK1, "internals must stay inside the shell"
+
+
+def od_of(r):
+    """Hardware OD for a schedule row: lib-table DN rows at the table OD, and
+    non-piped rows (cable, solids) at the DN15 stand-in."""
+    return dn.pipe_od(r["size"]) if r["size"] in dn.PIPE else dn.pipe_od("DN15")
 
 
 def tube_z(length):
@@ -139,10 +148,10 @@ layout_x = {}
 for (face, z), rows in sorted(groups.items()):
     rows = sorted(rows, key=lambda r: r["tag"])
     # the pack centres on the vessel axis so every stub lands on the jacket/tube wall
-    span = sum(dn.pipe_od(r["size"]) + 8.0 for r in rows) - 8.0
+    span = sum(od_of(r) + 8.0 for r in rows) - 8.0
     x = CX - span / 2
     for r in rows:
-        od_s = dn.pipe_od(r["size"])
+        od_s = od_of(r)
         layout_x[r["tag"]] = round(x + od_s / 2, 1)
         x += od_s + 8.0
 
@@ -150,13 +159,20 @@ noz_pieces, drawn = [], {}
 for r in schedule:
     tag, dnl, face0 = r["tag"], r["size"], r["face"]
     face = FACE_OF.get(face0, face0)
-    od_s = dn.pipe_od(dnl)
+    od_s = od_of(r)
+    dnl_hw = dnl if dnl in dn.PIPE else "DN15"    # non-piped rows at the DN15 stand-in
     if face0 == "bottom":               # drain: boss under the bottom flange, flush at z 0
-        s = tube_dn(dnl, Z_FL0 + STUB_PIERCE).translate((CX, CY, 0.0))
+        s = tube_dn(dnl_hw, Z_FL0 + STUB_PIERCE).translate((CX, CY, 0.0))
         note = "drain boss under the bottom flange, flush at the envelope bottom (schedule datum 50)"
         z_d, x_d = 0.0, CX
+    elif face0 == "top" and dnl not in dn.PIPE:   # N10: power terminal (X-ELS-06)
+        s = tube_dn("DN15", H - Z_TOP + STUB_PIERCE).translate((CX - 60.0, CY, Z_TOP - STUB_PIERCE))
+        note = ("power terminal (cable schedule X-ELS-06): an electrical drop, not "
+                "piped - drawn as a DN15 stand-in penetration flush at the envelope "
+                "top beside the vent riser, bore not calculated (plan W4)")
+        z_d, x_d = H, CX - 60.0
     elif face0 == "top":                # vent: riser on the top flange, flush at the box top
-        s = tube_dn(dnl, H - Z_TOP + STUB_PIERCE).translate((CX, CY, Z_TOP - STUB_PIERCE))
+        s = tube_dn(dnl_hw, H - Z_TOP + STUB_PIERCE).translate((CX, CY, Z_TOP - STUB_PIERCE))
         note = ("vent riser on the top flange, flush at the envelope top; schedule "
                 "datum 800 is the placeholder elevation (hold, WORK_ORDER W12)")
         z_d, x_d = H, CX
@@ -164,9 +180,9 @@ for r in schedule:
         z_d = float(r["height_mm"])     # 160 and 600 fit the 2585 box; drawn as issued
         x_d = layout_x[tag]
         stub_len = CY + STUB_PIERCE     # face to the tube axis, piercing the walls
-        s = (tube_dn(dnl, stub_len).rotate((0, 0, 0), (1, 0, 0), -90)
+        s = (tube_dn(dnl_hw, stub_len).rotate((0, 0, 0), (1, 0, 0), -90)
              .translate((x_d, 0.0, z_d)) if face == "-Y" else
-             tube_dn(dnl, stub_len).rotate((0, 0, 0), (1, 0, 0), 90)
+             tube_dn(dnl_hw, stub_len).rotate((0, 0, 0), (1, 0, 0), 90)
              .translate((x_d, W, z_d)))
         note = ("schedule datum drawn as issued; the piped takeoff lands on the tube "
                 "at the placeholder elevation (duty section 4: elevations are the "
@@ -270,7 +286,9 @@ report = {
     "part flanges carry the B16.5 Class 600 rating of the node construction; the "
     "schedule rating column (Class 150) is carried verbatim as text; datums draw as "
     "issued (160 and 600 fit the 2585 box); drain flush at the envelope bottom; "
-    "vent riser flush at the envelope top",
+    "vent riser flush at the envelope top; the N10 power terminal (cable schedule "
+    "X-ELS-06) is electrical, not piped: drawn as a DN15 stand-in penetration at "
+    "the envelope top, bore not calculated",
     "part_mass_kg": mass, "cadquery": cq.__version__,
 }
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
@@ -303,11 +321,13 @@ rows = [
      "purchased heater per plan rule 6; the maker rating reads the sheet at order"],
     ["7", "Nozzle set per docs-authority/nozzles/MEOH_SYNTH.csv: 9 atmospheric "
           "open-bore tube connections at the skid faces (drain under the bottom "
-          "flange, vent riser on the top flange)", len(schedule), "316L tube",
+          "flange, vent riser on the top flange) plus the N10 power-terminal "
+          "penetration (DN15 stand-in) at the top", len(schedule), "316L tube",
      mass["nozzles"], "make",
      "schedule tags/faces/heights verbatim; bores per the lib/dn Sch 40 table; "
      "elevations are the schedule placeholders pending vessel design (duty "
-     "section 4, hold W12)"],
+     "section 4, hold W12); the N10 power terminal (cable schedule X-ELS-06) is "
+     "electrical, not piped"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)

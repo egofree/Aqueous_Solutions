@@ -174,10 +174,21 @@
       "schedule_rating": "Class 150",
       "service": "methanol feed to the methyl-mercaptan synthesis (trace)",
       "note": "schedule datum drawn as issued; the piped takeoff lands on the tube at the placeholder elevation (duty section 4: elevations are the schedule placeholders pending vessel design, unit tasks 02/06); atmospheric open-bore tube, flush at the envelope face"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800,
+      "drawn_height_mm": 2585.0,
+      "x_mm": 147.0,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-MEOH_SYNTH, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+      "note": "power terminal (cable schedule X-ELS-06): an electrical drop, not piped - drawn as a DN15 stand-in penetration flush at the envelope top beside the vent riser, bore not calculated (plan W4)"
     }
   },
-  "nozzle_count_schedule": 9,
-  "nozzle_idiom": "atmospheric open-bore tube connections flush at the envelope faces (duty section 4: hose, atmospheric; the W4 110 percent rule draws no flange hardware where no process pressure is stated at the face); the pressure-part flanges carry the B16.5 Class 600 rating of the node construction; the schedule rating column (Class 150) is carried verbatim as text; datums draw as issued (160 and 600 fit the 2585 box); drain flush at the envelope bottom; vent riser flush at the envelope top",
+  "nozzle_count_schedule": 10,
+  "nozzle_idiom": "atmospheric open-bore tube connections flush at the envelope faces (duty section 4: hose, atmospheric; the W4 110 percent rule draws no flange hardware where no process pressure is stated at the face); the pressure-part flanges carry the B16.5 Class 600 rating of the node construction; the schedule rating column (Class 150) is carried verbatim as text; datums draw as issued (160 and 600 fit the 2585 box); drain flush at the envelope bottom; vent riser flush at the envelope top; the N10 power terminal (cable schedule X-ELS-06) is electrical, not piped: drawn as a DN15 stand-in penetration at the envelope top, bore not calculated",
   "part_mass_kg": {
     "plinth": 26.9,
     "pressure_part": 20.3,
@@ -185,7 +196,7 @@
     "grids": 0.1,
     "bed": 7.6,
     "preheater": 18.4,
-    "nozzles": 2.7
+    "nozzles": 3.5
   },
   "cadquery": "2.8.0"
 }
