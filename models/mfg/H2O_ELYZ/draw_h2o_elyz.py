@@ -54,7 +54,7 @@ SHEETS = [
       'The placement seed block under-books the skid (W12(1)); nothing is resized'],
      "General arrangement, side elevation. Shop, not stamped."),
     ("stack01", stack, (1, -0.5, 0.7),
-     ['The PEM cell field: 80 bipolar plates of 169.7 x 169.7 mm active between Ti end '
+     [f'The PEM cell field: {SR["cells"]} bipolar plates of 169.7 x 169.7 mm active between Ti end '
       'plates at the 8 mm pitch; the plates and lands draw, the MEAs are a BOM loading row '
       '(W12(3))',
       f'The cell-summed area {SR["area_m2_cell_summed"]:g} m2 is what the rated H2 books: '

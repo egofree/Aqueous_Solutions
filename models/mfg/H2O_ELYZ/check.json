@@ -14,7 +14,7 @@
   "graph_revision": "AD",
   "solids": 110,
   "all_parts_valid": true,
-  "solids_note": "one compound of closed solids: plinth, stack-deck frame and enclosure posts, the 80-cell bipolar-plate field between end plates with the copper bus pair, the power-electronics envelope, the BoP deck frame, the two DN150 separators on legs, the four deoxo/dryer bed tubes, the DI-water pump envelope, the H2 relief envelope and the nozzle stubs; every union partner overlaps volumetrically, so the mesh reads back closed and manifold",
+  "solids_note": "one compound of closed solids: plinth, stack-deck frame and enclosure posts, the cell bipolar-plate field (count from the graph node) between end plates with the copper bus pair, the power-electronics envelope, the BoP deck frame, the two DN150 separators on legs, the four deoxo/dryer bed tubes, the DI-water pump envelope, the H2 relief envelope and the nozzle stubs; every union partner overlaps volumetrically, so the mesh reads back closed and manifold",
   "stack_report": {
     "cells": 80,
     "active_mm": [

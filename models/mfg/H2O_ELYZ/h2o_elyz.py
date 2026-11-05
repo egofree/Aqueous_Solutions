@@ -1,9 +1,11 @@
 """H2O_ELYZ manufacturing model, AQS-PLAN-006 work order (X-MFG lane, tier 4, PEM electrolyser).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json (W2 fields by the tracker; the
-design block beside them is written by flow_graph/param/specialty_sizing.py, X-SPEC lane)
-and rebuilds every solid - the PEM stack skid and its balance-of-plant deck per the node
-internals row ("PEM stack, H2 and O2 gas-liquid separators, deoxo on H2, dryer").
+Graph revision AD. Study. Not a PE stamp. Sizes and counts come from the plant graph
+through the shared reader (models/mfg/lib/graph_node.py; the design block is written by
+flow_graph/param/specialty_sizing.py, X-SPEC lane); params.json remains as the tracker
+build report. Rebuilds every solid - the PEM stack skid and its balance-of-plant deck
+per the node internals row ("PEM stack, H2 and O2 gas-liquid separators, deoxo on H2,
+dryer").
 
 Every dimension is an authority figure or a named layout choice:
 
@@ -12,7 +14,7 @@ Every dimension is an authority figure or a named layout choice:
   the plinth spans the footprint, the deck frames top at the envelope height, the face
   connections flush at the faces. The placement seed block (1800 x 800 x 1600) under-books
   it - hold, W12(1).
-- Stack deck (params.design.stack, A-M-459): the PEM stack in its enclosure - 80 cells of
+- Stack deck (params.design.stack, A-M-459): the PEM stack in its enclosure - the graph cell count of
   288 cm2 active (169.7 x 169.7 mm) between end plates at the 8 mm pitch, 518.4 A stack
   current at 148 V DC (76.7 kW DC) on the rated H2 of 1.5597 kg/h over the 6 h PV window
   (A-M-133); the cell-summed area 2.304 m2 is what the rated H2 books. The cells draw as
@@ -42,15 +44,15 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, materials   # noqa: E402
+from lib import dn, fasteners, graph_node, materials   # noqa: E402
 from tracker import stl_bbox_mm, stl_manifold   # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("H2O_ELYZ")      # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
 L, W, H = (float(v) for v in P["size_mm"])                 # 3367 x 1050 x 2200
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
-_g = json.loads((HERE.parents[2] / "flow_graph" / "plant_flow_graph.json").read_text())
-DS = (next(n for n in _g["nodes"] if n["unit_id"] == UNIT).get("params") or {}).get("design") or {}
+DS = GN.design
 
 SK = DS["stack"]
 CELLS = int(SK["cells"])                                   # 80
@@ -75,11 +77,11 @@ RHO_TI = materials.density("Ti G2") or RHO_TI
 RHO_316 = materials.density("316L")
 RHO_CS = materials.density("CS") or materials.density("steel")
 
-assert L == 3367.0 and W == 1050.0 and H == 2200.0, "H2O_ELYZ node envelope changed"
-assert CELLS == 80 and abs(AW - 169.7) < 0.1, "the stack book changed (A-M-459)"
+# Cell count and envelope both come from the graph node (X-...); no hard-coded count or envelope stays.
+assert abs(AW - 169.7) < 0.1, "the stack book changed (A-M-459)"
 assert GAP == 100.0, "the A-M-279 deck split changed"
 assert Z_STACK1 < H, "stack must close under the envelope top"
-assert DEOX_L == 345.0 and DRY_L == 712.0, "the bed classes changed"
+# Bed-class geometry comes from the graph design (params.design.deoxo/dryer); the builder draws what the design states.
 
 parts = [("plinth", cq.Workplane("XY").box(L, W, T_PLINTH, centered=False))]
 # ---------------------------------------------------------------- stack deck
@@ -216,7 +218,7 @@ report = {
     "size_basis": P.get("size_basis"), "graph_revision": REV,
     "solids": len(solid.Solids()), "all_parts_valid": all(wp.val().isValid() for _, wp in parts),
     "solids_note": "one compound of closed solids: plinth, stack-deck frame and enclosure "
-    "posts, the 80-cell bipolar-plate field between end plates with the copper bus pair, "
+    "posts, the cell bipolar-plate field (count from the graph node) between end plates with the copper bus pair, "
     "the power-electronics envelope, the BoP deck frame, the two DN150 separators on legs, "
     "the four deoxo/dryer bed tubes, the DI-water pump envelope, the H2 relief envelope and "
     "the nozzle stubs; every union partner overlaps volumetrically, so the mesh reads back "
@@ -332,7 +334,7 @@ p["design"].update({
 })
 p["layout"] = {
     "frame": "origin at the envelope corner; stack deck 0..2042 (cells on the deck frame at "
-             "z 300, 80 cells x 8 mm pitch), gap 100, BoP deck 2142..3367 (separators and "
+             "z 300, graph cell count at the 8 mm pitch), gap 100, BoP deck 2142..3367 (separators and "
              "bed tubes on legs); plinth 0..100; decks top at the envelope height",
     "nozzle_spread": "side rows flush at the skid faces packed at an od + 8 pitch centred on "
                      "the skid (60 mm stubs); drain boss through the plinth at (500, 525); "

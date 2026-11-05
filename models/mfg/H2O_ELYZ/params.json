@@ -169,7 +169,7 @@
   "plinth_mm": 100.0
  },
  "layout": {
-  "frame": "origin at the envelope corner; stack deck 0..2042 (cells on the deck frame at z 300, 80 cells x 8 mm pitch), gap 100, BoP deck 2142..3367 (separators and bed tubes on legs); plinth 0..100; decks top at the envelope height",
+  "frame": "origin at the envelope corner; stack deck 0..2042 (cells on the deck frame at z 300, graph cell count at the 8 mm pitch), gap 100, BoP deck 2142..3367 (separators and bed tubes on legs); plinth 0..100; decks top at the envelope height",
   "nozzle_spread": "side rows flush at the skid faces packed at an od + 8 pitch centred on the skid (60 mm stubs); drain boss through the plinth at (500, 525); vent riser on the BoP deck frame, flush at the envelope top; per-tag positions in check.nozzles_drawn"
  }
 }
