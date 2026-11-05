@@ -55,7 +55,7 @@ Table 2.1. Tasks by group
 | X-ASM | Assembly and installation sequence | 2 | 2 |
 | X-COM | Commissioning and startup | 3 | 3 |
 | X-OPS | Operations and maintenance | 3 | 3 |
-| X-QA | QA and verification | 3 | 2 |
+| X-QA | QA and verification | 17 | 2 |
 | X-END | Decommissioning and recycling loop closure | 2 | 2 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 13 |
 | X-TOOL | Modeling tooling | 4 | 4 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 14 |
 | NUT | Process (Mass transform) | 15 | 14 |
-| | **Total** | **3342** | **3137** |
+| | **Total** | **3356** | **3137** |
 
 ## 3. Triage of open tasks
 
@@ -102,6 +102,7 @@ Table 3.1. Open tasks by triage tag
 
 | Triage | Open tasks |
 | --- | --- |
+| desk P2 | 14 |
 | hardware | 205 |
 
 ## 4. Unit task template
@@ -152,7 +153,20 @@ Table 6.1. Next cross-cutting desk tasks
 
 | Task | Title | Triage |
 | --- | --- | --- |
-| — | No open cross-cutting desk task | — |
+| X-QA-04 | Electrowinning deposits computed from the feed assay (the deposit rows come from the S08 booking of a 150 kg/d feed audit and exceed the plateable metal of the design feed) | desk P2 |
+| X-QA-05 | Low-duty electrowinning cells designed as selectable options (selective cascade or merged cells), not shipped as one-cathode cells | desk P2 |
+| X-QA-06 | Rectifier channels sized from current (the channel frame list, the 1.10 margin and the 6.0 V rating are literals in _rect_ew_sizing.py) | desk P2 |
+| X-QA-07 | Standby generator rating computed from the critical-load list (drivers.json holds 40.0 kW from a superseded list) | desk P2 |
+| X-QA-08 | Open questions Q-038, Q-039 and Q-040 decided and recorded | desk P2 |
+| X-QA-09 | Sizing provenance check compares values, not only unit identifiers | desk P2 |
+| X-QA-10 | Manufacturing builders take counts from the graph (fixed-count asserts in the ZNBR2, H2O_ELYZ and VCD_TRAIN builders) | desk P2 |
+| X-QA-11 | Dock import streams replaced by on-site production or recovery (water, reagents and oxide feeds enter at NORTH_DOCK) | desk P2 |
+| X-QA-12 | Shop finished-goods export computed from product streams, not closed by difference | desk P2 |
+| X-QA-13 | Wetted metal parts in the acid and base regeneration line reselected (316L/Ni end plates and 316L tie rods on BMED_ACID and BMED_BASE; lined carbon-steel shell on EVAP_ACID) | desk P2 |
+| X-QA-14 | Large CAD exports stored with Git LFS (STEP files and large drawing SVGs are tracked as ordinary blobs) | desk P2 |
+| X-QA-15 | Repeated sentences removed from graph size notes | desk P2 |
+| X-QA-16 | Superseded electrowinning figures withdrawn from hand-written pages (CHECKS.md AQS-DUTY-080, EW_MODULE.md AQS-EW-MOD-001) | desk P2 |
+| X-QA-17 | Regeneration provenance simplified (the receipt and its listed files replace a content check) | desk P2 |
 
 Table 6.2 lists the open cross-cutting tasks that wait on a decision by the project owner.
 
@@ -590,6 +604,20 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-QA-01** Inspection and test plan. Done when: ITP per fabrication route. Depends: unit task 13. Evidence: `docs-authority/ITP.md`.
 - [x] **X-QA-02** Independent design check. Done when: check record per calculation. Depends: unit task 02. Evidence: `docs-authority/DESIGN_CHECK.md`.
 - [ ] **X-QA-03** As-built reconciliation. Done when: as-built model and graph agree. Depends: X-ASM-01. Triage: hardware.
+- [ ] **X-QA-04** Electrowinning deposits computed from the feed assay (the deposit rows come from the S08 booking of a 150 kg/d feed audit and exceed the plateable metal of the design feed). Done when: the deposit per element is computed from the IA-FEED-01 rate, the AQS-ASSAY-001 element fractions and the leach recovery at the bounding case; the split of the lumped other-plateable class is a registered assumption; `pytest flow_graph/param/test_ew_deposit_basis.py` passes with the expected-failure marker removed. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-QA-05** Low-duty electrowinning cells designed as selectable options (selective cascade or merged cells), not shipped as one-cathode cells. Done when: AQS-DUTY-051 sizes both a selective cascade and a merged cascade (one precious-metal cell, one mixed base-metal cell where the products are blended downstream) from current, the option is a driver, the EW models and bus packs are rebuilt for the selected option, and `python3 models/mfg/tracker.py --check EW_1 EW_2 EW_3 EW_4 EW_5 EW_6 EW_7 EW_8 EW_9` reports no misfit. Depends: X-QA-04. Triage: desk P2.
+- [ ] **X-QA-06** Rectifier channels sized from current (the channel frame list, the 1.10 margin and the 6.0 V rating are literals in _rect_ew_sizing.py). Done when: frame sizes, margin and voltage rating are drivers with a cited basis or a registered assumption, and a test fails when the nameplate exceeds the computed channel need by more than the stated margin. Depends: X-QA-05. Triage: desk P2.
+- [ ] **X-QA-07** Standby generator rating computed from the critical-load list (drivers.json holds 40.0 kW from a superseded list). Done when: BACKUP_GEN rated power is computed from backup_fuel.critical_list() at 125 percent, rounded up in 5 kW steps (AQS-ELEC-007, NFPA 110), with hydrogen first and the C5-C10 cut as fallback; a test asserts the graph value equals the computed value; Q-040 is recorded closed. Depends: X-RED-02. Triage: desk P2.
+- [ ] **X-QA-08** Open questions Q-038, Q-039 and Q-040 decided and recorded. Done when: each question carries the owner decision and its calculation in OPEN_QUESTIONS.md and is marked CLOSED, or stays open with the default stated; no commit or note states a closure the register does not record. Depends: —. Triage: desk P2.
+- [ ] **X-QA-09** Sizing provenance check compares values, not only unit identifiers. Done when: flow_graph/param/test_parametric_provenance.py compares each sized value with its driver or sizing document, and the literal sweep covers drivers.json, docs-authority/_*.py and models/mfg builders. Depends: X-QA-06. Triage: desk P2.
+- [ ] **X-QA-10** Manufacturing builders take counts from the graph (fixed-count asserts in the ZNBR2, H2O_ELYZ and VCD_TRAIN builders). Done when: no builder asserts a fixed module, cell or volume count; the ZNBR2 layout follows the graph module count and the model is rebuilt; models/mfg/tracker.py --check compares the drawn module count with the graph. Depends: —. Triage: desk P2.
+- [ ] **X-QA-11** Dock import streams replaced by on-site production or recovery (water, reagents and oxide feeds enter at NORTH_DOCK). Done when: every NORTH_DOCK to plant edge is either raw feed or waste, or is replaced by an on-site source with recovery from plant streams first; a test fails on a dock import of any other class. Depends: —. Triage: desk P2.
+- [ ] **X-QA-12** Shop finished-goods export computed from product streams, not closed by difference. Done when: IA-GOODS-SHIP is the sum of named product edges; balance.py no longer closes MFG_SHOP by difference on it; a test fails when the shop exports more mass than its product inputs supply. Depends: X-QA-04. Triage: desk P2.
+- [ ] **X-QA-13** Wetted metal parts in the acid and base regeneration line reselected (316L/Ni end plates and 316L tie rods on BMED_ACID and BMED_BASE; lined carbon-steel shell on EVAP_ACID). Done when: wetted parts in the chlor-alkali and acid-regeneration units are PVC or another polymer selected by chemical compatibility (AQS-STD-002), electrodes by electrochemical compatibility, and a check fails on a wetted metal part in those units. Depends: —. Triage: desk P2.
+- [ ] **X-QA-14** Large CAD exports stored with Git LFS (STEP files and large drawing SVGs are tracked as ordinary blobs). Done when: .gitattributes routes *.step and drawing SVGs above a stated size to LFS for new commits, without rewriting published history, and a check lists any tracked file over the limit that is not an LFS pointer. Depends: —. Triage: desk P2.
+- [ ] **X-QA-15** Repeated sentences removed from graph size notes. Done when: no node parameter string repeats the same sentence, and a test in flow_graph/ fails if one does. Depends: —. Triage: desk P2.
+- [ ] **X-QA-16** Superseded electrowinning figures withdrawn from hand-written pages (CHECKS.md AQS-DUTY-080, EW_MODULE.md AQS-EW-MOD-001). Done when: each page is marked superseded by AQS-DUTY-051 or regenerated from it, and flow_graph/check_doc_style.py flags fixed counts of units, files, documents or tests in hand-written pages. Depends: —. Triage: desk P2.
+- [ ] **X-QA-17** Regeneration provenance simplified (the receipt and its listed files replace a content check). Done when: the proposal in docs-authority/notes/2026-11-04-review-work-items.md is decided; if adopted, staleness is decided by input hashes recorded in one manifest and by the full-regeneration idempotency check, and the receipt lists are removed. Depends: —. Triage: desk P2.
 
 ### X-END. Decommissioning and recycling loop closure
 
