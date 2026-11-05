@@ -1,8 +1,8 @@
 """MEOH_SYNTH manufacturing model, AQS-PLAN-006 work order (X-MFG lane, tier 6, F-VES).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json (W2 fields by the tracker;
-the envelope, design and layout blocks beside them are builder-owned) and rebuilds
-every solid.
+Graph revision AD. Study. Not a PE stamp. Reads the graph node through the shared
+reader (models/mfg/lib/graph_node.py); the params.json write-back beside it carries
+only the builder-owned envelope, design and layout blocks. Rebuilds every solid.
 
 Placement frame: x along 414 mm, y along 414 mm, z up, origin at the envelope corner.
 Every dimension is an authority figure or a named layout choice:
@@ -40,15 +40,17 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("MEOH_SYNTH")      # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
+          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
 L, W, H = (float(v) for v in P["size_mm"])                 # 414 x 414 x 2585
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
-_g = json.loads((HERE.parents[2] / "flow_graph" / "plant_flow_graph.json").read_text())
-DS = (next(n for n in _g["nodes"] if n["unit_id"] == UNIT).get("params") or {}).get("design") or {}
+DS = GN.design                                # node design block (reactor_design.py, X-MFG-31)
 
 T_PLINTH = 20.0
 CX, CY = L / 2, W / 2                                      # vessel axis
@@ -73,8 +75,6 @@ CA = materials.ca_for(MAT)                                 # 0.0, AQS-STD-001
 RHO = materials.density(MAT)                               # 8000, lib table
 RHO_BED = 2400.0                                           # catalyst bulk, study value (buy row)
 
-assert L == 414.0 and W == 414.0 and H == 2585.0, "MEOH_SYNTH node envelope changed"
-assert OD_JK == 114.0 and WALL_TUBE == 3.91, "MEOH_SYNTH node design changed"
 assert Z_TOP < H and Z_BED1 < Z_JK1, "internals must stay inside the shell"
 
 
@@ -132,7 +132,7 @@ schedule = P["nozzles"]
 groups = {}
 for r in schedule:
     face = FACE_OF.get(r["face"], r["face"])
-    if face in ("-Y", "+Y"):
+    if face in ("-Y", "+Y") and r["size"] in dn.PIPE:
         groups.setdefault((face, float(r["height_mm"])), []).append(r)
 
 layout_x = {}
@@ -146,10 +146,20 @@ for (face, z), rows in sorted(groups.items()):
         layout_x[r["tag"]] = round(x + od_s / 2, 1)
         x += od_s + 8.0
 
-noz_pieces, drawn = [], {}
+noz_pieces, drawn, n_drawn = [], {}, 0
 for r in schedule:
     tag, dnl, face0 = r["tag"], r["size"], r["face"]
     face = FACE_OF.get(face0, face0)
+    if dnl not in dn.PIPE:
+        # non-piped row: the power terminal (cable schedule X-ELS-06) is electrical,
+        # not piped - carried verbatim, not drawn (no STEP/BOM/geometry change)
+        drawn[tag] = {"style": "carried", "dn": dnl, "face": r["face"],
+                      "height_mm": r["height_mm"], "schedule_rating": r["rating"],
+                      "service": r["service"],
+                      "note": "power terminal (cable schedule X-ELS-06, AQS-ELEC-010): "
+                              "electrical, not piped - carried verbatim, not drawn"}
+        continue
+    n_drawn += 1
     od_s = dn.pipe_od(dnl)
     if face0 == "bottom":               # drain: boss under the bottom flange, flush at z 0
         s = tube_dn(dnl, Z_FL0 + STUB_PIERCE).translate((CX, CY, 0.0))
@@ -303,7 +313,7 @@ rows = [
      "purchased heater per plan rule 6; the maker rating reads the sheet at order"],
     ["7", "Nozzle set per docs-authority/nozzles/MEOH_SYNTH.csv: 9 atmospheric "
           "open-bore tube connections at the skid faces (drain under the bottom "
-          "flange, vent riser on the top flange)", len(schedule), "316L tube",
+          "flange, vent riser on the top flange)", n_drawn, "316L tube",
      mass["nozzles"], "make",
      "schedule tags/faces/heights verbatim; bores per the lib/dn Sch 40 table; "
      "elevations are the schedule placeholders pending vessel design (duty "
