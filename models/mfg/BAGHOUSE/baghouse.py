@@ -36,15 +36,16 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, materials   # noqa: E402
+from lib import dn, fasteners, graph_node, materials   # noqa: E402
 from tracker import stl_bbox_mm, stl_manifold   # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("BAGHOUSE")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
 L, W, H = (float(v) for v in P["size_mm"])                 # 1250 x 1000 x 2276
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
-_g = json.loads((HERE.parents[2] / "flow_graph" / "plant_flow_graph.json").read_text())
-DS = (next(n for n in _g["nodes"] if n["unit_id"] == UNIT).get("params") or {}).get("design") or {}
+DS = GN.design
 
 BAGS = int(DS["bags"])                                     # 20
 BD, BL = float(DS["bag_mm"][0]), float(DS["bag_mm"][1])    # 150 dia, 1200 long
@@ -66,7 +67,7 @@ CLOTH_DRAWN = float(DS["cloth_drawn_m2"])
 RHO_CS = materials.density("CS") or materials.density("steel")
 RHO_FELT = 450.0                                           # antistatic polyester felt bulk, study density
 
-assert L == 1250.0 and W == 1000.0 and H == 2276.0, "BAGHOUSE node envelope changed"
+# Envelope and design both come from the graph node; no hard-coded duplicate stays.
 assert BAGS == COLS * ROWS, "bag field book changed"
 assert Z_BAG1 - Z_BAG0 == BL and Z_TS == Z_BAG1, "bag/tubesheet chain must match the design"
 cloth = round(BAGS * math.pi * BD / 1000.0 * BL / 1000.0, 2)

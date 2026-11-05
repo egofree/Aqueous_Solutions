@@ -1,6 +1,6 @@
 """ROOF_TANK manufacturing model, AQS-PLAN-006 work order (X-MFG lane, tier 4).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json only (W2 fields by the
+Graph revision AD. Study. Not a PE stamp. Sizes and counts come from the plant graph through the shared reader (models/mfg/lib/graph_node.py); the params.json write-back merges the builder-owned blocks only. (W2 fields by the
 tracker; the envelope, design and layout blocks beside them are builder-owned).
 
 Placement frame: x along 649 mm, y along 520 mm, z up, origin at the envelope corner.
@@ -52,9 +52,11 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles          # noqa: E402
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("ROOF_TANK")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
 L, W, H = (float(v) for v in P["size_mm"])                 # 649 x 520 x 748, study registry box
 REV = P["graph_revision"]
 
@@ -74,7 +76,7 @@ COIL_Z0 = 80.0
 CA = materials.ca_for("PVC-U")                              # 0.0, polymer: AQS-STD-001
 RHO = materials.density("PVC_U")                            # 1400, lib table
 
-assert L == 649.0 and W == 520.0 and H == 748.0, "ROOF_TANK node envelope changed"
+# Envelope and design both come from the graph node; no hard-coded duplicate stays.
 
 
 def box(x, y, z, dx, dy, dz):

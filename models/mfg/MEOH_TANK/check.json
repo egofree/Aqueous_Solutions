@@ -15,7 +15,7 @@
   "solids": 1,
   "all_parts_valid": true,
   "holdup_m3": 0.1028,
-  "holdup_basis": "reported; the duty section 2 working volume (7 days, 0.0421 m3) is the booked basis and the node design_storage nominal is V_nom_m3 None m3 - no residence time derived from the model volume (A-VES)",
+  "holdup_basis": "reported; the duty section 2 working volume (7 days, 0.0421 m3) is the booked basis and the node design_storage nominal is V_nom_m3 0.02 m3 - no residence time derived from the model volume (A-VES)",
   "tank": {
     "wall_mm": 3.0,
     "wall_basis": "node design_storage wall_mm (AQS-DUTY-064 nominal basis); the fab study page 6 mm predates the node booking (WORK_ORDER W12)",

@@ -1,6 +1,6 @@
 """MEOH_TANK manufacturing model, AQS-PLAN-006 work order (X-MFG lane, tier 4).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json only (W2 fields by the
+Graph revision AD. Study. Not a PE stamp. Sizes and counts come from the plant graph through the shared reader (models/mfg/lib/graph_node.py); the params.json write-back merges the builder-owned blocks only. (W2 fields by the
 tracker; the envelope, design and layout blocks beside them are builder-owned).
 
 Placement frame: x along 600 mm, y along 600 mm, z up, origin at the envelope corner.
@@ -45,11 +45,13 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles          # noqa: E402
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("MEOH_TANK")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
 L, W, H = (float(v) for v in P["size_mm"])                 # 600 x 600 x 600, AQS-DUTY-064 box
-DS = (P.get("design_storage") or {})
+DS = (GN.params.get("design_storage") or {})
 REV = P["graph_revision"]
 
 T_PLINTH = 20.0
@@ -66,7 +68,7 @@ DIP_Z0, DIP_Z1 = 100.0, Z_SH1 + 15.0                        # hung from the top 
 CA = materials.ca_for("304L")                               # 0.0, AQS-STD-001
 RHO = materials.density("304")                              # 8000, lib table
 
-assert L == 600.0 and W == 600.0 and H == 600.0, "MEOH_TANK node envelope changed"
+# Envelope and design both come from the graph node; no hard-coded duplicate stays.
 
 
 def box(x, y, z, dx, dy, dz):

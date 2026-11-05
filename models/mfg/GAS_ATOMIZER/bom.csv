@@ -7,4 +7,4 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 6,"Ar recirculation loop, DN32 tube runs",1,316L tube,3.34,make (AQS-BOM-SC-001),30 bar Ar class per A-M-177; loop runs are layout choice (W12); no flange (W4 110 % rule - no node design_kPa); relief case pending (unit task 07)
 7,"Ar compressor set (purchased, envelope and interface)",1,purchased compressor (envelope),293.9,buy,"30 bar class, isothermal eta 0.6 (A-M-177); purchased per plan rule 6; mass a table-density placeholder until the maker TDS quotes (W12)"
 8,"Control cabinet (purchased, envelope and interface)",1,purchased cabinet (envelope),74.18,buy,nameplate 5.5 kW (AQS-MFG-010 Table 2.1; node stamp); purchased per plan rule 6
-9,Nozzle set per docs-authority/nozzles/GAS_ATOMIZER.csv: 4 DN15 stubs and 3 solids rows drawn DN15 bore not calculated,7,316L tube,0.41,make (AQS-BOM-SC-001),schedule tags/faces/heights verbatim; atmospheric per duty section 4
+9,Nozzle set per docs-authority/nozzles/GAS_ATOMIZER.csv: 4 DN15 stubs and 3 solids rows drawn DN15 bore not calculated,8,316L tube,0.41,make (AQS-BOM-SC-001),schedule tags/faces/heights verbatim; atmospheric per duty section 4

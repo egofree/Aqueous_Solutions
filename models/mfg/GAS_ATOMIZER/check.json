@@ -106,9 +106,20 @@
       "schedule_rating": "Class 150",
       "service": "off-spec powder to remelt",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-GAS_ATOMIZER, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+      "note": "vent flush at the envelope top; the 800 datum is the box top"
     }
   },
-  "nozzle_count_schedule": 7,
+  "nozzle_count_schedule": 8,
   "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); N1 melt in and N5 standby melt row (the IND_TO_ATOM study edge, 'when powder required') on -Y at z 160; N2 metal powder, N6 powder stock and N7 off-spec remelt (solids rows drawn DN15, bore not calculated, plan W4) on +Y at z 600; drain flush at the envelope bottom (50 datum); vent flush at the envelope top (800 datum is the box top); the schedule rating column (Class 150) carried verbatim as text",
   "part_mass_kg": {
     "plinth": 94.2,

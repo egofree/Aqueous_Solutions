@@ -72,9 +72,20 @@
       "schedule_rating": "Class 150",
       "service": "vent",
       "note": "vent flush at the envelope top; the 800 datum is the box top"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-COLD_MILL, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+      "note": "vent flush at the envelope top; the 800 datum is the box top"
     }
   },
-  "nozzle_count_schedule": 4,
+  "nozzle_count_schedule": 5,
   "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); N1 strand in on -Y at z 160; N2 sheet/strip out on +Y at z 600 (schedule datum is a placeholder above the pass line - hold, W12); drain flush at the envelope bottom (50 datum); vent flush at the envelope top (800 datum is the box top); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
   "part_mass_kg": {
     "plinth": 94.2,
