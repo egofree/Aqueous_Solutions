@@ -152,12 +152,6 @@ for r in schedule:
         note = ("power terminal (cable schedule X-ELS-06, AQS-ELEC-010): electrical, "
                 "not piped - drawn as a DN15 stand-in penetration flush at the "
                 "envelope top, bore not calculated (plan W4)")
-    elif r["face"] == "top" and dnl == "cable":           # N10: power terminal (X-ELS-06)
-        s = nozzles.stub("DN15", 40.0)
-        s = nozzles.place_on_face(s, "top", 0.0, (CX - 50.0, W / 2), (L, W, H))
-        note = ("power terminal (cable schedule X-ELS-06): an electrical drop, not "
-                "piped - drawn as a DN15 stand-in penetration flush at the envelope "
-                "top, bore not calculated (plan W4)")
     elif r["face"] == "top":                              # N7: 2000 datum predates the column
         s = nozzles.stub(dnl, 60.0)
         s = nozzles.place_on_face(s, "top", 0.0, (CX + 50.0, W / 2), (L, W, H))
