@@ -1,7 +1,8 @@
 """HOPPER manufacturing model, AQS-PLAN-006 work order (X-MFG lane, tier 4).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only (W2 fields by the
-tracker; the envelope, design and layout blocks beside them are builder-owned).
+Graph revision AD. Study. Not a PE stamp. Reads the graph node through the shared
+reader (models/mfg/lib/graph_node.py); the params.json write-back beside it carries
+only the builder-owned envelope, design and layout blocks.
 
 Placement frame: x along 600 mm, y along 600 mm, z up, origin at the envelope corner.
 Every dimension is an authority figure or a named layout choice:
@@ -16,13 +17,15 @@ Every dimension is an authority figure or a named layout choice:
   thickness (hold, W12).
 - Material: carbon steel, hydrocarbon service, corrosion allowance 1.5 mm
   (duty section 3, AQS-STD-001). Fastener grade ISO 898-1 8.8 by the plan rule.
-- Nozzles: all 10 rows of docs-authority/nozzles/HOPPER.csv drawn at tag, face,
+- Nozzles: all 11 rows of docs-authority/nozzles/HOPPER.csv drawn at tag, face,
   height and bore. Atmospheric tube or hose per duty section 4 ("no flange class"):
   hose barbs (lib/nozzles), the schedule rating column carried verbatim as text.
   Outlets scheduled at the 600 datum sit at the envelope top and are clamped below
   the barb radius (holds, W12); the vent datum 800 predates the 600 box and is drawn
   flush on the +Y rim bar; the drain is a boss rising to its 50 datum beside the
-  discharge opening.
+  discharge opening. N11 is a solids dock-import make-up feed (a non-piped hand
+  transfer): drawn as a DN15 stand-in stub at its face/height, bore not calculated
+  (plan W4).
 - A-VES: the hopper holdup volume is computed from the model and reported; the duty
   claims no holdup, so no residence time is derived from it.
 """
@@ -32,9 +35,12 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("HOPPER")          # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
+          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
 L, W, H = (float(v) for v in P["size_mm"])                 # 600 x 600 x 600, AQS-DUTY-064
 REV = P["graph_revision"]
 
@@ -50,6 +56,12 @@ CA = materials.ca_for("carbon steel", "hydrocarbon")       # 1.5, AQS-STD-001
 RHO = materials.density("CS")
 
 assert L == W == 600.0 and H == 600.0, "HOPPER node envelope changed; re-check the build"
+
+
+def od_of(r):
+    """Hardware OD for a schedule row: lib-table DN rows at the table OD, and
+    non-piped rows (cable, solids) at the DN15 stand-in."""
+    return dn.pipe_od(r["size"]) if r["size"] in dn.PIPE else dn.pipe_od("DN15")
 
 
 def box(x, y, z, dx, dy, dz):
@@ -107,12 +119,12 @@ layout_x = {}
 for (face, z), rows in sorted(groups.items()):
     if face not in ("-Y", "+Y"):
         continue
-    rows = sorted(rows, key=lambda r: (-dn.pipe_od(r["size"]), r["tag"]))
-    span = sum(dn.pipe_od(r["size"]) + 8.0 for r in rows) - 8.0
+    rows = sorted(rows, key=lambda r: (-od_of(r), r["tag"]))
+    span = sum(od_of(r) + 8.0 for r in rows) - 8.0
     assert span <= L - 80.0, (face, z, span)
     x = L / 2 - span / 2
     for r in rows:
-        w = dn.pipe_od(r["size"]) / 2
+        w = od_of(r) / 2
         layout_x[r["tag"]] = round(x + w, 1)
         x += 2 * w + 8.0
 
@@ -127,14 +139,15 @@ noz, drawn = None, {}
 for r in schedule:
     tag, dnl, h = r["tag"], r["size"], float(r["height_mm"])
     face = FACE_OF.get(r["face"], r["face"])
-    od = dn.pipe_od(dnl)
+    od = od_of(r)
+    dnl_hw = dnl if dnl in dn.PIPE else "DN15"    # non-piped rows at the DN15 stand-in
     note = "atmospheric hose joint at the envelope face (duty section 4)"
     if r["face"] == "bottom":                             # N7: boss to the 50 datum beside the opening
         s = nozzles.stub(dnl, 50.0)
         s = nozzles.place_on_face(s, "bottom", 0.0, (430.0, W / 2), (L, W, H))
         note = "drain boss beside the discharge opening, tip at the 50 datum"
     elif r["face"] == "top":                              # N8: datum 800 predates the 600 box
-        s = nozzles.hose_barb(hose_id(dnl), Hose[dnl], root_od=od)
+        s = nozzles.hose_barb(hose_id(dnl_hw), Hose[dnl_hw], root_od=od)
         s = nozzles.place_on_face(s, "top", 0.0, (L / 2, W - 15.0), (L, W, H))
         note = ("vent on the +Y rim bar; schedule datum 800 mm predates the 600 mm box "
                 "- named hold, WORK_ORDER W12")
@@ -143,13 +156,18 @@ for r in schedule:
         if h_d < h:
             note = (f"schedule datum {h:g} mm sits at the envelope top; drawn clamped to "
                     f"{round(h_d, 1)} mm (barb radius rule) - named hold, WORK_ORDER W12")
-        s = nozzles.hose_barb(hose_id(dnl), Hose[dnl], root_od=od)
+        if dnl in dn.PIPE:
+            s = nozzles.hose_barb(hose_id(dnl_hw), Hose[dnl_hw], root_od=od)
+        else:
+            s = nozzles.stub("DN15", 45.0)                # DN15 stand-in, not piped
+            note = ("solids dock-import make-up feed - a hand transfer, not piped: "
+                    "drawn as a DN15 stand-in stub, bore not calculated (plan W4)")
         # side ports: root on the shell wall where the wall stands off the envelope face
         # (the frustum slope), else the house flush-at-face idiom with the root through
         # the wall into the cavity
         half = wall_half(h_d)
         gap = (L - 2 * half) / 2                          # envelope face to outer wall surface
-        if gap + 2.0 >= Hose[dnl]:                        # wall-root keeps the tip inside
+        if dnl in dn.PIPE and gap + 2.0 >= Hose[dnl_hw]:  # wall-root keeps the tip inside
             # wall-root idiom: place flush on a local box whose face is the wall
             # (lib place_on_face works in absolute coords, so the local box starts at
             # its own corner), then embed the root 2 mm into the wall and let the barb
@@ -157,13 +175,13 @@ for r in schedule:
             c0 = (L - 2 * half) / 2                       # local box corner in the absolute frame
             s = nozzles.place_on_face(s, face, h_d, (layout_x[tag] - c0, half),
                                       (2 * half, 2 * half, H))
-            s = s.translate((c0, c0 + 2.0 - Hose[dnl], 0) if face == "-Y"
+            s = s.translate((c0, c0 + 2.0 - Hose[dnl_hw], 0) if face == "-Y"
                             else (c0, c0 - 2.0, 0))
             note += "; root set in the shell wall (the frustum slope stands off the envelope face)"
         else:
             s = nozzles.place_on_face(s, face, h_d, (layout_x[tag], W / 2), (L, W, H))
     noz = s if noz is None else noz.union(s)
-    drawn[tag] = {"style": "hose", "dn": dnl, "face": face, "height_mm": h,
+    drawn[tag] = {"style": "hose" if dnl in dn.PIPE else "solids", "dn": dnl_hw, "face": face, "height_mm": h,
                   "drawn_height_mm": round(min(h, H - od / 2 - 5.0), 1) if face in ("-Y", "+Y")
                   else (0.0 if face == "bottom" else H),
                   "x_mm": layout_x.get(tag), "schedule_rating": r["rating"], "note": note}
@@ -219,7 +237,9 @@ report = {
     "nozzle_count_schedule": len(schedule),
     "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces "
     "(lib/nozzles.place_on_face); the schedule rating column (Class 150) is carried "
-    "verbatim as text against duty section 4 (no flange class, atmospheric tube or hose)",
+    "verbatim as text against duty section 4 (no flange class, atmospheric tube or "
+    "hose); the N11 solids make-up feed is a hand transfer, not piped: drawn as a "
+    "DN15 stand-in stub, bore not calculated",
     "part_mass_kg": mass, "cadquery": cq.__version__,
 }
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
@@ -236,11 +256,13 @@ rows = [
      1, "carbon steel plate", mass["frame_base"], "make", "study thickness; same CA rule"],
     ["3", f"Top hold-down rim frame, {t:g} mm bar, four sides (lifting and restraint)", 1,
      "carbon steel bar", mass["rim_frame"], "make", "study section; same CA rule"],
-    ["4", f"Nozzle set per docs-authority/nozzles/HOPPER.csv: {n_barb} hose barbs "
-          f"(DN15/DN25/DN50), 1 drain boss, 1 vent barb on the rim bar",
+    ["4", f"Nozzle set per docs-authority/nozzles/HOPPER.csv: {n_barb - 1} hose barbs "
+          f"(DN15/DN25/DN50), 1 solids-transfer stub (DN15 stand-in), 1 drain boss, "
+          f"1 vent barb on the rim bar",
      len(schedule), "carbon steel pipe", mass["nozzles"], "make",
      "schedule tags/faces/heights verbatim; atmospheric hose per duty section 4; barb "
-     "profile a study proportion (lib/nozzles.py)"],
+     "profile a study proportion (lib/nozzles.py); the N11 solids make-up feed is a "
+     "hand transfer, not piped - DN15 stand-in, bore not calculated"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)
