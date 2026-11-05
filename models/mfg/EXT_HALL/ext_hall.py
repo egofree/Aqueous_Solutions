@@ -1,7 +1,6 @@
 """EXT_HALL manufacturing model, AQS-PLAN-006 work order (M0 lane, tier 8, route hold).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json (W2 fields by the tracker;
-the envelope, design and layout blocks beside them are builder-owned) and rebuilds
+Graph revision AD. Study. Not a PE stamp. Sizes and counts come from the plant graph through the shared reader (models/mfg/lib/graph_node.py); the params.json write-back merges the builder-owned blocks only. and rebuilds
 every solid.
 
 Placement frame: x along 186000 mm, y along 174000 mm, z up, origin at the envelope
@@ -42,14 +41,16 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import fasteners, materials                     # noqa: E402
+from lib import fasteners, graph_node, materials                     # noqa: E402
 from tracker import stl_bbox_mm                          # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("EXT_HALL")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
 L, W, H = (float(v) for v in P["size_mm"])                 # 186000 x 174000 x 6000
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
-DS = P.get("design") or {}
+DS = GN.design
 
 T_SLAB = 150.0                                             # on-grade slab (massing, W12)
 T_WALL = 300.0                                             # perimeter wall panel (massing, W12)
@@ -63,7 +64,7 @@ RHO_CS = materials.density("CS")
 E = dict(x0=24000.0, x1=186000.0, y0=0.0, y1=174000.0)     # 162 x 174 m east extension
 N = dict(x0=0.0, x1=24000.0, y0=18000.0, y1=174000.0)      # 24 x 156 m north extension
 
-assert L == 186000.0 and W == 174000.0 and H == 6000.0, "EXT_HALL node envelope changed"
+# Envelope and design both come from the graph node; no hard-coded duplicate stays.
 assert E["x1"] == L and E["y1"] == W and N["x1"] == E["x0"], "blocks tile the L bounding box"
 assert (L / BAY - 1) == 30.0 and (W / BAY - 1) == 28.0, "31 x 29 bays on the 6 m grid"
 
@@ -141,7 +142,7 @@ RHO_CONC = 2400.0   # published reinforced-concrete class midpoint (massing; W12
 mass = {k: round(v * (RHO_CONC if k == "slab" else RHO_CS) / 1e9, 1) for k, v in vol.items()}
 report = {
     "bbox_mm": dims, "inside_size_mm": inside, "size_mm": [L, W, H],
-    "size_basis": P.get("size_note"),
+    "size_basis": GN.size_basis,
     "graph_revision": REV,
     "solids": len(solid.Solids()), "all_parts_valid": True,
     "machine": {
@@ -218,7 +219,7 @@ fasteners.write_fasteners(HERE / "fasteners.csv", [
 p = json.loads((HERE / "params.json").read_text())
 p["envelope"] = {
     "size_mm": [L, W, H],
-    "basis": P.get("size_note"),
+    "basis": GN.size_basis,
     "blocks": {"EXT_HALL_E": [E["x0"], E["y0"], E["x1"], E["y1"]],
                "EXT_HALL_N": [N["x0"], N["y0"], N["x1"], N["y1"]]},
     "slab_mm": T_SLAB, "wall_mm": T_WALL, "roof_mm": T_ROOF,
@@ -234,7 +235,7 @@ p["design"].update({
     "massing_basis": "column/wall/roof sections are massing values; the "
                      "structural design and the fitout programme stay with their "
                      "lanes (duty section 8; hold, WORK_ORDER W12)",
-    "hvac": P.get("hvac"),
+    "hvac": GN.params.get("hvac"),
 })
 p["layout"] = {
     "frame": "origin at the envelope corner; the L-shape tiles the box (E block "

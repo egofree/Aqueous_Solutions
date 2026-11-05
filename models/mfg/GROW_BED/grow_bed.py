@@ -1,7 +1,6 @@
 """GROW_BED manufacturing model, AQS-PLAN-006 work order (M0 lane, tier 9, F-FARM).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json (W2 fields by the tracker;
-the envelope, design and layout blocks beside them are builder-owned) and rebuilds
+Graph revision AD. Study. Not a PE stamp. Sizes and counts come from the plant graph through the shared reader (models/mfg/lib/graph_node.py); the params.json write-back merges the builder-owned blocks only. and rebuilds
 every solid.
 
 Placement frame: x along the bed length, y along the bed width, z up, origin at the
@@ -45,10 +44,12 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles         # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
 from tracker import stl_bbox_mm                           # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("GROW_BED")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
 BW, BD, BH = (float(v) for v in P["size_mm"])              # bay 2000 x 1000 x 400 (registry)
 REV = P["graph_revision"]
 UNIT = P["unit_id"]

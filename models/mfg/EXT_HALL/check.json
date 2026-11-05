@@ -10,7 +10,7 @@
     174000.0,
     6000.0
   ],
-  "size_basis": null,
+  "size_basis": "building massing envelope (bounding box of the issued L-shape): EXT_HALL_E 162 x 174 m east extension + EXT_HALL_N 24 x 156 m north extension, 6 m eave, portal frames on the 6 m grid (31 x 29 bays, X-PAR-07, A-M-104; placement_seed blocks EXT_HALL_E/N are the authority). Conditioned footprint per params.footprint_m2; the fitout programme stays the duty-sheet open item.",
   "graph_revision": "AD",
   "solids": 1,
   "all_parts_valid": true,

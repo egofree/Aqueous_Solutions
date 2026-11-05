@@ -33,7 +33,7 @@
    174000.0,
    6000.0
   ],
-  "basis": null,
+  "basis": "building massing envelope (bounding box of the issued L-shape): EXT_HALL_E 162 x 174 m east extension + EXT_HALL_N 24 x 156 m north extension, 6 m eave, portal frames on the 6 m grid (31 x 29 bays, X-PAR-07, A-M-104; placement_seed blocks EXT_HALL_E/N are the authority). Conditioned footprint per params.footprint_m2; the fitout programme stays the duty-sheet open item.",
   "blocks": {
    "EXT_HALL_E": [
     24000.0,
@@ -59,7 +59,21 @@
   "service": "EXT_HALL: the single-storey conditioned hall extension carrying the roof PV (X-PAR-07, A-M-104); NORTH_DOCK opens into EXT_HALL_N with the 6 m truck lane reserved (duty sections 1 and 7)",
   "material": "steel portal frames; insulated metal roof and wall panels (IECC U-factor classes, A-M-104)",
   "massing_basis": "column/wall/roof sections are massing values; the structural design and the fitout programme stay with their lanes (duty section 8; hold, WORK_ORDER W12)",
-  "hvac": null
+  "hvac": {
+   "light_kW": 21.479,
+   "vent_kW": 36.248,
+   "envelope_kW": 27.502,
+   "total_kW": 85.229,
+   "vent_L_s": 7322.4,
+   "Qh_kW": 25.607,
+   "Qc_kW": 150.815,
+   "slab_kW": 1.531,
+   "gains_kW": 30.632,
+   "pump_kW": 0.0,
+   "mode": "air",
+   "peak_h_kW": 385.346,
+   "peak_c_kW": 340.602
+  }
  },
  "layout": {
   "frame": "origin at the envelope corner; the L-shape tiles the box (E block x 24000..186000, N block x 0..24000 y 18000..174000); walls on the L perimeter, roof at z 5900..6000, column grid at the 6 m bay lines inside the L",
