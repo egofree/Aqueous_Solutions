@@ -6,16 +6,15 @@
   ],
   "inside_size_mm_shell": true,
   "connection_overhang_mm": {
-    "-X": 34.1,
+    "-X": 0.1,
     "+X": 0.0,
     "-Y": 0.0,
     "+Y": 0.0
   },
   "overhang_allowance_mm": 50.0,
   "overhang_ok": true,
-  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: resin_inlet, film_stop)",
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: film_stop)",
   "external_parts": [
-    "resin_inlet",
     "film_stop"
   ],
   "cap_solids": 5,

@@ -10,7 +10,8 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/FIL
 
 ## Checks
 
-- Build bbox 1534 x 800 x 1500 mm: no graph envelope; dims recorded
+- Build bbox 1500 x 800 x 1500 mm: fills the graph envelope (the tracker bbox gate is green)
+- 2026-11-05: the N2 resin inlet was rebuilt flush at the -X frame face per the house idiom, so the full assembly stays in 1500 x 800 x 1500; the connection overhang is 0 mm on every face
 - Solid source: build export `models/mfg/FILM_CAST/export/film_cast.step`
 - BOM `models/mfg/FILM_CAST/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/FILM_CAST/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)

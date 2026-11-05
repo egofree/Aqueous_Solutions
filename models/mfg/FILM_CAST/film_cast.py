@@ -55,7 +55,11 @@ parts["draw_rolls"] = dr
 parts["winder"] = rod(90.0, (1400.0, 400.0, 1000.0), "Y", 260)
 
 # ---------------- nozzle hardware ----------------
-parts["resin_inlet"] = tube(DN15, DN15 - W15, (-34.0, 400.0, 160.0), "X", 40)   # N2 -X z 160
+# Resin inlet is built flush at the -X frame face (the house idiom of
+# lib/nozzles.place_on_face: schedule hardware ends flush at the envelope face,
+# so the build keeps the bounding box the graph states); its stub reaches from
+# the face into the barrel root and does not protrude past x = 0.
+parts["resin_inlet"] = tube(DN15, DN15 - W15, (0.0, 400.0, 160.0), "X", 40)      # N2 -X z 160
 parts["film_stop"] = box(1470.0, 250.0, 900.0, 30.0, 300.0, 160)                # N1 +X z 600..760
 parts["drain_well"] = tube(30.5, DN15, (400, 400, 0), "Z", 50)                  # N3
 parts["vent_stub"] = tube(DN15, DN15 - W15, (300.0, 80.0, 860.0), "Z", 340)     # N4 to the z 1200 datum
@@ -77,7 +81,8 @@ body = body.clean()
 cap_solid = body.val()
 cap_solid.exportStl(str(out / "film_cast.stl"), tolerance=0.4, angularTolerance=0.4, ascii=True)
 
-EXTERNAL = ("resin_inlet", "film_stop")               # schedule hardware at the frame faces
+EXTERNAL = ("film_stop",)  # schedule hardware at the frame faces; the resin inlet is
+# built flush (see above) so it is part of the in-envelope solid
 in_env = None
 for k, v in parts.items():
     if k in EXTERNAL:
