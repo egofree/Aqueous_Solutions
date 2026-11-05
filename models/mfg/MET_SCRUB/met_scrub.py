@@ -1,7 +1,8 @@
 """MET_SCRUB manufacturing model, AQS-PLAN-006 work order (X-MFG lane, tier 4).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only (W2 fields by the
-tracker; the envelope, design and layout blocks beside them are builder-owned).
+Graph revision AD. Study. Not a PE stamp. Reads the graph node through the shared
+reader (models/mfg/lib/graph_node.py); the params.json write-back beside it carries
+only the builder-owned envelope, design and layout blocks.
 
 Placement frame: x along 1200 mm, y along 1200 mm, z up, origin at the envelope corner.
 Every dimension is an authority figure or a named layout choice:
@@ -21,13 +22,16 @@ Every dimension is an authority figure or a named layout choice:
   packing and demister PP. The node design block names PP-H - duty section 3 governs
   wetted materials (plan rule 5); the disagreement is a hold (W12). Wall 6 mm is a
   study value (hold).
-- Nozzles: all 9 rows of docs-authority/nozzles/MET_SCRUB.csv drawn at tag, face,
-  height and bore. Atmospheric tube or hose per duty section 4: hose barbs flush at
+- Nozzles: all 10 rows of docs-authority/nozzles/MET_SCRUB.csv at tag, face and
+  height; the 9 piped rows are drawn at height and bore. Atmospheric tube or hose per duty section 4: hose barbs flush at
   the envelope faces on ray-set extension spools crossing to the shell, the schedule
   rating column carried verbatim as text, no flange (W4 110 % rule). N9 is DN300 -
   outside the lib DN15..DN50 hardware table: drawn as a plain stub at the house
   DN300 outside diameter 323.9 with a study 6 mm wall (hold). N7's 2000 datum
-  predates the sized column and is drawn flush at the top head (hold).
+  predates the sized column and is drawn flush at the top head (hold). N10 is the
+  power terminal (cable schedule X-ELS-06, AQS-ELEC-010): electrical, not piped -
+  carried verbatim in the build report, not drawn (the STEP assembly, BOM, bbox,
+  solids and masses are unchanged).
 """
 import csv, json, math, pathlib, sys
 
@@ -35,12 +39,15 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("MET_SCRUB")       # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
+          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
 L, W, H = (float(v) for v in P["size_mm"])                 # 1200 x 1200 x 4103, X-PAR-03
-D = 800.0                        # node design block D_mm (cited; carried in params.design)
-PACKED = 2303.0                  # node design block packed_mm (cited; carried in params.design)
+D = float(GN.design["D_mm"])        # node design block D_mm (house_scrubbers.py, X-PAR-03)
+PACKED = float(GN.design["packed_mm"])    # node design block packed_mm
 REV = P["graph_revision"]
 
 T_SHELL = 6.0                    # study wall - no authority states one (WORK_ORDER W12)
@@ -57,7 +64,6 @@ CA = materials.ca_for("PVC_U")
 RHO = {"PVC_U": materials.density("PVC_U"), "PP": materials.density("PP")}
 OD300 = 323.9                   # house DN series OD (style_builders.py), outside lib/dn.py
 
-assert L == W == 1200.0 and H == 4103.0 and D == 800.0, "MET_SCRUB node/design changed"
 CX = L / 2
 
 
@@ -101,15 +107,18 @@ def hose_id(dnl):
 
 
 def od_of(r):
-    return OD300 if r["size"] == "DN300" else (
-        dn.pipe_od("DN15") if r["size"] == "solids" else dn.pipe_od(r["size"]))
+    """Hardware OD for a piped row: DN300 at the house series OD, lib-table DN rows
+    at the table OD. Non-piped rows are carried verbatim and never drawn."""
+    if r["size"] == "DN300":
+        return OD300
+    return dn.pipe_od(r["size"]) if r["size"] in dn.PIPE else dn.pipe_od("DN15")
 
 
 schedule = [r for r in P["nozzles"]]
 groups = {}
 for r in schedule:
     face = FACE_OF.get(r["face"], r["face"])
-    if face in ("-Y", "+Y"):
+    if face in ("-Y", "+Y") and (r["size"] in dn.PIPE or r["size"] == "DN300"):
         groups.setdefault((face, float(r["height_mm"])), []).append(r)
 
 layout_x = {}
@@ -123,10 +132,19 @@ for (face, z), rows in sorted(groups.items()):
         layout_x[r["tag"]] = round(x + w, 1)
         x += 2 * w + 8.0
 
-noz, drawn = None, {}
+noz, drawn, n_drawn = None, {}, 0
 for r in schedule:
     tag, dnl, h = r["tag"], r["size"], float(r["height_mm"])
     face = FACE_OF.get(r["face"], r["face"])
+    if dnl not in dn.PIPE and dnl != "DN300":
+        # non-piped row: the power terminal (cable schedule X-ELS-06) is electrical,
+        # not piped - carried verbatim, not drawn (no STEP/BOM/geometry change)
+        drawn[tag] = {"style": "carried", "dn": dnl, "face": r["face"], "height_mm": h,
+                      "schedule_rating": r["rating"], "service": r["service"],
+                      "note": "power terminal (cable schedule X-ELS-06, AQS-ELEC-010): "
+                              "electrical, not piped - carried verbatim, not drawn"}
+        continue
+    n_drawn += 1
     od = od_of(r)
     if dnl == "DN300":
         note = ("DN300 outside the lib DN15..DN50 hardware table: plain stub at the "
@@ -249,7 +267,7 @@ rows = [
     ["6", "Nozzle set per docs-authority/nozzles/MET_SCRUB.csv: 7 hose barbs "
           "(DN15/DN50) on extension spools, 1 DN300 return stub, 1 drain boss, "
           "1 vent at the top head",
-     len(schedule), "PVC-U", mass["nozzles"], "make",
+     n_drawn, "PVC-U", mass["nozzles"], "make",
      "schedule tags/faces/heights verbatim; atmospheric hose per duty section 4; "
      "DN300 stub outside the lib table (hold); barb profile a study proportion"],
 ]
