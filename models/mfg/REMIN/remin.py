@@ -1,8 +1,8 @@
 """REMIN manufacturing model, AQS-PLAN-006 work order (X-MFG lane, tier 6, F-VES).
 
-Graph revision AD. Study. Not a PE stamp. Reads the graph node through the shared
-reader (models/mfg/lib/graph_node.py); the params.json write-back beside it carries
-only the builder-owned envelope, design and layout blocks.
+Graph revision AD. Study. Not a PE stamp. Reads params.json only (W2 fields by the
+tracker; the envelope, design and layout blocks beside them are builder-owned) and
+rebuilds every solid.
 
 Placement frame: x along 600 mm, y along 600 mm, z up, origin at the envelope corner.
 Every dimension is an authority figure or a named layout choice:
@@ -22,7 +22,7 @@ Every dimension is an authority figure or a named layout choice:
 - Material: PVC-U drawn (duty section 3: "PVC-U or HDPE, per AQS-STD-002 rule M1";
   CATCH_TANK idiom). The unresolved HDPE alternative is a named hold (W12). CA does
   not apply to the polymer (AQS-STD-001).
-- Nozzles: all 6 rows of docs-authority/nozzles/REMIN.csv drawn at tag, face,
+- Nozzles: all 5 rows of docs-authority/nozzles/REMIN.csv drawn at tag, face,
   height and bore. Atmospheric tube or hose per duty section 4: side connections
   ride tray risers, flush at the envelope faces (the tank stands clear of the ±Y
   faces to leave the pump and UV floor zone); the schedule rating column
@@ -30,9 +30,6 @@ Every dimension is an authority figure or a named layout choice:
   pressure stated). N2/N5 outlet datums 600 predates the box and clamps to the
   stub-radius bound (hold, W12). N3 drain through the tray floor (50 datum); N4
   vent flush at the tank top head (its 800 datum predates the box - hold, W12).
-  N6 is the power terminal (cable schedule X-ELS-06, AQS-ELEC-010): electrical,
-  not piped - drawn as a DN15 stand-in penetration flush at the envelope top,
-  bore not calculated (plan W4).
 - A-VES: the duty section 2 carries a holdup basis (7 days of throughput at the
   10 L/d potable tap = 0.0700 m3 working volume); the model working level is set
   by it and reported. It is not turned into a new residence-time claim.
@@ -43,13 +40,10 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
+from lib import dn, fasteners, materials, nozzles          # noqa: E402
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
-GN = graph_node.graph_node("REMIN")           # the plant graph is the sole authority
-P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
-P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
-          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
+P = json.loads((HERE / "params.json").read_text())
 L, W, H = (float(v) for v in P["size_mm"])                 # 600 x 600 x 600, storage-sizing box
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
@@ -67,6 +61,7 @@ CA = materials.ca_for("PVC-U")                               # 0.0, polymer: AQS
 RHO = materials.density("PVC_U")                            # 1400, lib table
 RHO_PP = materials.density("PP")                             # 910, purchased-envelope mass basis
 
+assert L == 600.0 and W == 600.0 and H == 600.0, "REMIN node envelope changed"
 assert TY + D / 2 <= W, "tank must stay inside the envelope"
 
 # pump and UV floor zone (front strip), tank footprint checked clear of it
@@ -112,12 +107,6 @@ Y_RISER = 60.0                                 # riser stand-off from each face 
 STUB_PIERCE = 5.0                              # past the riser wall, so the union fuses
 
 
-def od_of(r):
-    """Hardware OD for a schedule row: lib-table DN rows at the table OD, and
-    non-piped rows (cable, solids) at the DN15 stand-in."""
-    return dn.pipe_od(r["size"]) if r["size"] in dn.PIPE else dn.pipe_od("DN15")
-
-
 def tube(dnl, length):
     """An open-bore pipe tube along +Z from the origin plane (the HDR spool idiom)."""
     od, wall = dn.pipe_od(dnl), dn.pipe_wall(dnl, 40)
@@ -128,7 +117,7 @@ def z_for(row):
     """Drawn centreline height for a side nozzle, clamped deep enough that the
     branch and its riser top both stay inside the box."""
     h = float(row["height_mm"])
-    od_s = od_of(row)
+    od_s = dn.pipe_od(row["size"])
     hi = H - od_s - 8.0
     z = min(max(h, od_s / 2 + CLAMP_MARGIN), hi)
     if h > hi:
@@ -149,10 +138,10 @@ for r in schedule:
 PACK_X = {"-Y": 300.0, "+Y": 470.0}
 layout_x = {}
 for (face, z), rows in sorted(groups.items()):
-    rows = sorted(rows, key=lambda r: (-od_of(r), r["tag"]))
+    rows = sorted(rows, key=lambda r: (-dn.pipe_od(r["size"]), r["tag"]))
     x = PACK_X[face]
     for r in rows:
-        w = od_of(r) / 2
+        w = dn.pipe_od(r["size"]) / 2
         layout_x[r["tag"]] = round(x + w, 1)
         x += 2 * w + 8.0
 
@@ -160,20 +149,13 @@ noz_pieces, drawn = [], {}
 for r in schedule:
     tag, dnl, face0 = r["tag"], r["size"], r["face"]
     face = FACE_OF.get(face0, face0)
-    od = od_of(r)
-    dnl_hw = dnl if dnl in dn.PIPE else "DN15"   # non-piped rows at the DN15 stand-in
+    od = dn.pipe_od(dnl)
     if face0 == "bottom":                      # N3 drain: open bore through the tray floor
-        s = tube(dnl_hw, 40.0 - T_TRAY + 2.0).translate((560.0, 300.0, T_TRAY - 2.0))
+        s = tube(dnl, 40.0 - T_TRAY + 2.0).translate((560.0, 300.0, T_TRAY - 2.0))
         note = "drain, open bore through the tray floor, flush at the envelope bottom (schedule datum 50)"
         z_d, x_d = 0.0, 560.0
-    elif face0 == "top" and dnl == "cable":    # N6: power terminal (X-ELS-06)
-        s = tube("DN15", H - T_TRAY).translate((40.0, TY, T_TRAY))
-        note = ("power terminal (cable schedule X-ELS-06): an electrical drop, not "
-                "piped - drawn as a DN15 stand-in penetration flush at the envelope "
-                "top beside the tank, bore not calculated (plan W4)")
-        z_d, x_d = H, 40.0
     elif face0 == "top":                       # N4 vent: flush at the tank top head
-        s = nozzles.hose_barb(round(od - 2 * dn.pipe_wall(dnl_hw), 2), Hose[dnl_hw], root_od=od)
+        s = nozzles.hose_barb(round(od - 2 * dn.pipe_wall(dnl), 2), Hose[dnl], root_od=od)
         s = nozzles.place_on_face(s, "top", 0.0, (TX, TY), (L, W, H))
         note = ("vent flush at the tank top head; schedule datum 800 predates the box "
                 "(hold, WORK_ORDER W12)")
@@ -182,8 +164,8 @@ for r in schedule:
         z_d, note = z_for(r)
         x_d = layout_x[tag]
         y_r = Y_RISER if face == "-Y" else W - Y_RISER
-        riser = tube(dnl_hw, z_d - T_TRAY + 2.0 + od / 2 + 4.0).translate((x_d, y_r, T_TRAY - 2.0))
-        branch = nozzles.place_on_face(tube(dnl_hw, Y_RISER - od / 2 + 5.0), face, z_d,
+        riser = tube(dnl, z_d - T_TRAY + 2.0 + od / 2 + 4.0).translate((x_d, y_r, T_TRAY - 2.0))
+        branch = nozzles.place_on_face(tube(dnl, Y_RISER - od / 2 + 5.0), face, z_d,
                                        (x_d, W / 2), (L, W, H))
         s = riser.union(branch)
         note = (note or "schedule datum drawn") + (
@@ -273,9 +255,7 @@ report = {
     "nozzle_idiom": "atmospheric open-bore tube connections on tray risers, flush at "
     "the envelope faces (duty section 4: atmospheric tube or hose; the W4 110 % rule "
     "draws no flange where no process pressure is stated); the schedule rating column "
-    "(Class 150) is carried verbatim as text; clamped datums named in nozzles_drawn; "
-    "the N6 power terminal (cable schedule X-ELS-06) is electrical, not piped: drawn "
-    "as a DN15 stand-in penetration at the envelope top, bore not calculated",
+    "(Class 150) is carried verbatim as text; clamped datums named in nozzles_drawn",
     "part_mass_kg": mass, "cadquery": cq.__version__,
 }
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
@@ -301,11 +281,9 @@ rows = [
      "the dose; lamp rating per the maker TDS at order (WORK_ORDER W12)"],
     ["5", "Nozzle set per docs-authority/nozzles/REMIN.csv: 5 atmospheric open-bore "
           "tube connections on tray risers (drain through the floor, vent at the tank "
-          "top head) plus the N6 power-terminal penetration (DN15 stand-in) at the "
-          "top", len(schedule), "PVC-U", mass["nozzles"], "make",
+          "top head)", len(schedule), "PVC-U", mass["nozzles"], "make",
      "schedule tags/faces/heights verbatim; atmospheric per duty section 4; bore per "
-     "the lib/dn Sch 40 table; the N6 power terminal (cable schedule X-ELS-06) is "
-     "electrical, not piped"],
+     "the lib/dn Sch 40 table"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)
@@ -334,14 +312,17 @@ p["envelope"] = {
     "tank": {"od_mm": D, "xy_mm": [TX, TY], "z_mm": [Z_SH0, Z_TOP]},
     "tray_mm": T_TRAY,
 }
-p["design"] = dict(GN.design)     # graph fields first: the builder never overrides them
-p["design"].update({
+p["design"] = {
     "service": "remineralization dosing skid, atmospheric (duty sections 2, 4 and 6)",
     "wall_mm": T_WALL, "wall_basis": "study fab-page polymer wall", "ca_mm": CA,
     "internals": "none drawn: pumps and UV are purchased envelopes (plan rule 6)",
     "working_level_mm": z_level,
     "working_level_basis": "the duty section 2 holdup basis (7 days at 10 L/d = 0.07 m3)",
-})
+    "machine": P["design"]["machine"],
+    "pumps": P["design"]["pumps"],
+    "uv": P["design"]["uv"],
+    "chemistry": P["design"]["chemistry"],
+}
 p["layout"] = {
     "frame": "origin at the envelope corner; tank axis at x 300, y 350, z up; tray "
              "floor z 0..20 over the full envelope",
