@@ -19,8 +19,8 @@ Every dimension is an authority figure or a named layout choice:
   the bipolar-plate field (plates + CCM lands at the pitch, the MEAs a BOM row); the power
   electronics ride the enclosure (purchased envelope, rule 6).
 - BoP deck (node internals row): H2 and O2 gas-liquid separators DN150 x 400 (one per side,
-  316L per duty section 3), the deoxo on H2 (2 beds DN80 x 347 at the A-M-168 GHSV 5000
-  1/h class on 17.4 Nm3/h), the dryer on H2 (2 beds DN80 x 720, 4A/13X at margin 3), the
+  316L per duty section 3), the deoxo on H2 (2 beds DN80 x 345 at the A-M-168 GHSV 5000
+  1/h class on 17.4 Nm3/h), the dryer on H2 (2 beds DN80 x 712, 4A/13X at margin 3), the
   DI-water loop pump envelope, and the separator deck framing. The deoxo and dryer beds
   are the issued A-M-168 purifier classes applied on the skid.
 - Duty section 3: Ti porous transport layers, Ir/Ru anode / Pt cathode, PTFE ionomer, Ti
@@ -68,8 +68,8 @@ Z_STACK0 = 300.0                                           # stack stands on the
 Z_STACK1 = Z_STACK0 + STACK_H                              # 1040
 T_D = 6.0                                                  # 316L vessel wall
 SEP_DN, SEP_H = 150.0, 400.0                               # separators DN150 x 400
-DEOX_L = float(DS["deoxo"]["tube"].split("x ")[1].split(" mm")[0])   # 347
-DRY_L = float(DS["dryer"]["tube"].split("x ")[1].split(" mm")[0])    # 720
+DEOX_L = float(DS["deoxo"]["tube"].split("x ")[1].split(" mm")[0])   # 345 (graph params.design.deoxo.tube)
+DRY_L = float(DS["dryer"]["tube"].split("x ")[1].split(" mm")[0])    # 712 (graph params.design.dryer.tube)
 RHO_TI = 4500.0                                            # Ti cell hardware (lib class has Ti G2 4510)
 RHO_TI = materials.density("Ti G2") or RHO_TI
 RHO_316 = materials.density("316L")
