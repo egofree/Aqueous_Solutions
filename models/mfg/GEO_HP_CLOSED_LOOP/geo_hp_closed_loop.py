@@ -1,9 +1,9 @@
 """GEO_HP_CLOSED_LOOP manufacturing model, AQS-PLAN-006 work order (M0 lane,
 tier 6, route hold).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json (W2 fields by the
-tracker; the envelope, design and layout blocks beside them are builder-owned)
-and rebuilds every solid.
+Graph revision AD. Study. Not a PE stamp. Reads the graph node through the
+shared reader (models/mfg/lib/graph_node.py); the params.json write-back
+beside it carries only the builder-owned envelope, design and layout blocks.
 
 Placement frame: x along 1000 mm, y along 600 mm, z up, origin at the envelope
 corner. Every dimension is an authority figure or a named layout choice:
@@ -41,14 +41,17 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles         # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles       # noqa: E402
 from tracker import stl_bbox_mm                           # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("GEO_HP_CLOSED_LOOP")  # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
+          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
 L, W, H = (float(v) for v in P["size_mm"])                 # 1000 x 600 x 800
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
-DS = P.get("design") or {}
+DS = P.get("design") or {}                                # the node design block
 
 T_PLINTH = 20.0
 POST = 40.0                                                # hold-down/guard frame section
@@ -61,7 +64,6 @@ TIE_X = (200.0, 480.0)                                     # tie-in stub station
 RHO_HDPE = materials.density("HDPE")
 RHO_CS = materials.density("CS")
 
-assert L == 1000.0 and W == 600.0 and H == 800.0, "GEO_HP_CLOSED_LOOP node envelope changed"
 CY = W / 2
 assert TIE_X[1] < HDR_X1, "tie stubs on the header runs"
 assert PUMP[0] + PUMP[2] <= L - POST, "pump envelope clears the frame"
@@ -123,7 +125,9 @@ Hose = {"DN15": 45.0, "DN25": 50.0}
 
 
 def od_of(r):
-    return dn.pipe_od(r["size"]) if r["size"].startswith("DN") else dn.pipe_od("DN15")
+    """Hardware OD for a piped row: lib-table DN rows at the table OD. Non-piped
+    rows are carried verbatim and never drawn."""
+    return dn.pipe_od(r["size"]) if r["size"] in dn.PIPE else dn.pipe_od("DN15")
 
 
 def hose_id(dnl):
@@ -134,7 +138,7 @@ schedule = P["nozzles"]
 groups = {}
 for r in schedule:
     face = FACE_OF.get(r["face"], r["face"])
-    if face in ("-Y", "+Y"):
+    if face in ("-Y", "+Y") and r["size"] in dn.PIPE:
         groups.setdefault((face, float(r["height_mm"])), []).append(r)
 
 layout_x = {}
@@ -148,10 +152,19 @@ for (face, z), rows in sorted(groups.items()):
         layout_x[r["tag"]] = round(x + w, 1)
         x += 2 * w + 8.0
 
-noz, drawn = None, {}
+noz, drawn, n_drawn = None, {}, 0
 for r in schedule:
     tag, dnl, h = r["tag"], r["size"], float(r["height_mm"])
     face = FACE_OF.get(r["face"], r["face"])
+    if dnl not in dn.PIPE:
+        # non-piped row: the power terminal (cable schedule X-ELS-06) is electrical,
+        # not piped - carried verbatim, not drawn (no STEP/BOM/geometry change)
+        drawn[tag] = {"style": "carried", "dn": dnl, "face": r["face"], "height_mm": h,
+                      "schedule_rating": r["rating"], "service": r["service"],
+                      "note": "power terminal (cable schedule X-ELS-06, AQS-ELEC-010): "
+                              "electrical, not piped - carried verbatim, not drawn"}
+        continue
+    n_drawn += 1
     od = od_of(r)
     note = "atmospheric hose joint at the envelope face (duty section 4; bore not calculated, hose, atmospheric)"
     if r["face"] == "bottom":                             # N1: drain flush at the envelope bottom
@@ -274,7 +287,7 @@ rows = [
      "purchased per plan rule 6, rating from the node; mass a table-density "
      "placeholder until the maker TDS quotes (W12)"],
     ["7", "Nozzle set per docs-authority/nozzles/GEO_HP_CLOSED_LOOP.csv: 3 hose "
-           "barbs (DN15)", len(schedule), "HDPE", mass["nozzles"], "make",
+           "barbs (DN15)", n_drawn, "HDPE", mass["nozzles"], "make",
      "schedule tags/faces/heights verbatim (bores not calculated, hose, "
      "atmospheric); atmospheric hose per duty section 4"],
 ]
