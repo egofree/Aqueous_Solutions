@@ -129,18 +129,18 @@ parts["vent_stub"] = tube(OD15 / 2, OD15 / 2 - t15, (rx_ + RY, ry_, 800), "Y", 4
 # ---------------- N1 metal siphon (well + crest + discharge lip) ------------------
 wr = A["DN80_OD_mm"] / 2
 well = rod(wr, (670, 400, 80), "Z", 585)                        # riser leg 80..665
-crest = box(660, 400 - wr, 655, 160, 2 * wr, 10)                 # horizontal run 660..820 at z 655..665
-lip = rod(wr, (800, 400, 605), "Z", 55)
+crest = box(660, 400 - wr, 655, 140, 2 * wr, 10)                 # horizontal run 660..800, ends flush at the +X face (the house idiom of lib/nozzles.place_on_face)
+lip = rod(wr, (800 - wr, 400, 605), "Z", 55)               # discharge leg ends flush at the +X face
 siphon = well.union(crest).union(lip)
 siphon = siphon.cut(rod(15.0, (670, 400, 75), "Z", 700))          # bore through the riser leg
 siphon = siphon.cut(box(655, 385, 652, 170, 30, 16))              # bore through the crest
-siphon = siphon.cut(rod(15.0, (800, 400, 590), "Z", 80))          # bore through the discharge leg
+siphon = siphon.cut(rod(15.0, (800 - wr, 400, 590), "Z", 80))    # bore through the discharge leg
 parts["metal_siphon"] = siphon
 
 # ---------------- N3 feed chute + lance -----------------------------------------
-chute = box(-35, 320, 90, 35, 160, 140)
-cone = cq.Solid.makeCone(30, 22, 55, cq.Vector(-20, 400, 285), cq.Vector(0, 0, 1))
-seal_flange = box(-43, 340, 130, 8, 120, 60)
+chute = box(0, 320, 90, 35, 160, 140)                    # built flush at the -X face (see N1)
+cone = cq.Solid.makeCone(30, 22, 55, cq.Vector(30, 400, 285), cq.Vector(0, 0, 1))
+seal_flange = box(0, 340, 130, 8, 120, 60)
 lance = tube(A["DN100_OD_mm"] / 2, A["DN100_OD_mm"] / 2 - A["DN100_wall_mm"], (70, 400, 160), "X", 100)
 parts["feed_chute_group"] = chute.union(cq.Workplane(obj=cone)).union(seal_flange).union(lance)
 
@@ -148,7 +148,7 @@ parts["feed_chute_group"] = chute.union(cq.Workplane(obj=cone)).union(seal_flang
 s = None
 for (sx, sdir) in ((202.0, -1), (598.0, 1)):
     y1 = (W if sdir > 0 else 0.0)
-    q = tube(OD15 / 2, OD15 / 2 - t15, (sx, y1 + 40 * sdir, 600), "Y", -40 * sdir)
+    q = tube(OD15 / 2, OD15 / 2 - t15, (sx, y1, 600), "Y", -40 * sdir)   # built flush at the face (see N1)
     s = q if s is None else s.union(q)
 parts["DN15_stubs"] = s
 sl_ = None
@@ -195,7 +195,7 @@ cap_solid.exportStl(str(out / "al_pot.stl"), tolerance=0.4, angularTolerance=0.4
 # 0..800 x 0..800 x 0..1600). The protruding schedule-connection hardware (N1 siphon lip/crest,
 # N3 chute group, N2/N4 stubs) lives in export/al_pot.stl and in the STEP instead, and the
 # overhang stays reported on the check fields below - nothing was resized.
-EXTERNAL = ("metal_siphon", "feed_chute_group", "DN15_stubs")
+EXTERNAL = ()  # every schedule connection is built flush at the envelope faces (the house idiom of lib/nozzles.place_on_face), so the whole assembly is the in-envelope solid; nothing protrudes
 in_env = None
 for k, v in parts.items():
     if k in EXTERNAL:

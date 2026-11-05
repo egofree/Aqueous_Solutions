@@ -11,7 +11,7 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 10,"Offtake riser DN150 OD168.3 t4.0 (sch 10), z 500..1594, flange + N6/N2/N4 DN15 stubs",1,carbon steel (dry hot Cl2),21.0,make,WO row 5; nozzles per the task-04 schedule (N6 top 800; N2/N4 Class 150 at 600)
 11,"Dip leg DN50 OD60.3, inside the riser annulus, bottom z 250 (250 mm submerged)",1,Hastelloy C-276,1.8,buy,WO row 5; melt-side seal leg per the duty section 3 dry-Cl2 class
 12,Metal siphon: well DN80 OD88.9 carbon + crest + discharge lip at +X z 600 (heat traced),1,carbon (ram class),5.5,make,"task-04 schedule N1 (solids, bore not calculated); WO step 6 trial electrolysis tap"
-13,Feed chute group: chute box + hopper + rotary-seal flange + DN100 lance OD114.3 t4,1,"CS chute, carbon lance (refractory)",8.6,make,task-04 schedule N3; 49.419 kg/d feed (A-M-284 feedstock ruling); WO step 4 rotary seal
+13,Feed chute group: chute box + hopper + rotary-seal flange + DN100 lance OD114.3 t4,1,"CS chute, carbon lance (refractory)",8.2,make,task-04 schedule N3; 49.419 kg/d feed (A-M-284 feedstock ruling); WO step 4 rotary seal
 14,"Drain well: carbon sump tube OD60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),0.2,make,task-04 schedule N5 bottom DN15 Class 150; frozen-salt drain pig per WO step 6
 15,Ceramic lining sleeves for the N2/N4 ram passes,2,alumina (90 % class),0.1,buy,duty section 3 backup-lining class (SCHACHT2004)
 16,"Thyristor rectifier + bath hold heaters, 7 kW connected, IP54 cabinet",1,purchase item,,buy,WO step 5/7; AQS-DUTY-072 section 4; A-M-282 class; mass per the purchase datasheet at order

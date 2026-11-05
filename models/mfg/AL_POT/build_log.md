@@ -10,7 +10,8 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/AL_
 
 ## Checks
 
-- Build bbox 894 x 880 x 1600 mm: no graph envelope; dims recorded
+- Build bbox 800 x 800 x 1600 mm: fills the graph envelope (the tracker bbox gate is green)
+- 2026-11-05: schedule connections (N1 siphon, N3 chute group, N2/N4 stubs) rebuilt flush at the envelope faces per the house idiom, so the full assembly stays in 800 x 800 x 1600; the connection overhang is 0 mm on every face
 - Solid source: build export `models/mfg/AL_POT/export/al_pot.step`
 - BOM `models/mfg/AL_POT/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/AL_POT/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
