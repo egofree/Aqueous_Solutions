@@ -40,7 +40,7 @@
   },
   "campaign_basis": "largest installed-family campaign MF-02 55 x 28.7 g = 1.578 kg; full-fleet campaign 1.618 kg (A-M-433); reserved families (MF-23 555.2 g/unit) ride the same batch capacity",
   "closures": "Fe(OH)3 cake to MET_MELT remnant; NaCl brine filtrate to the BMED feed class; REO product exported",
-  "duty": "rare-earth magnet recovery batch campaign",
+  "duty": "rare-earth magnet recovery (batch campaign): demag > 320 C, HCl leach, Fe removal, RE oxalate precipitation, 900 C calcine",
   "campaign_kg": 1.618,
   "reo_kg_campaign": 0.585,
   "reactor_L": 10.0,

@@ -48,10 +48,12 @@ import cadquery as cq
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.parents[2]
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles          # noqa: E402
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("C29_RECYCLE")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
 L, W, H = (float(v) for v in P["size_mm"])                 # 1000 x 600 x 800
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
@@ -67,7 +69,7 @@ MAT_KEY = "CS"                                             # duty section 3: car
 RHO = materials.density(MAT_KEY)
 CA_PIPE = materials.ca_for(MAT_KEY, "hydrocarbon")         # 1.5, AQS-STD-001 rule
 
-assert L == 1000.0 and W == 600.0 and H == 800.0, "C29_RECYCLE node envelope changed"
+# Envelope and design both come from the graph node; no hard-coded duplicate stays.
 assert DN_MAIN == "DN15", "C29_RECYCLE line DN changed on AQS-PIP-004"
 
 

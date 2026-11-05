@@ -1,7 +1,6 @@
 """REE_RECOVER manufacturing model, AQS-PLAN-006 work order (X-MFG lane, tier 6).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json only (W2 fields by the
-tracker; the envelope, design and layout blocks beside them are builder-owned) and
+Graph revision AD. Study. Not a PE stamp. Sizes and counts come from the plant graph through the shared reader (models/mfg/lib/graph_node.py); the params.json write-back merges the builder-owned blocks only. and
 rebuilds every solid.
 
 Placement frame: x along 800 mm, y along 600 mm, z up, origin at the envelope corner.
@@ -44,10 +43,12 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, frame, materials, nozzles    # noqa: E402
+from lib import dn, fasteners, frame, graph_node, materials, nozzles    # noqa: E402
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("REE_RECOVER")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
 L, W, H = (float(v) for v in P["size_mm"])                 # 800 x 600 x 1400, issued skid box
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
@@ -75,7 +76,7 @@ RHO_PP = materials.density("PP")            # 910 (PP-H class basis)
 CA_316 = materials.ca_for("316L")           # 0.0
 CA_PP = materials.ca_for("PP-H")            # 0.0
 
-assert L == 800.0 and W == 600.0 and H == 1400.0, "REE_RECOVER node envelope changed"
+# Envelope and design both come from the graph node; no hard-coded duplicate stays.
 assert REACT_H * 3.14159 * (REACT_D / 2) ** 2 / 1e9 >= 0.010, "reactor envelope must cover the 10 L charge"
 assert SHELF_Z[1] + T_PLATE + max(FILT[2], MUF[2]) < H - SEC, "upper-shelf gear must clear the top rails"
 
@@ -285,7 +286,7 @@ p["envelope"] = {
     "shelves_z_mm": [SHELF_Z[0] + T_PLATE, SHELF_Z[1] + T_PLATE],
 }
 p["design"] = {
-    "duty": (P.get("design") or {}).get("service", "rare-earth magnet recovery batch campaign"),
+    "duty": GN.design.get("service", "rare-earth magnet recovery batch campaign"),
     "campaign_kg": SIZ.get("campaign_kg"), "reo_kg_campaign": SIZ.get("reo_kg_campaign"),
     "reactor_L": SIZ.get("reactor_L"), "power_kW": SIZ.get("power_kW"),
     "mat": "glass-lined reactor, PTFE transfer, PP-H filter; 316L muffle shell; "

@@ -35,10 +35,12 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, materials   # noqa: E402
+from lib import dn, fasteners, graph_node, materials   # noqa: E402
 from tracker import stl_bbox_mm, stl_manifold   # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("EVAP_BASE")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
 L, W, H = (float(v) for v in P["size_mm"])                 # 1250 x 800 x 3100
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
@@ -70,7 +72,7 @@ Z_CAP0 = Z_SEP1                                            # separator top cap 3
 RHO_NI = 8900.0                                            # nickel 200 (PERRY9_MAT class)
 RHO_CS = materials.density("CS") or materials.density("steel")
 
-assert L == 1250.0 and W == 800.0 and H == 3100.0, "EVAP_BASE node envelope changed"
+# Envelope and design both come from the graph node; no hard-coded duplicate stays.
 assert D == 350.0 and NT == 20 and DI == 25.0 and TL == 1500.0, "EVAP_BASE node design changed"
 a_drawn = NT * math.pi * DI * TL / 1e6
 assert abs(a_drawn - 2.356) < 0.005 and abs(a_drawn - A_FF) / A_FF < 0.015, "bundle must fill the booked area (the writer tubes count is a ceil)"

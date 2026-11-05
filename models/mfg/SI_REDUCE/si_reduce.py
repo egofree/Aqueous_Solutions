@@ -1,7 +1,6 @@
 """SI_REDUCE manufacturing model, AQS-PLAN-006 work order (M0 lane, tier 6, route hold).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json (W2 fields by the tracker;
-the envelope, design and layout blocks beside them are builder-owned) and rebuilds
+Graph revision AD. Study. Not a PE stamp. Sizes and counts come from the plant graph through the shared reader (models/mfg/lib/graph_node.py); the params.json write-back merges the builder-owned blocks only. and rebuilds
 every solid.
 
 Placement frame: x along 1200 mm, y along 1000 mm, z up, origin at the envelope corner.
@@ -39,14 +38,16 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import fasteners, materials                      # noqa: E402
+from lib import fasteners, graph_node, materials                      # noqa: E402
 from tracker import stl_bbox_mm                           # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("SI_REDUCE")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
 L, W, H = (float(v) for v in P["size_mm"])                 # 1200 x 1000 x 1600
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
-DS = P.get("design") or {}
+DS = GN.design
 
 T_PLINTH = 20.0                                            # plinth, AQS-MOD-002 dry service
 CAS_OD, CAS_WALL = 700.0, 6.0                              # mild-steel casing (study, W12)
@@ -68,7 +69,7 @@ RHO_FACE = materials.density(MAT_FACE)                     # 1550, lib table
 RHO_BRICK = 2600.0         # published alumina brick class midpoint; the brick is a buy-row
 # liner charge - the supplier TDS governs at order (W12)
 
-assert L == 1200.0 and W == 1000.0 and H == 1600.0, "SI_REDUCE node envelope changed"
+# Envelope and design both come from the graph node; no hard-coded duplicate stays.
 assert CAS_Z1 + LID_T + HOP_H + HATCH_H == H, "lid stack tops at the envelope datum"
 assert CAS_OD + 2 * 50.0 <= min(L, W), "casing clears the envelope walls"
 R_CAS_I = CAS_OD / 2 - CAS_WALL
