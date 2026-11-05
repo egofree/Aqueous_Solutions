@@ -1,10 +1,9 @@
 """GEO_HP_CLOSED_LOOP manufacturing model, AQS-PLAN-006 work order (M0 lane,
 tier 6, route hold).
 
-Graph revision AD. Study. Not a PE stamp. Reads the graph node through the
-shared reader (models/mfg/lib/graph_node.py); the params.json write-back
-beside it carries only the builder-owned envelope, design and layout blocks.
-It rebuilds every solid.
+Graph revision AD. Study. Not a PE stamp. Reads params.json (W2 fields by the
+tracker; the envelope, design and layout blocks beside them are builder-owned)
+and rebuilds every solid.
 
 Placement frame: x along 1000 mm, y along 600 mm, z up, origin at the envelope
 corner. Every dimension is an authority figure or a named layout choice:
@@ -24,16 +23,14 @@ corner. Every dimension is an authority figure or a named layout choice:
   GHEX bore field and the skid-side tie toward GEO_HP (interface indications;
   the buried ground array is the GHEX/site lane's - hold, W12). Skid
   dimensions are study values (holds, W12).
-- Nozzles: all 4 rows of docs-authority/nozzles/GEO_HP_CLOSED_LOOP.csv drawn
+- Nozzles: all 3 rows of docs-authority/nozzles/GEO_HP_CLOSED_LOOP.csv drawn
   at tag, face, height and bore as atmospheric hose barbs flush at the
   envelope faces (duty section 4: atmospheric joints are hose; DN copied from
   the edge, not recalculated; rows read "Bore not calculated. Rating hose,
   atmospheric"). N3 geothermal loop fluid in on -Y at z 160 (the return from
   the GHEX bore field); N1 drain flush at the envelope bottom (50 datum); N2
-  vent flush at the envelope top (800 datum is the box top). N4 is the power
-  terminal (cable schedule X-ELS-06, AQS-ELEC-010): electrical, not piped -
-  drawn as a DN15 stand-in penetration flush at the envelope top, bore not
-  calculated (plan W4). The schedule rating column carried verbatim as text.
+  vent flush at the envelope top (800 datum is the box top). The schedule
+  rating column carried verbatim as text.
 - Route hold: the node class is blank - no AQS-PLAN-006 section 4 class;
   acceptance A-core with the route hold named (W12), the
   AFTERBURNER_FLUE/REE_RECOVER precedent.
@@ -44,17 +41,14 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
+from lib import dn, fasteners, materials, nozzles         # noqa: E402
 from tracker import stl_bbox_mm                           # noqa: E402  (gate-consistent STL reader)
 
-GN = graph_node.graph_node("GEO_HP_CLOSED_LOOP")   # the plant graph is the sole authority
-P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
-P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
-          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
+P = json.loads((HERE / "params.json").read_text())
 L, W, H = (float(v) for v in P["size_mm"])                 # 1000 x 600 x 800
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
-DS = P.get("design") or {}                                # the node design block
+DS = P.get("design") or {}
 
 T_PLINTH = 20.0
 POST = 40.0                                                # hold-down/guard frame section
@@ -164,12 +158,6 @@ for r in schedule:
         s = nozzles.stub("DN15", 50.0)
         s = nozzles.place_on_face(s, "bottom", 0.0, (430.0, CY - 200.0), (L, W, H))
         note = "drain flush at the envelope bottom; 50 datum is the schedule placeholder"
-    elif r["face"] == "top" and dnl == "cable":           # N4: power terminal (X-ELS-06)
-        s = nozzles.stub("DN15", 40.0)
-        s = nozzles.place_on_face(s, "top", 0.0, (470.0, CY), (L, W, H))
-        note = ("power terminal (cable schedule X-ELS-06): an electrical drop, not "
-                "piped - drawn as a DN15 stand-in penetration flush at the envelope "
-                "top beside the vent, bore not calculated (plan W4)")
     elif r["face"] == "top":                              # N2: 800 datum is the box top
         s = nozzles.hose_barb(hose_id(dnl), Hose[dnl], root_od=od)
         s = nozzles.place_on_face(s, "top", 0.0, (570.0, CY), (L, W, H))
@@ -181,7 +169,7 @@ for r in schedule:
         if tag == "N3":
             note += "; the loop return from the GHEX bore field"
     noz = s if noz is None else noz.union(s)
-    drawn[tag] = {"style": "hose" if dnl in Hose else "stub", "dn": dnl, "face": face, "height_mm": h,
+    drawn[tag] = {"style": "hose", "dn": dnl, "face": face, "height_mm": h,
                   "drawn_height_mm": h if face in ("-Y", "+Y") else (0.0 if r["face"] == "bottom" else H),
                   "x_mm": layout_x.get(tag), "schedule_rating": r["rating"],
                   "service": r["service"], "note": note}
@@ -256,9 +244,7 @@ report = {
                     "flush at the envelope bottom (50 datum); vent flush at the "
                     "envelope top (800 datum is the box top); no flange (W4 110 "
                     "% rule); the schedule rating column carried verbatim as "
-                    "text; the N4 power terminal (cable schedule X-ELS-06) is "
-                    "electrical, not piped: drawn as a DN15 stand-in at the "
-                    "envelope top, bore not calculated",
+                    "text",
     "part_mass_kg": mass, "cadquery": cq.__version__,
 }
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
@@ -287,12 +273,10 @@ rows = [
            "node stamp)", 1, "purchased pump (envelope)", mass["pump_env"], "buy",
      "purchased per plan rule 6, rating from the node; mass a table-density "
      "placeholder until the maker TDS quotes (W12)"],
-    ["7", "Nozzle set per docs-authority/nozzles/GEO_HP_CLOSED_LOOP.csv: 2 hose "
-           "barbs (DN15), 1 drain stub, 1 power-terminal penetration (DN15 "
-           "stand-in) at the top", len(schedule), "HDPE", mass["nozzles"], "make",
+    ["7", "Nozzle set per docs-authority/nozzles/GEO_HP_CLOSED_LOOP.csv: 3 hose "
+           "barbs (DN15)", len(schedule), "HDPE", mass["nozzles"], "make",
      "schedule tags/faces/heights verbatim (bores not calculated, hose, "
-     "atmospheric); atmospheric hose per duty section 4; the N4 power terminal "
-     "(cable schedule X-ELS-06) is electrical, not piped"],
+     "atmospheric); atmospheric hose per duty section 4"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)
