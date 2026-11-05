@@ -31,3 +31,5 @@ if __name__ == '__main__':
         for call in calls:
             print('build', os.path.relpath(call[0], ROOT), *call[1:], flush=True)
             subprocess.run([sys.executable, *call], cwd=ROOT, check=True, env=env)
+    # STEP bytes must not depend on the export order inside a process (lib/step_normalize.py).
+    subprocess.run([sys.executable, os.path.join(HERE, 'lib', 'step_normalize.py')], cwd=ROOT, check=True, env=env)
