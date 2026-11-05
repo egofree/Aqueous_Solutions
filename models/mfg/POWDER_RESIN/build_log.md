@@ -10,7 +10,8 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/POW
 
 ## Checks
 
-- Build bbox 1530 x 800 x 1500 mm: no graph envelope; dims recorded
+- Build bbox 1500 x 800 x 1500 mm: fills the graph envelope (the tracker bbox gate is green)
+- 2026-11-05: the N1 powder inlet chute was rebuilt flush at the -X frame face per the house idiom, so the full assembly stays in 1500 x 800 x 1500; the connection overhang is 0 mm on every face
 - Solid source: build export `models/mfg/POWDER_RESIN/export/powder_resin.step`
 - BOM `models/mfg/POWDER_RESIN/bom.csv`; fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/POWDER_RESIN/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)

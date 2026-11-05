@@ -48,7 +48,7 @@ parts["duct_mill_cyc"] = rod(40.0, (380.0, 400.0, 400.0), "X", 140)
 parts["duct_cyc_col"] = tube(40.0, 34.0, (620.0, 400.0, 820.0), "Z", 40)
 
 # ---------------- nozzle hardware ----------------
-parts["powder_inlet"] = box(-30.0, 340.0, 40.0, 40.0, 120.0, 100.0)   # N1 -X z 160, full height
+parts["powder_inlet"] = box(0.0, 340.0, 0.0, 40.0, 120.0, 140.0)   # N1 -X, built flush at the frame face (the house idiom of lib/nozzles.place_on_face: schedule hardware ends flush at the envelope face so the build keeps the bounding box the graph states); laps the base plinth so the union fuses
 parts["powder_out"] = box(1440.0, 300.0, 240.0, 60.0, 200.0, 160.0)   # N2 +X at the collector
 parts["drain_well"] = tube(30.5, DN15, (400, 400, 0), "Z", 50)        # N3 (nominal)
 parts["vent_stub"] = tube(DN15, DN15 - W15, (620.0, 400.0, 860.0), "Z", 340)   # N4 to the z 1200 datum
@@ -70,7 +70,7 @@ body = body.clean()
 cap_solid = body.val()
 cap_solid.exportStl(str(out / "powder_resin.stl"), tolerance=0.4, angularTolerance=0.4, ascii=True)
 
-EXTERNAL = ("powder_inlet", "powder_out")
+EXTERNAL = ("powder_out",)  # schedule hardware at the frame faces; the powder inlet is built flush (see above) so it is part of the in-envelope solid
 in_env = None
 for k, v in parts.items():
     if k in EXTERNAL:

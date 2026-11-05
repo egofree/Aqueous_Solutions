@@ -6,16 +6,15 @@
   ],
   "inside_size_mm_shell": true,
   "connection_overhang_mm": {
-    "-X": 30.0,
+    "-X": 0.0,
     "+X": 0.0,
     "-Y": 0.0,
     "+Y": 0.0
   },
   "overhang_allowance_mm": 50.0,
   "overhang_ok": true,
-  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: powder_inlet, powder_out)",
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: powder_out)",
   "external_parts": [
-    "powder_inlet",
     "powder_out"
   ],
   "cap_solids": 5,
@@ -28,7 +27,7 @@
     "collector": 85.8,
     "duct_mill_cyc": 5.5,
     "duct_cyc_col": 0.4,
-    "powder_inlet": 3.8,
+    "powder_inlet": 5.3,
     "powder_out": 15.1,
     "drain_well": 1.0,
     "vent_stub": 0.3

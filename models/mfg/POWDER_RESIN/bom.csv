@@ -4,6 +4,6 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 3,Cyclone classifier OD 220 x 520 + cone,1,316L,155.2,make,duty section 2
 4,PE-lined collector 340 x 300 x 460,1,CS with PE liner,85.8,make,duty section 3 (PE-lined collector)
 5,"Ducts: mill -> cyclone OD 80, cyclone -> collector return",2,316L,5.9,make,WO step 4
-6,N1 powder inlet chute -X z 160 (from POLY_F N4),1,carbon steel,3.8,make,task-04 schedule N1
+6,N1 powder inlet chute -X z 160 (from POLY_F N4),1,carbon steel,5.3,make,task-04 schedule N1
 7,N2 powder stock out +X at the collector (to STOCK_OUT N6),1,carbon steel,15.1,make,task-04 schedule N2
 8,N3 nominal drain + N4 vent riser to the z 1200 datum,2,carbon steel,1.3,make,task-04 schedule N3/N4
