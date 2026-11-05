@@ -3,7 +3,7 @@
 This record maps the layers that generate files in the repository, classifies each layer, and
 proposes a simpler pipeline with an ordered migration. It changes no stage. Task X-QA-18 in
 `docs-authority/TASK_PLAN.md` carries the acceptance test. Figures are as read at commit
-c9314e5c; `python3 -m flow_graph.param.regen --dry-run` lists the present stages.
+5def1ddd; `python3 -m flow_graph.param.regen --dry-run` lists the present stages.
 
 ## 1. Layers
 
@@ -17,15 +17,15 @@ Table 1.1. Generation layers
 | 4. Study calculators (`docs-authority/_*_sizing.py`, `_ew_sizing.py`, `_rect_ew_sizing.py`) | drivers, graph | sizing pages under `docs-authority/sizing/`; some values are copied into drivers by hand | doc stages, and other calculators by subprocess | essential, but several hold literals that belong in drivers |
 | 5. Document stages (duties, P&IDs, line list, load list, registers, inventories, workbook, task plan) | graph, drivers, other documents | the derived files listed in `DERIVED_REVISIONS.md` | `regen.py` doc phase, repeated until no output changes | essential; some are circular (`feeds_back_from` in the manifest: documents that read other documents' outputs) |
 | 6. Provenance manifests and the receipt (`duties/_generated.json`, `pid/_generated.json`, `media/_generated.json`, `*._generated.json`, `flow_graph/derived/_regen_receipt.json`) | the run | tracked JSON | generators and `regen.py` | bookkeeping-only: they record that a stage ran, so that commit-order staleness can be cleared |
-| 7. Derived-file register (`_rev_stamp.py` writing `DERIVED_REVISIONS.md`) | Git history, layer 6 | `docs-authority/DERIVED_REVISIONS.md` | `rev_stamp` stage; `regen --check` | bookkeeping-only; before d76d5521 also the main source of stamp-only commits |
+| 7. Derived-file register (`_rev_stamp.py` writing `DERIVED_REVISIONS.md`) | Git history, layer 6 | `docs-authority/DERIVED_REVISIONS.md` | `rev_stamp` stage; `regen --check` | bookkeeping-only; before f2e00d23 also the main source of stamp-only commits |
 | 8. Document and drawing registers (`_doc_register.py`, drawing register) | page headers | `DOC_REGISTER.md`, `DRAWING_REGISTER.md` | doc stages | essential as indexes; the document-number invariant is already enforced by `test_doc_numbers.py` |
 | 9. Manufacturing tracker (`models/mfg/tracker.py`) | graph, duty pages, committed CAD outputs | `models/mfg/*/params.json` (copies of graph values), section 7 of `MFG_MODEL_PLAN.md` | `mfg_tracker` stage; by hand with `--check` | partly redundant: `params.json` duplicates graph values that the builders could read directly (several builders already read the graph) |
-| 10. CAD builders and export (`models/mfg/*/*.py`, `build_all.py`, OpenSCAD, FreeCAD) | `params.json`, graph | STEP, STL, SVG drawings, BOM and fastener CSVs; `cad/stl` registry | `regen --cad`, or by hand per unit | essential; outputs are large, partly non-deterministic before c34881ce, and mostly not in LFS |
-| 11. Checks (`scripts/check_all.sh`, pytest gates, citation and style checks, idempotency check) | everything | none (after d76d5521) | people, the optional pre-push hook | essential |
+| 10. CAD builders and export (`models/mfg/*/*.py`, `build_all.py`, OpenSCAD, FreeCAD) | `params.json`, graph | STEP, STL, SVG drawings, BOM and fastener CSVs; `cad/stl` registry | `regen --cad`, or by hand per unit | essential; outputs are large, partly non-deterministic before bea9b52b, and mostly not in LFS |
+| 11. Checks (`scripts/check_all.sh`, pytest gates, citation and style checks, idempotency check) | everything | none (after f2e00d23) | people, the optional pre-push hook | essential |
 
 Evidence of bookkeeping cost: of the commits on this branch ahead of `origin/main` up to
-873b2d1a, 55 change only derived files, and 19 of those are not yet pushed (listed in the review
-report). Before 9c5ebf13 every graph change rewrote every P&ID title block; before d76d5521 every
+ed34d002, 55 change only derived files, and 19 of those are not yet pushed (listed in the review
+report). Before 1ca8dd91 every graph change rewrote every P&ID title block; before f2e00d23 every
 graph commit rewrote every row of the register and needed a separate commit.
 
 ## 2. Proposed pipeline
@@ -53,8 +53,8 @@ graph commit rewrote every row of the register and needed a separate commit.
 Each step is a separate commit, reversible by reverting that commit, and passes
 `scripts/check_all.sh --full` before and after.
 
-1. Done in this review: the register records status only (d76d5521); `regen --check` is read-only;
-   P&ID title blocks print the graph revision (9c5ebf13); STEP exports are byte-stable (c34881ce).
+1. Done in this review: the register records status only (f2e00d23); `regen --check` is read-only;
+   P&ID title blocks print the graph revision (1ca8dd91); STEP exports are byte-stable (bea9b52b).
    Risk: none known. Check: `scripts/check_all.sh --full` passes with no diff.
 2. Move the remaining literals of the study calculators into drivers (X-QA-06, X-QA-09). Risk:
    values change if a literal and its driver disagree. Check: misfit test and idempotency.

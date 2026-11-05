@@ -11,9 +11,9 @@ files) because of a three-layer failure, not an output-glob bookkeeping gap:
    every regeneration pass even when the generated `.dot` was byte-identical, so the doc phase
    of `python3 -m flow_graph.param.regen` could oscillate `views/mfd.svg` pass after pass and
    hit the convergence cap: `failed: ["(doc-convergence)"]`. Reproduced live on
-   `qc/batch-1-farm-design-tool-placement` at `dacacc31`: a full regen changed `mfd.svg` while
-   `mfd.dot` was byte-identical to HEAD, and the parked cascade (`git stash@{0}`, made at
-   `78c7a127`) carries the full failure state: receipt `converged: false`, board
+   `qc/batch-1-farm-design-tool-placement` at `8e3cc8f5`: a full regen changed `mfd.svg` while
+   `mfd.dot` was byte-identical to HEAD, and the parked cascade (a stash made at `10121b5b`;
+   since 2026-11-04 kept locally as `refs/review-backup/stash-2026-11-03-full-regen-cascade`) carries the full failure state: receipt `converged: false`, board
    "1773 derived files, 959 stale".
 2. **Amplifier.** `_rev_stamp.py` trusted the regen receipt's `vouched_patterns` only when the
    receipt said `converged: true`, and `regen.py` set `converged = not failed` globally. One
@@ -68,6 +68,6 @@ feed (`inventory_other`, `doc_plant_bom` and its downstream) before committing.
 
 - Full regen at HEAD before the fix: 24 changed files, gate green only because the run
   converged; `mfd.svg` changed with a byte-identical `mfd.dot` (flake captured in the act).
-- `git stash@{0}` (made at `78c7a127`): receipt `converged: false`, `failed:
+- The same stash (made at `10121b5b`): receipt `converged: false`, `failed:
   ["(doc-convergence)"]`, board "959 stale" — the reported failure, in the receipt's own bytes.
 - After the fix: full regen → full regen is byte-identical, `scripts/check_all.sh` green.

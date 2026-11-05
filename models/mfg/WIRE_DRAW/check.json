@@ -15,7 +15,7 @@
   "solids": 11,
   "all_parts_valid": true,
   "machine": {
-    "type": "bull-block wire drawer per the duty sheet and the AQS-MFG-010 tool row (Table 2.1, rev C metering split), built on the DRAW accepted idiom (commit e1e7d94b) scaled to the node box: steel bench bed on legs, die stand with the tungsten-carbide die set in tool-steel casings (consumable buy set), bull-block take-up drum OD 300 with shaft, wire-guide sheaves, draw-fume extraction hood over the die zone, drive group and control cabinet as purchased envelopes; die-zone/drum guard rail (A-MACH) + hold-down frame",
+    "type": "bull-block wire drawer per the duty sheet and the AQS-MFG-010 tool row (Table 2.1, rev C metering split), built on the DRAW accepted idiom (commit 30f5abf4) scaled to the node box: steel bench bed on legs, die stand with the tungsten-carbide die set in tool-steel casings (consumable buy set), bull-block take-up drum OD 300 with shaft, wire-guide sheaves, draw-fume extraction hood over the die zone, drive group and control cabinet as purchased envelopes; die-zone/drum guard rail (A-MACH) + hold-down frame",
     "tool_row": "AQS-MFG-010 Table 2.1: Bull-block wire drawer, nameplate 1.1 kW; energy basis 250 MPa x strain 3.0 / 0.55 (DIETER1988) = 0.0423 kWh/kg + no-load 15 % x 1 h (A-M-177)",
     "bench": {
       "bed_x_mm": [

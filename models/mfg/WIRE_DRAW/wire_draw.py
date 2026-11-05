@@ -2,7 +2,7 @@
 
 Graph revision AD. Study. Not a PE stamp. Reads params.json (W2 fields by the tracker;
 the envelope, design and layout blocks beside them are builder-owned) and rebuilds
-every solid. The DRAW accepted model (commit e1e7d94b, bench wire/rod draw bench) is
+every solid. The DRAW accepted model (commit 30f5abf4, bench wire/rod draw bench) is
 the idiom this wire variant reuses: bench bed, die stand with die casings, take-up
 drum with the drive group, wire guides, and the guard rail - scaled to the node box
 and to the bull-block machine class the AQS-MFG-010 tool row names.
@@ -233,7 +233,7 @@ report = {
     "machine": {
         "type": "bull-block wire drawer per the duty sheet and the AQS-MFG-010 "
                 "tool row (Table 2.1, rev C metering split), built on the DRAW "
-                "accepted idiom (commit e1e7d94b) scaled to the node box: steel "
+                "accepted idiom (commit 30f5abf4) scaled to the node box: steel "
                 "bench bed on legs, die stand with the tungsten-carbide die set "
                 "in tool-steel casings (consumable buy set), bull-block take-up "
                 "drum OD 300 with shaft, wire-guide sheaves, draw-fume extraction "
@@ -353,7 +353,7 @@ p["design"] = {
                "sections 1 and 4)",
     "tool_row": "AQS-MFG-010 Table 2.1: bull-block wire drawer, nameplate 1.1 kW; "
                 "250 MPa x strain 3.0 / 0.55 (DIETER1988) + no-load 15 % (A-M-177)",
-    "idiom": "the DRAW accepted model (commit e1e7d94b) is the bench idiom this "
+    "idiom": "the DRAW accepted model (commit 30f5abf4) is the bench idiom this "
              "wire variant reuses, scaled to the node box and the bull-block class",
     "material": "316L where the stream is wet (duty section 3); dry forming machine",
     "ca_mm": 0.0,

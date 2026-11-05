@@ -136,7 +136,7 @@
  "design": {
   "service": "WIRE_DRAW: billet drawn to wire product (S58); draw scrap returns and the draw-fume row routes to the house scrubber train (duty sections 1 and 4)",
   "tool_row": "AQS-MFG-010 Table 2.1: bull-block wire drawer, nameplate 1.1 kW; 250 MPa x strain 3.0 / 0.55 (DIETER1988) + no-load 15 % (A-M-177)",
-  "idiom": "the DRAW accepted model (commit e1e7d94b) is the bench idiom this wire variant reuses, scaled to the node box and the bull-block class",
+  "idiom": "the DRAW accepted model (commit 30f5abf4) is the bench idiom this wire variant reuses, scaled to the node box and the bull-block class",
   "material": "316L where the stream is wet (duty section 3); dry forming machine",
   "ca_mm": 0.0,
   "material_basis": "duty section 3; CA 0 mm shop rule (AQS-STD-001)",

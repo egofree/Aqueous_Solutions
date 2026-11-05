@@ -13,7 +13,7 @@ face, a circle, or a tangent line - instead of overlapping volumetrically. The
 boolean leaves a compound of separate solids (or a seam inside one solid), and
 per-face tessellation then produces edges used by four triangles. Rebuilding
 through the current lib and builders first (the lib `place_on_face` side-face
-fix of commit 6c825129 removed the old protrusions but not these contacts)
+fix of commit 80f28de3 removed the old protrusions but not these contacts)
 confirmed the pattern per builder:
 
 - `style_builders.py` (`add_nozzles`, `column` skirt, `pipe_run` supports): the

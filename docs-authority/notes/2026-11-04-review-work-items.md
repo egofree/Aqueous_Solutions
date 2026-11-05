@@ -2,7 +2,7 @@
 
 This record gives the reason and the evidence for each work item X-QA-04 to X-QA-17 in
 `docs-authority/TASK_PLAN.md` (AQS-PLAN-007). The task plan states the acceptance test of each.
-Figures quoted here were read from the tree at commit 873b2d1a and will go stale; the graph and
+Figures quoted here were read from the tree at commit ed34d002 and will go stale; the graph and
 the generated pages govern.
 
 ## X-QA-04. Electrowinning deposits computed from the feed assay
@@ -44,7 +44,7 @@ generator stays dual-fuel, hydrogen first.
 
 ## X-QA-09. Provenance check compares values
 
-The provenance tests added in 873b2d1a compare unit identifiers only. See the limits section of
+The provenance tests added in ed34d002 compare unit identifiers only. See the limits section of
 `docs-authority/notes/2026-11-04-parametric-provenance.md`.
 
 ## X-QA-10. Builders take counts from the graph

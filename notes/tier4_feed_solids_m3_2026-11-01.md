@@ -165,7 +165,7 @@ recipe pattern in `models/mfg/EW_1/WORK_ORDER.md`. Graph Rev AC. One commit per 
 
 
 - `models/mfg/style_builders.py`: the per-unit-script skip of the cold-box batch repair
-  (f07280e2) referenced an `MFG` constant it never defined, so the `style_builders`
+  (20434149) referenced an `MFG` constant it never defined, so the `style_builders`
   regen stage crashed (`NameError`) whenever it ran argless, every doc stage after it
   was skipped, and the regen receipt converged false. The missing constant is defined;
   the stage passes again (82 built, 0 failed, 0 resized; the per-unit-script skip works

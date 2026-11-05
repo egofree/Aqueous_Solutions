@@ -81,7 +81,7 @@ and every generated file that regenerates from it.
 
 ## Corrections (2026-11-04 review)
 
-- Commit b1f7d718 states that OPEN_QUESTIONS Rev G closes Q-038. The open-question register
+- Commit 25fc1711 states that OPEN_QUESTIONS Rev G closes Q-038. The open-question register
   is at Rev F and Q-038 is not marked closed. The question stays open until the owner's
   decision is recorded there.
 - The same commit message gives 4.50 kW as DC at the electrodes. 4.50 kW includes the 0.3 V

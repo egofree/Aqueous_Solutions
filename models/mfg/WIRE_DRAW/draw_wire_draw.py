@@ -41,7 +41,7 @@ SHEETS = [
       'Bull-block wire drawer per the AQS-MFG-010 tool row (Table 2.1, rev C '
       'metering split): nameplate 1.1 kW, energy basis 250 MPa x strain 3.0 / 0.55 '
       '(DIETER1988) + no-load 15 % x 1 h (A-M-177)',
-      'The DRAW accepted idiom (commit e1e7d94b) scaled to the node box: bench '
+      'The DRAW accepted idiom (commit 30f5abf4) scaled to the node box: bench '
       'bed x 100..700, die stand -X with the carbide die set, bull-block drum '
       'OD 300 at +X z 600, fume hood over the die zone',
       'A-MACH: die-zone/drum guard rail + hold-down frame + 8 slab anchors'],
@@ -105,7 +105,7 @@ sheets.build_log(
      f"models/mfg/{unit}/check.json", f"models/mfg/{unit}/WORK_ORDER.md"],
     ["- Bull-block wire drawer per the AQS-MFG-010 tool row (nameplate 1.1 kW; "
      "A-M-177 strain-3.0 energy basis), built on the DRAW accepted idiom (commit "
-     "e1e7d94b) scaled to the node box: bench bed, die stand with the carbide "
+     "30f5abf4) scaled to the node box: bench bed, die stand with the carbide "
      "die set (buy consumable), bull-block drum OD 300, wire guides, fume hood "
      "over the die zone (N4 to the house scrubber train)",
      "- A-MACH: die-zone/drum guard rail + hold-down frame + 8 anchors; purchased "

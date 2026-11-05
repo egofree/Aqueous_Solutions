@@ -38,7 +38,7 @@ graph, driver, or transfer-function value changed.
      MFG_MODEL_PLAN section 7 provenance line; `python3 models/mfg/tracker.py`
      regenerated the section (params.json outputs byte-identical).
 5. Working-tree fallout folded in: `docs-authority/DERIVED_REVISIONS.md` (graph
-   commit stamp moved to f0160a6 by regeneration) and `docs-authority/STANDARDS_LIST.md`
+   commit stamp moved to 4870700 by regeneration) and `docs-authority/STANDARDS_LIST.md`
    (regenerated with `python3 docs-authority/_standards_list.py`; now carries the
    Lake Boehmer citations of IBC 2027 Table 1806.2 and ASCE/SEI 7-22).
 
