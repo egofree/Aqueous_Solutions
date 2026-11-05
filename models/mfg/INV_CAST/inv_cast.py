@@ -1,6 +1,6 @@
 """INV_CAST manufacturing model, AQS-PLAN-006 work order (X-MFG lane, FOUNDRY-INV_CAST-10 M3).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only.
+Graph revision AC. Study. Not a PE stamp. Sizes and counts come from the plant graph through the shared reader (models/mfg/lib/graph_node.py); the params.json write-back merges the builder-owned blocks only.
 Investment casting tilt-pour station: fired-shell mould clamp, pour cup and tilt
 station, campaign of 8 moulds (AQS-DUTY-072). Melt arrives from IND_MELT N14.
 Layout choices named in params.json (layout_note); heights, bores and ratings per
@@ -10,9 +10,14 @@ import csv, json, math, pathlib
 import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
-P = json.loads((HERE / "params.json").read_text())
+import sys
+sys.path.insert(0, str(HERE.parent))              # models/mfg: lib
+from lib import graph_node  # noqa: E402
+GN = graph_node.graph_node("INV_CAST")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
 A = P["assumptions"]
-D = P["design"]
+D = GN.design
 L, W, H = P["size_mm"]
 DN15, W15 = A["DN15_OD_mm"] / 2, A["DN15_wall_mm"]
 

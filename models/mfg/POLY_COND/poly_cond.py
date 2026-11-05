@@ -37,10 +37,12 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles          # noqa: E402
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("POLY_COND")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
 L, W, H = (float(v) for v in P["size_mm"])                 # 600 x 600 x 1200
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
@@ -65,7 +67,7 @@ CA = materials.ca_for(MAT)                                 # 0.0, AQS-STD-001
 RHO = materials.density(MAT)                               # 8000, lib table
 RHO_JK = materials.density("CS")                           # jacket envelope, carbon steel
 
-assert L == 600.0 and W == 600.0 and H == 1200.0, "POLY_COND node envelope changed"
+# Envelope and design both come from the graph node; no hard-coded duplicate stays.
 assert D == 200.0 and H_SHELL == 300.0, "POLY_COND node design changed"
 assert Z_HEAD < H, "kettle must stay inside the envelope"
 

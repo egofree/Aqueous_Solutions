@@ -1,6 +1,6 @@
 """SHELL_BURNOUT manufacturing model, AQS-PLAN-006 work order (X-MFG lane, FOUNDRY-SHELL_BURNOUT-10 M3).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json only.
+Graph revision AD. Study. Not a PE stamp. Sizes and counts come from the plant graph through the shared reader (models/mfg/lib/graph_node.py); the params.json write-back merges the builder-owned blocks only.
 Flash-dewax + shell-fire box furnace at 900 C (AQS-DUTY-072): fired shells to
 INV_CAST N1, wax condensate reclaimed to WAX_PATTERN N2, unrecovered wax to the
 oil line, off-gas burned/vented per the duty sheet. Connection hardware draws flush
@@ -10,9 +10,14 @@ import csv, json, math, pathlib
 import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
-P = json.loads((HERE / "params.json").read_text())
+import sys
+sys.path.insert(0, str(HERE.parent))              # models/mfg: lib
+from lib import graph_node  # noqa: E402
+GN = graph_node.graph_node("SHELL_BURNOUT")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
 A = P["assumptions"]
-D = P["design"]
+D = GN.design
 L, W, H = P["size_mm"]
 DN15, W15 = A["DN15_OD_mm"] / 2, A["DN15_wall_mm"]
 

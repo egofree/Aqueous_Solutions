@@ -1,6 +1,6 @@
 """STOCK_OUT manufacturing model, AQS-PLAN-006 work order (X-MFG lane, FOUNDRY-STOCK_OUT-10 M3).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json only.
+Graph revision AD. Study. Not a PE stamp. Sizes and counts come from the plant graph through the shared reader (models/mfg/lib/graph_node.py); the params.json write-back merges the builder-owned blocks only.
 Three-tier bar/plate/ingot staging rack (AQS-DUTY-072). The seven stock-inlet rows
 of the task-04 schedule land on the tier decks at z 160 (registered layout choice);
 formed product issues at the +X face at z 600. Connection hardware draws flush at
@@ -10,9 +10,14 @@ import csv, json, math, pathlib
 import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
-P = json.loads((HERE / "params.json").read_text())
+import sys
+sys.path.insert(0, str(HERE.parent))              # models/mfg: lib
+from lib import graph_node  # noqa: E402
+GN = graph_node.graph_node("STOCK_OUT")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
 A = P["assumptions"]
-D = P["design"]
+D = GN.design
 L, W, H = P["size_mm"]
 DN15, W15 = A["DN15_OD_mm"] / 2, A["DN15_wall_mm"]
 
