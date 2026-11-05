@@ -1,7 +1,8 @@
 """NOX_SCRUB manufacturing model, AQS-PLAN-006 work order (X-MFG lane, tier 4).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only (W2 fields by the
-tracker; the envelope, design and layout blocks beside them are builder-owned).
+Graph revision AD. Study. Not a PE stamp. Reads the graph node through the shared
+reader (models/mfg/lib/graph_node.py); the params.json write-back beside it carries
+only the builder-owned envelope, design and layout blocks.
 
 Placement frame: x along 600 mm, y along 600 mm, z up, origin at the envelope corner.
 Every dimension is an authority figure or a named layout choice:
@@ -37,11 +38,14 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("NOX_SCRUB")       # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
+          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
 L, W, H = (float(v) for v in P["size_mm"])                 # 600 x 600 x 4103, X-PAR-03
-D = 200.0                        # node design block D_mm (cited; carried in params.design)
+D = float(GN.design["D_mm"])        # node design block D_mm (house_scrubbers.py, X-PAR-03)
 REV = P["graph_revision"]
 
 T_SHELL = 6.0                    # study wall - no authority states one (WORK_ORDER W12)
@@ -58,7 +62,6 @@ Z_DEM = Z_SHELL1 - 20.0 - 40.0                              # demister pad below
 CA = materials.ca_for("CPVC")
 RHO = {"CPVC": materials.density("CPVC"), "PP": materials.density("PP")}
 
-assert L == W == 600.0 and H == 4103.0 and D == 200.0, "NOX_SCRUB node/design changed"
 CX = L / 2
 
 
@@ -103,7 +106,9 @@ def hose_id(dnl):
 
 
 def od_of(r):
-    return dn.pipe_od("DN15") if r["size"] == "solids" else dn.pipe_od(r["size"])
+    """Hardware OD for a piped row: lib-table DN rows at the table OD. Non-piped
+    rows are carried verbatim and never drawn."""
+    return dn.pipe_od(r["size"]) if r["size"] in dn.PIPE else dn.pipe_od("DN15")
 
 
 def drawn_height(r):
@@ -115,7 +120,7 @@ schedule = [r for r in P["nozzles"]]
 groups = {}
 for r in schedule:
     face = FACE_OF.get(r["face"], r["face"])
-    if face in ("-Y", "+Y"):
+    if face in ("-Y", "+Y") and r["size"] in dn.PIPE:
         groups.setdefault((face, drawn_height(r)), []).append(r)
 
 layout_x = {}
@@ -129,11 +134,20 @@ for (face, z), rows in sorted(groups.items()):
         layout_x[r["tag"]] = round(x + w, 1)
         x += 2 * w + 8.0
 
-noz, drawn = None, {}
+noz, drawn, n_drawn = None, {}, 0
 for r in schedule:
     tag, dnl, h_raw = r["tag"], r["size"], r["height_mm"]
     h = drawn_height(r)
     face = FACE_OF.get(r["face"], r["face"])
+    if dnl not in dn.PIPE:
+        # non-piped row: the power terminal (cable schedule X-ELS-06) is electrical,
+        # not piped - carried verbatim, not drawn (no STEP/BOM/geometry change)
+        drawn[tag] = {"style": "carried", "dn": dnl, "face": r["face"], "height_mm": h_raw,
+                      "schedule_rating": r["rating"], "service": r["service"],
+                      "note": "power terminal (cable schedule X-ELS-06, AQS-ELEC-010): "
+                              "electrical, not piped - carried verbatim, not drawn"}
+        continue
+    n_drawn += 1
     od = od_of(r)
     note = "atmospheric hose joint at the envelope face (duty section 4)"
     if r["face"] == "bottom":                             # N9: boss at the skirt base
@@ -254,7 +268,7 @@ rows = [
      mass["demister"], "make", "A-COL demister solid (envelope); duty section 3 PP mesh"],
     ["6", "Nozzle set per docs-authority/nozzles/NOX_SCRUB.csv: 13 hose barbs "
           "(DN15/DN25/DN50) on extension spools, 1 drain boss, 1 vent at the top head",
-     len(schedule), "CPVC", mass["nozzles"], "make",
+     n_drawn, "CPVC", mass["nozzles"], "make",
      "schedule tags/faces/heights verbatim (N11/N12 carry no datum: drawn at z 3400, "
      "hold); atmospheric hose per duty section 4; barb profile a study proportion"],
 ]
