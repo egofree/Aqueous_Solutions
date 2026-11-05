@@ -11,7 +11,7 @@
     600.0
   ],
   "size_basis": "study registry box (params size_note); the duty section 2 sizing gives area, U and LMTD, not the box (WORK_ORDER W12)",
-  "graph_revision": "AC",
+  "graph_revision": "AD",
   "solids": 1,
   "all_parts_valid": true,
   "hx": {

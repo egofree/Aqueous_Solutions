@@ -9,4 +9,4 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 8,Heat shield plate under the frame line,1,carbon steel,18.09,make (AQS-BOM-SC-001),duty section 3: frame behind a heat shield
 9,Fume hood over the furnace with the vent riser at the box top,1,carbon steel,143.69,make (AQS-BOM-SC-001),hood riser carries the N6 vent flush at the envelope top (800 datum = box top)
 10,"Power-supply cabinet (purchased, envelope and interface)",1,purchased cabinet (envelope),303.7,buy,nameplate 7.5 kW (AQS-MFG-010 Table 2.1; node stamp); purchased per plan rule 6; cabinet mass is a table-density placeholder until the maker TDS quotes (W12)
-11,Nozzle set per docs-authority/nozzles/MET_MELT.csv: 6 DN15 stubs and 1 solids row drawn DN15 bore not calculated,7,316L tube,0.41,make (AQS-BOM-SC-001),schedule tags/faces/heights verbatim; atmospheric per duty section 4
+11,Nozzle set per docs-authority/nozzles/MET_MELT.csv: 6 DN15 stubs and 1 solids row drawn DN15 bore not calculated,8,316L tube,0.41,make (AQS-BOM-SC-001),schedule tags/faces/heights verbatim; atmospheric per duty section 4

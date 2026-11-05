@@ -7,4 +7,4 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 6,"Drive group on the drum bay (purchased, envelope and interface)",1,purchased drive (envelope),145.07,buy,purchased per plan rule 6; nameplate 1.1 kW is the node stamp (AQS-MFG-010 Table 2.1)
 7,"Control cabinet (purchased, envelope and interface)",1,purchased cabinet (envelope),158.26,buy,purchased per plan rule 6; mass a table-density placeholder until the maker TDS quotes (W12)
 8,"Die-zone and bull-block guard rail, 4 posts x 3 tiers (A-MACH: guard drawn)",1,CS tube,17.44,make (AQS-BOM-SC-001),guard over the die zone and rotating drum; layout choice (WORK_ORDER W12)
-9,Nozzle set per docs-authority/nozzles/WIRE_DRAW.csv: 6 DN15 stubs and 1 solids row drawn DN15 bore not calculated,7,316L tube,0.41,make (AQS-BOM-SC-001),schedule tags/faces/heights verbatim; atmospheric per duty section 4
+9,Nozzle set per docs-authority/nozzles/WIRE_DRAW.csv: 6 DN15 stubs and 1 solids row drawn DN15 bore not calculated,8,316L tube,0.41,make (AQS-BOM-SC-001),schedule tags/faces/heights verbatim; atmospheric per duty section 4

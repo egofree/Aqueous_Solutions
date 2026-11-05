@@ -95,9 +95,20 @@
       "schedule_rating": "Class 150",
       "service": "vent",
       "note": "vent flush at the envelope top; schedule datum 800 mm predates the 1800 box - named hold, WORK_ORDER W12"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 1800.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-MET_SYN, heating jacket + stirrer + metering pumps)",
+      "note": "vent flush at the envelope top; schedule datum 800 mm predates the 1800 box - named hold, WORK_ORDER W12"
     }
   },
-  "nozzle_count_schedule": 6,
+  "nozzle_count_schedule": 7,
   "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: Class 150 rows, atmospheric tube or hose); N1-N3 reagent feeds on -Y at z 160 under the bench deck; N4 DL-Met crystals (solids service) on +Y at z 600 drawn DN15, bore not calculated (plan W4); drain flush at the envelope bottom (50 datum); vent flush at the envelope top (the 800 datum predates the 1800 box - hold, WORK_ORDER W12); no flange drawn (W4 110 % rule - no process pressure stated); the schedule rating column (Class 150) carried verbatim as text",
   "part_mass_kg": {
     "plinth": 240.0,
