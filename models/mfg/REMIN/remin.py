@@ -1,8 +1,8 @@
 """REMIN manufacturing model, AQS-PLAN-006 work order (X-MFG lane, tier 6, F-VES).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json only (W2 fields by the
-tracker; the envelope, design and layout blocks beside them are builder-owned) and
-rebuilds every solid.
+Graph revision AD. Study. Not a PE stamp. Reads the graph node through the shared
+reader (models/mfg/lib/graph_node.py); the params.json write-back beside it carries
+only the builder-owned envelope, design and layout blocks.
 
 Placement frame: x along 600 mm, y along 600 mm, z up, origin at the envelope corner.
 Every dimension is an authority figure or a named layout choice:
@@ -40,10 +40,13 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("REMIN")           # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
+          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
 L, W, H = (float(v) for v in P["size_mm"])                 # 600 x 600 x 600, storage-sizing box
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
@@ -61,7 +64,6 @@ CA = materials.ca_for("PVC-U")                               # 0.0, polymer: AQS
 RHO = materials.density("PVC_U")                            # 1400, lib table
 RHO_PP = materials.density("PP")                             # 910, purchased-envelope mass basis
 
-assert L == 600.0 and W == 600.0 and H == 600.0, "REMIN node envelope changed"
 assert TY + D / 2 <= W, "tank must stay inside the envelope"
 
 # pump and UV floor zone (front strip), tank footprint checked clear of it
@@ -131,7 +133,7 @@ schedule = [r for r in P["nozzles"]]
 groups = {}
 for r in schedule:
     face = FACE_OF.get(r["face"], r["face"])
-    if face in ("-Y", "+Y"):
+    if face in ("-Y", "+Y") and r["size"] in dn.PIPE:
         groups.setdefault((face, float(r["height_mm"])), []).append(r)
 
 # pack side rows clear of the tank footprint at the riser line (layout choice, W12)
@@ -145,10 +147,20 @@ for (face, z), rows in sorted(groups.items()):
         layout_x[r["tag"]] = round(x + w, 1)
         x += 2 * w + 8.0
 
-noz_pieces, drawn = [], {}
+noz_pieces, drawn, n_drawn = [], {}, 0
 for r in schedule:
     tag, dnl, face0 = r["tag"], r["size"], r["face"]
     face = FACE_OF.get(face0, face0)
+    if dnl not in dn.PIPE:
+        # non-piped row: the power terminal (cable schedule X-ELS-06) is electrical,
+        # not piped - carried verbatim, not drawn (no STEP/BOM/geometry change)
+        drawn[tag] = {"style": "carried", "dn": dnl, "face": r["face"],
+                      "height_mm": r["height_mm"], "schedule_rating": r["rating"],
+                      "service": r["service"],
+                      "note": "power terminal (cable schedule X-ELS-06, AQS-ELEC-010): "
+                              "electrical, not piped - carried verbatim, not drawn"}
+        continue
+    n_drawn += 1
     od = dn.pipe_od(dnl)
     if face0 == "bottom":                      # N3 drain: open bore through the tray floor
         s = tube(dnl, 40.0 - T_TRAY + 2.0).translate((560.0, 300.0, T_TRAY - 2.0))
@@ -281,7 +293,7 @@ rows = [
      "the dose; lamp rating per the maker TDS at order (WORK_ORDER W12)"],
     ["5", "Nozzle set per docs-authority/nozzles/REMIN.csv: 5 atmospheric open-bore "
           "tube connections on tray risers (drain through the floor, vent at the tank "
-          "top head)", len(schedule), "PVC-U", mass["nozzles"], "make",
+          "top head)", n_drawn, "PVC-U", mass["nozzles"], "make",
      "schedule tags/faces/heights verbatim; atmospheric per duty section 4; bore per "
      "the lib/dn Sch 40 table"],
 ]

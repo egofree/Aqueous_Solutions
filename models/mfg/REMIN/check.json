@@ -90,9 +90,18 @@
       "schedule_rating": "Class 150",
       "service": "potable makeup, remineralised",
       "note": "schedule datum 600 mm predates the box; clamped to 570.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4; hose makeup by the connecting line at the face)"
+    },
+    "N6": {
+      "style": "carried",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-REMIN, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+      "note": "power terminal (cable schedule X-ELS-06, AQS-ELEC-010): electrical, not piped - carried verbatim, not drawn"
     }
   },
-  "nozzle_count_schedule": 5,
+  "nozzle_count_schedule": 6,
   "nozzle_idiom": "atmospheric open-bore tube connections on tray risers, flush at the envelope faces (duty section 4: atmospheric tube or hose; the W4 110 % rule draws no flange where no process pressure is stated); the schedule rating column (Class 150) is carried verbatim as text; clamped datums named in nozzles_drawn",
   "part_mass_kg": {
     "tray": 10.1,
