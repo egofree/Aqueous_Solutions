@@ -288,8 +288,8 @@ CRYO_AHU_COND_CONDENSABLE,"Knock-out shell OD 540 (wall 8, study) with laps-to-p
 CRYO_AHU_COND_CONDENSABLE,Weir plate at the shell centreline (to z 360) and launder trough at the +X side ,1,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_AHU_COND_CONDENSABLE,Plinth 1000 x 600 x 20,1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
 CRYO_AHU_COND_CONDENSABLE,Nozzle set per docs-authority/nozzles/CRYO_AHU_COND_CONDENSABLE.csv: 4 hose barb,4,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_ASU,"TSA bed set: 3 shells D 414.379 x 1243.14 mm, t 6, flat heads, support grids top",3,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_ASU,"13X molecular-sieve sorbent charge, 108.973 kg per bed",3,"13X molecular sieve, 4A grade",Unstated,-,"not classed: 13X molecular sieve, 4A grade"
+CRYO_ASU,"TSA bed set: 3 shells D 421.928 x 1265.78 mm, t 6, flat heads, support grids top",3,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+CRYO_ASU,"13X molecular-sieve sorbent charge, 115.038 kg per bed",3,"13X molecular sieve, 4A grade",Unstated,-,"not classed: 13X molecular sieve, 4A grade"
 CRYO_ASU,Base frame: plinth 2460 x 560 x 200 with fork slots (modeled as its solid envelo,1,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_ASU,CO2 two-stage compressor + condenser/chiller envelopes,1,purchase item,Unstated,-,not classed: purchase item
 CRYO_ASU,Heated Ar getter cartridge,1,purchase item,Unstated,-,not classed: purchase item

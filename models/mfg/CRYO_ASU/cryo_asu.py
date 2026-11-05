@@ -1,15 +1,17 @@
 """CRYO_ASU manufacturing model, AQS-PLAN-006 work order (X-MFG lane).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only (W2 fields by the
-tracker; the layout and study blocks beside them are builder-owned).
+Study. Not a PE stamp. Reads the graph node through models/mfg/lib/graph_node.py
+(the plant graph is the sole authority); the tracker-written params.json copy keeps
+the builder-owned layout and study blocks beside the W2 fields, and the graph
+revision travels from the graph node into check.json.
 
 Placement frame: x along the skid, y across, z up, origin at the skid corner. Every
 dimension is an authority figure or a named layout choice:
 
 - Internals per the node (W3): 3 x 13X TSA beds, CO2 two-stage compressor and
   condenser, heated Ar getter; noble-gas inventories pass through. Bed geometry is
-  the node design block: 3 beds, bed_D_mm 414.4, bed_L_mm 1243.1, sorbent
-  108.97 kg/bed (params.design). Each bed: 316L shell t 6 (house style-builder
+  the node design block (params.design: beds, bed_D_mm, bed_L_mm, sorbent_kg_per_bed;
+  AQS-PAR-001 sizing). Each bed: 316L shell t 6 (house style-builder
   plate convention, study), flat heads, a support grid under and over the sorbent
   bed, and the 13X sorbent as a solid (the A-COL packing).
 - Envelope: the node size_mm [300, 300, 2000] is the M0 study registry box
@@ -18,14 +20,16 @@ dimension is an authority figure or a named layout choice:
   board per AQS-PLAN-006 rule 3. Nothing is resized.
 - CO2 compressor (two-stage per the internals row), condenser and Ar getter are
   purchased items (AQS-PLAN-006 rule 6): drawn as their envelope and interface,
-  rated from the node design kW (co2_comp 0.081, co2_chill 0.033, getter 0.1).
-- Nozzles: all 16 rows of docs-authority/nozzles/CRYO_ASU.csv at tag, face,
+  rated from the node design kW (co2_comp_kW, co2_chill_kW, getter_kW).
+- Nozzles: every row of docs-authority/nozzles/CRYO_ASU.csv at tag, face,
   height and bore. Inlets land on the bed shells' -Y side, outlets on +Y; the
   z 160 rows land on the frame; the vent is clamped to the assembly top (schedule
   datum 2000 predates the TSA layout - named hold); the drain hangs from bed 1 to
   its 50 datum. Solids rows are DN15 stubs labeled bore not calculated. The
   schedule rating column (Class 150) is carried verbatim as text; no flange is
   drawn because the node relief basis is atmospheric venting (API 2000, A-M-155).
+  Non-piped rows (the N17 power terminal, cable schedule X-ELS-06) are carried
+  verbatim in check.json and never drawn - no STEP, BOM or geometry change.
 
 Materials per docs-authority/duties/CRYO_ASU.md section 3: 316L, condensation,
 corrosion allowance 0 mm, no carbon steel.
@@ -36,17 +40,20 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("CRYO_ASU")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
+          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
 D = P["design"]
 REV = P["graph_revision"]
 
 # ------------------------------------------------------------------ cited constants
-N_BEDS = int(D["beds"])                                   # 3
-BED_D = float(D["bed_D_mm"])                              # 414.4
-BED_L = float(D["bed_L_mm"])                              # 1243.1
-SORBENT_KG = float(D["sorbent_kg_per_bed"])               # 108.97 kg 13X per bed
+N_BEDS = int(D["beds"])
+BED_D = float(D["bed_D_mm"])                              # node design block (AQS-PAR-001)
+BED_L = float(D["bed_L_mm"])
+SORBENT_KG = float(D["sorbent_kg_per_bed"])
 SHELL_T = 6.0             # house style-builder plate convention (study; W12 hold)
 GRID_T = 20.0             # support grids, study
 LEG_H = 200.0             # base plinth, carries the z 160 frame rows (bore band 130..190)
@@ -55,15 +62,15 @@ Z0 = LEG_H + PED_H        # bed bottom-head underside, 370
 CA = materials.ca_for("316L")                             # 0.0 (AQS-STD-001 rule)
 RHO = {"316L": materials.density("316L"), "13X": 700.0}   # sorbent bulk density, study
 
-BED_PITCH = BED_D + 100.0                                 # 514.4, study layout
-CX0 = BED_PITCH / 2                                       # first bed axis x, 257.2
+BED_PITCH = BED_D + 100.0                                 # study layout pitch
+CX0 = BED_PITCH / 2                                       # first bed axis x
 CY = 280.0                                                # bed axis y
 SKID_L = 2460.0
 SKID_W = 560.0
 R_BED = BED_D / 2
 R_ID = R_BED - SHELL_T
 
-bed_x = [CX0 + i * BED_PITCH for i in range(N_BEDS)]      # 257.2 / 771.6 / 1286.0
+bed_x = [CX0 + i * BED_PITCH for i in range(N_BEDS)]      # one pitch per bed
 
 
 def box(x, y, z, dx, dy, dz):
@@ -135,12 +142,17 @@ def od_of(row):
     return dn.pipe_od("DN15") if row["size"] == "solids" else dn.pipe_od(row["size"])
 
 
+def is_piped(r):
+    """A row the builder draws: a piped bore, or a solids row drawn as a DN15 stub."""
+    return r["size"] in dn.PIPE or r["size"] == "solids"
+
+
 schedule = [r for r in P["nozzles"]]
 groups = {}
 for r in schedule:
     groups.setdefault((FACE_OF.get(r["face"], r["face"]), float(r["height_mm"])), []).append(r)
 
-Z_TOP = Z0 + 2 * SHELL_T + BED_L                          # bed top-head top face, 1625
+Z_TOP = Z0 + 2 * SHELL_T + BED_L                          # bed top-head top face
 EMBED = 12.0                                              # root laps the shell wall this far
 
 
@@ -151,13 +163,22 @@ def horizontal(s, face, y_root, z):
 
 
 layout = {}
-noz, drawn = None, {}
+noz, drawn, n_drawn = None, {}, 0
 for (face, h), rows in sorted(groups.items()):
     rows = sorted(rows, key=lambda r: r["tag"])
-    for i, r in enumerate(rows):
+    for r in [x for x in rows if not is_piped(x)]:
+        # non-piped row: the power terminal (cable schedule X-ELS-06) is electrical,
+        # not piped - carried verbatim, not drawn (no STEP/BOM/geometry change)
+        drawn[r["tag"]] = {"style": "carried", "dn": r["size"], "face": r["face"],
+                           "height_mm": r["height_mm"],
+                           "schedule_rating": r["rating"], "service": r["service"],
+                           "note": "power terminal (cable schedule X-ELS-06, AQS-ELEC-010): "
+                                   "electrical, not piped - carried verbatim, not drawn"}
+    for i, r in enumerate(x for x in rows if is_piped(x)):
         tag, dnl = r["tag"], r["size"]
         dnl_hw = "DN15" if dnl == "solids" else dnl
         od = od_of(r)
+        n_drawn += 1
         bi = i % N_BEDS
         dx = (i // N_BEDS) * 130.0 * (1 if i % 2 else -1)
         bx = bed_x[bi]
@@ -234,8 +255,9 @@ report = {
     "graph_revision": REV,
     "solids": len(solid.Solids()), "all_parts_valid": all(v.val().isValid() for v in parts.values()),
     "misfit_to_report": bool(overshoot),
-    "misfit_note": "beds at the node design diameter (414.4 mm) cannot fit the M0 study registry "
-    "box [300, 300, 2000] (params size_note); reported per AQS-PLAN-006 rule 3, nothing resized",
+    "misfit_note": f"beds at the node design diameter ({BED_D:.1f} mm) cannot fit the M0 study "
+    f"registry box [{size[0]:g}, {size[1]:g}, {size[2]:g}] (params size_note); reported per "
+    "AQS-PLAN-006 rule 3, nothing resized",
     "beds": {"count": N_BEDS, "bed_D_mm": BED_D, "bed_L_mm": BED_L, "shell_t_mm": SHELL_T,
              "grid_t_mm": GRID_T, "axis_z_mm": [Z0, Z0 + 2 * SHELL_T + BED_L],
              "x_mm": [round(b, 1) for b in bed_x],
@@ -256,7 +278,8 @@ report = {
     "nozzle_count_schedule": len(schedule),
     "nozzle_idiom": "hose barbs on the bed shells and frame per the atmospheric relief basis "
     "(API 2000, A-M-155); solids rows DN15 labeled bore not calculated; schedule rating column "
-    "(Class 150) carried verbatim as text",
+    "(Class 150) carried verbatim as text; the N17 power terminal (cable schedule X-ELS-06, "
+    "AQS-ELEC-010) is electrical, not piped - carried verbatim in this report, not drawn",
     "part_mass_kg": mass,
     "sorbent_mass_kg": round(parts["sorbent"].val().Volume() * 1e-9 * RHO["13X"], 1),
     "cad_stl_scope": "in-envelope subset of the build, metres (X-PAR-04 gate: the cad/stl box "
@@ -269,8 +292,8 @@ report = {
 rows = [
     ["1", f"TSA bed set: {N_BEDS} shells D {BED_D:g} x {BED_L:g} mm, t {SHELL_T:g}, flat heads, "
           f"support grids top and bottom, on pedestals", N_BEDS, "316L", mass["beds"], "make",
-     "node design block (bed_D_mm 414.4, bed_L_mm 1243.1); duty section 3 316L, CA 0 mm; "
-     "shell t 6 is the house plate convention, study (WORK_ORDER W12)"],
+     f"node design block (bed_D_mm {BED_D:.1f}, bed_L_mm {BED_L:.1f}); duty section 3 316L, "
+     "CA 0 mm; shell t 6 is the house plate convention, study (WORK_ORDER W12)"],
     ["2", f"13X molecular-sieve sorbent charge, {SORBENT_KG:g} kg per bed", N_BEDS,
      "13X molecular sieve, 4A grade", round(v_sorb * RHO["13X"], 1), "buy",
      "node design sorbent_kg_per_bed; bulk density 700 kg/m3 study; vendor TDS at order"],
@@ -287,9 +310,11 @@ rows = [
      "(node internals row)"],
     ["6", f"Nozzle set per docs-authority/nozzles/CRYO_ASU.csv: barbs and stubs, "
           f"{sum(1 for r in schedule if r['size'] == 'solids')} solids rows at DN15 (bore not "
-          "calculated)", len(schedule), "316L", mass["nozzles"], "make",
-     "schedule tags/faces/heights verbatim; atmospheric per the API 2000 relief basis; "
-     "vent datum clamped to the bed 3 top head (W12); barb profile a study proportion"],
+          "calculated)", n_drawn, "316L", mass["nozzles"], "make",
+     "schedule tags/faces/heights verbatim; the N17 power terminal (cable schedule X-ELS-06) "
+     "is electrical, not piped - carried in check.json, not drawn; atmospheric per the API 2000 "
+     "relief basis; vent datum clamped to the bed 1 top head (W12); barb profile a study "
+     "proportion"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)
@@ -308,13 +333,13 @@ fasteners.write_fasteners(HERE / "fasteners.csv", [
 # ---------------------------------------------------------------- builder-owned params blocks
 p = json.loads((HERE / "params.json").read_text())
 p["layout"] = {
-    "frame": "skid frame: x along 2450, y across 560, z up; beds at x 257.2 + 514.4k on "
-             "pedestals, purchased machinery row at x 1700..2440",
+    "frame": f"skid frame: x along 2450, y across 560, z up; beds at x {CX0:.1f} + "
+             f"{BED_PITCH:.1f}k on pedestals, purchased machinery row at x 1700..2440",
     "bed_axis_z_mm": [Z0, Z0 + 2 * SHELL_T + BED_L],
     "nozzle_spread": "inlets land on the bed shells' -Y side, outlets on +Y, distributed across "
                      "the beds in tag order (second row per bed offset 130 mm); the z 160 rows "
                      "land on the base frame; per-tag positions in check.nozzles_drawn",
-    "vent": "schedule datum 2000 mm predates the TSA layout; drawn at the bed 3 top head - "
+    "vent": "schedule datum 2000 mm predates the TSA layout; drawn at the bed 1 top head - "
             "named hold (WORK_ORDER W12)",
     "hardware_idiom": "hose hardware laps the shell or frame so every union fuses; the build "
                       "leaves the M0 study registry box on x and y and the misfit is reported "
