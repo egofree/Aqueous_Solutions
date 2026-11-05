@@ -11,7 +11,7 @@
     4103.0
   ],
   "size_basis": "node size_mm set by flow_graph/param/house_scrubbers.py (X-PAR-03)",
-  "graph_revision": "AD",
+  "graph_revision": "AC",
   "solids": 1,
   "all_parts_valid": true,
   "column": {
@@ -147,20 +147,10 @@
       "x_mm": 600.0,
       "schedule_rating": "Class 150",
       "note": "DN300 outside the lib DN15..DN50 hardware table: plain stub at the house DN300 OD 323.9, study 6 mm wall - named hold, WORK_ORDER W12"
-    },
-    "N10": {
-      "style": "stub",
-      "dn": "cable",
-      "face": "top",
-      "height_mm": 800.0,
-      "drawn_height_mm": 4103.0,
-      "x_mm": null,
-      "schedule_rating": "Class 150",
-      "note": "power terminal (cable schedule X-ELS-06, AQS-ELEC-010): electrical, not piped - drawn as a DN15 stand-in penetration flush at the envelope top, bore not calculated (plan W4)"
     }
   },
-  "nozzle_count_schedule": 10,
-  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces with ray-set extension spools crossing to the shell; N9 DN300 drawn as a plain stub at the house OD series (outside the lib table - hold); the schedule rating column (Class 150) is carried verbatim as text, no flange drawn; the N10 power terminal (cable schedule X-ELS-06) is electrical, not piped: drawn as a DN15 stand-in penetration at the envelope top, bore not calculated",
+  "nozzle_count_schedule": 9,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces with ray-set extension spools crossing to the shell; N9 DN300 drawn as a plain stub at the house OD series (outside the lib table - hold); the schedule rating column (Class 150) is carried verbatim as text, no flange drawn",
   "part_mass_kg": {
     "plinth": 40.3,
     "skirt": 10.9,
@@ -169,7 +159,7 @@
     "packing": 1028.7,
     "distributor": 10.2,
     "demister": 17.8,
-    "nozzles": 65.4
+    "nozzles": 65.3
   },
   "cadquery": "2.8.0"
 }
