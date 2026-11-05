@@ -632,10 +632,9 @@ def get_params() -> dict:
 def get_regen_status() -> dict:
     """Staleness of derived artefacts vs the graph — read-only check.
 
-    ``python3 -m flow_graph.param.regen --check`` delegates to
-    ``docs-authority/_rev_stamp.py`` but *rewrites*
-    ``docs-authority/DERIVED_REVISIONS.md``; ``--check-only`` runs the
-    same evaluator and writes nothing, so this GET stays side-effect
+    ``docs-authority/_rev_stamp.py --check-only`` runs the staleness
+    evaluator and writes nothing (``python3 -m flow_graph.param.regen
+    --check`` delegates to the same mode), so this GET stays side-effect
     free. Exit 1 ⇔ gated stale files exist.
     """
     import re

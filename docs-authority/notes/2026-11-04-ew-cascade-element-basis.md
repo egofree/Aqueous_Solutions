@@ -1,8 +1,8 @@
 # 2026-11-04 electrowinning cascade re-based on the feedstock assay (Q-038 owner ruling)
 
-The owner ruled Q-038 (2026-11-04, OPEN_QUESTIONS.md Rev G): the electrowinning cascade rate
+The change applies the default recorded for Q-038 (OPEN_QUESTIONS.md, AQS-OQ-001 Rev F; the question is not yet recorded as closed): the electrowinning cascade rate
 follows the supply - the feedstock metal values times recovery - and the demand - the products
-the plant actually makes and consumes; the wear-goods bookkeeping plug retires. This change set
+the plant actually makes and consumes; the wear-goods value that closed the goods balance by difference is withdrawn. This change set
 carries the ruling through the graph, the duties, the power chain and the goods balance. The
 register entry is docs-authority/OPEN_QUESTIONS.md Q-038; the assumption entry is A-M-460
 (restating A-M-265).
@@ -13,7 +13,8 @@ Supply basis (governing): the S08 deposit rows of AQS-ASSAY-001 section 5 at lea
 (section 4) - 42.0 kg/d of element metal at the 102.68 kg/d design feed. Per-cell design current
 I = m z F / (M t CE) at current efficiency 0.85 and cell voltage 2.12 V plus a 0.3 V bus drop:
 
-- total 1,859.5 A, 4.50 kW DC at the electrodes, 5.63 kW AC at rectifier efficiency 0.80
+- total 1,859.5 A; 3.94 kW DC at the electrodes (2.12 V), 4.50 kW DC including the 0.3 V bus
+  drop, and 5.63 kW AC at rectifier efficiency 0.80
   (was 12,782 A bounding and 38.66 kW AC on the retired copper-equivalent book of 309.1 kg/d);
 - the rectifier re-solves to a 4,250 A, 25.5 kW DC nameplate (was 16,500 A, 99 kW).
 
@@ -34,11 +35,11 @@ plant rule). AQS-DUTY-051 section 2 states the governing basis.
   AQS-DUTY-010 melt-fume basis; it was booking 2.46 kg/d as the aisle's phantom make-up).
   IA-MELT-ATOM, IA-ATOM-REMELT and IA-MELT-MILL stay owned by ess_tf and follow S60 and the melt
   book. IA-BAG-01 closes as mill loss + fab loss + draw swarf (7.7679).
-- The aisle air book closes honestly: IA-MET-AIR-MU 2.4468 kg/d of plant air at MET_AHU replaces
+- The aisle air balance closes on a stated make-up stream: IA-MET-AIR-MU 2.4468 kg/d of plant air at MET_AHU replaces
   the scrub blowdown the draw-fume edge used to carry; IA-MET-AIR-RET closes as S62 + S71 + fume
   less blowdown; the N2 header re-vents the draw (IA-N2-VENT 20.064 -> 17.618).
 
-## Wear plug retired, goods balance restated
+## Wear-goods value withdrawn, goods balance restated
 
 - IA-WEAR books the roster line 0.0877 kg/d (the A-M-429 finished-textile issue worn out at steady
   state). IA-MFG-OUT retires at 0: the crew goods issue is the TEXTILE_HAB line. The 596.86 kg/d
@@ -77,3 +78,18 @@ statement), docs-authority/_ew_sizing.py (Rev E element basis), docs-authority/_
 re-based), docs-authority/assumptions_manual.json (A-M-460, A-M-265 restated), docs-authority/
 OPEN_QUESTIONS.md (Rev G), docs-authority/FEED_ASSAY.md (Rev G), flow_graph/plant_flow_graph.json
 and every generated file that regenerates from it.
+
+## Corrections (2026-11-04 review)
+
+- Commit b1f7d718 states that OPEN_QUESTIONS Rev G closes Q-038. The open-question register
+  is at Rev F and Q-038 is not marked closed. The question stays open until the owner's
+  decision is recorded there.
+- The same commit message gives 4.50 kW as DC at the electrodes. 4.50 kW includes the 0.3 V
+  bus drop; the electrode load is 3.94 kW (AQS-DUTY-051 section 2 total).
+- The S08 deposit rows used as the rate basis are the cathode deposits booked on S08, whose
+  edge note cites a 150 kg/d wet-feed audit (AQS-AUD-001 section 4.1). They are not computed
+  from the IA-FEED-01 assay at the 102.68 kg/d design feed: the reference-point element
+  fractions give Fe 25.67, Cu 7.19, Au 0.0051 and Ag 0.0205 kg/d, and other plateable metals
+  3.08 kg/d in total, against the deposit rows of 29.63, 8.78, 0.0063, 0.0251 and 3.56 kg/d.
+  The five equal rows of 0.7111 kg/d (Pb, Sn, Ni, Cd, Zn) divide one lumped value equally.
+  The work item that re-derives the deposits from the assay is in the task plan (X-QA group).

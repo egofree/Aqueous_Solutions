@@ -178,7 +178,7 @@ Table 3.1. Document numbers in use
 | AQS-GAS-002 | `docs-authority/SCRUBBER_CHEMISTRY.md` | Basic | 2026-09-27 | Scrubber chemistry | current |
 | AQS-GAS-003 | `docs-authority/FAN_STACK.md` | B | 2026-09-27 | Fan curves and stack heights | current |
 | AQS-GLO-001 | `docs-authority/GLOSSARY.md` | D | 2026-11-02 | Glossary | current |
-| AQS-GOV-006 | `docs-authority/DERIVED_REVISIONS.md` | B | — | Derived file revisions | current |
+| AQS-GOV-006 | `docs-authority/DERIVED_REVISIONS.md` | C | — | Derived file revisions | current |
 | AQS-HAB-001 | `docs-authority/HAB_FIXTURES.md` | B | 2026-10-12 | Habitation fixtures | current |
 | AQS-HAB-002 | `docs-authority/HAB_DESIGN.md` | A | 2026-10-26 | Hab interior design: zoning | current |
 | AQS-HEAT-LADDER-001 | `docs-authority/HEAT_LADDER.md` | A | 2026-10-25 | Dual heat ladder | current |
@@ -297,7 +297,7 @@ Table 3.1. Document numbers in use
 | AQS-SITE-007 | `docs-authority/SITE_BASIS_FLOATING_ISLAND.md` | A | 2026-10-25 | Floating island site basis | current |
 | AQS-SITE-008 | `docs-authority/SITE_BASIS_ANTARCTIC.md` | A | 2026-10-25 | Antarctic site basis | current |
 | AQS-SITE-009 | `docs-authority/SITE_BASIS_MARS.md` | B | 2026-10-26 | Mars site basis | current |
-| AQS-SITE-010 | `docs-authority/SITE_BASIS_LEO.md` | B | 2026-10-26 | Low Earth orbit site basis | current |
+| AQS-SITE-010 | `docs-authority/SITE_BASIS_LEO.md` | C | 2026-11-04 | Low Earth orbit site basis | current |
 | AQS-SITE-011 | `docs-authority/SITE_COMPARISON.md` | A | 2026-10-26 | Site comparison | current |
 | AQS-SITE-012 | `docs-authority/HULL_DESIGN.md` | A | 2026-10-26 | Floating island hull design | current |
 | AQS-SITE-013 | `docs-authority/SITE_UNITS.md` | A | 2026-10-26 | Site unit placements | current |

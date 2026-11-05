@@ -33,9 +33,24 @@ present, non-boundary node) and `docs-authority/assumptions_manual.json`:
 An assumption counts only through its designated usage fields (where, files), matched on
 whole-token boundaries. Coverage gaps are fixed by extending
 `flow_graph/param/sizing_coverage.py` (or registering an assumption), never by weakening
-the test. At HEAD the registry is comprehensive: 118 sized units and all 197 present
-non-boundary units trace, so both tests pass; no third registry category (layout-derived
-geometry) is needed.
+the test. When this note was written both tests passed; the unit lists they check are
+reported by `pytest flow_graph/param/test_parametric_provenance.py -v` and by the registry
+itself, so this note does not repeat their counts.
+
+## Limits of the check (added 2026-11-04 in review)
+
+The two tests compare unit identifiers only. They confirm that each unit is named in the
+evidence registry or in an assumption entry; they do not compare any sized value with the
+drivers or with the cited sizing document. The registry file was last changed on
+2026-10-31, before the tests were added, so the tests passed when they were introduced
+without any coverage change. The fixed-literal sweep below covered `flow_graph/param/*.py`
+only. It did not cover `flow_graph/param/drivers.json`, the study calculators in
+`docs-authority/_*.py` or the CAD builders in `models/mfg/`. Literals found there in review
+include `backup_gen_rated_kW` = 40.0 in `drivers.json` (based on a superseded critical-load
+list), the rectifier channel frame list, the 1.10 margin and the 6.0 V channel rating in
+`docs-authority/_rect_ew_sizing.py`, `SHEET_TO = 9` in `docs-authority/_ew_sizing.py`, and
+fixed module and cell counts asserted in the ZNBR2 and H2O_ELYZ builders. The work items
+that extend the check to values are in `docs-authority/TASK_PLAN.md` (X-QA group).
 
 ## Fixed-literal sweep of the sizing writers (`flow_graph/param/*.py`)
 
