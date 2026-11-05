@@ -1027,6 +1027,32 @@ All solved units close.
 | wire_melt_fume_frac | 0.003 | - mass fraction of the wire billet lost as melt fume (AQS-DUTY-010 wire route) | A-M-460 | — |
 | POLYMERS.textile.spin_yield | 0.95 | - melt-spin first-pass yield; scrap to the solids line | A-M-429 | — |
 | POLYMERS.textile.power_kW | 0.3 | kW melt-spin heater + spindle + winder | A-M-429 | — |
+| rect_channel_frame_sizes_A | [250, 500, 1000, 1500, 2000, 2500, 3000, 4000] | A rectifier channel frame sizes (study list) | A-M-044 | yes |
+| rect_channel_margin | 1.1 | - channel rating margin over design current | A-M-041 | yes |
+| rect_channel_rated_V | 6.0 | V channel voltage rating (study) | A-M-042 | yes |
+| rect_busbar_J_A_cm2 | 200.0 | A/cm2 DC busbar design current density (shop rule of AQS-PWR-001) | A-M-044 | yes |
+| ew_sheet_collection_cell | 9 | EW_n cell index of the IA-EW-SHEET collection point (forming share books at EW_9) | A-M-460 | yes |
+| si_kgd | 1.8 | kg/d PV cell line silicon (3 cells/d x 0.6 kg/cell, 200 mm wafer class, kerf included) | A-M-466 | yes |
+| pem_stack_j_A_cm2 | 1.8 | A/cm2 PEM stack current density (BERNT2018-class operating point, study) | A-M-459 | yes |
+| pem_stack_v_cell_V | 1.85 | V/cell PEM stack cell voltage (BERNT2018-class operating point, study) | A-M-459 | yes |
+| pem_stack_cells | 80 | cells in the drawn PEM stack | A-M-459 | yes |
+| elyz_h2_design_kg_d | 9.358 | kg/d H2O_ELYZ design-block H2 rate (83.62 kg/d water -> 9.358 H2 + 74.263 O2) | A-M-459 | yes |
+| elyz_bed_radius_m | 0.04 | m DN80 Sch 40 tube bore radius (ASME_B36_10M class) | A-M-168 | yes |
+| baghouse_hood_face_velocity_m_s | 0.5 | m/s hood face velocity (ACGIH industrial-ventilation class) | A-M-458 | yes |
+| baghouse_ac_basis_m3_min_m2 | 1.2 | m3/min/m2 air-to-cloth ratio (EPA-453 baghouse practice) | A-M-458 | yes |
+| baghouse_bag_count | 20 | bags D150 x 1200 mm, 5 x 4 field | A-M-458 | yes |
+| baghouse_hood_mill_m2 | 0.2 | m2 COLD_MILL hood face (A-M-458) | A-M-458 | yes |
+| baghouse_hood_kerf_m2 | 0.12 | m2 kerf (FAB) hood face (A-M-458) | A-M-458 | yes |
+| baghouse_hood_wire_m2 | 0.1 | m2 wire-draw hood face (A-M-458) | A-M-458 | yes |
+| litho_dev_kW | 0.008 | kW wet-develop bench circulation + N2 puff class (study) | A-M-287 | yes |
+| blow_mold_rate_kg_h | 2.8 | kg/h Precious Plastic class throughput (SI-MFG-01) | A-M-285 | yes |
+| blow_mold_extruder_kW | 2.2 | kW extruder motor class (SI-MFG-01; AQS-REQ-KW-001) | A-M-285 | yes |
+| blow_mold_clamp_kW | 0.75 | kW clamp class (SI-MFG-01) | A-M-285 | yes |
+| blow_mold_air_kW | 0.75 | kW blow-air class (SI-MFG-01) | A-M-285 | yes |
+| electrode_coat_exhaust_kW | 0.35 | kW booth exhaust fan (ST-ELC-01 class) | A-M-285 | yes |
+| electrode_coat_cure_kW | 1.2 | kW IR cure panel (ST-ELC-01 class) | A-M-285 | yes |
+| lio_bat_energy_kWh | 2517 | kWh sealed Li-ion storage (interim carries the reference storage duty; re-sized at the locale design pass) | A-M-402 | yes |
+| geo_orc_feed_pump_kW | 0.05 | kW ORC feed pump (R245fa study class) | A-M-285 | yes |
 
 ## 6. References
 
@@ -1683,6 +1709,32 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver FARM.ducks.stock | 6.0 ducks (Khaki Campbell class) | Flock trial (X-FARM-05) |
 | driver FARM.quail.stock | 20.0 coturnix hens (indoor cage bank) | Cage-bank trial (X-FARM-06) |
 | driver FARM.rabbit.does | 2.0 does + 1 buck | Rabbitry trial (X-FARM-07) |
+| driver rect_channel_frame_sizes_A | [250, 500, 1000, 1500, 2000, 2500, 3000, 4000] A rectifier channel frame sizes (study list) | Vendor catalog |
+| driver rect_channel_margin | 1.1 - channel rating margin over design current | Vendor selection |
+| driver rect_channel_rated_V | 6.0 V channel voltage rating (study) | Measured cell and bus voltage |
+| driver rect_busbar_J_A_cm2 | 200.0 A/cm2 DC busbar design current density (shop rule of AQS-PWR-001) | Busbar temperature-rise test (CDA_PUB22 class) at rated current |
+| driver ew_sheet_collection_cell | 9 EW_n cell index of the IA-EW-SHEET collection point (forming share books at EW_9) | Balance ledger: IA-EW-SHEET source is EW_9 |
+| driver si_kgd | 1.8 kg/d PV cell line silicon (3 cells/d x 0.6 kg/cell, 200 mm wafer class, kerf included) | Weigh Si feed per cell over a production campaign |
+| driver pem_stack_j_A_cm2 | 1.8 A/cm2 PEM stack current density (BERNT2018-class operating point, study) | Stack polarisation test at 1.8 A/cm2 |
+| driver pem_stack_v_cell_V | 1.85 V/cell PEM stack cell voltage (BERNT2018-class operating point, study) | Stack voltage test at the rated current density |
+| driver pem_stack_cells | 80 cells in the drawn PEM stack | Stack build record |
+| driver elyz_h2_design_kg_d | 9.358 kg/d H2O_ELYZ design-block H2 rate (83.62 kg/d water -> 9.358 H2 + 74.263 O2) | H2O_ELYZ H2 product-edge rate |
+| driver elyz_bed_radius_m | 0.04 m DN80 Sch 40 tube bore radius (ASME_B36_10M class) | Tube bore dimension from the ASME B36.10M schedule table |
+| driver baghouse_hood_face_velocity_m_s | 0.5 m/s hood face velocity (ACGIH industrial-ventilation class) | Capture-velocity measurement at each hood (ACGIH_IND_VENT) |
+| driver baghouse_ac_basis_m3_min_m2 | 1.2 m3/min/m2 air-to-cloth ratio (EPA-453 baghouse practice) | Baghouse pressure-drop test at the design air-to-cloth |
+| driver baghouse_bag_count | 20 bags D150 x 1200 mm, 5 x 4 field | As-built bag count |
+| driver baghouse_hood_mill_m2 | 0.2 m2 COLD_MILL hood face (A-M-458) | As-built hood face |
+| driver baghouse_hood_kerf_m2 | 0.12 m2 kerf (FAB) hood face (A-M-458) | As-built hood face |
+| driver baghouse_hood_wire_m2 | 0.1 m2 wire-draw hood face (A-M-458) | As-built hood face |
+| driver litho_dev_kW | 0.008 kW wet-develop bench circulation + N2 puff class (study) | Bench inventory audit |
+| driver blow_mold_rate_kg_h | 2.8 kg/h Precious Plastic class throughput (SI-MFG-01) | Extruder rate trial |
+| driver blow_mold_extruder_kW | 2.2 kW extruder motor class (SI-MFG-01; AQS-REQ-KW-001) | Motor nameplate |
+| driver blow_mold_clamp_kW | 0.75 kW clamp class (SI-MFG-01) | Motor nameplate |
+| driver blow_mold_air_kW | 0.75 kW blow-air class (SI-MFG-01) | Motor nameplate |
+| driver electrode_coat_exhaust_kW | 0.35 kW booth exhaust fan (ST-ELC-01 class) | Fan nameplate |
+| driver electrode_coat_cure_kW | 1.2 kW IR cure panel (ST-ELC-01 class) | Panel nameplate |
+| driver lio_bat_energy_kWh | 2517 kWh sealed Li-ion storage (interim carries the reference storage duty; re-sized at the locale design pass) | Locale storage sizing from the eclipse energy |
+| driver geo_orc_feed_pump_kW | 0.05 kW ORC feed pump (R245fa study class) | Pump selection |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |
@@ -2086,3 +2138,4 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-458 | hood face velocity 0.5 m/s; hoods 0.20/0.12/0.10 m2; capture m/s; m2; m3/h; m3/min/m2 | Differential-pressure and isokinetic capture check at the three hoods on the first-article duct run |
 | A-M-459 | j 1.8 A/cm2; V_cell 1.85 V; 80 cells x 288 cm2; 518.4 A; 148 A/cm2; V; cm2; A; kW | X-PAR-12 first-article stack: polarisation curve gives the measured j/V point and the ASR; the skid GA is the verification test of A-M-279 |
 | A-M-460 | EW cascade element-rate basis: the cascade plates the S08 de kg/d (element metal; wear return kg/d) | pytest flow_graph/param/test_param_misfit.py; python3 models/mfg/tracker.py --check EW_1 EW_2 EW_3 EW_4 EW_5 EW_6 EW_7 EW_8 EW_9 |
+| A-M-466 | 1.8 kg/d Si kg/d | Weigh Si feed per cell over a production campaign |

@@ -16,13 +16,13 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | Phase | Scope | Items | Closes with |
 | --- | --- | --- | --- |
 | T1 | Owner and site data | 52 | Owner decision or site investigation report |
-| T2 | In-house design tests and standard data | 34 | In-house test record or standard data filed against the item |
-| T3 | Bench and laboratory tests | 70 | Bench test report with method, data and result |
+| T2 | In-house design tests and standard data | 39 | In-house test record or standard data filed against the item |
+| T3 | Bench and laboratory tests | 72 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 509 | Calculation or drawing issued under the named task |
-| T6 | Commissioning measurements | 38 | Commissioning record |
+| T5 | Design calculations and drawings | 528 | Calculation or drawing issued under the named task |
+| T6 | Commissioning measurements | 39 | Commissioning record |
 
-Total 724 items: 321 drivers, 403 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 751 items: 347 drivers, 404 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -90,7 +90,12 @@ Total 724 items: 321 drivers, 403 register entries. Classification rule: first m
 | driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_W_mm | 1050 mm skid width (fits the CRYO H2-bay aisle) | in-house skid GA at the fabrication-design task | X-PAR |
 | driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_m2_per_kW | 0.025 m2 skid plan area per kW rated stack (PEM stack enclosure) | in-house skid GA at the fabrication-design task | X-PAR |
 | driver atom_GMR | 2.5 kg Ar per kg metal | Trial run on the first article (X-MFG-37) | X-PAR |
+| driver blow_mold_air_kW | 0.75 kW blow-air class (SI-MFG-01) | Motor nameplate | X-PAR |
+| driver blow_mold_clamp_kW | 0.75 kW clamp class (SI-MFG-01) | Motor nameplate | X-PAR |
+| driver blow_mold_extruder_kW | 2.2 kW extruder motor class (SI-MFG-01; AQS-REQ-KW-001) | Motor nameplate | X-PAR |
 | driver cu_flow_stress_MPa | 250.0 MPa mean flow stress, Cu cold work | Trial run on the first article (X-MFG-37) | X-PAR |
+| driver electrode_coat_cure_kW | 1.2 kW IR cure panel (ST-ELC-01 class) | Panel nameplate | X-PAR |
+| driver electrode_coat_exhaust_kW | 0.35 kW booth exhaust fan (ST-ELC-01 class) | Fan nameplate | X-PAR |
 | driver evap_comp_eta | 0.7 isentropic efficiency, single-stage blower | Compressor map of the in-house blower | X-PAR |
 | driver hs_Cs_flood_m_s | 0.07 m/s capacity factor at flood, 25 mm cut rings | air-water flooding test of a 200 mm column of the in-house packing | X-PAR |
 | driver hs_dp_mm | 25.0 mm, in-house cut PP tube rings | in-house packing sample: count per m3 and void fraction | X-PAR |
@@ -147,6 +152,8 @@ Total 724 items: 321 drivers, 403 register entries. Classification rule: first m
 | driver foundry_pot_voltage_V | {"al": 3.8, "mg": 4.2, "ca": 4.2, "mo": 2.8, "cr": 2.8} V cell terminal (decomposition + overpotential + bath ohmic) | bench molten-chloride cell at the design current density: terminal voltage vs charge | X-PAR |
 | driver h2c_eta_ad | 0.65 stage adiabatic efficiency incl. valve losses | bench run of the first-article head: indicator diagram and flow | X-PAR |
 | driver h2c_eta_v | 0.8 volumetric efficiency | same bench run | X-PAR |
+| driver litho_dev_kW | 0.008 kW wet-develop bench circulation + N2 puff class (study) | Bench inventory audit | X-PAR |
+| driver pem_stack_j_A_cm2 | 1.8 A/cm2 PEM stack current density (BERNT2018-class operating point, study) | Stack polarisation test at 1.8 A/cm2 | X-PAR |
 | driver ppt_naoh_per_cl | 1.0 mol NaOH per mol chloride precipitated as hydroxide | Bench hydroxide precipitation of class A leach liquor: NaOH consumed per mol chloride to the target pH; Ca retained in solution (Ca(OH)2 is sparingly soluble) measured by ICP-OES | X-PAR |
 | driver ro_feed_TDS_mg_L | 20.0 mg/L NaCl equivalent in VCD distillate | Conductivity of S25 at commissioning | X-PAR |
 | driver rx_bucl_T_C | 105 C | bench ZnCl2-catalysed n-butanol + HCl at reflux: conversion against time | X-PAR |
@@ -275,12 +282,19 @@ Total 724 items: 321 drivers, 403 register entries. Classification rule: first m
 | driver atm_hold_d | {"store": 2.0, "process": 1.0} d of liquid inflow held: stores (tank, product, reagent, cut_tank, dock, ROOF_TANK, FAB_UPW_TANK) and process units | Replace with each unit's sized volume at unit task 02 | X-PAR |
 | driver atomizer_offspec_frac | 0.1 - | see A-M-139 | X-PAR |
 | driver backup_gen_rated_kW | 40.0 kW | Critical-load list confirmation at unit task 02 completion; acceptance load test per NFPA 110 8.4.9 at 4 h | X-PAR |
+| driver baghouse_ac_basis_m3_min_m2 | 1.2 m3/min/m2 air-to-cloth ratio (EPA-453 baghouse practice) | Baghouse pressure-drop test at the design air-to-cloth | X-PAR |
+| driver baghouse_bag_count | 20 bags D150 x 1200 mm, 5 x 4 field | As-built bag count | X-PAR |
+| driver baghouse_hood_face_velocity_m_s | 0.5 m/s hood face velocity (ACGIH industrial-ventilation class) | Capture-velocity measurement at each hood (ACGIH_IND_VENT) | X-PAR |
+| driver baghouse_hood_kerf_m2 | 0.12 m2 kerf (FAB) hood face (A-M-458) | As-built hood face | X-PAR |
+| driver baghouse_hood_mill_m2 | 0.2 m2 COLD_MILL hood face (A-M-458) | As-built hood face | X-PAR |
+| driver baghouse_hood_wire_m2 | 0.1 m2 wire-draw hood face (A-M-458) | As-built hood face | X-PAR |
 | driver base_bays_x | 4 bays | Structural grid review | X-PAR |
 | driver base_bays_y | 3 bays | Structural grid review | X-PAR |
 | driver bay_mm | 6000 mm structural bay | Structural grid review | X-PAR |
 | driver bed_DLI | 17.0 mol/m2/d | see A-M-133 | X-PAR |
 | driver bed_absorptance | 0.9 - | see A-M-133 | X-PAR |
 | driver bed_quantum_yield | 0.045 mol CO2/mol photon | see A-M-133 | X-PAR |
+| driver blow_mold_rate_kg_h | 2.8 kg/h Precious Plastic class throughput (SI-MFG-01) | Extruder rate trial | X-PAR |
 | driver bmed_R_mono_ohm_cm2 | 3.0 ohm cm2 per monopolar membrane | Membrane area resistance by EIS in plant brine (X-MFG-35) | X-PAR |
 | driver bmed_V_bpm_V | 1.0 V per bipolar membrane at 200 A/m2 (reversible 0.83 V plus overpotential) | Bipolar membrane I-V curve on the first-article stack (X-MFG-35) | X-PAR |
 | driver bmed_V_end_per_stack_V | 3.0 V per stack for the end electrode pair (O2/H2 rinse cell) | Stack voltage minus sum of triplet voltages (X-MFG-35) | X-PAR |
@@ -297,6 +311,8 @@ Total 724 items: 321 drivers, 403 register entries. Classification rule: first m
 | driver edi_CE | 0.1 - EDI current efficiency (water splitting carries the rest) | EDI stack current vs product resistivity (X-MFG-34) | X-PAR |
 | driver edi_V_cell | 4.0 V per EDI cell pair | EDI stack I-V | X-PAR |
 | driver ely_window_h | 6.0 h/d | see A-M-133 | X-PAR |
+| driver elyz_bed_radius_m | 0.04 m DN80 Sch 40 tube bore radius (ASME_B36_10M class) | Tube bore dimension from the ASME B36.10M schedule table | X-PAR |
+| driver elyz_h2_design_kg_d | 9.358 kg/d H2O_ELYZ design-block H2 rate (83.62 kg/d water -> 9.358 H2 + 74.263 O2) | H2O_ELYZ H2 product-edge rate | X-PAR |
 | driver evap_U_ix | 2000.0 W/(m2 K) liquid-liquid interchanger (graphite block or nickel plate) | Thermal test of the interchanger | X-PAR |
 | driver evap_approach_K | 10.0 K interchanger cold-end approach | Interchanger thermal test | X-PAR |
 | driver evap_body_design_kPag | 100.0 kPa g body design (plus full vacuum) | Pressure test per ASME VIII-1 UG-99 / ISO 16528 | X-PAR |
@@ -317,6 +333,7 @@ Total 724 items: 321 drivers, 403 register entries. Classification rule: first m
 | driver ew_bar_rise_K | 30.0 K bar temperature rise over 40 C ambient | Thermocouple on EW-7 bar at rated current (RECT-EW first article) | X-PAR |
 | driver ew_cathode_CE | 0.85 - | see A-M-133 | X-PAR |
 | driver ew_contact_drop_V | 0.05 V both bolted joints | Joint millivolt drop at rated current | X-PAR |
+| driver ew_sheet_collection_cell | 9 EW_n cell index of the IA-EW-SHEET collection point (forming share books at EW_9) | Balance ledger: IA-EW-SHEET source is EW_9 | X-PAR |
 | driver ext_F_slab | 1.264 W/(m K), unheated slab F-0.73 Btu/(h ft F), climate zone 3 | Slab edge detail | X-PAR |
 | driver ext_Ra_L_s_m2 | 0.3 L/(s m2) | Occupancy classification of the extension | X-PAR |
 | driver ext_T_design_c_C | 38.0 C cooling design dry bulb 0.4 % (DFW) | ASHRAE 2021 climatic data for the station | X-PAR |
@@ -342,6 +359,7 @@ Total 724 items: 321 drivers, 403 register entries. Classification rule: first m
 | driver foundry_melt_loss_frac | 0.01 kg slag+dross per kg melt charge | weigh dross+slag per heat on the IND_MELT first article | X-PAR |
 | driver foundry_pot_export_frac | 0.25 kg/d export per kg/d internal line on the Al/Ti/Mo/Cr pot products | metal dispatch study: contracted offtake vs the 25 % study margin (dock export meter totals) | X-PAR |
 | driver foundry_stock_demand_kg_d | 25.9 kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 8 + stainless 1.5 + Ti 0.40 + investment castings 2) | shop article schedule at the first article: formed-stock draw vs the AQS-SIZE-FOUNDRY consumable-replacement table | X-PAR |
+| driver geo_orc_feed_pump_kW | 0.05 kW ORC feed pump (R245fa study class) | Pump selection | X-PAR |
 | driver gsh_bore_depth_m | 120.0 m bore depth | Drilling log | X-PAR |
 | driver gsh_bore_m_per_kWt | 55.0 m vertical bore per kW peak block load (mid of 43-65 m/kW typical range) | Thermal response test and ASHRAE bore-length method | X-PAR |
 | driver gsh_bore_spacing_m | 6.0 m bore spacing | Bore-field simulation (g-functions) | X-PAR |
@@ -381,11 +399,14 @@ Total 724 items: 321 drivers, 403 register entries. Classification rule: first m
 | driver ix_cycle_h | 24 h between regenerations | same breakthrough test | X-PAR |
 | driver ix_util | 0.5 fraction of total capacity used per cycle | breakthrough curve of [Bmim]Cl on the OH-form resin at the plant rate | X-PAR |
 | driver led_efficacy_umol_J | 2.8 umol/J | see A-M-133 | X-PAR |
+| driver lio_bat_energy_kWh | 2517 kWh sealed Li-ion storage (interim carries the reference storage duty; re-sized at the locale design pass) | Locale storage sizing from the eclipse energy | X-PAR |
 | driver maint_rotating | {"lube_mo": 6, "vibration_mo": 3, "bearing_y": 5, "seal_y": 3} months/years for motors, pumps, fans and compressors | Vibration and temperature trending; bearing L10 life from the motor design load | X-PAR |
 | driver meoh_cat_bulk_kg_L | 1.1 kg/L | see A-M-156 | X-PAR |
 | driver meoh_wty_margin | 3.0 - | see A-M-156 | X-PAR |
 | driver night_hours | 14.0 h/d served from storage | Hourly load and irradiance profile | X-PAR |
 | driver pem_kWh_kg_H2 | 55.0 kWh/kg | see A-M-133 | X-PAR |
+| driver pem_stack_cells | 80 cells in the drawn PEM stack | Stack build record | X-PAR |
+| driver pem_stack_v_cell_V | 1.85 V/cell PEM stack cell voltage (BERNT2018-class operating point, study) | Stack voltage test at the rated current density | X-PAR |
 | driver poly_shop_reject_frac | 0.1 kg offcut to the wet line per kg polymer issued to MFG_SHOP | shop polymer offcut weigh at the first article (same class as the S58/S59/S60 10 % losses, AQS-DUTY-010) | X-PAR |
 | driver press_design_margin | 1.1 design / operating pressure | see A-M-156 | X-PAR |
 | driver pv_dc_ac_ratio | 1.2 DC kWp / inverter AC kW | Inverter clipping loss from the PVsyst/PVWatts hourly run at the chosen ratio | X-PAR |
@@ -397,6 +418,9 @@ Total 724 items: 321 drivers, 403 register entries. Classification rule: first m
 | driver pvl_pecvd_W_cm2 | 0.1 W/cm2 RF power density on the electrode | First-article tool run (X-MFG-38) | X-PAR |
 | driver raft_fc_MPa | 35.0 MPa concrete strength, raft and basement walls | Mix design and cylinder tests | X-PAR |
 | driver rcv_tube_len_m | 6.096 m, one random length per tube (as AQS-INV-003) | rack layout check against the CRYO bay | X-PAR |
+| driver rect_busbar_J_A_cm2 | 200.0 A/cm2 DC busbar design current density (shop rule of AQS-PWR-001) | Busbar temperature-rise test (CDA_PUB22 class) at rated current | X-PAR |
+| driver rect_channel_frame_sizes_A | [250, 500, 1000, 1500, 2000, 2500, 3000, 4000] A rectifier channel frame sizes (study list) | Vendor catalog | X-PAR |
+| driver rect_channel_margin | 1.1 - channel rating margin over design current | Vendor selection | X-PAR |
 | driver roof_live_kPa | 0.96 kPa | Structural review | X-PAR |
 | driver roof_pv_dead_kPa | 0.15 kPa PV modules and ballasted racking | Racking design weight per m2 | X-PAR |
 | driver roof_snow_kPa | 0.24 kPa flat-roof snow | the site design tool run for the chosen location replaces the bounding value | X-PAR |
@@ -414,6 +438,7 @@ Total 724 items: 321 drivers, 403 register entries. Classification rule: first m
 | driver san_past_batches_d | 4 batches per day | Pasteuriser cycle log | X-PAR |
 | driver san_vs_destruction | 0.5 fraction of VS destroyed, thermophilic anaerobic | VS reduction across BLACK_DIGEST (Standard Methods 2540 G) | X-PAR |
 | driver san_vs_fraction | 0.85 VS / TS of faeces | TS/VS (Standard Methods 2540 G) on the digester feed | X-PAR |
+| driver si_kgd | 1.8 kg/d PV cell line silicon (3 cells/d x 0.6 kg/cell, 200 mm wafer class, kerf included) | Weigh Si feed per cell over a production campaign | X-PAR |
 | driver site_design_dry_bulb_C | 47.4 C | the site design tool run for the chosen location replaces the bounding value | X-PAR |
 | driver storage.default_no_heat_input_T_C | 40.0 C | 0.4% site dry bulb 37.8 C (AQS-SITE-002) rounded up - confirm as the default | X-PAR |
 | driver struct_equip_density_kg_m3 | 150.0 kg/m3 empty equipment weight per envelope volume | Replace with CAD weights per unit as models are built | X-PAR |
@@ -734,6 +759,7 @@ Total 724 items: 321 drivers, 403 register entries. Classification rule: first m
 | A-M-457 | 2.0 M ZnBr2, 529.4 L per module (47 reservoirs, 24.9 m3 tota mol/L; L; kg | Electrolyte sample density and ZnBr2 titre at the X-MFG-41 first article | CAD-representation audit, ZNBR2 machine design (X-MFG-41 support, 2026-11-04) |
 | A-M-458 | hood face velocity 0.5 m/s; hoods 0.20/0.12/0.10 m2; capture m/s; m2; m3/h; m3/min/m2 | Differential-pressure and isokinetic capture check at the three hoods on the first-article duct run | CAD-representation audit, BAGHOUSE machine design (2026-11-04) |
 | A-M-460 | EW cascade element-rate basis: the cascade plates the S08 de kg/d (element metal; wear return kg/d) | pytest flow_graph/param/test_param_misfit.py; python3 models/mfg/tracker.py --check EW_1 EW_2 EW_3 EW_4 EW_5 EW_6 EW_7 EW_8 EW_9 | X-PAR-02 (Q-038 closure) |
+| A-M-466 | 1.8 kg/d Si kg/d | Weigh Si feed per cell over a production campaign | X-QA-06 |
 
 ## 7. T6 Commissioning measurements
 
@@ -753,6 +779,7 @@ Total 724 items: 321 drivers, 403 register entries. Classification rule: first m
 | driver ext_light_frac | 0.1 fraction of 24 h lit; occupant-sensor controlled storage/production hall (IECC 2021 C405.2.1) | Operating schedule and daylight study | X-PAR |
 | driver hs_removal | 0.99 fraction of the absorbable species removed | outlet sampling at commissioning | X-PAR |
 | driver maint_insert_life_y | {"BMED_ACID": 5, "BMED_BASE": 5, "BMED_UPW_POLISH": 5, "CRYO_ASU": 5, "CRYO_H2": 2, "H2_PURIFIER": 3, "MEOH_SYNTH": 3, "ALD": 2, "FORM": 1, "MEAM": 2, "HNO3": 0.5, "ACEX": 3, "ZNBR2": 5} years between replacements of the consumable insert of each unit (membranes, sorbent, catalyst, gauze, resin, diaphragms, stack) | Performance trending from the first operating year (pressure drop, conversion, current efficiency, breakthrough) sets the interval | X-PAR |
+| driver rect_channel_rated_V | 6.0 V channel voltage rating (study) | Measured cell and bus voltage | X-PAR |
 | driver rect_efficiency | 0.8 - | Vendor efficiency curve for the selected rectifier at the operating current | X-PAR |
 | driver spares_rule | {"bearing": [0.1, 2], "seal": [0.2, 2], "electronics": [0.1, 1], "instrument": [0.1, 1], "valve": [0.05, 1], "protection": [0.1, 1], "fastener": [0.02, 4], "support": [0.0, 0], "fabricated part": [0.0, 0], "motor": [0.05, 1]} [fraction of installed, minimum] per category; motors per family | Replace with failure-rate data from the first operating year (X-OPS-02) | X-PAR |
 | driver vs_a_m2_m3 | 340.0 m2/m3 specific area of 16 mm rings | Measured ring geometry | X-PAR |
