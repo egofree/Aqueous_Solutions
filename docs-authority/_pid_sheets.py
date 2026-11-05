@@ -5,7 +5,9 @@ the edge by the inventory basis stream), the unit's instrument tags from the AQS
 measured edge, loop bubbles in a band; SIF tags double-bubbled with their AQS-CTL-003 cause and effect) and the
 nozzle tags of docs-authority/nozzles/<UNIT>.csv where the service text matches the edge `carries`.
 House style per AQS-DWG-001: unbounded SVG, title block lower right (ISO_7200 fields), revision index = first 8 hex
-of the SHA-256 of the sheet content without its title block, graph SHA-256 printed. Deterministic: no timestamps.
+of the SHA-256 of the sheet content without its title block, graph revision printed. The graph SHA-256 is recorded once
+in pid/_generated.json, not on each sheet, so a graph change that does not change a sheet leaves the sheet unchanged.
+Deterministic: no timestamps.
 Also writes pid/_register.csv (sheet register), pid/_generated.json (graph-sha manifest) and appends the AQS-PID-001
 rows to DRAWING_REGISTER.md (that file is owned by _drawings.py, which does not glob pid/; rerun this script after
 _drawings.py to restore the rows). Unit set: the DIGESTER critical path first (T03 mainline opener); extend UNITS to
@@ -19,7 +21,8 @@ UNITS = sorted(n['unit_id'] for n in json.load(open('flow_graph/plant_flow_graph
 ns = runpy.run_path('docs-authority/_line_list.py'); LL = {r[0]: r for r in ns['rows']}      # sid -> line-list row
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}
 CARRIES = {e['stream_id']: e.get('carries') for e in g['edges']}
-GSHA = hashlib.sha256(open('flow_graph/plant_flow_graph.json', 'rb').read()).hexdigest()
+GSHA = hashlib.sha256(open('flow_graph/plant_flow_graph.json', 'rb').read()).hexdigest()   # provenance manifest only (pid/_generated.json)
+GREV = json.load(open('flow_graph/plant_flow_graph.json'))['revision']   # printed in the title block
 SIF = {}                                                                                    # tag -> (sif id, cause, effect, SIL)
 for ln in open('docs-authority/CAUSE_EFFECT.md'):
     if ln.startswith('| SIF-'):
@@ -178,7 +181,7 @@ def sheet(u):
     rev = hashlib.sha256('\n'.join(o).encode()).hexdigest()[:8]
     tb = [f'Aqueous Solutions (owner)   AQS-PID-001-{u}', f'P&amp;ID {esc(u)} ({esc(n.get("class",""))}, {esc(n.get("sector_id",""))} sector)',
           f'Type: P&amp;ID (ISO_10628_2)   Rev {rev}   Issued {DATE}', 'Created: flow graph pipeline   Approved: not approved (study)',
-          f'Graph SHA-256 {GSHA[:16]}   Sheet 1 of 1   AQS-DWG-001']
+          f'Graph Rev {GREV}   Sheet 1 of 1   AQS-DWG-001']
     x, y, w, h = W - 384, H - 118, 360, 96
     tbg = [f'<g id="aqs-title-block"><rect x="{x}" y="{y}" width="{w}" height="{h}" fill="white" stroke="black" stroke-width="1"/>']
     tbg += [f'<text x="{x+8}" y="{y+17+17*i}" font-size="9">{t}</text>' for i, t in enumerate(tb)]
