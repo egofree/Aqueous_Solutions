@@ -1,7 +1,6 @@
 """BIOFILTER manufacturing model, AQS-PLAN-006 work order (X-FARM lane, tier 3, A-core).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json (the W2 fields by the
-tracker; the envelope, design and layout blocks beside them are builder-owned) and
+Graph revision AD. Study. Not a PE stamp. Sizes and counts come from the plant graph through the shared reader (models/mfg/lib/graph_node.py via farm_closeout.py); the params.json write-back merges the builder-owned blocks only. and
 rebuilds every solid through the shared close-out builder (`models/mfg/farm_closeout.py`).
 
 Placement frame: x along the vessel, y along the width, z up, origin at the vessel

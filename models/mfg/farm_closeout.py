@@ -37,7 +37,7 @@ HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE))                 # models/mfg: lib, tracker, farm_hab
 sys.path.insert(0, str(HERE.parents[2]))      # repo root: models.*
 
-from lib import dn, fasteners, materials, nozzles   # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles   # noqa: E402
 from tracker import stl_bbox_mm                     # noqa: E402
 from models.mfg import farm_hab                     # noqa: E402
 
@@ -169,7 +169,9 @@ def build_and_export(here, spec):
     """The shared close-out pass for one unit (bench_prep idiom)."""
     here = pathlib.Path(here)
     UNIT = spec["unit"]
-    P = json.loads((here / "params.json").read_text())
+    GN = graph_node.graph_node(UNIT)   # the plant graph is the sole authority
+    P = GN.as_params()               # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+    P.update({k: v for k, v in json.loads((here / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned form keys only (form/material class/wall do not live on the graph)
     L, W, H = (float(v) for v in P["size_mm"])
     parts = unit_parts(P, spec)
 
