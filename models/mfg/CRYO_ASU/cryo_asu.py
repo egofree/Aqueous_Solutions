@@ -1,18 +1,17 @@
 """CRYO_ASU manufacturing model, AQS-PLAN-006 work order (X-MFG lane).
 
-Graph revision AD. Study. Not a PE stamp. Reads the graph node through the shared
-reader (models/mfg/lib/graph_node.py); the params.json write-back beside it carries
-only the builder-owned layout and study blocks.
+Graph revision AC. Study. Not a PE stamp. Reads params.json only (W2 fields by the
+tracker; the layout and study blocks beside them are builder-owned).
 
 Placement frame: x along the skid, y across, z up, origin at the skid corner. Every
 dimension is an authority figure or a named layout choice:
 
 - Internals per the node (W3): 3 x 13X TSA beds, CO2 two-stage compressor and
   condenser, heated Ar getter; noble-gas inventories pass through. Bed geometry is
-  the node design block (bed_D_mm, bed_L_mm, sorbent_kg_per_bed, read at build
-  time). Each bed: 316L shell t 6 (house style-builder plate convention, study),
-  flat heads, a support grid under and over the sorbent bed, and the 13X sorbent
-  as a solid (the A-COL packing).
+  the node design block: 3 beds, bed_D_mm 414.4, bed_L_mm 1243.1, sorbent
+  108.97 kg/bed (params.design). Each bed: 316L shell t 6 (house style-builder
+  plate convention, study), flat heads, a support grid under and over the sorbent
+  bed, and the 13X sorbent as a solid (the A-COL packing).
 - Envelope: the node size_mm [300, 300, 2000] is the M0 study registry box
   (params size_note says so). The beds at their design diameter cannot fit it: the
   build leaves the study box on x and y and the misfit is reported on the tracker
@@ -20,16 +19,13 @@ dimension is an authority figure or a named layout choice:
 - CO2 compressor (two-stage per the internals row), condenser and Ar getter are
   purchased items (AQS-PLAN-006 rule 6): drawn as their envelope and interface,
   rated from the node design kW (co2_comp 0.081, co2_chill 0.033, getter 0.1).
-- Nozzles: all 17 rows of docs-authority/nozzles/CRYO_ASU.csv at tag, face,
+- Nozzles: all 16 rows of docs-authority/nozzles/CRYO_ASU.csv at tag, face,
   height and bore. Inlets land on the bed shells' -Y side, outlets on +Y; the
   z 160 rows land on the frame; the vent is clamped to the assembly top (schedule
   datum 2000 predates the TSA layout - named hold); the drain hangs from bed 1 to
-  its 50 datum. Solids rows are DN15 stubs labeled bore not calculated. The N17
-  power terminal (cable schedule X-ELS-06, AQS-ELEC-010) is electrical, not piped:
-  drawn as a DN15 stand-in beside the vent to the envelope top, bore not
-  calculated (plan W4). The schedule rating column (Class 150) is carried
-  verbatim as text; no flange is drawn because the node relief basis is
-  atmospheric venting (API 2000, A-M-155).
+  its 50 datum. Solids rows are DN15 stubs labeled bore not calculated. The
+  schedule rating column (Class 150) is carried verbatim as text; no flange is
+  drawn because the node relief basis is atmospheric venting (API 2000, A-M-155).
 
 Materials per docs-authority/duties/CRYO_ASU.md section 3: 316L, condensation,
 corrosion allowance 0 mm, no carbon steel.
@@ -40,13 +36,10 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
+from lib import dn, fasteners, materials, nozzles          # noqa: E402
 
-GN = graph_node.graph_node("CRYO_ASU")        # the plant graph is the sole authority
-P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
-P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
-          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
-D = P["design"]                               # the node design block
+P = json.loads((HERE / "params.json").read_text())
+D = P["design"]
 REV = P["graph_revision"]
 
 # ------------------------------------------------------------------ cited constants
@@ -131,9 +124,6 @@ parts["machinery"] = mach.union(cond).union(getter)
 # ---------------------------------------------------------------- nozzles (schedule verbatim)
 Hose = {"DN15": 45.0, "DN25": 50.0, "DN50": 60.0}          # barb lengths, study proportions
 SOLIDS_NOTE = "solids hand transfer - bore not calculated (AQS-PLAN-006 W4)"
-CABLE_NOTE = ("power terminal (cable schedule X-ELS-06): an electrical drop, not "
-              "piped - drawn as a DN15 stand-in beside the vent to the envelope "
-              "top, bore not calculated (plan W4)")
 FACE_OF = {"inlet": "-Y", "outlet": "+Y"}
 
 
@@ -142,9 +132,7 @@ def hose_id(dnl):
 
 
 def od_of(row):
-    """Hardware OD for a schedule row: lib-table DN rows at the table OD, and
-    non-piped rows (cable, solids) at the DN15 stand-in."""
-    return dn.pipe_od(row["size"]) if row["size"] in dn.PIPE else dn.pipe_od("DN15")
+    return dn.pipe_od("DN15") if row["size"] == "solids" else dn.pipe_od(row["size"])
 
 
 schedule = [r for r in P["nozzles"]]
@@ -168,7 +156,7 @@ for (face, h), rows in sorted(groups.items()):
     rows = sorted(rows, key=lambda r: r["tag"])
     for i, r in enumerate(rows):
         tag, dnl = r["tag"], r["size"]
-        dnl_hw = dnl if dnl in dn.PIPE else "DN15"   # non-piped rows at the DN15 stand-in
+        dnl_hw = "DN15" if dnl == "solids" else dnl
         od = od_of(r)
         bi = i % N_BEDS
         dx = (i // N_BEDS) * 130.0 * (1 if i % 2 else -1)
@@ -179,11 +167,6 @@ for (face, h), rows in sorted(groups.items()):
                     Z0 - 50.0 + 6.0)                      # laps the bottom head 6
             y_root, zz = None, 50.0
             note = "drain beside the bed 1 pedestal, tip at the 50 datum, into the bottom head"
-        elif face == "top" and dnl not in dn.PIPE:          # N17: power terminal (X-ELS-06)
-            s = rod(dn.pipe_od("DN15") / 2, (bed_x[0] + 180.0, CY, Z_TOP - 5.0), "Z",
-                    2000.0 - Z_TOP + 5.0)
-            y_root, zz = None, 2000.0
-            note = CABLE_NOTE
         elif face == "top":                                 # N10: vent standpipe to the 2000 datum
             s = rod(dn.pipe_od("DN15") / 2, (bed_x[0], CY, Z_TOP - 5.0), "Z", 2000.0 - Z_TOP + 5.0)
             y_root, zz = None, 2000.0
@@ -197,19 +180,19 @@ for (face, h), rows in sorted(groups.items()):
                 y_root = 30.0 if face == "-Y" else SKID_W - 30.0
                 note = ("frame-level row: the schedule datum sits below the bed shells; drawn "
                         "through the base plinth")
-            if dnl in dn.PIPE:
+            if dnl != "solids":
                 s = horizontal(nozzles.hose_barb(hose_id(dnl_hw), Hose[dnl_hw],
                                                  root_od=dn.pipe_od(dnl_hw)), face, y_root, h)
             else:
                 s = horizontal(nozzles.stub("DN15", 50.0), face, y_root, h)
-                note = SOLIDS_NOTE if dnl == "solids" else CABLE_NOTE
+                note = SOLIDS_NOTE
             zz = h
         s = s.translate((bx + dx, 0.0, 0.0)) if face not in ("bottom", "top") else s
         noz = s if noz is None else noz.union(s)
         layout[tag] = {"bed": (bi + 1) if face in ("-Y", "+Y") else None, "x": round(bx + dx, 1),
                        "z": zz}
-        drawn[tag] = {"style": "solids" if dnl == "solids" else ("hose" if dnl in dn.PIPE else "stub"),
-                      "dn": dnl_hw,
+        drawn[tag] = {"style": "solids" if dnl == "solids" else "hose",
+                      "dn": dnl_hw if dnl != "solids" else "DN15",
                       "face": face, "height_mm": h, **layout[tag],
                       "schedule_rating": r["rating"], "note": note}
 parts["nozzles"] = noz
@@ -303,8 +286,7 @@ rows = [
      f"node design getter_kW {D['getter_kW']:.3f}; noble-gas inventories pass through "
      "(node internals row)"],
     ["6", f"Nozzle set per docs-authority/nozzles/CRYO_ASU.csv: barbs and stubs, "
-          f"{sum(1 for r in schedule if r['size'] not in dn.PIPE)} non-piped rows at "
-          "DN15 (the solids transfers and the N17 power terminal; bore not "
+          f"{sum(1 for r in schedule if r['size'] == 'solids')} solids rows at DN15 (bore not "
           "calculated)", len(schedule), "316L", mass["nozzles"], "make",
      "schedule tags/faces/heights verbatim; atmospheric per the API 2000 relief basis; "
      "vent datum clamped to the bed 3 top head (W12); barb profile a study proportion"],
