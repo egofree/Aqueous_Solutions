@@ -1,8 +1,7 @@
 """NOX_SCRUB manufacturing model, AQS-PLAN-006 work order (X-MFG lane, tier 4).
 
-Graph revision AD. Study. Not a PE stamp. Reads the graph node through the shared
-reader (models/mfg/lib/graph_node.py); the params.json write-back beside it carries
-only the builder-owned envelope, design and layout blocks.
+Graph revision AC. Study. Not a PE stamp. Reads params.json only (W2 fields by the
+tracker; the envelope, design and layout blocks beside them are builder-owned).
 
 Placement frame: x along 600 mm, y along 600 mm, z up, origin at the envelope corner.
 Every dimension is an authority figure or a named layout choice:
@@ -22,15 +21,13 @@ Every dimension is an authority figure or a named layout choice:
   M1/M2/M5; leach off-gas arrives at up to 85 C); packing and demister PP (polymer).
   The node design block names PP-H - duty section 3 governs wetted materials (plan
   rule 5); the disagreement is a hold (W12). Wall 6 mm is a study value (hold).
-- Nozzles: all 16 rows of docs-authority/nozzles/NOX_SCRUB.csv drawn at tag, face,
+- Nozzles: all 15 rows of docs-authority/nozzles/NOX_SCRUB.csv drawn at tag, face,
   height and bore. Atmospheric tube or hose per duty section 4: hose barbs at the
   envelope faces with extension spools crossing to the shell (the column stands off
   the envelope face), the schedule rating column carried verbatim as text, no flange
   (W4 110 % rule). N11/N12 carry no schedule height: drawn at z 3400 in the gas
   space above the distributor (layout choice, hold). N10's 2000 datum predates the
-  sized column and is drawn flush at the top head (hold). N16 is the power terminal
-  (cable schedule X-ELS-06, AQS-ELEC-010): electrical, not piped - drawn as a DN15
-  stand-in penetration flush at the envelope top, bore not calculated (plan W4).
+  sized column and is drawn flush at the top head (hold).
 - A-COL: packing height, support, distributor and demister are solids; no stage or
   HTU count is claimed anywhere (packed column; dP 1171 Pa is the node design figure).
 """
@@ -40,14 +37,11 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
+from lib import dn, fasteners, materials, nozzles          # noqa: E402
 
-GN = graph_node.graph_node("NOX_SCRUB")       # the plant graph is the sole authority
-P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
-P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
-          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
+P = json.loads((HERE / "params.json").read_text())
 L, W, H = (float(v) for v in P["size_mm"])                 # 600 x 600 x 4103, X-PAR-03
-D = float(GN.design["D_mm"])        # node design block D_mm (house_scrubbers.py, X-PAR-03)
+D = 200.0                        # node design block D_mm (cited; carried in params.design)
 REV = P["graph_revision"]
 
 T_SHELL = 6.0                    # study wall - no authority states one (WORK_ORDER W12)
@@ -56,7 +50,7 @@ Z_SKIRT0, Z_SHELL0 = 12.0, 150.0                            # skirt laps the pli
 Z_SHELL1 = H - 2 * T_PLINTH                                 # shell top 4063
 D_IN = D - 2 * T_SHELL                                      # inner diameter 188
 Z_SUP = 700.0                                               # packing support grid
-PACKED = float(GN.design["packed_mm"])    # node design block packed_mm
+PACKED = 2303.0                  # node design block packed_mm (cited; carried in params.design)
 BED = (PACKED - 15.0) / 2                                   # two beds, redistribution disc between
 Z_BED0, Z_RED, Z_BED1 = Z_SUP + 15.0, Z_SUP + 15.0 + BED, Z_SUP + 15.0 + PACKED + 15.0
 Z_DIST = Z_BED1 + 27.0                                      # liquid distributor plate
@@ -109,9 +103,7 @@ def hose_id(dnl):
 
 
 def od_of(r):
-    """Hardware OD for a schedule row: lib-table DN rows at the table OD, and
-    non-piped rows (cable, solids) at the DN15 stand-in."""
-    return dn.pipe_od(r["size"]) if r["size"] in dn.PIPE else dn.pipe_od("DN15")
+    return dn.pipe_od("DN15") if r["size"] == "solids" else dn.pipe_od(r["size"])
 
 
 def drawn_height(r):
@@ -148,17 +140,11 @@ for r in schedule:
         s = nozzles.stub(dnl, 50.0)
         s = nozzles.place_on_face(s, "bottom", 0.0, (CX + 105.0, W / 2), (L, W, H))
         note = "drain boss laps the skirt ring at the plinth, tip at the 50 datum"
-    elif r["face"] == "top" and dnl == "cable":           # N16: power terminal (X-ELS-06)
-        s = nozzles.stub("DN15", 40.0)
-        s = nozzles.place_on_face(s, "top", 0.0, (CX - 50.0, W / 2), (L, W, H))
-        note = ("power terminal (cable schedule X-ELS-06): an electrical drop, not "
-                "piped - drawn as a DN15 stand-in penetration flush at the envelope "
-                "top, bore not calculated (plan W4)")
     elif r["face"] == "top":                              # N10: 2000 datum predates the column
         # vent riser on the top head: laps the head plate and closes the envelope at 4103
         s = nozzles.stub(dnl, 60.0)
         s = nozzles.place_on_face(s, "top", 0.0, (CX + 50.0, W / 2), (L, W, H))
-        note = (f"vent riser on the top head to the {H:g} envelope top; schedule datum "
+        note = ("vent riser on the top head to the 4103 envelope top; schedule datum "
                 "2000 mm predates the sized column - named hold, WORK_ORDER W12")
     else:
         s = nozzles.hose_barb(hose_id(dnl), Hose[dnl], root_od=od)
@@ -187,7 +173,7 @@ for r in schedule:
             note += (f"; no schedule height: drawn at z {Z_BLANK:g} in the gas space "
                      "above the distributor (layout choice) - WORK_ORDER W12")
     noz = s if noz is None else noz.union(s)
-    drawn[tag] = {"style": "hose" if dnl in Hose else "stub", "dn": dnl, "face": face, "height_mm": h_raw,
+    drawn[tag] = {"style": "hose", "dn": dnl, "face": face, "height_mm": h_raw,
                   "drawn_height_mm": round(h, 1) if face in ("-Y", "+Y")
                   else (0.0 if r["face"] == "bottom" else H),
                   "x_mm": layout_x.get(tag), "schedule_rating": r["rating"], "note": note}
@@ -242,9 +228,7 @@ report = {
     "nozzle_count_schedule": len(schedule),
     "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces with extension "
     "spools crossing to the shell (the column stands off the face); the schedule "
-    "rating column (Class 150 / hose) is carried verbatim as text, no flange drawn; "
-    "the N16 power terminal (cable schedule X-ELS-06) is electrical, not piped: "
-    "drawn as a DN15 stand-in penetration at the envelope top, bore not calculated",
+    "rating column (Class 150 / hose) is carried verbatim as text, no flange drawn",
     "part_mass_kg": mass, "cadquery": cq.__version__,
 }
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
@@ -269,12 +253,10 @@ rows = [
     ["5", f"PP mesh demister pad, OD {D_IN:g} x 40 below the top head", 1, "PP mesh",
      mass["demister"], "make", "A-COL demister solid (envelope); duty section 3 PP mesh"],
     ["6", "Nozzle set per docs-authority/nozzles/NOX_SCRUB.csv: 13 hose barbs "
-          "(DN15/DN25/DN50) on extension spools, 1 drain boss, 1 vent riser, "
-          "1 power-terminal penetration (DN15 stand-in) at the top",
+          "(DN15/DN25/DN50) on extension spools, 1 drain boss, 1 vent at the top head",
      len(schedule), "CPVC", mass["nozzles"], "make",
      "schedule tags/faces/heights verbatim (N11/N12 carry no datum: drawn at z 3400, "
-     "hold); atmospheric hose per duty section 4; barb profile a study proportion; "
-     "the N16 power terminal (cable schedule X-ELS-06) is electrical, not piped"],
+     "hold); atmospheric hose per duty section 4; barb profile a study proportion"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)
@@ -301,13 +283,13 @@ p["envelope"] = {
     "basis": "node size_mm set by flow_graph/param/house_scrubbers.py (X-PAR-03)",
     "column": {"D_mm": D, "shell_z_mm": [Z_SHELL0, Z_SHELL1]},
 }
-p["design"] = dict(GN.design)     # the graph fields first; the builder cannot override them
-p["design"].update({
+p["design"] = {
     "service": "flue, leach off-gas and nitric vents, atmospheric (duty sections 4 and 6)",
     "wall_mm": T_SHELL, "wall_basis": "study value", "ca_mm": CA,
-    "beds_z_mm": [[Z_BED0, Z_RED], [Z_RED + 15, Z_BED1]],
+    "packed_mm": PACKED, "beds_z_mm": [[Z_BED0, Z_RED], [Z_RED + 15, Z_BED1]],
+    "dP_Pa": 1171.034, "recirc_m3_h": 0.4775,
     "material_node_PP_H_vs_duty_CPVC": "hold, WORK_ORDER W12",
-})
+}
 p["layout"] = {
     "frame": "origin at the envelope corner; column axis at x 300, y 300, z up",
     "nozzle_spread": "the schedule gives face and height only; ports pack in one row per "
