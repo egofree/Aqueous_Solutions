@@ -1,7 +1,8 @@
 """HOPPER manufacturing model, AQS-PLAN-006 work order (X-MFG lane, tier 4).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only (W2 fields by the
-tracker; the envelope, design and layout blocks beside them are builder-owned).
+Graph revision AD. Study. Not a PE stamp. Reads the graph node through the shared
+reader (models/mfg/lib/graph_node.py); the params.json write-back beside it carries
+only the builder-owned envelope, design and layout blocks.
 
 Placement frame: x along 600 mm, y along 600 mm, z up, origin at the envelope corner.
 Every dimension is an authority figure or a named layout choice:
@@ -32,9 +33,12 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("HOPPER")          # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
+          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
 L, W, H = (float(v) for v in P["size_mm"])                 # 600 x 600 x 600, AQS-DUTY-064
 REV = P["graph_revision"]
 
@@ -49,7 +53,6 @@ T_BASE = 20.0                             # base plate / rim frame thickness
 CA = materials.ca_for("carbon steel", "hydrocarbon")       # 1.5, AQS-STD-001
 RHO = materials.density("CS")
 
-assert L == W == 600.0 and H == 600.0, "HOPPER node envelope changed; re-check the build"
 
 
 def box(x, y, z, dx, dy, dz):
@@ -99,7 +102,8 @@ def hose_id(dnl):
 schedule = [r for r in P["nozzles"]]
 groups = {}
 for r in schedule:
-    groups.setdefault((FACE_OF.get(r["face"], r["face"]), float(r["height_mm"])), []).append(r)
+    if r["size"] in dn.PIPE:
+        groups.setdefault((FACE_OF.get(r["face"], r["face"]), float(r["height_mm"])), []).append(r)
 
 # one-row packing per face/height group, centred on the face mid-length; the schedule
 # gives face and height only, so the along-face positions are the layout choice
@@ -123,10 +127,19 @@ def wall_half(h):
     return TIP_OUT / 2 + (L / 2 - TIP_OUT / 2) * (h - Z_TIP) / (Z_BIN0 - Z_TIP)
 
 
-noz, drawn = None, {}
+noz, drawn, n_drawn = None, {}, 0
 for r in schedule:
     tag, dnl, h = r["tag"], r["size"], float(r["height_mm"])
     face = FACE_OF.get(r["face"], r["face"])
+    if dnl not in dn.PIPE:
+        # non-piped row: the solids dock-import make-up feed is a hand transfer,
+        # not piped - carried verbatim, not drawn (no STEP/BOM/geometry change)
+        drawn[tag] = {"style": "carried", "dn": dnl, "face": r["face"], "height_mm": h,
+                      "schedule_rating": r["rating"], "service": r["service"],
+                      "note": "solids dock-import make-up feed - a hand transfer, not "
+                              "piped: carried verbatim, not drawn"}
+        continue
+    n_drawn += 1
     od = dn.pipe_od(dnl)
     note = "atmospheric hose joint at the envelope face (duty section 4)"
     if r["face"] == "bottom":                             # N7: boss to the 50 datum beside the opening
@@ -219,13 +232,16 @@ report = {
     "nozzle_count_schedule": len(schedule),
     "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces "
     "(lib/nozzles.place_on_face); the schedule rating column (Class 150) is carried "
-    "verbatim as text against duty section 4 (no flange class, atmospheric tube or hose)",
+    "verbatim as text against duty section 4 (no flange class, atmospheric tube or "
+    "hose); the N11 solids make-up feed is a hand transfer, not piped - carried "
+    "verbatim in this report, not drawn",
     "part_mass_kg": mass, "cadquery": cq.__version__,
 }
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
 
 # ---------------------------------------------------------------- BOM (generated from the model)
-n_barb = sum(1 for r in schedule if r["face"] not in ("bottom", "top"))
+n_barb = sum(1 for r in schedule if r["face"] not in ("bottom", "top")
+             and r["size"] in dn.PIPE)
 rows = [
     ["1", f"Welded hopper body: bin {L:g} x {W:g} x {Z_BIN1 - Z_BIN0:g} mm over a pyramidal "
           f"frustum to a {BOX_BORE:g} mm discharge bore, wall {T_WALL:g} mm", 1,
@@ -238,7 +254,7 @@ rows = [
      "carbon steel bar", mass["rim_frame"], "make", "study section; same CA rule"],
     ["4", f"Nozzle set per docs-authority/nozzles/HOPPER.csv: {n_barb} hose barbs "
           f"(DN15/DN25/DN50), 1 drain boss, 1 vent barb on the rim bar",
-     len(schedule), "carbon steel pipe", mass["nozzles"], "make",
+     n_drawn, "carbon steel pipe", mass["nozzles"], "make",
      "schedule tags/faces/heights verbatim; atmospheric hose per duty section 4; barb "
      "profile a study proportion (lib/nozzles.py)"],
 ]

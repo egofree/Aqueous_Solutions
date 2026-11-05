@@ -11,7 +11,7 @@
     600.0
   ],
   "size_basis": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
-  "graph_revision": "AC",
+  "graph_revision": "AD",
   "solids": 1,
   "all_parts_valid": true,
   "holdup_m3": 0.1424,
@@ -134,10 +134,19 @@
       "x_mm": 369.6,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4); root set in the shell wall (the frustum slope stands off the envelope face)"
+    },
+    "N11": {
+      "style": "carried",
+      "dn": "solids",
+      "face": "inlet",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "feedstock make-up (dock import)",
+      "note": "solids dock-import make-up feed - a hand transfer, not piped: carried verbatim, not drawn"
     }
   },
-  "nozzle_count_schedule": 10,
-  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (lib/nozzles.place_on_face); the schedule rating column (Class 150) is carried verbatim as text against duty section 4 (no flange class, atmospheric tube or hose)",
+  "nozzle_count_schedule": 11,
+  "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces (lib/nozzles.place_on_face); the schedule rating column (Class 150) is carried verbatim as text against duty section 4 (no flange class, atmospheric tube or hose); the N11 solids make-up feed is a hand transfer, not piped - carried verbatim in this report, not drawn",
   "part_mass_kg": {
     "body": 36.5,
     "frame_base": 50.9,
