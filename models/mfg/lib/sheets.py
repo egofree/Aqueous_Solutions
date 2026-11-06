@@ -85,6 +85,11 @@ def build_log(unit, here, report, srcs, extra_checks, acceptance_set):
     r = report
     dims = " x ".join(f"{v:g}" for v in r["bbox_mm"])
     env = " x ".join(f"{v:g}" for v in r["size_mm"])
+    carried = [
+        f"the {tag} "
+        + ("solids make-up" if v.get("dn") == "solids" else "cable power-terminal")
+        + " row is carried verbatim, not drawn"
+        for tag, v in sorted(r.get("nozzles_drawn", {}).items()) if v.get("style") == "carried"]
     lines = [
         f"# Build log - {unit}",
         "",
@@ -111,7 +116,8 @@ def build_log(unit, here, report, srcs, extra_checks, acceptance_set):
         + " (ASCII, metres)",
         f"- Nozzles: all {r['nozzle_count_schedule']} rows of "
         f"`docs-authority/nozzles/{unit}.csv` present at face, height and bore "
-        "(per-tag notes in check.nozzles_drawn)",
+        "(per-tag notes in check.nozzles_drawn)"
+        + ("; " + "; ".join(carried) if carried else ""),
     ]
     lines += extra_checks
     lines += [

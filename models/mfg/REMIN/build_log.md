@@ -12,7 +12,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/REM
 
 - Build bbox 600 x 600 x 600 mm against the 600 x 600 x 600 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/REMIN/export/remin.step`; export STL closed and manifold, 1 solid(s); `cad/stl/REMIN.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 6 rows of `docs-authority/nozzles/REMIN.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- Nozzles: all 6 rows of `docs-authority/nozzles/REMIN.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn); the N6 cable power-terminal row is carried verbatim, not drawn
 - A-VES: the 0.07 m3 working volume at the duty-basis level is reported - the duty section 2 carries the holdup basis (7 days at the 10 L/d potable tap); no new residence-time claim
 - Purchased items per plan rule 6: 2 x metering diaphragm pumps (Ca slurry, MgCl2) and the UV unit after the dose, named from the node design block and drawn as their envelope and interface only; wetted parts and drive ratings per the maker TDS at order (W12)
 - Material conditional: PVC-U drawn per duty section 3 rule M1; the HDPE alternative is a named hold (W12)
