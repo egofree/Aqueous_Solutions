@@ -133,6 +133,12 @@ def add_notes(svg_path, notes):
 
 pdf = "stamped pass pending"
 import cadquery as cq
+# No wall clock: the build-log Date is the inputs' own state date (lib/stamp_date
+# policy); cryo_asu.py has already put models/mfg on sys.path for the shared lib.
+import sys as _sys
+if str(HERE.parent) not in _sys.path:
+    _sys.path.insert(0, str(HERE.parent))
+from lib.stamp_date import deterministic_date  # noqa: E402
 for sid, shape, pdir, notes, _title in SHEETS:
     svg = DRAW / f"{sid}.svg"
     if svg.exists() and "aqs-title-block" in svg.read_text():   # stamped: geometry frozen, PDF pass only
@@ -153,7 +159,7 @@ srcs = ["models/mfg/CRYO_ASU/cryo_asu.py", "models/mfg/CRYO_ASU/draw_cryo_asu.py
         "models/mfg/CRYO_ASU/check.json", "models/mfg/CRYO_ASU/WORK_ORDER.md"]
 log = f"""# Build log - CRYO_ASU
 
-Date: 2026-11-05. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-COL; MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: {deterministic_date()}. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-COL; MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/CRYO_ASU.md`; bed design from the node design block).
 Run note (2026-11-05): rebuild against the Rev AD graph node. The builder now reads the graph node through `models/mfg/lib/graph_node.py`; the N17 power-terminal cable row (cable schedule X-ELS-06) is carried verbatim, not drawn; bed sizing follows the node design block (bed_D_mm 421.9, bed_L_mm 1265.8, sorbent 115.04 kg/bed), which grows the beds, shifts the bed axes one pitch and grows the sorbent charge; the M0 registry-box misfit hold is unchanged. Supersedes the 2026-11-01 run at Rev AC sizing.
 
