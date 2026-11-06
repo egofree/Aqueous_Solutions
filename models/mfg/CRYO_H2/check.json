@@ -21,27 +21,33 @@
     "length_mm": 6096.0,
     "halves": 2,
     "tiers_z_mm": [
-      142.0,
-      342.0,
-      542.0,
-      742.0
+      231.0,
+      381.0,
+      531.0,
+      681.0,
+      831.0
     ],
     "rows_y_mm": [
-      187.5,
-      562.5,
-      937.5,
-      1312.5
+      225.0,
+      375.0,
+      525.0,
+      675.0,
+      825.0,
+      975.0,
+      1125.0,
+      1275.0
     ],
     "tube_x_span_mm": [
       300.0,
       6396.0
     ],
     "material": "SA-312 TP316L seamless DN100 Sch 160, B16.11 Class 9000 fittings / autoclave cone-and-thread, O2 bank cleaned to ASTM G93",
-    "drawn_count": 16,
-    "drawn_mass_kg": 3333.7,
+    "grid": "derived from the A-M-167 drivers: 5 tiers x 8 stations (pitch 150 mm), 17 tubes per half; the grid holds 40 slots for 34 booked tubes",
+    "drawn_count": 34,
+    "drawn_mass_kg": 7084.0,
     "booked_mass_kg": 7084.0,
     "node_steel_kg": 5865.5712,
-    "note": "booked tube set vs the node steel_kg: the node figure is the receivers.py sizing record and is carried, not recalculated (WORK_ORDER W12); the tier grid draws 16 tube solids against the 34 booked"
+    "note": "booked tube set vs the node steel_kg: the node figure is the receivers.py sizing record and is carried, not recalculated (WORK_ORDER W12); the derived grid draws every booked tube (34 solids)"
   },
   "compressors": {
     "units": 2,
@@ -155,9 +161,9 @@
   "nozzle_count_schedule": 9,
   "nozzle_idiom": "atmospheric stubs on the rack side rails; schedule rating column (Class 150) carried verbatim as text against node design 22000 kPa (hold, W12); the N9 power terminal is a cable, not piped - carried verbatim in this report, not drawn",
   "part_mass_kg": {
-    "frame": 3982.4,
-    "tubes": 3333.7,
-    "saddles": 631.1,
+    "frame": 3675.2,
+    "tubes": 7084.0,
+    "saddles": 1341.0,
     "compressors": 1294.7,
     "nozzles": 1.4
   },

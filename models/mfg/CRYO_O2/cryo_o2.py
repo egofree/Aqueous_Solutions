@@ -8,12 +8,14 @@ rack corner. Every dimension is an authority figure or a named layout choice:
 
 - The unit is the oxygen cylinder bank (node design block, A-M-167): 16 tubes
   SA-312 TP316L seamless DN100 Sch 160, OD 114.3 x wall 13.49, 6.096 m, O2-cleaned
-  to ASTM G93, in 2 halves of 8 (the API 521 fire case is carried per half: node
-  relief_mm 9, 2 valves). The rack envelope 6696 x 1500 x 600 is the node size_mm
-  set by flow_graph/param/receivers.py - the build fills it exactly. Tubes stand
-  in 2 tiers (z 200/440) of 9 rows (y pitch 166.7): the main bank is rows 1-7 in
-  both tiers (14 tubes), the crew reserve is the 2 separate tubes of rows 8-9 in
-  the lower tier behind a divider plate (node banks: main + crew reserve).
+  to ASTM G93, in 2 manifolded halves of 8 (the API 521 fire case is carried per
+  half: node relief_mm 9, 2 valves). The rack envelope 6696 x 1500 x 600 is the
+  node size_mm set by flow_graph/param/receivers.py - the build fills it exactly.
+  Tubes stand in the derived grid (lib/rack_grid.py, from the rcv_* drivers):
+  2 tiers x 8 stations, every booked tube drawn, the halves interleaved so each
+  carries exactly 8. The main bank (14) fills first, the crew reserve (2) takes
+  the last slot of each half on the upper tier, behind a divider plate (node
+  banks: main + crew reserve, NFPA 2 ch. 7 separation).
 - Frame: 12 mm skid plate, hollow 80 x 80 x 5 SHS posts and side rails (316L per
   duty section 3), grooved tier combs, saddles under every tube.
 - Nozzles: all 9 rows of docs-authority/nozzles/CRYO_O2.csv at tag, face and
@@ -37,7 +39,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, graph_node, materials, nozzles  # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles, rack_grid  # noqa: E402
 
 GN = graph_node.graph_node("CRYO_O2")        # the plant graph is the sole authority
 P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
@@ -51,16 +53,29 @@ TUBE_OD = float(D["OD_mm"])                               # 114.3
 TUBE_WALL = float(D["wall_mm"])                           # 13.49
 TUBE_LEN = float(D["tube_m"]) * 1e3                       # 6096
 N_TUBES = int(D["tubes"])                                 # 16
-N_MAIN, N_CREW = 14, 2                                    # node banks: main 14 + crew reserve 2
-HALVES = 2                                                # fire case per half (node relief_basis)
-TIERS, ROWS = 2, 9                                        # 2 tiers x 9 rows = 18 slots, 16 used
+BANKS = D.get("banks") or [{"bank": "main", "tubes": N_TUBES}]
+N_MAIN = int(BANKS[0]["tubes"])                           # main bank (node design block)
+N_CREW = int(BANKS[1]["tubes"]) if len(BANKS) > 1 else 0  # crew reserve bank, if any
 SKID_T = 12.0             # skid plate, study
 SHS = 80.0                # post / rail box section, study
 SHS_W = 5.0
 R_TUBE = TUBE_OD / 2
-TIER_Z = [SKID_T + 130.0 + i * 240.0 for i in range(TIERS)]      # 142 / 382
-ROW_Y = [W * (1 + 2 * k) / (2 * ROWS) for k in range(ROWS)]      # 83.3 .. 1416.7
-DIVIDER_Y = (ROW_Y[6] + ROW_Y[7]) / 2                     # main bank | crew reserve
+# Derived grid (A-M-167 drivers): tiers = ceil(N / rcv_tubes_per_row), pitch and the
+# rack allowances from the drivers, so the drawn solids equal the booked tubes and the
+# manifolded halves stay balanced. No hard-coded tier or row arithmetic.
+GRID = rack_grid.rack_grid(D, P["size_mm"], skid_t_mm=SKID_T)
+HALVES = GRID["halves"]                                   # manifolded halves (fire case per half)
+TIERS = GRID["rows_z"]                                    # tiers, lowest first
+ROWS = GRID["per_row"]                                    # stations per tier
+TIER_Z = GRID["tiers_z"]                                  # tier centres, z
+ROW_Y = GRID["stations_y"]                                # station centres, y
+DRAWN = GRID["drawn"]                                     # == N_TUBES
+CREW_ROWS = [(y, z) for y, z, b in GRID["fill"] if b != BANKS[0]["bank"]]
+# divider boundary per half: midway between the crew station and the next station -y of it
+DIVIDER_PLATES = []
+for y_crew, z_crew in CREW_ROWS:
+    prev = max(y for y, zz, b in GRID["fill"] if zz == z_crew and b == BANKS[0]["bank"] and y < y_crew)
+    DIVIDER_PLATES.append(((prev + y_crew) / 2.0, z_crew))
 CA = materials.ca_for("316L")                             # 0.0
 RHO = materials.density("316L")
 
@@ -101,8 +116,9 @@ for y in (0.0, W - SHS):
     frame = frame.union(shs(SHS, y, 100.0, L - 2 * SHS, SHS, 100))                     # bottom rail
 for tz in TIER_Z:                                                                      # tier combs
     comb = shs(60.0, 0.0, tz - 8.0, 6300.0, W, 10)
-    for y in ROW_Y[:7] + (ROW_Y[7:] if tz == TIER_Z[0] else []):   # crew rows, lower tier only
-        comb = comb.cut(rod(R_TUBE - 12, (X0 - 50.0, y, tz), "X", TUBE_LEN + 100.0))
+    for y, z, bank in GRID["fill"]:                     # grooves only at the filled stations
+        if z == tz:
+            comb = comb.cut(rod(R_TUBE - 12, (X0 - 50.0, y, tz), "X", TUBE_LEN + 100.0))
     frame = frame.union(comb)
 for x in (X0 + TUBE_LEN / 6, X0 + TUBE_LEN / 2, X0 + 5 * TUBE_LEN / 6):                # cross ties
     frame = frame.union(shs(x - SHS / 2, SHS, SKID_T - 5, SHS, W - 2 * SHS, 130.0))
@@ -110,8 +126,7 @@ parts["frame"] = frame
 
 # ---------------------------------------------------------------- tubes + saddles
 tubes, saddles = None, None
-slots = [(tz, y) for tz in TIER_Z for y in ROW_Y[:7]] + [(TIER_Z[0], y) for y in ROW_Y[7:]]
-for (tz, y) in slots:                                      # 14 main + 2 crew
+for (y, tz, bank) in GRID["fill"]:                         # main bank, then crew reserve
     t = rod(R_TUBE, (X0, y, tz), "X", TUBE_LEN)
     t = t.cut(rod(R_TUBE - TUBE_WALL, (X0 - 50.0, y, tz), "X", TUBE_LEN + 100.0))
     tubes = t if tubes is None else tubes.union(t)
@@ -123,11 +138,17 @@ parts["tubes"] = tubes
 parts["saddles"] = saddles
 
 # ---------------------------------------------------------------- crew divider (NFPA 2 separation)
-parts["divider"] = box(X0, DIVIDER_Y - 3.0, SKID_T - 5.0, TUBE_LEN + 120.0, 6.0, 330.0)
+# one plate per relief half between the main bank and the crew-reserve tube of that half,
+# lapping the crew tier band 12 beyond the tube silhouette
+divider = None
+for y_d, z_d in DIVIDER_PLATES:
+    p = box(X0, y_d - 3.0, z_d - R_TUBE - 12.0, TUBE_LEN + 120.0, 6.0, 2 * (R_TUBE + 12.0))
+    divider = p if divider is None else divider.union(p)
+parts["divider"] = divider
 
 # ---------------------------------------------------------------- relief valves (purchased, rule 6)
 relief = None
-for y in (ROW_Y[3], ROW_Y[4]):                             # one 9 mm API 520 valve per half
+for y in (W / 4.0, 3 * W / 4.0):                           # one 9 mm API 520 valve per half
     v = box(L - 260.0, y - 60.0, SKID_T - 5.0, 180.0, 120.0, 150.0)
     relief = v if relief is None else relief.union(v)
 parts["relief_valves"] = relief
@@ -233,13 +254,18 @@ report = {
     "tubes": {"count": N_TUBES, "od_mm": TUBE_OD, "wall_mm": TUBE_WALL, "length_mm": TUBE_LEN,
               "halves": HALVES, "tiers_z_mm": TIER_Z, "rows_y_mm": [round(v, 1) for v in ROW_Y],
               "main_tubes": N_MAIN, "crew_tubes": N_CREW,
-              "divider_y_mm": round(DIVIDER_Y, 1),
+              "divider_plates_yz_mm": [[round(y, 1), round(z, 1)] for y, z in DIVIDER_PLATES],
               "tube_x_span_mm": [X0, X0 + TUBE_LEN],
               "material": D["material"],
+              "grid": f"derived from the A-M-167 drivers: {TIERS} tiers x {ROWS} stations "
+              f"(pitch {GRID['pitch_mm']:g} mm), {GRID['per_half_tubes'][0]} tubes per half "
+              "(matching the node fire case exactly)",
+              "drawn_count": DRAWN,
               "drawn_mass_kg": round(N_TUBES * tube_mass, 1),
               "node_steel_kg": D.get("steel_kg"),
               "note": "drawn tube set vs the node steel_kg: the node figure is the receivers.py "
-              "sizing record and is carried, not recalculated (WORK_ORDER W12)"},
+              "sizing record and is carried, not recalculated (WORK_ORDER W12); the derived grid "
+              f"draws every booked tube ({DRAWN} solids)"},
     "relief": {"design_kPa": P.get("design_kPa"), "relief_mm": P.get("relief_mm"), "valves": HALVES,
                "basis": "node relief_basis: API 520 blocked-outlet governing with the API 521 "
                "fire case per half bank (8 tubes per half); valves purchased, bore 9 mm"},
@@ -270,10 +296,10 @@ rows = [
     ["3", "Tube saddles, 3 per tube, with wear groove", N_TUBES * 3, "316L",
      mass["saddles"], "make", "study section; saddle laps the tube 6 mm - the only saddle "
      "line (item 2 is frame only)"],
-    ["4", "Crew-reserve divider plate, main bank | crew bank", 1, "316L",
-     mass["divider"], "make",
+    ["4", "Crew-reserve divider plates, main bank | crew reserve, one per relief half",
+     len(DIVIDER_PLATES), "316L", mass["divider"], "make",
      "node banks (main + crew reserve, separate banks per crew_reserve_basis, NFPA 2 ch. 7); "
-     "study plate"],
+     "plate laps the crew tube 12 beyond its silhouette"],
     ["5", f"Relief valves, API 520 / API 521 fire case per half bank, bore "
           f"{P.get('relief_mm'):g} mm", HALVES, "purchase item", "", "buy",
      "node relief_basis (valves 2, per_half_bore 8.606 -> 9 mm); O2-cleaned per ASTM G93; "
@@ -302,19 +328,23 @@ p = json.loads((HERE / "params.json").read_text())
 p["layout"] = {
     "frame": "rack frame: x along 6696, y across 1500, z up 600; skid 12, SHS 80 x 80 x 5 posts "
              "and side rails, grooved tier combs, cross ties",
-    "tubes": f"{N_TUBES} tubes ({N_MAIN} main + {N_CREW} crew reserve) in {TIERS} tiers (z "
-             f"{'/'.join(f'{v:g}' for v in TIER_Z)}) x {ROWS} rows (y pitch 166.7); main = rows "
-             f"1-7 both tiers, crew = rows 8-9 lower tier behind the divider at y "
-             f"{DIVIDER_Y:g}; rows y < 750 = relief half 1, above = half 2",
-    "relief": "one 9 mm API 520/521 valve per half bank at the +X end posts",
+    "tubes": f"{N_TUBES} tubes ({N_MAIN} main + {N_CREW} crew reserve) booked and drawn in "
+             f"{TIERS} tiers (z {'/'.join(f'{v:g}' for v in TIER_Z)}) x {ROWS} stations "
+             f"(y pitch {GRID['pitch_mm']:g}); halves interleaved so each half carries "
+             f"{GRID['per_half_tubes'][0]} tubes (node fire case); crew reserve = the last "
+             f"slot of each half on the upper tier ({N_CREW} tubes) behind a divider plate",
+    "relief": f"one {P.get('relief_mm'):g} mm API 520/521 valve per half bank at the +X end posts",
     "nozzle_spread": "connections land on the side rails; schedule heights that fit the 600 rack "
                      "are drawn as issued, the rest clamped (per-tag in check.nozzles_drawn)",
     "hardware_idiom": "stubs lap the rails or skid so every union fuses; bbox = the A-M-167 rack "
                       "envelope exactly",
 }
 p["study"] = {
-    "skid_t_mm": SKID_T, "shs_mm": [SHS, SHS_W], "tier_pitch_mm": 240.0,
-    "note": "frame sections and tier pitch are study sizes not stated by any authority (the "
+    "skid_t_mm": SKID_T, "shs_mm": [SHS, SHS_W],
+    "grid_basis": f"tubes per row {ROWS}, row pitch {GRID['pitch_mm']:g} mm and the rack "
+    "allowances are the rcv_* drivers (A-M-167) - the tier grid is derived from them, not "
+    "a study value",
+    "note": "skid 12 and SHS 80 x 80 x 5 are study sections not stated by any authority (the "
             "duty names only 316L and CA 0 mm)",
 }
 (HERE / "params.json").write_text(json.dumps(p, indent=1) + "\n")

@@ -13,8 +13,9 @@ dimension is an authority figure or a named layout choice:
   (node relief_mm 13). The rack envelope is the node size_mm set by
   flow_graph/param/receivers.py (A-M-167: tube count from the store demand; tubes
   per rack row, row pitch and the rack allowances come from the rcv_* drivers,
-  register A-M-167) and the build fills it exactly. Tubes stand in derived tiers
-  and rows; the stations are reported in check.json.
+  register A-M-167) and the build fills it exactly. Tubes stand in the derived
+  grid (lib/rack_grid.py): every booked tube is drawn and the manifolded halves
+  stay balanced; the stations are reported in check.json.
 - The two hydrogen compressors of node compressor_design (5-stage diaphragm,
   17-4PH H1150 / 316L, 301 SS triple-layer diaphragms, 0.9434 kW average /
   2.830 kW peak, 2 units) are purchased items (AQS-PLAN-006 rule 6): drawn as
@@ -44,7 +45,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles, rack_grid  # noqa: E402
 
 GN = graph_node.graph_node("CRYO_H2")         # the plant graph is the sole authority
 P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
@@ -60,15 +61,20 @@ TUBE_OD = float(D["OD_mm"])                               # 114.3
 TUBE_WALL = float(D["wall_mm"])                           # 13.49
 TUBE_LEN = float(D["tube_m"]) * 1e3                       # 6096
 N_TUBES = int(D["tubes"])                                 # node design block (A-M-167)
-HALVES = 2                                                # fire case per half (node relief_basis)
-TIERS = N_TUBES // (HALVES * 4)                           # tiers x rows x halves
-ROWS = N_TUBES // (TIERS * HALVES)
 SKID_T = 12.0             # skid plate, study
 SHS = 80.0                # post / rail box section, study
 SHS_W = 5.0
 R_TUBE = TUBE_OD / 2
-TIER_Z = [SKID_T + 130.0 + i * 200.0 for i in range(TIERS)]      # study 200 mm tier pitch
-ROW_Y = [W * (1 + 2 * k) / (2 * ROWS) for k in range(ROWS)]      # centred row stations across W
+# Derived grid (A-M-167 drivers): tiers = ceil(N / rcv_tubes_per_row), pitch and the
+# rack allowances from the drivers, so the drawn solids equal the booked tubes and the
+# manifolded halves stay balanced. No hard-coded tier or row arithmetic.
+GRID = rack_grid.rack_grid(D, P["size_mm"], skid_t_mm=SKID_T)
+HALVES = GRID["halves"]                                   # manifolded halves (fire case per half)
+TIERS = GRID["rows_z"]                                    # tiers, lowest first
+ROWS = GRID["per_row"]                                    # stations per tier
+TIER_Z = GRID["tiers_z"]                                  # tier centres, z
+ROW_Y = GRID["stations_y"]                                # station centres, y
+DRAWN = GRID["drawn"]                                     # == N_TUBES
 CA = materials.ca_for("316L")                             # 0.0
 RHO = materials.density("316L")
 
@@ -118,15 +124,14 @@ parts["frame"] = frame
 
 # ---------------------------------------------------------------- tubes + saddles
 tubes, saddles = None, None
-for tz in TIER_Z:
-    for k, y in enumerate(ROW_Y):
-        t = rod(R_TUBE, (X0, y, tz), "X", TUBE_LEN)
-        t = t.cut(rod(R_TUBE - TUBE_WALL, (X0 - 50.0, y, tz), "X", TUBE_LEN + 100.0))
-        tubes = t if tubes is None else tubes.union(t)
-        for sx in (X0 + TUBE_LEN / 6, X0 + TUBE_LEN / 2, X0 + 5 * TUBE_LEN / 6):
-            s = box(sx - 75.0, y - 70.0, tz - 62.0, 150.0, 140.0, 124.0)
-            s = s.cut(rod(R_TUBE - 12, (sx - 80.0, y, tz), "X", 160.0))
-            saddles = s if saddles is None else saddles.union(s)
+for y, tz, bank in GRID["fill"]:
+    t = rod(R_TUBE, (X0, y, tz), "X", TUBE_LEN)
+    t = t.cut(rod(R_TUBE - TUBE_WALL, (X0 - 50.0, y, tz), "X", TUBE_LEN + 100.0))
+    tubes = t if tubes is None else tubes.union(t)
+    for sx in (X0 + TUBE_LEN / 6, X0 + TUBE_LEN / 2, X0 + 5 * TUBE_LEN / 6):
+        s = box(sx - 75.0, y - 70.0, tz - 62.0, 150.0, 140.0, 124.0)
+        s = s.cut(rod(R_TUBE - 12, (sx - 80.0, y, tz), "X", 160.0))
+        saddles = s if saddles is None else saddles.union(s)
 parts["tubes"] = tubes
 parts["saddles"] = saddles
 
@@ -239,7 +244,7 @@ dims = [round(bb.xlen, 1), round(bb.ylen, 1), round(bb.zlen, 1)]
 inside = all(d <= s + 1.0 for d, s in zip(dims, [L, W, H]))
 tube_mass = math.pi / 4 * (TUBE_OD ** 2 - (TUBE_OD - 2 * TUBE_WALL) ** 2) * TUBE_LEN * RHO / 1e9
 mass = {k: round(v.val().Volume() * RHO / 1e9, 1) for k, v in parts.items()}
-SADDLE_UNIT = mass["saddles"] / (TIERS * ROWS * 3)   # drawn unit mass; the booked row is priced at it
+SADDLE_UNIT = mass["saddles"] / (N_TUBES * 3)   # drawn unit mass; the booked row is priced at it
 report = {
     "bbox_mm": dims, "inside_size_mm": inside,
     "size_mm": P["size_mm"], "size_basis": P.get("size_basis"),
@@ -249,13 +254,16 @@ report = {
               "halves": HALVES, "tiers_z_mm": TIER_Z, "rows_y_mm": [round(v, 1) for v in ROW_Y],
               "tube_x_span_mm": [X0, X0 + TUBE_LEN],
               "material": D["material"],
-              "drawn_count": TIERS * ROWS,
-              "drawn_mass_kg": round(TIERS * ROWS * tube_mass, 1),
+              "grid": f"derived from the A-M-167 drivers: {TIERS} tiers x {ROWS} stations "
+              f"(pitch {GRID['pitch_mm']:g} mm), {GRID['per_half_tubes'][0]} tubes per half; "
+              f"the grid holds {TIERS * ROWS} slots for {N_TUBES} booked tubes",
+              "drawn_count": DRAWN,
+              "drawn_mass_kg": round(DRAWN * tube_mass, 1),
               "booked_mass_kg": round(N_TUBES * tube_mass, 1),
               "node_steel_kg": D.get("steel_kg"),
               "note": "booked tube set vs the node steel_kg: the node figure is the receivers.py "
-              "sizing record and is carried, not recalculated (WORK_ORDER W12); the tier grid "
-              f"draws {TIERS * ROWS} tube solids against the {N_TUBES} booked"},
+              "sizing record and is carried, not recalculated (WORK_ORDER W12); the derived grid "
+              f"draws every booked tube ({DRAWN} solids)"},
     "compressors": {"units": C["units"], "stages": C["n_stages"], "kW_avg": C["P_avg_kW"],
                     "kW_peak": C["P_peak_kW"], "material": C["material"],
                     "note": "purchased envelopes and interfaces (AQS-PLAN-006 rule 6), ratings "
@@ -281,8 +289,8 @@ rows = [
           f"{TUBE_WALL:g}, {TUBE_LEN / 1000:g} m", N_TUBES, "316L (annealed, AQS-REV-H2-001)",
      round(N_TUBES * tube_mass, 1), "buy",
      "node design block (OD/wall/length, A-M-167); booked set "
-     f"{round(N_TUBES * tube_mass, 1):g} kg ({N_TUBES} tubes; the tier grid draws "
-     f"{TIERS * ROWS} tube solids) vs node steel_kg {D.get('steel_kg'):g} - basis "
+     f"{round(N_TUBES * tube_mass, 1):g} kg ({N_TUBES} tubes, all drawn by the derived grid) "
+     f"vs node steel_kg {D.get('steel_kg'):g} - basis "
      "difference named, W12; hydrogen service per duty section 3, CA 0 mm"],
     ["2", "Rack frame: skid plate + SHS posts, tie bars, tier ties and side rails + cross ties",
      1, "316L", round(mass["frame"], 1), "make",
@@ -290,8 +298,8 @@ rows = [
      "or high-strength steel); SHS 80 x 80 x 5 and skid 12 are study sections (W12)"],
     ["3", "Tube saddles, 3 per tube per tier, with wear groove", N_TUBES * 3, "316L",
      round(SADDLE_UNIT * N_TUBES * 3, 1), "make",
-     f"study section; saddle laps the tube 6 mm; drawn {TIERS * ROWS * 3} solids "
-     f"({mass['saddles']:g} kg), booked {N_TUBES * 3} at the drawn unit mass - the only "
+     f"study section; saddle laps the tube 6 mm; drawn and booked sets agree "
+     f"({N_TUBES * 3} solids, {round(SADDLE_UNIT * N_TUBES * 3, 1):g} kg) - the only "
      "saddle line (item 2 is frame only)"],
     ["4", f"Hydrogen compressor sets, 5-stage diaphragm, 17-4PH H1150 / 316L heads, "
           f"301 SS triple-layer diaphragms", C["units"], "purchase item", "", "buy",
@@ -327,10 +335,11 @@ p = json.loads((HERE / "params.json").read_text())
 p["layout"] = {
     "frame": f"rack frame: x along {L:g}, y across {W:g}, z up {H:g}; skid 12, SHS 80 x 80 x 5 "
              "posts and side rails, tier ties and cross ties",
-    "tubes": f"{N_TUBES} tubes booked ({TIERS * ROWS} tube solids drawn) in {TIERS} tiers (z "
+    "tubes": f"{N_TUBES} tubes booked and drawn in {TIERS} tiers (z "
              + "/".join(f"{v:g}" for v in TIER_Z) +
-             f") x {ROWS} rows (y pitch {W / ROWS:g}), one {TUBE_LEN / 1000:g} m tube per "
-             f"tier-row; rows y < {W / 2:g} = relief half 1, above = half 2",
+             f") x {ROWS} stations (y pitch {GRID['pitch_mm']:g}), halves interleaved so each "
+             f"half carries {GRID['per_half_tubes'][0]} tubes (node fire case); rows y < "
+             f"{W / 2:g} = relief half 1, above = half 2",
     "compressors": "2 purchased 5-stage diaphragm compressor envelopes in the +X end bay "
                    "(node compressor_design)",
     "nozzle_spread": "connections land on the side rails; schedule heights that fit the rack "
@@ -340,9 +349,12 @@ p["layout"] = {
                       "envelope exactly",
 }
 p["study"] = {
-    "skid_t_mm": SKID_T, "shs_mm": [SHS, SHS_W], "tier_pitch_mm": 200.0,
-    "note": "frame sections and tier pitch are study sizes not stated by any authority (the "
-            "duty names only the 316L grade and CA 0 mm)",
+    "skid_t_mm": SKID_T, "shs_mm": [SHS, SHS_W],
+    "grid_basis": f"tubes per row {ROWS}, row pitch {GRID['pitch_mm']:g} mm and the rack "
+    "allowances are the rcv_* drivers (A-M-167) - the tier grid is derived from them, not "
+    "a study value",
+    "note": "skid 12 and SHS 80 x 80 x 5 are study sections not stated by any authority "
+            "(the duty names only the 316L grade and CA 0 mm)",
 }
 (HERE / "params.json").write_text(json.dumps(p, indent=1) + "\n")
 

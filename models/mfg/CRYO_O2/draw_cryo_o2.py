@@ -28,6 +28,8 @@ tubes = parts["tubes"]
 aux = union_all([parts["nozzles"], parts["relief_valves"]])
 full = union_all(list(parts.values()))
 
+TIERS, ROWS, TIER_Z, HALVES, DRAWN = ns["TIERS"], ns["ROWS"], ns["TIER_Z"], ns["HALVES"], ns["DRAWN"]
+
 L, W, H = [float(v) for v in R["size_mm"]]
 T = R["tubes"]
 SHEETS = [
@@ -35,9 +37,12 @@ SHEETS = [
      [f'Keys: {L:g} x {W:g} x {H:g} mm overall - the A-M-167 rack envelope (node size_mm), '
       'filled exactly',
       f'{T["count"]} cylinder tubes SA-312 TP316L DN100 Sch 160, OD {T["od_mm"]:g} x t '
-      f'{T["wall_mm"]:g}, {T["length_mm"] / 1000:g} m, O2-cleaned to ASTM G93, in 2 tiers x 9 rows',
-      f'Main bank {T["main_tubes"]} tubes (rows 1-7 both tiers) | crew reserve '
-      f'{T["crew_tubes"]} tubes (rows 8-9 lower tier) behind the divider at y {T["divider_y_mm"]:g}',
+      f'{T["wall_mm"]:g}, {T["length_mm"] / 1000:g} m, O2-cleaned to ASTM G93, on the derived '
+      f'grid: {TIERS} tiers (z ' + '/'.join(f'{v:g}' for v in TIER_Z) + f') x {ROWS} stations, '
+      'every booked tube drawn',
+      f'Main bank {T["main_tubes"]} tubes | crew reserve {T["crew_tubes"]} tubes (last station '
+      'of each half on the upper tier) behind divider plates at y '
+      + ' / '.join(f'{y:g}' for y, z in T["divider_plates_yz_mm"]),
       'Rows y < 750 are relief half 1, above half 2 (8 tubes per half, node fire case)',
       'One 9 mm API 520/521 relief valve per half bank at the +X end posts (node relief_basis)'],
      "General arrangement, front elevation. Shop, not stamped (AQS-STD-001 section 7)."),

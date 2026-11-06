@@ -30,14 +30,15 @@ full = union_all(list(parts.values()))
 
 L, W, H = [float(v) for v in R["size_mm"]]
 T, C = R["tubes"], R["compressors"]
-TIERS, ROWS, TIER_Z, HALVES = ns["TIERS"], ns["ROWS"], ns["TIER_Z"], ns["HALVES"]
+TIERS, ROWS, TIER_Z, HALVES, DRAWN = ns["TIERS"], ns["ROWS"], ns["TIER_Z"], ns["HALVES"], ns["DRAWN"]
 SHEETS = [
     ("ga_front", full, (0, 1, 0),
      [f'Keys: {L:g} x {W:g} x {H:g} mm overall - the A-M-167 rack envelope (node size_mm), '
       'filled exactly',
-      f'{T["count"]} tubes booked ({TIERS * ROWS} tube solids drawn) SA-312 TP316L DN100 '
+      f'{T["count"]} tubes booked ({DRAWN} tube solids drawn) SA-312 TP316L DN100 '
       f'Sch 160, OD {T["od_mm"]:g} x t {T["wall_mm"]:g}, {T["length_mm"] / 1000:g} m, in '
-      f'{TIERS} tiers (z ' + '/'.join(f'{v:g}' for v in TIER_Z) + f') x {ROWS} rows',
+      f'{TIERS} tiers (z ' + '/'.join(f'{v:g}' for v in TIER_Z) + f') x {ROWS} stations '
+      '(derived from the A-M-167 drivers)',
       f'Rows y < {W / 2:g} are relief half 1, above half 2 ({T["count"] // HALVES} tubes per '
       'half, node fire case)',
       '2 purchased 5-stage diaphragm hydrogen compressors in the +X end bay (node '
@@ -73,9 +74,9 @@ SHEETS = [
       'WORK_ORDER route (F-COL)'],
      "Fabricated part sheet: rack frame + saddles."),
     ("in01", tubes, (0, 1, 0),
-     [f'Tube bank: {T["count"]} tubes booked ({TIERS * ROWS} tube solids drawn), OD '
+     [f'Tube bank: {T["count"]} tubes booked ({DRAWN} tube solids drawn), OD '
       f'{T["od_mm"]:g} x t {T["wall_mm"]:g} x {T["length_mm"] / 1000:g} m in {TIERS} tiers x '
-      f'{ROWS} rows; bores drawn open, {T["drawn_mass_kg"]:g} kg drawn wall mass '
+      f'{ROWS} stations; bores drawn open, {T["drawn_mass_kg"]:g} kg drawn wall mass '
       f'({T["booked_mass_kg"]:g} kg booked)',
       f'Node steel_kg {T["node_steel_kg"]:g} is the receivers.py sizing record - carried, not '
       'recalculated (basis difference named, WORK_ORDER W12)',

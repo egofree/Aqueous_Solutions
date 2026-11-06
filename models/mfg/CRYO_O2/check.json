@@ -21,31 +21,41 @@
     "length_mm": 6096.0,
     "halves": 2,
     "tiers_z_mm": [
-      142.0,
-      382.0
+      231.0,
+      381.0
     ],
     "rows_y_mm": [
-      83.3,
-      250.0,
-      416.7,
-      583.3,
-      750.0,
-      916.7,
-      1083.3,
-      1250.0,
-      1416.7
+      225.0,
+      375.0,
+      525.0,
+      675.0,
+      825.0,
+      975.0,
+      1125.0,
+      1275.0
     ],
     "main_tubes": 14,
     "crew_tubes": 2,
-    "divider_y_mm": 1166.7,
+    "divider_plates_yz_mm": [
+      [
+        600.0,
+        381.0
+      ],
+      [
+        1200.0,
+        381.0
+      ]
+    ],
     "tube_x_span_mm": [
       300.0,
       6396.0
     ],
     "material": "SA-312 TP316L seamless DN100 Sch 160, B16.11 Class 9000 fittings / autoclave cone-and-thread, O2 bank cleaned to ASTM G93",
+    "grid": "derived from the A-M-167 drivers: 2 tiers x 8 stations (pitch 150 mm), 8 tubes per half (matching the node fire case exactly)",
+    "drawn_count": 16,
     "drawn_mass_kg": 3333.7,
     "node_steel_kg": 2760.2688,
-    "note": "drawn tube set vs the node steel_kg: the node figure is the receivers.py sizing record and is carried, not recalculated (WORK_ORDER W12)"
+    "note": "drawn tube set vs the node steel_kg: the node figure is the receivers.py sizing record and is carried, not recalculated (WORK_ORDER W12); the derived grid draws every booked tube (16 solids)"
   },
   "relief": {
     "design_kPa": 22000.0,
@@ -154,10 +164,10 @@
   "nozzle_count_schedule": 9,
   "nozzle_idiom": "atmospheric stubs on the rack side rails; schedule rating column (Class 150) carried verbatim as text against node design 22000 kPa (hold, W12)",
   "part_mass_kg": {
-    "frame": 2448.3,
+    "frame": 2454.7,
     "tubes": 3333.7,
     "saddles": 631.1,
-    "divider": 98.5,
+    "divider": 82.5,
     "relief_valves": 51.8,
     "nozzles": 3.1
   },

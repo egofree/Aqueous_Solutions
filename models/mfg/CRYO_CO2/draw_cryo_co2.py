@@ -28,6 +28,8 @@ tubes = parts["tubes"]
 aux = union_all([parts["nozzles"], parts["relief_valves"]])
 full = union_all(list(parts.values()))
 
+TIERS, ROWS, TIER_Z, HALVES, DRAWN = ns["TIERS"], ns["ROWS"], ns["TIER_Z"], ns["HALVES"], ns["DRAWN"]
+
 L, W, H = [float(v) for v in R["size_mm"]]
 T = R["tubes"]
 SHEETS = [
@@ -35,14 +37,16 @@ SHEETS = [
      [f'Keys: {L:g} x {W:g} x {H:g} mm overall - the A-M-167 rack envelope (node size_mm), '
       'filled exactly',
       f'{T["count"]} cylinder tubes SA-312 TP316L DN100 Sch 160, OD {T["od_mm"]:g} x t '
-      f'{T["wall_mm"]:g}, {T["length_mm"] / 1000:g} m, one per row',
-      'Rows at y 187.5 / 562.5 / 937.5 / 1312.5; rows y < 750 are relief half 1, above half 2',
+      f'{T["wall_mm"]:g}, {T["length_mm"] / 1000:g} m, on the derived grid ({TIERS} tier, '
+      'stations interleaved so each relief half carries 2 tubes)',
+      'Filled tube stations at y ' + ' / '.join(f'{y:g}' for y, z, b in ns["GRID"]["fill"])
+      + '; stations y < 750 are relief half 1, above half 2',
       'One 9 mm API 520/521 relief valve per half bank at the +X end posts (node relief_basis)',
       'Design 2200 kPa g (node design_kPa); schedule rating column (Class 150) carried as text - '
       'hold, WORK_ORDER W12'],
      "General arrangement, front elevation. Shop, not stamped (AQS-STD-001 section 7)."),
     ("ga_side", full, (1, 0, 0),
-     [f'Tube centres z {245:g} on 3 saddles per tube; SHS 80 x 80 x 5 posts and side rails over '
+     [f'Tube centres z {TIER_Z[0]:g} on 3 saddles per tube; SHS 80 x 80 x 5 posts and side rails over '
       'a 12 mm skid (study sections)',
       'Side rails carry the schedule connections; the mid rail takes the clamped rows',
       'Skid to slab on 8 M10 wedge anchors; saddles bolted M12 (fasteners.csv)',

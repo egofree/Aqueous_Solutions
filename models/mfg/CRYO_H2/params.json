@@ -213,7 +213,7 @@
  },
  "layout": {
   "frame": "rack frame: x along 6696, y across 1500, z up 1050; skid 12, SHS 80 x 80 x 5 posts and side rails, tier ties and cross ties",
-  "tubes": "34 tubes booked (16 tube solids drawn) in 4 tiers (z 142/342/542/742) x 4 rows (y pitch 375), one 6.096 m tube per tier-row; rows y < 750 = relief half 1, above = half 2",
+  "tubes": "34 tubes booked and drawn in 5 tiers (z 231/381/531/681/831) x 8 stations (y pitch 150), halves interleaved so each half carries 17 tubes (node fire case); rows y < 750 = relief half 1, above = half 2",
   "compressors": "2 purchased 5-stage diaphragm compressor envelopes in the +X end bay (node compressor_design)",
   "nozzle_spread": "connections land on the side rails; schedule heights that fit the rack are drawn as issued, the rest clamped (per-tag in check.nozzles_drawn); the N9 power terminal is a cable - carried verbatim, not drawn",
   "hardware_idiom": "stubs lap the rails or skid so every union fuses; bbox = the A-M-167 rack envelope exactly"
@@ -224,7 +224,7 @@
    80.0,
    5.0
   ],
-  "tier_pitch_mm": 200.0,
-  "note": "frame sections and tier pitch are study sizes not stated by any authority (the duty names only the 316L grade and CA 0 mm)"
+  "grid_basis": "tubes per row 8, row pitch 150 mm and the rack allowances are the rcv_* drivers (A-M-167) - the tier grid is derived from them, not a study value",
+  "note": "skid 12 and SHS 80 x 80 x 5 are study sections not stated by any authority (the duty names only the 316L grade and CA 0 mm)"
  }
 }

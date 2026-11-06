@@ -20,20 +20,29 @@
     "wall_mm": 13.49,
     "length_mm": 6096.0,
     "halves": 2,
+    "tiers_z_mm": [
+      231.0
+    ],
     "rows_y_mm": [
-      187.5,
-      562.5,
-      937.5,
-      1312.5
+      225.0,
+      375.0,
+      525.0,
+      675.0,
+      825.0,
+      975.0,
+      1125.0,
+      1275.0
     ],
     "tube_x_span_mm": [
       300.0,
       6396.0
     ],
     "material": "SA-312 TP316L seamless DN100 Sch 160, B16.11 Class 9000 fittings / autoclave cone-and-thread, O2 bank cleaned to ASTM G93",
+    "grid": "derived from the A-M-167 drivers: 1 tier x 8 stations (pitch 150 mm), 2 tubes per half (matching the node fire case exactly)",
+    "drawn_count": 4,
     "drawn_mass_kg": 833.4,
     "node_steel_kg": 690.0672,
-    "note": "drawn tube set vs the node steel_kg: the node figure is the receivers.py sizing record and is carried, not recalculated (WORK_ORDER W12)"
+    "note": "drawn tube set vs the node steel_kg: the node figure is the receivers.py sizing record and is carried, not recalculated (WORK_ORDER W12); the derived grid draws every booked tube (4 solids)"
   },
   "relief": {
     "design_kPa": 2200.0,

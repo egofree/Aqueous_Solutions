@@ -8,9 +8,12 @@ rack corner. Every dimension is an authority figure or a named layout choice:
 
 - The unit is a compressed-CO2 cylinder bank (node design block, A-M-167): 4 tubes
   SA-312 TP316L seamless DN100 Sch 160, OD 114.3 x wall 13.49, 6.096 m long, in
-  2 halves of 2 tubes (the API 520 fire case is carried per half: 2 valves, 9 mm
-  bore, node relief_basis). The rack envelope 6696 x 1500 x 450 is the node
-  size_mm set by flow_graph/param/receivers.py - the build fills it exactly.
+  2 manifolded halves of 2 tubes (the API 520 fire case is carried per half: 2
+  valves, 9 mm bore, node relief_basis). The rack envelope 6696 x 1500 x 450 is
+  the node size_mm set by flow_graph/param/receivers.py - the build fills it
+  exactly. Tubes stand on the derived grid (lib/rack_grid.py, from the rcv_*
+  drivers): one tier, 8 stations, the 4 booked tubes drawn on interleaved
+  stations so each half carries exactly 2.
 - Frame: 12 mm skid plate, hollow 80 x 80 x 5 SHS posts and side rails (316L per
   duty section 3), saddles under every tube. The side rails carry the schedule
   connections; the rails are layout hardware sized to land them.
@@ -34,7 +37,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, graph_node, materials, nozzles  # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles, rack_grid  # noqa: E402
 
 GN = graph_node.graph_node("CRYO_CO2")        # the plant graph is the sole authority
 P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
@@ -48,19 +51,26 @@ TUBE_OD = float(D["OD_mm"])                               # 114.3
 TUBE_WALL = float(D["wall_mm"])                           # 13.49
 TUBE_LEN = float(D["tube_m"]) * 1e3                       # 6096
 N_TUBES = int(D["tubes"])                                 # 4
-HALVES = 2                                                # fire case per half (node relief_basis)
 SKID_T = 12.0             # skid plate, study
 SHS = 80.0                # post / rail box section, study
 SHS_W = 5.0
 R_TUBE = TUBE_OD / 2
-Z_TUBE = SKID_T + (H - SKID_T - TUBE_OD) / 2 + R_TUBE      # tube centreline, ~245
+# Derived grid (A-M-167 drivers): one tier (ceil(4 / rcv_tubes_per_row)), pitch and the
+# rack allowances from the drivers, so the drawn solids equal the booked tubes and the
+# manifolded halves stay balanced. No hard-coded tier or row arithmetic.
+GRID = rack_grid.rack_grid(D, P["size_mm"], skid_t_mm=SKID_T)
+HALVES = GRID["halves"]                                   # manifolded halves (fire case per half)
+TIERS = GRID["rows_z"]                                    # tiers, lowest first
+ROWS = GRID["per_row"]                                    # stations per tier
+TIER_Z = GRID["tiers_z"]                                  # tier centres, z (231)
+Z_TUBE = TIER_Z[0]                                        # single tier centreline
+ROW_Y = GRID["stations_y"]                                # station centres, y (225..1275)
+DRAWN = GRID["drawn"]                                     # == N_TUBES
 CA = materials.ca_for("316L")                             # 0.0
 RHO = materials.density("316L")
 
 X0 = (L - TUBE_LEN) / 2                                   # 300
-ROWS = N_TUBES                                            # one 6.096 m tube per row
-ROW_Y = [W * (1 + 2 * k) / (2 * ROWS) for k in range(ROWS)]   # 187.5 / 562.5 / 937.5 / 1312.5
-HALF_SPLIT = W / 2                                        # rows below = half 1, above = half 2
+HALF_SPLIT = W / 2                                        # stations below = half 1, above = half 2
 
 
 def box(x, y, z, dx, dy, dz):
@@ -102,20 +112,20 @@ parts["frame"] = frame
 
 # ---------------------------------------------------------------- tubes + saddles
 tubes, saddles = None, None
-for k, y in enumerate(ROW_Y):                              # rows 1-2 = relief half 1, 3-4 = half 2
-    t = rod(R_TUBE, (X0, y, Z_TUBE), "X", TUBE_LEN)
-    t = t.cut(rod(R_TUBE - TUBE_WALL, (X0 - 50.0, y, Z_TUBE), "X", TUBE_LEN + 100.0))
+for (y, tz, bank) in GRID["fill"]:                         # halves interleaved, 2 tubes each
+    t = rod(R_TUBE, (X0, y, tz), "X", TUBE_LEN)
+    t = t.cut(rod(R_TUBE - TUBE_WALL, (X0 - 50.0, y, tz), "X", TUBE_LEN + 100.0))
     tubes = t if tubes is None else tubes.union(t)
     for sx in (X0 + TUBE_LEN / 6, X0 + TUBE_LEN / 2, X0 + 5 * TUBE_LEN / 6):
-        s = box(sx - 75.0, y - 70.0, SKID_T - 5, 150.0, 140.0, Z_TUBE - SKID_T + 11.0)
-        s = s.cut(rod(R_TUBE - 12, (sx - 80.0, y, Z_TUBE), "X", 160.0))
+        s = box(sx - 75.0, y - 70.0, SKID_T - 5, 150.0, 140.0, tz - SKID_T + 11.0)
+        s = s.cut(rod(R_TUBE - 12, (sx - 80.0, y, tz), "X", 160.0))
         saddles = s if saddles is None else saddles.union(s)
 parts["tubes"] = tubes
 parts["saddles"] = saddles
 
 # ---------------------------------------------------------------- relief valves (purchased, rule 6)
 relief = None
-for y in (ROW_Y[1], ROW_Y[2]):                             # one 9 mm API 520 valve per half
+for y in (W / 4.0, 3 * W / 4.0):                           # one 9 mm API 520 valve per half
     v = box(L - 260.0, y - 60.0, SKID_T - 5.0, 180.0, 120.0, 150.0)
     relief = v if relief is None else relief.union(v)
 parts["relief_valves"] = relief
@@ -225,13 +235,18 @@ report = {
     "graph_revision": REV,
     "solids": len(solid.Solids()), "all_parts_valid": all(v.val().isValid() for v in parts.values()),
     "tubes": {"count": N_TUBES, "od_mm": TUBE_OD, "wall_mm": TUBE_WALL, "length_mm": TUBE_LEN,
-              "halves": HALVES, "rows_y_mm": [round(v, 1) for v in ROW_Y],
+              "halves": HALVES, "tiers_z_mm": TIER_Z, "rows_y_mm": [round(v, 1) for v in ROW_Y],
               "tube_x_span_mm": [X0, X0 + TUBE_LEN],
               "material": D["material"],
+              "grid": f"derived from the A-M-167 drivers: {TIERS} tier x {ROWS} stations "
+              f"(pitch {GRID['pitch_mm']:g} mm), {GRID['per_half_tubes'][0]} tubes per half "
+              "(matching the node fire case exactly)",
+              "drawn_count": DRAWN,
               "drawn_mass_kg": round(N_TUBES * tube_mass, 1),
               "node_steel_kg": D.get("steel_kg"),
               "note": "drawn tube set vs the node steel_kg: the node figure is the receivers.py "
-              "sizing record and is carried, not recalculated (WORK_ORDER W12)"},
+              "sizing record and is carried, not recalculated (WORK_ORDER W12); the derived grid "
+              f"draws every booked tube ({DRAWN} solids)"},
     "relief": {"design_kPa": P.get("design_kPa"), "relief_mm": P.get("relief_mm"), "valves": HALVES,
                "basis": "node relief_basis: API 520 blocked-outlet governing with the API 521 "
                "fire case per half bank (2 tubes per half); valves purchased, bore 9 mm"},
@@ -288,9 +303,11 @@ p = json.loads((HERE / "params.json").read_text())
 p["layout"] = {
     "frame": "rack frame: x along 6696, y across 1500, z up 450; skid 12, SHS 80 x 80 x 5 posts "
              "and side rails, cross ties under the saddles",
-    "tubes": f"{N_TUBES} tubes, one per row: rows y "
-             f"{'/'.join(f'{v:g}' for v in ROW_Y)} at tube centres z {Z_TUBE:g}, "
-             f"x {X0:g}..{X0 + TUBE_LEN:g}; rows y < 750 = relief half 1, above = half 2",
+    "tubes": f"{N_TUBES} tubes booked and drawn on the derived grid: stations y "
+             f"{'/'.join(f'{v:g}' for v in sorted(y for y, z, b in GRID['fill']))} at tube "
+             f"centres z {Z_TUBE:g}, x {X0:g}..{X0 + TUBE_LEN:g}; halves interleaved so each "
+             f"carries {GRID['per_half_tubes'][0]} tubes (node fire case); stations y < 750 = "
+             "relief half 1, above = half 2",
     "relief": "one 9 mm API 520/521 valve per half bank at the +X end posts",
     "nozzle_spread": "connections land on the side rails; schedule heights that fit the 450 rack "
                      "are drawn as issued, the rest clamped (per-tag in check.nozzles_drawn)",
@@ -299,8 +316,11 @@ p["layout"] = {
 }
 p["study"] = {
     "skid_t_mm": SKID_T, "shs_mm": [SHS, SHS_W],
-    "note": "frame sections are study sizes not stated by any authority (the duty names only "
-            "316L and CA 0 mm)",
+    "grid_basis": f"tubes per row {ROWS}, row pitch {GRID['pitch_mm']:g} mm and the rack "
+    "allowances are the rcv_* drivers (A-M-167) - the tier grid is derived from them, not "
+    "a study value",
+    "note": "skid 12 and SHS 80 x 80 x 5 are study sections not stated by any authority (the "
+            "duty names only 316L and CA 0 mm)",
 }
 (HERE / "params.json").write_text(json.dumps(p, indent=1) + "\n")
 
