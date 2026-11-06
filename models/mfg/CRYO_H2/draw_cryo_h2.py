@@ -30,13 +30,16 @@ full = union_all(list(parts.values()))
 
 L, W, H = [float(v) for v in R["size_mm"]]
 T, C = R["tubes"], R["compressors"]
+TIERS, ROWS, TIER_Z, HALVES = ns["TIERS"], ns["ROWS"], ns["TIER_Z"], ns["HALVES"]
 SHEETS = [
     ("ga_front", full, (0, 1, 0),
      [f'Keys: {L:g} x {W:g} x {H:g} mm overall - the A-M-167 rack envelope (node size_mm), '
       'filled exactly',
       f'{T["count"]} cylinder tubes SA-312 TP316L DN100 Sch 160, OD {T["od_mm"]:g} x t '
-      f'{T["wall_mm"]:g}, {T["length_mm"] / 1000:g} m, in 4 tiers (z 142/342/542/742) x 8 rows',
-      'Rows y < 750 are relief half 1, above half 2 (16 tubes per half, node fire case)',
+      f'{T["wall_mm"]:g}, {T["length_mm"] / 1000:g} m, in {TIERS} tiers '
+      f"(z {'/'.join(f'{v:g}' for v in TIER_Z)}) x {ROWS} rows",
+      f'Rows y < {W / 2:g} are relief half 1, above half 2 ({T["count"] // HALVES} tubes per '
+      'half, node fire case)',
       '2 purchased 5-stage diaphragm hydrogen compressors in the +X end bay (node '
       'compressor_design)',
       'Design 22000 kPa g (node design_kPa); schedule rating column (Class 150) carried as '
@@ -45,21 +48,25 @@ SHEETS = [
     ("ga_side", full, (1, 0, 0),
      ['Tier combs at every tier lap the tubes 12 deep and land on the end posts and side rails',
       'Tube saddles under every tier row; SHS 80 x 80 x 5 sections over a 12 mm skid (study)',
-      'Side rails at z 100..200 / 380..480 / 770..870 carry the schedule connections',
+      f'Side rails at z 100..200 / 380..480 / {H - 130:g}..{H - 30:g} carry the schedule '
+      'connections',
       'General tolerance ISO 2768-m unless noted'],
      "General arrangement, side elevation. Shop, not stamped (AQS-STD-001 section 7)."),
     ("nozzle_orient", full, (0, 0, -1),
-     ['8 schedule rows of docs-authority/nozzles/CRYO_H2.csv at tag, face and bore',
+     [f'{R["nozzle_count_schedule"]} schedule rows of docs-authority/nozzles/CRYO_H2.csv at '
+      'tag, face and bore; the N9 power terminal (cable schedule X-ELS-06) is carried '
+      'verbatim, not drawn',
       'N1 (z 400) and N6 (z 600) on the side rails; N2/N3 (z 1500, clamped to the mid rail); '
       'N7/N8 (z 160) on the bottom rail',
-      'N4 drain: skid-top stub at x 400, tip at the 50 datum; N5 vent: up the -Y tie bar to the '
-      '900 rack top (schedule datum 2000 predates the rack envelope - hold, W12)',
+      'N4 drain: skid-top stub at x 400, tip at the 50 datum; N5 vent: up the -Y tie bar to '
+      'the rack top (schedule datum 2000 predates the rack envelope - hold, W12)',
       'Atmospheric stubs; no flange drawn (no flange table above Class 150; hold, W12) - '
       'per-tag positions in check.nozzles_drawn'],
      "Nozzle orientation, top view. Tags/faces/bore per the schedule."),
     ("sh01", frame, (0, 1, 0),
-     ['Rack frame: 12 mm skid plate, SHS 80 x 80 x 5 corner posts to the full 900 height, top '
-      'tie bars, three side rails, cross ties, and a grooved tier comb at every tier',
+     [f'Rack frame: 12 mm skid plate, SHS 80 x 80 x 5 corner posts to the full {H:g} mm '
+      'height, top tie bars, three side rails, cross ties, and a grooved tier comb at every '
+      'tier',
       '316L per duty section 3 (annealed, nickel toward the top of the range, AQS-REV-H2-001; '
       'no ferritic or high-strength steel); corrosion allowance 0 mm (AQS-STD-001)',
       'Frame sections and tier pitch are study sizes (WORK_ORDER W12); welds per the unit '
@@ -67,7 +74,7 @@ SHEETS = [
      "Fabricated part sheet: rack frame + saddles."),
     ("in01", tubes, (0, 1, 0),
      [f'Tube bank: {T["count"]} tubes OD {T["od_mm"]:g} x t {T["wall_mm"]:g} x {T["length_mm"] / 1000:g} m '
-      f'in 4 tiers x 8 rows; bores drawn open, {T["drawn_mass_kg"]:g} kg drawn wall mass',
+      f'in {TIERS} tiers x {ROWS} rows; bores drawn open, {T["drawn_mass_kg"]:g} kg drawn wall mass',
       f'Node steel_kg {T["node_steel_kg"]:g} is the receivers.py sizing record - carried, not '
       'recalculated (basis difference named, WORK_ORDER W12)',
       'End fittings B16.11 Class 9000 / autoclave cone-and-thread per the node material string',
@@ -142,8 +149,8 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/CRY
 
 - Build bbox {R['bbox_mm'][0]} x {R['bbox_mm'][1]} x {R['bbox_mm'][2]} mm: fills the node rack envelope {L:g} x {W:g} x {H:g} mm exactly (tracker check green)
 - Solid source: {step_src}; export STL closed and manifold; `cad/stl/CRYO_H2.stl` replaced from the build (ASCII, metres)
-- Nozzles: all {R['nozzle_count_schedule']} rows of `docs-authority/nozzles/CRYO_H2.csv` present at face and bore; heights that fit the 900 rack drawn as issued, the rest clamped with named holds (check.nozzles_drawn)
-- A-COL: the tube bank is the machine here; the node compressor_design sets (2 x 5-stage diaphragm) are drawn as purchased envelopes; relief per the node API 520/521 fire case per half bank (16 tubes per half, 13 mm)
+- Nozzles: all {R['nozzle_count_schedule']} rows of `docs-authority/nozzles/CRYO_H2.csv` present at face and bore; heights that fit the rack drawn as issued, the rest clamped with named holds; the N9 cable power-terminal row is carried verbatim, not drawn (check.nozzles_drawn)
+- A-COL: the tube bank is the machine here; the node compressor_design sets (2 x 5-stage diaphragm) are drawn as purchased envelopes; relief per the node API 520/521 fire case per half bank ({T['count'] // HALVES} tubes per half, {R['relief']['relief_mm']:g} mm)
 - BOM `models/mfg/CRYO_H2/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/CRYO_H2/drawings/` (GA front/side, nozzle orientation, 2 part sheets, iso; title blocks per AQS-DWG-002)
 

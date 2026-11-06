@@ -80,7 +80,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-87 | fastener: M10 x 30 wedge anchor (M10 x 30 wedge anchor x92) | 92 | 4 | 2 % min 4 |
 | building block | OF-88 | fastener: M10 x 35 (M10 x 35 x54) | 54 | 4 | 2 % min 4 |
 | building block | OF-89 | fastener: M12 x 60 hex bolt + nut + 2 washers (M12 x 60 hex bolt + nut + 2 washers x34) | 34 | 4 | 2 % min 4 |
-| building block | OF-90 | fastener: M12 x 40 (M12 x 40 x440) | 440 | 9 | 2 % min 4 |
+| building block | OF-90 | fastener: M12 x 40 (M12 x 40 x456) | 456 | 10 | 2 % min 4 |
 | building block | OF-91 | fastener: M12 x 45 (M12 x 45 x8) | 8 | 4 | 2 % min 4 |
 | building block | OF-92 | fastener: M10 wedge anchor (M10 wedge anchor x156) | 156 | 4 | 2 % min 4 |
 | building block | OF-93 | fastener: M10 wedge anchor (M10 wedge anchor x110) | 110 | 4 | 2 % min 4 |
@@ -183,4 +183,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-173 lines; 35 spare motors, 1243 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+173 lines; 35 spare motors, 1244 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.

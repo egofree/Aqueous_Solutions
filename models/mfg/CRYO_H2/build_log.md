@@ -10,10 +10,10 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/CRY
 
 ## Checks
 
-- Build bbox 6696.0 x 1500.0 x 900.1 mm: fills the node rack envelope 6696 x 1500 x 900 mm exactly (tracker check green)
+- Build bbox 6696.0 x 1500.0 x 1050.1 mm: fills the node rack envelope 6696 x 1500 x 1050 mm exactly (tracker check green)
 - Solid source: build export `models/mfg/CRYO_H2/export/cryo_h2.step`; export STL closed and manifold; `cad/stl/CRYO_H2.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 8 rows of `docs-authority/nozzles/CRYO_H2.csv` present at face and bore; heights that fit the 900 rack drawn as issued, the rest clamped with named holds (check.nozzles_drawn)
-- A-COL: the tube bank is the machine here; the node compressor_design sets (2 x 5-stage diaphragm) are drawn as purchased envelopes; relief per the node API 520/521 fire case per half bank (16 tubes per half, 13 mm)
+- Nozzles: all 9 rows of `docs-authority/nozzles/CRYO_H2.csv` present at face and bore; heights that fit the rack drawn as issued, the rest clamped with named holds; the N9 cable power-terminal row is carried verbatim, not drawn (check.nozzles_drawn)
+- A-COL: the tube bank is the machine here; the node compressor_design sets (2 x 5-stage diaphragm) are drawn as purchased envelopes; relief per the node API 520/521 fire case per half bank (17 tubes per half, 13 mm)
 - BOM `models/mfg/CRYO_H2/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/CRYO_H2/drawings/` (GA front/side, nozzle orientation, 2 part sheets, iso; title blocks per AQS-DWG-002)
 

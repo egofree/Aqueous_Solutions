@@ -17,7 +17,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 20904 |
+| fastener | 20920 |
 | support | 7395 |
 | electronics | 2213 |
 | valve | 1002 |
@@ -203,7 +203,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-87 | M10 x 30 wedge anchor | ISO 3506 A4-70 | M10 x 30 wedge anchor x92 | 92 | 14 | models/mfg/CRYO_ASU/fasteners.csv; models/mfg/CRYO_CO2/fasteners.csv; models/mfg/CRYO_H2/fasteners.csv |  |
 | OF-88 | M10 x 35 | ISO 3506 A4-70 | M10 x 35 x54 | 54 | 9 | models/mfg/EW_1/fasteners.csv; models/mfg/EW_2/fasteners.csv; models/mfg/EW_3/fasteners.csv |  |
 | OF-89 | M12 x 60 hex bolt + nut + 2 washers | PVDF (non-metallic) | M12 x 60 hex bolt + nut + 2 washers x34 | 34 | 1 | models/mfg/LEACH_CSTR_1/fasteners.csv |  |
-| OF-90 | M12 x 40 | ISO 3506 A4-70 | M12 x 40 x440 | 440 | 4 | models/mfg/CRYO_ASU/fasteners.csv; models/mfg/CRYO_CO2/fasteners.csv; models/mfg/CRYO_H2/fasteners.csv |  |
+| OF-90 | M12 x 40 | ISO 3506 A4-70 | M12 x 40 x456 | 456 | 4 | models/mfg/CRYO_ASU/fasteners.csv; models/mfg/CRYO_CO2/fasteners.csv; models/mfg/CRYO_H2/fasteners.csv |  |
 | OF-91 | M12 x 45 | ISO 3506 A4-70 | M12 x 45 x8 | 8 | 1 | models/mfg/CRYO_H2/fasteners.csv |  |
 | OF-92 | M10 wedge anchor | ISO 898-1 8.8 | M10 wedge anchor x156 | 156 | 22 | models/mfg/AFTERBURNER_FLUE/fasteners.csv; models/mfg/BMED_UPW_POLISH/fasteners.csv; models/mfg/C29_RECYCLE/fasteners.csv |  |
 | OF-93 | M10 wedge anchor | ISO 3506 A4-70 | M10 wedge anchor x110 | 110 | 27 | models/mfg/BMED_ACID/fasteners.csv; models/mfg/BMED_BASE/fasteners.csv; models/mfg/CATCH_TANK/fasteners.csv |  |

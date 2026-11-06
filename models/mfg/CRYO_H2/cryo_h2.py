@@ -1,18 +1,20 @@
 """CRYO_H2 manufacturing model, AQS-PLAN-006 work order (X-MFG lane).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only (W2 fields by the
-tracker; the layout and study blocks beside them are builder-owned).
+Graph revision AD. Study. Not a PE stamp. Reads the graph node through the shared
+reader (models/mfg/lib/graph_node.py); the params.json write-back beside it carries
+only the builder-owned layout and study blocks.
 
-Placement frame: x along the rack (6696), y across (1500), z up (900), origin at the
-rack corner. Every dimension is an authority figure or a named layout choice:
+Placement frame: x along the rack, y across, z up, origin at the rack corner. Every
+dimension is an authority figure or a named layout choice:
 
 - The unit is the hydrogen cylinder bank plus its compression service (node design
-  and compressor_design blocks, A-M-167 / X-MFG-36): 32 tubes SA-312 TP316L
-  seamless DN100 Sch 160, OD 114.3 x wall 13.49, 6.096 m, in 2 halves of 16 (the
-  API 521 fire case is carried per half: node relief_mm 13). The rack envelope
-  6696 x 1500 x 900 is the node size_mm set by flow_graph/param/receivers.py -
-  the build fills it exactly. Tubes stand in 4 tiers (z 150/350/550/750) of
-  8 rows (y pitch 187.5).
+  and compressor_design blocks, A-M-167 / X-MFG-36): the node design block sets the
+  tube count, OD, wall and length, and the API 521 fire case is carried per half
+  (node relief_mm 13). The rack envelope is the node size_mm set by
+  flow_graph/param/receivers.py (A-M-167: tube count from the store demand; tubes
+  per rack row, row pitch and the rack allowances come from the rcv_* drivers,
+  register A-M-167) and the build fills it exactly. Tubes stand in derived tiers
+  and rows; the stations are reported in check.json.
 - The two hydrogen compressors of node compressor_design (5-stage diaphragm,
   17-4PH H1150 / 316L, 301 SS triple-layer diaphragms, 0.9325 kW average /
   2.797 kW peak, 2 units) are purchased items (AQS-PLAN-006 rule 6): drawn as
@@ -20,16 +22,18 @@ rack corner. Every dimension is an authority figure or a named layout choice:
 - Frame: 12 mm skid plate, hollow 80 x 80 x 5 SHS posts and rails (316L per duty
   section 3: annealed, nickel toward the top of the range, AQS-REV-H2-001),
   saddles under every tube.
-- Nozzles: all 8 rows of docs-authority/nozzles/CRYO_H2.csv at tag, face and
+- Nozzles: the piped rows of docs-authority/nozzles/CRYO_H2.csv at tag, face and
   bore. The schedule heights (160..2000 mm) were issued against the 300 x 300 x
   2000 study boxes that predate the A-M-167 rack envelope: heights that fit the
-  900 mm rack are drawn as issued (400, 160, 600), the rest are clamped onto the
-  rack (1500 -> mid-rail centre, top datum 2000 -> flush at the 900 rack top,
-  bottom datum 50 -> skid-top stub at its 50 datum) and every clamp is named in
-  check.nozzles_drawn and WORK_ORDER W12. Inlets -Y, outlets +Y (house face
-  mapping). No flange is drawn: the schedule rating column (Class 150) is carried
-  verbatim as text against the node design 22000 kPa - the rating reconciliation
-  is a named hold (lib/dn.py carries no flange table above Class 150).
+  rack are drawn as issued, the rest are clamped onto the rack (1500 -> mid-rail
+  centre, top datum 2000 -> flush at the rack top, bottom datum 50 -> skid-top
+  stub at its 50 datum) and every clamp is named in check.nozzles_drawn and
+  WORK_ORDER W12. The N9 power terminal is a cable (cable schedule X-ELS-06):
+  electrical, not piped - carried verbatim in check.json, never drawn. Inlets -Y,
+  outlets +Y (house face mapping). No flange is drawn: the schedule rating column
+  (Class 150) is carried verbatim as text against the node design 22000 kPa - the
+  rating reconciliation is a named hold (lib/dn.py carries no flange table above
+  Class 150).
 
 Materials per docs-authority/duties/CRYO_H2.md section 3: 316L annealed for
 hydrogen service (AQS-REV-H2-001), corrosion allowance 0 mm.
@@ -40,28 +44,31 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("CRYO_H2")         # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
+          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
 D = P["design"]
 C = P["compressor_design"]
 REV = P["graph_revision"]
 
 # ------------------------------------------------------------------ cited constants
-L, W, H = [float(v) for v in P["size_mm"]]                # 6696 x 1500 x 900 (A-M-167)
+L, W, H = (float(v) for v in P["size_mm"])                 # A-M-167 rack, receivers.py
 TUBE_OD = float(D["OD_mm"])                               # 114.3
 TUBE_WALL = float(D["wall_mm"])                           # 13.49
 TUBE_LEN = float(D["tube_m"]) * 1e3                       # 6096
-N_TUBES = int(D["tubes"])                                 # 32
+N_TUBES = int(D["tubes"])                                 # node design block (A-M-167)
 HALVES = 2                                                # fire case per half (node relief_basis)
-TIERS = N_TUBES // (HALVES * 4)                           # 4 tiers x 8 rows x 2 halves
-ROWS = N_TUBES // (TIERS * HALVES)                        # 8
+TIERS = N_TUBES // (HALVES * 4)                           # tiers x rows x halves
+ROWS = N_TUBES // (TIERS * HALVES)
 SKID_T = 12.0             # skid plate, study
 SHS = 80.0                # post / rail box section, study
 SHS_W = 5.0
 R_TUBE = TUBE_OD / 2
-TIER_Z = [SKID_T + 130.0 + i * 200.0 for i in range(TIERS)]      # 142 / 342 / 542 / 742
-ROW_Y = [W * (1 + 2 * k) / (2 * ROWS) for k in range(ROWS)]      # 93.75 .. 1406.25
+TIER_Z = [SKID_T + 130.0 + i * 200.0 for i in range(TIERS)]      # study 200 mm tier pitch
+ROW_Y = [W * (1 + 2 * k) / (2 * ROWS) for k in range(ROWS)]      # centred row stations across W
 CA = materials.ca_for("316L")                             # 0.0
 RHO = materials.density("316L")
 
@@ -132,7 +139,6 @@ parts["compressors"] = comp
 
 # ---------------------------------------------------------------- nozzles (schedule verbatim)
 Hose = {"DN15": 45.0, "DN25": 50.0, "DN50": 60.0}          # barb lengths, study proportions
-SOLIDS_NOTE = "solids hand transfer - bore not calculated (AQS-PLAN-006 W4)"
 FACE_OF = {"inlet": "-Y", "outlet": "+Y"}
 CLAMP_NOTE = ("schedule datum {h:g} mm was issued against the 300 x 300 x 2000 study box that "
               "predates the A-M-167 rack envelope (H {H:g}); drawn clamped at {z:g} mm - named "
@@ -140,7 +146,9 @@ CLAMP_NOTE = ("schedule datum {h:g} mm was issued against the 300 x 300 x 2000 s
 
 
 def od_of(row):
-    return dn.pipe_od("DN15") if row["size"] == "solids" else dn.pipe_od(row["size"])
+    """Hardware OD for a piped row: lib-table DN rows at the table OD. Non-piped
+    rows are carried verbatim and never drawn."""
+    return dn.pipe_od(row["size"]) if row["size"] in dn.PIPE else dn.pipe_od("DN15")
 
 
 def horizontal(s, face, y_root, z):
@@ -151,7 +159,8 @@ def horizontal(s, face, y_root, z):
 schedule = [r for r in P["nozzles"]]
 groups = {}
 for r in schedule:
-    groups.setdefault((FACE_OF.get(r["face"], r["face"]), float(r["height_mm"])), []).append(r)
+    if r["size"] in dn.PIPE:
+        groups.setdefault((FACE_OF.get(r["face"], r["face"]), float(r["height_mm"])), []).append(r)
 
 BANDS = {"-Y": [(100.0, 200.0), (380.0, 480.0), (H - 130.0, H - 30.0)],
          "+Y": [(100.0, 200.0), (380.0, 480.0), (H - 130.0, H - 30.0)]}
@@ -165,22 +174,31 @@ def land_z(face, h, od):
     return (BANDS[face][1][0] + BANDS[face][1][1]) / 2, True
 
 
-noz, drawn = None, {}
+noz, drawn, n_drawn = None, {}, 0
+for r in schedule:
+    if r["size"] not in dn.PIPE:
+        # non-piped terminal row: the N9 power terminal is a cable (cable schedule
+        # X-ELS-06), not piped - carried verbatim, not drawn (no geometry change)
+        drawn[r["tag"]] = {"style": "carried", "dn": r["size"], "face": r["face"],
+                           "height_mm": float(r["height_mm"]), "schedule_rating": r["rating"],
+                           "service": r["service"],
+                           "note": "power terminal (cable schedule X-ELS-06) - a cable, not "
+                                   "piped: carried verbatim, not drawn"}
+        continue
 for (face, h), rows in sorted(groups.items()):
     rows = sorted(rows, key=lambda r: r["tag"])
     span = 3200.0
     for i, r in enumerate(rows):
         tag, dnl = r["tag"], r["size"]
-        dnl_hw = "DN15" if dnl == "solids" else dnl
         od = od_of(r)
         x = L / 2 - span / 2 + (i + 0.5) * span / max(len(rows), 1)
         note = "atmospheric stub on the rack side rail (hose makeup at the rack face)"
         if face == "bottom":                               # N4: skid-top stub at the -X end
-            s = rod(dn.pipe_od(dnl_hw) / 2, (400.0, W / 2, SKID_T - 5.0), "Z", 50.0 - SKID_T + 5.0)
+            s = rod(od / 2, (400.0, W / 2, SKID_T - 5.0), "Z", 50.0 - SKID_T + 5.0)
             zz, y_root = 50.0, None
             note = "skid-top stub beside the -X post, tip at the 50 datum"
-        elif face == "top":                                # N5: up the -Y tie bar to the 900 top
-            s = rod(dn.pipe_od(dnl_hw) / 2, (x, 40.0, H - SHS - 10.0 - 8.0), "Z", SHS + 18.0)
+        elif face == "top":                                # N5: up the -Y tie bar to the rack top
+            s = rod(od / 2, (x, 40.0, H - SHS - 10.0 - 8.0), "Z", SHS + 18.0)
             zz, y_root = H, None
             note = CLAMP_NOTE.format(h=h, H=H, z=H) + "; vent up the tie bar to the rack top"
         else:
@@ -188,16 +206,13 @@ for (face, h), rows in sorted(groups.items()):
             if clamped:
                 note = CLAMP_NOTE.format(h=h, H=H, z=z)
             y_root = 60.0 if face == "-Y" else W - 60.0    # tip flush at the rail face
-            s = horizontal(nozzles.stub(dnl_hw, 60.0), face, y_root, z) \
-                if dnl != "solids" else horizontal(nozzles.stub("DN15", 60.0), face, y_root, z)
-            if dnl == "solids":
-                note = SOLIDS_NOTE
+            s = horizontal(nozzles.stub(dnl, 60.0), face, y_root, z)
             zz = z
         if face in ("-Y", "+Y"):
             s = s.translate((x, 0.0, 0.0))
         noz = s if noz is None else noz.union(s)
-        drawn[tag] = {"style": "solids" if dnl == "solids" else "stub",
-                      "dn": dnl_hw if dnl != "solids" else "DN15",
+        n_drawn += 1
+        drawn[tag] = {"style": "stub", "dn": dnl,
                       "face": face, "height_mm": h, "x_mm": round(x, 1), "z_drawn_mm": zz,
                       "schedule_rating": r["rating"], "note": note}
 parts["nozzles"] = noz
@@ -249,7 +264,8 @@ report = {
     "nozzles_drawn": drawn,
     "nozzle_count_schedule": len(schedule),
     "nozzle_idiom": "atmospheric stubs on the rack side rails; schedule rating column (Class 150) "
-    "carried verbatim as text against node design 22000 kPa (hold, W12)",
+    "carried verbatim as text against node design 22000 kPa (hold, W12); the N9 power terminal "
+    "is a cable, not piped - carried verbatim in this report, not drawn",
     "part_mass_kg": mass, "cad_stl_scope": "full build, metres (the build fills the A-M-167 rack "
     "envelope exactly)", "cadquery": cq.__version__,
 }
@@ -274,8 +290,10 @@ rows = [
      f"node compressor_design: {C['P_avg_kW']:.4f} kW average / {C['P_peak_kW']:.3f} kW peak, "
      "10 -> 200 bar in 5 stages (ratio 1.82 per stage, T_out 125 C); drawn as envelope and "
      "interface (AQS-PLAN-006 rule 6)"],
-    ["5", f"Connection set per docs-authority/nozzles/CRYO_H2.csv ({len(schedule)} rows, "
-          "clamped heights per check.nozzles_drawn)", len(schedule), "316L", mass["nozzles"],
+    ["5", f"Connection set per docs-authority/nozzles/CRYO_H2.csv: {n_drawn} piped rows of "
+          f"{len(schedule)} schedule rows (the N9 power terminal is a cable - carried verbatim, "
+          "not drawn; clamped heights per check.nozzles_drawn)", n_drawn, "316L",
+     mass["nozzles"],
      "make", "schedule tags/faces/bore verbatim; heights clamped onto the rack where the issued "
      "datum predates the A-M-167 envelope (W12)"],
 ]
@@ -299,15 +317,17 @@ fasteners.write_fasteners(HERE / "fasteners.csv", [
 # ---------------------------------------------------------------- builder-owned params blocks
 p = json.loads((HERE / "params.json").read_text())
 p["layout"] = {
-    "frame": "rack frame: x along 6696, y across 1500, z up 900; skid 12, SHS 80 x 80 x 5 posts "
-             "and side rails, tier ties and cross ties",
-    "tubes": f"{N_TUBES} tubes in {TIERS} tiers (z " + "/".join(f"{v:g}" for v in TIER_Z) +
-             f") x {ROWS} rows (y pitch 187.5), one 6.096 m tube per tier-row; rows y < 750 = "
-             "relief half 1, above = half 2",
+    "frame": f"rack frame: x along {L:g}, y across {W:g}, z up {H:g}; skid 12, SHS 80 x 80 x 5 "
+             "posts and side rails, tier ties and cross ties",
+    "tubes": f"{N_TUBES} tubes booked ({TIERS * ROWS} tube solids drawn) in {TIERS} tiers (z "
+             + "/".join(f"{v:g}" for v in TIER_Z) +
+             f") x {ROWS} rows (y pitch {W / ROWS:g}), one {TUBE_LEN / 1000:g} m tube per "
+             f"tier-row; rows y < {W / 2:g} = relief half 1, above = half 2",
     "compressors": "2 purchased 5-stage diaphragm compressor envelopes in the +X end bay "
                    "(node compressor_design)",
-    "nozzle_spread": "connections land on the side rails; schedule heights that fit the 900 rack "
-                     "are drawn as issued, the rest clamped (per-tag in check.nozzles_drawn)",
+    "nozzle_spread": "connections land on the side rails; schedule heights that fit the rack "
+                     "are drawn as issued, the rest clamped (per-tag in check.nozzles_drawn); "
+                     "the N9 power terminal is a cable - carried verbatim, not drawn",
     "hardware_idiom": "stubs lap the rails or skid so every union fuses; bbox = the A-M-167 rack "
                       "envelope exactly",
 }

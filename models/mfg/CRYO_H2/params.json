@@ -212,10 +212,10 @@
   "material": "head and plates 17-4PH H1150 / 316L (hydrogen service), triple-layer 301 SS diaphragm with leak detection between layers"
  },
  "layout": {
-  "frame": "rack frame: x along 6696, y across 1500, z up 900; skid 12, SHS 80 x 80 x 5 posts and side rails, tier ties and cross ties",
-  "tubes": "32 tubes in 4 tiers (z 142/342/542/742) x 4 rows (y pitch 187.5), one 6.096 m tube per tier-row; rows y < 750 = relief half 1, above = half 2",
+  "frame": "rack frame: x along 6696, y across 1500, z up 1050; skid 12, SHS 80 x 80 x 5 posts and side rails, tier ties and cross ties",
+  "tubes": "34 tubes booked (16 tube solids drawn) in 4 tiers (z 142/342/542/742) x 4 rows (y pitch 375), one 6.096 m tube per tier-row; rows y < 750 = relief half 1, above = half 2",
   "compressors": "2 purchased 5-stage diaphragm compressor envelopes in the +X end bay (node compressor_design)",
-  "nozzle_spread": "connections land on the side rails; schedule heights that fit the 900 rack are drawn as issued, the rest clamped (per-tag in check.nozzles_drawn)",
+  "nozzle_spread": "connections land on the side rails; schedule heights that fit the rack are drawn as issued, the rest clamped (per-tag in check.nozzles_drawn); the N9 power terminal is a cable - carried verbatim, not drawn",
   "hardware_idiom": "stubs lap the rails or skid so every union fuses; bbox = the A-M-167 rack envelope exactly"
  },
  "study": {
