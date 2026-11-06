@@ -48,14 +48,15 @@ SHEETS = [
       'Welded plate construction, ISO 2768-m unless noted'],
      "General arrangement, side elevation. Shop, not stamped (AQS-STD-001 section 7)."),
     ("nozzle_orient", full, (0, 0, -1),
-     ['10 schedule rows of docs-authority/nozzles/HOPPER.csv at tag, face and bore',
+     [f'{R["nozzle_count_schedule"]} schedule rows of docs-authority/nozzles/HOPPER.csv at tag, face and bore',
       'Inlets -Y at z 160: N1 DN15, N2 DN50, N3 DN25, N10 DN15 (roots in the frustum wall)',
       'Outlets +Y clamped to z 565..584 (schedule datum 600 at the envelope top - hold, W12): '
       'N4 DN25, N5 DN50, N6 DN15, N9 DN15',
       'N7 drain boss beside the discharge opening (50 datum); N8 vent on the +Y rim bar '
       '(schedule datum 800 predates the 600 box - hold, W12)',
       'Atmospheric hose barbs; no flange drawn (duty section 4: no flange class); '
-      'per-tag positions in check.nozzles_drawn'],
+      'per-tag positions in check.nozzles_drawn',
+      'N11 solids make-up feed: carried verbatim, not drawn'],
      "Nozzle orientation, top view. Tags/faces/bore per the schedule."),
     ("sh01", body, (0, 1, 0),
      [f'Hopper body: bin + frustum + outlet box, wall {B["wall_mm"]:g} mm carbon steel plate '
@@ -139,7 +140,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/HOP
 
 - Build bbox {R['bbox_mm'][0]} x {R['bbox_mm'][1]} x {R['bbox_mm'][2]} mm: fills the node envelope {L:g} x {W:g} x {H:g} mm exactly (tracker check green)
 - Solid source: {step_src}; export STL closed and manifold, one solid; `cad/stl/HOPPER.stl` replaced from the build (ASCII, metres)
-- Nozzles: all {R['nozzle_count_schedule']} rows of `docs-authority/nozzles/HOPPER.csv` present at face, height and bore, drawn as atmospheric hose barbs per duty section 4; heights at the envelope top clamped with named holds (check.nozzles_drawn)
+- Nozzles: all {R['nozzle_count_schedule']} rows of `docs-authority/nozzles/HOPPER.csv` present at face, height and bore, drawn as atmospheric hose barbs per duty section 4; heights at the envelope top clamped with named holds (check.nozzles_drawn); the N11 solids make-up row is carried verbatim, not drawn
 - A-VES: hopper holdup {R['holdup_m3']} m3 computed from the model and reported; the duty claims no holdup, so no residence time is derived (duty section 8)
 - BOM `models/mfg/HOPPER/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/HOPPER/drawings/` (GA front/side, nozzle orientation, 2 part sheets, aux, iso; title blocks per AQS-DWG-002); the stale envelope `drawings/GA.md` is superseded

@@ -51,7 +51,7 @@ SHEETS = [
       'PP-H - duty section 3 governs wetted materials (hold, W12)'],
      "General arrangement, side elevation. Shop, not stamped (AQS-STD-001 section 7)."),
     ("nozzle_orient", full, (0, 0, -1),
-     ['15 schedule rows of docs-authority/nozzles/NOX_SCRUB.csv at tag, face and bore',
+     [f'{R["nozzle_count_schedule"]} schedule rows of docs-authority/nozzles/NOX_SCRUB.csv at tag, face and bore',
       'Inlets -Y: N1-N4 at z 400, N13-N15 at z 160, N11/N12 (nitric vents, no schedule '
       'datum) drawn at z 3400 in the gas space - hold, W12',
       'Outlets +Y at z 1500: N5 DN50, N6 DN15, N7 DN25, N8 DN50; N9 drain boss lapping '
@@ -59,7 +59,8 @@ SHEETS = [
       'predates the sized column - hold, W12)',
       'The z 400 row packs the full DN 200 chord: the outer nozzles are near-tangent '
       '(set-on fillets are the fabricator s; a distribution manifold is the '
-      'detail-design alternative - hold, W12)'],
+      'detail-design alternative - hold, W12)',
+      'N16 cable power terminal: carried verbatim, not drawn'],
      "Nozzle orientation, top view. Tags/faces/bore per the schedule."),
     ("sh01", shell, (0, 1, 0),
      [f'Column shell OD {C["D_mm"]:g} x t {C["wall_mm"]:g}, z {C["shell_z_mm"][0]:g}..'

@@ -73,7 +73,8 @@ SHEETS = [
       'datum is the placeholder elevation, W12)',
       'Side stubs pierce to the tube axis so every takeoff lands on the vessel; '
       'elevations are the schedule placeholders pending vessel design (duty '
-      'section 4, W12)'],
+      'section 4, W12)',
+      'N10 cable power terminal: carried verbatim, not drawn'],
      "Connection orientation, top view. Tags/faces/bore per the schedule."),
     ("reactor01", reactor, (0, 1, 0),
      [f'Tube DN50 OD {RC["tube"]["od_mm"]:g} x wall {RC["tube"]["wall_mm"]:g}, '

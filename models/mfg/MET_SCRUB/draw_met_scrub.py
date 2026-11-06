@@ -52,12 +52,13 @@ SHEETS = [
       'it would be CPVC (hold, W12)'],
      "General arrangement, side elevation. Shop, not stamped (AQS-STD-001 section 7)."),
     ("nozzle_orient", full, (0, 0, -1),
-     ['9 schedule rows of docs-authority/nozzles/MET_SCRUB.csv at tag, face and bore',
+     [f'{R["nozzle_count_schedule"]} schedule rows of docs-authority/nozzles/MET_SCRUB.csv at tag, face and bore',
       'Inlets -Y: N1 DN50, N2 DN50, N3 DN15 at z 400; N8 DN15 at z 160',
       'Outlets +Y at z 1500: N4 DN15, N5 DN15; N9 DN300 air return at z 600 (house OD '
       '323.9 stub, outside the lib hardware table - hold, W12)',
       'N6 drain boss lapping the skirt ring; N7 vent riser on the top head to the 4103 '
-      'top (2000 datum predates the sized column - hold, W12)'],
+      'top (2000 datum predates the sized column - hold, W12)',
+      'N10 cable power terminal: carried verbatim, not drawn'],
      "Nozzle orientation, top view. Tags/faces/bore per the schedule."),
     ("sh01", shell, (0, 1, 0),
      [f'Column shell OD {C["D_mm"]:g} x t {C["wall_mm"]:g}, z {C["shell_z_mm"][0]:g}..'

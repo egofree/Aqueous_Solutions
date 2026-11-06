@@ -62,14 +62,15 @@ SHEETS = [
       'hold (W12)'],
      "General arrangement, side elevation. Shop, not stamped."),
     ("nozzle_orient", full, (0, 0, -1),
-     ['5 schedule rows of docs-authority/nozzles/REMIN.csv at tag, face and bore',
+     [f'{R["nozzle_count_schedule"]} schedule rows of docs-authority/nozzles/REMIN.csv at tag, face and bore',
       'N1 UPW in on -Y at z 160 (tray riser); N2 potable and N5 remineralised '
       'makeup out on +Y (schedule datums 600 clamped down so the branch and riser '
       'stay inside the box, W12)',
       'N3 drain through the tray floor (50 datum); N4 vent flush at the tank top '
       'head (its 800 datum predates the box, W12)',
       'Atmospheric hose makeup by the connecting line at the face; the schedule '
-      'rating column (Class 150) carried verbatim as text - no flange drawn'],
+      'rating column (Class 150) carried verbatim as text - no flange drawn',
+      'N6 cable power terminal: carried verbatim, not drawn'],
      "Connection orientation, top view. Tags/faces/bore per the schedule."),
     ("sh01", tank, (0, 1, 0),
      [f'Day tank OD 460 x wall {T["wall_mm"]:g} PVC-U, z 40..580, heads, on the '

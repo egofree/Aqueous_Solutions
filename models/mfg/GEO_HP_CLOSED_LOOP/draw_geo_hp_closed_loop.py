@@ -57,14 +57,15 @@ SHEETS = [
       'W12)'],
      "General arrangement, side elevation (end view). Shop, not stamped."),
     ("nozzle_orient", full, (0, 0, -1),
-     ['3 schedule rows of docs-authority/nozzles/GEO_HP_CLOSED_LOOP.csv at tag, '
-      'face and bore',
+     [f'{R["nozzle_count_schedule"]} schedule rows of docs-authority/nozzles/'
+      'GEO_HP_CLOSED_LOOP.csv at tag, face and bore',
       'N3 geothermal loop fluid in on -Y at z 160 - the return from the GHEX '
       'bore field',
       'N1 drain flush at the envelope bottom (50 datum); N2 vent flush at the '
       'envelope top (800 datum = box top)',
       'Atmospheric hose barbs (rows read "Bore not calculated. Rating hose, '
-      'atmospheric"); no flange (W4 110 % rule)'],
+      'atmospheric"); no flange (W4 110 % rule)',
+      'N4 cable power terminal: carried verbatim, not drawn'],
      "Nozzle orientation, top view. Tags/faces/bore per the schedule."),
     ("skid01", skid, (0, 1, 0),
      ['Loop buffer manifold vessel OD 220 x 300 (the seed\'s "loop vessel"; '

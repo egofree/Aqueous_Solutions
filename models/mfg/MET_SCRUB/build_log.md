@@ -12,7 +12,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/MET
 
 - Build bbox 1200 x 1200 x 4103 mm against the 1200 x 1200 x 4103 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/MET_SCRUB/export/met_scrub.step`; export STL closed and manifold, 1 solid(s); `cad/stl/MET_SCRUB.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 9 rows of `docs-authority/nozzles/MET_SCRUB.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- Nozzles: all 10 rows of `docs-authority/nozzles/MET_SCRUB.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
 - A-COL: packing height (2303 mm in two beds), support grid, redistribution disc, liquid distributor and PP mesh demister are solids (envelope solids; ring count not modelled); no stage or HTU count is claimed anywhere
 - Internals basis: node design block (D 800, packed 2303, H 3803) and duty section 3 materials; bed elevations are the layout choice (hold, W12)
 - BOM `models/mfg/MET_SCRUB/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it

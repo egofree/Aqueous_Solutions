@@ -12,7 +12,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/HOP
 
 - Build bbox 600.0 x 600.0 x 600.0 mm: fills the node envelope 600 x 600 x 600 mm exactly (tracker check green)
 - Solid source: build export `models/mfg/HOPPER/export/hopper.step`; export STL closed and manifold, one solid; `cad/stl/HOPPER.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 10 rows of `docs-authority/nozzles/HOPPER.csv` present at face, height and bore, drawn as atmospheric hose barbs per duty section 4; heights at the envelope top clamped with named holds (check.nozzles_drawn)
+- Nozzles: all 11 rows of `docs-authority/nozzles/HOPPER.csv` present at face, height and bore, drawn as atmospheric hose barbs per duty section 4; heights at the envelope top clamped with named holds (check.nozzles_drawn); the N11 solids make-up row is carried verbatim, not drawn
 - A-VES: hopper holdup 0.1424 m3 computed from the model and reported; the duty claims no holdup, so no residence time is derived (duty section 8)
 - BOM `models/mfg/HOPPER/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/HOPPER/drawings/` (GA front/side, nozzle orientation, 2 part sheets, aux, iso; title blocks per AQS-DWG-002); the stale envelope `drawings/GA.md` is superseded
