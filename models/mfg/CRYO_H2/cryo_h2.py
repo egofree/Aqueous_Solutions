@@ -285,13 +285,14 @@ rows = [
      f"{TIERS * ROWS} tube solids) vs node steel_kg {D.get('steel_kg'):g} - basis "
      "difference named, W12; hydrogen service per duty section 3, CA 0 mm"],
     ["2", "Rack frame: skid plate + SHS posts, tie bars, tier ties and side rails + cross ties",
-     1, "316L", round(mass["frame"] + mass["saddles"], 1), "make",
-     "duty section 3 (no ferritic or high-strength steel); SHS 80 x 80 x 5 and skid 12 are "
-     "study sections (W12)"],
+     1, "316L", round(mass["frame"], 1), "make",
+     "frame only; the saddles are item 3 and are priced there once; duty section 3 (no ferritic "
+     "or high-strength steel); SHS 80 x 80 x 5 and skid 12 are study sections (W12)"],
     ["3", "Tube saddles, 3 per tube per tier, with wear groove", N_TUBES * 3, "316L",
      round(SADDLE_UNIT * N_TUBES * 3, 1), "make",
      f"study section; saddle laps the tube 6 mm; drawn {TIERS * ROWS * 3} solids "
-     f"({mass['saddles']:g} kg), booked {N_TUBES * 3} at the drawn unit mass"],
+     f"({mass['saddles']:g} kg), booked {N_TUBES * 3} at the drawn unit mass - the only "
+     "saddle line (item 2 is frame only)"],
     ["4", f"Hydrogen compressor sets, 5-stage diaphragm, 17-4PH H1150 / 316L heads, "
           f"301 SS triple-layer diaphragms", C["units"], "purchase item", "", "buy",
      f"node compressor_design: {C['P_avg_kW']:.4f} kW average / {C['P_peak_kW']:.3f} kW peak, "
