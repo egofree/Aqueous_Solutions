@@ -226,7 +226,7 @@ Table 3.1. Document numbers in use
 | AQS-OPS-001 | `docs-authority/OPERATING_PROCEDURES.md` | A | 2026-10-16 | Operating procedures | current |
 | AQS-OPS-002 | `docs-authority/MAINT_PLAN.md` | A | 2026-10-16 | Maintenance plan | current |
 | AQS-OPS-003 | `docs-authority/SPARES.md` | A | 2026-10-16 | Critical spares list | current |
-| AQS-OQ-001 | `docs-authority/OPEN_QUESTIONS.md` | F | 2026-11-04 | Open questions | current |
+| AQS-OQ-001 | `docs-authority/OPEN_QUESTIONS.md` | G | 2026-11-05 | Open questions | current |
 | AQS-PAR-001 | `docs-authority/PARAMETRIC_MODEL.md` | B | 2026-10-15 | Parametric model | current |
 | AQS-PAR-003 | `docs-authority/BALANCE_RECONCILIATION.md` | E | 2026-10-25 | Mass balance reconciliation | current |
 | AQS-PAR-004 | `docs-authority/GAS_SPECIES.md` | B | 2026-10-15 | Oxygen species ledger | current |
