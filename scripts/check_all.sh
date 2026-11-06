@@ -5,7 +5,8 @@
 # Run every check a change must pass before it is submitted. The checks run on
 # the contributor's own machine; the project uses no hosted build service.
 #
-#   scripts/check_all.sh          tests, staleness, authority contract, citations, style
+#   scripts/check_all.sh          commit identity, tests, staleness, authority contract,
+#                                 citations, style
 #   scripts/check_all.sh --full   the same, then a full regeneration of HEAD twice
 #                                 (slow; commit first)
 #
@@ -17,7 +18,7 @@ full=0
 for arg in "$@"; do
   case "$arg" in
     --full) full=1 ;;
-    -h|--help) sed -n '5,12p' "$0"; exit 0 ;;
+    -h|--help) sed -n '5,13p' "$0"; exit 0 ;;
     *) echo "unknown option: $arg" >&2; exit 2 ;;
   esac
 done
@@ -29,6 +30,19 @@ run() {
   if "$@"; then echo "   pass"; else echo "   FAIL"; failed+=("$name"); fi
 }
 
+check_identity() {
+  # A commit must carry a real author identity. A placeholder address left in a
+  # machine-wide Git setting is rejected here before it reaches the history.
+  local email
+  email="$(git config user.email || true)"
+  if [ -z "$email" ]; then echo "   git user.email is not set"; return 1; fi
+  case "$email" in
+    *@example.com|*@example.org|*@example.net|*@local|*@localhost|*.local)
+      echo "   git user.email '$email' is a placeholder; set your own identity"; return 1 ;;
+  esac
+}
+
+run commit-identity     check_identity
 run tests               python3 -m pytest -q flow_graph/
 run staleness           python3 -m flow_graph.param.regen --check
 run authority-contract  python3 flow_graph/check_authority_contract.py
