@@ -37,9 +37,11 @@
       6396.0
     ],
     "material": "SA-312 TP316L seamless DN100 Sch 160, B16.11 Class 9000 fittings / autoclave cone-and-thread, O2 bank cleaned to ASTM G93",
-    "drawn_mass_kg": 7084.0,
+    "drawn_count": 16,
+    "drawn_mass_kg": 3333.7,
+    "booked_mass_kg": 7084.0,
     "node_steel_kg": 5865.5712,
-    "note": "drawn tube set vs the node steel_kg: the node figure is the receivers.py sizing record and is carried, not recalculated (WORK_ORDER W12)"
+    "note": "booked tube set vs the node steel_kg: the node figure is the receivers.py sizing record and is carried, not recalculated (WORK_ORDER W12); the tier grid draws 16 tube solids against the 34 booked"
   },
   "compressors": {
     "units": 2,
@@ -52,7 +54,7 @@
   "relief": {
     "design_kPa": 22000.0,
     "relief_mm": 13.0,
-    "basis": "node relief_basis: API 520 with the API 521 fire case per half bank (16 tubes per half); valves on the bank piping, purchase scope"
+    "basis": "node relief_basis: API 520 with the API 521 fire case per half bank (17 tubes per half); valves on the bank piping, purchase scope"
   },
   "storage": {
     "store_kg": null,

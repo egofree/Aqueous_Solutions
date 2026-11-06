@@ -35,9 +35,9 @@ SHEETS = [
     ("ga_front", full, (0, 1, 0),
      [f'Keys: {L:g} x {W:g} x {H:g} mm overall - the A-M-167 rack envelope (node size_mm), '
       'filled exactly',
-      f'{T["count"]} cylinder tubes SA-312 TP316L DN100 Sch 160, OD {T["od_mm"]:g} x t '
-      f'{T["wall_mm"]:g}, {T["length_mm"] / 1000:g} m, in {TIERS} tiers '
-      f"(z {'/'.join(f'{v:g}' for v in TIER_Z)}) x {ROWS} rows",
+      f'{T["count"]} tubes booked ({TIERS * ROWS} tube solids drawn) SA-312 TP316L DN100 '
+      f'Sch 160, OD {T["od_mm"]:g} x t {T["wall_mm"]:g}, {T["length_mm"] / 1000:g} m, in '
+      f'{TIERS} tiers (z ' + '/'.join(f'{v:g}' for v in TIER_Z) + f') x {ROWS} rows',
       f'Rows y < {W / 2:g} are relief half 1, above half 2 ({T["count"] // HALVES} tubes per '
       'half, node fire case)',
       '2 purchased 5-stage diaphragm hydrogen compressors in the +X end bay (node '
@@ -73,8 +73,10 @@ SHEETS = [
       'WORK_ORDER route (F-COL)'],
      "Fabricated part sheet: rack frame + saddles."),
     ("in01", tubes, (0, 1, 0),
-     [f'Tube bank: {T["count"]} tubes OD {T["od_mm"]:g} x t {T["wall_mm"]:g} x {T["length_mm"] / 1000:g} m '
-      f'in {TIERS} tiers x {ROWS} rows; bores drawn open, {T["drawn_mass_kg"]:g} kg drawn wall mass',
+     [f'Tube bank: {T["count"]} tubes booked ({TIERS * ROWS} tube solids drawn), OD '
+      f'{T["od_mm"]:g} x t {T["wall_mm"]:g} x {T["length_mm"] / 1000:g} m in {TIERS} tiers x '
+      f'{ROWS} rows; bores drawn open, {T["drawn_mass_kg"]:g} kg drawn wall mass '
+      f'({T["booked_mass_kg"]:g} kg booked)',
       f'Node steel_kg {T["node_steel_kg"]:g} is the receivers.py sizing record - carried, not '
       'recalculated (basis difference named, WORK_ORDER W12)',
       'End fittings B16.11 Class 9000 / autoclave cone-and-thread per the node material string',
@@ -102,13 +104,14 @@ BAND = 100   # notes band appended under the drawing; _drawings.py stamps the ti
 
 def add_notes(svg_path, notes):
     import re
+    from xml.sax.saxutils import escape
     s = svg_path.read_text()
     if "aqs-fab-notes" in s:
         return
     w = float(re.search(r'width="([\d.]+)"', s).group(1))
     h = float(re.search(r'height="([\d.]+)"', s).group(1))
     s = re.sub(r'height="[\d.]+"', f'height="{h + BAND}"', s, count=1)
-    rows = [f"Graph revision {REV} - {svg_path.stem}: {n}" for n in notes]
+    rows = [f"Graph revision {REV} - {svg_path.stem}: {escape(n)}" for n in notes]
     block = f'<g id="aqs-fab-notes" transform="translate(0,{h})" font-family="DejaVu Sans,sans-serif" font-size="10" fill="#000">'
     for i, n0 in enumerate(rows):
         block += f'<text x="6" y="{24 + 13 * i}">{n0}</text>'

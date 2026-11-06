@@ -16,8 +16,8 @@ dimension is an authority figure or a named layout choice:
   register A-M-167) and the build fills it exactly. Tubes stand in derived tiers
   and rows; the stations are reported in check.json.
 - The two hydrogen compressors of node compressor_design (5-stage diaphragm,
-  17-4PH H1150 / 316L, 301 SS triple-layer diaphragms, 0.9325 kW average /
-  2.797 kW peak, 2 units) are purchased items (AQS-PLAN-006 rule 6): drawn as
+  17-4PH H1150 / 316L, 301 SS triple-layer diaphragms, 0.9434 kW average /
+  2.830 kW peak, 2 units) are purchased items (AQS-PLAN-006 rule 6): drawn as
   their envelope and interface in the +X end bay of the rack.
 - Frame: 12 mm skid plate, hollow 80 x 80 x 5 SHS posts and rails (316L per duty
   section 3: annealed, nickel toward the top of the range, AQS-REV-H2-001),
@@ -239,6 +239,7 @@ dims = [round(bb.xlen, 1), round(bb.ylen, 1), round(bb.zlen, 1)]
 inside = all(d <= s + 1.0 for d, s in zip(dims, [L, W, H]))
 tube_mass = math.pi / 4 * (TUBE_OD ** 2 - (TUBE_OD - 2 * TUBE_WALL) ** 2) * TUBE_LEN * RHO / 1e9
 mass = {k: round(v.val().Volume() * RHO / 1e9, 1) for k, v in parts.items()}
+SADDLE_UNIT = mass["saddles"] / (TIERS * ROWS * 3)   # drawn unit mass; the booked row is priced at it
 report = {
     "bbox_mm": dims, "inside_size_mm": inside,
     "size_mm": P["size_mm"], "size_basis": P.get("size_basis"),
@@ -248,17 +249,20 @@ report = {
               "halves": HALVES, "tiers_z_mm": TIER_Z, "rows_y_mm": [round(v, 1) for v in ROW_Y],
               "tube_x_span_mm": [X0, X0 + TUBE_LEN],
               "material": D["material"],
-              "drawn_mass_kg": round(N_TUBES * tube_mass, 1),
+              "drawn_count": TIERS * ROWS,
+              "drawn_mass_kg": round(TIERS * ROWS * tube_mass, 1),
+              "booked_mass_kg": round(N_TUBES * tube_mass, 1),
               "node_steel_kg": D.get("steel_kg"),
-              "note": "drawn tube set vs the node steel_kg: the node figure is the receivers.py "
-              "sizing record and is carried, not recalculated (WORK_ORDER W12)"},
+              "note": "booked tube set vs the node steel_kg: the node figure is the receivers.py "
+              "sizing record and is carried, not recalculated (WORK_ORDER W12); the tier grid "
+              f"draws {TIERS * ROWS} tube solids against the {N_TUBES} booked"},
     "compressors": {"units": C["units"], "stages": C["n_stages"], "kW_avg": C["P_avg_kW"],
                     "kW_peak": C["P_peak_kW"], "material": C["material"],
                     "note": "purchased envelopes and interfaces (AQS-PLAN-006 rule 6), ratings "
                     "from the node compressor_design; drawn in the +X end bay of the rack"},
     "relief": {"design_kPa": P.get("design_kPa"), "relief_mm": P.get("relief_mm"),
                "basis": "node relief_basis: API 520 with the API 521 fire case per half bank "
-               "(16 tubes per half); valves on the bank piping, purchase scope"},
+               f"({N_TUBES // HALVES} tubes per half); valves on the bank piping, purchase scope"},
     "storage": {"store_kg": P.get("store_kg"), "water_volume_m3": P.get("store_water_volume_m3"),
                 "basis": P.get("store_basis")},
     "nozzles_drawn": drawn,
@@ -276,15 +280,18 @@ rows = [
     ["1", f"Cylinder tubes SA-312 TP316L seamless DN100 Sch 160, OD {TUBE_OD:g} x t "
           f"{TUBE_WALL:g}, {TUBE_LEN / 1000:g} m", N_TUBES, "316L (annealed, AQS-REV-H2-001)",
      round(N_TUBES * tube_mass, 1), "buy",
-     "node design block (OD/wall/length, A-M-167); drawn set "
-     f"{round(N_TUBES * tube_mass, 1):g} kg vs node steel_kg {D.get('steel_kg'):g} - basis "
+     "node design block (OD/wall/length, A-M-167); booked set "
+     f"{round(N_TUBES * tube_mass, 1):g} kg ({N_TUBES} tubes; the tier grid draws "
+     f"{TIERS * ROWS} tube solids) vs node steel_kg {D.get('steel_kg'):g} - basis "
      "difference named, W12; hydrogen service per duty section 3, CA 0 mm"],
     ["2", "Rack frame: skid plate + SHS posts, tie bars, tier ties and side rails + cross ties",
      1, "316L", round(mass["frame"] + mass["saddles"], 1), "make",
      "duty section 3 (no ferritic or high-strength steel); SHS 80 x 80 x 5 and skid 12 are "
      "study sections (W12)"],
     ["3", "Tube saddles, 3 per tube per tier, with wear groove", N_TUBES * 3, "316L",
-     mass["saddles"], "make", "study section; saddle laps the tube 6 mm"],
+     round(SADDLE_UNIT * N_TUBES * 3, 1), "make",
+     f"study section; saddle laps the tube 6 mm; drawn {TIERS * ROWS * 3} solids "
+     f"({mass['saddles']:g} kg), booked {N_TUBES * 3} at the drawn unit mass"],
     ["4", f"Hydrogen compressor sets, 5-stage diaphragm, 17-4PH H1150 / 316L heads, "
           f"301 SS triple-layer diaphragms", C["units"], "purchase item", "", "buy",
      f"node compressor_design: {C['P_avg_kW']:.4f} kW average / {C['P_peak_kW']:.3f} kW peak, "
