@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "58278e97fc35de5fee32473dc5dd8bbbfc6247ed3e37c2d95cb21a2ca83cd1ef",
+  "graph_sha256": "56dc86012f6aad9c3c41528a7d0c5ed72e2f112a99e5a9a36c4a7c7b8d3a90fe",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 369.06,
-   "calc_kw": 369.06,
+   "kw": 369.041,
+   "calc_kw": 369.041,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,9 +16,9 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 191.019,
-   "calc_kw": 191.019,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 191.0 kW, charge 868.2 kW, 2674 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 190.999,
+   "calc_kw": 190.999,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 191.0 kW, charge 868.1 kW, 2674 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -43,9 +43,9 @@
   {
    "unit": "H2O_ELYZ",
    "role": "load",
-   "kw": 24.0,
-   "calc_kw": 24.0,
-   "basis": "X-PAR-12 TF: 10.47 kg/d H2 x 55.0 kWh/kg / 24 h; rated 96.0 kW on a 6.0 h PV window.",
+   "kw": 23.977,
+   "calc_kw": 23.977,
+   "basis": "X-PAR-12 TF: 10.46 kg/d H2 x 55.0 kWh/kg / 24 h; rated 95.9 kW on a 6.0 h PV window.",
    "class": "calculated",
    "sector": "CRYO"
   },
@@ -171,7 +171,7 @@
    "role": "load",
    "kw": 0.943,
    "calc_kw": 0.943,
-   "basis": "X-MFG-36 (A-M-169): 11.47 kg/d x 1.97 kWh/kg; peak 2.83 kW over the run hours.",
+   "basis": "X-MFG-36 (A-M-169): 11.46 kg/d x 1.97 kWh/kg; peak 2.83 kW over the run hours.",
    "class": "calculated",
    "sector": "CRYO"
   },
@@ -635,15 +635,6 @@
    "sector": "MFG"
   },
   {
-   "unit": "BACKUP_GEN",
-   "role": "generation",
-   "kw": 0.008,
-   "calc_kw": 0.008,
-   "basis": "X-PAR-12 TF: standby, NFPA 110 exercise average",
-   "class": "calculated",
-   "sector": "ELEC"
-  },
-  {
    "unit": "LITHO_DEV",
    "role": "\u2014",
    "kw": 0.008,
@@ -651,6 +642,15 @@
    "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-287).",
    "class": "calculated",
    "sector": "FAB"
+  },
+  {
+   "unit": "BACKUP_GEN",
+   "role": "generation",
+   "kw": 0.004,
+   "calc_kw": 0.004,
+   "basis": "X-PAR-12 TF: standby, NFPA 110 exercise average",
+   "class": "calculated",
+   "sector": "ELEC"
   },
   {
    "unit": "LITHO_ALIGN",
@@ -939,10 +939,10 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 103,
-  "graph_sum_kW": 183.53,
-  "calc_sum_kW": 183.53,
+  "graph_sum_kW": 183.51,
+  "calc_sum_kW": 183.51,
   "connected_load_kW": 183.5,
-  "connected_calculated_kW": 174.0,
+  "connected_calculated_kW": 173.9,
   "connected_standby_kW": 0.1,
   "connected_study_kW": 9.5,
   "connected_calculated_pct": 94.8,

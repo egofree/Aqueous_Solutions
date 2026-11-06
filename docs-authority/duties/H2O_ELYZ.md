@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 93.58 kg/d. Mass out 93.58 kg/d. Electrical duty 23.9997 kW. In: IA-ELY-H2O 93.58 kg/d (electrolyser feed water). Out: IA-ELY-H2 10.47 kg/d (electrolyser H2); IA-ELY-O2 83.11 kg/d (electrolyser O2).
+1. Basis. Mass in 93.5 kg/d. Mass out 93.5 kg/d. Electrical duty 23.9772 kW. In: IA-ELY-H2O 93.5 kg/d (electrolyser feed water). Out: IA-ELY-H2 10.46 kg/d (electrolyser H2); IA-ELY-O2 83.03 kg/d (electrolyser O2).
 
 2. Size.
-- Envelope 1800×800×1600 mm, 2.304 m³. That box over this flow would be 590.9 h if it were full. It is not a residence time.
+- Envelope 1800×800×1600 mm, 2.304 m³. That box over this flow would be 591.4 h if it were full. It is not a residence time.
 - Envelope basis (graph node): the PEM stack skid: stack + power electronics + water loop at the 21.445 kW duty.
 - Sizing study pending (study): kwh_per_kg_h2 55.
 - Graph design (AQS-PAR-001 sizing): duty PEM electrolysis: 83.62 kg/d water -> 9.358 kg/d H2 + 74.263 kg/d O2 at 21.445 kW; kwh_per_kg_h2 55.

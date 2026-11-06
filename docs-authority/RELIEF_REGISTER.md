@@ -13,11 +13,11 @@ Vessel cases come from the graph (write_graph relief, API520). Machine interstag
 | CRYO_H2 | vessel | 22000.0 | - | 1.6424 | 0.21 | 13.0 | yes |
 | CRYO_O2 | vessel | 22000.0 | - | 12.4107 | 0.28 | 9.0 | yes |
 | H2O_ELYZ | vessel | 990.0 | blocked outlet at full inflow 1.789 kg/h (hydrogen side of the PEM stack at the compressor | 1.7886 | 0.98 | 3.3 | yes |
-| H2 compressor stage 1 | interstage PSV | 1901.3 | blocked discharge at 1.433 kg/h, 125 C | 1.433 | 0.65 | 6.0 | yes |
-| H2 compressor stage 2 | interstage PSV | 3544.6 | blocked discharge at 1.433 kg/h, 125 C | 1.433 | 0.49 | 6.0 | yes |
-| H2 compressor stage 3 | interstage PSV | 6536.3 | blocked discharge at 1.433 kg/h, 125 C | 1.433 | 0.36 | 6.0 | yes |
-| H2 compressor stage 4 | interstage PSV | 11982.8 | blocked discharge at 1.433 kg/h, 125 C | 1.433 | 0.27 | 6.0 | yes |
-| H2 compressor stage 5 | interstage PSV | 21898.7 | blocked discharge at 1.433 kg/h, 125 C | 1.433 | 0.2 | 6.0 | yes |
+| H2 compressor stage 1 | interstage PSV | 1901.3 | blocked discharge at 1.432 kg/h, 125 C | 1.432 | 0.65 | 6.0 | yes |
+| H2 compressor stage 2 | interstage PSV | 3544.6 | blocked discharge at 1.432 kg/h, 125 C | 1.432 | 0.49 | 6.0 | yes |
+| H2 compressor stage 3 | interstage PSV | 6536.3 | blocked discharge at 1.432 kg/h, 125 C | 1.432 | 0.36 | 6.0 | yes |
+| H2 compressor stage 4 | interstage PSV | 11982.8 | blocked discharge at 1.432 kg/h, 125 C | 1.432 | 0.27 | 6.0 | yes |
+| H2 compressor stage 5 | interstage PSV | 21898.7 | blocked discharge at 1.432 kg/h, 125 C | 1.432 | 0.2 | 6.0 | yes |
 | CO2 compressor stage 1 | interstage PSV | 131.3 | blocked discharge at 2.848 kg/h, 122 C | 2.848 | 1.09 | 6.0 | yes |
 | CO2 compressor stage 2 | interstage PSV | 390.6 | blocked discharge at 2.848 kg/h, 122 C | 2.848 | 0.81 | 6.0 | yes |
 | CO2 compressor stage 3 | interstage PSV | 939.0 | blocked discharge at 2.848 kg/h, 122 C | 2.848 | 0.58 | 6.0 | yes |

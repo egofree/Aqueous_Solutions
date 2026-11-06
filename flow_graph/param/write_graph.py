@@ -5,7 +5,7 @@ Stage 'power' (after the load list, one line and AQS-ELEC-007 are regenerated) w
 and inverter sizes from docs-authority/_power_sizing.py.
 Run: python3 -m flow_graph.param.write_graph [process|power]"""
 import json, math, os, subprocess, sys
-from . import solver, drivers as DR, site as SITE
+from . import solver, drivers as DR, site as SITE, backup_fuel as BF
 ROOT = solver.ROOT; GP = os.path.join(ROOT,'flow_graph/plant_flow_graph.json')
 TAG = 'X-PAR acid-loop decision (AQS-PAR-001 \u00a73)'
 ELEC_IN = ('S17-BMED','S17-EW','SF-EVAP_ACID','SF-EVAP_BASE','SF-EVAP_ACID_VS','SF-GEO_HP_CLOSED_LOOP')
@@ -521,10 +521,10 @@ def power():
             N[_primary_unit]['continuous_kw'] = {'value': round(p['P_kW'], 4), 'unit': 'kW', 'status': 'study',
                 'note': f'{_kind} primary: {p["P_kW"]:.2f} kW demand / capacity factor {p.get("capacity_factor", 0)} = {p.get("nameplate_kw", 0)} nameplate.'}
         _write_storage_generic(g, N, p, d)
-        gen_kw = DR.val(d, 'backup_gen_rated_kW')
+        gen = BF.rating_kw(N, d)
         if 'BACKUP_GEN' in N:
-            N['BACKUP_GEN']['params'].update(rated_kW=gen_kw,
-                rated_kW_basis='drivers.json backup_gen_rated_kW (D3).')
+            N['BACKUP_GEN']['params'].update(rated_kW=gen['rated_kW'],
+                rated_kW_basis='flow_graph/param/backup_fuel.py rating_kw: ' + gen['basis'] + '.')
         open(GP, 'w').write(json.dumps(g, indent=2))
         print(f'{_kind} primary written to {_primary_unit} (generic path); storage and mvs.electrical updated')
         return
@@ -573,12 +573,14 @@ def power():
     E['SF-EXT_HALL']['rate'] = {'value': kw, 'unit': 'kW', 'status': 'study', 'note': 'Equals EXT_HALL continuous_kw (X-PAR-07).'}
     pv1 = E['IA-PV-01']['rate']; pv1['value'] = round(pv1['value'] + kw - old, 4)
     if 'X-PAR-07' not in pv1.get('note', ''): pv1['note'] = pv1.get('note', '') + f' X-PAR-07 extension hall: +{kw:.2f} kW.'
-    # D3 (2026-10-18): BACKUP_GEN rated kW stamped on the graph by this writer from the single governed source
-    # drivers.json backup_gen_rated_kW (AQS-ELEC-007/AQS-RED-001 NFPA 110 rule); o2_close and _power_sizing read the same key.
-    gen_kw = DR.val(d, 'backup_gen_rated_kW')
-    N['BACKUP_GEN']['params'].update(rated_kW=gen_kw,
-        rated_kW_basis='drivers.json backup_gen_rated_kW: single governed source (D3). Standby genset at 125 % of the critical list in 5 kW steps '
-                        '(AQS-ELEC-007 / AQS-RED-001, NFPA 110 standby basis); written by write_graph power(), read by docs-authority/_power_sizing.py and o2_close.py.')
+    # D3 (2026-10-18), re-based at owner ruling Q-040 (2026-11-05): BACKUP_GEN rated kW stamped on the
+    # graph by this writer from the live critical list - flow_graph/param/backup_fuel.py rating_kw
+    # (125 % of the list, 5 kW commercial steps; AQS-ELEC-007/AQS-RED-001 NFPA 110 standby basis);
+    # o2_close and _power_sizing call the same function.
+    gen = BF.rating_kw(N, d)
+    N['BACKUP_GEN']['params'].update(rated_kW=gen['rated_kW'],
+        rated_kW_basis='flow_graph/param/backup_fuel.py rating_kw (single computation, owner ruling Q-040 2026-11-05): ' + gen['basis']
+                       + '; written by write_graph power(), read by docs-authority/_power_sizing.py and o2_close.py.')
     # D4 companion: keep the ZNBR2 per-inverter distribution live with the section count (AQS-ELEC-008)
     N['ZNBR2']['params']['distribution'] = (f"distributed over the {p['inverters']} hybrid inverters, {p['store_kWh']/p['inverters']:.1f} kWh and "
                                             f"{p['charge_kW']/p['inverters']:.1f} kW charge each (AQS-ELEC-008)")
@@ -626,7 +628,7 @@ def power():
     open(GP,'w').write(json.dumps(g, indent=2))
     subprocess.run([sys.executable,'docs-authority/_collection_bus.py'],cwd=ROOT,capture_output=True,text=True,check=True)   # X-ELS-11 sections
     print(f"PV {kwp} kWp, storage {math.ceil(p['store_kW'])} kW / {math.ceil(p['store_kWh'])} kWh, inverters {p['inverters']} x 60 kW; "
-          f"mvs.electrical need {round(p['P_kW'],2)} kW / target {round(target,2)} kW; BACKUP_GEN {gen_kw:.0f} kW")
+          f"mvs.electrical need {round(p['P_kW'],2)} kW / target {round(target,2)} kW; BACKUP_GEN {gen['rated_kW']:.0f} kW")
 
 def heat():
     """X-THM-01 store-ledger re-solve (R10b, A-M-259). Two Rev AC defects: (1) the kW-unit ladder-family edges

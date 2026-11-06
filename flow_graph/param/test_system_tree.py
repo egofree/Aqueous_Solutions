@@ -216,13 +216,17 @@ def test_aggregate(tree: SystemTree, graph: dict) -> None:
     # IA-PV-01 edge rate — and the test requires the two to agree (stale-writer guard).
     # mvs.electrical.target_kw is deliberately NOT compared to it: it is the INSTALLED array's
     # mean-day average (pv_oversize x roof factor x the same balancing basis) — a different
-    # quantity. FUEL_CELL and BACKUP_GEN are model inputs, and those stay pinned:
+    # quantity. FUEL_CELL is a model input and stays pinned; BACKUP_GEN's rating is the live
+    # critical-list rating (owner ruling Q-040, 2026-11-05), so its exercise average is checked
+    # against the NFPA 110 8.4.2 basis from the rated kW the graph carries, not a frozen number:
     _by_unit = {n["unit_id"]: n for n in graph["nodes"]}
     _pv = _by_unit["PV_ARRAY"]["continuous_kw"]["value"]
     _pv_edge = next(e for e in graph["edges"] if e["stream_id"] == "IA-PV-01")["rate"]["value"]
     assert _pv == _pv_edge
     assert _by_unit["FUEL_CELL"]["continuous_kw"]["value"] == 4.0   # REQ-FC-CONT
-    assert _by_unit["BACKUP_GEN"]["continuous_kw"]["value"] == pytest.approx(0.0082)   # X-PAR-12 standby, NFPA 110 exercise average
+    _bg = _by_unit["BACKUP_GEN"]
+    _ex = round(_bg["params"]["rated_kW"] * 0.30 * 0.5 * 12 / 365 / 24, 4)   # exercise_load_frac x exercise_h, monthly; the writer rounds to 4 dp
+    assert _bg["continuous_kw"]["value"] == pytest.approx(_ex)   # X-PAR-12 standby, NFPA 110 exercise average
     assert gen["presence"] == "present"
     # worst presence: retired (S13_CLASS_TREAT) < placeholder (GEO_ORC) < present
     assert tree.aggregate(

@@ -1,5 +1,5 @@
 room,level,sector,units,area_m2,volume_m3,hazardous,extract_m3_h,ach,makeup_m3_h,governs,fan_kW,fans
-L-1 CRYO,L-1,CRYO,15,130.2,781,yes,4340,5.6,4123,heat,1.768,"2 x 100 % extract, 2 x 100 % make-up"
+L-1 CRYO,L-1,CRYO,15,130.2,781,yes,4337,5.6,4120,heat,1.767,"2 x 100 % extract, 2 x 100 % make-up"
 L-1 DIGESTER,L-1,DIGESTER,15,48.9,293,yes,894,3.0,850,IFC 5004.3,0.364,"2 x 100 % extract, 2 x 100 % make-up"
 L-1 GAS,L-1,GAS,2,1.4,8,yes,25,3.0,24,IFC 5004.3,0.01,"2 x 100 % extract, 2 x 100 % make-up"
 L-1 GLASS,L-1,GLASS,5,12.5,75,yes,229,3.0,217,IFC 5004.3,0.093,"2 x 100 % extract, 2 x 100 % make-up"
@@ -10,7 +10,7 @@ L-1 WTR,L-1,WTR,2,8.1,48,yes,147,3.0,140,IFC 5004.3,0.06,"2 x 100 % extract, 2 x
 L-2 WTR,L-2,WTR,1,432.0,4320,no,467,0.1,443,ASHRAE 62.1,0.19,"2 x 100 % extract, 2 x 100 % make-up"
 L0 DIGESTER,L0,DIGESTER,12,27.6,165,yes,4459,27.0,4236,heat,1.817,"2 x 100 % extract, 2 x 100 % make-up"
 L0 DOCK,L0,DOCK,2,8.7,52,no,9,0.2,9,ASHRAE 62.1,0.004,"2 x 100 % extract, 2 x 100 % make-up"
-L0 ELEC,L0,ELEC,8,18.0,108,yes,42246,391.0,40133,heat,17.211,"2 x 100 % extract, 2 x 100 % make-up"
+L0 ELEC,L0,ELEC,8,18.0,108,yes,42242,390.9,40130,heat,17.21,"2 x 100 % extract, 2 x 100 % make-up"
 L0 FAB,L0,FAB,17,27.6,166,yes,506,3.0,480,IFC 5004.3,0.206,"2 x 100 % extract, 2 x 100 % make-up"
 L0 FARM,L0,FARM,1,11.4,68,no,12,0.2,12,ASHRAE 62.1,0.005,"2 x 100 % extract, 2 x 100 % make-up"
 L0 FOUNDRY,L0,FOUNDRY,27,50.3,302,no,1422,4.7,1351,heat,0.579,"2 x 100 % extract, 2 x 100 % make-up"

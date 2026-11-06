@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 39 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 72 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 528 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 527 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 39 | Commissioning record |
 
-Total 751 items: 347 drivers, 404 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 750 items: 346 drivers, 404 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -281,7 +281,6 @@ Total 751 items: 347 drivers, 404 register entries. Classification rule: first m
 | driver atm_design_sg | 1.25 - liquid specific gravity for the hydrostatic case of atmospheric vessels (covers 20 wt% HCl 1.10 and 20 wt% NaOH 1.22) | Replace with the stored liquid density per unit at its unit sizing task | X-PAR |
 | driver atm_hold_d | {"store": 2.0, "process": 1.0} d of liquid inflow held: stores (tank, product, reagent, cut_tank, dock, ROOF_TANK, FAB_UPW_TANK) and process units | Replace with each unit's sized volume at unit task 02 | X-PAR |
 | driver atomizer_offspec_frac | 0.1 - | see A-M-139 | X-PAR |
-| driver backup_gen_rated_kW | 40.0 kW | Critical-load list confirmation at unit task 02 completion; acceptance load test per NFPA 110 8.4.9 at 4 h | X-PAR |
 | driver baghouse_ac_basis_m3_min_m2 | 1.2 m3/min/m2 air-to-cloth ratio (EPA-453 baghouse practice) | Baghouse pressure-drop test at the design air-to-cloth | X-PAR |
 | driver baghouse_bag_count | 20 bags D150 x 1200 mm, 5 x 4 field | As-built bag count | X-PAR |
 | driver baghouse_hood_face_velocity_m_s | 0.5 m/s hood face velocity (ACGIH industrial-ventilation class) | Capture-velocity measurement at each hood (ACGIH_IND_VENT) | X-PAR |

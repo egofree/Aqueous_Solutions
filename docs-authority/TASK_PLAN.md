@@ -2090,7 +2090,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-CRYO_DED_COOL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_DED_COOL-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 40: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-CRYO_DED_COOL-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-CRYO_DED_COOL-14, X-COM-01. Triage: hardware.
 - **CRYO-CRYO_H2** (cold_box, sector CRYO)
-  - [x] CRYO-CRYO_H2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_H2.md` §1; mass in = out 11.47 kg/d, 0.9434 kW.
+  - [x] CRYO-CRYO_H2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_H2.md` §1; mass in = out 11.46 kg/d, 0.9425 kW.
   - [x] CRYO-CRYO_H2-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: CRYO-CRYO_H2-01. Evidence: `docs-authority/sizing/GAS_RECEIVERS.md` (AQS-DUTY-065).
   - [x] CRYO-CRYO_H2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: CRYO-CRYO_H2-01, CRYO-CRYO_H2-02. Evidence: `docs-authority/pid/CRYO_H2.svg` (AQS-PID-001).
   - [x] CRYO-CRYO_H2-04 Nozzle schedule. Done when: docs-authority/nozzles/CRYO_H2.csv, one row per edge. Depends: CRYO-CRYO_H2-03. Evidence: `docs-authority/nozzles/CRYO_H2.csv` (all 5 process connections listed).
@@ -2138,7 +2138,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-CRYO_N2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_N2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 44: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-CRYO_N2-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-CRYO_N2-14, X-COM-01. Triage: hardware.
 - **CRYO-CRYO_O2** (cold_box, sector CRYO)
-  - [x] CRYO-CRYO_O2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_O2.md` §1; mass in = out 85.58 kg/d, 0.0000 kW.
+  - [x] CRYO-CRYO_O2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_O2.md` §1; mass in = out 85.5 kg/d, 0.0000 kW.
   - [x] CRYO-CRYO_O2-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: CRYO-CRYO_O2-01. Evidence: `docs-authority/sizing/GAS_RECEIVERS.md` (AQS-DUTY-065).
   - [x] CRYO-CRYO_O2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: CRYO-CRYO_O2-01, CRYO-CRYO_O2-02. Evidence: `docs-authority/pid/CRYO_O2.svg` (AQS-PID-001).
   - [x] CRYO-CRYO_O2-04 Nozzle schedule. Done when: docs-authority/nozzles/CRYO_O2.csv, one row per edge. Depends: CRYO-CRYO_O2-03. Evidence: `docs-authority/nozzles/CRYO_O2.csv` (all 7 process connections listed).
@@ -2154,7 +2154,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-CRYO_O2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-CRYO_O2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 66: level position, structural/hoist supports, connections named per edge).
   - [ ] CRYO-CRYO_O2-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-CRYO_O2-14, X-COM-01. Triage: hardware.
 - **CRYO-H2O_ELYZ** (pem_electrolyser, sector CRYO)
-  - [x] CRYO-H2O_ELYZ-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/H2O_ELYZ.md` §1; mass in = out 93.58 kg/d, 23.9997 kW.
+  - [x] CRYO-H2O_ELYZ-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/H2O_ELYZ.md` §1; mass in = out 93.5 kg/d, 23.9772 kW.
   - [x] CRYO-H2O_ELYZ-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: CRYO-H2O_ELYZ-01. Evidence: `docs-authority/sizing/H2O_ELYZ.md` (AQS-SIZE-H2O_ELYZ).
   - [x] CRYO-H2O_ELYZ-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: CRYO-H2O_ELYZ-01, CRYO-H2O_ELYZ-02. Evidence: `docs-authority/pid/H2O_ELYZ.svg` (AQS-PID-001).
   - [x] CRYO-H2O_ELYZ-04 Nozzle schedule. Done when: docs-authority/nozzles/H2O_ELYZ.csv, one row per edge. Depends: CRYO-H2O_ELYZ-03. Evidence: `docs-authority/nozzles/H2O_ELYZ.csv` (all 3 process connections listed).
@@ -3065,7 +3065,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-FLUE_KO-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-FLUE_KO-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 65: level position, structural/hoist supports, connections named per edge).
   - [ ] GAS-FLUE_KO-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-FLUE_KO-14, X-COM-01. Triage: hardware.
 - **GAS-H2_DRYER** (dryer, sector GAS)
-  - [x] GAS-H2_DRYER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/H2_DRYER.md` §1; mass in = out 0.9926 kg/d, 0.0197 kW.
+  - [x] GAS-H2_DRYER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/H2_DRYER.md` §1; mass in = out 0.9925 kg/d, 0.0197 kW.
   - [x] GAS-H2_DRYER-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: GAS-H2_DRYER-01. Evidence: `docs-authority/sizing/H2_PURIFIER_BEDS.md` (AQS-DUTY-066).
   - [x] GAS-H2_DRYER-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: GAS-H2_DRYER-01, GAS-H2_DRYER-02. Evidence: `docs-authority/pid/H2_DRYER.svg` (AQS-PID-001).
   - [x] GAS-H2_DRYER-04 Nozzle schedule. Done when: docs-authority/nozzles/H2_DRYER.csv, one row per edge. Depends: GAS-H2_DRYER-03. Evidence: `docs-authority/nozzles/H2_DRYER.csv` (all 6 process connections listed).
@@ -3081,7 +3081,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-H2_DRYER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-H2_DRYER-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 92: level position, structural/hoist supports, connections named per edge).
   - [ ] GAS-H2_DRYER-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-H2_DRYER-14, X-COM-01. Triage: hardware.
 - **GAS-HDR_H2** (header, sector GAS)
-  - [x] GAS-HDR_H2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_H2.md` §1; mass in = out 0.9926 kg/d, 0.0000 kW.
+  - [x] GAS-HDR_H2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_H2.md` §1; mass in = out 0.9925 kg/d, 0.0000 kW.
   - [x] GAS-HDR_H2-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: GAS-HDR_H2-01. Evidence: `docs-authority/sizing/HEADERS.md` (AQS-DUTY-075).
   - [x] GAS-HDR_H2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: GAS-HDR_H2-01, GAS-HDR_H2-02. Evidence: `docs-authority/pid/HDR_H2.svg` (AQS-PID-001).
   - [x] GAS-HDR_H2-04 Nozzle schedule. Done when: docs-authority/nozzles/HDR_H2.csv, one row per edge. Depends: GAS-HDR_H2-03. Evidence: `docs-authority/nozzles/HDR_H2.csv` (all 15 process connections listed).
@@ -3097,7 +3097,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-HDR_H2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-HDR_H2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 91: level position, structural/hoist supports, connections named per edge).
   - [ ] GAS-HDR_H2-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-HDR_H2-14, X-COM-01. Triage: hardware.
 - **GAS-HDR_O2** (header, sector GAS)
-  - [x] GAS-HDR_O2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_O2.md` §1; mass in = out 43.78 kg/d, 0.0000 kW.
+  - [x] GAS-HDR_O2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_O2.md` §1; mass in = out 43.7 kg/d, 0.0000 kW.
   - [x] GAS-HDR_O2-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: GAS-HDR_O2-01. Evidence: `docs-authority/sizing/HEADERS.md` (AQS-DUTY-075).
   - [x] GAS-HDR_O2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: GAS-HDR_O2-01, GAS-HDR_O2-02. Evidence: `docs-authority/pid/HDR_O2.svg` (AQS-PID-001).
   - [x] GAS-HDR_O2-04 Nozzle schedule. Done when: docs-authority/nozzles/HDR_O2.csv, one row per edge. Depends: GAS-HDR_O2-03. Evidence: `docs-authority/nozzles/HDR_O2.csv` (all 8 process connections listed).
@@ -3113,7 +3113,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-HDR_O2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-HDR_O2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 18: level position, structural/hoist supports, connections named per edge).
   - [ ] GAS-HDR_O2-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-HDR_O2-14, X-COM-01. Triage: hardware.
 - **GAS-NOX_SCRUB** (scrubber, sector GAS)
-  - [x] GAS-NOX_SCRUB-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/NOX_SCRUB.md` §1; mass in = out 479.6 kg/d, 0.0389 kW.
+  - [x] GAS-NOX_SCRUB-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/NOX_SCRUB.md` §1; mass in = out 479.5 kg/d, 0.0389 kW.
   - [x] GAS-NOX_SCRUB-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: GAS-NOX_SCRUB-01. Evidence: `docs-authority/sizing/HOUSE_SCRUBBERS.md` (AQS-DUTY-079).
   - [x] GAS-NOX_SCRUB-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: GAS-NOX_SCRUB-01, GAS-NOX_SCRUB-02. Evidence: `docs-authority/pid/NOX_SCRUB.svg` (AQS-PID-001).
   - [x] GAS-NOX_SCRUB-04 Nozzle schedule. Done when: docs-authority/nozzles/NOX_SCRUB.csv, one row per edge. Depends: GAS-NOX_SCRUB-03. Evidence: `docs-authority/nozzles/NOX_SCRUB.csv` (all 11 process connections listed).
@@ -3262,7 +3262,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] WTR-REMIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-REMIN-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 50: level position, structural/hoist supports, connections named per edge).
   - [ ] WTR-REMIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-REMIN-14, X-COM-01. Triage: hardware.
 - **WTR-ROOF_TANK** (tank, sector WTR)
-  - [x] WTR-ROOF_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ROOF_TANK.md` §1; mass in = out 522.4 kg/d, 0.0000 kW.
+  - [x] WTR-ROOF_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ROOF_TANK.md` §1; mass in = out 522.3 kg/d, 0.0000 kW.
   - [x] WTR-ROOF_TANK-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-ROOF_TANK-01. Evidence: `docs-authority/WATER_TOWER.md` (AQS-BLD-014).
   - [x] WTR-ROOF_TANK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-ROOF_TANK-01, WTR-ROOF_TANK-02. Evidence: `docs-authority/pid/ROOF_TANK.svg` (AQS-PID-001).
   - [x] WTR-ROOF_TANK-04 Nozzle schedule. Done when: docs-authority/nozzles/ROOF_TANK.csv, one row per edge. Depends: WTR-ROOF_TANK-03. Evidence: `docs-authority/nozzles/ROOF_TANK.csv` (all 20 process connections listed).
@@ -3297,7 +3297,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 ### ELEC. Utility / header
 
 - **ELEC-BACKUP_GEN** (genset, sector ELEC)
-  - [x] ELEC-BACKUP_GEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BACKUP_GEN.md` §1; mass in = out 0.1981 kg/d, 0.0082 kW.
+  - [x] ELEC-BACKUP_GEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BACKUP_GEN.md` §1; mass in = out 0.1021 kg/d, 0.0041 kW.
   - [x] ELEC-BACKUP_GEN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-BACKUP_GEN-01. Evidence: `docs-authority/POWER_SIZING.md` (AQS-ELEC-007).
   - [x] ELEC-BACKUP_GEN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-BACKUP_GEN-01, ELEC-BACKUP_GEN-02. Evidence: `docs-authority/pid/BACKUP_GEN.svg` (AQS-PID-001).
   - [x] ELEC-BACKUP_GEN-04 Nozzle schedule. Done when: docs-authority/nozzles/BACKUP_GEN.csv, one row per edge. Depends: ELEC-BACKUP_GEN-03. Evidence: `docs-authority/nozzles/BACKUP_GEN.csv` (all 5 process connections listed).
@@ -3361,7 +3361,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] ELEC-LOAD_AGG-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-LOAD_AGG-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 33: level position, structural/hoist supports, connections named per edge).
   - [ ] ELEC-LOAD_AGG-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-LOAD_AGG-14, X-COM-01. Triage: hardware.
 - **ELEC-PV_ARRAY** (pv, sector ELEC)
-  - [x] ELEC-PV_ARRAY-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PV_ARRAY.md` §1; mass in = out 0 kg/d, 369.0604 kW.
+  - [x] ELEC-PV_ARRAY-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PV_ARRAY.md` §1; mass in = out 0 kg/d, 369.0411 kW.
   - [x] ELEC-PV_ARRAY-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-PV_ARRAY-01. Evidence: `docs-authority/POWER_SIZING.md` (AQS-ELEC-007).
   - [x] ELEC-PV_ARRAY-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-PV_ARRAY-01, ELEC-PV_ARRAY-02. Evidence: `docs-authority/pid/PV_ARRAY.svg` (AQS-PID-001).
   - [x] ELEC-PV_ARRAY-04 Nozzle schedule. Done when: docs-authority/nozzles/PV_ARRAY.csv, one row per edge. Depends: ELEC-PV_ARRAY-03. Evidence: `docs-authority/nozzles/PV_ARRAY.csv` (file current; 0 piped kg/d process connections under the _noz_edges rule).
@@ -3409,7 +3409,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] ELEC-SOL_ARK_60K-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-SOL_ARK_60K-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 80: level position, structural/hoist supports, connections named per edge).
   - [ ] ELEC-SOL_ARK_60K-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-SOL_ARK_60K-14, X-COM-01. Triage: hardware.
 - **ELEC-ZNBR2** (flow_battery, sector ELEC)
-  - [x] ELEC-ZNBR2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2.md` §1; mass in = out 811.2 kg/d, 191.0192 kW.
+  - [x] ELEC-ZNBR2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2.md` §1; mass in = out 811.1 kg/d, 190.9992 kW.
   - [x] ELEC-ZNBR2-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-ZNBR2-01. Evidence: `docs-authority/POWER_SIZING.md` (AQS-ELEC-007).
   - [x] ELEC-ZNBR2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-ZNBR2-01, ELEC-ZNBR2-02. Evidence: `docs-authority/pid/ZNBR2.svg` (AQS-PID-001).
   - [x] ELEC-ZNBR2-04 Nozzle schedule. Done when: docs-authority/nozzles/ZNBR2.csv, one row per edge. Depends: ELEC-ZNBR2-03. Evidence: `docs-authority/nozzles/ZNBR2.csv` (all 6 process connections listed).
@@ -3425,7 +3425,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] ELEC-ZNBR2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-ZNBR2-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 79: level position, structural/hoist supports, connections named per edge).
   - [ ] ELEC-ZNBR2-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-ZNBR2-14, X-COM-01. Triage: hardware.
 - **ELEC-ZNBR2_BR2_REGEN** (scrubber, sector ELEC)
-  - [x] ELEC-ZNBR2_BR2_REGEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2_BR2_REGEN.md` §1; mass in = out 802.7 kg/d, 0.0000 kW.
+  - [x] ELEC-ZNBR2_BR2_REGEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2_BR2_REGEN.md` §1; mass in = out 802.6 kg/d, 0.0000 kW.
   - [x] ELEC-ZNBR2_BR2_REGEN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-ZNBR2_BR2_REGEN-01. Evidence: `docs-authority/sizing/ZNBR2_BR2_REGEN.md` (AQS-SIZE-ZNBR2_BR2_REGEN).
   - [x] ELEC-ZNBR2_BR2_REGEN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-ZNBR2_BR2_REGEN-01, ELEC-ZNBR2_BR2_REGEN-02. Evidence: `docs-authority/pid/ZNBR2_BR2_REGEN.svg` (AQS-PID-001).
   - [x] ELEC-ZNBR2_BR2_REGEN-04 Nozzle schedule. Done when: docs-authority/nozzles/ZNBR2_BR2_REGEN.csv, one row per edge. Depends: ELEC-ZNBR2_BR2_REGEN-03. Evidence: `docs-authority/nozzles/ZNBR2_BR2_REGEN.csv` (all 2 process connections listed).

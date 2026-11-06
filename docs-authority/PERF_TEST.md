@@ -39,7 +39,7 @@ Table 3.1. Guarantee points
 | metal from EW_7 | IA-EW-MET-7 | EW_7 | 29.63 | kg/d | weighed cathode harvest | 26.67 - 32.59 |
 | metal from EW_9 | IA-EW-SHEET | EW_9 | 11.98 | kg/d | weighed cathode harvest | 10.79 - 13.18 |
 | metal from EW_1 | IA-COAT-IN | EW_1 | 0.02 | kg/d | weighed cathode harvest | 0.018 - 0.022 |
-| H2 to bank | IA-ELY-H2 | H2O_ELYZ | 10.47 | kg/d | H2O_ELYZ-FT-01 | 9.425 - 11.52 |
-| Plant load (sum of the continuous loads of all consumers, excluding the PV array, fuel cells, generator set, battery and ORC unit) | - | - | 183.5 | kW | revenue-grade meter at LOAD_AGG | <= 201.8 |
+| H2 to bank | IA-ELY-H2 | H2O_ELYZ | 10.46 | kg/d | H2O_ELYZ-FT-01 | 9.416 - 11.51 |
+| Plant load (sum of the continuous loads of all consumers, excluding the PV array, fuel cells, generator set, battery and ORC unit) | - | - | 183.4 | kW | revenue-grade meter at LOAD_AGG | <= 201.8 |
 
 The table has 12 product guarantee points and one plant load point.

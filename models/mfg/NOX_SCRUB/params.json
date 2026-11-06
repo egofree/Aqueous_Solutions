@@ -20,7 +20,7 @@
  "internals": "none",
  "design": {
   "duty": "flue, leach off-gas and nitric vents",
-  "gas_kg_d": 283.5339,
+  "gas_kg_d": 283.4379,
   "Q_m3_s": 0.0027,
   "u_flood_m_s": 2.0195,
   "D_mm": 200,
@@ -28,7 +28,7 @@
   "H_mm": 3803,
   "recirc_m3_h": 0.4775,
   "dP_Pa": 1171.034,
-  "fan_W": 6.4049,
+  "fan_W": 6.4027,
   "pump_W": 32.5201,
   "kW": 0.0389,
   "material": "PP-H shell and in-house cut PP rings; PP mesh demister",

@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.232 | 0.232 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 0.399 | 0.399 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 7.491 | 7.491 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 2649.000 | 2649.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 2648.000 | 2648.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -113,7 +113,6 @@ All solved units close.
 | storage_round_trip | 0.7 | - | A-M-179 | yes |
 | night_hours | 14.0 | h/d served from storage | A-M-060 | yes |
 | crit_autonomy_d | 2.0 | d of critical-load autonomy without sun | AQS-ELEC-007 AUT_CRIT (single governed source, D7 unification 2026-10-18); read by docs-authority/_power_sizing.py and flow_graph/param/o2_close.py (was AUT_CRIT / PSH_STORE_D 2.0 in two homes) | yes |
-| backup_gen_rated_kW | 40.0 | kW | NFPA110_2025 | yes |
 | bus_power_factor | 0.9 | - | AQS-ELEC-002 PF (study) | yes |
 | ppt_naoh_per_cl | 1.0 | mol NaOH per mol chloride precipitated as hydroxide | GREENWOOD | yes |
 | digest_naoh_per_sio2 | 2.0 | mol NaOH per mol SiO2 dissolved | GREENWOOD | yes |
@@ -1056,6 +1055,8 @@ All solved units close.
 | ew_leach_recovery_design | 1.0 | - leach recovery of plateable metal to the EW cascade, the envelope upper bound | AQS-ASSAY-001 | — |
 | ew_minor_metal_arrangement | "selective" | - minor-metal EW arrangement: 'selective' (EW_4/5/6/8/9 as five cells) or 'merged' (one combined minor-metal cell); gold, silver, copper and iron keep their own cells in both | AQS-OQ-001 Q-041 | — |
 | ew_minor_metal_cells | [4, 5, 6, 8, 9] | - EW_n cell numbers of the minor-metal group (the cells the Q-041 merged arrangement combines) | AQS-OQ-001 Q-041 | — |
+| ELEC.generation-train.BACKUP_GEN.crit_margin | 1.25 | - of the critical-list sum (AQS-ELEC-007 / AQS-RED-001 standby rule, NFPA 110) | AQS-ELEC-007 | — |
+| ELEC.generation-train.BACKUP_GEN.rating_step_kw | 5.0 | kW commercial rating step the genset nameplate rounds up to (AQS-ELEC-007) | AQS-ELEC-007 | — |
 
 ## 6. References
 
@@ -1414,7 +1415,6 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver storage_round_trip | 0.7 - | ZNBR2 in-house stack test (X-MFG-41, AQS-TST-002): round trip at 20 mA/cm2 over the daily cycle; the 0.70 design value is held below the physics prediction until then |
 | driver night_hours | 14.0 h/d served from storage | Hourly load and irradiance profile |
 | driver crit_autonomy_d | 2.0 d of critical-load autonomy without sun | Owner outage-basis decision: NFPA 110/111 class vs the PV cloudy-day statistics of the site (AQS-SITE-002 NSRDB run) |
-| driver backup_gen_rated_kW | 40.0 kW | Critical-load list confirmation at unit task 02 completion; acceptance load test per NFPA 110 8.4.9 at 4 h |
 | driver bus_power_factor | 0.9 - | Measured power factor on the 480 V bus |
 | driver ppt_naoh_per_cl | 1.0 mol NaOH per mol chloride precipitated as hydroxide | Bench hydroxide precipitation of class A leach liquor: NaOH consumed per mol chloride to the target pH; Ca retained in solution (Ca(OH)2 is sparingly soluble) measured by ICP-OES |
 | driver digest_naoh_per_sio2 | 2.0 mol NaOH per mol SiO2 dissolved | Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg cullet |

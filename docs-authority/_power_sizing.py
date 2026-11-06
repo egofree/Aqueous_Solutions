@@ -22,7 +22,9 @@ ew=json.loads(subprocess.run(['python3','docs-authority/_ew_sizing.py'],capture_
 rect=json.loads(subprocess.run(['python3','docs-authority/_rect_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['total']
 _g=json.load(open('flow_graph/plant_flow_graph.json')); _gc={n['unit_id']:n for n in _g['nodes']}
 PSH=DR.val(_d,'pv_yield_kWh_kWp_d'); DER=DR.val(_d,'pv_system_derate'); RT=DR.val(_d,'storage_round_trip'); NIGHT=DR.val(_d,'night_hours'); AUT_CRIT=DR.val(_d,'crit_autonomy_d')
-GEN_KW=DR.val(_d,'backup_gen_rated_kW')
+GEN=BF.rating_kw(_gc, _d)
+GEN_KW=GEN['rated_kW']
+CRIT=BF.critical_list(_gc,_d)
 INV=_gc['SOL_ARK_60K']['params']['kW']/max(_gc['SOL_ARK_60K']['params'].get('count',1),1)
 CRIT=BF.critical_list(_gc,_d)
 NOT_DEMAND={'SOL_ARK_60K','PV_ARRAY','ZNBR2','FUEL_CELL','MEOH_FC','BACKUP_GEN','BOUNDARY_EXPORT','EXT_HALL'}
@@ -67,7 +69,7 @@ def _storage(k, P):
 def _backup():
     crit = sum(CRIT.values())
     return dict(critical_kW=crit, critical_list=CRIT, gen_kW=GEN_KW,
-                gen_kW_basis='drivers.json backup_gen_rated_kW: AQS-ELEC-007/AQS-RED-001 NFPA 110 rule',
+                gen_kW_basis='flow_graph/param/backup_fuel.py rating_kw: ' + GEN['basis'],
                 autonomy_d=AUT_CRIT, autonomy_basis='drivers.json crit_autonomy_d (AQS-ELEC-007 AUT_CRIT)',
                 energy_kWh=crit * 24 * AUT_CRIT)
 

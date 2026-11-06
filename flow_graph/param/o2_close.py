@@ -31,7 +31,7 @@ QY, ABS, LED, DLI = (_D[k]['value'] for k in ('bed_quantum_yield', 'bed_absorpta
 EXC = _D['combustion_excess_O2']['value']
 NCG_O2 = _D['OIL.afterburner-train.ncg_o2_stoich_kg_kg']['value']    # stoich O2 of the AQS-DUTY-008 C1-C4 NCG mix, kg/kg (A-M-452)
 NCG_CO2 = _D['OIL.afterburner-train.ncg_co2_yield_kg_kg']['value']   # its CO2 yield, kg/kg (the AQS-DUTY-010 15.0/3.002 fuel basis)
-GEN_KW = _D['backup_gen_rated_kW']['value']; EX_LOAD, EX_H, GEN_ETA, LHV_C5 = (_D[k]['value'] for k in ('ELEC.generation-train.BACKUP_GEN.exercise_load_frac', 'ELEC.generation-train.BACKUP_GEN.exercise_h', 'ELEC.generation-train.BACKUP_GEN.eta', 'ELEC.generation-train.BACKUP_GEN.fuel_lhv_kWh_kg'))   # D3: rated kW single-sourced from drivers (AQS-ELEC-007/AQS-RED-001 NFPA 110 rule); NFPA110 8.4.2 exercise; spark engine ~30 % (A-M-134); C5-C10 LHV 44 MJ/kg
+EX_LOAD, EX_H, GEN_ETA, LHV_C5 = (_D[k]['value'] for k in ('ELEC.generation-train.BACKUP_GEN.exercise_load_frac', 'ELEC.generation-train.BACKUP_GEN.exercise_h', 'ELEC.generation-train.BACKUP_GEN.eta', 'ELEC.generation-train.BACKUP_GEN.fuel_lhv_kWh_kg'))   # NFPA110 8.4.2 exercise; the rated kW is the live critical-list rating (backup_fuel.rating_kw, owner ruling Q-040 2026-11-05), stamped on the graph by write_graph power(); spark engine ~30 % (A-M-134); C5-C10 LHV 44 MJ/kg
 PSH_STORE_D = _D['crit_autonomy_d']['value']   # D7: AQS-ELEC-007 AUT_CRIT autonomy days, single-sourced from drivers (read here and in _power_sizing.py)
 CO2_M2 = DLI*ABS*QY*44.01                # g CO2/m2/d
 CELLS = [(1, 'IA-EW-01'), (2, 'IA-EW-02'), (3, 'IA-EW-03'), (4, 'IA-EW-10'), (5, 'IA-EW-05'), (6, 'IA-EW-06'), (7, 'IA-EW-07'), (8, 'IA-EW-08'), (9, 'IA-EW-09')]
@@ -212,7 +212,7 @@ def tf(g):
     # --- BACKUP_GEN on a standby / exercise basis (NFPA110 8.4.2: monthly exercise >= 30 min at >= 30 % of nameplate); daily average
     if 'gen_full' not in B:
         B['gen_full'] = {k: v(k) for k in ('CUT-1-OUT', 'S45', 'S47', 'S46', 'CUT-1')}
-    gf = B['gen_full']; kw_gen = float(N['BACKUP_GEN']['params'].get('rated_kW', GEN_KW))
+    gf = B['gen_full']; kw_gen = float(N['BACKUP_GEN']['params'].get('rated_kW') or _BF.rating_kw(N, _D)['rated_kW'])
     e_ex = kw_gen*EX_LOAD*EX_H*12/365                         # kWh/d average
     _fp = _BF.plan(N, _D, e_ex)                                # owner 2026-10-24: hydrogen first (S45), C5-C10 cut as fallback
     fuel, h2f = _fp['cut_kg_d'], _fp['h2_kg_d']                # normal operation: the exercise burns hydrogen; the cut is held in reserve
@@ -436,7 +436,7 @@ def report(gb, ga, L, S):
          f"| process draws from HDR_O2 | {lb['sink']:.2f} | {drawa - Ea['IA-GEN-O2'] - Ea['IA-AB-O2']:.2f} |",
          f"| combustion O2 (genset {c['gen']:.2f}, afterburner {c['ab']:.2f}, 10 % excess) | {lb['need']:.2f} not on graph (burned in N2) | {c['gen'] + c['ab']:.2f} on IA-GEN-O2, IA-AB-O2 |",
          f"| species gap | **{before_gap:.1f}** | **0.0** |", f"| surplus to PROD_O2 (cylinders, shipped) | - | {Ea['IA-O2-PROD']:.2f} |", '',
-         f"BACKUP_GEN is standby (owner Q-003): NFPA 110 8.4.2 monthly 30 min exercise at 30 % of {GEN_KW:.0f} kW, {Ea['S45']:.4f} kg/d hydrogen daily average (fuel priority 1; the C5-C10 cut, {Ea['CUT-1-OUT']:.3f} kg/d, is the fallback; was {Eb['CUT-1-OUT']:.2f} kg/d cut continuous); {Ea['IA-C5-SHIP']:.2f} kg/d C5-C10 shipped as product.", '',
+         f"BACKUP_GEN is standby (owner Q-003): NFPA 110 8.4.2 monthly 30 min exercise at 30 % of {next(n for n in ga['nodes'] if n['unit_id'] == 'BACKUP_GEN')['params']['rated_kW']:.0f} kW (the live critical-list rating), {Ea['S45']:.4f} kg/d hydrogen daily average (fuel priority 1; the C5-C10 cut, {Ea['CUT-1-OUT']:.3f} kg/d, is the fallback; was {Eb['CUT-1-OUT']:.2f} kg/d cut continuous); {Ea['IA-C5-SHIP']:.2f} kg/d C5-C10 shipped as product.", '',
          f"The electrolyser is sized by H2 demand (fuel cell {Ea['S49']:.2f}, genset {Ea['S45']:.2f}, methanol {Ea['S74']:.2f} kg/d), not by the O2 gap; its O2 exceeds the corrected gap and the surplus is product, not vent.", '',
          '## 2. Chlorine and EW hydrogen (kg/d)', '', '| | before | after |', '| --- | --- | --- |',
          f"| EW current, A-cell (P_dc / 2.12 V) | {ew['I']:,.0f} | same |",

@@ -1,6 +1,6 @@
 {
  "_generated_from": {
-  "graph_sha256": "58278e97fc35de5fee32473dc5dd8bbbfc6247ed3e37c2d95cb21a2ca83cd1ef",
+  "graph_sha256": "56dc86012f6aad9c3c41528a7d0c5ed72e2f112a99e5a9a36c4a7c7b8d3a90fe",
   "generator": "docs-authority/_one_line.py"
  },
  "bus": {
@@ -9,6 +9,6 @@
   "PP-1 208/120 V": 2.9
  },
  "xf": 15,
- "gen": 379.07,
- "demand": 197.69
+ "gen": 379.05,
+ "demand": 197.66
 }

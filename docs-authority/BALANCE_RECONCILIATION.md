@@ -56,7 +56,7 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | export | IA-MO-VENT | chlorinator CO2 (vent class) | 0.043 |
 | export | IA-N2-VENT | nitrogen vent | 17.618 |
 | export | IA-NA-PURGE | sodium salt purge equal to the make-up m | 4.394 |
-| export | IA-O2-SHIP | O2 cylinders shipped at the dock | 14.046 |
+| export | IA-O2-SHIP | O2 cylinders shipped at the dock | 14.047 |
 | export | IA-SHELL-EXPORT | spent foundry silica (solids return clas | 1.0 |
 | import | CA_HOPPER | mineral calcium carbonate (free-choice h | 0.035 |
 | import | FR_FINISH | phosphorus-FR finish (reagent manifest) | 0.002 |
@@ -80,7 +80,7 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | import | NUT_AQUA | mineral nitrate solution to the raceway | 5.5 |
 | import | NUT_AQUA_BED | mineral nitrate solution to the media be | 1.0 |
 
-**Net trade: -0.000 kg/d** (exports 460.345 - imports 460.345); dock ledger residual +0.001 kg/d (reported, exempt per D-DOCK).
+**Net trade: +0.001 kg/d** (exports 460.346 - imports 460.345); dock ledger residual +0.001 kg/d (reported, exempt per D-DOCK).
 
 ## 4. Moves outside measurement tolerance (2 % of the rate, 1 g/d floor); must be empty
 

@@ -228,7 +228,7 @@
 <title>BACKUP_GEN&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M184.62,-4436.19C238.44,-4429.43 339.16,-4411.91 414,-4370 426.72,-4362.88 439.09,-4352.65 449.2,-4343.15"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="451.73,-4345.57 456.45,-4336.08 446.84,-4340.55 451.73,-4345.57"/>
-<text text-anchor="middle" x="355" y="-4415.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">S47\n0.008219 kW</text>
+<text text-anchor="middle" x="355" y="-4415.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">S47\n0.00411 kW</text>
 </g>
 <!-- FUEL_CELL -->
 <g id="node21" class="node">
@@ -254,7 +254,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M176.51,-4318C232.56,-4318 354.97,-4318 423.69,-4318"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="423.83,-4321.5 433.83,-4318 423.83,-4314.5 423.83,-4321.5"/>
-<text text-anchor="middle" x="355" y="-4320.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n369.0604 kW</text>
+<text text-anchor="middle" x="355" y="-4320.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n369.0411 kW</text>
 </g>
 <!-- RECTIFIER -->
 <g id="node23" class="node">
@@ -364,14 +364,14 @@
 <title>SOL_ARK_60K&#45;&gt;CRYO_H2</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.67,-4336.22C479.21,-4427.6 496.92,-4833.26 534,-4874 560.12,-4902.7 672.14,-4914.98 732.35,-4919.59"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="732.38,-4923.1 742.61,-4920.34 732.89,-4916.12 732.38,-4923.1"/>
-<text text-anchor="middle" x="612.5" y="-4917.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;CRYO_H2\n0.9434 kW</text>
+<text text-anchor="middle" x="612.5" y="-4917.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;CRYO_H2\n0.9425 kW</text>
 </g>
 <!-- SOL_ARK_60K&#45;&gt;H2O_ELYZ -->
 <g id="edge41" class="edge">
 <title>SOL_ARK_60K&#45;&gt;H2O_ELYZ</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.81,-4336.13C479.84,-4422.68 498.98,-4791.02 534,-4827 560.53,-4854.26 670.25,-4859.92 730.66,-4860.93"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="730.93,-4864.44 740.98,-4861.07 731.03,-4857.44 730.93,-4864.44"/>
-<text text-anchor="middle" x="612.5" y="-4861.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;H2O_ELYZ\n23.9997 kW</text>
+<text text-anchor="middle" x="612.5" y="-4861.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;H2O_ELYZ\n23.9772 kW</text>
 </g>
 <!-- SOL_ARK_60K&#45;&gt;BMED_ACID -->
 <g id="edge14" class="edge">
@@ -1338,5 +1338,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="775.5" y="5028.5" width="520.9" height="138.9" fill="white" stroke="black" stroke-width="1.45"/><text x="784.2" y="5051.7" font-family="sans-serif" font-size="13.0">Aqueous Solutions (owner)   AQS-DWG-PFD-EFD-ELEC</text><text x="784.2" y="5076.3" font-family="sans-serif" font-size="13.0">Electrical flow diagram</text><text x="784.2" y="5100.9" font-family="sans-serif" font-size="13.0">Type: flow diagram (ISO_10628_2)   Rev 4805cc0e   Issued 2026-10-15</text><text x="784.2" y="5125.5" font-family="sans-serif" font-size="13.0">Created: flow graph pipeline   Approved: not approved (study)</text><text x="784.2" y="5150.0" font-family="sans-serif" font-size="13.0">Graph SHA-256 58278e97fc35de5f   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="775.5" y="5028.5" width="520.9" height="138.9" fill="white" stroke="black" stroke-width="1.45"/><text x="784.2" y="5051.7" font-family="sans-serif" font-size="13.0">Aqueous Solutions (owner)   AQS-DWG-PFD-EFD-ELEC</text><text x="784.2" y="5076.3" font-family="sans-serif" font-size="13.0">Electrical flow diagram</text><text x="784.2" y="5100.9" font-family="sans-serif" font-size="13.0">Type: flow diagram (ISO_10628_2)   Rev f70f5fb2   Issued 2026-10-15</text><text x="784.2" y="5125.5" font-family="sans-serif" font-size="13.0">Created: flow graph pipeline   Approved: not approved (study)</text><text x="784.2" y="5150.0" font-family="sans-serif" font-size="13.0">Graph SHA-256 56dc86012f6aad9c   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

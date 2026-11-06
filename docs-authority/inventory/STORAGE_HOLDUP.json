@@ -381,10 +381,10 @@
  {
   "unit": "PROD_O2",
   "service": "D-DOCK surplus-O2 product bank, cylinder-bank equivalent volume, 14 d dispatch campaign (A-M-278)",
-  "Q_kg_d": 14.046,
+  "Q_kg_d": 14.047,
   "hold_d": 14,
   "rho": 293.4,
-  "V_work_m3": 0.6702,
+  "V_work_m3": 0.6703,
   "V_nom_m3": 0.8378,
   "D_mm": 900,
   "H_mm": 1350,

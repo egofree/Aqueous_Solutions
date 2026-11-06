@@ -130,9 +130,9 @@ digraph G {
   "Q3_B" -> "OIL_DRYER" [label="HL-Q3-B-HX4\\n0.0553 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "Q3_B" -> "LEACH_CSTR_1" [label="HL-Q3-B-HX5\\n1.4548 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "Q3_B" -> "GLASS_DIGEST" [label="HL-Q3-B-HX6\\n0.3809 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "Q4_BUS" -> "DRY_COOLER" [label="HL-Q4-REJ\\n49.4844 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "Q4_BUS" -> "DRY_COOLER" [label="HL-Q4-REJ\\n49.473 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "Q4_BUS" -> "HABITATION" [label="IA-Q4-LIFE\\n3.0 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "ZNBR2" -> "Q4_BUS" [label="IA-ZNBR-HEAT\\n47.7548 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "ZNBR2" -> "Q4_BUS" [label="IA-ZNBR-HEAT\\n47.7498 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "RECTIFIER" -> "Q4_A" [label="IA-Q4A-TRIM\\n1.61 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "RECTIFIER" -> "Q4_B" [label="IA-Q4B-TRIM\\n1.61 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "Q1_A" -> "BOUNDARY_EXPORT" [label="IA-Q1A-LOSS\\n0.25 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
@@ -151,9 +151,9 @@ digraph G {
   "RECTIFIER" -> "Q4_BUS" [label="IA-RECT-Q4\\n1.4982 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "RECTIFIER" -> "LEACH_CSTR_1" [label="IA-TRIM-HX5\\n15.882 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "RECTIFIER" -> "GLASS_DIGEST" [label="IA-TRIM-HX6\\n4.158 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "H2O_ELYZ" -> "Q4_BUS" [label="SQ-H2O_ELYZ-Q4\\n6.8072 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "H2O_ELYZ" -> "Q4_BUS" [label="SQ-H2O_ELYZ-Q4\\n6.8008 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "EVAP_ACID" -> "Q4_BUS" [label="SQ-EVAP_ACID\\n1.498 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "EVAP_BASE" -> "Q4_BUS" [label="SQ-EVAP_BASE\\n1.328 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "EVAP_ACID_VS" -> "Q4_BUS" [label="SQ-EVAP_ACID_VS\\n0.0238 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "DRY_COOLER" -> "ATMOS" [label="IA-DC-REJ\\n56.7344 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "DRY_COOLER" -> "ATMOS" [label="IA-DC-REJ\\n56.723 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
 }

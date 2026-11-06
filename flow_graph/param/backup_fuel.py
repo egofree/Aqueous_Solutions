@@ -9,6 +9,7 @@ Fuel priority, modelled on the graph as BACKUP_GEN params['fuel_selection']:
 Methanol (MEOH_TANK) and digester gas are further plant fuels; neither is piped to the generator.
 
 critical_list() is the single source of the critical-load list; docs-authority/_power_sizing.py reads it too."""
+import math
 from flow_graph.param import drivers as DR
 K = 'ELEC.generation-train.BACKUP_GEN.'
 def critical_list(gc, d):
@@ -19,6 +20,22 @@ def critical_list(gc, d):
     if 'GROW_BED' in gc: crit['GROW_BED'] = DR.val(d, K + 'crit_GROW_BED_kW')
     crit['controls and instruments'] = DR.val(d, K + 'crit_controls_kW')
     return crit
+
+
+def rating_kw(gc, d):
+    """The standby generator rating from the live critical list (owner ruling Q-040, 2026-11-05;
+    AQS-ELEC-007 / AQS-RED-001): 125 % of the critical-list sum, rounded up in the commercial
+    5 kW step. No hard-coded nameplate exists; the pumped-hydro store keeps its own Q-009 basis."""
+    crit = critical_list(gc, d)
+    margin = DR.val(d, K + 'crit_margin')
+    step = DR.val(d, K + 'rating_step_kw')
+    s = sum(crit.values())
+    rated = math.ceil(s * margin / step) * step
+    return dict(crit_kW=round(s, 2), margin=margin, step_kw=step, rated_kW=float(rated),
+                list=crit,
+                basis=f"125 % of the live critical list {s:.2f} kW, rounded up in {step:g} kW steps "
+                      "(AQS-ELEC-007 / AQS-RED-001, NFPA 110 standby basis; owner ruling Q-040 2026-11-05); "
+                      "list: " + ', '.join(f'{k} {v:.2f}' for k, v in crit.items()))
 def plan(gc, d, e_ex_kWh_d):
     """Daily exercise fuel by priority and the fallback reserve held in PROD_C5_C10."""
     eta_c, lhv_c = DR.val(d, K + 'eta'), DR.val(d, K + 'fuel_lhv_kWh_kg')
