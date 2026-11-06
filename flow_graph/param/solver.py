@@ -86,18 +86,26 @@ def naoh_balance(d, g, hcl_mol, vs_mol=0.0):
 BASE_DEMAND = ('IA-BASE-01','IA-BASE-PPT','IA-ACEX-NAOH')   # 20 wt% NaOH users (glass digest, hydroxide precipitation)
 
 def ew(d, g):
-    """EW cascade currents from the S08 deposit rows (AQS-ASSAY-001 section 5, leach recovery 1.0):
-    I = m z F / (M t CE) per element [CODATA2018, SCHLESINGER2011]. Owner ruling Q-038 (2026-11-04):
-    the cascade rate is the supply basis - the dissolved metal values of the design feed - so the
-    per-cell currents derive from the deposit rows, not from the wear-goods closing-by-difference
-    chain and not from a copper-equivalent sheet convention (both retired with Q-038)."""
-    dep = {int(k): x for k, x in DR.val(d, 'DIGESTER.ew-cascade-train.ew_s08_deposits_kg_d').items()}
+    """EW cascade bounding currents at the AQS-ASSAY-001 element envelope (owner ruling Q-038,
+    2026-11-05; AGENTS.md sizing rule): each cell is rated for the largest deposit of its own
+    element found in any feed case of the IA-FEED--01 envelope, at the design feed rate and
+    leach recovery 1.0 - the five minor plateable metals each carry the lumped fraction (the
+    'all in one element' reading of AQS-ASSAY-001 table 4.1). The booked stream rates stay at
+    the reference S08 deposit rows (solver.ew_products): a balance closes on one feed, the
+    envelope sizes the equipment. I = m z F / (M t CE) [CODATA2018, SCHLESINGER2011]."""
+    feed = next(e['rate']['value'] for e in g['edges'] if e['stream_id'] == 'IA-FEED-01')
+    els = next(e for e in g['edges'] if e['stream_id'] == 'IA-FEED-01')[
+        'params']['assay_envelope']['element_envelope']['elements']
+    rec = DR.val(d, 'ew_leach_recovery_design')   # AQS-ASSAY-001 section 4 upper bound
     CE = DR.val(d, 'ew_current_efficiency_design')
     out = {}
     for n in range(1, 10):
         el, z = EW_METAL[n]
-        I = electrochem.faraday_current_A(dep[n], M[el], z, CE)
-        out[f'EW_{n}'] = dict(metal=el, dep_kg_d=dep[n], I_A=I, P_kW=electrochem.dc_power_kW(I, DR.val(d,'ew_cell_voltage_V')),
+        env_key = 'Fe' if el == 'Fe' else ('Cu' if el == 'Cu' else ('Au' if el == 'Au' else ('Ag' if el == 'Ag' else 'other_plateable')))
+        dep = feed * els[env_key]['fraction'] * rec   # the cell's bounding deposit
+        I = electrochem.faraday_current_A(dep, M[el], z, CE)
+        out[f'EW_{n}'] = dict(metal=el, dep_kg_d=dep, env_case=els[env_key]['case'], I_A=I,
+                              P_kW=electrochem.dc_power_kW(I, DR.val(d,'ew_cell_voltage_V')),
                               P_bus_kW=electrochem.dc_power_kW(I, DR.val(d,'ew_cell_voltage_V')+DR.val(d,'ew_bus_drop_V')))
     dc = sum(v['P_bus_kW'] for v in out.values())
     out['RECT_EW'] = dict(I_A=sum(v['I_A'] for v in out.values()), P_dc_kW=dc,

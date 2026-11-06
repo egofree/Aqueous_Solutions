@@ -3,12 +3,14 @@
 1. The cell currents follow Faraday's law, I = m z F / (M t CE), checked here against an
    independent calculation with the CODATA 2018 Faraday constant (96 485.332 12 C/mol) and
    the current efficiency in drivers.json.
-2. The plated metal cannot exceed the plateable metal the design feed carries. The deposit
-   rows the cascade is sized on (drivers.json DIGESTER.ew-cascade-train.ew_s08_deposits_kg_d)
-   come from the S08 booking, which cites a 150 kg/d feed audit, and exceed the plateable
-   metal of the 102.68 kg/d design feed. This test records that defect as an expected failure
-   until the deposits are computed from the IA-FEED-01 assay (task X-QA-04). strict=True makes
-   the test fail once the defect is fixed, so the marker is removed with the fix.
+2. The equipment of every cell is rated at the AQS-ASSAY-001 element envelope (owner ruling
+   Q-038, 2026-11-05; AGENTS.md sizing rule): the sizing deposit of each cell equals the design
+   feed rate times the element fraction of AQS-ASSAY-001 table 4.1 at leach recovery 1.0, and
+   no element bound exceeds the plateable class of the case it governs.
+3. The booked S08 deposit rows (the stream-rate basis) still exceed the plateable metal of the
+   reference feed they cite. That defect stays an expected failure until the booked rates are
+   computed from the assay (task X-QA-04). strict=True makes the test fail once the defect is
+   fixed, so the marker is removed with the fix.
 """
 import json, os, subprocess, sys
 import pytest
@@ -20,6 +22,8 @@ from flow_graph.param import drivers as DR
 F_CODATA = 96485.33212
 EL = {1: (196.97, 3), 2: (107.87, 1), 3: (63.546, 2), 4: (207.2, 2), 5: (118.71, 2),
       6: (58.693, 2), 7: (55.845, 2), 8: (112.41, 2), 9: (65.38, 2)}   # Au Ag Cu Pb Sn Ni Fe Cd Zn
+ENV_KEY = {1: 'Au', 2: 'Ag', 3: 'Cu', 4: 'other_plateable', 5: 'other_plateable',
+           6: 'other_plateable', 7: 'Fe', 8: 'other_plateable', 9: 'other_plateable'}
 
 
 def _ew_rows():
@@ -41,10 +45,28 @@ def test_cell_current_follows_faraday():
         assert r['I_A'] == pytest.approx(expect, rel=1e-4), r['cell']
 
 
-@pytest.mark.xfail(strict=True, reason='X-QA-04: EW deposit rows are not derived from the IA-FEED-01 assay')
-def test_plated_metal_within_feed_plateable_metal():
+def test_equipment_sized_at_the_element_envelope():
+    d = DR.load()
     e = _graph_edge('IA-FEED-01'); feed = e['rate']['value']
-    env = e['params']['assay_envelope']
-    fr = max(c['metal_plateable'] for c in env['cases'].values())
-    plated = sum(r['dep_kg_d'] for r in _ew_rows())
-    assert plated <= feed * fr * 1.0 + 1e-6, (plated, feed * fr)
+    els = e['params']['assay_envelope']['element_envelope']['elements']
+    rec = DR.val(d, 'ew_leach_recovery_design')
+    rows = _ew_rows()
+    assert len(rows) == 9
+    for r in rows:
+        n = int(r['cell'].split('_')[1])
+        expect = feed * els[ENV_KEY[n]]['fraction'] * rec
+        assert r['dep_kg_d'] == pytest.approx(expect, rel=1e-9), r['cell']
+        assert r['env_case'] == els[ENV_KEY[n]]['case'], r['cell']
+    # no element bound exceeds the plateable class of the case that governs it
+    cases = e['params']['assay_envelope']['cases']
+    for key, spec in els.items():
+        cls = cases[spec['case']]['metal_plateable']
+        assert spec['fraction'] <= cls, (key, spec, cls)
+
+
+@pytest.mark.xfail(strict=True, reason='X-QA-04: the booked S08 deposit rows are not derived from the IA-FEED-01 assay')
+def test_booked_s08_deposits_within_reference_feed():
+    e = _graph_edge('IA-FEED-01'); feed = e['rate']['value']
+    cls = e['params']['assay_envelope']['cases']['reference_point']['metal_plateable']
+    booked = sum(r['dep_ref_kg_d'] for r in _ew_rows())
+    assert booked <= feed * cls + 1e-6, (booked, feed * cls)

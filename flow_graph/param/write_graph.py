@@ -189,7 +189,7 @@ def process():
     for c, v in s['ew'].items():
         if c == 'RECT_EW': continue
         n = N[c]; r = rows[c]
-        if isinstance(n.get('continuous_kw'), dict): n['continuous_kw'] = rate(v['P_kW'],'kW',f"{TAG}. Cell DC at the electrode: {v['I_A']:.0f} A (Faraday at the element deposit, AQS-ASSAY-001 section 5, recovery 1.0; Q-038 basis) x {V} V (USBM_CL_EW chloride EW).")
+        if isinstance(n.get('continuous_kw'), dict): n['continuous_kw'] = rate(v['P_kW'],'kW',f"{TAG}. Cell DC at the electrode: {v['I_A']:.0f} A (Faraday at the AQS-ASSAY-001 element envelope, table 4.1, recovery 1.0; Q-038 owner ruling 2026-11-05) x {V} V (USBM_CL_EW chloride EW).")
         if 'cell_voltage_V' in n['params']: n['params']['cell_current_A'] = round(v['I_A']); n['params']['cell_voltage_V'] = V
         # D9 ownership rule (documented, no change): the EW plate GEOMETRY calculator (docs-authority/_ew_sizing.py, AQS-EW-MOD-001
         # constants) owns the geometry; it reads only the harvest edges from the graph. The params.sizing stamped here (size_mm,
@@ -203,7 +203,7 @@ def process():
         if f'IA-DC-{c}' in E:
             _pv = round(v['P_bus_kW'], 6)
             E[f'IA-DC-{c}']['rate'] = {'value': _pv, 'unit': 'kW', 'status': 'study',
-                'note': f'{TAG}. Channel DC at {V} V cell + {VD} V bus drop, design current at the element deposit (Q-038 basis); 6 dp so the sub-watt cells carry no rounding misfit.'}
+                'note': f'{TAG}. Channel DC at {V} V cell + {VD} V bus drop, bounding current at the AQS-ASSAY-001 element envelope (Q-038 owner ruling 2026-11-05); 6 dp so the sub-watt cells carry no rounding misfit.'}
         if f'IA-EWQ-{c}' in E: E[f'IA-EWQ-{c}']['rate'] = rate(v['P_bus_kW']-sum(e['rate']['value'] for e in g['edges'] if e['from_unit_id']==c and 'thermal' in (e.get('layers') or [])),'kW',f'{TAG}. DC input less the HX-8 thermal draw.')
     R = s['ew']['RECT_EW']; n_rect = N.get('RECT_EW') or N.get('RECTIFIER')   # Rev AC renamed the EW rectifier RECTIFIER
     TAG24 = 'X-PAR F-24'

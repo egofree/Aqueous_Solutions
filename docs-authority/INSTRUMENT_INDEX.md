@@ -188,7 +188,7 @@ bookkeeping boundaries (here ATMOS, BOUNDARY_EXPORT, LB_PROD_OUTLET, NORTH_DOCK)
 | CRYO_HX_Q4-PT-01 | pressure transmitter | 0-10 bar g | 4-20 mA HART (AI) | CRYO_HX_Q4PT-01 | no design pressure on the graph |
 | CRYO_HX_Q4-TE-01 | temperature element | -200 to 50 C | 4-20 mA HART (AI) | CRYO_HX_Q4TE-01 | band by service |
 | H2O_ELYZ-FT-01 | flow transmitter | 0-1 L/h | 4-20 mA HART (AI) | H2O_ELYZFT-01 | IA-ELY-H2 normal 0.44 L/h |
-| H2O_ELYZ-FT-02 | flow transmitter | 0-10 L/h | 4-20 mA HART (AI) | H2O_ELYZFT-02 | IA-ELY-O2 normal 3.50 L/h |
+| H2O_ELYZ-FT-02 | flow transmitter | 0-10 L/h | 4-20 mA HART (AI) | H2O_ELYZFT-02 | IA-ELY-O2 normal 3.46 L/h |
 | H2O_ELYZ-LSH-01 | high-level switch | trip at 90 % of vessel height | 24 V DC discrete (DI) | H2O_ELYZLSH-01 | alarm at 90 % |
 | H2O_ELYZ-LT-01 | level transmitter | 0-100 % of vessel height | 4-20 mA HART (AI) | H2O_ELYZLT-01 | A-M-182 liquid height |
 | H2O_ELYZ-PT-01 | pressure transmitter | 0-16 bar g | 4-20 mA HART (AI) | H2O_ELYZPT-01 | design 990.0 kPa g |

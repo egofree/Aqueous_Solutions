@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.8825 kg/d. Mass out 0.8825 kg/d. Electrical duty 0.0000 kW. In: IA-HDR-H2-01 1.9e-05 kg/d (cathode H2 + sweep air); IA-HDR-H2-03 4.7e-05 kg/d (cathode H2 + sweep air); IA-HDR-H2-04 0.004417 kg/d (cathode H2 + sweep air); IA-H2-IN 0 kg/d (dried hydrogen); 10 more. Out: IA-HDR-H2-02 0.8825 kg/d (process H2).
+1. Basis. Mass in 0.9926 kg/d. Mass out 0.9926 kg/d. Electrical duty 0.0000 kW. In: IA-HDR-H2-01 4.8e-05 kg/d (cathode H2 + sweep air); IA-HDR-H2-03 0.000155 kg/d (cathode H2 + sweep air); IA-HDR-H2-04 0.02551 kg/d (cathode H2 + sweep air); IA-H2-IN 0 kg/d (dried hydrogen); 10 more. Out: IA-HDR-H2-02 0.9926 kg/d (process H2).
 
 2. Size.
 - In 6.63 kg/d, out 6.63 kg/d. No holdup claimed.

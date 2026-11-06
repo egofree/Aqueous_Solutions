@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 4275 kg/d. Mass out 4275 kg/d. Electrical duty 0.0000 kW. In: IA-EW-03 4275 kg/d (EW overflow). Out: IA-EW-10 4274 kg/d (EW overflow); IA-EW-MET-4 0 kg/d (plated sheet); IA-EW4-H2 0.001394 kg/d (hood hydrogen); IA-EW4-N2 0.3966 kg/d (sweep nitrogen); 1 more.
+1. Basis. Mass in 4263 kg/d. Mass out 4263 kg/d. Electrical duty 0.0000 kW. In: IA-EW-03 4263 kg/d (EW overflow). Out: IA-EW-10 4261 kg/d (EW overflow); IA-EW-MET-4 0 kg/d (plated sheet); IA-EW4-H2 0.00805 kg/d (hood hydrogen); IA-EW4-N2 0.3966 kg/d (sweep nitrogen); 1 more.
 
 2. Size.
 - AQS-DUTY-051: bounding 170 A (7.7 A at the element basis); 2 cathodes, 3 anodes at 169 A/m²; tank 370 × 720 × 760 mm, 0.164 m³ liquor, 63 min; DC 0.43 kW. The 600 × 420 × 650 mm envelope is the plate; layout re-placement held (unit task 14).

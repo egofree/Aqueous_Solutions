@@ -28,7 +28,7 @@ VAR
   CRYO_HX_Q4PT-01_PV : REAL ;  (* no design pressure on the graph )
   CRYO_HX_Q4TE-01_PV : REAL ;  (* band by service )
   H2O_ELYZFT-01_PV : REAL ;  (* IA-ELY-H2 normal 0.44 L/h )
-  H2O_ELYZFT-02_PV : REAL ;  (* IA-ELY-O2 normal 3.50 L/h )
+  H2O_ELYZFT-02_PV : REAL ;  (* IA-ELY-O2 normal 3.46 L/h )
   H2O_ELYZLT-01_PV : REAL ;  (* A-M-182 liquid height )
   H2O_ELYZPT-01_PV : REAL ;  (* design 990.0 kPa g )
   H2O_ELYZTE-01_PV : REAL ;  (* band by service )
@@ -162,10 +162,10 @@ END_VAR
   H2O_ELYZFT-01_ALARM_LO := 0.396 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  H2O_ELYZFT-02_SP := 3.5 ;  (* graph basis: IA-ELY-O2 normal 3.50 L/h )
+  H2O_ELYZFT-02_SP := 3.46 ;  (* graph basis: IA-ELY-O2 normal 3.46 L/h )
   FB_PI_H2O_ELYZFT-02( PV := H2O_ELYZFT-02_PV, SP := H2O_ELYZFT-02_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  H2O_ELYZFT-02_ALARM_HI := 3.8500000000000005 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  H2O_ELYZFT-02_ALARM_LO := 3.15 ;
+  H2O_ELYZFT-02_ALARM_HI := 3.806 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  H2O_ELYZFT-02_ALARM_LO := 3.114 ;
 
   (* LEVEL monitoring block - indication, no set-point invented )
   FB_AI_H2O_ELYZLT-01( PV := H2O_ELYZLT-01_PV );

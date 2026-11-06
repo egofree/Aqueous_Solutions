@@ -54,7 +54,7 @@ VAR
   LI_RECOVERPT-01_PV : REAL ;  (* no design pressure on the graph )
   LI_RECOVERTE-01_PV : REAL ;  (* band by service )
   POLISH_BANKFT-01_PV : REAL ;  (* IA-POL-01 normal 0.00 L/h )
-  POLISH_BANKFT-02_PV : REAL ;  (* IA-POL-02 normal 165.07 L/h )
+  POLISH_BANKFT-02_PV : REAL ;  (* IA-POL-02 normal 164.15 L/h )
   POLISH_BANKFT-03_PV : REAL ;  (* POLISH_TO_LI normal 0.02 L/h )
   POLISH_BANKLT-01_PV : REAL ;  (* A-M-182 liquid height )
   POLISH_BANKPT-01_PV : REAL ;  (* no design pressure on the graph )
@@ -78,49 +78,49 @@ VAR
   EW_2LT-01_PV : REAL ;  (* A-M-182 liquid height )
   EW_2PT-01_PV : REAL ;  (* no design pressure on the graph )
   EW_2TE-01_PV : REAL ;  (* band by service )
-  EW_9FT-01_PV : REAL ;  (* IA-EW-09 normal 174.13 L/h )
+  EW_9FT-01_PV : REAL ;  (* IA-EW-09 normal 173.21 L/h )
   EW_9FT-02_PV : REAL ;  (* IA-HDR-H2-04 normal 0.00 L/h )
   EW_9FT-03_PV : REAL ;  (* EW9_LIQUOR_TO_MO normal 0.00 L/h )
-  EW_9FT-04_PV : REAL ;  (* IA-EW9-CL2 normal 0.04 L/h )
+  EW_9FT-04_PV : REAL ;  (* IA-EW9-CL2 normal 0.25 L/h )
   EW_9LT-01_PV : REAL ;  (* A-M-182 liquid height )
   EW_9PT-01_PV : REAL ;  (* no design pressure on the graph )
   EW_9TE-01_PV : REAL ;  (* band by service )
   LEACH_CSTR_1LT-01_PV : REAL ;  (* A-M-182 liquid height )
   LEACH_CSTR_1PT-01_PV : REAL ;  (* no design pressure on the graph )
   LEACH_CSTR_1TE-01_PV : REAL ;  (* band by service )
-  EW_3FT-01_PV : REAL ;  (* IA-EW-03 normal 178.11 L/h )
-  EW_3FT-02_PV : REAL ;  (* IA-EW3-CL2 normal 0.54 L/h )
+  EW_3FT-01_PV : REAL ;  (* IA-EW-03 normal 177.64 L/h )
+  EW_3FT-02_PV : REAL ;  (* IA-EW3-CL2 normal 1.01 L/h )
   EW_3FT-03_PV : REAL ;  (* IA-EW3-H2B normal 0.00 L/h )
   EW_3LT-01_PV : REAL ;  (* A-M-182 liquid height )
   EW_3PT-01_PV : REAL ;  (* no design pressure on the graph )
   EW_3TE-01_PV : REAL ;  (* band by service )
-  EW_4FT-01_PV : REAL ;  (* IA-EW-10 normal 178.08 L/h )
+  EW_4FT-01_PV : REAL ;  (* IA-EW-10 normal 177.55 L/h )
   EW_4FT-02_PV : REAL ;  (* IA-EW4-H2 normal 0.00 L/h )
   EW_4FT-03_PV : REAL ;  (* IA-EW4-N2 normal 0.02 L/h )
-  EW_4FT-04_PV : REAL ;  (* IA-EW4-CL2 normal 0.01 L/h )
+  EW_4FT-04_PV : REAL ;  (* IA-EW4-CL2 normal 0.08 L/h )
   EW_4LT-01_PV : REAL ;  (* A-M-182 liquid height )
   EW_4PT-01_PV : REAL ;  (* no design pressure on the graph )
   EW_4TE-01_PV : REAL ;  (* band by service )
-  EW_5FT-01_PV : REAL ;  (* IA-EW-05 normal 178.06 L/h )
-  EW_5FT-02_PV : REAL ;  (* IA-EW5-CL2 normal 0.02 L/h )
+  EW_5FT-01_PV : REAL ;  (* IA-EW-05 normal 177.41 L/h )
+  EW_5FT-02_PV : REAL ;  (* IA-EW5-CL2 normal 0.14 L/h )
   EW_5FT-03_PV : REAL ;  (* IA-EW5-H2B normal 0.00 L/h )
   EW_5LT-01_PV : REAL ;  (* A-M-182 liquid height )
   EW_5PT-01_PV : REAL ;  (* no design pressure on the graph )
   EW_5TE-01_PV : REAL ;  (* band by service )
-  EW_6FT-01_PV : REAL ;  (* IA-EW-06 normal 178.01 L/h )
-  EW_6FT-02_PV : REAL ;  (* IA-EW6-CL2 normal 0.05 L/h )
+  EW_6FT-01_PV : REAL ;  (* IA-EW-06 normal 177.14 L/h )
+  EW_6FT-02_PV : REAL ;  (* IA-EW6-CL2 normal 0.27 L/h )
   EW_6FT-03_PV : REAL ;  (* IA-EW6-H2B normal 0.00 L/h )
   EW_6LT-01_PV : REAL ;  (* A-M-182 liquid height )
   EW_6PT-01_PV : REAL ;  (* no design pressure on the graph )
   EW_6TE-01_PV : REAL ;  (* band by service )
-  EW_7FT-01_PV : REAL ;  (* IA-EW-07 normal 174.70 L/h )
-  EW_7FT-02_PV : REAL ;  (* IA-EW7-CL2 normal 2.07 L/h )
+  EW_7FT-01_PV : REAL ;  (* IA-EW-07 normal 174.10 L/h )
+  EW_7FT-02_PV : REAL ;  (* IA-EW7-CL2 normal 1.80 L/h )
   EW_7FT-03_PV : REAL ;  (* IA-EW7-H2B normal 0.01 L/h )
   EW_7LT-01_PV : REAL ;  (* A-M-182 liquid height )
   EW_7PT-01_PV : REAL ;  (* no design pressure on the graph )
   EW_7TE-01_PV : REAL ;  (* band by service )
-  EW_8FT-01_PV : REAL ;  (* IA-EW-08 normal 174.67 L/h )
-  EW_8FT-02_PV : REAL ;  (* IA-EW8-CL2 normal 0.02 L/h )
+  EW_8FT-01_PV : REAL ;  (* IA-EW-08 normal 173.96 L/h )
+  EW_8FT-02_PV : REAL ;  (* IA-EW8-CL2 normal 0.14 L/h )
   EW_8FT-03_PV : REAL ;  (* IA-EW8-H2B normal 0.00 L/h )
   EW_8LT-01_PV : REAL ;  (* A-M-182 liquid height )
   EW_8PT-01_PV : REAL ;  (* no design pressure on the graph )
@@ -380,10 +380,10 @@ END_VAR
   POLISH_BANKFT-01_ALARM_HI := 0.0 ;  (* expected-zero state: any positive PV alarms )
 
   (* FLOW control loop - set-point from the graph basis *)
-  POLISH_BANKFT-02_SP := 165.07 ;  (* graph basis: IA-POL-02 normal 165.07 L/h )
+  POLISH_BANKFT-02_SP := 164.15 ;  (* graph basis: IA-POL-02 normal 164.15 L/h )
   FB_PI_POLISH_BANKFT-02( PV := POLISH_BANKFT-02_PV, SP := POLISH_BANKFT-02_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  POLISH_BANKFT-02_ALARM_HI := 181.577 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  POLISH_BANKFT-02_ALARM_LO := 148.563 ;
+  POLISH_BANKFT-02_ALARM_HI := 180.56500000000003 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  POLISH_BANKFT-02_ALARM_LO := 147.735 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   POLISH_BANKFT-03_SP := 0.02 ;  (* graph basis: POLISH_TO_LI normal 0.02 L/h )
@@ -492,10 +492,10 @@ END_VAR
   EW_2TE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* FLOW control loop - set-point from the graph basis *)
-  EW_9FT-01_SP := 174.13 ;  (* graph basis: IA-EW-09 normal 174.13 L/h )
+  EW_9FT-01_SP := 173.21 ;  (* graph basis: IA-EW-09 normal 173.21 L/h )
   FB_PI_EW_9FT-01( PV := EW_9FT-01_PV, SP := EW_9FT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  EW_9FT-01_ALARM_HI := 191.543 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  EW_9FT-01_ALARM_LO := 156.717 ;
+  EW_9FT-01_ALARM_HI := 190.53100000000003 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  EW_9FT-01_ALARM_LO := 155.889 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   EW_9FT-02_SP := 0.0 ;  (* graph basis: IA-HDR-H2-04 normal 0.00 L/h )
@@ -508,10 +508,10 @@ END_VAR
   EW_9FT-03_ALARM_HI := 0.0 ;  (* expected-zero state: any positive PV alarms )
 
   (* FLOW control loop - set-point from the graph basis *)
-  EW_9FT-04_SP := 0.04 ;  (* graph basis: IA-EW9-CL2 normal 0.04 L/h )
+  EW_9FT-04_SP := 0.25 ;  (* graph basis: IA-EW9-CL2 normal 0.25 L/h )
   FB_PI_EW_9FT-04( PV := EW_9FT-04_PV, SP := EW_9FT-04_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  EW_9FT-04_ALARM_HI := 0.044000000000000004 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  EW_9FT-04_ALARM_LO := 0.036000000000000004 ;
+  EW_9FT-04_ALARM_HI := 0.275 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  EW_9FT-04_ALARM_LO := 0.225 ;
 
   (* LEVEL monitoring block - indication, no set-point invented )
   FB_AI_EW_9LT-01( PV := EW_9LT-01_PV );
@@ -538,16 +538,16 @@ END_VAR
   LEACH_CSTR_1TE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* FLOW control loop - set-point from the graph basis *)
-  EW_3FT-01_SP := 178.11 ;  (* graph basis: IA-EW-03 normal 178.11 L/h )
+  EW_3FT-01_SP := 177.64 ;  (* graph basis: IA-EW-03 normal 177.64 L/h )
   FB_PI_EW_3FT-01( PV := EW_3FT-01_PV, SP := EW_3FT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  EW_3FT-01_ALARM_HI := 195.92100000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  EW_3FT-01_ALARM_LO := 160.299 ;
+  EW_3FT-01_ALARM_HI := 195.404 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  EW_3FT-01_ALARM_LO := 159.876 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  EW_3FT-02_SP := 0.54 ;  (* graph basis: IA-EW3-CL2 normal 0.54 L/h )
+  EW_3FT-02_SP := 1.01 ;  (* graph basis: IA-EW3-CL2 normal 1.01 L/h )
   FB_PI_EW_3FT-02( PV := EW_3FT-02_PV, SP := EW_3FT-02_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  EW_3FT-02_ALARM_HI := 0.5940000000000001 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  EW_3FT-02_ALARM_LO := 0.48600000000000004 ;
+  EW_3FT-02_ALARM_HI := 1.1110000000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  EW_3FT-02_ALARM_LO := 0.909 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   EW_3FT-03_SP := 0.0 ;  (* graph basis: IA-EW3-H2B normal 0.00 L/h )
@@ -567,10 +567,10 @@ END_VAR
   EW_3TE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* FLOW control loop - set-point from the graph basis *)
-  EW_4FT-01_SP := 178.08 ;  (* graph basis: IA-EW-10 normal 178.08 L/h )
+  EW_4FT-01_SP := 177.55 ;  (* graph basis: IA-EW-10 normal 177.55 L/h )
   FB_PI_EW_4FT-01( PV := EW_4FT-01_PV, SP := EW_4FT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  EW_4FT-01_ALARM_HI := 195.88800000000003 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  EW_4FT-01_ALARM_LO := 160.27200000000002 ;
+  EW_4FT-01_ALARM_HI := 195.30500000000004 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  EW_4FT-01_ALARM_LO := 159.79500000000002 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   EW_4FT-02_SP := 0.0 ;  (* graph basis: IA-EW4-H2 normal 0.00 L/h )
@@ -584,10 +584,10 @@ END_VAR
   EW_4FT-03_ALARM_LO := 0.018000000000000002 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  EW_4FT-04_SP := 0.01 ;  (* graph basis: IA-EW4-CL2 normal 0.01 L/h )
+  EW_4FT-04_SP := 0.08 ;  (* graph basis: IA-EW4-CL2 normal 0.08 L/h )
   FB_PI_EW_4FT-04( PV := EW_4FT-04_PV, SP := EW_4FT-04_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  EW_4FT-04_ALARM_HI := 0.011000000000000001 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  EW_4FT-04_ALARM_LO := 0.009000000000000001 ;
+  EW_4FT-04_ALARM_HI := 0.08800000000000001 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  EW_4FT-04_ALARM_LO := 0.07200000000000001 ;
 
   (* LEVEL monitoring block - indication, no set-point invented )
   FB_AI_EW_4LT-01( PV := EW_4LT-01_PV );
@@ -602,16 +602,16 @@ END_VAR
   EW_4TE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* FLOW control loop - set-point from the graph basis *)
-  EW_5FT-01_SP := 178.06 ;  (* graph basis: IA-EW-05 normal 178.06 L/h )
+  EW_5FT-01_SP := 177.41 ;  (* graph basis: IA-EW-05 normal 177.41 L/h )
   FB_PI_EW_5FT-01( PV := EW_5FT-01_PV, SP := EW_5FT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  EW_5FT-01_ALARM_HI := 195.866 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  EW_5FT-01_ALARM_LO := 160.25400000000002 ;
+  EW_5FT-01_ALARM_HI := 195.151 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  EW_5FT-01_ALARM_LO := 159.669 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  EW_5FT-02_SP := 0.02 ;  (* graph basis: IA-EW5-CL2 normal 0.02 L/h )
+  EW_5FT-02_SP := 0.14 ;  (* graph basis: IA-EW5-CL2 normal 0.14 L/h )
   FB_PI_EW_5FT-02( PV := EW_5FT-02_PV, SP := EW_5FT-02_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  EW_5FT-02_ALARM_HI := 0.022000000000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  EW_5FT-02_ALARM_LO := 0.018000000000000002 ;
+  EW_5FT-02_ALARM_HI := 0.15400000000000003 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  EW_5FT-02_ALARM_LO := 0.12600000000000003 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   EW_5FT-03_SP := 0.0 ;  (* graph basis: IA-EW5-H2B normal 0.00 L/h )
@@ -631,16 +631,16 @@ END_VAR
   EW_5TE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* FLOW control loop - set-point from the graph basis *)
-  EW_6FT-01_SP := 178.01 ;  (* graph basis: IA-EW-06 normal 178.01 L/h )
+  EW_6FT-01_SP := 177.14 ;  (* graph basis: IA-EW-06 normal 177.14 L/h )
   FB_PI_EW_6FT-01( PV := EW_6FT-01_PV, SP := EW_6FT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  EW_6FT-01_ALARM_HI := 195.811 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  EW_6FT-01_ALARM_LO := 160.209 ;
+  EW_6FT-01_ALARM_HI := 194.854 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  EW_6FT-01_ALARM_LO := 159.426 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  EW_6FT-02_SP := 0.05 ;  (* graph basis: IA-EW6-CL2 normal 0.05 L/h )
+  EW_6FT-02_SP := 0.27 ;  (* graph basis: IA-EW6-CL2 normal 0.27 L/h )
   FB_PI_EW_6FT-02( PV := EW_6FT-02_PV, SP := EW_6FT-02_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  EW_6FT-02_ALARM_HI := 0.05500000000000001 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  EW_6FT-02_ALARM_LO := 0.045000000000000005 ;
+  EW_6FT-02_ALARM_HI := 0.29700000000000004 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  EW_6FT-02_ALARM_LO := 0.24300000000000002 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   EW_6FT-03_SP := 0.0 ;  (* graph basis: IA-EW6-H2B normal 0.00 L/h )
@@ -660,16 +660,16 @@ END_VAR
   EW_6TE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* FLOW control loop - set-point from the graph basis *)
-  EW_7FT-01_SP := 174.7 ;  (* graph basis: IA-EW-07 normal 174.70 L/h )
+  EW_7FT-01_SP := 174.1 ;  (* graph basis: IA-EW-07 normal 174.10 L/h )
   FB_PI_EW_7FT-01( PV := EW_7FT-01_PV, SP := EW_7FT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  EW_7FT-01_ALARM_HI := 192.17000000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  EW_7FT-01_ALARM_LO := 157.23 ;
+  EW_7FT-01_ALARM_HI := 191.51000000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  EW_7FT-01_ALARM_LO := 156.69 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  EW_7FT-02_SP := 2.07 ;  (* graph basis: IA-EW7-CL2 normal 2.07 L/h )
+  EW_7FT-02_SP := 1.8 ;  (* graph basis: IA-EW7-CL2 normal 1.80 L/h )
   FB_PI_EW_7FT-02( PV := EW_7FT-02_PV, SP := EW_7FT-02_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  EW_7FT-02_ALARM_HI := 2.277 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  EW_7FT-02_ALARM_LO := 1.863 ;
+  EW_7FT-02_ALARM_HI := 1.9800000000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  EW_7FT-02_ALARM_LO := 1.62 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   EW_7FT-03_SP := 0.01 ;  (* graph basis: IA-EW7-H2B normal 0.01 L/h )
@@ -690,16 +690,16 @@ END_VAR
   EW_7TE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* FLOW control loop - set-point from the graph basis *)
-  EW_8FT-01_SP := 174.67 ;  (* graph basis: IA-EW-08 normal 174.67 L/h )
+  EW_8FT-01_SP := 173.96 ;  (* graph basis: IA-EW-08 normal 173.96 L/h )
   FB_PI_EW_8FT-01( PV := EW_8FT-01_PV, SP := EW_8FT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  EW_8FT-01_ALARM_HI := 192.137 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  EW_8FT-01_ALARM_LO := 157.203 ;
+  EW_8FT-01_ALARM_HI := 191.35600000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  EW_8FT-01_ALARM_LO := 156.56400000000002 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  EW_8FT-02_SP := 0.02 ;  (* graph basis: IA-EW8-CL2 normal 0.02 L/h )
+  EW_8FT-02_SP := 0.14 ;  (* graph basis: IA-EW8-CL2 normal 0.14 L/h )
   FB_PI_EW_8FT-02( PV := EW_8FT-02_PV, SP := EW_8FT-02_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  EW_8FT-02_ALARM_HI := 0.022000000000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  EW_8FT-02_ALARM_LO := 0.018000000000000002 ;
+  EW_8FT-02_ALARM_HI := 0.15400000000000003 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  EW_8FT-02_ALARM_LO := 0.12600000000000003 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   EW_8FT-03_SP := 0.0 ;  (* graph basis: IA-EW8-H2B normal 0.00 L/h )

@@ -84,8 +84,8 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2720.0,
         "head_m_m1": 36.25,
-        "vs_znbr2_kwh": 2610.0,
-        "fraction_of_znbr2_study": 0.082,
+        "vs_znbr2_kwh": 2675.0,
+        "fraction_of_znbr2_study": 0.08,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
@@ -258,7 +258,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 366.5288,
+        "value": 369.0604,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -266,28 +266,28 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 5170,
+        "count": 5298,
         "presence": "present",
-        "nameplate_kw": 2585,
-        "area_m2": 22778,
-        "balance_kWp": 1293,
+        "nameplate_kw": 2649,
+        "area_m2": 23569,
+        "balance_kWp": 1325,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            180000,
+            186000,
             138000
           ],
           "bays": [
-            30,
+            31,
             23
           ],
-          "footprint_m2": 24840.0,
-          "extension_m2": 24408.0,
-          "roof_capacity_kWp": 2596.7,
+          "footprint_m2": 25668.0,
+          "extension_m2": 25236.0,
+          "roof_capacity_kWp": 2686.9,
           "perimeter_pathway_mm": 1829,
           "arrays": 12,
-          "extension_load_kW": 85.23,
+          "extension_load_kW": 88.02,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -350,20 +350,20 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 2160.0,
+        "kW": 2220.0,
         "presence": "present",
-        "count": 36,
+        "count": 37,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 1973.6,
-          "export_kWh_d_clear": 5593,
+          "export_peak_kW": 2029.0,
+          "export_kWh_d_clear": 5731,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
         "sections": {
           "count": 4,
           "inverters": [
-            9,
+            10,
             9,
             9,
             9
@@ -386,9 +386,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 180.5,
+          "bus_demand_kW": 183.1,
           "section_rating_A": 350,
-          "basis_A": 241.3,
+          "basis_A": 244.7,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -415,69 +415,69 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 186.419,
+        "value": 191.0192,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 186.4 kW, charge 847.3 kW, 2610 kWh over 36 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 191.0 kW, charge 868.2 kW, 2674 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 848,
-        "kWh": 2610,
+        "kW": 869,
+        "kWh": 2675,
         "presence": "present",
-        "charge_kW": 848,
-        "discharge_kW": 187,
+        "charge_kW": 869,
+        "discharge_kW": 192,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 36 hybrid inverters, 72.5 kWh and 23.6 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 37 hybrid inverters, 72.3 kWh and 23.5 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 6.617,
-          "purge_m3_h": 27.57,
+          "H2_m3_d": 6.78,
+          "purge_m3_h": 28.25,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1707.1
+          "electrode_area_m2": 1749.3
         },
         "size_mm": [
           7900,
           6050,
           1970
         ],
-        "size_note": "L x W x H mm, set by flow_graph/param/ess_tf.py (X-MFG-43): the 36-bay rack hall (36 bays of stack-over-tank at 1100 x 850 mm pitch); the placement seed block for ZNBR2 stays the 1800 x 1200 x 1600 mm study box and under-books this machine - the floor-space reservation is the named consequence (ZNBR2 WORK_ORDER W12)",
+        "size_note": "L x W x H mm, set by flow_graph/param/ess_tf.py (X-MFG-43): the 37-bay rack hall (37 bays of stack-over-tank at 1100 x 850 mm pitch); the placement seed block for ZNBR2 stays the 1800 x 1200 x 1600 mm study box and under-books this machine - the floor-space reservation is the named consequence (ZNBR2 WORK_ORDER W12)",
         "cycling_thermal": {
-          "kwh_d_in": 3728.4,
-          "kwh_d_out": 2609.9,
+          "kwh_d_in": 3820.4,
+          "kwh_d_out": 2674.3,
           "round_trip": 0.7,
-          "loss_kwh_d": 1118.5,
-          "avg_kW": 46.6,
+          "loss_kwh_d": 1146.1,
+          "avg_kW": 47.75,
           "window_h": 10.0,
-          "window_kW": 111.85,
-          "charge_kW_window": 372.84,
-          "basis": "store 2610 kWh/d (AQS-ELEC-007 P x night) at round trip 0.7 (A-M-062/179): the round-trip difference is electrolyte heat; window_kW is the bounding heat rate with all the daily loss in the 10 h charge window; charge_kW_window 372.8 kW is the charge electrical rate over the same window; rejected to the Q4 bus on IA-ZNBR-HEAT and the terminal (A-M-455)"
+          "window_kW": 114.61,
+          "charge_kW_window": 382.04,
+          "basis": "store 2674 kWh/d (AQS-ELEC-007 P x night) at round trip 0.7 (A-M-062/179): the round-trip difference is electrolyte heat; window_kW is the bounding heat rate with all the daily loss in the 10 h charge window; charge_kW_window 382.0 kW is the charge electrical rate over the same window; rejected to the Q4 bus on IA-ZNBR-HEAT and the terminal (A-M-455)"
         },
         "design": {
-          "machine": "ZnBr2 flow-battery store: 36 module bays (one per hybrid inverter, AQS-ELEC-008), each a bipolar plate stack over its electrolyte reservoir, pumps and electrolyte cooler",
-          "modules": 36,
-          "module_kwh": 72.5,
-          "module_charge_kw_ac": 23.54,
+          "machine": "ZnBr2 flow-battery store: 37 module bays (one per hybrid inverter, AQS-ELEC-008), each a bipolar plate stack over its electrolyte reservoir, pumps and electrolyte cooler",
+          "modules": 37,
+          "module_kwh": 72.3,
+          "module_charge_kw_ac": 23.47,
           "plates_per_module": 95,
-          "plate_active_L_mm": 998.3,
+          "plate_active_L_mm": 995.3,
           "plate_active_W_mm": 500.0,
           "plate_t_mm": 5.0,
           "pitch_mm": 6.0,
-          "stack_I_A": 99.8,
+          "stack_I_A": 99.5,
           "stack_V_dc": 172.9,
-          "stack_charge_kw_dc": 17.261,
-          "electrode_area_m2_booked": 1707.1,
-          "electrode_area_m2_model": 1707.13,
-          "zn_kg_per_module": 69.4,
-          "br2_kg_per_module": 169.7,
+          "stack_charge_kw_dc": 17.209,
+          "electrode_area_m2_booked": 1749.3,
+          "electrode_area_m2_model": 1749.26,
+          "zn_kg_per_module": 69.2,
+          "br2_kg_per_module": 169.1,
           "electrolyte_M": 2.0,
-          "electrolyte_L_per_module": 530.8,
+          "electrolyte_L_per_module": 529.2,
           "tank_mm": [
             700.0,
             700.0,
             1155.0
           ],
-          "cooler_kw_per_module": 3.11,
-          "pump_W_per_module": 518.0,
+          "cooler_kw_per_module": 3.1,
+          "pump_W_per_module": 516.0,
           "bus_bar_mm": "1 x 20 x 6.3 copper flat per stack terminal (AQS-BUS-001 class method; POWER.md states no ZNBR2 bus section)",
           "bay_pitch_mm": [
             1100.0,
@@ -485,7 +485,7 @@
           ],
           "bay_cols": 7,
           "bay_rows": 7,
-          "basis": "cell-summed area from the booked charge (Ah at 1.82 V over the 6 h window at 20 mA/cm2, the purge-basis book); plates 95/module x 36 modules fill it at 6 mm pitch (A-M-456); electrolyte 530.798 L/module at 2 M ZnBr2 (A-M-457); cooler at the cycling_thermal charge-window rate (A-M-455); pump at the 3 % auxiliary share (A-M-179)",
+          "basis": "cell-summed area from the booked charge (Ah at 1.82 V over the 6 h window at 20 mA/cm2, the purge-basis book); plates 95/module x 37 modules fill it at 6 mm pitch (A-M-456); electrolyte 529.196 L/module at 2 M ZnBr2 (A-M-457); cooler at the cycling_thermal charge-window rate (A-M-455); pump at the 3 % auxiliary share (A-M-179)",
           "computed_by": "flow_graph/param/ess_tf.py tf() (X-PAR-02 lane, X-MFG-43 machine design)"
         }
       }

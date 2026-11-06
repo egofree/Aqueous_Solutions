@@ -28,20 +28,20 @@ Table 3.1. Release sources and zones
 
 | Unit | Sector | Substances | Flow (kg/d) | Gas group | Temperature class | Zone 1 | Zone 2 | Instruments | Motors and pumps |
 |---|---|---|---|---|---|---|---|---|---|
-| CRYO_H2 | CRYO | H2 | 10.583 | IIC (Group B) | T1 | 1.0 m around relief/vent outlet | 1.5 m around the envelope, upward bias | 2 | 0 |
-| EW_3 | DIGESTER | H2 | 0.055 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 7 | 1 |
-| EW_5 | DIGESTER | H2 | 0.002 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 7 | 1 |
-| EW_6 | DIGESTER | H2 | 0.005 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 7 | 1 |
-| EW_7 | DIGESTER | H2 | 0.211 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 7 | 1 |
-| EW_8 | DIGESTER | H2 | 0.003 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 7 | 1 |
-| H2O_ELYZ | CRYO | H2 | 10.583 | IIC (Group B) | T1 | 1.0 m around relief/vent outlet | 1.5 m around the envelope, upward bias | 6 | 1 |
+| CRYO_H2 | CRYO | H2 | 10.473 | IIC (Group B) | T1 | 1.0 m around relief/vent outlet | 1.5 m around the envelope, upward bias | 2 | 0 |
+| EW_3 | DIGESTER | H2 | 0.103 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 7 | 1 |
+| EW_5 | DIGESTER | H2 | 0.014 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 7 | 1 |
+| EW_6 | DIGESTER | H2 | 0.028 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 7 | 1 |
+| EW_7 | DIGESTER | H2 | 0.183 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 7 | 1 |
+| EW_8 | DIGESTER | H2 | 0.015 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 7 | 1 |
+| H2O_ELYZ | CRYO | H2 | 10.473 | IIC (Group B) | T1 | 1.0 m around relief/vent outlet | 1.5 m around the envelope, upward bias | 6 | 1 |
 | MEOH_TANK | MEOH | CH3OH | 28.729 | IIA (Group D) | T1 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 9 | 0 |
 | POLY_OLEFIN | POLYMERS | C5-C10 | 0.385 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 5 | 0 |
 | PROD_C11_C18 | OIL | C11-C18 | 1.512 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 4 | 0 |
 | PROD_C19_C28 | OIL | C19-C28 | 2.218 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 8 | 1 |
 | PROD_C5_C10 | OIL | C5-C10 | 7.04 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 7 | 1 |
 | PROD_MEOH | CRYO | CH3OH | 28.729 | IIA (Group D) | T1 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 5 | 0 |
-| ZNBR2 | ELEC | H2 | 0.595 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 8 | 1 |
+| ZNBR2 | ELEC | H2 | 0.61 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 8 | 1 |
 
 In total, 89 instruments and 9 motors or pumps are in Zone 1 or Zone 2. Their specifications in the instrument index (AQS-CTL-001) and the inventories take the protection type from the protection column of `docs-authority/inventory/HAZ_AREA.csv`.
 

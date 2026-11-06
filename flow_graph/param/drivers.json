@@ -6082,5 +6082,10 @@
   "register": "A-M-285",
   "needs_verification": true,
   "verification_test": "Pump selection"
+ },
+ "ew_leach_recovery_design": {
+  "value": 1.0,
+  "units": "- leach recovery of plateable metal to the EW cascade, the envelope upper bound",
+  "register": "AQS-ASSAY-001"
  }
 }

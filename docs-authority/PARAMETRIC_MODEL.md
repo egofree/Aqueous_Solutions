@@ -51,17 +51,17 @@ All solved units close.
 | EVAP_BASE kW | 1.328 | 1.328 | +0.0 % | X-MFG-30 in-house MVR design |
 | EVAP_BASE water off, kg/d | 801.856 | 801.856 | -0.0 % | PERRY9_HCL |
 | IA-VS-NAOH NaOH, mol/d | 0.001 | 0.001 | +0.0 % | X-PAR-10, PERRY9_ABS |
-| EW_1 DC kW (cell + bus drop) | 0.000 | 0.000 | -0.0 % | CODATA2018, USBM_CL_EW |
-| EW_2 DC kW (cell + bus drop) | 0.001 | 0.001 | +0.0 % | CODATA2018, USBM_CL_EW |
-| EW_3 DC kW (cell + bus drop) | 0.879 | 0.879 | -0.0 % | CODATA2018, USBM_CL_EW |
-| EW_4 DC kW (cell + bus drop) | 0.022 | 0.022 | -0.0 % | CODATA2018, USBM_CL_EW |
-| EW_5 DC kW (cell + bus drop) | 0.038 | 0.038 | +0.0 % | CODATA2018, USBM_CL_EW |
-| EW_6 DC kW (cell + bus drop) | 0.077 | 0.077 | -0.0 % | CODATA2018, USBM_CL_EW |
-| EW_7 DC kW (cell + bus drop) | 3.374 | 3.374 | +0.0 % | CODATA2018, USBM_CL_EW |
-| EW_8 DC kW (cell + bus drop) | 0.040 | 0.040 | -0.0 % | CODATA2018, USBM_CL_EW |
-| EW_9 DC kW (cell + bus drop) | 0.069 | 0.069 | +0.0 % | CODATA2018, USBM_CL_EW |
-| RECT_EW AC kW (params stamp) | 5.625 | 5.625 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 2585.000 | 2585.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| EW_1 DC kW (cell + bus drop) | 0.001 | 0.001 | +0.0 % | CODATA2018, USBM_CL_EW |
+| EW_2 DC kW (cell + bus drop) | 0.002 | 0.002 | -0.0 % | CODATA2018, USBM_CL_EW |
+| EW_3 DC kW (cell + bus drop) | 1.644 | 1.644 | -0.0 % | CODATA2018, USBM_CL_EW |
+| EW_4 DC kW (cell + bus drop) | 0.126 | 0.126 | -0.0 % | CODATA2018, USBM_CL_EW |
+| EW_5 DC kW (cell + bus drop) | 0.220 | 0.220 | +0.0 % | CODATA2018, USBM_CL_EW |
+| EW_6 DC kW (cell + bus drop) | 0.445 | 0.445 | +0.0 % | CODATA2018, USBM_CL_EW |
+| EW_7 DC kW (cell + bus drop) | 2.923 | 2.923 | +0.0 % | CODATA2018, USBM_CL_EW |
+| EW_8 DC kW (cell + bus drop) | 0.232 | 0.232 | -0.0 % | CODATA2018, USBM_CL_EW |
+| EW_9 DC kW (cell + bus drop) | 0.399 | 0.399 | +0.0 % | CODATA2018, USBM_CL_EW |
+| RECT_EW AC kW (params stamp) | 7.491 | 7.491 | -0.0 % | USBM_CL_EW |
+| PV_ARRAY nameplate kWp vs roof-closed need | 2649.000 | 2649.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -69,7 +69,7 @@ All solved units close.
 2. EVAP_ACID concentrates HCl from 7.07 wt% to 20 wt%, below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL): feed 1304.8 kg/d, water off 865.2 kg/d, 1.50 kW at 72.0 kWh/t (VOGELBUSCH_MVR upper bound). Study.
 3. EVAP_BASE concentrates NaOH from 7.41 wt% to 20 wt%: feed 1301.7 kg/d, water off 801.9 kg/d, 1.33 kW. Study.
 4. Condensate returns to the BMED stack as water make-up (IA-EVAP_ACID-COND, IA-EVAP_BASE-COND). Both evaporators have 480 V feeds (SF-EVAP_ACID, SF-EVAP_BASE) and heat edges to HEAT_SINK.
-5. EW at 2.12 V per cell and current efficiency 0.85 (USBM_CL_EW chloride EW basis), 0.3 V bus drop, rectifier efficiency 0.8: 1860 A, DC 4.50 kW, AC 5.63 kW.
+5. EW at 2.12 V per cell and current efficiency 0.85 (USBM_CL_EW chloride EW basis), 0.3 V bus drop, rectifier efficiency 0.8: 2476 A, DC 5.99 kW, AC 7.49 kW.
 7. NaOH balance (owner decision 2026-10-15, X-PAR-06): precipitation 2412 mol/d (one NaOH per chloride, GREENWOOD); glass digest 109.8 mol/d (2 NaOH per SiO2 dissolved, bounding; was 593 mol/d); BMED 2412 mol/d; make-up 4.39 kg/d NaOH flake on IA-NAOH-MU from NORTH_DOCK, worst case with no sodium credit; equal-mass purge IA-NA-PURGE. EVAP_BASE is derived from the BMED output plus make-up: water off 801.9 kg/d, 1.33 kW.
 6. The bus change is carried on IA-PV-01; PV, storage and inverters follow AQS-ELEC-007 (POWER_SIZING.md Rev C). The EW aisle and the evaporator skids are re-placed (placement seed Rev I, AQS-PLACE-STUDY-001).
 
@@ -1053,6 +1053,7 @@ All solved units close.
 | electrode_coat_cure_kW | 1.2 | kW IR cure panel (ST-ELC-01 class) | A-M-285 | yes |
 | lio_bat_energy_kWh | 2517 | kWh sealed Li-ion storage (interim carries the reference storage duty; re-sized at the locale design pass) | A-M-402 | yes |
 | geo_orc_feed_pump_kW | 0.05 | kW ORC feed pump (R245fa study class) | A-M-285 | yes |
+| ew_leach_recovery_design | 1.0 | - leach recovery of plateable metal to the EW cascade, the envelope upper bound | AQS-ASSAY-001 | — |
 
 ## 6. References
 

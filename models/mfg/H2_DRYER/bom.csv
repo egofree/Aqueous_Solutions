@@ -1,10 +1,10 @@
 item,description,qty,material,mass_kg,make_or_buy,basis
-1,"Dryer vessel OD 60.3 x 628, wall 3.91 (node design D_mm/H_mm/wall_mm), with heads",1,"316L annealed (duty section 3, M6; AQS-REV-H2-001)",14.35,make,node design block; CA 0 mm (AQS-STD-001 316L rule); T_C 250 design class
-2,Insulation jacket 38 mm over the vessel,1,mineral wool + cladding (class per AQS-THM-003),58.96,make,node design insulation_mm 38; regeneration held per the duty
+1,"Dryer vessel OD 60.3 x 600, wall 3.91 (node design D_mm/H_mm/wall_mm), with heads",1,"316L annealed (duty section 3, M6; AQS-REV-H2-001)",13.71,make,node design block; CA 0 mm (AQS-STD-001 316L rule); T_C 250 design class
+2,Insulation jacket 38 mm over the vessel,1,mineral wool + cladding (class per AQS-THM-003),56.33,make,node design insulation_mm 38; regeneration held per the duty
 3,"Bed tubes: 2 deoxo DN25 x 328, 2 guard DN25 x 300, 2 TSA DN50 x 300 (Sch 40 table)",6,316L tube,22.67,make,"node design beds block (tube, L_mm, count); stations are the layout choice (hold, WORK_ORDER W12)"
 4,Media envelopes: molecular sieve 0.353 kg in the TSA tubes; guard media 0.032 kg in the guard tubes,4,molecular sieve (buy charge; envelope drawn),1.67,buy,node design sieve_kg/guard_kg; sieve and guard charges are buy rows per plan rule 6
 5,"Deoxo catalyst charge 0.183 L, 2 tubes",2,deoxo catalyst (purchased charge),0.0,buy,node design beds.deoxo V_L; catalyst not drawn (plan rule 6)
 6,Regeneration heater envelope at the vessel base,1,purchased unit (envelope),8.92,buy,"node design regen_W 1.03; purchased envelope per plan rule 6, rating from the node"
 7,"PVC-U inlet knock-out pot OD 60 x 120 (duty section 3: inlet knock-out PVC-U, wet)",1,PVC-U,0.48,make,duty section 3 wet-side selection; CA 0 mm (AQS-STD-001 polymer rule)
-8,Guard frame: four 30 x 30 posts with top rail (A-MACH guard) + plinth 600 x 400 x 20,1,carbon steel (ASTM A500),80.68,make,AQS-MOD-002 dry service; the frame pins the envelope (X-PAR-04); anchors in fasteners.csv
-9,"Nozzle set per docs-authority/nozzles/H2_DRYER.csv: 8 open-bore tube stubs (DN15), the N7 solids row drawn DN15 bore not calculated",9,316L tube,0.56,make,schedule tags/faces/heights verbatim; the N4 vent is S24 to RELIEF_H2 (destination named); atmospheric tube per duty section 4
+8,Guard frame: four 30 x 30 posts with top rail (A-MACH guard) + plinth 600 x 400 x 20,1,carbon steel (ASTM A500),79.87,make,AQS-MOD-002 dry service; the frame pins the envelope (X-PAR-04); anchors in fasteners.csv
+9,"Nozzle set per docs-authority/nozzles/H2_DRYER.csv: 8 open-bore tube stubs (DN15), the N7 solids row drawn DN15 bore not calculated",10,316L tube,0.56,make,schedule tags/faces/heights verbatim; the N4 vent is S24 to RELIEF_H2 (destination named); atmospheric tube per duty section 4

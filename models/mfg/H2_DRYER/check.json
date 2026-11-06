@@ -2,13 +2,13 @@
   "bbox_mm": [
     600.0,
     400.0,
-    1028.0
+    1000.0
   ],
   "inside_size_mm": true,
   "size_mm": [
     600.0,
     400.0,
-    1028.0
+    1000.0
   ],
   "size_basis": null,
   "graph_revision": "AD",
@@ -18,7 +18,7 @@
     "type": "H2 dryer skid per the node design block: dryer vessel OD 60.3 x 628 (wall 3.91, 316L annealed per M6/AQS-REV-H2-001) with 38 mm insulation; 2 deoxo tubes DN25 x 328; 2 guard tubes DN25 x 300 with guard media envelopes; 2 TSA bed tubes DN50 x 300 with molecular-sieve bed envelopes (sieve_kg 0.353); regeneration heater envelope at the vessel base (1.03 W); PVC-U inlet knock-out pot (duty section 3); guard frame + plinth (A-MACH)",
     "vessel": {
       "od_mm": 60.3,
-      "h_mm": 628.0,
+      "h_mm": 600.0,
       "wall_mm": 3.91,
       "insulation_mm": 38.0
     },
@@ -77,11 +77,11 @@
       "dn": "DN15",
       "face": "top",
       "height_mm": 800.0,
-      "drawn_height_mm": 1028.0,
+      "drawn_height_mm": 1000.0,
       "x_mm": null,
       "schedule_rating": "Class 150",
       "service": "vent",
-      "note": "vent flush at the envelope top; the schedule datum 800 mm is a placeholder under the 1028 box; the vent is S24 to RELIEF_H2 (duty section 6) - destination named"
+      "note": "vent flush at the envelope top; the schedule datum 800 mm is a placeholder under the 1000 box; the vent is S24 to RELIEF_H2 (duty section 6) - destination named"
     },
     "N5": {
       "style": "tube_stub",
@@ -137,15 +137,26 @@
       "schedule_rating": "Class 150",
       "service": "TSA regeneration condensate",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N10": {
+      "style": "tube_stub",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 1000.0,
+      "x_mm": null,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-H2_DRYER, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+      "note": "vent flush at the envelope top; the schedule datum 800 mm is a placeholder under the 1000 box; the vent is S24 to RELIEF_H2 (duty section 6) - destination named"
     }
   },
-  "nozzle_count_schedule": 9,
+  "nozzle_count_schedule": 10,
   "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: no duct bore, no flange class); the N7 solids row (dried hydrogen product edge) drawn DN15, bore not calculated (plan W4); the N4 vent is the S24 relief edge to RELIEF_H2 (duty section 6) with the destination named; the schedule rating column (Class 150) carried verbatim as text",
   "part_mass_kg": {
     "plinth": 38.4,
-    "frame": 42.28,
-    "vessel": 14.35,
-    "insulation": 58.96,
+    "frame": 41.47,
+    "vessel": 13.71,
+    "insulation": 56.33,
     "beds": 22.67,
     "media": 1.67,
     "heater": 8.92,

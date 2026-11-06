@@ -20,7 +20,7 @@
  "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
  "design": {
   "UPW_kg_d": 127.300395,
-  "bypass_kg_d": 217.562363,
+  "bypass_kg_d": 216.579161,
   "RO_feed_kg_d": 133.34539999999998,
   "recovery": 0.9546665651758517,
   "osmotic_bar": 0.19204145086101648,

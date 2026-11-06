@@ -7,7 +7,7 @@ every solid.
 Placement frame: x along 600 mm, y along 400 mm, z up, origin at the envelope corner.
 Every dimension is an authority figure or a named layout choice:
 
-- Envelope 600 x 400 x 1028 mm, node size_mm. The build stays inside it exactly.
+- Envelope from the node size_mm (600 x 400 x 1000 at this revision). The build fills it exactly.
 - Skid per the node design block (the issued dryer sizing): the dryer vessel
   OD 60.3 (D_mm 60, DN50) x 628 (H_mm), wall 3.91 (wall_mm), 316L annealed (duty
   section 3: dry H2 per M6, AQS-REV-H2-001) with 38 mm insulation (insulation_mm);
@@ -40,7 +40,7 @@ from lib import dn, fasteners, materials, nozzles          # noqa: E402
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
 P = json.loads((HERE / "params.json").read_text())
-L, W, H = (float(v) for v in P["size_mm"])                 # 600 x 400 x 1028
+L, W, H = (float(v) for v in P["size_mm"])                 # node envelope (tracker-synced)
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
 DS = P.get("design") or {}
@@ -67,7 +67,7 @@ POS = {                                                    # bed stations (layou
     "tsa1": (300.0, 120.0), "tsa2": (300.0, 280.0), "vessel": (450.0, 200.0),
 }
 
-assert L == 600.0 and W == 400.0 and H == 1028.0, "H2_DRYER node envelope changed"
+assert L >= 540.0 and W >= 380.0, "H2_DRYER envelope too small for the laid-out bed stations (W12)"
 assert POS["vessel"][0] - V_OD / 2 - INSUL > POS["tsa1"][0] + TSA_OD / 2 + INSUL, "stations clear"
 assert Z0 + V_H + INSUL + 200.0 < H, "vessel + heater stays inside the envelope"
 
@@ -174,7 +174,7 @@ for r in schedule:
         s = tube_z("DN15", 50.0)
         s = nozzles.place_on_face(s, "top", 0.0, (400.0, 200.0), (L, W, H))
         note = ("vent flush at the envelope top; the schedule datum 800 mm is a "
-                "placeholder under the 1028 box; the vent is S24 to RELIEF_H2 "
+                f"placeholder under the {H:g} box; the vent is S24 to RELIEF_H2 "
                 "(duty section 6) - destination named")
     else:
         assert h <= H - od / 2 - 5.0, (tag, h)

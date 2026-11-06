@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 3962 kg/d. Mass out 3962 kg/d. Electrical duty 0.0000 kW. In: IA-POL-02 3962 kg/d (Polish bank liquor return to the continuous recycle). Out: IA-REC-01 3962 kg/d (continuous recycle liquor).
+1. Basis. Mass in 3940 kg/d. Mass out 3940 kg/d. Electrical duty 0.0000 kW. In: IA-POL-02 3940 kg/d (Polish bank liquor return to the continuous recycle). Out: IA-REC-01 3940 kg/d (continuous recycle liquor).
 
 2. Size.
 - Envelope 1500×60×60 mm, 0.0054 m³. That box over this flow would be 0.0 h if it were full. It is not a residence time.
