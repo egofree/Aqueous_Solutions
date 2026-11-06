@@ -511,6 +511,7 @@ Table 5.1. Parts of numbered documents
 | Number | Part | Page |
 | --- | --- | --- |
 | AQS-FLOW-GRAPH-001 | annex | `flow_graph/LEGACY_PFD_SCRIPTS.md` |
+| AQS-FLOW-GRAPH-001 | annex | `flow_graph/exporters/matplotlib/README.md` |
 | AQS-INV-005 | sheet MF-01 | `docs-authority/inventory/motor_families/MF-01.md` |
 | AQS-INV-005 | sheet MF-02 | `docs-authority/inventory/motor_families/MF-02.md` |
 | AQS-INV-005 | sheet MF-03 | `docs-authority/inventory/motor_families/MF-03.md` |

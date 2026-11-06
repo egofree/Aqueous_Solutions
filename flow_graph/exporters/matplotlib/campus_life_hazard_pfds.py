@@ -33,6 +33,7 @@ OUT_DIR = ROOT / "images" if (ROOT / "images").is_dir() else ROOT
 
 def _load_freecad_params():
     candidates = [
+        _HERE.parents[2] / "models" / "freecad" / "params.py",   # the repository model tree (exporters/matplotlib is two below the root)
         ROOT / "cad" / "freecad" / "params.py",
         ROOT.parent / "cad" / "freecad" / "params.py",
         ROOT.parent / "models" / "freecad" / "params.py",
