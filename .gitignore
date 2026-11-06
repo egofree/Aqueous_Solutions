@@ -101,5 +101,10 @@ flow_graph/derived/_regen_run.json
 # Scratch outputs of flow_graph/regen_derived.py (removed at the end of the run)
 models/animation
 media/.frames.txt
+
+# Staging body of the two-stage GA_CHECK build (docs-authority/_ga_check.py then
+# docs-authority/_cad_clash.py, which renames it over GA_CHECK.md when complete);
+# left behind only if a run is killed between the two stages
+docs-authority/GA_CHECK.md.tmp
 /sites/
 !docs-authority/iso/ISO_SHEETS.csv

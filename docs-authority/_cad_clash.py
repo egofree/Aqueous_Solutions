@@ -1,5 +1,7 @@
 """AQS-BLD-010 rev B section: CAD solid clash of the new building elements (FR_ rooms, stairs, elevators, apron). Reads
-docs-authority/inventory/CAD_CLASH.json written by `freecadcmd models/freecad/clash_check.py` after `freecadcmd build_plant.py`."""
+docs-authority/inventory/CAD_CLASH.json written by `freecadcmd models/freecad/clash_check.py` after `freecadcmd build_plant.py`.
+Appends the clash sections to the staged body (GA_CHECK.md.tmp) left by _ga_check.py and renames the complete document
+over GA_CHECK.md with os.replace, so the published page is never a partial document."""
 import json, os, collections
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R)
 d = json.load(open('docs-authority/inventory/CAD_CLASH.json')); H = d['clashes']
@@ -22,5 +24,7 @@ md += ['', '## CAD equipment-to-equipment clash (rev C, 2026-10-16)', '',
        '', 'Fixes: the L-1 corridors were re-routed round the process hall (`fitout.LM1_ROUTE`: south aisle, west aisle, link and north aisle to STAIR_SERVICE, approach to the CRYO west door, all >= 1,200 mm); the old E-W and N-S spines ran through the pyrolysis, BMED and leach lines. The catch tank top was dropped 0.5 m below L-1 floor (slab plus bund-sump recess; `water_tower.TOP`), which deepens L-2 and changes the hydro head. The rest by `resolve_overlaps.py` (A-M-220), which moves the smaller unit of each overlapping pair to the nearest clear position on its level:', '',
        f"{len(big)} moves; the largest are listed. Moves above 2 m change the piping runs, which are drawn from the old positions until the isometrics are regenerated (X-BLD-04 follow-up).", '', '| Unit | Was clashing with | dx mm | dy mm |', '|---|---|---|---|']
 md += [f"| {m['unit']} | {m['from_clash_with']} | {m['dx_mm']} | {m['dy_mm']} |" for m in big[:25]]
-s = open('docs-authority/GA_CHECK.md').read().split('## CAD solid clash')[0].rstrip()
-open('docs-authority/GA_CHECK.md', 'w').write(s + '\n\n' + '\n'.join(md) + '\n'); print(len(H), len(E['clashes']))
+TMP = 'docs-authority/GA_CHECK.md.tmp'; LIVE = 'docs-authority/GA_CHECK.md'
+s = open(TMP).read().split('## CAD solid clash')[0].rstrip()
+open(TMP, 'w').write(s + '\n\n' + '\n'.join(md) + '\n')
+os.replace(TMP, LIVE); print(len(H), len(E['clashes']))

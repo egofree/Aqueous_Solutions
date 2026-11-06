@@ -1,6 +1,10 @@
 """AQS-BLD-010 general-arrangement clash check (X-BLD-04). Every real envelope
 (seed rows, study rows; block-sized placeholders excluded) checked pairwise per
-level and tier for overlap and for the 600 mm maintenance clearance."""
+level and tier for overlap and for the 600 mm maintenance clearance. The page is
+built in two stages: this script stages the envelope body (with its code-basis
+section) to GA_CHECK.md.tmp, then _cad_clash.py appends the CAD clash sections
+and atomically renames the staged file over GA_CHECK.md, so the published page
+is never a partial document."""
 import json, itertools, sys
 sys.path.insert(0,'flow_graph'); import study_place as sp
 seed=json.load(open(sp.SEED)); rep=json.load(open(sp.REP)); st=json.load(open('flow_graph/placement_study.json'))
@@ -64,7 +68,8 @@ Table 3.1. Pairs inside the clearance rule
 | A | B |
 | --- | --- |
 """+"\n".join(f"| {a} | {b} |" for a,b in cl)+"\n"
-open('docs-authority/GA_CHECK.md','w').write(out)
+BODY='docs-authority/GA_CHECK.md.tmp'   # staging body; _cad_clash.py appends the CAD sections and os.replace()s it over GA_CHECK.md
+open(BODY,'w').write(out)
 print(len(B),len(ov),len(cl)); print(ov[:30]); print(cl[:30])
 import sys as _sys, os as _os; _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
-from flow_graph.param import code_basis as _CB; _CB.append(_CB.PATHS['GA_CHECK'], 'GA_CHECK')
+from flow_graph.param import code_basis as _CB; _CB.append(BODY, 'GA_CHECK')
