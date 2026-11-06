@@ -104,7 +104,7 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-060 | `docs-authority/sizing/EVAP_DESIGN.md` | — | — | In-house MVR evaporators EVAP_ACID and EVAP_BASE | current |
 | AQS-DUTY-061 | `docs-authority/sizing/VENT_SCRUBBER.md` | A | 2026-10-15 | EVAP_ACID vent scrubber | current |
 | AQS-DUTY-062 | `docs-authority/sizing/REACTOR_DESIGN.md` | B | 2026-10-18 | In-house reaction chambers | current |
-| AQS-DUTY-063 | `docs-authority/sizing/SANITATION.md` | B | 2026-10-15 | Blackwater and excreta multi-barrier train | current |
+| AQS-DUTY-063 | `docs-authority/sizing/SANITATION.md` | C | 2026-10-29 | Blackwater and excreta train | current |
 | AQS-DUTY-064 | `docs-authority/sizing/STORAGE_HOLDUP.md` | A | 2026-10-16 | Storage and holdup sizing | current |
 | AQS-DUTY-065 | `docs-authority/sizing/GAS_RECEIVERS.md` | B | 2026-10-16 | High-pressure gas receivers | current |
 | AQS-DUTY-066 | `docs-authority/sizing/H2_PURIFIER_BEDS.md` | A | 2026-10-15 | H2_PURIFIER beds | current |
@@ -144,7 +144,7 @@ Table 3.1. Document numbers in use
 | AQS-ELEC-004 | `docs-authority/RECT_EW.md` | F | 2026-11-06 | Electrowinning rectifier sizing (RECT-EW) | current |
 | AQS-ELEC-005 | `docs-authority/GROUNDING.md` | B | 2026-10-25 | Grounding and bonding | current |
 | AQS-ELEC-006 | `docs-authority/PROTECTION.md` | D | 2026-10-15 | Protection and coordination | current |
-| AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | F | 2026-10-15 | Storage and generation sizing | current |
+| AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | J | 2026-10-29 | Storage and generation sizing | current |
 | AQS-ELEC-008 | `docs-authority/COLLECTION_BUS.md` | B | 2026-10-24 | Collection bus sections | current |
 | AQS-ELEC-009 | `docs-authority/HAZ_AREA.md` | B | 2026-10-25 | Hazardous area classification | current |
 | AQS-ELEC-010 | `docs-authority/CABLE_SCHEDULE.md` | A | 2026-10-15 | Cable and busbar schedule | current |
@@ -203,7 +203,7 @@ Table 3.1. Document numbers in use
 | AQS-LIFE-001 | `docs-authority/LIFE_FITOUT_PLAN.md` | B | 2026-10-01 | Habitation and farm fit-out plan | current |
 | AQS-LIT-ASSAY | `notes/LIT_ASSAY.md` | A | 2026-10-16 | Literature compositions for missing assays | current |
 | AQS-LITH-001 | `docs-authority/ALIGNER.md` | C | 2026-10-11 | Contact aligner | current |
-| AQS-MEP-001 | `docs-authority/LIFE_MEP.md` | A | 2026-10-01 | Life MEP — Phase D (duct / fixture / one-line study) | current |
+| AQS-MEP-001 | `docs-authority/LIFE_MEP.md` | B | 2026-10-29 | Life mechanical, electrical and plumbing study | current |
 | AQS-MF-001 | `docs-authority/MASS_FLOW.md` | K | 2026-10-24 | Mass-flow claim status | current |
 | AQS-MF-001-DERIVED | `flow_graph/derived/MASS_FLOW_DERIVED.md` | — | — | Mass-flow claim excerpt — DERIVED from flow_graph | current |
 | AQS-MFG-001 | `docs-authority/internal/DETAIL_MODEL_PLAN.md` | A | 2026-09-26 | Manufacturing-detail model list | superseded by AQS-PLAN-007 |
@@ -216,7 +216,7 @@ Table 3.1. Document numbers in use
 | AQS-MVS-CHK-001 | `docs-authority/internal/MVS_CHECKLIST.md` | — | 2026-10-02 | MVS checklist | superseded by AQS-PLAN-007 |
 | AQS-MVS-EQP-001 | `docs-authority/internal/MVS_EQUIPMENT.md` | — | 2026-10-02 | MVS equipment issue | superseded by AQS-PLAN-007 |
 | AQS-MVS-PLAN-001 | `docs-authority/internal/MVS_PLAN.md` | — | 2026-10-02 | MVS completion plan | superseded by AQS-PLAN-007 |
-| AQS-MeOH-001 | `docs-authority/MEOH_TRAIN.md` | A | 2026-10-01 | Methanol train — diverse MeOH sources + IEM fuel cell (gap fill) | current |
+| AQS-MeOH-001 | `docs-authority/MEOH_TRAIN.md` | B | 2026-10-29 | Methanol train | current |
 | AQS-NOTE-CARBIDE | `notes/CARBIDE_AND_ECF.md` | A | 2026-10-16 | Carbide train and electrochemical fluorination | current |
 | AQS-NOTE-CAST | `notes/ADVANCED_CASTING.md` | A | 2026-10-16 | Advanced casting techniques — foundry applicability | current |
 | AQS-NOTE-PV-REBASE | `notes/pv_sizing_derivation_2026-10-18.md` | A | 2026-10-18 | PV / storage / inverter / roof parametric derivation — Rev AC re-base | current |
@@ -476,10 +476,10 @@ Table 3.1. Document numbers in use
 | AQS-TST-006 | `docs-authority/BENCH_TEST_BMED_STACK.md` | A | 2026-10-30 | Bench test - BMED stack polarisation | current |
 | AQS-TST-007 | `docs-authority/BENCH_TEST_ZNBR2_FLOW_CELL.md` | A | 2026-10-30 | Bench test - ZNBR2 flow-cell round trip | current |
 | AQS-UI-001 | `docs-authority/DESIGN_TOOL_ARCHITECTURE.md` | H | 2026-10-24 | Design-tool architecture | current |
-| AQS-VENT-001 | `docs-authority/VENT_CLOSURE.md` | C | 2026-10-01 | Vent and stack closure — scrub / regen or CRYO | current |
+| AQS-VENT-001 | `docs-authority/VENT_CLOSURE.md` | D | 2026-10-29 | Vent and stack closure | current |
 | AQS-WLD-001 | `docs-authority/WELD_MAP.md` | A | 2026-09-27 | Weld and joint map | current |
 | AQS-WLD-002 | `docs-authority/WPS_REGISTER.md` | B | 2026-10-25 | Welding procedure register | current |
-| AQS-WTR-001 | `docs-authority/WATER_PURIFICATION.md` | B | 2026-10-01 | Water purification — habitation and fab UPW | current |
+| AQS-WTR-001 | `docs-authority/WATER_PURIFICATION.md` | C | 2026-10-29 | Water purification | current |
 
 ## 4. Former numbers
 

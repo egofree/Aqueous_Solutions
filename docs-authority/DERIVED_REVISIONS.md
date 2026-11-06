@@ -17,7 +17,7 @@ This page lists every derived file and states whether it is current with the pla
 
 To see the graph commit each file was made from, run `python3 docs-authority/_rev_stamp.py --report`; it prints the full table without writing this page. `python3 -m flow_graph.param.regen` refreshes this page; `python3 -m flow_graph.param.regen --check` fails on any stale file and writes nothing.
 
-1775 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+1779 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Status |
 |---|---|
@@ -73,11 +73,13 @@ To see the graph commit each file was made from, run `python3 docs-authority/_re
 | `docs-authority/ISO_SHEETS.md` | current |
 | `docs-authority/ITP.md` | current |
 | `docs-authority/JELLYBEAN.md` | current |
+| `docs-authority/LIFE_MEP.md` | current |
 | `docs-authority/LIFTING.md` | current |
 | `docs-authority/LINE_LIST.md` | current |
 | `docs-authority/LOAD_LIST.json` | current |
 | `docs-authority/LOAD_LIST.md` | current |
 | `docs-authority/MAINT_PLAN.md` | current |
+| `docs-authority/MEOH_TRAIN.md` | current |
 | `docs-authority/MFG_MODEL_PLAN.md` | current |
 | `docs-authority/MFG_TOOLS.md` | current |
 | `docs-authority/MODEL_WORKBOOK.xlsx` | current |
@@ -112,6 +114,8 @@ To see the graph commit each file was made from, run `python3 docs-authority/_re
 | `docs-authority/TEST_PLAN.md` | current |
 | `docs-authority/TEST_RIGS.md` | current |
 | `docs-authority/UNIT_MATERIALS.md` | current |
+| `docs-authority/VENT_CLOSURE.md` | current |
+| `docs-authority/WATER_PURIFICATION.md` | current |
 | `docs-authority/WATER_TOWER.md` | current |
 | `docs-authority/WIRE_SPECS.md` | current |
 | `docs-authority/WPS_REGISTER.md` | current |

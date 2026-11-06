@@ -480,6 +480,36 @@
    "stable": true
   },
   {
+   "name": "doc_power_sizing",
+   "status": "ok",
+   "stable": true
+  },
+  {
+   "name": "doc_water_purification",
+   "status": "ok",
+   "stable": true
+  },
+  {
+   "name": "doc_life_mep",
+   "status": "ok",
+   "stable": true
+  },
+  {
+   "name": "doc_meoh_train",
+   "status": "ok",
+   "stable": true
+  },
+  {
+   "name": "sanitation_doc",
+   "status": "ok",
+   "stable": true
+  },
+  {
+   "name": "doc_vent_closure",
+   "status": "ok",
+   "stable": true
+  },
+  {
    "name": "code_basis",
    "status": "ok",
    "stable": true
@@ -749,11 +779,13 @@
   "docs-authority/ISO_SHEETS.md",
   "docs-authority/ITP.md",
   "docs-authority/JELLYBEAN.md",
+  "docs-authority/LIFE_MEP.md",
   "docs-authority/LIFTING.md",
   "docs-authority/LINE_LIST.md",
   "docs-authority/LOAD_LIST.json",
   "docs-authority/LOAD_LIST.md",
   "docs-authority/MAINT_PLAN.md",
+  "docs-authority/MEOH_TRAIN.md",
   "docs-authority/MFG_MODEL_PLAN.md",
   "docs-authority/MFG_TOOLS.md",
   "docs-authority/MODEL_WORKBOOK.xlsx",
@@ -788,6 +820,8 @@
   "docs-authority/TEST_PLAN.md",
   "docs-authority/TEST_RIGS.md",
   "docs-authority/UNIT_MATERIALS.md",
+  "docs-authority/VENT_CLOSURE.md",
+  "docs-authority/WATER_PURIFICATION.md",
   "docs-authority/WATER_TOWER.md",
   "docs-authority/WIRE_SPECS.md",
   "docs-authority/WPS_REGISTER.md",
@@ -930,6 +964,7 @@
   "docs-authority/sizing/PV_CELL_LINE.md",
   "docs-authority/sizing/REACTOR_DESIGN._generated.json",
   "docs-authority/sizing/REACTOR_DESIGN.md",
+  "docs-authority/sizing/SANITATION.md",
   "docs-authority/sizing/STORAGE_HOLDUP.md",
   "docs-authority/sizing/UPW_POLISH.md",
   "docs-authority/sizing/VENT_SCRUBBER.md",
