@@ -13,6 +13,7 @@ Authority: graph Rev AD; AQS-PLAN-007 MET-EW_n-02. Study. Not a PE stamp. Genera
 | D | The sheet-mass column relabeled copper-equivalent (the bounding Faraday basis it always used); the feed-metal column marked as the cascade order, not a metal identification; finding 6 added. No per-species mass is published. | 2026-11-04 |
 | E | Owner ruling Q-038: the cascade rate moves to its supply basis - the S08 deposit rows (AQS-ASSAY-001 section 5) at leach recovery 1.0 - so every cell current, cathode count and tank re-solves at the element basis; the copper-equivalent bounding convention and the wear-goods closing-by-difference chain behind it are retired. Demand check and governing statement added to section 2. | 2026-11-04 |
 | F | Owner ruling Q-038 (2026-11-05): the equipment of every cell is rated at the AQS-ASSAY-001 element envelope (table 4.1) - the largest deposit of its own element in any feed case, at the design feed rate and leach recovery 1.0 - so no case B lot forces a resize (AGENTS.md sizing rule). The booked stream rates stay at the reference S08 rows; both deposit columns are published. | 2026-11-06 |
+| G | Owner ruling Q-041: the minor-metal arrangement is decided from first principles and, no clear winner existing, carried both ways as a selectable option (driver `ew_minor_metal_arrangement`); section 4 added with the analysis and the merged-cell sizing. No selective-arrangement figure changed. | 2026-11-06 |
 
 ## 1. Basis
 
@@ -49,3 +50,21 @@ The envelope deposit column sets the equipment (current, cathodes, tank, rectifi
 5. Materials. The 316L frame in AQS-EW-MOD-001 is a wetted non-electrode metal and is withdrawn under AQS-STD-002 M3; racks are CPVC or PVC-U. Electrode materials for chloride with anodic Cl₂ (316L cathode, PbO₂ anode) were reopened as X-MAT-18 and are now titanium cathodes and mixed-metal-oxide anodes (AQS-STD-002 section 9).
 6. Product booking: the plated element mass of every cell books once. The forming share (Cu, Pb, Sn, Ni, Cd, Zn) rides IA-EW-SHEET from the EW_9 collection point and re-enters the ledger through the melt and forming products (wire, mill sheet, powder) on the AQS-DUTY-010 bases; the noble and iron harvests leave on their cell edges to the shop. The Rev D copper-equivalent convention (sheet mass bounding the plated rate at M_Cu, z = 2) is retired with the wear-goods chain that set it.
 7. The case B rows of AQS-ASSAY-001 table 4.1 were the resize trigger of the held design; at this envelope basis the trigger is closed - a case B lot runs within the sized equipment without a rebuild (the lot books its own rates on arrival, A-M-460).
+
+## 4. Minor-metal arrangement (Q-041)
+
+The five minor-metal cells (EW_4 lead, EW_5 tin, EW_6 nickel, EW_8 cadmium, EW_9 zinc) can stay separate or be merged into one cell. Owner ruling Q-041 (2026-11-05): decide from first principles - electrochemistry, current density, selectivity, mass transfer and energy - and if the analysis yields no clear winner, carry both arrangements as selectable options in the design data. Gold and silver stay on their own cells in either arrangement.
+
+- Selectivity. The published standard reduction potentials are about -0.13 V (lead), -0.14 V (tin), -0.26 V (nickel), -0.40 V (cadmium) and -0.76 V (zinc) against SHE (published tables, for example the CRC Handbook of Chemistry and Physics). Lead and tin sit 10 mV apart and co-plate in either arrangement; separation by potential is impossible. Nickel and cadmium sit 146 mV apart - the same order as the Nernst swing over the working deposit activities - so the separate arrangement needs per-cell potential control to hold purity, and without it gives mixed deposits anyway.
+- Hydrogen. Zinc plates below the hydrogen potential in the chloride liquor, so part of the zinc current makes H2 in both arrangements (finding 4). Not a differentiator.
+- Energy. The DC load is the plated metal (Faraday), identical in both arrangements.
+- Hardware. The merged cell saves four tanks, four rectifier channels (250 A frames, 6 kW of nameplate), four bus runs and four instrument sets, at a better space-time yield (2 cathodes in one tank against 7 across five tanks).
+- Cadmium. The differentiator. A merged cell carries cadmium into the powder blend; the separate cadmium cell holds it as a controlled stream (the blend basis itself books the minor metals together, AQS-DUTY-010, so the ledger is unchanged in either arrangement).
+- Verdict: no clear winner, so both are carried. Driver `ew_minor_metal_arrangement` selects `selective` (the nine-cell cascade as sized in section 2, the graph arrangement today) or `merged` (one combined cell, the alternative below). Switching the graph topology to the merged arrangement (five channels, one minor-metal unit in place of EW_4/5/6/8/9) is the EW-topology unit task, held until the owner selects it.
+
+| Arrangement | Current, A | Cathodes | Tanks | Channels | Nameplate, kW | DC kW |
+| --- | --- | --- | --- | --- | --- | --- |
+| Selective (rated) | 587.9 | 7 | 5 | 5 | 7.5 | 1.25 |
+| Merged (alternative) | 183.9 | 2 | 1 | 1 | 1.5 | 0.39 |
+
+The merged cell's bounding current is the largest single-element current of the five (183.9 A, nickel basis): the envelope gives the lumped fraction to one element at a time, so the combined cell never sees more than that charge per unit time.

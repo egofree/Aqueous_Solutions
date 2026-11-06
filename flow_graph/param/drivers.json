@@ -6087,5 +6087,21 @@
   "value": 1.0,
   "units": "- leach recovery of plateable metal to the EW cascade, the envelope upper bound",
   "register": "AQS-ASSAY-001"
+ },
+ "ew_minor_metal_arrangement": {
+  "value": "selective",
+  "units": "- minor-metal EW arrangement: 'selective' (EW_4/5/6/8/9 as five cells) or 'merged' (one combined minor-metal cell); gold, silver, copper and iron keep their own cells in both",
+  "register": "AQS-OQ-001 Q-041"
+ },
+ "ew_minor_metal_cells": {
+  "value": [
+   4,
+   5,
+   6,
+   8,
+   9
+  ],
+  "units": "- EW_n cell numbers of the minor-metal group (the cells the Q-041 merged arrangement combines)",
+  "register": "AQS-OQ-001 Q-041"
  }
 }

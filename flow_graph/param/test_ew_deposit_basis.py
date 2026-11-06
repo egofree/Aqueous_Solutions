@@ -70,3 +70,19 @@ def test_booked_s08_deposits_within_reference_feed():
     cls = e['params']['assay_envelope']['cases']['reference_point']['metal_plateable']
     booked = sum(r['dep_ref_kg_d'] for r in _ew_rows())
     assert booked <= feed * cls + 1e-6, (booked, feed * cls)
+
+
+def test_minor_metal_arrangement_carried_both_ways():
+    """Q-041: no clear winner between the selective and merged minor-metal arrangements,
+    so both are carried in the design data; the driver selects and names a valid value."""
+    d = DR.load()
+    arr = DR.val(d, 'ew_minor_metal_arrangement')
+    assert arr in ('selective', 'merged'), arr
+    out = json.loads(subprocess.run([sys.executable, 'docs-authority/_ew_sizing.py'], cwd=ROOT,
+                                    capture_output=True, text=True, check=True).stdout)
+    m, rows = out['merged_alt'], out['rows']
+    minor = (4, 5, 6, 8, 9)
+    # the merged bounding current is the largest single-element current of the five (nickel basis)
+    assert m['I_A'] == pytest.approx(max(rows[n - 1]['I_A'] for n in minor), rel=1e-9)
+    assert m['cathodes'] >= 1 and len(m['size_mm']) == 3
+    assert all(r['cell'] == f'EW_{n}' for n, r in zip(range(1, 10), rows))

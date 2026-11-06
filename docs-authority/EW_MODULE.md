@@ -19,4 +19,4 @@ Not a PE stamp.
 
 7. Code. Shop, PVC/FRP.
 
-8. Open items. Rev D: per-cell sizing is AQS-DUTY-051; the 600 × 420 mm envelope is the plate. Electrode materials set in AQS-STD-002 section 9 (X-MAT-18). The coat life is not measured.
+8. Open items. Rev D: per-cell sizing is AQS-DUTY-051; the 600 × 420 mm envelope is the plate. Electrode materials set in AQS-STD-002 section 9 (X-MAT-18). The coat life is not measured. The minor-metal arrangement is selectable (owner ruling Q-041, driver `ew_minor_metal_arrangement`): the selective cascade (five minor-metal cells) is sized in AQS-DUTY-051 section 2 and the merged alternative in its section 4; materials, nozzles and instruments of this module apply to a cell of either arrangement.

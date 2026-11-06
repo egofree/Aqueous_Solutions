@@ -53,6 +53,7 @@ Table 2.1. Rectifier channels
 2. Turndown is needed. Cells EW_1 and EW_2 run below 40 A (0.3 and 1.0 A) against 250 A channels; each of these cells needs a low-range module (0 to 50 A) so the channel operates in its efficient band. This is a study recommendation, held for task X-ELS-03.
 3. The current that goes to the hydrogen side reaction (AQS-DUTY-051 finding 4) is not included in these ratings. At the hydrogen rates of the graph, the 10 % margin does not cover it.
 4. With one cell per channel, a 36 V output is not needed; 6 V reduces the conversion loss and the busbar cost. If cells of equal current are later connected in series, the channel voltage rises with the number of cells.
+5. The minor-metal arrangement is selectable (owner ruling Q-041, driver `ew_minor_metal_arrangement`): the rated nine-channel set is the selective arrangement; the merged alternative runs five channels - EW_1 to EW_3, EW_7 and one combined minor-metal cell - saving four 250 A frames, 6 kW of nameplate. Both are sized in AQS-DUTY-051 section 4.
 
 ## 4. Representation in the flow graph at this revision
 

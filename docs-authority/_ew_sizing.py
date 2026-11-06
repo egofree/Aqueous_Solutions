@@ -30,6 +30,9 @@ WALL=DR.val(_d,'DIGESTER.ew-cascade-train.ew_tank_wall_m')       # AQS-DUTY-051 
 END=DR.val(_d,'DIGESTER.ew-cascade-train.ew_tank_end_margin_m'); SIDE=DR.val(_d,'DIGESTER.ew-cascade-train.ew_tank_side_margin_m')
 SUMP=DR.val(_d,'DIGESTER.ew-cascade-train.ew_tank_sump_m'); TOP=DR.val(_d,'DIGESTER.ew-cascade-train.ew_tank_cover_m'); FB=DR.val(_d,'DIGESTER.ew-cascade-train.ew_tank_freeboard_m')   # A-M-038 allowances
 SHEET_TO=DR.val(_d,'ew_sheet_collection_cell')   # the forming share books on IA-EW-SHEET at the EW_9 collection point (write_graph.process)
+ARR=DR.val(_d,'ew_minor_metal_arrangement')      # Q-041: 'selective' (five minor-metal cells) or 'merged' (one combined cell)
+assert ARR in ('selective','merged'), ARR
+MINOR=tuple(int(n) for n in DR.val(_d,'ew_minor_metal_cells'))   # the minor-metal cells (Q-041)
 rows=[]
 for n in range(1,10):
     el,M,z,env_key=EL[n]
@@ -46,6 +49,18 @@ for n in range(1,10):
         edge=edge,booked_kg_d=booked,I_A=I,cathodes=Nc,anodes=Nc+1,j_A_m2=j,
         size_mm=[Lo,Wo,Ho],V_liq_m3=Vl,tau_min=Vl/Q*1440,P_kW=electrochem.dc_power_kW(I,V)))
 tot=dict(I_A=sum(r['I_A'] for r in rows),dep=sum(r['dep_kg_d'] for r in rows),dep_ref=sum(r['dep_ref_kg_d'] for r in rows),P_kW=sum(r['P_kW'] for r in rows))
+# Q-041 merged alternative: one combined minor-metal cell. The envelope gives the lumped
+# fraction to a single element, so the merged cell's bounding current is the largest
+# single-element current of the five (nickel basis); gold, silver, copper and iron keep
+# their own cells in either arrangement.
+mi=max(rows[n-1]['I_A'] for n in MINOR)
+mc=electrochem.cathode_count(mi,J,AP); mj=mi/(mc*AP)
+mLi=mc*PITCH+2*END; mWi=PW+2*SIDE
+mLo,mWo,mHo=[round((x+2*WALL)*1000) for x in (mLi,mWi)]+[round((Hi+WALL)*1000)]
+merged=dict(cell='EW_M',metal='Pb/Sn/Ni/Cd/Zn blend',I_A=mi,cathodes=mc,anodes=mc+1,j_A_m2=mj,
+    size_mm=[mLo,mWo,mHo],P_kW=electrochem.dc_power_kW(mi,V),
+    note='one tank, one channel, one bus run in place of the five minor-metal cells '
+         '(four 250 A frames, four tanks, four bus runs saved)')
 MD=os.path.join(os.path.dirname(os.path.abspath(__file__)),'sizing','EW_CELLS.md')
 def write_md():
     """AQS-DUTY-051 Rev F: this duty sheet is a generator output (X-GOV-06 register clears at the commit that carries it)."""
@@ -58,7 +73,8 @@ def write_md():
        '| C | Rev AC regeneration: the script writes this duty sheet from the live graph; currents and tank sizes unchanged (held harvests), residence tracks the Rev AC cascade transit rates. | 2026-10-18 |',
        '| D | The sheet-mass column relabeled copper-equivalent (the bounding Faraday basis it always used); the feed-metal column marked as the cascade order, not a metal identification; finding 6 added. No per-species mass is published. | 2026-11-04 |',
        '| E | Owner ruling Q-038: the cascade rate moves to its supply basis - the S08 deposit rows (AQS-ASSAY-001 section 5) at leach recovery 1.0 - so every cell current, cathode count and tank re-solves at the element basis; the copper-equivalent bounding convention and the wear-goods closing-by-difference chain behind it are retired. Demand check and governing statement added to section 2. | 2026-11-04 |',
-       '| F | Owner ruling Q-038 (2026-11-05): the equipment of every cell is rated at the AQS-ASSAY-001 element envelope (table 4.1) - the largest deposit of its own element in any feed case, at the design feed rate and leach recovery 1.0 - so no case B lot forces a resize (AGENTS.md sizing rule). The booked stream rates stay at the reference S08 rows; both deposit columns are published. | 2026-11-06 |', '',
+       '| F | Owner ruling Q-038 (2026-11-05): the equipment of every cell is rated at the AQS-ASSAY-001 element envelope (table 4.1) - the largest deposit of its own element in any feed case, at the design feed rate and leach recovery 1.0 - so no case B lot forces a resize (AGENTS.md sizing rule). The booked stream rates stay at the reference S08 rows; both deposit columns are published. | 2026-11-06 |',
+       '| G | Owner ruling Q-041: the minor-metal arrangement is decided from first principles and, no clear winner existing, carried both ways as a selectable option (driver `ew_minor_metal_arrangement`); section 4 added with the analysis and the merged-cell sizing. No selective-arrangement figure changed. | 2026-11-06 |', '',
        '## 1. Basis', '',
        '- Equipment rate basis (bounding envelope): the largest fraction of each plateable element found in any case of the IA-FEED-01 envelope (graph `params.assay_envelope.element_envelope`, the machine copy of AQS-ASSAY-001 table 4.1) at the design feed rate and leach recovery 1.0 (AQS-ASSAY-001 section 4 upper bound, driver `ew_leach_recovery_design`). The five minor plateable metals each carry the lumped fraction - the all-in-one-element reading. Design current per cell I = m z F / (M t CE), current efficiency 0.85 (USBM_CL_EW chloride EW 0.85-0.90, lower bound; study, A-M-036), molar mass and valence per element.',
        '- Rate basis (booked streams): the S08 deposit rows (AQS-ASSAY-001 section 5) stay the stream-rate basis - a balance closes on one feed, the envelope sizes the equipment; no single feed loads every cell at once (the largest simultaneous load is the reference case).',
@@ -82,8 +98,24 @@ def write_md():
        '4. Side-reaction H₂ on EW_1, EW_2, EW_4 and EW_9 (graph H₂ edges) would add Faradaic current not counted here. It is held with the AQS-DUTY-016 H₂/Cl₂ discrepancy (EDGE_RATING_DUTY) and needs an owner rate decision.',
        '5. Materials. The 316L frame in AQS-EW-MOD-001 is a wetted non-electrode metal and is withdrawn under AQS-STD-002 M3; racks are CPVC or PVC-U. Electrode materials for chloride with anodic Cl₂ (316L cathode, PbO₂ anode) were reopened as X-MAT-18 and are now titanium cathodes and mixed-metal-oxide anodes (AQS-STD-002 section 9).',
        '6. Product booking: the plated element mass of every cell books once. The forming share (Cu, Pb, Sn, Ni, Cd, Zn) rides IA-EW-SHEET from the EW_9 collection point and re-enters the ledger through the melt and forming products (wire, mill sheet, powder) on the AQS-DUTY-010 bases; the noble and iron harvests leave on their cell edges to the shop. The Rev D copper-equivalent convention (sheet mass bounding the plated rate at M_Cu, z = 2) is retired with the wear-goods chain that set it.',
-       '7. The case B rows of AQS-ASSAY-001 table 4.1 were the resize trigger of the held design; at this envelope basis the trigger is closed - a case B lot runs within the sized equipment without a rebuild (the lot books its own rates on arrival, A-M-460).']
+       '7. The case B rows of AQS-ASSAY-001 table 4.1 were the resize trigger of the held design; at this envelope basis the trigger is closed - a case B lot runs within the sized equipment without a rebuild (the lot books its own rates on arrival, A-M-460).',
+       '', '## 4. Minor-metal arrangement (Q-041)', '',
+       'The five minor-metal cells (EW_4 lead, EW_5 tin, EW_6 nickel, EW_8 cadmium, EW_9 zinc) can stay separate or be merged into one cell. Owner ruling Q-041 (2026-11-05): decide from first principles - electrochemistry, current density, selectivity, mass transfer and energy - and if the analysis yields no clear winner, carry both arrangements as selectable options in the design data. Gold and silver stay on their own cells in either arrangement.',
+       '',
+       '- Selectivity. The published standard reduction potentials are about -0.13 V (lead), -0.14 V (tin), -0.26 V (nickel), -0.40 V (cadmium) and -0.76 V (zinc) against SHE (published tables, for example the CRC Handbook of Chemistry and Physics). Lead and tin sit 10 mV apart and co-plate in either arrangement; separation by potential is impossible. Nickel and cadmium sit 146 mV apart - the same order as the Nernst swing over the working deposit activities - so the separate arrangement needs per-cell potential control to hold purity, and without it gives mixed deposits anyway.',
+       '- Hydrogen. Zinc plates below the hydrogen potential in the chloride liquor, so part of the zinc current makes H2 in both arrangements (finding 4). Not a differentiator.',
+       '- Energy. The DC load is the plated metal (Faraday), identical in both arrangements.',
+       '- Hardware. The merged cell saves four tanks, four rectifier channels (250 A frames, 6 kW of nameplate), four bus runs and four instrument sets, at a better space-time yield (2 cathodes in one tank against 7 across five tanks).',
+       '- Cadmium. The differentiator. A merged cell carries cadmium into the powder blend; the separate cadmium cell holds it as a controlled stream (the blend basis itself books the minor metals together, AQS-DUTY-010, so the ledger is unchanged in either arrangement).',
+       '- Verdict: no clear winner, so both are carried. Driver `ew_minor_metal_arrangement` selects `selective` (the nine-cell cascade as sized in section 2, the graph arrangement today) or `merged` (one combined cell, the alternative below). Switching the graph topology to the merged arrangement (five channels, one minor-metal unit in place of EW_4/5/6/8/9) is the EW-topology unit task, held until the owner selects it.',
+       '',
+       '| Arrangement | Current, A | Cathodes | Tanks | Channels | Nameplate, kW | DC kW |',
+       '| --- | --- | --- | --- | --- | --- | --- |',
+       f"| Selective (rated) | {sum(rows[n-1]['I_A'] for n in MINOR):.1f} | {sum(rows[n-1]['cathodes'] for n in MINOR)} | 5 | 5 | 7.5 | {sum(rows[n-1]['P_kW'] for n in MINOR):.2f} |",
+       f"| Merged (alternative) | {merged['I_A']:.1f} | {merged['cathodes']} | 1 | 1 | 1.5 | {merged['P_kW']:.2f} |",
+       '',
+       f"The merged cell's bounding current is the largest single-element current of the five ({mi:.1f} A, nickel basis): the envelope gives the lumped fraction to one element at a time, so the combined cell never sees more than that charge per unit time."]
     open(MD,'w').write('\n'.join(X)+'\n')
 if __name__=='__main__':
     write_md()
-    print(json.dumps(dict(rows=rows,total=tot),indent=1))
+    print(json.dumps(dict(rows=rows,total=tot,merged_alt=merged,arrangement=ARR),indent=1))

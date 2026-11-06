@@ -1054,6 +1054,8 @@ All solved units close.
 | lio_bat_energy_kWh | 2517 | kWh sealed Li-ion storage (interim carries the reference storage duty; re-sized at the locale design pass) | A-M-402 | yes |
 | geo_orc_feed_pump_kW | 0.05 | kW ORC feed pump (R245fa study class) | A-M-285 | yes |
 | ew_leach_recovery_design | 1.0 | - leach recovery of plateable metal to the EW cascade, the envelope upper bound | AQS-ASSAY-001 | — |
+| ew_minor_metal_arrangement | "selective" | - minor-metal EW arrangement: 'selective' (EW_4/5/6/8/9 as five cells) or 'merged' (one combined minor-metal cell); gold, silver, copper and iron keep their own cells in both | AQS-OQ-001 Q-041 | — |
+| ew_minor_metal_cells | [4, 5, 6, 8, 9] | - EW_n cell numbers of the minor-metal group (the cells the Q-041 merged arrangement combines) | AQS-OQ-001 Q-041 | — |
 
 ## 6. References
 
