@@ -54,7 +54,7 @@
   "relief": {
     "design_kPa": 22000.0,
     "relief_mm": 13.0,
-    "basis": "node relief_basis: API 520 with the API 521 fire case per half bank (17 tubes per half); valves on the bank piping, purchase scope"
+    "basis": "node relief_basis: API 520 with the API 521 fire case per half bank (17 tubes per half booked); valves on the bank piping, purchase scope"
   },
   "storage": {
     "store_kg": null,

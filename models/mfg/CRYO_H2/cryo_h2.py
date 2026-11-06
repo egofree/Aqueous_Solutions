@@ -262,7 +262,7 @@ report = {
                     "from the node compressor_design; drawn in the +X end bay of the rack"},
     "relief": {"design_kPa": P.get("design_kPa"), "relief_mm": P.get("relief_mm"),
                "basis": "node relief_basis: API 520 with the API 521 fire case per half bank "
-               f"({N_TUBES // HALVES} tubes per half); valves on the bank piping, purchase scope"},
+               f"({N_TUBES // HALVES} tubes per half booked); valves on the bank piping, purchase scope"},
     "storage": {"store_kg": P.get("store_kg"), "water_volume_m3": P.get("store_water_volume_m3"),
                 "basis": P.get("store_basis")},
     "nozzles_drawn": drawn,
