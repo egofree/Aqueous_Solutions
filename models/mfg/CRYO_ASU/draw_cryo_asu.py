@@ -6,7 +6,7 @@ are applied by docs-authority/_drawings.py (AQS-DWG-002). Sheets:
 
   ga_front       general arrangement, front elevation (-Y)
   ga_side        general arrangement, side elevation (-X)
-  nozzle_orient  nozzle orientation, top view (16 schedule rows)
+  nozzle_orient  nozzle orientation, top view (rows per docs-authority/nozzles/CRYO_ASU.csv)
   sh01           TSA bed set (shell, heads, grids, pedestals)
   in01           internals: 13X sorbent charges
   aux01          service group: purchased machinery envelopes, hose barbs, drain, vent
@@ -36,14 +36,19 @@ aux = union_all([parts["nozzles"], parts["machinery"]])
 full = union_all(list(parts.values()))
 
 bx = R["beds"]["x_mm"]
+BED_D = R["beds"]["bed_D_mm"]                 # node design block (AQS-PAR-001 sizing)
+BED_L = R["beds"]["bed_L_mm"]
+BED_PITCH = ns["BED_PITCH"]                   # model layout constant: bed_D + 100
+N_PIPE = sum(1 for v in R["nozzles_drawn"].values() if v.get("style") != "carried")
+M = R["machinery"]
 SHEETS = [
     ("ga_front", full, (0, 1, 0),
      [f'Keys: {R["bbox_mm"][0]} x {R["bbox_mm"][1]} x {R["bbox_mm"][2]} mm overall (skid layout); '
-      'the node size_mm [300, 300, 2000] is the M0 study registry box (params size_note)',
-      'Misfit to report: the beds at the node design diameter 414.4 mm cannot fit the study box; '
-      'nothing is resized (AQS-PLAN-006 rule 3)',
-      '3 TSA beds D 414.4 x 1243.1 on pedestals; CO2 compressor, condenser and Ar getter row at '
-      'x 1700..2440',
+      f'the node size_mm {R["size_mm"]} is the M0 study registry box (params size_note)',
+      f'Misfit to report: the beds at the node design diameter {BED_D:.1f} mm cannot fit the '
+      'study box; nothing is resized (AQS-PLAN-006 rule 3)',
+      f'{R["beds"]["count"]} TSA beds D {BED_D:.1f} x {BED_L:.1f} on pedestals; CO2 compressor, '
+      'condenser and Ar getter row at x 1700..2440',
       'Vent standpipe to the 2000 mm schedule datum on the bed 1 top head (API 2000 open vent)',
       'Liquor/process inventory: none - the noble-gas streams pass through (node internals row)'],
      "General arrangement, front elevation. Shop, not stamped (AQS-STD-001 section 7)."),
@@ -56,21 +61,24 @@ SHEETS = [
       'General tolerance ISO 2768-m unless noted'],
      "General arrangement, side elevation. Shop, not stamped (AQS-STD-001 section 7)."),
     ("nozzle_orient", full, (0, 0, -1),
-     ['16 schedule rows of docs-authority/nozzles/CRYO_ASU.csv at tag, face, height and bore',
+     [f'{R["nozzle_count_schedule"]} scheduled interfaces of docs-authority/nozzles/CRYO_ASU.csv '
+      f'at tag, face, height and bore; {N_PIPE} piped rows drawn',
       'N1-N4 (z 400) and N5-N8 (z 1500) distributed across the beds in tag order, second row per '
       'bed offset 130 mm',
       'N11-N16 (z 160) are frame-level rows through the plinth: the datum sits below the bed '
       'shells; N13/N14/N15 are solids rows at DN15, bore not calculated',
       'N9 drain beside the bed 1 pedestal, tip at the 50 datum; N10 vent standpipe on bed 1 to '
       'the 2000 datum',
+      'N17 (top, z 800) is the cable power terminal (cable schedule X-ELS-06): electrical, not '
+      'piped - carried verbatim, not drawn',
       'Atmospheric per the API 2000 relief basis; schedule rating column (Class 150) carried '
       'verbatim as text - per-tag positions in check.nozzles_drawn'],
      "Nozzle orientation, top view. Tags/faces/heights per the schedule."),
     ("sh01", beds, (0, 1, 0),
-     [f'3 bed assemblies: shell t 6 (house plate convention, study), flat heads, grids t 20, '
-      f'on 200 x 200 pedestals at x {bx[0]:g} + 514.4k',
+     [f'{R["beds"]["count"]} bed assemblies: shell t 6 (house plate convention, study), flat '
+      f'heads, grids t 20, on 200 x 200 pedestals at x {bx[0]:g} + {BED_PITCH:.1f}k',
       'Shell 316L per duty section 3; corrosion allowance 0 mm (AQS-STD-001); no carbon steel',
-      'Bed design from the node: bed_D_mm 414.4, bed_L_mm 1243.1 (AQS-PAR-001 sizing)',
+      f'Bed design from the node: bed_D_mm {BED_D:.3f}, bed_L_mm {BED_L:.3f} (AQS-PAR-001 sizing)',
       'Thermoplastic-free weldment: TIG welds per the unit WORK_ORDER route (F-COL); leak test '
       'of each bed'],
      "Fabricated part sheet: TSA bed set + base frame."),
@@ -80,14 +88,17 @@ SHEETS = [
       'capped by the bed length)',
       'The charge is the A-COL packing: a solid between the support grids, laps the lower grid '
       '5 mm so the union fuses',
-      'TSA regeneration 1.40 kW (node design regen_kW); blower 0.044 kW',
+      f'TSA regeneration {M["regen_kW"]:.2f} kW (node design regen_kW); blower '
+      f'{M["blower_kW"]:.3f} kW',
       'Vendor TDS at order; replace per the duty service hours'],
      "Fabricated part sheet: 13X sorbent charges."),
     ("aux01", aux, (0, 1, 0),
-     ['CO2 two-stage compressor envelope 320 x 480 x 900 + motor bump (0.081 kW, node design); '
-      'the design block comp_stages 4 vs the internals row two-stage - staging is a named hold',
-      'Condenser/chiller envelope with fan rings (0.033 kW) and the heated Ar getter cartridge '
-      '(0.10 kW): purchased, drawn as envelope and interface (AQS-PLAN-006 rule 6)',
+     [f'CO2 two-stage compressor envelope 320 x 480 x 900 + motor bump ({M["co2_comp_kW"]:.3f} kW, '
+      'node design); the design block comp_stages 4 vs the internals row two-stage - staging is '
+      'a named hold',
+      f'Condenser/chiller envelope with fan rings ({M["co2_chill_kW"]:.3f} kW) and the heated Ar '
+      f'getter cartridge ({M["getter_kW"]:.2f} kW): purchased, drawn as envelope and interface '
+      '(AQS-PLAN-006 rule 6)',
       'Hose barbs DN15/DN25/DN50 on the bed shells and plinth; barb profile a study proportion '
       '(lib/nozzles.py), finished against the hose supplier print',
       'Drain and vent standpipes DN15 to their schedule datums'],
@@ -153,7 +164,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/CRY
 
 - Build bbox {R['bbox_mm'][0]} x {R['bbox_mm'][1]} x {R['bbox_mm'][2]} mm against the node size_mm {R['size_mm']}: the node box is the M0 study registry envelope (params size_note) and the beds at their design diameter cannot fit it - misfit reported on the tracker board, nothing resized (AQS-PLAN-006 rule 3)
 - Solid source: {step_src}; export STL closed and manifold; `cad/stl/CRYO_ASU.stl` replaced from the build (ASCII, metres)
-- Nozzles: all {R['nozzle_count_schedule']} rows of `docs-authority/nozzles/CRYO_ASU.csv` present at face, height, bore and tag; vent to the 2000 datum; frame-level z 160 rows through the plinth
+- Nozzles: all {R['nozzle_count_schedule']} rows of `docs-authority/nozzles/CRYO_ASU.csv` present at face, height, bore and tag; vent to the 2000 datum; frame-level z 160 rows through the plinth; the N17 cable power-terminal row is carried verbatim, not drawn
 - A-COL: the 13X charges are solids between support grids ({R['sorbent']['kg_drawn_total']:g} kg drawn against {R['sorbent']['kg_booked_total']:g} kg booked); distributor and demister are not named on the node (hold, WORK_ORDER W12)
 - BOM `models/mfg/CRYO_ASU/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/CRYO_ASU/drawings/` (GA front/side, nozzle orientation, 2 part sheets, iso; title blocks per AQS-DWG-002)
