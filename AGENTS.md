@@ -90,6 +90,19 @@ source. Agent-only instructions stay in this file and `docs-authority/internal/`
   design intent. Do not restart the same objective from scratch without checking
   what is already on disk.
 
+## OpenCode rounds
+
+- An OpenCode round does not run `python3 -m flow_graph.param.regen` in the
+  main working tree. The regenerator writes the generated tree in place, and a
+  run interrupted between two writer stages leaves a generated document
+  half-built, which reads as an edit. Regeneration checks run only through
+  `scripts/check_all.sh --full`, whose `flow_graph/check_regen_idempotent.py`
+  regenerates `HEAD` in a temporary worktree and changes nothing here.
+- Never kill a regeneration mid-run. A stage killed between two writers leaves
+  a generated document truncated, and the loss stays invisible until the next
+  full check. Let a started run finish or fail on its own, then read what it
+  wrote.
+
 ## Regenerator
 
 - `flow_graph/param/regen_manifest.json` is the stage graph. `--quick` runs only

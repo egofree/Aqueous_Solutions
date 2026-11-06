@@ -127,6 +127,20 @@ the optional local Git hook with `scripts/install_pre_push_hook.sh` (or
 Maintainers run the same script on every pull request before merging. A pull
 request that fails it is not merged.
 
+### Regeneration during agent and automation rounds
+
+An agent or automation round never runs the regenerator
+(`python3 -m flow_graph.param.regen`) in the main working tree. The
+regenerator rewrites every generated file in place, and a run interrupted
+between two stages can leave a generated document half-written; a
+half-written document is indistinguishable from a deliberate edit.
+Regeneration checks run through `scripts/check_all.sh --full` instead: it
+regenerates the committed state in a temporary worktree
+(`flow_graph/check_regen_idempotent.py`) and compares the result with the
+commit, leaving the working tree untouched. Never kill a regeneration once it
+has started. Let it finish or fail on its own, then read the receipt it
+wrote.
+
 ### Large files
 
 STL, FreeCAD and other CAD exports (`cad/stl/`, `models/`) are stored with Git
