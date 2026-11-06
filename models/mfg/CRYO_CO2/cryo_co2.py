@@ -254,10 +254,12 @@ rows = [
      f"{round(N_TUBES * tube_mass, 1):g} kg vs node steel_kg {D.get('steel_kg'):g} - basis "
      "difference named, W12; duty section 3 CA 0 mm"],
     ["2", "Rack frame: skid plate + SHS posts, tie bars and side rails + cross ties", 1, "316L",
-     round(mass["frame"] + mass["saddles"], 1), "make",
-     "duty section 3 (no carbon steel); SHS 80 x 80 x 5 and skid 12 are study sections (W12)"],
+     round(mass["frame"], 1), "make",
+     "frame only; the saddles are item 3 and are priced there once; duty section 3 (no carbon "
+     "steel); SHS 80 x 80 x 5 and skid 12 are study sections (W12)"],
     ["3", "Tube saddles, 3 per tube, with wear groove", N_TUBES * 3, "316L",
-     mass["saddles"], "make", "study section; saddle laps the tube 6 mm"],
+     mass["saddles"], "make", "study section; saddle laps the tube 6 mm - the only saddle "
+     "line (item 2 is frame only)"],
     ["4", f"Relief valves, API 520 / API 521 fire case per half bank, bore "
           f"{P.get('relief_mm'):g} mm", HALVES, "purchase item", "", "buy",
      "node relief_basis (valves 2, per_half_bore 8.818 -> 9 mm); rated for the 2200 kPa design - "
