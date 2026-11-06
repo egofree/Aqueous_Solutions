@@ -101,17 +101,17 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-049 | `docs-authority/POLYMER_HX_SIZING.md` | A | 2026-10-15 | Polymer exchanger sizing, HX-5 and HX8 | current |
 | AQS-DUTY-050 | `docs-authority/sizing/LEACH_CSTR_1.md` | B | 2026-10-18 | LEACH_CSTR_1 sizing | current |
 | AQS-DUTY-051 | `docs-authority/sizing/EW_CELLS.md` | F | 2026-11-06 | EW_1 to EW_9 cell sizing | current |
-| AQS-DUTY-060 | `docs-authority/sizing/EVAP_DESIGN.md` | — | — | In-house MVR evaporators EVAP_ACID and EVAP_BASE | current |
+| AQS-DUTY-060 | `docs-authority/sizing/EVAP_DESIGN.md` | C | 2026-10-29 | In-house mechanical vapour recompression evaporators EVAP_ACID and EVAP_BASE | current |
 | AQS-DUTY-061 | `docs-authority/sizing/VENT_SCRUBBER.md` | A | 2026-10-15 | EVAP_ACID vent scrubber | current |
 | AQS-DUTY-062 | `docs-authority/sizing/REACTOR_DESIGN.md` | B | 2026-10-18 | In-house reaction chambers | current |
 | AQS-DUTY-063 | `docs-authority/sizing/SANITATION.md` | C | 2026-10-29 | Blackwater and excreta train | current |
 | AQS-DUTY-064 | `docs-authority/sizing/STORAGE_HOLDUP.md` | A | 2026-10-16 | Storage and holdup sizing | current |
 | AQS-DUTY-065 | `docs-authority/sizing/GAS_RECEIVERS.md` | B | 2026-10-16 | High-pressure gas receivers | current |
 | AQS-DUTY-066 | `docs-authority/sizing/H2_PURIFIER_BEDS.md` | A | 2026-10-15 | H2_PURIFIER beds | current |
-| AQS-DUTY-067 | `docs-authority/sizing/H2_COMPRESSOR.md` | B | 2026-10-16 | Hydrogen compressor | current |
+| AQS-DUTY-067 | `docs-authority/sizing/H2_COMPRESSOR.md` | C | 2026-10-29 | Hydrogen compressor | current |
 | AQS-DUTY-068 | `docs-authority/sizing/BMED_STACK.md` | A | 2026-10-15 | BMED stack | current |
 | AQS-DUTY-069 | `docs-authority/sizing/COLD_BOX.md` | C | 2026-10-16 | CRYO_ASU separation train | current |
-| AQS-DUTY-070 | `docs-authority/sizing/UPW_POLISH.md` | A | 2026-10-16 | UPW polish (RO and EDI) | current |
+| AQS-DUTY-070 | `docs-authority/sizing/UPW_POLISH.md` | B | 2026-10-29 | Ultrapure water polish (RO and EDI) | current |
 | AQS-DUTY-071 | `docs-authority/sizing/PV_CELL_LINE.md` | A | 2026-10-16 | PV cell line tools | current |
 | AQS-DUTY-072 | `docs-authority/sizing/FOUNDRY_LINE.md` | A | 2026-10-18 | FOUNDRY line sizing | current |
 | AQS-DUTY-073 | `docs-authority/sizing/POLYMERS_LINE.md` | A | 2026-10-18 | POLYMERS line sizing | current |
@@ -280,7 +280,7 @@ Table 3.1. Document numbers in use
 | AQS-SAF-007 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | B | 2026-10-25 | Hazard separation applied to the layout | current |
 | AQS-SAF-008 | `docs-authority/HAZOP_ACTION_REGISTER.md` | A | 2026-10-19 | HAZOP action register | current |
 | AQS-SCALE-001 | `docs-authority/SCALE_MODEL.md` | E | 2026-11-01 | Scale model: parametric building growth | current |
-| AQS-SCALE-UR-001 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | E | 2026-10-24 | What goes unreclaimed when the plant is made smaller or a sector is switched off | current |
+| AQS-SCALE-UR-001 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | F | 2026-10-29 | What goes unreclaimed when the plant is made smaller or a sector is switched off | current |
 | AQS-SEC-001 | `docs-authority/SECTOR_DEFINITIONS.md` | I | 2026-10-25 | Sector definitions | current |
 | AQS-SEL-FP | `notes/MONOMER_ROUTE.md` | A | 2026-10-16 | Monomer route selection — VDF and TFE | current |
 | AQS-SEL-TI-MO | `notes/TI_MO_SELECTION.md` | A | 2026-10-16 | TI_CELL and MO_CELL process selection | current |
