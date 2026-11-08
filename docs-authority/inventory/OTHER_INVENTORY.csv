@@ -488,10 +488,10 @@ DIGESTER,LEACH_EW,EW_1,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,e
 DIGESTER,LEACH_EW,EW_1,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-EW-01 to EW_2: run and fault (assumed)
 DIGESTER,LEACH_EW,EW_1,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,electrolyte circulation pump (assumed VFD at >= 0.75 kW)
 DIGESTER,LEACH_EW,EW_1,fabricated part,fabricated part set,9 BOM lines,models/mfg/EW_1/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-DIGESTER,LEACH_EW,EW_1,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,8,models/mfg/EW_1/fasteners.csv
+DIGESTER,LEACH_EW,EW_1,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,4,models/mfg/EW_1/fasteners.csv
 DIGESTER,LEACH_EW,EW_1,fastener,M10 x 35,M10 x 35,ISO 3506 A4-70,6,models/mfg/EW_1/fasteners.csv
-DIGESTER,LEACH_EW,EW_1,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,51,models/mfg/EW_1/fasteners.csv
-DIGESTER,LEACH_EW,EW_1,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,8,models/mfg/EW_1/fasteners.csv
+DIGESTER,LEACH_EW,EW_1,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,3,models/mfg/EW_1/fasteners.csv
+DIGESTER,LEACH_EW,EW_1,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_1/fasteners.csv
 DIGESTER,LEACH_EW,EW_1,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_1/fasteners.csv
 DIGESTER,LEACH_EW,EW_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,IA-EW-01: 2 per support (assumed)
 DIGESTER,LEACH_EW,EW_1,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-HDR-H2-01: 2 per support (assumed)
@@ -533,10 +533,10 @@ DIGESTER,LEACH_EW,EW_2,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,e
 DIGESTER,LEACH_EW,EW_2,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-EW-02 to EW_3: run and fault (assumed)
 DIGESTER,LEACH_EW,EW_2,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,electrolyte circulation pump (assumed VFD at >= 0.75 kW)
 DIGESTER,LEACH_EW,EW_2,fabricated part,fabricated part set,9 BOM lines,models/mfg/EW_2/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-DIGESTER,LEACH_EW,EW_2,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,8,models/mfg/EW_2/fasteners.csv
+DIGESTER,LEACH_EW,EW_2,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,4,models/mfg/EW_2/fasteners.csv
 DIGESTER,LEACH_EW,EW_2,fastener,M10 x 35,M10 x 35,ISO 3506 A4-70,6,models/mfg/EW_2/fasteners.csv
-DIGESTER,LEACH_EW,EW_2,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,51,models/mfg/EW_2/fasteners.csv
-DIGESTER,LEACH_EW,EW_2,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,8,models/mfg/EW_2/fasteners.csv
+DIGESTER,LEACH_EW,EW_2,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,3,models/mfg/EW_2/fasteners.csv
+DIGESTER,LEACH_EW,EW_2,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_2/fasteners.csv
 DIGESTER,LEACH_EW,EW_2,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_2/fasteners.csv
 DIGESTER,LEACH_EW,EW_2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,IA-EW-02: 2 per support (assumed)
 DIGESTER,LEACH_EW,EW_2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,14,IA-HDR-H2-03: 2 per support (assumed)
@@ -573,10 +573,10 @@ DIGESTER,LEACH_EW,EW_9,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,e
 DIGESTER,LEACH_EW,EW_9,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-EW-09 to POLISH_BANK: run and fault (assumed)
 DIGESTER,LEACH_EW,EW_9,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,electrolyte circulation pump (assumed VFD at >= 0.75 kW)
 DIGESTER,LEACH_EW,EW_9,fabricated part,fabricated part set,9 BOM lines,models/mfg/EW_9/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-DIGESTER,LEACH_EW,EW_9,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,10,models/mfg/EW_9/fasteners.csv
+DIGESTER,LEACH_EW,EW_9,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,4,models/mfg/EW_9/fasteners.csv
 DIGESTER,LEACH_EW,EW_9,fastener,M10 x 35,M10 x 35,ISO 3506 A4-70,6,models/mfg/EW_9/fasteners.csv
-DIGESTER,LEACH_EW,EW_9,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,63,models/mfg/EW_9/fasteners.csv
-DIGESTER,LEACH_EW,EW_9,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,10,models/mfg/EW_9/fasteners.csv
+DIGESTER,LEACH_EW,EW_9,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,5,models/mfg/EW_9/fasteners.csv
+DIGESTER,LEACH_EW,EW_9,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_9/fasteners.csv
 DIGESTER,LEACH_EW,EW_9,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_9/fasteners.csv
 DIGESTER,LEACH_EW,EW_9,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-EW-09: 2 per support (assumed)
 DIGESTER,LEACH_EW,EW_9,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,IA-HDR-H2-04: 2 per support (assumed)
@@ -680,7 +680,7 @@ DIGESTER,ew_cell,EW_3,electronics,motor starter (contactor + overload),0.18 kW,I
 DIGESTER,ew_cell,EW_3,fabricated part,fabricated part set,9 BOM lines,models/mfg/EW_3/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 DIGESTER,ew_cell,EW_3,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,4,models/mfg/EW_3/fasteners.csv
 DIGESTER,ew_cell,EW_3,fastener,M10 x 35,M10 x 35,ISO 3506 A4-70,6,models/mfg/EW_3/fasteners.csv
-DIGESTER,ew_cell,EW_3,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,21,models/mfg/EW_3/fasteners.csv
+DIGESTER,ew_cell,EW_3,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,15,models/mfg/EW_3/fasteners.csv
 DIGESTER,ew_cell,EW_3,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_3/fasteners.csv
 DIGESTER,ew_cell,EW_3,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_3/fasteners.csv
 DIGESTER,ew_cell,EW_3,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-EW-03: 2 per support (assumed)
@@ -715,8 +715,8 @@ DIGESTER,ew_cell,EW_4,electronics,motor starter (contactor + overload),0.18 kW,I
 DIGESTER,ew_cell,EW_4,fabricated part,fabricated part set,9 BOM lines,models/mfg/EW_4/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 DIGESTER,ew_cell,EW_4,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,4,models/mfg/EW_4/fasteners.csv
 DIGESTER,ew_cell,EW_4,fastener,M10 x 35,M10 x 35,ISO 3506 A4-70,6,models/mfg/EW_4/fasteners.csv
-DIGESTER,ew_cell,EW_4,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,5,models/mfg/EW_4/fasteners.csv
-DIGESTER,ew_cell,EW_4,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,2,models/mfg/EW_4/fasteners.csv
+DIGESTER,ew_cell,EW_4,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,3,models/mfg/EW_4/fasteners.csv
+DIGESTER,ew_cell,EW_4,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_4/fasteners.csv
 DIGESTER,ew_cell,EW_4,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_4/fasteners.csv
 DIGESTER,ew_cell,EW_4,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,IA-EW-10: 2 per support (assumed)
 DIGESTER,ew_cell,EW_4,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,IA-EW4-H2: 2 per support (assumed)
@@ -754,7 +754,7 @@ DIGESTER,ew_cell,EW_5,electronics,motor starter (contactor + overload),0.18 kW,I
 DIGESTER,ew_cell,EW_5,fabricated part,fabricated part set,9 BOM lines,models/mfg/EW_5/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 DIGESTER,ew_cell,EW_5,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,4,models/mfg/EW_5/fasteners.csv
 DIGESTER,ew_cell,EW_5,fastener,M10 x 35,M10 x 35,ISO 3506 A4-70,6,models/mfg/EW_5/fasteners.csv
-DIGESTER,ew_cell,EW_5,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,7,models/mfg/EW_5/fasteners.csv
+DIGESTER,ew_cell,EW_5,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,3,models/mfg/EW_5/fasteners.csv
 DIGESTER,ew_cell,EW_5,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_5/fasteners.csv
 DIGESTER,ew_cell,EW_5,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_5/fasteners.csv
 DIGESTER,ew_cell,EW_5,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-EW-05: 2 per support (assumed)
@@ -789,7 +789,7 @@ DIGESTER,ew_cell,EW_6,electronics,motor starter (contactor + overload),0.18 kW,I
 DIGESTER,ew_cell,EW_6,fabricated part,fabricated part set,9 BOM lines,models/mfg/EW_6/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 DIGESTER,ew_cell,EW_6,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,4,models/mfg/EW_6/fasteners.csv
 DIGESTER,ew_cell,EW_6,fastener,M10 x 35,M10 x 35,ISO 3506 A4-70,6,models/mfg/EW_6/fasteners.csv
-DIGESTER,ew_cell,EW_6,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,7,models/mfg/EW_6/fasteners.csv
+DIGESTER,ew_cell,EW_6,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,5,models/mfg/EW_6/fasteners.csv
 DIGESTER,ew_cell,EW_6,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_6/fasteners.csv
 DIGESTER,ew_cell,EW_6,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_6/fasteners.csv
 DIGESTER,ew_cell,EW_6,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IA-EW-06: 2 per support (assumed)
@@ -822,10 +822,10 @@ DIGESTER,ew_cell,EW_7,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,el
 DIGESTER,ew_cell,EW_7,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-EW-07 to EW_8: run and fault (assumed)
 DIGESTER,ew_cell,EW_7,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,electrolyte circulation pump (assumed VFD at >= 0.75 kW)
 DIGESTER,ew_cell,EW_7,fabricated part,fabricated part set,9 BOM lines,models/mfg/EW_7/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-DIGESTER,ew_cell,EW_7,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,10,models/mfg/EW_7/fasteners.csv
+DIGESTER,ew_cell,EW_7,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,4,models/mfg/EW_7/fasteners.csv
 DIGESTER,ew_cell,EW_7,fastener,M10 x 35,M10 x 35,ISO 3506 A4-70,6,models/mfg/EW_7/fasteners.csv
-DIGESTER,ew_cell,EW_7,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,61,models/mfg/EW_7/fasteners.csv
-DIGESTER,ew_cell,EW_7,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,8,models/mfg/EW_7/fasteners.csv
+DIGESTER,ew_cell,EW_7,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,25,models/mfg/EW_7/fasteners.csv
+DIGESTER,ew_cell,EW_7,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_7/fasteners.csv
 DIGESTER,ew_cell,EW_7,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_7/fasteners.csv
 DIGESTER,ew_cell,EW_7,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-EW-07: 2 per support (assumed)
 DIGESTER,ew_cell,EW_7,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-EW7-CL2: 2 per support (assumed)
@@ -859,7 +859,7 @@ DIGESTER,ew_cell,EW_8,electronics,motor starter (contactor + overload),0.18 kW,I
 DIGESTER,ew_cell,EW_8,fabricated part,fabricated part set,9 BOM lines,models/mfg/EW_8/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 DIGESTER,ew_cell,EW_8,fastener,M10 x 30 wedge anchor,M10 x 30 wedge anchor,ISO 3506 A4-70,4,models/mfg/EW_8/fasteners.csv
 DIGESTER,ew_cell,EW_8,fastener,M10 x 35,M10 x 35,ISO 3506 A4-70,6,models/mfg/EW_8/fasteners.csv
-DIGESTER,ew_cell,EW_8,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,7,models/mfg/EW_8/fasteners.csv
+DIGESTER,ew_cell,EW_8,fastener,M6 x 25,M6 x 25,ISO 3506 A4-70,3,models/mfg/EW_8/fasteners.csv
 DIGESTER,ew_cell,EW_8,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_8/fasteners.csv
 DIGESTER,ew_cell,EW_8,fastener,M8 x 40,M8 x 40,ISO 3506 A4-70,4,models/mfg/EW_8/fasteners.csv
 DIGESTER,ew_cell,EW_8,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-EW-08: 2 per support (assumed)

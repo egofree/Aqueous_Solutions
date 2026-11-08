@@ -397,87 +397,87 @@ EVAP_BASE,"Recirculation pump, 282.7 kg/h at 4 m (0.008 kW), envelope and interf
 EVAP_BASE,Relief set per node relief_basis: body fire valve (set 100 kPa g) and shell bloc,2,nickel trim,Missing,Ni EW -> MET_MELT,
 EVAP_BASE,"Nozzle set per docs-authority/nozzles/EVAP_BASE.csv: 8 rows (feed in, product an",8,nickel 200 tube,Missing,Ni EW -> MET_MELT,
 EVAP_BASE,"Plinth 1250 x 800 x 15 (body, blower and interchanger frame)",1,"carbon steel, painted",Closed,Fe EW -> MET_MELT -> mill/draw,
-EW_1,"CPVC tank shell, outside 270 x 720 x 760 mm, wall 10 mm, open top (inside 2650 x",1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_1,CPVC support set: 4 cross beams 60 x 10 x 700 under the bus pads + vent bridge 6,1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_1,Cathode set: 25 sheets 600 x 420 x 3 mm Ti Grade 2 + 25 hanger tabs 120 x 111 x ,25,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_1,"Anode set: 26 meshes 600 x 420 x 1.5 mm Ti + 26 hanger tabs 120 x 111 x 1.5, MMO",26,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_1,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",50,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_1,"Bus packs, go and return: 2 x (2 flats 110 x 6.3 x 2400 mm, spaced one thickness",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
-EW_1,"Standoff pads 10 x 110 x 8 under the bus packs, 3 per pack per beam station",12,FRP (glass-polyester),Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
-EW_1,"Nozzle set, set-in CPVC per docs-authority/nozzles/EW_1.csv: 3 x DN50 barbs (N1/",12,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_1,"Rectifier, 5.26 kW cell channel on IA-DC-EW_1 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
-EW_2,"PVC-U tank shell, outside 2670 x 720 x 760 mm, wall 10 mm, open top (inside 2650",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_2,PVC-U support set: 4 cross beams 60 x 10 x 700 under the bus pads + vent bridge ,1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_2,Cathode set: 25 sheets 600 x 420 x 3 mm Ti Grade 2 + 25 hanger tabs 120 x 111 x ,25,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_2,"Anode set: 26 meshes 600 x 420 x 1.5 mm Ti + 26 hanger tabs 120 x 111 x 1.5, MMO",26,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_2,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",50,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_2,"Bus packs, go and return: 2 x (2 flats 110 x 6.3 x 2400 mm, spaced one thickness",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
-EW_2,"Standoff pads 10 x 110 x 8 under the bus packs, one per pack per beam station",8,FRP (glass-polyester),Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
-EW_2,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_2.csv: 3 x DN15 barbs (N3",8,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_2,"Rectifier, 5.99 kW cell channel on IA-DC-EW_2 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
-EW_3,"PVC-U tank shell, outside 1170 x 720 x 760 mm, wall 10 mm, open top (inside 1150",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_1,"CPVC tank shell, outside 270 x 720 x 760 mm, wall 10 mm, open top (inside 250 x ",1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_1,CPVC support set: 2 cross beams 60 x 10 x 700 under the bus pads + vent bridge 6,1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_1,"Cathode set: 1 sheets 600 x 420 x 3 mm Ti Grade 2 + 1 hanger tabs 120 x 111 x 3,",1,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_1,"Anode set: 2 meshes 600 x 420 x 1.5 mm Ti + 2 hanger tabs 120 x 111 x 1.5, MMO c",2,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_1,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",2,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_1,"Bus packs, go and return: 2 x (1 flats 20 x 6.3 x 120 mm, spaced one thickness) ",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
+EW_1,"Standoff pads 10 x 20 x 8 under the bus packs, one per pack per beam station",4,FRP (glass-polyester),Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
+EW_1,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_1.csv: 2 x DN15 barbs (N4",7,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_1,"Rectifier, 0.00 kW cell channel on IA-DC-EW_1 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
+EW_2,"PVC-U tank shell, outside 270 x 720 x 760 mm, wall 10 mm, open top (inside 250 x",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_2,PVC-U support set: 2 cross beams 60 x 10 x 700 under the bus pads + vent bridge ,1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_2,"Cathode set: 1 sheets 600 x 420 x 3 mm Ti Grade 2 + 1 hanger tabs 120 x 111 x 3,",1,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_2,"Anode set: 2 meshes 600 x 420 x 1.5 mm Ti + 2 hanger tabs 120 x 111 x 1.5, MMO c",2,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_2,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",2,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_2,"Bus packs, go and return: 2 x (1 flats 20 x 6.3 x 120 mm, spaced one thickness) ",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
+EW_2,"Standoff pads 10 x 20 x 8 under the bus packs, one per pack per beam station",4,FRP (glass-polyester),Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
+EW_2,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_2.csv: 2 x DN15 barbs (N3",5,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_2,"Rectifier, 0.00 kW cell channel on IA-DC-EW_2 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
+EW_3,"PVC-U tank shell, outside 870 x 720 x 760 mm, wall 10 mm, open top (inside 850 x",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 EW_3,PVC-U support set: 2 cross beams 60 x 10 x 700 under the bus pads + vent bridge ,1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_3,Cathode set: 10 sheets 600 x 420 x 3 mm Ti Grade 2 + 10 hanger tabs 120 x 111 x ,10,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_3,"Anode set: 11 meshes 600 x 420 x 1.5 mm Ti + 11 hanger tabs 120 x 111 x 1.5, MMO",11,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_3,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",20,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_3,"Bus pack, go and return: 2 x (1 flat 90 x 6.3 x 900 mm, spaced one thickness) + ",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
-EW_3,"Standoff pads 10 x 90 x 8 under the bus packs, one per pack per beam station",4,FRP (glass-polyester),Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
-EW_3,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_3.csv: 3 x DN15 barbs (N3",7,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_3,"Rectifier, 2.25 kW cell channel on IA-DC-EW_3 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
-EW_4,"PVC-U tank shell, outside 370 x 720 x 760 mm, wall 10 mm, open top (inside 350 x",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_4,PVC-U support set: 1 cross beams 60 x 10 x 700 under the bus pads + vent bridge ,1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_4,"Cathode set: 2 sheets 600 x 420 x 3 mm Ti Grade 2 + 2 hanger tabs 120 x 111 x 3,",2,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_4,"Anode set: 3 meshes 600 x 420 x 1.5 mm Ti + 3 hanger tabs 120 x 111 x 1.5, MMO c",3,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_4,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",4,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_4,"Bus pack, go and return: 2 x (1 flat 20 x 6.3 x 100 mm, spaced one thickness) + ",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
-EW_4,"Standoff pads 10 x 20 x 8 under the bus packs, one per pack per beam station",2,FRP (glass-polyester),Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
-EW_4,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_4.csv: 4 x DN15 barbs (N3",8,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_4,"Rectifier, 0.49 kW cell channel on IA-DC-EW_4 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
-EW_5,"PVC-U tank shell, outside 470 x 720 x 760 mm, wall 10 mm, open top (inside 450 x",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_3,"Cathode set: 7 sheets 600 x 420 x 3 mm Ti Grade 2 + 7 hanger tabs 120 x 111 x 3,",7,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_3,"Anode set: 8 meshes 600 x 420 x 1.5 mm Ti + 8 hanger tabs 120 x 111 x 1.5, MMO c",8,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_3,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",14,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_3,"Bus packs, go and return: 2 x (1 flats 70 x 6.3 x 601.5 mm, spaced one thickness",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
+EW_3,"Standoff pads 10 x 70 x 8 under the bus packs, one per pack per beam station",4,FRP (glass-polyester),Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
+EW_3,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_3.csv: 2 x DN15 barbs (N3",5,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_3,"Rectifier, 1.64 kW cell channel on IA-DC-EW_3 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
+EW_4,"PVC-U tank shell, outside 270 x 720 x 760 mm, wall 10 mm, open top (inside 250 x",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_4,PVC-U support set: 2 cross beams 60 x 10 x 700 under the bus pads + vent bridge ,1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_4,"Cathode set: 1 sheets 600 x 420 x 3 mm Ti Grade 2 + 1 hanger tabs 120 x 111 x 3,",1,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_4,"Anode set: 2 meshes 600 x 420 x 1.5 mm Ti + 2 hanger tabs 120 x 111 x 1.5, MMO c",2,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_4,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",2,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_4,"Bus packs, go and return: 2 x (1 flats 20 x 6.3 x 120 mm, spaced one thickness) ",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
+EW_4,"Standoff pads 10 x 20 x 8 under the bus packs, one per pack per beam station",4,FRP (glass-polyester),Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
+EW_4,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_4.csv: 2 x DN15 barbs (N3",5,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_4,"Rectifier, 0.13 kW cell channel on IA-DC-EW_4 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
+EW_5,"PVC-U tank shell, outside 270 x 720 x 760 mm, wall 10 mm, open top (inside 250 x",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 EW_5,PVC-U support set: 2 cross beams 60 x 10 x 700 under the bus pads + vent bridge ,1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_5,"Cathode set: 3 sheets 600 x 420 x 3 mm Ti Grade 2 + 3 hanger tabs 120 x 111 x 3,",3,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_5,"Anode set: 4 meshes 600 x 420 x 1.5 mm Ti + 4 hanger tabs 120 x 111 x 1.5, MMO c",4,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_5,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",6,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_5,"Bus pack, go and return: 2 x (1 flat 20 x 6.3 x 200 mm, spaced one thickness) + ",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
+EW_5,"Cathode set: 1 sheets 600 x 420 x 3 mm Ti Grade 2 + 1 hanger tabs 120 x 111 x 3,",1,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_5,"Anode set: 2 meshes 600 x 420 x 1.5 mm Ti + 2 hanger tabs 120 x 111 x 1.5, MMO c",2,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_5,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",2,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_5,"Bus packs, go and return: 2 x (1 flats 20 x 6.3 x 120 mm, spaced one thickness) ",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
 EW_5,"Standoff pads 10 x 20 x 8 under the bus packs, one per pack per beam station",4,FRP (glass-polyester),Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
-EW_5,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_5.csv: 3 x DN15 barbs (N3",7,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_5,"Rectifier, 0.5 kW cell channel on IA-DC-EW_5 (floating, insulation monitor, prot",1,purchase item,Unstated,-,not classed: purchase item
-EW_6,"PVC-U tank shell, outside 470 x 720 x 760 mm, wall 10 mm, open top (inside 450 x",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_5,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_5.csv: 2 x DN15 barbs (N3",5,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_5,"Rectifier, 0.22 kW cell channel on IA-DC-EW_5 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
+EW_6,"PVC-U tank shell, outside 370 x 720 x 760 mm, wall 10 mm, open top (inside 350 x",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 EW_6,PVC-U support set: 2 cross beams 60 x 10 x 700 under the bus pads + vent bridge ,1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_6,"Cathode set: 3 sheets 600 x 420 x 3 mm Ti Grade 2 + 3 hanger tabs 120 x 111 x 3,",3,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_6,"Anode set: 4 meshes 600 x 420 x 1.5 mm Ti + 4 hanger tabs 120 x 111 x 1.5, MMO c",4,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_6,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",6,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_6,"Bus pack, go and return: 2 x (1 flat 20 x 6.3 x 200 mm, spaced one thickness) + ",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
+EW_6,"Cathode set: 2 sheets 600 x 420 x 3 mm Ti Grade 2 + 2 hanger tabs 120 x 111 x 3,",2,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_6,"Anode set: 3 meshes 600 x 420 x 1.5 mm Ti + 3 hanger tabs 120 x 111 x 1.5, MMO c",3,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_6,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",4,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_6,"Bus packs, go and return: 2 x (1 flats 20 x 6.3 x 120 mm, spaced one thickness) ",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
 EW_6,"Standoff pads 10 x 20 x 8 under the bus packs, one per pack per beam station",4,FRP (glass-polyester),Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
-EW_6,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_6.csv: 3 x DN15 barbs (N3",7,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_6,"Rectifier, 0.55 kW cell channel on IA-DC-EW_6 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
-EW_7,"PVC-U tank shell, outside 3170 x 720 x 760 mm, wall 10 mm, open top (inside 3150",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_7,PVC-U support set: 4 cross beams 60 x 10 x 700 under the bus pads + vent bridge ,1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_7,Cathode set: 30 sheets 600 x 420 x 3 mm Ti Grade 2 + 30 hanger tabs 120 x 111 x ,30,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_7,"Anode set: 31 meshes 600 x 420 x 1.5 mm Ti + 31 hanger tabs 120 x 111 x 1.5, MMO",31,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_7,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",60,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_7,"Bus packs, go and return: 2 x (2 flats 130 x 6.3 x 2900 mm, spaced one thickness",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
-EW_7,"Standoff pads 10 x 130 x 8 under the bus packs, one per pack per beam station",8,FRP (glass-polyester),Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
-EW_7,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_7.csv: 2 x DN15 barbs (N6",7,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_7,"Rectifier, 7.12 kW cell channel on IA-DC-EW_7 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
-EW_8,"PVC-U tank shell, outside 470 x 720 x 760 mm, wall 10 mm, open top (inside 450 x",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_6,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_6.csv: 2 x DN15 barbs (N3",5,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_6,"Rectifier, 0.44 kW cell channel on IA-DC-EW_6 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
+EW_7,"PVC-U tank shell, outside 1370 x 720 x 760 mm, wall 10 mm, open top (inside 1350",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_7,PVC-U support set: 2 cross beams 60 x 10 x 700 under the bus pads + vent bridge ,1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_7,Cathode set: 12 sheets 600 x 420 x 3 mm Ti Grade 2 + 12 hanger tabs 120 x 111 x ,12,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_7,"Anode set: 13 meshes 600 x 420 x 1.5 mm Ti + 13 hanger tabs 120 x 111 x 1.5, MMO",13,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_7,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",24,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_7,"Bus packs, go and return: 2 x (1 flats 130 x 6.3 x 1101.5 mm, spaced one thickne",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
+EW_7,"Standoff pads 10 x 130 x 8 under the bus packs, one per pack per beam station",4,FRP (glass-polyester),Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
+EW_7,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_7.csv: 1 x DN25 barb (N3)",4,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_7,"Rectifier, 2.92 kW cell channel on IA-DC-EW_7 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
+EW_8,"PVC-U tank shell, outside 270 x 720 x 760 mm, wall 10 mm, open top (inside 250 x",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 EW_8,PVC-U support set: 2 cross beams 60 x 10 x 700 under the bus pads + vent bridge ,1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_8,"Cathode set: 3 sheets 600 x 420 x 3 mm Ti Grade 2 + 3 hanger tabs 120 x 111 x 3,",3,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_8,"Anode set: 4 meshes 600 x 420 x 1.5 mm Ti + 4 hanger tabs 120 x 111 x 1.5, MMO c",4,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_8,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",6,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_8,"Bus pack, go and return: 2 x (1 flat 20 x 6.3 x 200 mm, spaced one thickness) + ",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
+EW_8,"Cathode set: 1 sheets 600 x 420 x 3 mm Ti Grade 2 + 1 hanger tabs 120 x 111 x 3,",1,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_8,"Anode set: 2 meshes 600 x 420 x 1.5 mm Ti + 2 hanger tabs 120 x 111 x 1.5, MMO c",2,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_8,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",2,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_8,"Bus packs, go and return: 2 x (1 flats 20 x 6.3 x 120 mm, spaced one thickness) ",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
 EW_8,"Standoff pads 10 x 20 x 8 under the bus packs, one per pack per beam station",4,FRP (glass-polyester),Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
-EW_8,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_8.csv: 3 x DN15 barbs (N3",7,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_8,"Rectifier, 0.51 kW cell channel on IA-DC-EW_8 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
-EW_9,"PVC-U tank shell, outside 3270 x 720 x 760 mm, wall 10 mm, open top (inside 3250",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_9,PVC-U support set: 5 cross beams 60 x 10 x 700 under the bus pads + vent bridge ,1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_9,Cathode set: 31 sheets 600 x 420 x 3 mm Ti Grade 2 + 31 hanger tabs 120 x 111 x ,31,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_9,"Anode set: 32 meshes 600 x 420 x 1.5 mm Ti + 32 hanger tabs 120 x 111 x 1.5, MMO",32,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_9,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",62,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_9,"Bus packs, go and return: 2 x (2 flats 120 x 6.3 x 3000 mm, spaced one thickness",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
-EW_9,"Standoff pads 10 x 120 x 8 under the bus packs, one per pack per beam station",10,FRP (glass-polyester),Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
-EW_9,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_9.csv: 4 x DN15 barbs (N3",10,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-EW_9,"Rectifier, 7.54 kW cell channel on IA-DC-EW_9 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
+EW_8,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_8.csv: 2 x DN15 barbs (N3",5,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_8,"Rectifier, 0.23 kW cell channel on IA-DC-EW_8 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
+EW_9,"PVC-U tank shell, outside 370 x 720 x 760 mm, wall 10 mm, open top (inside 350 x",1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_9,PVC-U support set: 2 cross beams 60 x 10 x 700 under the bus pads + vent bridge ,1,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_9,"Cathode set: 2 sheets 600 x 420 x 3 mm Ti Grade 2 + 2 hanger tabs 120 x 111 x 3,",2,titanium Grade 2 (ASTM B265),Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_9,"Anode set: 3 meshes 600 x 420 x 1.5 mm Ti + 3 hanger tabs 120 x 111 x 1.5, MMO c",3,"titanium mesh, MMO coated",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_9,"PVC-U edge strip clips, 9 x 20 x 420, slot 3 x 12, 2 per cathode",4,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_9,"Bus packs, go and return: 2 x (1 flats 20 x 6.3 x 120 mm, spaced one thickness) ",1,"copper C101, painted",Closed,Cu EW -> WIRE_DRAW,
+EW_9,"Standoff pads 10 x 20 x 8 under the bus packs, one per pack per beam station",4,FRP (glass-polyester),Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
+EW_9,"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_9.csv: 2 x DN15 barbs (N3",4,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+EW_9,"Rectifier, 0.40 kW cell channel on IA-DC-EW_9 (floating, insulation monitor, pro",1,purchase item,Unstated,-,not classed: purchase item
 EXTRUDE,"Plinth 1500 x 800 x 60 (CS, anchor bosses)",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 EXTRUDE,"Press frame: rear and front platens, 4 tie rods, bed",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 EXTRUDE,Container group: tool-steel liner bore 60 (node design container_mm) in its hous,1,tool steel,Closed,Fe EW -> MET_MELT -> mill/draw,
@@ -2183,9 +2183,9 @@ OF-81,fastener: M10 stud + nut (ISO 4014 / ISO 4032) (ISO 898-1 8.8),106,,Unstat
 OF-82,fastener: M8 x 25 hood bolts (ISO 898-1 8.8),48,,Unstated,-,material not stated on the unit BOM line
 OF-83,fastener: M10 anchor (ISO 898-1 8.8),40,,Unstated,-,material not stated on the unit BOM line
 OF-84,fastener: M8 x 25 hopper bolts (ISO 898-1 8.8),8,,Unstated,-,material not stated on the unit BOM line
-OF-85,fastener: M6 x 25 (ISO 3506 A4-70),273,,Unstated,-,material not stated on the unit BOM line
-OF-86,fastener: M8 x 40 (ISO 3506 A4-70),88,,Unstated,-,material not stated on the unit BOM line
-OF-87,fastener: M10 x 30 wedge anchor (ISO 3506 A4-70),92,,Unstated,-,material not stated on the unit BOM line
+OF-85,fastener: M6 x 25 (ISO 3506 A4-70),65,,Unstated,-,material not stated on the unit BOM line
+OF-86,fastener: M8 x 40 (ISO 3506 A4-70),72,,Unstated,-,material not stated on the unit BOM line
+OF-87,fastener: M10 x 30 wedge anchor (ISO 3506 A4-70),72,,Unstated,-,material not stated on the unit BOM line
 OF-88,fastener: M10 x 35 (ISO 3506 A4-70),54,,Unstated,-,material not stated on the unit BOM line
 OF-89,fastener: M12 x 60 hex bolt + nut + 2 washers (PVDF (non-metallic)),34,,Unstated,-,material not stated on the unit BOM line
 OF-90,fastener: M12 x 40 (ISO 3506 A4-70),456,,Unstated,-,material not stated on the unit BOM line
