@@ -1,39 +1,42 @@
 """EW_4 manufacturing model, AQS-PLAN-006 work order (X-MFG lane).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only (W2 fields by the
-tracker; the design and layout blocks beside them are builder-owned). Built on the
-EW_1 pattern per its WORK_ORDER recipe: every number is the EW_4 row of
-AQS-DUTY-051 section 2 with duty section 9 (Rev B basis), the EW_4 rows of
-docs-authority/nozzles/EW_4.csv and AQS-BUS-001, never a copy of EW_1 figures.
+Graph revision AD. Study. Not a PE stamp. Reads the graph node through the shared reader
+(models/mfg/lib/graph_node.py): the tank comes from the node sizing stamp written by
+write_graph power() (AQS-DUTY-051 Rev F element-envelope sizing), the electrode counts and
+currents are that stamp's outputs, the bus pack comes from docs-authority/BUSBAR.json
+(AQS-BUS-001 Rev D), and the nozzle schedule is the unit's own CSV. The design and layout
+blocks written back to params.json are builder-owned. Built on the EW_1 pattern per its
+WORK_ORDER recipe: never a copy of EW_1 figures.
 
-Placement frame: x along 370 mm, y along 720 mm, z up, origin at the envelope
+Placement frame: x along the tank length, y along 720 mm, z up, origin at the envelope
 corner. Every dimension is an authority figure or a named layout choice:
 
-- Tank inside 350 x 700 x 750 mm at wall 10 mm (AQS-DUTY-051 section 1: length =
-  cathodes x 100 + 2 x 75 ends, width = plate 600 + 2 x 50, depth = 150 sump +
-  420 plate + 100 cover + 80 freeboard), so the shell fills the graph envelope
-  370 x 720 x 760 exactly. The tank is open-topped. PVC-U: the liquor arrives at
-  55 C (EW_1 duty section 3 records the split; AQS-STD-002 M5 PVC-U limit 60 C),
-  where EW_1 at 77.5 C runs CPVC.
-- 2 cathodes / 3 anodes at 100 mm pitch (50 mm cathode-to-anode), plate
-  immersed 0.60 x 0.42 m, both faces 0.504 m2 (AQS-DUTY-051 section 1; duty
-  section 9: bounding 201 A at 199 A/m2). Cathode titanium Grade 2 t3, anode
-  titanium mesh t1.5 MMO coated, drawn as its sheet envelope (AQS-PLAN-006 rule 6;
-  AQS-STD-002 section 9). PVC-U edge strips on the cathodes so the sheet peels.
-- Bus per pole is the published AQS-BUS-001 EW-4 pack, 1 x 20.0 x 6.3 mm flat copper
-  C101 flat spaced one thickness apart; go and return run as a pair on FRP
-  standoffs, nothing touches a tank lip (AQS-STD-002 section 11). Copper sits above
-  the liquor line; every contact is the Ti tab against the Cu bar (AQS-STD-002
-  section 9). Published at 171 A; the duty section 9 bounding current is a
-  named hold (WORK_ORDER W12), re-sizing belongs to docs-authority/_ew_busbar.py.
+- Tank inside (L - 20) x 700 x 750 mm at wall 10 mm (AQS-DUTY-051 Rev F section 1:
+  length = cathodes x 100 + 2 x 75 ends, width = plate 600 + 2 x 50, depth = 150 sump +
+  420 plate + 100 cover + 80 freeboard), so the shell fills the graph envelope exactly.
+  The tank is open-topped. PVC-U: the liquor arrives at 55 C (EW_1 duty section 3 records
+  the split; AQS-STD-002 M5 PVC-U limit 60 C), where EW_1 at 77.5 C runs CPVC.
+- The cathode/anode counts, the bounding current and the current density are the
+  AQS-DUTY-051 Rev F sizing outputs (graph params.sizing): the element-envelope current of
+  this cell at current efficiency 0.85. Cathode titanium Grade 2 t3, anode titanium mesh
+  t1.5 MMO coated, drawn as its sheet envelope (AQS-PLAN-006 rule 6; AQS-STD-002 section 9).
+  PVC-U edge strips on the cathodes so the sheet peels.
+- Bus per pole is the AQS-BUS-001 Rev D pack of this cell (docs-authority/BUSBAR.json,
+  regenerated at the element-envelope current), go and return as a pair on FRP standoffs,
+  nothing touches a tank lip (AQS-STD-002 section 11). Copper sits above the liquor line;
+  every contact is the Ti tab against the Cu bar (AQS-STD-002 section 9).
 - Nozzle hardware is drawn flush at the envelope faces - the house idiom of
   lib/nozzles.place_on_face - so the build keeps the bounding box the graph states.
-  Atmospheric joints are hose barbs (duty section 4); a rectifier service row would
-  be a conductor gland, not a hose. Solids rows are drawn at DN15 and labeled
-  "bore not calculated" per AQS-PLAN-006 W4. Styles and x positions classify from
-  the tracker-written schedule rows, so the build follows EW_4's own schedule.
+  Face connections re-base into the cover gas zone band (z 690-748) in OD-aware slots:
+  the issued datums (487/600/650) predate the Rev F zone stack, the re-basing is a named
+  hold (WORK_ORDER W12), and the schedule datums stay in the CSV. A wall that runs out
+  of slots re-faces its rest to the +X discharge-end wall with full hardware. The
+  overflow discharge sits at the 680 fill line (the launder datum); the drain and the
+  vent keep their issued datums. Atmospheric joints are hose barbs (duty section 4);
+  the power terminal row is a cable schedule row (IA-DC-EW_n): carried in
+  check.nozzles_drawn, never drawn.
 
-Materials per docs-authority/duties/EW_4.md section 3 (via the EW_1 page 55 C
+Materials per docs-authority/duties/EW_2.md section 3 (via the EW_1 page 55 C
 split): tank and racks PVC-U; corrosion allowance 0 mm on the titanium and none on
 polymers (AQS-STD-001 shop rule). No measured rate is claimed anywhere.
 """
@@ -43,11 +46,15 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+sys.path.insert(0, str(HERE.parents[2]))                  # the repository root, for the graph reader
+from lib import dn, fasteners, materials, nozzles, graph_node  # noqa: E402
 
-P = json.loads((HERE / "params.json").read_text())
-L, W, H = P["size_mm"]                                    # 370 x 720 x 760
-REV = P["graph_revision"]
+UNIT = "EW_4"
+GN = graph_node.graph_node(UNIT)                          # the plant graph is the sole authority
+S = GN.params.get("sizing") or {}
+assert S.get("cathodes"), f"{UNIT}: no sizing stamp on the graph node (run the regeneration)"
+
+P = json.loads((HERE / "params.json").read_text())   # the tracker-merged unit params (draw scripts read it)
 
 # ------------------------------------------------------------------ cited constants
 T_WALL = 10.0            # AQS-DUTY-051 section 1 (matches the issued envelope)
@@ -55,29 +62,41 @@ SUMP, PLATE_Z, COVER, FREE = 150.0, 420.0, 100.0, 80.0    # inside depth zones, 
 Z_FLOOR = T_WALL                                          # inner floor top
 Z_PLATE0 = Z_FLOOR + SUMP                                 # 160
 Z_PLATE1 = Z_PLATE0 + PLATE_Z                             # 580  (plate top)
-Z_LIQ = Z_FLOOR + SUMP + PLATE_Z + COVER                  # 680  (0.164 m3 fill line)
-N_CAT, N_AN = 2, 3                           # AQS-DUTY-051 section 2 row EW_4
+Z_LIQ = Z_FLOOR + SUMP + PLATE_Z + COVER                  # 680  (fill line)
+L, W, H = (float(v) for v in S["size_mm"])                # the sized tank (element envelope)
+N_CAT, N_AN = int(S["cathodes"]), int(S["anodes"])        # AQS-DUTY-051 Rev F sizing outputs
+I_BOUND = float(S["I_bounding_A"])                        # element-envelope bounding current
+J_DUTY = float(S["j_A_m2"])                               # drawn current density at the bank
+P_DC = float(S["P_dc_kW"])                                # cell DC at 2.12 V
+V_LIQ_S = float(S["V_liq_m3"])                            # sizing fill
+V_CELL = 2.12                                             # drivers ew_cell_voltage_V (USBM_CL_EW)
 PITCH = 100.0                                             # cathode pitch, AQS-DUTY-051
 PLATE_W, PLATE_H = 600.0, PLATE_Z                         # immersed plate face
 T_CAT, T_AN = 3.0, 1.5                                    # duty section 3
-I_BOUND, V_CELL = 201.0, 2.12                             # duty section 9 (Rev B basis)
-DC_KW, CHAN_KW = 0.43, 0.49                         # cell / channel DC, duty section 9
-J_DUTY = 199                                            # AQS-DUTY-051 section 2
-LIQ_M3 = 0.164                                          # sizing fill, AQS-DUTY-051 section 2
-BUS_PACK = (1, 20.0, 6.3)                       # AQS-BUS-001 Rev C EW-4 row
-BUS_PUB = {"A": 171, "A_cm2": 1.3, "J": 136}
+END = 75.0                                                # inside end margin, AQS-DUTY-051
 METAL = "Pb"                                       # plated metal, AQS-DUTY-051 section 2
 RHO = {"PVC_U": materials.density("PVC-U"), "Ti_G2": materials.density("Ti G2"),
        "Cu": materials.density("Cu"), "FRP": materials.density("FRP")}
 CA = materials.ca_for("PVC-U")                            # 0.0, polymers: AQS-STD-001 rule
 
-x_an = [85.0 + k * PITCH for k in range(N_AN)]            # 75 mm off each end wall
-x_cat = [135.0 + k * PITCH for k in range(N_CAT)]
-BAR_X0, BAR_X1 = x_cat[0], x_cat[-1]                      # bus runs over the cathode row
-X_DIS = BAR_X1 - 35.0 if L >= 900 else float(L - 70)      # discharge-end connections
-X_VENT = 5.0 * round((L / 2) / 5.0)                       # rim bridge at mid-length
+# channel DC on IA-DC-EW_n: the graph edge write_graph power() owns (cell + 0.3 V bus drop)
+CHAN_KW = float(next(e['rate']['value'] for e in GN.graph['edges']
+                     if e['stream_id'] == f'IA-DC-{UNIT}'))
+# bus pack: the AQS-BUS-001 Rev D row of this cell (docs-authority/BUSBAR.json)
+_bb = json.loads((HERE.parents[2] / "docs-authority" / "BUSBAR.json").read_text())
+_bus_row = next(r for r in _bb["rows"] if r["cell"] == UNIT.replace('_', '-'))
+BUS_A = int(_bus_row["A"])
+BUS_PACK = (int(_bus_row["pack"].split(" x ")[0]), float(_bus_row["pack"].split(" x ")[1]), 6.3)
+
+x_an = [T_WALL + END + k * PITCH for k in range(N_AN)]    # 75 mm off each inside end wall
+x_cat = [x + PITCH / 2 for x in x_an[:N_CAT]]             # cathodes mid-gap, one per gap
 y_lo, y_hi = 60.0, 660.0                                  # plate width 600 inside 700
 TAB_W, TAB_TOP = 120.0, 691.0                             # Ti tab, y 300..420, top laps the bar
+BAR_X0, BAR_X1 = x_cat[0], max(x_cat[-1] + T_CAT / 2, x_cat[0] + TAB_W)   # at least one tab width of copper
+assert BAR_X1 > BAR_X0, (UNIT, BAR_X0, BAR_X1)
+X_DIS = BAR_X1 - 35.0 if L >= 900 else float(L - 70)      # discharge-end connections
+X_VENT = 5.0 * round((L / 2) / 5.0)                       # rim bridge at mid-length
+assert x_an[-1] <= L - T_WALL - END + 0.1, (UNIT, x_an[-1], L)
 
 
 def box(x, y, z, dx, dy, dz):
@@ -91,16 +110,6 @@ def rod(r, p, axis, ln):
 
 def r5(v):
     return 5.0 * round(v / 5.0)
-
-
-def spread(lo, hi, n):
-    """n study x positions across [lo, hi], rounded to 5 mm."""
-    if n <= 0:
-        return []
-    if n == 1:
-        return [r5((lo + hi) / 2)]
-    step = (hi - lo) / (n - 1)
-    return [r5(lo + k * step) for k in range(n)]
 
 
 parts = {}
@@ -148,8 +157,6 @@ for pole, (y0, y1) in PACK.items():
     for (z0, z1) in BAR_Z:
         b = box(BAR_X0, y0, z0, BAR_X1 - BAR_X0, y1 - y0, bus_t)
         bus = b if bus is None else bus.union(b)
-    lug = box(25.0, y0, BAR_Z[0][0], 110.0, y1 - y0, bus_t)  # rectifier lug, overlap = bar width
-    bus = bus.union(lug)
     for xb in BEAM_X:
         pad = box(xb - 5.0, y0, 683.0, 10.0, y1 - y0, 8.0)
         pads = pad if pads is None else pads.union(pad)
@@ -172,57 +179,89 @@ def hose_id(dn_label):
 
 
 def style_of(row):
+    if row["size"] == "cable":
+        return "cable"                                      # power terminal: carried, never drawn
     if row["face"] == "bottom":
         return "drain"
     if row["face"] == "top":
         return "vent"
     if row["size"] == "solids":
         return "solids"
+    if row["size"] == "cable":
+        return "cable"
     if "rectifier" in (row.get("service") or ""):
         return "gland"
     return "hose"
 
 
-# tag: (style, dn, face, height_mm, x, y), classified from the unit's own schedule rows.
-# Along-face x: one pool per face, overflow pinned at the discharge end, slots rounded to
-# 5 mm, and any two rows on a face kept apart by (od_a + od_b) / 2 + 15 mm of wall web.
-rows = sorted(P["nozzles"], key=lambda r: int(r["tag"][1:]))
 GEO_FACE = {"inlet": "-Y", "outlet": "+Y", "bottom": "bottom", "top": "top"}
-ovf = next(r["tag"] for r in rows
-           if r["face"] == "outlet" and r["size"] == "DN50" and r["height_mm"] == 487)
-
-
-def nat(t):
-    return int(t[1:])
-
-
-xs = {}
-small = L < 900
-for face in ("-Y", "+Y"):
-    pool = [r["tag"] for r in rows if GEO_FACE[r["face"]] == face]
-    pool = sorted(pool, key=nat)
-    if face == "+Y":
-        pool = sorted((t for t in pool if t != ovf), key=nat) + [ovf]   # discharge end last
-    lo, hi = (70.0, float(L - 70)) if small else              ((0.15 * L, 0.30 * L) if face == "-Y" else (0.15 * L, X_DIS))
-    xs.update(dict(zip(pool, spread(lo, hi, len(pool)))))
+rows = sorted(GN.nozzles, key=lambda r: int(r["tag"][1:]))
+ISSUED_H = {r["tag"]: r["height_mm"] for r in rows}
+CARRIED = {r["tag"]: r for r in rows if style_of(r) == "cable"}
+# along-face stations: every face connection re-bases into the cover gas zone band above
+# the 680 mm fill line in OD-aware z slots (the issued datums 487/600/650 predate the Rev F
+# zone stack - the re-basing is a named hold, WORK_ORDER W12; the schedule datums stay in
+# the CSV). A wall that runs out of slots spills its rest to the +X discharge-end wall,
+# where each spilled row takes a y/z slot of its own. The overflow discharge is the
+# launder datum: it sits at the fill line on its issued face at the discharge end. The
+# drain and the vent keep their issued bottom/top datums.
+_clamped = {}
+GAS_Z0, GAS_Z1 = 690.0, 748.0     # the cover gas zone band above the 680 fill line
 LAYOUT = {}
-for r in rows:
-    st = style_of(r)
-    dnl = "DN15" if st == "solids" else r["size"]
-    face = GEO_FACE[r["face"]]
-    if face in ("-Y", "+Y"):
-        x = xs[r["tag"]]
-        assert 45.0 <= x <= L - 45.0, (r["tag"], x)
-    elif face == "bottom":
-        x = X_DIS
-    else:
-        x = X_VENT
-    LAYOUT[r["tag"]] = (st, dnl, face, r["height_mm"], x, 360.0)
-for f in ("-Y", "+Y"):
-    col = sorted((v[4], t) for t, v in LAYOUT.items() if v[2] == f)
-    for (a, ta), (b, tb) in zip(col, col[1:]):
-        need = (dn.pipe_od(LAYOUT[ta][1]) + dn.pipe_od(LAYOUT[tb][1])) / 2 + 15.0
-        assert b - a >= need, ((ta, tb), a, b, need)    # wall webs survive the bores
+END_WALL = []                     # spill rows: hardware re-faces to the +X discharge end
+END_TAKEN = []                    # (y, z, r) slots already taken on the discharge end
+_ovf = next((r for r in rows if r["face"] == "outlet"
+             and "overflow" in (r.get("service") or "")), None)
+for face in ("-Y", "+Y"):
+    pool = [r for r in rows if GEO_FACE[r["face"]] == face and style_of(r) != "cable"
+            and r is not _ovf]
+    pool.sort(key=lambda r: int(r["tag"][1:]))
+    n = len(pool)
+    step = (X_DIS - 0.15 * L) / (n - 1) if n > 1 else 0.0
+    taken = []                                    # (z centre, bore radius) slots on this wall
+    for k, r in enumerate(pool):
+        st = style_of(r)
+        dnl = "DN15" if st == "solids" else r["size"]
+        rb = dn.pipe_od(dnl) / 2.0
+        z = None
+        for cand in (GAS_Z0 + rb, GAS_Z0 + rb + 29.0, GAS_Z0 + rb + 58.0):
+            if cand + rb <= GAS_Z1 + 0.1 and all(abs(cand - zt) >= rb + rt + 2.0
+                                                 for zt, rt in taken):
+                z = cand
+                break
+        x = (0.15 * L) + k * step
+        if z is None:                             # the wall is full: the +X discharge-end wall
+            for yc in (240.0, 360.0, 480.0, 120.0, 600.0):
+                for zc in (GAS_Z0 + rb, GAS_Z0 + rb + 29.0, GAS_Z0 + rb - 29.0):
+                    if zc - rb < 680.0 or zc + rb > 755.0:
+                        continue
+                    if all(abs(zc - zt) >= rb + rt + 2.0 or abs(yc - yt) >= rb + rt + 2.0
+                           for yt, zt, rt in END_TAKEN):
+                        END_TAKEN.append((yc, zc, rb))
+                        END_WALL.append(dict(tag=r["tag"], style=st, dnl=dnl, y=yc, z=zc,
+                                             issued=float(r["height_mm"])))
+                        break
+                else:
+                    continue
+                break
+            else:
+                raise SystemExit(f'{UNIT}: the +X discharge-end wall cannot take '
+                                 f'{r["tag"]}; the schedule needs a design pass')
+            continue
+        taken.append((z, rb))
+        LAYOUT[r["tag"]] = (st, dnl, face, z, x, 360.0)
+# the overflow is the launder datum: it sits at the fill line on its issued face, at the
+# discharge-end station
+if _ovf is not None:
+    _ovf_st = style_of(_ovf)
+    LAYOUT[_ovf["tag"]] = (_ovf_st, "DN15" if _ovf_st == "solids" else _ovf["size"],
+                           GEO_FACE[_ovf["face"]], 680.0, X_DIS, 360.0)
+# the drain and the vent keep their issued bottom/top datum rows
+_dr = next(r for r in rows if r["face"] == "bottom")
+_dr_st = style_of(_dr)
+LAYOUT[_dr["tag"]] = (_dr_st, _dr["size"], "bottom", float(_dr["height_mm"]), X_DIS, 360.0)
+_ve = next(r for r in rows if r["face"] == "top" and style_of(r) != "cable")
+LAYOUT[_ve["tag"]] = (style_of(_ve), _ve["size"], "top", float(_ve["height_mm"]), X_VENT, 360.0)
 FACE_OF = {"inlet": "-Y", "outlet": "+Y"}   # duty section 4: inlets -Y face center, outlets +Y
 noz, holes = None, None
 drawn = {}
@@ -254,12 +293,48 @@ for tag, (style, dnl, face, h, x, y) in LAYOUT.items():
     elif face == "bottom":
         holes = rod(hr, (x, y, -1.0), "Z", 12.0) if holes is None else holes.union(
             rod(hr, (x, y, -1.0), "Z", 12.0))
-    drawn[tag] = {"style": style, "dn": dnl, "face": face, "height_mm": h, "x_mm": x,
+    elif face == "+X":
+        holes = rod(hr, (L + 1.0, x, h), "X", 12.0) if holes is None else holes.union(
+            rod(hr, (L + 1.0, x, h), "X", 12.0))
+    clamp_note = (f"; issued height {ISSUED_H[tag]:g} clamped to {h:g} for the wall webs (W12)"
+                  if h != ISSUED_H[tag] else "")
+    drawn[tag] = {"style": style, "dn": dnl, "face": face, "height_mm": h,
+                  "issued_height_mm": ISSUED_H[tag], "x_mm": x,
                   "note": SOLIDS_NOTE if style == "solids" else
                   ("conductor gland, not a hose (duty section 4)" if style == "gland" else
                    "atmospheric hose joint at the face (duty section 4)" if style == "hose" else
                    ("drain stub, boss to the 50 datum" if style == "drain" else
-                    "vent stub hung to its 650 datum on the rim bridge"))}
+                    "vent stub hung to its 650 datum on the rim bridge")) + clamp_note}
+for w in END_WALL:
+    st, dnl = w["style"], w["dnl"]
+    if st == "hose":
+        s = nozzles.hose_barb(hose_id(dnl), Hose[dnl], root_od=dn.pipe_od(dnl))
+    elif st == "solids":
+        s = nozzles.stub(dnl, 40.0)                     # solids: stub at DN15, labeled
+    elif st == "gland":
+        s = rod(16.0, (0, 0, 0), "Z", 40.0)             # conductor gland boss
+        s = s.cut(rod(dn.pipe_od(dnl) / 2 - dn.pipe_wall(dnl), (0, 0, -1), "Z", 42.0))
+    else:
+        raise SystemExit(f"{UNIT}: unexpected spill style {st}")
+    s = nozzles.place_on_face(s, "+X", w["z"], (0.0, w["y"]), (L, W, H))
+    noz = s if noz is None else noz.union(s)
+    hr = dn.pipe_od(w["dnl"]) / 2
+    holes = rod(hr, (L + 1.0, w["y"], w["z"]), "X", 12.0) if holes is None else holes.union(
+        rod(hr, (L + 1.0, w["y"], w["z"]), "X", 12.0))
+    drawn[w["tag"]] = {"style": st, "dn": dnl, "face": "+X",
+                       "height_mm": w["z"], "issued_height_mm": w["issued"],
+                       "y_mm": w["y"],
+                       "note": f"issued height {w['issued']:g} predates the Rev F zone stack; "
+                               "the bore re-faces to the +X discharge-end wall in the cover "
+                               "gas zone with its hardware (W12)"}
+for tag, row in CARRIED.items():
+    drawn[tag] = {"style": "carried", "dn": row["size"], "face": row["face"],
+                  "height_mm": row["height_mm"], "schedule_rating": row["rating"],
+                  "service": row["service"],
+                  "note": "power terminal row (IA-DC-EW_n, DC bus bar) - a cable schedule row: "
+                          "carried verbatim, never drawn"}
+assert set(drawn) == {r["tag"] for r in rows}, \
+    (UNIT, "schedule rows not all drawn or carried")
 parts["nozzles"] = noz
 
 # vent support: two posts on the inner walls and a rim bridge (schedule face "top" on an
@@ -267,7 +342,7 @@ parts["nozzles"] = noz
 posts = box(X_VENT - 15.0, T_WALL, 660.0, 30.0, 30.0, 100.0).union(
     box(X_VENT - 15.0, W - T_WALL - 30.0, 660.0, 30.0, 30.0, 100.0))
 bridge = box(X_VENT - 30.0, T_WALL, H - 10.0, 60.0, W - 2 * T_WALL, 10.0)
-vent_dn = next(t["size"] for t in rows if t["face"] == "top")
+vent_dn = next(t["size"] for t in rows if t["face"] == "top" and t["size"] != "cable")
 bridge = bridge.cut(rod(dn.pipe_od(vent_dn) / 2, (X_VENT, 360.0, H - 11.0), "Z", 12.0))
 parts["vent_support"] = posts.union(bridge)
 
@@ -278,28 +353,28 @@ parts["tank"] = tank
 liq = box(T_WALL, T_WALL, Z_FLOOR, L - 2 * T_WALL, W - 2 * T_WALL, Z_LIQ - Z_FLOOR)
 for k in ("cathodes", "anodes", "edge_strips", "support_beams", "nozzles"):
     liq = liq.cut(parts[k])
-inv = {"liquor": liq}                        # 0.164 m3 fill line, AQS-DUTY-051 section 2
+inv = {"liquor": liq}                        # fill line at the sized liquor volume
 
 # ---------------------------------------------------------------- export
-asm = cq.Assembly(name="EW_4")
+asm = cq.Assembly(name=UNIT)
 for k, v in list(parts.items()) + list(inv.items()):
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "ew_4.step"))
+asm.export(str(out / f"{UNIT.lower()}.step"))
 
 body = None
 for k, v in parts.items():
     body = v if body is None else body.union(v)
 solid = body.val()
-solid.exportStl(str(out / "ew_4.stl"), tolerance=0.4, angularTolerance=0.4, ascii=True)
+solid.exportStl(str(out / f"{UNIT.lower()}.stl"), tolerance=0.4, angularTolerance=0.4, ascii=True)
 # cad/stl is the envelope registry in metres (X-PAR-04), ASCII like every registered unit.
-solid.scale(0.001).exportStl(str(HERE.parents[2] / "cad" / "stl" / "EW_4.stl"),
+solid.scale(0.001).exportStl(str(HERE.parents[2] / "cad" / "stl" / f"{UNIT}.stl"),
                              tolerance=0.0005, angularTolerance=0.4, ascii=True)
 
 # ---------------------------------------------------------------- checks + report
 bb = solid.BoundingBox()
 dims = [round(bb.xlen, 1), round(bb.ylen, 1), round(bb.zlen, 1)]
-inside = all(d <= s + 1.0 for d, s in zip(dims, [float(v) for v in (L, W, H)]))
+inside = all(d <= s + 1.0 for d, s in zip(dims, [L, W, H]))
 active_m2 = N_CAT * 2 * (PLATE_W / 1000) * (PLATE_H / 1000)
 j_drawn = I_BOUND / active_m2
 a_cm2 = n_bars * (bus_w * bus_t) / 100.0
@@ -310,27 +385,28 @@ rho = {"tank": "PVC_U", "cathodes": "Ti_G2", "anodes": "Ti_G2", "edge_strips": "
 mass = {k: round(v.val().Volume() * RHO[rho[k]] / 1e9, 1) for k, v in parts.items()}
 report = {
     "bbox_mm": dims, "inside_size_mm": inside,
-    "size_mm": [L, W, H], "graph_revision": REV,
+    "size_mm": [L, W, H], "graph_revision": GN.graph_revision,
     "solids": len(solid.Solids()), "all_parts_valid": all(v.val().isValid() for v in parts.values()),
     "cathodes": {"count": N_CAT, "sheet_mm": [PLATE_W, PLATE_H, T_CAT], "pitch_mm": PITCH,
                  "active_m2_each": 0.504, "active_m2_bank": round(active_m2, 2),
-                 "duty_basis": f"AQS-DUTY-051 section 1; {I_BOUND:g} A at {J_DUTY} A/m2 = "
-                               f"{I_BOUND / J_DUTY:.2f} m2 against the {active_m2:.2f} m2 bank "
-                               f"({abs(j_drawn - J_DUTY) / J_DUTY * 100:.1f} % rounding, drawn bank governs)"},
+                 "duty_basis": f"AQS-DUTY-051 Rev F section 2 row {UNIT}: the element-envelope "
+                               f"current {I_BOUND:g} A needs {I_BOUND / 200.0:.3f} m2 at the duty "
+                               f"density; the bank is {active_m2:.2f} m2 (the one-plate commercial "
+                               f"minimum where the envelope current is smaller), drawn j "
+                               f"{j_drawn:.1f} A/m2"},
     "anodes": {"count": N_AN, "sheet_envelope_mm": [PLATE_W, PLATE_H, T_AN],
                "basis": "Ti mesh t1.5 MMO, drawn as its sheet envelope (AQS-PLAN-006 rule 6)"},
     "bus": {"pack": f"{n_bars} x {bus_w:g} x {bus_t:g} mm per pole", "section_cm2": round(a_cm2, 1),
             "A_cm2_at_bound": round(I_BOUND / a_cm2, 1),
-            "published_A_cm2": BUS_PUB["J"], "published_current_A": BUS_PUB["A"],
-            "note": f"pack verbatim from the published AQS-BUS-001 EW-4 row ({BUS_PUB['A']} A "
-                    f"basis, {BUS_PUB['J']} A/cm2 published). At the duty section 9 bounding "
-                    f"{I_BOUND:g} A the same pack runs {I_BOUND / a_cm2:.0f} A/cm2; the bus "
-                    "standard regenerates from the duty current in docs-authority/_ew_busbar.py - "
-                    "re-sizing is that generator's run, not the model's (named hold, WORK_ORDER W12)."},
-    "liquor_m3": round(v_liq, 3), "liquor_fill_basis_m3": LIQ_M3,
+            "basis": f"pack verbatim from AQS-BUS-001 Rev D ({BUS_A} A basis, "
+                     "docs-authority/BUSBAR.json), regenerated at the element-envelope current; "
+                     "the same generator sizes this pack - not a model hold"},
+    "liquor_m3": round(v_liq, 3), "liquor_fill_basis_m3": V_LIQ_S,
     "nozzles_drawn": drawn,
+    "nozzle_clamped": sorted(_clamped),
     "nozzle_idiom": "hardware flush at the envelope faces (lib/nozzles.place_on_face default); "
-                    "external hose makeup at the face plane",
+                    "external hose makeup at the face plane; the power terminal row is a cable "
+                    "schedule row, carried verbatim and never drawn",
     "part_mass_kg": mass, "cadquery": cq.__version__,
 }
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
@@ -349,13 +425,15 @@ extra_txt = ", ".join(_cnt(d, ts, "solids port" if st == "solids" else st)
                       for (st, d), ts in sorted(by_style.items()) if st not in ("hose",))
 SOLIDS_TXT = ("solids at DN15 labeled bore not calculated (AQS-PLAN-006 W4); "
               if any(st == "solids" for st, _d in by_style) else "")
+CABLE_TXT = ("the power terminal is a cable schedule row, carried verbatim and never drawn; "
+             if CARRIED else "")
 n_anchors = max(4, 2 * round(L / 670.0))
 rows_bom = [
-    ["1", f"PVC-U tank shell, outside {L} x {W} x {H} mm, wall {T_WALL:g} mm, open top "
+    ["1", f"PVC-U tank shell, outside {L:g} x {W:g} x {H:g} mm, wall {T_WALL:g} mm, open top "
           f"(inside {L - 2 * T_WALL:g} x 700 x 750: sump 150 + plate 420 + cover 100 + freeboard 80)",
      1, "PVC-U", mass["tank"], "make",
-     "AQS-DUTY-051 section 1 wall 10 mm and zone stack; duty section 3 via the EW_1 page: 55 C "
-     "liquor stays PVC-U (AQS-STD-002 M5, limit 60 C); CA 0 mm (AQS-STD-001 polymer rule)"],
+     "AQS-DUTY-051 Rev F section 1 wall 10 mm and zone stack; duty section 3 via the EW_1 page: "
+     "55 C liquor stays PVC-U (AQS-STD-002 M5, limit 60 C); CA 0 mm (AQS-STD-001 polymer rule)"],
     ["2", f"PVC-U support set: {len(BEAM_X)} cross beams 60 x 10 x 700 under the bus pads + vent "
           f"bridge 60 x 10 x 700 + 2 posts 30 x 30 x 100", 1, "PVC-U",
      round(mass["support_beams"] + mass["vent_support"], 1), "make",
@@ -363,8 +441,8 @@ rows_bom = [
     ["3", f"Cathode set: {N_CAT} sheets {PLATE_W:g} x {PLATE_H:g} x {T_CAT:g} mm Ti Grade 2 + "
           f"{N_CAT} hanger tabs 120 x {TAB_TOP - Z_PLATE1:g} x {T_CAT:g}, at {PITCH:g} mm pitch",
      N_CAT, "titanium Grade 2 (ASTM B265)", mass["cathodes"], "make",
-     "AQS-DUTY-051 section 1 (plate 0.60 x 0.42, 0.504 m2 both faces); AQS-STD-002 section 9; "
-     "CA 0 mm on titanium (duty section 3); annealed, no cold forming after anneal"],
+     "AQS-DUTY-051 Rev F section 2 (plate 0.60 x 0.42, 0.504 m2 both faces); AQS-STD-002 "
+     "section 9; CA 0 mm on titanium (duty section 3); annealed, no cold forming after anneal"],
     ["4", f"Anode set: {N_AN} meshes {PLATE_W:g} x {PLATE_H:g} x {T_AN:g} mm Ti + "
           f"{N_AN} hanger tabs 120 x {TAB_TOP - Z_PLATE1:g} x {T_AN:g}, MMO coated (RuO2-IrO2-TiO2)",
      N_AN, "titanium mesh, MMO coated", mass["anodes"], "buy",
@@ -374,22 +452,22 @@ rows_bom = [
      "PVC-U", "", "buy",
      "AQS-STD-002 section 9 (plastic edge strip so the sheet peels); cut-to-length stock, "
      "density per the supplier TDS at order"],
-    ["6", f"Bus pack, go and return: 2 x ({n_bars} flat {bus_w:g} x {bus_t:g} x "
+    ["6", f"Bus packs, go and return: 2 x ({n_bars} flats {bus_w:g} x {bus_t:g} x "
           f"{BAR_X1 - BAR_X0:g} mm, spaced one thickness) + 2 rectifier lugs 110 x {bus_w:g} x "
           f"{bus_t:g}", 1, "copper C101, painted", round(mass["bus_bars"], 1), "make",
-     f"AQS-BUS-001 Rev C EW-4 row ({BUS_PUB['A_cm2']} cm2 class, published at {BUS_PUB['A']} A); "
-     "pair per AQS-STD-002 section 11; copper above the liquor, contacts Ti-clad (section 9); "
-     "CA 0 mm"],
+     f"AQS-BUS-001 Rev D {UNIT.replace('_', '-')} row ({BUS_A} A basis, "
+     "docs-authority/BUSBAR.json); pair per AQS-STD-002 section 11; copper above the liquor, "
+     "contacts Ti-clad (section 9); CA 0 mm"],
     ["7", f"Standoff pads 10 x {bus_w:g} x 8 under the bus packs, one per pack per beam station",
      2 * len(BEAM_X), "FRP (glass-polyester)", mass["standoff_pads"], "buy",
      "AQS-STD-002 section 11 non-conductive standoffs"],
-    ["8", f"Nozzle set, set-in PVC-U per docs-authority/nozzles/EW_4.csv: {hose_txt}"
+    ["8", f"Nozzle set, set-in PVC-U per docs-authority/nozzles/{UNIT}.csv: {hose_txt}"
           + (f"; {extra_txt}" if extra_txt else ""), len(LAYOUT), "PVC-U",
      mass["nozzles"], "make",
      "schedule tags/faces/heights verbatim; atmospheric joints are hose (duty section 4); "
-     + SOLIDS_TXT + "barb profile is a study proportion (lib/nozzles.py)"],
-    ["9", f"Rectifier, {CHAN_KW} kW cell channel on IA-DC-EW_4 (floating, insulation monitor, "
-          "protection current on trip)", 1, "purchase item", "", "buy",
+     + CABLE_TXT + SOLIDS_TXT + "barb profile is a study proportion (lib/nozzles.py)"],
+    ["9", f"Rectifier, {CHAN_KW:.2f} kW cell channel on IA-DC-{UNIT} (floating, insulation "
+          "monitor, protection current on trip)", 1, "purchase item", "", "buy",
      "duty sections 3 and 9, channel DC with the 0.3 V bus drop (AQS-STD-002 section 11); "
      "mass per the purchase datasheet at order"],
 ]
@@ -419,29 +497,32 @@ p = json.loads((HERE / "params.json").read_text())
 p["design"] = {
     "service": f"electrowinning cell, {METAL} cathode product; chloride liquor 55 C in / "
                "cell-to-cell launder out",
-    "I_A": I_BOUND, "cell_V": V_CELL, "dc_kW": DC_KW, "channel_dc_kW": CHAN_KW,
+    "I_A": I_BOUND, "cell_V": V_CELL, "dc_kW": P_DC, "channel_dc_kW": CHAN_KW,
     "j_A_m2": J_DUTY, "cathodes": N_CAT, "anodes": N_AN, "pitch_mm": PITCH,
     "plate_immersed_mm": [PLATE_W, PLATE_H], "active_m2_per_cathode": 0.504,
     "tank_inside_mm": [L - 2 * T_WALL, W - 2 * T_WALL, H - T_WALL], "wall_mm": T_WALL,
-    "liquor_m3": LIQ_M3, "liquor_density_kg_m3": 1100,
-    "bus_pack": f"{n_bars} x {bus_w:g} x {bus_t:g} mm Cu C101 per pole (AQS-BUS-001 Rev C EW-4 row)",
-    "basis": "AQS-DUTY-051 Rev C section 1 and the EW_4 row of its section 2; duty section 9 "
-             "supersedes the 2.5 V / CE 1.0 figures (Rev B basis: CE 0.85, 2.12 V); channel DC "
-             f"on IA-DC-EW_4 {CHAN_KW} kW with the 0.3 V bus drop.",
+    "liquor_m3": V_LIQ_S, "liquor_density_kg_m3": 1100,
+    "bus_pack": f"{n_bars} x {bus_w:g} x {bus_t:g} mm Cu C101 per pole "
+                f"(AQS-BUS-001 Rev D {UNIT.replace('_', '-')} row)",
+    "basis": "AQS-DUTY-051 Rev F section 1 and the row of its section 2 for this cell "
+             "(the element-envelope current at CE 0.85, 2.12 V); channel DC on "
+             f"IA-DC-{UNIT} {CHAN_KW:.2f} kW with the 0.3 V bus drop.",
 }
 p["layout"] = {
-    "frame": f"origin at the envelope corner; x along {L}, y along 720, z up",
-    "electrodes": f"anodes at x 85 + 100k ({N_AN}), cathodes at x 135 + 100k ({N_CAT}); sheets "
-                  "y 60..660, z 160..580; tabs 120 wide rise to z 691 (study contact arrangement, "
-                  "AQS-STD-002 section 9: Ti tab against the Cu bar above the liquor line)",
+    "frame": f"origin at the envelope corner; x along {L:g}, y along 720, z up",
+    "electrodes": f"anodes at x {x_an[0]:g} + 100k ({N_AN}), cathodes at x {x_cat[0]:g} + 100k "
+                  f"({N_CAT}); sheets y 60..660, z 160..580; tabs 120 wide rise to z 691 "
+                  "(study contact arrangement, AQS-STD-002 section 9: Ti tab against the Cu bar "
+                  "above the liquor line)",
     "bus": f"pack pair over the tab line: + y {350.0 - bus_w:g}..350, - y 370..{370.0 + bus_w:g} "
            "(20 mm creepage gap, AQS-STD-002 section 11); bars x "
            f"{BAR_X0:g}..{BAR_X1:g} on FRP pads at beam stations x "
            f"{'/'.join(f'{xb:g}' for xb in BEAM_X)}; rectifier lugs at the -X bar ends",
-    "nozzle_spread": "the schedule gives face and height only; the along-face x positions are "
-                     "this layout's study choice (overflow at the discharge end x "
-                     f"{X_DIS:g}, vent bridge at x {X_VENT:g}, the rest spread clear of the "
-                     "largest bore), recorded per tag in check.nozzles_drawn",
+    "nozzle_spread": "the schedule gives face and height; the stations run in height order "
+                     "along the wall, OD-aware (wall webs survive the bores between "
+                     "z-overlapping bores, rounded down to 5 mm), vent bridge at x "
+                     f"{X_VENT:g}, recorded per tag in check.nozzles_drawn with any "
+                     "height clamp named",
     "vent_support": "the schedule vent is face top on an open tank: two PVC-U posts on the inner "
                     "walls carry a rim bridge at z 750..760; the stub hangs to its 650 datum",
     "drain": f"drain at the discharge-end sump (x {X_DIS:g}), flush at z 0, boss top at the 50 datum",
@@ -453,5 +534,4 @@ p["layout"] = {
 }
 (HERE / "params.json").write_text(json.dumps(p, indent=1) + "\n")
 
-print(json.dumps({k: report[k] for k in ("bbox_mm", "inside_size_mm", "solids",
-                                         "liquor_m3", "part_mass_kg")}))
+print(json.dumps({k: report[k] for k in ("bbox_mm", "inside_size_mm", "solids", "part_mass_kg")}))

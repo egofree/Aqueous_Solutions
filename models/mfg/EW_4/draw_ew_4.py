@@ -9,7 +9,7 @@ models/mfg/*/drawings/*.svg. Geometry and notes:
   ga_side        general arrangement, side elevation (-X)
   nozzle_orient  nozzle orientation, top view (tags/faces/heights per the schedule)
   sh01           PVC-U tank shell (wall 10 mm, zone stack)
-  el01           electrode bank: 2 cathodes + edge strips, 3 anodes, bus pair
+  el01           electrode bank: cathodes + edge strips, anodes, bus pair
   aux01          service group: barbs, solids ports, drain, vent bridge
   iso01          isometric orientation sheet
 
@@ -45,11 +45,17 @@ aux = union_all([parts["nozzles"], parts["vent_support"]])
 full = union_all(list(parts.values()))
 drawn_full = union_all([full] + list(inv.values()))
 
-noz_notes = [
-    f"{t} {d['dn']} {d['face']} z {d['height_mm']:g} x {d['x_mm']:g}: "
-    f"{next(r['service'] for r in P['nozzles'] if r['tag'] == t)}"
-    + (" - " + d["note"] if d["style"] in ("gland", "solids") else "")
-    for t, d in sorted(D.items())]
+noz_notes = []
+for _t, _d in sorted(D.items()):
+    _svc = next(r['service'] for r in P['nozzles'] if r['tag'] == _t)
+    if _d['face'] == '+X':
+        _head = f"{_t} {_d['dn']} +X y {_d['y_mm']:g} z {_d['height_mm']:g}"
+    else:
+        _head = f"{_t} {_d['dn']} {_d['face']} z {_d['height_mm']:g}"
+        if 'x_mm' in _d:
+            _head += f" x {_d['x_mm']:g}"
+    noz_notes.append(_head + f": {_svc}"
+                     + (" - " + _d["note"] if _d["style"] in ("gland", "solids") else ""))
 noz_notes.append("Heights/bore/rating per docs-authority/nozzles/EW_4.csv; along-face x positions "
                  "are the registered layout choice (params.json layout)")
 SHEETS = [
@@ -81,10 +87,10 @@ SHEETS = [
        'Corrosion allowance 0 mm (AQS-STD-001 polymer rule); general tolerance ISO 2768-m'],
      "Fabricated part sheet: PVC-U tank shell."),
     ("el01", electrode, (0, 1, 0),
-     [f'{CAT["count"]} cathode sheets 600 x 420 x 3 Ti Grade 2 + PVC-U edge strip clips at '
-      f'x 135 + 100k',
-      f'{R["anodes"]["count"]} anode sheets 600 x 420 x 1.5 Ti mesh MMO (drawn as the sheet '
-      'envelope) at x 85 + 100k',
+     [f'{CAT["count"]} cathode sheet{"s" if CAT["count"] != 1 else ""} 600 x 420 x 3 Ti '
+      'Grade 2 + PVC-U edge strip clips at x 135 + 100k',
+      f'{R["anodes"]["count"]} anode sheet{"s" if R["anodes"]["count"] != 1 else ""} 600 x '
+      '420 x 1.5 Ti mesh MMO (drawn as the sheet envelope) at x 85 + 100k',
       f'Hanger tabs 120 wide rise to z 691; bus pack {BUS["pack"]} Cu C101 over the tab line, '
       'on FRP pads (params.json layout.bus)',
       'Bus per the published AQS-BUS-001 EW-4 row; contacts Ti-tab on Cu bar above the liquor '
@@ -162,7 +168,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/EW_
 - Build bbox {R['bbox_mm'][0]} x {R['bbox_mm'][1]} x {R['bbox_mm'][2]} mm: inside the graph envelope {L} x {W} x {H} mm with margin (tracker check green)
 - Solid source: {step_src}; export STL closed and manifold; `cad/stl/EW_4.stl` replaced from the build (ASCII, metres)
 - Nozzles: all {len(D)} rows of `docs-authority/nozzles/EW_4.csv` present at face, height, bore and rating, tagged; drawn flush per the house idiom
-- A-CELL: {CAT['count']} cathodes / {R['anodes']['count']} anodes at 100 mm pitch, plates 600 x 420 immersed (0.504 m2 both faces, {CAT['active_m2_bank']} m2 bank); bus pack {BUS['pack']} Cu per AQS-BUS-001 Rev C
+- A-CELL: {CAT['count']} cathode{'s' if CAT['count'] != 1 else ''} / {R['anodes']['count']} anode{'s' if R['anodes']['count'] != 1 else ''} at 100 mm pitch, plates 600 x 420 immersed (0.504 m2 both faces, {CAT['active_m2_bank']} m2 bank); bus pack {BUS['pack']} Cu per AQS-BUS-001 Rev D
 - BOM `models/mfg/EW_4/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/EW_4/drawings/` (GA front/side, nozzle orientation, 3 part sheets, iso; title blocks per AQS-DWG-002)
 

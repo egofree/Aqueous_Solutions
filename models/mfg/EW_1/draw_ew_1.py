@@ -9,7 +9,7 @@ models/mfg/*/drawings/*.svg. Geometry and notes:
   ga_side        general arrangement, side elevation (-X)
   nozzle_orient  nozzle orientation, top view (tags/faces/heights per the schedule)
   sh01           CPVC tank shell (wall 10 mm, zone stack)
-  el01           electrode bank: 25 cathodes + edge strips, 26 anodes, bus pair
+  el01           electrode bank: cathodes + edge strips, anodes, bus pair
   aux01          service group: barbs, gland, solids ports, drain, vent bridge
   iso01          isometric orientation sheet
 
@@ -42,12 +42,32 @@ full = union_all(list(parts.values()))
 drawn_full = union_all([full] + list(inv.values()))
 
 L, W, H = P["size_mm"]
+D = R["nozzles_drawn"]
+CAT = R["cathodes"]
+BUS = R["bus"]
+noz_notes = []
+for _t, _d in sorted(D.items()):
+    _svc = next(r['service'] for r in P['nozzles'] if r['tag'] == _t)
+    if _d['face'] == '+X':
+        _head = f"{_t} {_d['dn']} +X y {_d['y_mm']:g} z {_d['height_mm']:g}"
+    else:
+        _head = f"{_t} {_d['dn']} {_d['face']} z {_d['height_mm']:g}"
+        if 'x_mm' in _d:
+            _head += f" x {_d['x_mm']:g}"
+    noz_notes.append(_head + f": {_svc}"
+                     + (" - " + _d["note"] if _d["style"] in ("gland", "solids") else ""))
+noz_notes.append("Heights/bore/rating per docs-authority/nozzles/EW_1.csv; the re-based "
+                 "stations are the registered layout choice (params.json layout)")
+
 SHEETS = [
     ("ga_front", drawn_full, (0, 1, 0),
      [f'Keys: {L} x {W} x {H} mm overall (graph envelope, filled by the shell); open top',
-      'Zone stack above the floor: sump 150 / plate 420 / cover 100 / freeboard 80; liquor fill line z 680 (1.243 m3, AQS-DUTY-051)',
-      'Electrode bank: 25 cathodes + 26 anodes at 100 mm pitch, plates 600 x 420 immersed',
-      'Bus pair above the liquor line on FRP standoffs; N2 conductor gland at -Y z 130',
+      'Zone stack above the floor: sump 150 / plate 420 / cover 100 / freeboard 80; liquor fill '
+      f'line z 680 ({R["liquor_fill_basis_m3"]} m3 fill basis, AQS-DUTY-051 section 2)',
+      f'Electrode bank: {CAT["count"]} cathode sheet{"s" if CAT["count"] != 1 else ""} + '
+      f'{R["anodes"]["count"]} anode sheet{"s" if R["anodes"]["count"] != 1 else ""} at 100 mm '
+      'pitch, plates 600 x 420 immersed',
+      'Bus pair above the liquor line on FRP standoffs (AQS-BUS-001 EW-1 pack)',
       'Liquor shown as a process-inventory solid - not a BOM part'],
      "General arrangement, front elevation. Shop, not stamped (AQS-STD-001 section 7)."),
     ("ga_side", drawn_full, (1, 0, 0),
@@ -58,31 +78,33 @@ SHEETS = [
       'General tolerance ISO 2768-m unless noted'],
      "General arrangement, side elevation. Shop, not stamped (AQS-STD-001 section 7)."),
     ("nozzle_orient", drawn_full, (0, 0, -1),
-     ['N1 DN50 -Y z 130 x 600: CSTR to EW-1, hose (atmospheric)',
-      'N2 DN15 -Y z 130 x 200: rectifier into the cell - conductor gland, not a hose (duty section 4)',
-      'N3 DN50 +Y z 487 x 2500: EW overflow (sets the working level; sizing fill 1.243 m3 reads to z 680 - see WORK_ORDER W12)',
-      'N4/N5 DN15 +Y z 487 x 900/1300: cathode H2 + sweep air; EW heat, hose. N6 DN25 +Y z 487 x 1700: plated sheet (schedule verbatim)',
-      'N7 DN15 bottom (2500, 360), flush z 0, boss to 50: drain. N8 DN15 top, hangs to z 650 on the rim bridge: vent',
-      'N9 DN50 +Y z 600 x 2100: hood hydrogen. N10 DN15 +Y z 600 x 400 and N11 DN15 -Y z 160 x 1000: solids, bore not calculated. N12 DN15 +Y z 600 x 600: anode Cl2 to leach oxidation',
-      'Heights/bore/rating per docs-authority/nozzles/EW_1.csv; along-face x positions are the registered layout choice (params.json layout)'],
-     "Nozzle orientation, top view. Tags/faces/heights per the task-04 schedule."),
+     noz_notes,
+     "Nozzle orientation, top view. Tags/faces/heights per the schedule."),
     ("sh01", tank, (0, 1, 0),
-     ['CPVC tank, outside 2670 x 720 x 760, wall 10 mm: inside 2650 x 700 x 750 (AQS-DUTY-051 section 1 zone stack)',
+     [f'CPVC tank, outside {L} x 720 x 760, wall 10 mm: inside {L - 20:g} x 700 x 750 '
+      '(AQS-DUTY-051 section 1 zone stack)',
       'Open top; freeboard 80 to the rim; bottom wall pierced for N7 only',
       'Thermoplastic welds per the unit WORK_ORDER route (hot-gas / extrusion, CPVC); hydro or leak test per F-CELL route class',
       'Corrosion allowance 0 mm (AQS-STD-001 polymer rule); general tolerance ISO 2768-m'],
      "Fabricated part sheet: CPVC tank shell."),
     ("el01", electrode, (0, 1, 0),
-     ['25 cathode sheets 600 x 420 x 3 Ti Grade 2 + PVC-U edge strip clips at x 135 + 100k',
-      '26 anode sheets 600 x 420 x 1.5 Ti mesh MMO (drawn as the sheet envelope) at x 85 + 100k',
-      'Hanger tabs 120 wide rise to z 691; bus pair 2 x (2 flats 110 x 6.3 x 2400) Cu C101, + y 240..350 / - y 370..480, on 12 FRP pads',
-      'Bus per the published AQS-BUS-001 EW-1 row; contacts Ti-tab on Cu bar above the liquor line (AQS-STD-002 sections 9 and 11); 51 M6 tab clamps (fasteners.csv)'],
+     [f'{CAT["count"]} cathode sheet{"s" if CAT["count"] != 1 else ""} 600 x 420 x 3 Ti '
+      'Grade 2 + PVC-U edge strip clips at x 135 + 100k',
+      f'{R["anodes"]["count"]} anode sheet{"s" if R["anodes"]["count"] != 1 else ""} 600 x '
+      '420 x 1.5 Ti mesh MMO (drawn as the sheet envelope) at x 85 + 100k',
+      f'Hanger tabs 120 wide rise to z 691; bus pack {BUS["pack"]} Cu C101 over the tab line, '
+      'on FRP pads (params.json layout.bus)',
+      'Bus per the published AQS-BUS-001 EW-1 row; contacts Ti-tab on Cu bar above the liquor '
+      f'line (AQS-STD-002 sections 9 and 11); {CAT["count"] + R["anodes"]["count"]} M6 tab '
+      'clamps (fasteners.csv)'],
      "Fabricated part sheet: electrode bank + bus pair."),
     ("aux01", aux, (0, 1, 0),
      ['Hose barbs DN50/DN25/DN15 set in flush at the faces; barb profile a study proportion (lib/nozzles.py), finished against the hose supplier print',
-      'N2 conductor gland: DN15 passage in a boss od 32 at -Y z 130 (duty section 4: not a hose)',
-      'N10/N11 solids ports drawn at DN15, bore not calculated (AQS-PLAN-006 W4 hand/bin transfer)',
-      'Vent support: 2 posts 30 x 30 on the inner walls + rim bridge 60 x 10 at z 750..760; N7 drain flush at z 0 with the boss to its 50 datum'],
+      'The rectifier connection is a conductor gland: DN15 passage in a boss od 32 (duty '
+      'section 4: not a hose)',
+      'Solids ports drawn at DN15, bore not calculated (AQS-PLAN-006 W4 hand/bin transfer)',
+      'Vent support: 2 posts 30 x 30 on the inner walls + rim bridge 60 x 10 at z 750..760; the '
+      'drain sits flush at z 0 with the boss to its 50 datum'],
      "Fabricated part sheet: nozzle hardware + vent support."),
     ("iso01", drawn_full, (1, -1, 1),
      ['Shop orientation: -X end carries the rectifier lugs; +Y face carries the overflow to the EW_2 launder (air break per AQS-STD-002 section 11)',
@@ -142,8 +164,8 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/EW_
 
 - Build bbox {R['bbox_mm'][0]} x {R['bbox_mm'][1]} x {R['bbox_mm'][2]} mm: inside the graph envelope {L} x {W} x {H} mm with margin (tracker check green)
 - Solid source: {step_src}; export STL closed and manifold; `cad/stl/EW_1.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 12 rows of `docs-authority/nozzles/EW_1.csv` present at face, height, bore and rating, tagged; drawn flush per the house idiom
-- A-CELL: 25 cathodes / 26 anodes at 100 mm pitch, plates 600 x 420 immersed (0.504 m2 both faces, 12.6 m2 bank); bus pack 2 x 110 x 6.3 mm Cu per AQS-BUS-001 Rev C
+- Nozzles: all {len(D)} rows of `docs-authority/nozzles/EW_1.csv` present at face, height, bore and rating, tagged; drawn flush per the house idiom
+- A-CELL: {CAT['count']} cathode{'s' if CAT['count'] != 1 else ''} / {R['anodes']['count']} anode{'s' if R['anodes']['count'] != 1 else ''} at 100 mm pitch, plates 600 x 420 immersed (0.504 m2 both faces, {CAT['active_m2_bank']} m2 bank); bus pack {BUS['pack']} Cu per AQS-BUS-001 Rev D
 - BOM `models/mfg/EW_1/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/EW_1/drawings/` (GA front/side, nozzle orientation, 3 part sheets, iso; title blocks per AQS-DWG-002)
 

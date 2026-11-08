@@ -1,20 +1,20 @@
 {
   "bbox_mm": [
-    470.0,
-    720.3,
+    370.0,
+    720.1,
     760.0
   ],
   "inside_size_mm": true,
   "size_mm": [
-    470,
-    720,
-    760
+    370.0,
+    720.0,
+    760.0
   ],
-  "graph_revision": "AC",
-  "solids": 5,
+  "graph_revision": "AD",
+  "solids": 4,
   "all_parts_valid": true,
   "cathodes": {
-    "count": 3,
+    "count": 2,
     "sheet_mm": [
       600.0,
       420.0,
@@ -22,11 +22,11 @@
     ],
     "pitch_mm": 100.0,
     "active_m2_each": 0.504,
-    "active_m2_bank": 1.51,
-    "duty_basis": "AQS-DUTY-051 section 1; 226 A at 150 A/m2 = 1.51 m2 against the 1.51 m2 bank (0.4 % rounding, drawn bank governs)"
+    "active_m2_bank": 1.01,
+    "duty_basis": "AQS-DUTY-051 Rev F section 2 row EW_6: the element-envelope current 184 A needs 0.920 m2 at the duty density; the bank is 1.01 m2 (the one-plate commercial minimum where the envelope current is smaller), drawn j 182.5 A/m2"
   },
   "anodes": {
-    "count": 4,
+    "count": 3,
     "sheet_envelope_mm": [
       600.0,
       420.0,
@@ -37,78 +37,93 @@
   "bus": {
     "pack": "1 x 20 x 6.3 mm per pole",
     "section_cm2": 1.3,
-    "A_cm2_at_bound": 179.4,
-    "published_A_cm2": 152,
-    "published_current_A": 192,
-    "note": "pack verbatim from the published AQS-BUS-001 EW-6 row (192 A basis, 152 A/cm2 published). At the duty section 9 bounding 226 A the same pack runs 179 A/cm2; the bus standard regenerates from the duty current in docs-authority/_ew_busbar.py - re-sizing is that generator's run, not the model's (named hold, WORK_ORDER W12)."
+    "A_cm2_at_bound": 146.0,
+    "basis": "pack verbatim from AQS-BUS-001 Rev D (184 A basis, docs-authority/BUSBAR.json), regenerated at the element-envelope current; the same generator sizes this pack - not a model hold"
   },
-  "liquor_m3": 0.206,
-  "liquor_fill_basis_m3": 0.211,
+  "liquor_m3": 0.16,
+  "liquor_fill_basis_m3": 0.164,
   "nozzles_drawn": {
-    "N1": {
+    "N3": {
       "style": "hose",
-      "dn": "DN50",
-      "face": "-Y",
-      "height_mm": 130,
-      "x_mm": 235.0,
-      "note": "atmospheric hose joint at the face (duty section 4)"
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 700.65,
+      "issued_height_mm": 487,
+      "x_mm": 55.5,
+      "note": "atmospheric hose joint at the face (duty section 4); issued height 487 clamped to 700.65 for the wall webs (W12)"
+    },
+    "N6": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 729.65,
+      "issued_height_mm": 600,
+      "x_mm": 177.75,
+      "note": "atmospheric hose joint at the face (duty section 4); issued height 600 clamped to 729.65 for the wall webs (W12)"
     },
     "N2": {
       "style": "hose",
       "dn": "DN50",
       "face": "+Y",
-      "height_mm": 487,
-      "x_mm": 400.0,
-      "note": "atmospheric hose joint at the face (duty section 4)"
-    },
-    "N3": {
-      "style": "hose",
-      "dn": "DN15",
-      "face": "+Y",
-      "height_mm": 487,
-      "x_mm": 70.0,
-      "note": "atmospheric hose joint at the face (duty section 4)"
+      "height_mm": 680.0,
+      "issued_height_mm": 487,
+      "x_mm": 300.0,
+      "note": "atmospheric hose joint at the face (duty section 4); issued height 487 clamped to 680 for the wall webs (W12)"
     },
     "N4": {
       "style": "drain",
       "dn": "DN15",
       "face": "bottom",
-      "height_mm": 50,
-      "x_mm": 400.0,
+      "height_mm": 50.0,
+      "issued_height_mm": 50,
+      "x_mm": 300.0,
       "note": "drain stub, boss to the 50 datum"
     },
     "N5": {
       "style": "vent",
       "dn": "DN15",
       "face": "top",
-      "height_mm": 650,
-      "x_mm": 235.0,
+      "height_mm": 650.0,
+      "issued_height_mm": 650,
+      "x_mm": 185.0,
       "note": "vent stub hung to its 650 datum on the rim bridge"
     },
-    "N6": {
+    "N1": {
       "style": "hose",
-      "dn": "DN15",
-      "face": "+Y",
-      "height_mm": 600,
-      "x_mm": 180.0,
-      "note": "atmospheric hose joint at the face (duty section 4)"
+      "dn": "DN50",
+      "face": "+X",
+      "height_mm": 720.15,
+      "issued_height_mm": 130.0,
+      "y_mm": 240.0,
+      "note": "issued height 130 predates the Rev F zone stack; the bore re-faces to the +X discharge-end wall in the cover gas zone with its hardware (W12)"
     },
     "N7": {
       "style": "hose",
       "dn": "DN15",
-      "face": "+Y",
-      "height_mm": 600,
-      "x_mm": 290.0,
-      "note": "atmospheric hose joint at the face (duty section 4)"
+      "face": "+X",
+      "height_mm": 700.65,
+      "issued_height_mm": 600.0,
+      "y_mm": 360.0,
+      "note": "issued height 600 predates the Rev F zone stack; the bore re-faces to the +X discharge-end wall in the cover gas zone with its hardware (W12)"
+    },
+    "N8": {
+      "style": "carried",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (IA-DC-EW_6, DC bus bar)",
+      "note": "power terminal row (IA-DC-EW_n, DC bus bar) - a cable schedule row: carried verbatim, never drawn"
     }
   },
-  "nozzle_idiom": "hardware flush at the envelope faces (lib/nozzles.place_on_face default); external hose makeup at the face plane",
+  "nozzle_clamped": [],
+  "nozzle_idiom": "hardware flush at the envelope faces (lib/nozzles.place_on_face default); external hose makeup at the face plane; the power terminal row is a cable schedule row, carried verbatim and never drawn",
   "part_mass_kg": {
-    "tank": 29.2,
-    "cathodes": 10.8,
-    "edge_strips": 0.5,
-    "anodes": 7.2,
-    "bus_bars": 0.7,
+    "tank": 26.1,
+    "cathodes": 7.2,
+    "edge_strips": 0.3,
+    "anodes": 5.4,
+    "bus_bars": 0.3,
     "standoff_pads": 0.0,
     "support_beams": 1.2,
     "nozzles": 0.5,

@@ -64,6 +64,7 @@ class GraphNode:
     def __init__(self, unit, node, graph):
         self.unit = unit
         self.node = node
+        self.graph = graph                 # the full graph: edges are lookup data for builders
         self.graph_revision = graph.get("revision")
         self.params = node.get("params") or {}
         self.size_mm = _node_size(self.params)

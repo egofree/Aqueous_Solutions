@@ -10,10 +10,10 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/EW_
 
 ## Checks
 
-- Build bbox 2670.0 x 720.3 x 760.0 mm: inside the graph envelope 2670 x 720 x 760 mm with margin (tracker check green)
+- Build bbox 270.0 x 720.1 x 760.0 mm: inside the graph envelope 270 x 720 x 760 mm with margin (tracker check green)
 - Solid source: build export `models/mfg/EW_2/export/ew_2.step`; export STL closed and manifold; `cad/stl/EW_2.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 8 rows of `docs-authority/nozzles/EW_2.csv` present at face, height, bore and rating, tagged; drawn flush per the house idiom
-- A-CELL: 25 cathodes / 26 anodes at 100 mm pitch, plates 600 x 420 immersed (0.504 m2 both faces, 12.6 m2 bank); bus pack 2 x 110 x 6.3 mm per pole Cu per AQS-BUS-001 Rev C
+- Nozzles: all 9 rows of `docs-authority/nozzles/EW_2.csv` present at face, height, bore and rating, tagged; drawn flush per the house idiom
+- A-CELL: 1 cathode / 2 anodes at 100 mm pitch, plates 600 x 420 immersed (0.504 m2 both faces, 0.5 m2 bank); bus pack 1 x 20 x 6.3 mm per pole Cu per AQS-BUS-001 Rev D
 - BOM `models/mfg/EW_2/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/EW_2/drawings/` (GA front/side, nozzle orientation, 3 part sheets, iso; title blocks per AQS-DWG-002)
 
