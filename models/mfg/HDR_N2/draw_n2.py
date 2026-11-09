@@ -35,8 +35,9 @@ LL = R["line_list"]
 SHEETS = [
     ("ga_front", full, (0, 1, 0),
      [f'Keys: {L:g} x {W:g} x {H:g} mm envelope - the node size_mm ({R["size_basis"]}); '
-      'the 60.3 mm z reading is the DN50 branch hardware drawn at the manifold '
-      'centreline (misfit reported, plan rule 3; nothing resized)',
+      'the 60.3 mm cross-section is the AQS-DUTY-075 reservation (flow_graph/param/'
+      'headers.py), sized to cover the DN50 branch hardware drawn at the manifold '
+      'centreline (2026-11-08 reservation adoption - the assembly fits)',
       f'Manifold spool {S["dn"]} OD {S["od_mm"]:g}, wall {S["wall_mm"]:g} mm (Sch 40 '
       'table; the M1 class sheet carries the schedule at order - hold, W12), bore open '
       'both ends, 316L tube',
@@ -44,21 +45,25 @@ SHEETS = [
       'Trough plinth 2000 x 50 x 20 (AQS-MOD-002 dry service); 8 M10 slab anchors'],
      "General arrangement, front elevation. Shop, not stamped (AQS-STD-001 section 7)."),
     ("ga_side", full, (1, 0, 0),
-     ['Cross-section: the manifold sits at the centre of the 50 mm box and sits bonded '
-      'in the trough plinth to its centreline',
+     ['Cross-section: the manifold sits at the centre of the 60.3 mm cross-section '
+      'and sits bonded in the trough plinth to its centreline',
       f'AQS-DUTY-075 sizing: required bore {S["id_grid_mm"]:g} mm at 8 m/s, seat minimum '
       f'{S["dn"]}; the Sch 40 bore {S["id_mm"]:g} mm seats the same DN; nothing resized',
-      'The DN50 branch circle (OD 60.3) leaves the 50 mm cross-section: the misfit is '
-      'the acceptance record (AQS-PLAN-006 rule 3), not a resize'],
+      'The DN50 branch circle (OD 60.3) sits inside the 60.3 mm cross-section: the '
+      'reservation is sized to the largest issued branch (headers.py, AQS-DUTY-075; '
+      '2026-11-08 reservation adoption)'],
      "General arrangement, side elevation (end view). Shop, not stamped."),
     ("nozzle_orient", full, (0, 0, -1),
-     ['13 schedule rows of docs-authority/nozzles/HDR_N2.csv at tag, face and bore',
-      'N1 DN50 drawn at the manifold centreline - OD 60.3 leaves the 50 mm '
-      'cross-section (misfit reported); N2 to N4 inlets on -Y at 11.3 mm (datum 10 '
-      'clamped up); N13 inlet clamped down from the 160 mm placeholder datum',
+     ['14 schedule rows of docs-authority/nozzles/HDR_N2.csv at tag, face and bore',
+      'N1 DN50 drawn at the manifold centreline - the OD 60.3 hardware sits inside '
+      'the 60.3 mm reservation cross-section (headers.py, AQS-DUTY-075; 2026-11-08 '
+      'reservation adoption); N2 (sweep nitrogen) to N4 inlets on -Y at 11.3 mm '
+      '(datum 10 clamped up); N13 inlet clamped down from the 160 mm placeholder '
+      'datum',
       'N5/N8 DN15 outlets at their 37 mm datum; N6/N7 DN25 outlets clamped down to '
-      '32.4 mm to keep the branch bore inside the cross-section; N11 outlet and the N12 '
-      'no-bore row (DN15 drawn, bore not calculated) clamped down from the 600 mm datum',
+      '32.4 mm to keep the branch bore inside the cross-section; N11 and N14 (aisle '
+      'make-up air) outlets and the N12 no-bore row (DN15 drawn, bore not calculated) '
+      'clamped down from the 600 mm datum',
       'N3/N4 carry services with no present edge on the graph; drawn verbatim, no edge '
       'created. N9 drain flush at the bottom, N10 vent flush at the top'],
      "Branch orientation, top view. Tags/faces/bore per the schedule."),
@@ -73,9 +78,9 @@ SHEETS = [
      ['Branch connections DN15/DN25/DN50 as open-bore tube stubs, flush at the envelope '
       'faces; atmospheric per duty section 4; the schedule rating column (Class 150) '
       'is carried verbatim as text (no flange drawn - no process pressure stated)',
-      'All 13 schedule rows present at tag, face, height and bore; clamped datums, the '
+      'All 14 schedule rows present at tag, face, height and bore; clamped datums, the '
       'DN50 centreline placement and per-tag positions in check.nozzles_drawn',
-      'The line list of record is line_list.csv: 8 rows (manifold + 7 issued lines), '
+      'The line list of record is line_list.csv: 9 rows (manifold + 8 issued lines), '
       'generated from the graph edges and AQS-PIP-004; no new edge'],
      "Fabricated part sheet: branch connection hardware."),
     ("iso01", full, (1, -1, 1),
@@ -83,8 +88,9 @@ SHEETS = [
       'and reagent draws on +Y; drain and vent at the run midpoint',
       f'Graph revision {R["graph_revision"]} is the model authority for this build; '
       'STEP (export/hdr_h2.step) is the solids of record',
-      'Tracker --check green on every gate except the reported DN50 cross-section '
-      'misfit; acceptance A-core + A-PIPE per AQS-PLAN-006 section 5'],
+      'Tracker --check green on every gate - the reservation cross-section covers the '
+      'DN50 branch hardware (headers.py, AQS-DUTY-075; 2026-11-08 reservation '
+      'adoption); acceptance A-core + A-PIPE per AQS-PLAN-006 section 5'],
      "Isometric orientation sheet."),
 ]
 
@@ -102,11 +108,12 @@ sheets.build_log(
      "- Spool: DN32 OD 42.4 x wall 3.56 (Sch 40 table; the M1 class sheet carries the "
      "schedule at order), bore 35.3 mm inside the 17.2 mm DN-8 sizing grid seat "
      "(AQS-DUTY-075); nothing resized",
-     "- Misfit reported (plan rule 3): the DN50 branch row N1 (OD 60.3) is larger "
-     "than the 50 mm cross-section; drawn at the manifold centreline, the mesh reads "
-     "z 60.3 against the 50 mm envelope; nothing resized, the section 7 row carries "
-     "the misfit",
-     "- Schedule datums clamped into the 50 mm cross-section: inlets 10 to 11.3 mm, "
+     "- Reservation adoption (2026-11-08): headers.py (AQS-DUTY-075) sizes the "
+     "reservation cross-section to the largest issued branch hardware (60.3 mm, the "
+     "EN-rounded OD series); the DN50 branch row N1 draws inside it at the manifold "
+     "centreline, the build reads 2000 x 60.3 x 60.3 against the same reservation, "
+     "no misfit carried",
+     "- Schedule datums clamped into the 60.3 mm cross-section: inlets 10 to 11.3 mm, "
      "the DN25 37 mm datums to 32.4 mm, the 160/600 mm placeholder datums down "
      "(holds, W12); N12 drawn DN15, bore not calculated (plan W4); N3/N4 carry "
      "services with no present edge and are drawn verbatim"],

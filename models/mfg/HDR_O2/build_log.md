@@ -1,6 +1,6 @@
 # Build log - HDR_O2
 
-Date: 2026-11-02. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-PIPE; MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-PIPE; MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/HDR_O2.md`; envelope per `models/mfg/HDR_O2/params.json`).
 
 ## Tool versions
@@ -10,13 +10,13 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/HDR
 
 ## Checks
 
-- Build bbox 2000 x 50 x 60.3 mm against the 2000 x 50 x 50 mm envelope: OVER - misfit reported (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
-- Solid source: build export `models/mfg/HDR_O2/export/hdr_o2.step`; export STL closed and manifold, 1 solid(s); `cad/stl/HDR_O2.stl` ; kept as the envelope registry at the node size (the build carries the reported DN50 cross-section misfit; build mesh in export/) (ASCII, metres)
+- Build bbox 2000 x 60.3 x 60.3 mm against the 2000 x 60.3 x 60.3 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
+- Solid source: build export `models/mfg/HDR_O2/export/hdr_o2.step`; export STL closed and manifold, 1 solid(s); `cad/stl/HDR_O2.stl` ; replaced from the build (ASCII, metres)
 - Nozzles: all 12 rows of `docs-authority/nozzles/HDR_O2.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
 - A-PIPE line list: line_list.csv generated from the unit's graph edges and docs-authority/LINE_LIST.md (AQS-PIP-004): 9 rows (manifold spool + 8 lines), tag/from/to/DN/class/service/rating; edge coverage complete, no new edge
 - Spool: DN25 OD 33.7 x wall 3.38 (Sch 40 table; the M1 class sheet carries the schedule at order), bore 26.9 mm inside the 7.1 mm DN-8 sizing grid seat (AQS-DUTY-075); nothing resized; oxygen-clean per ASTM G93, socketless
-- Misfit reported (plan rule 3): the DN50 branch row N8 (OD 60.3) is larger than the 50 mm cross-section; drawn at the manifold centreline, the mesh reads z 60.3 against the 50 mm envelope; nothing resized, the section 7 row carries the misfit
-- Schedule datums clamped into the 50 mm cross-section: the DN25 inlet 10 to 17.5 mm, the DN25 37 mm outlet datum to 32.4 mm, the 160/600 mm placeholder datums down (holds, W12); N11 drawn DN15, bore not calculated (plan W4)
+- Reservation adoption (2026-11-08): headers.py (AQS-DUTY-075) sizes the reservation cross-section to the largest issued branch hardware (60.3 mm, the EN-rounded OD series); the DN50 branch row N8 draws inside it at the manifold centreline, the build reads 2000 x 60.3 x 60.3 against the same reservation, no misfit carried; oxygen-clean per ASTM G93, socketless
+- Schedule datums clamped into the 60.3 mm cross-section: the DN25 inlet 10 to 17.5 mm, the DN25 37 mm outlet datum to 32.4 mm, the 160/600 mm placeholder datums down (holds, W12); N11 drawn DN15, bore not calculated (plan W4)
 - BOM `models/mfg/HDR_O2/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/HDR_O2/drawings/` (GA front/side, nozzle orientation, part sheets, iso; title blocks per AQS-DWG-002); the stale envelope `drawings/GA.md` is superseded where one existed
 

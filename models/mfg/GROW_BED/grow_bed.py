@@ -6,16 +6,18 @@ every solid.
 Placement frame: x along the bed length, y along the bed width, z up, origin at the
 bed corner. Every dimension is an authority figure or a named layout choice:
 
-- A-FARM: the bed area matches the node and is NOT shrunk to fit the study box.
+- A-FARM: the bed area matches the node and is NOT shrunk to fit the block.
   The node area is area_m2 29.12 - "crew duty (A-M-229): S14 4.2 kg/d / 0.1442
   kg/m2/d = 29.12 m2 (supersedes the BH ~28 m2 / 120.4 m2 residue-claim studies
-  [A-M-151])". The build is the full bed: interior 7280 x 4000 mm = 29.12 m2.
-  The full build lives in `export/` and the STEP; `cad/stl/GROW_BED.stl` carries
-  the in-envelope bay module (2000 x 1000 x 400, the node size_mm) - the CRYO_ASU
-  X-PAR-04 treatment ("the cad/stl box equals the node size_mm; the full build
-  lives in export/ and the STEP"). The export build bounding box therefore reads
-  against size_mm as a MISFIT TO REPORT - nothing is resized (plan rule 3; the
-  BIOFILTER/CRYO_ASU section 7 pattern).
+  [A-M-151])". The build is the full bed: interior 7280 x 4000 mm = 29.12 m2,
+  framed per A-M-469 (4 x 2 nominal 2000 x 1000 bays, 15 mm basin walls, LED
+  canopy to z 900 + 15 mm rail). The node size_mm 7310 x 4030 x 915 is the
+  assembly envelope - the reservation the build sits inside (2026-11-08
+  reservation adoption: the former single-bay study box stated no bay count or
+  canopy height and is withdrawn). The bay module (2000 x 1000 x 400) lives on
+  the node design block grow_bed_layout_mm; `cad/stl/GROW_BED.stl` keeps the
+  in-envelope bay module per the CRYO_ASU X-PAR-04 treatment (scope recorded in
+  check.json cad_stl_scope), and the full bed lives in `export/` and the STEP.
 - Bed per the node and duty section 3: HDPE basin (walls and floor 15 mm) with an
   EPDM liner (5 mm, the ponded-zone class of the GROWBED_A idiom), LECA media
   envelope at a 250 mm study depth (the duty names no media depth - hold, W12),
@@ -50,27 +52,28 @@ from tracker import stl_bbox_mm                           # noqa: E402  (gate-co
 GN = graph_node.graph_node("GROW_BED")        # the plant graph is the sole authority
 P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
 P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
-BW, BD, BH = (float(v) for v in P["size_mm"])              # bay 2000 x 1000 x 400 (registry)
-REV = P["graph_revision"]
-UNIT = P["unit_id"]
-AREA_M2 = 29.12                                            # node area_m2 (A-M-229)
-
-T_WALL = 15.0                                              # HDPE basin wall/floor (GROWBED_A idiom)
+LAYOUT = (P.get("design") or {}).get("grow_bed_layout_mm") or {}
+IX, IY = (float(v) for v in LAYOUT["interior_xy_mm"])      # the A-M-229 area, framed (A-M-469)
+T_WALL = float(LAYOUT["wall_mm"])                          # HDPE basin wall/floor (GROWBED_A idiom)
+CANOPY_Z1 = float(LAYOUT["canopy_top_mm"])                 # canopy top (registered layout, W12)
+RAIL_ALLOW = float(LAYOUT["rail_allowance_mm"])            # the rail above the canopy top
 T_LINER = 5.0                                              # EPDM liner
-IX, IY = 7280.0, 4000.0                                    # interior = 29.12 m2 exactly
-LX, LY, LZ = IX + 2 * T_WALL, IY + 2 * T_WALL, BH          # basin outer 7310 x 4030 x 400
 MEDIA_D = 250.0                                            # LECA media depth (study, W12)
 SUMP = (1700.0, 700.0, 300.0, 300.0, 120.0)                # drain sump x,y,dx,dy,depth (W12)
 LED_W = 2.0463                                             # node continuous kW (A-M-144)
-CANOPY_Z1 = 900.0                                          # canopy top (layout, W12)
+REV = P["graph_revision"]
+UNIT = P["unit_id"]
+AREA_M2 = float(GN.params["area_m2"])                     # node area_m2 (A-M-229)
+BW, BD, BH = (float(v) for v in LAYOUT["bay_module_mm"])   # the nominal bay module (A-M-469)
+LX, LY = IX + 2 * T_WALL, IY + 2 * T_WALL                  # basin outer 7310 x 4030
+LZ = BH                                                    # the bed depth the node sized
 PANEL_T = 60.0
 RHO_HDPE = materials.density("HDPE")
 RHO_EPDM = materials.density("EPDM")
 RHO_LECA = materials.density("LECA")
 RHO_CS = materials.density("CS")
 
-assert (BW, BD, BH) == (2000.0, 1000.0, 400.0), "the bay module is the node registry box"
-assert abs(IX * IY / 1e6 - AREA_M2) < 1e-9, "bed interior matches the A-M-229 area"
+assert abs(IX * IY / 1e6 - float(GN.params["area_m2"])) < 1e-9, "bed interior matches the A-M-229 area"
 
 T_X0, T_Y0 = 0.0, 0.0                                      # bed origin
 
@@ -213,15 +216,16 @@ for k, v in parts.items():
 solid = solid.val()
 solid.exportStl(str(out / (UNIT.lower() + ".stl")), tolerance=0.5, angularTolerance=0.4, ascii=True)
 # cad/stl is the envelope registry in metres (X-PAR-04): the in-envelope BAY MODULE
-# (2000 x 1000 x 400 = the node size_mm) - the CRYO_ASU treatment; the full bed is
-# the export/ build and the STEP.
+# (2000 x 1000 x 400, the design-block bay per A-M-469) - the CRYO_ASU treatment;
+# the full bed is the export/ build and the STEP, inside the 7310 x 4030 x 915
+# reservation (node size_mm).
 bay_solid = parts["bay_module"].val()
 bay_solid.scale(0.001).exportStl(str(HERE.parents[2] / "cad" / "stl" / (UNIT + ".stl")),
                                  tolerance=0.0005, angularTolerance=0.4, ascii=True)
 
 # ---------------------------------------------------------------- checks + report
 dims = stl_bbox_mm(str(out / (UNIT.lower() + ".stl")))
-inside = all(d <= s + 1.0 for d, s in zip(dims, [BW, BD, BH]))
+inside = all(d <= s + 1.0 for d, s in zip(dims, [float(v) for v in P["size_mm"]]))
 bay_dims = stl_bbox_mm(str(HERE.parents[2] / "cad" / "stl" / (UNIT + ".stl")))
 RHO_OF = {"led_panel": RHO_CS, "canopy": RHO_CS}
 mass = {k: round(v.val().Volume() * RHO_OF.get(k, RHO_HDPE) / 1e9, 2) for k, v in parts.items()}
@@ -235,14 +239,16 @@ mass["basin"] = round((parts["basin"].val().Volume() - (media_vol - 1960.0 * 960
                       + (media_vol - 1960.0 * 960.0 * MEDIA_D) * RHO_LECA / 1e9, 2)
 mass["media_total_kg"] = round(media_vol * RHO_LECA / 1e9, 2)
 report = {
-    "bbox_mm": dims, "inside_size_mm": inside, "size_mm": [BW, BD, BH],
+    "bbox_mm": dims, "inside_size_mm": inside, "size_mm": [float(v) for v in P["size_mm"]],
     "size_basis": P.get("size_basis"),
     "graph_revision": REV,
     "solids": len(solid.Solids()), "all_parts_valid": all(v.val().isValid() for v in parts.values()),
     "cad_stl_scope": "in-envelope bay module of the build, metres (X-PAR-04 "
-                     "gate: the cad/stl box equals the node size_mm 2000 x 1000 "
-                     "x 400; the full bed lives in export/ and the STEP - the "
-                     "CRYO_ASU treatment)",
+                     "registry: the registry keeps the bay module 2000 x 1000 x "
+                     "400, the design-block bay per A-M-469; the node size_mm "
+                     "7310 x 4030 x 915 is the assembly envelope and the full "
+                     "bed lives in export/ and the STEP - the CRYO_ASU "
+                     "treatment; 2026-11-08 reservation adoption)",
     "cad_stl_bbox_mm": bay_dims,
     "machine": {
         "type": "crop grow bed per the node area_basis (A-M-229): HDPE basin "
@@ -258,10 +264,10 @@ report = {
                           "supersedes the A-M-151 residue-line claim studies",
                  "a_farm": "bed area matches the node; liner and drain drawn; "
                            "not shrunk to fit the block"},
-        "misfit": {"export_bbox_mm": dims, "size_mm": [BW, BD, BH],
-                   "note": "the full bed leaves the study box by design - the "
-                           "misfit is section-7-reported, nothing resized "
-                           "(plan rule 3; A-FARM area rule governs)"},
+        "misfit": {"export_bbox_mm": dims, "size_mm": [float(v) for v in P["size_mm"]],
+                   "note": "the reservation is the built array per A-M-469 (2026-11-08 "
+                           "adoption): the former single-bay study box stated no bay "
+                           "count or canopy height and is withdrawn"},
         "media": "LECA media envelope at a 250 mm study depth (the duty names no "
                  "media depth - hold, WORK_ORDER W12); GROWBED_A media idiom",
         "circulation": "duty section 2: 19100.9 kg/d, two-minute holdup "
@@ -339,7 +345,7 @@ fasteners.write_fasteners(HERE / "fasteners.csv", [
 # ---------------------------------------------------------------- builder-owned params blocks
 p = json.loads((HERE / "params.json").read_text())
 p["envelope"] = {
-    "size_mm": [BW, BD, BH],
+    "size_mm": [float(v) for v in P["size_mm"]],
     "basis": P.get("size_basis") or "node size_mm is the bay-module registry box; "
              "the bed area is the A-M-229 29.12 m2 duty",
     "bed": {"interior_mm": [IX, IY], "outer_mm": [LX, LY], "height_mm": LZ,

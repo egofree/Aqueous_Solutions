@@ -6,15 +6,15 @@ rebuilds every solid through the shared close-out builder (`models/mfg/farm_clos
 Placement frame: x along the hive, y along the depth, z up, origin at the stand
 corner. Every dimension is an authority figure or a named layout choice:
 
-- Hive per the node: size_mm 600 x 500 x 1100 - "10-frame deep + medium + stand
-  (A-M-424; TECHTREE beekeeping)". The Oct-31 build is confirmed as issued: stand
-  laps the boxes by 25 mm a side, the telescoping lid laps 20 mm a side, and the
-  box stack (stand 150 + deep 475 + medium 475 + screen 10 + lid 30) tops at
-  z 1150. The assembly therefore leaves the node box (650.0 x 550.0 x 1150.0
-  against 600 x 500 x 1100) - the MISFIT TO REPORT that section 7 already carries,
-  by design and not resized (plan rule 3; the CRYO_ASU section 7 pattern). The
-  node states no per-box heights, so fitting the stack under 1100 would invent
-  dimensions; the hive-body envelope is the node box.
+- Hive per the node: size_mm 650 x 550 x 1150 - "hive stack per A-M-468: stand 150 +
+  screen board + deep 475 + medium 475 + telescoping lid, laps the 600 x 500 boxes
+  (TECHTREE beekeeping 10-frame classes; X-FARM sec3)". The build is that stack as
+  issued: stand laps the boxes by 25 mm a side, the telescoping lid laps 20 mm a
+  side, and the box stack (stand 150 + deep 475 + medium 475 + screen 10 + lid 30)
+  tops at z 1150 - the build fills the node box exactly (2026-11-08 reservation
+  adoption: the former 600 x 500 x 1100 study box stated no per-box heights, and
+  fitting the stack under it would have invented dimensions; the stack dims are the
+  registered assumption A-M-468).
 - Materials per duty section 3: untreated solid pine, SS316 screen bottom board,
   propolis-waxed interiors; NO copper-bearing alloys (no brass screws) and no
   treated lumber anywhere.
@@ -26,8 +26,8 @@ corner. Every dimension is an authority figure or a named layout choice:
   (duty section 4: DN15, no flange class, atmospheric tube or hose; loop
   accounting rows on a hive - forage in, honey and evaporation out). N1 in on -Y
   at z 160; N2/N3 out on +Y at z 600; N4 drain flush at the envelope bottom; N5
-  vent flush at the envelope top (the schedule z 800 datum predates the 1100 box
-  - stale datum, hold W12). No flange is drawn (W4 110 % rule); the schedule
+  vent flush at the envelope top (the schedule z 800 datum predates the 1150
+  stack - stale datum, hold W12). No flange is drawn (W4 110 % rule); the schedule
   rating column (Class 150) is carried verbatim as text.
 """
 import pathlib
@@ -46,21 +46,21 @@ SPEC = {
     "liner_bag": False,
     "rho_map": {"screen_floor": "316L"},        # the SS316 screen bottom board
     "drop_keys": (),
-    "cad_stl_envelope_box": True,               # no in-envelope module fills the node
-                                                # box: the registry keeps the study
-                                                # box (X-PAR-04 gate); the full build
-                                                # lives in export/ and the STEP
-    "cad_stl_scope": "study envelope box, metres (X-PAR-04 registry gate: the box "
-                     "equals the node size_mm 600 x 500 x 1100; the full build "
-                     "leaves the node box by the stand and lid laps and lives in "
-                     "export/ and the STEP - the misfit is section-7-reported, "
-                     "nothing resized)",
+    "cad_stl_envelope_box": False,              # the build fills the node box exactly
+                                                # (the A-M-468 stack): the registry is
+                                                # replaced from the build solid (X-PAR-04
+                                                # gate)
+    "cad_stl_scope": "replaced from the build solid, metres (X-PAR-04 registry gate: "
+                     "the registry bbox equals the node size_mm 650 x 550 x 1150 "
+                     "within 1 mm - the build is the A-M-468 stack the node carries; "
+                     "2026-11-08 reservation adoption, the former 600 x 500 x 1100 "
+                     "study box is withdrawn)",
     "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces "
                     "(duty section 4: DN15, no flange class, atmospheric tube or "
                     "hose; loop accounting rows on a hive); N1 in on -Y at z 160, "
                     "N2/N3 out on +Y at z 600; N4 drain flush at the envelope "
                     "bottom; N5 vent flush at the envelope top (schedule z 800 "
-                    "predates the 1100 box - stale datum, hold W12); no flange "
+                    "predates the 1150 stack - stale datum, hold W12); no flange "
                     "drawn (W4 110 % rule); the schedule rating column (Class 150) "
                     "carried verbatim as text",
     "machine": lambda P, dims, mass: {
@@ -70,12 +70,11 @@ SPEC = {
                 "propolis-waxed (duty section 3)",
         "misfit": {"export_bbox_mm": dims,
                    "size_mm": [float(v) for v in P["size_mm"]],
-                   "note": "the assembly leaves the node box by the stand and lid "
-                           "laps (stand +50, lid +40 a side) and the box stack "
-                           "tops at z 1150 - the misfit is section-7-reported, "
-                           "nothing resized (plan rule 3); the node states no "
-                           "per-box heights, so fitting under 1100 would invent "
-                           "dimensions"},
+                   "note": "the assembly is the node stack per A-M-468 (2026-11-08 "
+                           "reservation adoption: stand +50, lid +40 a side and the "
+                           "box stack to z 1150 are the registered stack the "
+                           "reservation now carries); the former 600 x 500 x 1100 "
+                           "study box stated no per-box heights and is withdrawn"},
         "material": P.get("material"),
         "frames": "the size_basis names the 10-frame deep + medium class; frames "
                   "and foundation are the buy woodenware (plan rule 6), count not "
@@ -94,7 +93,8 @@ SPEC = {
          "interior propolis-waxed at assembly (duty section 3)"],
         ["4", "Telescoping pine lid, laps 20 mm a side", 1,
          "untreated solid pine (duty section 3)", mass["lid"], "make",
-         "cover laps by design - the section-7-reported misfit rides on it"],
+         "cover laps by design - the build is the registered A-M-468 stack the node "
+         "carries"],
         ["5", "Screen bottom board: SS316 hardware-cloth mesh on a pine frame", 1,
          "SS316 mesh + pine frame (duty section 3)",
          round(mass["screen_floor"] * 0.15, 1), "make",
@@ -128,8 +128,9 @@ SPEC = {
                   "boxes": "deep 475 + medium 475 at the +25 mm offset",
                   "lid_z_mm": [1120.0, 1150.0]},
         "measured_bbox_mm": dims,
-        "misfit_note": "assembly leaves the node box (stand/lid laps + the box "
-                       "stack) - section-7-reported, nothing resized",
+        "misfit_note": "the build fills the node box exactly (the A-M-468 stack; "
+                       "2026-11-08 reservation adoption - the former 600 x 500 x "
+                       "1100 study box is withdrawn)",
     },
     "layout_block": lambda P: {
         "frame": "origin at the stand corner; stand 650 x 550 x 150, boxes 600 x "

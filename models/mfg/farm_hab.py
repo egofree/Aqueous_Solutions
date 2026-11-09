@@ -83,13 +83,20 @@ def parts_frame(P):
 
 
 def parts_hive(P):
-    L, W, H = P['size_mm']
-    body_h = (H - 150) // 2
-    parts = {'stand': box(0, 0, 0, L + 50, W + 50, 150)}
-    parts['box_deep'] = box(25, 25, 150, L, W, body_h)
-    parts['box_medium'] = box(25, 25, 150 + body_h + 10, L, W, body_h)
-    parts['lid'] = box(0, 0, 150 + 2 * body_h + 20, L + 40, W + 40, 30)
-    parts['screen_floor'] = box(25, 25, 140, L, W, 10)
+    # Component dimensions live on the node design block (A-M-468); `size_mm` is the
+    # assembly envelope the tracker checks the build against, never an input here.
+    d = ((P.get('design') or {}).get('hive_stack_mm') or {})
+    bx, by = (float(v) for v in d.get('box_xy_mm', [600, 500]))
+    deep, med = float(d.get('deep_h_mm', 475)), float(d.get('medium_h_mm', 475))
+    stand_h, screen_t = float(d.get('stand_h_mm', 150)), float(d.get('screen_t_mm', 10))
+    lid_t = float(d.get('lid_t_mm', 30))
+    sl, ll = float(d.get('stand_lap_mm', 25)), float(d.get('lid_lap_mm', 20))
+    parts = {'stand': box(0, 0, 0, bx + 2 * sl, by + 2 * sl, stand_h)}
+    parts['box_deep'] = box(sl, sl, stand_h, bx, by, deep)
+    parts['box_medium'] = box(sl, sl, stand_h + deep + screen_t, bx, by, med)
+    parts['lid'] = box(0, 0, stand_h + deep + screen_t + med + screen_t,
+                       bx + 2 * ll, by + 2 * ll, lid_t)
+    parts['screen_floor'] = box(sl, sl, stand_h - screen_t, bx, by, screen_t)
     return parts
 
 

@@ -62,11 +62,11 @@ Z0 = LEG_H + PED_H        # bed bottom-head underside, 370
 CA = materials.ca_for("316L")                             # 0.0 (AQS-STD-001 rule)
 RHO = {"316L": materials.density("316L"), "13X": 700.0}   # sorbent bulk density, study
 
-BED_PITCH = BED_D + 100.0                                 # study layout pitch
+BED_PITCH = float(D["bed_pitch_mm"])                      # sized bed pitch (cold_box.py)
 CX0 = BED_PITCH / 2                                       # first bed axis x
 CY = 280.0                                                # bed axis y
-SKID_L = 2460.0
-SKID_W = 560.0
+SKID_L = float(D["skid_l_mm"])                            # sized skid extents (cold_box.py)
+SKID_W = float(D["skid_w_mm"])
 R_BED = BED_D / 2
 R_ID = R_BED - SHELL_T
 

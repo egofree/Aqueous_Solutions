@@ -14,3 +14,4 @@ IA-HDR-H2-02,HDR_H2,H2_DRYER,DN15,P1,"wet acid H2 + sweep air header (PVC-U; AQS
 IA-HDR-H2-03,EW_2,HDR_H2,DN15,P1,"wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06)",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
 IA-HDR-H2-04,EW_9,HDR_H2,DN15,P1,"wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06)",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
 IA-LEACH-H2,LEACH_CSTR_1,HDR_H2,DN50,P1,"wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06)",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-ZNBR-H2,ZNBR2,HDR_H2,DN15,P1,"wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06)",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,

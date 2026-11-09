@@ -7,16 +7,17 @@ authorities the A-PIPE acceptance names: the unit's edges in
 (AQS-PIP-004, the DN and class authority). It writes the unit line list
 `line_list.csv` and rebuilds every solid.
 
-Placement frame: x along the 2000 mm run, y across the 50 mm cross-section, z up,
+Placement frame: x along the 2000 mm run, y across the reservation cross-section, z up,
 origin at the envelope corner. Every dimension is an authority figure or a named
 layout choice:
 
-- Envelope 2000 x 50 x 50 mm, node size_mm: "DN25 manifold x 20 m run (0.004 m3),
-  header sizing (flow_graph/param/headers.py, AQS-DUTY-075)". The model is the spool
-  set as the node defines it: one manifold run, modeled as a 2000 mm representative
-  spool; the per-line route lengths stay in the line list and are not redrawn. The
-  seed placement defines one grid cell - there are no separate N/S/E/W leg nodes on
-  the graph (checked); the spool set is the one manifold run.
+- Envelope 2000 mm run x the reservation cross-section, node size_mm sized by
+  flow_graph/param/headers.py (AQS-DUTY-075) to cover the largest issued branch
+  hardware (2026-11-08 reservation adoption). The model is the spool set as the node
+  defines it: one manifold run, modeled as a 2000 mm representative spool; the
+  per-line route lengths stay in the line list and are not redrawn. The seed
+  placement defines one grid cell - there are no separate N/S/E/W leg nodes on the
+  graph (checked); the spool set is the one manifold run.
 - Manifold per the node design block: DN25 (OD 33.7), 316L tube, oxygen-clean per
   ASTM_G93, socketless (duty section 3). Wall on the lib/dn Sch 40 table (the schedule
   is not stated on the node - WORK_ORDER W12); the M1 class sheet carries the schedule
@@ -24,15 +25,16 @@ layout choice:
   both spool ends.
 - Supports: a 20 mm plinth trough under the whole run and 8 M10 slab anchors (the
   layout the HDR_CO2 acceptance carries).
-- Nozzles: all 12 rows of docs-authority/nozzles/HDR_O2.csv drawn at tag, face,
+- Nozzles: every row of docs-authority/nozzles/HDR_O2.csv drawn at tag, face,
   height and bore as open-bore tube stubs flush at the envelope faces (duty section 4:
-  atmospheric, no flange class). The DN50 row (N8, OD 60.3) is larger than the 50 mm
-  cross-section: drawn at the manifold centreline and the mesh leaves the envelope in
-  z - the misfit is reported (plan rule 3), nothing is resized. The N11 solids row
-  (oxygen return) is drawn DN15 and labeled bore not calculated (plan W4). Schedule
-  datums 10 mm are clamped up for the branch bore; the DN25 branch datums (37 mm) are
-  clamped down to clear the crown; the 160 mm and 600 mm datums are placeholders and
-  are clamped (holds, W12). The rating column (Class 150) is carried verbatim as text.
+  atmospheric, no flange class). The DN50 row (N8) sits inside the reservation
+  cross-section, which flow_graph/param/headers.py (AQS-DUTY-075) sizes to the
+  largest issued branch hardware (2026-11-08 reservation adoption); the branch
+  datums clamp into the cross-section. The N11 solids row (oxygen return) is drawn
+  DN15 and labeled bore not calculated (plan W4). Schedule datums 10 mm are clamped
+  up for the branch bore; the DN25 branch datums (37 mm) are clamped down to clear
+  the crown; the 160 mm and 600 mm datums are placeholders and are clamped (holds,
+  W12). The rating column (Class 150) is carried verbatim as text.
 - A-PIPE line list: `line_list.csv` is generated here from the graph edges and the
   issued AQS-PIP-004 rows (tag, from, to, DN, class, service, rating). No new edge.
 """
@@ -47,7 +49,7 @@ from lib import dn, fasteners, materials, nozzles          # noqa: E402  (nozzle
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
 P = json.loads((HERE / "params.json").read_text())
-L, W, H = (float(v) for v in P["size_mm"])                 # 2000 x 50 x 50
+L, W, H = (float(v) for v in P["size_mm"])                 # 2000 run x reservation cross-section
 REV = P["graph_revision"]
 UNIT = P["unit_id"]
 D = P["design"]
@@ -60,7 +62,13 @@ MAT_KEY = "316L"                                           # duty section 3: 316
 RHO = materials.density(MAT_KEY)
 CLAMP_MARGIN = 0.7                                         # stub radius clearance to the faces
 
-assert L == 2000.0 and W == 50.0 and H == 50.0, "HDR_O2 node envelope changed"
+# the reservation covers the sized manifold and the largest issued branch
+_branch_max = max((dn.pipe_od(r["size"]) for r in P.get("nozzles", [])
+                   if str(r.get("size", "")).startswith("DN")), default=0.0)
+assert L == 2000.0, "HDR_O2: the modelled segment is the 2000 mm study layout"
+assert W >= OD_MAIN - 1e-6 and H >= max(OD_MAIN, _branch_max) - 1e-6, \
+    "HDR_O2: node envelope does not cover the sized manifold and branch hardware"
+
 assert DN_MAIN == "DN25", "HDR_O2 node design DN changed"
 
 FACE_OF = {"inlet": "-Y", "outlet": "+Y"}
@@ -68,25 +76,35 @@ FACE_OF = {"inlet": "-Y", "outlet": "+Y"}
 
 def z_for(row):
     """Drawn centreline height for a side stub: the schedule datum clamped into the
-    cross-section, with the clamp or the cross-section misfit named."""
+    cross-section, with the clamp named. A branch larger than the sized cross-section
+    fails the build: the reservation covers the largest issued branch hardware, so an
+    over-sized row means the schedule needs review."""
     h = float(row["height_mm"])
     od_s = dn.pipe_od(row["size"]) if row["size"].startswith("DN") else dn.pipe_od("DN15")
+    if od_s > H:
+        raise SystemExit(
+            f"{UNIT}: the {row['size']} branch (OD {od_s:g} mm) exceeds the sized "
+            f"cross-section (H = {H:g} mm); the reservation (flow_graph/param/"
+            "headers.py, AQS-DUTY-075) covers the largest issued branch hardware, "
+            "so the schedule needs review")
     lo, hi = od_s / 2 + CLAMP_MARGIN, H - od_s / 2 - CLAMP_MARGIN
     if lo > hi:
+        # the branch fills the cross-section to the clamp margin: it seats at the
+        # manifold centreline (the reservation is sized to the largest branch)
         return round(Z_C, 1), (
-            f"the {row['size']} hardware (OD {od_s:g} mm) is larger than the 50 mm "
-            f"cross-section; drawn at the manifold centreline (schedule datum {h:g} mm is "
-            "a placeholder); the mesh leaves the envelope in z by "
-            f"{round(od_s - H, 1)} mm - misfit reported (plan rule 3), nothing resized "
+            f"the {row['size']} hardware fills the {H:g} mm cross-section; drawn at "
+            f"the manifold centreline; schedule datum {h:g} mm is a placeholder "
             "(hold, WORK_ORDER W12)")
     z = min(max(h, lo), hi)
     note = None
     if h < lo:
         note = (f"schedule datum {h:g} mm clamped up to {round(z, 1)} mm to keep the "
-                f"{row['size']} bore inside the 50 mm cross-section (hold, WORK_ORDER W12)")
+                f"{row['size']} bore inside the {H:g} mm cross-section "
+                "(hold, WORK_ORDER W12)")
     elif h > hi:
-        note = (f"schedule datum {h:g} mm is a placeholder above the 50 mm cross-section; "
-                f"clamped down to {round(z, 1)} mm (hold, WORK_ORDER W12)")
+        note = (f"schedule datum {h:g} mm is a placeholder above the {H:g} mm "
+                f"cross-section; clamped down to {round(z, 1)} mm "
+                "(hold, WORK_ORDER W12)")
     return round(z, 1), note
 
 
@@ -135,10 +153,10 @@ for r in schedule:
     face = FACE_OF.get(face0, face0)
     is_dn = dnl.startswith("DN")
     od_s = dn.pipe_od(dnl) if is_dn else dn.pipe_od("DN15")   # no-bore rows drawn DN15 (plan W4)
-    if face0 == "bottom":                                     # drain: boss to the 50 datum, flush at z 0
+    if face0 == "bottom":                                     # drain: boss flush at z 0
         stub = tube(dnl if is_dn else "DN15", y_inner + STUB_PIERCE)
         s = nozzles.place_on_face(stub, "bottom", 0.0, (L / 2 - 30.0, Y_C), (L, W, H))
-        note = "drain boss, flush at the envelope bottom; 50 datum is the cross-section height"
+        note = "drain boss, flush at the envelope bottom"
         z_d, x_d = 0.0, L / 2 - 30.0
     elif face0 == "top":                                      # vent: flush at the envelope top
         stub = tube(dnl if is_dn else "DN15", y_inner + STUB_PIERCE)
@@ -175,16 +193,16 @@ solid.exportStl(str(out / (UNIT.lower() + ".stl")), tolerance=0.4, angularTolera
 dims = stl_bbox_mm(str(out / (UNIT.lower() + ".stl")))
 inside = all(d <= s0 + 1.0 for d, s0 in zip(dims, [L, W, H]))
 # cad/stl is the envelope registry in metres (X-PAR-04) and is gated to the node size_mm
-# within 1 mm (flow_graph/param/test_envelopes.py). A build that carries the reported
-# DN50 cross-section misfit does not replace the registry: the envelope-consistent study
-# mesh stays (the AL_POT precedent), and the build mesh lives in export/.
+# within 1 mm (flow_graph/param/test_envelopes.py). A build that does not fit the node
+# size_mm does not replace the registry: the envelope-consistent study mesh stays (the
+# AL_POT precedent), and the build mesh lives in export/.
 if inside:
     solid.scale(0.001).exportStl(str(HERE.parents[2] / "cad" / "stl" / (UNIT + ".stl")),
                                  tolerance=0.0005, angularTolerance=0.4, ascii=True)
     cad_stl_note = "replaced from the build"
 else:
-    cad_stl_note = ("kept as the envelope registry at the node size (the build carries "
-                    "the reported DN50 cross-section misfit; build mesh in export/)")
+    cad_stl_note = ("kept as the envelope registry at the node size (the build does not "
+                    "fit the node size_mm; build mesh in export/)")
 
 # ---------------------------------------------------------------- line list (A-PIPE)
 graph = json.loads((ROOT / "flow_graph" / "plant_flow_graph.json").read_text())
@@ -225,8 +243,7 @@ with open(HERE / "line_list.csv", "w", newline="") as fh:
         w.writerow([r["line"], r["frm"], r["to"], r["dn"], r["cls"], r["service"], rating, note])
 
 # ---------------------------------------------------------------- checks + report
-misfit = None if inside else (f"bbox {dims} against size_mm {[L, W, H]}; the DN50 branch "
-                              "hardware (OD 60.3) is larger than the 50 mm cross-section; "
+misfit = None if inside else (f"bbox {dims} against size_mm {[L, W, H]}; "
                               "nothing resized (plan rule 3)")
 mass = {k: round(v.val().Volume() * (RHO if k != "plinth" else materials.density("CS")) / 1e9, 2)
         for k, v in parts.items()}
@@ -256,9 +273,10 @@ report = {
     "nozzle_count_schedule": len(schedule),
     "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty "
                     "section 4: atmospheric, no flange class; the W4 110 % rule draws no "
-                    "flange where no process pressure is stated); the DN50 row (N8) is "
-                    "larger than the 50 mm cross-section and is drawn at the manifold "
-                    "centreline - misfit reported, nothing resized; schedule rating "
+                    "flange where no process pressure is stated); the DN50 row (N8) sits "
+                    "inside the reservation cross-section, sized by "
+                    "flow_graph/param/headers.py (AQS-DUTY-075) to the largest issued "
+                    "branch hardware (2026-11-08 reservation adoption); schedule rating "
                     "column (Class 150) carried verbatim as text; oxygen-clean per "
                     "ASTM G93, socketless (duty section 3)",
     "line_list": {
@@ -284,11 +302,11 @@ rows = [
      "schedule not stated on the node - Sch 40 table drawn, the M1 class sheet carries "
      "the schedule at order (hold, WORK_ORDER W12); CA 0 mm (AQS-STD-001 316L rule)"],
     ["2", f"Branch connection set: {len(schedule)} atmospheric open-bore tube stubs at the "
-          "schedule tags/faces/heights, incl. 1 DN50 row (drawn at the manifold "
-          "centreline - misfit reported) and 1 no-bore row drawn DN15", len(schedule),
+          "schedule tags/faces/heights, incl. 1 DN50 row (inside the reservation "
+          "cross-section) and 1 no-bore row drawn DN15", len(schedule),
      "316L tube", mass["nozzles"], "make",
      "docs-authority/nozzles/HDR_O2.csv verbatim; no-bore rows drawn DN15 and labeled "
-     "bore not calculated (plan W4); datums clamped into the 50 mm cross-section "
+     "bore not calculated (plan W4); datums clamped into the reservation cross-section "
      "(holds); oxygen-clean per ASTM G93, socketless joints"],
     ["3", f"Trough plinth {L:g} x {W:g} x {T_PLINTH:g}, the spool mount (AQS-MOD-002 dry "
           "service class)", 1, "carbon steel (ASTM A500)", mass["plinth"], "make",
@@ -323,12 +341,13 @@ p["design"].update({
                   "sheet carries the schedule at order (WORK_ORDER W12)",
 })
 p["layout"] = {
-    "frame": "origin at the envelope corner; manifold along +x at the cross-section centre "
-             "(y 25, z 25), trough plinth z 0..20",
+    "frame": f"origin at the envelope corner; manifold along +x at the cross-section "
+             f"centre (y {Y_C:g}, z {Z_C:g}), trough plinth z 0..{T_PLINTH:g}",
     "supports": "trough plinth + 8 slab anchors; no top rails (the branch zone stays clear)",
     "nozzle_spread": "the schedule gives face and height only; branch stubs pack per face "
                      "group from x 100 at OD + 30 mm pitch; drain at x 970, vent at x 1030; "
-                     "the DN50 rows sit at the manifold centreline; per-tag positions in "
+                     "branch stubs sit on the manifold centreline (y) with the schedule "
+                     "datums clamped into the cross-section (z); per-tag positions in "
                      "check.nozzles_drawn",
     "line_list": "models/mfg/HDR_O2/line_list.csv generated from the graph edges and "
                  "AQS-PIP-004; no new edge",

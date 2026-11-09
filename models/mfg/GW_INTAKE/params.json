@@ -7,7 +7,7 @@
   800,
   600
  ],
- "size_basis": "the wellhead hatch + pump discharge set (X-LOC-13 well head)",
+ "size_basis": "the wellhead hatch + pump discharge set (X-LOC-13 well head); the pump is downhole, not plant-side",
  "origin_mm": [
   12600,
   2400,
@@ -55,5 +55,27 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class intake"
- ]
+ ],
+ "form": "tray",
+ "wall_mm": 6,
+ "envelope": {
+  "size_mm": [
+   800,
+   800,
+   600
+  ],
+  "basis": "L x W x H mm study envelope for the well pump, sand separator and RO rack; unit task 02 sizing pending",
+  "wall_mm": 6,
+  "measured_bbox_mm": [
+   800.0,
+   800.0,
+   600.0
+  ]
+ },
+ "layout": {
+  "frame": "origin at the pad corner; head plate set 800 x 800 x 600 outer, 6 mm plate; hatch leaves at z 590-600; discharge-head boss at the -X floor corner",
+  "supports": "head plate set to the slab on 4 base anchors; hatch clamped at 4 corners",
+  "nozzle_spread": "the schedule gives face and height only; N1 on the +Y wall at the z 600 rim, N2 drain at the -Y corner, N3 vent at the top centreline through the hatch gap; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces"
+ }
 }

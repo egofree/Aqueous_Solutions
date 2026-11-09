@@ -7785,5 +7785,31 @@
    "flow_graph/param/drivers.json",
    "flow_graph/plant_flow_graph.json"
   ]
+ },
+ {
+  "id": "A-M-468",
+  "value": "hive stack envelope 650 x 550 x 1150 mm: stand 150 mm high laps 25 mm a side over the 600 x 500 boxes, screen bottom board, deep 475 + medium 475 boxes, telescoping lid to z 1150 laps 20 mm a side",
+  "units": "mm",
+  "where": "BEE_HIVE design (node size_mm) and the BEE_HIVE builder stack",
+  "basis": "TECHTREE beekeeping 10-frame woodenware classes (A-M-424): the declared deep and medium box heights and the stand/lid laps of the accepted build; the node states no per-box heights, so the stack dims are this registered assumption",
+  "sensitivity": "only the bee unit; no other envelope or layout reads it",
+  "task": "X-FARM-08",
+  "replaced_by": "the supplied woodenware class datasheets at order (deep and medium box heights, stand and lid stock), cross-checked against the as-built stack",
+  "files": [
+   "models/mfg/BEE_HIVE/bee_hive.py"
+  ]
+ },
+ {
+  "id": "A-M-469",
+  "value": "GROW_BED envelope 7310 x 4030 x 915 mm: the A-M-229 crew-duty growing area 29.12 m2 framed as a 4 x 2 arrangement of nominal 2000 x 1000 bays (7280 x 4000 interior, 15 mm basin walls), plus the LED canopy top at z 900 with a 15 mm rail allowance",
+  "units": "mm",
+  "where": "GROW_BED design (node size_mm) and the GROW_BED builder layout",
+  "basis": "the node lighting and growing-area duties (A-M-229 area; A-M-133/A-M-144 canopy) framed in the nominal bay module the reservation formerly carried as the whole-unit size_mm; the canopy top is the registered study layout (W12)",
+  "sensitivity": "only the GROW_BED unit; the food duty sets the area, so the footprint scales with it",
+  "replaced_by": "unit task 02 dimensional sizing of the bay framing and canopy against the built array",
+  "task": "X-FARM-08",
+  "files": [
+   "models/mfg/GROW_BED/grow_bed.py"
+  ]
  }
 ]

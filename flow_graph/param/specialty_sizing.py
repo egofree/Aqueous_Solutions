@@ -91,7 +91,7 @@ def write():
     E = {e['stream_id']: e for e in g['edges']}
     v = compute()
 
-    def put(u, design=None, sizing=None, envelope=None, size_mm=None, size_note=None, kw=None, kw_note=None):
+    def put(u, design=None, sizing=None, envelope=None, size_mm=None, size_note=None, size_basis=None, kw=None, kw_note=None):
         n = N[u]
         p = n.setdefault('params', {})
         if design:
@@ -105,6 +105,8 @@ def write():
         if size_mm:
             p['size_mm'] = size_mm
             p['size_note'] = size_note
+        if size_basis:
+            p['size_basis'] = size_basis
         if kw is not None:
             cur = (n.get('continuous_kw') or {}).get('note') or ''
             if '(X-SPEC' not in cur:            # idempotence: the note is written once
@@ -132,22 +134,22 @@ def write():
     put('GREASE_CA', design={'duty': 'calcium grease kettle: the C19-C28 wax base + the P_CA thickener -> the general lubrication grease',
                              'batch_kgd': v['grease_ca_kgd'][0], 'heat_class': 'soap precipitation, jacket heated'},
         sizing={'batch_kgd': v['grease_ca_kgd'][0]},
-        envelope=v['grease_ca_env'][0], size_note=v['grease_ca_env'][1],
+        size_mm=v['grease_ca_env'][0], size_basis=v['grease_ca_env'][1],
         kw=0.2, kw_note='jacket heater at the 0.2 kg/d batch class')
     put('GREASE_LI', design={'duty': 'lithium grease kettle: the wax base + the LI_RECOVER carbonated thickener -> the motor-bearing grease',
                              'batch_kgd': v['grease_li_kgd'][0]},
         sizing={'batch_kgd': v['grease_li_kgd'][0]},
-        envelope=v['grease_li_env'][0], size_note=v['grease_li_env'][1],
+        size_mm=v['grease_li_env'][0], size_basis=v['grease_li_env'][1],
         kw=0.2, kw_note='jacket heater at the 0.1 kg/d batch class')
     put('P_CA', design={'duty': 'calcium-soap precipitation: wax + lime -> the grease thickener (feeds GREASE_CA)',
                         'thickener_kgd': v['ca_thickener_kgd'][0]},
         sizing={'thickener_kgd': v['ca_thickener_kgd'][0]},
-        envelope=v['p_ca_env'][0], size_note=v['p_ca_env'][1],
+        size_mm=v['p_ca_env'][0], size_basis=v['p_ca_env'][1],
         kw=0.05, kw_note='agitator at the precipitation batch class')
     put('LI_RECOVER', design={'duty': 'carbonate the POLISH_BANK LiOH slipstream -> the lithium thickener (feeds GREASE_LI)',
                               'slipstream_kgd': v['li_slipstream_kgd'][0]},
         sizing={'slipstream_kgd': v['li_slipstream_kgd'][0]},
-        envelope=v['li_recover_env'][0], size_note=v['li_recover_env'][1],
+        size_mm=v['li_recover_env'][0], size_basis=v['li_recover_env'][1],
         kw=0.05, kw_note='contactor agitator + CO2 metering at the batch class')
 
     # --- the machines -----------------------------------------------------------------
@@ -156,14 +158,14 @@ def write():
                              'si_kgd': v['si_kgd'][0], 'sio2_kgd': v['sio2_kgd'][0],
                              'char_kgd': v['char_to_si_kgd'][0]},
         sizing={'si_kgd': v['si_kgd'][0]},
-        envelope=v['si_reduce_env'][0], size_note=v['si_reduce_env'][1],
+        size_mm=v['si_reduce_env'][0], size_basis=v['si_reduce_env'][1],
         kw=v['si_reduce_kw'][0], kw_note=v['si_reduce_kw'][1])
     edge('CHAR_TO_SI', v['char_to_si_kgd'][0], v['char_to_si_kgd'][1] + '; the IA-CHAR pool sheds the draw, stated (X-SPEC)')
 
     put('ADS_CHILL', design={'duty': 'silica gel-water adsorption chiller: 5 kW drive at 65 C -> 2.25 kW chilled at 12 C, 7.25 kW rejected',
                              'chilled_kw': 2.25, 'cop_thermal': 0.45},
         sizing={'chilled_kw': 2.25, 'cop_thermal': 0.45},
-        envelope=v['ads_env'][0], size_note=v['ads_env'][1])
+        size_mm=v['ads_env'][0], size_basis=v['ads_env'][1])
     # --- DRY_COOLER: the fan electrical stamp and airside read the calculated rating written by
     # write_graph heat (X-THM-01 F-4, A-M-244 restated / A-M-455): airside at the same 13 K rise
     # class as the issued 0.61 m3/s per 7.25 kW basis, fan at the 0.05 kW_fan/kW_th class.
@@ -174,7 +176,7 @@ def write():
     put('DRY_COOLER', design={'duty': 'dry rejection of the ADS_CHILL 7.25 kW + the Q4 dry share + the ZNBR2 cycling heat',
                               'airflow_m3_s': v['dc_airflow_m3_s'][0], 'fan_kw': v['dc_fan_kw'][0]},
         sizing={'airflow_m3_s': v['dc_airflow_m3_s'][0]},
-        envelope=v['dc_env'][0], size_note=v['dc_env'][1])
+        size_mm=v['dc_env'][0], size_basis=v['dc_env'][1])
     # the fan electrical stamp tracks the calculated rating every pass (the put() note-freeze is for
     # hand-authored texts; this note is generator-owned)
     N['DRY_COOLER']['continuous_kw'] = {'value': v['dc_fan_kw'][0], 'unit': 'kW', 'status': 'study',
@@ -182,7 +184,8 @@ def write():
     put('GW_INTAKE', design={'duty': 'standby well head: the make-up on loss of atmospheric harvest',
                              'pump_kw': v['gw_pump_kw'][0]},
         sizing={'pump_kw': v['gw_pump_kw'][0]},
-        envelope=v['gw_env'][0], size_note=v['gw_env'][1],
+        size_mm=v['gw_env'][0],
+        size_basis=v['gw_env'][1] + '; the pump is downhole, not plant-side',
         kw=0.37, kw_note=v['gw_pump_kw'][1] + ' (standby-zero at the baseline: ' + v['gw_note'] + ')')
     # --- H2O_ELYZ skid machine design (A-M-459 stack point; A-M-133 window; A-M-168 bed
     # classes reused on the skid; A-M-279 skid allowances set the envelope) ------------
@@ -242,7 +245,7 @@ def write():
                             'computed_by': 'flow_graph/param/specialty_sizing.py (X-SPEC lane, '
                                            'CAD-representation audit item 8)'},
         sizing={'kwh_per_kg_h2': v['elyz_kwh_per_kg'][0], 'rated_kw': round(_rated, 1)},
-        size_mm=[_l_skid, 1050, 2200], envelope=[_l_skid, 1050, 2200],
+        size_mm=[_l_skid, 1050, 2200],
         size_note='L x W x H mm, set by flow_graph/param/specialty_sizing.py: the A-M-279 skid '
                   'allowances at the rated kW (stack deck %d + gap 100 + BoP deck %d at W 1050, '
                   'H 2200); the placement seed block (1800 x 800 x 1600) under-books it - the '
@@ -296,7 +299,7 @@ def write():
               '(BAGHOUSE WORK_ORDER W12)')
     put('MAU_HX', design={'duty': 'the 12 kW water-to-air coil on the hab make-up air (Q4 -> MAU)'},
         sizing={'duty_kw': 12.0},
-        envelope=v['mau_env'][0], size_note=v['mau_env'][1])
+        size_mm=v['mau_env'][0], size_basis=v['mau_env'][1])
 
     # --- the three flagged load stamps: the arithmetic onto the stamps ---------------
     put('FEED_PREP', sizing={'load_basis': v['feed_prep_kw'][1]}, kw=v['feed_prep_kw'][0], kw_note=v['feed_prep_kw'][1] + ' (X-SPEC calculated)')
@@ -323,7 +326,6 @@ def write():
         ('GAS_ATOMIZER', [1000, 600, 800]),
         ('GEO_GHEX', [1000, 600, 800]),
         ('GEO_HP_CLOSED_LOOP', [1000, 600, 800]),
-        ('GROW_BED', [2000, 1000, 400]),
         ('HYDRO_SET', [1000, 600, 800]),
         ('MET_MELT', [1000, 600, 800]),
         ('MFG_SHOP', [1000, 600, 800]),
@@ -335,6 +337,19 @@ def write():
 ):
         put(uid, size_mm=sz, size_note='study default envelope box, read back from the cad/stl registry '
             '(M0 study envelope; design sizing per the duty sheet follows)')
+    # GROW_BED (A-M-469): the A-M-229 crew-duty growing area framed as a 4 x 2
+    # arrangement of nominal 2000 x 1000 bays, 15 mm basin walls, LED canopy top
+    # z 900 with a 15 mm rail allowance - computed from the node area, not read
+    # back from a build solid.
+    _gb_area_mm2 = float(N['GROW_BED']['params']['area_m2']) * 1e6
+    _gb_ix, _gb_iy = 4 * 1820.0, 2 * 2000.0
+    assert abs(_gb_ix * _gb_iy - _gb_area_mm2) < 1.0, \
+        'GROW_BED: the bay framing must carry the A-M-229 area exactly'
+    put('GROW_BED', size_mm=[round(_gb_ix + 2 * 15.0, 1), round(_gb_iy + 2 * 15.0, 1), 915.0],
+        size_note='crew-duty growing area (A-M-229 29.12 m2) framed 4 x 2 nominal '
+                  '2000 x 1000 bays, 15 mm basin walls, LED canopy top z 900 with a '
+                  '15 mm rail allowance (A-M-469; the canopy top is the registered '
+                  'study layout, W12)')
 
     put('BLACK_DIGEST',
         design={'D_mm': 800, 'H_mm': 760, 'wall_mm': 5.0, 'V_L': 378, 'material': 'PP-H sheet, extrusion-welded (DVS 2207-11)',

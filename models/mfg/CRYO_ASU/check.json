@@ -4,18 +4,18 @@
     592.1,
     2000.1
   ],
-  "inside_size_mm": false,
+  "inside_size_mm": true,
   "size_mm": [
-    300,
-    300,
-    2000
+    2460.0,
+    592.0,
+    2000.0
   ],
   "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
   "graph_revision": "AD",
   "solids": 1,
   "all_parts_valid": true,
-  "misfit_to_report": true,
-  "misfit_note": "beds at the node design diameter (421.9 mm) cannot fit the M0 study registry box [300, 300, 2000] (params size_note); reported per AQS-PLAN-006 rule 3, nothing resized",
+  "misfit_to_report": false,
+  "misfit_note": "beds at the node design diameter (421.9 mm) cannot fit the M0 study registry box [2460, 592, 2000] (params size_note); reported per AQS-PLAN-006 rule 3, nothing resized",
   "beds": {
     "count": 3,
     "bed_D_mm": 421.92825393409134,
@@ -27,8 +27,8 @@
       1647.784761802274
     ],
     "x_mm": [
-      261.0,
-      782.9,
+      260.9,
+      782.8,
       1304.8
     ],
     "basis": "node design block: beds/bed_D_mm/bed_L_mm (AQS-PAR-001 sizing)"
@@ -46,7 +46,7 @@
     "co2_chill_kW": 0.034674979305555555,
     "getter_kW": 0.1,
     "regen_kW": 1.4771803673912494,
-    "blower_kW": 0.04803155443898941,
+    "blower_kW": 0.0480299188919896,
     "note": "purchased envelopes and interfaces (AQS-PLAN-006 rule 6), ratings from the node design; the internals row says two-stage, the design block comp_stages 4 - the named two-stage machine is drawn, the staging is a hold (W12)"
   },
   "nozzles_drawn": {
@@ -56,7 +56,7 @@
       "face": "+Y",
       "height_mm": 1500.0,
       "bed": 1,
-      "x": 261.0,
+      "x": 260.9,
       "z": 1500.0,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint on the bed shell (node relief basis: API 2000 open vent)"
@@ -67,7 +67,7 @@
       "face": "+Y",
       "height_mm": 1500.0,
       "bed": 2,
-      "x": 782.9,
+      "x": 782.8,
       "z": 1500.0,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint on the bed shell (node relief basis: API 2000 open vent)"
@@ -89,7 +89,7 @@
       "face": "+Y",
       "height_mm": 1500.0,
       "bed": 1,
-      "x": 391.0,
+      "x": 390.9,
       "z": 1500.0,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint on the bed shell (node relief basis: API 2000 open vent)"
@@ -100,7 +100,7 @@
       "face": "-Y",
       "height_mm": 160.0,
       "bed": 1,
-      "x": 261.0,
+      "x": 260.9,
       "z": 160.0,
       "schedule_rating": "Class 150",
       "note": "frame-level row: the schedule datum sits below the bed shells; drawn through the base plinth"
@@ -111,7 +111,7 @@
       "face": "-Y",
       "height_mm": 160.0,
       "bed": 2,
-      "x": 782.9,
+      "x": 782.8,
       "z": 160.0,
       "schedule_rating": "Class 150",
       "note": "frame-level row: the schedule datum sits below the bed shells; drawn through the base plinth"
@@ -133,7 +133,7 @@
       "face": "-Y",
       "height_mm": 160.0,
       "bed": 1,
-      "x": 391.0,
+      "x": 390.9,
       "z": 160.0,
       "schedule_rating": "Class 150",
       "note": "solids hand transfer - bore not calculated (AQS-PLAN-006 W4)"
@@ -144,7 +144,7 @@
       "face": "-Y",
       "height_mm": 160.0,
       "bed": 2,
-      "x": 652.9,
+      "x": 652.8,
       "z": 160.0,
       "schedule_rating": "Class 150",
       "note": "solids hand transfer - bore not calculated (AQS-PLAN-006 W4)"
@@ -166,7 +166,7 @@
       "face": "-Y",
       "height_mm": 400.0,
       "bed": 1,
-      "x": 261.0,
+      "x": 260.9,
       "z": 400.0,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint on the bed shell (node relief basis: API 2000 open vent)"
@@ -177,7 +177,7 @@
       "face": "-Y",
       "height_mm": 400.0,
       "bed": 2,
-      "x": 782.9,
+      "x": 782.8,
       "z": 400.0,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint on the bed shell (node relief basis: API 2000 open vent)"
@@ -199,7 +199,7 @@
       "face": "-Y",
       "height_mm": 400.0,
       "bed": 1,
-      "x": 391.0,
+      "x": 390.9,
       "z": 400.0,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint on the bed shell (node relief basis: API 2000 open vent)"
@@ -210,7 +210,7 @@
       "face": "bottom",
       "height_mm": 50.0,
       "bed": null,
-      "x": 261.0,
+      "x": 260.9,
       "z": 50.0,
       "schedule_rating": "Class 150",
       "note": "drain beside the bed 1 pedestal, tip at the 50 datum, into the bottom head"
@@ -230,7 +230,7 @@
       "face": "top",
       "height_mm": 2000.0,
       "bed": null,
-      "x": 261.0,
+      "x": 260.9,
       "z": 2000.0,
       "schedule_rating": "Class 150",
       "note": "vent standpipe on the bed 1 top head to the 2000 mm schedule datum (API 2000 open vent)"

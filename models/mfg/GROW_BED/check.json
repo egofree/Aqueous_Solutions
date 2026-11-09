@@ -4,17 +4,17 @@
     4030.0,
     910.6
   ],
-  "inside_size_mm": false,
+  "inside_size_mm": true,
   "size_mm": [
-    2000.0,
-    1000.0,
-    400.0
+    7310.0,
+    4030.0,
+    915.0
   ],
-  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "size_basis": "crew-duty growing area per A-M-229 (29.12 m2) framed per A-M-469: 4 x 2 nominal 2000 x 1000 bays, 15 mm basin walls, LED canopy to z 900 + 15 mm rail (X-FARM sec3)",
   "graph_revision": "AD",
   "solids": 4,
   "all_parts_valid": true,
-  "cad_stl_scope": "in-envelope bay module of the build, metres (X-PAR-04 gate: the cad/stl box equals the node size_mm 2000 x 1000 x 400; the full bed lives in export/ and the STEP - the CRYO_ASU treatment)",
+  "cad_stl_scope": "in-envelope bay module of the build, metres (X-PAR-04 registry: the registry keeps the bay module 2000 x 1000 x 400, the design-block bay per A-M-469; the node size_mm 7310 x 4030 x 915 is the assembly envelope and the full bed lives in export/ and the STEP - the CRYO_ASU treatment; 2026-11-08 reservation adoption)",
   "cad_stl_bbox_mm": [
     2000.0,
     1000.0,
@@ -38,11 +38,11 @@
         910.6
       ],
       "size_mm": [
-        2000.0,
-        1000.0,
-        400.0
+        7310.0,
+        4030.0,
+        915.0
       ],
-      "note": "the full bed leaves the study box by design - the misfit is section-7-reported, nothing resized (plan rule 3; A-FARM area rule governs)"
+      "note": "the reservation is the built array per A-M-469 (2026-11-08 adoption): the former single-bay study box stated no bay count or canopy height and is withdrawn"
     },
     "media": "LECA media envelope at a 250 mm study depth (the duty names no media depth - hold, WORK_ORDER W12); GROWBED_A media idiom",
     "circulation": "duty section 2: 19100.9 kg/d, two-minute holdup 0.0265 m3 - reported, not a residence time claim",

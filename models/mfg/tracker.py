@@ -228,16 +228,19 @@ def duty_section(unit, number):
 
 
 def node_size(p):
-    """The claimed envelope of a node, in the precedence the builders use."""
+    """The claimed envelope of a node: one claim, params.size_mm, written by the unit's
+    sizing authority. The legacy params.envelope duplicate is read only as a fallback
+    for nodes a round has not migrated yet."""
     env = p.get('envelope') or {}
     sizing = p.get('sizing') or {}
-    return env.get('size_mm') or sizing.get('size_mm') or p.get('size_mm')
+    return p.get('size_mm') or env.get('size_mm') or sizing.get('size_mm')
 
 
 def node_size_basis(p):
     env = p.get('envelope') or {}
     sizing = p.get('sizing') or {}
-    return env.get('basis') or p.get('size_note') or sizing.get('basis')
+    return (p.get('size_basis') or env.get('basis') or p.get('size_note')
+            or sizing.get('basis'))
 
 
 def node_internals(node):

@@ -5,5 +5,6 @@ IA-AHU-AIR,HDR_N2,CRYO_AHU,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose
 IA-AIR-RX-OUT,AIR_RECEIVER,HDR_N2,DN15,P3,process vent gas,atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
 IA-EW4-N2,EW_4,HDR_N2,DN50,P1,"acid or brine, at or below 60 C",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
 IA-GEN-AIR,HDR_N2,BACKUP_GEN,DN15,P1,aqueous process liquor (AQS-ASSAY-001 envelope),atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
+IA-MET-AIR-MU,HDR_N2,MET_AHU,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
 IA-N2-RET,HDR_N2,CRYO_ASU,solids,—,—,-,"not piped: solids transfer (conveyor, bin or hand)"
 IA-NH3-SRC,HDR_N2,WS_AMMONIA,DN50,P1,"acid or brine, at or below 60 C",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,

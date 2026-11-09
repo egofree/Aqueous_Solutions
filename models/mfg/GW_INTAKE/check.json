@@ -1,0 +1,84 @@
+{
+  "bbox_mm": [
+    800.0,
+    800.0,
+    600.0
+  ],
+  "inside_size_mm": true,
+  "size_mm": [
+    800.0,
+    800.0,
+    600.0
+  ],
+  "size_basis": "L x W x H mm study envelope for the well pump, sand separator and RO rack; unit task 02 sizing pending",
+  "graph_revision": "AD",
+  "solids": 1,
+  "all_parts_valid": true,
+  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the build fills the node box 800 x 800 x 600 flush)",
+  "cad_stl_bbox_mm": [
+    800.0,
+    800.0,
+    600.0
+  ],
+  "machine": {
+    "type": "standby well head: wellhead hatch + pump discharge set (X-LOC-13); the submersible pump is downhole, not plant-side (node size basis)",
+    "a_farm": "the head plate set is drawn at the node box flush; the hatch and the discharge-head boss are drawn",
+    "hatch": "two SS304 leaves at z 590-600 with a 20 mm centre gap for the vent",
+    "discharge_head": "DN168 study boss envelope on the floor at the -X corner (the discharge head duty section 3 names); the HDPE potable discharge run is plant piping scope (AQS-PIP-004)",
+    "material": "SS304 wellhead plate and discharge head, HDPE potable discharge line, submersible pump SS304/stainless stages",
+    "ca_mm": 0.0
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 589.35,
+      "xy_mm": [
+        400.0,
+        400.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "groundwater make-up, reverse-osmosis treated",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 600 sits at or above the build height 600 - drawn flush at the envelope top (hold, WORK_ORDER W12)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        110.0,
+        690.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        110.0,
+        690.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 predates the build height 600 - drawn flush at the envelope top (hold, W12)"
+    }
+  },
+  "nozzle_count_schedule": 3,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4); N1 discharge out on +Y at the z 600 rim; N2 drain flush at the envelope bottom; N3 vent flush at the envelope top through the hatch gap (schedule z 800 predates the 600 box - stale datum, hold W12); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
+    "basin_shell": 121.3,
+    "hatch": 48.0,
+    "discharge_head": 10.6,
+    "nozzles": 0.2
+  },
+  "cadquery": "2.8.0"
+}

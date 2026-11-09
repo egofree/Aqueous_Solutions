@@ -36,7 +36,8 @@ def _node_size(params):
 def _size_basis(params):
     env = params.get("envelope") or {}
     sizing = params.get("sizing") or {}
-    return env.get("basis") or params.get("size_note") or sizing.get("basis")
+    return (params.get("size_basis") or env.get("basis")
+            or params.get("size_note") or sizing.get("basis"))
 
 
 def _nozzle_rows(unit):

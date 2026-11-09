@@ -1,7 +1,7 @@
 # Open questions
 
 Document number: AQS-OQ-001
-Revision: G
+Revision: H
 Date: 2026-11-05
 
 | Rev | Description | Date |
@@ -13,6 +13,7 @@ Date: 2026-11-05
 | E | Q-037 ruling reworded to state the decision and its reason (documentation style check); no decision changed | 2026-11-02 |
 | F | Q-038, Q-039 and Q-040 added (the electrowinning cascade basis; the methanol fuel cell rating; the pumped-hydro store and genset basis reconciliation) | 2026-11-04 |
 | G | Q-038 and Q-040 closed (owner 2026-11-05: parametric EW sizing; parametric BACKUP_GEN rating); Q-041 added and closed (selective versus merged minor-metal EW cells) | 2026-11-05 |
+| H | Q-042 and Q-043 added and closed (owner 2026-11-08: the six bounding-box holds resolved by sizing-derived reservation adoption; the GW_INTAKE single size claim, the legacy envelope duplicate removed plant-wide) | 2026-11-08 |
 
 ## 1. Purpose and scope
 
@@ -69,3 +70,5 @@ Table 2.1. Open and closed questions
 | Q-039 | X-PAR-02 | Methanol fuel cell rating (physics-audit F-6, 2026-11-04). AQS-REQ-KW-001 locks REQ-MEOH-FC-CONT at 0.5 to 2 kW DC and the graph books the mid-band 1.0 kW electric (MEOH_FC continuous_kw, S79). The unit's own fuel edge S76 feeds 5.0 kg/d of methanol: 1.152 kW of lower heating value at 19.9 MJ/kg (PERRY9), which at the stack's own design point of 0.6 V per cell (A-M-312) supports about 0.55 to 0.59 kW electric continuous (voltage efficiency about 0.51 against a 1.18 V reversible cell); sustaining the locked 1.0 kW needs about 8.5 kg/d at that point, about 1.7 times the booked fuel. The unit's own params.design note states the methanol draw supports about 0.5 kW electric continuous and the skid runs at part load, and the Rev N balance close books 0.50 kW on 8.53 kg/d of fuel (BALANCE_CLOSE_N). Should the continuous rating follow the owner lock (1.0 kW, methanol supply grown to match) or the fuel-limited graph basis (about 0.5 kW)? | Proceed at 0.5 kW electric - fuel-limited at the booked S76 feed and the A-M-312 cell point, and the figure both the unit's own note and BALANCE_CLOSE_N state. REQ-MEOH-FC-CONT and the S79 book move together in a sizing lane once the owner rules: either the requirement re-locks at the fuel-supported class or the methanol train grows to sustain 1.0 kW. The graph edit follows the default; this record changes nothing. |
 | Q-040 | X-RED-02 | CLOSED (owner, 2026-11-05): BACKUP_GEN rating is parametric from the live critical-load list under AQS-ELEC-007 / AQS-RED-001 (125 percent, rounded up in 5 kW steps), not a hard-coded nameplate; the pumped-hydro store basis remains the Q-009 ruling (200.3 kWh at 35.73 m, 2,707 m3). Graph edits follow in the BACKUP_GEN sizing lane. | - |
 | Q-041 | X-PAR-02 | CLOSED (owner, 2026-11-05): electrowinning selective versus merged minor-metal cells - decide from first principles (electrochemistry, current density, selectivity, mass transfer, energy); if no clear winner, carry both as selectable options. Gold and silver stay separate. Work follows after Q-038. | - |
+| Q-042 | X-PAR-04 | CLOSED (owner, 2026-11-08): the six bounding-box holds (BEE_HIVE, CRYO_ASU, GROW_BED, HDR_H2, HDR_N2, HDR_O2) are resolved by adopting the sized or built extents as the unit reservation. The reservation is computed from the unit's own sizing authority and registered layout (headers.py for the header cross-sections, cold_box.py for the cold-box skid, A-M-468 for the hive stack, A-M-469 for the grow-bed array) and never from the build bounding box, so the reservation stays an independent claim and the tracker misfit check keeps its meaning. | - |
+| Q-043 | X-LOC-13 | CLOSED (owner, 2026-11-08): GW_INTAKE carries one size claim - the X-LOC-13 well-head set (800 x 800 x 600 mm; the pump is downhole, not plant-side). The disagreeing 900 x 700 x 1800 study claim is withdrawn, and the legacy params.envelope duplicate field is removed plant-wide: one claim per node, params.size_mm with params.size_basis. | - |

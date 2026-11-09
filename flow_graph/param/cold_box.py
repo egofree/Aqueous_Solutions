@@ -35,14 +35,33 @@ def design(d, g):
     w_c = v(CB+'exp_n2_cp_kJ_kgK')*Tin*(v('exp_pr')**xe - 1)/v('exp_eta_comp'); w_e = v(CB+'exp_n2_cp_kJ_kgK')*(Tin - T_out); P_loop = m_loop*(w_c - w_e)
     exp_bk = dict(cold_kW=q_cold, T_out_C=T_out - 273.15, loop_kg_d=m_loop*86400, shaft_kW=m_loop*w_e, net_kW=P_loop, COP=q_cold/P_loop, chiller_kW=q_cold/v('cb_chiller_COP'))
     tot = P_regen + P_blow + P_comp + P_chill + P_get
-    return dict(feed_N2_kg_d=n2, feed_CO2_kg_d=co2, x_CO2=x_co2, CO2_mol_per_cycle=per_cycle, sorbent_kg_per_bed=m_sorb, beds=3, bed_D_mm=D*1000, bed_L_mm=v(CB+'bed_LD')*D*1000,
-                regen_kW=P_regen, blower_kW=P_blow, co2_comp_kW=P_comp, co2_chill_kW=P_chill, getter_kW=P_get, total_kW=tot, comp_stages=ns, comp_ratio_per_stage=rr, comp_T_out_C=T_st, expander_backup=exp_bk)
+    r = dict(feed_N2_kg_d=n2, feed_CO2_kg_d=co2, x_CO2=x_co2, CO2_mol_per_cycle=per_cycle, sorbent_kg_per_bed=m_sorb, beds=3, bed_D_mm=D*1000, bed_L_mm=v(CB+'bed_LD')*D*1000,
+             regen_kW=P_regen, blower_kW=P_blow, co2_comp_kW=P_comp, co2_chill_kW=P_chill, getter_kW=P_get, total_kW=tot, comp_stages=ns, comp_ratio_per_stage=rr, comp_T_out_C=T_st, expander_backup=exp_bk)
+    # The modelled skid extents (2026-11-08 reservation adoption, registered study
+    # layout, W12): the beds zone (one pitch per bed from the first axis at half
+    # pitch) beside the purchased machinery row, with the 20 mm skid margin; the
+    # basin width plus the -Y hose-makeup lap; the issued z 2000 vent datum as the
+    # assembly top. These are the constants the builder lays out to.
+    bed_pitch = r['bed_D_mm'] + 100.0
+    bed_x_end = bed_pitch / 2 + (r['beds'] - 1) * bed_pitch + r['bed_D_mm'] / 2
+    mach_x0, mach_len, skid_margin = 1700.0, 740.0, 20.0
+    skid_l = round(max(bed_x_end, mach_x0 + mach_len) + skid_margin, 1)
+    r.update(bed_pitch_mm=round(bed_pitch, 1), machinery_row_x0_mm=mach_x0,
+             machinery_row_len_mm=mach_len, skid_w_mm=560.0, hose_lap_mm=32.0,
+             skid_l_mm=skid_l, top_datum_mm=2000.0,
+             size_mm=[skid_l, round(560.0 + 32.0, 1), 2000.0])
+    return r
 def write(g, r):
     N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}
     n = N['CRYO_ASU']; TAG = 'X-MFG-33 (A-M-175, AQS-DUTY-069)'
     n['continuous_kw'] = {'value': round(r['total_kW'], 4), 'unit': 'kW', 'status': 'study', 'note': f"{TAG}: 13X TSA regeneration {r['regen_kW']:.2f} + blower {r['blower_kW']:.3f} + CO2 compressor {r['co2_comp_kW']:.3f} + condenser chiller {r['co2_chill_kW']:.3f} + Ar getter {r['getter_kW']:.2f} kW; no cryogenic column (no air intake)."}
     n['internals'] = '3 x 13X TSA beds, CO2 two-stage compressor and condenser, heated Ar getter; noble-gas inventories pass through'
     n['params']['internals'] = n['internals']; n['params']['design'] = dict(json.loads(json.dumps(r, default=float)), H_mm=round(r['bed_L_mm']), D_mm=round(r['bed_D_mm']))
+    n['params']['size_mm'] = r['size_mm']
+    n['params']['size_basis'] = (f'{TAG} skid extents: the beds zone plus the purchased '
+                                 'machinery row with the 20 mm skid margin; the width '
+                                 'carries the -Y hose-makeup lap; the z top is the issued '
+                                 'vent datum (registered study layout, W12)')
     for sid in ('SF-CRYO_ASU', 'SQ-CRYO_ASU'):   # R11 Rev AC regen: SQ-* heat edges died with HEAT_SINK in Rev AC; update what exists
         if sid in E: E[sid]['rate']['value'] = round(r['total_kW'], 4)
     for sid in ('IA-EXP-IN', 'IA-EXP-OUT'):   # R11 Rev AC regen: expander loop edges may be absent; update what exists

@@ -98,11 +98,36 @@ def design(d, g):
 
 
 def write(g, R):
+    # The reservation the builders read: the modelled manifold segment keeps its study
+    # length; the cross-section is computed as the larger of the sized manifold outside
+    # diameter and the largest branch outside diameter the issued schedule carries, so
+    # the envelope always contains the unit's own branch hardware (the EN-rounded
+    # millimetre OD series, ASME B36.19M/B36.10M - the same series
+    # models/mfg/lib/dn.py PIPE tabulates; AQS-PIP-004 line-list DNs).
+    DN_OD = {'DN15': 21.3, 'DN20': 26.9, 'DN25': 33.7, 'DN32': 42.4, 'DN40': 48.3,
+             'DN50': 60.3, 'DN65': 76.1, 'DN80': 88.9, 'DN100': 114.3}
+    RESERVATION_FOR = {'HDR_H2', 'HDR_N2', 'HDR_O2'}   # the named misfit holds; the
+    # other header reservations keep their standing values until their own review.
     N = {n['unit_id']: n for n in g['nodes']}
     for u, r in R.items():
         p = N[u].setdefault('params', {})
         p['design'] = {k: (round(x, 4) if isinstance(x, float) else x) for k, x in r.items()}
         p['size_note'] = f'DN{r["DN"]} manifold x {r["length_m"]:.0f} m run ({r["volume_m3"]:.3f} m3), {TAG}'
+        if u in RESERVATION_FOR:
+            branch_od = [0.0]
+            sched = os.path.join(ROOT, 'docs-authority', 'nozzles', u + '.csv')
+            if os.path.exists(sched):
+                with open(sched) as fh:
+                    for row in csv.DictReader(fh):
+                        branch_od.append(DN_OD.get(row['size'], 0.0))
+            cross = round(max(DN_OD.get('DN' + str(r['DN']), 0.0), max(branch_od)), 1)
+            prev = p.get('size_mm') or [2000, cross, cross]
+            length_mm = round(float(prev[0]))          # the modelled segment length: layout, unchanged
+            p['size_mm'] = [length_mm, cross, cross]
+            p['size_basis'] = (f'{TAG}: manifold DN{r["DN"]} segment (modelled length '
+                               f'{length_mm} mm, layout) with the cross-section covering '
+                               f'the largest issued branch hardware ({cross:g} mm, '
+                               'EN-rounded OD series, AQS-PIP-004)')
     open(GP, 'w').write(json.dumps(g, indent=2))
 
 
