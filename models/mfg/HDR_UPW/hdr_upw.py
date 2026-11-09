@@ -7,11 +7,12 @@ authorities the A-PIPE acceptance names: the unit's edges in
 (AQS-PIP-004, the DN and class authority). It writes the unit line list
 `line_list.csv` and rebuilds every solid.
 
-Placement frame: x along the 2000 mm run, y across the 50 mm cross-section, z up,
+Placement frame: x along the 2000 mm run, y across the reservation cross-section, z up,
 origin at the envelope corner. Every dimension is an authority figure or a named
 layout choice:
 
-- Envelope 2000 x 50 x 50 mm, node size_mm: "DN25 manifold x 20 m run (0.004 m3),
+- Envelope: the node size_mm (headers.py, AQS-DUTY-075) sizes the cross-section to
+  cover the largest issued branch; this builder models a 2000 mm segment of it.
   header sizing (flow_graph/param/headers.py, AQS-DUTY-075)". The model is the spool
   set as the node defines it: one manifold run, modeled as a 2000 mm representative
   spool; the per-line route lengths stay in the line list and are not redrawn.
@@ -56,7 +57,13 @@ MAT_KEY = "PVDF"                                           # duty section 3: PVD
 RHO = materials.density(MAT_KEY)
 CLAMP_MARGIN = 0.7                                         # stub radius clearance to the faces
 
-assert L == 2000.0 and W == 50.0 and H == 50.0, "HDR_UPW node envelope changed"
+# the reservation covers the sized manifold and the largest issued branch
+_branch_max = max((dn.pipe_od(r["size"]) for r in P.get("nozzles", [])
+                   if str(r.get("size", "")).startswith("DN")), default=0.0)
+assert L == 2000.0, "HDR_UPW: the modelled segment is the 2000 mm study layout"
+assert W >= OD_MAIN - 1e-6 and H >= max(OD_MAIN, _branch_max) - 1e-6, \
+    "HDR_UPW: node envelope does not cover the sized manifold and branch hardware"
+
 assert DN_MAIN == "DN25", "HDR_UPW node design DN changed"
 
 FACE_OF = {"inlet": "-Y", "outlet": "+Y"}
@@ -64,7 +71,7 @@ FACE_OF = {"inlet": "-Y", "outlet": "+Y"}
 
 def z_for(row):
     """Drawn centreline height for a side stub: the schedule datum clamped into the
-    cross-section, with the clamp or the cross-section misfit named."""
+    cross-section, with the clamp named."""
     h = float(row["height_mm"])
     od_s = dn.pipe_od(row["size"]) if row["size"].startswith("DN") else dn.pipe_od("DN15")
     lo, hi = od_s / 2 + CLAMP_MARGIN, H - od_s / 2 - CLAMP_MARGIN
@@ -73,15 +80,15 @@ def z_for(row):
             f"the {row['size']} hardware (OD {od_s:g} mm) is larger than the 50 mm "
             f"cross-section; drawn at the manifold centreline (schedule datum {h:g} mm is "
             "a placeholder); the mesh leaves the envelope in z by "
-            f"{round(od_s - H, 1)} mm - misfit reported (plan rule 3), nothing resized "
+            f"{round(od_s - H, 1)} mm - outside the sized cross-section; the reservation is sized to the largest issued branch "
             "(hold, WORK_ORDER W12)")
     z = min(max(h, lo), hi)
     note = None
     if h < lo:
         note = (f"schedule datum {h:g} mm clamped up to {round(z, 1)} mm to keep the "
-                f"{row['size']} bore inside the 50 mm cross-section (hold, WORK_ORDER W12)")
+                f"{row['size']} bore inside the reservation cross-section (hold, WORK_ORDER W12)")
     elif h > hi:
-        note = (f"schedule datum {h:g} mm is a placeholder above the 50 mm cross-section; "
+        note = (f"schedule datum {h:g} mm is a placeholder above the reservation cross-section; "
                 f"clamped down to {round(z, 1)} mm (hold, WORK_ORDER W12)")
     return round(z, 1), note
 
@@ -283,7 +290,7 @@ rows = [
           "schedule tags/faces/heights", len(schedule),
      "PVDF", mass["nozzles"], "make",
      "docs-authority/nozzles/HDR_UPW.csv verbatim; the UPW_TO_FAB edge carries no "
-     "distinct schedule row (hold, W12); datums clamped into the 50 mm cross-section "
+     "distinct schedule row (hold, W12); datums clamped into the reservation cross-section "
      "(holds)"],
     ["3", f"Trough plinth {L:g} x {W:g} x {T_PLINTH:g}, the spool mount (AQS-MOD-002 dry "
           "service class)", 1, "carbon steel (ASTM A500)", mass["plinth"], "make",

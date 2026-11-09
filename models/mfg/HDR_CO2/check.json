@@ -1,16 +1,16 @@
 {
   "bbox_mm": [
     2000.0,
-    50.0,
-    50.0
+    33.7,
+    33.7
   ],
   "inside_size_mm": true,
   "size_mm": [
     2000.0,
-    50.0,
-    50.0
+    33.7,
+    33.7
   ],
-  "size_basis": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
+  "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (33.7 mm, EN-rounded OD series, AQS-PIP-004)",
   "misfit": null,
   "graph_revision": "AD",
   "solids": 1,
@@ -37,7 +37,7 @@
       "x_mm": 110.7,
       "schedule_rating": "Class 150",
       "service": "CO2 product after FLUE_KO",
-      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the 50 mm cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the reservation cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
     },
     "N2": {
       "style": "tube_stub",
@@ -48,7 +48,7 @@
       "x_mm": 162.0,
       "schedule_rating": "Class 150",
       "service": "metabolic CO2 (desorbed from the HAB CO2 sorbent bed)",
-      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the 50 mm cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the reservation cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
     },
     "N3": {
       "style": "tube_stub",
@@ -59,7 +59,7 @@
       "x_mm": 213.3,
       "schedule_rating": "Class 150",
       "service": "compost CO2",
-      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the 50 mm cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the reservation cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
     },
     "N4": {
       "style": "tube_stub",
@@ -70,18 +70,18 @@
       "x_mm": 264.6,
       "schedule_rating": "Class 150",
       "service": "fermentation CO2",
-      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the 50 mm cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the reservation cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
     },
     "N5": {
       "style": "tube_stub",
       "dn": "DN15",
       "face": "+Y",
       "height_mm": 37.0,
-      "drawn_height_mm": 37.0,
+      "drawn_height_mm": 22.4,
       "x_mm": 110.7,
       "schedule_rating": "Class 150",
       "service": "CO2 enrichment dose (FARM AHU supply)",
-      "note": "schedule datum drawn; DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+      "note": "schedule datum 37 mm is a placeholder above the reservation cross-section; clamped down to 22.4 mm (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
     },
     "N6": {
       "style": "tube_stub",
@@ -99,7 +99,7 @@
       "dn": "DN15",
       "face": "top",
       "height_mm": 50.0,
-      "drawn_height_mm": 50.0,
+      "drawn_height_mm": 33.7,
       "x_mm": 1030.0,
       "schedule_rating": "Class 150",
       "service": "vent",
@@ -110,22 +110,22 @@
       "dn": "DN15",
       "face": "+Y",
       "height_mm": 600.0,
-      "drawn_height_mm": 38.6,
+      "drawn_height_mm": 22.4,
       "x_mm": 162.0,
       "schedule_rating": "Class 150",
       "service": "CO2 enrichment",
-      "note": "schedule datum 600 mm is a placeholder above the 50 mm cross-section; clamped down to 38.6 mm (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+      "note": "schedule datum 600 mm is a placeholder above the reservation cross-section; clamped down to 22.4 mm (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
     },
     "N9": {
       "style": "tube_stub",
       "dn": "DN15",
       "face": "+Y",
       "height_mm": 600.0,
-      "drawn_height_mm": 38.6,
+      "drawn_height_mm": 22.4,
       "x_mm": 213.3,
       "schedule_rating": "Class 150",
       "service": "CO2 not taken by the bed",
-      "note": "schedule datum 600 mm is a placeholder above the 50 mm cross-section; clamped down to 38.6 mm (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+      "note": "schedule datum 600 mm is a placeholder above the reservation cross-section; clamped down to 22.4 mm (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
     }
   },
   "nozzle_count_schedule": 9,
@@ -140,9 +140,9 @@
     "no_new_edge": true
   },
   "part_mass_kg": {
-    "plinth": 15.7,
+    "plinth": 10.58,
     "manifold": 5.15,
-    "nozzles": 0.19
+    "nozzles": 0.1
   },
   "cadquery": "2.8.0"
 }

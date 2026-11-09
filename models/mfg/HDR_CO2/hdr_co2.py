@@ -7,11 +7,12 @@ authorities the A-PIPE acceptance names: the unit's edges in
 (AQS-PIP-004, the DN and class authority). It writes the unit line list
 `line_list.csv` and rebuilds every solid.
 
-Placement frame: x along the 2000 mm run, y across the 50 mm cross-section, z up,
+Placement frame: x along the 2000 mm run, y across the reservation cross-section, z up,
 origin at the envelope corner. Every dimension is an authority figure or a named
 layout choice:
 
-- Envelope 2000 x 50 x 50 mm, node size_mm: "DN25 manifold x 20 m run (0.004 m3),
+- Envelope: the node size_mm (headers.py, AQS-DUTY-075) sizes the cross-section to
+  cover the largest issued branch; this builder models a 2000 mm segment of it.
   header sizing (flow_graph/param/headers.py, AQS-DUTY-075)". The model is the spool
   set as the node defines it: one manifold run, modeled as a 2000 mm representative
   spool; the per-line route lengths stay in the line list and are not redrawn.
@@ -26,7 +27,7 @@ layout choice:
 - Nozzles: all 9 rows of docs-authority/nozzles/HDR_CO2.csv drawn at tag, face,
   height and bore as atmospheric tube stubs flush at the envelope faces
   (lib/nozzles.place_on_face; duty section 4: atmospheric, no flange class). The
-  schedule datums sit in a 50 mm cross-section: the 10 mm inlet rows are clamped up
+  schedule datums sit in the sized cross-section: the 10 mm inlet rows are clamped up
   to clear the branch bore, the 600 mm outlet datums predate the cross-section and
   are clamped down (holds, W12). The rating column (Class 150) is carried verbatim
   as text. N3 and N4 carry services with no present edge on the graph; they are
@@ -58,11 +59,17 @@ MAT_KEY = "316L"                                           # duty section 3 / no
 RHO = materials.density(MAT_KEY)
 CLAMP_MARGIN = 0.7                                         # stub radius clearance to the faces
 
-assert L == 2000.0 and W == 50.0 and H == 50.0, "HDR_CO2 node envelope changed"
+# the reservation covers the sized manifold and the largest issued branch
+_branch_max = max((dn.pipe_od(r["size"]) for r in P.get("nozzles", [])
+                   if str(r.get("size", "")).startswith("DN")), default=0.0)
+assert L == 2000.0, "HDR_CO2: the modelled segment is the 2000 mm study layout"
+assert W >= OD_MAIN - 1e-6 and H >= max(OD_MAIN, _branch_max) - 1e-6, \
+    "HDR_CO2: node envelope does not cover the sized manifold and branch hardware"
+
 assert DN_MAIN == "DN25", "HDR_CO2 node design DN changed"
 
 FACE_OF = {"inlet": "-Y", "outlet": "+Y"}
-# the schedule datums were written against a taller envelope; the 50 mm cross-section
+# the schedule datums were written against a taller envelope; the reservation cross-section
 # bounds where a stub centreline can sit (hold, WORK_ORDER W12)
 def z_for(row):
     """Drawn centreline height for a side stub: the schedule datum clamped into the
@@ -74,9 +81,9 @@ def z_for(row):
     note = None
     if h < lo:
         note = (f"schedule datum {h:g} mm clamped up to {round(z, 1)} mm to keep the "
-                f"{row['size']} bore inside the 50 mm cross-section (hold, WORK_ORDER W12)")
+                f"{row['size']} bore inside the reservation cross-section (hold, WORK_ORDER W12)")
     elif h > hi:
-        note = (f"schedule datum {h:g} mm is a placeholder above the 50 mm cross-section; "
+        note = (f"schedule datum {h:g} mm is a placeholder above the reservation cross-section; "
                 f"clamped down to {round(z, 1)} mm (hold, WORK_ORDER W12)")
     return round(z, 1), note
 
@@ -265,7 +272,7 @@ rows = [
           "tags/faces/heights (drain and vent flush at the envelope faces)", len(schedule),
      "316L tube", mass["nozzles"], "make",
      "docs-authority/nozzles/HDR_CO2.csv verbatim; no-bore rows drawn DN15 and labeled "
-     "bore not calculated (plan W4); datums clamped into the 50 mm cross-section (holds)"],
+     "bore not calculated (plan W4); datums clamped into the reservation cross-section (holds)"],
     ["3", f"Trough plinth {L:g} x {W:g} x {T_PLINTH:g}, the spool mount (AQS-MOD-002 dry "
           "service class)", 1, "carbon steel (ASTM A500)", mass["plinth"], "make",
      "support scheme carried from the M2 study build (trough mount, no top rails - the "

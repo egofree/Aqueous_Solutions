@@ -106,8 +106,8 @@ def write(g, R):
     # models/mfg/lib/dn.py PIPE tabulates; AQS-PIP-004 line-list DNs).
     DN_OD = {'DN15': 21.3, 'DN20': 26.9, 'DN25': 33.7, 'DN32': 42.4, 'DN40': 48.3,
              'DN50': 60.3, 'DN65': 76.1, 'DN80': 88.9, 'DN100': 114.3}
-    RESERVATION_FOR = {'HDR_H2', 'HDR_N2', 'HDR_O2'}   # the named misfit holds; the
-    # other header reservations keep their standing values until their own review.
+    RESERVATION_FOR = {'HDR_H2', 'HDR_N2', 'HDR_O2', 'HDR_CO2', 'HDR_UPW',
+                       'Q4_BUS', 'NCG_HEADER'}   # every header the stage sizes
     N = {n['unit_id']: n for n in g['nodes']}
     for u, r in R.items():
         p = N[u].setdefault('params', {})
