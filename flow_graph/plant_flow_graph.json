@@ -1987,10 +1987,10 @@
         "size_mm": [
           7310.0,
           4030.0,
-          915.0
+          911.0
         ],
-        "size_note": "crew-duty growing area (A-M-229 29.12 m2) framed 4 x 2 nominal 2000 x 1000 bays, 15 mm basin walls, LED canopy top z 900 with a 15 mm rail allowance (A-M-469; the canopy top is the registered study layout, W12)",
-        "size_basis": "crew-duty growing area per A-M-229 (29.12 m2) framed per A-M-469: 4 x 2 nominal 2000 x 1000 bays, 15 mm basin walls, LED canopy to z 900 + 15 mm rail (X-FARM sec3)",
+        "size_note": "crew-duty growing area (A-M-229 29.12 m2) framed 4 x 2 nominal 2000 x 1000 bays, 15 mm basin walls, LED canopy top z 900 with the rail frame to z 910.6 (A-M-469; the canopy top is the registered study layout, W12)",
+        "size_basis": "crew-duty growing area per A-M-229 (29.12 m2) framed per A-M-469: 4 x 2 nominal 2000 x 1000 bays, 15 mm basin walls, LED canopy to z 900 with the rail frame to z 910.6 (X-FARM sec3)",
         "design": {
           "grow_bed_layout_mm": {
             "interior_xy_mm": [
@@ -1999,7 +1999,7 @@
             ],
             "wall_mm": 15,
             "canopy_top_mm": 900,
-            "rail_allowance_mm": 15,
+            "rail_allowance_mm": 10.6,
             "bay_module_mm": [
               2000,
               1000,

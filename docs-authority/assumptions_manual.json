@@ -7801,7 +7801,7 @@
  },
  {
   "id": "A-M-469",
-  "value": "GROW_BED envelope 7310 x 4030 x 915 mm: the A-M-229 crew-duty growing area 29.12 m2 framed as a 4 x 2 arrangement of nominal 2000 x 1000 bays (7280 x 4000 interior, 15 mm basin walls), plus the LED canopy top at z 900 with a 15 mm rail allowance",
+  "value": "GROW_BED envelope 7310 x 4030 x 911 mm: the A-M-229 crew-duty growing area 29.12 m2 framed as a 4 x 2 arrangement of nominal 2000 x 1000 bays (7280 x 4000 interior, 15 mm basin walls), plus the LED canopy top at z 900 with the rail frame to z 910.6",
   "units": "mm",
   "where": "GROW_BED design (node size_mm) and the GROW_BED builder layout",
   "basis": "the node lighting and growing-area duties (A-M-229 area; A-M-133/A-M-144 canopy) framed in the nominal bay module the reservation formerly carried as the whole-unit size_mm; the canopy top is the registered study layout (W12)",

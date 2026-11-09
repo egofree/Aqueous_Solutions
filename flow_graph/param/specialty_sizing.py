@@ -345,10 +345,10 @@ def write():
     _gb_ix, _gb_iy = 4 * 1820.0, 2 * 2000.0
     assert abs(_gb_ix * _gb_iy - _gb_area_mm2) < 1.0, \
         'GROW_BED: the bay framing must carry the A-M-229 area exactly'
-    put('GROW_BED', size_mm=[round(_gb_ix + 2 * 15.0, 1), round(_gb_iy + 2 * 15.0, 1), 915.0],
+    put('GROW_BED', size_mm=[round(_gb_ix + 2 * 15.0, 1), round(_gb_iy + 2 * 15.0, 1), 911.0],
         size_note='crew-duty growing area (A-M-229 29.12 m2) framed 4 x 2 nominal '
-                  '2000 x 1000 bays, 15 mm basin walls, LED canopy top z 900 with a '
-                  '15 mm rail allowance (A-M-469; the canopy top is the registered '
+                  '2000 x 1000 bays, 15 mm basin walls, LED canopy top z 900 with the '
+                  'rail frame to z 910.6 (A-M-469; the canopy top is the registered '
                   'study layout, W12)')
 
     put('BLACK_DIGEST',

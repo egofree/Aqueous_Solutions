@@ -11,7 +11,7 @@ bed corner. Every dimension is an authority figure or a named layout choice:
   kg/m2/d = 29.12 m2 (supersedes the BH ~28 m2 / 120.4 m2 residue-claim studies
   [A-M-151])". The build is the full bed: interior 7280 x 4000 mm = 29.12 m2,
   framed per A-M-469 (4 x 2 nominal 2000 x 1000 bays, 15 mm basin walls, LED
-  canopy to z 900 + 15 mm rail). The node size_mm 7310 x 4030 x 915 is the
+  canopy to z 900 with the rail frame to z 910.6). The node size_mm 7310 x 4030 x 911 is the
   assembly envelope - the reservation the build sits inside (2026-11-08
   reservation adoption: the former single-bay study box stated no bay count or
   canopy height and is withdrawn). The bay module (2000 x 1000 x 400) lives on
@@ -215,12 +215,12 @@ for k, v in parts.items():
     solid = v if solid is None else solid.union(v)
 solid = solid.val()
 solid.exportStl(str(out / (UNIT.lower() + ".stl")), tolerance=0.5, angularTolerance=0.4, ascii=True)
-# cad/stl is the envelope registry in metres (X-PAR-04): the in-envelope BAY MODULE
+# cad/stl is the envelope registry in metres (X-PAR-04): the full build
 # (2000 x 1000 x 400, the design-block bay per A-M-469) - the CRYO_ASU treatment;
-# the full bed is the export/ build and the STEP, inside the 7310 x 4030 x 915
+# the full bed is the export/ build and the STEP, inside the 7310 x 4030 x 911
 # reservation (node size_mm).
 bay_solid = parts["bay_module"].val()
-bay_solid.scale(0.001).exportStl(str(HERE.parents[2] / "cad" / "stl" / (UNIT + ".stl")),
+solid.scale(0.001).exportStl(str(HERE.parents[2] / "cad" / "stl" / (UNIT + ".stl")),
                                  tolerance=0.0005, angularTolerance=0.4, ascii=True)
 
 # ---------------------------------------------------------------- checks + report
@@ -243,7 +243,7 @@ report = {
     "size_basis": P.get("size_basis"),
     "graph_revision": REV,
     "solids": len(solid.Solids()), "all_parts_valid": all(v.val().isValid() for v in parts.values()),
-    "cad_stl_scope": "in-envelope bay module of the build, metres (X-PAR-04 "
+    "cad_stl_scope": "the full build, metres (X-PAR-04 "
                      "registry: the registry keeps the bay module 2000 x 1000 x "
                      "400, the design-block bay per A-M-469; the node size_mm "
                      "7310 x 4030 x 915 is the assembly envelope and the full "

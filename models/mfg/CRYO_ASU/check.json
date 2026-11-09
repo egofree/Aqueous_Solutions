@@ -10,7 +10,7 @@
     592.0,
     2000.0
   ],
-  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+  "size_basis": "X-MFG-33 (A-M-175, AQS-DUTY-069) skid extents: the beds zone plus the purchased machinery row with the 20 mm skid margin; the width carries the -Y hose-makeup lap; the z top is the issued vent datum (registered study layout, W12)",
   "graph_revision": "AD",
   "solids": 1,
   "all_parts_valid": true,
@@ -245,6 +245,6 @@
     "nozzles": 8.2
   },
   "sorbent_mass_kg": 311.9,
-  "cad_stl_scope": "in-envelope subset of the build, metres (X-PAR-04 gate: the cad/stl box equals the node size_mm; the full build lives in export/ and the STEP)",
+  "cad_stl_scope": "the full build, metres (X-PAR-04 registry: the build fills the sized skid reservation)",
   "cadquery": "2.8.0"
 }

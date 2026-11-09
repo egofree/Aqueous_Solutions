@@ -8,17 +8,17 @@
   "size_mm": [
     7310.0,
     4030.0,
-    915.0
+    911.0
   ],
-  "size_basis": "crew-duty growing area per A-M-229 (29.12 m2) framed per A-M-469: 4 x 2 nominal 2000 x 1000 bays, 15 mm basin walls, LED canopy to z 900 + 15 mm rail (X-FARM sec3)",
+  "size_basis": "crew-duty growing area per A-M-229 (29.12 m2) framed per A-M-469: 4 x 2 nominal 2000 x 1000 bays, 15 mm basin walls, LED canopy to z 900 with the rail frame to z 910.6 (X-FARM sec3)",
   "graph_revision": "AD",
   "solids": 4,
   "all_parts_valid": true,
-  "cad_stl_scope": "in-envelope bay module of the build, metres (X-PAR-04 registry: the registry keeps the bay module 2000 x 1000 x 400, the design-block bay per A-M-469; the node size_mm 7310 x 4030 x 915 is the assembly envelope and the full bed lives in export/ and the STEP - the CRYO_ASU treatment; 2026-11-08 reservation adoption)",
+  "cad_stl_scope": "the full build, metres (X-PAR-04 registry: the registry keeps the bay module 2000 x 1000 x 400, the design-block bay per A-M-469; the node size_mm 7310 x 4030 x 915 is the assembly envelope and the full bed lives in export/ and the STEP - the CRYO_ASU treatment; 2026-11-08 reservation adoption)",
   "cad_stl_bbox_mm": [
-    2000.0,
-    1000.0,
-    400.0
+    7310.0,
+    4030.0,
+    910.6
   ],
   "machine": {
     "type": "crop grow bed per the node area_basis (A-M-229): HDPE basin (walls and floor 15 mm) with EPDM liner (5 mm), interior 7280 x 4000 mm = 29.12 m2 (NOT shrunk to fit the study box - A-FARM), LECA media envelope at a 250 mm study depth, drain sump at the bay corner with the N9 drain above it, internal cross-ribs framing the nominal 2000 x 1000 bays, and the LED canopy with the panel envelope (2.0463 kW = 29.12 m2 x 70.3 W/m2, DLI 17 at 2.8 umol/J, A-M-133/A-M-144)",
@@ -40,7 +40,7 @@
       "size_mm": [
         7310.0,
         4030.0,
-        915.0
+        911.0
       ],
       "note": "the reservation is the built array per A-M-469 (2026-11-08 adoption): the former single-bay study box stated no bay count or canopy height and is withdrawn"
     },

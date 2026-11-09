@@ -231,15 +231,11 @@ for k, v in parts.items():
 solid = body.val()
 solid.exportStl(str(out / "cryo_asu.stl"), tolerance=0.4, angularTolerance=0.4, ascii=True)
 # cad/stl is the envelope registry in metres (X-PAR-04), ASCII like every registered unit.
-# The X-PAR-04 gate requires the cad/stl box to equal the node size_mm to 1 mm, so the
-# cad/stl solid is the in-envelope subset of the build (AL_POT convention): everything
-# physically inside the M0 study registry box. The full build - which leaves the study
-# box on x and y at the design bed diameter - lives in export/ and the STEP, and the
-# misfit is reported on the tracker board (AQS-PLAN-006 rule 3), nothing resized.
-env = cq.Workplane("XY").box(*[float(v) for v in P["size_mm"]], centered=False).val()
-in_env = solid.intersect(env)
-in_env.scale(0.001).exportStl(str(HERE.parents[2] / "cad" / "stl" / "CRYO_ASU.stl"),
-                              tolerance=0.0005, angularTolerance=0.4, ascii=True)
+# The X-PAR-04 gate requires the cad/stl box to equal the node size_mm to 1 mm; the
+# reservation is the sized skid extents (2026-11-08 adoption) and the build fills it,
+# so the registry solid is the build itself.
+solid.scale(0.001).exportStl(str(HERE.parents[2] / "cad" / "stl" / "CRYO_ASU.stl"),
+                             tolerance=0.0005, angularTolerance=0.4, ascii=True)
 
 # ---------------------------------------------------------------- checks + report
 bb = solid.BoundingBox()
@@ -282,8 +278,7 @@ report = {
     "AQS-ELEC-010) is electrical, not piped - carried verbatim in this report, not drawn",
     "part_mass_kg": mass,
     "sorbent_mass_kg": round(parts["sorbent"].val().Volume() * 1e-9 * RHO["13X"], 1),
-    "cad_stl_scope": "in-envelope subset of the build, metres (X-PAR-04 gate: the cad/stl box "
-    "equals the node size_mm; the full build lives in export/ and the STEP)",
+    "cad_stl_scope": "the full build, metres (X-PAR-04 registry: the build fills the sized skid reservation)",
     "cadquery": cq.__version__,
 }
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
