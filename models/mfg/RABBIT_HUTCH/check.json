@@ -1,26 +1,130 @@
 {
-  "shell_bbox_mm": [
+  "bbox_mm": [
     1900.0,
     700.0,
     1600.0
   ],
-  "envelope_mm": [
-    1900,
-    700,
-    1600
+  "inside_size_mm": true,
+  "size_mm": [
+    1900.0,
+    700.0,
+    1600.0
   ],
-  "inside_size_mm_shell": true,
-  "solids": 1,
+  "size_basis": "3 rabbitry positions x 0.5 m2 with rest mats (A-M-423; TECHTREE rabbits.md) (X-FARM sec3)",
+  "graph_revision": "AD",
+  "solids": 9,
   "all_parts_valid": true,
-  "material_class": "HDG_steel",
-  "form": "frame",
-  "mass_kg": {
+  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the rebuild fills the node box 1900 x 700 x 1600 flush)",
+  "cad_stl_bbox_mm": [
+    1900.0,
+    700.0,
+    1600.0
+  ],
+  "machine": {
+    "type": "rabbitry, 2 does + 1 buck (A-M-423; X-FARM-07): HDG wire-frame hutch 1900 x 700 x 1600, 3 positions x 0.5 m2, drop board at z 100 (cold manure direct to the mineralisation zone), wire floor at z 300, 3 HDPE rest mats, PP nest boxes and an SS316 waterer line drawn as named envelopes",
+    "a_farm": "the hutch is drawn at the node box flush; the rest-mat, nest-box and waterer envelopes, the manure board and the nozzles are drawn",
+    "positions": "the form carries the 3-position floor basis in the size and the mat count; the position dividers are a fabrication detail (hold, WORK_ORDER W12)",
+    "material": "Hot-dip galvanised wire floor, HDPE rest mats, PP nest boxes, SS316 waterers",
+    "ca_mm": 0.0
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        950.0,
+        350.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "canopy thinnings/greens: rabbit forage",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        920.7,
+        350.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "dressed rabbit meat to the food store",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        950.0,
+        350.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "cold rabbit manure direct to the mineralisation zone",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        979.3,
+        350.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "hutch evaporation",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        950.0,
+        350.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 1600.0,
+      "xy_mm": [
+        950.0,
+        350.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 predates the build height 1600 - drawn flush at the envelope top (hold, W12)"
+    }
+  },
+  "nozzle_count_schedule": 6,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); inlet N1 on -Y at z 160, outlets N2/N3/N4 on +Y at z 600; N5 drain flush at the envelope bottom (the 50 datum is the schedule placeholder at the base); N6 vent flush at the envelope top (schedule z 800 predates the 1600 box - stale datum, hold W12); the elevations are schedule placeholders (duty tasks 02/06) and the wire wall takes a backing plate at each stub at fabrication (hold W12); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
     "frame_legs": 75.4,
     "drop_board": 31.3,
     "floor_wire": 8.9,
     "roof": 31.3,
-    "wire_panels": 20.4
+    "wire_panels": 20.4,
+    "rest_mats": 5.5,
+    "nest_boxes": 28.7,
+    "waterers": 22.5,
+    "nozzles": 0.4
   },
-  "empty_kg": 167.3,
-  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+  "cadquery": "2.8.0"
 }

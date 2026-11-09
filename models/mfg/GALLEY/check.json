@@ -1,26 +1,160 @@
 {
-  "shell_bbox_mm": [
+  "bbox_mm": [
     4000.0,
     3000.0,
-    2380.0
+    2400.0
   ],
-  "envelope_mm": [
-    4000,
-    3000,
-    2400
+  "inside_size_mm": true,
+  "size_mm": [
+    4000.0,
+    3000.0,
+    2400.0
   ],
-  "inside_size_mm_shell": true,
+  "size_basis": "12 m2 fitout shell at the A-M-419 room basis, 2400 ceiling (AQS-HAB-001) (X-HAB sec3)",
+  "graph_revision": "AD",
   "solids": 1,
   "all_parts_valid": true,
-  "material_class": "aluminium",
-  "form": "room",
-  "mass_kg": {
+  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the room shell fills the node box 4000 x 3000 x 2400, walls to the 2380 ceiling line, vent flush at the 2400 top)",
+  "cad_stl_bbox_mm": [
+    4000.0,
+    3000.0,
+    2400.0
+  ],
+  "machine": {
+    "type": "habitation galley fitout: aluminium room shell (12 m2, A-M-419; AQS-HAB-001, 2400 ceiling) with an SS304 counter run, a purchased range/oven appliance envelope and a PP preparation-board set (node size basis)",
+    "a_farm": "the room shell is drawn at the node box per the room form class; the counter, appliance and board envelopes and the nozzle set are drawn",
+    "counter": "SS304 worktop + splashback + four legs along the -Y wall x 300..1900, west of the -Y inlet row (worktops and splashbacks per duty section 3); layout choice, WORK_ORDER W12",
+    "appliance": "range/oven envelope 600 x 650 x 900 against the -X end wall south of the door swing - the baked crushed eggshell return (schedule N6) is baked here; purchased per plan rule 6, study sheet envelope at steel density",
+    "prep_boards": "food-contact PP boards on the worktop (duty section 3); no copper-bearing alloys on food paths (AQS-STD-002)",
+    "material": "SS304 worktops and splashbacks, food-contact PP preparation boards; no copper-bearing alloys on food paths",
+    "ca_mm": 0.0
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1985.4,
+        1500.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "food issue to the galley",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1956.1,
+        1500.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "prepared meals to the crew",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1985.4,
+        1500.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "galley biowaste to the larvae bin",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        900.0,
+        360.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 2400.0,
+      "xy_mm": [
+        900.0,
+        360.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 predates the build height 2400 - drawn flush at the envelope top (hold, W12)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        2014.7,
+        1500.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "baked crushed eggshell return (38 g Ca/d)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        2014.7,
+        1500.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "human-grade fresh duckweed greens to the galley",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        2044.0,
+        1500.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "galley wash grey water to the treatment train",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    }
+  },
+  "nozzle_count_schedule": 8,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4); N1 food issue and N7 duckweed greens on -Y at z 160; N2 prepared meals, N3 biowaste, N6 eggshell return and N8 grey water on +Y at z 600; N4 drain flush at the envelope bottom under the counter; N5 vent flush at the envelope top on the +Y wall line (the schedule z 800 datum predates the 2400 box - stale datum, WORK_ORDER W12); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
     "floor": 486.0,
     "wall_long_a": 383.1,
     "wall_long_b": 383.1,
     "wall_end_solid": 284.5,
-    "wall_end_door": 207.9
+    "wall_end_door": 207.9,
+    "counter": 112.8,
+    "appliance": 94.1,
+    "prep_boards": 7.4,
+    "nozzles": 0.5
   },
-  "empty_kg": 1744.6,
-  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+  "cadquery": "2.8.0"
 }

@@ -1,25 +1,141 @@
 {
-  "shell_bbox_mm": [
+  "bbox_mm": [
     3100.0,
     1300.0,
     1900.0
   ],
-  "envelope_mm": [
-    3100,
-    1300,
-    1900
+  "inside_size_mm": true,
+  "size_mm": [
+    3100.0,
+    1300.0,
+    1900.0
   ],
-  "inside_size_mm_shell": true,
-  "solids": 3,
+  "size_basis": "bench-scale melt-spin line: extruder + spinnerette + quench + winder at the 0.09 kg/d draw (A-M-429) (X-POLY sec3)",
+  "graph_revision": "AD",
+  "solids": 7,
   "all_parts_valid": true,
-  "material_class": "SS304",
-  "form": "cabinet",
-  "mass_kg": {
+  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the build fills the node box 3100 x 1300 x 1900 flush)",
+  "cad_stl_bbox_mm": [
+    3100.0,
+    1300.0,
+    1900.0
+  ],
+  "machine": {
+    "type": "PP melt-spin staple-fiber line to FR-finished fleece: SS304 sheet cabinet 3100 x 1300 x 1900 with the extruder trough, melt heater bands, spin head (brass-free die plate), quench/winder housing, PP quench duct and the FR finish dosing skid (size_basis A-M-429; duty section 3)",
+    "a_farm": "the cabinet is drawn at the node box flush; the line housings named by the size_basis and duty section 3 are drawn",
+    "no_copper": "no copper alloys touch the melt (PP degrades against copper at melt temperature, duty section 3): the die plate and melt path are the 304 class",
+    "fr_finish": "the phosphorus-FR dosing skid is PP/PTFE-contact (duty section 3); the finish rides the D-DOCK reagent manifest, the WS_SOLV reagent-import class (A-M-225)",
+    "purchased": "the spin pump and drive set purchase at fabrication with the 0.3 kW node duty class (plan rule 6; hold, WORK_ORDER W12)",
+    "material": "SS304 melt vessel and spin pump with heater bands, brass-free spinnerette (stainless die plate), PP quench ducting",
+    "ca_mm": 0.0
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1535.4,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "PP pellet draw to the melt-spin line",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1564.7,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "phosphorus-FR finish (reagent manifest)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1535.4,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "spin scrap to the solids line",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1564.7,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "FR-finished fleece to the shop for conversion",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        300.0,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 1900.0,
+      "xy_mm": [
+        300.0,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 sits below the build height 1900 - drawn flush at the envelope top (hold, W12)"
+    },
+    "N7": {
+      "style": "carried",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-POLY_FIBER, melt-spin electrical load)",
+      "note": "power terminal row - a cable schedule row: carried verbatim, never drawn"
+    }
+  },
+  "nozzle_count_schedule": 7,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4); N1 pellet draw and N2 FR finish in on -Y at z 160; N3 spin scrap and N4 fleece out on +Y at z 600; N5 drain flush at the envelope bottom; N6 vent flush at the envelope top (the schedule z 800 datum sits below the 1900 build height); N7 is a cable schedule row, carried in the record, never drawn; no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
     "cabinet_shell": 826.7,
     "top": 161.2,
     "extruder": 59.9,
-    "quench_winder": 83.7
+    "quench_winder": 83.7,
+    "melt_heater": 3.4,
+    "spin_head": 4.2,
+    "quench_duct": 5.0,
+    "fr_dose_skid": 2.5,
+    "nozzles": 0.4
   },
-  "empty_kg": 1131.5,
-  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+  "cadquery": "2.8.0"
 }

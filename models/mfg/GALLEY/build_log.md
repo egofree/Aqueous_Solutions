@@ -17,7 +17,21 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/GAL
 
 ## Sources
 
-- `models/mfg/GALLEY/draw_galley.py`
+- `models/mfg/GALLEY/galley.py` (build model; `draw_galley.py` drives the drawing set)
 - `models/mfg/GALLEY/export/galley.step`
 
 Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.
+
+## Rebuild
+
+- 2026-11-09: rebuilt through `galley.py` (the shared close-out builder
+  `models/mfg/farm_closeout.py`, the AQUA_TANK pattern; the envelope, graph revision
+  and nozzle schedule read from the node and `docs-authority/nozzles/GALLEY.csv`
+  through `models/mfg/lib/graph_node.py`). export/, check.json, bom.csv,
+  fasteners.csv and the params.json envelope/layout blocks regenerated from the
+  build. bbox 4000 x 3000 x 2400 mm (vent flush at the box top; walls to z 2380),
+  one fused solid, all 8 schedule rows drawn, empty mass 1959.4 kg (was 1744.6 kg:
+  the SS304 counter run, the purchased appliance envelope, the PP boards and the
+  nozzle set added). `cad/stl/GALLEY.stl` replaced from the build solid (X-PAR-04
+  envelope registry, metres). The 2026-10-31 record above keeps the former
+  shell-only build; the drawing set predates this rebuild.

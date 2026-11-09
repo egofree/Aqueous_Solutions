@@ -4,8 +4,66 @@
   600,
   1200
  ],
+ "form": "cabinet",
+ "wall_mm": 5,
+ "material_class": "SS304",
+ "extras_mm": [
+  [
+   60,
+   60,
+   5,
+   280,
+   280,
+   100,
+   "steam_manifold"
+  ],
+  [
+   75,
+   75,
+   105,
+   250,
+   250,
+   160,
+   "wax_pot"
+  ],
+  [
+   450,
+   200,
+   5,
+   200,
+   200,
+   600,
+   "injector"
+  ],
+  [
+   450,
+   30,
+   5,
+   150,
+   150,
+   200,
+   "pattern_die"
+  ],
+  [
+   60,
+   350,
+   5,
+   200,
+   200,
+   300,
+   "wax_bin"
+  ],
+  [
+   450,
+   430,
+   5,
+   200,
+   150,
+   60,
+   "drain_pan"
+  ]
+ ],
  "graph_revision": "AD",
- "layout_note": "Registered layout: bench frame 800 x 600 with the work top at z 900; N-outlet rows at +X z 600 above the catch tray; inlet rows -X z 160; N-drain bottom; N-vent on the extraction hood top. Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
  "assumptions": {
   "DN15_OD_mm": 21.3,
   "DN15_wall_mm": 2.0
@@ -92,5 +150,75 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class prep"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   800,
+   600,
+   1200
+  ],
+  "basis": "prep-class study minimum; live on the wax make-up import + 90 % reclaim (A-M-286)",
+  "wall_mm": 5,
+  "bench_hardware_mm": {
+   "steam_manifold": [
+    60,
+    60,
+    5,
+    280,
+    280,
+    100
+   ],
+   "wax_pot": [
+    75,
+    75,
+    105,
+    250,
+    250,
+    160
+   ],
+   "injector": [
+    450,
+    200,
+    5,
+    200,
+    200,
+    600
+   ],
+   "pattern_die": [
+    450,
+    30,
+    5,
+    150,
+    150,
+    200
+   ],
+   "wax_bin": [
+    60,
+    350,
+    5,
+    200,
+    200,
+    300
+   ],
+   "drain_pan": [
+    450,
+    430,
+    5,
+    200,
+    150,
+    60
+   ]
+  },
+  "measured_bbox_mm": [
+   800.0,
+   600.0,
+   1200.0
+  ]
+ },
+ "layout": {
+  "frame": "origin at the bench corner; 5 mm SS304 cabinet 800 x 600 x 1200; melt pot on its steam manifold at the -X floor, injector and pattern die at the +X floor, PP-H bin and PE drain pan along the +Y wall (the former extraction hood is withdrawn - the vent rides the cabinet top)",
+  "supports": "cabinet to the slab on 4 wedge anchors; pot and injector hold-down bolts to the cabinet floor",
+  "nozzle_spread": "the schedule gives face and height only; N1 on the +Y wall at z 600, N2/N3 on the -Y wall at z 160, N4 drain at the -X floor corner, N5 vent at the top centreline; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces"
+ }
 }

@@ -1,6 +1,6 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,floor,1,aluminium,486.0,make,"room class; 12 m2 fitout shell at the A-M-419 room basis, 2400 ceiling (AQS-HAB-001) (X-HAB "
-2,wall_end_door,1,aluminium,207.9,make,"room class; 12 m2 fitout shell at the A-M-419 room basis, 2400 ceiling (AQS-HAB-001) (X-HAB "
-3,wall_end_solid,1,aluminium,284.5,make,"room class; 12 m2 fitout shell at the A-M-419 room basis, 2400 ceiling (AQS-HAB-001) (X-HAB "
-4,wall_long_a,1,aluminium,383.1,make,"room class; 12 m2 fitout shell at the A-M-419 room basis, 2400 ceiling (AQS-HAB-001) (X-HAB "
-5,wall_long_b,1,aluminium,383.1,make,"room class; 12 m2 fitout shell at the A-M-419 room basis, 2400 ceiling (AQS-HAB-001) (X-HAB "
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Aluminium room shell: floor + four 15 mm partition walls, 4000 x 3000 x 2400 outer, 900 x 2100 door opening in the -X end wall (12 m2 fitout shell at the A-M-419 room basis, 2400 ceiling)",1,aluminium,1744.6,make,"size_basis verbatim; no copper-bearing alloys on food paths (duty section 3, AQS-STD-002)"
+2,"SS304 galley counter: worktop + splashback + four legs, run 1600 x 600 along the -Y wall x 300..1900",1,SS304,112.8,make,worktops and splashbacks per duty section 3; shop sheet-metal work; no copper-bearing alloys on food paths (AQS-STD-002)
+3,"Range/oven appliance envelope (bakes the N6 crushed-eggshell return), 600 x 650 x 900 against the -X end wall",1,steel,94.1,buy,"purchased appliance per plan rule 6; study sheet envelope at steel density, maker prints govern at order"
+4,"PP preparation board set (food-contact), two boards on the worktop",2,PP,7.4,buy,catalogue item; food-contact PP per duty section 3 (AQS-STD-002)
+5,"Nozzle set per docs-authority/nozzles/GALLEY.csv: 8 rows drawn as DN15 tube stubs (food issue in, prepared meals, biowaste, drain, vent, eggshell return, duckweed greens in, grey water out)",8,SS304,0.5,make,"schedule tags/faces/heights verbatim; atmospheric per duty section 4; bores are the AQS-PIP-004 line DN, not recalculated (AQS-PIP-003)"

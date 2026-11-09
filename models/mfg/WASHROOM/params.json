@@ -70,5 +70,25 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class washroom"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   3000,
+   2000,
+   2400
+  ],
+  "basis": "8 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)",
+  "wall_mm": 30,
+  "measured_bbox_mm": [
+   3000.0,
+   2000.0,
+   2400.0
+  ]
+ },
+ "layout": {
+  "frame": "origin at the room corner; floor + four 15 mm partition walls per the room form class, 900 x 2100 door opening in the -X end wall, 20 mm deck-finish build-down (walls to z 2380); fixture envelopes in the +X wet zone (shower tray +X/+Y corner, WC pan beside it, basin on the -X wall segment north of the door)",
+  "supports": "shell on the slab on 4 sill anchors; fixtures bolted to the slab and wall",
+  "nozzle_spread": "the schedule gives face and height only; N1 on the +Y wall at z 600, N2 on the -Y wall at z 160, N3 drain at (2715, 1775) under the shower tray, N4 vent at (1500, 1985) on the +Y wall line through the top face; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces"
+ }
 }

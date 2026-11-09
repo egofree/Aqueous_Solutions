@@ -1,26 +1,101 @@
 {
-  "shell_bbox_mm": [
+  "bbox_mm": [
     3000.0,
     2000.0,
-    2380.0
+    2400.0
   ],
-  "envelope_mm": [
-    3000,
-    2000,
-    2400
+  "inside_size_mm": true,
+  "size_mm": [
+    3000.0,
+    2000.0,
+    2400.0
   ],
-  "inside_size_mm_shell": true,
+  "size_basis": "8 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)",
+  "graph_revision": "AD",
   "solids": 1,
   "all_parts_valid": true,
-  "material_class": "FRP",
-  "form": "room",
-  "mass_kg": {
+  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the room shell fills the node box 3000 x 2000 x 2400, walls to the 2380 ceiling line, vent flush at the 2400 top)",
+  "cad_stl_bbox_mm": [
+    3000.0,
+    2000.0,
+    2400.0
+  ],
+  "machine": {
+    "type": "habitation washroom fitout: FRP wet-wall room shell (8 m2, A-M-419; AQS-HAB-001) with the SS304 fixture set - shower tray, WC pan and wall-hung basin - in the +X wet zone (node size basis)",
+    "a_farm": "the room shell is drawn at the node box per the room form class; the fixture set and the nozzle set are drawn",
+    "fixtures": "three study sheet-metal envelopes in the +X wet zone (WORK_ORDER W12): shower tray 530 x 420, WC pan 380 x 385, basin 480 x 380 hung on the -X wall segment clear of the door swing; ceramic tile wet zones are a finish on the FRP panels - no thickness stated, not drawn",
+    "drainage": "the SS drainage duty section 3 names is the schedule nozzle set: N3 floor drain under the shower tray, N1 grey water out on +Y",
+    "material": "FRP wet-wall panels, SS304 fixtures, ceramic tile wet zones, SS drainage",
+    "ca_mm": 0.0
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        1500.0,
+        1000.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "wash grey water to the treatment train",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1500.0,
+        1000.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "wash-water feed to the washroom fixtures",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        2715.0,
+        1775.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 2400.0,
+      "xy_mm": [
+        2715.0,
+        1775.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 predates the build height 2400 - drawn flush at the envelope top (hold, W12)"
+    }
+  },
+  "nozzle_count_schedule": 4,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4); N2 wash-water feed on -Y at z 160, N1 grey water out on +Y at z 600; N3 drain flush at the envelope bottom under the shower tray; N4 vent flush at the envelope top on the +Y wall line (the schedule z 800 datum predates the 2400 box - stale datum, WORK_ORDER W12); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
     "floor": 162.0,
     "wall_long_a": 191.6,
     "wall_long_b": 191.6,
     "wall_end_solid": 125.8,
-    "wall_end_door": 74.8
+    "wall_end_door": 74.8,
+    "fixtures": 96.2,
+    "nozzles": 0.2
   },
-  "empty_kg": 745.8,
-  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+  "cadquery": "2.8.0"
 }

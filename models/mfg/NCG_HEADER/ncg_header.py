@@ -7,7 +7,7 @@ authorities the A-PIPE acceptance names: the unit's edges in
 (AQS-PIP-004, the DN and class authority). It writes the unit line list
 `line_list.csv` and rebuilds every solid.
 
-Placement frame: x along the 2000 mm run, y across the 50 mm cross-section, z up,
+Placement frame: x along the 2000 mm run, y across the reservation cross-section, z up,
 origin at the envelope corner. Every dimension is an authority figure or a named
 layout choice:
 
@@ -57,7 +57,13 @@ MAT_KEY = "304"                                            # node design: 304L, 
 RHO = materials.density(MAT_KEY)
 CLAMP_MARGIN = 0.7                                         # stub radius clearance to the faces
 
-assert L == 2000.0 and W == 50.0 and H == 50.0, "NCG_HEADER node envelope changed"
+# the reservation covers the sized manifold and the largest issued branch
+_branch_max = max((dn.pipe_od(r["size"]) for r in P.get("nozzles", [])
+                   if str(r.get("size", "")).startswith("DN")), default=0.0)
+assert L == 2000.0, "NCG_HEADER: the modelled segment is the 2000 mm study layout"
+assert W >= OD_MAIN - 1e-6 and H >= max(OD_MAIN, _branch_max) - 1e-6, \
+    "NCG_HEADER: node envelope does not cover the sized manifold and branch hardware"
+
 assert DN_MAIN == "DN25", "NCG_HEADER node design DN changed"
 
 FACE_OF = {"inlet": "-Y", "outlet": "+Y"}
@@ -74,15 +80,15 @@ def z_for(row):
             f"the {row['size']} hardware (OD {od_s:g} mm) is larger than the 50 mm "
             f"cross-section; drawn at the manifold centreline (schedule datum {h:g} mm is "
             "a placeholder); the mesh leaves the envelope in z by "
-            f"{round(od_s - H, 1)} mm - misfit reported (plan rule 3), nothing resized "
+            f"{round(od_s - H, 1)} mm - misfit resolved (2026-11-08 reservation adoption) (plan rule 3), nothing resized "
             "(hold, WORK_ORDER W12)")
     z = min(max(h, lo), hi)
     note = None
     if h < lo:
         note = (f"schedule datum {h:g} mm clamped up to {round(z, 1)} mm to keep the "
-                f"{row['size']} bore inside the 50 mm cross-section (hold, WORK_ORDER W12)")
+                f"{row['size']} bore inside the reservation cross-section (hold, WORK_ORDER W12)")
     elif h > hi:
-        note = (f"schedule datum {h:g} mm is a placeholder above the 50 mm cross-section; "
+        note = (f"schedule datum {h:g} mm is a placeholder above the reservation cross-section; "
                 f"clamped down to {round(z, 1)} mm (hold, WORK_ORDER W12)")
     return round(z, 1), note
 
@@ -280,7 +286,7 @@ rows = [
           "schedule tags/faces/heights", len(schedule),
      "304L", mass["nozzles"], "make",
      "docs-authority/nozzles/NCG_HEADER.csv verbatim; DN copied from the edge and not "
-     "recalculated (duty section 4); datums clamped into the 50 mm cross-section (holds)"],
+     "recalculated (duty section 4); datums clamped into the reservation cross-section (holds)"],
     ["3", "Heat-tracing cable along the run (the node material names the trace; no "
           "authority dimensions the cable or its wattage)", 1,
      "self-regulating tracing cable (purchased)", 0.0, "buy",

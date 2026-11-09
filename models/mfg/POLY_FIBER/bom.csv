@@ -1,5 +1,10 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,cabinet_shell,1,SS304,826.7,make,cabinet class; bench-scale melt-spin line: extruder + spinnerette + quench + winder at the 0.09
-2,extruder,1,SS304,59.9,make,cabinet class; bench-scale melt-spin line: extruder + spinnerette + quench + winder at the 0.09
-3,quench_winder,1,SS304,83.7,make,cabinet class; bench-scale melt-spin line: extruder + spinnerette + quench + winder at the 0.09
-4,top,1,SS304,161.2,make,cabinet class; bench-scale melt-spin line: extruder + spinnerette + quench + winder at the 0.09
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"SS304 sheet cabinet: 3100 x 1300 x 1900, 5 mm walls, floor and top (sheet-metal cabinet class per size_basis)",1,SS304,987.9000000000001,make,size_basis verbatim (A-M-429); PP melt contact per duty section 3
+2,"Extruder trough housing 800 x 400 x 500 (sheet box, open top)",1,SS304 (duty section 3),59.9,make,the melt vessel and screw housing; PP is non-wetting to the 304 class at the bench throughput (A-M-429)
+3,Melt heater-band envelope 150 x 100 x 150 in the trough,1,SS304 band (duty section 3),3.4,make,"heater bands on the melt path; the band units purchase with the drive set (hold, WORK_ORDER W12)"
+4,"Spin head (spinnerette) envelope 200 x 100 x 150, brass-free die plate",1,SS304 die (duty section 3),4.2,make,stainless die plate per duty section 3; a 316L die plate is the named alternative if FR-finish chemistry shows die corrosion
+5,"Quench/winder housing 1500 x 400 x 400 (sheet box, open top)",1,SS304 (duty section 3),83.7,make,spin pump and winder purchased with the drive set (plan rule 6)
+6,PP quench-duct envelope 1500 x 100 x 300 beside the winder,1,PP duct (duty section 3),5.0,make,PP quench ducting per duty section 3
+7,Phosphorus-FR finish dosing skid envelope 300 x 300 x 400,1,PP/PTFE contact (duty section 3),2.5,make,the ~2 % pick-up FR finish (A-M-225); skid contact PP/PTFE per duty section 3
+8,"Spin pump + drive set, purchased, 0.3 kW node duty class",1,purchased drive set (envelope),0.0,buy,"node electrical duty 0.3 kW - the rating from the node; purchased per plan rule 6; the maker's mass governs (hold, WORK_ORDER W12)"
+9,"Nozzle set per docs-authority/nozzles/POLY_FIBER.csv: 7 rows - 6 DN15 stubs (pellet, FR finish, scrap, fleece, drain, vent) and the N7 cable row carried, never drawn",6,SS304,0.4,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4

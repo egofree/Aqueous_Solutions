@@ -4,8 +4,10 @@
   600,
   1200
  ],
+ "form": "tray",
+ "wall_mm": 6,
+ "material_class": "SS304",
  "graph_revision": "AD",
- "layout_note": "Registered layout: bench frame 800 x 600 with the work top at z 900; N-outlet rows at +X z 600 above the catch tray; inlet rows -X z 160; N-drain bottom; N-vent on the extraction hood top. Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
  "assumptions": {
   "DN15_OD_mm": 21.3,
   "DN15_wall_mm": 2.0
@@ -90,5 +92,25 @@
  ],
  "holds": [
   "no AQS-PLAN-006 section 4 route class for class prep"
- ]
+ ],
+ "envelope": {
+  "size_mm": [
+   800,
+   600,
+   1200
+  ],
+  "basis": "prep-class study minimum; live on the Kroll drag-out (A-M-284)",
+  "wall_mm": 6,
+  "measured_bbox_mm": [
+   800.0,
+   600.0,
+   1200.0
+  ]
+ },
+ "layout": {
+  "frame": "origin at the bench corner; 6 mm SS304 basin 800 x 600 x 1200 outer, open top; PP-H day-drum hopper at the -X floor, mixer stage at the +X floor (the former extraction hood is withdrawn - the vent rides the rim)",
+  "supports": "basin to the slab on 4 wedge anchors; hopper and mixer hold-down bolts to the basin floor",
+  "nozzle_spread": "the schedule gives face and height only; N1 on the +Y wall at z 600, N2/N3 on the -Y wall at z 160, N4 drain at the -X floor corner, N5 vent at the top centreline; per-tag positions in check.nozzles_drawn",
+  "hardware_idiom": "connection hardware flush at the envelope faces"
+ }
 }

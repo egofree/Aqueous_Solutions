@@ -1,6 +1,8 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,drop_board,1,HDG_steel,31.3,make,frame class; 3 rabbitry positions x 0.5 m2 with rest mats (A-M-423; TECHTREE rabbits.md) (X-F
-2,floor_wire,1,HDG_steel,8.9,make,frame class; 3 rabbitry positions x 0.5 m2 with rest mats (A-M-423; TECHTREE rabbits.md) (X-F
-3,frame_legs,1,HDG_steel,75.4,make,frame class; 3 rabbitry positions x 0.5 m2 with rest mats (A-M-423; TECHTREE rabbits.md) (X-F
-4,roof,1,HDG_steel,31.3,make,frame class; 3 rabbitry positions x 0.5 m2 with rest mats (A-M-423; TECHTREE rabbits.md) (X-F
-5,wire_panels,1,HDG_steel,20.4,make,frame class; 3 rabbitry positions x 0.5 m2 with rest mats (A-M-423; TECHTREE rabbits.md) (X-F
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"HDG frame: 4 legs 40 x 40 to z 1500, sheet roof at z 1500",1,hot-dip galvanised steel (duty section 3),106.7,make,"size_basis verbatim (A-M-423); frame weldment, AQS-MOD-002 farm frame class"
+2,Drop board 3 mm at z 100 - the manure board; cold manure goes direct to the mineralisation zone (duty section 3),1,HDG sheet (duty section 3),31.3,make,"the manure outlet N3 lands on this board; the board is the wetted surface, HDG per the duty dry-pellet basis"
+3,Weld-wire floor at z 300 + panel bands at z 300..550 and z 1350..1600 (1 mm wire class),1,hot-dip galvanised wire (duty section 3),29.299999999999997,buy,"drawn as plate solids; the mesh open area carries ~0.15 of the plate mass (the hardware-cloth idiom); buy panels cut to size, plan rule 6"
+4,"HDPE rest-mat envelope: 3 mats 380 x 420 x 12 on the wire floor, one per position",1,HDPE (duty section 3),5.5,buy,"drawn as its envelope, bought complete (plan rule 6); the drawn-envelope mass is the HDPE table-density figure, the purchase mass is the maker's (hold, WORK_ORDER W12)"
+5,"PP nest-box envelope 290 x 340 x 320 at (1550, 180, 360) - one box per doe",1,PP (duty section 3),28.7,buy,"drawn as its box envelope, bought complete (plan rule 6); the drawn-envelope mass is the PP table-density figure, the purchase mass is the maker's (hold, WORK_ORDER W12)"
+6,"SS316 waterer line envelope 260 x 60 x 180 at (1150, 40, 360)",1,SS316 (duty section 3),22.5,buy,"drawn as its box envelope, bought complete (plan rule 6); the drawn-envelope mass is the SS316 table-density figure, the purchase mass is the maker's (hold, WORK_ORDER W12)"
+7,"Nozzle set per docs-authority/nozzles/RABBIT_HUTCH.csv: 6 rows drawn as DN15 tube stubs (1 in z 160, 3 out z 600, drain, vent)",6,galvanised fittings stock,0.4,make,schedule tags/faces/heights verbatim; bores not recalculated (duty section 4); atmospheric per duty section 4

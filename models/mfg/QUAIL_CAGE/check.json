@@ -1,26 +1,171 @@
 {
-  "shell_bbox_mm": [
+  "bbox_mm": [
     1300.0,
     700.0,
     1700.0
   ],
-  "envelope_mm": [
-    1300,
-    700,
-    1700
+  "inside_size_mm": true,
+  "size_mm": [
+    1300.0,
+    700.0,
+    1700.0
   ],
-  "inside_size_mm_shell": true,
-  "solids": 1,
+  "size_basis": "20-hen Coturnix battery, 4 tiers x 0.075 m2/cage at the 0.025 kg/d ration class (A-M-422; TECHTREE coturnix.md) (X-FARM sec3)",
+  "graph_revision": "AD",
+  "solids": 12,
   "all_parts_valid": true,
-  "material_class": "HDG_steel",
-  "form": "frame",
-  "mass_kg": {
+  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the rebuild fills the node box 1300 x 700 x 1700 flush)",
+  "cad_stl_bbox_mm": [
+    1300.0,
+    700.0,
+    1700.0
+  ],
+  "machine": {
+    "type": "coturnix quail cage battery, 20 hens (A-M-422; X-FARM-06): HDG weld-wire frame 1300 x 700 x 1700, 4 tiers x 0.075 m2/cage, drop board at z 100 (the manure tray - droppings feed the vermi bin direct), wire floor at z 300, PP feeders and SS316 nipple waterers drawn as named envelopes",
+    "a_farm": "the cage is drawn at the node box flush; the feed and water envelopes, the manure tray and the nozzles are drawn",
+    "tiers": "the form carries the 4-tier ration basis in the size and the feeder count; the tier rails are a fabrication detail (hold, WORK_ORDER W12)",
+    "material": "Hot-dip galvanised weld-wire cage battery, PP feeders, SS316 nipple waterers",
+    "ca_mm": 0.0
+  },
+  "nozzles_drawn": {
+    "N1": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        606.0,
+        350.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "duckweed/larvae quail ration (dry-equivalent)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N2": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        635.3,
+        350.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "quail water",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N3": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        620.7,
+        350.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "quail eggs to the food store",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        650.0,
+        350.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "quail droppings to the vermi bin",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "xy_mm": [
+        679.3,
+        350.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "cage evaporation",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": 0.0,
+      "xy_mm": [
+        650.0,
+        350.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 1700.0,
+      "xy_mm": [
+        650.0,
+        350.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 predates the build height 1700 - drawn flush at the envelope top (hold, W12)"
+    },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        664.6,
+        350.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "formulated quail ration",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        693.9,
+        350.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "mineral calcium carbonate (free-choice hopper)",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    }
+  },
+  "nozzle_count_schedule": 9,
+  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); inlets N1/N2/N8/N9 on -Y at z 160, outlets N3/N4/N5 on +Y at z 600; N6 drain flush at the envelope bottom (the 50 datum is the schedule placeholder at the base); N7 vent flush at the envelope top (schedule z 800 predates the 1700 box - stale datum, hold W12); the elevations are schedule placeholders (duty tasks 02/06) and the weld-wire wall takes a backing plate at each stub at fabrication (hold W12); no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
+  "part_mass_kg": {
     "frame_legs": 80.4,
     "drop_board": 21.4,
     "floor_wire": 6.0,
     "roof": 21.4,
-    "wire_panels": 15.7
+    "wire_panels": 15.7,
+    "feed_hoppers": 11.5,
+    "waterers": 28.8,
+    "nozzles": 0.6
   },
-  "empty_kg": 144.9,
-  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+  "cadquery": "2.8.0"
 }

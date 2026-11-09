@@ -7,7 +7,7 @@
   600,
   800
  ],
- "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+ "size_basis": "DN100 manifold x 20 m run (0.133 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
  "origin_mm": [
   500,
   -4500,

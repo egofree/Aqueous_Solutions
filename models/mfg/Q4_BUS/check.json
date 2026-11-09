@@ -1,16 +1,16 @@
 {
   "bbox_mm": [
     2000.0,
-    50.0,
-    50.0
+    42.4,
+    42.4
   ],
   "inside_size_mm": true,
   "size_mm": [
     2000.0,
-    50.0,
-    50.0
+    42.4,
+    42.4
   ],
-  "size_basis": "DN32 manifold x 20 m run (0.009 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
+  "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN32 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (42.4 mm, EN-rounded OD series, AQS-PIP-004)",
   "misfit": null,
   "graph_revision": "AD",
   "solids": 1,
@@ -37,7 +37,7 @@
       "x_mm": 110.7,
       "schedule_rating": "Class 150",
       "service": "water <80 C",
-      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the 50 mm cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the reservation cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
     },
     "N2": {
       "style": "tube_stub",
@@ -48,7 +48,7 @@
       "x_mm": 162.0,
       "schedule_rating": "Class 150",
       "service": "water <80 C",
-      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the 50 mm cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the reservation cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
     },
     "N3": {
       "style": "tube_stub",
@@ -59,7 +59,7 @@
       "x_mm": 213.3,
       "schedule_rating": "Class 150",
       "service": "heat < 80 \u00b0C",
-      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the 50 mm cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the reservation cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
     },
     "N4": {
       "style": "tube_stub",
@@ -70,29 +70,29 @@
       "x_mm": 264.6,
       "schedule_rating": "Class 150",
       "service": "warm residual < 80 \u00b0C",
-      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the 50 mm cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+      "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the reservation cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
     },
     "N5": {
       "style": "tube_stub",
       "dn": "DN15",
       "face": "+Y",
       "height_mm": 37.0,
-      "drawn_height_mm": 37.0,
+      "drawn_height_mm": 31.1,
       "x_mm": 110.7,
       "schedule_rating": "Class 150",
       "service": "Q4 surplus heat",
-      "note": "schedule datum drawn; DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+      "note": "schedule datum 37 mm is a placeholder above the reservation cross-section; clamped down to 31.1 mm (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
     },
     "N6": {
       "style": "tube_stub",
       "dn": "DN15",
       "face": "+Y",
       "height_mm": 37.0,
-      "drawn_height_mm": 37.0,
+      "drawn_height_mm": 31.1,
       "x_mm": 162.0,
       "schedule_rating": "Class 150",
       "service": "life heat",
-      "note": "schedule datum drawn; DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+      "note": "schedule datum 37 mm is a placeholder above the reservation cross-section; clamped down to 31.1 mm (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
     },
     "N7": {
       "style": "tube_stub",
@@ -110,7 +110,7 @@
       "dn": "DN15",
       "face": "top",
       "height_mm": 50.0,
-      "drawn_height_mm": 50.0,
+      "drawn_height_mm": 42.4,
       "x_mm": 1030.0,
       "schedule_rating": "Class 150",
       "service": "vent",
@@ -121,11 +121,11 @@
       "dn": "DN15",
       "face": "-Y",
       "height_mm": 160.0,
-      "drawn_height_mm": 38.6,
+      "drawn_height_mm": 31.1,
       "x_mm": 315.9,
       "schedule_rating": "Class 150",
       "service": "round-trip loss",
-      "note": "schedule datum 160 mm is a placeholder above the 50 mm cross-section; clamped down to 38.6 mm (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+      "note": "schedule datum 160 mm is a placeholder above the reservation cross-section; clamped down to 31.1 mm (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
     }
   },
   "nozzle_count_schedule": 9,
@@ -143,9 +143,9 @@
     "no_new_edge": true
   },
   "part_mass_kg": {
-    "plinth": 15.7,
+    "plinth": 13.31,
     "manifold": 0.79,
-    "nozzles": 0.02
+    "nozzles": 0.01
   },
   "cadquery": "2.8.0",
   "cad_stl": "replaced from the build"

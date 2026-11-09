@@ -1,6 +1,4 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,floor,1,FRP,162.0,make,room class; 8 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)
-2,wall_end_door,1,FRP,74.8,make,room class; 8 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)
-3,wall_end_solid,1,FRP,125.8,make,room class; 8 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)
-4,wall_long_a,1,FRP,191.6,make,room class; 8 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)
-5,wall_long_b,1,FRP,191.6,make,room class; 8 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"FRP room shell: floor + four 15 mm partition walls, 3000 x 2000 x 2400 outer, 900 x 2100 door opening in the -X end wall (8 m2 fitout shell, A-M-419; AQS-HAB-001)",1,FRP,745.8,make,"size_basis verbatim; ceramic tile wet zones are a finish on the FRP panels - no thickness stated on the duty, not drawn (WORK_ORDER W12); CA none (AQS-STD-001 shop rule polymer clause)"
+2,"SS304 fixture set: shower tray, WC pan, wall-hung basin - study sheet-metal envelopes in the +X wet zone",1,SS304,96.2,buy,"catalogue sanitary ware; envelope + interface per plan rule 6 - study sheet envelopes at 304 density, maker prints govern at order; SS316 where sanitiser chemistry concentrates (duty section 3 alternative)"
+3,"Nozzle set per docs-authority/nozzles/WASHROOM.csv: 4 rows drawn as DN15 tube stubs (grey water out, wash-water feed, drain, vent)",4,SS304,0.2,make,"schedule tags/faces/heights verbatim; atmospheric per duty section 4; the SS drainage duty section 3 names is this set; bores are the AQS-PIP-004 line DN, not recalculated (AQS-PIP-003)"

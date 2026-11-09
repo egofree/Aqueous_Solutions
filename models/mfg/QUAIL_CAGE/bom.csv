@@ -1,6 +1,7 @@
-item,part,qty,material,mass_kg,make_buy,note
-1,drop_board,1,HDG_steel,21.4,make,"frame class; 20-hen Coturnix battery, 4 tiers x 0.075 m2/cage at the 0.025 kg/d ration class "
-2,floor_wire,1,HDG_steel,6.0,make,"frame class; 20-hen Coturnix battery, 4 tiers x 0.075 m2/cage at the 0.025 kg/d ration class "
-3,frame_legs,1,HDG_steel,80.4,make,"frame class; 20-hen Coturnix battery, 4 tiers x 0.075 m2/cage at the 0.025 kg/d ration class "
-4,roof,1,HDG_steel,21.4,make,"frame class; 20-hen Coturnix battery, 4 tiers x 0.075 m2/cage at the 0.025 kg/d ration class "
-5,wire_panels,1,HDG_steel,15.7,make,"frame class; 20-hen Coturnix battery, 4 tiers x 0.075 m2/cage at the 0.025 kg/d ration class "
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"HDG frame: 4 legs 40 x 40 to z 1600, sheet roof at z 1600",1,hot-dip galvanised steel (duty section 3),101.80000000000001,make,"size_basis verbatim (A-M-422); frame weldment, AQS-MOD-002 farm frame class"
+2,Drop board 3 mm at z 100 - the manure tray feeding the vermi bin direct (duty section 3),1,HDG sheet (duty section 3),21.4,make,"the droppings outlet N4 lands on this tray; the tray is the wetted surface, HDG per the duty dry-tray basis"
+3,Weld-wire cage panels: wire floor at z 300 + panel bands at z 300..550 and z 1450..1700 (1 mm wire class),1,hot-dip galvanised weld wire (duty section 3),21.7,buy,"drawn as plate solids; the mesh open area carries ~0.15 of the plate mass (the hardware-cloth idiom); buy panels cut to size, plan rule 6"
+4,"PP feeder envelope 480 x 120 x 220 at (120, 40, 360) - one hopper per tier",1,PP (duty section 3),11.5,buy,"drawn as its box envelope, bought complete (plan rule 6); the drawn-envelope mass is the PP table-density figure, the purchase mass is the maker's (hold, WORK_ORDER W12)"
+5,"SS316 nipple-waterer line envelope 300 x 60 x 200 at (820, 40, 360) - one nipple per tier",1,SS316 (duty section 3),28.8,buy,"drawn as its box envelope, bought complete (plan rule 6); the drawn-envelope mass is the SS316 table-density figure, the purchase mass is the maker's (hold, WORK_ORDER W12)"
+6,"Nozzle set per docs-authority/nozzles/QUAIL_CAGE.csv: 9 rows drawn as DN15 tube stubs (4 in z 160, 3 out z 600, drain, vent)",9,galvanised fittings stock,0.6,make,schedule tags/faces/heights verbatim; bores not recalculated (duty section 4); atmospheric per duty section 4
