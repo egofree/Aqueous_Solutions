@@ -1221,7 +1221,7 @@ To see the graph commit each file was made from, run `python3 docs-authority/_re
 | `flow_graph/derived/MASS_FLOW_DERIVED.md` | current |
 | `flow_graph/derived/STREAM_REGISTER_DERIVED.md` | current |
 | `flow_graph/derived/SYNC_POINTER.md` | current |
-| `flow_graph/derived/_regen_receipt.json` | by design: manifest mechanism itself (U3 regen provenance receipt) |
+| `flow_graph/derived/_regen_receipt.json` | current |
 | `flow_graph/fire_rooms.json` | current |
 | `flow_graph/inventory/motor_family_ids.json` | current |
 | `flow_graph/inventory/other_family_ids.json` | current |
@@ -1253,7 +1253,7 @@ To see the graph commit each file was made from, run `python3 docs-authority/_re
 | `media/3d/MODEL_MANIFEST.json` | current |
 | `media/3d/SITE_AXO.svg` | current |
 | `media/3d/site_model.glb` | current |
-| `media/_generated.json` | by design: the manifest that lists generated media and the graph each was made from (regen_derived.py) |
+| `media/_generated.json` | current |
 | `media/logo3.png` | artwork, not derived |
 | `media/verify_view.png` | manual capture in GUI FreeCAD (models/freecad/verify_view_png.py) |
 | `models/mfg/ACID_POLISH_SCRUB/params.json` | current |
