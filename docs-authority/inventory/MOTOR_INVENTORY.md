@@ -34,7 +34,7 @@ Table 1.1. Motor families
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 103 | 4 | 25.75 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 22 | 7 | 17.30 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 55 | 37 | 6.60 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 54 | 37 | 6.48 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 5 | 3 | 1.85 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 5 | 5 | 7.50 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 1 | 1 | 0.09 |
@@ -329,8 +329,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | evaporator | VCD_TRAIN | transfer pump IA-VCD-BD to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 6.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | evaporator | VCD_TRAIN | transfer pump S25 to BMED_UPW_POLISH | BLDC | 42 mm (NEMA 17 flange) | 0.001 | 24 V DC | S3 | BLDC driver | 1 | 349.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | evaporator | VCD_TRAIN | transfer pump S28 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 17.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| intake | GW_INTAKE | Body / envelope 900 x 700 x 1800 mm | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| intake | GW_INTAKE | Process nozzle DN15 | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| intake | GW_INTAKE | SS304 pump discharge head, DN168 study boss envelope 60 mm o | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | scrubber | LB_DEGAS | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | scrubber | LB_DEGAS_SCRUB | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | treat | GREY_TREAT | transfer pump IA-GREY-01 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0007 | 24 V DC | S3 | BLDC driver | 1 | 258.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |

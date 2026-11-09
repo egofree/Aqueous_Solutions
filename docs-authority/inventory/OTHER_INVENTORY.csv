@@ -1,6 +1,6 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,107,1698 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,854,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,107,1697 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,855,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 174 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
@@ -3341,19 +3341,20 @@ WTR,evaporator,VCD_TRAIN,valve,check valve,DN15,"CPVC true-union swing/ball chec
 WTR,evaporator,VCD_TRAIN,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,S25: one at each end nozzle (assumed)
 WTR,evaporator,VCD_TRAIN,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,S28: one at each end nozzle (assumed)
 WTR,evaporator,VCD_TRAIN,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-VCD-BD: one at each end nozzle (assumed)
-WTR,intake,GW_INTAKE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Body / envelope 900 x 700 x 1800 mm: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-WTR,intake,GW_INTAKE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Process nozzle DN15: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-WTR,intake,GW_INTAKE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Body / envelope 900 x 700 x 1800 mm: run and fault (assumed)
-WTR,intake,GW_INTAKE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Process nozzle DN15: run and fault (assumed)
-WTR,intake,GW_INTAKE,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,Body / envelope 900 x 700 x 1800 mm (assumed VFD at >= 0.75 kW)
-WTR,intake,GW_INTAKE,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,Process nozzle DN15 (assumed VFD at >= 0.75 kW)
-WTR,intake,GW_INTAKE,fabricated part,fabricated part set,7 BOM lines,models/mfg/GW_INTAKE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+WTR,intake,GW_INTAKE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"SS304 pump discharge head, DN168 study boss envelope 60 mm o: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
+WTR,intake,GW_INTAKE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"SS304 pump discharge head, DN168 study boss envelope 60 mm o: run and fault (assumed)"
+WTR,intake,GW_INTAKE,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"SS304 pump discharge head, DN168 study boss envelope 60 mm o (assumed VFD at >= 0.75 kW)"
+WTR,intake,GW_INTAKE,fabricated part,fabricated part set,4 BOM lines,models/mfg/GW_INTAKE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+WTR,intake,GW_INTAKE,fastener,M10 base hold-down anchor,M10 base hold-down anchor,ISO 898-1 8.8,4,models/mfg/GW_INTAKE/fasteners.csv
+WTR,intake,GW_INTAKE,fastener,M10 hatch hold-down clamp,M10 hatch hold-down clamp,ISO 3506 A4-70,4,models/mfg/GW_INTAKE/fasteners.csv
 WTR,intake,GW_INTAKE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,IA-GW-MAKEUP: 2 per support (assumed)
+WTR,intake,GW_INTAKE,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-GW-MAKEUP: pumped line (assumed)
 WTR,intake,GW_INTAKE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 WTR,intake,GW_INTAKE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WTR,intake,GW_INTAKE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-WTR,intake,GW_INTAKE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
+WTR,intake,GW_INTAKE,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"SS304 pump discharge head, DN168 study boss envelope 60 mm o: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 WTR,intake,GW_INTAKE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",24,IA-GW-MAKEUP: AQS-PIP-005 span count
+WTR,intake,GW_INTAKE,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-GW-MAKEUP: pump discharge (assumed)
 WTR,intake,GW_INTAKE,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-GW-MAKEUP: one at each end nozzle (assumed)
 WTR,scrubber,LB_DEGAS,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,induced-draft fan (assumed size)
 WTR,scrubber,LB_DEGAS,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,induced-draft fan

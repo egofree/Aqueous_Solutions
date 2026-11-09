@@ -1232,11 +1232,28 @@
         "yield_assumption": "0.1442 kg/(m2\u00b7d) edible fresh at DLI 17 (BVAD2022 tomato carbon chain, A-M-229) x 29.12 m2",
         "area_basis": "crew duty (A-M-229): S14 4.2 kg/d / 0.1442 kg/m2/d = 29.12 m2 (supersedes the BH ~28 m2 / 120.4 m2 residue-claim studies)",
         "size_mm": [
-          2000,
-          1000,
-          400
+          7310.0,
+          4030.0,
+          915.0
         ],
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+        "size_note": "crew-duty growing area (A-M-229 29.12 m2) framed 4 x 2 nominal 2000 x 1000 bays, 15 mm basin walls, LED canopy top z 900 with a 15 mm rail allowance (A-M-469; the canopy top is the registered study layout, W12)",
+        "size_basis": "crew-duty growing area per A-M-229 (29.12 m2) framed per A-M-469: 4 x 2 nominal 2000 x 1000 bays, 15 mm basin walls, LED canopy to z 900 + 15 mm rail (X-FARM sec3)",
+        "design": {
+          "grow_bed_layout_mm": {
+            "interior_xy_mm": [
+              7280,
+              4000
+            ],
+            "wall_mm": 15,
+            "canopy_top_mm": 900,
+            "rail_allowance_mm": 15,
+            "bay_module_mm": [
+              2000,
+              1000,
+              400
+            ]
+          }
+        }
       }
     },
     {
@@ -1449,9 +1466,10 @@
         "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
-          50,
-          50
-        ]
+          60.3,
+          60.3
+        ],
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)"
       },
       "continuous_kw": null
     },

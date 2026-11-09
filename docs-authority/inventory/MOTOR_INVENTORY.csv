@@ -196,8 +196,7 @@ WTR,dose,REMIN,"Metering diaphragm pump, Ca slurry duty (node design block: ",in
 WTR,evaporator,VCD_TRAIN,transfer pump IA-VCD-BD to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"6.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,evaporator,VCD_TRAIN,transfer pump S25 to BMED_UPW_POLISH,BLDC,42 mm (NEMA 17 flange),0.001,24 V DC,S3,BLDC driver,1,"349.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,evaporator,VCD_TRAIN,transfer pump S28 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"17.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
-WTR,intake,GW_INTAKE,Body / envelope 900 x 700 x 1800 mm,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-WTR,intake,GW_INTAKE,Process nozzle DN15,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
+WTR,intake,GW_INTAKE,"SS304 pump discharge head, DN168 study boss envelope 60 mm o",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 WTR,scrubber,LB_DEGAS,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 WTR,scrubber,LB_DEGAS_SCRUB,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 WTR,treat,GREY_TREAT,transfer pump IA-GREY-01 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0007,24 V DC,S3,BLDC driver,1,"258.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"

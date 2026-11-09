@@ -760,13 +760,13 @@
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.18,
+          "V_tk_m3": 2.913,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.0,
-          "out_breathing_Nm3_h": 0.068,
-          "in_breathing_Nm3_h": 1.957,
+          "out_breathing_Nm3_h": 0.838,
+          "in_breathing_Nm3_h": 13.738,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 6.4,
+          "vent_bore_req_mm": 16.9,
           "vent_DN": 25,
           "thermal_term": "envelope volume",
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 15.5 kPa (1.27 m full at SG 1.25) = 18.0 kPa g (A-M-174)"
@@ -798,15 +798,28 @@
             "COP": 0.1858573573714599,
             "chiller_kW": 0.034674979305555555
           },
+          "bed_pitch_mm": 521.9,
+          "machinery_row_x0_mm": 1700.0,
+          "machinery_row_len_mm": 740.0,
+          "skid_w_mm": 560.0,
+          "hose_lap_mm": 32.0,
+          "skid_l_mm": 2460.0,
+          "top_datum_mm": 2000.0,
+          "size_mm": [
+            2460.0,
+            592.0,
+            2000.0
+          ],
           "H_mm": 1266,
           "D_mm": 422
         },
         "size_mm": [
-          300,
-          300,
-          2000
+          2460.0,
+          592.0,
+          2000.0
         ],
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_basis": "X-MFG-33 (A-M-175, AQS-DUTY-069) skid extents: the beds zone plus the purchased machinery row with the 20 mm skid margin; the width carries the -Y hose-makeup lap; the z top is the issued vent datum (registered study layout, W12)"
       },
       "modules": [],
       "electrical_role": null,
@@ -1311,20 +1324,13 @@
           "kwh_per_kg_h2": 55.0,
           "rated_kw": 85.8
         },
-        "envelope": {
-          "size_mm": [
-            3367,
-            1050,
-            2200
-          ],
-          "basis": "L x W x H mm, set by flow_graph/param/specialty_sizing.py: the A-M-279 skid allowances at the rated kW (stack deck 2042 + gap 100 + BoP deck 1225 at W 1050, H 2200); the placement seed block (1800 x 800 x 1600) under-books it - the named consequence (H2O_ELYZ WORK_ORDER W12)"
-        },
         "size_mm": [
           3367,
           1050,
           2200
         ],
-        "size_note": "L x W x H mm, set by flow_graph/param/specialty_sizing.py: the A-M-279 skid allowances at the rated kW (stack deck 2042 + gap 100 + BoP deck 1225 at W 1050, H 2200); the placement seed block (1800 x 800 x 1600) under-books it - the named consequence (H2O_ELYZ WORK_ORDER W12)"
+        "size_note": "L x W x H mm, set by flow_graph/param/specialty_sizing.py: the A-M-279 skid allowances at the rated kW (stack deck 2042 + gap 100 + BoP deck 1225 at W 1050, H 2200); the placement seed block (1800 x 800 x 1600) under-books it - the named consequence (H2O_ELYZ WORK_ORDER W12)",
+        "size_basis": "L x W x H mm, set by flow_graph/param/specialty_sizing.py: the A-M-279 skid allowances at the rated kW (stack deck 2042 + gap 100 + BoP deck 1225 at W 1050, H 2200); the placement seed block (1800 x 800 x 1600) under-books it - the named consequence (H2O_ELYZ WORK_ORDER W12)"
       },
       "modules": [],
       "electrical_role": "load",
@@ -1345,11 +1351,6 @@
       ],
       "params": {
         "presence": "present",
-        "size_mm": [
-          600,
-          420,
-          650
-        ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
@@ -1383,11 +1384,6 @@
       "class": "ew_cell",
       "tags": [],
       "params": {
-        "size_mm": [
-          600,
-          420,
-          650
-        ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
@@ -1418,11 +1414,6 @@
       "params": {
         "pitch_mm": 750,
         "index": 3,
-        "size_mm": [
-          600,
-          420,
-          650
-        ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
@@ -1453,11 +1444,6 @@
       "params": {
         "pitch_mm": 750,
         "index": 4,
-        "size_mm": [
-          600,
-          420,
-          650
-        ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
@@ -1488,11 +1474,6 @@
       "params": {
         "pitch_mm": 750,
         "index": 5,
-        "size_mm": [
-          600,
-          420,
-          650
-        ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
@@ -1523,11 +1504,6 @@
       "params": {
         "pitch_mm": 750,
         "index": 6,
-        "size_mm": [
-          600,
-          420,
-          650
-        ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
@@ -1558,11 +1534,6 @@
       "params": {
         "pitch_mm": 750,
         "index": 7,
-        "size_mm": [
-          600,
-          420,
-          650
-        ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
@@ -1593,11 +1564,6 @@
       "params": {
         "pitch_mm": 750,
         "index": 8,
-        "size_mm": [
-          600,
-          420,
-          650
-        ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
@@ -1626,11 +1592,6 @@
       "class": "ew_cell",
       "tags": [],
       "params": {
-        "size_mm": [
-          600,
-          420,
-          650
-        ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
@@ -2061,11 +2022,28 @@
         "yield_assumption": "0.1442 kg/(m2\u00b7d) edible fresh at DLI 17 (BVAD2022 tomato carbon chain, A-M-229) x 29.12 m2",
         "area_basis": "crew duty (A-M-229): S14 4.2 kg/d / 0.1442 kg/m2/d = 29.12 m2 (supersedes the BH ~28 m2 / 120.4 m2 residue-claim studies)",
         "size_mm": [
-          2000,
-          1000,
-          400
+          7310.0,
+          4030.0,
+          915.0
         ],
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+        "size_note": "crew-duty growing area (A-M-229 29.12 m2) framed 4 x 2 nominal 2000 x 1000 bays, 15 mm basin walls, LED canopy top z 900 with a 15 mm rail allowance (A-M-469; the canopy top is the registered study layout, W12)",
+        "size_basis": "crew-duty growing area per A-M-229 (29.12 m2) framed per A-M-469: 4 x 2 nominal 2000 x 1000 bays, 15 mm basin walls, LED canopy to z 900 + 15 mm rail (X-FARM sec3)",
+        "design": {
+          "grow_bed_layout_mm": {
+            "interior_xy_mm": [
+              7280,
+              4000
+            ],
+            "wall_mm": 15,
+            "canopy_top_mm": 900,
+            "rail_allowance_mm": 15,
+            "bay_module_mm": [
+              2000,
+              1000,
+              400
+            ]
+          }
+        }
       },
       "modules": [],
       "electrical_role": "load",
@@ -2277,9 +2255,10 @@
         "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
-          50,
-          50
-        ]
+          60.3,
+          60.3
+        ],
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)"
       },
       "modules": [],
       "electrical_role": "none",
@@ -2311,9 +2290,10 @@
         "size_note": "DN32 manifold x 20 m run (0.009 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
-          50,
-          50
-        ]
+          60.3,
+          60.3
+        ],
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN32 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)"
       },
       "modules": [],
       "electrical_role": null,
@@ -2345,9 +2325,10 @@
         "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
-          50,
-          50
-        ]
+          60.3,
+          60.3
+        ],
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)"
       },
       "modules": [],
       "electrical_role": null,
@@ -4149,11 +4130,11 @@
       "params": {
         "equipment_id": "GW_INTAKE-01",
         "size_mm": [
-          900,
-          700,
-          1800
+          800,
+          800,
+          600
         ],
-        "size_note": "L x W x H mm study envelope for the well pump, sand separator and RO rack; unit task 02 sizing pending",
+        "size_note": null,
         "design_note": "RO reject leaves as a defined plant stream; the well source and quality basis is USGS_DV_GW for the Death Valley variant and the local well record at any other dry site",
         "design": {
           "duty": "standby well head: the make-up on loss of atmospheric harvest",
@@ -4162,21 +4143,14 @@
         "sizing": {
           "pump_kw": 0.37
         },
-        "envelope": {
-          "size_mm": [
-            800,
-            800,
-            600
-          ],
-          "basis": "the wellhead hatch + pump discharge set (X-LOC-13 well head)"
-        },
         "sec3_material": {
           "mat": "SS304 wellhead plate and discharge head, HDPE potable discharge line, submersible pump SS304/stainless stages",
           "basis": "potable groundwater contact (X-LOC-13 well head): 304 wetted at the chloride-light aquifer class, HDPE for the discharge run; the pump stages are the well-class stainless",
           "alt": "316L wetted where the aquifer mineralisation ever shows pitting",
           "note": "standby-zero at the baseline: the atmospheric harvest covers the water cycle (the T4 by-design ruling).",
           "task": "X-LOC-13"
-        }
+        },
+        "size_basis": "the wellhead hatch + pump discharge set (X-LOC-13 well head); the pump is downhole, not plant-side"
       },
       "modules": [],
       "electrical_role": null,
@@ -5057,6 +5031,7 @@
           "material": "carbon steel shell, dry HF service (PERRY9_MAT); Monel trunnion inserts",
           "duty_kW": 0.3083
         },
+        "size_basis": "kiln-class study minimum at the 1.674 kg/d HF duty (ULLMANN_HF; A-M-289); tube 200 x 1200 mm, 2 deg slope, kiln gas absorbed into the recovered-F liquor at the dissolution tank",
         "envelope": {
           "size_mm": [
             1200,
@@ -5119,6 +5094,7 @@
           "duty_kW": 0.5128,
           "material": "Hastelloy C-276 reactors, Ni cracking tube, PTFE-lined coolers"
         },
+        "size_basis": "reactor-class study minimum; the two heated stages dominate the duty (A-M-289)",
         "envelope": {
           "size_mm": [
             600,
@@ -5180,6 +5156,7 @@
           "duty_kW": 0.3989,
           "material": "Inconel 600 pyrolysis tube, Hastelloy C-276 coolers, PTFE-lined scrubber"
         },
+        "size_basis": "reactor-class study minimum; pyrolysis tube + quench at the 0.10 kg/d duty (A-M-289)",
         "envelope": {
           "size_mm": [
             600,
@@ -5242,6 +5219,7 @@
           "duty_kW": 0.0449,
           "material": "Hastelloy C-276 wetted, PTFE gasketed"
         },
+        "size_basis": "reactor-class study minimum; jacketed kettle at the 0.25 kg/d monomer duty, reclaim loop to F_RECOVER (A-M-289)",
         "envelope": {
           "size_mm": [
             600,
@@ -5309,6 +5287,14 @@
           "cathodes": 3,
           "busbar_mm2": 25
         },
+        "sec3_material": {
+          "mat": "Graphite liner and graphite anode for the carbochlorination melt (CrCl3 wetted), dry CO/CO2/Cl2 headspace; 90 % alumina brick backup in a mild-steel shell",
+          "basis": "Cr2O3 + 3C + 3Cl2 carbochlorination at 700 C with an internal anode-gas loop (graph design): the bed is a dry hot face (M7); the melt physics is the pot-cell class (DING2018_CL_REVIEW, KRUIZENGA2012). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "SiC/SiAlON bed brick if chloride carryover drives the hot face past graphite life; Cr metal cathode-worked parts passivate in situ",
+          "note": "0.25 kg/d Cr line; the CO off-gas (0.202 kg/d) leaves on the dry IA-CR-VENT (M7); no measured rate.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)",
         "envelope": {
           "size_mm": [
             800,
@@ -5318,13 +5304,6 @@
           "style": "pot_cell",
           "state": "live",
           "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
-        },
-        "sec3_material": {
-          "mat": "Graphite liner and graphite anode for the carbochlorination melt (CrCl3 wetted), dry CO/CO2/Cl2 headspace; 90 % alumina brick backup in a mild-steel shell",
-          "basis": "Cr2O3 + 3C + 3Cl2 carbochlorination at 700 C with an internal anode-gas loop (graph design): the bed is a dry hot face (M7); the melt physics is the pot-cell class (DING2018_CL_REVIEW, KRUIZENGA2012). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "SiC/SiAlON bed brick if chloride carryover drives the hot face past graphite life; Cr metal cathode-worked parts passivate in situ",
-          "note": "0.25 kg/d Cr line; the CO off-gas (0.202 kg/d) leaves on the dry IA-CR-VENT (M7); no measured rate.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -5385,6 +5364,14 @@
           "batch_kg": 1.0,
           "basis": "batch retort campaigns at the 0.5 kg/d Ti scale"
         },
+        "sec3_material": {
+          "mat": "Alumina-brick-lined carbochlorinator at 800 C with graphite hot face; TiCl4 take-off cooled through a 316L condensation train; Kroll reduction retort 310S (25Cr-20Ni) with a graphite crucible insert at 900 C; molten MgCl2 return through graphite/Ni-200 launder",
+          "basis": "TiO2 + 2C + 2Cl2 at 800 C and TiCl4 + 2Mg at 900 C (AQS-BAL-KROLL closure, graph design): the chlorinator bed is a dry hot face; the retort is the Kroll steel-retort class (KROLL1940, ULLMANN_TITANIUM); chloride-melt metallurgy for the launder (DING2018_CL_REVIEW). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "Mo-clad retort (Kroll shipped his demonstration retort Mo-clad) if service pushes above 950 C; Hastelloy C-276 condensation if TiCl4 hydrolysis is ever traced",
+          "note": "batch 1 kg sponge class retort (graph design); the Mg recycles from MG_POT and the MgCl2 returns through the issued section 12.2 last-row launder.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "cell-class study minimum; live on the D-DOCK rutile + carbon imports with the Mg-pot loop (A-M-284)",
         "envelope": {
           "size_mm": [
             800,
@@ -5394,13 +5381,6 @@
           "style": "kroll_train",
           "state": "live",
           "basis": "cell-class study minimum; live on the D-DOCK rutile + carbon imports with the Mg-pot loop (A-M-284)"
-        },
-        "sec3_material": {
-          "mat": "Alumina-brick-lined carbochlorinator at 800 C with graphite hot face; TiCl4 take-off cooled through a 316L condensation train; Kroll reduction retort 310S (25Cr-20Ni) with a graphite crucible insert at 900 C; molten MgCl2 return through graphite/Ni-200 launder",
-          "basis": "TiO2 + 2C + 2Cl2 at 800 C and TiCl4 + 2Mg at 900 C (AQS-BAL-KROLL closure, graph design): the chlorinator bed is a dry hot face; the retort is the Kroll steel-retort class (KROLL1940, ULLMANN_TITANIUM); chloride-melt metallurgy for the launder (DING2018_CL_REVIEW). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "Mo-clad retort (Kroll shipped his demonstration retort Mo-clad) if service pushes above 950 C; Hastelloy C-276 condensation if TiCl4 hydrolysis is ever traced",
-          "note": "batch 1 kg sponge class retort (graph design); the Mg recycles from MG_POT and the MgCl2 returns through the issued section 12.2 last-row launder.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -5459,6 +5439,14 @@
           "cathodes": 3,
           "busbar_mm2": 25
         },
+        "sec3_material": {
+          "mat": "Graphite liner and graphite anode for the carbochlorination melt (MoCl3 wetted); 90 % alumina brick backup in a mild-steel shell; dry CO2-laden headspace",
+          "basis": "MoO3 + 1.5C + 1.5Cl2 at 650 C (graph design): same pot-cell class as CR_CELL - graphite wetted face, alumina backup (DING2018_CL_REVIEW, SCHACHT2004). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "SiC bed brick above the design temperature class",
+          "note": "the 0.0625 kg/d Mo line is also the house Mo-rod source for cell hardware; anode gas is the internal Cl2 loop; no measured rate.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)",
         "envelope": {
           "size_mm": [
             800,
@@ -5468,13 +5456,6 @@
           "style": "pot_cell",
           "state": "live",
           "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
-        },
-        "sec3_material": {
-          "mat": "Graphite liner and graphite anode for the carbochlorination melt (MoCl3 wetted); 90 % alumina brick backup in a mild-steel shell; dry CO2-laden headspace",
-          "basis": "MoO3 + 1.5C + 1.5Cl2 at 650 C (graph design): same pot-cell class as CR_CELL - graphite wetted face, alumina backup (DING2018_CL_REVIEW, SCHACHT2004). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "SiC bed brick above the design temperature class",
-          "note": "the 0.0625 kg/d Mo line is also the house Mo-rod source for cell hardware; anode gas is the internal Cl2 loop; no measured rate.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -5533,16 +5514,6 @@
           "melt_kWh_d": 21.249,
           "lining": "ceramic-fibre hot face 150 mm + 4 mm CS casing (study)"
         },
-        "envelope": {
-          "size_mm": [
-            1000,
-            1000,
-            1500
-          ],
-          "style": "box_furnace",
-          "state": "live",
-          "basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load"
-        },
         "duty_cycle": {
           "avg_kW": 0.8854,
           "peak_kW": 15.0,
@@ -5557,6 +5528,17 @@
           "alt": "SiC crucibles for the Al family if attack is measured (cost up, better wetting resistance); alumina-liner swap when the charge is ferrous-only",
           "note": "crucible life is a unit task 12 first-article measurement (crucible_kg 10, heats_d 4 in graph design); no rate claimed. Slag tap is basic-oxide wetted: alumina hot face.",
           "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load",
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "live",
+          "basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load"
         }
       },
       "modules": [],
@@ -5600,16 +5582,6 @@
           "freq_kHz": "100-400",
           "duty_note": "equal-duty backup of the 10 kg crucible class (A-M-283; A-M-232 rating held)"
         },
-        "envelope": {
-          "size_mm": [
-            1000,
-            1000,
-            1500
-          ],
-          "style": "box_furnace",
-          "state": "standby_rated",
-          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)"
-        },
         "duty_cycle": {
           "avg_kW": 0.0,
           "connected_kW": 5.0,
@@ -5621,6 +5593,17 @@
           "alt": "quartz isolation sleeve past the crucible wall if the coil sees flux vapours",
           "note": "N+1 diverse of IND_MELT (A-M-283); no melt contact at design-day zero.",
           "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)",
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby_rated",
+          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)"
         }
       },
       "modules": [],
@@ -5662,6 +5645,14 @@
           "outage_d": 2.0,
           "T_C": 900.0
         },
+        "sec3_material": {
+          "mat": "Ceramic-fibre module lining + 80Ni-20Cr resistance elements on a mild-steel casing at the 900 C box-furnace class",
+          "basis": "resistance radiant reheating, N+1 of SHELL_BURNOUT/SINTER heating at 900 C (graph design): element and lining class to 1100 C per ASM_V1; lining design per SCHACHT2004 ch. 13. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "MoSi2 elements if the duty class moves above 1100 C (cost up)",
+          "note": "dry hot air, M7; element life rides the first-article campaign.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)",
         "envelope": {
           "size_mm": [
             1000,
@@ -5671,13 +5662,6 @@
           "style": "box_furnace",
           "state": "standby_rated",
           "basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)"
-        },
-        "sec3_material": {
-          "mat": "Ceramic-fibre module lining + 80Ni-20Cr resistance elements on a mild-steel casing at the 900 C box-furnace class",
-          "basis": "resistance radiant reheating, N+1 of SHELL_BURNOUT/SINTER heating at 900 C (graph design): element and lining class to 1100 C per ASM_V1; lining design per SCHACHT2004 ch. 13. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "MoSi2 elements if the duty class moves above 1100 C (cost up)",
-          "note": "dry hot air, M7; element life rides the first-article campaign.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -5720,6 +5704,14 @@
           "outage_d": 2.0,
           "offgas": "to MET_SCRUB when energized (COMB_OFFGAS)"
         },
+        "sec3_material": {
+          "mat": "Alumina-silica brick + castable crown hot face on a mild-steel shell; 310S burner tube; flue path dry above the acid dew point into MET_SCRUB",
+          "basis": "tertiary N+1 fuel-fired melt heat (graph design): combustion hot-face class per SCHACHT2004 ch. 10; the fuel class is the plant C5-C10 product (duty section 1); combustion stoichiometry per TURNS2012. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "precast refractory module kit if relining downtime dominates the outage plan",
+          "note": "energized only on IND_MELT outage (outage_d 2); off-gas books to MET_SCRUB when hot (M7).",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)",
         "envelope": {
           "size_mm": [
             1000,
@@ -5729,13 +5721,6 @@
           "style": "box_furnace",
           "state": "standby_rated",
           "basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)"
-        },
-        "sec3_material": {
-          "mat": "Alumina-silica brick + castable crown hot face on a mild-steel shell; 310S burner tube; flue path dry above the acid dew point into MET_SCRUB",
-          "basis": "tertiary N+1 fuel-fired melt heat (graph design): combustion hot-face class per SCHACHT2004 ch. 10; the fuel class is the plant C5-C10 product (duty section 1); combustion stoichiometry per TURNS2012. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "precast refractory module kit if relining downtime dominates the outage plan",
-          "note": "energized only on IND_MELT outage (outage_d 2); off-gas books to MET_SCRUB when hot (M7).",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -5774,6 +5759,14 @@
           "moulds": 2,
           "table_L_mm": 700
         },
+        "sec3_material": {
+          "mat": "Graphite permanent moulds with steel backing platens (Cu pour, melt 1085 C per CRC_CU); graphite launder; steel tilt table",
+          "basis": "permanent-mould Cu casting at the 3 kg/d pour (graph design; A-M-199 class): graphite is the standard Cu-mould hot face at the melt temperature and is chemically indifferent to the melt (SCHACHT2004 ch. 8; DIETER1988 tool class for the platens). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "cast-iron mould inserts if the run profile stays cold-metal short-batch (cost down, shorter mould life to be measured)",
+          "note": "mould change-out is a unit task 12 work order; no rate claimed.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 forming class; 1 h hold-up of the Cu pour is below the class minimum",
         "envelope": {
           "size_mm": [
             1500,
@@ -5783,13 +5776,6 @@
           "style": "line_machine",
           "state": "live",
           "basis": "A-M-199 forming class; 1 h hold-up of the Cu pour is below the class minimum"
-        },
-        "sec3_material": {
-          "mat": "Graphite permanent moulds with steel backing platens (Cu pour, melt 1085 C per CRC_CU); graphite launder; steel tilt table",
-          "basis": "permanent-mould Cu casting at the 3 kg/d pour (graph design; A-M-199 class): graphite is the standard Cu-mould hot face at the melt temperature and is chemically indifferent to the melt (SCHACHT2004 ch. 8; DIETER1988 tool class for the platens). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "cast-iron mould inserts if the run profile stays cold-metal short-batch (cost down, shorter mould life to be measured)",
-          "note": "mould change-out is a unit task 12 work order; no rate claimed.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -5827,16 +5813,6 @@
           "outage_d": 2.0,
           "duty_note": "equal-duty backup of the 25 kW melt at the 2 kg ISM batch class (A-M-283)"
         },
-        "envelope": {
-          "size_mm": [
-            1000,
-            1000,
-            1500
-          ],
-          "style": "box_furnace",
-          "state": "standby_rated",
-          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-283): real machine, standby-zero design-day rate"
-        },
         "duty_cycle": {
           "avg_kW": 0.0,
           "connected_kW": 15.0,
@@ -5848,6 +5824,17 @@
           "alt": "graphite crucible inside the vacuum chamber if skull-melt power runs above the design (a different metal-contact duty class)",
           "note": "no oxides, no salt: M7 vacuum-dry service; Ti sponge line is zero-rate at the design day.",
           "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 melt class; N+1 rated envelope (A-M-283): real machine, standby-zero design-day rate",
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby_rated",
+          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-283): real machine, standby-zero design-day rate"
         }
       },
       "modules": [],
@@ -5888,6 +5875,14 @@
           "outage_d": 2.0,
           "design_case_kg_d": 3.0
         },
+        "sec3_material": {
+          "mat": "304L vacuum tilt-pour chamber; graphite crucible + alumina backup; steel table hardware",
+          "basis": "vacuum tilt-pour N+1 of CAST_LINE/CONT_CAST at the 3 kg case (graph design, A-M-283/199): same refractory-chemistry classes as the other melt-shop units (SCHACHT2004, DIETER1988). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "pump-out with Ar sweep instead of hard vacuum if the pour sees Cu-Zn volatiles (different duty class)",
+          "note": "machines only when VAC_IND is hot (outage_d 2).",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)",
         "envelope": {
           "size_mm": [
             1500,
@@ -5897,13 +5892,6 @@
           "style": "line_machine",
           "state": "standby_rated",
           "basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)"
-        },
-        "sec3_material": {
-          "mat": "304L vacuum tilt-pour chamber; graphite crucible + alumina backup; steel table hardware",
-          "basis": "vacuum tilt-pour N+1 of CAST_LINE/CONT_CAST at the 3 kg case (graph design, A-M-283/199): same refractory-chemistry classes as the other melt-shop units (SCHACHT2004, DIETER1988). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "pump-out with Ar sweep instead of hard vacuum if the pour sees Cu-Zn volatiles (different duty class)",
-          "note": "machines only when VAC_IND is hot (outage_d 2).",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -5943,6 +5931,14 @@
           "roll_L_mm": 640,
           "kWh_d": 0.416
         },
+        "sec3_material": {
+          "mat": "Induction-hardened H13/D2-class alloy-steel rolls on cast-steel housings; planar roller bearings; steel frame",
+          "basis": "two-high bench mill, 13 kg/d plate/sheet incl. the Cu line (graph design; A-M-177 DIETER1988 energies): hot-work tool-steel roll class per ASM_V1/DIETER1988 ch. 20. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "cast-iron roll blanks for the short Cu runs (cost down, lighter surface class)",
+          "note": "dry metal contact - no corrosive stream; roll surface is the wear face (A-M-177).",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 forming class; hold-up of the 13 kg/d charge is below the class minimum",
         "envelope": {
           "size_mm": [
             1500,
@@ -5952,13 +5948,6 @@
           "style": "line_machine",
           "state": "live",
           "basis": "A-M-199 forming class; hold-up of the 13 kg/d charge is below the class minimum"
-        },
-        "sec3_material": {
-          "mat": "Induction-hardened H13/D2-class alloy-steel rolls on cast-steel housings; planar roller bearings; steel frame",
-          "basis": "two-high bench mill, 13 kg/d plate/sheet incl. the Cu line (graph design; A-M-177 DIETER1988 energies): hot-work tool-steel roll class per ASM_V1/DIETER1988 ch. 20. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "cast-iron roll blanks for the short Cu runs (cost down, lighter surface class)",
-          "note": "dry metal contact - no corrosive stream; roll surface is the wear face (A-M-177).",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -5995,6 +5984,14 @@
           "press_t": 50,
           "container_mm": 60
         },
+        "sec3_material": {
+          "mat": "H13 extrusion die + tool-steel container liner on a 50 t press (graph design press_t)",
+          "basis": "horizontal profile press N+1 of ROLL (graph design): hot-work die steel class per ASM_V1 / DIETER1988. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "billet preheater induction sleeve if the profile class moves hot (a separate duty entry)",
+          "note": "Nitrided die land where galling is measured (first-article item).",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)",
         "envelope": {
           "size_mm": [
             1500,
@@ -6004,13 +6001,6 @@
           "style": "line_machine",
           "state": "standby_rated",
           "basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)"
-        },
-        "sec3_material": {
-          "mat": "H13 extrusion die + tool-steel container liner on a 50 t press (graph design press_t)",
-          "basis": "horizontal profile press N+1 of ROLL (graph design): hot-work die steel class per ASM_V1 / DIETER1988. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "billet preheater induction sleeve if the profile class moves hot (a separate duty entry)",
-          "note": "Nitrided die land where galling is measured (first-article item).",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -6052,6 +6042,14 @@
           "bench_mm": 1200,
           "dies": 6
         },
+        "sec3_material": {
+          "mat": "Tungsten-carbide drawing dies in tool-steel casings; steel bench; die capstan hardware carries the machine lubricant programme (no wetted stream)",
+          "basis": "bench wire/rod draw N+1 of ROLL (graph design): carbide die class is the wire-drawing standard at this scale (DIETER1988 ch. 20/21). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "polished diamond die only for a fine-wire last pass if the product class demands it (cost up, exotic supply)",
+          "note": "dry process; wire stock stays inside the shop loop.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)",
         "envelope": {
           "size_mm": [
             1500,
@@ -6061,13 +6059,6 @@
           "style": "line_machine",
           "state": "standby_rated",
           "basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)"
-        },
-        "sec3_material": {
-          "mat": "Tungsten-carbide drawing dies in tool-steel casings; steel bench; die capstan hardware carries the machine lubricant programme (no wetted stream)",
-          "basis": "bench wire/rod draw N+1 of ROLL (graph design): carbide die class is the wire-drawing standard at this scale (DIETER1988 ch. 20/21). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "polished diamond die only for a fine-wire last pass if the product class demands it (cost up, exotic supply)",
-          "note": "dry process; wire stock stays inside the shop loop.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -6109,6 +6100,14 @@
           "press_t": 25,
           "ram_mm": 200
         },
+        "sec3_material": {
+          "mat": "H13 die blocks + cast-steel platens/ram on the open-die press (graph design ram_mm 200)",
+          "basis": "open-die hydraulic press N+1 of ROLL at the bar class (graph design): die-steel class per ASM_V1; platens per DIETER1988. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "re-cuttable cast die blocks for short die lots through the fab-shop route",
+          "note": "dry hot-work contact; no corrosive stream.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)",
         "envelope": {
           "size_mm": [
             1500,
@@ -6118,13 +6117,6 @@
           "style": "line_machine",
           "state": "standby_rated",
           "basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)"
-        },
-        "sec3_material": {
-          "mat": "H13 die blocks + cast-steel platens/ram on the open-die press (graph design ram_mm 200)",
-          "basis": "open-die hydraulic press N+1 of ROLL at the bar class (graph design): die-steel class per ASM_V1; platens per DIETER1988. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "re-cuttable cast die blocks for short die lots through the fab-shop route",
-          "note": "dry hot-work contact; no corrosive stream.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -6166,6 +6158,14 @@
           "design_case_kg_d": 0.5,
           "T_C": 1300.0
         },
+        "sec3_material": {
+          "mat": "Graphite resistance elements + 95 % alumina muffle under inert/vacuum atmosphere; nickel-free hot zone on a water-cooled steel jacket",
+          "basis": "Ti/Mo/Cr powder sinter at 1300 C, press-and-sinter consolidation N+1 of ROLL (graph design): reactive-powder sintering furnaces use inert/vacuum hot zones with graphite or MoSi2 elements (ASM_V7); Ti embrittles in air/N2 at the class (CRC_TI). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "Mo elements if an oxidizing (air) sinter variant is ever required - a different duty class (cost up)",
+          "note": "design_case 0.5 kg/d, T_C 1300 (graph design); no wetted stream - dry hot gas above any dew point (M7).",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 melt class at the powder-bulk density 3000 kg/m3 (study); N+1 rated envelope (A-M-283)",
         "envelope": {
           "size_mm": [
             1000,
@@ -6175,13 +6175,6 @@
           "style": "box_furnace",
           "state": "standby_rated",
           "basis": "A-M-199 melt class at the powder-bulk density 3000 kg/m3 (study); N+1 rated envelope (A-M-283)"
-        },
-        "sec3_material": {
-          "mat": "Graphite resistance elements + 95 % alumina muffle under inert/vacuum atmosphere; nickel-free hot zone on a water-cooled steel jacket",
-          "basis": "Ti/Mo/Cr powder sinter at 1300 C, press-and-sinter consolidation N+1 of ROLL (graph design): reactive-powder sintering furnaces use inert/vacuum hot zones with graphite or MoSi2 elements (ASM_V7); Ti embrittles in air/N2 at the class (CRC_TI). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "Mo elements if an oxidizing (air) sinter variant is ever required - a different duty class (cost up)",
-          "note": "design_case 0.5 kg/d, T_C 1300 (graph design); no wetted stream - dry hot gas above any dew point (M7).",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -6219,6 +6212,14 @@
           "hopper_L": 20,
           "mixer_kW": 0.1
         },
+        "sec3_material": {
+          "mat": "PP-H day-drum metering + 304L mixing bench kept dry; sealed anhydrous handling of the MgCl2-class drag-out",
+          "basis": "salt-flux cover preparation, 0.0398 kg/d dry Kroll/MgCl2-class drag-out (graph design; A-M-280): MgCl2 hygroscopicity drives the anhydrous handling class (ULLMANN_MAGNESIUM, GREENWOOD). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "316L drum if the salt arrives as a concentrated solution slurry (different duty class)",
+          "note": "the 0.1 kW mixer is the only powered part; dry salt contact throughout.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "prep-class study minimum; live on the Kroll drag-out (A-M-284)",
         "envelope": {
           "size_mm": [
             800,
@@ -6228,13 +6229,6 @@
           "style": "bench_prep",
           "state": "live",
           "basis": "prep-class study minimum; live on the Kroll drag-out (A-M-284)"
-        },
-        "sec3_material": {
-          "mat": "PP-H day-drum metering + 304L mixing bench kept dry; sealed anhydrous handling of the MgCl2-class drag-out",
-          "basis": "salt-flux cover preparation, 0.0398 kg/d dry Kroll/MgCl2-class drag-out (graph design; A-M-280): MgCl2 hygroscopicity drives the anhydrous handling class (ULLMANN_MAGNESIUM, GREENWOOD). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "316L drum if the salt arrives as a concentrated solution slurry (different duty class)",
-          "note": "the 0.1 kW mixer is the only powered part; dry salt contact throughout.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -6277,6 +6271,14 @@
           "export_kg_d": 10.8125,
           "hold_d": 1.0
         },
+        "sec3_material": {
+          "mat": "Mild-steel staging rack with HDPE wear pads and PE tote carts; no piped wetted service",
+          "basis": "bar/plate/ingot staging, 1 d hold at the METAL_STORE class (graph design; AQS-DUTY-064; A-M-261): dry solids storage; machine-marker class grounding (dry dust housing conductive rule M7 where chips fly). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "galvanized rack hardware for the imported-stock bay if atmospheric humidity rules",
+          "note": "no corrosion load; wear at the pads is a spares item.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "1 d shop issue K at the 2000 kg/m3 staged-metal density (AQS-DUTY-064 METAL_STORE row; A-M-261 loop)",
         "envelope": {
           "size_mm": [
             1200,
@@ -6286,13 +6288,6 @@
           "style": "store_rack",
           "state": "live",
           "basis": "1 d shop issue K at the 2000 kg/m3 staged-metal density (AQS-DUTY-064 METAL_STORE row; A-M-261 loop)"
-        },
-        "sec3_material": {
-          "mat": "Mild-steel staging rack with HDPE wear pads and PE tote carts; no piped wetted service",
-          "basis": "bar/plate/ingot staging, 1 d hold at the METAL_STORE class (graph design; AQS-DUTY-064; A-M-261): dry solids storage; machine-marker class grounding (dry dust housing conductive rule M7 where chips fly). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "galvanized rack hardware for the imported-stock bay if atmospheric humidity rules",
-          "note": "no corrosion load; wear at the pads is a spares item.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -6331,6 +6326,14 @@
           "strands": 2,
           "mould": "water-cooled copper (AQS-SIZE-FOUNDRY)"
         },
+        "sec3_material": {
+          "mat": "Water-cooled copper mould (the graph-design primary), demineralized-water jacket on the issued Q3/Q4 M1 loop family; graphite feed launder; steel jacket casing",
+          "basis": "two-strand horizontal semi-continuous caster (graph design): the water-cooled copper mould is the caster hot face; the water side is already the issued M1 family (AQS-STD-002 section 12.1; A-M-199). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "Cu-Cr or Cu-Zr mould alloy if mould heat-cracking shows at the 31.7 kg/d feed (cost up)",
+          "note": "slab/billet leaves on conveyors; solids only thereafter.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 forming class; hold-up of the cont feed is below the class minimum",
         "envelope": {
           "size_mm": [
             1500,
@@ -6340,13 +6343,6 @@
           "style": "line_machine",
           "state": "live",
           "basis": "A-M-199 forming class; hold-up of the cont feed is below the class minimum"
-        },
-        "sec3_material": {
-          "mat": "Water-cooled copper mould (the graph-design primary), demineralized-water jacket on the issued Q3/Q4 M1 loop family; graphite feed launder; steel jacket casing",
-          "basis": "two-strand horizontal semi-continuous caster (graph design): the water-cooled copper mould is the caster hot face; the water side is already the issued M1 family (AQS-STD-002 section 12.1; A-M-199). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "Cu-Cr or Cu-Zr mould alloy if mould heat-cracking shows at the 31.7 kg/d feed (cost up)",
-          "note": "slab/billet leaves on conveyors; solids only thereafter.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -6401,6 +6397,14 @@
           "cathodes": 5,
           "busbar_mm2": 975
         },
+        "sec3_material": {
+          "mat": "Graphite cell liner (design allowance 10 mm on the wetted faces), graphite anodes at j 0.5 A/cm2 (A-M-282 class), steel cathode bus above the melt with copper busbar frame-isolated to AQS-STD-002 section 11; 90 % alumina brick + ceramic-fibre backup lining; mild-steel outer shell below the liner",
+          "basis": "molten NaCl-KCl-AlCl3 bath at 700 C (graph design): Fe-Cr-Ni alloys lose Cr selectively to the melt (DING2018_CL_REVIEW, KRUIZENGA2012); graphite is the standard fused-chloride wetted face; alumina backup lining per SCHACHT2004 ch. 4/13; M6/M7 with the section 11 bus isolation. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "SiC hot face if AlCl3 carryover concentrates beyond the dry-gas headspace design; Ni-200 baffling at the take-off",
+          "note": "dry Cl2 headspace at 700 C: the 39.4 kg/d Cl2 export leaves on a dry hot line above the AlCl3 dew point (M7) with PVDF (P3 family) only below the dew point. No measured pit rate; the anode/liner change-out is the unit task 12 work order.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)",
         "envelope": {
           "size_mm": [
             800,
@@ -6410,13 +6414,6 @@
           "style": "pot_cell",
           "state": "live",
           "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
-        },
-        "sec3_material": {
-          "mat": "Graphite cell liner (design allowance 10 mm on the wetted faces), graphite anodes at j 0.5 A/cm2 (A-M-282 class), steel cathode bus above the melt with copper busbar frame-isolated to AQS-STD-002 section 11; 90 % alumina brick + ceramic-fibre backup lining; mild-steel outer shell below the liner",
-          "basis": "molten NaCl-KCl-AlCl3 bath at 700 C (graph design): Fe-Cr-Ni alloys lose Cr selectively to the melt (DING2018_CL_REVIEW, KRUIZENGA2012); graphite is the standard fused-chloride wetted face; alumina backup lining per SCHACHT2004 ch. 4/13; M6/M7 with the section 11 bus isolation. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "SiC hot face if AlCl3 carryover concentrates beyond the dry-gas headspace design; Ni-200 baffling at the take-off",
-          "note": "dry Cl2 headspace at 700 C: the 39.4 kg/d Cl2 export leaves on a dry hot line above the AlCl3 dew point (M7) with PVDF (P3 family) only below the dew point. No measured pit rate; the anode/liner change-out is the unit task 12 work order.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -6475,6 +6472,14 @@
           "cathodes": 4,
           "busbar_mm2": 50
         },
+        "sec3_material": {
+          "mat": "Graphite anodes, steel cathode plates, mullite-class alumina-silica refractory cell lining in a mild-steel shell; skim launder kept graphite-wetted",
+          "basis": "molten MgCl2 at 700 C: the industrial MgCl2-electrolysis pot class is graphite anodes + steel cathodes (ULLMANN_MAGNESIUM); alloy containment loses Cr to the melt (DING2021_ENG, KRUIZENGA2012); backup lining per SCHACHT2004. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "monolithic graphite pot if the CaCl2-brine impurity load runs above the design, at the cost of a brittle liner",
+          "note": "MgCl2 is hygroscopic: the pot-feed import leg stays PVDF (P3) and the headspace stays dry; no measured rate (unit task 12 first article).",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)",
         "envelope": {
           "size_mm": [
             800,
@@ -6484,13 +6489,6 @@
           "style": "pot_cell",
           "state": "live",
           "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
-        },
-        "sec3_material": {
-          "mat": "Graphite anodes, steel cathode plates, mullite-class alumina-silica refractory cell lining in a mild-steel shell; skim launder kept graphite-wetted",
-          "basis": "molten MgCl2 at 700 C: the industrial MgCl2-electrolysis pot class is graphite anodes + steel cathodes (ULLMANN_MAGNESIUM); alloy containment loses Cr to the melt (DING2021_ENG, KRUIZENGA2012); backup lining per SCHACHT2004. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "monolithic graphite pot if the CaCl2-brine impurity load runs above the design, at the cost of a brittle liner",
-          "note": "MgCl2 is hygroscopic: the pot-feed import leg stays PVDF (P3) and the headspace stays dry; no measured rate (unit task 12 first article).",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -6548,6 +6546,14 @@
           "cathodes": 3,
           "busbar_mm2": 25
         },
+        "sec3_material": {
+          "mat": "Graphite anodes, steel cathode rods carrying the solid Ca deposit to the tap work order; 90 % alumina backup lining + ceramic-fibre in a mild-steel shell",
+          "basis": "molten CaCl2 at 700 C (graph design; Ca m.p. 842 C per GREENWOOD element chemistry - the deposit leaves as a solid at the tap work order): the same fused-chloride physics governs the selection as AL_POT (DING2018_CL_REVIEW, KRUIZENGA2012; SCHACHT2004). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "electrode upgrade to Mo dip legs if the Ca-metal contact interface becomes the unit task 12 bottleneck (cost up; Mo is in-house at MO_CELL class rates)",
+          "note": "the 0.055 kg/d Ca line feeds the grease thickener: the pot is sheet-lined rather than monolithic (cost-down variant of the pot family).",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)",
         "envelope": {
           "size_mm": [
             800,
@@ -6557,13 +6563,6 @@
           "style": "pot_cell",
           "state": "live",
           "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
-        },
-        "sec3_material": {
-          "mat": "Graphite anodes, steel cathode rods carrying the solid Ca deposit to the tap work order; 90 % alumina backup lining + ceramic-fibre in a mild-steel shell",
-          "basis": "molten CaCl2 at 700 C (graph design; Ca m.p. 842 C per GREENWOOD element chemistry - the deposit leaves as a solid at the tap work order): the same fused-chloride physics governs the selection as AL_POT (DING2018_CL_REVIEW, KRUIZENGA2012; SCHACHT2004). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "electrode upgrade to Mo dip legs if the Ca-metal contact interface becomes the unit task 12 bottleneck (cost up; Mo is in-house at MO_CELL class rates)",
-          "note": "the 0.055 kg/d Ca line feeds the grease thickener: the pot is sheet-lined rather than monolithic (cost-down variant of the pot family).",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -6606,6 +6605,14 @@
           "injector_kW": 0.5,
           "pot_L": 10
         },
+        "sec3_material": {
+          "mat": "304L wax melt tank with steam/hot-water manifold; PP-H storage bins; PE drain pans",
+          "basis": "pattern-wax melt at 70-90 C (dry hydrocarbon, no corrosion load; graph design A-M-281): 304/316L hot-melt practice per ULLMANN_WAX; the PP-H bins respect the house thermoplastic temperature rule (AQS-STD-002 M5 at the 80 C P4-class house limit). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "PP-H melt tank for the 70 C case if the wax family is confirmed with a lower melt band",
+          "note": "wax reclaim returns to the tank; no corrosive species.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "prep-class study minimum; live on the wax make-up import + 90 % reclaim (A-M-286)",
         "envelope": {
           "size_mm": [
             800,
@@ -6615,13 +6622,6 @@
           "style": "bench_prep",
           "state": "live",
           "basis": "prep-class study minimum; live on the wax make-up import + 90 % reclaim (A-M-286)"
-        },
-        "sec3_material": {
-          "mat": "304L wax melt tank with steam/hot-water manifold; PP-H storage bins; PE drain pans",
-          "basis": "pattern-wax melt at 70-90 C (dry hydrocarbon, no corrosion load; graph design A-M-281): 304/316L hot-melt practice per ULLMANN_WAX; the PP-H bins respect the house thermoplastic temperature rule (AQS-STD-002 M5 at the 80 C P4-class house limit). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "PP-H melt tank for the 70 C case if the wax family is confirmed with a lower melt band",
-          "note": "wax reclaim returns to the tank; no corrosive species.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -6664,6 +6664,14 @@
           "dips": 6,
           "slurry_L": 40
         },
+        "sec3_material": {
+          "mat": "PP-H slurry tank and rainfall-sander housing; silica-flour wear faces in PE; PP slurry pump; steel frame isolated from the slurry",
+          "basis": "colloidal silica slurry at pH 9-10, 100 L class (graph design A-M-281; 1 d slurry staging at 1600 kg/m3): matches the issued alkaline silica slurry family PP-H (AQS-STD-002 section 12.1 P4 row). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "316L tank if a binder chemistry change moves the pH below neutral",
+          "note": "slurry stays in-house; reclaim dusts are the only loose silica.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 forming class at the 4 kg/kg shell duty (A-M-286); 1 d slurry/flour staging at 1600 kg/m3",
         "envelope": {
           "size_mm": [
             1500,
@@ -6673,13 +6681,6 @@
           "style": "line_machine",
           "state": "live",
           "basis": "A-M-199 forming class at the 4 kg/kg shell duty (A-M-286); 1 d slurry/flour staging at 1600 kg/m3"
-        },
-        "sec3_material": {
-          "mat": "PP-H slurry tank and rainfall-sander housing; silica-flour wear faces in PE; PP slurry pump; steel frame isolated from the slurry",
-          "basis": "colloidal silica slurry at pH 9-10, 100 L class (graph design A-M-281; 1 d slurry staging at 1600 kg/m3): matches the issued alkaline silica slurry family PP-H (AQS-STD-002 section 12.1 P4 row). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "316L tank if a binder chemistry change moves the pH below neutral",
-          "note": "slurry stays in-house; reclaim dusts are the only loose silica.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -6724,6 +6725,14 @@
           "kW": 0.25,
           "condenser": "wax condensate to WAX_PATTERN"
         },
+        "sec3_material": {
+          "mat": "Alumina-silica kiln hot face + castable hearth, 80Ni-20Cr elements, mild-steel casing; 304L wax condenser on the condensate leg",
+          "basis": "flash dewax + shell fire at 900 C (graph design; A-M-281): lining class per SCHACHT2004 ch. 4/13; element class to 1100 C per ASM_V1; condensate is recovered wax (ULLMANN_WAX). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "SiC elements if element-zone hot spotting appears at the first-article campaign",
+          "note": "dewax off-gas books to IA-BURNOUT-VENT (dry hot M7); no measured rate claimed.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 melt class at the fired-shell duty (A-M-286)",
         "envelope": {
           "size_mm": [
             1000,
@@ -6733,13 +6742,6 @@
           "style": "box_furnace",
           "state": "live",
           "basis": "A-M-199 melt class at the fired-shell duty (A-M-286)"
-        },
-        "sec3_material": {
-          "mat": "Alumina-silica kiln hot face + castable hearth, 80Ni-20Cr elements, mild-steel casing; 304L wax condenser on the condensate leg",
-          "basis": "flash dewax + shell fire at 900 C (graph design; A-M-281): lining class per SCHACHT2004 ch. 4/13; element class to 1100 C per ASM_V1; condensate is recovered wax (ULLMANN_WAX). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "SiC elements if element-zone hot spotting appears at the first-article campaign",
-          "note": "dewax off-gas books to IA-BURNOUT-VENT (dry hot M7); no measured rate claimed.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -6779,6 +6781,14 @@
           "shell_kg_d": 8.0,
           "molds_per_campaign": 8
         },
+        "sec3_material": {
+          "mat": "Graphite crucible tilt-pour + alumina shell as the mould hot face; steel table and tilt hardware",
+          "basis": "investment casting at 2 kg/d castings through the 6-dip shell (graph design, A-M-281): the shell is a refractory hot face (SCHACHT2004); the crucible is the melt-contact part (DIETER1988). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "preheat-tunnel integration with SHELL_BURNOUT flue if heat economy dominates (work-order change, same materials)",
+          "note": "fired shell arrives from SHELL_BURNOUT at temperature.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 forming class; live on IND_TO_INV (A-M-286)",
         "envelope": {
           "size_mm": [
             1500,
@@ -6788,13 +6798,6 @@
           "style": "line_machine",
           "state": "live",
           "basis": "A-M-199 forming class; live on IND_TO_INV (A-M-286)"
-        },
-        "sec3_material": {
-          "mat": "Graphite crucible tilt-pour + alumina shell as the mould hot face; steel table and tilt hardware",
-          "basis": "investment casting at 2 kg/d castings through the 6-dip shell (graph design, A-M-281): the shell is a refractory hot face (SCHACHT2004); the crucible is the melt-contact part (DIETER1988). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "preheat-tunnel integration with SHELL_BURNOUT flue if heat economy dominates (work-order change, same materials)",
-          "note": "fired shell arrives from SHELL_BURNOUT at temperature.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -6837,6 +6840,14 @@
           "export_kg_d": 1.0,
           "table_kW": 0.4
         },
+        "sec3_material": {
+          "mat": "Vibratory knock-out tray with UHMW-PE wear liner, 304 stainless reclaim sieve, open-steel frame housing the dry, noncombustible silica dust",
+          "basis": "shell knock-out + stucco reclaim, 8 kg shell/d (graph design A-M-281): wear selection per the mechanical-metallurgy wear text (DIETER1988 ch. 19); the 304 reclaim sieve keeps spent silica out of the cast surface (AQS-STD-002 silicate/ceramic class handling). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "rubber-lined tray where the noise budget dominates",
+          "note": "reclaim split 7 kg stucco + 1 kg export per the graph closure.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 forming class at the spent-shell duty (A-M-286)",
         "envelope": {
           "size_mm": [
             1500,
@@ -6846,13 +6857,6 @@
           "style": "line_machine",
           "state": "live",
           "basis": "A-M-199 forming class at the spent-shell duty (A-M-286)"
-        },
-        "sec3_material": {
-          "mat": "Vibratory knock-out tray with UHMW-PE wear liner, 304 stainless reclaim sieve, open-steel frame housing the dry, noncombustible silica dust",
-          "basis": "shell knock-out + stucco reclaim, 8 kg shell/d (graph design A-M-281): wear selection per the mechanical-metallurgy wear text (DIETER1988 ch. 19); the 304 reclaim sieve keeps spent silica out of the cast surface (AQS-STD-002 silicate/ceramic class handling). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "rubber-lined tray where the noise budget dominates",
-          "note": "reclaim split 7 kg stucco + 1 kg export per the graph closure.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -6900,6 +6904,7 @@
           "heat_W": 0.0013,
           "material": "SA-240 316L, welded (ASME IX)"
         },
+        "size_basis": "reactor-class study minimum; DN150 at 1 d hold-up of the naphtha feed at 750 kg/m3 melt density; wall by ASME VIII-1 UG-27 at 5 MPa",
         "envelope": {
           "size_mm": [
             600,
@@ -6945,6 +6950,7 @@
           "material": "316L, Hastelloy option",
           "note": "installed standby: DIGEST_TO_POLY stays 0 until the digester organic assay issues the recipe"
         },
+        "size_basis": "real kettle design at the 0.5 kg/d design case; standby envelope (recipe waits on the digester organic assay, AQS-DES-POLY; geometry issued A-M-289)",
         "envelope": {
           "size_mm": [
             600,
@@ -6985,6 +6991,14 @@
           "rate_kg_d": 0.29418,
           "pellet_mm": "2-4"
         },
+        "sec3_material": {
+          "mat": "316L die plate and cutter hub; UHMW-PE trough liner; PE/PP water trough on the resin-cooling loop; steel frame",
+          "basis": "underwater die-face pelletising at 2-4 mm pellet (graph design AQS-DUTY-073): resin contact is inert polyolefin/fluoropolymer stock - hot-face compatibility passes but the water trough is the abrasion face (DIETER1988 wear class; PERRY9_MAT selection logic). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "tungsten-carbide-faced cutter at the die plate if wear shows on the first article (cost up)",
+          "note": "no corrosive load; pellet stock leaves dry.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 forming class; hold-up of the resin stream is below the class minimum",
         "envelope": {
           "size_mm": [
             1500,
@@ -6994,13 +7008,6 @@
           "style": "line_machine",
           "state": "live",
           "basis": "A-M-199 forming class; hold-up of the resin stream is below the class minimum"
-        },
-        "sec3_material": {
-          "mat": "316L die plate and cutter hub; UHMW-PE trough liner; PE/PP water trough on the resin-cooling loop; steel frame",
-          "basis": "underwater die-face pelletising at 2-4 mm pellet (graph design AQS-DUTY-073): resin contact is inert polyolefin/fluoropolymer stock - hot-face compatibility passes but the water trough is the abrasion face (DIETER1988 wear class; PERRY9_MAT selection logic). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "tungsten-carbide-faced cutter at the die plate if wear shows on the first article (cost up)",
-          "note": "no corrosive load; pellet stock leaves dry.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -7035,6 +7042,7 @@
           "product": "fine powder for compression sintering (PTFE is not melt-processable; ULLMANN_FLUOROPOLY)",
           "material": "316L mill, PE-lined collector"
         },
+        "size_basis": "forming-class minimum (A-M-199); mill + classifier at the 0.09 kg/d powder duty (A-M-289)",
         "envelope": {
           "size_mm": [
             1500,
@@ -7086,6 +7094,7 @@
           "product": "gasket/lining sheet (AQS-RATE-FP-MET PVDF linings and gaskets)",
           "material": "316L barrel, Hastelloy die"
         },
+        "size_basis": "forming-class minimum (A-M-199); 25 mm extruder at the 0.14 kg/d sheet duty (A-M-289)",
         "envelope": {
           "size_mm": [
             1500,
@@ -7130,6 +7139,14 @@
           "to_wet_kg_d": 0.026744,
           "hold_d": 1.0
         },
+        "sec3_material": {
+          "mat": "HDPE tote bins and PP powder drums; steel rack; no wetted streams",
+          "basis": "1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (graph design; A-M-264): dry resin storage, no process contact (AQS-DUTY-073 class). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "antistatic PP totes if the powder-drum fraction builds charge (a spares-check item)",
+          "note": "no corrosion load; stock loss is the managed quantity.",
+          "task": "X-MAT-22"
+        },
+        "size_basis": "1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (study; A-M-264)",
         "envelope": {
           "size_mm": [
             600,
@@ -7139,13 +7156,6 @@
           "style": "store_bin",
           "state": "live",
           "basis": "1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (study; A-M-264)"
-        },
-        "sec3_material": {
-          "mat": "HDPE tote bins and PP powder drums; steel rack; no wetted streams",
-          "basis": "1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (graph design; A-M-264): dry resin storage, no process contact (AQS-DUTY-073 class). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
-          "alt": "antistatic PP totes if the powder-drum fraction builds charge (a spares-check item)",
-          "note": "no corrosion load; stock loss is the managed quantity.",
-          "task": "X-MAT-22"
         }
       },
       "modules": [],
@@ -7175,20 +7185,13 @@
         "sizing": {
           "slipstream_kgd": 0.5
         },
-        "envelope": {
-          "size_mm": [
-            200,
-            200,
-            800
-          ],
-          "basis": "the carbonation contactor at the 0.5 kg/d slipstream"
-        },
         "size_mm": [
           200,
           200,
           800
         ],
-        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
+        "size_note": null,
+        "size_basis": "the carbonation contactor at the 0.5 kg/d slipstream"
       },
       "modules": [],
       "electrical_role": null,
@@ -7223,20 +7226,13 @@
         "sizing": {
           "batch_kgd": 0.2
         },
-        "envelope": {
-          "size_mm": [
-            500,
-            400,
-            600
-          ],
-          "basis": "the 0.2 kg/d batch kettle: heated soap-precipitation class"
-        },
         "size_mm": [
           500,
           400,
           600
         ],
-        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
+        "size_note": null,
+        "size_basis": "the 0.2 kg/d batch kettle: heated soap-precipitation class"
       },
       "modules": [],
       "electrical_role": null,
@@ -7270,20 +7266,13 @@
         "sizing": {
           "batch_kgd": 0.1
         },
-        "envelope": {
-          "size_mm": [
-            500,
-            400,
-            600
-          ],
-          "basis": "the 0.1 kg/d batch kettle (emulsification class)"
-        },
         "size_mm": [
           500,
           400,
           600
         ],
-        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
+        "size_note": null,
+        "size_basis": "the 0.1 kg/d batch kettle (emulsification class)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7317,20 +7306,13 @@
         "sizing": {
           "thickener_kgd": 0.025
         },
-        "envelope": {
-          "size_mm": [
-            300,
-            300,
-            400
-          ],
-          "basis": "the calcium-soap precipitation vessel at the 0.025 kg/d thickener draw"
-        },
         "size_mm": [
           300,
           300,
           400
         ],
-        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
+        "size_note": null,
+        "size_basis": "the calcium-soap precipitation vessel at the 0.025 kg/d thickener draw"
       },
       "modules": [],
       "electrical_role": null,
@@ -7366,20 +7348,13 @@
         "sizing": {
           "si_kgd": 1.8
         },
-        "envelope": {
-          "size_mm": [
-            1200,
-            1000,
-            1600
-          ],
-          "basis": "graphite hot-face furnace (the issued sec3 selection) at the batch class"
-        },
         "size_mm": [
           1200,
           1000,
           1600
         ],
-        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
+        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need",
+        "size_basis": "graphite hot-face furnace (the issued sec3 selection) at the batch class"
       },
       "modules": [],
       "electrical_role": null,
@@ -7610,20 +7585,13 @@
           "chilled_kw": 2.25,
           "cop_thermal": 0.45
         },
-        "envelope": {
-          "size_mm": [
-            700,
-            500,
-            1200
-          ],
-          "basis": "the 2.25 kW-class silica gel-water adsorption chiller: drive 65 C, chilled 12 C, thermal COP ~0.45 (A-M-239/240; WANG2006_ADS); 304L shells per the issued sec3"
-        },
         "size_mm": [
           700,
           500,
           1200
         ],
-        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
+        "size_note": null,
+        "size_basis": "the 2.25 kW-class silica gel-water adsorption chiller: drive 65 C, chilled 12 C, thermal COP ~0.45 (A-M-239/240; WANG2006_ADS); 304L shells per the issued sec3"
       },
       "modules": [],
       "electrical_role": null,
@@ -7654,20 +7622,13 @@
         "sizing": {
           "duty_kw": 12.0
         },
-        "envelope": {
-          "size_mm": [
-            600,
-            400,
-            400
-          ],
-          "basis": "the 12 kW water-to-air coil at the MAU duty (Q4 -> hab make-up air)"
-        },
         "size_mm": [
           600,
           400,
           400
         ],
-        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
+        "size_note": null,
+        "size_basis": "the 12 kW water-to-air coil at the MAU duty (Q4 -> hab make-up air)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7718,20 +7679,13 @@
         "sizing": {
           "airflow_m3_s": 10.43
         },
-        "envelope": {
-          "size_mm": [
-            1200,
-            600,
-            1200
-          ],
-          "basis": "the dry coil + fan at the calculated rejection duty (study envelope box; design sizing per the duty sheet follows)"
-        },
         "size_mm": [
           1200,
           600,
           1200
         ],
-        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
+        "size_note": null,
+        "size_basis": "the dry coil + fan at the calculated rejection duty (study envelope box; design sizing per the duty sheet follows)"
       },
       "modules": [],
       "electrical_role": null,
@@ -8712,7 +8666,20 @@
           "service": "honey bee hive: pollination + honey",
           "hives": 1.0,
           "honey_kg_yr": "10-25",
-          "basis": "A-M-424 (X-FARM-08)"
+          "basis": "A-M-424 (X-FARM-08)",
+          "hive_stack_mm": {
+            "box_xy_mm": [
+              600,
+              500
+            ],
+            "deep_h_mm": 475,
+            "medium_h_mm": 475,
+            "stand_h_mm": 150,
+            "screen_t_mm": 10,
+            "lid_t_mm": 30,
+            "stand_lap_mm": 25,
+            "lid_lap_mm": 20
+          }
         },
         "sec3_material": {
           "mat": "Untreated solid-pine box bodies, SS316 screen bottom board, propolis-waxed interiors; no copper-bearing alloys and no treated lumber anywhere on the hive",
@@ -8722,11 +8689,12 @@
           "task": "X-FARM-08"
         },
         "size_mm": [
-          600,
-          500,
-          1100
+          650,
+          550,
+          1150
         ],
-        "size_note": "10-frame deep + medium + stand (A-M-424; TECHTREE beekeeping) (X-FARM sec3)"
+        "size_note": "10-frame deep + medium + stand (A-M-424; TECHTREE beekeeping) (X-FARM sec3)",
+        "size_basis": "hive stack per A-M-468: stand 150 + screen board + deep 475 + medium 475 + telescoping lid, laps the 600 x 500 boxes (TECHTREE beekeeping 10-frame classes; X-FARM sec3)"
       },
       "modules": [],
       "electrical_role": null,

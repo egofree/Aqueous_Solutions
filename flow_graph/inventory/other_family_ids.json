@@ -780,6 +780,11 @@
    "category": "fastener",
    "item": "M12 stud",
    "spec": "ISO 3506 A4-70"
+  },
+  "OF-157": {
+   "category": "fastener",
+   "item": "M10 hatch hold-down clamp",
+   "spec": "ISO 3506 A4-70"
   }
  }
 }

@@ -5101,7 +5101,17 @@
           "material": "carbon steel shell, dry HF service (PERRY9_MAT); Monel trunnion inserts",
           "duty_kW": 0.3083
         },
-        "size_basis": "kiln-class study minimum at the 1.674 kg/d HF duty (ULLMANN_HF; A-M-289); tube 200 x 1200 mm, 2 deg slope, kiln gas absorbed into the recovered-F liquor at the dissolution tank"
+        "size_basis": "kiln-class study minimum at the 1.674 kg/d HF duty (ULLMANN_HF; A-M-289); tube 200 x 1200 mm, 2 deg slope, kiln gas absorbed into the recovered-F liquor at the dissolution tank",
+        "envelope": {
+          "size_mm": [
+            1200,
+            700,
+            1500
+          ],
+          "style": "rotary_kiln",
+          "state": "live",
+          "basis": "kiln-class study minimum at the 1.674 kg/d HF duty (ULLMANN_HF; A-M-289); tube 200 x 1200 mm, 2 deg slope, kiln gas absorbed into the recovered-F liquor at the dissolution tank"
+        }
       },
       "continuous_kw": {
         "value": 0.3083,
@@ -5157,7 +5167,17 @@
           "duty_kW": 0.5128,
           "material": "Hastelloy C-276 reactors, Ni cracking tube, PTFE-lined coolers"
         },
-        "size_basis": "reactor-class study minimum; the two heated stages dominate the duty (A-M-289)"
+        "size_basis": "reactor-class study minimum; the two heated stages dominate the duty (A-M-289)",
+        "envelope": {
+          "size_mm": [
+            600,
+            600,
+            1200
+          ],
+          "style": "reactor",
+          "state": "live",
+          "basis": "reactor-class study minimum; the two heated stages dominate the duty (A-M-289)"
+        }
       },
       "continuous_kw": {
         "value": 0.5128,
@@ -5212,7 +5232,17 @@
           "duty_kW": 0.3989,
           "material": "Inconel 600 pyrolysis tube, Hastelloy C-276 coolers, PTFE-lined scrubber"
         },
-        "size_basis": "reactor-class study minimum; pyrolysis tube + quench at the 0.10 kg/d duty (A-M-289)"
+        "size_basis": "reactor-class study minimum; pyrolysis tube + quench at the 0.10 kg/d duty (A-M-289)",
+        "envelope": {
+          "size_mm": [
+            600,
+            600,
+            1200
+          ],
+          "style": "reactor",
+          "state": "live",
+          "basis": "reactor-class study minimum; pyrolysis tube + quench at the 0.10 kg/d duty (A-M-289)"
+        }
       },
       "continuous_kw": {
         "value": 0.3989,
@@ -5268,7 +5298,17 @@
           "duty_kW": 0.0449,
           "material": "Hastelloy C-276 wetted, PTFE gasketed"
         },
-        "size_basis": "reactor-class study minimum; jacketed kettle at the 0.25 kg/d monomer duty, reclaim loop to F_RECOVER (A-M-289)"
+        "size_basis": "reactor-class study minimum; jacketed kettle at the 0.25 kg/d monomer duty, reclaim loop to F_RECOVER (A-M-289)",
+        "envelope": {
+          "size_mm": [
+            600,
+            600,
+            1200
+          ],
+          "style": "reactor",
+          "state": "live",
+          "basis": "reactor-class study minimum; jacketed kettle at the 0.25 kg/d monomer duty, reclaim loop to F_RECOVER (A-M-289)"
+        }
       },
       "continuous_kw": {
         "value": 0.0449,
@@ -5336,7 +5376,17 @@
           "note": "0.25 kg/d Cr line; the CO off-gas (0.202 kg/d) leaves on the dry IA-CR-VENT (M7); no measured rate.",
           "task": "X-MAT-22"
         },
-        "size_basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        "size_basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)",
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "live",
+          "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        }
       },
       "continuous_kw": {
         "value": 0.16,
@@ -5406,7 +5456,17 @@
           "note": "batch 1 kg sponge class retort (graph design); the Mg recycles from MG_POT and the MgCl2 returns through the issued section 12.2 last-row launder.",
           "task": "X-MAT-22"
         },
-        "size_basis": "cell-class study minimum; live on the D-DOCK rutile + carbon imports with the Mg-pot loop (A-M-284)"
+        "size_basis": "cell-class study minimum; live on the D-DOCK rutile + carbon imports with the Mg-pot loop (A-M-284)",
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "kroll_train",
+          "state": "live",
+          "basis": "cell-class study minimum; live on the D-DOCK rutile + carbon imports with the Mg-pot loop (A-M-284)"
+        }
       },
       "continuous_kw": {
         "value": 0.5,
@@ -5474,7 +5534,17 @@
           "note": "the 0.0625 kg/d Mo line is also the house Mo-rod source for cell hardware; anode gas is the internal Cl2 loop; no measured rate.",
           "task": "X-MAT-22"
         },
-        "size_basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        "size_basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)",
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "live",
+          "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        }
       },
       "continuous_kw": {
         "value": 0.1141,
@@ -5550,7 +5620,17 @@
           "note": "crucible life is a unit task 12 first-article measurement (crucible_kg 10, heats_d 4 in graph design); no rate claimed. Slag tap is basic-oxide wetted: alumina hot face.",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load"
+        "size_basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load",
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "live",
+          "basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load"
+        }
       },
       "continuous_kw": {
         "value": 0.8854,
@@ -5608,7 +5688,17 @@
           "note": "N+1 diverse of IND_MELT (A-M-283); no melt contact at design-day zero.",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)"
+        "size_basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)",
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby_rated",
+          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)"
+        }
       },
       "continuous_kw": {
         "value": 0.0,
@@ -5659,7 +5749,17 @@
           "note": "dry hot air, M7; element life rides the first-article campaign.",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)"
+        "size_basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)",
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby_rated",
+          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)"
+        }
       },
       "continuous_kw": {
         "value": 0.0,
@@ -5711,7 +5811,17 @@
           "note": "energized only on IND_MELT outage (outage_d 2); off-gas books to MET_SCRUB when hot (M7).",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)"
+        "size_basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)",
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby_rated",
+          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)"
+        }
       },
       "continuous_kw": {
         "value": 0.05,
@@ -5759,7 +5869,17 @@
           "note": "mould change-out is a unit task 12 work order; no rate claimed.",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 forming class; 1 h hold-up of the Cu pour is below the class minimum"
+        "size_basis": "A-M-199 forming class; 1 h hold-up of the Cu pour is below the class minimum",
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "A-M-199 forming class; 1 h hold-up of the Cu pour is below the class minimum"
+        }
       },
       "continuous_kw": null
     },
@@ -5811,7 +5931,17 @@
           "note": "no oxides, no salt: M7 vacuum-dry service; Ti sponge line is zero-rate at the design day.",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 melt class; N+1 rated envelope (A-M-283): real machine, standby-zero design-day rate"
+        "size_basis": "A-M-199 melt class; N+1 rated envelope (A-M-283): real machine, standby-zero design-day rate",
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby_rated",
+          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-283): real machine, standby-zero design-day rate"
+        }
       },
       "continuous_kw": {
         "value": 0.0,
@@ -5861,7 +5991,17 @@
           "note": "machines only when VAC_IND is hot (outage_d 2).",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)"
+        "size_basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)",
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby_rated",
+          "basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)"
+        }
       },
       "continuous_kw": {
         "value": 0.0,
@@ -5910,7 +6050,17 @@
           "note": "dry metal contact - no corrosive stream; roll surface is the wear face (A-M-177).",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 forming class; hold-up of the 13 kg/d charge is below the class minimum"
+        "size_basis": "A-M-199 forming class; hold-up of the 13 kg/d charge is below the class minimum",
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "A-M-199 forming class; hold-up of the 13 kg/d charge is below the class minimum"
+        }
       },
       "continuous_kw": null
     },
@@ -5956,7 +6106,17 @@
           "note": "Nitrided die land where galling is measured (first-article item).",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)"
+        "size_basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)",
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby_rated",
+          "basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)"
+        }
       },
       "continuous_kw": {
         "value": 0.0,
@@ -6007,7 +6167,17 @@
           "note": "dry process; wire stock stays inside the shop loop.",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)"
+        "size_basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)",
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby_rated",
+          "basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)"
+        }
       },
       "continuous_kw": {
         "value": 0.0,
@@ -6058,7 +6228,17 @@
           "note": "dry hot-work contact; no corrosive stream.",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)"
+        "size_basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)",
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "standby_rated",
+          "basis": "A-M-199 forming class; N+1 rated envelope (A-M-283)"
+        }
       },
       "continuous_kw": {
         "value": 0.0,
@@ -6109,7 +6289,17 @@
           "note": "design_case 0.5 kg/d, T_C 1300 (graph design); no wetted stream - dry hot gas above any dew point (M7).",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 melt class at the powder-bulk density 3000 kg/m3 (study); N+1 rated envelope (A-M-283)"
+        "size_basis": "A-M-199 melt class at the powder-bulk density 3000 kg/m3 (study); N+1 rated envelope (A-M-283)",
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby_rated",
+          "basis": "A-M-199 melt class at the powder-bulk density 3000 kg/m3 (study); N+1 rated envelope (A-M-283)"
+        }
       },
       "continuous_kw": {
         "value": 0.0,
@@ -6156,7 +6346,17 @@
           "note": "the 0.1 kW mixer is the only powered part; dry salt contact throughout.",
           "task": "X-MAT-22"
         },
-        "size_basis": "prep-class study minimum; live on the Kroll drag-out (A-M-284)"
+        "size_basis": "prep-class study minimum; live on the Kroll drag-out (A-M-284)",
+        "envelope": {
+          "size_mm": [
+            800,
+            600,
+            1200
+          ],
+          "style": "bench_prep",
+          "state": "live",
+          "basis": "prep-class study minimum; live on the Kroll drag-out (A-M-284)"
+        }
       },
       "continuous_kw": {
         "value": 0.1,
@@ -6208,7 +6408,17 @@
           "note": "no corrosion load; wear at the pads is a spares item.",
           "task": "X-MAT-22"
         },
-        "size_basis": "1 d shop issue K at the 2000 kg/m3 staged-metal density (AQS-DUTY-064 METAL_STORE row; A-M-261 loop)"
+        "size_basis": "1 d shop issue K at the 2000 kg/m3 staged-metal density (AQS-DUTY-064 METAL_STORE row; A-M-261 loop)",
+        "envelope": {
+          "size_mm": [
+            1200,
+            800,
+            1500
+          ],
+          "style": "store_rack",
+          "state": "live",
+          "basis": "1 d shop issue K at the 2000 kg/m3 staged-metal density (AQS-DUTY-064 METAL_STORE row; A-M-261 loop)"
+        }
       },
       "continuous_kw": null
     },
@@ -6256,7 +6466,17 @@
           "note": "slab/billet leaves on conveyors; solids only thereafter.",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 forming class; hold-up of the cont feed is below the class minimum"
+        "size_basis": "A-M-199 forming class; hold-up of the cont feed is below the class minimum",
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "A-M-199 forming class; hold-up of the cont feed is below the class minimum"
+        }
       },
       "continuous_kw": null
     },
@@ -6320,7 +6540,17 @@
           "note": "dry Cl2 headspace at 700 C: the 39.4 kg/d Cl2 export leaves on a dry hot line above the AlCl3 dew point (M7) with PVDF (P3 family) only below the dew point. No measured pit rate; the anode/liner change-out is the unit task 12 work order.",
           "task": "X-MAT-22"
         },
-        "size_basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        "size_basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)",
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "live",
+          "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        }
       },
       "continuous_kw": {
         "value": 5.6578,
@@ -6388,7 +6618,17 @@
           "note": "MgCl2 is hygroscopic: the pot-feed import leg stays PVDF (P3) and the headspace stays dry; no measured rate (unit task 12 first article).",
           "task": "X-MAT-22"
         },
-        "size_basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        "size_basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)",
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "live",
+          "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        }
       },
       "continuous_kw": {
         "value": 0.3375,
@@ -6455,7 +6695,17 @@
           "note": "the 0.055 kg/d Ca line feeds the grease thickener: the pot is sheet-lined rather than monolithic (cost-down variant of the pot family).",
           "task": "X-MAT-22"
         },
-        "size_basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        "size_basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)",
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "live",
+          "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        }
       },
       "continuous_kw": {
         "value": 0.1221,
@@ -6507,7 +6757,17 @@
           "note": "wax reclaim returns to the tank; no corrosive species.",
           "task": "X-MAT-22"
         },
-        "size_basis": "prep-class study minimum; live on the wax make-up import + 90 % reclaim (A-M-286)"
+        "size_basis": "prep-class study minimum; live on the wax make-up import + 90 % reclaim (A-M-286)",
+        "envelope": {
+          "size_mm": [
+            800,
+            600,
+            1200
+          ],
+          "style": "bench_prep",
+          "state": "live",
+          "basis": "prep-class study minimum; live on the wax make-up import + 90 % reclaim (A-M-286)"
+        }
       },
       "continuous_kw": {
         "value": 0.5,
@@ -6559,7 +6819,17 @@
           "note": "slurry stays in-house; reclaim dusts are the only loose silica.",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 forming class at the 4 kg/kg shell duty (A-M-286); 1 d slurry/flour staging at 1600 kg/m3"
+        "size_basis": "A-M-199 forming class at the 4 kg/kg shell duty (A-M-286); 1 d slurry/flour staging at 1600 kg/m3",
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "A-M-199 forming class at the 4 kg/kg shell duty (A-M-286); 1 d slurry/flour staging at 1600 kg/m3"
+        }
       },
       "continuous_kw": {
         "value": 0.3,
@@ -6613,7 +6883,17 @@
           "note": "dewax off-gas books to IA-BURNOUT-VENT (dry hot M7); no measured rate claimed.",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 melt class at the fired-shell duty (A-M-286)"
+        "size_basis": "A-M-199 melt class at the fired-shell duty (A-M-286)",
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "live",
+          "basis": "A-M-199 melt class at the fired-shell duty (A-M-286)"
+        }
       },
       "continuous_kw": {
         "value": 0.25,
@@ -6662,7 +6942,17 @@
           "note": "fired shell arrives from SHELL_BURNOUT at temperature.",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 forming class; live on IND_TO_INV (A-M-286)"
+        "size_basis": "A-M-199 forming class; live on IND_TO_INV (A-M-286)",
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "A-M-199 forming class; live on IND_TO_INV (A-M-286)"
+        }
       },
       "continuous_kw": {
         "value": 0.15,
@@ -6714,7 +7004,17 @@
           "note": "reclaim split 7 kg stucco + 1 kg export per the graph closure.",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 forming class at the spent-shell duty (A-M-286)"
+        "size_basis": "A-M-199 forming class at the spent-shell duty (A-M-286)",
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "A-M-199 forming class at the spent-shell duty (A-M-286)"
+        }
       },
       "continuous_kw": {
         "value": 0.4,
@@ -6764,7 +7064,17 @@
           "heat_W": 0.0013,
           "material": "SA-240 316L, welded (ASME IX)"
         },
-        "size_basis": "reactor-class study minimum; DN150 at 1 d hold-up of the naphtha feed at 750 kg/m3 melt density; wall by ASME VIII-1 UG-27 at 5 MPa"
+        "size_basis": "reactor-class study minimum; DN150 at 1 d hold-up of the naphtha feed at 750 kg/m3 melt density; wall by ASME VIII-1 UG-27 at 5 MPa",
+        "envelope": {
+          "size_mm": [
+            600,
+            600,
+            1200
+          ],
+          "style": "reactor",
+          "state": "live",
+          "basis": "reactor-class study minimum; DN150 at 1 d hold-up of the naphtha feed at 750 kg/m3 melt density; wall by ASME VIII-1 UG-27 at 5 MPa"
+        }
       },
       "continuous_kw": null
     },
@@ -6803,7 +7113,17 @@
           "material": "316L, Hastelloy option",
           "note": "installed standby: DIGEST_TO_POLY stays 0 until the digester organic assay issues the recipe"
         },
-        "size_basis": "real kettle design at the 0.5 kg/d design case; standby envelope (recipe waits on the digester organic assay, AQS-DES-POLY; geometry issued A-M-289)"
+        "size_basis": "real kettle design at the 0.5 kg/d design case; standby envelope (recipe waits on the digester organic assay, AQS-DES-POLY; geometry issued A-M-289)",
+        "envelope": {
+          "size_mm": [
+            600,
+            600,
+            1200
+          ],
+          "style": "reactor",
+          "state": "standby",
+          "basis": "real kettle design at the 0.5 kg/d design case; standby envelope (recipe waits on the digester organic assay, AQS-DES-POLY; geometry issued A-M-289)"
+        }
       },
       "continuous_kw": null
     },
@@ -6844,7 +7164,17 @@
           "note": "no corrosive load; pellet stock leaves dry.",
           "task": "X-MAT-22"
         },
-        "size_basis": "A-M-199 forming class; hold-up of the resin stream is below the class minimum"
+        "size_basis": "A-M-199 forming class; hold-up of the resin stream is below the class minimum",
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "A-M-199 forming class; hold-up of the resin stream is below the class minimum"
+        }
       },
       "continuous_kw": null
     },
@@ -6881,7 +7211,17 @@
           "product": "fine powder for compression sintering (PTFE is not melt-processable; ULLMANN_FLUOROPOLY)",
           "material": "316L mill, PE-lined collector"
         },
-        "size_basis": "forming-class minimum (A-M-199); mill + classifier at the 0.09 kg/d powder duty (A-M-289)"
+        "size_basis": "forming-class minimum (A-M-199); mill + classifier at the 0.09 kg/d powder duty (A-M-289)",
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "forming-class minimum (A-M-199); mill + classifier at the 0.09 kg/d powder duty (A-M-289)"
+        }
       },
       "continuous_kw": {
         "value": 0.0152,
@@ -6926,7 +7266,17 @@
           "product": "gasket/lining sheet (AQS-RATE-FP-MET PVDF linings and gaskets)",
           "material": "316L barrel, Hastelloy die"
         },
-        "size_basis": "forming-class minimum (A-M-199); 25 mm extruder at the 0.14 kg/d sheet duty (A-M-289)"
+        "size_basis": "forming-class minimum (A-M-199); 25 mm extruder at the 0.14 kg/d sheet duty (A-M-289)",
+        "envelope": {
+          "size_mm": [
+            1500,
+            800,
+            1500
+          ],
+          "style": "line_machine",
+          "state": "live",
+          "basis": "forming-class minimum (A-M-199); 25 mm extruder at the 0.14 kg/d sheet duty (A-M-289)"
+        }
       },
       "continuous_kw": {
         "value": 0.1087,
@@ -6971,7 +7321,17 @@
           "note": "no corrosion load; stock loss is the managed quantity.",
           "task": "X-MAT-22"
         },
-        "size_basis": "1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (study; A-M-264)"
+        "size_basis": "1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (study; A-M-264)",
+        "envelope": {
+          "size_mm": [
+            600,
+            400,
+            800
+          ],
+          "style": "store_bin",
+          "state": "live",
+          "basis": "1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (study; A-M-264)"
+        }
       },
       "continuous_kw": null
     },

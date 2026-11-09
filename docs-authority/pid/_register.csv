@@ -83,7 +83,7 @@ GREY_TREAT,AQS-PID-001-GREY_TREAT,32abeae7,docs-authority/pid/GREY_TREAT.svg,WTR
 GROWBED_A,AQS-PID-001-GROWBED_A,6d5c7f62,docs-authority/pid/GROWBED_A.svg,FARM,growbed,4,1,2,0,3,1,8
 GROWBED_B,AQS-PID-001-GROWBED_B,a0155174,docs-authority/pid/GROWBED_B.svg,FARM,growbed,4,3,6,0,3,1,9
 GROW_BED,AQS-PID-001-GROW_BED,7b838198,docs-authority/pid/GROW_BED.svg,FARM,farm,9,10,24,0,12,1,22
-GW_INTAKE,AQS-PID-001-GW_INTAKE,0728355d,docs-authority/pid/GW_INTAKE.svg,WTR,intake,0,1,2,0,4,0,3
+GW_INTAKE,AQS-PID-001-GW_INTAKE,4aef8e2e,docs-authority/pid/GW_INTAKE.svg,WTR,intake,0,1,3,0,4,0,3
 H2O_ELYZ,AQS-PID-001-H2O_ELYZ,76cdb974,docs-authority/pid/H2O_ELYZ.svg,CRYO,pem_electrolyser,2,3,6,0,6,1,7
 H2_DRYER,AQS-PID-001-H2_DRYER,d92f1738,docs-authority/pid/H2_DRYER.svg,GAS,dryer,2,5,8,0,5,2,10
 HABITATION,AQS-PID-001-HABITATION,31fda5ed,docs-authority/pid/HABITATION.svg,HAB,hab,15,12,18,0,4,1,27

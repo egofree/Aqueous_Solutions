@@ -207,20 +207,13 @@
           "kwh_per_kg_h2": 55.0,
           "rated_kw": 85.8
         },
-        "envelope": {
-          "size_mm": [
-            3367,
-            1050,
-            2200
-          ],
-          "basis": "L x W x H mm, set by flow_graph/param/specialty_sizing.py: the A-M-279 skid allowances at the rated kW (stack deck 2042 + gap 100 + BoP deck 1225 at W 1050, H 2200); the placement seed block (1800 x 800 x 1600) under-books it - the named consequence (H2O_ELYZ WORK_ORDER W12)"
-        },
         "size_mm": [
           3367,
           1050,
           2200
         ],
-        "size_note": "L x W x H mm, set by flow_graph/param/specialty_sizing.py: the A-M-279 skid allowances at the rated kW (stack deck 2042 + gap 100 + BoP deck 1225 at W 1050, H 2200); the placement seed block (1800 x 800 x 1600) under-books it - the named consequence (H2O_ELYZ WORK_ORDER W12)"
+        "size_note": "L x W x H mm, set by flow_graph/param/specialty_sizing.py: the A-M-279 skid allowances at the rated kW (stack deck 2042 + gap 100 + BoP deck 1225 at W 1050, H 2200); the placement seed block (1800 x 800 x 1600) under-books it - the named consequence (H2O_ELYZ WORK_ORDER W12)",
+        "size_basis": "L x W x H mm, set by flow_graph/param/specialty_sizing.py: the A-M-279 skid allowances at the rated kW (stack deck 2042 + gap 100 + BoP deck 1225 at W 1050, H 2200); the placement seed block (1800 x 800 x 1600) under-books it - the named consequence (H2O_ELYZ WORK_ORDER W12)"
       }
     },
     {
@@ -244,11 +237,6 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "size_mm": [
-          600,
-          420,
-          650
-        ],
         "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "sizing": {
           "size_mm": [
@@ -1347,16 +1335,6 @@
           "melt_kWh_d": 21.249,
           "lining": "ceramic-fibre hot face 150 mm + 4 mm CS casing (study)"
         },
-        "envelope": {
-          "size_mm": [
-            1000,
-            1000,
-            1500
-          ],
-          "style": "box_furnace",
-          "state": "live",
-          "basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load"
-        },
         "duty_cycle": {
           "avg_kW": 0.8854,
           "peak_kW": 15.0,
@@ -1371,6 +1349,17 @@
           "alt": "SiC crucibles for the Al family if attack is measured (cost up, better wetting resistance); alumina-liner swap when the charge is ferrous-only",
           "note": "crucible life is a unit task 12 first-article measurement (crucible_kg 10, heats_d 4 in graph design); no rate claimed. Slag tap is basic-oxide wetted: alumina hot face.",
           "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load",
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "live",
+          "basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load"
         }
       },
       "continuous_kw": {
@@ -1416,16 +1405,6 @@
           "outage_d": 2.0,
           "duty_note": "equal-duty backup of the 25 kW melt at the 2 kg ISM batch class (A-M-283)"
         },
-        "envelope": {
-          "size_mm": [
-            1000,
-            1000,
-            1500
-          ],
-          "style": "box_furnace",
-          "state": "standby_rated",
-          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-283): real machine, standby-zero design-day rate"
-        },
         "duty_cycle": {
           "avg_kW": 0.0,
           "connected_kW": 15.0,
@@ -1437,6 +1416,17 @@
           "alt": "graphite crucible inside the vacuum chamber if skull-melt power runs above the design (a different metal-contact duty class)",
           "note": "no oxides, no salt: M7 vacuum-dry service; Ti sponge line is zero-rate at the design day.",
           "task": "X-MAT-22"
+        },
+        "size_basis": "A-M-199 melt class; N+1 rated envelope (A-M-283): real machine, standby-zero design-day rate",
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby_rated",
+          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-283): real machine, standby-zero design-day rate"
         }
       },
       "continuous_kw": {
@@ -1676,20 +1666,13 @@
           "chilled_kw": 2.25,
           "cop_thermal": 0.45
         },
-        "envelope": {
-          "size_mm": [
-            700,
-            500,
-            1200
-          ],
-          "basis": "the 2.25 kW-class silica gel-water adsorption chiller: drive 65 C, chilled 12 C, thermal COP ~0.45 (A-M-239/240; WANG2006_ADS); 304L shells per the issued sec3"
-        },
         "size_mm": [
           700,
           500,
           1200
         ],
-        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
+        "size_note": null,
+        "size_basis": "the 2.25 kW-class silica gel-water adsorption chiller: drive 65 C, chilled 12 C, thermal COP ~0.45 (A-M-239/240; WANG2006_ADS); 304L shells per the issued sec3"
       },
       "continuous_kw": null,
       "class": "adsorption_chiller"
@@ -1723,20 +1706,13 @@
         "sizing": {
           "duty_kw": 12.0
         },
-        "envelope": {
-          "size_mm": [
-            600,
-            400,
-            400
-          ],
-          "basis": "the 12 kW water-to-air coil at the MAU duty (Q4 -> hab make-up air)"
-        },
         "size_mm": [
           600,
           400,
           400
         ],
-        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
+        "size_note": null,
+        "size_basis": "the 12 kW water-to-air coil at the MAU duty (Q4 -> hab make-up air)"
       },
       "continuous_kw": null,
       "class": "hx"
@@ -1789,20 +1765,13 @@
         "sizing": {
           "airflow_m3_s": 10.43
         },
-        "envelope": {
-          "size_mm": [
-            1200,
-            600,
-            1200
-          ],
-          "basis": "the dry coil + fan at the calculated rejection duty (study envelope box; design sizing per the duty sheet follows)"
-        },
         "size_mm": [
           1200,
           600,
           1200
         ],
-        "size_note": "envelope from the placement seed (AQS-PLACE-SEED-001); sized by need"
+        "size_note": null,
+        "size_basis": "the dry coil + fan at the calculated rejection duty (study envelope box; design sizing per the duty sheet follows)"
       },
       "continuous_kw": {
         "value": 7.75,

@@ -36,9 +36,9 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | --- | --- | --- | --- | --- |
 | M10 | U-bolt | ISO 3506 A4-70 | 2 | DIN 3570 (U-bolt) |
 | M10 | anchor | ISO 3506 A4-70 | 186 | ISO 4017 + chemical anchor (ETAG 001) |
-| M10 | anchor | ISO 898-1 8.8 | 232 | ISO 4017 + chemical anchor (ETAG 001) |
+| M10 | anchor | ISO 898-1 8.8 | 236 | ISO 4017 + chemical anchor (ETAG 001) |
 | M10 | hex bolt | ASTM A193 B8 | 8 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M10 | hex bolt | ISO 3506 A4-70 | 158 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M10 | hex bolt | ISO 3506 A4-70 | 162 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | hex bolt | ISO 898-1 8.8 | 124 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | stud | ISO 3506 A4-70 | 48 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | stud | ISO 898-1 8.8 | 106 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -86,7 +86,6 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | FUEL_CELL | valve: check valve DN50 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | FUEL_CELL | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | FUEL_CELL | valve: isolation valve DN50 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| GW_INTAKE | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | H2O_ELYZ | PEM stack: 80 cells of 169.7 x 169.7 mm active (2.304 m2 cell-summed)  | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | HABITATION | valve: isolation valve DN50 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | HABITATION | valve: isolation valve DN15 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
