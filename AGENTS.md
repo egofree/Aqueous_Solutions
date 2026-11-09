@@ -200,11 +200,11 @@ Do not copy them into this file.
 ## Audit findings and session status
 
 Before starting substantive work, read
-`planning/reviews/audits/OPEN_FINDINGS.md`. Prefer open findings that touch the
+`docs-authority/audits/OPEN_FINDINGS.md`. Prefer open findings that touch the
 files you are about to change. When you fix a finding, set its status to
 `fixed` and record the commit hash in that table; Quality Control verifies and
 closes it. Dated audit reports live beside the open list as
-`AUDIT_YYYY-MM-DD_<source>.md`.
+`docs-authority/audits/AUDIT_YYYY-MM-DD_<source>.md`.
 
 When the session is blocked or needs an owner decision, call the OpenCode tool
 `report_status` with status `blocked` or `needs_decision`, a short summary, and
