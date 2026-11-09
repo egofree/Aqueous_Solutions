@@ -22,7 +22,7 @@ Every dimension is an authority figure or a named layout choice:
   arrangement.
 - A-MACH guard and anchors: the four-post hold-down frame is the guard; 8 slab anchors
   in fasteners.csv.
-- Nozzles: all 14 rows of docs-authority/nozzles/WAFER_FAB.csv drawn at tag, face,
+- Nozzles: all rows of docs-authority/nozzles/WAFER_FAB.csv drawn at tag, face,
   height and bore as atmospheric open-bore tube stubs flush at the envelope faces
   (duty section 4: nozzle DN15, no flange class, atmospheric tube or hose). The four
   solids rows (specialty stock, polymer feedstock, dopant in; spent resist and solvent
@@ -146,6 +146,13 @@ for (face, z), rows in sorted(groups.items()):
 noz, drawn = None, {}
 for r in schedule:
     tag, dnl, h = r["tag"], r["size"], float(r["height_mm"])
+    if dnl == "cable":                                    # power terminal row: carried, never drawn
+        drawn[tag] = {"style": "carried", "dn": dnl, "face": r["face"],
+                      "height_mm": r["height_mm"], "schedule_rating": r["rating"],
+                      "service": r["service"],
+                      "note": "power terminal row - a cable schedule row: carried "
+                              "verbatim, never drawn"}
+        continue
     face = FACE_OF.get(r["face"], r["face"])
     od = od_of(r)
     note = "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
@@ -266,7 +273,8 @@ rows = [
            "stubs (DN15/DN25), 4 non-piped solids transfer rows drawn DN15 bore not "
            "calculated, drain and vent flush at the envelope faces",
      len(schedule), "316L tube", mass["nozzles"], "make (AQS-BOM-SC-001)",
-     "14-row issued schedule verbatim; atmospheric tube per duty section 4"],
+     "issued schedule verbatim; the cable schedule row is carried, never drawn; "
+     "atmospheric tube per duty section 4"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)

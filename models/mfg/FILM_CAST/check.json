@@ -1,4 +1,58 @@
 {
+  "nozzles_drawn": {
+    "N1": {
+      "style": "solids",
+      "face": "+X",
+      "part": "film_stop",
+      "note": "film-stock stop flush at the +X face (z 900..1060, at the winder take-off); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "film stock"
+    },
+    "N2": {
+      "style": "stub",
+      "face": "-X",
+      "part": "resin_inlet",
+      "drawn_height_mm": 160.0,
+      "note": "PVDF-resin DN15 stub flush at the -X face, set in to the barrel root",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "PVDF resin to the film/sheet line"
+    },
+    "N3": {
+      "style": "drain",
+      "face": "bottom",
+      "part": "drain_well",
+      "drawn_height_mm": 0.0,
+      "note": "drain well flush at the envelope bottom (z 0), sump face at the 50 datum",
+      "dn": "DN15",
+      "height_mm": 50.0,
+      "schedule_rating": "Class 150",
+      "service": "drain"
+    },
+    "N4": {
+      "style": "vent",
+      "face": "top",
+      "part": "vent_stub",
+      "drawn_height_mm": 1200.0,
+      "note": "vent DN15 riser at (x 300, y 80), z 860..1200 at the line datum; the schedule 800 datum is carried in height_mm",
+      "dn": "DN15",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "vent"
+    },
+    "N5": {
+      "style": "carried",
+      "face": "top",
+      "note": "power terminal (SF-FILM_CAST bus) - a cable-schedule row: carried verbatim, never drawn",
+      "dn": "cable",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-FILM_CAST, 480 V or 208/120 V AC (bus per AQS-ELEC-002))"
+    }
+  },
   "frame_bbox_mm": [
     1500.0,
     800.0,

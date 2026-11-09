@@ -100,9 +100,18 @@
       "schedule_rating": "Class 150",
       "service": "vent",
       "note": "vent flush at the envelope top; schedule datum 800 mm is the box top"
+    },
+    "N8": {
+      "style": "carried",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-BMED_UPW_POLISH, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+      "note": "power terminal row - a cable schedule row: carried verbatim, never drawn"
     }
   },
-  "nozzle_count_schedule": 7,
+  "nozzle_count_schedule": 8,
   "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: atmospheric joints are hose, bore not calculated); N1 DN50 VCD distillate in on -Y at z 160; the four product/reject rows on +Y at z 600; drain and vent flush at the envelope faces; the schedule rating column (Class 150) carried verbatim as text",
   "part_mass_kg": {
     "plinth": 94.2,

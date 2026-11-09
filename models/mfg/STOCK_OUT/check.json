@@ -1,4 +1,116 @@
 {
+  "nozzles_drawn": {
+    "N1": {
+      "style": "solids",
+      "face": "inlet",
+      "part": "tier_decks",
+      "drawn_height_mm": 160.0,
+      "note": "plate/sheet, stock-inlet row: received on the tier decks (deck tops z 160/600/1000; the z 160 deck carries the 160 datum); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "plate/sheet"
+    },
+    "N2": {
+      "style": "solids",
+      "face": "inlet",
+      "part": "tier_decks",
+      "drawn_height_mm": 160.0,
+      "note": "rod/profile, stock-inlet row: received on the tier decks (deck tops z 160/600/1000; the z 160 deck carries the 160 datum); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "rod/profile"
+    },
+    "N3": {
+      "style": "solids",
+      "face": "inlet",
+      "part": "tier_decks",
+      "drawn_height_mm": 160.0,
+      "note": "wire, stock-inlet row: received on the tier decks (deck tops z 160/600/1000; the z 160 deck carries the 160 datum); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "wire"
+    },
+    "N4": {
+      "style": "solids",
+      "face": "inlet",
+      "part": "tier_decks",
+      "drawn_height_mm": 160.0,
+      "note": "sintered stock, stock-inlet row: received on the tier decks (deck tops z 160/600/1000; the z 160 deck carries the 160 datum); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "sintered stock"
+    },
+    "N5": {
+      "style": "solids",
+      "face": "inlet",
+      "part": "tier_decks",
+      "drawn_height_mm": 160.0,
+      "note": "as-cast stock, stock-inlet row: received on the tier decks (deck tops z 160/600/1000; the z 160 deck carries the 160 datum); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "as-cast stock"
+    },
+    "N6": {
+      "style": "solids",
+      "face": "inlet",
+      "part": "tier_decks",
+      "drawn_height_mm": 160.0,
+      "note": "powder stock, stock-inlet row: received on the tier decks (deck tops z 160/600/1000; the z 160 deck carries the 160 datum); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "powder stock"
+    },
+    "N7": {
+      "style": "solids",
+      "face": "inlet",
+      "part": "tier_decks",
+      "drawn_height_mm": 160.0,
+      "note": "investment casting, stock-inlet row: received on the tier decks (deck tops z 160/600/1000; the z 160 deck carries the 160 datum); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "investment casting"
+    },
+    "N8": {
+      "style": "solids",
+      "face": "+X",
+      "part": "issue_sill",
+      "drawn_height_mm": 600.0,
+      "note": "formed-metal issue at the +X face: issue sill (z 480..640) over the z 600 deck with edge stops above each tier; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "formed metal product to the store"
+    },
+    "N9": {
+      "style": "drain",
+      "face": "bottom",
+      "part": "drain_well",
+      "drawn_height_mm": 0.0,
+      "note": "nominal floor drain flush at the envelope bottom (z 0), sump face at the 50 datum",
+      "dn": "DN15",
+      "height_mm": 50.0,
+      "schedule_rating": "Class 150",
+      "service": "drain"
+    },
+    "N10": {
+      "style": "vent",
+      "face": "top",
+      "part": "vent_stub",
+      "drawn_height_mm": 1500.0,
+      "note": "vent DN15 stub at (x 600, y 400), flush at the envelope top (z 1475..1500); the schedule 800 datum is carried in height_mm",
+      "dn": "DN15",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "vent"
+    }
+  },
   "rack_bbox_mm": [
     1200.0,
     800.0,

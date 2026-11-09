@@ -1,4 +1,70 @@
 {
+  "nozzles_drawn": {
+    "N1": {
+      "style": "solids",
+      "face": "+X",
+      "part": "ca_tap_group",
+      "note": "Ca-metal tap: DN80-class well, crest and discharge lip flush at the +X face (lip z 555..610); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "Ca metal"
+    },
+    "N2": {
+      "style": "stub",
+      "face": "-X",
+      "part": "brine_inlet_group",
+      "drawn_height_mm": 160.0,
+      "note": "CaCl2 brine concentrate in: chute flush at the -X face (z 130..220) and the DN44-class lance into the bath at z 160",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "CaCl2 brine concentrate (mining-waste class)"
+    },
+    "N3": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "cl2_stub",
+      "x_mm": 598.0,
+      "drawn_height_mm": 600.0,
+      "note": "chlorine-export DN15 stub flush at the +Y face",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "chlorine byproduct export (water-treatment class)"
+    },
+    "N4": {
+      "style": "drain",
+      "face": "bottom",
+      "part": "drain_well",
+      "drawn_height_mm": 0.0,
+      "note": "drain well flush at the envelope bottom (z 0), sump face at the 50 datum; frozen-salt drain pig",
+      "dn": "DN15",
+      "height_mm": 50.0,
+      "schedule_rating": "Class 150",
+      "service": "drain"
+    },
+    "N5": {
+      "style": "vent",
+      "face": "top",
+      "part": "vent_stub",
+      "drawn_height_mm": 800.0,
+      "note": "vent DN15 stub hung on the offtake riser at z 800, out on the -Y side",
+      "dn": "DN15",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "vent"
+    },
+    "N6": {
+      "style": "carried",
+      "face": "top",
+      "note": "power terminal (SF-CA_POT bus) - a cable-schedule row: carried verbatim, never drawn",
+      "dn": "cable",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-CA_POT, 480 V or 208/120 V AC (bus per AQS-ELEC-002))"
+    }
+  },
   "shell_bbox_mm": [
     800.3,
     800.1,

@@ -26,7 +26,7 @@ Every dimension is an authority figure or a named layout choice:
 - Wetted hardware 316L per duty section 3 (UPW service); CA 0 mm.
 - A-MACH guard and anchors: the hold-down frame is the guard; 8 slab anchors in
   fasteners.csv.
-- Nozzles: all 7 rows of docs-authority/nozzles/BMED_UPW_POLISH.csv drawn at tag,
+- Nozzles: all rows of docs-authority/nozzles/BMED_UPW_POLISH.csv drawn at tag,
   face, height and bore as atmospheric open-bore tube stubs flush at the envelope
   faces: N1 DN50 VCD distillate in on -Y at z 160; N2 DN25 UPW, N3 DN25 fab UPW,
   N4 DN15 remineralizer and N5 DN15 polish reject on +Y at z 600; N6 drain flush
@@ -162,6 +162,13 @@ for (face, z), rows in sorted(groups.items()):
 noz, drawn = None, {}
 for r in schedule:
     tag, dnl, h = r["tag"], r["size"], float(r["height_mm"])
+    if dnl == "cable":                                    # power terminal row: carried, never drawn
+        drawn[tag] = {"style": "carried", "dn": dnl, "face": r["face"],
+                      "height_mm": r["height_mm"], "schedule_rating": r["rating"],
+                      "service": r["service"],
+                      "note": "power terminal row - a cable schedule row: carried "
+                              "verbatim, never drawn"}
+        continue
     face = FACE_OF.get(r["face"], r["face"])
     od = od_of(r)
     note = "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
@@ -286,7 +293,8 @@ rows = [
            "in on -Y, the four product/reject rows on +Y, drain and vent "
            "flush at the envelope faces", len(schedule), "316L tube",
      mass["nozzles"], "make",
-     "7-row issued schedule verbatim; atmospheric hose per duty section 4"],
+     "issued schedule verbatim; the cable schedule row is carried, never drawn; "
+     "atmospheric hose per duty section 4"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)

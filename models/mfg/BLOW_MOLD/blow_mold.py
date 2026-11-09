@@ -24,7 +24,7 @@ Every dimension is an authority figure or a named layout choice:
   figures 2.8 kg/h at 3.0 h/d on 8.407 kg/d wax feed are node figures.
 - Guard and anchors: the four-post guard frame; 8 slab anchors in
   fasteners.csv. Scrap goes to OIL_FRAC (node design line).
-- Nozzles: all 4 rows of docs-authority/nozzles/BLOW_MOLD.csv drawn at tag,
+- Nozzles: all rows of docs-authority/nozzles/BLOW_MOLD.csv drawn at tag,
   face, height and bore: N1 drain flush at the envelope bottom (50 datum); N2
   vent flush at the envelope top (800 datum is a schedule placeholder under the
   1600 box); N3 (C11-C18 to the mold) and N4 (blown parts) are `solids`
@@ -134,6 +134,13 @@ for (face, z), rows in sorted(groups.items()):
 noz, drawn = None, {}
 for r in schedule:
     tag, dnl, h = r["tag"], r["size"], float(r["height_mm"])
+    if dnl == "cable":                                    # power terminal row: carried, never drawn
+        drawn[tag] = {"style": "carried", "dn": dnl, "face": r["face"],
+                      "height_mm": r["height_mm"], "schedule_rating": r["rating"],
+                      "service": r["service"],
+                      "note": "power terminal row - a cable schedule row: carried "
+                              "verbatim, never drawn"}
+        continue
     note = "atmospheric hose joint per duty section 4"
     if r["face"] == "bottom":                             # N1: drain flush at the envelope bottom
         s = tube_z("DN15", T_BASE + 15.0)
@@ -258,7 +265,8 @@ rows = [
            "flush at the envelope faces; the two solids transfer rows drawn "
            "DN15 bore not calculated", len(schedule), "316L (duty section 3)",
      mass["nozzles"], "make (AQS-BOM-SC-001)",
-     "4-row issued schedule verbatim; atmospheric hose per duty section 4"],
+     "issued schedule verbatim; the cable schedule row is carried, never drawn; "
+     "atmospheric hose per duty section 4"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)

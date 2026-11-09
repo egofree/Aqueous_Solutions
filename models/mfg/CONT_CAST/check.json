@@ -1,4 +1,64 @@
 {
+  "nozzles_drawn": {
+    "N1": {
+      "style": "stub",
+      "face": "-X",
+      "part": "melt_inlet",
+      "drawn_height_mm": 160.0,
+      "note": "melt DN15 stub flush at the -X face, set in to the mould inlet pass",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "melt to continuous caster"
+    },
+    "N2": {
+      "style": "solids",
+      "face": "+X",
+      "part": "billet_stop",
+      "note": "continuous billet/slab stop flush at the +X face (z 610..730); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "continuous billet/slab"
+    },
+    "N3": {
+      "style": "solids",
+      "face": "+Y",
+      "part": "stock_stubs",
+      "x_mm": [
+        400.0,
+        640.0
+      ],
+      "drawn_height_mm": 600.0,
+      "note": "as-cast-stock DN15 stub pair flush at the +Y face at x 400 and 640; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "as-cast stock"
+    },
+    "N4": {
+      "style": "drain",
+      "face": "bottom",
+      "part": "drain_well",
+      "drawn_height_mm": 0.0,
+      "note": "drain well flush at the envelope bottom (z 0), sump face at the 50 datum",
+      "dn": "DN15",
+      "height_mm": 50.0,
+      "schedule_rating": "Class 150",
+      "service": "drain"
+    },
+    "N5": {
+      "style": "vent",
+      "face": "top",
+      "part": "vent_stub",
+      "drawn_height_mm": 800.0,
+      "note": "vent DN15 riser at x 750, deck z 605 up to the 800 datum",
+      "dn": "DN15",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "vent"
+    }
+  },
   "frame_bbox_mm": [
     1500.0,
     800.0,

@@ -158,10 +158,28 @@
       "schedule_rating": "Class 150",
       "service": "digest NaOH, 20 wt%",
       "note": "atmospheric open-bore tube connection, shell to the envelope face (duty section 4); schedule datum 160 mm clamped up to 175.0 mm: the datum predate the leg-mounted vessel (placeholder elevation; hold, WORK_ORDER W12)"
+    },
+    "N13": {
+      "style": "carried",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (IA-TRIM-HX6, HX-6 electric trim at the process)",
+      "note": "power terminal row - a cable schedule row: carried verbatim, never drawn"
+    },
+    "N14": {
+      "style": "carried",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-GLASS_DIGEST, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+      "note": "power terminal row - a cable schedule row: carried verbatim, never drawn"
     }
   },
-  "nozzle_count_schedule": 12,
-  "nozzle_idiom": "atmospheric open-bore tube connections from the shell to the envelope faces (duty section 4: atmospheric tube or hose); the 12-row issued schedule replaces the 5-row study layout of the Oct-31-era build; placeholder datums clamped into the shell span [175, 525] (holds); vent riser flush at the envelope top, drain flush at the bottom; the N11 solids row drawn DN15, bore not calculated (plan W4); the schedule rating column (Class 150) carried verbatim as text, no flange drawn (no process pressure stated)",
+  "nozzle_count_schedule": 14,
+  "nozzle_idiom": "atmospheric open-bore tube connections from the shell to the envelope faces (duty section 4: atmospheric tube or hose); the issued schedule replaces the study layout of the Oct-31-era build; placeholder datums clamped into the shell span [175, 525] (holds); vent riser flush at the envelope top, drain flush at the bottom; the N11 solids row drawn DN15, bore not calculated (plan W4); the schedule rating column (Class 150) carried verbatim as text, no flange drawn (no process pressure stated)",
   "part_mass_kg": {
     "frame": 76.36,
     "legs": 1.49,

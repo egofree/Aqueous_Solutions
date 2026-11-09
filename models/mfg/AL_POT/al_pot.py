@@ -230,7 +230,49 @@ rho = {"casing": 7.85e-6, "fibre_lining": 128e-9, "ram_lining": 1.55e-6, "hood_h
        "ceramic_sleeves": 2.7e-6, "drain_well": 1.55e-6}
 mass = {k: round(v.val().Volume() * rho[k], 1) for k, v in parts.items()}
 vol_melt = sum(v.val().Volume() for v in inv.values())
+# ---------------- acceptance record: nozzles_drawn -------------------------------
+# Every row of docs-authority/nozzles/AL_POT.csv, recorded from the placement this
+# build draws. The power-terminal row is a cable-schedule row: carried verbatim,
+# never drawn.
+sched_rows = {}
+with open(HERE.parents[2] / "docs-authority" / "nozzles" / "AL_POT.csv") as f:
+    for _r in csv.DictReader(f):
+        sched_rows[_r["tag"]] = _r
+PLACE = {
+    "N1": {"style": "solids", "face": "+X", "part": "metal_siphon",
+           "note": "Al-metal siphon: DN80-class well, crest and discharge lip flush at the "
+                   "+X face (lip z 605..660); solids row, bore not calculated"},
+    "N2": {"style": "stub", "face": "-Y", "part": "DN15_stubs", "x_mm": 202.0,
+           "drawn_height_mm": 600.0,
+           "note": "Cl2-return DN15 stub flush at the -Y face, with its ceramic lining sleeve"},
+    "N3": {"style": "solids", "face": "-X", "part": "feed_chute_group", "drawn_height_mm": 160.0,
+           "note": "anhydrous AlCl3 feed: chute box flush at the -X face (z 90..230) and the "
+                   "DN100 lance at z 160; solids row, bore not calculated"},
+    "N4": {"style": "stub", "face": "+Y", "part": "DN15_stubs", "x_mm": 598.0,
+           "drawn_height_mm": 600.0,
+           "note": "chlorine-export DN15 stub flush at the +Y face, with its ceramic lining sleeve"},
+    "N5": {"style": "drain", "face": "bottom", "part": "drain_well", "drawn_height_mm": 0.0,
+           "note": "drain well flush at the envelope bottom (z 0), sump face at the 50 datum; "
+                   "frozen-salt drain pig"},
+    "N6": {"style": "vent", "face": "top", "part": "vent_stub", "drawn_height_mm": 800.0,
+           "note": "vent DN15 stub hung on the offtake riser at z 800, out on the +Y side"},
+    "N7": {"style": "carried", "face": "top",
+           "note": "power terminal (SF-AL_POT bus) - a cable-schedule row: carried verbatim, "
+                   "never drawn"},
+}
+drawn = {}
+for tag, rec in PLACE.items():
+    row = sched_rows[tag]
+    rec = dict(rec)
+    rec["dn"] = row["size"] if rec["style"] == "carried" else "DN15"
+    rec["height_mm"] = float(row["height_mm"])
+    rec["schedule_rating"] = row["rating"]
+    rec["service"] = row["service"]
+    drawn[tag] = rec
+assert set(drawn) == set(sched_rows), sorted(set(drawn) ^ set(sched_rows))
+
 report = {
+    "nozzles_drawn": drawn,
     "shell_bbox_mm": [round(sb.xlen, 1), round(sb.ylen, 1), round(sb.zlen, 1)],
     "shell_bbox_abs": [round(sb.xmin, 1), round(sb.ymin, 1), round(sb.zmin, 1),
                        round(sb.xmax, 1), round(sb.ymax, 1), round(sb.zmax, 1)],

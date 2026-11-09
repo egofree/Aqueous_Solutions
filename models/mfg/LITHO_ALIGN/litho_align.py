@@ -27,10 +27,10 @@ Every dimension is an authority figure or a named layout choice:
   hold - no F-MACH row names `aligner` - so the acceptance set is A-core + A-SC;
   the guard and anchor hardware is drawn per the machine practice the lane
   applies.)
-- Nozzles: both rows of docs-authority/nozzles/LITHO_ALIGN.csv drawn at tag,
+- Nozzles: all rows of docs-authority/nozzles/LITHO_ALIGN.csv drawn at tag,
   face and bore: N1 drain flush at the envelope bottom (50 datum), N2 vent flush
   at the envelope top (800 datum is the box top). Duty section 4: "No present
-  edge. No nozzle." - the two schedule rows are the envelope hardware rows;
+  edge. No nozzle." - the schedule rows are the envelope hardware rows;
   atmospheric, hose per the duty. AQS-LITH-001 section 4 names one SB350 hose
   barb as the machine service interface; it is not a schedule row and is not
   drawn (named, WORK_ORDER W12).
@@ -117,6 +117,13 @@ schedule = P["nozzles"]
 noz, drawn = None, {}
 for r in schedule:
     tag, dnl, h = r["tag"], r["size"], float(r["height_mm"])
+    if dnl == "cable":                                    # power terminal row: carried, never drawn
+        drawn[tag] = {"style": "carried", "dn": dnl, "face": r["face"],
+                      "height_mm": r["height_mm"], "schedule_rating": r["rating"],
+                      "service": r["service"],
+                      "note": "power terminal row - a cable schedule row: carried "
+                              "verbatim, never drawn"}
+        continue
     note = "atmospheric hose joint per duty section 4"
     if r["face"] == "bottom":                             # N1: drain flush at the envelope bottom
         s = tube_z("DN15", T_BASE + 15.0)
@@ -194,7 +201,7 @@ report = {
     },
     "nozzles_drawn": drawn,
     "nozzle_count_schedule": len(schedule),
-    "nozzle_idiom": "both schedule rows are envelope hardware rows drawn flush "
+    "nozzle_idiom": "the schedule rows are envelope hardware rows drawn flush "
                     "at the envelope faces (duty section 4: 'No present edge. "
                     "No nozzle.'); the AQS-LITH-001 section 4 SB350 hose barb "
                     "is the machine service interface and is not a schedule "
@@ -238,7 +245,8 @@ rows = [
     ["8", "Nozzle set per docs-authority/nozzles/LITHO_ALIGN.csv: drain and "
            "vent flush at the envelope faces", len(schedule), "aluminium 6061",
      mass["nozzles"], "make (AQS-BOM-SC-001)",
-     "2-row envelope hardware schedule verbatim; duty section 4: no present "
+     "envelope hardware schedule verbatim; the cable schedule row is carried, "
+     "never drawn; duty section 4: no present "
      "process edge"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
@@ -283,7 +291,7 @@ p["layout"] = {
              "140..940 at y 300, mask holder x 400..600, LED head x 430..550 "
              "at z 190..250; guard posts at the envelope corners",
     "supports": "base plate + guard frame + 4 bench anchors",
-    "nozzle_spread": "the two schedule rows are envelope hardware: drain at x "
+    "nozzle_spread": "the schedule rows are envelope hardware: drain at x "
                      "430 flush at the bottom, vent at x 770 flush at the top",
     "hardware_idiom": "connection hardware flush at the envelope faces; nothing "
                       "protrudes, bbox inside the node envelope",

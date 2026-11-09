@@ -138,9 +138,18 @@
       "schedule_rating": "Class 150",
       "service": "vent",
       "note": "vent riser on the top head, flush at the envelope top; the schedule datum 800 is the placeholder (hold, WORK_ORDER W12)"
+    },
+    "N9": {
+      "style": "carried",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-POLY_F, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+      "note": "power terminal row - a cable schedule row: carried verbatim, never drawn"
     }
   },
-  "nozzle_count_schedule": 8,
+  "nozzle_count_schedule": 9,
   "nozzle_idiom": "atmospheric open-bore tube connections flush at the envelope faces (duty section 4: atmospheric joints are hose; the W4 110 percent rule draws no flange where no process pressure is stated); the schedule rating column (Class 150) is carried verbatim as text; datums draw as issued; the N3/N4 solids rows drawn DN15, bore not calculated (plan W4)",
   "part_mass_kg": {
     "plinth_stand": 75.0,

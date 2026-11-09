@@ -1,4 +1,94 @@
 {
+  "nozzles_drawn": {
+    "N1": {
+      "style": "solids",
+      "face": "-X",
+      "part": "shell_inlet",
+      "drawn_height_mm": 160.0,
+      "note": "green-shell in-chute flush at the -X face beside the door (y 130..250, z 40..190); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "green shell"
+    },
+    "N2": {
+      "style": "solids",
+      "face": "+X",
+      "part": "fired_out",
+      "note": "fired-shell out-chute flush at the +X face (y 340..460, z 550..650); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "fired shell"
+    },
+    "N3": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "condensate_stub",
+      "x_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "note": "wax-condensate-reclaim DN15 stub flush at the +Y face, at the condenser pan",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "wax condensate reclaim"
+    },
+    "N4": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "wax_stub",
+      "x_mm": 700.0,
+      "drawn_height_mm": 600.0,
+      "note": "unrecovered-wax DN15 stub flush at the +Y face, to the oil line",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "unrecovered wax to oil line"
+    },
+    "N5": {
+      "style": "stub",
+      "face": "-Y",
+      "part": "offgas_stub",
+      "x_mm": 700.0,
+      "drawn_height_mm": 600.0,
+      "note": "dewax/burnout off-gas DN15 stub flush at the -Y face, at the collector hood",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "dewax/burnout off-gas (burned wax + steam)"
+    },
+    "N6": {
+      "style": "drain",
+      "face": "bottom",
+      "part": "drain_well",
+      "drawn_height_mm": 0.0,
+      "note": "drain well flush at the envelope bottom (z 0), sump face at the 50 datum",
+      "dn": "DN15",
+      "height_mm": 50.0,
+      "schedule_rating": "Class 150",
+      "service": "drain"
+    },
+    "N7": {
+      "style": "vent",
+      "face": "top",
+      "part": "vent_stub",
+      "drawn_height_mm": 800.0,
+      "note": "vent DN15 stub at the furnace centreline (x 400, y 400) through the roof pass, z 795..855 at the 800 datum",
+      "dn": "DN15",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "vent"
+    },
+    "N8": {
+      "style": "carried",
+      "face": "top",
+      "note": "power terminal (SF-SHELL_BURNOUT bus) - a cable-schedule row: carried verbatim, never drawn",
+      "dn": "cable",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-SHELL_BURNOUT, 480 V or 208/120 V AC (bus per AQS-ELEC-002))"
+    }
+  },
   "casing_bbox_mm": [
     1000.0,
     1000.0,

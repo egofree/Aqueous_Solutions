@@ -24,7 +24,7 @@ corner. Every dimension is an authority figure or a named layout choice:
   shaft, 0.75 kW gearmotor. PVDF-sheathed D 50 shaft through the lid, solid PVDF
   impeller at z 250 inside the coil. The drive bridge sits about 400 mm above the
   lid, outside the envelope, and is not modeled.
-- Nozzles: all 61 rows of docs-authority/nozzles/LEACH_CSTR_1.csv drawn at tag,
+- Nozzles: all rows of docs-authority/nozzles/LEACH_CSTR_1.csv drawn at tag,
   face, height and bore (tracker W2). Inlets are the -Y face, outlets the +Y face
   (duty section 4); the along-face x positions are the registered layout choice.
   Atmospheric joints are hose barbs (duty sections 4 and 6); solids rows are DN15
@@ -128,6 +128,8 @@ def od_of(row):
 schedule = [r for r in P["nozzles"]]
 groups = {}                                               # (face, height) -> rows
 for r in schedule:
+    if r["size"] == "cable":                              # carried, never drawn: no pack slot
+        continue
     groups.setdefault((FACE_OF.get(r["face"], r["face"]), float(r["height_mm"])), []).append(r)
 
 # single-row packing per face/height group, centred on the face mid-length (the
@@ -144,9 +146,16 @@ for (face, z), rows in sorted(groups.items()):
         layout_x[r["tag"]] = round(x + w, 1)
         x += 2 * w + 8.0
 
-noz, drawn = None, {}
+noz, drawn, conducted = None, {}, {}
 for r in schedule:
     tag, dnl, h = r["tag"], r["size"], float(r["height_mm"])
+    if dnl == "cable":                                    # power terminal row: carried, never drawn
+        drawn[tag] = {"style": "carried", "dn": dnl, "face": r["face"],
+                      "height_mm": r["height_mm"], "schedule_rating": r["rating"],
+                      "service": r["service"],
+                      "note": "power terminal row - a cable schedule row: carried "
+                              "verbatim, never drawn"}
+        continue
     face = FACE_OF.get(r["face"], r["face"])
     dnl_hw = "DN15" if dnl == "solids" else dnl
     if r["face"] == "bottom":                             # N9: flush at z 0, boss to the datum
@@ -179,7 +188,7 @@ gx = 250.0
 gland = rod(16.0, (gx, W - 46.0, 600.0), "Y", 46.0).cut(
     rod(dn.pipe_od("DN15") / 2 - dn.pipe_wall("DN15"), (gx, W - 96.0, 600.0), "Y", 60.0))
 noz = noz.union(gland)
-drawn["IA-E-LEACH"] = {"style": "gland", "dn": "DN15", "face": "+Y", "height_mm": 600,
+conducted["IA-E-LEACH"] = {"style": "gland", "dn": "DN15", "face": "+Y", "height_mm": 600,
                        "x_mm": gx, "note": "conductor gland, not a hose (duty section 4 prose; "
                        "electrical edge IA-E-LEACH, not a schedule row)"}
 parts["nozzles"] = noz
@@ -286,6 +295,7 @@ report = {
                  "impeller_z_mm": AG["impeller_z_mm"],
                  "note": "drive bridge and lid seal outside the envelope, not modeled"},
     "nozzles_drawn": drawn,
+    "conductors_drawn": conducted,
     "nozzle_count_schedule": len(schedule),
     "nozzle_idiom": "hose barbs flush at the envelope faces per the atmospheric duty "
     "(lib/nozzles.place_on_face); solids rows DN15 labeled bore not calculated; schedule rating "
@@ -296,7 +306,7 @@ report = {
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
 
 # ---------------------------------------------------------------- BOM (generated from the model)
-n_barb = sum(1 for r in schedule if r["size"] != "solids")
+n_barb = sum(1 for r in schedule if str(r["size"]).startswith("DN"))
 n_solid = sum(1 for r in schedule if r["size"] == "solids")
 rows = [
     ["1", f"CPVC tank shell, body {TX1 - TX0:g} x {TY1 - TY0:g} x {H:g} mm inside the reserved "
@@ -308,7 +318,8 @@ rows = [
           f"{n_solid} solids ports at DN15 (bore not calculated)", len(schedule), "CPVC",
      mass["nozzles"], "make",
      "schedule tags/faces/heights verbatim; atmospheric hose per duty sections 4 and 6; "
-     "barb profile a study proportion (lib/nozzles.py)"],
+     "barb profile a study proportion (lib/nozzles.py); the two cable schedule rows "
+     "are carried, never drawn"],
     ["3", "IA-E-LEACH conductor gland boss, DN15 passage", 1, "CPVC", "", "make",
      "duty section 4 prose (electrical edge, not a schedule row); conductor, not a hose"],
     ["4", f"FRP belt set, pultruded channel {BELTS['section']}, segmented at the port rows "

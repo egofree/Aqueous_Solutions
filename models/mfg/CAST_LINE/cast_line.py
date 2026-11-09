@@ -270,7 +270,43 @@ rho = {"frame": 7.85e-6, "deck": 7.85e-6, "mould_seats": 7.85e-6, "mould_inserts
 mass = {k: round(bp[k].val().Volume() * rho[k], 1) for k in bp}
 valid = all(v.val().isValid() for v in bp.values())
 
+# ---------------- acceptance record: nozzles_drawn -------------------------------
+# Every row of docs-authority/nozzles/CAST_LINE.csv, recorded from the placement this
+# build draws (the same data the PORTS cross-check above reads).
+drawn = {
+    "N1": {"style": "flanged_stub", "dn": "DN15", "face": "-X", "height_mm": 160.0,
+           "drawn_height_mm": 160.0, "part": "n1_port",
+           "schedule_rating": "Class 150", "service": sched["N1"]["service"],
+           "note": "DN15 Class 150 flange OD95 flush at the -X face, spigot into the trough head"},
+    "N2": {"style": "solids", "dn": "DN15", "face": "-Y", "height_mm": 600.0,
+           "drawn_height_mm": 600.0, "part": "scrap_chute",
+           "schedule_rating": "Class 150", "service": sched["N2"]["service"],
+           "note": "foundry-scrap chute flush at the -Y face, mouth top at the z 600 datum; "
+                   "solids row, bore not calculated"},
+    "N3": {"style": "solids", "dn": "DN15", "face": "+X", "height_mm": 600.0,
+           "drawn_height_mm": 600.0, "part": "lane_guides",
+           "schedule_rating": "Class 150", "service": sched["N3"]["service"],
+           "note": "billet-to-roll discharge lane guide flush at the +X face (guide z 560..600); "
+                   "solids row, bore not calculated"},
+    "N4": {"style": "solids", "dn": "DN15", "face": "+X", "height_mm": 600.0,
+           "drawn_height_mm": 600.0, "part": "lane_guides",
+           "schedule_rating": "Class 150", "service": sched["N4"]["service"],
+           "note": "billet-to-extrude discharge lane guide flush at the +X face; solids row, "
+                   "bore not calculated"},
+    "N5": {"style": "flanged_stub", "dn": "DN15", "face": "bottom", "height_mm": 50.0,
+           "drawn_height_mm": 50.0, "part": "n5_port",
+           "schedule_rating": "Class 150", "service": sched["N5"]["service"],
+           "note": "DN15 Class 150 drain flange under the trough drain well, face plane at the "
+                   "z 50 datum, spigot to the frozen-slug pig tube"},
+    "N6": {"style": "flanged_stub", "dn": "DN15", "face": "top", "height_mm": 800.0,
+           "drawn_height_mm": 800.0, "part": "n6_port",
+           "schedule_rating": "Class 150", "service": sched["N6"]["service"],
+           "note": "DN15 Class 150 vent flange on the hood-plenum top plate at the z 800 datum"},
+}
+assert set(drawn) == set(sched), sorted(set(drawn) ^ set(sched))
+
 report = {
+    "nozzles_drawn": drawn,
     "bbox_abs_mm": near,
     "bbox_exact": exact,
     "inside_size_mm": inside,

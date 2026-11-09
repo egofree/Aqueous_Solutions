@@ -135,7 +135,41 @@ rho = {"frame": 7.85e-6, "mould": 8.96e-6, "mould_jacket": 7.85e-6, "withdrawal_
        "melt_inlet": 7.85e-6, "billet_stop": 7.85e-6, "stock_stubs": 7.85e-6, "drain_well": 7.85e-6,
        "vent_stub": 7.85e-6}
 mass = {k: round(v.val().Volume() * rho[k], 1) for k, v in parts.items()}
+# ---------------- acceptance record: nozzles_drawn -------------------------------
+# Every row of docs-authority/nozzles/CONT_CAST.csv, recorded from the placement
+# this build draws.
+sched_rows = {}
+with open(HERE.parents[2] / "docs-authority" / "nozzles" / "CONT_CAST.csv") as f:
+    for _r in csv.DictReader(f):
+        sched_rows[_r["tag"]] = _r
+PLACE = {
+    "N1": {"style": "stub", "face": "-X", "part": "melt_inlet", "drawn_height_mm": 160.0,
+           "note": "melt DN15 stub flush at the -X face, set in to the mould inlet pass"},
+    "N2": {"style": "solids", "face": "+X", "part": "billet_stop",
+           "note": "continuous billet/slab stop flush at the +X face (z 610..730); solids row, "
+                   "bore not calculated"},
+    "N3": {"style": "solids", "face": "+Y", "part": "stock_stubs", "x_mm": [400.0, 640.0],
+           "drawn_height_mm": 600.0,
+           "note": "as-cast-stock DN15 stub pair flush at the +Y face at x 400 and 640; solids "
+                   "row, bore not calculated"},
+    "N4": {"style": "drain", "face": "bottom", "part": "drain_well", "drawn_height_mm": 0.0,
+           "note": "drain well flush at the envelope bottom (z 0), sump face at the 50 datum"},
+    "N5": {"style": "vent", "face": "top", "part": "vent_stub", "drawn_height_mm": 800.0,
+           "note": "vent DN15 riser at x 750, deck z 605 up to the 800 datum"},
+}
+drawn = {}
+for tag, rec in PLACE.items():
+    row = sched_rows[tag]
+    rec = dict(rec)
+    rec["dn"] = row["size"] if rec["style"] == "carried" else "DN15"
+    rec["height_mm"] = float(row["height_mm"])
+    rec["schedule_rating"] = row["rating"]
+    rec["service"] = row["service"]
+    drawn[tag] = rec
+assert set(drawn) == set(sched_rows), sorted(set(drawn) ^ set(sched_rows))
+
 report = {
+    "nozzles_drawn": drawn,
     "frame_bbox_mm": [round(sb.xlen, 1), round(sb.ylen, 1), round(sb.zlen, 1)],
     "inside_size_mm_shell": inside_shell,
     "connection_overhang_mm": overhang,

@@ -1,4 +1,204 @@
 {
+  "nozzles_drawn": {
+    "N1": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "melt_stubs",
+      "x_mm": 300.0,
+      "drawn_height_mm": 600.0,
+      "note": "melt DN15 stub flush at the +Y face, off the shared three-stub melt bank at x 300",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "molten metal"
+    },
+    "N2": {
+      "style": "solids",
+      "face": "-X",
+      "part": "charge_chute",
+      "drawn_height_mm": 160.0,
+      "note": "foundry scrap, charge-chute row: the one charge chute flush at the -X face (y 420..580, mouth z 130..220) takes every charge row; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "foundry scrap"
+    },
+    "N3": {
+      "style": "solids",
+      "face": "-X",
+      "part": "charge_chute",
+      "drawn_height_mm": 160.0,
+      "note": "Ti and other metal powders/sponge, charge-chute row: the one charge chute flush at the -X face (y 420..580, mouth z 130..220) takes every charge row; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "Ti and other metal powders/sponge"
+    },
+    "N4": {
+      "style": "solids",
+      "face": "-X",
+      "part": "charge_chute",
+      "drawn_height_mm": 160.0,
+      "note": "flux, charge-chute row: the one charge chute flush at the -X face (y 420..580, mouth z 130..220) takes every charge row; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "flux"
+    },
+    "N5": {
+      "style": "solids",
+      "face": "-X",
+      "part": "charge_chute",
+      "drawn_height_mm": 160.0,
+      "note": "EW cathode/powder metals, charge-chute row: the one charge chute flush at the -X face (y 420..580, mouth z 130..220) takes every charge row; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "EW cathode/powder metals"
+    },
+    "N6": {
+      "style": "solids",
+      "face": "-X",
+      "part": "charge_chute",
+      "drawn_height_mm": 160.0,
+      "note": "Mo metal, charge-chute row: the one charge chute flush at the -X face (y 420..580, mouth z 130..220) takes every charge row; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "Mo metal"
+    },
+    "N7": {
+      "style": "solids",
+      "face": "-X",
+      "part": "charge_chute",
+      "drawn_height_mm": 160.0,
+      "note": "Cr metal, charge-chute row: the one charge chute flush at the -X face (y 420..580, mouth z 130..220) takes every charge row; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "Cr metal"
+    },
+    "N8": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "melt_stubs",
+      "x_mm": 480.0,
+      "drawn_height_mm": 600.0,
+      "note": "melt DN15 stub flush at the +Y face, off the shared three-stub melt bank at x 480",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "melt to continuous caster"
+    },
+    "N9": {
+      "style": "solids",
+      "face": "+X",
+      "part": "slag_spout",
+      "note": "slag-return spout at the crucible lip (x 500..560, z 580..610, cut through the hood line); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "slag return"
+    },
+    "N10": {
+      "style": "solids",
+      "face": "-X",
+      "part": "charge_chute",
+      "drawn_height_mm": 160.0,
+      "note": "Al metal, charge-chute row: the one charge chute flush at the -X face (y 420..580, mouth z 130..220) takes every charge row; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "Al metal"
+    },
+    "N11": {
+      "style": "solids",
+      "face": "-X",
+      "part": "charge_chute",
+      "drawn_height_mm": 160.0,
+      "note": "Mg metal, charge-chute row: the one charge chute flush at the -X face (y 420..580, mouth z 130..220) takes every charge row; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "Mg metal"
+    },
+    "N12": {
+      "style": "solids",
+      "face": "-X",
+      "part": "charge_chute",
+      "drawn_height_mm": 160.0,
+      "note": "Ca metal, charge-chute row: the one charge chute flush at the -X face (y 420..580, mouth z 130..220) takes every charge row; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "Ca metal"
+    },
+    "N13": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "melt_stubs",
+      "x_mm": 660.0,
+      "drawn_height_mm": 600.0,
+      "note": "melt DN15 stub flush at the +Y face, off the shared three-stub melt bank at x 660",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "melt to atomizer when powder required"
+    },
+    "N14": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "melt_stubs",
+      "drawn_height_mm": 600.0,
+      "note": "investment-pour melt row on the shared +Y DN15 stub bank (bank x 300/480/660 carries the four melt-outlet rows, per BOM row 8); the pour_spout tilt lip is the +X pour outlet",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "melt for investment pour"
+    },
+    "N15": {
+      "style": "solids",
+      "face": "-X",
+      "part": "charge_chute",
+      "drawn_height_mm": 160.0,
+      "note": "manufacturing scrap return, charge-chute row: the one charge chute flush at the -X face (y 420..580, mouth z 130..220) takes every charge row; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "manufacturing scrap return"
+    },
+    "N16": {
+      "style": "drain",
+      "face": "bottom",
+      "part": "drain_well",
+      "drawn_height_mm": 0.0,
+      "note": "drain well flush at the envelope bottom (z 0), sump face at the 50 datum; frozen-salt drain pig",
+      "dn": "DN15",
+      "height_mm": 50.0,
+      "schedule_rating": "Class 150",
+      "service": "drain"
+    },
+    "N17": {
+      "style": "vent",
+      "face": "top",
+      "part": "vent_stub",
+      "drawn_height_mm": 800.0,
+      "note": "vent DN15 riser off the hood at x 500, set in through the hood plate above the 800 datum, free end at z 1000",
+      "dn": "DN15",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "vent"
+    },
+    "N18": {
+      "style": "carried",
+      "face": "top",
+      "note": "power terminal (SF-IND_MELT bus) - a cable-schedule row: carried verbatim, never drawn",
+      "dn": "cable",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-IND_MELT, 480 V or 208/120 V AC (bus per AQS-ELEC-002))"
+    }
+  },
   "shell_bbox_mm": [
     1000.0,
     1000.0,

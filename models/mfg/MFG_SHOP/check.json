@@ -12,7 +12,7 @@
   ],
   "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
   "graph_revision": "AD",
-  "solids": 34,
+  "solids": 35,
   "all_parts_valid": true,
   "machine": {
     "type": "machine-shop fitout per the node continuous note's authority (AQS-MFG-010 rev C, Table 2.1): bench deck over a 20 mm plinth inside a four-post hold-down/guard frame that pins the registry box (X-PAR-04), with the six shop machine tools as purchased-class envelopes per plan rule 6 - CNC vertical mill (7.5 kW), engine lathe (5.5 kW), band saw (1.5 kW), rotary-screw air compressor (4.0 kW), TIG/MIG welder (6.0 kW), bench grinder/drill-press/hand-tool set (2.0 kW); connected 26.5 kW, one 8 h shift, average 2.55 kW; shop-air DN15 header with four drop legs on the compressor service",
@@ -155,7 +155,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 534.1,
+      "x_mm": 548.8,
       "schedule_rating": "Class 150",
       "service": "scrap",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
@@ -166,7 +166,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 563.4,
+      "x_mm": 578.1,
       "schedule_rating": "Class 150",
       "service": "metal scrap",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
@@ -177,7 +177,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 426.8,
+      "x_mm": 412.1,
       "schedule_rating": "Class 150",
       "service": "goods in service",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
@@ -188,7 +188,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 592.7,
+      "x_mm": 607.4,
       "schedule_rating": "Class 150",
       "service": "shop scrap to the digester",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
@@ -276,7 +276,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 475.6,
+      "x_mm": 460.9,
       "schedule_rating": "Class 150",
       "service": "manufacturing scrap return",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
@@ -463,13 +463,33 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 504.9,
+      "x_mm": 490.2,
       "schedule_rating": "Class 150",
       "service": "finished crew textiles to the hab issue",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N34": {
+      "style": "carried",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-MFG_SHOP, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+      "note": "power terminal row - a cable schedule row: carried verbatim, never drawn"
+    },
+    "N35": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 519.5,
+      "schedule_rating": "Class 150",
+      "service": "finished-goods surplus export",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
     }
   },
-  "nozzle_count_schedule": 33,
+  "nozzle_count_schedule": 35,
   "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: DN15, no flange class, atmospheric tube or hose); the 19 solids rows (goods, scrap returns, plated sheet, stock issues) are non-piped transfers drawn DN15, bore not calculated (plan W4); N7 goods-in-service is the DN50 row on +Y at z 600; drain flush at the envelope bottom (50 datum), vent flush at the envelope top (800 datum is the box top); the schedule rating column (Class 150) carried verbatim as text",
   "part_mass_kg": {
     "plinth": 94.2,
@@ -477,7 +497,7 @@
     "frame": 76.36,
     "stations": 741.54,
     "shop_air": 3.37,
-    "nozzles": 2.39
+    "nozzles": 2.45
   },
   "cadquery": "2.8.0"
 }

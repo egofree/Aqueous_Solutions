@@ -1,4 +1,61 @@
 {
+  "nozzles_drawn": {
+    "N1": {
+      "style": "solids",
+      "face": "-X",
+      "part": "billet_stop",
+      "drawn_height_mm": 160.0,
+      "note": "billet-to-roll entry guide at the -X roll side (x 20..50, full height z 60..1010, so it covers the z 160 inlet datum); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "billet to roll"
+    },
+    "N2": {
+      "style": "solids",
+      "face": "+X",
+      "part": "sheet_guide",
+      "drawn_height_mm": 600.0,
+      "note": "plate/sheet guide flush at the +X face (x 1440..1500, full height z 60..1010, so it covers the z 600 outlet datum); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "plate/sheet"
+    },
+    "N3": {
+      "style": "solids",
+      "face": "-X",
+      "part": "billet_stop",
+      "drawn_height_mm": 160.0,
+      "note": "continuous billet/slab entry, the same -X entry guide as N1 (x 20..50, z 60..1010); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "continuous billet/slab"
+    },
+    "N4": {
+      "style": "drain",
+      "face": "bottom",
+      "part": "drain_well",
+      "drawn_height_mm": 0.0,
+      "note": "drain well flush at the envelope bottom (z 0), sump face at the 50 datum",
+      "dn": "DN15",
+      "height_mm": 50.0,
+      "schedule_rating": "Class 150",
+      "service": "drain"
+    },
+    "N5": {
+      "style": "vent",
+      "face": "top",
+      "part": "vent_stub",
+      "drawn_height_mm": 800.0,
+      "note": "vent DN15 riser at (x 750, y 400) through the base, z 55..815 at the 800 datum",
+      "dn": "DN15",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "vent"
+    }
+  },
   "frame_bbox_mm": [
     1500.0,
     800.0,

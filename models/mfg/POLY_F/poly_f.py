@@ -23,7 +23,7 @@ Every dimension is an authority figure or a named layout choice:
   design row matches); 8900 kg/m3 published C-276 midpoint for mass reporting.
   The AQS-STD-001 rule has no C-276 row: no corrosion-allowance value is claimed
   (hold, W12).
-- Nozzles: all 8 rows of docs-authority/nozzles/POLY_F.csv drawn at tag, face,
+- Nozzles: all rows of docs-authority/nozzles/POLY_F.csv drawn at tag, face,
   height and bore as atmospheric open-bore tube connections (duty section 4: hose,
   atmospheric; the connecting line makes the joint at the face, the CATCH_TANK
   idiom). The 160 monomer inlets and the 600 outlet datums draw as issued; rows
@@ -145,6 +145,13 @@ for (face, z), rows in sorted(groups.items()):
 noz_pieces, drawn = [], {}
 for r in schedule:
     tag, size0, face0 = r["tag"], r["size"], r["face"]
+    if size0 == "cable":                                  # power terminal row: carried, never drawn
+        drawn[tag] = {"style": "carried", "dn": size0, "face": face0,
+                      "height_mm": r["height_mm"], "schedule_rating": r["rating"],
+                      "service": r["service"],
+                      "note": "power terminal row - a cable schedule row: carried "
+                              "verbatim, never drawn"}
+        continue
     is_dn = str(size0).startswith("DN")
     dnl = size0 if is_dn else "DN15"   # non-piped rows drawn DN15, bore not calculated (plan W4)
     od_s = dn.pipe_od(dnl)
@@ -287,7 +294,8 @@ rows = [
           "solids rows drawn DN15 bore not calculated; drain under the base "
           "head; vent riser to the envelope top)", len(schedule), "C-276 tube",
      mass["nozzles"], "make",
-     "schedule tags/faces/heights verbatim; bores per the lib/dn Sch 40 table"],
+     "schedule tags/faces/heights verbatim; bores per the lib/dn Sch 40 table; "
+     "the cable schedule row is carried, never drawn"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)

@@ -21,7 +21,7 @@ Every dimension is an authority figure or a named layout choice:
   its purchased envelope (plan rule 6) with a DN15 recirculation loop to the vessel.
   No top-entry agitator is named on the node, so none is drawn (hold, W12). The
   heater mat (0.74 W, node heat_W) is the second purchased envelope, under the base.
-- Nozzles: all 6 rows of docs-authority/nozzles/MEOH_FERM.csv drawn at tag, face,
+- Nozzles: all rows of docs-authority/nozzles/MEOH_FERM.csv drawn at tag, face,
   height and bore as atmospheric open-bore tube connections flush at the envelope
   faces (duty section 4: hose, atmospheric; the connecting line makes the joint at
   the face, the CATCH_TANK idiom - the shell stands off the faces). The 160 inlet
@@ -171,6 +171,13 @@ for (face, z), rows in sorted(groups.items()):
 noz_pieces, drawn = [], {}
 for r in schedule:
     tag, size0, face0 = r["tag"], r["size"], r["face"]
+    if size0 == "cable":                                  # power terminal row: carried, never drawn
+        drawn[tag] = {"style": "carried", "dn": size0, "face": face0,
+                      "height_mm": r["height_mm"], "schedule_rating": r["rating"],
+                      "service": r["service"],
+                      "note": "power terminal row - a cable schedule row: carried "
+                              "verbatim, never drawn"}
+        continue
     is_dn = str(size0).startswith("DN")
     dnl = size0 if is_dn else "DN15"   # non-piped rows drawn DN15, bore not calculated (plan W4)
     od_s = dn.pipe_od(dnl)
@@ -322,7 +329,8 @@ rows = [
           "vent riser on the top head; N6 solids row drawn DN15, bore not "
           "calculated)", len(schedule), "PVC-U", mass["nozzles"], "make",
      "schedule tags/faces/heights verbatim; bores per the lib/dn Sch 40 table; "
-     "the 600 datums clamped to 570.7 (hold, WORK_ORDER W12)"],
+     "the 600 datums clamped to 570.7 (hold, WORK_ORDER W12); the cable schedule "
+     "row is carried, never drawn"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)

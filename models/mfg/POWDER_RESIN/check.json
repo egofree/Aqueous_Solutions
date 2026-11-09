@@ -1,4 +1,58 @@
 {
+  "nozzles_drawn": {
+    "N1": {
+      "style": "solids",
+      "face": "-X",
+      "part": "powder_inlet",
+      "drawn_height_mm": 160.0,
+      "note": "fluoropolymer-powder chute flush at the -X face (y 340..460, z 0..140); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "fluoropolymer powder"
+    },
+    "N2": {
+      "style": "solids",
+      "face": "+X",
+      "part": "powder_out",
+      "note": "powder-stock chute flush at the +X face at the collector take-off (y 300..500, z 240..400); solids row, bore not calculated; the schedule 600 datum is carried in height_mm",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "powder stock"
+    },
+    "N3": {
+      "style": "drain",
+      "face": "bottom",
+      "part": "drain_well",
+      "drawn_height_mm": 0.0,
+      "note": "nominal floor drain flush at the envelope bottom (z 0), sump face at the 50 datum",
+      "dn": "DN15",
+      "height_mm": 50.0,
+      "schedule_rating": "Class 150",
+      "service": "drain"
+    },
+    "N4": {
+      "style": "vent",
+      "face": "top",
+      "part": "vent_stub",
+      "drawn_height_mm": 1200.0,
+      "note": "vent DN15 riser at the cyclone top (x 620, y 400), z 860..1200 at the line datum; the schedule 800 datum is carried in height_mm",
+      "dn": "DN15",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "vent"
+    },
+    "N5": {
+      "style": "carried",
+      "face": "top",
+      "note": "power terminal (SF-POWDER_RESIN bus) - a cable-schedule row: carried verbatim, never drawn",
+      "dn": "cable",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-POWDER_RESIN, 480 V or 208/120 V AC (bus per AQS-ELEC-002))"
+    }
+  },
   "mill_bbox_mm": [
     380.0,
     220.0,

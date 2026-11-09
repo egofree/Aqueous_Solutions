@@ -208,7 +208,51 @@ rho = {"casing": 7.85e-6, "fibre_lining": 128e-9, "ram_lining": 1.55e-6, "hood_h
        "co_stub": 7.85e-6, "cr_tap_group": 1.55e-6, "feed_chutes": 7.85e-6, "drain_well": 1.55e-6}
 mass = {k: round(v.val().Volume() * rho[k], 1) for k, v in parts.items()}
 vol_melt = sum(v.val().Volume() for v in inv.values())
+# ---------------- acceptance record: nozzles_drawn -------------------------------
+# Every row of docs-authority/nozzles/CR_CELL.csv, recorded from the placement this
+# build draws. The power-terminal row is a cable-schedule row: carried verbatim,
+# never drawn.
+sched_rows = {}
+with open(HERE.parents[2] / "docs-authority" / "nozzles" / "CR_CELL.csv") as f:
+    for _r in csv.DictReader(f):
+        sched_rows[_r["tag"]] = _r
+PLACE = {
+    "N1": {"style": "solids", "face": "+X", "part": "cr_tap_group",
+           "note": "Cr-metal tap: DN80-class well, crest and discharge lip flush at the "
+                   "+X face (lip z 555..610); solids row, bore not calculated"},
+    "N2": {"style": "solids", "face": "-X", "part": "feed_chutes", "y_mm": [320.0, 480.0],
+           "drawn_height_mm": 160.0,
+           "note": "chromite-concentrate chute flush at the -X face (y 320..480, z 130..220); "
+                   "solids row, bore not calculated"},
+    "N3": {"style": "solids", "face": "-X", "part": "feed_chutes", "y_mm": [480.0, 640.0],
+           "drawn_height_mm": 160.0,
+           "note": "carbon-reductant chute flush at the -X face (y 480..640, z 130..220); "
+                   "solids row, bore not calculated"},
+    "N4": {"style": "stub", "face": "+Y", "part": "co_stub", "x_mm": 544.0,
+           "drawn_height_mm": 600.0,
+           "note": "chlorinator-CO DN15 export stub flush at the +Y face"},
+    "N5": {"style": "drain", "face": "bottom", "part": "drain_well", "drawn_height_mm": 0.0,
+           "note": "drain well flush at the envelope bottom (z 0), sump face at the 50 datum; "
+                   "frozen-salt drain pig"},
+    "N6": {"style": "vent", "face": "top", "part": "vent_stub", "drawn_height_mm": 800.0,
+           "note": "vent DN15 stub hung on the offtake riser at z 800, out on the -Y side"},
+    "N7": {"style": "carried", "face": "top",
+           "note": "power terminal (SF-CR_CELL bus) - a cable-schedule row: carried verbatim, "
+                   "never drawn"},
+}
+drawn = {}
+for tag, rec in PLACE.items():
+    row = sched_rows[tag]
+    rec = dict(rec)
+    rec["dn"] = row["size"] if rec["style"] == "carried" else "DN15"
+    rec["height_mm"] = float(row["height_mm"])
+    rec["schedule_rating"] = row["rating"]
+    rec["service"] = row["service"]
+    drawn[tag] = rec
+assert set(drawn) == set(sched_rows), sorted(set(drawn) ^ set(sched_rows))
+
 report = {
+    "nozzles_drawn": drawn,
     "shell_bbox_mm": [round(sb.xlen, 1), round(sb.ylen, 1), round(sb.zlen, 1)],
     "shell_bbox_abs": [round(sb.xmin, 1), round(sb.ymin, 1), round(sb.zmin, 1),
                        round(sb.xmax, 1), round(sb.ymax, 1), round(sb.zmax, 1)],

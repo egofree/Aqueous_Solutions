@@ -6,4 +6,4 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 5,UV-TOC lamp envelope,1,purchased lamp (quartz sleeve),0.8,buy,"node design UV_kW 0.015 (15 W; A-M-176 basis); purchased per plan rule 6, rating from the node"
 6,RO pump envelope,1,purchased pump (envelope),16.96,buy,"node continuous-kW note: RO pump 2.6 W at the 6.859 bar feed (design block); purchased per plan rule 6, rating from the node"
 7,Potable bypass run DN25 Sch 40 with risers (the potable share bypasses RO/EDI),1,316L tube,7.21,make,"node internals row 'potable bypass' and design bypass_kg_d 206.77; A-M-176: the potable share bypasses, 2 x 100 % trains"
-8,"Nozzle set per docs-authority/nozzles/BMED_UPW_POLISH.csv: N1 DN50 in on -Y, the four product/reject rows on +Y, drain and vent flush at the envelope faces",7,316L tube,0.76,make,7-row issued schedule verbatim; atmospheric hose per duty section 4
+8,"Nozzle set per docs-authority/nozzles/BMED_UPW_POLISH.csv: N1 DN50 in on -Y, the four product/reject rows on +Y, drain and vent flush at the envelope faces",8,316L tube,0.76,make,"issued schedule verbatim; the cable schedule row is carried, never drawn; atmospheric hose per duty section 4"

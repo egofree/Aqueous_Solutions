@@ -144,7 +144,44 @@ rho = {"base": 7.85e-6, "stand": 7.85e-6, "bottom_roll": 7.85e-6, "top_roll": 7.
        "roll_chocks": 7.85e-6, "screw_down": 7.85e-6, "table_rollers": 7.85e-6,
        "billet_stop": 7.85e-6, "sheet_guide": 7.85e-6, "drain_well": 7.85e-6, "vent_stub": 7.85e-6}
 mass = {k: round(v.val().Volume() * rho[k], 1) for k, v in parts.items()}
+# ---------------- acceptance record: nozzles_drawn -------------------------------
+# Every row of docs-authority/nozzles/ROLL.csv, recorded from the placement this
+# build draws.
+sched_rows = {}
+with open(HERE.parents[2] / "docs-authority" / "nozzles" / "ROLL.csv") as f:
+    for _r in csv.DictReader(f):
+        sched_rows[_r["tag"]] = _r
+PLACE = {
+    "N1": {"style": "solids", "face": "-X", "part": "billet_stop", "drawn_height_mm": 160.0,
+           "note": "billet-to-roll entry guide at the -X roll side (x 20..50, full height "
+                   "z 60..1010, so it covers the z 160 inlet datum); solids row, bore not "
+                   "calculated"},
+    "N2": {"style": "solids", "face": "+X", "part": "sheet_guide", "drawn_height_mm": 600.0,
+           "note": "plate/sheet guide flush at the +X face (x 1440..1500, full height "
+                   "z 60..1010, so it covers the z 600 outlet datum); solids row, bore not "
+                   "calculated"},
+    "N3": {"style": "solids", "face": "-X", "part": "billet_stop", "drawn_height_mm": 160.0,
+           "note": "continuous billet/slab entry, the same -X entry guide as N1 (x 20..50, "
+                   "z 60..1010); solids row, bore not calculated"},
+    "N4": {"style": "drain", "face": "bottom", "part": "drain_well", "drawn_height_mm": 0.0,
+           "note": "drain well flush at the envelope bottom (z 0), sump face at the 50 datum"},
+    "N5": {"style": "vent", "face": "top", "part": "vent_stub", "drawn_height_mm": 800.0,
+           "note": "vent DN15 riser at (x 750, y 400) through the base, z 55..815 at the 800 "
+                   "datum"},
+}
+drawn = {}
+for tag, rec in PLACE.items():
+    row = sched_rows[tag]
+    rec = dict(rec)
+    rec["dn"] = row["size"] if rec["style"] == "carried" else "DN15"
+    rec["height_mm"] = float(row["height_mm"])
+    rec["schedule_rating"] = row["rating"]
+    rec["service"] = row["service"]
+    drawn[tag] = rec
+assert set(drawn) == set(sched_rows), sorted(set(drawn) ^ set(sched_rows))
+
 report = {
+    "nozzles_drawn": drawn,
     "frame_bbox_mm": [round(sb.xlen, 1), round(sb.ylen, 1), round(sb.zlen, 1)],
     "inside_size_mm_shell": inside_shell,
     "connection_overhang_mm": overhang,

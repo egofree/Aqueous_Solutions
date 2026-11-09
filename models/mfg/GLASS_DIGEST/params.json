@@ -194,6 +194,6 @@
   "frame": "origin at the envelope corner; vessel axis at x 350, y 350; legs 150; shell z 150..550; lid 550..566; agitator to 696; vent riser to 900; four-post hold-down frame (40 x 40 posts + top rails) pins the envelope so the build fills the registry box (X-PAR-04)",
   "supports": "4 CPVC legs + four-post hold-down frame + 4 slab anchors (layout choice, hold W12)",
   "nozzle_spread": "the schedule gives face and height only; side ports pack in one row per face/height group, 12 mm clear at the bore, drawn as open-bore stubs from the shell to the envelope face; placeholder datums clamped into [175, 525]; vent riser at x 420, y 290; drain at x 390; per-tag positions in check.nozzles_drawn",
-  "close_out": "M2 close-out of the Oct-31-era reactors.py study build per the HX8 close pattern: 12-row issued schedule, lib builders, section 5 artifacts completed; nothing resized"
+  "close_out": "M2 close-out of the Oct-31-era reactors.py study build per the HX8 close pattern: issued schedule, lib builders, section 5 artifacts completed; nothing resized"
  }
 }

@@ -161,7 +161,82 @@ rho = {"chlorinator": 7.85e-6, "chlorinator_band": 7.85e-6, "condenser": 7.85e-6
        "co_stub": 7.85e-6, "slag_spout": 7.85e-6, "harvest_ports": 7.85e-6,
        "mgcl2_stubs": 7.85e-6, "mg_chute": 7.85e-6, "drain_well": 7.85e-6, "vent_stub": 7.85e-6, "vent_riser": 7.85e-6, "skid_frame": 7.85e-6}
 mass = {k: round(v.val().Volume() * rho[k], 1) for k, v in parts.items()}
+# ---------------- acceptance record: nozzles_drawn -------------------------------
+# Every row of docs-authority/nozzles/TI_CELL.csv, recorded from the placement this
+# build draws. The power-terminal row is a cable-schedule row: carried verbatim,
+# never drawn.
+sched_rows = {}
+with open(HERE.parents[2] / "docs-authority" / "nozzles" / "TI_CELL.csv") as f:
+    for _r in csv.DictReader(f):
+        sched_rows[_r["tag"]] = _r
+PLACE = {
+    "N1": {"style": "solids", "face": "+X", "part": "slag_spout", "drawn_height_mm": 600.0,
+           "note": "slag tap spout on the chlorinator +X shell (z 570..630, bore cut through); "
+                   "solids row, bore not calculated"},
+    "N2": {"style": "solids", "face": "-X", "part": "charge_chutes", "y_mm": [470.0, 530.0],
+           "drawn_height_mm": 160.0,
+           "note": "dense-grit charge chute on the chlorinator -X face (y 470..530, z 130..220); "
+                   "solids row, bore not calculated"},
+    "N3": {"style": "stub", "face": "-Y", "part": "cl2_stubs", "x_mm": 140.0,
+           "drawn_height_mm": 160.0,
+           "note": "chlorine-from-chlorinator DN15 stub on the chlorinator -Y shell; drawn with "
+                   "the Cl2-loop stubs at z 160 (MG_POT closes the loop), the schedule 600 "
+                   "datum is carried in height_mm"},
+    "N4": {"style": "solids", "face": "+X", "part": "harvest_ports", "y_mm": 460.0,
+           "drawn_height_mm": 600.0,
+           "note": "Ti-sponge harvest port OD90 on the retort +X shell at y 460, z 600; solids "
+                   "row, bore not calculated"},
+    "N5": {"style": "solids", "face": "+X", "part": "harvest_ports", "y_mm": 580.0,
+           "drawn_height_mm": 600.0,
+           "note": "sponge-to-vacuum-melt harvest port OD90 on the retort +X shell at y 580, "
+                   "z 600; solids row, bore not calculated"},
+    "N6": {"style": "stub", "face": "+Y", "part": "mgcl2_stubs", "x_mm": 620.0,
+           "drawn_height_mm": 600.0,
+           "note": "Kroll-retort MgCl2-return DN15 stub on the retort +Y shell at x 620"},
+    "N7": {"style": "solids", "face": "+Y", "part": "mgcl2_stubs", "x_mm": 720.0,
+           "drawn_height_mm": 600.0,
+           "note": "MgCl2-class salt drag-out DN15 stub on the retort +Y shell at x 720, over "
+                   "the trough; solids row, bore not calculated"},
+    "N8": {"style": "solids", "face": "-X", "part": "mg_chute", "drawn_height_mm": 160.0,
+           "note": "Mg-reductant chute on the retort -X face (x 535..575, z 130..220); solids "
+                   "row, bore not calculated"},
+    "N9": {"style": "stub", "face": "-Y", "part": "cl2_stubs", "x_mm": 200.0,
+           "drawn_height_mm": 160.0,
+           "note": "chlorine-to-chlorinator DN15 stub on the chlorinator -Y shell at x 200"},
+    "N10": {"style": "solids", "face": "-X", "part": "charge_chutes", "y_mm": [530.0, 590.0],
+            "drawn_height_mm": 160.0,
+            "note": "rutile-concentrate charge chute on the chlorinator -X face (y 530..590, "
+                    "z 130..220); solids row, bore not calculated"},
+    "N11": {"style": "solids", "face": "-X", "part": "charge_chutes", "y_mm": [590.0, 650.0],
+            "drawn_height_mm": 160.0,
+            "note": "carbon-reductant charge chute on the chlorinator -X face (y 590..650, "
+                    "z 130..220); solids row, bore not calculated"},
+    "N12": {"style": "stub", "face": "+Y", "part": "co_stub", "y_mm": [640.0, 685.0],
+            "drawn_height_mm": 600.0,
+            "note": "chlorinator-CO DN15 export stub on the chlorinator +Y shell at z 600"},
+    "N13": {"style": "drain", "face": "bottom", "part": "drain_well", "drawn_height_mm": 0.0,
+            "note": "drain well flush at the envelope bottom (z 0) through the chlorinator "
+                    "pedestal, sump face at the 50 datum"},
+    "N14": {"style": "vent", "face": "top", "part": "vent_stub", "drawn_height_mm": 800.0,
+            "note": "vent DN15 riser off the condenser top (x 400, y 560), z 660 up to the 800 "
+                    "datum with its -Y stub"},
+    "N15": {"style": "carried", "face": "top",
+            "note": "power terminal (SF-TI_CELL bus) - a cable-schedule row: carried verbatim, "
+                    "never drawn"},
+}
+drawn = {}
+for tag, rec in PLACE.items():
+    row = sched_rows[tag]
+    rec = dict(rec)
+    rec["dn"] = row["size"] if rec["style"] == "carried" else "DN15"
+    rec["height_mm"] = float(row["height_mm"])
+    rec["schedule_rating"] = row["rating"]
+    rec["service"] = row["service"]
+    drawn[tag] = rec
+assert set(drawn) == set(sched_rows), sorted(set(drawn) ^ set(sched_rows))
+
 report = {
+    "nozzles_drawn": drawn,
     "vessel_bbox_mm": [round(sb.xlen, 1), round(sb.ylen, 1), round(sb.zlen, 1)],
     "vessel_bbox_abs": [round(sb.xmin, 1), round(sb.ymin, 1), round(sb.zmin, 1),
                         round(sb.xmax, 1), round(sb.ymax, 1), round(sb.zmax, 1)],

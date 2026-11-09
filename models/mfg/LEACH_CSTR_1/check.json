@@ -11,7 +11,7 @@
     1400.0
   ],
   "size_basis": "duty section 2 envelope (AQS-DUTY-050); the graph node carries no size_mm (tracker hold, WORK_ORDER W12)",
-  "graph_revision": "AC",
+  "graph_revision": "AD",
   "solids": 1,
   "all_parts_valid": true,
   "holdup_m3": 1.855,
@@ -600,6 +600,26 @@
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty sections 4 and 6)"
     },
+    "N62": {
+      "style": "carried",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (IA-TRIM-HX5, HX-5 electric trim at the process)",
+      "note": "power terminal row - a cable schedule row: carried verbatim, never drawn"
+    },
+    "N63": {
+      "style": "carried",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-LEACH_CSTR_1, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+      "note": "power terminal row - a cable schedule row: carried verbatim, never drawn"
+    }
+  },
+  "conductors_drawn": {
     "IA-E-LEACH": {
       "style": "gland",
       "dn": "DN15",
@@ -609,7 +629,7 @@
       "note": "conductor gland, not a hose (duty section 4 prose; electrical edge IA-E-LEACH, not a schedule row)"
     }
   },
-  "nozzle_count_schedule": 61,
+  "nozzle_count_schedule": 63,
   "nozzle_idiom": "hose barbs flush at the envelope faces per the atmospheric duty (lib/nozzles.place_on_face); solids rows DN15 labeled bore not calculated; schedule rating column (Class 150) carried verbatim as text, no flange drawn (duty section 6)",
   "conductor": "IA-E-LEACH gland boss on +Y at z 600 (duty section 4 prose)",
   "part_mass_kg": {

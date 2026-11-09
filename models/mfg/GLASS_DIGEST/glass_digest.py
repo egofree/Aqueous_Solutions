@@ -5,7 +5,7 @@ the envelope, design and layout blocks beside them are builder-owned) and rebuil
 every solid. This is the M2 close-out of the Oct-31-era `reactors.py` study build:
 the vessel construction (DN400 CPVC shell, bolted lid, agitator, Q3 coil, 4 legs)
 is the issued AQS-DUTY-062 / X-MFG-31 design carried through the current shared
-lib, the 12-row issued nozzle schedule replaces the 5-row study layout, and the
+lib, the issued nozzle schedule replaces the study layout, and the
 section 5 artifacts (check record, make-or-buy BOM, W1-W12 work order, drawing
 set, duty section 7 pointer) are completed per the HX8 close pattern.
 
@@ -25,7 +25,7 @@ Every dimension is an authority figure or a named layout choice:
   HL-Q3-A/B-HX6) - a PVDF DN15 helical coil, 3 turns, R 155 (inside the ID 392 shell).
 - Legs: 4 CPVC 40 x 40 legs, 150 mm (layout choice carried from the issued
   construction; the node names no support - hold, W12).
-- Nozzles: all 12 rows of docs-authority/nozzles/GLASS_DIGEST.csv drawn at tag,
+- Nozzles: all rows of docs-authority/nozzles/GLASS_DIGEST.csv drawn at tag,
   face, height and bore as atmospheric open-bore tube connections from the shell to
   the envelope faces (duty section 4: atmospheric tube or hose; the connecting line
   makes the joint at the face). Schedule datums are the house placeholders (inlet
@@ -188,6 +188,13 @@ for (face, z), rows in sorted(groups.items()):
 noz, drawn = None, {}
 for r in schedule:
     tag, dnl, h = r["tag"], r["size"], float(r["height_mm"])
+    if dnl == "cable":                                    # power terminal row: carried, never drawn
+        drawn[tag] = {"style": "carried", "dn": dnl, "face": r["face"],
+                      "height_mm": r["height_mm"], "schedule_rating": r["rating"],
+                      "service": r["service"],
+                      "note": "power terminal row - a cable schedule row: carried "
+                              "verbatim, never drawn"}
+        continue
     face = FACE_OF.get(r["face"], r["face"])
     od = od_of(r)
     dnl_draw = dnl if dnl.startswith("DN") else "DN15"
@@ -269,7 +276,7 @@ report = {
     "nozzle_count_schedule": len(schedule),
     "nozzle_idiom": "atmospheric open-bore tube connections from the shell to the "
                     "envelope faces (duty section 4: atmospheric tube or hose); the "
-                    "12-row issued schedule replaces the 5-row study layout of the "
+                    "issued schedule replaces the study layout of the "
                     "Oct-31-era build; placeholder datums clamped into the shell "
                     "span [175, 525] (holds); vent riser flush at the envelope top, "
                     "drain flush at the bottom; the N11 solids row drawn DN15, bore "
@@ -308,12 +315,13 @@ rows = [
           "per design.heat (graph HL-Q3-A/B-HX6)", 1, "PVDF", mass["coil"], "make",
      "node design.heat 'Q3 coil HX-6'; the schedule N1/N2 service text says jacket - "
      "carried verbatim, the coil is the issued construction (hold, WORK_ORDER W12)"],
-    ["6", "Nozzle set per docs-authority/nozzles/GLASS_DIGEST.csv: 12 open-bore tube "
+    ["6", "Nozzle set per docs-authority/nozzles/GLASS_DIGEST.csv: 11 DN tube "
           "connections shell-to-face (vent riser on the lid, drain boss at the "
-          "bottom, N11 solids row drawn DN15 bore not calculated)", len(schedule),
+          "bottom), the N11 solids row drawn DN15 bore not calculated", len(schedule),
      "CPVC", mass["nozzles"], "make",
-     "12-row issued schedule verbatim; placeholder datums clamped into the shell "
-     "span (holds); atmospheric tube per duty section 4"],
+     "issued schedule verbatim; placeholder datums clamped into the shell "
+     "span (holds); atmospheric tube per duty section 4; the two cable schedule "
+     "rows are carried, never drawn"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)
@@ -367,7 +375,7 @@ p["layout"] = {
                      "x 420, y 290; drain at x 390; per-tag positions in "
                      "check.nozzles_drawn",
     "close_out": "M2 close-out of the Oct-31-era reactors.py study build per the "
-                 "HX8 close pattern: 12-row issued schedule, lib builders, section "
+                 "HX8 close pattern: issued schedule, lib builders, section "
                  "5 artifacts completed; nothing resized",
 }
 (HERE / "params.json").write_text(json.dumps(p, indent=1) + "\n")

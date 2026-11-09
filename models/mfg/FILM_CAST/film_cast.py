@@ -113,7 +113,42 @@ rho = {"frame": 7.85e-6, "extruder_barrel": 7.85e-6, "extruder_hopper": 7.85e-6,
        "draw_rolls": 7.85e-6, "winder": 7.85e-6, "resin_inlet": 7.85e-6, "film_stop": 7.85e-6,
        "drain_well": 7.85e-6, "vent_stub": 7.85e-6}
 mass = {k: round(v.val().Volume() * rho[k], 1) for k, v in parts.items()}
+# ---------------- acceptance record: nozzles_drawn -------------------------------
+# Every row of docs-authority/nozzles/FILM_CAST.csv, recorded from the placement
+# this build draws. The power-terminal row is a cable-schedule row: carried
+# verbatim, never drawn.
+sched_rows = {}
+with open(HERE.parents[2] / "docs-authority" / "nozzles" / "FILM_CAST.csv") as f:
+    for _r in csv.DictReader(f):
+        sched_rows[_r["tag"]] = _r
+PLACE = {
+    "N1": {"style": "solids", "face": "+X", "part": "film_stop",
+           "note": "film-stock stop flush at the +X face (z 900..1060, at the winder take-off); "
+                   "solids row, bore not calculated"},
+    "N2": {"style": "stub", "face": "-X", "part": "resin_inlet", "drawn_height_mm": 160.0,
+           "note": "PVDF-resin DN15 stub flush at the -X face, set in to the barrel root"},
+    "N3": {"style": "drain", "face": "bottom", "part": "drain_well", "drawn_height_mm": 0.0,
+           "note": "drain well flush at the envelope bottom (z 0), sump face at the 50 datum"},
+    "N4": {"style": "vent", "face": "top", "part": "vent_stub", "drawn_height_mm": 1200.0,
+           "note": "vent DN15 riser at (x 300, y 80), z 860..1200 at the line datum; the "
+                   "schedule 800 datum is carried in height_mm"},
+    "N5": {"style": "carried", "face": "top",
+           "note": "power terminal (SF-FILM_CAST bus) - a cable-schedule row: carried verbatim, "
+                   "never drawn"},
+}
+drawn = {}
+for tag, rec in PLACE.items():
+    row = sched_rows[tag]
+    rec = dict(rec)
+    rec["dn"] = row["size"] if rec["style"] == "carried" else "DN15"
+    rec["height_mm"] = float(row["height_mm"])
+    rec["schedule_rating"] = row["rating"]
+    rec["service"] = row["service"]
+    drawn[tag] = rec
+assert set(drawn) == set(sched_rows), sorted(set(drawn) ^ set(sched_rows))
+
 report = {
+    "nozzles_drawn": drawn,
     "frame_bbox_mm": [round(sb.xlen, 1), round(sb.ylen, 1), round(sb.zlen, 1)],
     "inside_size_mm_shell": inside_shell,
     "connection_overhang_mm": overhang,

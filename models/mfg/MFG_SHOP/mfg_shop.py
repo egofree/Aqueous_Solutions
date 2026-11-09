@@ -27,7 +27,7 @@ Every dimension is an authority figure or a named layout choice:
   flagged make with the AQS-BOM-SC-001 cross-reference; the six machines are buy
   rows. Self-copy note: this is the shop that makes the plant's shop-made parts -
   the AQS-BOM-SC-001 make rows across the accepted units land here.
-- Nozzles: all 33 rows of docs-authority/nozzles/MFG_SHOP.csv drawn at tag, face,
+- Nozzles: all rows of docs-authority/nozzles/MFG_SHOP.csv drawn at tag, face,
   height and bore as atmospheric open-bore tube stubs flush at the envelope faces
   (duty section 4: DN15, no flange class, atmospheric tube or hose). The stock/
   scrap rows on -Y at z 160 include the DN25 metals/Si and glass/ceramic stock
@@ -148,6 +148,13 @@ for (face, z), rows in sorted(groups.items()):
 noz, drawn = None, {}
 for r in schedule:
     tag, dnl, h = r["tag"], r["size"], float(r["height_mm"])
+    if dnl == "cable":                                    # power terminal row: carried, never drawn
+        drawn[tag] = {"style": "carried", "dn": dnl, "face": r["face"],
+                      "height_mm": r["height_mm"], "schedule_rating": r["rating"],
+                      "service": r["service"],
+                      "note": "power terminal row - a cable schedule row: carried "
+                              "verbatim, never drawn"}
+        continue
     face = FACE_OF.get(r["face"], r["face"])
     od = od_of(r)
     note = "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
@@ -285,10 +292,11 @@ rows = [
      "AQS-MFG-010 Table 2.1, nameplate 2.0 kW; envelope + interface per plan "
      "rule 6"],
     ["10", "Nozzle set per docs-authority/nozzles/MFG_SHOP.csv: 14 tube stubs "
-            "(DN15/DN25/DN50) and 19 non-piped solids transfer rows drawn DN15 "
+            "(DN15/DN25/DN50) and 20 non-piped solids transfer rows drawn DN15 "
             "bore not calculated", len(schedule), "316L tube", mass["nozzles"],
      "make (AQS-BOM-SC-001)",
-     "33-row issued schedule verbatim; atmospheric tube per duty section 4"],
+     "issued schedule verbatim; the cable schedule row is carried, never drawn; "
+     "atmospheric tube per duty section 4"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)

@@ -139,7 +139,74 @@ rho = {"casing": 7.85e-6, "fibre_lining": 128e-9, "induction_coil": 8.96e-6, "co
        "melt_stubs": 7.85e-6, "pour_spout": 7.85e-6, "slag_spout": 7.85e-6, "drain_well": 7.85e-6}
 mass = {k: round(v.val().Volume() * rho[k], 1) for k, v in parts.items()}
 vol_melt = sum(v.val().Volume() for v in inv.values())
+# ---------------- acceptance record: nozzles_drawn -------------------------------
+# Every row of docs-authority/nozzles/IND_MELT.csv, recorded from the placement
+# this build draws. The power-terminal row is a cable-schedule row: carried
+# verbatim, never drawn.
+sched_rows = {}
+with open(HERE.parents[2] / "docs-authority" / "nozzles" / "IND_MELT.csv") as f:
+    for _r in csv.DictReader(f):
+        sched_rows[_r["tag"]] = _r
+_CHUTE = ("charge-chute row: the one charge chute flush at the -X face (y 420..580, mouth "
+          "z 130..220) takes every charge row; solids row, bore not calculated")
+_MELT = "melt DN15 stub flush at the +Y face, off the shared three-stub melt bank"
+PLACE = {
+    "N1": {"style": "stub", "face": "+Y", "part": "melt_stubs", "x_mm": 300.0,
+           "drawn_height_mm": 600.0, "note": _MELT + " at x 300"},
+    "N2": {"style": "solids", "face": "-X", "part": "charge_chute", "drawn_height_mm": 160.0,
+           "note": "foundry scrap, " + _CHUTE},
+    "N3": {"style": "solids", "face": "-X", "part": "charge_chute", "drawn_height_mm": 160.0,
+           "note": "Ti and other metal powders/sponge, " + _CHUTE},
+    "N4": {"style": "solids", "face": "-X", "part": "charge_chute", "drawn_height_mm": 160.0,
+           "note": "flux, " + _CHUTE},
+    "N5": {"style": "solids", "face": "-X", "part": "charge_chute", "drawn_height_mm": 160.0,
+           "note": "EW cathode/powder metals, " + _CHUTE},
+    "N6": {"style": "solids", "face": "-X", "part": "charge_chute", "drawn_height_mm": 160.0,
+           "note": "Mo metal, " + _CHUTE},
+    "N7": {"style": "solids", "face": "-X", "part": "charge_chute", "drawn_height_mm": 160.0,
+           "note": "Cr metal, " + _CHUTE},
+    "N8": {"style": "stub", "face": "+Y", "part": "melt_stubs", "x_mm": 480.0,
+           "drawn_height_mm": 600.0, "note": _MELT + " at x 480"},
+    "N9": {"style": "solids", "face": "+X", "part": "slag_spout",
+           "note": "slag-return spout at the crucible lip (x 500..560, z 580..610, cut through "
+                   "the hood line); solids row, bore not calculated"},
+    "N10": {"style": "solids", "face": "-X", "part": "charge_chute", "drawn_height_mm": 160.0,
+            "note": "Al metal, " + _CHUTE},
+    "N11": {"style": "solids", "face": "-X", "part": "charge_chute", "drawn_height_mm": 160.0,
+            "note": "Mg metal, " + _CHUTE},
+    "N12": {"style": "solids", "face": "-X", "part": "charge_chute", "drawn_height_mm": 160.0,
+            "note": "Ca metal, " + _CHUTE},
+    "N13": {"style": "stub", "face": "+Y", "part": "melt_stubs", "x_mm": 660.0,
+            "drawn_height_mm": 600.0, "note": _MELT + " at x 660"},
+    "N14": {"style": "stub", "face": "+Y", "part": "melt_stubs", "drawn_height_mm": 600.0,
+            "note": "investment-pour melt row on the shared +Y DN15 stub bank (bank x 300/480/660 "
+                    "carries the four melt-outlet rows, per BOM row 8); the pour_spout tilt lip "
+                    "is the +X pour outlet"},
+    "N15": {"style": "solids", "face": "-X", "part": "charge_chute", "drawn_height_mm": 160.0,
+            "note": "manufacturing scrap return, " + _CHUTE},
+    "N16": {"style": "drain", "face": "bottom", "part": "drain_well", "drawn_height_mm": 0.0,
+            "note": "drain well flush at the envelope bottom (z 0), sump face at the 50 datum; "
+                    "frozen-salt drain pig"},
+    "N17": {"style": "vent", "face": "top", "part": "vent_stub", "drawn_height_mm": 800.0,
+            "note": "vent DN15 riser off the hood at x 500, set in through the hood plate above "
+                    "the 800 datum, free end at z 1000"},
+    "N18": {"style": "carried", "face": "top",
+            "note": "power terminal (SF-IND_MELT bus) - a cable-schedule row: carried verbatim, "
+                    "never drawn"},
+}
+drawn = {}
+for tag, rec in PLACE.items():
+    row = sched_rows[tag]
+    rec = dict(rec)
+    rec["dn"] = row["size"] if rec["style"] == "carried" else "DN15"
+    rec["height_mm"] = float(row["height_mm"])
+    rec["schedule_rating"] = row["rating"]
+    rec["service"] = row["service"]
+    drawn[tag] = rec
+assert set(drawn) == set(sched_rows), sorted(set(drawn) ^ set(sched_rows))
+
 report = {
+    "nozzles_drawn": drawn,
     "shell_bbox_mm": [round(sb.xlen, 1), round(sb.ylen, 1), round(sb.zlen, 1)],
     "shell_bbox_abs": [round(sb.xmin, 1), round(sb.ymin, 1), round(sb.zmin, 1),
                        round(sb.xmax, 1), round(sb.ymax, 1), round(sb.zmax, 1)],

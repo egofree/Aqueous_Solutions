@@ -1,4 +1,88 @@
 {
+  "nozzles_drawn": {
+    "N1": {
+      "style": "solids",
+      "face": "-X",
+      "part": "cast_inlet",
+      "drawn_height_mm": 160.0,
+      "note": "cast-tree in-chute flush at the -X face (y 340..460, z 40..170); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "cast + shell"
+    },
+    "N2": {
+      "style": "solids",
+      "face": "+X",
+      "part": "casting_out",
+      "note": "investment-casting out-chute flush at the +X face (y 200..600, z 600..700); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "investment casting"
+    },
+    "N3": {
+      "style": "solids",
+      "face": "+X",
+      "part": "spent_out",
+      "note": "spent-ceramic-shell chute flush at the +X face (y 60..260, z 600..700); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "spent ceramic shell to solids line"
+    },
+    "N4": {
+      "style": "solids",
+      "face": "+Y",
+      "part": "reclaim_out",
+      "note": "reclaimed-stucco chute flush at the +Y face (x 900..1100, z 550..650); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "reclaimed shell stucco/flour"
+    },
+    "N5": {
+      "style": "solids",
+      "face": "+Y",
+      "part": "silica_out",
+      "note": "spent-foundry-silica chute flush at the +Y face (x 1300..1420, z 550..650); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "spent foundry silica (solids return class)"
+    },
+    "N6": {
+      "style": "drain",
+      "face": "bottom",
+      "part": "drain_well",
+      "drawn_height_mm": 0.0,
+      "note": "drain well flush at the envelope bottom (z 0), sump face at the 50 datum",
+      "dn": "DN15",
+      "height_mm": 50.0,
+      "schedule_rating": "Class 150",
+      "service": "drain"
+    },
+    "N7": {
+      "style": "vent",
+      "face": "top",
+      "part": "vent_stub",
+      "drawn_height_mm": 1500.0,
+      "note": "vent DN15 stub on the enclosure mast (x 110, y 110), flush at the envelope top (z 1460..1500); the schedule 800 datum is carried in height_mm",
+      "dn": "DN15",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "vent"
+    },
+    "N8": {
+      "style": "carried",
+      "face": "top",
+      "note": "power terminal (SF-SHELL_BREAK bus) - a cable-schedule row: carried verbatim, never drawn",
+      "dn": "cable",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-SHELL_BREAK, 480 V or 208/120 V AC (bus per AQS-ELEC-002))"
+    }
+  },
   "frame_bbox_mm": [
     1500.0,
     800.0,

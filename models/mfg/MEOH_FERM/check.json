@@ -109,9 +109,18 @@
       "schedule_rating": "Class 150",
       "service": "fermenter digestate (water + spent solids)",
       "note": "schedule datum 600 mm predates the box; clamped to 570.7 mm (the od + 8 rule - hold, WORK_ORDER W12); non-piped solids transfer (line-list classification): drawn DN15, bore not calculated (plan W4) flush at the envelope face (duty section 4: atmospheric joints are hose; the connecting line makes the joint at the face, the CATCH_TANK idiom)"
+    },
+    "N7": {
+      "style": "carried",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-MEOH_FERM, 480 V AC)",
+      "note": "power terminal row - a cable schedule row: carried verbatim, never drawn"
     }
   },
-  "nozzle_count_schedule": 6,
+  "nozzle_count_schedule": 7,
   "nozzle_idiom": "atmospheric open-bore tube connections flush at the envelope faces (duty section 4: atmospheric joints are hose; the W4 110 percent rule draws no flange where no process pressure is stated); the schedule rating column (Class 150) is carried verbatim as text; clamped datums named in nozzles_drawn; the N6 solids row drawn DN15, bore not calculated (plan W4)",
   "part_mass_kg": {
     "plinth": 28.4,

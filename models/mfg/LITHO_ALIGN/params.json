@@ -123,7 +123,7 @@
  "layout": {
   "frame": "origin at the envelope corner; stage x 420..580, leadscrew x 140..940 at y 300, mask holder x 400..600, LED head x 430..550 at z 190..250; guard posts at the envelope corners",
   "supports": "base plate + guard frame + 4 bench anchors",
-  "nozzle_spread": "the two schedule rows are envelope hardware: drain at x 430 flush at the bottom, vent at x 770 flush at the top",
+  "nozzle_spread": "the schedule rows are envelope hardware: drain at x 430 flush at the bottom, vent at x 770 flush at the top",
   "hardware_idiom": "connection hardware flush at the envelope faces; nothing protrudes, bbox inside the node envelope"
  }
 }

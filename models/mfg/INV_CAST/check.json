@@ -1,4 +1,82 @@
 {
+  "nozzles_drawn": {
+    "N1": {
+      "style": "solids",
+      "face": "-X",
+      "part": "shell_inlet",
+      "drawn_height_mm": 160.0,
+      "note": "fired-shell chute flush at the -X face (y 340..460, z 40..190); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "fired shell"
+    },
+    "N2": {
+      "style": "stub",
+      "face": "-Y",
+      "part": "melt_stubs",
+      "x_mm": 240.0,
+      "drawn_height_mm": 160.0,
+      "note": "melt DN15 stub flush at the -Y face at x 240, on its pipe stand",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "melt for investment pour"
+    },
+    "N3": {
+      "style": "stub",
+      "face": "-Y",
+      "part": "melt_stubs",
+      "x_mm": 400.0,
+      "drawn_height_mm": 160.0,
+      "note": "reactive-melt DN15 stub flush at the -Y face at x 400, on its pipe stand",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "reactive melt for investment pour"
+    },
+    "N4": {
+      "style": "solids",
+      "face": "+X",
+      "part": "cast_out_stop",
+      "note": "cast + shell stop flush at the +X face (z 610..730); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "cast + shell"
+    },
+    "N5": {
+      "style": "drain",
+      "face": "bottom",
+      "part": "drain_well",
+      "drawn_height_mm": 0.0,
+      "note": "drain well flush at the envelope bottom (z 0), sump face at the 50 datum",
+      "dn": "DN15",
+      "height_mm": 50.0,
+      "schedule_rating": "Class 150",
+      "service": "drain"
+    },
+    "N6": {
+      "style": "vent",
+      "face": "top",
+      "part": "vent_stub",
+      "drawn_height_mm": 800.0,
+      "note": "vent DN15 riser at (x 750, y 400), deck z 610 up to the 800 datum",
+      "dn": "DN15",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "vent"
+    },
+    "N7": {
+      "style": "carried",
+      "face": "top",
+      "note": "power terminal (SF-INV_CAST bus) - a cable-schedule row: carried verbatim, never drawn",
+      "dn": "cable",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-INV_CAST, 480 V or 208/120 V AC (bus per AQS-ELEC-002))"
+    }
+  },
   "frame_bbox_mm": [
     1500.0,
     800.0,

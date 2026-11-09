@@ -1,4 +1,191 @@
 {
+  "nozzles_drawn": {
+    "N1": {
+      "style": "solids",
+      "face": "+X",
+      "part": "slag_spout",
+      "drawn_height_mm": 600.0,
+      "note": "slag tap spout on the chlorinator +X shell (z 570..630, bore cut through); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "slag / residual grit"
+    },
+    "N2": {
+      "style": "solids",
+      "face": "-X",
+      "part": "charge_chutes",
+      "y_mm": [
+        470.0,
+        530.0
+      ],
+      "drawn_height_mm": 160.0,
+      "note": "dense-grit charge chute on the chlorinator -X face (y 470..530, z 130..220); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "dense grit (ilmenite/rutile fraction)"
+    },
+    "N3": {
+      "style": "stub",
+      "face": "-Y",
+      "part": "cl2_stubs",
+      "x_mm": 140.0,
+      "drawn_height_mm": 160.0,
+      "note": "chlorine-from-chlorinator DN15 stub on the chlorinator -Y shell; drawn with the Cl2-loop stubs at z 160 (MG_POT closes the loop), the schedule 600 datum is carried in height_mm",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "chlorine from Kroll chlorinator / Mg recycle"
+    },
+    "N4": {
+      "style": "solids",
+      "face": "+X",
+      "part": "harvest_ports",
+      "y_mm": 460.0,
+      "drawn_height_mm": 600.0,
+      "note": "Ti-sponge harvest port OD90 on the retort +X shell at y 460, z 600; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "Ti and other metal powders/sponge"
+    },
+    "N5": {
+      "style": "solids",
+      "face": "+X",
+      "part": "harvest_ports",
+      "y_mm": 580.0,
+      "drawn_height_mm": 600.0,
+      "note": "sponge-to-vacuum-melt harvest port OD90 on the retort +X shell at y 580, z 600; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "Ti sponge/powder to vacuum melt"
+    },
+    "N6": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "mgcl2_stubs",
+      "x_mm": 620.0,
+      "drawn_height_mm": 600.0,
+      "note": "Kroll-retort MgCl2-return DN15 stub on the retort +Y shell at x 620",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "Kroll retort MgCl2 return (net of drag-out)"
+    },
+    "N7": {
+      "style": "solids",
+      "face": "+Y",
+      "part": "mgcl2_stubs",
+      "x_mm": 720.0,
+      "drawn_height_mm": 600.0,
+      "note": "MgCl2-class salt drag-out DN15 stub on the retort +Y shell at x 720, over the trough; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "MgCl2-class salt drag-out (flux cover source)"
+    },
+    "N8": {
+      "style": "solids",
+      "face": "-X",
+      "part": "mg_chute",
+      "drawn_height_mm": 160.0,
+      "note": "Mg-reductant chute on the retort -X face (x 535..575, z 130..220); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "Mg reductant to the Kroll retort"
+    },
+    "N9": {
+      "style": "stub",
+      "face": "-Y",
+      "part": "cl2_stubs",
+      "x_mm": 200.0,
+      "drawn_height_mm": 160.0,
+      "note": "chlorine-to-chlorinator DN15 stub on the chlorinator -Y shell at x 200",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "chlorine to the Kroll chlorinator"
+    },
+    "N10": {
+      "style": "solids",
+      "face": "-X",
+      "part": "charge_chutes",
+      "y_mm": [
+        530.0,
+        590.0
+      ],
+      "drawn_height_mm": 160.0,
+      "note": "rutile-concentrate charge chute on the chlorinator -X face (y 530..590, z 130..220); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "TiO2-equivalent rutile concentrate (dock import class)"
+    },
+    "N11": {
+      "style": "solids",
+      "face": "-X",
+      "part": "charge_chutes",
+      "y_mm": [
+        590.0,
+        650.0
+      ],
+      "drawn_height_mm": 160.0,
+      "note": "carbon-reductant charge chute on the chlorinator -X face (y 590..650, z 130..220); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "carbon reductant (petcoke/char class)"
+    },
+    "N12": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "co_stub",
+      "y_mm": [
+        640.0,
+        685.0
+      ],
+      "drawn_height_mm": 600.0,
+      "note": "chlorinator-CO DN15 export stub on the chlorinator +Y shell at z 600",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "chlorinator CO (fuel-gas class export)"
+    },
+    "N13": {
+      "style": "drain",
+      "face": "bottom",
+      "part": "drain_well",
+      "drawn_height_mm": 0.0,
+      "note": "drain well flush at the envelope bottom (z 0) through the chlorinator pedestal, sump face at the 50 datum",
+      "dn": "DN15",
+      "height_mm": 50.0,
+      "schedule_rating": "Class 150",
+      "service": "drain"
+    },
+    "N14": {
+      "style": "vent",
+      "face": "top",
+      "part": "vent_stub",
+      "drawn_height_mm": 800.0,
+      "note": "vent DN15 riser off the condenser top (x 400, y 560), z 660 up to the 800 datum with its -Y stub",
+      "dn": "DN15",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "vent"
+    },
+    "N15": {
+      "style": "carried",
+      "face": "top",
+      "note": "power terminal (SF-TI_CELL bus) - a cable-schedule row: carried verbatim, never drawn",
+      "dn": "cable",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-TI_CELL, 480 V or 208/120 V AC (bus per AQS-ELEC-002))"
+    }
+  },
   "vessel_bbox_mm": [
     680.0,
     230.0,

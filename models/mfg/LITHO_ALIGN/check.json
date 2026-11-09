@@ -46,10 +46,19 @@
       "schedule_rating": "Class 150",
       "service": "vent",
       "note": "vent flush at the envelope top; schedule datum 800 mm is the box top; the AQS-LITH-001 section 4 SB350 hose barb is the machine service interface, not a schedule row (W12)"
+    },
+    "N3": {
+      "style": "carried",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-LITHO_ALIGN, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
+      "note": "power terminal row - a cable schedule row: carried verbatim, never drawn"
     }
   },
-  "nozzle_count_schedule": 2,
-  "nozzle_idiom": "both schedule rows are envelope hardware rows drawn flush at the envelope faces (duty section 4: 'No present edge. No nozzle.'); the AQS-LITH-001 section 4 SB350 hose barb is the machine service interface and is not a schedule row (named, W12); the schedule rating column (Class 150) carried verbatim as text",
+  "nozzle_count_schedule": 3,
+  "nozzle_idiom": "the schedule rows are envelope hardware rows drawn flush at the envelope faces (duty section 4: 'No present edge. No nozzle.'); the AQS-LITH-001 section 4 SB350 hose barb is the machine service interface and is not a schedule row (named, W12); the schedule rating column (Class 150) carried verbatim as text",
   "part_mass_kg": {
     "base": 38.88,
     "frame": 27.99,

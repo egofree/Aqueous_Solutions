@@ -103,7 +103,53 @@ valid = all(v.val().isValid() for v in ALL)
 rho = {"uprights": 7.85e-6, "tier_decks": 7.85e-6, "back_guard": 7.85e-6, "edge_stops": 7.85e-6,
        "issue_sill": 7.85e-6, "drain_well": 7.85e-6, "vent_stub": 7.85e-6}
 mass = {k: round(v.val().Volume() * rho[k], 1) for k, v in parts.items()}
+# ---------------- acceptance record: nozzles_drawn -------------------------------
+# Every row of docs-authority/nozzles/STOCK_OUT.csv, recorded from the placement
+# this build draws.
+sched_rows = {}
+with open(HERE.parents[2] / "docs-authority" / "nozzles" / "STOCK_OUT.csv") as f:
+    for _r in csv.DictReader(f):
+        sched_rows[_r["tag"]] = _r
+_IN = ("stock-inlet row: received on the tier decks (deck tops z 160/600/1000; the z 160 "
+       "deck carries the 160 datum); solids row, bore not calculated")
+PLACE = {
+    "N1": {"style": "solids", "face": "inlet", "part": "tier_decks", "drawn_height_mm": 160.0,
+           "note": "plate/sheet, " + _IN},
+    "N2": {"style": "solids", "face": "inlet", "part": "tier_decks", "drawn_height_mm": 160.0,
+           "note": "rod/profile, " + _IN},
+    "N3": {"style": "solids", "face": "inlet", "part": "tier_decks", "drawn_height_mm": 160.0,
+           "note": "wire, " + _IN},
+    "N4": {"style": "solids", "face": "inlet", "part": "tier_decks", "drawn_height_mm": 160.0,
+           "note": "sintered stock, " + _IN},
+    "N5": {"style": "solids", "face": "inlet", "part": "tier_decks", "drawn_height_mm": 160.0,
+           "note": "as-cast stock, " + _IN},
+    "N6": {"style": "solids", "face": "inlet", "part": "tier_decks", "drawn_height_mm": 160.0,
+           "note": "powder stock, " + _IN},
+    "N7": {"style": "solids", "face": "inlet", "part": "tier_decks", "drawn_height_mm": 160.0,
+           "note": "investment casting, " + _IN},
+    "N8": {"style": "solids", "face": "+X", "part": "issue_sill", "drawn_height_mm": 600.0,
+           "note": "formed-metal issue at the +X face: issue sill (z 480..640) over the z 600 "
+                   "deck with edge stops above each tier; solids row, bore not calculated"},
+    "N9": {"style": "drain", "face": "bottom", "part": "drain_well", "drawn_height_mm": 0.0,
+           "note": "nominal floor drain flush at the envelope bottom (z 0), sump face at the "
+                   "50 datum"},
+    "N10": {"style": "vent", "face": "top", "part": "vent_stub", "drawn_height_mm": 1500.0,
+            "note": "vent DN15 stub at (x 600, y 400), flush at the envelope top (z 1475..1500); "
+                    "the schedule 800 datum is carried in height_mm"},
+}
+drawn = {}
+for tag, rec in PLACE.items():
+    row = sched_rows[tag]
+    rec = dict(rec)
+    rec["dn"] = row["size"] if rec["style"] == "carried" else "DN15"
+    rec["height_mm"] = float(row["height_mm"])
+    rec["schedule_rating"] = row["rating"]
+    rec["service"] = row["service"]
+    drawn[tag] = rec
+assert set(drawn) == set(sched_rows), sorted(set(drawn) ^ set(sched_rows))
+
 report = {
+    "nozzles_drawn": drawn,
     "rack_bbox_mm": [round(sb.xlen, 1), round(sb.ylen, 1), round(sb.zlen, 1)],
     "inside_size_mm_shell": inside_shell,
     "connection_overhang_mm": overhang,

@@ -1,4 +1,111 @@
 {
+  "nozzles_drawn": {
+    "N1": {
+      "style": "solids",
+      "face": "+X",
+      "part": "mg_tap_group",
+      "note": "Mg-metal tap: DN80-class well, crest and discharge lip flush at the +X face (lip z 555..610); solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "Mg metal"
+    },
+    "N2": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "cl2_stubs",
+      "x_mm": 202.0,
+      "drawn_height_mm": 600.0,
+      "note": "Cl2-return DN15 stub flush at the +Y face at x 202",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "Cl2 return"
+    },
+    "N3": {
+      "style": "stub",
+      "face": "-Y",
+      "part": "inlet_groups",
+      "x_mm": [
+        238.0,
+        274.0
+      ],
+      "drawn_height_mm": 160.0,
+      "note": "Kroll-retort MgCl2 return: launder flush at the -Y face (x 238..274, z 130..220) and the return lance into the bath at z 160",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "Kroll retort MgCl2 return (net of drag-out)"
+    },
+    "N4": {
+      "style": "stub",
+      "face": "-Y",
+      "part": "inlet_groups",
+      "x_mm": [
+        526.0,
+        562.0
+      ],
+      "drawn_height_mm": 160.0,
+      "note": "CaCl2-MgCl2 brine in: launder flush at the -Y face (x 526..562, z 130..220) and the brine lance into the bath at z 160",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "CaCl2-MgCl2 brine concentrate (mining-waste class)"
+    },
+    "N5": {
+      "style": "solids",
+      "face": "-X",
+      "part": "reductant_tap_group",
+      "note": "Mg-reductant draw to the Kroll retort: DN80-class well, crest and discharge lip flush at the -X face; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "Mg reductant to the Kroll retort"
+    },
+    "N6": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "cl2_stubs",
+      "x_mm": 598.0,
+      "drawn_height_mm": 600.0,
+      "note": "chlorine-to-chlorinator DN15 stub flush at the +Y face at x 598",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "chlorine to the Kroll chlorinator"
+    },
+    "N7": {
+      "style": "drain",
+      "face": "bottom",
+      "part": "drain_well",
+      "drawn_height_mm": 0.0,
+      "note": "drain well flush at the envelope bottom (z 0), sump face at the 50 datum; frozen-salt drain pig",
+      "dn": "DN15",
+      "height_mm": 50.0,
+      "schedule_rating": "Class 150",
+      "service": "drain"
+    },
+    "N8": {
+      "style": "vent",
+      "face": "top",
+      "part": "vent_stub",
+      "drawn_height_mm": 800.0,
+      "note": "vent DN15 stub hung on the offtake riser at z 800, out on the -Y side",
+      "dn": "DN15",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "vent"
+    },
+    "N9": {
+      "style": "carried",
+      "face": "top",
+      "note": "power terminal (SF-MG_POT bus) - a cable-schedule row: carried verbatim, never drawn",
+      "dn": "cable",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-MG_POT, 480 V or 208/120 V AC (bus per AQS-ELEC-002))"
+    }
+  },
   "shell_bbox_mm": [
     800.6,
     800.1,
