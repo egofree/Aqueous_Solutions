@@ -573,6 +573,28 @@ def check_unit(rec):
                         n_par = -1
                 if n_par != n_csv:
                     fails.append(f'nozzle count {n_par} against schedule {n_csv}')
+            cpath = os.path.join(MFG, rec['unit'], 'check.json')
+            if os.path.exists(cpath):
+                try:
+                    with open(cpath) as fh:
+                        cdata = json.load(fh)
+                except json.JSONDecodeError:
+                    fails.append('check.json is not valid JSON')
+                    cdata = None
+                if cdata is not None and 'nozzles_drawn' not in cdata:
+                    fails.append('check.json does not record nozzle coverage '
+                                 '(no nozzles_drawn section)')
+                elif cdata is not None:
+                    drawn = cdata.get('nozzles_drawn') or {}
+                    tags = {r['tag'] for r in (rec['nozzles'] or [])}
+                    missing = sorted(tags - set(drawn))
+                    unknown = sorted(set(drawn) - tags)
+                    if missing:
+                        fails.append('schedule rows not drawn or carried: '
+                                     + ', '.join(missing))
+                    if unknown:
+                        fails.append('check.nozzles_drawn tags not in the schedule: '
+                                     + ', '.join(unknown))
     bom = os.path.join(MFG, rec['unit'], 'bom.csv')
     if os.path.exists(bom):
         with open(bom) as fh:
