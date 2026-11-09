@@ -705,9 +705,10 @@
         "size_note": "DN32 manifold x 20 m run (0.009 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
-          50,
-          50
-        ]
+          42.4,
+          42.4
+        ],
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN32 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (42.4 mm, EN-rounded OD series, AQS-PIP-004)"
       },
       "continuous_kw": null
     },

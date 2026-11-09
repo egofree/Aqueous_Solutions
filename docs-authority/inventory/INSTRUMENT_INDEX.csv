@@ -671,6 +671,8 @@ VDF_SYN-LSH-01,VDF_SYN,POLYMERS,high-level switch,"IEC 60947-5, 316L",trip at 90
 VDF_SYN-LT-01,VDF_SYN,POLYMERS,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),VDF_SYNLT-01,PLC-POLYMERS,A-M-182 liquid height
 VDF_SYN-PT-01,VDF_SYN,POLYMERS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),VDF_SYNPT-01,PLC-POLYMERS,no design pressure on the graph
 VDF_SYN-TE-01,VDF_SYN,POLYMERS,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),VDF_SYNTE-01,PLC-POLYMERS,band by service
+POLY_FIBER-FT-01,POLY_FIBER,POLYMERS,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.0005 L/h,4-20 mA HART (AI),POLY_FIBERFT-01,PLC-POLYMERS,FIBER_SCRAP normal 0.00 L/h
+POLY_FIBER-FT-02,POLY_FIBER,POLYMERS,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.01 L/h,4-20 mA HART (AI),POLY_FIBERFT-02,PLC-POLYMERS,FLEECE_TO_MFG normal 0.00 L/h
 POLY_FIBER-PT-01,POLY_FIBER,POLYMERS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),POLY_FIBERPT-01,PLC-POLYMERS,no design pressure on the graph
 POLY_FIBER-TE-01,POLY_FIBER,POLYMERS,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),POLY_FIBERTE-01,PLC-POLYMERS,band by service
 HYDRO_SET-PT-01,HYDRO_SET,PUMPED_HYDRO,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),HYDRO_SETPT-01,PLC-PUMPED_HYDRO,no design pressure on the graph

@@ -4,7 +4,7 @@ Class: washroom; sector HAB. Study route. Not stamped.
 Envelope: Envelope 3000×2000×2400 mm;
 service line: service washroom / hygiene, 6 m2; area_m2 6; basis A-M-419; AQS-HAB-001.
 
-Internals: duty sheet: "The envelope is `cad/stl/WASHROOM.stl` (a thick-walled tray at the claimed envelope; X-PAR-04). Manufacturing " [docs-authority/duties/WASHROOM.md]
+Internals: issued mfg model BOM (1 internals part row): "2,"SS304 fixture set: shower tray, WC pan, wall-hung basin - study sheet-metal envelopes in the +X wet" [models/mfg/WASHROOM/bom.csv]
 Material: FRP wet-wall panels, SS304 fixtures, ceramic tile wet zones, SS drainage. Basis: continuous wet zone at habitable temperature (AQS-HAB-001; A-M-419): FRP and ceramic carry the standing condensate; 304 is the fixture class at the chloride-light service Alternative: SS316 fixtures where sanitiser chemistry concentrates. grey water to the WTR loop; the washroom is the largest hab water consumer. (continues on the duty sheet)
 
 Nozzles: 4 process connections per docs-authority/nozzles/WASHROOM.csv

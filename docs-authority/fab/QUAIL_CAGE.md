@@ -4,7 +4,7 @@ Class: cage; sector FARM. Study route. Not stamped.
 Envelope: Envelope 1300×700×1700 mm;
 service line: service coturnix quail cage bank, 20 hens; stock 20; egg_kg_d 0.06; ration_kg_d 0.5; basis A-M-422 (X-FARM-06).
 
-Internals: duty sheet: "PP feeders, SS316 nipple waterers. Basis: dry droppings-tray service at the 20-hen Coturnix unit (graph design" [docs-authority/duties/QUAIL_CAGE.md]
+Internals: issued mfg model BOM (1 internals part row): "2,Drop board 3 mm at z 100 - the manure tray feeding the vermi bin direct (duty section 3),1,HDG sheet (duty s" [models/mfg/QUAIL_CAGE/bom.csv]
 Material: Hot-dip galvanised weld-wire cage battery, PP feeders, SS316 nipple waterers. Basis: dry droppings-tray service at the 20-hen Coturnix unit (graph design; A-M-422): HDG weld wire is the cage-battery standard; the only wet points are the nipples, so those alone are stainless Alternative: PVC-coated wire if foot dermatitis ever shows at the cage floor. (continues on the duty sheet)
 
 Nozzles: 9 process connections per docs-authority/nozzles/QUAIL_CAGE.csv

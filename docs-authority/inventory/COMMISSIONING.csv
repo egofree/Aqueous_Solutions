@@ -182,7 +182,7 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 18,POLYMERS,PELLET,fill or function test per AQS-QA-001 R8,2,SIF-059,,
 18,POLYMERS,POLY_COND,fill or function test per AQS-QA-001 R8,3,-,,
 18,POLYMERS,POLY_F,fill or function test per AQS-QA-001 R8,6,SIF-144,0.25,
-18,POLYMERS,POLY_FIBER,fill or function test per AQS-QA-001 R8,4,SIF-087,,
+18,POLYMERS,POLY_FIBER,fill or function test per AQS-QA-001 R8,6,SIF-087,,
 18,POLYMERS,POLY_OLEFIN,fill or function test per AQS-QA-001 R8,5,SIF-058 SIF-145,0.38,C5-C10
 18,POLYMERS,POLY_STOCK,fill or function test per AQS-QA-001 R8,5,SIF-061,,
 18,POLYMERS,POWDER_RESIN,fill or function test per AQS-QA-001 R8,3,SIF-060,,

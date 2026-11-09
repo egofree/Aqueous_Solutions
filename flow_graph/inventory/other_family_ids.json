@@ -785,6 +785,46 @@
    "category": "fastener",
    "item": "M10 hatch hold-down clamp",
    "spec": "ISO 3506 A4-70"
+  },
+  "OF-158": {
+   "category": "fastener",
+   "item": "M8 socket bolt",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-159": {
+   "category": "fastener",
+   "item": "M8 cage-section joint bolt",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-160": {
+   "category": "fastener",
+   "item": "M8 frame-section joint bolt",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-161": {
+   "category": "fastener",
+   "item": "M10 socket bolt",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-162": {
+   "category": "fastener",
+   "item": "M10 counter hold-down bolt",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-163": {
+   "category": "fastener",
+   "item": "M10 fixture hold-down bolt",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-164": {
+   "category": "fastener",
+   "item": "M10 shell sill anchor",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-165": {
+   "category": "fastener",
+   "item": "M10 shell sill anchor",
+   "spec": "ISO 3506 A4-70"
   }
  }
 }

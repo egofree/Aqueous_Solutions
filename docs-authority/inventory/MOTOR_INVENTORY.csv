@@ -176,6 +176,8 @@ POLYMERS,POLY_MON,POLY_F,transfer pump POLYF_TO_FILM to FILM_CAST,BLDC,42 mm (NE
 POLYMERS,POLY_MON,POLY_STOCK,transfer pump FLUORO_TO_MFG to MFG_SHOP,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"0.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 POLYMERS,POLY_MON,TFE_SYN,Dilute-HCl return pump and transfer line to CRU,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 POLYMERS,POLY_MON,VDF_SYN,Dilute-HCl return pump and transfer line to CRU,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
+POLYMERS,melt_spin,POLY_FIBER,"Quench/winder housing 1500 x 400 x 400 (sheet box, open top)",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
+POLYMERS,melt_spin,POLY_FIBER,"Spin pump + drive set, purchased, 0.3 kW node duty class",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 PUMPED_HYDRO,HYDRO,HYDRO_SET,Buffer manifold vessel OD 160 x 300 (study),induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 PUMPED_HYDRO,HYDRO,HYDRO_SET,"Pump-motor envelope (recharge 49.6 kW over the PV window, et",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 WTR,BMED_CRU,BMED_UPW_POLISH,RO pump envelope,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)

@@ -25,7 +25,7 @@ PI blocks with set-point literals taken from the graph basis column of AQS-CTL-0
 
 | Class | Loops | Rule |
 |---|---|---|
-| CONTROL | 223 | graph basis carries a numeric set-point (edge normal rate, unit design temperature, design pressure, cell current); PI with the +10/-10 % registered alarm margin (X-SAF-05 margin class, A-M-188); an expected-zero set-point (standby line) alarms on any positive PV and has no low alarm |
+| CONTROL | 225 | graph basis carries a numeric set-point (edge normal rate, unit design temperature, design pressure, cell current); PI with the +10/-10 % registered alarm margin (X-SAF-05 margin class, A-M-188); an expected-zero set-point (standby line) alarms on any positive PV and has no low alarm |
 | INDICATION | 579 | no numeric set-point in the basis ('band by service', 'no design pressure on the graph', A-M-182 hold-up heights); monitor with the 90 % high alarm (registered high-level-switch convention, AQS-INV-004); no set-point invented |
 | SIF | 16 | independent safety elements of AQS-CTL-003; declared as watch inputs to the safety CPU pair, no action in the basic program |
 
@@ -48,7 +48,7 @@ PI blocks with set-point literals taken from the graph basis column of AQS-CTL-0
 | PLC-MFG | 32 | 1 | 32 | 0 | 9/42/5 | single |
 | PLC-NUT | 9 | 0 | 9 | 0 | 0/11/5 | redundant pair |
 | PLC-OIL | 55 | 3 | 55 | 0 | 0/34/4 | single |
-| PLC-POLYMERS | 48 | 2 | 48 | 0 | 0/18/3 | single |
+| PLC-POLYMERS | 50 | 2 | 50 | 0 | 0/22/5 | single |
 | PLC-PUMPED_HYDRO | 2 | 0 | 2 | 0 | 0/4/2 | redundant pair |
 | PLC-WTR | 70 | 0 | 70 | 0 | 0/55/10 | redundant pair |
 
@@ -65,7 +65,7 @@ claim and invents no tuning constants.
 The 68 discrete instrument points (LSH 66, PSH 2 rupture-disc and PSV-lift indication) are permissive/interlock inputs
 declared per the AQS-CTL-002 module table; their trip matrix is the AQS-CTL-003 cause and effect, not the basic program.
 
-- CONTROL loops exercised: 1115 checks pass, 0 fail
+- CONTROL loops exercised: 1125 checks pass, 0 fail
 - INDICATION loops exercised: 1156 checks pass, 0 fail
 - SIF watch bindings: 16 pass, 0 fail
 - AI-count cross-check vs AQS-CTL-002: 0 PLCs with a residual

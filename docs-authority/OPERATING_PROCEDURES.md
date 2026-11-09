@@ -168,7 +168,7 @@ Units: AL_POT, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRAW, EXTRUDE, 
 
 Units: FILM_CAST, HF_GEN, PELLET, POLY_COND, POLY_F, POLY_FIBER, POLY_OLEFIN, POLY_STOCK, POWDER_RESIN, TFE_SYN, VDF_SYN.
 
-- **Normal:** 54 loops on PLC-POLYMERS in auto; operator rounds per shift on levels and temperatures of FILM_CAST, HF_GEN, POLY_F, POLY_OLEFIN, TFE_SYN, VDF_SYN; alarm response per AQS-CTL-001.
+- **Normal:** 56 loops on PLC-POLYMERS in auto; operator rounds per shift on levels and temperatures of FILM_CAST, HF_GEN, POLY_F, POLY_OLEFIN, TFE_SYN, VDF_SYN; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-17 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 19-18 stopped first (none). Normal stop leaves liquids in place, hot or cold standby.
 - **Emergency:** 12 trips: SIF-116 level high-high → close feed valve / stop feed pump; SIF-044 temperature high-high → heater supply off; SIF-128 level high-high → close feed valve / stop feed pump; SIF-059 flow or level low-low → pump stop; SIF-144 level high-high → close feed valve / stop feed pump; SIF-087 flow or level low-low → pump stop …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.

@@ -1,6 +1,6 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,107,1697 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,855,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,107,1703 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,857,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 174 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
@@ -1460,7 +1460,9 @@ FARM,bsfl_bin,BSFL_BIN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP
 FARM,bsfl_bin,BSFL_BIN,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,FRASS: one at each end nozzle (assumed)
 FARM,bsfl_bin,BSFL_BIN,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,BSFL_VAP: one at each end nozzle (assumed)
 FARM,bsfl_bin,BSFL_BIN,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,LARVAE_FRESH: one at each end nozzle (assumed)
-FARM,cage,QUAIL_CAGE,fabricated part,fabricated part set,5 BOM lines,models/mfg/QUAIL_CAGE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,cage,QUAIL_CAGE,fabricated part,fabricated part set,6 BOM lines,models/mfg/QUAIL_CAGE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,cage,QUAIL_CAGE,fastener,M10 base hold-down anchor,M10 base hold-down anchor,ISO 898-1 8.8,4,models/mfg/QUAIL_CAGE/fasteners.csv
+FARM,cage,QUAIL_CAGE,fastener,M8 cage-section joint bolt,M8 cage-section joint bolt,ISO 898-1 8.8,12,models/mfg/QUAIL_CAGE/fasteners.csv
 FARM,cage,QUAIL_CAGE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,56,QUAIL_EGGS: 2 per support (assumed)
 FARM,cage,QUAIL_CAGE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,QUAIL_DROP: 2 per support (assumed)
 FARM,cage,QUAIL_CAGE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,QUAIL_VAP: 2 per support (assumed)
@@ -1559,7 +1561,9 @@ FARM,hive,BEE_HIVE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 
 FARM,hive,BEE_HIVE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",25,BEE_VAP: AQS-PIP-005 span count
 FARM,hive,BEE_HIVE,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,HONEY: one at each end nozzle (assumed)
 FARM,hive,BEE_HIVE,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,BEE_VAP: one at each end nozzle (assumed)
-FARM,hutch,RABBIT_HUTCH,fabricated part,fabricated part set,5 BOM lines,models/mfg/RABBIT_HUTCH/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,hutch,RABBIT_HUTCH,fabricated part,fabricated part set,7 BOM lines,models/mfg/RABBIT_HUTCH/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FARM,hutch,RABBIT_HUTCH,fastener,M10 base hold-down anchor,M10 base hold-down anchor,ISO 898-1 8.8,4,models/mfg/RABBIT_HUTCH/fasteners.csv
+FARM,hutch,RABBIT_HUTCH,fastener,M8 frame-section joint bolt,M8 frame-section joint bolt,ISO 898-1 8.8,12,models/mfg/RABBIT_HUTCH/fasteners.csv
 FARM,hutch,RABBIT_HUTCH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,52,RABBIT_MEAT: 2 per support (assumed)
 FARM,hutch,RABBIT_HUTCH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,RABBIT_MANURE: 2 per support (assumed)
 FARM,hutch,RABBIT_HUTCH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,RABBIT_VAP: 2 per support (assumed)
@@ -1686,9 +1690,9 @@ FOUNDRY,FOUNDRY_E,EXTRUDE,fastener,M16 wedge anchor,M16 wedge anchor,ISO 898-1 8
 FOUNDRY,FOUNDRY_E,EXTRUDE,fastener,M24 stud + nut (ISO 4014 / ISO 4032),M24 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,8,models/mfg/EXTRUDE/fasteners.csv
 FOUNDRY,FOUNDRY_E,EXTRUDE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,EXTRUDE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,FOUNDRY_E,FLUX_PREP,fabricated part,fabricated part set,6 BOM lines,models/mfg/FLUX_PREP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,FOUNDRY_E,FLUX_PREP,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/FLUX_PREP/fasteners.csv
-FOUNDRY,FOUNDRY_E,FLUX_PREP,fastener,M8 bolt,M8 bolt,ISO 898-1 8.8,4,models/mfg/FLUX_PREP/fasteners.csv
+FOUNDRY,FOUNDRY_E,FLUX_PREP,fabricated part,fabricated part set,4 BOM lines,models/mfg/FLUX_PREP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,FOUNDRY_E,FLUX_PREP,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,4,models/mfg/FLUX_PREP/fasteners.csv
+FOUNDRY,FOUNDRY_E,FLUX_PREP,fastener,M8 socket bolt,M8 socket bolt,ISO 3506 A4-70,8,models/mfg/FLUX_PREP/fasteners.csv
 FOUNDRY,FOUNDRY_E,FLUX_PREP,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,FLUX_PREP,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,FOUNDRY_E,FORGE,fabricated part,fabricated part set,9 BOM lines,models/mfg/FORGE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
@@ -1877,8 +1881,8 @@ FOUNDRY,FOUNDRY_E,VAC_IND,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS
 FOUNDRY,FOUNDRY_E,VAC_IND,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,VAC_IND_TO_VAC_CAST: one at each end nozzle (assumed)
 FOUNDRY,FOUNDRY_E,VAC_IND,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,VAC_TO_INV: one at each end nozzle (assumed)
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,fabricated part,fabricated part set,8 BOM lines,models/mfg/WAX_PATTERN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,FOUNDRY_E,WAX_PATTERN,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/WAX_PATTERN/fasteners.csv
-FOUNDRY,FOUNDRY_E,WAX_PATTERN,fastener,M8 bolt,M8 bolt,ISO 898-1 8.8,4,models/mfg/WAX_PATTERN/fasteners.csv
+FOUNDRY,FOUNDRY_E,WAX_PATTERN,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,4,models/mfg/WAX_PATTERN/fasteners.csv
+FOUNDRY,FOUNDRY_E,WAX_PATTERN,fastener,M8 socket bolt,M8 socket bolt,ISO 3506 A4-70,8,models/mfg/WAX_PATTERN/fasteners.csv
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2191,6 +2195,8 @@ HAB,HAB,HDR_N2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, 
 HAB,dayroom,COMMON_AREA,fabricated part,fabricated part set,5 BOM lines,models/mfg/COMMON_AREA/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 HAB,dayroom,REC_DAYROOM,fabricated part,fabricated part set,5 BOM lines,models/mfg/REC_DAYROOM/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 HAB,galley,GALLEY,fabricated part,fabricated part set,5 BOM lines,models/mfg/GALLEY/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+HAB,galley,GALLEY,fastener,M10 counter hold-down bolt,M10 counter hold-down bolt,ISO 3506 A4-70,6,models/mfg/GALLEY/fasteners.csv
+HAB,galley,GALLEY,fastener,M10 shell sill anchor,M10 shell sill anchor,ISO 898-1 8.8,4,models/mfg/GALLEY/fasteners.csv
 HAB,galley,GALLEY,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,46,GALLEY_MEALS: 2 per support (assumed)
 HAB,galley,GALLEY,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,64,GALLEY_BIO: 2 per support (assumed)
 HAB,galley,GALLEY,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,60,EGGSHELL_RET: 2 per support (assumed)
@@ -2207,7 +2213,9 @@ HAB,galley,GALLEY,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS S
 HAB,galley,GALLEY,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,GAL_GREY: one at each end nozzle (assumed)
 HAB,medical,MEDICAL,fabricated part,fabricated part set,5 BOM lines,models/mfg/MEDICAL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 HAB,quarters,SLEEP_QUARTERS,fabricated part,fabricated part set,5 BOM lines,models/mfg/SLEEP_QUARTERS/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-HAB,washroom,WASHROOM,fabricated part,fabricated part set,5 BOM lines,models/mfg/WASHROOM/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+HAB,washroom,WASHROOM,fabricated part,fabricated part set,3 BOM lines,models/mfg/WASHROOM/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+HAB,washroom,WASHROOM,fastener,M10 fixture hold-down bolt,M10 fixture hold-down bolt,ISO 3506 A4-70,6,models/mfg/WASHROOM/fasteners.csv
+HAB,washroom,WASHROOM,fastener,M10 shell sill anchor,M10 shell sill anchor,ISO 3506 A4-70,4,models/mfg/WASHROOM/fasteners.csv
 HAB,washroom,WASHROOM,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,WASH_GREY: 2 per support (assumed)
 HAB,washroom,WASHROOM,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 HAB,washroom,WASHROOM,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
@@ -3077,13 +3085,28 @@ POLYMERS,POLY_MON,VDF_SYN,valve,check valve,DN15,"316L swing/ball check valve, A
 POLYMERS,POLY_MON,VDF_SYN,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,VDF_HCL_TO_CRU: pump discharge (assumed)
 POLYMERS,POLY_MON,VDF_SYN,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,VDF_TO_POLY_F: one at each end nozzle (assumed)
 POLYMERS,POLY_MON,VDF_SYN,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,VDF_HCL_TO_CRU: one at each end nozzle (assumed)
-POLYMERS,melt_spin,POLY_FIBER,fabricated part,fabricated part set,4 BOM lines,models/mfg/POLY_FIBER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+POLYMERS,melt_spin,POLY_FIBER,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Quench/winder housing 1500 x 400 x 400 (sheet box, open top): drive and non-drive end, IEC 60072 frame 63 (assumed size)"
+POLYMERS,melt_spin,POLY_FIBER,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Spin pump + drive set, purchased, 0.3 kW node duty class: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
+POLYMERS,melt_spin,POLY_FIBER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Quench/winder housing 1500 x 400 x 400 (sheet box, open top): run and fault (assumed)"
+POLYMERS,melt_spin,POLY_FIBER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Spin pump + drive set, purchased, 0.3 kW node duty class: run and fault (assumed)"
+POLYMERS,melt_spin,POLY_FIBER,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Quench/winder housing 1500 x 400 x 400 (sheet box, open top) (assumed VFD at >= 0.75 kW)"
+POLYMERS,melt_spin,POLY_FIBER,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Spin pump + drive set, purchased, 0.3 kW node duty class (assumed VFD at >= 0.75 kW)"
+POLYMERS,melt_spin,POLY_FIBER,fabricated part,fabricated part set,9 BOM lines,models/mfg/POLY_FIBER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+POLYMERS,melt_spin,POLY_FIBER,fastener,M10 socket bolt,M10 socket bolt,ISO 3506 A4-70,8,models/mfg/POLY_FIBER/fasteners.csv
+POLYMERS,melt_spin,POLY_FIBER,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,4,models/mfg/POLY_FIBER/fasteners.csv
 POLYMERS,melt_spin,POLY_FIBER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,FIBER_SCRAP: 2 per support (assumed)
 POLYMERS,melt_spin,POLY_FIBER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,FLEECE_TO_MFG: 2 per support (assumed)
+POLYMERS,melt_spin,POLY_FIBER,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,FIBER_SCRAP: pumped line (assumed)
+POLYMERS,melt_spin,POLY_FIBER,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,FLEECE_TO_MFG: pumped line (assumed)
 POLYMERS,melt_spin,POLY_FIBER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 POLYMERS,melt_spin,POLY_FIBER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+POLYMERS,melt_spin,POLY_FIBER,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
+POLYMERS,melt_spin,POLY_FIBER,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
+POLYMERS,melt_spin,POLY_FIBER,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,"Spin pump + drive set, purchased, 0.3 kW node duty class: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 POLYMERS,melt_spin,POLY_FIBER,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,FIBER_SCRAP: AQS-PIP-005 span count
 POLYMERS,melt_spin,POLY_FIBER,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,FLEECE_TO_MFG: AQS-PIP-005 span count
+POLYMERS,melt_spin,POLY_FIBER,valve,check valve,DN15,"CPVC true-union swing/ball check valve, FKM seals",1,FIBER_SCRAP: pump discharge (assumed)
+POLYMERS,melt_spin,POLY_FIBER,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,FLEECE_TO_MFG: pump discharge (assumed)
 POLYMERS,melt_spin,POLY_FIBER,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,FIBER_SCRAP: one at each end nozzle (assumed)
 POLYMERS,melt_spin,POLY_FIBER,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,FLEECE_TO_MFG: one at each end nozzle (assumed)
 PUMPED_HYDRO,HYDRO,HYDRO_SET,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Buffer manifold vessel OD 160 x 300 (study): drive and non-drive end, IEC 60072 frame 63 (assumed size)"

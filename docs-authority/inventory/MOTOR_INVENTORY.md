@@ -34,7 +34,7 @@ Table 1.1. Motor families
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 103 | 4 | 25.75 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 22 | 7 | 17.30 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 54 | 37 | 6.48 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 56 | 38 | 6.72 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 5 | 3 | 1.85 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 5 | 5 | 7.50 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 1 | 1 | 0.09 |
@@ -299,6 +299,8 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | POLY_MON | POLY_STOCK | transfer pump FLUORO_TO_MFG to MFG_SHOP | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | POLY_MON | TFE_SYN | Dilute-HCl return pump and transfer line to CRU | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | POLY_MON | VDF_SYN | Dilute-HCl return pump and transfer line to CRU | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| melt_spin | POLY_FIBER | Quench/winder housing 1500 x 400 x 400 (sheet box, open top) | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| melt_spin | POLY_FIBER | Spin pump + drive set, purchased, 0.3 kW node duty class | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 
 ### PUMPED_HYDRO
 
