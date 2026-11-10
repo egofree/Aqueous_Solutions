@@ -126,9 +126,8 @@ EXPLICIT = {
  'Q3_B': 'heat-battery internals per AQS-DUTY-008 sec. 14: the water medium at the 30 K swing with the internal thermosyphon downhill steps and cross-ties, sized per the issued store table (Q3 tier); no other contacting internals',
  'Q4_A': 'heat-battery internals per AQS-DUTY-008 sec. 14: the water medium below 80 C with the internal thermosyphon downhill steps and cross-ties, sized per the issued store table (Q4 tier); no other contacting internals',
  'Q4_B': 'heat-battery internals per AQS-DUTY-008 sec. 14: the water medium below 80 C with the internal thermosyphon downhill steps and cross-ties, sized per the issued store table (Q4 tier); no other contacting internals',
- 'CRYO_CO2': 'none with basis: the unit is a pressurised tube bank, not a contacting vessel - 4 + reserve tubes DN114 (87.3 mm ID, 6.096 m, 0.0953 m3 main bank) at 2.2 MPa design per the receiver sizing; the open volume is the design',
- 'CRYO_H2': 'none with basis: pressurised tube bank - 32 tubes DN114 (87.3 mm ID, 6.096 m, 1.14 m3 main bank) at 22 MPa design per the receiver sizing; open volume, no internals',
- 'CRYO_O2': 'none with basis: pressurised tube bank - 14 tubes DN114 (87.3 mm ID, 6.096 m, 0.47 m3 main bank) at 22 MPa design per the receiver sizing; open volume, no internals',
+ 'CRYO_CO2': None,   # receiver bank: built from the node design below (F-20261109-07)
+ 'CRYO_O2': None,    # receiver bank: built from the node design below (F-20261109-07)
  'AQUA_UV': 'UV-C reactor internals: the 254 nm lamp array inside the reactor tube at the issued dose class, with the AQUA_BYPASS loop normally engaged (params.design dose/modes; A-M-428, A-M-427)',
  'BIOFILTER': 'moving-bed biofilter internals: the carrier media for the Nitrosomonas/Nitrobacter biofilm at the issued specific surface, with the outlet screen retaining the media (params.design media and O2 demand; A-M-415)',
  'FEED_PREP': 'formulation internals per the issued mfg model (models/mfg/FEED_PREP/bom.csv): the mixer paddle stage and the HP drier stack on the storage draw (A-M-426)',
@@ -217,6 +216,29 @@ UM = json.load(open('docs-authority/inventory/UNIT_MATERIALS.json')) if os.path.
 
 g = json.load(open('flow_graph/plant_flow_graph.json'))
 N = {n['unit_id']: n for n in g['nodes']}
+
+# F-20261109-03/-07/-08: the CRYO receiver-bank bases (H2, O2, CO2) are built from
+# the node sizing the receiver stage writes (flow_graph/param/receivers.py, A-M-167) -
+# no tube count, bank volume or pipe-class numeral is stated in this file. The hardware
+# class is the issued commercial receiver size read from the node material string
+# (SA-312 TP316L seamless DN100 Sch 160, OD 114.3); every figure prints from the node
+# design fields at run time.
+def _receiver_bank(uid):
+    _rd = ((N.get(uid) or {}).get('params') or {}).get('design') or {}
+    _rb = next((b for b in _rd.get('banks', []) if b.get('bank') == 'main'), {})
+    _cls = re.search(r'DN\d+\s+Sch\s+\d+', _rd.get('material', ''))
+    _res = ''.join(f" plus the {b.get('tubes', '?')}-tube {b.get('bank', '?')} bank"
+                   for b in _rd.get('banks', []) if b.get('bank') != 'main')
+    return ("none with basis: pressurised tube bank - "
+            f"{_rb.get('tubes', '?')} tubes of the issued receiver class "
+            f"{_cls.group(0) if _cls else _rd.get('material', '?')} "
+            f"(OD {_rd.get('OD_mm', 0):g} mm, ID {_rd.get('ID_mm', 0):g} mm, "
+            f"{_rd.get('tube_m', 0):g} m) with the {_rb.get('V_m3', 0):.4g} m3 "
+            f"main bank at {_rd.get('P_design_MPa', 0):g} MPa design per the receiver "
+            f"sizing (flow_graph/param/receivers.py node design){_res}; "
+            "open volume, no internals")
+for _u in ('CRYO_H2', 'CRYO_O2', 'CRYO_CO2'):
+    EXPLICIT[_u] = _receiver_bank(_u)
 UNITS = sorted(n['unit_id'] for n in g['nodes'] if n.get('class') != 'boundary' and n.get('sector_id') and n.get('presence') == 'present')
 
 defined, none_u, open_u = {}, [], {}

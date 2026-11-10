@@ -95,7 +95,7 @@
    "rating": "Class 150",
    "service": "O2 product",
    "face": "outlet",
-   "height_mm": 1500
+   "height_mm": 520
   },
   {
    "tag": "N3",
@@ -111,7 +111,7 @@
    "rating": "Class 150",
    "service": "vent",
    "face": "top",
-   "height_mm": 2000
+   "height_mm": 600
   },
   {
    "tag": "N5",
@@ -119,7 +119,7 @@
    "rating": "Class 150",
    "service": "O2",
    "face": "outlet",
-   "height_mm": 600
+   "height_mm": 520
   },
   {
    "tag": "N6",
@@ -127,7 +127,7 @@
    "rating": "Class 150",
    "service": "O2 oxidizer",
    "face": "outlet",
-   "height_mm": 600
+   "height_mm": 520
   },
   {
    "tag": "N7",
@@ -143,7 +143,7 @@
    "rating": "Class 150",
    "service": "oxygen makeup",
    "face": "outlet",
-   "height_mm": 600
+   "height_mm": 520
   },
   {
    "tag": "N9",

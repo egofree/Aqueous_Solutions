@@ -105,7 +105,7 @@
    "rating": "Class 150",
    "service": "CO2",
    "face": "outlet",
-   "height_mm": 1500
+   "height_mm": 380
   },
   {
    "tag": "N5",
@@ -113,7 +113,7 @@
    "rating": "Class 150",
    "service": "CO2 feedstock",
    "face": "outlet",
-   "height_mm": 1500
+   "height_mm": 380
   },
   {
    "tag": "N6",
@@ -121,7 +121,7 @@
    "rating": "Class 150",
    "service": "CO2 product after FLUE_KO",
    "face": "outlet",
-   "height_mm": 1500
+   "height_mm": 380
   },
   {
    "tag": "N7",
@@ -129,7 +129,7 @@
    "rating": "Class 150",
    "service": "CO2 return",
    "face": "outlet",
-   "height_mm": 1500
+   "height_mm": 380
   },
   {
    "tag": "N8",
@@ -145,7 +145,7 @@
    "rating": "Class 150",
    "service": "vent",
    "face": "top",
-   "height_mm": 2000
+   "height_mm": 450
   },
   {
    "tag": "N10",
