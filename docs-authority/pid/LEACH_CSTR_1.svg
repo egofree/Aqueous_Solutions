@@ -70,7 +70,7 @@
 <polygon points="586,470 577,466 577,474" fill="#111"/>
 <text x="24" y="451" font-size="9" fill="#666" text-anchor="start">BAGHOUSE</text>
 <text x="24" y="465" font-size="11" font-weight="600" text-anchor="start">IA-BAG-01</text>
-<text x="24" y="483" font-size="10" text-anchor="start">7.8 kg/d · DN50 P2</text>
+<text x="24" y="483" font-size="10" text-anchor="start">7.7 kg/d · DN50 P2</text>
 <text x="598" y="474" font-size="8" font-style="italic" fill="#555" text-anchor="start">N30</text>
 <line x1="430" y1="516" x2="577" y2="516" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,516 577,512 577,520" fill="#111"/>
@@ -172,7 +172,7 @@
 <polygon points="586,1252 577,1248 577,1256" fill="#111"/>
 <text x="24" y="1233" font-size="9" fill="#666" text-anchor="start">NORTH_DOCK</text>
 <text x="24" y="1247" font-size="11" font-weight="600" text-anchor="start">IA-H2O-MU</text>
-<text x="24" y="1265" font-size="10" text-anchor="start">330.5 kg/d · DN15 P2</text>
+<text x="24" y="1265" font-size="10" text-anchor="start">324.6 kg/d · DN15 P2</text>
 <text x="598" y="1256" font-size="8" font-style="italic" fill="#555" text-anchor="start">N48</text>
 <line x1="430" y1="1298" x2="577" y2="1298" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,1298 577,1294 577,1302" fill="#111"/>
@@ -190,7 +190,7 @@
 <polygon points="586,1390 577,1386 577,1394" fill="#111"/>
 <text x="24" y="1371" font-size="9" fill="#666" text-anchor="start">CONTINUOUS_RECYCLE</text>
 <text x="24" y="1385" font-size="11" font-weight="600" text-anchor="start">IA-REC-01</text>
-<text x="24" y="1403" font-size="10" text-anchor="start">3939.7 kg/d · DN15 P2</text>
+<text x="24" y="1403" font-size="10" text-anchor="start">3945.6 kg/d · DN15 P2</text>
 <text x="598" y="1394" font-size="8" font-style="italic" fill="#555" text-anchor="start">N3</text>
 <line x1="430" y1="1436" x2="577" y2="1436" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1436 577,1432 577,1440" fill="#111"/>
@@ -459,7 +459,7 @@
 <g id="aqs-title-block"><rect x="1116" y="2314" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="2331" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-LEACH_CSTR_1</text>
 <text x="1124" y="2348" font-size="9">P&amp;ID LEACH_CSTR_1 (vessel, DIGESTER sector)</text>
-<text x="1124" y="2365" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 8dcebcc1   Issued 2026-10-19</text>
+<text x="1124" y="2365" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev ae1b0c85   Issued 2026-10-19</text>
 <text x="1124" y="2382" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
 <text x="1124" y="2399" font-size="9">Graph Rev AD   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

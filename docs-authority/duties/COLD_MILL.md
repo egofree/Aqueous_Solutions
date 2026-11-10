@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 4.392 kg/d. Mass out 4.392 kg/d. Electrical duty 0.0197 kW. In: IA-MELT-MILL 4.392 kg/d (melt to the mill). Out: S59 4.392 kg/d (sheet / strip).
+1. Basis. Mass in 3.594 kg/d. Mass out 3.594 kg/d. Electrical duty 0.0186 kW. In: IA-MELT-MILL 3.594 kg/d (melt to the mill). Out: S59 3.594 kg/d (sheet / strip).
 
 2. Size.
 - In 3.95 kg/d. No envelope on the node. No residence is calculated.

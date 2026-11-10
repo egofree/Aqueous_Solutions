@@ -129,7 +129,7 @@ def process():
             ('IA-BAG-01','BAGHOUSE','LEACH_CSTR_1','MFG','DIGESTER',round(pr['wloss']+float(E['IA-MILL-LOSS']['rate']['value'])+float(E['IA-FAB-LOSS']['rate']['value']),4),
              'baghouse collected fines to the leach: mill loss + fab loss + draw swarf')]
     for sid, a, b, sa, sb, v, why in form:
-        note = f'{MET_TAG}. {why}; derived from the S08 deposit rows through solver.ew_products().'
+        note = f'{MET_TAG}. {why}; derived from the feed-assay deposit rows through solver.ew_products() (X-QA-04).'
         if sid in E: E[sid]['rate'] = rate(v, 'kg/d', note)
     # aisle air book: the wire-draw fume shrink leaves the MET_SCRUB blowdown without its old phantom make-up
     blow = float(E['S72']['rate']['value']) + float(E['S72B']['rate']['value'])

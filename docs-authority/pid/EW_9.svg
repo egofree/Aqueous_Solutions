@@ -45,7 +45,7 @@
 <polygon points="586,286 577,282 577,290" fill="#111"/>
 <text x="24" y="267" font-size="9" fill="#666" text-anchor="start">EW_8</text>
 <text x="24" y="281" font-size="11" font-weight="600" text-anchor="start">IA-EW-08</text>
-<text x="24" y="299" font-size="10" text-anchor="start">4174.9 kg/d · DN15 P1</text>
+<text x="24" y="299" font-size="10" text-anchor="start">4178.9 kg/d · DN15 P1</text>
 <text x="598" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="start">N1</text>
 <line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
@@ -71,7 +71,7 @@
 <polygon points="1070,332 1061,328 1061,336" fill="#111"/>
 <text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">POLISH_BANK</text>
 <text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">IA-EW-09</text>
-<text x="1476" y="345" font-size="10" text-anchor="end">4157.0 kg/d · DN15 P1</text>
+<text x="1476" y="345" font-size="10" text-anchor="end">4163.0 kg/d · DN15 P1</text>
 <text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N2</text>
 <line x1="979.7" y1="332" x2="971.7" y2="332" stroke="#111" stroke-width="1.2"/>
 <polygon points="970.7,332 976.7,328.5 976.7,335.5" fill="#111"/>
@@ -91,7 +91,7 @@
 <polygon points="1070,424 1061,420 1061,428" fill="#111"/>
 <text x="1476" y="405" font-size="9" fill="#666" text-anchor="end">MET_MELT</text>
 <text x="1476" y="419" font-size="11" font-weight="600" text-anchor="end">IA-EW-SHEET</text>
-<text x="1476" y="437" font-size="10" text-anchor="end">12.0 kg/d · solids transfer</text>
+<text x="1476" y="437" font-size="10" text-anchor="end">10.0 kg/d · solids transfer</text>
 <text x="902" y="428" font-size="8" font-style="italic" fill="#555" text-anchor="end">N5</text>
 <line x1="914" y1="470" x2="1061" y2="470" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-out"/>
 <polygon points="1070,470 1061,466 1061,474" fill="#111"/>
@@ -129,7 +129,7 @@
 <g id="aqs-title-block"><rect x="1116" y="704" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="721" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-EW_9</text>
 <text x="1124" y="738" font-size="9">P&amp;ID EW_9 (ew_cell, DIGESTER sector)</text>
-<text x="1124" y="755" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 0c812165   Issued 2026-10-19</text>
+<text x="1124" y="755" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 46dcf714   Issued 2026-10-19</text>
 <text x="1124" y="772" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
 <text x="1124" y="789" font-size="9">Graph Rev AD   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

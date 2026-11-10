@@ -6,7 +6,7 @@ VAR
   (* 100 ms cyclic task per AQS-CTL-002 *)
   BMED_UPW_POLISHFT-01_PV : REAL ;  (* S01 normal 2.80 L/h )
   BMED_UPW_POLISHFT-02_PV : REAL ;  (* IA-UPW-FAB normal 2.50 L/h )
-  BMED_UPW_POLISHFT-03_PV : REAL ;  (* IA-UPW-REMIN normal 9.02 L/h )
+  BMED_UPW_POLISHFT-03_PV : REAL ;  (* IA-UPW-REMIN normal 9.03 L/h )
   BMED_UPW_POLISHFT-04_PV : REAL ;  (* IA-UPW-REJ normal 0.25 L/h )
   BMED_UPW_POLISHLT-01_PV : REAL ;  (* A-M-182 liquid height )
   BMED_UPW_POLISHPT-01_PV : REAL ;  (* no design pressure on the graph )
@@ -89,10 +89,10 @@ END_VAR
   BMED_UPW_POLISHFT-02_ALARM_LO := 2.25 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  BMED_UPW_POLISHFT-03_SP := 9.02 ;  (* graph basis: IA-UPW-REMIN normal 9.02 L/h )
+  BMED_UPW_POLISHFT-03_SP := 9.03 ;  (* graph basis: IA-UPW-REMIN normal 9.03 L/h )
   FB_PI_BMED_UPW_POLISHFT-03( PV := BMED_UPW_POLISHFT-03_PV, SP := BMED_UPW_POLISHFT-03_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  BMED_UPW_POLISHFT-03_ALARM_HI := 9.922 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  BMED_UPW_POLISHFT-03_ALARM_LO := 8.118 ;
+  BMED_UPW_POLISHFT-03_ALARM_HI := 9.933 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  BMED_UPW_POLISHFT-03_ALARM_LO := 8.126999999999999 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   BMED_UPW_POLISHFT-04_SP := 0.25 ;  (* graph basis: IA-UPW-REJ normal 0.25 L/h )

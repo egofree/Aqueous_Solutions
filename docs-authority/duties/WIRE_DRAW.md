@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 4.392 kg/d. Mass out 4.392 kg/d. Electrical duty 0.0146 kW. In: S57 4.392 kg/d (billet / melt / charge); STOCK_TO_WIRE_DRAW 0 kg/d (rod/wire for final sizing). Out: S58 3.941 kg/d (wire product); IA-WIRE-LOSS 0.4379 kg/d (draw scrap); IA-DRAW-FUME 0.0132 kg/d (draw fume).
+1. Basis. Mass in 3.594 kg/d. Mass out 3.594 kg/d. Electrical duty 0.0132 kW. In: S57 3.594 kg/d (billet / melt / charge); STOCK_TO_WIRE_DRAW 0 kg/d (rod/wire for final sizing). Out: S58 3.225 kg/d (wire product); IA-WIRE-LOSS 0.3583 kg/d (draw scrap); IA-DRAW-FUME 0.0108 kg/d (draw fume).
 
 2. Size.
 - In 6.84 kg/d. No envelope on the node. No residence is calculated.

@@ -1959,16 +1959,16 @@ motor family,MF-13 x 2,end shields A356,4,,cast + machined
 motor family,MF-13 x 2,bearing 6206-2Z,4,,X-INV-05 OF bearing family
 motor family,MF-13 x 2,fan PP + fan cover steel,2,,IC 411
 motor family,MF-13 x 2,terminal box + 6-stud block,2,,IEC 60034-8 marking
-motor family,MF-14 x 3,stator laminations M400-50A (EN 10106) 0.5 mm,414,,EN 10106
-motor family,MF-14 x 3,rotor laminations M400-50A 0.5 mm,414,,EN 10106
-motor family,MF-14 x 3,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.12 kg,,X-INV-03 wire line
-motor family,MF-14 x 3,die-cast Al cage (bars + rings),0.61 kg,,A356 in-house melt (assumed 12 % of steel mass)
-motor family,MF-14 x 3,"shaft C45 (EN 10083-2) D19 x 229 mm, key to IEC 60072-1",3,,turned
-motor family,MF-14 x 3,"frame A356 IEC 80, feet A125 x B100, holes K10",3,,cast + machined
-motor family,MF-14 x 3,end shields A356,6,,cast + machined
-motor family,MF-14 x 3,bearing 6204-2Z,6,,X-INV-05 OF bearing family
-motor family,MF-14 x 3,fan PP + fan cover steel,3,,IC 411
-motor family,MF-14 x 3,terminal box + 6-stud block,3,,IEC 60034-8 marking
+motor family,MF-14 x 2,stator laminations M400-50A (EN 10106) 0.5 mm,276,,EN 10106
+motor family,MF-14 x 2,rotor laminations M400-50A 0.5 mm,276,,EN 10106
+motor family,MF-14 x 2,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.12 kg,,X-INV-03 wire line
+motor family,MF-14 x 2,die-cast Al cage (bars + rings),0.61 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-14 x 2,"shaft C45 (EN 10083-2) D19 x 229 mm, key to IEC 60072-1",2,,turned
+motor family,MF-14 x 2,"frame A356 IEC 80, feet A125 x B100, holes K10",2,,cast + machined
+motor family,MF-14 x 2,end shields A356,4,,cast + machined
+motor family,MF-14 x 2,bearing 6204-2Z,4,,X-INV-05 OF bearing family
+motor family,MF-14 x 2,fan PP + fan cover steel,2,,IC 411
+motor family,MF-14 x 2,terminal box + 6-stud block,2,,IEC 60034-8 marking
 motor family,MF-15 x 1,stator laminations M400-50A (EN 10106) 0.5 mm,58,,EN 10106
 motor family,MF-15 x 1,rotor laminations M400-50A 0.5 mm,58,,EN 10106
 motor family,MF-15 x 1,magnet wire IEC 60317-13 22 AWG (0.130 mm2),0.44 kg,,X-INV-03 wire line
@@ -2090,12 +2090,12 @@ bulk pipe,PF-24,"PVC-U Sch 80 ASTM D1785 DN40 pipe, 7 x 6.096 m",36.9 m,PVC-U Sc
 bulk pipe,PF-24,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 1/2 in studs,3 / 2 / 2 / 8,PVC-U Sch 80 ASTM D1785,AQS-INV-003
 bulk pipe,PF-25,"316L ASTM A312 DN40 pipe, 5 x 6.096 m",25.1 m,316L ASTM A312,AQS-INV-003
 bulk pipe,PF-25,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,3 / 2 / 2 / 8,316L ASTM A312,AQS-INV-003
-bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",35400 m,Cu,AQS-INV-002
+bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",35160 m,Cu,AQS-INV-002
 bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",42770 m,Cu,AQS-INV-002
-bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",18360 m,Cu,AQS-INV-002
-bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",17700 m,Cu,AQS-INV-002
+bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",18000 m,Cu,AQS-INV-002
+bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",17580 m,Cu,AQS-INV-002
 bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",18212 m,Cu,AQS-INV-002
-bulk wire,WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",4698 m,Cu,AQS-INV-002
+bulk wire,WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",4668 m,Cu,AQS-INV-002
 bulk wire,WF-07,"control 18 AWG shielded pair, 300 V",3920 m,Cu,AQS-INV-002
 bulk wire,WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",3860 m,Cu,AQS-INV-002
 bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",6062 m,Cu,AQS-INV-002

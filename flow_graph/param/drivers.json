@@ -2864,21 +2864,6 @@
   "units": "kg/m3 cell liquor",
   "register": "A-M-029 (dilute HCl with dissolved metal chlorides; same liquor as LEACH_CSTR_1, AQS-DUTY-050)"
  },
- "DIGESTER.ew-cascade-train.ew_s08_deposits_kg_d": {
-  "value": {
-   "1": 0.0063,
-   "2": 0.0251,
-   "3": 8.7841,
-   "4": 0.7111,
-   "5": 0.7111,
-   "6": 0.7111,
-   "7": 29.629,
-   "8": 0.7111,
-   "9": 0.7111
-  },
-  "units": "kg/d S08 element deposit per EW_n (element-comparison column only; bounding current is from IA-EW-MET-n)",
-  "owner": "AQS-ASSAY-001 section 5 S08 deposits"
- },
  "DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.envelope_mm": {
   "value": [
    2000,

@@ -1,8 +1,8 @@
 # Feed assay
 
 Document number: AQS-ASSAY-001
-Revision: G
-Date: 2026-11-04
+Revision: I
+Date: 2026-11-10
 Authority: graph Rev AD. Not a PE stamp. Not a weighed sample.
 
 | Rev | Description | Date |
@@ -14,6 +14,7 @@ Authority: graph Rev AD. Not a PE stamp. Not a weighed sample.
 | F | Rewritten to the documentation style guide (AQS-DOC-002); record of revisions put in order and revision E, previously recorded only in section 8, added to it. No value changed. | 2026-10-25 |
 | G | Owner ruling Q-038: the electrowinning cascade books the section 5 deposit rows at recovery 1.0 as its rate basis (A-M-460), so section 4's held-design check re-states per element against the plated mass; the copper-equivalent sheet-edge reading retires and the case B rows become the EW resize trigger. No deposit rate changed. | 2026-11-04 |
 | H | Owner ruling Q-038 (2026-11-05): the electrowinning equipment is resized at the element envelope (AQS-DUTY-051 Rev F), so the case B rows of table 4.1 become bounded and the resize triggers close. The booked stream rates stay at the reference section 5 rows; no rate changed. | 2026-11-06 |
+| I | X-QA-04: the section 5 deposit rows are computed from the reference feed (the IA-FEED-01 rate times the reference-point element fraction at leach recovery 1.0, solver.ew_products; the lumped other-plateable class splits evenly over the five minor metals, A-M-470) instead of the S08 booking of the retired 150 kg/d feed audit. The deposits drop from 42.0000 to 35.9637 kg/d; the S08 edge rate stays held at 41.9964 kg/d, so the entrained-silicate assumption grows to the residual 6.0327 kg/d. No bounding case changed. | 2026-11-10 |
 
 ## Purpose and scope
 
@@ -85,7 +86,7 @@ Table 4.1 lists the elements that the held design covers in every case. For each
 
 ### Bounded by the held design
 
-At the Q-038 element-rate basis (2026-11-04) the sheet edges carry the reference-feed deposit rows of section 5 at recovery 1.0, so the held-design check is the plated mass against the case mass. At revision H (owner ruling Q-038, 2026-11-05) the electrowinning equipment is rated at the element envelope itself (AQS-DUTY-051 Rev F), so every plateable element of table 4.1 is bounded. Table 4.1 lists the result per element.
+At the Q-038 element-rate basis (2026-11-04) the sheet edges carry the reference-feed deposits at recovery 1.0, so the held-design check is the plated mass against the case mass. Since revision I (X-QA-04) the booked deposits are computed from the reference feed itself (section 5). At revision H (owner ruling Q-038, 2026-11-05) the electrowinning equipment is rated at the element envelope itself (AQS-DUTY-051 Rev F), so every plateable element of table 4.1 is bounded. Table 4.1 lists the result per element.
 
 Table 4.1. Elements bounded by the held design
 
@@ -120,28 +121,28 @@ These units are not resized. A class stays held until a lot is characterized aga
 
 ## 5. S08
 
-S08 carries solids from LEACH_CSTR_1 to MFG_SHOP at 42.0021 kg/d. This page does not change that rate. The edge carries the harvested metals and some entrained silicate.
+S08 carries solids from LEACH_CSTR_1 to MFG_SHOP at 41.9964 kg/d. This page does not change that rate. The edge carries the harvested metals and some entrained silicate.
 
-The source is the list of cathode deposits booked on S08 in `EDGE_RATING_DUTY.md`. The nine deposits sum to 42.0000 kg/d, and the edge carries 42.0021 kg/d. The remaining 0.0021 kg/d is booked as entrained silicate, SiO₂, carried on the harvested cathode crib.
+At revision I (X-QA-04) the deposit rows are computed from the reference feed: the IA-FEED-01 rate (102.68 kg/d) times the reference-point element fraction of section 3 at leach recovery 1.0, the computation that solver.ew_products writes into the graph. The nine deposits sum to 35.9637 kg/d, the plateable class of the reference feed. They no longer follow the retired 150 kg/d feed audit of AQS-AUD-001 section 4.1, whose 42.0000 kg/d booking exceeded the plateable metal the design feed can supply (35.9637 kg/d).
 
-The silicate line is an assumption, not a measurement. It rests on the rate residual and on section 2: every case of the envelope carries `silicate_oxide` at 0.05 to 0.99, and the leach solids are in contact with the cathodes. Aqueous cells do not deposit silicon, so this silicon is carried over with the solids and is not plated. Table 5.1 gives the composition.
+The silicate line is an assumption, not a measurement. It is the rate residual: the edge holds its reconciled rate (AQS-PAR-003), so after the deposit rebasis the residual grows from 0.0021 to 6.0327 kg/d. It rests on section 2: every case of the envelope carries `silicate_oxide` at 0.05 to 0.99, and the leach solids are in contact with the cathodes. Aqueous cells do not deposit silicon, so this silicon is carried over with the solids and is not plated. Whether the held edge rate itself should follow the deposits is part of the shop-export re-derivation (task X-QA-12). Table 5.1 gives the composition.
 
 Table 5.1. Composition of S08
 
 | Component | kg/d | Fraction | Source |
 | --- | --- | --- | --- |
-| Au | 0.0063 | 0.00014999 | deposit |
-| Ag | 0.0251 | 0.00059759 | deposit |
-| Cu | 8.7841 | 0.20913478 | deposit |
-| Pb | 0.7111 | 0.01693011 | deposit |
-| Sn | 0.7111 | 0.01693011 | deposit |
-| Ni | 0.7111 | 0.01693011 | deposit |
-| Fe | 29.6290 | 0.70541709 | deposit |
-| Cd | 0.7111 | 0.01693011 | deposit |
-| Zn | 0.7111 | 0.01693011 | deposit |
-| SiO₂, entrained | 0.0021 | 0.00005000 | rate residual, assumption |
+| Au | 0.005134 | 0.00012225 | deposit |
+| Ag | 0.020536 | 0.00048899 | deposit |
+| Cu | 7.187600 | 0.17114797 | deposit |
+| Pb | 0.616080 | 0.01466983 | deposit |
+| Sn | 0.616080 | 0.01466983 | deposit |
+| Ni | 0.616080 | 0.01466983 | deposit |
+| Fe | 25.670000 | 0.61124275 | deposit |
+| Cd | 0.616080 | 0.01466983 | deposit |
+| Zn | 0.616080 | 0.01466983 | deposit |
+| SiO₂, entrained | 6.032738 | 0.14364890 | rate residual, assumption |
 
-The fractions are on the 42.0021 kg/d rate and sum to 1.0. Si as the element is 0.4675 × 0.0021 = 0.00098 kg/d, a fraction of 0.0000234. The entrained fraction at the regolith-like end of the envelope is not known; it is held and nothing is resized for it. The field `assay_g_L` on this edge is the generic 50 g/L liquor template and was not used.
+The fractions are on the 41.9964 kg/d rate and sum to 1.0. The deposit rows are the graph booking (Rev I): computed from the reference feed, they stay within its plateable class (flow_graph/param/test_ew_deposit_basis.py). Si as the element is 0.4675 × 6.0327 = 2.8203 kg/d, a fraction of 0.06716. The entrained fraction at the regolith-like end of the envelope is not known; it is held and nothing is resized for it. The field `assay_g_L` on this edge is the generic 50 g/L liquor template and was not used.
 
 ## 6. S16
 

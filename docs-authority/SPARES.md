@@ -10,13 +10,13 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | Kind | Family / unit | Item | Installed | Spares | Rule |
 |---|---|---|---|---|---|
 | building block | OF-01 | bearing: deep-groove ball bearing (608-2Z x346) | 346 | 35 | 10 % min 2 |
-| building block | OF-02 | bearing: deep-groove ball bearing (6202-2Z x210; 6201-2Z x114; 6205-2Z x50; 6204-2Z x12; 6206-2) | 404 | 41 | 10 % min 2 |
+| building block | OF-02 | bearing: deep-groove ball bearing (6202-2Z x210; 6201-2Z x114; 6205-2Z x50; 6204-2Z x14; 6206-2) | 404 | 41 | 10 % min 2 |
 | building block | OF-03 | electronics: PLC digital I/O point (24 V DC x846) | 846 | 85 | 10 % min 1 |
 | building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x857) | 857 | 86 | 10 % min 1 |
 | building block | OF-05 | electronics: BLDC driver (24/48 V DC x170) | 170 | 17 | 10 % min 1 |
 | building block | OF-06 | electronics: motor starter (contactor + overload) (0.37 kW x103; 0.18 kW x56; 0.55 kW x5; 0.25 kW x2; 0.12 kW x) | 169 | 17 | 10 % min 1 |
 | building block | OF-07 | electronics: PLC I/O module, 16 channel (24 V DC x107) | 107 | 11 | 10 % min 1 |
-| building block | OF-08 | electronics: variable-frequency drive (1.1 kW x21; 2.2 kW x5; 1.5 kW x3; 7.5 kW x3; 4 kW x1) | 33 | 4 | 10 % min 1 |
+| building block | OF-08 | electronics: variable-frequency drive (1.1 kW x21; 2.2 kW x5; 1.5 kW x3; 7.5 kW x2; 5.5 kW x1; 4 kW) | 33 | 4 | 10 % min 1 |
 | building block | OF-09 | electronics: solenoid driver channel (24 V DC x23) | 23 | 3 | 10 % min 1 |
 | building block | OF-10 | electronics: compressor contactor + overload (18.5 kW hermetic x8; 1.1 kW hermetic x1) | 9 | 1 | 10 % min 1 |
 | building block | OF-11 | electronics: stepper driver (24/48 V DC x3) | 3 | 1 | 10 % min 1 |
@@ -167,7 +167,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | motor | MF-11 | induction IE3 IEC 100L / 2.2 kW 480 V 3-ph | 5 | 1 | 5 % min 1 |
 | motor | MF-12 | induction IE3 IEC 63 / 0.12 kW 208 V 3-ph | 1 | 1 | 5 % min 1 |
 | motor | MF-13 | induction IE3 IEC 71 / 0.25 kW 208 V 3-ph | 2 | 1 | 5 % min 1 |
-| motor | MF-14 | induction IE3 IEC 132M / 7.5 kW 480 V 3-ph | 3 | 1 | 5 % min 1 |
+| motor | MF-14 | induction IE3 IEC 132M / 7.5 kW 480 V 3-ph | 2 | 1 | 5 % min 1 |
 | motor | MF-15 | induction IE3 IEC 112M / 4 kW 480 V 3-ph | 1 | 1 | 5 % min 1 |
 | motor | MF-16 | induction IE3 IEC 80 / 0.75 kW 480 V 3-ph | 1 | 1 | 5 % min 1 |
 | motor | MF-17 | solenoid ISO 15218 coil, 22 mm 24 V DC | 23 | 2 | 5 % min 1 |
@@ -175,6 +175,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | motor | MF-25 | hermetic induction (scroll) 1.1 kW hermetic 480 V 3-ph | 1 | 1 | 5 % min 1 |
 | motor | MF-27 | EC (electronically commutated, permanent-magnet) fan motor 1.1 kW EC fan, integrated drive 480 V 3-ph | 16 | 1 | 5 % min 1 |
 | motor | MF-28 | hermetic induction (scroll) 18.5 kW hermetic 480 V 3-ph | 8 | 1 | 5 % min 1 |
+| motor | MF-30 | induction IE3 IEC 132S / 5.5 kW 480 V 3-ph | 1 | 1 | 5 % min 1 |
 | process insert | BMED_ACID | one stack of bipolar, anion and cation membranes (AQS-DUTY-068 spare stack is installed; this is the membrane set to rebuild it) | 1 | 1 | one charge or set |
 | process insert | BMED_UPW_POLISH | RO flat-sheet set and one EDI stack (AQS-DUTY-070) | 1 | 1 | one charge or set |
 | process insert | CRYO_ASU | 13X sorbent charge, 115 kg (AQS-DUTY-069) | 1 | 1 | one charge or set |
@@ -192,4 +193,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-182 lines; 35 spare motors, 1280 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+183 lines; 36 spare motors, 1280 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.

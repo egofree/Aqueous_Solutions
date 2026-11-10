@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "85446aff4e8eae8640a50226bc9b72cea37071371edc9a93c2ab08bc560bd3b2",
+  "graph_sha256": "f83479471427fa0f845487f5e486a95c191a72e3c12fc219048b7beae2866c77",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 369.041,
-   "calc_kw": 369.041,
+   "kw": 367.968,
+   "calc_kw": 367.968,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,18 +16,18 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 190.999,
-   "calc_kw": 190.999,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 191.0 kW, charge 868.1 kW, 2674 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 189.877,
+   "calc_kw": 189.877,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 189.9 kW, charge 863.0 kW, 2658 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "EXT_HALL",
    "role": "load",
-   "kw": 88.019,
-   "calc_kw": 88.019,
-   "basis": "X-PAR-07 solver.roof_close: conditioned extension 25236 m2; lighting 22.21 kW (IECC 2021 C405, 10 % lit), ventilation 37.48 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 28.33 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 26.4 kW and cooling 155.7 kW thermal average after internal gains 31.7 kW and slab edge 1.56 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
+   "kw": 86.977,
+   "calc_kw": 86.977,
+   "basis": "X-PAR-07 solver.roof_close: conditioned extension 24912 m2; lighting 21.92 kW (IECC 2021 C405, 10 % lit), ventilation 37.00 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 28.06 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 26.1 kW and cooling 153.9 kW thermal average after internal gains 31.3 kW and slab edge 1.56 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -43,9 +43,9 @@
   {
    "unit": "H2O_ELYZ",
    "role": "load",
-   "kw": 23.977,
-   "calc_kw": 23.977,
-   "basis": "X-PAR-12 TF: 10.46 kg/d H2 x 55.0 kWh/kg / 24 h; rated 95.9 kW on a 6.0 h PV window.",
+   "kw": 23.985,
+   "calc_kw": 23.985,
+   "basis": "X-PAR-12 TF: 10.47 kg/d H2 x 55.0 kWh/kg / 24 h; rated 95.9 kW on a 6.0 h PV window.",
    "class": "calculated",
    "sector": "CRYO"
   },
@@ -72,7 +72,7 @@
    "role": "load",
    "kw": 2.55,
    "calc_kw": 2.55,
-   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C shop machine-tool list, one 8 h shift; 61.2 kWh/d / 24 h; shop connected 26.5 kW (roster connected 42.8 kW, coincident peak 24.5 kW frames MCC-1); rev C metering split moves the four metal tools to their own stamps (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share).",
+   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C shop machine-tool list, one 8 h shift; 61.2 kWh/d / 24 h; shop connected 26.5 kW (roster connected 42.3 kW, coincident peak 24.0 kW frames MCC-1); rev C metering split moves the four metal tools to their own stamps (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share).",
    "class": "calculated",
    "sector": "MFG"
   },
@@ -374,15 +374,6 @@
    "sector": "FOUNDRY"
   },
   {
-   "unit": "MET_MELT",
-   "role": "load",
-   "kw": 0.207,
-   "calc_kw": 0.207,
-   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 5.0 kWh/d / 24 h; batch nameplate 7.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
-   "class": "calculated",
-   "sector": "MFG"
-  },
-  {
    "unit": "WET_BENCH",
    "role": "load",
    "kw": 0.207,
@@ -408,6 +399,15 @@
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
    "sector": "DIGESTER"
+  },
+  {
+   "unit": "MET_MELT",
+   "role": "load",
+   "kw": 0.175,
+   "calc_kw": 0.175,
+   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 4.2 kWh/d / 24 h; batch nameplate 7.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
+   "class": "calculated",
+   "sector": "MFG"
   },
   {
    "unit": "CR_CELL",
@@ -511,9 +511,9 @@
   {
    "unit": "GAS_ATOMIZER",
    "role": "load",
-   "kw": 0.078,
-   "calc_kw": 0.078,
-   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 1.9 kWh/d / 24 h; batch nameplate 5.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
+   "kw": 0.073,
+   "calc_kw": 0.073,
+   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 1.8 kWh/d / 24 h; batch nameplate 5.0 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
    "class": "calculated",
    "sector": "MFG"
   },
@@ -590,15 +590,6 @@
    "sector": "MEOH"
   },
   {
-   "unit": "COLD_MILL",
-   "role": "load",
-   "kw": 0.02,
-   "calc_kw": 0.02,
-   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.5 kWh/d / 24 h; batch nameplate 2.2 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
-   "class": "calculated",
-   "sector": "MFG"
-  },
-  {
    "unit": "H2_DRYER",
    "role": "load",
    "kw": 0.02,
@@ -606,6 +597,15 @@
    "basis": "X-MFG-39 (A-M-168): TSA regeneration 0.5 W / 0.7 + half the insulated loss.",
    "class": "calculated",
    "sector": "GAS"
+  },
+  {
+   "unit": "COLD_MILL",
+   "role": "load",
+   "kw": 0.019,
+   "calc_kw": 0.019,
+   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.4 kWh/d / 24 h; batch nameplate 2.2 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
+   "class": "calculated",
+   "sector": "MFG"
   },
   {
    "unit": "BMED_UPW_POLISH",
@@ -628,9 +628,9 @@
   {
    "unit": "WIRE_DRAW",
    "role": "load",
-   "kw": 0.015,
-   "calc_kw": 0.015,
-   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.4 kWh/d / 24 h; batch nameplate 1.1 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
+   "kw": 0.013,
+   "calc_kw": 0.013,
+   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.3 kWh/d / 24 h; batch nameplate 1.1 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
    "class": "calculated",
    "sector": "MFG"
   },
@@ -709,7 +709,7 @@
   {
    "unit": "DRY_COOLER",
    "role": "\u2014",
-   "kw": 7.75,
+   "kw": 7.7,
    "calc_kw": null,
    "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
    "class": "pending",
@@ -939,10 +939,10 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 103,
-  "graph_sum_kW": 183.51,
-  "calc_sum_kW": 183.51,
-  "connected_load_kW": 183.5,
-  "connected_calculated_kW": 173.9,
+  "graph_sum_kW": 182.38,
+  "calc_sum_kW": 182.38,
+  "connected_load_kW": 182.4,
+  "connected_calculated_kW": 172.9,
   "connected_standby_kW": 0.1,
   "connected_study_kW": 9.5,
   "connected_calculated_pct": 94.8,

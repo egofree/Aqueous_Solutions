@@ -11,7 +11,7 @@ Authority: AQS-PLAN-007 unit tasks (FOUNDRY)-02; graph Rev AC; notes/FOUNDRY_SIZ
 
 ## 1. Demand side (what the foundry must supply)
 
-- WAFER_FAB draws are 0 (A-M-257: the fab closes on UPW + slurry + N2 purge). WIRE_DRAW (MFG) closes on S57 Cu 4.3921 kg/d from MET_MELT, so STOCK_TO_WIRE_DRAW = 0.
+- WAFER_FAB draws are 0 (A-M-257: the fab closes on UPW + slurry + N2 purge). WIRE_DRAW (MFG) closes on S57 Cu 3.5938 kg/d from MET_MELT, so STOCK_TO_WIRE_DRAW = 0.
 - MFG_SHOP goods loop is closed: IA-MFG-OUT 0.000 kg/d out = IA-WEAR 0.088 kg/d worn return. The shop needs no net foundry mass beyond its rounding remnant r0 = -0.005820 kg/d (rated in - rated out).
 - The pot/cell products (Al 8, stainless 1.5 via Cr 0.20 + Mo 0.05, Ti 0.40 kg/d of the AQS-SIZE-FOUNDRY / AQS-RATE-FP-MET consumable-replacement table) have no live feed at the bounding case (section 4).
 - Live stock demand K = 25.9 kg/d = the non-pot-blocked table lines: Cu 3 (bus, windings) + Fe 10 (structural, fasteners) + Zn/EW 1 (castings, coatings). Registered A-M-261.

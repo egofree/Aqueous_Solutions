@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 4157 kg/d. Mass out 4157 kg/d. Electrical duty 0.0000 kW. In: IA-EW-09 4157 kg/d (EW tail to polish); MO_CELL_RAFFINATE 0 kg/d (raffinate after Mo cut). Out: IA-POL-02 3940 kg/d (Polish bank liquor return to the continuous recycle); IA-POL-CAKE 217.4 kg/d (recovered cake).
+1. Basis. Mass in 4163 kg/d. Mass out 4163 kg/d. Electrical duty 0.0000 kW. In: IA-EW-09 4163 kg/d (EW tail to polish); MO_CELL_RAFFINATE 0 kg/d (raffinate after Mo cut). Out: IA-POL-02 3946 kg/d (Polish bank liquor return to the continuous recycle); IA-POL-CAKE 217.4 kg/d (recovered cake).
 
 2. Size.
 - V = (3971.1/1000)×(0.5/24) = 0.0827 m³. 30 min.

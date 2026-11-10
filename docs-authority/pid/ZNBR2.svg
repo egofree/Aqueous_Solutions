@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="776" font-family="sans-serif">
 <rect x="4" y="4" width="1492" height="768" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit ZNBR2 · flow_battery · sector ELEC · present</text>
-<text x="24" y="54" font-size="10.5">190.999 kW continuous</text>
+<text x="24" y="54" font-size="10.5">189.877 kW continuous</text>
 <text x="24" y="72" font-size="10.5">Edges 3 in + 6 out · valves 12 placed / 0 unplaced · instruments 8 (1 SIF) · nozzles 12</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
@@ -52,7 +52,7 @@
 <polygon points="586,332 577,328 577,336" fill="#111"/>
 <text x="24" y="313" font-size="9" fill="#666" text-anchor="start">ZNBR2_BR2_REGEN</text>
 <text x="24" y="327" font-size="11" font-weight="600" text-anchor="start">S69B</text>
-<text x="24" y="345" font-size="10" text-anchor="start">802.6 kg/d · DN15 P1</text>
+<text x="24" y="345" font-size="10" text-anchor="start">797.9 kg/d · DN15 P1</text>
 <text x="598" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="start">N2</text>
 <line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
@@ -92,7 +92,7 @@
 <polygon points="1070,378 1061,374 1061,382" fill="#111"/>
 <text x="1476" y="359" font-size="9" fill="#666" text-anchor="end">Q4_BUS</text>
 <text x="1476" y="373" font-size="11" font-weight="600" text-anchor="end">IA-ZNBR-HEAT</text>
-<text x="1476" y="391" font-size="10" text-anchor="end">47.7 kW · DN40 P1</text>
+<text x="1476" y="391" font-size="10" text-anchor="end">47.5 kW · DN40 P1</text>
 <text x="902" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="end">N8</text>
 <line x1="979.7" y1="378" x2="971.7" y2="378" stroke="#111" stroke-width="1.2"/>
 <polygon points="970.7,378 976.7,374.5 976.7,381.5" fill="#111"/>
@@ -111,7 +111,7 @@
 <polygon points="1070,470 1061,466 1061,474" fill="#111"/>
 <text x="1476" y="451" font-size="9" fill="#666" text-anchor="end">ZNBR2_BR2_REGEN</text>
 <text x="1476" y="465" font-size="11" font-weight="600" text-anchor="end">S69</text>
-<text x="1476" y="483" font-size="10" text-anchor="end">802.6 kg/d · DN32 P3</text>
+<text x="1476" y="483" font-size="10" text-anchor="end">797.9 kg/d · DN32 P3</text>
 <text x="902" y="474" font-size="8" font-style="italic" fill="#555" text-anchor="end">N6</text>
 <line x1="979.7" y1="470" x2="971.7" y2="470" stroke="#111" stroke-width="1.2"/>
 <polygon points="970.7,470 976.7,466.5 976.7,473.5" fill="#111"/>
@@ -129,7 +129,7 @@
 <g id="aqs-title-block"><rect x="1116" y="658" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="675" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-ZNBR2</text>
 <text x="1124" y="692" font-size="9">P&amp;ID ZNBR2 (flow_battery, ELEC sector)</text>
-<text x="1124" y="709" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 63332229   Issued 2026-10-19</text>
+<text x="1124" y="709" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev d4da0f90   Issued 2026-10-19</text>
 <text x="1124" y="726" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
 <text x="1124" y="743" font-size="9">Graph Rev AD   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

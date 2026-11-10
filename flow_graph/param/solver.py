@@ -114,17 +114,30 @@ def ew(d, g):
 
 def ew_products(d, g):
     """Q-038 element-rate booking of the plated harvest (write_graph.process writes the edges).
-    Supply basis: the S08 deposits at recovery 1.0 (AQS-ASSAY-001 sections 4 and 5). Demand basis,
-    computed for the governing statement in AQS-DUTY-051 section 2: the plated metal the plant
-    consumes is the forming routes (half the Cu deposit to wire, half to mill; the minor-element
-    blend to powder - the AQS-DUTY-010 bases the graph already states on S57/S59/S60) plus the
-    crew goods line (the roster textile wear, A-M-429); the supply (42.0 kg/d element at the
-    reference feed) exceeds it, so the supply governs the cascade rate and the surplus metal
-    leaves through the shop finished-goods export (self-sustaining plant rule, AGENTS.md)."""
+    Supply basis (X-QA-04): the booked deposit of each cell is computed from the feed assay - the
+    IA-FEED-01 rate times the AQS-ASSAY-001 reference-point element fraction (params.assay_envelope,
+    the machine copy of AQS-ASSAY-001 section 3) times the leach recovery (A-M-467, upper bound) -
+    no longer the S08 booking of the retired 150 kg/d feed audit. The lumped other_plateable class
+    splits evenly over the five minor plateable metals (A-M-470), and the booked rows stay within
+    the plateable class of the reference feed (flow_graph/param/test_ew_deposit_basis.py).
+    Demand basis, computed for the governing statement in AQS-DUTY-051 section 2: the plated metal
+    the plant consumes is the forming routes (half the Cu deposit to wire, half to mill; the
+    minor-element blend to powder - the AQS-DUTY-010 bases the graph already states on S57/S59/S60)
+    plus the crew goods line (the roster textile wear, A-M-429); the supply exceeds it, so the
+    supply governs the cascade rate and the surplus metal leaves through the shop finished-goods
+    export (self-sustaining plant rule, AGENTS.md)."""
     R = {e['stream_id']: e['rate']['value'] for e in g['edges']}
-    dep = {int(k): x for k, x in DR.val(d, 'DIGESTER.ew-cascade-train.ew_s08_deposits_kg_d').items()}
-    cu = dep[3]
-    blend = sum(dep[n] for n in (4, 5, 6, 8, 9))
+    feed = R['IA-FEED-01']
+    els = next(e for e in g['edges'] if e['stream_id'] == 'IA-FEED-01')[
+        'params']['assay_envelope']['reference_point_elements']
+    rec = DR.val(d, 'ew_leach_recovery_design')
+    minor = (4, 5, 6, 8, 9)
+    dep = {1: round(feed*els['Au']*rec, 6), 2: round(feed*els['Ag']*rec, 6),
+           3: round(feed*els['Cu']*rec, 6), 7: round(feed*els['Fe']*rec, 6)}
+    for n in minor:
+        dep[n] = round(feed*els['other_plateable']*rec/len(minor), 6)   # A-M-470: the even booking split
+    cu = round(dep[3], 4)                      # the forming chain keeps the 4-dp rate convention
+    blend = sum(dep[n] for n in minor)
     s57 = round(cu/2, 4)                       # wire billet: half the Cu deposit (AQS-DUTY-010)
     mill = round(cu/2, 4)                      # mill feed: the other half
     atom = round(blend, 4)                     # atomizer feed: the blend deposits
@@ -144,7 +157,7 @@ def ew_products(d, g):
     assert feed_mu > 0, ('hopper make-up negative: loop receipts exceed the design feed', feed_mu)
     return dict(met=met, sheet=sheet, s57=s57, mill=mill, atom=atom, remelt=remelt, s58=s58,
                 wloss=wloss, s59=s59, s60=s60, fume=fume, wear=round(wear, 4), feed_mu=feed_mu,
-                blend=blend, cu=cu)
+                blend=blend, cu=cu, dep=dep)
 
 def solve():
     d = DR.load(); g = json.load(open(os.path.join(ROOT,'flow_graph/plant_flow_graph.json')))

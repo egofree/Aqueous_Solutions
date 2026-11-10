@@ -8,7 +8,7 @@ VAR
   COLD_MILLTE-01_PV : REAL ;  (* band by service )
   GAS_ATOMIZERPT-01_PV : REAL ;  (* no design pressure on the graph )
   GAS_ATOMIZERTE-01_PV : REAL ;  (* band by service )
-  MET_MELTFT-01_PV : REAL ;  (* S57 normal 0.18 L/h )
+  MET_MELTFT-01_PV : REAL ;  (* S57 normal 0.15 L/h )
   MET_MELTPT-01_PV : REAL ;  (* no design pressure on the graph )
   MET_MELTTE-01_PV : REAL ;  (* band by service )
   MFG_SHOPFT-01_PV : REAL ;  (* TEXTILE_HAB normal 0.00 L/h )
@@ -55,10 +55,10 @@ END_VAR
   GAS_ATOMIZERTE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* FLOW control loop - set-point from the graph basis *)
-  MET_MELTFT-01_SP := 0.18 ;  (* graph basis: S57 normal 0.18 L/h )
+  MET_MELTFT-01_SP := 0.15 ;  (* graph basis: S57 normal 0.15 L/h )
   FB_PI_MET_MELTFT-01( PV := MET_MELTFT-01_PV, SP := MET_MELTFT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  MET_MELTFT-01_ALARM_HI := 0.198 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  MET_MELTFT-01_ALARM_LO := 0.162 ;
+  MET_MELTFT-01_ALARM_HI := 0.165 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  MET_MELTFT-01_ALARM_LO := 0.135 ;
 
   (* PRESSURE monitoring block - indication, no set-point invented )
   FB_AI_MET_MELTPT-01( PV := MET_MELTPT-01_PV );

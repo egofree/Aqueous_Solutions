@@ -23,10 +23,10 @@ Table 2.1. Tool list
 
 | Tool | Serves | Nameplate kW | Energy basis | kWh/d |
 | --- | --- | --- | --- | --- |
-| Induction melt furnace, coreless, 10 kg Cu crucible | MET_MELT | 7.5 | 0.362 kWh/kg x 12.34 kg/d ((0.43 x 1060 + 208.7 + 0.516 x 100) kJ/kg / 0.55, CRC_CU) + hold 0.5 kW x 0.5 h x 2 heat | 5.0 |
-| Close-coupled gas atomiser with Ar recirculation | GAS_ATOMIZER | 5.5 | Ar GMR 2.5 at 30 bar: 0.246 kWh/kg x 3.56 kg/d + tundish 1 kW x 1 h | 1.9 |
-| Two-high cold rolling mill | COLD_MILL | 2.2 | 250 MPa x strain 2.3 / 0.55 (DIETER1988) = 0.0324 kWh/kg x 4.39 kg/d + no-load 15 % x 1 h | 0.5 |
-| Bull-block wire drawer | WIRE_DRAW | 1.1 | 250 MPa x strain 3.0 / 0.55 (DIETER1988) = 0.0423 kWh/kg x 4.39 kg/d + no-load 15 % x 1 h | 0.4 |
+| Induction melt furnace, coreless, 10 kg Cu crucible | MET_MELT | 7.5 | 0.362 kWh/kg x 10.27 kg/d ((0.43 x 1060 + 208.7 + 0.516 x 100) kJ/kg / 0.55, CRC_CU) + hold 0.5 kW x 0.5 h x 2 heat | 4.2 |
+| Close-coupled gas atomiser with Ar recirculation | GAS_ATOMIZER | 5.0 | Ar GMR 2.5 at 30 bar: 0.246 kWh/kg x 3.08 kg/d + tundish 1 kW x 1 h | 1.8 |
+| Two-high cold rolling mill | COLD_MILL | 2.2 | 250 MPa x strain 2.3 / 0.55 (DIETER1988) = 0.0324 kWh/kg x 3.59 kg/d + no-load 15 % x 1 h | 0.4 |
+| Bull-block wire drawer | WIRE_DRAW | 1.1 | 250 MPa x strain 3.0 / 0.55 (DIETER1988) = 0.0423 kWh/kg x 3.59 kg/d + no-load 15 % x 1 h | 0.3 |
 | CNC vertical mill | shop | 7.5 | 2.25 kW x 8 h | 18.0 |
 | Engine lathe | shop | 5.5 | 1.65 kW x 8 h | 13.2 |
 | Band saw | shop | 1.5 | 0.15 kW x 8 h | 1.2 |
@@ -36,8 +36,8 @@ Table 2.1. Tool list
 
 ## 3. Totals and metering
 
-The tools in Table 2.1 use 68.9 kWh/d in total, an average of 2.87 kW. Since revision C the four metal tools are metered at their own nodes, with average loads of 0.2067 kW for MET_MELT, 0.0781 kW for GAS_ATOMIZER, 0.0197 kW for COLD_MILL and 0.0146 kW for WIRE_DRAW. MFG_SHOP carries the shop machine tools only: 61.2 kWh/d, an average of 2.55 kW, with 26.5 kW connected.
+The tools in Table 2.1 use 67.9 kWh/d in total, an average of 2.83 kW. Since revision C the four metal tools are metered at their own nodes, with average loads of 0.1755 kW for MET_MELT, 0.0732 kW for GAS_ATOMIZER, 0.0186 kW for COLD_MILL and 0.0132 kW for WIRE_DRAW. MFG_SHOP carries the shop machine tools only: 61.2 kWh/d, an average of 2.55 kW, with 26.5 kW connected.
 
-The connected load of the whole list is 42.8 kW. The coincident peak is 24.5 kW, with the melt furnace, the atomiser, the CNC mill and the compressor running together. These two values still size the feeder to MCC-1.
+The connected load of the whole list is 42.3 kW. The coincident peak is 24.0 kW, with the melt furnace, the atomiser, the CNC mill and the compressor running together. These two values still size the feeder to MCC-1.
 
 The efficiencies, the flow stress and the atomising gas ratio are assumptions until trial runs are made (A-M-177).

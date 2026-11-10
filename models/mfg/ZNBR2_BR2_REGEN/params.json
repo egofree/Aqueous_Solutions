@@ -60,9 +60,9 @@
  "design": {
   "machine": "packed Br2-recovery wash column on the ZNBR2 headspace purge (S69 in, scrubbed electrolyte S69B back to the battery)",
   "gas_duty_m3_h": 30.0,
-  "gas_m3_h": 28.2,
+  "gas_m3_h": 28.1,
   "u_m_s": 1.5,
-  "D_req_mm": 81.6,
+  "D_req_mm": 81.4,
   "DN_mm": 100,
   "od_mm": 114.3,
   "wall_mm": 8.56,
@@ -78,7 +78,7 @@
   "demister_mm": 100,
   "height_mm": 3700,
   "material": "PVC-U shell, sump, liquor piping and packing; FKM gaskets; no metal wetted part (duty section 3, AQS-STD-002)",
-  "basis": "duty section 2 rules on the live purge: bed = NTU 6 x HTU 0.5 m (duty-held figures); diameter at 1.5 m/s on the 28.2476 m3/h purge (the duty 30 m3/h figure predates the X-PAR-02 TF re-solve, WORK_ORDER W12); sump, support, distributor and demister are the AQS-DUTY-061 house class, not derived from the gas mass",
+  "basis": "duty section 2 rules on the live purge: bed = NTU 6 x HTU 0.5 m (duty-held figures); diameter at 1.5 m/s on the 28.0816 m3/h purge (the duty 30 m3/h figure predates the X-PAR-02 TF re-solve, WORK_ORDER W12); sump, support, distributor and demister are the AQS-DUTY-061 house class, not derived from the gas mass",
   "computed_by": "flow_graph/param/ess_tf.py tf() (X-PAR-02 lane, X-MFG-43b)",
   "machine_note": "packed Br2-recovery wash column at the duty section 2 rules on the live purge (ess_tf, X-MFG-43b); internals as solids per A-COL",
   "wetted": "PVC-U wetted path, FKM gaskets, no metal wetted part (duty section 3); hypobromite rating on coupon test (W12(3))"

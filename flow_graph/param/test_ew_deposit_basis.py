@@ -7,10 +7,12 @@
    Q-038, 2026-11-05; AGENTS.md sizing rule): the sizing deposit of each cell equals the design
    feed rate times the element fraction of AQS-ASSAY-001 table 4.1 at leach recovery 1.0, and
    no element bound exceeds the plateable class of the case it governs.
-3. The booked S08 deposit rows (the stream-rate basis) still exceed the plateable metal of the
-   reference feed they cite. That defect stays an expected failure until the booked rates are
-   computed from the assay (task X-QA-04). strict=True makes the test fail once the defect is
-   fixed, so the marker is removed with the fix.
+3. The booked deposit rows are computed from the feed assay (X-QA-04, 2026-11-10): solver
+   .ew_products derives each cell's booked deposit from the IA-FEED-01 rate, the AQS-ASSAY-001
+   reference-point element fraction and the leach recovery, with the lumped other_plateable
+   class split evenly over the five minor metals (A-M-470). The booked rows stay within the
+   plateable metal of the reference feed - the check that failed while the rows still carried
+   the S08 booking of the retired 150 kg/d feed audit.
 """
 import json, os, subprocess, sys
 import pytest
@@ -64,8 +66,9 @@ def test_equipment_sized_at_the_element_envelope():
         assert spec['fraction'] <= cls, (key, spec, cls)
 
 
-@pytest.mark.xfail(strict=True, reason='X-QA-04: the booked S08 deposit rows are not derived from the IA-FEED-01 assay')
 def test_booked_s08_deposits_within_reference_feed():
+    """X-QA-04: the booked deposit rows are computed from the feed assay (solver.ew_products),
+    so their sum stays inside the plateable class of the reference feed (AQS-ASSAY-001)."""
     e = _graph_edge('IA-FEED-01'); feed = e['rate']['value']
     cls = e['params']['assay_envelope']['cases']['reference_point']['metal_plateable']
     booked = sum(r['dep_ref_kg_d'] for r in _ew_rows())

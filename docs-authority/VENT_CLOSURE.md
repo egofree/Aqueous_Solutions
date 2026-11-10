@@ -52,7 +52,7 @@ Table 4.1. Streams of the closures
 
 | Discharge | Stream | From | To | Path | Rate | Unit |
 | --- | --- | --- | --- | --- | --- | --- |
-| Process hydrogen | S64 | H2_DRYER | CRYO_H2 | normal | 0.9925 | kg/d |
+| Process hydrogen | S64 | H2_DRYER | CRYO_H2 | normal | 0.9889 | kg/d |
 | Process hydrogen | S45 | CRYO_H2 | BACKUP_GEN | normal | 0.009864 | kg/d |
 | Process hydrogen | S49 | CRYO_H2 | FUEL_CELL | normal | 4.8 | kg/d |
 | Process hydrogen | S24 | H2_DRYER | RELIEF_H2 | contingency | 0 | kg/d |
@@ -65,8 +65,8 @@ Table 4.1. Streams of the closures
 | Afterburner flue | S67B | FLUE_KO | CRYO_CO2 | normal | 13.81 | kg/d |
 | Afterburner flue | IA-FLUE-EXH | FLUE_KO | NOX_SCRUB | normal | 283.3 | kg/d |
 | Afterburner flue | S18 | AFTERBURNER | CRYO_CO2 | normal | 0 | kg/d |
-| Battery bromine | S69 | ZNBR2 | ZNBR2_BR2_REGEN | normal | 802.6 | kg/d |
-| Battery bromine | S69B | ZNBR2_BR2_REGEN | ZNBR2 | normal | 802.6 | kg/d |
+| Battery bromine | S69 | ZNBR2 | ZNBR2_BR2_REGEN | normal | 797.9 | kg/d |
+| Battery bromine | S69B | ZNBR2_BR2_REGEN | ZNBR2 | normal | 797.9 | kg/d |
 | Cryogenic room air | IA-AHU-POT | CRYO_AHU | CRYO_AHU_COND_CONDENSABLE | normal | 0.0521 | kg/d |
 | Cryogenic room air | S70 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | normal | 0.0521 | kg/d |
 | Cryogenic room air | S68 | CRYO_AHU | LEACH_CSTR_1 | normal | 102.6 | kg/d |

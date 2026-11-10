@@ -46,7 +46,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
 | OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x346 | 346 | 59 | AHU damper actuator (assumed size); Biogas recirculation diaphragm blower about 2 L/min (assumed size); CNC vertical mill: axis drive (assumed size) |  |
-| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6202-2Z x210; 6201-2Z x114; 6205-2Z x50; 6204-2Z x12; 6206-2Z x10; 6308-2Z x6; 6306-2Z x2 | 404 | 59 | AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size); AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed si |  |
+| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6202-2Z x210; 6201-2Z x114; 6205-2Z x50; 6204-2Z x14; 6206-2Z x10; 6308-2Z x4; 6306-2Z x2 | 404 | 59 | AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size); AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed si |  |
 ## 4. Electronics datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
@@ -56,7 +56,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x170 | 170 | 58 | AHU damper actuator; Biogas recirculation diaphragm blower about 2 L/min; Motor: cathode air blower (induction IE3, IEC 71 / 0.25 kW) |  |
 | OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.37 kW x103; 0.18 kW x56; 0.55 kW x5; 0.25 kW x2; 0.12 kW x1; 1.1 kW x1; 0.75 kW x1 | 169 | 49 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Body / envelope 800 x 600 x 1200 mm (assumed VFD at >= 0.75 kW); Buffer ma |  |
 | OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x107 | 107 | 1 | 1703 points / 16 |  |
-| OF-08 | variable-frequency drive | IEC 61800-5-1 | 1.1 kW x21; 2.2 kW x5; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 33 | 15 | AHU exhaust fan (assumed VFD at >= 0.75 kW); AHU supply fan (assumed VFD at >= 0.75 kW); Band saw: main drive (assumed VFD at >= 0.75 kW) |  |
+| OF-08 | variable-frequency drive | IEC 61800-5-1 | 1.1 kW x21; 2.2 kW x5; 1.5 kW x3; 7.5 kW x2; 5.5 kW x1; 4 kW x1 | 33 | 15 | AHU exhaust fan (assumed VFD at >= 0.75 kW); AHU supply fan (assumed VFD at >= 0.75 kW); Band saw: main drive (assumed VFD at >= 0.75 kW) |  |
 | OF-09 | solenoid driver channel | IEC 61131-2 DO | 24 V DC x23 | 23 | 10 | on/off valve IA-BED-H2O; on/off valve IA-ELY-H2O; on/off valve IA-FLUE-QUENCH |  |
 | OF-10 | compressor contactor + overload | IEC 60947-4-1 | 18.5 kW hermetic x8; 1.1 kW hermetic x1 | 9 | 2 | air-source heat pump compressor; cryocooler compressor |  |
 | OF-11 | stepper driver | IEC 61800-5-1 | 24/48 V DC x3 | 3 | 1 | CNC vertical mill: axis drive |  |

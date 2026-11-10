@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.232 | 0.232 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 0.399 | 0.399 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 7.491 | 7.491 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 2648.000 | 2648.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 2633.000 | 2633.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -516,7 +516,6 @@ All solved units close.
 | DIGESTER.ew-cascade-train.ew_tank_freeboard_m | 0.08 | m freeboard above the cover allowance | A-M-038 (cathode pitch and tank allowances, common EW practice) | — |
 | DIGESTER.ew-cascade-train.ew_tank_wall_m | 0.01 | m thermoplastic tank wall | AQS-DUTY-051 Rev A tank wall (10 mm) | — |
 | DIGESTER.ew-cascade-train.ew_liquor_rho_kg_m3 | 1100 | kg/m3 cell liquor | A-M-029 (dilute HCl with dissolved metal chlorides; same liquor as LEACH_CSTR_1, AQS-DUTY-050) | — |
-| DIGESTER.ew-cascade-train.ew_s08_deposits_kg_d | {"1": 0.0063, "2": 0.0251, "3": 8.7841, "4": 0.7111, "5": 0.7111, "6": 0.7111, "7": 29.629, "8": 0.7111, "9": 0.7111} | kg/d S08 element deposit per EW_n (element-comparison column only; bounding current is from IA-EW-MET-n) | AQS-ASSAY-001 section 5 S08 deposits | — |
 | DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.envelope_mm | [2000, 1200, 1400] | mm L x W x H | AQS-DUTY-050 Rev A model envelope (graph envelope kept) | — |
 | DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.header_zone_mm | 60 | mm per Y face | AQS-DUTY-050 Rev A model header zone per Y face | — |
 | DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.belt_web_mm | 56 | mm FRP channel web on the wall | A-M-034 (pultruded channel C203x56x6.4) | — |
@@ -2140,5 +2139,6 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-457 | 2.0 M ZnBr2, 529.4 L per module (47 reservoirs, 24.9 m3 tota mol/L; L; kg | Electrolyte sample density and ZnBr2 titre at the X-MFG-41 first article |
 | A-M-458 | hood face velocity 0.5 m/s; hoods 0.20/0.12/0.10 m2; capture m/s; m2; m3/h; m3/min/m2 | Differential-pressure and isokinetic capture check at the three hoods on the first-article duct run |
 | A-M-459 | j 1.8 A/cm2; V_cell 1.85 V; 80 cells x 288 cm2; 518.4 A; 148 A/cm2; V; cm2; A; kW | X-PAR-12 first-article stack: polarisation curve gives the measured j/V point and the ASR; the skid GA is the verification test of A-M-279 |
-| A-M-460 | EW cascade element-rate basis: the cascade plates the S08 de kg/d (element metal; wear return kg/d) | pytest flow_graph/param/test_param_misfit.py; python3 models/mfg/tracker.py --check EW_1 EW_2 EW_3 EW_4 EW_5 EW_6 EW_7 EW_8 EW_9 |
+| A-M-460 | EW cascade element-rate basis: the cascade plates the booked kg/d (element metal; wear return kg/d) | pytest flow_graph/param/test_param_misfit.py; python3 models/mfg/tracker.py --check EW_1 EW_2 EW_3 EW_4 EW_5 EW_6 EW_7 EW_8 EW_9 |
 | A-M-466 | 1.8 kg/d Si kg/d | Weigh Si feed per cell over a production campaign |
+| A-M-470 | 0.2 of the lumped other_plateable class to each of the five  - (fraction of the class) | pytest flow_graph/param/test_ew_deposit_basis.py |

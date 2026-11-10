@@ -39,13 +39,13 @@ Table 2.1. Item families
 | Family | Category | Item | Specification | Qty | Sizes | Units |
 | --- | --- | --- | --- | --- | --- | --- |
 | OF-01 | bearing | deep-groove ball bearing | ISO 15, normal class | 346 | 608-2Z x346 | 59 |
-| OF-02 | bearing | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 404 | 6202-2Z x210; 6201-2Z x114; 6205-2Z x50; 6204-2Z x12; 6206-2Z x10; 6308-2Z x6; 6306-2Z x2 | 59 |
+| OF-02 | bearing | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 404 | 6202-2Z x210; 6201-2Z x114; 6205-2Z x50; 6204-2Z x14; 6206-2Z x10; 6308-2Z x4; 6306-2Z x2 | 59 |
 | OF-03 | electronics | PLC digital I/O point | IEC 61131-2 | 846 | 24 V DC x846 | 96 |
 | OF-04 | electronics | PLC analog input point | IEC 61131-2 | 857 | 4-20 mA HART x857 | 1 |
 | OF-05 | electronics | BLDC driver | IEC 61800-5-1 | 170 | 24/48 V DC x170 | 58 |
 | OF-06 | electronics | motor starter (contactor + overload) | IEC 60947-4-1 | 169 | 0.37 kW x103; 0.18 kW x56; 0.55 kW x5; 0.25 kW x2; 0.12 kW x1; 1.1 kW x1; 0.75 kW x1 | 49 |
 | OF-07 | electronics | PLC I/O module, 16 channel | IEC 61131-2 | 107 | 24 V DC x107 | 1 |
-| OF-08 | electronics | variable-frequency drive | IEC 61800-5-1 | 33 | 1.1 kW x21; 2.2 kW x5; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 15 |
+| OF-08 | electronics | variable-frequency drive | IEC 61800-5-1 | 33 | 1.1 kW x21; 2.2 kW x5; 1.5 kW x3; 7.5 kW x2; 5.5 kW x1; 4 kW x1 | 15 |
 | OF-09 | electronics | solenoid driver channel | IEC 61131-2 DO | 23 | 24 V DC x23 | 10 |
 | OF-10 | electronics | compressor contactor + overload | IEC 60947-4-1 | 9 | 18.5 kW hermetic x8; 1.1 kW hermetic x1 | 2 |
 | OF-11 | electronics | stepper driver | IEC 61800-5-1 | 3 | 24/48 V DC x3 | 1 |
@@ -2786,9 +2786,9 @@ Table 2.1. Item families
 | MFG | COLD_MILL | instrument | pressure transmitter | 0-10 bar | ceramic diaphragm, IEC 61298 | 1 | duty item 5 (one per unit); range >= 1.25 x design pressure |
 | MFG | COLD_MILL | instrument | temperature element | Pt100 class A | IEC 60751, 316L thermowell | 1 | duty item 5 (assumed one per unit) |
 | MFG | COLD_MILL | protection | inverse-time circuit breaker, 3-pole | 15 A | UL 489 / IEC 60947-2 | 1 | NEC 430.52, from AQS-INV-002 |
-| MFG | GAS_ATOMIZER | bearing | deep-groove ball bearing | 6308-2Z | ISO 15 / ISO 492 normal class, C3 | 2 | Close-coupled gas atomiser with Ar recirculation: main drive: drive and non-drive end, IEC 60072 frame 132M (assumed size) |
+| MFG | GAS_ATOMIZER | bearing | deep-groove ball bearing | 6204-2Z | ISO 15 / ISO 492 normal class, C3 | 2 | Close-coupled gas atomiser with Ar recirculation: main drive: drive and non-drive end, IEC 60072 frame 132S (assumed size) |
 | MFG | GAS_ATOMIZER | electronics | PLC digital I/O point | 24 V DC | IEC 61131-2 | 2 | Close-coupled gas atomiser with Ar recirculation: main drive: run and fault (assumed) |
-| MFG | GAS_ATOMIZER | electronics | variable-frequency drive | 7.5 kW | IEC 61800-5-1 | 1 | Close-coupled gas atomiser with Ar recirculation: main drive (assumed VFD at >= 0.75 kW) |
+| MFG | GAS_ATOMIZER | electronics | variable-frequency drive | 5.5 kW | IEC 61800-5-1 | 1 | Close-coupled gas atomiser with Ar recirculation: main drive (assumed VFD at >= 0.75 kW) |
 | MFG | GAS_ATOMIZER | fabricated part | fabricated part set | 9 BOM lines | models/mfg/GAS_ATOMIZER/bom.csv and WORK_ORDER.md | 1 | unit work order; bought-in lines in the set are counted again in their own inventory |
 | MFG | GAS_ATOMIZER | fastener | M10 tower-flange bolt + nut | M10 tower-flange bolt + nut | ISO 3506 A4-70 | 8 | models/mfg/GAS_ATOMIZER/fasteners.csv |
 | MFG | GAS_ATOMIZER | fastener | M12 wedge anchor | M12 wedge anchor | ISO 898-1 8.8 | 8 | models/mfg/GAS_ATOMIZER/fasteners.csv |

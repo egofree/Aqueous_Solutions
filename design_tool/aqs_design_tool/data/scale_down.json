@@ -44,7 +44,7 @@
      "from": "BAGHOUSE",
      "to": "LEACH_CSTR_1",
      "other_sector": "GAS",
-     "rate": 7.7679,
+     "rate": 7.6883,
      "unit": "kg/d",
      "carries": "captured dust"
     },
@@ -98,7 +98,7 @@
      "from": "GREY_TREAT",
      "to": "LEACH_CSTR_1",
      "other_sector": "WTR",
-     "rate": 258.066179,
+     "rate": 258.069762,
      "unit": "kg/d",
      "carries": "grey sludge"
     },
@@ -397,7 +397,7 @@
      "from": "EW_1",
      "to": "MFG_SHOP",
      "other_sector": "MFG",
-     "rate": 0.0063,
+     "rate": 0.0051,
      "unit": "kg/d",
      "carries": "plated sheet"
     },
@@ -406,7 +406,7 @@
      "from": "EW_2",
      "to": "MFG_SHOP",
      "other_sector": "MFG",
-     "rate": 0.0251,
+     "rate": 0.0205,
      "unit": "kg/d",
      "carries": "plated sheet"
     },
@@ -415,7 +415,7 @@
      "from": "EW_7",
      "to": "MFG_SHOP",
      "other_sector": "MFG",
-     "rate": 29.629,
+     "rate": 25.67,
      "unit": "kg/d",
      "carries": "plated sheet"
     },
@@ -424,7 +424,7 @@
      "from": "EW_9",
      "to": "MET_MELT",
      "other_sector": "MFG",
-     "rate": 11.9841,
+     "rate": 9.96,
      "unit": "kg/d",
      "carries": "cathode sheet"
     },
@@ -559,7 +559,7 @@
      "from": "LEACH_CSTR_1",
      "to": "VCD_TRAIN",
      "other_sector": "WTR",
-     "rate": 209.405143,
+     "rate": 209.437161,
      "unit": "kg/d",
      "carries": "leach liquor water bleed to vapour-compression distillation"
     },
@@ -777,7 +777,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DOCK",
-     "rate": 330.473333,
+     "rate": 324.592468,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -2010,7 +2010,7 @@
      "from": "WIRE_DRAW",
      "to": "BAGHOUSE",
      "other_sector": "MFG",
-     "rate": 0.4379,
+     "rate": 0.3583,
      "unit": "kg/d",
      "carries": "draw scrap"
     },
@@ -2019,7 +2019,7 @@
      "from": "ZNBR2",
      "to": "HDR_H2",
      "other_sector": "ELEC",
-     "rate": 0.609767,
+     "rate": 0.606184,
      "unit": "kg/d",
      "carries": "ZNBR2 HER hydrogen stripped with the purge air to the H2 header"
     },
@@ -2046,7 +2046,7 @@
      "from": "CRYO_O2",
      "to": "HDR_O2",
      "other_sector": "CRYO",
-     "rate": 43.698729,
+     "rate": 43.727164,
      "unit": "kg/d",
      "carries": "O2 product"
     }
@@ -2066,7 +2066,7 @@
      "from": "BAGHOUSE",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 7.7679,
+     "rate": 7.6883,
      "unit": "kg/d",
      "carries": "captured dust"
     },
@@ -2138,7 +2138,7 @@
      "from": "HDR_O2",
      "to": "PROD_O2",
      "other_sector": "CRYO",
-     "rate": 14.046711,
+     "rate": 14.075146,
      "unit": "kg/d",
      "carries": "surplus O2 to product cylinders"
     },
@@ -2147,7 +2147,7 @@
      "from": "H2_DRYER",
      "to": "CRYO_H2",
      "other_sector": "CRYO",
-     "rate": 0.992508,
+     "rate": 0.988925,
      "unit": "kg/d",
      "carries": "H2 normal path"
     },
@@ -2687,7 +2687,7 @@
      "from": "EW_1",
      "to": "MFG_SHOP",
      "other_sector": "DIGESTER",
-     "rate": 0.0063,
+     "rate": 0.0051,
      "unit": "kg/d",
      "carries": "plated sheet"
     },
@@ -2696,7 +2696,7 @@
      "from": "EW_2",
      "to": "MFG_SHOP",
      "other_sector": "DIGESTER",
-     "rate": 0.0251,
+     "rate": 0.0205,
      "unit": "kg/d",
      "carries": "plated sheet"
     },
@@ -2705,7 +2705,7 @@
      "from": "EW_7",
      "to": "MFG_SHOP",
      "other_sector": "DIGESTER",
-     "rate": 29.629,
+     "rate": 25.67,
      "unit": "kg/d",
      "carries": "plated sheet"
     },
@@ -2714,7 +2714,7 @@
      "from": "EW_9",
      "to": "MET_MELT",
      "other_sector": "DIGESTER",
-     "rate": 11.9841,
+     "rate": 9.96,
      "unit": "kg/d",
      "carries": "cathode sheet"
     },
@@ -2723,7 +2723,7 @@
      "from": "HDR_N2",
      "to": "MET_AHU",
      "other_sector": "HAB",
-     "rate": 2.4468,
+     "rate": 2.4492,
      "unit": "kg/d",
      "carries": "aisle make-up air (plant air) replacing the scrub blowdown loss"
     },
@@ -2806,7 +2806,7 @@
      "from": "WIRE_DRAW",
      "to": "BAGHOUSE",
      "other_sector": "GAS",
-     "rate": 0.4379,
+     "rate": 0.3583,
      "unit": "kg/d",
      "carries": "draw scrap"
     },
@@ -2880,7 +2880,7 @@
      "from": "MFG_SHOP",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 331.8541,
+     "rate": 325.9472,
      "unit": "kg/d",
      "carries": "finished-goods surplus export"
     },
@@ -2898,7 +2898,7 @@
      "from": "SOL_ARK_60K",
      "to": "COLD_MILL",
      "other_sector": "ELEC",
-     "rate": 0.0197,
+     "rate": 0.0186,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -2916,7 +2916,7 @@
      "from": "SOL_ARK_60K",
      "to": "GAS_ATOMIZER",
      "other_sector": "ELEC",
-     "rate": 0.0781,
+     "rate": 0.0732,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -2925,7 +2925,7 @@
      "from": "SOL_ARK_60K",
      "to": "MET_MELT",
      "other_sector": "ELEC",
-     "rate": 0.2067,
+     "rate": 0.1755,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -2952,7 +2952,7 @@
      "from": "SOL_ARK_60K",
      "to": "WIRE_DRAW",
      "other_sector": "ELEC",
-     "rate": 0.0146,
+     "rate": 0.0132,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     }
@@ -4194,7 +4194,7 @@
      "from": "AIR_RECEIVER",
      "to": "HDR_N2",
      "other_sector": "CRYO",
-     "rate": 194.435814,
+     "rate": 194.438214,
      "unit": "kg/d",
      "carries": "plant air from the receiver bank"
     },
@@ -4403,7 +4403,7 @@
      "from": "HDR_N2",
      "to": "MET_AHU",
      "other_sector": "MFG",
-     "rate": 2.4468,
+     "rate": 2.4492,
      "unit": "kg/d",
      "carries": "aisle make-up air (plant air) replacing the scrub blowdown loss"
     },
@@ -4626,7 +4626,7 @@
      "from": "ROOF_TANK",
      "to": "H2O_ELYZ",
      "other_sector": "WTR",
-     "rate": 93.495482,
+     "rate": 93.5275,
      "unit": "kg/d",
      "carries": "electrolyser feed water"
     },
@@ -4662,7 +4662,7 @@
      "from": "HDR_O2",
      "to": "PROD_O2",
      "other_sector": "GAS",
-     "rate": 14.046711,
+     "rate": 14.075146,
      "unit": "kg/d",
      "carries": "surplus O2 to product cylinders"
     },
@@ -4689,7 +4689,7 @@
      "from": "H2_DRYER",
      "to": "CRYO_H2",
      "other_sector": "GAS",
-     "rate": 0.992508,
+     "rate": 0.988925,
      "unit": "kg/d",
      "carries": "H2 normal path"
     },
@@ -4727,7 +4727,7 @@
      "from": "AIR_RECEIVER",
      "to": "HDR_N2",
      "other_sector": "HAB",
-     "rate": 194.435814,
+     "rate": 194.438214,
      "unit": "kg/d",
      "carries": "plant air from the receiver bank"
     },
@@ -4835,7 +4835,7 @@
      "from": "CRYO_O2",
      "to": "HDR_O2",
      "other_sector": "GAS",
-     "rate": 43.698729,
+     "rate": 43.727164,
      "unit": "kg/d",
      "carries": "O2 product"
     },
@@ -4844,7 +4844,7 @@
      "from": "H2O_ELYZ",
      "to": "Q4_BUS",
      "other_sector": "HEAT",
-     "rate": 6.8008,
+     "rate": 6.8031,
      "unit": "kW",
      "carries": "PEM stack heat above Q4 return"
     }
@@ -4864,7 +4864,7 @@
      "from": "CRYO_N2",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 17.617633,
+     "rate": 17.615233,
      "unit": "kg/d",
      "carries": "nitrogen vent"
     },
@@ -4873,7 +4873,7 @@
      "from": "PROD_O2",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 14.046711,
+     "rate": 14.075146,
      "unit": "kg/d",
      "carries": "O2 cylinders shipped at the dock"
     },
@@ -4909,7 +4909,7 @@
      "from": "SOL_ARK_60K",
      "to": "H2O_ELYZ",
      "other_sector": "ELEC",
-     "rate": 23.9772,
+     "rate": 23.9854,
      "unit": "kW",
      "carries": "480 V AC (daily average)"
     }
@@ -5068,7 +5068,7 @@
      "from": "DRY_COOLER",
      "to": "ATMOS",
      "other_sector": "HEAT",
-     "rate": 56.723,
+     "rate": 56.4447,
      "unit": "kW",
      "carries": "dry-cooler rejection to ambient air"
     },
@@ -5113,7 +5113,7 @@
      "from": "LEACH_CSTR_1",
      "to": "VCD_TRAIN",
      "other_sector": "DIGESTER",
-     "rate": 209.405143,
+     "rate": 209.437161,
      "unit": "kg/d",
      "carries": "leach liquor water bleed to vapour-compression distillation"
     },
@@ -5167,7 +5167,7 @@
      "from": "ZNBR2",
      "to": "GREY_TREAT",
      "other_sector": "ELEC",
-     "rate": 7.877074,
+     "rate": 7.880657,
      "unit": "kg/d",
      "carries": "electrolyte bleed"
     },
@@ -5268,7 +5268,7 @@
      "from": "ROOF_TANK",
      "to": "H2O_ELYZ",
      "other_sector": "CRYO",
-     "rate": 93.495482,
+     "rate": 93.5275,
      "unit": "kg/d",
      "carries": "electrolyser feed water"
     },
@@ -5286,7 +5286,7 @@
      "from": "GREY_TREAT",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 258.066179,
+     "rate": 258.069762,
      "unit": "kg/d",
      "carries": "grey sludge"
     },
@@ -5764,7 +5764,7 @@
      "from": "ZNBR2",
      "to": "GREY_TREAT",
      "other_sector": "WTR",
-     "rate": 7.877074,
+     "rate": 7.880657,
      "unit": "kg/d",
      "carries": "electrolyte bleed"
     },
@@ -5773,7 +5773,7 @@
      "from": "ZNBR2",
      "to": "HDR_H2",
      "other_sector": "GAS",
-     "rate": 0.609767,
+     "rate": 0.606184,
      "unit": "kg/d",
      "carries": "ZNBR2 HER hydrogen stripped with the purge air to the H2 header"
     },
@@ -5782,7 +5782,7 @@
      "from": "ZNBR2",
      "to": "Q4_BUS",
      "other_sector": "HEAT",
-     "rate": 47.7498,
+     "rate": 47.4692,
      "unit": "kW",
      "carries": "round-trip loss"
     },
@@ -5899,7 +5899,7 @@
      "from": "SOL_ARK_60K",
      "to": "COLD_MILL",
      "other_sector": "MFG",
-     "rate": 0.0197,
+     "rate": 0.0186,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -6007,7 +6007,7 @@
      "from": "SOL_ARK_60K",
      "to": "GAS_ATOMIZER",
      "other_sector": "MFG",
-     "rate": 0.0781,
+     "rate": 0.0732,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -6034,7 +6034,7 @@
      "from": "SOL_ARK_60K",
      "to": "H2O_ELYZ",
      "other_sector": "CRYO",
-     "rate": 23.9772,
+     "rate": 23.9854,
      "unit": "kW",
      "carries": "480 V AC (daily average)"
     },
@@ -6133,7 +6133,7 @@
      "from": "SOL_ARK_60K",
      "to": "MET_MELT",
      "other_sector": "MFG",
-     "rate": 0.2067,
+     "rate": 0.1755,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -6340,7 +6340,7 @@
      "from": "SOL_ARK_60K",
      "to": "WIRE_DRAW",
      "other_sector": "MFG",
-     "rate": 0.0146,
+     "rate": 0.0132,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     }
@@ -6573,7 +6573,7 @@
      "from": "ZNBR2",
      "to": "Q4_BUS",
      "other_sector": "ELEC",
-     "rate": 47.7498,
+     "rate": 47.4692,
      "unit": "kW",
      "carries": "round-trip loss"
     },
@@ -6645,7 +6645,7 @@
      "from": "H2O_ELYZ",
      "to": "Q4_BUS",
      "other_sector": "CRYO",
-     "rate": 6.8008,
+     "rate": 6.8031,
      "unit": "kW",
      "carries": "PEM stack heat above Q4 return"
     }
@@ -6719,7 +6719,7 @@
      "from": "DRY_COOLER",
      "to": "ATMOS",
      "other_sector": "WTR",
-     "rate": 56.723,
+     "rate": 56.4447,
      "unit": "kW",
      "carries": "dry-cooler rejection to ambient air"
     },
@@ -7213,7 +7213,7 @@
      "from": "MFG_SHOP",
      "to": "NORTH_DOCK",
      "other_sector": "MFG",
-     "rate": 331.8541,
+     "rate": 325.9472,
      "unit": "kg/d",
      "carries": "finished-goods surplus export"
     },
@@ -7267,7 +7267,7 @@
      "from": "CRYO_N2",
      "to": "NORTH_DOCK",
      "other_sector": "CRYO",
-     "rate": 17.617633,
+     "rate": 17.615233,
      "unit": "kg/d",
      "carries": "nitrogen vent"
     },
@@ -7285,7 +7285,7 @@
      "from": "PROD_O2",
      "to": "NORTH_DOCK",
      "other_sector": "CRYO",
-     "rate": 14.046711,
+     "rate": 14.075146,
      "unit": "kg/d",
      "carries": "O2 cylinders shipped at the dock"
     },
@@ -7431,7 +7431,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 330.473333,
+     "rate": 324.592468,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },

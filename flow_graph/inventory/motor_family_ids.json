@@ -141,6 +141,11 @@
    "motor_type": "hermetic induction (scroll)",
    "size": "22 kW hermetic",
    "voltage": "480 V 3-ph"
+  },
+  "MF-30": {
+   "motor_type": "induction IE3",
+   "size": "IEC 132S / 5.5 kW",
+   "voltage": "480 V 3-ph"
   }
  }
 }

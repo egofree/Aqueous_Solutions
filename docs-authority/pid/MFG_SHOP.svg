@@ -116,7 +116,7 @@
 <polygon points="586,838 577,834 577,842" fill="#111"/>
 <text x="24" y="819" font-size="9" fill="#666" text-anchor="start">EW_7</text>
 <text x="24" y="833" font-size="11" font-weight="600" text-anchor="start">IA-EW-MET-7</text>
-<text x="24" y="851" font-size="10" text-anchor="start">29.6 kg/d · solids transfer</text>
+<text x="24" y="851" font-size="10" text-anchor="start">25.7 kg/d · solids transfer</text>
 <text x="598" y="842" font-size="8" font-style="italic" fill="#555" text-anchor="start">N24</text>
 <line x1="430" y1="884" x2="577" y2="884" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,884 577,880 577,888" fill="#111"/>
@@ -158,19 +158,19 @@
 <polygon points="586,1160 577,1156 577,1164" fill="#111"/>
 <text x="24" y="1141" font-size="9" fill="#666" text-anchor="start">WIRE_DRAW</text>
 <text x="24" y="1155" font-size="11" font-weight="600" text-anchor="start">S58</text>
-<text x="24" y="1173" font-size="10" text-anchor="start">3.9 kg/d · solids transfer</text>
+<text x="24" y="1173" font-size="10" text-anchor="start">3.2 kg/d · solids transfer</text>
 <text x="598" y="1164" font-size="8" font-style="italic" fill="#555" text-anchor="start">N12</text>
 <line x1="430" y1="1206" x2="577" y2="1206" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,1206 577,1202 577,1210" fill="#111"/>
 <text x="24" y="1187" font-size="9" fill="#666" text-anchor="start">COLD_MILL</text>
 <text x="24" y="1201" font-size="11" font-weight="600" text-anchor="start">S59</text>
-<text x="24" y="1219" font-size="10" text-anchor="start">4.4 kg/d · solids transfer</text>
+<text x="24" y="1219" font-size="10" text-anchor="start">3.6 kg/d · solids transfer</text>
 <text x="598" y="1210" font-size="8" font-style="italic" fill="#555" text-anchor="start">N13</text>
 <line x1="430" y1="1252" x2="577" y2="1252" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,1252 577,1248 577,1256" fill="#111"/>
 <text x="24" y="1233" font-size="9" fill="#666" text-anchor="start">GAS_ATOMIZER</text>
 <text x="24" y="1247" font-size="11" font-weight="600" text-anchor="start">S60</text>
-<text x="24" y="1265" font-size="10" text-anchor="start">3.2 kg/d · solids transfer</text>
+<text x="24" y="1265" font-size="10" text-anchor="start">2.8 kg/d · solids transfer</text>
 <text x="598" y="1256" font-size="8" font-style="italic" fill="#555" text-anchor="start">N14</text>
 <line x1="430" y1="1298" x2="577" y2="1298" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
 <polygon points="586,1298 577,1294 577,1302" fill="#111"/>
@@ -187,7 +187,7 @@
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">NORTH_DOCK</text>
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">IA-GOODS-SHIP</text>
-<text x="1476" y="253" font-size="10" text-anchor="end">331.9 kg/d · solids transfer</text>
+<text x="1476" y="253" font-size="10" text-anchor="end">325.9 kg/d · solids transfer</text>
 <text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N35</text>
 <line x1="914" y1="286" x2="1061" y2="286" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,286 1061,282 1061,290" fill="#111"/>
@@ -235,7 +235,7 @@
 <g id="aqs-title-block"><rect x="1116" y="1532" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="1549" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-MFG_SHOP</text>
 <text x="1124" y="1566" font-size="9">P&amp;ID MFG_SHOP (shop, MFG sector)</text>
-<text x="1124" y="1583" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 00db2595   Issued 2026-10-19</text>
+<text x="1124" y="1583" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev d0399cf4   Issued 2026-10-19</text>
 <text x="1124" y="1600" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
 <text x="1124" y="1617" font-size="9">Graph Rev AD   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>
