@@ -14,3 +14,17 @@ N12,solids,Class 150,polymer feedstock to fab,inlet,160
 N13,solids,Class 150,spent resist and solvent,outlet,600
 N14,solids,Class 150,dopant into the wafer fab,inlet,160
 N15,cable,Class 150,"power terminal (SF-WAFER_FAB, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",top,800
+N16,solids,Class 150,electronic-grade silicon CZ charge from the store,inlet,160
+N17,DN15,Class 150,acetone for edge-bead rinse and resist strip,inlet,160
+N18,DN15,Class 150,fab nitrogen purge exhaust,outlet,600
+N19,solids,Class 150,wafers to resist coat,outlet,600
+N20,solids,Class 150,patterned wafers back to the fab tool row,inlet,160
+N21,solids,Class 150,finished wafers to the dock for dispatch,outlet,600
+N22,solids,Class 150,"saw kerf, crop and pot scrap with the spent slurry",outlet,600
+N23,solids,Class 150,"solar wafers to the cell line, from the CZ ingot or the cast block by pv_wafer_route",outlet,600
+N24,DN15,Class 150,"argon blanket gas for the CZ puller and, on CAST_MC156, the cast furnace",inlet,160
+N25,DN15,Class 150,CZ argon exhaust back to the cold-box getter,outlet,600
+N26,solids,Class 150,electronic-grade silicon CZ charge from the store (refinery rod plus recycled crop and pot scrap),inlet,160
+N27,solids,Class 150,unreclaimed saw kerf with the spent slurry (1 - si_kerf_recycle_frac),outlet,600
+N28,solids,Class 150,"reclaimed saw kerf to the chlorosilane loop (si_kerf_recycle_frac, A-M-486)",outlet,600
+N29,solids,Class 150,"crop, square-off and pot scrap remelted into the next charge (si_scrap_recycle_frac, A-M-487)",outlet,600

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: IA-DC-EVAP 0 kg/d (evaporated spray water to air). Out: none.
+1. Basis. Mass in 6.583 kg/d. Mass out 0.757 kg/d. Electrical duty 0.0000 kW. In: IA-DC-EVAP 0 kg/d (evaporated spray water to air); IA-ACID-CO2 0.08687 kg/d (carbon dioxide and water vapour of the cake kiln); IA-GREASE-VENT 0 kg/d (water, carbon dioxide and light acids of the wax oxidation and saponification); IA-RESIST-VENT 0 kg/d (oxidation off-gas: nitrogen, unused oxygen and carbon dioxide); 3 more. Out: IA-ACID-O2 0.0787 kg/d (oxygen of the process air (sulfur burning and SO2 oxidation)); IA-GREASE-AIR 0.001366 kg/d (oxygen of the process air for the wax oxidation); IA-RESIST-AIR 0.444 kg/d (process air for the oxidations); IA-SI-HOOD-O2 0.2329 kg/d (oxygen of the hood air that burns the furnace carbon monoxide).
 
 2. Size.
 - Node params (AQS-PAR-001): equipment_id ATMOS.

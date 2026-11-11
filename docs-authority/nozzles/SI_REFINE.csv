@@ -1,0 +1,11 @@
+tag,size,rating,service,face,height_mm
+N1,solids,Class 150,metallurgical-grade silicon,inlet,160
+N2,DN15,Class 150,chlorine make-up of the chlorosilane loop,inlet,160
+N3,DN15,Class 150,impurity chlorides and silicon tetrachloride bleed,outlet,600
+N4,solids,Class 150,"silicon of the cells retired from end-of-life modules, crushed, to the chlorosilane loop",inlet,160
+N5,solids,Class 150,electronic-grade silicon for the CZ charge,outlet,600
+N6,DN15,Class 150,drain,bottom,50
+N7,DN15,Class 150,vent,top,800
+N8,cable,Class 150,"power terminal (SF-SI_REFINE, 480 V AC)",top,800
+N9,DN15,Class 150,impurity-chloride bleed with the end-of-life separation residue,outlet,600
+N10,solids,Class 150,"reclaimed saw kerf to the chlorosilane loop (si_kerf_recycle_frac, A-M-486)",inlet,160

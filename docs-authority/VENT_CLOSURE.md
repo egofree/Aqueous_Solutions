@@ -52,21 +52,21 @@ Table 4.1. Streams of the closures
 
 | Discharge | Stream | From | To | Path | Rate | Unit |
 | --- | --- | --- | --- | --- | --- | --- |
-| Process hydrogen | S64 | H2_DRYER | CRYO_H2 | normal | 0.9889 | kg/d |
+| Process hydrogen | S64 | H2_DRYER | CRYO_H2 | normal | 1.118 | kg/d |
 | Process hydrogen | S45 | CRYO_H2 | BACKUP_GEN | normal | 0.009864 | kg/d |
 | Process hydrogen | S49 | CRYO_H2 | FUEL_CELL | normal | 4.8 | kg/d |
 | Process hydrogen | S24 | H2_DRYER | RELIEF_H2 | contingency | 0 | kg/d |
 | Acid gas and chlorine | S65 | ALK_SCRUBBER | ACID_POLISH_SCRUB | normal | 3.751e+04 | kg/d |
 | Acid gas and chlorine | S66 | ACID_POLISH_SCRUB | CRU | normal | 27.37 | kg/d |
-| Acid gas and chlorine | IA-CRU-01 | CRU | LEACH_CSTR_1 | normal | 27.51 | kg/d |
+| Acid gas and chlorine | IA-CRU-01 | CRU | LEACH_CSTR_1 | normal | 27.49 | kg/d |
 | Acid gas and chlorine | IA-SCRUB-SRC | LEACH_CSTR_1 | ACID_POLISH_SCRUB | normal | 27.34 | kg/d |
 | Afterburner flue | IA-AB-FLUE | AFTERBURNER | AFTERBURNER_FLUE | normal | 26.55 | kg/d |
 | Afterburner flue | S67 | AFTERBURNER_FLUE | FLUE_KO | normal | 136.9 | kg/d |
 | Afterburner flue | S67B | FLUE_KO | CRYO_CO2 | normal | 13.81 | kg/d |
 | Afterburner flue | IA-FLUE-EXH | FLUE_KO | NOX_SCRUB | normal | 283.3 | kg/d |
 | Afterburner flue | S18 | AFTERBURNER | CRYO_CO2 | normal | 0 | kg/d |
-| Battery bromine | S69 | ZNBR2 | ZNBR2_BR2_REGEN | normal | 797.9 | kg/d |
-| Battery bromine | S69B | ZNBR2_BR2_REGEN | ZNBR2 | normal | 797.9 | kg/d |
+| Battery bromine | S69 | ZNBR2 | ZNBR2_BR2_REGEN | normal | 823.7 | kg/d |
+| Battery bromine | S69B | ZNBR2_BR2_REGEN | ZNBR2 | normal | 823.7 | kg/d |
 | Cryogenic room air | IA-AHU-POT | CRYO_AHU | CRYO_AHU_COND_CONDENSABLE | normal | 0.0521 | kg/d |
 | Cryogenic room air | S70 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | normal | 0.0521 | kg/d |
 | Cryogenic room air | S68 | CRYO_AHU | LEACH_CSTR_1 | normal | 102.6 | kg/d |
@@ -86,7 +86,7 @@ Every closure holds on the present graph: each named stream exists, each conting
 
 The normal-path streams S18 and IA-FC-EXH exist but carry no flow at present. They are kept routes, not discharges.
 
-The relief units and the atmospheric boundary on the graph are ATMOS, RELIEF_CRYO and RELIEF_H2. Of the 5 streams into them, none carries flow in normal operation.
+The relief units and the atmospheric boundary on the graph are ATMOS, RELIEF_CRYO and RELIEF_H2. These streams into them carry flow in normal operation, which the rule does not allow: IA-ACID-CO2 (0.08687 kg/d), IA-FAB-N2-VENT (0.7137 kg/d), IA-SI-CO2 (0.6407 kg/d) and IA-AL-H2O (5.142 kg/d).
 
 ## 5. Safety notes
 

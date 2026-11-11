@@ -1,4 +1,9 @@
 {
+ "ACID_PLANT": {
+  "doc": "docs-authority/sizing/ACID_PLANT.md",
+  "docnum": "AQS-SIZE-ACID_PLANT",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "ACID_POLISH_SCRUB": {
   "doc": "docs-authority/sizing/HOUSE_SCRUBBERS.md",
   "docnum": "AQS-DUTY-079",
@@ -604,6 +609,11 @@
   "docnum": "AQS-DUTY-072",
   "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
  },
+ "NAOH_PLANT": {
+  "doc": "docs-authority/sizing/NAOH_PLANT.md",
+  "docnum": "AQS-SIZE-NAOH_PLANT",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "NCG_HEADER": {
   "doc": "docs-authority/sizing/HEADERS.md",
   "docnum": "AQS-DUTY-075",
@@ -799,6 +809,11 @@
   "docnum": "AQS-DUTY-064",
   "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
  },
+ "RESIST_SYN": {
+  "doc": "docs-authority/sizing/RESIST_SYN.md",
+  "docnum": "AQS-SIZE-RESIST_SYN",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "RES_HEAT": {
   "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
   "docnum": "AQS-DUTY-072",
@@ -849,6 +864,11 @@
   "docnum": "AQS-SIZE-SI_REDUCE",
   "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
+ "SI_REFINE": {
+  "doc": "docs-authority/sizing/SI_REFINE.md",
+  "docnum": "AQS-SIZE-SI_REFINE",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "SLEEP_QUARTERS": {
   "doc": "docs-authority/HAB_DESIGN.md",
   "docnum": "AQS-HAB-002",
@@ -858,6 +878,11 @@
   "doc": "docs-authority/sizing/PV_CELL_LINE.md",
   "docnum": "AQS-DUTY-071",
   "family": "PV cell line (flow_graph/param/pv_cell_line.py)"
+ },
+ "SOLV_PLANT": {
+  "doc": "docs-authority/sizing/SOLV_PLANT.md",
+  "docnum": "AQS-SIZE-SOLV_PLANT",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
  "SOL_ARK_60K": {
   "doc": "docs-authority/POWER_SIZING.md",

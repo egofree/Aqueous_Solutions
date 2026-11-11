@@ -236,7 +236,7 @@
    ],
    "writes_graph": true,
    "quick": false,
-   "note": "Fluoro train activation (A-M-289): runs AFTER foundry_poly which zero-rates the F-blocked edges each pass; re-rates them from S31/S66+drivers; fixed point stable after two passes."
+   "note": "Fluoro train activation (A-M-289): runs AFTER foundry_poly which zero-rates the F-blocked edges each pass; re-rates them from S31/S66+drivers; fixed point stable after two passes. Stays out of the quick set with its foundry_poly base: the route rates it writes are reconciled by balance_report in the full run, and a quick pass that ran it alone was not byte-stable (2026-11-10)."
   },
   {
    "name": "stub_activation",
@@ -434,8 +434,26 @@
     "farm_balance"
    ],
    "writes_graph": true,
-   "quick": true,
-   "note": "X-LOC-SPEC: unit task 02 close-out for the ten last unsized units - the grease/lithium specialty chain (GREASE_CA/GREASE_LI kettles, P_CA precipitation, LI_RECOVER carbonation), SI_REDUCE (the PV cell line silicon), ADS_CHILL, DRY_COOLER, GW_INTAKE, MAU_HX and the FEED_PREP/POLY_FIBER/AQUA_UV load bases - rates, design parameters and envelopes, every value with a cited basis."
+   "quick": false,
+   "note": "X-LOC-SPEC: unit task 02 close-out for the ten last unsized units - the grease/lithium specialty chain (GREASE_CA/GREASE_LI kettles, P_CA precipitation, LI_RECOVER carbonation), SI_REDUCE (the PV cell line silicon), ADS_CHILL, DRY_COOLER, GW_INTAKE, MAU_HX and the FEED_PREP/POLY_FIBER/AQUA_UV load bases - rates, design parameters and envelopes, every value with a cited basis. 2026-11-10: leaves the quick set - on the route fixed point its superseded study rates (grease class, si_kgd) are corrected only by fluoro_train and balance_report, so a quick pass that ran it drifted the graph off the full run's fixed point and broke the byte-stable --quick contract of test_regen."
+  },
+  {
+   "name": "si_route",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.si_refine",
+    "--write"
+   ],
+   "outputs": [
+    "flow_graph/plant_flow_graph.json"
+   ],
+   "depends_on": [
+    "specialty_sizing"
+   ],
+   "writes_graph": true,
+   "quick": false,
+   "note": "X-MFG-40 / X-RTE-SI family-4 stage (A-M-471/472/484): the wafer/CZ/litho/PV edges of fab_silicon.tf and the SI_REDUCE/SI_REFINE route of si_refine.tf, re-homed from the audit's balance.py physics() to a manifest stage. Runs after specialty_sizing, whose X-QA-06 study class (A-M-466 si_kgd, 3 cells/d) it supersedes - the replacement A-M-466's replaced_by names - and before write_graph_power, so the roof re-solve sees the SF-SI_REDUCE / SF-SI_REFINE feeds in the same pass and the cell rate always follows the latest array nameplate (one-sided contraction, the successive-substitution loop of the graph phase settles it). The stage needs the SI_REDUCE / SI_REFINE / RESIST_SYN nodes on the graph; a regen from a graph that predates the route runs foundry_poly and fluoro_train (RESIST_SYN) first and this stage creates SI_REFINE itself. foundry_poly seeds IA-CL2-SHIP with the make-up it computed and this stage moves the export if the need moved after it; the run is idempotent at the fixed point. The stage stays out of the quick set: a what-if quick pass must be byte-stable on the converged tree, and the route rates are settled by the full writer set (fluoro_train, balance_report) that quick does not carry."
   },
   {
    "name": "ree_recover",
@@ -513,6 +531,7 @@
     "docs-authority/BALANCE_RECONCILIATION.md"
    ],
    "depends_on": [
+    "si_route",
     "write_graph_power"
    ],
    "writes_graph": true,
@@ -536,6 +555,24 @@
    "writes_graph": true,
    "quick": true,
    "note": "Copies each unit's sector from its node onto the edges at that unit, so an edge never names a sector its unit has left."
+  },
+  {
+   "name": "dock_class",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.recovery",
+    "--stamp"
+   ],
+   "outputs": [
+    "flow_graph/plant_flow_graph.json"
+   ],
+   "depends_on": [
+    "edge_sectors"
+   ],
+   "writes_graph": true,
+   "quick": false,
+   "note": "F-20261110-07 recovery gate: writes the explicit dock class (params.dock_class) onto every live dock input after all dock writers have run; the gate (test_recovery_first.py) then tests the field, never stream text."
   },
   {
    "name": "lake_boehmer_design",
@@ -916,6 +953,7 @@
    "depends_on": [],
    "outputs": [
     "docs-authority/MAINT_PLAN.md",
+    "models/units/ACID_PLANT/maint.csv",
     "models/units/ACID_POLISH_SCRUB/maint.csv",
     "models/units/ADS_CHILL/maint.csv",
     "models/units/AFTERBURNER/maint.csv",
@@ -981,6 +1019,7 @@
     "models/units/MEOH_TANK/maint.csv",
     "models/units/MET_SCRUB/maint.csv",
     "models/units/MFG_SHOP/maint.csv",
+    "models/units/NAOH_PLANT/maint.csv",
     "models/units/NCG_HEADER/maint.csv",
     "models/units/NOX_SCRUB/maint.csv",
     "models/units/NUTRIENT_DOSE/maint.csv",
@@ -1003,8 +1042,11 @@
     "models/units/Q4_BUS/maint.csv",
     "models/units/RECTIFIER/maint.csv",
     "models/units/REMIN/maint.csv",
+    "models/units/RESIST_SYN/maint.csv",
     "models/units/ROOF_TANK/maint.csv",
+    "models/units/SI_REFINE/maint.csv",
     "models/units/SOLAR_PV_CELL/maint.csv",
+    "models/units/SOLV_PLANT/maint.csv",
     "models/units/SOL_ARK_60K/maint.csv",
     "models/units/VCD_TRAIN/maint.csv",
     "models/units/WAFER_FAB/maint.csv",
@@ -1677,55 +1719,11 @@
     "nozzle_sched"
    ],
    "outputs": [
-    "docs-authority/fab/ADS_CHILL.md",
-    "docs-authority/fab/AIR_RECEIVER.md",
-    "docs-authority/fab/AL_POT.md",
-    "docs-authority/fab/CAST_LINE.md",
-    "docs-authority/fab/CA_POT.md",
-    "docs-authority/fab/COMB_HEAT.md",
-    "docs-authority/fab/CONT_CAST.md",
-    "docs-authority/fab/CR_CELL.md",
-    "docs-authority/fab/DRAW.md",
-    "docs-authority/fab/DRY_COOLER.md",
-    "docs-authority/fab/EXTRUDE.md",
-    "docs-authority/fab/EXT_HALL.md",
-    "docs-authority/fab/FILM_CAST.md",
-    "docs-authority/fab/FLUX_PREP.md",
-    "docs-authority/fab/FOOD_STORE.md",
-    "docs-authority/fab/FORGE.md",
-    "docs-authority/fab/F_RECOVER.md",
-    "docs-authority/fab/GREASE_CA.md",
-    "docs-authority/fab/GREASE_LI.md",
-    "docs-authority/fab/H2O_ELYZ.md",
-    "docs-authority/fab/IND_MELT.md",
-    "docs-authority/fab/INV_CAST.md",
-    "docs-authority/fab/LI_RECOVER.md",
-    "docs-authority/fab/MAU_HX.md",
-    "docs-authority/fab/METAL_STORE.md",
-    "docs-authority/fab/MG_POT.md",
-    "docs-authority/fab/MO_CELL.md",
-    "docs-authority/fab/PELLET.md",
-    "docs-authority/fab/POLY_STOCK.md",
-    "docs-authority/fab/POWDER_RESIN.md",
-    "docs-authority/fab/PROD_MEOH.md",
-    "docs-authority/fab/PROD_O2.md",
-    "docs-authority/fab/P_CA.md",
-    "docs-authority/fab/RES_HEAT.md",
-    "docs-authority/fab/RF_HEAT.md",
-    "docs-authority/fab/ROLL.md",
-    "docs-authority/fab/SHELL_BREAK.md",
-    "docs-authority/fab/SHELL_BUILD.md",
-    "docs-authority/fab/SHELL_BURNOUT.md",
-    "docs-authority/fab/SINTER.md",
-    "docs-authority/fab/SI_REDUCE.md",
-    "docs-authority/fab/STOCK_OUT.md",
-    "docs-authority/fab/TI_CELL.md",
-    "docs-authority/fab/VAC_CAST.md",
-    "docs-authority/fab/VAC_IND.md",
-    "docs-authority/fab/WAX_PATTERN.md"
+    "docs-authority/fab/*.md"
    ],
    "writes_graph": false,
-   "quick": false
+   "quick": false,
+   "note": "Fabrication route pages, one per unit with a route (F-20261110-10): the outputs are declared by the page pattern, so every page the generator writes is staged and vouched - the explicit list lagged the pages it wrote (GW_INTAKE.md among the undeclared)."
   },
   {
    "name": "inventory_pipe",
@@ -2077,7 +2075,8 @@
     "docs-authority/_haz_area.py"
    ],
    "outputs": [
-    "docs-authority/HAZ_AREA.md"
+    "docs-authority/HAZ_AREA.md",
+    "docs-authority/inventory/HAZ_AREA.csv"
    ],
    "depends_on": [
     "write_graph_power"
@@ -2356,6 +2355,7 @@
     "inventory_pipe"
    ],
    "outputs": [
+    "models/units/ACID_PLANT/bom.csv",
     "models/units/ACID_POLISH_SCRUB/bom.csv",
     "models/units/ADS_CHILL/bom.csv",
     "models/units/AFTERBURNER/bom.csv",
@@ -2429,6 +2429,7 @@
     "models/units/MET_MELT/bom.csv",
     "models/units/MET_SCRUB/bom.csv",
     "models/units/MFG_SHOP/bom.csv",
+    "models/units/NAOH_PLANT/bom.csv",
     "models/units/NOX_SCRUB/bom.csv",
     "models/units/NUTRIENT_DOSE/bom.csv",
     "models/units/OIL_DRYER/bom.csv",
@@ -2451,10 +2452,13 @@
     "models/units/RELIEF_CRYO/bom.csv",
     "models/units/RELIEF_H2/bom.csv",
     "models/units/REMIN/bom.csv",
+    "models/units/RESIST_SYN/bom.csv",
     "models/units/ROOF_TANK/bom.csv",
     "models/units/SALT_FEED/bom.csv",
     "models/units/SI_REDUCE/bom.csv",
+    "models/units/SI_REFINE/bom.csv",
     "models/units/SOLAR_PV_CELL/bom.csv",
+    "models/units/SOLV_PLANT/bom.csv",
     "models/units/SOL_ARK_60K/bom.csv",
     "models/units/VCD_TRAIN/bom.csv",
     "models/units/WAFER_FAB/bom.csv",
@@ -2591,7 +2595,9 @@
    ],
    "outputs": [
     "models/mfg/*/export/*",
-    "models/mfg/*/drawings/*"
+    "models/mfg/*/drawings/*",
+    "models/mfg/*/check.json",
+    "models/mfg/*/build_log.md"
    ],
    "amends": [
     "models/mfg/*/bom.csv",
@@ -2601,7 +2607,7 @@
     "models/mfg/*.py",
     "models/mfg/*/*.py"
    ],
-   "note": "Every CadQuery manufacturing model under models/mfg, discovered by location. The unit builders also write their A-PIPE line list (line_list.csv beside the BOM).",
+   "note": "Every CadQuery manufacturing model under models/mfg, discovered by location. The unit builders also write their A-PIPE line list (line_list.csv beside the BOM). The acceptance record check.json and the build log build_log.md are declared stage outputs (F-20261110-10).",
    "group": "cad",
    "writes_graph": false,
    "quick": false,

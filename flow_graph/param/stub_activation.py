@@ -412,7 +412,7 @@ def apply(g=None, write=False):
           'self-sustaining rule wants for the desalination reject.')
 
     if write:
-        open(GP, 'w').write(json.dumps(g, indent=2) + '\n')
+        open(GP, 'w').write(json.dumps(g, indent=2))
     return dict(litho_kW=round(litho_kW, 4), coat_kW=round(coat_kW, 4), align_kW=round(align_kW, 4), dev_kW=dev_kW,
                 developer_kg_d=round(dev_g, 4), remin_kW=round(remin_kW, 4), vcd_hx_m2=round(a_hx, 3),
                 blow_kW=round(blow_kW, 4), blow_run_h=round(hours, 2), elc_kW=round(elc_kW, 4),

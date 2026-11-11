@@ -7,7 +7,7 @@ service line: service molten CaCl2 electrolysis cell, 700 C; chemistry CaCl2 -> 
 Internals: issued mfg model BOM (3 internals part row): "step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per AQS-DUTY-07" [models/mfg/CA_POT/bom.csv]
 Material: Graphite anodes, steel cathode rods carrying the solid Ca deposit to the tap work order; 90 % alumina backup lining + ceramic-fibre in a mild-steel shell. Basis: molten CaCl2 at 700 C (graph design; Ca m.p. (continues on the duty sheet)
 
-Nozzles: 6 process connections per docs-authority/nozzles/CA_POT.csv
+Nozzles: 7 process connections per docs-authority/nozzles/CA_POT.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

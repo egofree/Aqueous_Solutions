@@ -53,25 +53,25 @@ Table 4.1. I/O and modules by PLC
 | Sector PLC | AI | AO | DI | DO | Fieldbus drives | Modules AI/AO/DI/DO | CPU | 24 V load W |
 |---|---|---|---|---|---|---|---|---|
 | PLC-CRYO | 36 | 1 | 19 | 6 | 1 | 3/1/2/1 | redundant pair | 38 |
-| PLC-DIGESTER | 132 | 3 | 117 | 25 | 20 | 10/1/9/2 | single | 56 |
+| PLC-DIGESTER | 135 | 3 | 121 | 25 | 21 | 11/1/10/2 | single | 60 |
 | PLC-ELEC | 29 | 17 | 445 | 108 | 80 | 3/2/34/9 | redundant pair | 120 |
-| PLC-FAB | 63 | 3 | 70 | 11 | 15 | 5/1/6/1 | single | 38 |
+| PLC-FAB | 72 | 3 | 92 | 13 | 23 | 6/1/7/1 | single | 42 |
 | PLC-FARM | 48 | 0 | 3 | 0 | 1 | 4/0/1/0 | redundant pair | 34 |
 | PLC-FOUNDRY | 87 | 0 | 19 | 1 | 5 | 7/0/2/1 | single | 32 |
 | PLC-GAS | 32 | 0 | 34 | 6 | 8 | 3/0/3/1 | redundant pair | 38 |
 | PLC-GEO | 9 | 0 | 6 | 3 | 0 | 1/0/1/1 | redundant pair | 30 |
-| PLC-GLASS | 12 | 0 | 5 | 0 | 2 | 1/0/1/0 | single | 16 |
+| PLC-GLASS | 15 | 0 | 7 | 0 | 3 | 2/0/1/0 | single | 18 |
 | PLC-HAB | 13 | 0 | 1 | 0 | 0 | 1/0/1/0 | redundant pair | 28 |
 | PLC-HEAT | 24 | 0 | 0 | 0 | 0 | 2/0/0/0 | single | 16 |
-| PLC-MEOH | 33 | 0 | 43 | 10 | 10 | 3/0/4/1 | single | 28 |
+| PLC-MEOH | 33 | 0 | 51 | 12 | 12 | 3/0/4/1 | single | 28 |
 | PLC-MFG | 32 | 9 | 42 | 5 | 6 | 3/1/4/1 | single | 30 |
 | PLC-NUT | 9 | 0 | 11 | 5 | 0 | 1/0/1/1 | redundant pair | 30 |
-| PLC-OIL | 55 | 0 | 34 | 4 | 8 | 5/0/3/1 | single | 30 |
-| PLC-POLYMERS | 50 | 0 | 22 | 5 | 3 | 4/0/2/1 | single | 26 |
+| PLC-OIL | 55 | 0 | 33 | 4 | 8 | 5/0/3/1 | single | 30 |
+| PLC-POLYMERS | 53 | 0 | 27 | 5 | 5 | 4/0/3/1 | single | 28 |
 | PLC-PUMPED_HYDRO | 2 | 0 | 4 | 2 | 0 | 1/0/1/1 | redundant pair | 30 |
-| PLC-WTR | 70 | 0 | 55 | 10 | 14 | 6/0/5/1 | redundant pair | 48 |
-| Total | 736 | 33 | 930 | 201 | 173 | 172 modules | 9 redundant of 18 | 668 |
+| PLC-WTR | 71 | 0 | 55 | 10 | 14 | 6/0/5/1 | redundant pair | 48 |
+| Total | 755 | 33 | 970 | 205 | 187 | 178 modules | 9 redundant of 18 | 680 |
 
-The control system draws about 0.67 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
+The control system draws about 0.68 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
 
 The module count in AQS-INV-004 (item OF-07) uses a different basis, the number of points divided by 16 with no spare, and is superseded by Table 4.1. The DI count adds the high-level switches of the instrument index to the digital points of the inventory. If the inventory already counts those switches, the DI count is 113 too high, which errs on the safe side.

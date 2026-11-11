@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.2000 kW. In: none. Out: none.
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.2000 kW. In: WAX_TO_GREASE_LI 0 kg/d (wax cut); LI_TO_GREASE 0 kg/d (lithium hydroxide or carbonate). Out: GREASE_LI_TO_MFG 0 kg/d (Li grease).
 
 2. Size.
 - Envelope 500×400×600 mm, 0.12 m³.

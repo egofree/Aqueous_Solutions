@@ -77,11 +77,14 @@ def compute():
     for f in sorted(files):
         c = last.get(f)
         if f == 'docs-authority/DERIVED_REVISIONS.md': rows.append((f, '-', 'this register (its own row would change with each write)')); continue
-        if c is None or f in dirty: rows.append((f, 'working tree', 'current' if f in dirty else 'untracked')); continue   # status only is written (render)
+        # The class and by-design tables decide before the working-tree test, so a row is a
+        # function of the file alone and never of whether it is committed: an uncommitted
+        # classified file keeps its row instead of flipping to a working-tree status.
         cl = next((v for k, v in CLASS.items() if fnmatch.fnmatch(f, k)), None)
         if cl: rows.append((f, '-', cl)); continue
         bd = next((v for k, v in BY_DESIGN.items() if fnmatch.fnmatch(f, k)), None)
         if bd: rows.append((f, '-', 'by design: ' + bd)); continue
+        if c is None or f in dirty: rows.append((f, 'working tree', 'current' if f in dirty else 'untracked')); continue   # status only is written (render)
         if any(fnmatch.fnmatch(f, k) for k in checked) or vouched.get(f) == gsha: rows.append((f, head_g[0][:7] + ' (regenerated, no change)', 'current')); continue
         made = next((g for g in graph if g[1] <= c[1]), None)
         st = 'current' if made and made[0] == head_g[0] else 'stale'

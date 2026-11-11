@@ -9,7 +9,7 @@ Empty = design steel where known, else envelope x 150 kg/m3; operating adds liqu
 
 | Level | Units | Footprint m2 | Empty kN | Operating kN | Test kN | Operating kPa on footprint | 1.2 D + 1.6 L kN (ops) |
 |---|---|---|---|---|---|---|---|
-| L-1 | 69 | 90.2 | 220 | 457 | 599 | 5.1 | 643 |
+| L-1 | 69 | 90.2 | 220 | 457 | 598 | 5.1 | 642 |
 | L-2 | 1 | 367.2 | 1401 | 23288 | 36421 | 63.4 | 36701 |
 | L0 | 129 | 218.3 | 361 | 928 | 1269 | 4.3 | 1341 |
 | L1 | 73 | 693.4 | 1012 | 1322 | 1508 | 1.9 | 1710 |

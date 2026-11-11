@@ -19,9 +19,13 @@ def test_sec3_selections_issued_and_rendered():
     # and the closed X-MAT-22 task-09 batch keeps its audited 38-unit roster
     from flow_graph.param import materials3
     assert set(sel) == set(materials3.SEL) | set(materials3.SEL_FARM)
-    # 39 since 2026-10-31: REE_RECOVER joins the lane through the normal X-MAT-22 method (A-M-433;
-    # the audited 38-unit batch roster itself is unchanged)
-    assert len(materials3.SEL) == 39
+    # Invariant, not a count (F-20261110-09): every lane entry is a live stamped unit on the
+    # graph, so a roster entry cannot outlive its unit and a new unit joins only through the
+    # lane writer. The membership set equality above pins the roster itself.
+    units = {n['unit_id'] for n in json.load(open(f'{ROOT}/flow_graph/plant_flow_graph.json'))['nodes']
+             if n.get('presence') != 'retired'}
+    assert set(materials3.SEL) | set(materials3.SEL_FARM) <= units, \
+        sorted((set(materials3.SEL) | set(materials3.SEL_FARM)) - units)
     for u, s in sel.items():
         assert all(s.get(k) for k in ('mat', 'basis', 'alt', 'note', 'task')), u
         d = open(f'{ROOT}/docs-authority/duties/{u}.md').read()

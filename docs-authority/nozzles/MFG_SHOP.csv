@@ -34,3 +34,9 @@ N32,DN15,Class 150,FR-finished fleece to the shop for conversion,inlet,160
 N33,DN15,Class 150,finished crew textiles to the hab issue,outlet,600
 N34,cable,Class 150,"power terminal (SF-MFG_SHOP, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",top,800
 N35,solids,Class 150,finished-goods surplus export,outlet,600
+N36,solids,Class 150,Ca grease,inlet,160
+N37,solids,Class 150,Li grease,inlet,160
+N38,solids,Class 150,purged grease to the pyrolysis feed,outlet,600
+N39,solids,Class 150,"briquetted crib silicate recovered from the leach feed, furnace burden (A-M-490)",outlet,600
+N40,solids,Class 150,"recovered crib and spent-shell silica, shell make-up",outlet,600
+N41,solids,Class 150,recovered spent-shell silica to the shop pool,inlet,160

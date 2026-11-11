@@ -81,6 +81,9 @@ nodes:
   - id: DIGESTER.metals-leach-train.acid-base-regen.EVAP_ACID_VS
     parent: DIGESTER.metals-leach-train.acid-base-regen
     unit_id: EVAP_ACID_VS
+  - id: DIGESTER.metals-leach-train.acid-base-regen.NAOH_PLANT
+    parent: DIGESTER.metals-leach-train.acid-base-regen
+    unit_id: NAOH_PLANT
   - id: DIGESTER.ew-cascade-train
     parent: DIGESTER
     description: >-
@@ -253,6 +256,9 @@ nodes:
   - id: POLYMERS.fluoropolymer-train.HF_GEN
     parent: POLYMERS.fluoropolymer-train
     unit_id: HF_GEN
+  - id: POLYMERS.fluoropolymer-train.ACID_PLANT
+    parent: POLYMERS.fluoropolymer-train
+    unit_id: ACID_PLANT
   - id: POLYMERS.fluoropolymer-train.VDF_SYN
     parent: POLYMERS.fluoropolymer-train
     unit_id: VDF_SYN
@@ -342,11 +348,16 @@ nodes:
   - id: FAB.wet-reagent-train.reagents.WS_SOLV
     parent: FAB.wet-reagent-train.reagents
     unit_id: WS_SOLV
+  - id: FAB.wet-reagent-train.reagents.SOLV_PLANT
+    parent: FAB.wet-reagent-train.reagents
+    unit_id: SOLV_PLANT
+  - id: FAB.wet-reagent-train.reagents.RESIST_SYN
+    parent: FAB.wet-reagent-train.reagents
+    unit_id: RESIST_SYN
   - id: FAB.litho-train
     parent: FAB
     description: >-
-      STANDBY. Coat / align / develop tools with the LITHO_STUB spent-resist handoff to OIL_FRAC
-      (ST-LITHO-01 until Present).
+      Coat / align / develop tools; the spent resist and acetone go to the SOLV_PLANT still (A-M-482).
   - id: FAB.litho-train.LITHO_COAT
     parent: FAB.litho-train
     unit_id: LITHO_COAT
@@ -838,7 +849,7 @@ nodes:
   - id: GLASS.glass-recycle-train
     parent: GLASS
     description: >-
-      Cullet loop: rinse, mill, burnout, NaOH digest; SI_REDUCE carbothermic silicon on pyro char.
+      Cullet loop: rinse, mill, burnout, NaOH digest; SI_REDUCE carbothermic silicon on pyro char; SI_REFINE electronic-grade silicon on a chlorosilane loop.
   - id: GLASS.glass-recycle-train.cullet-loop
     parent: GLASS.glass-recycle-train
     description: >-
@@ -858,6 +869,9 @@ nodes:
   - id: GLASS.glass-recycle-train.SI_REDUCE
     parent: GLASS.glass-recycle-train
     unit_id: SI_REDUCE
+  - id: GLASS.glass-recycle-train.SI_REFINE
+    parent: GLASS.glass-recycle-train
+    unit_id: SI_REFINE
   - id: HAB
     description: >-
       Life support / habitat — habitation and life support.

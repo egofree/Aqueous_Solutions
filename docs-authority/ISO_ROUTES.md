@@ -7,7 +7,7 @@ Authority: the placement model (flow_graph/placement_seed.json Rev M, AQS-BLD-00
 
 Route rule: up to the source-level rack (datum + 3200 mm, AQS-PIP-002), X run, Y run, then vertical to the target centre. Legs in mm, signed. Elbows = non-zero legs - 1. Risers are at least 300 mm above the higher end so every route keeps a flexible leg (X-PIP-04). Unit centres are the placement-model centres; nozzle lateral offsets refine at detail design (the nozzle schedules carry face + height). Supports and stress: AQS-PIP-005.
 
-Status. 399 positioned piped lines routed, 7941 m total. 15 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
+Status. 412 positioned piped lines routed, 8313 m total. 49 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
 
 | Line | DN | Class | From | To | dZ up | dX | dY | dZ down | Length m | Elbows |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -410,6 +410,19 @@ Status. 399 positioned piped lines routed, 7941 m total. 15 piped lines wait on 
 | IA-DC-REJ | 50 | P1 | DRY_COOLER | ATMOS | 2600 | 5950 | -2800 | -13250 | 24.6 | 3 |
 | IA-ZNBR-H2 | 15 | P1 | ZNBR2 | HDR_H2 | 2400 | 9948 | -2600 | -6950 | 21.9 | 3 |
 | IA-MET-AIR-MU | 15 | M1 | HDR_N2 | MET_AHU | 3050 | 7700 | -1350 | -8300 | 20.4 | 3 |
+| IA-GREASE-AIR | 15 | M1 | ATMOS | GREASE_CA | 2450 | -8100 | 11700 | -8900 | 31.1 | 3 |
+| IA-GREASE-VENT | 15 | P3 | GREASE_CA | ATMOS | 6750 | 8100 | -11700 | -300 | 26.9 | 3 |
+| IA-GREASE-AIR-LI | 15 | M1 | ATMOS | GREASE_LI | 2450 | -5900 | 11700 | -8900 | 28.9 | 3 |
+| IA-GREASE-VENT-LI | 15 | P3 | GREASE_LI | ATMOS | 6750 | 5900 | -11700 | -300 | 24.6 | 3 |
+| IA-PCA-H2O | 15 | P1 | GW_INTAKE | P_CA | 2900 | -16750 | 3650 | -9000 | 32.3 | 3 |
+| IA-FAB-SOLV | 15 | P1 | WS_SOLV | WAFER_FAB | 2650 | 5400 | -3400 | -1200 | 12.7 | 3 |
+| IA-FAB-N2-VENT | 15 | P3 | WAFER_FAB | ATMOS | 1200 | -4650 | -11900 | -2450 | 20.2 | 3 |
+| IA-AR-CZ | 15 | M1 | CRYO_ASU | WAFER_FAB | 7000 | 7400 | 1750 | -300 | 16.4 | 3 |
+| IA-AR-CZ-BACK | 15 | M1 | WAFER_FAB | CRYO_ASU | 1200 | -7400 | -1750 | -7900 | 18.2 | 3 |
+| IA-SI-HOOD-O2 | 15 | M1 | ATMOS | SI_REDUCE | 2450 | -12150 | 15600 | -8400 | 38.6 | 3 |
+| IA-SI-CO2 | 15 | P3 | SI_REDUCE | ATMOS | 6250 | 12150 | -15600 | -300 | 34.3 | 3 |
+| IA-AL-CO | 15 | P3 | AL_POT | NORTH_DOCK | 5500 | 27700 | 4100 | -300 | 37.6 | 3 |
+| IA-AL-H2O | 15 | M1 | AL_POT | ATMOS | 6250 | 35050 | -8800 | -300 | 50.4 | 3 |
 
 Waiting on placements:
 - LB-FEED (LB_INTAKE unplaced)
@@ -427,3 +440,37 @@ Waiting on placements:
 - LB-CHEM-SCRUB (LB_CHEM_STORE unplaced)
 - LB-CHEM-CIP1 (LB_CHEM_STORE unplaced)
 - LB-CHEM-CIP2 (LB_CHEM_STORE unplaced)
+- IA-NA-RECYCLE (NAOH_PLANT unplaced)
+- IA-NAOH-CL2-SHIP (NAOH_PLANT unplaced)
+- IA-NAOH-H2 (NAOH_PLANT unplaced)
+- IA-NAOH-H2O (NAOH_PLANT unplaced)
+- IA-NAOH-LIQ (NAOH_PLANT unplaced)
+- IA-SOLV-SPENT (SOLV_PLANT unplaced)
+- IA-SOLV-PLANT (SOLV_PLANT unplaced)
+- IA-SOLV-BTMS (SOLV_PLANT unplaced)
+- IA-SOLV-VENT (SOLV_PLANT unplaced)
+- IA-SOLV-MEOH (SOLV_PLANT unplaced)
+- IA-SOLV-CO (SOLV_PLANT unplaced)
+- IA-SOLV-H2 (SOLV_PLANT unplaced)
+- IA-SOLV-STILLAGE (SOLV_PLANT unplaced)
+- IA-ACID-O2 (ACID_PLANT unplaced)
+- IA-ACID-H2O (ACID_PLANT unplaced)
+- IA-ACID-CO2 (ACID_PLANT unplaced)
+- IA-H2SO4-ACID (ACID_PLANT unplaced)
+- IA-RESIST-BZ (RESIST_SYN unplaced)
+- IA-RESIST-NAPH (RESIST_SYN unplaced)
+- IA-RESIST-RAFF (RESIST_SYN unplaced)
+- IA-RESIST-MEOH (RESIST_SYN unplaced)
+- IA-RESIST-NH3 (RESIST_SYN unplaced)
+- IA-RESIST-H2 (RESIST_SYN unplaced)
+- IA-RESIST-CO (RESIST_SYN unplaced)
+- IA-RESIST-CL2 (RESIST_SYN unplaced)
+- IA-RESIST-ACID (ACID_PLANT unplaced)
+- IA-RESIST-ACET (RESIST_SYN unplaced)
+- IA-RESIST-AIR (RESIST_SYN unplaced)
+- IA-RESIST-VENT (RESIST_SYN unplaced)
+- IA-RESIST-HCL (RESIST_SYN unplaced)
+- IA-RESIST-BRINE (RESIST_SYN unplaced)
+- IA-RESIST-STOCK (RESIST_SYN unplaced)
+- IA-CL2-SIREF (SI_REFINE unplaced)
+- IA-SI-PURGE (SI_REFINE unplaced)

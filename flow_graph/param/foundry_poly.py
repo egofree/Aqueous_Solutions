@@ -5,12 +5,15 @@ Rev B (2026-10-19, D-DOCK foundry feedstock program): the FOUNDRY standby placeh
 full designs on dock-imported feedstocks (owner ruling D-DOCK: the dock imports any feedstock class -
 landfill reclaim, mining waste, regolith; A-M-284). Live trains after this pass:
 
-  pot/cell train   AL_POT (anhydrous AlCl3 import, molten-chloride electrolysis), MG_POT (Kroll Mg
-                   recycle + CaCl2-MgCl2 brine make-up), CA_POT (brine import, grease-thickener Ca),
-                   TI_CELL (TiO2-eq rutile + C + Mg-pot Cl2/Mg, AQS-BAL-KROLL), MO_CELL / CR_CELL
-                   (oxide + C, carbochlorination with an internal anode-gas chlorine loop)
-  investment train WAX_PATTERN .. SHELL_BREAK at 2 kg/d castings on wax make-up + foundry silica
-                   imports, shell 87.5 % reclaimed, spent balance exported at the dock
+  pot/cell train   AL_POT (recovery-first: the leach reactive-Al hydroxide cake chlorinated on site with the
+                   cell chlorine, anhydrous AlCl3 top-up only for the shortfall, molten-chloride
+                   electrolysis), MG_POT (Kroll Mg recycle + CaCl2-MgCl2 brine make-up), CA_POT (brine
+                   import, grease-thickener Ca), TI_CELL (TiO2-eq rutile + plant char + Mg-pot Cl2/Mg,
+                   AQS-BAL-KROLL), MO_CELL / CR_CELL (oxide + plant char, carbochlorination with an
+                   internal anode-gas chlorine loop)
+  investment train WAX_PATTERN .. SHELL_BREAK at 2 kg/d castings on wax make-up; shell 87.5 % reclaimed,
+                   the spent-shell balance to the shop recovered-silica pool and the make-up drawn from
+                   it (F-20261110-06: the export-plus-import pair is retired)
   N+1 alternates   VAC_IND / VAC_CAST / RF_HEAT / RES_HEAT / COMB_HEAT / SINTER / FORGE / EXTRUDE /
                    DRAW sized at their backup duty (AGENTS.md redundancy rule, A-M-283), standby-zero
                    on the design day, electrical edges connected
@@ -95,6 +98,34 @@ def solve(g=None):
     val = lambda k: DR.val(d, k)
     E = {e['stream_id']: e for e in g['edges']}
 
+    # Closed-shop seed, in memory only (Round D4, 2026-11-10). The remnant r0 below reads the shop
+    # through the IA-GOODS-SHIP edge, which balance_report re-closes every full pass and which parks
+    # one rounding grain off the raw in/out sum at the fixed point (the shop's sub-gram residual).
+    # Seeding the edge to the closed-shop value before the read - the same seed write_graph.process
+    # used to write on the graph - makes this solver's output (P, S, the melt mix, e_melt) identical
+    # at every pass position and in every caller (foundry_poly.apply, write_graph.power's duty
+    # register), so a --quick pass - which runs no balance_report - derives the same numbers as a
+    # full pass and the converged tree stays byte-stable (test_regen --quick contract). The edge is
+    # restored before returning: the on-graph value stays owned by write_graph.process (the seed,
+    # outside the reconciliation band) and balance.physics (the closure).
+    _goods = E.get('IA-GOODS-SHIP')
+    _goods_saved = None
+    if _goods is not None and _goods.get('presence') == 'present':
+        _in = sum(float(e['rate']['value'] or 0) for e in g['edges']
+                  if e['presence'] == 'present' and e['to_unit_id'] == 'MFG_SHOP' and 'mass' in (e.get('layers') or [])
+                  and (e.get('rate') or {}).get('unit') == 'kg/d' and isinstance((e.get('rate') or {}).get('value'), (int, float)))
+        _out = 0.0
+        for e in g['edges']:
+            if e['presence'] != 'present' or e['from_unit_id'] != 'MFG_SHOP' or 'mass' not in (e.get('layers') or []) \
+                    or (e.get('rate') or {}).get('unit') != 'kg/d' or e['stream_id'] in ('IA-GOODS-SHIP', 'IA-MFG-OUT'):
+                continue
+            _v = (e.get('rate') or {}).get('value')
+            if isinstance(_v, (int, float)): _out += float(_v)
+        _seed = round(_in - _out, 6)
+        if _seed > 0 and abs(float(_goods['rate']['value'] or 0) - _seed) > 1e-9:
+            _goods_saved = _goods['rate']['value']
+            _goods['rate']['value'] = _seed
+
     def rated(k):
         r = E[k]['rate']
         return float(r['value'] or 0) if r.get('unit') == 'kg/d' else 0.0
@@ -130,6 +161,19 @@ def solve(g=None):
     ca = val('foundry_ca_add_frac') * (K + potm)                # deoxidizer Ca on the melt charge
     alcl3 = al * (MM['Al'] + 3 * MM['Cl']) / MM['Al']
     al_cl2 = al * 3 * MM['Cl'] / MM['Al']
+    # recovery-first aluminium (F-20261110-07): the leach reactive-Al hydroxide cake is recovered into the
+    # Al line first - calcined, carbochlorinated with the pot chlorine (Al2O3 + 3 C + 3 Cl2 -> 2 AlCl3 + 3 CO)
+    # - and only the shortfall imports as anhydrous AlCl3 (process chemical, pending class, task X-QA-19)
+    feed = next(e for e in g['edges'] if e['stream_id'] == 'IA-FEED-01')
+    al_frac = float(feed['params']['assay_envelope']['reference_point_elements']['Al'])
+    al_rec = min(al, float(feed['rate']['value'])*al_frac)
+    al_cake = al_rec*(MM['Al'] + 3*(MM['O'] + MM['H']))/MM['Al']   # Al(OH)3 cake mass drawn at the leach
+    alcl3_rec = al_rec*(MM['Al'] + 3*MM['Cl'])/MM['Al']
+    alcl3_mu = alcl3 - alcl3_rec
+    al_chlor_cl2 = al_rec*3*MM['Cl']/MM['Al']                    # internal pot Cl2 draw for the chlorination
+    char_al = al_rec*3*MM['C']/(2*MM['Al'])
+    al_co = al_rec*3*(MM['C'] + MM['O'])/(2*MM['Al'])
+    al_h2o = al_rec*3*(2*MM['H'] + MM['O'])/(2*MM['Al'])         # cake calcination steam
     cacl2 = ca * (MM['Ca'] + 2 * MM['Cl']) / MM['Ca']
     ca_cl2 = ca * 2 * MM['Cl'] / MM['Ca']
     tio2 = ti * (MM['Ti'] + 2 * MM['O']) / MM['Ti']
@@ -198,10 +242,14 @@ def solve(g=None):
     pp_in = round(val('POLYMERS.textile.textile_kg_person_yr') * val('san_crew') / 365.0
                   / ((1 + val('POLYMERS.textile.fr_pickup_frac')) * val('POLYMERS.textile.spin_yield')), 6)
     c5 = rated('CUT-1') - rated('CUT-1-OUT') - P * (1 + rej) - pp_in   # IA-C5-SHIP re-solve (make - burned - olefin - textile fibre)
+    if _goods_saved is not None:   # closed-shop seed restored: see the seeding note above
+        _goods['rate']['value'] = _goods_saved
     return dict(g=g, E=E, d=d, r0=r0, K=K, f=f, rej=rej, P=P, S=S, slag=slag, flux=flux, potm=potm, pp_in=pp_in,
                 inv=inv, cont=cont, cont_roll=cont_roll, cont_stock=cont_stock, stock_in=stock_in,
                 al=al, ti=ti, mo=mo, cr=cr, ca=ca, xf=xf, al_i=al_i, ti_i=ti_i, mo_i=mo_i, cr_i=cr_i,
-                alcl3=alcl3, al_cl2=al_cl2, cacl2=cacl2,
+                alcl3=alcl3, al_cl2=al_cl2, cacl2=cacl2, al_frac=al_frac, al_rec=al_rec, al_cake=al_cake,
+                alcl3_rec=alcl3_rec, alcl3_mu=alcl3_mu, al_chlor_cl2=al_chlor_cl2, char_al=char_al,
+                al_co=al_co, al_h2o=al_h2o,
                 ca_cl2=ca_cl2, tio2=tio2, c_ti=c_ti, cl2_ti=cl2_ti, mg_ti=mg_ti, mgcl2_g=mgcl2_g,
                 mgcl2_ret=mgcl2_ret, mgcl2_mu=mgcl2_mu, kroll_flux=kroll_flux, co_ti=co_ti, moo3=moo3,
                 c_mo=c_mo, co2_mo=co2_mo, cr2o3=cr2o3, c_cr=c_cr, co_cr=co_cr, sh=sh, sh_mu=sh_mu,
@@ -225,12 +273,20 @@ def apply(g=None, write=False):
         assert k in E, k
         E[k]['rate'] = rate(v, note)
 
+    def _retire(sid, note):
+        """Retire a dock import replaced by recovery-first production (F-20261110-06/-07)."""
+        e = E.get(sid)
+        if e is not None:
+            e['presence'] = 'retired'
+            e['rate'] = {'value': 0.0, 'unit': 'kg/d', 'status': 'study', 'note': note}
+
     def mk(sid, frm, to, tsec, phase, carries, v, note, layers=('mass',)):
         """Create-or-rate a foundry edge (idempotent; AQS-DUTY-072 owns these)."""
         if sid not in E:
             src = dict(E['IA-SOLV-MU'])
             src.update(stream_id=sid, from_unit_id=frm, to_unit_id=to, to_sector_id=tsec, phase=phase,
-                       carries=carries, layers=list(layers), notes=None, composition=None, gap_flags=[])
+                       carries=carries, layers=list(layers), notes=None, composition=None, gap_flags=[],
+                       presence='present')
             g['edges'].append(src); E[sid] = src
         put(sid, v, note)
 
@@ -275,20 +331,49 @@ def apply(g=None, write=False):
     put('ATOM_TO_STOCK', 0.0, f'Gas-atomizer powder path optional, not baseline (FOUNDRY_INTEGRATION). | {TAG}.')
     put('IND_TO_ATOM', 0.0, f'No powder demand on IND_MELT at the bounding case. | {TAG}.')
     # ---- pot cells: dock-imported chlorides (A-M-284) ---------------------------------------
-    mk('IA-ALCL3-MU', 'NORTH_DOCK', 'AL_POT', 'FOUNDRY', 'S', 'anhydrous AlCl3 feed (mining-waste chloride class)',
-       R(s['al']) + R(s['al_cl2']),
-       f'D-DOCK feedstock import (A-M-284): {s["al"]:.1f} kg/d Al line 8 + {s["xf"]:.0%} export = '
-       f'{s["alcl3"]:.3f} kg/d AlCl3 at {(MM["Al"] + 3 * MM["Cl"]) / MM["Al"]:.3f} kg/kg Al (GREENWOOD); by difference '
-       f'on the pot. | {TAG}.')
+    mk('IA-ALCL3-MU', 'NORTH_DOCK', 'AL_POT', 'FOUNDRY', 'S', 'anhydrous AlCl3 top-up feed (process-chemical import, pending class, task X-QA-19)',
+       R(s['alcl3_mu']),
+       f'Recovery-first aluminium (F-20261110-07): the leach reactive-Al hydroxide cake ({s["al_rec"]:.4f} kg/d Al on '
+       f'IA-AL-CAKE) is calcined and carbochlorinated on site with the pot chlorine ({s["al_chlor_cl2"]:.4f} kg/d Cl2 on the '
+       f'internal cell loop), making {s["alcl3_rec"]:.3f} kg/d AlCl3; this top-up carries only the shortfall '
+       f'{s["al"] - s["al_rec"]:.4f} kg/d Al at {(MM["Al"] + 3 * MM["Cl"]) / MM["Al"]:.3f} kg/kg Al (GREENWOOD). The feed is a '
+       f'process chemical, not a mining waste, and its full on-site replacement needs a carbon source beyond the pyrolysis char '
+       f'pool (task X-QA-19). | {TAG}.')
+    E['IA-ALCL3-MU']['carries'] = 'anhydrous AlCl3 top-up feed (process-chemical import, pending class, task X-QA-19)'
+    mk('IA-AL-CAKE', 'LEACH_CSTR_1', 'AL_POT', 'FOUNDRY', 'S', 'recovered reactive-Al hydroxide cake to the aluminium line',
+       R(s['al_cake']),
+       f'The reference feed carries {s["al_frac"]:.3f} Al (AQS-ASSAY-001 section 3) = {s["al_rec"]:.4f} kg/d Al, precipitated '
+       f'with the 20 wt% NaOH dose (IA-BASE-PPT basis); drawn as the hydroxide cake at '
+       f'{(MM["Al"] + 3 * (MM["O"] + MM["H"])) / MM["Al"]:.3f} kg/kg Al and netted off the sink-circuit solids (IA-SINK-01 / '
+       f'IA-WET-FLOAT-01 each less the same mass). | {TAG}.')
+    mk('CHAR_TO_AL', 'OIL_PYRO', 'AL_POT', 'FOUNDRY', 'S', 'plant pyrolysis char reductant for the alumina chlorination',
+       R(s['char_al']),
+       f'Al2O3 + 3 C + 3 Cl2 -> 2 AlCl3 + 3 CO (GREENWOOD carbochlorination class): {1.5 * 2 * MM["C"] / (2 * MM["Al"]):.3f} kg C '
+       f'per kg Al on the recovered cake; from the pyrolysis char pool (IA-CHAR by difference). | {TAG}.')
+    mk('IA-AL-CO', 'AL_POT', 'NORTH_DOCK', 'DOCK', 'G', 'chlorinator CO (fuel-gas class export)',
+       R(s['al_co']),
+       f'{1.5 * 2 * (MM["C"] + MM["O"]) / (2 * MM["Al"]):.3f} kg CO per kg Al chlorinated on the recovered cake; dock fuel-gas '
+       f'class (IA-KROLL-CO precedent). | {TAG}.')
+    mk('IA-AL-H2O', 'AL_POT', 'ATMOS', 'GAS', 'G', 'calcination steam of the hydroxide cake',
+       R(s['al_h2o']),
+       f'2 Al(OH)3 -> Al2O3 + 3 H2O before the chlorination (GREENWOOD): {1.5 * (2 * MM["H"] + MM["O"]) / MM["Al"]:.3f} kg/d '
+       f'water per kg/d Al in the cake. | {TAG}.')
     put('AL_POT_TO_IND', s['al'],
         f'Al metal to the melt: molten AlCl3-(NaCl-KCl) electrolysis 2AlCl3 -> 2Al + 3Cl2 at 700 C, '
         f'{s["pot_e"]["AL_POT"]["I_A"]:.0f} A at CE {DR.val(s["d"], "foundry_pot_ce")} (A-M-282); '
         f'{s["al_i"]:.0f} kg/d line + {s["al"] - s["al_i"]:.1f} export surplus (A-M-285). | {TAG}.')
+    from flow_graph.param import si_refine as _sir
+    _si_cl2 = _sir.design(s['d'], g)['cl2_kg_d']   # chlorine make-up of the on-site silicon loop, IA-CL2-SIREF (A-M-472)
     mk('IA-CL2-SHIP', 'AL_POT', 'NORTH_DOCK', 'DOCK', 'G', 'chlorine byproduct export (water-treatment class product)',
-       s['al_cl2'],
-       f'Pot Cl2 byproduct {3 * MM["Cl"] / MM["Al"]:.3f} kg/kg Al exports at the dock (D-DOCK outlet; CRU closes '
-       f'exactly on S66 = IA-CRU-01 so it has no internal sink - A-M-290 chlorine ruling). | {TAG}.',
+       s['al_cl2'] - _si_cl2 - s['al_chlor_cl2'],
+       f'Pot Cl2 byproduct {3 * MM["Cl"] / MM["Al"]:.3f} kg/kg Al less the {_si_cl2:.4f} kg/d silicon-loop make-up on '
+       f'IA-CL2-SIREF (A-M-472) and the {s["al_chlor_cl2"]:.4f} kg/d that chlorinates the recovered aluminium cake on site '
+       f'(F-20261110-07) exports at the dock (D-DOCK outlet; CRU closes exactly on S66 = IA-CRU-01 so it has no internal '
+       f'sink - A-M-290 chlorine ruling). | {TAG}.',
        layers=['mass', 'energy'])
+    E['IA-CL2-SHIP'].setdefault('params', {})['base_kg_d'] = E['IA-CL2-SHIP']['rate']['value']   # fluoro_train draws AL_POT_CL2 from this (A-M-481)
+    E['IA-CL2-SHIP']['params']['si_cl2_kg_d'] = _si_cl2     # si_refine.tf moves the export by any later change of this make-up (A-M-484)
+    E['IA-CL2-SHIP']['params']['al_chlor_cl2_kg_d'] = s['al_chlor_cl2']   # and by any change of the on-site AlCl3 chlorination
     mk('IA-MGCL2-KROLL', 'TI_CELL', 'MG_POT', 'FOUNDRY', 'L', 'Kroll retort MgCl2 return (net of drag-out)',
        s['mgcl2_ret'],
        f'AQS-BAL-KROLL closure: {2 * (MM["Mg"] + 2 * MM["Cl"]) / MM["Ti"]:.3f} kg/kg Ti gross less the '
@@ -297,10 +382,11 @@ def apply(g=None, write=False):
        s['kroll_flux'],
        f'{DR.val(s["d"], "foundry_kroll_dragout_frac"):.0%} of the Kroll MgCl2 gross: the salt-flux cover for the '
        f'Al-charged melt (A-M-284); unblocks FLUX_PREP from the SALT_FEED stub. | {TAG}.')
-    mk('IA-MGCL2-MU', 'NORTH_DOCK', 'MG_POT', 'FOUNDRY', 'L', 'CaCl2-MgCl2 brine concentrate (mining-waste class)',
+    mk('IA-MGCL2-MU', 'NORTH_DOCK', 'MG_POT', 'FOUNDRY', 'L', 'CaCl2-MgCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)',
        R(s['mg_ti']) + R(s['cl2_ti']) - R(s['mgcl2_ret']),
        f'D-DOCK feedstock import (A-M-284): restores the drag-out so MG_POT delivers the retort Mg exactly; '
-       f'{s["mgcl2_mu"]:.4f} kg/d MgCl2-equivalent. | {TAG}.')
+       f'{s["mgcl2_mu"]:.4f} kg/d MgCl2-equivalent; a process chemical, not a mining waste (F-20261110-07). | {TAG}.')
+    E['IA-MGCL2-MU']['carries'] = 'CaCl2-MgCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)'
     mk('IA-MG-TI', 'MG_POT', 'TI_CELL', 'FOUNDRY', 'S', 'Mg reductant to the Kroll retort',
        s['mg_ti'],
        f'{2 * MM["Mg"] / MM["Ti"]:.3f} kg Mg per kg Ti (AQS-BAL-KROLL); MG_POT electrolysis of the returned MgCl2 at '
@@ -314,10 +400,12 @@ def apply(g=None, write=False):
         f'MG_POT serves only the Kroll recycle at steady state (all Mg to the retort on IA-MG-TI); no Mg stock line '
         f'at the table. | {TAG}.')
     put('MG_POT_CL2', 0.0, f'MG_POT Cl2 fully serves the chlorinator (IA-CL2-MG-TI); no CRU surplus. | {TAG}.')
-    mk('IA-CACL2-MU', 'NORTH_DOCK', 'CA_POT', 'FOUNDRY', 'L', 'CaCl2 brine concentrate (mining-waste class)',
+    mk('IA-CACL2-MU', 'NORTH_DOCK', 'CA_POT', 'FOUNDRY', 'L', 'CaCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)',
        R(s['ca']) + R(s['ca_cl2']),
        f'D-DOCK feedstock import (A-M-284): Ca deoxidizer addition {s["ca"]:.4f} kg/d at '
-       f'{DR.val(s["d"], "foundry_ca_add_frac"):.2%} of the melt charge; by difference on the pot. | {TAG}.')
+       f'{DR.val(s["d"], "foundry_ca_add_frac"):.2%} of the melt charge; by difference on the pot; a process chemical, '
+       f'not a mining waste (F-20261110-07). | {TAG}.')
+    E['IA-CACL2-MU']['carries'] = 'CaCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)'
     put('CA_POT_TO_IND', s['ca'],
         f'Ca deoxidizer/desulfurizer addition to the melt (steelmaking practice class); sized at '
         f'{DR.val(s["d"], "foundry_ca_add_frac"):.2%} of the melt charge - the same Ca line serves the grease-thickener '
@@ -332,9 +420,11 @@ def apply(g=None, write=False):
        f'D-DOCK feedstock import (A-M-284): {(MM["Ti"] + 2 * MM["O"]) / MM["Ti"]:.3f} kg/kg Ti on the oxide-equivalent '
        f'basis (AQS-BAL-KROLL); concentrate grade envelope TiO2 90-97 wt%, design point 94 % (A-M-284 '
        f'needs_verification: XRF assay of the accepted lot). | {TAG}.')
-    mk('IA-C-TI', 'NORTH_DOCK', 'TI_CELL', 'FOUNDRY', 'S', 'carbon reductant (petcoke/char class)',
-       s['c_ti'], f'2 C per TiO2 chlorinated (AQS-BAL-KROLL); plant pyro char is booked to MFG (IA-CHAR), so the Kroll '
-       f'carbon rides the dock import class. | {TAG}.')
+    mk('CHAR_TO_TI', 'OIL_PYRO', 'TI_CELL', 'FOUNDRY', 'S', 'plant pyrolysis char reductant',
+       s['c_ti'], f'2 C per TiO2 chlorinated (AQS-BAL-KROLL); the Kroll carbon re-points to the plant char pool '
+       f'(F-20261110-07: plant pyrolysis char is a recovered stream, so no carbon imports while the pool holds). | {TAG}.')
+    _retire('IA-C-TI', 'Retired by recovery-first carbon (F-20261110-07): the Kroll reductant is plant pyrolysis char on '
+            'CHAR_TO_TI; the dock carbon import does not return unless the char pool runs short.')
     put('METALS_TO_IND_MELT', s['ti'],
         f'Ti sponge to the melt under salt flux: {s["ti"]:.2f} kg/d = 0.40 line + export margin (A-M-285); the vacuum '
         f'consolidation path (VAC_IND_TI) is the N+1 quality route, standby-zero (A-M-283). | {TAG}.')
@@ -352,8 +442,11 @@ def apply(g=None, write=False):
        s['moo3'],
        f'D-DOCK feedstock import (A-M-284): {(MM["Mo"] + 3 * MM["O"]) / MM["Mo"]:.3f} kg/kg Mo oxide-equivalent; '
        f'tech-oxide grade envelope 95-99 wt% MoO3, design 98 % (A-M-284 assay-verification task). | {TAG}.')
-    mk('IA-C-MO', 'NORTH_DOCK', 'MO_CELL', 'FOUNDRY', 'S', 'carbon reductant (petcoke/char class)',
-       s['c_mo'], f'1.5 C per MoO3 on the Mo(III) chloride route (A-M-284). | {TAG}.')
+    mk('CHAR_TO_MO', 'OIL_PYRO', 'MO_CELL', 'FOUNDRY', 'S', 'plant pyrolysis char reductant',
+       s['c_mo'], f'1.5 C per MoO3 on the Mo(III) chloride route (A-M-284); plant pyrolysis char pool '
+       f'(F-20261110-07, as CHAR_TO_TI). | {TAG}.')
+    _retire('IA-C-MO', 'Retired by recovery-first carbon (F-20261110-07), as IA-C-TI: the molybdenum chlorinator '
+            'reductant is plant pyrolysis char on CHAR_TO_MO.')
     put('MO_TO_IND', s['mo'],
         f'Mo metal to the melt: carbochlorination to MoCl3 then molten-salt electrolysis MoCl3 -> Mo + 1.5Cl2 with the '
         f'anode gas recycled to the chlorination (internal chlorine loop, A-M-290); {s["mo_i"]:.2f} kg/d 316-class '
@@ -373,8 +466,11 @@ def apply(g=None, write=False):
        f'D-DOCK feedstock import (A-M-284): {(2 * MM["Cr"] + 3 * MM["O"]) / (2 * MM["Cr"]):.3f} kg/kg Cr '
        f'oxide-equivalent; chromite class envelope 40-52 wt% Cr2O3, design 46 % (A-M-284 assay-verification task; the '
        f'Fe/Mg/Al gangue balance is the assay-day follow-up). | {TAG}.')
-    mk('IA-C-CR', 'NORTH_DOCK', 'CR_CELL', 'FOUNDRY', 'S', 'carbon reductant (petcoke/char class)',
-       s['c_cr'], f'3 C per Cr2O3 on the Cr(III) chloride route (A-M-284). | {TAG}.')
+    mk('CHAR_TO_CR', 'OIL_PYRO', 'CR_CELL', 'FOUNDRY', 'S', 'plant pyrolysis char reductant',
+       s['c_cr'], f'3 C per Cr2O3 on the Cr(III) chloride route (A-M-284); plant pyrolysis char pool '
+       f'(F-20261110-07, as CHAR_TO_TI). | {TAG}.')
+    _retire('IA-C-CR', 'Retired by recovery-first carbon (F-20261110-07), as IA-C-TI: the chromium chlorinator '
+            'reductant is plant pyrolysis char on CHAR_TO_CR.')
     put('CR_TO_IND', s['cr'],
         f'Cr metal to the melt: carbochlorination to CrCl3 then molten-salt electrolysis 2CrCl3 -> 2Cr + 3Cl2 with the '
         f'anode gas recycled internally (A-M-284); {s["cr_i"]:.2f} kg/d stainless addition + export margin. | {TAG}.')
@@ -389,10 +485,18 @@ def apply(g=None, write=False):
        f'D-DOCK feedstock import (A-M-284): {1 - DR.val(s["d"], "foundry_inv_wax_reclaim_frac"):.0%} of the '
        f'{s["wx"]:.1f} kg/d pattern wax (reclaim {s["wx_recl"]:.1f} covers the rest, A-M-286). | {TAG}.')
     mk('IA-SILICA-MU', 'NORTH_DOCK', 'SHELL_BUILD', 'FOUNDRY', 'S', 'foundry silica (flour/stucco/binder make-up)',
+       0.0,
+       f'Retired by recovery-first silica (F-20261110-06): the shell make-up {s["sh_mu"]:.4f} kg/d is the recovered crib '
+       f'and spent-shell silica pool on IA-SIL-SHOP (the plant silica surplus after the silicon furnace burden); the dock '
+       f'import does not return while the pool holds. Was the '
+       f'{1 - DR.val(s["d"], "foundry_inv_shell_reclaim_frac"):.1%} make-up of the {s["sh"]:.1f} kg/d green shell '
+       f'(AQS-SIZE-FOUNDRY 0.5 kg/kg-casting line, A-M-286). | {TAG}.')
+    E['IA-SILICA-MU']['presence'] = 'retired'
+    mk('IA-SIL-SHOP', 'MFG_SHOP', 'SHELL_BUILD', 'FOUNDRY', 'S', 'recovered crib and spent-shell silica, shell make-up',
        s['sh_mu'],
-       f'D-DOCK feedstock import (A-M-284): shell make-up {1 - DR.val(s["d"], "foundry_inv_shell_reclaim_frac"):.1%} of '
-       f'the {s["sh"]:.1f} kg/d green shell (the 0.5 kg/kg-casting registered waste line, AQS-SIZE-FOUNDRY); GLASS_DIGEST '
-       f'stays fully committed (IA-GLASS-03 30.0 = S08G 26.7 + IA-SIL-SRC 3.3). | {TAG}.')
+       f'Recovery-first silica make-up (F-20261110-06): the shop recovered-silica pool (the S08 crib silicate, A-M-490, '
+       f'plus the spent-shell surplus on IA-SHELL-SHOP) covers the shell make-up {s["sh_mu"]:.4f} kg/d that imported; '
+       f'GLASS_DIGEST stays fully committed (IA-GLASS-03 30.0 = S08G 26.7 + IA-SIL-SRC 3.3). | {TAG}.')
     put('WAX_TO_SHELL', s['wx'], f'{s["wx"]:.1f} kg/d wax patterns at 1 kg/kg castings (A-M-286). | {TAG}.')
     put('SHELL_TO_BURNOUT', s['sh'] + s['wx'],
         f'Green shell {s["sh"]:.1f} kg/d (6-dip class, 4 kg/kg castings) + patterns {s["wx"]:.1f} (A-M-286). | {TAG}.')
@@ -412,12 +516,63 @@ def apply(g=None, write=False):
     mk('IA-SHELL-RECLAIM', 'SHELL_BREAK', 'SHELL_BUILD', 'FOUNDRY', 'S', 'reclaimed shell stucco/flour',
        s['sh_recl'], f'{DR.val(s["d"], "foundry_inv_shell_reclaim_frac"):.1%} of spent shell reclaimed to the backup '
        f'coats (A-M-286). | {TAG}.')
+    mk('IA-SHELL-SHOP', 'SHELL_BREAK', 'MFG_SHOP', 'FOUNDRY', 'S', 'recovered spent-shell silica to the shop pool',
+       s['sh_mu'],
+       f'The spent-shell balance beyond the reclaim (the 0.5 kg/kg-casting line, AQS-SIZE-FOUNDRY; A-M-286) joins the '
+       f'shop recovered-silica pool instead of exporting: the shell make-up draws from the pool on IA-SIL-SHOP and the '
+       f'silicon furnace takes its burden shortfall from the pool on IA-SI-BRIQ, so the export-plus-import pair is '
+       f'retired (F-20261110-06). | {TAG}.')
     mk('IA-SHELL-EXPORT', 'SHELL_BREAK', 'NORTH_DOCK', 'DOCK', 'S', 'spent foundry silica (solids return class)',
-       s['sh_mu'], f'Spent-shell balance = the 0.5 kg/kg-casting make-up (AQS-SIZE-FOUNDRY registered waste line; '
-       f'A-M-286); GLASS_MILL has no digest capacity (A-M-267). | {TAG}.')
+       0.0,
+       f'Retired by recovery-first silica (F-20261110-06): the spent shell beyond the reclaim goes to the shop '
+       f'recovered-silica pool on IA-SHELL-SHOP ({s["sh_mu"]:.4f} kg/d), which feeds the shell make-up (IA-SIL-SHOP) and '
+       f'the silicon furnace burden (IA-SI-BRIQ of si_refine.py). Was the spent-shell balance export '
+       f'(AQS-SIZE-FOUNDRY registered waste line; A-M-286); GLASS_MILL has no digest capacity (A-M-267). | {TAG}.')
+    E['IA-SHELL-EXPORT']['presence'] = 'retired'
+    # the reactive-Al hydroxide cake leaves the sink-circuit solids loop at the leach (F-20261110-07):
+    # both circulating bulk edges give up the same mass, so LEACH_CSTR_1 and FLOAT_SINK keep their closure.
+    # The pre-cake base of each edge is stamped once (params.pre_al_cake_kg_d) and the rate is always
+    # computed from that base, never from the current value - the transfer stays idempotent at the
+    # fixed point and a cake re-solve re-rates both edges from the same base.
+    if s['al_cake'] > 0:
+        for sid, why in (('IA-SINK-01', 'Sink solids less the {cake:.4f} kg/d reactive-Al hydroxide cake drawn to the aluminium '
+                                          'line on IA-AL-CAKE (recovery-first, F-20261110-07); the sink-circuit bulk edges give up '
+                                          'the same mass from the pre-cake base {base:.4f} kg/d. | X-PAR-02 reconciled (AQS-PAR-003).'),
+                         ('IA-WET-FLOAT-01', 'Liquor return less the cake mass now drawn at the leach (the IA-SINK-01 twin of the '
+                                             'same transfer, F-20261110-07), from the pre-cake base {base:.4f} kg/d. '
+                                             '| X-PAR-02 reconciled (AQS-PAR-003).')):
+            p = E[sid].setdefault('params', {})
+            base = p.setdefault('pre_al_cake_kg_d', float(E[sid]['rate']['value']))
+            put(sid, round(base - s['al_cake'], 6), why.format(cake=s['al_cake'], base=base) + f' | {TAG}.')
+    # bench solvent made on site, recovery first (route family 2); takes its CO from IA-KROLL-CO rated above
+    from . import solvent as _SV
+    _SV.tf(g, E, s['d'])
+    # recovery-first records of this writer's ore streams (the gate reads params.recovery; flow_graph/param/recovery.py)
+    from .recovery import frac as _fr
+    _v = lambda sid: float(E[sid]['rate']['value'] or 0)
+    E['IA-SHELL-EXPORT']['composition'] = {'SiO2': 1.0}
+    _si = _fr('SiO2', 'Si')
+    N['SHELL_BUILD'].setdefault('params', {})['recovery'] = [dict(
+        element='Si', use='investment shell silica',
+        need_kg_d=(_v('IA-SHELL-RECLAIM') + s['sh_mu'])*_si,
+        recovered_kg_d=(_v('IA-SHELL-RECLAIM') + _v('IA-SIL-SHOP'))*_si,
+        recovered_from=['IA-SHELL-RECLAIM', 'IA-SIL-SHOP'],
+        ore_streams=[], unrecovered=[],
+        note=('recovery-first silica (F-20261110-06): the reclaimed backup-coat shell plus the shop recovered-silica pool '
+              '(the S08 crib silicate of A-M-490 and the spent-shell surplus on IA-SHELL-SHOP) cover the whole shell '
+              'make-up; the dock import IA-SILICA-MU and the spent-shell export IA-SHELL-EXPORT are both retired'))]
+    for _sid, _u, _el, _f in (('IA-TIO2-MU', 'TI_CELL', 'Ti', 'TiO2'), ('IA-MOO3-MU', 'MO_CELL', 'Mo', 'MoO3'),
+                               ('IA-CR2O3-MU', 'CR_CELL', 'Cr', 'Cr2O3')):
+        _need = _v(_sid)
+        N[_u].setdefault('params', {})['recovery'] = [dict(
+            element=_el, use=f'{_u} metal', need_kg_d=_need*_fr(_f, _el), recovered_kg_d=0.0, recovered_from=[],
+            ore_streams=[_sid], unrecovered=[],
+            note=('the dock concentrate is the only source at this scope (D-DOCK feedstock ruling, A-M-284); the '
+                  'float-sink dense grit is the first source as far as its assay supports it (assay task '
+                  'AQS-ASSAY-TI-MO), and this record re-opens on that route when the assay lands'))]
     put('SHELL_TO_GLASS', 0.0,
-        'Spent shell reclaims internally (IA-SHELL-RECLAIM) and exports the balance at the dock: GLASS_DIGEST is fully '
-        f'committed (A-M-267) so the solids line has no digest capacity for it. | {TAG}.')
+        'Spent shell reclaims internally (IA-SHELL-RECLAIM) and sends the balance to the shop recovered-silica pool '
+        f'(IA-SHELL-SHOP): GLASS_DIGEST is fully committed (A-M-267) so the solids line has no digest capacity for it. | {TAG}.')
     # ---- alternates: N+1 standby-zero with rated envelopes (A-M-283) -----------------------
     put('COMB_OFFGAS', 0.0, 'COMB_HEAT is the fuel-fired N+1 alternate (A-M-283): standby-zero; off-gas routes to '
       f'MET_SCRUB only when the alternate is energized. | {TAG}.')
@@ -604,7 +759,7 @@ def apply(g=None, write=False):
                      'feed (F recovery, Q-013). The Kroll gangue/Fe terms wait on the concentrate assays (A-M-284).'}
     g['gaps'] = [x for x in g.get('gaps', []) if x.get('id') != gap['id']] + [gap]
     if write:
-        open(GP, 'w').write(json.dumps(g, indent=2) + '\n')
+        open(GP, 'w').write(json.dumps(g, indent=2))
     return s
 
 
@@ -634,9 +789,16 @@ def stamp(g, s):
     # pots / Kroll cells: live designs (A-M-280..284.283)
     pe = s['pot_e']
     st('AL_POT', source=src_f, al_kg_d=s['al'], line_kg_d=s['al_i'], export_kg_d=round(s['al'] - s['al_i'], 4),
-       alcl3_kg_d=round(s['alcl3'], 4), cl2_kg_d=round(s['al_cl2'], 4), chemistry='2 AlCl3 -> 2 Al + 3 Cl2, 700 C '
-       'NaCl-KCl-AlCl3 bath (GREENWOOD stoichiometry)', **pe['AL_POT'],
-       basis='D-DOCK anhydrous AlCl3 import; Faraday at CE 0.85 (A-M-282); A-M-284 feedstock ruling')
+       alcl3_kg_d=round(s['alcl3'], 4), alcl3_recovered_kg_d=round(s['alcl3_rec'], 4),
+       alcl3_makeup_kg_d=round(s['alcl3_mu'], 4), al_cake_kg_d=round(s['al_cake'], 4),
+       cl2_kg_d=round(s['al_cl2'], 4), cl2_chlorination_kg_d=round(s['al_chlor_cl2'], 4),
+       char_kg_d=round(s['char_al'], 4),
+       chemistry='2 AlCl3 -> 2 Al + 3 Cl2 electrolysis at 700 C NaCl-KCl-AlCl3 bath; cake calcination + '
+       'Al2O3 + 3 C + 3 Cl2 -> 2 AlCl3 + 3 CO chlorination of the recovered hydroxide (GREENWOOD stoichiometry)',
+       **pe['AL_POT'],
+       basis='recovery-first aluminium (F-20261110-07): the leach reactive-Al hydroxide cake is chlorinated on site with '
+       'the cell chlorine; the anhydrous AlCl3 top-up is the shortfall only (pending class, task X-QA-19); Faraday at CE '
+       '0.85 (A-M-282); A-M-284 feedstock ruling')
     st('MG_POT', source=src_f, mg_kg_d=round(s['mg_ti'], 4), mgcl2_return_kg_d=round(s['mgcl2_ret'], 4),
        mgcl2_makeup_kg_d=round(s['mgcl2_mu'], 4), cl2_kg_d=round(s['cl2_ti'], 4), chemistry='MgCl2 -> Mg + Cl2, '
        '700 C (AQS-BAL-KROLL closure)', **pe['MG_POT'],

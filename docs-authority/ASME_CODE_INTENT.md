@@ -25,7 +25,7 @@ Table 2.1. Unit count per class
 | Atmospheric | 3 |
 | B31.3 piping component | 4 |
 | Section VIII-1 (ID not yet sized) | 1 |
-| not a vessel (no design pressure on the graph) | 220 |
+| not a vessel (no design pressure on the graph) | 225 |
 
 Atmospheric design pressure is set from the actual cases by the vent stage (A-M-174): 4 x the open-vent dP for the vapour space plus the full-height hydrostatic head at SG 1.25. 0 atmospheric units have no sized height yet; their liquid head comes from a hold-up volume (A-M-182: 2 d for stores, 1 d for process units, H/D 1.5) until their unit sizing replaces it. Units with no liquid inflow carry the vapour case alone. Among the X-MFG-40 named units, GLASS_BURNOUT (rotary kiln), ALK_SCRUBBER, ZNBR2_BR2_REGEN (Br2 tower) and OIL_FRAC run at or near atmospheric pressure by process and stay atmospheric; the cold box CRYO_ASU does not: its compressor and column pressures are set by X-MFG-33 and it is reclassified when that design issues.
 
@@ -47,6 +47,7 @@ Table 4.1. Code intent per unit
 
 | Unit | Sector | Design kPa g | Design T C | ID mm | Code intent | Basis | Stamp | Test |
 |---|---|---|---|---|---|---|---|---|
+| ACID_PLANT | POLYMERS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | ACID_POLISH_SCRUB | GAS |  |  | 600 | not a vessel (no design pressure on the graph) | - | - | - |
 | ADS_CHILL | HEAT |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | AFTERBURNER | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -191,6 +192,7 @@ Table 4.1. Code intent per unit
 | MFG_SHOP | MFG |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | MG_POT | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | MO_CELL | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| NAOH_PLANT | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | NCG_HEADER | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | NORTH_DOCK | DOCK |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | NOX_SCRUB | GAS |  |  | 200 | not a vessel (no design pressure on the graph) | - | - | - |
@@ -234,6 +236,7 @@ Table 4.1. Code intent per unit
 | RELIEF_CRYO | CRYO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | RELIEF_H2 | GAS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | REMIN | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| RESIST_SYN | FAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | RES_HEAT | FOUNDRY |  | 900.0 |  | not a vessel (no design pressure on the graph) | - | - | - |
 | RF_HEAT | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | ROLL | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -245,8 +248,10 @@ Table 4.1. Code intent per unit
 | SHELL_BURNOUT | FOUNDRY |  | 900.0 |  | not a vessel (no design pressure on the graph) | - | - | - |
 | SINTER | FOUNDRY |  | 1300.0 |  | not a vessel (no design pressure on the graph) | - | - | - |
 | SI_REDUCE | GLASS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| SI_REFINE | GLASS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | SLEEP_QUARTERS | HAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | SOLAR_PV_CELL | FAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| SOLV_PLANT | FAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | SOL_ARK_60K | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | STOCK_OUT | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | SW_INTAKE | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |

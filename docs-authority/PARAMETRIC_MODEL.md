@@ -45,11 +45,11 @@ All solved units close.
 | BMED_ACID kW at the 2 M SEC (F-5 basis) | 26.928 | 26.928 | -0.0 % | EDBM_WHEY_2021 |
 | IA-BASE-PPT NaOH, kg/d | 96.457 | 96.457 | -0.0 % | GREENWOOD |
 | IA-BASE-01 NaOH, kg/d | 4.394 | 4.394 | +0.0 % | GREENWOOD |
-| IA-NAOH-MU make-up, kg/d | 4.394 | 4.394 | -0.0 % | NaOH balance |
+| IA-NAOH-LIQ make-up liquor, kg/d | 13.730 | 13.730 | +0.0 % | NaOH balance, A-M-475 |
 | EVAP_ACID kW | 1.498 | 1.498 | +0.0 % | X-MFG-30 in-house MVR design |
 | EVAP_ACID water off, kg/d | 865.174 | 865.174 | +0.0 % | PERRY9_HCL |
-| EVAP_BASE kW | 1.328 | 1.328 | +0.0 % | X-MFG-30 in-house MVR design |
-| EVAP_BASE water off, kg/d | 801.856 | 801.856 | -0.0 % | PERRY9_HCL |
+| EVAP_BASE kW | 1.344 | 1.344 | +0.0 % | X-MFG-30 in-house MVR design |
+| EVAP_BASE water off, kg/d | 811.192 | 811.192 | -0.0 % | PERRY9_HCL |
 | IA-VS-NAOH NaOH, mol/d | 0.001 | 0.001 | +0.0 % | X-PAR-10, PERRY9_ABS |
 | EW_1 DC kW (cell + bus drop) | 0.001 | 0.001 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_2 DC kW (cell + bus drop) | 0.002 | 0.002 | -0.0 % | CODATA2018, USBM_CL_EW |
@@ -61,16 +61,16 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.232 | 0.232 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 0.399 | 0.399 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 7.491 | 7.491 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 2633.000 | 2633.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 2718.000 | 2718.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
 1. BMED runs at 2 M product, inside the published EDBM limit of about 3.6 M acid (EDBM_WHEY_2021). Stack power 26.93 kW from 6.7 kWh/kg NaOH at the 2 M product (EDBM_WHEY_2021; the design SEC is the product's own concentration, physics audit F-5, A-M-171). The in-house triplet-voltage model gives 5.63 kW at its own seawater-brine concentration (AQS-DUTY-068 model data). Study.
 2. EVAP_ACID concentrates HCl from 7.07 wt% to 20 wt%, below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL): feed 1304.8 kg/d, water off 865.2 kg/d, 1.50 kW at 72.0 kWh/t (VOGELBUSCH_MVR upper bound). Study.
-3. EVAP_BASE concentrates NaOH from 7.41 wt% to 20 wt%: feed 1301.7 kg/d, water off 801.9 kg/d, 1.33 kW. Study.
+3. EVAP_BASE concentrates NaOH from 7.41 wt% to 20 wt%: feed 1301.7 kg/d, water off 811.2 kg/d, 1.34 kW. Study.
 4. Condensate returns to the BMED stack as water make-up (IA-EVAP_ACID-COND, IA-EVAP_BASE-COND). Both evaporators have 480 V feeds (SF-EVAP_ACID, SF-EVAP_BASE) and heat edges to HEAT_SINK.
 5. EW at 2.12 V per cell and current efficiency 0.85 (USBM_CL_EW chloride EW basis), 0.3 V bus drop, rectifier efficiency 0.8: 2476 A, DC 5.99 kW, AC 7.49 kW.
-7. NaOH balance (owner decision 2026-10-15, X-PAR-06): precipitation 2412 mol/d (one NaOH per chloride, GREENWOOD); glass digest 109.8 mol/d (2 NaOH per SiO2 dissolved, bounding; was 593 mol/d); BMED 2412 mol/d; make-up 4.39 kg/d NaOH flake on IA-NAOH-MU from NORTH_DOCK, worst case with no sodium credit; equal-mass purge IA-NA-PURGE. EVAP_BASE is derived from the BMED output plus make-up: water off 801.9 kg/d, 1.33 kW.
+7. NaOH balance (owner decision 2026-10-15, X-PAR-06): precipitation 2412 mol/d (one NaOH per chloride, GREENWOOD); glass digest 109.8 mol/d (2 NaOH per SiO2 dissolved, bounding; was 593 mol/d); BMED 2412 mol/d; make-up 13.73 kg/d NaOH flake on IA-NAOH-MU from NORTH_DOCK, worst case with no sodium credit; equal-mass purge IA-NA-PURGE. EVAP_BASE is derived from the BMED output plus make-up: water off 811.2 kg/d, 1.34 kW.
 6. The bus change is carried on IA-PV-01; PV, storage and inverters follow AQS-ELEC-007 (POWER_SIZING.md Rev C). The EW aisle and the evaporator skids are re-placed (placement seed Rev I, AQS-PLACE-STUDY-001).
 
 ## 5. Drivers
@@ -1056,6 +1056,162 @@ All solved units close.
 | ew_minor_metal_cells | [4, 5, 6, 8, 9] | - EW_n cell numbers of the minor-metal group (the cells the Q-041 merged arrangement combines) | AQS-OQ-001 Q-041 | — |
 | ELEC.generation-train.BACKUP_GEN.crit_margin | 1.25 | - of the critical-list sum (AQS-ELEC-007 / AQS-RED-001 standby rule, NFPA 110) | AQS-ELEC-007 | — |
 | ELEC.generation-train.BACKUP_GEN.rating_step_kw | 5.0 | kW commercial rating step the genset nameplate rounds up to (AQS-ELEC-007) | AQS-ELEC-007 | — |
+| acid_kiln_campaign_d | 7 | d between kiln campaigns on the CAMPAIGN duty; sets the cake store and the acid store | A-M-477 | — |
+| acid_kiln_mode | "CAMPAIGN" | - duty of the ACID_PLANT cake kiln: CAMPAIGN (cake stored, kiln fired one run every acid_kiln_campaign_d days, acid held in a day store) or CONTINUOUS (kiln held at temperature every day) | A-M-477 | — |
+| acid_kiln_run_h | 24.0 | h the kiln is held at temperature per campaign, after heat-up | A-M-477 | — |
+| acid_store_rho_kg_m3 | 1840.0 | kg/m3 density of 98 wt% sulfuric acid for the acid day store (ULLMANN_H2SO4) | A-M-477 | — |
+| ca_CE | 0.95 | - current efficiency of the membrane cell for NaOH | A-M-475 | — |
+| ca_catholyte_wt | 0.32 | mass fraction NaOH in the membrane-cell catholyte | A-M-475 | — |
+| ca_cell_V | 3.1 | V membrane chlor-alkali cell voltage at design current density | A-M-475 | — |
+| caco3_dH_kJ_mol | 178.3 | kJ per mol CaCO3 for CaCO3 -> CaO + CO2 | A-M-475 | — |
+| caso4_dHrxn_kJ_mol | 303.0 | kJ per mol CaSO4 for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2 (CaSO4 -> CaO + SO3 +401, SO3 -> SO2 + 1/2 O2 +99, 1/2 C + 1/2 O2 -> 1/2 CO2 -197) | A-M-474 | — |
+| caso4_dec_frac | 0.9 | - fraction of the anhydrite in the HF kiln cake reduced to SO2 in the cake kiln (reductive decomposition class) | A-M-474 | — |
+| caso4_feed_cp_kJ_kgK | 0.9 | kJ/kg K mean heat capacity of the cake and char feed to the kiln temperature | A-M-474 | — |
+| caso4_kiln_D_mm | 150.0 | mm bore of the small electrically heated cake kiln tube (the HF kiln class at this throughput) | A-M-474 | — |
+| caso4_kiln_L_m | 1.0 | m heated length of the cake kiln tube | A-M-474 | — |
+| caso4_kiln_T_C | 1150.0 | C cake kiln temperature for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2 | A-M-474 | — |
+| caso4_kiln_wall_mm | 6.0 | mm wall of the Inconel 600 kiln tube, heated with the tube at each campaign | A-M-477 | — |
+| caus_feed_cp_kJ_kgK | 0.9 | kJ/kg K mean heat capacity of the ore and mud fed to the calciner and kiln | A-M-475 | — |
+| caus_liquor_wt | 0.1 | mass fraction NaOH in the white liquor of the causticiser (the practical causticising limit) | A-M-475 | — |
+| char_fixed_C_frac | 0.85 | - fixed-carbon mass fraction of the OIL_PYRO char used as the Ti, Mo and Cr chlorinator reductant (pyrolysis char class; the volatiles and ash leave with the chlorinator gas) | A-M-473 | — |
+| cru_cl2_source | "HCL_OX" | - chlorine source of the VDF and TFE reactors: HCL_OX (CRU oxidises the returned dilute HCl with the chlorate liquor, the halogen loop closes internally) or POT (the AL_POT byproduct chlorine on AL_POT_CL2, the HCl returns pass to the leach) | A-M-481 | — |
+| fab_ebr_mL_per_coat | 2.0 | mL acetone edge-bead and backside rinse per coat (MOREAU1988) | A-M-482 | — |
+| fab_mask_layers | 8 | mask layers per wafer of the fab process, i.e. resist coats per wafer start | A-M-482 | yes |
+| fab_resist_dnq_wt | 0.2 | mass fraction of the bound DNQ-5-sulfonyl moiety in the resist solids, the 15-25 % photoactive loading of DNQ-novolac resists (DAMMEL1993) | A-M-482 | — |
+| fab_resist_mL_per_coat | 3.0 | mL resist solution dispensed per coat on a 150 mm wafer, static dispense (MOREAU1988) | A-M-482 | — |
+| fab_resist_rho_kg_m3 | 1000.0 | kg/m3 resist solution density in diacetone alcohol | A-M-482 | — |
+| fab_resist_route | "DNQ_NOVOLAC" | - photoresist chemistry made by RESIST_SYN: DNQ_NOVOLAC (positive diazonaphthoquinone-novolac, aqueous TMAH/KOH develop). The negative cyclised-polyisoprene/bis-azide class waits on X-RTE-RESIST-ISOPRENE and X-RTE-RESIST-AZIDE | A-M-482 | — |
+| fab_resist_solids_frac | 0.25 | mass fraction resin solids in the positive resist solution, 20-30 % for DNQ-novolac resists (DAMMEL1993) | A-M-482 | — |
+| fab_strip_mL_per_coat | 5.0 | mL acetone to strip the positive resist after each pattern step (MOREAU1988) | A-M-482 | — |
+| formox_meoh_vol_frac | 0.08 | mole fraction methanol in air at the formaldehyde oxidation feed, below the lower explosive limit (ULLMANN_FORMALDEHYDE) | A-M-482 | — |
+| grease_bearing_B_mm | 15.0 | mm width of the bearing class at the grease points (6205 class) | A-M-480 | — |
+| grease_bearing_D_mm | 52.0 | mm outside diameter of the bearing class at the grease points (6205 class, the motor bearing size of AQS-INV-004 family OF-02) | A-M-480 | — |
+| grease_campaign_d | 90 | d between grease kettle campaigns; the shop holds the grease between them | A-M-480 | — |
+| grease_kettle_T_C_ca | 150.0 | C kettle temperature for the anhydrous calcium soap grease | ULLMANN_LUBRICANTS | — |
+| grease_kettle_T_C_li | 200.0 | C kettle temperature for the lithium soap grease | ULLMANN_LUBRICANTS | — |
+| grease_cp_kJ_kgK | 2.2 | kJ/(kg K) heat capacity of wax and soap feed | A-M-480 | — |
+| grease_fill | 0.7 | working fill of the grease kettle | A-M-480 | — |
+| grease_heater_eff | 0.7 | fraction of the electric kettle heat that reaches the batch (A-M-157 convention) | A-M-480 | — |
+| grease_points_per_unit | 2 | grease points per lubricated rotating unit (drive-end and non-drive-end bearing) | A-M-480 | — |
+| grease_rho_kg_m3 | 900.0 | kg/m3 grease density for the kettle volume | A-M-480 | — |
+| grease_run_h | 8.0 | h the kettle is held at temperature per campaign | A-M-480 | — |
+| grease_soap_frac | 0.12 | mass fraction soap thickener in the grease, 8-15 % for calcium and lithium soap greases (ULLMANN_LUBRICANTS, AQS-DUTY-GREASE) | A-M-480 | — |
+| grease_thickener | "CA" | - grease soap of the shop grease: CA (calcium soap in GREASE_CA, lime from the acid-plant residue) or LI (lithium soap in GREASE_LI, lithium from LI_RECOVER once the polish-liquor tenor is measured) | A-M-480 | — |
+| grease_wax_ox_acid_yield | 0.7 | kg fatty acid per kg C19-C28 wax in the air oxidation to soap acids (ULLMANN_FATTY_ACIDS, paraffin oxidation) | A-M-480 | — |
+| grease_wax_ox_o2 | 0.35 | kg oxygen taken up per kg wax in the air oxidation (ULLMANN_FATTY_ACIDS) | A-M-480 | — |
+| h2so4_route | "GYPSUM_LOOP" | - sulfuric acid route: GYPSUM_LOOP (HF kiln cake reduced with char to SO2, sulfur ore make-up) or SULFUR_ORE (native sulfur ore burned), both on a contact converter | A-M-474 | — |
+| halite_ore_purity | 0.95 | mass fraction NaCl in the halite ore; the rest leaves as insolubles | A-M-475 | — |
+| inconel600_cp_kJ_kgK | 0.444 | kJ/(kg K) specific heat of Inconel 600 at room temperature, held over the heat-up (SPECIAL_METALS_I600) | A-M-477 | — |
+| inconel600_rho_kg_m3 | 8470.0 | kg/m3 density of Inconel 600 (SPECIAL_METALS_I600) | A-M-477 | — |
+| kiln_fibre_cp_kJ_kgK | 1.13 | kJ/(kg K) specific heat of alumino-silicate ceramic fibre (ASTM C892 class), held over the heat-up | A-M-477 | — |
+| kiln_fibre_rho_kg_m3 | 128.0 | kg/m3 density of the ceramic-fibre insulation of the kiln (ASTM C892 grade 1260, 128 kg/m3 class) | A-M-477 | — |
+| lime_kiln_T_C | 900.0 | C lime kiln temperature for CaCO3 -> CaO + CO2 | A-M-475 | — |
+| lime_purge_frac | 0.05 | - fraction of the lime mud purged to the dock each cycle and made up with limestone ore (non-process element control) | A-M-475 | — |
+| limestone_ore_purity | 0.95 | mass fraction CaCO3 in the limestone ore; the rest leaves as insolubles | A-M-475 | — |
+| na_purge_recycle_frac | 0.9 | - fraction of the leach sodium chloride purge recycled to the cell brine on the CHLOR_ALKALI route; the rest is bled to the dock | A-M-475 | — |
+| naoh_route | "CHLOR_ALKALI" | - sodium hydroxide route of NAOH_PLANT: CAUSTICIZE (trona ore to soda ash, lime causticising with a recalcining lime kiln) or CHLOR_ALKALI (membrane cells on the leach purge salt and halite ore) | A-M-475 A-M-426 | — |
+| trona_calc_T_C | 200.0 | C trona calciner temperature (monohydrate-process class) | A-M-475 | — |
+| trona_dH_kJ_mol | 185.0 | kJ per mol trona for 2 trona -> 3 Na2CO3 + CO2 + 5 H2O(g), from standard formation enthalpies | A-M-475 | — |
+| trona_ore_purity | 0.9 | mass fraction trona in the trona ore; the rest leaves as insolubles | A-M-475 | — |
+| abe_acetone_yield | 0.1 | kg acetone per kg sugar in the acetone-butanol-ethanol fermentation (solvents about 0.33 kg/kg at 3:6:1, JONES1986) | A-M-479 | — |
+| abe_butanol_yield | 0.2 | kg butanol per kg sugar in the acetone-butanol-ethanol fermentation (JONES1986) | A-M-479 | — |
+| abe_ethanol_yield | 0.033 | kg ethanol per kg sugar in the acetone-butanol-ethanol fermentation (JONES1986) | A-M-479 | — |
+| abe_gas_yield | 0.5 | kg CO2 and H2 per kg sugar in the acetone-butanol-ethanol fermentation (JONES1986) | A-M-479 | — |
+| acetone_rho_kg_m3 | 784.0 | kg/m3 acetone density at 25 C | A-M-482 | — |
+| aromatic_extract_recovery | 0.9 | fraction of the cut aromatic recovered by the solvent extraction and distillation (ULLMANN_PHENOL feed preparation class) | A-M-482 | — |
+| meoh_dHvap_kJ_kg | 1100.0 | kJ/kg heat of vaporisation of methanol, 35.2 kJ/mol (NIST_WEBBOOK) | A-M-479 | — |
+| oil_c11c18_naphthalene_frac | 0.01 | mass fraction naphthalene in the C11-C18 cut of the plastics pyrolysis oil (SU2018_PYRO) | A-M-482 | yes |
+| oil_c5c10_benzene_frac | 0.02 | mass fraction benzene in the C5-C10 cut of the plastics pyrolysis oil (SU2018_PYRO) | A-M-482 | yes |
+| ostwald_nh3_vol_frac | 0.1 | mole fraction ammonia in air at the ammonia oxidation feed (ULLMANN_NITRIC) | A-M-482 | — |
+| resist_cp_kJ_kgK | 2.0 | kJ/(kg K) heat capacity of the organic batch feeds | A-M-482 | — |
+| resist_heater_eff | 0.7 | fraction of the electric batch heat that reaches the batch (A-M-157 convention) | A-M-482 | — |
+| resist_rx_T_C | 100.0 | C batch temperature for the RESIST_SYN heating load (novolac condensation near reflux) | A-M-482 | — |
+| solv_acetone_frac | 0.5 | mass fraction acetone in the bench solvent (the rest ethanol), equal rinse volumes of the two | A-M-479 | — |
+| solv_cat_T_C | 350.0 | C bounding reactor temperature of the catalytic steps (ketonisation 350 C, carbonylation and hydrogenation lower; PHAM2013) | A-M-479 | — |
+| solv_cat_cp_kJ_kgK | 2.5 | kJ/(kg K) feed heat capacity for the reactor heaters (A-M-157 convention) | A-M-479 | — |
+| solv_cat_heater_eff | 0.7 | fraction of the electric reactor heat that reaches the feed (A-M-157 convention) | A-M-479 | — |
+| solv_cat_selectivity | 0.9 | carbon selectivity of carbonylation with ketonisation or hydrogenation to the product; the rest leaves as off-gas (ULLMANN_ACETIC, PHAM2013) | A-M-479 | — |
+| solv_dHvap_kJ_kg | 680.0 | kJ/kg heat of vaporisation of the 50/50 ethanol-acetone distillate (ethanol 841, acetone 518 kJ/kg, NIST_WEBBOOK) | A-M-479 | — |
+| solv_fw_sugar_frac | 0.12 | kg fermentable sugar per kg of wet galley food waste after hydrolysis (FERMENT route) | A-M-479 | — |
+| solv_route | "MEOH_CO" | - route of SOLV_PLANT for the solvent it does not recover: MEOH_CO (plant methanol carbonylated with the chlorinator CO, then ketonised to acetone and hydrogenated to ethanol) or FERMENT (galley food waste to acetone-butanol-ethanol and yeast fermentations) | A-M-479 | — |
+| solv_spent_catch_frac | 0.95 | fraction of the bench solvent collected in the segregated spent-solvent drain; the rest evaporates or leaves with the spent etch | A-M-479 | — |
+| solv_still_heater_eff | 0.7 | fraction of the electric reboiler heat that reaches the boil-up (losses, A-M-157 convention) | A-M-479 | — |
+| solv_still_recovery_frac | 0.95 | fraction of the collected spent solvent returned by the batch still; the rest leaves in the bottoms with the resist residue | A-M-479 | — |
+| solv_still_reflux | 3.0 | reflux ratio of the batch still for the ethanol-acetone split | A-M-479 | — |
+| yeast_ethanol_yield_frac | 0.9 | fraction of the theoretical 0.511 kg ethanol per kg glucose reached by the yeast fermentation (BAI2008) | A-M-479 | — |
+| pv_wafer_route | "CZ_PSQ125" | - wafer route of the solar cell line: CZ_PSQ125 (125 mm semi-square cells from the 150 mm CZ ingot of WAFER_FAB) or CAST_MC156 (156.75 mm multicrystalline cells from a block cast by directional solidification in WAFER_FAB) | A-M-484 | — |
+| FAB.pv-wafer-train.eol_output_frac | 0.8 | - module output, as a share of nameplate, at which a module is replaced: the end of the usual output warranty | JORDAN_KURTZ2013 | — |
+| FAB.pv-wafer-train.degradation_per_yr | 0.005 | - loss of module output per year, the median of field measurements | JORDAN_KURTZ2013 | — |
+| FAB.pv-wafer-train.failure_per_yr | 0.0005 | - share of modules that fail and are replaced each year apart from wear-out, about 5 in 10,000 | JORDAN2017 | — |
+| FAB.pv-wafer-train.wafer_t_um | 180.0 | um as-cut thickness of a solar wafer | ITRPV2020 | — |
+| FAB.wafer-line-train.kerf_um | 150.0 | um saw kerf per wafer, diamond wire | A-M-471 | — |
+| FAB.wafer-line-train.si_rho_g_cm3 | 2.329 | g/cm3 silicon density (CRC_SI) | A-M-471 | — |
+| FAB.wafer-line-train.wafer_D_mm | 150.0 | mm wafer diameter (the 150 mm class of the litho train) | A-M-471 | — |
+| FAB.pv-wafer-train.psq_side_mm | 125.0 | mm width across the flats of the semi-square cell cut from the 150 mm ingot, the 125 mm format of 150 mm ingots | ITRPV2020 | — |
+| FAB.pv-wafer-train.cell_eff_CZ | 0.19 | - efficiency at standard test conditions of a screen-printed single-crystal cell with an aluminium back field | ITRPV2020 | yes |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_cassette_n | 25 | wafers in one carrier, the batch of the cell line | SEMI_E1 | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_boat_pitch_mm | 4.76 | mm slot pitch of the quartz diffusion boat | SEMI_E1 | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_platen_kg_m2 | 100.0 | kg/m2 heated platen of the PECVD electrode, the 5 kg platen of a 0.05 m2 electrode of revision B | INCROPERA7 | yes |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_clear_mm | 50.0 | mm clearance from the electrode to the chamber wall on each side | INCROPERA7 | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_print_min_cell | 10.0 | min of screen printing and drying per cell, the 0.5 h for 3 cells of revision B | INCROPERA7 | yes |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_fire_min_cell | 3.4 | min of lamp time in the firing furnace per cell, the 0.17 h for 3 cells of revision B | INCROPERA7 | yes |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_iv_min_cell | 5.0 | min of flash IV test per cell, the 0.25 h for 3 cells of revision B | INCROPERA7 | yes |
+| FAB.wafer-line-train.cz_blanket_gas | "Ar" | - CZ puller ambient; only Ar is accepted (N2 nitrides the melt) | A-M-471 | — |
+| FAB.wafer-line-train.wafer_t_um | 675.0 | um wafer thickness, SEMI M1 for 150 mm | A-M-471 | — |
+| FAB.wafer-line-train.cz_crop_frac | 0.25 | - share of the charge not in the wafered body: crown, tail, diameter grind and pot scrap | A-M-471 | — |
+| FAB.wafer-line-train.cz_pull_mm_h | 60.0 | mm/h body pull rate of a small CZ ingot | A-M-471 | — |
+| FAB.wafer-line-train.cz_melt_h | 3.0 | h meltdown and stabilisation under argon | A-M-471 | — |
+| FAB.wafer-line-train.cz_neck_crown_h | 2.0 | h seed dip, neck and crown under argon | A-M-471 | — |
+| FAB.wafer-line-train.cz_cool_h | 4.0 | h ingot cool-down under argon | A-M-471 | — |
+| FAB.wafer-line-train.cz_crucible_ratio | 2.7 | - crucible diameter over ingot diameter | A-M-471 | — |
+| FAB.wafer-line-train.cz_ar_slpm_per_cm2 | 0.03 | slpm argon per cm2 of crucible area (about 40 slpm on a 16 inch crucible) | A-M-471 | — |
+| FAB.wafer-line-train.si_liquid_rho_g_cm3 | 2.57 | g/cm3 liquid silicon density at the melting point (CRC_SI) | A-M-471 | — |
+| FAB.wafer-line-train.cz_min_depth_frac | 0.25 | - least melt depth for a pull, as a share of the crucible diameter | A-M-471 | — |
+| FAB.wafer-line-train.hz_heater_C | 1500.0 | C heater and inner felt face while the melt is held and pulled: above the 1414 C melt by the drop through the crucible wall and the melt (CRC_SI melting point) | CRC_SI | yes |
+| FAB.wafer-line-train.hz_wall_C | 40.0 | C water-cooled chamber wall, the cold sink of the felt and of the radiation through the shield opening | INCROPERA7 | — |
+| FAB.wafer-line-train.hz_gap_mm | 40.0 | mm radial gap from the crucible wall to the inner felt face: graphite susceptor, heater and clearances | INCROPERA7 | yes |
+| FAB.wafer-line-train.hz_height_ratio | 1.2 | - inner height of the felt pack over the crucible diameter: crucible, pedestal and heater above the melt | INCROPERA7 | yes |
+| FAB.wafer-line-train.hz_felt_mm | 100.0 | mm graphite felt pack on the sides, top and bottom of the hot zone | SGL_SIGRATHERM | yes |
+| FAB.wafer-line-train.hz_felt_k_W_mK | 0.25 | W/(m K) graphite soft felt in argon at the mean felt temperature of about 800 C | SGL_SIGRATHERM | yes |
+| FAB.wafer-line-train.hz_open_ratio | 1.3 | - heat-shield opening over the ingot diameter; the melt radiates to the cold lid through the annulus | INCROPERA7 | yes |
+| FAB.wafer-line-train.si_melt_emissivity | 0.25 | - total emissivity of liquid silicon, about 0.2 to 0.3 in the visible and infrared | TAKASUKA1997 | — |
+| FAB.wafer-line-train.si_k_solid_W_mK | 22.0 | W/(m K) thermal conductivity of solid silicon near the melting point | GLASSBRENNER1964 | — |
+| FAB.wafer-line-train.si_cp_kJ_kgK | 0.9 | kJ/(kg K) silicon specific heat averaged over 25 to 1414 C | CRC_SI | — |
+| FAB.wafer-line-train.si_latent_kJ_kg | 1790.0 | kJ/kg enthalpy of fusion of silicon | CRC_SI | — |
+| FAB.wafer-line-train.cz_voronkov_mm2_Kmin | 0.13 | mm2/(K min) critical ratio of pull rate to axial gradient at the growth interface; the hot zone is set to this ratio for a defect-lean crystal, so the gradient follows from the pull rate | VORONKOV1982 | — |
+| FAB.wafer-line-train.hz_graphite_t_mm | 15.0 | mm wall of the graphite susceptor and of the heater, both heated to the hot-zone temperature at each meltdown | INCROPERA7 | yes |
+| FAB.wafer-line-train.graphite_rho_g_cm3 | 1.8 | g/cm3 isostatic graphite | INCROPERA7 | — |
+| FAB.wafer-line-train.graphite_cp_kJ_kgK | 1.5 | kJ/(kg K) graphite specific heat averaged over 25 to 1500 C | INCROPERA7 | — |
+| FAB.pv-wafer-train.cell_eff_MC | 0.175 | - efficiency at standard test conditions of a screen-printed multicrystalline cell with an aluminium back field | ITRPV2020 | yes |
+| FAB.pv-wafer-train.mc_side_mm | 156.75 | mm side of a square 156 mm cell | ITRPV2020 | — |
+| FAB.pv-wafer-train.mc_edge_crop_mm | 20.0 | mm cropped from each side of a cast block: the zone that the crucible wall contaminates | LAN2017 | yes |
+| FAB.pv-wafer-train.mc_tb_crop_frac | 0.2 | - share of the block height cropped at the bottom and the top: the contaminated foot and the segregated cap | LAN2017 | yes |
+| FAB.pv-wafer-train.mc_growth_mm_h | 10.0 | mm/h growth rate of directional solidification | LAN2017 | — |
+| FAB.pv-wafer-train.mc_G_K_cm | 10.0 | K/cm temperature gradient in the solid at the growth front of directional solidification | LAN2017 | — |
+| FAB.pv-wafer-train.mc_melt_h | 4.0 | h meltdown and stabilisation of the cast charge under argon | LAN2017 | yes |
+| FAB.pv-wafer-train.mc_cool_h | 6.0 | h cool-down of the cast block under argon, heater off | LAN2017 | yes |
+| FAB.pv-wafer-train.m2_ingot_D_mm | 210.0 | mm ingot diameter for 156.75 mm single-crystal cells, the diagonal of that format | ITRPV2020 | — |
+| novolac_fp_ratio | 0.8 | mol formaldehyde per mol phenol in the acid-catalysed novolac, 0.75-0.85 (DAMMEL1993) | A-M-482 | — |
+| si_imp_cl_kg_kg | 2.2 | kg of chlorine per kg of Fe, Al and Ca impurity leaving the loop as chlorides (FeCl3 1.90, AlCl3 3.94, CaCl2 1.77, iron-rich mix) | A-M-472 | — |
+| si_mg_purity | 0.98 | - silicon mass fraction of the metallurgical-grade silicon from SI_REDUCE; the rest is Fe, Al and Ca from the ore and the char ash | A-M-472 | — |
+| si_refine_route | "TCS_SIEMENS" | - refining route of the CZ charge: TCS_SIEMENS (trichlorosilane on Siemens rods) or SILANE_FBR (silane in a fluidised bed), two technologies on the same chlorosilane loop | A-M-472 | — |
+| si_saf_kWh_kg | 13.0 | kWh per kg of metallurgical silicon in the submerged-arc furnace (industrial class 11 to 13, small furnace at the top) | A-M-472 | — |
+| si_saf_recovery | 0.8 | - fraction of the reduced silica recovered as silicon in the small arc furnace; the rest leaves as silica fume | A-M-472 | — |
+| siemens_pass_conv | 0.1 | - fraction of the trichlorosilane silicon deposited on the rods in one pass; sets the loop circulation | A-M-472 | — |
+| si_refine_yield_TCS_SIEMENS | 0.85 | - fraction of the silicon fed to the chlorosilane loop that leaves as electronic-grade rod; the rest is bled as SiCl4 (Siemens class) | A-M-472 | — |
+| si_refine_yield_SILANE_FBR | 0.8 | - fraction of the silicon fed to the loop that leaves as electronic-grade granules; the rest is bled as SiCl4 (silane fluidised-bed class) | A-M-472 | — |
+| si_refine_kWh_kg_TCS_SIEMENS | 60.0 | kWh per kg of electronic-grade silicon for the Siemens route, rod heating, hydrochlorination and distillation (small bell-jar class) | A-M-472 | — |
+| si_refine_kWh_kg_SILANE_FBR | 20.0 | kWh per kg of electronic-grade silicon for the silane fluidised-bed route, redistribution, bed heating and distillation (class value) | A-M-472 | — |
+| si_eol_yield | 0.95 | - silicon recovered from crushed end-of-life cells into the chlorosilane loop; the balance is the glass- and encapsulant-separation residue riding the impurity purge | A-M-485 | — |
+| si_kerf_recycle_frac | 0.9 | - fraction of the saw kerf reclaimed to the chlorosilane loop; the rest (slurry fines and abrasive carryover) stays with the spent slurry to the leach | A-M-486 | — |
+| si_scrap_recycle_frac | 1.0 | - fraction of the CZ crop, square-off and pot scrap remelted into the next charge; it is electronic-grade silicon, remelted without assay loss | A-M-487 | — |
+| si_fume_burden_frac | 1.0 | - fraction of the furnace baghouse silica fume briquetted back into the furnace burden; the rest goes to the acid leach | A-M-488 | — |
+| si_h2_stc_kg_kg | 0.04784 | kg hydrogen per kg of silicon recycled as SiCl4 through the hydrogenation 3 SiCl4 + 2 H2 + Si -> 4 SiHCl3 (2 x 2.016 g H2 per 3 x 28.085 g Si) | A-M-489 | — |
+| s08_silicate_carry_frac | 0.326424 | kg of feed silicate_oxide carried with the leach crib solids to S08 per kg in the feed; holds the AQS-PAR-003 reconciled crib rate after the X-QA-04 deposit rebasis, interim until a characterized crib lot | A-M-490 | yes |
+| balance_residual_band_kg_d | 0.001 | kg/d mass-balance residual band: the reconciliation assert in balance.py and the IA-GOODS-SHIP re-seed band in write_graph (A-M-120 reconciliation grid) | A-M-491 | — |
+| solv_tank_U_W_m2K | 0.5 | W/(m2 K) overall loss coefficient of a small insulated tank, 50 mm mineral wool at the small-vessel class (ASHRAE901_2022 insulation class) | A-M-492 | — |
+| solv_ambient_C | 20.0 | deg C plant-room ambient around the solvent fermentation and storage tanks (AQS-HAB-002 indoor design temperature) | A-M-492 | — |
+| grease_min_kettle_D_m | 0.1 | m least kettle diameter: the smallest practical jacketed batch kettle (house builder minimum, AQS-PLAN-006 style class) | A-M-493 | — |
 
 ## 6. References
 
@@ -1108,6 +1264,8 @@ All solved units close.
 | ASME_Y14_35 | ASME Y14.35-2025, Revision of Engineering Drawings and Associated Documents: revision letters, revision history block, change identification. |
 | ASME_Y14_5 | ASME Y14.5-2018, Dimensioning and Tolerancing: dimensioning and geometric tolerancing for fabrication drawings. |
 | ASM_V1 | ASM International, ASM Handbook Vol 1, Properties and Selection: Irons, Steels, and High-Performance Alloys (1990): AISI H13 hot-work tool steel (Cr-Mo-V) for hot-work dies, extrusion and forge tooling; heat-resisting Fe-Cr-Ni alloys incl. the 80Ni-20Cr electrical-resistance element class to about 1100 C. |
+| ASM_V15_AL | ASM Handbook Vol. 15, Casting (2008), Aluminum and aluminum alloys: A356 contains 0.25-0.45 % Mg; magnesium is lost preferentially to the dross on remelting and is made up by alloy additions; salt fluxes are recovered from the dross salt cake by water leaching and evaporation. |
+| ASM_V15_PM | ASM Handbook Vol. 15, Casting (2008), Permanent mold casting: the gating system and risers take 10-25 % of the poured metal (casting yield 75-90 %), and the cut-off gates and risers are remelted in the same melt shop |
 | ASM_V7 | ASM International, ASM Handbook Vol 7, Powder Metal Technologies and Applications (1998): press-and-sinter consolidation practice; sintering-furnace construction with graphite or MoSi2 element hot zones under inert or vacuum atmosphere for reactive powders. |
 | ASTM_A992 | ASTM A992/A992M, Standard Specification for Structural Steel Shapes: Fy 345 MPa (50 ksi) minimum, Fu 450 MPa. |
 | ASTM_A999 | ASTM A999/A999M-19, Standard Specification for General Requirements for Alloy and Stainless Steel Pipe: pipe furnished to dimensional specifications may be ordered to minimum wall; the customary supplied-wall practice carries a 12.5 % under-tolerance on wall thickness (0.875 factor on nominal wall). |
@@ -1133,6 +1291,7 @@ All solved units close.
 | AWWA_D100_2021 | AWWA D100-21, Welded Carbon Steel Tanks for Water Storage: elevated and ground tanks, wind and seismic design. |
 | BAI2008 | Bai, F.W., Anderson, W.A., Moo-Young, M. (2008) Ethanol fermentation technologies from sugar and starch feedstocks, Biotechnology Advances 26, 89-105: batch yeast ethanol fermentation 48-72 h at 30-35 C. |
 | BAKER2012 | Baker R.W., Membrane Technology and Applications, 3rd ed., Wiley (2012), ch. 5 reverse osmosis: solution-diffusion flux J = A (dP - d pi); thin-film composite brackish-water membranes, water permeance about 3-5 L/(m2 h bar); osmotic pressure by van t Hoff pi = i c R T. |
+| BCS2005 | BCS Incorporated for the U.S. Department of Energy, Advanced Melting Technologies: Energy Saving Concepts and Opportunities for the Metal Casting Industry (2005): melting efficiencies by furnace type, 7 to 19 % for fuel-fired crucible furnaces. |
 | BVAD2022 | Anderson M.S. et al., Life Support Baseline Values and Assumptions Document, NASA/TP-2015-218570 Rev 2 (Feb 2022), Tables 4-90 and 4-91: per-crop harvest index, edible and inedible productivity and water content (inedible 90 % water), carbon content, O2 production, CO2 uptake and transpiration (tomato HI 45 %, edible 94 % water, C 43 %, CO2 36.24 g/m2/d, transpiration 2.77 kg/m2/d). |
 | CAMEO_REACT | NOAA CAMEO Chemicals reactivity groups: Peroxides, inorganic (H2O2) incompatible with Bases (KOH, NH3 aq) and with Hydrocarbons/solvents; Acids, strong oxidizing (HNO3) incompatible with Bases and Amines; Acids, strong non-oxidizing (HF, H3PO4) incompatible with Bases. |
 | CAMPIONE2018 | Campione A., Gurreri L., Ciofalo M., Micale G., Tamburini A., Cipollina A., Electrodialysis for water desalination: A critical assessment of recent developments on process fundamentals, models and applications, Desalination 434 (2018) 73-100, DOI 10.1016/j.desal.2017.12.044: current-efficiency and current-density practice ranges for electrodialysis (A-M-439, A-M-440). |
@@ -1164,11 +1323,13 @@ All solved units close.
 | CROPKING_NFT | CropKing, NFT production of lettuce (knowledge centre, citing Cooper 1996): 80 mm wide, 40 mm deep gullies at 1.5 % slope best in a comparison of 60-150 mm widths. |
 | CTC2020_CZA | (2020) CO2 Hydrogenation with Cu/ZnO/Al2O3: A Benchmark Study, ChemCatChem 12, doi:10.1002/cctc.202000195, Table: industrial Cu/ZnO/Al2O3 at 60 bar, 523 K, 17 vol% CO2 / 0 CO / 73.5 % H2: methanol weight-time yield 1.22 kg MeOH/(kg cat h). |
 | CUSIO2_ALD2023 | Ethanol Dehydrogenation over Copper-Silica Catalysts: From Sub-Nanometer Clusters to 15 nm Large Particles (2023), open access PMC10394689: Cu/SiO2 at 250-260 C, WHSV 2.37-4.73 h-1, 45-85 % ethanol conversion, acetaldehyde selectivity above 94 %. |
+| DAMMEL1993 | Dammel R., Diazonaphthoquinone-based Resists, Society of Photo-Optical Instrumentation Engineers Tutorial Text TT11 (1993): novolac synthesis from phenols and formaldehyde at F/P 0.75-0.85, DNQ-5-sulfonyl esters as the photoactive compound at 15-25 % of the solids, synthesis of the DNQ sulfonyl chlorides from aminonaphthol sulfonic acids by diazotisation. |
 | DESAL_MIN_ENERGY | Least energy to desalinate seawater: 1.06 kWh/m3 at 50 % recovery (AQS-PLAN-011 section 10). |
 | DIETER1988 | Dieter G.E., Mechanical Metallurgy, SI metric ed., McGraw-Hill (1988), ch. 17-21 metalworking: ideal work of plastic deformation per unit volume w = mean flow stress x true strain; rolling and wire drawing efficiencies (ideal over actual work) about 0.5-0.7; drawing true strain ln(A0/A1), maximum reduction per pass about 30-35 %. |
 | DING2018_CL_REVIEW | Ding W., Bonk A., Bauer T., Corrosion behavior of metallic alloys in molten chloride salts for thermal energy storage in concentrated solar power plants - A review, Frontiers of Chemical Science and Engineering 12(3) (2018) 564-576, DOI 10.1007/s11705-018-1720-0: molten-chloride hot-salt corrosion of Fe-Cr-Ni alloys 600-750 C, Cr-selective loss, impurity (oxyhydride/oxygen) driven attack, Mg-anode salt purification, and the emerging NaCl/KCl/MgCl2 ternary at 700 C. |
 | DING2021_ENG | Ding W., Bauer T., Progress in Research and Development of Molten Chloride Salt Technology for Next Generation Concentrated Solar Power Plants, Engineering 7 (2021) 334-347, DOI 10.1016/j.eng.2020.06.027: chloride-salt technology review above 650 C including corrosion control of structural alloys in molten chloride salts (alloy class and purification strategies). |
 | DOE_H2_COMP | Standard isothermal ideal-gas compression work W = (R T / M) ln(P2/P1), e.g. Perry's 9th ed. sec. 10; efficiency from the in-house compressor design and bench run (X-MFG-36). |
+| DOE_PHS2016 | U.S. Department of Energy, Improving Process Heating System Performance: A Sourcebook for Industry, 3rd ed. (2016): burner excess air of about 10 to 20 % for liquid and gaseous fuels. |
 | DOE_PSH | U.S. Department of Energy, Water Power Technologies Office, Pumped Storage Hydropower (energy.gov/eere/water/pumped-storage-hydropower, accessed 2026-10-15): round-trip efficiency 70-80 %. |
 | DVS2205 | DVS 2205-1 (2015) design of thermoplastic tanks: hoop stress from hydrostatic head with long-term creep factors; allowable stress CPVC and PVC-U at temperature. |
 | DVS_2207 | DVS 2207-1 (PE), DVS 2207-11 (PP) and DVS 2207-15 (PVDF), Welding of thermoplastics - heated tool welding of pipes, pipeline components and sheets: heater temperature, bead-up and joining pressure, heat-soak and cooling times per wall thickness; DVS 2212-1 welder qualification. |
@@ -1184,6 +1345,7 @@ All solved units close.
 | FEMA_FIRM | FEMA Flood Insurance Rate Map, Brevard County panels (Map Service Center): the flood-zone lookup that fixes the foundation elevation basis for a coastal riverine parcel (AQS-SITE-002/COCOA_FL ground). |
 | FORMOX_REVIEW2021 | A Review and Experimental Revisit of Alternative Catalysts for Selective Oxidation of Methanol to Formaldehyde, Catalysts 11 (2021) 1329: Formox at ambient pressure, 250-400 C, conversion above 99 %, yield 88-92 %, MeOH about 10 mol% and O2 about 10 mol% in recycled tail gas, kept on the lean side of the explosive limit; tubes 1-1.5 m. |
 | GAO2010 | Gao F., Pyrolysis of waste plastics into fuels, PhD thesis, University of Canterbury (2010): measured heat of pyrolysis of polyolefins about 1.0-1.3 MJ/kg. |
+| GLASSBRENNER1964 | Glassbrenner C.J., Slack G.A., Thermal conductivity of silicon and germanium from 3 K to the melting point, Physical Review 134 (1964) A1058-A1069: about 22 W/(m K) for silicon near 1680 K. |
 | GREENLEE2009 | Greenlee L.F., Lawler D.F., Freeman B.D., Marrot B., Moulin P., Reverse osmosis desalination: water sources, technology, and today's challenges, Water Research 43 (2009) 2317-2348: brackish-water RO specific energy about 0.5-3 kWh/m3. |
 | GREENWOOD | Greenwood N.N., Earnshaw A., Chemistry of the Elements, 2nd ed., Butterworth-Heinemann (1997): basic oxides dissolve in HCl to chlorides and water (Al2O3 + 6 HCl, MO + 2 HCl). |
 | GRJOTHEIM1988 | Grjotheim K., Welch B.J., Aluminium Smelter Technology: A Pure and Applied Approach, 2nd ed., Aluminium-Verlag, Duesseldorf (1988): heat balance of electrolysis cells; the cell voltage above the thermoneutral voltage supplies the heat lost through the lining, so a reduced current needs added heat to keep the bath molten. |
@@ -1241,14 +1403,18 @@ All solved units close.
 | ISO_10628_2 | ISO 10628-2:2012, Diagrams for the chemical and petrochemical industry, Part 2: Graphical symbols: process flow and P&I diagram symbols. |
 | ISO_14687 | ISO 14687:2025, Hydrogen fuel quality, Product specification: Grade D (PEM fuel cells) limits water and O2 at 5 umol/mol and total halogenated compounds at 0.05 umol/mol. |
 | ISO_7200 | ISO 7200:2004, Technical product documentation, Data fields in title blocks and document headers: mandatory fields legal owner, identification number, revision index, date of issue, title, document type, approval and creator. |
+| ITRPV2020 | International Technology Roadmap for Photovoltaic, 11th edition (2020), German Engineering Federation: wafer formats and thickness, kerf, and cell efficiencies of screen-printed cells. |
 | JAE2022_AERO | Aeroponic systems design: considerations and challenges, Journal of Agricultural Engineering 53 (2022) 1387, doi:10.4081/jae.2022.1387: PD pump plus pressure tank and solenoid-timed short sprays; high-pressure swirl nozzles. |
 | JMS2017_GLASSFIBRE | Kinetics of dissolution of glass fibre in hot alkaline solution, J. Materials Science 53 (2018) doi:10.1007/s10853-017-1627-z: NaOH 3 mol/L, zero-order k 2.0e-4 g/(m2 s) at 80 C, 4.3e-4 at 95 C; reaction order in hydroxide 0.31-0.44. |
 | JONES1986 | Jones, D.T., Woods, D.R. (1986) Acetone-butanol fermentation revisited, Microbiological Reviews 50, 484-524: batch Clostridium acetobutylicum solvent fermentation about 36-72 h at 35-37 C, strictly anaerobic. |
+| JORDAN2017 | Jordan D.C., Silverman T.J., Wohlgemuth J.H., Kurtz S.R., VanSant K.T., Photovoltaic failure and degradation modes, Progress in Photovoltaics 25 (2017) 318-326: module failure rates of about 5 in 10,000 a year. |
+| JORDAN_KURTZ2013 | Jordan D.C., Kurtz S.R., Photovoltaic degradation rates: an analytical review, Progress in Photovoltaics 21 (2013) 12-29: median loss of module output of 0.5 % a year. |
 | KAVANAUGH2014 | Kavanaugh S.P. and Rafferty K., Geothermal Heating and Cooling: Design of Ground-Source Heat Pump Systems, ASHRAE (2014): bore length method, typical bore length per kW, pumping grade A <= 5 hp per 100 tons. |
 | KROLL1940 | Kroll W.J., The production of ductile titanium, Transactions of the Electrochemical Society 78 (1940) 35-47, DOI 10.1149/1.3071290: carbochlorination of TiO2 with chlorine over carbon at ~800-1000 C gives TiCl4, then batch Mg reduction in a steel/Mo-clad retort near 900 C; the sponge binds to the retort wall and the MgCl2 reaction product is distilled off. |
 | KRUIZENGA2012 | Kruizenga A.M., Corrosion mechanisms in chloride and carbonate salts, SAND2012-7594 (2012), Sandia National Laboratories: chloride-salt corrosion mechanisms (moisture/oxygen impurity hydroxide attack dominates), material class corrosion behaviour in the 650-800 C region, and the purification logic that sets exotic-alloy limits. |
 | KUSUMA2020 | Kusuma P., Pattison P.M., Bugbee B., From physics to fixtures to food: current and potential LED efficacy, Horticulture Research 7:56 (2020): best horticultural LED fixtures about 2.8-3.0 umol/J. |
 | LAKHIAR2018 | Lakhiar I.A. et al., Modern plant cultivation technologies in agriculture under controlled environment: a review on aeroponics, J. Plant Interactions 13 (2018) 338-352, doi:10.1080/17429145.2018.1472308: droplets 30-100 um; spray schedules 2 s/2 min, 3 s/10 min (tomato, pea), 7 s/90 s, 10 s/3 min. |
+| LAN2017 | Lan C.W. and co-authors, The emergence of high-performance multi-crystalline silicon in photovoltaics, Journal of Crystal Growth 468 (2017) 17-23: directional solidification of silicon blocks, growth rate, gradient and the cropped zones. |
 | LARSEN2013 | Larsen T.A., Udert K.M., Lienert J. (eds.), Source Separation and Decentralization for Wastewater Management, IWA Publishing (2013): vacuum toilets about 0.5-1.5 L per flush. |
 | LIBRA2011 | Libra, J.A. et al. (2011) Hydrothermal carbonization of biomass residuals: a comparative review of the chemistry, processes and applications of wet and dry pyrolysis, Biofuels 2(1), 71-106: HTC at 180-250 C, 1-12 h, under autogenous (saturated) pressure; mildly exothermic. |
 | LI_SEAWATER | Lithium in seawater: about 0.18 mg/kg, published oceanographic consensus (AQS-PLAN-011 section 10). |
@@ -1260,6 +1426,7 @@ All solved units close.
 | MCCABE7_DUHRING | McCabe W.L., Smith J.C., Harriott P., Unit Operations of Chemical Engineering, 7th ed., McGraw-Hill (2005), ch. 16 evaporation: Duhring lines for NaOH-water (boiling-point elevation). |
 | METCALF5 | Metcalf & Eddy / Tchobanoglous G. et al., Wastewater Engineering: Treatment and Resource Recovery, 5th ed. (2014), ch. 13 anaerobic digestion: high-rate mesophilic SRT 15-20 d at 35 C. |
 | METCALF5_BIOMASS | Metcalf & Eddy 5th ed. (2014) ch. 7: biomass composition C5H7O2N (113 g/mol), 1.42 g COD/g cells; digester gas about 65 % CH4 by volume (ch. 13). |
+| MOREAU1988 | Moreau W.M., Semiconductor Lithography: Principles, Practices, and Materials, Plenum (1988), ch. 2-5 and 10: positive diazonaphthoquinone-novolac and negative cyclised-rubber resists, spin dispense of a few mL per wafer, edge-bead removal, development and stripping. |
 | MOXIE | NASA MOXIE: solid oxide electrolysis of carbon dioxide demonstrated on the Martian surface (Hecht et al., 2023; AQS-PLAN-011 section 8, [28]). |
 | MPR_BOEHMER_2024 | Marfa Public Radio / Texas Standard (2024-04-22): report on Lake Boehmer and the agencies that share its oversight; the regulator-unclear status the site profile records (AQS-SITE-015 section 2). |
 | NARASIMHAN2000 | Narasimhan S., Jordache C., Data Reconciliation and Gross Error Detection, Gulf Publishing (2000), ch. 3: linear steady-state reconciliation, minimum weighted least-squares adjustment subject to the balance constraints. |
@@ -1327,6 +1494,7 @@ All solved units close.
 | PERRY9_MAT | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 25 materials of construction: impervious (resin-impregnated) graphite resists hydrochloric acid at all concentrations to the boiling point; nickel 200/201 for hot caustic soda. |
 | PERRY9_MIX | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 18 liquid-solid operations and mixing: turbulent agitator power P = Np rho N^3 D^5; pitched-blade turbine Np about 1.27 (4 blades, 45 deg). |
 | PERRY9_PUMP | Perry's Chemical Engineers' Handbook, 9th ed. (2019), sec. 10 transport of fluids: pump hydraulic power P = rho g Q H; shaft power = hydraulic / efficiency. |
+| PHAM2013 | Pham T.N., Sooknoi T., Crossley S.P., Resasco D.E. (2013) Ketonization of carboxylic acids: mechanisms, catalysts, and implications for biomass conversion, ACS Catalysis 3, 2456-2473: acetic acid to acetone over CeO2-ZrO2 at 300-400 C. |
 | PLOSONE2017_DRAIN | Influence of drainage and nutrient-solution N and K concentrations on bell-pepper in a substrate, PLOS ONE 12 (2017) e0180529, doi:10.1371/journal.pone.0180529: recommended drainage 10-20 % of the solution applied. |
 | PONTZEN2011 | Pontzen, F., Liebner, W., Gronemann, V., Rothaemel, M., Ahlers, B. (2011) CO2-based methanol and DME - Efficient technologies for industrial scale production, Catalysis Today 171, 242-250: CO2 + 3 H2 -> CH3OH + H2O over commercial Cu/ZnO at 250 C class conditions; less exothermic than syngas synthesis, recycle loop. |
 | PYRHONEN2014 | Pyrhonen J., Jokinen T., Hrabovcova V., Design of Rotating Electrical Machines, 2nd ed., Wiley (2014), ch. 6: output equation, permitted air-gap flux density and linear current density (table 6.3), current density (table 6.4), aspect ratio. |
@@ -1339,13 +1507,19 @@ All solved units close.
 | SCHACHT2004 | Schacht C.A. (ed.), Refractories Handbook, Marcel Dekker / CRC Press (2004), DOI 10.1201/9780203026328: alumina-silica brick (ch. 4), carbonaceous/graphite hot faces (ch. 8), refractory castables (ch. 10), thermomechanical lining design (ch. 13) and installation practice (ch. 17) for melt-shop furnaces, kilns and chloride-cell backup linings. |
 | SCHLESINGER2011 | Schlesinger M.E., King M.J., Sole K.C., Davenport W.G., Extractive Metallurgy of Copper, 5th ed., Elsevier (2011), ch. 17 electrowinning: current density 200-350 A/m2, cell voltage about 2 V, current efficiency 0.85-0.92. |
 | SEAWATER_MILLERO | Millero et al. (2008), standard seawater composition at practical salinity 35: total salinity 35.165 g/kg; sodium 10.78 g/kg, chloride 19.35 g/kg, magnesium 1.284 g/kg, bromide 0.067 g/kg (AQS-PLAN-011 section 10). |
+| SEMI_E1 | SEMI E1, Specification for 3 inch, 100 mm, 125 mm and 150 mm plastic and metal wafer carriers: the 25-wafer carrier. |
+| SGL_SIGRATHERM | SGL Carbon, SIGRATHERM soft and rigid graphite felt, technical data sheets: thermal conductivity in argon of about 0.15 to 0.35 W/(m K) between 1000 and 2000 C for felts of 0.08 to 0.15 g/cm3. |
+| SKF_RELUB | SKF Group, Rolling bearings catalogue (publication 17000, 2018), Lubrication: the grease quantity for relubrication from the side is Gp = 0.005 D B grams (D outside diameter and B width in mm). |
 | SOLAR_RESOURCE_PECOS | NREL/GSA solar-resource data for Pecos County, west Texas: long-term average PV yield class 5.8-6.1 kWh/kWp/d before losses; ERA5 satellite reanalysis at the climate-grid point 31.22 N, 102.73 W (2020-2024) gives 5.62 kWh/kWp/d. The design value 5.8 is the low end of the published class (AQS-SITE-015 section 2). |
 | SOLAS | Safety of Life at Sea convention: fire protection, life-saving appliances and evacuation (AQS-PLAN-011 section 10). |
+| SPECIAL_METALS_I600 | Special Metals Corporation, INCONEL alloy 600 product data sheet (publication SMC-027, 2008): density 8.47 Mg/m3, specific heat 444 J/(kg K) at 21 C. |
 | STRATHMANN2004 | Strathmann H., Ion-Exchange Membrane Separation Processes, Membrane Science and Technology Series 9, Elsevier (2004), ch. 4-5: reversible water-dissociation voltage of a bipolar membrane 0.059 V per pH unit (0.83 V at delta pH 14, 25 C); practical bipolar membrane voltage drop about 0.9-1.2 V at 100-200 A/m2; monopolar ion-exchange membrane area resistance about 2-5 ohm cm2 in 0.5 M NaCl; spacer shadow effect on solution resistance. |
 | SU2018_PYRO | Experimental study of thermal and catalytic pyrolysis of plastic waste components, Sustainability 10 (2018) 3979, doi:10.3390/su10113979: 460 C batch thermal pyrolysis oil, LDPE 24 % C7-C12 / 30 % C13-C20 / 46 % C21-C40; PP 44/33/23; liquid conversion 94 % LDPE, 86 % PP. |
 | TAIZ2015 | Taiz L., Zeiger E., Moller I.M., Murphy A., Plant Physiology and Development, 6th ed., Sinauer (2015), ch. 8-9: net photosynthesis CO2 + H2O -> (CH2O) + O2, photosynthetic quotient near 1.0; transpiration is the water taken up less the water fixed in biomass. |
+| TAKASUKA1997 | Takasuka E., Tokizaki E., Terashima K., Kimura S., Emissivity of liquid silicon in visible and infrared regions, Journal of Applied Physics 81 (1997) 6384-6389: liquid silicon emissivity of about 0.2 to 0.3. |
 | TCEQ_TSWQS_2022 | Texas Commission on Environmental Quality, Texas Surface Water Quality Standards, 30 TAC Chapter 307 (2022 revision): Pecos County Rio Grande basin segment 2311 criteria - TDS annual average 15,000 mg/L, chloride 7,000 mg/L, sulfate 3,500 mg/L. The product-water quality basis of the Lake Boehmer site (A-M-448); the segment sheet is re-verified at the locale design pass. |
 | TEXAS_MONTHLY_BOEHMER | Texas Monthly, Gold, feature article on Lake Boehmer, Pecos County, Texas (2021-12-08): the lake is about three times saltier than the ocean. The feed TDS driver 105 g/L derives from that statement (A-M-434); the sealed MPGCD laboratory report on the wellhead brine replaces it. |
+| TIAN2015 | Tian P., Wei Y., Ye M., Liu Z., Methanol to olefins (MTO): from fundamentals to commercialization, ACS Catalysis 5 (2015) 1922-1938: CH3OH to ethylene and propylene over SAPO-34 at 400-500 C with full methanol conversion; the water of reaction is one H2O per CH3OH, and the C4+ by-products are recycled or cracked |
 | TOWLER2013 | Towler G., Sinnott R., Chemical Engineering Design: Principles, Practice and Economics of Plant and Process Design, 2nd ed., Butterworth-Heinemann (2013): choice between batch and continuous operation; batch and campaign operation suit small production rates and multi-product trains. |
 | TOWLER_SINNOTT | Towler G.P. and Sinnott R.K., Chemical Engineering Design, 2nd ed. (Butterworth-Heinemann, 2013), ch. 7: published factored-estimating practice, including the materials and pressure multipliers used as the fabrication-factor basis of AQS-PRO-003. |
 | TREYBAL3 | Treybal R.E., Mass-Transfer Operations, 3rd ed., McGraw-Hill (1980), ch. 2-3 (film theory) and ch. 8 (gas absorption, HTU/NTU). |
@@ -1360,12 +1534,19 @@ All solved units close.
 | UL66_2015 | UL 66, Fixture Wire (2015): type TFFN, PVC insulation with nylon jacket, 18 and 16 AWG. |
 | UL83_2017 | UL 83, Thermoplastic-Insulated Wires and Cables (2017): THHN/THWN-2 PVC insulation with nylon jacket and TFFN fixture wire, thickness tables and tests. |
 | UL891 | UL 891, Switchboards (12th ed., 2019). |
+| ULLMANN_ACETIC | Le Berre C., Serp P., Kalck P., Torrence G.P., Acetic Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2014): rhodium- or iridium-iodide low-pressure methanol carbonylation at 150-200 C and 30-60 bar with above 99 % selectivity on methanol; hydrogenation of acetic acid to ethanol. |
+| ULLMANN_FATTY_ACIDS | Anneken D.J. et al., Fatty Acids, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2006): synthetic fatty acids by liquid-phase air oxidation of paraffin wax at 105-120 C with a manganese catalyst. |
 | ULLMANN_FLUOROPOLY | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluoropolymers and Chlorofluorocarbons/Hydrofluorocarbons chapters: vinylidene fluoride (VDF, CH2=CF2) is made industrially by hydrofluorination of a chlorinated C2 feed to 1-chloro-1,1-difluoroethane (HCFC-142b) followed by dehydrochlorination/pyrolysis over Cr-base catalyst; tetrafluoroethylene (TFE, C2F4) by pyrolysis of chlorodifluoromethane (R-22, from chloroform + 2 HF) at 600-800 C with immediate quench (TFE autopolymerises/explosion hazard); both routes return HCl to the acid loop; PVDF by free-radical emulsion/suspension polymerization of VDF at 30-80 C; PTFE as granular/fine powder by suspension/dispersion polymerization of TFE (not melt-processable - finished as powder for compression sintering); per-pass conversions are held low with monomer recycle. |
+| ULLMANN_FORMALDEHYDE | Reuss G. et al., Formaldehyde, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000): oxidation of methanol in air over silver or iron molybdate, with the methanol held below the lower explosive limit in the air feed. |
 | ULLMANN_GLYOXAL | Mattioda G., Blanc A., Glyoxal, Ullmann's Encyclopedia of Industrial Chemistry (2011), doi:10.1002/14356007.a12_491.pub2: industrial routes are liquid-phase acetaldehyde oxidation with nitric acid and gas-phase ethylene glycol oxidation over silver. |
+| ULLMANN_H2SO4 | Mueller H., Sulfuric Acid and Sulfur Trioxide, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000): sulfur burning, the contact process on vanadium catalyst with absorption in 98 wt% acid, and sulfur dioxide from the reductive decomposition of gypsum or anhydrite with coke (Mueller-Kuehne process); dry acid above 93 wt% is handled in carbon steel and hot strong acid in high-silicon iron, alloy or PTFE-lined equipment. |
 | ULLMANN_HCL | Austin S., Glowacki A., Hydrochloric Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000): impregnated graphite, tantalum and fluoropolymer-lined equipment for hot HCl concentration and absorption. |
 | ULLMANN_HF | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluorine Compounds, Inorganic - Hydrogen Fluoride chapter: HF is produced from fluorspar (CaF2) and sulfuric acid in indirectly heated rotary kilns; acid-grade spar (acid-spar) is >= 97 % CaF2 with < 1.5 % SiO2 (SiF4 generation) and < 0.2 % carbonates; sulfuric acid is fed at 100-110 % of stoichiometric; kiln gases leave at about 150-350 C and are absorbed in water to aqueous HF; per kg HF about 1.95-2.0 kg CaF2 (97 %) and 2.45-2.6 kg H2SO4 (100 % basis) are charged; conversion of the spar CaF2 in well-run kilns is about 95 %; the by-product is anhydrite (CaSO4) cake (fluorgypsum) discharged with the unreacted spar, excess acid and gangue. |
+| ULLMANN_LUBRICANTS | Mang T., Dresel W. (eds.), Lubricants and Lubrication, Wiley-VCH (2017), and Ullmann's Encyclopedia of Industrial Chemistry, Lubricants and Lubrication: metal soap greases of 8-15 % calcium or lithium soap in mineral base oil, anhydrous calcium soap made near 150 C and lithium soap near 200 C. |
 | ULLMANN_MAGNESIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Magnesium chapter (Magnesium, Magnesium Alloys, and Magnesium Compounds): industrial magnesium comes from fused-salt electrolysis of dehydrated MgCl2 at ~660-700 C in cells with graphite anodes and steel cathodes (Dow/Hydro class); MgCl2 is strongly hygroscopic and must be kept anhydrous in electrolyte service. |
+| ULLMANN_NAOH | Kurt C., Bittner J., Sodium Hydroxide, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2006): membrane-cell chlor-alkali electrolysis to about 32 wt% caustic at about 3 V per cell, and caustic soda made by causticising soda ash with slaked lime, with the lime mud recalcined. |
 | ULLMANN_NITRIC | Thiemann M., Scheibler E., Wiegand K.W., Nitric Acid, Nitrous Acid, and Nitrogen Oxides, Ullmann's Encyclopedia of Industrial Chemistry (2000), doi:10.1002/14356007.a17_293: Ostwald process, NH3 oxidised over Pt-Rh gauze at about 850-950 C with 93-98 % NO yield, NO oxidised and absorbed in water in a stainless-steel absorption column. |
+| ULLMANN_PHENOL | Weber M., Weber M., Kleine-Boymann M., Phenol, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2004): the Raschig-Hooker process, oxychlorination of benzene with HCl and air and hydrolysis of chlorobenzene with steam, net benzene + 1/2 O2 -> phenol with the HCl recycled; naphthols by the same and by the sulfonation routes. |
 | ULLMANN_TITANIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Titanium chapter (Titanium, Titanium Alloys, and Titanium Compounds): TiCl4 from carbochlorination of rutile/High-TiO2 feed at about 800-1000 C; titanium sponge via Kroll Mg reduction in batch steel retorts around 900 C; the MgCl2 product is collected and vacuum-distilled; the refractory-lined chlorinator and the hot face carry the bed. |
 | ULLMANN_WAX | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Waxes chapter (Waxes): paraffin wax families melt in the 50-95 C band; hot-melt handling is in jacketed stainless steel or polymer tanks with steam or hot-water heating; pattern shops melt on steam/hot-water jackets. |
 | US1875746 | US Patent 1,875,746 (1932), Production of methylamine: vapour phase over dehydration catalyst at 350-450 C (preferably about 400 C), gas space velocity 100-3500 h-1 with conversion falling above about 1100, NH3:MeOH about 2.2. |
@@ -1376,6 +1557,7 @@ All solved units close.
 | USSA1976 | NOAA, NASA and USAF, U.S. Standard Atmosphere, 1976, NOAA-S/T 76-1562, U.S. Government Printing Office (1976): sea-level composition of dry air by volume (N2 0.78084, O2 0.209476, Ar 0.00934) and the sea-level pressure 101 325 Pa. |
 | US_ANTARCTIC_ACT | Antarctic Conservation Act (16 USC 2401 et seq.) and 45 CFR Part 670: the United States implementing regulations for the Madrid Protocol (AQS-PLAN-011 section 7, [15]). |
 | VOGELBUSCH_MVR | Vogelbusch Biocommodities, mechanical vapour recompression evaporators, manufacturer data table: specific power 19-72 kWh per t water evaporated, rising with boiling-point elevation and stage count. |
+| VORONKOV1982 | Voronkov V.V., The mechanism of swirl defects formation in silicon, Journal of Crystal Growth 59 (1982) 625-643: the ratio of pull rate to axial temperature gradient at the interface, about 0.13 mm2/(K min), separates vacancy-rich from interstitial-rich silicon. |
 | WALTON2015 | Walton A. et al., The use of hydrogen to separate and recycle neodymium-iron-boron-type magnets from electronic waste, Journal of Cleaner Production 104 (2015) 236-241. |
 | WANG2006_ADS | Wang R.Z., Oliveira R.G., Adsorption refrigeration - An efficient way to make good use of waste heat and solar energy, Progress in Energy and Combustion Science 32(4) (2006) 424-458, DOI 10.1016/j.pecs.2006.01.002: silica gel-water adsorption chillers driven by ~55-90 C hot water, COP 0.2-0.6 (commercial units to 0.7), beds housed as sealed adsorber shells. |
 | WAVE_GLOBAL | About 2.11 TW of wave power crosses the world coasts and open-ocean contours, unevenly spread (AQS-PLAN-011 section 10). |
@@ -1737,6 +1919,27 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver electrode_coat_cure_kW | 1.2 kW IR cure panel (ST-ELC-01 class) | Panel nameplate |
 | driver lio_bat_energy_kWh | 2517 kWh sealed Li-ion storage (interim carries the reference storage duty; re-sized at the locale design pass) | Locale storage sizing from the eclipse energy |
 | driver geo_orc_feed_pump_kW | 0.05 kW ORC feed pump (R245fa study class) | Pump selection |
+| driver fab_mask_layers | 8 mask layers per wafer of the fab process, i.e. resist coats per wafer start | mask count of the issued fab process sheet |
+| driver oil_c11c18_naphthalene_frac | 0.01 mass fraction naphthalene in the C11-C18 cut of the plastics pyrolysis oil (SU2018_PYRO) | aromatics assay of the C11-C18 cut |
+| driver oil_c5c10_benzene_frac | 0.02 mass fraction benzene in the C5-C10 cut of the plastics pyrolysis oil (SU2018_PYRO) | aromatics assay of the C5-C10 cut |
+| driver FAB.pv-wafer-train.cell_eff_CZ | 0.19 - efficiency at standard test conditions of a screen-printed single-crystal cell with an aluminium back field | IV-test the first in-house cells and compare the measured efficiency |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_platen_kg_m2 | 100.0 kg/m2 heated platen of the PECVD electrode, the 5 kg platen of a 0.05 m2 electrode of revision B | weigh the platen of the first PECVD tool |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_print_min_cell | 10.0 min of screen printing and drying per cell, the 0.5 h for 3 cells of revision B | time the first printed batch |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_fire_min_cell | 3.4 min of lamp time in the firing furnace per cell, the 0.17 h for 3 cells of revision B | time the first fired batch |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_iv_min_cell | 5.0 min of flash IV test per cell, the 0.25 h for 3 cells of revision B | time the first tested batch |
+| driver FAB.wafer-line-train.hz_heater_C | 1500.0 C heater and inner felt face while the melt is held and pulled: above the 1414 C melt by the drop through the crucible wall and the melt (CRC_SI melting point) | log the heater pyrometer at the first pull and compare with this value |
+| driver FAB.wafer-line-train.hz_gap_mm | 40.0 mm radial gap from the crucible wall to the inner felt face: graphite susceptor, heater and clearances | measure on the hot-zone drawing of the first puller |
+| driver FAB.wafer-line-train.hz_height_ratio | 1.2 - inner height of the felt pack over the crucible diameter: crucible, pedestal and heater above the melt | measure on the hot-zone drawing of the first puller |
+| driver FAB.wafer-line-train.hz_felt_mm | 100.0 mm graphite felt pack on the sides, top and bottom of the hot zone | measure on the hot-zone drawing of the first puller |
+| driver FAB.wafer-line-train.hz_felt_k_W_mK | 0.25 W/(m K) graphite soft felt in argon at the mean felt temperature of about 800 C | measure the cold-face temperature of the felt at the first pull |
+| driver FAB.wafer-line-train.hz_open_ratio | 1.3 - heat-shield opening over the ingot diameter; the melt radiates to the cold lid through the annulus | measure on the hot-zone drawing of the first puller |
+| driver FAB.wafer-line-train.hz_graphite_t_mm | 15.0 mm wall of the graphite susceptor and of the heater, both heated to the hot-zone temperature at each meltdown | weigh the susceptor and heater of the first puller |
+| driver FAB.pv-wafer-train.cell_eff_MC | 0.175 - efficiency at standard test conditions of a screen-printed multicrystalline cell with an aluminium back field | IV-test the first in-house cells and compare the measured efficiency |
+| driver FAB.pv-wafer-train.mc_edge_crop_mm | 20.0 mm cropped from each side of a cast block: the zone that the crucible wall contaminates | measure the minority-carrier lifetime across the first cast block |
+| driver FAB.pv-wafer-train.mc_tb_crop_frac | 0.2 - share of the block height cropped at the bottom and the top: the contaminated foot and the segregated cap | measure the minority-carrier lifetime along the first cast block |
+| driver FAB.pv-wafer-train.mc_melt_h | 4.0 h meltdown and stabilisation of the cast charge under argon | log the first cast |
+| driver FAB.pv-wafer-train.mc_cool_h | 6.0 h cool-down of the cast block under argon, heater off | log the first cast |
+| driver s08_silicate_carry_frac | 0.326424 kg of feed silicate_oxide carried with the leach crib solids to S08 per kg in the feed; holds the AQS-PAR-003 reconciled crib rate after the X-QA-04 deposit rebasis, interim until a characterized crib lot | Characterized crib lot per AQS-ASSAY-001 section 7 re-points the carry and the S08 rate re-solves |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |
@@ -2142,3 +2345,22 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-460 | EW cascade element-rate basis: the cascade plates the booked kg/d (element metal; wear return kg/d) | pytest flow_graph/param/test_param_misfit.py; python3 models/mfg/tracker.py --check EW_1 EW_2 EW_3 EW_4 EW_5 EW_6 EW_7 EW_8 EW_9 |
 | A-M-466 | 1.8 kg/d Si kg/d | Weigh Si feed per cell over a production campaign |
 | A-M-470 | 0.2 of the lumped other_plateable class to each of the five  - (fraction of the class) | pytest flow_graph/param/test_ew_deposit_basis.py |
+| A-M-471 | Wafer-fab silicon and blanket gas from the wafer need: a 150 kg/d, mm, um, h, slpm | python3 -m flow_graph.param.fab_silicon; first-campaign charge, yield and argon use against the design |
+| A-M-472 | The CZ charge is made on site (no imports except waste or ra kg/d, kWh/kg, fraction | python3 -m flow_graph.param.si_refine; the furnace and loop mass balances close and the electronic-grade output equals the CZ charge |
+| A-M-473 | The Ti, Mo and Cr chlorinators take their carbon reductant a kg/d, fraction | python3 -m flow_graph.param.regen; IA-C-TI, IA-C-MO and IA-C-CR leave OIL_PYRO at the carbon need over char_fixed_C_frac and the cell balances close |
+| A-M-474 | The 98 wt% sulfuric acid for HF_GEN is made on site by ACID_ kg/d, fraction, C, mm, m, kJ/mol, kJ/kg K | python3 -m flow_graph.param.sulfuric; python3 -m flow_graph.param.regen; IA-H2SO4-MU is retired, IA-H2SO4-ACID carries the acid demand of HF_GEN, and the mass balance of ACID_PLANT closes (asserted in sulfuric.design). |
+| A-M-475 | The sodium hydroxide make-up is made on site by NAOH_PLANT,  kg/d, mass fraction, C, mm, m, kJ/mol, kJ/kg K, V | python3 -m flow_graph.param.caustic; python3 -m flow_graph.param.regen; IA-NAOH-MU is retired, IA-NAOH-LIQ carries the make-up liquor to EVAP_BASE, the streams of the route not selected are retired, and the mass and element balances of NAOH_PLANT agree (asserted in caustic.design). |
+| A-M-476 | Recovery first: for every element the plant takes as raw ore kg/d of element | python3 -m flow_graph.param.recovery prints no flags; pytest flow_graph/param/test_recovery_first.py passes, and its negative cases show that an ore above the shortfall and an undeclared waste outflow are flagged. |
+| A-M-477 | The ACID_PLANT cake kiln runs in campaigns (acid_kiln_mode = kW average and peak; kg and L of store | python3 -m flow_graph.param.regen; ACID_PLANT continuous_kw equals params.kiln_duty.kw_avg, and AQS-DUTY-073 Table 4.2 lists both kiln duties. |
+| A-M-478 | NAOH_PLANT tops up the sodium hydroxide on the CHLOR_ALKALI  route choice; kW, kg/d | python3 -m flow_graph.param.regen; NAOH_PLANT runs CHLOR_ALKALI, IA-HALITE-MU is present and IA-TRONA-MU retired, and IA-NAOH-H2 enters HDR_H2. |
+| A-M-479 | SOLV_PLANT supplies the bench ethanol and acetone, recovery  kg/d; kW | python3 -m flow_graph.param.solvent prints both routes; after regen IA-SOLV-MU is retired, IA-SOLV-PLANT equals IA-SOLV-WB, and python3 -m flow_graph.param.recovery reports no flags. |
+| A-M-480 | The shop grease is made on site from the wax cut, sized from kg/d; kW | python3 -m flow_graph.param.grease prints both routes; after regen GREASE_CA_TO_MFG equals IA-GREASE-SPENT, the lithium routes carry their rated case at zero flow, and python3 -m flow_graph.param.recovery reports no flags. |
+| A-M-481 | The chlorine of the VDF and TFE reactors has two built sourc kg/d | With cru_cl2_source POT, regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CL2-SHIP lower by the same amount, and CRU and AL_POT close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case. |
+| A-M-482 | POLY_TO_FAB carries the wafer-fab photoresist, sized from th kg/d; kW | python3 -m flow_graph.param.fab_resist prints the streams with the ledger element-closed; after regen POLY_TO_FAB = IA-RESIST-STOCK, IA-FAB-N2-VENT = S03, RESIST_SYN, WAFER_FAB, WS_SOLV and SOLV_PLANT close, and python3 -m flow_graph.param.recovery reports no flags. |
+| A-M-483 | The heater duty of the CZ hot zone in WAFER_FAB is found fro kW | log the heater power through the meltdown and the body pull of the first CZ pull and the felt cold-face temperature, and compare each with the hot-zone model |
+| A-M-484 | The solar cell line SOLAR_PV_CELL makes the cells that repla cells/d | IV-test the first in-house cells and map the minority-carrier lifetime of the first cast block, and compare with the drivers |
+| A-M-485 | Silicon recovered from crushed end-of-life modules into the  mass fraction of retired-module cell silicon | Run the first retired-module batch through the separation step and close the silicon mass balance |
+| A-M-486 | 90 mass % of the wire-saw kerf is reclaimed to the SI_REFINE mass fraction of saw kerf | Assay the first reclaimed kerf lot and close the slurry silicon balance |
+| A-M-488 | The whole furnace baghouse silica fume is briquetted back in mass fraction of furnace fume | Close the fume balance over the first furnace campaign with briquettes in the burden |
+| A-M-489 | The recycled SiCl4 is hydrogenated back to trichlorosilane,  kg H2 per kg recycled Si; mass fractions | Assay the loop bleed of the first refining campaign against the registered blend |
+| A-M-490 | 0.326424 kg of feed silicate_oxide is carried with the leach kg/kg feed | Assay the silicate content of a characterized crib-solids lot and re-point the carry fraction |

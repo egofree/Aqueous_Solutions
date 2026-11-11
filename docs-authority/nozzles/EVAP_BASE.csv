@@ -7,3 +7,4 @@ N5,solids,Class 150,purchased NaOH flake make-up,inlet,160
 N6,DN15,Class 150,drain,bottom,50
 N7,DN15,Class 150,vent,top,800
 N8,cable,Class 150,"power terminal (SF-EVAP_BASE, 480 V AC)",top,800
+N9,DN15,Class 150,sodium hydroxide liquor to the base evaporator,inlet,160

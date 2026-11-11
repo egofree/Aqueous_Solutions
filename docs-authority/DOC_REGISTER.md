@@ -112,7 +112,7 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-068 | `docs-authority/sizing/BMED_STACK.md` | A | 2026-10-15 | BMED stack | current |
 | AQS-DUTY-069 | `docs-authority/sizing/COLD_BOX.md` | C | 2026-10-16 | CRYO_ASU separation train | current |
 | AQS-DUTY-070 | `docs-authority/sizing/UPW_POLISH.md` | B | 2026-10-29 | Ultrapure water polish (RO and EDI) | current |
-| AQS-DUTY-071 | `docs-authority/sizing/PV_CELL_LINE.md` | A | 2026-10-16 | PV cell line tools | current |
+| AQS-DUTY-071 | `docs-authority/sizing/PV_CELL_LINE.md` | C | 2026-10-30 | PV cell line tools | current |
 | AQS-DUTY-072 | `docs-authority/sizing/FOUNDRY_LINE.md` | A | 2026-10-18 | FOUNDRY line sizing | current |
 | AQS-DUTY-073 | `docs-authority/sizing/POLYMERS_LINE.md` | A | 2026-10-18 | POLYMERS line sizing | current |
 | AQS-DUTY-074 | `docs-authority/sizing/HEAT_BATTERY.md` | A | 2026-10-20 | Heat battery sizing | current |
@@ -177,7 +177,7 @@ Table 3.1. Document numbers in use
 | AQS-FONT-001 | `docs-authority/FONTS.md` | A | 2026-10-25 | Fonts for 3D sign glyphs | current |
 | AQS-GAS-002 | `docs-authority/SCRUBBER_CHEMISTRY.md` | Basic | 2026-09-27 | Scrubber chemistry | current |
 | AQS-GAS-003 | `docs-authority/FAN_STACK.md` | B | 2026-09-27 | Fan curves and stack heights | current |
-| AQS-GLO-001 | `docs-authority/GLOSSARY.md` | E | 2026-11-04 | Glossary | current |
+| AQS-GLO-001 | `docs-authority/GLOSSARY.md` | F | 2026-11-10 | Glossary | current |
 | AQS-GOV-006 | `docs-authority/DERIVED_REVISIONS.md` | C | — | Derived file revisions | current |
 | AQS-HAB-001 | `docs-authority/HAB_FIXTURES.md` | B | 2026-10-12 | Habitation fixtures | current |
 | AQS-HAB-002 | `docs-authority/HAB_DESIGN.md` | A | 2026-10-26 | Hab interior design: zoning | current |
@@ -303,6 +303,7 @@ Table 3.1. Document numbers in use
 | AQS-SITE-013 | `docs-authority/SITE_UNITS.md` | A | 2026-10-26 | Site unit placements | current |
 | AQS-SITE-014 | `docs-authority/PARCEL_INTERFACE.md` | A | 2026-10-30 | Parcel selection interface | current |
 | AQS-SITE-015 | `docs-authority/SITE_BASIS_LAKE_BOEHMER.md` | A | 2026-11-01 | Lake Boehmer site basis and mobile solar electrodialysis design | current |
+| AQS-SIZE-ACID_PLANT | `docs-authority/sizing/ACID_PLANT.md` | A | 2026-10-20 | Sizing calculation - ACID_PLANT | current |
 | AQS-SIZE-ACID_POLISH_SCRUB | `docs-authority/sizing/ACID_POLISH_SCRUB.md` | A | 2026-10-20 | Sizing calculation - ACID_POLISH_SCRUB | current |
 | AQS-SIZE-ADS_CHILL | `docs-authority/sizing/ADS_CHILL.md` | A | 2026-10-20 | Sizing calculation - ADS_CHILL | current |
 | AQS-SIZE-AFTERBURNER | `docs-authority/sizing/AFTERBURNER.md` | A | 2026-10-20 | Sizing calculation - AFTERBURNER | current |
@@ -396,6 +397,7 @@ Table 3.1. Document numbers in use
 | AQS-SIZE-MFG_SHOP | `docs-authority/sizing/MFG_SHOP.md` | A | 2026-10-20 | Sizing calculation - MFG_SHOP | current |
 | AQS-SIZE-MG_POT | `docs-authority/sizing/MG_POT.md` | A | 2026-10-20 | Sizing calculation - MG_POT | current |
 | AQS-SIZE-MO_CELL | `docs-authority/sizing/MO_CELL.md` | A | 2026-10-20 | Sizing calculation - MO_CELL | current |
+| AQS-SIZE-NAOH_PLANT | `docs-authority/sizing/NAOH_PLANT.md` | A | 2026-10-20 | Sizing calculation - NAOH_PLANT | current |
 | AQS-SIZE-NCG_HEADER | `docs-authority/sizing/NCG_HEADER.md` | A | 2026-10-20 | Sizing calculation - NCG_HEADER | current |
 | AQS-SIZE-NOX_SCRUB | `docs-authority/sizing/NOX_SCRUB.md` | A | 2026-10-20 | Sizing calculation - NOX_SCRUB | current |
 | AQS-SIZE-OIL-POLY | `notes/OIL_POLY_SIZE.md` | A | 2026-10-17 | Oil and polymers — item 3 sizing | current |
@@ -424,6 +426,7 @@ Table 3.1. Document numbers in use
 | AQS-SIZE-REE_RECOVER | `docs-authority/sizing/REE_RECOVER.md` | A | 2026-10-20 | Sizing calculation - REE_RECOVER | current |
 | AQS-SIZE-RELIEF_CRYO | `docs-authority/sizing/RELIEF_CRYO.md` | A | 2026-10-20 | Sizing calculation - RELIEF_CRYO | current |
 | AQS-SIZE-RELIEF_H2 | `docs-authority/sizing/RELIEF_H2.md` | A | 2026-10-20 | Sizing calculation - RELIEF_H2 | current |
+| AQS-SIZE-RESIST_SYN | `docs-authority/sizing/RESIST_SYN.md` | A | 2026-10-20 | Sizing calculation - RESIST_SYN | current |
 | AQS-SIZE-RES_HEAT | `docs-authority/sizing/RES_HEAT.md` | A | 2026-10-20 | Sizing calculation - RES_HEAT | current |
 | AQS-SIZE-RF_HEAT | `docs-authority/sizing/RF_HEAT.md` | A | 2026-10-20 | Sizing calculation - RF_HEAT | current |
 | AQS-SIZE-ROLL | `docs-authority/sizing/ROLL.md` | A | 2026-10-20 | Sizing calculation - ROLL | current |
@@ -434,7 +437,9 @@ Table 3.1. Document numbers in use
 | AQS-SIZE-SHELL_BURNOUT | `docs-authority/sizing/SHELL_BURNOUT.md` | A | 2026-10-20 | Sizing calculation - SHELL_BURNOUT | current |
 | AQS-SIZE-SINTER | `docs-authority/sizing/SINTER.md` | A | 2026-10-20 | Sizing calculation - SINTER | current |
 | AQS-SIZE-SI_REDUCE | `docs-authority/sizing/SI_REDUCE.md` | A | 2026-10-20 | Sizing calculation - SI_REDUCE | current |
+| AQS-SIZE-SI_REFINE | `docs-authority/sizing/SI_REFINE.md` | A | 2026-10-20 | Sizing calculation - SI_REFINE | current |
 | AQS-SIZE-SOLAR_PV_CELL | `docs-authority/sizing/SOLAR_PV_CELL.md` | A | 2026-10-20 | Sizing calculation - SOLAR_PV_CELL | current |
+| AQS-SIZE-SOLV_PLANT | `docs-authority/sizing/SOLV_PLANT.md` | A | 2026-10-20 | Sizing calculation - SOLV_PLANT | current |
 | AQS-SIZE-SOL_ARK_60K | `docs-authority/sizing/SOL_ARK_60K.md` | A | 2026-10-20 | Sizing calculation - SOL_ARK_60K | current |
 | AQS-SIZE-STOCK_OUT | `docs-authority/sizing/STOCK_OUT.md` | A | 2026-10-20 | Sizing calculation - STOCK_OUT | current |
 | AQS-SIZE-TFE_SYN | `docs-authority/sizing/TFE_SYN.md` | A | 2026-10-20 | Sizing calculation - TFE_SYN | current |

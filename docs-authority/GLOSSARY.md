@@ -1,8 +1,8 @@
 # Glossary
 
 Document number: AQS-GLO-001  
-Revision: E  
-Date: 2026-11-04  
+Revision: F  
+Date: 2026-11-10  
 
 | Rev | Description | Date |
 |---|---|---|
@@ -11,6 +11,7 @@ Date: 2026-11-04
 | C | Entries added for the Lake Boehmer site vocabulary (TWDB, RRC, MPGCD, GHI, NWS, SEC, SMCL, TSWQS) | 2026-11-01 |
 | D | Entries added: LB (lake_boehmer site code) and KFST (Fort Stockton-Pecos County Airport station identifier); the Rev (graph) entry names the revision field instead of the current letter | 2026-11-02 |
 | E | Entries added for the manufacturing-model status codes (M0 to M3), the acceptance criteria sets (A-core and the class sets), the fabrication route classes (F-xxx), route hold, and the regeneration receipt and its entries | 2026-11-04 |
+| F | Entries added for the sources of the on-site route program: BCS and SGL (reference publishers), DNQ (the photoactive compound of the on-site photoresist) and SKF (the relubrication rule of the on-site grease route) | 2026-11-10 |
 
 
 ## 1. Purpose and scope
@@ -682,6 +683,10 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {LT -- Level transmitter (ISA 5.1).}
 {TEFC -- Totally enclosed fan-cooled: motor enclosure class (IEC 60034).}
 {BOD -- Biochemical oxygen demand: the biodegradable-organic load of a water stream.}
+{BCS -- BCS Incorporated, publisher (for the U.S. Department of Energy) of the study Advanced Melting Technologies: Energy Saving Concepts and Opportunities for the Metal Casting Industry (reference BCS2005), the melting-efficiency basis of the foundry duty.}
+{DNQ -- Diazonaphthoquinone. The photoactive compound of the positive novolac photoresist that RESIST_SYN makes for the wafer fab (A-M-482).}
+{SGL -- SGL Carbon, publisher of the SIGRATHERM graphite-felt data sheets (reference SGL_SIGRATHERM), the felt-conductivity basis of the crystal-growth hot zone (A-M-483).}
+{SKF -- SKF Group, publisher of the Rolling Bearings Catalogue (reference SKF_RELUB); its side-fill rule Gp = 0.005 D B grams sizes the relubrication quantity of the on-site grease route (A-M-480).}
 {FOG -- Fats, oils and grease: the floatable organic fraction of a waste water stream.}
 {CIP -- Clean-in-place: recirculated chemical cleaning of equipment without opening it.}
 {CGA -- Compressed Gas Association: the US cylinder-valve and gas-equipment standard body.}

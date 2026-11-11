@@ -19,7 +19,11 @@ Two mechanics matter and are pinned by
 
 - subprocess on POSIX closes inherited descriptors unless they are in
   ``pass_fds``; ``flow_graph/param/regen.py`` passes the recorded
-  descriptor to every stage. The shell-level equivalent is
+  descriptor to every stage, and second-level launchers that spawn lock-
+  taking scripts must do the same (``models/mfg/build_all.py`` does; the
+  2026-11-11 tracker wedge inside a ``--stage cad_mfg_models`` run was
+  exactly this missing pass, found live after an 11-hour flock wait). The
+  shell-level equivalent is
   ``subprocess.run(..., pass_fds=(int(os.environ['AQS_LOCK_FD']),))``.
 - a released acquirer removes ``AQS_LOCK_FD`` again; ``acquire`` also
   falls back to a fresh acquisition when the recorded descriptor is

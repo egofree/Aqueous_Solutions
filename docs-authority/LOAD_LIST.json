@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "f83479471427fa0f845487f5e486a95c191a72e3c12fc219048b7beae2866c77",
+  "graph_sha256": "f9461f96450b760356a0f392b244e864e479be929b16924ac3d568d61e9e0138",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 367.968,
-   "calc_kw": 367.968,
+   "kw": 374.819,
+   "calc_kw": 374.819,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,18 +16,18 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 189.877,
-   "calc_kw": 189.877,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 189.9 kW, charge 863.0 kW, 2658 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 196.021,
+   "calc_kw": 196.021,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 196.0 kW, charge 891.0 kW, 2744 kWh over 38 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "EXT_HALL",
    "role": "load",
-   "kw": 86.977,
-   "calc_kw": 86.977,
-   "basis": "X-PAR-07 solver.roof_close: conditioned extension 24912 m2; lighting 21.92 kW (IECC 2021 C405, 10 % lit), ventilation 37.00 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 28.06 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 26.1 kW and cooling 153.9 kW thermal average after internal gains 31.3 kW and slab edge 1.56 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
+   "kw": 89.651,
+   "calc_kw": 89.651,
+   "basis": "X-PAR-07 solver.roof_close: conditioned extension 25704 m2; lighting 22.62 kW (IECC 2021 C405, 10 % lit), ventilation 38.17 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 28.86 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 26.9 kW and cooling 158.6 kW thermal average after internal gains 32.3 kW and slab edge 1.59 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -43,9 +43,9 @@
   {
    "unit": "H2O_ELYZ",
    "role": "load",
-   "kw": 23.985,
-   "calc_kw": 23.985,
-   "basis": "X-PAR-12 TF: 10.47 kg/d H2 x 55.0 kWh/kg / 24 h; rated 95.9 kW on a 6.0 h PV window.",
+   "kw": 23.689,
+   "calc_kw": 23.689,
+   "basis": "X-PAR-12 TF: 10.34 kg/d H2 x 55.0 kWh/kg / 24 h; rated 94.8 kW on a 6.0 h PV window.",
    "class": "calculated",
    "sector": "CRYO"
   },
@@ -75,6 +75,15 @@
    "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C shop machine-tool list, one 8 h shift; 61.2 kWh/d / 24 h; shop connected 26.5 kW (roster connected 42.3 kW, coincident peak 24.0 kW frames MCC-1); rev C metering split moves the four metal tools to their own stamps (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share).",
    "class": "calculated",
    "sector": "MFG"
+  },
+  {
+   "unit": "SI_REFINE",
+   "role": "\u2014",
+   "kw": 2.509,
+   "calc_kw": 2.509,
+   "basis": "X-MFG-40 TF, on-site silicon (A-M-472): 1.0034 kg/d electronic-grade silicon x si_refine_kWh_kg_TCS_SIEMENS / 24 h (si_refine.py).",
+   "class": "calculated",
+   "sector": "GLASS"
   },
   {
    "unit": "MET_SCRUB",
@@ -122,6 +131,15 @@
    "sector": "DIGESTER"
   },
   {
+   "unit": "SOLAR_PV_CELL",
+   "role": "\u2014",
+   "kw": 1.487,
+   "calc_kw": 1.487,
+   "basis": "X-MFG-38 (A-M-178, AQS-DUTY-071): 35.69 kWh/d for 67.2 cells/d in 3 batches of one carrier (A-M-484); peak 6.08 kW (one tool at a time).",
+   "class": "calculated",
+   "sector": "FAB"
+  },
+  {
    "unit": "EW_3",
    "role": "load",
    "kw": 0,
@@ -133,9 +151,9 @@
   {
    "unit": "EVAP_BASE",
    "role": "load",
-   "kw": 1.328,
-   "calc_kw": 1.328,
-   "basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 801.9 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.321 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.33 kW. Study.",
+   "kw": 1.344,
+   "calc_kw": 1.344,
+   "basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 811.2 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.336 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.34 kW. Study.",
    "class": "calculated",
    "sector": "DIGESTER"
   },
@@ -176,20 +194,11 @@
    "sector": "CRYO"
   },
   {
-   "unit": "SI_REDUCE",
-   "role": "\u2014",
-   "kw": 0.9,
-   "calc_kw": 0.9,
-   "basis": "the furnace at the ~12 kWh/kg Si class (carbothermic study class) / 24 h at the 1.8 kg/d draw (X-SPEC sizing, calculated)",
-   "class": "calculated",
-   "sector": "GLASS"
-  },
-  {
    "unit": "IND_MELT",
    "role": "load",
    "kw": 0.885,
    "calc_kw": 0.885,
-   "basis": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 21.25 kWh/d over 24 h at 4 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02.",
+   "basis": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 21.24 kWh/d over 24 h at 4 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02.",
    "class": "calculated",
    "sector": "FOUNDRY"
   },
@@ -237,6 +246,15 @@
    "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-289): chlorination 350 C + 142b cracking 650 C insulated losses (A-M-289).",
    "class": "calculated",
    "sector": "POLYMERS"
+  },
+  {
+   "unit": "NAOH_PLANT",
+   "role": "\u2014",
+   "kw": 0.5,
+   "calc_kw": 0.5,
+   "basis": "X-PAR-06 TF: on-site sodium hydroxide (A-M-475): membrane cells 0.5004 kW (ca_cell_V x F / (M x ca_CE) through the rectifier) (caustic.py, route CHLOR_ALKALI).",
+   "class": "calculated",
+   "sector": "DIGESTER"
   },
   {
    "unit": "TI_CELL",
@@ -291,15 +309,6 @@
    "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-289): R-22 pyrolysis 750 C tube + quench circulation (A-M-289).",
    "class": "calculated",
    "sector": "POLYMERS"
-  },
-  {
-   "unit": "SOLAR_PV_CELL",
-   "role": "\u2014",
-   "kw": 0.392,
-   "calc_kw": 0.392,
-   "basis": "X-MFG-38 (A-M-178, AQS-DUTY-071): 9.40 kWh/d for 3 cells, one batch; peak 3.79 kW (one tool at a time).",
-   "class": "calculated",
-   "sector": "FAB"
   },
   {
    "unit": "EW_6",
@@ -360,7 +369,7 @@
    "role": "\u2014",
    "kw": 0.265,
    "calc_kw": 0.265,
-   "basis": "0.375 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)",
+   "basis": "0.373 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)",
    "class": "calculated",
    "sector": "WTR"
   },
@@ -381,6 +390,15 @@
    "basis": "RCA/etch bench list (AQS-EQP-FAB-001 sec.1): 2 heated baths 10 L at 80 C (SC1/SC2) - heat-up once daily + insulated hold (ASTM_C680 method, X-MFG-38 pattern); DHF at ambient; 4.96 kWh/d. / X-ELS-02 load-basis (A-M-301).",
    "class": "calculated",
    "sector": "FAB"
+  },
+  {
+   "unit": "ACID_PLANT",
+   "role": "\u2014",
+   "kw": 0.206,
+   "calc_kw": 0.206,
+   "basis": "X-PAR-02 TF: on-site sulfuric acid (A-M-474): cake kiln on CAMPAIGN duty (Q-034, A-M-477): daily average of shell loss + reaction + feed heat with one 24 h run every 7 d and 8.60 kWh heat-up per run; peak 1.0847 kW (sulfuric.py, route GYPSUM_LOOP).",
+   "class": "calculated",
+   "sector": "POLYMERS"
   },
   {
    "unit": "EW_8",
@@ -453,6 +471,15 @@
    "basis": "AQS-DUTY-072 Mo(III) molten-salt cell: 2.57 A x 2.8 V = 0.007 kW + hold 0.11 kW (A-M-282).",
    "class": "calculated",
    "sector": "FOUNDRY"
+  },
+  {
+   "unit": "SI_REDUCE",
+   "role": "\u2014",
+   "kw": 0.113,
+   "calc_kw": 0.113,
+   "basis": "X-MFG-40 TF, on-site silicon (A-M-472): 0.2086 kg/d metallurgical silicon x si_saf_kWh_kg / 24 h (si_refine.py).",
+   "class": "calculated",
+   "sector": "GLASS"
   },
   {
    "unit": "EW_4",
@@ -594,7 +621,7 @@
    "role": "load",
    "kw": 0.02,
    "calc_kw": 0.02,
-   "basis": "X-MFG-39 (A-M-168): TSA regeneration 0.5 W / 0.7 + half the insulated loss.",
+   "basis": "X-MFG-39 (A-M-168): TSA regeneration 0.6 W / 0.7 + half the insulated loss.",
    "class": "calculated",
    "sector": "GAS"
   },
@@ -709,7 +736,7 @@
   {
    "unit": "DRY_COOLER",
    "role": "\u2014",
-   "kw": 7.7,
+   "kw": 7.9,
    "calc_kw": null,
    "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
    "class": "pending",
@@ -833,6 +860,15 @@
    "sector": "FARM"
   },
   {
+   "unit": "SOLV_PLANT",
+   "role": "\u2014",
+   "kw": 0.03,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "FAB"
+  },
+  {
    "unit": "BIOFILTER",
    "role": "load",
    "kw": 0.02,
@@ -840,6 +876,15 @@
    "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02); kW from the IA-AIR-BIO feed (node has no continuous_kw stamp)",
    "class": "pending",
    "sector": "FARM"
+  },
+  {
+   "unit": "RESIST_SYN",
+   "role": "\u2014",
+   "kw": 0.004,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "FAB"
   },
   {
    "unit": "HYDRO_SET",
@@ -933,25 +978,25 @@
   }
  ],
  "summary": {
-  "calculated": 78,
-  "pending": 12,
+  "calculated": 81,
+  "pending": 14,
   "standby_zero": 9,
   "owner_lock": 2,
   "null": 2,
-  "rows": 103,
-  "graph_sum_kW": 182.38,
-  "calc_sum_kW": 182.38,
-  "connected_load_kW": 182.4,
-  "connected_calculated_kW": 172.9,
+  "rows": 108,
+  "graph_sum_kW": 188.53,
+  "calc_sum_kW": 188.53,
+  "connected_load_kW": 188.5,
+  "connected_calculated_kW": 178.8,
   "connected_standby_kW": 0.1,
-  "connected_study_kW": 9.5,
+  "connected_study_kW": 9.7,
   "connected_calculated_pct": 94.8,
   "by_sector": {
    "CRYO": {
     "calculated": 4
    },
    "DIGESTER": {
-    "calculated": 15,
+    "calculated": 16,
     "pending": 2
    },
    "ELEC": {
@@ -959,7 +1004,8 @@
     "owner-lock": 1
    },
    "FAB": {
-    "calculated": 7
+    "calculated": 7,
+    "pending": 2
    },
    "FARM": {
     "calculated": 2,
@@ -976,7 +1022,7 @@
     "calculated": 2
    },
    "GLASS": {
-    "calculated": 2
+    "calculated": 3
    },
    "HAB": {
     "calculated": 1
@@ -1002,7 +1048,7 @@
     "pending": 2
    },
    "POLYMERS": {
-    "calculated": 6,
+    "calculated": 7,
     "pending": 1
    },
    "PUMPED_HYDRO": {

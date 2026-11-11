@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.3700 kW. In: none. Out: IA-GW-MAKEUP 0 kg/d (groundwater make-up, reverse-osmosis treated).
+1. Basis. Mass in 0 kg/d. Mass out 11.4 kg/d. Electrical duty 0.3700 kW. In: none. Out: IA-GW-MAKEUP 0 kg/d (groundwater make-up, reverse-osmosis treated); IA-NAOH-H2O 11.32 kg/d (well water for the liquor, the slaker or the cell); IA-ACID-H2O 0.08128 kg/d (well water for SO3 absorption and dilution to 98 wt%); IA-PCA-H2O 1.2e-05 kg/d (well water to slake the lime).
 
 2. Size.
 - Envelope 800×800×600 mm, 0.384 m³.

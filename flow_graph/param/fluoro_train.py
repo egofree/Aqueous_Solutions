@@ -2,9 +2,8 @@
 
 Runs AFTER flow_graph.param.foundry_poly in each regen graph pass and turns the F-blocked standby train live:
 
-  F source  : dock-imported fluorspar (acid-spar class >= 97 % CaF2) + 98 wt% H2SO4 -> HF_GEN rotary kiln
-              (ULLMANN_HF), under the D-DOCK feedstock-import ruling (2026-10-19). The plant acid loop is HCl
-              (BMED), so no on-site H2SO4 exists at this scope; the acid imports on the NaOH-flake precedent.
+  F source  : dock-imported fluorspar (acid-spar class >= 97 % CaF2, a raw ore) + 98 wt% H2SO4 -> HF_GEN rotary
+              kiln (ULLMANN_HF). The acid is made on site by ACID_PLANT (flow_graph/param/sulfuric.py, A-M-474).
   Recovery  : the digester fluoride (IA-HF-SRC, re-pointed LEACH -> F_RECOVER) and the POLY_F off-spec reclaim
               close the fluorine inventory through F_RECOVER -> HF_GEN (AQS-DUTY-FP section 2).
   Scale     : graph reagent draw S31 (1.5 kg/d aqueous HF, WET_BENCH fork) + the AQS-RATE-FP-MET seal/gasket
@@ -148,17 +147,41 @@ def apply(g=None, write=False):
         f'{r["hcl_vdf"] + r["hcl_tfe"]:.4f} - Cl2 drawn {r["cl2_vdf"] + r["cl2_tfe"]:.4f} = {r["cru_01"]:.4f} kg/d '
         f'(chlorate consumed, NaCl + reaction water + monomer water formed; {AM}). The leach sees '
         f'+{r["cru_01"] - r["s66"]:.4f} kg/d liquor, below the 0.5 kg/d battery limit, absorbed by its reconciliation layer.')
+    # chlorine source of the monomer reactors, two designs selected by cru_cl2_source (A-M-481)
+    r6 = lambda x: round(x, 6)
+    cl2 = r6(r['cl2_vdf'] + r['cl2_tfe']); ship = E['IA-CL2-SHIP']; base = float(ship['params']['base_kg_d'])
+    al = E['AL_POT_CL2']; p = al.setdefault('params', {})
+    if DR.val(d, 'cru_cl2_source') == 'POT':
+        put('AL_POT_CL2', cl2, f'The AL_POT byproduct chlorine feeds the monomer reactors through CRU (cru_cl2_source POT, A-M-481): '
+            f'{cl2:.4f} kg/d taken from the dock export IA-CL2-SHIP.')
+        for k in ('rate_normal_kg_d', 'rate_rated_kg_d', 'rated_case', 'backs_up', 'rated_by'): p.pop(k, None)
+        put('IA-CRU-01', r6(r['s66'] + r['hcl_vdf'] + r['hcl_tfe']),
+            f'CRU liquor on the POT route (A-M-481): S66 {r["s66"]:.4f} + dilute HCl returns {r["hcl_vdf"] + r["hcl_tfe"]:.4f} kg/d '
+            f'pass to the leach unoxidised; no chlorate is consumed, and the leach neutralises the acid.')
+        put('IA-CL2-SHIP', r6(base - cl2), ship['rate']['note'].split(' | ')[0] + f' Less the {cl2:.4f} kg/d to CRU on AL_POT_CL2 (A-M-481).')
+    else:
+        put('AL_POT_CL2', 0.0, f'Standby (A-M-481): the CRU chlorate finish makes the monomer chlorine from the returned dilute HCl '
+            f'(cru_cl2_source HCL_OX), so the acid is recovered rather than neutralised in the leach. AL_POT_CL2 carries '
+            f'{cl2:.4f} kg/d from the AL_POT byproduct chlorine when cru_cl2_source is POT or the chlorate finish is out of service.')
+        p.update(rate_normal_kg_d=0.0, rate_rated_kg_d=cl2, rated_case='cru_cl2_source is POT or the CRU chlorate finish is out of service',
+                 backs_up='CRU chlorate finish (CRU_TO_VDF, CRU_TO_TFE)', rated_by='flow_graph/param/fluoro_train.py')
+        put('IA-CL2-SHIP', r6(base), ship['rate']['note'])
     _mk(g, E, 'IA-CAF2-MU', 'NORTH_DOCK', 'HF_GEN', 'S', 'fluorspar make-up, acid-spar class >= 97 % CaF2', r['spar'],
         f'D-DOCK feedstock import (mining-waste class, 2026-10-19): {r["spar"]:.4f} kg/d acid-spar at 97 % CaF2 covers '
         f'the HF product beyond the recovered fluoride (ULLMANN_HF; {AM})')
-    _mk(g, E, 'IA-H2SO4-MU', 'NORTH_DOCK', 'HF_GEN', 'L', '98 wt% sulfuric acid make-up', r['acid_soln'],
-        f'Reagent import on the NaOH-flake precedent (IA-NAOH-MU): {r["acid_soln"]:.4f} kg/d chamber acid at 98 wt%, '
-        f'{DR.val(d, FP + "hf_kiln.H2SO4_stoich_frac"):.0%} of stoichiometric on the converted spar (ULLMANN_HF; {AM}). '
-        f'The plant acid loop is HCl (BMED); no on-site H2SO4 exists at this scope.')
     _mk(g, E, 'IA-GYPSUM-SHIP', 'HF_GEN', 'NORTH_DOCK', 'S', 'fluorgypsum (anhydrite) cake byproduct', r['cake'],
         f'Kiln cake by difference = spar + acid + concentrate - HF product: anhydrite '
         f'{r["caf2_conv"] * M_CASO4 / M_CAF2:.3f} kg/d with unreacted spar, excess acid, gangue and moisture '
         f'(ULLMANN_HF); reported as a dock byproduct export (D-DOCK).')
+    # the 98 wt% acid is made on site by ACID_PLANT; on its default route the kiln cake goes there instead of the dock (A-M-474)
+    # wafer-fab photoresist made on site; draws chlorine, CO, acid and cuts, returns HCl to CRU (A-M-482)
+    from flow_graph.param import fab_resist
+    fab_resist.tf(g, E, d)
+    from flow_graph.param import sulfuric
+    sulfuric.tf(g, E, r, d)
+    # shop grease from the wax cut, with its soap lime from the acid-plant residue (A-M-480)
+    from flow_graph.param import grease
+    grease.tf(g, E, d)
     _mk(g, E, 'IA-HF-PROD', 'HF_GEN', 'WS_HF_ED', 'L', 'aqueous HF to the fab reagent fork', r['hf_ed'],
         f'HF_GEN supplies the reagent fork at the S31 draw {r["hf_ed"]:.3f} kg/d (AQS-DUTY-FP sec. 2: product to the '
         f'monomer units and the direct HF users; replaces the direct leach feed of IA-HF-SRC, which now runs through F_RECOVER)')
@@ -204,7 +227,7 @@ def apply(g=None, write=False):
                           'note': f'Feed equal to {u} continuous_kw. | {TAG}.'}
     stamp(g, r)
     if write:
-        open(GP, 'w').write(json.dumps(g, indent=2) + '\n')
+        open(GP, 'w').write(json.dumps(g, indent=2))
     return r
 
 
@@ -231,7 +254,7 @@ def stamp(g, r):
              slope_deg=2.0, rpm=4, residence_min=DR.val(d, FP + 'hf_kiln.residence_min'),
              T_C=kiln_T, spar_kg_d=r['spar'], acid_kg_d=r['acid_soln'], hf_kg_d=r['hf_prod'],
              cake_kg_d=r['cake'], drive_kW=0.37,
-             feed='dock acid-spar 97 % CaF2 + 98 wt% H2SO4 + F_RECOVER concentrate',
+             feed='dock acid-spar 97 % CaF2 + 98 wt% H2SO4 from ACID_PLANT + F_RECOVER concentrate',
              material='carbon steel shell, dry HF service (PERRY9_MAT); Monel trunnion inserts',
              duty_kW=r['hf_gen_kW']),
         f'kiln-class study minimum at the {r["hf_prod"]:.3f} kg/d HF duty (ULLMANN_HF; {AM}); tube 200 x 1200 mm, '

@@ -62,3 +62,12 @@ N60,DN50,Class 150,dissolved gas,outlet,600
 N61,DN15,Class 150,spin scrap to the solids line,inlet,160
 N62,cable,Class 150,"power terminal (IA-TRIM-HX5, HX-5 electric trim at the process)",top,800
 N63,cable,Class 150,"power terminal (SF-LEACH_CSTR_1, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",top,800
+N64,DN15,Class 150,sodium chloride bleed of the leach purge (impurity bleed),outlet,600
+N65,DN15,Class 150,sodium chloride of the leach purge recovered to the cell brine,outlet,600
+N66,DN15,Class 150,"reaction water, acid water and ammonium chloride",inlet,160
+N67,solids,Class 150,"saw kerf, crop and pot scrap with the spent slurry",inlet,160
+N68,solids,Class 150,silica fume from the furnace baghouse,inlet,160
+N69,DN15,Class 150,impurity chlorides and silicon tetrachloride bleed,inlet,160
+N70,solids,Class 150,unreclaimed saw kerf with the spent slurry (1 - si_kerf_recycle_frac),inlet,160
+N71,DN15,Class 150,impurity-chloride bleed with the end-of-life separation residue,inlet,160
+N72,solids,Class 150,recovered reactive-Al hydroxide cake to the aluminium line,outlet,600

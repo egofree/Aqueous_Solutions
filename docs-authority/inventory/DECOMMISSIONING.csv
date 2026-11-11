@@ -1,6 +1,7 @@
 step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
+1,POLYMERS,ACID_PLANT,0,C CaSO4 H2O O2 S,N2/air to 19.5-23.5 % O2,0,no
 1,POLYMERS,FILM_CAST,1125,,-,270,yes
-1,POLYMERS,HF_GEN,788,,-,189,yes
+1,POLYMERS,HF_GEN,788,H2SO4,-,189,yes
 1,POLYMERS,PELLET,0,,-,270,no
 1,POLYMERS,POLY_COND,0,,-,65,no
 1,POLYMERS,POLY_F,270,,-,65,no
@@ -22,7 +23,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 2,FOUNDRY,FORGE,0,,-,270,no
 2,FOUNDRY,IND_MELT,0,,-,225,no
 2,FOUNDRY,INV_CAST,1125,,-,270,yes
-2,FOUNDRY,METAL_STORE,0,,-,91,no
+2,FOUNDRY,METAL_STORE,0,Si,-,91,no
 2,FOUNDRY,MG_POT,640,,-,154,yes
 2,FOUNDRY,MO_CELL,0,,-,154,no
 2,FOUNDRY,RES_HEAT,0,,-,225,no
@@ -38,12 +39,14 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 2,FOUNDRY,VAC_IND,0,,-,225,no
 2,FOUNDRY,WAX_PATTERN,360,,-,86,no
 3,FAB,FAB_UPW_TANK,125,solute,-,8,no
-3,FAB,LITHO_ALIGN,0,,-,30,no
-3,FAB,LITHO_COAT,0,solute,-,36,no
-3,FAB,LITHO_DEV,0,solute,-,30,no
-3,FAB,SOLAR_PV_CELL,0,solute,-,691,no
-3,FAB,WAFER_FAB,1406,N2 solute,-,338,yes
-3,FAB,WET_BENCH,1406,solute,-,338,yes
+3,FAB,LITHO_ALIGN,0,Si,-,30,no
+3,FAB,LITHO_COAT,0,Si solute,-,36,no
+3,FAB,LITHO_DEV,0,Si solute,-,30,no
+3,FAB,RESIST_SYN,0,CH3OH CO Cl2 H2 H2SO4 NH3 acetone air,"N2 to < 25 % LFL, then < 1 % H2",0,no
+3,FAB,SOLAR_PV_CELL,0,Si solute,-,691,no
+3,FAB,SOLV_PLANT,0,CH3OH CO H2 acetone ethanol solute,"N2 to < 25 % LFL, then < 1 % H2",0,no
+3,FAB,WAFER_FAB,1406,Ar N2 Si diacetone alcohol novolac-DNQ resin solute,-,338,yes
+3,FAB,WET_BENCH,1406,acetone ethanol,-,338,yes
 3,FAB,WS_AMMONIA,0,N2,-,106,no
 3,FAB,WS_DOPE,440,solute,-,106,no
 3,FAB,WS_HF_ED,440,,-,106,no
@@ -52,7 +55,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 3,FAB,WS_PEROX,440,Ar O2,N2/air to 19.5-23.5 % O2,106,no
 3,FAB,WS_PHOS,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",106,no
 3,FAB,WS_SLURRY,0,solute,-,106,no
-3,FAB,WS_SOLV,440,,-,106,no
+3,FAB,WS_SOLV,440,acetone ethanol,-,106,no
 4,MFG,BLOW_MOLD,0,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",230,no
 4,MFG,COLD_MILL,0,metal,-,338,no
 4,MFG,ELECTRODE_COAT,0,solute,-,259,no
@@ -92,15 +95,16 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 8,GLASS,GLASS_DIGEST,1406,solute,-,338,yes
 8,GLASS,GLASS_MILL,0,,-,58,no
 8,GLASS,GLASS_RINSE,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",86,no
-8,GLASS,SI_REDUCE,0,,-,288,no
+8,GLASS,SI_REDUCE,0,C O2 SiO2,N2/air to 19.5-23.5 % O2,288,no
+8,GLASS,SI_REFINE,0,Cl2 Si,"air purge, scrubbed to vent (TLV)",0,no
 9,OIL,AFTERBURNER,0,Ar O2,N2/air to 19.5-23.5 % O2,338,no
 9,OIL,C29_RECYCLE,4,,-,1,no
-9,OIL,GREASE_CA,75,,-,18,no
-9,OIL,GREASE_LI,75,,-,18,no
+9,OIL,GREASE_CA,75,O2,N2/air to 19.5-23.5 % O2,18,no
+9,OIL,GREASE_LI,0,,-,18,no
 9,OIL,HOPPER,0,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",32,no
 9,OIL,OIL_DRYER,0,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",338,no
-9,OIL,OIL_FRAC,1406,solute,-,338,yes
-9,OIL,OIL_PYRO,1406,,-,338,yes
+9,OIL,OIL_FRAC,1406,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",338,yes
+9,OIL,OIL_PYRO,1406,hydrocarbon soap,"N2 to < 25 % LFL, then < 1 % H2",338,yes
 9,OIL,PROD_C11_C18,79,,-,5,no
 9,OIL,PROD_C19_C28,79,,-,5,no
 9,OIL,PROD_C29,79,,-,5,no
@@ -114,10 +118,10 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 11,DIGESTER,BMED_ACID,1406,,-,338,yes
 11,DIGESTER,BMED_BASE,1406,,-,338,yes
 11,DIGESTER,CONTINUOUS_RECYCLE,3,,-,1,no
-11,DIGESTER,CRU,1406,,-,338,yes
+11,DIGESTER,CRU,1406,HCl,"air purge, scrubbed to vent (TLV)",338,yes
 11,DIGESTER,EVAP_ACID,5094,,-,1223,yes
 11,DIGESTER,EVAP_ACID_VS,140,,-,34,no
-11,DIGESTER,EVAP_BASE,1938,,-,465,yes
+11,DIGESTER,EVAP_BASE,1938,NaOH,-,465,yes
 11,DIGESTER,EW_1,913,solute,-,219,yes
 11,DIGESTER,EW_2,913,,-,219,yes
 11,DIGESTER,EW_3,400,,-,96,no
@@ -130,10 +134,11 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 11,DIGESTER,FLOAT_SINK,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",338,no
 11,DIGESTER,F_RECOVER,1406,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",338,yes
 11,DIGESTER,HX8,0,,-,22,no
-11,DIGESTER,LEACH_CSTR_1,2100,Cl2 Fe HCl O2 metal_plateable metal_reactive organic other_metals silicate_oxide unassigned,N2/air to 19.5-23.5 % O2,504,yes
+11,DIGESTER,LEACH_CSTR_1,2100,AlCl3 CaCl2 Cl2 Fe FeCl3 HCl O2 Si metal_plateable metal_reactive organic other_metals separation residue silicate_oxide unassigned,N2/air to 19.5-23.5 % O2,504,yes
 11,DIGESTER,LI_RECOVER,20,,-,5,no
+11,DIGESTER,NAOH_PLANT,0,H2O NaCl,-,0,no
 11,DIGESTER,POLISH_BANK,1406,,-,338,yes
-11,DIGESTER,P_CA,0,,-,5,no
+11,DIGESTER,P_CA,22,CaF2 CaO CaSO4 H2O H2SO4 inerts,-,5,no
 11,DIGESTER,SALT_FEED,0,,-,338,no
 12,GEO,GEO_GHEX,0,,-,115,no
 12,GEO,GEO_HP,0,,-,269,no
@@ -141,7 +146,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 13,CRYO,AIR_RECEIVER,0,,-,180,no
 13,CRYO,CRYO_AHU,0,N2,-,338,no
 13,CRYO,CRYO_AHU_COND_CONDENSABLE,0,solute,-,22,no
-13,CRYO,CRYO_ASU,0,CO2 N2 O2,N2/air to 19.5-23.5 % O2,1170,no
+13,CRYO,CRYO_ASU,0,Ar CO2 N2 O2,N2/air to 19.5-23.5 % O2,1170,no
 13,CRYO,CRYO_CO2,0,CO2,-,690,no
 13,CRYO,CRYO_DED_COOL,0,,-,338,no
 13,CRYO,CRYO_H2,0,H2,"N2 to < 25 % LFL, then < 1 % H2",5866,no
@@ -183,7 +188,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 18,ELEC,BACKUP_GEN,2000,Ar N2 O2,N2/air to 19.5-23.5 % O2,480,yes
 18,ELEC,FUEL_CELL,0,,-,346,no
 18,ELEC,LOAD_AGG,0,,-,65,no
-18,ELEC,PV_ARRAY,0,,-,528028,no
+18,ELEC,PV_ARRAY,0,Si,-,528028,no
 18,ELEC,RECTIFIER,0,,-,346,no
 18,ELEC,SOL_ARK_60K,0,,-,67,no
 18,ELEC,ZNBR2,2160,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",518,yes

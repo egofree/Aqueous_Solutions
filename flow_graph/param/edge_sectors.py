@@ -26,7 +26,7 @@ def apply(write=False):
                 changed.append((e['stream_id'], end, e.get(f'{end}_sector_id'), s))
                 e[f'{end}_sector_id'] = s
     if write and changed:
-        open(GP, 'w').write(json.dumps(g, indent=2) + '\n')
+        open(GP, 'w').write(json.dumps(g, indent=2))
     return changed
 
 

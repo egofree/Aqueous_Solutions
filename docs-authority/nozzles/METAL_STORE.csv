@@ -6,3 +6,7 @@ N4,solids,Class 150,formed metal product to the store,inlet,160
 N5,solids,Class 150,"surplus foundry metal export (pot-line product, dispatch campaign)",outlet,600
 N6,DN15,Class 150,drain,bottom,50
 N7,DN15,Class 150,vent,top,800
+N8,solids,Class 150,electronic-grade silicon CZ charge from the store,outlet,600
+N9,solids,Class 150,electronic-grade silicon for the CZ charge,inlet,160
+N10,solids,Class 150,electronic-grade silicon CZ charge from the store (refinery rod plus recycled crop and pot scrap),outlet,600
+N11,solids,Class 150,"crop, square-off and pot scrap remelted into the next charge (si_scrap_recycle_frac, A-M-487)",inlet,160

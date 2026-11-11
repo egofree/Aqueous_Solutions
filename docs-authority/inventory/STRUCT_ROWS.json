@@ -1203,8 +1203,8 @@
 "unit": "GREASE_LI",
 "level": "L-1",
 "empty_kg": 18.0,
-"op_kg": 93.0,
-"test_kg": 138.0,
+"op_kg": 18.0,
+"test_kg": 18.0,
 "foot_m2": 0.2
 },
 {
@@ -1507,8 +1507,8 @@
 "unit": "P_CA",
 "level": "L0",
 "empty_kg": 5.4,
-"op_kg": 5.4,
-"test_kg": 5.4,
+"op_kg": 27.9,
+"test_kg": 41.4,
 "foot_m2": 0.09
 },
 {

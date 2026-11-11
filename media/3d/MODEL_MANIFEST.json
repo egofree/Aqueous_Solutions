@@ -1,11 +1,12 @@
 {
  "site_id": "baseline",
  "placement_seed_revision": "O",
- "units_total": 226,
+ "units_total": 231,
  "built": 201,
  "ghosts_eliminated": 0,
  "block_centre_massing": 0,
  "unplaced": [
+  "ACID_PLANT",
   "ATM_INT",
   "BRIN_RECOVER",
   "CAT_OX",
@@ -25,9 +26,13 @@
   "LB_SOFTEN",
   "LIO_BAT",
   "MEM_DIST",
+  "NAOH_PLANT",
   "PERC_REMOVE",
   "RAD_PANEL",
   "REC_HDR",
+  "RESIST_SYN",
+  "SI_REFINE",
+  "SOLV_PLANT",
   "SW_INTAKE",
   "TANK_BLD",
   "WET_OX"
@@ -52,6 +57,11 @@
  "glb_units": 201,
  "errors": [],
  "units": [
+  {
+   "unit_id": "ACID_PLANT",
+   "sector_id": "POLYMERS",
+   "status": "unplaced"
+  },
   {
    "unit_id": "ACID_POLISH_SCRUB",
    "sector_id": "GAS",
@@ -1016,6 +1026,11 @@
    "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
+   "unit_id": "NAOH_PLANT",
+   "sector_id": "DIGESTER",
+   "status": "unplaced"
+  },
+  {
    "unit_id": "NCG_HEADER",
    "sector_id": "OIL",
    "level": "L-1",
@@ -1311,6 +1326,11 @@
    "basis": "Rev H: issued envelope 600x400x800 (REMIN-01). Moved from (2800,200): 200 mm from GREY_TREAT. Now in HAB between GALLEY and HAB_WASTE, >= 600 mm clear."
   },
   {
+   "unit_id": "RESIST_SYN",
+   "sector_id": "FAB",
+   "status": "unplaced"
+  },
+  {
    "unit_id": "RES_HEAT",
    "sector_id": "FOUNDRY",
    "level": "L0",
@@ -1381,6 +1401,11 @@
    "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
   },
   {
+   "unit_id": "SI_REFINE",
+   "sector_id": "GLASS",
+   "status": "unplaced"
+  },
+  {
    "unit_id": "SLEEP_QUARTERS",
    "sector_id": "HAB",
    "level": "L1",
@@ -1393,6 +1418,11 @@
    "level": "L0",
    "status": "built",
    "basis": "Rev H: issued envelope 2400x1200x1600. Moved from (18800,10000): clashed with FAB_TOOL and PV_EMITTER. Free FAB bay north of ETCH_RETURN (600 mm), 1000 mm north of the LITHO group. The wafer_fab PV_* stubs (PV_TEXTURE..PV_ARC) are separate secondaries: duplication open."
+  },
+  {
+   "unit_id": "SOLV_PLANT",
+   "sector_id": "FAB",
+   "status": "unplaced"
   },
   {
    "unit_id": "SOL_ARK_60K",

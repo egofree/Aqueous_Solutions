@@ -32,6 +32,15 @@ GP = os.path.join(os.path.dirname(HERE), 'plant_flow_graph.json')
 # unit: (mat, basis, alt, note).  mat strings carry the AQS-END-002 classable keywords.
 _TAG = 'Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).'
 SEL = {
+ 'ACID_PLANT': (
+  'Cake kiln tube of Inconel 600 with an alumina lining and mineral-wool insulation; sulfur burner and converter shell of '
+  'aluminised carbon steel with vanadium catalyst beds; absorber and product acid tank of carbon steel with PTFE-lined '
+  'nozzles; dilution cooler of high-silicon iron',
+  'Hot sulfur dioxide and trioxide gas, dry, up to about 1150 C in the cake kiln and about 600 C in the converter, and 98 wt% '
+  'sulfuric acid near ambient (A-M-474, flow_graph/param/sulfuric.py): strong acid above 93 wt% is carried in carbon steel '
+  'at low velocity, while hot or dilute acid needs high-silicon iron, alloy or PTFE lining (ULLMANN_H2SO4; PERRY9_MAT). ' + _TAG,
+  'Alloy 20 or PTFE-lined steel for the absorber if the acid strength falls below 93 wt% in service',
+  'wetted by 98 wt% sulfuric acid and dry sulfur oxides; dilution below 93 wt% is the corrosion load, held by the absorber control.'),
  'AL_POT': (
   'Graphite cell liner (design allowance 10 mm on the wetted faces), graphite anodes at j 0.5 A/cm2 '
   '(A-M-282 class), steel cathode bus above the melt with copper busbar frame-isolated to AQS-STD-002 '
@@ -283,8 +292,8 @@ SEL = {
  'GREASE_CA': (
   '316L jacketed soap kettle + 316L agitator; steel frame and insulation stays dry; steam - hot-water '
   'heads keep the jacket wetted side on the issued Q3/Q4 M1 water family',
-  'calcium soap saponification at the 95-120 C kettle class, wax cut + Ca(OH)2 (graph edges/duty '
-  'AQS-DUTY-GREASE 0.1 kg/d Ca(OH)2): grease manufacture practice selects 304/316L hot-soap contact '
+  'calcium soap saponification of the air-oxidised wax cut with Ca(OH)2 slaked from the acid-plant residue lime, '
+  'in an electrically heated campaign kettle (rates and kettle sized in flow_graph/param/grease.py, A-M-480): grease manufacture practice selects 304/316L hot-soap contact '
   '(MANG2007 ch. 14.6); the alkaline soap concentrate is hot and basic, out of the PP-H class. ' + _TAG,
   '304L kettle if the wax cut proves the only wetted face at a lower saponification temperature '
   '(cost down, first-article choice)',
@@ -354,13 +363,50 @@ SEL = {
  'SI_REDUCE': (
   'Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel '
   'casing; dry char and silica-class feed handling; the hot face stays dry (M7)',
-  'GLASS-sector furnace unit with solids-only edges (CHAR_TO_SI on the graph design day at zero): the '
-  'construction material is issued here at the lining level (SCHACHT2004 ch. 8 carbonaceous hot faces; '
-  'CRC_SI is the element benchmark for the reduction duty class); process duty and its rates stay a '
-  'unit task 02 pending item. ' + _TAG,
+  'GLASS-sector arc furnace reducing quartz ore with char (IA-QUARTZ-MU, CHAR_TO_SI, sized by '
+  'flow_graph/param/si_refine.py, A-M-472): the construction material is issued at the lining level '
+  '(SCHACHT2004 ch. 8 carbonaceous hot faces; CRC_SI is the element benchmark for the reduction duty class); '
+  'the CO burns in the hood and the silica fume goes to the baghouse. ' + _TAG,
   'Silicon-carbide hot face when batch chemistry reaches beyond the graphite class (a process-change '
   'decision, not a materials trade)',
   'no wetted stream on the graph; the selection is the construction class only.'),
+ 'NAOH_PLANT': (
+  'Lime kiln and trona calciner tubes of Inconel 600 with alumina lining and mineral-wool insulation; slaker, causticiser '
+  'and white-liquor tank of carbon steel; on the chlor-alkali route, titanium anode pans, nickel cathode pans and '
+  'perfluorinated membranes, with nickel catholyte piping and PVC-lined brine piping',
+  'Sodium hydroxide liquor at about 10 wt% and 90 C from the causticiser, or 32 wt% catholyte with wet chlorine and '
+  'brine on the chlor-alkali route (A-M-475, flow_graph/param/caustic.py): carbon steel serves dilute caustic below '
+  'the caustic-cracking range, nickel serves hot strong caustic, and wet chlorine and acid brine need titanium or '
+  'lined steel (ULLMANN_NAOH; PERRY9_MAT). ' + _TAG,
+  'Nickel 200 for the liquor lines if the caustic runs hot and strong in service',
+  'wetted by caustic liquor (and wet chlorine on the chlor-alkali route); caustic cracking of stressed carbon steel is the corrosion load.'),
+ 'SOLV_PLANT': (
+  '316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclave for the iodide-promoted acetic acid '
+  'step; 316L ketonisation and hydrogenation tube reactors; on the fermentation route, HDPE fermenters, nitrogen-blanketed',
+  'Ethanol and acetone at their boiling points in the still, and acetic acid with an iodide promoter at 150-200 C in the '
+  'carbonylation (A-M-479, flow_graph/param/solvent.py): stainless steel serves the solvents and the dry reactor gases, '
+  'while hot acetic acid with iodide needs a nickel-molybdenum alloy (ULLMANN_ACETIC; PERRY9_MAT). ' + _TAG,
+  'Zirconium for the carbonylation autoclave if iodide corrosion of C-276 is seen in service',
+  'wetted by ethanol, acetone and hot acetic acid with an iodide promoter; iodide pitting of the carbonylation vessel is the corrosion load.'),
+ 'RESIST_SYN': (
+  'Glass-lined steel batch reactors for the oxychlorination, nitrosation, diazotisation and esterification; 316L for the '
+  'formaldehyde and ammonia oxidisers, the novolac kettle and the solvent steps; Monel 400 for the dry phosgene and chlorine lines',
+  'Wet HCl, nitrous acid and sulfuric acid at up to 100 C in the naphthol and diazonaphthoquinone steps, and phenol, formaldehyde and acetone in the '
+  'novolac and formulation steps (A-M-482, flow_graph/param/fab_resist.py): glass lining serves the wet acid chlorides, stainless steel the '
+  'organics and the dry gases, and nickel-copper alloy the dry chlorine and phosgene (PERRY9_MAT). ' + _TAG,
+  'Hastelloy C-276 reactors if the glass lining is chipped in service',
+  'wetted by hot wet HCl, nitrous and sulfuric acids, phenol and acetone; chloride attack of any bare stainless steel is the corrosion load.'),
+ 'SI_REFINE': (
+  'Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen '
+  'chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite '
+  'chucks (or a silicon-lined fluidised bed on the silane route)',
+  'Dry chlorosilanes, hydrogen chloride and hydrogen at up to about 300 C in the hydrochlorinator and a cooled '
+  'wall round rods at about 1100 C (A-M-472, flow_graph/param/si_refine.py): dry hydrogen chloride and '
+  'chlorosilanes are carried in nickel and stainless steel, and any moisture makes hydrochloric acid, so the '
+  'loop is kept dry (ULLMANN_HCL; PERRY9_MAT). The product-contact parts are silicon or graphite so the charge '
+  'stays at electronic grade. ' + _TAG,
+  'Hastelloy C-276 for the purge and condensate lines if moisture ingress cannot be excluded',
+  'wetted by dry chlorosilanes; moisture is the corrosion load, controlled by the dry loop.'),
  'REE_RECOVER': (
   'glass-lined reactor, PTFE transfer, PP-H filter wetted (HCl service per AQS-STD-002 thermoplastic '
   'rules; no metal wetted part below 60 C); 316L muffle shell (dry oxide, 900 C)',
@@ -553,7 +599,7 @@ def main():
         if cur != new:
             p['sec3_material'] = new
             wrote += 1
-    json.dump(g, open(GP, 'w'), indent=1)
+    json.dump(g, open(GP, 'w'), indent=2)
     print(f'materials3: {len(SEL) + len(SEL_FARM)} selections issued ({len(SEL)} X-MAT-22, {len(SEL_FARM)} X-FARM/X-HAB), {wrote} changed')
 
 if __name__ == '__main__':

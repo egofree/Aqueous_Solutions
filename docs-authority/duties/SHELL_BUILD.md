@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 10 kg/d. Mass out 10 kg/d. Electrical duty 0.3000 kW. In: WAX_TO_SHELL 2 kg/d (wax pattern); IA-SILICA-MU 1 kg/d (foundry silica (flour/stucco/binder make-up)); IA-SHELL-RECLAIM 7 kg/d (reclaimed shell stucco/flour). Out: SHELL_TO_BURNOUT 10 kg/d (green shell).
+1. Basis. Mass in 10 kg/d. Mass out 10 kg/d. Electrical duty 0.3000 kW. In: WAX_TO_SHELL 2 kg/d (wax pattern); IA-SHELL-RECLAIM 7 kg/d (reclaimed shell stucco/flour); IA-SIL-SHOP 1 kg/d (recovered crib and spent-shell silica, shell make-up). Out: SHELL_TO_BURNOUT 10 kg/d (green shell).
 
 2. Size.
 - Envelope 1500×800×1500 mm, 1.8 m³. That box over this flow would be 4320.0 h if it were full. It is not a residence time.

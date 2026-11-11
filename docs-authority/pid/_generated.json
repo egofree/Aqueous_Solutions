@@ -1,10 +1,11 @@
 {
  "generated_by": "docs-authority/_pid_sheets.py",
- "graph_sha256": "f83479471427fa0f845487f5e486a95c191a72e3c12fc219048b7beae2866c77",
+ "graph_sha256": "f9461f96450b760356a0f392b244e864e479be929b16924ac3d568d61e9e0138",
  "patterns": [
   "docs-authority/pid/*"
  ],
  "sheets": [
+  "ACID_PLANT",
   "ACID_POLISH_SCRUB",
   "ADS_CHILL",
   "AFTERBURNER",
@@ -126,6 +127,7 @@
   "MFG_SHOP",
   "MG_POT",
   "MO_CELL",
+  "NAOH_PLANT",
   "NCG_HEADER",
   "NOX_SCRUB",
   "NUTRIENT_DOSE",
@@ -165,6 +167,7 @@
   "RELIEF_CRYO",
   "RELIEF_H2",
   "REMIN",
+  "RESIST_SYN",
   "RES_HEAT",
   "RF_HEAT",
   "ROLL",
@@ -175,8 +178,10 @@
   "SHELL_BURNOUT",
   "SINTER",
   "SI_REDUCE",
+  "SI_REFINE",
   "SLEEP_QUARTERS",
   "SOLAR_PV_CELL",
+  "SOLV_PLANT",
   "SOL_ARK_60K",
   "STOCK_OUT",
   "TFE_SYN",

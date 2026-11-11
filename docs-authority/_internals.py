@@ -143,7 +143,7 @@ EXPLICIT = {
  'H2_DRYER': 'dryer internals per the issued sizing: the molecular-sieve beds (sieve_kg per params.design) with the guard bed (guard_kg) on the 0.92 Nm3/h H2 stream',
  'RES_HEAT': 'furnace internals per the duty: the 12 kW connected resistance element array on the chamber walls and hearth (radiant service at 900 C, N+1 standby of SHELL_BURNOUT/SINTER) with the hot-face liner per duty section 3; hearth furniture at unit tasks 10-12',
  'SINTER': 'furnace internals per the duty: the 8 kW connected element array for powder sintering at 1300 C (N+1 consolidation of ROLL) with the hot-face liner and retort furniture per duty section 3',
- 'SI_REDUCE': 'reduction furnace internals per the sizing masses: the carbothermic charge sequence (3.85 kg/d quartz + 1.924 kg/d char -> 1.8 kg/d Si) in the retort with the hot-face liner per duty section 3',
+ 'SI_REDUCE': 'reduction furnace internals per the sizing of the silicon route (flow_graph/param/si_refine.py design): the carbothermic charge of quartz ore and pyrolysis char in the retort with the hot-face liner per duty section 3; the charge rates are written on the graph by the silicon-route stage',
  'CRYO_HX_Q4': 'Q4 recovery coil internals per the graph duty (S54 0.54 kW to Q4_BUS): an immersed water coil in the CRYO_O2 cold-box exit stream, the Q4 loop at 40-60 C (HEAT_LADDER.md); the coil is sized at the duty with the loop delta-T and carries no separate contacting internals',
  'MET_HX_Q4': 'melt off-heat recovery coil internals per the graph duties (IND_HEAT_TO_HX 1.063 kW + VAC_HEAT_TO_HX 0.638 kW, S63 0.017 kW to Q4_BUS): an immersed water coil in the melt-shop enclosure recovering induction and vacuum-furnace off-heat to the Q4 loop at 40-60 C; no separate contacting internals',
  'OIL_DRYER': 'none with basis: a heated dryer drum - the drying service is the shell itself, heated by the Q3 coil (HL-Q3-A/B-HX4 at 0.055 kW each per the heat-ladder edges); no contacting or separation internals booked',
@@ -156,6 +156,11 @@ EXPLICIT = {
  'OIL_FRAC': 'fractionator column internals per the graph duty (33.4 kg/d pyrolysis oil feed, four cuts at 7.4/9.9/6.2/5.9 kg/d, A-M-138 SU2018_PYRO cut split): a packed column with 6 mm glass Raschig rings in three beds at the 3-bed cut sequence (C5-C10/C11-C18/C19-C28/C29+), each bed sized by the Fenske-Underwood-Gilliland method for the binary-split classes at total reflux minimum',
  'ZNBR2': 'ZnBr2 flow-battery store internals per the design-linked build (ess_tf design block, X-MFG-43, A-M-456/457): 47 module bays (one per hybrid inverter) of 95 bipolar plates at the 6 mm pitch filling the booked 2223.1 m2 electrode area (99.6 A x 172.9 V DC per stack), one PVC-U electrolyte reservoir per module at 2 M (529.4 L, A-M-457), with the pumps and coolers at the charge-window book to IA-ZNBR-HEAT (A-M-455; A-M-179 gates the measured derate)',
  'POLY_OLEFIN': 'none with basis: the accepted manufacturing model books the shell and the nozzle set only; the node carries internals none and names no agitator and no jacket, so none is drawn and the open reactor volume is the design (models/mfg/POLY_OLEFIN/WORK_ORDER.md W3 and W12; node design D/H/wall, AQS-SIZE-OIL-POLY)',
+ 'ACID_PLANT': 'acid-plant internals per the sizing of the on-site sulfuric route (flow_graph/param/sulfuric.py _duty): the cake-kiln tube with its ceramic-fibre insulation, the sulfur burner chamber, the vanadium catalyst beds of the contact converter and the packed absorber, each sized at the issued campaign duties; the residue lime for the slaker leaves with the kiln discharge',
+ 'NAOH_PLANT': 'caustic-plant internals per the sizing of the on-site sodium route (flow_graph/param/caustic.py): the membrane-cell stack with titanium anode pans, nickel cathode pans and perfluorinated membranes on the chlor-alkali route (or the slaker, causticiser and white-liquor tank on the causticising route), the brine re-saturation bed and the liquor head tank, sized at the make-up rates',
+ 'SOLV_PLANT': 'solvent-plant internals per the sizing of the on-site bench-solvent route (flow_graph/param/solvent.py): the segregated-drain batch still with reboiler and receivers, and the carbonylation, ketonisation and hydrogenation reactors of the selected make-up route (or the nitrogen-blanketed fermenters), sized at the recovery and make-up duties',
+ 'RESIST_SYN': 'photoresist-synthesis internals per the sizing of the on-site resist route (flow_graph/param/fab_resist.py design and its reaction ledger): the glass-lined batch reactors of the oxychlorination, nitrosation, diazotisation and esterification steps with the oxidiser tubes and the novolac kettle, sized at the coat-rate duties',
+ 'SI_REFINE': 'silicon-refining internals per the sizing of the on-site silicon loop (flow_graph/param/si_refine.py design): the hydrochlorinator, the trichlorosilane distillation column and the Siemens bell jar with its cooled wall and silicon rods on graphite chucks (or the fluidised bed on the silane route), sized at the electronic-grade charge',
 }
 # sharpened open-gap texts for the units whose missing design data is specific (overrides the
 # generic 'no issued internals basis' text; still open - the gap is named, not closed)
@@ -186,6 +191,9 @@ EXPLICIT_EVID = {
  'VCD_TRAIN': 'docs-authority/sizing/VCD_TRAIN.md', 'BMED_UPW_POLISH': 'docs-authority/sizing/BMED_UPW_POLISH.md',
  'H2_DRYER': 'docs-authority/sizing/H2_DRYER.md', 'RES_HEAT': 'docs-authority/sizing/RES_HEAT.md',
  'SINTER': 'docs-authority/sizing/SINTER.md', 'SI_REDUCE': 'docs-authority/sizing/SI_REDUCE.md',
+ 'ACID_PLANT': 'docs-authority/sizing/ACID_PLANT.md', 'NAOH_PLANT': 'docs-authority/sizing/NAOH_PLANT.md',
+ 'SOLV_PLANT': 'docs-authority/sizing/SOLV_PLANT.md', 'RESIST_SYN': 'docs-authority/sizing/RESIST_SYN.md',
+ 'SI_REFINE': 'docs-authority/sizing/SI_REFINE.md',
  'FLOAT_SINK': 'docs-authority/sizing/FLOAT_SINK.md',
  'BAGHOUSE': 'docs-authority/sizing/BAGHOUSE.md',
  'CRU': 'docs-authority/sizing/CRU.md',

@@ -76,7 +76,9 @@ def test_totals_reconcile_to_the_csv():
     tot_j = sum(int(f['joints']) for f in FAM)
     tot_el = sum(int(f['elbows_90']) for f in FAM)
     m = re.search(rf'{len(FAM)} families, ([\d,.]+) m pipe in (\d+) lines, delivered as (\d+) stock lengths', summary)
-    assert m and float(m.group(1).replace(',', '')) == tot_m, 'pipe m total'
+    ## doc shows the total rounded to 0.1 m (test_wire_specs idiom); an exact float
+    ## equality breaks once the per-family sum carries a tail ulp (family 4, 2026-11-10)
+    assert m and abs(float(m.group(1).replace(',', '')) - tot_m) < 0.05, 'pipe m total'
     assert int(m.group(3)) == tot_len, 'stock-length total'
     j = re.search(r'(\d+) elbows, (\d+) flange sets, (\d+) joints', summary)
     assert j and int(j.group(1)) == tot_el and int(j.group(3)) == tot_j

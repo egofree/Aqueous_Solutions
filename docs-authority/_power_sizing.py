@@ -18,9 +18,21 @@ from flow_graph.param import drivers as DR
 from flow_graph.param.sizing import power as PW
 from flow_graph.param import backup_fuel as BF
 _d = DR.load()
+# In-memory continuous-kW overrides (write_graph heat stage, F-20261110-08): `--set-continuous U=V,...`
+# applies the solved values to the graph snapshots this sizing reads, so a caller never has to write
+# the graph file mid-stage to feed the power chain a duty it already solved in memory.
+_setov = {}
+for _a in sys.argv[1:]:
+    if _a.startswith('--set-continuous='):
+        for _p in _a.split('=', 1)[1].split(','):
+            _u, _sv = _p.split('=')
+            _setov[_u] = float(_sv)
 ew=json.loads(subprocess.run(['python3','docs-authority/_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['total']
 rect=json.loads(subprocess.run(['python3','docs-authority/_rect_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['total']
 _g=json.load(open('flow_graph/plant_flow_graph.json')); _gc={n['unit_id']:n for n in _g['nodes']}
+for _u, _sv in _setov.items():
+    for _n in _g['nodes']:
+        if _n['unit_id'] == _u: _n['continuous_kw'] = {'value': _sv, 'unit': 'kW', 'status': 'study', 'note': 'in-memory override (write_graph heat stage)'}
 PSH=DR.val(_d,'pv_yield_kWh_kWp_d'); DER=DR.val(_d,'pv_system_derate'); RT=DR.val(_d,'storage_round_trip'); NIGHT=DR.val(_d,'night_hours'); AUT_CRIT=DR.val(_d,'crit_autonomy_d')
 GEN=BF.rating_kw(_gc, _d)
 GEN_KW=GEN['rated_kW']
@@ -144,6 +156,8 @@ if _primary_kind != 'pv':
 
 # graph snapshot (existing keys preserved)
 _g2 = json.load(open('flow_graph/plant_flow_graph.json')); _n2 = {n['unit_id']: n for n in _g2['nodes']}
+for _u, _sv in _setov.items():
+    if _u in _n2: _n2[_u]['continuous_kw'] = dict(_n2[_u].get('continuous_kw') or {}, value=_sv)
 _pv2 = _n2['PV_ARRAY']['params']
 _np2 = _pv2.get('nameplate_kw') or round(_pv2.get('module_kw', 0) * _pv2.get('count', 1), 2)
 out['graph'] = dict(pv_nameplate_kW=_np2, pv_avg_kW=_n2['PV_ARRAY']['continuous_kw']['value'],

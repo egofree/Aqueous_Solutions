@@ -71,6 +71,20 @@ Table 3.1. Same-level pairs
 | S1 | CRYO_O2 | PROD_C29 | L-1 | 18125 | distance | pass |
 | S1 | CRYO_O2 | PROD_C5_C10 | L-1 | 18948 | distance | pass |
 | S1 | CRYO_O2 | PROD_MEOH | L-1 | 13300 | distance | pass |
+| S1 | GREASE_CA | CRYO_H2 | L-1 | 19313 | distance | pass |
+| S1 | GREASE_CA | EW_3 | L-1 | 7905 | distance | pass |
+| S1 | GREASE_CA | EW_4 | L-1 | 4480 | 1 h room around GREASE_CA | pass |
+| S1 | GREASE_CA | EW_5 | L-1 | 9784 | distance | pass |
+| S1 | GREASE_CA | EW_6 | L-1 | 8207 | distance | pass |
+| S1 | GREASE_CA | EW_7 | L-1 | 6180 | 1 h room around GREASE_CA | pass |
+| S1 | GREASE_CA | EW_8 | L-1 | 4576 | 1 h room around GREASE_CA | pass |
+| S1 | GREASE_CA | H2O_ELYZ | L-1 | 10226 | distance | pass |
+| S1 | GREASE_CA | OIL_FRAC | L-1 | 2302 | 1 h room around GREASE_CA | pass |
+| S1 | GREASE_CA | PROD_C11_C18 | L-1 | 200 | 1 h room around GREASE_CA | pass |
+| S1 | GREASE_CA | PROD_C19_C28 | L-1 | 2200 | 1 h room around GREASE_CA | pass |
+| S1 | GREASE_CA | PROD_C29 | L-1 | 400 | 1 h room around GREASE_CA | pass |
+| S1 | GREASE_CA | PROD_C5_C10 | L-1 | 1300 | 1 h room around GREASE_CA | pass |
+| S1 | GREASE_CA | PROD_MEOH | L-1 | 12363 | distance | pass |
 | S1 | H2O_ELYZ | CRYO_H2 | L-1 | 15600 | distance | pass |
 | S1 | H2O_ELYZ | EW_3 | L-1 | 12496 | distance | pass |
 | S1 | H2O_ELYZ | EW_4 | L-1 | 10439 | distance | pass |
@@ -101,6 +115,20 @@ Table 3.1. Same-level pairs
 | S1 | PROD_O2 | PROD_C29 | L-1 | 15108 | distance | pass |
 | S1 | PROD_O2 | PROD_C5_C10 | L-1 | 15241 | distance | pass |
 | S1 | PROD_O2 | PROD_MEOH | L-1 | 1050 | 1 h room around PROD_O2 | pass |
+| S1 | SI_REDUCE | CRYO_H2 | L-1 | 24105 | distance | pass |
+| S1 | SI_REDUCE | EW_3 | L-1 | 11565 | distance | pass |
+| S1 | SI_REDUCE | EW_4 | L-1 | 8691 | distance | pass |
+| S1 | SI_REDUCE | EW_5 | L-1 | 14901 | distance | pass |
+| S1 | SI_REDUCE | EW_6 | L-1 | 13359 | distance | pass |
+| S1 | SI_REDUCE | EW_7 | L-1 | 9880 | distance | pass |
+| S1 | SI_REDUCE | EW_8 | L-1 | 8278 | distance | pass |
+| S1 | SI_REDUCE | H2O_ELYZ | L-1 | 14747 | distance | pass |
+| S1 | SI_REDUCE | OIL_FRAC | L-1 | 5672 | 1 h room around SI_REDUCE | pass |
+| S1 | SI_REDUCE | PROD_C11_C18 | L-1 | 4604 | 1 h room around SI_REDUCE | pass |
+| S1 | SI_REDUCE | PROD_C19_C28 | L-1 | 2693 | 1 h room around SI_REDUCE | pass |
+| S1 | SI_REDUCE | PROD_C29 | L-1 | 3607 | 1 h room around SI_REDUCE | pass |
+| S1 | SI_REDUCE | PROD_C5_C10 | L-1 | 3053 | 1 h room around SI_REDUCE | pass |
+| S1 | SI_REDUCE | PROD_MEOH | L-1 | 16719 | distance | pass |
 | S2 | AFTERBURNER | CRYO_H2 | L-1 | 20752 | distance | pass |
 | S2 | AFTERBURNER | EW_3 | L-1 | 7872 | distance | pass |
 | S2 | AFTERBURNER | EW_4 | L-1 | 5309 | 1 h room around AFTERBURNER | pass |
@@ -156,6 +184,6 @@ Table 3.1. Same-level pairs
 | S2 | SHELL_BURNOUT | POLY_OLEFIN | L0 | 26169 | distance | pass |
 | S2 | SHELL_BURNOUT | ZNBR2 | L0 | 13523 | distance | pass |
 
-Cross-level pairs (125) pass on the floor slab.
+Cross-level pairs (131) pass on the floor slab.
 
-Layout change applied: 1 h rated rooms with their own exhaust around 10 units (AFTERBURNER, AFTERBURNER_FLUE, BACKUP_GEN, CRYO_ASU, CRYO_O2, GLASS_BURNOUT, H2O_ELYZ, MEOH_FC, OIL_PYRO, PROD_O2), written to `flow_graph/fire_rooms.json` (room = unit plan + 1 m each side) for the CAD fire-barrier model. Any remaining FAIL is a layout action: move one unit to 7,620 mm, add a rated 1 h partition between them, or (S2) enclose the ignition source in a 1 h room with its own ventilation. Unresolved pairs are checked again once the block-placed units get individual positions.
+Layout change applied: 1 h rated rooms with their own exhaust around 12 units (AFTERBURNER, AFTERBURNER_FLUE, BACKUP_GEN, CRYO_ASU, CRYO_O2, GLASS_BURNOUT, GREASE_CA, H2O_ELYZ, MEOH_FC, OIL_PYRO, PROD_O2, SI_REDUCE), written to `flow_graph/fire_rooms.json` (room = unit plan + 1 m each side) for the CAD fire-barrier model. Any remaining FAIL is a layout action: move one unit to 7,620 mm, add a rated 1 h partition between them, or (S2) enclose the ignition source in a 1 h room with its own ventilation. Unresolved pairs are checked again once the block-placed units get individual positions.

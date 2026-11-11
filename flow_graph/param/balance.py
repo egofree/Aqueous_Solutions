@@ -80,8 +80,11 @@ def physics(g):
                            ('GALLEY', 'GALLEY_MEALS', True, 'served meals close the galley by difference over the issue, greens, biowaste, shell and grey (A-M-426/427)')):
         if k in E:
             r = _unit_resid(g, u); put(k, v(k) + (r if out else -r), why)
-    if 'IA-HOP-01' in E and -1e-3 < float(E['IA-HOP-01']['rate']['value'] or 0) < 0:
-        put('IA-HOP-01', 0.0, 'snapped to zero: the retired scrap line closes at the grid; the sub-milligram dust rides the reconciliation')
+    if 'IA-HOP-01' in E:
+        from . import drivers as _drv
+        _band = _drv.load()['balance_residual_band_kg_d']['value']
+        if -_band < float(E['IA-HOP-01']['rate']['value'] or 0) < 0:
+            put('IA-HOP-01', 0.0, 'snapped to zero: the retired scrap line closes at the grid; the sub-milligram dust rides the reconciliation')
     # MFG_SHOP is NOT closed here on POLY_TO_MFG/MFG_SCRAP_TO_IND: that pair is a coupled two-edge closure owned by the
     # foundry_poly regen stage (S = K + P + r0, A-M-261) - a partial in-memory mirror would fight it. The shop's surplus
     # outlet is the finished-goods dock export IA-GOODS-SHIP (Q-038 rebasis 2026-11-04: was the S16 scrap line, which had

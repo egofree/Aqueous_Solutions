@@ -18,7 +18,7 @@ Units: BACKUP_GEN, FUEL_CELL, LOAD_AGG, PV_ARRAY, RECTIFIER, SOL_ARK_60K, ZNBR2,
 - **Normal:** 30 loops on PLC-ELEC in auto; operator rounds per shift on levels and temperatures of BACKUP_GEN, ZNBR2; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-0 running (none), trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 2-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
-- **Emergency:** 5 trips: SIF-091 level high-high → close feed valve / stop feed pump; SIF-014 flow or level low-low → pump stop; SIF-169 level high-high → close feed valve / stop feed pump; SIF-174 H2 at 25 % LFL in the purge → stop charging, purge fan to high; SIF-170 level high-high → close feed valve / stop feed pump. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
+- **Emergency:** 5 trips: SIF-098 level high-high → close feed valve / stop feed pump; SIF-014 flow or level low-low → pump stop; SIF-179 level high-high → close feed valve / stop feed pump; SIF-184 H2 at 25 % LFL in the purge → stop charging, purge fan to high; SIF-180 level high-high → close feed valve / stop feed pump. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
 
 ## 2. PUMPED_HYDRO
 
@@ -33,10 +33,10 @@ Units: HYDRO_SET.
 
 Units: BLACK_DIGEST, BMED_UPW_POLISH, CATCH_TANK, GREY_TREAT, GW_INTAKE, REMIN, ROOF_TANK, VCD_TRAIN.
 
-- **Normal:** 58 loops on PLC-WTR in auto; operator rounds per shift on levels and temperatures of BLACK_DIGEST, BMED_UPW_POLISH, GREY_TREAT, REMIN, ROOF_TANK, VCD_TRAIN; alarm response per AQS-CTL-001.
+- **Normal:** 59 loops on PLC-WTR in auto; operator rounds per shift on levels and temperatures of BLACK_DIGEST, BMED_UPW_POLISH, GREY_TREAT, REMIN, ROOF_TANK, VCD_TRAIN; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-2 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 4-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
-- **Emergency:** 7 trips: SIF-092 level high-high → close feed valve / stop feed pump; SIF-095 level high-high → close feed valve / stop feed pump; SIF-098 level high-high → close feed valve / stop feed pump; SIF-123 level high-high → close feed valve / stop feed pump; SIF-151 level high-high → close feed valve / stop feed pump; SIF-152 level high-high → close feed valve / stop feed pump …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
+- **Emergency:** 7 trips: SIF-099 level high-high → close feed valve / stop feed pump; SIF-102 level high-high → close feed valve / stop feed pump; SIF-105 level high-high → close feed valve / stop feed pump; SIF-129 level high-high → close feed valve / stop feed pump; SIF-159 level high-high → close feed valve / stop feed pump; SIF-161 level high-high → close feed valve / stop feed pump …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
 
 ## 4. HEAT
 
@@ -54,7 +54,7 @@ Units: ACID_POLISH_SCRUB, AFTERBURNER_FLUE, ALK_SCRUBBER, BAGHOUSE, FLUE_KO, H2_
 - **Normal:** 34 loops on PLC-GAS in auto; operator rounds per shift on levels and temperatures of FLUE_KO; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-4 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 6-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
-- **Emergency:** 9 trips: SIF-089 level high-high → close feed valve / stop feed pump; SIF-003 flow or level low-low → pump stop; SIF-004 temperature high-high → heater supply off; SIF-090 level high-high → close feed valve / stop feed pump; SIF-005 flow or level low-low → pump stop; SIF-118 level high-high → close feed valve / stop feed pump …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
+- **Emergency:** 9 trips: SIF-096 level high-high → close feed valve / stop feed pump; SIF-003 flow or level low-low → pump stop; SIF-004 temperature high-high → heater supply off; SIF-097 level high-high → close feed valve / stop feed pump; SIF-005 flow or level low-low → pump stop; SIF-125 level high-high → close feed valve / stop feed pump …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
 
 ## 6. CRYO
 
@@ -76,12 +76,12 @@ Units: GEO_GHEX, GEO_HP, GEO_HP_CLOSED_LOOP.
 
 ## 8. DIGESTER
 
-Units: BMED_ACID, BMED_BASE, CONTINUOUS_RECYCLE, CRU, EVAP_ACID, EVAP_ACID_VS, EVAP_BASE, EW_1, EW_2, EW_3, EW_4, EW_5, EW_6, EW_7, EW_8, EW_9, FLOAT_SINK, F_RECOVER, HX8, LEACH_CSTR_1, LI_RECOVER, POLISH_BANK, P_CA, SALT_FEED.
+Units: BMED_ACID, BMED_BASE, CONTINUOUS_RECYCLE, CRU, EVAP_ACID, EVAP_ACID_VS, EVAP_BASE, EW_1, EW_2, EW_3, EW_4, EW_5, EW_6, EW_7, EW_8, EW_9, FLOAT_SINK, F_RECOVER, HX8, LEACH_CSTR_1, LI_RECOVER, NAOH_PLANT, POLISH_BANK, P_CA, SALT_FEED.
 
-- **Normal:** 151 loops on PLC-DIGESTER in auto; operator rounds per shift on levels and temperatures of BMED_ACID, BMED_BASE, CONTINUOUS_RECYCLE, CRU, EVAP_ACID, EVAP_ACID_VS, EVAP_BASE, EW_1 …; alarm response per AQS-CTL-001.
+- **Normal:** 156 loops on PLC-DIGESTER in auto; operator rounds per shift on levels and temperatures of BMED_ACID, BMED_BASE, CONTINUOUS_RECYCLE, CRU, EVAP_ACID, EVAP_ACID_VS, EVAP_BASE, EW_1 …; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-7 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 9-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
-- **Emergency:** 25 trips: SIF-093 level high-high → close feed valve / stop feed pump; SIF-094 level high-high → close feed valve / stop feed pump; SIF-100 level high-high → close feed valve / stop feed pump; SIF-102 level high-high → close feed valve / stop feed pump; SIF-063 temperature high-high → heater supply off; SIF-103 level high-high → close feed valve / stop feed pump …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
+- **Emergency:** 28 trips: SIF-100 level high-high → close feed valve / stop feed pump; SIF-101 level high-high → close feed valve / stop feed pump; SIF-107 level high-high → close feed valve / stop feed pump; SIF-109 level high-high → close feed valve / stop feed pump; SIF-063 temperature high-high → heater supply off; SIF-110 level high-high → close feed valve / stop feed pump …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
 
 ## 9. MEOH
 
@@ -90,25 +90,25 @@ Units: MEOH_COND, MEOH_FC, MEOH_FERM, MEOH_SYNTH, MEOH_TANK, MET_SYN.
 - **Normal:** 36 loops on PLC-MEOH in auto; operator rounds per shift on levels and temperatures of MEOH_COND, MEOH_FC, MEOH_TANK; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-8 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 10-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
-- **Emergency:** 7 trips: SIF-132 level high-high → close feed valve / stop feed pump; SIF-133 level high-high → close feed valve / stop feed pump; SIF-021 flow or level low-low → pump stop; SIF-022 flow or level low-low → pump stop; SIF-023 temperature high-high → heater supply off; SIF-134 level high-high → close feed valve / stop feed pump …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
+- **Emergency:** 7 trips: SIF-138 level high-high → close feed valve / stop feed pump; SIF-139 level high-high → close feed valve / stop feed pump; SIF-021 flow or level low-low → pump stop; SIF-022 flow or level low-low → pump stop; SIF-023 temperature high-high → heater supply off; SIF-140 level high-high → close feed valve / stop feed pump …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
 
 ## 10. OIL
 
 Units: AFTERBURNER, C29_RECYCLE, GREASE_CA, GREASE_LI, HOPPER, OIL_DRYER, OIL_FRAC, OIL_PYRO, PROD_C11_C18, PROD_C19_C28, PROD_C29, PROD_C5_C10.
 
-- **Normal:** 63 loops on PLC-OIL in auto; operator rounds per shift on levels and temperatures of C29_RECYCLE, OIL_FRAC, OIL_PYRO, PROD_C11_C18, PROD_C19_C28, PROD_C29, PROD_C5_C10; alarm response per AQS-CTL-001.
+- **Normal:** 62 loops on PLC-OIL in auto; operator rounds per shift on levels and temperatures of C29_RECYCLE, GREASE_CA, OIL_FRAC, OIL_PYRO, PROD_C11_C18, PROD_C19_C28, PROD_C29, PROD_C5_C10; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-9 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 11-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
-- **Emergency:** 15 trips: SIF-001 flow or level low-low → pump stop; SIF-002 temperature high-high → heater supply off; SIF-096 level high-high → close feed valve / stop feed pump; SIF-121 level high-high → close feed valve / stop feed pump; SIF-122 level high-high → close feed valve / stop feed pump; SIF-019 flow or level low-low → pump stop …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
+- **Emergency:** 14 trips: SIF-001 flow or level low-low → pump stop; SIF-002 temperature high-high → heater supply off; SIF-103 level high-high → close feed valve / stop feed pump; SIF-128 level high-high → close feed valve / stop feed pump; SIF-019 flow or level low-low → pump stop; SIF-028 temperature high-high → heater supply off …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
 
 ## 11. GLASS
 
-Units: GLASS_BURNOUT, GLASS_DIGEST, GLASS_MILL, GLASS_RINSE, SI_REDUCE.
+Units: GLASS_BURNOUT, GLASS_DIGEST, GLASS_MILL, GLASS_RINSE, SI_REDUCE, SI_REFINE.
 
-- **Normal:** 13 loops on PLC-GLASS in auto; operator rounds per shift on levels and temperatures of GLASS_DIGEST; alarm response per AQS-CTL-001.
+- **Normal:** 16 loops on PLC-GLASS in auto; operator rounds per shift on levels and temperatures of GLASS_DIGEST; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-10 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 12-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
-- **Emergency:** 5 trips: SIF-033 flow or level low-low → pump stop; SIF-120 level high-high → close feed valve / stop feed pump; SIF-032 flow or level low-low → pump stop; SIF-031 flow or level low-low → pump stop; SIF-062 flow or level low-low → pump stop. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
+- **Emergency:** 7 trips: SIF-033 flow or level low-low → pump stop; SIF-127 level high-high → close feed valve / stop feed pump; SIF-032 flow or level low-low → pump stop; SIF-031 flow or level low-low → pump stop; SIF-062 flow or level low-low → pump stop; SIF-093 flow or level low-low → pump stop …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
 
 ## 12. NUT
 
@@ -117,7 +117,7 @@ Units: NUTRIENT_DOSE.
 - **Normal:** 10 loops on PLC-NUT in auto; operator rounds per shift on levels and temperatures of NUTRIENT_DOSE; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-11 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 13-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
-- **Emergency:** 1 trips: SIF-139 level high-high → close feed valve / stop feed pump. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
+- **Emergency:** 1 trips: SIF-146 level high-high → close feed valve / stop feed pump. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
 
 ## 13. FARM
 
@@ -135,7 +135,7 @@ Units: COMMON_AREA, GALLEY, HABITATION, MEDICAL, REC_DAYROOM, SLEEP_QUARTERS, WA
 - **Normal:** 12 loops on PLC-HAB in auto; operator rounds per shift on levels and temperatures of HABITATION; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-13 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 15-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
-- **Emergency:** 2 trips: SIF-078 flow or level low-low → pump stop; SIF-127 level high-high → close feed valve / stop feed pump. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
+- **Emergency:** 2 trips: SIF-078 flow or level low-low → pump stop; SIF-133 level high-high → close feed valve / stop feed pump. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
 
 ## 15. MFG
 
@@ -148,12 +148,12 @@ Units: BLOW_MOLD, COLD_MILL, ELECTRODE_COAT, GAS_ATOMIZER, MET_AHU, MET_HX_Q4, M
 
 ## 16. FAB
 
-Units: FAB_UPW_TANK, LITHO_ALIGN, LITHO_COAT, LITHO_DEV, SOLAR_PV_CELL, WAFER_FAB, WET_BENCH, WS_AMMONIA, WS_DOPE, WS_HF_ED, WS_KOH, WS_NITRIC, WS_PEROX, WS_PHOS, WS_SLURRY, WS_SOLV.
+Units: FAB_UPW_TANK, LITHO_ALIGN, LITHO_COAT, LITHO_DEV, RESIST_SYN, SOLAR_PV_CELL, SOLV_PLANT, WAFER_FAB, WET_BENCH, WS_AMMONIA, WS_DOPE, WS_HF_ED, WS_KOH, WS_NITRIC, WS_PEROX, WS_PHOS, WS_SLURRY, WS_SOLV.
 
-- **Normal:** 73 loops on PLC-FAB in auto; operator rounds per shift on levels and temperatures of FAB_UPW_TANK, WAFER_FAB, WET_BENCH, WS_DOPE, WS_HF_ED, WS_KOH, WS_NITRIC, WS_PEROX …; alarm response per AQS-CTL-001.
+- **Normal:** 84 loops on PLC-FAB in auto; operator rounds per shift on levels and temperatures of FAB_UPW_TANK, RESIST_SYN, SOLV_PLANT, WAFER_FAB, WET_BENCH, WS_DOPE, WS_HF_ED, WS_KOH …; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-15 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 17-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
-- **Emergency:** 18 trips: SIF-115 level high-high → close feed valve / stop feed pump; SIF-035 flow or level low-low → pump stop; SIF-034 flow or level low-low → pump stop; SIF-036 flow or level low-low → pump stop; SIF-037 flow or level low-low → pump stop; SIF-040 flow or level low-low → pump stop …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
+- **Emergency:** 22 trips: SIF-122 level high-high → close feed valve / stop feed pump; SIF-035 flow or level low-low → pump stop; SIF-034 flow or level low-low → pump stop; SIF-036 flow or level low-low → pump stop; SIF-037 flow or level low-low → pump stop; SIF-092 flow or level low-low → pump stop …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
 
 ## 17. FOUNDRY
 
@@ -162,14 +162,14 @@ Units: AL_POT, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRAW, EXTRUDE, 
 - **Normal:** 93 loops on PLC-FOUNDRY in auto; operator rounds per shift on levels and temperatures of CAST_LINE, CA_POT, CONT_CAST, INV_CAST, MG_POT, WAX_PATTERN; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-16 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 18-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
-- **Emergency:** 21 trips: SIF-054 flow or level low-low → pump stop; SIF-097 level high-high → close feed valve / stop feed pump; SIF-099 level high-high → close feed valve / stop feed pump; SIF-050 flow or level low-low → pump stop; SIF-101 level high-high → close feed valve / stop feed pump; SIF-045 flow or level low-low → pump stop …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
+- **Emergency:** 21 trips: SIF-054 flow or level low-low → pump stop; SIF-104 level high-high → close feed valve / stop feed pump; SIF-106 level high-high → close feed valve / stop feed pump; SIF-050 flow or level low-low → pump stop; SIF-108 level high-high → close feed valve / stop feed pump; SIF-045 flow or level low-low → pump stop …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
 
 ## 18. POLYMERS
 
-Units: FILM_CAST, HF_GEN, PELLET, POLY_COND, POLY_F, POLY_FIBER, POLY_OLEFIN, POLY_STOCK, POWDER_RESIN, TFE_SYN, VDF_SYN.
+Units: ACID_PLANT, FILM_CAST, HF_GEN, PELLET, POLY_COND, POLY_F, POLY_FIBER, POLY_OLEFIN, POLY_STOCK, POWDER_RESIN, TFE_SYN, VDF_SYN.
 
-- **Normal:** 56 loops on PLC-POLYMERS in auto; operator rounds per shift on levels and temperatures of FILM_CAST, HF_GEN, POLY_F, POLY_OLEFIN, TFE_SYN, VDF_SYN; alarm response per AQS-CTL-001.
+- **Normal:** 60 loops on PLC-POLYMERS in auto; operator rounds per shift on levels and temperatures of ACID_PLANT, FILM_CAST, HF_GEN, POLY_F, POLY_OLEFIN, TFE_SYN, VDF_SYN; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-17 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 19-18 stopped first (none). Normal stop leaves liquids in place, hot or cold standby.
-- **Emergency:** 12 trips: SIF-116 level high-high → close feed valve / stop feed pump; SIF-044 temperature high-high → heater supply off; SIF-128 level high-high → close feed valve / stop feed pump; SIF-059 flow or level low-low → pump stop; SIF-144 level high-high → close feed valve / stop feed pump; SIF-087 flow or level low-low → pump stop …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
+- **Emergency:** 14 trips: SIF-091 flow or level low-low → pump stop; SIF-095 level high-high → close feed valve / stop feed pump; SIF-123 level high-high → close feed valve / stop feed pump; SIF-044 temperature high-high → heater supply off; SIF-134 level high-high → close feed valve / stop feed pump; SIF-059 flow or level low-low → pump stop …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
 

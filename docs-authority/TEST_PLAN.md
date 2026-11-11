@@ -16,13 +16,13 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | Phase | Scope | Items | Closes with |
 | --- | --- | --- | --- |
 | T1 | Owner and site data | 52 | Owner decision or site investigation report |
-| T2 | In-house design tests and standard data | 39 | In-house test record or standard data filed against the item |
-| T3 | Bench and laboratory tests | 73 | Bench test report with method, data and result |
+| T2 | In-house design tests and standard data | 42 | In-house test record or standard data filed against the item |
+| T3 | Bench and laboratory tests | 79 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 527 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 558 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 39 | Commissioning record |
 
-Total 751 items: 346 drivers, 405 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 791 items: 367 drivers, 424 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -89,6 +89,8 @@ Total 751 items: 346 drivers, 405 register entries. Classification rule: first m
 | driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_H_mm | 2200 mm skid height incl. separator deck | in-house skid GA at the fabrication-design task | X-PAR |
 | driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_W_mm | 1050 mm skid width (fits the CRYO H2-bay aisle) | in-house skid GA at the fabrication-design task | X-PAR |
 | driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_m2_per_kW | 0.025 m2 skid plan area per kW rated stack (PEM stack enclosure) | in-house skid GA at the fabrication-design task | X-PAR |
+| driver FAB.pv-wafer-train.cell_eff_CZ | 0.19 - efficiency at standard test conditions of a screen-printed single-crystal cell with an aluminium back field | IV-test the first in-house cells and compare the measured efficiency | X-PAR |
+| driver FAB.pv-wafer-train.cell_eff_MC | 0.175 - efficiency at standard test conditions of a screen-printed multicrystalline cell with an aluminium back field | IV-test the first in-house cells and compare the measured efficiency | X-PAR |
 | driver atom_GMR | 2.5 kg Ar per kg metal | Trial run on the first article (X-MFG-37) | X-PAR |
 | driver blow_mold_air_kW | 0.75 kW blow-air class (SI-MFG-01) | Motor nameplate | X-PAR |
 | driver blow_mold_clamp_kW | 0.75 kW clamp class (SI-MFG-01) | Motor nameplate | X-PAR |
@@ -124,6 +126,7 @@ Total 751 items: 346 drivers, 405 register entries. Classification rule: first m
 | A-M-332 | EXT_HALL heat-pump condenser fans: electronically commutated kW | Check the selected fan's nameplate or datasheet for motor type (EC or induction), rated power, supply voltage and speed-control method; update the motor inventory row and this entry | X-INV-01 |
 | A-M-397 | 0.90 - | Coating coupon exposure test at the landing site | X-LOC-09 |
 | A-M-456 | 95 plates/module, 0.49789 m2 active each, 6 mm pitch, 20 mA/ plates/module; m2; mm; mA/cm2; V | X-MFG-41 10-cell stack test (AQS-TST-002) for the performance class; the plate layout reads the first-article stack GA | CAD-representation audit, ZNBR2 machine design (X-MFG-41 support, 2026-11-04) |
+| A-M-484 | The solar cell line SOLAR_PV_CELL makes the cells that repla cells/d | IV-test the first in-house cells and map the minority-carrier lifetime of the first cast block, and compare with the drivers | QA audit 2026-10-30, X-RTE-PV-SI |
 
 ## 4. T3 Bench and laboratory tests
 
@@ -153,6 +156,8 @@ Total 751 items: 346 drivers, 405 register entries. Classification rule: first m
 | driver h2c_eta_ad | 0.65 stage adiabatic efficiency incl. valve losses | bench run of the first-article head: indicator diagram and flow | X-PAR |
 | driver h2c_eta_v | 0.8 volumetric efficiency | same bench run | X-PAR |
 | driver litho_dev_kW | 0.008 kW wet-develop bench circulation + N2 puff class (study) | Bench inventory audit | X-PAR |
+| driver oil_c11c18_naphthalene_frac | 0.01 mass fraction naphthalene in the C11-C18 cut of the plastics pyrolysis oil (SU2018_PYRO) | aromatics assay of the C11-C18 cut | X-PAR |
+| driver oil_c5c10_benzene_frac | 0.02 mass fraction benzene in the C5-C10 cut of the plastics pyrolysis oil (SU2018_PYRO) | aromatics assay of the C5-C10 cut | X-PAR |
 | driver pem_stack_j_A_cm2 | 1.8 A/cm2 PEM stack current density (BERNT2018-class operating point, study) | Stack polarisation test at 1.8 A/cm2 | X-PAR |
 | driver ppt_naoh_per_cl | 1.0 mol NaOH per mol chloride precipitated as hydroxide | Bench hydroxide precipitation of class A leach liquor: NaOH consumed per mol chloride to the target pH; Ca retained in solution (Ca(OH)2 is sparingly soluble) measured by ICP-OES | X-PAR |
 | driver ro_feed_TDS_mg_L | 20.0 mg/L NaCl equivalent in VCD distillate | Conductivity of S25 at commissioning | X-PAR |
@@ -167,6 +172,7 @@ Total 751 items: 346 drivers, 405 register entries. Classification rule: first m
 | driver rx_meohferm_T_C | 35 C | same bench run | X-PAR |
 | driver rx_meohferm_tau_h | 48 h | bench ferment of habitation organics: methanol release (pectin demethylation) against time | X-PAR |
 | driver rx_tip_m_s | 2.5 m/s impeller tip speed for suspension | Just-suspended speed (Zwietering) at the bench | X-PAR |
+| driver s08_silicate_carry_frac | 0.326424 kg of feed silicate_oxide carried with the leach crib solids to S08 per kg in the feed; holds the AQS-PAR-003 reconciled crib rate after the X-QA-04 deposit rebasis, interim until a characterized crib lot | Characterized crib lot per AQS-ASSAY-001 section 7 re-points the carry and the S08 rate re-solves | X-PAR |
 | driver slurry_min_DN | 50 DN | Deposition-velocity check of each slurry line at its solids loading (Durand/Wilson correlation) and a flow-loop trial with the plant solids | X-PAR |
 | driver vs_p_shell_case | "upset" design case: column bypassed, condensate at the body vapour composition (17.1 wt% HCl); normal case reported | Condensate titration during start-up before the column profile forms | X-PAR |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet | X-ELS-10 |
@@ -202,6 +208,9 @@ Total 751 items: 346 drivers, 405 register entries. Classification rule: first m
 | A-M-450 | degasser basis: Henry coefficients H2S 0.00087 and CO2 0.000 mol/(m3 Pa); vol/vol; fraction | tower transfer-units design at the locale design pass on the assayed sulfide and its pH speciation; caustic chemical stripping is the fallback | X-LOC-05 (lake_boehmer locale design pass) |
 | A-M-459 | j 1.8 A/cm2; V_cell 1.85 V; 80 cells x 288 cm2; 518.4 A; 148 A/cm2; V; cm2; A; kW | X-PAR-12 first-article stack: polarisation curve gives the measured j/V point and the ASR; the skid GA is the verification test of A-M-279 | CAD-representation audit, H2O_ELYZ skid machine design (2026-11-04) |
 | A-M-470 | 0.2 of the lumped other_plateable class to each of the five  - (fraction of the class) | pytest flow_graph/param/test_ew_deposit_basis.py | X-QA-04 |
+| A-M-486 | 90 mass % of the wire-saw kerf is reclaimed to the SI_REFINE mass fraction of saw kerf | Assay the first reclaimed kerf lot and close the slurry silicon balance | F-20261110-06 (recovery-first silicon); X-MFG-40 |
+| A-M-489 | The recycled SiCl4 is hydrogenated back to trichlorosilane,  kg H2 per kg recycled Si; mass fractions | Assay the loop bleed of the first refining campaign against the registered blend | F-20261110-06 (recovery-first silicon); A-M-472 |
+| A-M-490 | 0.326424 kg of feed silicate_oxide is carried with the leach kg/kg feed | Assay the silicate content of a characterized crib-solids lot and re-point the carry fraction | F-20261110-01 (the entrained-silicate residual); X-QA-12 |
 
 ## 5. T4 Pilot runs
 
@@ -245,6 +254,21 @@ Total 751 items: 346 drivers, 405 register entries. Classification rule: first m
 | driver DIGESTER.metals-leach-train.htc_header_T_K | 473.15 K | steam heater temperature vs duty sheet | X-PAR |
 | driver ELEC.storage-train.ZNBR2.purge_air_T_C | 25.0 C purge air temperature | Compare with the HVAC design room and line temperatures | X-PAR |
 | driver FAB.litho-train.starts_per_d | 5 wafer starts/d | lock the wafer starts rate at the fab product-basis task | X-PAR |
+| driver FAB.pv-wafer-train.mc_cool_h | 6.0 h cool-down of the cast block under argon, heater off | log the first cast | X-PAR |
+| driver FAB.pv-wafer-train.mc_edge_crop_mm | 20.0 mm cropped from each side of a cast block: the zone that the crucible wall contaminates | measure the minority-carrier lifetime across the first cast block | X-PAR |
+| driver FAB.pv-wafer-train.mc_melt_h | 4.0 h meltdown and stabilisation of the cast charge under argon | log the first cast | X-PAR |
+| driver FAB.pv-wafer-train.mc_tb_crop_frac | 0.2 - share of the block height cropped at the bottom and the top: the contaminated foot and the segregated cap | measure the minority-carrier lifetime along the first cast block | X-PAR |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_fire_min_cell | 3.4 min of lamp time in the firing furnace per cell, the 0.17 h for 3 cells of revision B | time the first fired batch | X-PAR |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_iv_min_cell | 5.0 min of flash IV test per cell, the 0.25 h for 3 cells of revision B | time the first tested batch | X-PAR |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_platen_kg_m2 | 100.0 kg/m2 heated platen of the PECVD electrode, the 5 kg platen of a 0.05 m2 electrode of revision B | weigh the platen of the first PECVD tool | X-PAR |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_print_min_cell | 10.0 min of screen printing and drying per cell, the 0.5 h for 3 cells of revision B | time the first printed batch | X-PAR |
+| driver FAB.wafer-line-train.hz_felt_k_W_mK | 0.25 W/(m K) graphite soft felt in argon at the mean felt temperature of about 800 C | measure the cold-face temperature of the felt at the first pull | X-PAR |
+| driver FAB.wafer-line-train.hz_felt_mm | 100.0 mm graphite felt pack on the sides, top and bottom of the hot zone | measure on the hot-zone drawing of the first puller | X-PAR |
+| driver FAB.wafer-line-train.hz_gap_mm | 40.0 mm radial gap from the crucible wall to the inner felt face: graphite susceptor, heater and clearances | measure on the hot-zone drawing of the first puller | X-PAR |
+| driver FAB.wafer-line-train.hz_graphite_t_mm | 15.0 mm wall of the graphite susceptor and of the heater, both heated to the hot-zone temperature at each meltdown | weigh the susceptor and heater of the first puller | X-PAR |
+| driver FAB.wafer-line-train.hz_heater_C | 1500.0 C heater and inner felt face while the melt is held and pulled: above the 1414 C melt by the drop through the crucible wall and the melt (CRC_SI melting point) | log the heater pyrometer at the first pull and compare with this value | X-PAR |
+| driver FAB.wafer-line-train.hz_height_ratio | 1.2 - inner height of the felt pack over the crucible diameter: crucible, pedestal and heater above the melt | measure on the hot-zone drawing of the first puller | X-PAR |
+| driver FAB.wafer-line-train.hz_open_ratio | 1.3 - heat-shield opening over the ingot diameter; the melt radiates to the cold lid through the annulus | measure on the hot-zone drawing of the first puller | X-PAR |
 | driver FARM.aquaponics.feed_larvae_frac | 0.114 kg/d larvae meal to the layer ration (7.9 % of the ration, computed) | Larvae-meal ration trial (X-FARM-01) | X-PAR |
 | driver FARM.bsfl.process_kg_d | 1.43 kg/d feedstock (study duty; bin capacity class 5 kg/d) | Bin trial (X-FARM-03) | X-PAR |
 | driver FARM.ducks.stock | 6.0 ducks (Khaki Campbell class) | Flock trial (X-FARM-05) | X-PAR |
@@ -348,6 +372,7 @@ Total 751 items: 346 drivers, 405 register entries. Classification rule: first m
 | driver ext_lpd_W_m2 | 8.8 W/m2 | Lighting design of the extension | X-PAR |
 | driver ext_sfp_W_per_L_s | 1.25 W per L/s | Fan selection | X-PAR |
 | driver ext_wall_h_mm | 6000 mm eave height of the extension (EXT_HALL block height) | Hall section drawing | X-PAR |
+| driver fab_mask_layers | 8 mask layers per wafer of the fab process, i.e. resist coats per wafer start | mask count of the issued fab process sheet | X-PAR |
 | driver fire_pump_head_margin_kPa | 150 kPa design margin over static + friction to the remote area | Hydraulic calculation from the riser to the hydraulically most remote sprinkler (fire engineer of record) | X-PAR |
 | driver fire_tank_refill_h | 8 h to refill the reserve from the normal supply | City/well fill-rate confirmation at X-BAS-03 (site utilities) | X-PAR |
 | driver foundry_ca_add_frac | 0.0015 kg Ca deoxidizer/desulfurizer per kg melt charge | first-article heats: Ca treatment recovery (O/S in the product) at 0.10-0.20 % of charge | X-PAR |
@@ -760,6 +785,21 @@ Total 751 items: 346 drivers, 405 register entries. Classification rule: first m
 | A-M-458 | hood face velocity 0.5 m/s; hoods 0.20/0.12/0.10 m2; capture m/s; m2; m3/h; m3/min/m2 | Differential-pressure and isokinetic capture check at the three hoods on the first-article duct run | CAD-representation audit, BAGHOUSE machine design (2026-11-04) |
 | A-M-460 | EW cascade element-rate basis: the cascade plates the booked kg/d (element metal; wear return kg/d) | pytest flow_graph/param/test_param_misfit.py; python3 models/mfg/tracker.py --check EW_1 EW_2 EW_3 EW_4 EW_5 EW_6 EW_7 EW_8 EW_9 | X-PAR-02 (Q-038 closure) |
 | A-M-466 | 1.8 kg/d Si kg/d | Weigh Si feed per cell over a production campaign | X-QA-06 |
+| A-M-471 | Wafer-fab silicon and blanket gas from the wafer need: a 150 kg/d, mm, um, h, slpm | python3 -m flow_graph.param.fab_silicon; first-campaign charge, yield and argon use against the design | QA audit 2026-10-29, fab silicon feed and blanket gas |
+| A-M-472 | The CZ charge is made on site (no imports except waste or ra kg/d, kWh/kg, fraction | python3 -m flow_graph.param.si_refine; the furnace and loop mass balances close and the electronic-grade output equals the CZ charge | QA audit 2026-10-29, on-site silicon (owner decision t58u) |
+| A-M-473 | The Ti, Mo and Cr chlorinators take their carbon reductant a kg/d, fraction | python3 -m flow_graph.param.regen; IA-C-TI, IA-C-MO and IA-C-CR leave OIL_PYRO at the carbon need over char_fixed_C_frac and the cell balances close | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT) |
+| A-M-474 | The 98 wt% sulfuric acid for HF_GEN is made on site by ACID_ kg/d, fraction, C, mm, m, kJ/mol, kJ/kg K | python3 -m flow_graph.param.sulfuric; python3 -m flow_graph.param.regen; IA-H2SO4-MU is retired, IA-H2SO4-ACID carries the acid demand of HF_GEN, and the mass balance of ACID_PLANT closes (asserted in sulfuric.design). | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT) |
+| A-M-475 | The sodium hydroxide make-up is made on site by NAOH_PLANT,  kg/d, mass fraction, C, mm, m, kJ/mol, kJ/kg K, V | python3 -m flow_graph.param.caustic; python3 -m flow_graph.param.regen; IA-NAOH-MU is retired, IA-NAOH-LIQ carries the make-up liquor to EVAP_BASE, the streams of the route not selected are retired, and the mass and element balances of NAOH_PLANT agree (asserted in caustic.design). | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT) |
+| A-M-476 | Recovery first: for every element the plant takes as raw ore kg/d of element | python3 -m flow_graph.param.recovery prints no flags; pytest flow_graph/param/test_recovery_first.py passes, and its negative cases show that an ore above the shortfall and an undeclared waste outflow are flagged. | QA audit 2026-10-29, recovery-first rule (owner decision t61u) |
+| A-M-477 | The ACID_PLANT cake kiln runs in campaigns (acid_kiln_mode = kW average and peak; kg and L of store | python3 -m flow_graph.param.regen; ACID_PLANT continuous_kw equals params.kiln_duty.kw_avg, and AQS-DUTY-073 Table 4.2 lists both kiln duties. | QA audit 2026-10-29, owner questions Q-034 to Q-037 (t62u) |
+| A-M-478 | NAOH_PLANT tops up the sodium hydroxide on the CHLOR_ALKALI  route choice; kW, kg/d | python3 -m flow_graph.param.regen; NAOH_PLANT runs CHLOR_ALKALI, IA-HALITE-MU is present and IA-TRONA-MU retired, and IA-NAOH-H2 enters HDR_H2. | QA audit 2026-10-29, owner questions Q-034 to Q-037 (t62u) |
+| A-M-479 | SOLV_PLANT supplies the bench ethanol and acetone, recovery  kg/d; kW | python3 -m flow_graph.param.solvent prints both routes; after regen IA-SOLV-MU is retired, IA-SOLV-PLANT equals IA-SOLV-WB, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT-IA-SOLV-MU) |
+| A-M-480 | The shop grease is made on site from the wax cut, sized from kg/d; kW | python3 -m flow_graph.param.grease prints both routes; after regen GREASE_CA_TO_MFG equals IA-GREASE-SPENT, the lithium routes carry their rated case at zero flow, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-29, shop routes (X-RTE-GREASE_CA_TO_MFG, X-RTE-WAX_TO_GREASE_CA, X-RTE-PCA_TO_GREASE and the lithium routes) |
+| A-M-481 | The chlorine of the VDF and TFE reactors has two built sourc kg/d | With cru_cl2_source POT, regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CL2-SHIP lower by the same amount, and CRU and AL_POT close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case. | QA audit 2026-10-30, X-RTE-AL_POT_CL2 |
+| A-M-482 | POLY_TO_FAB carries the wafer-fab photoresist, sized from th kg/d; kW | python3 -m flow_graph.param.fab_resist prints the streams with the ledger element-closed; after regen POLY_TO_FAB = IA-RESIST-STOCK, IA-FAB-N2-VENT = S03, RESIST_SYN, WAFER_FAB, WS_SOLV and SOLV_PLANT close, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-30, X-RTE-POLY_TO_FAB |
+| A-M-483 | The heater duty of the CZ hot zone in WAFER_FAB is found fro kW | log the heater power through the meltdown and the body pull of the first CZ pull and the felt cold-face temperature, and compare each with the hot-zone model | QA audit 2026-10-30, X-RTE-CZ-HOTZONE |
+| A-M-485 | Silicon recovered from crushed end-of-life modules into the  mass fraction of retired-module cell silicon | Run the first retired-module batch through the separation step and close the silicon mass balance | F-20261110-06 (recovery-first silicon); X-MFG-40 |
+| A-M-488 | The whole furnace baghouse silica fume is briquetted back in mass fraction of furnace fume | Close the fume balance over the first furnace campaign with briquettes in the burden | F-20261110-06 (recovery-first silicon); X-MFG-40 |
 
 ## 7. T6 Commissioning measurements
 

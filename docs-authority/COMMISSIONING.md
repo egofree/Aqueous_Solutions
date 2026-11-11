@@ -42,24 +42,24 @@ Table 4.1. Commissioning sequence
 
 | Seq | System | Units | Loops | SIFs | Water-run units | Chemical run reagents |
 |---|---|---|---|---|---|---|
-| 1 | ELEC | 8 | 30 | 5 | 2 | Ar, Fe, HCl, N2, O2, other_metals |
+| 1 | ELEC | 8 | 30 | 5 | 2 | Ar, Fe, HCl, N2, O2, Si, other_metals |
 | 2 | PUMPED_HYDRO | 1 | 2 | 0 | 0 |  |
-| 3 | WTR | 8 | 58 | 7 | 6 | Fe, HCl, other_metals, solids, solute |
+| 3 | WTR | 8 | 59 | 7 | 6 | Fe, HCl, other_metals, solids, solute |
 | 4 | HEAT | 11 | 21 | 5 | 0 |  |
 | 5 | GAS | 8 | 34 | 9 | 1 | Fe, HCl, N2, other_metals, solute |
 | 6 | CRYO | 14 | 39 | 10 | 2 | Ar, CH3OH, CO2, H2, N2, O2, solute |
 | 7 | GEO | 3 | 7 | 2 | 0 |  |
-| 8 | DIGESTER | 24 | 151 | 25 | 19 | Cl2, Fe, HCl, O2, metal_plateable, metal_reactive, organic, other_metals, silicate_oxide, solute, unassigned |
+| 8 | DIGESTER | 25 | 156 | 28 | 21 | AlCl3, CaCl2, CaF2, CaO, CaSO4, Cl2, Fe, FeCl3, H2O, H2SO4, HCl, NaCl … |
 | 9 | MEOH | 6 | 36 | 7 | 3 | Ar, CO2, Fe, HCl, O2, other_metals, solute |
-| 10 | OIL | 12 | 63 | 15 | 7 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, solute |
-| 11 | GLASS | 5 | 13 | 5 | 1 | Fe, HCl, other_metals, solute |
+| 10 | OIL | 12 | 62 | 14 | 8 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, soap, solute |
+| 11 | GLASS | 6 | 16 | 7 | 1 | C, Cl2, Fe, HCl, O2, Si, SiO2, other_metals, solute |
 | 12 | NUT | 1 | 10 | 1 | 1 | Fe, HCl, other_metals |
 | 13 | FARM | 16 | 48 | 16 | 1 | CO2 |
 | 14 | HAB | 7 | 12 | 2 | 1 | solute |
 | 15 | MFG | 11 | 34 | 11 | 1 | Cu, Pb/Sn/Ni/Cd/Zn blend, hydrocarbon, metal, solute |
-| 16 | FAB | 16 | 73 | 18 | 9 | Ar, Fe, HCl, N2, O2, other_metals, solute |
-| 17 | FOUNDRY | 27 | 93 | 21 | 6 |  |
-| 18 | POLYMERS | 11 | 56 | 12 | 6 | C5-C10 |
+| 16 | FAB | 18 | 84 | 22 | 11 | Ar, CH3OH, CO, Cl2, Fe, H2, H2SO4, HCl, N2, NH3, O2, Si … |
+| 17 | FOUNDRY | 27 | 93 | 21 | 6 | Si |
+| 18 | POLYMERS | 12 | 60 | 14 | 7 | C, C5-C10, CaSO4, H2O, H2SO4, O2, S |
 
 The area SIFs (gas and flame detection) are proof-tested with AQS-SAF-006 in the CRYO and ZNBR2 steps.
 

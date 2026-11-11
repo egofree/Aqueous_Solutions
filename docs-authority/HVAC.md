@@ -9,7 +9,7 @@ Extract per room = max(ASHRAE 62.1 0.30 L/s m2; IFC 5004.3 5.08 L/s m2 where haz
 
 | Room | Units | Area m2 | Volume m3 | Hazardous | Extract m3/h | ACH | Make-up m3/h | Governs | Fan kW (duty) |
 |---|---|---|---|---|---|---|---|---|---|
-| L-1 CRYO | 15 | 130.2 | 781 | yes | 4338 | 5.6 | 4121 | heat | 1.767 |
+| L-1 CRYO | 15 | 130.2 | 781 | yes | 4294 | 5.5 | 4079 | heat | 1.749 |
 | L-1 DIGESTER | 15 | 48.9 | 293 | yes | 894 | 3.0 | 850 | IFC 5004.3 | 0.364 |
 | L-1 GAS | 2 | 1.4 | 8 | yes | 25 | 3.0 | 24 | IFC 5004.3 | 0.01 |
 | L-1 GLASS | 5 | 12.5 | 75 | yes | 229 | 3.0 | 217 | IFC 5004.3 | 0.093 |
@@ -18,9 +18,9 @@ Extract per room = max(ASHRAE 62.1 0.30 L/s m2; IFC 5004.3 5.08 L/s m2 where haz
 | L-1 OTHER | 9 | 20.1 | 121 | no | 22 | 0.2 | 21 | ASHRAE 62.1 | 0.009 |
 | L-1 WTR | 2 | 8.1 | 48 | yes | 147 | 3.0 | 140 | IFC 5004.3 | 0.06 |
 | L-2 WTR | 1 | 432.0 | 4320 | no | 467 | 0.1 | 443 | ASHRAE 62.1 | 0.19 |
-| L0 DIGESTER | 12 | 27.6 | 165 | yes | 4459 | 27.0 | 4236 | heat | 1.817 |
+| L0 DIGESTER | 12 | 27.6 | 165 | yes | 4462 | 27.0 | 4239 | heat | 1.818 |
 | L0 DOCK | 2 | 8.7 | 52 | no | 9 | 0.2 | 9 | ASHRAE 62.1 | 0.004 |
-| L0 ELEC | 8 | 18.0 | 108 | yes | 41919 | 388.0 | 39823 | heat | 17.078 |
+| L0 ELEC | 8 | 18.0 | 108 | yes | 43235 | 400.1 | 41074 | heat | 17.614 |
 | L0 FAB | 17 | 27.6 | 166 | yes | 506 | 3.0 | 480 | IFC 5004.3 | 0.206 |
 | L0 FARM | 1 | 11.4 | 68 | no | 12 | 0.2 | 12 | ASHRAE 62.1 | 0.005 |
 | L0 FOUNDRY | 27 | 50.3 | 302 | no | 1422 | 4.7 | 1351 | heat | 0.579 |
@@ -38,7 +38,7 @@ Extract per room = max(ASHRAE 62.1 0.30 L/s m2; IFC 5004.3 5.08 L/s m2 where haz
 | L1 HAB | 11 | 46.6 | 280 | no | 173 | 0.6 | 164 | heat | 0.07 |
 | L1 OTHER | 43 | 163.9 | 984 | no | 177 | 0.2 | 168 | ASHRAE 62.1 | 0.072 |
 | L1 WTR | 3 | 1.3 | 8 | no | 23 | 2.9 | 21 | heat | 0.009 |
-| L2 HEAT | 3 | 3.7 | 18 | no | 1149 | 64.0 | 1092 | heat | 0.468 |
+| L2 HEAT | 3 | 3.7 | 18 | no | 1179 | 65.6 | 1120 | heat | 0.48 |
 
-30 rooms; total extract 58,957 m3/h; duty fan power 24.02 kW (standby fans idle). Life levels (HAB, FARM) also carry their own AHU duties in the graph (CRYO_AHU and farm AHU); this table is the room exhaust and make-up layer.
+30 rooms; total extract 60,262 m3/h; duty fan power 24.55 kW (standby fans idle). Life levels (HAB, FARM) also carry their own AHU duties in the graph (CRYO_AHU and farm AHU); this table is the room exhaust and make-up layer.
 Make-up air is tempered from the Q4 ladder in winter (99.6 % -7.2 C) and by the building chiller in summer (0.4 % 37.8 C), AQS-SITE-002.

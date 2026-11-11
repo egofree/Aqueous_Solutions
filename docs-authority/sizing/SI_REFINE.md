@@ -1,0 +1,18 @@
+# Sizing calculation - SI_REFINE
+
+Document number: AQS-SIZE-SI_REFINE
+Revision: A
+Date: 2026-10-20
+Authority: graph + envelope  mm, state None | size check: fits. Study. Not a PE stamp.
+
+## 1. Duty
+envelope  mm, state None | size check: fits
+
+## 2. Geometry
+Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 0.006 m3; vessel D 0.234752 x H 0.352129 mm (upright, H/D 1.5).
+
+## 3. Material
+PE/rotomoulded (default per AQS-STD-002 M2).
+
+## 4. Fit
+Envelope-consistent by construction; check vs cad/stl envelope STL (test_envelopes gate).

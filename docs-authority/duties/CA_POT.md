@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.1525 kg/d. Mass out 0.1525 kg/d. Electrical duty 0.1221 kW. In: IA-CACL2-MU 0.1525 kg/d (CaCl2 brine concentrate (mining-waste class)). Out: CA_POT_TO_IND 0.05507 kg/d (Ca metal); IA-CA-CL2-SHIP 0.09743 kg/d (chlorine byproduct export (water-treatment class)).
+1. Basis. Mass in 0.1525 kg/d. Mass out 0.1525 kg/d. Electrical duty 0.1221 kW. In: IA-CACL2-MU 0.1525 kg/d (CaCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)). Out: CA_POT_TO_IND 0.05507 kg/d (Ca metal); IA-CA-CL2-SHIP 0.09743 kg/d (chlorine byproduct export (water-treatment class)).
 
 2. Size.
 - Envelope 800×800×1600 mm, 1.024 m³. That box over this flow would be 161157.3 h if it were full. It is not a residence time.

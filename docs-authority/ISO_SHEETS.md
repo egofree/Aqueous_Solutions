@@ -1,7 +1,7 @@
 # Isometric sheet data (no SVG: the isometric presentation retired 2026-10-27)
 
 Document number: AQS-ISO-002
-Status. 399 routed lines; waiting on placements 15. Pipe 7892 m, elbows 1160, flanges 798, joints 3829.
+Status. 412 routed lines; waiting on placements 49. Pipe 8263 m, elbows 1199, flanges 824, joints 3972.
 
 Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow take-off ASME B16.9 long-radius (metal) or 0.5 x OD (thermoplastic, A-M-121); 6 m random lengths; flanges at both nozzles; ASME B16.5 Class 150 bolting; OD ASME B36.10M. Not checked here: clashes with structure and other lines along the rack (X-PIP-04 with supports and stress).
 
@@ -408,6 +408,19 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | IA-DC-REJ | DRY_COOLER | ATMOS | 50 | P1 | 24.42 | 3 |
 | IA-ZNBR-H2 | ZNBR2 | HDR_H2 | 15 | P1 | 21.83 | 3 |
 | IA-MET-AIR-MU | HDR_N2 | MET_AHU | 15 | M1 | 20.17 | 3 |
+| IA-GREASE-AIR | ATMOS | GREASE_CA | 15 | M1 | 30.92 | 3 |
+| IA-GREASE-VENT | GREASE_CA | ATMOS | 15 | P3 | 26.79 | 3 |
+| IA-GREASE-AIR-LI | ATMOS | GREASE_LI | 15 | M1 | 28.72 | 3 |
+| IA-GREASE-VENT-LI | GREASE_LI | ATMOS | 15 | P3 | 24.59 | 3 |
+| IA-PCA-H2O | GW_INTAKE | P_CA | 15 | P1 | 32.24 | 3 |
+| IA-FAB-SOLV | WS_SOLV | WAFER_FAB | 15 | P1 | 12.59 | 3 |
+| IA-FAB-N2-VENT | WAFER_FAB | ATMOS | 15 | P3 | 20.14 | 3 |
+| IA-AR-CZ | CRYO_ASU | WAFER_FAB | 15 | M1 | 16.22 | 3 |
+| IA-AR-CZ-BACK | WAFER_FAB | CRYO_ASU | 15 | M1 | 18.02 | 3 |
+| IA-SI-HOOD-O2 | ATMOS | SI_REDUCE | 15 | M1 | 38.37 | 3 |
+| IA-SI-CO2 | SI_REDUCE | ATMOS | 15 | P3 | 34.24 | 3 |
+| IA-AL-CO | AL_POT | NORTH_DOCK | 15 | P3 | 37.54 | 3 |
+| IA-AL-H2O | AL_POT | ATMOS | 15 | M1 | 50.17 | 3 |
 
 Waiting on placements:
 - LB-FEED (LB_INTAKE unplaced)
@@ -425,3 +438,37 @@ Waiting on placements:
 - LB-CHEM-SCRUB (LB_CHEM_STORE unplaced)
 - LB-CHEM-CIP1 (LB_CHEM_STORE unplaced)
 - LB-CHEM-CIP2 (LB_CHEM_STORE unplaced)
+- IA-NA-RECYCLE (NAOH_PLANT unplaced)
+- IA-NAOH-CL2-SHIP (NAOH_PLANT unplaced)
+- IA-NAOH-H2 (NAOH_PLANT unplaced)
+- IA-NAOH-H2O (NAOH_PLANT unplaced)
+- IA-NAOH-LIQ (NAOH_PLANT unplaced)
+- IA-SOLV-SPENT (SOLV_PLANT unplaced)
+- IA-SOLV-PLANT (SOLV_PLANT unplaced)
+- IA-SOLV-BTMS (SOLV_PLANT unplaced)
+- IA-SOLV-VENT (SOLV_PLANT unplaced)
+- IA-SOLV-MEOH (SOLV_PLANT unplaced)
+- IA-SOLV-CO (SOLV_PLANT unplaced)
+- IA-SOLV-H2 (SOLV_PLANT unplaced)
+- IA-SOLV-STILLAGE (SOLV_PLANT unplaced)
+- IA-ACID-O2 (ACID_PLANT unplaced)
+- IA-ACID-H2O (ACID_PLANT unplaced)
+- IA-ACID-CO2 (ACID_PLANT unplaced)
+- IA-H2SO4-ACID (ACID_PLANT unplaced)
+- IA-RESIST-BZ (RESIST_SYN unplaced)
+- IA-RESIST-NAPH (RESIST_SYN unplaced)
+- IA-RESIST-RAFF (RESIST_SYN unplaced)
+- IA-RESIST-MEOH (RESIST_SYN unplaced)
+- IA-RESIST-NH3 (RESIST_SYN unplaced)
+- IA-RESIST-H2 (RESIST_SYN unplaced)
+- IA-RESIST-CO (RESIST_SYN unplaced)
+- IA-RESIST-CL2 (RESIST_SYN unplaced)
+- IA-RESIST-ACID (ACID_PLANT unplaced)
+- IA-RESIST-ACET (RESIST_SYN unplaced)
+- IA-RESIST-AIR (RESIST_SYN unplaced)
+- IA-RESIST-VENT (RESIST_SYN unplaced)
+- IA-RESIST-HCL (RESIST_SYN unplaced)
+- IA-RESIST-BRINE (RESIST_SYN unplaced)
+- IA-RESIST-STOCK (RESIST_SYN unplaced)
+- IA-CL2-SIREF (SI_REFINE unplaced)
+- IA-SI-PURGE (SI_REFINE unplaced)

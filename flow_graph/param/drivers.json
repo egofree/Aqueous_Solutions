@@ -6090,5 +6090,866 @@
   "value": 5.0,
   "units": "kW commercial rating step the genset nameplate rounds up to (AQS-ELEC-007)",
   "register": "AQS-ELEC-007"
+ },
+ "acid_kiln_campaign_d": {
+  "value": 7,
+  "units": "d between kiln campaigns on the CAMPAIGN duty; sets the cake store and the acid store",
+  "register": "A-M-477"
+ },
+ "acid_kiln_mode": {
+  "value": "CAMPAIGN",
+  "units": "- duty of the ACID_PLANT cake kiln: CAMPAIGN (cake stored, kiln fired one run every acid_kiln_campaign_d days, acid held in a day store) or CONTINUOUS (kiln held at temperature every day)",
+  "register": "A-M-477"
+ },
+ "acid_kiln_run_h": {
+  "value": 24.0,
+  "units": "h the kiln is held at temperature per campaign, after heat-up",
+  "register": "A-M-477"
+ },
+ "acid_store_rho_kg_m3": {
+  "value": 1840.0,
+  "units": "kg/m3 density of 98 wt% sulfuric acid for the acid day store (ULLMANN_H2SO4)",
+  "register": "A-M-477"
+ },
+ "ca_CE": {
+  "value": 0.95,
+  "units": "- current efficiency of the membrane cell for NaOH",
+  "register": "A-M-475"
+ },
+ "ca_catholyte_wt": {
+  "value": 0.32,
+  "units": "mass fraction NaOH in the membrane-cell catholyte",
+  "register": "A-M-475"
+ },
+ "ca_cell_V": {
+  "value": 3.1,
+  "units": "V membrane chlor-alkali cell voltage at design current density",
+  "register": "A-M-475"
+ },
+ "caco3_dH_kJ_mol": {
+  "value": 178.3,
+  "units": "kJ per mol CaCO3 for CaCO3 -> CaO + CO2",
+  "register": "A-M-475"
+ },
+ "caso4_dHrxn_kJ_mol": {
+  "value": 303.0,
+  "units": "kJ per mol CaSO4 for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2 (CaSO4 -> CaO + SO3 +401, SO3 -> SO2 + 1/2 O2 +99, 1/2 C + 1/2 O2 -> 1/2 CO2 -197)",
+  "register": "A-M-474"
+ },
+ "caso4_dec_frac": {
+  "value": 0.9,
+  "units": "- fraction of the anhydrite in the HF kiln cake reduced to SO2 in the cake kiln (reductive decomposition class)",
+  "register": "A-M-474"
+ },
+ "caso4_feed_cp_kJ_kgK": {
+  "value": 0.9,
+  "units": "kJ/kg K mean heat capacity of the cake and char feed to the kiln temperature",
+  "register": "A-M-474"
+ },
+ "caso4_kiln_D_mm": {
+  "value": 150.0,
+  "units": "mm bore of the small electrically heated cake kiln tube (the HF kiln class at this throughput)",
+  "register": "A-M-474"
+ },
+ "caso4_kiln_L_m": {
+  "value": 1.0,
+  "units": "m heated length of the cake kiln tube",
+  "register": "A-M-474"
+ },
+ "caso4_kiln_T_C": {
+  "value": 1150.0,
+  "units": "C cake kiln temperature for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2",
+  "register": "A-M-474"
+ },
+ "caso4_kiln_wall_mm": {
+  "value": 6.0,
+  "units": "mm wall of the Inconel 600 kiln tube, heated with the tube at each campaign",
+  "register": "A-M-477"
+ },
+ "caus_feed_cp_kJ_kgK": {
+  "value": 0.9,
+  "units": "kJ/kg K mean heat capacity of the ore and mud fed to the calciner and kiln",
+  "register": "A-M-475"
+ },
+ "caus_liquor_wt": {
+  "value": 0.1,
+  "units": "mass fraction NaOH in the white liquor of the causticiser (the practical causticising limit)",
+  "register": "A-M-475"
+ },
+ "char_fixed_C_frac": {
+  "value": 0.85,
+  "units": "- fixed-carbon mass fraction of the OIL_PYRO char used as the Ti, Mo and Cr chlorinator reductant (pyrolysis char class; the volatiles and ash leave with the chlorinator gas)",
+  "register": "A-M-473"
+ },
+ "cru_cl2_source": {
+  "value": "HCL_OX",
+  "units": "- chlorine source of the VDF and TFE reactors: HCL_OX (CRU oxidises the returned dilute HCl with the chlorate liquor, the halogen loop closes internally) or POT (the AL_POT byproduct chlorine on AL_POT_CL2, the HCl returns pass to the leach)",
+  "register": "A-M-481"
+ },
+ "fab_ebr_mL_per_coat": {
+  "value": 2.0,
+  "units": "mL acetone edge-bead and backside rinse per coat (MOREAU1988)",
+  "register": "A-M-482"
+ },
+ "fab_mask_layers": {
+  "value": 8,
+  "units": "mask layers per wafer of the fab process, i.e. resist coats per wafer start",
+  "register": "A-M-482",
+  "needs_verification": true,
+  "verification_test": "mask count of the issued fab process sheet"
+ },
+ "fab_resist_dnq_wt": {
+  "value": 0.2,
+  "units": "mass fraction of the bound DNQ-5-sulfonyl moiety in the resist solids, the 15-25 % photoactive loading of DNQ-novolac resists (DAMMEL1993)",
+  "register": "A-M-482"
+ },
+ "fab_resist_mL_per_coat": {
+  "value": 3.0,
+  "units": "mL resist solution dispensed per coat on a 150 mm wafer, static dispense (MOREAU1988)",
+  "register": "A-M-482"
+ },
+ "fab_resist_rho_kg_m3": {
+  "value": 1000.0,
+  "units": "kg/m3 resist solution density in diacetone alcohol",
+  "register": "A-M-482"
+ },
+ "fab_resist_route": {
+  "value": "DNQ_NOVOLAC",
+  "units": "- photoresist chemistry made by RESIST_SYN: DNQ_NOVOLAC (positive diazonaphthoquinone-novolac, aqueous TMAH/KOH develop). The negative cyclised-polyisoprene/bis-azide class waits on X-RTE-RESIST-ISOPRENE and X-RTE-RESIST-AZIDE",
+  "register": "A-M-482"
+ },
+ "fab_resist_solids_frac": {
+  "value": 0.25,
+  "units": "mass fraction resin solids in the positive resist solution, 20-30 % for DNQ-novolac resists (DAMMEL1993)",
+  "register": "A-M-482"
+ },
+ "fab_strip_mL_per_coat": {
+  "value": 5.0,
+  "units": "mL acetone to strip the positive resist after each pattern step (MOREAU1988)",
+  "register": "A-M-482"
+ },
+ "formox_meoh_vol_frac": {
+  "value": 0.08,
+  "units": "mole fraction methanol in air at the formaldehyde oxidation feed, below the lower explosive limit (ULLMANN_FORMALDEHYDE)",
+  "register": "A-M-482"
+ },
+ "grease_bearing_B_mm": {
+  "value": 15.0,
+  "units": "mm width of the bearing class at the grease points (6205 class)",
+  "register": "A-M-480"
+ },
+ "grease_bearing_D_mm": {
+  "value": 52.0,
+  "units": "mm outside diameter of the bearing class at the grease points (6205 class, the motor bearing size of AQS-INV-004 family OF-02)",
+  "register": "A-M-480"
+ },
+ "grease_campaign_d": {
+  "value": 90,
+  "units": "d between grease kettle campaigns; the shop holds the grease between them",
+  "register": "A-M-480"
+ },
+ "grease_kettle_T_C_ca": {
+  "value": 150.0,
+  "units": "C kettle temperature for the anhydrous calcium soap grease",
+  "ref": "ULLMANN_LUBRICANTS",
+  "register": "A-M-480"
+ },
+ "grease_kettle_T_C_li": {
+  "value": 200.0,
+  "units": "C kettle temperature for the lithium soap grease",
+  "ref": "ULLMANN_LUBRICANTS",
+  "register": "A-M-480"
+ },
+ "grease_cp_kJ_kgK": {
+  "value": 2.2,
+  "units": "kJ/(kg K) heat capacity of wax and soap feed",
+  "register": "A-M-480"
+ },
+ "grease_fill": {
+  "value": 0.7,
+  "units": "working fill of the grease kettle",
+  "register": "A-M-480"
+ },
+ "grease_heater_eff": {
+  "value": 0.7,
+  "units": "fraction of the electric kettle heat that reaches the batch (A-M-157 convention)",
+  "register": "A-M-480"
+ },
+ "grease_points_per_unit": {
+  "value": 2,
+  "units": "grease points per lubricated rotating unit (drive-end and non-drive-end bearing)",
+  "register": "A-M-480"
+ },
+ "grease_rho_kg_m3": {
+  "value": 900.0,
+  "units": "kg/m3 grease density for the kettle volume",
+  "register": "A-M-480"
+ },
+ "grease_run_h": {
+  "value": 8.0,
+  "units": "h the kettle is held at temperature per campaign",
+  "register": "A-M-480"
+ },
+ "grease_soap_frac": {
+  "value": 0.12,
+  "units": "mass fraction soap thickener in the grease, 8-15 % for calcium and lithium soap greases (ULLMANN_LUBRICANTS, AQS-DUTY-GREASE)",
+  "register": "A-M-480"
+ },
+ "grease_thickener": {
+  "value": "CA",
+  "units": "- grease soap of the shop grease: CA (calcium soap in GREASE_CA, lime from the acid-plant residue) or LI (lithium soap in GREASE_LI, lithium from LI_RECOVER once the polish-liquor tenor is measured)",
+  "register": "A-M-480"
+ },
+ "grease_wax_ox_acid_yield": {
+  "value": 0.7,
+  "units": "kg fatty acid per kg C19-C28 wax in the air oxidation to soap acids (ULLMANN_FATTY_ACIDS, paraffin oxidation)",
+  "register": "A-M-480"
+ },
+ "grease_wax_ox_o2": {
+  "value": 0.35,
+  "units": "kg oxygen taken up per kg wax in the air oxidation (ULLMANN_FATTY_ACIDS)",
+  "register": "A-M-480"
+ },
+ "h2so4_route": {
+  "value": "GYPSUM_LOOP",
+  "units": "- sulfuric acid route: GYPSUM_LOOP (HF kiln cake reduced with char to SO2, sulfur ore make-up) or SULFUR_ORE (native sulfur ore burned), both on a contact converter",
+  "register": "A-M-474"
+ },
+ "halite_ore_purity": {
+  "value": 0.95,
+  "units": "mass fraction NaCl in the halite ore; the rest leaves as insolubles",
+  "register": "A-M-475"
+ },
+ "inconel600_cp_kJ_kgK": {
+  "value": 0.444,
+  "units": "kJ/(kg K) specific heat of Inconel 600 at room temperature, held over the heat-up (SPECIAL_METALS_I600)",
+  "register": "A-M-477"
+ },
+ "inconel600_rho_kg_m3": {
+  "value": 8470.0,
+  "units": "kg/m3 density of Inconel 600 (SPECIAL_METALS_I600)",
+  "register": "A-M-477"
+ },
+ "kiln_fibre_cp_kJ_kgK": {
+  "value": 1.13,
+  "units": "kJ/(kg K) specific heat of alumino-silicate ceramic fibre (ASTM C892 class), held over the heat-up",
+  "register": "A-M-477"
+ },
+ "kiln_fibre_rho_kg_m3": {
+  "value": 128.0,
+  "units": "kg/m3 density of the ceramic-fibre insulation of the kiln (ASTM C892 grade 1260, 128 kg/m3 class)",
+  "register": "A-M-477"
+ },
+ "lime_kiln_T_C": {
+  "value": 900.0,
+  "units": "C lime kiln temperature for CaCO3 -> CaO + CO2",
+  "register": "A-M-475"
+ },
+ "lime_purge_frac": {
+  "value": 0.05,
+  "units": "- fraction of the lime mud purged to the dock each cycle and made up with limestone ore (non-process element control)",
+  "register": "A-M-475"
+ },
+ "limestone_ore_purity": {
+  "value": 0.95,
+  "units": "mass fraction CaCO3 in the limestone ore; the rest leaves as insolubles",
+  "register": "A-M-475"
+ },
+ "na_purge_recycle_frac": {
+  "value": 0.9,
+  "units": "- fraction of the leach sodium chloride purge recycled to the cell brine on the CHLOR_ALKALI route; the rest is bled to the dock",
+  "register": "A-M-475"
+ },
+ "naoh_route": {
+  "value": "CHLOR_ALKALI",
+  "units": "- sodium hydroxide route of NAOH_PLANT: CAUSTICIZE (trona ore to soda ash, lime causticising with a recalcining lime kiln) or CHLOR_ALKALI (membrane cells on the leach purge salt and halite ore)",
+  "register": "A-M-475 A-M-426"
+ },
+ "trona_calc_T_C": {
+  "value": 200.0,
+  "units": "C trona calciner temperature (monohydrate-process class)",
+  "register": "A-M-475"
+ },
+ "trona_dH_kJ_mol": {
+  "value": 185.0,
+  "units": "kJ per mol trona for 2 trona -> 3 Na2CO3 + CO2 + 5 H2O(g), from standard formation enthalpies",
+  "register": "A-M-475"
+ },
+ "trona_ore_purity": {
+  "value": 0.9,
+  "units": "mass fraction trona in the trona ore; the rest leaves as insolubles",
+  "register": "A-M-475"
+ },
+ "abe_acetone_yield": {
+  "value": 0.1,
+  "units": "kg acetone per kg sugar in the acetone-butanol-ethanol fermentation (solvents about 0.33 kg/kg at 3:6:1, JONES1986)",
+  "register": "A-M-479"
+ },
+ "abe_butanol_yield": {
+  "value": 0.2,
+  "units": "kg butanol per kg sugar in the acetone-butanol-ethanol fermentation (JONES1986)",
+  "register": "A-M-479"
+ },
+ "abe_ethanol_yield": {
+  "value": 0.033,
+  "units": "kg ethanol per kg sugar in the acetone-butanol-ethanol fermentation (JONES1986)",
+  "register": "A-M-479"
+ },
+ "abe_gas_yield": {
+  "value": 0.5,
+  "units": "kg CO2 and H2 per kg sugar in the acetone-butanol-ethanol fermentation (JONES1986)",
+  "register": "A-M-479"
+ },
+ "acetone_rho_kg_m3": {
+  "value": 784.0,
+  "units": "kg/m3 acetone density at 25 C",
+  "register": "A-M-482"
+ },
+ "aromatic_extract_recovery": {
+  "value": 0.9,
+  "units": "fraction of the cut aromatic recovered by the solvent extraction and distillation (ULLMANN_PHENOL feed preparation class)",
+  "register": "A-M-482"
+ },
+ "meoh_dHvap_kJ_kg": {
+  "value": 1100.0,
+  "units": "kJ/kg heat of vaporisation of methanol, 35.2 kJ/mol (NIST_WEBBOOK)",
+  "register": "A-M-479"
+ },
+ "oil_c11c18_naphthalene_frac": {
+  "value": 0.01,
+  "units": "mass fraction naphthalene in the C11-C18 cut of the plastics pyrolysis oil (SU2018_PYRO)",
+  "register": "A-M-482",
+  "needs_verification": true,
+  "verification_test": "aromatics assay of the C11-C18 cut"
+ },
+ "oil_c5c10_benzene_frac": {
+  "value": 0.02,
+  "units": "mass fraction benzene in the C5-C10 cut of the plastics pyrolysis oil (SU2018_PYRO)",
+  "register": "A-M-482",
+  "needs_verification": true,
+  "verification_test": "aromatics assay of the C5-C10 cut"
+ },
+ "ostwald_nh3_vol_frac": {
+  "value": 0.1,
+  "units": "mole fraction ammonia in air at the ammonia oxidation feed (ULLMANN_NITRIC)",
+  "register": "A-M-482"
+ },
+ "resist_cp_kJ_kgK": {
+  "value": 2.0,
+  "units": "kJ/(kg K) heat capacity of the organic batch feeds",
+  "register": "A-M-482"
+ },
+ "resist_heater_eff": {
+  "value": 0.7,
+  "units": "fraction of the electric batch heat that reaches the batch (A-M-157 convention)",
+  "register": "A-M-482"
+ },
+ "resist_rx_T_C": {
+  "value": 100.0,
+  "units": "C batch temperature for the RESIST_SYN heating load (novolac condensation near reflux)",
+  "register": "A-M-482"
+ },
+ "solv_acetone_frac": {
+  "value": 0.5,
+  "units": "mass fraction acetone in the bench solvent (the rest ethanol), equal rinse volumes of the two",
+  "register": "A-M-479"
+ },
+ "solv_cat_T_C": {
+  "value": 350.0,
+  "units": "C bounding reactor temperature of the catalytic steps (ketonisation 350 C, carbonylation and hydrogenation lower; PHAM2013)",
+  "register": "A-M-479"
+ },
+ "solv_cat_cp_kJ_kgK": {
+  "value": 2.5,
+  "units": "kJ/(kg K) feed heat capacity for the reactor heaters (A-M-157 convention)",
+  "register": "A-M-479"
+ },
+ "solv_cat_heater_eff": {
+  "value": 0.7,
+  "units": "fraction of the electric reactor heat that reaches the feed (A-M-157 convention)",
+  "register": "A-M-479"
+ },
+ "solv_cat_selectivity": {
+  "value": 0.9,
+  "units": "carbon selectivity of carbonylation with ketonisation or hydrogenation to the product; the rest leaves as off-gas (ULLMANN_ACETIC, PHAM2013)",
+  "register": "A-M-479"
+ },
+ "solv_dHvap_kJ_kg": {
+  "value": 680.0,
+  "units": "kJ/kg heat of vaporisation of the 50/50 ethanol-acetone distillate (ethanol 841, acetone 518 kJ/kg, NIST_WEBBOOK)",
+  "register": "A-M-479"
+ },
+ "solv_fw_sugar_frac": {
+  "value": 0.12,
+  "units": "kg fermentable sugar per kg of wet galley food waste after hydrolysis (FERMENT route)",
+  "register": "A-M-479"
+ },
+ "solv_route": {
+  "value": "MEOH_CO",
+  "units": "- route of SOLV_PLANT for the solvent it does not recover: MEOH_CO (plant methanol carbonylated with the chlorinator CO, then ketonised to acetone and hydrogenated to ethanol) or FERMENT (galley food waste to acetone-butanol-ethanol and yeast fermentations)",
+  "register": "A-M-479"
+ },
+ "solv_spent_catch_frac": {
+  "value": 0.95,
+  "units": "fraction of the bench solvent collected in the segregated spent-solvent drain; the rest evaporates or leaves with the spent etch",
+  "register": "A-M-479"
+ },
+ "solv_still_heater_eff": {
+  "value": 0.7,
+  "units": "fraction of the electric reboiler heat that reaches the boil-up (losses, A-M-157 convention)",
+  "register": "A-M-479"
+ },
+ "solv_still_recovery_frac": {
+  "value": 0.95,
+  "units": "fraction of the collected spent solvent returned by the batch still; the rest leaves in the bottoms with the resist residue",
+  "register": "A-M-479"
+ },
+ "solv_still_reflux": {
+  "value": 3.0,
+  "units": "reflux ratio of the batch still for the ethanol-acetone split",
+  "register": "A-M-479"
+ },
+ "yeast_ethanol_yield_frac": {
+  "value": 0.9,
+  "units": "fraction of the theoretical 0.511 kg ethanol per kg glucose reached by the yeast fermentation (BAI2008)",
+  "register": "A-M-479"
+ },
+ "pv_wafer_route": {
+  "value": "CZ_PSQ125",
+  "units": "- wafer route of the solar cell line: CZ_PSQ125 (125 mm semi-square cells from the 150 mm CZ ingot of WAFER_FAB) or CAST_MC156 (156.75 mm multicrystalline cells from a block cast by directional solidification in WAFER_FAB)",
+  "register": "A-M-484"
+ },
+ "FAB.pv-wafer-train.eol_output_frac": {
+  "value": 0.8,
+  "units": "- module output, as a share of nameplate, at which a module is replaced: the end of the usual output warranty",
+  "register": "A-M-484",
+  "ref": "JORDAN_KURTZ2013"
+ },
+ "FAB.pv-wafer-train.degradation_per_yr": {
+  "value": 0.005,
+  "units": "- loss of module output per year, the median of field measurements",
+  "register": "A-M-484",
+  "ref": "JORDAN_KURTZ2013"
+ },
+ "FAB.pv-wafer-train.failure_per_yr": {
+  "value": 0.0005,
+  "units": "- share of modules that fail and are replaced each year apart from wear-out, about 5 in 10,000",
+  "register": "A-M-484",
+  "ref": "JORDAN2017"
+ },
+ "FAB.pv-wafer-train.wafer_t_um": {
+  "value": 180.0,
+  "units": "um as-cut thickness of a solar wafer",
+  "register": "A-M-484",
+  "ref": "ITRPV2020"
+ },
+ "FAB.wafer-line-train.kerf_um": {
+  "value": 150.0,
+  "units": "um saw kerf per wafer, diamond wire",
+  "register": "A-M-471"
+ },
+ "FAB.wafer-line-train.si_rho_g_cm3": {
+  "value": 2.329,
+  "units": "g/cm3 silicon density (CRC_SI)",
+  "register": "A-M-471"
+ },
+ "FAB.wafer-line-train.wafer_D_mm": {
+  "value": 150.0,
+  "units": "mm wafer diameter (the 150 mm class of the litho train)",
+  "register": "A-M-471"
+ },
+ "FAB.pv-wafer-train.psq_side_mm": {
+  "value": 125.0,
+  "units": "mm width across the flats of the semi-square cell cut from the 150 mm ingot, the 125 mm format of 150 mm ingots",
+  "register": "A-M-484",
+  "ref": "ITRPV2020"
+ },
+ "FAB.pv-wafer-train.cell_eff_CZ": {
+  "value": 0.19,
+  "units": "- efficiency at standard test conditions of a screen-printed single-crystal cell with an aluminium back field",
+  "register": "A-M-484",
+  "ref": "ITRPV2020",
+  "needs_verification": true,
+  "verification_test": "IV-test the first in-house cells and compare the measured efficiency"
+ },
+ "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_cassette_n": {
+  "value": 25,
+  "units": "wafers in one carrier, the batch of the cell line",
+  "register": "A-M-484",
+  "ref": "SEMI_E1"
+ },
+ "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_boat_pitch_mm": {
+  "value": 4.76,
+  "units": "mm slot pitch of the quartz diffusion boat",
+  "register": "A-M-484",
+  "ref": "SEMI_E1"
+ },
+ "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_platen_kg_m2": {
+  "value": 100.0,
+  "units": "kg/m2 heated platen of the PECVD electrode, the 5 kg platen of a 0.05 m2 electrode of revision B",
+  "register": "A-M-484",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "weigh the platen of the first PECVD tool"
+ },
+ "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_clear_mm": {
+  "value": 50.0,
+  "units": "mm clearance from the electrode to the chamber wall on each side",
+  "register": "A-M-484",
+  "ref": "INCROPERA7"
+ },
+ "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_print_min_cell": {
+  "value": 10.0,
+  "units": "min of screen printing and drying per cell, the 0.5 h for 3 cells of revision B",
+  "register": "A-M-484",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "time the first printed batch"
+ },
+ "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_fire_min_cell": {
+  "value": 3.4,
+  "units": "min of lamp time in the firing furnace per cell, the 0.17 h for 3 cells of revision B",
+  "register": "A-M-484",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "time the first fired batch"
+ },
+ "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_iv_min_cell": {
+  "value": 5.0,
+  "units": "min of flash IV test per cell, the 0.25 h for 3 cells of revision B",
+  "register": "A-M-484",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "time the first tested batch"
+ },
+ "FAB.wafer-line-train.cz_blanket_gas": {
+  "value": "Ar",
+  "units": "- CZ puller ambient; only Ar is accepted (N2 nitrides the melt)",
+  "register": "A-M-471"
+ },
+ "FAB.wafer-line-train.wafer_t_um": {
+  "value": 675.0,
+  "units": "um wafer thickness, SEMI M1 for 150 mm",
+  "register": "A-M-471"
+ },
+ "FAB.wafer-line-train.cz_crop_frac": {
+  "value": 0.25,
+  "units": "- share of the charge not in the wafered body: crown, tail, diameter grind and pot scrap",
+  "register": "A-M-471"
+ },
+ "FAB.wafer-line-train.cz_pull_mm_h": {
+  "value": 60.0,
+  "units": "mm/h body pull rate of a small CZ ingot",
+  "register": "A-M-471"
+ },
+ "FAB.wafer-line-train.cz_melt_h": {
+  "value": 3.0,
+  "units": "h meltdown and stabilisation under argon",
+  "register": "A-M-471"
+ },
+ "FAB.wafer-line-train.cz_neck_crown_h": {
+  "value": 2.0,
+  "units": "h seed dip, neck and crown under argon",
+  "register": "A-M-471"
+ },
+ "FAB.wafer-line-train.cz_cool_h": {
+  "value": 4.0,
+  "units": "h ingot cool-down under argon",
+  "register": "A-M-471"
+ },
+ "FAB.wafer-line-train.cz_crucible_ratio": {
+  "value": 2.7,
+  "units": "- crucible diameter over ingot diameter",
+  "register": "A-M-471"
+ },
+ "FAB.wafer-line-train.cz_ar_slpm_per_cm2": {
+  "value": 0.03,
+  "units": "slpm argon per cm2 of crucible area (about 40 slpm on a 16 inch crucible)",
+  "register": "A-M-471"
+ },
+ "FAB.wafer-line-train.si_liquid_rho_g_cm3": {
+  "value": 2.57,
+  "units": "g/cm3 liquid silicon density at the melting point (CRC_SI)",
+  "register": "A-M-471"
+ },
+ "FAB.wafer-line-train.cz_min_depth_frac": {
+  "value": 0.25,
+  "units": "- least melt depth for a pull, as a share of the crucible diameter",
+  "register": "A-M-471"
+ },
+ "FAB.wafer-line-train.hz_heater_C": {
+  "value": 1500.0,
+  "units": "C heater and inner felt face while the melt is held and pulled: above the 1414 C melt by the drop through the crucible wall and the melt (CRC_SI melting point)",
+  "register": "A-M-483",
+  "ref": "CRC_SI",
+  "needs_verification": true,
+  "verification_test": "log the heater pyrometer at the first pull and compare with this value"
+ },
+ "FAB.wafer-line-train.hz_wall_C": {
+  "value": 40.0,
+  "units": "C water-cooled chamber wall, the cold sink of the felt and of the radiation through the shield opening",
+  "register": "A-M-483",
+  "ref": "INCROPERA7"
+ },
+ "FAB.wafer-line-train.hz_gap_mm": {
+  "value": 40.0,
+  "units": "mm radial gap from the crucible wall to the inner felt face: graphite susceptor, heater and clearances",
+  "register": "A-M-483",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "measure on the hot-zone drawing of the first puller"
+ },
+ "FAB.wafer-line-train.hz_height_ratio": {
+  "value": 1.2,
+  "units": "- inner height of the felt pack over the crucible diameter: crucible, pedestal and heater above the melt",
+  "register": "A-M-483",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "measure on the hot-zone drawing of the first puller"
+ },
+ "FAB.wafer-line-train.hz_felt_mm": {
+  "value": 100.0,
+  "units": "mm graphite felt pack on the sides, top and bottom of the hot zone",
+  "register": "A-M-483",
+  "ref": "SGL_SIGRATHERM",
+  "needs_verification": true,
+  "verification_test": "measure on the hot-zone drawing of the first puller"
+ },
+ "FAB.wafer-line-train.hz_felt_k_W_mK": {
+  "value": 0.25,
+  "units": "W/(m K) graphite soft felt in argon at the mean felt temperature of about 800 C",
+  "register": "A-M-483",
+  "ref": "SGL_SIGRATHERM",
+  "needs_verification": true,
+  "verification_test": "measure the cold-face temperature of the felt at the first pull"
+ },
+ "FAB.wafer-line-train.hz_open_ratio": {
+  "value": 1.3,
+  "units": "- heat-shield opening over the ingot diameter; the melt radiates to the cold lid through the annulus",
+  "register": "A-M-483",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "measure on the hot-zone drawing of the first puller"
+ },
+ "FAB.wafer-line-train.si_melt_emissivity": {
+  "value": 0.25,
+  "units": "- total emissivity of liquid silicon, about 0.2 to 0.3 in the visible and infrared",
+  "register": "A-M-483",
+  "ref": "TAKASUKA1997"
+ },
+ "FAB.wafer-line-train.si_k_solid_W_mK": {
+  "value": 22.0,
+  "units": "W/(m K) thermal conductivity of solid silicon near the melting point",
+  "register": "A-M-483",
+  "ref": "GLASSBRENNER1964"
+ },
+ "FAB.wafer-line-train.si_cp_kJ_kgK": {
+  "value": 0.9,
+  "units": "kJ/(kg K) silicon specific heat averaged over 25 to 1414 C",
+  "register": "A-M-483",
+  "ref": "CRC_SI"
+ },
+ "FAB.wafer-line-train.si_latent_kJ_kg": {
+  "value": 1790.0,
+  "units": "kJ/kg enthalpy of fusion of silicon",
+  "register": "A-M-483",
+  "ref": "CRC_SI"
+ },
+ "FAB.wafer-line-train.cz_voronkov_mm2_Kmin": {
+  "value": 0.13,
+  "units": "mm2/(K min) critical ratio of pull rate to axial gradient at the growth interface; the hot zone is set to this ratio for a defect-lean crystal, so the gradient follows from the pull rate",
+  "register": "A-M-483",
+  "ref": "VORONKOV1982"
+ },
+ "FAB.wafer-line-train.hz_graphite_t_mm": {
+  "value": 15.0,
+  "units": "mm wall of the graphite susceptor and of the heater, both heated to the hot-zone temperature at each meltdown",
+  "register": "A-M-483",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "weigh the susceptor and heater of the first puller"
+ },
+ "FAB.wafer-line-train.graphite_rho_g_cm3": {
+  "value": 1.8,
+  "units": "g/cm3 isostatic graphite",
+  "register": "A-M-483",
+  "ref": "INCROPERA7"
+ },
+ "FAB.wafer-line-train.graphite_cp_kJ_kgK": {
+  "value": 1.5,
+  "units": "kJ/(kg K) graphite specific heat averaged over 25 to 1500 C",
+  "register": "A-M-483",
+  "ref": "INCROPERA7"
+ },
+ "FAB.pv-wafer-train.cell_eff_MC": {
+  "value": 0.175,
+  "units": "- efficiency at standard test conditions of a screen-printed multicrystalline cell with an aluminium back field",
+  "register": "A-M-484",
+  "ref": "ITRPV2020",
+  "needs_verification": true,
+  "verification_test": "IV-test the first in-house cells and compare the measured efficiency"
+ },
+ "FAB.pv-wafer-train.mc_side_mm": {
+  "value": 156.75,
+  "units": "mm side of a square 156 mm cell",
+  "register": "A-M-484",
+  "ref": "ITRPV2020"
+ },
+ "FAB.pv-wafer-train.mc_edge_crop_mm": {
+  "value": 20.0,
+  "units": "mm cropped from each side of a cast block: the zone that the crucible wall contaminates",
+  "register": "A-M-484",
+  "ref": "LAN2017",
+  "needs_verification": true,
+  "verification_test": "measure the minority-carrier lifetime across the first cast block"
+ },
+ "FAB.pv-wafer-train.mc_tb_crop_frac": {
+  "value": 0.2,
+  "units": "- share of the block height cropped at the bottom and the top: the contaminated foot and the segregated cap",
+  "register": "A-M-484",
+  "ref": "LAN2017",
+  "needs_verification": true,
+  "verification_test": "measure the minority-carrier lifetime along the first cast block"
+ },
+ "FAB.pv-wafer-train.mc_growth_mm_h": {
+  "value": 10.0,
+  "units": "mm/h growth rate of directional solidification",
+  "register": "A-M-484",
+  "ref": "LAN2017"
+ },
+ "FAB.pv-wafer-train.mc_G_K_cm": {
+  "value": 10.0,
+  "units": "K/cm temperature gradient in the solid at the growth front of directional solidification",
+  "register": "A-M-484",
+  "ref": "LAN2017"
+ },
+ "FAB.pv-wafer-train.mc_melt_h": {
+  "value": 4.0,
+  "units": "h meltdown and stabilisation of the cast charge under argon",
+  "register": "A-M-484",
+  "ref": "LAN2017",
+  "needs_verification": true,
+  "verification_test": "log the first cast"
+ },
+ "FAB.pv-wafer-train.mc_cool_h": {
+  "value": 6.0,
+  "units": "h cool-down of the cast block under argon, heater off",
+  "register": "A-M-484",
+  "ref": "LAN2017",
+  "needs_verification": true,
+  "verification_test": "log the first cast"
+ },
+ "FAB.pv-wafer-train.m2_ingot_D_mm": {
+  "value": 210.0,
+  "units": "mm ingot diameter for 156.75 mm single-crystal cells, the diagonal of that format",
+  "register": "A-M-484",
+  "ref": "ITRPV2020"
+ },
+ "novolac_fp_ratio": {
+  "value": 0.8,
+  "units": "mol formaldehyde per mol phenol in the acid-catalysed novolac, 0.75-0.85 (DAMMEL1993)",
+  "register": "A-M-482"
+ },
+ "si_imp_cl_kg_kg": {
+  "value": 2.2,
+  "units": "kg of chlorine per kg of Fe, Al and Ca impurity leaving the loop as chlorides (FeCl3 1.90, AlCl3 3.94, CaCl2 1.77, iron-rich mix)",
+  "register": "A-M-472"
+ },
+ "si_mg_purity": {
+  "value": 0.98,
+  "units": "- silicon mass fraction of the metallurgical-grade silicon from SI_REDUCE; the rest is Fe, Al and Ca from the ore and the char ash",
+  "register": "A-M-472"
+ },
+ "si_refine_route": {
+  "value": "TCS_SIEMENS",
+  "units": "- refining route of the CZ charge: TCS_SIEMENS (trichlorosilane on Siemens rods) or SILANE_FBR (silane in a fluidised bed), two technologies on the same chlorosilane loop",
+  "register": "A-M-472"
+ },
+ "si_saf_kWh_kg": {
+  "value": 13.0,
+  "units": "kWh per kg of metallurgical silicon in the submerged-arc furnace (industrial class 11 to 13, small furnace at the top)",
+  "register": "A-M-472"
+ },
+ "si_saf_recovery": {
+  "value": 0.8,
+  "units": "- fraction of the reduced silica recovered as silicon in the small arc furnace; the rest leaves as silica fume",
+  "register": "A-M-472"
+ },
+ "siemens_pass_conv": {
+  "value": 0.1,
+  "units": "- fraction of the trichlorosilane silicon deposited on the rods in one pass; sets the loop circulation",
+  "register": "A-M-472"
+ },
+ "si_refine_yield_TCS_SIEMENS": {
+  "value": 0.85,
+  "units": "- fraction of the silicon fed to the chlorosilane loop that leaves as electronic-grade rod; the rest is bled as SiCl4 (Siemens class)",
+  "register": "A-M-472"
+ },
+ "si_refine_yield_SILANE_FBR": {
+  "value": 0.8,
+  "units": "- fraction of the silicon fed to the loop that leaves as electronic-grade granules; the rest is bled as SiCl4 (silane fluidised-bed class)",
+  "register": "A-M-472"
+ },
+ "si_refine_kWh_kg_TCS_SIEMENS": {
+  "value": 60.0,
+  "units": "kWh per kg of electronic-grade silicon for the Siemens route, rod heating, hydrochlorination and distillation (small bell-jar class)",
+  "register": "A-M-472"
+ },
+ "si_refine_kWh_kg_SILANE_FBR": {
+  "value": 20.0,
+  "units": "kWh per kg of electronic-grade silicon for the silane fluidised-bed route, redistribution, bed heating and distillation (class value)",
+  "register": "A-M-472"
+ },
+ "si_eol_yield": {
+  "value": 0.95,
+  "units": "- silicon recovered from crushed end-of-life cells into the chlorosilane loop; the balance is the glass- and encapsulant-separation residue riding the impurity purge",
+  "register": "A-M-485"
+ },
+ "si_kerf_recycle_frac": {
+  "value": 0.9,
+  "units": "- fraction of the saw kerf reclaimed to the chlorosilane loop; the rest (slurry fines and abrasive carryover) stays with the spent slurry to the leach",
+  "register": "A-M-486"
+ },
+ "si_scrap_recycle_frac": {
+  "value": 1.0,
+  "units": "- fraction of the CZ crop, square-off and pot scrap remelted into the next charge; it is electronic-grade silicon, remelted without assay loss",
+  "register": "A-M-487"
+ },
+ "si_fume_burden_frac": {
+  "value": 1.0,
+  "units": "- fraction of the furnace baghouse silica fume briquetted back into the furnace burden; the rest goes to the acid leach",
+  "register": "A-M-488"
+ },
+ "si_h2_stc_kg_kg": {
+  "value": 0.04784,
+  "units": "kg hydrogen per kg of silicon recycled as SiCl4 through the hydrogenation 3 SiCl4 + 2 H2 + Si -> 4 SiHCl3 (2 x 2.016 g H2 per 3 x 28.085 g Si)",
+  "register": "A-M-489"
+ },
+ "s08_silicate_carry_frac": {
+  "value": 0.326424,
+  "units": "kg of feed silicate_oxide carried with the leach crib solids to S08 per kg in the feed; holds the AQS-PAR-003 reconciled crib rate after the X-QA-04 deposit rebasis, interim until a characterized crib lot",
+  "register": "A-M-490",
+  "needs_verification": true,
+  "verification_test": "Characterized crib lot per AQS-ASSAY-001 section 7 re-points the carry and the S08 rate re-solves"
+ },
+ "balance_residual_band_kg_d": {
+  "value": 0.001,
+  "units": "kg/d mass-balance residual band: the reconciliation assert in balance.py and the IA-GOODS-SHIP re-seed band in write_graph (A-M-120 reconciliation grid)",
+  "register": "A-M-491"
+ },
+ "solv_tank_U_W_m2K": {
+  "value": 0.5,
+  "units": "W/(m2 K) overall loss coefficient of a small insulated tank, 50 mm mineral wool at the small-vessel class (ASHRAE901_2022 insulation class)",
+  "register": "A-M-492"
+ },
+ "solv_ambient_C": {
+  "value": 20.0,
+  "units": "deg C plant-room ambient around the solvent fermentation and storage tanks (AQS-HAB-002 indoor design temperature)",
+  "register": "A-M-492"
+ },
+ "grease_min_kettle_D_m": {
+  "value": 0.1,
+  "units": "m least kettle diameter: the smallest practical jacketed batch kettle (house builder minimum, AQS-PLAN-006 style class)",
+  "register": "A-M-493"
  }
 }

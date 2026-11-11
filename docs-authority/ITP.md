@@ -21,7 +21,7 @@ Points: H hold (work stops until the inspector releases it), W witness (inspecto
 
 Units: CRYO_CO2, CRYO_H2, CRYO_O2
 
-## R2 welded 316L (39 units)
+## R2 welded 316L (42 units)
 
 | Step | Activity | Basis | Point |
 |---|---|---|---|
@@ -31,9 +31,9 @@ Units: CRYO_CO2, CRYO_H2, CRYO_O2
 | 4 | pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric | ASME B31.3 345.4 / ASME VIII-1 UG-99 | H |
 | 5 | passivation and ferroxyl test | A-M-190 | W |
 
-Units: ADS_CHILL, AFTERBURNER_FLUE, BLOW_MOLD, BMED_UPW_POLISH, COLD_MILL, CRYO_AHU, CRYO_AHU_COND_CONDENSABLE, CRYO_ASU, CRYO_DED_COOL, CRYO_HX_Q4, CRYO_N2, ELECTRODE_COAT, GAS_ATOMIZER, GEO_HP, GLASS_BURNOUT, GLASS_MILL, GLASS_RINSE, GREASE_CA, GREASE_LI, H2O_ELYZ, HABITATION, HYDRO_SET, LITHO_ALIGN, LITHO_COAT, LITHO_DEV, LI_RECOVER, MAU_HX, MEOH_COND, MET_AHU, MET_HX_Q4, MFG_SHOP, NORTH_DOCK, REE_RECOVER, RELIEF_CRYO, RELIEF_H2, SOLAR_PV_CELL, VCD_TRAIN, WAFER_FAB, WIRE_DRAW
+Units: ADS_CHILL, AFTERBURNER_FLUE, BLOW_MOLD, BMED_UPW_POLISH, COLD_MILL, CRYO_AHU, CRYO_AHU_COND_CONDENSABLE, CRYO_ASU, CRYO_DED_COOL, CRYO_HX_Q4, CRYO_N2, ELECTRODE_COAT, GAS_ATOMIZER, GEO_HP, GLASS_BURNOUT, GLASS_MILL, GLASS_RINSE, GREASE_CA, GREASE_LI, H2O_ELYZ, HABITATION, HYDRO_SET, LITHO_ALIGN, LITHO_COAT, LITHO_DEV, LI_RECOVER, MAU_HX, MEOH_COND, MET_AHU, MET_HX_Q4, MFG_SHOP, NORTH_DOCK, REE_RECOVER, RELIEF_CRYO, RELIEF_H2, RESIST_SYN, SI_REFINE, SOLAR_PV_CELL, SOLV_PLANT, VCD_TRAIN, WAFER_FAB, WIRE_DRAW
 
-## R3 welded carbon steel (15 units)
+## R3 welded carbon steel (17 units)
 
 | Step | Activity | Basis | Point |
 |---|---|---|---|
@@ -43,7 +43,7 @@ Units: ADS_CHILL, AFTERBURNER_FLUE, BLOW_MOLD, BMED_UPW_POLISH, COLD_MILL, CRYO_
 | 4 | pressure test as R2 | ASME B31.3 345.4 / ASME VIII-1 UG-99 | H |
 | 5 | coating dry-film thickness | A-M-190 | W |
 
-Units: AFTERBURNER, BAGHOUSE, C29_RECYCLE, EXT_HALL, HOPPER, OIL_DRYER, OIL_FRAC, PROD_C11_C18, PROD_C19_C28, PROD_C29, PROD_C5_C10, Q1_A, Q1_B, Q2_A, Q2_B
+Units: ACID_PLANT, AFTERBURNER, BAGHOUSE, C29_RECYCLE, EXT_HALL, HOPPER, NAOH_PLANT, OIL_DRYER, OIL_FRAC, PROD_C11_C18, PROD_C19_C28, PROD_C29, PROD_C5_C10, Q1_A, Q1_B, Q2_A, Q2_B
 
 ## R4 thermoplastic fabrication (36 units)
 
@@ -107,4 +107,4 @@ Units: AIR_RECEIVER, BACKUP_GEN, FAB_UPW_TANK, FOOD_STORE, FUEL_CELL, LOAD_AGG, 
 | electrical panels: dielectric and continuity test | UL 891 / NEC 2026 | H |
 | loop check of every instrument | A-M-190 | W |
 
-122 units assigned. Hold points marked A-M-190 are study practice until the owner quality manual (X-COD-01) adopts them.
+127 units assigned. Hold points marked A-M-190 are study practice until the owner quality manual (X-COD-01) adopts them.

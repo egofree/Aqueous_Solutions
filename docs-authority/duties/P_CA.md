@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0500 kW. In: none. Out: none.
+1. Basis. Mass in 7.5e-05 kg/d. Mass out 0.000129 kg/d. Electrical duty 0.0500 kW. In: IA-LIME-TO-PCA 6.3e-05 kg/d (cake-kiln lime residue to the slaker); IA-PCA-H2O 1.2e-05 kg/d (well water to slake the lime). Out: PCA_TO_GREASE 0.000115 kg/d (calcium hydroxide); IA-PCA-REJECT 1.4e-05 kg/d (slaker grit (anhydrite, fluorspar and inerts of the kiln residue)).
 
 2. Size.
 - Envelope 300×300×400 mm, 0.036 m³.

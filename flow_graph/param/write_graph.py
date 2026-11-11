@@ -40,11 +40,11 @@ def process():
     for t in (N['GLASS_DIGEST']['params'].get('balance_rev_l') or {}).get('terms', []):
         if t['layer']=='mass' and ('digest liquor' in t['label'] or 'silicate liquor' in t['label']):
             t['value'] = round(nb['digest_mol']/DR.val(d,'bmed_product_molarity')*1.081, 3); t['basis'] = f"{nb['digest_mol']:.1f} mol/d at 2 M, 1.081 kg/L (PERRY9_HCL); {NT}"
-    mk = [edge('IA-NAOH-MU','NORTH_DOCK','EVAP_BASE','S',['mass'],'purchased NaOH flake make-up',rate(nb['makeup_kg_d'],'kg/d',f"{NT}. Demand {nb['ppt_mol']+nb['digest_mol']:.0f} mol/d less BMED {nb['bmed_mol']:.0f} mol/d; worst case, no credit for sodium returned in the silicate liquor."),'DOCK','DIGESTER'),
-          edge('IA-NA-PURGE','LEACH_CSTR_1','NORTH_DOCK','L',['mass'],'sodium salt purge equal to the make-up mass',rate(nb['makeup_kg_d'],'kg/d',f'{NT}. Sodium brought in on IA-NAOH-MU leaves the loop as salt; mass equal to the make-up (study).'),'DIGESTER','DOCK')]
-    for e in mk:
-        if e['stream_id'] in E: E[e['stream_id']]['rate'] = e['rate']
-        else: g['edges'].append(e); E[e['stream_id']] = e
+    # the make-up is made on site by NAOH_PLANT, recovery first (route family 2; flow_graph/param/caustic.py,
+    # note 2026-11-10-qa-audit-round-d): IA-NAOH-MU is retired, the purge salt is recovered to the cells on
+    # IA-NA-RECYCLE and IA-NA-PURGE carries only the impurity bleed
+    from . import caustic
+    caustic.tf(g, E, nb['makeup_mol'], d)
     # evaporators
     for side, key, src, prods, sa in (('ACID','evap_acid','BMED_ACID',('IA-ACID-01',),'HCl'),('BASE','evap_base','BMED_BASE',solver.BASE_DEMAND,'NaOH')):
         u = f'EVAP_{side}'; v = s[key]; w = DR.val(d,'acid_conc_design_wt' if side=='ACID' else 'base_conc_design_wt')
@@ -130,7 +130,20 @@ def process():
              'baghouse collected fines to the leach: mill loss + fab loss + draw swarf')]
     for sid, a, b, sa, sb, v, why in form:
         note = f'{MET_TAG}. {why}; derived from the feed-assay deposit rows through solver.ew_products() (X-QA-04).'
-        if sid in E: E[sid]['rate'] = rate(v, 'kg/d', note)
+        if sid in E:
+            old = E[sid]['rate'].get('note') or ''
+            if sid == 'IA-BAG-01' and ((E[sid].get('params') or {}).get('note_owner') == 'fab_resist'
+                                       or old.startswith('X-RTE TF: fab photoresist')):
+                # Note ownership (write-convergence rule, as IA-GOODS-SHIP above): with the on-site
+                # photoresist route on site, fab_resist states the baghouse edge from its live inputs
+                # (fluoro_train re-states it every full pass) and stamps params.note_owner = 'fab_resist'
+                # on the edge (F-20261110-08: the owner is an explicit field, not a text prefix; the
+                # prefix test keeps the field-less trees converging). This writer re-derives only the
+                # value, so a --quick pass - which runs no fluoro_train - keeps the route note instead
+                # of stomping it with the assay-rebasis text and drifting off the fixed point.
+                E[sid]['rate'] = rate(v, 'kg/d', old)
+            else:
+                E[sid]['rate'] = rate(v, 'kg/d', note)
     # aisle air book: the wire-draw fume shrink leaves the MET_SCRUB blowdown without its old phantom make-up
     blow = float(E['S72']['rate']['value']) + float(E['S72B']['rate']['value'])
     mu_air = round(blow - pr['fume'], 4)
@@ -172,7 +185,11 @@ def process():
             continue
         v = e['rate'].get('value')
         if isinstance(v, (int, float)): _shop_out += float(v)
-    _goods = round(_shop_in - _shop_out, 4)
+    _goods = round(_shop_in - _shop_out, 6)
+    # 6 dp (2026-11-10, Round D2): the seed must close the shop at the same precision
+    # balance.physics re-closes it (its R10c move is a 6 dp write), so the re-seed below
+    # reproduces the reconciled value on a converged tree instead of stepping one rounding
+    # grain per pass.
     assert _goods > 0, ('shop goods surplus negative: the shop consumes more than it takes in', _goods)
     if 'IA-GOODS-SHIP' not in E:
         ge = edge('IA-GOODS-SHIP','MFG_SHOP','NORTH_DOCK','S',['mass'],'finished-goods surplus export',
@@ -182,7 +199,20 @@ def process():
                   'MFG','DOCK')
         g['edges'].append(ge); E['IA-GOODS-SHIP'] = ge
     else:
-        E['IA-GOODS-SHIP']['rate']['value'] = _goods   # value only: the note belongs to balance.physics (closure owner)
+        # Value only: the note belongs to balance.physics (the closure owner). The seed fires
+        # outside the reconciliation band only (Round D4, 2026-11-10). At the fixed point the
+        # foundry / balance closure pair pins IA-GOODS-SHIP one rounding grain off the raw in/out
+        # sum (the shop books a sub-gram residual; balance.physics re-derives IA-CHAR and the
+        # polymer draw mid-pass before its R10c move, so its closure is not the raw graph sum),
+        # and re-seeding every pass moves the edge that grain back. A --quick pass runs this
+        # writer without balance_report, so it would leave the seed and drift off the full fixed
+        # point (test_regen byte-stable --quick contract). The band is the
+        # balance_residual_band_kg_d driver (A-M-491), the same reconciliation grain balance.py
+        # snaps IA-HOP-01 in; on a drifted tree the pre-closure surplus sits far outside it and
+        # the seed still fires for the foundry stage.
+        band = DR.val(d, 'balance_residual_band_kg_d')
+        if abs(float(E['IA-GOODS-SHIP']['rate']['value'] or 0) - _goods) > band:
+            E['IA-GOODS-SHIP']['rate']['value'] = _goods
     E['S16']['rate']['note'] = (f'Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 s10.6): 29.3 % of the '
         f'S08 solids. {MET_TAG}: the shop closes on the goods export IA-GOODS-SHIP; this line holds its band basis.')
     V = DR.val(d,'ew_cell_voltage_V'); CE = DR.val(d,'ew_current_efficiency_design'); VD = DR.val(d,'ew_bus_drop_V')
@@ -686,7 +716,25 @@ def heat():
     # thermal-management sizing case. Replaces the stale 1.67 kW Rev-N seed (a 120 kWh-class book).
     TAGZ = 'X-THM-01 F-4'
     if 'IA-ZNBR-HEAT' in E:
-        pw = json.loads(subprocess.run([sys.executable, 'docs-authority/_power_sizing.py'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)['bounding']
+        # The cycling book is solved from the grease duty, not from the register stamp (Round D4,
+        # 2026-11-10). _power_sizing.py reads the disk graph: in a full pass fluoro_train has already
+        # re-stamped grease.tf's solved kW (the 8e-05 / 0.0 class) before this stage runs, while
+        # between passes the graph carries specialty_sizing's 0.2 kW commercial-class register
+        # stamps, and the two give different night-cycle books. Reading the register stamp here
+        # would solve a different ZNBR cycling book in a --quick pass (no fluoro_train) and drift
+        # the ledger off the full fixed point (test_regen byte-stable --quick contract).
+        # grease.design() is the same pure solve fluoro_train's tf calls, run on the same graph
+        # state (register stamps in place, so the lubricated-unit count matches), so the duty is
+        # identical. The solved duty travels to the power sizing as an in-memory override
+        # (F-20261110-08: --set-continuous on the argv) - this stage never writes the graph file
+        # mid-run, and the register stamp stays owned by specialty_sizing with nothing to restore.
+        from flow_graph.param import grease as _grease
+        _r = _grease.design(g, dict((E.get('IA-LIME-SHIP') or {}).get('composition') or {}), d)
+        _on = 'GREASE_CA' if _r['route'] == 'CA' else 'GREASE_LI'
+        _solved = {u: (round(_r['kw'], 5) if u == _on else 0.0) for u in ('GREASE_CA', 'GREASE_LI')}
+        _ov = ','.join(f'{u}={_solved[u]:.5f}' for u in sorted(_solved))
+        pw = json.loads(subprocess.run([sys.executable, 'docs-authority/_power_sizing.py',
+                                        f'--set-continuous={_ov}'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)['bounding']
         rt = DR.val(d, 'storage_round_trip'); night = DR.val(d, 'night_hours'); win = 24.0 - night
         e_out = float(pw['store_kWh']); e_in = float(pw['store_in_kWh']); loss = e_in - e_out
         znbr_avg = loss / 24.0; znbr_win = loss / win; chg_win = e_in / win

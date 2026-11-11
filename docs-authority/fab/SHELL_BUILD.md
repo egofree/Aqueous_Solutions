@@ -7,7 +7,7 @@ service line: machine dip-coat + stucco rainfall shell-building booth; shell_kg_
 Internals: none with basis: a coating machine; the applicator tooling is the design at unit tasks 10-13
 Material: PP-H slurry tank and rainfall-sander housing; silica-flour wear faces in PE; PP slurry pump; steel frame isolated from the slurry. Basis: colloidal silica slurry at pH 9-10, 100 L class (graph design A-M-281; 1 d slurry staging at 1600 kg/m3): matches the issued alkaline silica slurry family PP-H (AQS-STD-002 section 12.1 P4 row). (continues on the duty sheet)
 
-Nozzles: 7 process connections per docs-authority/nozzles/SHELL_BUILD.csv
+Nozzles: 8 process connections per docs-authority/nozzles/SHELL_BUILD.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

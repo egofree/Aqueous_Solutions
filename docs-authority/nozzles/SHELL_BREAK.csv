@@ -7,3 +7,4 @@ N5,solids,Class 150,spent foundry silica (solids return class),outlet,600
 N6,DN15,Class 150,drain,bottom,50
 N7,DN15,Class 150,vent,top,800
 N8,cable,Class 150,"power terminal (SF-SHELL_BREAK, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",top,800
+N9,solids,Class 150,recovered spent-shell silica to the shop pool,outlet,600

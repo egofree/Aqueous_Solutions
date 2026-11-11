@@ -1,0 +1,23 @@
+item,description,qty,material,basis
+1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Glass-lined steel batch reactors for the oxychlorination, nitrosation, diazotisation and esterification; 316L for the formaldehyde and ammonia oxidisers, the novolac kettle and the solvent steps; Monel 400 for the dry phosgene and chlorine lines.",docs-authority/duties/RESIST_SYN.md
+2,Process nozzle DN15,15,"Glass-lined steel batch reactors for the oxychlorination, nitrosation, diazotisation and esterification; 316L for the formaldehyde and ammonia oxidisers, the novolac kettle and the solvent steps; Monel 400 for the dry phosgene and chlorine lines.",one per mass edge; DN from AQS-INV-003
+3,"Motor: transfer pump IA-RESIST-BRINE to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+4,"Motor: transfer pump IA-RESIST-HCL to CRU (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+5,"Motor: transfer pump IA-RESIST-RAFF to OIL_FRAC (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+6,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
+7,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
+8,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
+9,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
+10,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
+11,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
+12,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+13,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+14,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+15,"instrument: gas detector, CO electrochemical CO",2,"alarm 25 ppm, trip 50 ppm, breathing height",AQS-INV-004
+16,"instrument: gas detector, Cl2 / HCl electrochemical Cl2 and HCl",2,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",AQS-INV-004
+17,"instrument: gas detector, H2 catalytic bead + IR backup",2,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",AQS-INV-004
+18,"instrument: gas detector, NOx electrochemical NO2",2,"alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height",AQS-INV-004
+19,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+20,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+21,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+22,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004

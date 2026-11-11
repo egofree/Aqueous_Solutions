@@ -74,8 +74,9 @@ AL_POT,"Dip leg DN50 OD60.3, inside the riser annulus, bottom z 250 (250 mm subm
 AL_POT,Metal siphon: well DN80 OD88.9 carbon + crest + discharge lip at +X z 600 (heat ,1,carbon (ram class),Unstated,-,not classed: carbon (ram class)
 AL_POT,Feed chute group: chute box + hopper + rotary-seal flange + DN100 lance OD114.3 ,1,"CS chute, carbon lance (refractory)",Closed,GLASS / silicate melt,
 AL_POT,"Drain well: carbon sump tube OD60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),Unstated,-,not classed: carbon (ram class)
-AL_POT,Ceramic lining sleeves for the N2/N4 ram passes,2,alumina (90 % class),Unstated,-,not classed: alumina (90 % class)
+AL_POT,Ceramic lining sleeves for the N2/N4/N8/N9/N13/N14 ram passes,6,alumina (90 % class),Unstated,-,not classed: alumina (90 % class)
 AL_POT,"Thyristor rectifier + bath hold heaters, 7 kW connected, IP54 cabinet",1,purchase item,Unstated,-,not classed: purchase item
+AL_POT,Solids feed chute set: three chute envelopes flush at the -X face about the 160 ,3,carbon steel (ram class),Closed,Fe EW -> MET_MELT -> mill/draw,
 AQUA_TANK,HDPE tank shell: 2000 x 1000 x 1000 ID + 15 mm walls and floor (2.0 m3 working v,1,HDPE,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 AQUA_TANK,HDPE lid 15 mm on the tank rim,1,HDPE,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 AQUA_TANK,Food-grade aquaculture liner sheet 5 mm: floor + four walls,1,LDPE liner class (duty section 3),Unstated,-,not classed: LDPE liner class (duty section 3)
@@ -204,6 +205,7 @@ CA_POT,Ca-metal tap group: well DN80 OD 88.9 carbon + crest + discharge lip at +
 CA_POT,N2 brine inlet group: chute box flush at the -X face + DN44 lance into the bath ,1,"CS chute, carbon lance",Closed,Fe EW -> MET_MELT -> mill/draw,
 CA_POT,"Drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),Unstated,-,not classed: carbon (ram class)
 CA_POT,"Thyristor rectifier + bath hold heaters, 1 kW connected, IP54 cabinet",1,purchase item,Unstated,-,not classed: purchase item
+CA_POT,N7 brine inlet group: chute box flush at the -X face + DN44 lance into the bath ,1,"CS chute, carbon lance",Closed,Fe EW -> MET_MELT -> mill/draw,
 CHICKEN_COOP,"HDG frame: 4 legs 40 x 40 to z 1800, sheet roof at z 1800",1,hot-dip galvanised steel (duty section 3),Closed,Fe EW -> MET_MELT -> mill/draw,
 CHICKEN_COOP,Drop board 3 mm at z 100 with the HDPE liner sheet 5 mm over it,1,HDG board + HDPE liner (duty section 3),Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 CHICKEN_COOP,Hardware cloth: wire floor at z 300 + panel bands at z 300..550 and z 1650..1900,1,hot-dip galvanised hardware cloth (duty section 3),Unstated,-,not classed: hot-dip galvanised hardware cloth (duty 
@@ -247,7 +249,7 @@ CONT_CAST,N1 melt inlet DN15 -X z 160 (from IND_MELT N8),1,carbon steel,Closed,F
 CONT_CAST,N4 drain well + N5 vent stub,2,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 CRU,"Vessel shell OD 520, wall 10 mm (study), z 40..680, welded top and bottom, on a ",1,PVC-U (duty section 3: AQS-STD-002 M1/M2),Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 CRU,"Four-post hold-down frame pinning the 1000 x 600 x 800 envelope (40 x 40 posts, ",1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
-CRU,Nozzle set per docs-authority/nozzles/CRU.csv: 10 open-bore tube stubs (DN15/DN2,12,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+CRU,Nozzle set per docs-authority/nozzles/CRU.csv: 10 open-bore tube stubs (DN15/DN2,13,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 CRYO_AHU,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_AHU,Process nozzle DN15,17,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_AHU,"Motor: induced-draft fan (BLDC, 42 mm (NEMA 17 flange))",1,-,Unstated,-,not classed: -
@@ -293,7 +295,7 @@ CRYO_ASU,"13X molecular-sieve sorbent charge, 115.038 kg per bed",3,"13X molecul
 CRYO_ASU,Base frame: plinth 2460 x 560 x 200 with fork slots (modeled as its solid envelo,1,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_ASU,CO2 two-stage compressor + condenser/chiller envelopes,1,purchase item,Unstated,-,not classed: purchase item
 CRYO_ASU,Heated Ar getter cartridge,1,purchase item,Unstated,-,not classed: purchase item
-CRYO_ASU,"Nozzle set per docs-authority/nozzles/CRYO_ASU.csv: barbs and stubs, 3 solids ro",16,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+CRYO_ASU,"Nozzle set per docs-authority/nozzles/CRYO_ASU.csv: barbs and stubs, 3 solids ro",18,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_CO2,"Cylinder tubes SA-312 TP316L seamless DN100 Sch 160, OD 114.3 x t 13.49, 6.096 m",4,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_CO2,"Rack frame: skid plate + SHS posts, tie bars and side rails + cross ties",1,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_CO2,"Tube saddles, 3 per tube, with wear groove",12,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
@@ -334,7 +336,7 @@ CR_CELL,"Hood hot plate, graphite t10 (expendable wetted face)",1,graphite,Parti
 CR_CELL,"Offtake riser DN50 OD 60.3 t 2.0, z 350..1594, flange + N6 vent at top",1,carbon steel (dry hot Cl2),Closed,Fe EW -> MET_MELT -> mill/draw,
 CR_CELL,"Return dip leg DN15, inside the riser annulus, bottom z 250",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 CR_CELL,"N4 CO export stub DN15 at +Y z 600 (0.202 kg/d, fuel-gas class)",1,carbon steel (dry hot gas),Closed,Fe EW -> MET_MELT -> mill/draw,
-CR_CELL,"N2/N3 feed chutes -X z 160, flush at the -X face: Cr2O3 chromite concentrate + c",2,"CS chute, refractory throat",Closed,GLASS / silicate melt,
+CR_CELL,"N2/N3/N8 feed chutes -X z 160, flush at the -X face: Cr2O3 chromite concentrate ",3,"CS chute, refractory throat",Closed,GLASS / silicate melt,
 CR_CELL,N1 Cr-metal tap group: well DN80-class carbon + crest + discharge lip at +X z 60,1,carbon (ram class),Unstated,-,not classed: carbon (ram class)
 CR_CELL,"N5 drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),Unstated,-,not classed: carbon (ram class)
 CR_CELL,"Thyristor rectifier + bath hold heaters, 1 kW connected, IP54 cabinet",1,purchase item,Unstated,-,not classed: purchase item
@@ -391,11 +393,11 @@ EVAP_ACID_VS,Sump level switch and pH probe,1,PVDF body,Missing,-,no fluorine so
 EVAP_BASE,"Falling-film body DN350: shell wall 6 over sump 400 + tube zone 1500 + head 150,",1,"nickel 200, CA not applicable",Missing,Ni EW -> MET_MELT,
 EVAP_BASE,Falling-film bundle: 20 tubes ID 25 x OD 29 x 1500 mm at the design pitch (1.25 ,20,nickel 200 tube,Missing,Ni EW -> MET_MELT,
 EVAP_BASE,Vapour separator DN350 x 975 with 100 mm mesh pad,1,nickel 200; Ni mesh,Missing,Ni EW -> MET_MELT,
-EVAP_BASE,"MVR blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaft, envelope and ",1,"nickel wetted class, purchased (X-MFG-32 line)",Missing,Ni EW -> MET_MELT,
-EVAP_BASE,"Feed/condensate/product interchanger 0.146 m2, 3.67 kW, outlets 50.6 C, envelope",1,"nickel 200 class, purchased",Missing,Ni EW -> MET_MELT,
+EVAP_BASE,"MVR blower, single-stage centrifugal, ratio 1.616, 1.202 kW shaft, envelope and ",1,"nickel wetted class, purchased (X-MFG-32 line)",Missing,Ni EW -> MET_MELT,
+EVAP_BASE,"Feed/condensate/product interchanger 0.143 m2, 3.67 kW, outlets 51.1 C, envelope",1,"nickel 200 class, purchased",Missing,Ni EW -> MET_MELT,
 EVAP_BASE,"Recirculation pump, 282.7 kg/h at 4 m (0.008 kW), envelope and interface",1,"nickel wetted class, purchased",Missing,Ni EW -> MET_MELT,
 EVAP_BASE,Relief set per node relief_basis: body fire valve (set 100 kPa g) and shell bloc,2,nickel trim,Missing,Ni EW -> MET_MELT,
-EVAP_BASE,"Nozzle set per docs-authority/nozzles/EVAP_BASE.csv: 8 rows (feed in, product an",8,nickel 200 tube,Missing,Ni EW -> MET_MELT,
+EVAP_BASE,"Nozzle set per docs-authority/nozzles/EVAP_BASE.csv: 9 rows (feed in, product an",9,nickel 200 tube,Missing,Ni EW -> MET_MELT,
 EVAP_BASE,"Plinth 1250 x 800 x 15 (body, blower and interchanger frame)",1,"carbon steel, painted",Closed,Fe EW -> MET_MELT -> mill/draw,
 EW_1,"CPVC tank shell, outside 270 x 720 x 760 mm, wall 10 mm, open top (inside 250 x ",1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 EW_1,CPVC support set: 2 cross beams 60 x 10 x 700 under the bus pads + vent bridge 6,1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
@@ -521,10 +523,12 @@ FLUE_KO,"Borosilicate glass 3.3 inlet spool, OD 110 x wall 3, z 300, reach 300 m
 FLUE_KO,"PVDF mesh pad, OD 508 x 16 at z 620, on a support ring OD 532 x ID 488",1,PVDF,Missing,-,no fluorine source on site; end of life Q-011
 FLUE_KO,Weir plate at the shell centreline to z 360 and launder trough (channel floor z ,1,FRP vinyl ester,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
 FLUE_KO,Nozzle set per docs-authority/nozzles/FLUE_KO.csv: 6 hose barbs (DN15/DN25/DN50),8,PVDF,Missing,-,no fluorine source on site; end of life Q-011
-FLUX_PREP,"SS304 mixing basin: 800 x 600 x 1200 mm open-top tray form, 6 mm plate (prep-cla",1,SS304 (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-FLUX_PREP,"PP-H day-drum metering hopper envelope, 20 L class (300 x 300 x 300)",1,PP-H (duty section 3),Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
-FLUX_PREP,Mixer stage envelope 80 x 80 x 500 with the 0.1 kW drive class,1,SS304 stage (drive purchased),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-FLUX_PREP,Nozzle set per docs-authority/nozzles/FLUX_PREP.csv: 6 rows - 3 solids rows draw,5,SS304,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+FLUX_PREP,"Bench frame 800 x 600, work top z 850..900",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+FLUX_PREP,Extraction hood with the N-vent stub,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+FLUX_PREP,Flux hopper 20 L cone + 0.1 kW mixer stage,1,CS + carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+FLUX_PREP,N1 flux discharge chute +X z 600,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+FLUX_PREP,N2/N3 inlet chutes -X z 160 (digester salts; MgCl2 drag-out from TI_CELL N7),2,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+FLUX_PREP,N4 drain well,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 FOOD_STORE,Body / envelope 650 x 650 x 750 mm,1,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
 FOOD_STORE,Process nozzle DN15,13,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
 FOOD_STORE,fastener: anchor bolt M10,48,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor
@@ -750,7 +754,7 @@ HDR_CO2,"Manifold spool DN25 OD 33.7 x wall 3.38 (Sch 40 table), 2 m modeled of 
 HDR_CO2,Branch connection set: 9 atmospheric tube stubs at the schedule tags/faces/heigh,9,316L tube,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 HDR_CO2,"Trough plinth 2000 x 33.7 x 20, the spool mount (AQS-MOD-002 dry service class)",1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
 HDR_H2,"Manifold spool DN25 OD 33.7 x wall 3.38 (Sch 40 table), 2 m modeled of the 20 m ",1,PVC-U (duty section 3: wet acid H2 + sweep air header),Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-HDR_H2,Branch connection set: 17 atmospheric open-bore tube stubs at the schedule tags/,17,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+HDR_H2,Branch connection set: 20 atmospheric open-bore tube stubs at the schedule tags/,20,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 HDR_H2,"Trough plinth 2000 x 60.3 x 20, the spool mount (AQS-MOD-002 dry service class)",1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
 HDR_N2,"Manifold spool DN32 OD 42.4 x wall 3.56 (Sch 40 table), 2 m modeled of the 20 m ",1,316L tube (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 HDR_N2,Branch connection set: 14 atmospheric open-bore tube stubs at the schedule tags/,14,316L tube,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
@@ -806,7 +810,7 @@ INV_CAST,N2/N3 melt DN15 stubs -Y z 160,2,carbon steel,Closed,Fe EW -> MET_MELT 
 INV_CAST,N2/N3 melt-stub pipe stands to the base,2,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 INV_CAST,N5 drain well + N6 vent stub,2,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 LEACH_CSTR_1,"CPVC tank shell, body 1888 x 1080 x 1400 mm inside the reserved bands, wall 16 m",1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-LEACH_CSTR_1,"Nozzle set per docs-authority/nozzles/LEACH_CSTR_1.csv: 54 hose barbs, 7 solids ",63,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+LEACH_CSTR_1,"Nozzle set per docs-authority/nozzles/LEACH_CSTR_1.csv: 59 hose barbs, 11 solids",72,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 LEACH_CSTR_1,"IA-E-LEACH conductor gland boss, DN15 passage",1,CPVC,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 LEACH_CSTR_1,"FRP belt set, pultruded channel FRP pultruded channel C203x56x6.4, web on the wa",3,FRP vinyl ester,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
 LEACH_CSTR_1,"HX-5 coil, two concentric helices 25 x 3 mm tube, 53.7 m, 4.22 m2",1,borosilicate glass 3.3,Partial,GLASS,boron not recovered; soda-lime or high-silica glass from GLASS is the substitute study
@@ -822,7 +826,7 @@ LITHO_ALIGN,"Leadscrew 10 mm dia, 1 mm pitch, x 140..940",1,steel 4140 (AQS-LITH
 LITHO_ALIGN,Mask holder 200 x 200 x 8,1,aluminium 6061,Unstated,-,not classed: aluminium 6061
 LITHO_ALIGN,"Mask 160 x 160 x 3 (chrome on glass, 100 um pattern)",1,"glass, chrome coating (AQS-LITH-001 section 2)",Closed,GLASS / silicate melt,
 LITHO_ALIGN,"365 nm LED array head envelope (1 W optical, node design source)",1,purchased unit (envelope),Unstated,-,not classed: purchased unit (envelope)
-LITHO_ALIGN,Nozzle set per docs-authority/nozzles/LITHO_ALIGN.csv: drain and vent flush at t,3,aluminium 6061,Unstated,-,not classed: aluminium 6061
+LITHO_ALIGN,Nozzle set per docs-authority/nozzles/LITHO_ALIGN.csv: drain and vent flush at t,5,aluminium 6061,Unstated,-,not classed: aluminium 6061
 LITHO_COAT,Base plate 1200 x 800 x 20,1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
 LITHO_COAT,Guard frame: four 40 x 40 posts + top rails pinning the 1200 x 800 x 1400 envelo,1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
 LITHO_COAT,"Spin bowl OD 360 x 200, wall 10 (study), with rim collar, on the stand",1,316L (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
@@ -830,12 +834,12 @@ LITHO_COAT,Coat catch bowl OD 480 x 60 tray (the IA-LITHO-CARRY stream names the
 LITHO_COAT,Vacuum chuck D 150 (node chuck_mm) on the spindle,1,316L (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 LITHO_COAT,Spin-chuck motor envelope under the bowl stand,1,purchased drive (envelope),Unstated,-,not classed: purchased drive (envelope)
 LITHO_COAT,Softbake hotplate envelope on the deck,1,purchased unit (envelope),Unstated,-,not classed: purchased unit (envelope)
-LITHO_COAT,Nozzle set per docs-authority/nozzles/LITHO_COAT.csv: drain and vent flush at th,5,316L (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+LITHO_COAT,Nozzle set per docs-authority/nozzles/LITHO_COAT.csv: drain and vent flush at th,7,316L (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 LITHO_DEV,Base plate 1200 x 600 x 20,1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
 LITHO_DEV,Hold-down/guard frame: four 40 x 40 posts + top rails pinning the 1200 x 600 x 9,1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
 LITHO_DEV,"Develop bowl (inner 300 x 200 x 120, wall 10 study)",1,316L (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 LITHO_DEV,Puddle dispense point envelope above the bowl (40 mL/wafer per the node design),1,316L (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-LITHO_DEV,Nozzle set per docs-authority/nozzles/LITHO_DEV.csv: drain and vent flush at the,5,316L (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+LITHO_DEV,Nozzle set per docs-authority/nozzles/LITHO_DEV.csv: drain and vent flush at the,7,316L (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 LI_RECOVER,Body / envelope 200 x 200 x 800 mm,1,PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame meta,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 LI_RECOVER,Process nozzle DN15,2,PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame meta,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 LI_RECOVER,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
@@ -874,7 +878,7 @@ MEOH_SYNTH,Nozzle set per docs-authority/nozzles/MEOH_SYNTH.csv: 9 atmospheric o
 MEOH_TANK,"Shell OD 540, wall 3 mm, z 40..560, with heads, on a 600 x 600 plinth",1,SA-240 304L plate,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 MEOH_TANK,"Stilling well, OD 110 x wall 5, z 35..575",1,304L pipe,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 MEOH_TANK,"Dip pipe inside the well, OD 60 x wall 4, z 100..575",1,304L pipe,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-MEOH_TANK,"Nozzle set per docs-authority/nozzles/MEOH_TANK.csv: 11 hose barbs (DN15), 1 dra",13,304L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+MEOH_TANK,"Nozzle set per docs-authority/nozzles/MEOH_TANK.csv: 11 hose barbs (DN15), 1 dra",15,304L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 METAL_STORE,Body / envelope 800 x 800 x 950 mm,1,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
 METAL_STORE,Process nozzle DN15,5,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
 METAL_STORE,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",Unstated,-,"not classed: ceramic diaphragm, IEC 61298"
@@ -937,7 +941,7 @@ MFG_SHOP,Band saw station envelope,1,purchased machine (envelope),Unstated,-,not
 MFG_SHOP,Rotary-screw air compressor station envelope,1,purchased machine (envelope),Unstated,-,not classed: purchased machine (envelope)
 MFG_SHOP,TIG/MIG welder station envelope,1,purchased machine (envelope),Unstated,-,not classed: purchased machine (envelope)
 MFG_SHOP,Bench grinder / drill press / hand-tool set envelope,1,purchased tool set (envelope),Unstated,-,not classed: purchased tool set (envelope)
-MFG_SHOP,Nozzle set per docs-authority/nozzles/MFG_SHOP.csv: 14 tube stubs (DN15/DN25/DN5,35,316L tube,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+MFG_SHOP,Nozzle set per docs-authority/nozzles/MFG_SHOP.csv: 14 tube stubs (DN15/DN25/DN5,41,316L tube,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 MG_POT,Lined cell shell 800 x 800 x 1600 mm: casing t6 (walls + roof + head plate 1154),1,carbon steel (CS class),Closed,Fe EW -> MET_MELT -> mill/draw,
 MG_POT,"Ceramic-fibre backup lining kit, t24",1,ceramic-fibre board 128 kg/m3,Unstated,-,not classed: ceramic-fibre board 128 kg/m3
 MG_POT,"Graphite ram lining kit, t40, wetted faces",1,graphite ramming paste 1550 kg/m3,Partial,OIL_PYRO char,"graphitisation above 2,500 C not in the heat ladder"
@@ -951,7 +955,7 @@ MG_POT,"Offtake riser DN80 OD 88.9 t 2.0, z 400..1594, flange + N8 vent at top",
 MG_POT,"Return dip leg DN15, inside the riser annulus, bottom z 250",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 MG_POT,N2/N6 Cl2 stubs DN15 at +Y z 600 (1.4813 kg/d: return and chlorinator feed),2,carbon steel (dry hot Cl2),Closed,Fe EW -> MET_MELT -> mill/draw,
 MG_POT,"N5 Mg-reductant tap group -X z 600, flush at the -X face (0.5078 kg/d Mg to the ",1,carbon (ram class),Unstated,-,not classed: carbon (ram class)
-MG_POT,N3/N4 inlets -Y z 160 flush at the -Y face: Kroll MgCl2 return stub + brine lanc,2,"CS chute, carbon lance",Closed,Fe EW -> MET_MELT -> mill/draw,
+MG_POT,N3/N4/N10 inlets -Y z 160 flush at the -Y face: Kroll MgCl2 return stub + brine ,3,"CS chute, carbon lance",Closed,Fe EW -> MET_MELT -> mill/draw,
 MG_POT,Mg-metal tap group: well DN80 OD 88.9 carbon + crest + discharge lip at +X z 600,1,carbon (ram class),Unstated,-,not classed: carbon (ram class)
 MG_POT,"N7 drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),Unstated,-,not classed: carbon (ram class)
 MG_POT,"Thyristor rectifier + bath hold heaters, 1 kW connected, IP54 cabinet",1,purchase item,Unstated,-,not classed: purchase item
@@ -967,7 +971,7 @@ MO_CELL,"Hood hot plate, graphite t10 (expendable wetted face)",1,graphite,Parti
 MO_CELL,"Offtake riser DN50 OD 60.3 t 2.0, z 350..1594, flange + N9 vent at top",1,carbon steel (dry hot Cl2),Closed,Fe EW -> MET_MELT -> mill/draw,
 MO_CELL,"Return dip leg DN15, inside the riser annulus, bottom z 250",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 MO_CELL,"N1/N3/N7 DN15 stubs at +Y z 600: raffinate return, anode gas, chlorinator CO2 ve",3,carbon steel (dry hot gas),Closed,Fe EW -> MET_MELT -> mill/draw,
-MO_CELL,"N5/N6 feed chutes -X z 160, flush at the -X face: MoO3 concentrate + carbon redu",2,"CS chute, refractory throat",Closed,GLASS / silicate melt,
+MO_CELL,"N5/N6/N11 feed chutes -X z 160, flush at the -X face: MoO3 concentrate + carbon ",3,"CS chute, refractory throat",Closed,GLASS / silicate melt,
 MO_CELL,"N2 post-EW liquor inlet stub -Y z 160, flush at the -Y face",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 MO_CELL,N4 Mo-metal tap group: well DN80 OD 88.9 carbon + crest + discharge lip at +X z ,1,carbon (ram class),Unstated,-,not classed: carbon (ram class)
 MO_CELL,"N8 drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),Unstated,-,not classed: carbon (ram class)
@@ -1060,7 +1064,7 @@ OIL_DRYER,Guard frame: four 40 x 40 posts full height with mid and top rails (A-
 OIL_DRYER,Nozzle set per docs-authority/nozzles/OIL_DRYER.csv: 5 open-bore tube stubs (DN1,7,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 OIL_FRAC,"Column shell OD 480, wall 6 mm (study), z 60..760, with top and bottom heads on ",1,carbon steel (duty section 3),Closed,Fe EW -> MET_MELT -> mill/draw,
 OIL_FRAC,"Four-post hold-down frame pinning the 1000 x 600 x 800 envelope (40 x 40 posts, ",1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
-OIL_FRAC,Nozzle set per docs-authority/nozzles/OIL_FRAC.csv: 12 open-bore tube stubs (DN1,14,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+OIL_FRAC,Nozzle set per docs-authority/nozzles/OIL_FRAC.csv: 12 open-bore tube stubs (DN1,16,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 OIL_PYRO,Shell DN200 x 170 mm x 4.5 mm wall with flat bottom,1,"SA-240 304H plate, rolled, GTAW (ASME IX)",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 OIL_PYRO,Bolted flat lid with gasket,1,"SA-240 304H plate, rolled, GTAW (ASME IX)",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 OIL_PYRO,Nozzles DN25: oil feed in; vapour out to OIL_FRAC; char out; thermowell; burstin,5,"SA-240 304H plate, rolled, GTAW (ASME IX)",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
@@ -1201,12 +1205,12 @@ PV_ARRAY,Four-post hold-down/guard frame pinning the 1000 x 600 x 800 envelope (
 PV_ARRAY,Roof-plane segment deck (the representative roof plane),1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 PV_ARRAY,Array table rails + 4 ballast feet (rep section; 10 deg low-tilt),1,carbon steel + ballast,Closed,Fe EW -> MET_MELT -> mill/draw,
 PV_ARRAY,"Tilted module-plane strips, 3 off covering 60 % of the table plane (GCR 0.6, A-M",3,"PV module plane (purchased, envelope)",Unstated,-,"not classed: PV module plane (purchased, envelope)"
-PV_ARRAY,Nozzle set per docs-authority/nozzles/PV_ARRAY.csv: 2 DN25 electrical edges + DN,4,316L tube,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+PV_ARRAY,Nozzle set per docs-authority/nozzles/PV_ARRAY.csv: 2 DN25 electrical edges + DN,6,316L tube,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 P_CA,Steel frame plinth 300 x 300 x 20 (duty section 3: steel frame outside the wette,1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
 P_CA,"PP-H vessel OD 250, wall 6 mm, z 18..336, with heads",1,PP-H plate,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 P_CA,PP agitator: shaft on the vessel axis with two blades (duty section 3 names the ,1,PP-H rod/plate,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 P_CA,"Agitator drive envelope on the top head (purchased, maker class at order)",1,polymer/maker class,Unstated,-,not classed: polymer/maker class
-P_CA,Nozzle set per docs-authority/nozzles/P_CA.csv: 1 drain (through the plinth and ,2,PP-H pipe (lib/dn Sch 40 table dims),Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
+P_CA,Nozzle set per docs-authority/nozzles/P_CA.csv: 1 drain (through the plinth and ,6,PP-H pipe (lib/dn Sch 40 table dims),Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 Q1_A,Body D650 x 950 mm,1,"Carbon steel, ASTM A106 Gr B, welded, spiral-wound 304/graphite gaskets; synthet",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 Q1_A,fastener: anchor bolt M10,10,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor
 Q1_A,fastener: anchor bolt M10,36,ISO 3506 A4-70 wedge anchor,Unstated,-,not classed: ISO 3506 A4-70 wedge anchor
@@ -1392,7 +1396,7 @@ SHELL_BREAK,Vibratory table 700 x 400 x 60 with the 0.4 kW drive,1,carbon steel,
 SHELL_BREAK,Reclaim sieve (inclined) with mesh window + reclaim pan,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 SHELL_BREAK,Station enclosure hood,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 SHELL_BREAK,N1 cast-tree inlet -X z 160 (from INV_CAST N4),1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
-SHELL_BREAK,N2 investment castings +X z 600; N3 spent silica +X z 600; N4 reclaim +Y z 600; ,4,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+SHELL_BREAK,N2 investment castings +X z 600; N3 spent silica +X z 600; N4 reclaim +Y z 600; ,5,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 SHELL_BREAK,N6 drain well + N7 vent stub,2,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 SHELL_BUILD,Booth frame 1500 x 800 with back-wall cladding,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 SHELL_BUILD,"Slurry tank 40 L (40 L design), agitated",1,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
@@ -1401,7 +1405,7 @@ SHELL_BUILD,"6-dip manipulator: mast, cross arm, grip hoist",1,carbon steel,Clos
 SHELL_BUILD,Drip deck over the slurry tank,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 SHELL_BUILD,"N1 pattern chute -X z 160, flush at the face (from WAX_PATTERN N1)",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 SHELL_BUILD,"N2 green-shell out +X z 600, flush at the face (to SHELL_BURNOUT N1)",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
-SHELL_BUILD,"N3/N4 silica make-up + reclaim inlets -X z 160, flush at the face",2,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+SHELL_BUILD,"N3/N4/N8 silica make-up + reclaim inlets -X z 160, flush at the face",3,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 SHELL_BUILD,N5 drain well + N6 vent stub,2,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 SHELL_BURNOUT,"Furnace casing 1000 x 1000 x 1500 mm, CS t4, front door 900 C class",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 SHELL_BURNOUT,Ceramic-fibre hot face,1,ceramic-fibre board 128 kg/m3,Unstated,-,not classed: ceramic-fibre board 128 kg/m3
@@ -1440,7 +1444,7 @@ SOLAR_PV_CELL,PV-EMIT-01 ceramic-fibre insulation annulus 200 mm x 1000,1,cerami
 SOLAR_PV_CELL,PV-ARC-01 dry vacuum pump envelope,1,purchased unit (envelope),Unstated,-,not classed: purchased unit (envelope)
 SOLAR_PV_CELL,"Screen print mesh (PV-CON-01, grid 2 mm lines at 10 mm pitch per AQS-PV-001)",1,"stainless, shop-cut (AQS-PV-001 section 3)",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 SOLAR_PV_CELL,Purchased drive/heat/electrical sets by node rating: PV-CON-01 200 C dryer 0.5 k,4,purchased units (envelopes in the station shells),Unstated,-,not classed: purchased units (envelopes in the statio
-SOLAR_PV_CELL,Nozzle set per docs-authority/nozzles/SOLAR_PV_CELL.csv: drain and vent flush at,5,316L (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+SOLAR_PV_CELL,Nozzle set per docs-authority/nozzles/SOLAR_PV_CELL.csv: drain and vent flush at,7,316L (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 SOL_ARK_60K,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 SOL_ARK_60K,"Motor: cooling fan (BLDC, 57 mm (NEMA 23 flange))",48,-,Unstated,-,not classed: -
 SOL_ARK_60K,bearing: deep-groove ball bearing 608-2Z,96,"ISO 15, normal class",Unstated,-,"not classed: ISO 15, normal class"
@@ -1469,7 +1473,7 @@ TI_CELL,Reduction furnace box 200 x 240 x 420,1,CS with element pockets,Closed,F
 TI_CELL,Mg charge hopper cone on the retort,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 TI_CELL,"Interconnects: chlorinator->condenser and condenser->retort, OD 24 t 2",2,carbon steel (dry hot Cl2/TiCl4),Closed,Fe EW -> MET_MELT -> mill/draw,
 TI_CELL,MgCl2 drag-out trough 640 x 110 x 90,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
-TI_CELL,N2/N10/N11 charge chutes -X z 160 (0.8342 kg/d TiO2-class + 0.2509 kg/d carbon +,3,"CS chute, refractory throat",Closed,GLASS / silicate melt,
+TI_CELL,N2/N10/N11/N18 charge chutes -X z 160 (0.8342 kg/d TiO2-class + 0.2509 kg/d carb,4,"CS chute, refractory throat",Closed,GLASS / silicate melt,
 TI_CELL,N3/N9 chlorine DN15 stubs -Y z 600 (1.4813 kg/d loop with MG_POT),2,carbon steel (dry hot Cl2),Closed,Fe EW -> MET_MELT -> mill/draw,
 TI_CELL,"N12 CO export DN15 +Y z 600 (0.5852 kg/d, fuel-gas class)",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 TI_CELL,N1 slag tap spout +Y z 600,1,carbon (refractory class),Closed,GLASS / silicate melt,
@@ -1495,9 +1499,9 @@ VAC_IND,"PSU cabinet, 15.0 kW connected (node design), IP54",1,purchased cabinet
 VAC_IND,Tilt-frame hydraulics bay on the +X floor,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 VAC_IND,Nozzle set per docs-authority/nozzles/VAC_IND.csv: 5 atmospheric open-bore tube ,5,304L tube,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 VCD_TRAIN,"Still vessels x 2 (2 x 100 %, X-RED-05): shell OD 240 x wall 10, 1170 mm, sump +",2,"316L, CA 0 mm",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-VCD_TRAIN,"Falling-film bundles: 18 tubes ID 12 x OD 14 x 890 mm per module, 0.6039 m2 each",36,"316L tube, CA 0 mm",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+VCD_TRAIN,"Falling-film bundles: 19 tubes ID 12 x OD 14 x 890 mm per module, 0.6375 m2 each",38,"316L tube, CA 0 mm",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 VCD_TRAIN,"Separator demister pads, 90 mm",2,316L mesh,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-VCD_TRAIN,"Scroll compressors, 0.2542 kW duty class (node design scroll class), envelope an",2,"purchased, 316L refrigeration class",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+VCD_TRAIN,"Scroll compressors, 0.2645 kW duty class (node design scroll class), envelope an",2,"purchased, 316L refrigeration class",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 VCD_TRAIN,Nozzle set per docs-authority/nozzles/VCD_TRAIN.csv: 11 rows at the skid faces (,11,316L tube,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 VCD_TRAIN,Plinth 1400 x 600 x 30 carrying both module bays,1,"carbon steel, painted",Closed,Fe EW -> MET_MELT -> mill/draw,
 VDF_SYN,"Synthesis reactor shell D360 x 440 mm, wall 8 mm, jacketed",1,"316L shell, PTFE-lined heads (fluorocarbon service)",Missing,-,no fluorine source on site; end of life Q-011
@@ -1518,18 +1522,18 @@ WAFER_FAB,CZ puller station envelope (charge heat-up over the 7 d campaign + 4 h
 WAFER_FAB,Ingot cool/anneal station envelope (N2 circulator duty share),1,purchased tool (envelope),Unstated,-,not classed: purchased tool (envelope)
 WAFER_FAB,Crop/grind/edge tool set envelope (5 starts/d),1,purchased tool (envelope),Unstated,-,not classed: purchased tool (envelope)
 WAFER_FAB,"FAB_TOOL dry row envelope (ox, RTA, metal, probe standby)",1,purchased tool (envelope),Unstated,-,not classed: purchased tool (envelope)
-WAFER_FAB,Nozzle set per docs-authority/nozzles/WAFER_FAB.csv: 10 open-bore tube stubs (DN,15,316L tube,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+WAFER_FAB,Nozzle set per docs-authority/nozzles/WAFER_FAB.csv: 10 open-bore tube stubs (DN,29,316L tube,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 WASHROOM,"FRP room shell: floor + four 15 mm partition walls, 3000 x 2000 x 2400 outer, 90",1,FRP,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
 WASHROOM,"SS304 fixture set: shower tray, WC pan, wall-hung basin - study sheet-metal enve",1,SS304,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 WASHROOM,Nozzle set per docs-authority/nozzles/WASHROOM.csv: 4 rows drawn as DN15 tube st,4,SS304,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-WAX_PATTERN,"SS304 sheet cabinet: 800 x 600 x 1200, 5 mm walls, floor and top (prep-class stu",1,SS304 (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-WAX_PATTERN,"304L wax melt pot envelope 250 x 250 x 160 (10 L class), wax reclaim returned to",1,304L (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-WAX_PATTERN,Steam/hot-water manifold envelope 280 x 280 x 100 under the pot,1,SS304 (duty section 3),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-WAX_PATTERN,Injection head envelope 200 x 200 x 600 with the 0.5 kW class,1,SS304 head (unit purchased),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-WAX_PATTERN,Pattern die envelope 150 x 150 x 200,1,SS304 (die material study),Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-WAX_PATTERN,PP-H wax storage bin envelope 200 x 200 x 300,1,PP-H (duty section 3),Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
-WAX_PATTERN,PE drain pan envelope 200 x 150 x 60 under the injector deck,1,PE (duty section 3),Unstated,-,not classed: PE (duty section 3)
-WAX_PATTERN,Nozzle set per docs-authority/nozzles/WAX_PATTERN.csv: 6 rows - 2 solids rows dr,5,SS304,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+WAX_PATTERN,"Bench frame 800 x 600, work top z 850..900",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+WAX_PATTERN,Extraction hood with the N5 vent stub,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+WAX_PATTERN,Wax pot 10 L with the 0.5 kW injector head,1,CS + heater class,Closed,Fe EW -> MET_MELT -> mill/draw,
+WAX_PATTERN,Pattern table 220 x 300 x 40,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+WAX_PATTERN,N1 pattern discharge chute +X z 600,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+WAX_PATTERN,N2 condensate-reclaim trap -X z 160,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+WAX_PATTERN,"N3 make-up hopper -X z 160 (petro-wax class import, A-M-284)",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+WAX_PATTERN,N4 drain well,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 WET_BENCH,Bench deck 912 x 512 x 20 over the plinth 1000 x 600 x 20,1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
 WET_BENCH,Four-post hold-down/guard frame pinning the 1000 x 600 x 800 envelope (40 x 40 p,1,carbon steel (ASTM A500),Closed,Fe EW -> MET_MELT -> mill/draw,
 WET_BENCH,"SC1 bath 10 L nominal (inner 250 x 250 x 160), wall 10 (study), with immersion h",1,CPVC (duty section 3 rule at the node 80 C bath temperature),Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
@@ -1538,7 +1542,7 @@ WET_BENCH,"DHF etch bath (inner 120 x 250 x 160, drawn to its bay), wall 10 (stu
 WET_BENCH,"DIW rinse bath (inner 120 x 250 x 160, drawn to its bay), wall 10 (study)",1,PVC-U (duty section 3: AQS-STD-002 M1/M2),Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 WET_BENCH,Immersion heater envelopes in SC1 and SC2,2,purchased unit (envelope),Unstated,-,not classed: purchased unit (envelope)
 WET_BENCH,N2 gun set (node equipment row: DIW rinse + N2 guns),1,purchased hand tools (not drawn),Unstated,-,not classed: purchased hand tools (not drawn)
-WET_BENCH,Nozzle set per docs-authority/nozzles/WET_BENCH.csv: 11 open-bore tube stubs (DN,14,PVC-U (duty section 3: no metal wetted part),Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+WET_BENCH,Nozzle set per docs-authority/nozzles/WET_BENCH.csv: 11 open-bore tube stubs (DN,15,PVC-U (duty section 3: no metal wetted part),Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 WIRE_DRAW,"Plinth 1000 x 600 x 20 (CS, anchor bosses)",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 WIRE_DRAW,Bench bed 600 long on 4 legs (DRAW bench idiom scaled to the node box),1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
 WIRE_DRAW,"Tungsten-carbide drawing die set, 4 dies in tool-steel casings",1,carbide + tool steel (consumable set),Closed,Fe EW -> MET_MELT -> mill/draw,
@@ -1551,7 +1555,7 @@ WIRE_DRAW,Nozzle set per docs-authority/nozzles/WIRE_DRAW.csv: 6 DN15 stubs and 
 WS_AMMONIA,"Bund tray 600 x 600, floor 20 + curb 60 x 10",1,PVC-U plate,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 WS_AMMONIA,"Day tank OD 260, wall 10 mm, z 40..300, with heads",1,PVC-U plate/pipe,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 WS_AMMONIA,"Service-zone guard rail 130 x 100 x 150, tube 12 (A-MACH: guard drawn)",1,PP tube,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
-WS_AMMONIA,Nozzle set per docs-authority/nozzles/WS_AMMONIA.csv: 8 atmospheric open-bore tu,8,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+WS_AMMONIA,Nozzle set per docs-authority/nozzles/WS_AMMONIA.csv: 8 atmospheric open-bore tu,9,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 WS_DOPE,"Bund tray 600 x 600, floor 20 + curb 60 x 10",1,PE plate,Unstated,-,not classed: PE plate
 WS_DOPE,"Day tank OD 300, wall 4.75 mm, z 30..350, with heads, per node design_storage",1,PE plate/pipe (rotomoulded / fabricated),Unstated,-,not classed: PE plate/pipe (rotomoulded / fabricated)
 WS_DOPE,"Service-zone guard rail 130 x 100 x 150, tube 12 (A-MACH: guard drawn)",1,PP tube,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
@@ -1586,15 +1590,15 @@ WS_SLURRY,Nozzle set per docs-authority/nozzles/WS_SLURRY.csv: 4 rows as atmosph
 WS_SOLV,"Bund tray 600 x 600, floor 20 + curb 60 x 10",1,304L plate,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 WS_SOLV,"Day tank OD 300, wall 3 mm, z 30..350, with heads, per node design_storage",1,SA-240 304L plate/pipe,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 WS_SOLV,"Service-zone guard rail 130 x 100 x 150, tube 12 (A-MACH: guard drawn)",1,PP tube,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
-WS_SOLV,Nozzle set per docs-authority/nozzles/WS_SOLV.csv: 7 rows as atmospheric open-bo,7,304L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-ZNBR2,"Plinth, support posts, end plates, tie rods and lifting beams, 7900 x 6050 x 197",377,"carbon steel, painted",Closed,Fe EW -> MET_MELT -> mill/draw,
-ZNBR2,"Bipolar plates 995.8 x 500 x 5 mm active window (0.4979 m2 each, 6 mm pitch), dr",4465,carbon-plastic composite (ZBFB class),Unstated,-,not classed: carbon-plastic composite (ZBFB class)
-ZNBR2,"Electrolyte reservoirs 700 x 700 x 1155 mm, wall 10 mm, open top",47,PVC-U sheet (AQS-STD-002 halogen class),Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-ZNBR2,"Microporous separator sheets, 996 x 500 x 1 mm, one per plate gap (inside the dr",4418,microporous polyolefin sheet (separator class),Unstated,-,not classed: microporous polyolefin sheet (separator 
-ZNBR2,"Electrolyte pumps, 517 W each (auxiliaries share)",47,"PP/PVDF wetted, purchased",Missing,-,no fluorine source on site; end of life Q-011
-ZNBR2,"Electrolyte coolers, 3.1 kW plate HX each",47,"PVC-U/CPVC class wetted, purchased",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-ZNBR2,"Bus flats 300 x 20 x 6.3 mm copper, one per stack terminal",94,copper C101,Closed,Cu EW -> WIRE_DRAW,
-ZNBR2,"Electrolyte inventory, 2 M ZnBr2 solution (Zn cycled per day and Br2 booked on t",24.9,ZnBr2 in water (A-M-457),Unstated,-,not classed: ZnBr2 in water (A-M-457)
+WS_SOLV,Nozzle set per docs-authority/nozzles/WS_SOLV.csv: 7 rows as atmospheric open-bo,10,304L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+ZNBR2,"Plinth, support posts, end plates, tie rods and lifting beams, 7900 x 6050 x 197",305,"carbon steel, painted",Closed,Fe EW -> MET_MELT -> mill/draw,
+ZNBR2,"Bipolar plates 994.5 x 500 x 5 mm active window (0.4973 m2 each, 6 mm pitch), dr",3610,carbon-plastic composite (ZBFB class),Unstated,-,not classed: carbon-plastic composite (ZBFB class)
+ZNBR2,"Electrolyte reservoirs 700 x 700 x 1155 mm, wall 10 mm, open top",38,PVC-U sheet (AQS-STD-002 halogen class),Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+ZNBR2,"Microporous separator sheets, 996 x 500 x 1 mm, one per plate gap (inside the dr",3572,microporous polyolefin sheet (separator class),Unstated,-,not classed: microporous polyolefin sheet (separator 
+ZNBR2,"Electrolyte pumps, 516 W each (auxiliaries share)",38,"PP/PVDF wetted, purchased",Missing,-,no fluorine source on site; end of life Q-011
+ZNBR2,"Electrolyte coolers, 3.08 kW plate HX each",38,"PVC-U/CPVC class wetted, purchased",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+ZNBR2,"Bus flats 300 x 20 x 6.3 mm copper, one per stack terminal",76,copper C101,Closed,Cu EW -> WIRE_DRAW,
+ZNBR2,"Electrolyte inventory, 2 M ZnBr2 solution (Zn cycled per day and Br2 booked on t",20.1,ZnBr2 in water (A-M-457),Unstated,-,not classed: ZnBr2 in water (A-M-457)
 ZNBR2,Nozzle set per docs-authority/nozzles/ZNBR2.csv: 12 rows at the hall faces (drai,12,DN per schedule,Unstated,-,not classed: DN per schedule
 ZNBR2_BR2_REGEN,"Column shell PVC-U DN100 Sch 80 (OD 114.3 x wall 8.56), 3700 mm with solvent-wel",1,"PVC-U (ASTM D1785), CA not applicable",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 ZNBR2_BR2_REGEN,"Packing support plate, perforated 50 % open envelope",1,PVC-U sheet,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
@@ -1603,6 +1607,8 @@ ZNBR2_BR2_REGEN,"Liquid distributor, drip-pipe envelope with header channel",1,P
 ZNBR2_BR2_REGEN,Mesh demister pad 100 mm,1,PVC or PP mesh,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 ZNBR2_BR2_REGEN,"Nozzle set per docs-authority/nozzles/ZNBR2_BR2_REGEN.csv: 4 rows (gas in, elect",4,PVC-U socket + FKM gaskets,Missing,-,no fluorine source on site; end of life Q-011
 ZNBR2_BR2_REGEN,Plinth 400 x 400 x 40 with drain slot,1,PVC-U sheet on a plinth class,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+ACID_PLANT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Cake kiln tube of Inconel 600 with an alumina lining and mineral-wool insulation,Missing,-,no fluorine source on site; end of life Q-011
+ACID_PLANT,Process nozzle DN15,10,Cake kiln tube of Inconel 600 with an alumina lining and mineral-wool insulation,Missing,-,no fluorine source on site; end of life Q-011
 ACID_POLISH_SCRUB,Body D600 x 3803 mm,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 ACID_POLISH_SCRUB,Process nozzle DN15,3,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 ACID_POLISH_SCRUB,Process nozzle DN250,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
@@ -1773,6 +1779,8 @@ MET_SYN,Body / envelope 1500 x 1000 x 1800 mm,1,"Borosilicate glass-lined reacto
 MET_SYN,Process nozzle DN15,4,"Borosilicate glass-lined reactor column, PTFE-lined transfer lines, SS304 reagen",Missing,-,no fluorine source on site; end of life Q-011
 MFG_SHOP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 MFG_SHOP,Process nozzle DN15,29,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+NAOH_PLANT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Lime kiln and trona calciner tubes of Inconel 600 with alumina lining and minera,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+NAOH_PLANT,Process nozzle DN15,7,Lime kiln and trona calciner tubes of Inconel 600 with alumina lining and minera,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 NORTH_DOCK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 NORTH_DOCK,Process nozzle DN15,9,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 NORTH_DOCK,Process nozzle DN50,1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
@@ -1814,14 +1822,20 @@ RELIEF_H2,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"316L
 RELIEF_H2,Process nozzle DN15,1,"316L, annealed, bonded and grounded; open stack, no cap that traps H₂ (M7 flame ",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 REMIN,Body / envelope 600 x 600 x 600 mm,1,"PVC-U or HDPE, per AQS-STD-002 rule M1.",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 REMIN,Process nozzle DN15,3,"PVC-U or HDPE, per AQS-STD-002 rule M1.",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
+RESIST_SYN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Glass-lined steel batch reactors for the oxychlorination, nitrosation, diazotisa",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+RESIST_SYN,Process nozzle DN15,15,"Glass-lined steel batch reactors for the oxychlorination, nitrosation, diazotisa",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 ROOF_TANK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U or HDPE, per AQS-STD-002 rule M1.",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 ROOF_TANK,Process nozzle DN15,20,"PVC-U or HDPE, per AQS-STD-002 rule M1.",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 SALT_FEED,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 SALT_FEED,Process nozzle DN15,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 SI_REDUCE,Body / envelope 1200 x 1000 x 1600 mm,1,Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a,Closed,Fe EW -> MET_MELT -> mill/draw,
 SI_REDUCE,Process nozzle DN15,1,Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a,Closed,Fe EW -> MET_MELT -> mill/draw,
+SI_REFINE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+SI_REFINE,Process nozzle DN15,6,"Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 SOLAR_PV_CELL,Body / envelope 2400 x 1200 x 1600 mm,1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 SOLAR_PV_CELL,Process nozzle DN15,2,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+SOLV_PLANT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclav",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+SOLV_PLANT,Process nozzle DN15,8,"316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclav",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 SOL_ARK_60K,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 VCD_TRAIN,Body / envelope 1400 x 600 x 1200 mm,1,316L if the stream is wet or chloride.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 VCD_TRAIN,Process nozzle DN15,9,316L if the stream is wet or chloride.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
@@ -1855,12 +1869,12 @@ ZNBR2,Process nozzle DN15,3,No wetted alloy.,Unstated,-,material not stated on t
 ZNBR2,Process nozzle DN32,1,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 ZNBR2_BR2_REGEN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U shell, sump, liquor piping, and Pall-ring packing; FKM gaskets.",Missing,-,no fluorine source on site; end of life Q-011
 ZNBR2_BR2_REGEN,Process nozzle DN15,2,"PVC-U shell, sump, liquor piping, and Pall-ring packing; FKM gaskets.",Missing,-,no fluorine source on site; end of life Q-011
-MF-01 x 90,stator laminations M270-35A 0.35 mm,1620,,Unstated,-,material not stated on the unit BOM line
-MF-01 x 90,NdFeB magnets 2.8 g (basis; ferrite variant in AQS-INV-005),90,,Unstated,-,material not stated on the unit BOM line
-MF-01 x 90,magnet wire IEC 60317-13 class 200,-,,Unstated,-,material not stated on the unit BOM line
-MF-01 x 90,"housing extruded 6063, NEMA ICS 16 42 mm flange",90,,Unstated,-,material not stated on the unit BOM line
-MF-01 x 90,bearing 6000-2Z,180,,Unstated,-,material not stated on the unit BOM line
-MF-01 x 90,Hall sensor PCB,90,,Unstated,-,material not stated on the unit BOM line
+MF-01 x 104,stator laminations M270-35A 0.35 mm,1872,,Unstated,-,material not stated on the unit BOM line
+MF-01 x 104,NdFeB magnets 2.8 g (basis; ferrite variant in AQS-INV-005),104,,Unstated,-,material not stated on the unit BOM line
+MF-01 x 104,magnet wire IEC 60317-13 class 200,-,,Unstated,-,material not stated on the unit BOM line
+MF-01 x 104,"housing extruded 6063, NEMA ICS 16 42 mm flange",104,,Unstated,-,material not stated on the unit BOM line
+MF-01 x 104,bearing 6000-2Z,208,,Unstated,-,material not stated on the unit BOM line
+MF-01 x 104,Hall sensor PCB,104,,Unstated,-,material not stated on the unit BOM line
 MF-02 x 56,stator laminations M270-35A 0.35 mm,3248,,Unstated,-,material not stated on the unit BOM line
 MF-02 x 56,NdFeB magnets 28.7 g (basis; ferrite variant in AQS-INV-005),56,,Unstated,-,material not stated on the unit BOM line
 MF-02 x 56,magnet wire IEC 60317-13 class 200,-,,Unstated,-,material not stated on the unit BOM line
@@ -1989,16 +2003,16 @@ MF-16 x 1,end shields A356,2,,Unstated,-,material not stated on the unit BOM lin
 MF-16 x 1,bearing 6202-2Z,2,,Unstated,-,material not stated on the unit BOM line
 MF-16 x 1,fan PP + fan cover steel,1,,Unstated,-,material not stated on the unit BOM line
 MF-16 x 1,terminal box + 6-stud block,1,,Unstated,-,material not stated on the unit BOM line
-MF-17 x 23,stator laminations M400-50A (EN 10106) 0.5 mm,6762,,Unstated,-,material not stated on the unit BOM line
-MF-17 x 23,rotor laminations M400-50A 0.5 mm,6762,,Unstated,-,material not stated on the unit BOM line
-MF-17 x 23,magnet wire IEC 60317-13 15 AWG (2.400 mm2),5.23 kg,,Unstated,-,material not stated on the unit BOM line
-MF-17 x 23,die-cast Al cage (bars + rings),3.52 kg,,Unstated,-,material not stated on the unit BOM line
-MF-17 x 23,"shaft C45 (EN 10083-2) D38 x 347 mm, key to IEC 60072-1",23,,Unstated,-,material not stated on the unit BOM line
-MF-17 x 23,"frame A356 IEC 132M, feet A216 x B178, holes K12",23,,Unstated,-,material not stated on the unit BOM line
-MF-17 x 23,end shields A356,46,,Unstated,-,material not stated on the unit BOM line
-MF-17 x 23,bearing 6308-2Z,46,,Unstated,-,material not stated on the unit BOM line
-MF-17 x 23,fan PP + fan cover steel,23,,Unstated,-,material not stated on the unit BOM line
-MF-17 x 23,terminal box + 6-stud block,23,,Unstated,-,material not stated on the unit BOM line
+MF-17 x 27,stator laminations M400-50A (EN 10106) 0.5 mm,7938,,Unstated,-,material not stated on the unit BOM line
+MF-17 x 27,rotor laminations M400-50A 0.5 mm,7938,,Unstated,-,material not stated on the unit BOM line
+MF-17 x 27,magnet wire IEC 60317-13 15 AWG (2.400 mm2),5.23 kg,,Unstated,-,material not stated on the unit BOM line
+MF-17 x 27,die-cast Al cage (bars + rings),3.52 kg,,Unstated,-,material not stated on the unit BOM line
+MF-17 x 27,"shaft C45 (EN 10083-2) D38 x 347 mm, key to IEC 60072-1",27,,Unstated,-,material not stated on the unit BOM line
+MF-17 x 27,"frame A356 IEC 132M, feet A216 x B178, holes K12",27,,Unstated,-,material not stated on the unit BOM line
+MF-17 x 27,end shields A356,54,,Unstated,-,material not stated on the unit BOM line
+MF-17 x 27,bearing 6308-2Z,54,,Unstated,-,material not stated on the unit BOM line
+MF-17 x 27,fan PP + fan cover steel,27,,Unstated,-,material not stated on the unit BOM line
+MF-17 x 27,terminal box + 6-stud block,27,,Unstated,-,material not stated on the unit BOM line
 MF-18 x 0,stator laminations M400-50A (EN 10106) 0.5 mm,0,,Unstated,-,material not stated on the unit BOM line
 MF-18 x 0,rotor laminations M400-50A 0.5 mm,0,,Unstated,-,material not stated on the unit BOM line
 MF-18 x 0,magnet wire IEC 60317-13 13 AWG (6.835 mm2),10.89 kg,,Unstated,-,material not stated on the unit BOM line
@@ -2044,16 +2058,16 @@ MF-23 x 0,magnet wire IEC 60317-13 class 200,-,,Unstated,-,material not stated o
 MF-23 x 0,"housing extruded 6063, NEMA ICS 16 86 mm flange",0,,Unstated,-,material not stated on the unit BOM line
 MF-23 x 0,bearing 608-2Z,0,,Unstated,-,material not stated on the unit BOM line
 MF-23 x 0,connector 4-pin,0,,Unstated,-,material not stated on the unit BOM line
-PF-01,"PVC-U Sch 80 ASTM D1785 DN15 pipe, 426 x 6.096 m",2557.1 m,PVC-U Sch 80 ASTM D1785,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-PF-01,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 1/2 in studs,374 / 258 / 258 / 1032,PVC-U Sch 80 ASTM D1785,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-PF-02,"316L ASTM A312 DN15 pipe, 234 x 6.096 m",1402.1 m,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-PF-02,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,199 / 134 / 134 / 536,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+PF-01,"PVC-U Sch 80 ASTM D1785 DN15 pipe, 433 x 6.096 m",2601.9 m,PVC-U Sch 80 ASTM D1785,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+PF-01,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 1/2 in studs,380 / 262 / 262 / 1048,PVC-U Sch 80 ASTM D1785,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+PF-02,"316L ASTM A312 DN15 pipe, 264 x 6.096 m",1584.5 m,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+PF-02,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,217 / 146 / 146 / 584,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 PF-03,"CPVC Sch 80 ASTM F441 DN15 pipe, 99 x 6.096 m",578.5 m,CPVC Sch 80 ASTM F441,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 PF-03,ASTM F439 socket 90 elbow; ASTM F439 flange; gaskets; 1/2 in studs,84 / 56 / 56 / 224,CPVC Sch 80 ASTM F441,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 PF-04,"CPVC Sch 80 ASTM F441 DN50 pipe, 60 x 6.096 m",358.4 m,CPVC Sch 80 ASTM F441,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 PF-04,ASTM F439 socket 90 elbow; ASTM F439 flange; gaskets; 5/8 in studs,51 / 34 / 34 / 136,CPVC Sch 80 ASTM F441,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-PF-05,"PVDF SDR 21 ISO 10931 DN15 pipe, 146 x 6.096 m",868.4 m,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
-PF-05,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 ,120 / 82 / 82 / 328,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
+PF-05,"PVDF SDR 21 ISO 10931 DN15 pipe, 170 x 6.096 m",1011.7 m,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
+PF-05,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 ,135 / 92 / 92 / 368,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
 PF-06,"CS ASTM A106 Gr B DN15 pipe, 85 x 6.096 m",505.3 m,CS ASTM A106 Gr B,Closed,Fe EW -> MET_MELT -> mill/draw,
 PF-06,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,89 / 64 / 64 / 256,CS ASTM A106 Gr B,Closed,Fe EW -> MET_MELT -> mill/draw,
 PF-07,"PVC-U Sch 80 ASTM D1785 DN50 pipe, 38 x 6.096 m",220.6 m,PVC-U Sch 80 ASTM D1785,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
@@ -2090,45 +2104,43 @@ PF-24,"PVC-U Sch 80 ASTM D1785 DN40 pipe, 7 x 6.096 m",36.9 m,PVC-U Sch 80 ASTM 
 PF-24,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 1/2 in studs,3 / 2 / 2 / 8,PVC-U Sch 80 ASTM D1785,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 PF-25,"316L ASTM A312 DN40 pipe, 5 x 6.096 m",25.1 m,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 PF-25,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,3 / 2 / 2 / 8,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",35160 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",42770 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",18000 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-04,"equipment ground 10 AWG bare Cu, -",17580 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",18212 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",4668 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-07,"control 18 AWG shielded pair, 300 V",3920 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",3860 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",6062 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-10,"power 3 AWG XHHW-2 Cu, 600 V",2775 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",36240 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",43123 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",18720 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-04,"equipment ground 10 AWG bare Cu, -",18120 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",18389 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",4872 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-07,"control 18 AWG shielded pair, 300 V",4280 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",4220 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",6121 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-10,"power 3 AWG XHHW-2 Cu, 600 V",2850 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",3163 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-12,"MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield, 15 kV",1200 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-13,"equipment ground 8 AWG green XHHW-2 Cu, 600 V",1054 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-14,"power 400 kcmil XHHW-2 Cu, 600 V",540 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-15,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",233 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-16,"power 10 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",396 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-15,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",228 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-16,"power 10 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",378 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-19,"equipment ground 2/0 AWG green XHHW-2 Cu, 600 V",180 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-20,"power 3 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",173 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-20,"power 3 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",295 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-21,"DC power pair 14 AWG TC-ER 2-cond, 600 V",60 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-24,"equipment ground 10 AWG green XHHW-2 Cu, 600 V",12 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-25,"power 10 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",9 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-28,"power 8 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",99 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-30,"power 250 kcmil XHHW-2 Cu, tray cable TC-ER, 600 V",68 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-31,"power 12 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",120 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-32,"power 4 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",141 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",346,,Unstated,-,material not stated on the unit BOM line
+WF-31,"power 12 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",115 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",374,,Unstated,-,material not stated on the unit BOM line
 OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",404,,Unstated,-,material not stated on the unit BOM line
-OF-03,electronics: PLC digital I/O point (IEC 61131-2),846,,Unstated,-,material not stated on the unit BOM line
-OF-04,electronics: PLC analog input point (IEC 61131-2),857,,Unstated,-,material not stated on the unit BOM line
-OF-05,electronics: BLDC driver (IEC 61800-5-1),170,,Unstated,-,material not stated on the unit BOM line
+OF-03,electronics: PLC digital I/O point (IEC 61131-2),882,,Unstated,-,material not stated on the unit BOM line
+OF-04,electronics: PLC analog input point (IEC 61131-2),913,,Unstated,-,material not stated on the unit BOM line
+OF-05,electronics: BLDC driver (IEC 61800-5-1),184,,Unstated,-,material not stated on the unit BOM line
 OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),169,,Unstated,-,material not stated on the unit BOM line
-OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",107,,Unstated,-,material not stated on the unit BOM line
+OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",113,,Unstated,-,material not stated on the unit BOM line
 OF-08,electronics: variable-frequency drive (IEC 61800-5-1),33,,Unstated,-,material not stated on the unit BOM line
-OF-09,electronics: solenoid driver channel (IEC 61131-2 DO),23,,Unstated,-,material not stated on the unit BOM line
+OF-09,electronics: solenoid driver channel (IEC 61131-2 DO),27,,Unstated,-,material not stated on the unit BOM line
 OF-10,electronics: compressor contactor + overload (IEC 60947-4-1),9,,Unstated,-,material not stated on the unit BOM line
 OF-11,electronics: stepper driver (IEC 61800-5-1),3,,Unstated,-,material not stated on the unit BOM line
 OF-12,"electronics: safety PLC (SIL 2 capable), CPU and I/O rack (IEC 61508 / IEC 61511",2,,Unstated,-,material not stated on the unit BOM line
 OF-13,fabricated part: fabricated part set (models/mfg/<unit>/bom.csv),197,,Unstated,-,material not stated on the unit BOM line
-OF-14,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),14790,,Unstated,-,material not stated on the unit BOM line
+OF-14,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),15402,,Unstated,-,material not stated on the unit BOM line
 OF-15,fastener: M10 x 40 lid bolt (ISO 3506 A4-70),12,,Unstated,-,material not stated on the unit BOM line
 OF-16,fastener: M8 x 30 lid bolt (ISO 3506 A4-70),12,,Unstated,-,material not stated on the unit BOM line
 OF-17,fastener: M12 anchor (ISO 3506 A4-70),3,,Unstated,-,material not stated on the unit BOM line
@@ -2138,34 +2150,34 @@ OF-26,fastener: M10 x 40 lid bolt (ASTM A193 B8),8,,Unstated,-,material not stat
 OF-29,fastener: Flange gasket (PTFE envelope),2,,Unstated,-,material not stated on the unit BOM line
 OF-31,fastener: M10 U-bolt for DN150 (ISO 3506 A4-70),2,,Unstated,-,material not stated on the unit BOM line
 OF-33,fastener: Solvent cement (PVC-U per ASTM D2564),1,,Unstated,-,material not stated on the unit BOM line
-OF-34,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes",197,,Unstated,-,material not stated on the unit BOM line
-OF-35,"instrument: pressure transmitter (ceramic diaphragm, IEC 61298)",177,,Unstated,-,material not stated on the unit BOM line
-OF-36,"instrument: temperature element (IEC 60751, 316L thermowell)",180,,Unstated,-,material not stated on the unit BOM line
-OF-37,"instrument: high-level switch (IEC 60947-5, 316L)",82,,Unstated,-,material not stated on the unit BOM line
-OF-38,"instrument: level transmitter (IEC 62828, PTFE lens)",82,,Unstated,-,material not stated on the unit BOM line
-OF-39,"instrument: gas detector, H2 (alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % L",32,,Unstated,-,material not stated on the unit BOM line
-OF-40,"instrument: gas detector, O2 deficiency (alarm 19.5 vol %, trip 18.0 vol %, low ",20,,Unstated,-,material not stated on the unit BOM line
-OF-41,"instrument: gas detector, Cl2 / HCl (alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm",38,,Unstated,-,material not stated on the unit BOM line
+OF-34,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes",201,,Unstated,-,material not stated on the unit BOM line
+OF-35,"instrument: pressure transmitter (ceramic diaphragm, IEC 61298)",183,,Unstated,-,material not stated on the unit BOM line
+OF-36,"instrument: temperature element (IEC 60751, 316L thermowell)",186,,Unstated,-,material not stated on the unit BOM line
+OF-37,"instrument: high-level switch (IEC 60947-5, 316L)",86,,Unstated,-,material not stated on the unit BOM line
+OF-38,"instrument: level transmitter (IEC 62828, PTFE lens)",86,,Unstated,-,material not stated on the unit BOM line
+OF-39,"instrument: gas detector, H2 (alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % L",38,,Unstated,-,material not stated on the unit BOM line
+OF-40,"instrument: gas detector, O2 deficiency (alarm 19.5 vol %, trip 18.0 vol %, low ",24,,Unstated,-,material not stated on the unit BOM line
+OF-41,"instrument: gas detector, Cl2 / HCl (alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm",44,,Unstated,-,material not stated on the unit BOM line
 OF-42,"instrument: temperature element (SIF, independent) (IEC 60751, own thermowell)",14,,Unstated,-,material not stated on the unit BOM line
 OF-43,"instrument: gas detector, O2 enrichment (alarm 23.5 vol %, trip 25 vol %, breath",12,,Unstated,-,material not stated on the unit BOM line
-OF-44,"instrument: gas detector, CO (alarm 25 ppm, trip 50 ppm, breathing height)",14,,Unstated,-,material not stated on the unit BOM line
-OF-45,"instrument: gas detector, NOx (alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing he",6,,Unstated,-,material not stated on the unit BOM line
+OF-44,"instrument: gas detector, CO (alarm 25 ppm, trip 50 ppm, breathing height)",22,,Unstated,-,material not stated on the unit BOM line
+OF-45,"instrument: gas detector, NOx (alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing he",14,,Unstated,-,material not stated on the unit BOM line
 OF-46,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",227,,Unstated,-,material not stated on the unit BOM line
 OF-47,"seal: mechanical seal, single (SiC/SiC faces, FKM)",152,,Unstated,-,material not stated on the unit BOM line
-OF-48,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",5895,,Unstated,-,material not stated on the unit BOM line
-OF-49,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1500,,Unstated,-,material not stated on the unit BOM line
-OF-50,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",284,,Unstated,-,material not stated on the unit BOM line
+OF-48,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",6070,,Unstated,-,material not stated on the unit BOM line
+OF-49,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1631,,Unstated,-,material not stated on the unit BOM line
+OF-50,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",288,,Unstated,-,material not stated on the unit BOM line
 OF-51,"valve: isolation valve (PP ball valve with HDPE stub ends, ISO 16135)",42,,Unstated,-,material not stated on the unit BOM line
-OF-52,"valve: isolation valve (316L ball valve, ASME B16.34 Cl 150, RF flanged)",190,,Unstated,-,material not stated on the unit BOM line
+OF-52,"valve: isolation valve (316L ball valve, ASME B16.34 Cl 150, RF flanged)",202,,Unstated,-,material not stated on the unit BOM line
 OF-53,"valve: isolation valve (CPVC true-union ball valve, MSS SP-122, FKM seals)",90,,Unstated,-,material not stated on the unit BOM line
 OF-54,"valve: check valve (PP swing/ball check valve with HDPE stub ends, ISO 16137)",14,,Unstated,-,material not stated on the unit BOM line
-OF-55,"valve: check valve (PVC-U true-union swing/ball check valve, EPDM seals)",65,,Unstated,-,material not stated on the unit BOM line
-OF-56,"valve: isolation valve (PVDF ball valve, ISO 16135, PTFE seats)",90,,Unstated,-,material not stated on the unit BOM line
+OF-55,"valve: check valve (PVC-U true-union swing/ball check valve, EPDM seals)",67,,Unstated,-,material not stated on the unit BOM line
+OF-56,"valve: isolation valve (PVDF ball valve, ISO 16135, PTFE seats)",100,,Unstated,-,material not stated on the unit BOM line
 OF-57,"valve: check valve (CPVC true-union swing/ball check valve, FKM seals)",27,,Unstated,-,material not stated on the unit BOM line
-OF-58,"valve: check valve (PVDF swing/ball check valve, ISO 16137, PTFE seats)",29,,Unstated,-,material not stated on the unit BOM line
+OF-58,"valve: check valve (PVDF swing/ball check valve, ISO 16137, PTFE seats)",30,,Unstated,-,material not stated on the unit BOM line
 OF-59,"valve: isolation valve (CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged)",64,,Unstated,-,material not stated on the unit BOM line
 OF-60,"valve: isolation valve (PVC-lined ball valve in FRP service, ISO 16135)",20,,Unstated,-,material not stated on the unit BOM line
-OF-61,"valve: check valve (316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged)",33,,Unstated,-,material not stated on the unit BOM line
+OF-61,"valve: check valve (316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged)",34,,Unstated,-,material not stated on the unit BOM line
 OF-62,"valve: isolation valve (PP-H ball valve, ISO 16135, EPDM seals)",18,,Unstated,-,material not stated on the unit BOM line
 OF-63,"valve: ESD valve, spring-return actuator (316L, fail-safe, IEC 61511)",10,,Unstated,-,material not stated on the unit BOM line
 OF-64,"valve: check valve (PP-H swing/ball check valve, ISO 16137, EPDM seals)",9,,Unstated,-,material not stated on the unit BOM line
@@ -2182,7 +2194,7 @@ OF-77,"instrument: pressure transmitter (316L thin-film strain gauge, IEC 61298)
 OF-78,"valve: check valve (CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF f",17,,Unstated,-,material not stated on the unit BOM line
 OF-81,fastener: M10 stud + nut (ISO 4014 / ISO 4032) (ISO 898-1 8.8),106,,Unstated,-,material not stated on the unit BOM line
 OF-82,fastener: M8 x 25 hood bolts (ISO 898-1 8.8),48,,Unstated,-,material not stated on the unit BOM line
-OF-83,fastener: M10 anchor (ISO 898-1 8.8),32,,Unstated,-,material not stated on the unit BOM line
+OF-83,fastener: M10 anchor (ISO 898-1 8.8),40,,Unstated,-,material not stated on the unit BOM line
 OF-84,fastener: M8 x 25 hopper bolts (ISO 898-1 8.8),8,,Unstated,-,material not stated on the unit BOM line
 OF-85,fastener: M6 x 25 (ISO 3506 A4-70),65,,Unstated,-,material not stated on the unit BOM line
 OF-86,fastener: M8 x 40 (ISO 3506 A4-70),72,,Unstated,-,material not stated on the unit BOM line
@@ -2191,7 +2203,7 @@ OF-88,fastener: M10 x 35 (ISO 3506 A4-70),54,,Unstated,-,material not stated on 
 OF-89,fastener: M12 x 60 hex bolt + nut + 2 washers (PVDF (non-metallic)),34,,Unstated,-,material not stated on the unit BOM line
 OF-90,fastener: M12 x 40 (ISO 3506 A4-70),456,,Unstated,-,material not stated on the unit BOM line
 OF-91,fastener: M12 x 45 (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
-OF-92,fastener: M10 wedge anchor (ISO 898-1 8.8),164,,Unstated,-,material not stated on the unit BOM line
+OF-92,fastener: M10 wedge anchor (ISO 898-1 8.8),156,,Unstated,-,material not stated on the unit BOM line
 OF-93,fastener: M10 wedge anchor (ISO 3506 A4-70),110,,Unstated,-,material not stated on the unit BOM line
 OF-94,fastener: M12 bolt + nut; PP-flanged joint (ISO 3506 A4-70),16,,Unstated,-,material not stated on the unit BOM line
 OF-95,fastener: M12 PVDF bolt + nut (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line
@@ -2235,7 +2247,7 @@ OF-132,fastener: M10 header clip bolt + nut (ISO 898-1 8.8),12,,Unstated,-,mater
 OF-133,fastener: M10 base hold-down anchor (ISO 898-1 8.8),44,,Unstated,-,material not stated on the unit BOM line
 OF-134,fastener: M12 batten strip bolt (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line
 OF-135,fastener: M6 box-assembly screw (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line
-OF-136,fastener: M8 bolt (ISO 898-1 8.8),16,,Unstated,-,material not stated on the unit BOM line
+OF-136,fastener: M8 bolt (ISO 898-1 8.8),24,,Unstated,-,material not stated on the unit BOM line
 OF-137,fastener: M10 lid hold-down bolt + nut (ISO 3506 A4-70),16,,Unstated,-,material not stated on the unit BOM line
 OF-138,fastener: M6 screen-frame clamp screw (ISO 3506 A4-70),16,,Unstated,-,material not stated on the unit BOM line
 OF-139,fastener: M8 liner batten bolt (ISO 3506 A4-70),16,,Unstated,-,material not stated on the unit BOM line
@@ -2249,15 +2261,14 @@ OF-146,fastener: M10 stand-to-pad anchor (ISO 898-1 8.8),4,,Unstated,-,material 
 OF-147,fastener: M6 reactor tube clamp bolt (ISO 3506 A4-70),4,,Unstated,-,material not stated on the unit BOM line
 OF-148,fastener: M10 table mount (ISO 898-1 8.8),4,,Unstated,-,material not stated on the unit BOM line
 OF-149,fastener: M10 hold-down (ISO 898-1 8.8),4,,Unstated,-,material not stated on the unit BOM line
-OF-150,fastener: M16 tie rod (ISO 898-1 8.8),188,,Unstated,-,material not stated on the unit BOM line
-OF-151,fastener: M8 bolt (ISO 3506 A4-70),94,,Unstated,-,material not stated on the unit BOM line
+OF-150,fastener: M16 tie rod (ISO 898-1 8.8),152,,Unstated,-,material not stated on the unit BOM line
+OF-151,fastener: M8 bolt (ISO 3506 A4-70),76,,Unstated,-,material not stated on the unit BOM line
 OF-152,fastener: M8 U-bolt (ISO 3506 A4-70),2,,Unstated,-,material not stated on the unit BOM line
 OF-153,fastener: Solvent cement joints (PVC-U per ASTM D2564),1,,Unstated,-,material not stated on the unit BOM line
 OF-154,fastener: M10 stud (ISO 3506 A4-70),16,,Unstated,-,material not stated on the unit BOM line
 OF-155,fastener: M16 stud (ISO 3506 A4-70),24,,Unstated,-,material not stated on the unit BOM line
 OF-156,fastener: M12 stud (ISO 3506 A4-70),16,,Unstated,-,material not stated on the unit BOM line
 OF-157,fastener: M10 hatch hold-down clamp (ISO 3506 A4-70),4,,Unstated,-,material not stated on the unit BOM line
-OF-158,fastener: M8 socket bolt (ISO 3506 A4-70),16,,Unstated,-,material not stated on the unit BOM line
 OF-159,fastener: M8 cage-section joint bolt (ISO 898-1 8.8),12,,Unstated,-,material not stated on the unit BOM line
 OF-160,fastener: M8 frame-section joint bolt (ISO 898-1 8.8),12,,Unstated,-,material not stated on the unit BOM line
 OF-161,fastener: M10 socket bolt (ISO 3506 A4-70),8,,Unstated,-,material not stated on the unit BOM line

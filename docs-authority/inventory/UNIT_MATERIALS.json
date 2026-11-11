@@ -1,5 +1,6 @@
 {
  "issued": [
+  "ACID_PLANT",
   "ACID_POLISH_SCRUB",
   "ADS_CHILL",
   "AFTERBURNER",
@@ -141,6 +142,7 @@
   "MFG_SHOP",
   "MG_POT",
   "MO_CELL",
+  "NAOH_PLANT",
   "NCG_HEADER",
   "NOX_SCRUB",
   "NUTRIENT_DOSE",
@@ -183,6 +185,7 @@
   "RELIEF_CRYO",
   "RELIEF_H2",
   "REMIN",
+  "RESIST_SYN",
   "RES_HEAT",
   "RF_HEAT",
   "ROLL",
@@ -194,8 +197,10 @@
   "SHELL_BURNOUT",
   "SINTER",
   "SI_REDUCE",
+  "SI_REFINE",
   "SLEEP_QUARTERS",
   "SOLAR_PV_CELL",
+  "SOLV_PLANT",
   "SOL_ARK_60K",
   "STOCK_OUT",
   "SW_INTAKE",
@@ -226,6 +231,6 @@
   "ZNBR2_BR2_REGEN"
  ],
  "open": {},
- "tot_wetted_rows": 414,
- "units": 224
+ "tot_wetted_rows": 461,
+ "units": 229
 }

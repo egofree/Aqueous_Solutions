@@ -7,7 +7,7 @@ service line: duty standby well head: the make-up on loss of atmospheric harvest
 Internals: issued mfg model BOM (1 internals part row): "1,"SS304 wellhead head plate set: 800 x 800 x 600 mm tray form, 6 mm plate (X-LOC-13 well head)",1,SS304,121.3" [models/mfg/GW_INTAKE/bom.csv]
 Material: SS304 wellhead plate and discharge head, HDPE potable discharge line, submersible pump SS304/stainless stages. Basis: potable groundwater contact (X-LOC-13 well head): 304 wetted at the chloride-light aquifer class, HDPE for the discharge run; the pump stages are the well-class stainless Alternative: 316L wetted where the aquifer mineralisation ever shows pitting. (continues on the duty sheet)
 
-Nozzles: 3 process connections per docs-authority/nozzles/GW_INTAKE.csv
+Nozzles: 6 process connections per docs-authority/nozzles/GW_INTAKE.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

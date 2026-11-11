@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.452 kg/d. Mass out 0.452 kg/d. Electrical duty 0.1600 kW. In: IA-CR2O3-MU 0.3654 kg/d (Cr2O3-equivalent chromite concentrate (dock import class)); IA-C-CR 0.08662 kg/d (carbon reductant (petcoke/char class)). Out: CR_TO_IND 0.25 kg/d (Cr metal); IA-CR-VENT 0.202 kg/d (chlorinator CO (fuel-gas class export)).
+1. Basis. Mass in 0.452 kg/d. Mass out 0.452 kg/d. Electrical duty 0.1600 kW. In: IA-CR2O3-MU 0.3654 kg/d (Cr2O3-equivalent chromite concentrate (dock import class)); CHAR_TO_CR 0.08662 kg/d (plant pyrolysis char reductant). Out: CR_TO_IND 0.25 kg/d (Cr metal); IA-CR-VENT 0.202 kg/d (chlorinator CO (fuel-gas class export)).
 
 2. Size.
 - Envelope 800×800×1600 mm, 1.024 m³. That box over this flow would be 54370.1 h if it were full. It is not a residence time.

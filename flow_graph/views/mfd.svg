@@ -192,7 +192,7 @@
 <title>CRYO_CO2&#45;&gt;MEOH_SYNTH</title>
 <path fill="none" stroke="#1b5e20" stroke-width="2.2" d="M1735.04,-994.88C1859.9,-949.44 2314.42,-784.01 2465,-729.2"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="2.2" points="2466.27,-732.47 2474.47,-725.76 2463.88,-725.89 2466.27,-732.47"/>
-<text text-anchor="middle" x="2144.52" y="-864.64" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S73\n45.218655 kg/d</text>
+<text text-anchor="middle" x="2144.52" y="-864.64" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S73\n45.218652 kg/d</text>
 </g>
 <!-- CRYO_DED_COOL -->
 <g id="node4" class="node">
@@ -263,7 +263,7 @@
 <title>CRYO_N2&#45;&gt;AIR_RECEIVER</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1723.68,-1080.55C1738.85,-1096.74 1761.2,-1120.6 1778.12,-1138.67"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1775.61,-1141.11 1785.01,-1146.02 1780.72,-1136.33 1775.61,-1141.11"/>
-<text text-anchor="middle" x="1703.9" y="-1112.21" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S84\n194.438214 kg/d</text>
+<text text-anchor="middle" x="1703.9" y="-1112.21" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S84\n194.439528 kg/d</text>
 </g>
 <!-- WAFER_FAB -->
 <g id="node20" class="node">
@@ -309,7 +309,7 @@
 <title>CRYO_O2&#45;&gt;HDR_O2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1837.11,-1073.95C1841.39,-1178.11 1862.79,-1698.73 1868.04,-1826.41"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1864.55,-1826.7 1868.45,-1836.55 1871.54,-1826.42 1864.55,-1826.7"/>
-<text text-anchor="middle" x="1808.07" y="-1452.78" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S83\n43.727164 kg/d</text>
+<text text-anchor="middle" x="1808.07" y="-1452.78" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S83\n42.701474 kg/d</text>
 </g>
 <!-- HABITATION -->
 <g id="node44" class="node">
@@ -365,23 +365,23 @@
 <!-- BOUNDARY_EXPORT -->
 <g id="node13" class="node">
 <title>BOUNDARY_EXPORT</title>
-<path fill="#fde68a" stroke="black" d="M1000.48,-415.28C1000.48,-415.28 764.48,-415.28 764.48,-415.28 758.48,-415.28 752.48,-409.28 752.48,-403.28 752.48,-403.28 752.48,-391.28 752.48,-391.28 752.48,-385.28 758.48,-379.28 764.48,-379.28 764.48,-379.28 1000.48,-379.28 1000.48,-379.28 1006.48,-379.28 1012.48,-385.28 1012.48,-391.28 1012.48,-391.28 1012.48,-403.28 1012.48,-403.28 1012.48,-409.28 1006.48,-415.28 1000.48,-415.28"/>
-<text text-anchor="middle" x="882.48" y="-400.08" font-family="Helvetica,sans-Serif" font-size="9.00">BOUNDARY_EXPORT</text>
-<text text-anchor="middle" x="882.48" y="-390.08" font-family="Helvetica,sans-Serif" font-size="9.00">DOCK export boundary — no inter&#45;block S## for go…</text>
+<path fill="#fde68a" stroke="black" d="M1168.48,-475.28C1168.48,-475.28 932.48,-475.28 932.48,-475.28 926.48,-475.28 920.48,-469.28 920.48,-463.28 920.48,-463.28 920.48,-451.28 920.48,-451.28 920.48,-445.28 926.48,-439.28 932.48,-439.28 932.48,-439.28 1168.48,-439.28 1168.48,-439.28 1174.48,-439.28 1180.48,-445.28 1180.48,-451.28 1180.48,-451.28 1180.48,-463.28 1180.48,-463.28 1180.48,-469.28 1174.48,-475.28 1168.48,-475.28"/>
+<text text-anchor="middle" x="1050.48" y="-460.08" font-family="Helvetica,sans-Serif" font-size="9.00">BOUNDARY_EXPORT</text>
+<text text-anchor="middle" x="1050.48" y="-450.08" font-family="Helvetica,sans-Serif" font-size="9.00">DOCK export boundary — no inter&#45;block S## for go…</text>
 </g>
 <!-- NORTH_DOCK -->
 <g id="node14" class="node">
 <title>NORTH_DOCK</title>
-<path fill="#fde68a" stroke="black" d="M1168.48,-475.28C1168.48,-475.28 932.48,-475.28 932.48,-475.28 926.48,-475.28 920.48,-469.28 920.48,-463.28 920.48,-463.28 920.48,-451.28 920.48,-451.28 920.48,-445.28 926.48,-439.28 932.48,-439.28 932.48,-439.28 1168.48,-439.28 1168.48,-439.28 1174.48,-439.28 1180.48,-445.28 1180.48,-451.28 1180.48,-451.28 1180.48,-463.28 1180.48,-463.28 1180.48,-469.28 1174.48,-475.28 1168.48,-475.28"/>
-<text text-anchor="middle" x="1050.48" y="-460.08" font-family="Helvetica,sans-Serif" font-size="9.00">NORTH_DOCK</text>
-<text text-anchor="middle" x="1050.48" y="-450.08" font-family="Helvetica,sans-Serif" font-size="9.00">Dedicated hydro_dock_pfd.png (graph&#45;bridged); ca…</text>
+<path fill="#fde68a" stroke="black" d="M1000.48,-415.28C1000.48,-415.28 764.48,-415.28 764.48,-415.28 758.48,-415.28 752.48,-409.28 752.48,-403.28 752.48,-403.28 752.48,-391.28 752.48,-391.28 752.48,-385.28 758.48,-379.28 764.48,-379.28 764.48,-379.28 1000.48,-379.28 1000.48,-379.28 1006.48,-379.28 1012.48,-385.28 1012.48,-391.28 1012.48,-391.28 1012.48,-403.28 1012.48,-403.28 1012.48,-409.28 1006.48,-415.28 1000.48,-415.28"/>
+<text text-anchor="middle" x="882.48" y="-400.08" font-family="Helvetica,sans-Serif" font-size="9.00">NORTH_DOCK</text>
+<text text-anchor="middle" x="882.48" y="-390.08" font-family="Helvetica,sans-Serif" font-size="9.00">Dedicated hydro_dock_pfd.png (graph&#45;bridged); ca…</text>
 </g>
 <!-- NORTH_DOCK&#45;&gt;BOUNDARY_EXPORT -->
 <g id="edge1" class="edge">
 <title>NORTH_DOCK&#45;&gt;BOUNDARY_EXPORT</title>
-<path fill="none" stroke="#1b5e20" stroke-width="2.2" stroke-dasharray="5,2" d="M1000.07,-439.28C982.05,-432.84 961.55,-425.52 942.78,-418.82"/>
-<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="2.2" points="943.73,-415.44 933.14,-415.37 941.38,-422.03 943.73,-415.44"/>
-<text text-anchor="middle" x="911.42" y="-431.65" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">DOCK_EXPORT_TBD\n0.0 kg/d</text>
+<path fill="none" stroke="#1b5e20" stroke-width="2.2" stroke-dasharray="5,2" d="M932.88,-415.28C950.91,-421.72 971.4,-429.04 990.18,-435.75"/>
+<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="2.2" points="989.22,-439.12 999.82,-439.19 991.58,-432.53 989.22,-439.12"/>
+<text text-anchor="middle" x="901.53" y="-428.12" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">DOCK_EXPORT_TBD\n0.0 kg/d</text>
 </g>
 <!-- NOX_SCRUB -->
 <g id="node39" class="node">
@@ -426,14 +426,14 @@
 <title>ZNBR2&#45;&gt;ZNBR2_BR2_REGEN</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M2410.71,-1465.22C2411.15,-1462.14 2411.43,-1458.88 2411.55,-1455.61"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="2415.05,-1455.3 2411.36,-1445.36 2408.05,-1455.42 2415.05,-1455.3"/>
-<text text-anchor="middle" x="2458.13" y="-1454.02" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n797.894366 kg/d</text>
+<text text-anchor="middle" x="2458.13" y="-1454.02" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n823.714236 kg/d</text>
 </g>
 <!-- ZNBR2_BR2_REGEN&#45;&gt;ZNBR2 -->
 <g id="edge57" class="edge">
 <title>ZNBR2_BR2_REGEN&#45;&gt;ZNBR2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M2393.69,-1445.26C2393.23,-1448.34 2392.93,-1451.6 2392.82,-1454.87"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="2389.32,-1455.2 2393.05,-1465.12 2396.32,-1455.05 2389.32,-1455.2"/>
-<text text-anchor="middle" x="2343.25" y="-1452.67" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n797.894366 kg/d</text>
+<text text-anchor="middle" x="2343.25" y="-1452.67" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n823.714236 kg/d</text>
 </g>
 <!-- FAB_UPW_TANK -->
 <g id="node19" class="node">
@@ -473,14 +473,14 @@
 <title>WET_BENCH&#45;&gt;LEACH_CSTR_1</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1095.44,-1378.55C1146.37,-1354.72 1238.79,-1311.49 1295.12,-1285.14"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1296.6,-1288.31 1304.18,-1280.9 1293.64,-1281.97 1296.6,-1288.31"/>
-<text text-anchor="middle" x="1239.78" y="-1325.45" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S10\n79.115777 kg/d</text>
+<text text-anchor="middle" x="1239.78" y="-1325.45" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S10\n78.915265 kg/d</text>
 </g>
 <!-- WET_BENCH&#45;&gt;OIL_FRAC -->
 <g id="edge33" class="edge">
 <title>WET_BENCH&#45;&gt;OIL_FRAC</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1061.15,-1377.5C1071.87,-1291.26 1117.68,-922.75 1130.79,-817.35"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1134.29,-817.53 1132.05,-807.18 1127.34,-816.67 1134.29,-817.53"/>
-<text text-anchor="middle" x="1061.97" y="-1100.02" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S38\n0.006 kg/d</text>
+<text text-anchor="middle" x="1053.97" y="-1100.02" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S38\n0.007038 kg/d</text>
 </g>
 <!-- WS_AMMONIA -->
 <g id="node22" class="node">
@@ -624,7 +624,7 @@
 <title>GROW_BED&#45;&gt;AFTERBURNER</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1614.98,-463.46C1543.13,-515.31 1335.81,-664.93 1254.29,-723.77"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1251.95,-721.14 1245.89,-729.83 1256.04,-726.82 1251.95,-721.14"/>
-<text text-anchor="middle" x="1405.63" y="-596.21" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S11\n0.8 kg/d</text>
+<text text-anchor="middle" x="1392.63" y="-596.21" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S11\n0.800001 kg/d</text>
 </g>
 <!-- GROW_BED&#45;&gt;VCD_TRAIN -->
 <g id="edge13" class="edge">
@@ -664,7 +664,7 @@
 <title>AFTERBURNER_FLUE&#45;&gt;FLUE_KO</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1937.9,-1889.42C1924.91,-1863.11 1900.87,-1814.38 1885.71,-1783.66"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1888.69,-1781.79 1881.13,-1774.37 1882.41,-1784.88 1888.69,-1781.79"/>
-<text text-anchor="middle" x="1958.8" y="-1839.14" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S67\n136.882146 kg/d</text>
+<text text-anchor="middle" x="1958.8" y="-1839.14" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S67\n136.882142 kg/d</text>
 </g>
 <!-- ALK_SCRUBBER -->
 <g id="node34" class="node">
@@ -710,7 +710,7 @@
 <title>H2_DRYER&#45;&gt;CRYO_H2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1786.39,-1793.58C1785.56,-1684.44 1781.25,-1118.55 1780.24,-984.89"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1783.74,-984.63 1780.16,-974.66 1776.74,-984.69 1783.74,-984.63"/>
-<text text-anchor="middle" x="1741.31" y="-1391.84" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S64\n0.988925 kg/d</text>
+<text text-anchor="middle" x="1743.81" y="-1391.84" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S64\n1.11817 kg/d</text>
 </g>
 <!-- RELIEF_H2 -->
 <g id="node40" class="node">
@@ -841,7 +841,7 @@
 <title>MEOH_SYNTH&#45;&gt;MEOH_TANK</title>
 <path fill="none" stroke="#1b5e20" stroke-width="2.2" d="M2552.84,-728.18C2570.05,-735.57 2590.4,-744.3 2608.3,-751.99"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="2.2" points="2607.39,-755.41 2617.96,-756.13 2610.16,-748.97 2607.39,-755.41"/>
-<text text-anchor="middle" x="2536.07" y="-742.68" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S75\n35.208197 kg/d</text>
+<text text-anchor="middle" x="2536.07" y="-742.68" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S75\n35.208195 kg/d</text>
 </g>
 <!-- MEOH_TANK&#45;&gt;MEOH_FC -->
 <g id="edge65" class="edge">
@@ -933,7 +933,7 @@
 <title>MET_SCRUB&#45;&gt;OIL_FRAC</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M659.25,-1146.33C741.11,-1084.77 1008.79,-883.48 1101.97,-813.41"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1104.29,-816.04 1110.18,-807.24 1100.08,-810.45 1104.29,-816.04"/>
-<text text-anchor="middle" x="841.11" y="-982.47" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S72B\n0.0158 kg/d</text>
+<text text-anchor="middle" x="836.11" y="-982.47" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S72B\n0.015801 kg/d</text>
 </g>
 <!-- MFG_SHOP&#45;&gt;LEACH_CSTR_1 -->
 <g id="edge16" class="edge">
@@ -1053,7 +1053,7 @@
 <title>VCD_TRAIN&#45;&gt;BMED_UPW_POLISH</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M2099.96,-733.59C2116.98,-713.24 2144.77,-680.01 2164.09,-656.9"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="2166.81,-659.1 2170.54,-649.19 2161.44,-654.61 2166.81,-659.1"/>
-<text text-anchor="middle" x="2132.03" y="-688.84" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S25\n349.957161 kg/d</text>
+<text text-anchor="middle" x="2132.03" y="-688.84" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S25\n348.802229 kg/d</text>
 </g>
 <!-- REMIN -->
 <g id="node69" class="node">
@@ -1258,5 +1258,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="1916.1" y="1813.5" width="816.1" height="217.6" fill="white" stroke="black" stroke-width="2.27"/><text x="1929.7" y="1849.8" font-family="sans-serif" font-size="20.4">Aqueous Solutions (owner)   AQS-DWG-PFD-MFD</text><text x="1929.7" y="1888.3" font-family="sans-serif" font-size="20.4">Mass flow diagram</text><text x="1929.7" y="1926.9" font-family="sans-serif" font-size="20.4">Type: flow diagram (ISO_10628_2)   Rev f5eddde4   Issued 2026-10-15</text><text x="1929.7" y="1965.4" font-family="sans-serif" font-size="20.4">Created: flow graph pipeline   Approved: not approved (study)</text><text x="1929.7" y="2003.9" font-family="sans-serif" font-size="20.4">Graph SHA-256 f83479471427fa0f   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="1916.1" y="1813.5" width="816.1" height="217.6" fill="white" stroke="black" stroke-width="2.27"/><text x="1929.7" y="1849.8" font-family="sans-serif" font-size="20.4">Aqueous Solutions (owner)   AQS-DWG-PFD-MFD</text><text x="1929.7" y="1888.3" font-family="sans-serif" font-size="20.4">Mass flow diagram</text><text x="1929.7" y="1926.9" font-family="sans-serif" font-size="20.4">Type: flow diagram (ISO_10628_2)   Rev aadd4419   Issued 2026-10-15</text><text x="1929.7" y="1965.4" font-family="sans-serif" font-size="20.4">Created: flow graph pipeline   Approved: not approved (study)</text><text x="1929.7" y="2003.9" font-family="sans-serif" font-size="20.4">Graph SHA-256 f9461f96450b7603   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

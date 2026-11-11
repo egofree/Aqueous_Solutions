@@ -7,7 +7,7 @@ service line: duty carbonate the POLISH_BANK LiOH slipstream -> the lithium thic
 Internals: issued mfg model BOM (2 internals part row): "x 200 x 800 mm,1,PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the" [models/mfg/LI_RECOVER/bom.csv]
 Material: PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the wetted zone. (continues on the duty sheet)
 
-Nozzles: 2 process connections per docs-authority/nozzles/LI_RECOVER.csv
+Nozzles: 3 process connections per docs-authority/nozzles/LI_RECOVER.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

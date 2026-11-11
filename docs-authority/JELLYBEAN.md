@@ -22,7 +22,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | EVAP_ACID | Blower, single-stage centrifugal, ratio 1.648, 1.34 kW shaft | 1.34 | 2.2 | 100L | 6206-2Z C3 | IE3 (IEC 60034-30-1) |
 | EVAP_ACID | Recirculation pump 311.0 kg/h at 4 m | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
 | EVAP_ACID_VS | Sump recirculation pump, magnetic drive, about 0.35 m3/h at 10 m | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
-| EVAP_BASE | MVR blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaft, env | 1.189 | 1.5 | 90L | 6205-2Z C3 | IE3 (IEC 60034-30-1) |
+| EVAP_BASE | MVR blower, single-stage centrifugal, ratio 1.616, 1.202 kW shaft, env | 1.202 | 1.5 | 90L | 6205-2Z C3 | IE3 (IEC 60034-30-1) |
 | EVAP_BASE | Recirculation pump, 282.7 kg/h at 4 m (0.008 kW), envelope and interfa | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
 | H2O_ELYZ | Deoxo on H2: 2 beds DN80 x 345 mm (Pd/Al2O3 class) | 0.18 | 0.25 | 71 | 6202-2Z C3 | IE3 (IEC 60034-30-1) |
 | LEACH_CSTR_1 | Gearmotor 0.75 kW, 150 rpm output, on the lid bridge | 0.75 | 1.1 | 90S | 6205-2Z C3 | IE3 (IEC 60034-30-1) |
@@ -50,7 +50,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M12 | stud | ISO 3506 A4-70 | 16 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | stud | ISO 898-1 8.8 | 48 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | anchor | ISO 898-1 8.8 | 16 | ISO 4017 + chemical anchor (ETAG 001) |
-| M16 | hex bolt | ISO 898-1 8.8 | 216 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M16 | hex bolt | ISO 898-1 8.8 | 180 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | stud | ISO 3506 A4-70 | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | stud | ISO 3506 A4-70 outside the wetted zone | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | stud | ISO 898-1 8.8 | 12 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -60,8 +60,8 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M8 | U-bolt | ISO 3506 A4-70 | 2 | DIN 3570 (U-bolt) |
 | M8 | anchor | ISO 3506 A4-70 | 4 | ISO 4017 + chemical anchor (ETAG 001) |
 | M8 | anchor | ISO 898-1 8.8 | 12 | ISO 4017 + chemical anchor (ETAG 001) |
-| M8 | hex bolt | ISO 3506 A4-70 | 282 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M8 | hex bolt | ISO 898-1 8.8 | 108 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M8 | hex bolt | ISO 3506 A4-70 | 248 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M8 | hex bolt | ISO 898-1 8.8 | 116 | ISO 4014 / ISO 4032 / ISO 7089 |
 
 ## 3. Seals and gaskets
 

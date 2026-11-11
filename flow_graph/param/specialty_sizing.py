@@ -124,12 +124,14 @@ def write():
                     e['rate']['note'] = (cur + f' | {note} (X-SPEC)')[:240]
                 return
 
-    # --- the grease/lithium chain: the draws slice the balanced nodes 1:1 -----------
-    edge('WAX_TO_GREASE_CA', v['wax_ca_kgd'][0], v['wax_ca_kgd'][1] + '; the C19 export gives up the share, stated')
-    edge('WAX_TO_GREASE_LI', v['wax_li_kgd'][0], v['wax_li_kgd'][1] + '; the C19 export gives up the share, stated')
-    edge('POLISH_TO_LI', v['li_slipstream_kgd'][0], v['li_slipstream_kgd'][1] + '; the IA-POL-02 return sheds the slipstream, stated')
-    edge('LI_TO_GREASE', v['li_carbonated_kgd'][0], v['li_carbonated_kgd'][1])
-    edge('PCA_TO_GREASE', v['ca_thickener_kgd'][0], v['ca_thickener_kgd'][1] + ' (X-SPEC)')
+    # --- the grease/lithium chain: rates owned by the on-site grease route -----------------
+    # 2026-11-10 (qa-audit Round D2): the X-ASM-02 study rates this lane wrote on the grease,
+    # lithium, wax and thickener edges are superseded by flow_graph/param/grease.py (SKF
+    # relubrication rule, A-M-480), which fluoro_train runs every pass; this lane keeps the
+    # kettle envelopes below and no longer writes the six edge rates. When this lane wrote
+    # them, the GREASE/LI_RECOVER/P_CA/PROD_* units fell out of balance every pass for
+    # balance_report to reconcile away, and a --quick pass (no balance) drifted off the
+    # full fixed point.
 
     put('GREASE_CA', design={'duty': 'calcium grease kettle: the C19-C28 wax base + the P_CA thickener -> the general lubrication grease',
                              'batch_kgd': v['grease_ca_kgd'][0], 'heat_class': 'soap precipitation, jacket heated'},
@@ -153,14 +155,10 @@ def write():
         kw=0.05, kw_note='contactor agitator + CO2 metering at the batch class')
 
     # --- the machines -----------------------------------------------------------------
-    _si_txt = v['si_kgd'][0]
-    put('SI_REDUCE', design={'duty': f'carbothermic silicon reduction for the PV cell line (SOLAR_PV_CELL draws {_si_txt} kg/d Si)',
-                             'si_kgd': v['si_kgd'][0], 'sio2_kgd': v['sio2_kgd'][0],
-                             'char_kgd': v['char_to_si_kgd'][0]},
-        sizing={'si_kgd': v['si_kgd'][0]},
-        size_mm=v['si_reduce_env'][0], size_basis=v['si_reduce_env'][1],
-        kw=v['si_reduce_kw'][0], kw_note=v['si_reduce_kw'][1])
-    edge('CHAR_TO_SI', v['char_to_si_kgd'][0], v['char_to_si_kgd'][1] + '; the IA-CHAR pool sheds the draw, stated (X-SPEC)')
+    # SI_REDUCE: no record here - the silicon route owns the unit (si_refine.py, A-M-472):
+    # the si_route stage (manifest) writes its design values, envelope and recovery records
+    # after this lane every pass, and the retired X-QA-06 study class this lane used to write
+    # beside the route (A-M-466 replaced_by) is gone (F-20261110-09 single-writer rule).
 
     put('ADS_CHILL', design={'duty': 'silica gel-water adsorption chiller: 5 kW drive at 65 C -> 2.25 kW chilled at 12 C, 7.25 kW rejected',
                              'chilled_kw': 2.25, 'cop_thermal': 0.45},

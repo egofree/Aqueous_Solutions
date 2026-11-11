@@ -74,8 +74,9 @@ unit,AL_POT,"Dip leg DN50 OD60.3, inside the riser annulus, bottom z 250 (250 mm
 unit,AL_POT,Metal siphon: well DN80 OD88.9 carbon + crest + discharge lip at +X z 600 (heat traced),1,carbon (ram class),"task-04 schedule N1 (solids, bore not calculated); WO step 6 trial electrolysis tap"
 unit,AL_POT,Feed chute group: chute box + hopper + rotary-seal flange + DN100 lance OD114.3 t4,1,"CS chute, carbon lance (refractory)",task-04 schedule N3; 49.419 kg/d feed (A-M-284 feedstock ruling); WO step 4 rotary seal
 unit,AL_POT,"Drain well: carbon sump tube OD60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),task-04 schedule N5 bottom DN15 Class 150; frozen-salt drain pig per WO step 6
-unit,AL_POT,Ceramic lining sleeves for the N2/N4 ram passes,2,alumina (90 % class),duty section 3 backup-lining class (SCHACHT2004)
+unit,AL_POT,Ceramic lining sleeves for the N2/N4/N8/N9/N13/N14 ram passes,6,alumina (90 % class),duty section 3 backup-lining class (SCHACHT2004)
 unit,AL_POT,"Thyristor rectifier + bath hold heaters, 7 kW connected, IP54 cabinet",1,purchase item,WO step 5/7; AQS-DUTY-072 section 4; A-M-282 class; mass per the purchase datasheet at order
+unit,AL_POT,Solids feed chute set: three chute envelopes flush at the -X face about the 160 datum (N10/N11/N12),3,carbon steel (ram class),"task-04 schedule N10/N11/N12 (solids, bore not calculated); N10 class pending (task X-QA-19); slots a study layout choice beside the primary feed chute"
 unit,AQUA_TANK,"HDPE tank shell: 2000 x 1000 x 1000 ID + 15 mm walls and floor (2.0 m3 working volume, A-M-415 60 kg stock class)",1,HDPE,size_basis verbatim; A-FARM: drawn at the node box flush; CA does not apply to the polymer (AQS-STD-001)
 unit,AQUA_TANK,HDPE lid 15 mm on the tank rim,1,HDPE,"lid thickness follows the shell wall (study, hold WORK_ORDER W12)"
 unit,AQUA_TANK,Food-grade aquaculture liner sheet 5 mm: floor + four walls,1,LDPE liner class (duty section 3),"sheet goods; carried at the HDPE table density (950 kg/m3) until the supplier TDS - the table has no LDPE row (hold, WORK_ORDER W12)"
@@ -204,6 +205,7 @@ unit,CA_POT,"Ca-metal tap group: well DN80 OD 88.9 carbon + crest + discharge li
 unit,CA_POT,N2 brine inlet group: chute box flush at the -X face + DN44 lance into the bath at z 160 (0.1525 kg/d),1,"CS chute, carbon lance",task-04 schedule N2; A-M-284 feedstock ruling; WO step 4
 unit,CA_POT,"Drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),task-04 schedule N4 bottom DN15 Class 150; frozen-salt drain pig per WO step 6
 unit,CA_POT,"Thyristor rectifier + bath hold heaters, 1 kW connected, IP54 cabinet",1,purchase item,WO step 5/7; AQS-DUTY-072 section 4; A-M-282 class; mass per the purchase datasheet at order
+unit,CA_POT,N7 brine inlet group: chute box flush at the -X face + DN44 lance into the bath at z 160 (study slot beside N2),1,"CS chute, carbon lance","task-04 schedule N7; CaCl2 brine concentrate, class pending (task X-QA-11)"
 unit,CHICKEN_COOP,"HDG frame: 4 legs 40 x 40 to z 1800, sheet roof at z 1800",1,hot-dip galvanised steel (duty section 3),"size_basis verbatim (A-M-417); frame weldment, AQS-MOD-002 farm frame class"
 unit,CHICKEN_COOP,Drop board 3 mm at z 100 with the HDPE liner sheet 5 mm over it,1,HDG board + HDPE liner (duty section 3),"the liner sheet is the duty section 3 drop-board liner, drawn"
 unit,CHICKEN_COOP,Hardware cloth: wire floor at z 300 + panel bands at z 300..550 and z 1650..1900 (1 mm cloth class),1,hot-dip galvanised hardware cloth (duty section 3),"drawn as plate solids; the mesh open area carries ~0.15 of the plate mass (the hardware-cloth idiom); buy panels cut to size, plan rule 6"
@@ -247,7 +249,7 @@ unit,CONT_CAST,N1 melt inlet DN15 -X z 160 (from IND_MELT N8),1,carbon steel,tas
 unit,CONT_CAST,N4 drain well + N5 vent stub,2,carbon steel,task-04 schedule N4/N5
 unit,CRU,"Vessel shell OD 520, wall 10 mm (study), z 40..680, welded top and bottom, on a seat to the plinth",1,PVC-U (duty section 3: AQS-STD-002 M1/M2),"drawn to the node envelope - the duty states no diameter or wall (holds, WORK_ORDER W12); CA does not apply to the polymer (AQS-STD-001); holdup report in check.vessel"
 unit,CRU,"Four-post hold-down frame pinning the 1000 x 600 x 800 envelope (40 x 40 posts, top rails), + plinth 1000 x 600 x 20",1,carbon steel (ASTM A500),HX8 hold-down idiom: the frame pins the registry box so the build fills the node envelope (X-PAR-04); AQS-MOD-002 dry service; anchors in fasteners.csv
-unit,CRU,"Nozzle set per docs-authority/nozzles/CRU.csv: 10 open-bore tube stubs (DN15/DN25; the six gas rows stay on their gas edges), drain and vent flush at the envelope faces",12,PVC-U,12-row issued schedule verbatim; atmospheric tube per duty section 4
+unit,CRU,"Nozzle set per docs-authority/nozzles/CRU.csv: 10 open-bore tube stubs (DN15/DN25; the six gas rows stay on their gas edges), drain and vent flush at the envelope faces",13,PVC-U,12-row issued schedule verbatim; atmospheric tube per duty section 4
 unit,CRYO_AHU,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_AHU.md
 unit,CRYO_AHU,Process nozzle DN15,17,316L.,one per mass edge; DN from AQS-INV-003
 unit,CRYO_AHU,"Motor: induced-draft fan (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
@@ -293,7 +295,7 @@ unit,CRYO_ASU,"13X molecular-sieve sorbent charge, 115.038 kg per bed",3,"13X mo
 unit,CRYO_ASU,Base frame: plinth 2460 x 560 x 200 with fork slots (modeled as its solid envelope; fabricated as a welded frame),1,316L,duty section 3 (no carbon steel); CA 0 mm; study section sizes; carries the z 160 frame-level schedule rows
 unit,CRYO_ASU,CO2 two-stage compressor + condenser/chiller envelopes,1,purchase item,"node design co2_comp_kW 0.086, co2_chill_kW 0.035; internals row two-stage vs design comp_stages 4 - staging is a named hold; drawn as envelope and interface (AQS-PLAN-006 rule 6)"
 unit,CRYO_ASU,Heated Ar getter cartridge,1,purchase item,node design getter_kW 0.100; noble-gas inventories pass through (node internals row)
-unit,CRYO_ASU,"Nozzle set per docs-authority/nozzles/CRYO_ASU.csv: barbs and stubs, 3 solids rows at DN15 (bore not calculated)",16,316L,"schedule tags/faces/heights verbatim; the N17 power terminal (cable schedule X-ELS-06) is electrical, not piped - carried in check.json, not drawn; atmospheric per the API 2000 relief basis; vent datum clamped to the bed 1 top head (W12); barb profile a study proportion"
+unit,CRYO_ASU,"Nozzle set per docs-authority/nozzles/CRYO_ASU.csv: barbs and stubs, 3 solids rows at DN15 (bore not calculated)",18,316L,"schedule tags/faces/heights verbatim; the N17 power terminal (cable schedule X-ELS-06) is electrical, not piped - carried in check.json, not drawn; atmospheric per the API 2000 relief basis; vent datum clamped to the bed 1 top head (W12); barb profile a study proportion"
 unit,CRYO_CO2,"Cylinder tubes SA-312 TP316L seamless DN100 Sch 160, OD 114.3 x t 13.49, 6.096 m",4,316L,"node design block (OD/wall/length, A-M-167); drawn set 833.4 kg vs node steel_kg 690.067 - basis difference named, W12; duty section 3 CA 0 mm"
 unit,CRYO_CO2,"Rack frame: skid plate + SHS posts, tie bars and side rails + cross ties",1,316L,frame only; the saddles are item 3 and are priced there once; duty section 3 (no carbon steel); SHS 80 x 80 x 5 and skid 12 are study sections (W12)
 unit,CRYO_CO2,"Tube saddles, 3 per tube, with wear groove",12,316L,study section; saddle laps the tube 6 mm - the only saddle line (item 2 is frame only)
@@ -309,7 +311,7 @@ unit,CRYO_DED_COOL,valve: isolation valve DN15,2,"PVC-U true-union ball valve, M
 unit,CRYO_H2,"Cylinder tubes SA-312 TP316L seamless DN100 Sch 160, OD 114.3 x t 13.49, 6.096 m",34,"316L (annealed, AQS-REV-H2-001)","node design block (OD/wall/length, A-M-167); booked set 7084 kg (34 tubes, all drawn by the derived grid) vs node steel_kg 5865.57 - basis difference named, W12; hydrogen service per duty section 3, CA 0 mm"
 unit,CRYO_H2,"Rack frame: skid plate + SHS posts, tie bars, tier ties and side rails + cross ties",1,316L,frame only; the saddles are item 3 and are priced there once; duty section 3 (no ferritic or high-strength steel); SHS 80 x 80 x 5 and skid 12 are study sections (W12)
 unit,CRYO_H2,"Tube saddles, 3 per tube per tier, with wear groove",102,316L,"study section; saddle laps the tube 6 mm; drawn and booked sets agree (102 solids, 1341 kg) - the only saddle line (item 2 is frame only)"
-unit,CRYO_H2,"Hydrogen compressor sets, 5-stage diaphragm, 17-4PH H1150 / 316L heads, 301 SS triple-layer diaphragms",2,purchase item,"node compressor_design: 0.9434 kW average / 2.830 kW peak, 10 -> 200 bar in 5 stages (ratio 1.82 per stage, T_out 125 C); drawn as envelope and interface (AQS-PLAN-006 rule 6)"
+unit,CRYO_H2,"Hydrogen compressor sets, 5-stage diaphragm, 17-4PH H1150 / 316L heads, 301 SS triple-layer diaphragms",2,purchase item,"node compressor_design: 0.9425 kW average / 2.828 kW peak, 10 -> 200 bar in 5 stages (ratio 1.82 per stage, T_out 125 C); drawn as envelope and interface (AQS-PLAN-006 rule 6)"
 unit,CRYO_H2,"Connection set per docs-authority/nozzles/CRYO_H2.csv: 8 piped rows of 9 schedule rows (the N9 power terminal is a cable - carried verbatim, not drawn; clamped heights per check.nozzles_drawn)",8,316L,schedule tags/faces/bore verbatim; heights clamped onto the rack where the issued datum predates the A-M-167 envelope (W12)
 unit,CRYO_HX_Q4,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_HX_Q4.md
 unit,CRYO_HX_Q4,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
@@ -334,7 +336,7 @@ unit,CR_CELL,"Hood hot plate, graphite t10 (expendable wetted face)",1,graphite,
 unit,CR_CELL,"Offtake riser DN50 OD 60.3 t 2.0, z 350..1594, flange + N6 vent at top",1,carbon steel (dry hot Cl2),WO row 5; nozzles per the task-04 schedule (N6 vent top 800)
 unit,CR_CELL,"Return dip leg DN15, inside the riser annulus, bottom z 250",1,carbon steel,WO row 5; brine-fog return seal leg
 unit,CR_CELL,"N4 CO export stub DN15 at +Y z 600 (0.202 kg/d, fuel-gas class)",1,carbon steel (dry hot gas),task-04 schedule N4
-unit,CR_CELL,"N2/N3 feed chutes -X z 160, flush at the -X face: Cr2O3 chromite concentrate + carbon reductant (0.452 kg/d)",2,"CS chute, refractory throat",task-04 schedule N2/N3; A-M-284 feedstock ruling
+unit,CR_CELL,"N2/N3/N8 feed chutes -X z 160, flush at the -X face: Cr2O3 chromite concentrate + carbon reductant + char reductant (0.452 kg/d)",3,"CS chute, refractory throat",task-04 schedule N2/N3; A-M-284 feedstock ruling
 unit,CR_CELL,"N1 Cr-metal tap group: well DN80-class carbon + crest + discharge lip at +X z 600, flush at the +X face",1,carbon (ram class),"task-04 schedule N1 (solids, bore not calculated); WO step 6 trial-electrolysis tap"
 unit,CR_CELL,"N5 drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),task-04 schedule N5 bottom DN15 Class 150; frozen-salt drain pig per WO step 6
 unit,CR_CELL,"Thyristor rectifier + bath hold heaters, 1 kW connected, IP54 cabinet",1,purchase item,WO step 5/7; AQS-DUTY-072 section 4; A-M-282 class; mass per the purchase datasheet at order
@@ -391,11 +393,11 @@ unit,EVAP_ACID_VS,Sump level switch and pH probe,1,PVDF body,pH > 12 control of 
 unit,EVAP_BASE,"Falling-film body DN350: shell wall 6 over sump 400 + tube zone 1500 + head 150, bottom plate, tubesheet pair, on the plinth",1,"nickel 200, CA not applicable",duty section 3 (nickel 200 wetted in hot NaOH); AQS-DUTY-060 section 2 geometry
 unit,EVAP_BASE,"Falling-film bundle: 20 tubes ID 25 x OD 29 x 1500 mm at the design pitch (1.25 x OD), 2.356 m2",20,nickel 200 tube,booked A_ff 2.33 m2 = latent / (U 1500 x 6 K) on the node 20.95 kW duty (AQS-DUTY-060 section 1); drawn at +0.3 % (A-HX)
 unit,EVAP_BASE,Vapour separator DN350 x 975 with 100 mm mesh pad,1,nickel 200; Ni mesh,separator above the body top (node design height_mm chain); mesh pad bought (rule 6)
-unit,EVAP_BASE,"MVR blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaft, envelope and interface",1,"nickel wetted class, purchased (X-MFG-32 line)",purchased per plan rule 6 (X-MFG-32 in-house blower line); drive rating reads the maker sheet at order
-unit,EVAP_BASE,"Feed/condensate/product interchanger 0.146 m2, 3.67 kW, outlets 50.6 C, envelope and interface",1,"nickel 200 class, purchased",purchased per plan rule 6; duty and area from the node design (X-MFG-30)
+unit,EVAP_BASE,"MVR blower, single-stage centrifugal, ratio 1.616, 1.202 kW shaft, envelope and interface",1,"nickel wetted class, purchased (X-MFG-32 line)",purchased per plan rule 6 (X-MFG-32 in-house blower line); drive rating reads the maker sheet at order
+unit,EVAP_BASE,"Feed/condensate/product interchanger 0.143 m2, 3.67 kW, outlets 51.1 C, envelope and interface",1,"nickel 200 class, purchased",purchased per plan rule 6; duty and area from the node design (X-MFG-30)
 unit,EVAP_BASE,"Recirculation pump, 282.7 kg/h at 4 m (0.008 kW), envelope and interface",1,"nickel wetted class, purchased",minimum-wetting-rate book (AQS-DUTY-060 section 1); rides the interchanger envelope bay
 unit,EVAP_BASE,"Relief set per node relief_basis: body fire valve (set 100 kPa g) and shell blocked-outlet valve (set 350 kPa g), API 526 D orifice, drawn as envelopes",2,nickel trim,"sized in-house (AQS-DUTY-060 section 3, API 520 Part I); vent to ACID_POLISH_SCRUB (duty section 6)"
-unit,EVAP_BASE,"Nozzle set per docs-authority/nozzles/EVAP_BASE.csv: 8 rows (feed in, product and condensate out, drain boss, vent riser; flake make-up and power terminal as text rows)",8,nickel 200 tube,schedule tags/faces/heights verbatim; the takeoffs pierce to the shell bore (the three +Y outlet rows share z 600 and spread along the shell axis); DN by the line list at the next line-list run (duty section 4)
+unit,EVAP_BASE,"Nozzle set per docs-authority/nozzles/EVAP_BASE.csv: 9 rows (feed in, product and condensate out, drain boss, vent riser; flake make-up and power terminal as text rows)",9,nickel 200 tube,schedule tags/faces/heights verbatim; the takeoffs pierce to the shell bore (the three +Y outlet rows share z 600 and spread along the shell axis); DN by the line list at the next line-list run (duty section 4)
 unit,EVAP_BASE,"Plinth 1250 x 800 x 15 (body, blower and interchanger frame)",1,"carbon steel, painted",dry frame; anchors in fasteners.csv
 unit,EW_1,"CPVC tank shell, outside 270 x 720 x 760 mm, wall 10 mm, open top (inside 250 x 700 x 750: sump 150 + plate 420 + cover 100 + freeboard 80)",1,CPVC,AQS-DUTY-051 Rev F section 1 wall 10 mm and zone stack; duty section 3 via the EW_1 page: 77.5 C liquor runs CPVC (X-MAT-09; AQS-STD-002 M5 CPVC class); CA 0 mm (AQS-STD-001 polymer rule)
 unit,EW_1,CPVC support set: 2 cross beams 60 x 10 x 700 under the bus pads + vent bridge 60 x 10 x 700 + 2 posts 30 x 30 x 100,1,CPVC,duty section 3 racks CPVC (X-MAT-09); AQS-STD-002 section 11 (no busbar touches a tank lip); CA 0 mm
@@ -521,10 +523,12 @@ unit,FLUE_KO,"Borosilicate glass 3.3 inlet spool, OD 110 x wall 3, z 300, reach 
 unit,FLUE_KO,"PVDF mesh pad, OD 508 x 16 at z 620, on a support ring OD 532 x ID 488",1,PVDF,duty section 3 mesh pad; dimensions study values (WORK_ORDER W12)
 unit,FLUE_KO,"Weir plate at the shell centreline to z 360 and launder trough (channel floor z 300, overflow lip z 360)",1,FRP vinyl ester,"layout solids from the section 1/3 knock-out separation duty (FLOAT_SINK idiom); the separation duty is unsized (duty section 8, hold WORK_ORDER W12); node internals row none"
 unit,FLUE_KO,"Nozzle set per docs-authority/nozzles/FLUE_KO.csv: 6 hose barbs (DN15/DN25/DN50), 1 drain boss, 1 vent at the top head",8,PVDF,schedule tags/faces/heights verbatim; atmospheric hose per duty section 4; barb profile a study proportion (lib/nozzles.py)
-unit,FLUX_PREP,"SS304 mixing basin: 800 x 600 x 1200 mm open-top tray form, 6 mm plate (prep-class study box; A-M-284 Kroll drag-out basis)",1,SS304 (duty section 3),size_basis verbatim; 304L wetted class at the dry salt service; the 316L drum is the named alternative if the salt ever arrives as a slurry (duty section 3)
-unit,FLUX_PREP,"PP-H day-drum metering hopper envelope, 20 L class (300 x 300 x 300)",1,PP-H (duty section 3),graph design hopper_L 20; anhydrous MgCl2-class handling: PP-H is the duty section 3 metering class
-unit,FLUX_PREP,Mixer stage envelope 80 x 80 x 500 with the 0.1 kW drive class,1,SS304 stage (drive purchased),"graph design mixer_kW 0.1 - the only powered part (duty section 3); the drive purchases with the stage at fabrication (hold, WORK_ORDER W12)"
-unit,FLUX_PREP,"Nozzle set per docs-authority/nozzles/FLUX_PREP.csv: 6 rows - 3 solids rows drawn as DN15 stubs (bore not calculated), drain, vent, and the N6 cable row carried, never drawn",5,SS304,schedule tags/faces/heights verbatim; atmospheric per duty section 4
+unit,FLUX_PREP,"Bench frame 800 x 600, work top z 850..900",1,carbon steel,WORK_ORDER step 1; AQS-DUTY-072 bench_prep class
+unit,FLUX_PREP,Extraction hood with the N-vent stub,1,carbon steel,task-04 schedule N5
+unit,FLUX_PREP,Flux hopper 20 L cone + 0.1 kW mixer stage,1,CS + carbon steel,"design hopper 20 L, mixer 0.1 kW; 0.0398 kg/d salt batch"
+unit,FLUX_PREP,N1 flux discharge chute +X z 600,1,carbon steel,"task-04 schedule N1 (solids, bore not calculated)"
+unit,FLUX_PREP,N2/N3 inlet chutes -X z 160 (digester salts; MgCl2 drag-out from TI_CELL N7),2,carbon steel,task-04 schedule N2/N3; A-M-284 feedstock ruling
+unit,FLUX_PREP,N4 drain well,1,carbon steel,task-04 schedule N4
 unit,FOOD_STORE,Body / envelope 650 x 650 x 750 mm,1,PE (rotomoulded / fabricated) (graph node material).,docs-authority/duties/FOOD_STORE.md
 unit,FOOD_STORE,Process nozzle DN15,13,PE (rotomoulded / fabricated) (graph node material).,one per mass edge; DN from AQS-INV-003
 unit,FOOD_STORE,fastener: anchor bolt M10,48,ISO 3506 A4-70 wedge anchor,AQS-INV-004
@@ -750,7 +754,7 @@ unit,HDR_CO2,"Manifold spool DN25 OD 33.7 x wall 3.38 (Sch 40 table), 2 m modele
 unit,HDR_CO2,Branch connection set: 9 atmospheric tube stubs at the schedule tags/faces/heights (drain and vent flush at the envelope faces),9,316L tube,docs-authority/nozzles/HDR_CO2.csv verbatim; no-bore rows drawn DN15 and labeled bore not calculated (plan W4); datums clamped into the reservation cross-section (holds)
 unit,HDR_CO2,"Trough plinth 2000 x 33.7 x 20, the spool mount (AQS-MOD-002 dry service class)",1,carbon steel (ASTM A500),"support scheme carried from the M2 study build (trough mount, no top rails - the M2 hold-down rails fused the branch zone); CA 1.5 mm carbon-steel rule not applied: dry gas service, no aqueous chloride (duty section 3)"
 unit,HDR_H2,"Manifold spool DN25 OD 33.7 x wall 3.38 (Sch 40 table), 2 m modeled of the 20 m run; bore open both ends; bonded joints",1,PVC-U (duty section 3: wet acid H2 + sweep air header),"AQS-DUTY-075 node design DN25 x 20 m run; AQS-REV-H2-001 material family M3; schedule not stated on the node - Sch 40 table drawn, P1 class sheet carries Sch 80 at order (hold, WORK_ORDER W12); CA 0 mm (AQS-STD-001 polymer rule)"
-unit,HDR_H2,"Branch connection set: 17 atmospheric open-bore tube stubs at the schedule tags/faces/heights, incl. 3 DN50 rows (inside the reservation cross-section) and 1 no-bore row drawn DN15",17,PVC-U,docs-authority/nozzles/HDR_H2.csv verbatim; no-bore rows drawn DN15 and labeled bore not calculated (plan W4); datums clamped into the reservation cross-section (holds)
+unit,HDR_H2,"Branch connection set: 20 atmospheric open-bore tube stubs at the schedule tags/faces/heights, incl. 3 DN50 rows (inside the reservation cross-section) and 1 no-bore row drawn DN15",20,PVC-U,docs-authority/nozzles/HDR_H2.csv verbatim; no-bore rows drawn DN15 and labeled bore not calculated (plan W4); datums clamped into the reservation cross-section (holds)
 unit,HDR_H2,"Trough plinth 2000 x 60.3 x 20, the spool mount (AQS-MOD-002 dry service class)",1,carbon steel (ASTM A500),"support scheme carried from the HDR_CO2 acceptance (trough mount, no top rails); metal parts bonded per duty section 3"
 unit,HDR_N2,"Manifold spool DN32 OD 42.4 x wall 3.56 (Sch 40 table), 2 m modeled of the 20 m run; bore open both ends",1,316L tube (duty section 3),"AQS-DUTY-075 node design DN32 x 20 m run; schedule not stated on the node - Sch 40 table drawn, the M1 class sheet carries the schedule at order (hold, WORK_ORDER W12); CA 0 mm (AQS-STD-001 316L rule)"
 unit,HDR_N2,"Branch connection set: 14 atmospheric open-bore tube stubs at the schedule tags/faces/heights, incl. 1 DN50 row (inside the reservation cross-section) and 1 no-bore row drawn DN15",14,316L tube,"docs-authority/nozzles/HDR_N2.csv verbatim; no-bore rows drawn DN15 and labeled bore not calculated (plan W4); datums clamped into the reservation cross-section (holds); N3/N4 carry services with no present edge, drawn verbatim"
@@ -763,7 +767,7 @@ unit,HDR_UPW,Branch connection set: 5 atmospheric open-bore tube stubs at the sc
 unit,HDR_UPW,"Trough plinth 2000 x 33.7 x 20, the spool mount (AQS-MOD-002 dry service class)",1,carbon steel (ASTM A500),"support scheme carried from the HDR_CO2 acceptance (trough mount, no top rails); metal parts bonded per duty section 3"
 unit,HF_GEN,"Kiln tube D200 x 1192 mm, 8 mm wall, 2 deg slope, 4 rpm",1,"carbon steel shell, dry HF service (PERRY9_MAT); Monel trunnion inserts","AQS-DUTY-073 fluoro train; indirectly heated rotary kiln, fluorspar + H2SO4 -> HF"
 unit,HF_GEN,"Indirect furnace chamber 700 x 420 x 340 mm, 250 C",1,"CS casing, ceramic fibre",AQS-DUTY-073 fluoro train; residence 30 min
-unit,HF_GEN,Spar feed hopper D140 with chute and rotary valve,1,"CS, Monel trim",spar 0.326 kg/d + F_RECOVER concentrate (dock acid-spar 97 % CaF2 + 98 wt% H2SO4 + F_RECOVER concentrate)
+unit,HF_GEN,Spar feed hopper D140 with chute and rotary valve,1,"CS, Monel trim",spar 0.326 kg/d + F_RECOVER concentrate (dock acid-spar 97 % CaF2 + 98 wt% H2SO4 from ACID_PLANT + F_RECOVER concentrate)
 unit,HF_GEN,Acid day tank D160 x 300 mm with metering pump,1,"SS 316L, PTFE pump head",acid 0.404 kg/d (98 wt% H2SO4)
 unit,HF_GEN,Discharge hood with cake chute and bin,1,"CS, Monel-lined",cake 0.576 kg/d
 unit,HF_GEN,Kiln gas offtake DN110 to the dissolution/absorption tank,1,"CS, PTFE-lined",HF 1.674 kg/d product gas
@@ -806,9 +810,9 @@ unit,INV_CAST,N2/N3 melt DN15 stubs -Y z 160,2,carbon steel,task-04 schedule N2/
 unit,INV_CAST,N2/N3 melt-stub pipe stands to the base,2,carbon steel,WO step 4
 unit,INV_CAST,N5 drain well + N6 vent stub,2,carbon steel,task-04 schedule N5/N6
 unit,LEACH_CSTR_1,"CPVC tank shell, body 1888 x 1080 x 1400 mm inside the reserved bands, wall 16 mm, floor 16 mm, lid 12 mm on a 40 mm flange",1,CPVC,AQS-DUTY-050 wall 16 / floor 16; lid and flange are assumptions (WORK_ORDER W2); CA 0 mm (AQS-STD-001 polymer rule)
-unit,LEACH_CSTR_1,"Nozzle set per docs-authority/nozzles/LEACH_CSTR_1.csv: 54 hose barbs, 7 solids ports at DN15 (bore not calculated)",63,CPVC,"schedule tags/faces/heights verbatim; atmospheric hose per duty sections 4 and 6; barb profile a study proportion (lib/nozzles.py); the two cable schedule rows are carried, never drawn"
+unit,LEACH_CSTR_1,"Nozzle set per docs-authority/nozzles/LEACH_CSTR_1.csv: 59 hose barbs, 11 solids ports at DN15 (bore not calculated)",72,CPVC,"schedule tags/faces/heights verbatim; atmospheric hose per duty sections 4 and 6; barb profile a study proportion (lib/nozzles.py); the two cable schedule rows are carried, never drawn"
 unit,LEACH_CSTR_1,"IA-E-LEACH conductor gland boss, DN15 passage",1,CPVC,"duty section 4 prose (electrical edge, not a schedule row); conductor, not a hose"
-unit,LEACH_CSTR_1,"FRP belt set, pultruded channel FRP pultruded channel C203x56x6.4, web on the wall, wrapped all round, segmented at the port rows (20 notches)",3,FRP vinyl ester,AQS-DUTY-050 (study): z 300/560/900; density and allowable pending the pultrusion vendor sheet; X-MAT-21 coupon tests
+unit,LEACH_CSTR_1,"FRP belt set, pultruded channel FRP pultruded channel C203x56x6.4, web on the wall, wrapped all round, segmented at the port rows (23 notches)",3,FRP vinyl ester,AQS-DUTY-050 (study): z 300/560/900; density and allowable pending the pultrusion vendor sheet; X-MAT-21 coupon tests
 unit,LEACH_CSTR_1,"HX-5 coil, two concentric helices 25 x 3 mm tube, 53.7 m, 4.22 m2",1,borosilicate glass 3.3,AQS-DUTY-049 natural-convection case (7.941 kW rated); AQS-STD-002 section 3.3; dielectric isolating flange on the Q3 side outside the tank; mass from the tube
 unit,LEACH_CSTR_1,HX-5 coil support pad,4,PTFE,AQS-STD-002 section 3.3 (PTFE pads); study size
 unit,LEACH_CSTR_1,"Agitator: 4-blade 45 deg pitched-blade turbine, down-pumping, D 450 mm at 150 rpm, 403 W shaft",1,PVDF (sheath and impeller),AQS-DUTY-050 (study); no metal wetted (AQS-STD-002 M3); in-house Zwietering just-suspended test is a named hold
@@ -822,7 +826,7 @@ unit,LITHO_ALIGN,"Leadscrew 10 mm dia, 1 mm pitch, x 140..940",1,steel 4140 (AQS
 unit,LITHO_ALIGN,Mask holder 200 x 200 x 8,1,aluminium 6061,"layout choice around the 100 mm field (hold, W12)"
 unit,LITHO_ALIGN,"Mask 160 x 160 x 3 (chrome on glass, 100 um pattern)",1,"glass, chrome coating (AQS-LITH-001 section 2)",pattern cut on the mill per AQS-LITH-001 section 2; the coating is not drawn
 unit,LITHO_ALIGN,"365 nm LED array head envelope (1 W optical, node design source)",1,purchased unit (envelope),"purchased per plan rule 6, rating from the node design block (365 nm LED array, 1 W optical; 10 mW/cm2 x 20 s = 200 mJ/cm2)"
-unit,LITHO_ALIGN,Nozzle set per docs-authority/nozzles/LITHO_ALIGN.csv: drain and vent flush at the envelope faces,3,aluminium 6061,"envelope hardware schedule verbatim; the cable schedule row is carried, never drawn; duty section 4: no present process edge"
+unit,LITHO_ALIGN,Nozzle set per docs-authority/nozzles/LITHO_ALIGN.csv: drain and vent flush at the envelope faces,5,aluminium 6061,"envelope hardware schedule verbatim; the cable schedule row is carried, never drawn; duty section 4: no present process edge"
 unit,LITHO_COAT,Base plate 1200 x 800 x 20,1,carbon steel (ASTM A500),issued envelope frame (A-M-287); anchors in fasteners.csv
 unit,LITHO_COAT,Guard frame: four 40 x 40 posts + top rails pinning the 1200 x 800 x 1400 envelope,1,carbon steel (ASTM A500),machine guard practice (A-MACH hardware drawn); the frame pins the registry box (X-PAR-04)
 unit,LITHO_COAT,"Spin bowl OD 360 x 200, wall 10 (study), with rim collar, on the stand",1,316L (duty section 3),"wetted per duty section 3 (resist/solvent); CA 0 mm (AQS-STD-001); bowl envelope is the layout choice around the node 150 mm chuck (hold, W12)"
@@ -830,12 +834,12 @@ unit,LITHO_COAT,Coat catch bowl OD 480 x 60 tray (the IA-LITHO-CARRY stream name
 unit,LITHO_COAT,Vacuum chuck D 150 (node chuck_mm) on the spindle,1,316L (duty section 3),"node design chuck_mm; the vacuum source is not named on the node or duty - none drawn (hold, W12)"
 unit,LITHO_COAT,Spin-chuck motor envelope under the bowl stand,1,purchased drive (envelope),"node spin_peak_kW 0.75 (A-M-287 basis: spin-chuck motor 0.75 kW peak); purchased per plan rule 6, rating from the node"
 unit,LITHO_COAT,Softbake hotplate envelope on the deck,1,purchased unit (envelope),"node softbake_kW 0.3 at the 100 C hold (A-M-287 basis); purchased per plan rule 6, rating from the node"
-unit,LITHO_COAT,Nozzle set per docs-authority/nozzles/LITHO_COAT.csv: drain and vent flush at the envelope faces; the two solids transfer rows drawn DN15 bore not calculated,5,316L (duty section 3),"issued schedule verbatim; the cable schedule row is carried, never drawn; atmospheric hose per duty section 4"
+unit,LITHO_COAT,Nozzle set per docs-authority/nozzles/LITHO_COAT.csv: drain and vent flush at the envelope faces; the two solids transfer rows drawn DN15 bore not calculated,7,316L (duty section 3),"issued schedule verbatim; the cable schedule row is carried, never drawn; atmospheric hose per duty section 4"
 unit,LITHO_DEV,Base plate 1200 x 600 x 20,1,carbon steel (ASTM A500),issued envelope frame (A-M-287); anchors in fasteners.csv
 unit,LITHO_DEV,Hold-down/guard frame: four 40 x 40 posts + top rails pinning the 1200 x 600 x 900 envelope,1,carbon steel (ASTM A500),HX8 hold-down idiom (X-PAR-04); A-MACH guard
 unit,LITHO_DEV,"Develop bowl (inner 300 x 200 x 120, wall 10 study)",1,316L (duty section 3),"wetted per duty section 3 (TMAH class developer, the shared WET_BENCH chemistry fork); CA 0 mm (AQS-STD-001); bowl size is the layout choice (hold, W12)"
 unit,LITHO_DEV,Puddle dispense point envelope above the bowl (40 mL/wafer per the node design),1,316L (duty section 3),"node design puddle_mL_per_wafer 40; the dispense valve is bench hardware, no rating named on the node or duty"
-unit,LITHO_DEV,Nozzle set per docs-authority/nozzles/LITHO_DEV.csv: drain and vent flush at the envelope faces; the two solids transfer rows drawn DN15 bore not calculated,5,316L (duty section 3),"issued schedule verbatim; the cable schedule row is carried, never drawn; atmospheric hose per duty section 4"
+unit,LITHO_DEV,Nozzle set per docs-authority/nozzles/LITHO_DEV.csv: drain and vent flush at the envelope faces; the two solids transfer rows drawn DN15 bore not calculated,7,316L (duty section 3),"issued schedule verbatim; the cable schedule row is carried, never drawn; atmospheric hose per duty section 4"
 unit,LI_RECOVER,Body / envelope 200 x 200 x 800 mm,1,PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the wetted zone.,docs-authority/duties/LI_RECOVER.md
 unit,LI_RECOVER,Process nozzle DN15,2,PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the wetted zone.,one per mass edge; DN from AQS-INV-003
 unit,LI_RECOVER,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
@@ -851,7 +855,7 @@ unit,MEDICAL,wall_end_door,1,SS304,
 unit,MEDICAL,wall_end_solid,1,SS304,
 unit,MEDICAL,wall_long_a,1,SS304,
 unit,MEDICAL,wall_long_b,1,SS304,
-unit,MEOH_COND,"Shell OD 400, wall 3 mm, z 40..560, with heads, on a 400 x 400 plinth (knock-out pot, node design D 400 / H 600 / drum 71.19 L nominal)",1,316L plate/pipe,"node-sized envelope (meoh_train.py, AQS-DUTY-077); wall a study value (WORK_ORDER W12); CA 0 mm (AQS-STD-001)"
+unit,MEOH_COND,"Shell OD 400, wall 3 mm, z 40..560, with heads, on a 400 x 400 plinth (knock-out pot, node design D 400 / H 600 / drum 72.24 L nominal)",1,316L plate/pipe,"node-sized envelope (meoh_train.py, AQS-DUTY-077); wall a study value (WORK_ORDER W12); CA 0 mm (AQS-STD-001)"
 unit,MEOH_COND,"Coil, tube OD 10 x 1.005 m developed, ~2.6 turns at a 127.32 mm mean diameter, 0.0316 m2 drawn",1,316L,"node design '1 x 10 mm x 1 m coil' (area_m2 0.0301); the drawn area is 0.0013 m2 over the node figure - reported, nothing resized (WORK_ORDER W12); condensing 0.7079 kW at U 1.2, LMTD 19.6 K"
 unit,MEOH_COND,"Nozzle set per docs-authority/nozzles/MEOH_COND.csv: 3 hose barbs (DN15), 1 drain boss, 1 vent at the top head",5,316L,"schedule tags/faces/heights verbatim; atmospheric hose per duty section 4; N2 datum 600 clamped to 584.4 and the N4 800 datum predates the 600 box (holds, WORK_ORDER W12); barb profile a study proportion (lib/nozzles.py)"
 unit,MEOH_FC,Cell stack: 2 end plates 160 x 160 x 15 316L + the 28-cell MEA laminate envelope 144 x 144 x 168 at 6 mm pitch (PTFE gaskets),1,316L / MEA laminate / PTFE,"node design block: 28 cells, 0.6 V at 0.3 A/cm2, 200 cm2 cells, 0.56 m2 (IEC 62282-3-100 module class); the laminate and gaskets drawn as the stack envelope per plan rule 6; plate size and pitch are the registered layout choices enclosing the 141.4 mm active window (hold, WORK_ORDER W12)"
@@ -874,7 +878,7 @@ unit,MEOH_SYNTH,"Nozzle set per docs-authority/nozzles/MEOH_SYNTH.csv: 9 atmosph
 unit,MEOH_TANK,"Shell OD 540, wall 3 mm, z 40..560, with heads, on a 600 x 600 plinth",1,SA-240 304L plate,node envelope (AQS-DUTY-064 box) and node design_storage wall booking; CA 0 mm (AQS-STD-001); the duty sheet shell line 800 x 800 x 1100 is a hold (WORK_ORDER W12)
 unit,MEOH_TANK,"Stilling well, OD 110 x wall 5, z 35..575",1,304L pipe,internals issued by the AQS-MFG-001 study page (fab/MEOH_TANK.md); dimensions study values (WORK_ORDER W12); node internals row none
 unit,MEOH_TANK,"Dip pipe inside the well, OD 60 x wall 4, z 100..575",1,304L pipe,"same study-page basis; crude methanol feeds down the dip pipe, the well damps the jet for the level instruments (duty section 5)"
-unit,MEOH_TANK,"Nozzle set per docs-authority/nozzles/MEOH_TANK.csv: 11 hose barbs (DN15), 1 drain boss, 1 vent at the top head",13,304L,"schedule tags/faces/heights verbatim; atmospheric hose per duty section 4; the N10 800 datum predates the 600 box (hold, WORK_ORDER W12); barb profile a study proportion (lib/nozzles.py)"
+unit,MEOH_TANK,"Nozzle set per docs-authority/nozzles/MEOH_TANK.csv: 11 hose barbs (DN15), 1 drain boss, 1 vent at the top head",15,304L,"schedule tags/faces/heights verbatim; atmospheric hose per duty section 4; the N10 800 datum predates the 600 box (hold, WORK_ORDER W12); barb profile a study proportion (lib/nozzles.py)"
 unit,METAL_STORE,Body / envelope 800 x 800 x 950 mm,1,PE (rotomoulded / fabricated) (graph node material).,docs-authority/duties/METAL_STORE.md
 unit,METAL_STORE,Process nozzle DN15,5,PE (rotomoulded / fabricated) (graph node material).,one per mass edge; DN from AQS-INV-003
 unit,METAL_STORE,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
@@ -937,7 +941,7 @@ unit,MFG_SHOP,Band saw station envelope,1,purchased machine (envelope),"AQS-MFG-
 unit,MFG_SHOP,Rotary-screw air compressor station envelope,1,purchased machine (envelope),"AQS-MFG-010 Table 2.1, nameplate 4.0 kW; envelope + interface per plan rule 6"
 unit,MFG_SHOP,TIG/MIG welder station envelope,1,purchased machine (envelope),"AQS-MFG-010 Table 2.1, nameplate 6.0 kW; envelope + interface per plan rule 6"
 unit,MFG_SHOP,Bench grinder / drill press / hand-tool set envelope,1,purchased tool set (envelope),"AQS-MFG-010 Table 2.1, nameplate 2.0 kW; envelope + interface per plan rule 6"
-unit,MFG_SHOP,Nozzle set per docs-authority/nozzles/MFG_SHOP.csv: 14 tube stubs (DN15/DN25/DN50) and 20 non-piped solids transfer rows drawn DN15 bore not calculated,35,316L tube,"issued schedule verbatim; the cable schedule row is carried, never drawn; atmospheric tube per duty section 4"
+unit,MFG_SHOP,Nozzle set per docs-authority/nozzles/MFG_SHOP.csv: 14 tube stubs (DN15/DN25/DN50) and 20 non-piped solids transfer rows drawn DN15 bore not calculated,41,316L tube,"issued schedule verbatim; the cable schedule row is carried, never drawn; atmospheric tube per duty section 4"
 unit,MG_POT,Lined cell shell 800 x 800 x 1600 mm: casing t6 (walls + roof + head plate 1154),1,carbon steel (CS class),"WORK_ORDER step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per AQS-DUTY-072 cell-class study minimum"
 unit,MG_POT,"Ceramic-fibre backup lining kit, t24",1,ceramic-fibre board 128 kg/m3,duty section 3 backup lining class (SCHACHT2004); anhydrous concentrate (X-MAT-22)
 unit,MG_POT,"Graphite ram lining kit, t40, wetted faces",1,graphite ramming paste 1550 kg/m3,duty section 3 graphite wetted faces; DING2018_CL_REVIEW; liner change-out at the unit task 12 work order
@@ -951,7 +955,7 @@ unit,MG_POT,"Offtake riser DN80 OD 88.9 t 2.0, z 400..1594, flange + N8 vent at 
 unit,MG_POT,"Return dip leg DN15, inside the riser annulus, bottom z 250",1,carbon steel,WO row 5; brine-fog return seal leg
 unit,MG_POT,N2/N6 Cl2 stubs DN15 at +Y z 600 (1.4813 kg/d: return and chlorinator feed),2,carbon steel (dry hot Cl2),"task-04 schedule N2/N6; A-M-280 Cl2 ruling (chlorinator feed, return net of drag-out)"
 unit,MG_POT,"N5 Mg-reductant tap group -X z 600, flush at the -X face (0.5078 kg/d Mg to the Kroll retort)",1,carbon (ram class),"task-04 schedule N5 (solids, bore not calculated); WO step 6 reductant draw"
-unit,MG_POT,N3/N4 inlets -Y z 160 flush at the -Y face: Kroll MgCl2 return stub + brine lance (1.9891 kg/d),2,"CS chute, carbon lance",task-04 schedule N3/N4; A-M-284 feedstock ruling
+unit,MG_POT,N3/N4/N10 inlets -Y z 160 flush at the -Y face: Kroll MgCl2 return stub + brine + concentrate lances (1.9891 kg/d),3,"CS chute, carbon lance",task-04 schedule N3/N4/N10; A-M-284 feedstock ruling; N10 class pending (task X-QA-11)
 unit,MG_POT,"Mg-metal tap group: well DN80 OD 88.9 carbon + crest + discharge lip at +X z 600, flush at the +X face",1,carbon (ram class),"task-04 schedule N1 (solids, bore not calculated); WO step 6 trial-electrolysis tap"
 unit,MG_POT,"N7 drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),task-04 schedule N7 bottom DN15 Class 150; frozen-salt drain pig per WO step 6
 unit,MG_POT,"Thyristor rectifier + bath hold heaters, 1 kW connected, IP54 cabinet",1,purchase item,WO step 5/7; AQS-DUTY-072 section 4; A-M-282 class; mass per the purchase datasheet at order
@@ -967,7 +971,7 @@ unit,MO_CELL,"Hood hot plate, graphite t10 (expendable wetted face)",1,graphite,
 unit,MO_CELL,"Offtake riser DN50 OD 60.3 t 2.0, z 350..1594, flange + N9 vent at top",1,carbon steel (dry hot Cl2),WO row 5; nozzles per the task-04 schedule (N9 vent top 800)
 unit,MO_CELL,"Return dip leg DN15, inside the riser annulus, bottom z 250",1,carbon steel,WO row 5; brine-fog return seal leg
 unit,MO_CELL,"N1/N3/N7 DN15 stubs at +Y z 600: raffinate return, anode gas, chlorinator CO2 vent (0.043 kg/d CO2)",3,carbon steel (dry hot gas),task-04 schedule N1/N3/N7
-unit,MO_CELL,"N5/N6 feed chutes -X z 160, flush at the -X face: MoO3 concentrate + carbon reductant (0.1055 kg/d)",2,"CS chute, refractory throat",task-04 schedule N5/N6; A-M-284 feedstock ruling
+unit,MO_CELL,"N5/N6/N11 feed chutes -X z 160, flush at the -X face: MoO3 concentrate + carbon reductant + char reductant (0.1055 kg/d)",3,"CS chute, refractory throat",task-04 schedule N5/N6; A-M-284 feedstock ruling
 unit,MO_CELL,"N2 post-EW liquor inlet stub -Y z 160, flush at the -Y face",1,carbon steel,task-04 schedule N2
 unit,MO_CELL,"N4 Mo-metal tap group: well DN80 OD 88.9 carbon + crest + discharge lip at +X z 600, flush at the +X face",1,carbon (ram class),"task-04 schedule N4 (solids, bore not calculated); WO step 6 trial-electrolysis tap"
 unit,MO_CELL,"N8 drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),task-04 schedule N8 bottom DN15 Class 150; frozen-salt drain pig per WO step 6
@@ -1060,7 +1064,7 @@ unit,OIL_DRYER,"Guard frame: four 40 x 40 posts full height with mid and top rai
 unit,OIL_DRYER,"Nozzle set per docs-authority/nozzles/OIL_DRYER.csv: 5 open-bore tube stubs (DN15/DN25), drain and vent flush at the envelope faces",7,carbon steel,schedule tags/faces/heights verbatim; atmospheric tube per duty section 4
 unit,OIL_FRAC,"Column shell OD 480, wall 6 mm (study), z 60..760, with top and bottom heads on a skirt seat",1,carbon steel (duty section 3),"drawn to the node envelope - the duty states no diameter or wall (holds, WORK_ORDER W12); CA 1.5 mm (AQS-STD-001 hydrocarbon rule); sump report in check.column"
 unit,OIL_FRAC,"Four-post hold-down frame pinning the 1000 x 600 x 800 envelope (40 x 40 posts, top rails), + plinth 1000 x 600 x 20",1,carbon steel (ASTM A500),HX8 hold-down idiom: the frame pins the registry box so the build fills the node envelope (X-PAR-04); AQS-MOD-002 dry service; anchors in fasteners.csv
-unit,OIL_FRAC,"Nozzle set per docs-authority/nozzles/OIL_FRAC.csv: 12 open-bore tube stubs (DN15/DN25), the N14 solids row drawn DN15 bore not calculated, drain and vent flush at the envelope faces",14,carbon steel,14-row issued schedule verbatim (replaces the style-builders study layout); atmospheric tube per duty section 4
+unit,OIL_FRAC,"Nozzle set per docs-authority/nozzles/OIL_FRAC.csv: 12 open-bore tube stubs (DN15/DN25), the N14 solids row drawn DN15 bore not calculated, drain and vent flush at the envelope faces",16,carbon steel,14-row issued schedule verbatim (replaces the style-builders study layout); atmospheric tube per duty section 4
 unit,OIL_PYRO,Shell DN200 x 170 mm x 4.5 mm wall with flat bottom,1,"SA-240 304H plate, rolled, GTAW (ASME IX)",AQS-DUTY-062 section 1
 unit,OIL_PYRO,Bolted flat lid with gasket,1,"SA-240 304H plate, rolled, GTAW (ASME IX)",AQS-DUTY-062
 unit,OIL_PYRO,Nozzles DN25: oil feed in; vapour out to OIL_FRAC; char out; thermowell; bursting disc,5,"SA-240 304H plate, rolled, GTAW (ASME IX)",AQS-DUTY-062
@@ -1068,7 +1072,7 @@ unit,OIL_PYRO,Legs 40x40 x 300 mm,3,"SA-240 304H plate, rolled, GTAW (ASME IX)",
 unit,OIL_PYRO,"Ceramic band heaters, 1.66 kW installed rounded up to 2.0 kW, 480 V",1,mica/ceramic,AQS-DUTY-062
 unit,OIL_PYRO,Ceramic fibre insulation 60 mm with SS cladding,1,Al2O3-SiO2 fibre,ASTM C892
 unit,OIL_PYRO,Bursting disc DN25 to flare header,1,Inconel,ASME VIII-1 UG-127
-unit,PELLET,Extruder barrel D90 x 600 mm with L/D 6 feed screw,1,"316L barrel, nitrided screw",AQS-DUTY-073 section 2; 0.294127 kg/d resin
+unit,PELLET,Extruder barrel D90 x 600 mm with L/D 6 feed screw,1,"316L barrel, nitrided screw",AQS-DUTY-073 section 2; 0.305449 kg/d resin
 unit,PELLET,Gearbox and drive with variable speed,1,"geared motor, IEC frame",AQS-DUTY-073 section 2
 unit,PELLET,"Die head, 2-4 mm pellet holes",1,316L,2-4 mm pellets (AQS-DES-POLY)
 unit,PELLET,Underwater die-face pelletizer with water box,1,316L wetted,AQS-DUTY-073 section 2
@@ -1095,7 +1099,7 @@ unit,POLY_FIBER,"Spin pump + drive set, purchased, 0.3 kW node duty class",1,pur
 unit,POLY_FIBER,"Nozzle set per docs-authority/nozzles/POLY_FIBER.csv: 7 rows - 6 DN15 stubs (pellet, FR finish, scrap, fleece, drain, vent) and the N7 cable row carried, never drawn",6,SS304,schedule tags/faces/heights verbatim; atmospheric per duty section 4
 unit,POLY_OLEFIN,"Vessel OD 150 x wall 3.8, shell 225 with heads, z 616..873, on the support ring, 4 legs and the plinth",1,"SA-240 316L plate (welded, ASME IX)","node design D/H/wall (wall by UG-27 at the 5 MPa design, AQS-SIZE-OIL-POLY); duty section 3 matches; CA 0 mm (AQS-STD-001)"
 unit,POLY_OLEFIN,"Nozzle set per docs-authority/nozzles/POLY_OLEFIN.csv: 6 atmospheric open-bore tube connections at the envelope faces (3 inlets on -Y at 160, the N3 solids row drawn DN15 bore not calculated, drain under the base head, vent riser to the envelope top)",6,316L tube,schedule tags/faces/heights verbatim; bores per the lib/dn Sch 40 table; the N3 solids row is a non-piped transfer drawn per plan W4
-unit,POLY_STOCK,Pellet tote bin 560 x 360 x 700 mm with lid rim,1,HDPE PE100 sheet (DVS 2207-4),"AQS-DUTY-073 section 2; issue 0.267388 kg/d + offcut 0.026739 kg/d, 1 d staging"
+unit,POLY_STOCK,Pellet tote bin 560 x 360 x 700 mm with lid rim,1,HDPE PE100 sheet (DVS 2207-4),"AQS-DUTY-073 section 2; issue 0.277681 kg/d + offcut 0.027768 kg/d, 1 d staging"
 unit,POLY_STOCK,Butterfly valve DN25 at the outlet,1,PP-H / EPDM,metered draw to BLOW_MOLD / MFG
 unit,POLY_STOCK,Lid with vent filter (pellet dust),1,HDPE + PP filter,study
 unit,POWDER_RESIN,"Frame: base 1500 x 800 x 40, four 60 x 60 posts",1,carbon steel,WORK_ORDER step 1; AQS-DUTY-072 line-machine class
@@ -1201,12 +1205,12 @@ unit,PV_ARRAY,"Four-post hold-down/guard frame pinning the 1000 x 600 x 800 enve
 unit,PV_ARRAY,Roof-plane segment deck (the representative roof plane),1,carbon steel,"representative section; the roof structure is the EXT_HALL/X-BLD lane's (LRFD 1.72 kPa, A-M-105)"
 unit,PV_ARRAY,Array table rails + 4 ballast feet (rep section; 10 deg low-tilt),1,carbon steel + ballast,ballasted racking per A-M-105 (roof_pv_dead 0.15 kPa: modules and ballasted racking); the A-MACH anchor drawn; array total 451.8 t at 17 kg/m2 (A-M-184) reported in check.machine
 unit,PV_ARRAY,"Tilted module-plane strips, 3 off covering 60 % of the table plane (GCR 0.6, A-M-103)",3,"PV module plane (purchased, envelope)",modules 0.5 kW x 6052 = nameplate 3026 kWp (node); purchased per plan rule 6; STC eff 0.19 (pv_module_eff)
-unit,PV_ARRAY,"Nozzle set per docs-authority/nozzles/PV_ARRAY.csv: 2 DN25 electrical edges + DN15 drain/vent, drawn as the schedule's tube rows",4,316L tube,schedule tags/faces/heights verbatim; conductor service noted per the duty inline rows; atmospheric per duty section 4
+unit,PV_ARRAY,"Nozzle set per docs-authority/nozzles/PV_ARRAY.csv: 2 DN25 electrical edges + DN15 drain/vent, drawn as the schedule's tube rows",6,316L tube,schedule tags/faces/heights verbatim; conductor service noted per the duty inline rows; atmospheric per duty section 4
 unit,P_CA,Steel frame plinth 300 x 300 x 20 (duty section 3: steel frame outside the wetted headspace),1,carbon steel (ASTM A500),CA 1.5 mm carbon-steel rule not applied: the frame is outside the wetted headspace and carries the vessel only (duty section 3); paint scheme at fabrication
 unit,P_CA,"PP-H vessel OD 250, wall 6 mm, z 18..336, with heads",1,PP-H plate,"duty section 3 (X-MAT-22): PP-H precipitation vessel; wall study (hold, WORK_ORDER W12); CA 0 mm (AQS-STD-001 polymer rule); the 316L mixed-build alternative is a named hold"
 unit,P_CA,PP agitator: shaft on the vessel axis with two blades (duty section 3 names the agitator; dimensions study),1,PP-H rod/plate,"study dimensions (hold, WORK_ORDER W12)"
 unit,P_CA,"Agitator drive envelope on the top head (purchased, maker class at order)",1,polymer/maker class,plan rule 6: purchased item drawn as its envelope and interface; drive rating per the maker TDS at order (WORK_ORDER W12)
-unit,P_CA,"Nozzle set per docs-authority/nozzles/P_CA.csv: 1 drain (through the plinth and base head), 1 vent at the vessel top head",2,PP-H pipe (lib/dn Sch 40 table dims),"schedule verbatim; no piped process connection on the graph yet - drain and vent utilities only; PE slurry lines wait for rated edges (hold, WORK_ORDER W12)"
+unit,P_CA,"Nozzle set per docs-authority/nozzles/P_CA.csv: 1 drain (through the plinth and base head), 1 vent at the vessel top head",6,PP-H pipe (lib/dn Sch 40 table dims),"schedule verbatim; no piped process connection on the graph yet - drain and vent utilities only; PE slurry lines wait for rated edges (hold, WORK_ORDER W12)"
 unit,Q1_A,Body D650 x 950 mm,1,"Carbon steel, ASTM A106 Gr B, welded, spiral-wound 304/graphite gaskets; synthetic thermal oil, no water (AQS-STD-002 section 4.",docs-authority/duties/Q1_A.md
 unit,Q1_A,fastener: anchor bolt M10,10,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 unit,Q1_A,fastener: anchor bolt M10,36,ISO 3506 A4-70 wedge anchor,AQS-INV-004
@@ -1392,7 +1396,7 @@ unit,SHELL_BREAK,Vibratory table 700 x 400 x 60 with the 0.4 kW drive,1,carbon s
 unit,SHELL_BREAK,Reclaim sieve (inclined) with mesh window + reclaim pan,1,carbon steel,reclaim 7.0 kg/d of 8.0 kg/d spent shell
 unit,SHELL_BREAK,Station enclosure hood,1,carbon steel,WO step 4; dust control
 unit,SHELL_BREAK,N1 cast-tree inlet -X z 160 (from INV_CAST N4),1,carbon steel,task-04 schedule N1
-unit,SHELL_BREAK,N2 investment castings +X z 600; N3 spent silica +X z 600; N4 reclaim +Y z 600; N5 silica return +Y z 600,4,carbon steel,task-04 schedule N2..N5
+unit,SHELL_BREAK,N2 investment castings +X z 600; N3 spent silica +X z 600; N4 reclaim +Y z 600; N5 silica return +Y z 600; N9 spent silica to the shop pool +X z 600,5,carbon steel,task-04 schedule N2..N5
 unit,SHELL_BREAK,N6 drain well + N7 vent stub,2,carbon steel,task-04 schedule N6/N7
 unit,SHELL_BUILD,Booth frame 1500 x 800 with back-wall cladding,1,carbon steel,WORK_ORDER W10 route; AQS-DUTY-072 shell-building booth; flush build
 unit,SHELL_BUILD,"Slurry tank 40 L (40 L design), agitated",1,316L,design slurry 40 L; duty section 2; agitator drive mounts at fabrication
@@ -1401,7 +1405,7 @@ unit,SHELL_BUILD,"6-dip manipulator: mast, cross arm, grip hoist",1,carbon steel
 unit,SHELL_BUILD,Drip deck over the slurry tank,1,carbon steel,WORK_ORDER W10 route
 unit,SHELL_BUILD,"N1 pattern chute -X z 160, flush at the face (from WAX_PATTERN N1)",1,carbon steel,task-04 schedule N1
 unit,SHELL_BUILD,"N2 green-shell out +X z 600, flush at the face (to SHELL_BURNOUT N1)",1,carbon steel,task-04 schedule N2
-unit,SHELL_BUILD,"N3/N4 silica make-up + reclaim inlets -X z 160, flush at the face",2,carbon steel,task-04 schedule N3/N4
+unit,SHELL_BUILD,"N3/N4/N8 silica make-up + reclaim inlets -X z 160, flush at the face",3,carbon steel,task-04 schedule N3/N4
 unit,SHELL_BUILD,N5 drain well + N6 vent stub,2,carbon steel,task-04 schedule N5/N6
 unit,SHELL_BURNOUT,"Furnace casing 1000 x 1000 x 1500 mm, CS t4, front door 900 C class",1,carbon steel,duty section 3; WORK_ORDER step 1; door on the -X face with a real through opening
 unit,SHELL_BURNOUT,Ceramic-fibre hot face,1,ceramic-fibre board 128 kg/m3,"design lining; SCHACHT2004 class; the 0.25 kW element set purchases at fabrication (hold, W12)"
@@ -1440,7 +1444,7 @@ unit,SOLAR_PV_CELL,PV-EMIT-01 ceramic-fibre insulation annulus 200 mm x 1000,1,c
 unit,SOLAR_PV_CELL,PV-ARC-01 dry vacuum pump envelope,1,purchased unit (envelope),"A-M-178 basis 1.5 kW vacuum pump 1 h; purchased per plan rule 6, rating from the node design basis"
 unit,SOLAR_PV_CELL,"Screen print mesh (PV-CON-01, grid 2 mm lines at 10 mm pitch per AQS-PV-001)",1,"stainless, shop-cut (AQS-PV-001 section 3)","AQS-PV-001 section 3: screen stainless, shop-cut; mass study figure"
 unit,SOLAR_PV_CELL,"Purchased drive/heat/electrical sets by node rating: PV-CON-01 200 C dryer 0.5 kW and printer drive 0.2 kW (A-M-178), PV-FIRE-01 IR lamp set 3.0 kW (node peak), PV-IV-01 flash IV tester 0.1 kW (node peak)",4,purchased units (envelopes in the station shells),"ratings from the node design tool table and A-M-178; purchased per plan rule 6, not drawn beyond their station envelopes"
-unit,SOLAR_PV_CELL,Nozzle set per docs-authority/nozzles/SOLAR_PV_CELL.csv: drain and vent flush at the envelope faces; the two solids transfer rows drawn DN15 bore not calculated,5,316L (duty section 3),"issued schedule verbatim; the cable schedule row is carried, never drawn; atmospheric hose per duty section 4"
+unit,SOLAR_PV_CELL,Nozzle set per docs-authority/nozzles/SOLAR_PV_CELL.csv: drain and vent flush at the envelope faces; the two solids transfer rows drawn DN15 bore not calculated,7,316L (duty section 3),"issued schedule verbatim; the cable schedule row is carried, never drawn; atmospheric hose per duty section 4"
 unit,SOL_ARK_60K,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,docs-authority/duties/SOL_ARK_60K.md
 unit,SOL_ARK_60K,"Motor: cooling fan (BLDC, 57 mm (NEMA 23 flange))",48,-,AQS-INV-001 / AQS-INV-005
 unit,SOL_ARK_60K,bearing: deep-groove ball bearing 608-2Z,96,"ISO 15, normal class",AQS-INV-004
@@ -1469,7 +1473,7 @@ unit,TI_CELL,Reduction furnace box 200 x 240 x 420,1,CS with element pockets,AQS
 unit,TI_CELL,Mg charge hopper cone on the retort,1,carbon steel,0.5078 kg/d Mg reductant per campaign (AQS-BAL-KROLL)
 unit,TI_CELL,"Interconnects: chlorinator->condenser and condenser->retort, OD 24 t 2",2,carbon steel (dry hot Cl2/TiCl4),WO step 4; slope per the isometric
 unit,TI_CELL,MgCl2 drag-out trough 640 x 110 x 90,1,carbon steel,salt drag-out to the flux-cover source (task-04 schedule N7)
-unit,TI_CELL,N2/N10/N11 charge chutes -X z 160 (0.8342 kg/d TiO2-class + 0.2509 kg/d carbon + grit),3,"CS chute, refractory throat",task-04 schedule N2/N10/N11; A-M-284 feedstock ruling
+unit,TI_CELL,N2/N10/N11/N18 charge chutes -X z 160 (0.8342 kg/d TiO2-class + 0.2509 kg/d carbon + grit),4,"CS chute, refractory throat",task-04 schedule N2/N10/N11/N18; A-M-284 feedstock ruling
 unit,TI_CELL,N3/N9 chlorine DN15 stubs -Y z 600 (1.4813 kg/d loop with MG_POT),2,carbon steel (dry hot Cl2),task-04 schedule N3/N9; A-M-280 ruling
 unit,TI_CELL,"N12 CO export DN15 +Y z 600 (0.5852 kg/d, fuel-gas class)",1,carbon steel,task-04 schedule N12
 unit,TI_CELL,N1 slag tap spout +Y z 600,1,carbon (refractory class),"task-04 schedule N1 (solids, bore not calculated)"
@@ -1495,9 +1499,9 @@ unit,VAC_IND,"PSU cabinet, 15.0 kW connected (node design), IP54",1,purchased ca
 unit,VAC_IND,Tilt-frame hydraulics bay on the +X floor,1,carbon steel,WORK_ORDER W10 route; actuator package purchased at fabrication (WORK_ORDER W12)
 unit,VAC_IND,"Nozzle set per docs-authority/nozzles/VAC_IND.csv: 5 atmospheric open-bore tube connections flush at the envelope faces (drain through the plinth, vent riser on the chamber lid)",5,304L tube,"schedule tags/faces/heights verbatim; solids row at DN15, bore not calculated (W4)"
 unit,VCD_TRAIN,"Still vessels x 2 (2 x 100 %, X-RED-05): shell OD 240 x wall 10, 1170 mm, sump + tubesheet pair + separator flange + top cap",2,"316L, CA 0 mm","duty section 3 (316L wetted); the MVC still principle: boiling inside, compressed vapour condensing on the shell"
-unit,VCD_TRAIN,"Falling-film bundles: 18 tubes ID 12 x OD 14 x 890 mm per module, 0.6039 m2 each",36,"316L tube, CA 0 mm",booked bundle 0.603 m2 at U 2.8 kW/m2 K x 5 K (PERRY9_EVAP class) on the node's 8.436 kW latent duty (params.design area_basis); drawn at +0.1 %
+unit,VCD_TRAIN,"Falling-film bundles: 19 tubes ID 12 x OD 14 x 890 mm per module, 0.6375 m2 each",38,"316L tube, CA 0 mm",booked bundle 0.603 m2 at U 2.8 kW/m2 K x 5 K (PERRY9_EVAP class) on the node's 8.436 kW latent duty (params.design area_basis); drawn at +0.1 %
 unit,VCD_TRAIN,"Separator demister pads, 90 mm",2,316L mesh,vapour separator internals above the upper tubesheet (design sep_h_mm)
-unit,VCD_TRAIN,"Scroll compressors, 0.2542 kW duty class (node design scroll class), envelope and interface",2,"purchased, 316L refrigeration class","purchased per plan rule 6; the drive rating reads the maker sheet at order (node design sec_kWh_m3 17 kWh/m3 driver basis, A-M-149)"
+unit,VCD_TRAIN,"Scroll compressors, 0.2645 kW duty class (node design scroll class), envelope and interface",2,"purchased, 316L refrigeration class","purchased per plan rule 6; the drive rating reads the maker sheet at order (node design sec_kWh_m3 17 kWh/m3 driver basis, A-M-149)"
 unit,VCD_TRAIN,"Nozzle set per docs-authority/nozzles/VCD_TRAIN.csv: 11 rows at the skid faces (drain boss through the plinth, vent riser on the bay-0 separator cap)",11,316L tube,"schedule tags/faces/heights verbatim; atmospheric open-bore tube (duty section 4: hose, atmospheric)"
 unit,VCD_TRAIN,Plinth 1400 x 600 x 30 carrying both module bays,1,"carbon steel, painted",dry frame; anchors in fasteners.csv
 unit,VDF_SYN,"Synthesis reactor shell D360 x 440 mm, wall 8 mm, jacketed",1,"316L shell, PTFE-lined heads (fluorocarbon service)",AQS-DUTY-073 fluoro train; duty 0.5128 kW; AQS-SEL-FP route
@@ -1518,18 +1522,18 @@ unit,WAFER_FAB,CZ puller station envelope (charge heat-up over the 7 d campaign 
 unit,WAFER_FAB,Ingot cool/anneal station envelope (N2 circulator duty share),1,purchased tool (envelope),node equipment list 0.02 kW connected; envelope + interface per plan rule 6
 unit,WAFER_FAB,Crop/grind/edge tool set envelope (5 starts/d),1,purchased tool (envelope),node equipment list 0.04 kW connected; envelope + interface per plan rule 6
 unit,WAFER_FAB,"FAB_TOOL dry row envelope (ox, RTA, metal, probe standby)",1,purchased tool (envelope),node equipment list 0.12 kW connected parasitics; envelope + interface per plan rule 6
-unit,WAFER_FAB,"Nozzle set per docs-authority/nozzles/WAFER_FAB.csv: 10 open-bore tube stubs (DN15/DN25), 4 non-piped solids transfer rows drawn DN15 bore not calculated, drain and vent flush at the envelope faces",15,316L tube,"issued schedule verbatim; the cable schedule row is carried, never drawn; atmospheric tube per duty section 4"
+unit,WAFER_FAB,"Nozzle set per docs-authority/nozzles/WAFER_FAB.csv: 10 open-bore tube stubs (DN15/DN25), 4 non-piped solids transfer rows drawn DN15 bore not calculated, drain and vent flush at the envelope faces",29,316L tube,"issued schedule verbatim; the cable schedule row is carried, never drawn; atmospheric tube per duty section 4"
 unit,WASHROOM,"FRP room shell: floor + four 15 mm partition walls, 3000 x 2000 x 2400 outer, 900 x 2100 door opening in the -X end wall (8 m2 fitout shell, A-M-419; AQS-HAB-001)",1,FRP,"size_basis verbatim; ceramic tile wet zones are a finish on the FRP panels - no thickness stated on the duty, not drawn (WORK_ORDER W12); CA none (AQS-STD-001 shop rule polymer clause)"
 unit,WASHROOM,"SS304 fixture set: shower tray, WC pan, wall-hung basin - study sheet-metal envelopes in the +X wet zone",1,SS304,"catalogue sanitary ware; envelope + interface per plan rule 6 - study sheet envelopes at 304 density, maker prints govern at order; SS316 where sanitiser chemistry concentrates (duty section 3 alternative)"
 unit,WASHROOM,"Nozzle set per docs-authority/nozzles/WASHROOM.csv: 4 rows drawn as DN15 tube stubs (grey water out, wash-water feed, drain, vent)",4,SS304,"schedule tags/faces/heights verbatim; atmospheric per duty section 4; the SS drainage duty section 3 names is this set; bores are the AQS-PIP-004 line DN, not recalculated (AQS-PIP-003)"
-unit,WAX_PATTERN,"SS304 sheet cabinet: 800 x 600 x 1200, 5 mm walls, floor and top (prep-class study box; A-M-286 wax split basis)",1,SS304 (duty section 3),"size_basis verbatim; dry hydrocarbon service, no corrosive species (duty section 3)"
-unit,WAX_PATTERN,"304L wax melt pot envelope 250 x 250 x 160 (10 L class), wax reclaim returned to the pot",1,304L (duty section 3),graph design pot_L 10; 304/316L hot-melt practice per duty section 3
-unit,WAX_PATTERN,Steam/hot-water manifold envelope 280 x 280 x 100 under the pot,1,SS304 (duty section 3),"the melt-tank heat manifold duty section 3 names; loop hardware tie-in is plant scope (hold, WORK_ORDER W12)"
-unit,WAX_PATTERN,Injection head envelope 200 x 200 x 600 with the 0.5 kW class,1,SS304 head (unit purchased),"graph design injector_kW 0.5; the injector/heater unit purchases with the pot at fabrication (hold, WORK_ORDER W12)"
-unit,WAX_PATTERN,Pattern die envelope 150 x 150 x 200,1,SS304 (die material study),"the pattern dies the work order names; die material and cavities are finished against the first shell run (hold, WORK_ORDER W12)"
-unit,WAX_PATTERN,PP-H wax storage bin envelope 200 x 200 x 300,1,PP-H (duty section 3),duty section 3 storage-bin class at the 80 C thermoplastic house limit
-unit,WAX_PATTERN,PE drain pan envelope 200 x 150 x 60 under the injector deck,1,PE (duty section 3),duty section 3 drain-pan class
-unit,WAX_PATTERN,"Nozzle set per docs-authority/nozzles/WAX_PATTERN.csv: 6 rows - 2 solids rows drawn as DN15 stubs (bore not calculated), DN15 reclaim, drain, vent, and the N6 cable row carried, never drawn",5,SS304,schedule tags/faces/heights verbatim; atmospheric per duty section 4
+unit,WAX_PATTERN,"Bench frame 800 x 600, work top z 850..900",1,carbon steel,WORK_ORDER step 1; AQS-DUTY-072 bench_prep class
+unit,WAX_PATTERN,Extraction hood with the N5 vent stub,1,carbon steel,task-04 schedule N5
+unit,WAX_PATTERN,Wax pot 10 L with the 0.5 kW injector head,1,CS + heater class,"design pot 10 L, injector 0.5 kW; 2.0 kg/d wax"
+unit,WAX_PATTERN,Pattern table 220 x 300 x 40,1,carbon steel,WO step 3
+unit,WAX_PATTERN,N1 pattern discharge chute +X z 600,1,carbon steel,"task-04 schedule N1 (solids, bore not calculated)"
+unit,WAX_PATTERN,N2 condensate-reclaim trap -X z 160,1,carbon steel,task-04 schedule N2
+unit,WAX_PATTERN,"N3 make-up hopper -X z 160 (petro-wax class import, A-M-284)",1,carbon steel,task-04 schedule N3
+unit,WAX_PATTERN,N4 drain well,1,carbon steel,task-04 schedule N4
 unit,WET_BENCH,Bench deck 912 x 512 x 20 over the plinth 1000 x 600 x 20,1,carbon steel (ASTM A500),AQS-MOD-002 dry service; dry structure outside the wetted polymer
 unit,WET_BENCH,"Four-post hold-down/guard frame pinning the 1000 x 600 x 800 envelope (40 x 40 posts, top rails)",1,carbon steel (ASTM A500),HX8 hold-down idiom (X-PAR-04); A-MACH guard; anchors in fasteners.csv
 unit,WET_BENCH,"SC1 bath 10 L nominal (inner 250 x 250 x 160), wall 10 (study), with immersion heater envelope",1,CPVC (duty section 3 rule at the node 80 C bath temperature),"node equipment: SC1 bath 10 L, 80 C, 2.479 kWh/d; heater envelope is the purchased unit per plan rule 6 (BOM row 7)"
@@ -1538,7 +1542,7 @@ unit,WET_BENCH,"DHF etch bath (inner 120 x 250 x 160, drawn to its bay), wall 10
 unit,WET_BENCH,"DIW rinse bath (inner 120 x 250 x 160, drawn to its bay), wall 10 (study)",1,PVC-U (duty section 3: AQS-STD-002 M1/M2),"node equipment: DIW rinse + N2 guns, 0.05 kWh/d; no bath size stated on the node (hold, WORK_ORDER W12); the N2 gun set is a hand-tool buy row (row 8), not drawn"
 unit,WET_BENCH,Immersion heater envelopes in SC1 and SC2,2,purchased unit (envelope),"node equipment rows carry the energy basis (2.479 kWh/d each, heat-up + insulated hold per the node note); no per-heater kW rating is stated on the node or duty - rating hold, WORK_ORDER W12"
 unit,WET_BENCH,N2 gun set (node equipment row: DIW rinse + N2 guns),1,purchased hand tools (not drawn),"node equipment row 0.05 kWh/d; hand tools at the bench, no rating stated on the node or duty (plan rule 6: named, not invented)"
-unit,WET_BENCH,"Nozzle set per docs-authority/nozzles/WET_BENCH.csv: 11 open-bore tube stubs (DN15/DN25) drawn polymer per duty section 3, drain and vent flush at the envelope faces",14,PVC-U (duty section 3: no metal wetted part),"issued schedule verbatim; the cable schedule row is carried, never drawn; atmospheric tube per duty section 4; stub ODs follow the DN series (the steel pipe table); polymer wall is the supplier rule (hold, WORK_ORDER W12)"
+unit,WET_BENCH,"Nozzle set per docs-authority/nozzles/WET_BENCH.csv: 11 open-bore tube stubs (DN15/DN25) drawn polymer per duty section 3, drain and vent flush at the envelope faces",15,PVC-U (duty section 3: no metal wetted part),"issued schedule verbatim; the cable schedule row is carried, never drawn; atmospheric tube per duty section 4; stub ODs follow the DN series (the steel pipe table); polymer wall is the supplier rule (hold, WORK_ORDER W12)"
 unit,WIRE_DRAW,"Plinth 1000 x 600 x 20 (CS, anchor bosses)",1,carbon steel,"dry machine-shop floor service, CA 0 mm (AQS-STD-001 shop rule); anchors in fasteners.csv"
 unit,WIRE_DRAW,Bench bed 600 long on 4 legs (DRAW bench idiom scaled to the node box),1,carbon steel,duty section 3: steel bench; study sections (WORK_ORDER W12)
 unit,WIRE_DRAW,"Tungsten-carbide drawing die set, 4 dies in tool-steel casings",1,carbide + tool steel (consumable set),"duty section 3 class (DIETER1988 ch. 20/21); consumable, buy; the die count is a study value (hold, WORK_ORDER W12)"
@@ -1551,7 +1555,7 @@ unit,WIRE_DRAW,Nozzle set per docs-authority/nozzles/WIRE_DRAW.csv: 6 DN15 stubs
 unit,WS_AMMONIA,"Bund tray 600 x 600, floor 20 + curb 60 x 10",1,PVC-U plate,skid layout choice (WORK_ORDER W12); CA 0 mm (AQS-STD-001 polymer rule); the duty section 4 prose own-bund lines are room-side containment (hold)
 unit,WS_AMMONIA,"Day tank OD 260, wall 10 mm, z 40..300, with heads",1,PVC-U plate/pipe,"duty section 3 PVC-U wetted (rules M1 and M2); station day-tank envelope - no vessel diameter or holdup basis on the node or duty (hold, WORK_ORDER W12)"
 unit,WS_AMMONIA,"Service-zone guard rail 130 x 100 x 150, tube 12 (A-MACH: guard drawn)",1,PP tube,guard over the front-right floor zone; layout choice (WORK_ORDER W12)
-unit,WS_AMMONIA,"Nozzle set per docs-authority/nozzles/WS_AMMONIA.csv: 8 atmospheric open-bore tube connections on tray risers (drain through the floor, vent riser on the tank head)",8,PVC-U,schedule tags/faces/heights verbatim; atmospheric per duty section 4; bore per the lib/dn Sch 40 table
+unit,WS_AMMONIA,"Nozzle set per docs-authority/nozzles/WS_AMMONIA.csv: 8 atmospheric open-bore tube connections on tray risers (drain through the floor, vent riser on the tank head)",9,PVC-U,schedule tags/faces/heights verbatim; atmospheric per duty section 4; bore per the lib/dn Sch 40 table
 unit,WS_DOPE,"Bund tray 600 x 600, floor 20 + curb 60 x 10",1,PE plate,skid layout choice (WORK_ORDER W12); CA 0 mm (AQS-STD-001 polymer rule); the duty section 4 prose own-bund lines are room-side containment (hold)
 unit,WS_DOPE,"Day tank OD 300, wall 4.75 mm, z 30..350, with heads, per node design_storage",1,PE plate/pipe (rotomoulded / fabricated),duty section 3 PE (graph node material row); tank D/H/wall per node design_storage (AQS-DUTY-064); nominal 0.02 m3 reported for the record (WORK_ORDER W12)
 unit,WS_DOPE,"Service-zone guard rail 130 x 100 x 150, tube 12 (A-MACH: guard drawn)",1,PP tube,guard over the front-right floor zone; layout choice (WORK_ORDER W12)
@@ -1586,23 +1590,25 @@ unit,WS_SLURRY,"Nozzle set per docs-authority/nozzles/WS_SLURRY.csv: 4 rows as a
 unit,WS_SOLV,"Bund tray 600 x 600, floor 20 + curb 60 x 10",1,304L plate,skid layout choice (WORK_ORDER W12); CA 0 mm on the 300-series alloy (AQS-STD-001); the duty section 4 prose own-bund lines are room-side containment (hold)
 unit,WS_SOLV,"Day tank OD 300, wall 3 mm, z 30..350, with heads, per node design_storage",1,SA-240 304L plate/pipe,"duty section 3 SA-240 304L, welded; tank D/H/wall per node design_storage (AQS-DUTY-064, 3.0 wall); nominal 0.02 m3 reported for the record (WORK_ORDER W12)"
 unit,WS_SOLV,"Service-zone guard rail 130 x 100 x 150, tube 12 (A-MACH: guard drawn)",1,PP tube,guard over the front-right floor zone; layout choice (WORK_ORDER W12)
-unit,WS_SOLV,"Nozzle set per docs-authority/nozzles/WS_SOLV.csv: 7 rows as atmospheric open-bore tube connections on tray risers (drain through the floor, vent riser beside the tank)",7,304L,schedule tags/faces/heights verbatim; atmospheric per duty section 4; bore per the lib/dn Sch 40 table
-unit,ZNBR2,"Plinth, support posts, end plates, tie rods and lifting beams, 7900 x 6050 x 1970 mm rack frame over 47 bays",377,"carbon steel, painted",dry support outside the electrolyte (duty section 3: no wetted alloy); anchors in fasteners.csv
-unit,ZNBR2,"Bipolar plates 995.8 x 500 x 5 mm active window (0.4979 m2 each, 6 mm pitch), drawn as the bonded per-module plate-pack envelope",4465,carbon-plastic composite (ZBFB class),"fills the booked cell-summed electrode area 2223.1 m2 at the 20 mA/cm2 book (purge_basis; X-MFG-43, A-M-456); the performance class is gated by the X-MFG-41 stack test (AQS-TST-002)"
-unit,ZNBR2,"Electrolyte reservoirs 700 x 700 x 1155 mm, wall 10 mm, open top",47,PVC-U sheet (AQS-STD-002 halogen class),the reactant holdup as hardware: 529.4 L at 2 M ZnBr2 per module (A-M-457); the PP-loop register wording is superseded by the duty-standard halogen class (W12)
-unit,ZNBR2,"Microporous separator sheets, 996 x 500 x 1 mm, one per plate gap (inside the drawn pack envelope)",4418,microporous polyolefin sheet (separator class),"loading item between plates at the 1 mm land, not drawn as a solid (W12); wetted material per coupon test with the hypobromite rating (duty section 3)"
-unit,ZNBR2,"Electrolyte pumps, 517 W each (auxiliaries share)",47,"PP/PVDF wetted, purchased","rating from the A-M-179 auxiliary share (3 % of throughput) at the design charge rate; purchased per plan rule 6, envelope and interface drawn"
-unit,ZNBR2,"Electrolyte coolers, 3.1 kW plate HX each",47,"PVC-U/CPVC class wetted, purchased","rating at the cycling_thermal charge-window rate (A-M-455); to IA-ZNBR-HEAT on the Q4 bus; purchased per plan rule 6, envelope and interface drawn"
-unit,ZNBR2,"Bus flats 300 x 20 x 6.3 mm copper, one per stack terminal",94,copper C101,conductors are copper (duty section 3); section by the AQS-BUS-001 class method - POWER.md states no ZNBR2 bus section (A-CELL bus rule)
-unit,ZNBR2,"Electrolyte inventory, 2 M ZnBr2 solution (Zn cycled per day and Br2 booked on the design)",24.9,ZnBr2 in water (A-M-457),"loading item: 69.2 kg Zn and 169.2 kg Br2 per module per day cycled; held in the item 3 reservoirs; top-up on IA-ZNBR-MU, bleed on IA-ZNBR-BD"
+unit,WS_SOLV,"Nozzle set per docs-authority/nozzles/WS_SOLV.csv: 7 rows as atmospheric open-bore tube connections on tray risers (drain through the floor, vent riser beside the tank)",10,304L,schedule tags/faces/heights verbatim; atmospheric per duty section 4; bore per the lib/dn Sch 40 table
+unit,ZNBR2,"Plinth, support posts, end plates, tie rods and lifting beams, 7900 x 6050 x 1970 mm rack frame over 38 bays",305,"carbon steel, painted",dry support outside the electrolyte (duty section 3: no wetted alloy); anchors in fasteners.csv
+unit,ZNBR2,"Bipolar plates 994.5 x 500 x 5 mm active window (0.4973 m2 each, 6 mm pitch), drawn as the bonded per-module plate-pack envelope",3610,carbon-plastic composite (ZBFB class),"fills the booked cell-summed electrode area 1795.1 m2 at the 20 mA/cm2 book (purge_basis; X-MFG-43, A-M-456); the performance class is gated by the X-MFG-41 stack test (AQS-TST-002)"
+unit,ZNBR2,"Electrolyte reservoirs 700 x 700 x 1155 mm, wall 10 mm, open top",38,PVC-U sheet (AQS-STD-002 halogen class),the reactant holdup as hardware: 528.8 L at 2 M ZnBr2 per module (A-M-457); the PP-loop register wording is superseded by the duty-standard halogen class (W12)
+unit,ZNBR2,"Microporous separator sheets, 996 x 500 x 1 mm, one per plate gap (inside the drawn pack envelope)",3572,microporous polyolefin sheet (separator class),"loading item between plates at the 1 mm land, not drawn as a solid (W12); wetted material per coupon test with the hypobromite rating (duty section 3)"
+unit,ZNBR2,"Electrolyte pumps, 516 W each (auxiliaries share)",38,"PP/PVDF wetted, purchased","rating from the A-M-179 auxiliary share (3 % of throughput) at the design charge rate; purchased per plan rule 6, envelope and interface drawn"
+unit,ZNBR2,"Electrolyte coolers, 3.08 kW plate HX each",38,"PVC-U/CPVC class wetted, purchased","rating at the cycling_thermal charge-window rate (A-M-455); to IA-ZNBR-HEAT on the Q4 bus; purchased per plan rule 6, envelope and interface drawn"
+unit,ZNBR2,"Bus flats 300 x 20 x 6.3 mm copper, one per stack terminal",76,copper C101,conductors are copper (duty section 3); section by the AQS-BUS-001 class method - POWER.md states no ZNBR2 bus section (A-CELL bus rule)
+unit,ZNBR2,"Electrolyte inventory, 2 M ZnBr2 solution (Zn cycled per day and Br2 booked on the design)",20.1,ZnBr2 in water (A-M-457),"loading item: 69.1 kg Zn and 169 kg Br2 per module per day cycled; held in the item 3 reservoirs; top-up on IA-ZNBR-MU, bleed on IA-ZNBR-BD"
 unit,ZNBR2,"Nozzle set per docs-authority/nozzles/ZNBR2.csv: 12 rows at the hall faces (drain under the plinth, vent riser on the last bay beam)",12,DN per schedule,"schedule tags/faces/heights verbatim; atmospheric open-bore tube (duty section 4: hose, atmospheric); the 'cable' row is a text row, no stub"
-unit,ZNBR2_BR2_REGEN,"Column shell PVC-U DN100 Sch 80 (OD 114.3 x wall 8.56), 3700 mm with solvent-welded base ring and top cap",1,"PVC-U (ASTM D1785), CA not applicable","duty section 3: PVC-U shell, no metal wetted part; AQS-STD-002 halogen class; sized at 1.5 m/s on the 35.9 m3/h purge (ess_tf, X-MFG-43b)"
+unit,ZNBR2_BR2_REGEN,"Column shell PVC-U DN100 Sch 80 (OD 114.3 x wall 8.56), 3700 mm with solvent-welded base ring and top cap",1,"PVC-U (ASTM D1785), CA not applicable","duty section 3: PVC-U shell, no metal wetted part; AQS-STD-002 halogen class; sized at 1.5 m/s on the 29 m3/h purge (ess_tf, X-MFG-43b)"
 unit,ZNBR2_BR2_REGEN,"Packing support plate, perforated 50 % open envelope",1,PVC-U sheet,A-COL support as a solid; AQS-DUTY-061 house class (not derived from the gas mass)
 unit,ZNBR2_BR2_REGEN,"Random packing: 25 mm PVC-U Pall rings (in-house cut tube rings), bed 3000 mm",1,PVC-U cut rings (bulk 380 kg/m3 class),duty section 2 packing (25 mm Pall rings) at the X-MFG-32 cut-ring class; X-MFG-32 jellybean line makes them
 unit,ZNBR2_BR2_REGEN,"Liquid distributor, drip-pipe envelope with header channel",1,PVC-U,A-COL distributor as a solid (AQS-DUTY-061 class); no liquor inlet is piped - the scrub liquor is the S69B return (duty section 2)
 unit,ZNBR2_BR2_REGEN,Mesh demister pad 100 mm,1,PVC or PP mesh,"A-COL demister as a solid (AQS-DUTY-061 class); PP excluded for halogens (AQS-STD-002) - PVC mesh, coupon test with the hypobromite rating (W12(3))"
 unit,ZNBR2_BR2_REGEN,"Nozzle set per docs-authority/nozzles/ZNBR2_BR2_REGEN.csv: 4 rows (gas in, electrolyte return out, drain boss, vent riser)",4,PVC-U socket + FKM gaskets,schedule tags/faces/heights verbatim; solvent-welded PVC-U per ASTM D2564; FKM gaskets (duty section 3); vent datum 2000 is the placeholder (W12(4))
 unit,ZNBR2_BR2_REGEN,Plinth 400 x 400 x 40 with drain slot,1,PVC-U sheet on a plinth class,skid seating; the drain drops through the plinth slot
+unit envelope BOM,ACID_PLANT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Cake kiln tube of Inconel 600 with an alumina lining and mineral-wool insulation; sulfur burner and converter shell of aluminised carbon steel with vanadium catalyst beds; absorber and product acid tank of carbon steel with PTFE-lined nozzles; dilution cooler of high-silicon iron.,docs-authority/duties/ACID_PLANT.md
+unit envelope BOM,ACID_PLANT,Process nozzle DN15,10,Cake kiln tube of Inconel 600 with an alumina lining and mineral-wool insulation; sulfur burner and converter shell of aluminised carbon steel with vanadium catalyst beds; absorber and product acid tank of carbon steel with PTFE-lined nozzles; dilution cooler of high-silicon iron.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,ACID_POLISH_SCRUB,Body D600 x 3803 mm,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/ACID_POLISH_SCRUB.md
 unit envelope BOM,ACID_POLISH_SCRUB,Process nozzle DN15,3,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,ACID_POLISH_SCRUB,Process nozzle DN250,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
@@ -1773,6 +1779,8 @@ unit envelope BOM,MET_SYN,Body / envelope 1500 x 1000 x 1800 mm,1,"Borosilicate 
 unit envelope BOM,MET_SYN,Process nozzle DN15,4,"Borosilicate glass-lined reactor column, PTFE-lined transfer lines, SS304 reagent feed tanks, Hastelloy C crystalliser.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,MFG_SHOP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/MFG_SHOP.md
 unit envelope BOM,MFG_SHOP,Process nozzle DN15,29,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,NAOH_PLANT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Lime kiln and trona calciner tubes of Inconel 600 with alumina lining and mineral-wool insulation; slaker, causticiser and white-liquor tank of carbon steel; on the chlor-alkali route, titanium anode pans, nickel cathode pans and perfluorinated membranes, with nickel catholyte piping and PVC-lined brine piping.",docs-authority/duties/NAOH_PLANT.md
+unit envelope BOM,NAOH_PLANT,Process nozzle DN15,7,"Lime kiln and trona calciner tubes of Inconel 600 with alumina lining and mineral-wool insulation; slaker, causticiser and white-liquor tank of carbon steel; on the chlor-alkali route, titanium anode pans, nickel cathode pans and perfluorinated membranes, with nickel catholyte piping and PVC-lined brine piping.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,NORTH_DOCK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/NORTH_DOCK.md
 unit envelope BOM,NORTH_DOCK,Process nozzle DN15,9,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,NORTH_DOCK,Process nozzle DN50,1,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
@@ -1814,14 +1822,20 @@ unit envelope BOM,RELIEF_H2,Body / envelope per duty sheet section 2 (not yet di
 unit envelope BOM,RELIEF_H2,Process nozzle DN15,1,"316L, annealed, bonded and grounded; open stack, no cap that traps H₂ (M7 flame exposure).",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,REMIN,Body / envelope 600 x 600 x 600 mm,1,"PVC-U or HDPE, per AQS-STD-002 rule M1.",docs-authority/duties/REMIN.md
 unit envelope BOM,REMIN,Process nozzle DN15,3,"PVC-U or HDPE, per AQS-STD-002 rule M1.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,RESIST_SYN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Glass-lined steel batch reactors for the oxychlorination, nitrosation, diazotisation and esterification; 316L for the formaldehyde and ammonia oxidisers, the novolac kettle and the solvent steps; Monel 400 for the dry phosgene and chlorine lines.",docs-authority/duties/RESIST_SYN.md
+unit envelope BOM,RESIST_SYN,Process nozzle DN15,15,"Glass-lined steel batch reactors for the oxychlorination, nitrosation, diazotisation and esterification; 316L for the formaldehyde and ammonia oxidisers, the novolac kettle and the solvent steps; Monel 400 for the dry phosgene and chlorine lines.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,ROOF_TANK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U or HDPE, per AQS-STD-002 rule M1.",docs-authority/duties/ROOF_TANK.md
 unit envelope BOM,ROOF_TANK,Process nozzle DN15,20,"PVC-U or HDPE, per AQS-STD-002 rule M1.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,SALT_FEED,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/SALT_FEED.md
 unit envelope BOM,SALT_FEED,Process nozzle DN15,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,SI_REDUCE,Body / envelope 1200 x 1000 x 1600 mm,1,Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel casing; dry char and silica-class feed handling; the hot face stays dry (M7).,docs-authority/duties/SI_REDUCE.md
 unit envelope BOM,SI_REDUCE,Process nozzle DN15,1,Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel casing; dry char and silica-class feed handling; the hot face stays dry (M7).,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,SI_REFINE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite chucks (or a silicon-lined fluidised bed on the silane route).",docs-authority/duties/SI_REFINE.md
+unit envelope BOM,SI_REFINE,Process nozzle DN15,6,"Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite chucks (or a silicon-lined fluidised bed on the silane route).",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,SOLAR_PV_CELL,Body / envelope 2400 x 1200 x 1600 mm,1,316L where the stream is wet.,docs-authority/duties/SOLAR_PV_CELL.md
 unit envelope BOM,SOLAR_PV_CELL,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,SOLV_PLANT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclave for the iodide-promoted acetic acid step; 316L ketonisation and hydrogenation tube reactors; on the fermentation route, HDPE fermenters, nitrogen-blanketed.",docs-authority/duties/SOLV_PLANT.md
+unit envelope BOM,SOLV_PLANT,Process nozzle DN15,8,"316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclave for the iodide-promoted acetic acid step; 316L ketonisation and hydrogenation tube reactors; on the fermentation route, HDPE fermenters, nitrogen-blanketed.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,SOL_ARK_60K,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,docs-authority/duties/SOL_ARK_60K.md
 unit envelope BOM,VCD_TRAIN,Body / envelope 1400 x 600 x 1200 mm,1,316L if the stream is wet or chloride.,docs-authority/duties/VCD_TRAIN.md
 unit envelope BOM,VCD_TRAIN,Process nozzle DN15,9,316L if the stream is wet or chloride.,one per mass edge; DN from AQS-INV-003
@@ -1855,12 +1869,12 @@ unit envelope BOM,ZNBR2,Process nozzle DN15,3,No wetted alloy.,one per mass edge
 unit envelope BOM,ZNBR2,Process nozzle DN32,1,No wetted alloy.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,ZNBR2_BR2_REGEN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U shell, sump, liquor piping, and Pall-ring packing; FKM gaskets.",docs-authority/duties/ZNBR2_BR2_REGEN.md
 unit envelope BOM,ZNBR2_BR2_REGEN,Process nozzle DN15,2,"PVC-U shell, sump, liquor piping, and Pall-ring packing; FKM gaskets.",one per mass edge; DN from AQS-INV-003
-motor family,MF-01 x 90,stator laminations M270-35A 0.35 mm,1620,,EN 10106
-motor family,MF-01 x 90,NdFeB magnets 2.8 g (basis; ferrite variant in AQS-INV-005),90,,X-INV-02D
-motor family,MF-01 x 90,magnet wire IEC 60317-13 class 200,-,,X-INV-03 wire line
-motor family,MF-01 x 90,"housing extruded 6063, NEMA ICS 16 42 mm flange",90,,extruded + machined
-motor family,MF-01 x 90,bearing 6000-2Z,180,,X-INV-05
-motor family,MF-01 x 90,Hall sensor PCB,90,,X-INV-05 electronics
+motor family,MF-01 x 104,stator laminations M270-35A 0.35 mm,1872,,EN 10106
+motor family,MF-01 x 104,NdFeB magnets 2.8 g (basis; ferrite variant in AQS-INV-005),104,,X-INV-02D
+motor family,MF-01 x 104,magnet wire IEC 60317-13 class 200,-,,X-INV-03 wire line
+motor family,MF-01 x 104,"housing extruded 6063, NEMA ICS 16 42 mm flange",104,,extruded + machined
+motor family,MF-01 x 104,bearing 6000-2Z,208,,X-INV-05
+motor family,MF-01 x 104,Hall sensor PCB,104,,X-INV-05 electronics
 motor family,MF-02 x 56,stator laminations M270-35A 0.35 mm,3248,,EN 10106
 motor family,MF-02 x 56,NdFeB magnets 28.7 g (basis; ferrite variant in AQS-INV-005),56,,X-INV-02D
 motor family,MF-02 x 56,magnet wire IEC 60317-13 class 200,-,,X-INV-03 wire line
@@ -1989,16 +2003,16 @@ motor family,MF-16 x 1,end shields A356,2,,cast + machined
 motor family,MF-16 x 1,bearing 6202-2Z,2,,X-INV-05 OF bearing family
 motor family,MF-16 x 1,fan PP + fan cover steel,1,,IC 411
 motor family,MF-16 x 1,terminal box + 6-stud block,1,,IEC 60034-8 marking
-motor family,MF-17 x 23,stator laminations M400-50A (EN 10106) 0.5 mm,6762,,EN 10106
-motor family,MF-17 x 23,rotor laminations M400-50A 0.5 mm,6762,,EN 10106
-motor family,MF-17 x 23,magnet wire IEC 60317-13 15 AWG (2.400 mm2),5.23 kg,,X-INV-03 wire line
-motor family,MF-17 x 23,die-cast Al cage (bars + rings),3.52 kg,,A356 in-house melt (assumed 12 % of steel mass)
-motor family,MF-17 x 23,"shaft C45 (EN 10083-2) D38 x 347 mm, key to IEC 60072-1",23,,turned
-motor family,MF-17 x 23,"frame A356 IEC 132M, feet A216 x B178, holes K12",23,,cast + machined
-motor family,MF-17 x 23,end shields A356,46,,cast + machined
-motor family,MF-17 x 23,bearing 6308-2Z,46,,X-INV-05 OF bearing family
-motor family,MF-17 x 23,fan PP + fan cover steel,23,,IC 411
-motor family,MF-17 x 23,terminal box + 6-stud block,23,,IEC 60034-8 marking
+motor family,MF-17 x 27,stator laminations M400-50A (EN 10106) 0.5 mm,7938,,EN 10106
+motor family,MF-17 x 27,rotor laminations M400-50A 0.5 mm,7938,,EN 10106
+motor family,MF-17 x 27,magnet wire IEC 60317-13 15 AWG (2.400 mm2),5.23 kg,,X-INV-03 wire line
+motor family,MF-17 x 27,die-cast Al cage (bars + rings),3.52 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-17 x 27,"shaft C45 (EN 10083-2) D38 x 347 mm, key to IEC 60072-1",27,,turned
+motor family,MF-17 x 27,"frame A356 IEC 132M, feet A216 x B178, holes K12",27,,cast + machined
+motor family,MF-17 x 27,end shields A356,54,,cast + machined
+motor family,MF-17 x 27,bearing 6308-2Z,54,,X-INV-05 OF bearing family
+motor family,MF-17 x 27,fan PP + fan cover steel,27,,IC 411
+motor family,MF-17 x 27,terminal box + 6-stud block,27,,IEC 60034-8 marking
 motor family,MF-18 x 0,stator laminations M400-50A (EN 10106) 0.5 mm,0,,EN 10106
 motor family,MF-18 x 0,rotor laminations M400-50A 0.5 mm,0,,EN 10106
 motor family,MF-18 x 0,magnet wire IEC 60317-13 13 AWG (6.835 mm2),10.89 kg,,X-INV-03 wire line
@@ -2044,16 +2058,16 @@ motor family,MF-23 x 0,magnet wire IEC 60317-13 class 200,-,,X-INV-03 wire line
 motor family,MF-23 x 0,"housing extruded 6063, NEMA ICS 16 86 mm flange",0,,extruded + machined
 motor family,MF-23 x 0,bearing 608-2Z,0,,X-INV-05
 motor family,MF-23 x 0,connector 4-pin,0,,X-INV-05 electronics
-bulk pipe,PF-01,"PVC-U Sch 80 ASTM D1785 DN15 pipe, 426 x 6.096 m",2557.1 m,PVC-U Sch 80 ASTM D1785,AQS-INV-003
-bulk pipe,PF-01,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 1/2 in studs,374 / 258 / 258 / 1032,PVC-U Sch 80 ASTM D1785,AQS-INV-003
-bulk pipe,PF-02,"316L ASTM A312 DN15 pipe, 234 x 6.096 m",1402.1 m,316L ASTM A312,AQS-INV-003
-bulk pipe,PF-02,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,199 / 134 / 134 / 536,316L ASTM A312,AQS-INV-003
+bulk pipe,PF-01,"PVC-U Sch 80 ASTM D1785 DN15 pipe, 433 x 6.096 m",2601.9 m,PVC-U Sch 80 ASTM D1785,AQS-INV-003
+bulk pipe,PF-01,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 1/2 in studs,380 / 262 / 262 / 1048,PVC-U Sch 80 ASTM D1785,AQS-INV-003
+bulk pipe,PF-02,"316L ASTM A312 DN15 pipe, 264 x 6.096 m",1584.5 m,316L ASTM A312,AQS-INV-003
+bulk pipe,PF-02,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,217 / 146 / 146 / 584,316L ASTM A312,AQS-INV-003
 bulk pipe,PF-03,"CPVC Sch 80 ASTM F441 DN15 pipe, 99 x 6.096 m",578.5 m,CPVC Sch 80 ASTM F441,AQS-INV-003
 bulk pipe,PF-03,ASTM F439 socket 90 elbow; ASTM F439 flange; gaskets; 1/2 in studs,84 / 56 / 56 / 224,CPVC Sch 80 ASTM F441,AQS-INV-003
 bulk pipe,PF-04,"CPVC Sch 80 ASTM F441 DN50 pipe, 60 x 6.096 m",358.4 m,CPVC Sch 80 ASTM F441,AQS-INV-003
 bulk pipe,PF-04,ASTM F439 socket 90 elbow; ASTM F439 flange; gaskets; 5/8 in studs,51 / 34 / 34 / 136,CPVC Sch 80 ASTM F441,AQS-INV-003
-bulk pipe,PF-05,"PVDF SDR 21 ISO 10931 DN15 pipe, 146 x 6.096 m",868.4 m,PVDF SDR 21 ISO 10931,AQS-INV-003
-bulk pipe,PF-05,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 in studs,120 / 82 / 82 / 328,PVDF SDR 21 ISO 10931,AQS-INV-003
+bulk pipe,PF-05,"PVDF SDR 21 ISO 10931 DN15 pipe, 170 x 6.096 m",1011.7 m,PVDF SDR 21 ISO 10931,AQS-INV-003
+bulk pipe,PF-05,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 in studs,135 / 92 / 92 / 368,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk pipe,PF-06,"CS ASTM A106 Gr B DN15 pipe, 85 x 6.096 m",505.3 m,CS ASTM A106 Gr B,AQS-INV-003
 bulk pipe,PF-06,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,89 / 64 / 64 / 256,CS ASTM A106 Gr B,AQS-INV-003
 bulk pipe,PF-07,"PVC-U Sch 80 ASTM D1785 DN50 pipe, 38 x 6.096 m",220.6 m,PVC-U Sch 80 ASTM D1785,AQS-INV-003
@@ -2090,45 +2104,43 @@ bulk pipe,PF-24,"PVC-U Sch 80 ASTM D1785 DN40 pipe, 7 x 6.096 m",36.9 m,PVC-U Sc
 bulk pipe,PF-24,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 1/2 in studs,3 / 2 / 2 / 8,PVC-U Sch 80 ASTM D1785,AQS-INV-003
 bulk pipe,PF-25,"316L ASTM A312 DN40 pipe, 5 x 6.096 m",25.1 m,316L ASTM A312,AQS-INV-003
 bulk pipe,PF-25,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,3 / 2 / 2 / 8,316L ASTM A312,AQS-INV-003
-bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",35160 m,Cu,AQS-INV-002
-bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",42770 m,Cu,AQS-INV-002
-bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",18000 m,Cu,AQS-INV-002
-bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",17580 m,Cu,AQS-INV-002
-bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",18212 m,Cu,AQS-INV-002
-bulk wire,WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",4668 m,Cu,AQS-INV-002
-bulk wire,WF-07,"control 18 AWG shielded pair, 300 V",3920 m,Cu,AQS-INV-002
-bulk wire,WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",3860 m,Cu,AQS-INV-002
-bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",6062 m,Cu,AQS-INV-002
-bulk wire,WF-10,"power 3 AWG XHHW-2 Cu, 600 V",2775 m,Cu,AQS-INV-002
+bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",36240 m,Cu,AQS-INV-002
+bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",43123 m,Cu,AQS-INV-002
+bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",18720 m,Cu,AQS-INV-002
+bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",18120 m,Cu,AQS-INV-002
+bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",18389 m,Cu,AQS-INV-002
+bulk wire,WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",4872 m,Cu,AQS-INV-002
+bulk wire,WF-07,"control 18 AWG shielded pair, 300 V",4280 m,Cu,AQS-INV-002
+bulk wire,WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",4220 m,Cu,AQS-INV-002
+bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",6121 m,Cu,AQS-INV-002
+bulk wire,WF-10,"power 3 AWG XHHW-2 Cu, 600 V",2850 m,Cu,AQS-INV-002
 bulk wire,WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",3163 m,Cu,AQS-INV-002
 bulk wire,WF-12,"MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield, 15 kV",1200 m,Cu,AQS-INV-002
 bulk wire,WF-13,"equipment ground 8 AWG green XHHW-2 Cu, 600 V",1054 m,Cu,AQS-INV-002
 bulk wire,WF-14,"power 400 kcmil XHHW-2 Cu, 600 V",540 m,Cu,AQS-INV-002
-bulk wire,WF-15,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",233 m,Cu,AQS-INV-002
-bulk wire,WF-16,"power 10 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",396 m,Cu,AQS-INV-002
+bulk wire,WF-15,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",228 m,Cu,AQS-INV-002
+bulk wire,WF-16,"power 10 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",378 m,Cu,AQS-INV-002
 bulk wire,WF-19,"equipment ground 2/0 AWG green XHHW-2 Cu, 600 V",180 m,Cu,AQS-INV-002
-bulk wire,WF-20,"power 3 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",173 m,Cu,AQS-INV-002
+bulk wire,WF-20,"power 3 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",295 m,Cu,AQS-INV-002
 bulk wire,WF-21,"DC power pair 14 AWG TC-ER 2-cond, 600 V",60 m,Cu,AQS-INV-002
 bulk wire,WF-24,"equipment ground 10 AWG green XHHW-2 Cu, 600 V",12 m,Cu,AQS-INV-002
 bulk wire,WF-25,"power 10 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",9 m,Cu,AQS-INV-002
-bulk wire,WF-28,"power 8 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",99 m,Cu,AQS-INV-002
 bulk wire,WF-30,"power 250 kcmil XHHW-2 Cu, tray cable TC-ER, 600 V",68 m,Cu,AQS-INV-002
-bulk wire,WF-31,"power 12 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",120 m,Cu,AQS-INV-002
-bulk wire,WF-32,"power 4 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",141 m,Cu,AQS-INV-002
-building block,OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",346,,AQS-INV-004
+bulk wire,WF-31,"power 12 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",115 m,Cu,AQS-INV-002
+building block,OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",374,,AQS-INV-004
 building block,OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",404,,AQS-INV-004
-building block,OF-03,electronics: PLC digital I/O point (IEC 61131-2),846,,AQS-INV-004
-building block,OF-04,electronics: PLC analog input point (IEC 61131-2),857,,AQS-INV-004
-building block,OF-05,electronics: BLDC driver (IEC 61800-5-1),170,,AQS-INV-004
+building block,OF-03,electronics: PLC digital I/O point (IEC 61131-2),882,,AQS-INV-004
+building block,OF-04,electronics: PLC analog input point (IEC 61131-2),913,,AQS-INV-004
+building block,OF-05,electronics: BLDC driver (IEC 61800-5-1),184,,AQS-INV-004
 building block,OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),169,,AQS-INV-004
-building block,OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",107,,AQS-INV-004
+building block,OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",113,,AQS-INV-004
 building block,OF-08,electronics: variable-frequency drive (IEC 61800-5-1),33,,AQS-INV-004
-building block,OF-09,electronics: solenoid driver channel (IEC 61131-2 DO),23,,AQS-INV-004
+building block,OF-09,electronics: solenoid driver channel (IEC 61131-2 DO),27,,AQS-INV-004
 building block,OF-10,electronics: compressor contactor + overload (IEC 60947-4-1),9,,AQS-INV-004
 building block,OF-11,electronics: stepper driver (IEC 61800-5-1),3,,AQS-INV-004
 building block,OF-12,"electronics: safety PLC (SIL 2 capable), CPU and I/O rack (IEC 61508 / IEC 61511)",2,,AQS-INV-004
 building block,OF-13,fabricated part: fabricated part set (models/mfg/<unit>/bom.csv),197,,AQS-INV-004
-building block,OF-14,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),14790,,AQS-INV-004
+building block,OF-14,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),15402,,AQS-INV-004
 building block,OF-15,fastener: M10 x 40 lid bolt (ISO 3506 A4-70),12,,AQS-INV-004
 building block,OF-16,fastener: M8 x 30 lid bolt (ISO 3506 A4-70),12,,AQS-INV-004
 building block,OF-17,fastener: M12 anchor (ISO 3506 A4-70),3,,AQS-INV-004
@@ -2138,34 +2150,34 @@ building block,OF-26,fastener: M10 x 40 lid bolt (ASTM A193 B8),8,,AQS-INV-004
 building block,OF-29,fastener: Flange gasket (PTFE envelope),2,,AQS-INV-004
 building block,OF-31,fastener: M10 U-bolt for DN150 (ISO 3506 A4-70),2,,AQS-INV-004
 building block,OF-33,fastener: Solvent cement (PVC-U per ASTM D2564),1,,AQS-INV-004
-building block,OF-34,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456)",197,,AQS-INV-004
-building block,OF-35,"instrument: pressure transmitter (ceramic diaphragm, IEC 61298)",177,,AQS-INV-004
-building block,OF-36,"instrument: temperature element (IEC 60751, 316L thermowell)",180,,AQS-INV-004
-building block,OF-37,"instrument: high-level switch (IEC 60947-5, 316L)",82,,AQS-INV-004
-building block,OF-38,"instrument: level transmitter (IEC 62828, PTFE lens)",82,,AQS-INV-004
-building block,OF-39,"instrument: gas detector, H2 (alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling)",32,,AQS-INV-004
-building block,OF-40,"instrument: gas detector, O2 deficiency (alarm 19.5 vol %, trip 18.0 vol %, low (dense gases))",20,,AQS-INV-004
-building block,OF-41,"instrument: gas detector, Cl2 / HCl (alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low)",38,,AQS-INV-004
+building block,OF-34,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456)",201,,AQS-INV-004
+building block,OF-35,"instrument: pressure transmitter (ceramic diaphragm, IEC 61298)",183,,AQS-INV-004
+building block,OF-36,"instrument: temperature element (IEC 60751, 316L thermowell)",186,,AQS-INV-004
+building block,OF-37,"instrument: high-level switch (IEC 60947-5, 316L)",86,,AQS-INV-004
+building block,OF-38,"instrument: level transmitter (IEC 62828, PTFE lens)",86,,AQS-INV-004
+building block,OF-39,"instrument: gas detector, H2 (alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling)",38,,AQS-INV-004
+building block,OF-40,"instrument: gas detector, O2 deficiency (alarm 19.5 vol %, trip 18.0 vol %, low (dense gases))",24,,AQS-INV-004
+building block,OF-41,"instrument: gas detector, Cl2 / HCl (alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low)",44,,AQS-INV-004
 building block,OF-42,"instrument: temperature element (SIF, independent) (IEC 60751, own thermowell)",14,,AQS-INV-004
 building block,OF-43,"instrument: gas detector, O2 enrichment (alarm 23.5 vol %, trip 25 vol %, breathing height)",12,,AQS-INV-004
-building block,OF-44,"instrument: gas detector, CO (alarm 25 ppm, trip 50 ppm, breathing height)",14,,AQS-INV-004
-building block,OF-45,"instrument: gas detector, NOx (alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height)",6,,AQS-INV-004
+building block,OF-44,"instrument: gas detector, CO (alarm 25 ppm, trip 50 ppm, breathing height)",22,,AQS-INV-004
+building block,OF-45,"instrument: gas detector, NOx (alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height)",14,,AQS-INV-004
 building block,OF-46,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",227,,AQS-INV-004
 building block,OF-47,"seal: mechanical seal, single (SiC/SiC faces, FKM)",152,,AQS-INV-004
-building block,OF-48,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",5895,,AQS-INV-004
-building block,OF-49,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1500,,AQS-INV-004
-building block,OF-50,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",284,,AQS-INV-004
+building block,OF-48,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",6070,,AQS-INV-004
+building block,OF-49,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1631,,AQS-INV-004
+building block,OF-50,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",288,,AQS-INV-004
 building block,OF-51,"valve: isolation valve (PP ball valve with HDPE stub ends, ISO 16135)",42,,AQS-INV-004
-building block,OF-52,"valve: isolation valve (316L ball valve, ASME B16.34 Cl 150, RF flanged)",190,,AQS-INV-004
+building block,OF-52,"valve: isolation valve (316L ball valve, ASME B16.34 Cl 150, RF flanged)",202,,AQS-INV-004
 building block,OF-53,"valve: isolation valve (CPVC true-union ball valve, MSS SP-122, FKM seals)",90,,AQS-INV-004
 building block,OF-54,"valve: check valve (PP swing/ball check valve with HDPE stub ends, ISO 16137)",14,,AQS-INV-004
-building block,OF-55,"valve: check valve (PVC-U true-union swing/ball check valve, EPDM seals)",65,,AQS-INV-004
-building block,OF-56,"valve: isolation valve (PVDF ball valve, ISO 16135, PTFE seats)",90,,AQS-INV-004
+building block,OF-55,"valve: check valve (PVC-U true-union swing/ball check valve, EPDM seals)",67,,AQS-INV-004
+building block,OF-56,"valve: isolation valve (PVDF ball valve, ISO 16135, PTFE seats)",100,,AQS-INV-004
 building block,OF-57,"valve: check valve (CPVC true-union swing/ball check valve, FKM seals)",27,,AQS-INV-004
-building block,OF-58,"valve: check valve (PVDF swing/ball check valve, ISO 16137, PTFE seats)",29,,AQS-INV-004
+building block,OF-58,"valve: check valve (PVDF swing/ball check valve, ISO 16137, PTFE seats)",30,,AQS-INV-004
 building block,OF-59,"valve: isolation valve (CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged)",64,,AQS-INV-004
 building block,OF-60,"valve: isolation valve (PVC-lined ball valve in FRP service, ISO 16135)",20,,AQS-INV-004
-building block,OF-61,"valve: check valve (316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged)",33,,AQS-INV-004
+building block,OF-61,"valve: check valve (316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged)",34,,AQS-INV-004
 building block,OF-62,"valve: isolation valve (PP-H ball valve, ISO 16135, EPDM seals)",18,,AQS-INV-004
 building block,OF-63,"valve: ESD valve, spring-return actuator (316L, fail-safe, IEC 61511)",10,,AQS-INV-004
 building block,OF-64,"valve: check valve (PP-H swing/ball check valve, ISO 16137, EPDM seals)",9,,AQS-INV-004
@@ -2182,7 +2194,7 @@ building block,OF-77,"instrument: pressure transmitter (316L thin-film strain ga
 building block,OF-78,"valve: check valve (CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged)",17,,AQS-INV-004
 building block,OF-81,fastener: M10 stud + nut (ISO 4014 / ISO 4032) (ISO 898-1 8.8),106,,AQS-INV-004
 building block,OF-82,fastener: M8 x 25 hood bolts (ISO 898-1 8.8),48,,AQS-INV-004
-building block,OF-83,fastener: M10 anchor (ISO 898-1 8.8),32,,AQS-INV-004
+building block,OF-83,fastener: M10 anchor (ISO 898-1 8.8),40,,AQS-INV-004
 building block,OF-84,fastener: M8 x 25 hopper bolts (ISO 898-1 8.8),8,,AQS-INV-004
 building block,OF-85,fastener: M6 x 25 (ISO 3506 A4-70),65,,AQS-INV-004
 building block,OF-86,fastener: M8 x 40 (ISO 3506 A4-70),72,,AQS-INV-004
@@ -2191,7 +2203,7 @@ building block,OF-88,fastener: M10 x 35 (ISO 3506 A4-70),54,,AQS-INV-004
 building block,OF-89,fastener: M12 x 60 hex bolt + nut + 2 washers (PVDF (non-metallic)),34,,AQS-INV-004
 building block,OF-90,fastener: M12 x 40 (ISO 3506 A4-70),456,,AQS-INV-004
 building block,OF-91,fastener: M12 x 45 (ISO 3506 A4-70),8,,AQS-INV-004
-building block,OF-92,fastener: M10 wedge anchor (ISO 898-1 8.8),164,,AQS-INV-004
+building block,OF-92,fastener: M10 wedge anchor (ISO 898-1 8.8),156,,AQS-INV-004
 building block,OF-93,fastener: M10 wedge anchor (ISO 3506 A4-70),110,,AQS-INV-004
 building block,OF-94,fastener: M12 bolt + nut; PP-flanged joint (ISO 3506 A4-70),16,,AQS-INV-004
 building block,OF-95,fastener: M12 PVDF bolt + nut (ISO 3506 A4-70),8,,AQS-INV-004
@@ -2235,7 +2247,7 @@ building block,OF-132,fastener: M10 header clip bolt + nut (ISO 898-1 8.8),12,,A
 building block,OF-133,fastener: M10 base hold-down anchor (ISO 898-1 8.8),44,,AQS-INV-004
 building block,OF-134,fastener: M12 batten strip bolt (ISO 3506 A4-70),24,,AQS-INV-004
 building block,OF-135,fastener: M6 box-assembly screw (ISO 3506 A4-70),24,,AQS-INV-004
-building block,OF-136,fastener: M8 bolt (ISO 898-1 8.8),16,,AQS-INV-004
+building block,OF-136,fastener: M8 bolt (ISO 898-1 8.8),24,,AQS-INV-004
 building block,OF-137,fastener: M10 lid hold-down bolt + nut (ISO 3506 A4-70),16,,AQS-INV-004
 building block,OF-138,fastener: M6 screen-frame clamp screw (ISO 3506 A4-70),16,,AQS-INV-004
 building block,OF-139,fastener: M8 liner batten bolt (ISO 3506 A4-70),16,,AQS-INV-004
@@ -2249,15 +2261,14 @@ building block,OF-146,fastener: M10 stand-to-pad anchor (ISO 898-1 8.8),4,,AQS-I
 building block,OF-147,fastener: M6 reactor tube clamp bolt (ISO 3506 A4-70),4,,AQS-INV-004
 building block,OF-148,fastener: M10 table mount (ISO 898-1 8.8),4,,AQS-INV-004
 building block,OF-149,fastener: M10 hold-down (ISO 898-1 8.8),4,,AQS-INV-004
-building block,OF-150,fastener: M16 tie rod (ISO 898-1 8.8),188,,AQS-INV-004
-building block,OF-151,fastener: M8 bolt (ISO 3506 A4-70),94,,AQS-INV-004
+building block,OF-150,fastener: M16 tie rod (ISO 898-1 8.8),152,,AQS-INV-004
+building block,OF-151,fastener: M8 bolt (ISO 3506 A4-70),76,,AQS-INV-004
 building block,OF-152,fastener: M8 U-bolt (ISO 3506 A4-70),2,,AQS-INV-004
 building block,OF-153,fastener: Solvent cement joints (PVC-U per ASTM D2564),1,,AQS-INV-004
 building block,OF-154,fastener: M10 stud (ISO 3506 A4-70),16,,AQS-INV-004
 building block,OF-155,fastener: M16 stud (ISO 3506 A4-70),24,,AQS-INV-004
 building block,OF-156,fastener: M12 stud (ISO 3506 A4-70),16,,AQS-INV-004
 building block,OF-157,fastener: M10 hatch hold-down clamp (ISO 3506 A4-70),4,,AQS-INV-004
-building block,OF-158,fastener: M8 socket bolt (ISO 3506 A4-70),16,,AQS-INV-004
 building block,OF-159,fastener: M8 cage-section joint bolt (ISO 898-1 8.8),12,,AQS-INV-004
 building block,OF-160,fastener: M8 frame-section joint bolt (ISO 898-1 8.8),12,,AQS-INV-004
 building block,OF-161,fastener: M10 socket bolt (ISO 3506 A4-70),8,,AQS-INV-004
