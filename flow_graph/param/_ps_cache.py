@@ -81,7 +81,13 @@ def _wrap(runner):
         if not cdir or not isinstance(argv, (list, tuple)) or not _is_target(argv):
             return runner(*args, **kw)
         root = os.environ.get('AQS_REGEN_ROOT') or ROOT
-        key = cache_key(root)
+        # The spawn's own arguments are inputs of the stdout as much as the file bytes are:
+        # the same (drivers, graph) with different argv can legitimately produce different
+        # output (write_graph heat passes the solved grease duty as --set-continuous,
+        # F-20261110-08), so the extra arguments join the key and every distinct spawn of
+        # one pass gets its own entry instead of the first spawn's bytes.
+        extra = [a for a in argv[1:] if isinstance(a, str)]
+        key = hashlib.sha256((cache_key(root) + '\0' + json.dumps(extra)).encode()).hexdigest()
         hit = lookup(cdir, key)
         text = kw.get('text') or kw.get('universal_newlines')
         if hit is not None:

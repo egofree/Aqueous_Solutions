@@ -19,7 +19,7 @@
  "relief_mm": null,
  "internals": "none",
  "design": {
-  "service": "DL-methionine synthesis (the three-step Strecker route): CH3SH + acrolein -> MMP; MMP + NH3 + HCN -> aminonitrile; hydrolysis -> DL-Met",
+  "service": "MET_SYN: DL-methionine synthesis, the three-step Strecker route in campaign sequence through one glass-lined column (duty sections 1 and 3; A-M-416 route A)",
   "basis": "A-M-416 route A close-out (2026-10-28): the no-import-feed rule requires on-site synthesis; TECHTREE poultry.chickens.md: synthetic DL-methionine is the standard supplement class",
   "chemistry": "step 1: CH3OH + H2S -> CH3SH (K2O/Al2O3, 350 C); step 2: CH3SH + acrolein -> MMP (base-catalysed Michael addition); step 3: MMP + NH3 + HCN -> aminonitrile; hydrolysis -> DL-Met (Strecker)",
   "throughput_g_d": 9.0,

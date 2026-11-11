@@ -19,12 +19,7 @@
  "relief_mm": null,
  "internals": "none",
  "design": {
-  "machine": "bench wire/rod draw bench, N+1 former of ROLL",
-  "connected_kW": 3.0,
-  "backup_of": "ROLL",
-  "outage_d": 2.0,
-  "bench_mm": 1200,
-  "dies": 6,
+  "machine": "bench wire/rod draw bench, N+1 former of ROLL (node design machine)",
   "mat": "tungsten-carbide drawing dies in tool-steel casings; steel bench (duty section 3)",
   "ca_mm": 0.0,
   "wall_basis": "study bench sections and capstan size; no thickness booked on the node (WORK_ORDER W12)",

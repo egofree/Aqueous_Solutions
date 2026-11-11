@@ -30,7 +30,7 @@
   "DN": 100,
   "length_m": 20,
   "volume_m3": 0.133,
-  "material": "CS Sch 40, insulated per AQS-THM-003",
+  "material": "316L",
   "hold_kg": 0.1,
   "connections": 3,
   "dn_label": "DN100",
