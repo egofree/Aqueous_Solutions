@@ -52,8 +52,8 @@
   "compressors": {
     "units": 2,
     "stages": 5,
-    "kW_avg": 0.9433550080509294,
-    "kW_peak": 2.8300650241527885,
+    "kW_avg": 0.9425433957969033,
+    "kW_peak": 2.8276301873907097,
     "material": "head and plates 17-4PH H1150 / 316L (hydrogen service), triple-layer 301 SS diaphragm with leak detection between layers",
     "note": "purchased envelopes and interfaces (AQS-PLAN-006 rule 6), ratings from the node compressor_design; drawn in the +X end bay of the rack"
   },

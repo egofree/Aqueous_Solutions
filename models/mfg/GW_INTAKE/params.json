@@ -46,6 +46,30 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N4",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "well water for the liquor, the slaker or the cell",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N5",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "well water for SO3 absorption and dilution to 98 wt%",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N6",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "well water to slake the lime",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "SS304 wellhead plate and discharge head, HDPE potable discharge line, submersible pump SS304/stainless stages",
@@ -64,7 +88,7 @@
    800,
    600
   ],
-  "basis": "L x W x H mm study envelope for the well pump, sand separator and RO rack; unit task 02 sizing pending",
+  "basis": "the wellhead hatch + pump discharge set (X-LOC-13 well head); the pump is downhole, not plant-side",
   "wall_mm": 6,
   "measured_bbox_mm": [
    800.0,

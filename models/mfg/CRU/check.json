@@ -35,7 +35,7 @@
       "face": "-Y",
       "height_mm": 160.0,
       "drawn_height_mm": 160.0,
-      "x_mm": 62.1,
+      "x_mm": 47.4,
       "schedule_rating": "Class 150",
       "service": "scrub liquor \u2192 chlorate finish",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
@@ -79,7 +79,7 @@
       "face": "-Y",
       "height_mm": 160.0,
       "drawn_height_mm": 160.0,
-      "x_mm": 156.2,
+      "x_mm": 170.9,
       "schedule_rating": "Class 150",
       "service": "chlorine from Kroll chlorinator / Mg recycle",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
@@ -90,7 +90,7 @@
       "face": "-Y",
       "height_mm": 160.0,
       "drawn_height_mm": 160.0,
-      "x_mm": 185.5,
+      "x_mm": 200.2,
       "schedule_rating": "Class 150",
       "service": "anode gas (Cl2 or O2) from molten-salt pot",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
@@ -101,7 +101,7 @@
       "face": "-Y",
       "height_mm": 160.0,
       "drawn_height_mm": 160.0,
-      "x_mm": 214.8,
+      "x_mm": 229.5,
       "schedule_rating": "Class 150",
       "service": "Cl2 return",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
@@ -112,7 +112,7 @@
       "face": "-Y",
       "height_mm": 160.0,
       "drawn_height_mm": 160.0,
-      "x_mm": 244.1,
+      "x_mm": 258.8,
       "schedule_rating": "Class 150",
       "service": "Cl2 return",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
@@ -145,7 +145,7 @@
       "face": "-Y",
       "height_mm": 160.0,
       "drawn_height_mm": 160.0,
-      "x_mm": 97.6,
+      "x_mm": 83.0,
       "schedule_rating": "Class 150",
       "service": "dilute HCl return (HCl + reaction water)",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
@@ -156,19 +156,30 @@
       "face": "-Y",
       "height_mm": 160.0,
       "drawn_height_mm": 160.0,
-      "x_mm": 126.9,
+      "x_mm": 112.2,
       "schedule_rating": "Class 150",
       "service": "dilute HCl return (HCl + reaction water)",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N13": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 141.6,
+      "schedule_rating": "Class 150",
+      "service": "phosgenation HCl to the chlorate finish",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
     }
   },
-  "nozzle_count_schedule": 12,
+  "nozzle_count_schedule": 13,
   "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: nozzle DN15, no flange class, atmospheric tube or hose); the gas rows (cell gas in, chlorine out) stay on their gas edges, not the room (duty sections 5 and 6); the schedule rating column (Class 150) is carried verbatim as text",
   "part_mass_kg": {
     "plinth": 94.2,
     "frame": 76.36,
     "vessel": 24.33,
-    "nozzles": 0.15
+    "nozzles": 0.16
   },
   "cadquery": "2.8.0"
 }

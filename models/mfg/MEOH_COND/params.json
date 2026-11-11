@@ -40,8 +40,8 @@
    "tube_od_mm": 10.0,
    "developed_mm": 1005.0,
    "area_drawn_m2": 0.0316,
-   "area_node_m2": 0.0301,
-   "condensing_kW": 0.7079
+   "area_node_m2": 0.0306,
+   "condensing_kW": 0.7184
   }
  },
  "nozzles": [

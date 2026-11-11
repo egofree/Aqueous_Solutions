@@ -1,6 +1,6 @@
 # Build log - WAFER_FAB
 
-Date: 2026-11-03. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-MACH + A-SC; MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-MACH + A-SC; MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/WAFER_FAB.md`; envelope per `models/mfg/WAFER_FAB/params.json`).
 
 ## Tool versions
@@ -11,8 +11,8 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/WAF
 ## Checks
 
 - Build bbox 1000 x 600 x 800 mm against the 1000 x 600 x 800 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
-- Solid source: build export `models/mfg/WAFER_FAB/export/wafer_fab.step`; export STL closed and manifold, 15 solid(s); `cad/stl/WAFER_FAB.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 14 rows of `docs-authority/nozzles/WAFER_FAB.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- Solid source: build export `models/mfg/WAFER_FAB/export/wafer_fab.step`; export STL closed and manifold, 29 solid(s); `cad/stl/WAFER_FAB.stl` replaced from the build (ASCII, metres)
+- Nozzles: all 29 rows of `docs-authority/nozzles/WAFER_FAB.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn); the N15 cable power-terminal row is carried verbatim, not drawn
 - Machine per the node equipment list: CZ puller (0.2317 kW), ingot cool/anneal (0.02 kW), crop/grind/edge tools (0.04 kW), FAB_TOOL dry row (0.12 kW) as purchased-class station envelopes per plan rule 6; N2 purge distribution (0.03 kW) as the DN15 header with four drop legs; station arrangement is the layout choice (W12)
 - A-MACH guard: the four-post hold-down frame pins the registry box so the build fills the envelope (X-PAR-04); 8 slab anchors in fasteners.csv
 - Material per duty section 3: 316L where the stream is wet; CA 0 mm (AQS-STD-001); the node note (ISO 14644-1 Class 7 wet bench, Class 6 tool row) carried as text

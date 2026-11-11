@@ -58,6 +58,22 @@
    "service": "C19-C28 surplus shipped",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N6",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "wax cut",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N7",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "wax cut",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "Carbon steel. Hydrocarbon. No aqueous chloride in this vessel. Corrosion allowance 1.5 mm. Pit rate is not measured.",

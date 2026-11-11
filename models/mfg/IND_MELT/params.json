@@ -28,7 +28,7 @@
   "heats_d": 4,
   "connected_kW": 25.0,
   "peak_kW": 15.0,
-  "melt_kWh_d": 21.249,
+  "melt_kWh_d": 21.244,
   "lining": "ceramic-fibre hot face 150 mm + 4 mm CS casing (study)",
   "bath_T_C": 1100.0
  },

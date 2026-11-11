@@ -11,10 +11,12 @@ backup + CS shell below the liner. Connection hardware draws flush at the
 envelope faces: nothing protrudes (A-core 2). No measured rate is claimed
 anywhere.
 """
-import csv, json, math, pathlib
+import csv, json, math, pathlib, sys
 import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
+sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
+from lib import step_export  # noqa: E402
 P = json.loads((HERE / "params.json").read_text())
 A = P["assumptions"]
 AN = P["anode"]; CA = P["cathode"]; BUS = P["busbar"]
@@ -146,6 +148,12 @@ chute = box(0.0, 320, 130, 35, 160, 90)                          # flush at the 
 lance = tube(22.0, 11.0, (70, 400, 160), "X", 100)               # DN44 class lance into the bath
 parts["brine_inlet_group"] = chute.union(lance)
 
+# ---------------- N7 second brine inlet: chute stub + lance -----------------------
+# The N2 idiom in a study slot beside it; class pending (task X-QA-11).
+chute2 = box(0.0, 150, 130, 35, 160, 90)                         # flush at the -X face (see N2)
+lance2 = tube(22.0, 11.0, (70, 230, 160), "X", 100)              # DN44 class lance into the bath
+parts["brine_inlet_group_2"] = chute2.union(lance2)
+
 # ---------------- N4 drain well ---------------------------------------------------
 parts["drain_well"] = tube(30.5, dl, (256, 160, 0), "Z", 50)   # bore matches the casing pass: fuses
 
@@ -169,7 +177,7 @@ asm = cq.Assembly(name="CA_POT")
 for k, v in list(parts.items()) + list(inv.items()):
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "ca_pot.step"))
+step_export.export_step(asm, str(out / "ca_pot.step"))
 
 body = None
 for k, v in parts.items():
@@ -177,7 +185,7 @@ for k, v in parts.items():
 cap_solid = body.val()
 cap_solid.exportStl(str(out / "ca_pot.stl"), tolerance=0.4, angularTolerance=0.4, ascii=True)
 
-EXTERNAL = ("ca_tap_group", "brine_inlet_group", "cl2_stub")   # N1/N2/N3 schedule hardware, drawn flush at the faces
+EXTERNAL = ("ca_tap_group", "brine_inlet_group", "brine_inlet_group_2", "cl2_stub")   # N1/N2/N7/N3 schedule hardware, drawn flush at the faces
 in_env = None
 for k, v in parts.items():
     if k in EXTERNAL:
@@ -205,7 +213,8 @@ rho = {"casing": 7.85e-6, "fibre_lining": 128e-9, "ram_lining": 1.55e-6, "hood_h
        "hood": 7.85e-6, "head_plate": 7.85e-6, "anodes": 1.78e-6, "anode_clamps": 7.85e-6,
        "cathodes": 7.87e-6, "ceramic_pads": 2.7e-6, "bus_rails": 8.96e-6, "bus_straps": 8.96e-6,
        "offtake_riser": 7.85e-6, "riser_flange": 7.85e-6, "dip_leg": 7.85e-6, "vent_stub": 7.85e-6,
-       "cl2_stub": 7.85e-6, "ca_tap_group": 1.55e-6, "brine_inlet_group": 7.85e-6, "drain_well": 1.55e-6}
+       "cl2_stub": 7.85e-6, "ca_tap_group": 1.55e-6, "brine_inlet_group": 7.85e-6, "brine_inlet_group_2": 7.85e-6,
+       "drain_well": 1.55e-6}
 mass = {k: round(v.val().Volume() * rho[k], 1) for k, v in parts.items()}
 vol_melt = sum(v.val().Volume() for v in inv.values())
 # ---------------- acceptance record: nozzles_drawn -------------------------------
@@ -234,6 +243,10 @@ PLACE = {
     "N6": {"style": "carried", "face": "top",
            "note": "power terminal (SF-CA_POT bus) - a cable-schedule row: carried verbatim, "
                    "never drawn"},
+    "N7": {"style": "stub", "face": "-X", "part": "brine_inlet_group_2", "drawn_height_mm": 160.0,
+           "note": "CaCl2 brine concentrate in: chute flush at the -X face (z 130..220) and the "
+                   "DN44-class lance into the bath at z 160, in a study slot beside N2; class "
+                   "pending (task X-QA-11)"},
 }
 drawn = {}
 for tag, rec in PLACE.items():
@@ -308,6 +321,10 @@ rows = [
      "task-04 schedule N4 bottom DN15 Class 150; frozen-salt drain pig per WO step 6"],
     ["16", f"Thyristor rectifier + bath hold heaters, {D['connected_kW']} kW connected, IP54 cabinet", 1,
      "purchase item", "", "buy", "WO step 5/7; AQS-DUTY-072 section 4; A-M-282 class; mass per the purchase datasheet at order"],
+    ["17", "N7 brine inlet group: chute box flush at the -X face + DN44 lance into the bath at z 160 "
+           "(study slot beside N2)", 1,
+     "CS chute, carbon lance", mass["brine_inlet_group_2"], "make",
+     "task-04 schedule N7; CaCl2 brine concentrate, class pending (task X-QA-11)"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)

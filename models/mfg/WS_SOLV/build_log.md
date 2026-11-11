@@ -1,6 +1,6 @@
 # Build log - WS_SOLV
 
-Date: 2026-11-02. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-MACH; MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-MACH; MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/WS_SOLV.md`; envelope per `models/mfg/WS_SOLV/params.json`).
 
 ## Tool versions
@@ -12,7 +12,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/WS_
 
 - Build bbox 600 x 600 x 350 mm against the 600 x 600 x 350 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/WS_SOLV/export/ws_solv.step`; export STL closed and manifold, 1 solid(s); `cad/stl/WS_SOLV.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 7 rows of `docs-authority/nozzles/WS_SOLV.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- Nozzles: all 10 rows of `docs-authority/nozzles/WS_SOLV.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
 - A-MACH: guard rail and slab anchors drawn; no purchased item named on the node or duty - none drawn (W12)
 - Tank: node design_storage D 300 x H 300, wall 4.75 (AQS-DUTY-064); the 0.02 m3 nominal volume is reported for the record, no residence claim (W12)
 - Schedule datums clamped into the 350 mm box; the duty section 4 prose list predates the issued schedule (holds, W12)

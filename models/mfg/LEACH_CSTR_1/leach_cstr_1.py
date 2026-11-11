@@ -44,7 +44,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, materials, nozzles, step_export  # noqa: E402
 
 P = json.loads((HERE / "params.json").read_text())
 L, W, H = (2000.0, 1200.0, 1400.0)                        # duty section 2 envelope
@@ -248,7 +248,7 @@ asm = cq.Assembly(name="LEACH_CSTR_1")
 for k, v in list(parts.items()) + list(inv.items()):
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "leach_cstr_1.step"))
+step_export.export_step(asm, str(out / "leach_cstr_1.step"))
 
 body = None
 for k, v in parts.items():

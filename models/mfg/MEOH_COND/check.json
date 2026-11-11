@@ -19,7 +19,7 @@
   "ko_drum": {
     "wall_mm": 3.0,
     "wall_basis": "study value - no authority states a wall (WORK_ORDER W12)",
-    "drum_L_node": 71.19,
+    "drum_L_node": 72.24,
     "coil": {
       "tube_od_mm": 10.0,
       "mean_radius_mm": 63.66,
@@ -30,10 +30,10 @@
         180.0
       ],
       "area_drawn_m2": 0.0316,
-      "area_node_m2": 0.0301,
+      "area_node_m2": 0.0306,
       "area_basis": "drawn coil hardware against the node book '1 x 10 mm x 1 m coil', area_m2 0.0301: the drawn area is 0.0013 m2 over the node figure - reported, nothing resized (WORK_ORDER W12)",
       "duty": {
-        "condensing_kW": 0.7079,
+        "condensing_kW": 0.7184,
         "U_kW_m2K": 1.2,
         "LMTD_K": 19.6
       }

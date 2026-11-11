@@ -140,6 +140,14 @@
    "service": "power terminal (SF-MO_CELL, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N11",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "plant pyrolysis char reductant",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "Graphite liner and graphite anode for the carbochlorination melt (MoCl3 wetted); 90 % alumina brick backup in a mild-steel shell; dry CO2-laden headspace",

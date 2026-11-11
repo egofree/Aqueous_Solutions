@@ -84,7 +84,7 @@
       "face": "+Y",
       "height_mm": 600,
       "drawn_height_mm": 320.7,
-      "x_mm": 310.6,
+      "x_mm": 339.9,
       "schedule_rating": "Class 150",
       "service": "ethanol and acetone",
       "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); DN15 open-bore tube on a tray riser, flush at the envelope face (duty section 4: atmospheric joints are hose)"
@@ -121,15 +121,48 @@
       "schedule_rating": "Class 150",
       "service": "solvent resupply (ethanol and acetone)",
       "note": "schedule datum drawn; DN15 open-bore tube on a tray riser, flush at the envelope face (duty section 4: atmospheric joints are hose)"
+    },
+    "N8": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 547.9,
+      "schedule_rating": "Class 150",
+      "service": "recovered and new ethanol and acetone to the solvent store",
+      "note": "schedule datum drawn; DN15 open-bore tube on a tray riser, flush at the envelope face (duty section 4: atmospheric joints are hose)"
+    },
+    "N9": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600,
+      "drawn_height_mm": 320.7,
+      "x_mm": 369.2,
+      "schedule_rating": "Class 150",
+      "service": "acetone for the diacetone alcohol casting solvent",
+      "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); DN15 open-bore tube on a tray riser, flush at the envelope face (duty section 4: atmospheric joints are hose)"
+    },
+    "N10": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600,
+      "drawn_height_mm": 320.7,
+      "x_mm": 310.6,
+      "schedule_rating": "Class 150",
+      "service": "acetone for edge-bead rinse and resist strip",
+      "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); DN15 open-bore tube on a tray riser, flush at the envelope face (duty section 4: atmospheric joints are hose)"
     }
   },
-  "nozzle_count_schedule": 7,
+  "nozzle_count_schedule": 10,
   "nozzle_idiom": "atmospheric open-bore tube connections on tray risers, flush at the envelope faces (duty section 4: atmospheric joints are hose; the W4 110 percent rule draws no flange where no process pressure is stated); the schedule rating column (Class 150) is carried verbatim as text; clamped datums named in nozzles_drawn; the duty section 4 prose list predates the issued schedule and the schedule governs (WORK_ORDER W12)",
   "part_mass_kg": {
     "tray": 68.2,
     "tank": 34.6,
     "guard_rail": 0.1,
-    "nozzles": 2.1
+    "nozzles": 3.3
   },
   "cadquery": "2.8.0"
 }

@@ -184,6 +184,51 @@
       "height_mm": 800.0,
       "schedule_rating": "Class 150",
       "service": "power terminal (SF-TI_CELL, 480 V or 208/120 V AC (bus per AQS-ELEC-002))"
+    },
+    "N16": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "co_stub",
+      "y_mm": [
+        640.0,
+        685.0
+      ],
+      "drawn_height_mm": 600.0,
+      "note": "chlorinator-CO DN15 stub beside the N12 export (x - 42) on the +Y shell at z 600: the carbonylation draw of the on-site solvent route (A-M-479)",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "chlorinator carbon monoxide for the carbonylation"
+    },
+    "N17": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "co_stub",
+      "y_mm": [
+        640.0,
+        685.0
+      ],
+      "drawn_height_mm": 600.0,
+      "note": "chlorinator-CO DN15 stub beside the N12 export (x + 42) on the +Y shell at z 600: the phosgenation draw of the on-site resist route (A-M-482)",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "chlorinator carbon monoxide for the phosgenation"
+    },
+    "N18": {
+      "style": "solids",
+      "face": "-X",
+      "part": "charge_chutes",
+      "y_mm": [
+        410.0,
+        470.0
+      ],
+      "drawn_height_mm": 160.0,
+      "note": "plant pyrolysis char reductant chute on the chlorinator -X face (y 410..470, z 130..220), in a study slot beside the grit chute; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "plant pyrolysis char reductant"
     }
   },
   "vessel_bbox_mm": [
@@ -224,9 +269,9 @@
     "x_cond_retort": 0.3,
     "mgcl2_trough": 15.7,
     "skid_frame": 564.3,
-    "charge_chutes": 6.4,
+    "charge_chutes": 8.5,
     "cl2_stubs": 0.1,
-    "co_stub": 0.1,
+    "co_stub": 0.2,
     "slag_spout": 1.1,
     "harvest_ports": 2.5,
     "mgcl2_stubs": 0.1,

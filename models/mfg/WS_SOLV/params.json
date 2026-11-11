@@ -74,6 +74,30 @@
    "service": "solvent resupply (ethanol and acetone)",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N8",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "recovered and new ethanol and acetone to the solvent store",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N9",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "acetone for the diacetone alcohol casting solvent",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N10",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "acetone for edge-bead rinse and resist strip",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "SA-240 304L, welded (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.",

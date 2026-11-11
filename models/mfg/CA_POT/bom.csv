@@ -15,3 +15,4 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 14,N2 brine inlet group: chute box flush at the -X face + DN44 lance into the bath at z 160 (0.1525 kg/d),1,"CS chute, carbon lance",4.9,make,task-04 schedule N2; A-M-284 feedstock ruling; WO step 4
 15,"Drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),0.2,make,task-04 schedule N4 bottom DN15 Class 150; frozen-salt drain pig per WO step 6
 16,"Thyristor rectifier + bath hold heaters, 1 kW connected, IP54 cabinet",1,purchase item,,buy,WO step 5/7; AQS-DUTY-072 section 4; A-M-282 class; mass per the purchase datasheet at order
+17,N7 brine inlet group: chute box flush at the -X face + DN44 lance into the bath at z 160 (study slot beside N2),1,"CS chute, carbon lance",4.9,make,"task-04 schedule N7; CaCl2 brine concentrate, class pending (task X-QA-11)"

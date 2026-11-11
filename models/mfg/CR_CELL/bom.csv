@@ -11,7 +11,7 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 10,"Offtake riser DN50 OD 60.3 t 2.0, z 350..1594, flange + N6 vent at top",1,carbon steel (dry hot Cl2),5.1,make,WO row 5; nozzles per the task-04 schedule (N6 vent top 800)
 11,"Return dip leg DN15, inside the riser annulus, bottom z 250",1,carbon steel,0.9,make,WO row 5; brine-fog return seal leg
 12,"N4 CO export stub DN15 at +Y z 600 (0.202 kg/d, fuel-gas class)",1,carbon steel (dry hot gas),0.0,make,task-04 schedule N4
-12b,"N2/N3 feed chutes -X z 160, flush at the -X face: Cr2O3 chromite concentrate + carbon reductant (0.452 kg/d)",2,"CS chute, refractory throat",7.9,make,task-04 schedule N2/N3; A-M-284 feedstock ruling
+12b,"N2/N3/N8 feed chutes -X z 160, flush at the -X face: Cr2O3 chromite concentrate + carbon reductant + char reductant (0.452 kg/d)",3,"CS chute, refractory throat",11.9,make,task-04 schedule N2/N3; A-M-284 feedstock ruling
 13,"N1 Cr-metal tap group: well DN80-class carbon + crest + discharge lip at +X z 600, flush at the +X face",1,carbon (ram class),5.0,make,"task-04 schedule N1 (solids, bore not calculated); WO step 6 trial-electrolysis tap"
 14,"N5 drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),0.2,make,task-04 schedule N5 bottom DN15 Class 150; frozen-salt drain pig per WO step 6
 16,"Thyristor rectifier + bath hold heaters, 1 kW connected, IP54 cabinet",1,purchase item,,buy,WO step 5/7; AQS-DUTY-072 section 4; A-M-282 class; mass per the purchase datasheet at order

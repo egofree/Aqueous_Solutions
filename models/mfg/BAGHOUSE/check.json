@@ -25,8 +25,8 @@
     },
     "dust_kg_d": {
       "IA-MILL-LOSS": 6.82,
-      "IA-FAB-LOSS": 0.51,
-      "IA-WIRE-LOSS": 0.438
+      "IA-FAB-LOSS": 0.0,
+      "IA-WIRE-LOSS": 0.358
     },
     "cloth_m2_drawn": 11.31,
     "cloth_m2_required": 10.5,

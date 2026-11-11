@@ -11,7 +11,7 @@ import cadquery as cq
 HERE = pathlib.Path(__file__).parent
 import sys
 sys.path.insert(0, str(HERE.parent))              # models/mfg: lib
-from lib import graph_node  # noqa: E402
+from lib import graph_node, step_export  # noqa: E402
 GN = graph_node.graph_node("SHELL_BUILD")        # the plant graph is the sole authority
 P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
 P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
@@ -61,10 +61,10 @@ parts["dip_deck"] = box(60.0, 200.0, 700.0, 700.0, 400.0, 40)  # drip deck over 
 parts["pattern_chute"] = box(0.0, 320.0, 130.0, 35.0, 160.0, 90)     # N1 -X z 160, flush at the face
 parts["green_shell_out"] = box(L - 40.0, 340.0, 550.0, 40.0, 120.0, 100)   # N2 +X z 600, flush at the face
 ch = None
-for yy in (200.0, 400.0):
+for yy in (200.0, 400.0, 560.0):
     q = box(0.0, yy, 130.0, 40.0, 120.0, 60)   # flush at the -X face
     ch = q if ch is None else ch.union(q)
-parts["silica_inlets"] = ch                                            # N3/N4 -X z 160
+parts["silica_inlets"] = ch                                            # N3/N4/N8 -X z 160
 parts["drain_well"] = tube(30.5, DN15, (400, 400, 0), "Z", 50)         # N5
 parts["vent_stub"] = tube(DN15, DN15 - W15, (400.0, 400.0, 1440.0), "Z", 60)   # N6 top
 
@@ -76,7 +76,7 @@ asm = cq.Assembly(name="SHELL_BUILD")
 for k, v in list(parts.items()) + list(inv.items()):
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "shell_build.step"))
+step_export.export_step(asm, str(out / "shell_build.step"))
 
 body = None
 for k, v in parts.items():
@@ -140,6 +140,11 @@ PLACE = {
     "N7": {"style": "carried", "face": "top",
            "note": "power terminal (SF-SHELL_BUILD bus) - a cable-schedule row: carried "
                    "verbatim, never drawn"},
+    "N8": {"style": "solids", "face": "-X", "part": "silica_inlets", "y_mm": [560.0, 680.0],
+           "drawn_height_mm": 160.0,
+           "note": "recovered-crib and spent-shell silica make-up chute flush at the -X face "
+                   "(y 560..680, z 130..190), in a study slot beside the reclaim chute; "
+                   "solids row, bore not calculated"},
 }
 drawn = {}
 for tag, rec in PLACE.items():
@@ -180,7 +185,7 @@ rows = [
      "task-04 schedule N1"],
     ["7", "N2 green-shell out +X z 600, flush at the face (to SHELL_BURNOUT N1)", 1, "carbon steel", mass["green_shell_out"], "make (AQS-BOM-SC-001)",
      "task-04 schedule N2"],
-    ["8", "N3/N4 silica make-up + reclaim inlets -X z 160, flush at the face", 2, "carbon steel", mass["silica_inlets"], "make (AQS-BOM-SC-001)",
+    ["8", "N3/N4/N8 silica make-up + reclaim inlets -X z 160, flush at the face", 3, "carbon steel", mass["silica_inlets"], "make (AQS-BOM-SC-001)",
      "task-04 schedule N3/N4"],
     ["9", "N5 drain well + N6 vent stub", 2, "carbon steel", round(mass["drain_well"] + mass["vent_stub"], 1),
      "make (AQS-BOM-SC-001)", "task-04 schedule N5/N6"],

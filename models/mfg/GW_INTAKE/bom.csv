@@ -2,4 +2,4 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 1,"SS304 wellhead head plate set: 800 x 800 x 600 mm tray form, 6 mm plate (X-LOC-13 well head)",1,SS304,121.3,make,size_basis verbatim; potable groundwater contact per duty section 3 (304 wetted at the chloride-light aquifer class); CA does not apply to the shop rule polymer clause and 304 carries none at this service (AQS-STD-001)
 2,"SS304 hatch, two leaves 390 x 780 x 10 at z 590-600, 20 mm centre vent gap",1,SS304,48.0,make,study plate stock; hinged at fabrication (WORK_ORDER W12)
 3,"SS304 pump discharge head, DN168 study boss envelope 60 mm on the floor",1,SS304,10.6,make,"duty section 3 discharge head; the HDPE potable discharge run is plant piping scope (AQS-PIP-004), not a unit solid"
-4,"Nozzle set per docs-authority/nozzles/GW_INTAKE.csv: 3 rows drawn as DN15 tube stubs (discharge, drain, vent)",3,SS304,0.2,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4
+4,"Nozzle set per docs-authority/nozzles/GW_INTAKE.csv: 3 rows drawn as DN15 tube stubs (discharge, drain, vent)",3,SS304,0.4,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4

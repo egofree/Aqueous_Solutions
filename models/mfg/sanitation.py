@@ -1,7 +1,10 @@
 """X-SAN-01 sanitation train (CadQuery): BLACK_DIGEST, BLACK_DEWATER, BLACK_PASTEUR, BLACK_ALK_HOLD. Reads params.design written by
 flow_graph/param/sanitation.py; writes models/mfg/<UNIT>/export STEP/STL, bom.csv, fasteners.csv, WORK_ORDER.md.
 Run: $CADQUERY_PYTHON models/mfg/sanitation.py"""
-import json, os
+import json, os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # models/mfg, for the shared lib
+from lib import step_export  # noqa: E402
+
 import cadquery as cq
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}
 def tank(D, H, t, n=1, gap=150):
@@ -24,7 +27,7 @@ d = _bd['params']['design']; S['BLACK_DIGEST'] = (tank(d['D_mm'], d['H_mm'], d['
 # BLACK_DEWATER / BLACK_PASTEUR / BLACK_ALK_HOLD retired with their units (2026-10-30 cleanup); the train is BLACK_DIGEST only
 for U, (m, rows) in S.items():
     o = f'models/mfg/{U}/export'; os.makedirs(o, exist_ok=True)
-    cq.exporters.export(m, f'{o}/{U.lower()}.step'); cq.exporters.export(m, f'{o}/{U.lower()}.stl')
+    step_export.export_step(m, f'{o}/{U.lower()}.step'); cq.exporters.export(m, f'{o}/{U.lower()}.stl')
     __import__('csv').writer(open(f'models/mfg/{U}/bom.csv', 'w', newline='')).writerows([('item', 'description', 'qty', 'material', 'basis')] + [tuple(r) for r in rows])   # quoted: materials carry commas
     open(f'models/mfg/{U}/fasteners.csv', 'w').write('item,size,grade,qty,location,basis\n1,M8 x 30 lid bolt with nut and washers,ISO 3506 A4-70,12,lid flange,study\n2,M10 anchor,ISO 3506 A4-70,4,feet,study\n')
     open(f'models/mfg/{U}/WORK_ORDER.md', 'w').write(f"# Work order {U}\n\nAuthority: AQS-DUTY-063 (X-SAN-01). In-house fabrication.\n\n" + '\n'.join(f'{i+1}. Make and fit item {r[0]}: {r[1]} ({r[3]}).' for i, r in enumerate(rows)) +

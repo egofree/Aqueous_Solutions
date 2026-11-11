@@ -31,7 +31,7 @@
   "hf_kg_d": 1.673754,
   "cake_kg_d": 0.575554,
   "drive_kW": 0.37,
-  "feed": "dock acid-spar 97 % CaF2 + 98 wt% H2SO4 + F_RECOVER concentrate",
+  "feed": "dock acid-spar 97 % CaF2 + 98 wt% H2SO4 from ACID_PLANT + F_RECOVER concentrate",
   "material": "carbon steel shell, dry HF service (PERRY9_MAT); Monel trunnion inserts",
   "duty_kW": 0.3083
  },
@@ -115,6 +115,22 @@
    "service": "power terminal (SF-HF_GEN, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N11",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "HF kiln anhydrite cake to the sulfur-recovery kiln",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N12",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "98 wt% sulfuric acid to the HF kiln",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "carbon steel shell, dry HF service (PERRY9_MAT); Monel trunnion inserts (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.",

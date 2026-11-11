@@ -11,10 +11,12 @@ backup + CS shell below the liner. Connection hardware draws flush at the
 envelope faces: nothing protrudes (A-core 2). No measured rate is claimed
 anywhere.
 """
-import csv, json, math, pathlib
+import csv, json, math, pathlib, sys
 import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
+sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
+from lib import step_export  # noqa: E402
 P = json.loads((HERE / "params.json").read_text())
 A = P["assumptions"]
 AN = P["anode"]; CA = P["cathode"]; BUS = P["busbar"]
@@ -152,8 +154,9 @@ parts["mo_tap_group"] = tap
 # ---------------- N5/N6 feed chutes (-X at z 160) + N2 liquor stub (-Y at 160) -----
 ch1 = box(0.0, 320, 130, 35, 160, 90)                            # concentrate chute, flush at the -X face
 ch2 = box(0.0, 480, 130, 35, 160, 90)                            # carbon chute, flush at the -X face
+ch3 = box(0.0, 160, 130, 35, 160, 90)                            # char reductant chute (N11), flush at the -X face
 liq = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (256.0, 0.0, 160.0), "Y", 50)
-parts["feed_chutes"] = ch1.union(ch2)
+parts["feed_chutes"] = ch1.union(ch2).union(ch3)
 parts["liquor_stub"] = liq
 
 # ---------------- N4 drain well ---------------------------------------------------
@@ -179,7 +182,7 @@ asm = cq.Assembly(name="MO_CELL")
 for k, v in list(parts.items()) + list(inv.items()):
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "mo_cell.step"))
+step_export.export_step(asm, str(out / "mo_cell.step"))
 
 body = None
 for k, v in parts.items():
@@ -258,6 +261,11 @@ PLACE = {
     "N10": {"style": "carried", "face": "top",
             "note": "power terminal (SF-MO_CELL bus) - a cable-schedule row: carried verbatim, "
                     "never drawn"},
+    "N11": {"style": "solids", "face": "-X", "part": "feed_chutes", "y_mm": [160.0, 320.0],
+            "drawn_height_mm": 160.0,
+            "note": "plant pyrolysis char reductant chute flush at the -X face (y 160..320, "
+                    "z 130..220), in a study slot beside the concentrate chute; solids row, "
+                    "bore not calculated"},
 }
 drawn = {}
 for tag, rec in PLACE.items():
@@ -319,7 +327,7 @@ rows = [
     ["12", f"N1/N3/N7 DN15 stubs at +Y z 600: raffinate return, anode gas, chlorinator CO2 vent ({D['co2_kg_d']} kg/d CO2)", 3,
      "carbon steel (dry hot gas)", round(mass["raffinate_stub"] + mass["anode_gas_stub"] + mass["co2_stub"], 1), "make",
      "task-04 schedule N1/N3/N7"],
-    ["12b", f"N5/N6 feed chutes -X z 160, flush at the -X face: MoO3 concentrate + carbon reductant ({D['feed_kg_d']} kg/d)", 2,
+    ["12b", f"N5/N6/N11 feed chutes -X z 160, flush at the -X face: MoO3 concentrate + carbon reductant + char reductant ({D['feed_kg_d']} kg/d)", 3,
      "CS chute, refractory throat", mass["feed_chutes"], "make",
      "task-04 schedule N5/N6; A-M-284 feedstock ruling"],
     ["12c", "N2 post-EW liquor inlet stub -Y z 160, flush at the -Y face", 1,

@@ -114,6 +114,14 @@
    "service": "dilute HCl return (HCl + reaction water)",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N13",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "phosgenation HCl to the chlorate finish",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "PVC-U wetted, per AQS-STD-002 rules M1 and M2. No metal wetted part. The graph gives no temperature for this unit; above 60 \u00b0C the thermoplastic is CPVC, never metal. Corrosion allowance does not apply to the polymer.",

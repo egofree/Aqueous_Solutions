@@ -1,6 +1,6 @@
 # Build log - HDR_UPW
 
-Date: 2026-11-02. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-PIPE; MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-PIPE; MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/HDR_UPW.md`; envelope per `models/mfg/HDR_UPW/params.json`).
 
 ## Tool versions
@@ -10,7 +10,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/HDR
 
 ## Checks
 
-- Build bbox 2000 x 50 x 50 mm against the 2000 x 50 x 50 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
+- Build bbox 2000 x 33.7 x 33.8 mm against the 2000 x 33.7 x 33.7 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/HDR_UPW/export/hdr_upw.step`; export STL closed and manifold, 1 solid(s); `cad/stl/HDR_UPW.stl` ; replaced from the build (ASCII, metres)
 - Nozzles: all 5 rows of `docs-authority/nozzles/HDR_UPW.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
 - A-PIPE line list: line_list.csv generated from the unit's graph edges and docs-authority/LINE_LIST.md (AQS-PIP-004): 5 rows (manifold spool + 4 lines), tag/from/to/DN/class/service/rating; edge coverage complete, no new edge

@@ -12,7 +12,7 @@
   ],
   "size_basis": "L x W x H mm, AQS-LITH-001 rev C frame 6061",
   "graph_revision": "AD",
-  "solids": 5,
+  "solids": 7,
   "all_parts_valid": true,
   "machine": {
     "type": "contact aligner per the node design block and AQS-LITH-001 rev C (named on the node): 6061 frame and base, aluminium stage plate, 4140 leadscrew 10 mm at 1 mm pitch (shop-cut on the lathe), chrome-on-glass mask with the 100 um pattern (cut on the mill), and the 365 nm LED array envelope (1 W optical) above the mask; 200 mJ/cm2 dose over the 100 mm field",
@@ -55,9 +55,29 @@
       "schedule_rating": "Class 150",
       "service": "power terminal (SF-LITHO_ALIGN, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
       "note": "power terminal row - a cable schedule row: carried verbatim, never drawn"
+    },
+    "N4": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "inlet",
+      "height_mm": 160.0,
+      "drawn_height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "coated wafers to exposure",
+      "note": "atmospheric hose joint per duty section 4"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "outlet",
+      "height_mm": 600.0,
+      "drawn_height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "exposed wafers to develop",
+      "note": "atmospheric hose joint per duty section 4"
     }
   },
-  "nozzle_count_schedule": 3,
+  "nozzle_count_schedule": 5,
   "nozzle_idiom": "the schedule rows are envelope hardware rows drawn flush at the envelope faces (duty section 4: 'No present edge. No nozzle.'); the AQS-LITH-001 section 4 SB350 hose barb is the machine service interface and is not a schedule row (named, W12); the schedule rating column (Class 150) carried verbatim as text",
   "part_mass_kg": {
     "base": 38.88,
@@ -67,7 +87,7 @@
     "mask_holder": 0.86,
     "mask": 0.17,
     "led_head": 2.33,
-    "nozzles": 0.03
+    "nozzles": 0.08
   },
   "cadquery": "2.8.0"
 }

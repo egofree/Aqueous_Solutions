@@ -18,13 +18,13 @@
   "misfit_note": "beds at the node design diameter (421.9 mm) cannot fit the M0 study registry box [2460, 592, 2000] (params size_note); reported per AQS-PLAN-006 rule 3, nothing resized",
   "beds": {
     "count": 3,
-    "bed_D_mm": 421.92825393409134,
-    "bed_L_mm": 1265.784761802274,
+    "bed_D_mm": 421.92823541437093,
+    "bed_L_mm": 1265.7847062431126,
     "shell_t_mm": 6.0,
     "grid_t_mm": 20.0,
     "axis_z_mm": [
       370.0,
-      1647.784761802274
+      1647.7847062431126
     ],
     "x_mm": [
       260.9,
@@ -34,7 +34,7 @@
     "basis": "node design block: beds/bed_D_mm/bed_L_mm (AQS-PAR-001 sizing)"
   },
   "sorbent": {
-    "kg_per_bed": 115.03773384836778,
+    "kg_per_bed": 115.03771870029539,
     "bulk_density_kg_m3": 700.0,
     "drawn_m3_total": 0.446,
     "kg_drawn_total": 311.9,
@@ -42,14 +42,25 @@
     "note": "13X bed drawn as a solid between the support grids; the drawn charge is capped by the bed length at the 700 kg/m3 study bulk density (636 kg/m3 would fill it) - vendor TDS at order, WORK_ORDER W12"
   },
   "machinery": {
-    "co2_comp_kW": 0.08561132024900028,
-    "co2_chill_kW": 0.034674979305555555,
+    "co2_comp_kW": 0.08561130897577333,
+    "co2_chill_kW": 0.03467497473958333,
     "getter_kW": 0.1,
-    "regen_kW": 1.4771803673912494,
-    "blower_kW": 0.0480299188919896,
+    "regen_kW": 1.4771801728773764,
+    "blower_kW": 0.04802991828408276,
     "note": "purchased envelopes and interfaces (AQS-PLAN-006 rule 6), ratings from the node design; the internals row says two-stage, the design block comp_stages 4 - the named two-stage machine is drawn, the staging is a hold (W12)"
   },
   "nozzles_drawn": {
+    "N18": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "bed": 1,
+      "x": 260.9,
+      "z": 600.0,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint on the bed shell (node relief basis: API 2000 open vent)"
+    },
     "N5": {
       "style": "hose",
       "dn": "DN50",
@@ -89,7 +100,7 @@
       "face": "+Y",
       "height_mm": 1500.0,
       "bed": 1,
-      "x": 390.9,
+      "x": 350.9,
       "z": 1500.0,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint on the bed shell (node relief basis: API 2000 open vent)"
@@ -133,7 +144,7 @@
       "face": "-Y",
       "height_mm": 160.0,
       "bed": 1,
-      "x": 390.9,
+      "x": 350.9,
       "z": 160.0,
       "schedule_rating": "Class 150",
       "note": "solids hand transfer - bore not calculated (AQS-PLAN-006 W4)"
@@ -144,7 +155,7 @@
       "face": "-Y",
       "height_mm": 160.0,
       "bed": 2,
-      "x": 652.8,
+      "x": 692.8,
       "z": 160.0,
       "schedule_rating": "Class 150",
       "note": "solids hand transfer - bore not calculated (AQS-PLAN-006 W4)"
@@ -155,7 +166,18 @@
       "face": "-Y",
       "height_mm": 160.0,
       "bed": 3,
-      "x": 1434.8,
+      "x": 1214.8,
+      "z": 160.0,
+      "schedule_rating": "Class 150",
+      "note": "frame-level row: the schedule datum sits below the bed shells; drawn through the base plinth"
+    },
+    "N19": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "bed": 1,
+      "x": 80.9,
       "z": 160.0,
       "schedule_rating": "Class 150",
       "note": "frame-level row: the schedule datum sits below the bed shells; drawn through the base plinth"
@@ -199,7 +221,7 @@
       "face": "-Y",
       "height_mm": 400.0,
       "bed": 1,
-      "x": 390.9,
+      "x": 350.9,
       "z": 400.0,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint on the bed shell (node relief basis: API 2000 open vent)"
@@ -236,13 +258,13 @@
       "note": "vent standpipe on the bed 1 top head to the 2000 mm schedule datum (API 2000 open vent)"
     }
   },
-  "nozzle_count_schedule": 17,
+  "nozzle_count_schedule": 19,
   "nozzle_idiom": "hose barbs on the bed shells and frame per the atmospheric relief basis (API 2000, A-M-155); solids rows DN15 labeled bore not calculated; schedule rating column (Class 150) carried verbatim as text; the N17 power terminal (cable schedule X-ELS-06, AQS-ELEC-010) is electrical, not piped - carried verbatim in this report, not drawn",
   "part_mass_kg": {
     "frame": 1916.2,
     "beds": 731.9,
     "machinery": 1728.2,
-    "nozzles": 8.2
+    "nozzles": 8.4
   },
   "sorbent_mass_kg": 311.9,
   "cad_stl_scope": "the full build, metres (X-PAR-04 registry: the build fills the sized skid reservation)",

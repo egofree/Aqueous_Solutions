@@ -37,7 +37,7 @@ HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE))                 # models/mfg: lib, tracker, farm_hab
 sys.path.insert(0, str(HERE.parents[2]))      # repo root: models.*
 
-from lib import dn, fasteners, graph_node, materials, nozzles   # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles, step_export  # noqa: E402
 from tracker import stl_bbox_mm                     # noqa: E402
 from models.mfg import farm_hab                     # noqa: E402
 
@@ -180,7 +180,7 @@ def build_and_export(here, spec):
         asm.add(v, name=k)
     out = here / "export"
     out.mkdir(exist_ok=True)
-    asm.export(str(out / f"{UNIT.lower()}.step"))
+    step_export.export_step(asm, str(out / f"{UNIT.lower()}.step"))
 
     solid = None
     for k, v in parts.items():

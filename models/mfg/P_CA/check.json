@@ -13,7 +13,7 @@
   "size_basis": "envelope from the placement seed (params size_note); the node envelope block records the calcium-soap precipitation vessel at the 0.025 kg/d thickener draw",
   "graph_revision": "AD",
   "solids": 1,
-  "all_parts_valid": true,
+  "all_parts_valid": false,
   "route_hold": "the node class is precip, which has no row in the AQS-PLAN-006 section 4 route table - the tracker records the hold; the vessel work follows the F-VES operations as the nearest family (WORK_ORDER W10)",
   "working_volume_m3": 0.0159,
   "working_volume_basis": "reported for the record: the duty section 2 books no holdup basis (sizing study pending), so no level or residence is derived",
@@ -59,16 +59,60 @@
       "schedule_rating": "Class 150",
       "service": "vent",
       "note": "vent, flush at the vessel top head; schedule datum 800 predates the 400 box (hold, WORK_ORDER W12)"
+    },
+    "N3": {
+      "style": "tube",
+      "dn": "solids",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 384.4,
+      "x_mm": 90.0,
+      "schedule_rating": "Class 150",
+      "service": "calcium hydroxide",
+      "note": "schedule datum drawn at the face; DN15-class open-bore tube on a plinth riser; solids row, bore not calculated (AQS-PLAN-006 W4); rated edge of the on-site caustic route (flow_graph/param/caustic.py, A-M-475)"
+    },
+    "N4": {
+      "style": "tube",
+      "dn": "solids",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 140.0,
+      "schedule_rating": "Class 150",
+      "service": "cake-kiln lime residue to the slaker",
+      "note": "schedule datum drawn at the face; DN15-class open-bore tube on a plinth riser; solids row, bore not calculated (AQS-PLAN-006 W4); rated edge of the on-site caustic route (flow_graph/param/caustic.py, A-M-475)"
+    },
+    "N5": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "x_mm": 190.0,
+      "schedule_rating": "Class 150",
+      "service": "well water to slake the lime",
+      "note": "schedule datum drawn at the face; DN15-class open-bore tube on a plinth riser; rated edge of the on-site caustic route (flow_graph/param/caustic.py, A-M-475)"
+    },
+    "N6": {
+      "style": "tube",
+      "dn": "solids",
+      "face": "outlet",
+      "height_mm": 600,
+      "drawn_height_mm": 384.4,
+      "x_mm": 90.0,
+      "schedule_rating": "Class 150",
+      "service": "slaker grit (anhydrite, fluorspar and inerts of the kiln residue)",
+      "note": "schedule datum drawn at the face; DN15-class open-bore tube on a plinth riser; solids row, bore not calculated (AQS-PLAN-006 W4); rated edge of the on-site caustic route (flow_graph/param/caustic.py, A-M-475)"
     }
   },
-  "nozzle_count_schedule": 2,
+  "nozzle_count_schedule": 6,
   "nozzle_idiom": "atmospheric open-bore tube (lib/dn Sch 40 table), flush at the envelope bottom and the vessel top head; the schedule rating column (Class 150) is carried verbatim as text, no flange drawn (W4 110 % rule: no process pressure stated)",
   "part_mass_kg": {
     "frame_plinth": 14.13,
     "vessel": 3.03,
     "agitator": 0.04,
     "agitator_drive": 0.26,
-    "nozzles": 0.01
+    "nozzles": 0.19
   },
   "cadquery": "2.8.0"
 }

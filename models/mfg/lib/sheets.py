@@ -56,7 +56,8 @@ def export_sheets(unit, parts, report, sheets, here=None):
         if svg.exists() and "aqs-title-block" in svg.read_text():
             try:
                 import cairosvg
-                cairosvg.svg2pdf(url=str(svg), write_to=str(draw / f"{sid}.pdf"))
+                from lib.pdf_write import write_pdf
+                write_pdf(str(svg), str(draw / f"{sid}.pdf"))
                 pdf = "pdf+svg current"
             except Exception as e:
                 pdf = f"pdf skipped ({e.__class__.__name__}: {e})"

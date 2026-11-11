@@ -8,10 +8,12 @@ schedule land on the common charge chute (-X, z 160); the melt rows leave throug
 four DN15 stubs and the tilt-pour lip (+Y / +X at z 600). No measured rate is
 claimed anywhere.
 """
-import csv, json, math, pathlib
+import csv, json, math, pathlib, sys
 import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
+sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
+from lib import step_export  # noqa: E402
 P = json.loads((HERE / "params.json").read_text())
 A = P["assumptions"]
 CR = P["crucible"]; CO = P["coil"]
@@ -103,7 +105,7 @@ asm = cq.Assembly(name="IND_MELT")
 for k, v in list(parts.items()) + list(inv.items()):
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "ind_melt.step"))
+step_export.export_step(asm, str(out / "ind_melt.step"))
 
 body = None
 for k, v in parts.items():

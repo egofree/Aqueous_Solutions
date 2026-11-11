@@ -104,6 +104,21 @@
       "height_mm": 800.0,
       "schedule_rating": "Class 150",
       "service": "power terminal (SF-MG_POT, 480 V or 208/120 V AC (bus per AQS-ELEC-002))"
+    },
+    "N10": {
+      "style": "stub",
+      "face": "-Y",
+      "part": "inlet_groups",
+      "x_mm": [
+        130.0,
+        166.0
+      ],
+      "drawn_height_mm": 160.0,
+      "note": "CaCl2-MgCl2 brine concentrate in: launder flush at the -Y face (x 130..166, z 130..220) and the concentrate lance into the bath at z 160, in a study slot beside the N4 launder; class pending (task X-QA-11)",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "CaCl2-MgCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)"
     }
   },
   "shell_bbox_mm": [
@@ -159,7 +174,7 @@
     "cl2_stubs": 0.1,
     "mg_tap_group": 5.0,
     "reductant_tap_group": 5.0,
-    "inlet_groups": 6.6,
+    "inlet_groups": 11.4,
     "drain_well": 0.2
   },
   "cadquery": "2.8.0"

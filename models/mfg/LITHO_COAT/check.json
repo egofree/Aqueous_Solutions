@@ -12,7 +12,7 @@
   ],
   "size_basis": "L x W x H mm, issued envelope (A-M-287)",
   "graph_revision": "AD",
-  "solids": 6,
+  "solids": 8,
   "all_parts_valid": true,
   "machine": {
     "type": "spin-coater line per the node design block and note (A-M-287): spin bowl and coat catch bowl in 316L per duty section 3, the 150 mm vacuum chuck (node chuck_mm) on the spindle inside the bowl, spin-chuck motor and softbake hotplate drawn as purchased envelopes per plan rule 6 with the node ratings",
@@ -80,9 +80,31 @@
       "schedule_rating": "Class 150",
       "service": "power terminal (SF-LITHO_COAT, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
       "note": "power terminal row - a cable schedule row: carried verbatim, never drawn"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 1400.0,
+      "x_mm": 660.0,
+      "schedule_rating": "Class 150",
+      "service": "wafers to resist coat",
+      "note": "atmospheric hose joint per duty section 4; solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 1400.0,
+      "x_mm": 660.0,
+      "schedule_rating": "Class 150",
+      "service": "coated wafers to exposure",
+      "note": "atmospheric hose joint per duty section 4; solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
     }
   },
-  "nozzle_count_schedule": 5,
+  "nozzle_count_schedule": 7,
   "nozzle_idiom": "atmospheric hose joints per duty section 4 (DN copied from the edge and not recalculated); the N3/N4 solids rows are non-piped transfers drawn DN15, bore not calculated (plan W4); the N2 vent datum 800 predates the 1400 box (hold, W12); the schedule rating column (Class 150) carried verbatim as text",
   "part_mass_kg": {
     "base": 150.72,
@@ -93,7 +115,7 @@
     "chuck": 5.09,
     "motor": 45.22,
     "hotplate": 29.44,
-    "nozzles": 0.23
+    "nozzles": 0.35
   },
   "cadquery": "2.8.0"
 }

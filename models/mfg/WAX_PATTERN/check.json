@@ -1,125 +1,38 @@
 {
-  "bbox_mm": [
+  "bench_bbox_mm": [
     800.0,
     600.0,
-    1200.0
+    850.0
   ],
-  "inside_size_mm": true,
-  "size_mm": [
-    800.0,
-    600.0,
-    1200.0
+  "inside_size_mm_shell": true,
+  "connection_overhang_mm": {
+    "-X": 0.0,
+    "+X": 0.0,
+    "-Y": 0.0,
+    "+Y": 0.0
+  },
+  "overhang_allowance_mm": 1.0,
+  "overhang_ok": true,
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: pattern_chute, condensate_trap, makeup_hopper)",
+  "external_parts": [
+    "pattern_chute",
+    "condensate_trap",
+    "makeup_hopper"
   ],
-  "size_basis": "prep-class study minimum; live on the wax make-up import + 90 % reclaim (A-M-286)",
-  "graph_revision": "AD",
-  "solids": 1,
+  "cap_solids": 4,
   "all_parts_valid": true,
-  "cad_stl_scope": "build solid, metres (X-PAR-04 envelope registry; the build fills the node box 800 x 600 x 1200 flush)",
-  "cad_stl_bbox_mm": [
-    800.0,
-    600.0,
-    1200.0
-  ],
-  "machine": {
-    "type": "wax pattern injection bench for the shell-casting chain: 304L wax melt tank on its steam/hot-water manifold, injection head and pattern die, PP-H storage bins and PE drain pans (duty section 3; graph design pot 10 L, injector 0.5 kW)",
-    "a_farm": "the cabinet is drawn at the node box flush; the pot, manifold, injector, die, bin and pan envelopes are drawn",
-    "purchased": "the 0.5 kW injector/heater unit purchases with the pot at fabrication (duty section 3 names the class, not a maker figure) - plan rule 6 (hold, WORK_ORDER W12)",
-    "material": "304L wax melt tank with steam/hot-water manifold; PP-H storage bins; PE drain pans",
-    "ca_mm": 0.0
-  },
-  "nozzles_drawn": {
-    "N1": {
-      "style": "tube_stub",
-      "dn": "solids",
-      "face": "+Y",
-      "height_mm": 600.0,
-      "drawn_height_mm": 600.0,
-      "xy_mm": [
-        400.0,
-        300.0
-      ],
-      "schedule_rating": "Class 150",
-      "service": "wax pattern",
-      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the solids row is a non-piped transfer: drawn DN15, bore not calculated (duty section 4)"
-    },
-    "N2": {
-      "style": "tube_stub",
-      "dn": "DN15",
-      "face": "-Y",
-      "height_mm": 160.0,
-      "drawn_height_mm": 160.0,
-      "xy_mm": [
-        385.3,
-        300.0
-      ],
-      "schedule_rating": "Class 150",
-      "service": "wax condensate reclaim",
-      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
-    },
-    "N3": {
-      "style": "tube_stub",
-      "dn": "solids",
-      "face": "-Y",
-      "height_mm": 160.0,
-      "drawn_height_mm": 160.0,
-      "xy_mm": [
-        414.6,
-        300.0
-      ],
-      "schedule_rating": "Class 150",
-      "service": "pattern wax make-up (petro-wax class import)",
-      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the solids row is a non-piped transfer: drawn DN15, bore not calculated (duty section 4)"
-    },
-    "N4": {
-      "style": "tube_stub",
-      "dn": "DN15",
-      "face": "bottom",
-      "height_mm": 50.0,
-      "drawn_height_mm": 0.0,
-      "xy_mm": [
-        110.0,
-        560.0
-      ],
-      "schedule_rating": "Class 150",
-      "service": "drain",
-      "note": "drain flush at the envelope bottom; the 50 datum is the schedule placeholder at the base"
-    },
-    "N5": {
-      "style": "tube_stub",
-      "dn": "DN15",
-      "face": "top",
-      "height_mm": 800.0,
-      "drawn_height_mm": 1200.0,
-      "xy_mm": [
-        110.0,
-        560.0
-      ],
-      "schedule_rating": "Class 150",
-      "service": "vent",
-      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 sits below the build height 1200 - drawn flush at the envelope top (hold, W12)"
-    },
-    "N6": {
-      "style": "carried",
-      "dn": "cable",
-      "face": "top",
-      "height_mm": 800,
-      "schedule_rating": "Class 150",
-      "service": "power terminal (SF-WAX_PATTERN, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
-      "note": "power terminal row - a cable schedule row: carried verbatim, never drawn"
-    }
-  },
-  "nozzle_count_schedule": 6,
-  "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4); N1 wax patterns out on +Y at z 600; N2 condensate reclaim (DN15) and N3 make-up wax in on -Y at z 160, the solids row drawn DN15 with the bore not calculated; N4 drain flush at the envelope bottom; N5 vent flush at the envelope top (the schedule z 800 datum sits below the 1200 build height); N6 is a cable schedule row, carried in the record, never drawn; no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
   "part_mass_kg": {
-    "cabinet_shell": 152.1,
-    "top": 19.2,
-    "steam_manifold": 7.3,
-    "wax_pot": 8.6,
-    "injector": 20.2,
-    "pattern_die": 5.4,
-    "wax_bin": 1.2,
-    "drain_pan": 0.3,
-    "nozzles": 0.3
+    "bench_frame": 66.7,
+    "work_top": 188.4,
+    "extraction_hood": 223.3,
+    "vent_stub": 0.1,
+    "drain_well": 1.0,
+    "wax_pot": 12.3,
+    "injector_head": 14.2,
+    "pattern_table": 20.7,
+    "condensate_trap": 2.3,
+    "makeup_hopper": 2.3,
+    "pattern_chute": 18.8
   },
   "cadquery": "2.8.0"
 }

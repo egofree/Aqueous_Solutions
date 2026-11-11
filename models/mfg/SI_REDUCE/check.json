@@ -2,7 +2,7 @@
   "bbox_mm": [
     1200.0,
     1000.0,
-    1600.0
+    1600.5
   ],
   "inside_size_mm": true,
   "size_mm": [
@@ -25,10 +25,10 @@
       "basis": "study radii - no authority states a bore or a wall (WORK_ORDER W12)"
     },
     "duty": {
-      "duty": "carbothermic silicon reduction for the PV cell line (SOLAR_PV_CELL draws 1.8 kg/d Si)",
-      "si_kgd": 1.8,
-      "sio2_kgd": 3.85,
-      "char_kgd": 1.924
+      "duty": "carbothermic silicon reduction: the briquetted crib-silicate burden and the pyrolysis char -> metallurgical-grade silicon for the CZ charge (route si_refine.py, A-M-472)",
+      "si_kgd": 0.2044,
+      "sio2_kgd": 0.4373,
+      "char_kgd": 0.1748
     },
     "heater": {
       "kw": 5.0,
@@ -44,7 +44,107 @@
     "ca_mm": 1.5,
     "ca_basis": "duty section 3: the hot face stays dry (M7); dry, non-hydrocarbon furnace service - CA 0 mm (AQS-STD-001)"
   },
-  "nozzles_drawn": {},
+  "nozzles_drawn": {
+    "N1": {
+      "style": "chute",
+      "dn": "solids",
+      "face": "inlet",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "pyrolysis char reductant",
+      "note": "open charge chute through the -Y wall into the retort bore; solids row, bore not calculated (AQS-PLAN-006 W4)"
+    },
+    "N2": {
+      "style": "chute",
+      "dn": "solids",
+      "face": "inlet",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "quartz ore for the silicon furnace (raw ore)",
+      "note": "open charge chute through the -Y wall into the retort bore; solids row, bore not calculated (AQS-PLAN-006 W4)"
+    },
+    "N3": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "oxygen of the hood air that burns the furnace carbon monoxide",
+      "note": "hood-air DN15 open-bore tube flush at the -Y face, into the hood zone"
+    },
+    "N4": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "outlet",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "carbon dioxide of the burned furnace gas",
+      "note": "burned-furnace-gas DN15 open-bore tube flush at the +Y face (hood CO2)"
+    },
+    "N5": {
+      "style": "chute",
+      "dn": "solids",
+      "face": "outlet",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "silica fume from the furnace baghouse",
+      "note": "open discharge spout flush at the +Y face; solids row, bore not calculated (AQS-PLAN-006 W4)"
+    },
+    "N6": {
+      "style": "chute",
+      "dn": "solids",
+      "face": "outlet",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "metallurgical-grade silicon",
+      "note": "open discharge spout flush at the +Y face; solids row, bore not calculated (AQS-PLAN-006 W4)"
+    },
+    "N7": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "bottom",
+      "height_mm": 50.0,
+      "drawn_height_mm": -0.5,
+      "schedule_rating": "Class 150",
+      "service": "drain",
+      "note": "drain boss through the plinth and base head, tip at the 50 datum"
+    },
+    "N8": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "top",
+      "height_mm": 800.0,
+      "drawn_height_mm": 1400.0,
+      "schedule_rating": "Class 150",
+      "service": "vent",
+      "note": "vent riser on the lid plate beside the charge hopper; the schedule datum 800 predates the retort lid (hold, W12)"
+    },
+    "N9": {
+      "style": "carried",
+      "dn": "cable",
+      "face": "top",
+      "height_mm": 800.0,
+      "schedule_rating": "Class 150",
+      "service": "power terminal (SF-SI_REDUCE, 480 V AC)",
+      "note": "power terminal (SF-SI_REDUCE bus) - a cable-schedule row: carried verbatim, never drawn"
+    },
+    "N10": {
+      "style": "chute",
+      "dn": "solids",
+      "face": "inlet",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "briquetted crib silicate recovered from the leach feed, furnace burden (A-M-490)",
+      "note": "open charge chute through the -Y wall into the retort bore; solids row, bore not calculated (AQS-PLAN-006 W4)"
+    }
+  },
   "nozzle_count_schedule": 0,
   "nozzle_idiom": "no nozzles: the duty section 4 states no piped process connection on the graph and no nozzle schedule is issued yet; the CHAR_TO_SI feed is a solids edge with no kg/d rate - nothing piped, nothing drawn at the faces",
   "part_mass_kg": {
@@ -55,7 +155,8 @@
     "bore": 2.9,
     "clamp_ring": 13.73,
     "hopper": 197.53,
-    "heater_band": 3416.32
+    "heater_band": 3416.32,
+    "nozzles": 65.08
   },
   "cadquery": "2.8.0"
 }

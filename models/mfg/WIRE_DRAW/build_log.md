@@ -1,6 +1,6 @@
 # Build log - WIRE_DRAW
 
-Date: 2026-11-03. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-MACH + A-SC; MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-MACH + A-SC; MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/WIRE_DRAW.md`; envelope per `models/mfg/WIRE_DRAW/params.json`).
 
 ## Tool versions
@@ -12,7 +12,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/WIR
 
 - Build bbox 1000 x 600 x 800 mm against the 1000 x 600 x 800 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/WIRE_DRAW/export/wire_draw.step`; export STL closed and manifold, 11 solid(s); `cad/stl/WIRE_DRAW.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 7 rows of `docs-authority/nozzles/WIRE_DRAW.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- Nozzles: all 8 rows of `docs-authority/nozzles/WIRE_DRAW.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
 - Bull-block wire drawer per the AQS-MFG-010 tool row (nameplate 1.1 kW; A-M-177 strain-3.0 energy basis), built on the DRAW accepted idiom (commit 30f5abf4) scaled to the node box: bench bed, die stand with the carbide die set (buy consumable), bull-block drum OD 300, wire guides, fume hood over the die zone (N4 to the house scrubber train)
 - A-MACH: die-zone/drum guard rail + hold-down frame + 8 anchors; purchased items named with the node ratings (drive group and cabinet, plan rule 6); A-SC: shop-made hardware flagged with the AQS-BOM-SC-001 cross-reference
 - Dry forming machine (no wetted stream); CA 0 mm; drum/bench/die-count study values (holds, WORK_ORDER W12)

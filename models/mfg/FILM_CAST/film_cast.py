@@ -11,7 +11,7 @@ import cadquery as cq
 HERE = pathlib.Path(__file__).parent
 import sys
 sys.path.insert(0, str(HERE.parent))              # models/mfg: lib
-from lib import graph_node  # noqa: E402
+from lib import graph_node, step_export  # noqa: E402
 GN = graph_node.graph_node("FILM_CAST")        # the plant graph is the sole authority
 P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
 P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
@@ -77,7 +77,7 @@ asm = cq.Assembly(name="FILM_CAST")
 for k, v in list(parts.items()) + list(inv.items()):
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "film_cast.step"))
+step_export.export_step(asm, str(out / "film_cast.step"))
 
 body = None
 for k, v in parts.items():

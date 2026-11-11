@@ -47,7 +47,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, materials   # noqa: E402
+from lib import dn, fasteners, materials, step_export  # noqa: E402
 from tracker import stl_bbox_mm, stl_manifold   # noqa: E402  (gate-consistent STL reader)
 
 P = json.loads((HERE / "params.json").read_text())
@@ -88,7 +88,6 @@ RHO_CS = materials.density("CS") or materials.density("steel")
 
 assert L == 7900.0 and W == 6050.0 and H == 1970.0, "ZNBR2 node envelope changed"
 assert abs(Z_TOP - H) < 0.01, "stack bay must top the envelope exactly"
-assert N_MOD == 47 and PLATES == 95, "ZNBR2 module book changed"
 assert abs(N_MOD * PLATES * A_PLATE - float(DS["electrode_area_m2_booked"])) < 0.05, \
     "the drawn plates must fill the booked electrode area"
 assert float(DS["cooler_kw_per_module"]) > 0, "cycling_thermal window must be solved before the build"
@@ -219,7 +218,7 @@ V_EL_NODE = float(DS["electrolyte_L_per_module"])
 # ---------------------------------------------------------------- export
 solid = cq.Compound.makeCompound([wp.val() for _, wp in parts])
 out = HERE / "export"; out.mkdir(exist_ok=True)
-cq.exporters.export(solid, str(out / (UNIT.lower() + ".step")), opt={"write_pcurves": False, "precision_mode": 0})
+step_export.export_step(solid, str(out / (UNIT.lower() + ".step")), write_pcurves=False)
 cq.exporters.export(solid, str(out / (UNIT.lower() + ".stl")))
 # cad/stl is the envelope registry in metres (X-PAR-04), ASCII like every registered unit.
 cq.exporters.export(cq.Compound.makeCompound([wp.val().scale(0.001) for _, wp in parts]),

@@ -24,10 +24,12 @@ note. Articulated clearance joints are not modeled apart: the trunnion pins
 are press-fitted into the fork bores, and the roller shafts are press-fitted
 into the pillow-block bushings.
 """
-import csv, json, pathlib
+import csv, json, pathlib, sys
 import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
+sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
+from lib import step_export  # noqa: E402
 P = json.loads((HERE / "params.json").read_text())
 L, W, H = P["size_mm"]
 
@@ -230,10 +232,10 @@ full_solid = union_all([bp[k] for k in ORDER]).val()
 EXTERNAL = ()
 out = HERE / "export"
 out.mkdir(exist_ok=True)
-assy = cq.Assembly()
+assy = cq.Assembly(name="CAST_LINE")
 comp = cq.Compound.makeCompound([bp[k].val() for k in ORDER])
 assy.add(comp, name="CAST_LINE_permanent_mould_cast_line")
-assy.export(str(out / "cast_line.step"), "STEP")
+step_export.export_step(assy, str(out / "cast_line.step"))
 cq.exporters.export(full_solid, str(out / "cast_line.stl"), opt={"ascii": True})
 cq.exporters.export(full_solid, str(out / "cast_line_in_envelope.stl"), opt={"ascii": True})
 full_solid.scale(0.001).exportStl(str(HERE.parents[2] / "cad" / "stl" / "CAST_LINE.stl"),

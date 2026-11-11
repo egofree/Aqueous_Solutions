@@ -130,6 +130,22 @@
    "service": "spent resist and solvent",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N15",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "still bottoms (resist residue and heavy alcohols) to the light oil cut",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N16",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "aromatic-extraction raffinate back to the fractionator",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "Carbon steel. Hydrocarbon. No aqueous chloride in this vessel. Corrosion allowance 1.5 mm. Pit rate is not measured.",

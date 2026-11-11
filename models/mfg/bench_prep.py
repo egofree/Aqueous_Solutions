@@ -15,7 +15,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE))                 # models/mfg: lib
-from lib import graph_node  # noqa: E402
+from lib import graph_node, step_export  # noqa: E402
 L, W, H = 800, 600, 1200
 TOP = 900.0
 DN15, W15 = 10.65, 2.0
@@ -134,7 +134,7 @@ def build_and_export(unit):
     for k, v in parts.items():
         asm.add(v, name=k)
     out = HERE / unit / "export"; out.mkdir(parents=True, exist_ok=True)
-    asm.export(str(out / f"{unit.lower()}.step"))
+    step_export.export_step(asm, str(out / f"{unit.lower()}.step"))
     body = None
     for k, v in parts.items():
         body = v if body is None else body.union(v)

@@ -1,7 +1,7 @@
 item,description,qty,material,mass_kg,make_or_buy,basis
 1,"Still vessels x 2 (2 x 100 %, X-RED-05): shell OD 240 x wall 10, 1170 mm, sump + tubesheet pair + separator flange + top cap",2,"316L, CA 0 mm",174.7,make,"duty section 3 (316L wetted); the MVC still principle: boiling inside, compressed vapour condensing on the shell"
-2,"Falling-film bundles: 18 tubes ID 12 x OD 14 x 890 mm per module, 0.6039 m2 each",36,"316L tube, CA 0 mm",10.5,make,booked bundle 0.603 m2 at U 2.8 kW/m2 K x 5 K (PERRY9_EVAP class) on the node's 8.436 kW latent duty (params.design area_basis); drawn at +0.1 %
+2,"Falling-film bundles: 19 tubes ID 12 x OD 14 x 890 mm per module, 0.6375 m2 each",38,"316L tube, CA 0 mm",11.0,make,booked bundle 0.603 m2 at U 2.8 kW/m2 K x 5 K (PERRY9_EVAP class) on the node's 8.436 kW latent duty (params.design area_basis); drawn at +0.1 %
 3,"Separator demister pads, 90 mm",2,316L mesh,0.3,buy,vapour separator internals above the upper tubesheet (design sep_h_mm)
-4,"Scroll compressors, 0.2542 kW duty class (node design scroll class), envelope and interface",2,"purchased, 316L refrigeration class",12.0,buy,"purchased per plan rule 6; the drive rating reads the maker sheet at order (node design sec_kWh_m3 17 kWh/m3 driver basis, A-M-149)"
+4,"Scroll compressors, 0.2645 kW duty class (node design scroll class), envelope and interface",2,"purchased, 316L refrigeration class",12.0,buy,"purchased per plan rule 6; the drive rating reads the maker sheet at order (node design sec_kWh_m3 17 kWh/m3 driver basis, A-M-149)"
 5,"Nozzle set per docs-authority/nozzles/VCD_TRAIN.csv: 11 rows at the skid faces (drain boss through the plinth, vent riser on the bay-0 separator cap)",11,316L tube,1.2,make,"schedule tags/faces/heights verbatim; atmospheric open-bore tube (duty section 4: hose, atmospheric)"
 6,Plinth 1400 x 600 x 30 carrying both module bays,1,"carbon steel, painted",197.8,make,dry frame; anchors in fasteners.csv

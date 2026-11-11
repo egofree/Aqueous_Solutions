@@ -38,6 +38,14 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N3",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "lithium hydroxide or carbonate",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the wetted zone",

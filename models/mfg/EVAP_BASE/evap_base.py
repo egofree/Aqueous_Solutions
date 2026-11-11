@@ -35,7 +35,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, graph_node, materials   # noqa: E402
+from lib import dn, fasteners, graph_node, materials, step_export  # noqa: E402
 from tracker import stl_bbox_mm, stl_manifold   # noqa: E402  (gate-consistent STL reader)
 
 GN = graph_node.graph_node("EVAP_BASE")        # the plant graph is the sole authority
@@ -125,7 +125,8 @@ schedule = P["nozzles"]
 DN_OD = {r["size"]: dn.pipe_od(r["size"]) for r in schedule if r["size"].startswith("DN")}
 noz_pieces, drawn = [], {}
 import itertools as _it
-_xq = _it.cycle((-90.0, 0.0, 90.0))
+_xq = _it.cycle((-90.0, 0.0, 90.0))          # +Y outlet spread along the shell axis
+_xq_in = _it.cycle((-60.0, 60.0))            # -Y inlet spread: two liquor inlets (N3, N9) sit at distinct x
 for r in schedule:
     tag, dnl, face0 = r["tag"], r["size"], r["face"]
     if r["size"] not in DN_OD:         # 'solids' and 'cable' rows: carried verbatim, no stub
@@ -150,8 +151,9 @@ for r in schedule:
     else:
         z_d = float(r["height_mm"])
         if face0 == "inlet":           # stub from the -Y face deep into the shell bore (rotated to +Y)
+            xi = next(_xq_in)          # the liquor inlets (N3, N9) spread in x so their tubes stay distinct
             s = (cq.Workplane("XY").circle(od_s / 2).circle(od_s / 2 - wl).extrude(CY - 20.0)
-                 .rotate((0, 0, 0), (1, 0, 0), -90).translate((CX, 0.0, z_d)))
+                 .rotate((0, 0, 0), (1, 0, 0), -90).translate((CX + xi, 0.0, z_d)))
         else:                          # +Y takeoffs spread along the shell axis so they land at
             xo = next(_xq)             # distinct x (three outlet rows share the +Y face at z 600)
             s = (cq.Workplane("XY").circle(od_s / 2).circle(od_s / 2 - wl).extrude(W - (CY - 20.0))
@@ -170,7 +172,7 @@ v_sump = round(math.pi * (D / 2 - T_SH) ** 2 * SUMP / 1e6, 1)              # L n
 
 solid = cq.Compound.makeCompound([wp.val() for _, wp in parts])
 out = HERE / "export"; out.mkdir(exist_ok=True)
-cq.exporters.export(solid, str(out / (UNIT.lower() + ".step")), opt={"write_pcurves": False, "precision_mode": 0})
+step_export.export_step(solid, str(out / (UNIT.lower() + ".step")), write_pcurves=False)
 cq.exporters.export(solid, str(out / (UNIT.lower() + ".stl")))
 cq.exporters.export(cq.Compound.makeCompound([wp.val().scale(0.001) for _, wp in parts]),
                     str(HERE.parents[2] / "cad" / "stl" / (UNIT + ".stl")), opt={"ascii": True})

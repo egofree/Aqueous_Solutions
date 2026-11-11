@@ -1,5 +1,5 @@
 item,description,qty,material,mass_kg,make_or_buy,basis
-1,"Column shell PVC-U DN100 Sch 80 (OD 114.3 x wall 8.56), 3700 mm with solvent-welded base ring and top cap",1,"PVC-U (ASTM D1785), CA not applicable",14.8,make,"duty section 3: PVC-U shell, no metal wetted part; AQS-STD-002 halogen class; sized at 1.5 m/s on the 35.9 m3/h purge (ess_tf, X-MFG-43b)"
+1,"Column shell PVC-U DN100 Sch 80 (OD 114.3 x wall 8.56), 3700 mm with solvent-welded base ring and top cap",1,"PVC-U (ASTM D1785), CA not applicable",14.8,make,"duty section 3: PVC-U shell, no metal wetted part; AQS-STD-002 halogen class; sized at 1.5 m/s on the 29 m3/h purge (ess_tf, X-MFG-43b)"
 2,"Packing support plate, perforated 50 % open envelope",1,PVC-U sheet,0.1,make,A-COL support as a solid; AQS-DUTY-061 house class (not derived from the gas mass)
 3,"Random packing: 25 mm PVC-U Pall rings (in-house cut tube rings), bed 3000 mm",1,PVC-U cut rings (bulk 380 kg/m3 class),8.1,make,duty section 2 packing (25 mm Pall rings) at the X-MFG-32 cut-ring class; X-MFG-32 jellybean line makes them
 4,"Liquid distributor, drip-pipe envelope with header channel",1,PVC-U,0.8,make,A-COL distributor as a solid (AQS-DUTY-061 class); no liquor inlet is piped - the scrub liquor is the S69B return (duty section 2)

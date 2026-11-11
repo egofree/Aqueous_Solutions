@@ -11,10 +11,12 @@ backup + CS shell below the liner. Connection hardware draws flush at the
 envelope faces: nothing protrudes (A-core 2). No measured rate is claimed
 anywhere.
 """
-import csv, json, math, pathlib
+import csv, json, math, pathlib, sys
 import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
+sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
+from lib import step_export  # noqa: E402
 P = json.loads((HERE / "params.json").read_text())
 A = P["assumptions"]
 AN = P["anode"]; CA = P["cathode"]; BUS = P["busbar"]
@@ -145,7 +147,8 @@ parts["cr_tap_group"] = tap
 # ---------------- N2/N3 feed chutes (-X at z 160) ---------------------------------
 ch1 = box(0.0, 320, 130, 35, 160, 90)                            # chromite concentrate chute, flush at the -X face
 ch2 = box(0.0, 480, 130, 35, 160, 90)                            # carbon reductant chute, flush at the -X face
-parts["feed_chutes"] = ch1.union(ch2)
+ch3 = box(0.0, 160, 130, 35, 160, 90)                            # char reductant chute (N8), flush at the -X face
+parts["feed_chutes"] = ch1.union(ch2).union(ch3)
 
 # ---------------- N4 drain well ---------------------------------------------------
 parts["drain_well"] = tube(30.5, dl, (256, 160, 0), "Z", 50)   # bore matches the casing pass: fuses
@@ -169,7 +172,7 @@ asm = cq.Assembly(name="CR_CELL")
 for k, v in list(parts.items()) + list(inv.items()):
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "cr_cell.step"))
+step_export.export_step(asm, str(out / "cr_cell.step"))
 
 body = None
 for k, v in parts.items():
@@ -239,6 +242,11 @@ PLACE = {
     "N7": {"style": "carried", "face": "top",
            "note": "power terminal (SF-CR_CELL bus) - a cable-schedule row: carried verbatim, "
                    "never drawn"},
+    "N8": {"style": "solids", "face": "-X", "part": "feed_chutes", "y_mm": [160.0, 320.0],
+           "drawn_height_mm": 160.0,
+           "note": "plant pyrolysis char reductant chute flush at the -X face (y 160..320, "
+                   "z 130..220), in a study slot beside the concentrate chute; solids row, "
+                   "bore not calculated"},
 }
 drawn = {}
 for tag, rec in PLACE.items():
@@ -300,7 +308,7 @@ rows = [
     ["12", f"N4 CO export stub DN15 at +Y z 600 ({D['co_kg_d']} kg/d, fuel-gas class)", 1,
      "carbon steel (dry hot gas)", mass["co_stub"], "make",
      "task-04 schedule N4"],
-    ["12b", f"N2/N3 feed chutes -X z 160, flush at the -X face: Cr2O3 chromite concentrate + carbon reductant ({D['feed_kg_d']} kg/d)", 2,
+    ["12b", f"N2/N3/N8 feed chutes -X z 160, flush at the -X face: Cr2O3 chromite concentrate + carbon reductant + char reductant ({D['feed_kg_d']} kg/d)", 3,
      "CS chute, refractory throat", mass["feed_chutes"], "make",
      "task-04 schedule N2/N3; A-M-284 feedstock ruling"],
     ["13", "N1 Cr-metal tap group: well DN80-class carbon + crest + discharge lip at +X z 600, flush at the +X face", 1,

@@ -74,6 +74,38 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N8",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "electronic-grade silicon CZ charge from the store",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N9",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "electronic-grade silicon for the CZ charge",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N10",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "electronic-grade silicon CZ charge from the store (refinery rod plus recycled crop and pot scrap)",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N11",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "crop, square-off and pot scrap remelted into the next charge (si_scrap_recycle_frac, A-M-487)",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "PE (rotomoulded / fabricated) (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.",

@@ -1,9 +1,9 @@
 item,description,qty,material,mass_kg,make_or_buy,basis
-1,"SS304 sheet cabinet: 800 x 600 x 1200, 5 mm walls, floor and top (prep-class study box; A-M-286 wax split basis)",1,SS304 (duty section 3),171.29999999999998,make,"size_basis verbatim; dry hydrocarbon service, no corrosive species (duty section 3)"
-2,"304L wax melt pot envelope 250 x 250 x 160 (10 L class), wax reclaim returned to the pot",1,304L (duty section 3),8.6,make,graph design pot_L 10; 304/316L hot-melt practice per duty section 3
-3,Steam/hot-water manifold envelope 280 x 280 x 100 under the pot,1,SS304 (duty section 3),7.3,make,"the melt-tank heat manifold duty section 3 names; loop hardware tie-in is plant scope (hold, WORK_ORDER W12)"
-4,Injection head envelope 200 x 200 x 600 with the 0.5 kW class,1,SS304 head (unit purchased),20.2,make,"graph design injector_kW 0.5; the injector/heater unit purchases with the pot at fabrication (hold, WORK_ORDER W12)"
-5,Pattern die envelope 150 x 150 x 200,1,SS304 (die material study),5.4,make,"the pattern dies the work order names; die material and cavities are finished against the first shell run (hold, WORK_ORDER W12)"
-6,PP-H wax storage bin envelope 200 x 200 x 300,1,PP-H (duty section 3),1.2,make,duty section 3 storage-bin class at the 80 C thermoplastic house limit
-7,PE drain pan envelope 200 x 150 x 60 under the injector deck,1,PE (duty section 3),0.3,make,duty section 3 drain-pan class
-8,"Nozzle set per docs-authority/nozzles/WAX_PATTERN.csv: 6 rows - 2 solids rows drawn as DN15 stubs (bore not calculated), DN15 reclaim, drain, vent, and the N6 cable row carried, never drawn",5,SS304,0.3,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4
+1,"Bench frame 800 x 600, work top z 850..900",1,carbon steel,255.1,make,WORK_ORDER step 1; AQS-DUTY-072 bench_prep class
+2,Extraction hood with the N5 vent stub,1,carbon steel,223.4,make,task-04 schedule N5
+3,Wax pot 10 L with the 0.5 kW injector head,1,CS + heater class,26.5,make,"design pot 10 L, injector 0.5 kW; 2.0 kg/d wax"
+4,Pattern table 220 x 300 x 40,1,carbon steel,20.723999999999997,make,WO step 3
+5,N1 pattern discharge chute +X z 600,1,carbon steel,18.84,make,"task-04 schedule N1 (solids, bore not calculated)"
+6,N2 condensate-reclaim trap -X z 160,1,carbon steel,2.2607999999999997,make,task-04 schedule N2
+7,"N3 make-up hopper -X z 160 (petro-wax class import, A-M-284)",1,carbon steel,2.2607999999999997,make,task-04 schedule N3
+8,N4 drain well,1,carbon steel,1.0072096647506712,make,task-04 schedule N4

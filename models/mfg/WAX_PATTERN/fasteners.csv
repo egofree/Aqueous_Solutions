@@ -1,3 +1,3 @@
 item,size,grade,qty,location,basis
-1,M10 wedge anchor,ISO 898-1 8.8,4,cabinet to the slab; 4 corners (count from the model),8.8 on carbon steel per the plan grade rule (anchor is not a wetted part); study embedment; confirmed at fabrication
-2,M8 socket bolt,ISO 3506 A4-70,8,pot/manifold and injector hold-down to the cabinet floor; 4 each (study pattern),A4-70 on the SS304 joints per the grade rule; study pattern; confirmed at fabrication
+1,M10 anchor,ISO 898-1 8.8,4,bench to slab,study
+2,M8 bolt,ISO 898-1 8.8,4,extraction hood to the bench frame,study

@@ -1,6 +1,6 @@
 # Build log - EVAP_BASE
 
-Date: 2026-11-04. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/EVAP_BASE.md`; envelope per `models/mfg/EVAP_BASE/params.json`).
 
 ## Tool versions
@@ -11,9 +11,9 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/EVA
 ## Checks
 
 - Build bbox 1250 x 800 x 3101 mm against the 1250 x 800 x 3100 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
-- Solid source: build export `models/mfg/EVAP_BASE/export/evap_base.step`; export STL closed and manifold, 33 solid(s); `cad/stl/EVAP_BASE.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 8 rows of `docs-authority/nozzles/EVAP_BASE.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
-- A-HX: bundle 20 tubes, 2.356 m2 drawn against the booked 2.33 m2 (latent / (U 1500 x 6 K) on the node 20.95 kW duty; AQS-DUTY-060 section 1)
+- Solid source: build export `models/mfg/EVAP_BASE/export/evap_base.step`; export STL closed and manifold, 34 solid(s); `cad/stl/EVAP_BASE.stl` replaced from the build (ASCII, metres)
+- Nozzles: all 9 rows of `docs-authority/nozzles/EVAP_BASE.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- A-HX: bundle 20 tubes, 2.356 m2 drawn against the booked 2.35 m2 (latent / (U 1500 x 6 K) on the node 20.95 kW duty; AQS-DUTY-060 section 1)
 - The X-MFG-30 MVR idiom in nickel for the NaOH service: DN350 body, separator with mesh pad, blower and interchanger envelopes (plan rule 6)
 - Unit-owned builder: the unit folder script replaces the evap_mvr.py EVAP_BASE expansion, so the style pass never clobbers the build
 - Route-class hold named: evaporator carries no section 4 class (W12(1)); pilot U and bench leach stay the open duty items (W12(6))

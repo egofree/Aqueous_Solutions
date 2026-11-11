@@ -43,7 +43,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, materials, nozzles, step_export  # noqa: E402
 
 P = json.loads((HERE / "params.json").read_text())
 L, W, H = (float(v) for v in P["size_mm"])                 # 400 x 400 x 600, node-sized
@@ -169,7 +169,7 @@ asm = cq.Assembly(name="MEOH_COND")
 for k, v in parts.items():
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "meoh_cond.step"))
+step_export.export_step(asm, str(out / "meoh_cond.step"))
 
 solid = None
 for k, v in parts.items():

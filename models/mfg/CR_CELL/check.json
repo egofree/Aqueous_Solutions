@@ -82,6 +82,21 @@
       "height_mm": 800.0,
       "schedule_rating": "Class 150",
       "service": "power terminal (SF-CR_CELL, 480 V or 208/120 V AC (bus per AQS-ELEC-002))"
+    },
+    "N8": {
+      "style": "solids",
+      "face": "-X",
+      "part": "feed_chutes",
+      "y_mm": [
+        160.0,
+        320.0
+      ],
+      "drawn_height_mm": 160.0,
+      "note": "plant pyrolysis char reductant chute flush at the -X face (y 160..320, z 130..220), in a study slot beside the concentrate chute; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "plant pyrolysis char reductant"
     }
   },
   "shell_bbox_mm": [
@@ -135,7 +150,7 @@
     "vent_stub": 0.0,
     "co_stub": 0.0,
     "cr_tap_group": 5.0,
-    "feed_chutes": 7.9,
+    "feed_chutes": 11.9,
     "drain_well": 0.2
   },
   "cadquery": "2.8.0"

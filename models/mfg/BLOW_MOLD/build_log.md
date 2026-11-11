@@ -1,6 +1,6 @@
 # Build log - BLOW_MOLD
 
-Date: 2026-11-03. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-SC (route hold); MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-SC (route hold); MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/BLOW_MOLD.md`; envelope per `models/mfg/BLOW_MOLD/params.json`).
 
 ## Tool versions
@@ -12,7 +12,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/BLO
 
 - Build bbox 1200 x 800 x 1600 mm against the 1200 x 800 x 1600 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/BLOW_MOLD/export/blow_mold.step`; export STL closed and manifold, 6 solid(s); `cad/stl/BLOW_MOLD.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 4 rows of `docs-authority/nozzles/BLOW_MOLD.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- Nozzles: all 5 rows of `docs-authority/nozzles/BLOW_MOLD.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn); the N5 cable power-terminal row is carried verbatim, not drawn
 - Continuous-extrusion blow molder per the node design block (Precious Plastic class; AQS-EQP-MFG-001; A-M-285): 316L melt path per duty section 3 (barrel, head, downward die), the three drive groups as purchased envelopes per plan rule 6 with the node ratings (2.2 / 0.75 / 0.75 kW), and the mold tool envelope (BLOW-MOLD-TOOL-01)
 - The article geometry is not named on the node: the mold set is an envelope and the mold detail is a named hold (W12)
 - Guard frame pins the registry box so the build fills the envelope (X-PAR-04); anchors in fasteners.csv

@@ -20,6 +20,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 MFG = os.path.join(ROOT, 'models', 'mfg')
 G = json.load(open(os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')))
 N = {n['unit_id']: n for n in G['nodes']}
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # models/mfg, for the shared lib
+from lib import step_export  # noqa: E402
+
 import cadquery as cq
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -413,10 +416,7 @@ def run(units=None):
             out = os.path.join(ROOT, 'models/mfg', u, 'export')
             os.makedirs(out, exist_ok=True)
             step_path = f'{out}/{u.lower()}.step'
-            cq.exporters.export(solid, step_path)                             # STEP in mm (machine convention)
-            _sh = open(step_path, encoding='utf-8', errors='replace').read()  # strip the exporter timestamp: the
-            _sh = re.sub(r"FILE_NAME\('[^']*','[^']*'", "FILE_NAME('','1970-01-01T00:00:00'", _sh, count=1)  # regen
-            open(step_path, 'w', encoding='utf-8').write(_sh)                 # must stay byte-idempotent
+            step_export.export_step(solid, step_path)                         # STEP in mm, fixed header (lib/step_export)
             stl_m = solid.scale(0.001)                                        # cad/stl convention is metres
             for dst in (f'{out}/{u.lower()}.stl', os.path.join(ROOT, 'cad/stl', u + '.stl')):
                 cq.exporters.export(stl_m, dst, opt={'ascii': True})          # ASCII STL: the X-PAR-04 gate parses text vertices

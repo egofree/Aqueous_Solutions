@@ -1,7 +1,10 @@
 """X-PAR-10 parametric vent scrubber EVAP_ACID_VS (CadQuery). Reads params on the graph (written by flow_graph/param/write_graph.py
 from flow_graph/param/vent_scrubber.py) and writes models/mfg/EVAP_ACID_VS/export/evap_acid_vs.step and .stl, bom.csv, fasteners.csv.
 Run: $CADQUERY_PYTHON models/mfg/vent_scrubber.py"""
-import json, os
+import json, os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # models/mfg, for the shared lib
+from lib import step_export  # noqa: E402
+
 import cadquery as cq
 U = 'EVAP_ACID_VS'
 g = json.load(open('flow_graph/plant_flow_graph.json')); p = next(n for n in g['nodes'] if n['unit_id'] == U)['params']
@@ -18,7 +21,7 @@ for z, a in ((sump - 120, 0), (H - 250, 90), (100, 180), (sump + bed + 80, 270))
     model = model.union(noz(z, a))
 model = model.union(cq.Workplane('XY').workplane(offset=H).circle(16.7).extrude(80))                   # off-gas outlet
 out = f'models/mfg/{U}/export'; os.makedirs(out, exist_ok=True)
-cq.exporters.export(model, f'{out}/{U.lower()}.step'); cq.exporters.export(model, f'{out}/{U.lower()}.stl')
+step_export.export_step(model, f'{out}/{U.lower()}.step'); cq.exporters.export(model, f'{out}/{U.lower()}.stl')
 rows = [('1', f'Shell PVC-U DN{DN} Sch 80 x {H} mm with solvent-welded caps', 1, 'PVC-U (ASTM D1785)', 'AQS-DUTY-061 section 2'),
         ('2', 'Packing support plate, perforated, 50 % open', 1, 'PVC-U sheet', 'PERRY9_ABS'),
         ('3', f'Random packing: 16 mm PVC tube rings cut L = D, bed {bed} mm', 1, 'PVC-U (in-house cut, X-MFG-32 jellybean line)', f"16 mm x {p['packed_mm']} mm bed; D/dp 8 (PERRY9_ABS)"),

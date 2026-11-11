@@ -50,6 +50,22 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N5",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "finished cells to the replacement modules of the roof array",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N6",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "silicon of the cells retired from end-of-life modules, crushed, to the chlorosilane loop",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "No wetted alloy. Conductors are copper. Corrosion allowance does not apply.",

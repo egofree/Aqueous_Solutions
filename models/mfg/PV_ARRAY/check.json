@@ -12,7 +12,7 @@
   ],
   "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
   "graph_revision": "AD",
-  "solids": 6,
+  "solids": 8,
   "all_parts_valid": true,
   "machine": {
     "type": "representative array-table section at the registry box (the WAFER_FAB room-scale precedent): roof-plane deck, ballast feet, table rails, and the tilted module plane with 3 strips covering 60 % of the plane (GCR 0.6, A-M-103), tilt +10 deg about +X with the +Y edge raised (equator-facing, site north = +Y, models/freecad heritage rule)",
@@ -57,7 +57,7 @@
       "face": "-Y",
       "height_mm": 160.0,
       "drawn_height_mm": 160.0,
-      "x_mm": 500.0,
+      "x_mm": 485.4,
       "schedule_rating": "Class 150",
       "service": "solar into the array",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
@@ -68,7 +68,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 500.0,
+      "x_mm": 485.4,
       "schedule_rating": "Class 150",
       "service": "PV daily average",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
@@ -94,9 +94,31 @@
       "schedule_rating": "Class 150",
       "service": "vent",
       "note": "vent flush at the envelope top; schedule datum 800 mm is the box top"
+    },
+    "N5": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "x_mm": 520.9,
+      "schedule_rating": "Class 150",
+      "service": "finished cells to the replacement modules of the roof array",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 520.9,
+      "schedule_rating": "Class 150",
+      "service": "silicon of the cells retired from end-of-life modules, crushed, to the chlorosilane loop",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
     }
   },
-  "nozzle_count_schedule": 4,
+  "nozzle_count_schedule": 6,
   "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4 verbatim: DN copied from the edge, not recalculated); N1 solar into the array (DN25) on -Y at z 160; N2 PV daily average (DN25) on +Y at z 600 - the electrical edges drawn as the schedule's tube rows with the conductor note carried; drain flush at the envelope bottom (50 datum); vent flush at the envelope top (800 datum is the box top); the schedule rating column (Class 150) carried verbatim as text",
   "part_mass_kg": {
     "plinth": 94.2,
@@ -105,7 +127,7 @@
     "table_rails": 48.61,
     "ballast_feet": 48.23,
     "module_strips": 23.33,
-    "nozzles": 0.35
+    "nozzles": 0.47
   },
   "cadquery": "2.8.0"
 }

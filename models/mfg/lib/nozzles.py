@@ -17,7 +17,16 @@ from math import cos, pi, sin
 
 import cadquery as cq
 
-from lib import dn
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from lib import dn, step_export
+
+# Shared nozzle-layout constants (F-20261110-09): named, cited values the unit builders
+# share instead of inline literals. Both are study layout choices of the CRYO_ASU nozzle
+# row spread (2026-11-10 argon rows), kept here so every builder that spreads overflow
+# nozzle rows across bed or rack footprints uses the same step and the same edge keep-out.
+NOZZLE_ROW_STEP_MM = 90.0    # axial step between overflow nozzle rows on one bed/rack face
+BED_EDGE_CLEAR_MM = 30.0     # minimum root keep-out from a bed or rack edge (mm)
 
 
 def stub(dn_label, length, sch=40, bore_open=True):

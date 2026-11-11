@@ -22,8 +22,8 @@
     "wall_mm": 3.38,
     "wall_basis": "lib/dn Sch 40 table (ASME B36.10M); the node states no schedule; the M1 class sheet carries the schedule at order and cleans its O2 lines per ASTM G93 (WORK_ORDER W12)",
     "id_mm": 26.94,
-    "id_grid_mm": 8.2,
-    "id_note": "AQS-DUTY-075 sizing: required id 8.2 mm at 8 m/s, seat minimum DN25; the DN-8 grid bore and the Sch 40 bore both seat DN25; nothing resized",
+    "id_grid_mm": 8.1,
+    "id_note": "AQS-DUTY-075 sizing: required id 8.1 mm at 8 m/s, seat minimum DN25; the DN-8 grid bore and the Sch 40 bore both seat DN25; nothing resized",
     "run_basis": "20 m run carried by the line-list route lengths (AQS-PIP-004); not redrawn",
     "material": "316L tube, oxygen-clean per ASTM_G93, socketless (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate."
   },

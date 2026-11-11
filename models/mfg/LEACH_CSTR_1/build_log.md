@@ -12,7 +12,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/LEA
 
 - Build bbox 2000.0 x 1200.3 x 1400.0 mm: inside the duty envelope 2000.0 x 1200.0 x 1400.0 mm (the node carries no size_mm; tracker hold, WORK_ORDER W12)
 - Solid source: build export `models/mfg/LEACH_CSTR_1/export/leach_cstr_1.step`; export STL closed and manifold; `cad/stl/LEACH_CSTR_1.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 61 rows of `docs-authority/nozzles/LEACH_CSTR_1.csv` present at face, height, bore and tag; drawn flush per the house idiom; the IA-E-LEACH conductor is the +Y gland (duty section 4 prose)
+- Nozzles: all 72 rows of `docs-authority/nozzles/LEACH_CSTR_1.csv` present at face, height, bore and tag; drawn flush per the house idiom; the IA-E-LEACH conductor is the +Y gland (duty section 4 prose)
 - A-VES: holdup 1.855 m3 drawn net of internals at the 1100 mm working level against the 2.14 m3 fill basis (AQS-DUTY-050); residence stays the duty's 13.2 h figure
 - BOM `models/mfg/LEACH_CSTR_1/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/LEACH_CSTR_1/drawings/` (GA front/side, nozzle orientation, 2 part sheets, iso; title blocks per AQS-DWG-002)

@@ -22,8 +22,8 @@
     "wall_mm": 3.38,
     "wall_basis": "lib/dn Sch 40 table (ASME B36.10M); the node states no schedule; the P1 class sheet carries Sch 80 at order (WORK_ORDER W12)",
     "id_mm": 26.94,
-    "id_grid_mm": 4.7,
-    "id_note": "AQS-DUTY-075 sizing: required id 4.7 mm at 8 m/s, seat minimum DN25; the DN-8 grid bore and the Sch 40 bore both seat DN25; nothing resized",
+    "id_grid_mm": 5.0,
+    "id_note": "AQS-DUTY-075 sizing: required id 5 mm at 8 m/s, seat minimum DN25; the DN-8 grid bore and the Sch 40 bore both seat DN25; nothing resized",
     "run_basis": "20 m run carried by the line-list route lengths (AQS-PIP-004); not redrawn",
     "material": "PVC-U header: wet H\u2082 with sweep air and possible acid mist (M3). Ignition, not embrittlement, governs; the dilution basis is held. Metal parts bonded. AQS-REV-H2-001."
   },
@@ -45,7 +45,7 @@
       "face": "-Y",
       "height_mm": 10.0,
       "drawn_height_mm": 11.3,
-      "x_mm": 650.3,
+      "x_mm": 701.6,
       "schedule_rating": "Class 150",
       "service": "cathode H2 + sweep air",
       "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the 60.3 mm cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
@@ -56,7 +56,7 @@
       "face": "-Y",
       "height_mm": 10.0,
       "drawn_height_mm": 11.3,
-      "x_mm": 701.6,
+      "x_mm": 752.9,
       "schedule_rating": "Class 150",
       "service": "cathode H2 + sweep air",
       "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the 60.3 mm cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
@@ -67,7 +67,7 @@
       "face": "-Y",
       "height_mm": 10.0,
       "drawn_height_mm": 11.3,
-      "x_mm": 752.9,
+      "x_mm": 804.2,
       "schedule_rating": "Class 150",
       "service": "hood hydrogen",
       "note": "schedule datum 10 mm clamped up to 11.3 mm to keep the DN15 bore inside the 60.3 mm cross-section (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
@@ -78,7 +78,7 @@
       "face": "+Y",
       "height_mm": 37.0,
       "drawn_height_mm": 37.0,
-      "x_mm": 110.7,
+      "x_mm": 213.3,
       "schedule_rating": "Class 150",
       "service": "process H2",
       "note": "schedule datum drawn; DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
@@ -111,7 +111,7 @@
       "face": "-Y",
       "height_mm": 160.0,
       "drawn_height_mm": 48.9,
-      "x_mm": 804.2,
+      "x_mm": 855.5,
       "schedule_rating": "Class 150",
       "service": "dried hydrogen",
       "note": "schedule datum 160 mm is a placeholder above the 60.3 mm cross-section; clamped down to 48.9 mm (hold, WORK_ORDER W12); no bore stated: drawn DN15, bore not calculated (plan W4) atmospheric tube stub flush at the envelope face (duty section 4)"
@@ -122,7 +122,7 @@
       "face": "-Y",
       "height_mm": 160.0,
       "drawn_height_mm": 30.1,
-      "x_mm": 875.0,
+      "x_mm": 926.3,
       "schedule_rating": "Class 150",
       "service": "hood hydrogen",
       "note": "the DN50 hardware fills the 60.3 mm cross-section; drawn at the manifold centreline; schedule datum 160 mm is a placeholder (hold, WORK_ORDER W12); DN50 atmospheric tube stub flush at the envelope face (duty section 4)"
@@ -214,15 +214,48 @@
       "schedule_rating": "Class 150",
       "service": "ZNBR2 HER hydrogen stripped with the purge air to the H2 header",
       "note": "schedule datum 160 mm is a placeholder above the 60.3 mm cross-section; clamped down to 48.9 mm (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+    },
+    "N18": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 48.9,
+      "x_mm": 650.3,
+      "schedule_rating": "Class 150",
+      "service": "chlor-alkali cathode hydrogen to the H2 header",
+      "note": "schedule datum 160 mm is a placeholder above the 60.3 mm cross-section; clamped down to 48.9 mm (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+    },
+    "N19": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 48.9,
+      "x_mm": 110.7,
+      "schedule_rating": "Class 150",
+      "service": "header hydrogen for the acetic acid hydrogenation",
+      "note": "schedule datum 600 mm is a placeholder above the 60.3 mm cross-section; clamped down to 48.9 mm (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
+    },
+    "N20": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 48.9,
+      "x_mm": 162.0,
+      "schedule_rating": "Class 150",
+      "service": "header hydrogen for the nitroso reduction",
+      "note": "schedule datum 600 mm is a placeholder above the 60.3 mm cross-section; clamped down to 48.9 mm (hold, WORK_ORDER W12); DN15 atmospheric tube stub flush at the envelope face (duty section 4)"
     }
   },
-  "nozzle_count_schedule": 17,
+  "nozzle_count_schedule": 20,
   "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4: atmospheric tube or hose, no flange class; the W4 110 % rule draws no flange where no process pressure is stated); the DN50 rows (N9/N10/N11) sit inside the reservation cross-section, sized by flow_graph/param/headers.py (AQS-DUTY-075) to the largest issued branch hardware (2026-11-08 reservation adoption); schedule rating column (Class 150) carried verbatim as text",
   "line_list": {
     "csv": "models/mfg/HDR_H2/line_list.csv",
     "source": "unit edges in flow_graph/plant_flow_graph.json + docs-authority/LINE_LIST.md (AQS-PIP-004, DN and class authority)",
-    "edges": 15,
-    "rows": 16,
+    "edges": 18,
+    "rows": 19,
     "missing_line_rows": [],
     "rows_without_edge": [],
     "no_new_edge": true
@@ -230,7 +263,7 @@
   "part_mass_kg": {
     "plinth": 18.93,
     "manifold": 0.9,
-    "nozzles": 0.13
+    "nozzles": 0.15
   },
   "cadquery": "2.8.0",
   "cad_stl": "replaced from the build"

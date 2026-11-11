@@ -45,7 +45,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, graph_node, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles, step_export  # noqa: E402
 
 GN = graph_node.graph_node("MEOH_TANK")        # the plant graph is the sole authority
 P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
@@ -144,8 +144,14 @@ for r in schedule:
         if h_d < h:
             note += (f"; schedule datum {h:g} mm clamped to {round(h_d, 1)} mm "
                      "(barb radius rule) - WORK_ORDER W12")
-        s = nozzles.hose_barb(hose_id(dnl), Hose[dnl], root_od=od)
-        s = nozzles.place_on_face(s, face, h_d, (layout_x[tag], W / 2), (L, W, H))
+        # the packed side rows can sit at an x where the domed shell recedes inside the
+        # envelope face: the barb then reaches from the face through the shell wall plus an
+        # 8 mm embed and its hose length, so every side connection is a real takeoff
+        x_r = layout_x.get(tag, CX)
+        chord = math.sqrt(max((D / 2.0) ** 2 - (x_r - CX) ** 2, (D / 4.0) ** 2))
+        reach = (CY - chord) + 8.0 + Hose[dnl]
+        s = nozzles.hose_barb(hose_id(dnl), reach, root_od=od)
+        s = nozzles.place_on_face(s, face, h_d, (x_r, W / 2), (L, W, H))
         noz_pre = h_d
     noz = s if noz is None else noz.union(s)
     drawn[tag] = {"style": "hose", "dn": dnl, "face": face, "height_mm": h,
@@ -164,7 +170,7 @@ asm = cq.Assembly(name="MEOH_TANK")
 for k, v in parts.items():
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "meoh_tank.step"))
+step_export.export_step(asm, str(out / "meoh_tank.step"))
 
 solid = None
 for k, v in parts.items():

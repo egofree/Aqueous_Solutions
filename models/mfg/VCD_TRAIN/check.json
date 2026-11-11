@@ -12,20 +12,20 @@
   ],
   "size_basis": "L\u00d7W\u00d7H mm, issued envelope",
   "graph_revision": "AD",
-  "solids": 52,
+  "solids": 54,
   "all_parts_valid": true,
   "solids_note": "one compound of closed solids: plinth, two vessel chains (shell, heads, tubesheets, separator ring, top cap), the two 18-tube bundles at running clearance, demister pads, compressor envelopes and the nozzle stubs; every union partner overlaps volumetrically, so the mesh reads back closed and manifold",
   "a_hx": {
     "modules": 2,
-    "tubes_per_module": 18,
+    "tubes_per_module": 19,
     "tube_mm": [
       12.0,
       14.0,
       890.0
     ],
-    "area_m2_drawn": 0.6039,
-    "area_m2_booked": 0.603,
-    "q_latent_kW": 8.436,
+    "area_m2_drawn": 0.6375,
+    "area_m2_booked": 0.627,
+    "q_latent_kW": 8.779,
     "u_kW_m2K": 2.8,
     "dT_drive_K": 5.0,
     "basis": "A-HX: the bundle area is reported drawn against booked; the node carries the 8.436 kW latent duty, so the booked area is the calculated figure (latent / (U 2.8 x 5 K), PERRY9_EVAP class, stub_activation X-MFG-38 pattern) and the drawn bundle carries it at +0.1 %"
@@ -165,7 +165,7 @@
   "nozzle_count_schedule": 11,
   "part_mass_kg": {
     "vessels": 174.7,
-    "bundle": 10.5,
+    "bundle": 11.0,
     "plinth_compressors": 339.3,
     "nozzles": 1.2
   },

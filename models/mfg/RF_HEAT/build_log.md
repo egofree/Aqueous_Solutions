@@ -1,6 +1,6 @@
 # Build log - RF_HEAT
 
-Date: 2026-11-02. Authority: AQS-PLAN-006 section 5 (acceptance) A-core (route hold); MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core (route hold); MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/RF_HEAT.md`; envelope per `models/mfg/RF_HEAT/params.json`).
 
 ## Tool versions

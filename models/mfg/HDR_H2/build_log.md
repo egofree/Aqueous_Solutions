@@ -12,8 +12,8 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/HDR
 
 - Build bbox 2000 x 60.3 x 60.3 mm against the 2000 x 60.3 x 60.3 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/HDR_H2/export/hdr_h2.step`; export STL closed and manifold, 1 solid(s); `cad/stl/HDR_H2.stl` ; replaced from the build (ASCII, metres)
-- Nozzles: all 17 rows of `docs-authority/nozzles/HDR_H2.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
-- A-PIPE line list: line_list.csv generated from the unit's graph edges and docs-authority/LINE_LIST.md (AQS-PIP-004): 16 rows (manifold spool + 15 lines), tag/from/to/DN/class/service/rating; edge coverage complete, no new edge
+- Nozzles: all 20 rows of `docs-authority/nozzles/HDR_H2.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- A-PIPE line list: line_list.csv generated from the unit's graph edges and docs-authority/LINE_LIST.md (AQS-PIP-004): 19 rows (manifold spool + 18 lines), tag/from/to/DN/class/service/rating; edge coverage complete, no new edge
 - Spool: DN25 OD 33.7 x wall 3.38 (Sch 40 table; P1 class sheet carries Sch 80 at order), bore 26.9 mm inside the 6.6 mm DN-8 sizing grid seat (AQS-DUTY-075); nothing resized
 - Reservation adoption (2026-11-08): headers.py (AQS-DUTY-075) sizes the reservation cross-section to the largest issued branch hardware (60.3 mm, the EN-rounded OD series); the 3 DN50 branch rows draw inside it at the manifold centreline, the build reads 2000 x 60.3 x 60.3 against the same reservation, no misfit carried
 - Schedule datums clamped into the 60.3 mm cross-section: inlets 10 to 11.3 mm, the 160 mm placeholder datums down (holds, W12); N8 drawn DN15, bore not calculated (plan W4)

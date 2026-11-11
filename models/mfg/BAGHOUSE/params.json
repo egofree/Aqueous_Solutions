@@ -85,7 +85,7 @@
   "machine": "pulse-jet dust baghouse: CS housing, tubesheet, 20-bag antistatic-polyester field, 60 deg dust hopper with rotary valve to IA-BAG-01, pulse-clean header and solenoid/diaphragm envelopes",
   "dust_kg_d": {
    "IA-MILL-LOSS": 6.82,
-   "IA-FAB-LOSS": 0.51,
+   "IA-FAB-LOSS": 0.0,
    "IA-WIRE-LOSS": 0.358
   },
   "hoods_m2": {

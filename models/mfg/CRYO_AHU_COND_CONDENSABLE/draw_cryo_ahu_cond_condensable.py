@@ -12,7 +12,7 @@ import json, pathlib, runpy, sys
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import sheets                                       # noqa: E402
+from lib import sheets, step_export  # noqa: E402
 
 ns = runpy.run_path(HERE / "cryo_ahu_cond_condensable.py")
 parts, R = ns["parts"], ns["report"]

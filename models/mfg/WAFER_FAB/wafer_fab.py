@@ -36,7 +36,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, materials, nozzles, step_export  # noqa: E402
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
 P = json.loads((HERE / "params.json").read_text())
@@ -137,7 +137,9 @@ for (face, z), rows in sorted(groups.items()):
     rows = sorted(rows, key=lambda r: (-od_of(r), r["tag"]))
     span = sum(od_of(r) + 8.0 for r in rows) - 8.0
     assert span <= L - 300.0, (face, z, span)
-    x = 150.0 - span / 2
+    # centred on the envelope with a 150 mm margin each end: the wafer-route rows grew the
+    # side groups past the old left-anchored pack (bbox overshoot, 2026-11-10)
+    x = L / 2.0 - span / 2.0
     for r in rows:
         w = od_of(r) / 2
         layout_x[r["tag"]] = round(x + w, 1)
@@ -183,7 +185,7 @@ asm = cq.Assembly(name=UNIT)
 for k, v in parts.items():
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / (UNIT.lower() + ".step")))
+step_export.export_step(asm, str(out / (UNIT.lower() + ".step")))
 
 solid = None
 for k, v in parts.items():

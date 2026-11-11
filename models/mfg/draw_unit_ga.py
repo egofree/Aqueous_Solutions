@@ -58,7 +58,11 @@ def sheet(u, sid, shape, pdir):
     if os.path.exists(svg) and 'aqs-title-block' in open(svg).read():
         try:   # stamped: geometry frozen, PDF pass only (AL_POT convention)
             import cairosvg
-            cairosvg.svg2pdf(url=svg, write_to=svg[:-4] + '.pdf')
+            import sys as _aqs_sys
+            import pathlib as _aqs_pl
+            _aqs_sys.path.insert(0, str(_aqs_pl.Path(__file__).resolve().parent.parent))   # models/mfg, for lib
+            from lib.pdf_write import write_pdf
+            write_pdf(svg, svg[:-4] + '.pdf')
         except Exception:
             pass
         return

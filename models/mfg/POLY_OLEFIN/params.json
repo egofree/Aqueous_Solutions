@@ -26,7 +26,7 @@
   "T_C": 250.0,
   "P_MPa": 5.0,
   "op_window": "150-250 C at 1-5 MPa (AQS-SIZE-OIL-POLY)",
-  "feed_kg_d": 0.29418,
+  "feed_kg_d": 0.305449,
   "heat_W": 0.0013,
   "material": "SA-240 316L, welded (ASME IX)",
   "machine": "vertical cylindrical oligomerization reactor: SA-240 316L vessel D 150 x H 225, wall 3.8 (UG-27 at 5 MPa), op window 150-250 C at 1-5 MPa (node design block, AQS-SIZE-OIL-POLY)",

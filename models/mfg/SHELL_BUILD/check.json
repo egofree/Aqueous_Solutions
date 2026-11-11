@@ -81,6 +81,21 @@
       "height_mm": 800.0,
       "schedule_rating": "Class 150",
       "service": "power terminal (SF-SHELL_BUILD, 480 V or 208/120 V AC (bus per AQS-ELEC-002))"
+    },
+    "N8": {
+      "style": "solids",
+      "face": "-X",
+      "part": "silica_inlets",
+      "y_mm": [
+        560.0,
+        680.0
+      ],
+      "drawn_height_mm": 160.0,
+      "note": "recovered-crib and spent-shell silica make-up chute flush at the -X face (y 560..680, z 130..190), in a study slot beside the reclaim chute; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "recovered crib and spent-shell silica, shell make-up"
     }
   },
   "booth_bbox_mm": [
@@ -103,7 +118,7 @@
     "green_shell_out",
     "silica_inlets"
   ],
-  "cap_solids": 8,
+  "cap_solids": 9,
   "all_parts_valid": true,
   "part_mass_kg": {
     "booth_frame": 613.4,
@@ -113,7 +128,7 @@
     "dip_deck": 87.9,
     "pattern_chute": 4.0,
     "green_shell_out": 3.8,
-    "silica_inlets": 4.5,
+    "silica_inlets": 6.8,
     "drain_well": 1.0,
     "vent_stub": 0.1
   },

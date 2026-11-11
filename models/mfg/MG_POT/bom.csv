@@ -12,7 +12,7 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 11,"Return dip leg DN15, inside the riser annulus, bottom z 250",1,carbon steel,0.9,make,WO row 5; brine-fog return seal leg
 12,N2/N6 Cl2 stubs DN15 at +Y z 600 (1.4813 kg/d: return and chlorinator feed),2,carbon steel (dry hot Cl2),0.1,make,"task-04 schedule N2/N6; A-M-280 Cl2 ruling (chlorinator feed, return net of drag-out)"
 12b,"N5 Mg-reductant tap group -X z 600, flush at the -X face (0.5078 kg/d Mg to the Kroll retort)",1,carbon (ram class),5.0,make,"task-04 schedule N5 (solids, bore not calculated); WO step 6 reductant draw"
-12c,N3/N4 inlets -Y z 160 flush at the -Y face: Kroll MgCl2 return stub + brine lance (1.9891 kg/d),2,"CS chute, carbon lance",6.6,make,task-04 schedule N3/N4; A-M-284 feedstock ruling
+12c,N3/N4/N10 inlets -Y z 160 flush at the -Y face: Kroll MgCl2 return stub + brine + concentrate lances (1.9891 kg/d),3,"CS chute, carbon lance",11.4,make,task-04 schedule N3/N4/N10; A-M-284 feedstock ruling; N10 class pending (task X-QA-11)
 13,"Mg-metal tap group: well DN80 OD 88.9 carbon + crest + discharge lip at +X z 600, flush at the +X face",1,carbon (ram class),5.0,make,"task-04 schedule N1 (solids, bore not calculated); WO step 6 trial-electrolysis tap"
 15,"N7 drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),0.2,make,task-04 schedule N7 bottom DN15 Class 150; frozen-salt drain pig per WO step 6
 16,"Thyristor rectifier + bath hold heaters, 1 kW connected, IP54 cabinet",1,purchase item,,buy,WO step 5/7; AQS-DUTY-072 section 4; A-M-282 class; mass per the purchase datasheet at order

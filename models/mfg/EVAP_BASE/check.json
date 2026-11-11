@@ -12,7 +12,7 @@
   ],
   "size_basis": "L x W x H mm: body plus interchanger and compressor frame, in-house design X-MFG-30 (AQS-DUTY-060)",
   "graph_revision": "AD",
-  "solids": 33,
+  "solids": 34,
   "all_parts_valid": true,
   "solids_note": "one compound of closed solids: plinth, falling-film body (shell, bottom plate, tubesheet pair, 20-tube nickel bundle), vapour separator with mesh pad, blower and interchanger envelopes, relief-valve envelopes and the nozzle stubs; every union partner overlaps volumetrically, so the mesh reads back closed and manifold",
   "a_hx": {
@@ -23,19 +23,19 @@
       1500.0
     ],
     "A_ff_m2_drawn": 2.356,
-    "A_ff_m2_booked": 2.33,
-    "duty_kW": 20.95,
+    "A_ff_m2_booked": 2.35,
+    "duty_kW": 21.19,
     "u_W_m2K": 1500.0,
     "dT_drive_K": 6.0,
     "basis": "A-HX: the falling-film area is reported drawn against booked; the node carries the 20.95 kW evap duty, so the booked area is the calculated figure (A = latent / (U 1500 x 6 K), AQS-DUTY-060 section 1) and the 20-tube bundle carries it at +1.1 % (the writer tube count is a ceil)"
   },
   "mvr": {
     "ratio": 1.616,
-    "comp_shaft_kW": 1.189,
+    "comp_shaft_kW": 1.202,
     "recirc_kg_h": 282.7,
     "pump_kW": 0.008,
     "ix_Q_kW": 3.67,
-    "ix_A_m2": 0.146,
+    "ix_A_m2": 0.143,
     "basis": "node design (X-MFG-30, AQS-DUTY-060): blower ratio 1.616 at 1.189 kW shaft, recirculation at the minimum wetting rate, interchanger 3.67 kW / 0.146 m2 with outlets 50.6 C"
   },
   "holdup_L": {
@@ -125,15 +125,25 @@
       "schedule_rating": "Class 150",
       "service": "power terminal (SF-EVAP_BASE, 480 V AC)",
       "note": "non-piped row carried verbatim (flake make-up drops in as solids / power terminal; no stub drawn)"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "inlet",
+      "height_mm": 160,
+      "drawn_height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "sodium hydroxide liquor to the base evaporator",
+      "note": "schedule datum drawn as issued; the takeoff lands on the shell (real connection), nickel tube, atmospheric open bore flush at the face (duty section 4: DN by the line list at the next line-list run)"
     }
   },
-  "nozzle_count_schedule": 8,
+  "nozzle_count_schedule": 9,
   "part_mass_kg": {
     "nickel_wetted": 276.6,
     "separator_mesh": 2.2,
     "frame": 117.8,
     "purchased_envelopes": 997.9,
-    "nozzles_relief": 2.4
+    "nozzles_relief": 3.0
   },
   "cadquery": "2.8.0"
 }

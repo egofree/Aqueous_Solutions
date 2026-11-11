@@ -12,7 +12,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE))                 # models/mfg: lib
-from lib import graph_node  # noqa: E402
+from lib import graph_node, step_export  # noqa: E402
 RHO = {'HDPE': 950.0, 'PP': 905.0, 'EPDM': 1150.0, 'steel': 7850.0, 'HDG_steel': 7850.0,
        'SS304': 8000.0, 'SS316': 8000.0, 'aluminium': 2700.0, 'pine': 500.0, 'FRP': 1800.0,
        'LECA': 450.0, 'acrylic': 1180.0}
@@ -152,7 +152,7 @@ def build(unit):
     out = H / 'export'
     out.mkdir(exist_ok=True)
     lp = unit.lower()
-    cq.exporters.export(body, str(out / f'{lp}.step'))
+    step_export.export_step(body, str(out / f'{lp}.step'))
     body.val().exportStl(str(out / f'{lp}.stl'), 0.3, 0.3, True)
 
     # masses: wall volume x the sec3 class density

@@ -2,6 +2,9 @@
 flow_graph/param/evap_design.py) and writes models/mfg/<UNIT>/export/<unit>.step and .stl, bom.csv, fasteners.csv.
 Run: $CADQUERY_PYTHON models/mfg/evap_mvr.py EVAP_ACID"""
 import json, math, os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # models/mfg, for the shared lib
+from lib import step_export  # noqa: E402
+
 import cadquery as cq
 U = sys.argv[1]; acid = U == 'EVAP_ACID'
 g = json.load(open('flow_graph/plant_flow_graph.json')); p = next(n for n in g['nodes'] if n['unit_id'] == U)['params']; d = p['design']
@@ -37,7 +40,7 @@ if col:   # free-standing glass column beside the body, on the same frame (AQS-D
     duct = cq.Workplane('YZ').circle(40).extrude(abs(xc) - D/2 + 10).translate((xc + Dc/2 - 10, 0, sump + L + head + 400))
     model = model.union(column).union(duct)
 out = f'models/mfg/{U}/export'; os.makedirs(out, exist_ok=True)
-cq.exporters.export(model, f'{out}/{U.lower()}.step'); cq.exporters.export(model, f'{out}/{U.lower()}.stl')
+step_export.export_step(model, f'{out}/{U.lower()}.step'); cq.exporters.export(model, f'{out}/{U.lower()}.stl')
 mat_t = 'impregnated graphite (PERRY9_MAT)' if acid else 'nickel 200 (PERRY9_MAT)'
 mat_s = 'carbon steel, PTFE-lined process side' if acid else 'nickel 200'
 rows = [('1', f'Shell DN{int(D)} x {int(sump+L+head)} mm, wall {t_sh} mm', 1, mat_s, 'AQS-DUTY-060 section 2'),

@@ -7,9 +7,9 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 6,Mg charge hopper cone on the retort,1,carbon steel,8.9,make,0.5078 kg/d Mg reductant per campaign (AQS-BAL-KROLL)
 7,"Interconnects: chlorinator->condenser and condenser->retort, OD 24 t 2",2,carbon steel (dry hot Cl2/TiCl4),0.6,make,WO step 4; slope per the isometric
 8,MgCl2 drag-out trough 640 x 110 x 90,1,carbon steel,15.7,make,salt drag-out to the flux-cover source (task-04 schedule N7)
-9,N2/N10/N11 charge chutes -X z 160 (0.8342 kg/d TiO2-class + 0.2509 kg/d carbon + grit),3,"CS chute, refractory throat",6.4,make,task-04 schedule N2/N10/N11; A-M-284 feedstock ruling
+9,N2/N10/N11/N18 charge chutes -X z 160 (0.8342 kg/d TiO2-class + 0.2509 kg/d carbon + grit),4,"CS chute, refractory throat",8.5,make,task-04 schedule N2/N10/N11/N18; A-M-284 feedstock ruling
 10,N3/N9 chlorine DN15 stubs -Y z 600 (1.4813 kg/d loop with MG_POT),2,carbon steel (dry hot Cl2),0.1,make,task-04 schedule N3/N9; A-M-280 ruling
-11,"N12 CO export DN15 +Y z 600 (0.5852 kg/d, fuel-gas class)",1,carbon steel,0.1,make,task-04 schedule N12
+11,"N12 CO export DN15 +Y z 600 (0.5852 kg/d, fuel-gas class)",1,carbon steel,0.2,make,task-04 schedule N12
 12,N1 slag tap spout +Y z 600,1,carbon (refractory class),1.1,make,"task-04 schedule N1 (solids, bore not calculated)"
 13,N4/N5 harvest ports +X z 600 (Ti sponge/powder to vacuum melt),2,carbon steel,2.5,make,task-04 schedule N4/N5; harvest at the campaign end
 14,N6/N7 MgCl2 DN15 stubs +Y z 600 (return to MG_POT; drag-out to flux),2,carbon steel,0.1,make,task-04 schedule N6/N7; 1.9891 kg/d gross loop

@@ -44,6 +44,38 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N3",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "calcium hydroxide",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N4",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "cake-kiln lime residue to the slaker",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N5",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "well water to slake the lime",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N6",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "slaker grit (anhydrite, fluorspar and inerts of the kiln residue)",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside the wetted headspace",

@@ -6,5 +6,5 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 5,Drip deck over the slurry tank,1,carbon steel,87.9,make (AQS-BOM-SC-001),WORK_ORDER W10 route
 6,"N1 pattern chute -X z 160, flush at the face (from WAX_PATTERN N1)",1,carbon steel,4.0,make (AQS-BOM-SC-001),task-04 schedule N1
 7,"N2 green-shell out +X z 600, flush at the face (to SHELL_BURNOUT N1)",1,carbon steel,3.8,make (AQS-BOM-SC-001),task-04 schedule N2
-8,"N3/N4 silica make-up + reclaim inlets -X z 160, flush at the face",2,carbon steel,4.5,make (AQS-BOM-SC-001),task-04 schedule N3/N4
+8,"N3/N4/N8 silica make-up + reclaim inlets -X z 160, flush at the face",3,carbon steel,6.8,make (AQS-BOM-SC-001),task-04 schedule N3/N4
 9,N5 drain well + N6 vent stub,2,carbon steel,1.1,make (AQS-BOM-SC-001),task-04 schedule N5/N6

@@ -132,6 +132,14 @@
    "service": "power terminal (SF-MG_POT, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N10",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "CaCl2-MgCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "Graphite anodes, steel cathode plates, mullite-class alumina-silica refractory cell lining in a mild-steel shell; skim launder kept graphite-wetted",

@@ -37,7 +37,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, graph_node, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles, step_export  # noqa: E402
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
 GN = graph_node.graph_node("P_CA")        # the plant graph is the sole authority
@@ -108,9 +108,40 @@ def tube(dnl, length):
 
 
 schedule = [r for r in P["nozzles"]]
+# side rows (the caustic-route connections): x spread off the agitator shaft, risers from
+# the plinth with a branch flush at the envelope face (the WS_SOLV tray-riser idiom);
+# solids rows draw DN15-class with the bore not calculated (AQS-PLAN-006 W4)
+_y_face = {"inlet": "-Y", "outlet": "+Y"}
+_side_x = {}
+_x = CX - 60.0
+for r in schedule:
+    if r["face"] in _y_face:
+        _side_x[r["tag"]] = round(_x, 1)
+        _x += 50.0
+        if _x > CX + 70.0:
+            _x = CX - 60.0
 noz_pieces, drawn = [], {}
 for r in schedule:
     tag, dnl, face0 = r["tag"], r["size"], r["face"]
+    if face0 in _y_face:
+        face = _y_face[face0]
+        dnl_d = dnl if str(dnl).startswith("DN") else "DN15"   # solids row drawn DN15 class
+        od = dn.pipe_od(dnl_d)
+        z_d = min(float(r["height_mm"]), H - od / 2 - 5.0)
+        x_d = _side_x[tag]
+        y_r = 40.0 if face == "-Y" else W - 40.0
+        riser = tube(dnl_d, z_d - T_PLINTH + 4.0).translate((x_d, y_r, T_PLINTH - 2.0))
+        branch = nozzles.place_on_face(tube(dnl_d, 42.0), face, z_d, (x_d, W / 2), (L, W, H))
+        s = riser.union(branch)
+        note = ("schedule datum drawn at the face; DN15-class open-bore tube on a plinth "
+                "riser" + ("" if str(dnl).startswith("DN") else
+                           "; solids row, bore not calculated (AQS-PLAN-006 W4)") +
+                "; rated edge of the on-site caustic route (flow_graph/param/caustic.py, A-M-475)")
+        noz_pieces.append(s)
+        drawn[tag] = {"style": "tube", "dn": dnl, "face": face0, "height_mm": r["height_mm"],
+                      "drawn_height_mm": round(z_d, 1), "x_mm": x_d,
+                      "schedule_rating": r["rating"], "service": r["service"], "note": note}
+        continue
     od = dn.pipe_od(dnl)
     if face0 == "bottom":                      # N1 drain: open bore through plinth + base head
         s = tube(dnl, 50.0).translate((CX + 80.0, CY, 0.0))
@@ -136,7 +167,7 @@ asm = cq.Assembly(name=UNIT)
 for k, v in parts.items():
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / (UNIT.lower() + ".step")))
+step_export.export_step(asm, str(out / (UNIT.lower() + ".step")))
 
 solid = None
 for k, v in parts.items():

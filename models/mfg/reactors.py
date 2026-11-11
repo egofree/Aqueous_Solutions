@@ -1,7 +1,10 @@
 """X-MFG-31 parametric in-house reaction chambers (CadQuery): GLASS_DIGEST, DIGESTER, OIL_PYRO. Reads params.design on the graph
 (written by flow_graph/param/reactor_design.py) and writes models/mfg/<UNIT>/export/<unit>.step and .stl, bom.csv, fasteners.csv and
 WORK_ORDER.md. Run: $CADQUERY_PYTHON models/mfg/reactors.py"""
-import json, os
+import json, os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # models/mfg, for the shared lib
+from lib import step_export  # noqa: E402
+
 import cadquery as cq
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}
 SPEC = {'GLASS_DIGEST': dict(mat='CPVC sheet, rolled and extrusion-welded (DVS 2207-3)', noz=('feed slurry in', 'NaOH in', 'liquor out', 'drain', 'vent'), coil=True, agit=True, legs=4),
@@ -36,7 +39,7 @@ for U, s in SPEC.items():
     if U == 'OIL_PYRO':
         m = m.union(cq.Workplane('XY').workplane(offset=t).circle(D/2 + 60).circle(D/2).extrude(H - t))   # heater band and insulation envelope
     o = f'models/mfg/{U}/export'; os.makedirs(o, exist_ok=True)
-    cq.exporters.export(m, f'{o}/{U.lower()}.step'); cq.exporters.export(m, f'{o}/{U.lower()}.stl')
+    step_export.export_step(m, f'{o}/{U.lower()}.step'); cq.exporters.export(m, f'{o}/{U.lower()}.stl')
     rows = [('1', f'Shell DN{D} x {H} mm x {t} mm wall with flat bottom', 1, s['mat'], 'AQS-DUTY-062 section 1'),
             ('2', f'Bolted flat lid with gasket', 1, s['mat'], 'AQS-DUTY-062'),
             ('3', 'Nozzles DN25: ' + '; '.join(s['noz']), len(s['noz']), s['mat'], 'AQS-DUTY-062'),
@@ -78,7 +81,7 @@ jk = cq.Workplane('XY').workplane(offset=150).circle(114.3/2).circle(114.3/2 - 6
 m = tube.union(fl(-32)).union(fl(L)).union(jk)
 for z in (250, L - 250): m = m.union(cq.Workplane('YZ').circle(16.7).extrude(60).translate((114.3/2 - 5, 0, z)))
 o = f'models/mfg/{U}/export'; os.makedirs(o, exist_ok=True)
-cq.exporters.export(m, f'{o}/{U.lower()}.step'); cq.exporters.export(m, f'{o}/{U.lower()}.stl')
+step_export.export_step(m, f'{o}/{U.lower()}.step'); cq.exporters.export(m, f'{o}/{U.lower()}.stl')
 rows = [('1', f"Reactor tube {d['tube']}, {L} mm, {d['tubes']} off", d['tubes'], 'SA-106 B', 'AQS-DUTY-062 section 4; UG-27'),
         ('2', 'Weld-neck flange DN50 Class 600 RF', 2*d['tubes'], 'SA-105', 'ASME B16.5'), ('3', 'Blind flange DN50 Class 600 with DN15 nozzle', 2*d['tubes'], 'SA-105', 'ASME B16.5'),
         ('4', 'Spiral-wound gasket DN50 Class 600, 316/graphite', 2*d['tubes'], '316L / flexible graphite', 'ASME B16.20'),

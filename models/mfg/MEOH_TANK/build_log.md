@@ -12,7 +12,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/MEO
 
 - Build bbox 600 x 600 x 600 mm against the 600 x 600 x 600 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/MEOH_TANK/export/meoh_tank.step`; export STL closed and manifold, 1 solid(s); `cad/stl/MEOH_TANK.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 13 rows of `docs-authority/nozzles/MEOH_TANK.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- Nozzles: all 15 rows of `docs-authority/nozzles/MEOH_TANK.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
 - A-VES: the 0.1028 m3 liquor volume is reported - the duty working volume (0.0421 m3, 7 days) stays the booked basis and no residence time is derived
 - Duty sheet shell line 800 x 800 x 1100 vs node AQS-DUTY-064 box: the node governs, the sheet line is a named hold (W12)
 - BOM `models/mfg/MEOH_TANK/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it

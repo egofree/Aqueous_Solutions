@@ -24,15 +24,15 @@
   "flow_kg_s": 0.0,
   "duty_kW": null,
   "rho_kg_m3": 0.084,
-  "Q_m3_s": 0.0001,
+  "Q_m3_s": 0.0002,
   "v_m_s": 8.0,
-  "id_req_mm": 4.7,
+  "id_req_mm": 5.0,
   "DN": 25,
   "length_m": 20,
   "volume_m3": 0.0045,
   "material": "PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06)",
   "hold_kg": 0.0,
-  "connections": 15,
+  "connections": 18,
   "dn_label": "DN25",
   "wall_mm": 3.38,
   "wall_basis": "lib/dn Sch 40 table; schedule not stated on the node; P1 class sheet carries Sch 80 at order (WORK_ORDER W12)"
@@ -173,6 +173,30 @@
    "service": "ZNBR2 HER hydrogen stripped with the purge air to the H2 header",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N18",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "chlor-alkali cathode hydrogen to the H2 header",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N19",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "header hydrogen for the acetic acid hydrogenation",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N20",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "header hydrogen for the nitroso reduction",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "PVC-U header: wet H\u2082 with sweep air and possible acid mist (M3). Ignition, not embrittlement, governs; the dilution basis is held. Metal parts bonded. AQS-REV-H2-001.",

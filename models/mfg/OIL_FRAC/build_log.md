@@ -1,6 +1,6 @@
 # Build log - OIL_FRAC
 
-Date: 2026-11-02. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-COL; MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-COL; MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/OIL_FRAC.md`; envelope per `models/mfg/OIL_FRAC/params.json`).
 
 ## Tool versions
@@ -11,8 +11,8 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/OIL
 ## Checks
 
 - Build bbox 1000 x 600 x 800 mm against the 1000 x 600 x 800 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
-- Solid source: build export `models/mfg/OIL_FRAC/export/oil_frac.step`; export STL closed and manifold, 13 solid(s); `cad/stl/OIL_FRAC.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 14 rows of `docs-authority/nozzles/OIL_FRAC.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- Solid source: build export `models/mfg/OIL_FRAC/export/oil_frac.step`; export STL closed and manifold, 14 solid(s); `cad/stl/OIL_FRAC.stl` replaced from the build (ASCII, metres)
+- Nozzles: all 16 rows of `docs-authority/nozzles/OIL_FRAC.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
 - M2 close-out per the HX8 close pattern: the style-builders column study verified through the current shared lib (unit-dir builder, 14-row issued schedule, tracker W2, section 5 artifacts completed); the stale envelope-era drawing set and GA.md superseded
 - A-COL: no packing, distributor or demister is named on the node, so none is drawn (internals none); stages and HTU are not stated anywhere and stay a named hold (W12); the cut split rides the node cut_basis fractions (A-M-138, SU2018_PYRO) - a flowsheet allocation, not tray design
 - Sump report: the duty section 2 sump 0.0006 m3 (30 min) stands 3.5 mm deep in the modeled bore - the sump zone is the bottom head; reported, nothing resized (plan rule 3)

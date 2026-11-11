@@ -38,7 +38,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import fasteners, graph_node, materials                      # noqa: E402
+from lib import dn, fasteners, graph_node, materials, step_export  # noqa: E402
 from tracker import stl_bbox_mm                           # noqa: E402  (gate-consistent STL reader)
 
 GN = graph_node.graph_node("SI_REDUCE")        # the plant graph is the sole authority
@@ -121,12 +121,70 @@ parts["hopper"] = hop
 parts["heater_band"] = box(CX - HEAT_SIDE / 2, CY - HEAT_SIDE / 2, T_PLINTH,
                            HEAT_SIDE, HEAT_SIDE, HEAT_Z1 - T_PLINTH)
 
+# ---------------------------------------------------------------- nozzles (schedule verbatim)
+# The silicon route rated the furnace connections (flow_graph/param/si_refine.py, A-M-472):
+# solids rows draw as open chutes through the casing wall (bore not calculated, plan W4),
+# gas rows as DN15 open-bore tubes, the drain as a plinth boss and the vent as a lid riser.
+DN15_OD = dn.pipe_od("DN15")
+schedule = [r for r in P["nozzles"]]
+_in_x = [CX - 110.0, CX, CX + 110.0]        # -Y z-160 row spread (N1 N2 N3)
+_out_x = [CX - 120.0, CX, CX + 120.0]       # +Y z-600 row spread (N4 N5 N6)
+noz_pieces, drawn = [], {}
+_i = _o = 0
+for r in schedule:
+    tag, dnl, face0, h = r["tag"], r["size"], r["face"], float(r["height_mm"])
+    if dnl == "cable":
+        drawn[tag] = {"style": "carried", "dn": dnl, "face": face0, "height_mm": h,
+                      "schedule_rating": r["rating"], "service": r["service"],
+                      "note": "power terminal (SF-SI_REDUCE bus) - a cable-schedule row: "
+                              "carried verbatim, never drawn"}
+        continue
+    if face0 == "bottom":                     # N7 drain: boss through the plinth, 0.5 proud
+        s = (cq.Workplane("XY", origin=(CX, CY, -0.5)).circle(DN15_OD / 2)
+             .circle(DN15_OD / 2 - dn.pipe_wall("DN15", 40)).extrude(T_PLINTH + 26.0))
+        z_d, note = -0.5, "drain boss through the plinth and base head, tip at the 50 datum"
+    elif face0 == "top":                      # N8 vent: riser on the lid beside the hopper
+        s = (cq.Workplane("XY", origin=(CX - 260.0, CY, CAS_Z1 + LID_T))
+             .circle(DN15_OD / 2).circle(DN15_OD / 2 - dn.pipe_wall("DN15", 40)).extrude(120.0))
+        z_d, note = CAS_Z1 + LID_T + 120.0, ("vent riser on the lid plate beside the charge "
+                                             "hopper; the schedule datum 800 predates the "
+                                             "retort lid (hold, W12)")
+    elif face0 == "inlet":                    # -Y z 160: char and quartz chutes, hood-air tube
+        x = _in_x[_i % len(_in_x)]; _i += 1
+        if dnl == "solids":
+            s = box(x - 40.0, 0.0, h - 60.0, 80.0, CY - R_CAS_I + 15.0, 120.0)
+            note = ("open charge chute through the -Y wall into the retort bore; solids row, "
+                    "bore not calculated (AQS-PLAN-006 W4)")
+        else:
+            s = (cq.Workplane("XY").circle(DN15_OD / 2)
+                 .circle(DN15_OD / 2 - dn.pipe_wall("DN15", 40)).extrude(CY - R_CAS_I + 15.0)
+                 .rotate((0, 0, 0), (1, 0, 0), -90).translate((x, 0.0, h)))
+            note = "hood-air DN15 open-bore tube flush at the -Y face, into the hood zone"
+        z_d = h
+    else:                                     # +Y z 600: CO2 tube, fume and metal spouts
+        x = _out_x[_o % len(_out_x)]; _o += 1
+        if dnl == "solids":
+            s = box(x - 40.0, CY + R_CAS_I - 15.0, h - 60.0, 80.0, W - (CY + R_CAS_I - 15.0), 120.0)
+            note = ("open discharge spout flush at the +Y face; solids row, bore not "
+                    "calculated (AQS-PLAN-006 W4)")
+        else:
+            s = (cq.Workplane("XY").circle(DN15_OD / 2)
+                 .circle(DN15_OD / 2 - dn.pipe_wall("DN15", 40)).extrude(W - (CY + R_CAS_I - 15.0))
+                 .rotate((0, 0, 0), (1, 0, 0), 90).translate((x, CY + R_CAS_I - 15.0, h)))
+            note = ("burned-furnace-gas DN15 open-bore tube flush at the +Y face (hood CO2)")
+        z_d = h
+    noz_pieces.append(s)
+    drawn[tag] = {"style": "chute" if dnl == "solids" else "tube", "dn": dnl, "face": face0,
+                  "height_mm": h, "drawn_height_mm": round(z_d, 1),
+                  "schedule_rating": r["rating"], "service": r["service"], "note": note}
+parts["nozzles"] = cq.Workplane(obj=cq.Compound.makeCompound([p.val() for p in noz_pieces]))
+
 # ---------------------------------------------------------------- exports
 asm = cq.Assembly(name=UNIT)
 for k, v in parts.items():
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / (UNIT.lower() + ".step")))
+step_export.export_step(asm, str(out / (UNIT.lower() + ".step")))
 
 solid = None
 for k, v in parts.items():
@@ -141,7 +199,7 @@ solid.scale(0.001).exportStl(str(HERE.parents[2] / "cad" / "stl" / (UNIT + ".stl
 dims = stl_bbox_mm(str(out / (UNIT.lower() + ".stl")))
 inside = all(d <= s + 1.0 for d, s in zip(dims, [L, W, H]))
 RHO_OF = {"plinth": RHO_CS, "casing": RHO_CS, "heater_band": RHO_CS,
-          "brick_backup": RHO_BRICK, "hot_face": RHO_FACE, "bore": RHO_FACE}
+          "brick_backup": RHO_BRICK, "hot_face": RHO_FACE, "bore": RHO_FACE, "nozzles": RHO_CS}
 mass = {k: round(v.val().Volume() * RHO_OF.get(k, RHO_CS) / 1e9, 2) for k, v in parts.items()}
 report = {
     "bbox_mm": dims, "inside_size_mm": inside, "size_mm": [L, W, H],
@@ -183,7 +241,7 @@ report = {
         "ca_basis": "duty section 3: the hot face stays dry (M7); dry, "
                     "non-hydrocarbon furnace service - CA 0 mm (AQS-STD-001)",
     },
-    "nozzles_drawn": {},
+    "nozzles_drawn": drawn,
     "nozzle_count_schedule": 0,
     "nozzle_idiom": "no nozzles: the duty section 4 states no piped process "
                     "connection on the graph and no nozzle schedule is issued yet; "

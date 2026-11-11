@@ -1,7 +1,7 @@
 item,description,qty,material,basis
 1,"Kiln tube D200 x 1192 mm, 8 mm wall, 2 deg slope, 4 rpm",1,"carbon steel shell, dry HF service (PERRY9_MAT); Monel trunnion inserts","AQS-DUTY-073 fluoro train; indirectly heated rotary kiln, fluorspar + H2SO4 -> HF"
 2,"Indirect furnace chamber 700 x 420 x 340 mm, 250 C",1,"CS casing, ceramic fibre",AQS-DUTY-073 fluoro train; residence 30 min
-3,Spar feed hopper D140 with chute and rotary valve,1,"CS, Monel trim",spar 0.326 kg/d + F_RECOVER concentrate (dock acid-spar 97 % CaF2 + 98 wt% H2SO4 + F_RECOVER concentrate)
+3,Spar feed hopper D140 with chute and rotary valve,1,"CS, Monel trim",spar 0.326 kg/d + F_RECOVER concentrate (dock acid-spar 97 % CaF2 + 98 wt% H2SO4 from ACID_PLANT + F_RECOVER concentrate)
 4,Acid day tank D160 x 300 mm with metering pump,1,"SS 316L, PTFE pump head",acid 0.404 kg/d (98 wt% H2SO4)
 5,Discharge hood with cake chute and bin,1,"CS, Monel-lined",cake 0.576 kg/d
 6,Kiln gas offtake DN110 to the dissolution/absorption tank,1,"CS, PTFE-lined",HF 1.674 kg/d product gas

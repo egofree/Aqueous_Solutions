@@ -89,6 +89,62 @@
    "service": "power terminal (SF-OIL_PYRO, 480 V AC)",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N8",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "plant pyrolysis char reductant for the cake kiln",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N9",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "purged grease to the pyrolysis feed",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N10",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "pyrolysis char reductant",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N11",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "plant pyrolysis char reductant for the alumina chlorination",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N12",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "plant pyrolysis char reductant",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N13",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "plant pyrolysis char reductant",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N14",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "plant pyrolysis char reductant",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "Carbon steel. Hydrocarbon. No aqueous chloride in this vessel. Corrosion allowance 1.5 mm. Pit rate is not measured.",

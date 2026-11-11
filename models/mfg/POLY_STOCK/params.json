@@ -20,8 +20,8 @@
  "internals": "none",
  "design": {
   "bin": "pellet tote bin",
-  "issue_kg_d": 0.267436,
-  "to_wet_kg_d": 0.026744,
+  "issue_kg_d": 0.277681,
+  "to_wet_kg_d": 0.027768,
   "hold_d": 1.0
  },
  "nozzles": [
@@ -104,6 +104,14 @@
    "service": "PP pellet draw to the melt-spin line",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N11",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "formulated positive photoresist to stock",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "HDPE tote bins and PP powder drums; steel rack; no wetted streams",

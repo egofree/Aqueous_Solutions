@@ -6,4 +6,4 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 5,Mask holder 200 x 200 x 8,1,aluminium 6061,0.86,make (AQS-BOM-SC-001),"layout choice around the 100 mm field (hold, W12)"
 6,"Mask 160 x 160 x 3 (chrome on glass, 100 um pattern)",1,"glass, chrome coating (AQS-LITH-001 section 2)",0.17,make (AQS-BOM-SC-001),pattern cut on the mill per AQS-LITH-001 section 2; the coating is not drawn
 7,"365 nm LED array head envelope (1 W optical, node design source)",1,purchased unit (envelope),2.33,buy,"purchased per plan rule 6, rating from the node design block (365 nm LED array, 1 W optical; 10 mW/cm2 x 20 s = 200 mJ/cm2)"
-8,Nozzle set per docs-authority/nozzles/LITHO_ALIGN.csv: drain and vent flush at the envelope faces,3,aluminium 6061,0.03,make (AQS-BOM-SC-001),"envelope hardware schedule verbatim; the cable schedule row is carried, never drawn; duty section 4: no present process edge"
+8,Nozzle set per docs-authority/nozzles/LITHO_ALIGN.csv: drain and vent flush at the envelope faces,5,aluminium 6061,0.08,make (AQS-BOM-SC-001),"envelope hardware schedule verbatim; the cable schedule row is carried, never drawn; duty section 4: no present process edge"

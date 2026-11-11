@@ -59,41 +59,41 @@
       "style": "stub",
       "dn": "DN15",
       "face": "+Y",
-      "height_mm": 1500.0,
+      "height_mm": 380.0,
       "x_mm": 2148.0,
-      "z_drawn_mm": 150.0,
+      "z_drawn_mm": 380.0,
       "schedule_rating": "Class 150",
-      "note": "schedule datum 1500 mm was issued against the 300 x 300 x 2000 study box that predates the A-M-167 rack envelope (H 450); drawn clamped at 150 mm - named hold, WORK_ORDER W12"
+      "note": "atmospheric stub on the rack side rail (hose makeup at the rack face)"
     },
     "N5": {
       "style": "stub",
       "dn": "DN15",
       "face": "+Y",
-      "height_mm": 1500.0,
+      "height_mm": 380.0,
       "x_mm": 2948.0,
-      "z_drawn_mm": 150.0,
+      "z_drawn_mm": 380.0,
       "schedule_rating": "Class 150",
-      "note": "schedule datum 1500 mm was issued against the 300 x 300 x 2000 study box that predates the A-M-167 rack envelope (H 450); drawn clamped at 150 mm - named hold, WORK_ORDER W12"
+      "note": "atmospheric stub on the rack side rail (hose makeup at the rack face)"
     },
     "N6": {
       "style": "stub",
       "dn": "DN15",
       "face": "+Y",
-      "height_mm": 1500.0,
+      "height_mm": 380.0,
       "x_mm": 3748.0,
-      "z_drawn_mm": 150.0,
+      "z_drawn_mm": 380.0,
       "schedule_rating": "Class 150",
-      "note": "schedule datum 1500 mm was issued against the 300 x 300 x 2000 study box that predates the A-M-167 rack envelope (H 450); drawn clamped at 150 mm - named hold, WORK_ORDER W12"
+      "note": "atmospheric stub on the rack side rail (hose makeup at the rack face)"
     },
     "N7": {
       "style": "stub",
       "dn": "DN25",
       "face": "+Y",
-      "height_mm": 1500.0,
+      "height_mm": 380.0,
       "x_mm": 4548.0,
-      "z_drawn_mm": 150.0,
+      "z_drawn_mm": 380.0,
       "schedule_rating": "Class 150",
-      "note": "schedule datum 1500 mm was issued against the 300 x 300 x 2000 study box that predates the A-M-167 rack envelope (H 450); drawn clamped at 150 mm - named hold, WORK_ORDER W12"
+      "note": "atmospheric stub on the rack side rail (hose makeup at the rack face)"
     },
     "N10": {
       "style": "stub",
@@ -149,11 +149,11 @@
       "style": "stub",
       "dn": "DN15",
       "face": "top",
-      "height_mm": 2000.0,
+      "height_mm": 450.0,
       "x_mm": 3348.0,
       "z_drawn_mm": 450.0,
       "schedule_rating": "Class 150",
-      "note": "schedule datum 2000 mm was issued against the 300 x 300 x 2000 study box that predates the A-M-167 rack envelope (H 450); drawn clamped at 450 mm - named hold, WORK_ORDER W12; vent up the tie bar to the rack top"
+      "note": "schedule datum 450 mm was issued against the 300 x 300 x 2000 study box that predates the A-M-167 rack envelope (H 450); drawn clamped at 450 mm - named hold, WORK_ORDER W12; vent up the tie bar to the rack top"
     }
   },
   "nozzle_count_schedule": 10,

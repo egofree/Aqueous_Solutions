@@ -75,6 +75,87 @@
       "height_mm": 800.0,
       "schedule_rating": "Class 150",
       "service": "power terminal (SF-AL_POT, 480 V or 208/120 V AC (bus per AQS-ELEC-002))"
+    },
+    "N8": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "DN15_stubs",
+      "x_mm": 540.0,
+      "drawn_height_mm": 600.0,
+      "note": "phosgenation chlorine DN15 stub flush at the +Y face, with its ceramic lining sleeve (IA-RESIST-CL2 of the on-site resist route, A-M-482)",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "pot chlorine for the phosgenation"
+    },
+    "N9": {
+      "style": "stub",
+      "face": "-Y",
+      "part": "DN15_stubs",
+      "x_mm": 260.0,
+      "drawn_height_mm": 600.0,
+      "note": "chlorosilane-loop chlorine make-up DN15 stub flush at the -Y face, with its ceramic lining sleeve (IA-CL2-SIREF of the on-site silicon route, A-M-472)",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "chlorine make-up of the chlorosilane loop"
+    },
+    "N10": {
+      "style": "solids",
+      "face": "-X",
+      "part": "solids_feed_chutes",
+      "drawn_height_mm": 160.0,
+      "note": "anhydrous AlCl3 top-up feed: chute envelope flush at the -X face about the 160 datum, in a study slot beside the primary feed chute; solids row, bore not calculated; class pending (task X-QA-19)",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "anhydrous AlCl3 top-up feed (process-chemical import, pending class, task X-QA-19)"
+    },
+    "N11": {
+      "style": "solids",
+      "face": "-X",
+      "part": "solids_feed_chutes",
+      "drawn_height_mm": 160.0,
+      "note": "recovered reactive-Al hydroxide cake return to the aluminium line: chute envelope flush at the -X face about the 160 datum, study slot; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "recovered reactive-Al hydroxide cake to the aluminium line"
+    },
+    "N12": {
+      "style": "solids",
+      "face": "-X",
+      "part": "solids_feed_chutes",
+      "drawn_height_mm": 160.0,
+      "note": "plant pyrolysis char reductant for the alumina chlorination: chute envelope flush at the -X face about the 160 datum, study slot; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "plant pyrolysis char reductant for the alumina chlorination"
+    },
+    "N13": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "DN15_stubs",
+      "x_mm": 470.0,
+      "drawn_height_mm": 600.0,
+      "note": "chlorinator CO export DN15 stub flush at the +Y face, with its ceramic lining sleeve",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "chlorinator CO (fuel-gas class export)"
+    },
+    "N14": {
+      "style": "stub",
+      "face": "-Y",
+      "part": "DN15_stubs",
+      "x_mm": 330.0,
+      "drawn_height_mm": 600.0,
+      "note": "calcination steam of the hydroxide cake DN15 stub flush at the -Y face, with its ceramic lining sleeve",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "calcination steam of the hydroxide cake"
     }
   },
   "shell_bbox_mm": [
@@ -124,8 +205,9 @@
     "vent_stub": 0.1,
     "metal_siphon": 5.5,
     "feed_chute_group": 8.2,
-    "DN15_stubs": 0.1,
-    "ceramic_sleeves": 0.1,
+    "DN15_stubs": 0.3,
+    "ceramic_sleeves": 0.4,
+    "solids_feed_chutes": 16.9,
     "drain_well": 0.2
   },
   "cadquery": "2.8.0"

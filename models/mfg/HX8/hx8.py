@@ -34,7 +34,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, graph_node, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles, step_export  # noqa: E402
 
 GN = graph_node.graph_node("HX8")        # the plant graph is the sole authority
 P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
@@ -174,7 +174,7 @@ asm = cq.Assembly(name="HX8")
 for k, v in parts.items():
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "hx8.step"))
+step_export.export_step(asm, str(out / "hx8.step"))
 
 solid = None
 for k, v in parts.items():

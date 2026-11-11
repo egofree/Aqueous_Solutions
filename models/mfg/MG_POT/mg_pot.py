@@ -11,10 +11,12 @@ backup + CS shell below the liner. Connection hardware draws flush at the
 envelope faces: nothing protrudes (A-core 2). No measured rate is claimed
 anywhere.
 """
-import csv, json, math, pathlib
+import csv, json, math, pathlib, sys
 import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
+sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
+from lib import step_export  # noqa: E402
 P = json.loads((HERE / "params.json").read_text())
 A = P["assumptions"]
 AN = P["anode"]; CA = P["cathode"]; BUS = P["busbar"]
@@ -153,7 +155,9 @@ parts["reductant_tap_group"] = tap_run(130, 0.0, 115, wr)        # N5 -X: Mg red
 ret_chute = box(238, 0.0, 130, 36, 70, 90)               # N3 MgCl2 return launder, flush at the -Y face
 br_chute = box(526, 0.0, 130, 36, 70, 90)                # N4 brine launder, flush at the -Y face
 lance = tube(22.0, 11.0, (544.0, 20.0, 160.0), "Y", 380)  # brine lance from inside the launder into the bath
-parts["inlet_groups"] = ret_chute.union(br_chute).union(lance)
+br2_chute = box(130, 0.0, 130, 36, 70, 90)               # N10 brine concentrate launder, study slot, flush at the -Y face
+lance2 = tube(22.0, 11.0, (148.0, 20.0, 160.0), "Y", 380)  # concentrate lance from inside the launder into the bath
+parts["inlet_groups"] = ret_chute.union(br_chute).union(lance).union(br2_chute).union(lance2)
 
 # ---------------- N4 drain well ---------------------------------------------------
 parts["drain_well"] = tube(30.5, dl, (256, 160, 0), "Z", 50)   # bore matches the casing pass: fuses
@@ -180,7 +184,7 @@ asm = cq.Assembly(name="MG_POT")
 for k, v in list(parts.items()) + list(inv.items()):
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "mg_pot.step"))
+step_export.export_step(asm, str(out / "mg_pot.step"))
 
 body = None
 for k, v in parts.items():
@@ -256,6 +260,11 @@ PLACE = {
     "N9": {"style": "carried", "face": "top",
            "note": "power terminal (SF-MG_POT bus) - a cable-schedule row: carried verbatim, "
                    "never drawn"},
+    "N10": {"style": "stub", "face": "-Y", "part": "inlet_groups", "x_mm": [130.0, 166.0],
+            "drawn_height_mm": 160.0,
+            "note": "CaCl2-MgCl2 brine concentrate in: launder flush at the -Y face (x 130..166, "
+                    "z 130..220) and the concentrate lance into the bath at z 160, in a study "
+                    "slot beside the N4 launder; class pending (task X-QA-11)"},
 }
 drawn = {}
 for tag, rec in PLACE.items():
@@ -320,9 +329,9 @@ rows = [
     ["12b", f"N5 Mg-reductant tap group -X z 600, flush at the -X face ({D['metal_kg_d']} kg/d Mg to the Kroll retort)", 1,
      "carbon (ram class)", mass["reductant_tap_group"], "make",
      "task-04 schedule N5 (solids, bore not calculated); WO step 6 reductant draw"],
-    ["12c", f"N3/N4 inlets -Y z 160 flush at the -Y face: Kroll MgCl2 return stub + brine lance ({D['feed_kg_d']} kg/d)", 2,
+    ["12c", f"N3/N4/N10 inlets -Y z 160 flush at the -Y face: Kroll MgCl2 return stub + brine + concentrate lances ({D['feed_kg_d']} kg/d)", 3,
      "CS chute, carbon lance", mass["inlet_groups"], "make",
-     "task-04 schedule N3/N4; A-M-284 feedstock ruling"],
+     "task-04 schedule N3/N4/N10; A-M-284 feedstock ruling; N10 class pending (task X-QA-11)"],
     ["13", f"Mg-metal tap group: well DN80 OD 88.9 carbon + crest + discharge lip at +X z 600, flush at the +X face", 1,
      "carbon (ram class)", mass["mg_tap_group"], "make",
      "task-04 schedule N1 (solids, bore not calculated); WO step 6 trial-electrolysis tap"],

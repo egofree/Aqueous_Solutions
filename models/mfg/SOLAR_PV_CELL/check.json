@@ -12,7 +12,7 @@
   ],
   "size_basis": "L x W x H mm, issued envelope (X-MFG-38 tool line)",
   "graph_revision": "AD",
-  "solids": 4,
+  "solids": 6,
   "all_parts_valid": true,
   "machine": {
     "type": "in-house PV cell line per the node design block (X-MFG-38, A-M-178, AQS-DUTY-071): seven named stations drawn as envelopes with the node ratings, the diffusion station internally resolved per its node dims (quartz tube 200 mm x 1.0 m with the 200 mm ceramic-fibre annulus taken at face value), 3 cells per batch, KOH feed from WS_KOH",
@@ -27,7 +27,7 @@
           200.0
         ],
         "make_or_buy": "make",
-        "node_text": "KOH texture bath, 10 L PP tank, immersion heater",
+        "node_text": "KOH texture bath, 10 L PP tank, immersion heater, one carrier a batch",
         "peak_kW": 1.9835999950403127
       },
       "PV-EMIT-01": {
@@ -40,7 +40,7 @@
           660.0
         ],
         "make_or_buy": "mixed",
-        "node_text": "POCl3 diffusion, quartz tube 200 mm x 1.0 m, 200 mm ceramic fibre",
+        "node_text": "POCl3 diffusion, quartz tube 200 mm x 1.0 m, 200 mm ceramic fibre, boat of 210 slots",
         "peak_kW": 3.7942691188488986
       },
       "PV-PSG-01": {
@@ -79,8 +79,8 @@
           420.0
         ],
         "make_or_buy": "mixed",
-        "node_text": "PECVD SiNx, parallel-plate RF, 5 kg heated platen, dry vacuum pump",
-        "peak_kW": 2.2514027215504537
+        "node_text": "PECVD SiNx, parallel-plate RF, 0.37 m2 electrode in a 788 mm chamber, dry vacuum pump",
+        "peak_kW": 6.077477661970402
       },
       "PV-FIRE-01": {
         "envelope_mm": [
@@ -172,9 +172,31 @@
       "schedule_rating": "Class 150",
       "service": "power terminal (SF-SOLAR_PV_CELL, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
       "note": "power terminal row - a cable schedule row: carried verbatim, never drawn"
+    },
+    "N6": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 1600.0,
+      "x_mm": 1260.0,
+      "schedule_rating": "Class 150",
+      "service": "solar wafers to the cell line, from the CZ ingot or the cast block by pv_wafer_route",
+      "note": "atmospheric hose joint per duty section 4 (bore not calculated); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
+    },
+    "N7": {
+      "style": "tube_stub",
+      "dn": "solids",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 1600.0,
+      "x_mm": 1260.0,
+      "schedule_rating": "Class 150",
+      "service": "finished cells to the replacement modules of the roof array",
+      "note": "atmospheric hose joint per duty section 4 (bore not calculated); solids row is a non-piped transfer: drawn DN15, bore not calculated (plan W4)"
     }
   },
-  "nozzle_count_schedule": 5,
+  "nozzle_count_schedule": 7,
   "nozzle_idiom": "atmospheric hose joints per duty section 4 (bore not calculated); the N3/N4 solids rows are non-piped transfers drawn DN15, bore not calculated (plan W4); the N2 vent datum 800 predates the 1600 box (hold, W12); the schedule rating column (Class 150) carried verbatim as text",
   "part_mass_kg": {
     "base": 452.16,
@@ -184,7 +206,7 @@
     "fibre": 32.67,
     "tex_heater": 1.79,
     "arc_pump": 98.12,
-    "nozzles": 0.23
+    "nozzles": 0.35
   },
   "cadquery": "2.8.0"
 }

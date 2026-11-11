@@ -138,6 +138,118 @@
    "service": "power terminal (SF-WAFER_FAB, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N16",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "electronic-grade silicon CZ charge from the store",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N17",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "acetone for edge-bead rinse and resist strip",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N18",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "fab nitrogen purge exhaust",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N19",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "wafers to resist coat",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N20",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "patterned wafers back to the fab tool row",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N21",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "finished wafers to the dock for dispatch",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N22",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "saw kerf, crop and pot scrap with the spent slurry",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N23",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "solar wafers to the cell line, from the CZ ingot or the cast block by pv_wafer_route",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N24",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "argon blanket gas for the CZ puller and, on CAST_MC156, the cast furnace",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N25",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "CZ argon exhaust back to the cold-box getter",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N26",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "electronic-grade silicon CZ charge from the store (refinery rod plus recycled crop and pot scrap)",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N27",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "unreclaimed saw kerf with the spent slurry (1 - si_kerf_recycle_frac)",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N28",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "reclaimed saw kerf to the chlorosilane loop (si_kerf_recycle_frac, A-M-486)",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N29",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "crop, square-off and pot scrap remelted into the next charge (si_scrap_recycle_frac, A-M-487)",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.",

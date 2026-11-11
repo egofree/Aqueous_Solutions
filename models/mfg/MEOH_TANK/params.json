@@ -122,6 +122,22 @@
    "service": "methanol carbon source to TFE",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N14",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "plant methanol for the carbonylation",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N15",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "plant methanol for the formaldehyde",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "SA-240 304L, welded (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.",

@@ -47,7 +47,7 @@ import cadquery as cq
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
 sys.path.insert(0, str(HERE.parents[2]))                  # the repository root, for the graph reader
-from lib import dn, fasteners, materials, nozzles, graph_node  # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles, step_export  # noqa: E402
 
 UNIT = "EW_5"
 GN = graph_node.graph_node(UNIT)                          # the plant graph is the sole authority
@@ -360,7 +360,7 @@ asm = cq.Assembly(name=UNIT)
 for k, v in list(parts.items()) + list(inv.items()):
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / f"{UNIT.lower()}.step"))
+step_export.export_step(asm, str(out / f"{UNIT.lower()}.step"))
 
 body = None
 for k, v in parts.items():

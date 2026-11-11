@@ -1,6 +1,6 @@
 # Build log - MET_MELT
 
-Date: 2026-11-03. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-VES + A-SC; MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-VES + A-SC; MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/MET_MELT.md`; envelope per `models/mfg/MET_MELT/params.json`).
 
 ## Tool versions
@@ -12,7 +12,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/MET
 
 - Build bbox 1000 x 600 x 800 mm against the 1000 x 600 x 800 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/MET_MELT/export/met_melt.step`; export STL closed and manifold, 9 solid(s); `cad/stl/MET_MELT.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 7 rows of `docs-authority/nozzles/MET_MELT.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- Nozzles: all 8 rows of `docs-authority/nozzles/MET_MELT.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
 - Coreless induction melt furnace per the AQS-MFG-010 tool row (10 kg Cu crucible, nameplate 7.5 kW): CS casing OD 420, refractory hot face 40 mm, coil band, clay-graphite crucible (buy consumable), tilt trunnions and pour lip toward +Y, fume hood with the vent riser at the box top
 - A-VES: duty section 2 holdup basis (0.0006 m3, 1 h charge); the crucible melt line is sized to it and the model figure reported, no new rate; A-SC: shop-made hardware flagged with the AQS-BOM-SC-001 cross-reference
 - A-MACH: hold-down frame + 8 anchors; purchased items named with the node ratings (crucible consumable; 7.5 kW power cabinet, plan rule 6)

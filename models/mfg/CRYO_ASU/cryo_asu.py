@@ -40,7 +40,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, graph_node, materials, nozzles         # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles, step_export  # noqa: E402
 
 GN = graph_node.graph_node("CRYO_ASU")        # the plant graph is the sole authority
 P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
@@ -180,8 +180,16 @@ for (face, h), rows in sorted(groups.items()):
         od = od_of(r)
         n_drawn += 1
         bi = i % N_BEDS
-        dx = (i // N_BEDS) * 130.0 * (1 if i % 2 else -1)
         bx = bed_x[bi]
+        # overflow spread points inward (toward the skid centre) so added schedule rows stay
+        # inside the envelope at either end bed, and the shared nozzle-row step capped at the
+        # bed-edge keep-out (lib/nozzles.py, F-20261110-09) keep every root on its bed footprint
+        # (the 2026-11-10 argon rows pushed +X past it)
+        sgn = 1 if i % 2 else -1
+        if bx > SKID_L / 2.0:
+            sgn = -sgn
+        dx = min((i // N_BEDS) * nozzles.NOZZLE_ROW_STEP_MM,
+                 max(R_BED - nozzles.BED_EDGE_CLEAR_MM, nozzles.NOZZLE_ROW_STEP_MM)) * sgn
         note = "atmospheric hose joint on the bed shell (node relief basis: API 2000 open vent)"
         if face == "bottom":                              # N9: bed 1 drain, tip at its 50 datum
             s = rod(dn.pipe_od("DN15") / 2, (bed_x[0] + 180.0, CY, 50.0), "Z",
@@ -223,7 +231,7 @@ asm = cq.Assembly(name="CRYO_ASU")
 for k, v in parts.items():
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "cryo_asu.step"))
+step_export.export_step(asm, str(out / "cryo_asu.step"))
 
 body = None
 for k, v in parts.items():

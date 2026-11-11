@@ -81,6 +81,16 @@
       "height_mm": 800.0,
       "schedule_rating": "Class 150",
       "service": "power terminal (SF-SHELL_BREAK, 480 V or 208/120 V AC (bus per AQS-ELEC-002))"
+    },
+    "N9": {
+      "style": "solids",
+      "face": "+X",
+      "part": "pool_out_chute",
+      "note": "recovered spent-shell silica to the shop pool: out-chute on the +X deck (x 1340..1380, y 300..500, z 600..700), a study slot beside the N3 spent chute; solids row, bore not calculated",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "recovered spent-shell silica to the shop pool"
     }
   },
   "frame_bbox_mm": [
@@ -97,15 +107,16 @@
   },
   "overhang_allowance_mm": 1.0,
   "overhang_ok": true,
-  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: cast_inlet, casting_out, spent_out, reclaim_out, silica_out)",
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: cast_inlet, casting_out, spent_out, pool_out_chute, reclaim_out, silica_out)",
   "external_parts": [
     "cast_inlet",
     "casting_out",
     "spent_out",
+    "pool_out_chute",
     "reclaim_out",
     "silica_out"
   ],
-  "cap_solids": 11,
+  "cap_solids": 12,
   "all_parts_valid": true,
   "reclaim_pan_volume_litres": 5.2,
   "part_mass_kg": {
@@ -118,6 +129,7 @@
     "cast_inlet": 4.9,
     "casting_out": 12.6,
     "spent_out": 6.3,
+    "pool_out_chute": 6.3,
     "reclaim_out": 6.3,
     "silica_out": 3.8,
     "drain_well": 1.0,

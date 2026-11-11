@@ -1,6 +1,6 @@
 # Build log - H2O_ELYZ
 
-Date: 2026-11-04. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/H2O_ELYZ.md`; envelope per `models/mfg/H2O_ELYZ/params.json`).
 
 ## Tool versions

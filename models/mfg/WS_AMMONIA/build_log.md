@@ -1,6 +1,6 @@
 # Build log - WS_AMMONIA
 
-Date: 2026-11-02. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-MACH; MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-MACH; MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/WS_AMMONIA.md`; envelope per `models/mfg/WS_AMMONIA/params.json`).
 
 ## Tool versions
@@ -12,7 +12,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/WS_
 
 - Build bbox 600 x 600 x 350 mm against the 600 x 600 x 350 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/WS_AMMONIA/export/ws_ammonia.step`; export STL closed and manifold, 1 solid(s); `cad/stl/WS_AMMONIA.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 8 rows of `docs-authority/nozzles/WS_AMMONIA.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- Nozzles: all 9 rows of `docs-authority/nozzles/WS_AMMONIA.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
 - A-MACH: guard rail and slab anchors drawn; no purchased item named on the node or duty - none drawn (W12)
 - Tank: station day-tank envelope, no volume claimed (duty section 8: no vessel diameter; W12)
 - Schedule datums clamped into the 350 mm box (the 600 outlet datums down, the 800 vent flush at the envelope top; holds, W12)

@@ -298,6 +298,54 @@
    "service": "finished-goods surplus export",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N36",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "Ca grease",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N37",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "Li grease",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N38",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "purged grease to the pyrolysis feed",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N39",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "briquetted crib silicate recovered from the leach feed, furnace burden (A-M-490)",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N40",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "recovered crib and spent-shell silica, shell make-up",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N41",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "recovered spent-shell silica to the shop pool",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.",

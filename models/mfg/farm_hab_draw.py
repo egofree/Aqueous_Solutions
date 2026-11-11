@@ -102,7 +102,11 @@ def draw(unit):
             if 'aqs-title-block' in content:
                 try:
                     import cairosvg
-                    cairosvg.svg2pdf(url=str(svg), write_to=str(DRAW / f'{sid}.pdf'))
+                    import sys as _aqs_sys
+                    import pathlib as _aqs_pl
+                    _aqs_sys.path.insert(0, str(_aqs_pl.Path(__file__).resolve().parent.parent))   # models/mfg, for lib
+                    from lib.pdf_write import write_pdf
+                    write_pdf(str(svg), str(DRAW / f'{sid}.pdf'))
                     pdf = 'pdf+svg current'
                 except Exception as e:
                     pdf = f'pdf skipped ({e.__class__.__name__})'

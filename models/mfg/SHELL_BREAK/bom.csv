@@ -4,5 +4,5 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 3,Reclaim sieve (inclined) with mesh window + reclaim pan,1,carbon steel,58.1,make,reclaim 7.0 kg/d of 8.0 kg/d spent shell
 4,Station enclosure hood,1,carbon steel,98.9,make,WO step 4; dust control
 5,N1 cast-tree inlet -X z 160 (from INV_CAST N4),1,carbon steel,4.9,make,task-04 schedule N1
-6,N2 investment castings +X z 600; N3 spent silica +X z 600; N4 reclaim +Y z 600; N5 silica return +Y z 600,4,carbon steel,29.0,make,task-04 schedule N2..N5
+6,N2 investment castings +X z 600; N3 spent silica +X z 600; N4 reclaim +Y z 600; N5 silica return +Y z 600; N9 spent silica to the shop pool +X z 600,5,carbon steel,35.3,make,task-04 schedule N2..N5
 7,N6 drain well + N7 vent stub,2,carbon steel,1.0,make,task-04 schedule N6/N7

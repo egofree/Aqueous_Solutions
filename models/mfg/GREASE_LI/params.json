@@ -38,6 +38,30 @@
    "service": "vent",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N3",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "wax cut",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N4",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "lithium hydroxide or carbonate",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N5",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "Li grease",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "316L jacketed soap kettle + 316L agitator (same kettle class as GREASE_CA) for the lithium soap",

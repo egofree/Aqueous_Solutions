@@ -34,31 +34,31 @@
  },
  "internals": "3 x 13X TSA beds, CO2 two-stage compressor and condenser, heated Ar getter; noble-gas inventories pass through",
  "design": {
-  "feed_N2_kg_d": 215.377697,
-  "feed_CO2_kg_d": 22.782648,
-  "x_CO2": 0.06308306867272907,
-  "CO2_mol_per_cycle": 172.55660077255166,
-  "sorbent_kg_per_bed": 115.03773384836778,
+  "feed_N2_kg_d": 215.377696,
+  "feed_CO2_kg_d": 22.782645,
+  "x_CO2": 0.06308306116443545,
+  "CO2_mol_per_cycle": 172.55657805044308,
+  "sorbent_kg_per_bed": 115.03771870029539,
   "beds": 3,
-  "bed_D_mm": 421.92825393409134,
-  "bed_L_mm": 1265.784761802274,
-  "regen_kW": 1.4771803673912494,
-  "blower_kW": 0.0480299188919896,
-  "co2_comp_kW": 0.08561132024900028,
-  "co2_chill_kW": 0.034674979305555555,
+  "bed_D_mm": 421.92823541437093,
+  "bed_L_mm": 1265.7847062431126,
+  "regen_kW": 1.4771801728773764,
+  "blower_kW": 0.04802991828408276,
+  "co2_comp_kW": 0.08561130897577333,
+  "co2_chill_kW": 0.03467497473958333,
   "getter_kW": 0.1,
-  "total_kW": 1.7454965858377949,
+  "total_kW": 1.745496374876816,
   "comp_stages": 4,
   "comp_ratio_per_stage": 2.114742526881128,
   "comp_T_out_C": 121.93064278721914,
   "expander_backup": {
-   "cold_kW": 0.08668744826388888,
+   "cold_kW": 0.08668743684895833,
    "T_out_C": -56.08836699924316,
-   "loop_kg_d": 231.6534178629956,
-   "shaft_kW": 0.23126706521810383,
-   "net_kW": 0.46641924479014757,
-   "COP": 0.1858573573714599,
-   "chiller_kW": 0.034674979305555555
+   "loop_kg_d": 231.65338735906764,
+   "shaft_kW": 0.23126703476505048,
+   "net_kW": 0.46641918337245225,
+   "COP": 0.18585735737145986,
+   "chiller_kW": 0.03467497473958333
   },
   "bed_pitch_mm": 521.9,
   "machinery_row_x0_mm": 1700.0,
@@ -211,6 +211,22 @@
    "service": "power terminal (SF-CRYO_ASU, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N18",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "argon blanket gas for the CZ puller and, on CAST_MC156, the cast furnace",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N19",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "CZ argon exhaust back to the cold-box getter",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "316L. Condensation. No carbon steel. Corrosion allowance 0 mm. Pit rate is not measured.",
@@ -222,7 +238,7 @@
   "frame": "skid frame: x along 2450, y across 560, z up; beds at x 260.9 + 521.9k on pedestals, purchased machinery row at x 1700..2440",
   "bed_axis_z_mm": [
    370.0,
-   1647.784761802274
+   1647.7847062431126
   ],
   "nozzle_spread": "inlets land on the bed shells' -Y side, outlets on +Y, distributed across the beds in tag order (second row per bed offset 130 mm); the z 160 rows land on the base frame; per-tag positions in check.nozzles_drawn",
   "vent": "schedule datum 2000 mm predates the TSA layout; drawn at the bed 1 top head - named hold (WORK_ORDER W12)",

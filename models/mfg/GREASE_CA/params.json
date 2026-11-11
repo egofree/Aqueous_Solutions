@@ -19,6 +19,31 @@
  "relief_mm": null,
  "internals": "none",
  "design": {
+  "route": "CA",
+  "units": 72,
+  "gp_g": 3.9,
+  "interval_d": 182.625,
+  "grease_kg_d": 0.003075,
+  "soap_kg_d": 0.000369,
+  "base_oil_kg_d": 0.002706,
+  "wax_kg_d": 0.0032,
+  "wax_ox_kg_d": 0.000494,
+  "acid_kg_d": 0.000346,
+  "o2_kg_d": 0.000173,
+  "vent_kg_d": 0.000343,
+  "thickener_kg_d": 4.5e-05,
+  "caoh2_kg_d": 4.5e-05,
+  "lioh_kg_d": 0.0,
+  "lime_draw_kg_d": 5e-05,
+  "slake_h2o_kg_d": 1.1e-05,
+  "reject_kg_d": 1.5e-05,
+  "kettle_L": 0.439308,
+  "kettle_D_mm": 100.0,
+  "insul_mm": 25,
+  "loss_W": 11.54743,
+  "kw": 7.6e-05,
+  "kettle_T_C": 150.0,
+  "campaign_d": 90,
   "duty": "calcium grease kettle: the C19-C28 wax base + the P_CA thickener -> the general lubrication grease",
   "batch_kgd": 0.2,
   "heat_class": "soap precipitation, jacket heated"
@@ -37,6 +62,54 @@
    "size": "DN15",
    "rating": "Class 150",
    "service": "vent",
+   "face": "top",
+   "height_mm": 800
+  },
+  {
+   "tag": "N3",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "wax cut",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N4",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "calcium hydroxide",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N5",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "Ca grease",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N6",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "oxygen of the process air for the wax oxidation",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N7",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "water, carbon dioxide and light acids of the wax oxidation and saponification",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N8",
+   "size": "cable",
+   "rating": "Class 150",
+   "service": "power terminal (SF-GREASE_CA, 480 V AC)",
    "face": "top",
    "height_mm": 800
   }

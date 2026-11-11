@@ -13,7 +13,7 @@ import cadquery as cq
 HERE = pathlib.Path(__file__).parent
 import sys
 sys.path.insert(0, str(HERE.parent))              # models/mfg: lib
-from lib import graph_node  # noqa: E402
+from lib import graph_node, step_export  # noqa: E402
 GN = graph_node.graph_node("SHELL_BREAK")        # the plant graph is the sole authority
 P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
 P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
@@ -56,6 +56,7 @@ parts["enclosure"] = box(80.0, 180.0, 700.0, 860.0, 440.0, 250.0).cut(
 parts["cast_inlet"] = box(0.0, 340.0, 40.0, 40.0, 120.0, 130.0)   # N1 -X z 160, flush at the face
 parts["casting_out"] = box(1460.0, 200.0, 600.0, 40.0, 400.0, 100)  # N2 +X z 600
 parts["spent_out"] = box(1400.0, 60.0, 600.0, 40.0, 200.0, 100)     # N3 +X z 600 (spent silica)
+parts["pool_out_chute"] = box(1340.0, 300.0, 600.0, 40.0, 200.0, 100)   # N9 +X z 600 (spent silica to the shop pool), study slot
 parts["reclaim_out"] = box(900.0, W - 40.0, 550.0, 200.0, 40.0, 100)  # N4 +Y z 600, flush at the face
 parts["silica_out"] = box(1300.0, W - 40.0, 550.0, 120.0, 40.0, 100)  # N5 +Y z 600, flush at the face
 parts["drain_well"] = tube(30.5, DN15, (400, 400, 0), "Z", 50)        # N6
@@ -69,7 +70,7 @@ asm = cq.Assembly(name="SHELL_BREAK")
 for k, v in list(parts.items()) + list(inv.items()):
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "shell_break.step"))
+step_export.export_step(asm, str(out / "shell_break.step"))
 
 body = None
 for k, v in parts.items():
@@ -77,7 +78,7 @@ for k, v in parts.items():
 cap_solid = body.val()
 cap_solid.exportStl(str(out / "shell_break.stl"), tolerance=0.4, angularTolerance=0.4, ascii=True)
 
-EXTERNAL = ("cast_inlet", "casting_out", "spent_out", "reclaim_out", "silica_out")   # schedule hardware, drawn flush at the faces
+EXTERNAL = ("cast_inlet", "casting_out", "spent_out", "pool_out_chute", "reclaim_out", "silica_out")   # schedule hardware, drawn flush at the faces
 in_env = None
 for k, v in parts.items():
     if k in EXTERNAL:
@@ -101,6 +102,7 @@ valid = all(v.val().isValid() for v in ALL)
 rho = {"frame": 7.85e-6, "vib_table": 7.85e-6, "vib_drive": 7.85e-6, "sieve": 7.85e-6,
        "reclaim_pan": 7.85e-6, "enclosure": 7.85e-6, "cast_inlet": 7.85e-6, "casting_out": 7.85e-6,
        "spent_out": 7.85e-6, "reclaim_out": 7.85e-6, "silica_out": 7.85e-6,
+       "pool_out_chute": 7.85e-6,
        "drain_well": 7.85e-6, "vent_stub": 7.85e-6}
 mass = {k: round(v.val().Volume() * rho[k], 1) for k, v in parts.items()}
 # ---------------- acceptance record: nozzles_drawn -------------------------------
@@ -135,6 +137,10 @@ PLACE = {
     "N8": {"style": "carried", "face": "top",
            "note": "power terminal (SF-SHELL_BREAK bus) - a cable-schedule row: carried "
                    "verbatim, never drawn"},
+    "N9": {"style": "solids", "face": "+X", "part": "pool_out_chute",
+           "note": "recovered spent-shell silica to the shop pool: out-chute on the +X deck "
+                   "(x 1340..1380, y 300..500, z 600..700), a study slot beside the N3 spent "
+                   "chute; solids row, bore not calculated"},
 }
 drawn = {}
 for tag, rec in PLACE.items():
@@ -173,8 +179,8 @@ rows = [
     ["4", "Station enclosure hood", 1, "carbon steel", mass["enclosure"], "make", "WO step 4; dust control"],
     ["5", "N1 cast-tree inlet -X z 160 (from INV_CAST N4)", 1, "carbon steel", mass["cast_inlet"], "make",
      "task-04 schedule N1"],
-    ["6", "N2 investment castings +X z 600; N3 spent silica +X z 600; N4 reclaim +Y z 600; N5 silica return +Y z 600",
-     4, "carbon steel", round(mass["casting_out"] + mass["spent_out"] + mass["reclaim_out"] + mass["silica_out"], 1),
+    ["6", "N2 investment castings +X z 600; N3 spent silica +X z 600; N4 reclaim +Y z 600; N5 silica return +Y z 600; N9 spent silica to the shop pool +X z 600",
+     5, "carbon steel", round(mass["casting_out"] + mass["spent_out"] + mass["reclaim_out"] + mass["silica_out"] + mass["pool_out_chute"], 1),
      "make", "task-04 schedule N2..N5"],
     ["7", "N6 drain well + N7 vent stub", 2, "carbon steel", round(mass["drain_well"] + mass["vent_stub"], 1),
      "make", "task-04 schedule N6/N7"],

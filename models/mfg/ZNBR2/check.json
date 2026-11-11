@@ -10,32 +10,32 @@
     6050.0,
     1970.0
   ],
-  "size_basis": "L x W x H mm, set by flow_graph/param/ess_tf.py (X-MFG-43): the 47-bay rack hall (47 bays of stack-over-tank at 1100 x 850 mm pitch); the placement seed block for ZNBR2 stays the 1800 x 1200 x 1600 mm study box and under-books this machine - the floor-space reservation is the named consequence (ZNBR2 WORK_ORDER W12)",
+  "size_basis": "L x W x H mm, set by flow_graph/param/ess_tf.py (X-MFG-43): the 38-bay rack hall (38 bays of stack-over-tank at 1100 x 850 mm pitch); the placement seed block for ZNBR2 stays the 1800 x 1200 x 1600 mm study box and under-books this machine - the floor-space reservation is the named consequence (ZNBR2 WORK_ORDER W12)",
   "graph_revision": "AD",
-  "solids": 811,
+  "solids": 658,
   "all_parts_valid": true,
   "solids_note": "one compound of closed solids: plinth, posts, tanks (wall solids), the bonded plate-pack field envelopes, end plates, tie rods, lifting beams, bus flats, purchased envelopes and the nozzle stubs; every union partner overlaps volumetrically, so the mesh reads back closed and manifold",
   "a_cell": {
-    "modules": 47,
+    "modules": 38,
     "plates_per_module": 95,
     "plate_active_mm": [
-      995.8,
+      994.5,
       500.0
     ],
     "pitch_mm": 6.0,
-    "active_area_m2_model": 2223.12,
-    "active_area_m2_booked": 2223.1,
-    "stack_I_A": 99.6,
+    "active_area_m2_model": 1795.07,
+    "active_area_m2_booked": 1795.1,
+    "stack_I_A": 99.4,
     "stack_V_dc": 172.9,
     "j_mA_cm2_booked": 20.0,
     "cell_V_booked": 1.82,
     "basis": "A-CELL: plate count, size, pitch and active area match the design block (ess_tf, X-MFG-43, A-M-456); the model carries the booked area (j.A = current closes on it); the field draws as the bonded per-module plate-pack envelope (plates + separator lands at the booked 6 mm pitch; the drawn envelope carries the booked active area) - the individual sheets are BOM rows 2 and 4; the duty section 2 states no plate geometry, so the purge-basis area is the authority (hold, WORK_ORDER W12)"
   },
   "electrolyte_holdup_L": {
-    "model": 24882.0,
-    "node": 24882.0,
+    "model": 20117.0,
+    "node": 20094.0,
     "per_module_model": 529.4,
-    "per_module_node": 529.4,
+    "per_module_node": 528.8,
     "concentration_M": 2.0,
     "basis": "reported from the model tank inside volume against the design figure (A-M-457); no residence time is derived - the duty section 2 claims no holdup (A-VES rule)"
   },
@@ -189,12 +189,12 @@
   },
   "nozzle_count_schedule": 12,
   "part_mass_kg": {
-    "plinth_frame": 70084.3,
-    "plates": 18896.5,
-    "tanks": 2401.8,
-    "bus": 31.8,
-    "pumps": 1992.3,
-    "coolers": 2258.0,
+    "plinth_frame": 63848.4,
+    "plates": 15258.1,
+    "tanks": 1941.9,
+    "bus": 25.7,
+    "pumps": 1610.8,
+    "coolers": 1825.6,
     "nozzles": 3.1
   },
   "cadquery": "2.8.0"

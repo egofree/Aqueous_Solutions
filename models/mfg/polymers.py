@@ -8,6 +8,9 @@ envelope.state, or live throughput rates in params.design (fluoro_train A-M-289 
 foundry_poly sizing notes still say F-blocked - the design rates win; the graph is authority and is not edited here).
 Run: $CADQUERY_PYTHON models/mfg/polymers.py [UNIT ...]"""
 import csv, json, math, os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # models/mfg, for the shared lib
+from lib import step_export  # noqa: E402
+
 import cadquery as cq
 
 UNITS = ['POLY_OLEFIN', 'PELLET', 'POLY_STOCK', 'POLY_COND', 'HF_GEN', 'VDF_SYN', 'TFE_SYN', 'POLY_F',
@@ -54,7 +57,7 @@ def export(U, m, rows, fast, wo):
     assert bb.xmin >= -0.5 and bb.ymin >= -0.5 and bb.zmin >= -0.5 and bb.xmax <= L + 0.5 and bb.ymax <= W + 0.5 \
         and bb.zmax <= H + 0.5, (U, (round(bb.xmin), round(bb.xmax), round(bb.ymin), round(bb.ymax), round(bb.zmin), round(bb.zmax)), (L, W, H))
     out = f'models/mfg/{U}/export'; os.makedirs(out, exist_ok=True)
-    cq.exporters.export(m, f'{out}/{U.lower()}.step'); cq.exporters.export(m, f'{out}/{U.lower()}.stl')
+    step_export.export_step(m, f'{out}/{U.lower()}.step'); cq.exporters.export(m, f'{out}/{U.lower()}.stl')
     csv.writer(open(f'models/mfg/{U}/bom.csv', 'w', newline='')).writerows(
         [('item', 'description', 'qty', 'material', 'basis')] + [tuple(r) for r in rows])   # quoted: materials carry commas
     open(f'models/mfg/{U}/fasteners.csv', 'w').write(fast)

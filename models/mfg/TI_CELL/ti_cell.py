@@ -16,7 +16,7 @@ import cadquery as cq
 HERE = pathlib.Path(__file__).parent
 import sys
 sys.path.insert(0, str(HERE.parent))              # models/mfg: lib
-from lib import graph_node  # noqa: E402
+from lib import graph_node, step_export  # noqa: E402
 GN = graph_node.graph_node("TI_CELL")        # the plant graph is the sole authority
 P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
 P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items() if k not in P or P[k] in (None, {}) })   # builder-owned blocks only (assumptions/form/material class do not live on the graph)
@@ -79,9 +79,9 @@ frame = frame.union(box(rx_ - RRed - 20, ry_ - RRed - 20, 60, 2 * RRed + 40, 2 *
 parts["skid_frame"] = frame
 
 # ---------------- nozzle hardware (task-04 schedule; attached to the vessels) -------
-# N2 dense grit / N10 rutile / N11 carbon: charge chutes on the chlorinator (-X face)
+# N2 dense grit / N10 rutile / N11 carbon / N18 char: charge chutes on the chlorinator (-X face)
 ch = None
-for yy in (500.0, 560.0, 620.0):
+for yy in (440.0, 500.0, 560.0, 620.0):
     q = box(55, yy - 30, 130, 50, 60, 90)
     ch = q if ch is None else ch.union(q)
 parts["charge_chutes"] = ch
@@ -91,8 +91,13 @@ for xx in (140.0, 200.0):
     q = tube(DN15, DN15 - W15, (xx, 455.0, 160.0), "Y", 60)
     st = q if st is None else st.union(q)
 parts["cl2_stubs"] = st
-# N12 CO export DN15 (+Y shell at z 600)
+# N12 CO export DN15 (+Y shell at z 600); N16/N17 the two route CO draws beside it
+# (carbonylation of the on-site solvent, A-M-479; phosgenation of the on-site resist, A-M-482)
 parts["co_stub"] = tube(DN15, DN15 - W15, (cx, cy + RC - 10.0, 600.0), "Y", 55)
+co_group = parts["co_stub"]
+for xx in (cx - 42.0, cx + 42.0):
+    co_group = co_group.union(tube(DN15, DN15 - W15, (xx, cy + RC - 10.0, 600.0), "Y", 55))
+parts["co_stub"] = co_group
 # N1 slag tap spout (+X shell at z 600)
 slag = rod(30.0, (cx + RC - 10.0, cy, 570.0), "X", 60).cut(rod(12.0, (cx + RC - 20.0, cy, 565.0), "X", 90))
 parts["slag_spout"] = slag
@@ -124,7 +129,7 @@ asm = cq.Assembly(name="TI_CELL")
 for k, v in list(parts.items()) + list(inv.items()):
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "ti_cell.step"))
+step_export.export_step(asm, str(out / "ti_cell.step"))
 
 body = None
 for k, v in parts.items():
@@ -223,6 +228,19 @@ PLACE = {
     "N15": {"style": "carried", "face": "top",
             "note": "power terminal (SF-TI_CELL bus) - a cable-schedule row: carried verbatim, "
                     "never drawn"},
+    "N16": {"style": "stub", "face": "+Y", "part": "co_stub", "y_mm": [640.0, 685.0],
+            "drawn_height_mm": 600.0,
+            "note": "chlorinator-CO DN15 stub beside the N12 export (x - 42) on the +Y shell "
+                    "at z 600: the carbonylation draw of the on-site solvent route (A-M-479)"},
+    "N17": {"style": "stub", "face": "+Y", "part": "co_stub", "y_mm": [640.0, 685.0],
+            "drawn_height_mm": 600.0,
+            "note": "chlorinator-CO DN15 stub beside the N12 export (x + 42) on the +Y shell "
+                    "at z 600: the phosgenation draw of the on-site resist route (A-M-482)"},
+    "N18": {"style": "solids", "face": "-X", "part": "charge_chutes", "y_mm": [410.0, 470.0],
+            "drawn_height_mm": 160.0,
+            "note": "plant pyrolysis char reductant chute on the chlorinator -X face (y 410..470, "
+                    "z 130..220), in a study slot beside the grit chute; solids row, bore not "
+                    "calculated"},
 }
 drawn = {}
 for tag, rec in PLACE.items():
@@ -268,8 +286,8 @@ rows = [
      round(mass["x_chlor_cond"] + mass["x_cond_retort"], 1), "make", "WO step 4; slope per the isometric"],
     ["8", "MgCl2 drag-out trough 640 x 110 x 90", 1, "carbon steel", mass["mgcl2_trough"], "make",
      "salt drag-out to the flux-cover source (task-04 schedule N7)"],
-    ["9", f"N2/N10/N11 charge chutes -X z 160 ({D['tio2_kg_d']} kg/d TiO2-class + {D['c_kg_d']} kg/d carbon + grit)", 3,
-     "CS chute, refractory throat", mass["charge_chutes"], "make", "task-04 schedule N2/N10/N11; A-M-284 feedstock ruling"],
+    ["9", f"N2/N10/N11/N18 charge chutes -X z 160 ({D['tio2_kg_d']} kg/d TiO2-class + {D['c_kg_d']} kg/d carbon + grit)", 4,
+     "CS chute, refractory throat", mass["charge_chutes"], "make", "task-04 schedule N2/N10/N11/N18; A-M-284 feedstock ruling"],
     ["10", f"N3/N9 chlorine DN15 stubs -Y z 600 ({D['cl2_kg_d']} kg/d loop with MG_POT)", 2,
      "carbon steel (dry hot Cl2)", mass["cl2_stubs"], "make", "task-04 schedule N3/N9; A-M-280 ruling"],
     ["11", f"N12 CO export DN15 +Y z 600 ({D['co_kg_d']} kg/d, fuel-gas class)", 1, "carbon steel",

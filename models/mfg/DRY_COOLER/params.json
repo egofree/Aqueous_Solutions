@@ -20,8 +20,8 @@
  "internals": "none",
  "design": {
   "duty": "dry rejection of the ADS_CHILL 7.25 kW + the Q4 dry share + the ZNBR2 cycling heat",
-  "airflow_m3_s": 10.37,
-  "fan_kw": 7.7
+  "airflow_m3_s": 10.64,
+  "fan_kw": 7.9
  },
  "nozzles": [
   {

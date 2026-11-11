@@ -1,6 +1,6 @@
 # Build log - Q4_BUS
 
-Date: 2026-11-02. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-PIPE; MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-PIPE; MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/Q4_BUS.md`; envelope per `models/mfg/Q4_BUS/params.json`).
 
 ## Tool versions
@@ -10,7 +10,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/Q4_
 
 ## Checks
 
-- Build bbox 2000 x 50 x 50 mm against the 2000 x 50 x 50 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
+- Build bbox 2000 x 42.4 x 42.4 mm against the 2000 x 42.4 x 42.4 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/Q4_BUS/export/q4_bus.step`; export STL closed and manifold, 1 solid(s); `cad/stl/Q4_BUS.stl` ; replaced from the build (ASCII, metres)
 - Nozzles: all 9 rows of `docs-authority/nozzles/Q4_BUS.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
 - A-PIPE line list: line_list.csv generated from the unit's graph edges and docs-authority/LINE_LIST.md (AQS-PIP-004): 20 rows (manifold spool + 19 lines), tag/from/to/DN/class/service/rating; edge coverage complete, no new edge

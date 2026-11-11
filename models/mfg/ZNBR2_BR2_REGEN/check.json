@@ -22,11 +22,11 @@
     "ntu": 6,
     "removal": 0.9975,
     "y_out_ppmv": 10,
-    "D_req_mm": 92.0,
+    "D_req_mm": 82.7,
     "DN_mm": 100,
-    "gas_m3_h": 35.9,
+    "gas_m3_h": 29.0,
     "gas_duty_m3_h": 30.0,
-    "basis": "A-COL: packing height, support, distributor and demister are solids; HTU and NTU stay the duty-held figures (duty section 8; W12(2)). Diameter at 1.5 m/s on the live purge (ess_tf, X-MFG-43b); the duty 30 m3/h / 84 mm figures predate the TF re-solve (W12(1))"
+    "basis": "A-COL: packing height, support, distributor and demister are solids; HTU and NTU stay the duty-held figures (duty section 8; W12(2)). Diameter at 1.5 m/s on the live purge the charge book re-solves (ess_tf, X-MFG-43b); the 30 m3/h / 84 mm duty figures stay the W12(1) class basis and DN100 carries the larger of the two diameters"
   },
   "holdup_L": {
     "sump_nominal": 3.3,

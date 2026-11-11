@@ -35,7 +35,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, materials   # noqa: E402
+from lib import dn, fasteners, materials, step_export  # noqa: E402
 from tracker import stl_bbox_mm, stl_manifold   # noqa: E402  (gate-consistent STL reader)
 
 P = json.loads((HERE / "params.json").read_text())
@@ -166,7 +166,7 @@ V_WORK = 13.8                                                              # L, 
 
 solid = cq.Compound.makeCompound([wp.val() for _, wp in parts])
 out = HERE / "export"; out.mkdir(exist_ok=True)
-cq.exporters.export(solid, str(out / (UNIT.lower() + ".step")), opt={"write_pcurves": False, "precision_mode": 0})
+step_export.export_step(solid, str(out / (UNIT.lower() + ".step")), write_pcurves=False)
 cq.exporters.export(solid, str(out / (UNIT.lower() + ".stl")))
 cq.exporters.export(cq.Compound.makeCompound([wp.val().scale(0.001) for _, wp in parts]),
                     str(HERE.parents[2] / "cad" / "stl" / (UNIT + ".stl")), opt={"ascii": True})

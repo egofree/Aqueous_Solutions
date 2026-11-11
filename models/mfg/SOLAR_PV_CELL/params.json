@@ -19,19 +19,39 @@
  "relief_mm": null,
  "internals": "none",
  "design": {
-  "cells_per_d": 3,
+  "need": {
+   "route": "CZ_PSQ125",
+   "array_kw": 2718.0,
+   "life_yr": 39.99999999999999,
+   "repl_per_yr": 0.025500000000000005,
+   "W_d": 189.75770020533884,
+   "cell_area_cm2": 148.5798641851732,
+   "cell_eff": 0.19,
+   "cell_W": 2.823017419518291,
+   "cells_per_d": 67.21804084287882,
+   "wafer_g": 6.228765066370831,
+   "slot_g": 13.581752994953481,
+   "wafer_kg_d": 0.4186853846320113,
+   "slot_kg_d": 0.9129388275326749,
+   "t_cm": 0.018,
+   "kerf_cm": 0.015,
+   "Si_g_per_W": 4.811076581054544
+  },
+  "cells_per_d": 67.21804084287882,
+  "batches": 3,
+  "carrier": 25,
   "tools": [
    {
     "id": "PV-TEX-01",
-    "design": "KOH texture bath, 10 L PP tank, immersion heater",
+    "design": "KOH texture bath, 10 L PP tank, immersion heater, one carrier a batch",
     "peak_kW": 1.9835999950403127,
-    "kWh_d": 0.6870259209662386
+    "kWh_d": 0.7838555406764935
    },
    {
     "id": "PV-EMIT-01",
-    "design": "POCl3 diffusion, quartz tube 200 mm x 1.0 m, 200 mm ceramic fibre",
+    "design": "POCl3 diffusion, quartz tube 200 mm x 1.0 m, 200 mm ceramic fibre, boat of 210 slots",
     "peak_kW": 3.7942691188488986,
-    "kWh_d": 5.876082069096683
+    "kWh_d": 7.353509195683369
    },
    {
     "id": "PV-PSG-01",
@@ -41,33 +61,33 @@
    },
    {
     "id": "PV-ARC-01",
-    "design": "PECVD SiNx, parallel-plate RF, 5 kg heated platen, dry vacuum pump",
-    "peak_kW": 2.2514027215504537,
-    "kWh_d": 1.9534860548837867
+    "design": "PECVD SiNx, parallel-plate RF, 0.37 m2 electrode in a 788 mm chamber, dry vacuum pump",
+    "peak_kW": 6.077477661970402,
+    "kWh_d": 7.723503008647393
    },
    {
     "id": "PV-CON-01",
     "design": "Screen printer and 200 C dryer",
     "peak_kW": 0.7,
-    "kWh_d": 0.35
+    "kWh_d": 7.842104765002529
    },
    {
     "id": "PV-FIRE-01",
     "design": "IR lamp fast-firing furnace",
     "peak_kW": 3.0,
-    "kWh_d": 0.51
+    "kWh_d": 11.427066943289399
    },
    {
     "id": "PV-IV-01",
     "design": "Flash IV tester",
     "peak_kW": 0.1,
-    "kWh_d": 0.025
+    "kWh_d": 0.5601503403573236
    }
   ],
-  "kWh_d": 9.401594044946709,
-  "avg_kW": 0.3917330852061129,
-  "peak_kW": 3.7942691188488986,
-  "kWh_per_cell": 3.133864681648903,
+  "kWh_d": 35.69018979365651,
+  "avg_kW": 1.4870912414023545,
+  "peak_kW": 6.077477661970402,
+  "kWh_per_cell": 0.5309614702559065,
   "service": "SOLAR_PV_CELL: in-house PV cell line - texture, POCl3 diffusion, PSG etch, PECVD SiNx, screen print, fast firing, IV; 3 cells per batch; KOH feed from WS_KOH (node design block; X-MFG-38, A-M-178, AQS-DUTY-071)",
   "material": "316L wetted baths (duty section 3); quartz tube and ceramic fibre at PV-EMIT-01; CS bench and dry envelopes",
   "material_basis": "duty section 3: 316L where the stream is wet - the node station texts name PP tanks/baths, the duty selection governs (plan rule 5; hold, WORK_ORDER W12); tube quartz and screen stainless shop-cut per AQS-PV-001 section 3"
@@ -112,6 +132,22 @@
    "service": "power terminal (SF-SOLAR_PV_CELL, 480 V or 208/120 V AC (bus per AQS-ELEC-002))",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N6",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "solar wafers to the cell line, from the CZ ingot or the cast block by pv_wafer_route",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N7",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "finished cells to the replacement modules of the roof array",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.",

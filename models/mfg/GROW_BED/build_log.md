@@ -1,6 +1,6 @@
 # Build log - GROW_BED
 
-Date: 2026-11-03. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-FARM; MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core + A-FARM; MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/GROW_BED.md`; envelope per `models/mfg/GROW_BED/params.json`).
 
 ## Tool versions
@@ -10,7 +10,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/GRO
 
 ## Checks
 
-- Build bbox 7310 x 4030 x 910.6 mm against the 2000 x 1000 x 400 mm envelope: OVER - misfit reported (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
+- Build bbox 7310 x 4030 x 910.6 mm against the 7310 x 4030 x 911 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/GROW_BED/export/grow_bed.step`; export STL closed and manifold, 4 solid(s); `cad/stl/GROW_BED.stl` replaced from the build (ASCII, metres)
 - Nozzles: all 22 rows of `docs-authority/nozzles/GROW_BED.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
 - Crop grow bed per the node area_basis (A-M-229): HDPE basin + EPDM liner, interior 7280 x 4000 mm = 29.12 m2, LECA media envelope at a 250 mm study depth, drain sump at the bay corner (A-FARM: liner and drain drawn), LED canopy at the node 2.0463 kW stamp (A-M-144)

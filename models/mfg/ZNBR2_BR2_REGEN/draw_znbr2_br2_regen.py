@@ -12,7 +12,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import sheets                                       # noqa: E402
+from lib import sheets, step_export  # noqa: E402
 
 ns = runpy.run_path(HERE / "znbr2_br2_regen.py")
 parts, R = ns["parts"], ns["report"]
@@ -63,8 +63,10 @@ SHEETS = [
       'battery, drain at the base, vent riser at the top',
       f'Graph revision {R["graph_revision"]} is the model authority for this build; '
       'STEP (export/znbr2_br2_regen.step) is the solids of record',
-      'The live purge 35.9 m3/h bounds the duty 30 m3/h figure (the duty section 2 numbers '
-      'predate the X-PAR-02 TF re-solve, W12(1))'],
+      f'The column sizes on the live purge ({AC["gas_m3_h"]:g} m3/h, D_req {AC["D_req_mm"]:g} mm); '
+      f'the {AC["gas_duty_m3_h"]:g} m3/h duty figure and its 84 mm diameter stay the W12(1) class '
+      'basis, and DN'
+      f'{AC["DN_mm"]:g} carries the larger of the two diameters'],
      "Isometric orientation sheet."),
 ]
 
@@ -79,7 +81,8 @@ sheets.build_log(
      f'purge ({AC["D_req_mm"]:g} mm -> PVC-U DN{AC["DN_mm"]:g})',
      '- Sump holdup reported (house class), no residence time derived (duty section 2 rule; '
      'A-VES rule)',
-     '- Duty 30 m3/h / 84 mm figures predate the X-PAR-02 TF re-solve; the column sizes at '
-     'the bounding live purge (hold, W12(1))',
+     '- Duty 30 m3/h / 84 mm figures are the W12(1) class basis; the column sizes on the live '
+     f'purge the charge book re-solves ({AC["D_req_mm"]:g} mm -> PVC-U DN{AC["DN_mm"]:g}) and '
+     'DN100 carries the larger of the two diameters',
      '- HTU and NTU stay duty-held figures, not measured transfer units (hold, W12(2))'],
     "A-core + A-COL")

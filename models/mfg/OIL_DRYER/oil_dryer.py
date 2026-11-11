@@ -31,7 +31,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, graph_node, materials, nozzles          # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles, step_export  # noqa: E402
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
 GN = graph_node.graph_node("OIL_DRYER")        # the plant graph is the sole authority
@@ -163,7 +163,7 @@ asm = cq.Assembly(name=UNIT)
 for k, v in parts.items():
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / (UNIT.lower() + ".step")))
+step_export.export_step(asm, str(out / (UNIT.lower() + ".step")))
 
 solid = None
 for k, v in parts.items():

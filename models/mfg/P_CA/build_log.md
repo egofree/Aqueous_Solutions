@@ -1,6 +1,6 @@
 # Build log - P_CA
 
-Date: 2026-11-02. Authority: AQS-PLAN-006 section 5 (acceptance) A-core (route hold); MFG_MODEL_PLAN (AQS-PLAN-006).
+Date: 2026-11-01. Authority: AQS-PLAN-006 section 5 (acceptance) A-core (route hold); MFG_MODEL_PLAN (AQS-PLAN-006).
 Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/P_CA.md`; envelope per `models/mfg/P_CA/params.json`).
 
 ## Tool versions
@@ -12,7 +12,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/P_C
 
 - Build bbox 300 x 300 x 400 mm against the 300 x 300 x 400 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/P_CA/export/p_ca.step`; export STL closed and manifold, 1 solid(s); `cad/stl/P_CA.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 2 rows of `docs-authority/nozzles/P_CA.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- Nozzles: all 6 rows of `docs-authority/nozzles/P_CA.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
 - Route hold: the node class precip has no AQS-PLAN-006 section 4 route class; the tracker records the hold (A-core, route hold) and the vessel work follows the F-VES operations as the nearest family (W10)
 - PP-H vessel + PP agitator per duty section 3 (X-MAT-22); wall and agitator dimensions study values (holds, W12); the 316L mixed-build alternative named; the duty section 8 'material selection pending' line predates the issued X-MAT-22 selection
 - Relief case study pending (unit task 07): no set point claimed; instrument loops are loop hardware, not modeled

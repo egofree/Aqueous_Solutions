@@ -10,9 +10,11 @@ Every dimension is an authority figure or a named layout choice:
 - Envelope 400 x 400 x 3700 mm, node size_mm (set by ess_tf with the design, X-MFG-43b).
   The build fills it: the plinth spans the footprint, the vent riser tops the box.
 - Column: PVC-U DN100 Sch 80 (OD 114.3, wall 8.56, ASTM D1785) at the duty section 2 rules
-  on the live purge: diameter at 1.5 m/s on the 35.9 m3/h headspace purge (D_req 92.0 mm;
-  the duty 30 m3/h figure and its 84 mm diameter predate the X-PAR-02 TF re-solve - hold,
-  W12(1)); bed = NTU 6 x HTU 0.5 m = 3000 mm of 25 mm PVC-U Pall rings (in-house cut tube
+  on the live purge: diameter at 1.5 m/s on the headspace purge the charge book re-solves
+  each pass (29.0 m3/h -> D_req 82.7 mm at the 2026-11-11 store re-solve; the duty 30 m3/h
+  figure and its 84 mm diameter are the W12(1) class basis and stay the sizing duty - the
+  DN100 column carries the larger of the two diameters); bed = NTU 6 x HTU 0.5 m = 3000 mm
+  of 25 mm PVC-U Pall rings (in-house cut tube
   rings, X-MFG-32 class). HTU and NTU stay the duty-held figures (duty section 8: HTU is a
   packing figure, not a measured transfer unit - A-COL hold, W12(2)).
 - Internals as solids (A-COL): perforated packing support plate (50 % open envelope), the
@@ -35,7 +37,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from lib import dn, fasteners, materials   # noqa: E402
+from lib import dn, fasteners, materials, step_export  # noqa: E402
 from tracker import stl_bbox_mm, stl_manifold   # noqa: E402  (gate-consistent STL reader)
 
 P = json.loads((HERE / "params.json").read_text())
@@ -71,7 +73,11 @@ RHO_FKM = 1800.0                                           # FKM gasket class, s
 assert L == 400.0 and W == 400.0 and H == 3700.0, "ZNBR2_BR2_REGEN node envelope changed"
 assert OD == 114.3 and T == 8.56, "column nominal changed"
 assert abs(Z_CAP0 + TOP_T - (H - 1.5)) < 0.01, "column internals must close just under the envelope top"
-assert float(DS["gas_m3_h"]) > float(DS["gas_duty_m3_h"]), "the live purge must bound the duty figure"
+# The 30 m3/h duty figure (VENT_SCRUB band mid, W12(1)) is the sizing class; the live purge
+# rides the charge book (2026-11-11 store re-solve moved it to 29.0 m3/h, below the duty) and
+# the column sizes on it. The invariant is hardware coverage: DN100 carries the larger of the
+# two required diameters (the live D_req, the duty 84 mm class diameter).
+assert float(DS["DN_mm"]) > float(DS["D_req_mm"]), "the column must cover the live-purge required diameter"
 
 
 def tube(len_, r_out=OD / 2, r_in=OD / 2 - T):
@@ -150,7 +156,7 @@ v_sump = round(math.pi * (OD / 2 - T) ** 2 * SUMMP / 1e6, 1)               # L, 
 
 solid = cq.Compound.makeCompound([wp.val() for _, wp in parts.items()])
 out = HERE / "export"; out.mkdir(exist_ok=True)
-cq.exporters.export(solid, str(out / (UNIT.lower() + ".step")), opt={"write_pcurves": False, "precision_mode": 0})
+step_export.export_step(solid, str(out / (UNIT.lower() + ".step")), write_pcurves=False)
 cq.exporters.export(solid, str(out / (UNIT.lower() + ".stl")))
 cq.exporters.export(cq.Compound.makeCompound([wp.val().scale(0.001) for _, wp in parts.items()]),
                     str(HERE.parents[2] / "cad" / "stl" / (UNIT + ".stl")), opt={"ascii": True})
@@ -173,8 +179,8 @@ report = {
         "gas_m3_h": float(DS["gas_m3_h"]), "gas_duty_m3_h": float(DS["gas_duty_m3_h"]),
         "basis": "A-COL: packing height, support, distributor and demister are solids; HTU and "
         "NTU stay the duty-held figures (duty section 8; W12(2)). Diameter at 1.5 m/s on the "
-        "live purge (ess_tf, X-MFG-43b); the duty 30 m3/h / 84 mm figures predate the TF "
-        "re-solve (W12(1))",
+        "live purge the charge book re-solves (ess_tf, X-MFG-43b); the 30 m3/h / 84 mm duty "
+        "figures stay the W12(1) class basis and DN100 carries the larger of the two diameters",
     },
     "holdup_L": {"sump_nominal": v_sump,
                  "basis": "the nominal sump class is hardware (AQS-DUTY-061 house class), not a "

@@ -9,10 +9,12 @@ graphite wetted faces + ceramic-fibre backup + CS shell below the liner;
 the 10 mm design allowance is carried by the t40 ram liner and the
 t10 hood hot plate. No measured rate is claimed anywhere.
 """
-import csv, json, math, pathlib
+import csv, json, math, pathlib, sys
 import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
+sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
+from lib import step_export  # noqa: E402
 P = json.loads((HERE / "params.json").read_text())
 A = P["assumptions"]
 AN = P["anode"]; CA = P["cathode"]; BUS = P["busbar"]
@@ -44,7 +46,7 @@ casing = casing.union(roof)
 casing = casing.cut(rod(RY + 2, (rx_, ry_, 1585), "Z", 30))                      # riser pass at the roof
 for xk in anode_xc:                                                              # N1..: nothing on the roof besides riser
     pass
-for (sx, sdir, hd) in ((202.0, -1, 21.5), (598.0, 1, 21.5)):                      # N2 / N4 stub passes
+for (sx, sdir, hd) in ((202.0, -1, 21.5), (598.0, 1, 21.5), (260.0, -1, 21.5), (540.0, 1, 21.5)):              # N2 / N4 / N9 / N8 stub passes
     p = (sx, (W + 5) if sdir > 0 else -5.0, 600.0)
     casing = casing.cut(rod(hd / 2, p, "Y", 95 * (-1 if sdir < 0 else 1)))
 casing = casing.cut(rod(30.5, (256.0, 160.0, -5.0), "Z", 85.0))                   # N5 well pass
@@ -144,19 +146,28 @@ seal_flange = box(0, 340, 130, 8, 120, 60)
 lance = tube(A["DN100_OD_mm"] / 2, A["DN100_OD_mm"] / 2 - A["DN100_wall_mm"], (70, 400, 160), "X", 100)
 parts["feed_chute_group"] = chute.union(cq.Workplane(obj=cone)).union(seal_flange).union(lance)
 
-# ---------------- N2 / N4 DN15 stubs + ceramic lining sleeves ---------------------
+# ---------------- N2 / N4 / N8 / N9 / N13 / N14 DN15 stubs + ceramic lining sleeves ---------------------
 s = None
-for (sx, sdir) in ((202.0, -1), (598.0, 1)):
+for (sx, sdir) in ((202.0, -1), (598.0, 1), (260.0, -1), (540.0, 1), (330.0, -1), (470.0, 1)):
     y1 = (W if sdir > 0 else 0.0)
     q = tube(OD15 / 2, OD15 / 2 - t15, (sx, y1, 600), "Y", -40 * sdir)   # built flush at the face (see N1)
     s = q if s is None else s.union(q)
 parts["DN15_stubs"] = s
 sl_ = None
-for (sx, sdir) in ((202.0, -1), (598.0, 1)):
+for (sx, sdir) in ((202.0, -1), (598.0, 1), (260.0, -1), (540.0, 1), (330.0, -1), (470.0, 1)):
     y1 = (730.0 if sdir > 0 else 70.0)
     q = tube(16.0, OD15 / 2 - t15, (sx, y1, 600), "Y", -40 * sdir)
     sl_ = q if sl_ is None else sl_.union(q)
 parts["ceramic_sleeves"] = sl_
+
+# ---------------- N10 / N11 / N12 solids feed chute envelopes ---------------------
+# The N3 chute idiom (box flush at the -X face about the 160 datum), in study slots
+# beside the primary chute; solids rows, bore not calculated.
+ch = None
+for (y0, dy) in ((10.0, 150.0), (172.0, 140.0), (492.0, 150.0)):
+    q = box(0, y0, 90, 35, dy, 140)
+    ch = q if ch is None else ch.union(q)
+parts["solids_feed_chutes"] = ch
 
 # ---------------- N5 drain well --------------------------------------------------
 parts["drain_well"] = tube(30.0, OD15 / 2, (256, 160, 0), "Z", 50)
@@ -180,7 +191,7 @@ asm = cq.Assembly(name="AL_POT")
 for k, v in list(parts.items()) + list(inv.items()):
     asm.add(v, name=k)
 out = HERE / "export"; out.mkdir(exist_ok=True)
-asm.export(str(out / "al_pot.step"))
+step_export.export_step(asm, str(out / "al_pot.step"))
 
 body = None
 for k, v in parts.items():
@@ -227,7 +238,7 @@ rho = {"casing": 7.85e-6, "fibre_lining": 128e-9, "ram_lining": 1.55e-6, "hood_h
        "cathodes": 7.87e-6, "ceramic_pads": 2.7e-6, "bus_rails": 8.96e-6, "bus_straps": 8.96e-6,
        "offtake_riser": 7.85e-6, "riser_flange": 7.85e-6, "dip_leg": 8.9e-6, "vent_stub": 7.85e-6,
        "metal_siphon": 1.55e-6, "feed_chute_group": 7.85e-6, "DN15_stubs": 7.85e-6,
-       "ceramic_sleeves": 2.7e-6, "drain_well": 1.55e-6}
+       "ceramic_sleeves": 2.7e-6, "drain_well": 1.55e-6, "solids_feed_chutes": 7.85e-6}
 mass = {k: round(v.val().Volume() * rho[k], 1) for k, v in parts.items()}
 vol_melt = sum(v.val().Volume() for v in inv.values())
 # ---------------- acceptance record: nozzles_drawn -------------------------------
@@ -259,6 +270,37 @@ PLACE = {
     "N7": {"style": "carried", "face": "top",
            "note": "power terminal (SF-AL_POT bus) - a cable-schedule row: carried verbatim, "
                    "never drawn"},
+    "N8": {"style": "stub", "face": "+Y", "part": "DN15_stubs", "x_mm": 540.0,
+           "drawn_height_mm": 600.0,
+           "note": "phosgenation chlorine DN15 stub flush at the +Y face, with its ceramic "
+                   "lining sleeve (IA-RESIST-CL2 of the on-site resist route, A-M-482)"},
+    "N9": {"style": "stub", "face": "-Y", "part": "DN15_stubs", "x_mm": 260.0,
+           "drawn_height_mm": 600.0,
+           "note": "chlorosilane-loop chlorine make-up DN15 stub flush at the -Y face, with "
+                   "its ceramic lining sleeve (IA-CL2-SIREF of the on-site silicon route, A-M-472)"},
+    "N10": {"style": "solids", "face": "-X", "part": "solids_feed_chutes",
+            "drawn_height_mm": 160.0,
+            "note": "anhydrous AlCl3 top-up feed: chute envelope flush at the -X face about the "
+                    "160 datum, in a study slot beside the primary feed chute; solids row, bore "
+                    "not calculated; class pending (task X-QA-19)"},
+    "N11": {"style": "solids", "face": "-X", "part": "solids_feed_chutes",
+            "drawn_height_mm": 160.0,
+            "note": "recovered reactive-Al hydroxide cake return to the aluminium line: chute "
+                    "envelope flush at the -X face about the 160 datum, study slot; solids row, "
+                    "bore not calculated"},
+    "N12": {"style": "solids", "face": "-X", "part": "solids_feed_chutes",
+            "drawn_height_mm": 160.0,
+            "note": "plant pyrolysis char reductant for the alumina chlorination: chute envelope "
+                    "flush at the -X face about the 160 datum, study slot; solids row, bore not "
+                    "calculated"},
+    "N13": {"style": "stub", "face": "+Y", "part": "DN15_stubs", "x_mm": 470.0,
+            "drawn_height_mm": 600.0,
+            "note": "chlorinator CO export DN15 stub flush at the +Y face, with its ceramic "
+                    "lining sleeve"},
+    "N14": {"style": "stub", "face": "-Y", "part": "DN15_stubs", "x_mm": 330.0,
+            "drawn_height_mm": 600.0,
+            "note": "calcination steam of the hydroxide cake DN15 stub flush at the -Y face, "
+                    "with its ceramic lining sleeve"},
 }
 drawn = {}
 for tag, rec in PLACE.items():
@@ -332,10 +374,15 @@ rows = [
     ["14", "Drain well: carbon sump tube OD60, DN15 bore, sump face z 50, flush at z 0", 1,
      "carbon (ram class)", mass["drain_well"], "make",
      "task-04 schedule N5 bottom DN15 Class 150; frozen-salt drain pig per WO step 6"],
-    ["15", "Ceramic lining sleeves for the N2/N4 ram passes", 2, "alumina (90 % class)",
+    ["15", "Ceramic lining sleeves for the N2/N4/N8/N9/N13/N14 ram passes", 6, "alumina (90 % class)",
      mass["ceramic_sleeves"], "buy", "duty section 3 backup-lining class (SCHACHT2004)"],
     ["16", "Thyristor rectifier + bath hold heaters, 7 kW connected, IP54 cabinet", 1, "purchase item",
      "", "buy", "WO step 5/7; AQS-DUTY-072 section 4; A-M-282 class; mass per the purchase datasheet at order"],
+    ["17", "Solids feed chute set: three chute envelopes flush at the -X face about the "
+           "160 datum (N10/N11/N12)", 3, "carbon steel (ram class)",
+     mass["solids_feed_chutes"], "make",
+     "task-04 schedule N10/N11/N12 (solids, bore not calculated); N10 class pending "
+     "(task X-QA-19); slots a study layout choice beside the primary feed chute"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)

@@ -1,4 +1,4 @@
 item,size,grade,qty,location,basis
-1,M16 tie rod with 2 heavy hex nuts,ISO 898-1 8.8,188,bipolar stack compression; four rods per module stack (count from the model),stack compression hardware; grade 8.8 on the dry carbon-steel side per the W5 rule; study length; confirmed at fabrication
-2,M8 bolt with nut,ISO 3506 A4-70,94,cable-lug joints on the per-stack bus flats,bolted electrical joint; stainless hardware at the copper bus (dry side); torque per the house electrical practice
+1,M16 tie rod with 2 heavy hex nuts,ISO 898-1 8.8,152,bipolar stack compression; four rods per module stack (count from the model),stack compression hardware; grade 8.8 on the dry carbon-steel side per the W5 rule; study length; confirmed at fabrication
+2,M8 bolt with nut,ISO 3506 A4-70,76,cable-lug joints on the per-stack bus flats,bolted electrical joint; stainless hardware at the copper bus (dry side); torque per the house electrical practice
 3,M12 wedge anchor,ISO 898-1 8.8,4,plinth to slab; one per corner (count from the model),grade rule AQS-PLAN-006 W5: 8.8 on the carbon-steel plinth; study length; confirmed at fabrication
