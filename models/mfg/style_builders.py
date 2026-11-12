@@ -358,7 +358,7 @@ CLASS_STYLE = {
 }
 
 STAGE_OWNED_SIZE = {'ACID_POLISH_SCRUB', 'ALK_SCRUBBER', 'MET_SCRUB', 'NOX_SCRUB',
-                    'ZNBR2_BR2_REGEN', 'OIL_FRAC'}   # write_graph scrubber pass owns the envelope
+                    'ZNBR2_BR2_REGEN', 'OIL_FRAC', 'EVAP_ACID_VS'}   # write_graph scrubber pass owns the envelope
 ENVELOPE_KEEP = {'boundary', 'building', 'shop', 'fab', 'pv', 'ghex', 'hydro', 'farm',
                  'chemical_synthesis', 'melt', 'furnace', 'former', 'forming', 'intra',
                  'coater', 'wet_bench', 'aligner', 'tool', 'dryer', 'cru', 'thermal',
