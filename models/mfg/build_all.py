@@ -19,6 +19,15 @@ def scripts():
     return top + models + drawings
 
 
+def tracker_last(scripts_list):
+    """The tracker runs last: its params.json write-back merges the graph design into whatever
+    the builders wrote, so a builder-owned partial design block never survives as the final
+    record and the stage output matches what the mfg_tracker manifest stage writes."""
+    head = [f for f in scripts_list if os.path.basename(f) != 'tracker.py']
+    tail = [f for f in scripts_list if os.path.basename(f) == 'tracker.py']
+    return head + tail
+
+
 if __name__ == '__main__':
     # Top-level train scripts that take per-unit argv are expanded once per unit;
     # everything else runs argless (foundry/polymers default to their own UNITS).
@@ -33,7 +42,7 @@ if __name__ == '__main__':
     _lock_fd = os.environ.get('AQS_LOCK_FD')
     _pass_fds = (int(_lock_fd),) if _lock_fd else ()
     PER_UNIT = {'evap_mvr.py': ['EVAP_ACID']}   # EVAP_BASE owns its builder (AQS-PLAN-006 W1: the unit folder script, so the style pass never clobbers)
-    for f in scripts():
+    for f in tracker_last(scripts()):
         base = os.path.basename(f)
         calls = [[f, u] for u in PER_UNIT[base]] if base in PER_UNIT else [[f]]
         for call in calls:

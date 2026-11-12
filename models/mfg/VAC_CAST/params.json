@@ -19,7 +19,11 @@
  "relief_mm": null,
  "internals": "none",
  "design": {
-  "machine": "vacuum tilt-pour casting station, N+1 standby of CAST_LINE/CONT_CAST (node design machine)",
+  "machine": "vacuum tilt-pour casting station, N+1 of CAST_LINE",
+  "connected_kW": 7.5,
+  "backup_of": "CAST_LINE",
+  "outage_d": 2.0,
+  "design_case_kg_d": 3.0,
   "mat": "304L vacuum chamber; graphite crucible + alumina backup; steel table hardware (duty section 3)",
   "ca_mm": 0.0,
   "wall_mm": 6.0,

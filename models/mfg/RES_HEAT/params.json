@@ -19,6 +19,11 @@
  "relief_mm": null,
  "internals": "none",
  "design": {
+  "service": "resistance radiant reheating furnace, N+1 of SHELL_BURNOUT/SINTER heating",
+  "connected_kW": 12.0,
+  "backup_of": "SHELL_BURNOUT/SINTER",
+  "outage_d": 2.0,
+  "T_C": 900.0,
   "machine": "resistance radiant reheating furnace, N+1 standby of the SHELL_BURNOUT/SINTER heating duty (node design service)",
   "mat": "mild-steel casing, ceramic-fibre module lining, 80Ni-20Cr resistance elements (duty section 3)",
   "ca_mm": 0.0,

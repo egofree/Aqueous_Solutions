@@ -19,6 +19,12 @@
  "relief_mm": null,
  "internals": "none",
  "design": {
+  "service": "Ti/Mo/Cr powder sinter furnace, N+1 consolidation of ROLL",
+  "connected_kW": 8.0,
+  "backup_of": "ROLL",
+  "outage_d": 2.0,
+  "design_case_kg_d": 0.5,
+  "T_C": 1300.0,
   "machine": "Ti/Mo/Cr powder sinter furnace, N+1 consolidation of ROLL (node design service)",
   "mat": "water-cooled nickel-free steel jacket, ceramic-fibre board, 95 % alumina muffle, graphite resistance elements (duty section 3)",
   "ca_mm": 0.0,

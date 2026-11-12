@@ -35,7 +35,7 @@
   "loop_fluid": "25 % propylene glycol",
   "circ_pump_W": 125.7,
   "status": "design_survey_locked (ST-ORC-01)",
-  "material": "HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal (node material)",
+  "material": "HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal",
   "service": "GEO_GHEX: the ground heat exchanger - 2 boreholes x 45 m at 6 m spacing, HDPE DR-11 U-tubes on the DN32 glycol loop, tied to GEO_HP by the S43 class edge (duty sections 1 and 4; ST-ORC-01 design_survey_locked)",
   "ca_mm": 0.0,
   "material_basis": "node material row; CA does not apply to the HDPE (AQS-STD-001)",

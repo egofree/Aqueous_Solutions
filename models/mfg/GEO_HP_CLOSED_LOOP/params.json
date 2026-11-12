@@ -26,7 +26,7 @@
   "head_m": 25,
   "pump_W": 125.7,
   "duty": "source loop between the bore field and the heat-pump evaporators; S43 carries it on the graph (0 kW idle standby)",
-  "material": "HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C; node material)",
+  "material": "HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C)",
   "service": "GEO_HP_CLOSED_LOOP: the closed source loop between the GHEX bore field and the heat-pump evaporators - the S43 class edge at 0 kW idle standby, design case 3.0 kW th (duty sections 1 and 4)",
   "ca_mm": 0.0,
   "material_basis": "node material row; CA does not apply to the HDPE (AQS-STD-001)",

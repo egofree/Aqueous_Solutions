@@ -19,6 +19,12 @@
  "relief_mm": null,
  "internals": "none",
  "design": {
+  "service": "combustion reheating furnace (C5-C10 fuel class), tertiary N+1 of IND_MELT",
+  "connected_kW": 0.05,
+  "thermal_kW": 30.0,
+  "backup_of": "IND_MELT",
+  "outage_d": 2.0,
+  "offgas": "to MET_SCRUB when energized (COMB_OFFGAS)",
   "machine": "combustion reheating furnace, tertiary N+1 standby of IND_MELT (node design service)",
   "mat": "mild-steel shell, alumina-silica brick + castable crown hot face, 310S radiant burner tube (duty section 3)",
   "ca_mm": 0.0,

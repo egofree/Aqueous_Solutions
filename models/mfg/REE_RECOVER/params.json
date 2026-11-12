@@ -19,6 +19,27 @@
  "relief_mm": null,
  "internals": "none",
  "design": {
+  "service": "rare-earth magnet recovery (batch campaign): demag > 320 C, HCl leach, Fe removal, RE oxalate precipitation, 900 C calcine",
+  "route": "published short-product NdFeB recycling; HCl from the plant acid loop (BMED 30 wt% class)",
+  "campaign": {
+   "ndfeb_kg": 1.618,
+   "re_pct": 31.0,
+   "fe_pct": 67.8,
+   "b_pct": 1.2,
+   "hcl_30_kg": 6.0,
+   "h2o2_30_kg": 1.11,
+   "oxalic_kg": 0.46,
+   "naoh_kg": 2.36,
+   "wash_kg": 10.0,
+   "reo_kg": 0.585,
+   "fe_cake_kg": 2.1,
+   "brine_kg": 18.8,
+   "brine_nacl_pct": 16.6,
+   "h2_kg": 0.04,
+   "families": "MF-01 14 x 2.8 g; MF-02 55 x 28.7 g installed; MF-03/22/23 reserved variants"
+  },
+  "campaign_basis": "largest installed-family campaign MF-02 55 x 28.7 g = 1.578 kg; full-fleet campaign 1.618 kg (A-M-433); reserved families (MF-23 555.2 g/unit) ride the same batch capacity",
+  "closures": "Fe(OH)3 cake to MET_MELT remnant; NaCl brine filtrate to the BMED feed class; REO product exported",
   "duty": "rare-earth magnet recovery (batch campaign): demag > 320 C, HCl leach, Fe removal, RE oxalate precipitation, 900 C calcine",
   "campaign_kg": 1.618,
   "reo_kg_campaign": 0.585,
@@ -26,8 +47,7 @@
   "power_kW": 0.3,
   "mat": "glass-lined reactor, PTFE transfer, PP-H filter; 316L muffle shell; 316L frame (duty section 3, X-MAT-22)",
   "ca_mm": 0.0,
-  "internals": "equipment drawn as purchased envelopes per plan rule 6 (WORK_ORDER W12)",
-  "route": "route hold: no AQS-PLAN-006 section 4 class for precip; F-MACH frame and F-VES vessel operations as the nearest families (WORK_ORDER W10)"
+  "internals": "equipment drawn as purchased envelopes per plan rule 6 (WORK_ORDER W12)"
  },
  "nozzles": [
   {

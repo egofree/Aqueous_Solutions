@@ -236,6 +236,20 @@
   ]
  },
  "design": {
+  "grow_bed_layout_mm": {
+   "interior_xy_mm": [
+    7280,
+    4000
+   ],
+   "wall_mm": 15,
+   "canopy_top_mm": 900,
+   "rail_allowance_mm": 10.6,
+   "bay_module_mm": [
+    2000,
+    1000,
+    400
+   ]
+  },
   "service": "GROW_BED: the crew-duty crop bed (S14 4.2 kg/d food out on the BVAD2022 tomato proxy, A-M-229); irrigated media culture with the LED canopy (duty sections 1 and 3)",
   "area_basis": "crew duty (A-M-229): 29.12 m2; supersedes the A-M-151 residue-line claim studies",
   "material": "HDPE basin, EPDM liner, LECA media; canopy painted A500",

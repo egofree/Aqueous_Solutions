@@ -19,6 +19,12 @@
  "relief_mm": null,
  "internals": "none",
  "design": {
+  "service": "vacuum induction skull melt (ISM), N+1 diverse of IND_MELT",
+  "design_case_kg": 2.0,
+  "connected_kW": 15.0,
+  "backup_of": "IND_MELT",
+  "outage_d": 2.0,
+  "duty_note": "equal-duty backup of the 25 kW melt at the 2 kg ISM batch class (A-M-283)",
   "machine": "vacuum induction skull-melt (ISM) furnace, N+1 diverse standby of IND_MELT (node design service)",
   "mat": "304L vacuum chamber + water-cooled Cu crucible, ceramic-fibre insulation (duty section 3)",
   "ca_mm": 0.0,
