@@ -37,7 +37,7 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, graph_node, materials, nozzles, rack_grid, step_export  # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzle_bands, nozzles, rack_grid, step_export  # noqa: E402
 
 GN = graph_node.graph_node("CRYO_CO2")        # the plant graph is the sole authority
 P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
@@ -157,16 +157,10 @@ groups = {}
 for r in schedule:
     groups.setdefault((FACE_OF.get(r["face"], r["face"]), float(r["height_mm"])), []).append(r)
 
-# side-rail bands the connections land in (frame hardware, study section)
-BANDS = {"-Y": [(100.0, 200.0), (H - 120.0, H - 20.0)], "+Y": [(100.0, 200.0), (H - 120.0, H - 20.0)]}
-
-
-def land_z(face, h, od):
-    """Schedule height if it fits a side-rail band, else the mid-rail centre (clamped)."""
-    for (z0, z1) in BANDS[face]:
-        if z0 + od / 2 + 2 <= h <= z1 - od / 2 - 2:
-            return h, False
-    return (BANDS[face][0][0] + BANDS[face][0][1]) / 2, True
+# side-rail bands the connections land in (frame hardware, study section) and
+# the clamp target: the shared rule in lib/nozzle_bands.py, re-run against the
+# committed schedule by the flow_graph datum gate
+BANDS, CLAMP_BAND = nozzle_bands.cryo_co2_bands(H)
 
 
 noz, drawn = None, {}
@@ -189,7 +183,7 @@ for (face, h), rows in sorted(groups.items()):
             zz, y_root = H, None
             note = CLAMP_NOTE.format(h=h, H=H, z=H) + "; vent up the tie bar to the rack top"
         else:
-            z, clamped = land_z(face, h, od)
+            z, clamped = nozzle_bands.land_z(face, h, od, BANDS, CLAMP_BAND)
             if clamped:
                 note = CLAMP_NOTE.format(h=h, H=H, z=z)
             y_root = 60.0 if face == "-Y" else W - 60.0    # tip flush at the rail face

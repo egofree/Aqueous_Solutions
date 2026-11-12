@@ -6,13 +6,14 @@ import json, math, os
 from . import drivers as DR
 from .constants import M, mw
 from .sizing import electrochem
+from .ew_cells import EW_CELLS, MINOR_CELLS
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 OX = {'Al2O3':{'Al':2,'O':3},'CaO':{'Ca':1,'O':1},'MgO':{'Mg':1,'O':1},'FeO':{'Fe':1,'O':1}}
 HCL = mw({'H':1,'Cl':1}); NAOH = mw({'Na':1,'O':1,'H':1}); H2O = mw({'H':2,'O':1})
 CHLORIDE = {'Al2O3':('AlCl3',{'Al':1,'Cl':3},2),'CaO':('CaCl2',{'Ca':1,'Cl':2},1),'MgO':('MgCl2',{'Mg':1,'Cl':2},1),'FeO':('FeCl2',{'Fe':1,'Cl':2},1)}
 H2O_PER = {'Al2O3':3,'CaO':1,'MgO':1,'FeO':1}
 MISFIT_TOL = 0.01   # 1 % relative misfit gate (AQS-PAR-001)
-EW_METAL = {1:('Au',3),2:('Ag',1),3:('Cu',2),4:('Pb',2),5:('Sn',2),6:('Ni',2),7:('Fe',2),8:('Cd',2),9:('Zn',2)}
+EW_METAL = {n: (el, z) for n, (el, z, _cls) in EW_CELLS.items()}   # the booking map: flow_graph/param/ew_cells.py (AQS-ASSAY-001 table 4.1, Q-038)
 
 def leach_acid(d):
     """Case A acid demand: oxide + n HCl -> chloride + water [GREENWOOD]; oxides from LUNAR_SOURCEBOOK."""
@@ -134,13 +135,11 @@ def ew_products(d, g):
     els = next(e for e in g['edges'] if e['stream_id'] == 'IA-FEED-01')[
         'params']['assay_envelope']['reference_point_elements']
     rec = DR.val(d, 'ew_leach_recovery_design')
-    minor = (4, 5, 6, 8, 9)
-    dep = {1: round(feed*els['Au']*rec, 6), 2: round(feed*els['Ag']*rec, 6),
-           3: round(feed*els['Cu']*rec, 6), 7: round(feed*els['Fe']*rec, 6)}
-    for n in minor:
-        dep[n] = round(feed*els['other_plateable']*rec/len(minor), 6)   # A-M-470: the even booking split
+    dep = {n: round(feed*els[EW_CELLS[n][0] if n not in MINOR_CELLS else 'other_plateable']*rec, 6) for n in EW_CELLS}
+    for n in MINOR_CELLS:
+        dep[n] = round(feed*els['other_plateable']*rec/len(MINOR_CELLS), 6)   # A-M-470: the even booking split
     cu = round(dep[3], 4)                      # the forming chain keeps the 4-dp rate convention
-    blend = sum(dep[n] for n in minor)
+    blend = sum(dep[n] for n in MINOR_CELLS)
     s57 = round(cu/2, 4)                       # wire billet: half the Cu deposit (AQS-DUTY-010)
     mill = round(cu/2, 4)                      # mill feed: the other half
     atom = round(blend, 4)                     # atomizer feed: the blend deposits

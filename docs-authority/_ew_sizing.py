@@ -14,10 +14,10 @@ from flow_graph.param import drivers as DR
 from flow_graph.param.constants import M as _M
 from flow_graph.param.sizing import electrochem
 from flow_graph.param.solver import ew_products
+from flow_graph.param.ew_cells import EW_CELLS
 _d=DR.load(); MCU=_M['Cu']
 g=json.load(open('flow_graph/plant_flow_graph.json')); R={e['stream_id']:e['rate']['value'] for e in g['edges']}
-EL={1:('Au',196.97,3,'Au'),2:('Ag',107.87,1,'Ag'),3:('Cu',63.546,2,'Cu'),4:('Pb',207.2,2,'other_plateable'),5:('Sn',118.71,2,'other_plateable'),
-    6:('Ni',58.693,2,'other_plateable'),7:('Fe',55.845,2,'Fe'),8:('Cd',112.41,2,'other_plateable'),9:('Zn',65.38,2,'other_plateable')}
+EL={n:(el,_M[el],z,cls) for n,(el,z,cls) in EW_CELLS.items()}   # the cell-to-element map: flow_graph/param/ew_cells.py (single source with solver.ew_products, F-20261110-03)
 FEED=R['IA-FEED-01']   # design feed rate, kg/d (AQS-ASSAY-001 section 3)
 ENV=next(e for e in g['edges'] if e['stream_id']=='IA-FEED-01')['params']['assay_envelope']['element_envelope']
 REC=DR.val(_d,'ew_leach_recovery_design')      # AQS-ASSAY-001 section 4 upper bound
