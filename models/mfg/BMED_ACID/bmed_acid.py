@@ -12,7 +12,8 @@ Every dimension is an authority figure or a named layout choice:
 - Machine per the issued EDBM construction (AQS-DUTY-068 `docs-authority/sizing/
   BMED_STACK.md`, A-M-170/171; the same construction line AQS-TST-006 builds to):
   the electrodialysis stack between end electrode plates - Ti/MMO anode plate and
-  316L/Ni cathode plate - on 300 x 300 frames, 85 triplets of one bipolar and two
+  316L cathode plate (AQS-STD-002 M6 electrodes, the M6 hydrogen clause deciding
+  316L over nickel; X-QA-13) - on 300 x 300 frames, 85 triplets of one bipolar and two
   monopolar membranes with 0.8 mm PE mesh spacers, 0.04 m2 active window per cell
   (200 x 200), tie-rod clamped. Duty section 3 rules the wetted path PVC-U; the
   sizing page frames are PP: PVC-U drawn (plan rule 5), PP named (holds, W12).
@@ -90,7 +91,7 @@ RHO_U = materials.density("PVC_U")     # 1400, lib table
 CA_U = materials.ca_for("PVC-U")       # 0.0, polymer: AQS-STD-001
 RHO_PE = materials.density("HDPE")     # 950, laminate spacer/membrane class
 RHO_TI = materials.density("Ti_G2")    # 4510, anode end plate (A-M-170)
-RHO_316 = materials.density("316L")    # 8000, cathode end plate 316L/Ni
+RHO_316 = materials.density("316L")    # 8000, cathode end plate 316L (X-QA-13)
 
 # Envelope and design both come from the graph node; no hard-coded duplicate stays.
 assert FRAME == 300.0 and CELL == 200.0, "AQS-DUTY-068 construction changed"
@@ -111,7 +112,7 @@ for x, y, dx, dy in ((0, 0, L, CURB_T), (0, W - CURB_T, L, CURB_T),
 parts["tray"] = tray
 
 # ---------------------------------------------------------------- EDBM stack (A-M-170 construction)
-# anode end plate (Ti/MMO), clamp frames, triplet laminate, cathode end plate (316L/Ni)
+# anode end plate (Ti/MMO), clamp frames, triplet laminate, cathode end plate (316L)
 anode = box(X_AN1, STACK_Y0, Z0, ELECTRODE_T, FRAME, FRAME)
 parts["anode_end_plate"] = anode
 frame_a = box(X_FR1, STACK_Y0, FRAME_Z0, PLATE_T, FRAME, FRAME)
@@ -276,7 +277,9 @@ report = {
     "stack": {
         "construction": "AQS-DUTY-068 (docs-authority/sizing/BMED_STACK.md) / A-M-170: "
         "300 x 300 frames, 0.8 mm PE mesh spacers, one bipolar and two monopolar membranes "
-        "per triplet, Ti/MMO anode and 316L/Ni cathode end plates, tie-rod clamped; the "
+        "per triplet, Ti/MMO anode end plate and 316L annealed cathode end plate (BMED "
+        "electrodes per AQS-STD-002 M6; the M6 hydrogen clause decides 316L over nickel, "
+        "X-QA-13), tie-rod clamped; the "
         "same construction AQS-TST-006 (AQS-TST-006 section 2) builds the bench apparatus to",
         "frames_mm": [FRAME, FRAME], "active_window_mm": [CELL, CELL],
         "active_area_m2_per_cell": round(CELL * CELL / 1e6, 4),
@@ -289,7 +292,9 @@ report = {
         "draws the representative stack module (hold, WORK_ORDER W12)",
         "material_note": "frames drawn PVC-U per duty section 3 (no metal wetted part); "
         "the sizing page construction names PP frames - PVC-U drawn, PP named (hold, W12); "
-        "electrode end plates are the A-M-170 electrochemical hardware (Ti/MMO, 316L/Ni)",
+        "electrode end plates are the A-M-170 electrochemical hardware per AQS-STD-002 M6 "
+        "(Ti/MMO anode; 316L annealed cathode plate, the M6 hydrogen clause deciding 316L "
+        "over nickel, X-QA-13)",
     },
     "a_cell": {
         "basis": "A-CELL: plate count, plate size, pitch and active area per the "
@@ -326,8 +331,9 @@ rows = [
      "rule); tray is the skid layout choice (WORK_ORDER W12)"],
     ["2", "Anode end plate 300 x 300 x 10, Ti/MMO (A-M-170)", 1, "Ti G2",
      mass["anode_end_plate"], "buy",
-     "AQS-DUTY-068 construction line; thickness study (W12); MMO coating per the "
-     "anode supplier class at order"],
+     "AQS-DUTY-068 construction line; BMED electrode per AQS-STD-002 M6, the section 9 "
+     "Ti/MMO dimensionally-stable-anode class in chloride; thickness study (W12); MMO "
+     "coating per the anode supplier class at order"],
     ["3", f"Clamp frame plates 300 x 300 x {PLATE_T:g} (pair, stack ends)", 2, "PVC-U plate",
      round(mass["frame_plate_a"] + mass["frame_plate_b"], 2), "make",
      "duty section 3 PVC-U drawn; the sizing construction names PP frames (hold, W12); "
@@ -338,13 +344,17 @@ rows = [
      "AQS-DUTY-068 and A-M-170; membranes per the maker class, gaskets per the membrane "
      "maker (AQS-TST-006 section 2); membrane sheet thickness study (W12); drawn as the "
      "stack envelope per plan rule 6"],
-    ["5", "Cathode end plate 300 x 300 x 10, 316L/Ni (A-M-170)", 1, "316L/Ni",
+    ["5", "Cathode end plate 300 x 300 x 10, 316L (A-M-170; AQS-STD-002 M6)", 1, "316L",
      mass["cathode_end_plate"], "buy",
-     "AQS-DUTY-068 construction line; thickness study (W12)"],
+     "AQS-DUTY-068 construction line; BMED cathode electrode hardware per AQS-STD-002 M6, "
+     "316L annealed by the M6 hydrogen clause (austenitic stainless or titanium at a "
+     "cathode, Ti held for hydriding; nickel has no M6 basis; X-QA-13 resolves the former "
+     "316L-or-nickel class); thickness study (W12)"],
     ["6", f"Tie rods M12 x {round(ROD_X1 - ROD_X0):g}, 4 per stack", 4,
      "316L rod", mass["tie_rods"], "make",
      "A-M-170 tie-rod clamp; ends drawn buried in the end plates, the protruding stud "
      "length and nuts are fabrication detail (AQS-TST-006 section 2 torque pattern); "
+     "316L outside the wetted and vapour zone per AQS-STD-002 M4 (X-QA-13); "
      "grade rule AQS-PLAN-006 W5: A4-70 on 316L"],
     ["7", f"Hold-down beam {round((X_CA2 - X_A0) + 20):g} x "
           f"{round(FRAME + 20):g} x {BEAM_T:g} on four {POST_W:g} x {POST_W:g} posts", 1,
@@ -370,7 +380,8 @@ fasteners.write_fasteners(HERE / "fasteners.csv", [
      "length, confirmed at fabrication"],
     [None, "M12 tie rod + nut", fasteners.grade_for("316L"), 4,
      "stack clamp, through the end plates (A-M-170 torque pattern per AQS-TST-006 "
-     "section 2)", "grade rule AQS-PLAN-006 W5: A4-70 on 316L; torque to the issued "
+     "section 2)", "outside the wetted and vapour zone per AQS-STD-002 M4 (X-QA-13); "
+     "grade rule AQS-PLAN-006 W5: A4-70 on 316L; torque to the issued "
      "stack pattern; lengths study, confirmed at fabrication"],
 ])
 
@@ -386,7 +397,9 @@ p["envelope"] = {
 p["design"] = {
     "machine": "electrodialysis stack skid (BMED acid side), EDBM per AQS-DUTY-068",
     "construction": "A-M-170: 300 x 300 frames, 0.8 mm PE mesh spacers, 85 triplets, "
-                    "Ti/MMO anode and 316L/Ni cathode end plates, tie rods",
+                    "Ti/MMO anode end plate and 316L annealed cathode end plate (BMED "
+                    "electrodes per AQS-STD-002 M6, X-QA-13), 316L tie rods outside the "
+                    "wetted zone per M4",
     "active_area_m2_per_cell": round(CELL * CELL / 1e6, 4),
     "mat": MAT, "ca_mm": CA_U,
     "mat_basis": "duty section 3: PVC-U wetted, no metal wetted part; sizing PP frames "

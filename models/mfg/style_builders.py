@@ -364,6 +364,26 @@ ENVELOPE_KEEP = {'boundary', 'building', 'shop', 'fab', 'pv', 'ghex', 'hydro', '
                  'coater', 'wet_bench', 'aligner', 'tool', 'dryer', 'cru', 'thermal',
                  'flue_junction', 'skid'}   # machines needing their own design session
 
+# X-QA-15: the per-pass size stamp this stage appended to params.size_note before the
+# 2026-10-31 gap audit (commit 514e50a2) is retired - the claimed envelope stays the
+# authority and the note is never re-stamped. Runs before the fix baked repeated copies
+# of the sentence into the persisted graph; strip every copy here, where the stamp was
+# written. Idempotent: the first pass removes them, every later pass changes nothing.
+_RETIRED_STAMP = re.compile(r'\s*Size follows the machine build \(style builder [A-Za-z_]+\)\.')
+
+
+def strip_retired_size_stamps():
+    """Remove the retired size stamp from every node's size-note strings; return the nodes changed."""
+    changed = 0
+    for n in G['nodes']:
+        p = n.get('params') or {}
+        for field in ('size_note', 'size_basis'):
+            s = p.get(field)
+            if isinstance(s, str) and 'Size follows the machine build' in s:
+                p[field] = _RETIRED_STAMP.sub('', s)
+                changed += 1
+    return changed
+
 
 def dispatch():
     todo = []
@@ -392,6 +412,7 @@ def dispatch():
 def run(units=None):
     g_path = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
     done, failed, grew = [], [], []
+    cleaned = strip_retired_size_stamps()   # X-QA-15: retired per-pass stamp, see strip_retired_size_stamps
     todo = ([(x, CLASS_STYLE.get(N[x].get('class'))) for x in units] if units else dispatch())
     for u, st in todo:
         if not st:
@@ -433,9 +454,10 @@ def run(units=None):
             done.append(u)
         except Exception as e:
             failed.append((u, f'{e.__class__.__name__}: {e}'))
-    if done:
+    if done or cleaned:
         json.dump(G, open(g_path, 'w'), indent=2)
-    print(f'style_builders: {len(done)} built, {len(failed)} failed, {len(grew)} resized')
+    print(f'style_builders: {len(done)} built, {len(failed)} failed, {len(grew)} resized'
+          + (f', {cleaned} retired size stamps stripped' if cleaned else ''))
     for u, e in failed:
         print(f'  FAIL {u}: {e}')
     for u, old, new in grew:

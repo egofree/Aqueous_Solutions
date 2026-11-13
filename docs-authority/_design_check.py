@@ -79,9 +79,12 @@ import csv as _csv
 md15 = next((r for r in _csv.DictReader(open('docs-authority/inventory/MOTOR_DESIGNS.csv'))
              if r['type'] == 'induction IE3' and r['rating'].endswith('/ 1.5 kW')), None)
 if md15: chk('QC-20', 'flow_graph/inventory/motor_designs.py', f"{md15['family']} (1.5 kW IE3) line current A", float(md15['current_A']), 1500/(0.865*0.80*math.sqrt(3)*480), 0.02)
-# 21 first-article rated torque = 9549 P / n at 3 % slip
+# 21 first-article rated torque = 9549 P / n at 3 % slip (load-machine family picked by rating, not by id)
 fa = {r['family']: r for r in json.load(open('docs-authority/inventory/MOTOR_FA.json'))}
-if 'MF-18' in fa: chk('QC-21', 'docs-authority/_motor_fa.py', 'MF-18 rated torque N m', fa['MF-18']['T_Nm'], 9549*18.5/(1800*0.97), 0.01)
+ind4 = [r for r in fa.values() if r.get('poles') == 4]
+if ind4:
+    lm = max(ind4, key=lambda r: r['P_kW'])
+    chk('QC-21', 'docs-authority/_motor_fa.py', f"{lm['family']} ({lm['P_kW']:g} kW IE3) rated torque N m", lm['T_Nm'], 9549*lm['P_kW']/(1800*0.97), 0.01)
 # 22 BMED bench output g/h = N I CE M / F
 tr = json.load(open('docs-authority/inventory/TEST_RIGS.json'))
 chk('QC-22', 'docs-authority/_test_rigs.py', 'BMED bench NaOH g/h (10 triplets, 8 A, CE 0.80)', tr['bmed']['naoh_g_h'], 10*8.0*0.80/96485*39.997*3600, 0.01)

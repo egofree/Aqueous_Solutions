@@ -194,7 +194,7 @@
           1000,
           400
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset). Size follows the machine build (style builder genset).",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "rated_kW": 20.0,
         "duty_basis": "standby; NFPA 110 8.4.2 monthly exercise 0.5 h at 30% load = 0.099 kWh/d average; hydrogen first: 0.0099 kg/d H2 at 30% on 33.33 kWh/kg LHV; C5-C10 cut as fallback, 191 kg reserve in PROD_C5_C10 (flow_graph/param/backup_fuel.py)",
         "rated_kW_basis": "flow_graph/param/backup_fuel.py rating_kw (single computation, owner ruling Q-040 2026-11-05): 125 % of the live critical list 14.58 kW, rounded up in 5 kW steps (AQS-ELEC-007 / AQS-RED-001, NFPA 110 standby basis; owner ruling Q-040 2026-11-05); list: HABITATION 3.00, CRYO_H2 2.83, CRYO_ASU 1.75, GROW_BED 5.00, controls and instruments 2.00; written by write_graph power(), read by docs-authority/_power_sizing.py and o2_close.py.",
@@ -356,7 +356,14 @@
           600,
           350
         ],
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack)."
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "sec3_material": {
+          "mat": "Wetted path of PVC-U (spacer frames, gasket seals, drip tray, nozzles; above 60 C the thermoplastic class is CPVC) with the two electrode end plates as the only wetted metal, allowed as BMED electrodes per M6: Ti/MMO anode end plate and 316L annealed cathode end plate; 316L tie rods clamping the stack from outside the wetted and vapour zone per M4",
+          "basis": "AQS-STD-002 M2 holds the chlor-alkali and acid-regeneration systems on PVC-U, and M3 bans a wetted metal part in the reducing catholyte unless M6 names it; M6 names the BMED electrodes, and its hydrogen clause decides the cathode-plate alloy between 316L and nickel: metal in wet H2 or at a cathode is austenitic stainless or titanium only with the H2 partial pressure and temperature stated, and titanium at a cathode is held for hydriding, so the plate is 316L annealed - nickel has no M6 basis, and AQS-REV-H2-001 names 316L annealed for EW cathodes, the same cathode class. The anode plate takes the Ti/MMO dimensionally-stable-anode class of section 9 (chloride, anodic Cl2). The tie rods sit outside the wetted envelope and stay isolated from the liquor path (M4). Inlets arrive trim-cooled at 35 C (X-MAT-19), inside the PVC-U M5 limits on the polymer path. X-QA-13 reselection of the former undecided 316L-or-nickel cathode-plate class. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "Nickel 200 cathode hardware only if the caustic compartment later runs hot strong caustic above the 316L class (ULLMANN_NAOH nickel practice); CPVC frames if the loop moves above 60 C",
+          "note": "wetted by the 2 M HCl acid-side loop; the electrode end plates are the M6 hardware and the tie rods the external clamp steel - no other metal is wetted.",
+          "task": "X-QA-13"
+        }
       },
       "continuous_kw": {
         "value": 26.9276,
@@ -997,7 +1004,7 @@
           800,
           700
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit). Size follows the machine build (style builder stack_unit).",
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
         "reversible_loop": {
           "electrolyser": "H2O_ELYZ",
           "round_trip": 0.364,
@@ -1179,7 +1186,7 @@
           520,
           748
         ],
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder vessel_z). Size follows the machine build (style builder vessel_z)."
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "continuous_kw": null
     },
@@ -2187,7 +2194,7 @@
           520,
           748
         ],
-        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder vessel_z). Size follows the machine build (style builder vessel_z)."
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -2337,7 +2344,7 @@
           600,
           350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -2366,7 +2373,7 @@
           600,
           350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -2395,7 +2402,7 @@
           600,
           350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -2424,7 +2431,7 @@
           600,
           350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -2453,7 +2460,7 @@
           600,
           350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -2482,7 +2489,7 @@
           600,
           350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -2516,7 +2523,7 @@
           600,
           350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,
@@ -2673,7 +2680,7 @@
           600,
           350
         ],
-        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064) Size follows the machine build (style builder tote). Size follows the machine build (style builder tote). Size follows the machine build (style builder tote).",
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
           "hold_d": 30,
           "V_nom_m3": 0.02,

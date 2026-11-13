@@ -143,7 +143,7 @@ BMED_ACID,"Drip tray 1000 x 600, floor 20 + curb 60 x 10",1,PVC-U plate,Partial,
 BMED_ACID,"Anode end plate 300 x 300 x 10, Ti/MMO (A-M-170)",1,Ti G2,Unstated,-,not classed: Ti G2
 BMED_ACID,"Clamp frame plates 300 x 300 x 20 (pair, stack ends)",2,PVC-U plate,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 BMED_ACID,Triplet laminate: 85 triplets x (1 bipolar + 2 monopolar membranes + 0.8 mm PE m,85,membrane/PE spacer laminate,Unstated,-,not classed: membrane/PE spacer laminate
-BMED_ACID,"Cathode end plate 300 x 300 x 10, 316L/Ni (A-M-170)",1,316L/Ni,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+BMED_ACID,"Cathode end plate 300 x 300 x 10, 316L (A-M-170; AQS-STD-002 M6)",1,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 BMED_ACID,"Tie rods M12 x 290, 4 per stack",4,316L rod,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 BMED_ACID,Hold-down beam 314 x 320 x 20 on four 9 x 9 posts,1,PVC-U plate,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 BMED_ACID,Nozzle set per docs-authority/nozzles/BMED_ACID.csv: 10 atmospheric open-bore tu,10,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
@@ -151,7 +151,7 @@ BMED_BASE,"Drip tray 1000 x 600, floor 20 + curb 60 x 10",1,PVC-U plate,Partial,
 BMED_BASE,"Anode end plate 300 x 300 x 10, Ti/MMO (A-M-170)",1,Ti G2,Unstated,-,not classed: Ti G2
 BMED_BASE,"Clamp frame plates 300 x 300 x 20 (pair, stack ends)",2,PVC-U plate,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 BMED_BASE,Triplet laminate: 85 triplets x (1 bipolar + 2 monopolar membranes + 0.8 mm PE m,85,membrane/PE spacer laminate,Unstated,-,not classed: membrane/PE spacer laminate
-BMED_BASE,"Cathode end plate 300 x 300 x 10, 316L/Ni (A-M-170)",1,316L/Ni,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+BMED_BASE,"Cathode end plate 300 x 300 x 10, 316L (A-M-170; AQS-STD-002 M6)",1,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 BMED_BASE,"Tie rods M12 x 290, 4 per stack",4,316L rod,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 BMED_BASE,Hold-down beam 314 x 320 x 20 on four 9 x 9 posts,1,PVC-U plate,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 BMED_BASE,Nozzle set per docs-authority/nozzles/BMED_BASE.csv: 8 atmospheric open-bore tub,8,PVC-U,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
@@ -1889,18 +1889,6 @@ MF-03 x 24,bearing 6000-2Z,48,,Unstated,-,material not stated on the unit BOM li
 MF-03 x 24,Hall sensor PCB,24,,Unstated,-,material not stated on the unit BOM line
 MF-03 x 24,"worm gear set (bronze wheel, steel worm)",24,,Unstated,-,material not stated on the unit BOM line
 MF-03 x 24,ISO 5211 F03 output flange + 9 mm square,24,,Unstated,-,material not stated on the unit BOM line
-MF-04 x 0,stator laminations M400-50A (EN 10106) 0.5 mm,0,,Unstated,-,material not stated on the unit BOM line
-MF-04 x 0,rotor laminations M400-50A 0.5 mm,0,,Unstated,-,material not stated on the unit BOM line
-MF-04 x 0,magnet wire IEC 60317-13 12 AWG (11.952 mm2),12.27 kg,,Unstated,-,material not stated on the unit BOM line
-MF-04 x 0,die-cast Al cage (bars + rings),4.70 kg,,Unstated,-,material not stated on the unit BOM line
-MF-04 x 0,shaft C45,0,,Unstated,-,material not stated on the unit BOM line
-MF-04 x 0,compressor shell (scroll line X-MFG-35),0,,Unstated,-,material not stated on the unit BOM line
-MF-05 x 0,stator laminations M400-50A (EN 10106) 0.5 mm,0,,Unstated,-,material not stated on the unit BOM line
-MF-05 x 0,rotor laminations M400-50A 0.5 mm,0,,Unstated,-,material not stated on the unit BOM line
-MF-05 x 0,magnet wire IEC 60317-13 22 AWG (0.130 mm2),0.61 kg,,Unstated,-,material not stated on the unit BOM line
-MF-05 x 0,die-cast Al cage (bars + rings),0.14 kg,,Unstated,-,material not stated on the unit BOM line
-MF-05 x 0,shaft C45,0,,Unstated,-,material not stated on the unit BOM line
-MF-05 x 0,compressor shell (scroll line X-MFG-35),0,,Unstated,-,material not stated on the unit BOM line
 MF-06 x 103,stator laminations M400-50A (EN 10106) 0.5 mm,10506,,Unstated,-,material not stated on the unit BOM line
 MF-06 x 103,rotor laminations M400-50A 0.5 mm,10506,,Unstated,-,material not stated on the unit BOM line
 MF-06 x 103,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.19 kg,,Unstated,-,material not stated on the unit BOM line
@@ -2013,16 +2001,6 @@ MF-17 x 27,end shields A356,54,,Unstated,-,material not stated on the unit BOM l
 MF-17 x 27,bearing 6308-2Z,54,,Unstated,-,material not stated on the unit BOM line
 MF-17 x 27,fan PP + fan cover steel,27,,Unstated,-,material not stated on the unit BOM line
 MF-17 x 27,terminal box + 6-stud block,27,,Unstated,-,material not stated on the unit BOM line
-MF-18 x 0,stator laminations M400-50A (EN 10106) 0.5 mm,0,,Unstated,-,material not stated on the unit BOM line
-MF-18 x 0,rotor laminations M400-50A 0.5 mm,0,,Unstated,-,material not stated on the unit BOM line
-MF-18 x 0,magnet wire IEC 60317-13 13 AWG (6.835 mm2),10.89 kg,,Unstated,-,material not stated on the unit BOM line
-MF-18 x 0,die-cast Al cage (bars + rings),6.37 kg,,Unstated,-,material not stated on the unit BOM line
-MF-18 x 0,"shaft C45 (EN 10083-2) D48 x 374 mm, key to IEC 60072-1",0,,Unstated,-,material not stated on the unit BOM line
-MF-18 x 0,"frame A356 IEC 180M, feet A279 x B241, holes K15",0,,Unstated,-,material not stated on the unit BOM line
-MF-18 x 0,end shields A356,0,,Unstated,-,material not stated on the unit BOM line
-MF-18 x 0,bearing 6310-2Z,0,,Unstated,-,material not stated on the unit BOM line
-MF-18 x 0,fan PP + fan cover steel,0,,Unstated,-,material not stated on the unit BOM line
-MF-18 x 0,terminal box + 6-stud block,0,,Unstated,-,material not stated on the unit BOM line
 MF-19 x 3,stator laminations M400-50A (EN 10106) 0.5 mm,666,,Unstated,-,material not stated on the unit BOM line
 MF-19 x 3,rotor laminations M400-50A 0.5 mm,666,,Unstated,-,material not stated on the unit BOM line
 MF-19 x 3,magnet wire IEC 60317-13 16 AWG (1.474 mm2),2.98 kg,,Unstated,-,material not stated on the unit BOM line
@@ -2033,31 +2011,6 @@ MF-19 x 3,end shields A356,6,,Unstated,-,material not stated on the unit BOM lin
 MF-19 x 3,bearing 6206-2Z,6,,Unstated,-,material not stated on the unit BOM line
 MF-19 x 3,fan PP + fan cover steel,3,,Unstated,-,material not stated on the unit BOM line
 MF-19 x 3,terminal box + 6-stud block,3,,Unstated,-,material not stated on the unit BOM line
-MF-20 x 0,stator laminations M400-50A (EN 10106) 0.5 mm,0,,Unstated,-,material not stated on the unit BOM line
-MF-20 x 0,rotor laminations M400-50A 0.5 mm,0,,Unstated,-,material not stated on the unit BOM line
-MF-20 x 0,magnet wire IEC 60317-13 16 AWG (1.474 mm2),3.53 kg,,Unstated,-,material not stated on the unit BOM line
-MF-20 x 0,die-cast Al cage (bars + rings),1.91 kg,,Unstated,-,material not stated on the unit BOM line
-MF-20 x 0,"shaft C45 (EN 10083-2) D28 x 291 mm, key to IEC 60072-1",0,,Unstated,-,material not stated on the unit BOM line
-MF-20 x 0,"frame A356 IEC 112M, feet A190 x B140, holes K12",0,,Unstated,-,material not stated on the unit BOM line
-MF-20 x 0,end shields A356,0,,Unstated,-,material not stated on the unit BOM line
-MF-20 x 0,bearing 6306-2Z,0,,Unstated,-,material not stated on the unit BOM line
-MF-20 x 0,fan PP + fan cover steel,0,,Unstated,-,material not stated on the unit BOM line
-MF-20 x 0,terminal box + 6-stud block,0,,Unstated,-,material not stated on the unit BOM line
-MF-21 x 0,"coil PA66-GF bobbin, class H wire IEC 60317-13",0,,Unstated,-,material not stated on the unit BOM line
-MF-21 x 0,plunger and frame 430F,0,,Unstated,-,material not stated on the unit BOM line
-MF-21 x 0,connector EN 175301-803,0,,Unstated,-,material not stated on the unit BOM line
-MF-22 x 0,stator laminations M270-35A 0.35 mm,0,,Unstated,-,material not stated on the unit BOM line
-MF-22 x 0,NdFeB magnets 104.7 g (basis; ferrite variant in AQS-INV-005),0,,Unstated,-,material not stated on the unit BOM line
-MF-22 x 0,magnet wire IEC 60317-13 class 200,-,,Unstated,-,material not stated on the unit BOM line
-MF-22 x 0,"housing extruded 6063, NEMA ICS 16 57 mm flange",0,,Unstated,-,material not stated on the unit BOM line
-MF-22 x 0,bearing 608-2Z,0,,Unstated,-,material not stated on the unit BOM line
-MF-22 x 0,connector 4-pin,0,,Unstated,-,material not stated on the unit BOM line
-MF-23 x 0,stator laminations M270-35A 0.35 mm,0,,Unstated,-,material not stated on the unit BOM line
-MF-23 x 0,NdFeB magnets 555.2 g (basis; ferrite variant in AQS-INV-005),0,,Unstated,-,material not stated on the unit BOM line
-MF-23 x 0,magnet wire IEC 60317-13 class 200,-,,Unstated,-,material not stated on the unit BOM line
-MF-23 x 0,"housing extruded 6063, NEMA ICS 16 86 mm flange",0,,Unstated,-,material not stated on the unit BOM line
-MF-23 x 0,bearing 608-2Z,0,,Unstated,-,material not stated on the unit BOM line
-MF-23 x 0,connector 4-pin,0,,Unstated,-,material not stated on the unit BOM line
 PF-01,"PVC-U Sch 80 ASTM D1785 DN15 pipe, 433 x 6.096 m",2601.9 m,PVC-U Sch 80 ASTM D1785,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 PF-01,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 1/2 in studs,380 / 262 / 262 / 1048,PVC-U Sch 80 ASTM D1785,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 PF-02,"316L ASTM A312 DN15 pipe, 264 x 6.096 m",1584.5 m,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train

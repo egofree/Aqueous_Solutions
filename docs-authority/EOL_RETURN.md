@@ -13,16 +13,16 @@ Classes are the seven of AQS-ASSAY-001 section 1; material names follow the AQS-
 | C | Duty-sheet sweep (the 2026-10-19/20 duty-sheet issue wave): the 44 units that waited on a duty sheet are swept; unassigned 89 -> 73 and every residual line carries a named hold: 70 lines wait on the section-3 material selection at unit task 09 (across the AQS-ASSAY-001 Rev C bounding cases, AQS-STD-002), 2 lines wait on the HCL_BURNER duty sheet (unit task 01), 1 pointer row. 159 held total. Not closed: no material selection is invented for lines whose duty sheet says pending. | 2026-10-21 |
 | D | X-MAT-22 (AQS-STD-006/MATERIALS_SEC3.md): the 38 held units have issued duty section 3 material selections, so the 70 duty-sheet-pending lines class from the section 3 keyword text (graphite, alumina/refractory, steels, PVDF/PTFE/PE/PP/UHMW). Unassigned 73 -> 3 (2 lines wait on the HCL_BURNER duty sheet at unit task 01, 1 pointer row); held total 159 -> 101 (fluoropolymer 67, Ti 25 + Nd/Dy 5, Pt-Rh 1, unassigned 3). Material-proxy classing by section 3 keyword, not by measured mass; unit masses still pending. | 2026-10-21 |
 | E | Retired-unit close-out and roster correction: the HCL_BURNER placeholder stubs left with the retired unit (A-M-255); the superseded unit envelope BOMs (units whose CAD BOM now lives in models/mfg) and the envelope BOMs of units no longer in the graph (the M2 roster the Rev AC re-solve retired) are removed with them - the unit envelope BOM belongs only to a present unit without a CAD BOM (_unit_boms contract). The plant BOM rosters from the graph (present units): the machine models of retired units stay on disk as artifacts, and retired units leave the bill of materials. Source-data defects fixed: three BOM rows had unquoted commas that shifted their material column (WAX_PATTERN, FLUX_PREP). Every remaining unassigned line is a named hold, not a gap: the standby machines awaiting their unit task 10/12 designs (owner programme gate), the AQS-INV-004 fabricated-part pointer row, and the composition holds (fluoropolymer, Ti, Nd/Dy, Pt-Rh recovery units). The live tally is in the class table above and `docs-authority/inventory/EOL_RETURN.csv`. | 2026-10-29 |
-| F | Composition holds closed by design (2026-10-31): the Ti route was already the melt shop (X-END-02 first reopen); the fluoropolymer route closes through F_RECOVER (Q-013 reopen); the Nd/Dy hold closes with the REE_RECOVER batch-campaign bench (A-M-433: demag, HCl leach, Fe(OH)3 removal to the MET_MELT remnant, RE oxalate precipitation, REO calcine; NaCl filtrate to the BMED feed class) - the five motor-family magnet rows route there; Pt-Rh needs no recovery unit (the spent gauze is kept and re-drawn in house, the WIRE_DRAW Pt-Rh wire route - not electrowon, not lost). The bought-component motor rows class metal_plateable (Cu windings to the EW; frames to the steel route). Remaining lines carry no design gate: 13 state no wetted alloy (dry-side purchased components - nothing to class), 9 are the standby-train PLACEHOLDER rows (owner programme gate, AQS-DUTY-072), 1 is the AQS-INV-004 pointer. Every material-bearing line is assigned under AQS-ASSAY-001. | 2026-10-31 |
+| F | Composition holds closed by design (2026-10-31): the Ti route was already the melt shop (X-END-02 first reopen); the fluoropolymer route closes through F_RECOVER (Q-013 reopen); the Nd/Dy hold closes with the REE_RECOVER batch-campaign bench (A-M-433: demag, HCl leach, Fe(OH)3 removal to the MET_MELT remnant, RE oxalate precipitation, REO calcine; NaCl filtrate to the BMED feed class) - the motor-family magnet rows route there; Pt-Rh needs no recovery unit (the spent gauze is kept and re-drawn in house, the WIRE_DRAW Pt-Rh wire route - not electrowon, not lost). The bought-component motor rows class metal_plateable (Cu windings to the EW; frames to the steel route). Remaining lines carry no design gate: 13 state no wetted alloy (dry-side purchased components - nothing to class), 9 are the standby-train PLACEHOLDER rows (owner programme gate, AQS-DUTY-072), 1 is the AQS-INV-004 pointer. Every material-bearing line is assigned under AQS-ASSAY-001. | 2026-10-31 |
 
 At end of life each part goes back into the plant as feed of its class, through the same dock and assay as any other lot. Classing is by BOM line (count), not mass; the mass split waits for unit weights.
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1318 | 58 % |
-| organic | 617 | 27 % |
+| metal_plateable | 1283 | 58 % |
+| organic | 617 | 28 % |
 | unassigned | 127 | 6 % |
-| metal_reactive | 122 | 5 % |
+| metal_reactive | 110 | 5 % |
 | silicate_oxide | 93 | 4 % |
 
 Unassigned: 127 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
@@ -163,8 +163,6 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MF-01 x 104 | 3 | 1 | 0 | 2 | 0 |
 | MF-02 x 56 | 3 | 1 | 0 | 2 | 0 |
 | MF-03 x 24 | 5 | 1 | 0 | 2 | 0 |
-| MF-04 x 0 | 5 | 0 | 0 | 1 | 0 |
-| MF-05 x 0 | 5 | 0 | 0 | 1 | 0 |
 | MF-06 x 103 | 5 | 0 | 0 | 1 | 0 |
 | MF-07 x 22 | 5 | 0 | 0 | 1 | 0 |
 | MF-08 x 3 | 7 | 0 | 0 | 3 | 0 |
@@ -177,12 +175,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MF-15 x 1 | 7 | 0 | 0 | 3 | 0 |
 | MF-16 x 1 | 7 | 0 | 0 | 3 | 0 |
 | MF-17 x 27 | 7 | 0 | 0 | 3 | 0 |
-| MF-18 x 0 | 7 | 0 | 0 | 3 | 0 |
 | MF-19 x 3 | 7 | 0 | 0 | 3 | 0 |
-| MF-20 x 0 | 7 | 0 | 0 | 3 | 0 |
-| MF-21 x 0 | 3 | 0 | 0 | 0 | 0 |
-| MF-22 x 0 | 4 | 0 | 0 | 2 | 0 |
-| MF-23 x 0 | 4 | 0 | 0 | 2 | 0 |
 | MFG_SHOP | 6 | 0 | 6 | 0 | 0 |
 | MG_POT | 8 | 7 | 0 | 0 | 2 |
 | MO_CELL | 8 | 6 | 0 | 0 | 3 |

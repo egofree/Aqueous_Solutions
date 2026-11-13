@@ -6493,8 +6493,6 @@
   "files": [
    "docs-authority/PARAMETRIC_MODEL.md",
    "docs-authority/assumptions_manual.json",
-   "docs-authority/inventory/motor_families/MF-04.md",
-   "docs-authority/inventory/motor_families/MF-05.md",
    "docs-authority/inventory/motor_families/MF-06.md",
    "docs-authority/inventory/motor_families/MF-07.md",
    "docs-authority/inventory/motor_families/MF-08.md",
@@ -6506,11 +6504,7 @@
    "docs-authority/inventory/motor_families/MF-14.md",
    "docs-authority/inventory/motor_families/MF-15.md",
    "docs-authority/inventory/motor_families/MF-16.md",
-   "docs-authority/inventory/motor_families/MF-18.md",
-   "docs-authority/inventory/motor_families/MF-20.md",
-   "docs-authority/inventory/motor_families/MF-24.md",
    "docs-authority/inventory/motor_families/MF-25.md",
-   "docs-authority/inventory/motor_families/MF-26.md",
    "flow_graph/inventory/motor_designs.py",
    "flow_graph/param/refs.py"
   ],

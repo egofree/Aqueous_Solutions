@@ -24,7 +24,7 @@ md = ['# In-house test rigs: build packages', '', 'Document number: AQS-TST-003'
       '| Item | Specification | Qty |', '|---|---|---|',
       f'| Bipolar membrane, AEM, CEM | cut 300 x 300 mm to the frame gasket; {NT} BPM, {NT} AEM, {NT + 1} CEM (extra CEM at the cathode end) | {3*NT + 1} sheets |',
       f'| Flow frames and spacers | PP 300 x 300 mm, 0.8 mm PE woven mesh spacer, EPDM gasket, manifold ports per compartment (acid, base, salt) | {3*NT} |',
-      '| Electrodes | Ti/MMO anode, 316L or Ni cathode, 300 x 300 mm with bus tab | 1 + 1 |',
+      '| Electrodes | Ti/MMO anode, 316L cathode (AQS-STD-002 M6 electrodes, the M6 hydrogen clause deciding 316L over nickel; X-QA-13), 300 x 300 mm with bus tab | 1 + 1 |',
       '| End plates | 25 mm PP with 8 x M10 tie rods, disc springs for 0.3 MPa gasket stress | 2 |',
       f'| Loops | acid, base, salt and electrode rinse (0.5 M Na2SO4); 5 L PP reservoir each; magnetic-drive pump 0-8 L/min ({q_loop:.1f} L/min at 5 cm/s in {NT} compartments) | 4 |',
       '| Instruments | conductivity x 3, pH x 2, Pt100 x 4, differential pressure across stack x 4, flow x 4; Pt voltage-sense wires at every triplet; Haber-Luggin capillaries with Ag/AgCl for one BPM | set |',

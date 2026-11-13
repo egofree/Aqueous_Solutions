@@ -45,6 +45,7 @@ Table 2.1. Closed-form checks
 | QC-19 | `docs-authority/_wire_specs.py` | 4/0 AWG R20 ohm/km vs NEC Ch. 9 Table 8 | 0.164 | 0.164 | 3 % | pass |
 | QC-19 | `docs-authority/_wire_specs.py` | 400 kcmil R20 ohm/km vs NEC Ch. 9 Table 8 | 0.0866 | 0.0876 | 3 % | pass |
 | QC-20 | `flow_graph/inventory/motor_designs.py` | MF-08 (1.5 kW IE3) line current A | 2.61 | 2.6073 | 2 % | pass |
+| QC-21 | `docs-authority/_motor_fa.py` | MF-14 (7.5 kW IE3) rated torque N m | 41.0 | 41.018 | 1 % | pass |
 | QC-22 | `docs-authority/_test_rigs.py` | BMED bench NaOH g/h (10 triplets, 8 A, CE 0.80) | 95.5174 | 95.5103 | 1 % | pass |
 | QC-24 | `models/freecad/clash_check.py` | CAD clashes, 27 new elements vs 213 solids | 0 | 0 | 0 | pass |
 | QC-25 | `docs-authority/_wire_specs.py` | WF-01 core OD mm = stranded OD + 2 x 1.905 mm | 6.7447 | 6.7547 | 1 % | pass |
@@ -66,4 +67,4 @@ The checks have found and led to the correction of the following errors.
 
 ## 4. Review status of the calculation modules
 
-The record covers 187 calculation modules. Of these, 8 are checked automatically by the checks of Table 2.1, and 179 still need a review by a second person; for those, the checker field is blank. The record for each module is in `docs-authority/inventory/DESIGN_CHECK.csv`.
+The record covers 187 calculation modules. Of these, 9 are checked automatically by the checks of Table 2.1, and 178 still need a review by a second person; for those, the checker field is blank. The record for each module is in `docs-authority/inventory/DESIGN_CHECK.csv`.

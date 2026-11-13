@@ -15,7 +15,7 @@ The bench stack polarisation test measures volts per triplet and current efficie
 
 ## 2. Apparatus (build from this definition)
 
-1. **Stack**: 10 triplets of the issued construction - PP frames 300 x 300 mm, 0.8 mm PE mesh spacers, one bipolar membrane and two monopolar membranes per triplet (anion + cation), Ti/MMO anode end plate, 316L/Ni cathode end plate (A-M-170). Fastened to the issued torque pattern with gaskets per the membrane maker's class.
+1. **Stack**: 10 triplets of the issued construction - PP frames 300 x 300 mm, 0.8 mm PE mesh spacers, one bipolar membrane and two monopolar membranes per triplet (anion + cation), Ti/MMO anode end plate, 316L annealed cathode end plate (A-M-170; BMED electrodes per AQS-STD-002 M6, the M6 hydrogen clause deciding 316L over nickel, X-QA-13). Fastened to the issued torque pattern with gaskets per the membrane maker's class.
 2. **Hydraulics**: three peristaltic (or bellows) pump loops - acid, base and salt feed - each PTFE/PVDF tubing, flow 5-15 L/h per compartment pass; polyethylene feed tanks 20 L each with lids and vent filters.
 3. **Feed**: sodium chloride solution 20 g/L (2 M equivalent at the product tap: the test runs the concentration ladder 0.5, 1.0, 2.0 M NaOH product).
 4. **Power supply**: 0-30 V DC, 0-20 A, constant-current mode, ripple under 5 %; polarity reversible.

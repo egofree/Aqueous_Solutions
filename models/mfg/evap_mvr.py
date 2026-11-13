@@ -43,10 +43,10 @@ out = f'models/mfg/{U}/export'; os.makedirs(out, exist_ok=True)
 step_export.export_step(model, f'{out}/{U.lower()}.step'); cq.exporters.export(model, f'{out}/{U.lower()}.stl')
 mat_t = 'impregnated graphite (PERRY9_MAT)' if acid else 'nickel 200 (PERRY9_MAT)'
 mat_s = 'carbon steel, PTFE-lined process side' if acid else 'nickel 200'
-rows = [('1', f'Shell DN{int(D)} x {int(sump+L+head)} mm, wall {t_sh} mm', 1, mat_s, 'AQS-DUTY-060 section 2'),
+rows = [('1', f'Shell DN{int(D)} x {int(sump+L+head)} mm, wall {t_sh} mm', 1, mat_s, 'AQS-DUTY-060 section 2; PTFE-lined carbon steel per the AQS-STD-002 M5 lined-part rule (X-QA-13)'),
         ('2', f'Tubes ID {di} x OD {do} x {int(L)} mm', n, mat_t, f'falling film {d["A_ff_m2"]} m2 at U from PERRY9_EVAP'),
         ('3', f'Tubesheets {ts} mm', 2, mat_t, 'AQS-DUTY-060'),
-        ('4', f'Vapour separator DN{int(D)} x {int(sep_h)} mm with mesh pad', 1, mat_s + '; PTFE or PVDF mesh', 'AQS-DUTY-060'),
+        ('4', f'Vapour separator DN{int(D)} x {int(sep_h)} mm with mesh pad', 1, mat_s + '; PTFE or PVDF mesh', 'AQS-DUTY-060; PTFE-lined carbon steel per AQS-STD-002 M5 (X-QA-13)'),
         ('5', f'Blower, single-stage centrifugal, ratio {d["ratio"]}, {d["comp_shaft_kW"]} kW shaft', 1, 'impeller titanium grade 7 or PVDF-lined (acid); nickel (base)', 'X-MFG-32 in-house line; motor IEC 60034 frame'),
         ('6', f'Feed/condensate/product interchanger {d["ix_A_m2"]} m2', 1, mat_t, f'{d["ix_Q_kW"]} kW, outlets {d["T_out_C"]} C'),
         ('7', f'Recirculation pump {d["recirc_kg_h"]} kg/h at 4 m', 1, 'PVDF (acid) or nickel (base) wetted', 'X-MFG-32'),

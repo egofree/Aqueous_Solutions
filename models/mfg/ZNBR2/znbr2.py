@@ -10,20 +10,21 @@ Every dimension is an authority figure or a named layout choice:
 - Envelope 7900 x 6050 x 1970 mm, node size_mm (set by ess_tf with the design, X-MFG-43).
   The build fills it: the plinth spans the full footprint, the per-bay lifting beams top
   the stacks exactly at the envelope height, the face connections flush at the faces.
-- Machine: the design-linked ZnBr2 store (X-MFG-43, A-M-456/457): 47 module bays (one
-  per hybrid inverter, AQS-ELEC-008), each a bipolar plate stack over its electrolyte
-  reservoir. 95 bipolar plates of the booked active area per module fill the booked
-  cell-summed electrode area (purge_basis electrode_area_m2, 2223.1 m2 at the live
-  charge book) exactly - the model carries the booked area; the j.A = current product
-  closes on it (99.6 A per stack at the registered 20 mA/cm2, 172.9 V DC per stack).
+- Machine: the design-linked ZnBr2 store (X-MFG-43, A-M-456/457): the graph module
+  bays (one per hybrid inverter, AQS-ELEC-008), each a bipolar plate stack over its
+  electrolyte reservoir. The booked plates per module fill the booked cell-summed
+  electrode area (the purge_basis electrode_area_m2 book) exactly - the model carries
+  the booked area; the j.A = current product closes on it (the graph stack_I_A per
+  stack at the registered 20 mA/cm2, stack_V_dc per stack).
 - Electrolyte reservoirs as solids: one PVC-U tank per module at the 2 M ZnBr2 holdup
-  (529.4 L inside 10 mm walls, the cycled Zn inventory; A-M-457), open-topped - the
+  (the graph electrolyte book inside 10 mm walls, the cycled Zn inventory; A-M-457),
+  open-topped - the
   reactant holdup is hardware, not text. Wetted-alloy exclusion per duty section 3
   ("no wetted alloy; conductors are copper"): plates carbon-plastic composite, tanks
   PVC-U (AQS-STD-002 halogen class; the PP-loop register wording is superseded - W12).
 - Bus per AQS-BUS-001: POWER.md states no ZNBR2 bus section, so the bus bar follows
   the AQS-BUS-001 class method (6.3 mm copper flats at the 155 A/cm2 ceiling): one
-  20 x 6.3 flat per stack terminal at 79 A/cm2 on the 99.6 A stack current (A-CELL bus
+  20 x 6.3 flat per stack terminal at 79 A/cm2 on the graph stack current (A-CELL bus
   rule: matched where stated - here the class is stated, the section is derived).
 - Purchased per plan rule 6 as envelopes and interfaces: electrolyte pump (aux share
   0.52 kW, A-M-179) and electrolyte cooler (3.1 kW at the cycling_thermal charge-window
@@ -58,7 +59,7 @@ _g = json.loads((HERE.parents[2] / "flow_graph" / "plant_flow_graph.json").read_
 DS = (next(n for n in _g["nodes"] if n["unit_id"] == UNIT).get("params") or {}).get("design") or {}
 
 T_PLINTH = 100.0
-N_MOD = int(DS["modules"])                                  # 47
+N_MOD = int(DS["modules"])                                  # graph module book
 PLATES = int(DS["plates_per_module"])                       # 95
 A_PLATE = float(DS["plate_active_L_mm"]) * float(DS["plate_active_W_mm"]) / 1e6   # m2, 0.49789
 T_PLATE = float(DS["plate_t_mm"])                           # 5
@@ -94,7 +95,7 @@ assert float(DS["cooler_kw_per_module"]) > 0, "cycling_thermal window must be so
 
 
 def bay_xy(i):
-    """Bay origin (x, y): 7 columns over 7 rows; the last row carries 5 bays (47 total)."""
+    """Bay origin (x, y): the graph bay grid (bay_cols x bay_rows), filled row-major to the graph module count."""
     c, r = i % COLS, i // COLS
     return MARGIN + c * BPX, MARGIN + r * BPY
 

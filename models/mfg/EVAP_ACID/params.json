@@ -144,7 +144,7 @@
    "height_mm": 800
   }
  ],
- "material": "Wetted parts in hot HCl: impregnated graphite heat exchanger, fluoropolymer-lined shell, PVDF or PTFE piping (ULLMANN_HCL). No stainless or nickel in the HCl circuit. Above 60 \u00b0C no PVC-U or CPVC (AQS-STD-002).",
+ "material": "PTFE-lined carbon-steel shell and vapour separator (M5 lined-part rule; PTFE, the house fluoropolymer lining class), impregnated-graphite tube bundle, tubesheets and interchanger, borosilicate glass 3.3 packed HCl column with PTFE Pall rings and PTFE-lined flanges, PVDF piping on the cold legs; no bare metal and no stainless or nickel in the HCl circuit",
  "acceptance_sets": [
   "A-core"
  ],

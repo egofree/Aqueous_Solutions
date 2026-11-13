@@ -98,19 +98,19 @@
   },
   "MF-20": {
    "retired": true,
-   "note": "folder models/motors/MF-20 exists from an earlier family set; the id is reserved and never reissued"
+   "note": "id reserved for an earlier family set; its sheet, CAD models and work order were removed with that set on 2026-11-12, and the id is never reissued"
   },
   "MF-21": {
    "retired": true,
-   "note": "folder models/motors/MF-21 exists from an earlier family set; the id is reserved and never reissued"
+   "note": "id reserved for an earlier family set; its sheet, CAD models and work order were removed with that set on 2026-11-12, and the id is never reissued"
   },
   "MF-22": {
    "retired": true,
-   "note": "folder models/motors/MF-22 exists from an earlier family set; the id is reserved and never reissued"
+   "note": "id reserved for an earlier family set; its sheet, CAD models and work order were removed with that set on 2026-11-12; the magnet masses of the reserved stepper variants live in A-M-433, and the id is never reissued"
   },
   "MF-23": {
    "retired": true,
-   "note": "folder models/motors/MF-23 exists from an earlier family set; the id is reserved and never reissued"
+   "note": "id reserved for an earlier family set; its sheet, CAD models and work order were removed with that set on 2026-11-12; the magnet masses of the reserved stepper variants live in A-M-433, and the id is never reissued"
   },
   "MF-24": {
    "motor_type": "hermetic induction (scroll)",

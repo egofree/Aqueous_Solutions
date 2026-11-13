@@ -10,12 +10,12 @@
     600.0,
     350.0
   ],
-  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack).",
+  "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
   "graph_revision": "AD",
   "solids": 1,
   "all_parts_valid": true,
   "stack": {
-    "construction": "AQS-DUTY-068 (docs-authority/sizing/BMED_STACK.md) / A-M-170: 300 x 300 frames, 0.8 mm PE mesh spacers, one bipolar and two monopolar membranes per triplet, Ti/MMO anode and 316L/Ni cathode end plates, tie-rod clamped; the same construction AQS-TST-006 (AQS-TST-006 section 2) builds the bench apparatus to",
+    "construction": "AQS-DUTY-068 (docs-authority/sizing/BMED_STACK.md) / A-M-170: 300 x 300 frames, 0.8 mm PE mesh spacers, one bipolar and two monopolar membranes per triplet, Ti/MMO anode end plate and 316L annealed cathode end plate (BMED electrodes per AQS-STD-002 M6; the M6 hydrogen clause decides 316L over nickel, X-QA-13), tie-rod clamped; the same construction AQS-TST-006 (AQS-TST-006 section 2) builds the bench apparatus to",
     "frames_mm": [
       300.0,
       300.0
@@ -35,7 +35,7 @@
     "membranes_per_stack": 255,
     "stack_current_class_A": 8.0,
     "allocation_note": "the sizing page books 421 triplets in 5 stacks of 85 plus 1 spare for the BMED pair; the node books no per-unit stack count, so the model draws the representative stack module (hold, WORK_ORDER W12)",
-    "material_note": "frames drawn PVC-U per duty section 3 (no metal wetted part); the sizing page construction names PP frames - PVC-U drawn, PP named (hold, W12); electrode end plates are the A-M-170 electrochemical hardware (Ti/MMO, 316L/Ni)"
+    "material_note": "frames drawn PVC-U per duty section 3 (no metal wetted part); the sizing page construction names PP frames - PVC-U drawn, PP named (hold, W12); electrode end plates are the A-M-170 electrochemical hardware per AQS-STD-002 M6 (Ti/MMO anode; 316L annealed cathode plate, the M6 hydrogen clause deciding 316L over nickel, X-QA-13)"
   },
   "a_cell": {
     "basis": "A-CELL: plate count, plate size, pitch and active area per the AQS-DUTY-068 / A-M-170/171 construction; duty section 2 carries no plate row, so the match is against the sizing construction, not the duty sheet (hold, W12); POWER.md states no bus bar for this class, so the bus-bar criterion has nothing to match",

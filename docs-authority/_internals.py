@@ -214,9 +214,9 @@ SPECIAL_CLASS = {'ew_cell': EW_DOC, 'bmed': BMED_DOC}
 HIT_NOTE = {
  EW_DOC: 'electrode array per cell: cathode pitch 100 mm, plates and counts, tank inside dimensions (AQS-EW-MOD-001)',
  HOUSE: 'packed bed per scrubber: diameter at 0.7 of flood, bed 2303 mm, height, liquid rate (PERRY9_ABS)',
- EVAP: 'MVR internals: impregnated-graphite tube bundle, PTFE shell and separator, glass column with PTFE packing (AQS-DUTY-060, X-MFG-30)',
+ EVAP: 'MVR internals: impregnated-graphite tube bundle, PTFE-lined carbon-steel shell and separator, glass column with PTFE packing (AQS-DUTY-060, X-MFG-30; X-QA-13 shell of record)',
  COLD_BOX: 'micro cold box internals: exchangers and beds on the CRYO_ASU duty (X-MFG-33, A-M-175)',
- BMED_DOC: 'BMED triplet construction: PP frames 300 x 300 mm, 0.8 mm PE mesh spacers, Ti/MMO anode, 316L/Ni cathode end plates (A-M-170/171)',
+ BMED_DOC: 'BMED triplet construction: PP frames 300 x 300 mm, 0.8 mm PE mesh spacers, Ti/MMO anode end plate, 316L annealed cathode end plate (BMED electrodes per AQS-STD-002 M6, hydrogen clause deciding 316L over nickel; X-QA-13), PP outer end plates with 316L tie rods outside the wetted zone per M4 (A-M-170/171)',
  'docs-authority/MATERIALS_STD.md section 4.5': 'HX8 PVDF bundle: the issued tube-bundle construction (AQS-STD-002 section 4.5)',
 }
 

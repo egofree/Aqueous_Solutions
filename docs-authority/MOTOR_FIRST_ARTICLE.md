@@ -78,7 +78,7 @@ Table 3.1. Build traveller for an induction first article
 
 One rig is used to type-test all families. It has the following parts.
 
-- Load machine. An MF-18 motor made in-house (18.5 kW, IEC frame 180M) runs as a regenerating load on a back-to-back pair of variable-frequency drives (VFDs) with a common DC bus, so that only the losses are drawn from the supply. The largest family (MF-04, a 18 kW hermetic motor) is tested at 85 % of its rating on this load, or with a second MF-18 coupled in tandem.
+- Load machine. An MF-14 motor made in-house (7.5 kW, IEC frame 132M) runs as a regenerating load on a back-to-back pair of variable-frequency drives (VFDs) with a common DC bus, so that only the losses are drawn from the supply. The largest family (MF-28, a 18.5 kW hermetic motor) is tested at 85 % of its rating on this load, or with a second MF-14 coupled in tandem.
 - Torque transducer. An in-line transducer with a range of 200 N m and an accuracy class of 0.2 %; the largest rated torque of any family is 50.6 N m. Speed is measured with an encoder of 1024 pulses per revolution.
 - Power analyser. A three-phase analyser of accuracy class 0.1 %, measuring harmonics to the 50th, with six thermocouples in each winding for temperature rise and a timer for the resistance measurement after shutdown.
 - Bed. A cast or welded steel T-slot bed with adjustable centre-height adapter plates for IEC frames 63 to 180, jaw couplings sized for the transducer, and a guard to ISO 14120.

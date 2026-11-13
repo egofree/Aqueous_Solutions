@@ -1,3 +1,3 @@
 item,size,grade,qty,location,basis
 1,M10 wedge anchor,ISO 3506 A4-70,4,tray to slab; one per corner (count from the model),polymer joint to the supplier rule (A4-70 hardware per house practice); study length; confirmed at fabrication
-2,M12 tie rod + nut,ISO 3506 A4-70,4,stack clamp; through the end plates (A-M-170 torque pattern per AQS-TST-006 section 2),grade rule AQS-PLAN-006 W5: A4-70 on 316L; torque to the issued stack pattern; lengths study; confirmed at fabrication
+2,M12 tie rod + nut,ISO 3506 A4-70,4,stack clamp; through the end plates (A-M-170 torque pattern per AQS-TST-006 section 2),outside the wetted and vapour zone per AQS-STD-002 M4 (X-QA-13); grade rule AQS-PLAN-006 W5: A4-70 on 316L; torque to the issued stack pattern; lengths study; confirmed at fabrication

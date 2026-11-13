@@ -7,7 +7,10 @@ Writes docs-authority/inventory/MOTOR_DESIGNS.md, MOTOR_DESIGNS.csv and motor_fa
 import csv, math, os, re
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 D = os.path.join(ROOT, 'docs-authority/inventory')
-REV_TABLE = [('A', '2026-10-15', 'First issue.')]   # revisions of document AQS-INV-005 (rev, date, description); the parent page prints this table and every sheet header takes the last entry, the current revision that DOC_REGISTER.md lists for the document
+REV_TABLE = [('A', '2026-10-15', 'First issue.'),
+             ('B', '2026-10-15', 'Slot-and-yoke fit: MF-04 core 115 to 149 mm (66 turns), MF-05 52, MF-06 58, MF-07 79, MF-19 120 mm; first-article flags cleared (A-M-218).'),
+             ('C', '2026-10-25', 'Rewritten to the documentation style guide (AQS-DOC-002).'),
+             ('D', '2026-11-12', 'The sheet headers name the document revision and the per-sheet revision tables are removed; the retired slot-fit revision label is dropped (F-20261110-05). No design data changed.')]   # revisions of document AQS-INV-005 (rev, date, description); the parent page prints this table and every sheet header takes the last entry, the current revision that DOC_REGISTER.md lists for the document
 REV, REV_DATE = REV_TABLE[-1][:2]
 IEC72 = {'63': (63, 11, 23, 100, 80, 7), '71': (71, 14, 30, 112, 90, 7), '80': (80, 19, 40, 125, 100, 10), '90S': (90, 24, 50, 140, 100, 10), '90L': (90, 24, 50, 140, 125, 10),
          '100L': (100, 28, 60, 160, 140, 12), '112M': (112, 28, 60, 190, 140, 12), '132M': (132, 38, 80, 216, 178, 12), '180M': (180, 48, 110, 279, 241, 15),

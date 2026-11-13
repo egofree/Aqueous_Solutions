@@ -7,7 +7,7 @@
   520,
   748
  ],
- "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder vessel_z). Size follows the machine build (style builder vessel_z).",
+ "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
  "origin_mm": [
   2200,
   200,

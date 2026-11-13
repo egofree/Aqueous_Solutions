@@ -121,7 +121,7 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-077 | `docs-authority/sizing/MEOH_TRAIN.md` | A | 2026-10-20 | Methanol train residual sizing | current |
 | AQS-DUTY-078 | `docs-authority/BALANCE_CLOSE.md` | B | 2026-11-03 | Balance close | current |
 | AQS-DUTY-079 | `docs-authority/sizing/HOUSE_SCRUBBERS.md` | A | 2026-10-15 | House scrubbers | current |
-| AQS-DUTY-080 | `docs-authority/CHECKS.md` | — | — | Cathode size from the sheet | current |
+| AQS-DUTY-080 | `docs-authority/CHECKS.md` | A | 2026-11-12 | Electrowinning cathode size | current |
 | AQS-DUTY-082 | `docs-authority/S83_S88.md` | — | 2026-10-02 | S83–S88 endpoints | current |
 | AQS-DUTY-CR | `notes/CR_CELL_DUTY.md` | A | 2026-10-16 | CR_CELL duty — chromium metal | current |
 | AQS-DUTY-FOUNDRY | `notes/FOUNDRY_DUTY.md` | A | 2026-10-16 | FOUNDRY sector | current |
@@ -169,7 +169,7 @@ Table 3.1. Document numbers in use
 | AQS-EQP-VENT-001 | `docs-authority/VENT_SCRUB_EQUIPMENT.md` | C | 2026-10-24 | Vent, scrubber and regenerator equipment | current |
 | AQS-ESS-001 | `docs-authority/ESS_DUTY_MATRIX.md` | B | 2026-10-01 | ESS duty matrix — ZnBr₂ / MeOH / pumped hydro (study) | current |
 | AQS-ESS-002 | `docs-authority/FLOW_BATTERY.md` | — | — | ZnBr2 flow battery | current |
-| AQS-EW-MOD-001 | `docs-authority/EW_MODULE.md` | D | 2026-10-15 | Electrowinning module | current |
+| AQS-EW-MOD-001 | `docs-authority/EW_MODULE.md` | E | 2026-11-12 | Electrowinning module | current |
 | AQS-FARM-001 | `docs-authority/FARM_DESIGN.md` | A | 2026-10-26 | Farm design: aquaponics, dual root-zone growbeds, poultry, larvae composting | current |
 | AQS-FC-001 | `docs-authority/FUEL_CELL.md` | B | 2026-10-01 | PEM fuel cell — plant H₂ / O₂ on Sol-Ark DC bus | current |
 | AQS-FLOW-GRAPH-001 | `flow_graph/README.md` | — | 2026-10-01 | Plant flow graph — sole typed authority | current |
@@ -192,7 +192,7 @@ Table 3.1. Document numbers in use
 | AQS-INV-002 | `docs-authority/inventory/WIRE_INVENTORY.md` | D | 2026-10-25 | Wire inventory | current |
 | AQS-INV-003 | `docs-authority/inventory/PIPE_INVENTORY.md` | B | 2026-10-25 | Pipe inventory | current |
 | AQS-INV-004 | `docs-authority/inventory/OTHER_INVENTORY.md` | B | 2026-10-25 | Other building blocks inventory | current |
-| AQS-INV-005 | `docs-authority/inventory/MOTOR_DESIGNS.md` | A | 2026-10-15 | Motor family designs | current |
+| AQS-INV-005 | `docs-authority/inventory/MOTOR_DESIGNS.md` | D | 2026-11-12 | Motor family designs | current |
 | AQS-INV-006 | `docs-authority/PIPE_SPECS.md` | A | 2026-10-21 | Pipe family production plans | current |
 | AQS-INV-007 | `docs-authority/WIRE_SPECS.md` | C | 2026-10-21 | Wire family specifications and production plans | current |
 | AQS-INV-008 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | B | 2026-10-25 | Motor first articles: drawings, traveller and type-test rig | current |
@@ -520,8 +520,6 @@ Table 5.1. Parts of numbered documents
 | AQS-INV-005 | sheet MF-01 | `docs-authority/inventory/motor_families/MF-01.md` |
 | AQS-INV-005 | sheet MF-02 | `docs-authority/inventory/motor_families/MF-02.md` |
 | AQS-INV-005 | sheet MF-03 | `docs-authority/inventory/motor_families/MF-03.md` |
-| AQS-INV-005 | sheet MF-04 | `docs-authority/inventory/motor_families/MF-04.md` |
-| AQS-INV-005 | sheet MF-05 | `docs-authority/inventory/motor_families/MF-05.md` |
 | AQS-INV-005 | sheet MF-06 | `docs-authority/inventory/motor_families/MF-06.md` |
 | AQS-INV-005 | sheet MF-07 | `docs-authority/inventory/motor_families/MF-07.md` |
 | AQS-INV-005 | sheet MF-08 | `docs-authority/inventory/motor_families/MF-08.md` |
@@ -534,18 +532,10 @@ Table 5.1. Parts of numbered documents
 | AQS-INV-005 | sheet MF-15 | `docs-authority/inventory/motor_families/MF-15.md` |
 | AQS-INV-005 | sheet MF-16 | `docs-authority/inventory/motor_families/MF-16.md` |
 | AQS-INV-005 | sheet MF-17 | `docs-authority/inventory/motor_families/MF-17.md` |
-| AQS-INV-005 | sheet MF-18 | `docs-authority/inventory/motor_families/MF-18.md` |
 | AQS-INV-005 | sheet MF-19 | `docs-authority/inventory/motor_families/MF-19.md` |
-| AQS-INV-005 | sheet MF-20 | `docs-authority/inventory/motor_families/MF-20.md` |
-| AQS-INV-005 | sheet MF-21 | `docs-authority/inventory/motor_families/MF-21.md` |
-| AQS-INV-005 | sheet MF-22 | `docs-authority/inventory/motor_families/MF-22.md` |
-| AQS-INV-005 | sheet MF-23 | `docs-authority/inventory/motor_families/MF-23.md` |
-| AQS-INV-005 | sheet MF-24 | `docs-authority/inventory/motor_families/MF-24.md` |
 | AQS-INV-005 | sheet MF-25 | `docs-authority/inventory/motor_families/MF-25.md` |
-| AQS-INV-005 | sheet MF-26 | `docs-authority/inventory/motor_families/MF-26.md` |
 | AQS-INV-005 | sheet MF-27 | `docs-authority/inventory/motor_families/MF-27.md` |
 | AQS-INV-005 | sheet MF-28 | `docs-authority/inventory/motor_families/MF-28.md` |
-| AQS-INV-005 | sheet MF-29 | `docs-authority/inventory/motor_families/MF-29.md` |
 | AQS-INV-005 | sheet MF-30 | `docs-authority/inventory/motor_families/MF-30.md` |
 | AQS-PLAN-007 | note (no new AQS number; working record) | `docs-authority/notes/2026-10-19-closure-lane.md` |
 | AQS-PLAN-007 | note (no new AQS number; this is a working record) | `docs-authority/notes/2026-10-19-evidence-pass.md` |

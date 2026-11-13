@@ -49,7 +49,7 @@ SHEETS = [
       'Atmospheric tube connections on tray risers, flush at the envelope faces '
       '(sheet AUX01)',
       'PVC-U wetted per duty section 3; electrode plates are the A-M-170 hardware '
-      '(Ti/MMO anode, 316L/Ni cathode)'],
+      '(Ti/MMO anode, 316L cathode per AQS-STD-002 M6, X-QA-13)'],
      "General arrangement, front elevation. Shop, not stamped (AQS-STD-001 section 7)."),
     ("ga_side", full, (1, 0, 0),
      ['Stack cross-section 300 x 300 centred (y 150..450), frames 300 x 300 per the '
@@ -70,7 +70,7 @@ SHEETS = [
      "Connection orientation, top view. Tags/faces/bore per the schedule."),
     ("stack01", stack, (0, 1, 0),
      ['EDBM stack per the AQS-DUTY-068 / A-M-170 construction: Ti/MMO anode end '
-      'plate, clamp frames, triplet laminate, 316L/Ni cathode end plate, tie rods',
+      'plate, clamp frames, triplet laminate, 316L cathode end plate (M6), tie rods (M4)',
       f'{S["triplets_per_stack"]} triplets at {S["triplet_pitch_mm"]:g} mm pitch '
       '(the A-M-171 compartment + membrane stack-up), 0.04 m2 active window per cell',
       'The sizing page books 421 triplets in 5 stacks of 85 plus 1 spare for the BMED '

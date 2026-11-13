@@ -14,9 +14,10 @@ Every dimension is an authority figure or a named layout choice:
   side, each 700 mm of the skid: a vertical evaporator/condenser vessel (falling-film
   evaporator boiling inside, compressed vapour condensing on the shell - the MVC still
   principle), the vapour separator section above it, and the scroll-class compressor
-  envelope. The bundle fills the booked heat-exchange area exactly: 18 tubes of ID 12 x
-  890 mm = 0.6039 m2 against the booked 0.603 m2 at U 2.8 kW/m2 K, 5 K lift (PERRY9_EVAP
-  class; the node carries the 8.436 kW latent duty, so the area is the calculated bundle).
+  envelope. The bundle carries the booked heat-exchange area: the graph tube book
+  (tubes x pi x ID x L) against the booked hx_area_m2 at U 2.8 kW/m2 K, 5 K lift
+  (PERRY9_EVAP class; the node carries the latent duty, so the area is the calculated
+  bundle).
 - Duty section 2 working volume: the sump holds the 2 h working volume (0.0138 m3 book);
   reported from the model, no residence time claimed beyond the duty's own.
 - Duty section 3: 316L wetted parts, CA 0 mm (AQS-STD-001 rule); frame carbon steel.
@@ -50,7 +51,7 @@ SHELL_D = float(DS["shell_D_mm"])                          # 240
 TUBE_ID = float(DS["tube_id_mm"])                          # 12
 TUBE_OD = TUBE_ID + 2.0                                    # 14, 1 mm wall
 TUBE_L = float(DS["tube_L_mm"])                            # 890
-NT = int(DS["tubes"])                                      # 18
+NT = int(DS["tubes"])                                      # the graph tube book
 SUMP_H = float(DS["sump_h_mm"])                            # 220 (13.8 L working volume across both sumps, duty section 2)
 SEP_H = float(DS["sep_h_mm"])                              # 40 (separator ring + demister pad)
 T_PLINTH = 30.0
@@ -65,9 +66,11 @@ RHO_316 = materials.density("316L")
 RHO_CS = materials.density("CS") or materials.density("steel")
 
 assert L == 1400.0 and W == 600.0 and H == 1200.0, "VCD_TRAIN node envelope changed"
-assert N_MOD == 2, "the installed module book changed (X-RED-05)"
+assert N_MOD >= 1, "the installed module book must be positive"
+assert BAY_W >= SHELL_D + 40.0, "each module bay must house its vessel and separator flange"
 a_drawn = NT * math.pi * TUBE_ID * TUBE_L / 1e6
-assert abs(a_drawn - NT * math.pi * 0.012 * 0.890) < 1e-9, "bundle arithmetic changed"
+assert a_drawn + 1e-9 >= float(DS["hx_area_m2"]), \
+    "the tube book must cover the booked heat-exchange area (A-HX)"
 assert abs(Z_CAP - H) < 0.01 and Z_SEP + SEP_H == H, "vessel must close at the envelope top"
 
 

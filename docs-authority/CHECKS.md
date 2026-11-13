@@ -1,15 +1,11 @@
-# Cathode size from the sheet
+# Electrowinning cathode size
 
 Document number: AQS-DUTY-080  
+Revision: A  
+Date: 2026-11-12
 
-200 A/m2. 0.02844 kg/d per A as copper.
+| Rev | Description | Date |
+|---|---|---|
+| A | Revision record begun. The per-cell rows that sized each cathode from the plated-sheet mass at the copper-equivalent Faraday convention are withdrawn; the convention is retired with the audit booking that set it (AQS-DUTY-051 revisions D to H record the retirement and the new basis). | 2026-11-12 |
 
-EW_1: 59.87 kg/d, 2105 A, 10.53 m2, 21 plates of 0.6 x 0.42 m both sides.
-EW_2: 59.89 kg/d, 2106 A, 10.53 m2, 21 plates of 0.6 x 0.42 m both sides.
-EW_3: 22.48 kg/d, 790 A, 3.95 m2, 8 plates of 0.6 x 0.42 m both sides.
-EW_4: 4.85 kg/d, 171 A, 0.85 m2, 2 plates of 0.6 x 0.42 m both sides.
-EW_5: 5.02 kg/d, 177 A, 0.88 m2, 2 plates of 0.6 x 0.42 m both sides.
-EW_6: 5.47 kg/d, 192 A, 0.96 m2, 2 plates of 0.6 x 0.42 m both sides.
-EW_7: 71.14 kg/d, 2501 A, 12.51 m2, 25 plates of 0.6 x 0.42 m both sides.
-EW_8: 5.05 kg/d, 178 A, 0.89 m2, 2 plates of 0.6 x 0.42 m both sides.
-EW_9: 61.34 kg/d, 2157 A, 10.78 m2, 21 plates of 0.6 x 0.42 m both sides.
+The size of every EW cathode - current, cathode count, immersed area and tank - is a sizing output of AQS-DUTY-051, solved at the AQS-ASSAY-001 element envelope from the feed assay and booked in the graph by `flow_graph/param/write_graph.py`. The sizing page is `docs-authority/sizing/EW_CELLS.md`; this page publishes no figures of its own.

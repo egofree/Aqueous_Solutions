@@ -17,7 +17,7 @@ This page lists every derived file and states whether it is current with the pla
 
 To see the graph commit each file was made from, run `python3 docs-authority/_rev_stamp.py --report`; it prints the full table without writing this page. `python3 -m flow_graph.param.regen` refreshes this page; `python3 -m flow_graph.param.regen --check` fails on any stale file and writes nothing.
 
-2080 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+2063 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Status |
 |---|---|
@@ -120,8 +120,6 @@ To see the graph commit each file was made from, run `python3 docs-authority/_re
 | `docs-authority/WIRE_SPECS.md` | current |
 | `docs-authority/WPS_REGISTER.md` | current |
 | `docs-authority/ZNBR2_STACK_TEST.md` | current |
-| `docs-authority/drawings/motor_fa/MF-04.svg` | current |
-| `docs-authority/drawings/motor_fa/MF-05.svg` | current |
 | `docs-authority/drawings/motor_fa/MF-06.svg` | current |
 | `docs-authority/drawings/motor_fa/MF-07.svg` | current |
 | `docs-authority/drawings/motor_fa/MF-08.svg` | current |
@@ -134,14 +132,9 @@ To see the graph commit each file was made from, run `python3 docs-authority/_re
 | `docs-authority/drawings/motor_fa/MF-15.svg` | current |
 | `docs-authority/drawings/motor_fa/MF-16.svg` | current |
 | `docs-authority/drawings/motor_fa/MF-17.svg` | current |
-| `docs-authority/drawings/motor_fa/MF-18.svg` | current |
 | `docs-authority/drawings/motor_fa/MF-19.svg` | current |
-| `docs-authority/drawings/motor_fa/MF-20.svg` | current |
-| `docs-authority/drawings/motor_fa/MF-24.svg` | current |
 | `docs-authority/drawings/motor_fa/MF-25.svg` | current |
-| `docs-authority/drawings/motor_fa/MF-26.svg` | current |
 | `docs-authority/drawings/motor_fa/MF-28.svg` | current |
-| `docs-authority/drawings/motor_fa/MF-29.svg` | current |
 | `docs-authority/drawings/motor_fa/MF-30.svg` | current |
 | `docs-authority/drawings/wire/WF-01.svg` | current |
 | `docs-authority/drawings/wire/WF-02.svg` | current |
@@ -804,8 +797,6 @@ To see the graph commit each file was made from, run `python3 docs-authority/_re
 | `docs-authority/inventory/motor_families/MF-01.md` | current |
 | `docs-authority/inventory/motor_families/MF-02.md` | current |
 | `docs-authority/inventory/motor_families/MF-03.md` | current |
-| `docs-authority/inventory/motor_families/MF-04.md` | current |
-| `docs-authority/inventory/motor_families/MF-05.md` | current |
 | `docs-authority/inventory/motor_families/MF-06.md` | current |
 | `docs-authority/inventory/motor_families/MF-07.md` | current |
 | `docs-authority/inventory/motor_families/MF-08.md` | current |
@@ -818,18 +809,10 @@ To see the graph commit each file was made from, run `python3 docs-authority/_re
 | `docs-authority/inventory/motor_families/MF-15.md` | current |
 | `docs-authority/inventory/motor_families/MF-16.md` | current |
 | `docs-authority/inventory/motor_families/MF-17.md` | current |
-| `docs-authority/inventory/motor_families/MF-18.md` | current |
 | `docs-authority/inventory/motor_families/MF-19.md` | current |
-| `docs-authority/inventory/motor_families/MF-20.md` | current |
-| `docs-authority/inventory/motor_families/MF-21.md` | current |
-| `docs-authority/inventory/motor_families/MF-22.md` | current |
-| `docs-authority/inventory/motor_families/MF-23.md` | current |
-| `docs-authority/inventory/motor_families/MF-24.md` | current |
 | `docs-authority/inventory/motor_families/MF-25.md` | current |
-| `docs-authority/inventory/motor_families/MF-26.md` | current |
 | `docs-authority/inventory/motor_families/MF-27.md` | current |
 | `docs-authority/inventory/motor_families/MF-28.md` | current |
-| `docs-authority/inventory/motor_families/MF-29.md` | current |
 | `docs-authority/inventory/motor_families/MF-30.md` | current |
 | `docs-authority/iso/ISO_SHEETS.csv` | current |
 | `docs-authority/nozzles/ABE.csv` | current |

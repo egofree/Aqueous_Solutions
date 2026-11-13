@@ -7,7 +7,7 @@
   600,
   350
  ],
- "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack).",
+ "size_basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
  "origin_mm": [
   -7500,
   9900,
@@ -84,7 +84,7 @@
    "height_mm": 600
   }
  ],
- "material": "PVC-U wetted, per AQS-STD-002 rules M1 and M2. No metal wetted part. The graph gives no temperature for this unit; above 60 \u00b0C the thermoplastic is CPVC, never metal. Corrosion allowance does not apply to the polymer. Hot LEACH draw at up to 85 \u00b0C exceeds the PVC-U limit (X-MAT-09); cooling before this unit is held under X-MAT-19 (membranes and potable water do not take CPVC as the answer).",
+ "material": "Wetted path of PVC-U (spacer frames, gasket seals, drip tray, nozzles; above 60 C the thermoplastic class is CPVC) with the two electrode end plates as the only wetted metal, allowed as BMED electrodes per M6: Ti/MMO anode end plate and 316L annealed cathode end plate; 316L tie rods clamping the stack from outside the wetted and vapour zone per M4",
  "acceptance_sets": [
   "A-core",
   "A-CELL"
@@ -95,7 +95,7 @@
    600.0,
    350.0
   ],
-  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows) Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack). Size follows the machine build (style builder bmed_stack).",
+  "basis": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
   "stack": {
    "x_mm": [
     40.0,
@@ -120,7 +120,7 @@
  },
  "design": {
   "machine": "electrodialysis stack skid (BMED base side), EDBM per AQS-DUTY-068",
-  "construction": "A-M-170: 300 x 300 frames, 0.8 mm PE mesh spacers, 85 triplets, Ti/MMO anode and 316L/Ni cathode end plates, tie rods",
+  "construction": "A-M-170: 300 x 300 frames, 0.8 mm PE mesh spacers, 85 triplets, Ti/MMO anode end plate and 316L annealed cathode end plate (BMED electrodes per AQS-STD-002 M6, X-QA-13), 316L tie rods outside the wetted zone per M4",
   "active_area_m2_per_cell": 0.04,
   "mat": "PVC-U",
   "ca_mm": 0.0,

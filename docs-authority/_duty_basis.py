@@ -143,15 +143,15 @@ def main():
         _mat = _ds.get('material') or _sto.get('material')
         _s3m = prm.get('sec3_material') or {}
         # X-MAT-22: the issued duty section 3 material-selection text renders from
-        # params.sec3_material (mat/basis/alt/note/task, flow_graph/param/materials3.py) where a
-        # sheet still carries the Selection pending template. Generic graph-node-material
-        # sheets without a sec3_material keep the X-MAT-06 one-liner, so existing issued
-        # sheets stay byte-identical; hand-written per-unit material texts (the
-        # AQS-REV-H2-001 rows) are never overwritten.
+        # params.sec3_material (mat/basis/alt/note/task, flow_graph/param/materials3.py). Where
+        # the graph issues a sec3_material the rendered selection is the single source and the
+        # section converges to it every run (X-QA-13 moved BMED_ACID, BMED_BASE and EVAP_ACID
+        # from hand one-liners to issued selections through the same path). Sheets without a
+        # sec3_material keep their hand-written per-unit material texts (the AQS-REV-H2-001
+        # rows) and the generic graph-node-material one-liner - never overwritten.
         if _s3m.get('mat'):
             _m3 = re.search(r'^3\. Material\..*$', s, flags=re.M)
-            if _m3 and (_m3.group(0).startswith('3. Material. Selection pending')
-                        or _m3.group(0).rstrip().endswith('(X-MAT-22)')):
+            if _m3:
                 _sec3 = (f"3. Material. {_s3m['mat']}. Basis: {_s3m['basis']} "
                          f"Alternative: {_s3m['alt']}. {_s3m['note']} ({_s3m['task']})")
                 if _sec3 != _m3.group(0): s = s.replace(_m3.group(0), _sec3, 1)

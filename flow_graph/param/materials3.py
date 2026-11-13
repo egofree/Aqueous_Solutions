@@ -6,6 +6,11 @@ params.sec3_material dict (mat / basis / alt / note / task). docs-authority/_dut
 renders section 3 from it; AQS-STD-001 section 3 sheet text, the AQS-END-002 EOL matrix and the
 AQS-DSN-INT-001 internals register all recompute from the same keys in one regen.
 
+X-QA-13 adds the three acid and base regeneration units to the same roster (SEL_QA13): the BMED
+stacks resolve their cathode end plate from the undecided '316L/Ni' class to 316L annealed on the
+AQS-STD-002 M6 hydrogen clause, and the EVAP_ACID shell is stated as the PTFE-lined carbon steel
+of the M5 lined-part rule. The roster the section 3 gate counts is SEL + SEL_FARM + SEL_QA13.
+
 Method (first-principles, per AQS-STD-002 M1-M7): every selection is individual to the unit's own
 process environment - the bounding temperature and chemistry come from the unit's duty sheet
 sections 1-2 (graph design/sizing rows), the degradation mechanism is named where the house
@@ -579,10 +584,69 @@ SEL_FARM = {
   'X-LOC-13'),
 }
 
+# X-QA-13 lane: the acid and base regeneration line (AQS-STD-002 M2 system). The wetted parts are
+# PVC or another polymer by chemical compatibility; the electrodes are metal by electrochemical
+# compatibility (M6) and the external clamp steel sits outside the wetted zone (M4). The BMED
+# cathode end plate resolves the former '316L/Ni' undecided class to 316L annealed: M6's hydrogen
+# clause allows only austenitic stainless or titanium at a cathode, and titanium at a cathode is
+# held for hydriding - nickel has no M6 basis. 5-tuples like SEL_FARM; task is the owning lane.
+_BMED_MAT = ('Wetted path of PVC-U (spacer frames, gasket seals, drip tray, nozzles; above 60 C the '
+             'thermoplastic class is CPVC) with the two electrode end plates as the only wetted '
+             'metal, allowed as BMED electrodes per M6: Ti/MMO anode end plate and 316L annealed '
+             'cathode end plate; 316L tie rods clamping the stack from outside the wetted and '
+             'vapour zone per M4')
+_BMED_BASIS = ('AQS-STD-002 M2 holds the chlor-alkali and acid-regeneration systems on PVC-U, and M3 '
+               'bans a wetted metal part in the reducing catholyte unless M6 names it; M6 names the '
+               'BMED electrodes, and its hydrogen clause decides the cathode-plate alloy between '
+               '316L and nickel: metal in wet H2 or at a cathode is austenitic stainless or '
+               'titanium only with the H2 partial pressure and temperature stated, and titanium at '
+               'a cathode is held for hydriding, so the plate is 316L annealed - nickel has no M6 '
+               'basis, and AQS-REV-H2-001 names 316L annealed for EW cathodes, the same cathode '
+               'class. The anode plate takes the Ti/MMO dimensionally-stable-anode class of '
+               'section 9 (chloride, anodic Cl2). The tie rods sit outside the wetted envelope and '
+               'stay isolated from the liquor path (M4). Inlets arrive trim-cooled at 35 C '
+               '(X-MAT-19), inside the PVC-U M5 limits on the polymer path. X-QA-13 reselection '
+               'of the former undecided 316L-or-nickel cathode-plate class. ' + _TAG)
+SEL_QA13 = {
+ 'BMED_ACID': (
+  _BMED_MAT,
+  _BMED_BASIS,
+  'Nickel 200 cathode hardware only if the caustic compartment later runs hot strong caustic '
+  'above the 316L class (ULLMANN_NAOH nickel practice); CPVC frames if the loop moves above 60 C',
+  'wetted by the 2 M HCl acid-side loop; the electrode end plates are the M6 hardware and the tie '
+  'rods the external clamp steel - no other metal is wetted.',
+  'X-QA-13'),
+ 'BMED_BASE': (
+  _BMED_MAT,
+  _BMED_BASIS,
+  'Nickel 200 cathode hardware only if the caustic compartment later runs hot strong caustic '
+  'above the 316L class (ULLMANN_NAOH nickel practice); CPVC frames if the loop moves above 60 C',
+  'wetted by the NaOH base-side loop; the electrode end plates are the M6 hardware and the tie '
+  'rods the external clamp steel - no other metal is wetted.',
+  'X-QA-13'),
+ 'EVAP_ACID': (
+  'PTFE-lined carbon-steel shell and vapour separator (M5 lined-part rule; PTFE, the house '
+  'fluoropolymer lining class), impregnated-graphite tube bundle, tubesheets and interchanger, '
+  'borosilicate glass 3.3 packed HCl column with PTFE Pall rings and PTFE-lined flanges, PVDF '
+  'piping on the cold legs; no bare metal and no stainless or nickel in the HCl circuit',
+  'hot 2 M HCl boiling at 108.6 C on the graph design (T_boil_C): M3 and M5 rule out bare metal in '
+  'this acid service - above the thermoplastic limits the alternative is a lined part, never bare '
+  'metal - and the lining class is PTFE, the fluoropolymer class of the AQS-STD-002 gasket rows '
+  '(PERRY9_MAT impervious-graphite class for the bundle; ULLMANN_HCL). The shell of record is the '
+  'PTFE-lined carbon steel of AQS-DUTY-060 and the mfg BOM, not a bare polymer shell. '
+  'X-QA-13 reselection. ' + _TAG,
+  'glass-lined steel shell if lining-repair records ever dominate; nickel 200 stays the EVAP_BASE '
+  'hot-caustic class, not this acid service',
+  'the PTFE lining is the corrosion surface and the steel carries the pressure; lining-integrity '
+  'check rides the unit task 12 work order; the steam-side relief trim sits outside the HCl '
+  'circuit.',
+  'X-QA-13'),
+}
+
 def main():
     g = json.load(open(GP))
     N = {n['unit_id']: n for n in g['nodes']}
-    missing = [u for u in list(SEL) + list(SEL_FARM) if u not in N]
+    missing = [u for u in list(SEL) + list(SEL_FARM) + list(SEL_QA13) if u not in N]
     assert not missing, f'{missing}: selection units absent from the graph'
     wrote = 0
     for u, (mat, basis, alt, note) in SEL.items():
@@ -599,8 +663,16 @@ def main():
         if cur != new:
             p['sec3_material'] = new
             wrote += 1
+    for u, (mat, basis, alt, note, task) in SEL_QA13.items():
+        p = N[u].setdefault('params', {})
+        cur = p.get('sec3_material') or {}
+        new = dict(mat=mat, basis=basis, alt=alt, note=note, task=task)
+        if cur != new:
+            p['sec3_material'] = new
+            wrote += 1
     json.dump(g, open(GP, 'w'), indent=2)
-    print(f'materials3: {len(SEL) + len(SEL_FARM)} selections issued ({len(SEL)} X-MAT-22, {len(SEL_FARM)} X-FARM/X-HAB), {wrote} changed')
+    print(f'materials3: {len(SEL) + len(SEL_FARM) + len(SEL_QA13)} selections issued '
+          f'({len(SEL)} X-MAT-22, {len(SEL_FARM)} X-FARM/X-HAB, {len(SEL_QA13)} X-QA-13), {wrote} changed')
 
 if __name__ == '__main__':
     main()

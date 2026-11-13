@@ -1,13 +1,17 @@
 # Electrowinning module
 
 Document number: AQS-EW-MOD-001
-Revision: D
-Date: 2026-10-15
+Revision: E
+Date: 2026-11-12
 Not a PE stamp.
 
-1. Basis. EW-1, 59.87 kg/d sheet. Liquor 4288 kg/d from the leach.
+| Rev | Description | Date |
+|---|---|---|
+| E | The static cell sizing withdrawn: the copper-equivalent Faraday chain from the plated-sheet mass to the cell current, area and fixed plate count, the rack and frame lengths sized to that count, and the fixed cell voltage, rectifier power and bus section. Cell count, current, voltage, power and bus are sizing outputs of AQS-DUTY-051 and the graph booking. | 2026-11-12 |
 
-2. Size. 0.02844 kg/d per amp. Current 59.87 / 0.02844 = 2105 A. At 200 A/m², area 10.53 m². Plate 0.6 × 0.42 m, both sides 0.504 m², 21 plates. Pitch 50 mm. Rack 1250 mm. Frame 1400 mm, CPVC (Rev D; 316L withdrawn under AQS-STD-002 M3). Cell voltage 2.5 V. Power 5.3 kW from the cell rectifier. Bus 10.5 cm² copper. Superseded for sizing by AQS-DUTY-051 Rev B (X-PAR acid-loop decision): 2.12 V, current efficiency 0.85, 2476 A, 25 cathodes, cell DC 5.25 kW.
+1. Basis. The module covers one cell of the EW_1 to EW_9 cascade; EW_1 plates the gold harvest. The deposit, current, cathode count and tank of every cell are solved at the AQS-ASSAY-001 element envelope and booked in the graph (AQS-DUTY-051, `docs-authority/sizing/EW_CELLS.md`); the forming share of the plated metal leaves on IA-EW-SHEET at the EW_9 collection point. Liquor 4288 kg/d from the leach.
+
+2. Size. Cathode current density 200 A/m² (study). Plate immersed 0.6 × 0.42 m, both faces 0.504 m². Cathode-to-anode pitch 50 mm. The cell count, current, cell voltage, DC power and bus section of every cell are sizing outputs of AQS-DUTY-051, not figures of this module.
 
 3. Material. Cathode titanium Grade 2, 3 mm, plastic edge strip so the sheet peels. Anode titanium mesh, 1.5 mm, mixed-metal-oxide coat (Rev D, AQS-STD-002 section 9). Tank PVC/FRP, 10 mm. Frame CPVC (Rev D).
 

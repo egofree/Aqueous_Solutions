@@ -12,7 +12,7 @@ def design():
     ns = math.ceil(N/v('bmed_cells_per_stack_max')); per = math.ceil(N/ns)
     bv = s['bmed']['voltage']; V = bv['V_design']
     return dict(NaOH_kg_d=s['bmed']['base_kg_d'], mol_s=n, I_stack_A=I, triplets=N, stacks=ns, spare_stacks=v('DIGESTER.metals-leach-train.acid-base-regen.bmed_spare_stacks'), triplets_per_stack=per, membrane_m2=3*N*v('bmed_cell_area_m2'),
-                V_triplet_implied=V, volt=bv, V_whey=v('bmed_sec_kWh_per_kg_base')*3.6e6*0.039997*v('bmed_CE')/F, kW=N*I*V/1000, frame='PP frames 300 x 300 mm, 0.8 mm PE mesh spacers, Ti/MMO anode and 316L/Ni cathode end plates, PP end plates with tie rods')
+                V_triplet_implied=V, volt=bv, V_whey=v('bmed_sec_kWh_per_kg_base')*3.6e6*0.039997*v('bmed_CE')/F, kW=N*I*V/1000, frame='PP frames 300 x 300 mm, 0.8 mm PE mesh spacers, Ti/MMO anode end plate and 316L annealed cathode end plate (BMED electrodes per AQS-STD-002 M6; the M6 hydrogen clause decides 316L over nickel - Ti at a cathode is held for hydriding, X-QA-13), PP outer end plates with 316L tie rods outside the wetted zone (M4)')
 def main():
     r = design(); print(json.dumps(r, default=float))
     if '--write' in sys.argv:
