@@ -17,12 +17,12 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | --- | --- | --- | --- |
 | T1 | Owner and site data | 52 | Owner decision or site investigation report |
 | T2 | In-house design tests and standard data | 42 | In-house test record or standard data filed against the item |
-| T3 | Bench and laboratory tests | 79 | Bench test report with method, data and result |
+| T3 | Bench and laboratory tests | 80 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
 | T5 | Design calculations and drawings | 558 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 39 | Commissioning record |
 
-Total 791 items: 367 drivers, 424 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 792 items: 367 drivers, 425 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -211,6 +211,7 @@ Total 791 items: 367 drivers, 424 register entries. Classification rule: first m
 | A-M-486 | 90 mass % of the wire-saw kerf is reclaimed to the SI_REFINE mass fraction of saw kerf | Assay the first reclaimed kerf lot and close the slurry silicon balance | F-20261110-06 (recovery-first silicon); X-MFG-40 |
 | A-M-489 | The recycled SiCl4 is hydrogenated back to trichlorosilane,  kg H2 per kg recycled Si; mass fractions | Assay the loop bleed of the first refining campaign against the registered blend | F-20261110-06 (recovery-first silicon); A-M-472 |
 | A-M-490 | 0.326424 kg of feed silicate_oxide is carried with the leach kg/kg feed | Assay the silicate content of a characterized crib-solids lot and re-point the carry fraction | F-20261110-01 (the entrained-silicate residual); X-QA-12 |
+| A-M-494 | The minor-metal EW arrangement is a selectable option, not a - (layout option, no physics change) | flow_graph/param/test_ew_deposit_basis.py merged-option test: the blend books fully and the current-carrying minor-cell count drops under 'merged'; 'selective' restores the committed book | X-QA-05 |
 
 ## 5. T4 Pilot runs
 

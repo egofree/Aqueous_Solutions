@@ -18,9 +18,10 @@ reactor_design reads edge rates at its own DAG position (S75/S74/S73 and the uni
 inflows move after the stage runs), so it verifies only inside the pipeline - the regen
 receipt owns it until the stage reads its inputs at the final state (X-QA-18). The
 evaporators, the BMED stack, the EW cascade and the PV nameplate already value-compare
-through solver.check() (test_param_misfit, the 1 % gate). The per-unit sweep documents
-(AQS-SIZE-*) freeze at unit task -02 close by design and are evidence snapshots, not a
-live mirror of the graph."""
+through solver.check() (test_param_misfit, the 1 % gate). The per-unit sweep documents (AQS-SIZE-*) are re-rendered from the graph by every
+unit_sizing_sweep stage run (docs-authority/_unit_sizing_sweep.py render_body; F-20261112-02
+retired the -02-close freeze), and test_sweep_sizing_docs_match_the_graph below holds every
+sweep-owned doc to that render - a frozen snapshot fails there naming the unit."""
 import json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -175,3 +176,49 @@ def test_design_block_values_match_the_family_sizing_basis():
     g, cov, _texts = _load()
     bad = _design_value_mismatches(g, None, cov)
     assert not bad, ('sized values disagreeing with their recomputed sizing basis: %s' % bad)
+
+
+# --- F-20261112-02: the per-unit sweep documents must mirror the graph --------------------
+#
+# The unit_sizing_sweep stage re-renders every present unit's template-owned AQS-SIZE doc
+# from the committed graph on every run; ownership follows the template, so a doc another
+# writer rewrote into its own shape stays out of scope here (its values are covered by the
+# family checks above instead). The check imports the generator's render_body and holds each
+# committed doc to that render byte for byte: the basis line (duty / params.design /
+# params.sizing / design_storage / envelope / state) and the vessel geometry are pure
+# functions of the graph, so a stale frozen snapshot fails naming the unit and the line.
+
+def _sweep_module():
+    import importlib.util
+    path = os.path.join(ROOT, 'docs-authority/_unit_sizing_sweep.py')
+    spec = importlib.util.spec_from_file_location('aqs_unit_sizing_sweep', path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def _first_diff(want, got):
+    for wl, gl in zip(want.splitlines(), got.splitlines()):
+        if wl != gl:
+            return 'doc states %r, the graph render states %r' % (gl, wl)
+    return 'doc carries %d lines, the graph render %d' % (len(got.splitlines()), len(want.splitlines()))
+
+
+def test_sweep_sizing_docs_match_the_graph():
+    """Every present unit whose sizing doc carries the unit_sizing_sweep template matches the
+    stage render from the committed graph exactly - a later writer that supersedes a node's
+    sizing basis cannot leave a stale snapshot behind it. Run the unit_sizing_sweep stage to
+    refresh; never hand-edit the doc to pass."""
+    sweep = _sweep_module()
+    stale = []
+    for uid in sorted(sweep.N):
+        u = sweep.N[uid]
+        if u.get('presence') != 'present' or not sweep.sweep_owned(uid):
+            continue
+        want = sweep.render_body(uid)
+        got = open(os.path.join(ROOT, 'docs-authority/sizing/%s.md' % uid),
+                   encoding='utf-8', errors='replace').read()
+        if want != got:
+            stale.append('%s: %s' % (uid, _first_diff(want, got)))
+    assert not stale, ('per-unit sweep documents stale against the graph (the '
+                       'unit_sizing_sweep stage owns them; refresh, do not hand-edit): %s' % stale)

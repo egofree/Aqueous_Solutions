@@ -9,7 +9,7 @@ Authority: graph + params.design: vessel=PVDF/PTFE emulsion polymerization kettl
 params.design: vessel=PVDF/PTFE emulsion polymerization kettle, D_mm=150, H_mm=225, T_C=60, vdf_kg_d=0.15, tfe_kg_d=0.1 | envelope 600 x 600 x 1200 mm, state live | size check: fits
 
 ## 2. Geometry
-Envelope (params.envelope): 600 x 600 x 1200 mm, state per stamp. Working volume 0.001 m3; vessel D 0.101231 x H 0.151846 mm (upright, H/D 1.5).
+Envelope (params.envelope): 600 x 600 x 1200 mm, state per stamp. Working volume 0.001 m3; vessel D 0.104325 x H 0.156488 mm (upright, H/D 1.5).
 
 ## 3. Material
 PE/rotomoulded (default per AQS-STD-002 M2).

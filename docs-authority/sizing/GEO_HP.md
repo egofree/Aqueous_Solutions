@@ -3,10 +3,10 @@
 Document number: AQS-SIZE-GEO_HP
 Revision: A
 Date: 2026-10-20
-Authority: graph + params.design: lift_kW_th=2.1952, electric_kW=0.686, cop=3.2, modules=2, redundancy=2 x 100 % (X-RED-07), module_kW_th=2.2 | envelope  mm, state None | size check: fits. Study. Not a PE stamp.
+Authority: graph + params.design: lift_kW_th=0.0, electric_kW=0.0, cop=3.2, modules=2, redundancy=2 x 100 % (X-RED-07), module_kW_th=2.2 | envelope  mm, state None | size check: fits. Study. Not a PE stamp.
 
 ## 1. Duty
-params.design: lift_kW_th=2.1952, electric_kW=0.686, cop=3.2, modules=2, redundancy=2 x 100 % (X-RED-07), module_kW_th=2.2 | envelope  mm, state None | size check: fits
+params.design: lift_kW_th=0.0, electric_kW=0.0, cop=3.2, modules=2, redundancy=2 x 100 % (X-RED-07), module_kW_th=2.2 | envelope  mm, state None | size check: fits
 
 ## 2. Geometry
 Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 0.000 m3; vessel D 0.00137391 x H 0.00206087 mm (upright, H/D 1.5).

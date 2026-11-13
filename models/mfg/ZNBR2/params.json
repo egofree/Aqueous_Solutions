@@ -156,7 +156,7 @@
   "bay_rows": 7,
   "basis": "cell-summed area from the booked charge (Ah at 1.82 V over the 6 h window at 20 mA/cm2, the purge-basis book); plates 95/module x 38 modules fill it at 6 mm pitch (A-M-456); electrolyte 528.763 L/module at 2 M ZnBr2 (A-M-457); cooler at the cycling_thermal charge-window rate (A-M-455); pump at the 3 % auxiliary share (A-M-179)",
   "computed_by": "flow_graph/param/ess_tf.py tf() (X-PAR-02 lane, X-MFG-43 machine design)",
-  "machine_note": "the flow-battery store as hardware: 47 bays of bipolar stack over its electrolyte reservoir, pumps and coolers (ess_tf design block, X-MFG-43); the drawn plates fill the booked electrode area exactly",
+  "machine_note": "the flow-battery store as hardware: 38 bays of bipolar stack over its electrolyte reservoir, pumps and coolers (the graph module book, ess_tf design block, X-MFG-43); the drawn plates fill the booked electrode area exactly",
   "wetted": "no wetted alloy (duty section 3): carbon-plastic plates, PVC-U reservoirs, copper conductors; separator sheet material on coupon test (W12)",
   "internals_drawn": "plate-pack field envelopes + reservoirs as solids; the individual plates and separator sheets are BOM rows 2/4 at the booked counts (W12)"
  },
@@ -187,7 +187,7 @@
   "plinth_mm": 100.0
  },
  "layout": {
-  "frame": "origin at the envelope corner; 7 x 7 bay grid at 1100 x 850 pitch, 47 bays (last row 5); plinth 0..100 (tanks and posts root 5 mm into it); stack frame 1270..1970, lifting beams top the envelope",
+  "frame": "origin at the envelope corner; 7 x 7 bay grid at 1100 x 850 pitch, 38 bays (last row 3); plinth 0..100 (tanks and posts root 5 mm into it); stack frame 1270..1970, lifting beams top the envelope",
   "nozzle_spread": "side rows flush at the hall faces: along-face x positions packed at an od + 8 pitch centred on the rack, stubs run in from the face 150 mm (hose joints); drain under the plinth at (2000, 3000); vent riser on the last bay lifting beam, flush at the envelope top; per-tag positions in check.nozzles_drawn"
  }
 }

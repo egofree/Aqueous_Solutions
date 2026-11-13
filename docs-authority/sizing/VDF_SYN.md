@@ -9,7 +9,7 @@ Authority: graph + params.design: machine=VDF train: chlorination + hydrofluorin
 params.design: machine=VDF train: chlorination + hydrofluorination reactors, 142b cracking furnace, scrub, chlorination_C=350, cracking_C=650, catalyst=Cr2O3 class (ULLMANN_FLUOROPOLY), vdf_kg_d=0.15, meoh_kg_d=0.150117 | envelope 600 x 600 x 1200 mm, state live | size check: fits
 
 ## 2. Geometry
-Envelope (params.envelope): 600 x 600 x 1200 mm, state per stamp. Working volume 0.001 m3; vessel D 0.133706 x H 0.20056 mm (upright, H/D 1.5).
+Envelope (params.envelope): 600 x 600 x 1200 mm, state per stamp. Working volume 0.001 m3; vessel D 0.134936 x H 0.202404 mm (upright, H/D 1.5).
 
 ## 3. Material
 PE/rotomoulded (default per AQS-STD-002 M2).

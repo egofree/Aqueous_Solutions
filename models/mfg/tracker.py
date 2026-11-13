@@ -7,7 +7,8 @@ node and the duty page of every present unit, writes that unit's W2 parameters f
 `models/mfg/<UNIT>/params.json`, regenerates section 7 of `docs-authority/MFG_MODEL_PLAN.md`,
 and runs the section 5 A-core checks that can run on files: assembly bounding box against
 `size_mm` within 1 mm, nozzle count against the duty section 4 schedule, closed and
-manifold STL, STEP present, and BOM complete. Both outputs are generated: edit the graph,
+manifold STL, STEP present, BOM complete, and the drawn module/cell/tube count against
+the graph design block where the unit carries one. Both outputs are generated: edit the graph,
 the duty pages or this tracker, never the outputs. Section 7's internals column carries
 the node internals row where the node states one, and otherwise the unit's disposition
 in the AQS-DSN-INT-001 internals register, which names the issued sizing-sheet, duty or
@@ -541,6 +542,28 @@ def write_params(rec, lock_fh=None):
 
 # ------------------------------------------------------------------------ file checks
 
+# Section 5 count legs: the drawn module/cell/tube count against the graph design
+# block, for the units that carry one. Each leg names where the drawn figure is read
+# (the builder's check.json or params.json) and which graph design key books it; a
+# leg whose figure is absent on either side passes silently.
+COUNT_LEGS = (
+    # (label, graph design key path, file, drawn key path)
+    ('module', ('modules',), 'check.json', ('a_cell', 'modules')),
+    ('module layout', ('modules',), 'params.json', ('envelope', 'bays', 'count')),
+    ('cell', ('stack', 'cells'), 'check.json', ('stack_report', 'cells')),
+    ('tube', ('tubes',), 'check.json', ('a_hx', 'tubes_per_module')),
+)
+
+
+def _dig(d, path):
+    """Walk a dict path; None when any step is missing."""
+    for k in path:
+        if not isinstance(d, dict):
+            return None
+        d = d.get(k)
+    return d
+
+
 def check_unit(rec):
     """The A-core checks that can run on files. Returns a list of failure strings."""
     fails = []
@@ -598,6 +621,32 @@ def check_unit(rec):
                     if unknown:
                         fails.append('check.nozzles_drawn tags not in the schedule: '
                                      + ', '.join(unknown))
+    # section 5 count leg: the drawn module/cell/tube count against the graph design
+    # block, where the unit carries both figures (the builder wrote them from the
+    # graph book). A mismatch is a named failure; nothing is resized or rebuilt here.
+    design = rec.get('design') or {}
+    if step and design:
+        docs = {}
+        for name in ('params.json', 'check.json'):
+            path = os.path.join(MFG, rec['unit'], name)
+            if os.path.exists(path):
+                try:
+                    with open(path) as fh:
+                        docs[name] = json.load(fh)
+                except json.JSONDecodeError:
+                    docs[name] = None
+        for label, gpath, fname, dpath in COUNT_LEGS:
+            booked = _dig(design, gpath)
+            drawn = _dig(docs.get(fname), dpath)
+            if booked is None or drawn is None:
+                continue
+            try:
+                match = int(drawn) == int(booked)
+            except (TypeError, ValueError):
+                match = False
+            if not match:
+                fails.append(f'{label} count drawn {drawn} against graph design {booked} '
+                             f'({fname[:-5]}.{".".join(dpath)})')
     bom = os.path.join(MFG, rec['unit'], 'bom.csv')
     if os.path.exists(bom):
         with open(bom) as fh:

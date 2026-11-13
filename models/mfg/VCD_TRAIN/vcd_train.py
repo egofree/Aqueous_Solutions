@@ -23,7 +23,7 @@ Every dimension is an authority figure or a named layout choice:
 - Duty section 3: 316L wetted parts, CA 0 mm (AQS-STD-001 rule); frame carbon steel.
 - Purchased per plan rule 6: the scroll compressor (node design rating class) as its
   envelope and interface.
-- Nozzles: all 11 rows of docs-authority/nozzles/VCD_TRAIN.csv drawn at tag, face, height
+- Nozzles: all schedule rows of docs-authority/nozzles/VCD_TRAIN.csv drawn at tag, face,
   and bore as atmospheric open-bore stubs flush at the skid faces (duty section 4: hose,
   atmospheric; DN copied from the edge).
 - A-HX: the bundle area is reported drawn against booked in check.json - here the node
@@ -181,8 +181,8 @@ report = {
     "bbox_mm": dims, "inside_size_mm": inside, "size_mm": [L, W, H],
     "size_basis": P.get("size_basis"), "graph_revision": REV,
     "solids": len(solid.Solids()), "all_parts_valid": all(wp.val().isValid() for _, wp in parts),
-    "solids_note": "one compound of closed solids: plinth, two vessel chains (shell, heads, "
-    "tubesheets, separator ring, top cap), the two 18-tube bundles at running clearance, "
+    "solids_note": f"one compound of closed solids: plinth, {N_MOD} vessel chains (shell, heads, "
+    f"tubesheets, separator ring, top cap), the {N_MOD} {NT}-tube bundles at running clearance, "
     "demister pads, compressor envelopes and the nozzle stubs; every union partner overlaps "
     "volumetrically, so the mesh reads back closed and manifold",
     "a_hx": {
@@ -190,10 +190,11 @@ report = {
         "area_m2_drawn": round(a_drawn, 4), "area_m2_booked": float(DS["hx_area_m2"]),
         "q_latent_kW": float(DS["q_latent_kW"]), "u_kW_m2K": float(DS["u_kW_m2K"]),
         "dT_drive_K": float(DS["dT_drive_K"]),
-        "basis": "A-HX: the bundle area is reported drawn against booked; the node carries the "
-        "8.436 kW latent duty, so the booked area is the calculated figure (latent / (U 2.8 x "
-        "5 K), PERRY9_EVAP class, stub_activation X-MFG-38 pattern) and the drawn bundle "
-        "carries it at +0.1 %",
+        "basis": f"A-HX: the bundle area is reported drawn against booked; the node carries the "
+        f"{DS['q_latent_kW']:g} kW latent duty, so the booked area is the calculated figure "
+        f"(latent / (U {DS['u_kW_m2K']:g} x {DS['dT_drive_K']:g} K), PERRY9_EVAP class, "
+        f"stub_activation X-MFG-38 pattern) and the drawn bundle carries it at "
+        f"{(a_drawn / float(DS['hx_area_m2']) - 1.0) * 100.0:+.1f} %",
     },
     "holdup_L": {"sump_per_module_model": v_sump, "working_volume_book_L": V_WORK,
                  "basis": "the duty section 2 working volume (2 h, 0.0138 m3 book) against the "
@@ -223,8 +224,10 @@ rows = [
      "compressed vapour condensing on the shell"],
     ["2", f"Falling-film bundles: {NT} tubes ID {TUBE_ID:g} x OD {TUBE_OD:g} x {TUBE_L:g} mm per "
           f"module, {a_drawn:.4f} m2 each", NT * N_MOD, "316L tube, CA 0 mm", m["bundle"], "make",
-     "booked bundle 0.603 m2 at U 2.8 kW/m2 K x 5 K (PERRY9_EVAP class) on the node's 8.436 kW "
-     "latent duty (params.design area_basis); drawn at +0.1 %"],
+     f"booked bundle {float(DS['hx_area_m2']):g} m2 at U {DS['u_kW_m2K']:g} kW/m2 K x "
+     f"{DS['dT_drive_K']:g} K (PERRY9_EVAP class) on the node's {DS['q_latent_kW']:g} kW "
+     f"latent duty (params.design area_basis); drawn at "
+     f"{(a_drawn / float(DS['hx_area_m2']) - 1.0) * 100.0:+.1f} %"],
     ["3", "Separator demister pads, 90 mm", N_MOD, "316L mesh", 0.3, "buy",
      "vapour separator internals above the upper tubesheet (design sep_h_mm)"],
     ["4", f"Scroll compressors, {DS['duty_kW']:g} kW duty class (node design scroll class), "
@@ -262,17 +265,18 @@ p["envelope"] = {
 }
 p["design"] = dict(p.get("design", {}))
 p["design"].update({
-    "machine_note": "two MVC still modules (2 x 100 %, X-RED-05) in the issued envelope: each a "
-    "vertical evaporator/condenser vessel with the 18-tube bundle at the booked area, vapour "
-    "separator above, scroll compressor at the flank",
+    "machine_note": f"{N_MOD} MVC still modules ({N_MOD} x 100 %, X-RED-05) in the issued "
+    f"envelope: each a vertical evaporator/condenser vessel with the {NT}-tube bundle at "
+    "the booked area, vapour separator above, scroll compressor at the flank",
     "wetted": "316L wetted, CA 0 mm (duty section 3); frame carbon steel",
     "internals_drawn": "bundles as tube solids at running clearance; demister pads; the scroll "
     "compressor as its purchased envelope (rule 6)",
 })
 p["layout"] = {
-    "frame": "origin at the envelope corner; two 700 mm module bays; plinth 0..30; vessels "
-             "30..1200 with sump 30..250, tubes 250..1140, separator 1160..1190, cap flush at "
-             "the envelope top",
+    "frame": f"origin at the envelope corner; {N_MOD} module bays of {BAY_W:g} mm; plinth "
+             f"0..{T_PLINTH:g}; vessels {Z0:g}..{H:g} with sump {Z0:g}..{Z_TS:g}, tubes "
+             f"{Z_TS:g}..{Z_TS1:g}, separator ring {Z_SEP:g} with the demister to "
+             f"{Z_SEP + 5.0 + SEP_H - 15.0:g}, cap flush at the envelope top",
     "nozzle_spread": "side rows flush at the skid faces packed at an od + 8 pitch centred on "
                      "the skid (60 mm hose-joint stubs); drain boss through the plinth at "
                      "(300, 300); vent riser on the bay-0 separator cap, flush at the envelope "

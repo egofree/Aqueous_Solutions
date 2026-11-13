@@ -9,7 +9,7 @@ Authority: graph + params.design: P_design_MPa=22.0, S_MPa=115.0, t_req_mm=10.15
 params.design: P_design_MPa=22.0, S_MPa=115.0, t_req_mm=10.1559, t_min_mm=11.8038, t_ok=True, OD_mm=114.3 | envelope  mm, state None | size check: fits
 
 ## 2. Geometry
-Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 0.150 m3; vessel D 0.677658 x H 1.01649 mm (upright, H/D 1.5).
+Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 0.169 m3; vessel D 0.705159 x H 1.05774 mm (upright, H/D 1.5).
 
 ## 3. Material
 PE/rotomoulded (default per AQS-STD-002 M2).

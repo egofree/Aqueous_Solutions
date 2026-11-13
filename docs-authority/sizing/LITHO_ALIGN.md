@@ -9,7 +9,7 @@ Authority: graph + params.design: machine=contact aligner, source=365 nm LED arr
 params.design: machine=contact aligner, source=365 nm LED array, 1 W optical (AQS-LITH-001), dose=10 mW/cm2 x 20 s = 200 mJ/cm2, field_mm=100, stage=leadscrew 1 mm pitch, 10 um repeatability, mask=chrome on glass, 100 um pattern | envelope  mm, state None | size check: fits
 
 ## 2. Geometry
-Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 0.000 m3; vessel D 0.00137391 x H 0.00206087 mm (upright, H/D 1.5).
+Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 0.000 m3; vessel D 0.0832218 x H 0.124833 mm (upright, H/D 1.5).
 
 ## 3. Material
 PE/rotomoulded (default per AQS-STD-002 M2).

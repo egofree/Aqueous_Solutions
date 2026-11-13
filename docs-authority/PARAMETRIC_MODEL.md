@@ -2364,3 +2364,4 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-488 | The whole furnace baghouse silica fume is briquetted back in mass fraction of furnace fume | Close the fume balance over the first furnace campaign with briquettes in the burden |
 | A-M-489 | The recycled SiCl4 is hydrogenated back to trichlorosilane,  kg H2 per kg recycled Si; mass fractions | Assay the loop bleed of the first refining campaign against the registered blend |
 | A-M-490 | 0.326424 kg of feed silicate_oxide is carried with the leach kg/kg feed | Assay the silicate content of a characterized crib-solids lot and re-point the carry fraction |
+| A-M-494 | The minor-metal EW arrangement is a selectable option, not a - (layout option, no physics change) | flow_graph/param/test_ew_deposit_basis.py merged-option test: the blend books fully and the current-carrying minor-cell count drops under 'merged'; 'selective' restores the committed book |

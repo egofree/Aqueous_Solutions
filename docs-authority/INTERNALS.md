@@ -129,7 +129,7 @@ The class comes from the graph. Any unit whose sizing sheet, duty sheet, or issu
 | GROWBED_A | growbed | issued mfg model BOM (3 internals part row): "1,"HDPE tray basin: walls and floor 10 mm, 3600 x 2100 x 500 outer",1,HDPE (duty section" | models/mfg/GROWBED_A/bom.csv |
 | GROWBED_B | growbed | issued mfg model BOM (3 internals part row): "1,"HDPE tray basin: walls and floor 10 mm, 3600 x 2100 x 500 outer",1,HDPE (duty section" | models/mfg/GROWBED_B/bom.csv |
 | GW_INTAKE | intake | issued mfg model BOM (1 internals part row): "1,"SS304 wellhead head plate set: 800 x 800 x 600 mm tray form, 6 mm plate (X-LOC-13 well head)",1,SS304,121.3" | models/mfg/GW_INTAKE/bom.csv |
-| H2O_ELYZ | pem_electrolyser | issued mfg model BOM (2 internals part row): "legs, one per side",2,316L (M1 family),25.0,make,node internals row; design 990 kPa g (node design_kPa) 3,Deox" | models/mfg/H2O_ELYZ/bom.csv |
+| H2O_ELYZ | pem_electrolyser | sizing sheet: "separators, deoxo on H2, dryer on H2 per params.internals), rated_kw=85.8, window_h=6.0, h2_rate_kg_h=1.5597 |" | docs-authority/sizing/H2O_ELYZ.md |
 | H2_DRYER | dryer | dryer internals per the issued sizing: the molecular-sieve beds (sieve_kg per params.design) with the guard bed (guard_kg) on the 0.92 Nm3/h H2 stream | docs-authority/sizing/H2_DRYER.md |
 | HF_GEN | reactor | kiln internals per the issued mfg model and design (A-M-289): the D200 x 1200 mm kiln tube at the 2 deg slope with its refractory lining, the spar-feed hopper with rotary valve, and the discharge hood with cake chute | models/mfg/HF_GEN/bom.csv |
 | HX8 | hx | HX8 PVDF bundle: the issued tube-bundle construction (AQS-STD-002 section 4.5) | docs-authority/MATERIALS_STD.md section 4.5 |
@@ -137,7 +137,7 @@ The class comes from the graph. Any unit whose sizing sheet, duty sheet, or issu
 | INV_CAST | caster | duty sheet: "8; molds_per_campaign 8. 3. Material. Graphite crucible tilt-pour + alumina shell as the mould hot face; steel" | docs-authority/duties/INV_CAST.md |
 | LEACH_CSTR_1 | vessel | sizing sheet: "| --- | --- | --- | | A | First issue. Liquor, residence, agitator, CPVC wall at 85 °C, FRP belts. | 2026-10-1" | docs-authority/sizing/LEACH_CSTR_1.md |
 | LI_RECOVER | separator | issued mfg model BOM (2 internals part row): "x 200 x 800 mm,1,PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the" | models/mfg/LI_RECOVER/bom.csv |
-| MAU_HX | hx | issued mfg model BOM (1 internals part row): "400 mm,1,"Aluminium-fin, copper-tube make-up-air heating coil (air side dry and above the dew point in heating" | models/mfg/MAU_HX/bom.csv |
+| MAU_HX | hx | sizing sheet: "graph + params.design: duty=the 12 kW water-to-air coil on the hab make-up air (Q4 -> MAU) | envelope mm, stat" | docs-authority/sizing/MAU_HX.md |
 | MEDICAL | medical | duty sheet: "SS304 wipe-down surfaces and cabinets, PP instrument trays. Basis: clinical sanitation class (AQS-HAB-001; A-M" | docs-authority/duties/MEDICAL.md |
 | MEOH_COND | separator | issued mfg model BOM (1 internals part row): "2,"Coil, tube OD 10 x 1.005 m developed, ~2.6 turns at a 127.32 mm mean diameter," | models/mfg/MEOH_COND/bom.csv |
 | MEOH_FC | iem_fc | IEM fuel-cell stack internals per the sizing basis: 28 cells x 200 cm2 at 0.3 A/cm2 (0.6 V/cell), 1.0 kWe rated, with the methanol anode loop and air cathode supply (params.design) | docs-authority/sizing/MEOH_FC.md |
@@ -192,7 +192,7 @@ The class comes from the graph. Any unit whose sizing sheet, duty sheet, or issu
 | VERMI_BIN | worm_bin | duty sheet: "The envelope is `cad/stl/VERMI_BIN.stl` (a thick-walled tray at the claimed envelope; X-PAR-04). Manufacturing" | docs-authority/duties/VERMI_BIN.md |
 | WASHROOM | washroom | issued mfg model BOM (1 internals part row): "2,"SS304 fixture set: shower tray, WC pan, wall-hung basin - study sheet-metal envelopes in the +X wet" | models/mfg/WASHROOM/bom.csv |
 | ZNBR2 | flow_battery | ZnBr2 flow-battery store internals per the design-linked build (ess_tf design block, X-MFG-43, A-M-456/457): 47 module bays (one per hybrid inverter) of 95 bipolar plates at the 6 mm pitch filling the booked 2223.1 m2 electrode area (99.6 A x 172.9 V DC per stack), one PVC-U electrolyte reservoir per module at 2 M (529.4 L, A-M-457), with the pumps and coolers at the charge-window book to IA-ZNBR-HEAT (A-M-455; A-M-179 gates the measured derate) | docs-authority/sizing/ZNBR2.md |
-| ZNBR2_BR2_REGEN | scrubber | issued mfg model BOM (3 internals part row): "2,"Packing support plate, perforated 50 % open envelope",1,PVC-U sheet,0.1,make,A-COL" | models/mfg/ZNBR2_BR2_REGEN/bom.csv |
+| ZNBR2_BR2_REGEN | scrubber | sizing sheet: "2026-10-20 Authority: graph + params.design: machine=packed Br2-recovery wash column on the ZNBR2 headspace pu" | docs-authority/sizing/ZNBR2_BR2_REGEN.md |
 
 ## 4. Open units (named gaps)
 

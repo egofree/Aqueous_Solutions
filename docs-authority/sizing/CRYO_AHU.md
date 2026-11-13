@@ -9,7 +9,7 @@ Authority: graph + envelope  mm, state None | size check: fits. Study. Not a PE 
 envelope  mm, state None | size check: fits
 
 ## 2. Geometry
-Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 0.293 m3; vessel D 0.847088 x H 1.27063 mm (upright, H/D 1.5).
+Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 0.340 m3; vessel D 0.890342 x H 1.33551 mm (upright, H/D 1.5).
 
 ## 3. Material
 PE/rotomoulded (default per AQS-STD-002 M2).

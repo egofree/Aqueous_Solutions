@@ -5,6 +5,9 @@ plateable cells (MINOR_CELLS) share the lumped other_plateable class of the assa
 A-M-470 splits evenly across them. The element molar masses are constants.M; the valences are
 the chloride-electrowinning charges (USBM_CL_EW). This table is the single source: solver.ew_products
 books the deposits from it and docs-authority/_ew_sizing.py rates the cell equipment from it.
+The Q-041 arrangement (driver ew_minor_metal_arrangement, A-M-494) is a layout choice downstream
+of this map, which stays the element map in both values: under 'merged' the blend books on
+MINOR_CELLS[0] and the other four minor cells idle; the booking ledger does not move.
 """
 
 EW_CELLS = {1: ('Au', 3, 'Au'), 2: ('Ag', 1, 'Ag'), 3: ('Cu', 2, 'Cu'),

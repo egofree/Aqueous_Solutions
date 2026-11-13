@@ -29,7 +29,7 @@ Every dimension is an authority figure or a named layout choice:
 - Purchased per plan rule 6 as envelopes and interfaces: electrolyte pump (aux share
   0.52 kW, A-M-179) and electrolyte cooler (3.1 kW at the cycling_thermal charge-window
   rate, A-M-455), one of each per module.
-- Nozzles: the 12 rows of docs-authority/nozzles/ZNBR2.csv drawn at tag, face, height
+- Nozzles: the schedule rows of docs-authority/nozzles/ZNBR2.csv drawn at tag, face, height
   and bore as atmospheric open-bore stubs flush at the hall faces (duty section 4: hose,
   atmospheric; DN copied from the edge, not recalculated; the schedule elevations are
   the issued datums). The 'cable' row (N11) is a text row: carried verbatim, no stub
@@ -37,7 +37,7 @@ Every dimension is an authority figure or a named layout choice:
   last bay lifting beam; every union partner overlaps volumetrically so the export
   reads back closed and manifold (the house tangent-contact rule).
 - A-CELL: plate count, plate size, pitch and active area match the design block; the
-  separator sheets (94 per module, microporous, at the 1 mm gap land between plates)
+  separator sheets (one per plate gap, microporous, at the 1 mm gap land between plates)
   are a BOM row, not a drawn solid (W12), so the drawn pitch carries them.
 - A-VES-style holdup: the electrolyte volume is reported from the model against the
   design figure; no residence time is derived (the duty section 2 claims no holdup).
@@ -121,7 +121,7 @@ for i in range(N_MOD):
                   .box(EP_L, EP_W, T_EPLATE, centered=False)))
     # --- bipolar plate field: the bonded plate-pack envelope (plates + separator
     # sheets at the 1 mm lands, compressed), plan rule 6 drawing idiom; the individual
-    # sheets are BOM rows 2 and 4 (95 + 94 per module at the 6 mm pitch, X-MFG-43)
+    # sheets are BOM rows 2 and 4 (the graph plate book at the graph pitch, X-MFG-43)
     plate_l = float(DS["plate_active_L_mm"])
     pack = (cq.Workplane("XY", origin=(zc + 2.1, yc, Z_PLATE0))
             .box(plate_l, STACK_W, PLATES * T_PLATE + (PLATES - 1) * 1.0, centered=False))
@@ -263,7 +263,7 @@ report = {
         "basis": "A-CELL: plate count, size, pitch and active area match the design block "
         "(ess_tf, X-MFG-43, A-M-456); the model carries the booked area (j.A = current "
         "closes on it); the field draws as the bonded per-module plate-pack envelope "
-        "(plates + separator lands at the booked 6 mm pitch; the drawn envelope carries "
+        f"(plates + separator lands at the booked {PITCH:g} mm pitch; the drawn envelope carries "
         "the booked active area) - the individual sheets are BOM rows 2 and 4; the duty "
         "section 2 states no plate geometry, so the purge-basis area is the authority "
         "(hold, WORK_ORDER W12)",
@@ -355,18 +355,19 @@ p["envelope"] = {
 }
 p["design"] = dict(p.get("design", {}))
 p["design"].update({
-    "machine_note": "the flow-battery store as hardware: 47 bays of bipolar stack over its "
-    "electrolyte reservoir, pumps and coolers (ess_tf design block, X-MFG-43); the drawn "
-    "plates fill the booked electrode area exactly",
+    "machine_note": f"the flow-battery store as hardware: {N_MOD} bays of bipolar stack over its "
+    "electrolyte reservoir, pumps and coolers (the graph module book, ess_tf design "
+    "block, X-MFG-43); the drawn plates fill the booked electrode area exactly",
     "wetted": "no wetted alloy (duty section 3): carbon-plastic plates, PVC-U reservoirs, "
     "copper conductors; separator sheet material on coupon test (W12)",
     "internals_drawn": "plate-pack field envelopes + reservoirs as solids; the individual "
     "plates and separator sheets are BOM rows 2/4 at the booked counts (W12)",
 })
 p["layout"] = {
-    "frame": "origin at the envelope corner; 7 x 7 bay grid at 1100 x 850 pitch, 47 bays "
-             "(last row 5); plinth 0..100 (tanks and posts root 5 mm into it); stack frame "
-             "1270..1970, lifting beams top the envelope",
+    "frame": f"origin at the envelope corner; {COLS} x {ROWS} bay grid at {BPX:g} x {BPY:g} "
+             f"pitch, {N_MOD} bays (last row {N_MOD % COLS or COLS}); plinth "
+             f"0..{T_PLINTH:g} (tanks and posts root 5 mm into it); stack frame "
+             f"{Z_FRAME0:g}..{Z_TOP:g}, lifting beams top the envelope",
     "nozzle_spread": "side rows flush at the hall faces: along-face x positions packed at an "
                      "od + 8 pitch centred on the rack, stubs run in from the face 150 mm "
                      "(hose joints); drain under the plinth at (2000, 3000); vent riser on "

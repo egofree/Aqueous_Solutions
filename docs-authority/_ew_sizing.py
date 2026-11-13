@@ -7,6 +7,10 @@ cell current is I = m z F / (M t CE) per element. The booked stream rates are co
 feed assay by solver.ew_products (X-QA-04): the IA-FEED-01 rate times the reference-point element
 fraction at leach recovery 1.0 - no longer the S08 booking of the retired 150 kg/d feed audit.
 A balance closes on one feed, the envelope sizes the equipment, so no case B lot forces a resize.
+The Q-041 minor-metal arrangement (driver ew_minor_metal_arrangement, A-M-494; X-QA-05) selects
+the layout: 'selective' rates the five minor cells separately, 'merged' carries the blend on the
+first minor cell (MINOR_CELLS[0]) at the nickel basis and idles the other four (the booked element
+rows stay, so the ledger is arrangement-independent). Solver.ew() makes the same choice.
 Study values are labeled and are in AQS-REG-002."""
 import json, math, sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -36,6 +40,10 @@ SHEET_TO=DR.val(_d,'ew_sheet_collection_cell')   # the forming share books on IA
 ARR=DR.val(_d,'ew_minor_metal_arrangement')      # Q-041: 'selective' (five minor-metal cells) or 'merged' (one combined cell)
 assert ARR in ('selective','merged'), ARR
 MINOR=tuple(int(n) for n in DR.val(_d,'ew_minor_metal_cells'))   # the minor-metal cells (Q-041)
+HOST=MINOR[0]   # the cell that carries the blend in the merged arrangement (A-M-494)
+# the selective single-element ratings, in every arrangement: the merged cell's bounding current
+# is the largest of them (the smallest minor molar mass - the nickel basis, AQS-DUTY-051 section 4)
+SEL_I={n:electrochem.faraday_current_A(FEED*ENV['elements'][EL[n][3]]['fraction']*REC,EL[n][1],EL[n][2],FE) for n in range(1,10)}
 rows=[]
 for n in range(1,10):
     el,M,z,env_key=EL[n]
@@ -43,12 +51,18 @@ for n in range(1,10):
     dep=FEED*spec['fraction']*REC          # the cell's bounding deposit (equipment sizing basis)
     edge='IA-EW-SHEET' if n==SHEET_TO else f'IA-EW-MET-{n}'
     booked=R[edge]   # the cell's product edge; the forming share books on IA-EW-SHEET at the EW_9 collection point
-    I=electrochem.faraday_current_A(dep,M,z,FE)   # bounding current at the element envelope deposit
-    Nc=electrochem.cathode_count(I,J,AP); j=I/(Nc*AP)
-    Li=Nc*PITCH+2*END; Wi=PW+2*SIDE; Hi=SUMP+PH+TOP+FB
-    Lo,Wo,Ho=[round((x+2*WALL)*1000) for x in (Li,Wi)]+[round((Hi+WALL)*1000)]
-    Vl=Li*Wi*(SUMP+PH+TOP); Q=R[[e['stream_id'] for e in g['edges'] if e['to_unit_id']==f'EW_{n}' and e['stream_id'].startswith('IA-EW')][0]]/DR.val(_d,'DIGESTER.ew-cascade-train.ew_liquor_rho_kg_m3')   # A-M-029
-    rows.append(dict(cell=f'EW_{n}',metal=el,dep_kg_d=dep,dep_ref_kg_d=DEP_REF[n],env_case=spec['case'],
+    merged_host=ARR=='merged' and n==HOST   # the blend cell (A-M-494)
+    idle=ARR=='merged' and n in MINOR and not merged_host
+    I=0.0 if idle else (max(SEL_I[m] for m in MINOR) if merged_host else SEL_I[n])
+    Nc=0 if idle else electrochem.cathode_count(I,J,AP); j=0.0 if idle else I/(Nc*AP)
+    if idle:   # not built in this arrangement: no tank, no electrodes, no current
+        Li=Wi=Hi=Vl=0.0; Lo=Wo=Ho=0; tau=0.0
+    else:
+        Li=Nc*PITCH+2*END; Wi=PW+2*SIDE; Hi=SUMP+PH+TOP+FB
+        Lo,Wo,Ho=[round((x+2*WALL)*1000) for x in (Li,Wi)]+[round((Hi+WALL)*1000)]
+        Vl=Li*Wi*(SUMP+PH+TOP); Q=R[[e['stream_id'] for e in g['edges'] if e['to_unit_id']==f'EW_{n}' and e['stream_id'].startswith('IA-EW')][0]]/DR.val(_d,'DIGESTER.ew-cascade-train.ew_liquor_rho_kg_m3')   # A-M-029
+        tau=Vl/Q*1440
+    rows.append(dict(cell=f'EW_{n}',metal=('Pb/Sn/Ni/Cd/Zn blend' if merged_host else el),dep_kg_d=0.0 if idle else dep,dep_ref_kg_d=DEP_REF[n],env_case=spec['case'],
         edge=edge,booked_kg_d=booked,I_A=I,cathodes=Nc,anodes=Nc+1,j_A_m2=j,
         size_mm=[Lo,Wo,Ho],V_liq_m3=Vl,tau_min=Vl/Q*1440,P_kW=electrochem.dc_power_kW(I,V)))
 tot=dict(I_A=sum(r['I_A'] for r in rows),dep=sum(r['dep_kg_d'] for r in rows),dep_ref=sum(r['dep_ref_kg_d'] for r in rows),P_kW=sum(r['P_kW'] for r in rows))
@@ -56,7 +70,7 @@ tot=dict(I_A=sum(r['I_A'] for r in rows),dep=sum(r['dep_kg_d'] for r in rows),de
 # fraction to a single element, so the merged cell's bounding current is the largest
 # single-element current of the five (nickel basis); gold, silver, copper and iron keep
 # their own cells in either arrangement.
-mi=max(rows[n-1]['I_A'] for n in MINOR)
+mi=max(SEL_I[m] for m in MINOR)   # the selective ratings, in every arrangement
 mc=electrochem.cathode_count(mi,J,AP); mj=mi/(mc*AP)
 mLi=mc*PITCH+2*END; mWi=PW+2*SIDE
 mLo,mWo,mHo=[round((x+2*WALL)*1000) for x in (mLi,mWi)]+[round((Hi+WALL)*1000)]
@@ -68,7 +82,7 @@ MD=os.path.join(os.path.dirname(os.path.abspath(__file__)),'sizing','EW_CELLS.md
 def write_md():
     """AQS-DUTY-051 Rev F: this duty sheet is a generator output (X-GOV-06 register clears at the commit that carries it)."""
     dc_bus=tot['P_kW']+sum(r['I_A'] for r in rows)*DR.val(_d,'ew_bus_drop_V')/1000
-    X=['# EW_1 to EW_9 cell sizing','', 'Document number: AQS-DUTY-051', 'Revision: H', 'Date: 2026-11-10',
+    X=['# EW_1 to EW_9 cell sizing','', 'Document number: AQS-DUTY-051', 'Revision: I', 'Date: 2026-11-13',
        f"Authority: graph Rev {g['revision']}; AQS-PLAN-007 MET-EW_n-02. Study. Not a PE stamp. Generated by `docs-authority/_ew_sizing.py` (writes this file). Study values in AQS-REG-002 (A-M-036 to A-M-040). Drivers from `flow_graph/param/drivers.json` (AQS-PAR-001).", '',
        '| Rev | Description | Date |', '| --- | --- | --- |',
        '| A | First issue. Current, electrodes, tank size, holdup and DC power per cell. | 2026-10-15 |',
@@ -78,7 +92,8 @@ def write_md():
        '| E | Owner ruling Q-038: the cascade rate moves to its supply basis - the S08 deposit rows (AQS-ASSAY-001 section 5) at leach recovery 1.0 - so every cell current, cathode count and tank re-solves at the element basis; the copper-equivalent bounding convention and the wear-goods closing-by-difference chain behind it are retired. Demand check and governing statement added to section 2. | 2026-11-04 |',
        '| F | Owner ruling Q-038 (2026-11-05): the equipment of every cell is rated at the AQS-ASSAY-001 element envelope (table 4.1) - the largest deposit of its own element in any feed case, at the design feed rate and leach recovery 1.0 - so no case B lot forces a resize (AGENTS.md sizing rule). The booked stream rates stay at the reference S08 rows; both deposit columns are published. | 2026-11-06 |',
        '| G | Owner ruling Q-041: the minor-metal arrangement is decided from first principles and, no clear winner existing, carried both ways as a selectable option (driver `ew_minor_metal_arrangement`); section 4 added with the analysis and the merged-cell sizing. No selective-arrangement figure changed. | 2026-11-06 |',
-       '| H | X-QA-04: the booked deposit rows are computed from the feed assay (solver.ew_products: IA-FEED-01 rate x AQS-ASSAY-001 reference-point element fraction x leach recovery; the lumped other-plateable class splits evenly over the five minor metals, A-M-470) in place of the S08 booking of the retired 150 kg/d feed audit; the rows sum to 35.9637 kg/d, the plateable class of the reference feed. No equipment figure changed - the envelope basis of Rev F still governs it. | 2026-11-10 |', '',
+       '| H | X-QA-04: the booked deposit rows are computed from the feed assay (solver.ew_products: IA-FEED-01 rate x AQS-ASSAY-001 reference-point element fraction x leach recovery; the lumped other-plateable class splits evenly over the five minor metals, A-M-470) in place of the S08 booking of the retired 150 kg/d feed audit; the rows sum to 35.9637 kg/d, the plateable class of the reference feed. No equipment figure changed - the envelope basis of Rev F still governs it. | 2026-11-10 |',
+       '| I | X-QA-05: the Q-041 arrangement became a live solver and sizing option (driver `ew_minor_metal_arrangement`, assumption A-M-494). `selective` stays the default and no selective figure changed; `merged` rates the blend on the first minor cell at the nickel basis, reports the other four minor cells as not built, and keeps their booked element rows (the ledger is arrangement-independent). Section 4 verdict updated; the nine cascade nodes stay in both arrangements. | 2026-11-13 |', '',
        '## 1. Basis', '',
        '- Equipment rate basis (bounding envelope): the largest fraction of each plateable element found in any case of the IA-FEED-01 envelope (graph `params.assay_envelope.element_envelope`, the machine copy of AQS-ASSAY-001 table 4.1) at the design feed rate and leach recovery 1.0 (AQS-ASSAY-001 section 4 upper bound, driver `ew_leach_recovery_design`). The five minor plateable metals each carry the lumped fraction - the all-in-one-element reading. Design current per cell I = m z F / (M t CE), current efficiency 0.85 (USBM_CL_EW chloride EW 0.85-0.90, lower bound; study, A-M-036), molar mass and valence per element.',
        '- Rate basis (booked streams): the booked deposit of each cell is computed from the feed assay (X-QA-04): IA-FEED-01 rate x reference-point element fraction x leach recovery 1.0, the five minor metals splitting the lumped other-plateable class evenly (A-M-470). The rows sum to the plateable class of the reference feed; a balance closes on one feed, the envelope sizes the equipment; no single feed loads every cell at once (the largest simultaneous load is the reference case).',
@@ -88,6 +103,7 @@ def write_md():
        '- Cell voltage 2.12 V: USBM_CL_EW 2.1 kWh/kg Cu from cupric chloride at CE 0.85 (study, A-M-039).', '',
        '## 2. Results', '',
        'The envelope deposit column sets the equipment (current, cathodes, tank, rectifier channel, bus). The booked column is the stream-rate basis, computed from the reference feed at recovery 1.0 (X-QA-04); the product-edge column shows where the cell plated mass books: the noble and iron harvests leave on their cell edge, the forming share (Cu and the blend) books on IA-EW-SHEET at the EW_9 collection point.',
+       f'Under the merged arrangement (driver `ew_minor_metal_arrangement`, A-M-494) the blend plates on the first minor cell (EW_{HOST}, nickel basis) and the other four minor cells report not built: their current, cathodes and tank are zero, while their booked element rows stay - the ledger is arrangement-independent (A-M-470).',
        '',
        '| Cell | Metal | Envelope deposit, kg/d | Governing case | Booked, kg/d | I bounding, A | Cathodes / anodes | j, A/m² | Tank L × W × H, mm | Liquor m³ | Residence, min | DC kW |',
        '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |']
@@ -111,12 +127,12 @@ def write_md():
        '- Energy. The DC load is the plated metal (Faraday), identical in both arrangements.',
        '- Hardware. The merged cell saves four tanks, four rectifier channels (250 A frames, 6 kW of nameplate), four bus runs and four instrument sets, at a better space-time yield (2 cathodes in one tank against 7 across five tanks).',
        '- Cadmium. The differentiator. A merged cell carries cadmium into the powder blend; the separate cadmium cell holds it as a controlled stream (the blend basis itself books the minor metals together, AQS-DUTY-010, so the ledger is unchanged in either arrangement).',
-       '- Verdict: no clear winner, so both are carried. Driver `ew_minor_metal_arrangement` selects `selective` (the nine-cell cascade as sized in section 2, the graph arrangement today) or `merged` (one combined cell, the alternative below). Switching the graph topology to the merged arrangement (five channels, one minor-metal unit in place of EW_4/5/6/8/9) is the EW-topology unit task, held until the owner selects it.',
+       '- Verdict: no clear winner, so both are carried. Driver `ew_minor_metal_arrangement` selects `selective` (the nine-cell cascade as sized in section 2, the default and the graph arrangement today) or `merged` (the blend on the first minor cell, the other row below). X-QA-05 (2026-11-13, A-M-494): the option is live in solver.ew() and in this sheet - the merged arrangement rates one blend cell at the nickel basis and reports the other four minor cells as not built, with every booked element row unchanged. The graph keeps its nine cascade nodes in both arrangements: the liquor order interleaves EW_7 between the minor cells, so collapsing the idle nodes stays the held EW-topology unit task.',
        '',
        '| Arrangement | Current, A | Cathodes | Tanks | Channels | Nameplate, kW | DC kW |',
        '| --- | --- | --- | --- | --- | --- | --- |',
-       f"| Selective (rated) | {sum(rows[n-1]['I_A'] for n in MINOR):.1f} | {sum(rows[n-1]['cathodes'] for n in MINOR)} | 5 | 5 | 7.5 | {sum(rows[n-1]['P_kW'] for n in MINOR):.2f} |",
-       f"| Merged (alternative) | {merged['I_A']:.1f} | {merged['cathodes']} | 1 | 1 | 1.5 | {merged['P_kW']:.2f} |",
+       f"| Selective ({'selected' if ARR=='selective' else 'alternative'}) | {sum(SEL_I[n] for n in MINOR):.1f} | {sum(electrochem.cathode_count(SEL_I[n],J,AP) for n in MINOR)} | 5 | 5 | 7.5 | {sum(electrochem.dc_power_kW(SEL_I[n],V) for n in MINOR):.2f} |",
+       f"| Merged ({'selected' if ARR=='merged' else 'alternative'}) | {merged['I_A']:.1f} | {merged['cathodes']} | 1 | 1 | 1.5 | {merged['P_kW']:.2f} |",
        '',
        f"The merged cell's bounding current is the largest single-element current of the five ({mi:.1f} A, nickel basis): the envelope gives the lumped fraction to one element at a time, so the combined cell never sees more than that charge per unit time."]
     open(MD,'w').write('\n'.join(X)+'\n')

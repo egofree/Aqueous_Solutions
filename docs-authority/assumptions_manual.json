@@ -8229,5 +8229,23 @@
    "flow_graph/param/drivers.json"
   ],
   "needs_verification": false
+ },
+ {
+  "id": "A-M-494",
+  "value": "The minor-metal EW arrangement is a selectable option, not a fixed five-cell cascade: driver ew_minor_metal_arrangement selects 'selective' (EW_4/5/6/8/9 as five cells, the default) or 'merged' (the lumped blend carried on the first minor cell, EW_4, rated at the worst minor composition - the nickel basis, the largest of the five selective ratings); the booking ledger and the operating Faraday load are identical in both",
+  "units": "- (layout option, no physics change)",
+  "where": "flow_graph/param/solver.py ew(); docs-authority/_ew_sizing.py rows and section 4 (AQS-DUTY-051); flow_graph/param/ew_cells.py",
+  "basis": "Owner ruling Q-041 (2026-11-05) and X-QA-05: the published standard reduction potentials of the five minor metals sit within a Nernst-scale band (lead and tin 10 mV apart), so no cited basis separates them in the mixed-chloride electrolyte and the first-principles analysis (AQS-DUTY-051 section 4) finds no winner; A-M-470 books the same lumped blend either way. The option changes the tank, cathode and rectifier-channel count, not the element booking. The graph keeps its nine cascade nodes in both arrangements because the liquor order interleaves EW_7 between the minor cells; the merged arrangement idles the four minor tanks as pass-throughs until the EW-topology unit task collapses them.",
+  "sensitivity": "Merged drops four minor tanks, four rectifier channels and their bus runs and cuts the rated minor current from the five-cell sum (587.9 A) to the nickel-basis single-cell rating (183.9 A). The operating load and every booked stream rate are unchanged.",
+  "replaced_by": "A characterized feed lot that separates the minor elements (A-M-460, AQS-ASSAY-001 section 7), or the owner selecting the merged arrangement and the EW-topology task following",
+  "task": "X-QA-05",
+  "files": [
+   "flow_graph/param/solver.py",
+   "flow_graph/param/ew_cells.py",
+   "docs-authority/_ew_sizing.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "flow_graph/param/test_ew_deposit_basis.py merged-option test: the blend books fully and the current-carrying minor-cell count drops under 'merged'; 'selective' restores the committed book"
  }
 ]

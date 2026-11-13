@@ -20,6 +20,8 @@ import pytest
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, ROOT)
 from flow_graph.param import drivers as DR
+from flow_graph.param import solver
+from flow_graph.param.sizing import electrochem
 
 F_CODATA = 96485.33212
 EL = {1: (196.97, 3), 2: (107.87, 1), 3: (63.546, 2), 4: (207.2, 2), 5: (118.71, 2),
@@ -89,3 +91,45 @@ def test_minor_metal_arrangement_carried_both_ways():
     assert m['I_A'] == pytest.approx(max(rows[n - 1]['I_A'] for n in minor), rel=1e-9)
     assert m['cathodes'] >= 1 and len(m['size_mm']) == 3
     assert all(r['cell'] == f'EW_{n}' for n, r in zip(range(1, 10), rows))
+
+
+def test_minor_metal_merged_option_books_the_full_blend():
+    """Q-041 / X-QA-05 (A-M-494): 'merged' carries the same lumped blend on one current-carrying
+    minor cell - the first, rated at the nickel basis, the largest of the five selective ratings -
+    and 'selective' restores today's book. The booking ledger is arrangement-independent."""
+    g = json.load(open(os.path.join(ROOT, 'flow_graph', 'plant_flow_graph.json')))
+    d0 = DR.load()
+    dm = dict(d0)
+    dm['ew_minor_metal_arrangement'] = dict(d0['ew_minor_metal_arrangement'], value='merged')
+    sel = solver.ew(d0, g)
+    mer = solver.ew(dm, g)
+    minor = tuple(int(n) for n in DR.val(d0, 'ew_minor_metal_cells'))
+    host = minor[0]
+    # the ledger does not move: the blend books fully in both arrangements
+    assert solver.ew_products(d0, g)['blend'] == solver.ew_products(dm, g)['blend'] > 0
+    # the cell count drops: five current-carrying minor cells to one, on the first
+    assert [n for n in minor if sel[f'EW_{n}']['I_A'] > 0] == list(minor)
+    assert [n for n in minor if mer[f'EW_{n}']['I_A'] > 0] == [host]
+    assert all(mer[f'EW_{n}']['I_A'] == 0.0 and mer[f'EW_{n}']['dep_kg_d'] == 0.0
+               for n in minor if n != host)
+    # the merged rating is the largest single-element rating of the five (nickel basis),
+    # carried at the full lumped-class envelope deposit
+    assert mer[f'EW_{host}']['I_A'] == pytest.approx(max(sel[f'EW_{n}']['I_A'] for n in minor), rel=1e-9)
+    assert mer[f'EW_{host}']['dep_kg_d'] == pytest.approx(sel[f'EW_{host}']['dep_kg_d'], rel=1e-12)
+    M_ni, z = EL[6]
+    ce = DR.val(d0, 'ew_current_efficiency_design')
+    assert mer[f'EW_{host}']['I_A'] == pytest.approx(
+        mer[f'EW_{host}']['dep_kg_d'] * 1000.0 / M_ni * z * F_CODATA / 86400.0 / ce, rel=1e-4)
+    # the primary cells do not move and the rectifier book follows the reduced set
+    for n in (1, 2, 3, 7):
+        assert mer[f'EW_{n}'] == sel[f'EW_{n}']
+    assert mer['RECT_EW']['I_A'] == pytest.approx(sum(mer[f'EW_{n}']['I_A'] for n in range(1, 10)))
+    assert mer['RECT_EW']['I_A'] < sel['RECT_EW']['I_A']
+    # switching back restores today's book
+    assert solver.ew(d0, g) == sel
+    # the solver seam reproduces the sizing sheet's merged cell (cathode count, AQS-DUTY-051 section 4)
+    out = json.loads(subprocess.run([sys.executable, 'docs-authority/_ew_sizing.py'], cwd=ROOT,
+                                    capture_output=True, text=True, check=True).stdout)
+    ap = 2 * DR.val(d0, 'DIGESTER.ew-cascade-train.ew_plate_height_m') * DR.val(d0, 'DIGESTER.ew-cascade-train.ew_plate_width_m')
+    assert electrochem.cathode_count(mer[f'EW_{host}']['I_A'], DR.val(d0, 'ew_current_density_A_m2'), ap) \
+        == out['merged_alt']['cathodes']

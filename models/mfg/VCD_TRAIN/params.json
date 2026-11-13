@@ -38,7 +38,7 @@
   "shell_D_mm": 240.0,
   "area_basis": "latent / (U 2.8 kW/m2 K x 5 K lift), PERRY9_EVAP class; bundle = tubes x pi x ID x L at the 12 mm / 890 mm tube class (X-MFG-38 pattern)",
   "basis": "0.333 m3/d x 17 kWh/m3 / 24 h at the issued band midpoint (A-M-149)",
-  "machine_note": "two MVC still modules (2 x 100 %, X-RED-05) in the issued envelope: each a vertical evaporator/condenser vessel with the 18-tube bundle at the booked area, vapour separator above, scroll compressor at the flank",
+  "machine_note": "2 MVC still modules (2 x 100 %, X-RED-05) in the issued envelope: each a vertical evaporator/condenser vessel with the 19-tube bundle at the booked area, vapour separator above, scroll compressor at the flank",
   "wetted": "316L wetted, CA 0 mm (duty section 3); frame carbon steel",
   "internals_drawn": "bundles as tube solids at running clearance; demister pads; the scroll compressor as its purchased envelope (rule 6)"
  },
@@ -163,7 +163,7 @@
   "sep_h_mm": 40.0
  },
  "layout": {
-  "frame": "origin at the envelope corner; two 700 mm module bays; plinth 0..30; vessels 30..1200 with sump 30..250, tubes 250..1140, separator 1160..1190, cap flush at the envelope top",
+  "frame": "origin at the envelope corner; 2 module bays of 700 mm; plinth 0..30; vessels 30..1200 with sump 30..250, tubes 250..1140, separator ring 1160 with the demister to 1190, cap flush at the envelope top",
   "nozzle_spread": "side rows flush at the skid faces packed at an od + 8 pitch centred on the skid (60 mm hose-joint stubs); drain boss through the plinth at (300, 300); vent riser on the bay-0 separator cap, flush at the envelope top; per-tag positions in check.nozzles_drawn"
  }
 }

@@ -96,19 +96,35 @@ def ew(d, g):
     leach recovery 1.0 - the five minor plateable metals each carry the lumped fraction (the
     'all in one element' reading of AQS-ASSAY-001 table 4.1). The booked stream rates stay at
     the reference S08 deposit rows (solver.ew_products): a balance closes on one feed, the
-    envelope sizes the equipment. I = m z F / (M t CE) [CODATA2018, SCHLESINGER2011]."""
+    envelope sizes the equipment. I = m z F / (M t CE) [CODATA2018, SCHLESINGER2011].
+    Q-041 minor-metal arrangement (driver ew_minor_metal_arrangement, A-M-494; X-QA-05): a
+    layout choice on this booking, not a physics change. 'selective' (the default) rates the
+    five minor cells as today. 'merged' carries the lumped blend on the first minor cell
+    (MINOR_CELLS[0]), rated at the worst minor composition - the smallest minor molar mass
+    (nickel basis, the largest of the five selective ratings, AQS-DUTY-051 section 4) - and
+    the other four minor cells carry no current. The Faraday sum over the booked blend is
+    identical in both, so the operating DC load does not move; gold, silver, copper and iron
+    keep their own cells. The nine cascade nodes stay in both arrangements because the liquor
+    order interleaves EW_7 between the minor cells; the merged arrangement idles the four
+    minor tanks as pass-throughs until the EW-topology unit task collapses them."""
     feed = next(e['rate']['value'] for e in g['edges'] if e['stream_id'] == 'IA-FEED-01')
     els = next(e for e in g['edges'] if e['stream_id'] == 'IA-FEED-01')[
         'params']['assay_envelope']['element_envelope']['elements']
     rec = DR.val(d, 'ew_leach_recovery_design')   # AQS-ASSAY-001 section 4 upper bound
     CE = DR.val(d, 'ew_current_efficiency_design')
+    arr = DR.val(d, 'ew_minor_metal_arrangement')   # Q-041 option (A-M-494)
+    assert arr in ('selective', 'merged'), arr
+    host = MINOR_CELLS[0]   # the cell that carries the blend in the merged arrangement
+    M_blend = min(M[EW_METAL[m][0]] for m in MINOR_CELLS)   # nickel basis (A-M-494)
     out = {}
     for n in range(1, 10):
         el, z = EW_METAL[n]
         env_key = 'Fe' if el == 'Fe' else ('Cu' if el == 'Cu' else ('Au' if el == 'Au' else ('Ag' if el == 'Ag' else 'other_plateable')))
         dep = feed * els[env_key]['fraction'] * rec   # the cell's bounding deposit
-        I = electrochem.faraday_current_A(dep, M[el], z, CE)
-        out[f'EW_{n}'] = dict(metal=el, dep_kg_d=dep, env_case=els[env_key]['case'], I_A=I,
+        merged_host = arr == 'merged' and n == host
+        idle = arr == 'merged' and n in MINOR_CELLS and not merged_host
+        I = 0.0 if idle else electrochem.faraday_current_A(dep, M_blend if merged_host else M[el], z, CE)
+        out[f'EW_{n}'] = dict(metal=el, dep_kg_d=0.0 if idle else dep, env_case=els[env_key]['case'], I_A=I,
                               P_kW=electrochem.dc_power_kW(I, DR.val(d,'ew_cell_voltage_V')),
                               P_bus_kW=electrochem.dc_power_kW(I, DR.val(d,'ew_cell_voltage_V')+DR.val(d,'ew_bus_drop_V')))
     dc = sum(v['P_bus_kW'] for v in out.values())

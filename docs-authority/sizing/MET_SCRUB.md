@@ -9,7 +9,7 @@ Authority: graph + params.design: duty=metal-aisle fume and mist (wet scrubber a
 params.design: duty=metal-aisle fume and mist (wet scrubber ahead of the baghouse filter), gas_kg_d=71604.0, Q_m3_s=0.6906, u_flood_m_s=2.0195, D_mm=800, packed_mm=2303 | envelope  mm, state None | size check: fits
 
 ## 2. Geometry
-Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 143.213 m3; vessel D 6.67293 x H 10.0094 mm (upright, H/D 1.5).
+Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 143.208 m3; vessel D 6.67285 x H 10.0093 mm (upright, H/D 1.5).
 
 ## 3. Material
 PE/rotomoulded (default per AQS-STD-002 M2).
