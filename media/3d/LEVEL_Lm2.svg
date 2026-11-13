@@ -1,7 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24240" height="15586" font-family="DejaVu Sans,sans-serif" font-size="12">
-<rect x="0" y="0" width="24240" height="15586" fill="white"/>
-<text x="16" y="26" font-size="15" font-weight="bold">Baseline site - level L-2 plan (mm, +X right, +Y up)</text>
-<text x="16" y="44" font-size="11" fill="#555">datum Z -16525 mm. Dashed = eliminated by the scaling plan.</text>
-<rect x="80" y="80" width="24000" height="15300" fill="#2471a333" stroke="#2471a3" stroke-width="2"/>
-<text x="86" y="96" fontSize="11">CATCH_TANK</text>
-</svg>
+version https://git-lfs.github.com/spec/v1
+oid sha256:54c1ab2df884b5be6a2b30518f111fd562af542f4b26dd82fed518a60fb792aa
+size 572

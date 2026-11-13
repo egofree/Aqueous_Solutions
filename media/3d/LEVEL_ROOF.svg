@@ -1,7 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="182582" height="170628" font-family="DejaVu Sans,sans-serif" font-size="12">
-<rect x="0" y="0" width="182582" height="170628" fill="white"/>
-<text x="16" y="26" font-size="15" font-weight="bold">Baseline site - level ROOF plan (mm, +X right, +Y up)</text>
-<text x="16" y="44" font-size="11" fill="#555">datum Z 34800 mm. Dashed = eliminated by the scaling plan.</text>
-<rect x="80" y="80" width="182342" height="170342" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
-<text x="86" y="96" fontSize="11">PV_ARRAY</text>
-</svg>
+version https://git-lfs.github.com/spec/v1
+oid sha256:b39c3d865efdb14d2418a17e2263659621ebe737446c9c0f665212de1bcabcfe
+size 576

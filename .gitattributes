@@ -22,3 +22,6 @@ docs-authority/ASSUMPTIONS_REGISTER.md linguist-generated=true
 docs-authority/MODEL_WORKBOOK.xlsx linguist-generated=true
 flow_graph/views/** linguist-generated=true
 flow_graph/derived/** linguist-generated=true
+models/mfg/**/*.stl filter=lfs diff=lfs merge=lfs -text
+*.step filter=lfs diff=lfs merge=lfs -text
+*.svg filter=lfs diff=lfs merge=lfs -text

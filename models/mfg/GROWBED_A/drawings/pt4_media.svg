@@ -1,35 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   width="800.0"
-   height="340.0"
-
->
-    <g transform="scale(0.05504471332097028, -0.05504471332097028)   translate(3846.9560330467193,-3658.7211791371415)" stroke-width="18.167048925641907"  fill="none">
-       <!-- hidden lines -->
-       <g  stroke="rgb(160,160,160)" fill="none" stroke-dasharray="18.167048925641907,18.167048925641907" >
-			<path d="M-1.4142135623730958,1715.4593165291526 L-213.5462479183374,1837.9338036683116 " />
-			<path d="M-1.4142135623730958,25.31139400875951 L-1.4142135623730958,1715.4593165291526 " />
-			<path d="M-1.4142135623730958,1715.4593165291526 L2522.956995273602,3172.9057134851437 " />
-
-       </g>
-
-       <!-- solid lines -->
-       <g  stroke="rgb(0,0,0)" fill="none">
-			<path d="M-1.4142135623730958,25.31139400875951 L-213.5462479183374,147.78588114791847 " />
-			<path d="M-213.54624791833737,147.78588114791842 L-213.54624791833737,1837.9338036683116 " />
-			<path d="M2522.9569952736015,1482.7577909647507 L2310.8249609176373,1605.2322781039097 " />
-			<path d="M2310.8249609176373,1605.2322781039097 L2310.8249609176373,3295.380200624303 " />
-			<path d="M2522.9569952736015,3172.905713485144 L2310.8249609176373,3295.380200624303 " />
-			<path d="M2522.9569952736015,1482.7577909647507 L2522.9569952736015,3172.9057134851437 " />
-			<path d="M-1.4142135623730958,25.31139400875951 L2522.956995273602,1482.7577909647507 " />
-			<path d="M-213.54624791833737,147.78588114791842 L2310.8249609176373,1605.2322781039097 " />
-			<path d="M-213.54624791833737,1837.9338036683116 L2310.8249609176373,3295.380200624303 " />
-
-       </g>
-    </g>
-    
-<g id="aqs-fab-notes" transform="translate(0,240.0)" font-family="DejaVu Sans,sans-serif" font-size="10" fill="#000"><text x="6" y="24">GROWBED_A - pt4_media: media: sheet-metal / shell part per params.json; class HDPE.</text><text x="6" y="37">GROWBED_A - pt4_media: General tolerance ISO 2768-m unless noted.</text></g>
-<g id="aqs-title-block"><rect x="581.6" y="280.0" width="216.0" height="57.6" fill="white" stroke="black" stroke-width="0.60"/><text x="585.2" y="289.6" font-family="sans-serif" font-size="5.4">Aqueous Solutions (owner)   AQS-MFG-GROWBED_A-PT4_MEDIA</text><text x="585.2" y="299.8" font-family="sans-serif" font-size="5.4">GROWBED_A fabrication drawing PT4_MEDIA (AQS-PLAN-006 M3; gr</text><text x="585.2" y="310.0" font-family="sans-serif" font-size="5.4">Type: fabrication drawing (GA / nozzle orientation / part sheet)   Rev b60a460a   Issued 2026-10-15</text><text x="585.2" y="320.2" font-family="sans-serif" font-size="5.4">Created: flow graph pipeline   Approved: not approved (study)</text><text x="585.2" y="330.4" font-family="sans-serif" font-size="5.4">Sheet 1 of 1   AQS-DWG-001</text></g>
-</svg>
+version https://git-lfs.github.com/spec/v1
+oid sha256:c2832e9243594eb8b6b216d265ded35b0c8e2675172035208bce98018f39f6b9
+size 2869
