@@ -89,6 +89,7 @@ run staleness           python3 -m flow_graph.param.regen --check
 run authority-contract  python3 flow_graph/check_authority_contract.py
 run citations           python3 -m flow_graph.check_citations
 run doc-style           python3 -m flow_graph.check_doc_style
+run site-staleness      python3 -m flow_graph.param.site_outputs --check
 if [ "$full" = 1 ]; then
   run regen-idempotent  python3 flow_graph/check_regen_idempotent.py
   run cad-outputs       cad_outputs
