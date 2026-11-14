@@ -735,7 +735,12 @@ def heat():
         _ov = ','.join(f'{u}={_solved[u]:.5f}' for u in sorted(_solved))
         pw = json.loads(subprocess.run([sys.executable, 'docs-authority/_power_sizing.py',
                                         f'--set-continuous={_ov}'], cwd=ROOT, capture_output=True, text=True, check=True).stdout)['bounding']
-        rt = DR.val(d, 'storage_round_trip'); night = DR.val(d, 'night_hours'); win = 24.0 - night
+        rt = DR.val(d, 'storage_round_trip'); night = DR.val(d, 'night_hours')
+        # the charge window is the hours the charging source runs: daylight at a solar site, the
+        # full day when the site's diverse source charges around the clock (the polar-night
+        # profile: night_hours 24, wind class - NOAA_MCMURDO). A zero window is never a real book.
+        win = 24.0 - night
+        if win <= 0.0: win = 24.0
         e_out = float(pw['store_kWh']); e_in = float(pw['store_in_kWh']); loss = e_in - e_out
         znbr_avg = loss / 24.0; znbr_win = loss / win; chg_win = e_in / win
         E['IA-ZNBR-HEAT']['rate']['value'] = round(znbr_avg, 4)
