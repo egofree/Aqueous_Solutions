@@ -89,6 +89,11 @@ def _backup():
 def _size_pv():
     from flow_graph.param import solver as SV
     roof = SV.roof_close(_d, cases['bounding'])
+    if roof is None:
+        site = os.environ.get('AQS_SITE') or 'baseline'
+        raise SystemExit(f'{site}: no roof fit - the array need at this profile exceeds the roof over the '
+                         f'whole bay-grid growth range. The locale power design needs generation beyond PV '
+                         f'(the site power study; see AQS-PLAN-011 and the Q-024 flagged options).')
     cases_pv = {k: P + roof['ext']['total_kW'] for k, P in cases.items()}
     PVF = PF.pv_factor(eta=RT)
     out = {}
