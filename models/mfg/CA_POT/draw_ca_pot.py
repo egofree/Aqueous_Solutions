@@ -11,7 +11,7 @@ model/mfg/*/drawings/*.svg. Geometry and notes:
   sh01         casing + lining + head plate (weld + tolerance notes)
   hd01         hood group: hot plate, plate, rim, DN50 riser, dip leg, vent
   el01         electrode bank: 3 anodes + clamps, 2 cathodes, bus rails/straps
-  aux01        service group: N1 tap, N2 brine inlet, N4 drain, N3 Cl2 stub
+  aux01        service group: N1 tap, N2/N7 brine inlets, N4 drain
   iso01        isometric orientation sheet
 
 Run twice around _drawings.py:
@@ -35,9 +35,9 @@ def union_all(shapes):
     return u
 
 shell = union_all([parts[k] for k in ("casing", "fibre_lining", "ram_lining", "head_plate")])
-hood = union_all([parts[k] for k in ("hood_hot_plate", "hood", "offtake_riser", "riser_flange", "dip_leg", "vent_stub", "cl2_stub")])
+hood = union_all([parts[k] for k in ("hood_hot_plate", "hood", "offtake_riser", "riser_flange", "dip_leg", "vent_stub", "cl2_stub", "cl2_stub_phos", "cl2_stub_silane")])
 electrode = union_all([parts[k] for k in ("anodes", "anode_clamps", "cathodes", "bus_rails", "bus_straps", "ceramic_pads")])
-aux = union_all([parts[k] for k in ("ca_tap_group", "brine_inlet_group", "drain_well")])
+aux = union_all([parts[k] for k in ("ca_tap_group", "brine_inlet_group", "brine_inlet_group_2", "drain_well")])
 full = union_all(list(parts.values()) + list(inv.values()))
 BATH = P["design"]["bath_top_mm"]
 
@@ -45,7 +45,7 @@ SHEETS = [
     ("ga_front", union_all([shell, hood, electrode, aux]), (0, 1, 0),
      ['Keys: 800 overall width (shell); 1600 overall height, roof datum z 1594..1600',
       f'Bath top z {BATH:.0f} (hood hot plate at {BATH-10:.0f}..{BATH:.0f}); head plate deck 1154..1160; bus rails 1196..1201',
-      'N1 Ca-metal tap lip +X z 600; N2 brine inlet -X z 160; N3 Cl2 stub +Y z 600; N4 drain bottom z 50; N5 vent on the riser at z 800',
+      'N1 Ca-metal tap lip +X z 600; N2/N7 brine inlets -X z 160; N3/N8/N9 Cl2 stubs +Y z 600; N4 drain bottom z 50; N5 vent on the riser at z 800',
       'Connection hardware draws flush at the envelope faces: nothing protrudes, the assembly fills 800 x 800 x 1600 (check.json overhang record)',
       'Bath inventory (salt + metal layer) drawn as solids - process inventory, not a BOM part'],
      "General arrangement, front elevation. Shop, not stamped (AQS-STD-001 section 7)."),
@@ -60,7 +60,10 @@ SHEETS = [
       'N2 -X face, y 400, z 160: DN15 Class 150, CaCl2 brine concentrate inlet, lance into the bath',
       'N3 +Y face, x 598, z 600: DN15 Class 150, chlorine byproduct export (water-treatment class)',
       'N4 bottom face, (256,160): DN15 drain well, sump face z 50, flush at z 0',
-      'N5 top, DN15 on the DN50 riser at z 800',
+      'N5 top, DN15 on the DN50 riser at z 800; N6 top z 800: power terminal - a cable schedule row, carried verbatim, never drawn',
+      'N7 -X face, y 230, z 160: DN15 Class 150, CaCl2 brine concentrate in (process-chemical import), study slot beside N2; class pending (task X-QA-11)',
+      'N8 +Y face, x 566, z 600: DN15 Class 150, pot byproduct chlorine for the phosgenation, study slot beside N3',
+      'N9 +Y face, x 630, z 600: DN15 Class 150, chlorine make-up of the chlorosilane loop, study slot beside N3',
       'Heights/bore/rating per docs-authority/nozzles/CA_POT.csv; compass faces are the registered layout choice (params.json layout_note)'],
      "Nozzle orientation, top view. Heights per the task-04 schedule."),
     ("sh01", union_all([shell, parts["hood_hot_plate"]]), (0, 1, 0),
@@ -70,7 +73,7 @@ SHEETS = [
      "Fabricated part sheet: casing + lining + head plate. Welds per ISO 2553; general tolerance ISO 2768-m."),
     ("hd01", hood, (0, 1, 0),
      ['Hood plate CS t6 + rim lip 60 wide x 46; graphite hot plate t10 (expendable wetted face)',
-      'DN50 riser OD 60.3 t 2.0: full-penetration butt welds to the plate (ISO 2553); N5 DN15 vent stub on the riser at z 800; N3 DN15 Cl2 export at +Y z 600',
+      'DN50 riser OD 60.3 t 2.0: full-penetration butt welds to the plate (ISO 2553); N5 DN15 vent stub on the riser at z 800; N3/N8/N9 DN15 Cl2 stubs at +Y z 600',
       'Return dip leg DN15 inside the riser annulus, bottom z 250',
       'Gasket faces per AQS-PIP-003 class practice (AQS-STD-002 section 14); general tolerance ISO 2768-m'],
      "Fabricated part sheet: hood group (hot plate, plate + rim, riser, dip leg, vent)."),
@@ -83,9 +86,10 @@ SHEETS = [
     ("aux01", aux, (0, 1, 0),
      ['N1 Ca-metal tap: carbon well DN80 OD 88.9, crest 605..615 to the +X face, discharge lip flush at +X z 600 (WO step 6 tap procedure)',
       'N2 brine inlet: chute box 35 x 160 x 90 flush at the -X face; DN44 lance into the bath at z 160',
+      'N7 brine inlet 2: the N2 idiom in a study slot beside it (chute box + DN44 lance at y 230); class pending (task X-QA-11)',
       'N4 drain: carbon sump OD 60, DN15 bore through the base stack, flush at z 0 (frozen-salt drain pig)',
       'General tolerance ISO 2768-m'],
-     "Fabricated part sheet: service group (tap, brine inlet, drain)."),
+     "Fabricated part sheet: service group (tap, brine inlets, drain)."),
     ("iso01", full, (1, -1, 1),
      ['Shop orientation: +X face, y along depth, z up; hood + head plate + bus in place over the 800 x 800 x 1600 lined cell',
       'The live graph revision in params.json is the model authority for this build; STEP (export/ca_pot.step) is the solids of record',

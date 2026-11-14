@@ -1,7 +1,5 @@
 item,description,qty,material,mass_kg,make_or_buy,basis
-1,"Bench frame 800 x 600, work top z 850..900",1,carbon steel,255.10000000000002,make,WORK_ORDER step 1; AQS-DUTY-072 bench_prep class
-2,Extraction hood with the N-vent stub,1,carbon steel,223.4,make,task-04 schedule N5
-3,Flux hopper 20 L cone + 0.1 kW mixer stage,1,CS + carbon steel,105.3,make,"design hopper 20 L, mixer 0.1 kW; 0.0398 kg/d salt batch"
-4,N1 flux discharge chute +X z 600,1,carbon steel,18.84,make,"task-04 schedule N1 (solids, bore not calculated)"
-5,N2/N3 inlet chutes -X z 160 (digester salts; MgCl2 drag-out from TI_CELL N7),2,carbon steel,4.5,make,task-04 schedule N2/N3; A-M-284 feedstock ruling
-6,N4 drain well,1,carbon steel,1.0072096647506712,make,task-04 schedule N4
+1,"SS304 mixing basin: 800 x 600 x 1200 mm open-top tray form, 6 mm plate (prep-class study box; A-M-284 Kroll drag-out basis)",1,SS304 (duty section 3),182.1,make,size_basis verbatim; 304L wetted class at the dry salt service; the 316L drum is the named alternative if the salt ever arrives as a slurry (duty section 3)
+2,"PP-H day-drum metering hopper envelope, 20 L class (300 x 300 x 300)",1,PP-H (duty section 3),24.6,make,graph design hopper_L 20; anhydrous MgCl2-class handling: PP-H is the duty section 3 metering class
+3,Mixer stage envelope 80 x 80 x 500 with the 0.1 kW drive class,1,SS304 stage (drive purchased),25.6,make,"graph design mixer_kW 0.1 - the only powered part (duty section 3); the drive purchases with the stage at fabrication (hold, WORK_ORDER W12)"
+4,"Nozzle set per docs-authority/nozzles/FLUX_PREP.csv: 6 rows - 3 solids rows drawn as DN15 stubs (bore not calculated), drain, vent, and the N6 cable row carried, never drawn",5,SS304,0.3,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4

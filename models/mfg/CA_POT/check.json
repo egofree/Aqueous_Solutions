@@ -74,6 +74,30 @@
       "height_mm": 160.0,
       "schedule_rating": "Class 150",
       "service": "CaCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)"
+    },
+    "N8": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "cl2_stub_phos",
+      "x_mm": 566.0,
+      "drawn_height_mm": 600.0,
+      "note": "pot byproduct chlorine for the phosgenation: DN15 stub flush at the +Y face, in a study slot beside N3",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "pot byproduct chlorine for the phosgenation"
+    },
+    "N9": {
+      "style": "stub",
+      "face": "+Y",
+      "part": "cl2_stub_silane",
+      "x_mm": 630.0,
+      "drawn_height_mm": 600.0,
+      "note": "chlorine make-up of the chlorosilane loop: DN15 stub flush at the +Y face, in a study slot beside N3",
+      "dn": "DN15",
+      "height_mm": 600.0,
+      "schedule_rating": "Class 150",
+      "service": "chlorine make-up of the chlorosilane loop"
     }
   },
   "shell_bbox_mm": [
@@ -98,16 +122,18 @@
   },
   "overhang_allowance_mm": 1.0,
   "overhang_ok": true,
-  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: ca_tap_group, brine_inlet_group, brine_inlet_group_2, cl2_stub)",
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: ca_tap_group, brine_inlet_group, brine_inlet_group_2, cl2_stub, cl2_stub_phos, cl2_stub_silane)",
   "external_parts": [
     "ca_tap_group",
     "brine_inlet_group",
     "brine_inlet_group_2",
-    "cl2_stub"
+    "cl2_stub",
+    "cl2_stub_phos",
+    "cl2_stub_silane"
   ],
   "cap_solids": 1,
   "all_parts_valid": true,
-  "anode_j_A_cm2_drawn": 0.0029,
+  "anode_j_A_cm2_drawn": 0.0022,
   "bath_volume_litres": 122.0,
   "part_mass_kg": {
     "casing": 297.0,
@@ -127,6 +153,8 @@
     "dip_leg": 0.9,
     "vent_stub": 0.0,
     "cl2_stub": 0.0,
+    "cl2_stub_phos": 0.0,
+    "cl2_stub_silane": 0.0,
     "ca_tap_group": 5.0,
     "brine_inlet_group": 4.9,
     "brine_inlet_group_2": 4.9,

@@ -50,6 +50,8 @@ roof = box(0, 0, 1594, L, W, 6)
 casing = casing.union(roof)
 casing = casing.cut(rod(RY + 2, (rx_, ry_, 1585), "Z", 30))                      # riser pass at the roof
 casing = casing.cut(rod(A["DN15_OD_mm"] / 2 + 1, (598.0, W - 40, 600.0), "Y", 90.0)) # N3 Cl2 export pass (+Y at 600)
+casing = casing.cut(rod(A["DN15_OD_mm"] / 2 + 1, (566.0, W - 40, 600.0), "Y", 90.0)) # N8 Cl2 pass (+Y at 600)
+casing = casing.cut(rod(A["DN15_OD_mm"] / 2 + 1, (630.0, W - 40, 600.0), "Y", 90.0)) # N9 Cl2 pass (+Y at 600)
 casing = casing.cut(rod(30.5, (256.0, 160.0, -5.0), "Z", 85.0))                  # N4 drain well pass
 casing = casing.cut(rod(57.5, (L - 40, 400.0, 605.0), "X", 90.0))                # N1 tap well pass (+X z 600)
 parts["casing"] = casing
@@ -128,9 +130,15 @@ dl = A["DN15_OD_mm"] / 2
 parts["dip_leg"] = tube(dl, dl - A["DN15_wall_mm"], (rx_, ry_, BATH - 100), "Z", 900)   # returns caught brine fog; up to the flange
 parts["vent_stub"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (rx_, ry_ - RY + 20.0, 800), "Y", -45)  # N5 on the riser at z 800, fused to the wall
 
-# ---------------- N3 Cl2 export stub (+Y at z 600) -------------------------------
+# ---------------- N3/N8/N9 Cl2 export stubs (+Y at z 600) ------------------------
 parts["cl2_stub"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"],
                          (598.0, W - 45, 600.0), "Y", 45)        # flush at the +Y face (A-core 2)
+# N8/N9: the N3 idiom in study slots beside it - the pot byproduct line to the
+# phosgenation and the chlorine make-up of the chlorosilane loop (task-04 schedule).
+parts["cl2_stub_phos"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"],
+                              (566.0, W - 45, 600.0), "Y", 45)   # flush at the +Y face (A-core 2)
+parts["cl2_stub_silane"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"],
+                                (630.0, W - 45, 600.0), "Y", 45) # flush at the +Y face (A-core 2)
 
 # ---------------- N1 Ca-metal tap well (+X at z 600) ------------------------------
 wr = A["DN80_OD_mm"] / 2
@@ -185,7 +193,8 @@ for k, v in parts.items():
 cap_solid = body.val()
 cap_solid.exportStl(str(out / "ca_pot.stl"), tolerance=0.4, angularTolerance=0.4, ascii=True)
 
-EXTERNAL = ("ca_tap_group", "brine_inlet_group", "brine_inlet_group_2", "cl2_stub")   # N1/N2/N7/N3 schedule hardware, drawn flush at the faces
+EXTERNAL = ("ca_tap_group", "brine_inlet_group", "brine_inlet_group_2", "cl2_stub",
+            "cl2_stub_phos", "cl2_stub_silane")   # N1/N2/N7/N3/N8/N9 schedule hardware, drawn flush at the faces
 in_env = None
 for k, v in parts.items():
     if k in EXTERNAL:
@@ -213,7 +222,8 @@ rho = {"casing": 7.85e-6, "fibre_lining": 128e-9, "ram_lining": 1.55e-6, "hood_h
        "hood": 7.85e-6, "head_plate": 7.85e-6, "anodes": 1.78e-6, "anode_clamps": 7.85e-6,
        "cathodes": 7.87e-6, "ceramic_pads": 2.7e-6, "bus_rails": 8.96e-6, "bus_straps": 8.96e-6,
        "offtake_riser": 7.85e-6, "riser_flange": 7.85e-6, "dip_leg": 7.85e-6, "vent_stub": 7.85e-6,
-       "cl2_stub": 7.85e-6, "ca_tap_group": 1.55e-6, "brine_inlet_group": 7.85e-6, "brine_inlet_group_2": 7.85e-6,
+       "cl2_stub": 7.85e-6, "cl2_stub_phos": 7.85e-6, "cl2_stub_silane": 7.85e-6,
+       "ca_tap_group": 1.55e-6, "brine_inlet_group": 7.85e-6, "brine_inlet_group_2": 7.85e-6,
        "drain_well": 1.55e-6}
 mass = {k: round(v.val().Volume() * rho[k], 1) for k, v in parts.items()}
 vol_melt = sum(v.val().Volume() for v in inv.values())
@@ -247,6 +257,14 @@ PLACE = {
            "note": "CaCl2 brine concentrate in: chute flush at the -X face (z 130..220) and the "
                    "DN44-class lance into the bath at z 160, in a study slot beside N2; class "
                    "pending (task X-QA-11)"},
+    "N8": {"style": "stub", "face": "+Y", "part": "cl2_stub_phos", "x_mm": 566.0,
+           "drawn_height_mm": 600.0,
+           "note": "pot byproduct chlorine for the phosgenation: DN15 stub flush at the +Y face, "
+                   "in a study slot beside N3"},
+    "N9": {"style": "stub", "face": "+Y", "part": "cl2_stub_silane", "x_mm": 630.0,
+           "drawn_height_mm": 600.0,
+           "note": "chlorine make-up of the chlorosilane loop: DN15 stub flush at the +Y face, "
+                   "in a study slot beside N3"},
 }
 drawn = {}
 for tag, rec in PLACE.items():
@@ -325,6 +343,12 @@ rows = [
            "(study slot beside N2)", 1,
      "CS chute, carbon lance", mass["brine_inlet_group_2"], "make",
      "task-04 schedule N7; CaCl2 brine concentrate, class pending (task X-QA-11)"],
+    ["18", "N8 pot byproduct chlorine stub DN15 at +Y z 600 (to the phosgenation, study slot beside N3)", 1,
+     "carbon steel (dry hot Cl2)", mass["cl2_stub_phos"], "make",
+     "task-04 schedule N8; pot byproduct chlorine for the phosgenation"],
+    ["19", "N9 chlorine make-up stub DN15 at +Y z 600 (chlorosilane loop, study slot beside N3)", 1,
+     "carbon steel (dry hot Cl2)", mass["cl2_stub_silane"], "make",
+     "task-04 schedule N9; chlorine make-up of the chlorosilane loop"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)

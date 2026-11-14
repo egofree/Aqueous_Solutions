@@ -1,5 +1,8 @@
 """X-PAR-10 parametric vent scrubber EVAP_ACID_VS (CadQuery). Reads params on the graph (written by flow_graph/param/write_graph.py
 from flow_graph/param/vent_scrubber.py) and writes models/mfg/EVAP_ACID_VS/export/evap_acid_vs.step and .stl, bom.csv, fasteners.csv.
+Connection hardware draws inside the node claim size_mm [400, 400, height]: the z claim is the column
+height (AQS-DUTY-061 section 2), so the off-gas outlet socket ends flush at the top cap face and the
+side sockets stay within the 400 x 400 reservation; nothing protrudes the envelope (A-core 2).
 Run: $CADQUERY_PYTHON models/mfg/vent_scrubber.py"""
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))   # models/mfg, for the shared lib
@@ -19,7 +22,7 @@ noz = lambda z, ang: cq.Workplane('YZ').circle(16.7).extrude(80).translate((OD/2
 model = shell.union(support).union(packing).union(demister)
 for z, a in ((sump - 120, 0), (H - 250, 90), (100, 180), (sump + bed + 80, 270)):                    # vent in, liquor in, spent out, NaOH in
     model = model.union(noz(z, a))
-model = model.union(cq.Workplane('XY').workplane(offset=H).circle(16.7).extrude(80))                   # off-gas outlet
+model = model.union(cq.Workplane('XY').workplane(offset=H - 80).circle(16.7).extrude(80))              # off-gas outlet: DN25 socket ending flush at the top cap face - size_mm z is the column height (AQS-DUTY-061 section 2: bed + sump, inlet and demister), connection hardware stays inside the claim (A-core 2)
 out = f'models/mfg/{U}/export'; os.makedirs(out, exist_ok=True)
 step_export.export_step(model, f'{out}/{U.lower()}.step'); cq.exporters.export(model, f'{out}/{U.lower()}.stl')
 rows = [('1', f'Shell PVC-U DN{DN} Sch 80 x {H} mm with solvent-welded caps', 1, 'PVC-U (ASTM D1785)', 'AQS-DUTY-061 section 2'),

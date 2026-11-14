@@ -1,4 +1,5 @@
 {
+ "unit": "WAX_PATTERN",
  "size_mm": [
   800,
   600,
@@ -220,5 +221,6 @@
   "supports": "cabinet to the slab on 4 wedge anchors; pot and injector hold-down bolts to the cabinet floor",
   "nozzle_spread": "the schedule gives face and height only; N1 on the +Y wall at z 600, N2/N3 on the -Y wall at z 160, N4 drain at the -X floor corner, N5 vent at the top centreline; per-tag positions in check.nozzles_drawn",
   "hardware_idiom": "connection hardware flush at the envelope faces"
- }
+ },
+ "size_note": "wax pattern injection bench: 10 L wax melt pot, 0.5 kW injector (the duty section 3 machine)"
 }
