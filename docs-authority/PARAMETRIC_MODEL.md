@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.232 | 0.232 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 0.399 | 0.399 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 7.491 | 7.491 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 2718.000 | 2718.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 2651.000 | 2651.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -497,7 +497,7 @@ All solved units close.
 | soil_unit_weight_kN_m3 | 18.0 | kN/m3 moist soil | A-M-208 | yes |
 | gw_depth_m | 0.0 | m below grade, groundwater (worst case at grade until measured) | A-M-208 | yes |
 | raft_fc_MPa | 35.0 | MPa concrete strength, raft and basement walls | A-M-208 | yes |
-| foundry_stock_demand_kg_d | 25.9 | kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 8 + stainless 1.5 + Ti 0.40 + investment castings 2) | A-M-261 | yes |
+| foundry_stock_demand_kg_d | 22.0072 | kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 4.1072 + stainless 1.5 + Ti 0.40 + investment castings 2; the Al line sized to the recoverable aluminium, A-M-495) | A-M-261 | yes |
 | foundry_melt_loss_frac | 0.01 | kg slag+dross per kg melt charge | INDUCT_SOCX | yes |
 | poly_shop_reject_frac | 0.1 | kg offcut to the wet line per kg polymer issued to MFG_SHOP | A-M-263 | yes |
 | melt_fe_cp_solid_kJ_kgK | 0.49 | kJ/kg K mean Fe 25-1538 C | CRC_FE | — |
@@ -815,7 +815,7 @@ All solved units close.
 | CRYO.cold-box-asu-recovery-train.cold-box.AIR_RECEIVER.hold_d | 1.0 | d hold time (A-M-270 D-DOCK product-buffer basis) | A-M-270 | — |
 | CRYO.cold-box-asu-recovery-train.cold-box.AIR_RECEIVER.rho_kg_m3 | 11.7 | kg/m3 N2 at 10 bar abs 15 C (ideal gas, Z 0.995, NIST_WEBBOOK) | NIST_WEBBOOK | — |
 | CRYO.cold-box-asu-recovery-train.cold-box.AIR_RECEIVER.P_MPa | 1.0 | MPa gauge design pressure (plant-air receiver, 10 bar service) | A-M-270 | — |
-| foundry_al_line_kg_d | 8.0 | kg/d Al stock (frames, housings) | A-M-261 (AQS-SIZE-FOUNDRY consumable-replacement table line) | — |
+| foundry_al_line_kg_d | 4.1072 | kg/d Al stock (frames, housings); sized to the recoverable aluminium - the leach reactive-Al hydroxide cake 5.1340 kg/d Al at the A-M-285 export margin (owner ruling, task X-QA-19, A-M-495) | A-M-261 (AQS-SIZE-FOUNDRY consumable-replacement table line); A-M-495 | yes |
 | foundry_ss_line_kg_d | 1.5 | kg/d stainless stock (Cr 0.20 + Mo 0.05 additions in an Fe base) | A-M-261 (AQS-SIZE-FOUNDRY line) | — |
 | foundry_ti_line_kg_d | 0.4 | kg/d Ti stock (anode mesh, shells) | A-M-261 (AQS-RATE-FP-MET line) | — |
 | foundry_inv_line_kg_d | 2.0 | kg/d investment castings (complex parts, all alloys) | A-M-261 (AQS-SIZE-FOUNDRY line) | — |
@@ -1828,7 +1828,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver soil_unit_weight_kN_m3 | 18.0 kN/m3 moist soil | Geotechnical report unit weight |
 | driver gw_depth_m | 0.0 m below grade, groundwater (worst case at grade until measured) | Piezometer readings at the parcel through a wet season |
 | driver raft_fc_MPa | 35.0 MPa concrete strength, raft and basement walls | Mix design and cylinder tests |
-| driver foundry_stock_demand_kg_d | 25.9 kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 8 + stainless 1.5 + Ti 0.40 + investment castings 2) | shop article schedule at the first article: formed-stock draw vs the AQS-SIZE-FOUNDRY consumable-replacement table |
+| driver foundry_stock_demand_kg_d | 22.0072 kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 4.1072 + stainless 1.5 + Ti 0.40 + investment castings 2; the Al line sized to the recoverable aluminium, A-M-495) | shop article schedule at the first article: formed-stock draw vs the AQS-SIZE-FOUNDRY consumable-replacement table |
 | driver foundry_melt_loss_frac | 0.01 kg slag+dross per kg melt charge | weigh dross+slag per heat on the IND_MELT first article |
 | driver poly_shop_reject_frac | 0.1 kg offcut to the wet line per kg polymer issued to MFG_SHOP | shop polymer offcut weigh at the first article (same class as the S58/S59/S60 10 % losses, AQS-DUTY-010) |
 | driver ELEC.storage-train.ZNBR2.purge_air_T_C | 25.0 C purge air temperature | Compare with the HVAC design room and line temperatures |
@@ -1854,6 +1854,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver DIGESTER.ew-cascade-train.max_shunt_dV_V | 6.0 V | worst-case pole-to-earth difference for the rectifier configuration |
 | driver DIGESTER.ew-cascade-train.stray_current_limit_A | 0.1 A | stray-current acceptance limit vs NFPA 70E / AQS-HSE basis |
 | driver storage.default_no_heat_input_T_C | 40.0 C | 0.4% site dry bulb 37.8 C (AQS-SITE-002) rounded up - confirm as the default |
+| driver foundry_al_line_kg_d | 4.1072 kg/d Al stock (frames, housings); sized to the recoverable aluminium - the leach reactive-Al hydroxide cake 5.1340 kg/d Al at the A-M-285 export margin (owner ruling, task X-QA-19, A-M-495) | cake weigh and assay at the first leach campaign vs the sized line; python3 -m flow_graph.param.foundry_poly (idempotent re-derivation) |
 | driver foundry_pot_export_frac | 0.25 kg/d export per kg/d internal line on the Al/Ti/Mo/Cr pot products | metal dispatch study: contracted offtake vs the 25 % study margin (dock export meter totals) |
 | driver foundry_kroll_dragout_frac | 0.02 kg MgCl2-class salt drag-out per kg Kroll MgCl2 gross, to FLUX_PREP | retort condensate weigh per campaign: salt drag-out vs the 2 % study allowance |
 | driver foundry_inv_shell_kg_per_kg | 4.0 kg green shell per kg casting (6-dip class; envelope 3-6) | first shell campaign: built shell mass per kg castings across the 6-dip schedule |
@@ -2198,7 +2199,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-258 | Power chain derived again on the live graph: demand 281.99 k kW / kWp / kWh / m2 | python3 -m flow_graph.param.write_graph power exits 0; PV nameplate x 8.78 m2/kWp = area_m2 within rounding; nameplate <= roof capacity; sections breaker <= 1200 A (NEC 240.87) |
 | A-M-259 | Heat-ladder store ledgers re-solved and closed: Q1/Q2 down s kW | pytest flow_graph/test_heat_ladder.py (stores close within 0.01 kW); python3 -m flow_graph.param.write_graph heat prints stores CLOSE |
 | A-M-260 | Register reconciliation: EW_1..9 params.sizing re-stamped li - | python3 docs-authority/_assumptions_register.py exits 0 (no stale-key errors) |
-| A-M-261 | 14.0 kg/d formed stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1;  kg/d | python3 -m flow_graph.param.foundry_poly (idempotent re-derivation); shop stock-draw weigh at the first article |
+| A-M-261 | 22.0072 kg/d formed stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW  kg/d | python3 -m flow_graph.param.foundry_poly (idempotent re-derivation); shop stock-draw weigh at the first article |
 | A-M-262 | 1.0 % of melt charge to slag+dross (FOUNDRY_SLAG_TO_LEACH) kg/kg | weigh dross+slag per heat on the IND_MELT first article (X-MFG-37 trial class) |
 | A-M-263 | 10 % polymer offcut to the wet line per kg issued to MFG_SHO kg/kg | shop polymer offcut weigh at the first article |
 | A-M-266 | Shop polymer draw P = 0.377186 kg/d = -r0 + f*K/(1-f) (A-M-2 kg/d | python3 -m flow_graph.param.foundry_poly (idempotent closure re-derivation); shop polymer draw weigh at the first article |
@@ -2355,7 +2356,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-478 | NAOH_PLANT tops up the sodium hydroxide on the CHLOR_ALKALI  route choice; kW, kg/d | python3 -m flow_graph.param.regen; NAOH_PLANT runs CHLOR_ALKALI, IA-HALITE-MU is present and IA-TRONA-MU retired, and IA-NAOH-H2 enters HDR_H2. |
 | A-M-479 | SOLV_PLANT supplies the bench ethanol and acetone, recovery  kg/d; kW | python3 -m flow_graph.param.solvent prints both routes; after regen IA-SOLV-MU is retired, IA-SOLV-PLANT equals IA-SOLV-WB, and python3 -m flow_graph.param.recovery reports no flags. |
 | A-M-480 | The shop grease is made on site from the wax cut, sized from kg/d; kW | python3 -m flow_graph.param.grease prints both routes; after regen GREASE_CA_TO_MFG equals IA-GREASE-SPENT, the lithium routes carry their rated case at zero flow, and python3 -m flow_graph.param.recovery reports no flags. |
-| A-M-481 | The chlorine of the VDF and TFE reactors has two built sourc kg/d | With cru_cl2_source POT, regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CL2-SHIP lower by the same amount, and CRU and AL_POT close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case. |
+| A-M-481 | The chlorine of the VDF and TFE reactors has two built sourc kg/d | With cru_cl2_source POT (after the take-off re-point to IA-CA-CL2-SHIP is built), regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CA-CL2-SHIP lower by the same amount, and CRU and the pots close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case. |
 | A-M-482 | POLY_TO_FAB carries the wafer-fab photoresist, sized from th kg/d; kW | python3 -m flow_graph.param.fab_resist prints the streams with the ledger element-closed; after regen POLY_TO_FAB = IA-RESIST-STOCK, IA-FAB-N2-VENT = S03, RESIST_SYN, WAFER_FAB, WS_SOLV and SOLV_PLANT close, and python3 -m flow_graph.param.recovery reports no flags. |
 | A-M-483 | The heater duty of the CZ hot zone in WAFER_FAB is found fro kW | log the heater power through the meltdown and the body pull of the first CZ pull and the felt cold-face temperature, and compare each with the hot-zone model |
 | A-M-484 | The solar cell line SOLAR_PV_CELL makes the cells that repla cells/d | IV-test the first in-house cells and map the minority-carrier lifetime of the first cast block, and compare with the drivers |
@@ -2365,3 +2366,4 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-489 | The recycled SiCl4 is hydrogenated back to trichlorosilane,  kg H2 per kg recycled Si; mass fractions | Assay the loop bleed of the first refining campaign against the registered blend |
 | A-M-490 | 0.326424 kg of feed silicate_oxide is carried with the leach kg/kg feed | Assay the silicate content of a characterized crib-solids lot and re-point the carry fraction |
 | A-M-494 | The minor-metal EW arrangement is a selectable option, not a - (layout option, no physics change) | flow_graph/param/test_ew_deposit_basis.py merged-option test: the blend books fully and the current-carrying minor-cell count drops under 'merged'; 'selective' restores the committed book |
+| A-M-495 | The aluminium line is sized to the recoverable aluminium (ta kg/d | python3 -m flow_graph.param.regen (second run changes nothing); python3 -m flow_graph.param.recovery reports no flags with IA-ALCL3-MU absent; cake weigh and assay at the first leach campaign |

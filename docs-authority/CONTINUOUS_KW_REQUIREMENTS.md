@@ -1,8 +1,8 @@
 # Continuous power requirements for generation, fuel cells, PV fabrication, cryogenics and manufacturing
 
 Document number: AQS-REQ-KW-001  
-Revision: B  
-Date: 2026-10-24  
+Revision: C  
+Date: 2026-11-13  
 Basis: AQS-SCALE-001 (`SCALE_M = 1.0`), AQS-AUD-001, AQS-ELC-001 (`ELECTRICAL.md`), the AQS-GAS-003 Faraday check, AQS-FC-001, AQS-PWR-002, AQS-CRY-002, AQS-MFG-MET-001, AQS-EQP-FAB-PV-001 and AQS-MeOH-001.  
 Status: design requirements. Not a purchase order and not a set of stamped nameplates.  
 Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002.
@@ -11,6 +11,7 @@ Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002.
 |---|---|---|---|
 | A | — | First-principles continuous kW + labeled stand-in products | 2026-10-01 |
 | B | 1 | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose, scope and terms added to §1, captions. Section numbers, requirements, ranges and stand-ins unchanged. | 2026-10-24 |
+| C | 1 | REQ-MEOH-FC-CONT books its design point at 0.5 kW_dc continuous (Q-039 owner ruling, 2026-11-13); the 0.5–2 kW_dc class band, the bank row and every other requirement are unchanged. | 2026-11-13 |
 
 ## 1. Purpose, scope and method
 
@@ -144,6 +145,8 @@ Table 3.7. Methanol fuel cell requirements
 | MeOH burn rate @ 1 kW | **~0.9 L/h ≈ 0.71 kg/h** | — | SI-DMFC-01 0.9 L/kWh; ρ_MeOH ≈ 0.79 kg/L |
 | Electrical tie | Sol-Ark **BATT DC** via **MEOH_DCDC** (peer to FC_DCDC) | — | ≠ GEN port; ≠ RECT process DC |
 
+Booked design point (Q-039 owner ruling, 2026-11-13): **0.5 kW_dc continuous**, the low end of the band, and the graph books it on `MEOH_FC.continuous_kw` and the S79 tie. The settled methanol feed of 5.0 kg/d (S76) carries 1.152 kW of lower heating value (19.9 MJ/kg, PERRY9); at the registered cell point of 0.6 V per cell (A-M-312, a voltage efficiency of 0.5085 against the 1.18 V reversible cell) that fuel supports 0.586 kW electric continuous, and the full 6.28 kg/d burn (S76 plus the 1.28 kg/d tank draw) supports 0.735 kW. The booked 0.5 kW is therefore the conservative fuel-supported class point. The installed stack keeps its 1.0 kW / 28-cell hardware rating (2 × 0.5 kW SI-DMFC-01 class modules) as standby capability; the 1 to 2 module peak headroom is dispatch, not a continuous fuel book. The 1.0 kW continuous point was declined: sustaining it needs about +7 kWp of PV and +3.9 kW of electrolyser for a net electric loss of about 17 kWh/d, feeding a closed carbon loop that returns about 27 % of its input energy as electricity.
+
 ## 4. Summary of requirements
 
 Table 4.1. Summary of requirements
@@ -152,7 +155,7 @@ Table 4.1. Summary of requirements
 |---|---|---|---|
 | BACKUP_GEN | **2.5 kW_e** | ≤ 60 kW_e | SI-GEN-01 |
 | FUEL_CELL (PEM) | **4 kW_dc** | ≤ 60 kW_dc | SI-FC-01 / SI-FC-02 |
-| MEOH_FC (IEM/DMFC) | **0.5–2 kW_dc** | ≤ 5 kW_dc | SI-DMFC-01 / SI-IEM-01 |
+| MEOH_FC (IEM/DMFC) | **0.5–2 kW_dc** (booked 0.5, §3.6) | ≤ 5 kW_dc | SI-DMFC-01 / SI-IEM-01 |
 | STIRLING_COLD_HEAD bank | **4 kW_e** (2–8) | within module | SI-CRY-01 |
 | PV_ARC (PECVD) | 0.5–2 avg / 5–15 peak | ≤ 15 peak | SI-PECVD-01 |
 | PV_FIRE (belt) | 0.5–2 avg / 10–25 peak | ≤ 25 peak | SI-BELT-01 |

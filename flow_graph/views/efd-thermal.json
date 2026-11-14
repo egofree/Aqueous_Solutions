@@ -120,10 +120,10 @@
       "notes": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)",
       "enabled": true,
       "continuous_kw": {
-        "value": 23.6892,
+        "value": 23.7244,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-12 TF: 10.34 kg/d H2 x 55.0 kWh/kg / 24 h; rated 94.8 kW on a 6.0 h PV window."
+        "note": "X-PAR-12 TF: 10.35 kg/d H2 x 55.0 kWh/kg / 24 h; rated 94.9 kW on a 6.0 h PV window."
       },
       "modules": [],
       "params": {
@@ -147,10 +147,10 @@
           "adequate": true
         },
         "stack_heat_kw": {
-          "value": 6.7191,
+          "value": 6.7291,
           "unit": "kW",
           "status": "study",
-          "note": "X-PAR-12 TF: 6.72 kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b."
+          "note": "X-PAR-12 TF: 6.73 kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b."
         },
         "sec3_material": {
           "mat": "PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family",
@@ -597,10 +597,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 1.0,
+        "value": 0.5,
         "unit": "kW",
         "status": "study",
-        "note": "REQ-MEOH-FC-CONT mid-band"
+        "note": "REQ-MEOH-FC-CONT booked design point 0.5 kW_dc (Q-039 owner ruling 2026-11-13): fuel-limited at the settled S76 5.0 kg/d and the A-M-312 0.6 V/cell point (0.6/1.18 = 0.5085 voltage efficiency) - 0.586 kW supported on S76 alone (5.0 x 19.9 MJ/kg x 0.5085), 0.735 kW on the full 6.28 kg/d burn; 0.5 kW is the conservative class book. The installed 1.0 kW / 28-cell stack rating remains standby capability (SI-DMFC-01 bank row)."
       },
       "modules": [],
       "params": {
@@ -613,6 +613,7 @@
         "size_note": "sized from the issued graph duties, methanol train residual sizing (flow_graph/param/meoh_train.py, AQS-DUTY-077)",
         "design": {
           "rated_kWe": 1.0,
+          "continuous_kW": 0.5,
           "methanol_kg_d": 5.0,
           "air_O2_kg_d": 9.4071,
           "water_kg_d": 7.251,
@@ -624,9 +625,9 @@
           "cell_A_cm2": 200,
           "stack_area_m2": 0.56,
           "methanol_energy_kW": 1.152,
-          "basis": "rated graph duty S79; cell point 0.6 V at 0.3 A/cm2, 200 cm2 cells (IEC62282_3_100 module class); methanol LHV 19.9 MJ/kg (PERRY9)",
+          "basis": "installed stack 1.0 kW (SI-DMFC-01 bank, 2 x 0.5 kW modules, standby per the Q-039 owner ruling 2026-11-13); cell point 0.6 V at 0.3 A/cm2, 200 cm2 cells (IEC62282_3_100 module class); methanol LHV 19.9 MJ/kg (PERRY9)",
           "material": "PEM stack, 316L reformer shell (Cu/ZnO class catalyst), PTFE gaskets",
-          "note": "skid at the issued 1800 x 800 x 1600 mm envelope; S79 is the rated electric point - the methanol draw (S76) supports about 0.5 kW_e continuous, so the skid runs at part load on the dispatch schedule; the species edges (O2, CO2, water) close on the graph"
+          "note": "skid at the issued 1800 x 800 x 1600 mm envelope; the continuous book is 0.5 kW_e on S79 (Q-039 owner ruling 2026-11-13, fuel-limited at the settled S76 feed) and the installed 1.0 kW rating is standby capability, so the skid runs at part load on the dispatch schedule; the species edges (O2, CO2, water) close on the graph"
         }
       }
     },
@@ -755,69 +756,69 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 196.0213,
+        "value": 191.2192,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 196.0 kW, charge 891.0 kW, 2744 kWh over 38 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 191.2 kW, charge 869.1 kW, 2677 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 891,
-        "kWh": 2745,
+        "kW": 870,
+        "kWh": 2678,
         "presence": "present",
-        "charge_kW": 891,
-        "discharge_kW": 197,
+        "charge_kW": 870,
+        "discharge_kW": 192,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 38 hybrid inverters, 72.2 kWh and 23.4 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 37 hybrid inverters, 72.4 kWh and 23.5 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 6.958,
-          "purge_m3_h": 28.99,
+          "H2_m3_d": 6.787,
+          "purge_m3_h": 28.28,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1795.1
+          "electrode_area_m2": 1751.1
         },
         "size_mm": [
           7900,
           6050,
           1970
         ],
-        "size_note": "L x W x H mm, set by flow_graph/param/ess_tf.py (X-MFG-43): the 38-bay rack hall (38 bays of stack-over-tank at 1100 x 850 mm pitch); the placement seed block for ZNBR2 stays the 1800 x 1200 x 1600 mm study box and under-books this machine - the floor-space reservation is the named consequence (ZNBR2 WORK_ORDER W12)",
+        "size_note": "L x W x H mm, set by flow_graph/param/ess_tf.py (X-MFG-43): the 37-bay rack hall (37 bays of stack-over-tank at 1100 x 850 mm pitch); the placement seed block for ZNBR2 stays the 1800 x 1200 x 1600 mm study box and under-books this machine - the floor-space reservation is the named consequence (ZNBR2 WORK_ORDER W12)",
         "cycling_thermal": {
-          "kwh_d_in": 3907.6,
-          "kwh_d_out": 2735.3,
+          "kwh_d_in": 3795.5,
+          "kwh_d_out": 2656.9,
           "round_trip": 0.7,
-          "loss_kwh_d": 1172.3,
-          "avg_kW": 48.84,
+          "loss_kwh_d": 1138.7,
+          "avg_kW": 47.44,
           "window_h": 10.0,
-          "window_kW": 117.23,
-          "charge_kW_window": 390.76,
-          "basis": "store 2735 kWh/d (AQS-ELEC-007 P x night) at round trip 0.7 (A-M-062/179): the round-trip difference is electrolyte heat; window_kW is the bounding heat rate with all the daily loss in the 10 h charge window; charge_kW_window 390.8 kW is the charge electrical rate over the same window; rejected to the Q4 bus on IA-ZNBR-HEAT and the terminal (A-M-455)"
+          "window_kW": 113.87,
+          "charge_kW_window": 379.55,
+          "basis": "store 2657 kWh/d (AQS-ELEC-007 P x night) at round trip 0.7 (A-M-062/179): the round-trip difference is electrolyte heat; window_kW is the bounding heat rate with all the daily loss in the 10 h charge window; charge_kW_window 379.6 kW is the charge electrical rate over the same window; rejected to the Q4 bus on IA-ZNBR-HEAT and the terminal (A-M-455)"
         },
         "design": {
-          "machine": "ZnBr2 flow-battery store: 38 module bays (one per hybrid inverter, AQS-ELEC-008), each a bipolar plate stack over its electrolyte reservoir, pumps and electrolyte cooler",
-          "modules": 38,
-          "module_kwh": 72.2,
-          "module_charge_kw_ac": 23.45,
+          "machine": "ZnBr2 flow-battery store: 37 module bays (one per hybrid inverter, AQS-ELEC-008), each a bipolar plate stack over its electrolyte reservoir, pumps and electrolyte cooler",
+          "modules": 37,
+          "module_kwh": 72.4,
+          "module_charge_kw_ac": 23.49,
           "plates_per_module": 95,
-          "plate_active_L_mm": 994.5,
+          "plate_active_L_mm": 996.4,
           "plate_active_W_mm": 500.0,
           "plate_t_mm": 5.0,
           "pitch_mm": 6.0,
-          "stack_I_A": 99.4,
+          "stack_I_A": 99.6,
           "stack_V_dc": 172.9,
-          "stack_charge_kw_dc": 17.195,
-          "electrode_area_m2_booked": 1795.1,
-          "electrode_area_m2_model": 1795.07,
-          "zn_kg_per_module": 69.1,
-          "br2_kg_per_module": 169.0,
+          "stack_charge_kw_dc": 17.227,
+          "electrode_area_m2_booked": 1751.1,
+          "electrode_area_m2_model": 1751.09,
+          "zn_kg_per_module": 69.3,
+          "br2_kg_per_module": 169.3,
           "electrolyte_M": 2.0,
-          "electrolyte_L_per_module": 528.8,
+          "electrolyte_L_per_module": 529.8,
           "tank_mm": [
             700.0,
             700.0,
             1155.0
           ],
           "cooler_kw_per_module": 3.08,
-          "pump_W_per_module": 516.0,
+          "pump_W_per_module": 517.0,
           "bus_bar_mm": "1 x 20 x 6.3 copper flat per stack terminal (AQS-BUS-001 class method; POWER.md states no ZNBR2 bus section)",
           "bay_pitch_mm": [
             1100.0,
@@ -825,7 +826,7 @@
           ],
           "bay_cols": 7,
           "bay_rows": 7,
-          "basis": "cell-summed area from the booked charge (Ah at 1.82 V over the 6 h window at 20 mA/cm2, the purge-basis book); plates 95/module x 38 modules fill it at 6 mm pitch (A-M-456); electrolyte 528.763 L/module at 2 M ZnBr2 (A-M-457); cooler at the cycling_thermal charge-window rate (A-M-455); pump at the 3 % auxiliary share (A-M-179)",
+          "basis": "cell-summed area from the booked charge (Ah at 1.82 V over the 6 h window at 20 mA/cm2, the purge-basis book); plates 95/module x 37 modules fill it at 6 mm pitch (A-M-456); electrolyte 529.75 L/module at 2 M ZnBr2 (A-M-457); cooler at the cycling_thermal charge-window rate (A-M-455); pump at the 3 % auxiliary share (A-M-179)",
           "computed_by": "flow_graph/param/ess_tf.py tf() (X-PAR-02 lane, X-MFG-43 machine design)"
         }
       }
@@ -1302,13 +1303,13 @@
         "sizing": {
           "status": "study",
           "source": "AQS-DUTY-072",
-          "charge_kg_d": 37.0139,
-          "stock_out_kg_d": 25.9,
-          "slag_kg_d": 0.3565,
+          "charge_kg_d": 28.2158,
+          "stock_out_kg_d": 22.0072,
+          "slag_kg_d": 0.304,
           "crucible_kg": 10.0,
-          "heats_d": 4,
-          "melt_kWh_d": 21.244,
-          "avg_kW": 0.8851,
+          "heats_d": 3,
+          "melt_kWh_d": 15.763,
+          "avg_kW": 0.6568,
           "peak_kW": 15.0,
           "connected_kW": 25.0,
           "kWh_per_kg": {
@@ -1330,18 +1331,18 @@
           "crucible_kg": 10.0,
           "crucible_D_mm": 110.0,
           "crucible_H_mm": 165,
-          "heats_d": 4,
+          "heats_d": 3,
           "connected_kW": 25.0,
           "peak_kW": 15.0,
-          "melt_kWh_d": 21.244,
+          "melt_kWh_d": 15.763,
           "lining": "ceramic-fibre hot face 150 mm + 4 mm CS casing (study)"
         },
         "duty_cycle": {
-          "avg_kW": 0.8851,
+          "avg_kW": 0.6568,
           "peak_kW": 15.0,
           "connected_kW": 25.0,
-          "kWh_d": 21.244,
-          "heats_d": 4,
+          "kWh_d": 15.763,
+          "heats_d": 3,
           "basis": "X-MFG-37 logged batch schedule class"
         },
         "sec3_material": {
@@ -1364,10 +1365,10 @@
         }
       },
       "continuous_kw": {
-        "value": 0.8851,
+        "value": 0.6568,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 21.24 kWh/d over 24 h at 4 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02."
+        "note": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 15.76 kWh/d over 24 h at 3 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02."
       }
     },
     {
@@ -1748,7 +1749,7 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "rated_kW": 158.0,
+        "rated_kW": 154.0,
         "design_C": 37.8,
         "design_basis": "0.4 % summer design temp (AQS-SITE-002 via AQS-THM-002)",
         "LMTD_K": 15.0,
@@ -1756,8 +1757,8 @@
           65,
           45
         ],
-        "fan_kW": 7.9,
-        "basis": "X-THM-01 F-4 (A-M-244 restated, A-M-455): rated 158 kW = 1.25 x the calculated bounding duty 126.1 kW (design-day terminal book 57.8 kW with the ZNBR2 cycling heat at its 117.2 kW charge-window rate; AQS-DUTY-008 section 3 margin); fan 7.9 kW at the 0.05 kW_fan/kW_th class. Was the 12 kW class sized to the 10.16 kW no-preheat upset.",
+        "fan_kW": 7.7,
+        "basis": "X-THM-01 F-4 (A-M-244 restated, A-M-455): rated 154 kW = 1.25 x the calculated bounding duty 122.8 kW (design-day terminal book 56.4 kW with the ZNBR2 cycling heat at its 113.9 kW charge-window rate; AQS-DUTY-008 section 3 margin); fan 7.7 kW at the 0.05 kW_fan/kW_th class. Was the 12 kW class sized to the 10.16 kW no-preheat upset.",
         "sec3_material": {
           "mat": "Copper-tube, aluminium-fin air coil with galvanized-steel casing; epoxy-coated headers; the rejection loop is the house HDPE-class closed water loop",
           "basis": "12 kW dry rejection at the 37.8 C design bulb (graph params; A-M-244): air-sided fin-coil construction is the air-cooled exchanger class (PERRY9_HEAT); the loop side follows the issued water-loop families (AQS-STD-002 section 12.1). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
@@ -1767,11 +1768,11 @@
         },
         "design": {
           "duty": "dry rejection of the ADS_CHILL 7.25 kW + the Q4 dry share + the ZNBR2 cycling heat",
-          "airflow_m3_s": 10.64,
-          "fan_kw": 7.9
+          "airflow_m3_s": 10.37,
+          "fan_kw": 7.7
         },
         "sizing": {
-          "airflow_m3_s": 10.64
+          "airflow_m3_s": 10.37
         },
         "size_mm": [
           1200,
@@ -1782,10 +1783,10 @@
         "size_basis": "the dry coil + fan at the calculated rejection duty (study envelope box; design sizing per the duty sheet follows)"
       },
       "continuous_kw": {
-        "value": 7.9,
+        "value": 7.7,
         "unit": "kW",
         "status": "study",
-        "note": "the fan at the 0.05 kW_fan/kW_th class on the rated duty 158 kW (A-M-244 restated); fan-assisted at the window bounding case (X-SPEC sizing, calculated)"
+        "note": "the fan at the 0.05 kW_fan/kW_th class on the rated duty 154 kW (A-M-244 restated); fan-assisted at the window bounding case (X-SPEC sizing, calculated)"
       },
       "class": "dry_cooler"
     },
@@ -2963,10 +2964,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 50.5022,
+        "value": 49.1117,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.8/\u00a710.11 (A-M-244): rated-case terminal flow with the Rev M preheats restored \u2014 13.1637 in - 3.0 life - 0.532 HX-9 - 0.282 HX-10 (X-THM-01 line-loss closure basis unchanged). The DRY_COOLER unit is rated for the calculated bounding terminal duty (DRY_COOLER params.rated_kW; A-M-244 restated, A-M-455). AQS-DUTY-011 Rev M sized to the continuous neighbour draw; dry cooler, not an ORC. | X-THM-01 R10b: terminal by difference 50.502 kW; dry cooler rated for the upset case (A-M-244) (A-M-259)."
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.8/\u00a710.11 (A-M-244): rated-case terminal flow with the Rev M preheats restored \u2014 13.1637 in - 3.0 life - 0.532 HX-9 - 0.282 HX-10 (X-THM-01 line-loss closure basis unchanged). The DRY_COOLER unit is rated for the calculated bounding terminal duty (DRY_COOLER params.rated_kW; A-M-244 restated, A-M-455). AQS-DUTY-011 Rev M sized to the continuous neighbour draw; dry cooler, not an ORC. | X-THM-01 R10b: terminal by difference 49.112 kW; dry cooler rated for the upset case (A-M-244) (A-M-259)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
@@ -3016,10 +3017,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 48.8447,
+        "value": 47.4442,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. | X-THM-01 F-4: cycling heat from the booked store - 2735 kWh/d out at round trip 0.7 (A-M-062/179) = 3908 kWh/d charge, loss 1172 kWh/d = 48.8 kW average thermal; window thermal rate 117.2 kW (bounding sizing case: all the daily loss in the 10 h charge window) against a 390.8 kW charge rate over the same window (electrolyte thermal-management sizing case; A-M-455). Was the stale 1.67 kW Rev-N 120 kWh-class seed."
+        "note": "AQS-DUTY-012 Rev N. | X-THM-01 F-4: cycling heat from the booked store - 2657 kWh/d out at round trip 0.7 (A-M-062/179) = 3796 kWh/d charge, loss 1139 kWh/d = 47.4 kW average thermal; window thermal rate 113.9 kW (bounding sizing case: all the daily loss in the 10 h charge window) against a 379.6 kW charge rate over the same window (electrolyte thermal-management sizing case; A-M-455). Was the stale 1.67 kW Rev-N 120 kWh-class seed."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "HEAT",
@@ -3508,10 +3509,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 6.7191,
+        "value": 6.7291,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 (heat lane) + A-M-230: X-PAR-12 stack heat 7.30 kW routed to the Q4 water header \u2014 replaces the retired BH SQ-H2O_ELYZ -> HEAT_SINK booking; 45-60 C class, Q4 feed per the S53/S54 pattern. | X-PAR-12 TF: stack heat 6.72 kW routed to Q4_BUS (Rev AC heat-study wiring; BH HEAT_SINK retired), closes the ELY energy balance (A-M-230, restamped R10b)."
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 (heat lane) + A-M-230: X-PAR-12 stack heat 7.30 kW routed to the Q4 water header \u2014 replaces the retired BH SQ-H2O_ELYZ -> HEAT_SINK booking; 45-60 C class, Q4 feed per the S53/S54 pattern. | X-PAR-12 TF: stack heat 6.73 kW routed to Q4_BUS (Rev AC heat-study wiring; BH HEAT_SINK retired), closes the ELY energy balance (A-M-230, restamped R10b)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HEAT"
@@ -3609,10 +3610,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 57.7522,
+        "value": 56.3617,
         "unit": "kW",
         "status": "study",
-        "note": "X-THM-01 R10b terminal closure (F-3, A-M-454): equals every thermal kW edge into DRY_COOLER (57.752 kW on this pass); the node ledger closes: in = out to ambient air."
+        "note": "X-THM-01 R10b terminal closure (F-3, A-M-454): equals every thermal kW edge into DRY_COOLER (56.362 kW on this pass); the node ledger closes: in = out to ambient air."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "WTR",

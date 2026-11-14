@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "878941c1d2220065b05526611ee2fe7bf38307c0ab386da777e05dad2f334128",
+  "graph_sha256": "3834c2d3a228b751adf8bc95f2bde54f12ab3c28256d3ee05347be86dc94fc5a",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 374.819,
-   "calc_kw": 374.819,
+   "kw": 370.717,
+   "calc_kw": 370.717,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,18 +16,18 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 196.021,
-   "calc_kw": 196.021,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 196.0 kW, charge 891.0 kW, 2744 kWh over 38 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 191.219,
+   "calc_kw": 191.219,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 191.2 kW, charge 869.1 kW, 2677 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "EXT_HALL",
    "role": "load",
-   "kw": 89.651,
-   "calc_kw": 89.651,
-   "basis": "X-PAR-07 solver.roof_close: conditioned extension 25704 m2; lighting 22.62 kW (IECC 2021 C405, 10 % lit), ventilation 38.17 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 28.86 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 26.9 kW and cooling 158.6 kW thermal average after internal gains 32.3 kW and slab edge 1.59 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
+   "kw": 88.019,
+   "calc_kw": 88.019,
+   "basis": "X-PAR-07 solver.roof_close: conditioned extension 25236 m2; lighting 22.21 kW (IECC 2021 C405, 10 % lit), ventilation 37.48 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 28.33 kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 26.4 kW and cooling 155.7 kW thermal average after internal gains 31.7 kW and slab edge 1.56 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -43,18 +43,18 @@
   {
    "unit": "H2O_ELYZ",
    "role": "load",
-   "kw": 23.689,
-   "calc_kw": 23.689,
-   "basis": "X-PAR-12 TF: 10.34 kg/d H2 x 55.0 kWh/kg / 24 h; rated 94.8 kW on a 6.0 h PV window.",
+   "kw": 23.724,
+   "calc_kw": 23.724,
+   "basis": "X-PAR-12 TF: 10.35 kg/d H2 x 55.0 kWh/kg / 24 h; rated 94.9 kW on a 6.0 h PV window.",
    "class": "calculated",
    "sector": "CRYO"
   },
   {
    "unit": "AL_POT",
    "role": "load",
-   "kw": 5.658,
-   "calc_kw": 5.658,
-   "basis": "AQS-DUTY-072 pot cell: Faraday 1461 A x 3.8 V at CE 0.85 = 5.55 kW DC + bath hold 0.11 kW (150 mm fibre, study; A-M-282).",
+   "kw": 2.957,
+   "calc_kw": 2.957,
+   "basis": "AQS-DUTY-072 pot cell: Faraday 750 A x 3.8 V at CE 0.85 = 2.85 kW DC + bath hold 0.11 kW (150 mm fibre, study; A-M-282).",
    "class": "calculated",
    "sector": "FOUNDRY"
   },
@@ -79,9 +79,9 @@
   {
    "unit": "SI_REFINE",
    "role": "\u2014",
-   "kw": 2.509,
-   "calc_kw": 2.509,
-   "basis": "X-MFG-40 TF, on-site silicon (A-M-472): 1.0034 kg/d electronic-grade silicon x si_refine_kWh_kg_TCS_SIEMENS / 24 h (si_refine.py).",
+   "kw": 2.457,
+   "calc_kw": 2.457,
+   "basis": "X-MFG-40 TF, on-site silicon (A-M-472): 0.9829 kg/d electronic-grade silicon x si_refine_kWh_kg_TCS_SIEMENS / 24 h (si_refine.py).",
    "class": "calculated",
    "sector": "GLASS"
   },
@@ -133,9 +133,9 @@
   {
    "unit": "SOLAR_PV_CELL",
    "role": "\u2014",
-   "kw": 1.487,
-   "calc_kw": 1.487,
-   "basis": "X-MFG-38 (A-M-178, AQS-DUTY-071): 35.69 kWh/d for 67.2 cells/d in 3 batches of one carrier (A-M-484); peak 6.08 kW (one tool at a time).",
+   "kw": 1.467,
+   "calc_kw": 1.467,
+   "basis": "X-MFG-38 (A-M-178, AQS-DUTY-071): 35.20 kWh/d for 65.6 cells/d in 3 batches of one carrier (A-M-484); peak 6.08 kW (one tool at a time).",
    "class": "calculated",
    "sector": "FAB"
   },
@@ -194,15 +194,6 @@
    "sector": "CRYO"
   },
   {
-   "unit": "IND_MELT",
-   "role": "load",
-   "kw": 0.885,
-   "calc_kw": 0.885,
-   "basis": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 21.24 kWh/d over 24 h at 4 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02.",
-   "class": "calculated",
-   "sector": "FOUNDRY"
-  },
-  {
    "unit": "MEOH_SYNTH",
    "role": "load",
    "kw": 0.818,
@@ -219,6 +210,15 @@
    "basis": "X-ELS-02: agitator PBT D450 at 150 rpm, 403 W shaft (Np x rho x N^3 x D^5) -> 0.75 kW motor (drivers key motor_kW; AQS-DUTY-050 Rev B); leach heat is Q3 via HX-5, not electric (was the 2 kW AC parasitics share).",
    "class": "calculated",
    "sector": "DIGESTER"
+  },
+  {
+   "unit": "IND_MELT",
+   "role": "load",
+   "kw": 0.657,
+   "calc_kw": 0.657,
+   "basis": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 15.76 kWh/d over 24 h at 3 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02.",
+   "class": "calculated",
+   "sector": "FOUNDRY"
   },
   {
    "unit": "CRYO_AHU",
@@ -369,7 +369,7 @@
    "role": "\u2014",
    "kw": 0.265,
    "calc_kw": 0.265,
-   "basis": "0.373 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)",
+   "basis": "0.374 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)",
    "class": "calculated",
    "sector": "WTR"
   },
@@ -457,9 +457,9 @@
   {
    "unit": "CA_POT",
    "role": "load",
-   "kw": 0.122,
-   "calc_kw": 0.122,
-   "basis": "AQS-DUTY-072 grease-Ca pot: 3.61 A x 4.2 V = 0.015 kW + hold 0.11 kW (A-M-282).",
+   "kw": 0.118,
+   "calc_kw": 0.118,
+   "basis": "AQS-DUTY-072 grease-Ca pot: 2.75 A x 4.2 V = 0.011 kW + hold 0.11 kW (A-M-282).",
    "class": "calculated",
    "sector": "FOUNDRY"
   },
@@ -475,9 +475,9 @@
   {
    "unit": "SI_REDUCE",
    "role": "\u2014",
-   "kw": 0.113,
-   "calc_kw": 0.113,
-   "basis": "X-MFG-40 TF, on-site silicon (A-M-472): 0.2086 kg/d metallurgical silicon x si_saf_kWh_kg / 24 h (si_refine.py).",
+   "kw": 0.112,
+   "calc_kw": 0.112,
+   "basis": "X-MFG-40 TF, on-site silicon (A-M-472): 0.2070 kg/d metallurgical silicon x si_saf_kWh_kg / 24 h (si_refine.py).",
    "class": "calculated",
    "sector": "GLASS"
   },
@@ -736,7 +736,7 @@
   {
    "unit": "DRY_COOLER",
    "role": "\u2014",
-   "kw": 7.9,
+   "kw": 7.7,
    "calc_kw": null,
    "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
    "class": "pending",
@@ -754,9 +754,9 @@
   {
    "unit": "MEOH_FC",
    "role": "generation",
-   "kw": 1.0,
+   "kw": 0.5,
    "calc_kw": null,
-   "basis": "owner requirement lock (AQS-REQ-KW-001): AQS-REQ-KW-001 REQ-MEOH-FC-CONT owner requirement lock: 0.5-2 kW_dc mid-band stand-in (SI-DMFC-01 class)",
+   "basis": "owner requirement lock (AQS-REQ-KW-001): AQS-REQ-KW-001 REQ-MEOH-FC-CONT booked design point 0.5 kW_dc (Q-039 owner ruling 2026-11-13): fuel-supported class at the settled S76 5.0 kg/d; installed 1.0 kW stack rating stays standby capability (SI-DMFC-01 class)",
    "class": "owner-lock",
    "sector": "MEOH"
   },
@@ -984,12 +984,12 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 108,
-  "graph_sum_kW": 188.53,
-  "calc_sum_kW": 188.53,
-  "connected_load_kW": 188.5,
-  "connected_calculated_kW": 178.8,
+  "graph_sum_kW": 183.73,
+  "calc_sum_kW": 183.73,
+  "connected_load_kW": 183.7,
+  "connected_calculated_kW": 174.2,
   "connected_standby_kW": 0.1,
-  "connected_study_kW": 9.7,
+  "connected_study_kW": 9.5,
   "connected_calculated_pct": 94.8,
   "by_sector": {
    "CRYO": {

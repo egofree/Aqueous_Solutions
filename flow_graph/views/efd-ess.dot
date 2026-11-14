@@ -42,7 +42,7 @@ digraph G {
   "ROOF_TANK" -> "CATCH_TANK" [label="S22\\n0.0 kg/d", style=solid, color="#6d28d9", fontcolor="#6d28d9", penwidth=1.2];
   "CATCH_TANK" -> "ROOF_TANK" [label="S23\\n0.0 kg/d", style=solid, color="#6d28d9", fontcolor="#6d28d9", penwidth=1.2];
   "MEOH_TANK" -> "MEOH_FC" [label="S76\\n5.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=2.2];
-  "MEOH_FC" -> "SOL_ARK_60K" [label="S79\\n1.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
+  "MEOH_FC" -> "SOL_ARK_60K" [label="S79\\n0.5 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
   "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-ESS-ZNBR2-SRC\\n1.6667 kW", style=dashed, color="#6d28d9", fontcolor="#6d28d9", penwidth=1.2];
   "ZNBR2" -> "BOUNDARY_EXPORT" [label="IA-ZNBR-LOSS\\n1.67 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
 }

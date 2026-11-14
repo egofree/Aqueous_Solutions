@@ -29,7 +29,7 @@ TOK=('AQS-DUTY-','AQS-DSN-','AQS-NOTE-PV-REBASE','X-PAR-','X-MFG-','X-SAN-','roo
 # owning unit task. The only census rows documented without a calculation behind them (A-M-301).
 LOCKS={
  'FUEL_CELL':'AQS-REQ-KW-001 REQ-FC-CONT owner requirement lock; not a vendor nameplate (ELEC unit task 02)',
- 'MEOH_FC':'AQS-REQ-KW-001 REQ-MEOH-FC-CONT owner requirement lock: 0.5-2 kW_dc mid-band stand-in (SI-DMFC-01 class)',
+ 'MEOH_FC':'AQS-REQ-KW-001 REQ-MEOH-FC-CONT booked design point 0.5 kW_dc (Q-039 owner ruling 2026-11-13): fuel-supported class at the settled S76 5.0 kg/d; installed 1.0 kW stack rating stays standby capability (SI-DMFC-01 class)',
 }
 NULL_OK={'HYDRO_SET':'charge/discharge kW model incomplete - honest incomplete (WP-A4, AQS-ESS-001)',
          'MEOH_TANK':'inventory store; no continuous kW (fuel to MEOH_FC)'}

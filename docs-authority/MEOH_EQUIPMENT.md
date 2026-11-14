@@ -1,8 +1,8 @@
 # Methanol train equipment list
 
 Document number: AQS-EQP-MEOH-001  
-Revision: B  
-Date: 2026-10-25  
+Revision: C  
+Date: 2026-11-13  
 Process flow diagram: AQS-PFD-MEOH-001 (`meoh_train_pfd.png`)  
 Authority: AQS-MeOH-001, AQS-REQ-KW-001, AQS-FC-001 Rev B, AQS-ASM-001, AQS-HSE-001, AQS-VENT-001, and dependency SI-IEM-01 in `DEPENDENCIES.md`.
 
@@ -10,6 +10,7 @@ Authority: AQS-MeOH-001, AQS-REQ-KW-001, AQS-FC-001 Rev B, AQS-ASM-001, AQS-HSE-
 |---|---|---|---|
 | A | — | Equipment tags for methanol from two sources and for the fuel cell with ion-exchange membrane | 2026-10-01 |
 | B | — | Purpose and scope added; text rewritten to the documentation style guide (AQS-DOC-002). Table 2.1 gains a column showing which tags are nodes of the plant flow graph. No tag, duty or rating changed. | 2026-10-25 |
+| C | 1 | The booked continuous point of the fuel cell stated (0.5 kW DC, Q-039 owner ruling); the REQ-MEOH-FC-CONT band reference unchanged. No tag, duty or rating changed. | 2026-11-13 |
 
 The design is licensed under CERN-OHL-S-2.0. The model scale factor `SCALE_M` is 1.0.
 
@@ -44,7 +45,7 @@ Table 2.1. Methanol train equipment
 
 ## 3. Continuous rating
 
-The continuous rating of the methanol fuel cell is set in section 3.6 of AQS-REQ-KW-001 as requirement REQ-MEOH-FC-CONT, 0.5 to 2 kW DC. The electrical and heat loads of the synthesis are study values. The catalytic route is driven by heat, and its compressor loads are still to be determined. No plant-level electrical load is to be assigned to the synthesis beyond its share of the hydrogen allocation.
+The continuous rating of the methanol fuel cell is set in section 3.6 of AQS-REQ-KW-001 as requirement REQ-MEOH-FC-CONT, 0.5 to 2 kW DC; the booked design point is 0.5 kW DC (Q-039 owner ruling, 2026-11-13). The electrical and heat loads of the synthesis are study values. The catalytic route is driven by heat, and its compressor loads are still to be determined. No plant-level electrical load is to be assigned to the synthesis beyond its share of the hydrogen allocation.
 
 ## 4. Separation rules
 

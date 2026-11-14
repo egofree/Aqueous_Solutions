@@ -14,17 +14,17 @@ Authority: AQS-PLAN-007 unit tasks (FOUNDRY)-02; graph Rev AC; notes/FOUNDRY_SIZ
 - WAFER_FAB draws are 0 (A-M-257: the fab closes on UPW + slurry + N2 purge). WIRE_DRAW (MFG) closes on S57 Cu 3.5938 kg/d from MET_MELT, so STOCK_TO_WIRE_DRAW = 0.
 - MFG_SHOP goods loop is closed: IA-MFG-OUT 0.000 kg/d out = IA-WEAR 0.088 kg/d worn return. The shop needs no net foundry mass beyond its rounding remnant r0 = -0.016065 kg/d (rated in - rated out).
 - The pot/cell products (Al 8, stainless 1.5 via Cr 0.20 + Mo 0.05, Ti 0.40 kg/d of the AQS-SIZE-FOUNDRY / AQS-RATE-FP-MET consumable-replacement table) have no live feed at the bounding case (section 4).
-- Live stock demand K = 25.9 kg/d = the non-pot-blocked table lines: Cu 3 (bus, windings) + Fe 10 (structural, fasteners) + Zn/EW 1 (castings, coatings). Registered A-M-261.
+- Live stock demand K = 22.0 kg/d = the non-pot-blocked table lines: Cu 3 (bus, windings) + Fe 10 (structural, fasteners) + Zn/EW 1 (castings, coatings). Registered A-M-261.
 
 ## 2. Closure (exact, from the live graph)
 
 ```
     r0 = -0.016065 kg/d                MFG_SHOP rated remnant (excludes this pass's own loop edges)
     f  = 0.01                      melt loss to slag+dross (INDUCT_SOCX 1-2 % band, A-M-262)
-    P  = -r0 + f*K/(1-f) = 0.277681    shop polymer draw that closes the shop (A-M-257 pattern, AQS-DUTY-073)
-    S  = K + P + r0 = 26.161616         shop scrap charge to IND_MELT (MFG_SCRAP_TO_IND)
-    slag = f*S = 0.356466           FOUNDRY_SLAG_TO_LEACH by mass conservation on the melt
-    stock out = S - slag = 25.805150 = K    STOCK_TO_MFG
+    P  = -r0 + f*K/(1-f) = 0.238360    shop polymer draw that closes the shop (A-M-257 pattern, AQS-DUTY-073)
+    S  = K + P + r0 = 22.229495         shop scrap charge to IND_MELT (MFG_SCRAP_TO_IND)
+    slag = f*S = 0.304007           FOUNDRY_SLAG_TO_LEACH by mass conservation on the melt
+    stock out = S - slag = 21.925488 = K    STOCK_TO_MFG
 ```
 
 Every FOUNDRY unit closes to 0.000000 kg/d on the written graph (battery limit 0.5).
@@ -33,13 +33,13 @@ Every FOUNDRY unit closes to 0.000000 kg/d on the written graph (battery limit 0
 
 | Unit | In, kg/d | Out, kg/d | Duty |
 | --- | --- | --- | --- |
-| IND_MELT | 26.1616 scrap | 3.0 to cast + 31.7 to cont-cast + 0.3565 slag | melt 21.24 kWh/d (0.885 kW avg, 15.0 kW peak vs 25 kW connected, A-M-232); 4 heats/d of the 10 kg crucible |
+| IND_MELT | 22.2295 scrap | 3.0 to cast + 23.0 to cont-cast + 0.3040 slag | melt 15.76 kWh/d (0.657 kW avg, 15.0 kW peak vs 25 kW connected, A-M-232); 3 heats/d of the 10 kg crucible |
 | CAST_LINE | 3.0 | 3.0 to roll | Cu permanent-mould ingot/billet; sprue return 0 (campaign events) |
-| CONT_CAST | 31.7 | 10.0 billet + 21.7 ingot | Fe semi-continuous billet, Zn ingot (AQS-SIZE-FOUNDRY) |
+| CONT_CAST | 23.0 | 10.0 billet + 13.0 ingot | Fe semi-continuous billet, Zn ingot (AQS-SIZE-FOUNDRY) |
 | ROLL | 13.0 | 13.0 | 0.42 kWh/d at 0.032 kWh/kg cold class (A-M-177) |
-| STOCK_OUT | 34.7 | 25.9 to MFG (FAB 0, wire 0) | staged stock |
+| STOCK_OUT | 26.0 | 22.0 to MFG (FAB 0, wire 0) | staged stock |
 
-Melt energy by class, (cp_s dT + L + cp_l superheat)/eta 0.55 (A-M-177 method): Cu 0.3616 kWh/kg x 3 kg/d, Fe 0.5406 kWh/kg x 13 kg/d, Zn 0.1605 kWh/kg x 1 kg/d; hold 0.5 kW x 4 heats. CRC_CU / CRC_FE / CRC_ZN.
+Melt energy by class, (cp_s dT + L + cp_l superheat)/eta 0.55 (A-M-177 method): Cu 0.3616 kWh/kg x 3 kg/d, Fe 0.5406 kWh/kg x 13 kg/d, Zn 0.1605 kWh/kg x 1 kg/d; hold 0.5 kW x 3 heats. CRC_CU / CRC_FE / CRC_ZN.
 
 ## 4. Feed-blocked trains - rated 0 with basis; design cases for the day the feed lands
 

@@ -17,12 +17,12 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | --- | --- | --- | --- |
 | T1 | Owner and site data | 52 | Owner decision or site investigation report |
 | T2 | In-house design tests and standard data | 42 | In-house test record or standard data filed against the item |
-| T3 | Bench and laboratory tests | 80 | Bench test report with method, data and result |
+| T3 | Bench and laboratory tests | 82 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
 | T5 | Design calculations and drawings | 558 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 39 | Commissioning record |
 
-Total 792 items: 367 drivers, 425 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 794 items: 368 drivers, 426 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -150,6 +150,7 @@ Total 792 items: 367 drivers, 425 register entries. Classification rule: first m
 | driver ew_cell_voltage_V | 2.12 V | Bench diaphragm chloride EW cell, cupric electrolyte, 200 A/m2: cell voltage and energy per kg Cu | X-PAR |
 | driver ew_current_efficiency_design | 0.85 - | Bench chloride EW cell per metal: deposit mass vs charge (current efficiency) | X-PAR |
 | driver feed_case_A_silicate_oxide | 0.99 mass fraction | XRF/XRD assay of a representative class A lot | X-PAR |
+| driver foundry_al_line_kg_d | 4.1072 kg/d Al stock (frames, housings); sized to the recoverable aluminium - the leach reactive-Al hydroxide cake 5.1340 kg/d Al at the A-M-285 export margin (owner ruling, task X-QA-19, A-M-495) | cake weigh and assay at the first leach campaign vs the sized line; python3 -m flow_graph.param.foundry_poly (idempotent re-derivation) | X-PAR |
 | driver foundry_pot_ce | 0.85 - current efficiency (Faraday) at the pot electrodes | bench molten-chloride cell: deposit mass vs charge | X-PAR |
 | driver foundry_pot_j_A_cm2 | 0.5 A/cm2 design anode current density (graphite, chloride melt) | bench cell anode polarization at 0.3-0.8 A/cm2 (graphite consumption rate) | X-PAR |
 | driver foundry_pot_voltage_V | {"al": 3.8, "mg": 4.2, "ca": 4.2, "mo": 2.8, "cr": 2.8} V cell terminal (decomposition + overpotential + bath ohmic) | bench molten-chloride cell at the design current density: terminal voltage vs charge | X-PAR |
@@ -212,6 +213,7 @@ Total 792 items: 367 drivers, 425 register entries. Classification rule: first m
 | A-M-489 | The recycled SiCl4 is hydrogenated back to trichlorosilane,  kg H2 per kg recycled Si; mass fractions | Assay the loop bleed of the first refining campaign against the registered blend | F-20261110-06 (recovery-first silicon); A-M-472 |
 | A-M-490 | 0.326424 kg of feed silicate_oxide is carried with the leach kg/kg feed | Assay the silicate content of a characterized crib-solids lot and re-point the carry fraction | F-20261110-01 (the entrained-silicate residual); X-QA-12 |
 | A-M-494 | The minor-metal EW arrangement is a selectable option, not a - (layout option, no physics change) | flow_graph/param/test_ew_deposit_basis.py merged-option test: the blend books fully and the current-carrying minor-cell count drops under 'merged'; 'selective' restores the committed book | X-QA-05 |
+| A-M-495 | The aluminium line is sized to the recoverable aluminium (ta kg/d | python3 -m flow_graph.param.regen (second run changes nothing); python3 -m flow_graph.param.recovery reports no flags with IA-ALCL3-MU absent; cake weigh and assay at the first leach campaign | X-QA-19 |
 
 ## 5. T4 Pilot runs
 
@@ -384,7 +386,7 @@ Total 792 items: 367 drivers, 425 register entries. Classification rule: first m
 | driver foundry_kroll_dragout_frac | 0.02 kg MgCl2-class salt drag-out per kg Kroll MgCl2 gross, to FLUX_PREP | retort condensate weigh per campaign: salt drag-out vs the 2 % study allowance | X-PAR |
 | driver foundry_melt_loss_frac | 0.01 kg slag+dross per kg melt charge | weigh dross+slag per heat on the IND_MELT first article | X-PAR |
 | driver foundry_pot_export_frac | 0.25 kg/d export per kg/d internal line on the Al/Ti/Mo/Cr pot products | metal dispatch study: contracted offtake vs the 25 % study margin (dock export meter totals) | X-PAR |
-| driver foundry_stock_demand_kg_d | 25.9 kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 8 + stainless 1.5 + Ti 0.40 + investment castings 2) | shop article schedule at the first article: formed-stock draw vs the AQS-SIZE-FOUNDRY consumable-replacement table | X-PAR |
+| driver foundry_stock_demand_kg_d | 22.0072 kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 4.1072 + stainless 1.5 + Ti 0.40 + investment castings 2; the Al line sized to the recoverable aluminium, A-M-495) | shop article schedule at the first article: formed-stock draw vs the AQS-SIZE-FOUNDRY consumable-replacement table | X-PAR |
 | driver geo_orc_feed_pump_kW | 0.05 kW ORC feed pump (R245fa study class) | Pump selection | X-PAR |
 | driver gsh_bore_depth_m | 120.0 m bore depth | Drilling log | X-PAR |
 | driver gsh_bore_m_per_kWt | 55.0 m vertical bore per kW peak block load (mid of 43-65 m/kW typical range) | Thermal response test and ASHRAE bore-length method | X-PAR |
@@ -660,7 +662,7 @@ Total 792 items: 367 drivers, 425 register entries. Classification rule: first m
 | A-M-257 | WAFER_FAB closes: S03 rated 1.4998 kg/d (BH verbatim N2 purg kg/d | python3 -m flow_graph.param.balance: WAFER_FAB and HDR_N2 residuals < 1e-3 kg/d | R10b mass-failure reduction lane 2026-10-18 |
 | A-M-259 | Heat-ladder store ledgers re-solved and closed: Q1/Q2 down s kW | pytest flow_graph/test_heat_ladder.py (stores close within 0.01 kW); python3 -m flow_graph.param.write_graph heat prints stores CLOSE | R10b heat-store lane 2026-10-18 |
 | A-M-260 | Register reconciliation: EW_1..9 params.sizing re-stamped li - | python3 docs-authority/_assumptions_register.py exits 0 (no stale-key errors) | R10b register reconciliation 2026-10-18 |
-| A-M-261 | 14.0 kg/d formed stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1;  kg/d | python3 -m flow_graph.param.foundry_poly (idempotent re-derivation); shop stock-draw weigh at the first article | R12 foundry/polymers sizing lane 2026-10-18 |
+| A-M-261 | 22.0072 kg/d formed stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW  kg/d | python3 -m flow_graph.param.foundry_poly (idempotent re-derivation); shop stock-draw weigh at the first article | R12 foundry/polymers sizing lane 2026-10-18 |
 | A-M-262 | 1.0 % of melt charge to slag+dross (FOUNDRY_SLAG_TO_LEACH) kg/kg | weigh dross+slag per heat on the IND_MELT first article (X-MFG-37 trial class) | R12 foundry/polymers sizing lane 2026-10-18 |
 | A-M-263 | 10 % polymer offcut to the wet line per kg issued to MFG_SHO kg/kg | shop polymer offcut weigh at the first article | R12 foundry/polymers sizing lane 2026-10-18 |
 | A-M-266 | Shop polymer draw P = 0.377186 kg/d = -r0 + f*K/(1-f) (A-M-2 kg/d | python3 -m flow_graph.param.foundry_poly (idempotent closure re-derivation); shop polymer draw weigh at the first article | R12 foundry/polymers sizing lane 2026-10-18 |
@@ -796,7 +798,7 @@ Total 792 items: 367 drivers, 425 register entries. Classification rule: first m
 | A-M-478 | NAOH_PLANT tops up the sodium hydroxide on the CHLOR_ALKALI  route choice; kW, kg/d | python3 -m flow_graph.param.regen; NAOH_PLANT runs CHLOR_ALKALI, IA-HALITE-MU is present and IA-TRONA-MU retired, and IA-NAOH-H2 enters HDR_H2. | QA audit 2026-10-29, owner questions Q-034 to Q-037 (t62u) |
 | A-M-479 | SOLV_PLANT supplies the bench ethanol and acetone, recovery  kg/d; kW | python3 -m flow_graph.param.solvent prints both routes; after regen IA-SOLV-MU is retired, IA-SOLV-PLANT equals IA-SOLV-WB, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT-IA-SOLV-MU) |
 | A-M-480 | The shop grease is made on site from the wax cut, sized from kg/d; kW | python3 -m flow_graph.param.grease prints both routes; after regen GREASE_CA_TO_MFG equals IA-GREASE-SPENT, the lithium routes carry their rated case at zero flow, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-29, shop routes (X-RTE-GREASE_CA_TO_MFG, X-RTE-WAX_TO_GREASE_CA, X-RTE-PCA_TO_GREASE and the lithium routes) |
-| A-M-481 | The chlorine of the VDF and TFE reactors has two built sourc kg/d | With cru_cl2_source POT, regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CL2-SHIP lower by the same amount, and CRU and AL_POT close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case. | QA audit 2026-10-30, X-RTE-AL_POT_CL2 |
+| A-M-481 | The chlorine of the VDF and TFE reactors has two built sourc kg/d | With cru_cl2_source POT (after the take-off re-point to IA-CA-CL2-SHIP is built), regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CA-CL2-SHIP lower by the same amount, and CRU and the pots close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case. | QA audit 2026-10-30, X-RTE-AL_POT_CL2 |
 | A-M-482 | POLY_TO_FAB carries the wafer-fab photoresist, sized from th kg/d; kW | python3 -m flow_graph.param.fab_resist prints the streams with the ledger element-closed; after regen POLY_TO_FAB = IA-RESIST-STOCK, IA-FAB-N2-VENT = S03, RESIST_SYN, WAFER_FAB, WS_SOLV and SOLV_PLANT close, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-30, X-RTE-POLY_TO_FAB |
 | A-M-483 | The heater duty of the CZ hot zone in WAFER_FAB is found fro kW | log the heater power through the meltdown and the body pull of the first CZ pull and the felt cold-face temperature, and compare each with the hot-zone model | QA audit 2026-10-30, X-RTE-CZ-HOTZONE |
 | A-M-485 | Silicon recovered from crushed end-of-life modules into the  mass fraction of retired-module cell silicon | Run the first retired-module batch through the separation step and close the silicon mass balance | F-20261110-06 (recovery-first silicon); X-MFG-40 |

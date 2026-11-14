@@ -52,7 +52,6 @@ RESIST_SYN,FAB,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,
 SI_REDUCE,GLASS,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
 SOLV_PLANT,FAB,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
 TI_CELL,FOUNDRY,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
-AL_POT,FOUNDRY,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
 CA_POT,FOUNDRY,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
 CRU,DIGESTER,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
 EVAP_ACID,DIGESTER,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2

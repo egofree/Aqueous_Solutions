@@ -1,6 +1,6 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,113,1795 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,913,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,113,1793 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,911,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 184 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
@@ -1704,7 +1704,6 @@ FOUNDRY,FOUNDRY_E,AL_POT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,66
 FOUNDRY,FOUNDRY_E,AL_POT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,66,IA-AL-CO: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,AL_POT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,70,IA-AL-H2O: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,AL_POT,instrument,"gas detector, CO",electrochemical CO,"alarm 25 ppm, trip 50 ppm, breathing height",2,AQS-SAF-006 alarm 1oo2
-FOUNDRY,FOUNDRY_E,AL_POT,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
 FOUNDRY,FOUNDRY_E,AL_POT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,AL_POT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,FOUNDRY_E,AL_POT,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",35,IA-AL-H2O: AQS-PIP-005 span count

@@ -20,7 +20,7 @@ This page records how the plant mass balance is reconciled. The method is minimu
 
 X-SAF-10 corrected the peroxide cell feed from 3.0 kg/d O2 to 0.176 kg/d O2 (Faraday) plus 2.824 kg/d make-up water from ROOF_TANK, and took that water off S40. It did not propagate: TERRACE_IRRIG still transpired 40 kg/d on 37.176 kg/d irrigation, and the cold box still made 2.824 kg/d O2 that nothing drew. Revision A reconciled the two by least squares (IA-TERR-VAP -2.824, IA-O2-RET +2.824) and smeared small moves over 361 edges. Hypothesis tested: missing photosynthetic O2 from the terrace. Rejected for this cut: the terrace has no CO2 supply and no harvest edge, so net CO2 + H2O -> CH2O + O2 fixation there is zero (TAIZ2015), and the sign is wrong (the terrace was short water, the header long O2). Fix: Revision A moves withdrawn; T1-T5 in balance.physics. X-PAR-11 (T6): GROW_BED fixes the 19.0 kg/d CO2 dosed to it (S04 + S89); its photosynthetic O2, 32/44 x CO2 at PQ 1.0, leaves on S87 to CRYO_O2 instead of the trim lump; the trim, compost and nutrient surplus pass the difference; the cold box extracts that much less O2 and the leach dissolved-gas edge falls with it, now asserted under the Henry-law bound (SANDER2015). CO2 edges carry CO2 composition. Verification: T-PAR-02 (A-M-123).
 
-Mass edges 536; held by a transfer function or stoichiometry 483; reconciled 53. Units 168.
+Mass edges 534; held by a transfer function or stoichiometry 481; reconciled 53. Units 168.
 Before: 6 units out of balance (sum of residuals 1.376 kg/d). After: max unit residual 4.01e-04 kg/d. Negative rates after reconciliation: 0.
 
 ## 3. Units out of balance before reconciliation
@@ -48,32 +48,30 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | export | IA-BURNOUT-VENT | dewax/burnout off-gas (burned wax + stea | 0.2 |
 | export | IA-C11-SHIP | C11-C18 surplus shipped | 1.512 |
 | export | IA-C19-SHIP | C19-C28 surplus shipped | 2.218 |
-| export | IA-C5-SHIP | C5-C10 product shipped | 7.534 |
-| export | IA-CA-CL2-SHIP | chlorine byproduct export (water-treatme | 0.097 |
-| export | IA-CL2-SHIP | chlorine byproduct export (water-treatme | 19.17 |
+| export | IA-C5-SHIP | C5-C10 product shipped | 7.577 |
+| export | IA-CA-CL2-SHIP | chlorine byproduct export (water-treatme | 0.063 |
 | export | IA-CR-VENT | chlorinator CO (fuel-gas class export) | 0.202 |
 | export | IA-FAB-PRODUCT | finished wafers to the dock for dispatch | 0.139 |
-| export | IA-GOODS-SHIP | finished-goods surplus export | 321.541 |
+| export | IA-GOODS-SHIP | finished-goods surplus export | 321.546 |
 | export | IA-KROLL-CO | chlorinator CO (fuel-gas class export) | 0.458 |
 | export | IA-LIME-SHIP | cake-kiln residue (lime, unreacted anhyd | 0.282 |
 | export | IA-MEOH-SHIP | methanol shipped at the dock | 28.578 |
-| export | IA-METAL-SHIP | surplus foundry metal export (pot-line p | 10.812 |
+| export | IA-METAL-SHIP | surplus foundry metal export (pot-line p | 5.947 |
 | export | IA-MO-VENT | chlorinator CO2 (vent class) | 0.043 |
 | export | IA-N2-VENT | nitrogen vent | 17.614 |
 | export | IA-NA-PURGE | sodium chloride bleed of the leach purge | 0.642 |
 | export | IA-NAOH-CL2-SHIP | chlor-alkali chlorine, shipped with the  | 3.894 |
 | export | IA-NAOH-RESIDUE | ore insolubles and the lime-mud purge | 0.034 |
-| export | IA-O2-SHIP | O2 cylinders shipped at the dock | 13.049 |
+| export | IA-O2-SHIP | O2 cylinders shipped at the dock | 13.171 |
 | export | IA-PCA-REJECT | slaker grit (anhydrite, fluorspar and in | 0.0 |
 | export | IA-SOLV-VENT | reactor or fermenter off-gas (fuel-gas c | 0.15 |
 | import | CA_HOPPER | mineral calcium carbonate (free-choice h | 0.035 |
 | import | FR_FINISH | phosphorus-FR finish (reagent manifest) | 0.002 |
-| import | IA-ALCL3-MU | anhydrous AlCl3 top-up feed (process-che | 24.047 |
-| import | IA-CACL2-MU | CaCl2 brine concentrate (process-chemica | 0.152 |
+| import | IA-CACL2-MU | CaCl2 brine concentrate (process-chemica | 0.116 |
 | import | IA-CAF2-MU | fluorspar make-up, acid-spar class >= 97 | 0.326 |
 | import | IA-CR2O3-MU | Cr2O3-equivalent chromite concentrate (d | 0.365 |
 | import | IA-FEED-MU | feedstock make-up (dock import) | 65.547 |
-| import | IA-H2O-MU | water make-up for H and O leaving as pro | 331.61 |
+| import | IA-H2O-MU | water make-up for H and O leaving as pro | 331.79 |
 | import | IA-HALITE-MU | halite ore (raw ore) to re-saturate the  | 0.676 |
 | import | IA-MGCL2-MU | CaCl2-MgCl2 brine concentrate (process-c | 0.04 |
 | import | IA-MOO3-MU | MoO3-equivalent concentrate (dock import | 0.094 |
@@ -83,7 +81,7 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | import | NUT_AQUA | mineral nitrate solution to the raceway | 5.5 |
 | import | NUT_AQUA_BED | mineral nitrate solution to the media be | 1.0 |
 
-**Net trade: +5.722 kg/d** (exports 436.164 - imports 430.442); dock ledger residual +5.723 kg/d (reported, exempt per D-DOCK).
+**Net trade: +5.726 kg/d** (exports 412.265 - imports 406.539); dock ledger residual +5.726 kg/d (reported, exempt per D-DOCK).
 
 ## 4. Moves outside measurement tolerance (2 % of the rate, 1 g/d floor); must be empty
 
@@ -201,7 +199,7 @@ Table 6.1. Stoichiometric edges
 | IA-PCA-REJECT | closure | P_CA | 0.0000 | X-RTE TF: shop grease on site (A-M-480): reject = 0.000015 kg/d (grease.py, route CA). |
 | IA-RESIST-ACID | closure | ACID_PLANT | 0.0026 | X-RTE TF: fab photoresist made on site (A-M-482): acid = 0.002575 kg/d (fab_resist.py, rou |
 | IA-RESIST-BZ | closure | PROD_C5_C10 | 1.0052 | X-RTE TF: fab photoresist made on site (A-M-482): bz_cut = 1.005233 kg/d (fab_resist.py, r |
-| IA-RESIST-CL2 | closure | AL_POT | 0.0018 | X-RTE TF: fab photoresist made on site (A-M-482): cl2 = 0.001824 kg/d (fab_resist.py, rout |
+| IA-RESIST-CL2 | closure | CA_POT | 0.0018 | X-RTE TF: fab photoresist made on site (A-M-482): cl2 = 0.001824 kg/d (fab_resist.py, rout |
 | IA-RESIST-HCL | closure | CRU | 0.0009 | X-RTE TF: fab photoresist made on site (A-M-482): hcl = 0.000938 kg/d (fab_resist.py, rout |
 | IA-RESIST-NAPH | closure | PROD_C11_C18 | 0.3664 | X-RTE TF: fab photoresist made on site (A-M-482): naph_cut = 0.366388 kg/d (fab_resist.py, |
 | IA-RESIST-NH3 | closure | WS_AMMONIA | 0.0013 | X-RTE TF: fab photoresist made on site (A-M-482): nh3 = 0.001314 kg/d (fab_resist.py, rout |

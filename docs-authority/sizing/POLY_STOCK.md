@@ -3,13 +3,13 @@
 Document number: AQS-SIZE-POLY_STOCK
 Revision: A
 Date: 2026-10-20
-Authority: graph + params.design: bin=pellet tote bin, issue_kg_d=0.277681, to_wet_kg_d=0.027768, hold_d=1.0 | envelope 600 x 400 x 800 mm, state live | size check: fits. Study. Not a PE stamp.
+Authority: graph + params.design: bin=pellet tote bin, issue_kg_d=0.23836, to_wet_kg_d=0.023836, hold_d=1.0 | envelope 600 x 400 x 800 mm, state live | size check: fits. Study. Not a PE stamp.
 
 ## 1. Duty
-params.design: bin=pellet tote bin, issue_kg_d=0.277681, to_wet_kg_d=0.027768, hold_d=1.0 | envelope 600 x 400 x 800 mm, state live | size check: fits
+params.design: bin=pellet tote bin, issue_kg_d=0.23836, to_wet_kg_d=0.023836, hold_d=1.0 | envelope 600 x 400 x 800 mm, state live | size check: fits
 
 ## 2. Geometry
-Envelope (params.envelope): 600 x 400 x 800 mm, state per stamp. Working volume 0.001 m3; vessel D 0.139168 x H 0.208752 mm (upright, H/D 1.5).
+Envelope (params.envelope): 600 x 400 x 800 mm, state per stamp. Working volume 0.001 m3; vessel D 0.136008 x H 0.204011 mm (upright, H/D 1.5).
 
 ## 3. Material
 PE/rotomoulded (default per AQS-STD-002 M2).

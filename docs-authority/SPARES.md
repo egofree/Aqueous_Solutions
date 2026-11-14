@@ -12,7 +12,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-01 | bearing: deep-groove ball bearing (608-2Z x374) | 374 | 38 | 10 % min 2 |
 | building block | OF-02 | bearing: deep-groove ball bearing (6202-2Z x210; 6201-2Z x114; 6205-2Z x50; 6204-2Z x14; 6206-2) | 404 | 41 | 10 % min 2 |
 | building block | OF-03 | electronics: PLC digital I/O point (24 V DC x882) | 882 | 89 | 10 % min 1 |
-| building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x913) | 913 | 92 | 10 % min 1 |
+| building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x911) | 911 | 92 | 10 % min 1 |
 | building block | OF-05 | electronics: BLDC driver (24/48 V DC x184) | 184 | 19 | 10 % min 1 |
 | building block | OF-06 | electronics: motor starter (contactor + overload) (0.37 kW x103; 0.18 kW x56; 0.55 kW x5; 0.25 kW x2; 0.12 kW x) | 169 | 17 | 10 % min 1 |
 | building block | OF-07 | electronics: PLC I/O module, 16 channel (24 V DC x113) | 113 | 12 | 10 % min 1 |
@@ -38,7 +38,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-38 | instrument: level transmitter (radar 80 GHz x86) | 86 | 9 | 10 % min 1 |
 | building block | OF-39 | instrument: gas detector, H2 (catalytic bead + IR backup x38) | 38 | 4 | 10 % min 1 |
 | building block | OF-40 | instrument: gas detector, O2 deficiency (electrochemical O2 x24) | 24 | 3 | 10 % min 1 |
-| building block | OF-41 | instrument: gas detector, Cl2 / HCl (electrochemical Cl2 and HCl x44) | 44 | 5 | 10 % min 1 |
+| building block | OF-41 | instrument: gas detector, Cl2 / HCl (electrochemical Cl2 and HCl x42) | 42 | 5 | 10 % min 1 |
 | building block | OF-42 | instrument: temperature element (SIF, independent) (Pt100 class A x14) | 14 | 2 | 10 % min 1 |
 | building block | OF-43 | instrument: gas detector, O2 enrichment (electrochemical O2 x12) | 12 | 2 | 10 % min 1 |
 | building block | OF-44 | instrument: gas detector, CO (electrochemical CO x22) | 22 | 3 | 10 % min 1 |

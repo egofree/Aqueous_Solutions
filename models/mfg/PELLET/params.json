@@ -20,7 +20,7 @@
  "internals": "none",
  "design": {
   "machine": "underwater die-face pelletizer",
-  "rate_kg_d": 0.305449,
+  "rate_kg_d": 0.262196,
   "pellet_mm": "2-4"
  },
  "nozzles": [

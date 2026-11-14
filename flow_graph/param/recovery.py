@@ -38,11 +38,10 @@ WASTE_IN = {   # received waste streams: the plant's designed feed classes (A-M-
 WATER_IN = {   # water make-ups at the dock boundary
     'IA-H2O-MU',
 }
-# pending imports with the task that retires each (F-20261110-07: the exemption dies with its task)
+# pending imports with the task that retires each (F-20261110-07: the exemption dies with its task).
+# IA-ALCL3-MU left this table with X-QA-19 closed by sizing, not by exemption: the Al line is sized to the
+# recoverable aluminium (A-M-495) and the import is retired, so there is no pending entry left to keep alive.
 PENDING = {
-    'IA-ALCL3-MU': ('X-QA-19', 'anhydrous AlCl3 top-up after the on-site recovery of the leach reactive-Al hydroxide cake '
-                    '(F-20261110-07): a process-chemical import, not a mining waste; the full on-site replacement needs a '
-                    'carbon source beyond the pyrolysis char pool or a smaller Al line'),
     'IA-MGCL2-MU': ('X-QA-11', 'CaCl2-MgCl2 brine make-up that restores the Kroll drag-out (A-M-284); a process-chemical '
                     'import, not a mining waste; the on-site salt recovery route is the X-QA-11 program'),
     'IA-CACL2-MU': ('X-QA-11', 'CaCl2 brine make-up of the CA_POT (A-M-284); as IA-MGCL2-MU, a process chemical pending the '

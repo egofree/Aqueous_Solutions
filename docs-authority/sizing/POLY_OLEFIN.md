@@ -9,7 +9,7 @@ Authority: graph + params.design: vessel=vertical cylindrical oligomerization re
 params.design: vessel=vertical cylindrical oligomerization reactor, D_mm=150, H_mm=225, wall_mm=3.8, T_C=250.0, P_MPa=5.0 | envelope 600 x 600 x 1200 mm, state live | size check: fits
 
 ## 2. Geometry
-Envelope (params.envelope): 600 x 600 x 1200 mm, state per stamp. Working volume 0.001 m3; vessel D 0.117997 x H 0.176995 mm (upright, H/D 1.5).
+Envelope (params.envelope): 600 x 600 x 1200 mm, state per stamp. Working volume 0.001 m3; vessel D 0.113533 x H 0.1703 mm (upright, H/D 1.5).
 
 ## 3. Material
 PE/rotomoulded (default per AQS-STD-002 M2).

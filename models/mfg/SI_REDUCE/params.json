@@ -20,9 +20,9 @@
  "internals": "none",
  "design": {
   "duty": "carbothermic silicon reduction: the briquetted crib-silicate burden and the pyrolysis char -> metallurgical-grade silicon for the CZ charge (route si_refine.py, A-M-472)",
-  "si_kgd": 0.2044,
-  "sio2_kgd": 0.4373,
-  "char_kgd": 0.1748,
+  "si_kgd": 0.2029,
+  "sio2_kgd": 0.434,
+  "char_kgd": 0.1735,
   "service": "SI_REDUCE: carbothermic silicon reduction for the PV cell line (SOLAR_PV_CELL draws 1.8 kg/d Si); dry hot face (duty sections 1 and 3)",
   "material": "graphite hot face, alumina brick backup, mild-steel casing",
   "ca_mm": 1.5,

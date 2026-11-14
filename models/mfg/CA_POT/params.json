@@ -34,12 +34,12 @@
  "design": {
   "service": "molten CaCl2 electrolysis cell, 700 C",
   "chemistry": "CaCl2 -> Ca + Cl2",
-  "feed_kg_d": 0.1525,
-  "metal_kg_d": 0.0551,
-  "cl2_kg_d": 0.0974,
-  "I_A": 3.61,
+  "feed_kg_d": 0.1161,
+  "metal_kg_d": 0.0419,
+  "cl2_kg_d": 0.0742,
+  "I_A": 2.75,
   "cell_V": 4.2,
-  "dc_kW": 0.0152,
+  "dc_kW": 0.0115,
   "hold_kW": 0.1069,
   "connected_kW": 1,
   "bath_T_C": 700.0,
@@ -119,6 +119,22 @@
    "service": "CaCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N8",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "pot byproduct chlorine for the phosgenation",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N9",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "chlorine make-up of the chlorosilane loop",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "Graphite anodes, steel cathode rods carrying the solid Ca deposit to the tap work order; 90 % alumina backup lining + ceramic-fibre in a mild-steel shell",

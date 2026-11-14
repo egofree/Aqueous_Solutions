@@ -28,7 +28,7 @@ This page describes how the plant makes, stores, uses and ships methanol. It cov
 ## 3. Storage, use and product
 
 `MEOH_TANK` holds the methanol from both sources. It feeds the methanol fuel cell `MEOH_FC` with 6.28 kg/d, supplies methanol as a carbon source to the fluoropolymer syntheses `VDF_SYN` and `TFE_SYN`, and sends the remainder to the product store `PROD_MEOH`. The product, 28.58 kg/d, is shipped at the north dock, so the carbon leaves the plant as product rather than as a vent.
-`MEOH_FC` has a continuous output of 1.0 kW. It feeds direct current to the battery side of the inverters `SOL_ARK_60K` (stream S79), alongside the hydrogen fuel cell, and its heat to the Q4 header `Q4_BUS` (stream S80). Its carbon dioxide returns to `CRYO_CO2` (stream S82) and its condensate to `MEOH_COND` (stream S81). It never feeds the generator port of the inverters or a rectifier bus.
+`MEOH_FC` has a continuous output of 0.5 kW. It feeds direct current to the battery side of the inverters `SOL_ARK_60K` (stream S79), alongside the hydrogen fuel cell, and its heat to the Q4 header `Q4_BUS` (stream S80). Its carbon dioxide returns to `CRYO_CO2` (stream S82) and its condensate to `MEOH_COND` (stream S81). It never feeds the generator port of the inverters or a rectifier bus.
 `MEOH_COND` condenses the water from the synthesis and the fuel cell and returns it to the water tower `ROOF_TANK`.
 
 ## 4. Streams
@@ -61,7 +61,7 @@ Table 4.1. Methanol train streams
 | S76 | `MEOH_TANK` | `MEOH_FC` | MeOH fuel | 5 kg/d |
 | S77 | `MEOH_FERM` | `MEOH_TANK` | biogenic MeOH | 0.0146 kg/d |
 | S78 | `HABITATION` | `MEOH_FERM` | ferment feed | 0.36 kg/d |
-| S79 | `MEOH_FC` | `SOL_ARK_60K` | MEOH DC | 1 kW |
+| S79 | `MEOH_FC` | `SOL_ARK_60K` | MEOH DC | 0.5 kW |
 | S80 | `MEOH_FC` | `Q4_BUS` | heat < 80 °C | 0.369 kW |
 | S81 | `MEOH_FC` | `MEOH_COND` | MeOH FC condensate | 7.25 kg/d |
 | S82 | `MEOH_FC` | `CRYO_CO2` | CO₂ return from MeOH FC | 8.63 kg/d |

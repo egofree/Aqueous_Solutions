@@ -25,10 +25,10 @@
   "crucible_kg": 10.0,
   "crucible_D_mm": 110.0,
   "crucible_H_mm": 165,
-  "heats_d": 4,
+  "heats_d": 3,
   "connected_kW": 25.0,
   "peak_kW": 15.0,
-  "melt_kWh_d": 21.244,
+  "melt_kWh_d": 15.763,
   "lining": "ceramic-fibre hot face 150 mm + 4 mm CS casing (study)",
   "bath_T_C": 1100.0
  },

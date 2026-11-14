@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.8493 kg/d. Mass out 0.8493 kg/d. Electrical duty 0.1130 kW. In: CHAR_TO_SI 0.1748 kg/d (pyrolysis char reductant); IA-SI-HOOD-O2 0.2329 kg/d (oxygen of the hood air that burns the furnace carbon monoxide); IA-SI-BRIQ 0.4415 kg/d (briquetted crib silicate recovered from the leach feed, furnace burden (A-M-490)). Out: IA-SI-CO2 0.6407 kg/d (carbon dioxide of the burned furnace gas); IA-SI-MG 0.2086 kg/d (metallurgical-grade silicon).
+1. Basis. Mass in 0.8429 kg/d. Mass out 0.8429 kg/d. Electrical duty 0.1121 kW. In: CHAR_TO_SI 0.1735 kg/d (pyrolysis char reductant); IA-SI-HOOD-O2 0.2312 kg/d (oxygen of the hood air that burns the furnace carbon monoxide); IA-SI-BRIQ 0.4382 kg/d (briquetted crib silicate recovered from the leach feed, furnace burden (A-M-490)). Out: IA-SI-CO2 0.6358 kg/d (carbon dioxide of the burned furnace gas); IA-SI-MG 0.207 kg/d (metallurgical-grade silicon).
 
 2. Size.
 - Envelope 1200×1000×1600 mm, 1.92 m³.

@@ -105,7 +105,7 @@ STREAMS = (('IA-QUARTZ-MU', 'NORTH_DOCK', 'SI_REDUCE', 'quartz ore for the silic
            ('IA-SI-CO2', 'SI_REDUCE', 'ATMOS', 'carbon dioxide of the burned furnace gas', 'G', {'CO2': 1.0}, 'co2_kg_d'),
            ('IA-SI-FUME', 'SI_REDUCE', 'LEACH_CSTR_1', 'silica fume not briquetted back into the burden (1 - si_fume_burden_frac)', 'S', {'SiO2': 1.0}, 'fume_leach_kg_d'),
            ('IA-SI-MG', 'SI_REDUCE', 'SI_REFINE', 'metallurgical-grade silicon', 'S', {'Si': 1.0}, 'mg_kg_d'),
-           ('IA-CL2-SIREF', 'AL_POT', 'SI_REFINE', 'chlorine make-up of the chlorosilane loop', 'G', {'Cl2': 1.0}, 'cl2_kg_d'),
+           ('IA-CL2-SIREF', 'CA_POT', 'SI_REFINE', 'chlorine make-up of the chlorosilane loop', 'G', {'Cl2': 1.0}, 'cl2_kg_d'),
            ('IA-SI-PURGE', 'SI_REFINE', 'LEACH_CSTR_1', 'impurity-chloride bleed with the end-of-life separation residue', 'L', None, 'purge_kg_d'),
            ('IA-PV-EOL', 'PV_ARRAY', 'SI_REFINE', 'silicon of the cells retired from end-of-life modules, crushed, to the chlorosilane loop', 'S', {'Si': 1.0}, 'eol_in_kg_d'),
            ('IA-SI-EG', 'SI_REFINE', 'METAL_STORE', 'electronic-grade silicon for the CZ charge', 'S', {'Si': 1.0}, 'eg_kg_d'))
@@ -121,12 +121,11 @@ WHY = {'quartz_kg_d': 'the burden shortfall left after the recovered crib silica
 def tf(g, d=None):
     from flow_graph.param.o2_close import _edge, _node
     r = design(d, g); N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}
-    sh = E.get('IA-CL2-SHIP')                                  # the pot chlorine export is net of this make-up (foundry_poly.py); keep it net when
-    if sh is not None and (sh.get('params') or {}).get('si_cl2_kg_d') is not None:   # the cell need moves the make-up after foundry_poly ran (A-M-484)
+    sh = E.get('IA-CA-CL2-SHIP')                               # the CA_POT chlorine export is net of this make-up (foundry_poly.py); keep it net when
+    if sh is not None and (sh.get('params') or {}).get('si_cl2_kg_d') is not None:   # the cell need moves the make-up after foundry_poly ran (A-M-484; the source moved from AL_POT to CA_POT when the AL_POT chlorine closed on the cake chlorination, X-QA-19)
         dl = sh['params']['si_cl2_kg_d'] - r['cl2_kg_d']
         if dl:
-            sh['rate']['value'] = round(sh['rate']['value'] + dl, 6); sh['params']['base_kg_d'] = round(sh['params']['base_kg_d'] + dl, 6)
-            sh['params']['si_cl2_kg_d'] = r['cl2_kg_d']
+            sh['rate']['value'] = round(sh['rate']['value'] + dl, 6); sh['params']['si_cl2_kg_d'] = r['cl2_kg_d']
     if 'SI_REFINE' not in N:
         n = _node('SI_REFINE', 'GLASS', 'reactor', None, 'Electronic-grade silicon refining (A-M-472).', {})
         n['notes'] = 'Electronic-grade silicon refining: chlorosilane loop on metallurgical silicon from SI_REDUCE (A-M-472).'
@@ -203,7 +202,7 @@ def main():
     """Silicon-route stage of the regen manifest (A-M-472): the family-4 graph writes, re-homed
     from the audit's balance.py to this stage. Order inside the pass: the wafer/litho/PV edges of
     fab_silicon.tf first (their silicon need sizes this loop), then the SI_REDUCE / SI_REFINE
-    route and its chlorine make-up netting. foundry_poly seeds IA-CL2-SHIP with the make-up it
+    route and its chlorine make-up netting. foundry_poly seeds IA-CA-CL2-SHIP with the make-up it
     computed and this stage moves the export if the need moved after it (successive substitution)."""
     g = json.load(open(GP)); d = DR.load()
     fab_silicon.tf(g, d)

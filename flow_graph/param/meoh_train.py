@@ -1,12 +1,14 @@
 """Unit task 02 for the two unsized methanol-train units (AQS-DUTY-077): MEOH_COND (water
 recovery condenser / knock-out pot on the synthesis-loop and fuel-cell water streams to
-ROOF_TANK) and MEOH_FC (the indirect-methanol fuel cell at its issued 1.0 kW_e duty).
+ROOF_TANK) and MEOH_FC (the indirect-methanol fuel cell: installed 1.0 kW_e stack, continuous
+book 0.5 kW_e per the Q-039 owner ruling, 2026-11-13).
 MEOH_COND: condense the water vapour carried by IA-MEOH-H2O (synthesis loop, 19.47 kg/d) and
 S81 (fuel-cell water, 7.25 kg/d) at the loop dew point; duty = sensible + latent (IAPWS_IF97
 latent 2257 kJ/kg class at near-atmospheric dew); area at U 1.2 kW/m2 K (water-vapour
 condensing on water, PERRY9 sec. 11) with a 17 K LMTD at cooling water 25/35 C against
 60/40 C condensation; vessel = knock-out pot ahead of the condensate drain (30 s vapour residence for
-entrainment or one day of condensate, whichever is larger; H/D 2, DN grid). MEOH_FC: stack from the issued duty at a cell
+entrainment or one day of condensate, whichever is larger; H/D 2, DN grid). MEOH_FC: stack from the installed
+rating at a cell
 point (0.60 V, 0.30 A/cm2, IEC62282_3_100 module class; registered), reformer + aftercooler
 from the methanol draw (5.0 kg/d, PERRY9 properties); envelope unchanged (issued). No rates
 change on the graph. Run: python3 -m flow_graph.param.meoh_train [--write]"""
@@ -43,21 +45,32 @@ def design(d, g):
                 drum_L=round(vdrum * 1000, 2), D_mm=D, H_mm=H, to='condensate to ROOF_TANK (IA-MEOH-COND)',
                 material='316L shell and coil (methanol/water traces)', note='knock-out pot + condenser on the same skid')
     # ---- MEOH_FC -------------------------------------------------------------------------------
-    p_el = ev('S79')                                                                 # kW_e issued on the graph
-    n_cells = math.ceil(p_el * 1000.0 / (v(MK + 'MEOH_FC.cell_V') * v(MK + 'MEOH_FC.cell_A_cm2') * v(MK + 'MEOH_FC.j_A_cm2')))
+    # Q-039 owner ruling (2026-11-13): the continuous book re-locks at the fuel-supported class.
+    # S79 carries 0.5 kW electric at the settled S76 feed (5.0 kg/d x 19.9 MJ/kg LHV x 0.5085
+    # voltage efficiency at the A-M-312 0.6 V/cell point = 0.586 kW supported on S76 alone; 0.735 kW
+    # on the full 6.28 kg/d burn). The installed stack stays the 1.0 kW / 28-cell hardware rating
+    # (2 x 0.5 kW SI-DMFC-01 bank modules, AQS-REQ-KW-001) as standby capability; the 1-2-module
+    # peak headroom is dispatch, not a continuous fuel book. The stack is sized from the installed
+    # rating; the continuous book rides S79.
+    p_cont = ev('S79')                   # kW_e continuous book, fuel-supported class (Q-039)
+    installed_kWe = 1.0                  # installed hardware class (owner lock, Q-039; SI-DMFC-01 bank 2 x 0.5 kW)
+    n_cells = math.ceil(installed_kWe * 1000.0 / (v(MK + 'MEOH_FC.cell_V') * v(MK + 'MEOH_FC.cell_A_cm2') * v(MK + 'MEOH_FC.j_A_cm2')))
     a_stack = v(MK + 'MEOH_FC.cell_A_cm2') / 10000.0
     meoh = ev('S76')                                                                 # kg/d methanol draw
     lhv = v(MK + 'MEOH_FC.meoh_LHV_MJ_kg')
-    fc = dict(rated_kWe=p_el, methanol_kg_d=meoh, air_O2_kg_d=round(ev('IA-FC-AIR'), 4),
+    fc = dict(rated_kWe=installed_kWe, continuous_kW=p_cont,
+              methanol_kg_d=meoh, air_O2_kg_d=round(ev('IA-FC-AIR'), 4),
               water_kg_d=round(ev('S81'), 4), CO2_kg_d=round(ev('S82'), 4),
               heat_kW=round(ev('S80'), 4), n_cells=n_cells, cell_V=v(MK + 'MEOH_FC.cell_V'),
               j_A_cm2=v(MK + 'MEOH_FC.j_A_cm2'), cell_A_cm2=v(MK + 'MEOH_FC.cell_A_cm2'),
               stack_area_m2=round(n_cells * a_stack, 4), methanol_energy_kW=round(meoh * lhv / 86.4, 3),
-              basis=f'rated graph duty S79; cell point {v(MK + "MEOH_FC.cell_V")} V at {v(MK + "MEOH_FC.j_A_cm2")} A/cm2, {v(MK + "MEOH_FC.cell_A_cm2")} cm2 cells '
-                    f'({cite("IEC62282_3_100")} module class); methanol LHV {lhv} MJ/kg ({cite("PERRY9")})',
+              basis=f'installed stack {installed_kWe} kW (SI-DMFC-01 bank, 2 x 0.5 kW modules, standby per the '
+                    f'Q-039 owner ruling 2026-11-13); cell point {v(MK + "MEOH_FC.cell_V")} V at {v(MK + "MEOH_FC.j_A_cm2")} A/cm2, '
+                    f'{v(MK + "MEOH_FC.cell_A_cm2")} cm2 cells ({cite("IEC62282_3_100")} module class); methanol LHV {lhv} MJ/kg ({cite("PERRY9")})',
               material='PEM stack, 316L reformer shell (Cu/ZnO class catalyst), PTFE gaskets',
-              note='skid at the issued 1800 x 800 x 1600 mm envelope; S79 is the rated electric point - the methanol draw '
-                   '(S76) supports about 0.5 kW_e continuous, so the skid runs at part load on the dispatch schedule; '
+              note='skid at the issued 1800 x 800 x 1600 mm envelope; the continuous book is 0.5 kW_e on S79 '
+                   '(Q-039 owner ruling 2026-11-13, fuel-limited at the settled S76 feed) and the installed 1.0 kW rating '
+                   'is standby capability, so the skid runs at part load on the dispatch schedule; '
                    'the species edges (O2, CO2, water) close on the graph')
     return {'MEOH_COND': cond, 'MEOH_FC': fc}
 
@@ -85,10 +98,12 @@ def write_doc(d, R):
           f'(60/40 C condensing against 25/35 C cooling water): {c["area_m2"]} m2 = {c["tube"]}. Knock-out pot {c["drum_L"]} L (30 s vapour residence or the daily condensate, {cite("PERRY9")} entrainment class), '
           f'D{c["D_mm"]} x {c["H_mm"]} mm (H/D {d_hd}). {c["note"]}.', '',
           '## MEOH_FC - indirect methanol fuel cell', '',
-          f'Rated {f["rated_kWe"]} kW_e on S79 at the issued methanol draw {f["methanol_kg_d"]} kg/d (S76), O2 {f["air_O2_kg_d"]} kg/d, '
-          f'water {f["water_kg_d"]} kg/d, CO2 {f["CO2_kg_d"]} kg/d, reject heat {f["heat_kW"]} kW to Q4_BUS (S80). Stack: {f["n_cells"]} cells of '
-          f'{f["cell_A_cm2"]} cm2 at {f["cell_V"]} V and {f["j_A_cm2"]} A/cm2 ({f["n_cells"] * f["cell_A_cm2"] / 10000.0:.3f} m2 active), '
-          f'{f["basis"]}. The methanol draw carries {f["methanol_energy_kW"]} kW thermal (LHV), so the rated point runs at part load on the dispatch schedule; '
+          f'The installed stack is {f["rated_kWe"]} kW_e: {f["n_cells"]} cells of {f["cell_A_cm2"]} cm2 at {f["cell_V"]} V and {f["j_A_cm2"]} A/cm2 '
+          f'({f["n_cells"] * f["cell_A_cm2"] / 10000.0:.3f} m2 active); {f["basis"]}. The continuous book is {f["continuous_kW"]} kW_e on S79 '
+          f'(Q-039 owner ruling 2026-11-13): the methanol draw of {f["methanol_kg_d"]} kg/d (S76) carries {f["methanol_energy_kW"]} kW thermal (LHV), '
+          f'which at the cell point supports 0.586 kW electric on S76 alone and 0.735 kW on the full 6.28 kg/d burn, so the installed rating runs at '
+          f'part load on the dispatch schedule and its headroom is standby capability, not a continuous fuel book. At the booked point the cell draws '
+          f'O2 {f["air_O2_kg_d"]} kg/d, water {f["water_kg_d"]} kg/d, CO2 {f["CO2_kg_d"]} kg/d return and reject heat {f["heat_kW"]} kW to Q4_BUS (S80); '
           f'{f["note"]}.', '',
           'Both units sit on the methanol skid row (AQS-PLACE-SEED-001); no graph rate changes. Open: the fuel-cell stack polarisation follows the '
           'issued duty; a bench polarisation set replaces the cell-point assumption at the first article (registered).']

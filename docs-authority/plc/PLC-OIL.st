@@ -40,8 +40,8 @@ VAR
   PROD_C29PT-01_PV : REAL ;  (* no design pressure on the graph )
   PROD_C29TE-01_PV : REAL ;  (* band by service )
   PROD_C5_C10FT-01_PV : REAL ;  (* CUT-1-OUT normal 0.00 L/h )
-  PROD_C5_C10FT-02_PV : REAL ;  (* IA-C5-SHIP normal 0.31 L/h )
-  PROD_C5_C10FT-03_PV : REAL ;  (* IA-C5-POLY normal 0.02 L/h )
+  PROD_C5_C10FT-02_PV : REAL ;  (* IA-C5-SHIP normal 0.32 L/h )
+  PROD_C5_C10FT-03_PV : REAL ;  (* IA-C5-POLY normal 0.01 L/h )
   PROD_C5_C10LT-01_PV : REAL ;  (* A-M-182 liquid height )
   PROD_C5_C10PT-01_PV : REAL ;  (* no design pressure on the graph )
   PROD_C5_C10TE-01_PV : REAL ;  (* band by service )
@@ -232,16 +232,16 @@ END_VAR
   PROD_C5_C10FT-01_ALARM_HI := 0.0 ;  (* expected-zero state: any positive PV alarms )
 
   (* FLOW control loop - set-point from the graph basis *)
-  PROD_C5_C10FT-02_SP := 0.31 ;  (* graph basis: IA-C5-SHIP normal 0.31 L/h )
+  PROD_C5_C10FT-02_SP := 0.32 ;  (* graph basis: IA-C5-SHIP normal 0.32 L/h )
   FB_PI_PROD_C5_C10FT-02( PV := PROD_C5_C10FT-02_PV, SP := PROD_C5_C10FT-02_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  PROD_C5_C10FT-02_ALARM_HI := 0.341 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  PROD_C5_C10FT-02_ALARM_LO := 0.279 ;
+  PROD_C5_C10FT-02_ALARM_HI := 0.35200000000000004 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  PROD_C5_C10FT-02_ALARM_LO := 0.28800000000000003 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  PROD_C5_C10FT-03_SP := 0.02 ;  (* graph basis: IA-C5-POLY normal 0.02 L/h )
+  PROD_C5_C10FT-03_SP := 0.01 ;  (* graph basis: IA-C5-POLY normal 0.01 L/h )
   FB_PI_PROD_C5_C10FT-03( PV := PROD_C5_C10FT-03_PV, SP := PROD_C5_C10FT-03_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  PROD_C5_C10FT-03_ALARM_HI := 0.022000000000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  PROD_C5_C10FT-03_ALARM_LO := 0.018000000000000002 ;
+  PROD_C5_C10FT-03_ALARM_HI := 0.011000000000000001 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  PROD_C5_C10FT-03_ALARM_LO := 0.009000000000000001 ;
 
   (* LEVEL monitoring block - indication, no set-point invented )
   FB_AI_PROD_C5_C10LT-01( PV := PROD_C5_C10LT-01_PV );

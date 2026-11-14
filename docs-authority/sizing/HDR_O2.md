@@ -9,7 +9,7 @@ Authority: graph + params.design: service=O2 header (ASU/receiver in; fuel cell,
 params.design: service=O2 header (ASU/receiver in; fuel cell, peroxide, genset, afterburner, product draws), kind=gas, flow_kg_s=0.0005, duty_kW=None, rho_kg_m3=1.2041, Q_m3_s=0.0004 | envelope  mm, state None | size check: fits
 
 ## 2. Geometry
-Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 0.085 m3; vessel D 0.561668 x H 0.842503 mm (upright, H/D 1.5).
+Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 0.086 m3; vessel D 0.562201 x H 0.843302 mm (upright, H/D 1.5).
 
 ## 3. Material
 PE/rotomoulded (default per AQS-STD-002 M2).

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 436 kg/d. Mass out 430.4 kg/d. Electrical duty 0.0000 kW. In: IA-N2-VENT 17.61 kg/d (nitrogen vent); IA-NA-PURGE 0.642 kg/d (sodium chloride bleed of the leach purge (impurity bleed)); IA-C5-SHIP 7.534 kg/d (C5-C10 product shipped); IA-C11-SHIP 1.512 kg/d (C11-C18 surplus shipped); 18 more. Out: IA-H2O-MU 331.6 kg/d (water make-up for H and O leaving as product); IA-AIR-IN 0 kg/d (intake air); IA-CAF2-MU 0.3255 kg/d (fluorspar make-up, acid-spar class >= 97 % CaF2); IA-ALCL3-MU 24.05 kg/d (anhydrous AlCl3 top-up feed (process-chemical import, pending class, task X-QA-19)); 13 more.
+1. Basis. Mass in 412.1 kg/d. Mass out 406.5 kg/d. Electrical duty 0.0000 kW. In: IA-N2-VENT 17.61 kg/d (nitrogen vent); IA-NA-PURGE 0.642 kg/d (sodium chloride bleed of the leach purge (impurity bleed)); IA-C5-SHIP 7.577 kg/d (C5-C10 product shipped); IA-C11-SHIP 1.512 kg/d (C11-C18 surplus shipped); 17 more. Out: IA-H2O-MU 331.8 kg/d (water make-up for H and O leaving as product); IA-AIR-IN 0 kg/d (intake air); IA-CAF2-MU 0.3255 kg/d (fluorspar make-up, acid-spar class >= 97 % CaF2); IA-MGCL2-MU 0.03978 kg/d (CaCl2-MgCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)); 12 more.
 
 2. Size.
 - No mass throughput. No volume is invented.

@@ -142,7 +142,7 @@ STREAMS = (('IA-RESIST-BZ', 'PROD_C5_C10', 'RESIST_SYN', 'C5-C10 cut to the benz
            ('IA-RESIST-NH3', 'WS_AMMONIA', 'RESIST_SYN', 'ammonia for the nitrous acid and the ester scavenger', 'L', {'NH3': 1.0}, 'nh3_kg_d'),
            ('IA-RESIST-H2', 'HDR_H2', 'RESIST_SYN', 'header hydrogen for the nitroso reduction', 'G', {'H2': 1.0}, 'h2_kg_d'),
            ('IA-RESIST-CO', 'TI_CELL', 'RESIST_SYN', 'chlorinator carbon monoxide for the phosgenation', 'G', {'CO': 1.0}, 'co_kg_d'),
-           ('IA-RESIST-CL2', 'AL_POT', 'RESIST_SYN', 'pot chlorine for the phosgenation', 'G', {'Cl2': 1.0}, 'cl2_kg_d'),
+           ('IA-RESIST-CL2', 'CA_POT', 'RESIST_SYN', 'pot byproduct chlorine for the phosgenation', 'G', {'Cl2': 1.0}, 'cl2_kg_d'),
            ('IA-RESIST-ACID', 'ACID_PLANT', 'RESIST_SYN', 'sulfuric acid for the naphthol sulfonation', 'L', {'H2SO4': 1.0}, 'acid_kg_d'),
            ('IA-RESIST-ACET', 'WS_SOLV', 'RESIST_SYN', 'acetone for the diacetone alcohol casting solvent', 'L', {'acetone': 1.0}, 'acetone_kg_d'),
            ('IA-RESIST-AIR', 'ATMOS', 'RESIST_SYN', 'process air for the oxidations', 'G', {'air': 1.0}, 'air_kg_d'),
@@ -167,7 +167,7 @@ def tf(g, E, d=None):
         if sid not in E:
             e = _edge(sid, a, b, ph, ['mass'], carries, r[key], 'kg/d', N[a]['sector_id'], N[b]['sector_id'], comp, '')
             g['edges'].append(e); E[sid] = e
-        E[sid].update(carries=carries, presence='present', composition=comp)
+        E[sid].update(from_unit_id=a, to_unit_id=b, carries=carries, presence='present', composition=comp)
         _set(E, sid, r[key], f"{TAG}: {key.replace('_kg_d', '')} = {r[key]:.6f} kg/d (fab_resist.py, route {r['route']}).")
     E['IA-RESIST-VENT']['composition'] = {'N2': 0.75, 'O2': 0.24, 'CO2': 0.01}
     # recovery-first record (F-20261110-07 loss check): the phosgenation of the sulfonyl chloride
@@ -183,7 +183,9 @@ def tf(g, E, d=None):
                                 'the reactor off-gas vents to atmosphere (A-M-482)')],
         note='the off-gas carbon leaves with the batch vent; the element mass balance closes (F-20261110-07 loss check)')]
     # shared edges give up what RESIST_SYN takes (each is re-rated upstream in the same pass)
-    for sid, key, why in (('IA-CL2-SHIP', 'cl2_kg_d', 'IA-RESIST-CL2'), ('IA-KROLL-CO', 'co_kg_d', 'IA-RESIST-CO'), ('IA-C5-SHIP', 'bz_cut_kg_d', 'IA-RESIST-BZ')):
+    # (IA-CA-CL2-SHIP, X-QA-19: the AL_POT chlorine closes on the cake chlorination, so the byproduct
+    # chlorine draw comes off the CA_POT dock export, A-M-495)
+    for sid, key, why in (('IA-CA-CL2-SHIP', 'cl2_kg_d', 'IA-RESIST-CL2'), ('IA-KROLL-CO', 'co_kg_d', 'IA-RESIST-CO'), ('IA-C5-SHIP', 'bz_cut_kg_d', 'IA-RESIST-BZ')):
         e = E[sid]; e['rate'] = dict(e['rate'], value=round(float(e['rate']['value']) - r[key], 6),
                                      note=e['rate']['note'] + f' Less {r[key]:.6f} kg/d to RESIST_SYN on {why} (A-M-482).')
     _set(E, 'IA-RESIST-RAFF', round(r['bz_cut_kg_d'], 6) + round(r['naph_cut_kg_d'], 6) - round(r['benzene_kg_d'] + r['naphthalene_kg_d'], 6),

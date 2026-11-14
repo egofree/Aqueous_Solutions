@@ -7,7 +7,7 @@ service line: route DNQ_NOVOLAC; starts_d 5; coats_d 40; resist_kg_d 0.12; solid
 Internals: photoresist-synthesis internals per the sizing of the on-site resist route (flow_graph/param/fab_resist.py design and its reaction ledger): the glass-lined batch reactors of the oxychlorination, nitrosation, diazotisation and esterification steps with the oxidiser tubes and the novolac kettle, sized at the coat-rate duties [docs-authority/sizing/RESIST_SYN.md]
 Material: Glass-lined steel batch reactors for the oxychlorination, nitrosation, diazotisation and esterification; 316L for the formaldehyde and ammonia oxidisers, the novolac kettle and the solvent steps; Monel 400 for the dry phosgene and chlorine lines. (continues on the duty sheet)
 
-Nozzles: 18 process connections per docs-authority/nozzles/RESIST_SYN.csv
+Nozzles: 19 process connections per docs-authority/nozzles/RESIST_SYN.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

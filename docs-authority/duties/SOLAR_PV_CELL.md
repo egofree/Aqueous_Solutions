@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.4287 kg/d. Mass out 0.4287 kg/d. Electrical duty 1.4871 kW. In: IA-PV-IN 0.01 kg/d (dopant concentrate); IA-PV-WAFER 0.4187 kg/d (solar wafers to the cell line, from the CZ ingot or the cast block by pv_wafer_route). Out: IA-PV-OUT 0.009999 kg/d (dopant into the wafer fab); IA-PV-CELL 0.4187 kg/d (finished cells to the replacement modules of the roof array).
+1. Basis. Mass in 0.4184 kg/d. Mass out 0.4184 kg/d. Electrical duty 1.4667 kW. In: IA-PV-IN 0.01 kg/d (dopant concentrate); IA-PV-WAFER 0.4084 kg/d (solar wafers to the cell line, from the CZ ingot or the cast block by pv_wafer_route). Out: IA-PV-OUT 0.009999 kg/d (dopant into the wafer fab); IA-PV-CELL 0.4084 kg/d (finished cells to the replacement modules of the roof array).
 
 2. Size.
 - Envelope 2400×1200×1600 mm, 4.61 m³. The box is the machine. It is not a liquid holdup.

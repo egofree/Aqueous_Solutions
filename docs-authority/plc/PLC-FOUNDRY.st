@@ -26,7 +26,7 @@ VAR
   FLUX_PREPPT-01_PV : REAL ;  (* no design pressure on the graph )
   FLUX_PREPTE-01_PV : REAL ;  (* band by service )
   IND_MELTFT-01_PV : REAL ;  (* IND_MELT_TO_CAST normal 0.12 L/h )
-  IND_MELTFT-02_PV : REAL ;  (* IND_TO_CONT normal 1.32 L/h )
+  IND_MELTFT-02_PV : REAL ;  (* IND_TO_CONT normal 0.96 L/h )
   IND_MELTFT-03_PV : REAL ;  (* IND_TO_ATOM normal 0.00 L/h )
   IND_MELTFT-04_PV : REAL ;  (* IND_TO_INV normal 0.08 L/h )
   IND_MELTPT-01_PV : REAL ;  (* no design pressure on the graph )
@@ -69,8 +69,8 @@ VAR
   WAX_PATTERNLT-01_PV : REAL ;  (* A-M-182 liquid height )
   WAX_PATTERNPT-01_PV : REAL ;  (* no design pressure on the graph )
   WAX_PATTERNTE-01_PV : REAL ;  (* band by service )
-  AL_POTIT-01_PV : REAL ;  (* cell current: design I_A 1460.77 A )
-  CA_POTIT-01_PV : REAL ;  (* cell current: design I_A 3.61 A )
+  AL_POTIT-01_PV : REAL ;  (* cell current: design I_A 749.96 A )
+  CA_POTIT-01_PV : REAL ;  (* cell current: design I_A 2.75 A )
   CR_CELLIT-01_PV : REAL ;  (* cell current: design I_A 18.95 A )
   MG_POTIT-01_PV : REAL ;  (* cell current: design I_A 54.89 A )
   MO_CELLIT-01_PV : REAL ;  (* cell current: design I_A 2.57 A )
@@ -184,10 +184,10 @@ END_VAR
   IND_MELTFT-01_ALARM_LO := 0.108 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  IND_MELTFT-02_SP := 1.32 ;  (* graph basis: IND_TO_CONT normal 1.32 L/h )
+  IND_MELTFT-02_SP := 0.96 ;  (* graph basis: IND_TO_CONT normal 0.96 L/h )
   FB_PI_IND_MELTFT-02( PV := IND_MELTFT-02_PV, SP := IND_MELTFT-02_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  IND_MELTFT-02_ALARM_HI := 1.4520000000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  IND_MELTFT-02_ALARM_LO := 1.1880000000000002 ;
+  IND_MELTFT-02_ALARM_HI := 1.056 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  IND_MELTFT-02_ALARM_LO := 0.864 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   IND_MELTFT-03_SP := 0.0 ;  (* graph basis: IND_TO_ATOM normal 0.00 L/h )
@@ -375,16 +375,16 @@ END_VAR
   WAX_PATTERNTE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* CURRENT control loop - set-point from the graph basis *)
-  AL_POTIT-01_SP := 1460.77 ;  (* graph basis: cell current: design I_A 1460.77 A )
+  AL_POTIT-01_SP := 749.96 ;  (* graph basis: cell current: design I_A 749.96 A )
   FB_PI_AL_POTIT-01( PV := AL_POTIT-01_PV, SP := AL_POTIT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  AL_POTIT-01_ALARM_HI := 1606.8470000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  AL_POTIT-01_ALARM_LO := 1314.693 ;
+  AL_POTIT-01_ALARM_HI := 824.9560000000001 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  AL_POTIT-01_ALARM_LO := 674.964 ;
 
   (* CURRENT control loop - set-point from the graph basis *)
-  CA_POTIT-01_SP := 3.61 ;  (* graph basis: cell current: design I_A 3.61 A )
+  CA_POTIT-01_SP := 2.75 ;  (* graph basis: cell current: design I_A 2.75 A )
   FB_PI_CA_POTIT-01( PV := CA_POTIT-01_PV, SP := CA_POTIT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  CA_POTIT-01_ALARM_HI := 3.971 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  CA_POTIT-01_ALARM_LO := 3.249 ;
+  CA_POTIT-01_ALARM_HI := 3.0250000000000004 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  CA_POTIT-01_ALARM_LO := 2.475 ;
 
   (* CURRENT control loop - set-point from the graph basis *)
   CR_CELLIT-01_SP := 18.95 ;  (* graph basis: cell current: design I_A 18.95 A )

@@ -35,11 +35,11 @@ VAR
   BLACK_DIGESTPT-01_PV : REAL ;  (* no design pressure on the graph )
   BLACK_DIGESTTE-01_PV : REAL ;  (* design T 55 C )
   REMINFT-01_PV : REAL ;  (* S26 normal 0.42 L/h )
-  REMINFT-02_PV : REAL ;  (* IA-POT-01 normal 8.56 L/h )
+  REMINFT-02_PV : REAL ;  (* IA-POT-01 normal 8.57 L/h )
   REMINLT-01_PV : REAL ;  (* A-M-182 liquid height )
   REMINPT-01_PV : REAL ;  (* no design pressure on the graph )
   REMINTE-01_PV : REAL ;  (* band by service )
-  VCD_TRAINFT-01_PV : REAL ;  (* S25 normal 14.53 L/h )
+  VCD_TRAINFT-01_PV : REAL ;  (* S25 normal 14.54 L/h )
   VCD_TRAINFT-02_PV : REAL ;  (* S28 normal 0.74 L/h )
   VCD_TRAINFT-03_PV : REAL ;  (* IA-VCD-BD normal 0.28 L/h )
   VCD_TRAINLT-01_PV : REAL ;  (* A-M-182 liquid height )
@@ -238,10 +238,10 @@ END_VAR
   REMINFT-01_ALARM_LO := 0.378 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  REMINFT-02_SP := 8.56 ;  (* graph basis: IA-POT-01 normal 8.56 L/h )
+  REMINFT-02_SP := 8.57 ;  (* graph basis: IA-POT-01 normal 8.57 L/h )
   FB_PI_REMINFT-02( PV := REMINFT-02_PV, SP := REMINFT-02_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  REMINFT-02_ALARM_HI := 9.416000000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  REMINFT-02_ALARM_LO := 7.704000000000001 ;
+  REMINFT-02_ALARM_HI := 9.427000000000001 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  REMINFT-02_ALARM_LO := 7.713 ;
 
   (* LEVEL monitoring block - indication, no set-point invented )
   FB_AI_REMINLT-01( PV := REMINLT-01_PV );
@@ -256,10 +256,10 @@ END_VAR
   REMINTE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* FLOW control loop - set-point from the graph basis *)
-  VCD_TRAINFT-01_SP := 14.53 ;  (* graph basis: S25 normal 14.53 L/h )
+  VCD_TRAINFT-01_SP := 14.54 ;  (* graph basis: S25 normal 14.54 L/h )
   FB_PI_VCD_TRAINFT-01( PV := VCD_TRAINFT-01_PV, SP := VCD_TRAINFT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  VCD_TRAINFT-01_ALARM_HI := 15.983 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  VCD_TRAINFT-01_ALARM_LO := 13.077 ;
+  VCD_TRAINFT-01_ALARM_HI := 15.994 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  VCD_TRAINFT-01_ALARM_LO := 13.086 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   VCD_TRAINFT-02_SP := 0.74 ;  (* graph basis: S28 normal 0.74 L/h )

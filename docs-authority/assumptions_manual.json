@@ -4488,10 +4488,10 @@
  },
  {
   "id": "A-M-261",
-  "value": "14.0 kg/d formed stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1; pot-blocked AQS-SIZE-FOUNDRY lines excluded)",
+  "value": "22.0072 kg/d formed stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 4.1072 + stainless 1.5 + Ti 0.40 + investment castings 2)",
   "units": "kg/d",
   "where": "flow_graph/plant_flow_graph.json: STOCK_TO_MFG, IND_MELT_TO_CAST, IND_TO_CONT, CONT_TO_ROLL/CONT_TO_STOCK, CAST_TO_ROLL, ROLL_TO_STOCK; params.sizing (26 FOUNDRY units)",
-  "basis": "R12: the foundry product demand at the Rev AC bounding case is the AQS-SIZE-FOUNDRY consumable-replacement table restricted to lines the plant can charge today: Cu 3 (bus, windings), Fe 10 (structural, fasteners), Zn/EW 1 (castings, coatings). The Al 8, stainless 1.5 (Cr 0.20 + Mo 0.05), Ti 0.40 and investment-casting 2 kg/d lines are feed-blocked (AQS-DUTY-072 sec. 4) and carry 0 with per-kg tables. Demand side: WAFER_FAB 0 (A-M-257), WIRE_DRAW closes on S57, goods loop closed (IA-MFG-OUT = IA-WEAR)",
+  "basis": "R12: the foundry product demand at the Rev AC bounding case is the AQS-SIZE-FOUNDRY consumable-replacement table restricted to lines the plant can charge today: Cu 3 (bus, windings), Fe 10 (structural, fasteners), Zn/EW 1 (castings, coatings). The Al 8, stainless 1.5 (Cr 0.20 + Mo 0.05), Ti 0.40 and investment-casting 2 kg/d lines are feed-blocked (AQS-DUTY-072 sec. 4) and carry 0 with per-kg tables. Rev: the pot-blocked lines unblocked on the D-DOCK feedstock ruling (A-M-284); the Al line is then sized to the recoverable aluminium under X-QA-19 (A-M-495) when the anhydrous AlCl3 dock import retired. Demand side: WAFER_FAB 0 (A-M-257), WIRE_DRAW closes on S57, goods loop closed (IA-MFG-OUT = IA-WEAR)",
   "sensitivity": "set by K: melt charge S = K + P + r0 with P the shop polymer draw; every 1 kg/d of stock moves the melt charge 1:1, the shop polymer draw by f/(1-f) = 0.0101 kg/d and the melt energy about 0.5 kWh/d (Fe class)",
   "replaced_by": "shop article schedule at the first article (formed-stock draw vs the consumable-replacement table)",
   "task": "R12 foundry/polymers sizing lane 2026-10-18",
@@ -4843,7 +4843,7 @@
   "id": "A-M-285",
   "value": 0.25,
   "units": "kg/d export per kg/d internal line on the Al/Ti/Mo/Cr pot products",
-  "where": "driver foundry_pot_export_frac; Al line 8 + 2.0 export surplus, Ti 0.40 line + export margin, Mo/Cr same class (flow_graph/param/foundry_poly.py); dock metal and chlorine edges (IA-METAL-SHIP, IA-CL2-SHIP, IA-CA-CL2-SHIP)",
+  "where": "driver foundry_pot_export_frac; Al line sized to the recoverable aluminium with its export margin (A-M-495), Ti 0.40 line + export margin, Mo/Cr same class (flow_graph/param/foundry_poly.py); dock metal and chlorine edges (IA-METAL-SHIP, IA-CA-CL2-SHIP)",
   "basis": "AQS-SIZE-FOUNDRY study margin: clean pot surplus exports on its own dock edge on top of the shipped products (O2, MeOH, oil cuts)",
   "sensitivity": "the dock metal export follows the internal line at this margin",
   "replaced_by": "metal dispatch study: contracted offtake vs the 25 % study margin",
@@ -7843,9 +7843,9 @@
  },
  {
   "id": "A-M-472",
-  "value": "The CZ charge is made on site (no imports except waste or raw ore). SI_REDUCE reduces quartz ore with pyrolysis char, SiO2 + 2 C to Si + 2 CO, recovering 80 % of the silica as silicon of 98 % purity at 13 kWh/kg; the CO burns to CO2 in the hood with room air and the silica fume is caught in the baghouse and sent to the acid leach. SI_REFINE refines it on a closed chlorosilane loop, selectable between trichlorosilane on Siemens rods (85 % yield, 60 kWh/kg, 10 % deposited a pass) and silane in a fluidised bed (80 % yield, 20 kWh/kg); the loop bleeds the impurity chlorides (2.2 kg Cl per kg impurity) and the SiCl4 of the unrecovered silicon to the acid leach LEACH_CSTR_1, where it hydrolyses to silica and hydrogen chloride, and takes the chlorine they carry as Cl2 from AL_POT.",
+  "value": "The CZ charge is made on site (no imports except waste or raw ore). SI_REDUCE reduces quartz ore with pyrolysis char, SiO2 + 2 C to Si + 2 CO, recovering 80 % of the silica as silicon of 98 % purity at 13 kWh/kg; the CO burns to CO2 in the hood with room air and the silica fume is caught in the baghouse and sent to the acid leach. SI_REFINE refines it on a closed chlorosilane loop, selectable between trichlorosilane on Siemens rods (85 % yield, 60 kWh/kg, 10 % deposited a pass) and silane in a fluidised bed (80 % yield, 20 kWh/kg); the loop bleeds the impurity chlorides (2.2 kg Cl per kg impurity) and the SiCl4 of the unrecovered silicon to the acid leach LEACH_CSTR_1, where it hydrolyses to silica and hydrogen chloride, and takes the chlorine they carry as Cl2 from the CA_POT byproduct export (the AL_POT chlorine closes on the cake chlorination, A-M-495).",
   "units": "kg/d, kWh/kg, fraction",
-  "where": "flow_graph/param/si_refine.py design() and tf() and the silicon-route stage of flow_graph/param/regen_manifest.json; flow_graph/param/foundry_poly.py IA-CL2-SHIP silicon-loop netting",
+  "where": "flow_graph/param/si_refine.py design() and tf() and the silicon-route stage of flow_graph/param/regen_manifest.json; flow_graph/param/foundry_poly.py IA-CA-CL2-SHIP silicon-loop netting (X-QA-19: moved from the retired IA-CL2-SHIP, A-M-495)",
   "basis": "Owner decision 2026-10-29 (t58u): the plant produces on site, with no imports except waste or raw ore, so the imported polysilicon route is replaced by on-site refining, with a different-technology backup as a selectable option. Carbothermic reduction and the chlorosilane (Siemens and silane) routes are the industrial practice for metallurgical and electronic-grade silicon.",
   "sensitivity": "The refining energy scales with the charge and the route; the chlorine make-up scales with 1 - yield and the impurity content.",
   "replaced_by": "Measured furnace recovery, loop yield, purge assay and energy of the first campaigns",
@@ -8013,11 +8013,11 @@
  },
  {
   "id": "A-M-481",
-  "value": "The chlorine of the VDF and TFE reactors has two built sources, selected by cru_cl2_source. HCL_OX (default): CRU oxidises the dilute HCl returned by the monomer reactors with the chlorate liquor (NaClO3 + 6 HCl -> 3 Cl2 + NaCl + 3 H2O), so the halogen loop closes inside the plant; AL_POT_CL2 stands by at its rated case. POT: AL_POT_CL2 carries the monomer chlorine from the AL_POT byproduct chlorine, taken from the dock export IA-CL2-SHIP, and the HCl returns pass unoxidised to the leach on IA-CRU-01.",
+  "value": "The chlorine of the VDF and TFE reactors has two built sources, selected by cru_cl2_source. HCL_OX (default): CRU oxidises the dilute HCl returned by the monomer reactors with the chlorate liquor (NaClO3 + 6 HCl -> 3 Cl2 + NaCl + 3 H2O), so the halogen loop closes inside the plant; AL_POT_CL2 stands by at its rated case. POT: AL_POT_CL2 carries the monomer chlorine from the pot byproduct chlorine, and the HCl returns pass unoxidised to the leach on IA-CRU-01. Since X-QA-19 (A-M-495) the AL_POT chlorine closes on the cake chlorination and its dock export IA-CL2-SHIP is retired, so the byproduct chlorine leaves on IA-CA-CL2-SHIP: the POT branch of fluoro_train.py still reads the retired edge's base and needs that take-off re-pointed before cru_cl2_source flips to POT.",
   "units": "kg/d",
-  "where": "flow_graph/param/fluoro_train.py; flow_graph/param/foundry_poly.py IA-CL2-SHIP base; flow_graph/param/drivers.json cru_cl2_source",
+  "where": "flow_graph/param/fluoro_train.py; flow_graph/param/foundry_poly.py IA-CL2-SHIP base (retired at 0, X-QA-19) and IA-CA-CL2-SHIP netting; flow_graph/param/drivers.json cru_cl2_source",
   "basis": "Owner decision of 2026-10-30 (both designs behind a driver, default on the merits). HCL_OX is the default because it recovers the HCl returns, a plant waste, into chlorine; on the POT route the same acid would reach the leach as a waste for the sodium hydroxide neutralisation to absorb, and the leach liquor would rise by about the whole HCl return rather than the small net of the oxidation. POT is kept as the backup when the chlorate finish is out of service, and it lowers the chlorine export.",
-  "sensitivity": "AL_POT_CL2 on the POT route equals the monomer chlorine draw, which scales with the VDF and TFE rates; IA-CL2-SHIP falls by the same amount.",
+  "sensitivity": "AL_POT_CL2 on the POT route equals the monomer chlorine draw, which scales with the VDF and TFE rates; the byproduct chlorine export (IA-CA-CL2-SHIP) falls by the same amount.",
   "replaced_by": "Operating experience of the chlorate finish at the first article",
   "task": "QA audit 2026-10-30, X-RTE-AL_POT_CL2",
   "files": [
@@ -8026,7 +8026,7 @@
    "flow_graph/param/drivers.json"
   ],
   "needs_verification": true,
-  "verification_test": "With cru_cl2_source POT, regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CL2-SHIP lower by the same amount, and CRU and AL_POT close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case."
+  "verification_test": "With cru_cl2_source POT (after the take-off re-point to IA-CA-CL2-SHIP is built), regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CA-CL2-SHIP lower by the same amount, and CRU and the pots close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case."
  },
  {
   "id": "A-M-482",
@@ -8247,5 +8247,23 @@
   ],
   "needs_verification": true,
   "verification_test": "flow_graph/param/test_ew_deposit_basis.py merged-option test: the blend books fully and the current-carrying minor-cell count drops under 'merged'; 'selective' restores the committed book"
+ },
+ {
+  "id": "A-M-495",
+  "value": "The aluminium line is sized to the recoverable aluminium (task X-QA-19, owner ruling option a): AL_POT takes only the leach reactive-Al hydroxide cake the design feed yields (AQS-ASSAY-001 reference point, Al 0.050 mass fraction at the held feed rate = 5.1340 kg/d Al, the 14.8424 kg/d cake on IA-AL-CAKE), calcined and carbochlorinated on site with the pot chlorine (Al2O3 + 3 C + 3 Cl2 -> 2 AlCl3 + 3 CO, GREENWOOD) to make the whole AlCl3 electrolysis feed, and serves the AQS-SIZE-FOUNDRY Al stock line at 4.1072 kg/d with the A-M-285 export margin. The anhydrous AlCl3 dock import IA-ALCL3-MU is retired, and with pot metal = cake Al the pot chlorine closes exactly on the chlorination, so the dock chlorine export IA-CL2-SHIP is retired too; the silicon-loop make-up (A-M-472) and the photoresist draw (A-M-482) draw from the CA_POT byproduct export IA-CA-CL2-SHIP instead.",
+  "units": "kg/d",
+  "where": "drivers.json foundry_al_line_kg_d and foundry_stock_demand_kg_d; flow_graph/param/foundry_poly.py IA-AL-CAKE / IA-ALCL3-MU / IA-CL2-SHIP / IA-CA-CL2-SHIP; flow_graph/param/si_refine.py IA-CL2-SIREF; flow_graph/param/fab_resist.py IA-RESIST-CL2",
+  "basis": "Owner ruling on X-QA-19 option (a): size the line to the recoverable aluminium rather than import the AlCl3 shortfall (the rejected option b was an alumina raw-ore route on a new carbon source). The cake's aluminium yield is pure Al(OH)3 stoichiometry on the GREENWOOD/CRC element mass table foundry_poly already uses: 2.891 kg cake per kg Al (34.6 % Al in the cake), the same basis the IA-AL-CAKE edge note carries - no new yield assumption. The pot produces and the chlorination draws the same 3.942 kg Cl2 per kg Al, so the byproduct surplus is exactly zero and the two small chlorine draws (0.0092 silicon loop, 0.0018 photoresist) move to the remaining CA_POT export.",
+  "sensitivity": "The served stock line follows the feed Al assay 1:1 through the cake: a 10 % lower Al fraction starves the line proportionally and fails the closed-loop assert in foundry_poly.apply (the import does not return without an owner decision); the pot AlCl3 throughput and the chlorination chlorine move 4.942 kg and 3.942 kg per kg/d of recovered Al.",
+  "replaced_by": "A weighed leach-feed assay (AQS-ASSAY-001) and the first cake-campaign mass balance",
+  "task": "X-QA-19",
+  "files": [
+   "flow_graph/param/foundry_poly.py",
+   "flow_graph/param/si_refine.py",
+   "flow_graph/param/fab_resist.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.regen (second run changes nothing); python3 -m flow_graph.param.recovery reports no flags with IA-ALCL3-MU absent; cake weigh and assay at the first leach campaign"
  }
 ]

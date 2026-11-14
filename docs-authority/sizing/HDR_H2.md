@@ -9,7 +9,7 @@ Authority: graph + params.design: service=H2 header (EW cathode gas in, dryer an
 params.design: service=H2 header (EW cathode gas in, dryer and trim draws out), kind=gas, flow_kg_s=0.0, duty_kW=None, rho_kg_m3=0.084, Q_m3_s=0.0002 | envelope  mm, state None | size check: fits
 
 ## 2. Geometry
-Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 0.002 m3; vessel D 0.166844 x H 0.250266 mm (upright, H/D 1.5).
+Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 0.002 m3; vessel D 0.166079 x H 0.249118 mm (upright, H/D 1.5).
 
 ## 3. Material
 PE/rotomoulded (default per AQS-STD-002 M2).

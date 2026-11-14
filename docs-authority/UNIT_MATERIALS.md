@@ -108,8 +108,6 @@ No wetted piped stream: every edge of this unit is a solids transfer or an elect
 |---|---|---|---|---|---|
 | AL_POT_CL2 | AL_POT | CRU | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-CL2-SHIP | AL_POT | NORTH_DOCK | P3 | 12.1 process vent gas | PVDF (P3) |
-| IA-RESIST-CL2 | AL_POT | RESIST_SYN | P3 | 12.1 process vent gas | PVDF (P3) |
-| IA-CL2-SIREF | AL_POT | SI_REFINE | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-AL-CO | AL_POT | NORTH_DOCK | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-AL-H2O | AL_POT | ATMOS | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 
@@ -267,6 +265,8 @@ No wetted piped stream: every edge of this unit is a solids transfer or an elect
 |---|---|---|---|---|---|
 | IA-CACL2-MU | NORTH_DOCK | CA_POT | — | 12.2 cacl2/mgcl2 brine concentrates to molten-salt pots (ambient import legs, north_dock to mg_pot and ca_pot) | PVDF wetted handling at ambient, per the AQS-STD-006 pot-cell and brine selections (AQS-STD-002 section 12.1 P3 family practice) |
 | IA-CA-CL2-SHIP | CA_POT | NORTH_DOCK | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-RESIST-CL2 | CA_POT | RESIST_SYN | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-CL2-SIREF | CA_POT | SI_REFINE | P3 | 12.1 process vent gas | PVDF (P3) |
 
 ### CHICKEN_COOP
 
@@ -1668,7 +1668,7 @@ No wetted piped stream: every edge of this unit is a solids transfer or an elect
 | IA-RESIST-NH3 | WS_AMMONIA | RESIST_SYN | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-RESIST-H2 | HDR_H2 | RESIST_SYN | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-RESIST-CO | TI_CELL | RESIST_SYN | P3 | 12.1 process vent gas | PVDF (P3) |
-| IA-RESIST-CL2 | AL_POT | RESIST_SYN | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-RESIST-CL2 | CA_POT | RESIST_SYN | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-RESIST-ACID | ACID_PLANT | RESIST_SYN | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
 | IA-RESIST-ACET | WS_SOLV | RESIST_SYN | M1 | 12.1 organic liquid (solvent make-up) | 316L where wet per the WS_SOLV duty |
 | IA-RESIST-AIR | ATMOS | RESIST_SYN | P3 | 12.1 process vent gas | PVDF (P3) |
@@ -1754,7 +1754,7 @@ No wetted piped stream: every edge of this unit is a solids transfer or an elect
 
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
-| IA-CL2-SIREF | AL_POT | SI_REFINE | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-CL2-SIREF | CA_POT | SI_REFINE | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-SI-PURGE | SI_REFINE | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 
 ### SLEEP_QUARTERS

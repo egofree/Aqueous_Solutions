@@ -18,7 +18,7 @@ This page sizes the tools of the photovoltaic (PV) cell line `SOLAR_PV_CELL` in 
 
 ## 2. Method
 
-The line makes 67.2 cells a day on average (Section 3) in 3 batches of one wafer carrier of 25 wafers. The baths and furnaces are heated once a day and held for each batch; printing, firing and test take a set time per cell. The tools run one after another, so the peak power of the line is that of the largest tool.
+The line makes 65.6 cells a day on average (Section 3) in 3 batches of one wafer carrier of 25 wafers. The baths and furnaces are heated once a day and held for each batch; printing, firing and test take a set time per cell. The tools run one after another, so the peak power of the line is that of the largest tool.
 
 Table 2.1 gives the tools.
 
@@ -30,16 +30,16 @@ Table 2.1. Cell line tools
 | PV-EMIT-01 | POCl3 diffusion, quartz tube 200 mm x 1.0 m, 200 mm ceramic fibre, boat of 210 slots | 3.79 | 7.35 |
 | PV-PSG-01 | HF PSG etch, room temperature PP bath | 0.00 | 0.00 |
 | PV-ARC-01 | PECVD SiNx, parallel-plate RF, 0.37 m2 electrode in a 788 mm chamber, dry vacuum pump | 6.08 | 7.72 |
-| PV-CON-01 | Screen printer and 200 C dryer | 0.70 | 7.84 |
-| PV-FIRE-01 | IR lamp fast-firing furnace | 3.00 | 11.43 |
-| PV-IV-01 | Flash IV tester | 0.10 | 0.56 |
+| PV-CON-01 | Screen printer and 200 C dryer | 0.70 | 7.65 |
+| PV-FIRE-01 | IR lamp fast-firing furnace | 3.00 | 11.15 |
+| PV-IV-01 | Flash IV tester | 0.10 | 0.55 |
 
-The peak power of the line is 6.08 kW. The line uses 35.69 kWh/d, an average of 1.487 kW, or 0.53 kWh per cell. Tool PV-FIRE-01 uses the most energy; running a second batch in the same heat would spread its heat-up over twice as many cells.
+The peak power of the line is 6.08 kW. The line uses 35.20 kWh/d, an average of 1.467 kW, or 0.54 kWh per cell. Tool PV-FIRE-01 uses the most energy; running a second batch in the same heat would spread its heat-up over twice as many cells.
 The heat-up masses, the RF power density, the lamp power and the run times are assumptions until the first article of each tool has been run (A-M-178).
 
 ## 3. Cell need
 
-The line makes the cells that replace the plant's own roof array, PV_ARRAY, whose nameplate on the graph is 2718 kW. A module is replaced when its output has fallen to the end-of-life share of nameplate, which at the median degradation rate gives a life of 40 years (JORDAN_KURTZ2013); random failures add their own share (JORDAN2017). So 2.55 % of the array is replaced each year, 190 W of cells a day. One cell of 148.6 cm2 at an efficiency of 19.0 % gives 2.82 W at the standard irradiance of 1000 W/m2, so the line makes 67.2 cells a day.
+The line makes the cells that replace the plant's own roof array, PV_ARRAY, whose nameplate on the graph is 2651 kW. A module is replaced when its output has fallen to the end-of-life share of nameplate, which at the median degradation rate gives a life of 40 years (JORDAN_KURTZ2013); random failures add their own share (JORDAN2017). So 2.55 % of the array is replaced each year, 185 W of cells a day. One cell of 148.6 cm2 at an efficiency of 19.0 % gives 2.82 W at the standard irradiance of 1000 W/m2, so the line makes 65.6 cells a day.
 
 The cells retired from end-of-life modules return their silicon to the chlorosilane loop of SI_REFINE on IA-PV-EOL, so in steady state the silicon of the cells installed is recovered and the quartz reduced falls by it. The finished cells go to PV_ARRAY on IA-PV-CELL. The module glass, encapsulant, ribbon and frame and the contact pastes are not yet on the graph (task X-RTE-PV-MODULE).
 
@@ -51,9 +51,9 @@ Table 4.1. Wafer routes for the cell line
 
 | Route | Cell | Cells a day | Silicon, g/W | Growth furnace | Status |
 | --- | --- | --- | --- | --- | --- |
-| CZ_PSQ125 | 125 mm semi-square, single crystal, 2.82 W | 67.2 | 6.41 | the existing puller; the charge is pulled every 23 d on this route | built, default |
-| CAST_MC156 | 156.75 mm square, multicrystalline, 4.30 W | 44.1 | 8.65 | a cast furnace in WAFER_FAB: a 19.7 cm block, 12.7 cm high, 11.5 kg each 7 d; held at 2.17 kW, 58 kWh a cast | built, selectable |
-| Larger puller | 156.75 mm full square, single crystal, 4.67 W | 40.6 | — | a second puller for a 210 mm ingot: a 567 mm crucible with a least melt of 92 kg and a hot zone held at 15.9 kW | evaluated, not built |
+| CZ_PSQ125 | 125 mm semi-square, single crystal, 2.82 W | 65.6 | 6.41 | the existing puller; the charge is pulled every 24 d on this route | built, default |
+| CAST_MC156 | 156.75 mm square, multicrystalline, 4.30 W | 43.0 | 8.65 | a cast furnace in WAFER_FAB: a 19.7 cm block, 12.4 cm high, 11.2 kg each 7 d; held at 2.17 kW, 57 kWh a cast | built, selectable |
+| Larger puller | 156.75 mm full square, single crystal, 4.67 W | 39.6 | — | a second puller for a 210 mm ingot: a 567 mm crucible with a least melt of 92 kg and a hot zone held at 15.9 kW | evaluated, not built |
 
 The silicon per watt includes the kerf and what is cropped: the crown, tail and grind of the ingot, and the edges, foot and cap of the block. The semi-square route is the default on the merits: it shares the one puller, the hot zone and the refining with the fab wafers, and its single-crystal cells give more power per unit area and need less silicon per watt. The cast route is built as the second technology because it does not depend on the puller, so the array can still be renewed while the puller is down; it needs its own furnace and crops more of its charge. The larger puller would give the same cells in a larger format at the cost of a second hot zone and a least melt several times the charge of the existing puller, and the 125 mm format meets the need without it, so it is not built.
 

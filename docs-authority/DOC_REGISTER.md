@@ -161,13 +161,13 @@ Table 3.1. Document numbers in use
 | AQS-EQP-GEN-001 | `docs-authority/BACKUP_GEN_EQUIPMENT.md` | D | 2026-10-24 | Backup generator equipment list | current |
 | AQS-EQP-GEO-001 | `docs-authority/GEOTHERMAL_EQUIPMENT.md` | D | 2026-10-24 | Geothermal equipment list | current |
 | AQS-EQP-HAB-001 | `docs-authority/HAB_WATER.md` | B | 2026-09-27 | Habitation water — equipment list | current |
-| AQS-EQP-MEOH-001 | `docs-authority/MEOH_EQUIPMENT.md` | B | 2026-10-25 | Methanol train equipment list | current |
+| AQS-EQP-MEOH-001 | `docs-authority/MEOH_EQUIPMENT.md` | C | 2026-11-13 | Methanol train equipment list | current |
 | AQS-EQP-MFG-001 | `docs-authority/MFG_SHOP_EQUIPMENT.md` | C | 2026-09-28 | MFG shop equipment list | current |
 | AQS-EQP-MFG-MET-001 | `docs-authority/METAL_FORMING_EQUIPMENT.md` | D | 2026-10-01 | Metal-forming equipment list | current |
 | AQS-EQP-NUT-001 | `docs-authority/NUTRIENT_DOSE.md` | B | 2026-09-27 | Nutrient dose / N-P process list | current |
 | AQS-EQP-STUDY-001 | `docs-authority/STUDY_UNITS_STUB.md` | F | 2026-10-01 | Study / deferred units — VCD·remin, ORC, litho, solar, blow-mold, electrode coat | current |
 | AQS-EQP-VENT-001 | `docs-authority/VENT_SCRUB_EQUIPMENT.md` | C | 2026-10-24 | Vent, scrubber and regenerator equipment | current |
-| AQS-ESS-001 | `docs-authority/ESS_DUTY_MATRIX.md` | B | 2026-10-01 | ESS duty matrix — ZnBr₂ / MeOH / pumped hydro (study) | current |
+| AQS-ESS-001 | `docs-authority/ESS_DUTY_MATRIX.md` | C | 2026-11-13 | ESS duty matrix — ZnBr₂ / MeOH / pumped hydro (study) | current |
 | AQS-ESS-002 | `docs-authority/FLOW_BATTERY.md` | — | — | ZnBr2 flow battery | current |
 | AQS-EW-MOD-001 | `docs-authority/EW_MODULE.md` | E | 2026-11-12 | Electrowinning module | current |
 | AQS-FARM-001 | `docs-authority/FARM_DESIGN.md` | A | 2026-10-26 | Farm design: aquaponics, dual root-zone growbeds, poultry, larvae composting | current |
@@ -226,7 +226,7 @@ Table 3.1. Document numbers in use
 | AQS-OPS-001 | `docs-authority/OPERATING_PROCEDURES.md` | A | 2026-10-16 | Operating procedures | current |
 | AQS-OPS-002 | `docs-authority/MAINT_PLAN.md` | A | 2026-10-16 | Maintenance plan | current |
 | AQS-OPS-003 | `docs-authority/SPARES.md` | A | 2026-10-16 | Critical spares list | current |
-| AQS-OQ-001 | `docs-authority/OPEN_QUESTIONS.md` | H | 2026-11-05 | Open questions | current |
+| AQS-OQ-001 | `docs-authority/OPEN_QUESTIONS.md` | I | 2026-11-13 | Open questions | current |
 | AQS-PAR-001 | `docs-authority/PARAMETRIC_MODEL.md` | B | 2026-10-15 | Parametric model | current |
 | AQS-PAR-003 | `docs-authority/BALANCE_RECONCILIATION.md` | E | 2026-10-25 | Mass balance reconciliation | current |
 | AQS-PAR-004 | `docs-authority/GAS_SPECIES.md` | B | 2026-10-15 | Oxygen species ledger | current |
@@ -271,7 +271,7 @@ Table 3.1. Document numbers in use
 | AQS-REM-002 | `docs-authority/internal/REMAINING_CHECKLIST.md` | E | 2026-10-01 | Remaining work checklist | superseded by AQS-PLAN-007 |
 | AQS-REM-BLD-001 | `docs-authority/internal/REMAINING_BLD.md` | Y | 2026-10-01 | Remaining after BLD CAD pass (2026-09-27) | superseded by AQS-PLAN-007 |
 | AQS-REQ-001 | `notes/BINDING_REQ_2026-10-16.md` | A | 2026-10-16 | Binding requirements — fluoropolymers, critical metals, cost basis | current |
-| AQS-REQ-KW-001 | `docs-authority/CONTINUOUS_KW_REQUIREMENTS.md` | B | 2026-10-24 | Continuous power requirements for generation, fuel cells, PV fabrication, cryogenics and manufacturing | current |
+| AQS-REQ-KW-001 | `docs-authority/CONTINUOUS_KW_REQUIREMENTS.md` | C | 2026-11-13 | Continuous power requirements for generation, fuel cells, PV fabrication, cryogenics and manufacturing | current |
 | AQS-REV-H2-001 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | B | 2026-10-15 | Hydrogen embrittlement review | current |
 | AQS-SAF-001 | `docs-authority/HAZOP.md` | A | 2026-10-16 | HAZOP worksheets | current |
 | AQS-SAF-004 | `docs-authority/RELIEF_REGISTER.md` | A | 2026-10-16 | Relief register | current |

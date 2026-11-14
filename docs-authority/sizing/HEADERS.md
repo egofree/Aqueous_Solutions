@@ -9,7 +9,7 @@ Unit task 02 for 8 header-class units. Bore from the concurrent design flow at t
 
 | Unit | Service | DN | ID req mm | Length m | Volume m3 | Hold kg | Connections | Material |
 |---|---|---|---|---|---|---|---|---|
-| HDR_H2 | H2 header (EW cathode gas in, dryer and trim draws out) | DN25 | 5.0 | 20 | 0.0045 | 0.0 | 18 | PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06) |
+| HDR_H2 | H2 header (EW cathode gas in, dryer and trim draws out) | DN25 | 4.9 | 20 | 0.0045 | 0.0 | 18 | PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06) |
 | HDR_O2 | O2 header (ASU/receiver in; fuel cell, peroxide, genset, afterburner, product draws) | DN25 | 8.1 | 20 | 0.0045 | 0.01 | 8 | 316L tube, oxygen-clean per ASTM_G93, socketless |
 | HDR_N2 | plant air / N2 header (receiver in; AHU, afterburner air, reagent sparge draws) | DN32 | 17.3 | 20 | 0.009 | 0.01 | 8 | 316L tube |
 | HDR_CO2 | CO2 header (crew and cold-box in; farm and methanol-synthesis draws) | DN25 | 2.0 | 20 | 0.0045 | 0.01 | 5 | 316L tube |

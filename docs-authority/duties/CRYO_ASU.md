@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 241.6 kg/d. Mass out 241.6 kg/d. Electrical duty 1.7455 kW. In: IA-AIR-IN 0 kg/d (intake air); IA-NOX-CO2 22.78 kg/d (scrubbed CO2 to the cold box); IA-NOX-N2 215.4 kg/d (scrubbed flue nitrogen to the cold box); IA-H2-AIR 0 kg/d (sweep air from the hydrogen hood); 5 more. Out: IA-ASU-N2 213.6 kg/d (nitrogen product); IA-ASU-O2 1.824 kg/d (oxygen product); IA-ASU-CO2 22.78 kg/d (CO2 product); IA-AR-CZ 3.417 kg/d (argon blanket gas for the CZ puller and, on CAST_MC156, the cast furnace).
+1. Basis. Mass in 241.5 kg/d. Mass out 241.5 kg/d. Electrical duty 1.7455 kW. In: IA-AIR-IN 0 kg/d (intake air); IA-NOX-CO2 22.78 kg/d (scrubbed CO2 to the cold box); IA-NOX-N2 215.4 kg/d (scrubbed flue nitrogen to the cold box); IA-H2-AIR 0 kg/d (sweep air from the hydrogen hood); 5 more. Out: IA-ASU-N2 213.6 kg/d (nitrogen product); IA-ASU-O2 1.824 kg/d (oxygen product); IA-ASU-CO2 22.78 kg/d (CO2 product); IA-AR-CZ 3.346 kg/d (argon blanket gas for the CZ puller and, on CAST_MC156, the cast furnace).
 
 2. Size.
 - Column diameter 150 mm. 20 trays × 0.3 m = 6.0 m. The column is a pipe beside the 600×600×800 mm base. Not a packed scrubber.

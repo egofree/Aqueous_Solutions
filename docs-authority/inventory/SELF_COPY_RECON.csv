@@ -2057,16 +2057,16 @@ PF-24,"PVC-U Sch 80 ASTM D1785 DN40 pipe, 7 x 6.096 m",36.9 m,PVC-U Sch 80 ASTM 
 PF-24,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 1/2 in studs,3 / 2 / 2 / 8,PVC-U Sch 80 ASTM D1785,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 PF-25,"316L ASTM A312 DN40 pipe, 5 x 6.096 m",25.1 m,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 PF-25,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,3 / 2 / 2 / 8,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",36240 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",35400 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",43123 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",18720 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-04,"equipment ground 10 AWG bare Cu, -",18120 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",18360 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-04,"equipment ground 10 AWG bare Cu, -",17700 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",18389 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",4872 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",4698 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-07,"control 18 AWG shielded pair, 300 V",4280 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",4220 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",6121 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-10,"power 3 AWG XHHW-2 Cu, 600 V",2850 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-10,"power 3 AWG XHHW-2 Cu, 600 V",2775 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",3163 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-12,"MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield, 15 kV",1200 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-13,"equipment ground 8 AWG green XHHW-2 Cu, 600 V",1054 m,Cu,Closed,Cu EW -> WIRE_DRAW,
@@ -2083,7 +2083,7 @@ WF-31,"power 12 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",115 m,Cu,Closed,Cu EW ->
 OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",374,,Unstated,-,material not stated on the unit BOM line
 OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",404,,Unstated,-,material not stated on the unit BOM line
 OF-03,electronics: PLC digital I/O point (IEC 61131-2),882,,Unstated,-,material not stated on the unit BOM line
-OF-04,electronics: PLC analog input point (IEC 61131-2),913,,Unstated,-,material not stated on the unit BOM line
+OF-04,electronics: PLC analog input point (IEC 61131-2),911,,Unstated,-,material not stated on the unit BOM line
 OF-05,electronics: BLDC driver (IEC 61800-5-1),184,,Unstated,-,material not stated on the unit BOM line
 OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),169,,Unstated,-,material not stated on the unit BOM line
 OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",113,,Unstated,-,material not stated on the unit BOM line
@@ -2110,7 +2110,7 @@ OF-37,"instrument: high-level switch (IEC 60947-5, 316L)",86,,Unstated,-,materia
 OF-38,"instrument: level transmitter (IEC 62828, PTFE lens)",86,,Unstated,-,material not stated on the unit BOM line
 OF-39,"instrument: gas detector, H2 (alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % L",38,,Unstated,-,material not stated on the unit BOM line
 OF-40,"instrument: gas detector, O2 deficiency (alarm 19.5 vol %, trip 18.0 vol %, low ",24,,Unstated,-,material not stated on the unit BOM line
-OF-41,"instrument: gas detector, Cl2 / HCl (alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm",44,,Unstated,-,material not stated on the unit BOM line
+OF-41,"instrument: gas detector, Cl2 / HCl (alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm",42,,Unstated,-,material not stated on the unit BOM line
 OF-42,"instrument: temperature element (SIF, independent) (IEC 60751, own thermowell)",14,,Unstated,-,material not stated on the unit BOM line
 OF-43,"instrument: gas detector, O2 enrichment (alarm 23.5 vol %, trip 25 vol %, breath",12,,Unstated,-,material not stated on the unit BOM line
 OF-44,"instrument: gas detector, CO (alarm 25 ppm, trip 50 ppm, breathing height)",22,,Unstated,-,material not stated on the unit BOM line

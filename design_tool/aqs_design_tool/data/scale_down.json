@@ -17,7 +17,7 @@
      "from": "IND_MELT",
      "to": "LEACH_CSTR_1",
      "other_sector": "FOUNDRY",
-     "rate": 0.356466,
+     "rate": 0.304007,
      "unit": "kg/d",
      "carries": "slag return"
     },
@@ -71,7 +71,7 @@
      "from": "WAFER_FAB",
      "to": "LEACH_CSTR_1",
      "other_sector": "FAB",
-     "rate": 0.044584,
+     "rate": 0.043561,
      "unit": "kg/d",
      "carries": "unreclaimed saw kerf with the spent slurry (1 - si_kerf_recycle_frac)"
     },
@@ -107,7 +107,7 @@
      "from": "GREY_TREAT",
      "to": "LEACH_CSTR_1",
      "other_sector": "WTR",
-     "rate": 258.050146,
+     "rate": 258.065477,
      "unit": "kg/d",
      "carries": "grey sludge"
     },
@@ -170,7 +170,7 @@
      "from": "SI_REFINE",
      "to": "LEACH_CSTR_1",
      "other_sector": "GLASS",
-     "rate": 0.034284,
+     "rate": 0.033668,
      "unit": "kg/d",
      "carries": "impurity-chloride bleed with the end-of-life separation residue"
     },
@@ -215,7 +215,7 @@
      "from": "POLY_STOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "POLYMERS",
-     "rate": 0.027768,
+     "rate": 0.023836,
      "unit": "kg/d",
      "carries": "lining/gasket stock return path"
     },
@@ -631,7 +631,7 @@
      "from": "LEACH_CSTR_1",
      "to": "VCD_TRAIN",
      "other_sector": "WTR",
-     "rate": 208.282229,
+     "rate": 208.419227,
      "unit": "kg/d",
      "carries": "leach liquor water bleed to vapour-compression distillation"
     },
@@ -849,7 +849,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DOCK",
-     "rate": 331.610022,
+     "rate": 331.789719,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -1397,7 +1397,7 @@
      "from": "OIL_PYRO",
      "to": "SI_REDUCE",
      "other_sector": "GLASS",
-     "rate": 0.174849,
+     "rate": 0.173533,
      "unit": "kg/d",
      "carries": "pyrolysis char reductant"
     },
@@ -1469,7 +1469,7 @@
      "from": "PROD_C5_C10",
      "to": "POLY_OLEFIN",
      "other_sector": "POLYMERS",
-     "rate": 0.395925,
+     "rate": 0.352672,
      "unit": "kg/d",
      "carries": "C5-C10 naphtha olefin feed"
     },
@@ -1478,7 +1478,7 @@
      "from": "OIL_PYRO",
      "to": "MFG_SHOP",
      "other_sector": "MFG",
-     "rate": 1.525133,
+     "rate": 1.526449,
      "unit": "kg/d",
      "carries": "char reductant"
     },
@@ -1516,7 +1516,7 @@
      "from": "PROD_C5_C10",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 7.533566,
+     "rate": 7.576819,
      "unit": "kg/d",
      "carries": "C5-C10 product shipped"
     },
@@ -1684,7 +1684,7 @@
      "from": "OIL_PYRO",
      "to": "SI_REDUCE",
      "other_sector": "OIL",
-     "rate": 0.174849,
+     "rate": 0.173533,
      "unit": "kg/d",
      "carries": "pyrolysis char reductant"
     },
@@ -1717,10 +1717,10 @@
     },
     {
      "stream_id": "IA-CL2-SIREF",
-     "from": "AL_POT",
+     "from": "CA_POT",
      "to": "SI_REFINE",
      "other_sector": "FOUNDRY",
-     "rate": 0.009178,
+     "rate": 0.009109,
      "unit": "kg/d",
      "carries": "chlorine make-up of the chlorosilane loop"
     },
@@ -1738,7 +1738,7 @@
      "from": "WAFER_FAB",
      "to": "SI_REFINE",
      "other_sector": "FAB",
-     "rate": 0.401256,
+     "rate": 0.392049,
      "unit": "kg/d",
      "carries": "reclaimed saw kerf to the chlorosilane loop (si_kerf_recycle_frac, A-M-486)"
     },
@@ -1747,7 +1747,7 @@
      "from": "PV_ARRAY",
      "to": "SI_REFINE",
      "other_sector": "ELEC",
-     "rate": 0.418685,
+     "rate": 0.408365,
      "unit": "kg/d",
      "carries": "silicon of the cells retired from end-of-life modules, crushed, to the chlorosilane loop"
     },
@@ -1756,7 +1756,7 @@
      "from": "MFG_SHOP",
      "to": "SI_REDUCE",
      "other_sector": "MFG",
-     "rate": 0.441499,
+     "rate": 0.438175,
      "unit": "kg/d",
      "carries": "briquetted crib silicate recovered from the leach feed, furnace burden (A-M-490)"
     },
@@ -1765,7 +1765,7 @@
      "from": "ATMOS",
      "to": "SI_REDUCE",
      "other_sector": "WTR",
-     "rate": 0.232904,
+     "rate": 0.231151,
      "unit": "kg/d",
      "carries": "oxygen of the hood air that burns the furnace carbon monoxide"
     },
@@ -1821,7 +1821,7 @@
      "from": "SI_REDUCE",
      "to": "ATMOS",
      "other_sector": "WTR",
-     "rate": 0.640657,
+     "rate": 0.635834,
      "unit": "kg/d",
      "carries": "carbon dioxide of the burned furnace gas"
     },
@@ -1830,7 +1830,7 @@
      "from": "SI_REFINE",
      "to": "METAL_STORE",
      "other_sector": "FOUNDRY",
-     "rate": 1.003429,
+     "rate": 0.982879,
      "unit": "kg/d",
      "carries": "electronic-grade silicon for the CZ charge"
     },
@@ -1839,7 +1839,7 @@
      "from": "SI_REFINE",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 0.034284,
+     "rate": 0.033668,
      "unit": "kg/d",
      "carries": "impurity-chloride bleed with the end-of-life separation residue"
     },
@@ -1886,7 +1886,7 @@
      "from": "SOL_ARK_60K",
      "to": "SI_REDUCE",
      "other_sector": "ELEC",
-     "rate": 0.113,
+     "rate": 0.1121,
      "unit": "kW",
      "carries": "480 V AC"
     },
@@ -1895,7 +1895,7 @@
      "from": "SOL_ARK_60K",
      "to": "SI_REFINE",
      "other_sector": "ELEC",
-     "rate": 2.5086,
+     "rate": 2.4572,
      "unit": "kW",
      "carries": "480 V AC"
     }
@@ -1991,7 +1991,7 @@
      "from": "PROD_C5_C10",
      "to": "POLY_OLEFIN",
      "other_sector": "OIL",
-     "rate": 0.395925,
+     "rate": 0.352672,
      "unit": "kg/d",
      "carries": "C5-C10 naphtha olefin feed"
     },
@@ -2101,7 +2101,7 @@
      "from": "POLY_STOCK",
      "to": "MFG_SHOP",
      "other_sector": "MFG",
-     "rate": 0.277681,
+     "rate": 0.23836,
      "unit": "kg/d",
      "carries": "polymer feedstock to manufacturing"
     },
@@ -2110,7 +2110,7 @@
      "from": "POLY_STOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 0.027768,
+     "rate": 0.023836,
      "unit": "kg/d",
      "carries": "lining/gasket stock return path"
     },
@@ -2487,7 +2487,7 @@
      "from": "ZNBR2",
      "to": "HDR_H2",
      "other_sector": "ELEC",
-     "rate": 0.6258,
+     "rate": 0.610469,
      "unit": "kg/d",
      "carries": "ZNBR2 HER hydrogen stripped with the purge air to the H2 header"
     },
@@ -2514,7 +2514,7 @@
      "from": "CRYO_O2",
      "to": "HDR_O2",
      "other_sector": "CRYO",
-     "rate": 42.701474,
+     "rate": 42.823141,
      "unit": "kg/d",
      "carries": "O2 product"
     }
@@ -2606,7 +2606,7 @@
      "from": "HDR_O2",
      "to": "PROD_O2",
      "other_sector": "CRYO",
-     "rate": 13.04946,
+     "rate": 13.171127,
      "unit": "kg/d",
      "carries": "surplus O2 to product cylinders"
     },
@@ -2633,7 +2633,7 @@
      "from": "H2_DRYER",
      "to": "CRYO_H2",
      "other_sector": "CRYO",
-     "rate": 1.11817,
+     "rate": 1.102839,
      "unit": "kg/d",
      "carries": "H2 normal path"
     },
@@ -2812,7 +2812,7 @@
      "from": "CRYO_ASU",
      "to": "WAFER_FAB",
      "other_sector": "CRYO",
-     "rate": 3.417155,
+     "rate": 3.346129,
      "unit": "kg/d",
      "carries": "argon blanket gas for the CZ puller and, on CAST_MC156, the cast furnace"
     },
@@ -2893,18 +2893,18 @@
      "from": "ATMOS",
      "to": "RESIST_SYN",
      "other_sector": "WTR",
-     "rate": 0.444041,
+     "rate": 0.44404,
      "unit": "kg/d",
      "carries": "process air for the oxidations"
     },
     {
      "stream_id": "IA-RESIST-CL2",
-     "from": "AL_POT",
+     "from": "CA_POT",
      "to": "RESIST_SYN",
      "other_sector": "FOUNDRY",
-     "rate": 0.001824,
+     "rate": 0.001825,
      "unit": "kg/d",
-     "carries": "pot chlorine for the phosgenation"
+     "carries": "pot byproduct chlorine for the phosgenation"
     },
     {
      "stream_id": "IA-RESIST-CO",
@@ -3019,7 +3019,7 @@
      "from": "METAL_STORE",
      "to": "WAFER_FAB",
      "other_sector": "FOUNDRY",
-     "rate": 1.443614,
+     "rate": 1.413608,
      "unit": "kg/d",
      "carries": "electronic-grade silicon CZ charge from the store (refinery rod plus recycled crop and pot scrap)"
     },
@@ -3039,7 +3039,7 @@
      "from": "WAFER_FAB",
      "to": "CRYO_ASU",
      "other_sector": "CRYO",
-     "rate": 3.417155,
+     "rate": 3.346129,
      "unit": "kg/d",
      "carries": "CZ argon exhaust back to the cold-box getter"
     },
@@ -3048,7 +3048,7 @@
      "from": "WAFER_FAB",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 0.044584,
+     "rate": 0.043561,
      "unit": "kg/d",
      "carries": "unreclaimed saw kerf with the spent slurry (1 - si_kerf_recycle_frac)"
     },
@@ -3057,7 +3057,7 @@
      "from": "WAFER_FAB",
      "to": "SI_REFINE",
      "other_sector": "GLASS",
-     "rate": 0.401256,
+     "rate": 0.392049,
      "unit": "kg/d",
      "carries": "reclaimed saw kerf to the chlorosilane loop (si_kerf_recycle_frac, A-M-486)"
     },
@@ -3066,7 +3066,7 @@
      "from": "WAFER_FAB",
      "to": "ATMOS",
      "other_sector": "WTR",
-     "rate": 0.713691,
+     "rate": 0.713692,
      "unit": "kg/d",
      "carries": "fab nitrogen purge exhaust"
     },
@@ -3075,7 +3075,7 @@
      "from": "WAFER_FAB",
      "to": "METAL_STORE",
      "other_sector": "FOUNDRY",
-     "rate": 0.440185,
+     "rate": 0.430729,
      "unit": "kg/d",
      "carries": "crop, square-off and pot scrap remelted into the next charge (si_scrap_recycle_frac, A-M-487)"
     },
@@ -3093,7 +3093,7 @@
      "from": "SOLAR_PV_CELL",
      "to": "PV_ARRAY",
      "other_sector": "ELEC",
-     "rate": 0.418685,
+     "rate": 0.408365,
      "unit": "kg/d",
      "carries": "finished cells to the replacement modules of the roof array"
     },
@@ -3212,7 +3212,7 @@
      "from": "SOL_ARK_60K",
      "to": "SOLAR_PV_CELL",
      "other_sector": "ELEC",
-     "rate": 1.4871,
+     "rate": 1.4667,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -3416,7 +3416,7 @@
      "from": "OIL_PYRO",
      "to": "MFG_SHOP",
      "other_sector": "OIL",
-     "rate": 1.525133,
+     "rate": 1.526449,
      "unit": "kg/d",
      "carries": "char reductant"
     },
@@ -3506,7 +3506,7 @@
      "from": "POLY_STOCK",
      "to": "MFG_SHOP",
      "other_sector": "POLYMERS",
-     "rate": 0.277681,
+     "rate": 0.23836,
      "unit": "kg/d",
      "carries": "polymer feedstock to manufacturing"
     },
@@ -3533,7 +3533,7 @@
      "from": "METAL_STORE",
      "to": "MFG_SHOP",
      "other_sector": "FOUNDRY",
-     "rate": 25.9,
+     "rate": 22.0072,
      "unit": "kg/d",
      "carries": "plate/rod/wire to manufacturing"
     },
@@ -3571,7 +3571,7 @@
      "from": "MFG_SHOP",
      "to": "SI_REDUCE",
      "other_sector": "GLASS",
-     "rate": 0.441499,
+     "rate": 0.438175,
      "unit": "kg/d",
      "carries": "briquetted crib silicate recovered from the leach feed, furnace burden (A-M-490)"
     },
@@ -3598,7 +3598,7 @@
      "from": "MFG_SHOP",
      "to": "IND_MELT",
      "other_sector": "FOUNDRY",
-     "rate": 26.161616,
+     "rate": 22.229495,
      "unit": "kg/d",
      "carries": "manufacturing scrap return"
     },
@@ -3663,7 +3663,7 @@
      "from": "MFG_SHOP",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 321.541079,
+     "rate": 321.545719,
      "unit": "kg/d",
      "carries": "finished-goods surplus export"
     },
@@ -3903,7 +3903,7 @@
      "from": "WAFER_FAB",
      "to": "METAL_STORE",
      "other_sector": "FAB",
-     "rate": 0.440185,
+     "rate": 0.430729,
      "unit": "kg/d",
      "carries": "crop, square-off and pot scrap remelted into the next charge (si_scrap_recycle_frac, A-M-487)"
     },
@@ -3912,7 +3912,7 @@
      "from": "SI_REFINE",
      "to": "METAL_STORE",
      "other_sector": "GLASS",
-     "rate": 1.003429,
+     "rate": 0.982879,
      "unit": "kg/d",
      "carries": "electronic-grade silicon for the CZ charge"
     },
@@ -3930,7 +3930,7 @@
      "from": "MFG_SHOP",
      "to": "IND_MELT",
      "other_sector": "MFG",
-     "rate": 26.161616,
+     "rate": 22.229495,
      "unit": "kg/d",
      "carries": "manufacturing scrap return"
     }
@@ -3941,7 +3941,7 @@
      "from": "IND_MELT",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 0.356466,
+     "rate": 0.304007,
      "unit": "kg/d",
      "carries": "slag return"
     },
@@ -3956,21 +3956,21 @@
     },
     {
      "stream_id": "IA-CL2-SIREF",
-     "from": "AL_POT",
+     "from": "CA_POT",
      "to": "SI_REFINE",
      "other_sector": "GLASS",
-     "rate": 0.009178,
+     "rate": 0.009109,
      "unit": "kg/d",
      "carries": "chlorine make-up of the chlorosilane loop"
     },
     {
      "stream_id": "IA-RESIST-CL2",
-     "from": "AL_POT",
+     "from": "CA_POT",
      "to": "RESIST_SYN",
      "other_sector": "FAB",
-     "rate": 0.001824,
+     "rate": 0.001825,
      "unit": "kg/d",
-     "carries": "pot chlorine for the phosgenation"
+     "carries": "pot byproduct chlorine for the phosgenation"
     },
     {
      "stream_id": "IA-RESIST-CO",
@@ -4013,7 +4013,7 @@
      "from": "METAL_STORE",
      "to": "WAFER_FAB",
      "other_sector": "FAB",
-     "rate": 1.443614,
+     "rate": 1.413608,
      "unit": "kg/d",
      "carries": "electronic-grade silicon CZ charge from the store (refinery rod plus recycled crop and pot scrap)"
     },
@@ -4022,7 +4022,7 @@
      "from": "METAL_STORE",
      "to": "MFG_SHOP",
      "other_sector": "MFG",
-     "rate": 25.9,
+     "rate": 22.0072,
      "unit": "kg/d",
      "carries": "plate/rod/wire to manufacturing"
     },
@@ -4047,15 +4047,6 @@
      "carries": "chlorinator CO (fuel-gas class export)"
     },
     {
-     "stream_id": "IA-ALCL3-MU",
-     "from": "NORTH_DOCK",
-     "to": "AL_POT",
-     "other_sector": "DOCK",
-     "rate": 24.047398,
-     "unit": "kg/d",
-     "carries": "anhydrous AlCl3 top-up feed (process-chemical import, pending class, task X-QA-19)"
-    },
-    {
      "stream_id": "IA-BURNOUT-VENT",
      "from": "SHELL_BURNOUT",
      "to": "NORTH_DOCK",
@@ -4069,7 +4060,7 @@
      "from": "CA_POT",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 0.097428,
+     "rate": 0.06325,
      "unit": "kg/d",
      "carries": "chlorine byproduct export (water-treatment class)"
     },
@@ -4078,18 +4069,9 @@
      "from": "NORTH_DOCK",
      "to": "CA_POT",
      "other_sector": "DOCK",
-     "rate": 0.152497,
+     "rate": 0.116115,
      "unit": "kg/d",
      "carries": "CaCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)"
-    },
-    {
-     "stream_id": "IA-CL2-SHIP",
-     "from": "AL_POT",
-     "to": "NORTH_DOCK",
-     "other_sector": "DOCK",
-     "rate": 19.170396,
-     "unit": "kg/d",
-     "carries": "chlorine byproduct export (water-treatment class product)"
     },
     {
      "stream_id": "IA-CR-VENT",
@@ -4123,7 +4105,7 @@
      "from": "METAL_STORE",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 10.8125,
+     "rate": 5.9465,
      "unit": "kg/d",
      "carries": "surplus foundry metal export (pot-line product, dispatch campaign)"
     },
@@ -4177,7 +4159,7 @@
      "from": "SOL_ARK_60K",
      "to": "AL_POT",
      "other_sector": "ELEC",
-     "rate": 5.6578,
+     "rate": 2.9567,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -4186,7 +4168,7 @@
      "from": "SOL_ARK_60K",
      "to": "CA_POT",
      "other_sector": "ELEC",
-     "rate": 0.1221,
+     "rate": 0.1184,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -4222,7 +4204,7 @@
      "from": "SOL_ARK_60K",
      "to": "IND_MELT",
      "other_sector": "ELEC",
-     "rate": 0.8851,
+     "rate": 0.6568,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -4355,6 +4337,15 @@
      "carries": "dense grit (ilmenite/rutile fraction)"
     },
     {
+     "stream_id": "IA-ALCL3-MU",
+     "from": "NORTH_DOCK",
+     "to": "AL_POT",
+     "other_sector": "DOCK",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "anhydrous AlCl3 top-up feed (retired: the Al line is sized to the recoverable aluminium, X-QA-19)"
+    },
+    {
      "stream_id": "IA-C-CR",
      "from": "NORTH_DOCK",
      "to": "CR_CELL",
@@ -4380,6 +4371,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "carbon reductant (petcoke/char class)"
+    },
+    {
+     "stream_id": "IA-CL2-SHIP",
+     "from": "AL_POT",
+     "to": "NORTH_DOCK",
+     "other_sector": "DOCK",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "chlorine byproduct export (water-treatment class product)"
     },
     {
      "stream_id": "IA-SHELL-EXPORT",
@@ -5553,7 +5553,7 @@
      "from": "WAFER_FAB",
      "to": "CRYO_ASU",
      "other_sector": "FAB",
-     "rate": 3.417155,
+     "rate": 3.346129,
      "unit": "kg/d",
      "carries": "CZ argon exhaust back to the cold-box getter"
     },
@@ -5571,7 +5571,7 @@
      "from": "ROOF_TANK",
      "to": "H2O_ELYZ",
      "other_sector": "WTR",
-     "rate": 92.372565,
+     "rate": 92.509563,
      "unit": "kg/d",
      "carries": "electrolyser feed water"
     },
@@ -5607,7 +5607,7 @@
      "from": "HDR_O2",
      "to": "PROD_O2",
      "other_sector": "GAS",
-     "rate": 13.04946,
+     "rate": 13.171127,
      "unit": "kg/d",
      "carries": "surplus O2 to product cylinders"
     },
@@ -5634,7 +5634,7 @@
      "from": "H2_DRYER",
      "to": "CRYO_H2",
      "other_sector": "GAS",
-     "rate": 1.11817,
+     "rate": 1.102839,
      "unit": "kg/d",
      "carries": "H2 normal path"
     },
@@ -5681,7 +5681,7 @@
      "from": "CRYO_ASU",
      "to": "WAFER_FAB",
      "other_sector": "FAB",
-     "rate": 3.417155,
+     "rate": 3.346129,
      "unit": "kg/d",
      "carries": "argon blanket gas for the CZ puller and, on CAST_MC156, the cast furnace"
     },
@@ -5789,7 +5789,7 @@
      "from": "CRYO_O2",
      "to": "HDR_O2",
      "other_sector": "GAS",
-     "rate": 42.701474,
+     "rate": 42.823141,
      "unit": "kg/d",
      "carries": "O2 product"
     },
@@ -5798,7 +5798,7 @@
      "from": "H2O_ELYZ",
      "to": "Q4_BUS",
      "other_sector": "HEAT",
-     "rate": 6.7191,
+     "rate": 6.7291,
      "unit": "kW",
      "carries": "PEM stack heat above Q4 return"
     }
@@ -5827,7 +5827,7 @@
      "from": "PROD_O2",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 13.04946,
+     "rate": 13.171127,
      "unit": "kg/d",
      "carries": "O2 cylinders shipped at the dock"
     },
@@ -5863,7 +5863,7 @@
      "from": "SOL_ARK_60K",
      "to": "H2O_ELYZ",
      "other_sector": "ELEC",
-     "rate": 23.6892,
+     "rate": 23.7244,
      "unit": "kW",
      "carries": "480 V AC (daily average)"
     }
@@ -6040,7 +6040,7 @@
      "from": "DRY_COOLER",
      "to": "ATMOS",
      "other_sector": "HEAT",
-     "rate": 57.7522,
+     "rate": 56.3617,
      "unit": "kW",
      "carries": "dry-cooler rejection to ambient air"
     },
@@ -6049,7 +6049,7 @@
      "from": "WAFER_FAB",
      "to": "ATMOS",
      "other_sector": "FAB",
-     "rate": 0.713691,
+     "rate": 0.713692,
      "unit": "kg/d",
      "carries": "fab nitrogen purge exhaust"
     },
@@ -6094,7 +6094,7 @@
      "from": "LEACH_CSTR_1",
      "to": "VCD_TRAIN",
      "other_sector": "DIGESTER",
-     "rate": 208.282229,
+     "rate": 208.419227,
      "unit": "kg/d",
      "carries": "leach liquor water bleed to vapour-compression distillation"
     },
@@ -6139,7 +6139,7 @@
      "from": "SI_REDUCE",
      "to": "ATMOS",
      "other_sector": "GLASS",
-     "rate": 0.640657,
+     "rate": 0.635834,
      "unit": "kg/d",
      "carries": "carbon dioxide of the burned furnace gas"
     },
@@ -6157,7 +6157,7 @@
      "from": "ZNBR2",
      "to": "GREY_TREAT",
      "other_sector": "ELEC",
-     "rate": 7.861041,
+     "rate": 7.876372,
      "unit": "kg/d",
      "carries": "electrolyte bleed"
     },
@@ -6276,7 +6276,7 @@
      "from": "ROOF_TANK",
      "to": "H2O_ELYZ",
      "other_sector": "CRYO",
-     "rate": 92.372565,
+     "rate": 92.509563,
      "unit": "kg/d",
      "carries": "electrolyser feed water"
     },
@@ -6303,7 +6303,7 @@
      "from": "GREY_TREAT",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 258.050146,
+     "rate": 258.065477,
      "unit": "kg/d",
      "carries": "grey sludge"
     },
@@ -6348,7 +6348,7 @@
      "from": "ATMOS",
      "to": "RESIST_SYN",
      "other_sector": "FAB",
-     "rate": 0.444041,
+     "rate": 0.44404,
      "unit": "kg/d",
      "carries": "process air for the oxidations"
     },
@@ -6357,7 +6357,7 @@
      "from": "ATMOS",
      "to": "SI_REDUCE",
      "other_sector": "GLASS",
-     "rate": 0.232904,
+     "rate": 0.231151,
      "unit": "kg/d",
      "carries": "oxygen of the hood air that burns the furnace carbon monoxide"
     },
@@ -6635,7 +6635,7 @@
      "from": "SOLAR_PV_CELL",
      "to": "PV_ARRAY",
      "other_sector": "FAB",
-     "rate": 0.418685,
+     "rate": 0.408365,
      "unit": "kg/d",
      "carries": "finished cells to the replacement modules of the roof array"
     },
@@ -6689,7 +6689,7 @@
      "from": "MEOH_FC",
      "to": "SOL_ARK_60K",
      "other_sector": "MEOH",
-     "rate": 1.0,
+     "rate": 0.5,
      "unit": "kW",
      "carries": "MEOH DC"
     }
@@ -6826,7 +6826,7 @@
      "from": "PV_ARRAY",
      "to": "SI_REFINE",
      "other_sector": "GLASS",
-     "rate": 0.418685,
+     "rate": 0.408365,
      "unit": "kg/d",
      "carries": "silicon of the cells retired from end-of-life modules, crushed, to the chlorosilane loop"
     },
@@ -6880,7 +6880,7 @@
      "from": "ZNBR2",
      "to": "GREY_TREAT",
      "other_sector": "WTR",
-     "rate": 7.861041,
+     "rate": 7.876372,
      "unit": "kg/d",
      "carries": "electrolyte bleed"
     },
@@ -6889,7 +6889,7 @@
      "from": "ZNBR2",
      "to": "HDR_H2",
      "other_sector": "GAS",
-     "rate": 0.6258,
+     "rate": 0.610469,
      "unit": "kg/d",
      "carries": "ZNBR2 HER hydrogen stripped with the purge air to the H2 header"
     },
@@ -6898,7 +6898,7 @@
      "from": "ZNBR2",
      "to": "Q4_BUS",
      "other_sector": "HEAT",
-     "rate": 48.8447,
+     "rate": 47.4442,
      "unit": "kW",
      "carries": "round-trip loss"
     },
@@ -6979,7 +6979,7 @@
      "from": "SOL_ARK_60K",
      "to": "AL_POT",
      "other_sector": "FOUNDRY",
-     "rate": 5.6578,
+     "rate": 2.9567,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -7015,7 +7015,7 @@
      "from": "SOL_ARK_60K",
      "to": "CA_POT",
      "other_sector": "FOUNDRY",
-     "rate": 0.1221,
+     "rate": 0.1184,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -7168,7 +7168,7 @@
      "from": "SOL_ARK_60K",
      "to": "H2O_ELYZ",
      "other_sector": "CRYO",
-     "rate": 23.6892,
+     "rate": 23.7244,
      "unit": "kW",
      "carries": "480 V AC (daily average)"
     },
@@ -7195,7 +7195,7 @@
      "from": "SOL_ARK_60K",
      "to": "IND_MELT",
      "other_sector": "FOUNDRY",
-     "rate": 0.8851,
+     "rate": 0.6568,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -7429,7 +7429,7 @@
      "from": "SOL_ARK_60K",
      "to": "SI_REDUCE",
      "other_sector": "GLASS",
-     "rate": 0.113,
+     "rate": 0.1121,
      "unit": "kW",
      "carries": "480 V AC"
     },
@@ -7438,7 +7438,7 @@
      "from": "SOL_ARK_60K",
      "to": "SI_REFINE",
      "other_sector": "GLASS",
-     "rate": 2.5086,
+     "rate": 2.4572,
      "unit": "kW",
      "carries": "480 V AC"
     },
@@ -7447,7 +7447,7 @@
      "from": "SOL_ARK_60K",
      "to": "SOLAR_PV_CELL",
      "other_sector": "FAB",
-     "rate": 1.4871,
+     "rate": 1.4667,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -7761,7 +7761,7 @@
      "from": "ZNBR2",
      "to": "Q4_BUS",
      "other_sector": "ELEC",
-     "rate": 48.8447,
+     "rate": 47.4442,
      "unit": "kW",
      "carries": "round-trip loss"
     },
@@ -7833,7 +7833,7 @@
      "from": "H2O_ELYZ",
      "to": "Q4_BUS",
      "other_sector": "CRYO",
-     "rate": 6.7191,
+     "rate": 6.7291,
      "unit": "kW",
      "carries": "PEM stack heat above Q4 return"
     }
@@ -7907,7 +7907,7 @@
      "from": "DRY_COOLER",
      "to": "ATMOS",
      "other_sector": "WTR",
-     "rate": 57.7522,
+     "rate": 56.3617,
      "unit": "kW",
      "carries": "dry-cooler rejection to ambient air"
     },
@@ -8169,7 +8169,7 @@
      "from": "MEOH_FC",
      "to": "SOL_ARK_60K",
      "other_sector": "ELEC",
-     "rate": 1.0,
+     "rate": 0.5,
      "unit": "kW",
      "carries": "MEOH DC"
     },
@@ -8392,7 +8392,7 @@
      "from": "PROD_C5_C10",
      "to": "NORTH_DOCK",
      "other_sector": "OIL",
-     "rate": 7.533566,
+     "rate": 7.576819,
      "unit": "kg/d",
      "carries": "C5-C10 product shipped"
     },
@@ -8401,18 +8401,9 @@
      "from": "CA_POT",
      "to": "NORTH_DOCK",
      "other_sector": "FOUNDRY",
-     "rate": 0.097428,
+     "rate": 0.06325,
      "unit": "kg/d",
      "carries": "chlorine byproduct export (water-treatment class)"
-    },
-    {
-     "stream_id": "IA-CL2-SHIP",
-     "from": "AL_POT",
-     "to": "NORTH_DOCK",
-     "other_sector": "FOUNDRY",
-     "rate": 19.170396,
-     "unit": "kg/d",
-     "carries": "chlorine byproduct export (water-treatment class product)"
     },
     {
      "stream_id": "IA-CR-VENT",
@@ -8437,7 +8428,7 @@
      "from": "MFG_SHOP",
      "to": "NORTH_DOCK",
      "other_sector": "MFG",
-     "rate": 321.541079,
+     "rate": 321.545719,
      "unit": "kg/d",
      "carries": "finished-goods surplus export"
     },
@@ -8473,7 +8464,7 @@
      "from": "METAL_STORE",
      "to": "NORTH_DOCK",
      "other_sector": "FOUNDRY",
-     "rate": 10.8125,
+     "rate": 5.9465,
      "unit": "kg/d",
      "carries": "surplus foundry metal export (pot-line product, dispatch campaign)"
     },
@@ -8527,7 +8518,7 @@
      "from": "PROD_O2",
      "to": "NORTH_DOCK",
      "other_sector": "CRYO",
-     "rate": 13.04946,
+     "rate": 13.171127,
      "unit": "kg/d",
      "carries": "O2 cylinders shipped at the dock"
     },
@@ -8597,20 +8588,11 @@
      "carries": "phosphorus-FR finish (reagent manifest)"
     },
     {
-     "stream_id": "IA-ALCL3-MU",
-     "from": "NORTH_DOCK",
-     "to": "AL_POT",
-     "other_sector": "FOUNDRY",
-     "rate": 24.047398,
-     "unit": "kg/d",
-     "carries": "anhydrous AlCl3 top-up feed (process-chemical import, pending class, task X-QA-19)"
-    },
-    {
      "stream_id": "IA-CACL2-MU",
      "from": "NORTH_DOCK",
      "to": "CA_POT",
      "other_sector": "FOUNDRY",
-     "rate": 0.152497,
+     "rate": 0.116115,
      "unit": "kg/d",
      "carries": "CaCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)"
     },
@@ -8646,7 +8628,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 331.610022,
+     "rate": 331.789719,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -8763,6 +8745,15 @@
      "carries": "intake air"
     },
     {
+     "stream_id": "IA-ALCL3-MU",
+     "from": "NORTH_DOCK",
+     "to": "AL_POT",
+     "other_sector": "FOUNDRY",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "anhydrous AlCl3 top-up feed (retired: the Al line is sized to the recoverable aluminium, X-QA-19)"
+    },
+    {
      "stream_id": "IA-C-CR",
      "from": "NORTH_DOCK",
      "to": "CR_CELL",
@@ -8788,6 +8779,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "carbon reductant (petcoke/char class)"
+    },
+    {
+     "stream_id": "IA-CL2-SHIP",
+     "from": "AL_POT",
+     "to": "NORTH_DOCK",
+     "other_sector": "FOUNDRY",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "chlorine byproduct export (water-treatment class product)"
     },
     {
      "stream_id": "IA-GYPSUM-SHIP",
@@ -9017,27 +9017,27 @@
     {
      "unit_id": "AL_POT",
      "hold_kW": 0.1069,
-     "dc_kW": 5.5509,
-     "hold_share": 0.019,
+     "dc_kW": 2.8498,
+     "hold_share": 0.036,
      "energy_factor": {
       "1.0": 1.0,
       "0.75": 1.01,
-      "0.5": 1.02,
-      "0.25": 1.06,
-      "0.1": 1.17
+      "0.5": 1.04,
+      "0.25": 1.11,
+      "0.1": 1.33
      }
     },
     {
      "unit_id": "CA_POT",
      "hold_kW": 0.1069,
-     "dc_kW": 0.0152,
-     "hold_share": 0.876,
+     "dc_kW": 0.0115,
+     "hold_share": 0.903,
      "energy_factor": {
       "1.0": 1.0,
-      "0.75": 1.29,
-      "0.5": 1.88,
-      "0.25": 3.63,
-      "0.1": 8.88
+      "0.75": 1.3,
+      "0.5": 1.9,
+      "0.25": 3.71,
+      "0.1": 9.13
      }
     },
     {
@@ -9097,15 +9097,15 @@
     {
      "unit_id": "IND_MELT",
      "crucible_kg": 10.0,
-     "charge_kg_d": 37.0139,
-     "heats_d": 4,
-     "s_campaign": 0.27,
+     "charge_kg_d": 28.2158,
+     "heats_d": 3,
+     "s_campaign": 0.354,
      "days_between_heats": {
       "1.0": 1.0,
       "0.75": 1.0,
       "0.5": 1.0,
-      "0.25": 1.1,
-      "0.1": 2.7
+      "0.25": 1.4,
+      "0.1": 3.5
      }
     }
    ]
@@ -9139,7 +9139,7 @@
       },
       {
        "stream_id": "IA-C5-POLY",
-       "kg_per_campaign": 1.32
+       "kg_per_campaign": 1.17
       },
       {
        "stream_id": "MEOH_TO_VDF",

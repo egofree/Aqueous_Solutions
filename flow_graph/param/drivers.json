@@ -2763,8 +2763,8 @@
   "verification_test": "Mix design and cylinder tests"
  },
  "foundry_stock_demand_kg_d": {
-  "value": 25.9,
-  "units": "kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 8 + stainless 1.5 + Ti 0.40 + investment castings 2)",
+  "value": 22.0072,
+  "units": "kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 4.1072 + stainless 1.5 + Ti 0.40 + investment castings 2; the Al line sized to the recoverable aluminium, A-M-495)",
   "register": "A-M-261",
   "needs_verification": true,
   "verification_test": "shop article schedule at the first article: formed-stock draw vs the AQS-SIZE-FOUNDRY consumable-replacement table"
@@ -4590,9 +4590,11 @@
   "register": "A-M-270"
  },
  "foundry_al_line_kg_d": {
-  "value": 8.0,
-  "units": "kg/d Al stock (frames, housings)",
-  "register": "A-M-261 (AQS-SIZE-FOUNDRY consumable-replacement table line)"
+  "value": 4.1072,
+  "units": "kg/d Al stock (frames, housings); sized to the recoverable aluminium - the leach reactive-Al hydroxide cake 5.1340 kg/d Al at the A-M-285 export margin (owner ruling, task X-QA-19, A-M-495)",
+  "register": "A-M-261 (AQS-SIZE-FOUNDRY consumable-replacement table line); A-M-495",
+  "needs_verification": true,
+  "verification_test": "cake weigh and assay at the first leach campaign vs the sized line; python3 -m flow_graph.param.foundry_poly (idempotent re-derivation)"
  },
  "foundry_ss_line_kg_d": {
   "value": 1.5,

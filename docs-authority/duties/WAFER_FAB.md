@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 76.33 kg/d. Mass out 76.33 kg/d. Electrical duty 0.4417 kW. In: S03 1.5 kg/d (N2); S36 0 kg/d (B/P/As concentrate; BBr₃ / POCl₃ class); S37 3.3 kg/d (colloidal silica slurry); STOCK_TO_FAB 1.444 kg/d (electronic-grade silicon CZ charge from the store (refinery rod plus recycled crop and pot scrap)); 6 more. Out: S39 3.31 kg/d (spent slurry and etch liquor); S39B 0 kg/d (solvent and photoresist); IA-FAB-SPENT 66.53 kg/d (spent UPW); IA-LITHO-IN 0.7808 kg/d (spent resist and solvent); 8 more.
+1. Basis. Mass in 76.23 kg/d. Mass out 76.23 kg/d. Electrical duty 0.4417 kW. In: S03 1.5 kg/d (N2); S36 0 kg/d (B/P/As concentrate; BBr₃ / POCl₃ class); S37 3.3 kg/d (colloidal silica slurry); STOCK_TO_FAB 1.414 kg/d (electronic-grade silicon CZ charge from the store (refinery rod plus recycled crop and pot scrap)); 6 more. Out: S39 3.31 kg/d (spent slurry and etch liquor); S39B 0 kg/d (solvent and photoresist); IA-FAB-SPENT 66.53 kg/d (spent UPW); IA-LITHO-IN 0.7808 kg/d (spent resist and solvent); 8 more.
 
 2. Size.
 - In 76.61 kg/d, out 76.61 kg/d. No holdup claimed.

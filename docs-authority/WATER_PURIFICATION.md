@@ -55,9 +55,9 @@ Table 3.1. Water train streams
 | GAL_GREY | `GALLEY` | `GREY_TREAT` | galley wash grey water to the treatment train | 1.00 kg/d |
 | HAB_GREY | `HABITATION` | `GREY_TREAT` | grey water | no rate |
 | IA-BLK-GREY | `BLACK_DIGEST` | `GREY_TREAT` | released digest liquor to grey treatment | 21.05 kg/d |
-| IA-GREY-01 | `GREY_TREAT` | `LEACH_CSTR_1` | grey sludge | 258.05 kg/d |
+| IA-GREY-01 | `GREY_TREAT` | `LEACH_CSTR_1` | grey sludge | 258.07 kg/d |
 | IA-GREY-RET | `GREY_TREAT` | `ROOF_TANK` | treated grey to the water cycle | 0.00 kg/d |
-| IA-ZNBR-BD | `ZNBR2` | `GREY_TREAT` | electrolyte bleed | 7.86 kg/d |
+| IA-ZNBR-BD | `ZNBR2` | `GREY_TREAT` | electrolyte bleed | 7.88 kg/d |
 | S12 | `HABITATION` | `GREY_TREAT` | grey/solids | 326.90 kg/d |
 | S29 | `GREY_TREAT` | `VCD_TRAIN` | treated grey | 104.50 kg/d |
 | WASH_GREY | `WASHROOM` | `GREY_TREAT` | wash grey water to the treatment train | 0.00 kg/d |
@@ -74,18 +74,18 @@ Table 3.1. Water train streams
 | IA-URINE | `HABITATION` | `BLACK_DIGEST` | urine to the blackwater barrier train | 1.42 kg/d |
 | S30 | `BLACK_DIGEST` | `NUTRIENT_DOSE` | digest liquor / nutrients | no rate |
 | IA-H2P-H2O | `H2_DRYER` | `VCD_TRAIN` | TSA regeneration condensate | 0.00 kg/d |
-| IA-LEACH-VCD | `LEACH_CSTR_1` | `VCD_TRAIN` | leach liquor water bleed to vapour-compression distillation | 208.28 kg/d |
+| IA-LEACH-VCD | `LEACH_CSTR_1` | `VCD_TRAIN` | leach liquor water bleed to vapour-compression distillation | 208.42 kg/d |
 | IA-NUT-01 | `NUTRIENT_DOSE` | `VCD_TRAIN` | digest surplus | 13.93 kg/d |
 | IA-VCD-BD | `VCD_TRAIN` | `LEACH_CSTR_1` | still bottoms | 6.71 kg/d |
 | S13 | `GROW_BED` | `VCD_TRAIN` | condensate | 3.80 kg/d |
-| S25 | `VCD_TRAIN` | `BMED_UPW_POLISH` | VCD distillate | 348.80 kg/d |
+| S25 | `VCD_TRAIN` | `BMED_UPW_POLISH` | VCD distillate | 348.94 kg/d |
 | S28 | `VCD_TRAIN` | `LEACH_CSTR_1` | VCD brine | 17.88 kg/d |
 | S52 | `FUEL_CELL` | `VCD_TRAIN` | PEM product H2O | 42.88 kg/d |
 | IA-UPW-FAB | `BMED_UPW_POLISH` | `FAB_UPW_TANK` | fab UPW | 60.00 kg/d |
 | IA-UPW-REJ | `BMED_UPW_POLISH` | `LEACH_CSTR_1` | polish reject | 6.05 kg/d |
-| IA-UPW-REMIN | `BMED_UPW_POLISH` | `REMIN` | remineralizer | 215.46 kg/d |
+| IA-UPW-REMIN | `BMED_UPW_POLISH` | `REMIN` | remineralizer | 215.59 kg/d |
 | S01 | `BMED_UPW_POLISH` | `HDR_UPW` | UPW | 67.30 kg/d |
-| IA-POT-01 | `REMIN` | `ROOF_TANK` | potable makeup, remineralised | 205.46 kg/d |
+| IA-POT-01 | `REMIN` | `ROOF_TANK` | potable makeup, remineralised | 205.59 kg/d |
 | S26 | `REMIN` | `HABITATION` | potable | 10.00 kg/d |
 | IA-UPW-HAB | `HDR_UPW` | `HABITATION` | potable makeup | 0.80 kg/d |
 | IA-UPW-USE | `HDR_UPW` | `WAFER_FAB` | fab UPW | 66.50 kg/d |
@@ -98,11 +98,11 @@ Table 3.2. Mass balance of the water units
 
 | Unit | In (kg/d) | Out (kg/d) |
 | --- | --- | --- |
-| `GREY_TREAT` | 362.55 | 362.55 |
+| `GREY_TREAT` | 362.57 | 362.57 |
 | `BLACK_DIGEST` | 22.72 | 22.72 |
-| `VCD_TRAIN` | 373.39 | 373.39 |
-| `BMED_UPW_POLISH` | 348.80 | 348.80 |
-| `REMIN` | 215.46 | 215.46 |
+| `VCD_TRAIN` | 373.53 | 373.53 |
+| `BMED_UPW_POLISH` | 348.94 | 348.94 |
+| `REMIN` | 215.59 | 215.59 |
 | `HDR_UPW` | 67.30 | 67.30 |
 | `FAB_UPW_TANK` | 60.00 | 60.00 |
 

@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 31.71 kg/d. Mass out 31.71 kg/d. Electrical duty 0.0000 kW. In: IND_TO_CONT 31.71 kg/d (melt to continuous caster). Out: CONT_TO_ROLL 10 kg/d (continuous billet/slab); CONT_TO_STOCK 21.71 kg/d (as-cast stock).
+1. Basis. Mass in 22.95 kg/d. Mass out 22.95 kg/d. Electrical duty 0.0000 kW. In: IND_TO_CONT 22.95 kg/d (melt to continuous caster). Out: CONT_TO_ROLL 10 kg/d (continuous billet/slab); CONT_TO_STOCK 12.95 kg/d (as-cast stock).
 
 2. Size.
-- Envelope 1500×800×1500 mm, 1.8 m³. That box over this flow would be 1362.2 h if it were full. It is not a residence time.
+- Envelope 1500×800×1500 mm, 1.8 m³. That box over this flow would be 1882.0 h if it were full. It is not a residence time.
 - Envelope basis (graph node): A-M-199 forming class; hold-up of the cont feed is below the class minimum.
 - Sizing study AQS-DUTY-072 (study): feed_kg_d 31.71; billet_kg_d 10; ingot_kg_d 21.71; mold water-cooled copper, horizontal (AQS-SIZE-FOUNDRY); basis pot metal + Zn + stainless base to the ingot line; Fe 10 rolled.
 - Graph design (AQS-PAR-001 sizing): machine two-strand horizontal semi-continuous caster; feed_kg_d 31.71; billet_kg_d 13.24; ingot_kg_d 21.71; strands 2; mould water-cooled copper (AQS-SIZE-FOUNDRY).

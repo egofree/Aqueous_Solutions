@@ -1,8 +1,8 @@
 # ESS duty matrix — ZnBr₂ / MeOH / pumped hydro (study)
 
 Document number: AQS-ESS-001  
-Revision: B  
-Date: 2026-10-01  
+Revision: C  
+Date: 2026-11-13  
 Authority: AQS-AUTH-001; AQS-UI-001 Rev C §3.2 (all three ESS peers);
 AQS-SEC-001; AQS-REQ-KW-001; AQS-MeOH-001; AQS-BLD-001 §6; FLOW_BATTERY.md;
 AQS-SCALE-001; AQS-SCALE-UR-001; planning AQS-MVS-GAP-001 §4.5.  
@@ -13,6 +13,7 @@ Style: AQS-DOC-002.
 |---|---|---|---|
 | A | — | Study duties for three ESS peers + H₂ contention note | 2026-10-01 |
 | B | 1 | Hydro continuous kW incomplete; scale-up V×h path table; seed HYDRO_SET params | 2026-10-01 |
+| C | 2 | MEOH peer study power follows the Q-039 re-lock: booked continuous point 0.5 kW_dc (was mid-band 1.0); the class band and bank rows unchanged | 2026-11-13 |
 
 Licence: **CERN-OHL-S-2.0**.
 
@@ -32,7 +33,7 @@ M1 hydro ≪ ZnBr₂ — without inventing nameplates.
 | ESS peer | Presence | Study power | Study energy / fuel | Continuous electrical model | Gap |
 |---|---|---|---|---|---|
 | **ZNBR2** | Required + enabled | **60 kW** class (`ZNBR_MODULE_KW` × count) | **120 kWh** class (2 h × 60 kW) | Storage role; charge preferred per AQS-SCALE-001 §9 | Cycle life / BMS listing **study**; vendor nameplate **unknown** |
-| **MEOH** | Required + enabled; process feed | **REQ-MEOH-FC-CONT 0.5–2 kW_dc** (mid **1.0**) | Synth **~2–8 kg/d** MeOH on surplus H₂ (AQS-MeOH-001); tank inventory study | MEOH_FC generation; MEOH_SYNTH load when priority allows | Dual-role vs process consumers **study**; bank stand-in ≠ purchase |
+| **MEOH** | Required + enabled; process feed | **REQ-MEOH-FC-CONT 0.5–2 kW_dc**, booked **0.5** (Q-039, 2026-11-13) | Synth **~2–8 kg/d** MeOH on surplus H₂ (AQS-MeOH-001); tank inventory study | MEOH_FC generation; MEOH_SYNTH load when priority allows | Dual-role vs process consumers **study**; bank stand-in ≠ purchase |
 | **PUMPED_HYDRO** | Required + enabled | Turbine-pump **study** — no continuous kW nameplate at M1 | Ideal **E=ρVgh ≈ 263.6 kWh** @ 2,707 m³ / 35.73 m (AQS-BLD-014 water tower, Q-009); 210.9 kWh recoverable study | HYDRO_SET storage; charge/discharge electrical **incomplete** at P0 | Redundancy **symbolic** at M1 vs ZnBr₂ 120 kWh |
 
 ### 2.1 Hydro vs ZnBr₂ energy mismatch (study sizing)

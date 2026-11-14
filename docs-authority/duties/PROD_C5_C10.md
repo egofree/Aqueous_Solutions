@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 7.929 kg/d. Mass out 7.929 kg/d. Electrical duty 0.0000 kW. In: CUT-1 7.929 kg/d (fractionator cut). Out: CUT-1-OUT 0 kg/d (C5-C10 fuel from the tank); IA-C5-SHIP 7.534 kg/d (C5-C10 product shipped); IA-C5-POLY 0.3959 kg/d (C5-C10 naphtha olefin feed); IA-RESIST-BZ 0 kg/d (C5-C10 cut to the benzene extraction).
+1. Basis. Mass in 7.929 kg/d. Mass out 7.929 kg/d. Electrical duty 0.0000 kW. In: CUT-1 7.929 kg/d (fractionator cut). Out: CUT-1-OUT 0 kg/d (C5-C10 fuel from the tank); IA-C5-SHIP 7.577 kg/d (C5-C10 product shipped); IA-C5-POLY 0.3527 kg/d (C5-C10 naphtha olefin feed); IA-RESIST-BZ 0 kg/d (C5-C10 cut to the benzene extraction).
 
 2. Size.
 - V = (11.16/1000)×(168/24) = 0.0781 m³. 7 days of the cut.
