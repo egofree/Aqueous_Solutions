@@ -981,8 +981,8 @@ ELEC,flow_battery,ZNBR2,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,
 ELEC,flow_battery,ZNBR2,electronics,motor starter (contactor + overload),0.37 kW,IEC 60947-4-1,96,"electrolyte pump (anolyte, catholyte) per stack string (assumed VFD at >= 0.75 kW)"
 ELEC,flow_battery,ZNBR2,fabricated part,fabricated part set,9 BOM lines,models/mfg/ZNBR2/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 ELEC,flow_battery,ZNBR2,fastener,M12 wedge anchor,M12 wedge anchor,ISO 898-1 8.8,4,models/mfg/ZNBR2/fasteners.csv
-ELEC,flow_battery,ZNBR2,fastener,M16 tie rod,M16 tie rod with 2 heavy hex nuts,ISO 898-1 8.8,152,models/mfg/ZNBR2/fasteners.csv
-ELEC,flow_battery,ZNBR2,fastener,M8 bolt,M8 bolt with nut,ISO 3506 A4-70,76,models/mfg/ZNBR2/fasteners.csv
+ELEC,flow_battery,ZNBR2,fastener,M16 tie rod,M16 tie rod with 2 heavy hex nuts,ISO 898-1 8.8,148,models/mfg/ZNBR2/fasteners.csv
+ELEC,flow_battery,ZNBR2,fastener,M8 bolt,M8 bolt with nut,ISO 3506 A4-70,74,models/mfg/ZNBR2/fasteners.csv
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,S69: 2 per support (assumed)
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,IA-ZNBR-BD: 2 per support (assumed)
 ELEC,flow_battery,ZNBR2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,IA-ZNBR-HEAT: 2 per support (assumed)
@@ -1721,7 +1721,7 @@ FOUNDRY,FOUNDRY_E,CAST_LINE,instrument,high-level switch,vibrating fork,"IEC 609
 FOUNDRY,FOUNDRY_E,CAST_LINE,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,FOUNDRY_E,CAST_LINE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,CAST_LINE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,FOUNDRY_E,CA_POT,fabricated part,fabricated part set,17 BOM lines,models/mfg/CA_POT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,FOUNDRY_E,CA_POT,fabricated part,fabricated part set,19 BOM lines,models/mfg/CA_POT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,FOUNDRY_E,CA_POT,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/CA_POT/fasteners.csv
 FOUNDRY,FOUNDRY_E,CA_POT,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,6,models/mfg/CA_POT/fasteners.csv
 FOUNDRY,FOUNDRY_E,CA_POT,fastener,M8 x 25 hood bolts,M8 x 25 hood bolts,ISO 898-1 8.8,12,models/mfg/CA_POT/fasteners.csv
@@ -1768,9 +1768,9 @@ FOUNDRY,FOUNDRY_E,EXTRUDE,fastener,M16 wedge anchor,M16 wedge anchor,ISO 898-1 8
 FOUNDRY,FOUNDRY_E,EXTRUDE,fastener,M24 stud + nut (ISO 4014 / ISO 4032),M24 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,8,models/mfg/EXTRUDE/fasteners.csv
 FOUNDRY,FOUNDRY_E,EXTRUDE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,EXTRUDE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,FOUNDRY_E,FLUX_PREP,fabricated part,fabricated part set,6 BOM lines,models/mfg/FLUX_PREP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,FOUNDRY_E,FLUX_PREP,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/FLUX_PREP/fasteners.csv
-FOUNDRY,FOUNDRY_E,FLUX_PREP,fastener,M8 bolt,M8 bolt,ISO 898-1 8.8,4,models/mfg/FLUX_PREP/fasteners.csv
+FOUNDRY,FOUNDRY_E,FLUX_PREP,fabricated part,fabricated part set,4 BOM lines,models/mfg/FLUX_PREP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,FOUNDRY_E,FLUX_PREP,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,4,models/mfg/FLUX_PREP/fasteners.csv
+FOUNDRY,FOUNDRY_E,FLUX_PREP,fastener,M8 socket bolt,M8 socket bolt,ISO 3506 A4-70,8,models/mfg/FLUX_PREP/fasteners.csv
 FOUNDRY,FOUNDRY_E,FLUX_PREP,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,FLUX_PREP,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,FOUNDRY_E,FORGE,fabricated part,fabricated part set,9 BOM lines,models/mfg/FORGE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
@@ -1960,8 +1960,8 @@ FOUNDRY,FOUNDRY_E,VAC_IND,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS
 FOUNDRY,FOUNDRY_E,VAC_IND,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,VAC_IND_TO_VAC_CAST: one at each end nozzle (assumed)
 FOUNDRY,FOUNDRY_E,VAC_IND,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,VAC_TO_INV: one at each end nozzle (assumed)
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,fabricated part,fabricated part set,8 BOM lines,models/mfg/WAX_PATTERN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,FOUNDRY_E,WAX_PATTERN,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/WAX_PATTERN/fasteners.csv
-FOUNDRY,FOUNDRY_E,WAX_PATTERN,fastener,M8 bolt,M8 bolt,ISO 898-1 8.8,4,models/mfg/WAX_PATTERN/fasteners.csv
+FOUNDRY,FOUNDRY_E,WAX_PATTERN,fastener,M10 wedge anchor,M10 wedge anchor,ISO 898-1 8.8,4,models/mfg/WAX_PATTERN/fasteners.csv
+FOUNDRY,FOUNDRY_E,WAX_PATTERN,fastener,M8 socket bolt,M8 socket bolt,ISO 3506 A4-70,8,models/mfg/WAX_PATTERN/fasteners.csv
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure

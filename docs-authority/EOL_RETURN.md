@@ -19,19 +19,19 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1283 | 58 % |
-| organic | 617 | 28 % |
-| unassigned | 127 | 6 % |
+| metal_plateable | 1281 | 57 % |
+| organic | 619 | 28 % |
+| unassigned | 128 | 6 % |
 | metal_reactive | 110 | 5 % |
 | silicate_oxide | 93 | 4 % |
 
-Unassigned: 127 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
+Unassigned: 128 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
 
 ## Held lines (no route in the present plant, or material pending)
 
 | Reason | Lines |
 |---|---|
-| held - material not identified on the line | 117 |
+| held - material not identified on the line | 118 |
 | held - material not stated on the line | 9 |
 | held - pointer line: these parts are classed line by line in their unit BOMs (AQS-INV-004 roll-up) | 1 |
 
@@ -64,7 +64,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | C29_RECYCLE | 4 | 0 | 0 | 0 | 0 |
 | CAST_LINE | 12 | 2 | 0 | 0 | 1 |
 | CATCH_TANK | 0 | 6 | 0 | 0 | 0 |
-| CA_POT | 9 | 6 | 0 | 0 | 2 |
+| CA_POT | 11 | 6 | 0 | 0 | 2 |
 | CHICKEN_COOP | 2 | 2 | 2 | 0 | 0 |
 | COLD_MILL | 11 | 0 | 1 | 0 | 0 |
 | COMB_HEAT | 6 | 0 | 1 | 0 | 1 |
@@ -106,7 +106,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | FILM_CAST | 8 | 1 | 0 | 0 | 0 |
 | FLOAT_SINK | 0 | 8 | 0 | 0 | 0 |
 | FLUE_KO | 0 | 7 | 0 | 0 | 1 |
-| FLUX_PREP | 6 | 0 | 0 | 0 | 0 |
+| FLUX_PREP | 3 | 1 | 0 | 0 | 0 |
 | FOOD_STORE | 4 | 10 | 0 | 0 | 1 |
 | FORGE | 6 | 0 | 3 | 0 | 0 |
 | FUEL_CELL | 25 | 12 | 3 | 0 | 2 |
@@ -257,6 +257,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-155 | 1 | 0 | 0 | 0 | 0 |
 | OF-156 | 1 | 0 | 0 | 0 | 0 |
 | OF-157 | 1 | 0 | 0 | 0 | 0 |
+| OF-158 | 1 | 0 | 0 | 0 | 0 |
 | OF-159 | 1 | 0 | 0 | 0 | 0 |
 | OF-16 | 1 | 0 | 0 | 0 | 0 |
 | OF-160 | 1 | 0 | 0 | 0 | 0 |
@@ -418,7 +419,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | VERMI_BIN | 1 | 2 | 1 | 0 | 0 |
 | WAFER_FAB | 8 | 0 | 3 | 0 | 0 |
 | WASHROOM | 2 | 1 | 0 | 0 | 0 |
-| WAX_PATTERN | 8 | 0 | 0 | 0 | 0 |
+| WAX_PATTERN | 6 | 1 | 1 | 0 | 0 |
 | WET_BENCH | 2 | 7 | 2 | 0 | 0 |
 | WF-01 | 1 | 0 | 0 | 0 | 0 |
 | WF-02 | 1 | 0 | 0 | 0 | 0 |

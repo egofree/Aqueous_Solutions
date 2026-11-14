@@ -50,7 +50,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M12 | stud | ISO 3506 A4-70 | 16 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | stud | ISO 898-1 8.8 | 48 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | anchor | ISO 898-1 8.8 | 16 | ISO 4017 + chemical anchor (ETAG 001) |
-| M16 | hex bolt | ISO 898-1 8.8 | 180 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M16 | hex bolt | ISO 898-1 8.8 | 176 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | stud | ISO 3506 A4-70 | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | stud | ISO 3506 A4-70 outside the wetted zone | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | stud | ISO 898-1 8.8 | 12 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -60,8 +60,8 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M8 | U-bolt | ISO 3506 A4-70 | 2 | DIN 3570 (U-bolt) |
 | M8 | anchor | ISO 3506 A4-70 | 4 | ISO 4017 + chemical anchor (ETAG 001) |
 | M8 | anchor | ISO 898-1 8.8 | 12 | ISO 4017 + chemical anchor (ETAG 001) |
-| M8 | hex bolt | ISO 3506 A4-70 | 248 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M8 | hex bolt | ISO 898-1 8.8 | 116 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M8 | hex bolt | ISO 3506 A4-70 | 262 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M8 | hex bolt | ISO 898-1 8.8 | 108 | ISO 4014 / ISO 4032 / ISO 7089 |
 
 ## 3. Seals and gaskets
 

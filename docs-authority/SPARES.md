@@ -73,7 +73,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-78 | valve: check valve (DN15 x17) | 17 | 1 | 5 % min 1 |
 | building block | OF-81 | fastener: M10 stud + nut (ISO 4014 / ISO 4032) (M10 stud + nut (ISO 4014 / ISO 4032) x106) | 106 | 4 | 2 % min 4 |
 | building block | OF-82 | fastener: M8 x 25 hood bolts (M8 x 25 hood bolts x48) | 48 | 4 | 2 % min 4 |
-| building block | OF-83 | fastener: M10 anchor (M10 anchor x40) | 40 | 4 | 2 % min 4 |
+| building block | OF-83 | fastener: M10 anchor (M10 anchor x32) | 32 | 4 | 2 % min 4 |
 | building block | OF-84 | fastener: M8 x 25 hopper bolts (M8 x 25 hopper bolts x8) | 8 | 4 | 2 % min 4 |
 | building block | OF-85 | fastener: M6 x 25 (M6 x 25 x65) | 65 | 4 | 2 % min 4 |
 | building block | OF-86 | fastener: M8 x 40 (M8 x 40 x72) | 72 | 4 | 2 % min 4 |
@@ -82,7 +82,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-89 | fastener: M12 x 60 hex bolt + nut + 2 washers (M12 x 60 hex bolt + nut + 2 washers x34) | 34 | 4 | 2 % min 4 |
 | building block | OF-90 | fastener: M12 x 40 (M12 x 40 x456) | 456 | 10 | 2 % min 4 |
 | building block | OF-91 | fastener: M12 x 45 (M12 x 45 x8) | 8 | 4 | 2 % min 4 |
-| building block | OF-92 | fastener: M10 wedge anchor (M10 wedge anchor x156) | 156 | 4 | 2 % min 4 |
+| building block | OF-92 | fastener: M10 wedge anchor (M10 wedge anchor x164) | 164 | 4 | 2 % min 4 |
 | building block | OF-93 | fastener: M10 wedge anchor (M10 wedge anchor x110) | 110 | 4 | 2 % min 4 |
 | building block | OF-94 | fastener: M12 bolt + nut; PP-flanged joint (M12 bolt + nut; PP-flanged joint x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-95 | fastener: M12 PVDF bolt + nut (M12 PVDF bolt + nut x8) | 8 | 4 | 2 % min 4 |
@@ -126,7 +126,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-133 | fastener: M10 base hold-down anchor (M10 base hold-down anchor x44) | 44 | 4 | 2 % min 4 |
 | building block | OF-134 | fastener: M12 batten strip bolt (M12 batten strip bolt x24) | 24 | 4 | 2 % min 4 |
 | building block | OF-135 | fastener: M6 box-assembly screw (M6 box-assembly screw x24) | 24 | 4 | 2 % min 4 |
-| building block | OF-136 | fastener: M8 bolt (M8 bolt x24) | 24 | 4 | 2 % min 4 |
+| building block | OF-136 | fastener: M8 bolt (M8 bolt x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-137 | fastener: M10 lid hold-down bolt + nut (M10 lid hold-down bolt + nut x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-138 | fastener: M6 screen-frame clamp screw (M6 screen-frame clamp screw x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-139 | fastener: M8 liner batten bolt (M8 liner batten bolt x16) | 16 | 4 | 2 % min 4 |
@@ -140,14 +140,15 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-147 | fastener: M6 reactor tube clamp bolt (M6 reactor tube clamp bolt x4) | 4 | 4 | 2 % min 4 |
 | building block | OF-148 | fastener: M10 table mount (M10 table mount x4) | 4 | 4 | 2 % min 4 |
 | building block | OF-149 | fastener: M10 hold-down (M10 hold-down x4) | 4 | 4 | 2 % min 4 |
-| building block | OF-150 | fastener: M16 tie rod (M16 tie rod with 2 heavy hex nuts x152) | 152 | 4 | 2 % min 4 |
-| building block | OF-151 | fastener: M8 bolt (M8 bolt with nut x76) | 76 | 4 | 2 % min 4 |
+| building block | OF-150 | fastener: M16 tie rod (M16 tie rod with 2 heavy hex nuts x148) | 148 | 4 | 2 % min 4 |
+| building block | OF-151 | fastener: M8 bolt (M8 bolt with nut x74) | 74 | 4 | 2 % min 4 |
 | building block | OF-152 | fastener: M8 U-bolt (M8 U-bolt with nut and gasketed clamp x2) | 2 | 4 | 2 % min 4 |
 | building block | OF-153 | fastener: Solvent cement joints (Solvent cement joints x1) | 1 | 4 | 2 % min 4 |
 | building block | OF-154 | fastener: M10 stud (M10 stud with 2 nuts (ISO 4014 / ISO 4032) x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-155 | fastener: M16 stud (M16 stud with 2 nuts (ISO 4014 / ISO 4032) x24) | 24 | 4 | 2 % min 4 |
 | building block | OF-156 | fastener: M12 stud (M12 stud with 2 nuts (ISO 4014 / ISO 4032) x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-157 | fastener: M10 hatch hold-down clamp (M10 hatch hold-down clamp x4) | 4 | 4 | 2 % min 4 |
+| building block | OF-158 | fastener: M8 socket bolt (M8 socket bolt x16) | 16 | 4 | 2 % min 4 |
 | building block | OF-159 | fastener: M8 cage-section joint bolt (M8 cage-section joint bolt x12) | 12 | 4 | 2 % min 4 |
 | building block | OF-160 | fastener: M8 frame-section joint bolt (M8 frame-section joint bolt x12) | 12 | 4 | 2 % min 4 |
 | building block | OF-161 | fastener: M10 socket bolt (M10 socket bolt x8) | 8 | 4 | 2 % min 4 |
@@ -192,4 +193,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-182 lines; 37 spare motors, 1313 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+183 lines; 37 spare motors, 1317 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
