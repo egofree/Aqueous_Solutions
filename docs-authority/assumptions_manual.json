@@ -7357,15 +7357,21 @@
  },
  {
   "id": "A-M-430",
-  "value": "mineral nitrate solution 6.5 kg/d (raceway 5.5 + media beds 1.0) and the CaCO3 hopper 0.035 kg/d ride the D-DOCK mineral manifest at the baseline",
+  "value": "the raceway mineral-nitrate dose comes from the on-site NUT_AN ammonium-nitrate skid (X-QA-11, A-M-497): the dock manifest line NUT_AQUA is re-pointed to the skid and NUT_AQUA_BED is retired, because the fish-stock nitrogen the biofilter returns covers the media-bed uptake (the loop passes the beds before the raceway) and the skid doses the whole mineral gap on the raceway line; the CaCO3 free-choice hopper (CA_HOPPER) stays on the dock mineral manifest pending its own route",
   "units": "kg/d (mineral solution, not feed)",
-  "where": "NUT_AQUA, NUT_AQUA_BED, CA_HOPPER edges; NORTH_DOCK trade statement",
-  "basis": "The 60 kg fish stock returns ~13.5 g N/d against a raceway-plus-greens uptake near 260 g N/d (duckweed 4.5 kg DM at the ~5.5 % N class, bed greens 0.2 kg DM): the no-imported-FEED rule (A-M-416) does not extend to mineral nutrients, exactly as it does not extend to the salt and ore lines. The in-plant route - neutralizing the nitric-acid line (IA-O2-NIT class) with the ash/salts stream - is the locale upgrade that retires the manifest line at import-free sites.",
+  "where": "flow_graph/param/farm_balance.py NUT_AQUA dose and NUT_AN skid; flow_graph/param/nitrate_route.py; drivers FARM.classes.nutrient_N_wt / FARM.duckweed.dm_N_wt / FARM.aquaponics.fish_N_return_g_d",
+  "basis": "The 60 kg fish stock returns ~13.5 g N/d against the crop uptake at the registered N class: the raceway harvest (duckweed draw at the 5 % DM class x the ~5.5 % N class, A-M-430/426) plus the bed greens 4.0 kg/d wet = 0.2 kg/d DM. The no-imported-FEED rule (A-M-416) does not extend to mineral nutrients, but the plant makes its own fixed nitrogen: the A-M-430 named in-plant route (neutralizing the nitric-acid class with ammonia) is landed as the Ostwald route on the ammonia line (A-M-497). farm_balance.py computes the dose from the uptake drivers; nitrate_route.py sizes the skid.",
   "needs_verification": true,
   "verification_test": "Raceway N-uptake measurement at the X-FARM-04 trial",
   "task": "X-FARM-04",
-  "sensitivity": "the dose scales 1:1 with the raceway area (A-M-420) and the measured duckweed N class",
-  "replaced_by": "Raceway N-uptake measurement at the X-FARM-04 trial"
+  "sensitivity": "the dose follows the crop draw and the registered N classes 1:1 (farm_balance compute); the fish return moves the gap inversely",
+  "replaced_by": "Raceway N-uptake measurement at the X-FARM-04 trial",
+  "files": [
+   "flow_graph/param/farm_balance.py",
+   "flow_graph/param/nitrate_route.py",
+   "flow_graph/param/drivers.json",
+   "docs-authority/FARM_DESIGN.md"
+  ]
  },
  {
   "id": "A-M-431",
@@ -8265,5 +8271,68 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.regen (second run changes nothing); python3 -m flow_graph.param.recovery reports no flags with IA-ALCL3-MU absent; cake weigh and assay at the first leach campaign"
+ },
+ {
+  "id": "A-M-496",
+  "value": "the foundry pot chloride make-up (CaCl2 0.116 kg/d to CA_POT, MgCl2 0.040 kg/d to MG_POT at the design rates) is recovered on site: BRINE_CRYS, an agitated flash crystallizer on a 2 kg/d leach-liquor side-stream, crystallizes the mixed CaCl2/MgCl2 to the pot feeds and returns the mother liquor to the leach; the dock imports IA-CACL2-MU and IA-MGCL2-MU are retired (task X-QA-11)",
+  "units": "kg/d (pot feeds unchanged; the side-stream draw and its heater load are drivers)",
+  "where": "flow_graph/param/salt_recovery.py BRINE_CRYS; flow_graph/param/foundry_poly.py retired IA-CACL2-MU / IA-MGCL2-MU; drivers brine_crys_feed_kg_d / brine_crys_kW",
+  "basis": "the make-up mass is not consumed: the MgCl2 share is the Kroll salt-flux drag-out cycling flux -> melt -> slag -> leach (A-M-284), and the CaCl2 share carries the Ca deoxidizer addition whose Ca reports to the dross and leach liquor as CaCl2 (the pot chlorine leaves separately as the IA-CA-CL2-SHIP product export, netted against the new chloride the halite ore draws carry in). The HCl leach also dissolves the design feed's silicate-oxide class (AQS-ASSAY-001 section 3: silicate_oxide 18 % of the feed) as Ca and Mg chlorides, so the leach liquor carries the make-up many times over; the draw is sized above the need so the route does not lean on a precise brine assay",
+  "sensitivity": "the pot feeds set the crystallized mass 1:1; the draw driver sets the mother-liquor return and the heater load; a leaner brine assay would raise the draw, not the make-up",
+  "replaced_by": "brine assay (Ca/Mg/Na chlorides) on the crystallizer feed and product at commissioning; campaign salt weigh-in/weigh-out against the pot feeds",
+  "task": "X-QA-11",
+  "files": [
+   "flow_graph/param/salt_recovery.py",
+   "flow_graph/param/foundry_poly.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "brine assay and salt weigh at the crystallizer commissioning"
+ },
+ {
+  "id": "A-M-497",
+  "value": "the raceway mineral-nitrate dose is made on site: NUT_AN oxidizes half its ammonia draw with plant oxygen (NH3 + 2 O2 -> HNO3 + H2O, Ostwald class) and neutralizes the acid with the other half to ammonium nitrate (net 2 NH3 + 2 O2 -> NH4NO3 + H2O), diluted to the FARM.classes.nutrient_N_wt dosing strength; the dock mineral line NUT_AQUA re-points to the skid and NUT_AQUA_BED retires (task X-QA-11, the A-M-430 in-plant route landed)",
+  "units": "kg/d (dose from the crop uptake; reactants at the nut_an_selectivity driver)",
+  "where": "flow_graph/param/nitrate_route.py NUT_AN; flow_graph/param/farm_balance.py dose computation; drivers nut_an_selectivity / nut_an_kW / FARM.classes.nutrient_N_wt",
+  "basis": "the plant's only new-nitrogen input is the WS_AMMONIA Haber line on the air-separation nitrogen; the skid converts it to nitrate on site. The dose follows the crop uptake at the registered N classes less the fish-stock return (A-M-430 basis; farm_balance.compute). The media-bed uptake is smaller than the fish return and the loop passes the beds before the raceway, so the loop nitrate covers the beds. Reactants feed at the 0.97 selectivity driver and the unconverted slip vents to NOX_SCRUB, whose nitrate liquor feeds NUTRIENT_DOSE, so the slip nitrogen stays a booked nutrient",
+  "sensitivity": "the dose scales 1:1 with the raceway draw and the N classes (A-M-430); the ammonia and oxygen draws follow at the stoichiometric ratio divided by the selectivity; the WS_AMMONIA nitrogen feed re-solves by difference in balance.physics R10c",
+  "replaced_by": "raceway N-uptake measurement and loop TAN/nitrate at the X-FARM-04 trial; skid product assay at commissioning",
+  "task": "X-QA-11",
+  "files": [
+   "flow_graph/param/nitrate_route.py",
+   "flow_graph/param/farm_balance.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "Raceway N-uptake measurement at the X-FARM-04 trial"
+ },
+ {
+  "id": "A-M-498",
+  "value": "the pattern-wax make-up draws from the plant's own C19-C28 paraffin cut: IA-WAX-CUT carries the 0.2 kg/d make-up (the 10 % of the 2.0 kg/d pattern wax beyond the dewax reclaim, A-M-286) from the PROD_C19_C28 cut tank to WAX_PATTERN, blended with the reclaim to the pattern-wax spec, and the dock import IA-WAX-MU is retired (task X-QA-11); the draw is netted off the IA-C19-SHIP surplus export in ess_tf.py",
+  "units": "kg/d",
+  "where": "flow_graph/param/foundry_poly.py IA-WAX-MU retirement and IA-WAX-CUT; flow_graph/param/ess_tf.py IA-C19-SHIP netting",
+  "basis": "the wax chain already runs on the plant paraffin cut (the C19-C28 tank feeds the grease kettles and the shop draw, with a 2.2 kg/d surplus exported); the pattern-wax class is that same cut blended to spec (D-DOCK feedstock ruling A-M-284 established the chain; the audit route named on the retired import is this blend)",
+  "sensitivity": "the make-up follows the castings line 1:1 through the reclaim fraction (A-M-286); the C19-C28 surplus export moves inversely",
+  "replaced_by": "campaign pattern-wax blend trial (ash/congeal point on the reclaim-plus-cut blend)",
+  "task": "X-QA-11",
+  "files": [
+   "flow_graph/param/foundry_poly.py",
+   "flow_graph/param/ess_tf.py"
+  ]
+ },
+ {
+  "id": "A-M-499",
+  "value": "the feedstock make-up IA-FEED-MU (65.55 kg/d behind the scrap-yard closure, A-M-460) is the plant's raw feed, not a process-chemical import: it is re-classed raw_ore on the characterized lot (recovery.py ORE, element Fe at the feed_fe_assay_frac driver) and covered by a recovery record on HOPPER that recovers the feed iron first from the loop receipts (the roster wear line, shop swarf, frass and the leach return) with the make-up lot covering only the balance (task X-QA-11)",
+  "units": "kg/d make-up; - Fe fraction",
+  "where": "flow_graph/param/recovery.py ORE IA-FEED-MU; flow_graph/param/foundry_poly.py HOPPER recovery record; drivers feed_fe_assay_frac",
+  "basis": "AQS-ASSAY-001 Rev C section 3 reference-point element Fe 0.25 at the held feed rate; the make-up lot is characterized to the same basis (section 7), so the dock class 'raw feed' is the honest class (owner decision t61u, A-M-476: raw ore at the dock is the shortfall top-up after recovery); the EW cascade plates the dissolved feed metals at recovery 1.0 (A-M-460)",
+  "sensitivity": "the record's need and recovered move with the feed and receipt rates 1:1 at the assay fraction; the gate fails if the make-up carries more Fe than the unrecovered shortfall",
+  "replaced_by": "weighed and assayed make-up lots at the dock manifest (AQS-ASSAY-001 section 7)",
+  "task": "X-QA-11",
+  "files": [
+   "flow_graph/param/recovery.py",
+   "flow_graph/param/foundry_poly.py",
+   "flow_graph/param/drivers.json"
+  ]
  }
 ]

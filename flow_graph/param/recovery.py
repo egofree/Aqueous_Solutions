@@ -22,13 +22,14 @@ from . import drivers as DR
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
 AW = dict(H=1.008, C=12.011, N=14.007, O=15.999, F=18.998, Na=22.990, Mg=24.305, Al=26.982, Si=28.085, S=32.06,
-          Cl=35.453, Ca=40.078, Ti=47.867, Cr=51.996, Mo=95.95)
+          Cl=35.453, Ca=40.078, Ti=47.867, Cr=51.996, Mo=95.95, Fe=55.845)
 # dock raw-ore streams: element, mineral formula, ore-purity driver (None: the stream is rated as the pure mineral)
 ORE = {'IA-CAF2-MU': ('F', 'CaF2', 'POLYMERS.fluoropolymer-train.fluorspar_CaF2_wt'),
        'IA-TIO2-MU': ('Ti', 'TiO2', None), 'IA-MOO3-MU': ('Mo', 'MoO3', None), 'IA-CR2O3-MU': ('Cr', 'Cr2O3', None),
        'IA-QUARTZ-MU': ('Si', 'SiO2', None), 'IA-SILICA-MU': ('Si', 'SiO2', None), 'IA-SULFUR-MU': ('S', 'S', None),
        'IA-TRONA-MU': ('Na', 'Na2CO3.NaHCO3.2H2O', 'trona_ore_purity'), 'IA-HALITE-MU': ('Na', 'NaCl', 'halite_ore_purity'),
-       'IA-LIMESTONE-MU': ('Ca', 'CaCO3', 'limestone_ore_purity')}
+       'IA-LIMESTONE-MU': ('Ca', 'CaCO3', 'limestone_ore_purity'),
+       'IA-FEED-MU': ('Fe', 'Fe', 'feed_fe_assay_frac')}   # X-QA-11, A-M-499: the characterized-lot make-up IS the raw feed
 # Explicit dock classes (F-20261110-07), set where the stream is made and restamped by stamp(): each dock input is
 # raw_ore (a listed mineral), water (a water make-up), waste (a received waste stream) or pending (an import the
 # recovery-first program has not replaced yet; each pending entry names the task that retires it). No text matching:
@@ -39,28 +40,17 @@ WATER_IN = {   # water make-ups at the dock boundary
     'IA-H2O-MU',
 }
 # pending imports with the task that retires each (F-20261110-07: the exemption dies with its task).
-# IA-ALCL3-MU left this table with X-QA-19 closed by sizing, not by exemption: the Al line is sized to the
-# recoverable aluminium (A-M-495) and the import is retired, so there is no pending entry left to keep alive.
+# X-QA-11 (2026-11-15) retired six lines of this table, the way X-QA-19 retired the AlCl3 import: by
+# sizing the on-site route, not by exemption. IA-ALCL3-MU left with the recovery-sized aluminium line
+# (A-M-495); IA-MGCL2-MU / IA-CACL2-MU with the BRINE_CRYS brine recovery (A-M-496); NUT_AQUA /
+# NUT_AQUA_BED with the NUT_AN ammonium-nitrate skid (A-M-497); IA-WAX-MU with the C19-C28 cut blend
+# (A-M-498); IA-FEED-MU re-classed raw feed on the characterized lot (A-M-499).
 PENDING = {
-    'IA-MGCL2-MU': ('X-QA-11', 'CaCl2-MgCl2 brine make-up that restores the Kroll drag-out (A-M-284); a process-chemical '
-                    'import, not a mining waste; the on-site salt recovery route is the X-QA-11 program'),
-    'IA-CACL2-MU': ('X-QA-11', 'CaCl2 brine make-up of the CA_POT (A-M-284); as IA-MGCL2-MU, a process chemical pending the '
-                    'on-site salt recovery route'),
-    'IA-FEED-MU': ('X-QA-11', 'feedstock make-up behind the scrap-yard closure (A-M-460: the design feed less the loop '
-                   'receipts - wear, shop swarf, frass and the leach return); a characterized lot re-points the feed and '
-                   'the closure re-solves (AQS-ASSAY-001 section 7)'),
-    'NUT_AQUA': ('X-QA-11', 'mineral nitrate solution for the raceway on the dock mineral manifest (A-M-430: the fish stock '
-                 'returns about 13.5 g N/d against a raceway-plus-greens uptake near 260 g N/d; neutralizing the '
-                 'nitric-acid line with the ash stream is the locale upgrade that retires the manifest line)'),
-    'NUT_AQUA_BED': ('X-QA-11', 'mineral nitrate solution for the media beds on the same dock mineral manifest and the same '
-                     'nitrogen basis as the raceway dose (A-M-430)'),
-    'CA_HOPPER': ('X-QA-11', 'free-choice mineral calcium carbonate for the livestock on the same dock mineral manifest '
-                  '(A-M-430)'),
+    'CA_HOPPER': ('X-QA-11', 'free-choice mineral calcium carbonate for the livestock on the dock mineral manifest '
+                  '(A-M-430); its own on-site route is the remaining X-QA-11 residue (the quail grit class)'),
     'FR_FINISH': ('X-QA-11', 'phosphorus flame-retardant finish of the crew textile line at the reagent resupply class '
                   '(A-M-225; the FR-finished fleece is the designed textile, A-M-429); in-plant synthesis is the locale '
                   'upgrade named on the edge'),
-    'IA-WAX-MU': ('X-QA-11', 'pattern wax make-up beyond the dewax reclaim (A-M-286); the plant C19-C28 paraffin cut as the '
-                  'make-up source is the audit route not yet landed'),
 }
 # terminal loss sinks (F-20261110-07): units whose inflow ends the arriving elements - the acid leach (undissolved
 # solids report to the crib or the sink circuit), beyond the dock and the air already checked

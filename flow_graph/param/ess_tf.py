@@ -183,7 +183,13 @@ def tf(g, ps=None):
     for sid, tank, cut, use, comp in (('IA-C11-SHIP', 'PROD_C11_C18', 'CUT-2', 'IA-BLOW-IN', 'C11-C18'), ('IA-C19-SHIP', 'PROD_C19_C28', 'CUT-3', 'CUT-3-OUT', 'C19-C28')):
         if sid not in E:
             g['edges'].append(_edge(sid, tank, 'NORTH_DOCK', 'L', ['mass'], f'{comp} surplus shipped', 0, 'kg/d', 'CRYO', 'DOCK', {comp: 1.0})); E[sid] = g['edges'][-1]
-        put(sid, E[cut]['rate']['value'] - E[use]['rate']['value'], f'{comp} make less the plant draw ({use}), shipped (Q-002 pattern)')
+        # the cut tank closes exactly: the ship nets every other live draw off the cut, not only `use` -
+        # the grease-kettle draws, and the pattern-wax blend IA-WAX-CUT (X-QA-11, A-M-498)
+        others = sum(float(e['rate']['value'] or 0) for e in g['edges']
+                     if e['presence'] == 'present' and e['from_unit_id'] == tank and e['stream_id'] not in (sid, use)
+                     and 'mass' in (e.get('layers') or []) and isinstance(e['rate'].get('value'), (int, float)))
+        put(sid, E[cut]['rate']['value'] - E[use]['rate']['value'] - others,
+            f'{comp} make less the plant draws ({use} and the on-site cut draws), shipped (Q-002 pattern)')
     N['OIL_FRAC']['params']['cut_basis'] = {'source': 'SU2018_PYRO', 'per_pass_fractions_C5-10_C11-18_C19-28_C29+': [round(x, 4) for x in f], 'A-M': 'A-M-138'}
     # GAS_ATOMIZER: powder S60 is the product; 10 % off-spec (A_RL_SWARF) is remelted on new IA-ATOM-REMELT, so the melt draw is S60/0.9.
     # Melt-line compositions were a water/solute default; they carry metal (A-M-139). Ultrafines 1 % stay on the MET LEV air term.

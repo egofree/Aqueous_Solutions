@@ -274,7 +274,7 @@ def tf(g):
         #    vents to the cold box on IA-NOX-N2/IA-NOX-CO2 (outlets restored with CRYO_ASU per D-AIR) — and closes by
         #    difference against the live inlets instead of the frozen BH base: X-SAN-01 Rev B moved the sanitation loads onto
         #    the inlet edges (leach vent, flue quench) and the old base + retirement-delta arithmetic stopped tracking them.
-        nox_in = v('S46') + v('IA-FLUE-EXH') + vv('IA-FC-EXH') + v('IA-LEACH-NOX') + vv('IA-FC-FIX') + v('IA-CLOSE-1') + vv('IA-NIT-VENT')
+        nox_in = v('S46') + v('IA-FLUE-EXH') + vv('IA-FC-EXH') + v('IA-LEACH-NOX') + vv('IA-FC-FIX') + v('IA-CLOSE-1') + vv('IA-NIT-VENT') + vv('IA-NUT-VENT')
         put('IA-NOX-N2', nox_in - v('IA-NOX-H2O') - v('IA-NOX-N') - v('IA-NOX-CO2'),
             f'scrubber gas outlet by difference: in {nox_in:.3f} (flue {v("IA-FLUE-EXH"):.2f} + leach vent {v("IA-LEACH-NOX"):.2f} + genset/ties {v("S46") + v("IA-CLOSE-1"):.3f}) less water {v("IA-NOX-H2O"):.2f}, nutrients {v("IA-NOX-N"):.2f}, CO2 {v("IA-NOX-CO2"):.2f} — BH routing to the cold box (D-AIR restored the outlets)')
         E['IA-NOX-N2']['composition'] = {'N2': round(1 - xs/v('IA-NOX-N2'), 4), 'O2': round(xs/v('IA-NOX-N2'), 4)}
