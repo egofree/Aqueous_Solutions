@@ -1,7 +1,8 @@
 """HDR_N2 manufacturing model, AQS-PLAN-006 work order (X-MFG lane, tier 5, A-PIPE).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json (W2 fields by the tracker;
-the envelope, design and layout blocks beside them are builder-owned) plus the line-list
+Study. Not a PE stamp. Sizes and counts come from the plant graph through the
+shared reader (models/mfg/lib/graph_node.py); the builder-owned envelope, design
+and layout blocks merge in from params.json, plus the line-list
 authorities the A-PIPE acceptance names: the unit's edges in
 `flow_graph/plant_flow_graph.json` and the issued rows of `docs-authority/LINE_LIST.md`
 (AQS-PIP-004, the DN and class authority). It writes the unit line list
@@ -43,10 +44,13 @@ import cadquery as cq
 HERE = pathlib.Path(__file__).parent
 ROOT = HERE.parents[2]
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles, step_export  # noqa: E402  (nozzles: placement)
+from lib import dn, fasteners, graph_node, materials, nozzles, step_export  # noqa: E402  (nozzles: placement)
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("HDR_N2")          # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
+          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
 L, W, H = (float(v) for v in P["size_mm"])                 # 2000 run x reservation cross-section
 REV = P["graph_revision"]
 UNIT = P["unit_id"]

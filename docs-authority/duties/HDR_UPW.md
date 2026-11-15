@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - In 67.30 kg/d, out 67.30 kg/d. No holdup claimed.
 
-3. Material. PVDF SDR 21, fusion-welded (high-purity water, AQS-STD-002) (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.
+3. Material. PVDF SDR 21, fusion-welded. Basis: high-purity water distribution at the ambient class (graph design, AQS-DUTY-075): UPW is the M1 named stream, and PVDF SDR 21 fusion-welded (DVS_2207) keeps the leach-out and hygiene class the polish skid is built to deliver. Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3). Alternative: 316L BA tube on valve-manifold sections that need metallic strength, with the same UPW hygiene class. ambient temperature class at the polish skid outlet; no measured rate. (X-QA-18)
 
 4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.81 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 
