@@ -116,12 +116,13 @@ def run_one(stage, env, entries, graph_path, pass_no, capture=None, capture_base
     # capture-incomplete and the rule abstains on its outputs.
     argv, wrapped = stage['argv'], False
     if capture is not None:
-        capture.setdefault(stage['name'], {'paths': set(), 'status': None, 'complete': False})
+        c = capture.setdefault(stage['name'], {'paths': set(), 'status': None, 'complete': False})
         a = stage['argv']
         if (len(a) >= 3 and a[1] == '-m') or (len(a) >= 2 and os.path.basename(a[0]).startswith('python')):
             from . import input_audit
             argv = ['python3', '-m', 'flow_graph.param.input_audit', '--capture', capture_base, '--'] + a
             wrapped = True
+            c['complete'] = True          # downgraded again below if no sidecar appeared
     t0 = time.monotonic()
     r = subprocess.run(argv, cwd=ROOT, env=env, capture_output=True, text=True,
                        pass_fds=lock_pass_fds())
