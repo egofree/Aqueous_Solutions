@@ -1,6 +1,6 @@
 {
  "_generated_from": {
-  "graph_sha256": "3834c2d3a228b751adf8bc95f2bde54f12ab3c28256d3ee05347be86dc94fc5a",
+  "graph_sha256": "b95d35c7319074b659a34a668a2efd2394c115e6b5b51cc8fe733e8d736ba293",
   "generator": "docs-authority/_placement_routes.py",
   "placement_seed_revision": "O"
  },
@@ -5736,21 +5736,6 @@
    "elbows": 3
   },
   {
-   "line": "NUT_AQUA",
-   "dn": 15,
-   "class": "P1",
-   "from": "NORTH_DOCK",
-   "to": "DUCKWEED",
-   "legs_mm": [
-    3200,
-    32500,
-    -13400,
-    -2900
-   ],
-   "length_m": 52.0,
-   "elbows": 3
-  },
-  {
    "line": "NUT_AQUA_BED",
    "dn": 15,
    "class": "P1",
@@ -6184,11 +6169,56 @@
    ],
    "length_m": 50.4,
    "elbows": 3
+  },
+  {
+   "line": "IA-FR-P",
+   "dn": 15,
+   "class": "P1",
+   "from": "WS_PHOS",
+   "to": "POLY_FIBER",
+   "legs_mm": [
+    2650,
+    350,
+    -12750,
+    -2250
+   ],
+   "length_m": 18.0,
+   "elbows": 3
+  },
+  {
+   "line": "IA-FR-NH3",
+   "dn": 15,
+   "class": "P1",
+   "from": "WS_AMMONIA",
+   "to": "POLY_FIBER",
+   "legs_mm": [
+    2650,
+    -1850,
+    -9550,
+    -2250
+   ],
+   "length_m": 16.3,
+   "elbows": 3
+  },
+  {
+   "line": "SHELL_GRIT",
+   "dn": 15,
+   "class": "P1",
+   "from": "FEED_PREP",
+   "to": "QUAIL_CAGE",
+   "legs_mm": [
+    2350,
+    7100,
+    -1100,
+    -2350
+   ],
+   "length_m": 12.9,
+   "elbows": 3
   }
  ],
  "summary": {
-  "routed": 412,
-  "missing_position": 49,
-  "total_m": 8313
+  "routed": 414,
+  "missing_position": 58,
+  "total_m": 8309
  }
 }

@@ -8,3 +8,4 @@ N6,cable,Class 150,"power terminal (SF-CA_POT, 480 V or 208/120 V AC (bus per AQ
 N7,DN15,Class 150,"CaCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)",inlet,160
 N8,DN15,Class 150,pot byproduct chlorine for the phosgenation,outlet,600
 N9,DN15,Class 150,chlorine make-up of the chlorosilane loop,outlet,600
+N10,DN15,Class 150,"crystallized CaCl2 to the calcium pot (recovered, was the dock import)",inlet,160

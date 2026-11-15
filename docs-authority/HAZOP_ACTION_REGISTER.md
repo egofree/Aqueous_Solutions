@@ -15,5 +15,10 @@ lane (flow_graph/inventory/other.py) once setpoints exist; the relief items need
 
 | Register id | HAZOP action | Node | Deviation | Open action | Owner task (AQS-PLAN-007) |
 |---|---|---|---|---|---|
+| HA-01 | HZ-234 | POLY_FIBER | level / Low | add the level indication loop to AQS-CTL-001 (unit task 08) | POLYMERS-POLY_FIBER-08 |
+| HA-02 | HZ-251 | BRINE_CRYS | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | FOUNDRY-BRINE_CRYS-08 |
+| HA-03 | HZ-253 | BRINE_CRYS | level / Low | add the level indication loop to AQS-CTL-001 (unit task 08) | FOUNDRY-BRINE_CRYS-08 |
+| HA-04 | HZ-256 | NUT_AN | temperature / High | add the temperature indication loop to AQS-CTL-001 (unit task 08) | FARM-NUT_AN-08 |
+| HA-05 | HZ-258 | NUT_AN | level / Low | add the level indication loop to AQS-CTL-001 (unit task 08) | FARM-NUT_AN-08 |
 
-No open engineering actions.
+5 open engineering actions on 3 units: BRINE_CRYS, NUT_AN, POLY_FIBER.

@@ -16,7 +16,7 @@ This page carries the study HAZOP worksheets: for every node of the generated de
 
 This is a design-derived study HAZOP: deviations, causes and safeguards come from the generated design. It does not replace a facilitated team HAZOP; the team review signs off rev B.
 
-155 nodes, 999 deviations, 243 actions: 148 closed at issue against cited artifacts (duty sheet section 6 relief statements, X-SAF-03 C7; AQS-CTL-001 indication loops), 95 trip actions close in the SIF pass (AQS-CTL-003, `docs-authority/_sif.py`), 0 tracked open in the action register AQS-SAF-008 (`docs-authority/HAZOP_ACTION_REGISTER.md`) with owner tasks in plan terms.
+157 nodes, 1018 deviations, 258 actions: 150 closed at issue against cited artifacts (duty sheet section 6 relief statements, X-SAF-03 C7; AQS-CTL-001 indication loops), 103 trip actions close in the SIF pass (AQS-CTL-003, `docs-authority/_sif.py`), 5 tracked open in the action register AQS-SAF-008 (`docs-authority/HAZOP_ACTION_REGISTER.md`) with owner tasks in plan terms.
 
 ## 2. Actions by kind
 
@@ -24,12 +24,15 @@ Table 2.1. Actions by kind
 
 | Action | Count | Closing task |
 |---|---|---|
-| relief case | 148 | X-SAF-04 |
-| high-level or high-flow protection | 70 | X-CTL-03 |
+| relief case | 150 | X-SAF-04 |
+| high-level or high-flow protection | 72 | X-CTL-03 |
 | independent high-temperature trip on the heater | 14 | X-CTL-03 |
-| pump dry-run protection (low-flow or low-level interlock) | 7 | X-CTL-03 |
+| pump dry-run protection (low-flow or low-level interlock) | 9 | X-CTL-03 |
 | PT low-low trip isolating the bank | 3 | X-CTL-03 |
-| check valve on the pumped inlet | 1 | X-PIP |
+| high-level switch | 3 | X-CTL-03 |
+| level indication | 3 | detail P&ID |
+| check valve on the pumped inlet | 2 | X-PIP |
+| temperature indication | 2 | detail P&ID |
 
 ## 3. Worksheets
 
@@ -742,7 +745,7 @@ Table 2.1. Actions by kind
 
 | Parameter | Guide word | Cause | Consequence | Safeguard | Action |
 |---|---|---|---|---|---|
-| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty; dry-running pump | none | pump dry-run protection (low-flow or low-level interlock) |
 | flow | More | control valve fails open, upstream surge | overfill or overpressure | LSH trip | - |
 | pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
 | temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
@@ -1310,7 +1313,7 @@ Table 2.1. Actions by kind
 | temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
 | level | High | inflow above outflow, outlet blocked | overflow to the bund | LSH trip of the feed | - |
 | level | Low | outlet pump runs on, leak | pump dry-running | LT low alarm | - |
-| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | gravity or vented inlets: no back-pressure source | - |
+| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | none | check valve on the pumped inlet |
 | composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
 
 ### WAX_PATTERN (prep)
@@ -1733,6 +1736,9 @@ Table 2.1. Actions by kind
 | flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
 | pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
 | temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
+| level | High | inflow above outflow, outlet blocked | overflow to the bund | none | high-level switch |
+| level | Low | outlet pump runs on, leak | pump dry-running | none | level indication |
+| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | check valve at the pump discharge of WS_AMMONIA, WS_PHOS | - |
 | composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
 
 ### MET_SYN (chemical_synthesis)
@@ -1805,5 +1811,31 @@ Table 2.1. Actions by kind
 | flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
 | pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
 | temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
+| composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
+
+### BRINE_CRYS (precip)
+
+| Parameter | Guide word | Cause | Consequence | Safeguard | Action |
+|---|---|---|---|---|---|
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty; dry-running pump | none | pump dry-run protection (low-flow or low-level interlock) |
+| flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
+| pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | none | temperature indication |
+| level | High | inflow above outflow, outlet blocked | overflow to the bund | none | high-level switch |
+| level | Low | outlet pump runs on, leak | pump dry-running | none | level indication |
+| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | gravity or vented inlets: no back-pressure source | - |
+| composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
+
+### NUT_AN (chemical_synthesis)
+
+| Parameter | Guide word | Cause | Consequence | Safeguard | Action |
+|---|---|---|---|---|---|
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
+| pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | none | temperature indication |
+| level | High | inflow above outflow, outlet blocked | overflow to the bund | none | high-level switch |
+| level | Low | outlet pump runs on, leak | pump dry-running | none | level indication |
+| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | check valve at the pump discharge of ROOF_TANK, WS_AMMONIA | - |
 | composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
 

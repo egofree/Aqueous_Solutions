@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 203.8 kg/d. Mass out 203.8 kg/d. Electrical duty 0.0000 kW. In: IA-AQUA-TOPUP 27.36 kg/d (loop top-up: root-zone growth water and evaporation); AQUA_RETURN2 158.5 kg/d (polished loop water return (2.2 kg/d duckweed growth drawn from the loop)); DUCK_FISH 18 kg/d (fresh duckweed: tilapia ration (dry-equivalent, 1.5 % BW)). Out: AQUA_LOOP1 200 kg/d (ammonia-rich fish waste water (NH3/NH4+ from the gills)); FISH_SLUDGE 3 kg/d (fish sludge to the larvae bin); FISH_HARVEST 0.81 kg/d (fish harvest to the food store).
+1. Basis. Mass in 203.8 kg/d. Mass out 203.8 kg/d. Electrical duty 0.0000 kW. In: IA-AQUA-TOPUP 29.77 kg/d (loop top-up: root-zone growth water and evaporation); AQUA_RETURN2 156 kg/d (polished loop water return (2.2 kg/d duckweed growth drawn from the loop)); DUCK_FISH 18 kg/d (fresh duckweed: tilapia ration (dry-equivalent, 1.5 % BW)). Out: AQUA_LOOP1 200 kg/d (ammonia-rich fish waste water (NH3/NH4+ from the gills)); FISH_SLUDGE 3 kg/d (fish sludge to the larvae bin); FISH_HARVEST 0.81 kg/d (fish harvest to the food store).
 
 2. Size.
 - Envelope 2100×1100×1100 mm, 2.541 m³. That box over this flow would be 299.2 h if it were full. It is not a residence time.

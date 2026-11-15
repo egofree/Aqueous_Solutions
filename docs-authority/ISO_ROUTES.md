@@ -7,7 +7,7 @@ Authority: the placement model (flow_graph/placement_seed.json Rev M, AQS-BLD-00
 
 Route rule: up to the source-level rack (datum + 3200 mm, AQS-PIP-002), X run, Y run, then vertical to the target centre. Legs in mm, signed. Elbows = non-zero legs - 1. Risers are at least 300 mm above the higher end so every route keeps a flexible leg (X-PIP-04). Unit centres are the placement-model centres; nozzle lateral offsets refine at detail design (the nozzle schedules carry face + height). Supports and stress: AQS-PIP-005.
 
-Status. 412 positioned piped lines routed, 8313 m total. 49 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
+Status. 414 positioned piped lines routed, 8309 m total. 58 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
 
 | Line | DN | Class | From | To | dZ up | dX | dY | dZ down | Length m | Elbows |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -393,7 +393,6 @@ Status. 412 positioned piped lines routed, 8313 m total. 49 piped lines wait on 
 | FORM_PRESS | 15 | P1 | FEED_PREP | GROWBED_B | 2350 | 5650 | -800 | -2950 | 11.8 | 3 |
 | BED_GREENS | 15 | P1 | GROWBED_B | FOOD_STORE | 6425 | -7975 | -10225 | -300 | 24.9 | 3 |
 | BED_ET | 15 | P1 | GROWBED_B | CRYO_AHU | 2950 | -5900 | -6150 | -7200 | 22.2 | 3 |
-| NUT_AQUA | 15 | P1 | NORTH_DOCK | DUCKWEED | 3200 | 32500 | -13400 | -2900 | 52.0 | 3 |
 | NUT_AQUA_BED | 15 | P1 | NORTH_DOCK | GROWBED_B | 3200 | 14900 | -2850 | -2950 | 23.9 | 3 |
 | CA_HOPPER | 15 | P1 | NORTH_DOCK | QUAIL_CAGE | 3200 | 16350 | -3150 | -2350 | 25.1 | 3 |
 | FOOD_EXPORT | 15 | P1 | FOOD_STORE | BOUNDARY_EXPORT | 2825 | -11125 | 9475 | -7800 | 31.2 | 3 |
@@ -423,8 +422,12 @@ Status. 412 positioned piped lines routed, 8313 m total. 49 piped lines wait on 
 | IA-SI-CO2 | 15 | P3 | SI_REDUCE | ATMOS | 6250 | 12150 | -15600 | -300 | 34.3 | 3 |
 | IA-AL-CO | 15 | P3 | AL_POT | NORTH_DOCK | 5500 | 27700 | 4100 | -300 | 37.6 | 3 |
 | IA-AL-H2O | 15 | M1 | AL_POT | ATMOS | 6250 | 35050 | -8800 | -300 | 50.4 | 3 |
+| IA-FR-P | 15 | P1 | WS_PHOS | POLY_FIBER | 2650 | 350 | -12750 | -2250 | 18.0 | 3 |
+| IA-FR-NH3 | 15 | P1 | WS_AMMONIA | POLY_FIBER | 2650 | -1850 | -9550 | -2250 | 16.3 | 3 |
+| SHELL_GRIT | 15 | P1 | FEED_PREP | QUAIL_CAGE | 2350 | 7100 | -1100 | -2350 | 12.9 | 3 |
 
 Waiting on placements:
+- NUT_AQUA (NUT_AN unplaced)
 - LB-FEED (LB_INTAKE unplaced)
 - LB-DEGAS-OUT (LB_DEGAS unplaced)
 - LB-DEGAS-VENT (LB_DEGAS unplaced)
@@ -474,3 +477,11 @@ Waiting on placements:
 - IA-RESIST-STOCK (RESIST_SYN unplaced)
 - IA-CL2-SIREF (SI_REFINE unplaced)
 - IA-SI-PURGE (SI_REFINE unplaced)
+- IA-BRINE-SRC (BRINE_CRYS unplaced)
+- IA-BRINE-CACL2 (BRINE_CRYS unplaced)
+- IA-BRINE-MGCL2 (BRINE_CRYS unplaced)
+- IA-BRINE-ML (BRINE_CRYS unplaced)
+- IA-NUT-NH3 (NUT_AN unplaced)
+- IA-NUT-O2 (NUT_AN unplaced)
+- IA-NUT-H2O (NUT_AN unplaced)
+- IA-NUT-VENT (NUT_AN unplaced)

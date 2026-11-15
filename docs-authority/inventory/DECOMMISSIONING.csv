@@ -5,15 +5,16 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 1,POLYMERS,PELLET,0,,-,270,no
 1,POLYMERS,POLY_COND,0,,-,65,no
 1,POLYMERS,POLY_F,270,,-,65,no
-1,POLYMERS,POLY_FIBER,0,,-,1149,no
+1,POLYMERS,POLY_FIBER,4786,,-,1149,yes
 1,POLYMERS,POLY_OLEFIN,270,C5-C10,-,65,no
 1,POLYMERS,POLY_STOCK,0,,-,29,no
 1,POLYMERS,POWDER_RESIN,0,,-,270,no
 1,POLYMERS,TFE_SYN,270,,-,65,no
 1,POLYMERS,VDF_SYN,270,,-,65,no
 2,FOUNDRY,AL_POT,0,,-,154,no
+2,FOUNDRY,BRINE_CRYS,0,CaCl2 MgCl2 NaCl other salts,-,0,no
 2,FOUNDRY,CAST_LINE,1125,,-,270,yes
-2,FOUNDRY,CA_POT,640,,-,154,yes
+2,FOUNDRY,CA_POT,640,CaCl2,-,154,yes
 2,FOUNDRY,COMB_HEAT,0,,-,225,no
 2,FOUNDRY,CONT_CAST,1125,,-,270,yes
 2,FOUNDRY,CR_CELL,0,,-,154,no
@@ -24,7 +25,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 2,FOUNDRY,IND_MELT,0,,-,225,no
 2,FOUNDRY,INV_CAST,1125,,-,270,yes
 2,FOUNDRY,METAL_STORE,0,Si,-,91,no
-2,FOUNDRY,MG_POT,640,,-,154,yes
+2,FOUNDRY,MG_POT,640,MgCl2,-,154,yes
 2,FOUNDRY,MO_CELL,0,,-,154,no
 2,FOUNDRY,RES_HEAT,0,,-,225,no
 2,FOUNDRY,RF_HEAT,0,,-,225,no
@@ -37,12 +38,12 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 2,FOUNDRY,TI_CELL,0,,-,154,no
 2,FOUNDRY,VAC_CAST,0,,-,270,no
 2,FOUNDRY,VAC_IND,0,,-,225,no
-2,FOUNDRY,WAX_PATTERN,360,,-,86,no
+2,FOUNDRY,WAX_PATTERN,360,C19-C28,-,86,no
 3,FAB,FAB_UPW_TANK,125,solute,-,8,no
 3,FAB,LITHO_ALIGN,0,Si,-,30,no
 3,FAB,LITHO_COAT,0,Si solute,-,36,no
 3,FAB,LITHO_DEV,0,Si solute,-,30,no
-3,FAB,RESIST_SYN,0,CH3OH CO Cl2 H2 H2SO4 NH3 acetone air,"N2 to < 25 % LFL, then < 1 % H2",0,no
+3,FAB,RESIST_SYN,0,C11-C18 CH3OH CO Cl2 H2 H2SO4 NH3 acetone air,"N2 to < 25 % LFL, then < 1 % H2",0,no
 3,FAB,SOLAR_PV_CELL,0,Si solute,-,691,no
 3,FAB,SOLV_PLANT,0,CH3OH CO H2 acetone ethanol solute,"N2 to < 25 % LFL, then < 1 % H2",0,no
 3,FAB,WAFER_FAB,1406,Ar N2 Si diacetone alcohol novolac-DNQ resin solute,-,338,yes
@@ -80,13 +81,14 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 6,FARM,BIOFILTER,0,,-,2700,no
 6,FARM,BSFL_BIN,0,,-,236,no
 6,FARM,CHICKEN_COOP,0,,-,926,no
-6,FARM,DUCKWEED,0,,-,518,no
+6,FARM,DUCKWEED,0,NH4NO3,-,518,no
 6,FARM,DUCK_PEN,0,,-,634,no
 6,FARM,FEED_PREP,0,,-,298,no
 6,FARM,FOOD_STORE,0,,-,48,no
 6,FARM,GROWBED_A,0,,-,567,no
 6,FARM,GROWBED_B,0,,-,567,no
 6,FARM,GROW_BED,1406,CO2,-,338,yes
+6,FARM,NUT_AN,0,Ar NH3 O2,N2/air to 19.5-23.5 % O2,0,no
 6,FARM,QUAIL_CAGE,0,,-,232,no
 6,FARM,RABBIT_HUTCH,0,,-,319,no
 6,FARM,VERMI_BIN,0,,-,208,no
@@ -134,7 +136,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 11,DIGESTER,FLOAT_SINK,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",338,no
 11,DIGESTER,F_RECOVER,1406,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",338,yes
 11,DIGESTER,HX8,0,,-,22,no
-11,DIGESTER,LEACH_CSTR_1,2100,AlCl3 CaCl2 Cl2 Fe FeCl3 HCl O2 Si metal_plateable metal_reactive organic other_metals separation residue silicate_oxide unassigned,N2/air to 19.5-23.5 % O2,504,yes
+11,DIGESTER,LEACH_CSTR_1,2100,AlCl3 CaCl2 Cl2 Fe FeCl3 HCl MgCl2 NaCl O2 Si metal_plateable metal_reactive organic other salts other_metals separation residue silicate_oxide unassigned,N2/air to 19.5-23.5 % O2,504,yes
 11,DIGESTER,LI_RECOVER,20,,-,5,no
 11,DIGESTER,NAOH_PLANT,0,H2O NaCl,-,0,no
 11,DIGESTER,POLISH_BANK,1406,,-,338,yes
@@ -163,7 +165,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 14,GAS,BAGHOUSE,0,solute,-,338,no
 14,GAS,FLUE_KO,289,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",69,no
 14,GAS,H2_DRYER,0,,-,37,no
-14,GAS,NOX_SCRUB,0,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",43,no
+14,GAS,NOX_SCRUB,0,Fe H2O HCl N2 NOx other_metals solute,"air purge, scrubbed to vent (TLV)",43,no
 14,GAS,RELIEF_H2,0,,-,75,no
 15,HEAT,ADS_CHILL,0,,-,63,no
 15,HEAT,DRY_COOLER,0,,-,130,no

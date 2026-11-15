@@ -205,6 +205,9 @@
   "WS_SLURRY": "static reagent tote or day tank; no internals booked by the duty or sizing sheet",
   "WS_SOLV": "static reagent tote or day tank; no internals booked by the duty or sizing sheet"
  },
- "open": {},
- "units": 202
+ "open": {
+  "BRINE_CRYS": "same hold as task 09: duty section 3 selection pending (AQS-STD-005 section 4); internals cannot be detailed before the material is selected",
+  "NUT_AN": "same hold as task 09: duty section 3 selection pending (AQS-STD-005 section 4); internals cannot be detailed before the material is selected"
+ },
+ "units": 204
 }

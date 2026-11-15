@@ -25,7 +25,7 @@ Table 2.1. Unit count per class
 | Atmospheric | 3 |
 | B31.3 piping component | 4 |
 | Section VIII-1 (ID not yet sized) | 1 |
-| not a vessel (no design pressure on the graph) | 225 |
+| not a vessel (no design pressure on the graph) | 229 |
 
 Atmospheric design pressure is set from the actual cases by the vent stage (A-M-174): 4 x the open-vent dP for the vapour space plus the full-height hydrostatic head at SG 1.25. 0 atmospheric units have no sized height yet; their liquid head comes from a hold-up volume (A-M-182: 2 d for stores, 1 d for process units, H/D 1.5) until their unit sizing replaces it. Units with no liquid inflow carry the vapour case alone. Among the X-MFG-40 named units, GLASS_BURNOUT (rotary kiln), ALK_SCRUBBER, ZNBR2_BR2_REGEN (Br2 tower) and OIL_FRAC run at or near atmospheric pressure by process and stay atmospheric; the cold box CRYO_ASU does not: its compressor and column pressures are set by X-MFG-33 and it is reclassified when that design issues.
 
@@ -69,6 +69,7 @@ Table 4.1. Code intent per unit
 | BMED_BASE | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BMED_UPW_POLISH | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BOUNDARY_EXPORT | DOCK |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| BRINE_CRYS | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BRIN_RECOVER | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BSFL_BIN | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | C29_RECYCLE | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -122,6 +123,7 @@ Table 4.1. Code intent per unit
 | FLUX_PREP | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | FOOD_STORE | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | FORGE | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| FSP_40K | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | FUEL_CELL | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | F_RECOVER | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | GALLEY | HAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -191,12 +193,14 @@ Table 4.1. Code intent per unit
 | MET_SYN | MEOH |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | MFG_SHOP | MFG |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | MG_POT | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| MMRTG | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | MO_CELL | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | NAOH_PLANT | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | NCG_HEADER | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | NORTH_DOCK | DOCK |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | NOX_SCRUB | GAS |  |  | 200 | not a vessel (no design pressure on the graph) | - | - | - |
 | NUTRIENT_DOSE | NUT |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| NUT_AN | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | OIL_DRYER | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | OIL_FRAC | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | OIL_PYRO | OIL |  | 500.0 | 191 | not a vessel (no design pressure on the graph) | - | - | - |

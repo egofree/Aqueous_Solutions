@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 43.92 kg/d. Mass out 43.92 kg/d. Electrical duty 0.6000 kW. In: DUCK_FORM 43.38 kg/d (fresh duckweed to formulation (layers + quail + reserve draw)); EGGSHELL_RET 0.06 kg/d (baked crushed eggshell return (38 g Ca/d)); LARVAE_FRESH 0.479 kg/d (fresh larvae to the formulation drier). Out: LAYER_FEED 4.168 kg/d (formulated layer ration); QUAIL_RATION 1.667 kg/d (formulated quail ration); DUCK_STORE 0.5 kg/d (dried duckweed to the dry reserve); FORM_REJECT 0.06667 kg/d (screenings/fines back to the larvae bin); 3 more.
+1. Basis. Mass in 43.92 kg/d. Mass out 43.92 kg/d. Electrical duty 0.6000 kW. In: DUCK_FORM 43.38 kg/d (fresh duckweed to formulation (layers + quail + reserve draw)); EGGSHELL_RET 0.06 kg/d (baked crushed eggshell return (38 g Ca/d)); LARVAE_FRESH 0.479 kg/d (fresh larvae to the formulation drier). Out: LAYER_FEED 4.133 kg/d (formulated layer ration); QUAIL_RATION 1.667 kg/d (formulated quail ration); DUCK_STORE 0.5 kg/d (dried duckweed to the dry reserve); FORM_REJECT 0.06667 kg/d (screenings/fines back to the larvae bin); 4 more.
 
 2. Size.
 - Sizing study pending (study): throughput_kg_d 2.54; basis A-M-426 driver arithmetic.

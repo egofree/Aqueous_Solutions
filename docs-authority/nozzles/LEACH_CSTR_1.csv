@@ -71,3 +71,5 @@ N69,DN15,Class 150,impurity chlorides and silicon tetrachloride bleed,inlet,160
 N70,solids,Class 150,unreclaimed saw kerf with the spent slurry (1 - si_kerf_recycle_frac),inlet,160
 N71,DN15,Class 150,impurity-chloride bleed with the end-of-life separation residue,inlet,160
 N72,solids,Class 150,recovered reactive-Al hydroxide cake to the aluminium line,outlet,600
+N73,DN15,Class 150,leach-liquor side-stream to the crystallizer,outlet,600
+N74,DN15,Class 150,mother liquor (residual chlorides) returned to the leach,inlet,160

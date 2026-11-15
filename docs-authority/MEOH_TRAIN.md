@@ -50,8 +50,8 @@ Table 4.1. Methanol train streams
 | IA-MEOH-PROD | `MEOH_TANK` | `PROD_MEOH` | methanol product | 28.6 kg/d |
 | IA-MEOH-REST | `MEOH_TANK` | `MEOH_FC` | tank draw | 1.28 kg/d |
 | IA-MEOH-SHIP | `PROD_MEOH` | `NORTH_DOCK` | methanol shipped at the dock | 28.6 kg/d |
-| IA-RESIST-MEOH | `MEOH_TANK` | `RESIST_SYN` | plant methanol for the formaldehyde | 0.00697 kg/d |
-| IA-SOLV-MEOH | `MEOH_TANK` | `SOLV_PLANT` | plant methanol for the carbonylation | 0.143 kg/d |
+| IA-RESIST-MEOH | `MEOH_TANK` | `RESIST_SYN` | plant methanol for the formaldehyde | 0.00666 kg/d |
+| IA-SOLV-MEOH | `MEOH_TANK` | `SOLV_PLANT` | plant methanol for the carbonylation | 0.144 kg/d |
 | MEOH_TO_OLEFIN | `MEOH_SYNTH` | `POLY_OLEFIN` | methanol co-feed | 0 kg/d |
 | MEOH_TO_TFE | `MEOH_TANK` | `TFE_SYN` | methanol carbon source to TFE | 0.0641 kg/d |
 | MEOH_TO_VDF | `MEOH_TANK` | `VDF_SYN` | methanol carbon source to VDF | 0.15 kg/d |

@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.232 | 0.232 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 0.399 | 0.399 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 7.491 | 7.491 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 2651.000 | 2651.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 2653.000 | 2653.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -827,6 +827,11 @@ All solved units close.
 | foundry_inv_shell_reclaim_frac | 0.875 | kg spent shell reclaimed to stucco/flour per kg spent shell | A-M-286 | yes |
 | foundry_inv_wax_kg_per_kg | 1.0 | kg wax pattern per kg casting (thin-wall cluster class) | A-M-286 | yes |
 | foundry_inv_wax_reclaim_frac | 0.9 | kg dewax condensate reclaimed per kg wax pattern | A-M-286 | yes |
+| feed_fe_assay_frac | 0.25 | - Fe mass fraction of the design feed at the AQS-ASSAY-001 reference point | A-M-499 | — |
+| brine_crys_feed_kg_d | 2.0 | kg/d leach-liquor side-stream drawn to the BRINE_CRYS crystallizer | A-M-496 | yes |
+| brine_crys_kW | 0.07 | kW crystallizer jacket heater and vacuum ejector at the 2 kg/d side-stream | A-M-496 | — |
+| nut_an_selectivity | 0.97 | - ammonia conversion selectivity of the NUT_AN oxidation-absorption route to ammonium nitrate | A-M-497 | — |
+| nut_an_kW | 0.06 | kW oxidation starter, metering pumps and controls of the NUT_AN skid | A-M-497 | — |
 | foundry_pot_voltage_V | {"al": 3.8, "mg": 4.2, "ca": 4.2, "mo": 2.8, "cr": 2.8} | V cell terminal (decomposition + overpotential + bath ohmic) | A-M-282 | yes |
 | foundry_pot_ce | 0.85 | - current efficiency (Faraday) at the pot electrodes | USBM_CL_EW | yes |
 | foundry_pot_j_A_cm2 | 0.5 | A/cm2 design anode current density (graphite, chloride melt) | A-M-282 | yes |
@@ -1005,7 +1010,10 @@ All solved units close.
 | FARM.classes.eggshell_frac | 0.1 | - shell mass fraction of the egg | A-M-426 | — |
 | FARM.classes.frass_wet_frac_of_feedstock | 0.06 | - frass wet mass per wet feedstock | A-M-426 | — |
 | FARM.classes.aqua_loop_kgd | 200.0 | kg/d loop circulation through the biofilter and beds | A-M-426 | — |
-| FARM.classes.nut_dose_kgd | 5.5 | kg/d mineral nitrate solution to the raceway | A-M-426 | — |
+| FARM.classes.nutrient_N_wt | 0.045 | - N mass fraction of the dosed ammonium-nitrate solution (raceway mineral dose) | A-M-497 | yes |
+| FARM.duckweed.dm_N_wt | 0.055 | - N mass fraction of duckweed dry matter | A-M-430 | — |
+| FARM.classes.bed_greens_dm_frac | 0.05 | - dry-matter fraction of the media-bed greens harvest | A-M-430 | — |
+| FARM.aquaponics.fish_N_return_g_d | 13.5 | g N/d returned to the loop by the fish stock (gill and urinary TAN, nitrified by the biofilter) | A-M-430 | yes |
 | FARM.classes.chicken_water_kg_bird_d | 0.03 | kg drinking water per hen per day | A-M-426 | — |
 | FARM.classes.chicken_resp_kg_bird_d | 0.06 | kg respiration/evaporation per hen per day | A-M-426 | — |
 | FARM.classes.quail_water_kg_bird_d | 0.01 | kg drinking water per quail per day | A-M-426 | — |
@@ -1432,11 +1440,13 @@ All solved units close.
 | NARASIMHAN2000 | Narasimhan S., Jordache C., Data Reconciliation and Gross Error Detection, Gulf Publishing (2000), ch. 3: linear steady-state reconciliation, minimum weighted least-squares adjustment subject to the balance constraints. |
 | NASA_5A1998 | Mulloth L.M., Finn J.E., Carbon Dioxide Adsorption on a 5A Zeolite Designed for CO2 Removal in Spacecraft Cabins, NASA/TM-1998-208752: ASRT 5A isotherms 0-250 C, about 1.0 wt% CO2 at 0.4 kPa (3 torr), 25 C. |
 | NASA_CDRA2015 | Knox J.C. et al., Optimization of the Carbon Dioxide Removal Assembly (CDRA-4EU), NTRS 20150016500 (2015): two desiccant and two adsorbent beds, one pair adsorbing while the other regenerates at 204 C, nominal half-cycle 144 min, 34.7 m3/h. |
+| NASA_FSP | NASA Fission Surface Power: 40 kW electric-class surface fission power unit, uranium-fueled with Stirling power conversion (Kilopower/KRUSTY flight heritage); the dust-blind base load carrier, rated 40 kW_e per unit, for the mars locale (F-20261113-01). |
 | NASA_MARS_ATMOS | Mars atmospheric composition (mole fraction): CO2 0.951, N2 0.0259, Ar 0.0194, O2 0.00161, CO 0.00058 (AQS-PLAN-011 section 8, [17]). |
 | NASA_MARS_FACT | NASA Mars Fact Sheet: surface gravity 3.71 m/s2, solar day 88775 s, synodic period 779.94 d, solar irradiance 586.2 W/m2 mean, surface pressure 0.636 kPa, temperature 210 K mean (184-242 K at Viking 1), surface density about 0.020 kg/m3 (AQS-PLAN-011 section 8, [16]). |
 | NASA_MARS_ICE | Excess ground ice within metres of the surface in Arcadia Planitia (Dundas et al., 2021; AQS-PLAN-011 section 8, [24], [25]). |
 | NASA_MARS_PERCHLORATE | Perchlorate in Martian soil: 0.4 to 0.6 percent by mass at the Phoenix landing site (HEICT et al., 2009; AQS-PLAN-011 section 8, [23]). |
 | NASA_MARS_RAD | Surface radiation at Gale crater: 0.64 mSv/d dose equivalent (RAD instrument, MSL; AQS-PLAN-011 section 8, [21]). |
+| NASA_RTG | NASA radioisotope thermoelectric generators: multi-mission RTG (MMRTG) class, Pu-238 general-purpose heat source, about 110 W electric at beginning of mission (Curiosity and Perseverance heritage); the extreme-reliability W-class trickle for controls and instruments (F-20261113-01). |
 | NASA_STD_3001 | NASA-STD-3001: NASA Space Flight Human-System Standard (crew health; AQS-PLAN-011 section 8, [32]). |
 | NCEI_DV_EXTREMES | NOAA NCEI station all-time records, Death Valley NP (USC00042319): highest recorded air temperature 56.7 C on 1913-07-10 (world record, WMO assessed); lowest about -9.4 C. Station extremes are interim bounding design values until the ASHRAE climatic design conditions for the nearest listed station are entered. |
 | NEC2026 | NFPA 70, National Electrical Code (2026): 210.20(A)/215.3 continuous load at 125 %; 240.6(A) standard overcurrent device ratings. |
@@ -1861,6 +1871,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver foundry_inv_shell_reclaim_frac | 0.875 kg spent shell reclaimed to stucco/flour per kg spent shell | knock-out sieve yield: reclaimed stucco vs 0.5 kg/kg make-up balance (AQS-SIZE-FOUNDRY shell-waste line) |
 | driver foundry_inv_wax_kg_per_kg | 1.0 kg wax pattern per kg casting (thin-wall cluster class) | pattern weigh vs casting weigh on the first article cluster |
 | driver foundry_inv_wax_reclaim_frac | 0.9 kg dewax condensate reclaimed per kg wax pattern | dewax condensate weigh per campaign vs the 10 % burn/loss allowance |
+| driver brine_crys_feed_kg_d | 2.0 kg/d leach-liquor side-stream drawn to the BRINE_CRYS crystallizer | brine assay (Ca/Mg/Na chlorides) on the crystallizer feed at commissioning |
 | driver foundry_pot_voltage_V | {"al": 3.8, "mg": 4.2, "ca": 4.2, "mo": 2.8, "cr": 2.8} V cell terminal (decomposition + overpotential + bath ohmic) | bench molten-chloride cell at the design current density: terminal voltage vs charge |
 | driver foundry_pot_ce | 0.85 - current efficiency (Faraday) at the pot electrodes | bench molten-chloride cell: deposit mass vs charge |
 | driver foundry_pot_j_A_cm2 | 0.5 A/cm2 design anode current density (graphite, chloride melt) | bench cell anode polarization at 0.3-0.8 A/cm2 (graphite consumption rate) |
@@ -1894,6 +1905,8 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver FARM.ducks.stock | 6.0 ducks (Khaki Campbell class) | Flock trial (X-FARM-05) |
 | driver FARM.quail.stock | 20.0 coturnix hens (indoor cage bank) | Cage-bank trial (X-FARM-06) |
 | driver FARM.rabbit.does | 2.0 does + 1 buck | Rabbitry trial (X-FARM-07) |
+| driver FARM.classes.nutrient_N_wt | 0.045 - N mass fraction of the dosed ammonium-nitrate solution (raceway mineral dose) | Raceway N-uptake measurement at the X-FARM-04 trial |
+| driver FARM.aquaponics.fish_N_return_g_d | 13.5 g N/d returned to the loop by the fish stock (gill and urinary TAN, nitrified by the biofilter) | Loop TAN/nitrate measurement at the X-FARM-04 trial |
 | driver rect_channel_frame_sizes_A | [250, 500, 1000, 1500, 2000, 2500, 3000, 4000] A rectifier channel frame sizes (study list) | Vendor catalog |
 | driver rect_channel_margin | 1.1 - channel rating margin over design current | Vendor selection |
 | driver rect_channel_rated_V | 6.0 V channel voltage rating (study) | Measured cell and bus voltage |
@@ -2367,3 +2380,8 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-490 | 0.326424 kg of feed silicate_oxide is carried with the leach kg/kg feed | Assay the silicate content of a characterized crib-solids lot and re-point the carry fraction |
 | A-M-494 | The minor-metal EW arrangement is a selectable option, not a - (layout option, no physics change) | flow_graph/param/test_ew_deposit_basis.py merged-option test: the blend books fully and the current-carrying minor-cell count drops under 'merged'; 'selective' restores the committed book |
 | A-M-495 | The aluminium line is sized to the recoverable aluminium (ta kg/d | python3 -m flow_graph.param.regen (second run changes nothing); python3 -m flow_graph.param.recovery reports no flags with IA-ALCL3-MU absent; cake weigh and assay at the first leach campaign |
+| A-M-496 | Pot-cell bath-top geometry: the anode rods hang with their t mm | python3 -m flow_graph.param.pot_cells (second run changes nothing); python3 models/mfg/tracker.py --check CA_POT CR_CELL MG_POT MO_CELL |
+| A-M-503 | the foundry pot chloride make-up (CaCl2 0.116 kg/d to CA_POT kg/d (pot feeds unchanged; the side-stream draw and its heater load are drivers) | brine assay and salt weigh at the crystallizer commissioning |
+| A-M-497 | the raceway mineral-nitrate dose is made on site: NUT_AN oxi kg/d (dose from the crop uptake; reactants at the nut_an_selectivity driver) | Raceway N-uptake measurement at the X-FARM-04 trial |
+| A-M-501 | the free-choice quail grit is crushed baked eggshell from th kg/d (grit = the registered ca_hopper_kgd class) | grit weigh and shell assay at the FEED_PREP commissioning (X-FARM-10) |
+| A-M-502 | the crew textile FR finish is the on-site diammonium-phospha kg/d (finish compound at the A-M-225 pick-up) | finished-fleece FR performance test at the textile first article |

@@ -46,6 +46,7 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | FAB_UPW_TANK | tank | external visual (1 y, A-M-189) |
 | FLOAT_SINK | separator | external visual (1 y, A-M-189) |
 | FLUE_KO | separator | external visual (1 y, A-M-189) |
+| FSP_40K | fission | external visual (1 y, A-M-189) |
 | FUEL_CELL | pem_fc | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
 | GAS_ATOMIZER | forming | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | GEO_GHEX | ghex | external visual (1 y, A-M-189) |
@@ -77,6 +78,7 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | MET_MELT | melt | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | MET_SCRUB | scrubber | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | MFG_SHOP | shop | external visual (1 y, A-M-189) |
+| MMRTG | rtg | external visual (1 y, A-M-189) |
 | NCG_HEADER | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
 | NOX_SCRUB | scrubber | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | NUTRIENT_DOSE | dose | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
@@ -236,5 +238,7 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | ACID_PLANT | reactor | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | RESIST_SYN | reactor | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | SI_REFINE | reactor | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| BRINE_CRYS | precip | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| NUT_AN | chemical_synthesis | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 
-227 units, 492 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+231 units, 502 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.

@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "3834c2d3a228b751adf8bc95f2bde54f12ab3c28256d3ee05347be86dc94fc5a",
+  "graph_sha256": "b95d35c7319074b659a34a668a2efd2394c115e6b5b51cc8fe733e8d736ba293",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 370.717,
-   "calc_kw": 370.717,
+   "kw": 370.848,
+   "calc_kw": 370.848,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,9 +16,9 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 191.219,
-   "calc_kw": 191.219,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 191.2 kW, charge 869.1 kW, 2677 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 191.359,
+   "calc_kw": 191.359,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 191.4 kW, charge 869.8 kW, 2679 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -43,8 +43,8 @@
   {
    "unit": "H2O_ELYZ",
    "role": "load",
-   "kw": 23.724,
-   "calc_kw": 23.724,
+   "kw": 23.723,
+   "calc_kw": 23.723,
    "basis": "X-PAR-12 TF: 10.35 kg/d H2 x 55.0 kWh/kg / 24 h; rated 94.9 kW on a 6.0 h PV window.",
    "class": "calculated",
    "sector": "CRYO"
@@ -79,9 +79,9 @@
   {
    "unit": "SI_REFINE",
    "role": "\u2014",
-   "kw": 2.457,
-   "calc_kw": 2.457,
-   "basis": "X-MFG-40 TF, on-site silicon (A-M-472): 0.9829 kg/d electronic-grade silicon x si_refine_kWh_kg_TCS_SIEMENS / 24 h (si_refine.py).",
+   "kw": 2.459,
+   "calc_kw": 2.459,
+   "basis": "X-MFG-40 TF, on-site silicon (A-M-472): 0.9835 kg/d electronic-grade silicon x si_refine_kWh_kg_TCS_SIEMENS / 24 h (si_refine.py).",
    "class": "calculated",
    "sector": "GLASS"
   },
@@ -135,7 +135,7 @@
    "role": "\u2014",
    "kw": 1.467,
    "calc_kw": 1.467,
-   "basis": "X-MFG-38 (A-M-178, AQS-DUTY-071): 35.20 kWh/d for 65.6 cells/d in 3 batches of one carrier (A-M-484); peak 6.08 kW (one tool at a time).",
+   "basis": "X-MFG-38 (A-M-178, AQS-DUTY-071): 35.22 kWh/d for 65.6 cells/d in 3 batches of one carrier (A-M-484); peak 6.08 kW (one tool at a time).",
    "class": "calculated",
    "sector": "FAB"
   },
@@ -367,9 +367,9 @@
   {
    "unit": "VCD_TRAIN",
    "role": "\u2014",
-   "kw": 0.265,
-   "calc_kw": 0.265,
-   "basis": "0.374 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)",
+   "kw": 0.269,
+   "calc_kw": 0.269,
+   "basis": "0.379 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)",
    "class": "calculated",
    "sector": "WTR"
   },
@@ -477,7 +477,7 @@
    "role": "\u2014",
    "kw": 0.112,
    "calc_kw": 0.112,
-   "basis": "X-MFG-40 TF, on-site silicon (A-M-472): 0.2070 kg/d metallurgical silicon x si_saf_kWh_kg / 24 h (si_refine.py).",
+   "basis": "X-MFG-40 TF, on-site silicon (A-M-472): 0.2071 kg/d metallurgical silicon x si_saf_kWh_kg / 24 h (si_refine.py).",
    "class": "calculated",
    "sector": "GLASS"
   },
@@ -815,6 +815,24 @@
    "sector": "MEOH"
   },
   {
+   "unit": "BRINE_CRYS",
+   "role": "load",
+   "kw": 0.07,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "NUT_AN",
+   "role": "load",
+   "kw": 0.06,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "FARM"
+  },
+  {
    "unit": "COMB_HEAT",
    "role": "\u2014",
    "kw": 0.05,
@@ -979,18 +997,18 @@
  ],
  "summary": {
   "calculated": 81,
-  "pending": 14,
+  "pending": 16,
   "standby_zero": 9,
   "owner_lock": 2,
   "null": 2,
-  "rows": 108,
-  "graph_sum_kW": 183.73,
-  "calc_sum_kW": 183.73,
-  "connected_load_kW": 183.7,
+  "rows": 110,
+  "graph_sum_kW": 183.87,
+  "calc_sum_kW": 183.87,
+  "connected_load_kW": 183.9,
   "connected_calculated_kW": 174.2,
   "connected_standby_kW": 0.1,
-  "connected_study_kW": 9.5,
-  "connected_calculated_pct": 94.8,
+  "connected_study_kW": 9.6,
+  "connected_calculated_pct": 94.7,
   "by_sector": {
    "CRYO": {
     "calculated": 4
@@ -1009,10 +1027,11 @@
    },
    "FARM": {
     "calculated": 2,
-    "pending": 3
+    "pending": 4
    },
    "FOUNDRY": {
     "calculated": 13,
+    "pending": 1,
     "standby-zero": 9
    },
    "GAS": {

@@ -73,6 +73,7 @@
   "FLUX_PREP",
   "FOOD_STORE",
   "FORGE",
+  "FSP_40K",
   "FUEL_CELL",
   "F_RECOVER",
   "GALLEY",
@@ -141,6 +142,7 @@
   "MET_SYN",
   "MFG_SHOP",
   "MG_POT",
+  "MMRTG",
   "MO_CELL",
   "NAOH_PLANT",
   "NCG_HEADER",
@@ -230,7 +232,10 @@
   "ZNBR2",
   "ZNBR2_BR2_REGEN"
  ],
- "open": {},
- "tot_wetted_rows": 461,
- "units": 229
+ "open": {
+  "BRINE_CRYS": "duty sheet section 3 selection pending (AQS-STD-001 section 3 construction material; held the same way in the AQS-END-002 EOL matrix)",
+  "NUT_AN": "duty sheet section 3 selection pending (AQS-STD-001 section 3 construction material; held the same way in the AQS-END-002 EOL matrix)"
+ },
+ "tot_wetted_rows": 472,
+ "units": 233
 }

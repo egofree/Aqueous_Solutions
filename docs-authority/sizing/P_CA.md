@@ -9,7 +9,7 @@ Authority: graph + params.design: duty=calcium-soap precipitation: wax + lime ->
 params.design: duty=calcium-soap precipitation: wax + lime -> the grease thickener (feeds GREASE_CA), thickener_kgd=0.025 | envelope  mm, state None | size check: fits
 
 ## 2. Geometry
-Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 0.000 m3; vessel D 0.00750814 x H 0.0112622 mm (upright, H/D 1.5).
+Envelope (params.envelope): 0 x 0 x 0 mm, state per stamp. Working volume 0.000 m3; vessel D 0.00636009 x H 0.00954013 mm (upright, H/D 1.5).
 
 ## 3. Material
 PE/rotomoulded (default per AQS-STD-002 M2).

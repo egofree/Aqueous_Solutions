@@ -1,7 +1,7 @@
 # Isometric sheet data (no SVG: the isometric presentation retired 2026-10-27)
 
 Document number: AQS-ISO-002
-Status. 412 routed lines; waiting on placements 49. Pipe 8263 m, elbows 1199, flanges 824, joints 3972.
+Status. 414 routed lines; waiting on placements 58. Pipe 8258 m, elbows 1205, flanges 828, joints 3985.
 
 Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow take-off ASME B16.9 long-radius (metal) or 0.5 x OD (thermoplastic, A-M-121); 6 m random lengths; flanges at both nozzles; ASME B16.5 Class 150 bolting; OD ASME B36.10M. Not checked here: clashes with structure and other lines along the rack (X-PIP-04 with supports and stress).
 
@@ -391,7 +391,6 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | FORM_PRESS | FEED_PREP | GROWBED_B | 15 | P1 | 11.69 | 3 |
 | BED_GREENS | GROWBED_B | FOOD_STORE | 15 | P1 | 24.86 | 3 |
 | BED_ET | GROWBED_B | CRYO_AHU | 15 | P1 | 22.14 | 3 |
-| NUT_AQUA | NORTH_DOCK | DUCKWEED | 15 | P1 | 51.94 | 3 |
 | NUT_AQUA_BED | NORTH_DOCK | GROWBED_B | 15 | P1 | 23.84 | 3 |
 | CA_HOPPER | NORTH_DOCK | QUAIL_CAGE | 15 | P1 | 24.99 | 3 |
 | FOOD_EXPORT | FOOD_STORE | BOUNDARY_EXPORT | 15 | P1 | 31.16 | 3 |
@@ -421,8 +420,12 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | IA-SI-CO2 | SI_REDUCE | ATMOS | 15 | P3 | 34.24 | 3 |
 | IA-AL-CO | AL_POT | NORTH_DOCK | 15 | P3 | 37.54 | 3 |
 | IA-AL-H2O | AL_POT | ATMOS | 15 | M1 | 50.17 | 3 |
+| IA-FR-P | WS_PHOS | POLY_FIBER | 15 | P1 | 17.94 | 3 |
+| IA-FR-NH3 | WS_AMMONIA | POLY_FIBER | 15 | P1 | 16.24 | 3 |
+| SHELL_GRIT | FEED_PREP | QUAIL_CAGE | 15 | P1 | 12.84 | 3 |
 
 Waiting on placements:
+- NUT_AQUA (NUT_AN unplaced)
 - LB-FEED (LB_INTAKE unplaced)
 - LB-DEGAS-OUT (LB_DEGAS unplaced)
 - LB-DEGAS-VENT (LB_DEGAS unplaced)
@@ -472,3 +475,11 @@ Waiting on placements:
 - IA-RESIST-STOCK (RESIST_SYN unplaced)
 - IA-CL2-SIREF (SI_REFINE unplaced)
 - IA-SI-PURGE (SI_REFINE unplaced)
+- IA-BRINE-SRC (BRINE_CRYS unplaced)
+- IA-BRINE-CACL2 (BRINE_CRYS unplaced)
+- IA-BRINE-MGCL2 (BRINE_CRYS unplaced)
+- IA-BRINE-ML (BRINE_CRYS unplaced)
+- IA-NUT-NH3 (NUT_AN unplaced)
+- IA-NUT-O2 (NUT_AN unplaced)
+- IA-NUT-H2O (NUT_AN unplaced)
+- IA-NUT-VENT (NUT_AN unplaced)

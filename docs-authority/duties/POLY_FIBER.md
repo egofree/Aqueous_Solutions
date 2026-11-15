@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.09219 kg/d. Mass out 0.09219 kg/d. Electrical duty 0.3000 kW. In: STOCK_TO_FIBER 0.09048 kg/d (PP pellet draw to the melt-spin line); FR_FINISH 0.001719 kg/d (phosphorus-FR finish (reagent manifest)). Out: FIBER_SCRAP 0.004524 kg/d (spin scrap to the solids line); FLEECE_TO_MFG 0.08767 kg/d (FR-finished fleece to the shop for conversion).
+1. Basis. Mass in 0.09219 kg/d. Mass out 0.09219 kg/d. Electrical duty 0.3000 kW. In: STOCK_TO_FIBER 0.09048 kg/d (PP pellet draw to the melt-spin line); IA-FR-P 0.001276 kg/d (phosphoric acid of the phosphate-FR finish); IA-FR-NH3 0.000443 kg/d (ammonia of the phosphate-FR finish). Out: FIBER_SCRAP 0.004524 kg/d (spin scrap to the solids line); FLEECE_TO_MFG 0.08767 kg/d (FR-finished fleece to the shop for conversion).
 
 2. Size.
 - Sizing study pending (study): throughput_kg_d 0.0905; basis POLYMERS.textile drivers.

@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 8.215 kg/d. Mass out 8.215 kg/d. Electrical duty 0.0000 kW. In: CHICK_MANURE 3.208 kg/d (poultry manure to the larvae bin); FISH_SLUDGE 3 kg/d (fish sludge to the larvae bin); GALLEY_BIO 0.5 kg/d (galley biowaste to the larvae bin); DUCK_MANURE 1.44 kg/d (duck manure to the larvae bin); 1 more. Out: FRASS 0.4929 kg/d (frass compost to the solids line); BSFL_VAP 7.243 kg/d (bin respiration/evaporation); LARVAE_FRESH 0.479 kg/d (fresh larvae to the formulation drier).
+1. Basis. Mass in 8.18 kg/d. Mass out 8.18 kg/d. Electrical duty 0.0000 kW. In: CHICK_MANURE 3.173 kg/d (poultry manure to the larvae bin); FISH_SLUDGE 3 kg/d (fish sludge to the larvae bin); GALLEY_BIO 0.5 kg/d (galley biowaste to the larvae bin); DUCK_MANURE 1.44 kg/d (duck manure to the larvae bin); 1 more. Out: FRASS 0.4908 kg/d (frass compost to the solids line); BSFL_VAP 7.21 kg/d (bin respiration/evaporation); LARVAE_FRESH 0.479 kg/d (fresh larvae to the formulation drier).
 
 2. Size.
-- Envelope 2500×900×700 mm, 1.575 m³. That box over this flow would be 4601.4 h if it were full. It is not a residence time.
+- Envelope 2500×900×700 mm, 1.575 m³. That box over this flow would be 4621.1 h if it were full. It is not a residence time.
 - Envelope: 2 x 5 kg/d-class bins in one frame at the 8.21 kg/d wet feedstock (A-M-418 revision) (X-FARM sec3).
 - Graph design (AQS-PAR-001 sizing): service BSFL larvae composting bin; feedstock_kg_d 1.43; larvae_kg_d 0.114; frass_kg_d 0.357; basis A-M-418 (X-FARM-03); organisms Hermetia illucens (black soldier fly) larvae: 5 instars, 14-18 d at 25-30 C; adults do not feed or bite; conversion 1.4-2.0 kg wet biowaste per kg fresh larvae (TECHTREE insect-farming); substrate moisture 65-75 %; heat the larvae mass generates metabolic heat (the bin self-heats; above 40 C kills the larvae).
 

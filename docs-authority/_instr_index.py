@@ -251,6 +251,19 @@ A('LB_ED1', 'PT', 'pressure transmitter', 'gauge, 316L diaphragm, stack feed hea
 A('LB_ED2', 'AT', 'conductivity analyzer', 'graphite electrode, product line', '0-30 mS/cm', 'product TDS watch against the segment 2311 target (X-LOC-05 Lake Boehmer; A-M-448)')
 A('LB_PROD_TANK', 'LT', 'level transmitter', 'radar, atmospheric tank', '0-4 m', 'product buffer level watch (X-LOC-05 Lake Boehmer; A-M-225 basis)')
 A('LB_BRINE_RETURN', 'FT', 'flow transmitter', 'magnetic, HDPE wetted, concentrate service', '0-40 m3/h', 'concentrate return flow watch; with the product flow it closes the site salt balance (X-LOC-05 Lake Boehmer; A-M-437)')
+# X-QA-11 on-site routes and the mars surface-power units (F-20261113-01): the four new units' loops
+A('BRINE_CRYS', 'FIC', 'flow transmitter', 'coriolis mass flow, brine service, wetted 316L', '0 to 4 kg/d', 'crystallizer side-stream draw: design feed_kg_d 2.0 kg/d (X-QA-11; A-M-503)')
+A('BRINE_CRYS', 'LIC', 'level transmitter', 'hydrostatic level, 316L diaphragm, mother-liquor service', '0 to 100 %', 'crystal-thickener level; the mother liquor returns to the leach at design ml_kg_d 1.844 kg/d (X-QA-11; A-M-503)')
+A('BRINE_CRYS', 'TIC', 'temperature transmitter', 'Pt100 class A, jacketed vessel', '0 to 100 C', 'jacket heater control: design kw 0.07 kW at the flash-crystallization temperature (X-QA-11; A-M-503)')
+A('NUT_AN', 'FIC', 'flow transmitter', 'thermal mass flow, NH3 service', '0 to 0.5 kg/d', 'Ostwald ammonia feed: design nh3_kg_d 0.231 kg/d (X-QA-11; A-M-497)')
+A('NUT_AN', 'FIC', 'flow transmitter', 'thermal mass flow, oxidation gas off the ASU waste stream', '0 to 0.9 kg/d', 'oxidation gas feed: design o2_kg_d 0.433 kg/d against the ammonia at the 0.97 selectivity basis (X-QA-11; A-M-497)')
+A('NUT_AN', 'TE', 'temperature element (SIF, independent)', 'type K thermocouple, own thermowell, catalyst bed', '0 to 1100 C', 'independent high-temperature trip on the oxidation bed (AQS-CTL-003); the Ostwald bed runs hot by design', sif=True)
+A('NUT_AN', 'FIC', 'flow transmitter', 'magnetic flow, ammonium-nitrate solution service', '0 to 8 kg/d', 'product dose to NUTRIENT_DOSE: design dose_kg_d 4.087 kg/d at 4.5 % N (X-QA-11; A-M-497)')
+A('FSP_40K', 'IT', 'current transmitter', 'DC shunt + isolated amplifier on the Stirling alternator output, IEC 61010-1', '0 to 40 kW', 'unit electric output: unit_kW_e 40 (NASA_FSP); the locale count solves in site_units (F-20261113-01)')
+A('FSP_40K', 'TE', 'temperature element', 'type N thermocouple, sheathed, primary loop', '0 to 700 C', 'primary-loop hot-leg watch at the NASA FSP class operating point')
+A('FSP_40K', 'TE', 'temperature element (SIF, independent)', 'type K thermocouple, own thermowell, primary loop', '0 to 900 C', 'independent high-temperature trip, fission unit scram (AQS-CTL-003)', sif=True)
+A('MMRTG', 'IT', 'current transmitter', 'DC shunt + transducer, GPHS thermoelectric stack', '0 to 130 W', 'thermoelectric output watch: unit_W_e 110 (NASA_RTG); a static uncontrolled source - no control loop by design (F-20261113-01)')
+A('MMRTG', 'TE', 'temperature element', 'Pt100 class A, fin root', '0 to 300 C', 'heat-rejection fin temperature watch; the decay-heat output declines over mission life (NASA_RTG)')
 A('LB_CHEM_STORE', 'LT', 'level transmitter', 'radar, day tank', '0-2 m', 'chemical day-tank level watch against the resupply interval (X-LOC-05 Lake Boehmer; A-M-225 basis)')
 _have = {(r['unit'], r['tag'].split('-')[-2]) for r in rows}
 _nauth = 0

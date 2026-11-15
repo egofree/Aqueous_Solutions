@@ -11,7 +11,7 @@ Empty = design steel where known, else envelope x 150 kg/m3; operating adds liqu
 |---|---|---|---|---|---|---|---|
 | L-1 | 69 | 90.2 | 220 | 457 | 598 | 5.1 | 642 |
 | L-2 | 1 | 367.2 | 1401 | 23288 | 36421 | 63.4 | 36701 |
-| L0 | 129 | 218.3 | 361 | 928 | 1269 | 4.3 | 1341 |
+| L0 | 129 | 218.3 | 361 | 975 | 1344 | 4.5 | 1416 |
 | L1 | 73 | 693.4 | 1012 | 1322 | 1508 | 1.9 | 1710 |
 | L2 | 3 | 1.3 | 2 | 2 | 2 | 1.5 | 2 |
 | R1 | 1 | 367.2 | 864 | 11937 | 11937 | 32.5 | 18754 |
@@ -31,13 +31,13 @@ Empty = design steel where known, else envelope x 150 kg/m3; operating adds liqu
 | DUCKWEED | L1 | 313.0 | 313.0 | 313.0 |
 | EVAP_ACID | L0 | 12.0 | 61.9 | 91.9 |
 | EVAP_ACID | L-1 | 12.0 | 61.9 | 91.9 |
+| POLY_FIBER | L0 | 11.3 | 58.2 | 86.4 |
 | GROW_BED/R1 | L1 | 10.7 | 55.3 | 82.0 |
 | GROW_BED/R2 | L1 | 10.7 | 55.3 | 82.0 |
 | GROW_BED/R3 | L1 | 10.7 | 55.3 | 82.0 |
 | GROW_BED/R4 | L1 | 10.7 | 55.3 | 82.0 |
 | GROW_BED/R5 | L1 | 10.7 | 55.3 | 82.0 |
 | GROW_BED/R6 | L1 | 10.7 | 55.3 | 82.0 |
-| GROW_BED/R7 | L0 | 10.7 | 55.3 | 82.0 |
 
 ## Need-based envelopes (A-M-199)
 

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.001882 kg/d. Mass out 0.00228 kg/d. Electrical duty 0.2000 kW. In: WAX_TO_GREASE_CA 0.000401 kg/d (wax cut); PCA_TO_GREASE 0.000115 kg/d (calcium hydroxide); IA-GREASE-AIR 0.001366 kg/d (oxygen of the process air for the wax oxidation). Out: GREASE_CA_TO_MFG 0.00228 kg/d (Ca grease); IA-GREASE-VENT 0 kg/d (water, carbon dioxide and light acids of the wax oxidation and saponification).
+1. Basis. Mass in 0.003513 kg/d. Mass out 0.003513 kg/d. Electrical duty 0.2000 kW. In: WAX_TO_GREASE_CA 0.003289 kg/d (wax cut); PCA_TO_GREASE 4.6e-05 kg/d (calcium hydroxide); IA-GREASE-AIR 0.000178 kg/d (oxygen of the process air for the wax oxidation). Out: GREASE_CA_TO_MFG 0.003161 kg/d (Ca grease); IA-GREASE-VENT 0.000352 kg/d (water, carbon dioxide and light acids of the wax oxidation and saponification).
 
 2. Size.
 - Envelope 500×400×600 mm, 0.12 m³.

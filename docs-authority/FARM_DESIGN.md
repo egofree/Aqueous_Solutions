@@ -47,7 +47,7 @@ The larvae cover 14.9 % of the layer ration by mass as the concentrate co-ingred
 
 ## 5. Units and streams
 
-Farm units: AQUA_TANK, BIOFILTER, GROWBED_A, GROWBED_B, DUCKWEED, FEED_PREP, AQUA_UV, CHICKEN_COOP, DUCK_PEN, QUAIL_CAGE, RABBIT_HUTCH, BSFL_BIN, BEE_HIVE, VERMI_BIN. The streams above are the graph edges; the rates are study values from the driver groups. Formulation closure at FEED_PREP (wet basis): in 43.92 kg/d (duckweed 43.38 + fresh larvae 0.479 + eggshell 0.06), out 43.92 (layer mash 4.17 + quail mash 1.67 + duck mash 2.33 + reserve 0.5 + reject 0.07 + drying vapour 9.5 + press water 25.7 back to the beds).
+Farm units: AQUA_TANK, BIOFILTER, GROWBED_A, GROWBED_B, DUCKWEED, FEED_PREP, AQUA_UV, CHICKEN_COOP, DUCK_PEN, QUAIL_CAGE, RABBIT_HUTCH, BSFL_BIN, BEE_HIVE, VERMI_BIN. The streams above are the graph edges; the rates are study values from the driver groups. Formulation closure at FEED_PREP (wet basis): in 43.92 kg/d (duckweed 43.38 + fresh larvae 0.479 + eggshell 0.06), out 43.89 (layer mash 4.13 + quail mash 1.67 + duck mash 2.33 + reserve 0.5 + reject 0.07 + drying vapour 9.5 + press water 25.7 back to the beds).
 
 ## 6. Unit roster
 

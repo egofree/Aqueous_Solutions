@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 29.37 kg/d. Mass out 29.37 kg/d. Electrical duty 0.0000 kW. In: IA-STOCK-STORE 27.95 kg/d (formed metal product to the store); IA-SI-EG 0.9829 kg/d (electronic-grade silicon for the CZ charge); IA-FAB-SCRAP 0.4307 kg/d (crop, square-off and pot scrap remelted into the next charge (si_scrap_recycle_frac, A-M-487)). Out: STOCK_TO_MFG 22.01 kg/d (plate/rod/wire to manufacturing); STOCK_TO_FAB 1.414 kg/d (electronic-grade silicon CZ charge from the store (refinery rod plus recycled crop and pot scrap)); STOCK_TO_WIRE_DRAW 0 kg/d (rod/wire for final sizing); IA-METAL-SHIP 5.947 kg/d (surplus foundry metal export (pot-line product, dispatch campaign)).
+1. Basis. Mass in 29.37 kg/d. Mass out 29.37 kg/d. Electrical duty 0.0000 kW. In: IA-STOCK-STORE 27.95 kg/d (formed metal product to the store); IA-SI-EG 0.9835 kg/d (electronic-grade silicon for the CZ charge); IA-FAB-SCRAP 0.431 kg/d (crop, square-off and pot scrap remelted into the next charge (si_scrap_recycle_frac, A-M-487)). Out: STOCK_TO_MFG 22.01 kg/d (plate/rod/wire to manufacturing); STOCK_TO_FAB 1.415 kg/d (electronic-grade silicon CZ charge from the store (refinery rod plus recycled crop and pot scrap)); STOCK_TO_WIRE_DRAW 0 kg/d (rod/wire for final sizing); IA-METAL-SHIP 5.947 kg/d (surplus foundry metal export (pot-line product, dispatch campaign)).
 
 2. Size.
 - Envelope 800×800×950 mm, 0.608 m³. That box over this flow would be 496.9 h if it were full. It is not a residence time.

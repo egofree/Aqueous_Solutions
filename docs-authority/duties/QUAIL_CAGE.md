@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 1.902 kg/d. Mass out 1.902 kg/d. Electrical duty 0.0000 kW. In: QUAIL_H2O 0.2 kg/d (quail water); QUAIL_RATION 1.667 kg/d (formulated quail ration); CA_HOPPER 0.035 kg/d (mineral calcium carbonate (free-choice hopper)). Out: QUAIL_EGGS 0.06 kg/d (quail eggs to the food store); QUAIL_DROP 1.75 kg/d (quail droppings to the vermi bin); QUAIL_VAP 0.09167 kg/d (cage evaporation).
+1. Basis. Mass in 1.902 kg/d. Mass out 1.902 kg/d. Electrical duty 0.0000 kW. In: QUAIL_H2O 0.2 kg/d (quail water); QUAIL_RATION 1.667 kg/d (formulated quail ration); SHELL_GRIT 0.035 kg/d (crushed baked eggshell free-choice grit to the quail hopper). Out: QUAIL_EGGS 0.06 kg/d (quail eggs to the food store); QUAIL_DROP 1.75 kg/d (quail droppings to the vermi bin); QUAIL_VAP 0.09167 kg/d (cage evaporation).
 
 2. Size.
 - Envelope 1300×700×1700 mm, 1.547 m³. That box over this flow would be 19523.9 h if it were full. It is not a residence time.

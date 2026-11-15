@@ -7,7 +7,7 @@ service line: service ration formulation: duckweed + larvae meal + recycled eggs
 Internals: formulation internals per the issued mfg model (models/mfg/FEED_PREP/bom.csv): the mixer paddle stage and the HP drier stack on the storage draw (A-M-426) [models/mfg/FEED_PREP/bom.csv]
 Material: SS304 contact surfaces and mixing troughs, PP feed bins, quartz-sleeve drier ducting; no copper-bearing alloys on any feed path. Basis: food-contact sanitation class for the animal ration line (A-M-426): 304 at the chloride-light service, PP bins resist the wet duckweed; Cu is excluded from every feed path outright Alternative: SS316 where the eggshell grinding dust ever shows pitting. (continues on the duty sheet)
 
-Nozzles: 13 process connections per docs-authority/nozzles/FEED_PREP.csv
+Nozzles: 14 process connections per docs-authority/nozzles/FEED_PREP.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

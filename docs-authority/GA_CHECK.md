@@ -102,13 +102,6 @@ Table 3.1. Pairs inside the clearance rule
 | HABITATION | HAB_SLEEP |
 | PROD_O2 | CRYO_AR |
 
-## Code basis (X-STD-01)
-
-| Check | Governing clause |
-| --- | --- |
-| Clearance for access and maintenance | ISO 14122-2:2016; NFPA 70-2026 110.26 (AQS-BLD-012) |
-| Separation | NFPA 400-2025 (AQS-BLD-011) |
-
 ## CAD solid clash, new building elements (rev B, 2026-10-16)
 
 Built `models/freecad/plant.FCStd` with the AQS-SAF-007 rated rooms, the widened and extended stairs, the 34 m apron and the re-packed core; `clash_check.py` tested 27 new elements against 213 solids: 0 contacts above 0.001 m3 in 0 elements.
@@ -155,3 +148,10 @@ Fixes: the L-1 corridors were re-routed round the process hall (`fitout.LM1_ROUT
 | PROD_C5_C10 | REGROUP | -3000 | 0 |
 | BSFL_BIN | SHAFT_UTIL | 0 | 2600 |
 | CHICKEN_COOP | SHAFT_ACID | 0 | -2400 |
+
+## Code basis (X-STD-01)
+
+| Check | Governing clause |
+| --- | --- |
+| Clearance for access and maintenance | ISO 14122-2:2016; NFPA 70-2026 110.26 (AQS-BLD-012) |
+| Separation | NFPA 400-2025 (AQS-BLD-011) |

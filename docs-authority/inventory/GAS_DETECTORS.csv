@@ -48,6 +48,7 @@ TI_CELL,FOUNDRY,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo
 AFTERBURNER_FLUE,GAS,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
 FLUE_KO,GAS,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
 NOX_SCRUB,GAS,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
+NUT_AN,FARM,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
 RESIST_SYN,FAB,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
 SI_REDUCE,GLASS,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
 SOLV_PLANT,FAB,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2

@@ -28,7 +28,7 @@ Table 1.1. Motor families
 
 | Family | Motor type | Size | Voltage | Count | Units | Installed shaft kW |
 | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 104 | 57 | 0.25 |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 112 | 59 | 0.25 |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 56 | 6 | 2.69 |
 | MF-03 | BLDC actuator | ISO 5211 F03 mount | 24 V DC | 24 | 1 | 0.12 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 103 | 4 | 25.75 |
@@ -42,7 +42,7 @@ Table 1.1. Motor families
 | MF-14 | induction IE3 | IEC 132M / 7.5 kW | 480 V 3-ph | 2 | 1 | 11.30 |
 | MF-15 | induction IE3 | IEC 112M / 4 kW | 480 V 3-ph | 1 | 1 | 3.48 |
 | MF-16 | induction IE3 | IEC 80 / 0.75 kW | 480 V 3-ph | 1 | 1 | 0.55 |
-| MF-17 | solenoid | ISO 15218 coil, 22 mm | 24 V DC | 27 | 10 | 0.22 |
+| MF-17 | solenoid | ISO 15218 coil, 22 mm | 24 V DC | 32 | 11 | 0.26 |
 | MF-19 | stepper | NEMA 34 (86 mm) | 48 V DC | 3 | 1 | 1.20 |
 | MF-25 | hermetic induction (scroll) | 1.1 kW hermetic | 480 V 3-ph | 1 | 1 | 0.94 |
 | MF-27 | EC (electronically commutated, permanent-magnet) fan motor | 1.1 kW EC fan, integrated drive | 480 V 3-ph | 16 | 1 | 12.00 |
@@ -134,13 +134,13 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | pem_fc | FUEL_CELL | Motor: transfer pump S52 to VCD_TRAIN (BLDC, 42 mm (NEMA 17  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | rectifier | RECTIFIER | cooling fan | BLDC | 57 mm (NEMA 23 flange) | 0.05 | 24 V DC | S1 | BLDC driver | 4 | assumed per cabinet |
 | scrubber | ZNBR2_BR2_REGEN | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
-| scrubber | ZNBR2_BR2_REGEN | transfer pump S69B to ZNBR2 | BLDC | 42 mm (NEMA 17 flange) | 0.0023 | 24 V DC | S1 | BLDC driver | 1 | 803.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| scrubber | ZNBR2_BR2_REGEN | transfer pump S69B to ZNBR2 | BLDC | 42 mm (NEMA 17 flange) | 0.0023 | 24 V DC | S1 | BLDC driver | 1 | 804.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 
 ### FAB
 
 | Sub-system | Unit | Device | Motor type | Size | Shaft kW | Voltage | Duty | Speed control | Qty | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| FAB | WAFER_FAB | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 4.1 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
+| FAB | WAFER_FAB | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 4.3 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | FAB | WAFER_FAB | process vacuum pump | induction IE3 | IEC 90S / 1.1 kW | 0.75 | 480 V 3-ph | S1 | fixed speed | 1 | assumed |
 | FAB | WAFER_FAB | transfer pump IA-FAB-SPENT to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0002 | 24 V DC | S3 | BLDC driver | 1 | 66.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FAB | WAFER_FAB | transfer pump S39 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 3.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
@@ -151,11 +151,15 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | FAB | WET_BENCH | transfer pump S38 to OIL_FRAC | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | reactor | RESIST_SYN | transfer pump IA-RESIST-BRINE to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | reactor | RESIST_SYN | transfer pump IA-RESIST-HCL to CRU | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| reactor | RESIST_SYN | transfer pump IA-RESIST-RAFF to OIL_FRAC | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| reactor | SOLV_PLANT | transfer pump IA-SOLV-BTMS to OIL_FRAC | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| reactor | RESIST_SYN | transfer pump IA-RESIST-RAFF to OIL_FRAC | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| reactor | SOLV_PLANT | transfer pump IA-SOLV-BTMS to OIL_FRAC | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | reactor | SOLV_PLANT | transfer pump IA-SOLV-PLANT to WS_SOLV | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| reagent | WS_AMMONIA | on/off valve IA-FR-NH3 | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
+| reagent | WS_AMMONIA | on/off valve IA-NUT-NH3 | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
 | reagent | WS_AMMONIA | on/off valve IA-RESIST-NH3 | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
 | reagent | WS_AMMONIA | on/off valve S33 | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
+| reagent | WS_AMMONIA | transfer pump IA-FR-NH3 to POLY_FIBER | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| reagent | WS_AMMONIA | transfer pump IA-NUT-NH3 to NUT_AN | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | reagent | WS_AMMONIA | transfer pump IA-RESIST-NH3 to RESIST_SYN | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | reagent | WS_AMMONIA | transfer pump S33 to WET_BENCH | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 3.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | reagent | WS_HF_ED | on/off valve S31 | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
@@ -164,8 +168,10 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | reagent | WS_KOH | transfer pump S35 to WET_BENCH | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | reagent | WS_NITRIC | PVDF pump envelope (duty section 3: PVDF pumps and valves),  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | reagent | WS_PEROX | PVDF pump envelope (duty section 3: PVDF piping, pump, and v | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| reagent | WS_PHOS | on/off valve IA-FR-P | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
 | reagent | WS_PHOS | on/off valve IA-PHOS-DOPE | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
 | reagent | WS_PHOS | on/off valve S34B | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
+| reagent | WS_PHOS | transfer pump IA-FR-P to POLY_FIBER | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | reagent | WS_PHOS | transfer pump IA-PHOS-DOPE to WS_DOPE | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | reagent | WS_PHOS | transfer pump S34B to WET_BENCH | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | reagent | WS_SLURRY | on/off valve S37 | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
@@ -196,6 +202,9 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | FOUNDRY_E | SHELL_BURNOUT | transfer pump WAX_RECLAIM_TO_PATTERN to WAX_PATTERN | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 1.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FOUNDRY_E | TI_CELL | transfer pump IA-MGCL2-KROLL to MG_POT | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 1.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FOUNDRY_E | VAC_CAST | Vacuum pump skid on the +X bay (purchased, envelope and inte | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| precip | BRINE_CRYS | transfer pump IA-BRINE-CACL2 to CA_POT | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| precip | BRINE_CRYS | transfer pump IA-BRINE-MGCL2 to MG_POT | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| precip | BRINE_CRYS | transfer pump IA-BRINE-ML to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 1.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 
 ### GAS
 
@@ -302,6 +311,8 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | OIL_GLASS | OIL_FRAC | transfer pump CUT-3 to PROD_C19_C28 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 6.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | OIL_GLASS | OIL_FRAC | transfer pump CUT-4 to PROD_C29 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 5.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | OIL_GLASS | OIL_PYRO | transfer pump IA-OIL-02 to OIL_FRAC | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 33.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| cut_tank | PROD_C11_C18 | on/off valve IA-RESIST-NAPH | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
+| cut_tank | PROD_C11_C18 | transfer pump IA-RESIST-NAPH to RESIST_SYN | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | cut_tank | PROD_C19_C28 | Motor: transfer pump CUT-3-OUT to MFG_SHOP (BLDC, 42 mm (NEM | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | cut_tank | PROD_C29 | Motor: transfer pump C29_RECYCLE to C29_RECYCLE (BLDC, 42 mm | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | cut_tank | PROD_C5_C10 | Motor: transfer pump IA-C5-POLY to POLY_OLEFIN (BLDC, 42 mm  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
@@ -337,18 +348,20 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | ROOF | ROOF_TANK | on/off valve IA-ELY-H2O | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
 | ROOF | ROOF_TANK | on/off valve IA-FLUE-QUENCH | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
 | ROOF | ROOF_TANK | on/off valve IA-NOX-HAB | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
+| ROOF | ROOF_TANK | on/off valve IA-NUT-H2O | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
 | ROOF | ROOF_TANK | on/off valve IA-PEROX-H2O | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
 | ROOF | ROOF_TANK | on/off valve S21 | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
 | ROOF | ROOF_TANK | transfer pump IA-BED-H2O to GROW_BED | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 43.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | ROOF | ROOF_TANK | transfer pump IA-ELY-H2O to H2O_ELYZ | BLDC | 42 mm (NEMA 17 flange) | 0.0003 | 24 V DC | S3 | BLDC driver | 1 | 92.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | ROOF | ROOF_TANK | transfer pump IA-FLUE-QUENCH to FLUE_KO | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 24.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | ROOF | ROOF_TANK | transfer pump IA-NOX-HAB to HABITATION | BLDC | 42 mm (NEMA 17 flange) | 0.0006 | 24 V DC | S3 | BLDC driver | 1 | 207.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| ROOF | ROOF_TANK | transfer pump IA-NUT-H2O to NUT_AN | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 3.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | ROOF | ROOF_TANK | transfer pump IA-PEROX-H2O to WS_PEROX | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 2.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | ROOF | ROOF_TANK | transfer pump S21 to HABITATION | BLDC | 42 mm (NEMA 17 flange) | 0.0003 | 24 V DC | S3 | BLDC driver | 1 | 120.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | digest | BLACK_DIGEST | Biogas recirculation diaphragm blower about 2 L/min | BLDC | 57 mm (NEMA 23 flange) | 0.02 | 24 V DC | S1 | BLDC driver | 1 | BOM; shaft assumed (A-M-119) |
 | dose | REMIN | Metering diaphragm pump, Ca slurry duty (node design block:  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 2 | BOM; shaft assumed (A-M-119) |
 | evaporator | VCD_TRAIN | transfer pump IA-VCD-BD to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 6.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| evaporator | VCD_TRAIN | transfer pump S25 to BMED_UPW_POLISH | BLDC | 42 mm (NEMA 17 flange) | 0.001 | 24 V DC | S3 | BLDC driver | 1 | 348.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| evaporator | VCD_TRAIN | transfer pump S25 to BMED_UPW_POLISH | BLDC | 42 mm (NEMA 17 flange) | 0.001 | 24 V DC | S3 | BLDC driver | 1 | 354.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | evaporator | VCD_TRAIN | transfer pump S28 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 17.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | intake | GW_INTAKE | SS304 pump discharge head, DN168 study boss envelope 60 mm o | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | scrubber | LB_DEGAS | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |

@@ -11,11 +11,11 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-750 edges: 461 piped, 160 solids transfers, 129 electrical. Piped edges without a length (unit position missing): 49.
+764 edges: 472 piped, 161 solids transfers, 131 electrical. Piped edges without a length (unit position missing): 58.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-Units with no position anywhere in the repo (no duty origin, no placement row): 15: ACID_PLANT, LB_BRINE_RETURN, LB_CHEM_STORE, LB_DEGAS, LB_DEGAS_SCRUB, LB_ED1, LB_ED2, LB_INTAKE, LB_PROD_OUTLET, LB_PROD_TANK, LB_SOFTEN, NAOH_PLANT, RESIST_SYN, SI_REFINE, SOLV_PLANT. Their lines carry DN and class; length and route wait for X-BLD placement.
+Units with no position anywhere in the repo (no duty origin, no placement row): 17: ACID_PLANT, BRINE_CRYS, LB_BRINE_RETURN, LB_CHEM_STORE, LB_DEGAS, LB_DEGAS_SCRUB, LB_ED1, LB_ED2, LB_INTAKE, LB_PROD_OUTLET, LB_PROD_TANK, LB_SOFTEN, NAOH_PLANT, NUT_AN, RESIST_SYN, SI_REFINE, SOLV_PLANT. Their lines carry DN and class; length and route wait for X-BLD placement.
 
 | C29_RECYCLE | PROD_C29 | C29_RECYCLE | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 2.4 | PROD_C29 → C29_RECYCLE, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | C29_TO_PYRO | C29_RECYCLE | OIL_PYRO | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 6.8 | C29_RECYCLE → OIL_PYRO, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -270,7 +270,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | S90 | HABITATION | HDR_CO2 | DN15 | P3 | process vent gas | 12.7 | HABITATION → HDR_CO2, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | edge line_DN |
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | DN50 | P2 | hot leach liquor | 21.3 | GREY_TREAT → LEACH_CSTR_1, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN50 |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 19.9 | CRU → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
-| HL-Q4-REJ | Q4_BUS | DRY_COOLER | DN40 | M1 | Q3/Q4 water loop | 29.8 | Q4_BUS → DRY_COOLER, orthogonal × 1.2 (duty origin; placement_seed) | heat loop 49.1117 kW at ΔT 10 K, 1 m/s |
+| HL-Q4-REJ | Q4_BUS | DRY_COOLER | DN40 | M1 | Q3/Q4 water loop | 29.8 | Q4_BUS → DRY_COOLER, orthogonal × 1.2 (duty origin; placement_seed) | heat loop 49.1464 kW at ΔT 10 K, 1 m/s |
 | IA-PV-01 | PV_ARRAY | SOL_ARK_60K | cable | — | — | 15.1 | PV_ARRAY → SOL_ARK_60K, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | DN15 | P1 | acid or brine, at or below 60 C | 26.3 | ZNBR2 → GREY_TREAT, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | DN15 | P5 | water | 31.4 | NUTRIENT_DOSE → VCD_TRAIN, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -302,7 +302,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-VCD-BD | VCD_TRAIN | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 20.3 | VCD_TRAIN → LEACH_CSTR_1, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-CHAR | OIL_PYRO | MFG_SHOP | solids | — | — | 36.3 | OIL_PYRO → MFG_SHOP, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-FC-EXH | MEOH_FC | NOX_SCRUB | DN15 | F1 | flue or acid gas | 7.6 | MEOH_FC → NOX_SCRUB, orthogonal × 1.2 (duty origin; duty origin) | velocity 10 m/s, ρ 1.2; min DN15 |
-| IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | DN40 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 38.7 | ZNBR2 → Q4_BUS, orthogonal × 1.2 (duty origin; duty origin) | heat loop 47.4442 kW at ΔT 10 K, 1 m/s |
+| IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | DN40 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 38.7 | ZNBR2 → Q4_BUS, orthogonal × 1.2 (duty origin; duty origin) | heat loop 47.4792 kW at ΔT 10 K, 1 m/s |
 | IA-Q4A-TRIM | RECTIFIER | Q4_A | cable | — | — | 17.6 | RECTIFIER → Q4_A, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-Q4B-TRIM | RECTIFIER | Q4_B | cable | — | — | 32.2 | RECTIFIER → Q4_B, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-FAB-LOSS | WAFER_FAB | BAGHOUSE | solids | — | — | 12.6 | WAFER_FAB → BAGHOUSE, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
@@ -642,7 +642,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | FORM_PRESS | FEED_PREP | GROWBED_B | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 8.5 | FEED_PREP → GROWBED_B, orthogonal × 1.2 (placement_seed + GA move; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | BED_GREENS | GROWBED_B | FOOD_STORE | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 29.2 | GROWBED_B → FOOD_STORE, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | BED_ET | GROWBED_B | CRYO_AHU | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 19.6 | GROWBED_B → CRYO_AHU, orthogonal × 1.2 (placement_seed; placement_report + GA move) | velocity 1 m/s, ρ 1000; min DN15 |
-| NUT_AQUA | NORTH_DOCK | DUCKWEED | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 55.4 | NORTH_DOCK → DUCKWEED, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
+| NUT_AQUA | NUT_AN | DUCKWEED | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | NUT_AN → DUCKWEED, position missing for NUT_AN | velocity 1 m/s, ρ 1000; min DN15 |
 | NUT_AQUA_BED | NORTH_DOCK | GROWBED_B | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 21.6 | NORTH_DOCK → GROWBED_B, orthogonal × 1.2 (placement_report; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | CA_HOPPER | NORTH_DOCK | QUAIL_CAGE | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 24.4 | NORTH_DOCK → QUAIL_CAGE, orthogonal × 1.2 (placement_report; placement_seed + GA move) | velocity 1 m/s, ρ 1000; min DN15 |
 | FOOD_EXPORT | FOOD_STORE | BOUNDARY_EXPORT | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 30.7 | FOOD_STORE → BOUNDARY_EXPORT, orthogonal × 1.2 (placement_seed; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -674,7 +674,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | LB-CHEM-SCRUB | LB_CHEM_STORE | LB_DEGAS_SCRUB | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_CHEM_STORE → LB_DEGAS_SCRUB, position missing for LB_CHEM_STORE, LB_DEGAS_SCRUB | velocity 1 m/s, ρ 1000; min DN15 |
 | LB-CHEM-CIP1 | LB_CHEM_STORE | LB_ED1 | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_CHEM_STORE → LB_ED1, position missing for LB_CHEM_STORE, LB_ED1 | velocity 1 m/s, ρ 1000; min DN15 |
 | LB-CHEM-CIP2 | LB_CHEM_STORE | LB_ED2 | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | LB_CHEM_STORE → LB_ED2, position missing for LB_CHEM_STORE, LB_ED2 | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-DC-REJ | DRY_COOLER | ATMOS | DN50 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 23.3 | DRY_COOLER → ATMOS, orthogonal × 1.2 (placement_seed; placement_seed) | heat loop 56.3617 kW at ΔT 10 K, 1 m/s |
+| IA-DC-REJ | DRY_COOLER | ATMOS | DN50 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 23.3 | DRY_COOLER → ATMOS, orthogonal × 1.2 (placement_seed; placement_seed) | heat loop 56.3964 kW at ΔT 10 K, 1 m/s |
 | IA-ZNBR-H2 | ZNBR2 | HDR_H2 | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 20.5 | ZNBR2 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
 | IA-MET-AIR-MU | HDR_N2 | MET_AHU | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 17.2 | HDR_N2 → MET_AHU, orthogonal × 1.2 (placement_study (STUDY); duty origin) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-FEED-MU | NORTH_DOCK | HOPPER | solids | — | — | 11.7 | NORTH_DOCK → HOPPER, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
@@ -767,3 +767,17 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | CHAR_TO_CR | OIL_PYRO | CR_CELL | solids | — | — | 36.1 | OIL_PYRO → CR_CELL, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | IA-SIL-SHOP | MFG_SHOP | SHELL_BUILD | solids | — | — | 58.6 | MFG_SHOP → SHELL_BUILD, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | IA-SHELL-SHOP | SHELL_BREAK | MFG_SHOP | solids | — | — | 61.3 | SHELL_BREAK → MFG_SHOP, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-BRINE-SRC | LEACH_CSTR_1 | BRINE_CRYS | DN15 | P2 | hot leach liquor |  | LEACH_CSTR_1 → BRINE_CRYS, position missing for BRINE_CRYS | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-BRINE-CACL2 | BRINE_CRYS | CA_POT | DN15 | — | CaCl2/MgCl2 brine concentrate import (ambient legs): PVDF wetted handling per AQS-STD-006 (AQS-STD-002 section 12.2) |  | BRINE_CRYS → CA_POT, position missing for BRINE_CRYS | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-BRINE-MGCL2 | BRINE_CRYS | MG_POT | DN15 | — | CaCl2/MgCl2 brine concentrate import (ambient legs): PVDF wetted handling per AQS-STD-006 (AQS-STD-002 section 12.2) |  | BRINE_CRYS → MG_POT, position missing for BRINE_CRYS | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-BRINE-ML | BRINE_CRYS | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor |  | BRINE_CRYS → LEACH_CSTR_1, position missing for BRINE_CRYS | velocity 1 m/s, ρ 1000; min DN15 |
+| SF-BRINE_CRYS | SOL_ARK_60K | BRINE_CRYS | cable | — | — |  | SOL_ARK_60K → BRINE_CRYS, position missing for BRINE_CRYS | electrical: cable schedule X-ELS-06 |
+| IA-WAX-CUT | PROD_C19_C28 | WAX_PATTERN | solids | — | — | 35.6 | PROD_C19_C28 → WAX_PATTERN, orthogonal × 1.2 (duty origin; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| IA-NUT-NH3 | WS_AMMONIA | NUT_AN | DN15 | P4 | alkaline |  | WS_AMMONIA → NUT_AN, position missing for NUT_AN | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-NUT-O2 | CRYO_O2 | NUT_AN | DN15 | M1 | dry gas, H2/O2/N2/CO2 |  | CRYO_O2 → NUT_AN, position missing for NUT_AN | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-NUT-H2O | ROOF_TANK | NUT_AN | DN15 | P1 | acid or brine, at or below 60 C |  | ROOF_TANK → NUT_AN, position missing for NUT_AN | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-NUT-VENT | NUT_AN | NOX_SCRUB | DN15 | F1 | flue or acid gas |  | NUT_AN → NOX_SCRUB, position missing for NUT_AN | velocity 10 m/s, ρ 1.2; min DN15 |
+| SF-NUT_AN | SOL_ARK_60K | NUT_AN | cable | — | — |  | SOL_ARK_60K → NUT_AN, position missing for NUT_AN | electrical: cable schedule X-ELS-06 |
+| IA-FR-P | WS_PHOS | POLY_FIBER | DN15 | P1 | acid or brine, at or below 60 C | 16.2 | WS_PHOS → POLY_FIBER, orthogonal × 1.2 (duty origin; placement_seed + GA move) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-FR-NH3 | WS_AMMONIA | POLY_FIBER | DN15 | P1 | acid or brine, at or below 60 C | 14.2 | WS_AMMONIA → POLY_FIBER, orthogonal × 1.2 (duty origin; placement_seed + GA move) | velocity 1 m/s, ρ 1000; min DN15 |
+| SHELL_GRIT | FEED_PREP | QUAIL_CAGE | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 9.8 | FEED_PREP → QUAIL_CAGE, orthogonal × 1.2 (placement_seed + GA move; placement_seed + GA move) | velocity 1 m/s, ρ 1000; min DN15 |

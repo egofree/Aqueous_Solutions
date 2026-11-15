@@ -8,3 +8,4 @@ N6,DN15,Class 150,O2 oxidizer,outlet,520
 N7,DN15,Class 150,surplus O2 capture,inlet,160
 N8,DN50,Class 150,oxygen makeup,outlet,520
 N9,DN15,Class 150,electrolyser O2,inlet,160
+N10,DN15,Class 150,plant oxygen for the ammonia oxidation,outlet,600
