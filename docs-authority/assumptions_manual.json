@@ -8334,5 +8334,18 @@
    "flow_graph/param/foundry_poly.py",
    "flow_graph/param/drivers.json"
   ]
+ },
+ {
+  "id": "A-M-500",
+  "value": "the NFPA 110 exercise book at locales that replace BACKUP_GEN with FUEL_CELL (AQS-SITE-009 sec. 3, the mars class): the exercise rides the fuel cell hydrogen-first at the stack LHV efficiency 0.479 (A-M-312 cell_V 0.6 V on the 1.253 V hydrogen LHV potential), S49/S50 carry the duty book, the genset combustion book (S45 / IA-GEN-O2 / IA-GEN-AIR / CUT-1-OUT / S46) retires with the genset, and the O2 header carries no exercise draw; at airless locales the electrolyser also sizes to the net new-O2 demand (crew + fuel-cell + combustion draws less the bed and cold-box recovery), with the co-product H2 exporting at the dock on IA-H2-SHIP",
+  "units": "kg/d (exercise book); - efficiency",
+  "where": "flow_graph/param/o2_close.py genset block and electrolyser block",
+  "basis": "NFPA 110 8.4.2 monthly exercise >= 30 min at >= 30 % of nameplate (A-M-350, NFPA 110-2025); hydrogen-first per AQS-FC-001; stack basis A-M-312. The mars lane's failing signature HDR_O2 -0.9873 kg/d pre-reconcile at graph sha 1faa79945107 (preserved postmortem worktree) closes to +0.0004 kg/d under this ledger",
+  "sensitivity": "the exercise book scales with the critical-list rating (AQS-ELEC-007) and the stack efficiency; the O2-side electrolyser term moves inversely with the bed and cold-box recovery and exports the co-product H2",
+  "replaced_by": "the locale commissioning trial of the fuel-cell exercise schedule (NFPA 110 8.4.2 log)",
+  "task": "mars O2-ledger case (verified against the preserved postmortem worktree)",
+  "files": [
+   "flow_graph/param/o2_close.py"
+  ]
  }
 ]

@@ -209,27 +209,67 @@ def tf(g):
     if 'SF-EVAP_ACID' in E and abs(_kw - v('SF-EVAP_ACID')) > 1e-3:
         put('SF-EVAP_ACID', _kw, '480 V feed equal to EVAP_ACID continuous_kw on the re-sized acid family (live solver.evap value; frozen-base re-stamp retired 2026-10-19)')
     L['bmed'] = (kb, B['S17-BMED'] - v('S17-BMED') + B['SF-EVAP_ACID'] - v('SF-EVAP_ACID'))
-    # --- BACKUP_GEN on a standby / exercise basis (NFPA110 8.4.2: monthly exercise >= 30 min at >= 30 % of nameplate); daily average
+    # --- BACKUP_GEN on a standby / exercise basis (NFPA110 8.4.2: monthly exercise >= 30 min at >= 30 % of nameplate; A-M-350 NFPA 110-2025); daily average.
+    # Mars/replacement case (AQS-SITE-009 sec. 3, AQS-FC-001): where the locale plan eliminates BACKUP_GEN with
+    # FUEL_CELL as the replacement, the fuel cell is the diverse second power source and the NFPA 110 exercise
+    # rides it hydrogen-first at the stack's LHV efficiency (A-M-312 cell_V 0.6 V on the 1.253 V hydrogen LHV
+    # potential, eta 0.479); the genset combustion book (S45 / IA-GEN-O2 / IA-GEN-AIR / CUT-1-OUT / S46) retires
+    # with the genset and the O2 header carries no exercise draw.
+    from . import site as _site, scaling as _sc
+    _plan = _sc.resolve(_site.load_profile())[0]
+    _ga = _plan.get('BACKUP_GEN') or {}
+    _gen_node = (N.get('BACKUP_GEN') or {}).get('presence')
+    _fc_case = ((_gen_node != 'present' or _ga.get('status') == 'eliminated')
+                and _ga.get('replacement') == 'FUEL_CELL'
+                and (N.get('FUEL_CELL') or {}).get('presence') == 'present')
     if 'gen_full' not in B:
         B['gen_full'] = {k: v(k) for k in ('CUT-1-OUT', 'S45', 'S47', 'S46', 'CUT-1')}
-    gf = B['gen_full']; kw_gen = float(N['BACKUP_GEN']['params'].get('rated_kW') or _BF.rating_kw(N, _D)['rated_kW'])
-    e_ex = kw_gen*EX_LOAD*EX_H*12/365                         # kWh/d average
-    _fp = _BF.plan(N, _D, e_ex)                                # owner 2026-10-24: hydrogen first (S45), C5-C10 cut as fallback
-    fuel, h2f = _fp['cut_kg_d'], _fp['h2_kg_d']                # normal operation: the exercise burns hydrogen; the cut is held in reserve
-    N['BACKUP_GEN']['params'].update(rated_kW=kw_gen, duty_basis=f'standby; NFPA 110 8.4.2 monthly exercise {EX_H} h at {EX_LOAD:.0%} load = {e_ex:.3f} kWh/d average; hydrogen first: {h2f:.4f} kg/d H2 at {_fp["eta_h2"]:.0%} on {_fp["lhv_h2"]} kWh/kg LHV; C5-C10 cut as fallback, {_fp["reserve_cut_kg"]:.0f} kg reserve in PROD_C5_C10 (flow_graph/param/backup_fuel.py)', fuel_selection=_BF.selection(_fp))
-    N['PROD_C5_C10'].setdefault('params', {}).update(genset_reserve_kg=round(_fp['reserve_cut_kg'], 1), genset_reserve_basis='BACKUP_GEN fallback fuel, not shipped: ' + _BF.selection(_fp)[1]['reserve_basis'])
-    N['BACKUP_GEN']['continuous_kw'] = {'value': round(e_ex/24, 4), 'unit': 'kW', 'status': 'study', 'note': f'{TAG}: standby, NFPA 110 exercise average'}
-    put('CUT-1-OUT', fuel, 'genset fallback fuel (priority 2): zero in normal operation; drawn when hydrogen is short'); put('S45', h2f, 'genset fuel priority 1: hydrogen for the NFPA 110 8.4.2 exercise'); put('S47', e_ex/24, 'exercise energy, daily average')
+    gf = B['gen_full']
+    h2_lhv = float((_D.get('ELEC.generation-train.BACKUP_GEN.h2_lhv_kWh_kg') or {}).get('value') or 33.33)
+    eta_fc = 0.6/1.253                                        # A-M-312 stack cell_V on the hydrogen LHV potential (AQS-FC-001)
+    _fp = {}
+    if _fc_case:
+        kw_gen = _BF.rating_kw(N, _D)['rated_kW']             # the replacement serves the same critical-list rating (AQS-ELEC-007)
+        e_ex = kw_gen*EX_LOAD*EX_H*12/365                     # kWh/d average
+        h2f = e_ex/(h2_lhv*eta_fc)                            # hydrogen-first at the stack: the exercise draws the fuel cell's own S49/S50 book
+        fuel = 0.0
+        N['FUEL_CELL'].setdefault('params', {}).update(duty_basis=f'standby replacement of BACKUP_GEN (AQS-SITE-009 sec. 3, AQS-FC-001): '
+            f'NFPA 110 8.4.2 monthly exercise {EX_H} h at {EX_LOAD:.0%} load = {e_ex:.3f} kWh/d average (A-M-350), hydrogen-first at the stack '
+            f'LHV efficiency {eta_fc:.3f} (A-M-312 cell_V 0.6 V on the 1.253 V hydrogen LHV potential) = {h2f:.4f} kg/d H2 on S49, stoich O2 '
+            f'{h2f*8:.4f} kg/d on the direct S50 book (O2/H2 mass 8)', fuel_selection='hydrogen-first per AQS-FC-001; no C5-C10 fallback at this locale')
+        N['FUEL_CELL']['continuous_kw'] = {'value': round(e_ex/24, 4), 'unit': 'kW', 'status': 'study', 'note': f'{TAG}: standby replacement of BACKUP_GEN, NFPA 110 exercise average (AQS-FC-001)'}
+    elif _gen_node == 'present':
+        kw_gen = float(N['BACKUP_GEN']['params'].get('rated_kW') or _BF.rating_kw(N, _D)['rated_kW'])
+        e_ex = kw_gen*EX_LOAD*EX_H*12/365                     # kWh/d average
+        _fp = _BF.plan(N, _D, e_ex)                            # owner 2026-10-24: hydrogen first (S45), C5-C10 cut as fallback
+        fuel, h2f = _fp['cut_kg_d'], _fp['h2_kg_d']            # normal operation: the exercise burns hydrogen; the cut is held in reserve
+        N['BACKUP_GEN']['params'].update(rated_kW=kw_gen, duty_basis=f'standby; NFPA 110 8.4.2 monthly exercise {EX_H} h at {EX_LOAD:.0%} load = {e_ex:.3f} kWh/d average; hydrogen first: {h2f:.4f} kg/d H2 at {_fp["eta_h2"]:.0%} on {_fp["lhv_h2"]} kWh/kg LHV; C5-C10 cut as fallback, {_fp["reserve_cut_kg"]:.0f} kg reserve in PROD_C5_C10 (flow_graph/param/backup_fuel.py)', fuel_selection=_BF.selection(_fp))
+        N['PROD_C5_C10'].setdefault('params', {}).update(genset_reserve_kg=round(_fp['reserve_cut_kg'], 1), genset_reserve_basis='BACKUP_GEN fallback fuel, not shipped: ' + _BF.selection(_fp)[1]['reserve_basis'])
+        N['BACKUP_GEN']['continuous_kw'] = {'value': round(e_ex/24, 4), 'unit': 'kW', 'status': 'study', 'note': f'{TAG}: standby, NFPA 110 exercise average'}
+    else:
+        kw_gen = e_ex = 0.0; fuel = h2f = 0.0                  # no genset and no fuel-cell replacement: no exercise book at this locale
+    if _fc_case:
+        put('S47', e_ex/24, 'exercise energy, daily average (the fuel cell replacement carries it, AQS-FC-001)')
+        put('CUT-1-OUT', 0.0, 'genset retired at this locale (AQS-SITE-009): no fallback fuel draw')
+        put('S45', 0.0, 'genset retired at this locale (AQS-SITE-009): the exercise H2 rides the fuel cell book S49')
+        if 'S49' in E and 'S50' in E:
+            put('S49', h2f, f'{TAG}: the fuel cell replacement carries the NFPA 110 exercise hydrogen-first at the stack LHV efficiency {eta_fc:.3f} (AQS-FC-001, A-M-312)')
+            put('S50', h2f*8, f'{TAG}: stoich O2 for S49 H2 (O2/H2 mass 8) on the direct CRYO_O2 book - no header draw at this locale (AQS-SITE-009)')
+    elif _gen_node == 'present':
+        put('CUT-1-OUT', fuel, 'genset fallback fuel (priority 2): zero in normal operation; drawn when hydrogen is short'); put('S45', h2f, 'genset fuel priority 1: hydrogen for the NFPA 110 8.4.2 exercise'); put('S47', e_ex/24, 'exercise energy, daily average')
     poly = v('IA-C5-POLY') if 'IA-C5-POLY' in E else 0.0        # olefin feed drawn at the cut tank (AQS-DUTY-073)
     put('IA-C5-SHIP', v('CUT-1') - fuel - poly, f'C5-C10 product not burned: shipped at the dock less the olefin draw {poly:.4f} kg/d (AQS-DUTY-073)')
-    e_full = gf['CUT-1-OUT']*GEN_ETA*LHV_C5 + gf['S45']*_fp['eta_h2']*_fp['lhv_h2']
+    e_full = gf['CUT-1-OUT']*GEN_ETA*LHV_C5 + gf['S45']*_fp['eta_h2']*_fp['lhv_h2'] if _fp else 0.0
     r = e_ex/e_full if e_full > 0 else 0.0                     # exercise share of the old full-duty fuel energy (equals fuel/gf cut when the cut was the fuel)
     # --- combustion O2
     gen_b = v('S45')*7.937 + v('CUT-1-OUT')*(11.75*32.0/107.2); og = EXC*gen_b
     og_full = EXC*(gf['S45']*7.937 + gf['CUT-1-OUT']*(11.75*32.0/107.2))
     put('IA-GEN-O2', og, f'1.10 x ({v("S45"):.3f} H2 x 7.94 + {v("CUT-1-OUT"):.3f} C7.5H17 x 3.51)')
+    if _fc_case:
+        E['IA-GEN-O2']['presence'] = 'retired'                 # the genset combustion O2 retires with the genset (AQS-SITE-009)
+        put('IA-GEN-AIR', 0.0, 'genset retired at this locale (AQS-SITE-009): no N2 diluent draw')
     x_air = (B['IA-GEN-AIR'] - og_full)*r
-    if x_air > -1e-6: put('IA-GEN-AIR', x_air, 'N2 diluent, scaled with the exercise fuel')   # R8: Rev AC froze S45 pre-standby but IA-GEN-AIR post-standby; re-basis is R10's
+    if x_air > -1e-6 and not _fc_case: put('IA-GEN-AIR', x_air, 'N2 diluent, scaled with the exercise fuel')   # R8: Rev AC froze S45 pre-standby but IA-GEN-AIR post-standby; re-basis is R10's
     put('S46', v('IA-GEN-AIR') + og + v('CUT-1-OUT') + v('S45'), 'genset exhaust = inputs')
     dn2 = B['IA-GEN-AIR'] - v('IA-GEN-AIR'); dC = (gf['CUT-1-OUT'] - v('CUT-1-OUT'))*90.0/107.2; dH = (gf['CUT-1-OUT'] - v('CUT-1-OUT'))*17.2/107.2 + gf['S45'] - v('S45')   # fuel C and H no longer burned, relative to the old graph
     gco2 = v('CUT-1-OUT')*(7.5*32.0/107.2); gh2o = gen_b - gco2
@@ -319,9 +359,35 @@ def tf(g):
         #     IA-O2-PROD, so the O2 N+1 rule P19 is intact and O2 does not constrain the electrolyser size). EW-down case:
         #     methanol (S74) throttles before the fuel cell; ELY-down case: the CRYO_H2 autonomy store covers it (AQS-ELEC-007).
         ew_credit = v('S64') if 'S64' in E else 0.0
-        h2 = max(0.0, v('S45') + v('S49') + v('S74') - ew_credit); o2 = h2*31.998/4.032
-        put('IA-ELY-H2', h2, f'H2 demand net of the live EW Faraday cathode credit: genset {v("S45"):.2f} + fuel cell {v("S49"):.2f} + methanol {v("S74"):.2f} - S64 {ew_credit:.3f} kg/d (A-M-255 credit; H2 side governs, O2 headroom documented in A-M-272)')
+        # O2-side governance (X-QA-11 round, AQS-SITE-009): at a locale with no atmospheric oxidant the electrolyser
+        #     is the site's only O2 source, so it sizes to the larger of the H2 pool and the net new-O2 demand (crew,
+        #     fuel-cell and combustion draws less the bed and cold-box recovery); the co-product H2 above the pool
+        #     exports at the dock on IA-H2-SHIP (the IA-O2-PROD mirror; the D-DOCK surplus rule). A-M-272's H2-side
+        #     ruling stands where air exists (the O2 N+1 rule P19 intact, headroom large).
+        from . import site as _site, scaling as _sc
+        _ox = 'air_oxidant' in _sc.capabilities(_site.load_profile())
+        h2_pool = max(0.0, v('S45') + v('S49') + v('S74') - ew_credit)
+        h2 = h2_pool
+        _h2_ship = 0.0
+        o2_need = 0.0
+        if not _ox:
+            o2_need = max(0.0, v('S02') + vv('S50') + v('IA-AB-O2') + v('IA-FC-AIR') + v('IA-H2O2-SRC') - v('S87') - vv('IA-ASU-O2'))
+            h2 = max(h2_pool, o2_need*4.032/31.998)   # the exact inverse of O2 = H2 x 31.998/4.032 below
+            _h2_ship = round(max(0.0, h2 - h2_pool), 6)
+        o2 = h2*31.998/4.032
+        put('IA-ELY-H2', h2, f'H2 demand net of the live EW Faraday cathode credit: genset {v("S45"):.2f} + fuel cell {v("S49"):.2f} + methanol {v("S74"):.2f} - S64 {ew_credit:.3f} kg/d (A-M-255 credit; H2 side governs, O2 headroom documented in A-M-272)' + (f'; sized to the net new-O2 demand {o2_need:.3f} kg/d - no atmospheric oxidant at this locale, the electrolyser is the O2 source (AQS-SITE-009), co-product H2 {_h2_ship:.4f} kg/d exports on IA-H2-SHIP' if not _ox and h2 > h2_pool else ''))
         put('IA-ELY-O2', o2, 'O2 = 7.937 x H2'); put('IA-ELY-H2O', h2 + o2, 'water split')
+        if _h2_ship > 0:
+            if 'IA-H2-SHIP' not in E:
+                _se = _edge('IA-H2-SHIP', 'CRYO_H2', 'NORTH_DOCK', 'G', ['mass'], 'surplus electrolyser hydrogen export (co-product of the O2-side electrolyser size)', _h2_ship, 'kg/d', N['CRYO_H2']['sector_id'], 'DOCK', {'H2': 1.0},
+                              f'{TAG}: the O2-side electrolyser margin banks no H2 the pool draws - the co-product exports at the dock (D-DOCK surplus rule, AQS-SITE-009).')
+                g['edges'].append(_se); E['IA-H2-SHIP'] = _se
+            E['IA-H2-SHIP'].update(presence='present')
+            E['IA-H2-SHIP']['rate'] = {'value': _h2_ship, 'unit': 'kg/d', 'status': 'study',
+                                       'note': f'{TAG}: co-product H2 of the O2-side electrolyser margin {h2 - h2_pool:.4f} kg/d above the pool, exported at the dock (D-DOCK surplus rule; AQS-SITE-009).'}
+        elif 'IA-H2-SHIP' in E:
+            E['IA-H2-SHIP']['presence'] = 'retired'
+            E['IA-H2-SHIP']['rate'] = {'value': 0.0, 'unit': 'kg/d', 'status': 'study', 'note': f'{TAG}: retired - the electrolyser rides the H2 pool at this site (A-M-272).'}
         kw = h2*KWH_H2/24; E['SF-H2O_ELYZ']['rate']['value'] = round(kw, 4)
         q = kw - h2*HHV_H2/24   # stack heat: BH carried it on SQ-H2O_ELYZ to HEAT_SINK; HEAT_SINK retired in Rev AC, and the
         # R6 heat study re-homed it to the Q4 water header as SQ-H2O_ELYZ-Q4 (AQS-HEAT-STUDY-002 wiring, A-M-247-class) - restamped here
