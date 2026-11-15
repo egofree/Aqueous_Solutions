@@ -94,6 +94,11 @@
   "docnum": "AQS-DUTY-070",
   "family": "UPW polish RO/EDI (flow_graph/param/upw_polish.py)"
  },
+ "BRINE_CRYS": {
+  "doc": "docs-authority/sizing/BRINE_CRYS.md",
+  "docnum": "AQS-SIZE-BRINE_CRYS",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "BSFL_BIN": {
   "doc": "docs-authority/FARM_DESIGN.md",
   "docnum": "AQS-FARM-001",
@@ -628,6 +633,11 @@
   "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
   "docnum": "AQS-DUTY-064",
   "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "NUT_AN": {
+  "doc": "docs-authority/sizing/NUT_AN.md",
+  "docnum": "AQS-SIZE-NUT_AN",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
  "OIL_DRYER": {
   "doc": "docs-authority/sizing/OIL_DRYER.md",
