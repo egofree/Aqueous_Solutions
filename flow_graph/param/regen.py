@@ -110,26 +110,31 @@ def run_one(stage, env, entries, graph_path, pass_no, capture=None, capture_base
         return True
     from .design_lock import pass_fds as lock_pass_fds
     # Step 4 input capture: run the stage under the read-auditing wrapper, then merge the
-    # sidecars the stage and its grandchildren dumped. A stage whose argv is not the plain
-    # `python3 -m <module>` shape runs unwrapped and is marked capture-incomplete.
+    # sidecars the stage and its grandchildren dumped. The wrapper captures in-process for
+    # `python3 -m <module>` stages and, via exec + the sitecustomize shim, for
+    # `python3 <script>` stages. A non-python stage (bash) runs unwrapped: its entry stays
+    # capture-incomplete and the rule abstains on its outputs.
     argv, wrapped = stage['argv'], False
-    if capture is not None and len(stage['argv']) >= 3 and stage['argv'][1] == '-m':
-        from . import input_audit
-        argv = ['python3', '-m', 'flow_graph.param.input_audit', '--capture', capture_base, '--'] + stage['argv']
-        wrapped = True
+    if capture is not None:
+        capture.setdefault(stage['name'], {'paths': set(), 'status': None, 'complete': False})
+        a = stage['argv']
+        if (len(a) >= 3 and a[1] == '-m') or (len(a) >= 2 and os.path.basename(a[0]).startswith('python')):
+            from . import input_audit
+            argv = ['python3', '-m', 'flow_graph.param.input_audit', '--capture', capture_base, '--'] + a
+            wrapped = True
     t0 = time.monotonic()
     r = subprocess.run(argv, cwd=ROOT, env=env, capture_output=True, text=True,
                        pass_fds=lock_pass_fds())
     dt = time.monotonic() - t0
-    if wrapped:
-        from . import input_manifest as IM
-        c = capture.setdefault(stage['name'], {'paths': set(), 'status': None, 'complete': True})
-        paths, seen = input_audit.merge_sidecars(capture_base)
-        c['paths'].update(paths)
+    if capture is not None:
+        c = capture[stage['name']]
         c['status'] = 'ok' if r.returncode == 0 else f'rc={r.returncode}'
-        if not seen:
-            c['complete'] = False
-        del IM
+        if wrapped:
+            from . import input_audit
+            paths, seen = input_audit.merge_sidecars(capture_base)
+            c['paths'].update(paths)
+            if not seen:
+                c['complete'] = False
     entry = {'name': stage['name'], 'argv': stage['argv'], 'pass': pass_no, 'seconds': round(dt, 2),
              'status': 'ok' if r.returncode == 0 else f'rc={r.returncode}',
              'post_graph_sha256': gsha(graph_path)}
