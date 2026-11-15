@@ -197,8 +197,9 @@ def test_resolve_units(tree: SystemTree) -> None:
 def test_aggregate(tree: SystemTree, graph: dict) -> None:
     # kW sums from continuous_kw
     gen = tree.aggregate(tree.resolve_units("ELEC.generation-train"), graph)
-    assert gen["count"] == 3
-    assert gen["kw_count"] == 3
+    assert gen["count"] == 5   # PV_ARRAY, BACKUP_GEN, FUEL_CELL + the mars designed sources FSP_40K, MMRTG (F-20261113-01; designed_at_locale at baseline)
+    assert gen["kw_count"] == 3  # the designed sources carry no baseline continuous_kw - their counts solve per locale (site_units)
+    assert gen["presence"] == "placeholder"  # the rollup is honest at the baseline: two members are designed_at_locale (FSP_40K, MMRTG) and solve only in their locale
     # PV 336.8304 (placeholders-to-real fixed point 2026-10-19/20; X-ELS-02 Rev C 2026-10-21 adds +0.1258:
     # the GEO source-loop circulator enters the AC load at its AQS-DUTY-076 draw (A-M-317, own SF feed on
     # the bus) and +0.0030: the AQS-MFG-010 rev C metering split's 4-dp quantisation (metal tools split out
@@ -227,7 +228,8 @@ def test_aggregate(tree: SystemTree, graph: dict) -> None:
     _bg = _by_unit["BACKUP_GEN"]
     _ex = round(_bg["params"]["rated_kW"] * 0.30 * 0.5 * 12 / 365 / 24, 4)   # exercise_load_frac x exercise_h, monthly; the writer rounds to 4 dp
     assert _bg["continuous_kw"]["value"] == pytest.approx(_ex)   # X-PAR-12 standby, NFPA 110 exercise average
-    assert gen["presence"] == "present"
+    # gen["presence"] is asserted above: the baseline rollup is "placeholder" - two of the
+    # train's five members are designed_at_locale (FSP_40K, MMRTG) and solve only in locale.
     # worst presence: retired (S13_CLASS_TREAT) < placeholder (GEO_ORC) < present
     assert tree.aggregate(
         tree.resolve_units("DIGESTER.metals-leach-train.brine-loop"), graph

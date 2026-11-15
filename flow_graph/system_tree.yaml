@@ -138,6 +138,9 @@ nodes:
   - id: FOUNDRY.pot-cell-train.AL_POT
     parent: FOUNDRY.pot-cell-train
     unit_id: AL_POT
+  - id: FOUNDRY.pot-cell-train.BRINE_CRYS
+    parent: FOUNDRY.pot-cell-train
+    unit_id: BRINE_CRYS
   - id: FOUNDRY.pot-cell-train.CA_POT
     parent: FOUNDRY.pot-cell-train
     unit_id: CA_POT
@@ -730,16 +733,23 @@ nodes:
   - id: ELEC.generation-train
     parent: ELEC
     description: >-
-      PV array, backup genset (H2 fuel), PEM fuel cell.
+      PV array, backup genset (H2 fuel), PEM fuel cell; the mars locale's surface-fission
+      base (FSP_40K) and RTG controls trickle (MMRTG) join as designed sources (F-20261113-01).
   - id: ELEC.generation-train.PV_ARRAY
     parent: ELEC.generation-train
     unit_id: PV_ARRAY
   - id: ELEC.generation-train.BACKUP_GEN
     parent: ELEC.generation-train
     unit_id: BACKUP_GEN
+  - id: ELEC.generation-train.FSP_40K
+    parent: ELEC.generation-train
+    unit_id: FSP_40K
   - id: ELEC.generation-train.FUEL_CELL
     parent: ELEC.generation-train
     unit_id: FUEL_CELL
+  - id: ELEC.generation-train.MMRTG
+    parent: ELEC.generation-train
+    unit_id: MMRTG
   - id: ELEC.storage-train
     parent: ELEC
     description: >-
@@ -937,6 +947,9 @@ nodes:
   - id: FARM.aquaponics-train.FEED_PREP
     parent: FARM.aquaponics-train
     unit_id: FEED_PREP
+  - id: FARM.aquaponics-train.NUT_AN
+    parent: FARM.aquaponics-train
+    unit_id: NUT_AN
   - id: FARM.aquaponics-train.AQUA_UV
     parent: FARM.aquaponics-train
     unit_id: AQUA_UV
