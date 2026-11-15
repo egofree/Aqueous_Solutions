@@ -44,13 +44,10 @@ WATER_IN = {   # water make-ups at the dock boundary
 # sizing the on-site route, not by exemption. IA-ALCL3-MU left with the recovery-sized aluminium line
 # (A-M-495); IA-MGCL2-MU / IA-CACL2-MU with the BRINE_CRYS brine recovery (A-M-496); NUT_AQUA /
 # NUT_AQUA_BED with the NUT_AN ammonium-nitrate skid (A-M-497); IA-WAX-MU with the C19-C28 cut blend
-# (A-M-498); IA-FEED-MU re-classed raw feed on the characterized lot (A-M-499).
+# (A-M-498); IA-FEED-MU re-classed raw feed on the characterized lot (A-M-499); CA_HOPPER with the
+# eggshell-grit route (A-M-501); FR_FINISH with the on-site diammonium-phosphate finish (A-M-502).
+# The table stands empty: every dock input is water, waste or a covered raw ore.
 PENDING = {
-    'CA_HOPPER': ('X-QA-11', 'free-choice mineral calcium carbonate for the livestock on the dock mineral manifest '
-                  '(A-M-430); its own on-site route is the remaining X-QA-11 residue (the quail grit class)'),
-    'FR_FINISH': ('X-QA-11', 'phosphorus flame-retardant finish of the crew textile line at the reagent resupply class '
-                  '(A-M-225; the FR-finished fleece is the designed textile, A-M-429); in-plant synthesis is the locale '
-                  'upgrade named on the edge'),
 }
 # terminal loss sinks (F-20261110-07): units whose inflow ends the arriving elements - the acid leach (undissolved
 # solids report to the crib or the sink circuit), beyond the dock and the air already checked

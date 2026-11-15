@@ -8347,5 +8347,36 @@
   "files": [
    "flow_graph/param/o2_close.py"
   ]
+ },
+ {
+  "id": "A-M-501",
+  "value": "the free-choice quail grit is crushed baked eggshell from the plant's own shell return: the galley shell stream (EGGSHELL_RET, baked crushed eggshell at the ~38 g Ca/d basis, shell_dm of the layer flock) splits at FEED_PREP between the layer-mash shell share and the 0.035 kg/d free-choice hopper on SHELL_GRIT, and the dock mineral-manifest line CA_HOPPER retires (task X-QA-11)",
+  "units": "kg/d (grit = the registered ca_hopper_kgd class)",
+  "where": "flow_graph/param/farm_balance.py SHELL_GRIT and the LM shell split; drivers FARM.classes.ca_hopper_kgd",
+  "basis": "eggshell is ~95 % CaCO3 by mass (the shell return's 38 g Ca/d on 0.1 kg shell, A-M-426): the layer shell flux 0.06 kg/d covers the 0.035 kg/d free-choice grit with the balance staying in the mash, inside the A-M-426 in-class ration Ca margin (the BSFL Ca class 5-8 % carries the remainder, insect-farming.md:116); the coturnix free-choice Ca class is TECHTREE coturnix.md:60",
+  "sensitivity": "the grit follows the ca_hopper_kgd driver 1:1; the layer-mash shell share takes the balance of the shell flux; a flock draw-down shrinks both the shell flux and the grit demand together",
+  "replaced_by": "grit weigh and shell assay at the FEED_PREP commissioning (X-FARM-10)",
+  "task": "X-QA-11",
+  "files": [
+   "flow_graph/param/farm_balance.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "grit weigh and shell assay at the FEED_PREP commissioning (X-FARM-10)"
+ },
+ {
+  "id": "A-M-502",
+  "value": "the crew textile FR finish is the on-site diammonium-phosphate class: the fab phosphorus line's H3PO4 (WS_PHOS product S34B) neutralized with the ammonia line (H3PO4 + 2 NH3 -> (NH4)2HPO4, mass-exact on the element-mass table) at the A-M-225 pick-up (2 % of fibre, 0.0017 kg/d compound), and the dock reagent line FR_FINISH retires (task X-QA-11); at locales without the phosphorus or ammonia line the textile runs unfinished and the demand retires with the line",
+  "units": "kg/d (finish compound at the A-M-225 pick-up)",
+  "where": "flow_graph/param/foundry_poly.py IA-FR-P / IA-FR-NH3 / the FR_FINISH retirement and the S34B product split",
+  "basis": "the phosphate finish class works by the phosphate-char mechanism (the phosphorus acid promotes intumescent char on the fibre at fire; the diammonium phosphate salt is the water-soluble treatment form), dosed at the A-M-225 2 % pick-up; the stoichiometry H3PO4 + 2 NH3 -> (NH4)2HPO4 is mass-exact on the element-mass table (H 1.008, N 14.007, O 15.999, P 30.974); the WS_PHOS acid is recovered from the leach phosphate (IA-PHOS-SRC, 0.62 kg/d liquor class) - the finish draw 0.0013 kg/d is three orders below the flux",
+  "sensitivity": "the finish mass follows the fibre throughput 1:1 at the fr_pickup_frac driver; the acid and ammonia draws follow the stoichiometric split; the WS_PHOS product split carries the acid draw off the bench share (S34B), the ammonia line re-solves on IA-NH3-SRC by difference in balance.physics",
+  "replaced_by": "finished-fleece FR performance test (the A-M-429 textile first article; the phosphate-char burn test)",
+  "task": "X-QA-11",
+  "files": [
+   "flow_graph/param/foundry_poly.py"
+  ],
+  "needs_verification": true,
+  "verification_test": "finished-fleece FR performance test at the textile first article"
  }
 ]

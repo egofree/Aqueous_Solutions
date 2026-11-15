@@ -85,7 +85,11 @@ def compute(d):
     GREENS = greens_dm / dw_dm_frac
     SLUDGE_W = sludge_dm / (1 - sludge_moist)
     HARV_W = round(fish_ration_dm * 0.9, 6)
-    LM = layer_dw_dm / mash_dm_frac + larvae_meal_dm + shell_dm
+    # free-choice grit (X-QA-11, A-M-501): the quail hopper is crushed baked eggshell from the galley
+    # shell return - the shell stream (shell_dm, ~38 g Ca/d at the CaCO3 95 % class) splits between the
+    # layer-mash shell share and the grit; the dock mineral line CA_HOPPER retires.
+    grit = v('FARM.classes.ca_hopper_kgd', 0.035)
+    LM = layer_dw_dm / mash_dm_frac + larvae_meal_dm + shell_dm - grit
     QM = quail_dm / mash_dm_frac
     DM_ = (duck_dm - fodder_dm) / mash_dm_frac
     LARVA_W = larvae_fresh_dm / larva_dm_frac
@@ -94,7 +98,7 @@ def compute(d):
     CVAP = birds * v('FARM.classes.chicken_resp_kg_bird_d', 0.06)
     CMAN = LM + CHW - eggs - CVAP
     QW = quail_n * v('FARM.classes.quail_water_kg_bird_d', 0.01)
-    CAQ = v('FARM.classes.ca_hopper_kgd', 0.035)
+    CAQ = grit                                         # the free-choice grit draws the same shell-split share
     QDROP = round((quail_dm * 0.28) / (1 - drop_moist), 6)
     QVAP = QM + QW + CAQ - quail_eggs - QDROP
     DUCKW = ducks_n * v('FARM.classes.duck_water_kg_bird_d', 0.33)
@@ -134,7 +138,7 @@ def compute(d):
     nut_dose_bed = 0.0    # the bed uptake rides the fish-loop nitrate; the term stays for a future bed dose
 
     # free water edges: initial values the solver reconciles around
-    PRESS = (FORM + LARVA_W + shell_dm) - (LM + QM + DM_ + store_dm + reject_wet + VAP)
+    PRESS = (FORM + LARVA_W + shell_dm) - (LM + QM + DM_ + store_dm + reject_wet + VAP) - grit   # the grit leaves dry, not as press water
     BET = v('FARM.classes.bed_et_kgd', 5.0)
     LOOP3 = loop_kgd + VCOMP + VTEA                       # bed inflow carries the vermi amendments
     LOOP4 = LOOP3 + RMAN + PRESS + nut_dose_bed - BEDG - BET   # + the bed mineral dose (0: the fish-loop nitrate covers the beds, A-M-497)
@@ -153,7 +157,7 @@ def compute(d):
                 larvae_meal_dm=larvae_meal_dm, layer_dw_dm=layer_dw_dm, form_dm=form_dm,
                 loop_kgd=loop_kgd, nut_dose=nut_dose, nut_gap_N_kg_d=nut_gap_N_kg_d, nut_dose_bed=nut_dose_bed,
                 uptake_race_N=uptake_race_N, uptake_bed_N=uptake_bed_N, fish_n_g=fish_n_g,
-                BEDG=BEDG, BET=BET, QW=QW, CAQ=CAQ,
+                BEDG=BEDG, BET=BET, QW=QW, CAQ=CAQ, SHELL_GRIT=CAQ,
                 CHW=CHW, CVAP=CVAP, DUCKW=DUCKW, DMAN=DMAN, DVAP=DVAP, RFOR=RFOR,
                 RMEAT=RMEAT, RVAP=RVAP, VFEED=VFEED, VCOMP=VCOMP, GFOOD=GFOOD, FHAB=FHAB,
                 GGREY=GGREY, store_dm=store_dm, fish_ration_dm=fish_ration_dm,
@@ -166,7 +170,7 @@ def compute(d):
         'AQUA_TANK': ([V['RET'], V['FISHF'], V['TOPUP']], [loop_kgd, V['SLUDGE_W'], V['HARV_W']]),
         'AQUA_UV': ([0.0], [0.0]),
         'FEED_PREP': ([V['FORM'], V['LARVA_W'], V['shell_dm']],
-                      [V['LM'], V['QM'], V['DM_'], V['store_dm'], V['REJ'], V['VAP'], V['PRESS']]),
+                      [V['LM'], V['QM'], V['DM_'], V['store_dm'], V['REJ'], V['VAP'], V['PRESS'], V['SHELL_GRIT']]),
         'CHICKEN_COOP': ([V['LM'], V['CHW']], [V['eggs'], V['CVAP'], V['CMAN']]),
         'QUAIL_CAGE': ([V['QM'], V['QW'], V['CAQ']], [V['quail_eggs'], V['QDROP'], V['QVAP']]),
         'DUCK_PEN': ([V['FODDER'], V['DM_'], V['DUCKW']], [V['duck_eggs'], V['DMAN'], V['DVAP'], V['DGREY']]),
@@ -208,7 +212,7 @@ def write():
         'EGG_HARVEST': V['eggs'], 'BED_GREENS': V['BEDG'], 'HONEY': 0.05,
         'NECTAR_FORAGE': V['NECTAR'], 'BEE_VAP': V['BEEVAP'],
         'FOOD_GALLEY': V['GFOOD'], 'FOOD_HAB': V['FHAB'],
-        'NUT_AQUA': V['nut_dose'], 'CA_HOPPER': V['CAQ'],
+        'SHELL_GRIT': V['CAQ'],
         'VERMI_FEED': V['VFEED'], 'VERMICOMPOST': V['VCOMP'], 'WORM_TEA': V['VTEA'],
         'GAL_GREY': V['GGREY'],
         'AQUA_LOOP1': L, 'AQUA_BYPASS': L, 'AQUA_NUT': 0.0, 'AQUA_SAN': 0.0,
@@ -246,8 +250,9 @@ def write():
     ensure('NUT_AQUA', 'NUT_AN', 'DUCKWEED', 'FARM', 'FARM',
            'ammonium-nitrate nutrient solution to the raceway',
            'mineral N: the crop uptake less the fish-loop return, made on the NUT_AN skid (A-M-430/497); re-pointed from the dock by nitrate_route.tf')
-    ensure('CA_HOPPER', 'NORTH_DOCK', 'QUAIL_CAGE', 'DOCK', 'FARM',
-           'mineral calcium carbonate (free-choice hopper)', 'quail Ca class (TECHTREE coturnix.md:60; A-M-426/430)')
+    ensure('SHELL_GRIT', 'FEED_PREP', 'QUAIL_CAGE', 'FARM', 'FARM',
+           'crushed baked eggshell free-choice grit to the quail hopper',
+           'the galley shell return splits to the grit (X-QA-11, A-M-501; TECHTREE coturnix.md:60 Ca class); re-pointed from the dock by the shell-grit route')
     ensure('FOOD_EXPORT', 'FOOD_STORE', 'BOUNDARY_EXPORT', 'FARM', 'DOCK',
            'surplus food to the reserve/trade boundary',
            'production beyond the crew issue (A-M-270 reserve; D-DOCK trade statement)')
@@ -286,6 +291,16 @@ def write():
     # NUT_AQUA on-site at the computed dose, and retires NUT_AQUA_BED
     from flow_graph.param import nitrate_route
     nitrate_route.tf(g, d, V)
+    # the free-choice grit is crushed baked eggshell now (X-QA-11, A-M-501): the dock mineral line retires
+    hop = next((x for x in g['edges'] if x['stream_id'] == 'CA_HOPPER'), None)
+    if hop is not None:
+        hop['presence'] = 'retired'
+        for k in ('dock_class', 'dock_pending_task'):
+            (hop.setdefault('params', {})).pop(k, None)
+        hop['rate'] = {'value': 0.0, 'unit': 'kg/d', 'status': 'study',
+                       'note': 'Retired by the eggshell-grit route (X-QA-11, A-M-501): the galley shell return '
+                               '(EGGSHELL_RET, baked crushed eggshell at the ~38 g Ca/d basis) splits to the free-choice '
+                               'quail hopper on SHELL_GRIT. Was the dock mineral-manifest CaCO3 line (A-M-430).'}
 
     json.dump(g, open(GP, 'w'), indent=2)
     return V

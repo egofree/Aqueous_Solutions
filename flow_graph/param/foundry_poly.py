@@ -752,16 +752,31 @@ def apply(g=None, write=False):
     else:
         put('IA-C5-POLY', spf, f'Polyolefin naphtha feed ({DOC_P}, A-M-264). | {TAG}.')
     # ---- the crew textile line (A-M-429): stock -> fibre -> MFG conversion -> hab ----
+    _fr_p = _fr_nh3 = 0.0
     if 'POLY_FIBER' in N:
-        fr_kg = R(DR.val(DR.load(), 'POLYMERS.textile.fr_pickup_frac') * pp_in * DR.val(DR.load(), 'POLYMERS.textile.spin_yield'))
+        fr_pickup = R(DR.val(DR.load(), 'POLYMERS.textile.fr_pickup_frac') * pp_in * DR.val(DR.load(), 'POLYMERS.textile.spin_yield'))
+        # X-QA-11 (A-M-502): the FR finish is the on-site diammonium-phosphate class - the fab phosphorus
+        # line's H3PO4 neutralized with the ammonia line (H3PO4 + 2 NH3 -> (NH4)2HPO4, mass-exact on the
+        # element-mass table; the phosphate-char finish mechanism). Where the phosphorus or ammonia line
+        # does not exist at a locale, the textile runs unfinished (that locale's FR basis is its own pass).
+        _fr_live = ((N.get('WS_PHOS') or {}).get('presence') == 'present'
+                    and (N.get('WS_AMMONIA') or {}).get('presence') == 'present')
+        _fr_p = R(fr_pickup*97.994/132.056) if _fr_live else 0.0       # H3PO4 per (NH4)2HPO4
+        _fr_nh3 = R(fr_pickup*34.062/132.056) if _fr_live else 0.0     # 2 NH3 per (NH4)2HPO4
+        fr_kg = fr_pickup if _fr_live else 0.0
         textile = R(pp_in * DR.val(DR.load(), 'POLYMERS.textile.spin_yield') + fr_kg)
         scrap = R(pp_in - pp_in * DR.val(DR.load(), 'POLYMERS.textile.spin_yield'))
         tput = [('STOCK_TO_FIBER', 'POLY_STOCK', 'POLY_FIBER', 'POLYMERS', 'POLYMERS', 'L',
                  'PP pellet draw to the melt-spin line', pp_in,
                  f'PP feed at the {DR.val(DR.load(), "POLYMERS.textile.spin_yield"):.0%} spin yield (A-M-429).'),
-                ('FR_FINISH', 'NORTH_DOCK', 'POLY_FIBER', 'DOCK', 'POLYMERS', 'L',
-                 'phosphorus-FR finish (reagent manifest)', fr_kg,
-                 'FR pick-up ~2 % of fibre; D-DOCK reagent import per A-M-225 (in-plant synthesis = locale upgrade).'),
+                ('IA-FR-P', 'WS_PHOS', 'POLY_FIBER', 'FAB', 'POLYMERS', 'L',
+                 'phosphoric acid of the phosphate-FR finish', _fr_p,
+                 f'H3PO4 + 2 NH3 -> (NH4)2HPO4 on the finish pick-up {fr_pickup:.4f} kg/d at 2 % of fibre '
+                 f'(A-M-225 basis; A-M-502): {fr_pickup*97.994/132.056:.6f} kg/d acid, on site (X-QA-11).'),
+                ('IA-FR-NH3', 'WS_AMMONIA', 'POLY_FIBER', 'FAB', 'POLYMERS', 'L',
+                 'ammonia of the phosphate-FR finish', _fr_nh3,
+                 f'the neutralizer half of the (NH4)2HPO4 finish, {fr_pickup*34.062/132.056:.6f} kg/d '
+                 f'(A-M-502; the ammonia line re-solves on IA-NH3-SRC in balance.physics).'),
                 ('FIBER_SCRAP', 'POLY_FIBER', 'LEACH_CSTR_1', 'POLYMERS', 'DIGESTER', 'L',
                  'spin scrap to the solids line', scrap,
                  'spin waste, PP leach-inert (the POLY_TO_WET class).'),
@@ -781,6 +796,27 @@ def apply(g=None, write=False):
                 src['rate'] = rate(val_, f'{why} | {TAG}.')
                 g['edges'].append(src)
                 E[sid] = src
+            b = E['S34B'].setdefault('params', {}).setdefault('pre_fr_kg_d', float(E['S34B']['rate']['value'] or 0))
+            E['S34B']['rate'] = {'value': round(b - _fr_p, 6), 'unit': 'kg/d', 'status': 'study',
+                                 'note': f'{TAG}: the WS_PHOS H3PO4 product splits to the bench {b:.4f} less the '
+                                         f'FR finish draw {_fr_p:.6f} kg/d on IA-FR-P (X-QA-11, A-M-502).'}
+    # the finish compound forms in-bath from the two reactant draws where the spin line runs; where a
+    # locale eliminates the line the finish demand retires with it - either way the dock line retires
+    fin = next((x for x in g['edges'] if x['stream_id'] == 'FR_FINISH'), None)
+    if fin is not None:
+        fin['presence'] = 'retired'
+        for k in ('dock_class', 'dock_pending_task'):
+            (fin.setdefault('params', {})).pop(k, None)
+        fin['rate'] = {'value': 0.0, 'unit': 'kg/d', 'status': 'study',
+                       'note': f'Retired by the on-site phosphate-FR finish (X-QA-11, A-M-502): the '
+                               f'(NH4)2HPO4 compound forms in-bath on IA-FR-P (fab H3PO4) and IA-FR-NH3 '
+                               f'(ammonia line) where the spin line runs; where a locale eliminates the line '
+                               f'the demand retires with it. Was the D-DOCK reagent import (A-M-225).'}
+    if _fr_p > 0 and 'S34B' in E:
+        b = E['S34B'].setdefault('params', {}).setdefault('pre_fr_kg_d', float(E['S34B']['rate']['value'] or 0))
+        E['S34B']['rate'] = {'value': round(b - _fr_p, 6), 'unit': 'kg/d', 'status': 'study',
+                             'note': f'{TAG}: the WS_PHOS H3PO4 product splits to the bench {b:.4f} less the '
+                                     f'FR finish draw {_fr_p:.6f} kg/d on IA-FR-P (X-QA-11, A-M-502).'}
     cut1_out = float(s['E']['CUT-1-OUT']['rate']['value'] or 0)
     put('IA-C5-SHIP', R(float(s['E']['CUT-1']['rate']['value'] or 0)) - cut1_out - spf,
         f'X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset {cut1_out:.4f} and the '

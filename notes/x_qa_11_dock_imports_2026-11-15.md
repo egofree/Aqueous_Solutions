@@ -32,11 +32,25 @@ then the import removed. Six pending entries left the table. Per import:
    a recovery record on HOPPER that recovers the feed iron first from the loop receipts
    (A-M-499).
 
-## What remains pending
+## The last two (same day, follow-up round)
 
-CA_HOPPER (livestock calcium carbonate) and FR_FINISH (phosphorus-FR textile finish) stay in
-the PENDING table: their routes were not in this round's scope. X-QA-11 must not be ticked
-while they stand, or the gate fails them by design (the exemption dies with its task).
+7. **CA_HOPPER** (livestock CaCO3 grit, 0.035 kg/d): the galley shell return
+   (EGGSHELL_RET, baked crushed eggshell, ~38 g Ca/d basis) splits at FEED_PREP -
+   SHELL_GRIT 0.035 kg/d feeds the free-choice quail hopper, the balance stays in the
+   layer-mash shell share inside the A-M-426 in-class Ca margin (A-M-501). The dock
+   mineral line CA_HOPPER retires.
+8. **FR_FINISH** (phosphorus-FR textile finish, 0.0017 kg/d compound): the fab
+   phosphorus line's H3PO4 (WS_PHOS product S34B) neutralized with the ammonia line -
+   H3PO4 + 2 NH3 -> (NH4)2HPO4 at the A-M-225 pick-up, mass-exact on the element-mass
+   table; the draws ride IA-FR-P (0.001261 kg/d) and IA-FR-NH3 (0.000438 kg/d) and the
+   dock reagent line FR_FINISH retires (A-M-502). At locales without the phosphorus or
+   ammonia line the textile runs unfinished and the demand retires with the line.
+
+The PENDING table stands empty. The mars O2-ledger case landed in o2_close the same
+round: the NFPA 110 exercise rides the FUEL_CELL replacement at locales that eliminate
+BACKUP_GEN (A-M-500), the electrolyser sizes to the net new-O2 demand at airless
+locales, and the preserved mars postmortem worktree's balance gate passes at
++0.0004 kg/d closing residual (was HDR_O2 -0.9873 kg/d pre-reconcile).
 
 ## Wiring
 

@@ -20,7 +20,7 @@ This page records how the plant mass balance is reconciled. The method is minimu
 
 X-SAF-10 corrected the peroxide cell feed from 3.0 kg/d O2 to 0.176 kg/d O2 (Faraday) plus 2.824 kg/d make-up water from ROOF_TANK, and took that water off S40. It did not propagate: TERRACE_IRRIG still transpired 40 kg/d on 37.176 kg/d irrigation, and the cold box still made 2.824 kg/d O2 that nothing drew. Revision A reconciled the two by least squares (IA-TERR-VAP -2.824, IA-O2-RET +2.824) and smeared small moves over 361 edges. Hypothesis tested: missing photosynthetic O2 from the terrace. Rejected for this cut: the terrace has no CO2 supply and no harvest edge, so net CO2 + H2O -> CH2O + O2 fixation there is zero (TAIZ2015), and the sign is wrong (the terrace was short water, the header long O2). Fix: Revision A moves withdrawn; T1-T5 in balance.physics. X-PAR-11 (T6): GROW_BED fixes the 19.0 kg/d CO2 dosed to it (S04 + S89); its photosynthetic O2, 32/44 x CO2 at PQ 1.0, leaves on S87 to CRYO_O2 instead of the trim lump; the trim, compost and nutrient surplus pass the difference; the cold box extracts that much less O2 and the leach dissolved-gas edge falls with it, now asserted under the Henry-law bound (SANDER2015). CO2 edges carry CO2 composition. Verification: T-PAR-02 (A-M-123).
 
-Mass edges 539; held by a transfer function or stoichiometry 471; reconciled 68. Units 170.
+Mass edges 540; held by a transfer function or stoichiometry 472; reconciled 68. Units 170.
 Before: 4 units out of balance (sum of residuals 1.006 kg/d). After: max unit residual 3.60e-04 kg/d. Negative rates after reconciliation: 0.
 
 ## 3. Units out of balance before reconciliation
@@ -50,7 +50,7 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | export | IA-CA-CL2-SHIP | chlorine byproduct export (water-treatme | 0.063 |
 | export | IA-CR-VENT | chlorinator CO (fuel-gas class export) | 0.202 |
 | export | IA-FAB-PRODUCT | finished wafers to the dock for dispatch | 0.139 |
-| export | IA-GOODS-SHIP | finished-goods surplus export | 321.546 |
+| export | IA-GOODS-SHIP | finished-goods surplus export | 321.547 |
 | export | IA-KROLL-CO | chlorinator CO (fuel-gas class export) | 0.458 |
 | export | IA-LIME-SHIP | cake-kiln residue (lime, unreacted anhyd | 0.282 |
 | export | IA-MEOH-SHIP | methanol shipped at the dock | 28.578 |
@@ -60,21 +60,19 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | export | IA-NA-PURGE | sodium chloride bleed of the leach purge | 0.642 |
 | export | IA-NAOH-CL2-SHIP | chlor-alkali chlorine, shipped with the  | 3.894 |
 | export | IA-NAOH-RESIDUE | ore insolubles and the lime-mud purge | 0.034 |
-| export | IA-O2-SHIP | O2 cylinders shipped at the dock | 12.771 |
+| export | IA-O2-SHIP | O2 cylinders shipped at the dock | 12.735 |
 | export | IA-PCA-REJECT | slaker grit (anhydrite, fluorspar and in | 0.0 |
 | export | IA-SOLV-VENT | reactor or fermenter off-gas (fuel-gas c | 0.15 |
-| import | CA_HOPPER | mineral calcium carbonate (free-choice h | 0.035 |
-| import | FR_FINISH | phosphorus-FR finish (reagent manifest) | 0.002 |
 | import | IA-CAF2-MU | fluorspar make-up, acid-spar class >= 97 | 0.326 |
 | import | IA-CR2O3-MU | Cr2O3-equivalent chromite concentrate (d | 0.365 |
-| import | IA-FEED-MU | feedstock make-up (dock import) | 65.547 |
-| import | IA-H2O-MU | water make-up for H and O leaving as pro | 337.835 |
+| import | IA-FEED-MU | feedstock make-up (dock import) | 65.549 |
+| import | IA-H2O-MU | water make-up for H and O leaving as pro | 337.833 |
 | import | IA-HALITE-MU | halite ore (raw ore) to re-saturate the  | 0.676 |
 | import | IA-MOO3-MU | MoO3-equivalent concentrate (dock import | 0.094 |
 | import | IA-SULFUR-MU | native sulfur (raw ore) for the acid pla | 0.014 |
 | import | IA-TIO2-MU | TiO2-equivalent rutile concentrate (dock | 0.834 |
 
-**Net trade: +5.356 kg/d** (exports 411.084 - imports 405.728); dock ledger residual +5.357 kg/d (reported, exempt per D-DOCK).
+**Net trade: +5.358 kg/d** (exports 411.049 - imports 405.691); dock ledger residual +5.357 kg/d (reported, exempt per D-DOCK).
 
 ## 4. Moves outside measurement tolerance (2 % of the rate, 1 g/d floor); must be empty
 
@@ -174,7 +172,7 @@ Table 6.1. Stoichiometric edges
 | FILM_TO_STOCK | closure | FILM_CAST | 0.1400 | PVDF cast film/sheet to stock (A-M-289). |
 | FORM_PRESS | closure | FEED_PREP | 25.6886 | duckweed juice water returns to the beds (A-M-426) [free: solver-reconciled, x0 25.689 kg/ |
 | F_RECOVER_TO_HF_GEN | closure | F_RECOVER | 1.5200 | Fluoride concentrate to the kiln = leach fluoride 1.500 (IA-HF-SRC) + POLY_F off-spec recl |
-| GREASE_CA_TO_MFG | closure | MFG_SHOP | 0.0032 | X-RTE TF: shop grease on site (A-M-480): grease need: 74 lubricated units x points x Gp 3. |
+| GREASE_CA_TO_MFG | closure | MFG_SHOP | 0.0031 | X-RTE TF: shop grease on site (A-M-480): grease need: 73 lubricated units x points x Gp 3. |
 | HF_GEN_TO_VDF | closure | HF_GEN | 0.0937 | Aqueous HF to VDF: 0.15 kg/d VDF x 2 HF/VDF (2 CH3OH + 2 Cl2 + 2 HF -> CH2=CF2 + 4 HCl + 2 |
 | IA-AQUA-TOPUP | closure | AQUA_TANK | 29.7690 | balance-resolved farm/hab loop rate (/ build-out; A-M-415..425, TECHTREE roster) [free: so |
 | IA-BAG-01 | closure | BAGHOUSE | 7.1783 | X-RTE TF: fab photoresist made on site (A-M-482): BAGHOUSE dust to the leach = its live in |
@@ -182,7 +180,7 @@ Table 6.1. Stoichiometric edges
 | IA-BRINE-SRC | closure | BRINE_CRYS | 2.0000 | X-RTE TF: on-site Kroll brine recovery (X-QA-11, A-M-496): feed = 2.000000 kg/d (salt_reco |
 | IA-COAT-OUT | closure | ELECTRODE_COAT | 0.0200 | Coated anode back to EW-1. Net zero. |
 | IA-FAB-SPENT | closure | LEACH_CSTR_1 | 66.5002 | X-RTE TF: fab photoresist made on site (A-M-482): spent rinse water by difference on WAFER |
-| IA-GREASE-SPENT | closure | OIL_PYRO | 0.0032 | X-RTE TF: shop grease on site (A-M-480): purged grease collected at relubrication goes to  |
+| IA-GREASE-SPENT | closure | OIL_PYRO | 0.0031 | X-RTE TF: shop grease on site (A-M-480): purged grease collected at relubrication goes to  |
 | IA-LITHO-IN | closure | LITHO_COAT | 0.3395 | X-RTE TF: fab photoresist made on site (A-M-482): resist and rinse acetone issued to the c |
 | IA-LITHO-OUT | closure | LITHO_DEV | 0.3395 | X-RTE TF: fab photoresist made on site (A-M-482): spent resist and acetone to the SOLV_PLA |
 | IA-MILL-LOSS | closure | GLASS_MILL | 6.8200 | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |
@@ -213,7 +211,7 @@ Table 6.1. Stoichiometric edges
 | POWDER_TO_STOCK | closure | POWDER_RESIN | 0.0900 | PTFE fine powder to stock (A-M-289). |
 | TFE_TO_POLY_F | closure | TFE_SYN | 0.1000 | TFE monomer to polymerization (AQS-RATE-FP-MET; A-M-289). |
 | VDF_TO_POLY_F | closure | VDF_SYN | 0.1500 | VDF monomer to polymerization (AQS-RATE-FP-MET; A-M-289). |
-| WAX_TO_GREASE_CA | closure | PROD_C19_C28 | 0.0033 | X-RTE TF: shop grease on site (A-M-480): C19-C28 cut: base oil 0.002781 + wax oxidised to  |
+| WAX_TO_GREASE_CA | closure | PROD_C19_C28 | 0.0032 | X-RTE TF: shop grease on site (A-M-480): C19-C28 cut: base oil 0.002744 + wax oxidised to  |
 | AQUA_RETURN2 | input | - | 156.0410 | balance-resolved farm/hab loop rate (/ build-out; A-M-415..425, TECHTREE roster) [free: so |
 | CRU_TO_TFE | input | - | 0.2836 | Cl2 to TFE: 4 Cl2 per TFE from the CRU chlorate finish (AQS-SEL-FP; A-M-289). |
 | CRU_TO_VDF | input | - | 0.3322 | Cl2 to VDF: 2 Cl2 per VDF from the CRU chlorate finish on the returned dilute HCl (halogen |
@@ -224,9 +222,9 @@ Table 6.1. Stoichiometric edges
 | IA-CRU-01 | input | - | 27.5109 | CRU liquor re-solved on the unit balance: S66 27.3720 + dilute HCl returns 0.7537 - Cl2 dr |
 | IA-FAB-N2-VENT | input | - | 1.4998 | X-RTE TF: fab photoresist made on site (A-M-482): the S03 nitrogen purge leaves the tools  |
 | IA-FAB-SOLV | input | - | 0.2195 | X-RTE TF: fab photoresist made on site (A-M-482): edge-bead rinse and strip acetone at the |
-| IA-GREASE-AIR | input | - | 0.0002 | X-RTE TF: shop grease on site (A-M-480): o2 = 0.000178 kg/d (grease.py, route CA). |
-| IA-GREASE-VENT | input | - | 0.0004 | X-RTE TF: shop grease on site (A-M-480): vent = 0.000353 kg/d (grease.py, route CA). |
-| IA-LIME-TO-PCA | input | - | 0.0001 | X-RTE TF: shop grease on site (A-M-480): lime_draw = 0.000051 kg/d (grease.py, route CA). |
+| IA-GREASE-AIR | input | - | 0.0002 | X-RTE TF: shop grease on site (A-M-480): o2 = 0.000175 kg/d (grease.py, route CA). |
+| IA-GREASE-VENT | input | - | 0.0003 | X-RTE TF: shop grease on site (A-M-480): vent = 0.000348 kg/d (grease.py, route CA). |
+| IA-LIME-TO-PCA | input | - | 0.0001 | X-RTE TF: shop grease on site (A-M-480): lime_draw = 0.000050 kg/d (grease.py, route CA). |
 | IA-LITHO-CARRY | input | - | 0.3395 | X-RTE TF: fab photoresist made on site (A-M-482): resist and acetone carried coat to devel |
 | IA-PCA-H2O | input | - | 0.0000 | X-RTE TF: shop grease on site (A-M-480): slake_h2o = 0.000011 kg/d (grease.py, route CA). |
 | IA-RESIST-ACET | input | - | 0.0900 | X-RTE TF: fab photoresist made on site (A-M-482): acetone = 0.090000 kg/d (fab_resist.py,  |
