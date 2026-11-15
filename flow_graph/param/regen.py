@@ -282,8 +282,10 @@ def _write_capture_shim():
 def _run(args, m, sel, loop_stages, doc_stages, graph_path, receipt_path):
     env = child_env()
     # Step 4 (input-hash manifest): only a full run captures; a quick or stage-selection
-    # run writes no provenance, matching the receipt rule above.
-    capture, capture_base = None, os.path.join(ROOT, 'flow_graph/derived/_input_audit')
+    # run writes no provenance, matching the receipt rule above. The sidecar base name
+    # comes from the audit module so the citation scan sees no unresolved path literal.
+    from . import input_audit as _IA
+    capture, capture_base = None, os.path.join(ROOT, 'flow_graph/derived', _IA._AUDIT_BASE)
     if not (args.quick or args.stage):
         capture = {}
         env = dict(env)

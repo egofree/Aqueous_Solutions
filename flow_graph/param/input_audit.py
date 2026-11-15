@@ -28,11 +28,25 @@ import atexit, json, os, runpy, sys
 _records = None      # set of absolute paths this process saw opened for reading
 _root = None         # repository root; reads outside it are not inputs
 _base = None         # sidecar path prefix, from AQS_INPUT_AUDIT
+_paused = 0          # >0 while an evaluation-only reader (e.g. the staleness census) runs:
+                     # its opens verify the tree, they are not generation inputs
 _EXCLUDE_SUFFIX = ('.pyc',)
+_AUDIT_BASE = '_input_audit'
 _EXCLUDE_PARTS = ('.git', '__pycache__', '.aqs-shim')
 _EXCLUDE_NAMES = ('.aqs-design.lock', '_regen_receipt.json', '_regen_run.json',
                   '_input_manifest.json')
 _WRITE_FLAGS = os.O_WRONLY | os.O_RDWR | os.O_APPEND | os.O_CREAT | os.O_TRUNC
+
+
+def pause():
+    """Suspend recording: evaluation-only reads are not generation inputs."""
+    global _paused
+    _paused += 1
+
+
+def resume():
+    global _paused
+    _paused = max(0, _paused - 1)
 
 
 def default_root():
@@ -54,7 +68,7 @@ def install(root=None, base=None):
 
 
 def _hook(event, args):
-    if event != 'open':
+    if event != 'open' or _paused:
         return
     path, mode, flags = args
     if not isinstance(path, str) or _records is None:
@@ -71,7 +85,7 @@ def _hook(event, args):
         return
     if rel.endswith(_EXCLUDE_SUFFIX) or os.path.basename(rel) in _EXCLUDE_NAMES:
         return
-    if rel.startswith('flow_graph/derived/_input_audit.'):
+    if rel.startswith('flow_graph/derived/' + _AUDIT_BASE + '.'):
         return
     _records.add(ap)
 

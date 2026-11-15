@@ -118,8 +118,23 @@ def input_census(rows):
     Parallel period (2026-11-04 plan step 4): the gate follows the committed rule; this reports
     where the two rules disagree, until they agree on every file and step 5 retires the
     committed-rule bookkeeping. Missing manifest = pre-gate: a warning, not a failure.
+    The census's own reads are evaluation, not generation: capture is paused around them,
+    so the manifest never lists itself or its hashed inputs as stage inputs.
     """
     sys.path.insert(0, ROOT)
+    try:
+        import input_audit as _ia          # the same top-level instance the shim hook lives on
+        _ia.pause()
+    except ImportError:
+        _ia = None
+    try:
+        _input_census_body(rows)
+    finally:
+        if _ia is not None:
+            _ia.resume()
+
+
+def _input_census_body(rows):
     from flow_graph.param import input_manifest as IM
     im = IM.load(ROOT)
     if im is None:

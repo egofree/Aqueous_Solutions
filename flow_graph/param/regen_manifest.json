@@ -3,6 +3,7 @@
  "purpose": "One-command regeneration: parameter change -> full regen. Data, not code: flow_graph/param/regen.py executes these stages in manifest order, which must be a valid topological order of depends_on (flow_graph/param/test_regen.py enforces it). Graph-writing stages (writes_graph true) run as a successive-substitution loop until the graph sha is stable. The doc stages then run against the final graph, repeated until none of their outputs change, because some documents read each other (feeds_back_from lists those reverse edges; depends_on holds the forward ones). Stage keys: outputs = files the stage owns; amends = files it rewrites in part (another stage or a person owns the rest); invokes = scripts the stage runs; requires = toolchains it needs ('python:<module>' or 'cmd:<program>'; a missing one skips the stage and vouches nothing); group 'cad' = CAD model builds, run only with regen --cad. not_stages lists every other script that writes files, with its role and reason. flow_graph/test_generators.py fails when a tracked generated file or a file-writing script is not accounted for here.",
  "graph": "flow_graph/plant_flow_graph.json",
  "receipt": "flow_graph/derived/_regen_receipt.json",
+ "input_manifest": "flow_graph/derived/_input_manifest.json",
  "notes": [
   "CORRECTION vs the U3 audit order (verified against code 2026-10-18, commit dc7fe77): _load_list/_one_line moved AFTER the graph writers. U1 (A-M-231) made _power_sizing.py graph-native (it no longer reads the load list), and the U2a sidecars (LOAD_LIST.json/ONE_LINE.json) record the graph sha at run time, so both must run after the last graph write or they vouch an intermediate sha.",
   "CORRECTION: foundry_poly --write runs BEFORE write_graph heat (it stamps FOUNDRY/POLYMERS rates; heat re-solves the ladder against them) and before the balance report.",
@@ -3589,6 +3590,14 @@
   }
  ],
  "not_stages": [
+ {
+  "role": "provenance",
+  "scripts": [
+   "flow_graph/param/input_audit.py",
+   "flow_graph/param/input_manifest.py"
+  ],
+  "reason": "The step-4 input-capture wrapper and the manifest library: the runner wraps every python stage with input_audit (reads recorded, sidecars merged) and both it and docs-authority/_rev_stamp.py import input_manifest's pure verdict core. They write only the pipeline's own bookkeeping (flow_graph/derived/_input_manifest.json and the transient _input_audit.<pid> sidecars, which the runner merges and deletes)."
+ },
   {
    "role": "pipeline",
    "scripts": [
