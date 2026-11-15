@@ -1,0 +1,9 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,"ammonium-nitrate nutrient solution to the raceway (on-site skid, X-QA-11)",outlet,600
+N2,DN15,Class 150,ammonia liquor to the nitrate skid (Ostwald feed and the neutralization base),inlet,160
+N3,DN15,Class 150,plant oxygen for the ammonia oxidation,inlet,160
+N4,DN15,Class 150,dilution water to the dosing strength,inlet,160
+N5,DN15,Class 150,unconverted slip to the NOx scrubber (its nitrate liquor feeds NUTRIENT_DOSE),outlet,600
+N6,DN15,Class 150,drain,bottom,50
+N7,DN15,Class 150,vent,top,800
+N8,cable,Class 150,"power terminal (SF-NUT_AN, 480 V AC)",top,800

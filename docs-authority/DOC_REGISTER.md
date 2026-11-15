@@ -317,6 +317,7 @@ Table 3.1. Document numbers in use
 | AQS-SIZE-BMED_ACID | `docs-authority/sizing/BMED_ACID.md` | A | 2026-10-20 | Sizing calculation - BMED_ACID | current |
 | AQS-SIZE-BMED_BASE | `docs-authority/sizing/BMED_BASE.md` | A | 2026-10-20 | Sizing calculation - BMED_BASE | current |
 | AQS-SIZE-BMED_UPW_POLISH | `docs-authority/sizing/BMED_UPW_POLISH.md` | A | 2026-10-20 | Sizing calculation - BMED_UPW_POLISH | current |
+| AQS-SIZE-BRINE_CRYS | `docs-authority/sizing/BRINE_CRYS.md` | A | 2026-10-20 | Sizing calculation - BRINE_CRYS | current |
 | AQS-SIZE-C29_RECYCLE | `docs-authority/sizing/C29_RECYCLE.md` | A | 2026-10-20 | Sizing calculation - C29_RECYCLE | current |
 | AQS-SIZE-CAST_LINE | `docs-authority/sizing/CAST_LINE.md` | A | 2026-10-20 | Sizing calculation - CAST_LINE | current |
 | AQS-SIZE-CATCH_TANK | `docs-authority/sizing/CATCH_TANK.md` | A | 2026-10-20 | Sizing calculation - CATCH_TANK | current |
@@ -400,6 +401,7 @@ Table 3.1. Document numbers in use
 | AQS-SIZE-NAOH_PLANT | `docs-authority/sizing/NAOH_PLANT.md` | A | 2026-10-20 | Sizing calculation - NAOH_PLANT | current |
 | AQS-SIZE-NCG_HEADER | `docs-authority/sizing/NCG_HEADER.md` | A | 2026-10-20 | Sizing calculation - NCG_HEADER | current |
 | AQS-SIZE-NOX_SCRUB | `docs-authority/sizing/NOX_SCRUB.md` | A | 2026-10-20 | Sizing calculation - NOX_SCRUB | current |
+| AQS-SIZE-NUT_AN | `docs-authority/sizing/NUT_AN.md` | A | 2026-10-20 | Sizing calculation - NUT_AN | current |
 | AQS-SIZE-OIL-POLY | `notes/OIL_POLY_SIZE.md` | A | 2026-10-17 | Oil and polymers — item 3 sizing | current |
 | AQS-SIZE-OIL_DRYER | `docs-authority/sizing/OIL_DRYER.md` | A | 2026-10-20 | Sizing calculation - OIL_DRYER | current |
 | AQS-SIZE-OIL_FRAC | `docs-authority/sizing/OIL_FRAC.md` | A | 2026-10-20 | Sizing calculation - OIL_FRAC | current |

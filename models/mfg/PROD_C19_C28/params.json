@@ -74,6 +74,14 @@
    "service": "wax cut",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N8",
+   "size": "solids",
+   "rating": "Class 150",
+   "service": "C19-C28 pattern-wax blend make-up from the plant cut",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "Carbon steel. Hydrocarbon. No aqueous chloride in this vessel. Corrosion allowance 1.5 mm. Pit rate is not measured.",

@@ -25,9 +25,9 @@ PI blocks with set-point literals taken from the graph basis column of AQS-CTL-0
 
 | Class | Loops | Rule |
 |---|---|---|
-| CONTROL | 229 | graph basis carries a numeric set-point (edge normal rate, unit design temperature, design pressure, cell current); PI with the +10/-10 % registered alarm margin (X-SAF-05 margin class, A-M-188); an expected-zero set-point (standby line) alarms on any positive PV and has no low alarm |
-| INDICATION | 598 | no numeric set-point in the basis ('band by service', 'no design pressure on the graph', A-M-182 hold-up heights); monitor with the 90 % high alarm (registered high-level-switch convention, AQS-INV-004); no set-point invented |
-| SIF | 16 | independent safety elements of AQS-CTL-003; declared as watch inputs to the safety CPU pair, no action in the basic program |
+| CONTROL | 232 | graph basis carries a numeric set-point (edge normal rate, unit design temperature, design pressure, cell current); PI with the +10/-10 % registered alarm margin (X-SAF-05 margin class, A-M-188); an expected-zero set-point (standby line) alarms on any positive PV and has no low alarm |
+| INDICATION | 618 | no numeric set-point in the basis ('band by service', 'no design pressure on the graph', A-M-182 hold-up heights); monitor with the 90 % high alarm (registered high-level-switch convention, AQS-INV-004); no set-point invented |
+| SIF | 18 | independent safety elements of AQS-CTL-003; declared as watch inputs to the safety CPU pair, no action in the basic program |
 
 ## 4. Cross-check against the AQS-CTL-002 module table
 
@@ -35,10 +35,10 @@ PI blocks with set-point literals taken from the graph basis column of AQS-CTL-0
 |---|---|---|---|---|---|---|
 | PLC-CRYO | 36 | 0 | 36 | 0 | 1/19/6 | redundant pair |
 | PLC-DIGESTER | 135 | 3 | 135 | 0 | 3/121/25 | single |
-| PLC-ELEC | 29 | 0 | 29 | 0 | 17/445/108 | redundant pair |
-| PLC-FAB | 72 | 0 | 72 | 0 | 3/92/13 | single |
-| PLC-FARM | 48 | 0 | 48 | 0 | 0/3/0 | redundant pair |
-| PLC-FOUNDRY | 87 | 4 | 87 | 0 | 0/19/1 | single |
+| PLC-ELEC | 34 | 1 | 34 | 0 | 17/445/108 | redundant pair |
+| PLC-FAB | 74 | 0 | 74 | 0 | 3/104/16 | single |
+| PLC-FARM | 55 | 1 | 55 | 0 | 0/4/0 | redundant pair |
+| PLC-FOUNDRY | 93 | 4 | 93 | 0 | 0/26/1 | single |
 | PLC-GAS | 32 | 2 | 32 | 0 | 0/34/6 | redundant pair |
 | PLC-GEO | 9 | 0 | 9 | 0 | 0/6/3 | redundant pair |
 | PLC-GLASS | 15 | 0 | 15 | 0 | 0/7/0 | single |
@@ -47,10 +47,10 @@ PI blocks with set-point literals taken from the graph basis column of AQS-CTL-0
 | PLC-MEOH | 33 | 1 | 33 | 0 | 0/51/12 | single |
 | PLC-MFG | 32 | 1 | 32 | 0 | 9/42/5 | single |
 | PLC-NUT | 9 | 0 | 9 | 0 | 0/11/5 | redundant pair |
-| PLC-OIL | 55 | 3 | 55 | 0 | 0/33/4 | single |
-| PLC-POLYMERS | 53 | 2 | 53 | 0 | 0/27/5 | single |
+| PLC-OIL | 56 | 3 | 56 | 0 | 0/37/5 | single |
+| PLC-POLYMERS | 54 | 2 | 54 | 0 | 0/28/5 | single |
 | PLC-PUMPED_HYDRO | 2 | 0 | 2 | 0 | 0/4/2 | redundant pair |
-| PLC-WTR | 71 | 0 | 71 | 0 | 0/55/10 | redundant pair |
+| PLC-WTR | 71 | 0 | 71 | 0 | 0/59/11 | redundant pair |
 
 ## 5. Scan simulation against the graph
 
@@ -65,7 +65,7 @@ claim and invents no tuning constants.
 The 68 discrete instrument points (LSH 66, PSH 2 rupture-disc and PSV-lift indication) are permissive/interlock inputs
 declared per the AQS-CTL-002 module table; their trip matrix is the AQS-CTL-003 cause and effect, not the basic program.
 
-- CONTROL loops exercised: 1145 checks pass, 0 fail
-- INDICATION loops exercised: 1194 checks pass, 0 fail
-- SIF watch bindings: 16 pass, 0 fail
+- CONTROL loops exercised: 1160 checks pass, 0 fail
+- INDICATION loops exercised: 1234 checks pass, 0 fail
+- SIF watch bindings: 18 pass, 0 fail
 - AI-count cross-check vs AQS-CTL-002: 0 PLCs with a residual

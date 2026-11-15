@@ -167,6 +167,14 @@
    "service": "mineral nitrate solution to the raceway",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N18",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "ammonium-nitrate nutrient solution to the raceway (on-site skid, X-QA-11)",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "HDPE or PVC for the water. The frame is not the wetted part. Corrosion allowance does not apply to the polymer.",

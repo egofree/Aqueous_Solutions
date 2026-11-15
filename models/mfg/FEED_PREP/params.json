@@ -156,6 +156,14 @@
    "service": "press water back to the loop",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N14",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "crushed baked eggshell free-choice grit to the quail hopper",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "SS304 contact surfaces and mixing troughs, PP feed bins, quartz-sleeve drier ducting; no copper-bearing alloys on any feed path",

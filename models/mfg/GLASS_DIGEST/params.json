@@ -29,10 +29,10 @@
   "H_mm": 400,
   "wall_mm": 4.0,
   "agitator": {
-   "D_imp_mm": 133.0,
+   "D_imp_mm": 133,
    "rpm": 358,
-   "motor_kW": 0.09,
-   "motor": "purchased envelope"
+   "shaft_W": 14.790912041447882,
+   "motor_kW": 0.09
   },
   "T_C": 85,
   "material": "CPVC (to 93 C; DVS 2205 allowable 3.0 MPa at 85 C); PVDF impeller and shaft sleeve",

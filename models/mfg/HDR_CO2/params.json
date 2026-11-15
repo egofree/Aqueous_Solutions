@@ -111,7 +111,7 @@
    "height_mm": 600
   }
  ],
- "material": "316L tube (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.",
+ "material": "316L tube",
  "acceptance_sets": [
   "A-core",
   "A-PIPE"

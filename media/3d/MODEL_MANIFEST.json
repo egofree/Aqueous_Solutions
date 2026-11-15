@@ -1,17 +1,19 @@
 {
  "site_id": "baseline",
  "placement_seed_revision": "O",
- "units_total": 231,
+ "units_total": 235,
  "built": 201,
  "ghosts_eliminated": 0,
  "block_centre_massing": 0,
  "unplaced": [
   "ACID_PLANT",
   "ATM_INT",
+  "BRINE_CRYS",
   "BRIN_RECOVER",
   "CAT_OX",
   "DESAL_RO",
   "E_HEAT",
+  "FSP_40K",
   "HYDRO_GROW",
   "ICE_EXTRACT",
   "LB_BRINE_RETURN",
@@ -26,7 +28,9 @@
   "LB_SOFTEN",
   "LIO_BAT",
   "MEM_DIST",
+  "MMRTG",
   "NAOH_PLANT",
+  "NUT_AN",
   "PERC_REMOVE",
   "RAD_PANEL",
   "REC_HDR",
@@ -206,6 +210,11 @@
    "level": "L0",
    "status": "built",
    "basis": "Dock door. Freight boundary. No process stream. Goods only."
+  },
+  {
+   "unit_id": "BRINE_CRYS",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
   },
   {
    "unit_id": "BRIN_RECOVER",
@@ -569,6 +578,11 @@
    "level": "L0",
    "status": "built",
    "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
+  },
+  {
+   "unit_id": "FSP_40K",
+   "sector_id": "ELEC",
+   "status": "unplaced"
   },
   {
    "unit_id": "FUEL_CELL",
@@ -1019,6 +1033,11 @@
    "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
+   "unit_id": "MMRTG",
+   "sector_id": "ELEC",
+   "status": "unplaced"
+  },
+  {
    "unit_id": "MO_CELL",
    "sector_id": "FOUNDRY",
    "level": "L0",
@@ -1057,6 +1076,11 @@
    "level": "L0",
    "status": "built",
    "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
+  },
+  {
+   "unit_id": "NUT_AN",
+   "sector_id": "FARM",
+   "status": "unplaced"
   },
   {
    "unit_id": "OIL_DRYER",

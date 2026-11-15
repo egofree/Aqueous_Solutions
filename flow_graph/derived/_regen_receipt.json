@@ -1,7 +1,7 @@
 {
  "generated_by": "flow_graph/param/regen.py",
  "manifest": "flow_graph/param/regen_manifest.json",
- "graph_sha256": "3834c2d3a228b751adf8bc95f2bde54f12ab3c28256d3ee05347be86dc94fc5a",
+ "graph_sha256": "b95d35c7319074b659a34a668a2efd2394c115e6b5b51cc8fe733e8d736ba293",
  "converged": true,
  "stages": [
   {
@@ -106,6 +106,11 @@
   },
   {
    "name": "sizing_materials3",
+   "status": "ok",
+   "stable": true
+  },
+  {
+   "name": "sizing_pot_cells",
    "status": "ok",
    "stable": true
   },

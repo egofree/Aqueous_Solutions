@@ -1,7 +1,7 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,113,1793 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,911,one per instrument
-CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 184 SIFs, redundant pair"
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,115,1834 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,926,one per instrument
+CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 187 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S70 to FLUE_KO: run and fault (assumed)
@@ -931,7 +931,6 @@ DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,IA-
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-H2SO4-MU: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,86,IA-MGCL2-MU: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,88,IA-CACL2-MU: 2 per support (assumed)
-DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,110,NUT_AQUA: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,52,NUT_AQUA_BED: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,CA_HOPPER: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,FR_FINISH: 2 per support (assumed)
@@ -941,7 +940,6 @@ DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-5
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-AIR-IN: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",43,IA-MGCL2-MU: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",44,IA-CACL2-MU: AQS-PIP-005 span count
-DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",55,NUT_AQUA: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",26,NUT_AQUA_BED: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",27,CA_HOPPER: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,FR_FINISH: AQS-PIP-005 span count
@@ -951,7 +949,6 @@ DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-H2SO4-MU: one at each end nozzle (assumed)
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-MGCL2-MU: one at each end nozzle (assumed)
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-CACL2-MU: one at each end nozzle (assumed)
-DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,NUT_AQUA: one at each end nozzle (assumed)
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,NUT_AQUA_BED: one at each end nozzle (assumed)
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,CA_HOPPER: one at each end nozzle (assumed)
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,FR_FINISH: one at each end nozzle (assumed)
@@ -1224,32 +1221,47 @@ FAB,reactor,SOLV_PLANT,instrument,high-level switch,vibrating fork,"IEC 60947-5,
 FAB,reactor,SOLV_PLANT,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FAB,reactor,SOLV_PLANT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FAB,reactor,SOLV_PLANT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FAB,reagent,WS_AMMONIA,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-FR-NH3 to POLY_FIBER (assumed size)
+FAB,reagent,WS_AMMONIA,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-NUT-NH3 to NUT_AN (assumed size)
 FAB,reagent,WS_AMMONIA,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-RESIST-NH3 to RESIST_SYN (assumed size)
 FAB,reagent,WS_AMMONIA,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S33 to WET_BENCH (assumed size)
+FAB,reagent,WS_AMMONIA,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-FR-NH3 to POLY_FIBER
+FAB,reagent,WS_AMMONIA,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-NUT-NH3 to NUT_AN
 FAB,reagent,WS_AMMONIA,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-RESIST-NH3 to RESIST_SYN
 FAB,reagent,WS_AMMONIA,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S33 to WET_BENCH
+FAB,reagent,WS_AMMONIA,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-FR-NH3: run and fault (assumed)
+FAB,reagent,WS_AMMONIA,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-NUT-NH3: run and fault (assumed)
 FAB,reagent,WS_AMMONIA,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-RESIST-NH3: run and fault (assumed)
 FAB,reagent,WS_AMMONIA,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve S33: run and fault (assumed)
+FAB,reagent,WS_AMMONIA,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-FR-NH3 to POLY_FIBER: run and fault (assumed)
+FAB,reagent,WS_AMMONIA,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-NUT-NH3 to NUT_AN: run and fault (assumed)
 FAB,reagent,WS_AMMONIA,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-RESIST-NH3 to RESIST_SYN: run and fault (assumed)
 FAB,reagent,WS_AMMONIA,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S33 to WET_BENCH: run and fault (assumed)
+FAB,reagent,WS_AMMONIA,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-FR-NH3
+FAB,reagent,WS_AMMONIA,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-NUT-NH3
 FAB,reagent,WS_AMMONIA,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-RESIST-NH3
 FAB,reagent,WS_AMMONIA,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve S33
 FAB,reagent,WS_AMMONIA,fabricated part,fabricated part set,4 BOM lines,models/mfg/WS_AMMONIA/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FAB,reagent,WS_AMMONIA,fastener,M10 wedge anchor,M10 wedge anchor,ISO 3506 A4-70,4,models/mfg/WS_AMMONIA/fasteners.csv
 FAB,reagent,WS_AMMONIA,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,S33: 2 per support (assumed)
 FAB,reagent,WS_AMMONIA,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IA-NH3-MET: 2 per support (assumed)
+FAB,reagent,WS_AMMONIA,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-FR-NH3: 2 per support (assumed)
 FAB,reagent,WS_AMMONIA,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S33: pumped line (assumed)
 FAB,reagent,WS_AMMONIA,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-NH3-MET: pumped line (assumed)
+FAB,reagent,WS_AMMONIA,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-FR-NH3: pumped line (assumed)
 FAB,reagent,WS_AMMONIA,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FAB,reagent,WS_AMMONIA,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FAB,reagent,WS_AMMONIA,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FAB,reagent,WS_AMMONIA,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FAB,reagent,WS_AMMONIA,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",11,S33: AQS-PIP-005 span count
 FAB,reagent,WS_AMMONIA,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",15,IA-NH3-MET: AQS-PIP-005 span count
+FAB,reagent,WS_AMMONIA,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",18,IA-FR-NH3: AQS-PIP-005 span count
 FAB,reagent,WS_AMMONIA,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,S33: pump discharge (assumed)
 FAB,reagent,WS_AMMONIA,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-NH3-MET: pump discharge (assumed)
+FAB,reagent,WS_AMMONIA,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-FR-NH3: pump discharge (assumed)
 FAB,reagent,WS_AMMONIA,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,S33: one at each end nozzle (assumed)
 FAB,reagent,WS_AMMONIA,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-NH3-MET: one at each end nozzle (assumed)
+FAB,reagent,WS_AMMONIA,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-FR-NH3: one at each end nozzle (assumed)
 FAB,reagent,WS_DOPE,fabricated part,fabricated part set,4 BOM lines,models/mfg/WS_DOPE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FAB,reagent,WS_DOPE,fastener,M10 wedge anchor,M10 wedge anchor,ISO 3506 A4-70,4,models/mfg/WS_DOPE/fasteners.csv
 FAB,reagent,WS_DOPE,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,S36: 2 per support (assumed)
@@ -1328,32 +1340,42 @@ FAB,reagent,WS_PEROX,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM
 FAB,reagent,WS_PEROX,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,S32: AQS-PIP-005 span count
 FAB,reagent,WS_PEROX,valve,check valve,DN15,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,S32: pump discharge (assumed)
 FAB,reagent,WS_PEROX,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,S32: one at each end nozzle (assumed)
+FAB,reagent,WS_PHOS,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-FR-P to POLY_FIBER (assumed size)
 FAB,reagent,WS_PHOS,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-PHOS-DOPE to WS_DOPE (assumed size)
 FAB,reagent,WS_PHOS,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S34B to WET_BENCH (assumed size)
+FAB,reagent,WS_PHOS,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-FR-P to POLY_FIBER
 FAB,reagent,WS_PHOS,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-PHOS-DOPE to WS_DOPE
 FAB,reagent,WS_PHOS,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S34B to WET_BENCH
+FAB,reagent,WS_PHOS,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-FR-P: run and fault (assumed)
 FAB,reagent,WS_PHOS,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-PHOS-DOPE: run and fault (assumed)
 FAB,reagent,WS_PHOS,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve S34B: run and fault (assumed)
+FAB,reagent,WS_PHOS,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-FR-P to POLY_FIBER: run and fault (assumed)
 FAB,reagent,WS_PHOS,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-PHOS-DOPE to WS_DOPE: run and fault (assumed)
 FAB,reagent,WS_PHOS,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S34B to WET_BENCH: run and fault (assumed)
+FAB,reagent,WS_PHOS,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-FR-P
 FAB,reagent,WS_PHOS,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-PHOS-DOPE
 FAB,reagent,WS_PHOS,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve S34B
 FAB,reagent,WS_PHOS,fabricated part,fabricated part set,4 BOM lines,models/mfg/WS_PHOS/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FAB,reagent,WS_PHOS,fastener,M10 wedge anchor,M10 wedge anchor,ISO 3506 A4-70,4,models/mfg/WS_PHOS/fasteners.csv
 FAB,reagent,WS_PHOS,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,S34B: 2 per support (assumed)
 FAB,reagent,WS_PHOS,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-PHOS-DOPE: 2 per support (assumed)
+FAB,reagent,WS_PHOS,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-FR-P: 2 per support (assumed)
 FAB,reagent,WS_PHOS,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S34B: pumped line (assumed)
 FAB,reagent,WS_PHOS,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-PHOS-DOPE: pumped line (assumed)
+FAB,reagent,WS_PHOS,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-FR-P: pumped line (assumed)
 FAB,reagent,WS_PHOS,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FAB,reagent,WS_PHOS,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FAB,reagent,WS_PHOS,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FAB,reagent,WS_PHOS,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FAB,reagent,WS_PHOS,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,S34B: AQS-PIP-005 span count
 FAB,reagent,WS_PHOS,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-PHOS-DOPE: AQS-PIP-005 span count
+FAB,reagent,WS_PHOS,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-FR-P: AQS-PIP-005 span count
 FAB,reagent,WS_PHOS,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,S34B: pump discharge (assumed)
 FAB,reagent,WS_PHOS,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-PHOS-DOPE: pump discharge (assumed)
+FAB,reagent,WS_PHOS,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-FR-P: pump discharge (assumed)
 FAB,reagent,WS_PHOS,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,S34B: one at each end nozzle (assumed)
 FAB,reagent,WS_PHOS,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-PHOS-DOPE: one at each end nozzle (assumed)
+FAB,reagent,WS_PHOS,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-FR-P: one at each end nozzle (assumed)
 FAB,reagent,WS_SLURRY,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S37 to WAFER_FAB (assumed size)
 FAB,reagent,WS_SLURRY,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S37 to WAFER_FAB
 FAB,reagent,WS_SLURRY,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve S37: run and fault (assumed)
@@ -1546,6 +1568,11 @@ FARM,cage,QUAIL_CAGE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-5
 FARM,cage,QUAIL_CAGE,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,QUAIL_EGGS: one at each end nozzle (assumed)
 FARM,cage,QUAIL_CAGE,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,QUAIL_DROP: one at each end nozzle (assumed)
 FARM,cage,QUAIL_CAGE,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,QUAIL_VAP: one at each end nozzle (assumed)
+FARM,chemical_synthesis,NUT_AN,instrument,"gas detector, NOx",electrochemical NO2,"alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height",2,AQS-SAF-006 alarm 1oo2
+FARM,chemical_synthesis,NUT_AN,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+FARM,chemical_synthesis,NUT_AN,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
+FARM,chemical_synthesis,NUT_AN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+FARM,chemical_synthesis,NUT_AN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,coop,CHICKEN_COOP,fabricated part,fabricated part set,6 BOM lines,models/mfg/CHICKEN_COOP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,coop,CHICKEN_COOP,fastener,M10 base hold-down anchor,M10 base hold-down anchor,ISO 898-1 8.8,4,models/mfg/CHICKEN_COOP/fasteners.csv
 FARM,coop,CHICKEN_COOP,fastener,M10 nest-row carriage bolt,M10 nest-row carriage bolt,ISO 898-1 8.8,8,models/mfg/CHICKEN_COOP/fasteners.csv
@@ -1570,6 +1597,7 @@ FARM,feed_prep,FEED_PREP,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24
 FARM,feed_prep,FEED_PREP,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,FORM_VAP: 2 per support (assumed)
 FARM,feed_prep,FEED_PREP,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,DUCK_RATION: 2 per support (assumed)
 FARM,feed_prep,FEED_PREP,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,FORM_PRESS: 2 per support (assumed)
+FARM,feed_prep,FEED_PREP,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,SHELL_GRIT: 2 per support (assumed)
 FARM,feed_prep,FEED_PREP,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,feed_prep,FEED_PREP,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,feed_prep,FEED_PREP,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,LAYER_FEED: AQS-PIP-005 span count
@@ -1579,6 +1607,7 @@ FARM,feed_prep,FEED_PREP,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS 
 FARM,feed_prep,FEED_PREP,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,FORM_VAP: AQS-PIP-005 span count
 FARM,feed_prep,FEED_PREP,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,DUCK_RATION: AQS-PIP-005 span count
 FARM,feed_prep,FEED_PREP,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",14,FORM_PRESS: AQS-PIP-005 span count
+FARM,feed_prep,FEED_PREP,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",15,SHELL_GRIT: AQS-PIP-005 span count
 FARM,feed_prep,FEED_PREP,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,LAYER_FEED: one at each end nozzle (assumed)
 FARM,feed_prep,FEED_PREP,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,QUAIL_RATION: one at each end nozzle (assumed)
 FARM,feed_prep,FEED_PREP,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,DUCK_STORE: one at each end nozzle (assumed)
@@ -1586,6 +1615,7 @@ FARM,feed_prep,FEED_PREP,valve,isolation valve,DN15,"PVC-U true-union ball valve
 FARM,feed_prep,FEED_PREP,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,FORM_VAP: one at each end nozzle (assumed)
 FARM,feed_prep,FEED_PREP,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,DUCK_RATION: one at each end nozzle (assumed)
 FARM,feed_prep,FEED_PREP,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,FORM_PRESS: one at each end nozzle (assumed)
+FARM,feed_prep,FEED_PREP,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,SHELL_GRIT: one at each end nozzle (assumed)
 FARM,fish_tank,AQUA_TANK,fabricated part,fabricated part set,4 BOM lines,models/mfg/AQUA_TANK/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,fish_tank,AQUA_TANK,fastener,M10 base hold-down anchor,M10 base hold-down anchor,ISO 898-1 8.8,4,models/mfg/AQUA_TANK/fasteners.csv
 FARM,fish_tank,AQUA_TANK,fastener,M10 lid hold-down bolt + nut,M10 lid hold-down bolt + nut,ISO 3506 A4-70,8,models/mfg/AQUA_TANK/fasteners.csv
@@ -1966,6 +1996,19 @@ FOUNDRY,FOUNDRY_E,WAX_PATTERN,instrument,high-level switch,vibrating fork,"IEC 6
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,WAX_PATTERN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FOUNDRY,precip,BRINE_CRYS,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-BRINE-CACL2 to CA_POT (assumed size)
+FOUNDRY,precip,BRINE_CRYS,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-BRINE-MGCL2 to MG_POT (assumed size)
+FOUNDRY,precip,BRINE_CRYS,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-BRINE-ML to LEACH_CSTR_1 (assumed size)
+FOUNDRY,precip,BRINE_CRYS,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-BRINE-CACL2 to CA_POT
+FOUNDRY,precip,BRINE_CRYS,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-BRINE-MGCL2 to MG_POT
+FOUNDRY,precip,BRINE_CRYS,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-BRINE-ML to LEACH_CSTR_1
+FOUNDRY,precip,BRINE_CRYS,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-BRINE-CACL2 to CA_POT: run and fault (assumed)
+FOUNDRY,precip,BRINE_CRYS,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-BRINE-MGCL2 to MG_POT: run and fault (assumed)
+FOUNDRY,precip,BRINE_CRYS,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-BRINE-ML to LEACH_CSTR_1: run and fault (assumed)
+FOUNDRY,precip,BRINE_CRYS,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+FOUNDRY,precip,BRINE_CRYS,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
+FOUNDRY,precip,BRINE_CRYS,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+FOUNDRY,precip,BRINE_CRYS,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 GAS,GAS_SCRUB,ACID_POLISH_SCRUB,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S66 to CRU (BLDC, 42 mm (NEMA 17 flange: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 GAS,GAS_SCRUB,ACID_POLISH_SCRUB,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump S66 to CRU (BLDC, 42 mm (NEMA 17 flange: run and fault (assumed)"
 GAS,GAS_SCRUB,ACID_POLISH_SCRUB,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Motor: transfer pump S66 to CRU (BLDC, 42 mm (NEMA 17 flange (assumed VFD at >= 0.75 kW)"
@@ -2611,8 +2654,8 @@ MEOH,tank,MEOH_TANK,valve,isolation valve,DN50,"PP ball valve with HDPE stub end
 MEOH,tank,MEOH_TANK,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-MEOH-PROD: one at each end nozzle (assumed)
 MEOH,tank,MEOH_TANK,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,MEOH_TO_VDF: one at each end nozzle (assumed)
 MEOH,tank,MEOH_TANK,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,MEOH_TO_TFE: one at each end nozzle (assumed)
-MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-181 one per bank half
-MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-183 one per bank half
+MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-184 one per bank half
+MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-186 one per bank half
 MFG,MFG,COLD_MILL,bearing,deep-groove ball bearing,6206-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Two-high cold rolling mill: main drive: drive and non-drive end, IEC 60072 frame 100L (assumed size)"
 MFG,MFG,COLD_MILL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Two-high cold rolling mill: main drive: run and fault (assumed)
 MFG,MFG,COLD_MILL,electronics,variable-frequency drive,2.2 kW,IEC 61800-5-1,1,Two-high cold rolling mill: main drive (assumed VFD at >= 0.75 kW)
@@ -2947,13 +2990,20 @@ OIL,OIL_GLASS,OIL_PYRO,instrument,"temperature element (SIF, independent)",Pt100
 OIL,OIL_GLASS,OIL_PYRO,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",3,IA-OIL-02: AQS-PIP-005 span count
 OIL,OIL_GLASS,OIL_PYRO,valve,check valve,DN15,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-OIL-02: pump discharge (assumed)
 OIL,OIL_GLASS,OIL_PYRO,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-OIL-02: one at each end nozzle (assumed)
+OIL,cut_tank,PROD_C11_C18,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-RESIST-NAPH to RESIST_SYN (assumed size)
+OIL,cut_tank,PROD_C11_C18,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-RESIST-NAPH to RESIST_SYN
+OIL,cut_tank,PROD_C11_C18,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-RESIST-NAPH: run and fault (assumed)
+OIL,cut_tank,PROD_C11_C18,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-RESIST-NAPH to RESIST_SYN: run and fault (assumed)
+OIL,cut_tank,PROD_C11_C18,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-RESIST-NAPH
 OIL,cut_tank,PROD_C11_C18,fabricated part,fabricated part set,9 BOM lines,models/mfg/PROD_C11_C18/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 OIL,cut_tank,PROD_C11_C18,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,14,IA-C11-SHIP: 2 per support (assumed)
+OIL,cut_tank,PROD_C11_C18,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-C11-SHIP: pumped line (assumed)
 OIL,cut_tank,PROD_C11_C18,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 OIL,cut_tank,PROD_C11_C18,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 OIL,cut_tank,PROD_C11_C18,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 OIL,cut_tank,PROD_C11_C18,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 OIL,cut_tank,PROD_C11_C18,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",7,IA-C11-SHIP: AQS-PIP-005 span count
+OIL,cut_tank,PROD_C11_C18,valve,check valve,DN15,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-C11-SHIP: pump discharge (assumed)
 OIL,cut_tank,PROD_C11_C18,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-C11-SHIP: one at each end nozzle (assumed)
 OIL,cut_tank,PROD_C19_C28,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump CUT-3-OUT to MFG_SHOP (BLDC, 42 mm (NEM: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 OIL,cut_tank,PROD_C19_C28,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump CUT-3-OUT to MFG_SHOP (BLDC, 42 mm (NEM: run and fault (assumed)"
@@ -3205,6 +3255,8 @@ POLYMERS,melt_spin,POLY_FIBER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anch
 POLYMERS,melt_spin,POLY_FIBER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,FLEECE_TO_MFG: 2 per support (assumed)
 POLYMERS,melt_spin,POLY_FIBER,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,FIBER_SCRAP: pumped line (assumed)
 POLYMERS,melt_spin,POLY_FIBER,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,FLEECE_TO_MFG: pumped line (assumed)
+POLYMERS,melt_spin,POLY_FIBER,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+POLYMERS,melt_spin,POLY_FIBER,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 POLYMERS,melt_spin,POLY_FIBER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 POLYMERS,melt_spin,POLY_FIBER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 POLYMERS,melt_spin,POLY_FIBER,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
@@ -3300,30 +3352,35 @@ WTR,ROOF,ROOF_TANK,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class
 WTR,ROOF,ROOF_TANK,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-ELY-H2O to H2O_ELYZ (assumed size)
 WTR,ROOF,ROOF_TANK,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-FLUE-QUENCH to FLUE_KO (assumed size)
 WTR,ROOF,ROOF_TANK,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-NOX-HAB to HABITATION (assumed size)
+WTR,ROOF,ROOF_TANK,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-NUT-H2O to NUT_AN (assumed size)
 WTR,ROOF,ROOF_TANK,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-PEROX-H2O to WS_PEROX (assumed size)
 WTR,ROOF,ROOF_TANK,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S21 to HABITATION (assumed size)
 WTR,ROOF,ROOF_TANK,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-BED-H2O to GROW_BED
 WTR,ROOF,ROOF_TANK,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-ELY-H2O to H2O_ELYZ
 WTR,ROOF,ROOF_TANK,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-FLUE-QUENCH to FLUE_KO
 WTR,ROOF,ROOF_TANK,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-NOX-HAB to HABITATION
+WTR,ROOF,ROOF_TANK,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-NUT-H2O to NUT_AN
 WTR,ROOF,ROOF_TANK,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-PEROX-H2O to WS_PEROX
 WTR,ROOF,ROOF_TANK,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S21 to HABITATION
 WTR,ROOF,ROOF_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-BED-H2O: run and fault (assumed)
 WTR,ROOF,ROOF_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-ELY-H2O: run and fault (assumed)
 WTR,ROOF,ROOF_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-FLUE-QUENCH: run and fault (assumed)
 WTR,ROOF,ROOF_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-NOX-HAB: run and fault (assumed)
+WTR,ROOF,ROOF_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-NUT-H2O: run and fault (assumed)
 WTR,ROOF,ROOF_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-PEROX-H2O: run and fault (assumed)
 WTR,ROOF,ROOF_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve S21: run and fault (assumed)
 WTR,ROOF,ROOF_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-BED-H2O to GROW_BED: run and fault (assumed)
 WTR,ROOF,ROOF_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-ELY-H2O to H2O_ELYZ: run and fault (assumed)
 WTR,ROOF,ROOF_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-FLUE-QUENCH to FLUE_KO: run and fault (assumed)
 WTR,ROOF,ROOF_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-NOX-HAB to HABITATION: run and fault (assumed)
+WTR,ROOF,ROOF_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-NUT-H2O to NUT_AN: run and fault (assumed)
 WTR,ROOF,ROOF_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-PEROX-H2O to WS_PEROX: run and fault (assumed)
 WTR,ROOF,ROOF_TANK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S21 to HABITATION: run and fault (assumed)
 WTR,ROOF,ROOF_TANK,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-BED-H2O
 WTR,ROOF,ROOF_TANK,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-ELY-H2O
 WTR,ROOF,ROOF_TANK,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-FLUE-QUENCH
 WTR,ROOF,ROOF_TANK,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-NOX-HAB
+WTR,ROOF,ROOF_TANK,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-NUT-H2O
 WTR,ROOF,ROOF_TANK,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-PEROX-H2O
 WTR,ROOF,ROOF_TANK,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve S21
 WTR,ROOF,ROOF_TANK,fabricated part,fabricated part set,5 BOM lines,models/mfg/ROOF_TANK/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory

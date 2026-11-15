@@ -66,6 +66,7 @@ digraph G {
     "BIOFILTER" [fillcolor="#ffffff", label="BIOFILTER"];
     "FEED_PREP" [fillcolor="#ffffff", label="FEED_PREP"];
     "AQUA_UV" [fillcolor="#ffffff", label="AQUA_UV"];
+    "NUT_AN" [fillcolor="#ffffff", label="NUT_AN"];
   }
   subgraph "cluster_FOUNDRY" {
     label="FOUNDRY";
@@ -92,6 +93,7 @@ digraph G {
     "SHELL_BURNOUT" [fillcolor="#ffffff", label="SHELL_BURNOUT"];
     "INV_CAST" [fillcolor="#ffffff", label="INV_CAST"];
     "SHELL_BREAK" [fillcolor="#ffffff", label="SHELL_BREAK"];
+    "BRINE_CRYS" [fillcolor="#ffffff", label="BRINE_CRYS"];
   }
   subgraph "cluster_GAS" {
     label="GAS";
@@ -181,7 +183,7 @@ digraph G {
   "GEO_ORC" -> "SOL_ARK_60K" [label="S48", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "FUEL_CELL" -> "SOL_ARK_60K" [label="S51\\n4.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "MEOH_FC" -> "SOL_ARK_60K" [label="S79\\n0.5 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
-  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n370.7166 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n370.8477 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BOUNDARY_EXPORT" [label="IA-PV-CURTAIL\\n4.645 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ZNBR2" -> "BOUNDARY_EXPORT" [label="IA-ZNBR-LOSS\\n1.67 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BMED_ACID" [label="S17-BMED\\n26.9276 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -200,7 +202,7 @@ digraph G {
   "SOL_ARK_60K" -> "LITHO_STUB" [label="SF-LITHO_STUB\\n0.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "ELECTRODE_COAT" [label="SF-ELECTRODE_COAT\\n0.0792 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BLOW_MOLD" [label="SF-BLOW_MOLD\\n0.3691 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "SOLAR_PV_CELL" [label="SF-SOLAR_PV_CELL\\n1.4667 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "SOLAR_PV_CELL" [label="SF-SOLAR_PV_CELL\\n1.4673 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "OIL_PYRO" [label="SF-OIL_PYRO\\n1.664 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BLACK_DIGEST" [label="SF-BLACK_DIGEST\\n0.1052 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "CRYO_AHU" [label="SF-CRYO_AHU\\n0.6472 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -211,7 +213,7 @@ digraph G {
   "SOL_ARK_60K" -> "EVAP_ACID" [label="SF-EVAP_ACID\\n1.498 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "EVAP_BASE" [label="SF-EVAP_BASE\\n1.344 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "CRYO_ASU" [label="SF-CRYO_ASU\\n1.7455 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "H2O_ELYZ" [label="SF-H2O_ELYZ\\n23.7244 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "H2O_ELYZ" [label="SF-H2O_ELYZ\\n23.7233 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "IND_MELT" [label="SF-IND_MELT\\n0.6568 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "VAC_IND" [label="SF-VAC_IND\\n0.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "RF_HEAT" [label="SF-RF_HEAT\\n0.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -274,6 +276,8 @@ digraph G {
   "SOL_ARK_60K" -> "GREASE_CA" [label="SF-GREASE_CA\\n8e-05 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "GREASE_LI" [label="SF-GREASE_LI\\n0.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "RESIST_SYN" [label="SF-RESIST_SYN\\n0.00366 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "SI_REDUCE" [label="SF-SI_REDUCE\\n0.1121 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "SI_REFINE" [label="SF-SI_REFINE\\n2.4572 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "SI_REDUCE" [label="SF-SI_REDUCE\\n0.1122 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "SI_REFINE" [label="SF-SI_REFINE\\n2.4587 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BRINE_CRYS" [label="SF-BRINE_CRYS\\n0.07 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "NUT_AN" [label="SF-NUT_AN\\n0.06 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
 }

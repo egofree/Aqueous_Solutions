@@ -17,12 +17,12 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | --- | --- | --- | --- |
 | T1 | Owner and site data | 52 | Owner decision or site investigation report |
 | T2 | In-house design tests and standard data | 42 | In-house test record or standard data filed against the item |
-| T3 | Bench and laboratory tests | 82 | Bench test report with method, data and result |
+| T3 | Bench and laboratory tests | 85 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 558 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 563 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 39 | Commissioning record |
 
-Total 794 items: 368 drivers, 426 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 802 items: 371 drivers, 431 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -144,6 +144,7 @@ Total 794 items: 368 drivers, 426 register entries. Classification rule: first m
 | driver acid_conc_design_wt | 0.2 mass fraction HCl on IA-ACID-01 | Bench leach of class A feed at 20 wt% HCl, 90-108 C (CARLETON_HCL_2023 basis is 38 %); ICP-OES extraction vs time | X-PAR |
 | driver base_conc_design_wt | 0.2 mass fraction NaOH on IA-BASE-01 and IA-BASE-PPT | Bench hydroxide precipitation of class A leach liquor with 20 wt% NaOH; glass digest at 20 wt% | X-PAR |
 | driver bmed_cell_area_m2 | 0.04 m2 active area per membrane (200 x 200 mm) | stack polarisation test on the first-article stack | X-PAR |
+| driver brine_crys_feed_kg_d | 2.0 kg/d leach-liquor side-stream drawn to the BRINE_CRYS crystallizer | brine assay (Ca/Mg/Na chlorides) on the crystallizer feed at commissioning | X-PAR |
 | driver case_A_leach_extent | 1.0 fraction of listed oxides dissolved | Bench leach of class A feed in HCl at 85 C, ICP-OES of liquor for Al, Ca, Mg, Fe extraction | X-PAR |
 | driver case_A_oxide_fractions | {"Al2O3": 0.19, "CaO": 0.125, "MgO": 0.09, "FeO": 0.13} mass fraction of silicate_oxide | XRF major-oxide analysis of the accepted feed | X-PAR |
 | driver digest_naoh_per_sio2 | 2.0 mol NaOH per mol SiO2 dissolved | Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg cullet | X-PAR |
@@ -214,6 +215,8 @@ Total 794 items: 368 drivers, 426 register entries. Classification rule: first m
 | A-M-490 | 0.326424 kg of feed silicate_oxide is carried with the leach kg/kg feed | Assay the silicate content of a characterized crib-solids lot and re-point the carry fraction | F-20261110-01 (the entrained-silicate residual); X-QA-12 |
 | A-M-494 | The minor-metal EW arrangement is a selectable option, not a - (layout option, no physics change) | flow_graph/param/test_ew_deposit_basis.py merged-option test: the blend books fully and the current-carrying minor-cell count drops under 'merged'; 'selective' restores the committed book | X-QA-05 |
 | A-M-495 | The aluminium line is sized to the recoverable aluminium (ta kg/d | python3 -m flow_graph.param.regen (second run changes nothing); python3 -m flow_graph.param.recovery reports no flags with IA-ALCL3-MU absent; cake weigh and assay at the first leach campaign | X-QA-19 |
+| A-M-501 | the free-choice quail grit is crushed baked eggshell from th kg/d (grit = the registered ca_hopper_kgd class) | grit weigh and shell assay at the FEED_PREP commissioning (X-FARM-10) | X-QA-11 |
+| A-M-503 | the foundry pot chloride make-up (CaCl2 0.116 kg/d to CA_POT kg/d (pot feeds unchanged; the side-stream draw and its heater load are drivers) | brine assay and salt weigh at the crystallizer commissioning | X-QA-11 |
 
 ## 5. T4 Pilot runs
 
@@ -273,7 +276,9 @@ Total 794 items: 368 drivers, 426 register entries. Classification rule: first m
 | driver FAB.wafer-line-train.hz_height_ratio | 1.2 - inner height of the felt pack over the crucible diameter: crucible, pedestal and heater above the melt | measure on the hot-zone drawing of the first puller | X-PAR |
 | driver FAB.wafer-line-train.hz_open_ratio | 1.3 - heat-shield opening over the ingot diameter; the melt radiates to the cold lid through the annulus | measure on the hot-zone drawing of the first puller | X-PAR |
 | driver FARM.aquaponics.feed_larvae_frac | 0.114 kg/d larvae meal to the layer ration (7.9 % of the ration, computed) | Larvae-meal ration trial (X-FARM-01) | X-PAR |
+| driver FARM.aquaponics.fish_N_return_g_d | 13.5 g N/d returned to the loop by the fish stock (gill and urinary TAN, nitrified by the biofilter) | Loop TAN/nitrate measurement at the X-FARM-04 trial | X-PAR |
 | driver FARM.bsfl.process_kg_d | 1.43 kg/d feedstock (study duty; bin capacity class 5 kg/d) | Bin trial (X-FARM-03) | X-PAR |
+| driver FARM.classes.nutrient_N_wt | 0.045 - N mass fraction of the dosed ammonium-nitrate solution (raceway mineral dose) | Raceway N-uptake measurement at the X-FARM-04 trial | X-PAR |
 | driver FARM.ducks.stock | 6.0 ducks (Khaki Campbell class) | Flock trial (X-FARM-05) | X-PAR |
 | driver FARM.quail.stock | 20.0 coturnix hens (indoor cage bank) | Cage-bank trial (X-FARM-06) | X-PAR |
 | driver FARM.rabbit.does | 2.0 does + 1 buck | Rabbitry trial (X-FARM-07) | X-PAR |
@@ -803,6 +808,9 @@ Total 794 items: 368 drivers, 426 register entries. Classification rule: first m
 | A-M-483 | The heater duty of the CZ hot zone in WAFER_FAB is found fro kW | log the heater power through the meltdown and the body pull of the first CZ pull and the felt cold-face temperature, and compare each with the hot-zone model | QA audit 2026-10-30, X-RTE-CZ-HOTZONE |
 | A-M-485 | Silicon recovered from crushed end-of-life modules into the  mass fraction of retired-module cell silicon | Run the first retired-module batch through the separation step and close the silicon mass balance | F-20261110-06 (recovery-first silicon); X-MFG-40 |
 | A-M-488 | The whole furnace baghouse silica fume is briquetted back in mass fraction of furnace fume | Close the fume balance over the first furnace campaign with briquettes in the burden | F-20261110-06 (recovery-first silicon); X-MFG-40 |
+| A-M-496 | Pot-cell bath-top geometry: the anode rods hang with their t mm | python3 -m flow_graph.param.pot_cells (second run changes nothing); python3 models/mfg/tracker.py --check CA_POT CR_CELL MG_POT MO_CELL | X-QA-18 |
+| A-M-497 | the raceway mineral-nitrate dose is made on site: NUT_AN oxi kg/d (dose from the crop uptake; reactants at the nut_an_selectivity driver) | Raceway N-uptake measurement at the X-FARM-04 trial | X-QA-11 |
+| A-M-502 | the crew textile FR finish is the on-site diammonium-phospha kg/d (finish compound at the A-M-225 pick-up) | finished-fleece FR performance test at the textile first article | X-QA-11 |
 
 ## 7. T6 Commissioning measurements
 

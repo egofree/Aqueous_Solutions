@@ -20,7 +20,7 @@
  "internals": "none",
  "design": {
   "duty": "flue, leach off-gas and nitric vents",
-  "gas_kg_d": 283.4379,
+  "gas_kg_d": 283.4578,
   "Q_m3_s": 0.0027,
   "u_flood_m_s": 2.0195,
   "D_mm": 200,
@@ -28,7 +28,7 @@
   "H_mm": 3803,
   "recirc_m3_h": 0.4775,
   "dP_Pa": 1171.034,
-  "fan_W": 6.4027,
+  "fan_W": 6.4031,
   "pump_W": 32.5201,
   "kW": 0.0389,
   "material": "PP-H shell and in-house cut PP rings; PP mesh demister",
@@ -176,6 +176,14 @@
    "service": "power terminal (SF-NOX_SCRUB, 480 V AC)",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N17",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "unconverted slip to the NOx scrubber (its nitrate liquor feeds NUTRIENT_DOSE)",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2. Packing is polymer. No metal wetted part. IA-LEACH-NOX and IA-CLOSE-1 arrive from LEACH_CSTR_1 at up to 85 \u00b0C (X-MAT-09). Inlet section and sump CPVC per M5; the packed section above the quench may stay PVC-U once the gas temperature there is calculated (held). Corrosion allowance does not apply to the polymer.",

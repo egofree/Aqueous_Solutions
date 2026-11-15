@@ -676,6 +676,22 @@
    "service": "recovered reactive-Al hydroxide cake to the aluminium line",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N73",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "leach-liquor side-stream to the crystallizer",
+   "face": "outlet",
+   "height_mm": 600
+  },
+  {
+   "tag": "N74",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "mother liquor (residual chlorides) returned to the leach",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "acceptance_sets": [

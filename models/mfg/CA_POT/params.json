@@ -135,6 +135,14 @@
    "service": "chlorine make-up of the chlorosilane loop",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N10",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "crystallized CaCl2 to the calcium pot (recovered, was the dock import)",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "Graphite anodes, steel cathode rods carrying the solid Ca deposit to the tap work order; 90 % alumina backup lining + ceramic-fibre in a mild-steel shell",

@@ -21,23 +21,23 @@
  "design": {
   "need": {
    "route": "CZ_PSQ125",
-   "array_kw": 2651.0,
+   "array_kw": 2653.0,
    "life_yr": 39.99999999999999,
    "repl_per_yr": 0.025500000000000005,
-   "W_d": 185.08008213552367,
+   "W_d": 185.2197125256674,
    "cell_area_cm2": 148.5798641851732,
    "cell_eff": 0.19,
    "cell_W": 2.823017419518291,
-   "cells_per_d": 65.5610839861927,
+   "cells_per_d": 65.61054538489975,
    "wafer_g": 6.228765066370831,
    "slot_g": 13.581752994953481,
-   "wafer_kg_d": 0.40836458964660116,
-   "slot_kg_d": 0.8904344487818694,
+   "wafer_kg_d": 0.4086726730790015,
+   "slot_kg_d": 0.8911062212818934,
    "t_cm": 0.018,
    "kerf_cm": 0.015,
    "Si_g_per_W": 4.811076581054544
   },
-  "cells_per_d": 65.5610839861927,
+  "cells_per_d": 65.61054538489975,
   "batches": 3,
   "carrier": 25,
   "tools": [
@@ -69,25 +69,25 @@
     "id": "PV-CON-01",
     "design": "Screen printer and 200 C dryer",
     "peak_kW": 0.7,
-    "kWh_d": 7.64879313172248
+    "kWh_d": 7.654563628238304
    },
    {
     "id": "PV-FIRE-01",
     "design": "IR lamp fast-firing furnace",
     "peak_kW": 3.0,
-    "kWh_d": 11.145384277652758
+    "kWh_d": 11.153792715432958
    },
    {
     "id": "PV-IV-01",
     "design": "Flash IV tester",
     "peak_kW": 0.1,
-    "kWh_d": 0.5463423665516058
+    "kWh_d": 0.5467545448741646
    }
   ],
-  "kWh_d": 35.2013875209341,
-  "avg_kW": 1.4667244800389208,
+  "kWh_d": 35.21597863355268,
+  "avg_kW": 1.467332443064695,
   "peak_kW": 6.077477661970402,
-  "kWh_per_cell": 0.5369250381575079,
+  "kWh_per_cell": 0.53674265968924,
   "service": "SOLAR_PV_CELL: in-house PV cell line - texture, POCl3 diffusion, PSG etch, PECVD SiNx, screen print, fast firing, IV; 3 cells per batch; KOH feed from WS_KOH (node design block; X-MFG-38, A-M-178, AQS-DUTY-071)",
   "material": "316L wetted baths (duty section 3); quartz tube and ceramic fibre at PV-EMIT-01; CS bench and dry envelopes",
   "material_basis": "duty section 3: 316L where the stream is wet - the node station texts name PP tanks/baths, the duty selection governs (plan rule 5; hold, WORK_ORDER W12); tube quartz and screen stainless shop-cut per AQS-PV-001 section 3"

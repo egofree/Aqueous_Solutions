@@ -103,6 +103,14 @@
    "service": "mineral calcium carbonate (free-choice hopper)",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N10",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "crushed baked eggshell free-choice grit to the quail hopper",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "Hot-dip galvanised weld-wire cage battery, PP feeders, SS316 nipple waterers",

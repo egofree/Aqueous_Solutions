@@ -3,19 +3,19 @@ A component passes when every unit balances and the cut balances, per rate unit,
 Pass is on the present edges in this file. It is not on-site evidence.
 This result is not the MVS flag. mvs.mvs_criteria.loops_closed is not set here.
 
-## mass: 543 edges, 1 loops
-- 164 units. Circuits listed: 20 (cap 20).
+## mass: 549 edges, 1 loops
+- 166 units. Circuits listed: 20 (cap 20).
   ACID_PLANT, ACID_POLISH_SCRUB, AFTERBURNER, AFTERBURNER_FLUE, AIR_RECEIVER, ALK_SCRUBBER, AL_POT, AQUA_TANK, AQUA_UV, ATMOS, BACKUP_GEN, BAGHOUSE, BEE_HIVE, BIOFILTER ...
   one circuit: IA-ACID-CO2 -> IA-ACID-O2
-  kg/d: nodes off 4, cut in 11.40 out 0.00 fail
+  kg/d: nodes off 2, cut in 11.40 out 0.00 fail
 
 ## thermal: 44 edges, 0 loops
 
-## elec: 99 edges, 1 loops
+## elec: 101 edges, 1 loops
 - 2 units. Circuits listed: 1 (cap 20).
   SOL_ARK_60K, ZNBR2
   one circuit: IA-ESS-ZNBR2-CHG -> IA-ESS-ZNBR2-DIS
-  kW: nodes off 1, cut in 375.22 out 179.22 fail
+  kW: nodes off 1, cut in 375.35 out 179.36 fail
 
 ## ess: 10 edges, 2 loops
 - 2 units. Circuits listed: 4 (cap 20).

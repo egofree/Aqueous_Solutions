@@ -3,9 +3,9 @@
 Source: AQS-FLOW-GRAPH-001 Rev AD
 Graph date: 2026-11-01 (output is a pure function of the graph; no run date, so regen is idempotent)
 
-- nodes: **233** (present=205, placeholder=26)
-- edges: **750** (present=685, placeholder=22)
-- by namespace: {'IA': 570, 'TBD': 17, 'S': 162, 'SANDBOX': 1}
+- nodes: **237** (present=207, placeholder=28)
+- edges: **764** (present=693, placeholder=22)
+- by namespace: {'IA': 584, 'TBD': 17, 'S': 162, 'SANDBOX': 1}
 - locks: layered_views, full_depth_now, efd_three_layers, typed_graph_sole, present_plus_placeholders, site_lat_design_sandbox, true_closure_residuals_wp, reprap_bom_complete_c4, site_ghex_design_survey_locked, wp_l3_evidence_pack, wp_l4_claim_discipline, wp_ew_cascade_explode
 
 ## Gaps

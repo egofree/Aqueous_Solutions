@@ -19,19 +19,19 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1281 | 57 % |
+| metal_plateable | 1283 | 57 % |
 | organic | 619 | 28 % |
-| unassigned | 128 | 6 % |
+| unassigned | 132 | 6 % |
 | metal_reactive | 110 | 5 % |
 | silicate_oxide | 93 | 4 % |
 
-Unassigned: 128 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
+Unassigned: 132 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
 
 ## Held lines (no route in the present plant, or material pending)
 
 | Reason | Lines |
 |---|---|
-| held - material not identified on the line | 118 |
+| held - material not identified on the line | 122 |
 | held - material not stated on the line | 9 |
 | held - pointer line: these parts are classed line by line in their unit BOMs (AQS-INV-004 roll-up) | 1 |
 
@@ -60,6 +60,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | BMED_ACID | 2 | 7 | 1 | 0 | 0 |
 | BMED_BASE | 2 | 7 | 1 | 0 | 0 |
 | BMED_UPW_POLISH | 6 | 0 | 4 | 0 | 0 |
+| BRINE_CRYS | 0 | 0 | 2 | 0 | 0 |
 | BSFL_BIN | 1 | 3 | 1 | 0 | 0 |
 | C29_RECYCLE | 4 | 0 | 0 | 0 | 0 |
 | CAST_LINE | 12 | 2 | 0 | 0 | 1 |
@@ -160,7 +161,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MET_MELT | 8 | 4 | 1 | 0 | 1 |
 | MET_SCRUB | 1 | 8 | 1 | 0 | 0 |
 | MET_SYN | 7 | 3 | 2 | 0 | 1 |
-| MF-01 x 104 | 3 | 1 | 0 | 2 | 0 |
+| MF-01 x 112 | 3 | 1 | 0 | 2 | 0 |
 | MF-02 x 56 | 3 | 1 | 0 | 2 | 0 |
 | MF-03 x 24 | 5 | 1 | 0 | 2 | 0 |
 | MF-06 x 103 | 5 | 0 | 0 | 1 | 0 |
@@ -174,7 +175,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MF-14 x 2 | 7 | 0 | 0 | 3 | 0 |
 | MF-15 x 1 | 7 | 0 | 0 | 3 | 0 |
 | MF-16 x 1 | 7 | 0 | 0 | 3 | 0 |
-| MF-17 x 27 | 7 | 0 | 0 | 3 | 0 |
+| MF-17 x 32 | 7 | 0 | 0 | 3 | 0 |
 | MF-19 x 3 | 7 | 0 | 0 | 3 | 0 |
 | MFG_SHOP | 6 | 0 | 6 | 0 | 0 |
 | MG_POT | 8 | 7 | 0 | 0 | 2 |
@@ -184,6 +185,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | NORTH_DOCK | 3 | 0 | 0 | 0 | 0 |
 | NOX_SCRUB | 1 | 7 | 1 | 0 | 0 |
 | NUTRIENT_DOSE | 43 | 31 | 0 | 0 | 1 |
+| NUT_AN | 0 | 0 | 2 | 0 | 0 |
 | OF-01 | 1 | 0 | 0 | 0 | 0 |
 | OF-02 | 1 | 0 | 0 | 0 | 0 |
 | OF-03 | 1 | 0 | 0 | 0 | 0 |
@@ -442,8 +444,10 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | WF-21 | 1 | 0 | 0 | 0 | 0 |
 | WF-24 | 1 | 0 | 0 | 0 | 0 |
 | WF-25 | 1 | 0 | 0 | 0 | 0 |
+| WF-28 | 1 | 0 | 0 | 0 | 0 |
 | WF-30 | 1 | 0 | 0 | 0 | 0 |
 | WF-31 | 1 | 0 | 0 | 0 | 0 |
+| WF-32 | 1 | 0 | 0 | 0 | 0 |
 | WIRE_DRAW | 8 | 1 | 2 | 0 | 0 |
 | WS_AMMONIA | 0 | 5 | 1 | 0 | 0 |
 | WS_DOPE | 2 | 3 | 1 | 0 | 0 |

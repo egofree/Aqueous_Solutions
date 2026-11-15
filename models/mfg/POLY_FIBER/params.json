@@ -144,6 +144,22 @@
    "service": "power terminal (SF-POLY_FIBER, melt-spin electrical load)",
    "face": "top",
    "height_mm": 800
+  },
+  {
+   "tag": "N8",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "phosphoric acid of the phosphate-FR finish",
+   "face": "inlet",
+   "height_mm": 160
+  },
+  {
+   "tag": "N9",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "ammonia of the phosphate-FR finish",
+   "face": "inlet",
+   "height_mm": 160
   }
  ],
  "material": "SS304 melt vessel and spin pump with heater bands, brass-free spinnerette (stainless die plate), PP quench ducting",

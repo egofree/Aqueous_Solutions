@@ -39,7 +39,7 @@ Table 3.1. Release sources and zones
 | NAOH_PLANT | DIGESTER | H2 | 0.109 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 4 | 0 |
 | OIL_FRAC | OIL | hydrocarbon | 0.947 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 10 | 0 |
 | POLY_OLEFIN | POLYMERS | C5-C10 | 0.353 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 5 | 0 |
-| PROD_C11_C18 | OIL | C11-C18 | 1.145 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 4 | 0 |
+| PROD_C11_C18 | OIL | C11-C18 | 1.145 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 5 | 0 |
 | PROD_C19_C28 | OIL | C19-C28 | 2.015 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 8 | 1 |
 | PROD_C5_C10 | OIL | C5-C10 | 7.577 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 7 | 1 |
 | PROD_MEOH | CRYO | CH3OH | 28.578 | IIA (Group D) | T1 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 5 | 0 |
@@ -47,7 +47,7 @@ Table 3.1. Release sources and zones
 | SOLV_PLANT | FAB | CH3OH H2 hydrocarbon | 0.688 | IIC (Group B) | T3 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 4 | 0 |
 | ZNBR2 | ELEC | H2 | 0.611 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 8 | 1 |
 
-In total, 111 instruments and 9 motors or pumps are in Zone 1 or Zone 2. Their specifications in the instrument index (AQS-CTL-001) and the inventories take the protection type from the protection column of `docs-authority/inventory/HAZ_AREA.csv`.
+In total, 112 instruments and 9 motors or pumps are in Zone 1 or Zone 2. Their specifications in the instrument index (AQS-CTL-001) and the inventories take the protection type from the protection column of `docs-authority/inventory/HAZ_AREA.csv`.
 
 The headspace of the zinc–bromine flow battery (ZNBR2), where hydrogen forms by the hydrogen evolution reaction (HER), is Zone 2 inside the enclosure while the purge is running (NFPA 855; gas detection in AQS-SAF-006).
 

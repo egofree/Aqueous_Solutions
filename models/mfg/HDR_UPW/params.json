@@ -79,7 +79,7 @@
    "height_mm": 50
   }
  ],
- "material": "PVDF SDR 21, fusion-welded (high-purity water, AQS-STD-002) (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.",
+ "material": "PVDF SDR 21, fusion-welded",
  "acceptance_sets": [
   "A-core",
   "A-PIPE"

@@ -89,7 +89,7 @@ Units: EW_1, EW_2, EW_3, EW_4, EW_5, EW_6, EW_7, EW_8, EW_9
 
 Units: MET_MELT, MET_SYN, SI_REDUCE
 
-## R8 assembled equipment (structure, enclosures, mechanisms) (16 units)
+## R8 assembled equipment (structure, enclosures, mechanisms) (18 units)
 
 | Step | Activity | Basis | Point |
 |---|---|---|---|
@@ -97,7 +97,7 @@ Units: MET_MELT, MET_SYN, SI_REDUCE
 | 2 | bolting torque record | A-M-190 | R |
 | 3 | function test | A-M-190 | H |
 
-Units: AIR_RECEIVER, BACKUP_GEN, FAB_UPW_TANK, FOOD_STORE, FUEL_CELL, LOAD_AGG, MEOH_FC, MEOH_TANK, METAL_STORE, NUTRIENT_DOSE, RECTIFIER, SOL_ARK_60K, WS_DOPE, WS_SLURRY, WS_SOLV, ZNBR2
+Units: AIR_RECEIVER, BACKUP_GEN, BRINE_CRYS, FAB_UPW_TANK, FOOD_STORE, FUEL_CELL, LOAD_AGG, MEOH_FC, MEOH_TANK, METAL_STORE, NUTRIENT_DOSE, NUT_AN, RECTIFIER, SOL_ARK_60K, WS_DOPE, WS_SLURRY, WS_SOLV, ZNBR2
 
 ## Added to every route where it applies
 
@@ -107,4 +107,4 @@ Units: AIR_RECEIVER, BACKUP_GEN, FAB_UPW_TANK, FOOD_STORE, FUEL_CELL, LOAD_AGG, 
 | electrical panels: dielectric and continuity test | UL 891 / NEC 2026 | H |
 | loop check of every instrument | A-M-190 | W |
 
-127 units assigned. Hold points marked A-M-190 are study practice until the owner quality manual (X-COD-01) adopts them.
+129 units assigned. Hold points marked A-M-190 are study practice until the owner quality manual (X-COD-01) adopts them.

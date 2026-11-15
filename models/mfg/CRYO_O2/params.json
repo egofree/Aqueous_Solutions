@@ -152,6 +152,14 @@
    "service": "electrolyser O2",
    "face": "inlet",
    "height_mm": 160
+  },
+  {
+   "tag": "N10",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "plant oxygen for the ammonia oxidation",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "316L. Condensation. No carbon steel. Corrosion allowance 0 mm. Pit rate is not measured.",

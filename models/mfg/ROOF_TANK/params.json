@@ -226,6 +226,14 @@
    "service": "quail water",
    "face": "outlet",
    "height_mm": 600
+  },
+  {
+   "tag": "N27",
+   "size": "DN15",
+   "rating": "Class 150",
+   "service": "dilution water to the dosing strength",
+   "face": "outlet",
+   "height_mm": 600
   }
  ],
  "material": "PVC-U or HDPE, per AQS-STD-002 rule M1. No metal wetted part. Corrosion allowance does not apply to the polymer. Hot LEACH draw at up to 85 \u00b0C exceeds the PVC-U limit (X-MAT-09); IA-POT-01 is cooled to 40 \u00b0C by a passive PVDF air coil (AQS-STD-002 section 10).",

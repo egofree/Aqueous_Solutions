@@ -54,10 +54,10 @@ Table 4.1. I/O and modules by PLC
 |---|---|---|---|---|---|---|---|---|
 | PLC-CRYO | 36 | 1 | 19 | 6 | 1 | 3/1/2/1 | redundant pair | 38 |
 | PLC-DIGESTER | 135 | 3 | 121 | 25 | 21 | 11/1/10/2 | single | 60 |
-| PLC-ELEC | 29 | 17 | 445 | 108 | 80 | 3/2/34/9 | redundant pair | 120 |
-| PLC-FAB | 72 | 3 | 92 | 13 | 23 | 6/1/7/1 | single | 42 |
-| PLC-FARM | 48 | 0 | 3 | 0 | 1 | 4/0/1/0 | redundant pair | 34 |
-| PLC-FOUNDRY | 87 | 0 | 19 | 1 | 5 | 7/0/2/1 | single | 32 |
+| PLC-ELEC | 34 | 17 | 445 | 108 | 80 | 3/2/34/9 | redundant pair | 120 |
+| PLC-FAB | 74 | 3 | 104 | 16 | 26 | 6/1/8/2 | single | 46 |
+| PLC-FARM | 55 | 0 | 4 | 0 | 1 | 5/0/1/0 | redundant pair | 36 |
+| PLC-FOUNDRY | 93 | 0 | 26 | 1 | 8 | 7/0/2/1 | single | 32 |
 | PLC-GAS | 32 | 0 | 34 | 6 | 8 | 3/0/3/1 | redundant pair | 38 |
 | PLC-GEO | 9 | 0 | 6 | 3 | 0 | 1/0/1/1 | redundant pair | 30 |
 | PLC-GLASS | 15 | 0 | 7 | 0 | 3 | 2/0/1/0 | single | 18 |
@@ -66,12 +66,12 @@ Table 4.1. I/O and modules by PLC
 | PLC-MEOH | 33 | 0 | 51 | 12 | 12 | 3/0/4/1 | single | 28 |
 | PLC-MFG | 32 | 9 | 42 | 5 | 6 | 3/1/4/1 | single | 30 |
 | PLC-NUT | 9 | 0 | 11 | 5 | 0 | 1/0/1/1 | redundant pair | 30 |
-| PLC-OIL | 55 | 0 | 33 | 4 | 8 | 5/0/3/1 | single | 30 |
-| PLC-POLYMERS | 53 | 0 | 27 | 5 | 5 | 4/0/3/1 | single | 28 |
+| PLC-OIL | 56 | 0 | 37 | 5 | 9 | 5/0/3/1 | single | 30 |
+| PLC-POLYMERS | 54 | 0 | 28 | 5 | 5 | 5/0/3/1 | single | 30 |
 | PLC-PUMPED_HYDRO | 2 | 0 | 4 | 2 | 0 | 1/0/1/1 | redundant pair | 30 |
-| PLC-WTR | 71 | 0 | 55 | 10 | 14 | 6/0/5/1 | redundant pair | 48 |
-| Total | 755 | 33 | 970 | 205 | 187 | 178 modules | 9 redundant of 18 | 680 |
+| PLC-WTR | 71 | 0 | 59 | 11 | 15 | 6/0/5/1 | redundant pair | 48 |
+| Total | 777 | 33 | 999 | 210 | 195 | 182 modules | 9 redundant of 18 | 688 |
 
-The control system draws about 0.68 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
+The control system draws about 0.69 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
 
 The module count in AQS-INV-004 (item OF-07) uses a different basis, the number of points divided by 16 with no spare, and is superseded by Table 4.1. The DI count adds the high-level switches of the instrument index to the digital points of the inventory. If the inventory already counts those switches, the DI count is 113 too high, which errs on the safe side.
