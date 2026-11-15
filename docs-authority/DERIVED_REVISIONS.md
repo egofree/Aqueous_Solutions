@@ -17,7 +17,7 @@ This page lists every derived file and states whether it is current with the pla
 
 To see the graph commit each file was made from, run `python3 docs-authority/_rev_stamp.py --report`; it prints the full table without writing this page. `python3 -m flow_graph.param.regen` refreshes this page; `python3 -m flow_graph.param.regen --check` fails on any stale file and writes nothing.
 
-2063 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+2064 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Status |
 |---|---|
@@ -1490,6 +1490,7 @@ To see the graph commit each file was made from, run `python3 docs-authority/_re
 | `flow_graph/derived/MASS_FLOW_DERIVED.md` | current |
 | `flow_graph/derived/STREAM_REGISTER_DERIVED.md` | current |
 | `flow_graph/derived/SYNC_POINTER.md` | current |
+| `flow_graph/derived/_input_manifest.json` | by design: manifest mechanism itself (input-hash staleness manifest, pipeline step 4) |
 | `flow_graph/derived/_regen_receipt.json` | by design: manifest mechanism itself (U3 regen provenance receipt) |
 | `flow_graph/fire_rooms.json` | current |
 | `flow_graph/inventory/motor_family_ids.json` | current |
