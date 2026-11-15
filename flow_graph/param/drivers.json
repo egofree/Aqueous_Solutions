@@ -4663,6 +4663,38 @@
   "needs_verification": true,
   "verification_test": "dewax condensate weigh per campaign vs the 10 % burn/loss allowance"
  },
+ "feed_fe_assay_frac": {
+  "value": 0.25,
+  "units": "- Fe mass fraction of the design feed at the AQS-ASSAY-001 reference point",
+  "basis": "AQS-ASSAY-001 Rev C section 3 reference-point element Fe 0.25 (the characterization the make-up lot is held to, section 7)",
+  "register": "A-M-499"
+ },
+ "brine_crys_feed_kg_d": {
+  "value": 2.0,
+  "units": "kg/d leach-liquor side-stream drawn to the BRINE_CRYS crystallizer",
+  "basis": "the leach liquor carries order-kg/d of dissolved Ca+Mg chlorides (the AQS-ASSAY-001 silicate_oxide class dissolving in the HCl leach plus the Kroll salt-flux drag-out) against the 0.156 kg/d pot make-up, so the draw covers the need about 13x at the 15 % dissolved-salts liquor class",
+  "register": "A-M-496",
+  "needs_verification": true,
+  "verification_test": "brine assay (Ca/Mg/Na chlorides) on the crystallizer feed at commissioning"
+ },
+ "brine_crys_kW": {
+  "value": 0.07,
+  "units": "kW crystallizer jacket heater and vacuum ejector at the 2 kg/d side-stream",
+  "basis": "study: flash crystallization of 0.16 kg/d mixed chloride with mother-liquor recirculation, jacket hold at the EVAP bench class",
+  "register": "A-M-496"
+ },
+ "nut_an_selectivity": {
+  "value": 0.97,
+  "units": "- ammonia conversion selectivity of the NUT_AN oxidation-absorption route to ammonium nitrate",
+  "basis": "Ostwald NH3 oxidation NO yield 0.95-0.98 at the platinum gauze class, absorption to acid and neutralization on the same skid; the slip vents to NOX_SCRUB, whose nitrate liquor feeds NUTRIENT_DOSE",
+  "register": "A-M-497"
+ },
+ "nut_an_kW": {
+  "value": 0.06,
+  "units": "kW oxidation starter, metering pumps and controls of the NUT_AN skid",
+  "basis": "study: the oxidation is autothermal at the 0.5 kg/d NH4NO3 load; the load is the air blower, starter and dosing pumps at the AQUA_UV lamp class",
+  "register": "A-M-497"
+ },
  "foundry_pot_voltage_V": {
   "value": {
    "al": 3.8,
@@ -5756,11 +5788,33 @@
   "basis": "TECHTREE study class: media-bed pass-through at the nitrate delivery duty",
   "register": "A-M-426"
  },
- "FARM.classes.nut_dose_kgd": {
-  "value": 5.5,
-  "units": "kg/d mineral nitrate solution to the raceway",
-  "basis": "TECHTREE A-M-430 mineral N dose",
-  "register": "A-M-426"
+ "FARM.classes.nutrient_N_wt": {
+  "value": 0.045,
+  "units": "- N mass fraction of the dosed ammonium-nitrate solution (raceway mineral dose)",
+  "basis": "the A-M-430 mineral dose at the raceway uptake: 12.9 wt% NH4NO3 liquor at the 35 % N class, a low-strength aquaculture-safe dosing solution",
+  "register": "A-M-497",
+  "needs_verification": true,
+  "verification_test": "Raceway N-uptake measurement at the X-FARM-04 trial"
+ },
+ "FARM.duckweed.dm_N_wt": {
+  "value": 0.055,
+  "units": "- N mass fraction of duckweed dry matter",
+  "basis": "the ~5.5 % N class of the duckweed DM (A-M-430 basis: 4.5 kg DM at ~5.5 % N)",
+  "register": "A-M-430"
+ },
+ "FARM.classes.bed_greens_dm_frac": {
+  "value": 0.05,
+  "units": "- dry-matter fraction of the media-bed greens harvest",
+  "basis": "the A-M-430 bed basis: bed greens 4.0 kg/d wet = 0.2 kg/d DM at the leafy-greens 5 % DM class",
+  "register": "A-M-430"
+ },
+ "FARM.aquaponics.fish_N_return_g_d": {
+  "value": 13.5,
+  "units": "g N/d returned to the loop by the fish stock (gill and urinary TAN, nitrified by the biofilter)",
+  "basis": "the A-M-430 basis: the 60 kg tilapia stock at the 1.5 %/d ration (A-M-415) returns about 13.5 g N/d against the raceway-plus-greens uptake",
+  "register": "A-M-430",
+  "needs_verification": true,
+  "verification_test": "Loop TAN/nitrate measurement at the X-FARM-04 trial"
  },
  "FARM.classes.chicken_water_kg_bird_d": {
   "value": 0.03,

@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - Duct at 10 m/s. Gas 1.67 m³/h. Bore 8 mm, DN15. Not a packed tower.
 
-3. Material. 316L tube, oxygen-clean per ASTM_G93, socketless (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.
+3. Material. 316L tube, oxygen-clean per ASTM_G93, socketless. Basis: dry O2 header at the atmospheric tube class (graph design, AQS-DUTY-075): polymers ignite in oxygen-enriched service, so the dry-O2 M7 case applies and the metal is oxygen-clean 316L with hydrocarbon-free socketless joints (ASTM_G93 practice). Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3). Alternative: copper or nickel tube if a section rises above the atmospheric tube class (pressurized-oxygen design per ASTM_G93). oxygen-clean handling and capped ends ride the unit task 12 work order; no measured rate. (X-QA-18)
 
 4. Nozzles. Gas duct DN15 at 10 m/s. Bore from 1.67 m³/h is 8 mm. Drain DN15. No flange class. Atmospheric. Vent DN15 into the suction of this loop, not the room.
 

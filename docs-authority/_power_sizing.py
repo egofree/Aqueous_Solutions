@@ -109,10 +109,11 @@ def _size_pv():
 def _size_generic(kind, src):
     cf = src.get('capacity_factor', 0.35)
     if not (0 < cf <= 1): raise SystemExit(f'{kind} capacity_factor {cf} must be above 0 and at most 1')
-    out = {}
+    share = src.get('share', 0.0)      # F-20261113-01: the share had dropped out of the formula; the
+    out = {}                            # module basis line above (share x demand / cf) is restored
     for k, P in cases.items():
         d = _storage(k, P)
-        nameplate = round(P / cf, 1)
+        nameplate = round(share * P / cf, 1)
         d.update(nameplate_kWp=nameplate, nameplate_kw=nameplate, area_m2=0, kind=kind, capacity_factor=cf,
                  cloudy_yield_frac=cf, inverters=1, inv_kW=P, export_peak_kW=0, export_kWh_d_clear=0,
                  pv_base_kWp=nameplate)

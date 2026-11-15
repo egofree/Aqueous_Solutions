@@ -25,6 +25,8 @@ Table 1. Placements and sizing by locale
 | leo | WET_OX | BLACK_DIGEST | design record; sizes at the locale design pass | A-M-403 |
 | mars | CAT_OX | AFTERBURNER | design record; sizes at the locale design pass | A-M-399 |
 | mars | E_HEAT | COMB_HEAT | design record; sizes at the locale design pass | A-M-283 (30 kW connected duty carried from COMB_HEAT) |
+| mars | FSP_40K |  | count duty 3; count installed n plus 1 4; installed kW e 160; dust deficit kW 91.86 | AQS-PLAN-011 section 5.5 worst-stretch balance at the portfolio shares; dust fraction from power_portfolio.dust_stretch_design (F-20261113-01); unit rating NASA_FSP; one installed spare per the N+1 rule |
+| mars | MMRTG |  | count 19; carries W e 2090 | backup_fuel.critical_list controls slice (AQS-ELEC-007); unit rating NASA_RTG; the kW-class criticals stay on the fission base and the fuel cell (F-20261113-01) |
 | mars | RAD_PANEL | DRY_COOLER | area m2 22.3; area m2 per kW 1.862; duty kW 12; radiator K 328 | A-M-396 (sink), A-M-397 (emissivity); Stefan-Boltzmann |
 | mars | REC_HDR | AFTERBURNER_FLUE, RELIEF_CRYO, RELIEF_H2, ACID_POLISH_SCRUB, ALK_SCRUBBER, MET_SCRUB, NOX_SCRUB, EVAP_ACID_VS | design record; sizes at the locale design pass | A-M-398 |
 | mars | TANK_BLD | CATCH_TANK, ROOF_TANK | design record; sizes at the locale design pass | A-M-400 |

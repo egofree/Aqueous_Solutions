@@ -54,8 +54,6 @@ GN = graph_node.graph_node(UNIT)                          # the plant graph is t
 S = GN.params.get("sizing") or {}
 assert S.get("cathodes"), f"{UNIT}: no sizing stamp on the graph node (run the regeneration)"
 
-P = json.loads((HERE / "params.json").read_text())   # the tracker-merged unit params (draw scripts read it)
-
 # ------------------------------------------------------------------ cited constants
 T_WALL = 10.0            # AQS-DUTY-051 section 1 (matches the issued envelope)
 SUMP, PLATE_Z, COVER, FREE = 150.0, 420.0, 100.0, 80.0    # inside depth zones, AQS-DUTY-051

@@ -1,6 +1,8 @@
 """MG_POT manufacturing model, AQS-PLAN-006 work order (X-MFG lane, FOUNDRY-MG_POT-10 M3).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json only.
+Study. Not a PE stamp. Sizes and counts come from the plant graph through the
+shared reader (models/mfg/lib/graph_node.py); the builder-owned assumption,
+electrode and layout blocks merge in from params.json.
 Placement frame: x along 800 mm, y along 800 mm, z up, origin at the envelope
 corner. The pot recycles Kroll magnesium: molten MgCl2 electrolysis at 700 C, 54.89 A at
 4.2 V (A-M-282 Faraday class); its chlorine feeds the Kroll chlorinator (A-M-280)
@@ -16,8 +18,11 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import step_export  # noqa: E402
-P = json.loads((HERE / "params.json").read_text())
+from lib import graph_node, step_export  # noqa: E402
+GN = graph_node.graph_node("MG_POT")          # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
+          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
 A = P["assumptions"]
 AN = P["anode"]; CA = P["cathode"]; BUS = P["busbar"]
 L, W, H = P["size_mm"]

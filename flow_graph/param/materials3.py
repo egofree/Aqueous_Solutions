@@ -9,7 +9,10 @@ AQS-DSN-INT-001 internals register all recompute from the same keys in one regen
 X-QA-13 adds the three acid and base regeneration units to the same roster (SEL_QA13): the BMED
 stacks resolve their cathode end plate from the undecided '316L/Ni' class to 316L annealed on the
 AQS-STD-002 M6 hydrogen clause, and the EVAP_ACID shell is stated as the PTFE-lined carbon steel
-of the M5 lined-part rule. The roster the section 3 gate counts is SEL + SEL_FARM + SEL_QA13.
+of the M5 lined-part rule. X-QA-18 step 3 adds the five HDR_* utility headers (SEL_HDR), whose
+duty pages carried the '(graph node material)' fallback with no node selection behind it; the
+selections follow the issued header service of the header sizing (AQS-DUTY-075). The roster the
+section 3 gate counts is SEL + SEL_FARM + SEL_QA13 + SEL_HDR.
 
 Method (first-principles, per AQS-STD-002 M1-M7): every selection is individual to the unit's own
 process environment - the bounding temperature and chemistry come from the unit's duty sheet
@@ -643,10 +646,70 @@ SEL_QA13 = {
   'X-QA-13'),
 }
 
+# X-QA-18 step 3: the five HDR_* utility headers. Their duty pages rendered the
+# '(graph node material)' fallback while the graph node carried no selection, so the
+# selection was an unbacked claim. These follow the issued header service the header
+# sizing already states (flow_graph/param/headers.py SPEC, AQS-DUTY-075) and select it
+# per AQS-STD-002; the mat strings stay the issued SPEC classes so the builders'
+# material keys and the AQS-END-002 keyword classes do not move.
+_TAG_HDR = 'Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3).'
+SEL_HDR = {
+ 'HDR_CO2': (
+  '316L tube',
+  'dry CO2 header at the ambient class (graph design, AQS-DUTY-075): neither the M3 '
+  'wet-oxidant rule nor the M7 no-polymer rule applies to a dry gas held above its dew '
+  'point, so the header keeps the one-tube family shared across the dry utility gas '
+  'headers (CO2, plant air / N2, O2) for spares and handling. ' + _TAG_HDR,
+  'CPVC or PP-H sections if a cold spot condenses carbonic acid (M3 then catches wet CO2); '
+  'the N6 drain exists to prove the dry claim',
+  'the N6 drain and the N7 vent keep the header dry; no measured rate.',
+  'X-QA-18'),
+ 'HDR_H2': (
+  'PVC-U, bonded',
+  'wet H2 with sweep air and possible acid mist off the EW cathode rows (graph design, '
+  'AQS-DUTY-075): wet hydrogen is the M3 reducing service, so there is no metal wetted '
+  'part - ignition, not embrittlement, governs (AQS-REV-H2-001) - and PVC-U carries the '
+  'acid-mist condensate to its 60 C M5 limit (ISO1452_2). ' + _TAG_HDR,
+  'CPVC if the header temperature class rises above the PVC-U 60 C class (M5); FRP for an '
+  'outdoor run',
+  'metal parts bonded per the static rule; the dilution basis is held by the vent system; '
+  'no measured rate (X-MAT-06 ruling carried).',
+  'X-QA-18'),
+ 'HDR_N2': (
+  '316L tube',
+  'dry oil-free plant air and nitrogen at the ambient class (graph design, AQS-DUTY-075): '
+  'N2 is inert and the air stays dried at the receiver bank, so the header keeps the '
+  'one-tube family shared across the dry utility gas headers; M1 names the stream and no '
+  'wet-oxidant or no-polymer rule fires. ' + _TAG_HDR,
+  'CS with the AQS-STD-001 corrosion allowance if a section moves into a wet bay and M1 '
+  'then names a wet stream',
+  'the drain keeps the header dry; no measured rate.',
+  'X-QA-18'),
+ 'HDR_O2': (
+  '316L tube, oxygen-clean per ASTM_G93, socketless',
+  'dry O2 header at the atmospheric tube class (graph design, AQS-DUTY-075): polymers '
+  'ignite in oxygen-enriched service, so the dry-O2 M7 case applies and the metal is '
+  'oxygen-clean 316L with hydrocarbon-free socketless joints (ASTM_G93 practice). '
+  + _TAG_HDR,
+  'copper or nickel tube if a section rises above the atmospheric tube class '
+  '(pressurized-oxygen design per ASTM_G93)',
+  'oxygen-clean handling and capped ends ride the unit task 12 work order; no measured rate.',
+  'X-QA-18'),
+ 'HDR_UPW': (
+  'PVDF SDR 21, fusion-welded',
+  'high-purity water distribution at the ambient class (graph design, AQS-DUTY-075): UPW '
+  'is the M1 named stream, and PVDF SDR 21 fusion-welded (DVS_2207) keeps the leach-out '
+  'and hygiene class the polish skid is built to deliver. ' + _TAG_HDR,
+  '316L BA tube on valve-manifold sections that need metallic strength, with the same UPW '
+  'hygiene class',
+  'ambient temperature class at the polish skid outlet; no measured rate.',
+  'X-QA-18'),
+}
+
 def main():
     g = json.load(open(GP))
     N = {n['unit_id']: n for n in g['nodes']}
-    missing = [u for u in list(SEL) + list(SEL_FARM) + list(SEL_QA13) if u not in N]
+    missing = [u for u in list(SEL) + list(SEL_FARM) + list(SEL_QA13) + list(SEL_HDR) if u not in N]
     assert not missing, f'{missing}: selection units absent from the graph'
     wrote = 0
     for u, (mat, basis, alt, note) in SEL.items():
@@ -670,9 +733,17 @@ def main():
         if cur != new:
             p['sec3_material'] = new
             wrote += 1
+    for u, (mat, basis, alt, note, task) in SEL_HDR.items():
+        p = N[u].setdefault('params', {})
+        cur = p.get('sec3_material') or {}
+        new = dict(mat=mat, basis=basis, alt=alt, note=note, task=task)
+        if cur != new:
+            p['sec3_material'] = new
+            wrote += 1
     json.dump(g, open(GP, 'w'), indent=2)
-    print(f'materials3: {len(SEL) + len(SEL_FARM) + len(SEL_QA13)} selections issued '
-          f'({len(SEL)} X-MAT-22, {len(SEL_FARM)} X-FARM/X-HAB, {len(SEL_QA13)} X-QA-13), {wrote} changed')
+    print(f'materials3: {len(SEL) + len(SEL_FARM) + len(SEL_QA13) + len(SEL_HDR)} selections issued '
+          f'({len(SEL)} X-MAT-22, {len(SEL_FARM)} X-FARM/X-HAB, {len(SEL_QA13)} X-QA-13, '
+          f'{len(SEL_HDR)} X-QA-18 step 3), {wrote} changed')
 
 if __name__ == '__main__':
     main()

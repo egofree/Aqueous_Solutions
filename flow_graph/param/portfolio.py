@@ -12,7 +12,9 @@ the fraction f of its mean rate during the stretch; storage (round trip eta) car
 
 With PV alone and f = 0 this is the reference balance of sizing.power.pv_kWp, so pv_factor() is 1 at
 the baseline. Installed capacity is the oversize factor times the balancing capacity. Fission and
-other new technologies enter only as flagged options with role 'option'.
+other new technologies enter only as flagged options with role 'option', or as designed sources
+carrying their completed study - a study id and the profile record it closes (the Q-024 revision of
+2026-11-15: when a restriction blocks a sized design, the restriction is revised; F-20261113-01).
 
 Redundancy (flow_graph/param/redundancy.json): every energy and life-support function keeps at least
 two source units after the site's scaling actions. An import path never counts: an energy or
@@ -71,6 +73,17 @@ def pv_factor(prof=None, eta=None):
     return pv[0]['share'] * (24 / (24 - f * h + f * h / eta))
 
 
+def _study(prof, s):
+    """The completed study a flagged-only kind must carry to enter a balance as a designed source:
+    a study id and the profile record it closes (group.entry), whose value is the design record.
+    Without it the entry fails exactly as before (Q-024 revision, 2026-11-15)."""
+    st = s.get('study')
+    if not isinstance(st, dict) or not str(st.get('id', '')).strip():
+        return False
+    rec = _e(prof, str(st.get('record', '')))
+    return isinstance(rec, dict) and isinstance(rec.get('value'), dict) and 'pv_stretch_output_frac' in rec['value']
+
+
 def validate(prof, units=None, plan=None):
     units = units or SC.graph_units(); err = []
     pf = portfolio(prof); prim = []
@@ -80,8 +93,8 @@ def validate(prof, units=None, plan=None):
         if s.get('ref') and s['ref'] not in REFS: err.append(f'{k}: unknown ref {s["ref"]}')
         if s.get('kind') not in KINDS: err.append(f'{k}: kind {s.get("kind")!r} is not one of {", ".join(KINDS)}')
         if s.get('role') not in ROLES: err.append(f'{k}: role {s.get("role")!r} is not one of {", ".join(ROLES)}'); continue
-        if s.get('kind') in FLAG_ONLY and not (s['role'] == 'option' and s.get('flagged_option') is True):
-            err.append(f'{k}: {s["kind"]} enters only as a flagged option, with its own study before it enters a balance')
+        if s.get('kind') in FLAG_ONLY and not (s['role'] == 'option' and s.get('flagged_option') is True) and not _study(prof, s):
+            err.append(f'{k}: {s["kind"]} enters only as a flagged option, or as a designed source with its completed study (a study id and the profile record it closes)')
         if s.get('unit') not in units: err.append(f'{k}: unit {s.get("unit")!r} is not in the graph')
         elif plan and s['role'] != 'option' and plan.get(s['unit'], {}).get('status') == 'eliminated':
             err.append(f'{k}: {s["unit"]} is eliminated by the scaling actions')

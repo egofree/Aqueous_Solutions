@@ -1,8 +1,9 @@
 """LITHO_ALIGN manufacturing model, AQS-PLAN-006 work order (fab lane, tier 7, route hold).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json (W2 fields by the tracker;
-the envelope, design and layout blocks beside them are builder-owned) and rebuilds
-every solid.
+Study. Not a PE stamp. Sizes and counts come from the plant graph through the
+shared reader (models/mfg/lib/graph_node.py); the builder-owned envelope, design
+and layout blocks beside the W2 fields merge in from params.json, and the build
+rebuilds every solid.
 
 Placement frame: x along 1200 mm, y along 600 mm, z up, origin at the envelope corner.
 Every dimension is an authority figure or a named layout choice:
@@ -41,10 +42,13 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles, step_export  # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles, step_export  # noqa: E402
 from tracker import stl_bbox_mm                            # noqa: E402  (gate-consistent STL reader)
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("LITHO_ALIGN")     # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
+          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
 L, W, H = (float(v) for v in P["size_mm"])                 # 1200 x 600 x 800
 REV = P["graph_revision"]
 UNIT = P["unit_id"]

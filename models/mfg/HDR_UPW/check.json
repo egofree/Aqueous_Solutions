@@ -25,7 +25,7 @@
     "id_grid_mm": 0.8,
     "id_note": "AQS-DUTY-075 sizing: required id 0.8 mm at 1.5 m/s, seat minimum DN25; the DN-8 grid bore and the Sch 40 bore both seat DN25; nothing resized",
     "run_basis": "20 m run carried by the line-list route lengths (AQS-PIP-004); not redrawn",
-    "material": "PVDF SDR 21, fusion-welded (high-purity water, AQS-STD-002) (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate."
+    "material": "PVDF SDR 21, fusion-welded"
   },
   "nozzles_drawn": {
     "N1": {

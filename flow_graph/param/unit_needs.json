@@ -129,7 +129,9 @@
   "FARM": "life_support"
  },
  "function_by_unit": {
+  "FSP_40K": "energy",
   "H2O_ELYZ": "life_support",
-  "HDR_O2": "life_support"
+  "HDR_O2": "life_support",
+  "MMRTG": "energy"
  }
 }

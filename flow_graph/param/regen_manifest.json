@@ -405,6 +405,23 @@
    "note": "X-MAT-22 (AQS-STD-006): duty section 3 material selections for the 38 units that held unit task 09 on the Selection pending template; writes params.sec3_material (mat/basis/alt/note/task) per node; rendered into the sheets by _duty_basis.py."
   },
   {
+   "name": "sizing_pot_cells",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.pot_cells"
+   ],
+   "outputs": [
+    "flow_graph/plant_flow_graph.json"
+   ],
+   "depends_on": [
+    "foundry_poly"
+   ],
+   "writes_graph": true,
+   "quick": true,
+   "note": "A-M-496 (X-QA-18 step 3): pot-cell bath-top geometry - design.bath_top_mm = design.anode_imm_mm + the registered 100 mm tip elevation, stamped into the CA_POT / CR_CELL / MG_POT / MO_CELL design blocks the manufacturing builders read."
+  },
+  {
    "name": "farm_balance",
    "argv": [
     "python3",

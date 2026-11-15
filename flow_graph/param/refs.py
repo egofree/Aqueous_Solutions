@@ -146,6 +146,8 @@ REFS = {
  'NASA_MARS_RAD': 'Surface radiation at Gale crater: 0.64 mSv/d dose equivalent (RAD instrument, MSL; AQS-PLAN-011 section 8, [21]).',
  'NASA_MARS_PERCHLORATE': 'Perchlorate in Martian soil: 0.4 to 0.6 percent by mass at the Phoenix landing site (HEICT et al., 2009; AQS-PLAN-011 section 8, [23]).',
  'NASA_MARS_ICE': 'Excess ground ice within metres of the surface in Arcadia Planitia (Dundas et al., 2021; AQS-PLAN-011 section 8, [24], [25]).',
+ 'NASA_FSP': 'NASA Fission Surface Power: 40 kW electric-class surface fission power unit, uranium-fueled with Stirling power conversion (Kilopower/KRUSTY flight heritage); the dust-blind base load carrier, rated 40 kW_e per unit, for the mars locale (F-20261113-01).',
+ 'NASA_RTG': 'NASA radioisotope thermoelectric generators: multi-mission RTG (MMRTG) class, Pu-238 general-purpose heat source, about 110 W electric at beginning of mission (Curiosity and Perseverance heritage); the extreme-reliability W-class trickle for controls and instruments (F-20261113-01).',
  'MOXIE': 'NASA MOXIE: solid oxide electrolysis of carbon dioxide demonstrated on the Martian surface (Hecht et al., 2023; AQS-PLAN-011 section 8, [28]).',
  'OUTER_SPACE_TREATY': 'Treaty on Principles Governing the Activities of States in the Exploration and Use of Outer Space (1967; AQS-PLAN-011 section 8, [29]).',
  'COSPAR_POLICY': 'COSPAR Policy on Planetary Protection (AQS-PLAN-011 section 8, [30]).',

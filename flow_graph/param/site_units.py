@@ -83,7 +83,80 @@ def _lio_bat(prof, node, g):
     return out
 
 
-SIZERS = {'RAD_PANEL': _rad_panel, 'LIO_BAT': _lio_bat}
+def _dust_record(prof):
+    """The profile's dust-stretch design record (the F-20261113-01 study the mars portfolio cites)."""
+    return ((prof.get('groups', {}).get('power_portfolio', {}).get('entries', {})
+             .get('dust_stretch_design', {}) or {}).get('value') or {})
+
+
+def _demand_kw(g):
+    """The demand a locale whose portfolio closes on a non-PV source books: the converged need minus the
+    EXT_HALL roof extension, which exists to carry the roof PV and is not built at such a locale
+    (write_graph power generic path books the base plate, A-M-231/A-M-234)."""
+    P = _need_kw(g)
+    if not P:
+        return 0.0
+    ext = g and {n['unit_id']: n for n in g['nodes']}.get('EXT_HALL')
+    q = (ext or {}).get('continuous_kw')
+    v = q.get('value') if isinstance(q, dict) else q
+    return P - (float(v) if isinstance(v, (int, float)) else 0.0)
+
+
+def _fsp_40k(prof, node, g):
+    """Dust-season fission sizing (F-20261113-01): through the dust stretch the PV share delivers only
+    its stretch fraction of its mean rate, and the deficit is carried in NASA FSP 40 kW_e units with
+    one installed spare (N+1). Inputs: the profile's worst-stretch balance and its dust-stretch design
+    record; the unit rating is the node's published NASA_FSP rating. No count is hard-coded."""
+    import math
+    from . import portfolio as PF
+    from . import drivers as DR
+    d = DR.load(); eta = DR.val(d, 'storage_round_trip')
+    P = _demand_kw(g)
+    unit_kw = (node.get('params') or {}).get('unit_kW_e')
+    if not P or not unit_kw:
+        return {}
+    rec = _dust_record(prof)
+    frac = rec.get('pv_stretch_output_frac')
+    if frac is None:                                  # fall back to the portfolio's PV entry
+        pv = [s for s in PF.portfolio(prof)['sources'] if s['role'] == 'primary' and s.get('kind') == 'pv']
+        frac = pv[0].get('stretch_output_frac', 0.0) if pv else 0.0
+    share_pv = next((s['share'] for s in PF.portfolio(prof)['sources']
+                     if s['role'] == 'primary' and s.get('kind') == 'pv'), 0.0)
+    G = PF.mean_generation_per_kW(prof, eta) * P      # mean total generation at the mix shares
+    pv_dust = frac * share_pv * G                     # PV output through the dust stretch
+    deficit = P - pv_dust
+    duty = math.ceil(deficit / unit_kw)
+    return {'demand_kW': round(P, 2), 'mean_generation_kW': round(G, 2),
+            'pv_share': share_pv, 'dust_pv_output_frac': frac,
+            'pv_dust_output_kW': round(pv_dust, 2), 'dust_deficit_kW': round(deficit, 2),
+            'unit_kW_e': unit_kw, 'count_duty': duty, 'count_installed_n_plus_1': duty + 1,
+            'installed_kW_e': round((duty + 1) * unit_kw, 1),
+            'basis': 'AQS-PLAN-011 section 5.5 worst-stretch balance at the portfolio shares; dust fraction '
+                     'from power_portfolio.dust_stretch_design (F-20261113-01); unit rating NASA_FSP; '
+                     'one installed spare per the N+1 rule'}
+
+
+def _mmrtg(prof, node, g):
+    """RTG trickle sizing (F-20261113-01): the controls-and-instruments slice of the critical list
+    (backup_fuel.critical_list, the single source) carried in NASA MMRTG 110 W_e units. The kW-class
+    criticals stay on the fission base and the fuel cell; no count is hard-coded."""
+    import math
+    import flow_graph.param.backup_fuel as BF
+    from . import drivers as DR
+    d = DR.load()
+    crit = BF.critical_list({n['unit_id']: n for n in g['nodes']}, d)
+    trickle_kw = crit.get('controls and instruments')
+    unit_w = (node.get('params') or {}).get('unit_W_e')
+    if not trickle_kw or not unit_w:
+        return {}
+    count = math.ceil(trickle_kw * 1000.0 / unit_w)
+    return {'critical_list_kW': round(sum(crit.values()), 2), 'controls_trickle_kW': trickle_kw,
+            'unit_W_e': unit_w, 'count': count, 'carries_W_e': round(count * unit_w, 1),
+            'basis': 'backup_fuel.critical_list controls slice (AQS-ELEC-007); unit rating NASA_RTG; '
+                     'the kW-class criticals stay on the fission base and the fuel cell (F-20261113-01)'}
+
+
+SIZERS = {'RAD_PANEL': _rad_panel, 'LIO_BAT': _lio_bat, 'FSP_40K': _fsp_40k, 'MMRTG': _mmrtg}
 
 
 def _sizing(rep, prof, node, g):
@@ -92,9 +165,10 @@ def _sizing(rep, prof, node, g):
 
 
 def placements(sid, g=None):
-    """[(unit, placement dict)] for the placeholder replacements in sid's plan."""
+    """[(unit, placement dict)] for the placeholder units sid's plan and portfolio name."""
     from . import site as S
     from . import scaling as SC
+    from . import portfolio as PF
     g = g or _graph()
     units = SC.graph_units(g)
     prof = S.load_profile(sid)
@@ -110,6 +184,15 @@ def placements(sid, g=None):
                                  'design': node.get('params', {}).get('design') or {}})
         if a['target'] not in e['replaces']:
             e['replaces'].append(a['target'])
+    for s in PF.portfolio(prof).get('sources', []):
+        # a designed source the portfolio names (role primary or backup): placed and sized per
+        # locale from its profile record; flagged options (role option) stay studies, not placements
+        node = units.get(s.get('unit'))
+        if not node or node.get('presence') != 'placeholder' or s.get('role') not in ('primary', 'backup'):
+            continue
+        out.setdefault(s['unit'], {'unit': s['unit'], 'class': node.get('class'),
+                                   'sector': node.get('sector_id'), 'replaces': [],
+                                   'design': node.get('params', {}).get('design') or {}})
     for rep, e in out.items():
         sizer = SIZERS.get(rep)
         e['sizing'] = _sizing(rep, prof, units[rep], g)
@@ -178,7 +261,8 @@ def render():
         sz = e['sizing'] or {}
         if sz:
             bits = []
-            for k in ('area_m2', 'area_m2_per_kW', 'storage_delivered_kWh', 'duty_kW', 'radiator_K', 'stretch_h'):
+            for k in ('area_m2', 'area_m2_per_kW', 'storage_delivered_kWh', 'duty_kW', 'radiator_K', 'stretch_h',
+                      'count_duty', 'count_installed_n_plus_1', 'installed_kW_e', 'dust_deficit_kW', 'count', 'carries_W_e'):
                 if k in sz:
                     bits.append(f'{k.replace("_", " ")} {sz[k]:g}')
             what = '; '.join(bits) if bits else 'design record'
