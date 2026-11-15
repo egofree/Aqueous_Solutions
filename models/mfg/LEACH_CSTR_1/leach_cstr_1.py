@@ -1,7 +1,10 @@
 """LEACH_CSTR_1 manufacturing model, AQS-PLAN-006 work order (X-MFG lane).
 
-Graph revision AC. Study. Not a PE stamp. Reads params.json only (W2 fields by the
-tracker; the envelope, design and layout blocks beside them are builder-owned).
+Study. Not a PE stamp. Sizes and counts come from the plant graph through the
+shared reader (models/mfg/lib/graph_node.py; the node carries no size_mm for this
+unit - tracker hold, WORK_ORDER W12 - so the duty-section-2 envelope stays a
+literal); the builder-owned envelope, design and layout blocks beside the W2
+fields merge in from params.json.
 
 Placement frame: x along 2000 mm, y along 1200 mm, z up, origin at the envelope
 corner. Every dimension is an authority figure or a named layout choice:
@@ -44,9 +47,12 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import dn, fasteners, materials, nozzles, step_export  # noqa: E402
+from lib import dn, fasteners, graph_node, materials, nozzles, step_export  # noqa: E402
 
-P = json.loads((HERE / "params.json").read_text())
+GN = graph_node.graph_node("LEACH_CSTR_1")    # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
+          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
 L, W, H = (2000.0, 1200.0, 1400.0)                        # duty section 2 envelope
 REV = P["graph_revision"]
 A = P["assumptions"]

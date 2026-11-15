@@ -1,6 +1,8 @@
 """IND_MELT manufacturing model, AQS-PLAN-006 work order (X-MFG lane, FOUNDRY-IND_MELT-10 M3).
 
-Graph revision AD. Study. Not a PE stamp. Reads params.json only.
+Study. Not a PE stamp. Sizes and counts come from the plant graph through the
+shared reader (models/mfg/lib/graph_node.py); the builder-owned assumption,
+crucible and coil blocks merge in from params.json.
 Medium-frequency coreless induction remelt furnace, tilt pour: Cu/Fe/Zn/Al scrap and
 pot metals, 10 kg crucible, ceramic-fibre hot face 150 mm in a 4 mm CS casing
 (AQS-DUTY-072; A-M-282/A-M-283 melt basis). The ten charge rows of the task-04
@@ -13,8 +15,11 @@ import cadquery as cq
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))                      # models/mfg, for the shared lib
-from lib import step_export  # noqa: E402
-P = json.loads((HERE / "params.json").read_text())
+from lib import graph_node, step_export  # noqa: E402
+GN = graph_node.graph_node("IND_MELT")        # the plant graph is the sole authority
+P = GN.as_params()                            # W2 keys (size_mm, graph_revision, unit_id, nozzles, design)
+P.update({k: v for k, v in json.loads((HERE / "params.json").read_text()).items()
+          if k not in P or P[k] in (None, {})})   # builder-owned blocks only
 A = P["assumptions"]
 CR = P["crucible"]; CO = P["coil"]
 L, W, H = P["size_mm"]
