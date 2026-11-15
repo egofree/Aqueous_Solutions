@@ -1,6 +1,12 @@
 """Foundry + polymers sizing transfer functions (AQS-DUTY-072 / AQS-DUTY-073, unit task 02 for the
 FOUNDRY and POLYMERS sectors). Sizes the two sectors from need at the Rev AC bounding case.
 
+Rev C (2026-11-15, X-QA-11): the remaining pending dock imports of this writer retire on on-site routes -
+the brine recovery (salt_recovery.py, BRINE_CRYS crystallizes the pot make-up out of the leach chlorides,
+A-M-496), the pattern-wax blend (IA-WAX-CUT from the C19-C28 cut tank, A-M-498), and the feedstock
+make-up re-classed raw feed with its recovery record (A-M-499). The raceway mineral-nitrate import
+retires on the on-site ammonium-nitrate skid in farm_balance.py / nitrate_route.py (A-M-497).
+
 Rev B (2026-10-19, D-DOCK foundry feedstock program): the FOUNDRY standby placeholders become real
 full designs on dock-imported feedstocks (owner ruling D-DOCK: the dock imports any feedstock class -
 landfill reclaim, mining waste, regolith; A-M-284). Live trains after this pass:
@@ -8,12 +14,12 @@ landfill reclaim, mining waste, regolith; A-M-284). Live trains after this pass:
   pot/cell train   AL_POT (recovery-sized, X-QA-19: the line is sized to the recoverable aluminium - the leach
                    reactive-Al hydroxide cake calcined and chlorinated on site with the cell chlorine makes the whole
                    AlCl3 feed, so the dock AlCl3 import is retired - molten-chloride electrolysis),
-                   MG_POT (Kroll Mg recycle + CaCl2-MgCl2 brine make-up), CA_POT (brine
-                   import, grease-thickener Ca), TI_CELL (TiO2-eq rutile + plant char + Mg-pot Cl2/Mg,
+                   MG_POT (Kroll Mg recycle + the BRINE_CRYS recovered drag-out), CA_POT (recovered brine,
+                   grease-thickener Ca), TI_CELL (TiO2-eq rutile + plant char + Mg-pot Cl2/Mg,
                    AQS-BAL-KROLL), MO_CELL / CR_CELL (oxide + plant char, carbochlorination with an
                    internal anode-gas chlorine loop)
-  investment train WAX_PATTERN .. SHELL_BREAK at 2 kg/d castings on wax make-up; shell 87.5 % reclaimed,
-                   the spent-shell balance to the shop recovered-silica pool and the make-up drawn from
+  investment train WAX_PATTERN .. SHELL_BREAK at 2 kg/d castings on the C19-C28 cut blend (A-M-498); shell
+                   87.5 % reclaimed, the spent-shell balance to the shop recovered-silica pool and the make-up drawn from
                    it (F-20261110-06: the export-plus-import pair is retired)
   N+1 alternates   VAC_IND / VAC_CAST / RF_HEAT / RES_HEAT / COMB_HEAT / SINTER / FORGE / EXTRUDE /
                    DRAW sized at their backup duty (AGENTS.md redundancy rule, A-M-283), standby-zero
@@ -394,11 +400,16 @@ def apply(g=None, write=False):
        s['kroll_flux'],
        f'{DR.val(s["d"], "foundry_kroll_dragout_frac"):.0%} of the Kroll MgCl2 gross: the salt-flux cover for the '
        f'Al-charged melt (A-M-284); unblocks FLUX_PREP from the SALT_FEED stub. | {TAG}.')
-    mk('IA-MGCL2-MU', 'NORTH_DOCK', 'MG_POT', 'FOUNDRY', 'L', 'CaCl2-MgCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)',
-       R(s['mg_ti']) + R(s['cl2_ti']) - R(s['mgcl2_ret']),
-       f'D-DOCK feedstock import (A-M-284): restores the drag-out so MG_POT delivers the retort Mg exactly; '
-       f'{s["mgcl2_mu"]:.4f} kg/d MgCl2-equivalent; a process chemical, not a mining waste (F-20261110-07). | {TAG}.')
-    E['IA-MGCL2-MU']['carries'] = 'CaCl2-MgCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)'
+    mk('IA-MGCL2-MU', 'NORTH_DOCK', 'MG_POT', 'FOUNDRY', 'L', 'CaCl2-MgCl2 brine concentrate (retired dock import)',
+       0.0,
+       f'Retired by the on-site brine recovery (X-QA-11, A-M-496): the make-up was the Kroll drag-out, '
+       f'{s["mgcl2_mu"]:.4f} kg/d MgCl2-equivalent cycling flux -> melt -> slag -> leach; BRINE_CRYS crystallizes it '
+       f'back out of the leach chlorides and feeds the pot at the same rate on IA-BRINE-MGCL2, so MG_POT still '
+       f'delivers the retort Mg exactly. Was the dock process-chemical import (A-M-284, pending class). | {TAG}.')
+    E['IA-MGCL2-MU']['presence'] = 'retired'
+    for _k in ('dock_class', 'dock_pending_task'):
+        (E['IA-MGCL2-MU'].setdefault('params', {})).pop(_k, None)   # the retired import drops its dock class with the edge
+    E['IA-MGCL2-MU']['carries'] = 'CaCl2-MgCl2 brine concentrate (retired: BRINE_CRYS recovers the drag-out from the leach chlorides, X-QA-11)'
     mk('IA-MG-TI', 'MG_POT', 'TI_CELL', 'FOUNDRY', 'S', 'Mg reductant to the Kroll retort',
        s['mg_ti'],
        f'{2 * MM["Mg"] / MM["Ti"]:.3f} kg Mg per kg Ti (AQS-BAL-KROLL); MG_POT electrolysis of the returned MgCl2 at '
@@ -412,12 +423,17 @@ def apply(g=None, write=False):
         f'MG_POT serves only the Kroll recycle at steady state (all Mg to the retort on IA-MG-TI); no Mg stock line '
         f'at the table. | {TAG}.')
     put('MG_POT_CL2', 0.0, f'MG_POT Cl2 fully serves the chlorinator (IA-CL2-MG-TI); no CRU surplus. | {TAG}.')
-    mk('IA-CACL2-MU', 'NORTH_DOCK', 'CA_POT', 'FOUNDRY', 'L', 'CaCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)',
-       R(s['ca']) + R(s['ca_cl2']),
-       f'D-DOCK feedstock import (A-M-284): Ca deoxidizer addition {s["ca"]:.4f} kg/d at '
-       f'{DR.val(s["d"], "foundry_ca_add_frac"):.2%} of the melt charge; by difference on the pot; a process chemical, '
-       f'not a mining waste (F-20261110-07). | {TAG}.')
-    E['IA-CACL2-MU']['carries'] = 'CaCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)'
+    mk('IA-CACL2-MU', 'NORTH_DOCK', 'CA_POT', 'FOUNDRY', 'L', 'CaCl2 brine concentrate (retired dock import)',
+       0.0,
+       f'Retired by the on-site brine recovery (X-QA-11, A-M-496): the pot feed carried the Ca deoxidizer addition '
+       f'{s["ca"]:.4f} kg/d at {DR.val(s["d"], "foundry_ca_add_frac"):.2%} of the melt charge; the Ca reports to the '
+       f'dross and leach liquor as CaCl2 (the pot chlorine leaves separately as the IA-CA-CL2-SHIP product export), '
+       f'and BRINE_CRYS crystallizes the make-up back out of the leach chlorides on IA-BRINE-CACL2 at the same rate. '
+       f'Was the dock process-chemical import (A-M-284, pending class). | {TAG}.')
+    E['IA-CACL2-MU']['presence'] = 'retired'
+    for _k in ('dock_class', 'dock_pending_task'):
+        (E['IA-CACL2-MU'].setdefault('params', {})).pop(_k, None)   # the retired import drops its dock class with the edge
+    E['IA-CACL2-MU']['carries'] = 'CaCl2 brine concentrate (retired: BRINE_CRYS recovers the make-up from the leach chlorides, X-QA-11)'
     put('CA_POT_TO_IND', s['ca'],
         f'Ca deoxidizer/desulfurizer addition to the melt (steelmaking practice class); sized at '
         f'{DR.val(s["d"], "foundry_ca_add_frac"):.2%} of the melt charge - the same Ca line serves the grease-thickener '
@@ -430,6 +446,10 @@ def apply(g=None, write=False):
        f'off this edge in the fluoro pass (A-M-482). | {TAG}.',
        layers=['mass', 'energy'])
     E['IA-CA-CL2-SHIP'].setdefault('params', {})['si_cl2_kg_d'] = _si_cl2   # si_refine.tf moves the export by any later change of this make-up (A-M-484)
+    # on-site brine recovery (X-QA-11, A-M-496): BRINE_CRYS crystallizes the pot make-up out of the leach
+    # chlorides (the Kroll drag-out cycle plus the dissolved feed-assay Ca/Mg) and the dock imports retire above
+    from flow_graph.param import salt_recovery as _SR
+    _SR.tf(g, E, s, s['d'])
     # ---- Kroll cells: dock oxide concentrates + carbon, internal chlorine (A-M-290) ---------
     mk('IA-TIO2-MU', 'NORTH_DOCK', 'TI_CELL', 'FOUNDRY', 'S', 'TiO2-equivalent rutile concentrate (dock import class)',
        s['tio2'],
@@ -496,10 +516,23 @@ def apply(g=None, write=False):
     mk('IA-CR-VENT', 'CR_CELL', 'NORTH_DOCK', 'DOCK', 'G', 'chlorinator CO (fuel-gas class export)',
        R(s['cr2o3']) + R(s['c_cr']) - R(s['cr']), f'3 CO per 2 Cr on the carbochlorination net (A-M-284); dock fuel-gas class. | {TAG}.')
     # ---- investment casting: wax make-up + foundry silica imports (A-M-286) ----------------
-    mk('IA-WAX-MU', 'NORTH_DOCK', 'WAX_PATTERN', 'FOUNDRY', 'S', 'pattern wax make-up (petro-wax class import)',
+    mk('IA-WAX-MU', 'NORTH_DOCK', 'WAX_PATTERN', 'FOUNDRY', 'S', 'pattern wax make-up (retired dock import)',
+       0.0,
+       f'Retired by the on-site wax blend (X-QA-11, A-M-498): the make-up {s["wx_mu"]:.4f} kg/d draws from the '
+       f'plant C19-C28 cut tank on IA-WAX-CUT (the same paraffin cut the wax chain runs on), blended with the '
+       f'dewax reclaim {s["wx_recl"]:.1f} kg/d to the pattern-wax spec. Was the dock petro-wax import '
+       f'(A-M-284, pending class). | {TAG}.')
+    E['IA-WAX-MU']['presence'] = 'retired'
+    for _k in ('dock_class', 'dock_pending_task'):
+        (E['IA-WAX-MU'].setdefault('params', {})).pop(_k, None)   # the retired import drops its dock class with the edge
+    E['IA-WAX-MU']['carries'] = 'pattern wax make-up (retired: the C19-C28 cut blend covers it, X-QA-11)'
+    mk('IA-WAX-CUT', 'PROD_C19_C28', 'WAX_PATTERN', 'FOUNDRY', 'S', 'C19-C28 pattern-wax blend make-up from the plant cut',
        s['wx_mu'],
-       f'D-DOCK feedstock import (A-M-284): {1 - DR.val(s["d"], "foundry_inv_wax_reclaim_frac"):.0%} of the '
-       f'{s["wx"]:.1f} kg/d pattern wax (reclaim {s["wx_recl"]:.1f} covers the rest, A-M-286). | {TAG}.')
+       f'Pattern-room make-up {s["wx_mu"]:.4f} kg/d ({1 - DR.val(s["d"], "foundry_inv_wax_reclaim_frac"):.0%} of the '
+       f'{s["wx"]:.1f} kg/d pattern wax; the dewax reclaim {s["wx_recl"]:.1f} covers the rest, A-M-286): drawn from '
+       f'the C19-C28 cut tank (the plant paraffin cut, A-M-498), netted off IA-C19-SHIP in ess_tf. | {TAG}.')
+    E['IA-WAX-CUT']['from_sector_id'] = 'OIL'
+    E['IA-WAX-CUT']['composition'] = {'C19-C28': 1.0}
     mk('IA-SILICA-MU', 'NORTH_DOCK', 'SHELL_BUILD', 'FOUNDRY', 'S', 'foundry silica (flour/stucco/binder make-up)',
        0.0,
        f'Retired by recovery-first silica (F-20261110-06): the shell make-up {s["sh_mu"]:.4f} kg/d is the recovered crib '
@@ -586,6 +619,26 @@ def apply(g=None, write=False):
             note=('the dock concentrate is the only source at this scope (D-DOCK feedstock ruling, A-M-284); the '
                   'float-sink dense grit is the first source as far as its assay supports it (assay task '
                   'AQS-ASSAY-TI-MO), and this record re-opens on that route when the assay lands'))]
+    # the feedstock make-up is the plant's raw feed, not a process-chemical import (X-QA-11, A-M-499): re-classed
+    # raw_ore (recovery.py ORE, element Fe at the AQS-ASSAY-001 reference fraction) and covered by this record.
+    # The design feed's iron is recovered first from the loop receipts - the roster wear line, shop swarf, frass
+    # and the leach return (A-M-460) - and the characterized lot covers only the balance; the EW cascade plates
+    # the dissolved feed metals at recovery 1.0 (A-M-460).
+    _fe_frac = DR.val(s['d'], 'feed_fe_assay_frac')
+    _receipts = sum(_v(k) for k in ('IA-WEAR', 'S61', 'FRASS', 'IA-LEACH-HOP') if k in E)
+    _fe_ins = [e['stream_id'] for e in g['edges'] if e['presence'] == 'present'
+               and e['to_unit_id'] in ('LEACH_CSTR_1', 'NORTH_DOCK', 'ATMOS')
+               and 'Fe' in (e.get('composition') or {}) and float(e['rate']['value'] or 0) > 0]
+    N['HOPPER'].setdefault('params', {})['recovery'] = [dict(
+        element='Fe', use='design feed metal (scrap yard)',
+        need_kg_d=_v('IA-FEED-01') * _fe_frac,
+        recovered_kg_d=_receipts * _fe_frac,
+        recovered_from=['IA-WEAR', 'S61', 'FRASS', 'IA-LEACH-HOP'] + sorted(set(_fe_ins) | {'IA-BRINE-ML'}),
+        ore_streams=['IA-FEED-MU'], unrecovered=[],
+        note=('the characterized-lot make-up is the raw feed class (AQS-ASSAY-001 section 7, A-M-499): the loop '
+              'receipts return their metal to the scrap yard and the listed leach-loop liquor inflows recirculate '
+              'the dissolved feed metals - the EW cascade plates them at recovery 1.0 (A-M-460); they are loop '
+              'returns the recovery runs on, not terminal losses'))]
     put('SHELL_TO_GLASS', 0.0,
         'Spent shell reclaims internally (IA-SHELL-RECLAIM) and sends the balance to the shop recovered-silica pool '
         f'(IA-SHELL-SHOP): GLASS_DIGEST is fully committed (A-M-267) so the solids line has no digest capacity for it. | {TAG}.')
@@ -699,16 +752,31 @@ def apply(g=None, write=False):
     else:
         put('IA-C5-POLY', spf, f'Polyolefin naphtha feed ({DOC_P}, A-M-264). | {TAG}.')
     # ---- the crew textile line (A-M-429): stock -> fibre -> MFG conversion -> hab ----
+    _fr_p = _fr_nh3 = 0.0
     if 'POLY_FIBER' in N:
-        fr_kg = R(DR.val(DR.load(), 'POLYMERS.textile.fr_pickup_frac') * pp_in * DR.val(DR.load(), 'POLYMERS.textile.spin_yield'))
+        fr_pickup = R(DR.val(DR.load(), 'POLYMERS.textile.fr_pickup_frac') * pp_in * DR.val(DR.load(), 'POLYMERS.textile.spin_yield'))
+        # X-QA-11 (A-M-502): the FR finish is the on-site diammonium-phosphate class - the fab phosphorus
+        # line's H3PO4 neutralized with the ammonia line (H3PO4 + 2 NH3 -> (NH4)2HPO4, mass-exact on the
+        # element-mass table; the phosphate-char finish mechanism). Where the phosphorus or ammonia line
+        # does not exist at a locale, the textile runs unfinished (that locale's FR basis is its own pass).
+        _fr_live = ((N.get('WS_PHOS') or {}).get('presence') == 'present'
+                    and (N.get('WS_AMMONIA') or {}).get('presence') == 'present')
+        _fr_p = R(fr_pickup*97.994/132.056) if _fr_live else 0.0       # H3PO4 per (NH4)2HPO4
+        _fr_nh3 = R(fr_pickup*34.062/132.056) if _fr_live else 0.0     # 2 NH3 per (NH4)2HPO4
+        fr_kg = fr_pickup if _fr_live else 0.0
         textile = R(pp_in * DR.val(DR.load(), 'POLYMERS.textile.spin_yield') + fr_kg)
         scrap = R(pp_in - pp_in * DR.val(DR.load(), 'POLYMERS.textile.spin_yield'))
         tput = [('STOCK_TO_FIBER', 'POLY_STOCK', 'POLY_FIBER', 'POLYMERS', 'POLYMERS', 'L',
                  'PP pellet draw to the melt-spin line', pp_in,
                  f'PP feed at the {DR.val(DR.load(), "POLYMERS.textile.spin_yield"):.0%} spin yield (A-M-429).'),
-                ('FR_FINISH', 'NORTH_DOCK', 'POLY_FIBER', 'DOCK', 'POLYMERS', 'L',
-                 'phosphorus-FR finish (reagent manifest)', fr_kg,
-                 'FR pick-up ~2 % of fibre; D-DOCK reagent import per A-M-225 (in-plant synthesis = locale upgrade).'),
+                ('IA-FR-P', 'WS_PHOS', 'POLY_FIBER', 'FAB', 'POLYMERS', 'L',
+                 'phosphoric acid of the phosphate-FR finish', _fr_p,
+                 f'H3PO4 + 2 NH3 -> (NH4)2HPO4 on the finish pick-up {fr_pickup:.4f} kg/d at 2 % of fibre '
+                 f'(A-M-225 basis; A-M-502): {fr_pickup*97.994/132.056:.6f} kg/d acid, on site (X-QA-11).'),
+                ('IA-FR-NH3', 'WS_AMMONIA', 'POLY_FIBER', 'FAB', 'POLYMERS', 'L',
+                 'ammonia of the phosphate-FR finish', _fr_nh3,
+                 f'the neutralizer half of the (NH4)2HPO4 finish, {fr_pickup*34.062/132.056:.6f} kg/d '
+                 f'(A-M-502; the ammonia line re-solves on IA-NH3-SRC in balance.physics).'),
                 ('FIBER_SCRAP', 'POLY_FIBER', 'LEACH_CSTR_1', 'POLYMERS', 'DIGESTER', 'L',
                  'spin scrap to the solids line', scrap,
                  'spin waste, PP leach-inert (the POLY_TO_WET class).'),
@@ -728,6 +796,27 @@ def apply(g=None, write=False):
                 src['rate'] = rate(val_, f'{why} | {TAG}.')
                 g['edges'].append(src)
                 E[sid] = src
+            b = E['S34B'].setdefault('params', {}).setdefault('pre_fr_kg_d', float(E['S34B']['rate']['value'] or 0))
+            E['S34B']['rate'] = {'value': round(b - _fr_p, 6), 'unit': 'kg/d', 'status': 'study',
+                                 'note': f'{TAG}: the WS_PHOS H3PO4 product splits to the bench {b:.4f} less the '
+                                         f'FR finish draw {_fr_p:.6f} kg/d on IA-FR-P (X-QA-11, A-M-502).'}
+    # the finish compound forms in-bath from the two reactant draws where the spin line runs; where a
+    # locale eliminates the line the finish demand retires with it - either way the dock line retires
+    fin = next((x for x in g['edges'] if x['stream_id'] == 'FR_FINISH'), None)
+    if fin is not None:
+        fin['presence'] = 'retired'
+        for k in ('dock_class', 'dock_pending_task'):
+            (fin.setdefault('params', {})).pop(k, None)
+        fin['rate'] = {'value': 0.0, 'unit': 'kg/d', 'status': 'study',
+                       'note': f'Retired by the on-site phosphate-FR finish (X-QA-11, A-M-502): the '
+                               f'(NH4)2HPO4 compound forms in-bath on IA-FR-P (fab H3PO4) and IA-FR-NH3 '
+                               f'(ammonia line) where the spin line runs; where a locale eliminates the line '
+                               f'the demand retires with it. Was the D-DOCK reagent import (A-M-225).'}
+    if _fr_p > 0 and 'S34B' in E:
+        b = E['S34B'].setdefault('params', {}).setdefault('pre_fr_kg_d', float(E['S34B']['rate']['value'] or 0))
+        E['S34B']['rate'] = {'value': round(b - _fr_p, 6), 'unit': 'kg/d', 'status': 'study',
+                             'note': f'{TAG}: the WS_PHOS H3PO4 product splits to the bench {b:.4f} less the '
+                                     f'FR finish draw {_fr_p:.6f} kg/d on IA-FR-P (X-QA-11, A-M-502).'}
     cut1_out = float(s['E']['CUT-1-OUT']['rate']['value'] or 0)
     put('IA-C5-SHIP', R(float(s['E']['CUT-1']['rate']['value'] or 0)) - cut1_out - spf,
         f'X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset {cut1_out:.4f} and the '
@@ -820,10 +909,10 @@ def stamp(g, s):
     st('MG_POT', source=src_f, mg_kg_d=round(s['mg_ti'], 4), mgcl2_return_kg_d=round(s['mgcl2_ret'], 4),
        mgcl2_makeup_kg_d=round(s['mgcl2_mu'], 4), cl2_kg_d=round(s['cl2_ti'], 4), chemistry='MgCl2 -> Mg + Cl2, '
        '700 C (AQS-BAL-KROLL closure)', **pe['MG_POT'],
-       basis='Kroll Mg recycle at the 0.50 kg/d Ti line; CaCl2-MgCl2 brine make-up covers the drag-out (A-M-284)')
+       basis='Kroll Mg recycle at the 0.50 kg/d Ti line; the brine-recovery crystallizer BRINE_CRYS covers the drag-out (X-QA-11, A-M-496)')
     st('CA_POT', source=src_f, ca_kg_d=round(s['ca'], 6), cacl2_kg_d=round(s['cacl2'], 6), cl2_kg_d=round(s['ca_cl2'], 6),
        chemistry='CaCl2 -> Ca + Cl2, 700 C', **pe['CA_POT'],
-       basis='grease-thickener Ca line (AQS-DUTY-GREASE 0.1 kg/d Ca(OH)2); brine import per A-M-284')
+       basis='grease-thickener Ca line (AQS-DUTY-GREASE 0.1 kg/d Ca(OH)2); brine recovered on site by BRINE_CRYS (X-QA-11, A-M-496)')
     st('TI_CELL', source=src_f, ti_kg_d=s['ti'], tio2_kg_d=round(s['tio2'], 4), c_kg_d=round(s['c_ti'], 4),
        cl2_kg_d=round(s['cl2_ti'], 4), mg_kg_d=round(s['mg_ti'], 4), mgcl2_gross_kg_d=round(s['mgcl2_g'], 4),
        co_kg_d=round(s['co_ti'], 4), chemistry='TiO2 + 2C + 2Cl2 -> TiCl4 + 2CO; TiCl4 + 2Mg -> Ti + 2MgCl2 (AQS-BAL-KROLL)',
@@ -840,7 +929,7 @@ def stamp(g, s):
        basis='Kroll MgCl2-class drag-out (A-M-284); salt-flux cover for the Al-charged melt')
     # investment train: live (A-M-286)
     st('WAX_PATTERN', source=src_f, wax_kg_d=round(s['wx'], 4), makeup_kg_d=round(s['wx_mu'], 4),
-       reclaim_kg_d=round(s['wx_recl'], 4), basis='1 kg wax per kg castings, 90 % reclaim (A-M-286)')
+       reclaim_kg_d=round(s['wx_recl'], 4), basis='1 kg wax per kg castings, 90 % reclaim; make-up is the C19-C28 cut blend (A-M-286, A-M-498)')
     st('SHELL_BUILD', source=src_f, shell_kg_d=round(s['sh'], 4), silica_makeup_kg_d=round(s['sh_mu'], 4),
        reclaim_kg_d=round(s['sh_recl'], 4), basis='6-dip shell 4 kg/kg castings, 87.5 % reclaim (A-M-286)')
     st('SHELL_BURNOUT', source=src_f, shell_kg_d=round(s['sh'], 4), wax_reclaim_kg_d=round(s['wx_recl'], 4),
@@ -972,7 +1061,7 @@ def stamp(g, s):
     ]:
         rho_feed = 1800.0
         cad(u, 'pot_cell', 'cell', D_hold(dc['feed_kg_d'], rho_feed, 0.5), dc, 'live',
-            f'cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at '
+            f'cell-class study minimum; live on the pot feeds - the dock oxide concentrates and the recovered brine (A-M-284, A-M-496); bath 0.5 d hold at '
             f'{rho_feed:.0f} kg/m3, electrodes and busbar from the Faraday current (A-M-282)')
     # foundry: Kroll train (chlorinator + retort, live)
     cad('TI_CELL', 'kroll_train', 'cell', D_hold(s['tio2'] + s['c_ti'], 1800.0, 1.0),
@@ -987,7 +1076,7 @@ def stamp(g, s):
     cad('WAX_PATTERN', 'bench_prep', 'prep', D_hold(s['wx'], 1000.0, 1.0),
         dict(bench='wax pattern injection bench', wax_kg_d=round(s['wx'], 4), makeup_kg_d=round(s['wx_mu'], 4),
              reclaim_kg_d=round(s['wx_recl'], 4), injector_kW=0.5, pot_L=10),
-        'live', 'prep-class study minimum; live on the wax make-up import + 90 % reclaim (A-M-286)')
+        'live', 'prep-class study minimum; live on the C19-C28 cut blend make-up + 90 % reclaim (A-M-286, A-M-498)')
     cad('SHELL_BUILD', 'line_machine', 'forming', D_hold(s['sh'], 1600.0, 1.0),
         dict(machine='dip-coat + stucco rainfall shell-building booth', shell_kg_d=round(s['sh'], 4),
              silica_makeup_kg_d=round(s['sh_mu'], 4), reclaim_kg_d=round(s['sh_recl'], 4), dips=6, slurry_L=40),
