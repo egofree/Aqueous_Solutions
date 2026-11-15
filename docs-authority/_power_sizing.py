@@ -38,7 +38,6 @@ GEN=BF.rating_kw(_gc, _d)
 GEN_KW=GEN['rated_kW']
 CRIT=BF.critical_list(_gc,_d)
 INV=_gc['SOL_ARK_60K']['params']['kW']/max(_gc['SOL_ARK_60K']['params'].get('count',1),1)
-CRIT=BF.critical_list(_gc,_d)
 NOT_DEMAND={'SOL_ARK_60K','PV_ARRAY','ZNBR2','FUEL_CELL','MEOH_FC','BACKUP_GEN','BOUNDARY_EXPORT','EXT_HALL'}
 def _kw(n):
     q=n.get('continuous_kw'); v=q.get('value') if isinstance(q,dict) else q

@@ -18,16 +18,15 @@ Executes flow_graph/param/regen_manifest.json (data, not code):
      only what THIS run re-derived and observed byte-stable: a failed or oscillating stage
      disqualifies exactly its own outputs, never the rest of the tree (2026-11-03, U4c).
      docs-authority/_rev_stamp.py reads it as a provenance manifest. The receipt is tracked
-     and committed.
-  4. Input manifest: flow_graph/derived/_input_manifest.json (written on the same full runs as
-     the receipt): per stage, the hash of every project file the stage (or anything it spawned)
-     actually opened for reading, hashed once after the run settled, plus the stage's final-pass
-     status. Staleness from content, not commit order. _rev_stamp.py evaluates this rule in
-     parallel with its committed rule until the two agree on every file (step 5 removes the
-     committed-rule bookkeeping).
-     and deterministic: it holds no timings, pass counts or argv, so a full run on a clean,
+     and committed, and deterministic: it holds no timings, pass counts or argv, so a full run on a clean,
      converged tree rewrites it byte-identically. Run details (durations, passes, per-pass
      graph shas) go to the untracked run log flow_graph/derived/_regen_run.json.
+  4. Input manifest: flow_graph/derived/_input_manifest.json (written on the same full runs as
+     the receipt): per stage, the hash of every project data file the stage (or anything it
+     spawned) actually opened for reading, hashed once after the run settled, plus the stage's
+     final-pass status. Staleness from content, not commit order. _rev_stamp.py evaluates this
+     rule in parallel with its committed rule until the two agree on every file (step 5 removes
+     the committed-rule bookkeeping).
 
 Modes: --quick = the write_graph solver stages only (what-if; no doc regen, no receipt write -- a
 partial run must not clobber the full-run provenance receipt). --check = staleness verification

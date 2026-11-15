@@ -74,3 +74,15 @@ Each step is a separate commit, reversible by reverting that commit, and passes
    misfit and balance tests.
 7. Decide tracked versus derived for CAD outputs (X-QA-14) and apply it for new commits only;
    published history is not rewritten. Check: `git lfs ls-files` covers the agreed patterns.
+
+## 4. Status (2026-11-15)
+
+Steps 1-2 done. Step 3 done: the pot-cell and header stamps land at their writers and the
+remaining builder families read the graph directly (tranches on step3 / step3-t2, merged in
+the consolidation). Step 4 done: the input-hash manifest is written beside the receipt and
+`_rev_stamp.py` evaluates it in parallel; the two rules agreed on every registered file at
+the settled tree (2057 of 2063 measured, zero disagreements). Steps 5-7 next, in order.
+The 2026-11-15 audit (exceptions and duplication) ranks the remaining consolidation:
+params.json completion, the shared stamp/graph-io helpers, the step-5 gate flip (with a
+per-stage code fingerprint so `regen --check` stays honest about code edits), then the
+step-6 solve fold.
