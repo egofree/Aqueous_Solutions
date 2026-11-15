@@ -1,0 +1,10 @@
+{
+ "mass_flow": {"grid_unit": "g/d", "display_unit": "kg/d", "per_display": 1000},
+ "energy_flow": {"grid_unit": "Wh/d", "display_unit": "kWh/d", "per_display": 1000},
+ "power": {"grid_unit": "W", "display_unit": "kW", "per_display": 1000},
+ "length": {"grid_unit": "mm", "display_unit": "mm", "per_display": 1},
+ "volume": {"grid_unit": "L", "display_unit": "m3", "per_display": 1000},
+ "mass": {"grid_unit": "g", "display_unit": "kg", "per_display": 1000},
+ "dimensionless": {"grid_unit": "1", "display_unit": "1", "per_display": 1},
+ "_owner": "engine v2: quantities are integer counts of grid units; the grid is declared data (owner ruling 2026-11-15: parametric, never hard-coded). Changing a scale here is a data edit; every dimension a model field uses must be declared."
+}
