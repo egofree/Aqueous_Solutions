@@ -18,6 +18,13 @@ Executes flow_graph/param/regen_manifest.json (data, not code):
      only what THIS run re-derived and observed byte-stable: a failed or oscillating stage
      disqualifies exactly its own outputs, never the rest of the tree (2026-11-03, U4c).
      docs-authority/_rev_stamp.py reads it as a provenance manifest. The receipt is tracked
+     and committed.
+  4. Input manifest: flow_graph/derived/_input_manifest.json (written on the same full runs as
+     the receipt): per stage, the hash of every project file the stage (or anything it spawned)
+     actually opened for reading, hashed once after the run settled, plus the stage's final-pass
+     status. Staleness from content, not commit order. _rev_stamp.py evaluates this rule in
+     parallel with its committed rule until the two agree on every file (step 5 removes the
+     committed-rule bookkeeping).
      and deterministic: it holds no timings, pass counts or argv, so a full run on a clean,
      converged tree rewrites it byte-identically. Run details (durations, passes, per-pass
      graph shas) go to the untracked run log flow_graph/derived/_regen_run.json.
@@ -93,7 +100,7 @@ def doc_snapshot(stages):
         files.update(os.path.join(ROOT, a) for a in s.get('amends', []))
     return {f: gsha(f) for f in sorted(files) if os.path.isfile(f)}
 
-def run_one(stage, env, entries, graph_path, pass_no):
+def run_one(stage, env, entries, graph_path, pass_no, capture=None, capture_base=None):
     """Run one stage, append its receipt entry (status, duration, pass, graph sha after the stage)."""
     miss = missing_tools(stage)
     if miss:
@@ -102,10 +109,27 @@ def run_one(stage, env, entries, graph_path, pass_no):
         print(f"[{stage['name']}] skipped: needs {', '.join(miss)}; its committed outputs are kept", flush=True)
         return True
     from .design_lock import pass_fds as lock_pass_fds
+    # Step 4 input capture: run the stage under the read-auditing wrapper, then merge the
+    # sidecars the stage and its grandchildren dumped. A stage whose argv is not the plain
+    # `python3 -m <module>` shape runs unwrapped and is marked capture-incomplete.
+    argv, wrapped = stage['argv'], False
+    if capture is not None and len(stage['argv']) >= 3 and stage['argv'][1] == '-m':
+        from . import input_audit
+        argv = ['python3', '-m', 'flow_graph.param.input_audit', '--capture', capture_base, '--'] + stage['argv']
+        wrapped = True
     t0 = time.monotonic()
-    r = subprocess.run(stage['argv'], cwd=ROOT, env=env, capture_output=True, text=True,
+    r = subprocess.run(argv, cwd=ROOT, env=env, capture_output=True, text=True,
                        pass_fds=lock_pass_fds())
     dt = time.monotonic() - t0
+    if wrapped:
+        from . import input_manifest as IM
+        c = capture.setdefault(stage['name'], {'paths': set(), 'status': None, 'complete': True})
+        paths, seen = input_audit.merge_sidecars(capture_base)
+        c['paths'].update(paths)
+        c['status'] = 'ok' if r.returncode == 0 else f'rc={r.returncode}'
+        if not seen:
+            c['complete'] = False
+        del IM
     entry = {'name': stage['name'], 'argv': stage['argv'], 'pass': pass_no, 'seconds': round(dt, 2),
              'status': 'ok' if r.returncode == 0 else f'rc={r.returncode}',
              'post_graph_sha256': gsha(graph_path)}
@@ -240,8 +264,28 @@ def main(argv=None):
         release(lock)
 
 
+def _write_capture_shim():
+    """A sitecustomize shim so spawned grandchildren install the read hook too."""
+    d = os.path.join(ROOT, '.aqs-shim')
+    os.makedirs(d, exist_ok=True)
+    with open(os.path.join(d, 'sitecustomize.py'), 'w') as f:
+        f.write('try:\n    import input_audit\n    input_audit.install()\nexcept Exception:\n    pass\n')
+    return d
+
+
 def _run(args, m, sel, loop_stages, doc_stages, graph_path, receipt_path):
     env = child_env()
+    # Step 4 (input-hash manifest): only a full run captures; a quick or stage-selection
+    # run writes no provenance, matching the receipt rule above.
+    capture, capture_base = None, os.path.join(ROOT, 'flow_graph/derived/_input_audit')
+    if not (args.quick or args.stage):
+        capture = {}
+        env = dict(env)
+        env.pop('AQS_INPUT_AUDIT', None)          # a stale value from the caller's shell
+        env['AQS_INPUT_AUDIT'] = capture_base
+        shim = _write_capture_shim()
+        env['PYTHONPATH'] = os.pathsep.join([shim, os.path.join(ROOT, 'flow_graph', 'param')]
+                                            + ([env['PYTHONPATH']] if env.get('PYTHONPATH') else []))
     t_start = time.monotonic()
     entries, failed = [], []
 
@@ -252,7 +296,7 @@ def _run(args, m, sel, loop_stages, doc_stages, graph_path, receipt_path):
             passes = p
             print(f"--- graph pass {p} (sha {prev[:12]})", flush=True)
             for s in loop_stages:
-                if not run_one(s, env, entries, graph_path, p):
+                if not run_one(s, env, entries, graph_path, p, capture, capture_base):
                     failed.append(s['name']); break
             if failed: break
             cur = gsha(graph_path)
@@ -273,7 +317,7 @@ def _run(args, m, sel, loop_stages, doc_stages, graph_path, receipt_path):
         for p in range(1, args.max_passes + 1):
             doc_passes = p
             for s in doc_stages:
-                if not run_one(s, env, entries, graph_path, 0):   # pass 0 = doc phase, after convergence
+                if not run_one(s, env, entries, graph_path, 0, capture, capture_base):   # pass 0 = doc phase, after convergence
                     failed.append(s['name']); doc_aborted = True; break
             if failed or args.stage: break
             after = doc_snapshot(doc_stages)
@@ -324,6 +368,12 @@ def _run(args, m, sel, loop_stages, doc_stages, graph_path, receipt_path):
         'vouched_files': vouched_files,
     }
     with open(receipt_path, 'w') as f: json.dump(receipt, f, indent=1); f.write('\n')
+    if capture is not None:
+        from . import input_manifest as IM
+        im = IM.build(capture, ROOT, final_sha)
+        IM.write(im, ROOT)
+        n_in = sum(len(v['inputs']) for v in im['stages'].values())
+        print(f"input manifest: {IM.MANIFEST_NAME} ({len(im['stages'])} stages, {n_in} recorded input files)")
     run_log = {'argv': sys.argv[1:], 'graph_sha256': final_sha, 'passes': passes, 'doc_passes': doc_passes, 'seconds': round(total, 2),
                'converged': not failed, 'failed': failed, 'stages': entries}
     with open(os.path.join(os.path.dirname(receipt_path), RUN_LOG_NAME), 'w') as f: json.dump(run_log, f, indent=1)

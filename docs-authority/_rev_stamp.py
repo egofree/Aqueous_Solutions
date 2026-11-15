@@ -27,7 +27,8 @@ CLASS = {'media/logo3.png': 'artwork, not derived', 'media/verify_view*.png': 'm
 BY_DESIGN = {
     'docs-authority/sizing/SANITATION.md': 'X-SAN-01 graph-writer module (flow_graph/param/sanitation.py); owner-lane port pending (R11 close-out)',
     'media/_generated.json': 'the manifest that lists generated media and the graph each was made from (regen_derived.py)',
-    'flow_graph/derived/_regen_receipt.json': 'manifest mechanism itself (U3 regen provenance receipt)'}
+    'flow_graph/derived/_regen_receipt.json': 'manifest mechanism itself (U3 regen provenance receipt)',
+    'flow_graph/derived/_input_manifest.json': 'manifest mechanism itself (input-hash staleness manifest, pipeline step 4)'}
 FILE_MANIFESTS = ['docs-authority/sizing/REACTOR_DESIGN._generated.json']
 RECEIPT = 'flow_graph/derived/_regen_receipt.json'
 def git(*a): return subprocess.run(['git', *a], cwd=ROOT, capture_output=True, text=True, check=True).stdout
@@ -111,8 +112,35 @@ def render(rows, n, rev):
           '| File | Status |', '|---|---|'] + [f'| `{a}` | {c} |' for a, b, c in rows]
     return '\n'.join(md) + '\n'
 
+def input_census(rows):
+    """Evaluate the step-4 input-hash rule alongside the committed rule and print the agreement.
+
+    Parallel period (2026-11-04 plan step 4): the gate follows the committed rule; this reports
+    where the two rules disagree, until they agree on every file and step 5 retires the
+    committed-rule bookkeeping. Missing manifest = pre-gate: a warning, not a failure.
+    """
+    sys.path.insert(0, ROOT)
+    from flow_graph.param import input_manifest as IM
+    im = IM.load(ROOT)
+    if im is None:
+        print('input-hash rule: manifest absent (pre-gate); the gate follows the committed rule')
+        return
+    sm = IM.output_stage_map(_MAN, ROOT)
+    old = {r[0]: r[2] for r in rows if r[2] in ('current', 'stale')}
+    c = IM.census(im, sm, ROOT, old)
+    print(f"input-hash rule: {c['agree']} agree, {len(c['input_stale'])} input-stale "
+          f"(committed rule says current), {len(c['input_fresh'])} input-fresh (committed rule says stale), "
+          f"{c['unmeasured']} unmeasured (no-stage / no-entry / capture-incomplete)")
+    for f in c['input_stale'][:12]:
+        v, detail = IM.verdict(im, sm, f, ROOT)
+        print(f"  input-stale: {f} ({detail})")
+    if len(c['input_stale']) > 12:
+        print(f'  ... and {len(c["input_stale"]) - 12} more')
+
+
 def main():
     rows, n, bad, rev, head_g = compute()
+    input_census(rows)
     if '--report' in sys.argv:
         print(f'graph revision {rev}, last graph commit {head_g[0][:7]}')
         for a, b, c in rows: print(f'{a}\t{b}\t{c}')
