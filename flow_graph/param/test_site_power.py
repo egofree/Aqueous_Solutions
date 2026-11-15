@@ -62,6 +62,26 @@ def test_portfolio_rules(base):
     assert 'hours entry' in _err(p)
 
 
+def test_fission_enters_with_its_completed_study(base):
+    """Q-024 revision (2026-11-15): a flagged-kind source enters a balance as a designed source when the
+    entry carries its completed study - a study id and the profile record it closes (F-20261113-01).
+    Without the study, or with a record the profile does not carry, it still fails exactly as before."""
+    p = copy.deepcopy(base); s = _src(p)
+    s[0]['share'] = 0.5
+    s.append({'id': 'fission', 'kind': 'fission', 'unit': 'GEO_ORC', 'role': 'primary', 'share': 0.5,
+              'capacity_factor': 0.9, 'stretch_output_frac': 1.0, 'ref': 'NASA_FSP', 'register': 'test',
+              'study': {'id': 'F-20261113-01', 'record': 'power_portfolio.absent'}})
+    assert 'only as a flagged option' in _err(p)     # the study's record is not in the profile
+    p['groups']['power_portfolio']['entries']['dust_stretch_design'] = {
+        'value': {'pv_stretch_output_frac': 0.3}, 'units': '-', 'register': 'test'}
+    _src(p)[-1]['study']['record'] = 'power_portfolio.dust_stretch_design'
+    _src(p).append({'id': 'rtg', 'kind': 'other', 'unit': 'MMRTG', 'role': 'backup', 'ref': 'NASA_RTG',
+                    'register': 'test', 'study': {'id': 'F-20261113-01', 'record': 'power_portfolio.dust_stretch_design'}})
+    assert _err(p) == ''                             # designed sources with their completed study
+    del _src(p)[-1]['study']
+    assert 'only as a flagged option' in _err(p)     # without it, the old refusal stands
+
+
 def test_multi_day_stretch_waits_for_the_seasonal_model(base):
     p = copy.deepcopy(base); p['groups']['solar']['entries']['night_hours']['value'] = 72.0
     assert 'seasonal storage model' in _err(p)

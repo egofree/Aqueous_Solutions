@@ -1618,6 +1618,38 @@
       }
     },
     {
+      "unit_id": "FSP_40K",
+      "sector_id": "ELEC",
+      "presence": "placeholder",
+      "class": "fission",
+      "tags": [
+        "fission",
+        "FSP",
+        "site_model"
+      ],
+      "electrical_role": "generation",
+      "diagram_gap": null,
+      "notes": "Surface fission, NASA Fission Surface Power class: the mars locale's dust-season base load carrier (study F-20261113-01 complete; enters the balance as a designed source under the Q-024 revision of 2026-11-15). 40 kW_e per unit; the installed count solves at the locale from the profile's dust-stretch design record (flow_graph/param/site_units) as the dust deficit over the unit rating with one N+1 spare. presence stays placeholder and continuous_kw stays null at the reference plant: the Earth reference carries no fission unit.",
+      "enabled": true,
+      "continuous_kw": {
+        "value": null,
+        "unit": "kW",
+        "status": "study",
+        "note": "designed for the mars locale; sized and placed at the locale design pass (site_units)"
+      },
+      "modules": [],
+      "params": {
+        "status": "designed_at_locale",
+        "definition": "surface fission power unit, uranium-fueled, NASA Fission Surface Power class (Stirling conversion, Kilopower heritage)",
+        "method": "count = ceil(dust-season deficit / unit_kW_e) + 1 spare; deficit = demand - PV output at the dust fraction, through the portfolio worst-stretch balance",
+        "unit_kW_e": 40.0,
+        "ref": "NASA_FSP",
+        "study": "F-20261113-01",
+        "study_record": "power_portfolio.dust_stretch_design",
+        "presence": "placeholder"
+      }
+    },
+    {
       "unit_id": "FUEL_CELL",
       "sector_id": "ELEC",
       "presence": "present",
@@ -2837,6 +2869,38 @@
           800
         ],
         "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      }
+    },
+    {
+      "unit_id": "MMRTG",
+      "sector_id": "ELEC",
+      "presence": "placeholder",
+      "class": "rtg",
+      "tags": [
+        "rtg",
+        "MMRTG",
+        "site_model"
+      ],
+      "electrical_role": "generation",
+      "diagram_gap": null,
+      "notes": "Radioisotope thermoelectric generator, NASA MMRTG class (Pu-238 general-purpose heat source): the extreme-reliability W-class trickle that keeps controls and instruments alive through a loss of both PV and fission (study F-20261113-01 complete; Q-024 revision of 2026-11-15). About 110 W_e at beginning of mission per unit; the count solves at the locale from the backup_fuel critical list's controls slice (flow_graph/param/site_units). presence stays placeholder and continuous_kw stays null at the reference plant.",
+      "enabled": true,
+      "continuous_kw": {
+        "value": null,
+        "unit": "kW",
+        "status": "study",
+        "note": "designed for the mars locale; sized and placed at the locale design pass (site_units)"
+      },
+      "modules": [],
+      "params": {
+        "status": "designed_at_locale",
+        "definition": "radioisotope thermoelectric generator, NASA MMRTG class (Pu-238 GPHS, thermoelectric conversion)",
+        "method": "count = ceil(controls-and-instruments trickle / unit_W_e); the kW-class criticals stay on the fission base and the fuel cell",
+        "unit_W_e": 110.0,
+        "ref": "NASA_RTG",
+        "study": "F-20261113-01",
+        "study_record": "power_portfolio.dust_stretch_design",
+        "presence": "placeholder"
       }
     },
     {
