@@ -211,7 +211,8 @@ def main(argv=None):
     if args.site and args.all_sites: raise SystemExit('give --site or --all-sites, not both')
     if args.site == 'baseline': os.environ['AQS_SITE'] = 'baseline'
     elif args.site:                                   # a locale: temporary worktree, outputs to sites/<site_id>/
-        return SO.run(args.site, check=args.check)
+        extra = (['--cad'] if args.cad else []) + (['--max-passes', str(args.max_passes)] if args.max_passes != 4 else [])
+        return SO.run(args.site, check=args.check, extra=extra)
     if args.all_sites:
         rest = [a for a in (argv if argv is not None else sys.argv[1:]) if a != '--all-sites']
         rc = main(rest + ['--site', 'baseline'])

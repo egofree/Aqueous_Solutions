@@ -175,6 +175,14 @@
      "ref": "NASA_MARS_FACT",
      "note": "Mars sol 24.66 h; night approximately half the sol (NASA_MARS_FACT)",
      "binds": "night_hours"
+    },
+    "dust_stretch_d": {
+     "value": 90,
+     "units": "d (sols) of dust-limited PV output",
+     "ref": "NASA_MARS_FACT",
+     "needs_verification": true,
+     "verification_test": "In-situ optical-depth record through one dust season at the landing site, backed by an orbital opacity survey",
+     "note": "Design-basis dust season: the 2018 planet-encircling dust event held surface PV to a small fraction of clear-sol output for about three months (orbital colour-imager record, June-August 2018, full decay through September). The dust-season energy figures in power_portfolio.dust_stretch_design scale linearly with this duration."
     }
    }
   },
@@ -361,14 +369,41 @@
     "sources": {
      "value": [
       {
+       "id": "fission",
+       "kind": "fission",
+       "unit": "FSP_40K",
+       "role": "primary",
+       "share": 0.65,
+       "capacity_factor": 0.9,
+       "stretch_output_frac": 1.0,
+       "ref": "NASA_FSP",
+       "study": {
+        "id": "F-20261113-01",
+        "record": "power_portfolio.dust_stretch_design"
+       },
+       "register": "AQS-PLAN-011 section 5.5; the dust-season base load carrier; capacity factor 0.9 is the baseload availability with the planned-outage allowance; study complete, enters the balance as a designed source under the Q-024 revision (2026-11-15)"
+      },
+      {
        "id": "pv",
        "kind": "pv",
        "unit": "PV_ARRAY",
        "role": "primary",
-       "share": 1.0,
+       "share": 0.35,
        "stretch_output_frac": 0.3,
        "resource": "solar.pv_yield_kWh_kWp_d",
        "register": "AQS-DUTY-012; Q-024; dust settling 0.28 percent loss per sol"
+      },
+      {
+       "id": "rtg",
+       "kind": "other",
+       "unit": "MMRTG",
+       "role": "backup",
+       "ref": "NASA_RTG",
+       "study": {
+        "id": "F-20261113-01",
+        "record": "power_portfolio.dust_stretch_design"
+       },
+       "register": "AQS-ELEC-007 critical list; the controls-and-instruments trickle that rides out a loss of both PV and fission; study complete, enters the portfolio as a designed source under the Q-024 revision (2026-11-15)"
       },
       {
        "id": "fuel_cell",
@@ -379,7 +414,7 @@
       }
      ],
      "units": "-",
-     "register": "AQS-PLAN-011 section 8.2"
+     "register": "AQS-PLAN-011 section 8.2 (fission and RTG enter as designed sources with their completed study F-20261113-01; Q-024 revision 2026-11-15)"
     },
     "storage": {
      "value": [
@@ -400,6 +435,65 @@
      },
      "units": "-",
      "register": "AQS-PLAN-011 section 8.2"
+    },
+    "dust_stretch_design": {
+     "value": {
+      "kind": "night_and_dust",
+      "days_entry": "solar.dust_stretch_d",
+      "pv_stretch_output_frac": 0.3,
+      "study": "F-20261113-01 mars surface-power design study, complete; the mix enters power_portfolio.sources as designed sources under the Q-024 revision (2026-11-15); the installed counts solve in flow_graph/param/site_units from the portfolio balance and the backup_fuel critical list",
+      "load_book": {
+       "plant_demand_kW": 103.2,
+       "daily_energy_kWh": 2476.8,
+       "night_stretch_h": 12.33,
+       "night_store_delivered_kWh": 267.3,
+       "night_store_charged_kWh": 381.9,
+       "night_store_coverage": 4.76,
+       "critical_load_kW": 14.6,
+       "controls_trickle_kW": 2.0,
+       "critical_autonomy_d": 2.0,
+       "register": "graph demand at the base plate (mvs.electrical.need_kw less the EXT_HALL roof extension, which a non-roof locale does not build); AQS-PLAN-011 section 5.5 worst-stretch balance; backup_fuel critical list (AQS-ELEC-007)"
+      },
+      "roof_verdict": {
+       "pv_need_at_base_kWp": 2835,
+       "roof_capacity_at_base_kWp": 38,
+       "roof_capacity_at_max_grid_kWp": 15201,
+       "pv_need_at_max_grid_kWp": 15859,
+       "verdict": "PV-only cannot close at any footprint: the need at the base plate is 75 x the base-plate roof, and the extension envelope load at the minus 89 C heating design grows the demand faster than the array grows the roof (best gap on the whole bay-grid growth range minus 658 kWp)",
+       "register": "solver.roof_close bay-grid scan at the mars profile"
+      },
+      "fission": {
+       "kind": "surface fission, NASA Fission Surface Power class, uranium fueled (Kilopower heritage)",
+       "unit_kW_e": 40.0,
+       "study_duty_units_pv_only_balance": 2,
+       "study_installed_units_pv_only_balance": 3,
+       "study_carries_kW_e": 80.0,
+       "basis": "NASA Fission Surface Power 40 kW electric-class unit; the study booked the PV-only-balance dust deficit 67.8 kW / 40 kW per unit = 1.69 -> 2 duty units plus one installed spare (N+1), at PV share 1.0. The fission carrier is dust-blind: it delivers 100 percent through the stretch",
+       "status": "designed source (study F-20261113-01 complete; Q-024 revision 2026-11-15); the installed count solves in flow_graph/param/site_units at the issued mix shares and is stamped on the FSP_40K graph node"
+      },
+      "rtg": {
+       "kind": "radioisotope thermoelectric generator, NASA MMRTG class (general-purpose heat source)",
+       "unit_W_e": 110.0,
+       "controls_trickle_units": 19,
+       "carries_kW_e": 2.09,
+       "basis": "MMRTG-class 110 W electric at beginning of mission; sized on the 2.0 kW controls-and-instruments slice of the critical list: 2000 W / 110 W = 18.2 -> 19 units at 2.09 kW electric, the extreme-reliability trickle that keeps controls alive through a loss of both PV and fission. The full 14.6 kW critical list on RTGs would need 133 units and is rejected as incommensurate; kilowatt-class criticals stay on the fission base with the fuel cell and battery as the diverse backups (AQS-ELEC-007)",
+       "status": "designed source (study F-20261113-01 complete; Q-024 revision 2026-11-15); the count solves in flow_graph/param/site_units from the backup_fuel critical list and is stamped on the MMRTG graph node"
+      },
+      "dust_season_store": {
+       "dust_demand_kWh": 222914,
+       "pv_dust_output_kWh": 24489,
+       "pv_only_store_kWh": 198425,
+       "pv_only_charge_sols": 65.7,
+       "pv_only_store_vs_bank": 156,
+       "installed_bank_kWh": 1273,
+       "verdict": "a PV-only dust-season store is rejected: 198.4 MWh is 156 x the night bank the locale books and needs 66 clear sols of the whole clear-sol surplus to charge before the storm",
+       "with_fission_base": "the night bank stays as built: ZNBR2 1273 kWh at the locale demand, night coverage 4.76; the fission base carries the 91.9 kW dust deficit, and the mix leaves a 60.8 MWh surplus over the 90 d season",
+       "ref": "NASA_MARS_FACT"
+      }
+     },
+     "units": "-",
+     "register": "AQS-SITE-009; AQS-PLAN-011 section 5.5; finding F-20261113-01",
+     "basis": "Sized from the profile load book on published bases: NASA Fission Surface Power (40 kW electric class), NASA MMRTG (110 W electric class), NASA_MARS_FACT (2018 global dust storm, dust-stretch duration in solar.dust_stretch_d). The dedicated reference keys register with the graph units when the study closes (Q-024)."
     },
     "oversize_factor": {
      "value": 2.0,
