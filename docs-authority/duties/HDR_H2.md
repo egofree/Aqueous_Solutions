@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - In 6.63 kg/d, out 6.63 kg/d. No holdup claimed.
 
-3. Material. PVC-U header: wet H₂ with sweep air and possible acid mist (M3). Ignition, not embrittlement, governs; the dilution basis is held. Metal parts bonded. AQS-REV-H2-001.
+3. Material. PVC-U, bonded. Basis: wet H2 with sweep air and possible acid mist off the EW cathode rows (graph design, AQS-DUTY-075): wet hydrogen is the M3 reducing service, so there is no metal wetted part - ignition, not embrittlement, governs (AQS-REV-H2-001) - and PVC-U carries the acid-mist condensate to its 60 C M5 limit (ISO1452_2). Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3). Alternative: CPVC if the header temperature class rises above the PVC-U 60 C class (M5); FRP for an outdoor run. metal parts bonded per the static rule; the dilution basis is held by the vent system; no measured rate (X-MAT-06 ruling carried). (X-QA-18)
 
 4. Nozzles. At 1.5 m/s and 1000 kg/m³ the bore is 0.26 mm. That is not a specification. Nozzle is DN15. No flange class. Atmospheric tube or hose. Not to the room.
 

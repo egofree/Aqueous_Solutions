@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - Duct at 10 m/s. Gas 0.5927 m³/h. Bore 5 mm, DN15. Not a packed tower.
 
-3. Material. 316L tube (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.
+3. Material. 316L tube. Basis: dry CO2 header at the ambient class (graph design, AQS-DUTY-075): neither the M3 wet-oxidant rule nor the M7 no-polymer rule applies to a dry gas held above its dew point, so the header keeps the one-tube family shared across the dry utility gas headers (CO2, plant air / N2, O2) for spares and handling. Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3). Alternative: CPVC or PP-H sections if a cold spot condenses carbonic acid (M3 then catches wet CO2); the N6 drain exists to prove the dry claim. the N6 drain and the N7 vent keep the header dry; no measured rate. (X-QA-18)
 
 4. Nozzles. Gas duct DN15 at 10 m/s. Bore from 0.5927 m³/h is 5 mm. Drain DN15. No flange class. Atmospheric. Vent DN15 into the suction of this loop, not the room.
 
