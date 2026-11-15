@@ -1,13 +1,20 @@
 """Input-read capture for the regen input-hash manifest (pipeline-simplification step 4).
 
 The regen orchestrator runs every stage under this wrapper. The wrapper installs a
-Python audit hook that records which project files the stage (and anything it spawns)
-actually opens for reading, then runs the stage unchanged. After the run the recorded
-path sets are hashed once and written to flow_graph/derived/_input_manifest.json.
+Python audit hook that records which project DATA files the stage (and anything it
+spawns) actually opens for reading, then runs the stage unchanged. After the run the
+recorded path sets are hashed once and written to flow_graph/derived/_input_manifest.json.
 
 Reading the real opens instead of trusting declared inputs is what closes the
 under-declaration risk the migration plan names for step 4: a generator whose inputs
 are under-declared still records everything it truly reads.
+
+Python source files are not recorded: a stage's own code and its imports are
+provenance-tracked by git itself (a code change is a commit, and the committed-rule
+and byte-stability machinery carry it), and recording them would make the manifest
+depend on the bytecode cache state of the tree (a fresh tree compiles and opens every
+module; a warm tree loads the cached bytecode and opens nothing), so it would never be
+idempotent.
 
 Mechanism:
 - regen.py runs each stage as
@@ -30,7 +37,9 @@ _root = None         # repository root; reads outside it are not inputs
 _base = None         # sidecar path prefix, from AQS_INPUT_AUDIT
 _paused = 0          # >0 while an evaluation-only reader (e.g. the staleness census) runs:
                      # its opens verify the tree, they are not generation inputs
-_EXCLUDE_SUFFIX = ('.pyc',)
+_EXCLUDE_SUFFIX = ('.pyc', '.py')    # the stage's own code and its imports: provenance-tracked
+                                     # by git itself, not data inputs; excluding them keeps the
+                                     # manifest identical on warm- and cold-bytecode trees
 _AUDIT_BASE = '_input_audit'
 _EXCLUDE_PARTS = ('.git', '__pycache__', '.aqs-shim')
 _EXCLUDE_NAMES = ('.aqs-design.lock', '_regen_receipt.json', '_regen_run.json',
