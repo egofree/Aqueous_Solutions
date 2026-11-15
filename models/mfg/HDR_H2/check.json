@@ -22,10 +22,10 @@
     "wall_mm": 3.38,
     "wall_basis": "lib/dn Sch 40 table (ASME B36.10M); the node states no schedule; the P1 class sheet carries Sch 80 at order (WORK_ORDER W12)",
     "id_mm": 26.94,
-    "id_grid_mm": 5.0,
-    "id_note": "AQS-DUTY-075 sizing: required id 5 mm at 8 m/s, seat minimum DN25; the DN-8 grid bore and the Sch 40 bore both seat DN25; nothing resized",
+    "id_grid_mm": 4.9,
+    "id_note": "AQS-DUTY-075 sizing: required id 4.9 mm at 8 m/s, seat minimum DN25; the DN-8 grid bore and the Sch 40 bore both seat DN25; nothing resized",
     "run_basis": "20 m run carried by the line-list route lengths (AQS-PIP-004); not redrawn",
-    "material": "PVC-U header: wet H\u2082 with sweep air and possible acid mist (M3). Ignition, not embrittlement, governs; the dilution basis is held. Metal parts bonded. AQS-REV-H2-001."
+    "material": "PVC-U, bonded"
   },
   "nozzles_drawn": {
     "N1": {
