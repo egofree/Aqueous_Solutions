@@ -8265,5 +8265,25 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.regen (second run changes nothing); python3 -m flow_graph.param.recovery reports no flags with IA-ALCL3-MU absent; cake weigh and assay at the first leach campaign"
+ },
+ {
+  "id": "A-M-496",
+  "value": "Pot-cell bath-top geometry: the anode rods hang with their tips 100 mm above the cell floor (rod column z 100..1164, the AQS-DUTY-072 study rod), so the bath surface sits at z = anode_imm_mm + 100. bath_top_mm is 350 for the 250 mm immersion (CA_POT, CR_CELL, MO_CELL) and 400 for the 300 mm immersion (MG_POT).",
+  "units": "mm",
+  "where": "flow_graph/param/pot_cells.py design.bath_top_mm stamp; models/mfg CA_POT / CR_CELL / MG_POT / MO_CELL builders and draw sheets (tap-well crest, hood lintel and lining run-out z)",
+  "basis": "The pot-cell builder geometry (models/mfg WORK_ORDER items and the builders' stated arithmetic: 'bath top z 350 = 250 mm immersion + tips z 100'): the 100 mm tip clearance keeps the anode bottom above the cell-floor lining and with the immersion driver anode_imm_mm sets the submerged length; the bath surface is the rim the hood clears. The immersion itself is not new here - it stays the foundry_poly Faraday sizing input.",
+  "sensitivity": "The bath top moves 1:1 with the immersion driver and with the tip elevation; the hood lintel, tap-well crest and lining run-out follow it on the drawing sheets.",
+  "replaced_by": "First-article pot build: as-built tip datum and bath-surface survey on the unit task 12 work order",
+  "task": "X-QA-18",
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.pot_cells (second run changes nothing); python3 models/mfg/tracker.py --check CA_POT CR_CELL MG_POT MO_CELL",
+  "files": [
+   "flow_graph/param/pot_cells.py",
+   "flow_graph/param/regen_manifest.json",
+   "models/mfg/CA_POT/ca_pot.py",
+   "models/mfg/CR_CELL/cr_cell.py",
+   "models/mfg/MG_POT/mg_pot.py",
+   "models/mfg/MO_CELL/mo_cell.py"
+  ]
  }
 ]

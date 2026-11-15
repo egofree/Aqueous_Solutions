@@ -2200,7 +2200,14 @@
           33.7,
           33.7
         ],
-        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (33.7 mm, EN-rounded OD series, AQS-PIP-004)"
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (33.7 mm, EN-rounded OD series, AQS-PIP-004)",
+        "sec3_material": {
+          "mat": "316L tube",
+          "basis": "dry CO2 header at the ambient class (graph design, AQS-DUTY-075): neither the M3 wet-oxidant rule nor the M7 no-polymer rule applies to a dry gas held above its dew point, so the header keeps the one-tube family shared across the dry utility gas headers (CO2, plant air / N2, O2) for spares and handling. Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3).",
+          "alt": "CPVC or PP-H sections if a cold spot condenses carbonic acid (M3 then catches wet CO2); the N6 drain exists to prove the dry claim",
+          "note": "the N6 drain and the N7 vent keep the header dry; no measured rate.",
+          "task": "X-QA-18"
+        }
       }
     },
     {
@@ -2239,7 +2246,14 @@
           60.3,
           60.3
         ],
-        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)"
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)",
+        "sec3_material": {
+          "mat": "PVC-U, bonded",
+          "basis": "wet H2 with sweep air and possible acid mist off the EW cathode rows (graph design, AQS-DUTY-075): wet hydrogen is the M3 reducing service, so there is no metal wetted part - ignition, not embrittlement, governs (AQS-REV-H2-001) - and PVC-U carries the acid-mist condensate to its 60 C M5 limit (ISO1452_2). Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3).",
+          "alt": "CPVC if the header temperature class rises above the PVC-U 60 C class (M5); FRP for an outdoor run",
+          "note": "metal parts bonded per the static rule; the dilution basis is held by the vent system; no measured rate (X-MAT-06 ruling carried).",
+          "task": "X-QA-18"
+        }
       }
     },
     {
@@ -2273,7 +2287,14 @@
           60.3,
           60.3
         ],
-        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN32 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)"
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN32 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)",
+        "sec3_material": {
+          "mat": "316L tube",
+          "basis": "dry oil-free plant air and nitrogen at the ambient class (graph design, AQS-DUTY-075): N2 is inert and the air stays dried at the receiver bank, so the header keeps the one-tube family shared across the dry utility gas headers; M1 names the stream and no wet-oxidant or no-polymer rule fires. Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3).",
+          "alt": "CS with the AQS-STD-001 corrosion allowance if a section moves into a wet bay and M1 then names a wet stream",
+          "note": "the drain keeps the header dry; no measured rate.",
+          "task": "X-QA-18"
+        }
       }
     },
     {
@@ -2310,7 +2331,14 @@
           60.3,
           60.3
         ],
-        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)"
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)",
+        "sec3_material": {
+          "mat": "316L tube, oxygen-clean per ASTM_G93, socketless",
+          "basis": "dry O2 header at the atmospheric tube class (graph design, AQS-DUTY-075): polymers ignite in oxygen-enriched service, so the dry-O2 M7 case applies and the metal is oxygen-clean 316L with hydrocarbon-free socketless joints (ASTM_G93 practice). Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3).",
+          "alt": "copper or nickel tube if a section rises above the atmospheric tube class (pressurized-oxygen design per ASTM_G93)",
+          "note": "oxygen-clean handling and capped ends ride the unit task 12 work order; no measured rate.",
+          "task": "X-QA-18"
+        }
       },
       "continuous_kw": null
     },
@@ -2350,7 +2378,14 @@
           33.7,
           33.7
         ],
-        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (33.7 mm, EN-rounded OD series, AQS-PIP-004)"
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (33.7 mm, EN-rounded OD series, AQS-PIP-004)",
+        "sec3_material": {
+          "mat": "PVDF SDR 21, fusion-welded",
+          "basis": "high-purity water distribution at the ambient class (graph design, AQS-DUTY-075): UPW is the M1 named stream, and PVDF SDR 21 fusion-welded (DVS_2207) keeps the leach-out and hygiene class the polish skid is built to deliver. Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3).",
+          "alt": "316L BA tube on valve-manifold sections that need metallic strength, with the same UPW hygiene class",
+          "note": "ambient temperature class at the polish skid outlet; no measured rate.",
+          "task": "X-QA-18"
+        }
       }
     },
     {
@@ -5432,7 +5467,8 @@
           "anode_D_mm": 50,
           "anode_imm_mm": 250,
           "cathodes": 3,
-          "busbar_mm2": 25
+          "busbar_mm2": 25,
+          "bath_top_mm": 350.0
         },
         "sec3_material": {
           "mat": "Graphite liner and graphite anode for the carbochlorination melt (CrCl3 wetted), dry CO/CO2/Cl2 headspace; 90 % alumina brick backup in a mild-steel shell",
@@ -5618,7 +5654,8 @@
           "anode_D_mm": 50,
           "anode_imm_mm": 250,
           "cathodes": 3,
-          "busbar_mm2": 25
+          "busbar_mm2": 25,
+          "bath_top_mm": 350.0
         },
         "sec3_material": {
           "mat": "Graphite liner and graphite anode for the carbochlorination melt (MoCl3 wetted); 90 % alumina brick backup in a mild-steel shell; dry CO2-laden headspace",
@@ -6721,7 +6758,8 @@
           "anode_D_mm": 50,
           "anode_imm_mm": 300,
           "cathodes": 4,
-          "busbar_mm2": 50
+          "busbar_mm2": 50,
+          "bath_top_mm": 400.0
         },
         "sec3_material": {
           "mat": "Graphite anodes, steel cathode plates, mullite-class alumina-silica refractory cell lining in a mild-steel shell; skim launder kept graphite-wetted",
@@ -6798,7 +6836,8 @@
           "anode_D_mm": 50,
           "anode_imm_mm": 250,
           "cathodes": 3,
-          "busbar_mm2": 25
+          "busbar_mm2": 25,
+          "bath_top_mm": 350.0
         },
         "sec3_material": {
           "mat": "Graphite anodes, steel cathode rods carrying the solid Ca deposit to the tap work order; 90 % alumina backup lining + ceramic-fibre in a mild-steel shell",

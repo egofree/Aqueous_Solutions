@@ -1,9 +1,11 @@
 """X-MAT-22 lane gates (AQS-STD-006, A-M-318..328): the 38 held units each carry an issued duty
 section 3 material selection; the X-FARM/X-HAB lane (materials3.SEL_FARM, A-M-415..425) extends
-the same gate to the FARM/HAB build-out units, and the X-QA-13 lane (materials3.SEL_QA13) extends
-it to the acid and base regeneration line (BMED_ACID, BMED_BASE, EVAP_ACID). The roster
-section 3 sweep is clean, the internals task-09 hold is gone, the brine family of AQS-STD-002
-section 12.2 is issued, and the new refs.py sources of the lane exist."""
+the same gate to the FARM/HAB build-out units, the X-QA-13 lane (materials3.SEL_QA13) extends
+it to the acid and base regeneration line (BMED_ACID, BMED_BASE, EVAP_ACID), and the X-QA-18
+step-3 lane (materials3.SEL_HDR) extends it to the five HDR_* utility headers, whose pages
+previously carried the '(graph node material)' fallback with no node selection behind it. The
+roster section 3 sweep is clean, the internals task-09 hold is gone, the brine family of
+AQS-STD-002 section 12.2 is issued, and the new refs.py sources of the lane exist."""
 import csv, json, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, ROOT)
@@ -20,7 +22,7 @@ def test_sec3_selections_issued_and_rendered():
     # and the closed lanes keep their audited rosters (X-MAT-22 task-09 batch, X-FARM/X-HAB,
     # X-QA-13 acid and base regeneration line)
     from flow_graph.param import materials3
-    roster = set(materials3.SEL) | set(materials3.SEL_FARM) | set(materials3.SEL_QA13)
+    roster = set(materials3.SEL) | set(materials3.SEL_FARM) | set(materials3.SEL_QA13) | set(materials3.SEL_HDR)
     assert set(sel) == roster
     # Invariant, not a count (F-20261110-09): every lane entry is a live stamped unit on the
     # graph, so a roster entry cannot outlive its unit and a new unit joins only through the
