@@ -15,6 +15,7 @@ from flow_graph.v2 import check as CK
 from flow_graph.v2 import lint as LT
 from flow_graph.v2 import manifest as MF
 from flow_graph.v2 import solve as SL
+from flow_graph.v2.functions import pot_cells as FN_POT
 from flow_graph.v2.graph_io import bytes as render, load
 from flow_graph.v2.grid import Grid, Qty
 
@@ -74,7 +75,7 @@ def test_exemplar_pot_cell_bath_top():
     """The first migrated function: the pot-cell bath top, grid-exact, provenance
     recorded at assignment."""
     b = load(REF_GRAPH)
-    SL.pot_cell_bath_top(b, {})
+    FN_POT.pot_cell_bath_top(b, {})
     m = b.build()
     got = m.computed[('node', 'CA_POT', 'design.bath_top_mm')]
     assert got[0].dim == 'length' and got[0].count == 350   # 250 mm immersion + 100 mm tips
