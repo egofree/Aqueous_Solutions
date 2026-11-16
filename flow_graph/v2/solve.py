@@ -22,6 +22,10 @@ from .functions import meoh_train                  # noqa: F401
 from .functions import storage_sizing              # noqa: F401
 from .functions import pv_cell_line                # noqa: F401
 from .functions import dock_class                  # noqa: F401
+from .functions import h2_purifier                 # noqa: F401
+from .functions import house_scrubbers             # noqa: F401
+from .functions import upw_polish                  # noqa: F401
+from .functions import geo_loop                    # noqa: F401
 from .graph_io import load
 from .model import Builder
 from .registry import fn, FNS                      # noqa: F401
