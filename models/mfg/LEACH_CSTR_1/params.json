@@ -753,7 +753,7 @@
   "frame": "origin at the envelope corner; x along 2000, y along 1200, z up",
   "nozzle_spread": "the schedule gives face and height only; ports pack in one row per face/height group, centred on the face mid-length, 8 mm clear at the bore; per-tag positions recorded in check.nozzles_drawn",
   "vent_drain": "N10 flush at the lid on the x 1700 centreline (datum 1400); N9 flush at z 0 at x 300, boss to the 50 datum",
-  "belt_segmentation": "port rows at z 160/280/600 cross the belt bands; each crossing port is notched out of the band (23 notches)",
+  "belt_segmentation": "port rows at z 160/280/600 cross the belt bands; each crossing port is notched out of the band (24 notches)",
   "conductor": "IA-E-LEACH gland at +Y x 250, z 600 (duty section 4 prose)",
   "hardware_idiom": "connection hardware flush at the envelope faces, extension stubs 10 mm into the cavity (lib/nozzles.place_on_face); nothing protrudes, bbox within the duty envelope"
  }

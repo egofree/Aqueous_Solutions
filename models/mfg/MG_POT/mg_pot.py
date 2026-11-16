@@ -162,7 +162,9 @@ br_chute = box(526, 0.0, 130, 36, 70, 90)                # N4 brine launder, flu
 lance = tube(22.0, 11.0, (544.0, 20.0, 160.0), "Y", 380)  # brine lance from inside the launder into the bath
 br2_chute = box(130, 0.0, 130, 36, 70, 90)               # N10 brine concentrate launder, study slot, flush at the -Y face
 lance2 = tube(22.0, 11.0, (148.0, 20.0, 160.0), "Y", 380)  # concentrate lance from inside the launder into the bath
-parts["inlet_groups"] = ret_chute.union(br_chute).union(lance).union(br2_chute).union(lance2)
+br3_chute = box(34, 0.0, 130, 36, 70, 90)                # N11 recovered-MgCl2 launder, study slot, flush at the -Y face
+lance3 = tube(22.0, 11.0, (52.0, 20.0, 160.0), "Y", 380)  # recovered-brine lance from inside the launder into the bath
+parts["inlet_groups"] = ret_chute.union(br_chute).union(lance).union(br2_chute).union(lance2).union(br3_chute).union(lance3)
 
 # ---------------- N4 drain well ---------------------------------------------------
 parts["drain_well"] = tube(30.5, dl, (256, 160, 0), "Z", 50)   # bore matches the casing pass: fuses
@@ -181,6 +183,7 @@ for blk in (melt_salt, melt_metal):
     blk = blk.cut(rod(dl + 1, (rx_, ry_, 240), "Z", 160))         # dip leg
     blk = blk.cut(rod(23.0, (544.0, 400, 160), "Y", 120))         # N4 brine lance
     blk = blk.cut(rod(23.0, (256.0, 400, 160), "Y", 120))         # N3 return
+    blk = blk.cut(rod(23.0, (52.0, 400, 160), "Y", 120))          # N11 recovered-brine lance
     blk = blk.cut(rod(31.0, (256, 160, 40), "Z", 40))             # drain sump bore pocket
 inv = {"melt_salt": melt_salt, "melt_metal": melt_metal}
 
@@ -270,6 +273,11 @@ PLACE = {
             "note": "CaCl2-MgCl2 brine concentrate in: launder flush at the -Y face (x 130..166, "
                     "z 130..220) and the concentrate lance into the bath at z 160, in a study "
                     "slot beside the N4 launder; class pending (task X-QA-11)"},
+    "N11": {"style": "stub", "face": "-Y", "part": "inlet_groups", "x_mm": [34.0, 70.0],
+            "drawn_height_mm": 160.0,
+            "note": "crystallized MgCl2 from BRINE_CRYS in (recovered, was the dock import): "
+                    "launder flush at the -Y face (x 34..70, z 130..220) and the lance into the "
+                    "bath at z 160, in a study slot beside the N10 launder"},
 }
 drawn = {}
 for tag, rec in PLACE.items():
@@ -334,9 +342,10 @@ rows = [
     ["12b", f"N5 Mg-reductant tap group -X z 600, flush at the -X face ({D['metal_kg_d']} kg/d Mg to the Kroll retort)", 1,
      "carbon (ram class)", mass["reductant_tap_group"], "make",
      "task-04 schedule N5 (solids, bore not calculated); WO step 6 reductant draw"],
-    ["12c", f"N3/N4/N10 inlets -Y z 160 flush at the -Y face: Kroll MgCl2 return stub + brine + concentrate lances ({D['feed_kg_d']} kg/d)", 3,
+    ["12c", f"N3/N4/N10/N11 inlets -Y z 160 flush at the -Y face: Kroll MgCl2 return stub + brine + concentrate + recovered-MgCl2 lances ({D['feed_kg_d']} kg/d)", 4,
      "CS chute, carbon lance", mass["inlet_groups"], "make",
-     "task-04 schedule N3/N4/N10; A-M-284 feedstock ruling; N10 class pending (task X-QA-11)"],
+     "task-04 schedule N3/N4/N10/N11; A-M-284 feedstock ruling; N10 class pending (task X-QA-11); "
+     "N11 the BRINE_CRYS recovery, stream IA-BRINE-MGCL2"],
     ["13", f"Mg-metal tap group: well DN80 OD 88.9 carbon + crest + discharge lip at +X z 600, flush at the +X face", 1,
      "carbon (ram class)", mass["mg_tap_group"], "make",
      "task-04 schedule N1 (solids, bore not calculated); WO step 6 trial-electrolysis tap"],

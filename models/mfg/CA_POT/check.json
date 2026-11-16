@@ -98,6 +98,17 @@
       "height_mm": 600.0,
       "schedule_rating": "Class 150",
       "service": "chlorine make-up of the chlorosilane loop"
+    },
+    "N10": {
+      "style": "stub",
+      "face": "-X",
+      "part": "brine_inlet_group_3",
+      "drawn_height_mm": 160.0,
+      "note": "crystallized CaCl2 from BRINE_CRYS in (recovered, was the dock import): chute flush at the -X face (z 130..220) and the DN44-class lance into the bath at z 160, in a study slot beside N2/N7",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "crystallized CaCl2 to the calcium pot (recovered, was the dock import)"
     }
   },
   "shell_bbox_mm": [
@@ -122,11 +133,12 @@
   },
   "overhang_allowance_mm": 1.0,
   "overhang_ok": true,
-  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: ca_tap_group, brine_inlet_group, brine_inlet_group_2, cl2_stub, cl2_stub_phos, cl2_stub_silane)",
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: ca_tap_group, brine_inlet_group, brine_inlet_group_2, brine_inlet_group_3, cl2_stub, cl2_stub_phos, cl2_stub_silane)",
   "external_parts": [
     "ca_tap_group",
     "brine_inlet_group",
     "brine_inlet_group_2",
+    "brine_inlet_group_3",
     "cl2_stub",
     "cl2_stub_phos",
     "cl2_stub_silane"
@@ -158,6 +170,7 @@
     "ca_tap_group": 5.0,
     "brine_inlet_group": 4.9,
     "brine_inlet_group_2": 4.9,
+    "brine_inlet_group_3": 4.9,
     "drain_well": 0.2
   },
   "cadquery": "2.8.0"

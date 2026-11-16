@@ -52,6 +52,7 @@ from lib import dn, fasteners, graph_node, materials, nozzles, step_export  # no
 UNIT = "EW_7"
 GN = graph_node.graph_node(UNIT)                          # the plant graph is the sole authority
 S = GN.params.get("sizing") or {}
+P = GN.as_params()   # graph_revision / size_mm / nozzles for the draw_*.py readers (89d57cfc4 dropped the params.json read they consumed)
 assert S.get("cathodes"), f"{UNIT}: no sizing stamp on the graph node (run the regeneration)"
 
 # ------------------------------------------------------------------ cited constants

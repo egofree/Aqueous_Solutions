@@ -61,7 +61,7 @@
       "face": "+Y",
       "height_mm": 600,
       "drawn_height_mm": 320.7,
-      "x_mm": 310.6,
+      "x_mm": 369.2,
       "schedule_rating": "Class 150",
       "service": "NH\u2084OH / NH\u2083 (aq)",
       "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
@@ -72,7 +72,7 @@
       "face": "+Y",
       "height_mm": 600,
       "drawn_height_mm": 320.7,
-      "x_mm": 339.9,
+      "x_mm": 398.6,
       "schedule_rating": "Class 150",
       "service": "ammonia to methylamine",
       "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
@@ -83,7 +83,7 @@
       "face": "+Y",
       "height_mm": 600,
       "drawn_height_mm": 320.7,
-      "x_mm": 369.2,
+      "x_mm": 427.9,
       "schedule_rating": "Class 150",
       "service": "ammonia to imidazole",
       "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
@@ -94,7 +94,7 @@
       "face": "+Y",
       "height_mm": 600,
       "drawn_height_mm": 320.7,
-      "x_mm": 398.6,
+      "x_mm": 457.2,
       "schedule_rating": "Class 150",
       "service": "ammonia to nitric",
       "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
@@ -127,7 +127,7 @@
       "face": "+Y",
       "height_mm": 600,
       "drawn_height_mm": 320.7,
-      "x_mm": 427.9,
+      "x_mm": 486.5,
       "schedule_rating": "Class 150",
       "service": "ammonia feed to the Strecker step (trace)",
       "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
@@ -138,19 +138,41 @@
       "face": "+Y",
       "height_mm": 600,
       "drawn_height_mm": 320.7,
-      "x_mm": 457.2,
+      "x_mm": 515.8,
       "schedule_rating": "Class 150",
       "service": "ammonia for the nitrous acid and the ester scavenger",
       "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
+    },
+    "N10": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600,
+      "drawn_height_mm": 320.7,
+      "x_mm": 310.6,
+      "schedule_rating": "Class 150",
+      "service": "ammonia liquor to the nitrate skid (Ostwald feed and the neutralization base)",
+      "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
+    },
+    "N11": {
+      "style": "tube",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600,
+      "drawn_height_mm": 320.7,
+      "x_mm": 339.9,
+      "schedule_rating": "Class 150",
+      "service": "ammonia of the phosphate-FR finish",
+      "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
     }
   },
-  "nozzle_count_schedule": 9,
+  "nozzle_count_schedule": 11,
   "nozzle_idiom": "atmospheric open-bore tube connections on tray risers, flush at the envelope faces (duty section 4: atmospheric joints are hose; the W4 110 percent rule draws no flange where no process pressure is stated); the schedule rating column (Class 150) is carried verbatim as text; clamped datums named in nozzles_drawn",
   "part_mass_kg": {
     "tray": 11.9,
     "tank": 7.3,
     "guard_rail": 0.1,
-    "nozzles": 0.6
+    "nozzles": 0.7
   },
   "cadquery": "2.8.0"
 }

@@ -119,6 +119,21 @@
       "height_mm": 160.0,
       "schedule_rating": "Class 150",
       "service": "CaCl2-MgCl2 brine concentrate (process-chemical import, pending class, task X-QA-11)"
+    },
+    "N11": {
+      "style": "stub",
+      "face": "-Y",
+      "part": "inlet_groups",
+      "x_mm": [
+        34.0,
+        70.0
+      ],
+      "drawn_height_mm": 160.0,
+      "note": "crystallized MgCl2 from BRINE_CRYS in (recovered, was the dock import): launder flush at the -Y face (x 34..70, z 130..220) and the lance into the bath at z 160, in a study slot beside the N10 launder",
+      "dn": "DN15",
+      "height_mm": 160.0,
+      "schedule_rating": "Class 150",
+      "service": "crystallized MgCl2 to the magnesium pot (recovered, was the dock import)"
     }
   },
   "shell_bbox_mm": [
@@ -174,7 +189,7 @@
     "cl2_stubs": 0.1,
     "mg_tap_group": 5.0,
     "reductant_tap_group": 5.0,
-    "inlet_groups": 11.4,
+    "inlet_groups": 16.1,
     "drain_well": 0.2
   },
   "cadquery": "2.8.0"

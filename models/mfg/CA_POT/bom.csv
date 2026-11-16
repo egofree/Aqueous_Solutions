@@ -18,3 +18,4 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 17,N7 brine inlet group: chute box flush at the -X face + DN44 lance into the bath at z 160 (study slot beside N2),1,"CS chute, carbon lance",4.9,make,"task-04 schedule N7; CaCl2 brine concentrate, class pending (task X-QA-11)"
 18,"N8 pot byproduct chlorine stub DN15 at +Y z 600 (to the phosgenation, study slot beside N3)",1,carbon steel (dry hot Cl2),0.0,make,task-04 schedule N8; pot byproduct chlorine for the phosgenation
 19,"N9 chlorine make-up stub DN15 at +Y z 600 (chlorosilane loop, study slot beside N3)",1,carbon steel (dry hot Cl2),0.0,make,task-04 schedule N9; chlorine make-up of the chlorosilane loop
+20,N10 brine inlet group: chute box flush at the -X face + DN44 lance into the bath at z 160 (study slot beside N2/N7),1,"CS chute, carbon lance",4.9,make,"task-04 schedule N10; crystallized CaCl2 feed from BRINE_CRYS, stream IA-BRINE-CACL2 (the X-QA-11 dock-import recovery)"

@@ -6,7 +6,9 @@ import csv, math, os, sys
 import cadquery as cq
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, ROOT)
+sys.path.insert(0, os.path.join(ROOT, 'models', 'mfg'))
 from flow_graph.inventory.motor_designs import IEC72, BRG
+from lib import step_export
 D = {r['family']: r for r in csv.DictReader(open(f'{ROOT}/docs-authority/inventory/MOTOR_DESIGNS.csv'))}
 F = {r['family']: r for r in csv.DictReader(open(f'{ROOT}/docs-authority/inventory/MOTOR_FAMILIES.csv'))}
 MG = {r['family']: r for r in csv.DictReader(open(f'{ROOT}/docs-authority/inventory/MAGNET_COMPARISON.csv')) if r['magnet'] == 'NdFeB'}
@@ -70,7 +72,7 @@ for f, r in F.items():
     parts = [(n, s.rotate((0, 0, 0), (1, 0, 0), 90)) for n, s in parts]     # axis horizontal (-Y), feet down (-Z), as mounted (IM B3)
     asm = cq.Assembly(name=f)
     for n, s in parts: asm.add(s, name=n.replace(' ', '_'))
-    asm.save(f'{x}/{f.lower()}.step')
+    step_export.export_step(asm, f'{x}/{f.lower()}.step')   # byte-stable STEP: named products, header date from the graph, not the wall clock (AQS-PLAN-006 idiom)
     comp = parts[0][1]
     for _, s in parts[1:]: comp = comp.union(s)
     cq.exporters.export(comp, f'{x}/{f.lower()}.stl')

@@ -104,7 +104,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 93.7,
+      "x_mm": 79.0,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4)"
     },
@@ -114,7 +114,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 162.0,
+      "x_mm": 147.3,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4)"
     },
@@ -124,7 +124,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 574.8,
+      "x_mm": 589.4,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4)"
     },
@@ -134,7 +134,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 217.0,
+      "x_mm": 202.3,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4)"
     },
@@ -164,7 +164,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 252.5,
+      "x_mm": 237.8,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4)"
     },
@@ -174,7 +174,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 281.8,
+      "x_mm": 267.1,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4)"
     },
@@ -184,7 +184,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 311.1,
+      "x_mm": 296.4,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4)"
     },
@@ -224,7 +224,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 340.4,
+      "x_mm": 325.8,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4)"
     },
@@ -244,7 +244,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 369.7,
+      "x_mm": 355.1,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4)"
     },
@@ -264,7 +264,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 399.0,
+      "x_mm": 384.4,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4)"
     },
@@ -274,7 +274,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 428.3,
+      "x_mm": 413.7,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4)"
     },
@@ -284,7 +284,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 457.6,
+      "x_mm": 443.0,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4)"
     },
@@ -294,7 +294,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 486.9,
+      "x_mm": 472.3,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4)"
     },
@@ -304,7 +304,7 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 516.2,
+      "x_mm": 501.6,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4)"
     },
@@ -314,12 +314,22 @@
       "face": "+Y",
       "height_mm": 600.0,
       "drawn_height_mm": 600.0,
-      "x_mm": 545.5,
+      "x_mm": 530.9,
+      "schedule_rating": "Class 150",
+      "note": "atmospheric hose joint at the envelope face (duty section 4)"
+    },
+    "N27": {
+      "style": "hose",
+      "dn": "DN15",
+      "face": "+Y",
+      "height_mm": 600.0,
+      "drawn_height_mm": 600.0,
+      "x_mm": 560.1,
       "schedule_rating": "Class 150",
       "note": "atmospheric hose joint at the envelope face (duty section 4)"
     }
   },
-  "nozzle_count_schedule": 26,
+  "nozzle_count_schedule": 27,
   "nozzle_idiom": "atmospheric hose barbs flush at the envelope faces with roots through the plate walls (every position along the face chord reaches the wall); solids rows DN15 labeled bore not calculated; the two 160/600 rows pack the full face chord; the schedule rating column (Class 150) is carried verbatim as text, no flange drawn",
   "part_mass_kg": {
     "plinth": 9.4,

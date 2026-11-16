@@ -19,13 +19,13 @@
     "modules": 37,
     "plates_per_module": 95,
     "plate_active_mm": [
-      996.4,
+      997.1,
       500.0
     ],
     "pitch_mm": 6.0,
-    "active_area_m2_model": 1751.17,
-    "active_area_m2_booked": 1751.1,
-    "stack_I_A": 99.6,
+    "active_area_m2_model": 1752.4,
+    "active_area_m2_booked": 1752.4,
+    "stack_I_A": 99.7,
     "stack_V_dc": 172.9,
     "j_mA_cm2_booked": 20.0,
     "cell_V_booked": 1.82,
@@ -33,9 +33,9 @@
   },
   "electrolyte_holdup_L": {
     "model": 19588.0,
-    "node": 19603.0,
+    "node": 19614.0,
     "per_module_model": 529.4,
-    "per_module_node": 529.8,
+    "per_module_node": 530.1,
     "concentration_M": 2.0,
     "basis": "reported from the model tank inside volume against the design figure (A-M-457); no residence time is derived - the duty section 2 claims no holdup (A-VES rule)"
   },
@@ -190,7 +190,7 @@
   "nozzle_count_schedule": 12,
   "part_mass_kg": {
     "plinth_frame": 63155.6,
-    "plates": 14885.0,
+    "plates": 14895.4,
     "tanks": 1890.8,
     "bus": 25.1,
     "pumps": 1568.4,
