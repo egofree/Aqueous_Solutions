@@ -354,12 +354,10 @@ def patch_visibility_fcstd(path):
                 )
                 added = len(missing)
 
-    tmp = path.with_suffix(".fcstd.tmp")
-    with zipfile.ZipFile(tmp, "w", compression=zipfile.ZIP_DEFLATED) as zout:
-        for name, data in others.items():
-            zout.writestr(name, data)
-        zout.writestr("GuiDocument.xml", gui.encode("utf-8"))
-    tmp.replace(path)
+    entries = list(others.items())
+    entries.append(("GuiDocument.xml", gui.encode("utf-8")))
+    import fcstd_write
+    fcstd_write.write_entries(path, entries)          # byte-stable zip: fixed stamp dates, Document.xml wall-clock fields normalised
     print(
         "GuiDocument Visibility=true: flipped=%d added_vp=%d want=%d → %s"
         % (flipped, added, len(want), path)
