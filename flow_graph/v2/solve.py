@@ -15,6 +15,7 @@ from .functions import h2_compressor               # noqa: F401
 from .functions import power                       # noqa: F401
 from .functions import heat                        # noqa: F401
 from .functions import relief_vent                 # noqa: F401
+from .functions import headers                     # noqa: F401
 from .functions import foundry                     # noqa: F401
 from .functions import farm_balance                # noqa: F401
 from .functions import materials3                  # noqa: F401
