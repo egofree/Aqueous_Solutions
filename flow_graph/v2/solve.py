@@ -18,6 +18,10 @@ from .functions import pot_cells                   # noqa: F401
 from .functions import specialty                   # noqa: F401
 from .functions import si_route                    # noqa: F401
 from .functions import sites                       # noqa: F401
+from .functions import meoh_train                  # noqa: F401
+from .functions import storage_sizing              # noqa: F401
+from .functions import pv_cell_line                # noqa: F401
+from .functions import dock_class                  # noqa: F401
 from .graph_io import load
 from .model import Builder
 from .registry import fn, FNS                      # noqa: F401
