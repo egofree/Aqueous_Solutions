@@ -65,20 +65,10 @@ EVK = 'DIGESTER.metals-leach-train.acid-base-regen.'               # the acid-ba
 
 
 def _fld(m, uid, path):
-    """A model field: the physics overlay first (at any dotted depth), then
-    the committed seed book. Read-only; loud on a missing field."""
-    rest = path.split('.')
-    cur = None
-    for i in range(len(rest), 0, -1):
-        key = ('node', uid, '.'.join(rest[:i]))
-        if key in m.computed:
-            cur = m.computed[key][0]
-            rest = rest[i:]
-            break
-    else:
-        cur = m.nodes[uid]
-    for part in rest:
-        cur = cur[part]
+    """A model field: the overlay composed (a dict field with per-key writers
+    reads back as one merged dict — Model.field), then the committed seed book.
+    Read-only; loud on a missing field."""
+    cur = m.field('node', uid, path)
     return cur
 
 

@@ -42,11 +42,11 @@ PROFILE = os.path.join(ROOT, 'flow_graph', 'param', 'sites', 'baseline.json')
 INPUTS = {'drivers': json.load(open(DRIVERS)),
           'site_profile': json.load(open(PROFILE))}
 
-# The landed physics families, in the ledger section B order: each document
-# renders from the model these stamp (the seed reads stay on the seed; the
-# overlays carry the fresh books).
-FAMILIES = (_cb.cold_box_asu, _ed.evap_design, _rcv.gas_receivers, _hc.h2_compressor,
-            _hp.h2_purifier_beds, _hs.house_scrubbers, _up.upw_polish, _gl.geo_loop)
+# The model renders from the DECLARED composition (solve.py's registered
+# functions, in the reference topo order): the strongest renderer acceptance is
+# that the full composed solve reproduces every committed document byte.
+INPUTS = {'drivers': json.load(open(DRIVERS)),
+          'site_profile': json.load(open(PROFILE))}
 
 EXPECTED_PATHS = [
     'docs-authority/sizing/COLD_BOX.md',
@@ -61,11 +61,9 @@ EXPECTED_PATHS = [
 
 
 def model():
-    """The committed seed, computed by the landed physics families, frozen."""
-    b = load(REF_GRAPH)
-    for f in FAMILIES:
-        f(b, INPUTS)
-    return b.build()
+    """The committed seed, computed by the full declared composition, frozen."""
+    from flow_graph.v2 import solve as SL
+    return SL.solve(INPUTS, REF_GRAPH)
 
 
 def committed(path):
@@ -113,11 +111,8 @@ def test_render_one_rejects_unknown_path():
 
 def test_determinism_two_passes_byte_identical():
     """Two independent seed + compute + render passes: byte-identical."""
-    b1, b2 = load(REF_GRAPH), load(REF_GRAPH)
-    for f in FAMILIES:
-        f(b1, INPUTS)
-        f(b2, INPUTS)
-    assert render(b1.build(), INPUTS) == render(b2.build(), INPUTS)
+    m1, m2 = model(), model()
+    assert render(m1, INPUTS) == render(m2, INPUTS)
 
 
 def test_render_modules_pure():

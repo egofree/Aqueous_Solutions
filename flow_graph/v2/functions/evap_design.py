@@ -520,9 +520,14 @@ def evap_design(b, inputs):
         _set(b, unit, 'params.relief_mm',
              rb(math.sqrt(4 * flo(ORIFICE_D_IN2) / math.pi), 2,
                 'length mm: the relief bore book at 2 dp'), basis, 'A-M-107')
-        _set(b, unit, 'params.relief_basis',
-             dict(r['relief_body'], computed_by=COMPUTED_BY,
-                  shell_side=r['relief_shell']), basis + relief_basis_note, 'A-M-107')
+        # One writer per field: evap records the CASE INPUTS of the relief basis;
+        # the results (W book, area, bore, adequacy, computed_by) belong to the
+        # write_graph relief family, which re-solves them in place after this
+        # stage in the declared composition (AQS-PAR-001 relief pass).
+        case_inputs = {k: v for k, v in r['relief_body'].items()
+                       if k not in ('W_kg_h', 'A_req_mm2', 'bore_req_mm', 'computed_by', 'adequate')}
+        case_inputs['shell_side'] = r['relief_shell']
+        _set(b, unit, 'params.relief_basis', case_inputs, basis + relief_basis_note, 'A-M-107')
         _set(b, unit, 'params.design_kPa', flo(_dv(drv, 'evap_body_design_kPag')), basis, 'A-M-107')
         for sid in ([f'IA-{unit}-COND'] + (['IA-ACID-01'] if unit == 'EVAP_ACID'
                                            else ['IA-BASE-PPT', 'IA-BASE-01'])):

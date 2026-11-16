@@ -86,6 +86,34 @@ class Model:
         self.computed = computed
         self._frozen = True
 
+    def field(self, kind, uid, path):
+        """A field with the overlay composed: the whole-path overlay (if any) is the
+        base, and deeper per-key overlays apply over it in path order; without a
+        whole-path overlay the seed structure is the base. This is how a dict field
+        with per-key writers (the relief basis: evap records the case inputs, the
+        relief family the results) reads back as one merged dict. Read-only."""
+        from copy import deepcopy as _dc
+        base_key = (kind, uid, path)
+        deeper = sorted((k for k in self.computed
+                         if k[0] == kind and k[1] == uid and k[2].startswith(path + '.')),
+                        key=lambda k: len(k[2]))
+        parts = path.split('.')
+        if base_key in self.computed:
+            cur = _dc(self.computed[base_key][0])
+        else:
+            src = self.nodes[uid] if kind == 'node' else self.edges[uid]
+            cur = _dc(src)
+            for part in parts:
+                cur = cur[part]
+        for k in deeper:
+            value = self.computed[k][0]
+            sub = k[2][len(path) + 1:].split('.')
+            t = cur
+            for part in sub[:-1]:
+                t = t.setdefault(part, {})
+            t[sub[-1]] = value
+        return cur
+
     def __setattr__(self, name, value):
         if getattr(self, '_frozen', False) and name not in ('data', 'nodes', 'edges', 'computed'):
             raise TypeError('the model is frozen')

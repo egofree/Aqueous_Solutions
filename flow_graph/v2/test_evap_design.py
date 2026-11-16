@@ -114,8 +114,14 @@ def _strict_diffs(c_obj, r_obj, prefix, out, expected, deltas):
     the expected change set: strict (same JSON types) everywhere except the
     enumerated fields, the residue deltas and the residue keys this stage's
     dict does not carry. Provenance rows are excluded."""
+    relief_owned = {'W_kg_h', 'A_req_mm2', 'bore_req_mm', 'computed_by', 'adequate'}
     for k in sorted((set(c_obj) | set(r_obj)) - {'provenance'}):
         p = prefix + '.' + k if prefix else k
+        if prefix.endswith('params.relief_basis') and k in relief_owned and prefix.split('.')[0].startswith('EVAP'):
+            if k not in r_obj:
+                continue                     # the writer split: evap drops the relief family's keys
+            out.add(p + ' (relief-owned key present in the evap overlay)')
+            continue
         if p in deltas:
             if (c_obj.get(k) if isinstance(c_obj, dict) else None) != deltas[p][0] \
                     or (r_obj.get(k) if isinstance(r_obj, dict) else None) != deltas[p][1]:
@@ -138,6 +144,16 @@ def _strict_diffs(c_obj, r_obj, prefix, out, expected, deltas):
             out.add(p)
 
 
+
+def _committed_relief_value(uid, key):
+    """The committed relief-basis value for a relief-owned key: the write_graph
+    relief family's book, which equals the committed bytes (its per-key records
+    are asserted in test_relief_vent)."""
+    committed = _committed()
+    nodes = {n['unit_id']: n for n in committed['nodes']}
+    return nodes[uid]['params']['relief_basis'][key]
+
+
 def test_exact_change_set_and_golden_equality():
     committed = _committed()
     c_nodes = {n['unit_id']: n for n in committed['nodes']}
@@ -157,13 +173,18 @@ def test_exact_change_set_and_golden_equality():
         sorted(set(EXPECTED_EDGE_FIELDS) - set(got_edges)))
 
     # every changed field equals the committed golden...
-    residue = {f'{uid}.{path}' for uid, path in RELIEF_RESIDUE}
+    RELIEF_OWNED = ('W_kg_h', 'A_req_mm2', 'bore_req_mm', 'computed_by', 'adequate')
     for uid, path in EXPECTED_NODE_FIELDS:
         if path == 'params.relief_basis':
             gold, mine = _dig(c_nodes[uid], path), _dig(r_nodes[uid], path)
             for k in gold:
-                if f'{uid}.params.relief_basis.{k}' in residue:
-                    continue                                   # the relief family's keys: asserted below
+                if k in RELIEF_OWNED:
+                    # the write_graph relief family owns the results (its per-key
+                    # records are asserted in test_relief_vent); evap records the
+                    # case inputs only — assert the writer split
+                    assert k not in mine, (uid, 'relief_basis.' + k + ' belongs to the relief family')
+                    assert _eq(gold[k], _committed_relief_value(uid, k)), (uid, 'relief_basis.' + k)
+                    continue
                 assert _eq(gold[k], mine[k]), (uid, 'relief_basis.' + k)
             continue
         assert _eq(_dig(c_nodes[uid], path), _dig(r_nodes[uid], path)), (uid, path)
@@ -244,21 +265,25 @@ def test_relief_case_inputs_are_this_stages_books():
     for uid in ('EVAP_ACID', 'EVAP_BASE'):
         rb_, _ = b.computed[('node', uid, 'params.relief_basis')]
         gold = c_nodes[uid]['params']['relief_basis']
-        for k in ('case', 'A_wetted_m2', 'Q_kW', 'W_kg_h', 'P1_kPa_abs', 'T_K', 'M_kg_kmol', 'k', 'orifice',
-                  'adequate', 'shell_side'):
-            assert _eq(gold[k], rb_[k]), (uid, k)
+        for k in ('case', 'A_wetted_m2', 'Q_kW', 'P1_kPa_abs', 'T_K', 'M_kg_kmol', 'k', 'orifice',
+                  'shell_side'):
+            assert _eq(gold[k], rb_[k]), (uid, k)   # case inputs are evap's books
+        for k in ('W_kg_h', 'adequate'):
+            assert k not in rb_, (uid, k + ' belongs to the write_graph relief family')
         assert rb_['P1_kPa_abs'] == 222.3 and rb_['shell_side']['P1_kPa_abs'] == 486.3
 
 
 def test_relief_residue_owner_pairs():
-    """The relief family's committed residue, each delta exact, with the owner."""
+    """The relief-owned keys: evap's overlay drops them (the writer split) and
+    the committed books they carried are the write_graph relief family's books,
+    asserted per key in test_relief_vent against the same golden."""
     committed = _committed()
     c_nodes = {n['unit_id']: n for n in committed['nodes']}
     b = run()
     for (uid, path), (gold, mine) in RELIEF_RESIDUE.items():
         key = path.split('.', 2)[2]
-        got = b.computed[('node', uid, 'params.relief_basis')][0].get(key)
-        assert got == mine, (uid, path)
+        record = b.computed[('node', uid, 'params.relief_basis')][0]
+        assert key not in record, (uid, path, 'evap must not carry a relief-owned key')
         assert _dig(c_nodes[uid], path) == gold, (uid, path, 'committed residue moved')
 
 
