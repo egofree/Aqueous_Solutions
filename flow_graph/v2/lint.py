@@ -9,7 +9,7 @@ import ast, os
 
 PKG = os.path.dirname(os.path.abspath(__file__))
 BANNED_IMPORTS = {'datetime', 'random', 'uuid', 'time', 'tempfile'}
-IO_MODULES = {'graph_io.py', 'check.py', 'manifest.py', 'grid.py', 'lint.py'}  # declared readers/writers
+IO_MODULES = {'graph_io.py', 'check.py', 'manifest.py', 'grid.py', 'lint.py', 'inputs.py'}  # declared readers/writers (inputs.py is the payload-loading boundary)
 TEST_MARK = 'test'
 
 
