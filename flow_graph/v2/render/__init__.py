@@ -9,6 +9,7 @@ engine v2). The declared order below is the composition order; the acceptance
 test renders every entry against the model seeded+computed by the landed
 physics families and requires byte-exact equality with the committed file.
 """
+from . import duties as _duties
 from . import sizing_docs as _sizing
 
 RENDERS = [
@@ -20,7 +21,7 @@ RENDERS = [
     ('docs-authority/sizing/HOUSE_SCRUBBERS.md', _sizing.render_house_scrubbers),
     ('docs-authority/sizing/UPW_POLISH.md', _sizing.render_upw_polish),
     ('docs-authority/sizing/GEO_LOOP.md', _sizing.render_geo_loop),
-]
+] + _duties.DOCS
 
 _INDEX = dict(RENDERS)
 
