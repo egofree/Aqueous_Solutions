@@ -58,6 +58,19 @@ def check(graph_path=None, manifest_path=None, inputs=None):
         lines.append(f'stale (content): {SL.GRAPH_PATH} is not the render this manifest describes')
         ok = False
 
+    from .render import RENDERS
+    for path, fn_r in RENDERS:
+        doc_path = os.path.join(MF.ROOT, path)
+        if not os.path.exists(doc_path):
+            lines.append(f'stale (missing document): {path}'); ok = False
+            continue
+        with open(doc_path, 'rb') as f:
+            committed_doc = f.read()
+        doc_bytes = fn_r(model, inputs)
+        if doc_bytes != committed_doc:
+            lines.append(f'stale (content): {path} differs from its render (first difference at byte {_first_diff(committed_doc, doc_bytes)})')
+            ok = False
+
     if ok:
         lines.append('check: fresh — regeneration would reproduce every committed byte')
     return ok, lines
@@ -85,6 +98,13 @@ def update(graph_path=None, manifest_path=None, inputs=None):
     from .graph_io import write
     model = SL.solve(inputs, graph_path)
     write(graph_path, model, Grid.load())
+    from .render import RENDERS
+    for path, fn_r in RENDERS:
+        doc = fn_r(model, inputs)
+        tmp = path + '.tmp'
+        with open(tmp, 'wb') as f:
+            f.write(doc)
+        os.replace(tmp, path)
     m = MF.build(SL.FNS, artifact_sha=hashlib.sha256(render(model, Grid.load())).hexdigest())
     with open(manifest_path, 'w', encoding='utf-8') as f:
         f.write(MF.dumps(m))
