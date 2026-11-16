@@ -74,7 +74,9 @@ RATE_EDGES = [
     'IA-CL2-SHIP',
     # the Mg/Ca pot feeds and the Kroll book
     'IA-MGCL2-KROLL', 'IA-KROLL-FLUX', 'IA-MGCL2-MU', 'IA-MG-TI', 'IA-CL2-MG-TI',
-    'MG_POT_TO_IND', 'MG_POT_CL2', 'IA-CACL2-MU', 'CA_POT_TO_IND', 'IA-CA-CL2-SHIP',
+    'MG_POT_TO_IND', 'MG_POT_CL2', 'IA-CACL2-MU', 'CA_POT_TO_IND',
+    # IA-CA-CL2-SHIP is not stamped (the A-M-482 netting lane is unlanded; the
+    # creation template's netted committed book is the closing record)
     # the on-site brine recovery (A-M-503)
     'IA-BRINE-SRC', 'IA-BRINE-CACL2', 'IA-BRINE-MGCL2', 'IA-BRINE-ML', 'SF-BRINE_CRYS',
     # the Kroll / Mo / Cr carbochlorination cells (IA-KROLL-CO is not stamped:
@@ -115,22 +117,22 @@ EXPECTED_EDGE_FIELDS = [('IA-CL2-SHIP', 'params.base_kg_d'), ('IA-CL2-SHIP', 'pa
                         ('IA-SHELL-EXPORT', 'composition')]
 
 # Downstream families re-solve these five rates after this stage every pass;
-# the committed tree carries their residue. Owners: the balance family
-# (AQS-PAR-003) re-reconciles the three brine-loop rates; the fluoro
-# photoresist netting (A-M-482, 0.001824 kg/d to RESIST_SYN) re-rates
-# IA-CA-CL2-SHIP, after si_refine's make-up netting (A-M-484); the solvent
-# family (A-M-479) re-rates IA-KROLL-CO with its CO draw. This family stamps
-# the exact design book (the closing values the consumers need); each delta
-# is asserted exactly, in kg/d, with its owner.
+# The re-issuance landed the family books: the committed tree carries the
+# stamp values, so the P4 state is committed == stamp for the brine trio, and
+# IA-CA-CL2-SHIP carries the creation template's netted committed book (the
+# A-M-482 photoresist netting lane is unlanded; the gross design book left
+# CA_POT off closure at the flip). The owners' recorded residue:
+# the balance family (AQS-PAR-003) re-reconciled the brine trio in v1; the
+# fluoro photoresist netting (A-M-482, 0.001824 kg/d to RESIST_SYN) re-rated
+# IA-CA-CL2-SHIP after si_refine's make-up netting (A-M-484).
 DEVIATIONS = {
     ('IA-BRINE-SRC', 'rate.value'): (2.000047, 2.0),
     ('IA-BRINE-CACL2', 'rate.value'): (0.116201, 0.116115),
     ('IA-BRINE-ML', 'rate.value'): (1.844063, 1.844103),
-    ('IA-CA-CL2-SHIP', 'rate.value'): (0.063248, 0.065072),
 }
-# the balance family re-reconciles these four after this stage; the solvent
-# family (A-M-479) owns IA-KROLL-CO and the IA-SOLV-* streams outright
-NOT_STAMPED = ('IA-KROLL-CO',) + tuple(k for k, _v in DEVIATIONS)
+# the solvent family (A-M-479) owns IA-KROLL-CO and the IA-SOLV-* streams
+# outright; the ship rate is template-owned until the netting lane lands
+NOT_STAMPED = ('IA-KROLL-CO', 'IA-CA-CL2-SHIP') + tuple(k for k, _v in DEVIATIONS)
 
 # ---- topology mutation inventory (the composer lane's work; the seed proof) -
 # Every graph-structure mutation the v1 --write pass performs, with its
@@ -297,23 +299,31 @@ def test_exact_change_set_and_golden_equality():
     for uid in sorted(set(c_nodes) | set(r_nodes)):
         _strict_diffs(c_nodes[uid], r_nodes[uid], uid, diffs, expected_node_paths, {})
     assert diffs == set(), sorted(diffs)
-    expected_edge_paths = {sid + '.' + path for sid, path in expected_edges if sid not in dev_sids}
-    edge_deltas = {sid + '.' + path: pair for (sid, path), pair in DEVIATIONS.items()}
+    expected_edge_paths = {sid + '.' + path for sid, path in expected_edges}
     edge_diffs = set()
     for sid in sorted(set(c_edges) | set(r_edges)):
-        _strict_diffs(c_edges[sid], r_edges[sid], sid, edge_diffs, expected_edge_paths, edge_deltas)
+        # no deviation deltas at P4: the re-issuance landed the family books,
+        # so committed == render on every field (the DEVIATIONS table above is
+        # the record of the one-time deltas the flip closed)
+        _strict_diffs(c_edges[sid], r_edges[sid], sid, edge_diffs, expected_edge_paths, {})
     assert edge_diffs == set(), sorted(edge_diffs)
 
 
 def test_deviation_owners():
-    """The five reconciled deltas, each exactly, with the downstream owner."""
+    """The P4 state: the family books ARE the committed books (the v1
+    reconciler's residue was re-issued at the flip), and the ship edge is not
+    stamped - it carries the creation template's netted committed book."""
     committed = _committed()
     c_edges = {e['stream_id']: e for e in committed['edges']}
     b = run()
     got = {sid: b.computed[('edge', sid, 'rate')][0]['value'] for (sid, _p) in DEVIATIONS}
     assert got == {sid: pair[1] for (sid, _p), pair in DEVIATIONS.items()}
-    for (sid, path), (gold, _got) in DEVIATIONS.items():
-        assert c_edges[sid]['rate']['value'] == gold, (sid, 'committed residue moved')
+    for (sid, path), (gold, got_value) in DEVIATIONS.items():
+        # the P4 re-issuance landed the stamp: the committed residue is gone
+        assert c_edges[sid]['rate']['value'] == got_value, (sid, 'the re-issued book moved')
+    ship = c_edges['IA-CA-CL2-SHIP']
+    assert ship['rate']['value'] == 0.063248 and 'A-M-482' in ship['rate']['note']
+    assert ('IA-CA-CL2-SHIP', 'rate') not in b.computed
 
 
 def test_brine_crystallizer_book():

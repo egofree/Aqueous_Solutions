@@ -4168,7 +4168,7 @@
      "from": "CA_POT",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 0.065072,
+     "rate": 0.063248,
      "unit": "kg/d",
      "carries": "chlorine byproduct export (water-treatment class)"
     },
@@ -8590,7 +8590,7 @@
      "from": "CA_POT",
      "to": "NORTH_DOCK",
      "other_sector": "FOUNDRY",
-     "rate": 0.065072,
+     "rate": 0.063248,
      "unit": "kg/d",
      "carries": "chlorine byproduct export (water-treatment class)"
     },

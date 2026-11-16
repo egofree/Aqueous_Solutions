@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.1161 kg/d. Mass out 0.118 kg/d. Electrical duty 0.1184 kW. In: IA-BRINE-CACL2 0.1161 kg/d (crystallized CaCl2 to the calcium pot (recovered, was the dock import)). Out: CA_POT_TO_IND 0.04193 kg/d (Ca metal); IA-CA-CL2-SHIP 0.06507 kg/d (chlorine byproduct export (water-treatment class)); IA-RESIST-CL2 0.001911 kg/d (pot byproduct chlorine for the phosgenation); IA-CL2-SIREF 0.009111 kg/d (chlorine make-up of the chlorosilane loop).
+1. Basis. Mass in 0.1161 kg/d. Mass out 0.1162 kg/d. Electrical duty 0.1184 kW. In: IA-BRINE-CACL2 0.1161 kg/d (crystallized CaCl2 to the calcium pot (recovered, was the dock import)). Out: CA_POT_TO_IND 0.04193 kg/d (Ca metal); IA-CA-CL2-SHIP 0.06325 kg/d (chlorine byproduct export (water-treatment class)); IA-RESIST-CL2 0.001911 kg/d (pot byproduct chlorine for the phosgenation); IA-CL2-SIREF 0.009111 kg/d (chlorine make-up of the chlorosilane loop).
 
 2. Size.
 - Envelope 800×800×1600 mm, 1.024 m³. That box over this flow would be 211652.2 h if it were full. It is not a residence time.

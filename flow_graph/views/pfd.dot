@@ -816,7 +816,7 @@ digraph G {
   "MG_POT" -> "TI_CELL" [label="IA-MG-TI\\n0.507761 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MG_POT" -> "TI_CELL" [label="IA-CL2-MG-TI\\n1.481313 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NORTH_DOCK" -> "CA_POT" [label="IA-CACL2-MU\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "CA_POT" -> "NORTH_DOCK" [label="IA-CA-CL2-SHIP\\n0.065072 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "CA_POT" -> "NORTH_DOCK" [label="IA-CA-CL2-SHIP\\n0.063248 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NORTH_DOCK" -> "TI_CELL" [label="IA-TIO2-MU\\n0.834247 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NORTH_DOCK" -> "TI_CELL" [label="IA-C-TI\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "TI_CELL" -> "NORTH_DOCK" [label="IA-KROLL-CO\\n0.45835 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];

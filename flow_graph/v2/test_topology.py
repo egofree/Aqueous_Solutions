@@ -566,4 +566,9 @@ def test_created_edges_carry_the_committed_static_shape():
                 assert v == c.get(k), (sid, k)   # derived from the node sectors (the invariant)
                 continue
             assert v == c.get(k), (sid, k)
-        assert list(e.keys()) == list(c.keys()), (sid, 'key order')
+        # the canonical serialization appends the engine's provenance
+        # bookkeeping key to every edge with a computed field; it is not part
+        # of the engineering shape (graph_io.py), so the key order compares
+        # without it
+        assert [k for k in e.keys() if k != 'provenance'] == \
+            [k for k in c.keys() if k != 'provenance'], (sid, 'key order')

@@ -18868,7 +18868,7 @@
       "phase": "G",
       "carries": "chlorine byproduct export (water-treatment class)",
       "rate": {
-        "value": 0.065072,
+        "value": 0.063248,
         "unit": "kg/d",
         "status": "study",
         "note": "CA_POT Cl2 byproduct 1.769 kg/kg Ca, less the 0.0091 kg/d silicon-loop make-up on IA-CL2-SIREF (A-M-472; the AL_POT chlorine closes on the cake chlorination, A-M-495, so the CA_POT share carries the dock chlorine export), exports at the dock (A-M-290 chlorine ruling); the photoresist draw of RESIST_SYN comes off this edge in the fluoro pass (A-M-482). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). Less 0.001824 kg/d to RESIST_SYN on IA-RESIST-CL2 (A-M-482)."

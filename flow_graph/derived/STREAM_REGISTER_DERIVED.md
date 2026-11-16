@@ -535,7 +535,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-MG-TI | MG_POT | TI_CELL | S | mass | present | Mg reductant to the Kroll retort | 0.507761 kg/d | — |
 | IA-CL2-MG-TI | MG_POT | TI_CELL | G | mass | present | chlorine to the Kroll chlorinator | 1.481313 kg/d | — |
 | IA-CACL2-MU | NORTH_DOCK | CA_POT | L | mass | retired | CaCl2 brine concentrate (retired: BRINE_CRYS crystallizes the make-up out of the leach chlorides, X-QA-11) | 0.0 kg/d | — |
-| IA-CA-CL2-SHIP | CA_POT | NORTH_DOCK | G | mass,energy | present | chlorine byproduct export (water-treatment class) | 0.065072 kg/d | — |
+| IA-CA-CL2-SHIP | CA_POT | NORTH_DOCK | G | mass,energy | present | chlorine byproduct export (water-treatment class) | 0.063248 kg/d | — |
 | IA-TIO2-MU | NORTH_DOCK | TI_CELL | S | mass | present | TiO2-equivalent rutile concentrate (dock import class) | 0.834247 kg/d | — |
 | IA-C-TI | NORTH_DOCK | TI_CELL | S | mass | retired | carbon reductant (petcoke/char class) | 0.0 kg/d | — |
 | IA-KROLL-CO | TI_CELL | NORTH_DOCK | G | mass | present | chlorinator CO (fuel-gas class export) | 0.45835 kg/d | — |

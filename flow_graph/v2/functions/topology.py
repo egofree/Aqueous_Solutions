@@ -127,8 +127,11 @@ SEED_RATES = {
     'IA-METAL-SHIP': (59465, 10 ** 4),
     'SF-AL_POT': (29567, 10 ** 4), 'SF-MG_POT': (3375, 10 ** 4), 'SF-CA_POT': (1184, 10 ** 4),
     'SF-TI_CELL': (5, 10), 'SF-MO_CELL': (1141, 10 ** 4), 'SF-CR_CELL': (16, 100),
-    'IA-BRINE-SRC': (2000047, MG), 'IA-BRINE-CACL2': (116201, MG), 'IA-BRINE-MGCL2': (39782, MG),
-    'IA-BRINE-ML': (1844063, MG), 'SF-BRINE_CRYS': (7, 100),
+    # the brine trio: the A-M-503 grid-exact family books (the v1 reconciler's
+    # mg residue was re-issued at the P4 flip; the foundry family re-values
+    # these three in the same pass)
+    'IA-BRINE-SRC': (2000000, MG), 'IA-BRINE-CACL2': (116115, MG), 'IA-BRINE-MGCL2': (39782, MG),
+    'IA-BRINE-ML': (1844103, MG), 'SF-BRINE_CRYS': (7, 100),
     'IA-FR-P': (1276, MG), 'IA-FR-NH3': (443, MG), 'FIBER_SCRAP': (4524, MG),
     'FLEECE_TO_MFG': (87671, MG), 'TEXTILE_HAB': (87671, MG), 'STOCK_TO_FIBER': (90476, MG),
     'IA-FAB-WAFER': (138904, MG), 'IA-LITHO-WAFER-A': (138904, MG), 'IA-LITHO-WAFER-B': (138904, MG),
@@ -326,8 +329,9 @@ SF_BRINE = ('SF-BRINE_CRYS', ('IA-WAX-CUT', 'IA-NUT-NH3') + A_SHELL_GRIT)
 # the foundry family re-VALUES these three without replacing the note (the
 # balance reconciler owns the note, AQS-PAR-003, and has not landed): the
 # creation templates book the committed note verbatim so one pass converges.
-BRINE_RATE_NOTES = {'IA-BRINE-SRC': ('feed = 2.000000 kg/d', _f(2000047, MG)),
-                    'IA-BRINE-CACL2': ('cacl2 = 0.116115 kg/d', _f(116201, MG)),
+# The values are the A-M-503 grid-exact books the P4 re-issuance landed.
+BRINE_RATE_NOTES = {'IA-BRINE-SRC': ('feed = 2.000000 kg/d', _f(2000000, MG)),
+                    'IA-BRINE-CACL2': ('cacl2 = 0.116115 kg/d', _f(116115, MG)),
                     'IA-BRINE-ML': ('ml = 1.844103 kg/d', _f(1844103, MG))}
 BRINE_RATE_TAIL = ' (salt_recovery.py). | X-PAR-02 reconciled (AQS-PAR-003).'
 BRINE_MGCL2_RATE = {'value': _f(39782, MG), 'unit': 'kg/d', 'status': 'study',
@@ -595,7 +599,16 @@ def foundry_apply(b, inputs):
             for k, val in CREATE_PARAMS[sid].items():
                 p.setdefault(k, val)
     if 'IA-CA-CL2-SHIP' in b.edges:
-        b.edges['IA-CA-CL2-SHIP'].setdefault('params', {}).setdefault('si_cl2_kg_d', CA_SHIP_SI_CL2)
+        p = b.edges['IA-CA-CL2-SHIP'].setdefault('params', {})
+        p.setdefault('si_cl2_kg_d', CA_SHIP_SI_CL2)
+        # The A-M-482 photoresist-netting lane (fab-resist) is unlanded, and the
+        # foundry family books only the make-up param (A-M-484): the creation
+        # template's netted committed book is this edge's closing record, so it
+        # is re-asserted idempotently on the existing edge. A seed that lost it
+        # (the P4 gross-book re-issuance) is restored here; when the netting
+        # lane lands it takes the field and removes this re-assertion.
+        if b.edges['IA-CA-CL2-SHIP']['rate'].get('value') != CA_SHIP_RATE['value']:
+            b.edges['IA-CA-CL2-SHIP']['rate'] = dict(CA_SHIP_RATE)
     for sid, to in SF_POTS:
         _create_edge(b, sid, lambda sid=sid, to=to: _sf_edge(sid, to, SF_POT_CARRIES, SF_POT_FORBIDDEN,
                                                              None, SF_POT_NOTES, 'tray'),

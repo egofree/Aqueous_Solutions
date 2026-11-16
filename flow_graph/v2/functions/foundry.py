@@ -52,11 +52,14 @@ Disposition of the chains around this family (the strangler bridge):
   IA-KROLL-CO with its CO draw; the balance family (AQS-PAR-003)
   re-reconciles the brine-loop rates (IA-BRINE-SRC / IA-BRINE-CACL2 /
   IA-BRINE-ML - IA-BRINE-MGCL2 sits exactly at the closure) and co-authors
-  the IA-C5-SHIP note; the fluoro photoresist netting (A-M-482) re-rates
-  IA-CA-CL2-SHIP after si_refine's make-up netting (A-M-484). This function
-  stamps the exact design book for those five rates - the closing values
-  their downstream consumers need - and the test enumerates the committed
-  residue per field with its owner.
+  the IA-C5-SHIP note. IA-CA-CL2-SHIP carries the A-M-482 photoresist
+  netting (the fab-resist lane, unlanded): this family books the make-up
+  param (A-M-484) but not the rate - the gross design book is net of
+  nothing here, and publishing it left CA_POT 1.9 g/d off closure at the
+  P4 flip, so the committed netted seed book stays the closing record
+  until the netting lane lands. The brine trio keeps the exact design
+  book stamp - the closing values their downstream consumers need - and
+  the test enumerates the committed residue per field with its owner.
 - si_cl2 (the silicon-loop chlorine make-up, A-M-472) is owned by the
   si_route family: read from the committed IA-CA-CL2-SHIP params.si_cl2_kg_d
   seed (the A-M-484 remap book), never recomputed here.
@@ -768,11 +771,14 @@ def foundry_poly(b, inputs):
           'Ca deoxidizer/desulfurizer addition to the melt (steelmaking practice class); sized at '
           f'{pct(rat(s["drv"]["foundry_ca_add_frac"]["value"]), 2)} of the melt charge - the same Ca line serves the grease-thickener '
           f'Ca(OH)2 draw (AQS-DUTY-GREASE) when the P_CA param pass rates the cake. | {TAG}.', basis_ca)
-    ca_cl2_ship = s['ca_cl2'] - s['si_cl2']
-    _ca_ship = dict(b.edges['IA-CA-CL2-SHIP']['rate'])
-    _ca_ship['value'] = rv(ca_cl2_ship)
-    b.set_edge_rate('IA-CA-CL2-SHIP', _ca_ship,
-                    _prov(basis_ca + '; value-only update (the photoresist netting co-authors the note, A-M-482)'))
+    # The ship rate itself is NOT stamped: the foundry design book is gross of
+    # the photoresist draw (A-M-482), and the netting family (the fab-resist
+    # lane) has not landed. The committed netted book - the seed value, carried
+    # verbatim by the creation template (topology.CA_SHIP_RATE) - stays the
+    # closing record until that lane lands: the v1 fluoro pass netted the draw
+    # off this edge after this stamp, so publishing the gross book here left
+    # CA_POT 1.9 g/d off closure at the P4 flip (the balance gate caught it).
+    # The make-up book below is this family's (A-M-484) and stays.
     _edge_field(b, 'IA-CA-CL2-SHIP', 'params.si_cl2_kg_d', s['si_cl2_f'],
                 basis_ca + '; si_refine.tf moves the export by any later change of this make-up (A-M-484); '
                 'the si_route book, passed through verbatim')
