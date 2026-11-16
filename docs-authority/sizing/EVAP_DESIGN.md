@@ -68,7 +68,7 @@ Table 4.1. Relief cases
 
 | Case | Unit | Flow, kg/h | Relieving pressure, kPa abs | Area required, mm² | Valve |
 | --- | --- | --- | --- | --- | --- |
-| Body fire | EVAP_ACID | 41.32 | 222.3 | 34.0 | API 526 D (71 mm²), adequate |
+| Body fire | EVAP_ACID | 41.32 | 222.3 | 34.01 | API 526 D (71 mm²), adequate |
 | Shell blocked outlet | EVAP_ACID | 43.26 | 486.3 | 16.646 | API 526 D (71 mm²), adequate |
 | Body fire | EVAP_BASE | 41.32 | 222.3 | 33.98 | API 526 D (71 mm²), adequate |
 | Shell blocked outlet | EVAP_BASE | 40.56 | 486.3 | 15.607 | API 526 D (71 mm²), adequate |
