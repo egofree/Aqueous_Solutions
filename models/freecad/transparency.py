@@ -187,17 +187,17 @@ def patch_fcstd(path: Path) -> int:
             "</Document>\n" % (len(targets), blocks)
         )
 
-    # Rewrite zip with updated GuiDocument.xml
-    tmp = path.with_suffix(".fcstd.tmp")
-    with zipfile.ZipFile(path, "r") as zin, zipfile.ZipFile(
-        tmp, "w", compression=zipfile.ZIP_DEFLATED
-    ) as zout:
-        for item in zin.infolist():
-            if item.filename == "GuiDocument.xml":
-                continue
-            zout.writestr(item, zin.read(item.filename))
-        zout.writestr("GuiDocument.xml", gui.encode("utf-8"))
-    tmp.replace(path)
+    # Rewrite zip with updated GuiDocument.xml — byte-stable entries (fcstd_write),
+    # not the wall-clock dates a re-zip would carry.
+    with zipfile.ZipFile(path, "r") as zin:
+        entries = [
+            (item.filename, zin.read(item.filename))
+            for item in zin.infolist()
+            if item.filename != "GuiDocument.xml"
+        ]
+    entries.append(("GuiDocument.xml", gui.encode("utf-8")))
+    import fcstd_write
+    fcstd_write.write_entries(path, entries)
     print("GuiDocument transparency patched for %d objects → %s" % (len(targets), path))
     return len(targets)
 
