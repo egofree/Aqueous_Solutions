@@ -9,22 +9,31 @@ section 7 pointer, and whole section 2 for nodes with a solved hvac or
 cycling_thermal block - never the hand/historical text around it (header
 `Graph Rev` line frozen at authoring time, pointer-suffix variants,
 hand-rewritten tails, per-unit sections 4/5/8). Verified at port time:
-author(current graph) reproduces zero committed pages, so no whole page is
-registerable under the registry's byte-exact contract (DOCS is empty and
-REMAINING carries the full census - see the module docstring). The proofs
-this file holds:
+author(current graph) reproduces zero committed pages, and the generator's
+own fragments reproduce byte-exactly - so the composer wave declares the
+hand base of every page as data (duty_bases.py) and registers the full
+census in DOCS (REMAINING empty). The proofs this file holds:
 
 - census: REMAINING plus the registered DOCS pages cover exactly the
   committed sheets directory, live;
 - byte-exact, per page: every generator-owned fragment re-renders from the
   composed solve (flow_graph.v2.solve.solve, INPUTS = drivers + site
-  profile, the render_sizing idiom) byte-identically to the committed page
+  profile + the placement seed payload the cycling composition consumes,
+  the views-wave payload idiom) byte-identically to the committed page
   - the section 1 line on every graph unit with a sheet, the issued section
   3 lines, the converged graph-material section 3 lines, the hvac section 2,
   the cycling_thermal section 2, the envelope bullet where the node stamp
   and page agree;
+- composer: every committed sheet registers in DOCS - the declared hand base
+  (flow_graph/v2/render/duty_bases.py, the authored prose captured at
+  migration time with each generator-owned fragment span replaced by its
+  declared anchor) composed with the fresh fragments through the landed v1
+  patch idioms, byte-exact per page; REMAINING is empty; HAND_PAGES marks
+  the fully hand sheets (no anchor in the declared base - units retired from
+  the graph), whose composition is the declared base verbatim;
 - registry: every DOCS entry is held to byte-exact equality with its
-  committed page (self-enforcing as the composer lane registers pages);
+  committed page (the composer wave's acceptance, self-enforcing per
+  entry);
 - fragments: the FRAGMENTS registry (one generator-owned fragment per unit
   and kind, the census derived from the model plus the I/O-side facts) is
   non-empty, covers the declared classes, and satisfies the hand-page
@@ -34,8 +43,9 @@ this file holds:
   patch idiom (flow_graph.v2.check.patch_fragments) and then passes;
 - characterization: the create-lane author() template diverges from a
   committed page in exactly the two documented historical lines;
-- determinism: two independent seed+solve+render passes, byte-identical;
-- purity: no I/O, no banned imports, no float literals in duties.py (the
+- determinism: two independent seed+solve+compose passes, byte-identical;
+- purity: no I/O, no banned imports, no float literals in duties.py or the
+  declared-bases data module duty_bases.py (the
   engine lint's os.walk already covers render/; mirrored here as declared).
 """
 import ast
@@ -51,6 +61,7 @@ from flow_graph.v2 import check as CK
 from flow_graph.v2 import solve as SL
 from flow_graph.v2.render import duties as DU
 from flow_graph.v2.render import render_one
+from flow_graph.v2.render.duty_bases import DUTY_BASES as DB
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 REF_GRAPH = os.path.join(ROOT, 'flow_graph', 'plant_flow_graph.json')
@@ -60,7 +71,8 @@ SEED = os.path.join(ROOT, 'flow_graph', 'placement_seed.json')
 INSTRUMENTS = os.path.join(ROOT, 'docs-authority', 'inventory', 'INSTRUMENT_INDEX.csv')
 DUTIES_DIR = os.path.join(ROOT, 'docs-authority', 'duties')
 INPUTS = {'drivers': json.load(open(DRIVERS)),
-          'site_profile': json.load(open(PROFILE))}
+          'site_profile': json.load(open(PROFILE)),
+          'placement_seed': json.load(open(SEED))}
 
 # The section 3 default templates the v1 patch may replace (X-MAT-06); a page
 # whose line carries anything else is hand text and is never overwritten.
@@ -125,14 +137,29 @@ def test_census_covers_the_committed_sheets():
 
 
 def test_registered_docs_are_byte_exact(model):
-    """The registry's contract, held for this family too: every DOCS entry
-    renders byte-identically to its committed page. Empty today - no duty
-    sheet is byte-exactly renderable (hand base text, see duties.py) - so
-    the sizing entries must still be the whole RENDERS list."""
+    """The registry's contract, held for this family: every DOCS entry - the
+    full committed census through the composer - renders byte-identically to
+    its committed page: the declared hand base plus the fresh fragments."""
+    assert DU.DOCS
     for path, _ in DU.DOCS:
         got = render_one(path, model, INPUTS)
         with open(os.path.join(ROOT, path), 'rb') as f:
             assert got == f.read(), path
+
+
+def test_hand_marker_is_the_no_anchor_class(model):
+    """HAND_PAGES (the `_hand` marker) is exactly the declared bases with no
+    fragment anchor: fully hand sheets - units retired from the graph - whose
+    composition is the declared base verbatim. Every marker is registered in
+    DOCS; the composed class (anchored bases) is non-empty; the two classes
+    partition DOCS."""
+    doc_ids = {os.path.basename(p)[:-3] for p, _ in DU.DOCS}
+    assert DU.HAND_PAGES <= doc_ids                      # every marker registered
+    assert doc_ids - DU.HAND_PAGES                       # the composed class is non-empty
+    for uid, base in DB.items():
+        assert (uid in DU.HAND_PAGES) != ('{{AQS-FRAG:' in base), uid
+    for uid in DU.HAND_PAGES:                            # passthrough: base verbatim, no anchors to compose
+        assert DU.compose_page(model, INPUTS, uid) == DB[uid], uid
 
 
 @pytest.mark.parametrize('uid', units_with_sheets(SL.solve(INPUTS, REF_GRAPH)))
@@ -276,10 +303,13 @@ def test_author_sheet_diverges_only_in_the_documented_historical_lines(uid, mode
 
 
 def test_determinism_two_passes_byte_identical():
-    """Two independent seed + compute + render passes: byte-identical."""
+    """Two independent seed + compute + compose passes: byte-identical."""
     def run():
         m = SL.solve(INPUTS, REF_GRAPH)
         return {uid: DU.render_section1(m, uid) for uid in ('DUCK_PEN', 'EXT_HALL', 'ZNBR2')}, \
+            DU.compose_page(m, INPUTS, 'DUCK_PEN'), \
+            DU.compose_page(m, INPUTS, 'ZNBR2'), \
+            DU.compose_page(m, INPUTS, 'ABE'), \
             DU.render_author_sheet(m, 'DUCK_PEN', facts_for('DUCK_PEN')), \
             DU.render_hvac_section2(m, 'EXT_HALL'), \
             DU.render_cycling_section2(m, 'ZNBR2', [8000, 4000, 3000])
@@ -287,24 +317,26 @@ def test_determinism_two_passes_byte_identical():
 
 
 def test_duties_module_pure():
-    """No I/O in the render module: no open(), no banned imports, no float
-    literals. The engine lint's os.walk already covers render/ (verified:
-    lint.run() scans every non-test .py under flow_graph/v2); mirrored here
-    as the wave's declared discipline, in the render_sizing shape."""
+    """No I/O in the render modules: no open(), no banned imports, no float
+    literals - duties.py and the declared-bases data module duty_bases.py
+    alike (the engine lint's os.walk already covers render/; mirrored here
+    as the wave's declared discipline, in the render_sizing shape)."""
     banned = {'datetime', 'random', 'uuid', 'time', 'tempfile'}
-    path = DU.__file__
-    with open(path, encoding='utf-8') as f:
-        tree = ast.parse(f.read())
-    for node in ast.walk(tree):
-        if isinstance(node, ast.Import):
-            for a in node.names:
-                assert a.name.split('.')[0] not in banned, f'{path}: banned import {a.name}'
-        elif isinstance(node, ast.ImportFrom):
-            assert (node.module or '').split('.')[0] not in banned, f'{path}: banned import from {node.module}'
-        elif isinstance(node, ast.Constant):
-            assert not isinstance(node.value, float), f'{path}:{node.lineno}: float literal'
-        elif isinstance(node, ast.Call) and isinstance(node.func, ast.Name) and node.func.id == 'open':
-            raise AssertionError(f'{path}:{node.lineno}: file I/O in a render module')
+    import flow_graph.v2.render.duty_bases as DBM
+    for mod in (DU, DBM):
+        path = mod.__file__
+        with open(path, encoding='utf-8') as f:
+            tree = ast.parse(f.read())
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                for a in node.names:
+                    assert a.name.split('.')[0] not in banned, f'{path}: banned import {a.name}'
+            elif isinstance(node, ast.ImportFrom):
+                assert (node.module or '').split('.')[0] not in banned, f'{path}: banned import from {node.module}'
+            elif isinstance(node, ast.Constant):
+                assert not isinstance(node.value, float), f'{path}:{node.lineno}: float literal'
+            elif isinstance(node, ast.Call) and isinstance(node.func, ast.Name) and node.func.id == 'open':
+                raise AssertionError(f'{path}:{node.lineno}: file I/O in a render module')
 
 
 # ---- the fragment staleness rule (the patch fixpoint as a content rule) ------

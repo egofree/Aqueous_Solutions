@@ -20,6 +20,7 @@ REMAINING entries in the controls module docstring record the missing family
 each waits on.
 """
 import ast
+import csv
 import json
 import os
 
@@ -34,6 +35,19 @@ DRIVERS = os.path.join(ROOT, 'flow_graph', 'param', 'drivers.json')
 PROFILE = os.path.join(ROOT, 'flow_graph', 'param', 'sites', 'baseline.json')
 INPUTS = {'drivers': json.load(open(DRIVERS)),
           'site_profile': json.load(open(PROFILE))}
+
+
+def _instrument_index_rows():
+    """The committed INSTRUMENT_INDEX.csv rows (the haz_area counts payload)."""
+    with open(os.path.join(ROOT, 'docs-authority/inventory/INSTRUMENT_INDEX.csv'),
+              newline='', encoding='utf-8') as f:
+        return list(csv.DictReader(f))
+
+
+from flow_graph.v2.test_render_census_docs import canonical_inputs as _census_inputs
+
+INPUTS = _census_inputs()
+INPUTS['instrument_index'] = _instrument_index_rows()
 
 EXPECTED_PATHS = [p for p, _ in _controls.DOCS]
 

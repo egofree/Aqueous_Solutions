@@ -18,10 +18,13 @@ the generator's own fragments reproduce byte-exactly (section 1 on every
 graph unit with a sheet, the issued section 3 lines, the hvac section 2, the
 cycling_thermal section 2, and the envelope bullet where the node stamp and
 page agree). The renderer registry's contract is byte-exact equality with
-the committed file, so DOCS registers no whole page yet; the composer lane
-that later declares the hand base text as data and stitches these generated
-sections onto it registers there, and flow_graph/v2/test_render_duties.py
-enforces byte-exactness for every DOCS entry automatically.
+the committed file, which the composer wave closes: a committed page is a
+declared hand base - the authored prose, held verbatim as data in
+duty_bases.py (DUTY_BASES) - plus the generator-owned fragments, and
+compose_page stitches the fresh fragments into the declared base with the
+same patch idioms. Byte-exact on every committed sheet:
+flow_graph/v2/test_render_duties.py enforces it for every DOCS entry
+automatically.
 
 What migrated - the generator's generated content as pure functions over the
 model (the seed carries every book; the v1 hidden reads enter as explicit
@@ -54,71 +57,133 @@ arguments instead of file I/O):
   fragment - the content rule flow_graph/v2/check.py holds against the
   hand-authored pages (each fragment must OCCUR in its page's bytes);
 - apply_patch(page_text, fragment_text, fragment_id): the v1 patch idioms
-  (the line and section-span replaces), the update-side of that rule.
+  (the line and section-span replaces), the update-side of that rule - and
+  the composition side: compose_page applies them to the declared base;
+- compose_page(m, inputs, uid): the declared hand base of sheet uid
+  (duty_bases.DUTY_BASES) with each declared anchor replaced by the fresh
+  fragment through apply_patch - the committed page's bytes, deterministic,
+  no I/O. The cycling fragment's placement-seed block rides the inputs
+  payload (inputs['placement_seed'], the views-wave payload idiom); an
+  absent face composes with the v1 record-missing default (an empty block),
+  so the update/check cycle's drivers+profile shape renders without raising
+  - the fragment census (FRAGMENTS) stays fail-closed;
+- DOCS: every committed duty sheet registered, one composer closure each -
+  the sheet's declared base composed against the passed model;
+- HAND_PAGES: the `_hand` marker set - committed sheets whose declared base
+  carries no anchor (units retired from the graph: the fragment census holds
+  no live fragment for them) - they render the declared base verbatim.
 
-REMAINING below is the explicit census of committed sheets not ported as
-whole-page renderers: all of them, for the structural reason above. The
+REMAINING is empty: every committed sheet registers in DOCS through the
+composer, so the census test holds REMAINING plus DOCS against the
+committed directory with nothing left over. The
 engine lint (flow_graph/v2/lint.py) walks the whole v2 package including
-render/, so this module holds the discipline: no I/O, no float literals,
-and `re` (a pure text transform) as its only import.
+render/ (duty_bases.py too), so this module holds the discipline: no I/O,
+no float literals, and `re` plus the declared-data import as its only
+imports.
 """
 import re
 
+from .duty_bases import DUTY_BASES
 
-# Un-ported pages (the byte-exact whole-document census): every committed
-# sheet in docs-authority/duties/. None is reproducible byte-exactly from the
-# model and inputs alone - see the module docstring. The composer lane
-# registers a page here as it lands.
-REMAINING = [
-    'ABE', 'ACETOX', 'ACEX', 'ACID_PLANT', 'ACID_POLISH_SCRUB', 'ADS_CHILL', 'AFTERBURNER',
-    'AFTERBURNER_FLUE', 'AIR_RECEIVER', 'ALD', 'ALK_SCRUBBER', 'AL_POT', 'AMF', 'ANIMAL_PEN',
-    'AQUA_TANK', 'AQUA_UV', 'ASH', 'ATMOS', 'AZOLLA', 'AZOLLA_BED', 'BACKUP_GEN', 'BAGHOUSE',
-    'BEES', 'BEE_HIVE', 'BIOFILTER', 'BLACK_DIGEST', 'BLOW_MOLD', 'BMED_ACID', 'BMED_BASE',
-    'BMED_UPW_POLISH', 'BOARD_MILL', 'BOUNDARY_EXPORT', 'BRINE_CRYS', 'BSFL', 'BSFL_BIN',
-    'BUCL', 'BUOH_STILL', 'C29_RECYCLE', 'CAST_LINE', 'CATCH_TANK', 'CA_POT', 'CHICKENS',
-    'CHICKEN_COOP', 'CLARIFIER', 'CLOVER', 'COLD_MILL', 'COMB_HEAT', 'COMMON_AREA', 'COMPOST',
-    'COMPOST_MYC', 'COMPOST_TOILET', 'CONTINUOUS_RECYCLE', 'CONT_CAST', 'CRAYFISH', 'CROP_ALLIUM',
-    'CROP_BASIL', 'CROP_CUCUMBER', 'CROP_KALE', 'CROP_LETTUCE', 'CROP_PEPPER', 'CROP_ROSEMARY',
-    'CROP_SPINACH', 'CROP_TOMATO', 'CRU', 'CRYO_AHU', 'CRYO_AHU_COND_CONDENSABLE', 'CRYO_AR',
-    'CRYO_ASU', 'CRYO_CO2', 'CRYO_DED_COOL', 'CRYO_H2', 'CRYO_HE', 'CRYO_HX_Q4', 'CRYO_KR',
-    'CRYO_N2', 'CRYO_NE', 'CRYO_O2', 'CRYO_XE', 'CR_CELL', 'CURTAIL', 'DIGESTER', 'DRAW',
-    'DRY_COOLER', 'DUAL_ROOT', 'DUCKWEED', 'DUCK_PEN', 'ELECTRODE_COAT', 'EMETH', 'ETOH_STILL',
-    'EVAP_ACID', 'EVAP_ACID_VS', 'EVAP_BASE', 'EW_1', 'EW_2', 'EW_3', 'EW_4', 'EW_5', 'EW_6',
-    'EW_7', 'EW_8', 'EW_9', 'EXPANDER', 'EXTRUDE', 'EXT_HALL', 'FAB_UPW_TANK', 'FEED_PREP',
-    'FILM_CAST', 'FISH', 'FISH_SUMP', 'FLOAT_SINK', 'FLUE_KO', 'FLUX_PREP', 'FOOD_STORE',
-    'FORGE', 'FORM', 'FRUIT_GUTTER', 'FUEL_CELL', 'F_RECOVER', 'GALLEY', 'GAS_ATOMIZER',
-    'GEO_GHEX', 'GEO_HP', 'GEO_HP_CLOSED_LOOP', 'GEO_ORC', 'GLASS_BURNOUT', 'GLASS_DIGEST',
-    'GLASS_MILL', 'GLASS_RINSE', 'GLYOXAL', 'GOATS', 'GREASE_CA', 'GREASE_LI', 'GREY_TREAT',
-    'GROWBED_A', 'GROWBED_B', 'GROW_BED', 'GW_INTAKE', 'H2O_ELYZ', 'H2_DRYER', 'H2_PURIFIER',
-    'HABITATION', 'HAB_GALLEY', 'HAB_MED', 'HAB_SLEEP', 'HAB_WASH', 'HDR_CO2', 'HDR_H2',
-    'HDR_N2', 'HDR_O2', 'HDR_UPW', 'HEAT_SINK', 'HF_GEN', 'HNO3', 'HOPPER', 'HTC', 'HX8',
-    'HYDRO_SET', 'IMID', 'IND_MELT', 'INV_CAST', 'IODIDE', 'LEACH_CSTR_1', 'LIGNO_PRE',
-    'LITHO_ALIGN', 'LITHO_COAT', 'LITHO_DEV', 'LITHO_STUB', 'LI_RECOVER', 'LOAD_AGG',
-    'MAU_HX', 'MEAM', 'MEDICAL', 'MEOH_COND', 'MEOH_FC', 'MEOH_FERM', 'MEOH_SYNTH',
-    'MEOH_TANK', 'METAL_STORE', 'MET_AHU', 'MET_HX_Q4', 'MET_MELT', 'MET_SCRUB', 'MET_SYN',
-    'MFG_SHOP', 'MG_POT', 'MISTER', 'MO_CELL', 'MUSHROOM', 'MUSH_BLOCK', 'MUSH_STRAW',
-    'NAOH_PLANT', 'NCG_HEADER', 'NFIX_BED', 'NFT', 'NORTH_DOCK', 'NOX_SCRUB', 'NUTRIENT_DOSE',
-    'NUT_AN', 'OIL_DRYER', 'OIL_FRAC', 'OIL_PYRO', 'PEANUT', 'PELLET', 'POLISH_BANK',
-    'POLY_COND', 'POLY_F', 'POLY_FIBER', 'POLY_OLEFIN', 'POLY_STOCK', 'POWDER_RESIN',
-    'PROD_C11_C18', 'PROD_C19_C28', 'PROD_C29', 'PROD_C5_C10', 'PROD_MEOH', 'PROD_O2',
-    'PV_ARRAY', 'P_CA', 'Q1_A', 'Q1_B', 'Q2_A', 'Q2_B', 'Q3_A', 'Q3_B', 'Q4_A', 'Q4_B',
-    'Q4_BUS', 'QUAIL_CAGE', 'QUAT', 'RABBIT_HUTCH', 'RECTIFIER', 'RECT_EW', 'REC_DAYROOM',
-    'REE_RECOVER', 'RELIEF_CRYO', 'RELIEF_H2', 'REMIN', 'RESIST_SYN', 'RES_HEAT', 'RF_HEAT',
-    'ROLL', 'ROOF_TANK', 'S13_CLASS_TREAT', 'SALT_FEED', 'SEED_BANK', 'SHELL_BREAK',
-    'SHELL_BUILD', 'SHELL_BURNOUT', 'SIC_FURNACE', 'SINTER', 'SI_REDUCE', 'SI_REFINE',
-    'SLEEP_QUARTERS', 'SOLAR_PV_CELL', 'SOLV_PLANT', 'SOL_ARK_60K', 'STOCK_OUT', 'STRUVITE',
-    'SUNFLOWER', 'TERRACE_IRRIG', 'TFE_SYN', 'TI_CELL', 'VAC_CAST', 'VAC_IND', 'VCD_TRAIN',
-    'VDF_SYN', 'VEG_BED', 'VERMI_BIN', 'WAFER_FAB', 'WASHROOM', 'WAX_PATTERN', 'WET_BENCH',
-    'WIRE_DRAW', 'WORMS', 'WS_AMMONIA', 'WS_DOPE', 'WS_HF_ED', 'WS_KOH', 'WS_NITRIC',
-    'WS_PEROX', 'WS_PHOS', 'WS_SLURRY', 'WS_SOLV', 'YEAST', 'ZNBR2', 'ZNBR2_BR2_REGEN',
-]
 
-# The whole-page registry entries. Empty: no duty sheet is byte-exactly
-# renderable yet (hand-authored base text the graph does not carry - see the
-# module docstring). Each future entry is (repo-relative path, render fn) and
-# is held to byte-exact equality with the committed file by
-# flow_graph/v2/test_render_duties.py, exactly like the sizing wave.
-DOCS = []
+# ---- the composer lane -------------------------------------------------------
+#
+# The declared anchors, one per fragment kind: the placeholder span that
+# occupies exactly the bytes a generator-owned fragment owns in the declared
+# base (duty_bases.py, the authored prose captured at migration time). Each
+# anchor is crafted to match the v1 patch idiom's own regex (the section 2
+# span anchors carry the trailing blank line; the envelope anchor carries
+# the idiom's `m³.` stamp shape), so composing a page IS applying
+# apply_patch to the declared base. Declaration order is composition order;
+# the spans are disjoint.
+
+_PAGE_ANCHORS = (
+    ('1. Basis. {{AQS-FRAG:section-1}}', 'section-1'),
+    ('3. Material. {{AQS-FRAG:section-3-issued}}', 'section-3-issued'),
+    ('2. Size. {{AQS-FRAG:section-2-hvac}}\n\n', 'section-2-hvac'),
+    ('2. Size. {{AQS-FRAG:section-2-cycling}}\n\n', 'section-2-cycling'),
+    ('- Envelope 0×0×0 mm, 0.0 m³. {{AQS-FRAG:section-2-envelope}}',
+     'section-2-envelope'),
+)
+
+
+def _fresh_fragment(m, inputs, uid, fid):
+    """The fresh fragment text for one declared anchor, from the same
+    renderers FRAGMENTS binds. The cycling seed block is the v1 hidden read,
+    riding the inputs payload (inputs['placement_seed'])."""
+    if fid == 'section-1':
+        return render_section1(m, uid)
+    if fid == 'section-3-issued':
+        return render_material_line_issued(m, uid)
+    if fid == 'section-2-hvac':
+        return render_hvac_section2(m, uid)
+    if fid == 'section-2-cycling':
+        seed = (inputs or {}).get('placement_seed') or {}
+        blk = next((u for u in seed.get('units', []) if u.get('unit_id') == uid), {})
+        return render_cycling_section2(m, uid, blk.get('size_mm'))
+    if fid == 'section-2-envelope':
+        return render_envelope_line(m, uid)
+    raise ValueError(f'no fragment renderer for anchor {fid}')
+
+
+def compose_page(m, inputs, uid):
+    """Sheet uid's committed bytes: the declared hand base
+    (duty_bases.DUTY_BASES[uid]) with each declared anchor replaced by the
+    fresh fragment through apply_patch - the v1 patch operation applied to
+    the declared base. Deterministic and pure. A base with no anchor at all
+    composes as the declared base verbatim (the HAND_PAGES passthrough); an
+    anchor that is not unique, a fragment the model does not render, or an
+    idiom that does not land are loud ValueErrors, never a silently stale
+    page."""
+    base = DUTY_BASES[uid]
+    for anchor, fid in _PAGE_ANCHORS:
+        if anchor not in base:
+            continue
+        if base.count(anchor) != 1:
+            raise ValueError(f'{uid}: anchor {fid} is not unique in the declared base')
+        fresh = _fresh_fragment(m, inputs, uid, fid)
+        if fresh is None:
+            raise ValueError(f'{uid}: anchor {fid} present but the model renders no fragment')
+        patched = apply_patch(base, fresh, fid)
+        if patched == base:
+            raise ValueError(f'{uid}: the {fid} patch idiom did not land on its declared anchor')
+        base = patched
+    return base
+
+
+def _composer(uid):
+    """The registry closure for one sheet: (model, inputs) -> page bytes."""
+    def render_duty_sheet(m, inputs):
+        return compose_page(m, inputs, uid).encode('utf-8')
+    render_duty_sheet.__name__ = f'render_duty_{uid}'
+    render_duty_sheet.__doc__ = (f'the {uid} duty sheet: declared hand base '
+                                 '(duty_bases.DUTY_BASES) composed with the '
+                                 'fresh generator fragments')
+    return render_duty_sheet
+
+
+# Un-ported pages: none. Every committed sheet in docs-authority/duties/ is
+# registered below through the composer (the declared hand base plus the
+# fresh generator fragments); the census test holds REMAINING plus DOCS
+# against the committed directory.
+REMAINING = []
+
+# The whole-page registry entries: one composer closure per committed duty
+# sheet. Each is (repo-relative path, render fn), held to byte-exact
+# equality with the committed file by flow_graph/v2/test_render_duties.py,
+# exactly like the sizing wave.
+DOCS = [('docs-authority/duties/%s.md' % uid, _composer(uid))
+        for uid in sorted(DUTY_BASES)]
+
+# The `_hand` marker: committed sheets whose declared base carries no
+# generator fragment at all - the units retired from the graph, whose pages
+# the fragment census holds no live fragment for (FRAGMENTS enumerates over
+# the graph's units). They register like every other sheet, but their
+# composition is the declared base verbatim: authored data passthrough, not
+# model output. Declared beside DOCS because registry entries stay
+# (path, fn) pairs - the RENDERS contract.
+HAND_PAGES = frozenset(uid for uid, base in DUTY_BASES.items()
+                       if '{{AQS-FRAG:' not in base)
 
 # Envelope pages whose section 2 bullet is historical hand/page state and is
 # therefore not a live fragment: the node stamp moved on after the page was
