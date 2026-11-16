@@ -67,7 +67,11 @@ EDGE_FIELDS = [(sid, 'presence') for sid, _a, _z, _c, _k in SR.STREAMS_SI] \
 
 # ---- topology mutation inventory (the composer lane's work; the seed proof) -
 # Every graph-structure mutation the v1 --write pass performs, with its
-# condition. The committed seed already carries all of it; the asserts pin it.
+# condition. The composer lane's module is landed (flow_graph/v2/functions/
+# topology.py: si_route_topology carries the create-or-rate shape on these 24
+# streams + 2 SF feeds, the SI_REFINE creation and the IA-SI-IMPORT deletion;
+# the both-directions proof is flow_graph/v2/test_topology.py). The committed
+# seed already carries all of it; the asserts pin it.
 TOPOLOGY_INVENTORY = {
     'created_or_rated_edges': {sid: (a, zb) for sid, a, zb, _c, _k in SR.STREAMS_FAB + SR.STREAMS_SI},
     'created_or_rated_condition': ('an edge absent from the graph is created from the o2_close template '

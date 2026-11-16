@@ -134,7 +134,10 @@ NOT_STAMPED = ('IA-KROLL-CO',) + tuple(k for k, _v in DEVIATIONS)
 
 # ---- topology mutation inventory (the composer lane's work; the seed proof) -
 # Every graph-structure mutation the v1 --write pass performs, with its
-# condition. The committed seed already carries all of it; the asserts pin it.
+# condition. The composer lane's module is landed (flow_graph/v2/functions/
+# topology.py, imported FIRST in solve.py - the shape precedes the values; the
+# both-directions proof is flow_graph/v2/test_topology.py). The committed seed
+# already carries all of it; the asserts pin it.
 TOPOLOGY_INVENTORY = {
     'created_edges': {
         'IA-ALCL3-MU': ('NORTH_DOCK', 'AL_POT'), 'IA-AL-CAKE': ('LEACH_CSTR_1', 'AL_POT'),

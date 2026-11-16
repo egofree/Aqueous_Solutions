@@ -4,9 +4,13 @@ A solve function takes (builder, inputs) and records computed fields with their
 provenance. No I/O, no wall-clock, no RNG, no float arithmetic (the lint holds
 this). The composition order is the import list below: one place, explicit, no
 hidden dependencies. Physics migrates family by family from the reference
-writers (each migration carries its golden-value proof).
+writers (each migration carries its golden-value proof). The topology module
+leads the list: the graph-shape mutations run before every value family, and
+the value families read the post-mutation shape (topology first, then
+arithmetic).
 """
 from . import functions as _fns                    # noqa: F401  (import = registration)
+from .functions import topology                    # noqa: F401  (FIRST: the graph shape precedes the values)
 from .functions import process                     # noqa: F401
 from .functions import cold_box                    # noqa: F401
 from .functions import evap_design                 # noqa: F401
