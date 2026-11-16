@@ -50,6 +50,9 @@ EXPECTED_PATHS = [
     'docs-authority/BUSBAR.json',
     'docs-authority/POWER_SIZING.md',
     'docs-authority/sizing/EW_CELLS.md',
+    'docs-authority/CABLE_SCHEDULE.md',
+    'docs-authority/HAZ_AREA.md',
+    'docs-authority/inventory/HAZ_AREA.csv',
 ]
 
 
@@ -79,7 +82,7 @@ def test_registry_declares_the_electrical_docs():
     paths = [p for p, _ in RENDERS]
     first = paths.index(EXPECTED_PATHS[0])
     assert paths[first:first + len(EXPECTED_PATHS)] == EXPECTED_PATHS
-    assert [p for p, _ in _elec.DOCS] == EXPECTED_PATHS
+    assert [p for p, _ in _elec.DOCS][:len(EXPECTED_PATHS)] == EXPECTED_PATHS  # the clearances wave appends its entries
     assert all(callable(fn) for _, fn in _elec.DOCS)
     for path, _ in _elec.DOCS:
         assert os.path.exists(os.path.join(ROOT, path)), path

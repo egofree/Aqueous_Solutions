@@ -1,9 +1,13 @@
 """The inventory renderer wave (the ledger section I documents, plus the
-section D `inventory_wire` row the section I censuses unlock). Reference
-writers: flow_graph/inventory/motors.py, motor_designs.py, wire.py, pipe.py,
-other.py, and the docs-authority/_wps.py, _pipe_specs.py, _bought_specs.py,
-_block_fam_plans.py, _plant_bom.py, _sc_reconcile.py, _spares.py,
-_cost_estimate.py and _eol.py rollups. Pure functions Model -> document bytes
+section D `inventory_wire` row the section I censuses unlock, and the two
+documents that census landed next: doc_wire_specs (AQS-INV-007, the wire
+family specification sheets and WF-nn.svg cross-sections) and doc_motor_fa
+(AQS-INV-008, the first-article page, MF-nn.svg drawings and MOTOR_FA.json)).
+Reference writers: flow_graph/inventory/motors.py, motor_designs.py, wire.py,
+pipe.py, other.py, and the docs-authority/_wps.py, _pipe_specs.py,
+_bought_specs.py, _block_fam_plans.py, _plant_bom.py, _sc_reconcile.py,
+_spares.py, _cost_estimate.py, _eol.py, _wire_specs.py and _motor_fa.py
+rollups. Pure functions Model -> document bytes
 over the census books of flow_graph/v2/functions/inventory.py (the censuses
 stamp no graph state; every renderer builds the books once and shares the
 rows, the electrical-wave one shared pure chain). The v1 doc templates are
@@ -47,11 +51,16 @@ REMAINING (the section I documents NOT ported here, each with its reason):
   per-unit tree registers parametrically over the committed roster when its
   row lands (the render entry points land with it; not in this module yet).
 
+Cleared by the census landing (each now renders in this module): doc_wire_specs
+and doc_motor_fa, over the wire families and motor design books and the
+composed MF sheet texts, with the WIRE_DRAW and mfa_* drivers.
+
 Pure: no I/O here -- the registry returns bytes and file writing stays
 outside.
 """
 import csv
 import io
+import json
 import math
 import re
 
@@ -60,6 +69,7 @@ from flow_graph.v2.functions import inventory as INV
 D = 'docs-authority/inventory/'                       # the inventory directory prefix (the v1 output root)
 MF_DIR = 'docs-authority/inventory/motor_families/'
 FA_DIR = 'docs-authority/drawings/motor_fa/'
+WF_DIR = 'docs-authority/drawings/wire/'
 UNITS_DIR = 'models/units/'
 
 
@@ -402,6 +412,287 @@ def _mf_renderer(fid):
     return render
 
 
+# ---- AQS-INV-008: the motor first articles (MOTOR_FIRST_ARTICLE.md,
+# drawings/motor_fa/MF-nn.svg, inventory/MOTOR_FA.json) --------------------------
+
+def _motor_fa_book(m, inputs):
+    """The v1 _motor_fa.py book: first-article lamination and frame dimensions
+    per induction family from the AQS-INV-005 design rows (the census-chain
+    books in memory -- the v1 stage read MOTOR_DESIGNS.csv), the sheet texts
+    this module composes (the v1 stage read the committed motor_families/MF-nn.md
+    files), and the mfa_* drivers (A-M-218). Returns (rows, svgs): the rows are
+    the MOTOR_FA.json face, svgs maps family id -> drawing lines."""
+    d = _drv_of(inputs)
+
+    def v(k):
+        return d[k]['value']
+
+    b = _books(m, inputs)
+    fill = v('MFG.tools-metal-forming-train.mfa_slot_fill')
+    bt_t = v('MFG.tools-metal-forming-train.mfa_tooth_T')
+    by = v('MFG.tools-metal-forming-train.mfa_yoke_T')
+    kfe = v('MFG.tools-metal-forming-train.mfa_stacking_factor')
+    sheets = {f['family']: _mf_sheet(f) for f in b['fam_rows']}
+    out = []
+    svgs = {}
+    for dr in b['design_rows']:
+        fam = dr['family']
+        t = sheets[fam]
+
+        def g(k, _t=t):
+            return (re.search(r'\| ' + k + r' \| ([^|]+) \|', _t) or [None, ''])[1].strip()
+
+        rat = g('Rating')
+        pop = (re.search(r'The family covers (\d+) motors', t) or [0, '0'])[1]
+        r = dict(family=fam, type=dr['type'], rating=dr['rating'], items=int(pop))
+        pm = re.search(r'(\d+) poles', rat)
+        if 'induction' in dr['type'] and dr['Dg_mm'] != '-' and pm:
+            # a census can carry an induction family below the smallest IE3
+            # rating (the sheets then leave it not sized): not drawable, the
+            # row stays in Table 2.1
+            pw = float(re.search(r'([\d.]+) kW', rat).group(1)) * 1000
+            poles = int(pm.group(1))
+            p = poles // 2
+            Dg, L, Do = float(dr['Dg_mm']), float(dr['L_mm']), float(dr['Dout_mm'])
+            nn = int(dr['turns'])
+            ii = float(dr['current_A'])
+            Qs, Qr = [int(x) for x in g('Slots stator / rotor').split('/')]
+            bd = float(g('Air-gap flux density').split()[0])
+            pf = float(g('Power factor') or v('MFG.tools-metal-forming-train.mfa_pf_default'))
+            ac = float(re.search(r'\(([\d.]+) mm2\)', dr['conductor']).group(1))
+            dl = flo_('0.18') + flo_('0.006') * pw ** flo_('0.4') if p > 1 \
+                else flo_('0.2') + flo_('0.01') * pw ** flo_('0.4')            # mm, PYRHONEN2014 ch. 6
+            zQ = 2 * 3 * nn / Qs
+            a_s = zQ * ac * v('MFG.tools-metal-forming-train.mfa_enamel_margin') / fill   # mm2 per slot, enamel 15 %
+            tau_s = math.pi * Dg / Qs
+            bt = bd * tau_s / (kfe * bt_t)
+            tau_p = math.pi * Dg / poles
+            phi = 2 / math.pi * bd * tau_p * L * flo_('1e-6')
+            hy = phi / (2 * kfe * L * flo_('1e-3') * by) * 1000
+            # parallel-tooth slot: width grows with radius; solve depth hs from area
+            b1 = tau_s - bt
+            kk = 2 * math.pi / Qs
+            hs = (-b1 + math.sqrt(b1 ** 2 + 2 * kk * a_s)) / kk
+            Do_calc = Dg + dl + 2 * (hs + hy)
+            fl_ = flo_('1.0')
+            od_tol = v('MFG.tools-metal-forming-train.mfa_od_tol')
+            if Do_calc > Do * od_tol:   # longer core: N and slot area fall as 1/L at the same E and B; yoke unchanged
+                lo, hi = flo_('1.0'), flo_('4.0')
+                for _ in range(40):
+                    fl_ = (lo + hi) / 2
+                    a2 = a_s / fl_
+                    h2 = (-b1 + math.sqrt(b1 ** 2 + 2 * kk * a2)) / kk
+                    lo, hi = (fl_, hi) if Dg + dl + 2 * (h2 + hy) > Do * od_tol else (lo, fl_)
+                fl_ = hi
+            Ibar = 2 * 3 * nn * v('MFG.tools-metal-forming-train.mfa_bar_current_factor') * ii * pf / Qr
+            Abar = Ibar / v('MFG.tools-metal-forming-train.mfa_bar_J_A_mm2')     # A, mm2 at 5 A/mm2 die-cast Al
+            fr = g('Frame')
+            fm = re.search(r'H (\d+), shaft D (\d+) x E (\d+), feet A (\d+) x B (\d+), holes K (\d+)', fr)
+            r.update(P_kW=pw / 1000, poles=poles, Dg=Dg, L=L, Dout=Do, airgap_mm=round(dl, 3),
+                     Dbore=round(Dg + dl, 2), Qs=Qs, Qr=Qr, slot_area_mm2=round(a_s, 1), tooth_mm=round(bt, 2),
+                     slot_depth_mm=round(hs, 2), yoke_mm=round(hy, 2), Dout_check_mm=round(Do_calc, 1),
+                     od_ok=Do_calc <= Do * od_tol, L_req_mm=round(L * fl_), N_req=round(nn / fl_),
+                     bar_mm2=round(Abar, 1), ring_mm2=round(Abar * Qr / (2 * math.pi * p) * flo_('0.5'), 1),
+                     frame=fr,
+                     T_Nm=round(pw / (2 * math.pi * (2 * v('MFG.tools-metal-forming-train.mfa_line_hz') * 60 / poles)
+                                      * v('MFG.tools-metal-forming-train.mfa_rated_speed_frac') / 60), 1))
+            H, Ds, E, A_, B_, K = [int(x) for x in fm.groups()] if fm else [None] * 6
+            sc = 150 / Do
+            cx, cy = 170, 180
+            svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="760" height="380" font-family="sans-serif" font-size="10">',
+                   f'<text x="10" y="16" font-weight="bold">{fam} first article: stator / rotor lamination '
+                   f'(M400-50A, 0.5 mm) and {fr.split(":")[0] if fr else "frame"} outline. AQS-INV-008 rev A, A-M-218. '
+                   'Not to scale outside the dimensions shown.</text>',
+                   f'<circle cx="{cx}" cy="{cy}" r="{Do / 2 * sc:.1f}" fill="#ccc" stroke="#000"/>',
+                   f'<circle cx="{cx}" cy="{cy}" r="{(Dg / 2 + dl / 2 + hs) * sc:.1f}" fill="none" stroke="#666" '
+                   'stroke-dasharray="3,2"/>']
+            for i in range(Qs):
+                ang = 2 * math.pi * i / Qs
+                r0 = (Dg + dl) / 2
+                r1 = r0 + hs
+                svg.append(f'<line x1="{cx + r0 * sc * math.cos(ang):.1f}" y1="{cy + r0 * sc * math.sin(ang):.1f}" '
+                           f'x2="{cx + r1 * sc * math.cos(ang):.1f}" y2="{cy + r1 * sc * math.sin(ang):.1f}" '
+                           f'stroke="#fff" stroke-width="{max(1, (tau_s - bt) * sc):.1f}"/>')
+            svg += [f'<circle cx="{cx}" cy="{cy}" r="{(Dg + dl) / 2 * sc:.1f}" fill="#fff" stroke="#000"/>',
+                    f'<circle cx="{cx}" cy="{cy}" r="{(Dg - dl) / 2 * sc:.1f}" fill="#bbb" stroke="#000"/>']
+            for i in range(Qr):
+                ang = 2 * math.pi * (i + flo_('0.5')) / Qr
+                rb = (Dg - dl) / 2 - math.sqrt(Abar) / 2 - flo_('0.5')
+                svg.append(f'<circle cx="{cx + rb * sc * math.cos(ang):.1f}" cy="{cy + rb * sc * math.sin(ang):.1f}" '
+                           f'r="{max(1, math.sqrt(Abar / math.pi) * sc):.1f}" fill="#999"/>')
+            if Ds:
+                svg.append(f'<circle cx="{cx}" cy="{cy}" r="{Ds / 2 * sc:.1f}" fill="#555"/>')
+            lines = [f'Stator OD {Do:.0f} mm (check {Do_calc:.1f} mm from slot + yoke: '
+                     f'{"fits" if Do_calc <= Do * od_tol else "EXCEEDS, lengthen core"})',
+                     f'Bore {Dg + dl:.2f} mm; rotor OD {Dg - dl:.2f} mm; air gap {dl:.2f} mm',
+                     f'Core length {L:.0f} mm, stacking factor {kfe}',
+                     f'Stator {Qs} slots: area {a_s:.0f} mm2 at fill {fill}, depth {hs:.1f} mm, parallel tooth '
+                     f'{bt:.2f} mm ({bt_t} T)', f'Yoke {hy:.1f} mm ({by} T)',
+                     f'Winding {nn} turns/phase, {zQ:.0f} conductors/slot, {dr["conductor"]} class 200 enamel',
+                     f'Rotor {Qr} die-cast Al bars {Abar:.0f} mm2, end ring {r["ring_mm2"]:.0f} mm2, skew 1 slot',
+                     (f'Frame IEC H {H}, feet A {A_} x B {B_}, holes K {K}, shaft D {Ds} k6 x E {E}' if H
+                      else f'Frame: {fr}'),
+                     f'Rated torque {r["T_Nm"]} N m; bearings {g("Bearings") or "per sheet"}']
+            for j, s_ in enumerate(lines):
+                svg.append(f'<text x="360" y="{50 + 16 * j}">{s_}</text>')
+            if H:   # side outline
+                ox, oy, s2 = 360, 360, flo_('0.6')
+                svg += [f'<rect x="{ox}" y="{oy - (H + Do / 2) * s2:.1f}" width="{(L + 120) * s2:.1f}" '
+                        f'height="{Do * s2:.1f}" fill="none" stroke="#000"/>',
+                        f'<rect x="{ox + (L + 120) * s2:.1f}" y="{oy - (H + Ds / 2) * s2:.1f}" width="{E * s2:.1f}" '
+                        f'height="{Ds * s2:.1f}" fill="#555"/>',
+                        f'<line x1="{ox - 20}" y1="{oy}" x2="{ox + (L + 200) * s2:.1f}" y2="{oy}" stroke="#000"/>',
+                        f'<text x="{ox + (L + 120 + E) * s2 + 6:.1f}" y="{oy - H * s2:.1f}">shaft centre H {H}</text>']
+            svg.append('</svg>')
+            svgs[fam] = svg
+        out.append(r)
+    return out, svgs
+
+
+def render_motor_fa_md(m, inputs):
+    """docs-authority/MOTOR_FIRST_ARTICLE.md: the v1 _motor_fa.py page template
+    (AQS-INV-008 rev B, A-M-218)."""
+    out, _svgs = _motor_fa_book(m, inputs)
+    d = _drv_of(inputs)
+    inv_fill = d['MFG.tools-metal-forming-train.mfa_slot_fill']['value']
+    inv_bt = d['MFG.tools-metal-forming-train.mfa_tooth_T']['value']
+    inv_by = d['MFG.tools-metal-forming-train.mfa_yoke_T']['value']
+    inv_kfe = d['MFG.tools-metal-forming-train.mfa_stacking_factor']['value']
+    ind = [r for r in out if 'P_kW' in r]
+    tmax = max(r['T_Nm'] for r in ind)
+    # Rig sizing is picked by rating, not by id: the load machine is the largest 4-pole induction family, and the
+    # largest family overall sets the 85 % test point (family ids retire as the inventory re-clusters).
+    loadm = max((r for r in ind if r['poles'] == 4), key=lambda r: r['P_kW'])
+    bigm = max(ind, key=lambda r: r['P_kW'])
+    lf = loadm['frame'].split(':')[0].replace('IEC ', '') or 'per its sheet'
+    bt = 'hermetic' if bigm['type'].startswith('hermetic') else bigm['type']
+    fl = [r['family'] for r in ind if not r['od_ok']]
+    md = ['# Motor first articles: drawings, traveller and type-test rig', '', 'Document number: AQS-INV-008',
+          'Revision: B', 'Date: 2026-10-25',
+          'Authority: AQS-PLAN-007 task X-INV-02B; assumption A-M-218. Generated by `docs-authority/_motor_fa.py` from '
+          'the motor designs AQS-INV-005 (`inventory/MOTOR_DESIGNS.csv` and `inventory/motor_families/`); do not edit '
+          'this page by hand. This is the desk package; building the first articles and running the type tests remain '
+          'open under task X-INV-02B.', '',
+          '| Rev | Description | Date |', '|---|---|---|', '| A | First issue | 2026-10-16 |',
+          '| B | Purpose and scope added; text rewritten to the documentation style guide (AQS-DOC-002). The paragraph '
+          'on flagged families is written only when a family is flagged. No dimension, step or rig item changed. '
+          '| 2026-10-25 |', '',
+          '## Purpose and scope', '',
+          'The plant builds its own electric motors, grouped into motor families (MF) of similar design. Before a '
+          'family goes into production, one motor of the family, the first article, is built and tested to prove the '
+          'design. This page gives the dimensions of the first article of each induction-motor family, the '
+          'first-article tests of the other families, the build traveller (the ordered list of build steps with their '
+          'inspections), and the test rig used for the type tests.', '',
+          f'There are {len(out)} motor families, of which {len(ind)} are induction-motor families with lamination and '
+          'frame drawings in `docs-authority/drawings/motor_fa/`. For each induction family the slot, tooth and yoke '
+          f'dimensions are recalculated here from the winding, with a slot fill of {inv_fill}, a tooth flux density of '
+          f'{inv_bt} T, a yoke flux density of {inv_by} T and a stacking factor of {inv_kfe}. A family whose '
+          'recalculated outside diameter (OD) exceeds the OD on its design sheet by more than 2 % is flagged for a '
+          'longer core before its laminations are cut.', '',
+          '## 1. Induction first-article dimensions', '',
+          'Table 1.1 gives the dimensions. Qs/Qr is the number of stator and rotor slots, the OD column gives the '
+          'sheet OD and the recalculated OD, T is the rated torque, and Items is the number of motors of the family in '
+          'the plant inventory.', '',
+          'Table 1.1. Induction first-article dimensions', '',
+          '| Family | kW | Poles | Bore mm | Gap mm | Core mm | Qs/Qr | Slot mm2 | Slot depth mm | Tooth mm | Yoke mm | '
+          'OD sheet / check mm | Bar mm2 | T N m | Items |',
+          '|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|']
+    md += [f"| {r['family']} | {r['P_kW']} | {r['poles']} | {r['Dbore']} | {r['airgap_mm']} | {r['L']:.0f} | "
+           f"{r['Qs']}/{r['Qr']} | {r['slot_area_mm2']} | {r['slot_depth_mm']} | {r['tooth_mm']} | {r['yoke_mm']} | "
+           f"{r['Dout']:.0f} / {r['Dout_check_mm']}{'' if r['od_ok'] else ' FLAG'} | {r['bar_mm2']} | {r['T_Nm']} | "
+           f"{r['items']} |" for r in ind]
+    md += ['', ('No family is flagged: every recalculated OD is within 2 % of its sheet OD.' if not fl
+               else 'The following families are flagged because the recalculated OD exceeds the sheet OD: '
+                    + ', '.join(fl) + '. The first article of a flagged family keeps the sheet OD and bore and '
+                      'lengthens the core. At the same back electromotive force (back-EMF) and flux density, the '
+                      'number of turns, and therefore the slot area, falls in proportion to 1/L. The required core '
+                      'lengths and turns are: '
+                    + ', '.join(f"{r['family']} {r['L']:.0f} -> {r['L_req_mm']} mm, {r['N_req']} turns"
+                                for r in ind if not r['od_ok'])
+                    + '. The design sheet of AQS-INV-005 is revised to these values before the laminations are cut.'), '',
+           '## 2. Other families', '',
+           'Table 2.1 lists the families that are not induction motors, with the first article of each and its '
+           'acceptance tests.', '', 'Table 2.1. Other motor families', '',
+           '| Family | Type | Rating | Items | First article |', '|---|---|---|---|---|']
+    for r in out:
+        if 'P_kW' in r:
+            continue
+        fa = {'BLDC': 'stator stack + bonded NdFeB rotor, hall board; back-EMF constant and torque constant on the rig',
+              'BLDC actuator': 'BLDC + harmonic or spur gearhead to ISO 5211 F03 flange; stall torque and cycle life '
+                               '10,000 strokes',
+              'solenoid': 'bobbin coil, plunger and frame; pull-in and drop-out voltage, coil temperature rise at '
+                          '110 % V',
+              'stepper': 'hybrid stepper stack, 1.8 deg; holding torque and pull-out torque curve'}.get(r['type'],
+                                                                                                       'per sheet')
+        md.append(f"| {r['family']} | {r['type']} | {r['rating']} | {r['items']} | {fa} |")
+    md += ['', '## 3. Build traveller', '',
+           'Table 3.1 is the build traveller for the first article of each induction family. Each step has an '
+           'inspection or hold point that must be passed before the next step.', '',
+           'Table 3.1. Build traveller for an induction first article', '',
+           '| Step | Operation | Inspection / hold point | Acceptance |', '|---|---|---|---|',
+           '| 1 | Laminations laser-cut from M400-50A 0.5 mm to the drawing (a progressive die only after the first '
+           'article passes) | first-off dimensional | bore and OD within 0.05 mm, burr < 0.03 mm |',
+           '| 2 | Stack, press and weld / cleat stator; skew and stack rotor | stack length and squareness | stacking '
+           'factor >= 0.96 |',
+           '| 3 | Die-cast rotor cage in in-house Al | X-ray or sectioned sample bar | porosity < 2 % by area |',
+           '| 4 | Slot liners, insert winding, connect, lace | turns count, resistance balance | phase resistance '
+           'within 2 % |',
+           '| 5 | VPI and cure | surge comparison and hipot before VPI and after | IEC 60034-1 withstand 1000 V + 2 U, '
+           '1 min |',
+           '| 6 | Machine shaft (C45), press rotor, balance | runout, balance | G2.5 (ISO 21940-11) |',
+           '| 7 | Frame, end shields, bearings, fan, terminal box | air gap at 4 points | gap within 10 % of nominal |',
+           '| 8 | Routine tests (IEC60034_1_2022) | winding resistance, no-load, locked rotor, hipot | per '
+           'IEC 60034-1 |',
+           '| 9 | Type test (IEC60034_2_1_2014 method 2-1-1B) on the rig below | efficiency, temperature rise, noise '
+           '(IEC 60034-9) | efficiency >= sheet IE3 target; class B rise |', '',
+           '## 4. Type-test rig', '', 'One rig is used to type-test all families. It has the following parts.', '',
+           f"- Load machine. An {loadm['family']} motor made in-house ({loadm['P_kW']:g} kW, IEC frame {lf}) runs as a "
+           'regenerating load on a back-to-back pair of variable-frequency drives (VFDs) with a common DC bus, so that '
+           f"only the losses are drawn from the supply. The largest family ({bigm['family']}, a {bigm['P_kW']:g} kW "
+           f"{bt} motor) is tested at 85 % of its rating on this load, or with a second {loadm['family']} coupled in "
+           'tandem.',
+           f'- Torque transducer. An in-line transducer with a range of 200 N m and an accuracy class of 0.2 %; the '
+           f'largest rated torque of any family is {tmax} N m. Speed is measured with an encoder of 1024 pulses per '
+           'revolution.',
+           '- Power analyser. A three-phase analyser of accuracy class 0.1 %, measuring harmonics to the 50th, with '
+           'six thermocouples in each winding for temperature rise and a timer for the resistance measurement after '
+           'shutdown.',
+           '- Bed. A cast or welded steel T-slot bed with adjustable centre-height adapter plates for IEC frames 63 to '
+           '180, jaw couplings sized for the transducer, and a guard to ISO 14120.',
+           '- Supply. A 480 V three-phase supply, adjustable through the VFD for the no-load voltage sweep from 110 % '
+           'to 30 % of rated voltage (IEC 60034-2-1), and a DC supply for the winding resistance measurement.', '',
+           'The measured efficiency, power factor, slip and temperature rise of each family replace the assumed '
+           'coefficients of A-M-126 (power factor, Bd and A) in `flow_graph/inventory/motor_designs.py`.']
+    return _md(md)
+
+
+def render_motor_fa_json(m, inputs):
+    """docs-authority/inventory/MOTOR_FA.json: the machine face of the
+    first-article book."""
+    out, _svgs = _motor_fa_book(m, inputs)
+    return json.dumps(out, indent=1).encode('utf-8')
+
+
+def _fa_renderer(fid):
+    """One drawings/motor_fa/MF-nn.svg first article bound to its family id
+    (the registry entries bind the committed SVG roster -- see the module
+    tail). A family absent from the census is loud, as the MF sheets are: the
+    canonical payload renders the committed drawing; a payload without the
+    committed registers renders the named not-in-this-census fallback."""
+    def render(m, inputs):
+        _out, svgs = _motor_fa_book(m, inputs)
+        svg = svgs.get(fid)
+        if svg is None:
+            return _md([f'# Motor first article {fid}', '',
+                        f'Family {fid} is not an induction family of this census (or the render ran under a payload '
+                        'without the committed family registers, so the census allocated de-novo ids): the '
+                        'first-article drawings bind the committed roster. The canonical payload (inputs.load with '
+                        'the inventory wave extras) renders the committed drawing.'])
+        return '\n'.join(svg).encode('utf-8')
+    render.__name__ = f'render_fa_svg_{fid.lower()}'
+    return render
+
+
 # ---- AQS-INV-002: the wire inventory (WIRE_INVENTORY.md/.csv,
 # WIRE_FAMILIES.csv; the section D row this wave unlocks) -----------------------
 
@@ -482,6 +773,262 @@ def render_wire_inventory_md(m, inputs):
         L.append(f"| {r['subsystem']} | {r['unit']} | {r['circuit']} | {r['size']} | {r['insulation']} | "
                  f"{r['conductors']} | {r['length_m']} | {r['qty']} | {r['total_m']} | {r['basis']} |")
     return _md(L)
+
+
+# ---- AQS-INV-007: the wire family specifications and production plans ---------
+# (WIRE_SPECS.md, the WF-nn.svg cross-sections, WIRE_SPECS.json -- the section
+# D doc_wire_specs row this wave's wire census unlocks)
+
+def _drv_of(inputs):
+    """The resolved driver payload (the render/electrical.py idiom):
+    drivers.json with every entry the site profile binds replaced by the
+    profile's value."""
+    d = dict(inputs['drivers'])
+    prof = inputs.get('site_profile')
+    if prof:
+        for grp in prof['groups'].values():
+            for e in (grp.get('entries') or {}).values():
+                k = e.get('binds')
+                if k:
+                    d[k] = {f: x for f, x in e.items() if f != 'binds'}
+    return d
+
+
+def _wf_area(sz):
+    """The v1 _wire_specs.area(): the conductor cross-section, mm2, from the
+    size (AWG ladder or kcmil)."""
+    mm = re.match(r'([\d/]+)\s*(AWG|kcmil)', sz)
+    val, u = mm.groups()
+    if u == 'kcmil':
+        return float(val) * flo_('0.506707')
+    n = -(int(val.split('/')[0]) - 1) if '/' in val else int(val)
+    return math.pi / 4 * (flo_('0.127') * 92 ** ((36 - n) / 39)) ** 2
+
+
+def _wf_strands(sz, a):
+    """The v1 strands(): the class B concentric stranding count
+    (ASTM_B8_2023)."""
+    if 'kcmil' in sz:
+        return 37 if a <= flo_('253.4') else 37 if a <= flo_('506.7') else 61
+    if a >= flo_('42.4'):
+        return 19                                          # 1 AWG to 4/0
+    return 7                                               # 14 to 2 AWG; 16 and 18 AWG made 7-wire for flex
+
+
+def _wf_insulation(f, a):
+    """The v1 insulation(): the layer list (name, wall mm), the covering name
+    and the listed standard."""
+    t = f['insulation']
+    if 'bare' in t:
+        return [], 'bare, no covering', 'ASTM_B3_2013 / ASTM_B8_2023'
+    if 'MV-105' in t:
+        return [('conductor shield, semiconducting', flo_('0.38')),
+                ('EPR insulation, 15 kV 133 %', flo_('5.59')),
+                ('insulation shield, semiconducting', flo_('0.76')),
+                ('Cu tape shield 0.127 mm, 25 % overlap', flo_('0.25')),
+                ('PVC jacket', flo_('2.03'))], 'MV-105', 'UL1072_2006'
+    if 'PV Wire' in t:
+        return [('XLPE insulation, 2 kV (UL 4703 1000/2000 V wall for 14-10 AWG, 75 mil; confirmed 2026-10-16)',
+                 flo_('1.91'))], 'PV Wire 2 kV', 'UL4703_2014'
+    if 'THHN' in t:
+        tt = flo_('0.38') if a < 5 else flo_('0.51') if a < 8 else flo_('0.76') if a < 20 else flo_('1.02')
+        return [('PVC insulation', tt), ('nylon jacket', flo_('0.10') if a < 8 else flo_('0.13'))], 'THHN/THWN-2', 'UL83_2017'
+    if 'TFFN' in t or ('shielded pair' in t):
+        return ([('PVC insulation', flo_('0.38')), ('nylon jacket', flo_('0.10'))] if 'TFFN' in t
+                else [('PVC insulation', flo_('0.38'))]), \
+            ('TFFN' if 'TFFN' in t else 'PLTC shielded pair'), \
+            ('UL66_2015' if 'TFFN' in t else 'UL1581_2019')
+    tx = flo_('0.76') if a < 6 else flo_('1.14') if a < 40 else flo_('1.40') if a < 110 else flo_('1.65')
+    return [('XLPE insulation (XHHW-2)' + (', green' if 'green' in t else ''), tx)], 'XHHW-2', 'UL44_2018'
+
+
+def _wf_cable(f):
+    """The v1 cable(): the core count and formation."""
+    t = f['insulation'] + ' ' + f['type']
+    if 'TC-ER' in t and '2-cond' in t:
+        return 2, 'TC-ER 2-conductor'
+    if 'TC-ER' in t:
+        return 4, 'TC-ER 3 + green ground'
+    if '3-pair' in t:
+        return 6, '3 twisted pairs, overall Al/PET foil and 7-wire drain, PVC jacket'
+    if 'pair' in t:
+        return 2, 'twisted pair, Al/PET foil and drain, PVC jacket'
+    return 1, 'single conductor'
+
+
+def _wf_jacket(dd):
+    """The v1 jacket(): TC-ER and control-cable jacket walls, UL1277_2019 table
+    (minimum average by diameter under jacket; confirmed 2026-10-16)."""
+    return (flo_('1.14') if dd <= flo_('10.80') else flo_('1.52') if dd <= flo_('17.78')
+            else flo_('2.03') if dd <= flo_('38.10') else flo_('2.79') if dd <= flo_('63.50') else flo_('3.56'))
+
+
+def _wire_spec_rows(m, inputs):
+    """The v1 _wire_specs.py row book over the wire families (the census chain
+    rows in memory -- the v1 stage read WIRE_FAMILIES.csv) with the WIRE_DRAW
+    drivers (A-M-217). Rows carry the family row (f) and layer list (lay) the
+    page section 3 and the SVG quote; the JSON sidecar drops both, as v1."""
+    d = _drv_of(inputs)
+
+    def v(k):
+        return d[k]['value']
+
+    rho = v('MFG.tools-metal-forming-train.metal-forming.WIRE_DRAW.ws_cu_rho_ohm_mm2_m')
+    cu = v('MFG.tools-metal-forming-train.metal-forming.WIRE_DRAW.ws_cu_density_g_cm3')
+    rod = v('MFG.tools-metal-forming-train.metal-forming.WIRE_DRAW.ws_rod_D_mm')
+    red = v('MFG.tools-metal-forming-train.metal-forming.WIRE_DRAW.ws_pass_reduction')
+    rows = []
+    for f in _books(m, inputs)['wfam']:
+        a = _wf_area(f['size'])
+        n = _wf_strands(f['size'], a)
+        ds = math.sqrt(4 * a / n / math.pi)
+        k = flo_('1.0') if n == 1 else flo_('1.02') if n <= 19 else flo_('1.03')
+        Dc = ds * (3 if n == 7 else 5 if n == 19 else 7 if n == 37 else 9)
+        lay, ins, std = _wf_insulation(f, a)
+        ccd = Dc + 2 * sum(t for _, t in lay)
+        nc, form = _wf_cable(f)
+        Dj = None
+        if nc > 1:
+            lay_d = ccd * (1 if nc == 1 else 2 if nc == 2 else flo_('2.414') if nc == 4
+                           else flo_('3.0') if nc == 6 else 2)     # circle-packing lay factors (4 cores 1 + sqrt2)
+            Dj = lay_d + 2 * _wf_jacket(lay_d)
+        L = float(f['conductor_m'])
+        cu_kg = a * L * cu / 1000 * k
+        ins_kg = sum(math.pi * ((Dc / 2 + sum(t for _, t in lay[:i + 1])) ** 2
+                                - (Dc / 2 + sum(t for _, t in lay[:i])) ** 2) * L
+                     * (flo_('1.40') if 'PVC' in nm else flo_('1.15') if 'nylon' in nm
+                        else flo_('0.95') if ('XLPE' in nm or 'EPR' in nm) else flo_('1.2')) / 1000
+                     for i, (nm, _) in enumerate(lay))
+        passes = max(0, math.ceil(math.log((math.pi / 4 * rod ** 2) / (math.pi / 4 * ds ** 2)) / -math.log(1 - red)))
+        R20 = rho / a * 1000 * k
+        rows.append(dict(fam=f['family'], size=f['size'], a=a, n=n, ds=ds, Dc=Dc, D=ccd, Dj=Dj, nc=nc, form=form,
+                         ins=ins, std=std, L=L, cu=cu_kg, ik=ins_kg, passes=passes, R20=R20, lay=lay, f=f))
+    return rows, red
+
+
+def _wf_svg_lines(r):
+    """The v1 cross-section drawing lines for one spec row (the circle pack,
+    the layer callouts and the standard line)."""
+    f, lay, ccd = r['f'], r['lay'], r['D']
+    Dj, a, n, ds, R20 = r['Dj'], r['a'], r['n'], r['ds'], r['R20']
+    sc = 120 / max(Dj or ccd, 1)
+    cx = cy = 80
+    svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="420" height="170" font-family="sans-serif" font-size="10">',
+           f'<text x="170" y="20" font-weight="bold">{f["family"]} {f["size"]} {r["ins"]}</text>']
+    rad0 = (Dj or ccd) / 2 * sc
+    if Dj:
+        svg.append(f'<circle cx="{cx}" cy="{cy}" r="{rad0:.1f}" fill="#ddd" stroke="#000"/>')
+    for i in range(len(lay), -1, -1):
+        rad = (r['Dc'] / 2 + sum(t for _, t in lay[:i])) * sc * (flo_('0.45') if Dj else 1)
+        svg.append(f'<circle cx="{cx}" cy="{cy}" r="{rad:.1f}" '
+                   f'fill="{"#c87533" if i == 0 else ["#2c7", "#555", "#333", "#b80", "#222"][(i - 1) % 5]}" stroke="#000"/>')
+    yy = 40
+    for line in ([f'conductor {a:.3f} mm2, {n} x {ds:.3f} mm soft Cu, ASTM B8 class B'] if n > 1
+                 else [f'conductor {a:.3f} mm2 solid']) \
+            + [f'{nm} {t:.2f} mm' for nm, t in lay] \
+            + [f'core OD {ccd:.2f} mm'] \
+            + ([f'{r["form"]}, jacket OD {Dj:.1f} mm'] if Dj else []) \
+            + [f'R20 {R20:.3f} ohm/km; {r["std"]}']:
+        svg.append(f'<text x="170" y="{yy}">{line}</text>')
+        yy += 14
+    svg.append('</svg>')
+    return svg
+
+
+def render_wire_specs_md(m, inputs):
+    """docs-authority/WIRE_SPECS.md: the v1 _wire_specs.py page template
+    (AQS-INV-007 rev C, A-M-217)."""
+    rows, red = _wire_spec_rows(m, inputs)
+    tot_cu = sum(r['cu'] for r in rows)
+    tot_i = sum(r['ik'] for r in rows)
+    md = ['# Wire family specifications and production plans', '', 'Document number: AQS-INV-007', 'Revision: C',
+          'Date: 2026-10-21',
+          'Authority: AQS-PLAN-007 X-INV-03-WF-01..26. Generated by `docs-authority/_wire_specs.py` from '
+          '`inventory/WIRE_FAMILIES.csv` (AQS-INV-002). A-M-217. Desk package: the production runs and type tests are '
+          'the open part of each WF task. Study. Not a PE stamp.', '',
+          '| Rev | Description | Date |', '| --- | --- | --- |',
+          '| A | First issue: one specification and production-plan sheet per wire family, cross-section drawing per family. | 2026-10-16 |',
+          '| B | Checked values: PV Wire 2 kV 10 AWG wall confirmed to the UL 4703 75 mil figure; TC-ER and control-jacket walls confirmed to the UL 1277 table. | 2026-10-16 |',
+          '| C | Board evidence issue for the 26 family desks (X-INV-03-WF-01..26; the "..27" label predated a family retirement and is corrected here). Production runs and type tests stay open. | 2026-10-21 |', '',
+          f'{len(rows)} families, {sum(r["L"] for r in rows) / 1000:.1f} km of conductor, {tot_cu:,.0f} kg copper and '
+          f'{tot_i:,.0f} kg insulation and jacket compound (cable jackets not counted). Conductor: soft annealed Cu '
+          '100 % IACS (ASTM_B3_2013), class B concentric stranding (ASTM_B8_2023), drawn on WIRE_DRAW from 8 mm redraw '
+          f'rod (ASTM_B49_2020) at {red:.0%} area reduction per pass (A-M-217). Cross-sections: '
+          '`docs-authority/drawings/wire/WF-nn.svg`.', '',
+          '## 1. Summary', '',
+          '| Family | Size | mm2 | Strands | Wire mm | Passes | Covering | Core OD mm | Cable | Cable OD mm | Length m | '
+          'Cu kg | Compound kg | R20 ohm/km | Standard |',
+          '|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|']
+    for r in rows:
+        md.append(f"| {r['fam']} | {r['size']} | {r['a']:.3f} | {r['n']} | {r['ds']:.3f} | {r['passes']} | {r['ins']} | "
+                  f"{r['D']:.2f} | {r['form']} | {'' if not r['Dj'] else f'{r[chr(68) + chr(106)]:.1f}'} | "
+                  f"{r['L']:,.0f} | {r['cu']:,.1f} | {r['ik']:,.1f} | {r['R20']:.3f} | {r['std']} |")
+    md += ['', '## 2. Production plan (all families)', '',
+           'Checked values (rev B, 2026-10-16): PV Wire 2 kV 10 AWG insulation is 75 mil (1.91 mm), the UL 4703 wall '
+           'for 1000 and 2000 V at 14-10 AWG (was carried as 1.52 mm); the TC-ER jacket steps (1.14 / 1.52 / 2.03 / '
+           '2.79 / 3.56 mm minimum average over 10.80 / 17.78 / 38.10 / 63.50 mm under the jacket) agree with the '
+           'UL 1277 table. Both read from published spec sheets that restate the standard tables; a purchased copy of '
+           'each standard is still to be checked before the type tests.', '',
+           '1. Rod: 8 mm ASTM B49 redraw rod from the in-house Cu cathode (EW line) via the continuous caster; '
+           '100 % IACS check on every coil (four-wire resistance, ASTM B193).',
+           '2. Drawing: WIRE_DRAW multi-die line, diamond / PCD dies, emulsion lubricated; the pass count above takes '
+           'the rod to the strand wire at 20 % per pass; a die series is fixed per strand size.',
+           '3. Anneal: in-line resistance annealer to soft temper (ASTM B3 elongation), inert or steam shrouded.',
+           '4. Strand: rigid or tubular strander, class B concentric lay (ASTM B8 lay-length limits); 16 and 18 AWG '
+           'are 7-wire for flexibility.',
+           '5. Insulate: single-screw extruder, crosshead to the thickness above; XLPE (XHHW-2, PV Wire, EPR for MV) '
+           'cured in a continuous vulcanising tube or moisture-cured silane; PVC plus nylon by tandem extrusion '
+           '(THHN, TFFN).',
+           '6. Spark test in line on every metre at the UL 1581 voltage for the insulation thickness; diameter gauge '
+           'with feedback to the extruder.',
+           '7. Cable (TC-ER, pairs): twist / cable, foil and drain for shielded pairs, jacket extrusion, print legend, '
+           'coil or reel.',
+           '8. Routine tests per reel: conductor resistance (against R20 above, NEC Chapter 9 Table 8 limits), AC '
+           'dielectric and insulation resistance in water (UL 1581), dimensional check. Type tests per family once: '
+           'the listed standard (VW-1 / vertical tray flame, cold bend, sunlight for PV Wire, crush and impact for '
+           'TC-ER, partial discharge for MV-105).', '',
+           '## 3. Family sheets', '']
+    for r in rows:
+        f = r['f']
+        md += [f"### {r['fam']}: {f['type']} {f['size']}, {f['insulation']}", '',
+               f"Use: {f['circuits']} circuits, {r['L']:,.0f} m of conductor, voltage class {f['voltage_class']} "
+               f"(AQS-INV-002). Drawing: `docs-authority/drawings/wire/{r['fam']}.svg`.", '',
+               f"- Conductor: {r['a']:.3f} mm2, {r['n']} x {r['ds']:.3f} mm soft Cu, stranded OD {r['Dc']:.2f} mm, "
+               f"R20 {r['R20']:.3f} ohm/km (stranding factor included); {r['cu']:,.1f} kg Cu.",
+               *[f"- {nm}: {t:.2f} mm" for nm, t in r['lay']],
+               f"- Core OD {r['D']:.2f} mm"
+               + (f"; {r['form']}, jacket {_wf_jacket(r['Dj'] - 2 * _wf_jacket(r['Dj']) if r['Dj'] else 0):.2f} mm "
+                  f'(UL1277_2019 table), cable OD {r["Dj"]:.1f} mm' if r['Dj'] else '') + '.',
+               f"- Drawing: {r['passes']} passes from 8 mm rod; standard {r['std']}; compound {r['ik']:,.1f} kg.", '']
+    return _md(md)
+
+
+def render_wire_specs_json(m, inputs):
+    """docs-authority/inventory/WIRE_SPECS.json: the machine face of the spec
+    rows (the family row and layer list dropped, as v1)."""
+    rows, _red = _wire_spec_rows(m, inputs)
+    return json.dumps([{k: v for k, v in r.items() if k not in ('f', 'lay')} for r in rows], indent=1).encode('utf-8')
+
+
+def _wf_renderer(fid):
+    """One drawings/wire/WF-nn.svg cross-section bound to its family id (the
+    registry entries bind the committed SVG roster -- see the module tail). A
+    family absent from the census is loud, as the MF sheets are: the canonical
+    payload (the wave extras) renders the committed drawing; a payload without
+    the committed registers allocates de-novo ids and renders the named
+    not-in-this-census fallback, deterministically."""
+    def render(m, inputs):
+        rows, _red = _wire_spec_rows(m, inputs)
+        r = next((x for x in rows if x['fam'] == fid), None)
+        if r is None:
+            return _md([f'# Wire family {fid} cross-section', '',
+                        f'Family {fid} is not in this census: the render ran under a payload without the committed '
+                        'wire family registers, so the census allocated its ids de novo and they do not reach the '
+                        'committed roster. The canonical payload (inputs.load with the inventory wave extras) '
+                        'renders the committed drawing.'])
+        return '\n'.join(_wf_svg_lines(r)).encode('utf-8')
+    render.__name__ = f'render_wf_svg_{fid.lower()}'
+    return render
 
 
 # ---- AQS-INV-003: the pipe inventory (PIPE_INVENTORY.md/.csv, PIPE_FAMILIES.csv)
@@ -1597,6 +2144,20 @@ def render_self_copy_section(m, inputs):
 _MF_SHEETS = ['MF-01', 'MF-02', 'MF-03', 'MF-06', 'MF-07', 'MF-08', 'MF-09', 'MF-10', 'MF-11', 'MF-12',
               'MF-13', 'MF-14', 'MF-15', 'MF-16', 'MF-17', 'MF-19', 'MF-25', 'MF-27', 'MF-28', 'MF-30']
 
+# The committed first-article SVG roster (the induction families of the
+# current census, in design-row order) and the committed wire cross-section
+# SVG roster (the current wire families, in family-rollup order). Both bind
+# the committed tree the way _MF_SHEETS does -- a census that re-clusters is
+# loud. The v1 stages never regenerate or delete a retired family's drawing,
+# so the committed trees also carry orphan SVGs of retired family classes
+# (drawings/motor_fa/MF-17.svg, MF-19.svg; eleven retired WF ids) -- they are
+# not outputs of the current stages and stay unregistered.
+_FA_SHEETS = ['MF-06', 'MF-07', 'MF-08', 'MF-09', 'MF-10', 'MF-11', 'MF-12', 'MF-13', 'MF-14', 'MF-15',
+              'MF-16', 'MF-25', 'MF-28', 'MF-30']
+_WF_SHEETS = ['WF-01', 'WF-02', 'WF-03', 'WF-04', 'WF-05', 'WF-06', 'WF-07', 'WF-08', 'WF-09', 'WF-10',
+              'WF-11', 'WF-12', 'WF-13', 'WF-14', 'WF-15', 'WF-16', 'WF-19', 'WF-20', 'WF-21', 'WF-24',
+              'WF-25', 'WF-28', 'WF-30', 'WF-31', 'WF-32']
+
 DOCS = [
     ('docs-authority/inventory/MOTOR_INVENTORY.csv', render_motor_inventory_csv),
     ('docs-authority/inventory/MOTOR_INVENTORY.md', render_motor_inventory_md),
@@ -1604,10 +2165,16 @@ DOCS = [
     ('docs-authority/inventory/WIRE_INVENTORY.csv', render_wire_inventory_csv),
     ('docs-authority/inventory/WIRE_INVENTORY.md', render_wire_inventory_md),
     ('docs-authority/inventory/WIRE_FAMILIES.csv', render_wire_families_csv),
+    ('docs-authority/WIRE_SPECS.md', render_wire_specs_md),
+    ('docs-authority/inventory/WIRE_SPECS.json', render_wire_specs_json),
+] + [(WF_DIR + fid + '.svg', _wf_renderer(fid)) for fid in _WF_SHEETS] + [
     ('docs-authority/inventory/MOTOR_DESIGNS.csv', render_motor_designs_csv),
     ('docs-authority/inventory/MAGNET_COMPARISON.csv', render_magnet_comparison_csv),
     ('docs-authority/inventory/MOTOR_DESIGNS.md', render_motor_designs_md),
-] + [(MF_DIR + fid + '.md', _mf_renderer(fid)) for fid in _MF_SHEETS] + [
+] + [(MF_DIR + fid + '.md', _mf_renderer(fid)) for fid in _MF_SHEETS] \
+  + [(FA_DIR + fid + '.svg', _fa_renderer(fid)) for fid in _FA_SHEETS] + [
+    ('docs-authority/MOTOR_FIRST_ARTICLE.md', render_motor_fa_md),
+    ('docs-authority/inventory/MOTOR_FA.json', render_motor_fa_json),
     ('docs-authority/inventory/PIPE_INVENTORY.csv', render_pipe_inventory_csv),
     ('docs-authority/inventory/PIPE_INVENTORY.md', render_pipe_inventory_md),
     ('docs-authority/inventory/PIPE_FAMILIES.csv', render_pipe_families_csv),
@@ -1639,7 +2206,4 @@ REMAINING = {
     'docs-authority/ITP.md + models/units/*/itp.csv + models/units/*/bom.csv (doc_unit_boms / doc_itp)':
         'the per-unit tree is parametric over the committed roster; the entry points (render_unit_bom_csv / '
         'render_itp_csv / render_itp_md) land with the row that enumerates the roster into the registry',
-    'docs-authority/MOTOR_FIRST_ARTICLE.md + drawings/motor_fa/*.svg + inventory/MOTOR_FA.json (doc_motor_fa)':
-        'reads the MF sheet texts (composable here) and the mfa_* drivers; ported with the per-sheet roster '
-        'enumeration it shares with doc_unit_boms',
 }

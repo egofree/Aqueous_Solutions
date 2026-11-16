@@ -2,13 +2,15 @@
 plus sizing/EW_CELLS.md, the section E row the chain is coupled to). Reference
 writers: docs-authority/_load_list.py, _one_line.py, _ew_busbar.py,
 _power_sizing_doc.py, _ew_sizing.py, and the _rect_ew_sizing.py interlock the
-one-line reads over subprocess stdout. Seven pure functions Model -> document
-bytes (five documents plus the LOAD_LIST and BUSBAR and ONE_LINE machine
-sidecars, the U2a interlock transports the v1 chain passed as files), porting
-the v1 doc templates exactly (the same headers, document numbers, revision
-lines, table shapes, number formats and basis texts). The acceptance is
-byte-exact reproduction of the committed files
-(flow_graph/v2/test_render_electrical.py).
+one-line reads over subprocess stdout. Pure functions Model -> document bytes
+(seven documents -- the five above plus the cable schedule and the hazardous
+area page -- plus the LOAD_LIST and BUSBAR and ONE_LINE machine sidecars and
+the HAZ_AREA.csv sidecar, the U2a interlock transports the v1 chain passed as
+files), porting the v1 doc templates exactly (the same headers, document
+numbers, revision lines, table shapes, number formats and basis texts). The
+acceptance is byte-exact reproduction of the committed files
+(flow_graph/v2/test_render_electrical.py, and the clearance acceptance of
+flow_graph/v2/test_render_clearances.py).
 
 Compositions in memory (the EVAP X-STD-01 pattern of render/sizing_docs.py):
 - the load_list / one_line interlock: v1 passed LOAD_LIST.json as a file; here
@@ -51,32 +53,47 @@ bytes):
   RECTIFIER stamps, the EXT_HALL continuous_kw, and the backup_fuel
   critical_list/rating_kw and sizing.power.rectifier_trims arithmetic.
 
-REMAINING (the section D documents NOT ported here - their render depends on
-a physics or inventory family that has not landed, so byte-exactness cannot
-be proven yet; each becomes a renderer when its family lands):
-- cable_schedule (docs-authority/CABLE_SCHEDULE.md): reads
-  inventory/WIRE_INVENTORY.csv - the inventory_wire census family
-  (flow_graph/inventory/wire.py) is not landed;
-- inventory_wire (WIRE_FAMILIES.csv / WIRE_INVENTORY.csv / .md): reads
-  MOTOR_INVENTORY.csv (inventory_motors, not landed) and parses the
-  COLLECTION_BUS.md CB- rows (write_graph_power's renderer half, not landed);
-- doc_wire_specs (docs-authority/WIRE_SPECS.md + WF SVGs + WIRE_SPECS.json):
-  reads WIRE_FAMILIES.csv (inventory_wire, above);
-- protection (docs-authority/PROTECTION.md): the coordination and IEEE 80
-  touch/step study reads the grounding-grid physics
-  (docs-authority/_grounding_study.py, a physics family with no landed v2
-  function) on top of the one-line table;
-- haz_area (docs-authority/HAZ_AREA.md + HAZ_AREA.csv): reads
-  INSTRUMENT_INDEX.csv and OTHER_INVENTORY.csv (instrument/other census
-  families, not landed);
-- doc_motor_fa (docs-authority/MOTOR_FIRST_ARTICLE.md + SVGs + MOTOR_FA.json;
-  ledger section I, listed with this wave by the brief): reads
-  MOTOR_DESIGNS.csv (inventory_motor_designs, not landed).
+- render_power_sizing: the PV_ARRAY / ZNBR2 / SOL_ARK_60K / BACKUP_GEN /
+  FUEL_CELL params books, mvs.electrical (derived, seed-carried), the
+  RECTIFIER stamps, the EXT_HALL continuous_kw, and the backup_fuel
+  critical_list/rating_kw and sizing.power.rectifier_trims arithmetic;
+- render_cable_schedule: the power circuits of the wire census (the inventory
+  family's books, read through functions/inventory) with design current,
+  ampacity and drop per NEC, the bus demand from the one-line book (the U2a
+  sidecar value composed in memory), and the switchboard, collection-section
+  and EW bars (the busbar book);
+- render_haz_area_md / render_haz_area_csv: the release-source rows of
+  functions/haz_area with the per-unit instrument counts (the committed
+  INSTRUMENT_INDEX.csv rows, a declared inputs payload until the instrument
+  index census family lands -- the gas_detectors/sif_list disposition of
+  inventory_other) and the motor-and-pump counts over the other census rows.
+
+REMAINING (the section D documents NOT ported here; each keeps its reason):
+- protection (docs-authority/PROTECTION.md): the physics landed
+  (flow_graph/v2/functions/protection.py, golden in test_safety_books.py),
+  but the committed PROTECTION.md page is hand-authored -- its figures predate
+  the current roof and inverter count and no writer exists in the tree -- so
+  there is no generated reference to reproduce byte-exactly; the page refresh
+  is the owner lane's and this book is its golden.
+
+Cleared by the inventory landing (each now renders or is covered elsewhere):
+- inventory_wire: the WIRE_INVENTORY/.csv and WIRE_FAMILIES.csv block is
+  rendered by render/inventory.py (the section D row the section I censuses
+  unlock);
+- doc_wire_specs: the WIRE_SPECS.md page, the WF-nn.svg cross-sections and
+  WIRE_SPECS.json render in render/inventory.py beside the wire families book
+  they read;
+- doc_motor_fa: MOTOR_FIRST_ARTICLE.md, the MF-nn.svg first articles and
+  MOTOR_FA.json render in render/inventory.py beside the motor design books
+  and MF sheets they read;
+- haz_area and cable_schedule: rendered in this module (above).
 
 Pure: no I/O here - the registry returns bytes and file writing stays outside.
 """
 import collections
+import csv
 import hashlib
+import io
 import json
 import math
 import re
@@ -89,6 +106,9 @@ from flow_graph.param.code_basis import MARK as _CODE_MARK          # X-STD-01 b
 from flow_graph.param.code_basis import block as _code_block
 from flow_graph.param.sizing import electrochem as _EC
 from flow_graph.param.sizing import power as _PWS
+
+from flow_graph.v2.functions import haz_area as _HAZ
+from flow_graph.v2.functions import inventory as _INV
 
 EW = 'DIGESTER.ew-cascade-train.'                                   # the EW module driver prefix (A-M-040)
 G_BASE_FALLBACK = float('9.80665')                                  # baseline-profile gravity (site.py), when no profile is carried
@@ -1087,6 +1107,163 @@ def render_power_sizing(m, inputs):
     return _finish('\n'.join(md), 'POWER_SIZING')
 
 
+# ---- X-ELS-06: the cable and busbar schedule (CABLE_SCHEDULE.md) ----------------
+
+_CABLE_J = 1000 / float('6.4516')               # A/cm2, the UL891 default density, copper
+_AMP = dict(_INV.AMP)                            # the v1 AMP face of the census ampacity table (size -> A)
+
+
+def _cable_book(m, inputs):
+    """The cable-schedule book of docs-authority/_cable_schedule.py: every
+    power circuit of the wire census (the inventory family's books in memory,
+    the v1 stage read the committed WIRE_INVENTORY.csv) with design current,
+    conductor ampacity (parallel sets), length and voltage drop; the bus
+    demand from the one-line book (the U2a sidecar value composed in memory);
+    the switchboard and collection-section bars; and the EW process bars from
+    the busbar book."""
+    d = _drv_of(inputs)
+    mot = _INV.motor_rows(m, inputs)
+    rows = []
+    for r in _INV.wire_census(m, inputs, mot)['rows']:
+        if not r['type'].startswith('power') or r['size'] not in _AMP:
+            continue
+        m1 = re.search(r'\(([0-9.]+) A\)', r['basis']) or re.search(r'([0-9.]+) A', r['basis'])
+        I = float(m1.group(1)) if m1 else None
+        if I is None:
+            continue
+        ms = re.search(r'in (\d+) parallel', r['basis']) or re.search(r'(\d+) sets', r['basis'])
+        par = int(ms.group(1)) if ms else 1
+        L = float(r['length_m'])
+        amp = _AMP[r['size']] * par
+        if '1 ph' in r['type']:
+            V = float('277.0') if '277' in r['circuit'] else float('120.0')
+            dv = 2 * I * L / 1000 * _INV.RKM[r['size']] / V * 100
+        else:
+            V = float('208.0') if '208' in r['circuit'] or '208' in r['voltage_class'] else float('460.0')
+            dv = _INV._vd(r['size'], I / par, L, V)
+        lim = float('2.0') if ('panel feeder' in r['circuit'] or 'section main' in r['circuit']) else float('3.0')
+        rows.append(dict(unit=r['unit'], circuit=r['circuit'], size=r['size'], sets=par, I=I, amp=amp, L=L, V=V,
+                         vd=dv, lim=lim, ok=I <= amp and dv <= lim + float('1e-9')))
+    # bus demand from the one-line book at the quantisation the U2a sidecar
+    # publishes (the v1 stage read ONE_LINE.json)
+    dem = round(_one_line_book(m, d)['demand'], 2)
+    I_bus = dem * 1000 / (math.sqrt(3) * V_BUS * float('0.9'))
+    bars = [('SWBD-1 section A (main-tie-main, either section carries the whole plant with the tie closed)', 500, I_bus),
+            ('SWBD-1 section B', 500, I_bus)]
+    bars += [(f'Collection section CB-{i} (10 x 60 kW inverters, NEC 705.28 at 125 %)', 1000, 722 * float('1.25'))
+             for i in range(1, 7)]
+    brow = [dict(name=n, rating=a, I=i, cm2=a / _CABLE_J, ok=i <= a) for n, a, i in bars]
+    ew = [(c, a, round(s['A_cm2'], 1)) for c, a, s in _busbar_book(m, inputs)[1]]   # the U2a A_cm2 quantisation
+    return rows, dem, I_bus, brow, ew
+
+
+def render_cable_schedule(m, inputs):
+    """docs-authority/CABLE_SCHEDULE.md: the v1 _cable_schedule.py template
+    (AQS-ELEC-010 rev A)."""
+    rows, dem, I_bus, brow, ew = _cable_book(m, inputs)
+    bad = [x for x in rows if not x['ok']]
+    md = ['# Cable and busbar schedule', '', 'Document number: AQS-ELEC-010', 'Revision: A', 'Date: 2026-10-15',
+          'Authority: AQS-PLAN-007 X-ELS-06. Generated by `docs-authority/_cable_schedule.py` from AQS-INV-002 '
+          '(WIRE_INVENTORY.csv), AQS-ELEC-008 and AQS-BUS-001. Study; not a PE stamp.', '',
+          f'{len(rows)} power circuits; {len(rows) - len(bad)} meet ampacity (NEC2026 310.16, 75 C, Cu) and the '
+          f'voltage-drop limits (3 % branch, 2 % feeder, resistive three-phase); {len(bad)} do not.', '',
+          '## 1. Busbars', '', '| Bus | Rating A | Design A | Cu section at 155 A/cm2, cm2 | OK |',
+          '|---|---|---|---|---|']
+    md += [f"| {b['name']} | {b['rating']} | {b['I']:.0f} | {b['cm2']:.2f} | {'yes' if b['ok'] else 'NO'} |"
+           for b in brow]
+    md += ['', f'Plant demand {dem:.1f} kW at 480 V, power factor 0.9 assumed: {I_bus:.0f} A. EW process bars '
+           '(AQS-BUS-001 rev C) are sized by heat balance at a 30 K rise and held to the same 155 A/cm2 default; '
+           'every bar passes.', '',
+           '| EW bar | A | Cu section cm2 | A/cm2 | OK |', '|---|---|---|---|---|']
+    md += [f"| {n} | {a} | {c} | {int(a) / float(c):.0f} | {'yes' if int(a) / float(c) <= _CABLE_J + float('0.5') else 'NO'} |"
+           for n, a, c in ew]
+    md += ['', '## 2. Cables', '',
+           '| Unit | Circuit | Size | Sets | Design A | Ampacity A | Length m | V | Drop % | Limit % | OK |',
+           '|---|---|---|---|---|---|---|---|---|---|---|']
+    md += [f"| {x['unit']} | {x['circuit']} | {x['size']} | {x['sets']} | {x['I']:.1f} | {x['amp']} | {x['L']:.1f} | "
+           f"{x['V']:.0f} | {x['vd']:.2f} | {x['lim']:.0f} | {'yes' if x['ok'] else 'NO'} |"
+           for x in sorted(rows, key=lambda x: (x['unit'], x['circuit']))]
+    return ('\n'.join(md) + '\n').encode('utf-8')
+
+
+# ---- AQS-ELEC-009: hazardous area classification (HAZ_AREA.md + HAZ_AREA.csv) ---
+
+def _haz_book(m, inputs):
+    """The haz_area book: the release rows of functions/haz_area (the graph
+    half, golden in test_safety_books.py) plus the two inventory-count columns
+    the v1 stage took from the committed censuses. The instrument counts ride
+    the declared INSTRUMENT_INDEX.csv rows payload (absent payload = no
+    counts, the census-payload absence convention -- the golden needs the
+    committed rows) until the instrument-index census family lands; the
+    motor-and-pump counts run over the other census rows of the inventory
+    family."""
+    d = _drv_of(inputs)
+    ins = collections.Counter(r['unit'] for r in (inputs.get('instrument_index') or []))
+    mot = _INV.motor_rows(m, inputs)
+    oth = _INV.other_rows(m, inputs, mot, _INV.wire_census(m, inputs, mot)['rows'])
+    mp = collections.Counter(r['unit'] for r in oth
+                             if 'motor' in r['item'].lower() or 'pump' in r['item'].lower())
+    rows = []
+    for r in _HAZ.release_rows(m, d):
+        rows.append(dict(unit=r['unit'], sector=r['sector'], substances=r['substances'], kg_d=r['kg_d'],
+                         group=r['group'], T_class=r['T_class'], zone0=r['zone0'], zone1=r['zone1'],
+                         zone2=r['zone2'], instruments=ins[r['unit']], motors_pumps=mp[r['unit']],
+                         protection=r['protection']))
+    return rows
+
+
+def render_haz_area_md(m, inputs):
+    """docs-authority/HAZ_AREA.md: the v1 _haz_area.py template (AQS-ELEC-009
+    rev B, A-M-210)."""
+    rows = _haz_book(m, inputs)
+    K = collections.Counter(r['group'] for r in rows)
+    md = ['# Hazardous area classification', '', 'Document number: AQS-ELEC-009', 'Revision: B', 'Date: 2026-10-25',
+          'Authority: AQS-PLAN-007 task X-ELS-09; assumption A-M-210. Generated by `docs-authority/_haz_area.py` from the '
+          'plant flow graph. Do not edit this page by hand. Study.', '',
+          '| Rev | Description | Date |', '|---|---|---|', '| A | First issue | 2026-10-16 |',
+          '| B | Purpose and scope added; text rewritten to the documentation style guide (AQS-DOC-002). No zone changed. | 2026-10-25 |', '',
+          '## 1. Purpose and scope', '',
+          'Where a flammable gas or vapour can be released, the air around the release point may become explosive. '
+          'Electrical equipment in that space must then be of a type that cannot ignite it. Hazardous area '
+          'classification divides such spaces into zones by how often an explosive atmosphere is expected: Zone 1 where '
+          'it is likely in normal operation, and Zone 2 where it is not likely and would last only a short time.', '',
+          'This page lists every unit in the graph that can release a flammable substance, assigns the gas group and '
+          'temperature class of that substance, and gives the extent of Zone 1 and Zone 2 around the unit. The zones '
+          'follow IEC 60079-10-1 and NEC 2026 Article 505. Each gas group is given in IEC terms with the equivalent North American group in brackets. '
+          'The number of instruments and motors or pumps in each zone is counted so that they can be specified as '
+          'explosion-protected (Ex-rated) equipment.', '',
+          '## 2. Basis', '',
+          'The ventilation is taken as medium degree with good availability, provided by mechanical extract '
+          '(AQS-THM-002). Loss of extract trips the release source (AQS-CTL-003), so the zone extents remain valid. '
+          f'The graph has {len(rows)} release sources: ' + ', '.join(f'{v} in gas group {k}' for k, v in K.items()) + '.', '',
+          '## 3. Zones', '',
+          'Table 3.1 gives the classification for each release source. The flow column is the rate of the flammable '
+          'substance through the unit.', '',
+          'Table 3.1. Release sources and zones', '',
+          '| Unit | Sector | Substances | Flow (kg/d) | Gas group | Temperature class | Zone 1 | Zone 2 | Instruments | Motors and pumps |', '|---|---|---|---|---|---|---|---|---|---|']
+    md += [f"| {r['unit']} | {r['sector']} | {r['substances']} | {r['kg_d']} | {r['group']} | {r['T_class']} | {r['zone1']} | {r['zone2']} | {r['instruments']} | {r['motors_pumps']} |" for r in rows]
+    md += ['', f"In total, {sum(r['instruments'] for r in rows)} instruments and {sum(r['motors_pumps'] for r in rows)} motors or pumps are in Zone 1 or Zone 2. Their specifications in the instrument index (AQS-CTL-001) and the inventories take the protection type from the protection column of `docs-authority/inventory/HAZ_AREA.csv`.",
+           '', 'The headspace of the zinc–bromine flow battery (ZNBR2), where hydrogen forms by the hydrogen evolution reaction (HER), is Zone 2 inside the enclosure while the purge is running (NFPA 855; gas detection in AQS-SAF-006).',
+           '', 'The zone extents are to be confirmed by a release-rate calculation (IEC 60079-10-1 Annex C) once the flange and seal schedule exists.']
+    return ('\n'.join(md) + '\n').encode('utf-8')
+
+
+def _csv_book(rows):
+    """The v1 csv.DictWriter face (CRLF rows, QUOTE_MINIMAL) as bytes -- the
+    serialization face of the inventory-census sidecars."""
+    s = io.StringIO()
+    w = csv.DictWriter(s, list(rows[0].keys()), extrasaction='ignore')
+    w.writeheader()
+    w.writerows(rows)
+    return s.getvalue().encode('utf-8')
+
+
+def render_haz_area_csv(m, inputs):
+    """docs-authority/inventory/HAZ_AREA.csv: the machine sidecar (the columns
+    in the v1 writer order; doc_hvac reads it undeclared, per the ledger)."""
+    return _csv_book(_haz_book(m, inputs))
+
+
 # ---- the registry ---------------------------------------------------------------
 # The declared ordered list (the census order: load_list, one_line, ew_busbar,
 # doc_power_sizing, ew_sizing_doc, each with its U2a sidecar where the v1 stage
@@ -1102,4 +1279,7 @@ DOCS = [
     ('docs-authority/BUSBAR.json', render_busbar_json),
     ('docs-authority/POWER_SIZING.md', render_power_sizing),
     ('docs-authority/sizing/EW_CELLS.md', render_ew_cells),
+    ('docs-authority/CABLE_SCHEDULE.md', render_cable_schedule),
+    ('docs-authority/HAZ_AREA.md', render_haz_area_md),
+    ('docs-authority/inventory/HAZ_AREA.csv', render_haz_area_csv),
 ]

@@ -11,11 +11,17 @@ What ports today:
   X-STD-01 appends; the page itself is pure module data).
 
 REMAINING (the section J rows NOT ported here; each becomes a renderer when
-its family lands, per the electrical wave's precedent):
-- doc_hazop: reads INSTRUMENT_INDEX.csv, OTHER_INVENTORY.csv and
-  MOTOR_INVENTORY.csv (the instrument, other and motor census families, not
-  landed) and re-reads the hand-authored duty sheets for the disposition pass;
-- doc_instr_index: reads OTHER_INVENTORY.csv (inventory_other, not landed);
+its family lands, per the electrical wave's precedent; the other and motor
+census families it cited have since landed -- functions/inventory.py, golden
+in test_inventory_books.py -- so the instrument index is the remaining
+census blocker on this section):
+- doc_hazop: reads INSTRUMENT_INDEX.csv (the instrument-index census family,
+  not landed), the landed OTHER_INVENTORY.csv and MOTOR_INVENTORY.csv books,
+  and re-reads the hand-authored duty sheets for the disposition pass;
+- doc_instr_index: reads the landed OTHER_INVENTORY.csv book, then carries
+  the index census itself: the per-tag range arithmetic over the graph plus
+  the authored-loop table (the hand data the v1 generator embeds), which is
+  this row's own port;
 - doc_sif: reads hazop_actions.csv (doc_hazop's book) and
   INSTRUMENT_INDEX.csv; its SIL targets are rule text over the HAZOP actions,
   not physics. The hazop_actions.csv AMEND (closing the trip actions) is the
@@ -24,8 +30,8 @@ its family lands, per the electrical wave's precedent):
   tags (the Measured-by column);
 - doc_op_proc: reads inventory/COMMISSIONING.csv and sif_list.csv (the
   commissioning and sif families);
-- doc_plc_arch: reads INSTRUMENT_INDEX.csv and OTHER_INVENTORY.csv (the AI/DI
-  and electronics point census);
+- doc_plc_arch: reads INSTRUMENT_INDEX.csv and the landed OTHER_INVENTORY.csv
+  book (the AI/DI and electronics point census);
 - plc_programs: reads INSTRUMENT_INDEX.csv and parses CONTROL_ARCH.md;
 - test_plan: reads docs-authority/assumptions_manual.json - a declared engine
   input file (flow_graph/v2/manifest.py INPUT_FILES) but not yet a declared
@@ -37,6 +43,11 @@ its family lands, per the electrical wave's precedent):
   block in memory when its renderer lands, exactly as ONE_LINE and
   POWER_SIZING already do in render/electrical.py and HALL_EGRESS does in
   render/safety.py.
+
+Cleared outside this section by the census landing: haz_area and
+cable_schedule render in render/electrical.py, doc_wire_specs and doc_motor_fa
+in render/inventory.py, and doc_gas_det was already landed by the safety wave
+(render/safety.py GAS_DETECTION.md + GAS_DETECTORS.csv).
 
 Pure: no I/O here - the registry returns bytes and file writing stays outside.
 """
