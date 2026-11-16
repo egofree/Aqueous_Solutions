@@ -12,6 +12,10 @@ physics families and requires byte-exact equality with the committed file.
 from . import duties as _duties
 from . import sizing_docs as _sizing
 from .electrical import DOCS as _electrical_docs          # the electrical-chain wave (ledger section D), one aggregate import
+from .safety import DOCS as _safety_docs                  # the buildings/safety wave (ledger section H + the protection book), one aggregate import
+from .controls import DOCS as _controls_docs              # the controls/HAZOP wave (ledger section J), one aggregate import
+from .views import DOCS as _views_docs                    # the views/exports/layout wave (ledger section F), one aggregate import
+from .inventory import DOCS as _inventory_docs            # the inventory/BOM wave (ledger section I + the section D wire census), one aggregate import
 
 RENDERS = [
     ('docs-authority/sizing/COLD_BOX.md', _sizing.render_cold_box),
@@ -22,7 +26,7 @@ RENDERS = [
     ('docs-authority/sizing/HOUSE_SCRUBBERS.md', _sizing.render_house_scrubbers),
     ('docs-authority/sizing/UPW_POLISH.md', _sizing.render_upw_polish),
     ('docs-authority/sizing/GEO_LOOP.md', _sizing.render_geo_loop),
-] + _electrical_docs + _duties.DOCS
+] + _electrical_docs + _inventory_docs + _duties.DOCS + _safety_docs + _controls_docs + _views_docs
 
 _INDEX = dict(RENDERS)
 
