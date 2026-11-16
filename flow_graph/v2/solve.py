@@ -8,6 +8,10 @@ writers (each migration carries its golden-value proof).
 """
 from . import functions as _fns                    # noqa: F401  (import = registration)
 from .functions import process                     # noqa: F401
+from .functions import cold_box                    # noqa: F401
+from .functions import evap_design                 # noqa: F401
+from .functions import receivers                   # noqa: F401
+from .functions import h2_compressor               # noqa: F401
 from .functions import power                       # noqa: F401
 from .functions import heat                        # noqa: F401
 from .functions import relief_vent                 # noqa: F401
