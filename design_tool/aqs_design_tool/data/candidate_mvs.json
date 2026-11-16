@@ -272,10 +272,10 @@
           "v_m_s": 8.0,
           "id_req_mm": 18.3,
           "DN": 100,
-          "length_m": 20,
-          "volume_m3": 0.133,
+          "length_m": 44.7,
+          "volume_m3": 0.2971,
           "material": "CS Sch 40, insulated per AQS-THM-003",
-          "hold_kg": 0.1,
+          "hold_kg": 0.22,
           "connections": 3
         },
         "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
@@ -2065,9 +2065,9 @@
         "yield_assumption": "0.1442 kg/(m2\u00b7d) edible fresh at DLI 17 (BVAD2022 tomato carbon chain, A-M-229) x 29.12 m2",
         "area_basis": "crew duty (A-M-229): S14 4.2 kg/d / 0.1442 kg/m2/d = 29.12 m2 (supersedes the BH ~28 m2 / 120.4 m2 residue-claim studies)",
         "size_mm": [
-          7310.0,
-          4030.0,
-          911.0
+          7310,
+          4030,
+          911
         ],
         "size_note": "crew-duty growing area (A-M-229 29.12 m2) framed 4 x 2 nominal 2000 x 1000 bays, 15 mm basin walls, LED canopy top z 900 with the rail frame to z 910.6 (A-M-469; the canopy top is the registered study layout, W12)",
         "size_basis": "crew-duty growing area per A-M-229 (29.12 m2) framed per A-M-469: 4 x 2 nominal 2000 x 1000 bays, 15 mm basin walls, LED canopy to z 900 with the rail frame to z 910.6 (X-FARM sec3)",
@@ -2254,13 +2254,13 @@
           "v_m_s": 8.0,
           "id_req_mm": 2.0,
           "DN": 25,
-          "length_m": 20,
-          "volume_m3": 0.0045,
+          "length_m": 29.2,
+          "volume_m3": 0.0066,
           "material": "316L tube",
           "hold_kg": 0.01,
           "connections": 5
         },
-        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
+        "size_note": "DN25 manifold x 29 m run (0.007 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
           33.7,
@@ -2297,19 +2297,19 @@
           "v_m_s": 8.0,
           "id_req_mm": 4.9,
           "DN": 25,
-          "length_m": 20,
-          "volume_m3": 0.0045,
+          "length_m": 23.6,
+          "volume_m3": 0.0054,
           "material": "PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06)",
           "hold_kg": 0.0,
           "connections": 18
         },
-        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
+        "size_note": "DN25 manifold x 24 m run (0.005 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
-          60.3,
-          60.3
+          33.7,
+          33.7
         ],
-        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)",
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (33.7 mm, EN-rounded OD series, AQS-PIP-004)",
         "sec3_material": {
           "mat": "PVC-U, bonded",
           "basis": "wet H2 with sweep air and possible acid mist off the EW cathode rows (graph design, AQS-DUTY-075): wet hydrogen is the M3 reducing service, so there is no metal wetted part - ignition, not embrittlement, governs (AQS-REV-H2-001) - and PVC-U carries the acid-mist condensate to its 60 C M5 limit (ISO1452_2). Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3).",
@@ -2339,19 +2339,19 @@
           "v_m_s": 8.0,
           "id_req_mm": 17.3,
           "DN": 32,
-          "length_m": 20,
-          "volume_m3": 0.009,
+          "length_m": 44.7,
+          "volume_m3": 0.0202,
           "material": "316L tube",
-          "hold_kg": 0.01,
+          "hold_kg": 0.02,
           "connections": 8
         },
-        "size_note": "DN32 manifold x 20 m run (0.009 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
+        "size_note": "DN32 manifold x 45 m run (0.020 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
-          60.3,
-          60.3
+          42.4,
+          42.4
         ],
-        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN32 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)",
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN32 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (42.4 mm, EN-rounded OD series, AQS-PIP-004)",
         "sec3_material": {
           "mat": "316L tube",
           "basis": "dry oil-free plant air and nitrogen at the ambient class (graph design, AQS-DUTY-075): N2 is inert and the air stays dried at the receiver bank, so the header keeps the one-tube family shared across the dry utility gas headers; M1 names the stream and no wet-oxidant or no-polymer rule fires. Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3).",
@@ -2381,19 +2381,19 @@
           "v_m_s": 8.0,
           "id_req_mm": 8.1,
           "DN": 25,
-          "length_m": 20,
-          "volume_m3": 0.0045,
+          "length_m": 36.4,
+          "volume_m3": 0.0083,
           "material": "316L tube, oxygen-clean per ASTM_G93, socketless",
           "hold_kg": 0.01,
           "connections": 8
         },
-        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
+        "size_note": "DN25 manifold x 36 m run (0.008 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
-          60.3,
-          60.3
+          33.7,
+          33.7
         ],
-        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)",
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (33.7 mm, EN-rounded OD series, AQS-PIP-004)",
         "sec3_material": {
           "mat": "316L tube, oxygen-clean per ASTM_G93, socketless",
           "basis": "dry O2 header at the atmospheric tube class (graph design, AQS-DUTY-075): polymers ignite in oxygen-enriched service, so the dry-O2 M7 case applies and the metal is oxygen-clean 316L with hydrocarbon-free socketless joints (ASTM_G93 practice). Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3).",
@@ -2424,13 +2424,13 @@
           "v_m_s": 1.5,
           "id_req_mm": 0.8,
           "DN": 25,
-          "length_m": 20,
-          "volume_m3": 0.0045,
+          "length_m": 32.5,
+          "volume_m3": 0.0074,
           "material": "PVDF SDR 21, fusion-welded (high-purity water, AQS-STD-002)",
-          "hold_kg": 4.46,
+          "hold_kg": 7.24,
           "connections": 3
         },
-        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
+        "size_note": "DN25 manifold x 32 m run (0.007 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
           33.7,
@@ -2974,13 +2974,13 @@
           "v_m_s": 8.0,
           "id_req_mm": 4.3,
           "DN": 25,
-          "length_m": 20,
-          "volume_m3": 0.0045,
+          "length_m": 26.4,
+          "volume_m3": 0.006,
           "material": "304L, heat-traced (tar service)",
           "hold_kg": 0.0,
           "connections": 2
         },
-        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
+        "size_note": "DN25 manifold x 26 m run (0.006 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
           33.7,
@@ -3324,17 +3324,17 @@
         "presence": "present",
         "note": "X-PAR-12: surplus O2 at 200 bar, product cylinders (no vent).",
         "size_mm": [
-          1400,
-          1400,
-          1750
+          1200,
+          1200,
+          1500
         ],
         "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
           "hold_d": 14,
-          "V_nom_m3": 1.3645,
-          "D_mm": 1100,
-          "H_mm": 1450,
-          "wall_mm": 106.8,
+          "V_nom_m3": 0.7596,
+          "D_mm": 900,
+          "H_mm": 1200,
+          "wall_mm": 87.38,
           "material": "SA-240 304L, welded"
         }
       },
@@ -3442,13 +3442,13 @@
           "v_m_s": 1.5,
           "id_req_mm": 18.1,
           "DN": 32,
-          "length_m": 20,
-          "volume_m3": 0.009,
+          "length_m": 37.1,
+          "volume_m3": 0.0168,
           "material": "PP-H SDR 11 (80 C class), fusion-welded",
-          "hold_kg": 8.89,
+          "hold_kg": 16.48,
           "connections": 17
         },
-        "size_note": "DN32 manifold x 20 m run (0.009 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
+        "size_note": "DN32 manifold x 37 m run (0.017 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
           42.4,
@@ -3781,7 +3781,7 @@
         "size_mm": [
           600,
           600,
-          350
+          600
         ],
         "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
@@ -3807,7 +3807,7 @@
         "size_mm": [
           600,
           600,
-          350
+          600
         ],
         "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
@@ -3833,7 +3833,7 @@
         "size_mm": [
           600,
           600,
-          350
+          600
         ],
         "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
@@ -3859,7 +3859,7 @@
         "size_mm": [
           600,
           600,
-          350
+          600
         ],
         "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
@@ -3885,7 +3885,7 @@
         "size_mm": [
           600,
           600,
-          350
+          600
         ],
         "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
@@ -3911,7 +3911,7 @@
         "size_mm": [
           600,
           600,
-          350
+          600
         ],
         "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
@@ -3942,7 +3942,7 @@
         "size_mm": [
           600,
           600,
-          350
+          600
         ],
         "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
@@ -3968,7 +3968,7 @@
         "size_mm": [
           600,
           600,
-          350
+          600
         ],
         "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
@@ -4123,7 +4123,7 @@
         "size_mm": [
           600,
           600,
-          350
+          600
         ],
         "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
@@ -8058,7 +8058,7 @@
         "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
           "hold_d": 14,
-          "V_nom_m3": 0.6267,
+          "V_nom_m3": 0.6315,
           "D_mm": 850,
           "H_mm": 1150,
           "wall_mm": 3.0,
@@ -8189,16 +8189,16 @@
         "note": "D-DOCK product buffer (A-M-270): IA-STOCK-STORE in, STOCK_TO_* draws out at steady state.",
         "presence": "present",
         "size_mm": [
-          800,
-          800,
-          950
+          900,
+          900,
+          1050
         ],
         "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
           "hold_d": 14,
-          "V_nom_m3": 0.1225,
-          "D_mm": 500,
-          "H_mm": 650,
+          "V_nom_m3": 0.2049,
+          "D_mm": 600,
+          "H_mm": 750,
           "wall_mm": 4.75,
           "material": "PE (rotomoulded / fabricated)"
         }
@@ -8219,17 +8219,17 @@
         "note": "D-DOCK product buffer (A-M-270): S84 in from the cold box, IA-AIR-RX-OUT to HDR_N2; the surplus margin exports on IA-N2-VENT at the dock.",
         "presence": "present",
         "size_mm": [
-          1000,
-          1000,
-          1200
+          1500,
+          1500,
+          1950
         ],
         "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
         "design_storage": {
           "hold_d": 1.0,
-          "V_nom_m3": 0.3312,
-          "D_mm": 700,
-          "H_mm": 900,
-          "wall_mm": 3.06,
+          "V_nom_m3": 1.8593,
+          "D_mm": 1200,
+          "H_mm": 1650,
+          "wall_mm": 5.24,
           "material": "SA-240 304L, welded"
         }
       },
@@ -9867,6 +9867,13 @@
           "feed_kg_d": 2.0,
           "ml_kg_d": 1.844103,
           "kw": 0.07
+        },
+        "sec3_material": {
+          "mat": "CPVC crystallizer body, hood and agitator on the leach side-stream; PVDF (P3) pump and jacket legs on any leg above the CPVC class; FKM gaskets; steel frame and jacket casing outside the wetted and vapour zone",
+          "basis": "CaCl2/MgCl2 crystallization out of the hot chloride leach liquor on a 2 kg/d side-stream, the mother liquor returned to the leach (graph design; A-M-503): the leach is an M2 system and its liquor carries the oxidizing chlorate (AQS-STD-002 section 7), so no bare metal is wetted (M3); the vessel is the hot-leach family CPVC (section 12.1 P2, M5 limit 93 C, the same liquor class that sets the 85 C CPVC wall of LEACH_CSTR_1) and PVDF (P3) carries any leg above the CPVC class. Selection per AQS-STD-002 with the duty section 2 environment (X-QA-11).",
+          "alt": "borosilicate glass 3.3 body (the HX-5 coil class) if the flash zone runs above the CPVC 93 C limit at the crystallizer - a higher-rated thermoplastic, glass or a lined part, never bare metal (M5)",
+          "note": "the crystal slurry leaves as solids to the pot feeders and the mother-liquor line returns to LEACH_CSTR_1 on the issued P2 hot-leach family; no corrosion allowance on the polymer wetted path (AQS-STD-001 shop rule); the commissioning brine assay and salt weigh-in/weigh-out carry the verification (A-M-503).",
+          "task": "X-QA-11"
         }
       },
       "modules": [],
@@ -9897,6 +9904,13 @@
           "dil_kg_d": 3.443091,
           "vent_kg_d": 0.019909,
           "kw": 0.06
+        },
+        "sec3_material": {
+          "mat": "310S reactor tube and hot-bed hardware around the platinum gauze catalyst bed on the dry NH3/O2 oxidation side, the gas held above the acid dew point to the absorption sump, with a dielectric break to the wet train; PVC-U ammonia and dilution-water legs; PVDF (P3) absorption and neutralization vessel, dosing pump and product leg on the ammonium-nitrate side; FKM gaskets",
+          "basis": "Ostwald-class oxidation of plant ammonia with plant oxygen, the acid neutralized back with ammonia to the dosing strength (graph design; A-M-497): the bed runs hot and dry, so the reactor tube takes the house 310S hot-face class of the issued COMB_HEAT burner tube (M7 dry hot gas held above the acid dew point; the case is stated per M7 and isolated from any electrolyte per M6); the wet train is nitric at the absorption class, an M3 oxidizing service with no metal wetted part - PVC-U legs and PVDF absorber and pump per section 5 (nitric at no more than 2 M). Selection per AQS-STD-002 with the duty section 2 environment (X-QA-11).",
+          "alt": "nickel-alloy (Alloy 600 class) reactor tube if the bed duty moves above the 310S class; borosilicate glass 3.3 absorption if the nitrate liquor ever concentrates past the PVDF class (M5: glass or a lined part, never bare metal)",
+          "note": "the unconverted slip vents to NOX_SCRUB on the issued scrubber family and its nitrate liquor stays a booked nutrient; the gauze change-out is a unit task 12 work order; no corrosion allowance claimed - no measured rate.",
+          "task": "X-QA-11"
         }
       },
       "modules": [],
@@ -18854,7 +18868,7 @@
       "phase": "G",
       "carries": "chlorine byproduct export (water-treatment class)",
       "rate": {
-        "value": 0.063248,
+        "value": 0.065072,
         "unit": "kg/d",
         "status": "study",
         "note": "CA_POT Cl2 byproduct 1.769 kg/kg Ca, less the 0.0091 kg/d silicon-loop make-up on IA-CL2-SIREF (A-M-472; the AL_POT chlorine closes on the cake chlorination, A-M-495, so the CA_POT share carries the dock chlorine export), exports at the dock (A-M-290 chlorine ruling); the photoresist draw of RESIST_SYN comes off this edge in the fluoro pass (A-M-482). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). Less 0.001824 kg/d to RESIST_SYN on IA-RESIST-CL2 (A-M-482)."
@@ -19687,7 +19701,7 @@
       "phase": "liquid",
       "carries": "bin respiration/evaporation",
       "rate": {
-        "value": 7.21001,
+        "value": 7.210011,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -19789,7 +19803,7 @@
       "phase": "liquid",
       "carries": "loop top-up: root-zone growth water and evaporation",
       "rate": {
-        "value": 29.768977,
+        "value": 29.768978,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (/ build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 48.094 kg/d] | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS"
@@ -19840,7 +19854,7 @@
       "phase": "liquid",
       "carries": "loop water to the duckweed raceway (polisher + feed crop)",
       "rate": {
-        "value": 219.738599,
+        "value": 219.738598,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (/ build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 216.989 kg/d] | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQ"
@@ -19857,7 +19871,7 @@
       "phase": "liquid",
       "carries": "polished loop water return (2.2 kg/d duckweed growth drawn from the loop)",
       "rate": {
-        "value": 156.041023,
+        "value": 156.041022,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (/ build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 137.716 kg/d] | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQ | X-PAR-02 reconciled (AQS-PAR-003)."
@@ -22695,7 +22709,7 @@
       "phase": "L",
       "carries": "leach-liquor side-stream to the crystallizer",
       "rate": {
-        "value": 2.000047,
+        "value": 2.0,
         "unit": "kg/d",
         "status": "study",
         "note": "X-RTE TF: on-site Kroll brine recovery (X-QA-11, A-M-496): feed = 2.000000 kg/d (salt_recovery.py). | X-PAR-02 reconciled (AQS-PAR-003)."
@@ -22712,7 +22726,7 @@
       "phase": "L",
       "carries": "crystallized CaCl2 to the calcium pot (recovered, was the dock import)",
       "rate": {
-        "value": 0.116201,
+        "value": 0.116115,
         "unit": "kg/d",
         "status": "study",
         "note": "X-RTE TF: on-site Kroll brine recovery (X-QA-11, A-M-496): cacl2 = 0.116115 kg/d (salt_recovery.py). | X-PAR-02 reconciled (AQS-PAR-003)."
@@ -22746,7 +22760,7 @@
       "phase": "L",
       "carries": "mother liquor (residual chlorides) returned to the leach",
       "rate": {
-        "value": 1.844063,
+        "value": 1.844103,
         "unit": "kg/d",
         "status": "study",
         "note": "X-RTE TF: on-site Kroll brine recovery (X-QA-11, A-M-496): ml = 1.844103 kg/d (salt_recovery.py). | X-PAR-02 reconciled (AQS-PAR-003)."

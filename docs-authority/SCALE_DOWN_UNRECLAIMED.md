@@ -469,7 +469,7 @@ Table 3.8. FOUNDRY off. Sector type: Process (Mass transform).
 | VAC_HEAT_TO_HX | VAC_IND to MET_HX_Q4 | MFG | 0.638 kW | left without a source: consumer goes short |
 | IA-AL-CO | AL_POT to NORTH_DOCK | DOCK | 7.99 kg/d | stops with the sector |
 | IA-BURNOUT-VENT | SHELL_BURNOUT to NORTH_DOCK | DOCK | 0.2 kg/d | stops with the sector |
-| IA-CA-CL2-SHIP | CA_POT to NORTH_DOCK | DOCK | 0.0632 kg/d | stops with the sector |
+| IA-CA-CL2-SHIP | CA_POT to NORTH_DOCK | DOCK | 0.0651 kg/d | stops with the sector |
 | IA-CR-VENT | CR_CELL to NORTH_DOCK | DOCK | 0.202 kg/d | stops with the sector |
 | IA-CR2O3-MU | NORTH_DOCK to CR_CELL | DOCK | 0.365 kg/d | stops with the sector |
 | IA-KROLL-CO | TI_CELL to NORTH_DOCK | DOCK | 0.458 kg/d | stops with the sector |
@@ -901,7 +901,7 @@ Table 3.19. DOCK off. Sector type: Export / dock.
 | IA-C11-SHIP | PROD_C11_C18 to NORTH_DOCK | OIL | 1.15 kg/d | left without a sink: unreclaimed |
 | IA-C19-SHIP | PROD_C19_C28 to NORTH_DOCK | OIL | 2.01 kg/d | left without a sink: unreclaimed |
 | IA-C5-SHIP | PROD_C5_C10 to NORTH_DOCK | OIL | 7.58 kg/d | left without a sink: unreclaimed |
-| IA-CA-CL2-SHIP | CA_POT to NORTH_DOCK | FOUNDRY | 0.0632 kg/d | left without a sink: unreclaimed |
+| IA-CA-CL2-SHIP | CA_POT to NORTH_DOCK | FOUNDRY | 0.0651 kg/d | left without a sink: unreclaimed |
 | IA-CR-VENT | CR_CELL to NORTH_DOCK | FOUNDRY | 0.202 kg/d | left without a sink: unreclaimed |
 | IA-FAB-PRODUCT | WAFER_FAB to NORTH_DOCK | FAB | 0.139 kg/d | left without a sink: unreclaimed |
 | IA-GOODS-SHIP | MFG_SHOP to NORTH_DOCK | MFG | 322 kg/d | left without a sink: unreclaimed |

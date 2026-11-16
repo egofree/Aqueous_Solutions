@@ -11,6 +11,7 @@ missing duties directory or an unknown dimension is a failure, never a warning.
 """
 import hashlib, json, os, re, sys
 
+from . import inputs as IN
 from . import manifest as MF
 from . import solve as SL
 from .graph_io import bytes as render
@@ -36,11 +37,17 @@ def _fragment_model(graph_path, model, inputs):
 
 
 def check(graph_path=None, manifest_path=None, inputs=None, artifact_root=None):
-    """Returns (ok: bool, report_lines: list[str]). Pure; writes nothing."""
+    """Returns (ok: bool, report_lines: list[str]). Pure; writes nothing.
+
+    inputs: the caller's payload (a locale variant, a partial test payload);
+    None builds the canonical payload (inputs.load plus the drawing
+    inventory). graph_sha256 is always re-pinned to the committed graph
+    file's SHA-256: the documents that cite the graph provenance must
+    describe the graph as committed, not as some earlier caller loaded it."""
     lines = []
-    graph_path = graph_path or os.path.join(SL.ROOT, SL.GRAPH_PATH)
-    mpath = manifest_path or os.path.join(SL.ROOT, 'flow_graph/derived/_input_manifest_v2.json')
-    inputs = inputs or {}
+    graph_path = graph_path or os.path.join(MF.ROOT, SL.GRAPH_PATH)
+    mpath = manifest_path or os.path.join(MF.ROOT, 'flow_graph/derived/_input_manifest_v2.json')
+    inputs = dict(inputs) if inputs is not None else IN.load(extra=IN.drawing_payload())
     ok = True
 
     if not os.path.exists(mpath):
@@ -49,7 +56,7 @@ def check(graph_path=None, manifest_path=None, inputs=None, artifact_root=None):
     with open(mpath, encoding='utf-8') as f:
         committed = json.load(f)
 
-    current = MF.build(SL.FNS)
+    current = MF.build(SL.FNS, extra_input_paths=IN.auxiliary_files())
     if current['code'] != committed.get('code'):
         changed = _changed_functions(current, committed)
         lines.append(f'stale (code changed): {changed or "the engine package"}')
@@ -70,6 +77,7 @@ def check(graph_path=None, manifest_path=None, inputs=None, artifact_root=None):
             committed_bytes = f.read()
     except OSError as e:
         return False, [f'FAIL: the graph is unreadable: {e}']
+    inputs['graph_sha256'] = hashlib.sha256(committed_bytes).hexdigest()
     rendered = render(model, Grid.load())
     if rendered != committed_bytes:
         n = _first_diff(committed_bytes, rendered)
@@ -226,13 +234,33 @@ def update(graph_path=None, manifest_path=None, inputs=None, artifact_root=None)
     (every fragment whose bytes the committed page no longer carries is
     re-applied with its v1 patch idiom), write the manifest. Returns the
     report lines of a post-write check (which must be fresh — a check that
-    fails right after an update is a bug in the engine)."""
-    graph_path = graph_path or os.path.join(SL.ROOT, SL.GRAPH_PATH)
-    manifest_path = manifest_path or os.path.join(SL.ROOT, 'flow_graph/derived/_input_manifest_v2.json')
-    inputs = inputs or {}
+    fails right after an update is a bug in the engine). inputs: the caller's
+    payload; None builds the canonical payload. The drawing inventory rides
+    in on demand (the pid/drawings documents consume the committed CAD SVGs),
+    and graph_sha256 is re-pinned to the bytes actually written, so the
+    documents describe the graph as written."""
+    graph_path = graph_path or os.path.join(MF.ROOT, SL.GRAPH_PATH)
+    manifest_path = manifest_path or os.path.join(MF.ROOT, 'flow_graph/derived/_input_manifest_v2.json')
+    inputs = dict(inputs) if inputs is not None else IN.load()
+    for key, value in IN.drawing_payload():
+        inputs.setdefault(key, value)
     from .graph_io import write
     model = SL.solve(inputs, graph_path)
-    write(graph_path, model, Grid.load())
+    prev = None
+    for _ in range(3):
+        # the seed fixpoint: the composition reads the committed graph as its
+        # seed, so a first write that moves the bytes (the one-time P4
+        # re-issuance of the serialization, or a drifted tree) changes the
+        # seed the next solve reads. Iterate until the written graph stops
+        # moving; the documents must describe the settled graph.
+        write(graph_path, model, Grid.load())
+        with open(graph_path, 'rb') as f:
+            cur = f.read()
+        if cur == prev:
+            break
+        prev = cur
+        model = SL.solve(inputs, graph_path)
+    inputs['graph_sha256'] = hashlib.sha256(cur).hexdigest()
     from .render import RENDERS
     root = artifact_root or MF.ROOT
     for path, fn_r in RENDERS:
@@ -253,7 +281,8 @@ def update(graph_path=None, manifest_path=None, inputs=None, artifact_root=None)
         entries = DU.FRAGMENTS(model, sheets, bullets, seed)
         applied = patch_fragments(model, inputs, entries,
                                   frag_model=_fragment_model(graph_path, model, inputs))
-    m = MF.build(SL.FNS, artifact_sha=hashlib.sha256(render(model, Grid.load())).hexdigest())
+    m = MF.build(SL.FNS, extra_input_paths=IN.auxiliary_files(),
+                 artifact_sha=hashlib.sha256(render(model, Grid.load())).hexdigest())
     with open(manifest_path, 'w', encoding='utf-8') as f:
         f.write(MF.dumps(m))
     ok, lines = check(graph_path, manifest_path, inputs, artifact_root)

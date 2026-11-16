@@ -7,7 +7,7 @@ This result is not the MVS flag. mvs.mvs_criteria.loops_closed is not set here.
 - 166 units. Circuits listed: 20 (cap 20).
   ACID_PLANT, ACID_POLISH_SCRUB, AFTERBURNER, AFTERBURNER_FLUE, AIR_RECEIVER, ALK_SCRUBBER, AL_POT, AQUA_TANK, AQUA_UV, ATMOS, BACKUP_GEN, BAGHOUSE, BEE_HIVE, BIOFILTER ...
   one circuit: IA-ACID-CO2 -> IA-ACID-O2
-  kg/d: nodes off 2, cut in 11.40 out 0.00 fail
+  kg/d: nodes off 3, cut in 11.40 out 0.00 fail
 
 ## thermal: 44 edges, 0 loops
 

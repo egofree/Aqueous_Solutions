@@ -535,7 +535,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-MG-TI | MG_POT | TI_CELL | S | mass | present | Mg reductant to the Kroll retort | 0.507761 kg/d | — |
 | IA-CL2-MG-TI | MG_POT | TI_CELL | G | mass | present | chlorine to the Kroll chlorinator | 1.481313 kg/d | — |
 | IA-CACL2-MU | NORTH_DOCK | CA_POT | L | mass | retired | CaCl2 brine concentrate (retired: BRINE_CRYS crystallizes the make-up out of the leach chlorides, X-QA-11) | 0.0 kg/d | — |
-| IA-CA-CL2-SHIP | CA_POT | NORTH_DOCK | G | mass,energy | present | chlorine byproduct export (water-treatment class) | 0.063248 kg/d | — |
+| IA-CA-CL2-SHIP | CA_POT | NORTH_DOCK | G | mass,energy | present | chlorine byproduct export (water-treatment class) | 0.065072 kg/d | — |
 | IA-TIO2-MU | NORTH_DOCK | TI_CELL | S | mass | present | TiO2-equivalent rutile concentrate (dock import class) | 0.834247 kg/d | — |
 | IA-C-TI | NORTH_DOCK | TI_CELL | S | mass | retired | carbon reductant (petcoke/char class) | 0.0 kg/d | — |
 | IA-KROLL-CO | TI_CELL | NORTH_DOCK | G | mass | present | chlorinator CO (fuel-gas class export) | 0.45835 kg/d | — |
@@ -584,17 +584,17 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | CHICK_VAP | CHICKEN_COOP | CRYO_AHU | liquid | mass | present | flock respiration/evaporation | 0.72 kg/d | — |
 | FISH_SLUDGE | AQUA_TANK | BSFL_BIN | liquid | mass | present | fish sludge to the larvae bin | 3.0 kg/d | — |
 | FRASS | BSFL_BIN | HOPPER | liquid | mass | present | frass compost to the solids line | 0.490791 kg/d | — |
-| BSFL_VAP | BSFL_BIN | CRYO_AHU | liquid | mass | present | bin respiration/evaporation | 7.21001 kg/d | — |
+| BSFL_VAP | BSFL_BIN | CRYO_AHU | liquid | mass | present | bin respiration/evaporation | 7.210011 kg/d | — |
 | FOOD_GALLEY | FOOD_STORE | GALLEY | liquid | mass | present | food issue to the galley | 4.0 kg/d | — |
 | GALLEY_MEALS | GALLEY | HABITATION | liquid | mass | present | prepared meals to the crew | 4.84 kg/d | — |
 | GALLEY_BIO | GALLEY | BSFL_BIN | liquid | mass | present | galley biowaste to the larvae bin | 0.5 kg/d | — |
 | WASH_GREY | WASHROOM | GREY_TREAT | liquid | mass | present | wash grey water to the treatment train | 0.0 kg/d | — |
 | FISH_HARVEST | AQUA_TANK | FOOD_STORE | liquid | mass | present | fish harvest to the food store | 0.81 kg/d | — |
-| IA-AQUA-TOPUP | ROOF_TANK | AQUA_TANK | liquid | mass | present | loop top-up: root-zone growth water and evaporation | 29.768977 kg/d | — |
+| IA-AQUA-TOPUP | ROOF_TANK | AQUA_TANK | liquid | mass | present | loop top-up: root-zone growth water and evaporation | 29.768978 kg/d | — |
 | IA-DUCK-H2O | ROOF_TANK | DUCK_PEN | liquid | mass | present | duck drinking/washing water | 1.98 kg/d | — |
 | IA-WASH-FEED | ROOF_TANK | WASHROOM | liquid | mass | present | wash-water feed to the washroom fixtures | 0.0 kg/d | — |
-| AQUA_LOOP4 | GROWBED_B | DUCKWEED | liquid | mass | present | loop water to the duckweed raceway (polisher + feed crop) | 219.738599 kg/d | — |
-| AQUA_RETURN2 | DUCKWEED | AQUA_TANK | liquid | mass | present | polished loop water return (2.2 kg/d duckweed growth drawn from the loop) | 156.041023 kg/d | — |
+| AQUA_LOOP4 | GROWBED_B | DUCKWEED | liquid | mass | present | loop water to the duckweed raceway (polisher + feed crop) | 219.738598 kg/d | — |
+| AQUA_RETURN2 | DUCKWEED | AQUA_TANK | liquid | mass | present | polished loop water return (2.2 kg/d duckweed growth drawn from the loop) | 156.041022 kg/d | — |
 | DUCK_FISH | DUCKWEED | AQUA_TANK | liquid | mass | present | fresh duckweed: tilapia ration (dry-equivalent, 1.5 % BW) | 18.0 kg/d | — |
 | FOOD_HAB | FOOD_STORE | HABITATION | liquid | mass | present | food issue to the habitation (direct) | 2.46 kg/d | — |
 | DUCK_EGGS | DUCK_PEN | FOOD_STORE | liquid | mass | present | duck eggs to the food store | 0.34 kg/d | — |
@@ -760,10 +760,10 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | CHAR_TO_CR | OIL_PYRO | CR_CELL | S | mass | present | plant pyrolysis char reductant | 0.086624 kg/d | — |
 | IA-SIL-SHOP | MFG_SHOP | SHELL_BUILD | S | mass | present | recovered crib and spent-shell silica, shell make-up | 1.0 kg/d | — |
 | IA-SHELL-SHOP | SHELL_BREAK | MFG_SHOP | S | mass | present | recovered spent-shell silica to the shop pool | 1.0 kg/d | — |
-| IA-BRINE-SRC | LEACH_CSTR_1 | BRINE_CRYS | L | mass | present | leach-liquor side-stream to the crystallizer | 2.000047 kg/d | — |
-| IA-BRINE-CACL2 | BRINE_CRYS | CA_POT | L | mass | present | crystallized CaCl2 to the calcium pot (recovered, was the dock import) | 0.116201 kg/d | — |
+| IA-BRINE-SRC | LEACH_CSTR_1 | BRINE_CRYS | L | mass | present | leach-liquor side-stream to the crystallizer | 2.0 kg/d | — |
+| IA-BRINE-CACL2 | BRINE_CRYS | CA_POT | L | mass | present | crystallized CaCl2 to the calcium pot (recovered, was the dock import) | 0.116115 kg/d | — |
 | IA-BRINE-MGCL2 | BRINE_CRYS | MG_POT | L | mass | present | crystallized MgCl2 to the magnesium pot (recovered, was the dock import) | 0.039782 kg/d | — |
-| IA-BRINE-ML | BRINE_CRYS | LEACH_CSTR_1 | L | mass | present | mother liquor (residual chlorides) returned to the leach | 1.844063 kg/d | — |
+| IA-BRINE-ML | BRINE_CRYS | LEACH_CSTR_1 | L | mass | present | mother liquor (residual chlorides) returned to the leach | 1.844103 kg/d | — |
 | SF-BRINE_CRYS | SOL_ARK_60K | BRINE_CRYS | E | elec | present | 480 V AC | 0.07 kW | — |
 | IA-WAX-CUT | PROD_C19_C28 | WAX_PATTERN | S | mass | present | C19-C28 pattern-wax blend make-up from the plant cut | 0.2 kg/d | — |
 | IA-NUT-NH3 | WS_AMMONIA | NUT_AN | L | mass | present | ammonia liquor to the nitrate skid (Ostwald feed and the neutralization base) | 0.230525 kg/d | — |

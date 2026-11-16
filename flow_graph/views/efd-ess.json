@@ -114,7 +114,19 @@
           800
         ],
         "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
-      }
+      },
+      "provenance": [
+        {
+          "stage": "specialty_sizing",
+          "basis": "length-mm counts on the declared grid",
+          "field": "params.size_mm"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the study envelope note (M0)",
+          "field": "params.size_note"
+        }
+      ]
     },
     {
       "unit_id": "MEOH_FC",
@@ -159,7 +171,19 @@
           "material": "PEM stack, 316L reformer shell (Cu/ZnO class catalyst), PTFE gaskets",
           "note": "skid at the issued 1800 x 800 x 1600 mm envelope; the continuous book is 0.5 kW_e on S79 (Q-039 owner ruling 2026-11-13, fuel-limited at the settled S76 feed) and the installed 1.0 kW rating is standby capability, so the skid runs at part load on the dispatch schedule; the species edges (O2, CO2, water) close on the graph"
         }
-      }
+      },
+      "provenance": [
+        {
+          "stage": "sizing_meoh_train",
+          "basis": "the methanol-train residual sizing (AQS-DUTY-077): MEOH_COND dew-point duty on the seed water streams IA-MEOH-H2O + S81, MEOH_FC from the installed rating at the IEC62282_3_100 cell point; the continuous book rides S79 per the Q-039 owner ruling 2026-11-13",
+          "field": "params.design"
+        },
+        {
+          "stage": "sizing_meoh_train",
+          "basis": "the methanol-train residual sizing (AQS-DUTY-077): MEOH_COND dew-point duty on the seed water streams IA-MEOH-H2O + S81, MEOH_FC from the installed rating at the IEC62282_3_100 cell point; the continuous book rides S79 per the Q-039 owner ruling 2026-11-13",
+          "field": "params.size_note"
+        }
+      ]
     },
     {
       "unit_id": "MEOH_SYNTH",
@@ -246,7 +270,24 @@
           "wall_mm": 3.0,
           "material": "SA-240 304L, welded"
         }
-      }
+      },
+      "provenance": [
+        {
+          "stage": "storage_sizing",
+          "basis": "the storage and hold-up sizing (AQS-DUTY-064): working volume Q x hold / rho at the fill driver, vessel on the 50 mm grid at the H/D driver, wall by hoop stress at the material drivers; hold times A-M-225; buffer Q from the seed feed/draw edges (A-M-270, A-M-278)",
+          "field": "params.design_storage"
+        },
+        {
+          "stage": "storage_sizing",
+          "basis": "the storage and hold-up sizing (AQS-DUTY-064): working volume Q x hold / rho at the fill driver, vessel on the 50 mm grid at the H/D driver, wall by hoop stress at the material drivers; hold times A-M-225; buffer Q from the seed feed/draw edges (A-M-270, A-M-278)",
+          "field": "params.size_mm"
+        },
+        {
+          "stage": "storage_sizing",
+          "basis": "the storage and hold-up sizing (AQS-DUTY-064): working volume Q x hold / rho at the fill driver, vessel on the 50 mm grid at the H/D driver, wall by hoop stress at the material drivers; hold times A-M-225; buffer Q from the seed feed/draw edges (A-M-270, A-M-278)",
+          "field": "params.size_note"
+        }
+      ]
     },
     {
       "unit_id": "PV_ARRAY",
@@ -301,7 +342,66 @@
           800
         ],
         "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
-      }
+      },
+      "provenance": [
+        {
+          "stage": "process",
+          "basis": "SOL_ARK bus close (X-PAR-04; AQS-PAR-001): the PV average carries the delta of the acid-loop feeds",
+          "field": "continuous_kw.value"
+        },
+        {
+          "stage": "power",
+          "basis": "D75 PV dispatch at pv_oversize_factor x the balancing nameplate (A-M-109, NREL_PVWATTS8, X-PAR-07 roof close); portfolio dispatch (X-LOC-08)",
+          "ref": "A-M-235",
+          "field": "params.area_m2"
+        },
+        {
+          "stage": "power",
+          "basis": "D75 PV dispatch at pv_oversize_factor x the balancing nameplate (A-M-109, NREL_PVWATTS8, X-PAR-07 roof close); portfolio dispatch (X-LOC-08)",
+          "ref": "A-M-234",
+          "field": "params.balance_kWp"
+        },
+        {
+          "stage": "power",
+          "basis": "D75 PV dispatch at pv_oversize_factor x the balancing nameplate (A-M-109, NREL_PVWATTS8, X-PAR-07 roof close); portfolio dispatch (X-LOC-08)",
+          "ref": "A-M-109",
+          "field": "params.count"
+        },
+        {
+          "stage": "power",
+          "basis": "D75 PV dispatch at pv_oversize_factor x the balancing nameplate (A-M-109, NREL_PVWATTS8, X-PAR-07 roof close); portfolio dispatch (X-LOC-08)",
+          "ref": "X-PAR-07",
+          "field": "params.mounting"
+        },
+        {
+          "stage": "power",
+          "basis": "D75 PV dispatch at pv_oversize_factor x the balancing nameplate (A-M-109, NREL_PVWATTS8, X-PAR-07 roof close); portfolio dispatch (X-LOC-08)",
+          "ref": "A-M-109",
+          "field": "params.nameplate_kw"
+        },
+        {
+          "stage": "power",
+          "basis": "D75 PV dispatch at pv_oversize_factor x the balancing nameplate (A-M-109, NREL_PVWATTS8, X-PAR-07 roof close); portfolio dispatch (X-LOC-08)",
+          "ref": "A-M-109",
+          "field": "params.oversize_factor"
+        },
+        {
+          "stage": "power",
+          "basis": "D75 PV dispatch at pv_oversize_factor x the balancing nameplate (A-M-109, NREL_PVWATTS8, X-PAR-07 roof close); portfolio dispatch (X-LOC-08); PV_ARRAY roof block (IFC 2027 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)",
+          "ref": "X-PAR-07",
+          "field": "params.roof"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "length-mm counts on the declared grid",
+          "field": "params.size_mm"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the study envelope note (M0)",
+          "field": "params.size_note"
+        }
+      ]
     },
     {
       "unit_id": "ROOF_TANK",
@@ -403,7 +503,33 @@
           800
         ],
         "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
-      }
+      },
+      "provenance": [
+        {
+          "stage": "power",
+          "basis": "D75 PV dispatch at pv_oversize_factor x the balancing nameplate (A-M-109, NREL_PVWATTS8, X-PAR-07 roof close); portfolio dispatch (X-LOC-08)",
+          "ref": "A-M-231",
+          "field": "params.count"
+        },
+        {
+          "stage": "power",
+          "basis": "D75 PV dispatch at pv_oversize_factor x the balancing nameplate (A-M-109, NREL_PVWATTS8, X-PAR-07 roof close); portfolio dispatch (X-LOC-08)",
+          "ref": "A-M-231",
+          "field": "params.dc_ac_ratio"
+        },
+        {
+          "stage": "power",
+          "basis": "D75 PV dispatch at pv_oversize_factor x the balancing nameplate (A-M-109, NREL_PVWATTS8, X-PAR-07 roof close); portfolio dispatch (X-LOC-08); SOL_ARK interconnection (IEEE 1547-2018 Cat. B / III, UL 1741 SB, NEC 2026 705.11/705.20, ANSI C12.20 class 0.2)",
+          "ref": "A-M-237",
+          "field": "params.interconnection"
+        },
+        {
+          "stage": "power",
+          "basis": "D75 PV dispatch at pv_oversize_factor x the balancing nameplate (A-M-109, NREL_PVWATTS8, X-PAR-07 roof close); portfolio dispatch (X-LOC-08)",
+          "ref": "A-M-231",
+          "field": "params.kW"
+        }
+      ]
     },
     {
       "unit_id": "ZNBR2",
@@ -489,7 +615,63 @@
           "basis": "cell-summed area from the booked charge (Ah at 1.82 V over the 6 h window at 20 mA/cm2, the purge-basis book); plates 95/module x 37 modules fill it at 6 mm pitch (A-M-456); electrolyte 530.138 L/module at 2 M ZnBr2 (A-M-457); cooler at the cycling_thermal charge-window rate (A-M-455); pump at the 3 % auxiliary share (A-M-179)",
           "computed_by": "flow_graph/param/ess_tf.py tf() (X-PAR-02 lane, X-MFG-43 machine design)"
         }
-      }
+      },
+      "provenance": [
+        {
+          "stage": "power",
+          "basis": "AQS-ELEC-007 store book P x night at the round-trip driver (A-M-062/179); store P from the roof-close fixed point (A-M-231 census + EW rectifier AC + EXT_HALL extension heat + roof fit, docs-authority/_power_sizing.py); AQS-ELEC-008 inverter distribution",
+          "ref": "AQS-ELEC-007",
+          "field": "continuous_kw.note"
+        },
+        {
+          "stage": "power",
+          "basis": "AQS-ELEC-007 store book P x night at the round-trip driver (A-M-062/179); store P from the roof-close fixed point (A-M-231 census + EW rectifier AC + EXT_HALL extension heat + roof fit, docs-authority/_power_sizing.py); AQS-ELEC-008 inverter distribution",
+          "ref": "AQS-ELEC-007",
+          "field": "continuous_kw.value"
+        },
+        {
+          "stage": "power",
+          "basis": "D75 PV dispatch at pv_oversize_factor x the balancing nameplate (A-M-109, NREL_PVWATTS8, X-PAR-07 roof close); portfolio dispatch (X-LOC-08)",
+          "ref": "A-M-109",
+          "field": "params.charge_basis"
+        },
+        {
+          "stage": "power",
+          "basis": "AQS-ELEC-007 store book P x night at the round-trip driver (A-M-062/179); store P from the roof-close fixed point (A-M-231 census + EW rectifier AC + EXT_HALL extension heat + roof fit, docs-authority/_power_sizing.py); AQS-ELEC-008 inverter distribution",
+          "ref": "AQS-ELEC-007",
+          "field": "params.charge_kW"
+        },
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 F-4 ZNBR2 cycling heat (A-M-455; round trip A-M-062/179); store book read from the write_graph power family via the seed (F-20261110-08)",
+          "ref": "A-M-455",
+          "field": "params.cycling_thermal"
+        },
+        {
+          "stage": "power",
+          "basis": "AQS-ELEC-007 store book P x night at the round-trip driver (A-M-062/179); store P from the roof-close fixed point (A-M-231 census + EW rectifier AC + EXT_HALL extension heat + roof fit, docs-authority/_power_sizing.py); AQS-ELEC-008 inverter distribution",
+          "ref": "AQS-ELEC-007",
+          "field": "params.discharge_kW"
+        },
+        {
+          "stage": "power",
+          "basis": "AQS-ELEC-007 store book P x night at the round-trip driver (A-M-062/179); store P from the roof-close fixed point (A-M-231 census + EW rectifier AC + EXT_HALL extension heat + roof fit, docs-authority/_power_sizing.py); AQS-ELEC-008 inverter distribution",
+          "ref": "AQS-ELEC-008",
+          "field": "params.distribution"
+        },
+        {
+          "stage": "power",
+          "basis": "AQS-ELEC-007 store book P x night at the round-trip driver (A-M-062/179); store P from the roof-close fixed point (A-M-231 census + EW rectifier AC + EXT_HALL extension heat + roof fit, docs-authority/_power_sizing.py); AQS-ELEC-008 inverter distribution",
+          "ref": "AQS-ELEC-007",
+          "field": "params.kW"
+        },
+        {
+          "stage": "power",
+          "basis": "AQS-ELEC-007 store book P x night at the round-trip driver (A-M-062/179); store P from the roof-close fixed point (A-M-231 census + EW rectifier AC + EXT_HALL extension heat + roof fit, docs-authority/_power_sizing.py); AQS-ELEC-008 inverter distribution",
+          "ref": "AQS-ELEC-007",
+          "field": "params.kWh"
+        }
+      ]
     }
   ],
   "edges": [

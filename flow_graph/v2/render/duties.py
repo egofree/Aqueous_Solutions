@@ -148,6 +148,19 @@ def compose_page(m, inputs, uid):
         if patched == base:
             raise ValueError(f'{uid}: the {fid} patch idiom did not land on its declared anchor')
         base = patched
+    # The one-time section 3 default-template replacement: a base whose page
+    # predates its unit's issued material selection still carries the pending
+    # line, and the v1 idiom replaces it once the model issues the selection.
+    # FRAGMENTS carries the issued fragment conditionally on the same model
+    # read, so the composer converges the declared base here with the same
+    # patch operation patch_fragments applies to the committed page - the two
+    # rules agree at every state, and an idiom that cannot land leaves the
+    # page stale, loudly, for a hand or owner decision.
+    s3m = (m.nodes[uid].get('params') if uid in m.nodes else {}).get('sec3_material') or {}
+    if s3m.get('mat'):
+        issued = render_material_line_issued(m, uid)
+        if issued and issued not in base:
+            base = apply_patch(base, issued, 'section-3-issued')
     return base
 
 

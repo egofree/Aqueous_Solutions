@@ -46,7 +46,19 @@
           800
         ],
         "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
-      }
+      },
+      "provenance": [
+        {
+          "stage": "specialty_sizing",
+          "basis": "length-mm counts on the declared grid",
+          "field": "params.size_mm"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the study envelope note (M0)",
+          "field": "params.size_note"
+        }
+      ]
     },
     {
       "unit_id": "BOUNDARY_EXPORT",
@@ -214,7 +226,110 @@
         ],
         "size_note": "L x W x H mm, set by flow_graph/param/specialty_sizing.py: the A-M-279 skid allowances at the rated kW (stack deck 2042 + gap 100 + BoP deck 1225 at W 1050, H 2200); the placement seed block (1800 x 800 x 1600) under-books it - the named consequence (H2O_ELYZ WORK_ORDER W12)",
         "size_basis": "L x W x H mm, set by flow_graph/param/specialty_sizing.py: the A-M-279 skid allowances at the rated kW (stack deck 2042 + gap 100 + BoP deck 1225 at W 1050, H 2200); the placement seed block (1800 x 800 x 1600) under-books it - the named consequence (H2O_ELYZ WORK_ORDER W12)"
-      }
+      },
+      "provenance": [
+        {
+          "stage": "specialty_sizing",
+          "basis": "the computed_by text, ported verbatim (the structured provenance names the v2 stage)",
+          "field": "params.design.computed_by"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "GHSV 5000 1/h on the rated H2 (A-M-168 driver class)",
+          "ref": "A-M-168",
+          "field": "params.design.deoxo"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "4A/13X at 0.10 kg/kg working capacity, margin 3 (A-M-168 class)",
+          "ref": "A-M-168",
+          "field": "params.design.dryer"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the duty text (design decision, verbatim)",
+          "field": "params.design.duty"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the design-block H2 over the window, kg/h at the rated point (A-M-459)",
+          "ref": "A-M-459",
+          "field": "params.design.h2_rate_kg_h"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "PEM specific consumption at the stored decimal; grid-exact book 54999 Wh/kg (21.445 kW x 24 h / 9.358 kg, the rated edges self-consistent)",
+          "field": "params.design.kwh_per_kg_h2"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the machine text (design decision, verbatim)",
+          "field": "params.design.machine"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the system draw at the window: the 55.0 kWh/kg book over the 6.0 h window (A-M-133)",
+          "ref": "A-M-133",
+          "field": "params.design.rated_kw"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the separator text (design decision, verbatim)",
+          "field": "params.design.separators"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the A-M-279 plan allowances at the rated kW",
+          "ref": "A-M-279",
+          "field": "params.design.skid"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the stack point: m_dot x Ah/kg / j at the driver current density and cell voltage (A-M-459)",
+          "ref": "A-M-459",
+          "field": "params.design.stack"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the PV window driver ely_window_h (A-M-133)",
+          "ref": "A-M-133",
+          "field": "params.design.window_h"
+        },
+        {
+          "stage": "relief",
+          "basis": "API 520 Part I critical-flow gas sizing (API520; sizing/relief.py); case inputs read from params.relief_basis",
+          "ref": "API520",
+          "field": "params.relief_basis"
+        },
+        {
+          "stage": "sec3_material_selections",
+          "basis": "M6 electrode hardware with the hydride guards of AQS-REV-H2-001; section 12.1 M1 dry product lines",
+          "ref": "AQS-STD-002",
+          "field": "params.sec3_material"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "length-mm counts on the declared grid",
+          "field": "params.size_mm"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the skid envelope note (design decision, verbatim)",
+          "ref": "A-M-279",
+          "field": "params.size_note"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "PEM specific consumption at the stored decimal (the rated edges self-consistent)",
+          "field": "params.sizing.kwh_per_kg_h2"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the system draw at the window (A-M-133)",
+          "ref": "A-M-133",
+          "field": "params.sizing.rated_kw"
+        }
+      ]
     },
     {
       "unit_id": "EW_1",
@@ -253,7 +368,24 @@
           "status": "study",
           "source": "AQS-DUTY-051"
         }
-      }
+      },
+      "provenance": [
+        {
+          "stage": "process",
+          "basis": "EW cascade bounding currents and Q-038 booked rates (AQS-ASSAY-001 sections 4 and 5; A-M-460; AQS-DUTY-051; USBM_CL_EW; Q-038 owner ruling 2026-11-05)",
+          "field": "continuous_kw.note"
+        },
+        {
+          "stage": "process",
+          "basis": "EW cascade bounding currents and Q-038 booked rates (AQS-ASSAY-001 sections 4 and 5; A-M-460; AQS-DUTY-051; USBM_CL_EW; Q-038 owner ruling 2026-11-05)",
+          "field": "continuous_kw.value"
+        },
+        {
+          "stage": "process",
+          "basis": "EW cascade bounding currents and Q-038 booked rates (AQS-ASSAY-001 sections 4 and 5; A-M-460; AQS-DUTY-051; USBM_CL_EW; Q-038 owner ruling 2026-11-05); AQS-EW-MOD-001 plate/tank drivers (A-M-029, A-M-036..040)",
+          "field": "params.sizing"
+        }
+      ]
     },
     {
       "unit_id": "FUEL_CELL",
@@ -332,7 +464,121 @@
           800
         ]
       },
-      "continuous_kw": null
+      "continuous_kw": null,
+      "provenance": [
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.Q_ceiling_kW_th"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.T_source_K"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.bore_depth_m"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.bore_metres_installed"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.bore_metres_req"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.bore_spacing_m"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.bores"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.circ_pump_W"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.header_m"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.k_ground_W_mK"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.loop_DN"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.loop_dT_K"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.loop_flow_kg_s"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.loop_fluid"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.material"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.q_per_m_W"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_GHEX at the survey-locked ceiling (graph params, ST-ORC-01; k_ground 1.5 W/m K, T_source 285.0 K) and the per-metre capacity driver ghex_q_per_m_W [KAVANAUGH2014 30-50 W/m band, registered]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.status"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "length-mm counts on the declared grid",
+          "field": "params.size_mm"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the study envelope note (M0)",
+          "field": "params.size_note"
+        }
+      ]
     },
     {
       "unit_id": "GEO_HP",
@@ -377,7 +623,93 @@
           600,
           800
         ]
-      }
+      },
+      "provenance": [
+        {
+          "stage": "power",
+          "basis": "X-ELS-02 load-basis (A-M-275): the GEO_HP electrical book re-solved from the heat family Q4-bus lift over the ground-source heating COP (drivers gsh_cop_h, ASHRAE 90.1-2025 class)",
+          "ref": "A-M-275",
+          "field": "continuous_kw.note"
+        },
+        {
+          "stage": "power",
+          "basis": "X-ELS-02 load-basis (A-M-275): the GEO_HP electrical book re-solved from the heat family Q4-bus lift over the ground-source heating COP (drivers gsh_cop_h, ASHRAE 90.1-2025 class)",
+          "ref": "A-M-275",
+          "field": "continuous_kw.value"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP at the issued winter duty: the seed Q4-bus lift S44 over the seed SF-GEO_HP book (graph COP basis; study COP 3.43 at 285 K, AQS-HEAT-STUDY-002 sec. 6), 2 x 100 % (X-RED-07), brazed plate at U 2.0 kW/m2 K and the 5 K approach [PERRY9]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.condenser_area_m2"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP at the issued winter duty: the seed Q4-bus lift S44 over the seed SF-GEO_HP book (graph COP basis; study COP 3.43 at 285 K, AQS-HEAT-STUDY-002 sec. 6), 2 x 100 % (X-RED-07), brazed plate at U 2.0 kW/m2 K and the 5 K approach [PERRY9]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.cop"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP at the issued winter duty: the seed Q4-bus lift S44 over the seed SF-GEO_HP book (graph COP basis; study COP 3.43 at 285 K, AQS-HEAT-STUDY-002 sec. 6), 2 x 100 % (X-RED-07), brazed plate at U 2.0 kW/m2 K and the 5 K approach [PERRY9]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.cop_basis"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP at the issued winter duty: the seed Q4-bus lift S44 over the seed SF-GEO_HP book (graph COP basis; study COP 3.43 at 285 K, AQS-HEAT-STUDY-002 sec. 6), 2 x 100 % (X-RED-07), brazed plate at U 2.0 kW/m2 K and the 5 K approach [PERRY9]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.electric_kW"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP at the issued winter duty: the seed Q4-bus lift S44 over the seed SF-GEO_HP book (graph COP basis; study COP 3.43 at 285 K, AQS-HEAT-STUDY-002 sec. 6), 2 x 100 % (X-RED-07), brazed plate at U 2.0 kW/m2 K and the 5 K approach [PERRY9]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.hx_class"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP at the issued winter duty: the seed Q4-bus lift S44 over the seed SF-GEO_HP book (graph COP basis; study COP 3.43 at 285 K, AQS-HEAT-STUDY-002 sec. 6), 2 x 100 % (X-RED-07), brazed plate at U 2.0 kW/m2 K and the 5 K approach [PERRY9]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.lift_kW_th"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP at the issued winter duty: the seed Q4-bus lift S44 over the seed SF-GEO_HP book (graph COP basis; study COP 3.43 at 285 K, AQS-HEAT-STUDY-002 sec. 6), 2 x 100 % (X-RED-07), brazed plate at U 2.0 kW/m2 K and the 5 K approach [PERRY9]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.material"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP at the issued winter duty: the seed Q4-bus lift S44 over the seed SF-GEO_HP book (graph COP basis; study COP 3.43 at 285 K, AQS-HEAT-STUDY-002 sec. 6), 2 x 100 % (X-RED-07), brazed plate at U 2.0 kW/m2 K and the 5 K approach [PERRY9]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.module_kW_th"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP at the issued winter duty: the seed Q4-bus lift S44 over the seed SF-GEO_HP book (graph COP basis; study COP 3.43 at 285 K, AQS-HEAT-STUDY-002 sec. 6), 2 x 100 % (X-RED-07), brazed plate at U 2.0 kW/m2 K and the 5 K approach [PERRY9]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.modules"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP at the issued winter duty: the seed Q4-bus lift S44 over the seed SF-GEO_HP book (graph COP basis; study COP 3.43 at 285 K, AQS-HEAT-STUDY-002 sec. 6), 2 x 100 % (X-RED-07), brazed plate at U 2.0 kW/m2 K and the 5 K approach [PERRY9]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.redundancy"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP at the issued winter duty: the seed Q4-bus lift S44 over the seed SF-GEO_HP book (graph COP basis; study COP 3.43 at 285 K, AQS-HEAT-STUDY-002 sec. 6), 2 x 100 % (X-RED-07), brazed plate at U 2.0 kW/m2 K and the 5 K approach [PERRY9]",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.source_area_m2"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "the envelope note (design decision, verbatim; the GEO_GHEX and GEO_HP_CLOSED_LOOP notes are the specialty lane study boxes, one writer per field)",
+          "ref": "AQS-DUTY-076",
+          "field": "params.size_note"
+        }
+      ]
     },
     {
       "unit_id": "GEO_HP_CLOSED_LOOP",
@@ -413,7 +745,67 @@
         "unit": "kW",
         "status": "study",
         "note": "AQS-DUTY-076 source-loop circulator: 125.7 W pump work (rho x g x Q x H / eta) at the GHEX-ceiling loop flow against 25 m head (sizing_geo_loop design block; drivers GEO.geo-loop loop_head_m / pump eff, registered); runs with the S44 lift dispatch and is counted on the bounding winter case with it (AQS-DUTY-010, A-M-231, A-M-317)."
-      }
+      },
+      "provenance": [
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP_CLOSED_LOOP: the source circulation sized at the survey-locked ceiling (S43 carries it on the graph, 0 kW idle standby; X-ELS-02 A-M-317 keeps the demand stamp with the write_graph power family)",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.DN"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP_CLOSED_LOOP: the source circulation sized at the survey-locked ceiling (S43 carries it on the graph, 0 kW idle standby; X-ELS-02 A-M-317 keeps the demand stamp with the write_graph power family)",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.dT_K"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP_CLOSED_LOOP: the source circulation sized at the survey-locked ceiling (S43 carries it on the graph, 0 kW idle standby; X-ELS-02 A-M-317 keeps the demand stamp with the write_graph power family)",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.design_case_kW_th"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP_CLOSED_LOOP: the source circulation sized at the survey-locked ceiling (S43 carries it on the graph, 0 kW idle standby; X-ELS-02 A-M-317 keeps the demand stamp with the write_graph power family)",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.duty"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP_CLOSED_LOOP: the source circulation sized at the survey-locked ceiling (S43 carries it on the graph, 0 kW idle standby; X-ELS-02 A-M-317 keeps the demand stamp with the write_graph power family)",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.flow_kg_s"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP_CLOSED_LOOP: the source circulation sized at the survey-locked ceiling (S43 carries it on the graph, 0 kW idle standby; X-ELS-02 A-M-317 keeps the demand stamp with the write_graph power family)",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.head_m"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP_CLOSED_LOOP: the source circulation sized at the survey-locked ceiling (S43 carries it on the graph, 0 kW idle standby; X-ELS-02 A-M-317 keeps the demand stamp with the write_graph power family)",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.material"
+        },
+        {
+          "stage": "sizing_geo_loop",
+          "basis": "AQS-DUTY-076 GEO_HP_CLOSED_LOOP: the source circulation sized at the survey-locked ceiling (S43 carries it on the graph, 0 kW idle standby; X-ELS-02 A-M-317 keeps the demand stamp with the write_graph power family)",
+          "ref": "AQS-DUTY-076",
+          "field": "params.design.pump_W"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "length-mm counts on the declared grid",
+          "field": "params.size_mm"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the study envelope note (M0)",
+          "field": "params.size_note"
+        }
+      ]
     },
     {
       "unit_id": "GLASS_DIGEST",
@@ -629,7 +1021,19 @@
           "material": "PEM stack, 316L reformer shell (Cu/ZnO class catalyst), PTFE gaskets",
           "note": "skid at the issued 1800 x 800 x 1600 mm envelope; the continuous book is 0.5 kW_e on S79 (Q-039 owner ruling 2026-11-13, fuel-limited at the settled S76 feed) and the installed 1.0 kW rating is standby capability, so the skid runs at part load on the dispatch schedule; the species edges (O2, CO2, water) close on the graph"
         }
-      }
+      },
+      "provenance": [
+        {
+          "stage": "sizing_meoh_train",
+          "basis": "the methanol-train residual sizing (AQS-DUTY-077): MEOH_COND dew-point duty on the seed water streams IA-MEOH-H2O + S81, MEOH_FC from the installed rating at the IEC62282_3_100 cell point; the continuous book rides S79 per the Q-039 owner ruling 2026-11-13",
+          "field": "params.design"
+        },
+        {
+          "stage": "sizing_meoh_train",
+          "basis": "the methanol-train residual sizing (AQS-DUTY-077): MEOH_COND dew-point duty on the seed water streams IA-MEOH-H2O + S81, MEOH_FC from the installed rating at the IEC62282_3_100 cell point; the continuous book rides S79 per the Q-039 owner ruling 2026-11-13",
+          "field": "params.size_note"
+        }
+      ]
     },
     {
       "unit_id": "MET_HX_Q4",
@@ -671,7 +1075,19 @@
         ],
         "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
-      "continuous_kw": null
+      "continuous_kw": null,
+      "provenance": [
+        {
+          "stage": "specialty_sizing",
+          "basis": "length-mm counts on the declared grid",
+          "field": "params.size_mm"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the study envelope note (M0)",
+          "field": "params.size_note"
+        }
+      ]
     },
     {
       "unit_id": "Q4_BUS",
@@ -697,13 +1113,13 @@
           "v_m_s": 1.5,
           "id_req_mm": 18.1,
           "DN": 32,
-          "length_m": 20,
-          "volume_m3": 0.009,
+          "length_m": 37.1,
+          "volume_m3": 0.0168,
           "material": "PP-H SDR 11 (80 C class), fusion-welded",
-          "hold_kg": 8.89,
+          "hold_kg": 16.48,
           "connections": 17
         },
-        "size_note": "DN32 manifold x 20 m run (0.009 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
+        "size_note": "DN32 manifold x 37 m run (0.017 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
           42.4,
@@ -711,7 +1127,33 @@
         ],
         "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN32 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (42.4 mm, EN-rounded OD series, AQS-PIP-004)"
       },
-      "continuous_kw": null
+      "continuous_kw": null,
+      "provenance": [
+        {
+          "stage": "sizing_headers",
+          "basis": "AQS-DUTY-075 header sizing (flow_graph/param/headers.py port): bore from the concurrent design flow at the velocity limit (PERRY9 sec. 6, d = sqrt(4Q/(pi v))), not below the service minimum (gas/water DN25 A-M-303, flue DN100 A-M-304); densities at header conditions (NIST_WEBBOOK class, air class A-M-384 at the hdr_air_T_C driver, NCG and flue A-M-305); manifold run per A-M-306, route refinements retired with the auto-router 2026-10-27; Q4_BUS flow on the AQS-HEAT-LADDER-001 winter concurrent case (life + HX-9 + HX-10 + GHEX recharge + MAU_HX coil) over the heat_loop_dT_K loop swing",
+          "ref": "PERRY9",
+          "field": "params.design"
+        },
+        {
+          "stage": "sizing_headers",
+          "basis": "AQS-PIP-004 reservation (flow_graph/param/headers.py port): the modelled manifold segment keeps its layout length; the cross-section covers the larger of the sized manifold OD and the largest branch OD the issued nozzle schedule carries (EN-rounded OD series, ASME B36.19M/B36.10M)",
+          "ref": "AQS-PIP-004",
+          "field": "params.size_basis"
+        },
+        {
+          "stage": "sizing_headers",
+          "basis": "AQS-PIP-004 reservation (flow_graph/param/headers.py port): the modelled manifold segment keeps its layout length; the cross-section covers the larger of the sized manifold OD and the largest branch OD the issued nozzle schedule carries (EN-rounded OD series, ASME B36.19M/B36.10M)",
+          "ref": "AQS-PIP-004",
+          "field": "params.size_mm"
+        },
+        {
+          "stage": "sizing_headers",
+          "basis": "AQS-PIP-004 reservation (flow_graph/param/headers.py port): the modelled manifold segment keeps its layout length; the cross-section covers the larger of the sized manifold OD and the largest branch OD the issued nozzle schedule carries (EN-rounded OD series, ASME B36.19M/B36.10M)",
+          "ref": "AQS-PIP-004",
+          "field": "params.size_note"
+        }
+      ]
     },
     {
       "unit_id": "RECTIFIER",
@@ -743,7 +1185,51 @@
           800
         ],
         "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
-      }
+      },
+      "provenance": [
+        {
+          "stage": "process",
+          "basis": "EW rectifier channels (AQS-ELEC-004; A-M-044 frames; A-M-255; USBM_CL_EW)",
+          "ref": "A-M-231",
+          "field": "continuous_kw.note"
+        },
+        {
+          "stage": "process",
+          "basis": "EW rectifier channels (AQS-ELEC-004; A-M-044 frames; A-M-255; USBM_CL_EW); F-24: no independent 48 V rail load basis",
+          "field": "continuous_kw.value"
+        },
+        {
+          "stage": "process",
+          "basis": "EW rectifier channels (AQS-ELEC-004; A-M-044 frames; A-M-255; USBM_CL_EW)",
+          "field": "notes"
+        },
+        {
+          "stage": "process",
+          "basis": "EW rectifier channels (AQS-ELEC-004; A-M-044 frames; A-M-255; USBM_CL_EW)",
+          "field": "params.nameplate_kw_dc"
+        },
+        {
+          "stage": "process",
+          "basis": "EW rectifier channels (AQS-ELEC-004; A-M-044 frames; A-M-255; USBM_CL_EW)",
+          "field": "params.rated_A"
+        },
+        {
+          "stage": "process",
+          "basis": "EW rectifier channels (AQS-ELEC-004; A-M-044 frames; A-M-255; USBM_CL_EW)",
+          "field": "params.rect_ac_input_kW"
+        },
+        {
+          "stage": "process",
+          "basis": "EW rectifier channels (AQS-ELEC-004; A-M-044 frames; A-M-255; USBM_CL_EW)",
+          "ref": "A-M-255",
+          "field": "params.rect_basis"
+        },
+        {
+          "stage": "process",
+          "basis": "EW rectifier channels (AQS-ELEC-004; A-M-044 frames; A-M-255; USBM_CL_EW)",
+          "field": "params.rect_loss_kW"
+        }
+      ]
     },
     {
       "unit_id": "ZNBR2",
@@ -829,7 +1315,63 @@
           "basis": "cell-summed area from the booked charge (Ah at 1.82 V over the 6 h window at 20 mA/cm2, the purge-basis book); plates 95/module x 37 modules fill it at 6 mm pitch (A-M-456); electrolyte 530.138 L/module at 2 M ZnBr2 (A-M-457); cooler at the cycling_thermal charge-window rate (A-M-455); pump at the 3 % auxiliary share (A-M-179)",
           "computed_by": "flow_graph/param/ess_tf.py tf() (X-PAR-02 lane, X-MFG-43 machine design)"
         }
-      }
+      },
+      "provenance": [
+        {
+          "stage": "power",
+          "basis": "AQS-ELEC-007 store book P x night at the round-trip driver (A-M-062/179); store P from the roof-close fixed point (A-M-231 census + EW rectifier AC + EXT_HALL extension heat + roof fit, docs-authority/_power_sizing.py); AQS-ELEC-008 inverter distribution",
+          "ref": "AQS-ELEC-007",
+          "field": "continuous_kw.note"
+        },
+        {
+          "stage": "power",
+          "basis": "AQS-ELEC-007 store book P x night at the round-trip driver (A-M-062/179); store P from the roof-close fixed point (A-M-231 census + EW rectifier AC + EXT_HALL extension heat + roof fit, docs-authority/_power_sizing.py); AQS-ELEC-008 inverter distribution",
+          "ref": "AQS-ELEC-007",
+          "field": "continuous_kw.value"
+        },
+        {
+          "stage": "power",
+          "basis": "D75 PV dispatch at pv_oversize_factor x the balancing nameplate (A-M-109, NREL_PVWATTS8, X-PAR-07 roof close); portfolio dispatch (X-LOC-08)",
+          "ref": "A-M-109",
+          "field": "params.charge_basis"
+        },
+        {
+          "stage": "power",
+          "basis": "AQS-ELEC-007 store book P x night at the round-trip driver (A-M-062/179); store P from the roof-close fixed point (A-M-231 census + EW rectifier AC + EXT_HALL extension heat + roof fit, docs-authority/_power_sizing.py); AQS-ELEC-008 inverter distribution",
+          "ref": "AQS-ELEC-007",
+          "field": "params.charge_kW"
+        },
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 F-4 ZNBR2 cycling heat (A-M-455; round trip A-M-062/179); store book read from the write_graph power family via the seed (F-20261110-08)",
+          "ref": "A-M-455",
+          "field": "params.cycling_thermal"
+        },
+        {
+          "stage": "power",
+          "basis": "AQS-ELEC-007 store book P x night at the round-trip driver (A-M-062/179); store P from the roof-close fixed point (A-M-231 census + EW rectifier AC + EXT_HALL extension heat + roof fit, docs-authority/_power_sizing.py); AQS-ELEC-008 inverter distribution",
+          "ref": "AQS-ELEC-007",
+          "field": "params.discharge_kW"
+        },
+        {
+          "stage": "power",
+          "basis": "AQS-ELEC-007 store book P x night at the round-trip driver (A-M-062/179); store P from the roof-close fixed point (A-M-231 census + EW rectifier AC + EXT_HALL extension heat + roof fit, docs-authority/_power_sizing.py); AQS-ELEC-008 inverter distribution",
+          "ref": "AQS-ELEC-008",
+          "field": "params.distribution"
+        },
+        {
+          "stage": "power",
+          "basis": "AQS-ELEC-007 store book P x night at the round-trip driver (A-M-062/179); store P from the roof-close fixed point (A-M-231 census + EW rectifier AC + EXT_HALL extension heat + roof fit, docs-authority/_power_sizing.py); AQS-ELEC-008 inverter distribution",
+          "ref": "AQS-ELEC-007",
+          "field": "params.kW"
+        },
+        {
+          "stage": "power",
+          "basis": "AQS-ELEC-007 store book P x night at the round-trip driver (A-M-062/179); store P from the roof-close fixed point (A-M-231 census + EW rectifier AC + EXT_HALL extension heat + roof fit, docs-authority/_power_sizing.py); AQS-ELEC-008 inverter distribution",
+          "ref": "AQS-ELEC-007",
+          "field": "params.kWh"
+        }
+      ]
     },
     {
       "unit_id": "GLASS_BURNOUT",
@@ -1369,7 +1911,30 @@
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 15.76 kWh/d over 24 h at 3 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02."
-      }
+      },
+      "provenance": [
+        {
+          "stage": "foundry_poly",
+          "basis": "X-MFG-30 CAD stamp (AQS-DUTY-072/AQS-DUTY-073): A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load",
+          "field": "params.design"
+        },
+        {
+          "stage": "foundry_poly",
+          "basis": "X-MFG-30 CAD stamp (AQS-DUTY-072/AQS-DUTY-073): A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load",
+          "field": "params.envelope"
+        },
+        {
+          "stage": "sec3_material_selections",
+          "basis": "M7 melt hot face (crucible and lining refractory class)",
+          "ref": "AQS-STD-002",
+          "field": "params.sec3_material"
+        },
+        {
+          "stage": "foundry_poly",
+          "basis": "the melt-shop ledger and class energies (A-M-177, A-M-261 rev)",
+          "field": "params.sizing"
+        }
+      ]
     },
     {
       "unit_id": "VAC_IND",
@@ -1436,7 +2001,30 @@
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-37 trial basis (AQS-DUTY-072): N+1 diverse melt path: standby-zero on the design day (A-M-283); Ti Kroll train feed now dock-supplied, duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02."
-      }
+      },
+      "provenance": [
+        {
+          "stage": "foundry_poly",
+          "basis": "X-MFG-30 CAD stamp (AQS-DUTY-072/AQS-DUTY-073): A-M-199 melt class; N+1 rated envelope (A-M-283): real machine, standby-zero design-day rate",
+          "field": "params.design"
+        },
+        {
+          "stage": "foundry_poly",
+          "basis": "X-MFG-30 CAD stamp (AQS-DUTY-072/AQS-DUTY-073): A-M-199 melt class; N+1 rated envelope (A-M-283): real machine, standby-zero design-day rate",
+          "field": "params.envelope"
+        },
+        {
+          "stage": "sec3_material_selections",
+          "basis": "M7 vacuum-dry service (water-cooled copper face; no refractory melt contact)",
+          "ref": "AQS-STD-002",
+          "field": "params.sec3_material"
+        },
+        {
+          "stage": "foundry_poly",
+          "basis": "the N+1 alternates, rated standby (A-M-283)",
+          "field": "params.sizing"
+        }
+      ]
     },
     {
       "unit_id": "EVAP_ACID",
@@ -1546,7 +2134,91 @@
         "unit": "kW",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, HCl from 2 M (7.07 wt%) to 20 wt% (below the HCl azeotrope 20.2 wt%, PERRY9_HCL); water off 865.2 kg/d x 41.5 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.489 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.50 kW. Study."
-      }
+      },
+      "provenance": [
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "continuous_kw.note"
+        },
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "continuous_kw.value"
+        },
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "notes"
+        },
+        {
+          "stage": "evap_design",
+          "basis": "X-MFG-30 in-house MVR evaporator design (AQS-DUTY-060; A-M-106/107/108): falling-film body, mechanical vapour recompression, interchanger, in-house relief cases and the acid HCl column; mass books from the process family (solver.evap port, the strangler seed read)",
+          "ref": "A-M-106",
+          "field": "params.design"
+        },
+        {
+          "stage": "evap_design",
+          "basis": "X-MFG-30 in-house MVR evaporator design (AQS-DUTY-060; A-M-106/107/108): falling-film body, mechanical vapour recompression, interchanger, in-house relief cases and the acid HCl column; mass books from the process family (solver.evap port, the strangler seed read)",
+          "ref": "A-M-107",
+          "field": "params.design_kPa"
+        },
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "params.feed_wt"
+        },
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "params.mvr_kWh_per_t"
+        },
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "params.presence"
+        },
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "params.product_wt"
+        },
+        {
+          "stage": "relief",
+          "basis": "API 520 Part I critical-flow gas sizing (API520; sizing/relief.py); case inputs read from params.relief_basis",
+          "ref": "API520",
+          "field": "params.relief_basis"
+        },
+        {
+          "stage": "evap_design",
+          "basis": "X-MFG-30 in-house MVR evaporator design (AQS-DUTY-060; A-M-106/107/108): falling-film body, mechanical vapour recompression, interchanger, in-house relief cases and the acid HCl column; mass books from the process family (solver.evap port, the strangler seed read)",
+          "ref": "A-M-107",
+          "field": "params.relief_mm"
+        },
+        {
+          "stage": "sec3_material_selections",
+          "basis": "M3/M5 lined-part rule above the thermoplastic limits: PTFE lining, never bare metal; impregnated-graphite bundle class; borosilicate glass column",
+          "ref": "AQS-STD-002",
+          "field": "params.sec3_material"
+        },
+        {
+          "stage": "evap_design",
+          "basis": "X-MFG-30 in-house MVR evaporator design (AQS-DUTY-060; A-M-106/107/108): falling-film body, mechanical vapour recompression, interchanger, in-house relief cases and the acid HCl column; mass books from the process family (solver.evap port, the strangler seed read)",
+          "ref": "A-M-106",
+          "field": "params.size_mm"
+        },
+        {
+          "stage": "evap_design",
+          "basis": "X-MFG-30 in-house MVR evaporator design (AQS-DUTY-060; A-M-106/107/108): falling-film body, mechanical vapour recompression, interchanger, in-house relief cases and the acid HCl column; mass books from the process family (solver.evap port, the strangler seed read)",
+          "ref": "A-M-106",
+          "field": "params.size_note"
+        },
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "params.water_off_kg_d"
+        }
+      ]
     },
     {
       "unit_id": "EVAP_BASE",
@@ -1636,7 +2308,85 @@
         "unit": "kW",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 811.2 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.336 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.34 kW. Study."
-      }
+      },
+      "provenance": [
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "continuous_kw.note"
+        },
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "continuous_kw.value"
+        },
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "notes"
+        },
+        {
+          "stage": "evap_design",
+          "basis": "X-MFG-30 in-house MVR evaporator design (AQS-DUTY-060; A-M-106/107/108): falling-film body, mechanical vapour recompression, interchanger, in-house relief cases and the acid HCl column; mass books from the process family (solver.evap port, the strangler seed read)",
+          "ref": "A-M-106",
+          "field": "params.design"
+        },
+        {
+          "stage": "evap_design",
+          "basis": "X-MFG-30 in-house MVR evaporator design (AQS-DUTY-060; A-M-106/107/108): falling-film body, mechanical vapour recompression, interchanger, in-house relief cases and the acid HCl column; mass books from the process family (solver.evap port, the strangler seed read)",
+          "ref": "A-M-107",
+          "field": "params.design_kPa"
+        },
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "params.feed_wt"
+        },
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "params.mvr_kWh_per_t"
+        },
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "params.presence"
+        },
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "params.product_wt"
+        },
+        {
+          "stage": "relief",
+          "basis": "API 520 Part I critical-flow gas sizing (API520; sizing/relief.py); case inputs read from params.relief_basis",
+          "ref": "API520",
+          "field": "params.relief_basis"
+        },
+        {
+          "stage": "evap_design",
+          "basis": "X-MFG-30 in-house MVR evaporator design (AQS-DUTY-060; A-M-106/107/108): falling-film body, mechanical vapour recompression, interchanger, in-house relief cases and the acid HCl column; mass books from the process family (solver.evap port, the strangler seed read)",
+          "ref": "A-M-107",
+          "field": "params.relief_mm"
+        },
+        {
+          "stage": "evap_design",
+          "basis": "X-MFG-30 in-house MVR evaporator design (AQS-DUTY-060; A-M-106/107/108): falling-film body, mechanical vapour recompression, interchanger, in-house relief cases and the acid HCl column; mass books from the process family (solver.evap port, the strangler seed read)",
+          "ref": "A-M-106",
+          "field": "params.size_mm"
+        },
+        {
+          "stage": "evap_design",
+          "basis": "X-MFG-30 in-house MVR evaporator design (AQS-DUTY-060; A-M-106/107/108): falling-film body, mechanical vapour recompression, interchanger, in-house relief cases and the acid HCl column; mass books from the process family (solver.evap port, the strangler seed read)",
+          "ref": "A-M-106",
+          "field": "params.size_note"
+        },
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "params.water_off_kg_d"
+        }
+      ]
     },
     {
       "unit_id": "ADS_CHILL",
@@ -1684,7 +2434,60 @@
         "size_basis": "the 2.25 kW-class silica gel-water adsorption chiller: drive 65 C, chilled 12 C, thermal COP ~0.45 (A-M-239/240; WANG2006_ADS); 304L shells per the issued sec3"
       },
       "continuous_kw": null,
-      "class": "adsorption_chiller"
+      "class": "adsorption_chiller",
+      "provenance": [
+        {
+          "stage": "specialty_sizing",
+          "basis": "2.25 kW chilled = 5.0 kW drive x the 0.45 thermal COP class (A-M-239/240; AQS-DUTY-013 class)",
+          "ref": "A-M-239",
+          "field": "params.design.chilled_kw"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the 0.45 thermal COP class (A-M-239/240; WANG2006_ADS)",
+          "ref": "A-M-239",
+          "field": "params.design.cop_thermal"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the chiller duty text (design decision, verbatim)",
+          "field": "params.design.duty"
+        },
+        {
+          "stage": "sec3_material_selections",
+          "basis": "M1 sealed vacuum-grade vessels; section 12.1 P5 water family on the chilled legs",
+          "ref": "AQS-STD-002",
+          "field": "params.sec3_material"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the chiller envelope basis",
+          "ref": "A-M-239",
+          "field": "params.size_basis"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "length-mm counts on the declared grid",
+          "field": "params.size_mm"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "no note: the study envelope box stands alone",
+          "field": "params.size_note"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "2.25 kW chilled = 5.0 kW drive x the 0.45 thermal COP class (A-M-239/240; AQS-DUTY-013 class)",
+          "ref": "A-M-239",
+          "field": "params.sizing.chilled_kw"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the 0.45 thermal COP class (A-M-239/240; WANG2006_ADS)",
+          "ref": "A-M-239",
+          "field": "params.sizing.cop_thermal"
+        }
+      ]
     },
     {
       "unit_id": "MAU_HX",
@@ -1724,7 +2527,42 @@
         "size_basis": "the 12 kW water-to-air coil at the MAU duty (Q4 -> hab make-up air)"
       },
       "continuous_kw": null,
-      "class": "hx"
+      "class": "hx",
+      "provenance": [
+        {
+          "stage": "specialty_sizing",
+          "basis": "the duty text (design decision, verbatim)",
+          "field": "params.design.duty"
+        },
+        {
+          "stage": "sec3_material_selections",
+          "basis": "section 12.1 M1 316L water loop; air side held above the dew point in heating",
+          "ref": "AQS-STD-002",
+          "field": "params.sec3_material"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the envelope basis",
+          "ref": "A-M-241",
+          "field": "params.size_basis"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "length-mm counts on the declared grid",
+          "field": "params.size_mm"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "no note: the study envelope box stands alone",
+          "field": "params.size_note"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the 12 kW coil duty (A-M-241)",
+          "ref": "A-M-241",
+          "field": "params.sizing.duty_kw"
+        }
+      ]
     },
     {
       "unit_id": "ATMOS",
@@ -1788,7 +2626,83 @@
         "status": "study",
         "note": "the fan at the 0.05 kW_fan/kW_th class on the rated duty 154 kW (A-M-244 restated); fan-assisted at the window bounding case (X-SPEC sizing, calculated)"
       },
-      "class": "dry_cooler"
+      "class": "dry_cooler",
+      "provenance": [
+        {
+          "stage": "specialty_sizing",
+          "basis": "the fan at the 0.05 kW_fan/kW_th class (A-M-244 restated)",
+          "ref": "A-M-244",
+          "field": "continuous_kw.note"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the fan at the 0.05 kW_fan/kW_th class (A-M-244 restated)",
+          "ref": "A-M-244",
+          "field": "continuous_kw.value"
+        },
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 F-4 dry-cooler rating (A-M-244 restated, A-M-455); AQS-DUTY-008 section 3 margin, 0.05 kW_fan/kW_th class",
+          "ref": "A-M-455",
+          "field": "params.basis"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "air 25->38 C at 1.06 kg/m3: Q/(rho cp dT) at 0.61 m3/s per 7.25 kW class (AQS-BLD class approach)",
+          "ref": "A-M-244",
+          "field": "params.design.airflow_m3_s"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the duty text (design decision, verbatim)",
+          "field": "params.design.duty"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the fan at the 0.05 kW_fan/kW_th class (A-M-244 restated)",
+          "ref": "A-M-244",
+          "field": "params.design.fan_kw"
+        },
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 F-4 dry-cooler rating (A-M-244 restated, A-M-455); AQS-DUTY-008 section 3 margin, 0.05 kW_fan/kW_th class",
+          "ref": "A-M-455",
+          "field": "params.fan_kW"
+        },
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 F-4 dry-cooler rating (A-M-244 restated, A-M-455); AQS-DUTY-008 section 3 margin, 0.05 kW_fan/kW_th class",
+          "ref": "A-M-455",
+          "field": "params.rated_kW"
+        },
+        {
+          "stage": "sec3_material_selections",
+          "basis": "section 12.1 closed water-loop families on the loop side; air-sided fin-coil class",
+          "ref": "AQS-STD-002",
+          "field": "params.sec3_material"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "the envelope basis",
+          "field": "params.size_basis"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "length-mm counts on the declared grid",
+          "field": "params.size_mm"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "no note: the study envelope box stands alone",
+          "field": "params.size_note"
+        },
+        {
+          "stage": "specialty_sizing",
+          "basis": "air 25->38 C at 1.06 kg/m3: Q/(rho cp dT) at 0.61 m3/s per 7.25 kW class (AQS-BLD class approach)",
+          "ref": "A-M-244",
+          "field": "params.sizing.airflow_m3_s"
+        }
+      ]
     },
     {
       "unit_id": "EVAP_ACID_VS",
@@ -1824,7 +2738,79 @@
         "unit": "kW",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Sump recirculation pump 350 L/h at the minimum wetting rate (PERRY9_ABS), 10 m head, 40 % efficiency (study)."
-      }
+      },
+      "provenance": [
+        {
+          "stage": "process",
+          "basis": "X-PAR-10 vent scrubber (AQS-DUTY-061, A-M-111; PERRY9_ABS, PERRY7_HCL_VLE, WEISS1970); AQS-PAR-001",
+          "field": "continuous_kw.note"
+        },
+        {
+          "stage": "process",
+          "basis": "X-PAR-10 vent scrubber (AQS-DUTY-061, A-M-111; PERRY9_ABS, PERRY7_HCL_VLE, WEISS1970); AQS-PAR-001",
+          "field": "continuous_kw.value"
+        },
+        {
+          "stage": "process",
+          "basis": "X-PAR-10 vent scrubber (AQS-DUTY-061, A-M-111; PERRY9_ABS, PERRY7_HCL_VLE, WEISS1970); AQS-PAR-001",
+          "field": "notes"
+        },
+        {
+          "stage": "process",
+          "basis": "X-PAR-10 vent scrubber (AQS-DUTY-061, A-M-111; PERRY9_ABS, PERRY7_HCL_VLE, WEISS1970); AQS-PAR-001",
+          "field": "params.DN"
+        },
+        {
+          "stage": "process",
+          "basis": "X-PAR-10 vent scrubber (AQS-DUTY-061, A-M-111; PERRY9_ABS, PERRY7_HCL_VLE, WEISS1970); AQS-PAR-001",
+          "field": "params.design_case"
+        },
+        {
+          "stage": "process",
+          "basis": "X-PAR-10 vent scrubber (AQS-DUTY-061, A-M-111; PERRY9_ABS, PERRY7_HCL_VLE, WEISS1970); AQS-PAR-001",
+          "field": "params.height_mm"
+        },
+        {
+          "stage": "process",
+          "basis": "X-PAR-10 vent scrubber (AQS-DUTY-061, A-M-111; PERRY9_ABS, PERRY7_HCL_VLE, WEISS1970); AQS-PAR-001",
+          "field": "params.material"
+        },
+        {
+          "stage": "process",
+          "basis": "X-PAR-10 vent scrubber (AQS-DUTY-061, A-M-111; PERRY9_ABS, PERRY7_HCL_VLE, WEISS1970); AQS-PAR-001",
+          "field": "params.packed_mm"
+        },
+        {
+          "stage": "process",
+          "basis": "X-PAR-10 vent scrubber (AQS-DUTY-061, A-M-111; PERRY9_ABS, PERRY7_HCL_VLE, WEISS1970); AQS-PAR-001",
+          "field": "params.presence"
+        },
+        {
+          "stage": "process",
+          "basis": "length-mm counts on the declared grid",
+          "field": "params.size_mm"
+        },
+        {
+          "stage": "process",
+          "basis": "X-PAR-10 vent scrubber (AQS-DUTY-061, A-M-111; PERRY9_ABS, PERRY7_HCL_VLE, WEISS1970); AQS-PAR-001",
+          "field": "params.size_note"
+        },
+        {
+          "stage": "process",
+          "basis": "X-PAR-10 vent scrubber (AQS-DUTY-061, A-M-111; PERRY9_ABS, PERRY7_HCL_VLE, WEISS1970); AQS-PAR-001",
+          "field": "params.sump_L"
+        },
+        {
+          "stage": "process",
+          "basis": "X-PAR-10 vent scrubber (AQS-DUTY-061, A-M-111; PERRY9_ABS, PERRY7_HCL_VLE, WEISS1970); AQS-PAR-001",
+          "field": "params.y_in_ppm_design"
+        },
+        {
+          "stage": "process",
+          "basis": "X-PAR-10 vent scrubber (AQS-DUTY-061, A-M-111; PERRY9_ABS, PERRY7_HCL_VLE, WEISS1970); AQS-PAR-001",
+          "field": "params.y_out_ppm"
+        }
+      ]
     }
   ],
   "edges": [
@@ -1937,7 +2923,15 @@
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW. | X-THM-01: 1.133 kW less 0.1410 kW of insulated line loss upstream (A-M-166). | X-THM-01 R10b: down transit = tier source less the standing loss (A-M-259)."
       },
       "from_sector_id": "HEAT",
-      "to_sector_id": "HEAT"
+      "to_sector_id": "HEAT",
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates",
+          "ref": "A-M-259",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "HL-Q1-B-DOWN",
@@ -1960,7 +2954,15 @@
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.353 kW. | X-THM-01: 1.133 kW less 0.1410 kW of insulated line loss upstream (A-M-166). | X-THM-01 R10b: down transit = tier source less the standing loss (A-M-259)."
       },
       "from_sector_id": "HEAT",
-      "to_sector_id": "HEAT"
+      "to_sector_id": "HEAT",
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates",
+          "ref": "A-M-259",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "HL-Q1-X",
@@ -2028,7 +3030,15 @@
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW. | X-THM-01: 1.888 kW less 0.2676 kW of insulated line loss upstream (A-M-166). | X-THM-01 R10b: down transit = Q1 down + burnout source less the standing loss (A-M-259)."
       },
       "from_sector_id": "HEAT",
-      "to_sector_id": "HEAT"
+      "to_sector_id": "HEAT",
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates",
+          "ref": "A-M-259",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "HL-Q2-B-DOWN",
@@ -2051,7 +3061,15 @@
         "note": "AQS-DUTY-008: rated duty, single-ladder case x 1.25. Normal (both ladders) 0.603 kW. | X-THM-01: 1.888 kW less 0.2676 kW of insulated line loss upstream (A-M-166). | X-THM-01 R10b: down transit = Q1 down + burnout source less the standing loss (A-M-259)."
       },
       "from_sector_id": "HEAT",
-      "to_sector_id": "HEAT"
+      "to_sector_id": "HEAT",
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates",
+          "ref": "A-M-259",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "HL-Q2-X",
@@ -2119,7 +3137,15 @@
         "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle. | X-THM-01: 1.614 kW less 0.4854 kW of insulated line loss upstream (A-M-166). | X-THM-01 R10b: Q3 fully drawn; the Q3 -> Q4 step carries 0 (HEAT_LADDER.md Duties) (A-M-259)."
       },
       "from_sector_id": "HEAT",
-      "to_sector_id": "HEAT"
+      "to_sector_id": "HEAT",
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates",
+          "ref": "A-M-259",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "HL-Q3-B-DOWN",
@@ -2142,7 +3168,15 @@
         "note": "AQS-DUTY-008 Rev B: rated duty, single-ladder case x 1.25 (governs with the Q3 draws idle). Normal 0.0 kW with the draws running (Q3 fully drawn); 0.41060499621775376 kW with the draws idle. | X-THM-01: 1.614 kW less 0.5842 kW of insulated line loss upstream (A-M-166). | X-THM-01 R10b: Q3 fully drawn; the Q3 -> Q4 step carries 0 (HEAT_LADDER.md Duties) (A-M-259)."
       },
       "from_sector_id": "HEAT",
-      "to_sector_id": "HEAT"
+      "to_sector_id": "HEAT",
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates",
+          "ref": "A-M-259",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "HL-Q3-X",
@@ -2212,7 +3246,21 @@
       "to_sector_id": "HEAT",
       "params": {
         "duty_normal_kw": 3.896
-      }
+      },
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates; F-25 N+1 store-bus book (HEAT_LADDER.md section 3, A-M-453); Q4 bus close, GEO_HP dispatch (AQS-DUTY-010)",
+          "ref": "A-M-453",
+          "field": "params.duty_normal_kw"
+        },
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates; F-25 N+1 store-bus book (HEAT_LADDER.md section 3, A-M-453); Q4 bus close, GEO_HP dispatch (AQS-DUTY-010)",
+          "ref": "A-M-453",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "HL-Q4-B-BUS",
@@ -2237,7 +3285,21 @@
       "to_sector_id": "HEAT",
       "params": {
         "duty_normal_kw": 3.896
-      }
+      },
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates; F-25 N+1 store-bus book (HEAT_LADDER.md section 3, A-M-453); Q4 bus close, GEO_HP dispatch (AQS-DUTY-010)",
+          "ref": "A-M-453",
+          "field": "params.duty_normal_kw"
+        },
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates; F-25 N+1 store-bus book (HEAT_LADDER.md section 3, A-M-453); Q4 bus close, GEO_HP dispatch (AQS-DUTY-010)",
+          "ref": "A-M-453",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "HL-Q4-X",
@@ -2361,7 +3423,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: GEO_HP \u2192 Q4 / FARM / HAB"
+      "notes": "From register: GEO_HP \u2192 Q4 / FARM / HAB",
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates; F-25 N+1 store-bus book (HEAT_LADDER.md section 3, A-M-453); Q4 bus close, GEO_HP dispatch (AQS-DUTY-010)",
+          "ref": "A-M-259",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "S53",
@@ -2389,7 +3459,15 @@
       "gap_flags": [
         "absent_from_candidate_mvs"
       ],
-      "notes": "From register: FC_HX_Q4 \u2192 Q4 / FARM / HAB"
+      "notes": "From register: FC_HX_Q4 \u2192 Q4 / FARM / HAB",
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 F-11 full stack heat on the bus (A-M-383 H2 LHV; AQS-DUTY-010)",
+          "ref": "A-M-383",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "S54",
@@ -2698,7 +3776,15 @@
         "line_loss_normal_W": 54.6,
         "duty_source_rated_kw": 0.3566,
         "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
-      }
+      },
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates",
+          "ref": "A-M-259",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "HL-Q3-A-HX5",
@@ -2748,7 +3834,15 @@
         "line_loss_normal_W": 0.0,
         "duty_source_rated_kw": 8.1832,
         "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
-      }
+      },
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates",
+          "ref": "A-M-259",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "HL-Q3-A-HX6",
@@ -2798,7 +3892,15 @@
         "line_loss_normal_W": 163.2,
         "duty_source_rated_kw": 2.2422,
         "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
-      }
+      },
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates",
+          "ref": "A-M-259",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "HL-Q3-B-HX4",
@@ -2848,7 +3950,15 @@
         "line_loss_normal_W": 110.8,
         "duty_source_rated_kw": 0.4128,
         "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
-      }
+      },
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates",
+          "ref": "A-M-259",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "HL-Q3-B-HX5",
@@ -2898,7 +4008,15 @@
         "line_loss_normal_W": 0.0,
         "duty_source_rated_kw": 8.6785,
         "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
-      }
+      },
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates",
+          "ref": "A-M-259",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "HL-Q3-B-HX6",
@@ -2948,7 +4066,15 @@
         "line_loss_normal_W": 205.8,
         "duty_source_rated_kw": 2.2848,
         "line_loss_basis": "X-THM-04 (AQS-THM-003, A-M-165)"
-      }
+      },
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates",
+          "ref": "A-M-259",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "HL-Q4-REJ",
@@ -2975,7 +4101,15 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged Re-homed from GEO_ORC to DRY_COOLER per AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a79/\u00a710.8 (D-GEO_ORC ruling 2026-10-18).",
-      "params": {}
+      "params": {},
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b ladder transit by difference (A-M-259; HEAT_LADDER.md); AQS-DUTY-008 section 3 rates; F-25 N+1 store-bus book (HEAT_LADDER.md section 3, A-M-453); Q4 bus close, GEO_HP dispatch (AQS-DUTY-010)",
+          "ref": "A-M-259",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "IA-Q4-LIFE",
@@ -3027,7 +4161,15 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged"
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 F-4 ZNBR2 cycling heat (A-M-455; round trip A-M-062/179); store book read from the write_graph power family via the seed (F-20261110-08)",
+          "ref": "A-M-455",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "IA-Q4A-TRIM",
@@ -3447,7 +4589,14 @@
         "note": "X-PAR F-24 (A-M-246 restated): the rectifier reject is the calculated conversion loss at the bounding duty - AC input 7.491 kW less DC out 5.993 kW at eff 0.80 = 1.498 kW to the Q4 recovery loop. Was the 1.0 kW bound of the removed 12 kW basis (12 kW at 92-96 percent efficiency, POWER_DUTIES.md)."
       },
       "from_sector_id": "ELEC",
-      "to_sector_id": "HEAT"
+      "to_sector_id": "HEAT",
+      "provenance": [
+        {
+          "stage": "process",
+          "basis": "EW rectifier channels (AQS-ELEC-004; A-M-044 frames; A-M-255; USBM_CL_EW)",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "IA-TRIM-HX5",
@@ -3541,7 +4690,14 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "provenance": [
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "SQ-EVAP_BASE",
@@ -3567,7 +4723,14 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "provenance": [
+        {
+          "stage": "process",
+          "basis": "MVR evaporator mass balance (solver.evap); in-house MVR design X-MFG-30 (AQS-DUTY-060); AQS-PAR-001",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "SQ-EVAP_ACID_VS",
@@ -3594,7 +4757,14 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": null,
-      "params": {}
+      "params": {},
+      "provenance": [
+        {
+          "stage": "process",
+          "basis": "X-PAR-10 vent scrubber (AQS-DUTY-061, A-M-111; PERRY9_ABS, PERRY7_HCL_VLE, WEISS1970); AQS-PAR-001",
+          "field": "rate"
+        }
+      ]
     },
     {
       "stream_id": "IA-DC-REJ",
@@ -3621,7 +4791,15 @@
       "namespace": "IA",
       "gap_flags": [],
       "notes": "F-3 (A-M-454): terminal rejection edge - the cooler passes the duty it receives to ambient air. Written by write_graph heat.",
-      "params": {}
+      "params": {},
+      "provenance": [
+        {
+          "stage": "heat",
+          "basis": "X-THM-01 R10b terminal closure (F-3, A-M-454): the cooler passes the duty it receives to ambient air",
+          "ref": "A-M-454",
+          "field": "rate"
+        }
+      ]
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

@@ -53,7 +53,7 @@
      "from": "BRINE_CRYS",
      "to": "LEACH_CSTR_1",
      "other_sector": "FOUNDRY",
-     "rate": 1.844063,
+     "rate": 1.844103,
      "unit": "kg/d",
      "carries": "mother liquor (residual chlorides) returned to the leach"
     },
@@ -442,7 +442,7 @@
      "from": "LEACH_CSTR_1",
      "to": "BRINE_CRYS",
      "other_sector": "FOUNDRY",
-     "rate": 2.000047,
+     "rate": 2.0,
      "unit": "kg/d",
      "carries": "leach-liquor side-stream to the crystallizer"
     },
@@ -3984,7 +3984,7 @@
      "from": "LEACH_CSTR_1",
      "to": "BRINE_CRYS",
      "other_sector": "DIGESTER",
-     "rate": 2.000047,
+     "rate": 2.0,
      "unit": "kg/d",
      "carries": "leach-liquor side-stream to the crystallizer"
     },
@@ -4058,7 +4058,7 @@
      "from": "BRINE_CRYS",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 1.844063,
+     "rate": 1.844103,
      "unit": "kg/d",
      "carries": "mother liquor (residual chlorides) returned to the leach"
     },
@@ -4168,7 +4168,7 @@
      "from": "CA_POT",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 0.063248,
+     "rate": 0.065072,
      "unit": "kg/d",
      "carries": "chlorine byproduct export (water-treatment class)"
     },
@@ -4814,7 +4814,7 @@
      "from": "ROOF_TANK",
      "to": "AQUA_TANK",
      "other_sector": "WTR",
-     "rate": 29.768977,
+     "rate": 29.768978,
      "unit": "kg/d",
      "carries": "loop top-up: root-zone growth water and evaporation"
     },
@@ -4933,7 +4933,7 @@
      "from": "BSFL_BIN",
      "to": "CRYO_AHU",
      "other_sector": "CRYO",
-     "rate": 7.21001,
+     "rate": 7.210011,
      "unit": "kg/d",
      "carries": "bin respiration/evaporation"
     },
@@ -5661,7 +5661,7 @@
      "from": "BSFL_BIN",
      "to": "CRYO_AHU",
      "other_sector": "FARM",
-     "rate": 7.21001,
+     "rate": 7.210011,
      "unit": "kg/d",
      "carries": "bin respiration/evaporation"
     },
@@ -6384,7 +6384,7 @@
      "from": "ROOF_TANK",
      "to": "AQUA_TANK",
      "other_sector": "FARM",
-     "rate": 29.768977,
+     "rate": 29.768978,
      "unit": "kg/d",
      "carries": "loop top-up: root-zone growth water and evaporation"
     },
@@ -8590,7 +8590,7 @@
      "from": "CA_POT",
      "to": "NORTH_DOCK",
      "other_sector": "FOUNDRY",
-     "rate": 0.063248,
+     "rate": 0.065072,
      "unit": "kg/d",
      "carries": "chlorine byproduct export (water-treatment class)"
     },
