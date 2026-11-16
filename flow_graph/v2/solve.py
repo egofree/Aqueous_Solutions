@@ -8,6 +8,7 @@ writers (each migration carries its golden-value proof).
 """
 from . import functions as _fns                    # noqa: F401  (import = registration)
 from .functions import process                     # noqa: F401
+from .functions import power                       # noqa: F401
 from .functions import heat                        # noqa: F401
 from .functions import relief_vent                 # noqa: F401
 from .functions import foundry                     # noqa: F401
@@ -15,6 +16,8 @@ from .functions import farm_balance                # noqa: F401
 from .functions import materials3                  # noqa: F401
 from .functions import pot_cells                   # noqa: F401
 from .functions import specialty                   # noqa: F401
+from .functions import si_route                    # noqa: F401
+from .functions import sites                       # noqa: F401
 from .graph_io import load
 from .model import Builder
 from .registry import fn, FNS                      # noqa: F401
