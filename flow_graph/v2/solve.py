@@ -9,6 +9,7 @@ writers (each migration carries its golden-value proof).
 from . import functions as _fns                    # noqa: F401  (import = registration)
 from .functions import process                     # noqa: F401
 from .functions import heat                        # noqa: F401
+from .functions import foundry                     # noqa: F401
 from .functions import farm_balance                # noqa: F401
 from .functions import materials3                  # noqa: F401
 from .functions import pot_cells                   # noqa: F401
