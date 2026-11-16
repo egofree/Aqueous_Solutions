@@ -116,32 +116,47 @@ def test_check_cycle_fails_closed(tmp_path):
     each fail — abstentions never pass."""
     g = str(tmp_path / 'graph.json')
     m = str(tmp_path / 'manifest.json')
-    shutil.copyfile(REF_GRAPH, g)
-    ok, lines = CK.update(graph_path=g, manifest_path=m)
+    # The sandbox is a miniature of the post-flip world: the committed graph is
+    # the CANONICAL serialization (the composed solve's own render), so the
+    # document authority hashes stay stable across the update -> check cycle.
+    # (On the reference tree this shape arrives with the P4 re-issuance,
+    # recorded in flow_graph/v2/MIGRATION_LEDGER.md.)
+    from flow_graph.param import drivers as _DR
+    import json as _json
+    inputs = {'drivers': _DR.load(),
+              'site_profile': _json.load(open('flow_graph/param/sites/baseline.json'))}
+    from flow_graph.v2.graph_io import bytes as _render, load as _load
+    from flow_graph.v2.grid import Grid as _Grid
+    _b = _load(REF_GRAPH)
+    for _f in SL.FNS:
+        _f(_b, inputs)
+    with open(g, 'wb') as _f:
+        _f.write(_render(_b.build(), _Grid.load()))
+    ok, lines = CK.update(graph_path=g, manifest_path=m, inputs=inputs, artifact_root=str(tmp_path))
     assert ok, lines
-    ok, lines = CK.check(graph_path=g, manifest_path=m)
+    ok, lines = CK.check(graph_path=g, manifest_path=m, inputs=inputs, artifact_root=str(tmp_path))
     assert ok and any('fresh' in x for x in lines)
 
     data = open(g, 'rb').read()
     open(g, 'wb').write(data.replace(b'"presence"', b'"presenze"', 1))
-    ok, lines = CK.check(graph_path=g, manifest_path=m)
+    ok, lines = CK.check(graph_path=g, manifest_path=m, inputs=inputs, artifact_root=str(tmp_path))
     assert not ok and any('stale (content)' in x for x in lines)
     open(g, 'wb').write(data)
 
     c = json.load(open(m))
     c['code'] = '0' * 64
     json.dump(c, open(m, 'w'))
-    ok, lines = CK.check(graph_path=g, manifest_path=m)
+    ok, lines = CK.check(graph_path=g, manifest_path=m, inputs=inputs, artifact_root=str(tmp_path))
     assert not ok and any('stale (code changed)' in x for x in lines)
 
     for p, sha in list(json.load(open(m))['inputs'].items())[:1]:
         c = json.load(open(m))
         c['inputs'][p] = '1' * 64
         json.dump(c, open(m, 'w'))
-        ok, lines = CK.check(graph_path=g, manifest_path=m)
+        ok, lines = CK.check(graph_path=g, manifest_path=m, inputs=inputs, artifact_root=str(tmp_path))
         assert not ok and any('stale (input changed)' in x for x in lines)
         break
 
     os.remove(m)
-    ok, lines = CK.check(graph_path=g, manifest_path=m)
+    ok, lines = CK.check(graph_path=g, manifest_path=m, inputs=inputs, artifact_root=str(tmp_path))
     assert not ok and any('no committed manifest' in x for x in lines)

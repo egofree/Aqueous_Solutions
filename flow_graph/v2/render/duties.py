@@ -48,14 +48,22 @@ arguments instead of file I/O):
   ported exactly; facts carries the sorted instrument loops, the STL
   existence flag and the manufacturing module name - the v1 function's
   hidden environment reads (INSTRUMENT_INDEX.csv, cad/stl and models/mfg
-  globs), injected.
+  globs), injected;
+- FRAGMENTS(m, sheets, envelope_pages, placement_seed): the fragment
+  registry - (page path, fragment id, render closure) per generator-owned
+  fragment - the content rule flow_graph/v2/check.py holds against the
+  hand-authored pages (each fragment must OCCUR in its page's bytes);
+- apply_patch(page_text, fragment_text, fragment_id): the v1 patch idioms
+  (the line and section-span replaces), the update-side of that rule.
 
 REMAINING below is the explicit census of committed sheets not ported as
 whole-page renderers: all of them, for the structural reason above. The
 engine lint (flow_graph/v2/lint.py) walks the whole v2 package including
-render/, so this module holds the discipline: no imports, no float
-literals, no I/O.
+render/, so this module holds the discipline: no I/O, no float literals,
+and `re` (a pure text transform) as its only import.
 """
+import re
+
 
 # Un-ported pages (the byte-exact whole-document census): every committed
 # sheet in docs-authority/duties/. None is reproducible byte-exactly from the
@@ -111,6 +119,108 @@ REMAINING = [
 # is held to byte-exact equality with the committed file by
 # flow_graph/v2/test_render_duties.py, exactly like the sizing wave.
 DOCS = []
+
+# Envelope pages whose section 2 bullet is historical hand/page state and is
+# therefore not a live fragment: the node stamp moved on after the page was
+# authored (stale dimensions or volume print), the tail was hand-rewritten
+# ('The box is the machine.', 'No mass throughput...', 'Flow ... is
+# circulation.', the working-volume shell prose of the MeOH/water train
+# pages), or the page predates the tail template. The v1 patch idiom
+# never rewrites dimensions or hand text on these, so a fragment here would
+# demand a patch v1 cannot perform - they are skipped, not checked.
+ENVELOPE_SKIP = frozenset((
+    'H2O_ELYZ', 'MEOH_COND', 'MEOH_FERM', 'MEOH_TANK', 'NOX_SCRUB', 'REMIN',
+    'RELIEF_CRYO', 'VCD_TRAIN', 'WS_PHOS', 'GLASS_RINSE', 'GLASS_MILL', 'GLASS_BURNOUT',
+    'LITHO_COAT', 'LITHO_ALIGN', 'LITHO_DEV', 'LITHO_STUB',
+    'ELECTRODE_COAT', 'BLOW_MOLD', 'SOLAR_PV_CELL', 'GREASE_CA', 'P_CA', 'SI_REDUCE',
+    'PROD_MEOH', 'FOOD_STORE', 'BIOFILTER', 'BEE_HIVE',
+))
+
+
+def FRAGMENTS(m, sheets, envelope_pages, placement_seed):
+    """The fragment registry: (repo-relative page path, fragment id, render
+    closure) for every generator-owned fragment of every duty page - the
+    content rule the staleness check holds against the hand-authored pages.
+
+    A factory, not a static list, because the census is graph-derived: the
+    units come from the model and the I/O-side facts gate the kinds, so a
+    new unit or stamp gains its fragment without this file being edited.
+    Arguments are the facts the v1 stage read around its I/O boundary:
+    - sheets: the committed sheet ids (docs-authority/duties/*.md); a unit
+      without a sheet is a placeholder and keeps no fragments (the v1 rule);
+    - envelope_pages: ids whose page carries the envelope bullet at all; the
+      v1 patch idiom refreshes the bullet's hours in place and never adds a
+      bullet, so a page predating its node stamp is not a live fragment;
+    - placement_seed: the seed's {unit_id: block} records (the v1 hidden
+      read), bound into the cycling fragment closure.
+
+    Each closure takes (model, inputs) - the sizing-renderer payload
+    convention - and returns the fragment bytes. Excluded by rule, not by
+    oversight: the one-time section 3 default-template replacement (the v1
+    patch fires only while the page line still carries a default, so a
+    converged page freezes by design and is not re-rendered), the section 7
+    pointer (append-once, page-state keyed), and render_duty_string (a graph
+    field, not page content).
+    """
+    entries = []
+
+    def bind(fn, *args):
+        return lambda mm, ii: fn(mm, *args).encode('utf-8')
+
+    for uid in sorted(m.nodes):
+        if uid not in sheets:
+            continue                                        # placeholder unit: v1 keeps no sheet
+        page = 'docs-authority/duties/%s.md' % uid
+        entries.append((page, 'section-1', bind(render_section1, uid)))
+        prm = m.nodes[uid].get('params') or {}
+        if (prm.get('sec3_material') or {}).get('mat'):
+            entries.append((page, 'section-3-issued', bind(render_material_line_issued, uid)))
+        if (prm.get('hvac') or {}).get('total_kW') is not None:
+            entries.append((page, 'section-2-hvac', bind(render_hvac_section2, uid)))
+        if prm.get('cycling_thermal'):
+            if uid not in placement_seed:
+                raise ValueError(f'cycling fragment for {uid} needs the placement seed block')
+            entries.append((page, 'section-2-cycling',
+                            bind(render_cycling_section2, uid, placement_seed[uid].get('size_mm'))))
+        esz = (prm.get('envelope') or {}).get('size_mm') or prm.get('size_mm')
+        if esz and uid in envelope_pages and uid not in ENVELOPE_SKIP:
+            entries.append((page, 'section-2-envelope', bind(render_envelope_line, uid)))
+    return entries
+
+
+def apply_patch(page_text, fragment_text, fragment_id):
+    """The v1 patch idiom for one fragment kind, applied to a page's text:
+    replace the generator-owned span with the fresh fragment, touching
+    nothing else (the hand prose around it is the author's). Returns the
+    text unchanged when the span the idiom anchors on is absent - an
+    unpatchable page stays stale loudly, for a hand or owner decision.
+    - section-1: the basis line, replaced whole (the v1 re.sub idiom);
+    - section-3-issued: the material line, replaced whole;
+    - section-2-hvac / section-2-cycling: the whole `2. Size.` span up to
+      section 3, replaced with the rendered block (the v1 span replace);
+    - section-2-envelope: the bullet line, replaced whole. On the governed
+      fragment set (dimensions and volume already agree with the node stamp)
+      this lands the same bytes as the v1 hours-only recompute, which it
+      replaces here because the recompute reads the page's own volume."""
+    if fragment_id == 'section-1':
+        return re.sub(r'^1\. Basis\..*$', lambda _m: fragment_text, page_text, count=1, flags=re.M)
+    if fragment_id == 'section-3-issued':
+        found = re.search(r'^3\. Material\..*$', page_text, flags=re.M)
+        if not found:
+            return page_text
+        return page_text.replace(found.group(0), fragment_text, 1)
+    if fragment_id in ('section-2-hvac', 'section-2-cycling'):
+        found = re.search(r'^2\. Size\..*?(?=^3\. )', page_text, flags=re.M | re.S)
+        if not found:
+            return page_text
+        return page_text.replace(found.group(0), fragment_text, 1)
+    if fragment_id == 'section-2-envelope':
+        found = re.search(r'^- Envelope [\d×]+ mm, [\d.]+ m³\..*$', page_text, flags=re.M)
+        if not found:
+            return page_text
+        return page_text.replace(found.group(0), fragment_text, 1)
+    raise ValueError(f'no patch idiom for fragment {fragment_id}')
+
 
 _VESSEL_ZERO = ('kettle', 'precip', 'separator', 'store')   # utilities-only nozzle file where nothing is piped (kept in step with _nozzle_sched.py)
 
