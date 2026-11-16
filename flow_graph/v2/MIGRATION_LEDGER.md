@@ -382,3 +382,16 @@ Verified by scanning every stage script for writers; fields listed here had no w
 3. **Physics/render split inside single scripts.** 32 MIXED stages each contain a calc and a write-back (graph stamp, doc, sidecar) in one process; the 2026-10-19 balance-vs-writers disagreement (single-writer rule R10a) is exactly this class of bug. The split must be mechanical: pure solve functions returning values, renderers consuming the solved graph, one writer per field.
 4. **Order-by-array-position.** 25 stages with empty `depends_on` are sequenced only by manifest position, and `load_list`/`one_line` correctness depends on running after the LAST graph write. v2 must derive order from dataflow, or every one of these becomes a latent staleness bug.
 5. **Provenance bookkeeping is load-bearing today, dead weight in v2.** The `_generated.json` pattern manifests, per-file manifests, receipt vouches and `_rev_stamp` gates exist because stage outputs cannot be re-derived cheaply; the 2026-11-03 oscilflapse (one oscillating SVG un-vouched 476 patterns / 959 files) shows the blast radius. The v2 solve-hash model must land BEFORE these are deleted, and the doc-phase convergence rule (render-until-stable) must survive the flake fixes that live inside `render_layer_views`.
+
+## P4 precondition (recorded 2026-11-15, from the electrical renderer wave)
+
+Three documents cite the graph FILE sha in their Authority lines
+(LOAD_LIST.md/.json, BUSBAR.json). The v2 update cycle serializes the graph
+in the v2 canonical form (trailing-zero floats normalised, provenance keys
+added), so the file sha changes at the flip. Decision: at P4, re-issue the
+committed graph in the v2 serialization once (the one-time enumerated
+reference migration) and regenerate the three goldens; the solve-hash
+provenance in _input_manifest_v2.json replaces the file-sha pin. The v1
+pass-lag class (the ZNBR2 census book, the storage Q books) is already
+repaired by the migrated families; the same enumeration discipline covers
+this re-issuance.
