@@ -11,6 +11,7 @@ physics families and requires byte-exact equality with the committed file.
 """
 from . import duties as _duties
 from . import sizing_docs as _sizing
+from .electrical import DOCS as _electrical_docs          # the electrical-chain wave (ledger section D), one aggregate import
 
 RENDERS = [
     ('docs-authority/sizing/COLD_BOX.md', _sizing.render_cold_box),
@@ -21,7 +22,7 @@ RENDERS = [
     ('docs-authority/sizing/HOUSE_SCRUBBERS.md', _sizing.render_house_scrubbers),
     ('docs-authority/sizing/UPW_POLISH.md', _sizing.render_upw_polish),
     ('docs-authority/sizing/GEO_LOOP.md', _sizing.render_geo_loop),
-] + _duties.DOCS
+] + _electrical_docs + _duties.DOCS
 
 _INDEX = dict(RENDERS)
 

@@ -80,8 +80,10 @@ def _first_diff(want, got):
 
 
 def test_registry_declares_the_eight_sizing_docs():
-    """The declared ordered list is exactly the eight sizing documents."""
-    assert [p for p, _ in RENDERS] == EXPECTED_PATHS
+    """The registry opens with the eight sizing documents, in declared order —
+    later waves append their own entries after them (position, not exclusivity)."""
+    paths = [p for p, _ in RENDERS]
+    assert paths[:len(EXPECTED_PATHS)] == EXPECTED_PATHS
     assert all(callable(fn) for _, fn in RENDERS)
     for path, _ in RENDERS:
         assert os.path.exists(os.path.join(ROOT, path)), path
@@ -96,11 +98,13 @@ def test_document_byte_exact(path):
 
 
 def test_render_runs_every_entry():
-    """render() runs every registered renderer; every path comes back."""
+    """render() runs every registered renderer; the sizing wave's paths come back
+    first and byte-exact (later waves' documents verify in their own tests)."""
     docs = render(model(), INPUTS)
-    assert list(docs) == EXPECTED_PATHS
+    assert list(docs)[:len(EXPECTED_PATHS)] == EXPECTED_PATHS
     assert all(isinstance(v, bytes) for v in docs.values())
-    for path, got in docs.items():
+    for path in EXPECTED_PATHS:
+        got = docs[path]
         assert got == committed(path), f'{path}: {_first_diff(committed(path), got)}'
 
 
