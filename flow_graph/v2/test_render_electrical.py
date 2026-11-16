@@ -38,8 +38,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 REF_GRAPH = os.path.join(ROOT, 'flow_graph', 'plant_flow_graph.json')
 DRIVERS = os.path.join(ROOT, 'flow_graph', 'param', 'drivers.json')
 PROFILE = os.path.join(ROOT, 'flow_graph', 'param', 'sites', 'baseline.json')
-INPUTS = {'drivers': json.load(open(DRIVERS)),
-          'site_profile': json.load(open(PROFILE))}
+from flow_graph.v2.test_render_clearances import canonical_inputs
+
+INPUTS = canonical_inputs()
 
 EXPECTED_PATHS = [
     'docs-authority/LOAD_LIST.md',
