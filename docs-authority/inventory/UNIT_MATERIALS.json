@@ -20,6 +20,7 @@
   "BMED_ACID",
   "BMED_BASE",
   "BMED_UPW_POLISH",
+  "BRINE_CRYS",
   "BRIN_RECOVER",
   "BSFL_BIN",
   "C29_RECYCLE",
@@ -148,6 +149,7 @@
   "NCG_HEADER",
   "NOX_SCRUB",
   "NUTRIENT_DOSE",
+  "NUT_AN",
   "OIL_DRYER",
   "OIL_FRAC",
   "OIL_PYRO",
@@ -232,10 +234,7 @@
   "ZNBR2",
   "ZNBR2_BR2_REGEN"
  ],
- "open": {
-  "BRINE_CRYS": "duty sheet section 3 selection pending (AQS-STD-001 section 3 construction material; held the same way in the AQS-END-002 EOL matrix)",
-  "NUT_AN": "duty sheet section 3 selection pending (AQS-STD-001 section 3 construction material; held the same way in the AQS-END-002 EOL matrix)"
- },
+ "open": {},
  "tot_wetted_rows": 472,
  "units": 233
 }

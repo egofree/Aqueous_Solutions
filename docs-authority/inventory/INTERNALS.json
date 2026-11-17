@@ -14,6 +14,7 @@
   "BMED_ACID": "BMED triplet construction: PP frames 300 x 300 mm, 0.8 mm PE mesh spacers, Ti/MMO anode end plate, 316L annealed cathode end plate (BMED electrodes per AQS-STD-002 M6, hydrogen clause deciding 316L over nickel; X-QA-13), PP outer end plates with 316L tie rods outside the wetted zone per M4 (A-M-170/171) [sizing/BMED_STACK.md]",
   "BMED_BASE": "BMED triplet construction: PP frames 300 x 300 mm, 0.8 mm PE mesh spacers, Ti/MMO anode end plate, 316L annealed cathode end plate (BMED electrodes per AQS-STD-002 M6, hydrogen clause deciding 316L over nickel; X-QA-13), PP outer end plates with 316L tie rods outside the wetted zone per M4 (A-M-170/171) [sizing/BMED_STACK.md]",
   "BMED_UPW_POLISH": "UPW polish internals per the issued design: the RO membrane array at the 6.86 bar feed (membrane area per params.design) followed by the EDI stack (params EDI_A / EDI_kW), 0.955 recovery [docs-authority/sizing/BMED_UPW_POLISH.md]",
+  "BRINE_CRYS": "duty sheet: \"(A-M-496). 3. Material. CPVC crystallizer body, hood and agitator on the leach side-stream; PVDF (P3) pump and\" [docs-authority/duties/BRINE_CRYS.md]",
   "BSFL_BIN": "issued mfg model BOM (1 internals part row): \"1,\"HDPE tray basin: walls and floor 10 mm, 2500 x 900 x 700 outer\",1,HDPE (duty section\" [models/mfg/BSFL_BIN/bom.csv]",
   "CAST_LINE": "issued mfg model BOM (2 internals part row): \"section 3: steel backing platens around the graphite hot faces (DIETER1988 tool class) 4,\"Permanent-mould inse\" [models/mfg/CAST_LINE/bom.csv]",
   "CA_POT": "issued mfg model BOM (3 internals part row): \"step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per AQS-DUTY-07\" [models/mfg/CA_POT/bom.csv]",
@@ -79,6 +80,7 @@
   "MO_CELL": "issued mfg model BOM (3 internals part row): \"step 1; duty section 3 CS outer shell below the liner, 650 C, dry outside the lining; envelope per AQS-DUTY-07\" [models/mfg/MO_CELL/bom.csv]",
   "NAOH_PLANT": "caustic-plant internals per the sizing of the on-site sodium route (flow_graph/param/caustic.py): the membrane-cell stack with titanium anode pans, nickel cathode pans and perfluorinated membranes on the chlor-alkali route (or the slaker, causticiser and white-liquor tank on the causticising route), the brine re-saturation bed and the liquor head tank, sized at the make-up rates [docs-authority/sizing/NAOH_PLANT.md]",
   "NOX_SCRUB": "packed bed per scrubber: diameter at 0.7 of flood, bed 2303 mm, height, liquid rate (PERRY9_ABS) [sizing/HOUSE_SCRUBBERS.md]",
+  "NUT_AN": "duty sheet: \"tube and hot-bed hardware around the platinum gauze catalyst bed on the dry NH3/O2 oxidation side, the gas hel\" [docs-authority/duties/NUT_AN.md]",
   "OIL_DRYER": "none with basis: a heated dryer drum - the drying service is the shell itself, heated by the Q3 coil (HL-Q3-A/B-HX4 at 0.055 kW each per the heat-ladder edges); no contacting or separation internals booked [docs-authority/sizing/OIL_DRYER.md]",
   "OIL_FRAC": "fractionator column internals per the graph duty (33.4 kg/d pyrolysis oil feed, four cuts at 7.4/9.9/6.2/5.9 kg/d, A-M-138 SU2018_PYRO cut split): a packed column with 6 mm glass Raschig rings in three beds at the 3-bed cut sequence (C5-C10/C11-C18/C19-C28/C29+), each bed sized by the Fenske-Underwood-Gilliland method for the binary-split classes at total reflux minimum [docs-authority/sizing/OIL_FRAC.md]",
   "OIL_PYRO": "none with basis: the pyrolysis retort is the shell itself (the issued mfg model books the retort, thermowell and bursting disc DN25 to the flare header); the open retort volume is the design, the char screw is a unit task 10 attachment [models/mfg/OIL_PYRO/bom.csv]",
@@ -205,9 +207,6 @@
   "WS_SLURRY": "static reagent tote or day tank; no internals booked by the duty or sizing sheet",
   "WS_SOLV": "static reagent tote or day tank; no internals booked by the duty or sizing sheet"
  },
- "open": {
-  "BRINE_CRYS": "same hold as task 09: duty section 3 selection pending (AQS-STD-005 section 4); internals cannot be detailed before the material is selected",
-  "NUT_AN": "same hold as task 09: duty section 3 selection pending (AQS-STD-005 section 4); internals cannot be detailed before the material is selected"
- },
+ "open": {},
  "units": 204
 }
