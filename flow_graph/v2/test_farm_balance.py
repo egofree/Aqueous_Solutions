@@ -143,39 +143,24 @@ def test_exact_change_set_and_golden_equality():
     # the overlay is exactly the enumerated specification
     assert set(b.computed) == EXPECTED_FIELDS
 
-    # golden equality on every stamped field, except the four documented mg
-    # deltas, which carry their exact committed/v2 pair
+    # golden equality on every stamped field. The P4 re-issuance landed the
+    # family books: committed == render on every field, so the four
+    # documented mg deltas are zero (DELTA_MG below is the record of the
+    # one-time wobble the flip closed)
     for kind, uid, path in sorted(EXPECTED_FIELDS):
         obj_c = c_nodes if kind == 'node' else c_edges
         obj_r = r_nodes if kind == 'node' else r_edges
         got, gold = _dig(obj_r[uid], path), _dig(obj_c[uid], path)
-        if (kind, uid, path) in DELTA_MG:
-            continue
         assert _eq(gold, got), (kind, uid, path, gold, got)
-
-    # the four deltas, exactly: mine and committed, one milligram apart
-    delta_pairs = {}
-    for (kind, uid, path), d in DELTA_MG.items():
-        obj_c = c_nodes if kind == 'node' else c_edges
-        obj_r = r_nodes if kind == 'node' else r_edges
-        gold, got = _dig(obj_c[uid], path), _dig(obj_r[uid], path)
-        delta_pairs[(kind, uid, path)] = (gold, got)
-        assert (Decimal(str(got)) - Decimal(str(gold))) * 1000000 == Decimal(d), (uid, path)
-    # and the deltas name themselves: the committed values are the recorded
-    # wobble pair members (FORM_PRESS chose the closure 25.688598; LOOP4 kept
-    # the independent rounding 219.738599)
-    assert Decimal(str(delta_pairs[('edge', 'AQUA_RETURN2', 'rate.value')][0])) == Decimal('156.041023')
-    assert Decimal(str(delta_pairs[('edge', 'AQUA_LOOP4', 'rate.value')][0])) == Decimal('219.738599')
 
     # nothing else moves: a strict walk of every node and edge finds no drift
     # beyond the enumerated fields (provenance rows excluded)
     expected_paths = {uid + '.' + path for kind, uid, path in EXPECTED_FIELDS}
-    delta_paths = {uid + '.' + path: pair for (kind, uid, path), pair in delta_pairs.items()}
     diffs = set()
     for uid in sorted(set(c_nodes) | set(r_nodes)):
-        _strict_diffs(c_nodes[uid], r_nodes[uid], uid, diffs, expected_paths, delta_paths)
+        _strict_diffs(c_nodes[uid], r_nodes[uid], uid, diffs, expected_paths, {})
     for sid in sorted(set(c_edges) | set(r_edges)):
-        _strict_diffs(c_edges[sid], r_edges[sid], sid, diffs, expected_paths, delta_paths)
+        _strict_diffs(c_edges[sid], r_edges[sid], sid, diffs, expected_paths, {})
     assert diffs == set(), sorted(diffs)
 
     # the balance-owned fields did not move at all (byte-identical passthrough)
@@ -201,23 +186,27 @@ def test_mass_conservation_grid_integers():
         assert i == o, (node, i, o)                       # exact, on integers
         assert isinstance(i, int) and isinstance(o, int)
 
-    # the committed graph, on the same book: two nodes leak by exactly the
-    # milligrams the v2 closures absorb
+    # the committed graph, on the same book: the P4 re-issuance landed the v2
+    # closures, so the committed books are exact here too (the pre-flip
+    # committed graph leaked by exactly the milligrams the v2 closures absorb:
+    # +1 mg at BSFL_BIN, -1 mg at GROWBED_B)
     committed = _committed()
     c = {e['stream_id']: int(Decimal(str(e['rate']['value'])) * 1000000)
          for e in committed['edges'] if isinstance((e.get('rate') or {}).get('value'), (int, float))}
     c_in_bsfl = (c['GALLEY_BIO'] + c['CHICK_MANURE'] + c['FISH_SLUDGE'] + c['DUCK_MANURE'] + c['FORM_REJECT'])
     c_out_bsfl = c['LARVAE_FRESH'] + c['FRASS'] + c['BSFL_VAP']
-    assert c_in_bsfl - c_out_bsfl == 1                    # committed leak: +1 mg
+    assert c_in_bsfl - c_out_bsfl == 0                    # the landed v2 book closes
     c_in_gb = c['AQUA_LOOP3'] + c['RABBIT_MANURE'] + c['FORM_PRESS']
     c_out_gb = c['AQUA_LOOP4'] + c['BED_GREENS'] + c['BED_ET']
-    assert c_in_gb - c_out_gb == -1                       # committed leak: -1 mg
-    # the v2 rates repair both: the node sums above are exact
+    assert c_in_gb - c_out_gb == 0                        # the landed v2 book closes
+    # the v2 rates repaired both: at P4 the committed books ARE the v2 books
+    # (the re-issuance landed them), so the one-time mg deltas are zero and
+    # the closure value is the same under both conventions
     R = S['rates']
-    assert R['BSFL_VAP'] - c['BSFL_VAP'] == 1
-    assert R['AQUA_LOOP4'] - c['AQUA_LOOP4'] == -1
-    assert R['AQUA_RETURN2'] - c['AQUA_RETURN2'] == -1
-    assert R['IA-AQUA-TOPUP'] - c['IA-AQUA-TOPUP'] == 1
+    assert R['BSFL_VAP'] == c['BSFL_VAP']
+    assert R['AQUA_LOOP4'] == c['AQUA_LOOP4']
+    assert R['AQUA_RETURN2'] == c['AQUA_RETURN2']
+    assert R['IA-AQUA-TOPUP'] == c['IA-AQUA-TOPUP']
     assert R['FORM_PRESS'] == c['FORM_PRESS']             # the closure value both conventions reach
 
 

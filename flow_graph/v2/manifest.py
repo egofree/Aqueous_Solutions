@@ -42,10 +42,12 @@ def code_fingerprint(fn_obj):
 
 def package_fingerprint():
     """sha256 over every engine module's source, in sorted path order: any code
-    edit in the engine changes this."""
+    edit in the engine changes this. The test modules are not engine code —
+    editing one must not fail-close the whole gate — so test_*.py files are
+    not hashed."""
     h = hashlib.sha256()
     for name in sorted(os.listdir(PKG)):
-        if name.endswith('.py'):
+        if name.endswith('.py') and not name.startswith('test_'):
             with open(os.path.join(PKG, name), 'rb') as f:
                 h.update(name.encode())
                 h.update(f.read())

@@ -2306,10 +2306,10 @@
         "size_note": "DN25 manifold x 24 m run (0.005 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
-          33.7,
-          33.7
+          60.3,
+          60.3
         ],
-        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (33.7 mm, EN-rounded OD series, AQS-PIP-004)",
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)",
         "sec3_material": {
           "mat": "PVC-U, bonded",
           "basis": "wet H2 with sweep air and possible acid mist off the EW cathode rows (graph design, AQS-DUTY-075): wet hydrogen is the M3 reducing service, so there is no metal wetted part - ignition, not embrittlement, governs (AQS-REV-H2-001) - and PVC-U carries the acid-mist condensate to its 60 C M5 limit (ISO1452_2). Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3).",
@@ -2348,10 +2348,10 @@
         "size_note": "DN32 manifold x 45 m run (0.020 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
-          42.4,
-          42.4
+          60.3,
+          60.3
         ],
-        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN32 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (42.4 mm, EN-rounded OD series, AQS-PIP-004)",
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN32 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)",
         "sec3_material": {
           "mat": "316L tube",
           "basis": "dry oil-free plant air and nitrogen at the ambient class (graph design, AQS-DUTY-075): N2 is inert and the air stays dried at the receiver bank, so the header keeps the one-tube family shared across the dry utility gas headers; M1 names the stream and no wet-oxidant or no-polymer rule fires. Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3).",
@@ -2390,10 +2390,10 @@
         "size_note": "DN25 manifold x 36 m run (0.008 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)",
         "size_mm": [
           2000,
-          33.7,
-          33.7
+          60.3,
+          60.3
         ],
-        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (33.7 mm, EN-rounded OD series, AQS-PIP-004)",
+        "size_basis": "header sizing (flow_graph/param/headers.py, AQS-DUTY-075): manifold DN25 segment (modelled length 2000 mm, layout) with the cross-section covering the largest issued branch hardware (60.3 mm, EN-rounded OD series, AQS-PIP-004)",
         "sec3_material": {
           "mat": "316L tube, oxygen-clean per ASTM_G93, socketless",
           "basis": "dry O2 header at the atmospheric tube class (graph design, AQS-DUTY-075): polymers ignite in oxygen-enriched service, so the dry-O2 M7 case applies and the metal is oxygen-clean 316L with hydrocarbon-free socketless joints (ASTM_G93 practice). Selection per AQS-STD-002 with the issued AQS-DUTY-075 header service (X-QA-18 step 3).",

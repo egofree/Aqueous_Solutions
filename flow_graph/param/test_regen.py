@@ -1,16 +1,17 @@
 """U3 regen orchestrator tests (flow_graph/param/regen.py + regen_manifest.json).
 
-Covers the acceptance properties of the manifest and the orchestrator:
-  1. the manifest is a DAG: manifest order is a valid topological order, names unique, deps known;
-  2. every stage argv target exists on disk (script file or -m module path);
-  3. a --quick run succeeds and leaves every quick-stage output non-empty (quick runs the
-     write_graph solver stages in place; on a converged tree it is byte-stable and writes nothing,
-     on a drifted tree it re-stamps the graph - which is the orchestrator doing its job);
-  4. regen --check is green at the current HEAD (the X-GOV-06 gated set is regenerated/vouched);
-  5. receipt vouches are per-stage verifications (U4c): a stage that failed, was skipped or was
-     unstable at the final graph sha vouches nothing, and every committed vouched pattern maps to
-     a stage whose receipt entry is ok and stable;
-  6. the gate trusts a receipt on graph-sha match alone (see test_governance.py).
+The regen entry is the engine v2 update+check since the P4 flip; the v1
+pipeline survives behind --legacy with its manifest, receipt and vouch
+machinery unchanged, and the tests below hold both:
+
+  1. the legacy manifest is a DAG: manifest order is a valid topological
+     order, names unique, deps known, and every stage argv target exists on
+     disk (the --legacy machinery's data contract);
+  2. regen --check is the engine v2 check and is green at the current HEAD;
+  3. the v1 quick write test retired at the flip (the v1 writers re-serialize
+     the shared graph out of the canonical form; see the skipped test);
+  4. the receipt-vouch semantics and the committed receipt's structural
+     invariants hold for the --legacy artifacts they describe.
 """
 import glob, json, os, subprocess, sys
 
@@ -50,17 +51,16 @@ def _run(*args):
     return subprocess.run([sys.executable, '-m', 'flow_graph.param.regen', *args], cwd=ROOT, capture_output=True, text=True)
 
 def test_quick_run_ok_and_outputs_non_empty():
-    r = _run('--quick')
-    assert r.returncode == 0, r.stdout[-3000:] + r.stderr[-3000:]
-    assert 'receipt not written' in r.stdout, '--quick must not clobber the full-run receipt'
-    m = _manifest()
-    quick = [s for s in m['stages'] if s.get('quick')]
-    assert quick, 'no quick stages in manifest'
-    for s in quick:
-        files = []
-        for pat in s['outputs']:
-            files += glob.glob(os.path.join(ROOT, pat))
-        assert files and all(os.path.getsize(f) > 0 for f in files), f"{s['name']}: empty/missing outputs for {s['outputs']}"
+    """RETIRED with the v1 quick-write machinery (the P4 flip): `regen --quick`
+    still runs the v1 solver stages under --legacy, but the v1 writers
+    re-serialize the shared graph out of the engine v2 canonical form, so the
+    test can no longer run them against the reference tree. The v2 what-if is
+    the default path itself (about two minutes, update + fresh check); the
+    byte-stability contract is the idempotency gate
+    (flow_graph/check_regen_idempotent.py) and the engine's own determinism
+    proofs (flow_graph/v2/test_core.py)."""
+    import pytest
+    pytest.skip('the v1 quick write test retired at the P4 flip (see the docstring)')
 
 def test_check_green_at_head():
     r = _run('--check')

@@ -1,168 +1,147 @@
 """X-GOV-06 revision control of drawings and derived files (AQS-GOV-006).
-Each derived file is tied to the graph commit it was made from: the newest commit touching flow_graph/plant_flow_graph.json at or before the
-file's own last commit. A file is stale when the graph has changed since. A file whose regeneration is byte-identical cannot clear that
-commit-based staleness (git sees no change), so generators also record their provenance: pattern manifests (duties/_generated.json,
-media/_generated.json) clear every file matching a pattern, per-file manifests (*._generated.json, e.g. sizing/REACTOR_DESIGN._generated.json)
-record (file, graph_sha256) rows, a data sidecar <NAME>.json with a matching _generated_from.graph_sha256 clears its <NAME>.md twin, and
-and the U3 regen receipt (flow_graph/derived/_regen_receipt.json, written by flow_graph/param/regen.py) vouches the stage output globs — and, for a
-stage that was only partly stable, the individually verified files — that its run re-derived byte-stable against the current graph (vouched on a
-graph-sha match alone; a failed or oscillating stage disqualifies exactly its own outputs, not the tree).
-The graph sha is computed at check time: a manifest row matching the current graph counts the file as current. Writes docs-authority/DERIVED_REVISIONS.md (file and status only, rewritten only on a content change); exit 1 with --check when a
-GATED file is stale. --check-only evaluates and prints the summary without writing the file. --report prints the graph commit
-each file was made from, without writing.
-U3 gated expansion (2026-10-18): GATED is no longer a 3-file list — every DERIVED file is gated unless it is classified. CLASS keeps the
-by-design artwork/superseded/manual-capture files, BY_DESIGN keeps the documented one-shots and blocked generators (frozen studies, sheets
-of deleted edges pending retirement, the manifest mechanisms themselves), Anything else that is stale fails the gate: run python3 -m flow_graph.param.regen."""
-import json, os, subprocess, sys, fnmatch
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); GP = 'flow_graph/plant_flow_graph.json'
+
+Since the P4 flip the staleness rule is engine v2's: one check, one verdict.
+flow_graph.v2.check.check() recomputes the solve in memory, renders the
+registry, and compares every governed artifact byte for byte against the
+committed tree, with the committed input manifest deciding whether the
+inputs or the engine code moved. This module renders that verdict:
+docs-authority/DERIVED_REVISIONS.md lists every derived file with its status,
+current or stale, from the check's per-file report. Files whose writers
+retired with the v1 machinery and whose families have not landed in the v2
+registry are retained data: their row says so, and they do not gate. The
+class and by-design tables keep their rows (the by-design set is now the
+manifest mechanisms and the retained v1 bookkeeping files).
+
+The commit-order rule and the receipt verification leg retired at the flip: a file
+is stale because its re-render differs from its committed bytes, never
+because of commit history, and run health lives in the untracked
+flow_graph/derived/_regen_run.json of the --legacy pipeline. The step-4
+input-census printer retired with it: the v2 input manifest
+(flow_graph/derived/_input_manifest_v2.json, written by the update) is the
+staleness rule, not a parallel candidate.
+
+Writes docs-authority/DERIVED_REVISIONS.md (file and status only, rewritten
+only on a content change); exit 1 with --check when a gated file is stale.
+--check-only evaluates and prints the summary without writing the file.
+--report prints the per-file table without writing. The everyday gate is
+`python3 -m flow_graph.param.regen --check`, which runs the same v2 check.
+"""
+import fnmatch, json, os, re, subprocess, sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+GP = 'flow_graph/plant_flow_graph.json'
+MANIFEST = json.load(open(os.path.join(ROOT, 'flow_graph/param/regen_manifest.json')))
 DERIVED = ['media/*', 'flow_graph/views/*', 'flow_graph/derived/*', 'docs-authority/duties/*.md',
            'docs-authority/sizing/*.md', 'docs-authority/pid/*', 'docs-authority/LOAD_LIST.md', 'docs-authority/ONE_LINE.md', 'docs-authority/BALANCE_RECONCILIATION.md',
            'docs-authority/O2_SOURCE.md', 'docs-authority/ASSUMPTIONS_REGISTER.md', 'docs-authority/MODEL_WORKBOOK.xlsx', 'design_tool/aqs_design_tool/data/candidate_mvs.json']
 # Every file a default-run pipeline stage writes or amends is derived too, read from the manifest so a new stage is gated
-# without editing this list. The "cad" group is left out: it runs only with regen --cad on a machine with the CAD toolchains.
-_MAN = json.load(open(os.path.join(ROOT, 'flow_graph/param/regen_manifest.json')))
-DERIVED = sorted(set(DERIVED) | {g for st in _MAN['stages'] if st.get('group') != 'cad' for g in st.get('outputs', []) + st.get('amends', [])})
+# without editing this list. The "cad" group is left out: the CAD builders are declared build steps of engine v2 and their
+# outputs are covered by the CAD byte gate.
+DERIVED = sorted(set(DERIVED) | {g for st in MANIFEST['stages'] if st.get('group') != 'cad' for g in st.get('outputs', []) + st.get('amends', [])})
 CLASS = {'media/logo3.png': 'artwork, not derived', 'media/verify_view*.png': 'manual capture in GUI FreeCAD (models/freecad/verify_view_png.py)'}
-# documented one-shots and blocked generators: derived files the U3 orchestrator does not regenerate, with the reason (U3 gated expansion)
+# the manifest mechanisms themselves, and the v1 bookkeeping files the P6
+# cleanup deletes: retained data, not gated rows
 BY_DESIGN = {
     'docs-authority/sizing/SANITATION.md': 'X-SAN-01 graph-writer module (flow_graph/param/sanitation.py); owner-lane port pending (R11 close-out)',
-    'media/_generated.json': 'the manifest that lists generated media and the graph each was made from (regen_derived.py)',
-    'flow_graph/derived/_regen_receipt.json': 'manifest mechanism itself (U3 regen provenance receipt)',
-    'flow_graph/derived/_input_manifest.json': 'manifest mechanism itself (input-hash staleness manifest, pipeline step 4)'}
-FILE_MANIFESTS = ['docs-authority/sizing/REACTOR_DESIGN._generated.json']
-RECEIPT = 'flow_graph/derived/_regen_receipt.json'
-def git(*a): return subprocess.run(['git', *a], cwd=ROOT, capture_output=True, text=True, check=True).stdout
-def receipt_vouched(receipt, gsha):
-    """Globs and files a regen receipt vouches at graph sha `gsha` (empty at any other sha).
-    The receipt lists only what its own regen run re-derived and observed byte-stable at
-    receipt['graph_sha256'] (U4c, 2026-11-03), so a sha match is the only trust condition:
-    `converged` is run-health information, not a vouch precondition — one oscillating stage
-    must not un-vouch the 400+ globs other stages verified."""
-    if receipt.get('graph_sha256') == gsha:
-        return list(receipt.get('vouched_patterns', [])) + list(receipt.get('vouched_files', []))
-    return []
-def compute():
-    """Read-only evaluation: returns (rows, stale count, gated-stale list, graph revision, head graph commit); writes nothing."""
-    log = git('log', '--format=@%H %ct', '--name-only', '--no-renames'); last = {}; graph = []; cur = None
-    for ln in log.splitlines():
-        if ln.startswith('@'): h, t = ln[1:].split(); cur = (h, int(t))
-        elif ln:
-            last.setdefault(ln, cur)
-            if ln == GP: graph.append(cur)
-    files = [f for f in git('ls-files').splitlines() if any(fnmatch.fnmatch(f, p) for p in DERIVED)]
-    head_g = graph[0]; rev = json.load(open(os.path.join(ROOT, GP)))['revision']; rows = []; bad = []
-    dirty = set(git('status', '--porcelain').split())
-    import hashlib; gsha = hashlib.sha256(open(os.path.join(ROOT, GP), 'rb').read()).hexdigest(); checked = []
-    for man in ('docs-authority/duties/_generated.json', 'media/_generated.json'):   # generators derived again these outputs from this exact graph
-        m = os.path.join(ROOT, man)
-        if os.path.exists(m) and json.load(open(m)).get('graph_sha256') == gsha: checked += json.load(open(m)).get('patterns', [])
-    rp = os.path.join(ROOT, RECEIPT)                                                  # U3: regen receipt vouches what its run verified
-    if os.path.exists(rp):
-        try:
-            checked += receipt_vouched(json.load(open(rp)), gsha)
-        except ValueError: pass
-    vouched = {}   # derived file -> graph_sha256 it was regenerated from (per-file manifests and json sidecars beside the .md)
-    for man in FILE_MANIFESTS:
-        m = os.path.join(ROOT, man)
-        if os.path.exists(m):
-            rows_ = json.load(open(m)).get('files', {})
-            vouched.update({f: s for f, s in rows_.items() if isinstance(s, str)})
-    for f in sorted(files):
-        if f.endswith('.md'):
-            sc = os.path.join(ROOT, f[:-3] + 'json')   # data sidecar twin (U2a): generator wrote md+json from one graph read
-            if os.path.exists(sc):
-                try:
-                    s = json.load(open(sc)).get('_generated_from', {}).get('graph_sha256')
-                    if isinstance(s, str): vouched.setdefault(f, s)
-                except ValueError: pass
-    for f in sorted(files):
-        c = last.get(f)
-        if f == 'docs-authority/DERIVED_REVISIONS.md': rows.append((f, '-', 'this register (its own row would change with each write)')); continue
-        # The class and by-design tables decide before the working-tree test, so a row is a
-        # function of the file alone and never of whether it is committed: an uncommitted
-        # classified file keeps its row instead of flipping to a working-tree status.
-        cl = next((v for k, v in CLASS.items() if fnmatch.fnmatch(f, k)), None)
-        if cl: rows.append((f, '-', cl)); continue
-        bd = next((v for k, v in BY_DESIGN.items() if fnmatch.fnmatch(f, k)), None)
-        if bd: rows.append((f, '-', 'by design: ' + bd)); continue
-        if c is None or f in dirty: rows.append((f, 'working tree', 'current' if f in dirty else 'untracked')); continue   # status only is written (render)
-        if any(fnmatch.fnmatch(f, k) for k in checked) or vouched.get(f) == gsha: rows.append((f, head_g[0][:7] + ' (regenerated, no change)', 'current')); continue
-        made = next((g for g in graph if g[1] <= c[1]), None)
-        st = 'current' if made and made[0] == head_g[0] else 'stale'
-        rows.append((f, (made[0][:7] if made else '-'), st))
-        if st == 'stale': bad.append(f)   # U3 gated expansion: every unclassified DERIVED file gates
-    n = sum(r[2] == 'stale' for r in rows)
-    return rows, n, bad, rev, head_g
+    'media/_generated.json': 'the v1 pattern manifest (retained data; the P6 cleanup deletes it)',
+    'flow_graph/derived/_regen_receipt.json': 'the v1 provenance receipt (retained data; written only by regen --legacy)',
+    'flow_graph/derived/_input_manifest.json': 'the v1 input manifest (retained data; the rule is _input_manifest_v2.json)',
+    'flow_graph/derived/_input_manifest_v2.json': 'manifest mechanism itself (the engine v2 input manifest, written by the update)',
+    'docs-authority/DERIVED_REVISIONS.md': 'this register (its own row would change with each write)'}
 
-def render(rows, n, rev):
-    """Register text from the evaluated rows. Pure function of (file, status) and the graph revision:
-    the graph commit each file was made from is not written, so a new graph commit does not rewrite
-    every row and the register changes only when a file's status, the file set or the revision changes.
-    `--report` prints the commit column at read time instead (AQS-GOV-006 Rev C)."""
-    md = ['# Derived file revisions', '', 'Document number: AQS-GOV-006', 'Revision: C', f'Graph: {GP} Revision {rev}.',
-          'Generated by `docs-authority/_rev_stamp.py` (X-GOV-06). Do not edit this page by hand.', '',
+RETAINED = 'retained v1 output (writer retired at the P4 flip; unruled by engine v2)'
+
+
+def git(*a):
+    return subprocess.run(['git', *a], cwd=ROOT, capture_output=True, text=True, check=True).stdout
+
+
+def _verdicts():
+    """Run the engine v2 check and map its report onto per-file staleness.
+    Returns (check_ok, stale_paths, ruled, fail_closed). ruled marks the file
+    set the check actually compares (registry documents, the duty fragment
+    pages and the graph); a code or input fingerprint failure fails closed
+    over every ruled file."""
+    sys.path.insert(0, ROOT)
+    from flow_graph.v2 import check as V2
+    ok, lines = V2.check()
+    stale, fail_closed = set(), False
+    for ln in lines:
+        if ln.startswith('FAIL:'):
+            fail_closed = True
+            continue
+        m = re.match(r'stale \(code changed\)|stale \(input changed\)', ln)
+        if m:
+            fail_closed = True
+            continue
+        m = re.match(r'stale \((?:content|missing document|file|fragment)\): (\S+)', ln)
+        if m:
+            stale.add(m.group(1))
+    return ok, stale, fail_closed
+
+
+def compute():
+    """Read-only evaluation from the engine v2 check's verdicts: returns
+    (rows, stale count, gated-stale list, graph revision, check verdict);
+    writes nothing."""
+    ok, stale, fail_closed = _verdicts()
+    from flow_graph.v2.render import RENDERS
+    rev = json.load(open(os.path.join(ROOT, GP)))['revision']
+    files = [f for f in git('ls-files').splitlines() if any(fnmatch.fnmatch(f, p) for p in DERIVED)]
+    registry = {p for p, _ in RENDERS}
+    ruled = sorted((registry | {GP}) & set(files))
+    dirty = set(git('status', '--porcelain').split())
+    rows, bad = [], []
+    for f in sorted(files):
+        cl = next((v for k, v in CLASS.items() if fnmatch.fnmatch(f, k)), None)
+        if cl:
+            rows.append((f, '-', cl)); continue
+        bd = next((v for k, v in BY_DESIGN.items() if fnmatch.fnmatch(f, k)), None)
+        if bd:
+            rows.append((f, '-', 'by design: ' + bd)); continue
+        if f in dirty:
+            rows.append((f, 'working tree', 'current')); continue   # status only is written (render)
+        if f not in registry and f != GP:
+            rows.append((f, '-', RETAINED)); continue
+        st = 'stale' if (fail_closed or f in stale) else 'current'
+        rows.append((f, '-', st))
+        if st == 'stale':
+            bad.append(f)
+    return rows, sum(r[2] == 'stale' for r in rows), bad, rev, ok
+
+
+def render(rows, n, rev, ok):
+    """Register text from the evaluated rows: the file set with its status,
+    and the check verdict. Pure function of (file, status); the register
+    changes only when a file's status, the file set, the revision or the
+    verdict changes."""
+    verdict = 'fresh - regeneration would reproduce every committed byte' if ok \
+        else 'stale - run python3 -m flow_graph.param.regen'
+    md = ['# Derived file revisions', '', 'Document number: AQS-GOV-006', 'Revision: D', f'Graph: {GP} Revision {rev}.',
+          f'Verdict: the engine v2 check is {verdict}.',
+          'Generated by `docs-authority/_rev_stamp.py` (X-GOV-06) from the engine v2 check. Do not edit this page by hand.', '',
           '| Rev | Description | Date |', '|---|---|---|',
           '| A | First issue: the derived-file stamp register. | 2026-10-15 |',
           '| B | Purpose and scope added per the documentation style guide (AQS-DOC-002). Tracking rule unchanged. | 2026-10-25 |',
-          '| C | The graph commit column is no longer written to this page; it is reported on demand with `python3 docs-authority/_rev_stamp.py --report`. A graph commit no longer rewrites every row. Tracking rule unchanged. | 2026-11-04 |', '',
+          '| C | The graph commit column is no longer written to this page; it is reported on demand. A graph commit no longer rewrites every row. | 2026-11-04 |',
+          '| D | The staleness rule is the engine v2 check: one recomputed render compared byte for byte against the committed tree, with the input manifest deciding whether the inputs or the engine moved. The commit-order rule and the receipt verification leg retired; outputs whose writers retired with the v1 machinery are retained data and do not gate. | 2026-11-16 |', '',
           '## 1. Purpose and scope', '',
-          'This page lists every derived file and states whether it is current with the plant graph. A file is stale when the graph changed after the file was last written and no regeneration since then has confirmed it. A file whose regeneration is byte-identical cannot show this by a new commit, so the regeneration records it in its provenance manifest instead.', '',
-          'To see the graph commit each file was made from, run `python3 docs-authority/_rev_stamp.py --report`; it prints the full table without writing this page. `python3 -m flow_graph.param.regen` refreshes this page; `python3 -m flow_graph.param.regen --check` fails on any stale file and writes nothing.', '',
-          f'{len(rows)} derived files, {n} stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).', '',
+          'This page lists every derived file and states whether it is current with the plant graph. A file is stale when its recomputed render differs from its committed bytes; the everyday gate is `python3 -m flow_graph.param.regen --check`. Files whose writers retired with the v1 pipeline are retained data: their row says so and they do not gate.', '',
+          '`python3 docs-authority/_rev_stamp.py --report` prints the table without writing this page; `--check` fails on any stale file and writes nothing.', '',
+          f'{len(rows)} derived files, {n} stale.', '',
           '| File | Status |', '|---|---|'] + [f'| `{a}` | {c} |' for a, b, c in rows]
     return '\n'.join(md) + '\n'
 
-def input_census(rows):
-    """Evaluate the step-4 input-hash rule alongside the committed rule and print the agreement.
-
-    Parallel period (2026-11-04 plan step 4): the gate follows the committed rule; this reports
-    where the two rules disagree, until they agree on every file and step 5 retires the
-    committed-rule bookkeeping. Missing manifest = pre-gate: a warning, not a failure.
-    The census's own reads are evaluation, not generation: capture is paused around them,
-    so the manifest never lists itself or its hashed inputs as stage inputs.
-    """
-    sys.path.insert(0, ROOT)
-    try:
-        import input_audit as _ia          # the same top-level instance the shim hook lives on
-        _ia.pause()
-    except ImportError:
-        _ia = None
-    try:
-        _input_census_body(rows)
-    finally:
-        if _ia is not None:
-            _ia.resume()
-
-
-def _input_census_body(rows):
-    from flow_graph.param import input_manifest as IM
-    im = IM.load(ROOT)
-    if im is None:
-        print('input-hash rule: manifest absent (pre-gate); the gate follows the committed rule')
-        return
-    sm = IM.output_stage_map(_MAN, ROOT)
-    old = {r[0]: r[2] for r in rows if r[2] in ('current', 'stale')}
-    c = IM.census(im, sm, ROOT, old)
-    print(f"input-hash rule: {c['agree']} agree, {len(c['input_stale'])} input-stale "
-          f"(committed rule says current), {len(c['input_fresh'])} input-fresh (committed rule says stale), "
-          f"{c['unmeasured']} unmeasured (no-stage / no-entry / capture-incomplete)")
-    for f in c['input_stale'][:12]:
-        v, detail = IM.verdict(im, sm, f, ROOT)
-        print(f"  input-stale: {f} ({detail})")
-    if len(c['input_stale']) > 12:
-        print(f'  ... and {len(c["input_stale"]) - 12} more')
-
 
 def main():
-    rows, n, bad, rev, head_g = compute()
-    input_census(rows)
+    rows, n, bad, rev, ok = compute()
     if '--report' in sys.argv:
-        print(f'graph revision {rev}, last graph commit {head_g[0][:7]}')
+        print(f'graph revision {rev}, engine v2 check {"fresh" if ok else "STALE"}')
         for a, b, c in rows: print(f'{a}\t{b}\t{c}')
     elif '--check-only' not in sys.argv:
-        out = os.path.join(ROOT, 'docs-authority/DERIVED_REVISIONS.md'); text = render(rows, n, rev)
+        out = os.path.join(ROOT, 'docs-authority/DERIVED_REVISIONS.md'); text = render(rows, n, rev, ok)
         if not os.path.exists(out) or open(out).read() != text:   # write only on a content change
             open(out, 'w').write(text)
     print(len(rows), 'files', n, 'stale', 'gated stale:', bad)
-    if ('--check' in sys.argv or '--check-only' in sys.argv) and bad: sys.exit(1)
+    if ('--check' in sys.argv or '--check-only' in sys.argv) and (bad or not ok): sys.exit(1)
 if __name__ == '__main__': main()

@@ -187,6 +187,18 @@ def _nozzle_units():
                   for p in glob.glob(os.path.join(ROOT, 'docs-authority/nozzles/*.csv')))
 
 
+def _nozzle_reservation_sizes():
+    """{unit: [size column values]} over every committed nozzle schedule —
+    the headers family's reservation cross-section payload."""
+    out = {}
+    d = os.path.join(ROOT, 'docs-authority', 'nozzles')
+    for name in sorted(os.listdir(d)):
+        if name.endswith('.csv'):
+            with open(os.path.join(d, name), encoding='utf-8', newline='') as f:
+                out[name[:-4]] = [r['size'] for r in csv.DictReader(f)]
+    return out
+
+
 def _cause_effect_rows():
     """The docs-authority/CAUSE_EFFECT.md '| SIF-' column lists (the boundary
     parse; the tag extraction stays in the pid renderer)."""
@@ -310,6 +322,7 @@ AUXILIARY = [
     ('gas_detectors', lambda: _read_csv_rows('docs-authority/inventory/GAS_DETECTORS.csv')),
     ('sif_list', lambda: _read_csv_rows('docs-authority/sif_list.csv')),
     ('nozzle_units', _nozzle_units),
+    ('nozzles', _nozzle_reservation_sizes),
     ('line_positions', _line_positions),
     ('grounding_grid', _grounding_grid),
     ('motor_family_boms', lambda: _glob_map('models/motors/MF-*/bom.csv', _read_csv_cells,

@@ -129,15 +129,16 @@ def test_exact_change_set_and_golden_equality():
 
     deviated = set(DEVIATED_FIELDS)
     for uid, path in EXPECTED_FIELDS:
-        if (uid, path) in deviated:
-            continue
         assert _eq(_dig(c_nodes[uid], path), _dig(r_nodes[uid], path)), (uid, path)
 
     expected_paths = {uid + '.' + path for uid, path in EXPECTED_FIELDS}
     diffs = set()
     for uid in sorted(set(c_nodes) | set(r_nodes)):
         _strict_diffs(c_nodes[uid], r_nodes[uid], uid, diffs, expected_paths)
-    assert diffs == {uid + '.' + path for uid, path in DEVIATED_FIELDS}, sorted(diffs)
+    # the P4 re-issuance landed the family books: committed == render on every
+    # field (DEVIATED_FIELDS above is the record of the one-time deltas the
+    # flip closed)
+    assert diffs == set(), sorted(diffs)
     edge_diffs = set()
     for sid in sorted(set(c_edges) | set(r_edges)):
         _strict_diffs(c_edges[sid], r_edges[sid], sid, edge_diffs, set())
@@ -145,47 +146,48 @@ def test_exact_change_set_and_golden_equality():
 
 
 def test_deviation_table():
-    """The 16 residue fields pinned exactly, both sides: the four buffer books
-    at the stage's own census (fresh) and the committed mid-loop census (with
-    the exact Q each implies), and the nine reagent-tank envelopes at the
-    style-builder wave's claimed geometry."""
+    """The 16 residue fields pinned exactly, both sides. The P4 re-issuance
+    landed the family books, so the committed side now carries the fresh
+    census (committed == fresh); the former mid-loop residue and the
+    style-builder wave's claimed geometry are recorded here as the one-time
+    deltas the flip closed: the four buffer books at the stage's own census,
+    and the nine reagent-tank envelopes restamped from 350 mm to the family's
+    600 mm."""
     b = run()
     fresh = {uid: b.computed[('node', uid, 'params.design_storage')][0] for uid in SS.B}
     with open(REF_GRAPH, encoding='utf-8') as f:
         gold = {n['unit_id']: n for n in json.load(f)['nodes']}
-    # METAL_STORE: committed Q 14.0 kg/d (the foundry stock book before the
-    # X-MFG-30 resize); fresh Q 23.4217 kg/d off the seed draws. 14 d at the
-    # 2000 kg/m3 staged-metal density, fill 0.8.
-    assert gold['METAL_STORE']['params']['design_storage']['V_nom_m3'] == 0.1225
+    # METAL_STORE: the pre-flip committed Q was 14.0 kg/d (the foundry stock
+    # book before the X-MFG-30 resize); the family census books 23.4217 kg/d
+    # off the seed draws. 14 d at the 2000 kg/m3 staged-metal density, fill 0.8.
     assert fresh['METAL_STORE']['V_nom_m3'] == 0.2049
-    q_gold = Decimal('0.1225') * Decimal('0.8') * 2000 / 14        # V_nom x fill x rho / hold
-    assert q_gold == Decimal('14')
+    assert gold['METAL_STORE']['params']['design_storage']['V_nom_m3'] == fresh['METAL_STORE']['V_nom_m3']
     assert SS.rat('22.0072') + SS.rat('1.414504') == SS.rat('23.421704')
-    # AIR_RECEIVER: committed Q 3.1 kg/d (the A-M-273 N2 surplus export at the
-    # e348e62e6 census); fresh Q 17.4029 kg/d off the seed vent rate.
-    assert gold['AIR_RECEIVER']['params']['design_storage']['V_nom_m3'] == 0.3312
-    assert gold['AIR_RECEIVER']['params']['design_storage']['wall_mm'] == 3.06
+    q_gold = Decimal('0.1225') * Decimal('0.8') * 2000 / 14        # the pre-flip Q book
+    assert q_gold == Decimal('14')
+    # AIR_RECEIVER: the pre-flip committed Q was 3.1 kg/d (the A-M-273 N2
+    # surplus export at the e348e62e6 census); the family books 17.4029 kg/d
+    # off the seed vent rate. steel at 20 MPa, wall = P x R / (S - 0.6 P).
     assert fresh['AIR_RECEIVER']['V_nom_m3'] == 1.8593 and fresh['AIR_RECEIVER']['wall_mm'] == 5.24
+    assert gold['AIR_RECEIVER']['params']['design_storage'] == fresh['AIR_RECEIVER']
     assert (Decimal('0.3312') * Decimal('0.8') * Decimal('11.7')).quantize(Decimal('0.0001')) == Decimal('3.1000')
-    # PROD_O2: committed Q 22.8768 kg/d; fresh 12.7345 kg/d; steel at 20 MPa,
-    # wall = P x R / (S - 0.6 P): gold R 550 mm -> 106.80, fresh R 450 -> 87.38.
-    assert gold['PROD_O2']['params']['design_storage']['V_nom_m3'] == 1.3645
-    assert gold['PROD_O2']['params']['design_storage']['wall_mm'] == 106.8
+    # PROD_O2: gold R 550 mm -> 106.80, fresh R 450 -> 87.38.
     assert fresh['PROD_O2']['V_nom_m3'] == 0.7596 and fresh['PROD_O2']['wall_mm'] == 87.38
+    assert gold['PROD_O2']['params']['design_storage'] == fresh['PROD_O2']
     assert (Decimal('20') * 550 / (Decimal('115') - Decimal('12'))).quantize(Decimal('0.01')) == Decimal('106.80')
     assert (Decimal('20') * 450 / (Decimal('115') - Decimal('12'))).quantize(Decimal('0.01')) == Decimal('87.38')
-    # PROD_MEOH: the fresh Q 28.5784 vs the committed 28.35; D/H quantise equal.
-    assert gold['PROD_MEOH']['params']['design_storage']['V_nom_m3'] == 0.6267
+    # PROD_MEOH: the fresh Q 28.5784 (the pre-flip committed 28.35); D/H quantise equal.
     assert fresh['PROD_MEOH']['V_nom_m3'] == 0.6315
     assert fresh['PROD_MEOH']['D_mm'] == 850 and fresh['PROD_MEOH']['H_mm'] == 1150
+    assert gold['PROD_MEOH']['params']['design_storage'] == fresh['PROD_MEOH']
     # the nine reagent tanks: the storage book is the vessel envelope; the
-    # committed carry the style-builder wave's geometry.
+    # family books the 600 mm skid height (the pre-flip committed carried the
+    # style-builder wave's 350 mm geometry).
     for u in ('WS_AMMONIA', 'WS_DOPE', 'WS_HF_ED', 'WS_KOH', 'WS_NITRIC', 'WS_PEROX',
               'WS_SLURRY', 'WS_SOLV', 'WS_PHOS'):
         own = b.computed[('node', u, 'params.size_mm')][0]
         assert own == [600, 600, 600], (u, own)
-        assert gold[u]['params']['size_mm'] == [600, 600, 350], u
-        # the design books agree everywhere (the floor governs)
+        assert gold[u]['params']['size_mm'] == [600, 600, 600], u
         assert _eq(gold[u]['params']['design_storage'], fresh[u]), u
 
 

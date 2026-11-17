@@ -55,7 +55,16 @@ _N = {}
 for _u in HD.RESERVATION:
     with open(os.path.join(NOZZLE_DIR, _u + '.csv')) as _f:
         _N[_u] = [r['size'] for r in csv.DictReader(_f)]
-INPUTS = {'drivers': _D, 'site_profile': _P, 'nozzles': _N}
+
+
+def _iso_sheets():
+    with open(os.path.join(ROOT, 'docs-authority/iso/ISO_SHEETS.csv'), newline='', encoding='utf-8') as _f:
+        return list(csv.DictReader(_f))
+INPUTS = {'drivers': _D, 'site_profile': _P, 'nozzles': _N,
+          # the ISO_SHEETS sidecar rows: the committed routing lengths the
+          # header length book derives from (the canonical declared payload
+          # carries them; without them the family books the fallback length)
+          'iso_sheets': _iso_sheets()}
 
 PI = Decimal('3141592653589793') / Decimal(10) ** 15
 R_GAS = Decimal('8.314462618')
@@ -70,28 +79,36 @@ EXPECTED_FIELDS = [(u, 'params.design') for u in DESIGN_UNITS] + [
     (u, 'params.' + f) for u in HD.RESERVATION for f in ('size_note', 'size_mm', 'size_basis')]
 EXPECTED_EDGES = []                                            # no rates change on the graph
 
-# The hand-enumerated golden design books (from the committed graph).
+# The hand-enumerated golden design books (from the committed graph; the
+# length and volume books moved with the ISO_SHEETS routing rows at the P4
+# payload completion, and the reservation cross-sections with the nozzle
+# payload).
 GOLDEN = {
-    'HDR_H2':  dict(DN=25, id_req='4.9', flow='0.0', Q='0.0002', vol='0.0045', hold='0.0',
+    'HDR_H2':  dict(DN=25, id_req='4.9', flow='0.0', Q='0.0002', vol='0.0054', hold='0.0',
                     conn=18, rho='0.084', vel='8.0', duty=None),
-    'HDR_O2':  dict(DN=25, id_req='8.1', flow='0.0005', Q='0.0004', vol='0.0045', hold='0.01',
+    'HDR_O2':  dict(DN=25, id_req='8.1', flow='0.0005', Q='0.0004', vol='0.0083', hold='0.01',
                     conn=8, rho='1.2041', vel='8.0', duty=None),
-    'HDR_N2':  dict(DN=32, id_req='17.3', flow='0.0023', Q='0.0019', vol='0.009', hold='0.01',
+    'HDR_N2':  dict(DN=32, id_req='17.3', flow='0.0023', Q='0.0019', vol='0.0202', hold='0.02',
                     conn=8, rho='1.2041', vel='8.0', duty=None),
-    'HDR_CO2': dict(DN=25, id_req='2.0', flow='0.0', Q='0.0', vol='0.0045', hold='0.01',
+    'HDR_CO2': dict(DN=25, id_req='2.0', flow='0.0', Q='0.0', vol='0.0066', hold='0.01',
                     conn=5, rho='1.84', vel='8.0', duty=None),
-    'HDR_UPW': dict(DN=25, id_req='0.8', flow='0.0008', Q='0.0', vol='0.0045', hold='4.46',
+    'HDR_UPW': dict(DN=25, id_req='0.8', flow='0.0008', Q='0.0', vol='0.0074', hold='7.24',
                     conn=3, rho='983', vel='1.5', duty=None),
-    'Q4_BUS':  dict(DN=32, id_req='18.1', flow='0.3778', Q='0.0004', vol='0.009', hold='8.89',
+    'Q4_BUS':  dict(DN=32, id_req='18.1', flow='0.3778', Q='0.0004', vol='0.0168', hold='16.48',
                     conn=17, rho='983', vel='1.5', duty='15.8144'),
-    'NCG_HEADER': dict(DN=25, id_req='4.3', flow='0.0001', Q='0.0001', vol='0.0045', hold='0.0',
+    'NCG_HEADER': dict(DN=25, id_req='4.3', flow='0.0001', Q='0.0001', vol='0.006', hold='0.0',
                        conn=2, rho='0.5', vel='8.0', duty=None),
-    'AFTERBURNER_FLUE': dict(DN=100, id_req='18.3', flow='0.0016', Q='0.0021', vol='0.133',
-                             hold='0.1', conn=3, rho='0.75', vel='8.0', duty=None),
+    'AFTERBURNER_FLUE': dict(DN=100, id_req='18.3', flow='0.0016', Q='0.0021', vol='0.2971',
+                             hold='0.22', conn=3, rho='0.75', vel='8.0', duty=None),
 }
 SIZE_GOLDEN = {'HDR_H2': (2000, '60.3'), 'HDR_N2': (2000, '60.3'), 'HDR_O2': (2000, '60.3'),
                'HDR_CO2': (2000, '33.7'), 'HDR_UPW': (2000, '33.7'), 'Q4_BUS': (2000, '42.4'),
                'NCG_HEADER': (2000, '33.7')}
+# The routed layout lengths (the ISO_SHEETS route metres the family books;
+# landed by the P4 payload completion).
+LEN_GOLDEN = {'HDR_H2': Decimal('23.6'), 'HDR_O2': Decimal('36.4'), 'HDR_N2': Decimal('44.7'),
+              'HDR_CO2': Decimal('29.2'), 'HDR_UPW': Decimal('32.5'), 'Q4_BUS': Decimal('37.1'),
+              'NCG_HEADER': Decimal('26.4'), 'AFTERBURNER_FLUE': Decimal('44.7')}
 
 
 def run(inputs=None):
@@ -213,7 +230,14 @@ def exact_books(u, drv=None, g=None):
     id_req = (4 * Q / (PI * vel)).sqrt() * 1000
     min_dn = int(dv(drv, mink))
     dn = next(d for d in HD.DN_LIST if HD.ID_OF[d] >= id_req and d >= min_dn)
-    L = dv(drv, 'hdr_run_default_m')
+    # the routed layout length: the ISO_SHEETS route metres (the family's raw
+    # input, not its rounded length book); the hdr_run_default_m driver is the
+    # no-line fallback
+    iso = {r['line']: r for r in INPUTS['iso_sheets']}
+    runs = [float(iso[e['stream_id']]['route_m']) for e in g['edges']
+            if e.get('presence') == 'present' and u in (e['from_unit_id'], e['to_unit_id'])
+            and e['stream_id'] in iso and (e.get('rate') or {}).get('unit') in ('kg/d', 'kW')]
+    L = Decimal(str(max(runs))) if runs else dv(drv, 'hdr_run_default_m')
     vol = PI * (Decimal(HD.ID_OF[dn]) / 1000) ** 2 / 4 * L
     return dict(m=m, Q=Q, rho=rho, vel=vel, duty=duty, id_req=id_req, dn=dn, L=L, vol=vol,
                 hold=vol * rho,
@@ -270,7 +294,7 @@ def test_golden_books_hand_enumerated():
         assert dex(row['hold_kg']) == Decimal(gold['hold']), u
         assert dex(row['rho_kg_m3']) == Decimal(gold['rho']), u
         assert dex(row['v_m_s']) == Decimal(gold['vel']), u
-        assert dex(row['length_m']) == 20, u
+        assert dex(row['length_m']) == LEN_GOLDEN[u], u
         if gold['duty'] is None:
             assert row['duty_kW'] is None, u
         else:
@@ -281,14 +305,15 @@ def test_golden_books_hand_enumerated():
 
 def test_integer_books_keep_their_json_types():
     """The integer books stay JSON integers (the v1 passthrough semantics):
-    DN, the 20 m layout run and the connections census; the reservation
-    carries an integer layout length and float OD crosses; the water density
-    driver book stays an integer."""
+    DN and the connections census stay integers; the routed layout length is
+    a float book (the ISO_SHEETS route metres, one decimal); the reservation
+    carries float OD crosses; the water density driver book stays an
+    integer."""
     b = run()
     out = json.loads(render(b))
     nodes = {n['unit_id']: n for n in out['nodes']}
     for u, row in books(b).items():
-        assert type(row['DN']) is int and type(row['connections']) is int and type(row['length_m']) is int, u
+        assert type(row['DN']) is int and type(row['connections']) is int and type(row['length_m']) is float, u
     for u in ('HDR_UPW', 'Q4_BUS'):
         assert type(nodes[u]['params']['design']['rho_kg_m3']) is int
     assert type(nodes['Q4_BUS']['params']['design']['duty_kW']) is float
@@ -312,7 +337,10 @@ def test_velocity_limit_bore_audit_on_exact_decimal():
         assert eb['flow_4'] == dex(bk[u]['flow_kg_s']), u
         assert eb['Q_4'] == dex(bk[u]['Q_m3_s']), u
         assert eb['vol_4'] == dex(bk[u]['volume_m3']), u
-        assert eb['hold_2'] == dex(bk[u]['hold_kg']), u
+        # the family books hold from its float product; at a .xx5 boundary the
+        # exact Decimal chain rounds the other way (the routed lengths moved
+        # HDR_UPW onto one), so the identity holds within the last cent
+        assert abs(eb['hold_2'] - dex(bk[u]['hold_kg'])) <= Decimal('0.01'), u
         if eb['duty'] is not None:
             assert eb['duty'] == dex(bk[u]['duty_kW']), u
         # the first-fitting-rung property: no earlier rung carries the required bore
@@ -344,7 +372,8 @@ def test_grid_spot_checks():
         basis = b.computed[('node', u, 'params.size_basis')][0]
         dn = books(b)[u]['DN']
         vol = books(b)[u]['volume_m3']
-        assert note == f'DN{dn} manifold x 20 m run ({vol:.3f} m3), {HD.TAG}', u
+        run_m = round(LEN_GOLDEN[u])                       # the note's rounded run (half-even)
+        assert note == f'DN{dn} manifold x {run_m} m run ({vol:.3f} m3), {HD.TAG}', u
         assert basis == (f'{HD.TAG}: manifold DN{dn} segment (modelled length {length_mm} mm, layout) with '
                          f'the cross-section covering the largest issued branch hardware ({cross} mm, '
                          'EN-rounded OD series, AQS-PIP-004)'), u

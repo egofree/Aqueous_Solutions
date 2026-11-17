@@ -1,45 +1,42 @@
-"""U3 one-command regeneration orchestrator (AQS-PAR-001 / AQS-PLAN-007).
+"""One-command regeneration (AQS-PAR-001 / AQS-PLAN-007).
 
-    python3 -m flow_graph.param.regen [--stage NAME]... [--quick] [--check] [--dry-run] [--cad]
+    python3 -m flow_graph.param.regen [--check] [--legacy] [--stage NAME]... [--quick]
+                                      [--site SITE_ID] [--all-sites] [--cad]
 
-Executes flow_graph/param/regen_manifest.json (data, not code):
+The default (no-flag) path is the engine v2 update+check, the writer of record
+since the P4 cutover:
 
-  1. Graph phase, successive substitution: every writes_graph stage runs in manifest
-     order, and the block repeats until the graph sha is stable (--max-passes, default 4).
-     This resolves the real power <-> pv_cell_line feedback the declared DAG must not carry.
-  2. Doc phase against the final graph: every remaining stage, so U2a sidecars and pattern
-     manifests record the final graph sha and byte-identical regens stay current. Some
-     documents read each other, so the phase repeats until no doc output or amended file
-     changes (same --max-passes cap).
-  3. Receipt: flow_graph/derived/_regen_receipt.json (graph sha, final per-stage status and
-     stability, vouched_patterns = output/amend globs of stages that ran clean AND whose
-     outputs this run verified byte-stable at the final graph sha, vouched_files = the
-     individually stable files of a stage that was only partly stable). The receipt vouches
-     only what THIS run re-derived and observed byte-stable: a failed or oscillating stage
-     disqualifies exactly its own outputs, never the rest of the tree (2026-11-03, U4c).
-     docs-authority/_rev_stamp.py reads it as a provenance manifest. The receipt is tracked
-     and committed, and deterministic: it holds no timings, pass counts or argv, so a full run on a clean,
-     converged tree rewrites it byte-identically. Run details (durations, passes, per-pass
-     graph shas) go to the untracked run log flow_graph/derived/_regen_run.json.
-  4. Input manifest: flow_graph/derived/_input_manifest.json (written on the same full runs as
-     the receipt): per stage, the hash of every project data file the stage (or anything it
-     spawned) actually opened for reading, hashed once after the run settled, plus the stage's
-     final-pass status. Staleness from content, not commit order. _rev_stamp.py evaluates this
-     rule in parallel with its committed rule until the two agree on every file (step 5 removes
-     the committed-rule bookkeeping).
+  1. flow_graph.v2.check.update(): solve, write the graph once in the v2
+     canonical serialization (iterating solve and write until the written
+     graph stops moving), render the 933-document registry, apply the
+     duty-fragment rule, write the input manifest, and require a fresh
+     post-write check (about two minutes; a check that fails right after an
+     update is a bug in the engine).
+  2. The landed validators: models/mfg/tracker.py --check (the A-core file
+     asserts) and the X-PAR-02 balance and X-PAR-04 misfit gates
+     (flow_graph/param/test_balance.py, test_param_misfit.py via pytest).
 
-Modes: --quick = the write_graph solver stages only (what-if; no doc regen, no receipt write -- a
-partial run must not clobber the full-run provenance receipt). --check = staleness verification
-only (runs docs-authority/_rev_stamp.py --check-only: writes nothing, exit 1 when a
-gated derived file is stale). --dry-run prints the plan. --stage runs exactly the named stages
-once each, in manifest order (expert mode; no loop, no receipt). --cad adds the "cad" group
-(CadQuery, OpenSCAD and FreeCAD model builds). A stage whose `requires` toolchain is missing is
-skipped with a message and vouches nothing; its committed outputs are kept.
+--check is the staleness gate: flow_graph.v2.check.check() - recompute and
+compare, write nothing, exit 1 on any stale artifact. The gate catches code
+edits through the manifest's package and per-function fingerprints (the
+step-5 hole: a transfer-function edit changes its fingerprint, so dependent
+artifacts show stale).
 
-Fail-fast: a stage that exits non-zero aborts the run with its name, command and output
-tail; the receipt records the failure and vouches nothing. Every child runs with the
-U3 single-flight _power_sizing cache active (flow_graph/param/_ps_cache.py via a
-PYTHONPATH sitecustomize shim; disabled outside this orchestrator).
+--legacy runs the v1 pipeline unchanged, for the transition: the manifest
+stage graph, the graph loop, the doc phase, the receipt and the input
+manifest. The locale machinery (--site, --all-sites) and the named-stage,
+quick and CAD modes delegate to it: the locale tree format, the per-stage
+scripts and the CAD builders are v1 machinery until their lanes land (the
+CAD builders are declared build steps in engine v2; their determinism fixes
+are merged). --legacy re-derives the tree with the v1 writers and rewrites
+the graph in the v1 serialization; the v2 canonical form is restored by the
+next default-path update, and check() reports the difference until then.
+
+Fail-fast (legacy): a stage that exits non-zero aborts the run with its
+name, command and output tail; the receipt records the failure and vouches
+nothing. Every child runs with the U3 single-flight _power_sizing cache
+active (flow_graph/param/_ps_cache.py via a PYTHONPATH sitecustomize shim;
+disabled outside this orchestrator).
 """
 import argparse, glob, hashlib, importlib.util, json, os, shutil, subprocess, sys, time
 
@@ -195,26 +192,95 @@ def compute_vouches(sel, loop_stages, entries, stage_stable, graph_converged, do
                       if os.path.isfile(f) and doc_before.get(f) == doc_after.get(f)]
     return sorted(set(patterns)), sorted(set(files))
 
+def _run_v2_update():
+    """The default path: the engine v2 update under the design lock, then the
+    landed validators. Returns 0 or 1."""
+    import time
+    from flow_graph.v2 import check as V2
+    from .design_lock import acquire, release
+    lock = acquire()
+    t0 = time.monotonic()
+    try:
+        ok, lines = V2.update()
+    finally:
+        release(lock)
+    for ln in lines:
+        print(ln, flush=True)
+    print(f"update: flow_graph.v2.check.update() {'fresh' if ok else 'STALE'} in {time.monotonic() - t0:.1f}s", flush=True)
+    if not ok:
+        return 1
+    rc = 0
+    print("validators: models/mfg/tracker.py --check (the A-core file asserts), "
+          "test_balance.py + test_param_misfit.py (X-PAR-02 / X-PAR-04)", flush=True)
+    r = subprocess.run([sys.executable, 'models/mfg/tracker.py', '--check'], cwd=ROOT, capture_output=True, text=True)
+    tail = (r.stdout + r.stderr).strip().splitlines()
+    if tail:
+        print('  tracker: ' + tail[-1], flush=True)
+    if r.returncode != 0:
+        print('  tracker FAILED', flush=True)
+        rc = 1
+    r = subprocess.run([sys.executable, '-m', 'pytest', '-q', 'flow_graph/param/test_balance.py',
+                        'flow_graph/param/test_param_misfit.py'], cwd=ROOT, capture_output=True, text=True)
+    tail = (r.stdout + r.stderr).strip().splitlines()
+    if tail:
+        print('  balance/misfit: ' + tail[-1], flush=True)
+    if r.returncode != 0:
+        print('  balance/misfit FAILED', flush=True)
+        rc = 1
+    return rc
+
+
+def _run_v2_check():
+    """The --check path: flow_graph.v2.check.check(), write nothing, exit 1 on
+    any stale artifact. The manifest's package and per-function fingerprints
+    are what make the gate honest about code edits (the step-5 hole); the
+    explicit fingerprint verdict below states that leg."""
+    import json as _json
+    from flow_graph.v2 import check as V2, manifest as MF
+    ok, lines = V2.check()
+    for ln in lines:
+        print(ln, flush=True)
+    mpath = os.path.join(ROOT, 'flow_graph/derived/_input_manifest_v2.json')
+    if ok and os.path.exists(mpath):
+        committed = _json.load(open(mpath))
+        if committed.get('code') == MF.package_fingerprint():
+            print('code fingerprint: current (the manifest describes the engine on disk)', flush=True)
+        else:
+            print('code fingerprint: MISMATCH', flush=True)
+            ok = False
+    return 0 if ok else 1
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog='flow_graph.param.regen', description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--stage', action='append', default=[], metavar='NAME', help='run only these stages (once each, manifest order)')
     ap.add_argument('--quick', action='store_true', help='solver + write_graph stages only (what-if; no doc regen)')
-    ap.add_argument('--check', action='store_true', help='staleness verification only (read-only; exit 1 when a gated derived file is stale)')
+    ap.add_argument('--check', action='store_true', help='staleness verification only (read-only; exit 1 when a derived artifact is stale)')
+    ap.add_argument('--legacy', action='store_true', help='run the v1 pipeline (manifest stage graph, receipt); retained for the transition')
     ap.add_argument('--dry-run', action='store_true', help='print the plan and exit')
-    ap.add_argument('--max-passes', type=int, default=4, metavar='N', help='graph- and doc-phase convergence cap (default 4; a converged tree needs 1, a drifted tree 2-3)')
-    ap.add_argument('--site', metavar='SITE_ID', help='site profile (flow_graph/param/sites/); a locale writes its outputs under sites/<site_id>/')
-    ap.add_argument('--all-sites', action='store_true', help='the baseline in place, then every locale profile')
-    ap.add_argument('--cad', action='store_true', help='also run the "cad" group (CadQuery, FreeCAD and OpenSCAD model builds; binary outputs)')
+    ap.add_argument('--max-passes', type=int, default=4, metavar='N', help='graph- and doc-phase convergence cap of the v1 pipeline (default 4)')
+    ap.add_argument('--site', metavar='SITE_ID', help='site profile (flow_graph/param/sites/); a locale writes its outputs under sites/<site_id>/ (v1 machinery)')
+    ap.add_argument('--all-sites', action='store_true', help='the baseline in place, then every locale profile (v1 machinery)')
+    ap.add_argument('--cad', action='store_true', help='also run the "cad" group of the v1 pipeline (CadQuery, FreeCAD and OpenSCAD model builds; binary outputs)')
     args = ap.parse_args(argv)
     from . import site_outputs as SO
     if args.site and args.all_sites: raise SystemExit('give --site or --all-sites, not both')
+    # The v2 default path runs only on the baseline tree: a locale worktree run
+    # (SO.run's inner regen, AQS_SITE set and the worktree env present) is v1
+    # machinery - the locale tree format and its stages are retained unchanged.
+    v2_allowed = (os.environ.get('AQS_SITE') or 'baseline') == 'baseline' and not SO.in_locale_worktree(ROOT)
+    if args.check and v2_allowed and not (args.stage or args.quick or args.site or args.all_sites or args.cad):
+        return _run_v2_check()
+    if v2_allowed and not (args.stage or args.quick or args.site or args.all_sites or args.cad or args.dry_run):
+        return _run_v2_update()
+    # everything below is v1 machinery retained for the transition
     if args.site == 'baseline': os.environ['AQS_SITE'] = 'baseline'
     elif args.site:                                   # a locale: temporary worktree, outputs to sites/<site_id>/
-        extra = (['--cad'] if args.cad else []) + (['--max-passes', str(args.max_passes)] if args.max_passes != 4 else [])
+        extra = ['--legacy'] + (['--cad'] if args.cad else []) + (['--max-passes', str(args.max_passes)] if args.max_passes != 4 else [])
         return SO.run(args.site, check=args.check, extra=extra)
     if args.all_sites:
         rest = [a for a in (argv if argv is not None else sys.argv[1:]) if a != '--all-sites']
-        rc = main(rest + ['--site', 'baseline'])
+        rc = main(rest + ['--legacy'])
         for sid in SO.locales():
             rc = SO.run(sid, check=args.check) or rc
         return rc

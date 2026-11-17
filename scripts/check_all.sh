@@ -5,10 +5,11 @@
 # Run every check a change must pass before it is submitted. The checks run on
 # the contributor's own machine; the project uses no hosted build service.
 #
-#   scripts/check_all.sh          commit identity, tests, staleness, authority contract,
-#                                 citations, style
-#   scripts/check_all.sh --full   the same, then a full regeneration of HEAD twice and a
-#                                 CAD-lane rebuild gated byte for byte (slow; commit first)
+#   scripts/check_all.sh          commit identity, tests, staleness (the engine v2 check),
+#                                 authority contract, citations, style
+#   scripts/check_all.sh --full   the same, then a full regeneration of HEAD (the engine v2
+#                                 update, in a temporary worktree) and a CAD-lane rebuild
+#                                 gated byte for byte (slow; commit first)
 #
 # Exit status is non-zero if any check fails.
 set -u
