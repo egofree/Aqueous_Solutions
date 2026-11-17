@@ -53,11 +53,11 @@ SHEETS = [
       'General tolerance ISO 2768-m unless noted'],
      "General arrangement, side elevation. Shop, not stamped (AQS-STD-001 section 7)."),
     ("nozzle_orient", full, (0, 0, -1),
-     ['9 schedule rows of docs-authority/nozzles/CRYO_O2.csv at tag, face and bore',
-      'N1 (z 400) on the mid rail; N2 (z 1500, clamped to the mid rail); N5/N6 (z 600, clamped '
-      'to the top rail); N8 DN50 (z 600, clamped); N7/N9 (z 160) on the bottom rail',
+     ['Every schedule row of docs-authority/nozzles/CRYO_O2.csv at tag, face and bore',
+      'N1 (z 400) on the mid rail; N2/N5/N6/N8 draw as issued at z 520 (N8 DN50); N10 (z 520) '
+      'on the top rail; N7/N9 (z 160) on the bottom rail',
       'N3 drain: skid-top stub at x 400, tip at the 50 datum; N4 vent: up the -Y tie bar to the '
-      '600 rack top (schedule datum 2000 predates the rack envelope - hold, W12)',
+      '600 rack top',
       'Atmospheric stubs; no flange drawn (no flange table above Class 150; hold, W12) - '
       'per-tag positions in check.nozzles_drawn'],
      "Nozzle orientation, top view. Tags/faces/bore per the schedule."),

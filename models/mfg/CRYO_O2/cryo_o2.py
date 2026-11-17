@@ -18,12 +18,12 @@ rack corner. Every dimension is an authority figure or a named layout choice:
   banks: main + crew reserve, NFPA 2 ch. 7 separation).
 - Frame: 12 mm skid plate, hollow 80 x 80 x 5 SHS posts and side rails (316L per
   duty section 3), grooved tier combs, saddles under every tube.
-- Nozzles: all 9 rows of docs-authority/nozzles/CRYO_O2.csv at tag, face and
-  bore. The schedule heights (160..2000 mm) were issued against the 300 x 300 x
-  2000 study boxes that predate the A-M-167 rack envelope: heights that fit the
-  600 mm rack are drawn as issued (400, 160), the rest are clamped onto the rack
-  (1500 -> mid-rail centre, 600 -> top-rail centre, top datum 2000 -> flush at
-  the 600 rack top, bottom datum 50 -> skid-top stub) and every clamp is named in
+- Nozzles: every row of docs-authority/nozzles/CRYO_O2.csv at tag, face and
+  bore. The schedule heights were issued against the 300 x 300 x 2000 study
+  boxes that predate the A-M-167 rack envelope: a height that fits the 600 mm
+  rack draws as issued (160, 400, 520), the vent draws flush at the 600 rack
+  top, the bottom stub tips at the 50 mm skid datum, and a datum that fits no
+  side-rail band is clamped onto the rack with the clamp named in
   check.nozzles_drawn and WORK_ORDER W12. Inlets -Y, outlets +Y (house face
   mapping). No flange is drawn: the schedule rating column (Class 150) is carried
   verbatim as text against the node design 22000 kPa - the rating reconciliation
