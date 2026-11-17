@@ -88,6 +88,8 @@ shared pure chain). Pure: no I/O here.
 import math
 import re
 
+from flow_graph.param import site as SITE          # the baseline Earth constants (X-LOC-03)
+
 IEC = tuple((float(x), frame) for x, frame in
             [('0.09', '56'), ('0.12', '63'), ('0.18', '63'), ('0.25', '71'),
              ('0.37', '71'), ('0.55', '80'), ('0.75', '80'), ('1.1', '90S'),
@@ -154,7 +156,7 @@ def _gravity(inputs):
     the baseline value stands when the inputs carry no profile."""
     prof = inputs.get('site_profile')
     if not prof:
-        return flo('9.80665')
+        return flo(SITE.g(SITE.BASELINE))
     return prof['groups']['gravity']['entries']['g_m_s2']['value']
 
 

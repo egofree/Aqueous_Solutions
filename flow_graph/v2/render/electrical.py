@@ -101,6 +101,7 @@ import re
 from flow_graph.param import backup_fuel as _BF
 from flow_graph.param import constants as _C
 from flow_graph.param import ew_cells as _EWC
+from flow_graph.param import site as SITE           # the baseline Earth constants (X-LOC-03)
 from flow_graph.param import solver as _SOLVER
 from flow_graph.param.code_basis import MARK as _CODE_MARK          # X-STD-01 block, single source
 from flow_graph.param.code_basis import block as _code_block
@@ -111,7 +112,7 @@ from flow_graph.v2.functions import haz_area as _HAZ
 from flow_graph.v2.functions import inventory as _INV
 
 EW = 'DIGESTER.ew-cascade-train.'                                   # the EW module driver prefix (A-M-040)
-G_BASE_FALLBACK = float('9.80665')                                  # baseline-profile gravity (site.py), when no profile is carried
+G_BASE_FALLBACK = SITE.g(SITE.BASELINE)                             # baseline-profile gravity (site.py), when no profile is carried
 DAY_MIN = 1440                                                      # min/d, the residence conversion
 
 # NEC 240.6(A) standard ampere ratings in full (the v1 BRK list)

@@ -41,8 +41,8 @@ exponents 1.25 -> 5/4, 0.6625 -> 53/80, 0.82 -> 41/50, 10.7639 ft2/m2 ->
 J/(kmol K), set 1.21 -> 121/100, depressuring 900 s and 3600 s/h, latent
 282 kJ/kg; API 2000 volume factor 2.0 -> 2, Cd 0.61 -> 61/100, air 1.293
 kg/m3 -> 1293/1000, 3600 s/h; vent fractions 0.25 -> 1/4 and 4 x vent dP; the
-site baseline gravity 980665/100000 m/s2 and process pressure 101325/1000 kPa
-(flow_graph/param/site.py baseline profile, as process.py ports them); pi on a
+site baseline gravity and process pressure read from flow_graph/param/site.py's
+baseline profile (as process.py ports them); pi on a
 1e-15 scale. No float literals.
 
 Seed reads from prior families (recorded dependencies, the strangler bridge):
@@ -76,6 +76,8 @@ book and key order. A solve without the driver payload records nothing, so the
 bridge solve and the check stay byte-faithful to the seed.
 """
 from decimal import Decimal, ROUND_CEILING, ROUND_HALF_EVEN
+
+from flow_graph.param import site as SITE          # the baseline Earth constants (X-LOC-03)
 
 from flow_graph.v2.registry import fn
 
@@ -123,8 +125,8 @@ PA_PER_KPA = D(1000)                                           # Pa per kPa
 MM3_PER_M3 = D(10) ** 9                                        # mm3 per m3
 DNS = (25, 32, 40, 50, 65, 80, 100, 125, 150, 200, 250, 300)   # DN ladder, mm, 25 minimum
 # site profile baseline (flow_graph/param/site.py; as process.py ports them)
-G_SITE = Decimal(980665) / D(10) ** 5                          # m/s2 apparent gravity
-P_PROC_KPA = Decimal(101325) / D(10) ** 3                      # kPa process-space absolute pressure
+G_SITE = Decimal(str(SITE.g(SITE.BASELINE)))                   # m/s2 apparent gravity
+P_PROC_KPA = Decimal(str(SITE.p_atm_Pa(SITE.BASELINE))) / D(10) ** 3   # kPa process-space absolute pressure
 ATM_METHOD = 'API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155'
 ATM_MARK = {'case': 'atmospheric',
             'method': 'not an API 520 case; tank venting per API Std 2000 at unit task 07',

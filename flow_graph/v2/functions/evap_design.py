@@ -84,6 +84,8 @@ import math
 from decimal import Decimal, ROUND_HALF_EVEN
 from fractions import Fraction
 
+from flow_graph.param import site as SITE          # the baseline Earth constants (X-LOC-03)
+
 from flow_graph.v2.functions import process as PR             # the prior family's pure mass kernel
 from flow_graph.v2.registry import fn
 
@@ -211,7 +213,7 @@ def _g(inputs):
     grp = ((prof or {}).get('groups') or {}).get('gravity', {}).get('entries') or {}
     if isinstance(grp.get('g_m_s2'), dict):
         return flo(dec(grp['g_m_s2']['value']))
-    return flo(dec('9.80665'))                             # the baseline standard gravity
+    return flo(dec(SITE.g(SITE.BASELINE)))                 # the baseline-profile gravity
 
 
 def _p_process_kpa(inputs):
@@ -225,7 +227,7 @@ def _p_process_kpa(inputs):
     ext = atm.get('pressure_Pa')
     if isinstance(ext, dict) and 'value' in ext:
         return flo(dec(ext['value'])) / 1000
-    return flo(dec('101325')) / 1000                       # the baseline standard atmosphere
+    return flo(dec(SITE.p_atm_Pa(SITE.BASELINE))) / 1000   # the baseline standard atmosphere
 
 
 # ---- the reference writer's sizing helpers (sizing/evaporator.py,

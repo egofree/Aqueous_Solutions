@@ -37,7 +37,7 @@ its family lands, per the electrical wave's precedent):
 - doc_frame_check / doc_foundation / doc_lifting / doc_install_seq /
   doc_rigging_plans: read STRUCT_LOADS.md / STRUCT_ROWS.json /
   FRAME_CHECK.json / LIFTING.md (the struct-loads chain above);
-- access_check: reads flow_graph/ga_envelopes.load() = the placement seed,
+- access_check: reads flow_graph/ga_envelopes.py load() = the placement seed,
   report and study;
 - sep_check: reads the placement seed (CAMEO pair separation);
 - doc_hvac: reads STRUCT_ROWS.json, inventory/HAZ_AREA.csv and
@@ -61,6 +61,7 @@ import math
 import re
 
 from flow_graph.param import receivers as _RC                                   # design() (pure over a copied node map)
+from flow_graph.param import site as SITE                                       # the baseline Earth constants (X-LOC-03)
 from flow_graph.param.code_basis import MARK as _CODE_MARK                      # X-STD-01 block, single source
 from flow_graph.param.code_basis import block as _code_block
 from flow_graph.param.sizing.relief import equiv_bore_mm, gas_area_in2          # API 520 helpers (pure)
@@ -69,7 +70,7 @@ from ..functions import building as _BLD
 from ..functions import fire_book as _FB
 from ..functions import gas_detection as _GD
 
-G_BASE_FALLBACK = float('9.80665')                                              # baseline-profile gravity (site.py)
+G_BASE_FALLBACK = SITE.g(SITE.BASELINE)                                         # baseline-profile gravity (site.py)
 
 
 # ---- shared model/driver readers (the render/electrical.py payload idiom) ----
@@ -118,7 +119,7 @@ def _p_process_kPa(inputs):
     atmosphere."""
     prof = inputs.get('site_profile')
     if not prof:
-        return float('101.325')                                                 # the baseline standard atmosphere
+        return SITE.p_atm_kPa(SITE.BASELINE)                                    # the baseline standard atmosphere
     atm = prof['groups']['atmosphere']['entries']
     shell = atm.get('shell_pressure_kPa')
     return (shell['value'] if shell else atm['pressure_Pa']['value'] / 1000)

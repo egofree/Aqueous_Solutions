@@ -71,6 +71,8 @@ import math
 from decimal import Decimal, ROUND_HALF_EVEN
 from fractions import Fraction
 
+from flow_graph.param import site as SITE          # the baseline Earth constants (X-LOC-03)
+
 from flow_graph.v2.registry import fn
 
 STAGE = 'cold_box'                                             # ledger row sizing_cold_box, provenance stage
@@ -160,7 +162,7 @@ def _p_process_pa(inputs):
     ext = atm.get('pressure_Pa')
     if isinstance(ext, dict) and 'value' in ext:
         return float(dec(ext['value']))
-    return float(dec('101325'))                            # the baseline standard atmosphere
+    return float(dec(SITE.p_atm_Pa(SITE.BASELINE)))        # the baseline standard atmosphere
 
 
 def _seed_rate(b, sid):

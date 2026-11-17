@@ -23,8 +23,8 @@ each call. Dimensionless physics constants port as integer scaled pairs with
 the scale in the basis: Faraday 9648533212/100000 C/mol (CODATA2018), the
 CIAAW2021 molar masses on a 1e-3 mol-g scale, the Perry 2-9/2-10 fit rows on a
 1e-5 log scale, mmHg->kPa 133322/1000000, the site profile baseline constants
-980665/100000 m/s2 and 101325/1000 kPa (flow_graph/param/site.py baseline),
-pi on a 1e-15 scale. No float literals.
+read from flow_graph/param/site.py's baseline profile (gravity and the
+process-space atmosphere), pi on a 1e-15 scale. No float literals.
 
 Disposition of the chains around this family (the strangler bridge):
 - MVR evaporator DESIGN (blower/pump/trim kW, kWh/t, the column equilibrium):
@@ -57,14 +57,16 @@ seed.
 import math
 from decimal import Decimal, ROUND_HALF_EVEN
 
+from flow_graph.param import site as SITE          # the baseline Earth constants (X-LOC-03)
+
 from flow_graph.v2.registry import fn
 
 STAGES = 'process'                                            # family tag in provenance rows
 D = Decimal
 D0, D1 = Decimal(0), Decimal(1)
 F = Decimal(9648533212) / Decimal(100000)                     # C/mol, CODATA2018 (scale 1e-5)
-G_SITE = Decimal(980665) / Decimal(100000)                    # m/s2, site profile baseline
-P_SITE_KPA = Decimal(101325) / Decimal(1000)                  # kPa, site profile baseline process space
+G_SITE = Decimal(str(SITE.g(SITE.BASELINE)))                  # m/s2, site profile baseline
+P_SITE_KPA = Decimal(str(SITE.p_atm_Pa(SITE.BASELINE))) / Decimal(1000)   # kPa, site profile baseline process space
 PI = Decimal(3141592653589793) / Decimal(10) ** 15            # pi (scale 1e-15)
 MHCL, MH2O, MNAOH = Decimal('36.461'), Decimal('18.015'), Decimal('39.997')
 M_NACL = Decimal('58.443')                                    # caustic.py NaCl book (CIAAW2021)
@@ -219,7 +221,7 @@ def _vent_case(feed_kg_d, w_cond_pct, d):
     # film at half the packing size [TREYBAL3]
     dg = D(10) ** -3 * (tk ** Decimal('1.75')) * (
         (1 / MHCL + 1 / Decimal('28.96')).sqrt()) / (
-        (p / Decimal('101.325')) * (Decimal('23.31') ** (D1 / 3) + Decimal('19.7') ** (D1 / 3)) ** 2) / D(10) ** 4
+        (p / P_SITE_KPA) * (Decimal('23.31') ** (D1 / 3) + Decimal('19.7') ** (D1 / 3)) ** 2) / D(10) ** 4
     g_flux = n_tot / 86400 / (PI * d_col * d_col / 4)
     c_mol = p * 1000 / (Decimal('8.314') * tk)
     htu = g_flux / (c_mol * dg / (dp_mm / 2000) * v('vs_a_m2_m3'))
