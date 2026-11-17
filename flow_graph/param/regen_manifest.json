@@ -4,6 +4,7 @@
  "graph": "flow_graph/plant_flow_graph.json",
  "receipt": "flow_graph/derived/_regen_receipt.json",
  "input_manifest": "flow_graph/derived/_input_manifest.json",
+ "input_manifest_v2": "flow_graph/derived/_input_manifest_v2.json",
  "notes": [
   "CORRECTION vs the U3 audit order (verified against code 2026-10-18, commit dc7fe77): _load_list/_one_line moved AFTER the graph writers. U1 (A-M-231) made _power_sizing.py graph-native (it no longer reads the load list), and the U2a sidecars (LOAD_LIST.json/ONE_LINE.json) record the graph sha at run time, so both must run after the last graph write or they vouch an intermediate sha.",
   "CORRECTION: foundry_poly --write runs BEFORE write_graph heat (it stamps FOUNDRY/POLYMERS rates; heat re-solves the ladder against them) and before the balance report.",
@@ -2693,7 +2694,10 @@
    "group": "cad",
    "writes_graph": false,
    "quick": false,
-   "depends_on": []
+   "depends_on": [],
+   "invokes": [
+    "models/openscad/detail/*.py"
+   ]
   },
   {
    "name": "cad_freecad",
@@ -3691,6 +3695,15 @@
     "flow_graph/check_doc_style.py"
    ],
    "reason": "Repository checks run by tests (flow_graph/test_citations.py, flow_graph/test_doc_style.py). They write files only when asked to (check_citations --fix rewrites stale citations; check_doc_style --shrink drops clean pages from the pending list), so they are not regeneration stages."
+  },
+  {
+   "role": "engine-v2",
+   "scripts": [
+    "flow_graph/v2/check.py",
+    "flow_graph/v2/graph_io.py"
+   ],
+   "reason": "The engine v2 writer of record: the default regen path (flow_graph.v2.check.update) writes the graph, the registry documents and the input manifest v2. Not a stage of this (legacy) stage graph; --legacy retains it unchanged."
   }
- ]
+ ],
+ "input_manifest_v2": "flow_graph/derived/_input_manifest_v2.json"
 }

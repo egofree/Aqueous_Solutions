@@ -35,8 +35,10 @@ STAGES = MANIFEST['stages']
 RUN_GLOBS = [stage_script(s['argv']) for s in STAGES] + [g for s in STAGES for g in s.get('invokes', [])]
 NOT_STAGE_GLOBS = [g for n in MANIFEST.get('not_stages', []) for g in n['scripts']]
 OWNED_GLOBS = ([g for s in STAGES for g in s.get('outputs', []) + s.get('amends', [])]
-               + [g for g in (MANIFEST['receipt'], MANIFEST.get('input_manifest')) if g])
-               # the receipt and the input manifest are written by regen.py itself
+               + [g for g in (MANIFEST['receipt'], MANIFEST.get('input_manifest'),
+                              MANIFEST.get('input_manifest_v2')) if g])
+               # the receipts and the input manifests are written by the runners themselves
+               # (regen.py the v1 pair; the engine v2 update the v2 manifest)
 
 
 def writes_files(src):
