@@ -49,7 +49,7 @@ REMAINING (rows and outputs NOT ported here, each with its reason):
   pure function of the model. The JSON view and the DOT text (that render's
   exact inputs) are ported and byte-exact. media/_generated.json is the
   pattern manifest (bookkeeping; dies per the ledger).
-- placement_routes (docs-authority/ISO_ROUTES.md/.json, iso/ISO_SHEETS.csv,
+- placement_routes (docs-authority/ISO_ROUTES.md/.json, docs-authority/iso/ISO_SHEETS.csv,
   ISO_SHEETS.md): executes the line-list stage namespace (runpy
   docs-authority/_line_list.py -> rows, C) for the piped rows and unit
   centres - the line_list family (section E) has not landed, so the routed
@@ -1594,7 +1594,7 @@ def render_site_axo(m, inputs):
 
 def _site_plan_renderer(level):
     def f(m, inputs):
-        name = 'media/3d/LEVEL_%s.svg' % level.replace('-', 'm')
+        name = 'media/3d/LEVEL_{}.svg'.format(level.replace('-', 'm'))
         st = _site3d_state(m, inputs)
         if st is None:
             return _stub(name, 'placement_seed')

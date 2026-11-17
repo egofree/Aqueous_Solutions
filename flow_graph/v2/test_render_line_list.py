@@ -10,7 +10,7 @@ the committed document file; the acceptance is byte-exact reproduction. The
 proofs:
 
 - byte-exact: docs-authority/LINE_LIST.md, ISO_ROUTES.md, ISO_ROUTES.json,
-  iso/ISO_SHEETS.csv, ISO_SHEETS.md and every committed nozzle CSV renders
+  docs-authority/iso/ISO_SHEETS.csv, ISO_SHEETS.md and every committed nozzle CSV renders
   from the model seeded from the committed graph and equals the committed
   file bytes exactly (the P&ID sheets and the drawing register verify in
   test_render_pid_drawings.py);

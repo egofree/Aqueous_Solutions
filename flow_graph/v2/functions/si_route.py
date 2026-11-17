@@ -549,7 +549,7 @@ def _assert_seed_topology(b):
         e = b.edges[sid]
         assert (e['from_unit_id'], e['to_unit_id']) == (a, zb), f'{sid} names another stream'
     # the SI_REFINE node exists: created by v1 only on a graph that predates
-    # the route; the seed carries it with its creation-time notes/presence
+    # the route; the seed carries it with its creation-time note and presence fields
     for uid in ('SI_REDUCE', 'SI_REFINE', 'WAFER_FAB', 'SOLAR_PV_CELL', 'METAL_STORE', 'PV_ARRAY'):
         assert uid in b.nodes, f'the {uid} node is composer-authored seed'
     # the SF feeds exist: created only when missing, header tray on creation

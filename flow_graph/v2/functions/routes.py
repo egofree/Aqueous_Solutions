@@ -32,7 +32,7 @@ take-off tables as the decimal strings of the v1 literals). Pure: no I/O, no
 wall-clock, no RNG.
 
 Golden (test_render_line_list.py): the committed docs-authority/ISO_ROUTES.md,
-ISO_ROUTES.json, iso/ISO_SHEETS.csv and ISO_SHEETS.md - byte-exact through the
+ISO_ROUTES.json, docs-authority/iso/ISO_SHEETS.csv and ISO_SHEETS.md - byte-exact through the
 render lane.
 """
 RACK = 3200                                   # datum + rack height, mm (AQS-PIP-002)

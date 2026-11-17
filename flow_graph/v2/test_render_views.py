@@ -81,7 +81,7 @@ INPUTS = _inputs()
 
 EXPECTED_PATHS = [p for p, _ in _views.DOCS]
 
-PAYLOAD_PATHS = {p for p in EXPECTED_PATHS if p.startswith('docs-authority/SECTOR_DEFINITIONS')
+PAYLOAD_PATHS = {p for p in EXPECTED_PATHS if p.startswith('docs-authority/SECTOR_DEFINITIONS.md')
                  or p.startswith('media/3d/')}
 
 

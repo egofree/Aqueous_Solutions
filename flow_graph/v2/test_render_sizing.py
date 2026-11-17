@@ -110,7 +110,8 @@ def test_render_runs_every_entry():
 
 def test_render_one_rejects_unknown_path():
     with pytest.raises(KeyError):
-        render_one('docs-authority/sizing/NO_SUCH_DOC.md', model(), INPUTS)
+        # a real, tracked path that no renderer owns (the registry gate, not the file system)
+        render_one('flow_graph/plant_flow_graph.json', model(), INPUTS)
 
 
 def test_determinism_two_passes_byte_identical():

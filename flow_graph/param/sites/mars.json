@@ -441,7 +441,7 @@
       "kind": "night_and_dust",
       "days_entry": "solar.dust_stretch_d",
       "pv_stretch_output_frac": 0.3,
-      "study": "F-20261113-01 mars surface-power design study, complete; the mix enters power_portfolio.sources as designed sources under the Q-024 revision (2026-11-15); the installed counts solve in flow_graph/param/site_units from the portfolio balance and the backup_fuel critical list",
+      "study": "F-20261113-01 mars surface-power design study, complete; the mix enters power_portfolio.sources as designed sources under the Q-024 revision (2026-11-15); the installed counts solve in flow_graph/param/site_units.py from the portfolio balance and the backup_fuel critical list",
       "load_book": {
        "plant_demand_kW": 103.2,
        "daily_energy_kWh": 2476.8,
@@ -469,7 +469,7 @@
        "study_installed_units_pv_only_balance": 3,
        "study_carries_kW_e": 80.0,
        "basis": "NASA Fission Surface Power 40 kW electric-class unit; the study booked the PV-only-balance dust deficit 67.8 kW / 40 kW per unit = 1.69 -> 2 duty units plus one installed spare (N+1), at PV share 1.0. The fission carrier is dust-blind: it delivers 100 percent through the stretch",
-       "status": "designed source (study F-20261113-01 complete; Q-024 revision 2026-11-15); the installed count solves in flow_graph/param/site_units at the issued mix shares and is stamped on the FSP_40K graph node"
+       "status": "designed source (study F-20261113-01 complete; Q-024 revision 2026-11-15); the installed count solves in flow_graph/param/site_units.py at the issued mix shares and is stamped on the FSP_40K graph node"
       },
       "rtg": {
        "kind": "radioisotope thermoelectric generator, NASA MMRTG class (general-purpose heat source)",
@@ -477,7 +477,7 @@
        "controls_trickle_units": 19,
        "carries_kW_e": 2.09,
        "basis": "MMRTG-class 110 W electric at beginning of mission; sized on the 2.0 kW controls-and-instruments slice of the critical list: 2000 W / 110 W = 18.2 -> 19 units at 2.09 kW electric, the extreme-reliability trickle that keeps controls alive through a loss of both PV and fission. The full 14.6 kW critical list on RTGs would need 133 units and is rejected as incommensurate; kilowatt-class criticals stay on the fission base with the fuel cell and battery as the diverse backups (AQS-ELEC-007)",
-       "status": "designed source (study F-20261113-01 complete; Q-024 revision 2026-11-15); the count solves in flow_graph/param/site_units from the backup_fuel critical list and is stamped on the MMRTG graph node"
+       "status": "designed source (study F-20261113-01 complete; Q-024 revision 2026-11-15); the count solves in flow_graph/param/site_units.py from the backup_fuel critical list and is stamped on the MMRTG graph node"
       },
       "dust_season_store": {
        "dust_demand_kWh": 222914,
