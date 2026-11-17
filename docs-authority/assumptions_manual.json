@@ -8305,7 +8305,7 @@
  },
  {
   "id": "A-M-497",
-  "value": "the raceway mineral-nitrate dose is made on site: NUT_AN oxidizes half its ammonia draw with plant oxygen (NH3 + 2 O2 -> HNO3 + H2O, Ostwald class) and neutralizes the acid with the other half to ammonium nitrate (net 2 NH3 + 2 O2 -> NH4NO3 + H2O), diluted to the FARM.classes.nutrient_N_wt dosing strength; the dock mineral line NUT_AQUA re-points to the skid and NUT_AQUA_BED retires (task X-QA-11, the A-M-430 in-plant route landed)",
+  "value": "the raceway mineral-nitrate dose is made on site: NUT_AN oxidizes half its ammonia draw with plant oxygen (NH3 + 2 O2 -> HNO3 + H2O, Ostwald class) and neutralizes the acid with the other half to ammonium nitrate (net 2 NH3 + 2 O2 -> NH4NO3 + H2O), diluted to the FARM.classes.nutrient_N_wt dosing strength; the dock mineral line NUT_AQUA re-points to the skid and NUT_AQUA_BED retires (task X-QA-11, the A-M-430 in-plant route in force)",
   "units": "kg/d (dose from the crop uptake; reactants at the nut_an_selectivity driver)",
   "where": "flow_graph/param/nitrate_route.py NUT_AN; flow_graph/param/farm_balance.py dose computation; drivers nut_an_selectivity / nut_an_kW / FARM.classes.nutrient_N_wt",
   "basis": "the plant's only new-nitrogen input is the WS_AMMONIA Haber line on the air-separation nitrogen; the skid converts it to nitrate on site. The dose follows the crop uptake at the registered N classes less the fish-stock return (A-M-430 basis; farm_balance.compute). The media-bed uptake is smaller than the fish return and the loop passes the beds before the raceway, so the loop nitrate covers the beds. Reactants feed at the 0.97 selectivity driver and the unconverted slip vents to NOX_SCRUB, whose nitrate liquor feeds NUTRIENT_DOSE, so the slip nitrogen stays a booked nutrient",
@@ -8366,7 +8366,7 @@
   "id": "A-M-501",
   "value": "the free-choice quail grit is crushed baked eggshell from the plant's own shell return: the galley shell stream (EGGSHELL_RET, baked crushed eggshell at the ~38 g Ca/d basis, shell_dm of the layer flock) splits at FEED_PREP between the layer-mash shell share and the 0.035 kg/d free-choice hopper on SHELL_GRIT, and the dock mineral-manifest line CA_HOPPER retires (task X-QA-11)",
   "units": "kg/d (grit = the registered ca_hopper_kgd class)",
-  "where": "flow_graph/param/farm_balance.py SHELL_GRIT and the LM shell split; drivers FARM.classes.ca_hopper_kgd",
+  "where": "flow_graph/param/farm_balance.py SHELL_GRIT and the layer-mash shell split; drivers FARM.classes.ca_hopper_kgd",
   "basis": "eggshell is ~95 % CaCO3 by mass (the shell return's 38 g Ca/d on 0.1 kg shell, A-M-426): the layer shell flux 0.06 kg/d covers the 0.035 kg/d free-choice grit with the balance staying in the mash, inside the A-M-426 in-class ration Ca margin (the BSFL Ca class 5-8 % carries the remainder, insect-farming.md:116); the coturnix free-choice Ca class is TECHTREE coturnix.md:60",
   "sensitivity": "the grit follows the ca_hopper_kgd driver 1:1; the layer-mash shell share takes the balance of the shell flux; a flock draw-down shrinks both the shell flux and the grit demand together",
   "replaced_by": "grit weigh and shell assay at the FEED_PREP commissioning (X-FARM-10)",

@@ -1,8 +1,8 @@
 # Glossary
 
 Document number: AQS-GLO-001  
-Revision: F  
-Date: 2026-11-10  
+Revision: G  
+Date: 2026-11-16  
 
 | Rev | Description | Date |
 |---|---|---|
@@ -12,6 +12,7 @@ Date: 2026-11-10
 | D | Entries added: LB (lake_boehmer site code) and KFST (Fort Stockton-Pecos County Airport station identifier); the Rev (graph) entry names the revision field instead of the current letter | 2026-11-02 |
 | E | Entries added for the manufacturing-model status codes (M0 to M3), the acceptance criteria sets (A-core and the class sets), the fabrication route classes (F-xxx), route hold, and the regeneration receipt and its entries | 2026-11-04 |
 | F | Entries added for the sources of the on-site route program: BCS and SGL (reference publishers), DNQ (the photoactive compound of the on-site photoresist) and SKF (the relubrication rule of the on-site grease route) | 2026-11-10 |
+| G | Entries added for the ISA-5.1 controller tag letters (FIC, LIC, TIC), BA (bright-annealed tube finish), TAN (total ammonia nitrogen) and RTG (radioisotope thermoelectric generator) | 2026-11-16 |
 
 
 ## 1. Purpose and scope
@@ -1452,3 +1453,9 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {HDG -- Hot-dip galvanised steel. The zinc-coated structural class for livestock housing frames, wire floors and hardware cloth (CHICKEN_COOP, DUCK_PEN, QUAIL_CAGE, RABBIT_HUTCH).}
 {ZBFB -- Zinc-bromine flow battery. The aqueous Zn/Br2 reversible-electrode chemistry of the ZNBR2 store: zinc plates on charge and bromine is held in the electrolyte (A-M-135/179; ZBFB_REVIEW2023).}
 {CCM -- Catalyst-coated membrane. The PEM membrane carrying the anode and cathode catalyst layers; the active element of one electrolyser or fuel-cell cell (H2O_ELYZ, FUEL_CELL).}
+{FIC -- Flow indicating controller (instrument tag letters, ISA-5.1).}
+{LIC -- Level indicating controller (instrument tag letters, ISA-5.1).}
+{TIC -- Temperature indicating controller (instrument tag letters, ISA-5.1).}
+{BA -- Bright annealed: the tube finish of annealing in an oxygen-free furnace gas, which leaves the bore clean and passivated for high-purity water (HDR_UPW).}
+{TAN -- Total ammonia nitrogen: the ammonia plus ammonium nitrogen measure of fish-tank water quality; the biofilter nitrifies it to nitrate (AQUA_TANK, BIOFILTER; A-M-430).}
+{RTG -- Radioisotope thermoelectric generator: Pu-238 decay heat on thermoelectric conversion; the multi-mission (MMRTG) class delivers about 110 W electric per unit (site generation portfolio; F-20261113-01, Q-024).}
