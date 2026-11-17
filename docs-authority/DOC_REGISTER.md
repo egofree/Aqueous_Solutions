@@ -285,6 +285,7 @@ Table 3.1. Document numbers in use
 | AQS-SEL-FP | `notes/MONOMER_ROUTE.md` | A | 2026-10-16 | Monomer route selection — VDF and TFE | current |
 | AQS-SEL-TI-MO | `notes/TI_MO_SELECTION.md` | A | 2026-10-16 | TI_CELL and MO_CELL process selection | current |
 | AQS-SERIES-001 | `notes/p4_cutover_2026-11-16.md` | A | 2026-11-16 | The P4 cutover: the engine v2 update becomes the writer of record (2026-11-16) | current |
+| AQS-SERIES-002 | `notes/p5_failing_gates_2026-11-16.md` | A | 2026-11-16 | The post-P4 failing gates: tests and style re-pointed to the v2 contracts (2026-11-16) | current |
 | AQS-SI-001 | `docs-authority/SILICON.md` | C | 2026-10-11 | Silicon reduction | current |
 | AQS-SIDE-001 | `docs-authority/SIDE_ASSAY.md` | C | 2026-10-12 | Assay and relief | current |
 | AQS-SIDE-003 | `docs-authority/SIDE_CRYO.md` | C | 2026-10-12 | Cold box module | current |

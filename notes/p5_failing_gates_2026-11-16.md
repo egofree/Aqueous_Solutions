@@ -44,12 +44,13 @@ artifact, or the engine.
   baseline profile through site.py (explicit baseline sid, so the solve
   stays payload-pure). Every committed document re-renders byte-identical,
   because the baseline constants equal the literals.
-- Stale citations (1 test): 14 citations named moved, retired or extended
-  paths (iso/ISO_SHEETS.csv, notes/, flow_graph/ga_envelopes.load, the
-  site_units module without its extension, a printf pattern the scanner
-  cannot read, a deliberate missing-document fixture, a prefix string).
-  Each citation was corrected at its source; the missing-document fixture
-  in test_render_sizing now uses a real, unregistered path.
+- Stale citations (1 test): 14 citations named paths that had moved (the
+  ISO_SHEETS census CSV's pre-move location under the repository top, the
+  retired notes tree, the envelopes module and the site_units module named
+  without their extensions), one printf-style media pattern the scanner
+  cannot read, one deliberate missing-document fixture, and one prefix
+  string. Each citation was corrected at its source; the missing-document
+  fixture in test_render_sizing now uses a real, unregistered path.
 - CRYO_O2 N10 (1 test): the ammonia-oxidation oxygen feed nozzle carried the
   600 mm study-box datum, which fits no side-rail band of the A-M-167 rack
   (H 600), and no build record existed. The datum is revised to the 520 mm
