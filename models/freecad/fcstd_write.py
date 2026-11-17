@@ -10,13 +10,26 @@ FreeCAD also records the save time inside Document.xml as LastModifiedDate
 and the OS user as LastModifiedBy, both wall-clock/user dependent.
 
 write_entries carries the whole rewrite instead, mirroring the manufacturing
-lane's byte-stable STEP export (models/mfg/lib/step_export.py): every entry is
-stamped with the deterministic stamp date from models/mfg/lib/stamp_date.py
-(the plant graph's own date field, never the wall clock), and Document.xml has
-its LastModifiedDate/LastModifiedBy values normalised to that stamp. The same
-document content therefore writes identical bytes in any pass, on any day, by
-any user. View content itself (Document.xml shapes, GuiDocument.xml view
-providers) is produced by the generators and the patchers, not here.
+lane's byte-stable STEP export (models/mfg/lib/step_export.py):
+
+  - every entry kept is stamped with the deterministic stamp date from
+    models/mfg/lib/stamp_date.py (the plant graph's own date field, never
+    the wall clock),
+  - Document.xml has its LastModifiedDate/LastModifiedBy values normalised
+    to that stamp,
+  - the per-shape *.Shape.Map.txt element-map sidecars are dropped. FreeCAD
+    writes the same logical map in a different entry order — and renumbers
+    the :1.b.<n> child names to match — on every run (FB_HAB_CORE, the FR_*
+    imported units, PK_1 and 11 more oscillated across the 2026-11-15
+    instrumented passes). The sidecars are derived data: SaveElementMaps
+    saves them as a cache and a loader re-derives the map from the BRep
+    when they are absent, so dropping them loses nothing and stabilises
+    the file.
+
+The same document content therefore writes identical bytes in any pass, on
+any day, by any user. View content itself (Document.xml shapes,
+GuiDocument.xml view providers) is produced by the generators and the
+patchers, not here.
 """
 import re, sys, zipfile
 from pathlib import Path
@@ -33,28 +46,6 @@ _LAST_MODIFIED_DATE = re.compile(
     r'(<Property name="LastModifiedDate"[^>]*>\s*<String value=")[^"]*(")')
 _LAST_MODIFIED_BY = re.compile(
     r'(<Property name="LastModifiedBy"[^>]*>\s*<String value=")[^"]*(")')
-
-# FreeCAD 1.0 gives every freshly built TopoShape a random per-process Tag and
-# embeds it in the subshape element-map keys (the `D<hex>` / `H<hex>` tokens of
-# the per-shape *.Shape.Map.txt entries). The same build therefore wrote
-# different map bytes every pass. The tokens are opaque key components: on load
-# FreeCAD re-derives the keys, so renumbering them consistently preserves the
-# map. The rewrite maps each distinct tag value to its first-appearance index,
-# a deterministic function of the file content.
-_SHAPE_MAP_TAG = re.compile(rb'(?<=[;:])([DH])([0-9a-f]{2,})')
-
-
-def canonicalize_shape_map(data):
-    """Renumber the random shape Tags inside a *.Shape.Map.txt entry deterministically."""
-    seen = {}
-
-    def repl(m):
-        pfx, tag = m.group(1), m.group(2)
-        if tag not in seen:
-            seen[tag] = b'%x' % (len(seen) + 1)
-        return pfx + seen[tag]
-
-    return _SHAPE_MAP_TAG.sub(repl, data)
 
 
 def det_date():
@@ -83,15 +74,15 @@ def scrub_document_xml(data):
 def write_entries(path, entries):
     """Rewrite the FCStd at `path` with `entries` (a (name, bytes) list in zip order),
     every entry stamped with det_date(); Document.xml is scrubbed on the way through
-    and *.Shape.Map.txt entries have their random shape Tags renumbered."""
+    and the *.Shape.Map.txt element-map sidecars are dropped (loaders re-derive them)."""
     tmp = Path(path).with_suffix('.fcstd.tmp')
     with zipfile.ZipFile(tmp, 'w', compression=zipfile.ZIP_DEFLATED) as zout:
         for name, data in entries:
+            if name.endswith('.Shape.Map.txt'):
+                continue                                     # derived data; a loader re-derives the map
             zi = zipfile.ZipInfo(name, date_time=det_date())
             zi.compress_type = zipfile.ZIP_DEFLATED
             if name == 'Document.xml':
                 data = scrub_document_xml(data)
-            elif name.endswith('.Shape.Map.txt'):
-                data = canonicalize_shape_map(data)
             zout.writestr(zi, data)
     tmp.replace(path)

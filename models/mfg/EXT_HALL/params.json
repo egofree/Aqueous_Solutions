@@ -60,19 +60,19 @@
   "material": "steel portal frames; insulated metal roof and wall panels (IECC U-factor classes, A-M-104)",
   "massing_basis": "column/wall/roof sections are massing values; the structural design and the fitout programme stay with their lanes (duty section 8; hold, WORK_ORDER W12)",
   "hvac": {
-   "light_kW": 22.62,
-   "vent_kW": 38.173,
-   "envelope_kW": 28.859,
-   "total_kW": 89.651,
-   "vent_L_s": 7711.2,
-   "Qh_kW": 26.884,
-   "Qc_kW": 158.573,
-   "slab_kW": 1.588,
-   "gains_kW": 32.259,
+   "light_kW": 22.208,
+   "vent_kW": 37.478,
+   "envelope_kW": 28.334,
+   "total_kW": 88.019,
+   "vent_L_s": 7570.8,
+   "Qh_kW": 26.395,
+   "Qc_kW": 155.686,
+   "slab_kW": 1.56,
+   "gains_kW": 31.671,
    "pump_kW": 0.0,
    "mode": "air",
-   "peak_h_kW": 404.789,
-   "peak_c_kW": 358.071
+   "peak_h_kW": 397.421,
+   "peak_c_kW": 351.552
   }
  },
  "layout": {

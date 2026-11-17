@@ -99,7 +99,7 @@
   "unit": "BEE_HIVE",
   "from_clash_with": "CORR_L1_FARM",
   "dx_mm": 0,
-  "dy_mm": -4500
+  "dy_mm": -4550
  },
  {
   "unit": "BSFL_BIN",
@@ -178,7 +178,7 @@
   "from_clash_with": "REGROUP",
   "dx_mm": -12000,
   "dy_mm": 8000,
-  "gain_m": 42.3
+  "gain_m": 42.6
  },
  {
   "unit": "CRYO_CO2",
@@ -192,7 +192,7 @@
   "from_clash_with": "REGROUP",
   "dx_mm": -4500,
   "dy_mm": -4000,
-  "gain_m": 22.0
+  "gain_m": 21.9
  },
  {
   "unit": "PROD_C5_C10",
@@ -206,14 +206,14 @@
   "from_clash_with": "REGROUP",
   "dx_mm": -500,
   "dy_mm": 1500,
-  "gain_m": 3.6
+  "gain_m": 3.9
  },
  {
   "unit": "CRYO_N2",
   "from_clash_with": "REGROUP",
   "dx_mm": -4500,
   "dy_mm": 2000,
-  "gain_m": 7.1
+  "gain_m": 7.0
  },
  {
   "unit": "BMED_UPW_POLISH",
@@ -227,14 +227,14 @@
   "from_clash_with": "REGROUP",
   "dx_mm": -3500,
   "dy_mm": 1000,
-  "gain_m": 2.5
+  "gain_m": 2.6
  },
  {
   "unit": "H2O_ELYZ",
   "from_clash_with": "REGROUP",
   "dx_mm": -3500,
   "dy_mm": 4000,
-  "gain_m": 5.8
+  "gain_m": 5.4
  },
  {
   "unit": "CRYO_H2",
@@ -269,14 +269,14 @@
   "from_clash_with": "REGROUP",
   "dx_mm": -6500,
   "dy_mm": 0,
-  "gain_m": 4.2
+  "gain_m": 4.1
  },
  {
   "unit": "H2O_ELYZ",
   "from_clash_with": "REGROUP",
   "dx_mm": -11500,
   "dy_mm": 2500,
-  "gain_m": 7.4
+  "gain_m": 7.0
  },
  {
   "unit": "PROD_C5_C10",
@@ -290,20 +290,20 @@
   "from_clash_with": "REGROUP",
   "dx_mm": 0,
   "dy_mm": 2000,
-  "gain_m": 3.1
+  "gain_m": 3.4
  },
  {
   "unit": "CRYO_O2",
   "from_clash_with": "REGROUP",
   "dx_mm": -5000,
   "dy_mm": 2000,
-  "gain_m": 9.8
+  "gain_m": 9.7
  },
  {
   "unit": "CRYO_ASU",
   "from_clash_with": "REGROUP",
   "dx_mm": -4000,
   "dy_mm": 1000,
-  "gain_m": 10.0
+  "gain_m": 10.1
  }
 ]

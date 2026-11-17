@@ -12,7 +12,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/ROO
 
 - Build bbox 649 x 520 x 748 mm against the 649 x 520 x 748 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/ROOF_TANK/export/roof_tank.step`; export STL closed and manifold, 1 solid(s); `cad/stl/ROOF_TANK.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 26 rows of `docs-authority/nozzles/ROOF_TANK.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
+- Nozzles: all 27 rows of `docs-authority/nozzles/ROOF_TANK.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
 - A-VES: the 0.1997 m3 liquor volume is reported - the duty section 2 two-minute figure is not a designed volume and no residence time is derived
 - Coil area reported as DRAWN: no authority sizes it and the AQS-STD-002 section 10 Rev J supersession is a named conflict hold (W12)
 - Internals: dip pipe + stilling well per fab/ROOF_TANK.md (AQS-MFG-001); dimensions study values (W12)

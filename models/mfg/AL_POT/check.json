@@ -184,7 +184,7 @@
   "external_parts": [],
   "cap_solids": 2,
   "all_parts_valid": true,
-  "anode_j_A_cm2_drawn": 0.296,
+  "anode_j_A_cm2_drawn": 0.152,
   "melt_volume_litres": 187.3,
   "part_mass_kg": {
     "casing": 296.1,

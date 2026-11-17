@@ -12,7 +12,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/CRY
 
 - Build bbox 6696.0 x 1500.0 x 600.1 mm: fills the node rack envelope 6696 x 1500 x 600 mm exactly (tracker check green)
 - Solid source: build export `models/mfg/CRYO_O2/export/cryo_o2.step`; export STL closed and manifold; `cad/stl/CRYO_O2.stl` replaced from the build (ASCII, metres)
-- Nozzles: all 9 rows of `docs-authority/nozzles/CRYO_O2.csv` present at face and bore; heights that fit the 600 rack drawn as issued, the rest clamped with named holds (check.nozzles_drawn)
+- Nozzles: all 10 rows of `docs-authority/nozzles/CRYO_O2.csv` present at face and bore; heights that fit the 600 rack drawn as issued, the rest clamped with named holds (check.nozzles_drawn)
 - A-COL: the tube bank is the machine here; the crew reserve is a separated bank behind a divider (NFPA 2 ch. 7); relief per the node API 520/521 fire case per half bank (2 valves, 9 mm)
 - BOM `models/mfg/CRYO_O2/bom.csv` (generated from the model: qty, material, mass, make-or-buy); fasteners and WORK_ORDER beside it
 - Drawing set `models/mfg/CRYO_O2/drawings/` (GA front/side, nozzle orientation, 2 part sheets, iso; title blocks per AQS-DWG-002)

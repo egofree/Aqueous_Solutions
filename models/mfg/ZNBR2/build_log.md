@@ -11,9 +11,9 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/ZNB
 ## Checks
 
 - Build bbox 7900 x 6050 x 1971 mm against the 7900 x 6050 x 1970 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
-- Solid source: build export `models/mfg/ZNBR2/export/znbr2.step`; export STL closed and manifold, 658 solid(s); `cad/stl/ZNBR2.stl` replaced from the build (ASCII, metres)
+- Solid source: build export `models/mfg/ZNBR2/export/znbr2.step`; export STL closed and manifold, 641 solid(s); `cad/stl/ZNBR2.stl` replaced from the build (ASCII, metres)
 - Nozzles: all 12 rows of `docs-authority/nozzles/ZNBR2.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
-- A-CELL: 38 modules x 95 plates of 994.5 x 500 active at the 6 mm pitch = 1795.07 m2 against the booked 1795.1 m2 (purge_basis; j.A = current closes; X-MFG-43, A-M-456)
+- A-CELL: 37 modules x 95 plates of 997.1 x 500 active at the 6 mm pitch = 1752.4 m2 against the booked 1752.4 m2 (purge_basis; j.A = current closes; X-MFG-43, A-M-456)
 - Electrolyte holdup reported (47 reservoirs, 2 M ZnBr2, A-M-457); no residence time derived (duty section 2 claims no holdup; A-VES rule)
 - Purchased items as envelopes per plan rule 6: pumps (A-M-179 aux share) and coolers (A-M-455 charge-window rate), one of each per module
 - Placement hold named: the seed block under-books the machine; floor-space reservation is the consequence (WORK_ORDER W12(1)); nothing is resized

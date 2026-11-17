@@ -7,4 +7,4 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 6,PP quench-duct envelope 1500 x 100 x 300 beside the winder,1,PP duct (duty section 3),5.0,make,PP quench ducting per duty section 3
 7,Phosphorus-FR finish dosing skid envelope 300 x 300 x 400,1,PP/PTFE contact (duty section 3),2.5,make,the ~2 % pick-up FR finish (A-M-225); skid contact PP/PTFE per duty section 3
 8,"Spin pump + drive set, purchased, 0.3 kW node duty class",1,purchased drive set (envelope),0.0,buy,"node electrical duty 0.3 kW - the rating from the node; purchased per plan rule 6; the maker's mass governs (hold, WORK_ORDER W12)"
-9,"Nozzle set per docs-authority/nozzles/POLY_FIBER.csv: 7 rows - 6 DN15 stubs (pellet, FR finish, scrap, fleece, drain, vent) and the N7 cable row carried, never drawn",6,SS304,0.4,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4
+9,"Nozzle set per docs-authority/nozzles/POLY_FIBER.csv: 7 rows - 6 DN15 stubs (pellet, FR finish, scrap, fleece, drain, vent) and the N7 cable row carried, never drawn",6,SS304,0.5,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4

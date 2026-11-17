@@ -167,6 +167,13 @@ chute2 = box(0.0, 150, 130, 35, 160, 90)                         # flush at the 
 lance2 = tube(22.0, 11.0, (70, 230, 160), "X", 100)              # DN44 class lance into the bath
 parts["brine_inlet_group_2"] = chute2.union(lance2)
 
+# ---------------- N10 third brine inlet: chute stub + lance -----------------------
+# The N2 idiom in a study slot above N2: the crystallized-CaCl2 feed from BRINE_CRYS
+# (stream IA-BRINE-CACL2, the X-QA-11 dock-import recovery; schedule row N10).
+chute3 = box(0.0, 490, 130, 35, 160, 90)                         # flush at the -X face (see N2)
+lance3 = tube(22.0, 11.0, (70, 570, 160), "X", 100)              # DN44 class lance into the bath
+parts["brine_inlet_group_3"] = chute3.union(lance3)
+
 # ---------------- N4 drain well ---------------------------------------------------
 parts["drain_well"] = tube(30.5, dl, (256, 160, 0), "Z", 50)   # bore matches the casing pass: fuses
 
@@ -198,8 +205,8 @@ for k, v in parts.items():
 cap_solid = body.val()
 cap_solid.exportStl(str(out / "ca_pot.stl"), tolerance=0.4, angularTolerance=0.4, ascii=True)
 
-EXTERNAL = ("ca_tap_group", "brine_inlet_group", "brine_inlet_group_2", "cl2_stub",
-            "cl2_stub_phos", "cl2_stub_silane")   # N1/N2/N7/N3/N8/N9 schedule hardware, drawn flush at the faces
+EXTERNAL = ("ca_tap_group", "brine_inlet_group", "brine_inlet_group_2", "brine_inlet_group_3",
+            "cl2_stub", "cl2_stub_phos", "cl2_stub_silane")   # N1/N2/N7/N10/N3/N8/N9 schedule hardware, drawn flush at the faces
 in_env = None
 for k, v in parts.items():
     if k in EXTERNAL:
@@ -229,6 +236,7 @@ rho = {"casing": 7.85e-6, "fibre_lining": 128e-9, "ram_lining": 1.55e-6, "hood_h
        "offtake_riser": 7.85e-6, "riser_flange": 7.85e-6, "dip_leg": 7.85e-6, "vent_stub": 7.85e-6,
        "cl2_stub": 7.85e-6, "cl2_stub_phos": 7.85e-6, "cl2_stub_silane": 7.85e-6,
        "ca_tap_group": 1.55e-6, "brine_inlet_group": 7.85e-6, "brine_inlet_group_2": 7.85e-6,
+       "brine_inlet_group_3": 7.85e-6,
        "drain_well": 1.55e-6}
 mass = {k: round(v.val().Volume() * rho[k], 1) for k, v in parts.items()}
 vol_melt = sum(v.val().Volume() for v in inv.values())
@@ -270,6 +278,10 @@ PLACE = {
            "drawn_height_mm": 600.0,
            "note": "chlorine make-up of the chlorosilane loop: DN15 stub flush at the +Y face, "
                    "in a study slot beside N3"},
+    "N10": {"style": "stub", "face": "-X", "part": "brine_inlet_group_3", "drawn_height_mm": 160.0,
+            "note": "crystallized CaCl2 from BRINE_CRYS in (recovered, was the dock import): chute "
+                    "flush at the -X face (z 130..220) and the DN44-class lance into the bath at "
+                    "z 160, in a study slot beside N2/N7"},
 }
 drawn = {}
 for tag, rec in PLACE.items():
@@ -354,6 +366,11 @@ rows = [
     ["19", "N9 chlorine make-up stub DN15 at +Y z 600 (chlorosilane loop, study slot beside N3)", 1,
      "carbon steel (dry hot Cl2)", mass["cl2_stub_silane"], "make",
      "task-04 schedule N9; chlorine make-up of the chlorosilane loop"],
+    ["20", "N10 brine inlet group: chute box flush at the -X face + DN44 lance into the bath at z 160 "
+           "(study slot beside N2/N7)", 1,
+     "CS chute, carbon lance", mass["brine_inlet_group_3"], "make",
+     "task-04 schedule N10; crystallized CaCl2 feed from BRINE_CRYS, stream IA-BRINE-CACL2 "
+     "(the X-QA-11 dock-import recovery)"],
 ]
 with open(HERE / "bom.csv", "w", newline="") as f:
     w = csv.writer(f)

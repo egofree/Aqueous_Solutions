@@ -6,4 +6,4 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 5,Pattern die envelope 150 x 150 x 200,1,SS304 (die material study),5.4,make,"the pattern dies the work order names; die material and cavities are finished against the first shell run (hold, WORK_ORDER W12)"
 6,PP-H wax storage bin envelope 200 x 200 x 300,1,PP-H (duty section 3),1.2,make,duty section 3 storage-bin class at the 80 C thermoplastic house limit
 7,PE drain pan envelope 200 x 150 x 60 under the injector deck,1,PE (duty section 3),0.3,make,duty section 3 drain-pan class
-8,"Nozzle set per docs-authority/nozzles/WAX_PATTERN.csv: 6 rows - 2 solids rows drawn as DN15 stubs (bore not calculated), DN15 reclaim, drain, vent, and the N6 cable row carried, never drawn",5,SS304,0.3,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4
+8,"Nozzle set per docs-authority/nozzles/WAX_PATTERN.csv: 6 rows - 2 solids rows drawn as DN15 stubs (bore not calculated), DN15 reclaim, drain, vent, and the N6 cable row carried, never drawn",5,SS304,0.4,make,schedule tags/faces/heights verbatim; atmospheric per duty section 4

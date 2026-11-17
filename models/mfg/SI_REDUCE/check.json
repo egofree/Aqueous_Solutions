@@ -26,9 +26,9 @@
     },
     "duty": {
       "duty": "carbothermic silicon reduction: the briquetted crib-silicate burden and the pyrolysis char -> metallurgical-grade silicon for the CZ charge (route si_refine.py, A-M-472)",
-      "si_kgd": 0.2044,
-      "sio2_kgd": 0.4373,
-      "char_kgd": 0.1748
+      "si_kgd": 0.2029,
+      "sio2_kgd": 0.4341,
+      "char_kgd": 0.1736
     },
     "heater": {
       "kw": 5.0,

@@ -37,7 +37,7 @@
       "height_mm": 160.0,
       "drawn_height_mm": 160.0,
       "xy_mm": [
-        1535.4,
+        1506.1,
         650.0
       ],
       "schedule_rating": "Class 150",
@@ -51,7 +51,7 @@
       "height_mm": 160.0,
       "drawn_height_mm": 160.0,
       "xy_mm": [
-        1564.7,
+        1535.4,
         650.0
       ],
       "schedule_rating": "Class 150",
@@ -114,6 +114,34 @@
       "service": "vent",
       "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4); the schedule datum z 800 sits below the build height 1900 - drawn flush at the envelope top (hold, W12)"
     },
+    "N8": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1564.7,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "phosphoric acid of the phosphate-FR finish",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
+    "N9": {
+      "style": "tube_stub",
+      "dn": "DN15",
+      "face": "-Y",
+      "height_mm": 160.0,
+      "drawn_height_mm": 160.0,
+      "xy_mm": [
+        1594.0,
+        650.0
+      ],
+      "schedule_rating": "Class 150",
+      "service": "ammonia of the phosphate-FR finish",
+      "note": "atmospheric open-bore tube stub flush at the envelope face (duty section 4)"
+    },
     "N7": {
       "style": "carried",
       "dn": "cable",
@@ -124,7 +152,7 @@
       "note": "power terminal row - a cable schedule row: carried verbatim, never drawn"
     }
   },
-  "nozzle_count_schedule": 7,
+  "nozzle_count_schedule": 9,
   "nozzle_idiom": "atmospheric open-bore tube stubs flush at the envelope faces (duty section 4); N1 pellet draw and N2 FR finish in on -Y at z 160; N3 spin scrap and N4 fleece out on +Y at z 600; N5 drain flush at the envelope bottom; N6 vent flush at the envelope top (the schedule z 800 datum sits below the 1900 build height); N7 is a cable schedule row, carried in the record, never drawn; no flange drawn (W4 110 % rule); the schedule rating column (Class 150) carried verbatim as text",
   "part_mass_kg": {
     "cabinet_shell": 826.7,
@@ -135,7 +163,7 @@
     "spin_head": 4.2,
     "quench_duct": 5.0,
     "fr_dose_skid": 2.5,
-    "nozzles": 0.4
+    "nozzles": 0.5
   },
   "cadquery": "2.8.0"
 }
