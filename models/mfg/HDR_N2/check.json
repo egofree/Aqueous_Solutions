@@ -24,7 +24,7 @@
     "id_mm": 35.28,
     "id_grid_mm": 17.3,
     "id_note": "AQS-DUTY-075 sizing: required id 17.3 mm at 8 m/s, seat minimum DN32; the DN-8 grid bore and the Sch 40 bore both seat DN25; nothing resized",
-    "run_basis": "20 m run carried by the line-list route lengths (AQS-PIP-004); not redrawn",
+    "run_basis": "44.7 m run carried by the line-list route lengths (AQS-PIP-004); not redrawn",
     "material": "316L tube"
   },
   "nozzles_drawn": {

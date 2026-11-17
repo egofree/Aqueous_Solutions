@@ -120,16 +120,6 @@
       "schedule_rating": "Class 150",
       "note": "atmospheric stub on the rack side rail (hose makeup at the rack face)"
     },
-    "N10": {
-      "style": "stub",
-      "dn": "DN15",
-      "face": "+Y",
-      "height_mm": 600.0,
-      "x_mm": 3348.0,
-      "z_drawn_mm": 400.0,
-      "schedule_rating": "Class 150",
-      "note": "schedule datum 600 mm was issued against the 300 x 300 x 2000 study box that predates the A-M-167 rack envelope (H 600); drawn clamped at 400 mm - named hold, WORK_ORDER W12"
-    },
     "N7": {
       "style": "stub",
       "dn": "DN15",

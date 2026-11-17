@@ -24,7 +24,7 @@
     "id_mm": 35.28,
     "id_grid_mm": 18.1,
     "id_note": "AQS-DUTY-075 sizing: required id 18.1 mm at 1.5 m/s, seat minimum DN32; the DN-8 grid bore and the Sch 40 bore both seat DN25; nothing resized",
-    "run_basis": "20 m run carried by the line-list route lengths (AQS-PIP-004); not redrawn",
+    "run_basis": "37.1 m run carried by the line-list route lengths (AQS-PIP-004); not redrawn",
     "material": "PP-H SDR 11 (80 C class), fusion-welded (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate."
   },
   "nozzles_drawn": {

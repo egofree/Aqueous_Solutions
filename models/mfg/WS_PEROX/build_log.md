@@ -10,7 +10,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/WS_
 
 ## Checks
 
-- Build bbox 600 x 600 x 350 mm against the 600 x 600 x 350 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
+- Build bbox 600 x 600 x 600 mm against the 600 x 600 x 600 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/WS_PEROX/export/ws_perox.step`; export STL closed and manifold, 1 solid(s); `cad/stl/WS_PEROX.stl` replaced from the build (ASCII, metres)
 - Nozzles: all 6 rows of `docs-authority/nozzles/WS_PEROX.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
 - A-MACH: guard rail and slab anchors drawn; PVDF pump (duty section 3) and the electrolysis cell (AQS-DSN-OX-001 2.1: 12.31 A, 246 cm2, 30.8 W) drawn as their envelopes (plan rule 6); ratings per the maker TDS at order (W12)

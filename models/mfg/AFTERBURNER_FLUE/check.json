@@ -24,7 +24,7 @@
     "id_mm": 102.26,
     "id_req_mm": 18.3,
     "id_note": "node design sizing: required id 18.3 mm at 8 m/s, DN100 seat; the Sch 40 bore 102.26 mm sits inside the DN100 seat; nothing resized",
-    "run_basis": "20 m run carried by the line-list route lengths (AQS-PIP-004); not redrawn",
+    "run_basis": "44.7 m run carried by the line-list route lengths (AQS-PIP-004); not redrawn",
     "insulation_mm": 40.0,
     "insulation_basis": "study value; AQS-THM-003 states no thickness for this line (hold, WORK_ORDER W12); duty section 3: insulated to hold the wall above the acid dew point",
     "isolating_flange": "dielectric isolating flange at the FLUE_KO end (AQS-STD-002 section 4.3), drawn as the interface disc",

@@ -19,10 +19,10 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 1283 | 57 % |
-| organic | 619 | 28 % |
+| metal_plateable | 1299 | 58 % |
+| organic | 619 | 27 % |
 | unassigned | 132 | 6 % |
-| metal_reactive | 110 | 5 % |
+| metal_reactive | 113 | 5 % |
 | silicate_oxide | 93 | 4 % |
 
 Unassigned: 132 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
@@ -65,7 +65,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | C29_RECYCLE | 4 | 0 | 0 | 0 | 0 |
 | CAST_LINE | 12 | 2 | 0 | 0 | 1 |
 | CATCH_TANK | 0 | 6 | 0 | 0 | 0 |
-| CA_POT | 11 | 6 | 0 | 0 | 2 |
+| CA_POT | 12 | 6 | 0 | 0 | 2 |
 | CHICKEN_COOP | 2 | 2 | 2 | 0 | 0 |
 | COLD_MILL | 11 | 0 | 1 | 0 | 0 |
 | COMB_HEAT | 6 | 0 | 1 | 0 | 1 |
@@ -164,8 +164,8 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MF-01 x 112 | 3 | 1 | 0 | 2 | 0 |
 | MF-02 x 56 | 3 | 1 | 0 | 2 | 0 |
 | MF-03 x 24 | 5 | 1 | 0 | 2 | 0 |
-| MF-06 x 103 | 5 | 0 | 0 | 1 | 0 |
-| MF-07 x 22 | 5 | 0 | 0 | 1 | 0 |
+| MF-06 x 103 | 7 | 0 | 0 | 3 | 0 |
+| MF-07 x 22 | 7 | 0 | 0 | 3 | 0 |
 | MF-08 x 3 | 7 | 0 | 0 | 3 | 0 |
 | MF-09 x 56 | 7 | 0 | 0 | 3 | 0 |
 | MF-10 x 5 | 7 | 0 | 0 | 3 | 0 |
@@ -175,8 +175,12 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MF-14 x 2 | 7 | 0 | 0 | 3 | 0 |
 | MF-15 x 1 | 7 | 0 | 0 | 3 | 0 |
 | MF-16 x 1 | 7 | 0 | 0 | 3 | 0 |
-| MF-17 x 32 | 7 | 0 | 0 | 3 | 0 |
-| MF-19 x 3 | 7 | 0 | 0 | 3 | 0 |
+| MF-17 x 32 | 3 | 0 | 0 | 0 | 0 |
+| MF-19 x 3 | 4 | 0 | 0 | 2 | 0 |
+| MF-25 x 1 | 5 | 0 | 0 | 1 | 0 |
+| MF-27 x 16 | 3 | 0 | 0 | 0 | 0 |
+| MF-28 x 8 | 5 | 0 | 0 | 1 | 0 |
+| MF-30 x 1 | 5 | 0 | 0 | 1 | 0 |
 | MFG_SHOP | 6 | 0 | 6 | 0 | 0 |
 | MG_POT | 8 | 7 | 0 | 0 | 2 |
 | MO_CELL | 8 | 6 | 0 | 0 | 3 |

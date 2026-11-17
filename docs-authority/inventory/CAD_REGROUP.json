@@ -1,8 +1,8 @@
 {
  "units": 18,
  "moves": 19,
- "adjacency_before_m": 376.0,
- "adjacency_after_m": 178.5,
+ "adjacency_before_m": 376.3,
+ "adjacency_after_m": 178.4,
  "moves_list": [
   {
    "unit": "CRYO_H2",
@@ -44,7 +44,7 @@
    "from_clash_with": "REGROUP",
    "dx_mm": -4500,
    "dy_mm": 2000,
-   "gain_m": 7.0
+   "gain_m": 7.4
   },
   {
    "unit": "BMED_UPW_POLISH",

@@ -2195,25 +2195,6 @@
    "quick": false
   },
   {
-   "name": "doc_eol",
-   "argv": [
-    "python3",
-    "docs-authority/_eol.py"
-   ],
-   "depends_on": [
-    "duty_basis"
-   ],
-   "outputs": [
-    "docs-authority/EOL_RETURN.md",
-    "docs-authority/inventory/EOL_RETURN.csv"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "feeds_back_from": [
-    "doc_plant_bom"
-   ]
-  },
-  {
    "name": "doc_hazop",
    "argv": [
     "python3",
@@ -2534,6 +2515,26 @@
    ],
    "writes_graph": false,
    "quick": false
+  },
+  {
+   "name": "doc_eol",
+   "argv": [
+    "python3",
+    "docs-authority/_eol.py"
+   ],
+   "depends_on": [
+    "duty_basis",
+    "doc_plant_bom"
+   ],
+   "outputs": [
+    "docs-authority/EOL_RETURN.md",
+    "docs-authority/inventory/EOL_RETURN.csv"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "feeds_back_from": [
+    "doc_plant_bom"
+   ]
   },
   {
    "name": "doc_sc_reconcile",

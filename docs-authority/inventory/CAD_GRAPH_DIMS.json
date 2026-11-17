@@ -213,24 +213,24 @@
   "unit": "METAL_STORE",
   "applied": true,
   "old_mm": [
-   800,
-   800,
-   950
+   900,
+   900,
+   1050
   ],
-  "D_mm": 500.0,
-  "H_mm": 650.0,
+  "D_mm": 600.0,
+  "H_mm": 750.0,
   "material": "PE (rotomoulded / fabricated)"
  },
  {
   "unit": "AIR_RECEIVER",
   "applied": true,
   "old_mm": [
-   1000,
-   1000,
-   1200
+   1500,
+   1500,
+   1950
   ],
-  "D_mm": 700.0,
-  "H_mm": 900.0,
+  "D_mm": 1200.0,
+  "H_mm": 1650.0,
   "material": "SA-240 304L, welded"
  }
 ]

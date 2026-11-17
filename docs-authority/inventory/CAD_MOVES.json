@@ -174,6 +174,12 @@
   "dy_mm": -104
  },
  {
+  "unit": "AIR_RECEIVER",
+  "from_clash_with": "CORR_L0_NS",
+  "dx_mm": -400,
+  "dy_mm": 0
+ },
+ {
   "unit": "CRYO_H2",
   "from_clash_with": "REGROUP",
   "dx_mm": -12000,
@@ -213,7 +219,7 @@
   "from_clash_with": "REGROUP",
   "dx_mm": -4500,
   "dy_mm": 2000,
-  "gain_m": 7.0
+  "gain_m": 7.4
  },
  {
   "unit": "BMED_UPW_POLISH",

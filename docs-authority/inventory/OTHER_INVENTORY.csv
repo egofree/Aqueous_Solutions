@@ -1751,7 +1751,7 @@ FOUNDRY,FOUNDRY_E,CAST_LINE,instrument,high-level switch,vibrating fork,"IEC 609
 FOUNDRY,FOUNDRY_E,CAST_LINE,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,FOUNDRY_E,CAST_LINE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,CAST_LINE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,FOUNDRY_E,CA_POT,fabricated part,fabricated part set,19 BOM lines,models/mfg/CA_POT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,FOUNDRY_E,CA_POT,fabricated part,fabricated part set,20 BOM lines,models/mfg/CA_POT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,FOUNDRY_E,CA_POT,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/CA_POT/fasteners.csv
 FOUNDRY,FOUNDRY_E,CA_POT,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,6,models/mfg/CA_POT/fasteners.csv
 FOUNDRY,FOUNDRY_E,CA_POT,fastener,M8 x 25 hood bolts,M8 x 25 hood bolts,ISO 898-1 8.8,12,models/mfg/CA_POT/fasteners.csv

@@ -1,7 +1,7 @@
 # Isometric sheet data (no SVG: the isometric presentation retired 2026-10-27)
 
 Document number: AQS-ISO-002
-Status. 414 routed lines; waiting on placements 58. Pipe 8258 m, elbows 1205, flanges 828, joints 3985.
+Status. 414 routed lines; waiting on placements 58. Pipe 8257 m, elbows 1205, flanges 828, joints 3985.
 
 Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow take-off ASME B16.9 long-radius (metal) or 0.5 x OD (thermoplastic, A-M-121); 6 m random lengths; flanges at both nozzles; ASME B16.5 Class 150 bolting; OD ASME B36.10M. Not checked here: clashes with structure and other lines along the rack (X-PIP-04 with supports and stress).
 
@@ -127,7 +127,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | S81 | MEOH_FC | MEOH_COND | 15 | M1 | 6.97 | 3 |
 | S82 | MEOH_FC | CRYO_CO2 | 15 | M1 | 29.22 | 3 |
 | S83 | CRYO_O2 | HDR_O2 | 15 | M1 | 29.17 | 3 |
-| S84 | CRYO_N2 | AIR_RECEIVER | 15 | M1 | 15.07 | 3 |
+| S84 | CRYO_N2 | AIR_RECEIVER | 15 | M1 | 14.67 | 3 |
 | S85 | CRYO_CO2 | HDR_CO2 | 15 | M1 | 28.97 | 3 |
 | S86 | CRYO_AHU | RELIEF_CRYO | 15 | M1 | 12.17 | 3 |
 | S87 | GROW_BED | CRYO_O2 | 15 | M1 | 30.42 | 3 |
@@ -314,7 +314,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | IA-VS-SPENT | EVAP_ACID_VS | BMED_ACID | 15 | P4 | 24.89 | 3 |
 | IA-VS-OFF | EVAP_ACID_VS | ALK_SCRUBBER | 15 | F1 | 34.54 | 3 |
 | IA-H2P-H2O | H2_DRYER | VCD_TRAIN | 15 | P5 | 24.74 | 3 |
-| IA-AIR-RX-OUT | AIR_RECEIVER | HDR_N2 | 15 | P3 | 28.24 | 3 |
+| IA-AIR-RX-OUT | AIR_RECEIVER | HDR_N2 | 15 | P3 | 27.84 | 3 |
 | IA-SOLV-MU | NORTH_DOCK | WS_SOLV | 15 | M1 | 14.62 | 3 |
 | POLYF_TO_FILM | POLY_F | FILM_CAST | 15 | — | 9.24 | 3 |
 | IA-H2SO4-MU | NORTH_DOCK | HF_GEN | 15 | M2 | 24.17 | 3 |
@@ -368,9 +368,9 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | RABBIT_MEAT | RABBIT_HUTCH | FOOD_STORE | 15 | P1 | 24.26 | 3 |
 | RABBIT_MANURE | RABBIT_HUTCH | GROWBED_B | 15 | P1 | 11.64 | 3 |
 | RABBIT_VAP | RABBIT_HUTCH | CRYO_AHU | 15 | P1 | 21.54 | 3 |
-| NECTAR_FORAGE | GROW_BED | BEE_HIVE | 15 | P5 | 17.89 | 3 |
-| HONEY | BEE_HIVE | FOOD_STORE | 15 | P1 | 25.96 | 3 |
-| BEE_VAP | BEE_HIVE | CRYO_AHU | 15 | P1 | 23.24 | 3 |
+| NECTAR_FORAGE | GROW_BED | BEE_HIVE | 15 | P5 | 17.94 | 3 |
+| HONEY | BEE_HIVE | FOOD_STORE | 15 | P1 | 25.91 | 3 |
+| BEE_VAP | BEE_HIVE | CRYO_AHU | 15 | P1 | 23.19 | 3 |
 | VERMI_FEED | GROW_BED | VERMI_BIN | 15 | P5 | 22.49 | 3 |
 | VERMICOMPOST | VERMI_BIN | GROWBED_A | 15 | M1 | 16.97 | 3 |
 | WORM_TEA | VERMI_BIN | GROWBED_A | 15 | M1 | 16.97 | 3 |

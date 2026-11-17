@@ -11,7 +11,7 @@ OF-09,electronics,solenoid driver channel,IEC 61131-2 DO,32,24 V DC x32,11
 OF-10,electronics,compressor contactor + overload,IEC 60947-4-1,9,18.5 kW hermetic x8; 1.1 kW hermetic x1,2
 OF-11,electronics,stepper driver,IEC 61800-5-1,3,24/48 V DC x3,1
 OF-12,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",IEC 61508 / IEC 61511,2,- x2,1
-OF-13,fabricated part,fabricated part set,models/mfg/<unit>/bom.csv,197,4 BOM lines x27; 9 BOM lines x27; 7 BOM lines x24; 5 BOM lines x21; 6 BOM lines x17; 3 BOM lines x17; 8 BOM lines x17; 2 BOM lines x7; 12 BOM lines x6; 10 BOM lines x5; 17 BOM lines x5; 1 BOM lines x4; 11 BOM lines x3; 15 BOM lines x3; 18 BOM lines x3; 36 BOM lines x1; 21 BOM lines x1; 39 BOM lines x1; 13 BOM lines x1; 19 BOM lines x1; 16 BOM lines x1; 26 BOM lines x1; 35 BOM lines x1; 72 BOM lines x1; 33 BOM lines x1; 28 BOM lines x1,197
+OF-13,fabricated part,fabricated part set,models/mfg/<unit>/bom.csv,197,4 BOM lines x27; 9 BOM lines x27; 7 BOM lines x24; 5 BOM lines x21; 6 BOM lines x17; 3 BOM lines x17; 8 BOM lines x17; 2 BOM lines x7; 12 BOM lines x6; 10 BOM lines x5; 17 BOM lines x5; 1 BOM lines x4; 11 BOM lines x3; 15 BOM lines x3; 18 BOM lines x3; 36 BOM lines x1; 21 BOM lines x1; 39 BOM lines x1; 13 BOM lines x1; 20 BOM lines x1; 16 BOM lines x1; 26 BOM lines x1; 35 BOM lines x1; 72 BOM lines x1; 33 BOM lines x1; 28 BOM lines x1,197
 OF-14,fastener,anchor bolt,ISO 3506 A4-70 wedge anchor,15398,M10 x15398,142
 OF-15,fastener,M10 x 40 lid bolt,ISO 3506 A4-70,12,M10 x 40 lid bolt with nut and washers x12,1
 OF-16,fastener,M8 x 30 lid bolt,ISO 3506 A4-70,12,M8 x 30 lid bolt with nut and washers x12,1

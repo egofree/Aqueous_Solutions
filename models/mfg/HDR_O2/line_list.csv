@@ -1,5 +1,5 @@
 line,from,to,dn,class,service,rating,note
-MAIN,spool start,spool end,DN25,-,"O2 header (ASU/receiver in; fuel cell, peroxide, genset, afterburner, product draws)",atmospheric; no flange class (duty section 4),"manifold spool per AQS-DUTY-075 (node design: DN25, 20 m run, 0.0045 m3); modeled as the 2000 mm representative spool; material per duty section 3"
+MAIN,spool start,spool end,DN25,-,"O2 header (ASU/receiver in; fuel cell, peroxide, genset, afterburner, product draws)",atmospheric; no flange class (duty section 4),"manifold spool per AQS-DUTY-075 (node design: DN25, 36.4 m run, 0.0083 m3); modeled as the 2000 mm representative spool; material per duty section 3"
 IA-AB-O2,HDR_O2,AFTERBURNER,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
 IA-FC-AIR,HDR_O2,MEOH_FC,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,
 IA-GEN-O2,HDR_O2,BACKUP_GEN,DN15,M1,"dry gas, H2/O2/N2/CO2",atmospheric tube/hose joint at the header face (duty section 4: no flange class); pipe class per AQS-PIP-003,

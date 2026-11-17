@@ -2,13 +2,13 @@
   "bbox_mm": [
     600.0,
     600.0,
-    350.0
+    600.0
   ],
   "inside_size_mm": true,
   "size_mm": [
     600.0,
     600.0,
-    350.0
+    600.0
   ],
   "size_basis": "storage-sizing box (node size_mm, AQS-DUTY-064); the duty section 4 prose seed line 800 x 800 x 1100 predates it (WORK_ORDER W12)",
   "graph_revision": "AD",
@@ -60,11 +60,11 @@
       "dn": "DN15",
       "face": "+Y",
       "height_mm": 600,
-      "drawn_height_mm": 320.7,
+      "drawn_height_mm": 570.7,
       "x_mm": 310.6,
       "schedule_rating": "Class 150",
       "service": "KOH",
-      "note": "schedule datum 600 mm predates the box; clamped to 320.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
+      "note": "schedule datum 600 mm predates the box; clamped to 570.7 mm so the branch and riser stay inside (hold, WORK_ORDER W12); atmospheric open-bore tube on a tray riser, flush at the envelope face (duty section 4)"
     },
     "N3": {
       "style": "tube",
@@ -82,7 +82,7 @@
       "dn": "DN15",
       "face": "top",
       "height_mm": 800,
-      "drawn_height_mm": 350.0,
+      "drawn_height_mm": 600.0,
       "x_mm": 300.0,
       "schedule_rating": "Class 150",
       "service": "vent",
@@ -95,7 +95,7 @@
     "tray": 11.9,
     "tank": 7.0,
     "guard_rail": 0.1,
-    "nozzles": 0.2
+    "nozzles": 0.3
   },
   "cadquery": "2.8.0"
 }

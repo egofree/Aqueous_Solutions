@@ -7,7 +7,7 @@ Authority: the placement model (flow_graph/placement_seed.json Rev M, AQS-BLD-00
 
 Route rule: up to the source-level rack (datum + 3200 mm, AQS-PIP-002), X run, Y run, then vertical to the target centre. Legs in mm, signed. Elbows = non-zero legs - 1. Risers are at least 300 mm above the higher end so every route keeps a flexible leg (X-PIP-04). Unit centres are the placement-model centres; nozzle lateral offsets refine at detail design (the nozzle schedules carry face + height). Supports and stress: AQS-PIP-005.
 
-Status. 414 positioned piped lines routed, 8309 m total. 58 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
+Status. 414 positioned piped lines routed, 8308 m total. 58 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
 
 | Line | DN | Class | From | To | dZ up | dX | dY | dZ down | Length m | Elbows |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -129,7 +129,7 @@ Status. 414 positioned piped lines routed, 8309 m total. 58 piped lines wait on 
 | S81 | 15 | M1 | MEOH_FC | MEOH_COND | 2400 | 1700 | -200 | -2900 | 7.2 | 3 |
 | S82 | 15 | M1 | MEOH_FC | CRYO_CO2 | 2400 | 3948 | 15900 | -7200 | 29.4 | 3 |
 | S83 | 15 | M1 | CRYO_O2 | HDR_O2 | 10300 | 4500 | -14300 | -300 | 29.4 | 3 |
-| S84 | 15 | M1 | CRYO_N2 | AIR_RECEIVER | 1200 | 7600 | -3900 | -2600 | 15.3 | 3 |
+| S84 | 15 | M1 | CRYO_N2 | AIR_RECEIVER | 1200 | 7200 | -3900 | -2600 | 14.9 | 3 |
 | S85 | 15 | M1 | CRYO_CO2 | HDR_CO2 | 10450 | 3900 | -14550 | -300 | 29.2 | 3 |
 | S86 | 15 | M1 | CRYO_AHU | RELIEF_CRYO | 1200 | 3600 | 4700 | -2900 | 12.4 | 3 |
 | S87 | 15 | M1 | GROW_BED | CRYO_O2 | 950 | -10500 | 6000 | -13200 | 30.6 | 3 |
@@ -316,7 +316,7 @@ Status. 414 positioned piped lines routed, 8309 m total. 58 piped lines wait on 
 | IA-VS-SPENT | 15 | P4 | EVAP_ACID_VS | BMED_ACID | 2500 | 19700 | -1300 | -1450 | 24.9 | 3 |
 | IA-VS-OFF | 15 | F1 | EVAP_ACID_VS | ALK_SCRUBBER | 2500 | 24700 | 6700 | -700 | 34.6 | 3 |
 | IA-H2P-H2O | 15 | P5 | H2_DRYER | VCD_TRAIN | 700 | -7500 | -14000 | -2600 | 24.8 | 3 |
-| IA-AIR-RX-OUT | 15 | P3 | AIR_RECEIVER | HDR_N2 | 11850 | -11000 | -5150 | -300 | 28.3 | 3 |
+| IA-AIR-RX-OUT | 15 | P3 | AIR_RECEIVER | HDR_N2 | 11850 | -10600 | -5150 | -300 | 27.9 | 3 |
 | IA-SOLV-MU | 15 | M1 | NORTH_DOCK | WS_SOLV | 3200 | 6600 | 2400 | -2650 | 14.8 | 3 |
 | POLYF_TO_FILM | 15 | — | POLY_F | FILM_CAST | 2600 | 2750 | 1500 | -2450 | 9.3 | 3 |
 | IA-H2SO4-MU | 15 | M2 | NORTH_DOCK | HF_GEN | 3200 | -4900 | 7850 | -8450 | 24.4 | 3 |
@@ -370,9 +370,9 @@ Status. 414 positioned piped lines routed, 8309 m total. 58 piped lines wait on 
 | RABBIT_MEAT | 15 | P1 | RABBIT_HUTCH | FOOD_STORE | 5875 | -11125 | -7025 | -300 | 24.3 | 3 |
 | RABBIT_MANURE | 15 | P1 | RABBIT_HUTCH | GROWBED_B | 2400 | -3150 | 3200 | -2950 | 11.7 | 3 |
 | RABBIT_VAP | 15 | P1 | RABBIT_HUTCH | CRYO_AHU | 2400 | -9050 | -2950 | -7200 | 21.6 | 3 |
-| NECTAR_FORAGE | 15 | P5 | GROW_BED | BEE_HIVE | 950 | 7400 | -950 | -8650 | 17.9 | 3 |
-| HONEY | 15 | P1 | BEE_HIVE | FOOD_STORE | 6125 | -12475 | -7125 | -300 | 26.0 | 3 |
-| BEE_VAP | 15 | P1 | BEE_HIVE | CRYO_AHU | 2650 | -10400 | -3050 | -7200 | 23.3 | 3 |
+| NECTAR_FORAGE | 15 | P5 | GROW_BED | BEE_HIVE | 950 | 7400 | -1000 | -8650 | 18.0 | 3 |
+| HONEY | 15 | P1 | BEE_HIVE | FOOD_STORE | 6125 | -12475 | -7075 | -300 | 26.0 | 3 |
+| BEE_VAP | 15 | P1 | BEE_HIVE | CRYO_AHU | 2650 | -10400 | -3000 | -7200 | 23.2 | 3 |
 | VERMI_FEED | 15 | P5 | GROW_BED | VERMI_BIN | 950 | 8850 | 3850 | -8900 | 22.6 | 3 |
 | VERMICOMPOST | 15 | M1 | VERMI_BIN | GROWBED_A | 2900 | -9650 | -1700 | -2950 | 17.2 | 3 |
 | WORM_TEA | 15 | M1 | VERMI_BIN | GROWBED_A | 2900 | -9650 | -1700 | -2950 | 17.2 | 3 |

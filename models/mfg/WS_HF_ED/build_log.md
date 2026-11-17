@@ -10,7 +10,7 @@ Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/WS_
 
 ## Checks
 
-- Build bbox 600 x 600 x 350 mm against the 600 x 600 x 350 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
+- Build bbox 600 x 600 x 600 mm against the 600 x 600 x 600 mm envelope: inside (tracker check green) (bbox read back from the export STL: the CAD kernel's bounding box of the lofted barb faces is loose; the mesh is the gate measure)
 - Solid source: build export `models/mfg/WS_HF_ED/export/ws_hf_ed.step`; export STL closed and manifold, 1 solid(s); `cad/stl/WS_HF_ED.stl` replaced from the build (ASCII, metres)
 - Nozzles: all 5 rows of `docs-authority/nozzles/WS_HF_ED.csv` present at face, height and bore (per-tag notes in check.nozzles_drawn)
 - A-MACH: guard rail and slab anchors drawn; no purchased item named on the node or duty - none drawn (W12)
