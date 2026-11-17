@@ -325,7 +325,7 @@ CRYO_O2,"Rack frame: skid plate + SHS posts, tie bars, tier combs and side rails
 CRYO_O2,"Tube saddles, 3 per tube, with wear groove",48,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_O2,"Crew-reserve divider plates, main bank | crew reserve, one per relief half",2,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_O2,"Relief valves, API 520 / API 521 fire case per half bank, bore 9 mm",2,purchase item,Unstated,-,not classed: purchase item
-CRYO_O2,"Connection set per docs-authority/nozzles/CRYO_O2.csv (9 rows, clamped heights p",9,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+CRYO_O2,"Connection set per docs-authority/nozzles/CRYO_O2.csv (10 rows, clamped heights ",10,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CR_CELL,Lined cell shell 800 x 800 x 1600 mm: casing t6 (walls + roof + head plate 1154),1,carbon steel (CS class),Closed,Fe EW -> MET_MELT -> mill/draw,
 CR_CELL,"Ceramic-fibre backup lining kit, t24",1,ceramic-fibre board 128 kg/m3,Unstated,-,not classed: ceramic-fibre board 128 kg/m3
 CR_CELL,"Graphite ram lining kit, t40, wetted faces",1,graphite ramming paste 1550 kg/m3,Partial,OIL_PYRO char,"graphitisation above 2,500 C not in the heat ladder"

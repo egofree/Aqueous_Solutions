@@ -1,6 +1,6 @@
 {
- "artifact_sha256": "cd0703f686a31fdfe5d94de427ec0397587bc1e575bd382c191c79747fd37f99",
- "code": "c58ee91b1f0e7c6d3de5a4855da0a38bb65fe792ff9c37a193d5fbb9470c53a7",
+ "artifact_sha256": "ec67c560295f10714fa6f05ca5db8d5f7378e622da1c722b5b606b02b83972c2",
+ "code": "f5427eda8375edcfb471691cc56c85ff5519a93d814f3ea1f5120537fadef272",
  "functions": [
   [
    "atm_venting",
@@ -182,11 +182,11 @@
  "inputs": {
   "docs-authority/CAUSE_EFFECT.md": "78e42f28ae6fb9dbcd0636e2969f0871b864f17774ebbb0ed33276a2a0a450be",
   "docs-authority/DESIGN_TOOL_ARCHITECTURE.md": "4dd6a427918f9cf013dc4e0db80c62e8ceddc5b425eacb1c96d284c37cf4a1fc",
-  "docs-authority/GLOSSARY.md": "acb39ce8dc93b119f3bac97a68fbc855e1839823a14a74b3ff41055f0ea60167",
+  "docs-authority/GLOSSARY.md": "2b7910a6fa851934cab8b452065b5da8562452dac9f41b799feeb16221ff1985",
   "docs-authority/MFG_TOOLS.md": "629de770dbb4a7047e9b02430706aa7fc1dd21ac0341f097767de861fdc96e3f",
   "docs-authority/PIPING_CLASSES.md": "f97bbf88be77dabdb016910a79df19a17356eeab6beb686ed43fb13f8b3d87a7",
   "docs-authority/SUPPORTS.md": "e555cb49429ba55741ddbf9be60c9691c00cd434a17238269c126847b3f773dd",
-  "docs-authority/assumptions_manual.json": "e771cfe10c66b82c43a5047da2dcff85c28be9486be53bacbe64c721a072a64d",
+  "docs-authority/assumptions_manual.json": "d18a58a020e76df7cd3299a8d8a729d8250d4fea7a86d0f1a037e396a5a22477",
   "docs-authority/duties/ABE.md": "f8f976e94aeaf6c25d7ef08d1769ad0d1e133d7e14f1a9b62cc27f56a076899a",
   "docs-authority/duties/ACETOX.md": "afa003f67f7d0535088365763309a1c47167235dffb629bb58f3558e2a7adfa3",
   "docs-authority/duties/ACEX.md": "4bbae87e1a246f46d0315c300223b2f650d6a3c8f7af8a4d136a9dd25bada500",
@@ -555,7 +555,7 @@
   "docs-authority/nozzles/CRYO_KR.csv": "ddef201e5612acd3100e2bdf7e22cd9b78e74ce1577f3fe7459c31cfd5cf7a0b",
   "docs-authority/nozzles/CRYO_N2.csv": "35333c2cb670f4780cea546102ce4e861b8acea9fb1aa6712dc6ecfcc1b92414",
   "docs-authority/nozzles/CRYO_NE.csv": "1a8089280c95991f1d5674fd4a67124d3191500991afbe51e1fbb0d6f9a5a092",
-  "docs-authority/nozzles/CRYO_O2.csv": "cbf3ffc8c31cbbc9b87dff30df776604798c31dd0c5b3c9095e2cc229c69003a",
+  "docs-authority/nozzles/CRYO_O2.csv": "ca56342cef3af30e8e2f17fc98f7ca52ce06cda6a600a9cf4082651357541e6b",
   "docs-authority/nozzles/CRYO_XE.csv": "c9d7702341aa114b71ff222522982f30da18ee8d89bf960ad16fa5ee6ffe6662",
   "docs-authority/nozzles/CR_CELL.csv": "9e8ce61e6f920b7718aeee95769c3a9a8f70a383b0199c0b44afa919b0442362",
   "docs-authority/nozzles/CURTAIL.csv": "2d0149eeaab2eb53a60aa75f16af6ab0bbdb204887b13c6ef83f5ebd2a73e205",
@@ -839,7 +839,7 @@
   "models/mfg/CRYO_HX_Q4/bom.csv": "a6fca42613b6472f93d44e5f9d4e7fac3f7c9128243c869ce0dbe1211bf1cc00",
   "models/mfg/CRYO_N2/bom.csv": "cdeb22947903d8f035f9a2f43d9a25d74ce53ec87388053c35dcf5d782b8e828",
   "models/mfg/CRYO_N2/fasteners.csv": "97c12d873319094680ab9c9db07db3ff31e763a080bbb902de071580057b4e26",
-  "models/mfg/CRYO_O2/bom.csv": "aec656ede7a9b2cd3d01f4e98c59d31add02d2c3cbae0d8ea24c381fccb1e781",
+  "models/mfg/CRYO_O2/bom.csv": "a98208052a9c317fb40e4e370102173ff723797b9b9d67f0b9f41b89041bdd72",
   "models/mfg/CRYO_O2/fasteners.csv": "7801a9b4495d7dac558bd50a7dc3676e1990bff328010e7d73956f280047c77b",
   "models/mfg/CR_CELL/bom.csv": "3053bcea20253b87c2c9a235ea65b0fcd1a0e561d00d634a4ec53ff24c5e852f",
   "models/mfg/CR_CELL/fasteners.csv": "27ae161baf75d2c522d12bc70ac6cf355c3de50df46d674b697a1cc3512f6701",
