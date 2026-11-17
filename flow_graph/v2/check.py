@@ -47,7 +47,9 @@ def check(graph_path=None, manifest_path=None, inputs=None, artifact_root=None):
     lines = []
     graph_path = graph_path or os.path.join(MF.ROOT, SL.GRAPH_PATH)
     mpath = manifest_path or os.path.join(MF.ROOT, 'flow_graph/derived/_input_manifest_v2.json')
-    inputs = dict(inputs) if inputs is not None else IN.load(extra=IN.drawing_payload())
+    inputs = dict(inputs) if inputs is not None else IN.load()
+    for key, value in IN.drawing_payload():
+        inputs.setdefault(key, value)      # the same payload completion update() renders with
     ok = True
 
     if not os.path.exists(mpath):

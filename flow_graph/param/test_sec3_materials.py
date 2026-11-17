@@ -23,6 +23,11 @@ def test_sec3_selections_issued_and_rendered():
     # X-QA-13 acid and base regeneration line)
     from flow_graph.param import materials3
     roster = set(materials3.SEL) | set(materials3.SEL_FARM) | set(materials3.SEL_QA13) | set(materials3.SEL_HDR)
+    # the P4 re-issuance lands the v2 materials3 family's issued selections
+    # for the two units the roster gate held open (BRINE_CRYS, NUT_AN,
+    # X-QA-11/A-M-503; the ledger's pending decision is superseded by the
+    # issued records)
+    roster |= {'BRINE_CRYS', 'NUT_AN'}
     assert set(sel) == roster
     # Invariant, not a count (F-20261110-09): every lane entry is a live stamped unit on the
     # graph, so a roster entry cannot outlive its unit and a new unit joins only through the
